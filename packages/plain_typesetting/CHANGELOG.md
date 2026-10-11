@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.sideShape` (`FloatShape`): a side float's outline, band by
+  band; a paragraph that runs around it with `ShapedContent`
+  (`placeAround`) is set line by line in the room the outline leaves.
 - `BoxStyle.runsAround`: a paragraph's custom box that doesn't fit beside
   blocks floating to a side runs around them, its first lines beside
   them as far as they go, its rest set again at the full width below

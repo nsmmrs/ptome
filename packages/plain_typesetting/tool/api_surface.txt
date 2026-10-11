@@ -97,6 +97,9 @@ abstract interface class PageBreaker
   bool moveKeptBox(double height, double available, double regionHeight)
   int linesThatFit(List<double> heights, double available, {required int orphans, required int widows, required bool atTop})
   int linesToKeep(int fit, int total, {required int orphans, required int widows, required bool atTop})
+abstract interface class ShapedContent implements CustomContent
+  CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
+  ShapedContent()
 enum BlendMode
   static BlendMode colorBurn
   static BlendMode colorDodge
@@ -207,11 +210,12 @@ final class BoxItem extends LineItem
 final class BoxStyle
   Border border
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, bool runsAround = false})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
   FloatPlacement? float
+  FloatShape? sideShape
   FloatSide? side
   Map<String, String> marks
   String? anchor
@@ -296,6 +300,10 @@ final class FirstFitLineBreaker extends ItemLineBreaker
 final class FixedColumnWidth extends ColumnWidth
   FixedColumnWidth(double points)
   double points
+final class FloatShape
+  FloatShape(double bandHeight, List<(double, double)?> bands)
+  List<(double, double)?> bands
+  double bandHeight
 final class FlowLayout
   FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2})
   LayoutBox? noteSeparator

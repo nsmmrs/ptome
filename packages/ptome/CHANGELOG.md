@@ -58,6 +58,10 @@ Asciidoctor project.
   (`section_role_<role>_page_margin`, `_page_background_color`,
   `_page_background_image`, `_page_running_content`) is set on pages of
   its own, laid out by that page template.
+- Text runs around an image's outline: a floated PNG with `shape=alpha`
+  (or a role floated with `float_shape: alpha`) is a cutout, its opaque
+  pixels' edge what the lines beside it follow, in the PDF line by line,
+  on the web as a `shape-outside` polygon computed from the image.
 - Jump lines: a `[.jump]` paragraph that is a cross reference alone says
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web

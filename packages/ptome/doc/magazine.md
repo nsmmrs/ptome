@@ -63,6 +63,7 @@ NITF and Apple News Format, so another output can take them.
 | End mark | after the last paragraph, or a paragraph's `[.end]` | | |
 | Jump line | `[.jump]` on a paragraph that is a cross reference alone (`<<avalanche-more>>`): "Continued on page 7" in print, "Continued from page 1" where it goes on | | |
 | Placement | `float=right` / `left` on an image | | `layout.columnStart` |
+| Cutout | `shape=alpha` on a floated PNG with transparency: the text runs around its outline (`shape-margin`, on the web) | | |
 
 "Kicker" also names a story's punchy closing line; the closing flourish
 here is the end mark, `[.end]`, so the word keeps one meaning.

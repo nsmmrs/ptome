@@ -5,6 +5,7 @@ library;
 
 import 'dart:convert';
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:ptome/src/epub3/epub3.dart';
 import 'package:ptome/src/internal.dart';
@@ -395,6 +396,28 @@ templates:
       );
       expect(html, contains('--mag-dropcap-lines'), reason: look);
     }
+  });
+
+  test("HTML: a floated image's outline as its shape-outside", () {
+    File('test/pdf/fixtures/images/circle.png').copySync('${dir.path}/c.png');
+    String html(String attrs) =>
+        File(convertWith('html5', '= Doc\n\nimage::c.png[C,$attrs]\n\nText.\n'))
+            .readAsStringSync();
+    final shaped = html('float=right,shape=alpha');
+    final style = RegExp(
+      r'class="imageblock right" style="shape-outside:polygon\(([^)]*)\);'
+      'shape-margin:0.75em"',
+    ).firstMatch(shaped);
+    expect(style, isNotNull, reason: shaped);
+    // The circle's left edge comes in from the box's at its middle.
+    final xs = [
+      for (final point in style![1]!.split(','))
+        double.parse(point.trim().split(' ').first.replaceAll('%', '')),
+    ];
+    expect(xs.reduce(math.min), lessThan(10));
+    expect(xs.first, 100);
+    // Not floated, or opaque: none.
+    expect(html('shape=alpha'), isNot(contains('shape-outside')));
   });
 
   test('HTML jump lines: continued in the piece, and from', () {

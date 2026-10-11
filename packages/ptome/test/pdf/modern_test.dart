@@ -2547,6 +2547,52 @@ templates:
       );
     });
 
+    test("a paragraph runs around an image's outline (its alpha)", () {
+      final circle =
+          '${Directory.current.path}/test/pdf/fixtures/images/circle.png';
+      const words =
+          'The first skiers made it down without incident, stopping in a '
+          'cluster of trees to wait for the others. ';
+      String source(String shape) =>
+          '= Doc\n\n[.cutout]\nimage::$circle[Circle$shape]\n\n'
+          '${words * 14}\n';
+      const theme =
+          'role:\n  cutout:\n    float: right\n    float_width: 40%\n'
+          '    float_gap: 4\n';
+      // Each line's right end, top to bottom, beside the image.
+      List<double> ends(String pdf) {
+        final out =
+            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+        final byLine = <double, double>{};
+        for (final m in RegExp(
+          r'yMin="([\d.]+)" xMax="([\d.]+)"[^>]*>(?:[^<]*)<',
+        ).allMatches(out.replaceAll(RegExp(r'xMin="[\d.]+" '), ''))) {
+          final y = double.parse(m[1]!);
+          byLine[y] = math.max(byLine[y] ?? 0, double.parse(m[2]!));
+        }
+        final rows = byLine.keys.toList()..sort();
+        return [for (final y in rows.skip(1)) byLine[y]!];
+      }
+
+      // Around its box: the lines beside it end alike.
+      final boxed = ends(_pdf(source(''), theme: theme)).take(6).toList();
+      expect(boxed.reduce(math.max) - boxed.reduce(math.min), lessThan(20));
+      // Around its outline, a circle: the first lines reach past where
+      // the middle ones end.
+      final shaped = ends(_pdf(source(',shape=alpha'), theme: theme))
+          .take(12)
+          .toList();
+      expect(shaped.first, greaterThan(shaped.reduce(math.min) + 40));
+      // The image's own float and shape, as on the web.
+      final own = ends(
+        _pdf(
+          '= Doc\n\nimage::$circle[Circle,pdfwidth=40%,float=right,'
+          'shape=alpha]\n\n${words * 14}\n',
+        ),
+      ).take(12).toList();
+      expect(own.first, greaterThan(own.reduce(math.min) + 40));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

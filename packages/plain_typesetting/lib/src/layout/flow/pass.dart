@@ -874,6 +874,7 @@ final class _Pass {
               bottom: floatFit.rest == null
                   ? floatTop + floatFit.height
                   : double.infinity,
+              shape: child.style.sideShape,
             ),
           );
           if (floatFit.rest case final rest?) {
@@ -906,6 +907,22 @@ final class _Pass {
           if ((narrowLeft, narrowRight) != before) {
             until = math.min(until, other.bottom);
           }
+        }
+        // A paragraph beside an outline (an image's shape): set line by
+        // line in the room it leaves, the rest below.
+        if (_aroundShapes(child, left, right, y, room - cursor) case (
+          final piece,
+          final height,
+          final rest,
+        )) {
+          children.add((cursor, piece));
+          cursor += height;
+          trailing = rest == null ? child.style.margin.bottom : 0;
+          if (rest != null) {
+            kids[i] = rest;
+            i--;
+          }
+          continue;
         }
         if (narrowLeft > left + 1e-6 || narrowRight < right - 1e-6) {
           // (A block reaching out past its edges with negative margins
@@ -1162,6 +1179,92 @@ final class _Pass {
   bool _excluding = false;
 
   /// The blocks floating to a side in the region being filled.
+  /// [child] set beside blocks floating to a side with outlines
+  /// ([BoxStyle.sideShape]), line by line in the room they leave between
+  /// [left] and [right] from [y] down, at most [room] tall, when it runs
+  /// around them with [ShapedContent]: the piece, its height and the rest
+  /// (null when it all fits).
+  (_Placed, double, LayoutBox?)? _aroundShapes(
+    LayoutBox child,
+    double left,
+    double right,
+    double y,
+    double room,
+  ) {
+    if (child is! CustomBox ||
+        !child.style.runsAround ||
+        child.style.floating ||
+        child.style.side != null) {
+      return null;
+    }
+    final content = child.content;
+    if (content is! ShapedContent) return null;
+    final beside = [
+      for (final other in _exclusions)
+        if (other.top <= y + 1e-6 && other.bottom > y + 1e-6) other,
+    ];
+    if (!beside.any((other) => other.shape != null)) return null;
+    final style = child.style;
+    final margin = style.margin;
+    final top = child._continued ? 0.0 : margin.top;
+    final contentTop = y + top;
+    final from = left + margin.left;
+    final to = right - margin.right;
+    (double, double) insets(double lineTop, double lineBottom) {
+      var inLeft = 0.0;
+      var inRight = 0.0;
+      for (final other in beside) {
+        final covered = other.covered(
+          contentTop + lineTop,
+          contentTop + lineBottom,
+        );
+        if (covered == null) continue;
+        if (other.side == FloatSide.right) {
+          inRight = math.max(inRight, to - (covered.$1 - other.gap));
+        } else {
+          inLeft = math.max(inLeft, covered.$2 + other.gap - from);
+        }
+      }
+      return (math.max(0, inLeft), math.max(0, inRight));
+    }
+
+    final deepest = beside.map((other) => other.bottom).reduce(math.max);
+    final placement = content.placeAround(
+      to - from,
+      math.min(deepest - contentTop, room - top),
+      atTop: false,
+      insets: insets,
+    );
+    if (placement == null) return null;
+    final rest = placement.rest;
+    final height =
+        top +
+        placement.height +
+        (rest == null
+            ? math.min(
+                margin.bottom,
+                math.max(0.0, room - top - placement.height),
+              )
+            : 0);
+    return (
+      _PlacedCustom(
+        placement,
+        margin.left,
+        top,
+        height,
+        child._continued ? null : style.anchor,
+        child._continued ? const {} : style.marks,
+        width: to - from,
+        decoration: style.decoration,
+        first: !child._continued,
+        last: rest == null,
+        tag: style.tag,
+      ),
+      height,
+      rest == null ? null : CustomBox._rest(rest, style),
+    );
+  }
+
   /// [child]'s first lines at [width] in the [height] beside blocks
   /// floating to a side, when it runs around them ([BoxStyle.runsAround])
   /// and some, not all, of it fits there: the piece, its height and the

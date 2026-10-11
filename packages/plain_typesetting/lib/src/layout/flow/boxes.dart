@@ -115,6 +115,7 @@ final class BoxStyle {
     this.side,
     this.sideWidth = 0,
     this.sideGap = 0,
+    this.sideShape,
     this.runsAround = false,
   });
 
@@ -220,11 +221,17 @@ final class BoxStyle {
   /// width below them. Otherwise it goes below them whole.
   final bool runsAround;
 
+  /// The outline of a block floating to a [side], where a paragraph that
+  /// [runsAround] it (with [ShapedContent]) is set line by line: an
+  /// image's shape, say. Null: its box.
+  final FloatShape? sideShape;
+
   /// This style with [tag] ([BoxStyle.tag]).
   BoxStyle withTag(String? tag) => _copy(tag: (tag,));
 
   /// This style not floating to a side ([side]).
-  BoxStyle get _unsided => _copy(side: (null,), sideWidth: 0, sideGap: 0);
+  BoxStyle get _unsided =>
+      _copy(side: (null,), sideWidth: 0, sideGap: 0, sideShape: (null,));
 
   /// This style without floating.
   BoxStyle get _unfloated => _copy(float: (null,), floatSpan: false);
@@ -254,6 +261,7 @@ final class BoxStyle {
     (FloatPlacement?,)? float,
     (VerticalAlign?,)? verticalAlign,
     (FloatSide?,)? side,
+    (FloatShape?,)? sideShape,
   }) => BoxStyle(
     margin: margin ?? this.margin,
     padding: padding,
@@ -277,8 +285,25 @@ final class BoxStyle {
     side: side == null ? this.side : side.$1,
     sideWidth: sideWidth ?? this.sideWidth,
     sideGap: sideGap ?? this.sideGap,
+    sideShape: sideShape == null ? this.sideShape : sideShape.$1,
     runsAround: runsAround,
   );
+}
+
+/// The outline of a block floating to a side ([BoxStyle.sideShape]):
+/// what it covers across each band [bandHeight] tall, from its top down,
+/// as a range from its left edge; null for a band it leaves empty. Below
+/// the last band it covers its whole width.
+@immutable
+final class FloatShape {
+  /// An outline of [bands], each [bandHeight] tall.
+  const new(this.bandHeight, this.bands);
+
+  /// The height of each band.
+  final double bandHeight;
+
+  /// What each band covers, left to right from the block's left edge.
+  final List<(double, double)?> bands;
 }
 
 /// The side a block floats to ([BoxStyle.side]).
@@ -622,6 +647,24 @@ abstract interface class LinedContent implements CustomContent {
 
   /// The fewest lines after a break.
   int get widows;
+}
+
+/// Custom content whose lines can each take their own part of its width:
+/// beside a block floating to a side with a [FloatShape], a paragraph
+/// that [BoxStyle.runsAround] it is set line by line in the room the
+/// outline leaves.
+abstract interface class ShapedContent implements CustomContent {
+  /// As much of the content as fits in [available] height at [width],
+  /// each line set in what [insets] leaves of the width (the room taken
+  /// at its left and at its right, for the line between `top` and
+  /// `bottom`, down from the content's top); `rest` holds what is left,
+  /// to be placed as plain [CustomContent]. Null to set none of it here.
+  CustomPlacement? placeAround(
+    double width,
+    double available, {
+    required bool atTop,
+    required (double, double) Function(double top, double bottom) insets,
+  });
 }
 
 /// What placing custom content gave.

@@ -470,6 +470,35 @@ void main() {
     expect(below.single.$2, lessThan(top - 3 * _lineHeight + 1e-6));
   });
 
+  test("a paragraph runs around a float's outline, line by line", () {
+    // A float 160 wide, 72 tall, at the right: its outline a triangle, its
+    // left edge 20 further right each band of 12 (so the room beside it
+    // grows down the page).
+    final insets = <double>[];
+    FlowLayout(template: _rows(10))
+        .layout([
+          BlockBox(
+            const [SpacerBox(72)],
+            style: BoxStyle(
+              side: FloatSide.right,
+              sideWidth: 160,
+              sideGap: 10,
+              sideShape: FloatShape(12, [
+                for (var i = 0; i < 6; i++) (i * 20.0, 160.0),
+              ]),
+            ),
+          ),
+          CustomBox(
+            _ShapedWords(60, insets),
+            style: const BoxStyle(runsAround: true),
+          ),
+        ])
+        .render(RecordingDocument());
+    // Beside each band, the room it leaves (the float's left at 100 +
+    // 20 per band, less the gap): 270 - 100 - 20 i + 10 at the right.
+    expect(insets.take(6), [for (var i = 0; i < 6; i++) 170.0 - 20 * i]);
+  });
+
   test('links are made on the page the text is on', () {
     final document = RecordingDocument();
     FlowLayout(template: _rows(4))
@@ -557,7 +586,7 @@ final class _Overrunning implements CustomContent {
 /// [words] words of [wordWidth] each on lines of [lineHeight], set at any
 /// width from word [from] on; each piece placed logged (x, top, width,
 /// lines).
-final class _Words implements CustomContent {
+base class _Words implements CustomContent {
   new(this.words, this.log, {this.from = 0});
 
   static const double lineHeight = 12;
@@ -593,4 +622,40 @@ final class _Words implements CustomContent {
 
   @override
   (double, double) intrinsicWidths() => (wordWidth, words * wordWidth);
+}
+
+/// [words] words of [_Words.wordWidth] on lines of [_Words.lineHeight],
+/// set around a float's outline: the right inset of each line placed is
+/// logged in [insets].
+final class _ShapedWords extends _Words implements ShapedContent {
+  new(int words, this.insets) : super(words, []);
+
+  final List<double> insets;
+
+  @override
+  CustomPlacement? placeAround(
+    double width,
+    double available, {
+    required bool atTop,
+    required (double, double) Function(double top, double bottom) insets,
+  }) {
+    var next = from;
+    var lines = 0;
+    while (next < words &&
+        (lines + 1) * _Words.lineHeight <= available + 1e-6) {
+      final (left, right) = insets(
+        lines * _Words.lineHeight,
+        (lines + 1) * _Words.lineHeight,
+      );
+      this.insets.add(right);
+      next += math.max(1, ((width - left - right) / _Words.wordWidth).floor());
+      lines++;
+    }
+    if (lines == 0) return null;
+    return CustomPlacement(
+      height: lines * _Words.lineHeight,
+      rest: next < words ? _Words(words, [], from: next) : null,
+      paint: (page, x, top) {},
+    );
+  }
 }

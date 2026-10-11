@@ -21,6 +21,7 @@ import 'package:ptome/src/converter.dart';
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
+import 'package:ptome/src/image_shape.dart';
 import 'package:ptome/src/index_catalog.dart' show indexHasCategoryHeadings;
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
@@ -2637,7 +2638,10 @@ final class PdfConverter extends BuiltInConverter
         if (_reportTags != null && block is! Section) {
           _tagLast(before, block);
         }
-        if (block is! Section && block.role != null) _sideFloat(block, before);
+        if (block is! Section &&
+            (block.role != null || block.hasAttr('shape'))) {
+          _sideFloat(block, before);
+        }
       }
     } else if (node is Block && node.contentModel != ContentModel.compound) {
       if (node.content() case final text?) {
@@ -2658,6 +2662,44 @@ final class PdfConverter extends BuiltInConverter
   /// next, beside what is set there (a report's sidebar).
   void _sideFloat(AbstractBlock block, int from) {
     if (asciidoctorCompat(_document, CompatFormat.pdf)) return;
+    // An image floated by its `float` attribute that has a `shape`: to that
+    // side, as wide as it is set, the text running around its outline
+    // (`image_float_gap`, `image_float_shape_margin`...).
+    if (block.context == BlockContext.image && block.hasAttr('shape')) {
+      final side = switch (block.attr('float')) {
+        'left' => FloatSide.left,
+        'right' => FloatSide.right,
+        _ => null,
+      };
+      if (side != null) {
+        final pageWidth = _pageSize(_document).$1;
+        final content = pageWidth - _pageMargins(_document).horizontal;
+        final width =
+            _imageWidth(block).resolve(content, pageWidth) ?? content / 3;
+        final gap = switch (_theme.value('image_float_gap')) {
+          ThemeList(:final values) when values.isNotEmpty => _toPoints(
+            values.first,
+          ),
+          ThemeNumber(:final value) => value.toDouble(),
+          _ => 12.0,
+        };
+        final boxes = _out.sublist(from);
+        _out
+          ..removeRange(from, _out.length)
+          ..add(
+            BlockBox(
+              boxes,
+              style: BoxStyle(
+                side: side,
+                sideWidth: width,
+                sideGap: gap,
+                sideShape: _floatShape(block, 'image_float', width),
+              ),
+            ),
+          );
+        return;
+      }
+    }
     for (final role in block.roles) {
       final key = 'role_${role.replaceAll('-', '_')}_float';
       final side = switch (_s(key)) {
@@ -2685,11 +2727,58 @@ final class PdfConverter extends BuiltInConverter
               side: side,
               sideWidth: width,
               sideGap: _length('${key}_gap', _font.size) ?? _font.size,
+              sideShape: _floatShape(block, key, width),
             ),
           ),
         );
       return;
     }
+  }
+
+  /// The outline of the image [block] floats (its `shape` attribute, else
+  /// the theme's `<key>_shape`: `alpha`, its opaque pixels' outline, the
+  /// pixels above `<key>_shape_threshold` (0.5) of opacity, with
+  /// `<key>_shape_margin` around them), drawn [width] wide; null for its
+  /// box.
+  FloatShape? _floatShape(AbstractBlock block, String key, double width) {
+    if (block.context != BlockContext.image) return null;
+    final kind = block.attr('shape') ?? _s('${key}_shape');
+    if (kind != 'alpha') return null;
+    final target = block.attr('target');
+    if (target == null) return null;
+    final bytes = _imageBytes(block, target);
+    if (bytes == null) return null;
+    final outline = alphaOutline(
+      bytes,
+      threshold: (_n('${key}_shape_threshold') ?? 0.5).toDouble(),
+    );
+    if (outline == null) return null;
+    final scale = width / outline.width;
+    final band = outline.bandRows * scale;
+    final margin = _length('${key}_shape_margin', _font.size) ?? 0;
+    // Each band's columns in points, then grown by the margin: across
+    // and to the bands within it above and below.
+    final reach = (margin / band).ceil();
+    final bands = outline.bands;
+    return FloatShape(band, [
+      for (var i = 0; i < bands.length; i++)
+        () {
+          double? left;
+          double? right;
+          for (var j = i - reach; j <= i + reach; j++) {
+            if (j < 0 || j >= bands.length) continue;
+            if (bands[j] case (final first, final last)) {
+              final l = first * scale - margin;
+              final r = (last + 1) * scale + margin;
+              left = left == null ? l : math.min(left, l);
+              right = right == null ? r : math.max(right, r);
+            }
+          }
+          return left == null
+              ? null
+              : (math.max<double>(0, left), math.min(width, right!));
+        }(),
+    ]);
   }
 
   /// The block after [block] in reading order, looking out of the
@@ -5581,7 +5670,13 @@ final class PdfConverter extends BuiltInConverter
     // A floated image followed by a paragraph: the paragraphs after it
     // wrap around it (the gem's `init_float_box`).
     final side = floatTo == 'left' || floatTo == 'right' ? floatTo! : null;
+    // (One with a `shape`, in the modern engine: a block floating to a side
+    // (`_sideFloat`) the text runs around.)
+    final shaped =
+        node.hasAttr('shape') &&
+        !asciidoctorCompat(_document, CompatFormat.pdf);
     if (side != null &&
+        !shaped &&
         next is Block &&
         next.context == BlockContext.paragraph) {
       final paragraph = next;

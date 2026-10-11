@@ -14,6 +14,8 @@
 /// Syntax highlighting goes through the document's [SyntaxHighlighterBase].
 library;
 
+import 'dart:math' as math;
+
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/block.dart';
@@ -24,8 +26,10 @@ import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/highlight/highlight.dart' show CssMode;
 import 'package:ptome/src/highlight/syntax_highlighter.dart';
+import 'package:ptome/src/image_shape.dart';
 import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
+import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/jump.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
@@ -1346,11 +1350,61 @@ class Html5Converter extends BuiltInConverter {
     final titleEl = node.hasTitle
         ? '\n<div class="title">${node.captionedTitle()}</div>'
         : '';
-    return '<div$idAttr$classAttr>\n'
+    return '<div$idAttr$classAttr${_shapeStyle(node, target)}>\n'
         '<div class="content">\n'
         '$wrappedImg\n'
         '</div>$titleEl\n'
         '</div>';
+  }
+
+  /// The `shape-outside` of a floated image whose `shape` is `alpha`: the
+  /// outline of its opaque pixels, as a polygon of the block's box
+  /// (computed here, so that no browser need read the image for it), the
+  /// `shape-margin` attribute's room around it (0.75em); none for an
+  /// image with a caption, whose box the caption shares.
+  String _shapeStyle(Block node, String target) {
+    final side = node.attr('float');
+    if (node.attr('shape') != 'alpha' ||
+        (side != 'left' && side != 'right') ||
+        node.hasTitle ||
+        Helpers.isUriish(target) ||
+        asciidoctorCompat(node.document! as Document, CompatFormat.html)) {
+      return '';
+    }
+    final path = node.normalizeSystemPath(
+      target,
+      start: node.attr('imagesdir'),
+      targetName: 'image',
+    );
+    if (!io.isFile(path)) return '';
+    final outline = alphaOutline(io.readBytes(path), maxBands: 60);
+    if (outline == null) return '';
+    String percent(num value, int of) => '${(value * 1000 / of).round() / 10}%';
+    final right = side == 'right';
+    final edge = right ? '100%' : '0%';
+    // The contour on the text's side: the outline's left edge for an
+    // image at the right, its right edge for one at the left.
+    String x((int, int)? band) => switch (band) {
+      (final first, final last) => percent(
+        right ? first : last + 1,
+        outline.width,
+      ),
+      null => edge,
+    };
+    String y(int row) => percent(
+      math.min(row * outline.bandRows, outline.height),
+      outline.height,
+    );
+    final points = [
+      '$edge 0%',
+      for (final (i, band) in outline.bands.indexed) ...[
+        '${x(band)} ${y(i)}',
+        '${x(band)} ${y(i + 1)}',
+      ],
+      '$edge 100%',
+    ];
+    return ' style="shape-outside:polygon(${points.join(',')});'
+        'shape-margin:${node.attr('shape-margin') ?? '0.75em'}"';
   }
 
   /// Converts the [node] listing block.

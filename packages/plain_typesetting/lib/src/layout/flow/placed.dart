@@ -56,6 +56,7 @@ final class _Exclusion {
     required this.gap,
     required this.top,
     required this.bottom,
+    this.shape,
   });
 
   final FloatSide side;
@@ -64,6 +65,30 @@ final class _Exclusion {
   final double gap;
   final double top;
   final double bottom;
+
+  /// Its outline (from its top left), when it isn't its box.
+  final FloatShape? shape;
+
+  /// What it covers between [from] and [to], down the region: from left
+  /// to right, or null for nothing.
+  (double, double)? covered(double from, double to) {
+    if (to <= top + 1e-6 || from >= bottom - 1e-6) return null;
+    final outline = shape;
+    if (outline == null) return (left, right);
+    double? low;
+    double? high;
+    final first = math.max(0, ((from - top) / outline.bandHeight).floor());
+    final last = ((to - top) / outline.bandHeight).ceil() - 1;
+    for (var i = first; i <= last; i++) {
+      final (a, b) = i < outline.bands.length
+          ? outline.bands[i] ?? (double.nan, double.nan)
+          : (0.0, right - left);
+      if (a.isNaN) continue;
+      low = math.min(low ?? a, a);
+      high = math.max(high ?? b, b);
+    }
+    return low == null ? null : (left + low, left + high!);
+  }
 }
 
 final class _Page {

@@ -90,7 +90,40 @@ final class TextLayout {
     this.alignLast,
     this.dropLines = 0,
     this.dropIndent = 0,
+    this.lineInsets = const [],
   });
+
+  /// The room taken from each line's width, by line (of this piece of the
+  /// text): at its left and at its right (beside a float's outline).
+  final List<(double, double)> lineInsets;
+
+  /// This layout with [insets] taken from its lines' widths.
+  TextLayout withLineInsets(List<(double, double)> insets) => TextLayout(
+    align: align,
+    leading: leading,
+    initialGap: initialGap,
+    paddingBottom: paddingBottom,
+    finalGap: finalGap,
+    trailingLineGap: trailingLineGap,
+    singleLine: singleLine,
+    shrinkToFit: shrinkToFit,
+    indentFirstLine: indentFirstLine,
+    normalizeLineHeight: normalizeLineHeight,
+    forceJustify: forceJustify,
+    orphans: orphans,
+    widows: widows,
+    wrapIndent: wrapIndent,
+    wrapMarker: wrapMarker,
+    at: at,
+    skew: skew,
+    overhang: overhang,
+    capLines: capLines,
+    justifyWidest: justifyWidest,
+    alignLast: alignLast,
+    dropLines: dropLines,
+    dropIndent: dropIndent,
+    lineInsets: insets,
+  );
 
   /// How many lines at the start of the text are set [dropIndent] in, to
   /// make room for a drop (a large chapter number or initial beside
@@ -385,7 +418,7 @@ final class _Line {
 
 /// Text laid out in lines (Knuth and Plass's line breaking, or for code
 /// one line at a time with a hanging indent), as plain_pdf custom content.
-final class TextBox implements CustomContent {
+final class TextBox implements ShapedContent {
   /// The text of [fragments] (from the markup) starting from [state],
   /// laid out by [layout].
   factory(
@@ -978,6 +1011,75 @@ final class TextBox implements CustomContent {
 
   final Map<(double, double, bool, String), (CustomPlacement?,)> _placements =
       {};
+
+  /// Beside a float's outline: each line set in the room [insets] leaves
+  /// it, the lines [_pitch] apart from the top; the rest as plain text.
+  @override
+  CustomPlacement? placeAround(
+    double width,
+    double available, {
+    required bool atTop,
+    required (double, double) Function(double top, double bottom) insets,
+  }) {
+    if (_items.isEmpty) return place(width, available, atTop: atTop);
+    _relabel();
+    _arrangeImages(width);
+    final pitch = _pitch(width);
+    final gap = _layout.initialGap;
+    final count = available.isFinite ? (available / pitch).ceil() + 1 : 0;
+    final shaped = TextBox._(
+      _items,
+      _state,
+      _layout.withLineInsets([
+        for (var i = 0; i < count; i++)
+          insets(gap + i * pitch, gap + (i + 1) * pitch),
+      ]),
+      _context,
+      first: first,
+      continuedIndent: continuedIndent,
+    );
+    final placed = shaped._place(width, available, atTop: atTop);
+    return switch (placed?.rest) {
+      final TextBox rest => CustomPlacement(
+        height: placed!.height,
+        anchors: placed.anchors,
+        paint: placed.paint,
+        rest: TextBox._(
+          rest._items,
+          rest._state,
+          _layout,
+          rest._context,
+          first: false,
+          continuedIndent: rest.continuedIndent,
+        ),
+      ),
+      _ => placed,
+    };
+  }
+
+  /// The distance between the text's lines at [width]: its second line's
+  /// height (its first's when it has one line).
+  double _pitch(double width) {
+    double heightOf(int lines) {
+      final wrap = _wrapOf(
+        [for (final item in _items) item.copy()],
+        _state,
+        _layout,
+        _context,
+        width,
+        double.infinity,
+        firstPiece: first,
+        breaks: _breaksNow(),
+        continuedIndent: continuedIndent,
+        maxLines: lines,
+      )..run();
+      return wrap.height;
+    }
+
+    final one = heightOf(1);
+    final two = heightOf(2);
+    return two > one + 1e-6 ? two - one : one;
+  }
 
   /// Whether the last [_place] reported that the text cannot fit.
   bool _reported = false;
@@ -2084,7 +2186,9 @@ base class _Wrap {
     return 0;
   }
 
-  void _printLine(double indent) {
+  void _printLine(double indent, [double right = 0]) {
+    // (A line beside a float's outline ends [right] short of the width.)
+    final room = _width - right;
     // Justified, but not the last line of a paragraph, unless it is
     // wider than the room (the optimal wrap shrinks spaces to fit a line;
     // Prawn's wrap never fills a line past the room).
@@ -2093,9 +2197,9 @@ base class _Wrap {
         _spaceCount > 0 &&
         (_layout.forceJustify ||
             !_paragraphFinished ||
-            _accumulatedWidth > _width - indent + 0.0001);
+            _accumulatedWidth > room - indent + 0.0001);
     final hang = _layout.overhang > 0 ? _layout.overhang * _overhang() : 0.0;
-    final measure = math.min(_justifyTo ?? _width, _width);
+    final measure = math.min(_justifyTo ?? room, room);
     var wordSpacing = justify
         ? (measure - indent + hang - _accumulatedWidth) / _spaceCount
         : 0.0;
@@ -2121,7 +2225,7 @@ base class _Wrap {
       );
     }
     final lineWidth = printed.fold<double>(0, (sum, f) => sum + f.width);
-    final available = _width - indent + hang;
+    final available = room - indent + hang;
     final offset = switch (justify ? 'justify' : _lineAlign) {
       'center' => available * 0.5 - lineWidth * 0.5,
       'right' => available - lineWidth,
@@ -2451,9 +2555,14 @@ final class _OptimalWrap extends _Wrap {
     final indent = firstPiece ? _layout.indentFirstLine : 0.0;
     // (A drop beside the first lines, where the text starts.)
     final drop = firstPiece ? _layout.dropLines : 0;
+    // (Beside a float's outline, each line's room.)
+    (double, double) inset(int line) =>
+        line < _layout.lineInsets.length ? _layout.lineInsets[line] : (0, 0);
     double widthOf(int line) =>
         (line == 0 ? _width - indent : _width) -
-        (line < drop ? _layout.dropIndent : 0);
+        (line < drop ? _layout.dropIndent : 0) -
+        inset(line).$1 -
+        inset(line).$2;
     // The breaker's items, and the piece each comes from.
     final items = <LineItem>[];
     final from = <int>[];
@@ -2673,7 +2782,9 @@ final class _OptimalWrap extends _Wrap {
       _moveBaselineDown();
       _printLine(
         (lineNumber == 0 ? indent : 0) +
-            (lineNumber < drop ? _layout.dropIndent : 0),
+            (lineNumber < drop ? _layout.dropIndent : 0) +
+            inset(lineNumber).$1,
+        inset(lineNumber).$2,
       );
       lineNumber++;
       if (_layout.singleLine) break;
