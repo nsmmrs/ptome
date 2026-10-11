@@ -1,0 +1,883 @@
+= Working Draft, Programming Languages — C++: Basics
+:units: iso-cpp
+:sectids!:
+:toc:
+
+== @basic Basics
+
+=== @basic.pre Preamble
+
+@
+
+[.note]
+====
+This Clause presents the basic concepts of the C++ language.
+It explains the difference between an object and a
+name and how they relate to the value categories for expressions.
+It introduces the concepts of a
+declaration and a definition and presents C++'s
+notion of type, scope, linkage, and
+storage duration. The mechanisms for starting and
+terminating a program are discussed. Finally, this Clause presents the
+fundamental types of the language and lists the ways of constructing
+compound types from these.
+
+====
+
+@
+
+[.note]
+====
+This Clause does not cover concepts that affect only a single
+part of the language. Such concepts are discussed in the relevant
+Clauses.
+
+====
+
+@ A [.dfn]#name# is
+
+* an __identifier__ token ({startsb}lex.token{endsb}, {startsb}lex.name{endsb}) other than
+
+* the __identifier__ of a
+ __label__ ({startsb}stmt.label{endsb}) or
+ __literal-operator-id__ ({startsb}over.literal{endsb}),
+* the __identifier__ following a `goto` in a
+ __jump-statement__ ({startsb}stmt.jump.general{endsb}),
+* any __identifier__ in a
+ __module-name__ ({startsb}module.unit{endsb}) or
+ __attribute-token__ ({startsb}dcl.attr.grammar{endsb}), or
+
+* a __conversion-function-id__ ({startsb}class.conv.fct{endsb}),
+* an __operator-function-id__ ({startsb}over.oper{endsb}), or
+* a __literal-operator-id__ ({startsb}over.literal{endsb}).
+
+@ Two names are [.dfn]#the same# if
+
+* they are __identifier__{s} composed of the same character sequence, or
+* they are __conversion-function-id__{s} formed with equivalent ({startsb}temp.over.link{endsb}) types, or
+* they are __operator-function-id__{s} formed with the same operator, or
+* they are __literal-operator-id__{s} formed with the same literal suffix identifier.
+
+@ Every name is introduced by a [.dfn]#declaration#, which is a
+
+* __name-declaration__,
+__block-declaration__, or
+__member-declaration__ ({startsb}dcl.pre{endsb}, {startsb}class.mem{endsb}),
+* __init-declarator__ ({startsb}dcl.decl{endsb}),
+* __identifier__
+in a structured binding declaration ({startsb}dcl.struct.bind{endsb}),
+* __identifier__
+in a __result-name-introducer__
+in a postcondition assertion ({startsb}dcl.contract.res{endsb}),
+* __init-capture__ ({startsb}expr.prim.lambda.capture{endsb}),
+* __condition__ with a __declarator__ ({startsb}stmt.pre{endsb}),
+* __member-declarator__ ({startsb}class.mem{endsb}),
+* __using-declarator__ ({startsb}namespace.udecl{endsb}),
+* __parameter-declaration__ ({startsb}dcl.fct{endsb}, {startsb}temp.param{endsb}),
+* __type-parameter__ ({startsb}temp.param{endsb}),
+* __type-tt-parameter__ ({startsb}temp.param{endsb}),
+* __variable-tt-parameter__ ({startsb}temp.param{endsb}),
+* __concept-tt-parameter__ ({startsb}temp.param{endsb}),
+* __elaborated-type-specifier__
+that introduces a name ({startsb}dcl.type.elab{endsb}),
+* __class-specifier__ ({startsb}class.pre{endsb}),
+* __enum-specifier__ or
+__enumerator-definition__ ({startsb}dcl.enum{endsb}),
+* __exception-declaration__ ({startsb}except.pre{endsb}), or
+* implicit declaration of an injected-class-name ({startsb}class.pre{endsb}).
+
+[.note]
+====
+The term declaration is not a synonym for the grammar non-terminal __declaration__ ({startsb}dcl.pre{endsb}).
+
+====
+
+[.note]
+====
+The interpretation of a __for-range-declaration__ produces
+one or more of the above ({startsb}stmt.ranged{endsb}).
+
+====
+
+@
+
+[.note]
+====
+Some names denote types or templates.
+In general, whenever a name is encountered
+it is necessary to look it up ({startsb}basic.lookup{endsb})
+to determine whether that name denotes one of these entities
+before continuing to parse the program that contains it.
+
+====
+
+@ A [.dfn]#variable# is introduced by the
+declaration __D__ of
+
+* a reference other than a non-static data member or
+* an object,
+
+where __D__ is not the __parameter-declaration__ of
+a __template-parameter__.
+
+@ An [.dfn]#entity# is a
+variable,
+structured binding,
+result binding,
+function,
+enumerator,
+type,
+type alias,
+non-static data member,
+bit-field,
+template,
+namespace,
+namespace alias,
+template parameter,
+function parameter, or
+__init-capture__.
+The [.dfn]#underlying entity# of an entity is that entity
+unless otherwise specified.
+A name [.dfn]#denotes# the underlying entity of
+the entity declared by each declaration that introduces the name.
+
+[.note]
+====
+Type aliases and namespace aliases have underlying entities
+that are distinct from themselves.
+
+====
+
+@ A [.dfn]#local entity# is a variable with
+automatic storage duration ({startsb}basic.stc.auto{endsb}),
+a structured binding ({startsb}dcl.struct.bind{endsb})
+whose corresponding variable is such an entity,
+a result binding ({startsb}dcl.contract.res{endsb}),
+or the `*keyword{this}` object ({startsb}expr.prim.this{endsb}).
+
+@ A name used in more than one translation unit can potentially
+refer to the same entity in these translation units depending on the
+linkage ({startsb}basic.link{endsb}) of the name specified in each
+translation unit.
+
+=== @basic.def Declarations and definitions
+
+@ A declaration (<<[basic.pre]>>) may (re)introduce
+one or more names and/or entities into a translation
+unit.
+If so, the
+declaration specifies the interpretation and semantic properties of these names.
+A declaration of an entity __X__ is
+a [.dfn]#redeclaration# of __X__
+if another declaration of __X__ is reachable from it ({startsb}module.reach{endsb});
+otherwise, it is a [.dfn]#first declaration#.
+
+[.note]
+====
+A declaration can also have effects including:
+
+* a static assertion ({startsb}dcl.pre{endsb}),
+* controlling template instantiation ({startsb}temp.explicit{endsb}),
+* guiding template argument deduction for constructors ({startsb}temp.deduct.guide{endsb}),
+* use of attributes ({startsb}dcl.attr{endsb}), and
+* nothing (in the case of an __empty-declaration__).
+
+====
+
+@ Each entity declared by a declaration is
+also [.dfn]#defined# by that declaration unless:
+
+* it declares a function
+without specifying the function's body ({startsb}dcl.fct.def{endsb}),
+* it contains
+the
+`extern` specifier ({startsb}dcl.stc{endsb}) or a
+__linkage-specification__
+footnote:[Appearing inside the brace-enclosed
+__declaration-seq__ in a __linkage-specification__ does
+not affect whether a declaration is a definition.
+]and neither an __initializer__ nor a
+__function-body__,
+* it declares a non-inline static data member in a class
+definition ({startsb}class.mem{endsb}, {startsb}class.static{endsb}),
+* it declares a static data member outside a class definition
+and the variable was defined within the class with the `constexpr`
+specifier ({startsb}class.static.data{endsb}) (this usage is deprecated; see {startsb}depr.static.constexpr{endsb}),
+* it is an __elaborated-type-specifier__ ({startsb}class.name{endsb}),
+* it is an
+__opaque-enum-declaration__ ({startsb}dcl.enum{endsb}),
+* it is a
+__template-parameter__ ({startsb}temp.param{endsb}),
+* it is a
+__parameter-declaration__ ({startsb}dcl.fct{endsb}) in a function
+declarator that is not the __declarator__ of a
+__function-definition__,
+* it is a
+`typedef` declaration ({startsb}dcl.typedef{endsb}),
+* it is an __alias-declaration__ ({startsb}dcl.typedef{endsb}),
+* it is a __namespace-alias-definition__ ({startsb}namespace.alias{endsb}),
+* it is a __using-declaration__ ({startsb}namespace.udecl{endsb}),
+* it is a __deduction-guide__ ({startsb}temp.deduct.guide{endsb}),
+* it is a __staticpass:[_]assert-declaration__ ({startsb}dcl.pre{endsb}),
+* it is a __consteval-block-declaration__,
+* it is an
+__attribute-declaration__ ({startsb}dcl.pre{endsb}),
+* it is an
+__empty-declaration__ ({startsb}dcl.pre{endsb}),
+* it is a __using-directive__ ({startsb}namespace.udir{endsb}),
+* it is a __using-enum-declaration__ ({startsb}enum.udecl{endsb}),
+* it is a __template-declaration__ ({startsb}temp.pre{endsb})
+whose __template-head__ is not followed by
+either a __concept-definition__ or a __declaration__
+that defines a function, a class, a variable, or a static data member,
+* it is an explicit instantiation declaration ({startsb}temp.explicit{endsb}), or
+* it is an __explicit-specialization__ ({startsb}temp.expl.spec{endsb}) whose
+__declaration__ is not a definition.
+
+A declaration is said to be a [.dfn]#definition# of each entity that it defines.
+
+[.example]
+====
+All but one of the following are definitions:
+
+[source,cpp]
+----
+int a;                          // defines \tcode{a}
+extern const int c = 1;         // defines \tcode{c}
+int f(int x) { return x+a; }    // defines \tcode{f} and defines \tcode{x}
+struct S { int a; int b; };     // defines \tcode{S}, \tcode{S::a}, and \tcode{S::b}
+struct X {                      // defines \tcode{X}
+  int x;                        // defines non-static data member \tcode{x}
+  static int y;                 // declares static data member \tcode{y}
+  X(): x(0) { }                 // defines a constructor of \tcode{X}
+};
+int X::y = 1;                   // defines \tcode{X::y}
+enum { up, down };              // defines \tcode{up} and \tcode{down}
+namespace N { int d; }          // defines \tcode{N} and \tcode{N::d}
+X anX;                          // defines \tcode{anX}
+
+----
+
+whereas these are just declarations:
+
+[source,cpp]
+----
+extern int a;                   // declares \tcode{a}
+extern const int c;             // declares \tcode{c}
+int f(int);                     // declares \tcode{f}
+struct S;                       // declares \tcode{S}
+typedef int Int;                // declares \tcode{Int}
+namespace N1 = N;               // declares \tcode{N1}
+extern X anotherX;              // declares \tcode{anotherX}
+using N::d;                     // declares \tcode{d}
+----
+
+====
+
+@
+
+[.note]
+====
+In some circumstances, C++ implementations implicitly define the
+default constructor ({startsb}class.default.ctor{endsb}),
+copy constructor, move constructor ({startsb}class.copy.ctor{endsb}),
+copy assignment operator, move assignment operator ({startsb}class.copy.assign{endsb}),
+or destructor ({startsb}class.dtor{endsb}) member functions.
+
+====
+
+[.example]
+====
+Given
+
+[source,cpp]
+----
+#include <string>
+
+struct C {
+  std::string s;                // \tcode{std::string} is the standard library class\iref{string.classes}
+};
+
+int main() {
+  C a;
+  C b = a;
+  b = a;
+}
+----
+
+the implementation will implicitly define functions to make the
+definition of `C` equivalent to
+
+[source,cpp]
+----
+struct C {
+  std::string s;
+  C() : s() { }
+  C(const C& x): s(x.s) { }
+  C(C&& x): s(static_cast<std::string&&>(x.s)) { }
+      @\rlap{\textnormal{\textit{//}}}@    : s(std::move(x.s)) { }
+  C& operator=(const C& x) { s = x.s; return *this; }
+  C& operator=(C&& x) { s = static_cast<std::string&&>(x.s); return *this; }
+      @\rlap{\textnormal{\textit{//}}}@                { s = std::move(x.s); return *this; }
+  ~C() { }
+};
+----
+
+====
+
+@
+
+[.note]
+====
+A class name can also be implicitly declared by an
+__elaborated-type-specifier__ ({startsb}dcl.type.elab{endsb}).
+
+====
+
+@ In the definition of an object,
+the type of that object shall not be
+an incomplete type ({startsb}term.incomplete.type{endsb}),
+an abstract class type ({startsb}class.abstract{endsb}), or
+a (possibly multidimensional) array thereof.
+
+=== @basic.def.odr One-definition rule
+
+@ Each of the following is termed a [.dfn]#definable item#:
+
+* a class type ({startsb}class{endsb}),
+* an enumeration type ({startsb}dcl.enum{endsb}),
+* a function ({startsb}dcl.fct{endsb}),
+* a variable (<<[basic.pre]>>),
+* a templated entity ({startsb}temp.pre{endsb}),
+* a default argument for a parameter (for a function in a given scope) ({startsb}dcl.fct.default{endsb}), or
+* a default template argument ({startsb}temp.param{endsb}).
+
+@ No translation unit shall contain more than one definition of any
+definable item.
+
+@ An expression or conversion is [.dfn]#potentially evaluated# unless it is
+an unevaluated operand ({startsb}expr.context{endsb}),
+a subexpression thereof, or
+a conversion in an initialization or conversion sequence in such a context.
+The set of [.dfn]#potential results# of an expression __E__ is
+defined as follows:
+
+* If __E__ is an __id-expression__ ({startsb}expr.prim.id{endsb}) or
+a __splice-expression__ ({startsb}expr.prim.splice{endsb}), the set
+contains only __E__.
+* If __E__ is a subscripting operation ({startsb}expr.sub{endsb}) with an array operand, the set contains the potential results of that operand.
+* If __E__ is a class member access expression ({startsb}expr.ref{endsb}) of the form
+__Epass:[_]1__ `.` __`template`__~opt~ __Epass:[_]2__,
+where __Epass:[_]2__ designates a non-static data member or
+a direct base class relationship,
+the set contains the potential results of __Epass:[_]1__.
+* If __E__ is a class member access expression naming a static data member,
+the set contains the __id-expression__ designating the data member.
+* If __E__ is a pointer-to-member expression ({startsb}expr.mptr.oper{endsb}) of the form
+__Epass:[_]1__ `.*` __Epass:[_]2__,
+the set contains the potential results of __Epass:[_]1__.
+* If __E__ has the form `($E_1$)`, the set contains the potential results of __Epass:[_]1__.
+* If __E__ is a glvalue conditional expression ({startsb}expr.cond{endsb}), the set is the union of the sets of
+potential results of the second and third operands.
+* If __E__ is a comma expression ({startsb}expr.comma{endsb}), the set contains the potential results of the right operand.
+* Otherwise, the set is empty.
+
+[.note]
+====
+This set is a (possibly-empty) set of
+__id-expression__{s} and __splice-expression__s,
+each of which is either __E__ or a subexpression of __E__.
+
+[.example]
+====
+In the following example, the set of potential results of the initializer
+of `n` contains the first `S::x` subexpression, but not the second
+`S::x` subexpression.
+The set of potential results of the initializer of `o` contains
+the subexpression `[:caretcaret S::x:]`.
+
+[source,cpp]
+----
+struct S { static const int x = 0; };
+const int &f(const int &r);
+int n = b ? (1, S::x)           // \tcode{S::x} is not odr-used here
+          : f(S::x);            // \tcode{S::x} is odr-used here, so a definition is required
+int o = [:^^S::x:];
+----
+
+====
+
+====
+
+@ A function is [.dfn]#named by#
+an expression or conversion as follows:
+
+* A function is named by an expression or conversion
+ if it is the selected member
+ of an overload set ({startsb}basic.lookup{endsb}, {startsb}over.match{endsb}, {startsb}over.over{endsb})
+ in an overload resolution performed
+ as part of forming that expression or conversion,
+ and either
+ it is not a pure virtual function or
+ the expression is an __id-expression__ naming the function with
+ an explicitly qualified name
+ that does not form a pointer to member ({startsb}expr.unary.op{endsb}).
+
+[.note]
+====
+This covers
+ taking the address of functions ({startsb}conv.func{endsb}, {startsb}expr.unary.op{endsb}),
+ calls to named functions ({startsb}expr.call{endsb}),
+ operator overloading ({startsb}over{endsb}),
+ user-defined conversions ({startsb}class.conv.fct{endsb}),
+ allocation functions for __new-expression__{s} ({startsb}expr.new{endsb}), as well as
+ non-default initialization ({startsb}dcl.init{endsb}).
+ A constructor selected to copy or move an object of class type
+ is considered to be named by an expression or conversion
+ even if the call is actually elided by the implementation ({startsb}class.copy.elision{endsb}).
+
+====
+
+* A deallocation function for a class
+ is named by a __new-expression__
+ if it is the single matching deallocation function
+ for the allocation function selected by overload resolution,
+ as specified in {startsb}expr.new{endsb}.
+* A deallocation function for a class
+ is named by a __delete-expression__
+ if it is the selected usual deallocation function
+ as specified in {startsb}expr.delete{endsb} and {startsb}class.free{endsb}.
+
+@ A variable is named by an expression
+if the expression is an __id-expression__ or
+__splice-expression__ ({startsb}expr.prim.splice{endsb})
+that designates it.
+A variable `x` that is named by a
+potentially evaluated expression __N__
+that appears at a point __P__
+is [.dfn]#odr-used# by __N__ unless
+
+* `x` is a reference
+that is usable in constant expressions at __P__ ({startsb}expr.const.init{endsb}), or
+* __N__ is an element of the set of potential results of an expression __E__, where
+
+* __E__ is a discarded-value expression ({startsb}expr.context{endsb})
+to which the lvalue-to-rvalue conversion is not applied, or
+* `x` is a non-volatile object
+that is usable in constant expressions at __P__ and
+has no mutable subobjects, and
+
+* __E__ is a class member access expression ({startsb}expr.ref{endsb})
+naming a non-static data member of reference type and
+whose object expression has non-volatile-qualified type, or
+* the lvalue-to-rvalue conversion ({startsb}conv.lval{endsb}) is applied to __E__ and
+__E__ has non-volatile-qualified non-class type.
+
+[.example]
+====
+
+[source,cpp]
+----
+int f(int);
+int g(int&);
+struct A {
+  int x;
+};
+struct B {
+  int& r;
+};
+int h(bool cond) {
+  constexpr A a = {1};
+  constexpr const volatile A& r = a;    // odr-uses \tcode{a}
+  int _ = f(cond ? a.x : r.x);          // does not odr-use \tcode{a} or \tcode{r}
+  int x, y;
+  constexpr B b1 = {x}, b2 = {y};       // odr-uses \tcode{x} and \tcode{y}
+  int _ = g(cond ? b1.r : b2.r);        // does not odr-use \tcode{b1} or \tcode{b2}
+  int _ = ((cond ? x : y), 0);          // does not odr-use \tcode{x} or \tcode{y}
+  return [] {
+    return b1.r;                        // error: \tcode{b1} is odr-used here because the object
+                                        // referred to by \tcode{b1.r} is not constexpr-referenceable here
+  }();
+}
+----
+
+====
+
+@ A structured binding is named by an expression
+if that expression is either an __id-expression__ or
+a __splice-expression__
+that designates that structured binding.
+A structured binding is odr-used
+if it is named by a potentially evaluated expression.
+
+@ `*keyword{this}` is odr-used if `this` appears as a potentially evaluated expression
+(including as the result of any implicit transformation to
+a class member access expression ({startsb}expr.prim.id.general{endsb})).
+
+@ A virtual member
+function is odr-used if it is not pure.
+A function is odr-used if it is named by
+a potentially evaluated expression or conversion.
+A non-placement allocation or deallocation
+function for a class is odr-used by the definition of a constructor of that
+class. A non-placement deallocation function for a class is odr-used by the
+definition of the destructor of that class, or by being selected by the
+lookup at the point of definition of a virtual
+destructor ({startsb}class.dtor{endsb}).
+footnote:[An implementation is not required
+to call allocation and
+deallocation functions from constructors or destructors; however, this
+is a permissible implementation technique.
+]
+
+@ An assignment operator function in a class is odr-used by an
+implicitly-defined
+copy assignment or move assignment function for another class as specified
+in {startsb}class.copy.assign{endsb}.
+A constructor for a class is odr-used as specified
+in {startsb}dcl.init{endsb}. A destructor for a class is odr-used if it is potentially
+invoked ({startsb}class.dtor{endsb}).
+
+@ A local entity (<<[basic.pre]>>)
+is [.dfn]#odr-usable# in a scope ({startsb}basic.scope.scope{endsb}) if
+
+* either the local entity is not `*keyword{this}`, or an enclosing class or non-lambda function parameter scope exists and,
+if the innermost such scope is a function parameter scope,
+it corresponds to a non-static member function, and
+* for each intervening scope ({startsb}basic.scope.scope{endsb})
+between the point at which the entity is introduced and the scope
+(where `*keyword{this}` is considered to be introduced
+within the innermost enclosing class or non-lambda function parameter scope),
+either
+
+* the intervening scope is a block scope,
+* the intervening scope is a contract-assertion scope ({startsb}basic.scope.contract{endsb}),
+* the intervening scope is the function parameter scope of a __lambda-expression__ or __requires-expression__, or
+* the intervening scope is the lambda scope of a __lambda-expression__
+that has a __simple-capture__
+naming the entity or has a __capture-default__, and
+the block scope of the __lambda-expression__
+is also an intervening scope.
+
+If a local entity is odr-used
+in a scope in which it is not odr-usable,
+the program is ill-formed.
+
+[.example]
+====
+
+[source,cpp]
+----
+void f(int n) {
+  [] { n = 1; };                // error: \tcode{n} is not odr-usable due to intervening \grammarterm{lambda-expression}
+  struct A {
+    void f() { n = 2; }         // error: \tcode{n} is not odr-usable due to intervening function parameter scope
+  };
+  void g(int = n);              // error: \tcode{n} is not odr-usable due to intervening function parameter scope
+  [=](int k = n) {};            // error: \tcode{n} is not odr-usable due to being
+                                // outside the block scope of the \grammarterm{lambda-expression}
+  [&] { [n]{ return n; }; };    // OK
+}
+----
+
+====
+
+@
+
+[.example]
+====
+
+[source,cpp]
+----
+void g() {
+  constexpr int x = 1;
+  auto lambda = [] <typename T, int = ((T)x, 0)> {};    // OK
+  lambda.operator()<int, 1>();          // OK, does not consider \tcode{x} at all
+  lambda.operator()<int>();             // OK, does not odr-use \tcode{x}
+  lambda.operator()<const int&>();      // error: odr-uses \tcode{x} from a context where \tcode{x} is not odr-usable
+}
+
+void h() {
+  constexpr int x = 1;
+  auto lambda = [] <typename T> { (T)x; };      // OK
+  lambda.operator()<int>();             // OK, does not odr-use \tcode{x}
+  lambda.operator()<void>();            // OK, does not odr-use \tcode{x}
+  lambda.operator()<const int&>();      // error: odr-uses \tcode{x} from a context where \tcode{x} is not odr-usable
+}
+----
+
+====
+
+@ Every program shall contain at least one definition of every
+function or variable that is odr-used in that program
+outside of a discarded statement ({startsb}stmt.if{endsb}); no diagnostic requiredbasic.def.odr.minimum.one.def.
+The definition can appear explicitly in the program, it can be found in
+the standard or a user-defined library, or (when appropriate) it is
+implicitly defined (see {startsb}class.default.ctor{endsb}, {startsb}class.copy.ctor{endsb},
+{startsb}class.dtor{endsb}, and {startsb}class.copy.assign{endsb}).
+
+[.example]
+====
+
+[source,cpp]
+----
+auto f() {
+  struct A {};
+  return A{};
+}
+decltype(f()) g();
+auto x = g();
+----
+
+A program containing this translation unit is ill-formed
+because `g` is odr-used but not defined,
+and cannot be defined in any other translation unit
+because the local class `A` cannot be named outside this
+translation unit.
+
+====
+
+@ A [.dfn]#definition domain# is
+a __private-module-fragment__ or
+the portion of a translation unit
+excluding its __private-module-fragment__ (if any).
+A definition of an inline function or variable shall be reachable
+from the end of every definition domain
+in which it is odr-used outside of a discarded statement.
+
+@ A definition of a class shall be reachable in every context in which
+the class is used in a way that requires the class type to be complete.
+
+[.example]
+====
+The following complete translation unit is well-formed,
+even though it never defines `X`:
+
+[source,cpp]
+----
+struct X;                       // declare \tcode{X} as a struct type
+struct X* x1;                   // use \tcode{X} in pointer formation
+X* x2;                          // use \tcode{X} in pointer formation
+----
+
+====
+
+[.note]
+====
+The rules for declarations and expressions
+describe in which contexts complete class types are required. A class
+type `T` must be complete if
+
+* an object of type `T` is defined (<<[basic.def]>>), or
+* a non-static class data member of type `T` is declared ({startsb}class.mem{endsb}), or
+* `T` is used as the allocated type or array element type in a __new-expression__ ({startsb}expr.new{endsb}), or
+* an lvalue-to-rvalue conversion is applied to a glvalue referring
+to an object of type `T` ({startsb}conv.lval{endsb}), or
+* an expression is converted (either implicitly or explicitly) to type `T` ({startsb}conv{endsb}, {startsb}expr.type.conv{endsb}, {startsb}expr.dynamic.cast{endsb}, {startsb}expr.static.cast{endsb}, {startsb}expr.cast{endsb}), or
+* an expression that is not a null pointer constant, and has type other than `` `keyword{void}*`, is converted to the type pointer to `T`
+or reference to `T` using a standard conversion ({startsb}conv{endsb}),
+a `dynamic_cast` ({startsb}expr.dynamic.cast{endsb}) or
+a `static_cast` ({startsb}expr.static.cast{endsb}), or
+* a class member access operator is applied to an expression of type `T` ({startsb}expr.ref{endsb}), or
+* the `typeid` operator ({startsb}expr.typeid{endsb}) or the `sizeof` operator ({startsb}expr.sizeof{endsb}) is applied to an operand of
+type `T`, or
+* a function with a return type or argument type of type `T` is defined (<<[basic.def]>>) or called ({startsb}expr.call{endsb}), or
+* a class with a base class of type `T` is defined ({startsb}class.derived{endsb}), or
+* an lvalue of type `T` is assigned to ({startsb}expr.assign{endsb}), or
+* the type `T` is the subject of an `alignof` expression ({startsb}expr.alignof{endsb}), or
+* an __exception-declaration__ has type `T`, reference to `T`, or pointer to `T` ({startsb}except.handle{endsb}).
+
+====
+
+@ If a definable item `D` is defined in a translation unit
+by an injected declaration __X__ ({startsb}expr.const.reflect{endsb}) and
+another translation unit contains a definition of `D`,
+that definition shall be an injected declaration
+having the same characteristic sequence as __X__;
+a diagnostic is required only if `D` is attached to a named module and
+a prior definition is reachable
+at the point where a later definition occursbasic.def.odr.injected.match.
+
+@ For any other definable item `D` with definitions in multiple translation units,
+
+* if `D` is a non-inline non-templated function or variablebasic.def.odr.maximum.one.def, or
+* if the definitions in different translation units
+do not satisfy the following requirementsbasic.def.odr.definition.matches,
+
+the program is ill-formed;
+a diagnostic is required only
+if the definable item is attached to a named module and
+a prior definition is reachable
+at the point where a later definition occurs.
+Given such an item,
+for all definitions of `D`, or,
+if `D` is an unnamed enumeration,
+for all definitions of `D` that are reachable at any given program point,
+the following requirements shall be satisfied.
+
+* Each such definition shall not be attached to a named module ({startsb}module.unit{endsb}).
+* Each such definition shall consist of the same sequence of tokens,
+where the definition of a closure type
+is considered to consist of the sequence of tokens of
+the corresponding __lambda-expression__.
+* In each such definition, corresponding names, looked up according to {startsb}basic.lookup{endsb}, shall denote the same entity, after
+overload resolution ({startsb}over.match{endsb}) and after matching of partial
+template specializations ({startsb}temp.spec.partial.match{endsb}), except that a name can refer to
+
+* a non-volatile const object with internal or no linkage if the object
+
+* has the same literal type in all definitions of `D`,
+* is initialized with a constant expression ({startsb}expr.const.const{endsb}),
+* is not odr-used in any definition of `D`, and
+* has the same value in all definitions of `D`,
+
+or
+* a reference with internal or no linkage
+initialized with a constant expression such that
+the reference refers to the same object or function in all definitions of `D`.
+
+* In each such definition, except within the default arguments and default template arguments of `D`,
+corresponding __lambda-expression__{s} shall have
+the same closure type (see below).
+
+* In each such definition, corresponding entities shall have the same language linkage.
+
+* In each such definition, const objects with static or thread storage duration
+shall be constant-initialized if
+the object is constant-initialized in any such definition.
+
+* In each such definition, corresponding manifestly constant-evaluated expressions
+that are not value-dependent
+shall have the same value ({startsb}expr.const{endsb}, {startsb}temp.dep.constexpr{endsb}).
+
+* In each such definition, the overloaded operators referred to, the implicit calls to conversion functions, constructors, operator
+new functions and operator delete functions, shall refer to the same
+function.
+
+* In each such definition, a default argument used by an (implicit or explicit) function call or
+a default template argument used by an (implicit or explicit)
+__template-id__,
+__simple-template-id__, or
+__splice-specialization-specifier__
+is treated as if its token sequence
+were present in the definition of `D`;
+that is, the default argument or default template argument
+is subject to the requirements described in this paragraph (recursively).
+
+* In each such definition, corresponding __reflect-expression__s ({startsb}expr.reflect{endsb})
+compute equivalent values ({startsb}expr.eq{endsb}).
+
+@ For the purposes of the preceding requirements:
+
+* If `D` is a class with an implicitly-declared constructor ({startsb}class.default.ctor{endsb}, {startsb}class.copy.ctor{endsb}),
+it is as if the constructor was
+implicitly defined in every translation unit where it is odr-used, and the
+implicit definition in every translation unit shall call the same
+constructor for a subobject of `D`.
+
+[.example]
+====
+
+[source,cpp]
+----
+// translation unit 1:
+struct X {
+  X(int, int);
+  X(int, int, int);
+};
+X::X(int, int = 0) { }
+class D {
+  X x = 0;
+};
+D d1;                           // \tcode{X(int, int)} called by \tcode{D()}
+
+// translation unit 2:
+struct X {
+  X(int, int);
+  X(int, int, int);
+};
+X::X(int, int = 0, int = 0) { }
+class D {
+  X x = 0;
+};
+D d2;                           // \tcode{X(int, int, int)} called by \tcode{D()};
+                                // \tcode{D()}'s implicit definition violates the ODR
+----
+
+====
+
+* If `D` is a class with a defaulted three-way comparison operator function ({startsb}class.spaceship{endsb}),
+it is as if the operator was
+implicitly defined in every translation unit where it is odr-used, and the
+implicit definition in every translation unit shall call the same
+comparison operators for each subobject of `D`.
+
+* If `D` is a template and is defined in more than one
+translation unit, the requirements
+apply both to names from the template's enclosing scope used in the
+template definition, and also to dependent names at
+the point of instantiation ({startsb}temp.dep{endsb}).
+
+@ These requirements also apply to corresponding entities
+defined within each definition of `D`
+(including the closure types of __lambda-expression__{s},
+but excluding entities defined within default arguments or
+default template arguments of either `D` or
+an entity not defined within `D`).
+For each such entity and for `D` itself,
+the behavior is as if there is a single entity with a single definition,
+including in the application of these requirements to other entities.
+
+[.note]
+====
+The entity is still declared in multiple translation units, and {startsb}basic.link{endsb}
+still applies to these declarations. In particular,
+__lambda-expression__{s} ({startsb}expr.prim.lambda{endsb})
+appearing in the type of `D` can result
+in the different declarations having distinct types, and
+__lambda-expression__{s} appearing in a default argument of `D`
+might still denote different types in different translation units.
+
+====
+
+@
+
+[.example]
+====
+
+[source,cpp]
+----
+inline void f(bool cond, void (*p)()) {
+  if (cond) f(false, []{});
+}
+inline void g(bool cond, void (*p)() = []{}) {
+  if (cond) g(false);
+}
+struct X {
+  void h(bool cond, void (*p)() = []{}) {
+    if (cond) h(false);
+  }
+};
+----
+
+If the definition of `f` appears in multiple translation units,
+the behavior of the program is as if
+there is only one definition of `f`.
+If the definition of `g` appears in multiple translation units,
+the program is ill-formed (no diagnostic required) because
+each such definition uses a default argument that
+refers to a distinct __lambda-expression__ closure type.
+The definition of `X` can appear
+in multiple translation units of a valid program;
+the __lambda-expression__{s} defined within
+the default argument of `X::h` within the definition of `X`
+denote the same closure type in each translation unit.
+
+====
+
+@ If, at any point in the program,
+there is more than one
+reachable unnamed enumeration definition in the same scope
+that have the same first enumerator name and
+do not have typedef names for linkage purposes ({startsb}dcl.enum{endsb}),
+those unnamed enumeration types shall be the same; no diagnostic requiredbasic.def.odr.unnamed.enum.same.type.

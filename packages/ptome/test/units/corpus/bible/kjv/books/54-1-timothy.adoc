@@ -1,0 +1,234 @@
+== @1TI
+
+[.book-title]
+The First Epistle of Paul the Apostle to Timothy
+
+=== @1
+
+[discrete.pericope]
+==== Paul’s Greeting to Timothy
+
+[.parallel]
+(<<2 Timothy 1:1–2>>)
+
+@ Paul, an apostle of Jesus Christ ##by##note:x[<<Titus 1:3>>] the commandment of ##God##note:x[<<Titus 1:3>>] our Saviour, and Lord Jesus Christ, __which__ ##__is__##note:x[<<Col 1:27>>] our hope;
+@ Unto Timothy, ##__my__##note:x[<<2 Tim 1:2; Titus 1:4>>] own son in the faith: ##Grace##note:x[<<Titus 1:4>>], mercy, __and__ peace, from God our Father and Jesus Christ our Lord.
+
+[discrete.pericope]
+==== Correcting False Teachers
+
+[.parallel]
+(<<Titus 1:10–16>>)
+
+@ As I besought thee to abide still at Ephesus, when I went into Macedonia, that thou mightest ##charge##note:x[<<Gal 1:6–7; 1 Tim 6:3; 2 John 1:9–10>>] some that they teach no other doctrine,
+@ Neither give heed ##to##note:x[<<1 Tim 4:7; Titus 1:14>>] fables and ##endless##note:x[<<Titus 3:9>>] genealogies, which minister questions, rather than godly edifying which is in faith: __so do__.
+@ Now ##the end##note:x[<<Gal 5:13–14, 22>>] of the commandment is charity out of a pure heart, and __of__ ##a good##note:x[<<1 Tim 1:19>>] conscience, and __of__ faith unfeigned:
+@ From which some having swerved have ##turned##note:x[<<1 Tim 6:20; 2 Tim 2:23–24; Titus 1:10>>] aside unto vain jangling;
+@ Desiring to be teachers of the law; ##understanding##note:x[<<Rom 1:22; 1 Tim 6:4; 2 Pet 2:12>>] neither what they say, nor whereof they affirm.
+@ But we know that ##the law##note:x[<<Ps 19:7–10; Rom 7:12–13, 16>>] __is__ good, if a man use it lawfully;
+@ Knowing this, that ##the law##note:x[<<Rom 5:20; Gal 3:19>>] is not made for a righteous man, but for the lawless and disobedient, for ##the ungodly##note:x[<<1 Pet 4:18>>] and for sinners, for unholy and profane, for murderers of fathers and murderers of mothers, for manslayers,
+@ For ##whoremongers##note:x[<<1 Cor 6:9–10>>], for them that ##defile##note:x[<<Lev 18:22>>] themselves with mankind, for menstealers, for liars, for perjured persons, and if there be any other thing that is ##contrary##note:x[<<2 Tim 4:3>>] to sound doctrine;
+@ According to the glorious gospel of ##the blessed##note:x[<<1 Tim 6:15>>] God, ##which##note:x[<<Gal 2:7; Titus 1:3>>] was committed to my trust.
+
+[discrete.pericope]
+==== God’s Grace to Paul
+
+@ And I thank Christ Jesus our Lord, ##who##note:x[<<2 Cor 12:9–10; Phil 4:13; 2 Tim 4:17>>] hath enabled me, for that he counted me faithful, putting me into the ministry;
+@ Who ##was##note:x[<<Acts 8:3>>] before a blasphemer, and a persecutor, and injurious: ##but##note:x[<<1 Pet 2:10>>] I obtained mercy, ##because##note:x[<<Heb 6:4–8>>] I did __it__ ignorantly in unbelief.
+@ And the grace of our Lord was ##exceeding##note:x[<<1 Cor 15:10; Eph 1:7–8>>] abundant ##with##note:x[<<2 Tim 1:13>>] faith and love which is in Christ Jesus.
+@ This __is__ a faithful saying, and ##worthy##note:x[<<John 3:16–17>>] of all acceptation, ##that##note:x[<<Mark 2:17; Luke 19:10>>] Christ Jesus came into the world to save sinners; of whom I am chief.
+@ Howbeit ##for this##note:x[<<Ps 25:11; Eph 2:7>>] cause ##I obtained##note:x[<<1 Tim 1:13>>] mercy, that in me first Jesus Christ might shew forth all longsuffering, for a pattern to them which should hereafter believe on him to life everlasting.
+@ Now unto ##the King##note:x[<<1 Tim 6:15–16>>] eternal, immortal, invisible, ##the only##note:x[<<Jude 1:25>>] wise God, ##__be__##note:x[<<Eph 3:20–21>>] honour and glory for ever and ever. Amen.
+@ This ##charge##note:x[<<1 Tim 4:14; 6:20; 2 Tim 4:1–3>>] I commit unto thee, son Timothy, according to the prophecies which went before on thee, that thou by them mightest war a good warfare;
+@ ##Holding##note:x[<<1 Tim 3:9; 1 Pet 3:15–16; Rev 3:10>>] faith, and a good conscience; which some having put away concerning faith have made shipwreck:
+@ Of whom is ##Hymenaeus##note:x[<<2 Tim 2:17>>] and Alexander; whom ##I have##note:x[<<1 Cor 5:4–5>>] delivered unto Satan, ##that##note:x[<<1 Cor 11:32>>] they may learn not to blaspheme.
+
+=== @2
+
+[discrete.pericope]
+==== A Call to Prayer
+
+@ I exhort therefore, that, first of all, ##supplications##note:x[<<Matt 6:9–10; Jas 5:16>>], prayers, intercessions, ##__and__##note:x[<<2 Thess 1:3>>] giving of thanks, be made for all men;
+@ For ##kings##note:x[<<Ezra 6:10; Jer 29:7>>], and __for__ all that are in authority; that we may lead a quiet and peaceable life in ##all godliness##note:x[<<1 Pet 2:9–13>>] and honesty.
+@ For ##this##note:x[<<Rom 14:18; Heb 13:16; 1 Pet 2:20>>] __is__ good and acceptable in the sight of God our Saviour;
+@ Who ##will##note:x[<<Ezek 18:23, 32; 2 Pet 3:9>>] have all men to be saved, and to come unto the knowledge of the truth.
+@ For __there is__ ##one God##note:x[<<1 Cor 8:6; Gal 3:20>>], ##and##note:x[<<Heb 9:15>>] one mediator between God and men, the man Christ Jesus;
+@ Who ##gave##note:x[<<Matt 20:28; 1 Pet 3:18; 1 John 2:1–2>>] himself a ransom for all, to be testified in due time.
+@ Where unto I am ordained ##a preacher##note:x[<<2 Tim 1:11>>], and an apostle, (##I speak##note:x[<<Rom 9:1>>] the truth in Christ, __and__ lie not;) ##a teacher##note:x[<<Acts 9:15>>] of the Gentiles in faith and verity.
+@ ##I will##note:x[<<Titus 3:8>>] therefore that men pray every where, ##lifting##note:x[<<Ps 134:2; Heb 10:22>>] up holy hands, without wrath and doubting.
+
+[discrete.pericope]
+==== Instructions to Women
+
+@ In like manner also, ##that##note:x[<<1 Pet 3:3–5>>] women adorn themselves in modest apparel, ##with shamefacedness##note:x[<<Titus 2:3–5>>] and sobriety; not with ##broided##note:x[<<1 Pet 3:3>>] hair, or gold, or pearls, or costly array;
+@ But ( which becometh ##women##note:x[<<1 Pet 3:3–5>>] professing godliness) ##with##note:x[<<1 Pet 2:12>>] good works.
+@ ##Let the woman learn in silence with all subjection.##note:x[<<1 Cor 11:3; 14:34–35; Eph 5:22–24>>]
+@ But I suffer not a woman to teach, nor to usurp authority over the man, but to be in silence.
+@ ##For Adam was first formed, then Eve.##note:x[<<Gen 1:27; 2:18; 1 Cor 11:8–9>>]
+@ ##And Adam was not deceived, but the woman being deceived was in the transgression.##note:x[<<Gen 3:6, 12; 2 Cor 11:3>>]
+@ Notwithstanding ##she##note:x[<<Gen 3:15>>] shall be saved in childbearing, if they continue in faith and charity and holiness with ##sobriety##note:x[<<Titus 2:12; 1 Pet 4:7>>].
+
+=== @3
+
+[discrete.pericope]
+==== Qualifications for Overseers
+
+[.parallel]
+(<<Titus 1:5–9; 1 Peter 5:1–4>>)
+
+@ This __is__ a true saying, If a man desire ##the office##note:x[<<Titus 1:7>>] of a ##bishop##note:x[<<Acts 20:28; 1 Pet 5:2>>], he desireth a good work.
+@ A ##bishop##note:x[<<Titus 1:6–9>>] then must be blameless, the husband of one wife, vigilant, sober, of good behaviour, ##given##note:x[<<Rom 12:13>>] to hospitality, ##apt##note:x[<<2 Tim 2:24>>] to teach;
+@ ##Not given to wine##note:x[<<Titus 1:7>>], ##no##note:x[<<Titus 1:7>>] striker, not greedy of ##filthy##note:x[<<Titus 1:7>>] lucre; but patient, not a brawler, not covetous;
+@ One that ##ruleth##note:x[<<Gen 18:19; 1 Tim 3:12; Titus 1:6>>] well his own house, having his children in subjection with all gravity;
+@ ( For ##if##note:x[<<1 Sam 3:13>>] a man know not how to rule his own house, how shall he take care of ##the church##note:x[<<Acts 20:28; Eph 5:24>>] of God?)
+@ Not a ##novice##note:x[<<Heb 5:12–13; 1 Pet 2:2>>], ##lest##note:x[<<1 Pet 5:5>>] being lifted up with pride he fall into the condemnation of the devil.
+@ Moreover he must have a good report of ##them##note:x[<<Col 4:5>>] which are without; ##lest##note:x[<<2 Cor 8:21>>] he fall into reproach and ##the snare##note:x[<<2 Tim 2:26>>] of the devil.
+
+[discrete.pericope]
+==== Qualifications for Deacons
+
+[.parallel]
+(<<Acts 6:1–7>>)
+
+@ Likewise __must__ ##the deacons##note:x[<<Acts 6:3–6; Phil 1:1>>] __be__ grave, not doubletongued, ##not given##note:x[<<1 Tim 3:3>>] to much wine, not greedy of filthy lucre;
+@ ##Holding##note:x[<<1 Tim 1:5, 19>>] ##the mystery##note:x[<<2 John 1:9–10>>] of the faith in a pure conscience.
+@ And ##let these##note:x[<<1 Tim 5:22>>] also first be proved; then let them ##use##note:x[<<1 Tim 3:13>>] the office of a deacon, being __found__ blameless.
+@ Even so __must__ ##__their__##note:x[<<Titus 2:3>>] wives __be__ grave, ##not##note:x[<<Titus 2:3>>] slanderers, ##sober##note:x[<<Titus 3:2>>], faithful in all things.
+@ ##Let the deacons be the husbands of one wife, ruling their children and their own houses well.##note:x[<<1 Tim 3:2, 4–5>>]
+@ For ##they##note:x[<<Matt 25:21>>] that have ##used##note:x[<<Heb 6:10>>] the office of a deacon well purchase to themselves a good degree, and great boldness in the faith which is in Christ Jesus.
+
+[discrete.pericope]
+==== The Mystery of Godliness
+
+@ These things write I unto thee, hoping to come unto thee shortly:
+@ But if I tarry long, that thou mayest ##know##note:x[<<1 Kgs 2:4>>] how thou oughtest to behave thyself in ##the house##note:x[<<Eph 2:21–22; 1 Pet 2:5>>] of God, which is the church of the living God, the pillar and ground of the truth.
+@ And without controversy great is the mystery of godliness: ##God##note:x[<<John 1:14; Heb 1:3>>] was manifest in the flesh, justified in the Spirit, seen of angels, preached unto the Gentiles, believed on in the world, ##received##note:x[<<Heb 1:3>>] up into glory.
+
+=== @4
+
+[discrete.pericope]
+==== A Warning against Apostasy
+
+@ Now the Spirit speaketh expressly, that in ##the latter##note:x[<<2 Tim 3:1–9>>] times some shall ##depart##note:x[<<2 Tim 3:1–5>>] from the faith, giving heed to ##seducing##note:x[<<2 Pet 2:1>>] spirits, and doctrines of devils;
+@ Speaking ##lies##note:x[<<Acts 20:30; Rom 16:18>>] in hypocrisy; having ##their##note:x[<<Eph 4:19>>] conscience seared with a hot iron;
+@ ##Forbidding##note:x[<<Heb 13:4>>] to marry, __and commanding__ to abstain from meats, which God hath created to be received ##with##note:x[<<Rom 14:6; 1 Tim 4:4>>] thanksgiving of them which believe and know the truth.
+@ For every creature of God __is__ good, ##and##note:x[<<Rom 14:14, 20; 1 Cor 10:25>>] nothing to be refused, if it be received with thanksgiving:
+@ For ##it##note:x[<<1 Tim 4:3>>] is sanctified by ##the##note:x[<<Luke 4:4>>] word of God and prayer.
+
+[discrete.pericope]
+==== A Good Servant of Jesus Christ
+
+@ If thou put the brethren in remembrance of these things, thou shalt be a good minister of Jesus Christ, ##nourished##note:x[<<Col 3:16>>] up in the words of faith and of ##good doctrine##note:x[<<Titus 2:7–10>>], whereunto thou hast attained.
+@ But ##refuse##note:x[<<1 Tim 1:4; 2 Tim 2:16>>] profane and old wives’ fables, and ##exercise##note:x[<<Titus 2:12>>] thyself __rather__ unto godliness.
+@ For bodily exercise profiteth little: but ##godliness##note:x[<<1 Tim 6:6>>] is profitable unto all things, ##having##note:x[<<Ps 37:3–4; Matt 6:33>>] promise of the life that now is, and of that which is to come.
+@ ##This __is__ a faithful saying and worthy of all acceptation.##note:x[<<1 Tim 1:15>>]
+@ For therefore we both labour and suffer reproach, because we trust in the living God, who is ##the Saviour##note:x[<<John 1:29; 1 Tim 2:4; 1 John 2:2>>] of all men, specially of those that believe.
+
+@ ##These things command and teach.##note:x[<<1 Tim 6:2; 2 Tim 4:2; Titus 2:15>>]
+@ Let ##no##note:x[<<2 Tim 2:22>>] man despise thy youth; but ##be thou##note:x[<<Titus 2:7>>] an example of the believers, ##in word##note:x[<<2 Tim 2:22>>], in conversation, in charity, in spirit, in faith, in purity.
+@ Till I come, give attendance ##to reading##note:x[<<Acts 6:4>>], ##to exhortation##note:x[<<Titus 2:15>>], ##to doctrine##note:x[<<2 Tim 4:2>>].
+@ ##Neglect##note:x[<<2 Tim 1:6; 1 Pet 4:9–11>>] not the gift that is in thee, which was given thee by prophecy, ##with##note:x[<<2 Tim 1:6>>] the laying on of the hands of the presbytery.
+@ ##Meditate##note:x[<<Ps 143:5>>] upon these things; give thyself wholly to them; ##that##note:x[<<Matt 5:16; Phil 2:15–16>>] thy profiting may appear to all.
+@ ##Take##note:x[<<Titus 2:7>>] heed unto thyself, and ##unto the##note:x[<<Titus 2:7>>] doctrine; ##continue##note:x[<<Titus 1:9>>] in them: for in doing this thou shalt both save thyself, and them that hear thee.
+
+=== @5
+
+[discrete.pericope]
+==== Reproof and Respect
+
+@ ##Rebuke##note:x[<<Lev 19:32>>] not an elder, but ##intreat##note:x[<<Gal 6:1; 1 Pet 5:5–6>>] __him__ as a father; __and__ the younger men as brethren;
+@ The ##elder##note:x[<<Matt 12:50>>] women as mothers; the younger as sisters, ##with##note:x[<<Phil 4:8; 1 Tim 4:12>>] all purity.
+
+[discrete.pericope]
+==== Honoring True Widows
+
+[.parallel]
+(<<Ruth 1:1–5>>)
+
+@ Honour ##widows##note:x[<<Deut 10:18; 14:29; 27:19>>] that are widows indeed.
+@ But if any widow have children or nephews, let them ##learn##note:x[<<John 19:26–27>>] first to shew ##piety##note:x[<<Matt 15:4–6>>] at home, and ##to requite##note:x[<<Eph 6:1–3>>] their parents: for that is good and acceptable before God.
+@ Now she that is ##a widow##note:x[<<1 Cor 7:32; 1 Tim 5:3>>] indeed, and desolate, trusteth in God, and ##continueth##note:x[<<Luke 2:37>>] in supplications and prayers night and day.
+@ But ##she##note:x[<<Jas 5:5; Rev 18:7>>] that liveth in pleasure is ##dead##note:x[<<Luke 15:24>>] while she liveth.
+@ ##And these things give in charge, that they may be blameless.##note:x[<<1 Tim 4:11; Titus 2:15>>]
+@ But if any provide not for his own, ##and specially##note:x[<<Luke 11:11–13; 2 Cor 12:14; Gal 6:10>>] for those of his own house, he hath denied the faith, and is worse than an infidel.
+@ Let not a widow be taken into the number under threescore years old, ##having##note:x[<<1 Tim 3:2>>] been the wife of one man,
+@ Well reported of for ##good##note:x[<<1 Tim 6:18; Titus 3:8>>] works; if she have brought up children, if she have lodged strangers, if she have washed the saints’ feet, if she have relieved the afflicted, ##if she have diligently##note:x[<<Titus 3:8>>] followed every good work.
+@ But ##the younger##note:x[<<1 Tim 5:14>>] widows refuse: for when they have begun ##to wax##note:x[<<Hos 13:6>>] wanton against Christ, ##they will##note:x[<<1 Tim 5:14>>] marry;
+@ Having ##damnation##note:x[<<1 Cor 11:34; Jas 3:1>>], because they have cast off ##their##note:x[<<Gal 1:6>>] first faith.
+@ And withal they learn ##__to be__##note:x[<<Prov 31:27; 2 Thess 3:6–11>>] idle, ##wandering##note:x[<<Prov 20:19>>] about from house to house; and not only idle, but tattlers also and busybodies, speaking things which they ought not.
+@ I will therefore that the younger women marry, bear children, ##guide##note:x[<<Titus 2:5>>] the house, ##give##note:x[<<1 Tim 6:1; Titus 2:5>>] none occasion to the adversary to speak reproachfully.
+@ ##For some are already turned aside after Satan.##note:x[<<2 Pet 2:2, 20–22; Jude 1:4–5>>]
+@ If any man or woman that believeth have widows, ##let them##note:x[<<1 Tim 5:8>>] relieve them, and let not the church be charged; that it may relieve them that are ##widows indeed##note:x[<<1 Tim 5:3>>].
+
+[discrete.pericope]
+==== Honoring Elders
+
+@ Let the elders that ##rule##note:x[<<1 Thess 5:12–13; Heb 13:17>>] well ##be##note:x[<<Gal 6:6>>] counted worthy of double honour, especially they who labour in the word and doctrine.
+@ For the scripture saith, ##Thou##note:x[<<Deut 25:4>>] shalt not muzzle the ox that treadeth out the corn. And, ##The labourer##note:x[<<Matt 10:10; Luke 10:7>>] __is__ worthy of his reward.
+@ Against an elder receive not an accusation, but before ##two##note:x[<<Deut 19:15; Matt 18:16; 2 Cor 13:1>>] or three witnesses.
+@ Them that sin ##rebuke##note:x[<<2 Tim 4:2; Titus 1:13>>] before all, ##that others##note:x[<<1 Tim 1:20>>] also may fear.
+
+[discrete.pericope]
+==== A Charge to Timothy
+
+@ I ##charge##note:x[<<1 Tim 6:13; 2 Tim 4:1>>] __thee__ before God, and the Lord Jesus Christ, and ##the elect##note:x[<<2 Pet 2:4>>] angels, that thou observe these things without preferring one before another, doing nothing by partiality.
+@ Lay hands ##suddenly##note:x[<<1 Tim 3:6, 10>>] on no man, ##neither##note:x[<<Eph 5:11>>] be partaker of other men’s sins: keep thyself pure.
+@ note:x[<<Ps 104:15; Prov 31:4–7; 1 Tim 4:4>>]Drink no longer water, but use a little wine for thy stomach’s sake and thine often infirmities.
+@ note:x[<<Acts 8:18; 2 Tim 4:10>>]Some men’s sins are open beforehand, going before to judgment; and some __men__ they follow after.
+@ note:x[<<Ps 37:5–6; Luke 11:33>>]Likewise also ##the good##note:x[<<Matt 5:16>>] works __of some__ are manifest beforehand; and they that are otherwise can not be hid.
+
+=== @6
+
+[discrete.pericope]
+==== Serving with Honor
+
+[.parallel]
+(<<Ephesians 6:5–9; Colossians 3:22–25>>)
+
+@ Let as many servants as are under the yoke ##count##note:x[<<Eph 6:5–8; 1 Pet 2:17–20>>] their own masters worthy of all honour, ##that the##note:x[<<Titus 2:5>>] name of God and __his__ doctrine be not blasphemed.
+@ And they that have ##believing##note:x[<<Col 4:1>>] masters, let them not despise __them__, because they are brethren; but rather do __them__ service, because they are faithful and beloved, partakers of the benefit. ##These##note:x[<<1 Tim 4:11>>] things teach and exhort.
+
+[discrete.pericope]
+==== Reject False Doctrines
+
+@ If ##any##note:x[<<Rom 16:17; 1 Tim 1:3>>] man teach otherwise, and consent not ##to wholesome##note:x[<<1 Tim 1:10>>] words, __even__ the words of our Lord Jesus Christ, and to the doctrine which is according to godliness;
+@ ##He##note:x[<<1 Tim 3:6; 2 Tim 3:4>>] is proud, knowing nothing, but doting ##about##note:x[<<2 Tim 2:23>>] questions and strifes of words, where of cometh envy, strife, railings, evil surmisings,
+@ Perverse disputings of men of corrupt minds, and destitute of the truth, ##supposing##note:x[<<Titus 1:11; 2 Pet 2:3>>] that gain is godliness: ##from##note:x[<<2 Tim 3:5>>] such withdraw thyself.
+
+[discrete.pericope]
+==== Godliness with Contentment
+
+@ But ##godliness##note:x[<<Heb 13:5>>] with ##contentment##note:x[<<Phil 4:11–13; 1 Tim 6:8>>] is great gain.
+@ For ##we brought##note:x[<<Job 1:21>>] nothing into __this__ world, __and it is__ ##certain##note:x[<<Ps 49:17; Luke 12:20–21>>] we can carry no thing out.
+@ ##And having food and raiment let us be therewith content.##note:x[<<Matt 6:11, 25–33; Heb 13:5–6>>]
+@ But ##they##note:x[<<Prov 15:27; 28:20–22>>] that will be rich fall into temptation and a snare, and __into__ ##many##note:x[<<1 John 2:15–17>>] foolish and hurtful lusts, which drown men in destruction and perdition.
+@ For ##the love##note:x[<<Prov 1:19>>] of money is the root of all evil: which while some coveted after, they have erred from the faith, ##and pierced##note:x[<<Ps 32:10; Prov 1:31>>] themselves through with many sorrows.
+
+[discrete.pericope]
+==== Fight the Good Fight
+
+@ ##But##note:x[<<2 Tim 2:22>>] thou, O man of God, ##flee##note:x[<<2 Tim 2:22>>] these things; ##and##note:x[<<2 Tim 2:22>>] follow after righteousness, godliness, faith, love, patience, meekness.
+@ note:x[<<1 Pet 5:10>>]##Fight##note:x[<<1 Cor 9:25–26; 1 Tim 1:18>>] the good fight of faith, lay hold on eternal life, where unto thou art also called, and hast professed a good profession before many witnesses.
+@ I ##give##note:x[<<1 Tim 5:21>>] thee charge in the sight of God, who quickeneth all things, and __before__ Christ Jesus, ##who before##note:x[<<Matt 27:11; John 18:36–37>>] Pontius Pilate witnessed a good confession;
+@ That thou keep __this__ commandment ##without##note:x[<<2 Pet 3:14>>] spot, unrebukeable, ##until##note:x[<<1 Thess 5:23; 1 Pet 1:7>>] the appearing of our Lord Jesus Christ:
+@ Which in his times he shall shew, ##__who__##note:x[<<1 Tim 1:17>>] __is__ the blessed and only Potentate, ##the King##note:x[<<Rev 17:14; 19:16>>] of kings, and Lord of lords;
+@ Who ##only##note:x[<<1 Tim 1:17>>] hath immortality, dwelling in the light which no man can approach unto; ##whom##note:x[<<John 1:18>>] no man hath seen, nor can see: ##to whom##note:x[<<1 Tim 1:17>>] __be__ honour and power everlasting. Amen.
+
+[discrete.pericope]
+==== A Charge to the Rich
+
+[.parallel]
+(<<Proverbs 23:1–5; James 5:1–6>>)
+
+@ Charge them that are ##rich##note:x[<<Matt 19:23>>] in this world, ##that they##note:x[<<Jas 1:9–10>>] be not highminded, nor ##trust##note:x[<<Prov 11:28>>] in uncertain riches, but in the living God, who giveth us richly all things to enjoy;
+@ That ##they do##note:x[<<Heb 13:16>>] good, that they be rich in good works, ##ready##note:x[<<Heb 13:16; 1 John 3:17>>] to distribute, willing to communicate;
+@ ##Laying##note:x[<<Matt 6:19–21>>] up in store for themselves a good ##foundation##note:x[<<2 Tim 2:19>>] against the time to come, that they may ##lay##note:x[<<1 Tim 6:12>>] hold on eternal life.
+
+[discrete.pericope]
+==== Guard the Faith
+
+@ O Timothy, ##keep##note:x[<<Rom 3:2; 2 Tim 3:14>>] that which is committed to thy trust, avoiding profane __and__ vain babblings, and ##oppositions##note:x[<<Col 2:8>>] of science falsely so called:
+@ Which some professing ##have##note:x[<<2 Tim 2:18>>] erred concerning the faith. Grace __be__ with thee. Amen.
+
+[.colophon]
+The first to Timothy was written from Laodicea, which is the chiefest city of Phrygia Pacatiana.

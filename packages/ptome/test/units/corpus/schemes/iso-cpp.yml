@@ -1,0 +1,42 @@
+# An ISO standard as the C++ committee writes it: clause > paragraph >
+# item. A clause is a heading with its stable name (`== @basic.def …`),
+# cited in brackets (`<<[basic.def]>>`); each numbered paragraph is a bare
+# marker (the draft's `\pnum`), numbered within its clause; the items of a
+# list in a paragraph step by themselves (2.1, 2.2). Notes and examples are
+# apparatus, in no paragraph's numbering.
+version: 2
+settings:
+  apparatus: "note example"
+scheme:
+  cpp:
+    cite: "[{{clause}}]"
+    level:
+      - name: "clause"
+        type: "name"
+        break: "heading"
+        cite-wrap: "[%]"
+        id: "{{clause}}"
+        reftext: "[{{clause}}]"
+        title: "{{title}} [{{clause}}]"
+      - name: "paragraph"
+        break: "block"
+        sep: "/"
+        default: true
+        id: "{{clause}}-{{paragraph}}"
+        reftext: "[{{clause}}]/{{paragraph}}"
+        label-role: "pnum"
+        label: "{{paragraph}}"
+        label-after: " "
+        block-role: "paragraph"
+      - name: "item"
+        sep: "."
+        auto: "item"
+        id: "{{clause}}-{{paragraph}}.{{item}}"
+        reftext: "[{{clause}}]/{{paragraph}}.{{item}}"
+        label-role: "pnum"
+        label: "({{paragraph}}.{{item}})"
+        label-after: " "
+citation:
+  default:
+    attribution: "{{passage}}"
+    title: "{{title}}"

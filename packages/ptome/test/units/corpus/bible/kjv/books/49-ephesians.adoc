@@ -1,0 +1,281 @@
+== @EPH
+
+[.book-title]
+The Epistle of Paul the Apostle to the Ephesians
+
+=== @1
+
+[discrete.pericope]
+==== Paul’s Greeting to the Ephesians
+
+[.parallel]
+(<<Acts 19:8–12; Revelation 2:1–7>>)
+
+@ Paul, ##an##note:x[<<1 Cor 1:1>>] apostle of Jesus Christ by the will of God, ##to the saints##note:x[<<2 Cor 1:1>>] ##which##note:x[<<Col 1:2>>] are at Ephesus, and to the faithful in Christ Jesus:
+@ ##Grace __be__ to you, and peace, from God our Father, and __from__ the Lord Jesus Christ.##note:x[<<Rom 1:7; Gal 1:3; Titus 1:4>>]
+
+[discrete.pericope]
+==== Spiritual Blessings
+
+[.parallel]
+(<<Romans 8:28–34>>)
+
+@ ##Blessed##note:x[<<2 Cor 1:3; 1 Pet 1:3>>] __be__ the ##God##note:x[<<2 Cor 1:3>>] and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly __places__ in Christ:
+@ According ##as##note:x[<<Rom 8:28>>] he hath chosen us in him before the foundation of the world, ##that##note:x[<<Rom 8:28–29; 2 Tim 1:9>>] we should be holy and without blame before him in love:
+@ Having ##predestinated##note:x[<<Rom 8:29–30; Eph 1:11>>] us unto the adoption of children by Jesus Christ to himself, ##according##note:x[<<Eph 1:11>>] to the good pleasure of his will,
+@ To the ##praise##note:x[<<Eph 1:12>>] of the glory of his grace, wherein ##he##note:x[<<Rom 3:22–26>>] hath made us accepted ##in##note:x[<<Col 1:13>>] the beloved.
+@ In ##whom##note:x[<<Rom 3:24; 1 Pet 2:24>>] we have redemption through his blood, the forgiveness of sins, according ##to##note:x[<<Rom 3:24>>] the riches of his grace;
+@ Wherein he hath abounded toward us ##in##note:x[<<Rev 5:12>>] all wisdom and prudence;
+@ Having ##made##note:x[<<Rom 16:25–27; Eph 3:3–9; Col 1:26–28>>] known unto us the mystery of his will, according to his good pleasure which he hath purposed in himself:
+@ That ##in the##note:x[<<Gal 4:4>>] dispensation of the fulness of times ##he##note:x[<<Phil 2:9–10; Col 1:20>>] might gather together in one all things in Christ, both which are in heaven, and which are on earth; __even__ in him:
+@ In whom also ##we##note:x[<<Eph 1:14; 1 Pet 1:4>>] have obtained an inheritance, being predestinated ##according##note:x[<<Isa 46:10–11>>] to the purpose of him who worketh all things after the counsel of his own will:
+@ That we should ##be##note:x[<<Eph 1:6>>] to the praise of his glory, ##who##note:x[<<Jer 17:5–7; Eph 1:13>>] first trusted in Christ.
+@ In whom ye also __trusted__, after that ye heard the word of truth, the gospel of your salvation: in whom also after that ye believed, ##ye were##note:x[<<2 Cor 1:22; Eph 4:30; 2 Tim 2:19>>] sealed with that holy Spirit of promise,
+@ Which is ##the earnest##note:x[<<2 Cor 1:22; 5:5>>] of our inheritance until ##the redemption##note:x[<<Eph 4:30>>] of the purchased possession, unto the praise of his glory.
+
+[discrete.pericope]
+==== Spiritual Wisdom
+
+[.parallel]
+(<<1 Corinthians 2:6–16>>)
+
+@ Wherefore I also, ##after##note:x[<<Col 1:3–4; Phlm 1:5>>] I heard of your ##faith##note:x[<<2 Thess 1:3>>] in the Lord Jesus, and love unto all the saints,
+@ ##Cease##note:x[<<Rom 1:8–9; Col 1:3; 2 Thess 1:3>>] not to give thanks for you, making mention of you in my prayers;
+@ That the God of our Lord Jesus Christ, the Father of glory, may give unto you ##the spirit##note:x[<<Isa 11:2; Col 1:9; Jas 3:17–18>>] of wisdom and revelation in the knowledge of him:
+@ The ##eyes##note:x[<<Luke 24:45; Acts 26:18; 2 Cor 4:6>>] of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints,
+@ And what __is__ the ##exceeding##note:x[<<Eph 3:20; Phil 2:13; Col 2:12>>] greatness of his power to us-ward who believe, according to the working of his mighty power,
+@ Which he wrought in Christ, when he raised him from the dead, ##and set##note:x[<<Ps 110:1; Mark 16:19; Heb 10:12>>] __him__ at his own right hand in the heavenly __places__,
+@ Far ##above##note:x[<<Phil 2:9–10; Col 2:10>>] all principality, and power, and might, and dominion, and ##every##note:x[<<Phil 2:9–11>>] name that is named, not only in this world, but also in that which is to come:
+@ And hath ##put##note:x[<<Ps 8:6–8; 1 Cor 15:25–27>>] all __things__ under his feet, and ##gave##note:x[<<Col 2:10>>] him __to be__ the head over all __things__ to the church,
+@ Which is ##his##note:x[<<Col 1:18>>] body, the ##fulness##note:x[<<John 1:16; Col 2:9–10>>] of him that filleth all in all.
+
+=== @2
+
+[discrete.pericope]
+==== Alive with Christ
+
+[.parallel]
+(<<Colossians 2:6–23>>)
+
+@ And ##you##note:x[<<Eph 2:5–6; Col 2:13>>] __hath he quickened__, who were ##dead##note:x[<<Eph 2:5>>] in trespasses and sins;
+@ Wherein ##in time##note:x[<<1 John 5:19>>] past ye walked according to the course of this world, according to ##the prince##note:x[<<Eph 6:12; 1 John 5:19>>] of the power of the air, the spirit that now worketh in the children of disobedience:
+@ Among whom also ##we##note:x[<<Titus 3:3>>] all had our conversation in times past ##in the##note:x[<<Gal 5:16–24; Eph 4:22>>] lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.
+@ But God, ##who##note:x[<<Eph 1:7; 1 Pet 1:3>>] is rich in mercy, for ##his##note:x[<<Titus 3:4–7>>] great love wherewith he loved us,
+@ Even when we were ##dead##note:x[<<Rom 5:8>>] in sins, hath quickened us together with Christ, (by ##grace ye##note:x[<<Rom 3:24; Eph 2:8>>] are saved;)
+@ And ##hath##note:x[<<Col 2:12–13; 3:1–3>>] raised __us__ up together, and made __us__ sit together ##in##note:x[<<Eph 1:3>>] heavenly __places__ in Christ Jesus:
+@ That in the ages to come he might ##shew##note:x[<<2 Thess 1:12; 1 Tim 1:16>>] the exceeding riches of his grace ##in __his__##note:x[<<Titus 3:4>>] kindness toward us through Christ Jesus.
+@ For ##by##note:x[<<Eph 2:5>>] grace are ye saved ##through##note:x[<<Rom 3:22–26; 4:16>>] faith; and that not of yourselves: __it is__ the gift of God:
+@ ##Not of works, lest any man should boast.##note:x[<<Rom 11:6; 2 Tim 1:9; Titus 3:3–5>>]
+@ For ##we are##note:x[<<Phil 2:13; Heb 13:21>>] his workmanship, created in Christ Jesus unto ##good##note:x[<<Col 1:10>>] works, which God hath before ordained that we should walk in them.
+
+[discrete.pericope]
+==== One in Christ
+
+[.parallel]
+(<<Philippians 2:1–4>>)
+
+@ Wherefore remember, that ye __being__ in time past ##Gentiles##note:x[<<Col 2:13>>] in the flesh, who are called ##Uncircumcision##note:x[<<Col 3:11>>] by that which is called the Circumcision in the flesh ##made##note:x[<<Col 2:11>>] by hands;
+@ That at that time ye were ##without##note:x[<<Gal 4:8; Col 1:21>>] Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, ##having##note:x[<<1 Pet 1:3>>] no hope, and without God in the world:
+@ But now in Christ Jesus ye who sometimes ##were##note:x[<<Acts 2:39; Eph 2:19–22>>] far off ##are##note:x[<<Col 1:13–14>>] made nigh by the blood of Christ.
+@ For he is our peace, who hath made ##both##note:x[<<Gal 3:28; Eph 2:15; Col 3:11>>] one, and hath broken down the middle wall of partition __between us__;
+@ Having abolished in his flesh the enmity, __even__ ##the law##note:x[<<Gal 3:10; Col 2:14; Heb 8:13>>] of commandments __contained__ in ordinances; for to make in himself of twain one new man, __so__ making peace;
+@ And that he might ##reconcile##note:x[<<Rom 5:10; 2 Cor 5:18–21>>] both unto God in one body by the cross, ##having##note:x[<<Col 2:14>>] slain the enmity thereby:
+@ And came ##and preached##note:x[<<Isa 57:19–21; Acts 10:36; Rom 5:1>>] peace to you which were afar off, and to them that were nigh.
+@ For ##through##note:x[<<Rom 5:2; Eph 3:12>>] him we both have access ##by##note:x[<<1 Cor 12:13>>] one Spirit unto the Father.
+
+[discrete.pericope]
+==== Christ Our Cornerstone
+
+[.parallel]
+(<<Isaiah 28:14–22; 1 Corinthians 3:10–15; 1 Peter 2:1–8>>)
+
+@ Now therefore ye are no more strangers and foreigners, ##but##note:x[<<Gal 3:26–28; Phil 3:20>>] fellowcitizens with the saints, and of the ##household##note:x[<<1 John 3:1>>] of God;
+@ And are ##built##note:x[<<1 Pet 2:4–5>>] upon ##the foundation##note:x[<<Isa 28:16>>] of the apostles and prophets, ##Jesus##note:x[<<Isa 28:16>>] Christ himself being the chief corner __stone__;
+@ In whom ##all##note:x[<<1 Cor 3:9; Eph 4:13–16>>] the building fitly framed together groweth unto ##an##note:x[<<2 Cor 6:16>>] holy temple in the Lord:
+@ In whom ye also are builded together for ##an##note:x[<<John 17:21–23; 1 Cor 3:16; 1 Pet 2:4–5>>] habitation of God through the Spirit.
+
+=== @3
+
+[discrete.pericope]
+==== The Mystery of the Gospel
+
+@ ##For##note:x[<<Col 1:24>>] this cause I Paul, ##the##note:x[<<Eph 4:1; Col 1:24>>] prisoner of Jesus Christ for you Gentiles,
+@ If ##ye##note:x[<<2 Tim 1:11>>] have heard of ##the dispensation##note:x[<<Col 1:25–27; 1 Tim 1:11>>] of the grace of God which is given me to you-ward:
+@ How that ##by##note:x[<<Gal 1:12>>] revelation he made known unto me ##the mystery##note:x[<<Rom 16:25; Eph 3:9>>]; ( as I wrote afore in few words,
+@ Whereby, when ye read, ##ye may##note:x[<<2 Cor 11:6>>] understand my knowledge in ##the mystery##note:x[<<1 Cor 4:1; Col 4:3>>] of Christ)
+@ Which ##in other##note:x[<<Titus 1:1–3; 1 Pet 1:10–12>>] ages was not made known unto the sons of men, ##as it##note:x[<<2 Pet 3:2>>] is now revealed unto his holy apostles and prophets by the Spirit;
+@ That ##the Gentiles##note:x[<<Rom 8:15–17; Gal 3:26–29>>] should be fellowheirs, and of the same body, and ##partakers##note:x[<<Gal 3:14>>] of his promise in Christ by the gospel:
+@ Whereof ##I##note:x[<<2 Cor 3:6; Eph 3:2>>] was made a minister, according to the gift of the grace of God given unto me ##by##note:x[<<Eph 1:19>>] the effectual working of his power.
+@ Unto me, ##who am##note:x[<<1 Cor 15:9; 1 Tim 1:13>>] less than the least of all saints, is this grace given, that I should preach among the Gentiles the ##unsearchable##note:x[<<Col 1:27>>] riches of Christ;
+@ And to make all __men__ see what __is__ the fellowship of the mystery, which from the ##beginning##note:x[<<Matt 13:35; 2 Tim 1:9>>] of the world hath been ##hid##note:x[<<Col 1:26>>] in God, who created all things by Jesus Christ:
+@ To the ##intent##note:x[<<1 Pet 1:12>>] that now unto the principalities and powers in heavenly __places__ might be known by the church the ##manifold##note:x[<<Rom 11:33; 1 Cor 2:7>>] wisdom of God,
+@ ##According to the eternal purpose which he purposed in Christ Jesus our Lord:##note:x[<<Eph 1:4, 11; 2 Tim 1:9>>]
+@ ##In whom we have boldness and access with confidence by the faith of him.##note:x[<<Rom 5:2; Eph 2:18; Heb 4:14–16>>]
+@ Wherefore I desire that ##ye##note:x[<<Isa 40:30–31; 2 Thess 3:13>>] faint not ##at##note:x[<<Col 1:24>>] my tribulations for you, which is your glory.
+
+[discrete.pericope]
+==== Paul’s Prayer for the Ephesians
+
+@ For this cause ##I##note:x[<<Ps 95:6; Acts 21:5; Eph 1:16–19>>] bow my knees unto the Father of our Lord Jesus Christ,
+@ Of whom ##the whole##note:x[<<Eph 1:10, 21; Rev 5:8–14>>] family in heaven and earth is named,
+@ That he would grant you, according to the riches of his glory, ##to be##note:x[<<Isa 40:29–31; Phil 4:13; Col 1:11>>] strengthened with might by his Spirit in the inner man;
+@ That ##Christ##note:x[<<John 14:23; 1 John 4:16>>] may dwell in your hearts by faith; that ye, ##being##note:x[<<Col 2:7>>] rooted and grounded in love,
+@ May be ##able##note:x[<<Job 11:7–9; Ps 103:11–12; Eph 1:18–23>>] to comprehend with all saints what __is__ the breadth, and length, and depth, and height;
+@ And ##to know##note:x[<<Col 1:10>>] the love of Christ, which passeth knowledge, ##that ye##note:x[<<Eph 1:23; Col 2:9–10>>] might be filled with all the fulness of God.
+
+@ Now unto him that is ##able##note:x[<<Jer 32:27; Rom 4:21>>] to do ##exceeding##note:x[<<1 Cor 2:9>>] abundantly above all that we ask or think, according to the power that worketh in us,
+@ Unto him ##__be__##note:x[<<Rom 11:36>>] glory in the church by Christ Jesus ##throughout##note:x[<<2 Pet 3:18; Jude 1:25>>] all ages, world without end. Amen.
+
+=== @4
+
+[discrete.pericope]
+==== Unity in the Body
+
+[.parallel]
+(<<Psalms 133:1–3; 1 Corinthians 1:10–17>>)
+
+@ I therefore, the prisoner of the Lord, beseech you that ye ##walk##note:x[<<Phil 1:27; Col 1:10; 1 Thess 2:12>>] worthy of the vocation wherewith ye are called,
+@ With all ##lowliness##note:x[<<1 Cor 13:4–5; Col 3:12–13>>] and meekness, with longsuffering, ##forbearing##note:x[<<1 Cor 13:7>>] one another in love;
+@ ##Endeavouring to keep the unity of the Spirit in the bond of peace.##note:x[<<1 Cor 1:10; 12:12–13; Col 3:13–15>>]
+@ __There is__ ##one body##note:x[<<Rom 12:4–5>>], and ##one Spirit##note:x[<<1 Cor 12:4–11; Eph 2:18>>], even as ye are called in one hope of your calling;
+@ ##One Lord##note:x[<<1 Cor 8:6>>], one faith, ##one baptism##note:x[<<1 Cor 12:13; 1 Pet 3:21>>],
+@ One ##God##note:x[<<Mal 2:10; 1 Cor 8:6>>] and Father of all, ##who##note:x[<<Rom 11:36>>] __is__ above all, and through all, and in you all.
+@ But unto every one of us is given ##grace##note:x[<<1 Pet 4:10>>] according to ##the measure##note:x[<<Rom 12:3; Eph 3:2>>] of the gift of Christ.
+@ Wherefore he saith, ##When##note:x[<<Ps 68:18>>] he ascended up on high, ##he led##note:x[<<Col 2:15>>] captivity captive, and gave gifts unto men.
+@ ( Now that ##he ascended##note:x[<<Prov 30:4; John 3:13>>], what is it but that he also descended first into ##the lower##note:x[<<Matt 12:40>>] parts of the earth?
+@ He that descended is the same also that ##ascended##note:x[<<Eph 1:20–23; Heb 4:14; 7:26>>] up far above all heavens, that he might fill all things.)
+@ And ##he##note:x[<<1 Cor 12:28; Eph 2:20>>] gave some, apostles; and some, prophets; and some, evangelists; and some, ##pastors##note:x[<<Jer 3:15>>] and teachers;
+@ For the ##perfecting##note:x[<<1 Thess 5:11–14>>] of the saints, for the work of the ministry, for ##the edifying##note:x[<<Eph 4:16; 1 Thess 5:11>>] of the body of Christ:
+@ Till ##we all##note:x[<<John 17:21; Eph 4:3>>] come in the unity of the faith, and of the knowledge of the Son of God, ##unto a##note:x[<<Col 1:28>>] perfect man, unto the measure of the stature of the fulness of Christ:
+@ That we __henceforth__ be ##no more##note:x[<<1 Cor 14:20>>] children, ##tossed##note:x[<<Rom 16:17–18; Heb 13:9>>] to and fro, and carried about with every wind of doctrine, by the sleight of men, __and__ cunning craftiness, whereby they lie in wait to deceive;
+@ ##But##note:x[<<Zech 8:16; Eph 4:25>>] ##speaking the truth##note:x[<<1 John 3:18>>] in love, may grow up into him in all things, which is the head, __even__ Christ:
+@ From ##whom##note:x[<<John 15:5>>] the whole body ##fitly##note:x[<<Col 2:19>>] joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body unto the ##edifying##note:x[<<Col 2:2>>] of itself in love.
+
+[discrete.pericope]
+==== New Life in Christ
+
+[.parallel]
+(<<Colossians 3:1–17>>)
+
+@ This I say therefore, and testify ##in the##note:x[<<1 Thess 4:1–2>>] Lord, ##that ye##note:x[<<Col 3:5–8; 1 Pet 4:3–4>>] henceforth walk not as other Gentiles walk, in the vanity of their mind,
+@ Having ##the understanding##note:x[<<Rom 1:21–23>>] darkened, being ##alienated##note:x[<<Eph 2:12>>] from the life of God through the ignorance that is in them, because of the ##blindness##note:x[<<Matt 13:15>>] of their heart:
+@ Who being ##past##note:x[<<1 Tim 4:2>>] feeling have ##given##note:x[<<Rom 1:24–26>>] themselves over unto lasciviousness, to work all uncleanness ##with##note:x[<<Jude 1:11>>] greediness.
+@ ##But ye have not so learned Christ;##note:x[<<John 6:45; Titus 2:11–14; 1 John 2:27>>]
+@ If so be that ye have ##heard##note:x[<<Heb 3:7–8>>] him, and have been taught by him, ##as##note:x[<<Eph 1:13; 1 John 5:20>>] the truth is in Jesus:
+@ That ##ye##note:x[<<Heb 12:1; Jas 1:21>>] put off concerning the former conversation ##the old##note:x[<<Rom 6:6>>] man, which is corrupt according to the deceitful lusts;
+@ And ##be##note:x[<<Ps 51:10; Rom 12:2>>] renewed in the ##spirit##note:x[<<Rom 8:6>>] of your mind;
+@ And that ye ##put##note:x[<<Col 3:10–14>>] on the ##new##note:x[<<2 Cor 5:17>>] man, which ##after##note:x[<<Col 3:10>>] God is created in righteousness and true holiness.
+
+@ Wherefore ##putting##note:x[<<Col 3:9>>] away lying, ##speak##note:x[<<Zech 8:16; Col 3:9>>] every man truth with his neighbour: for we are members one of another.
+@ Be ##ye##note:x[<<Ps 4:4; 37:8; Jas 1:19>>] angry, and sin not: let not the sun go down upon your wrath:
+@ ##Neither give place to the devil.##note:x[<<Eph 6:16; Jas 4:7; 1 Pet 5:8>>]
+@ Let ##him that##note:x[<<Exod 20:15>>] stole steal no more: but rather let him ##labour##note:x[<<1 Thess 4:11–12>>], working with __his__ hands the thing which is good, that he may have to ##give##note:x[<<1 Tim 6:18>>] to him that needeth.
+@ Let ##no##note:x[<<Col 4:6>>] corrupt communication proceed out of your mouth, but ##that which##note:x[<<Col 4:6; 1 Thess 5:11>>] is good to the use of edifying, that it may minister grace unto the hearers.
+@ And ##grieve##note:x[<<Isa 63:10; 1 Thess 5:19>>] not the holy Spirit of God, ##whereby##note:x[<<Eph 1:13>>] ye are sealed unto the day of redemption.
+@ Let all ##bitterness##note:x[<<Col 3:8>>], and ##wrath##note:x[<<Col 3:8>>], and anger, and clamour, and evil speaking, be put away from you, ##with##note:x[<<Col 3:8>>] all malice:
+@ And be ye ##kind##note:x[<<Col 3:12–13>>] one to another, tenderhearted, ##forgiving##note:x[<<Matt 6:14–15; Col 3:12–13>>] one another, even as God for Christ’s sake hath forgiven you.
+
+=== @5
+
+[discrete.pericope]
+==== Imitators of God
+
+@ Be ye therefore ##followers##note:x[<<Eph 4:32; 1 Pet 1:15–16; 1 John 4:11>>] of God, as dear children;
+@ And ##walk##note:x[<<John 13:34; Col 3:14>>] in love, ##as##note:x[<<Gal 2:20>>] Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.
+@ But ##fornication##note:x[<<Eph 5:5; Col 3:5>>], and all uncleanness, or ##covetousness##note:x[<<Col 3:5>>], let it not be once named among you, as becometh saints;
+@ Neither ##filthiness##note:x[<<Eph 4:29; Col 3:8>>], nor foolish talking, nor jesting, which are not convenient: ##but##note:x[<<1 Thess 5:18>>] rather giving of thanks.
+@ For ##this##note:x[<<1 Cor 6:9–10; Gal 5:21>>] ye know, that no whoremonger, nor unclean person, nor covetous man, ##who is##note:x[<<Gal 5:21>>] an idolater, hath any inheritance in the kingdom of Christ and of God.
+@ Let ##no##note:x[<<Matt 24:4; Col 2:8>>] man deceive you with vain words: for because of these things ##cometh##note:x[<<Rom 1:18>>] the wrath of God upon the children of disobedience.
+@ ##Be not ye therefore partakers with them.##note:x[<<Eph 5:11; 1 Tim 5:22; Rev 18:4>>]
+
+[discrete.pericope]
+==== Children of Light
+
+@ For ye were sometimes darkness, ##but##note:x[<<John 8:12; 12:46>>] now __are ye__ light in the Lord: ##walk##note:x[<<1 John 1:7>>] as children of light:
+@ ( For ##the fruit##note:x[<<Gal 5:22–23>>] of the Spirit __is__ in all ##goodness##note:x[<<3 John 1:11>>] and ##righteousness##note:x[<<1 John 3:9–10>>] and truth;)
+@ ##Proving##note:x[<<Rom 12:1–2>>] what is ##acceptable##note:x[<<Ps 19:14; Heb 12:28>>] unto the Lord.
+@ And have ##no##note:x[<<2 Thess 3:6>>] fellowship with the unfruitful ##works##note:x[<<Rom 13:12>>] of darkness, ##but##note:x[<<1 Tim 5:20>>] rather reprove __them__.
+@ For ##it##note:x[<<Eph 5:3>>] is a shame even to speak of those things which are done of them ##in##note:x[<<Eccl 12:14; Rom 2:16>>] secret.
+@ But all things that are ##reproved##note:x[<<Hos 2:10>>] are made manifest by the light: ##for##note:x[<<John 3:20–21; 1 Cor 4:5>>] whatsoever doth make manifest is light.
+@ Wherefore he saith, ##Awake##note:x[<<Isa 60:1; Rom 13:11–12>>] thou that sleepest, and ##arise##note:x[<<Isa 26:19>>] from the dead, and Christ shall give thee light.
+@ See then that ye ##walk##note:x[<<Phil 1:27; Col 4:5>>] circumspectly, ##not##note:x[<<Jas 3:13>>] as fools, but as wise,
+@ ##Redeeming##note:x[<<Col 4:5>>] the time, because ##the days##note:x[<<Amos 5:13; John 12:35>>] are evil.
+@ Wherefore be ye not unwise, but ##understanding##note:x[<<Rom 12:2; Col 1:9; 1 Thess 5:18>>] what the will of the Lord __is__.
+@ And ##be not##note:x[<<Prov 20:1; Rom 13:13; Gal 5:21>>] drunk with wine, wherein is excess; but be filled with the Spirit;
+@ Speaking ##to yourselves##note:x[<<1 Cor 14:26; Col 3:16>>] in ##psalms##note:x[<<Ps 95:2>>] and hymns and spiritual songs, singing and making melody in your heart to the Lord;
+@ Giving ##thanks##note:x[<<Col 3:17; 1 Thess 5:18>>] always for all things unto God and the Father ##in##note:x[<<Col 3:17>>] the name of our Lord Jesus Christ;
+
+[discrete.pericope]
+==== Wives and Husbands
+
+[.parallel]
+(<<Song 1:1–17; 1 Peter 3:1–7>>)
+
+@ ##Submitting##note:x[<<Eph 5:22, 24; Phil 2:3>>] yourselves one to another in the fear of God.
+@ Wives, ##submit##note:x[<<Col 3:18–25; Titus 2:5; 1 Pet 3:1–6>>] yourselves unto your own husbands, as unto the Lord.
+@ For the ##husband##note:x[<<1 Cor 11:3–10>>] is the head of the wife, ##even##note:x[<<Eph 1:22–23; Col 1:18>>] as Christ is the head of the church: and he is the saviour of the body.
+@ Therefore as the church is subject unto Christ, so __let__ the wives __be__ to their own husbands ##in##note:x[<<Eph 5:33; Col 3:20; Titus 2:7>>] every thing.
+@ Husbands, ##love##note:x[<<Eph 5:28; Col 3:19; 1 Pet 3:7>>] your wives, even as Christ also loved the church, and gave himself for it;
+@ That he might sanctify and cleanse it ##with##note:x[<<Ezek 36:25; John 3:5; Heb 10:22>>] the washing of water by the word,
+@ That ##he##note:x[<<Col 1:22>>] might present it to himself a glorious church, ##not##note:x[<<Heb 9:14>>] having spot, or wrinkle, or any such thing; ##but##note:x[<<Col 1:22>>] that it should be holy and without blemish.
+@ So ought men to love their wives ##as##note:x[<<Gen 2:21–24; Matt 19:5; Eph 5:33>>] their own bodies. He that loveth his wife loveth himself.
+@ For no man ever yet ##hated##note:x[<<Prov 11:17; Eph 5:31>>] his own flesh; but ##nourisheth##note:x[<<Ezek 34:14–15>>] and cherisheth it, even as the Lord the church:
+@ ##For we are members of his body, of his flesh, and of his bones.##note:x[<<Rom 12:5; 1 Cor 6:15; 12:12–27>>]
+@ ##For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.##note:x[<<Gen 2:24; Matt 19:5; Mark 10:7–8>>]
+@ This is a great mystery: but I ##speak##note:x[<<Isa 54:5; 2 Cor 11:2; Rev 21:2>>] concerning Christ and the church.
+@ Nevertheless ##let##note:x[<<Eph 5:25>>] every one of you in particular so love his wife even as himself; and the wife __see__ that she ##reverence##note:x[<<Esth 1:20; 1 Pet 3:2–6>>] __her__ husband.
+
+=== @6
+
+[discrete.pericope]
+==== Children and Parents
+
+[.parallel]
+(<<Colossians 3:18–21>>)
+
+@ Children, ##obey##note:x[<<Prov 6:20; 23:22; Col 3:20–25>>] your parents in the Lord: for this is right.
+@ note:x[<<Exod 20:12; Deut 27:16; Matt 15:4–6>>]Honour thy father and mother; ( which is the first commandment with promise;)
+@ ##That it may be well with thee, and thou mayest live long on the earth.##note:x[<<Deut 4:40; 5:16; 12:28>>]
+@ And, ##ye##note:x[<<Col 3:21>>] fathers, provoke not your children to wrath: ##but##note:x[<<Prov 22:6; 29:15>>] bring them up in the nurture and admonition of the Lord.
+
+[discrete.pericope]
+==== Serving with Honor
+
+[.parallel]
+(<<Colossians 3:22–25; 1 Timothy 6:1–2>>)
+
+@ Servants, ##be##note:x[<<Titus 2:9–10; 1 Pet 2:18–21>>] obedient to them that are __your__ masters according to the flesh, with fear and trembling, in singleness of your heart, ##as##note:x[<<Col 3:17–24>>] unto Christ;
+@ Not with ##eyeservice##note:x[<<Col 3:22; 1 Thess 2:4>>], as menpleasers; but as the servants of Christ, ##doing##note:x[<<Eph 5:17>>] the will of God from the heart;
+@ With ##good##note:x[<<2 Kgs 5:13>>] will doing service, ##as##note:x[<<1 Cor 10:31; Eph 6:5–6>>] to the Lord, and not to men:
+@ Knowing that ##whatsoever##note:x[<<Prov 11:18; Luke 14:14; Col 3:24>>] good thing any man doeth, the same shall he receive of the Lord, whether __he be__ bond or free.
+@ And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; ##neither##note:x[<<Acts 10:34; Rom 2:11; Col 3:25>>] is there respect of persons with him.
+
+[discrete.pericope]
+==== The Full Armor of God
+
+@ Finally, my brethren, ##be##note:x[<<Josh 1:9; Isa 40:31; Phil 4:13>>] strong in the Lord, and in the power of his might.
+@ Put on ##the whole##note:x[<<Rom 13:12; 2 Cor 10:4; Eph 6:13>>] armour of God, that ye may be able to stand against the wiles of the devil.
+@ For we wrestle not against flesh and blood, but against principalities, against powers, ##against the##note:x[<<2 Cor 4:4; Eph 2:2; Col 1:13>>] rulers of the darkness of this world, against spiritual wickedness in high __places__.
+@ Wherefore ##take##note:x[<<2 Cor 10:4; Eph 6:11–17>>] unto you the whole armour of God, that ye may be able to withstand in the evil day, and having done all, ##to stand##note:x[<<Luke 21:36>>].
+@ Stand therefore, ##having##note:x[<<Isa 11:5>>] your loins girt about with truth, and having on ##the breastplate##note:x[<<Isa 59:17; 1 Thess 5:8>>] of righteousness;
+@ And your feet shod with the preparation of ##the gospel##note:x[<<Isa 52:7; Rom 10:15; 2 Cor 5:18–21>>] of peace;
+@ Above all, taking ##the shield##note:x[<<Prov 18:10; 1 Pet 5:8–9; 1 John 5:4–5>>] of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.
+@ And take ##the helmet##note:x[<<Isa 59:17>>] of salvation, and ##the sword##note:x[<<Heb 4:12; Rev 19:15>>] of the Spirit, which is the word of God:
+@ ##Praying##note:x[<<Col 4:2; 1 Thess 5:17>>] always with all prayer and supplication in the Spirit, and ##watching##note:x[<<Col 4:2>>] thereunto with all perseverance and supplication for all saints;
+@ And ##for##note:x[<<Col 4:3; 2 Thess 3:1>>] me, that utterance may be given unto me, ##that I##note:x[<<Acts 4:29>>] may open my mouth boldly, to make known the mystery of the gospel,
+@ For which ##I am##note:x[<<2 Cor 5:20>>] an ambassador in ##bonds##note:x[<<2 Tim 2:9>>]: that therein I may speak ##boldly##note:x[<<Col 4:4>>], as I ought to speak.
+
+[discrete.pericope]
+==== Final Greetings
+
+[.parallel]
+(<<Philippians 4:21–23; 2 Timothy 4:19–22>>)
+
+@ But that ye also may know my affairs, __and__ how I do, ##Tychicus##note:x[<<Acts 20:4; 2 Tim 4:12; Titus 3:12>>], a beloved brother and faithful minister in the Lord, shall make known to you all things:
+@ Whom I have sent unto you for the same purpose, that ye might know our affairs, and __that__ he might comfort your hearts.
+
+@ ##Peace##note:x[<<Gal 6:16; 1 Pet 5:14>>] __be__ to the brethren, ##and love##note:x[<<Gal 5:6>>] with faith, from God the Father and the Lord Jesus Christ.
+@ Grace __be__ with all them that ##love##note:x[<<1 Cor 16:22>>] our Lord Jesus Christ ##in sincerity##note:x[<<Matt 22:37>>]. Amen.
+
+[.colophon]
+Written from Rome unto the Ephesians by Tychicus.

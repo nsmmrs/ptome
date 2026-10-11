@@ -1,0 +1,24 @@
+version: 2
+scheme:
+  ne:
+    cite: "{{book}}.{{chapter}}"
+    level:
+      - name: "book"
+        break: "heading"
+        depth: 1
+        id: "ne-{{book}}"
+        reftext: "Book {{book}}"
+        title: "Book {{book|ROMAN}}"
+      - name: "chapter"
+        break: "heading"
+        depth: 2
+        sep: "."
+        id: "ne-{{book}}-{{chapter}}"
+        reftext: "{{book}}.{{chapter}}"
+        title: "Chapter {{chapter}}"
+      - name: "section"
+        auto: "paragraph"
+        sep: "."
+        id: "ne-{{book}}-{{chapter}}-{{section}}"
+        reftext: "{{book}}.{{chapter}}.{{section}}"
+        label: ""

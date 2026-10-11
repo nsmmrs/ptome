@@ -1,0 +1,210 @@
+== @PHP
+
+[.book-title]
+The Epistle of Paul the Apostle to the Philippians
+
+=== @1
+
+[discrete.pericope]
+==== Greetings from Paul and Timothy
+
+[.parallel]
+(<<Colossians 1:1–2; Philemon 1:1–3>>)
+
+@ Paul and ##Timotheus##note:x[<<2 Cor 1:1>>], the servants of Jesus Christ, to all ##the saints##note:x[<<2 Cor 1:1>>] in Christ Jesus which are at ##Philippi##note:x[<<Acts 16:12–15>>], with the bishops and deacons:
+@ ##Grace __be__ unto you, and peace, from God our Father, and __from__ the Lord Jesus Christ.##note:x[<<Rom 1:7; 2 Cor 1:2; 1 Pet 1:2>>]
+
+[discrete.pericope]
+==== Thanksgiving and Prayer
+
+[.parallel]
+(<<1 Corinthians 1:4–9; Colossians 1:3–14>>)
+
+@ ##I thank##note:x[<<1 Cor 1:4>>] my God ##upon##note:x[<<1 Thess 1:2–3; Phlm 1:4–5>>] every remembrance of you,
+@ Always ##in##note:x[<<Rom 1:9; 1 Thess 1:2>>] every prayer of mine for you all making request ##with##note:x[<<2 John 1:4>>] joy,
+@ ##For your fellowship in the gospel from the first day until now;##note:x[<<Phil 1:7; 4:14; Heb 3:14>>]
+@ Being confident of this very thing, that he which hath ##begun##note:x[<<Phil 2:13>>] a good work in you ##will##note:x[<<Eph 4:12; 1 Thess 5:23–24>>] perform __it__ until the day of Jesus Christ:
+@ Even ##as##note:x[<<Col 4:18>>] it is meet for me to think this of you all, ##because##note:x[<<2 Cor 7:3>>] I have you in my heart; inasmuch as both in my bonds, and in the defence and confirmation of the gospel, ye all are ##partakers of my##note:x[<<Phil 1:5>>] grace.
+@ For ##God##note:x[<<Rom 1:9>>] is my record, ##how##note:x[<<Phil 4:1; 1 Thess 2:8>>] greatly I long after you all in the bowels of Jesus Christ.
+@ And this I pray, that ##your##note:x[<<1 Thess 3:12; Phlm 1:6>>] love may abound yet more and more ##in knowledge##note:x[<<Col 1:9>>] and __in__ all judgment;
+@ That ##ye##note:x[<<Rom 12:2>>] may ##approve things that are excellent##note:x[<<Rom 12:2>>]; ##that ye may be##note:x[<<1 Thess 3:13>>] sincere and without offence till the day of Christ;
+@ Being ##filled##note:x[<<John 15:8; Heb 12:11>>] with the fruits of righteousness, which are by Jesus Christ, ##unto##note:x[<<John 15:8>>] the glory and praise of God.
+
+[discrete.pericope]
+==== Paul’s Trials Advance the Gospel
+
+[.parallel]
+(<<James 1:2–12>>)
+
+@ But I would ye should understand, brethren, that the things __which happened__ unto me have fallen out ##rather##note:x[<<Acts 11:19–21; Rom 8:28; 2 Tim 2:9>>] unto the furtherance of the gospel;
+@ ##So that my bonds##note:x[<<Acts 26:29; Eph 3:1; 6:20>>] in Christ are manifest in all the palace, and in all other __places__;
+@ And many of the brethren in the Lord, ##waxing##note:x[<<Eph 6:19–20; 1 Thess 2:2>>] confident by my bonds, are much more bold to speak the word ##without##note:x[<<Luke 1:74>>] fear.
+@ Some indeed ##preach##note:x[<<2 Cor 4:5>>] Christ ##even##note:x[<<Rom 16:17–18; Phil 2:3>>] of envy and strife; and some also of good will:
+@ The one preach Christ of contention, ##not sincerely##note:x[<<2 Cor 2:17; 4:1–2>>], supposing to add affliction to my bonds:
+@ But the other of love, knowing ##that##note:x[<<2 Tim 1:11–12>>] I am set for the defence of the gospel.
+@ What then? notwithstanding, every way, whether in pretence, or in truth, Christ is preached; ##and I##note:x[<<Mark 9:38–40; Luke 9:50; 1 Cor 15:11>>] there in do rejoice, yea, and will rejoice.
+@ For ##I know##note:x[<<Rom 8:28>>] that this shall turn to my salvation ##through##note:x[<<2 Cor 1:11>>] your prayer, and the supply of ##the Spirit##note:x[<<Gal 4:6>>] of Jesus Christ,
+@ According to my earnest expectation and __my__ hope, that ##in nothing##note:x[<<Isa 54:4; 1 Pet 4:16>>] I shall be ashamed, but __that__ with all boldness, as always, __so__ now also ##Christ##note:x[<<1 Cor 6:20>>] shall be magnified in my body, whether __it be__ by life, or by death.
+
+[discrete.pericope]
+==== To Live Is Christ
+
+@ For to me to live __is__ Christ, and ##to die##note:x[<<2 Cor 5:1, 8; Phil 1:23>>] __is__ gain.
+@ But if I ##live##note:x[<<Gal 2:20; Phil 1:24; 1 Pet 4:2>>] in the flesh, this __is__ the fruit of my labour: yet what I shall choose I wot not.
+@ For I am in a strait betwixt two, having ##a desire##note:x[<<2 Cor 5:8>>] to depart, and to be ##with##note:x[<<2 Cor 5:8>>] Christ; which is ##far##note:x[<<Ps 17:15>>] better:
+@ Nevertheless to abide in the flesh __is__ more needful for you.
+@ And having this ##confidence##note:x[<<Phil 2:24>>], I know that I shall abide and continue with you all ##for##note:x[<<2 Cor 1:24; Eph 4:11–13>>] your furtherance and joy of faith;
+@ ##That your rejoicing may be more abundant in Jesus Christ for me by my coming to you again.##note:x[<<2 Cor 1:14; 5:12; Phil 3:3>>]
+
+[discrete.pericope]
+==== Worthy of the Gospel
+
+@ Only ##let##note:x[<<Eph 4:1; 2 Pet 3:14>>] your conversation be as it becometh the gospel of Christ: that whether I come and see you, or else be absent, I may hear of your affairs, ##that ye##note:x[<<1 Cor 16:13–14>>] stand fast in one spirit, with one mind striving together for the faith of the gospel;
+@ And ##in##note:x[<<Matt 10:28; 2 Tim 1:7–8>>] nothing terrified by your adversaries: which is to them ##an##note:x[<<2 Thess 1:5–6>>] evident token of perdition, but to you of salvation, and that of God.
+@ For unto you ##it is##note:x[<<Acts 5:41; Jas 1:2; 1 Pet 4:13>>] given in the behalf of Christ, not only to believe on him, but also to suffer for his sake;
+@ Having ##the same##note:x[<<2 Tim 4:7>>] conflict ##which##note:x[<<Acts 16:19–40; 1 Thess 2:2>>] ye saw in me, and now hear __to be__ in me.
+
+=== @2
+
+[discrete.pericope]
+==== One in Christ
+
+[.parallel]
+(<<Ephesians 2:11–18>>)
+
+@ If __there be__ therefore any consolation in Christ, ##if any comfort##note:x[<<1 John 4:7–8, 12>>] of love, if any fellowship of the Spirit, ##if any bowels##note:x[<<Col 3:12>>] and mercies,
+@ note:x[<<Rom 12:16; 1 Cor 1:10; 1 Pet 3:8–9>>]Fulfil ye my joy, that ye be like minded, having the same love, __being__ of one accord, of one mind.
+@ __Let__ ##nothing##note:x[<<Gal 5:26>>] __be done__ through strife or vainglory; ##but##note:x[<<Rom 12:10; Eph 5:21>>] in lowliness of mind let each esteem other better than themselves.
+@ ##Look not every man on his own things, but every man also on the things of others.##note:x[<<Rom 15:1; 1 Cor 10:24; Jas 2:8>>]
+
+[discrete.pericope]
+==== The Mind of Christ
+
+[.parallel]
+(<<Isaiah 52:13–15>>)
+
+@ ##Let this mind be in you, which was also in Christ Jesus:##note:x[<<Matt 11:29; 1 Pet 2:21; 1 John 2:6>>]
+@ Who, being ##in##note:x[<<2 Cor 4:4; Heb 1:3>>] the form of God, ##thought##note:x[<<John 5:18>>] it not robbery to be equal with God:
+@ But ##made##note:x[<<2 Cor 8:9>>] himself of no reputation, and took upon him ##the form##note:x[<<Matt 20:28>>] of a servant, and was made ##in the##note:x[<<John 1:14>>] likeness of men:
+@ And being found in fashion as a man, ##he##note:x[<<Heb 12:2>>] humbled himself, and became obedient unto death, even ##the death##note:x[<<John 10:18; Heb 12:2>>] of the cross.
+@ Wherefore ##God##note:x[<<Matt 28:18; Rev 19:16>>] also hath highly exalted him, and ##given##note:x[<<1 Pet 3:22>>] him a name which is above every name:
+@ That at the name of Jesus ##every##note:x[<<Isa 45:23–25; Matt 28:18; Rev 5:13–14>>] knee should bow, of __things__ in heaven, and __things__ in earth, and __things__ under the earth;
+@ And __that__ ##every##note:x[<<1 John 4:15>>] tongue should confess that Jesus Christ ##__is__ Lord##note:x[<<John 13:13; Rom 14:11>>], to the glory of God the Father.
+
+[discrete.pericope]
+==== Lights in the World
+
+[.parallel]
+(<<Matthew 5:13–16>>)
+
+@ Wherefore, my beloved, as ye have always obeyed, not as in my presence only, but now much more in my absence, ##work##note:x[<<Luke 13:23–24; 1 Cor 15:58; 2 Pet 1:5–10>>] out your own salvation with fear and trembling.
+@ For it is ##God##note:x[<<2 Cor 3:5; Heb 13:21>>] which worketh in you both to will and to do of __his__ ##good##note:x[<<2 Tim 1:9>>] pleasure.
+@ Do all things ##without##note:x[<<1 Cor 10:10; Jas 5:9; 1 Pet 4:9>>] murmurings and disputings:
+@ That ye may be blameless and harmless, the ##sons##note:x[<<Matt 5:45>>] of God, without rebuke, in the midst of ##a crooked##note:x[<<1 Pet 2:12>>] and perverse nation, among whom ##ye shine##note:x[<<Matt 5:14–16>>] as lights in the world;
+@ Holding forth ##the word##note:x[<<1 John 1:1>>] of life; that I may rejoice in the day of Christ, ##that I have##note:x[<<1 Cor 9:26; Gal 2:2>>] not run in vain, neither laboured in vain.
+@ Yea, ##and if##note:x[<<2 Tim 4:6>>] I be offered upon ##the sacrifice##note:x[<<Rom 15:16; Heb 13:15–16>>] and service of your faith, I joy, and rejoice with you all.
+@ For the same cause also ##do##note:x[<<Phil 3:1; 4:4; Jas 1:2–4>>] ye joy, and rejoice with me.
+
+[discrete.pericope]
+==== Timothy and Epaphroditus
+
+[.parallel]
+(<<1 Corinthians 16:10–12>>)
+
+@ But I trust in the Lord Jesus ##to send##note:x[<<1 Cor 4:17; 1 Thess 3:6>>] Timotheus shortly unto you, ##that I##note:x[<<1 Thess 3:6–8>>] also may be of good comfort, when I know your state.
+@ note:x[<<1 Sam 18:3>>]For ##I have##note:x[<<Phil 2:2, 22>>] no man likeminded, who will naturally care for your state.
+@ For ##all##note:x[<<1 Cor 10:24, 33; Phil 2:4>>] seek their own, not the things which are Jesus Christ’s.
+@ But ##ye##note:x[<<2 Cor 2:9>>] know the proof of him, that, ##as##note:x[<<1 Cor 4:17; 1 Tim 1:2>>] a son with the father, he hath served with me in the gospel.
+@ Him therefore I hope to send presently, so soon as I shall see how it will go with me.
+@ ##But I trust in the Lord that I also myself shall come shortly.##note:x[<<Phil 1:25–26; Phlm 1:22; 3 John 1:14>>]
+@ Yet I supposed it necessary to send to you ##Epaphroditus##note:x[<<Phil 4:18>>], ##my brother##note:x[<<Phlm 1:1>>], and companion in labour, and fellowsoldier, but your messenger, ##and he##note:x[<<Phil 4:18>>] that ministered to my wants.
+@ For ##he longed##note:x[<<Phil 1:8>>] after you all, and was ##full##note:x[<<Prov 12:25; Isa 61:3>>] of heaviness, because that ye had heard that he had been sick.
+@ For indeed he was sick ##nigh##note:x[<<John 11:3–4; Phil 2:30>>] unto death: ##but God##note:x[<<Ps 34:19>>] had mercy on him; and not on him only, but on me also, lest I should have sorrow upon sorrow.
+@ I sent him therefore the more carefully, that, when ##ye see##note:x[<<John 16:22; Phil 2:26; 2 Tim 1:4>>] him again, ye may rejoice, and that I may be the less sorrowful.
+@ Receive him therefore in the Lord with all gladness; ##and##note:x[<<1 Thess 5:12>>] ##hold such in reputation##note:x[<<1 Cor 16:18; 1 Tim 5:17>>]:
+@ Because for the work of Christ he was ##nigh##note:x[<<Acts 20:24>>] unto death, not regarding his life, ##to##note:x[<<1 Cor 16:17; Phil 4:10>>] supply your lack of service toward me.
+
+=== @3
+
+[discrete.pericope]
+==== Righteousness through Faith in Christ
+
+[.parallel]
+(<<Romans 3:21–31>>)
+
+@ ##Finally##note:x[<<Eph 6:10>>], my brethren, ##rejoice##note:x[<<Rom 5:11; Phil 4:4>>] in the Lord. To write the same things to you, to me indeed __is__ not grievous, but for you __it is__ safe.
+
+@ Beware ##of dogs##note:x[<<Rev 22:15>>], beware of ##evil##note:x[<<2 Cor 11:13; Titus 1:16>>] workers, beware of the concision.
+@ For ##we##note:x[<<Deut 30:6; Col 2:11>>] are the circumcision, which ##worship##note:x[<<Rom 7:6>>] God in the spirit, and rejoice in Christ Jesus, and have no confidence in the flesh.
+@ ##Though I might also have confidence in the flesh. If any other man thinketh that he hath whereof he might trust in the flesh, I more:##note:x[<<2 Cor 11:18–22>>]
+@ Circumcised the eighth day, ##of the stock##note:x[<<2 Cor 11:22>>] of Israel, ##__of__ the tribe##note:x[<<Rom 11:1>>] of Benjamin, ##an##note:x[<<2 Cor 11:22>>] Hebrew of the Hebrews; as touching the law, a Pharisee;
+@ Concerning ##zeal##note:x[<<Gal 1:13–14>>], ##persecuting##note:x[<<Acts 8:3; 26:9–10>>] the church; touching the righteousness which is in the law, blameless.
+@ ##But what things were gain to me, those I counted loss for Christ.##note:x[<<Matt 13:44–46; 16:26; Luke 14:33>>]
+@ Yea doubtless, and ##I count##note:x[<<Acts 20:24; Rom 8:18>>] all things __but__ loss for ##the excellency##note:x[<<Jer 9:23–24>>] of the knowledge of Christ Jesus my Lord: for whom I have suffered the loss of all things, and do count them __but__ dung, that I may win Christ,
+@ And be found ##in##note:x[<<1 Cor 1:30>>] him, not having mine own righteousness, which is of the law, but that which is through the faith of Christ, ##the righteousness##note:x[<<1 Cor 1:30; 2 Cor 5:21>>] which is of God by faith:
+@ That I may know him, ##and the power##note:x[<<1 Pet 4:1–2>>] of his resurrection, ##and the fellowship##note:x[<<Gal 2:20; 2 Tim 2:11–12>>] of his sufferings, being made conformable unto his death;
+@ If by any means I might ##attain##note:x[<<Luke 20:35–36; Acts 23:6; 26:7>>] unto the resurrection of the dead.
+
+[discrete.pericope]
+==== Pressing on toward the Goal
+
+@ Not as though I had already attained, either were ##already perfect##note:x[<<Ps 138:8; 2 Pet 1:5–8>>]: but ##I follow##note:x[<<1 Tim 6:11>>] after, if that I may apprehend that for which also I am apprehended of Christ Jesus.
+@ Brethren, ##I count##note:x[<<Phil 3:12>>] not myself to have apprehended: but __this__ one thing __I do__, ##forgetting##note:x[<<Luke 9:62>>] those things which are behind, ##and reaching##note:x[<<Heb 12:1–2>>] forth unto those things which are before,
+@ I ##press##note:x[<<2 Tim 4:7–8; Rev 3:21>>] toward the mark for the prize of ##the high##note:x[<<1 Pet 5:10>>] calling of God in Christ Jesus.
+@ Let us therefore, ##as##note:x[<<1 Cor 2:6>>] many as be perfect, ##be thus##note:x[<<Gal 5:10>>] minded: and if in any thing ye be otherwise minded, ##God##note:x[<<John 7:17>>] shall reveal even this unto you.
+@ note:x[<<Rev 2:4–5; 3:3>>]Nevertheless, where to we have already attained, ##let us walk##note:x[<<Col 2:6>>] by the same rule, let us mind the same thing.
+
+[discrete.pericope]
+==== Citizenship in Heaven
+
+@ Brethren, ##be##note:x[<<1 Cor 4:16; Phil 4:9; 1 Pet 5:3>>] followers together of me, and mark them which walk so as ye have us for an ensample.
+@ ( For ##many##note:x[<<Isa 8:11; Eph 4:17>>] walk, of whom I have told you often, and now tell you even weeping, __that they are__ the ##enemies##note:x[<<Gal 6:12>>] of the cross of Christ:
+@ Whose ##end##note:x[<<2 Pet 2:3>>] __is__ destruction, ##whose God##note:x[<<Rom 16:18>>] __is their__ belly, and __whose__ glory __is__ in their shame, ##who##note:x[<<Rom 8:5–7>>] mind earthly things.)
+@ For ##our##note:x[<<Eph 2:19; Col 3:1–3>>] ##conversation##note:x[<<Eph 2:19>>] is in heaven; from whence also we look for the Saviour, the Lord Jesus Christ:
+@ Who ##shall##note:x[<<1 Cor 15:42–44>>] change our vile body, ##that##note:x[<<Col 3:4; 1 John 3:2>>] it may be fashioned like unto his glorious body, according to the working whereby he is able even to subdue all things unto himself.
+
+=== @4
+
+[discrete.pericope]
+==== Rejoice in the Lord
+
+@ Therefore, my brethren dearly beloved and longed for, my joy and crown, ##so##note:x[<<Ps 27:14; 1 Cor 16:13; Phil 1:27>>] stand fast in the Lord, __my__ dearly beloved.
+@ I beseech Euodias, and beseech Syntyche, ##that##note:x[<<Mark 9:50; 1 Cor 1:10; Heb 12:14>>] they be of the same mind in the Lord.
+@ And I intreat thee also, true yokefellow, help those women which laboured with me in the gospel, with Clement also, and __with__ other my fellowlabourers, ##whose##note:x[<<Luke 10:20; Rev 3:5; 13:8>>] names __are__ in the book of life.
+@ ##Rejoice##note:x[<<Rom 12:12>>] in the Lord ##alway##note:x[<<1 Thess 5:16–18; Jas 1:2–4>>]: __and__ again I say, Rejoice.
+@ Let ##your##note:x[<<Matt 6:25; Titus 3:2>>] moderation be known unto all men. ##The##note:x[<<Jas 5:8–9>>] Lord __is__ at hand.
+@ Be ##careful##note:x[<<Matt 6:25–33; 1 Pet 5:7>>] for nothing; but ##in##note:x[<<Prov 3:5–6>>] every thing by prayer and supplication with thanksgiving let your requests be made known unto God.
+@ And ##the peace##note:x[<<Isa 26:3; John 14:27; 2 Thess 3:16>>] of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.
+@ Finally, brethren, ##whatsoever##note:x[<<Jas 3:17>>] things are true, whatsoever things __are__ ##honest##note:x[<<Titus 2:7>>], whatsoever things __are__ just, whatsoever things ##__are__ pure##note:x[<<Jas 3:17>>], whatsoever things __are__ lovely, whatsoever things __are__ of good report; if __there be__ any virtue, and if __there be__ any praise, think on these things.
+@ Those things, ##which##note:x[<<Phil 3:17; 1 Thess 4:1–8>>] ye have both learned, and received, and heard, and seen in me, ##do##note:x[<<Jas 1:22>>]: and the God of peace shall be with you.
+
+[discrete.pericope]
+==== The Generosity of the Philippians
+
+[.parallel]
+(<<2 Corinthians 8:1–15>>)
+
+@ But ##I##note:x[<<2 Cor 7:6–7>>] rejoiced in the Lord greatly, that now at the last ##your##note:x[<<2 Cor 11:9; Gal 6:6>>] care of me hath flourished again; where in ye were also careful, but ye lacked opportunity.
+@ Not that I speak in respect of want: for ##I have##note:x[<<Matt 6:31–34; 1 Tim 6:6–9; Heb 13:5–6>>] learned, in whatsoever state I am, __therewith__ to be content.
+@ I know both ##how to be##note:x[<<2 Cor 11:27; 12:7–10>>] abased, and I know how to abound: every where and in all things ##I am##note:x[<<Matt 11:29>>] instructed both to be full and to be hungry, both to abound and to suffer need.
+@ I can do all things ##through##note:x[<<Isa 41:10; 2 Cor 12:9–10; Eph 6:10>>] Christ which strengtheneth me.
+@ Notwithstanding ye have well done, that ##ye did##note:x[<<Phil 1:7; Heb 10:34; 13:16>>] communicate with my affliction.
+@ Now ye Philippians know also, that in the beginning of the gospel, when I departed from Macedonia, no church communicated with me as concerning giving and receiving, but ye only.
+@ For even ##in##note:x[<<1 Thess 2:9>>] Thessalonica ye sent once and again unto my necessity.
+@ Not because I desire a gift: but I desire ##fruit##note:x[<<2 Cor 9:9–13; Titus 3:14>>] that may abound ##to##note:x[<<Heb 6:10>>] your account.
+@ But I have all, and ##abound##note:x[<<Phil 4:12>>]: I am full, having received of Epaphroditus the things __which were sent__ from you, ##an##note:x[<<Heb 13:16>>] odour of a sweet smell, a sacrifice ##acceptable##note:x[<<2 Cor 9:12>>], wellpleasing to God.
+@ But my God shall ##supply##note:x[<<Ps 84:11; 2 Cor 9:8–11>>] all your need according to his riches in ##glory##note:x[<<1 Pet 5:10>>] by Christ Jesus.
+@ Now ##unto##note:x[<<Ps 115:1; Rom 11:36; Rev 14:7>>] God and our Father __be__ glory for ever and ever. Amen.
+
+[discrete.pericope]
+==== Final Greetings
+
+[.parallel]
+(<<Ephesians 6:21–24; 2 Timothy 4:19–22>>)
+
+@ Salute every saint in Christ Jesus. ##The##note:x[<<Gal 1:2>>] brethren which are with me greet you.
+@ All the saints salute you, chiefly ##they##note:x[<<Phil 1:13>>] that are of Caesar’s household.
+@ The grace of our Lord Jesus Christ __be__ with you ##all##note:x[<<Rom 16:20; 2 Cor 13:14>>]. Amen.
+
+[.colophon]
+It was written to the Philippians from Rome by Epaphroditus.

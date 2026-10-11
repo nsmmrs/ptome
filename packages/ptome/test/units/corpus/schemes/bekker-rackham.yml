@@ -1,0 +1,5 @@
+version: 2
+level:
+  bekker:
+    line:
+      every: 20

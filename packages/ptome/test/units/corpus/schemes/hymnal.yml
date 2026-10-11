@@ -1,0 +1,32 @@
+# A hymnal: hymn > stanza. Hymns are headings that step (`== @ Evening
+# Prayer`: the next hymn, its subject the title); stanzas are bare markers
+# that start blocks, numbered but for the first. A refrain is apparatus,
+# written once after the first stanza as hymnals print it.
+version: 2
+settings:
+  apparatus: "refrain tune author"
+scheme:
+  hymnal:
+    cite: "{{hymn}}"
+    level:
+      - name: "hymn"
+        break: "heading"
+        depth: 1
+        id: "hymn-{{hymn}}"
+        reftext: "Hymn {{hymn}}"
+        title: "{{hymn}}. {{title}}"
+      - name: "stanza"
+        break: "block"
+        sep: ":"
+        default: true
+        id: "hymn-{{hymn}}-{{stanza}}"
+        reftext: "{{hymn}}:{{stanza}}"
+        label: "{{^first}}{{stanza}}{{/first}}"
+        label-after: " "
+        block-role: "stanza"
+        block-options:
+          - "hardbreaks"
+citation:
+  default:
+    attribution: "{{title}}, no. {{passage}}"
+    title: ""

@@ -1,0 +1,10 @@
+version: 2
+level-presentation:
+  quran:
+    ayah:
+      label: "{{ayah}}"
+      label-style: "superscript"
+      label-after: "\u00a0"
+citation:
+  default:
+    labels: "none"

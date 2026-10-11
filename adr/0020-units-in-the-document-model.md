@@ -1,6 +1,6 @@
 # ADR-0020: Units in the Document Model
 
-**Status:** Accepted on 2026-10-09 (all decisions implemented; see Implementation). Decided by the user on 2026-10-08: units are to be a native feature of the ptome language, "not an awkward preprocessing step", in the ideal implementation. Byte identity with milestone 1 is not a goal. It supersedes [ADR-0019](0019-units.md) decision 5, decision 4's port contract and decision 3's scheme format. It keeps ADR-0019's syntax (decision 2), opt-in (decision 1), safety (decision 7) and fixtures policy (decision 8).
+**Status:** Accepted on 2026-10-09 (all decisions implemented; see Implementation). On 2026-10-11 the loci repository was retired: its documents moved to `packages/ptome/test/units/corpus` (without the BSB and the non-commercial texts), and the model gate compares with ptome's own frozen models (`test/units/corpus_model_test.dart`) instead of milestone 1's dumps. Decided by the user on 2026-10-08: units are to be a native feature of the ptome language, "not an awkward preprocessing step", in the ideal implementation. Byte identity with milestone 1 is not a goal. It supersedes [ADR-0019](0019-units.md) decision 5, decision 4's port contract and decision 3's scheme format. It keeps ADR-0019's syntax (decision 2), opt-in (decision 1), safety (decision 7) and fixtures policy (decision 8).
 
 ## Context
 

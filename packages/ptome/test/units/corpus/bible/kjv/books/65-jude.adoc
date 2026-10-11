@@ -1,0 +1,59 @@
+== @JUD
+
+[.book-title]
+The General Epistle of Jude
+
+=== @1
+
+[discrete.pericope]
+==== A Greeting from Jude
+
+[.parallel]
+(<<James 1:1>>)
+
+@ Jude, the servant of Jesus Christ, and brother of James, to ##them##note:x[<<1 Thess 5:23>>] that are sanctified by God the Father, and ##preserved##note:x[<<1 Pet 1:5>>] in Jesus Christ, ##__and__ called##note:x[<<1 Pet 2:9>>]:
+@ ##Mercy unto you, and peace, and love, be multiplied.##note:x[<<1 Pet 1:2; 2 Pet 1:2; Rev 1:4–6>>]
+
+[discrete.pericope]
+==== God’s Judgment on the Ungodly
+
+[.parallel]
+(<<2 Peter 3:1–7>>)
+
+@ Beloved, when I gave all diligence to write unto you of the ##common##note:x[<<Titus 1:4>>] salvation, it was needful for me to write unto you, and exhort __you__ ##that ye##note:x[<<Phil 1:27; 1 Tim 6:12>>] should earnestly contend for the faith which was once delivered unto the saints.
+@ For there are certain men ##crept##note:x[<<Gal 2:4; 2 Pet 2:1–2>>] in unawares, who were before of old ordained to this condemnation, ungodly men, turning the grace of our God into lasciviousness, and ##denying##note:x[<<2 Pet 2:1>>] the only Lord God, and our Lord Jesus Christ.
+@ I will therefore put you in remembrance, though ye once knew this, how that the Lord, ##having##note:x[<<1 Cor 10:1–12>>] saved the people out of the land of Egypt, ##afterward##note:x[<<Num 26:64–65; Heb 3:16–19>>] destroyed them that believed not.
+@ And the angels which kept not their ##first estate##note:x[<<Eph 6:12>>], but left their own habitation, ##he hath##note:x[<<Matt 25:41; 2 Pet 2:4>>] reserved in everlasting chains under darkness unto the judgment of the great day.
+@ Even ##as##note:x[<<Deut 29:23>>] Sodom and Gomorrha, and the cities about them in like manner, giving themselves over to fornication, and going after ##strange##note:x[<<Rom 1:26–27>>] flesh, are set forth for an example, suffering the vengeance of ##eternal##note:x[<<Deut 29:23>>] fire.
+@ Likewise also these __filthy__ dreamers ##defile##note:x[<<1 Tim 1:10; 2 Pet 2:10–12>>] the flesh, ##despise##note:x[<<Heb 13:17>>] dominion, and speak evil of dignities.
+@ Yet Michael the archangel, when contending with the devil he disputed about ##the body##note:x[<<Deut 34:6>>] of Moses, ##durst##note:x[<<2 Pet 2:11>>] not bring against him a railing accusation, but said, ##The Lord##note:x[<<Zech 3:2>>] rebuke thee.
+@ But these ##speak##note:x[<<2 Pet 2:12>>] evil of those things which they know not: but what they know naturally, as brute beasts, ##in those##note:x[<<Rom 1:21–22>>] things they corrupt themselves.
+@ Woe unto them! ##for##note:x[<<1 John 3:12>>] they have gone in the way of Cain, and ##ran##note:x[<<2 Pet 2:15; Rev 2:14>>] greedily after the error of Balaam for reward, and perished in the gainsaying of Core.
+@ These are spots in your feasts of charity, when they feast with you, ##feeding##note:x[<<Ezek 34:8>>] themselves without fear: ##clouds##note:x[<<2 Pet 2:17>>] __they are__ without water, carried about of winds; trees whose fruit withereth, without fruit, twice dead, ##plucked##note:x[<<Matt 15:13>>] up by the roots;
+@ ##Raging##note:x[<<Isa 57:20>>] waves of the sea, ##foaming##note:x[<<Phil 3:19>>] out their own shame; wandering stars, ##to whom##note:x[<<2 Pet 2:17>>] is reserved the blackness of darkness for ever.
+@ And ##Enoch##note:x[<<Heb 11:5–6>>] also, the seventh from Adam, prophesied of these, saying, ##Behold##note:x[<<Deut 33:2; Ps 50:3–5>>], the Lord cometh with ten thousands of his saints,
+@ To ##execute##note:x[<<Eccl 11:9; Rom 14:10; 1 Cor 4:5>>] judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard __speeches__ which ungodly sinners have spoken against him.
+@ These are ##murmurers##note:x[<<Phil 2:14>>], complainers, ##walking##note:x[<<2 Pet 2:10>>] after their own lusts; and ##their mouth##note:x[<<2 Pet 2:18>>] speaketh great swelling __words__, having men’s persons in admiration because of advantage.
+
+[discrete.pericope]
+==== A Call to Persevere
+
+[.parallel]
+(<<Hebrews 10:19–39; 2 Peter 3:1–7>>)
+
+@ But, beloved, ##remember##note:x[<<Eph 4:11; 2 Pet 3:2; 1 John 4:6>>] ye the words which were spoken before of the apostles of our Lord Jesus Christ;
+@ How that they told you ##there##note:x[<<2 Tim 3:1–5; 4:3; 2 Pet 3:3>>] should be mockers in the last time, who should walk after their own ungodly lusts.
+@ These be they ##who##note:x[<<Prov 18:1>>] separate themselves, ##sensual##note:x[<<1 Cor 2:14>>], ##having##note:x[<<Rom 8:9>>] not the Spirit.
+@ But ye, beloved, building up yourselves on your most holy faith, ##praying##note:x[<<Rom 8:26–27; 1 Cor 14:15; Eph 6:18>>] in the Holy Ghost,
+@ ##Keep##note:x[<<1 John 4:16>>] yourselves in the love of God, ##looking##note:x[<<Lam 3:25–26; Heb 9:28>>] for the mercy of our Lord Jesus Christ unto eternal life.
+@ ##And of some have compassion, making a difference:##note:x[<<Gal 6:1; Jas 5:19–20; 1 John 5:16–18>>]
+@ And others ##save##note:x[<<1 Tim 4:16>>] with fear, pulling __them__ out of the fire; ##hating##note:x[<<1 Cor 15:33; Rev 3:4>>] even the garment spotted by the flesh.
+
+[discrete.pericope]
+==== Doxology
+
+[.parallel]
+(<<Romans 16:25–27>>)
+
+@ Now unto him that is ##able##note:x[<<Eph 3:20; 2 Tim 4:18>>] to keep you from falling, and to ##present##note:x[<<Col 1:22>>] __you__ faultless before the presence of his glory with exceeding joy,
+@ To ##the only##note:x[<<1 Tim 1:17>>] wise God our Saviour, ##__be__ glory##note:x[<<1 Pet 5:10–11; Rev 5:13–14>>] and majesty, dominion and power, both now and ever. Amen.

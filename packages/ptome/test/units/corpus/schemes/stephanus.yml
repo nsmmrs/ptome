@@ -1,0 +1,22 @@
+version: 2
+scheme:
+  stephanus:
+    cite: "{{page}}{{section}}"
+    level:
+      - name: "page"
+        gaps: true
+        id: "st-{{page}}"
+        reftext: "{{page}}"
+      - name: "section"
+        type: "alpha"
+        default: true
+        id: "st-{{page}}{{section}}"
+        reftext: "{{page}}{{section}}"
+        label-role: "stephanus"
+        label: "{{page}}{{section}}"
+        label-after: " "
+citation:
+  default:
+    attribution: "{{doc.author}}"
+    title: "{{title}} {{passage}}"
+    labels: "none"

@@ -1,0 +1,1302 @@
+== @1SA
+
+[.book-title]
+The First Book of Samuel Otherwise Called the First Book of the Kings
+
+=== @1
+
+[discrete.pericope]
+==== Elkanah and His Wives
+
+[.parallel]
+(<<Psalms 113:1–9>>)
+
+@ Now there was a certain man of ##Ramathaim-zophim##note:x[<<1 Sam 1:19>>], of mount Ephraim, and his name __was__ ##Elkanah##note:x[<<1 Chr 6:25–27, 34>>], the son of Jeroham, the son of Elihu, the son of Tohu, the son of Zuph, an Ephrathite:
+@ And he had two wives; the name of the one __was__ Hannah, and the name of the other Peninnah: and Peninnah had children, but Hannah had no children.
+@ And this man went up out of his city note:x[<<Luke 2:41>>]##yearly##note:tn[Heb. from year to year] ##to worship##note:x[<<Deut 12:5–7>>] and to sacrifice unto the LORD of hosts in ##Shiloh##note:x[<<Josh 18:1>>]. And the two sons of Eli, Hophni and Phinehas, the priests of the LORD, __were__ there.
+
+@ ¶ And when the time was that Elkanah ##offered##note:x[<<Deut 12:17>>], he gave to Peninnah his wife, and to all her sons and her daughters, portions:
+@ But unto Hannah he gave a ##worthy##note:tn[or, double] portion; for he loved Hannah: but the LORD had ##shut up##note:x[<<Gen 30:2>>] her womb.
+@ And her ##adversary##note:x[<<Lev 18:18; Job 6:14>>] also ##provoked##note:tn[Heb. angered] her sore, for to make her fret, because the LORD had shut up her womb.
+@ And __as__ he did so year by year, when she went up to the house of the LORD, so she provoked her; therefore she wept, and did not eat.note:tn[__when…__: or, from the time that she, etc: Heb. from her going up]
+@ Then said Elkanah her husband to her, Hannah, ##why weepest##note:x[<<Job 6:14>>] thou? and why eatest thou not? and why is thy heart grieved? ##__am__ not##note:x[<<Ruth 4:15; Isa 54:6>>] I better to thee than ten sons?
+
+[discrete.pericope]
+==== Hannah Prays for a Son
+
+@ ¶ ##So Hannah rose up after they had eaten in Shiloh, and after they had drunk. Now Eli the priest sat upon a seat by a post of the temple of the LORD.##note:x[<<1 Sam 3:3; Ps 5:7; 27:4>>]
+@ And she __was__ ##in bitterness of soul##note:x[<<Job 7:11; 10:1>>], and ##prayed##note:x[<<Luke 22:44>>] unto the LORD, and wept sore.note:tn[__in…__: Heb. bitter of soul]
+@ And she vowed a vow, and said, O LORD of hosts, if thou wilt indeed ##look##note:x[<<Gen 29:32>>] on the affliction of thine handmaid, and remember me, and not forget thine handmaid, but wilt give unto thine handmaid a man child, then I will give him unto the LORD all the days of his life, and ##there##note:x[<<Num 6:5; Judg 13:5>>] shall no razor come upon his head.note:tn[__a man…__: Heb. seed of men]
+@ And it came to pass, as she ##continued praying##note:x[<<1 Thess 5:17; Jas 5:16>>] before the LORD, that Eli marked her mouth.note:tn[__continued…__: Heb. multiplied to pray]
+@ Now Hannah, she ##spake##note:x[<<Gen 24:42–45; Rom 8:26>>] in her heart; only her lips moved, but her voice was not heard: therefore Eli thought ##she had##note:x[<<Acts 2:13>>] been drunken.
+@ And Eli said unto her, How long wilt thou be drunken? put away thy wine from thee.
+@ And Hannah answered and said, No, my lord, I __am__ a woman of a sorrowful spirit: I have drunk neither wine nor strong drink, but have ##poured##note:x[<<Ps 42:4; 62:8; Lam 2:19>>] out my soul before the LORD.note:tn[__of a sorrowful…__: Heb. hard of spirit]
+@ Count not thine handmaid for ##a daughter##note:x[<<1 Sam 2:12>>] of Belial: for out of the abundance of my ##complaint##note:tn[or, meditation] and grief have I spoken hitherto.
+@ Then Eli answered and said, ##Go##note:x[<<Judg 18:6; Mark 5:34>>] in peace: and ##the God##note:x[<<Ps 20:3–5>>] of Israel grant __thee__ thy petition that thou hast asked of him.
+@ And she said, ##Let thine##note:x[<<Ruth 2:13>>] handmaid find grace in thy sight. So the woman ##went her##note:x[<<Eccl 9:7; Rom 15:13>>] way, and did eat, and her countenance was no more __sad__.
+
+[discrete.pericope]
+==== The Birth of Samuel
+
+@ ¶ And they rose up in the morning early, and worshipped before the LORD, and returned, and came to their house to Ramah: and Elkanah ##knew##note:x[<<Gen 4:1>>] Hannah his wife; ##and the LORD##note:x[<<Gen 21:1; 30:22>>] remembered her.
+@ Wherefore it came to pass, ##when the time was come about##note:x[<<Gen 41:51–52; Exod 2:10; Matt 1:21>>] after Hannah had conceived, that she bare a son, and called his name ##Samuel##note:tn[that is, Asked of God], __saying__, Because I have asked him of the LORD.note:tn[__when…__: Heb. in revolution of days]
+@ ##And the man Elkanah, and all his house, went up to offer unto the LORD the yearly sacrifice, and his vow.##note:x[<<1 Sam 1:3>>]
+@ But Hannah went not up; for she said unto her husband, __I will not go up__ until the child be weaned, and ##__then__##note:x[<<Luke 2:22>>] I will bring him, that he may appear before the LORD, ##and there##note:x[<<1 Sam 1:11, 28>>] abide for ever.
+@ And Elkanah her husband said unto her, Do what seemeth thee good; tarry until thou have weaned him; only the LORD establish his word. So the woman abode, and gave her son suck until she weaned him.
+
+@ ¶ And when she had weaned him, ##she took##note:x[<<Num 15:9–10>>] him up with her, with three bullocks, and one ephah of flour, and a bottle of wine, and brought him unto the ##house##note:x[<<Josh 18:1; 1 Sam 4:3–4>>] of the LORD in Shiloh: and the child __was__ young.
+@ And they slew a bullock, and ##brought##note:x[<<Luke 18:15–16>>] the child to Eli.
+@ And she said, Oh my lord, ##__as__ thy soul##note:x[<<2 Kgs 2:2, 4, 6>>] liveth, my lord, I __am__ the woman that stood by thee here, praying unto the LORD.
+@ ##For this##note:x[<<Matt 7:7>>] child I prayed; ##and the LORD##note:x[<<Ps 66:19; 1 John 5:15>>] hath given me my petition which I asked of him:
+@ Therefore also I have ##lent him##note:tn[or, returned him, whom I have obtained by petition] to the LORD; as long as he liveth he shall be lent to the LORD. And ##he worshipped##note:x[<<Gen 24:26, 52>>] the LORD there.note:tn[__he shall…__: or, he whom I have obtained by petition shall be returned]
+
+=== @2
+
+[discrete.pericope]
+==== Hannah’s Prayer of Thanksgiving
+
+[.parallel]
+(<<Luke 1:46–56>>)
+
+@ And Hannah prayed, and said, ##My heart##note:x[<<Luke 1:46–56>>] rejoiceth in the LORD, mine horn is exalted in the LORD: my mouth is enlarged over mine enemies; because ##I rejoice##note:x[<<Ps 13:5; Isa 12:2–3>>] in thy salvation.
+@ __There is__ none holy as the LORD: for __there is__ ##none beside##note:x[<<2 Sam 22:32; Isa 44:6>>] thee: neither __is there__ any ##rock##note:x[<<Ps 86:8>>] like our God.
+@ Talk no more so exceeding proudly; note:x[<<Prov 8:13; Jude 1:15–16>>]let __not__ ##arrogancy##note:tn[Heb. hard] come out of your mouth: for the LORD __is__ ##a God##note:x[<<1 Kgs 8:39>>] of knowledge, and by him actions are weighed.
+@ ##The bows##note:x[<<Ps 37:15; 46:9; 76:3>>] of the mighty men __are__ broken, and they that stumbled are girded with strength.
+@ __They that were__ ##full##note:x[<<Luke 1:53>>] have hired out themselves for bread; and __they that were__ hungry ceased: so that ##the barren##note:x[<<Ps 113:9>>] hath born seven; and she that hath many children is ##waxed feeble##note:x[<<Jer 15:9>>].
+@ The LORD ##killeth##note:x[<<Deut 32:39; 2 Kgs 5:7>>], and maketh alive: ##he bringeth##note:x[<<Isa 26:19>>] down to the grave, and bringeth up.
+@ The LORD ##maketh##note:x[<<Deut 8:17–18; Job 5:11>>] poor, and maketh rich: he ##bringeth##note:x[<<Ps 75:7>>] low, and lifteth up.
+@ He raiseth up ##the poor##note:x[<<Ps 113:7–8>>] out of the dust, __and__ lifteth up the beggar from the dunghill, to ##set __them__##note:x[<<Dan 2:48; Jas 2:5>>] among princes, and to make them inherit the throne of glory: for the pillars of the earth __are__ the LORD’s, and he hath set the world upon them.
+@ He ##will keep##note:x[<<Ps 91:11–12; 121:3>>] the feet of his saints, and the wicked shall be silent in darkness; for ##by strength##note:x[<<Ps 33:16–17>>] shall no man prevail.
+@ The ##adversaries##note:x[<<Ps 2:9>>] of the LORD shall be broken to pieces; out of heaven shall ##he thunder##note:x[<<Ps 18:13–14>>] upon them: the LORD shall judge the ends of the earth; and he shall give strength unto his king, and ##exalt##note:x[<<Ps 89:24>>] the horn of his anointed.
+
+@ And Elkanah went to Ramah to his house. And the child did ##minister##note:x[<<1 Sam 2:18; 3:1>>] unto the LORD before Eli the priest.
+
+[discrete.pericope]
+==== Eli’s Wicked Sons
+
+@ ¶ Now the sons of Eli __were__ ##sons of Belial##note:x[<<2 Cor 6:15>>]; they ##knew##note:x[<<Jer 2:8; Rom 1:28–30>>] not the LORD.
+@ And the priests’ custom with the people __was, that__, when any man offered sacrifice, the priest’s servant came, while the flesh was in seething, with a fleshhook of three teeth in his hand;
+@ And he struck __it__ into the pan, or kettle, or caldron, or pot; all that the fleshhook brought up the priest took for himself. So they did in Shiloh unto all the Israelites that came thither.
+@ note:x[<<Lev 3:16>>]Also before they burnt the fat, the priest’s servant came, and said to the man that sacrificed, Give flesh to roast for the priest; for he will not have sodden flesh of thee, but raw.
+@ And __if__ any man said unto him, Let them not fail to burn the fat note:x[<<Lev 3:16; 7:23–25>>]##presently##note:tn[Heb. as on the day], and __then__ take __as much__ as thy soul desireth; then he would answer him, __Nay;__ but thou shalt give __it me__ now: and if not, I will take __it__ by force.
+@ Wherefore the sin of the young men was very great before the LORD: for men abhorred the offering of the LORD.
+
+@ ¶ But Samuel ##ministered##note:x[<<1 Sam 2:11; 3:1>>] before the LORD, __being__ a child, girded with ##a linen ephod##note:x[<<Exod 28:4>>].
+@ Moreover his mother made him a little coat, and brought __it__ to him ##from year to year##note:x[<<1 Sam 1:3>>], when she came up with her husband to offer the yearly sacrifice.
+
+@ ¶ And Eli blessed Elkanah and his wife, and said, The LORD give thee seed of this woman for the ##loan##note:x[<<1 Sam 1:27–28>>] which is lent to the LORD. And they went unto their own home.note:tn[__loan…__: or, petition which she asked, etc]
+@ And the LORD ##visited##note:x[<<Gen 21:1>>] Hannah, so that she conceived, and bare three sons and two daughters. And the child Samuel ##grew##note:x[<<1 Sam 3:19; Luke 2:40>>] before the LORD.
+
+@ ¶ Now Eli was very old, and heard all that his sons did unto all Israel; and how they lay with the women that note:x[<<Exod 38:8>>]##assembled##note:tn[Heb. assembled by troops] __at__ the door of the tabernacle of the congregation.
+@ And he said unto them, Why do ye such things? for I hear of your evil dealings by all this people.note:tn[__of your…__: or, evil words of you]
+@ Nay, my sons; for __it is__ no good report that I hear: ye make the LORD’s people to ##transgress##note:tn[or, cry out].
+@ If one man sin against another, the judge shall judge him: but ##if a man##note:x[<<Num 15:30; 1 Sam 3:14; Heb 10:26>>] sin against the LORD, who shall intreat for him? Notwithstanding they hearkened not unto the voice of their father, because the LORD would slay them.
+@ And the child Samuel grew on, and ##was in##note:x[<<Luke 1:80; 2:40, 52>>] favour both with the LORD, and also with men.
+
+[discrete.pericope]
+==== A Prophecy against the House of Eli
+
+@ ¶ And there came ##a man##note:x[<<Judg 13:6>>] of God unto Eli, and said unto him, Thus saith the LORD, Did I plainly appear unto the house of thy father, when they were in Egypt in Pharaoh’s house?
+@ ##And did I##note:x[<<Exod 28:1; Lev 8:7–8>>] choose him out of all the tribes of Israel __to be__ my priest, to offer upon mine altar, to burn incense, to wear an ephod before me? and ##did I give##note:x[<<Num 18:19>>] unto the house of thy father all the offerings made by fire of the children of Israel?
+@ note:x[<<Matt 10:37>>]Wherefore ##kick ye##note:x[<<Deut 32:15; 1 Sam 2:13–17>>] at my sacrifice and at mine offering, which I have commanded __in my__ habitation; and honourest thy sons above me, to make yourselves fat with the chiefest of all the offerings of Israel my people?
+@ Wherefore the LORD God of Israel saith, I said indeed __that__ thy house, and the house of thy father, should walk before me for ever: but now the LORD saith, ##Be it far##note:x[<<Jer 18:9–10>>] from me; for ##them##note:x[<<Prov 3:9–10>>] that honour me ##I will honour##note:x[<<John 12:26>>], and they that despise me shall be lightly esteemed.
+@ Behold, the days come, that ##I will cut##note:x[<<1 Sam 22:17–20; 1 Kgs 2:26–27>>] off thine arm, and the arm of thy father’s house, that there shall not be an old man in thine house.
+@ And thou shalt see an enemy __in my__ habitation, in all __the wealth__ which __God__ shall give Israel: and there shall not be ##an old man##note:x[<<Zech 8:4>>] in thine house for ever.note:tn[__an enemy…__: or, the affliction of the tabernacle, for all the wealth which God would have given Israel]
+@ And the man of thine, __whom__ I shall not cut off from mine altar, __shall be__ to consume thine eyes, and to grieve thine heart: and all the increase of thine house shall die in the flower of their age.note:tn[__in the flower…__: Heb. men]
+@ And this __shall be__ ##a sign##note:x[<<1 Kgs 13:3>>] unto thee, that shall come upon thy two sons, on Hophni and Phinehas; ##in one day##note:x[<<1 Sam 4:11, 17>>] they shall die both of them.
+@ And I will raise me up a faithful priest, __that__ shall do according to __that__ which __is__ in mine heart and in my mind: and ##I will build##note:x[<<2 Sam 7:11, 27; 1 Kgs 11:38>>] him a sure house; and he shall walk before mine anointed for ever.
+@ And it shall come to pass, __that__ every one that ##is left##note:x[<<1 Kgs 2:27>>] in thine house shall come __and__ crouch to him for a piece of silver and a morsel of bread, and shall say, ##Put##note:tn[Heb. Join] me, I pray thee, into one of the priests’ offices, that I may eat a piece of bread.note:tn[__one of…__: or, somewhat about the priesthood]
+
+=== @3
+
+[discrete.pericope]
+==== The LORD Calls Samuel
+
+@ And the child Samuel ministered unto the LORD before Eli. And ##the word##note:x[<<1 Sam 3:21; Ps 74:9; Amos 8:11–12>>] of the LORD was precious in those days; __there was__ no open vision.
+@ And it came to pass at that time, when Eli __was__ laid down in his place, and ##his eyes##note:x[<<1 Sam 4:15>>] began to wax dim, __that__ he could not see;
+@ And ere ##the lamp##note:x[<<Exod 27:20–21; Lev 24:2–4>>] of God went out in ##the temple##note:x[<<Ps 27:4>>] of the LORD, where the ark of God __was__, and Samuel was laid down __to sleep;__
+@ That the LORD ##called Samuel##note:x[<<Gen 22:1; Exod 3:4; Ps 99:6>>]: and he answered, Here __am__ I.
+@ And he ran unto Eli, and said, Here __am__ I; for thou calledst me. And he said, I called not; lie down again. And he went and lay down.
+@ And the LORD called yet again, Samuel. And Samuel arose and went to Eli, and said, Here __am__ I; for thou didst call me. And he answered, I called not, my son; lie down again.
+@ Now Samuel ##did not yet##note:x[<<Jer 9:24; Acts 19:2>>] know the LORD, neither was the word of the LORD yet revealed unto him.note:tn[__Now…__: or, Thus did Samuel before he knew the LORD, and before the word of the LORD was revealed unto him]
+@ And the LORD called Samuel again the third time. And he arose and went to Eli, and said, Here __am__ I; for thou didst call me. And Eli perceived that the LORD had called the child.
+@ Therefore Eli said unto Samuel, Go, lie down: and it shall be, if he call thee, that thou shalt say, ##Speak##note:x[<<Exod 20:19; Ps 85:8; Isa 6:8>>], LORD; for thy servant heareth. So Samuel went and lay down in his place.
+@ And the LORD came, and stood, and called as at other times, Samuel, Samuel. Then Samuel answered, Speak; for thy servant heareth.
+
+@ ¶ And the LORD said to Samuel, Behold, ##I will do##note:x[<<Hab 1:5; Acts 13:41>>] a thing in Israel, at which ##both the ears##note:x[<<2 Kgs 21:12>>] of every one that heareth it shall tingle.
+@ In that day ##I will perform##note:x[<<1 Sam 2:27–36>>] against Eli all __things__ which I have spoken concerning his house: when I begin, I will also make an end.note:tn[__when…__: Heb. beginning and ending]
+@ For I have told him that I will judge his house for ever for the iniquity which he knoweth; because ##his sons##note:x[<<1 Sam 2:12, 17>>] made themselves note:x[<<Prov 19:18>>]##vile##note:tn[or, accursed], and he restrained them not.note:tn[__For I…__: or, And I will tell him]note:tn[__restrained…__: Heb. frowned not upon them]
+@ And therefore I have sworn unto the house of Eli, that ##the iniquity##note:x[<<Isa 22:14>>] of Eli’s house shall not be purged with sacrifice nor offering for ever.
+
+[discrete.pericope]
+==== Samuel Shares the Vision
+
+@ ¶ And Samuel lay until the morning, and opened the doors of the house of the LORD. And Samuel feared to shew Eli the vision.
+@ Then Eli called Samuel, and said, Samuel, my son. And he answered, Here __am__ I.
+@ And he said, What __is__ the ##thing##note:tn[or, word] that __the__ __LORD__ hath said unto thee? I pray thee hide __it__ not from me: ##God##note:x[<<Ruth 1:17; 2 Sam 3:35>>] do so to thee, and more also, if thou hide __any__ thing from me of all the things that he said unto thee.note:tn[__more also__: Heb. so add]
+@ And Samuel told him every whit, and hid nothing from him. And he said, ##It __is__ the LORD##note:x[<<Judg 10:15; Job 2:10; Isa 39:8>>]: let him do what seemeth him good.note:tn[__every…__: Heb. all the things, or, words]
+
+@ ¶ And Samuel ##grew##note:x[<<Luke 2:52>>], and ##the LORD##note:x[<<Gen 39:2>>] was with him, and did ##let none##note:x[<<1 Sam 9:6>>] of his words fall to the ground.
+@ And all Israel from ##Dan##note:x[<<Judg 20:1; 2 Sam 3:10>>] even to Beer-sheba knew that Samuel __was__ ##established##note:tn[or, faithful] __to be__ a prophet of the LORD.
+@ And the LORD ##appeared##note:x[<<Gen 12:7>>] again in Shiloh: for the LORD revealed himself to Samuel in Shiloh by ##the word##note:x[<<1 Sam 3:1, 4>>] of the LORD.
+
+=== @4
+
+[discrete.pericope]
+==== The Philistines Capture the Ark
+
+@ And the word of Samuel ##came##note:tn[or, came to pass: Heb. was] to all Israel. Now Israel went out against the Philistines to battle, and pitched beside Eben-ezer: and the Philistines pitched in Aphek.
+@ And the Philistines put themselves in array against Israel: and when they joined battle, Israel was smitten before the Philistines: and they slew of the ##army##note:tn[Heb. array] in the field about four thousand men.note:tn[__they joined…__: Heb. the battle was spread]
+
+@ ¶ And when the people were come into the camp, the elders of Israel said, Wherefore hath the LORD smitten us to day before the Philistines? Let us ##fetch##note:tn[Heb. take unto us] the ark of the covenant of the LORD out of Shiloh unto us, that, when it cometh among us, ##it may save##note:x[<<2 Tim 3:5>>] us out of the hand of our enemies.
+@ So the people sent to Shiloh, that they might bring from thence the ark of the covenant of the LORD of hosts, ##which dwelleth##note:x[<<2 Sam 6:2; Ps 80:1>>] __between__ ##the cherubims##note:x[<<Num 7:89>>]: and the two sons of Eli, Hophni and Phinehas, __were__ there with the ark of the covenant of God.
+@ And when the ark of the covenant of the LORD came into the camp, all Israel shouted with a great shout, so that the earth rang again.
+@ And when the Philistines heard the noise of the shout, they said, What __meaneth__ the noise of this great shout in the camp of the Hebrews? And they understood that the ark of the LORD was come into the camp.
+@ And the Philistines were afraid, for they said, God is come into the camp. And they said, Woe unto us! for there hath not been such a thing ##heretofore##note:tn[Heb. yesterday, or, the third day].
+@ Woe unto us! who shall deliver us out of the hand of these mighty Gods? these __are__ the Gods that smote the Egyptians with all the plagues in the wilderness.
+@ ##Be strong##note:x[<<2 Sam 10:12; 1 Cor 16:13>>], and quit yourselves like men, O ye Philistines, that ye be not servants unto the Hebrews, ##as they have##note:x[<<Judg 13:1>>] been to you: quit yourselves like men, and fight.note:tn[__quit…__: Heb. be men]
+
+@ ¶ And the Philistines fought, and ##Israel##note:x[<<Lev 26:17; Deut 28:25; 1 Sam 4:2>>] was smitten, and they fled every man into his tent: and there was a very great slaughter; for there fell of Israel thirty thousand footmen.
+@ And the ark of God was taken; and ##the two sons##note:x[<<1 Sam 2:34; Ps 78:64; Isa 3:11>>] of Eli, Hophni and Phinehas, were slain.note:tn[__were slain__: Heb. died]
+
+[discrete.pericope]
+==== The Death of Eli
+
+@ ¶ And there ran a man of Benjamin out of the army, and came to Shiloh the same day ##with his clothes rent##note:x[<<2 Sam 1:2>>], and ##with earth##note:x[<<Josh 7:6; 2 Sam 15:32>>] upon his head.
+@ And when he came, lo, Eli ##sat upon##note:x[<<1 Sam 1:9>>] a seat by the wayside watching: for his heart trembled for the ark of God. And when the man came into the city, and told __it__, all the city cried out.
+@ And when Eli heard the noise of the crying, he said, What __meaneth__ the noise of this tumult? And the man came in hastily, and told Eli.
+@ Now Eli was ##ninety##note:x[<<1 Sam 3:2>>] and eight years old; and his eyes were dim, that he could not see.note:tn[__were dim__: Heb. stood]
+@ And the man said unto Eli, I __am__ he that came out of the army, and I fled to day out of the army. And he said, ##What is there done##note:x[<<2 Sam 1:4>>], my son?note:tn[__is…__: Heb. is the thing]
+@ And the messenger answered and said, Israel is fled before the Philistines, and there hath been also a great slaughter among the people, and thy two sons also, Hophni and Phinehas, are dead, and the ark of God is taken.
+@ And it came to pass, ##when he made##note:x[<<1 Sam 4:21–22>>] mention of the ark of God, that he fell from off the seat backward by the side of the gate, and ##his neck##note:x[<<1 Pet 4:17–18>>] brake, and he died: for he was an old man, and heavy. And he had judged Israel forty years.
+
+@ ¶ And his daughter in law, Phinehas’ wife, was with child, __near__ to be delivered: and when she heard the tidings that the ark of God was taken, and that her father in law and her husband were dead, she bowed herself and travailed; for her pains ##came##note:tn[Heb. were turned] upon her.note:tn[__be delivered__: or, cry out]
+@ And about the time of her death the women that stood by her said unto her, Fear not; for thou hast born a son. But she answered not, neither did she regard __it__.note:tn[__neither…__: Heb. set not her heart]
+@ And she named the child ##I-chabod##note:tn[that is, Where is the glory? or, There is no glory], saying, ##The glory##note:x[<<Ps 26:8; 78:61; Jer 2:11>>] is departed from Israel: because the ark of God was taken, and because of her father in law and her husband.
+@ And she said, The glory is departed from Israel: for the ark of God is taken.
+
+=== @5
+
+[discrete.pericope]
+==== The Ark Afflicts the Philistines
+
+@ And the Philistines took the ark of God, and brought it from ##Eben-ezer##note:x[<<1 Sam 4:1; 7:12>>] unto Ashdod.
+@ When the Philistines took the ark of God, they brought it into the house ##of Dagon##note:x[<<Judg 16:23>>], and set it by Dagon.
+
+@ ¶ And when they of Ashdod arose early on the morrow, behold, ##Dagon __was__##note:x[<<Isa 19:1; 46:1–2>>] fallen upon his face to the earth before the ark of the LORD. And they took Dagon, and ##set him##note:x[<<Isa 19:1>>] in his place again.
+@ And when they arose early on the morrow morning, behold, Dagon __was__ fallen upon his face to the ground before the ark of the LORD; and ##the head##note:x[<<Mic 1:7>>] of Dagon and both the palms of his hands __were__ cut off upon the threshold; only __the stump of__ Dagon was left to him.note:tn[__the stump…__: or, the fishy part]
+@ Therefore neither the priests of Dagon, nor any that come into Dagon’s house, ##tread##note:x[<<Zeph 1:9>>] on the threshold of Dagon in Ashdod unto this day.
+
+@ But ##the hand##note:x[<<Exod 9:3; 1 Sam 5:11>>] of the LORD was heavy upon them of Ashdod, and he destroyed them, and smote them with ##emerods##note:x[<<1 Sam 5:11>>], __even__ Ashdod and the coasts thereof.
+@ And when the men of Ashdod ##saw##note:x[<<Exod 12:33>>] that __it was__ so, they said, The ark of the God of Israel shall not abide with us: for his hand is sore upon us, and upon Dagon our god.
+@ They sent therefore and gathered all the lords of the Philistines unto them, and said, What shall we do with the ark of the God of Israel? And they answered, Let the ark of the God of Israel be carried about unto Gath. And they carried the ark of the God of Israel about __thither__.
+@ And it was __so__, that, after they had carried it about, ##the hand##note:x[<<1 Sam 5:6; 7:13>>] of the LORD was against the city with a very great destruction: and he smote the men of the city, both small and great, ##and they had emerods##note:x[<<1 Sam 5:6>>] in their secret parts.
+
+@ ¶ Therefore they sent the ark of ##God to Ekron##note:x[<<Amos 1:8>>]. And it came to pass, as the ark of God came to Ekron, that the Ekronites cried out, saying, They have brought about the ark of the God of Israel to us, to slay us and our people.note:tn[__us, to…__: Heb. me to slay me and my]
+@ So they sent and gathered together all the lords of the Philistines, and said, Send away the ark of the God of Israel, and let it go again to his own place, that it slay us not, and our people: for there was a deadly destruction throughout all the city; ##the hand##note:x[<<1 Sam 5:6>>] of God was very heavy there.note:tn[__us not…__: Heb. me not, and my]
+@ And the men that died not were smitten with the emerods: and ##the cry##note:x[<<Exod 12:30>>] of the city went up to heaven.
+
+=== @6
+
+[discrete.pericope]
+==== The Ark Returned to Israel
+
+@ And the ark of the LORD was in the country of the Philistines seven months.
+@ And the Philistines ##called##note:x[<<Gen 41:8; Exod 7:11>>] for the priests and the diviners, saying, What shall we do to the ark of the LORD? tell us wherewith we shall send it to his place.
+@ And they said, If ye send away the ark of the God of Israel, send it not ##empty##note:x[<<Exod 23:15; Deut 16:16>>]; but in any wise return him a trespass offering: then ye shall be healed, and it shall be ##known##note:x[<<1 Sam 6:9>>] to you why his hand is not removed from you.
+@ Then said they, What __shall be__ the trespass offering which we shall return to him? They answered, ##Five golden##note:x[<<Josh 13:3; Judg 3:3; 1 Sam 6:17–18>>] emerods, and five golden mice, __according to__ the number of the lords of the Philistines: for one plague __was__ on ##you##note:tn[Heb. them] all, and on your lords.
+@ Wherefore ye shall make images of your emerods, and images of your mice that mar the land; and ye shall ##give glory##note:x[<<Josh 7:19>>] unto the God of Israel: peradventure he will ##lighten##note:x[<<1 Sam 5:6, 11>>] his hand from off you, and from off your gods, and from off your land.
+@ Wherefore then do ye harden your hearts, as ##the Egyptians##note:x[<<Exod 7:13; 8:15; 14:17>>] and Pharaoh hardened their hearts? when he had wrought ##wonderfully##note:tn[or, reproachfully] among them, did they not let ##the people##note:tn[Heb. them] go, and they departed?
+@ Now therefore make a ##new cart##note:x[<<2 Sam 6:3>>], and take two milch kine, ##on which##note:x[<<Num 19:2>>] there hath come no yoke, and tie the kine to the cart, and bring their calves home from them:
+@ And take the ark of the LORD, and lay it upon the cart; and put the jewels of gold, which ye return him __for__ a trespass offering, in a coffer by the side thereof; and send it away, that it may go.
+@ And see, if it goeth up by the way of his own coast to Beth-shemesh, __then__ ##he##note:tn[or, it] hath done us this great evil: but if not, then we shall know that __it is__ not his hand __that__ smote us; it __was__ a chance __that__ happened to us.
+
+@ ¶ And the men did so; and took two milch kine, and tied them to the cart, and shut up their calves at home:
+@ And they laid the ark of the LORD upon the cart, and the coffer with the mice of gold and the images of their emerods.
+@ And the kine took the straight way to the way of Beth-shemesh, __and__ went along the highway, lowing as they went, and turned not aside __to__ the right hand or __to__ the left; and the lords of the Philistines went after them unto the border of Beth-shemesh.
+@ And __they of__ Beth-shemesh __were__ reaping their wheat harvest in the valley: and they lifted up their eyes, and saw the ark, and rejoiced to see __it__.
+@ And the cart came into the field of Joshua, a Beth-shemite, and stood there, where __there was__ a great stone: and they clave the wood of the cart, and ##offered##note:x[<<2 Sam 24:22>>] the kine a burnt offering unto the LORD.
+@ And the Levites took down the ark of the LORD, and the coffer that __was__ with it, wherein the jewels of gold __were__, and put __them__ on the great stone: and the men of Beth-shemesh offered burnt offerings and sacrificed sacrifices the same day unto the LORD.
+@ And when the five lords of the Philistines had seen __it__, they returned to Ekron the same day.
+@ And these __are__ the golden emerods which the Philistines returned __for__ a trespass offering unto the LORD; for Ashdod one, for Gaza one, for Askelon one, for Gath one, for Ekron one;
+@ And the golden mice, __according to__ the number of all the cities of the Philistines __belonging__ to the five lords, __both__ of fenced cities, and of country villages, even unto the great __stone of__ Abel, whereon they set down the ark of the LORD: __which stone remaineth__ unto this day in the field of Joshua, the Beth-shemite.note:tn[__great…__: or, great stone]
+
+@ ¶ And ##he smote##note:x[<<Exod 19:21; Num 4:15, 20>>] the men of Beth-shemesh, because they had looked into the ark of the LORD, even he smote of the people fifty thousand and threescore and ten men: and the people lamented, because the LORD had smitten __many__ of the people with a great slaughter.
+@ note:x[<<2 Sam 6:9; Mal 3:2>>]And the men of Beth-shemesh said, Who is able to stand before this holy LORD God? and to whom shall he go up from us?
+
+@ ¶ And they sent messengers to the inhabitants of ##Kirjath-jearim##note:x[<<1 Chr 13:5–6>>], saying, The Philistines have brought again the ark of the LORD; come ye down, __and__ fetch it up to you.
+
+=== @7
+
+[discrete.pericope]
+==== Samuel Subdues the Philistines
+
+@ And the men of Kirjath-jearim came, and fetched up the ark of the LORD, and brought it into the house of Abinadab in the hill, and sanctified Eleazar his son to keep the ark of the LORD.
+@ And it came to pass, while the ark abode in Kirjath-jearim, that the time was long; for it was twenty years: and all the house of Israel ##lamented##note:x[<<Judg 2:4; Jer 3:13, 22–25>>] after the LORD.
+
+@ ¶ And Samuel spake unto all the house of Israel, saying, If ye do return unto the LORD with all your hearts, __then__ put away the strange gods and Ashtaroth from among you, and prepare your hearts unto the LORD, and ##serve him##note:x[<<Deut 13:4; Matt 4:10; Luke 4:8>>] only: and he will deliver you out of the hand of the Philistines.
+@ ##Then the children of Israel did put away Baalim and Ashtaroth, and served the LORD only.##note:x[<<Hos 14:8>>]
+@ And Samuel said, Gather all Israel to ##Mizpeh##note:x[<<Judg 20:1>>], and I will pray for you unto the LORD.
+@ And they gathered together to Mizpeh, and ##drew water##note:x[<<1 Sam 1:15; 2 Sam 14:14>>], and poured __it__ out before the LORD, and fasted on that day, and said there, ##We have sinned##note:x[<<Judg 10:10>>] against the LORD. And Samuel judged the children of Israel in Mizpeh.
+
+@ And when the Philistines heard that the children of Israel were gathered together to Mizpeh, the lords of the Philistines went up against Israel. And when the children of Israel heard __it__, they were ##afraid##note:x[<<1 Sam 17:11>>] of the Philistines.
+@ And the children of Israel said to Samuel, ##Cease##note:x[<<1 Sam 12:19–24; Isa 37:4; Jas 5:16>>] not to cry unto the LORD our God for us, that he will save us out of the hand of the Philistines.note:tn[__Cease…__: Heb. Be not silent from us from crying]
+
+@ ¶ And Samuel took ##a sucking##note:x[<<1 Sam 7:17>>] lamb, and offered __it for__ a burnt offering wholly unto the LORD: and Samuel ##cried unto##note:x[<<Ps 99:6; Jer 15:1>>] the LORD for Israel; and the LORD ##heard##note:tn[or, answered] him.
+@ And as Samuel was offering up the burnt offering, the Philistines drew near to battle against Israel: but the LORD ##thundered##note:x[<<Judg 5:20; 1 Sam 2:10; 12:17>>] with a great thunder on that day upon the Philistines, and discomfited them; and they were smitten before Israel.
+@ And the men of Israel went out of Mizpeh, and pursued the Philistines, and smote them, until __they came__ under Beth-car.
+@ Then Samuel ##took a stone##note:x[<<Josh 4:9>>], and set __it__ between Mizpeh and Shen, and called the name of it ##Eben-ezer##note:tn[that is, The stone of help], saying, ##Hitherto##note:x[<<Acts 26:22; 2 Cor 1:10>>] hath the LORD helped us.
+
+@ ¶ So the Philistines were ##subdued##note:x[<<Judg 13:1>>], and they came no more into the coast of Israel: and the hand of the LORD was against the Philistines all the days of Samuel.
+@ And the cities which the Philistines had taken from Israel were restored to Israel, from Ekron even unto Gath; and the coasts thereof did Israel deliver out of the hands of the Philistines. And there was peace between Israel and the Amorites.
+@ And Samuel ##judged##note:x[<<1 Sam 7:6; Acts 13:20–21>>] Israel all the days of his life.
+@ And he went from year to year in circuit to Beth-el, and Gilgal, and Mizpeh, and judged Israel in all those places.note:tn[__in circuit__: Heb. and he circuited]
+@ And ##his return##note:x[<<1 Sam 1:19>>] __was__ to Ramah; for there __was__ his house; and there he judged Israel; and there he built an altar unto the LORD.
+
+=== @8
+
+[discrete.pericope]
+==== Israel Demands a King
+
+[.parallel]
+(<<Deuteronomy 17:14–20>>)
+
+@ And it came to pass, when Samuel was old, that he ##made his##note:x[<<Deut 16:18–19; Judg 8:22–23; 1 Tim 5:21>>] sons judges over Israel.
+@ Now the name of his firstborn was Joel; and the name of his second, Abiah: __they were__ judges in Beer-sheba.
+@ And his sons walked not in his ways, ##but turned##note:x[<<Deut 16:19; Ps 15:5; 1 Tim 6:10>>] aside after lucre, and took bribes, and perverted judgment.
+
+@ Then all the elders of Israel gathered themselves together, and came to Samuel unto Ramah,
+@ And said unto him, Behold, thou art old, and thy sons walk not in thy ways: ##now make##note:x[<<Deut 17:14–15; 1 Sam 8:19–20>>] us a king to judge us like all the nations.
+
+@ ¶ But the thing ##displeased##note:tn[Heb. was evil in the eyes of] Samuel, when they said, Give us a king to judge us. And Samuel ##prayed##note:x[<<1 Sam 15:11>>] unto the LORD.
+@ And the LORD said unto Samuel, Hearken unto the voice of the people in all that they say unto thee: for ##they have not##note:x[<<Exod 16:8; 1 Sam 10:19; Luke 10:16>>] rejected thee, but they have rejected me, that I should not reign over them.
+@ According to all the works which they have done since the day that I brought them up out of Egypt even unto this day, wherewith they have forsaken me, and served other gods, so do they also unto thee.
+@ Now therefore hearken unto their voice: howbeit yet protest solemnly unto them, and shew them ##the manner##note:x[<<1 Sam 8:11–18; 10:25>>] of the king that shall reign over them.note:tn[__hearken…__: or, obey]note:tn[__howbeit…__: or, notwithstanding when thou hast solemnly protested against them then thou shalt]
+
+[discrete.pericope]
+==== Samuel’s Warning
+
+@ ¶ And Samuel told all the words of the LORD unto the people that asked of him a king.
+@ And he said, ##This will##note:x[<<Deut 17:14–20; 1 Sam 10:25>>] be the manner of the king that shall reign over you: ##He will take##note:x[<<1 Sam 14:52>>] your sons, and appoint __them__ for himself, for his chariots, and __to be__ his horsemen; and __some__ shall run before his chariots.
+@ And he will appoint him captains over thousands, and captains over fifties; and __will set them__ to ear his ground, and to reap his harvest, and to make his instruments of war, and instruments of his chariots.
+@ And he will take your daughters __to be__ confectionaries, and __to be__ cooks, and __to be__ bakers.
+@ ##And he will take your fields, and your vineyards, and your oliveyards, __even__ the best __of them__, and give __them__ to his servants.##note:x[<<1 Kgs 21:7; Ezek 46:18>>]
+@ And he will take the tenth of your seed, and of your vineyards, and give to his ##officers##note:tn[Heb. eunuchs], and to his servants.
+@ And he will take your menservants, and your maidservants, and your goodliest young men, and your asses, and put __them__ to his work.
+@ He will take the tenth of your sheep: and ye shall be his servants.
+@ And ye shall cry out in that day because of your king which ye shall have chosen you; and the LORD ##will not hear##note:x[<<Prov 1:25–28; Isa 1:15; Mic 3:4>>] you in that day.
+
+[discrete.pericope]
+==== God Grants the Request
+
+@ ¶ Nevertheless the people ##refused to obey##note:x[<<Jer 44:16>>] the voice of Samuel; and they said, Nay; but we will have a king over us;
+@ ##That we also may be like all the nations; and that our king may judge us, and go out before us, and fight our battles.##note:x[<<1 Sam 8:5>>]
+@ And Samuel heard all the words of the people, and ##he rehearsed##note:x[<<Judg 11:11>>] them in the ears of the LORD.
+@ ##And the LORD said to Samuel, Hearken unto their voice, and make them a king. And Samuel said unto the men of Israel, Go ye every man unto his city.##note:x[<<1 Sam 8:7; Hos 13:11>>]
+
+=== @9
+
+[discrete.pericope]
+==== Saul Chosen as King
+
+@ Now there was a man of Benjamin, whose name __was__ ##Kish##note:x[<<1 Sam 14:51; 1 Chr 9:36–39; Acts 13:21>>], the son of Abiel, the son of Zeror, the son of Bechorath, the son of Aphiah, a Benjamite, a mighty man of ##power##note:tn[or, substance].note:tn[__a Benjamite__: or, the son of a man of Jemini]
+@ And he had a son, whose name __was__ Saul, a ##choice##note:x[<<Gen 6:2; 1 Sam 16:7; 2 Sam 14:25–26>>] young man, and a goodly: and __there was__ not among the children of Israel a goodlier person than he: from his shoulders and upward __he was__ higher than any of the people.
+
+@ And the asses of Kish Saul’s father were lost. And Kish said to Saul his son, Take now one of the servants with thee, and arise, go seek the asses.
+@ And he passed through mount Ephraim, and passed through the land of ##Shalisha##note:x[<<2 Kgs 4:42>>], but they found __them__ not: then they passed through the land of Shalim, and __there they were__ not: and he passed through the land of the Benjamites, but they found __them__ not.
+@ __And__ when they were come to the land of ##Zuph##note:x[<<1 Sam 1:1>>], Saul said to his servant that __was__ with him, Come, and let us return; lest my father leave __caring__ for the asses, and ##take thought##note:x[<<1 Sam 10:2>>] for us.
+@ And he said unto him, Behold now, __there is__ in this ##city##note:x[<<Deut 33:1; 1 Kgs 13:1; 1 Tim 6:11>>] a man of God, and __he is__ an honourable man; all that he saith cometh surely to pass: now let us go thither; peradventure he can shew us our way that we should go.
+@ Then said Saul to his servant, But, behold, __if__ we go, ##what shall##note:x[<<1 Kgs 14:3; 2 Kgs 4:42; 8:8>>] we bring the man? for the bread is spent in our vessels, and __there is__ not a present to bring to the man of God: what ##have we##note:tn[Heb. is with us?]?note:tn[__is spent…__: Heb. is gone out of, etc]
+@ And the servant answered Saul again, and said, Behold, I have here at hand the fourth part of a shekel of silver: __that__ will I give to the man of God, to tell us our way.note:tn[__I have…__: Heb. there is found in my hand]
+@ ( Beforetime in Israel, when a man went to enquire of God, thus he spake, Come, and let us go to the seer: for __he that is__ now __called__ a Prophet was beforetime called ##a Seer##note:x[<<2 Kgs 17:13; 1 Chr 26:28; Isa 30:10>>].)
+@ Then said Saul to his servant, Well said; come, let us go. So they went unto the city where the man of God __was__.note:tn[__Well said__: Heb. Thy word is good]
+
+@ ¶ __And__ as they went up the hill to the city, they ##found##note:x[<<Gen 24:11; Exod 2:16>>] young maidens going out to draw water, and said unto them, Is the seer here?note:tn[__the hill…__: Heb. in the ascent of the city]
+@ And they answered them, and said, He is; behold, __he is__ before you: make haste now, for he came to day to the city; for __there is__ a note:x[<<Gen 31:54; 1 Sam 16:2>>]##sacrifice##note:tn[or, feast] of the people to day in ##the high place##note:x[<<1 Kgs 3:2–4>>]:
+@ As soon as ye be come into the city, ye shall straightway find him, before he go up to the high place to eat: for the people will not eat until he come, because ##he doth bless##note:x[<<John 6:11>>] the sacrifice; __and__ afterwards they eat that be bidden. Now therefore get you up; for about this time ye shall find him.note:tn[__this time__: Heb. to day]
+@ And they went up into the city: __and__ when they were come into the city, behold, Samuel came out against them, for to go up to the high place.
+
+@ ¶ Now ##the LORD##note:x[<<1 Sam 15:1; Ps 25:14; Acts 13:21>>] had told Samuel in his ear a day before Saul came, saying,note:tn[__told…__: Heb. revealed the ear of Samuel]
+@ To morrow about this time I will send thee a man out of the land of Benjamin, and ##thou shalt##note:x[<<1 Sam 10:1>>] anoint him __to be__ captain over my people Israel, that he may save my people out of the hand of the Philistines: for I have ##looked upon##note:x[<<Exod 3:7–9; Ps 25:18>>] my people, because their cry is come unto me.
+@ And when Samuel saw Saul, the LORD said unto him, Behold the man whom I spake to thee of! this same shall ##reign over##note:tn[Heb. restrain in] my people.
+
+@ Then Saul drew near to Samuel in the gate, and said, Tell me, I pray thee, where the seer’s house __is__.
+@ And Samuel answered Saul, and said, I __am__ the seer: go up before me unto the high place; for ye shall eat with me to day, and to morrow I will let thee go, ##and will tell##note:x[<<John 4:29; 1 Cor 14:25>>] thee all that __is__ in thine heart.
+@ And as for thine asses that were lost three days ago, set not thy mind on them; for they are found. And ##on whom##note:x[<<1 Sam 8:5; 12:13>>] __is__ all the desire of Israel? __Is it__ not on thee, and on all thy father’s house?note:tn[__three…__: Heb. to day three days]
+@ And Saul answered and said, __Am__ not I a Benjamite, of the smallest of the tribes of Israel? and ##my family##note:x[<<1 Sam 15:17>>] the least of all the families of the tribe of Benjamin? wherefore then speakest thou so to me?note:tn[__so…__: Heb. according to this word]
+@ And Samuel took Saul and his servant, and brought them into the parlour, and made them sit in the chiefest place among them that were bidden, which __were__ about thirty persons.
+@ And Samuel said unto the cook, Bring the portion which I gave thee, of which I said unto thee, Set it by thee.
+@ And the cook took up the shoulder, and __that__ which __was__ upon it, and set __it__ before Saul. And __Samuel__ said, Behold that which is ##left##note:tn[or, reserved]! set __it__ before thee, __and__ eat: for unto this time hath it been kept for thee since I said, I have invited the people. So Saul did eat with Samuel that day.
+
+@ ¶ And when they were come down from the high place into the city, __Samuel__ communed with Saul upon ##the top##note:x[<<Deut 22:8; Acts 10:9>>] of the house.
+@ And they arose early: and it came to pass about the spring of the day, that Samuel called Saul to the top of the house, saying, Up, that I may send thee away. And Saul arose, and they went out both of them, he and Samuel, abroad.
+@ __And__ as they were going down to the end of the city, Samuel said to Saul, ##Bid the servant##note:x[<<John 15:14–15>>] pass on before us, (and he passed on,) but stand thou still a while, that I may shew thee the word of God.note:tn[__a while__: Heb. to day]
+
+=== @10
+
+[discrete.pericope]
+==== Samuel Anoints Saul
+
+@ Then Samuel took ##a vial##note:x[<<1 Sam 9:16; 16:13>>] of oil, and poured __it__ upon his head, and kissed him, and said, __Is it__ not because the LORD hath anointed thee __to be__ captain over ##his inheritance##note:x[<<Ps 78:71>>]?
+@ When thou art departed from me to day, then thou shalt find two men by Rachel’s sepulchre in the border of Benjamin at Zelzah; and they will say unto thee, ##The asses##note:x[<<1 Sam 9:3–5>>] which thou wentest to seek are found: and, lo, thy father hath left the ##care##note:tn[Heb. business] of the asses, and sorroweth for you, saying, What shall I do for my son?
+@ Then shalt thou go on forward from thence, and thou shalt come to the plain of Tabor, and there shall meet thee three men going up to God to ##Beth-el##note:x[<<Gen 28:22; 35:1, 3>>], one carrying three kids, and another carrying three loaves of bread, and another carrying a bottle of wine:
+@ And they will salute thee, and give thee two __loaves__ of bread; which thou shalt receive of their hands.note:tn[__salute…__: Heb. ask thee of peace]
+@ After that thou shalt come to the ##hill of God##note:x[<<1 Sam 13:3>>], where __is__ the garrison of the Philistines: and it shall come to pass, when thou art come thither to the city, that thou shalt meet ##a company##note:x[<<1 Sam 19:20>>] of prophets coming down from the high place with ##a psaltery##note:x[<<2 Kgs 3:15>>], and a tabret, and a pipe, and a harp, before them; and they shall prophesy:
+@ And the ##Spirit##note:x[<<Num 11:25; 1 Sam 10:10; 19:23–24>>] of the LORD will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man.
+@ And let it be, when these ##signs##note:x[<<Exod 4:8; Luke 2:12>>] are come unto thee, __that__ thou do as occasion serve thee; for ##God##note:x[<<Judg 6:12>>] __is__ with thee.note:tn[__And…__: Heb. And it shall come to pass, that when these signs, etc]note:tn[__that…__: Heb. do for thee as thine hand shall find]
+@ And thou shalt go down before me ##to Gilgal##note:x[<<1 Sam 11:14–15; 13:4, 8–15>>]; and, behold, I will come down unto thee, to offer burnt offerings, __and__ to sacrifice sacrifices of peace offerings: seven days shalt thou tarry, till I come to thee, and shew thee what thou shalt do.
+
+[discrete.pericope]
+==== Samuel’s Signs Fulfilled
+
+@ ¶ And it was __so__, that when he had turned his ##back##note:tn[Heb. shoulder] to go from Samuel, God ##gave##note:tn[Heb. turned] him another heart: and all those signs came to pass that day.
+@ And when ##they came##note:x[<<1 Sam 10:5>>] thither to the hill, behold, a company of prophets met him; and the Spirit of God came upon him, and he prophesied among them.
+@ And it came to pass, when all that knew him beforetime saw that, behold, he prophesied among the prophets, then the people said one to another, ##What __is__ this##note:x[<<Matt 13:54–55>>] __that__ is come unto the son of Kish? ##__Is__ Saul##note:x[<<1 Sam 19:24; John 7:15>>] also among the prophets?note:tn[__one…__: Heb. a man to his neighbour]
+@ And one of the same place answered and said, But ##who __is__ their##note:x[<<Isa 54:13; John 6:45>>] father? Therefore it became a proverb, __Is__ Saul also among the prophets?note:tn[__of…__: Heb. from thence]
+@ And when he had made an end of prophesying, he came to the high place.
+
+@ ¶ And Saul’s uncle said unto him and to his servant, Whither went ye? And he said, To seek the asses: and when we saw that __they were__ no where, we came to Samuel.
+@ And Saul’s uncle said, Tell me, I pray thee, what Samuel said unto you.
+@ And Saul said unto his uncle, He told us plainly that the asses were found. But of the ##matter##note:x[<<Prov 29:11>>] of the kingdom, whereof Samuel spake, he told him not.
+
+[discrete.pericope]
+==== Saul Proclaimed King
+
+@ ¶ And Samuel called the people together ##unto the LORD##note:x[<<Judg 20:1>>] to Mizpeh;
+@ And said unto the children of Israel, ##Thus saith##note:x[<<Judg 6:8–9>>] the LORD God of Israel, I brought up Israel out of Egypt, and delivered you out of the hand of the Egyptians, and out of the hand of all kingdoms, __and__ of them that oppressed you:
+@ ##And ye have##note:x[<<1 Sam 12:12>>] this day rejected your God, who himself saved you out of all your adversities and your tribulations; and ye have said unto him, __Nay__, but set a king over us. Now therefore present yourselves before the LORD by your tribes, and by your thousands.
+@ And when Samuel had caused all the tribes of Israel to come near, the tribe of Benjamin was taken.
+@ When he had caused the tribe of Benjamin to come near by their families, the family of Matri was taken, and Saul the son of Kish was taken: and when they sought him, he could not be found.
+@ Therefore they enquired of the LORD further, if the man should yet come thither. And the LORD answered, Behold, he hath hid himself among the stuff.
+@ And they ran and fetched him thence: and when he stood among the people, ##he was higher##note:x[<<1 Sam 9:2>>] than any of the people from his shoulders and upward.
+@ And Samuel said to all the people, ##See ye him##note:x[<<2 Sam 21:6>>] whom the LORD hath chosen, that __there is__ none like him among all the people? And all the people shouted, and said, ##God save the king##note:x[<<1 Kgs 1:25, 39>>].note:tn[__God…__: Heb. Let the king live]
+@ ##Then Samuel told the people the manner of the kingdom, and wrote __it__ in a book, and laid __it__ up before the LORD. And Samuel sent all the people away, every man to his house.##note:x[<<Deut 17:14–20; 1 Sam 8:11–18>>]
+
+@ ¶ And Saul also went home to ##Gibeah##note:x[<<1 Sam 11:4>>]; and there went with him a band of men, whose hearts God had touched.
+@ But the ##children##note:x[<<Deut 13:13>>] of Belial said, How shall this man save us? And they despised him, and ##brought him##note:x[<<1 Kgs 10:25; 2 Chr 17:5>>] no presents. But he held his peace.note:tn[__held…__: or, was as though he had been deaf]
+
+=== @11
+
+[discrete.pericope]
+==== Saul Defeats the Ammonites
+
+@ Then ##Nahash##note:x[<<1 Sam 12:12>>] the Ammonite came up, and encamped against Jabesh-gilead: and all the men of Jabesh said unto Nahash, ##Make##note:x[<<1 Kgs 20:34; Ezek 17:13>>] a covenant with us, and we will serve thee.
+@ And Nahash the Ammonite answered them, On this __condition__ will I make __a covenant__ with you, that I may thrust out all your right eyes, and lay it __for__ a ##reproach##note:x[<<1 Sam 17:26>>] upon all Israel.
+@ And the elders of Jabesh said unto him, Give us seven days’ respite, that we may send messengers unto all the coasts of Israel: and then, if __there be__ no man to save us, we will come out to thee.note:tn[__Give…__: Heb. Forbear us]
+
+@ ¶ Then came the messengers ##to Gibeah##note:x[<<1 Sam 10:26; 15:34>>] of Saul, and told the tidings in the ears of the people: and all the people ##lifted up##note:x[<<Judg 2:4>>] their voices, and wept.
+
+@ And, behold, Saul came after the herd out of the field; and Saul said, What __aileth__ the people that they weep? And they told him the tidings of the men of Jabesh.
+@ And the ##Spirit of God##note:x[<<Judg 6:34; 1 Sam 10:10; 16:13>>] came upon Saul when he heard those tidings, and his anger was kindled greatly.
+@ And he took a yoke of oxen, and ##hewed##note:x[<<Judg 19:29>>] them in pieces, and sent __them__ throughout all the coasts of Israel by the hands of messengers, saying, Whosoever cometh not forth after Saul and after Samuel, so shall it be done unto his oxen. And the fear of the LORD fell on the people, and they came out ##with one consent##note:x[<<Judg 20:1>>].note:tn[__with…__: Heb. as one man]
+@ And when he numbered them in Bezek, the children of Israel were three hundred thousand, and the men of Judah thirty thousand.
+@ And they said unto the messengers that came, Thus shall ye say unto the men of Jabesh-gilead, To morrow, by __that time__ the sun be hot, ye shall have note:x[<<Ps 18:17>>]##help##note:tn[or, deliverance]. And the messengers came and shewed __it__ to the men of Jabesh; and they were glad.
+@ Therefore the men of Jabesh said, To morrow we will come out unto you, and ye shall do with us all that seemeth good unto you.
+@ And it was __so__ on the morrow, that Saul put the people ##in three##note:x[<<Judg 7:16>>] companies; and they came into the midst of the host in the morning watch, and slew the Ammonites until the heat of the day: and it came to pass, that they which remained were scattered, so that two of them were not left together.
+
+[discrete.pericope]
+==== Saul Confirmed as King
+
+@ ¶ And the people said unto Samuel, ##Who __is__ he##note:x[<<1 Sam 10:27; Luke 19:27>>] that said, Shall Saul reign over us? bring the men, that we may put them to death.
+@ And Saul said, ##There shall##note:x[<<2 Sam 19:22>>] not a man be put to death this day: for to day ##the LORD##note:x[<<Exod 14:13; 1 Sam 19:5>>] hath wrought salvation in Israel.
+@ Then said Samuel to the people, Come, and ##let us go##note:x[<<1 Sam 10:8>>] to Gilgal, and renew the kingdom there.
+@ And all the people went to Gilgal; and there they made Saul king ##before the LORD##note:x[<<1 Sam 10:17>>] in Gilgal; and there they ##sacrificed##note:x[<<1 Sam 10:8; 1 Chr 29:21–24>>] sacrifices of peace offerings before the LORD; and there Saul and all the men of Israel rejoiced greatly.
+
+=== @12
+
+[discrete.pericope]
+==== Samuel’s Farewell Address
+
+@ And Samuel said unto all Israel, Behold, I have hearkened unto your voice in all that ye said unto me, and ##have made##note:x[<<1 Sam 10:24; 11:14–15>>] a king over you.
+@ And now, behold, the king ##walketh##note:x[<<1 Sam 8:20>>] before you: and ##I am old##note:x[<<1 Sam 8:1, 5>>] and grayheaded; and, behold, my sons __are__ with you: and I have walked before you from my childhood unto this day.
+@ Behold, here I __am:__ witness against me before the LORD, and before ##his anointed##note:x[<<1 Sam 24:6>>]: ##whose ox##note:x[<<Num 16:15; Acts 20:33>>] have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed? or of whose hand have I received __any__ ##bribe##note:tn[Heb. ransom] to blind mine eyes therewith? and I will restore it you.note:tn[__to blind…__: or, that I should hide mine eyes at him]
+@ And they said, Thou hast not defrauded us, nor oppressed us, neither hast thou taken ought of any man’s hand.
+@ And he said unto them, The LORD __is__ witness against you, and his anointed __is__ witness this day, that ##ye have##note:x[<<Acts 23:9; 24:20>>] not found ought ##in my hand##note:x[<<Exod 22:4>>]. And they answered, __He is__ witness.
+
+@ ¶ And Samuel said unto the people, ##__It is__ the LORD##note:x[<<Exod 6:26; Mic 6:4>>] that ##advanced##note:tn[or, made] Moses and Aaron, and that brought your fathers up out of the land of Egypt.
+@ Now therefore stand still, that I may ##reason##note:x[<<Isa 1:18>>] with you before the LORD of all the righteous acts of the LORD, which he did ##to##note:tn[Heb. with] you and to your fathers.note:tn[__righteous…__: Heb. righteousnesses, or, benefits]
+@ When Jacob was come into Egypt, and your fathers cried unto the LORD, then the LORD ##sent Moses##note:x[<<Exod 4:14–16>>] and Aaron, which brought forth your fathers out of Egypt, and made them dwell in this place.
+@ And when they forgat the LORD their God, ##he sold##note:x[<<Judg 4:2>>] them into the hand of Sisera, captain of the host of Hazor, and into the hand ##of the Philistines##note:x[<<Judg 10:7; 13:1>>], and into the hand of the king of Moab, and they fought against them.
+@ ##And they##note:x[<<Judg 10:10>>] cried unto the LORD, and said, We have sinned, because we have forsaken the LORD, and have served ##Baalim##note:x[<<Judg 2:13>>] and Ashtaroth: but now deliver us out of the hand of our enemies, and we will serve thee.
+@ And the LORD sent ##Jerubbaal##note:x[<<Judg 6:32>>], and Bedan, and Jephthah, and Samuel, and delivered you out of the hand of your enemies on every side, and ye dwelled safe.
+@ And when ye saw that Nahash the king of the children of Ammon came against you, ye said unto me, ##Nay##note:x[<<1 Sam 8:5–6>>]; but a king shall reign over us: ##when the LORD##note:x[<<Judg 8:23>>] your God __was__ your king.
+@ Now therefore ##behold##note:x[<<1 Sam 10:24>>] the king ##whom ye##note:x[<<1 Sam 8:5>>] have chosen, __and__ whom ye ##have desired##note:x[<<Hos 13:11>>]! and, behold, the LORD hath set a king over you.
+@ ##If ye will##note:x[<<Deut 28:1–14; Josh 24:14>>] fear the LORD, and serve him, and obey his voice, and not rebel against the ##commandment##note:tn[Heb. mouth] of the LORD, then shall both ye and also the king that reigneth over you continue following the LORD your God&#58;note:tn[__continue…__: Heb. be after]
+@ ##But if ye##note:x[<<Josh 24:20; Isa 1:20; 3:11>>] will not obey the voice of the LORD, but rebel against the commandment of the LORD, then shall the hand of the LORD be against you, as __it was__ against your fathers.
+
+@ ¶ Now therefore ##stand##note:x[<<Exod 14:13, 31; 1 Sam 12:7>>] and see this great thing, which the LORD will do before your eyes.
+@ ##__Is it__##note:x[<<Prov 26:1>>] not wheat harvest to day? ##I will call##note:x[<<1 Sam 7:9–10>>] unto the LORD, and he shall send thunder and rain; that ye may perceive and see that ##your wickedness##note:x[<<1 Sam 8:7>>] __is__ great, which ye have done in the sight of the LORD, in asking you a king.
+@ So Samuel called unto the LORD; and the LORD sent thunder and rain that day: and all the people greatly ##feared##note:x[<<Exod 14:31>>] the LORD and Samuel.
+@ And all the people said unto Samuel, ##Pray for thy##note:x[<<Exod 9:28; 1 John 5:16>>] servants unto the LORD thy God, that we die not: for we have added unto all our sins __this__ evil, to ask us a king.
+
+@ ¶ And Samuel said unto the people, Fear not: ye have done all this wickedness: yet ##turn not##note:x[<<Deut 11:16>>] aside from following the LORD, but serve the LORD with all your heart;
+@ And turn ye not aside: for __then should ye go__ after ##vain __things__##note:x[<<Jer 10:15; 16:19; Hab 2:18>>], which cannot profit nor deliver; for they __are__ vain.
+@ For ##the LORD##note:x[<<1 Kgs 6:13>>] will not forsake his people ##for his great##note:x[<<Ps 106:8>>] name’s sake: because ##it hath##note:x[<<Deut 14:2>>] pleased the LORD to make you his people.
+@ Moreover as for me, ##God forbid##note:x[<<Rom 1:9; Col 1:9; 2 Tim 1:3>>] that I should sin against the LORD ##in##note:tn[Heb. from] ceasing to pray for you: but I will teach you the good and the right way:
+@ Only ##fear the LORD##note:x[<<Prov 1:7>>], and serve him in truth with all your heart: for ##consider##note:x[<<Isa 5:12>>] ##how great __things__##note:x[<<Deut 10:21>>] he hath done for you.note:tn[__how…__: or, what a great thing]
+@ ##But if##note:x[<<Josh 24:20>>] ye shall still do wickedly, ye shall be consumed, both ##ye and##note:x[<<Deut 28:36; 1 Sam 31:1–5>>] your king.
+
+=== @13
+
+[discrete.pericope]
+==== War with the Philistines
+
+@ Saul reigned one year; and when he had reigned two years over Israel,note:tn[__reigned one…__: Heb. the son of one year in his reigning]
+@ Saul chose him three thousand __men__ of Israel; __whereof__ two thousand were with Saul in ##Michmash##note:x[<<1 Sam 13:5; 14:31>>] and in mount Beth-el, and a thousand were with Jonathan ##in Gibeah##note:x[<<1 Sam 10:26>>] of Benjamin: and the rest of the people he sent every man to his tent.
+@ And Jonathan smote ##the garrison##note:x[<<1 Sam 10:5>>] of the Philistines that __was__ in ##Geba##note:tn[or, the hill], and the Philistines heard __of it__. And Saul ##blew##note:x[<<Judg 3:27>>] the trumpet throughout all the land, saying, Let the Hebrews hear.
+@ And all Israel heard say __that__ Saul had smitten a garrison of the Philistines, and __that__ Israel also ##was had in abomination##note:x[<<Gen 34:30>>] with the Philistines. And the people were called together after Saul to Gilgal.note:tn[__was…__: Heb. did stink]
+
+@ ¶ And the Philistines gathered themselves together to fight with Israel, thirty thousand chariots, and six thousand horsemen, and people ##as the sand##note:x[<<Josh 11:4>>] which __is__ on the sea shore in multitude: and they came up, and pitched in Michmash, eastward from ##Beth-aven##note:x[<<1 Sam 14:23>>].
+@ When the men of Israel saw that they were in a strait, (for the people were distressed,) then the people did hide themselves ##in caves##note:x[<<Judg 6:2>>], and in thickets, and in rocks, and in high places, and in pits.
+@ And __some of__ the Hebrews went over Jordan to the land of Gad and Gilead. As for Saul, he __was__ yet in Gilgal, and all the people followed him trembling.note:tn[__followed…__: Heb. trembled after him]
+
+[discrete.pericope]
+==== Saul’s Unlawful Sacrifice
+
+@ ¶ And he ##tarried##note:x[<<1 Sam 10:8>>] seven days, according to the set time that Samuel __had appointed:__ but Samuel came not to Gilgal; and the people were scattered from him.
+@ And Saul said, Bring hither a burnt offering to me, and peace offerings. And ##he offered##note:x[<<1 Kgs 3:4; Prov 21:27>>] the burnt offering.
+@ And it came to pass, that as soon as he had made an end of offering the burnt offering, behold, Samuel came; and ##Saul##note:x[<<1 Sam 15:13>>] went out to meet him, that he might note:x[<<1 Sam 15:13>>]##salute##note:tn[Heb. bless] him.
+
+@ ¶ And Samuel said, What hast thou done? And Saul said, Because I saw that the people were scattered from me, and __that__ thou camest not within the days appointed, and __that__ the Philistines gathered themselves together at ##Michmash##note:x[<<1 Sam 13:2, 5, 16>>];
+@ Therefore said I, The Philistines will come down now upon me to Gilgal, and I have not made supplication unto the LORD: I forced myself therefore, and offered a burnt offering.note:tn[__made…__: Heb. intreated the face]
+@ And Samuel said to Saul, ##Thou hast done##note:x[<<2 Chr 16:9>>] foolishly: thou ##hast not kept##note:x[<<1 Sam 15:22, 28>>] the commandment of the LORD thy God, which he commanded thee: for now would the LORD have established thy kingdom upon Israel for ever.
+@ ##But now##note:x[<<1 Sam 15:28>>] thy kingdom shall not continue: ##the LORD##note:x[<<Ps 78:70; Acts 13:22>>] hath sought him a man after his own heart, and the LORD hath commanded him __to be__ captain over his people, because thou hast not kept __that__ which the LORD commanded thee.
+
+@ And Samuel arose, and gat him up from Gilgal unto Gibeah of Benjamin. And Saul numbered the people __that were__ ##present##note:tn[Heb. found] with him, ##about six##note:x[<<1 Sam 13:2; 14:2>>] hundred men.
+
+[discrete.pericope]
+==== Israel without Weapons
+
+@ And Saul, and Jonathan his son, and the people __that were__ ##present##note:tn[Heb. found] with them, abode in ##Gibeah##note:tn[Heb. Geba] of Benjamin: but the Philistines encamped in Michmash.
+
+@ ¶ And the spoilers came out of the camp of the Philistines in three companies: one company turned unto the way __that leadeth to__ ##Ophrah##note:x[<<Josh 18:23>>], unto the land of Shual:
+@ And another company turned the way __to__ ##Beth-horon##note:x[<<Josh 18:13–14>>]: and another company turned __to__ the way of the border that looketh to the valley of ##Zeboim##note:x[<<Neh 11:34>>] toward the wilderness.
+
+@ ¶ Now ##there was no##note:x[<<Judg 5:8; 2 Kgs 24:14; Jer 24:1>>] smith found throughout all the land of Israel: for the Philistines said, Lest the Hebrews make __them__ swords or spears:
+@ But all the Israelites went down to the Philistines, to sharpen every man his share, and his coulter, and his axe, and his mattock.
+@ Yet they had a file for the mattocks, and for the coulters, and for the forks, and for the axes, and to ##sharpen##note:tn[Heb. set] the goads.note:tn[__a file__: Heb. a file with mouths, or Heb. a pim, a third of a shekel]
+@ So it came to pass in the day of battle, that ##there was neither##note:x[<<Judg 5:8>>] sword nor spear found in the hand of any of the people that __were__ with Saul and Jonathan: but with Saul and with Jonathan his son was there found.
+@ And the note:x[<<1 Sam 14:4>>]##garrison##note:tn[or, standing camp] of the Philistines went out to the ##passage##note:x[<<1 Sam 14:1; Isa 10:28>>] of Michmash.
+
+=== @14
+
+[discrete.pericope]
+==== Jonathan’s Victory over the Philistines
+
+@ Now it came to pass upon a day, that Jonathan the son of Saul said unto the young man that bare his armour, Come, and let us go over to the Philistines’ garrison, that __is__ on the other side. But he told not his father.note:tn[__it came…__: or, there was a day]
+@ And Saul tarried in the uttermost part of Gibeah under a pomegranate tree which __is__ in Migron: and the people that __were__ with him __were__ about six hundred men;
+@ note:x[<<1 Sam 4:21>>]And note:x[<<1 Sam 22:20>>]##Ahiah##note:tn[called Ahimelech], the son of Ahitub, I-chabod’s brother, the son of Phinehas, the son of Eli, the LORD’s priest in Shiloh, ##wearing##note:x[<<1 Sam 2:28>>] an ephod. And the people knew not that Jonathan was gone.
+
+@ ¶ And between ##the passages##note:x[<<1 Sam 13:23>>], by which Jonathan sought to go over unto the Philistines’ garrison, __there was__ a sharp rock on the one side, and a sharp rock on the other side: and the name of the one __was__ Bozez, and the name of the other Seneh.
+@ The ##forefront##note:tn[Heb. tooth] of the one __was__ situate northward over against Michmash, and the other southward over against Gibeah.
+@ And Jonathan said to the young man that bare his armour, Come, and let us go over unto the garrison of these uncircumcised: it may be that the LORD will work for us: ##for __there is__ no restraint##note:x[<<2 Chr 14:11; Matt 19:26; Rom 8:31>>] to the LORD to save by many or by few.
+@ And his armourbearer said unto him, Do all that __is__ in thine heart: turn thee; behold, I __am__ with thee according to thy heart.
+@ Then said Jonathan, Behold, we will pass over unto __these__ men, and we will discover ourselves unto them.
+@ If they say thus unto us, ##Tarry##note:tn[Heb. Be still] until we come to you; then we will stand still in our place, and will not go up unto them.
+@ But if they say thus, Come up unto us; then we will go up: for the LORD hath delivered them into our hand: and ##this __shall be__ a sign##note:x[<<Gen 24:14; Judg 7:11>>] unto us.
+@ And both of them discovered themselves unto the garrison of the Philistines: and the Philistines said, Behold, the Hebrews come forth ##out of the holes##note:x[<<1 Sam 13:6>>] where they had hid themselves.
+@ And the men of the garrison answered Jonathan and his armourbearer, and said, ##Come up to us##note:x[<<1 Sam 17:43–44>>], and we will shew you a thing. And Jonathan said unto his armourbearer, ##Come up after me##note:x[<<2 Sam 5:24>>]: for the LORD hath delivered them into the hand of Israel.
+@ And Jonathan climbed up upon his hands and upon his feet, and his armourbearer after him: and they fell before Jonathan; and his armourbearer slew after him.
+@ And that first slaughter, which Jonathan and his armourbearer made, was about twenty men, within as it were an half acre of land, __which__ a yoke __of oxen might plow__.note:tn[__an…__: or, half a furrow of an acre of land]
+@ And there was trembling in the host, in the field, and among all the people: the garrison, and ##the spoilers##note:x[<<1 Sam 13:17>>], they also trembled, and the earth quaked: so it was a ##very great trembling##note:x[<<Gen 35:5>>].note:tn[__a very…__: Heb. a trembling of God]
+
+@ And the watchmen of Saul in Gibeah of Benjamin looked; and, behold, the multitude melted away, and they went on beating down __one another__.
+@ Then said Saul unto the people that __were__ with him, Number now, and see who is gone from us. And when they had numbered, behold, Jonathan and his armourbearer __were__ not __there__.
+@ And Saul said unto Ahiah, Bring hither the ark of God. For the ark of God was at that time with the children of Israel.
+
+@ ¶ And it came to pass, while Saul talked unto the priest, that the ##noise##note:tn[or, tumult] that __was__ in the host of the Philistines went on and increased: and Saul said unto the priest, Withdraw thine hand.
+@ note:x[<<Judg 7:22; 2 Chr 20:23>>]And Saul and all the people that __were__ with him assembled themselves, and they came to the battle: and, behold, every man’s sword was against his fellow, __and there was__ a very great discomfiture.note:tn[__assembled…__: Heb. were cried together]
+@ Moreover ##the Hebrews##note:x[<<1 Sam 29:4>>] __that__ were with the Philistines before that time, which went up with them into the camp __from the country__ round about, even they also __turned__ to be with the Israelites that __were__ with Saul and Jonathan.
+@ Likewise all the men of Israel which had ##hid themselves##note:x[<<1 Sam 13:6>>] in mount Ephraim, __when__ they heard that the Philistines fled, even they also followed hard after them in the battle.
+@ So ##the LORD##note:x[<<Exod 14:30; Ps 44:6–8>>] saved Israel that day: and the battle passed over unto ##Beth-aven##note:x[<<1 Sam 13:5>>].
+
+[discrete.pericope]
+==== Jonathan Eats the Honey
+
+@ ¶ And the men of Israel were distressed that day: for Saul had adjured the people, saying, ##Cursed##note:x[<<Josh 6:26>>] __be__ the man that eateth __any__ food until evening, that I may be avenged on mine enemies. So none of the people tasted __any__ food.
+@ And all __they of__ the land came to a wood; and there was honey upon the ground.
+@ And when the people were come into the wood, behold, the honey dropped; but no man put his hand to his mouth: for the people feared the oath.
+@ But Jonathan heard not when his father charged the people with the oath: wherefore he put forth the end of the rod that __was__ in his hand, and dipped it in an honeycomb, and put his hand to his mouth; and his eyes were enlightened.
+@ Then answered one of the people, and said, Thy father straitly charged the people with an oath, saying, Cursed __be__ the man that eateth __any__ food this day. And the people were ##faint##note:tn[or, weary].
+@ Then said Jonathan, ##My father##note:x[<<1 Kgs 18:18>>] hath troubled the land: see, I pray you, how mine eyes have been enlightened, because I tasted a little of this honey.
+@ How much more, if haply the people had eaten freely to day of the spoil of their enemies which they found? for had there not been now a much greater slaughter among the Philistines?
+@ And they smote the Philistines that day from Michmash to ##Aijalon##note:x[<<Josh 10:12>>]: and the people were very faint.
+@ And the people ##flew##note:x[<<1 Sam 15:19>>] upon the spoil, and took sheep, and oxen, and calves, and slew __them__ on the ground: and the people ##did eat##note:x[<<Gen 9:4; Lev 3:17>>] __them__ with the blood.
+
+@ ¶ Then they told Saul, saying, Behold, the people sin against the LORD, in that they eat with the blood. And he said, Ye have ##transgressed##note:tn[or, dealt treacherously]: roll a great stone unto me this day.
+@ And Saul said, Disperse yourselves among the people, and say unto them, Bring me hither every man his ox, and every man his sheep, and slay __them__ here, and eat; and sin not against the LORD in eating with the blood. And all the people brought every man his ox with him that night, and slew __them__ there.note:tn[__with him__: Heb. in his hand]
+@ And Saul ##built##note:x[<<1 Sam 7:17>>] an altar unto the LORD: the same was the first altar that he built unto the LORD.note:tn[__the same…__: Heb. that altar he began to build unto the LORD]
+
+@ ¶ And Saul said, Let us go down after the Philistines by night, and spoil them until the morning light, and let us not leave a man of them. And they said, Do whatsoever seemeth good unto thee. ##Then said the priest##note:x[<<Ps 73:28>>], Let us draw near hither unto God.
+
+[discrete.pericope]
+==== The People Save Jonathan
+
+@ And Saul asked counsel of God, Shall I go down after the Philistines? wilt thou deliver them into the hand of Israel? But ##he answered##note:x[<<1 Sam 28:6>>] him not that day.
+@ And Saul said, Draw ye near hither, all the ##chief##note:tn[Heb. corners] of the people: and know and see wherein this sin hath been this day.
+@ ##For, __as__ the LORD liveth, which saveth Israel, though it be in Jonathan my son, he shall surely die. But __there was__ not a man among all the people __that__ answered him.##note:x[<<1 Sam 14:44; 2 Sam 12:5>>]
+@ Then said he unto all Israel, Be ye on one side, and I and Jonathan my son will be on the other side. And the people said unto Saul, Do what seemeth good unto thee.
+@ Therefore Saul said unto the LORD God of Israel, ##Give a perfect __lot__##note:x[<<Acts 1:24>>]. ##And Saul##note:x[<<Josh 7:16–18; 1 Sam 10:20–21>>] and Jonathan were taken: but the people ##escaped##note:tn[Heb. went forth].note:tn[__Give…__: or, Shew the innocent]
+@ And Saul said, Cast __lots__ between me and Jonathan my son. And Jonathan was taken.
+@ Then Saul said to Jonathan, ##Tell me##note:x[<<Josh 7:19>>] what thou hast done. And Jonathan told him, and said, I did but taste a little honey with the end of the rod that __was__ in mine hand, __and__, lo, I must die.
+@ And Saul answered, ##God##note:x[<<Ruth 1:17>>] do so and more also: for ##thou shalt##note:x[<<1 Sam 14:39>>] surely die, Jonathan.
+@ And the people said unto Saul, Shall Jonathan die, who hath wrought this great salvation in Israel? God forbid: __as__ the LORD liveth, ##there shall not##note:x[<<2 Sam 14:11; Luke 21:18; Acts 27:34>>] one hair of his head fall to the ground; for he hath wrought with God this day. So the people rescued Jonathan, that he died not.
+@ Then Saul went up from following the Philistines: and the Philistines went to their own place.
+
+[discrete.pericope]
+==== Saul’s Victories
+
+@ ¶ So Saul took the kingdom over Israel, and fought against all his enemies on every side, against Moab, and against the children of Ammon, and against Edom, and against the kings of ##Zobah##note:x[<<2 Sam 10:6>>], and against the Philistines: and whithersoever he turned himself, he vexed __them__.
+@ And he gathered an host, and smote the Amalekites, and delivered Israel out of the hands of them that spoiled them.note:tn[__gathered…__: or, wrought mightily]
+@ Now the sons of Saul were ##Jonathan##note:x[<<1 Sam 31:2; 1 Chr 8:33>>], and Ishui, and Melchi-shua: and the names of his two daughters __were these;__ the name of the firstborn Merab, and the name of the younger Michal:
+@ And the name of Saul’s wife __was__ Ahinoam, the daughter of Ahimaaz: and ##the name of the captain##note:x[<<2 Sam 2:8>>] of his host __was__ ##Abner##note:tn[Heb. Abiner], the son of Ner, Saul’s uncle.
+@ And ##Kish##note:x[<<1 Sam 9:1>>] __was__ the father of Saul; and Ner the father of Abner __was__ the son of Abiel.
+@ And there was sore war against the Philistines all the days of Saul: and ##when Saul##note:x[<<1 Sam 8:11>>] saw any strong man, or any valiant man, he took him unto him.
+
+=== @15
+
+[discrete.pericope]
+==== Saul’s Disobedience
+
+@ Samuel also said unto Saul, ##The LORD##note:x[<<1 Sam 9:16>>] sent me to anoint thee __to be__ king over his people, over Israel: now therefore ##hearken##note:x[<<1 Sam 12:14; 13:13>>] thou unto the voice of the words of the LORD.
+@ Thus saith the LORD of hosts, I remember __that__ which ##Amalek##note:x[<<Exod 17:8–16; Num 24:20; Deut 25:17–19>>] did to Israel, how he laid __wait__ for him in the way, when he came up from Egypt.
+@ Now go and smite Amalek, and ##utterly destroy##note:x[<<Num 24:20; Deut 20:16–18>>] all that they have, and spare them not; but ##slay##note:x[<<Num 31:17>>] both man and woman, infant and suckling, ox and sheep, camel and ass.
+@ And Saul gathered the people together, and numbered them in Telaim, two hundred thousand footmen, and ten thousand men of Judah.
+@ And Saul came to a city of Amalek, and laid wait in the valley.note:tn[__laid…__: or, fought]
+
+@ ¶ And Saul said unto ##the Kenites##note:x[<<Num 24:21–22; Judg 1:16>>], Go, depart, get you down from among the Amalekites, lest I destroy you with them: for ##ye shewed##note:x[<<Num 10:29–32>>] kindness to all the children of Israel, when they came up out of Egypt. So the Kenites departed from among the Amalekites.
+@ And Saul ##smote##note:x[<<1 Sam 14:48>>] the Amalekites from ##Havilah##note:x[<<Gen 25:18>>] __until__ thou comest to ##Shur##note:x[<<Gen 16:7>>], that __is__ over against Egypt.
+@ And he took Agag the king of the Amalekites alive, and ##utterly##note:x[<<1 Sam 30:1>>] destroyed all the people with the edge of the sword.
+@ But Saul and the people spared Agag, and ##the best##note:x[<<1 Sam 15:15>>] of the sheep, and of the oxen, and of the ##fatlings##note:tn[or, second sort], and the lambs, and all __that was__ good, and would not utterly destroy them: but every thing __that was__ vile and refuse, that they destroyed utterly.
+
+[discrete.pericope]
+==== Samuel Denounces Saul
+
+@ ¶ Then came the word of the LORD unto Samuel, saying,
+@ It ##repenteth me##note:x[<<Gen 6:6; 2 Sam 24:16>>] that I have set up Saul __to be__ king: for he is turned back from following me, and ##hath not performed##note:x[<<1 Sam 13:13>>] my commandments. And it grieved Samuel; and he cried unto the LORD all night.
+@ And when Samuel rose early to meet Saul in the morning, it was told Samuel, saying, Saul came to ##Carmel##note:x[<<Josh 15:55>>], and, behold, he set him up a place, and is gone about, and passed on, and gone down to Gilgal.
+@ And Samuel came to Saul: and Saul said unto him, ##Blessed##note:x[<<Judg 17:2; Ruth 3:10>>] __be__ thou of the LORD: I have performed the commandment of the LORD.
+@ And Samuel said, What __meaneth__ then this bleating of the sheep in mine ears, and the lowing of the oxen which I hear?
+@ And Saul said, They have brought them from the Amalekites: ##for##note:x[<<1 Sam 15:9, 21>>] the people spared the best of the sheep and of the oxen, to sacrifice unto the LORD thy God; and the rest we have utterly destroyed.
+@ Then Samuel said unto Saul, Stay, and I will tell thee what the LORD hath said to me this night. And he said unto him, Say on.
+@ And Samuel said, ##When thou##note:x[<<1 Sam 9:21; 10:22>>] __wast__ little in thine own sight, __wast__ thou not __made__ the head of the tribes of Israel, and ##the LORD##note:x[<<1 Sam 15:1–3>>] anointed thee king over Israel?
+@ And the LORD sent thee on a journey, and said, Go and utterly destroy the sinners the Amalekites, and fight against them until they be consumed.note:tn[__they…__: Heb. they consume them]
+@ Wherefore then didst thou not obey the voice of the LORD, but didst fly upon the spoil, and didst evil in the sight of the LORD?
+@ And Saul said unto Samuel, ##Yea##note:x[<<1 Sam 15:13>>], I have obeyed the voice of the LORD, and have gone the way which the LORD sent me, and have brought Agag the king of Amalek, and have utterly destroyed the Amalekites.
+@ But ##the people##note:x[<<1 Sam 15:15>>] took of the spoil, sheep and oxen, the chief of the things which should have been utterly destroyed, to sacrifice unto the LORD thy God in Gilgal.
+@ And Samuel said, ##Hath the LORD##note:x[<<Ps 51:16–17; Hos 6:6>>] __as great__ delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to ##obey##note:x[<<Hos 6:6>>] __is__ better than sacrifice, __and__ to hearken than the fat of rams.
+@ For ##rebellion##note:x[<<Jer 28:16>>] __is as__ the sin of note:x[<<Lev 20:6>>]##witchcraft##note:tn[Heb. divination], and stubbornness __is as__ iniquity and idolatry. Because ##thou hast rejected##note:x[<<1 Sam 13:14>>] the word of the LORD, he hath also rejected thee from __being__ king.
+
+[discrete.pericope]
+==== Saul’s Confession
+
+@ ¶ And Saul said unto Samuel, ##I have sinned##note:x[<<Num 22:34; 2 Sam 12:13>>]: for I have transgressed the commandment of the LORD, and thy words: because ##I feared##note:x[<<Isa 51:12–13>>] the people, and obeyed their voice.
+@ Now therefore, I pray thee, ##pardon##note:x[<<Exod 10:17>>] my sin, and turn again with me, that I may worship the LORD.
+@ And Samuel said unto Saul, I will not return with thee: ##for thou##note:x[<<1 Sam 13:14; 16:1; Hos 4:6>>] hast rejected the word of the LORD, and the LORD hath rejected thee from being king over Israel.
+@ And as Samuel turned about to go away, he laid hold upon the skirt of his mantle, and it rent.
+@ And Samuel said unto him, ##The LORD##note:x[<<1 Sam 28:17–18>>] hath rent the kingdom of Israel from thee this day, and hath given it to a neighbour of thine, __that is__ better than thou.
+@ And also the ##Strength##note:tn[or, Eternity, or, Victory] of Israel ##will not lie##note:x[<<Num 23:19; Ezek 24:14; Titus 1:2>>] nor repent: for he __is__ not a man, that he should repent.
+@ Then he said, I have sinned: __yet__ ##honour me now##note:x[<<John 5:44; 12:43>>], I pray thee, before the elders of my people, and before Israel, and turn again with me, ##that I may worship##note:x[<<Isa 29:13>>] the LORD thy God.
+@ So Samuel turned again after Saul; and Saul worshipped the LORD.
+
+@ ¶ Then said Samuel, Bring ye hither to me Agag the king of the Amalekites. And Agag came unto him delicately. And Agag said, Surely the bitterness of death is past.
+@ And Samuel said, ##As thy sword##note:x[<<Gen 9:6; Judg 1:7; Matt 7:2>>] hath made women childless, so shall thy mother be childless among women. And Samuel hewed Agag in pieces before the LORD in Gilgal.
+
+@ ¶ Then Samuel went to Ramah; and Saul went up to his house to ##Gibeah##note:x[<<1 Sam 11:4>>] of Saul.
+@ And ##Samuel##note:x[<<1 Sam 19:24>>] came no more to see Saul until the day of his death: nevertheless ##Samuel mourned##note:x[<<1 Sam 15:11>>] for Saul: and the LORD ##repented##note:x[<<1 Sam 15:11>>] that he had made Saul king over Israel.
+
+=== @16
+
+[discrete.pericope]
+==== Samuel Anoints David
+
+@ And the LORD said unto Samuel, ##How long##note:x[<<1 Sam 15:35>>] wilt thou mourn for Saul, ##seeing##note:x[<<1 Sam 15:23>>] I have rejected him from reigning over Israel? fill thine ##horn with oil##note:x[<<2 Kgs 9:1>>], and go, I will send thee to Jesse the Beth-lehemite: for I have provided me a king among his sons.
+@ And Samuel said, How can I go? if Saul hear __it__, he will kill me. And the LORD said, Take an heifer ##with thee##note:x[<<1 Sam 9:12>>], and say, ##I am come##note:x[<<1 Sam 9:12; 20:29>>] to sacrifice to the LORD.note:tn[__with thee__: Heb. in thine hand]
+@ And ##call Jesse##note:x[<<2 Sam 15:11>>] to the sacrifice, and I will shew thee what thou shalt do: and thou shalt ##anoint##note:x[<<1 Sam 9:16; 16:12–13>>] unto me __him__ whom I name unto thee.
+@ And Samuel did that which the LORD spake, and came to Beth-lehem. And the elders of the town ##trembled##note:x[<<1 Sam 21:1; Luke 5:8>>] at his ##coming##note:tn[Heb. meeting], and said, ##Comest##note:x[<<1 Kgs 2:13>>] thou peaceably?
+@ And he said, Peaceably: I am come to sacrifice unto the LORD: ##sanctify yourselves##note:x[<<Exod 19:10; Lev 20:7–8; Josh 3:5>>], and come with me to the sacrifice. And he sanctified Jesse and his sons, and called them to the sacrifice.
+
+@ ¶ And it came to pass, when they were come, that he looked on ##Eliab##note:tn[called Elihu], and said, Surely the LORD’s anointed __is__ before him.
+@ But the LORD said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for __the__ __LORD__ ##__seeth__ not##note:x[<<Luke 16:15>>] as man seeth; for man ##looketh##note:x[<<John 7:24>>] on the outward appearance, but the LORD looketh ##on the heart##note:x[<<Jer 17:10>>].note:tn[__outward…__: Heb. eyes]
+@ Then Jesse called ##Abinadab##note:x[<<1 Sam 17:13>>], and made him pass before Samuel. And he said, Neither hath the LORD chosen this.
+@ Then Jesse made ##Shammah##note:tn[Shimeah, also called, Shimma] to pass by. And he said, Neither hath the LORD chosen this.
+@ Again, Jesse made seven of his sons to pass before Samuel. And Samuel said unto Jesse, The LORD hath not chosen these.
+@ And Samuel said unto Jesse, Are here all __thy__ children? And he said, ##There remaineth##note:x[<<1 Sam 17:28; 2 Sam 7:8; Ps 78:70–71>>] yet the youngest, and, behold, he keepeth the sheep. And Samuel said unto Jesse, Send and fetch him: for we will not sit ##down##note:tn[Heb. round] till he come hither.
+@ And he sent, and brought him in. Now he __was__ ##ruddy##note:x[<<1 Sam 17:42; Song 5:10; Lam 4:7>>], __and__ withal of a beautiful countenance, and goodly to look to. And the LORD said, Arise, anoint him: for this __is__ he.note:tn[__of a…__: Heb. fair of eyes]
+@ Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and ##the Spirit##note:x[<<1 Sam 10:6; John 3:34; Heb 1:9>>] of the LORD came upon David from that day forward. So Samuel rose up, and went to Ramah.
+
+[discrete.pericope]
+==== David Serves Saul
+
+@ ¶ But ##the Spirit##note:x[<<1 Sam 18:12; Ps 51:11>>] of the LORD departed from Saul, and an ##evil spirit##note:x[<<Judg 9:23>>] from the LORD ##troubled##note:tn[or, terrified] him.
+@ And Saul’s servants said unto him, Behold now, an evil spirit from God troubleth thee.
+@ Let our lord now command thy servants, __which are__ ##before thee##note:x[<<1 Sam 16:21–22; 1 Kgs 10:8>>], to seek out a man, __who is__ a cunning player on an harp: and it shall come to pass, when the evil spirit from God is upon thee, that he shall ##play##note:x[<<2 Kgs 3:15>>] with his hand, and thou shalt be well.
+@ And Saul said unto his servants, Provide me now a man that can play well, and bring __him__ to me.
+@ Then answered one of the servants, and said, Behold, I have seen a son of Jesse the Beth-lehemite, __that is__ cunning in playing, and ##a mighty##note:x[<<1 Sam 17:32–36>>] valiant man, and a man of war, and prudent in ##matters##note:tn[or, speech], and a comely person, and ##the LORD##note:x[<<Gen 39:23; 1 Sam 3:19>>] __is__ with him.
+
+@ ¶ Wherefore Saul sent messengers unto Jesse, and said, Send me David thy son, which __is__ with the sheep.
+@ And Jesse took ##an ass __laden__##note:x[<<1 Sam 10:27; Prov 18:16>>] with bread, and a bottle of wine, and a kid, and sent __them__ by David his son unto Saul.
+@ And David came to Saul, and ##stood before him##note:x[<<Gen 41:46; Prov 22:29>>]: and he ##loved him##note:x[<<Ps 146:3>>] greatly; and he became his armourbearer.
+@ And Saul sent to Jesse, saying, Let David, I pray thee, stand before me; for he hath found favour in my sight.
+@ And it came to pass, when ##the __evil__ spirit##note:x[<<1 Sam 16:14>>] from God was upon Saul, that David took an harp, and played with his hand: so Saul was refreshed, and was well, and the evil spirit departed from him.
+
+=== @17
+
+[discrete.pericope]
+==== Goliath’s Challenge
+
+@ Now the Philistines ##gathered##note:x[<<1 Sam 13:5>>] together their armies to battle, and were gathered together at note:x[<<Josh 15:35>>]##Shochoh##note:x[<<Josh 15:35>>], which __belongeth__ to Judah, and pitched between Shochoh and Azekah, in ##Ephes-dammim##note:tn[or, the coast of Dammim, called Pas-dammim].
+@ And Saul and the men of Israel were gathered together, and pitched by ##the valley##note:x[<<1 Sam 21:9>>] of Elah, and set the battle in array against the Philistines.note:tn[__set…__: Heb. ranged the battle]
+@ And the Philistines stood on a mountain on the one side, and Israel stood on a mountain on the other side: and __there was__ a valley between them.
+
+@ ¶ And there went out a champion out of the camp of the Philistines, named ##Goliath##note:x[<<1 Sam 17:23>>], ##of Gath##note:x[<<Josh 11:22; 2 Sam 21:16–22>>], whose height __was__ six cubits and a span.
+@ And __he had__ an helmet of brass upon his head, and he __was__ ##armed##note:tn[Heb. clothed] with a coat of mail; and the weight of the coat __was__ five thousand shekels of brass.
+@ And __he had__ greaves of brass upon his legs, and a ##target##note:tn[or, gorget] of brass between his shoulders.
+@ And ##the staff##note:x[<<2 Sam 21:19>>] of his spear __was__ like a weaver’s beam; and his spear’s head __weighed__ six hundred shekels of iron: and one bearing a shield went before him.
+@ And he stood and cried unto the armies of Israel, and said unto them, Why are ye come out to set __your__ battle in array? __am__ not I a Philistine, and ye ##servants to Saul##note:x[<<1 Sam 8:17>>]? choose you a man for you, and let him come down to me.
+@ If he be able to fight with me, and to kill me, then will we be your servants: but if I prevail against him, and kill him, then shall ye be our servants, and serve us.
+@ And the Philistine said, ##I defy##note:x[<<1 Sam 17:25–26, 36, 45>>] the armies of Israel this day; give me a man, that we may fight together.
+@ When Saul and all Israel heard those words of the Philistine, they were ##dismayed##note:x[<<Deut 31:8; Josh 1:9>>], and greatly afraid.
+
+[discrete.pericope]
+==== David Accepts the Challenge
+
+@ ¶ Now ##David##note:x[<<1 Sam 16:18>>] __was__ the son of that ##Ephrathite##note:x[<<Gen 35:19>>] of Beth-lehem-judah, whose name __was__ Jesse; and he had ##eight sons##note:x[<<1 Sam 16:10–11>>]: and the man went among men __for__ an old man in the days of Saul.
+@ And the three eldest sons of Jesse went __and__ followed Saul to the battle: and ##the names##note:x[<<1 Chr 2:13>>] of his three sons that went to the battle __were__ Eliab the firstborn, and next unto him Abinadab, and the third Shammah.
+@ And David __was__ ##the youngest##note:x[<<1 Sam 16:11>>]: and the three eldest followed Saul.
+@ But David went and returned from Saul to feed his father’s sheep at Beth-lehem.
+@ And the Philistine drew near morning and evening, and presented himself forty days.
+@ And Jesse said unto David his son, Take now for thy brethren an ephah of this ##parched __corn__##note:x[<<1 Sam 25:18>>], and these ten loaves, and run to the camp to thy brethren;
+@ And ##carry##note:x[<<1 Sam 16:20>>] these ten ##cheeses##note:tn[Heb. cheeses of milk] unto the captain of __their__ thousand, and ##look##note:x[<<Gen 37:14>>] how thy brethren fare, and take their pledge.note:tn[__of…__: Heb. of a thousand]
+@ Now Saul, and they, and all the men of Israel, __were__ in the valley of Elah, fighting with the Philistines.
+
+@ ¶ And David rose up early in the morning, and left the sheep with a keeper, and took, and went, as Jesse had commanded him; and he came to the note:x[<<1 Sam 26:5; Luke 19:43>>]##trench##note:tn[or, place of the carriage], as the host was going forth to the ##fight##note:tn[or, battle array, or, place of fight], and shouted for the battle.
+@ For Israel and the Philistines had put the battle in array, army against army.
+@ And David left his carriage in the hand of the keeper of the carriage, and ran into the army, and came and saluted his brethren.note:tn[__his carriage__: Heb. the vessels from upon him]note:tn[__saluted…__: Heb. asked his brethren of peace]
+@ And as he talked with them, behold, there came up the champion, the Philistine of Gath, Goliath by name, out of the armies of the Philistines, and spake according to the same words: and David heard __them__.
+@ And all the men of Israel, when they saw the man, fled from him, and were sore afraid.note:tn[__from…__: Heb. from his face]
+@ And the men of Israel said, Have ye seen this man that is come up? surely to defy Israel is he come up: and it shall be, __that__ the man who killeth him, ##the king##note:x[<<Josh 15:16>>] will enrich him with great riches, and will give him his daughter, and make his father’s house free in Israel.
+@ And David spake to the men that stood by him, saying, What shall be done to the man that killeth this Philistine, and taketh away the ##reproach##note:x[<<1 Sam 11:2>>] from Israel? for who __is__ this ##uncircumcised##note:x[<<1 Sam 17:36>>] Philistine, that he should ##defy##note:x[<<Deut 5:26>>] the armies of the living God?
+@ And the people answered him after this manner, saying, So shall it be done to the man that killeth him.
+
+@ ¶ note:x[<<Gen 37:4, 8; Matt 10:36>>]And Eliab his eldest brother heard when he spake unto the men; and Eliab’s anger was kindled against David, and he said, Why camest thou down hither? and with whom hast thou left those few sheep in the wilderness? I know thy pride, and the naughtiness of thine heart; for thou art come down that thou mightest see the battle.
+@ And David said, What have I now done? __Is there__ not a cause?
+
+@ ¶ And he turned from him toward another, and spake after the same note:x[<<1 Sam 17:26–27>>]##manner##note:tn[Heb. word]: and the people answered him again after the former manner.
+
+@ And when the words were heard which David spake, they rehearsed __them__ before Saul: and he sent for him.note:tn[__sent…__: Heb. took him]
+
+@ ¶ And David said to Saul, ##Let##note:x[<<Deut 20:1–3>>] no man’s heart fail because of him; ##thy##note:x[<<1 Sam 16:18; Ps 3:6>>] servant will go and fight with this Philistine.
+@ And Saul said to David, ##Thou art not##note:x[<<Num 13:31; Deut 9:2>>] able to go against this Philistine to fight with him: for thou __art but__ a youth, and he a man of war from his youth.
+@ And David said unto Saul, Thy servant kept his father’s sheep, and there came a lion, and a bear, and took a ##lamb##note:tn[or, kid] out of the flock:
+@ And I went out after him, and ##smote him##note:x[<<Amos 3:12; 2 Tim 4:17–18>>], and delivered __it__ out of his mouth: and when he arose against me, I caught __him__ by his beard, and smote him, and slew him.
+@ Thy servant slew both the lion and the bear: and this uncircumcised Philistine shall be as one of them, seeing he hath defied the armies of the living God.
+@ David said moreover, ##The LORD##note:x[<<Ps 138:7–8; 2 Cor 1:9–10; 2 Tim 4:17–18>>] that delivered me out of the paw of the lion, and out of the paw of the bear, he will deliver me out of the hand of this Philistine. And Saul said unto David, Go, and the LORD be with thee.
+
+[discrete.pericope]
+==== David Slays Goliath
+
+@ ¶ And Saul armed David with his armour, and he put an helmet of brass upon his head; also he armed him with a coat of mail.note:tn[__armed David…__: Heb. clothed David with his clothes]
+@ And David girded his sword upon his armour, and he assayed to go; for he had not proved __it__. And David said unto Saul, I cannot go with these; for I have not proved __them__. And David ##put them off##note:x[<<Hos 1:7; Zech 4:6; 2 Cor 10:4–5>>] him.
+
+@ And he took his ##staff##note:x[<<1 Cor 1:27–29>>] in his hand, and chose him five smooth stones out of the ##brook##note:tn[or, valley], and put them in a shepherd’s ##bag##note:tn[Heb. vessel] which he had, even in a scrip; and his sling __was__ in his hand: and he drew near to the Philistine.
+@ And the Philistine came on and drew near unto David; and the man that bare the shield __went__ before him.
+@ And when the Philistine looked about, and saw David, he disdained him: for he was __but__ ##a youth##note:x[<<1 Sam 16:12>>], and ruddy, and of a fair countenance.
+@ And the Philistine said unto David, ##__Am__##note:x[<<1 Sam 24:14; 2 Sam 3:8; 9:8>>] I a dog, that thou comest to me with staves? And the Philistine cursed David by his gods.
+@ And the Philistine said to David, Come to me, and I will give thy flesh unto the fowls of the air, and to the beasts of the field.
+@ Then said David to the Philistine, Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee ##in the name##note:x[<<2 Chr 32:8; 2 Cor 3:5; 10:4>>] of the LORD of hosts, the God of the armies of Israel, whom thou hast defied.
+@ This day will the LORD deliver thee into mine hand; and I will smite thee, and take thine head from thee; and I will give the carcases of the host of the Philistines this day unto the fowls of the air, and to the wild beasts of the earth; that ##all the earth##note:x[<<Josh 4:24; 2 Kgs 19:19; Isa 52:10>>] may know that there is a God in Israel.note:tn[__deliver…__: Heb. shut thee up]
+@ And all this assembly shall know that the LORD ##saveth not##note:x[<<Ps 44:6–7; Hos 1:7>>] with sword and spear: for ##the battle##note:x[<<Zech 4:6>>] __is__ the LORD’s, and he will give you into our hands.
+
+@ And it came to pass, when the Philistine arose, and came and drew nigh to meet David, that David hasted, and ran toward the army to meet the Philistine.
+@ And David put his hand in his bag, and took thence a stone, and slang __it__, and ##smote##note:x[<<1 Cor 1:27–28>>] the Philistine in his forehead, that the stone sunk into his forehead; and he fell upon his face to the earth.
+@ So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but __there was__ no sword in the hand of David.
+@ Therefore David ran, and stood upon the Philistine, and took ##his sword##note:x[<<1 Sam 21:9; 2 Sam 23:21>>], and drew it out of the sheath thereof, and slew him, and cut off his head therewith. And when the Philistines saw their champion was dead, they ##fled##note:x[<<Heb 11:34>>].
+@ And the men of Israel and of Judah arose, and shouted, and pursued the Philistines, until thou come to the valley, and to the gates of Ekron. And the wounded of the Philistines fell down by the way to Shaaraim, even unto Gath, and unto Ekron.
+@ And the children of Israel returned from chasing after the Philistines, and they spoiled their tents.
+@ And David took the head of the Philistine, and brought it to Jerusalem; but he put his armour in his tent.
+
+@ ¶ And when Saul saw David go forth against the Philistine, he said unto Abner, the captain of the host, Abner, ##whose son##note:x[<<1 Sam 16:21–22>>] __is__ this youth? And Abner said, __As__ thy soul liveth, O king, I cannot tell.
+@ And the king said, Enquire thou whose son the stripling __is__.
+@ And as David returned from the slaughter of the Philistine, Abner took him, and brought him before Saul with the head of the Philistine in his hand.
+@ And Saul said to him, Whose son __art__ thou, __thou__ young man? And David answered, ##I __am__ the son##note:x[<<1 Sam 17:12>>] of thy servant Jesse the Beth-lehemite.
+
+=== @18
+
+[discrete.pericope]
+==== Jonathan Befriends David
+
+@ And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan ##loved him##note:x[<<1 Sam 18:3; 20:17; Prov 18:24>>] as his own soul.
+@ And Saul ##took him##note:x[<<1 Sam 17:15>>] that day, and would let him go no more home to his father’s house.
+@ Then Jonathan and David ##made a covenant##note:x[<<1 Sam 20:8–17, 42; 2 Sam 21:7>>], because he loved him as his own soul.
+@ And Jonathan ##stripped himself##note:x[<<Gen 41:42; Esth 6:8–9; Isa 61:10>>] of the robe that __was__ upon him, and gave it to David, and his garments, even to his sword, and to his bow, and to his girdle.
+
+[discrete.pericope]
+==== Saul Envies David
+
+@ ¶ And David went out whithersoever Saul sent him, __and__ ##behaved##note:x[<<1 Sam 18:14–15, 30>>] himself ##wisely##note:x[<<Col 4:5>>]: and Saul set him over the men of war, and he was accepted in the sight of all the people, and also in the sight of Saul’s servants.note:tn[__behaved…__: or, prospered]
+
+@ And it came to pass as they came, when David was returned from the slaughter of the ##Philistine##note:tn[or, Philistines], that ##the women##note:x[<<Exod 15:20; Judg 11:34; Ps 68:25>>] came out of all cities of Israel, singing and dancing, to meet king Saul, with tabrets, with joy, and with instruments of musick.note:tn[__instruments…__: Heb. three stringed instruments]
+@ And the women ##answered##note:x[<<Exod 15:21>>] __one another__ as they played, and said, ##Saul##note:x[<<1 Sam 21:11; 29:5>>] hath slain his thousands, and David his ten thousands.
+@ And Saul was very wroth, and ##the saying##note:x[<<Esth 3:5; Prov 13:10>>] ##displeased him##note:tn[Heb. was evil in his eyes]; and he said, They have ascribed unto David ten thousands, and to me they have ascribed __but__ thousands: ##and __what__##note:x[<<1 Sam 15:28>>] can he have more but the kingdom?
+@ And Saul eyed David from that day and forward.
+
+@ ¶ And it came to pass on the morrow, that ##the evil spirit##note:x[<<1 Sam 19:9>>] from God came upon Saul, ##and he prophesied##note:x[<<1 Kgs 18:29; 2 Thess 2:11>>] in the midst of the house: and David played with his hand, as at other times: and __there was__ a javelin in Saul’s hand.
+@ And Saul ##cast the javelin##note:x[<<1 Sam 20:33; Isa 54:17>>]; for he said, I will smite David even to the wall __with it__. ##And David##note:x[<<Isa 54:17>>] avoided out of his presence twice.
+
+@ ¶ And Saul was ##afraid##note:x[<<1 Sam 18:15, 29>>] of David, because ##the LORD##note:x[<<1 Sam 16:13>>] was with him, and was departed from Saul.
+@ Therefore Saul removed him from him, and made him his captain over a thousand; and ##he went out##note:x[<<2 Sam 5:2>>] and came in before the people.
+@ And David behaved himself wisely in all his ways; and ##the LORD##note:x[<<Gen 39:23; Josh 6:27; 1 Sam 16:18>>] __was__ with him.note:tn[__behaved…__: or, prospered]
+@ Wherefore when Saul saw that he behaved himself very wisely, he was afraid of him.
+@ But ##all Israel##note:x[<<1 Sam 18:5>>] and Judah loved David, because he went out and came in before them.
+
+[discrete.pericope]
+==== David Marries Michal
+
+@ ¶ note:x[<<1 Sam 25:28>>]And Saul said to David, Behold my elder daughter Merab, ##her will I give##note:x[<<1 Sam 17:25>>] thee to wife: only be thou ##valiant##note:tn[Heb. a son of valour] for me, and fight the LORD’s battles. For Saul said, ##Let not mine##note:x[<<1 Sam 18:25>>] hand be upon him, but let the hand of the Philistines be upon him.
+@ And David said unto Saul, ##Who __am__ I##note:x[<<1 Sam 9:21; 18:23; 2 Sam 7:18>>]? and what __is__ my life, __or__ my father’s family in Israel, that I should be son in law to the king?
+@ But it came to pass at the time when Merab Saul’s daughter should have been given to David, that she was given unto ##Adriel##note:x[<<2 Sam 21:8>>] the ##Meholathite##note:x[<<Judg 7:22>>] to wife.
+@ And Michal Saul’s daughter loved David: and they told Saul, and the thing ##pleased him##note:tn[Heb. was right in his eyes].
+@ And Saul said, I will give him her, that she may be a snare to him, and that ##the hand##note:x[<<1 Sam 18:17>>] of the Philistines may be against him. Wherefore Saul said to David, Thou shalt this day be my son in law in __the one of__ the twain.
+
+@ ¶ And Saul commanded his servants, __saying__, Commune with David secretly, and say, Behold, the king hath delight in thee, and all his servants love thee: now therefore be the king’s son in law.
+@ And Saul’s servants spake those words in the ears of David. And David said, Seemeth it to you __a__ light __thing__ to be a king’s son in law, seeing that I __am__ a poor man, and lightly esteemed?
+@ And the servants of Saul told him, saying, On this manner spake David.note:tn[__On…__: Heb. According to these words]
+@ And Saul said, Thus shall ye say to David, The king desireth not any ##dowry##note:x[<<Gen 34:12>>], but an hundred foreskins of the Philistines, ##to be avenged##note:x[<<1 Sam 14:24>>] of the king’s enemies. But Saul ##thought##note:x[<<1 Sam 18:17>>] to make David fall by the hand of the Philistines.
+@ And when his servants told David these words, it pleased David well to be the king’s son in law: and the days were not ##expired##note:tn[Heb. fulfilled].
+@ Wherefore David arose and went, he and his men, and ##slew##note:x[<<2 Sam 3:14>>] of the Philistines two hundred men; and David brought their foreskins, and they gave them in full tale to the king, that he might be the king’s son in law. And Saul gave him Michal his daughter to wife.
+
+@ ¶ And Saul saw and knew that the LORD __was__ with David, and __that__ Michal Saul’s daughter loved him.
+@ And Saul was yet the more afraid of David; and Saul became David’s enemy continually.
+@ Then the princes of the Philistines ##went forth##note:x[<<2 Sam 11:1>>]: and it came to pass, after they went forth, __that__ David ##behaved himself##note:x[<<1 Sam 18:5>>] more wisely than all the servants of Saul; so that his name was much set by.note:tn[__set by__: Heb. precious]
+
+=== @19
+
+[discrete.pericope]
+==== Saul Tries to Kill David
+
+[.parallel]
+(<<Psalms 59:1–17>>)
+
+@ And Saul spake to Jonathan his son, and to all his servants, that they should kill David.
+@ But ##Jonathan##note:x[<<Prov 17:17>>] Saul’s son delighted much in David: and Jonathan told David, saying, Saul my father seeketh to kill thee: now therefore, I pray thee, take heed to thyself until the morning, and abide in a secret __place__, and hide thyself:
+@ And I will go out and stand beside my father in the field where thou __art__, and I will commune with my father of thee; and what I see, that I will tell thee.
+
+@ ¶ And Jonathan ##spake good##note:x[<<Prov 31:8–9; Jer 18:20>>] of David unto Saul his father, and said unto him, Let not the king sin against his servant, against David; because he hath not sinned against thee, and ##because his works##note:x[<<Jer 18:20>>] __have been__ to thee-ward very good:
+@ For he did ##put his life##note:x[<<Judg 9:17>>] in his hand, and slew the Philistine, and the LORD ##wrought##note:x[<<1 Sam 11:13; 1 Chr 11:14>>] a great salvation for all Israel: thou sawest __it__, and didst rejoice: wherefore then wilt thou sin against innocent blood, to slay David without a cause?
+@ And Saul hearkened unto the voice of Jonathan: and Saul ##sware##note:x[<<Prov 26:24–25>>], __As__ the LORD liveth, he shall not be slain.
+@ And Jonathan called David, and Jonathan shewed him all those things. And Jonathan brought David to Saul, and he was in his presence, as ##in times past##note:x[<<1 Sam 16:21; 18:2, 13>>].note:tn[__in times…__: Heb. yesterday, third day]
+
+@ ¶ And there was war again: and David went out, and fought with the Philistines, and slew them with a great slaughter; and they fled from ##him##note:tn[Heb. his face].
+@ ##And the evil spirit from the LORD was upon Saul, as he sat in his house with his javelin in his hand: and David played with __his__ hand.##note:x[<<1 Sam 16:14; 18:10–11>>]
+@ And Saul sought to smite David even to the wall with the javelin; but ##he slipped##note:x[<<1 Sam 20:33>>] away out of Saul’s presence, and he smote the javelin into the wall: and David fled, and escaped that night.
+
+@ Saul also ##sent messengers##note:x[<<Ps 59:1>>] unto David’s house, to watch him, and to slay him in the morning: and Michal David’s wife told him, saying, If thou save not thy life to night, to morrow thou shalt be slain.
+
+@ ¶ So Michal ##let David##note:x[<<Josh 2:15; Acts 9:24–25; 2 Cor 11:32–33>>] down through a window: and he went, and fled, and escaped.
+@ And Michal took note:x[<<Gen 31:19>>]an ##image##note:tn[Heb. teraphim], and laid __it__ in the bed, and put a pillow of goats’ __hair__ for his bolster, and covered __it__ with a cloth.
+@ And when Saul sent messengers to take David, she said, He __is__ sick.
+@ And Saul sent the messengers __again__ to see David, saying, Bring him up to me in the bed, that I may slay him.
+@ And when the messengers were come in, behold, __there was__ an image in the bed, with a pillow of goats’ __hair__ for his bolster.
+@ And Saul said unto Michal, Why hast thou deceived me so, and sent away mine enemy, that he is escaped? And Michal answered Saul, He said unto me, Let me go; ##why should##note:x[<<2 Sam 2:22>>] I kill thee?
+
+@ ¶ So David fled, and escaped, and came ##to Samuel##note:x[<<1 Sam 7:17>>] to Ramah, and told him all that Saul had done to him. And he and Samuel went and dwelt in Naioth.
+@ And it was told Saul, saying, Behold, David __is__ at Naioth in Ramah.
+@ And Saul ##sent messengers##note:x[<<John 7:32>>] to take David: and ##when they##note:x[<<1 Sam 10:5–6; Joel 2:28>>] saw the company of the prophets prophesying, and Samuel standing __as__ appointed over them, the Spirit of God was upon the messengers of Saul, and they also prophesied.
+@ And when it was told Saul, he sent other messengers, and they prophesied likewise. And Saul sent messengers again the third time, and they prophesied also.
+@ Then went he also to Ramah, and came to a great well that __is__ in Sechu: and he asked and said, Where __are__ Samuel and David? And __one__ said, Behold, __they be__ at Naioth in Ramah.
+@ And he went thither to Naioth in Ramah: and ##the Spirit##note:x[<<1 Sam 10:10>>] of God was upon him also, and he went on, and prophesied, ##until he came##note:x[<<Prov 16:9>>] to Naioth in Ramah.
+@ And he ##stripped##note:x[<<2 Sam 6:20; Isa 20:2; Mic 1:8>>] off his clothes also, and prophesied before Samuel in like manner, and ##lay##note:tn[Heb. fell] down naked all that day and all that night. Wherefore they say, __Is__ Saul also among the prophets?
+
+=== @20
+
+[discrete.pericope]
+==== Jonathan Helps David
+
+@ And David ##fled##note:x[<<2 Pet 2:9>>] from Naioth in Ramah, and came and said before Jonathan, What have I done? what __is__ mine iniquity? and what __is__ my sin before thy father, that he seeketh my life?
+@ And he said unto him, ##God forbid##note:x[<<Gen 44:7>>]; thou shalt not die: behold, my father will do nothing either great or small, but that he will ##shew it me##note:x[<<1 Sam 9:15; John 17:8>>]: and why should my father hide this thing from me? it __is__ not __so__.note:tn[__shew…__: Heb. uncover mine ear]
+@ And David ##sware##note:x[<<Deut 6:13>>] moreover, and said, Thy father certainly knoweth that I have found grace in thine eyes; and he saith, Let not Jonathan know this, lest he be grieved: ##but truly##note:x[<<1 Sam 25:26; 27:1>>] __as__ the LORD liveth, and __as__ thy soul liveth, __there is__ but a step between me and death.
+@ Then said Jonathan unto David, Whatsoever thy soul ##desireth##note:tn[Heb. speaketh, or, thinketh], I will even do __it__ for thee.note:tn[__Whatsoever…__: or, Say what is thy mind and I will do, etc]
+@ And David said unto Jonathan, Behold, to morrow __is__ ##the new moon##note:x[<<Num 10:10; 28:11>>], and I should not fail to sit with the king at meat: but let me go, ##that I may##note:x[<<1 Sam 19:2>>] hide myself in the field unto the third __day__ at even.
+@ If thy father at all miss me, then say, David earnestly asked __leave__ of me that he might run to ##Beth-lehem##note:x[<<1 Sam 17:58>>] his city: for __there is__ a yearly note:x[<<1 Sam 9:12>>]##sacrifice##note:tn[or, feast] there for all the family.
+@ If he say thus, __It is__ well; thy servant shall have peace: but if he be very wroth, __then__ be sure that ##evil##note:x[<<1 Sam 25:17>>] is determined by him.
+@ Therefore thou shalt deal kindly with thy servant; for ##thou hast##note:x[<<1 Sam 18:3; 23:18>>] brought thy servant into a covenant of the LORD with thee: notwithstanding, ##if there be##note:x[<<2 Sam 14:32>>] in me iniquity, slay me thyself; for why shouldest thou bring me to thy father?
+
+@ And Jonathan said, Far be it from thee: for if I knew certainly that evil were determined by my father to come upon thee, then would not I tell it thee?
+
+[discrete.pericope]
+==== Jonathan and David Renew Their Covenant
+
+@ Then said David to Jonathan, Who shall tell me? or what __if__ thy father answer thee roughly?
+
+@ ¶ And Jonathan said unto David, Come, and let us go out into the field. And they went out both of them into the field.
+@ And Jonathan said unto David, O LORD God of Israel, when I have ##sounded##note:tn[Heb. searched] my father about to morrow any time, __or__ the third __day__, and, behold, __if there be__ good toward David, and I then send not unto thee, and shew it thee;note:tn[__shew…__: Heb. uncover thine ear]
+@ ##The LORD do##note:x[<<Ruth 1:17>>] so and much more to Jonathan: but if it please my father __to do__ thee evil, then I will shew it thee, and send thee away, that thou mayest go in peace: and ##the LORD be##note:x[<<Josh 1:5; 1 Sam 17:37>>] with thee, as he hath been with my father.note:tn[__shew…__: Heb. uncover thine ear]
+@ And thou shalt not only while yet I live shew me ##the kindness##note:x[<<2 Sam 9:3>>] of the LORD, that I die not:
+@ But __also__ thou shalt not cut off thy kindness from my house for ever: no, not when the LORD hath cut off the enemies of David every one from the face of the earth.
+@ So Jonathan ##made##note:tn[Heb. cut] __a covenant__ with the house of David, __saying__, ##Let the LORD##note:x[<<1 Sam 25:22>>] even require __it__ at the hand of David’s enemies.
+@ And Jonathan caused David to swear again, because he loved him: ##for he loved##note:x[<<1 Sam 18:1, 3; Prov 18:24>>] him as he loved his own soul.note:tn[__because…__: or, by his love toward him]
+@ Then Jonathan said to David, To morrow __is__ the new moon: and thou shalt be missed, because thy seat will be ##empty##note:tn[Heb. missed].
+@ And __when__ thou hast stayed three days, __then__ thou shalt go down ##quickly##note:tn[or, diligently: Heb. greatly], and come to the place where thou didst ##hide thyself##note:x[<<1 Sam 19:2>>] when the business was __in hand__, and shalt remain by the stone ##Ezel##note:tn[or, that sheweth the way].note:tn[__when the…__: Heb. in the day of the business]
+@ And I will shoot three arrows on the side __thereof__, as though I shot at a mark.
+@ And, behold, I will send a lad, __saying__, Go, find out the arrows. If I expressly say unto the lad, Behold, the arrows __are__ on this side of thee, take them; then come thou: for __there is__ peace to thee, and no hurt; __as__ the LORD liveth.note:tn[__no hurt__: Heb. not any thing]
+@ But if I say thus unto the young man, Behold, the arrows __are__ beyond thee; go thy way: for the LORD hath sent thee away.
+@ And __as touching__ ##the matter##note:x[<<1 Sam 20:14–15>>] which thou and I have spoken of, behold, ##the LORD##note:x[<<Gen 31:50; 1 Sam 20:42>>] __be__ between thee and me for ever.
+
+@ ¶ So David hid himself in the field: and when the new moon was come, the king sat him down to eat meat.
+@ And the king sat upon his seat, as at other times, __even__ upon a seat by the wall: and Jonathan arose, and Abner sat by Saul’s side, and David’s place was empty.
+@ Nevertheless Saul spake not any thing that day: for he thought, Something hath befallen him, ##he __is__ not clean##note:x[<<Lev 15:5>>]; surely he __is__ not clean.
+@ And it came to pass on the morrow, __which was__ the second __day__ of the month, that David’s place was empty: and Saul said unto Jonathan his son, Wherefore cometh not the son of Jesse to meat, neither yesterday, nor to day?
+@ And Jonathan answered Saul, David earnestly asked __leave__ of me __to go__ to Beth-lehem:
+@ And he said, Let me go, I pray thee; for our family hath a sacrifice in the city; and my brother, he hath commanded me __to be there:__ and now, if I have found favour in thine eyes, let me get away, I pray thee, and see my brethren. Therefore he cometh not unto the king’s table.
+
+[discrete.pericope]
+==== Saul Seeks to Kill Jonathan
+
+@ note:x[<<Prov 21:24>>]Then Saul’s anger was kindled against Jonathan, and he said unto him, ##Thou##note:x[<<Prov 21:24>>] son of the perverse rebellious __woman__, do not I know that thou hast chosen the son of Jesse to thine own confusion, and unto the confusion of thy mother’s nakedness?note:tn[__Thou…__: or, Thou perverse rebel: Heb. Son of perverse rebellion]
+@ For as long as the son of Jesse liveth upon the ground, thou shalt not be established, nor thy kingdom. Wherefore now send and fetch him unto me, for he shall surely die.note:tn[__shall…__: Heb. is the son of death]
+@ And Jonathan answered Saul his father, and said unto him, ##Wherefore##note:x[<<1 Sam 19:5>>] shall he be slain? ##what hath##note:x[<<Matt 27:23>>] he done?
+@ And Saul cast a javelin at him to smite him: whereby Jonathan knew that it was determined of his father to slay David.
+@ So Jonathan arose from the table in fierce anger, and did eat no meat the second day of the month: for he was grieved for David, because his father had done him shame.
+
+@ ¶ And it came to pass in the morning, that Jonathan went out into the field at the time appointed with David, and a little lad with him.
+@ And he said unto his lad, Run, find out now the arrows which I shoot. __And__ as the lad ran, he shot an arrow beyond him.note:tn[__beyond…__: Heb. to pass over him]
+@ And when the lad was come to the place of the arrow which Jonathan had shot, Jonathan cried after the lad, and said, __Is__ not the arrow beyond thee?
+@ And Jonathan cried after the lad, Make speed, haste, stay not. And Jonathan’s lad gathered up the arrows, and came to his master.
+@ But the lad knew not any thing: only Jonathan and David knew the matter.
+@ And Jonathan gave his ##artillery##note:tn[Heb. instruments] unto his lad, and said unto him, Go, carry __them__ to the city.note:tn[__his lad__: Heb. the lad that was his]
+
+@ ¶ __And__ as soon as the lad was gone, David arose out of __a place__ toward the south, and fell on his face to the ground, and bowed himself three times: and they kissed one another, and wept one with another, until David exceeded.
+@ And Jonathan said to David, ##Go in peace##note:x[<<1 Sam 1:17>>], forasmuch as we have sworn both of us in the name of the LORD, saying, The LORD be between me and thee, and between my seed and thy seed for ever. ##And he arose##note:x[<<1 Sam 23:18>>] and departed: and Jonathan went into the city.note:tn[__forasmuch…__: or, the LORD be witness of that which etc]
+
+=== @21
+
+[discrete.pericope]
+==== David Takes the Consecrated Bread
+
+[.parallel]
+(<<Matthew 12:1–8; Mark 2:23–28; Luke 6:1–5>>)
+
+@ note:x[<<Mark 2:26>>]Then came David to ##Nob##note:x[<<Neh 11:32; Isa 10:32>>] to ##Ahimelech##note:tn[also called Ahiah] the priest: and Ahimelech was afraid at the meeting of David, and said unto him, Why __art__ thou alone, and no man with thee?
+@ And David said unto Ahimelech the priest, The king hath commanded me a business, and hath said unto me, Let no man know any thing of the business whereabout I send thee, and what I have commanded thee: and I have appointed __my__ servants to such and such a place.
+@ Now therefore what is under thine hand? give __me__ five __loaves of__ bread in mine hand, or what there is ##present##note:tn[Heb. found].
+@ And the priest answered David, and said, __There is__ no common bread under mine hand, but there is ##hallowed bread##note:x[<<Exod 25:30; Matt 12:3–4>>]; ##if the young##note:x[<<Exod 19:15>>] men have kept themselves at least from women.
+@ And David answered the priest, and said unto him, Of a truth women __have been__ kept from us about these three days, since I came out, and the vessels of the young men are holy, and __the bread is__ in a manner common, yea, though it were sanctified this day in the vessel.note:tn[__yea…__: or, especially when this day there is other sanctified in the vessel]
+@ So the priest ##gave him##note:x[<<Matt 12:3–4; Luke 6:3–4>>] hallowed __bread:__ for there was no bread there but the shewbread, that was taken from before the LORD, to put ##hot bread##note:x[<<Lev 24:5–9>>] in the day when it was taken away.
+@ Now a certain man of the servants of Saul __was__ there that day, detained before the LORD; and his name __was__ ##Doeg##note:x[<<1 Sam 22:9; Ps 52:1>>], an Edomite, the chiefest of the herdmen that __belonged__ to Saul.
+
+[discrete.pericope]
+==== David Flees to Gath
+
+[.parallel]
+(<<Psalms 34:1–22; Psalms 56:1–13>>)
+
+@ ¶ And David said unto Ahimelech, And is there not here under thine hand spear or sword? for I have neither brought my sword nor my weapons with me, because the king’s business required haste.
+@ And the priest said, The sword of Goliath the Philistine, whom thou slewest in ##the valley##note:x[<<1 Sam 17:2>>] of Elah, behold, it __is here__ wrapped in a cloth behind the ephod: if thou wilt take that, take __it:__ for __there is__ no other save that here. And David said, __There is__ none like that; give it me.
+
+@ ¶ And David arose, and fled that day for fear of Saul, and went to Achish the king of Gath.
+@ And ##the servants##note:x[<<Ps 56:1>>] of Achish said unto him, __Is__ not this David ##the king##note:x[<<1 Sam 29:5>>] of the land? did they not sing one to another of him in dances, saying, Saul hath slain his thousands, and David his ten thousands?
+@ And David ##laid up##note:x[<<Luke 2:19>>] these words in his heart, and was ##sore##note:x[<<Ps 56:3>>] afraid of Achish the king of Gath.
+@ And he ##changed##note:x[<<Prov 29:25; Eccl 7:7>>] his behaviour before them, and feigned himself mad in their hands, and ##scrabbled##note:tn[or, made marks] on the doors of the gate, and let his spittle fall down upon his beard.
+@ Then said Achish unto his servants, Lo, ye see the man is mad: wherefore __then__ have ye brought him to me?note:tn[__is mad__: or, playeth the mad man]
+@ Have I need of mad men, that ye have brought this __fellow__ to play the mad man in my presence? shall this __fellow__ come into my house?
+
+=== @22
+
+[discrete.pericope]
+==== David Flees to Adullam and Mizpeh
+
+[.parallel]
+(<<Psalms 57:1–11; Psalms 142:1–7>>)
+
+@ ##David##note:x[<<Ps 34:1; 57:1>>] therefore departed thence, and escaped to ##the cave##note:x[<<1 Chr 11:15>>] Adullam: and when his brethren and all his father’s house heard __it__, they went down thither to him.
+@ And every one __that was__ in ##distress##note:x[<<Matt 11:28>>], and every one that __was__ in debt, and every one __that was__ note:x[<<1 Sam 1:10>>]##discontented##note:tn[Heb. bitter of soul], gathered themselves unto him; and he became ##a captain##note:x[<<Ps 72:12–14>>] over them: and there were with him about four hundred men.note:tn[__was in debt__: Heb. had a creditor]
+
+@ ¶ And David went thence to Mizpeh of Moab: and he said unto the king of Moab, Let my father and my mother, I pray thee, come forth, __and be__ with you, till I know what God will do for me.
+@ And he brought them before the king of Moab: and they dwelt with him all the while that David was in the hold.
+
+@ ¶ And the prophet Gad said unto David, Abide not in the hold; depart, and get thee into the land of Judah. Then David departed, and came into the forest of Hareth.
+
+[discrete.pericope]
+==== Saul Slays the Priests of Nob
+
+[.parallel]
+(<<Psalms 52:1–9>>)
+
+@ ¶ When Saul heard that David was discovered, and the men that __were__ with him, (now Saul abode in Gibeah under a tree in Ramah, having his spear in his hand, and all his servants __were__ standing about him;)note:tn[__tree…__: or, grove in a high place]
+@ Then Saul said unto his servants that stood about him, Hear now, ye Benjamites; will the son of Jesse give every one of you fields and vineyards, __and__ make you all captains of thousands, and captains of hundreds;
+@ That all of you have conspired against me, and __there is__ none that sheweth me ##that my son##note:x[<<1 Sam 18:3>>] hath made a league with the son of Jesse, and __there is__ none of you that is sorry for me, or sheweth unto me that my son hath stirred up my servant against me, to lie in wait, as at this day?note:tn[__sheweth…__: Heb. uncovereth mine ear]
+
+@ ¶ Then answered Doeg the Edomite, which was set over the servants of Saul, and said, I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub.
+@ And ##he enquired##note:x[<<Num 27:21>>] of the LORD for him, and gave him victuals, and gave him the sword of Goliath the Philistine.
+@ Then the king sent to call Ahimelech the priest, the son of Ahitub, and all his father’s house, the priests that __were__ in Nob: and they came all of them to the king.
+@ And Saul said, Hear now, thou son of Ahitub. And he answered, Here I __am__, my lord.note:tn[__Here…__: Heb. Behold me]
+@ And Saul said unto him, ##Why have##note:x[<<1 Sam 22:8>>] ye conspired against me, thou and the son of Jesse, in that thou hast given him bread, and a sword, and hast enquired of God for him, that he should rise against me, to lie in wait, as at this day?
+@ Then Ahimelech answered the king, and said, And who __is so__ faithful among all thy servants as David, which is the king’s son in law, and goeth at thy bidding, and is honourable in thine house?
+@ Did I then begin to enquire of God for him? be it far from me: let not the king impute __any__ thing unto his servant, __nor__ to all the house of my father: for thy servant knew nothing of all this, less or more.note:tn[__less…__: Heb. little or great]
+@ And the king said, Thou shalt surely die, Ahimelech, thou, and all thy father’s house.
+
+@ ¶ And the king said unto the ##footmen##note:tn[or, guard: Heb. runners] that stood about him, Turn, and slay the priests of the LORD; because their hand also __is__ with David, and because they knew when he fled, and did not shew it to me. But the servants of the king ##would not##note:x[<<Exod 1:17>>] put forth their hand to fall upon the priests of the LORD.
+@ And the king said to Doeg, Turn thou, and fall upon the priests. And Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons that did wear a linen ephod.
+@ And Nob, the city of the priests, smote he with the edge of the sword, both ##men##note:x[<<1 Sam 15:3>>] and women, children and sucklings, and oxen, and asses, and sheep, with the edge of the sword.
+
+@ ¶ And ##one##note:x[<<1 Sam 23:6; 30:7; 1 Kgs 2:26–27>>] of the sons of Ahimelech the son of Ahitub, named Abiathar, escaped, and fled after David.
+@ And Abiathar shewed David that Saul had slain the LORD’s priests.
+@ And David said unto Abiathar, I knew __it__ that day, when Doeg the Edomite __was__ there, that he would surely tell Saul: I have occasioned __the death__ of all the persons of thy father’s house.
+@ Abide thou with me, fear not: for ##he that seeketh##note:x[<<1 Kgs 2:26; Heb 12:1–3>>] my life seeketh thy life: ##but with me##note:x[<<John 10:28–30>>] thou __shalt be__ in safeguard.
+
+=== @23
+
+[discrete.pericope]
+==== David Delivers Keilah
+
+@ Then they told David, saying, Behold, the Philistines fight against ##Keilah##note:x[<<Josh 15:44>>], and they rob the threshingfloors.
+@ Therefore David ##enquired##note:x[<<1 Sam 23:4; 2 Sam 5:19, 23>>] of the LORD, saying, Shall I go and smite these Philistines? And the LORD said unto David, Go, and smite the Philistines, and save Keilah.
+@ And David’s men said unto him, Behold, we be afraid here in Judah: how much more then if we come to Keilah against the armies of the Philistines?
+@ Then David enquired of the LORD yet again. And the LORD answered him and said, Arise, go down to Keilah; ##for I will##note:x[<<Josh 8:7; Judg 7:7>>] deliver the Philistines into thine hand.
+@ So David and his men went to Keilah, and fought with the Philistines, and brought away their cattle, and smote them with a great slaughter. So David saved the inhabitants of Keilah.
+@ And it came to pass, ##when Abiathar##note:x[<<1 Sam 22:20>>] the son of Ahimelech fled to David to Keilah, __that__ he came down __with__ an ephod in his hand.
+
+[discrete.pericope]
+==== Saul Pursues David
+
+[.parallel]
+(<<Psalms 54:1–7>>)
+
+@ ¶ And it was told Saul that David was come to Keilah. And Saul said, ##God hath##note:x[<<1 Sam 24:4–6>>] delivered him into mine hand; for he is shut in, by entering into a town that hath gates and bars.
+@ And Saul called all the people together to war, to go down to Keilah, to besiege David and his men.
+
+@ ¶ And David knew that Saul secretly practised mischief against him; and he said to Abiathar the priest, ##Bring##note:x[<<1 Sam 23:6; 30:7>>] hither the ephod.
+@ Then said David, O LORD God of Israel, thy servant hath certainly heard that Saul seeketh to come to Keilah, to destroy the city for my sake.
+@ Will the men of Keilah deliver me up into his hand? will Saul come down, as thy servant hath heard? O LORD God of Israel, I beseech thee, tell thy servant. And the LORD said, He will come down.
+@ Then said David, Will the men of Keilah note:x[<<Ps 31:8>>]##deliver##note:tn[Heb. shut up] me and my men into the hand of Saul? And the LORD said, ##They will##note:x[<<Ps 62:1>>] deliver __thee__ up.
+
+@ ¶ Then David and his men, __which were__ about ##six hundred##note:x[<<1 Sam 22:2; 25:13>>], arose and departed out of Keilah, and went whithersoever they could go. And it was told Saul that David was escaped from Keilah; and he forbare to go forth.
+
+@ And David abode in the wilderness in strong holds, and remained in a mountain in the wilderness of Ziph. And ##Saul##note:x[<<Ps 54:3–4>>] sought him every day, ##but God##note:x[<<Ps 32:7; 54:3–4>>] delivered him not into his hand.
+@ And David saw that Saul was come out to seek his life: and David __was__ in the wilderness of Ziph in a wood.
+
+@ ¶ And Jonathan Saul’s son arose, and went to David into the wood, and ##strengthened##note:x[<<Job 4:3–4; Isa 35:3–4; Heb 12:12–13>>] his hand in God.
+@ And he said unto him, Fear not: for the hand of Saul my father shall not find thee; and thou shalt be king over Israel, and I shall be next unto thee; and ##that also Saul##note:x[<<1 Sam 20:31; 24:20>>] my father knoweth.
+@ ##And they two made a covenant before the LORD: and David abode in the wood, and Jonathan went to his house.##note:x[<<1 Sam 18:3; 20:42; 2 Sam 21:7>>]
+
+@ ¶ Then came up ##the Ziphites##note:x[<<1 Sam 26:1>>] to Saul to Gibeah, saying, Doth not David hide himself with us in strong holds in the wood, in the hill of ##Hachilah##note:x[<<1 Sam 26:1, 3>>], which __is__ on the south of ##Jeshimon##note:tn[or, the wilderness]?note:tn[__on…__: Heb. on the right hand]
+@ Now therefore, O king, come down according to all the desire of thy soul to come down; and our part __shall be__ to deliver him into the king’s hand.
+@ ##And Saul said, Blessed __be__ ye of the LORD; for ye have compassion on me.##note:x[<<1 Sam 22:8>>]
+@ Go, I pray you, prepare yet, and know and see his place where his haunt is, __and__ who hath seen him there: for it is told me __that__ he dealeth very subtilly.note:tn[__haunt…__: Heb. foot shall be]
+@ See therefore, and take knowledge of all the lurking places where he hideth himself, and come ye again to me with the certainty, and I will go with you: and it shall come to pass, if he be in the land, that I will search him out throughout all the thousands of Judah.
+@ And they arose, and went to Ziph before Saul: but David and his men __were__ in the wilderness of ##Maon##note:x[<<Josh 15:55; 1 Sam 25:2>>], in the plain on the south of Jeshimon.
+@ Saul also and his men went to seek __him__. And they told David: wherefore he came down into a rock, and abode in the wilderness of Maon. And when Saul heard __that__, he pursued after David in the wilderness of Maon.note:tn[__into…__: or, from the rock]
+@ And Saul went on this side of the mountain, and David and his men on that side of the mountain: and David made haste to get ##away##note:x[<<Ps 17:9>>] for fear of Saul; for Saul and his men compassed David and his men round about to take them.
+
+@ ¶ But ##there came##note:x[<<2 Kgs 19:9>>] a messenger unto Saul, saying, Haste thee, and come; for ##the Philistines##note:x[<<2 Kgs 19:9>>] have invaded the land.note:tn[__invaded…__: Heb. spread themselves upon, etc]
+@ Wherefore Saul returned from pursuing after David, and went against the Philistines: therefore they called that place ##Sela-hammahlekoth##note:tn[that is, The rock of divisions].
+
+@ ¶ note:x[<<Josh 15:62; 2 Chr 20:2>>]And David went up from thence, and dwelt in strong holds at En-gedi.
+
+=== @24
+
+[discrete.pericope]
+==== David Spares Saul
+
+@ And it came to pass, ##when Saul##note:x[<<1 Sam 23:28–29>>] was returned from ##following##note:tn[Heb. after] the Philistines, that it was told him, saying, Behold, David __is__ in the wilderness of En-gedi.
+@ Then Saul took three thousand chosen men out of all Israel, and went to seek David and his men upon the rocks of the wild goats.
+@ And he came to the sheepcotes by the way, where __was__ a cave; and Saul went in ##to cover##note:x[<<Judg 3:24>>] his feet: and David and his men remained in the sides of the cave.
+@ And ##the men##note:x[<<1 Sam 26:8–11>>] of David said unto him, Behold the day of which the LORD said unto thee, Behold, ##I will deliver##note:x[<<1 Sam 24:10; 26:23>>] thine enemy into thine hand, that thou mayest do to him as it shall seem good unto thee. Then David arose, and cut off the skirt of Saul’s robe privily.note:tn[__Saul’s…__: Heb. the robe which was Saul’s]
+@ note:x[<<2 Sam 12:9; 24:10; 2 Kgs 22:19>>]And it came to pass afterward, that David’s heart smote him, because he had cut off Saul’s skirt.
+@ And he said unto his men, ##The LORD forbid##note:x[<<1 Sam 26:9–11; 2 Sam 1:14; Job 31:29–30>>] that I should do this thing unto my master, the LORD’s anointed, to stretch forth mine hand against him, seeing he __is__ the anointed of the LORD.
+@ So David ##stayed##note:tn[Heb. cut off] his servants with these words, and suffered them not to rise against Saul. But Saul rose up out of the cave, and went on __his__ way.
+@ David also arose afterward, and went out of the cave, and cried after Saul, saying, My lord the king. And when Saul looked behind him, ##David stooped##note:x[<<1 Sam 25:23–24>>] with his face to the earth, and bowed himself.
+
+@ ¶ And David said to Saul, Wherefore hearest thou men’s words, saying, Behold, David seeketh thy hurt?
+@ note:x[<<Ps 105:15>>]Behold, this day thine eyes have seen how that the LORD had delivered thee to day into mine hand in the cave: and __some__ ##bade __me__##note:x[<<1 Sam 24:4>>] kill thee: but __mine eye__ spared thee; and I said, I will not put forth mine hand against my lord; for he __is__ the LORD’s anointed.
+@ Moreover, my father, see, yea, see the skirt of thy robe in my hand: for in that I cut off the skirt of thy robe, and killed thee not, know thou and see that __there is__ neither evil nor transgression in mine hand, and I have not sinned against thee; yet ##thou huntest##note:x[<<1 Sam 23:14, 23; 26:20>>] my soul to take it.
+@ The ##LORD judge##note:x[<<Judg 11:27; Ps 35:1; 43:1>>] between me and thee, and the LORD avenge me of thee: but mine hand shall not be upon thee.
+@ As saith the proverb of the ancients, ##Wickedness##note:x[<<Matt 7:16–18; 12:33–34>>] proceedeth from the wicked: but mine hand shall not be upon thee.
+@ After whom is the king of Israel come out? after whom dost thou pursue? after ##a dead dog##note:x[<<1 Sam 17:43; 2 Sam 9:8>>], after ##a flea##note:x[<<1 Sam 26:20>>].
+@ The LORD therefore be judge, and judge between me and thee, and see, and ##plead##note:x[<<Ps 35:1; 43:1; 119:154>>] my cause, and ##deliver##note:tn[Heb. judge] me out of thine hand.
+
+[discrete.pericope]
+==== David’s Oath to Saul
+
+@ ¶ And it came to pass, when David had made an end of speaking these words unto Saul, that Saul said, ##__Is__ this##note:x[<<1 Sam 26:17>>] thy voice, my son David? And Saul lifted up his voice, and wept.
+@ And he said to David, ##Thou __art__##note:x[<<1 Sam 26:21>>] more righteous than I: for ##thou hast##note:x[<<Matt 5:44>>] rewarded me good, whereas I have rewarded thee evil.
+@ And thou hast shewed this day how that thou hast dealt well with me: forasmuch as when the ##LORD##note:x[<<1 Sam 26:23>>] had ##delivered##note:tn[Heb. shut up] me into thine hand, thou killedst me not.
+@ For if a man find his enemy, will he let him go well away? wherefore the LORD reward thee good for that thou hast done unto me this day.
+@ And now, behold, ##I know well##note:x[<<1 Sam 23:17>>] that thou shalt surely be king, and that the kingdom of Israel shall be established in thine hand.
+@ ##Swear##note:x[<<Gen 21:23>>] now therefore unto me by the LORD, ##that thou##note:x[<<2 Sam 21:6–8>>] wilt not cut off my seed after me, and that thou wilt not destroy my name out of my father’s house.
+@ And David sware unto Saul. And Saul went home; but David and his men gat them up unto ##the hold##note:x[<<1 Sam 23:29>>].
+
+=== @25
+
+[discrete.pericope]
+==== The Death of Samuel
+
+@ And ##Samuel##note:x[<<1 Sam 28:3>>] died; and all the Israelites were gathered together, and ##lamented##note:x[<<Num 20:29; Deut 34:8>>] him, and buried him in his house at Ramah. And David arose, and went down to the wilderness of Paran.
+
+[discrete.pericope]
+==== David, Nabal, and Abigail
+
+@ And __there was__ a man in ##Maon##note:x[<<1 Sam 23:24>>], whose ##possessions##note:tn[or, business] __were__ in ##Carmel##note:x[<<Josh 15:55>>]; and the man __was__ very great, and he had three thousand sheep, and a thousand goats: and he was ##shearing##note:x[<<Gen 38:13>>] his sheep in Carmel.
+@ Now the name of the man __was__ Nabal; and the name of his wife Abigail: and __she was__ a woman of ##good##note:x[<<Prov 14:1; 31:30–31>>] understanding, and of a beautiful countenance: but the man ##__was__ churlish##note:x[<<Isa 32:5–7>>] and evil in his doings; and he __was__ of the house of Caleb.
+
+@ ¶ And David heard in the wilderness that Nabal did shear his sheep.
+@ And David sent out ten young men, and David said unto the young men, Get you up to Carmel, and go to Nabal, and greet him in my name&#58;note:tn[__greet…__: Heb. ask him in my name of peace]
+@ And thus shall ye say to him that ##liveth##note:x[<<1 Tim 5:6>>] __in prosperity__, ##Peace __be__ both##note:x[<<1 Chr 12:18; Ps 122:7>>] to thee, and peace __be__ to thine house, and peace __be__ unto all that thou hast.
+@ And now I have heard that thou hast shearers: now thy shepherds which were with us, note:x[<<1 Sam 25:21>>]we ##hurt##note:tn[Heb. shamed] them not, neither was there ought missing unto them, all the while they were in Carmel.
+@ Ask thy young men, and they will shew thee. Wherefore let the young men find favour in thine eyes: for we come in ##a good day##note:x[<<Esth 9:19>>]: give, I pray thee, whatsoever cometh to thine hand unto thy servants, and to thy son David.
+@ And when David’s young men came, they spake to Nabal according to all those words in the name of David, and ##ceased##note:tn[Heb. rested].
+
+@ ¶ And Nabal answered David’s servants, and said, ##Who __is__ David##note:x[<<Judg 9:28>>]? and who __is__ the son of Jesse? there be many servants now a days that break away every man from his master.
+@ ##Shall I then##note:x[<<Judg 8:6>>] take my bread, and my water, and my ##flesh##note:tn[Heb. slaughter] that I have killed for my shearers, and give __it__ unto men, whom I know not whence they __be__?
+
+@ So David’s young men turned their way, and went again, and came and told him all those sayings.
+@ And David said unto his men, Gird ye on every man his sword. And they girded on every man his sword; and David also girded on his sword: and there went up after David about four hundred men; and two hundred abode by the stuff.
+
+@ ¶ But one of the young men told Abigail, Nabal’s wife, saying, Behold, David sent messengers out of the wilderness to salute our master; and he railed on them.note:tn[__railed…__: Heb. flew upon them]
+@ But the men __were__ ##very good##note:x[<<1 Sam 25:7, 21>>] unto us, and we were not ##hurt##note:tn[Heb. shamed], neither missed we any thing, as long as we were conversant with them, when we were in the fields:
+@ They were ##a wall##note:x[<<Exod 14:22; Job 1:10>>] unto us both by night and day, all the while we were with them keeping the sheep.
+@ Now therefore know and consider what thou wilt do; for ##evil##note:x[<<1 Sam 20:7>>] is determined against our master, and against all his household: for he __is such__ ##a son of Belial##note:x[<<Deut 13:13>>], that __a man__ cannot speak to him.
+
+[discrete.pericope]
+==== Abigail Intercedes for Nabal
+
+@ ¶ Then Abigail made haste, and took two hundred loaves, and two bottles of wine, and five sheep ready dressed, and five measures of parched __corn__, and an hundred note:x[<<2 Sam 16:1>>]##clusters##note:tn[or, lumps] of raisins, and two hundred cakes of figs, and laid __them__ on asses.
+@ And she said unto her servants, ##Go##note:x[<<Gen 32:20>>] on before me; behold, I come after you. But she told not her husband Nabal.
+@ And it was __so, as__ she rode on the ass, that she came down by the covert of the hill, and, behold, David and his men came down against her; and she met them.
+@ Now David had said, ##Surely##note:x[<<Eph 4:26, 31>>] in vain have I kept all that this __fellow__ hath in the wilderness, so that nothing was missed of all that __pertained__ unto him: and ##he hath requited##note:x[<<Prov 17:13>>] me evil for good.
+@ ##So and more##note:x[<<1 Sam 3:17; 20:13>>] also do God unto the enemies of David, if I leave of all that __pertain__ to him by the morning light ##any that pisseth##note:x[<<1 Kgs 14:10>>] against the wall.
+@ And when Abigail saw David, she hasted, and lighted off the ass, and ##fell##note:x[<<1 Sam 20:41>>] before David on her face, and bowed herself to the ground,
+@ And ##fell##note:x[<<Esth 8:3>>] at his feet, and said, ##Upon##note:x[<<1 Sam 25:28; 2 Sam 14:9>>] me, my lord, __upon__ me __let this__ iniquity __be:__ and let thine handmaid, I pray thee, speak in thine ##audience##note:tn[Heb. ears], and hear the words of thine handmaid.
+@ Let not my lord, I pray thee, ##regard##note:tn[Heb. lay it to his heart] this ##man of Belial##note:x[<<1 Sam 25:17>>], __even__ ##Nabal##note:tn[that is, Fool]: for as his name __is__, so __is__ he; Nabal __is__ his name, and folly __is__ with him: but I thine handmaid saw not the young men of my lord, whom thou didst send.
+@ Now therefore, my lord, __as__ the LORD liveth, and __as__ thy soul liveth, seeing ##the LORD hath##note:x[<<Gen 20:6>>] withholden thee ##from##note:x[<<Rom 12:19–20>>] coming to __shed__ blood, and from avenging thyself with thine own hand, ##now let##note:x[<<2 Sam 18:32>>] thine enemies, and they that seek evil to my lord, be as Nabal.note:tn[__avenging…__: Heb. saving thyself]
+@ And now this note:x[<<Gen 33:11; 1 Sam 30:26>>]##blessing##note:tn[or, present] which thine handmaid hath brought unto my lord, let it even be given unto the young men that follow my lord.note:tn[__follow…__: Heb. walk at the feet of, etc]
+@ I pray thee, forgive the trespass of thine handmaid: for ##the LORD##note:x[<<2 Sam 7:11; 1 Chr 17:25>>] will certainly make my lord a sure house; because my lord ##fighteth##note:x[<<1 Sam 18:17>>] the battles of the LORD, and evil hath not been found in thee __all__ thy days.
+@ Yet a man is risen to pursue thee, and to seek thy soul: but the soul of my lord shall be ##bound##note:x[<<Mal 3:17; Matt 10:29–30>>] in the bundle of life ##with the LORD##note:x[<<John 17:21>>] thy God; and the souls of thine enemies, them shall he sling out, __as out__ of the middle of a sling.note:tn[__as out…__: Heb. in the midst of the bought of a sling]
+@ And it shall come to pass, when the LORD shall have done to my lord ##according##note:x[<<1 Sam 13:14>>] to all the good that he hath spoken concerning thee, and shall have appointed thee ruler over Israel;
+@ That this shall be no grief unto thee, nor offence of heart unto my lord, either that thou hast shed blood causeless, or that my lord hath ##avenged##note:x[<<1 Sam 25:33; Rom 12:19>>] himself: but when the LORD shall have dealt well with my lord, then ##remember##note:x[<<Gen 40:14>>] thine handmaid.note:tn[__no grief__: Heb. no staggering, or, stumbling]
+
+@ ¶ ##And David said to Abigail, Blessed __be__ the LORD God of Israel, which sent thee this day to meet me:##note:x[<<Gen 24:27; Exod 18:10; Luke 1:68>>]
+@ And ##blessed##note:x[<<Ps 141:5; Prov 9:9>>] __be__ thy advice, and blessed __be__ thou, which hast kept me this day from coming to __shed__ blood, and from ##avenging##note:x[<<1 Sam 25:26>>] myself with mine own hand.
+@ For in very deed, __as__ the LORD God of Israel liveth, which hath kept me back from hurting thee, except thou hadst hasted and come to meet me, surely there had not been left unto Nabal by the morning light any that pisseth against the wall.
+@ So David received of her hand __that__ which she had brought him, and said unto her, ##Go up##note:x[<<1 Sam 20:42; 2 Kgs 5:19>>] in peace to thine house; see, I have hearkened to thy voice, and have ##accepted##note:x[<<Gen 19:21>>] thy person.
+
+@ ¶ And Abigail came to Nabal; and, behold, he held ##a feast##note:x[<<2 Sam 13:23>>] in his house, like the feast of a king; and Nabal’s heart __was__ ##merry##note:x[<<2 Sam 13:28; Prov 20:1>>] within him, for he __was__ very drunken: wherefore she told him nothing, less or more, until the morning light.
+@ But it came to pass in the morning, when the wine was gone out of Nabal, and his wife had told him these things, that his heart died within him, and he became __as__ a stone.
+@ And it came to pass about ten days __after__, that the LORD smote Nabal, that he died.
+
+[discrete.pericope]
+==== David Marries Abigail
+
+@ ¶ And when David heard that Nabal was dead, he said, Blessed __be__ the LORD, that hath ##pleaded##note:x[<<Prov 22:23>>] the cause of my reproach from the hand of Nabal, and hath ##kept his servant##note:x[<<1 Sam 25:26, 34>>] from evil: for the LORD hath returned the wickedness of Nabal upon his own head. And David sent and communed with Abigail, to take her to him to wife.
+@ And when the servants of David were come to Abigail to Carmel, they spake unto her, saying, ##David sent##note:x[<<Gen 24:51>>] us unto thee, to take thee to him to wife.
+@ And she arose, and bowed herself on __her__ face to the earth, and said, Behold, __let__ ##thine##note:x[<<Ruth 2:10>>] handmaid __be__ a servant ##to wash##note:x[<<John 13:3–5; 1 Tim 5:10>>] the feet of the servants of my lord.
+@ And ##Abigail##note:x[<<Gen 24:61–67>>] hasted, and arose, and rode upon an ass, with five damsels of hers that went ##after her##note:tn[Heb. at her feet]; and she went after the messengers of David, and became his wife.
+@ David also took Ahinoam of ##Jezreel##note:x[<<Josh 15:56>>]; and they were also both of them ##his wives##note:x[<<1 Sam 27:3; 30:5>>].
+
+@ ¶ But Saul had given Michal his daughter, David’s wife, to ##Phalti##note:tn[also called, Phaltiel] the son of Laish, which __was__ of Gallim.
+
+=== @26
+
+[discrete.pericope]
+==== David Again Spares Saul
+
+@ And the Ziphites came unto Saul to Gibeah, saying, ##Doth not##note:x[<<1 Sam 23:19>>] David hide himself in the hill of Hachilah, __which is__ before Jeshimon?
+@ Then Saul arose, and went down to the wilderness of Ziph, having ##three thousand##note:x[<<1 Sam 24:2>>] chosen men of Israel with him, to seek David in the wilderness of Ziph.
+@ And Saul pitched in the hill of Hachilah, which __is__ before Jeshimon, by the way. But David abode in the wilderness, and he saw that Saul came after him into the wilderness.
+@ David therefore sent out spies, and understood that Saul was come in very deed.
+
+@ ¶ And David arose, and came to the place where Saul had pitched: and David beheld the place where Saul lay, and ##Abner##note:x[<<1 Sam 17:55>>] the son of Ner, the captain of his host: and Saul lay in the ##trench##note:tn[or, midst of his carriages], and the people pitched round about him.
+
+@ Then answered David and said to Ahimelech the Hittite, and to Abishai the son of Zeruiah, brother to Joab, saying, ##Who will go##note:x[<<Judg 7:10–11>>] down with me to Saul to the camp? And Abishai said, I will go down with thee.
+@ So David and Abishai came to the people by night: and, behold, Saul lay sleeping within the trench, and his spear stuck in the ground at his bolster: but Abner and the people lay round about him.
+@ Then said Abishai to David, ##God##note:x[<<1 Sam 24:4>>] hath ##delivered##note:tn[Heb. shut up] thine enemy into thine hand this day: now therefore let me smite him, I pray thee, with the spear even to the earth at once, and I will not __smite__ him the second time.
+@ And David said to Abishai, Destroy him not: for ##who can stretch##note:x[<<2 Sam 1:14, 16; Ps 105:15>>] forth his hand against the LORD’s anointed, and be guiltless?
+@ David said furthermore, __As__ ##the LORD liveth##note:x[<<Rom 12:19>>], the LORD shall smite him; or ##his day##note:x[<<Gen 47:29; Deut 31:14>>] shall come to die; or he shall descend into battle, and perish.
+@ The LORD forbid ##that I should##note:x[<<1 Sam 24:6>>] stretch forth mine hand against the LORD’s anointed: but, I pray thee, take thou now the spear that __is__ at his bolster, and the cruse of water, and let us go.
+@ So David took the spear and the cruse of water from Saul’s bolster; and they gat them away, and no man saw __it__, nor knew __it__, neither awaked: for they __were__ all asleep; because ##a deep sleep##note:x[<<Gen 2:21; 15:12>>] from the LORD was fallen upon them.
+
+[discrete.pericope]
+==== David Reproves Abner
+
+@ ¶ Then David went over to the other side, and stood on the top of an hill afar off; a great space __being__ between them:
+@ And David cried to the people, and to Abner the son of Ner, saying, Answerest thou not, Abner? Then Abner answered and said, Who __art__ thou __that__ criest to the king?
+@ And David said to Abner, __Art__ not thou a __valiant__ man? and who __is__ like to thee in Israel? wherefore then hast thou not kept thy lord the king? for there came one of the people in to destroy the king thy lord.
+@ This thing __is__ not good that thou hast done. __As__ the LORD liveth, ye __are__ worthy to die, because ye have not kept your master, the LORD’s anointed. And now see where the king’s spear __is__, and the cruse of water that __was__ at his bolster.note:tn[__worthy to die__: Heb. the sons of death]
+@ And Saul knew David’s voice, and said, ##__Is__ this thy##note:x[<<1 Sam 24:16>>] voice, my son David? And David said, __It is__ my voice, my lord, O king.
+@ And he said, ##Wherefore##note:x[<<1 Sam 24:9, 11–14>>] doth my lord thus pursue after his servant? for what have I done? or what evil __is__ in mine hand?
+@ Now therefore, I pray thee, let my lord the king hear the words of his servant. If the LORD have ##stirred##note:x[<<2 Sam 16:11>>] thee up against me, let him ##accept##note:tn[Heb. smell] an offering: but if __they be__ the children of men, cursed __be__ they before the LORD; for they have driven me out this day from ##abiding##note:tn[Heb. cleaving] in ##the inheritance##note:x[<<2 Sam 14:16; 20:19>>] of the LORD, saying, Go, serve other gods.
+@ Now therefore, let not my blood fall to the earth before the face of the LORD: for ##the king##note:x[<<1 Sam 24:14>>] of Israel is come out to seek a flea, as when one doth hunt a partridge in the mountains.
+
+[discrete.pericope]
+==== Saul Acknowledges His Sin
+
+@ ¶ Then said Saul, ##I have sinned##note:x[<<Exod 9:27; 1 Sam 15:24; 24:17>>]: return, my son David: for I will no more do thee harm, because my soul was precious in thine eyes this day: behold, I have played the fool, and have erred exceedingly.
+@ And David answered and said, Behold the king’s spear! and let one of the young men come over and fetch it.
+@ The LORD render to every man his righteousness and his faithfulness: for the LORD delivered thee into __my__ hand to day, but ##I would not##note:x[<<1 Sam 24:6–7>>] stretch forth mine hand against the LORD’s anointed.
+@ And, behold, as thy life was much set by this day in mine eyes, so let my life be much set by in the eyes of the LORD, and let him deliver me out of all tribulation.
+@ Then Saul said to David, ##Blessed##note:x[<<Num 24:9–10>>] __be__ thou, my son David: thou shalt both do great __things__, and also shalt still prevail. So David went on his way, and Saul returned to his place.
+
+=== @27
+
+[discrete.pericope]
+==== David and the Philistines
+
+@ ##And David##note:x[<<Isa 40:27–31; 51:12>>] said in his heart, I shall now ##perish##note:tn[Heb. be consumed] one day by the hand of Saul: __there is__ nothing better for me than that I should speedily escape into the land of the Philistines; and Saul shall despair of me, to seek me any more in any coast of Israel: so shall I escape out of his hand.
+@ And David arose, and he passed over with ##the six##note:x[<<1 Sam 25:13>>] hundred men that __were__ with him unto ##Achish##note:x[<<1 Sam 21:10>>], the son of Maoch, king of Gath.
+@ And David dwelt with Achish at Gath, he and his men, every man with his household, __even__ David ##with his two##note:x[<<1 Sam 25:42–43>>] wives, Ahinoam the Jezreelitess, and Abigail the Carmelitess, Nabal’s wife.
+@ And it was told Saul that David was fled to Gath: and he sought no more again for him.
+
+@ ¶ And David said unto Achish, If I have now found grace in thine eyes, let them give me a place in some town in the country, that I may dwell there: for why should thy servant dwell in the royal city with thee?
+@ Then Achish gave him ##Ziklag##note:x[<<Neh 11:28>>] that day: wherefore Ziklag pertaineth unto the kings of Judah unto this day.
+@ And ##the time##note:x[<<1 Sam 29:3>>] that David dwelt in the country of the Philistines was a full year and four months.note:tn[__the time__: Heb. the number of days]note:tn[__a full year__: Heb. a year of days]
+
+@ ¶ And David and his men went up, and invaded ##the Geshurites##note:x[<<Josh 13:2, 13>>], and the ##Gezrites##note:tn[or, Gerzites], and the Amalekites: for those __nations were__ of old the inhabitants of the land, ##as thou goest##note:x[<<1 Sam 15:7–8>>] to Shur, even unto the land of Egypt.
+@ And David smote the land, and left neither man nor woman alive, and took away the sheep, and the oxen, and the asses, ##and the camels##note:x[<<1 Sam 15:3>>], and the apparel, and returned, and came to Achish.
+@ And Achish said, Whither have ye made a road to day? And David said, Against the south of Judah, and against the south of ##the Jerahmeelites##note:x[<<1 Chr 2:9, 25>>], and against the south of the ##Kenites##note:x[<<Judg 1:16>>].note:tn[__Whither…__: or, Did you not make a road, etc]
+@ And David saved neither man nor woman alive, to bring __tidings__ to Gath, saying, Lest they should tell on us, saying, So did David, and so __will be__ his manner all the while he dwelleth in the country of the Philistines.
+@ And Achish believed David, saying, He hath made his people Israel utterly to abhor him; therefore he shall be my servant for ever.note:tn[__utterly…__: Heb. to stink]
+
+=== @28
+
+[discrete.pericope]
+==== The Philistines Gather against Israel
+
+@ And it came to pass in those days, that the Philistines gathered their armies together for warfare, to fight with Israel. And Achish said unto David, Know thou assuredly, that thou shalt go out with me to battle, thou and thy men.
+@ And David said to Achish, Surely thou shalt know what thy servant can do. And Achish said to David, Therefore will I make thee keeper of mine head for ever.
+
+@ ¶ Now ##Samuel##note:x[<<1 Sam 25:1>>] was dead, and all Israel had lamented him, and buried him in Ramah, even in his own city. And Saul had ##put away##note:x[<<Lev 19:31; 20:27>>] those that had familiar spirits, and the wizards, out of the land.
+@ And the Philistines gathered themselves together, and came and pitched in ##Shunem##note:x[<<Josh 19:18; 2 Kgs 4:8>>]: and Saul gathered all Israel together, and they pitched in ##Gilboa##note:x[<<1 Sam 31:1>>].
+@ And when Saul saw the host of the Philistines, he was afraid, and his heart greatly trembled.
+@ And when Saul ##enquired##note:x[<<1 Sam 14:37; Lam 2:9>>] of the LORD, the LORD answered him not, neither ##by dreams##note:x[<<Num 12:6>>], nor by Urim, nor by prophets.
+
+[discrete.pericope]
+==== Saul and the Medium of Endor
+
+@ ¶ note:x[<<Josh 17:11>>]Then said Saul unto his servants, Seek me a woman that hath ##a familiar spirit##note:x[<<Acts 16:16>>], ##that I may##note:x[<<1 Chr 10:13>>] go to her, and enquire of her. And his servants said to him, Behold, __there is__ a woman that hath a familiar spirit at Endor.
+@ And Saul disguised himself, and put on other raiment, and he went, and two men with him, and they came to the woman by night: and he said, ##I pray thee##note:x[<<1 Chr 10:13; Isa 8:19>>], divine unto me by the familiar spirit, and bring me __him__ up, whom I shall name unto thee.
+@ And the woman said unto him, Behold, thou knowest what Saul hath done, how he hath cut off those that have familiar spirits, and the wizards, out of the land: wherefore then layest thou a snare for my life, to cause me to die?
+@ And Saul sware to her by the LORD, saying, __As__ the LORD liveth, there shall no punishment happen to thee for this thing.
+@ Then said the woman, Whom shall I bring up unto thee? And he said, Bring me up Samuel.
+@ And when the woman saw Samuel, she cried with a loud voice: and the woman spake to Saul, saying, Why hast thou deceived me? for thou __art__ Saul.
+@ And the king said unto her, Be not afraid: for what sawest thou? And the woman said unto Saul, I saw gods ascending out of the earth.
+@ And he said unto her, What form __is__ he of? And she said, An old man cometh up; and he __is__ covered with ##a mantle##note:x[<<1 Sam 15:27>>]. And Saul perceived that it __was__ Samuel, and he stooped with __his__ face to the ground, and bowed himself.note:tn[__What…__: Heb. What is his form?]
+
+@ ¶ And Samuel said to Saul, Why hast thou disquieted me, to bring me up? And Saul answered, I am sore distressed; for the Philistines make war against me, and ##God##note:x[<<1 Sam 18:12>>] is departed from me, and ##answereth##note:x[<<1 Sam 28:6>>] me no more, neither by prophets, nor by dreams: ##therefore##note:x[<<Luke 16:23–26>>] I have called thee, that thou mayest make known unto me what I shall do.note:tn[__by prophets__: Heb. by the hand of prophets]
+@ Then said Samuel, Wherefore then dost thou ask of me, seeing the LORD is departed from thee, and is become thine enemy?
+@ And the LORD hath done ##to him##note:tn[or, for himself], ##as he spake##note:x[<<1 Sam 15:27–29>>] by ##me##note:tn[Heb. mine hand]: for the LORD hath rent the kingdom out of thine hand, and given it to thy neighbour, __even__ to David:
+@ Because thou ##obeyedst##note:x[<<1 Sam 15:9; 1 Kgs 20:42>>] not the voice of the LORD, nor executedst his fierce wrath upon Amalek, therefore hath the LORD done this thing unto thee this day.
+@ Moreover the LORD will also deliver Israel with thee into the hand of the Philistines: and to morrow __shalt__ thou and thy sons __be__ with me: the LORD also shall deliver the host of Israel into the hand of the Philistines.
+
+@ Then Saul fell straightway all along on the earth, and was sore afraid, because of the words of Samuel: and there was no strength in him; for he had eaten no bread all the day, nor all the night.note:tn[__fell…__: Heb. made haste, and fell with the fulness of his stature]
+
+@ ¶ And the woman came unto Saul, and saw that he was sore troubled, and said unto him, Behold, thine handmaid hath obeyed thy voice, and ##I have put##note:x[<<Judg 12:3; 1 Sam 19:5; Job 13:14>>] my life in my hand, and have hearkened unto thy words which thou spakest unto me.
+@ Now therefore, I pray thee, hearken thou also unto the voice of thine handmaid, and let me set a morsel of bread before thee; and eat, that thou mayest have strength, when thou goest on thy way.
+@ But he refused, and said, I will not eat. But his servants, together with the woman, compelled him; and he hearkened unto their voice. So he arose from the earth, and sat upon the bed.
+@ And the woman had a fat calf in the house; and she hasted, and killed it, and took flour, and kneaded __it__, and did bake unleavened bread thereof:
+@ And she brought __it__ before Saul, and before his servants; and they did eat. Then they rose up, and went away that night.
+
+=== @29
+
+[discrete.pericope]
+==== The Philistines Reject David
+
+@ Now the Philistines gathered together all their armies to ##Aphek##note:x[<<1 Sam 4:1>>]: and the Israelites pitched by a fountain which __is__ in Jezreel.
+@ And the lords of the Philistines passed on by hundreds, and by thousands: ##but David##note:x[<<1 Sam 28:1–2>>] and his men passed on in the rereward with Achish.
+@ Then said the princes of the Philistines, What __do__ these Hebrews __here__? And Achish said unto the princes of the Philistines, __Is__ not this David, the servant of Saul the king of Israel, which hath been with me ##these days##note:x[<<1 Sam 27:7>>], or these years, and I have ##found##note:x[<<Dan 6:5>>] no fault in him since he fell __unto me__ unto this day?
+@ And the princes of the Philistines were wroth with him; and the princes of the Philistines said unto him, ##Make this fellow##note:x[<<1 Sam 14:21>>] return, that he may go again to his place which thou hast appointed him, and let him not go down with us to battle, lest in the battle he be an adversary to us: for wherewith should he reconcile himself unto his master? __should it__ not __be__ with the heads of these men?
+@ ##__Is__ not this David, of whom they sang one to another in dances, saying, Saul slew his thousands, and David his ten thousands?##note:x[<<1 Sam 18:6–7; 21:11; Prov 27:14>>]
+
+@ ¶ Then Achish called David, and said unto him, Surely, __as__ the LORD liveth, thou hast been upright, and ##thy going##note:x[<<2 Sam 3:25; 2 Kgs 19:27>>] out and thy coming in with me in the host __is__ good in my sight: for I have not found evil in thee since the day of thy coming unto me unto this day: nevertheless the lords favour thee not.note:tn[__the lords…__: Heb. thou art not good in the eyes of the lords]
+@ Wherefore now return, and go in peace, that thou displease not the lords of the Philistines.note:tn[__displease…__: Heb. do not evil in the eyes of the lords]
+
+@ ¶ And David said unto Achish, But what have I done? and what hast thou found in thy servant so long as I have been with thee unto this day, that I may not go fight against the enemies of my lord the king?note:tn[__with…__: Heb. before thee]
+@ And Achish answered and said to David, I know that thou __art__ good in my sight, ##as an angel##note:x[<<2 Sam 14:17, 20; 19:27>>] of God: notwithstanding the princes of the Philistines have said, He shall not go up with us to the battle.
+@ Wherefore now rise up early in the morning with thy master’s servants that are come with thee: and as soon as ye be up early in the morning, and have light, depart.
+@ So David and his men rose up early to depart in the morning, to return into the land of the Philistines. And the Philistines went up to Jezreel.
+
+=== @30
+
+[discrete.pericope]
+==== The Amalekites Raid Ziklag
+
+@ And it came to pass, when David and his men ##were come##note:x[<<1 Sam 29:11>>] to Ziklag on the third day, that ##the Amalekites##note:x[<<Josh 11:6; 1 Sam 15:7>>] had invaded the south, and Ziklag, and smitten Ziklag, and burned it with fire;
+@ And had taken the women captives, that __were__ therein: they slew not any, either great or small, but carried __them__ away, and went on their way.
+
+@ ¶ So David and his men came to the city, and, behold, __it was__ burned with fire; and their wives, and their sons, and their daughters, were taken captives.
+@ Then David and the people that __were__ with him ##lifted up##note:x[<<1 Sam 11:4>>] their voice and wept, until they had no more power to weep.
+@ And David’s ##two wives##note:x[<<1 Sam 25:42–43; 2 Sam 2:2>>] were taken captives, Ahinoam the Jezreelitess, and Abigail the wife of Nabal the Carmelite.
+@ And ##David##note:x[<<Ps 56:3–4, 11; 62:5>>] was greatly distressed; for the people spake of stoning him, because the soul of all the people was ##grieved##note:tn[Heb. bitter], every man for his sons and for his daughters: but David encouraged himself in the LORD his God.
+
+[discrete.pericope]
+==== David Destroys the Amalekites
+
+@ And David said to Abiathar the priest, Ahimelech’s son, I pray thee, bring me hither the ephod. And Abiathar brought thither the ephod to David.
+@ And David ##enquired##note:x[<<1 Sam 23:2; 2 Sam 5:19; Prov 3:5–6>>] at the LORD, saying, Shall I pursue after this troop? shall I overtake them? And he answered him, Pursue: for thou shalt surely overtake __them__, and without fail recover __all__.
+@ So David went, he and the six hundred men that __were__ with him, and came to the brook Besor, where those that were left behind stayed.
+@ But David pursued, he and four hundred men: for two hundred abode behind, which were so faint that they could not go over the brook Besor.
+
+@ ¶ And they found an Egyptian in the field, and brought him to David, and gave him bread, and he did eat; and they made him drink water;
+@ And they gave him a piece of a cake of figs, and two clusters of raisins: and when he had eaten, ##his spirit##note:x[<<Judg 15:19>>] came again to him: for he had eaten no bread, nor drunk __any__ water, three days and three nights.
+@ And David said unto him, To whom __belongest__ thou? and whence __art__ thou? And he said, I __am__ a young man of Egypt, servant to an Amalekite; and my master left me, because three days agone I fell sick.
+@ We made an invasion __upon__ the south of ##the Cherethites##note:x[<<2 Sam 8:18; 1 Kgs 1:38, 44>>], and upon __the coast__ which __belongeth__ to Judah, and upon the south of Caleb; and we burned Ziklag with fire.
+@ And David said to him, Canst thou bring me down to this company? And he said, Swear unto me by God, that thou wilt neither kill me, nor deliver me into the hands of my master, and I will bring thee down to this company.
+
+@ ¶ And when he had brought him down, behold, __they were__ spread abroad upon all the earth, ##eating##note:x[<<Rev 11:10–13>>] and drinking, and dancing, because of all the great spoil that they had taken out of the land of the Philistines, and out of the land of Judah.
+@ And David smote them from the twilight even unto the evening of the next day: ##and there##note:x[<<1 Sam 11:11>>] escaped not a man of them, save four hundred young men, which rode upon camels, and fled.note:tn[__the next…__: Heb. their morrow]
+@ And David recovered all that the Amalekites had carried away: and David rescued his two wives.
+@ ##And there was nothing lacking to them, neither small nor great, neither sons nor daughters, neither spoil, nor any __thing__ that they had taken to them: David recovered all.##note:x[<<1 Sam 30:8; Job 1:10; Ps 91:9–10>>]
+@ note:x[<<Num 31:9–12; 1 Sam 30:26; 2 Chr 20:25>>]And David took all the flocks and the herds, __which__ they drave before those __other__ cattle, and said, This __is__ David’s spoil.
+
+[discrete.pericope]
+==== The Spoils Are Divided
+
+@ ¶ And David came to the two hundred men, which were so faint that they could not follow David, whom they had made also to abide at the brook Besor: and they went forth to meet David, and to meet the people that __were__ with him: and when David came near to the people, he saluted them.note:tn[__saluted…__: or, asked them how they did]
+@ Then answered all the wicked men and __men__ of Belial, of ##those##note:tn[Heb. men] that went with David, and said, Because they went not with us, we will not give them __ought__ of the spoil that we have recovered, save to every man his wife and his children, that they may lead __them__ away, and depart.
+@ Then said David, Ye shall not do so, my brethren, with that ##which the LORD##note:x[<<Deut 8:18>>] hath given us, who hath preserved us, and delivered the company that came against us into our hand.
+@ For who will hearken unto you in this matter? ##but as his part##note:x[<<Num 31:27; Josh 22:8; Ps 68:12>>] __is__ that goeth down to the battle, so __shall__ his part __be__ that tarrieth by the stuff: they shall part alike.
+@ And it was __so__ from that day ##forward##note:tn[Heb. and forward], that he made it a statute and an ordinance for Israel unto this day.
+
+@ ¶ And when David came to Ziklag, he sent of the spoil unto the elders of Judah, __even__ to his friends, saying, Behold a ##present##note:tn[Heb. blessing] for you of the spoil of the enemies of the LORD;
+@ note:x[<<Josh 15:48>>]To __them__ which __were__ in Beth-el, and to __them__ which __were__ in ##south Ramoth##note:x[<<Josh 19:8>>], and to __them__ which __were__ in Jattir,
+@ And to __them__ which __were__ in ##Aroer##note:x[<<Josh 13:16>>], and to __them__ which __were__ in Siphmoth, and to __them__ which __were__ in ##Eshtemoa##note:x[<<Josh 15:50>>],
+@ And to __them__ which __were__ in Rachal, and to __them__ which __were__ in the cities of the ##Jerahmeelites##note:x[<<1 Sam 27:10>>], and to __them__ which __were__ in the cities of the ##Kenites##note:x[<<Judg 1:16>>],
+@ And to __them__ which __were__ in ##Hormah##note:x[<<Judg 1:17>>], and to __them__ which __were__ in Chor-ashan, and to __them__ which __were__ in Athach,
+@ And to __them__ which __were__ in ##Hebron##note:x[<<2 Sam 2:1>>], and to all the places where David himself and his men were wont to haunt.
+
+=== @31
+
+[discrete.pericope]
+==== Saul’s Overthrow and Death
+
+[.parallel]
+(<<2 Samuel 1:1–16; 1 Chronicles 10:1–6>>)
+
+@ Now the Philistines fought against Israel: and the men of Israel fled from before the Philistines, and ##fell down##note:x[<<1 Chr 10:1–12>>] note:x[<<1 Sam 28:4>>]##slain##note:tn[or, wounded] in mount Gilboa.
+@ And the Philistines followed hard upon Saul and upon his sons; and the Philistines slew ##Jonathan##note:x[<<1 Chr 8:33>>], and Abinadab, and Malchi-shua, Saul’s sons.
+@ And the battle went sore against Saul, and the archers hit him; and he was sore wounded of the archers.note:tn[__and the archers__: Heb. and the shooters, men with bows]note:tn[__hit…__: Heb. found him]
+@ Then said ##Saul##note:x[<<2 Sam 1:9–10>>] unto his armourbearer, ##Draw##note:x[<<Judg 9:54>>] thy sword, and thrust me through therewith; lest these ##uncircumcised##note:x[<<2 Sam 1:20>>] come and thrust me through, and abuse me. But his armourbearer would not; for he was sore afraid. Therefore Saul took a sword, and fell upon it.note:tn[__abuse…__: or, mock me]
+@ And when his armourbearer saw that Saul was dead, he fell likewise upon his sword, and died with him.
+@ So Saul died, and his three sons, and his armourbearer, and all his men, that same day together.
+
+[discrete.pericope]
+==== The Philistines Possess the Towns
+
+[.parallel]
+(<<1 Chronicles 10:7–10>>)
+
+@ ¶ And when the men of Israel that __were__ on the other side of the valley, and __they__ that __were__ on the other side Jordan, saw that the men of Israel fled, and that Saul and his sons were dead, they forsook the cities, and fled; and the Philistines came and dwelt in them.
+
+@ And it came to pass on the morrow, when the Philistines came to strip the slain, that they found Saul and his three sons fallen in mount Gilboa.
+@ And they cut off his head, and stripped off his armour, and sent into the land of the Philistines round about, ##to publish##note:x[<<Judg 16:23–24; 2 Sam 1:20>>] __it in__ the house of their idols, and among the people.
+@ note:x[<<Josh 17:11>>]And they put his armour in the house of ##Ashtaroth##note:x[<<Judg 2:13>>]: and they fastened his body to the wall of Beth-shan.
+
+[discrete.pericope]
+==== Jabesh-gilead’s Tribute to Saul
+
+[.parallel]
+(<<1 Chronicles 10:11–14>>)
+
+@ ¶ And when the inhabitants of Jabesh-gilead heard ##of that##note:tn[or, concerning him that] which the Philistines had done to Saul;
+@ All the valiant men arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan, and came to Jabesh, and ##burnt them there##note:x[<<2 Chr 16:14; Jer 34:5>>].
+@ And they took ##their bones##note:x[<<2 Sam 21:12–14>>], and buried __them__ under a tree at Jabesh, and ##fasted seven##note:x[<<Gen 50:10>>] days.

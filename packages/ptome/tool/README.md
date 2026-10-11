@@ -34,15 +34,15 @@ dart run tool/differential.dart \
 
 Documents outside the repository join the corpus with `--extra-file`,
 which replaces the default `syntax.adoc`. Before and after a speed change,
-include text outside Latin-1, where the VM's slow paths are, such as
-loci's KJV and Aristotle's *Ethics*:
+include text outside Latin-1, where the VM's slow paths are, such as the
+units corpus's KJV and Aristotle's *Ethics* (`test/units/corpus`):
 
 ```sh
 dart run tool/differential.dart --exe-a build/ptome-before --exe-b build/ptome \
   --extra-file vendor/asciidoctor/data/reference/syntax.adoc \
-  --extra-file ~/Work/ports/loci/bible/kjv/kjv.adoc \
-  --extra-file ~/Work/ports/loci/classics/ethics/ethics-en.adoc \
-  --extra-file ~/Work/ports/loci/classics/ethics/ethics-grc.adoc
+  --extra-file test/units/corpus/bible/kjv/kjv.adoc \
+  --extra-file test/units/corpus/classics/ethics/ethics-en.adoc \
+  --extra-file test/units/corpus/classics/ethics/ethics-grc.adoc
 ```
 
 ## Options

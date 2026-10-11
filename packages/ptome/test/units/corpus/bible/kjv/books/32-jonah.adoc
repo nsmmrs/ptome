@@ -1,0 +1,99 @@
+== @JON
+
+[.book-title]
+Jonah
+
+=== @1
+
+[discrete.pericope]
+==== Jonah Flees from the LORD
+
+[.parallel]
+(<<Nahum 1:1–15>>)
+
+@ Now the word of the LORD came unto note:x[<<2 Kgs 14:25; Luke 11:29–30, 32>>]##Jonah##note:tn[Gr. Jonas] the son of Amittai, saying,
+@ Arise, go to ##Nineveh##note:x[<<Gen 10:11; Nah 1:1>>], that great city, and cry against it; ##for##note:x[<<Gen 18:20–21>>] their wickedness is come up before me.
+@ But Jonah rose up to flee unto Tarshish ##from##note:x[<<Gen 4:16; Ps 139:7–12>>] the presence of the LORD, and went down to ##Joppa##note:x[<<Josh 19:46>>]; and he found a ship going to Tarshish: so he paid the fare thereof, and went down into it, to go with them unto Tarshish from the presence of the LORD.
+
+[discrete.pericope]
+==== The Great Storm
+
+[.parallel]
+(<<Acts 27:13–26>>)
+
+@ ¶ But ##the LORD##note:x[<<Exod 14:21; Ps 135:7; Matt 8:24–27>>] sent out a great wind into the sea, and there was a mighty tempest in the sea, so that the ship was like to be broken.note:tn[__sent out__: Heb. cast forth]note:tn[__was like…__: Heb. thought to be broken]
+@ Then the mariners were afraid, and ##cried##note:x[<<1 Kgs 18:26; Jer 2:28>>] every man unto his god, ##and cast##note:x[<<Acts 27:18–19>>] forth the wares that __were__ in the ship into the sea, to lighten __it__ of them. But Jonah was gone down into the sides of the ship; and he lay, and was fast asleep.
+@ So the shipmaster came to him, and said unto him, ##What##note:x[<<Eph 5:14>>] meanest thou, O sleeper? ##arise##note:x[<<Ps 107:28–29>>], call upon thy God, ##if##note:x[<<Jonah 3:9>>] so be that God will think upon us, that we perish not.
+@ And they said every one to his fellow, Come, ##and let##note:x[<<Prov 16:33>>] us cast lots, that we may know ##for##note:x[<<Josh 7:13>>] whose cause this evil __is__ upon us. So they cast lots, ##and the##note:x[<<Num 32:23>>] lot fell upon Jonah.
+@ Then said they unto him, ##Tell##note:x[<<Josh 7:19>>] us, we pray thee, for whose cause this evil __is__ upon us; ##What __is__ thine##note:x[<<Gen 47:3; 1 Sam 30:13>>] occupation? and whence comest thou? what __is__ thy country? and of what people __art__ thou?
+@ And he said unto them, I __am__ an Hebrew; and I fear the LORD, ##the God##note:x[<<Ps 136:26>>] of heaven, ##which##note:x[<<Neh 9:6; Ps 146:5–6>>] hath made the sea and the dry __land__.note:tn[__the LORD__: or, JEHOVAH]
+@ Then were the men exceedingly afraid, and said unto him, Why hast thou done this? For the men knew that ##he fled##note:x[<<Jonah 1:3>>] from the presence of the LORD, because he had told them.note:tn[__exceedingly…__: Heb. with great fear]
+
+[discrete.pericope]
+==== Jonah Cast into the Sea
+
+@ ¶ Then said they unto him, What shall we do unto thee, that the sea may be calm unto us? for the sea wrought, and was tempestuous.note:tn[__may…__: Heb. may be silent from us]note:tn[__wrought…__: or, grew more and more tempestuous: Heb. went]
+@ And he said unto them, ##Take##note:x[<<2 Sam 24:17>>] me up, and cast me forth into the sea; so shall the sea be calm unto you: ##for##note:x[<<Josh 7:12; 1 Chr 21:17>>] I know that for my sake this great tempest __is__ upon you.
+@ Nevertheless the men ##rowed##note:tn[Heb. digged] hard to bring __it__ to the land; ##but##note:x[<<Prov 21:30>>] they could not: for the sea wrought, and was tempestuous against them.note:tn[__wrought…__: or, grew more and more tempestuous: Heb. went]
+@ Wherefore they cried unto the LORD, and said, We beseech thee, O LORD, we beseech thee, ##let##note:x[<<Deut 21:8>>] us not perish ##for##note:x[<<Ps 115:3; 135:6>>] this man’s life, and lay not upon us innocent blood: for thou, O LORD, hast done as it pleased thee.
+@ So they took up Jonah, and cast him forth into the sea: ##and the##note:x[<<Ps 89:9; 93:3–4; Luke 8:24>>] sea ##ceased##note:tn[Heb. stood] from her raging.
+@ Then the men ##feared##note:x[<<Dan 6:26>>] the LORD exceedingly, and ##offered##note:x[<<Gen 8:20>>] a sacrifice unto the LORD, and ##made##note:x[<<Ps 116:14>>] vows.note:tn[__offered…__: Heb. sacrifice unto the LORD, and vowed vows]
+
+@ ¶ Now the LORD had prepared a great fish to swallow up Jonah. And Jonah was ##in##note:x[<<Matt 12:40; 16:4; Luke 11:30>>] the ##belly##note:tn[Heb. bowels] of the fish three days and three nights.
+
+=== @2
+
+[discrete.pericope]
+==== Jonah’s Prayer
+
+@ Then Jonah ##prayed##note:x[<<Ps 91:15>>] unto the LORD his God ##out##note:x[<<Ps 130:1–2; Lam 3:53–56>>] of the fish’s belly,
+@ And said, ##I cried##note:x[<<Ps 18:4–6; 34:6; 120:1>>] by reason of mine affliction unto the LORD, and he heard me; out of the belly of ##hell##note:tn[or, the grave] cried I, __and__ thou heardest my voice.note:tn[__by…__: or, out of mine affliction]
+@ For ##thou##note:x[<<Ps 69:1–2; Lam 3:54>>] hadst cast me into the deep, in the ##midst##note:tn[Heb. heart] of the seas; and the floods compassed me about: ##all##note:x[<<Ps 42:7>>] thy billows and thy waves passed over me.
+@ Then ##I said##note:x[<<Ps 31:22; Isa 38:17>>], I am cast out of thy sight; yet I will look again ##toward##note:x[<<Ps 5:7>>] thy holy temple.
+@ ##The waters compassed me about, __even__ to the soul: the depth closed me round about, the weeds were wrapped about my head.##note:x[<<Ps 40:2; 69:1–2; Lam 3:54>>]
+@ I went down to the ##bottoms##note:tn[Heb. cuttings off] of the mountains; the earth with her bars __was__ about me for ever: ##yet##note:x[<<Ps 16:10; Isa 38:17>>] hast thou brought up my life from note:x[<<Ps 30:3>>]##corruption##note:tn[or, the pit], O LORD my God.
+@ When my soul fainted within me ##I remembered##note:x[<<1 Sam 30:6>>] the LORD: and ##my prayer##note:x[<<2 Chr 30:27; Ps 18:6>>] came in unto thee, into thine holy temple.
+@ ##They that observe lying vanities forsake their own mercy.##note:x[<<2 Kgs 17:15; Ps 31:6; Jer 2:13>>]
+@ But ##I will sacrifice##note:x[<<Ps 50:14>>] unto thee with the voice of thanksgiving; ##I will pay##note:x[<<Eccl 5:4–5>>] __that__ that I have vowed. ##Salvation##note:x[<<Ps 3:8>>] __is__ of the LORD.
+
+@ ¶ ##And the LORD spake unto the fish, and it vomited out Jonah upon the dry __land__.##note:x[<<Gen 1:3; Ps 33:9; Matt 8:26–27>>]
+
+=== @3
+
+[discrete.pericope]
+==== The Ninevites Repent
+
+[.parallel]
+(<<Matthew 12:38–42; Luke 11:29–32>>)
+
+@ And ##the word##note:x[<<Jonah 1:1>>] of the LORD came unto Jonah the second time, saying,
+@ Arise, go unto Nineveh, that great city, and ##preach##note:x[<<Jer 1:17; Ezek 2:7>>] unto it the preaching that I bid thee.
+@ So Jonah arose, and went unto Nineveh, according to the word of the LORD. Now Nineveh was an ##exceeding##note:tn[Heb. of God] great city of three days’ journey.
+@ And Jonah began to enter into the city a day’s journey, and he cried, and said, ##Yet##note:x[<<Deut 18:22; Jer 18:7–10>>] forty days, and Nineveh shall be overthrown.
+
+@ ¶ So the people of Nineveh ##believed##note:x[<<Matt 12:41; Luke 11:32>>] God, ##and proclaimed##note:x[<<Joel 2:12–17>>] a fast, and put on sackcloth, from the greatest of them even to the least of them.
+@ For word came unto the king of Nineveh, ##and he arose##note:x[<<Jas 4:6–10>>] from his throne, and he laid his robe from him, ##and covered##note:x[<<Esth 4:1–4; Job 2:8>>] __him__ with sackcloth, and sat in ashes.
+@ And he ##caused##note:x[<<2 Chr 20:3; Joel 2:15–16; Jonah 3:5>>] __it__ to be proclaimed and ##published##note:tn[Heb. said] through Nineveh by the decree of the king and his ##nobles##note:tn[Heb. great men], saying, Let neither man nor beast, herd nor flock, taste any thing: let them not feed, nor drink water:
+@ But ##let##note:x[<<Isa 55:6–7>>] man and beast be covered with sackcloth, and ##cry##note:x[<<Jonah 1:6>>] mightily unto God: yea, let them turn every one from his evil way, and from ##the violence##note:x[<<Isa 59:6>>] that __is__ in their hands.
+@ ##Who can tell __if__ God will turn and repent, and turn away from his fierce anger, that we perish not?##note:x[<<2 Sam 12:22; Joel 2:13–14; Jonah 1:6>>]
+
+@ ¶ And ##God saw##note:x[<<1 Kgs 21:27–29; Luke 11:32>>] their works, that they turned from their evil way; ##and God repented##note:x[<<Jer 18:8>>] of the evil, that he had said that he would do unto them; and he did __it__ not.
+
+=== @4
+
+[discrete.pericope]
+==== Jonah’s Anger at the LORD’s Compassion
+
+@ ##But it displeased Jonah exceedingly, and he was very angry.##note:x[<<Jonah 4:9; Matt 20:15; Luke 15:28>>]
+@ And he prayed unto the LORD, and said, I pray thee, O LORD, __was__ not this my saying, when I was yet in my country? Therefore I fled before unto Tarshish: for I knew that ##thou __art__##note:x[<<Exod 34:6–7; Num 14:18–19; Ps 86:15>>] a gracious God, and merciful, slow to anger, and of great kindness, and repentest thee of the evil.
+@ Therefore now, O LORD, ##take##note:x[<<Num 11:15; 1 Kgs 19:4>>], I beseech thee, my life from me; ##for##note:x[<<Eccl 7:1>>] __it is__ better for me to die than to live.
+
+@ ¶ ##Then said the LORD, Doest thou well to be angry?##note:x[<<Ps 106:32–33; Jonah 4:9; Matt 20:15>>]note:tn[__Doest…__: or, Art thou greatly angry?]
+
+@ So Jonah went out of the city, and sat on the east side of the city, and there made him a booth, and sat under it in the shadow, till he might see what would become of the city.
+@ And ##the LORD##note:x[<<Ps 103:10–14>>] God prepared a ##gourd##note:tn[or, palmcrist: Heb. Kikajon], and made __it__ to come up over Jonah, that it might be a shadow over his head, to deliver him from his grief. So Jonah was exceeding glad of the gourd.note:tn[__was…__: Heb. rejoiced with great joy]
+@ But God prepared a worm when the morning rose the next day, and it smote the gourd that ##it withered##note:x[<<Ps 90:5–6; Joel 1:12>>].
+@ And it came to pass, when the sun did arise, ##that God##note:x[<<Ezek 19:12>>] prepared a ##vehement##note:tn[or, silent] east wind; ##and the sun##note:x[<<Ps 121:6>>] beat upon the head of Jonah, that he fainted, ##and wished##note:x[<<Jonah 4:3>>] in himself to die, and said, __It is__ better for me to die than to live.
+@ And God said to Jonah, Doest thou well to be angry for the gourd? And he said, I do well to be angry, __even__ unto death.note:tn[__Doest…__: or, Art thou greatly angry?]note:tn[__I do well…__: or, I am greatly angry]
+@ Then said the LORD, Thou hast had pity on the gourd, for the which thou hast not laboured, neither madest it grow; which came up in a night, and perished in a night&#58;note:tn[__had pity__: or, spared]note:tn[__came…__: Heb. was the son of the night]
+@ And ##should##note:x[<<Matt 18:33; Luke 15:28–32>>] not I spare ##Nineveh##note:x[<<Jonah 1:2>>], that great city, wherein are more than sixscore thousand persons that cannot discern between their right hand and their left hand; and __also__ much cattle?

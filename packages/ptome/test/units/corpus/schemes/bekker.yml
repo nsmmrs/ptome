@@ -1,0 +1,23 @@
+version: 2
+scheme:
+  bekker:
+    cite: "{{page}}{{line}}"
+    level:
+      - name: "page"
+        type: "folio"
+        id: "bk-{{page}}"
+        reftext: "{{page}}"
+      - name: "line"
+        every: 5
+        gaps: true
+        default: true
+        id: "bk-{{page}}{{line}}"
+        reftext: "{{page}}{{line}}"
+        label-role: "bekker"
+        label: "{{page}}{{line}}"
+        label-after: " "
+citation:
+  default:
+    attribution: "{{doc.author}}"
+    title: "{{title}} {{passage}}"
+    labels: "none"

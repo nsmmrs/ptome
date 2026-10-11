@@ -1,0 +1,115 @@
+== @2PE
+
+[.book-title]
+The Second Epistle General of Peter
+
+=== @1
+
+[discrete.pericope]
+==== A Greeting from Peter
+
+[.parallel]
+(<<1 Peter 1:1–2>>)
+
+@ Simon Peter, ##a servant##note:x[<<John 12:26>>] and an apostle of Jesus Christ, to them that have obtained like precious faith with us ##through##note:x[<<Rom 3:21–26>>] the righteousness ##of God and our Saviour##note:x[<<Titus 2:13>>] Jesus Christ:
+@ ##Grace##note:x[<<1 Pet 1:2>>] and peace be multiplied unto you through ##the knowledge##note:x[<<John 17:3; 2 Pet 3:18>>] of God, and of Jesus our Lord,
+
+[discrete.pericope]
+==== Partakers of the Divine Nature
+
+@ According as his divine power hath given unto us all things that __pertain__ unto life and godliness, through the knowledge of him that hath ##called##note:x[<<Rom 8:28–30; 2 Tim 1:9; 1 Pet 5:10>>] us to glory and virtue:
+@ Whereby ##are given##note:x[<<Ezek 36:25–27>>] unto us exceeding great and precious promises: that by these ##ye might##note:x[<<2 Cor 3:18; Eph 4:23–24>>] be partakers of the divine nature, having escaped the corruption that is in the world through lust.
+@ And beside this, ##giving##note:x[<<Prov 4:23; 2 Pet 3:18>>] all diligence, add to your faith ##virtue##note:x[<<Phil 4:8>>]; and to virtue knowledge;
+@ And to knowledge temperance; and to temperance ##patience##note:x[<<Luke 21:19; Rom 5:3–4; Heb 10:36>>]; and to patience godliness;
+@ And to godliness ##brotherly##note:x[<<Rom 12:10; 1 Thess 3:12; Heb 13:1>>] kindness; and to brotherly kindness charity.
+@ For if these things be ##in you##note:x[<<Col 3:16>>], and abound, they make __you that ye shall__ neither __be__ barren nor ##unfruitful##note:x[<<John 15:2; Titus 3:14>>] in the knowledge of our Lord Jesus Christ.
+@ But he that ##lacketh##note:x[<<Jas 2:14–26>>] these things is ##blind##note:x[<<1 John 2:9–11>>], and cannot see afar off, and hath forgotten ##that he##note:x[<<2 Pet 2:18–20>>] was purged from his old sins.
+@ Wherefore the rather, brethren, ##give##note:x[<<2 Pet 3:17>>] diligence to make your calling and election sure: for ##if##note:x[<<Luke 6:47–49>>] ye do these things, ye shall ##never##note:x[<<2 Pet 3:17>>] fall:
+@ For so ##an entrance##note:x[<<Matt 25:34; Rev 3:21>>] shall be ministered unto you abundantly into the ##everlasting##note:x[<<Rev 5:10>>] kingdom of our Lord and Saviour Jesus Christ.
+
+@ Wherefore ##I will not##note:x[<<Rom 15:14–15; Phil 3:1>>] be negligent to put you always in remembrance of these things, ##though##note:x[<<1 John 2:21>>] ye know __them__, and be established in the present truth.
+@ Yea, I think it meet, ##as long##note:x[<<Heb 13:3; 2 Pet 1:14>>] as I am in this tabernacle, ##to stir##note:x[<<2 Pet 3:1>>] you up by putting __you__ in remembrance;
+@ Knowing that ##shortly##note:x[<<Deut 4:21–22; 2 Tim 4:6>>] I must put off __this__ my tabernacle, ##even##note:x[<<John 21:18–19>>] as our Lord Jesus Christ hath shewed me.
+@ Moreover ##I will##note:x[<<Deut 31:19–29; Ps 71:18>>] endeavour that ye may be able after my decease to have these things always in remembrance.
+
+[discrete.pericope]
+==== Eyewitnesses of His Majesty
+
+[.parallel]
+(<<Matthew 17:1–13; Mark 9:1–13; Luke 9:28–36>>)
+
+@ For ##we have##note:x[<<1 Tim 1:4>>] not followed cunningly devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but ##were##note:x[<<John 1:14; 1 John 4:14>>] eyewitnesses of his majesty.
+@ For he received from God the Father honour and glory, when ##there came##note:x[<<Mark 9:7>>] such a voice to him from the excellent glory, ##This##note:x[<<Matt 17:5; Mark 9:7>>] is my beloved Son, in whom I am well pleased.
+@ And ##this##note:x[<<Matt 17:6>>] voice which came from heaven we heard, when we were with him in ##the holy##note:x[<<Matt 17:6>>] mount.
+@ We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto ##a light##note:x[<<Ps 119:105; Isa 9:2>>] that shineth in a dark place, until ##the day##note:x[<<Rev 22:16>>] dawn, and the day star arise in your hearts:
+@ Knowing this first, that no prophecy of the scripture is of any private interpretation.
+@ For ##the prophecy##note:x[<<1 Pet 1:11>>] came not in old time by the will of man: but holy men of God ##spake##note:x[<<2 Sam 23:2; 2 Tim 3:15–17>>] __as they were__ moved by the Holy Ghost.
+
+=== @2
+
+[discrete.pericope]
+==== Deliverance from False Prophets
+
+[.parallel]
+(<<Jude 1:3–16>>)
+
+@ But ##there were##note:x[<<Deut 13:1–3; Matt 7:15>>] false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even ##denying##note:x[<<Jude 1:4>>] the Lord that bought them, and bring upon themselves swift destruction.
+@ And ##many##note:x[<<Matt 24:24>>] shall follow their pernicious ways; ##by reason##note:x[<<Rom 2:24>>] of whom the way of truth shall be ##evil##note:x[<<Jude 1:10>>] spoken of.
+@ And ##through##note:x[<<Rom 16:18>>] covetousness shall they with feigned words ##make##note:x[<<2 Cor 2:17>>] merchandise of you: ##whose##note:x[<<Deut 32:35>>] judgment now of a long time lingereth not, and their damnation slumbereth not.
+@ For if God spared not ##the angels##note:x[<<Jude 1:6>>] that sinned, ##but##note:x[<<Matt 25:41>>] cast __them__ down to hell, and delivered __them__ ##into##note:x[<<Jude 1:6>>] chains of darkness, to be reserved unto judgment;
+@ And ##spared##note:x[<<Luke 17:26–27; Heb 11:7>>] not the old world, but saved Noah the eighth __person__, a preacher of righteousness, ##bringing##note:x[<<2 Pet 3:6>>] in the flood upon the world of the ungodly;
+@ And ##turning##note:x[<<Deut 29:23; Luke 17:28–30; Jude 1:7>>] the cities of Sodom and Gomorrha into ashes condemned __them__ with an overthrow, making __them__ an ensample unto those that after should live ungodly;
+@ And ##delivered##note:x[<<Gen 19:16, 29>>] just Lot, ##vexed##note:x[<<Gen 19:7–8>>] with the filthy conversation of the wicked:
+@ ( For that righteous man dwelling among them, ##in seeing##note:x[<<Ps 119:136, 158; Ezek 9:4>>] and hearing, vexed __his__ righteous soul from day to day with __their__ unlawful deeds;)
+@ The Lord ##knoweth##note:x[<<Ps 34:15–19; 1 Cor 10:13>>] how to deliver ##the godly##note:x[<<2 Tim 3:12>>] out of temptations, and to reserve the unjust unto the day of judgment to be punished:
+@ But chiefly them that walk after the flesh ##in the##note:x[<<Jude 1:10, 16>>] lust of uncleanness, and despise government. Presumptuous __are they__, selfwilled, they are not afraid ##to speak##note:x[<<Jude 1:10>>] evil of dignities.
+@ Whereas ##angels##note:x[<<Jude 1:9>>], which are greater in power and might, bring not railing accusation against them before the Lord.
+@ But these, ##as natural##note:x[<<Jer 12:3; Jude 1:10>>] brute beasts, made to be taken and destroyed, speak evil of the things that they understand not; and shall utterly ##perish##note:x[<<2 Pet 2:19>>] in their own corruption;
+@ And shall receive ##the reward##note:x[<<Rom 2:8–9; Heb 2:2–3>>] of unrighteousness, __as__ they that count it pleasure ##to riot##note:x[<<Rom 13:13>>] in the day time. Spots __they are__ and blemishes, sporting themselves with their own deceivings while they feast with you;
+@ Having eyes full of adultery, and that cannot cease from sin; ##beguiling##note:x[<<2 Pet 2:18>>] unstable souls: ##an heart##note:x[<<2 Pet 2:3>>] they have exercised with covetous practices; ##cursed##note:x[<<Eph 2:3>>] children:
+@ Which have forsaken the right way, and are gone astray, following the way of Balaam __the__ ##__son__ of Bosor##note:x[<<Deut 23:4–5; Jude 1:11; Rev 2:14>>], who loved the wages of unrighteousness;
+@ But was rebuked for his iniquity: the dumb ass speaking with man’s voice forbad the madness of the prophet.
+@ These ##are wells##note:x[<<Jude 1:12–13>>] without water, clouds that are carried with a tempest; to whom the mist of darkness is reserved for ever.
+@ For when ##they speak##note:x[<<Jude 1:15–16>>] great swelling __words__ of vanity, they allure through the lusts of the flesh, __through much__ ##wantonness##note:x[<<Rom 13:13>>], those ##that were##note:x[<<2 Pet 2:20>>] clean escaped from them who live in error.
+@ While ##they promise##note:x[<<Gal 5:1>>] them liberty, ##they themselves##note:x[<<John 8:34; Rom 6:16–22>>] are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage.
+@ For if ##after##note:x[<<Heb 6:4–8; 10:26–27>>] they have escaped the pollutions of the world through the knowledge of the Lord and Saviour Jesus Christ, they are again entangled therein, and overcome, ##the latter##note:x[<<Phil 3:19>>] end is worse with them than the beginning.
+@ For ##it had##note:x[<<Luke 12:47>>] been better for them not to have known the way of righteousness, than, after they have known __it__, ##to turn##note:x[<<Ezek 3:20; 18:24>>] from the holy commandment delivered unto them.
+@ But it is happened unto them according to the true proverb, ##The dog##note:x[<<Prov 26:11>>] __is__ turned to his own vomit again; and the sow that was washed to her wallowing in the mire.
+
+=== @3
+
+[discrete.pericope]
+==== The Coming Judgment
+
+[.parallel]
+(<<Genesis 7:1–24; Jude 1:17–23>>)
+
+@ This second epistle, beloved, I now write unto you; in __both__ which ##I stir##note:x[<<2 Tim 1:6>>] up your pure minds by ##way##note:x[<<2 Pet 1:12>>] of remembrance:
+@ That ##ye may##note:x[<<Luke 1:70>>] be mindful of the words which were spoken before by the holy prophets, ##and of##note:x[<<2 Pet 2:21; Jude 1:17>>] the commandment of us the apostles of the Lord and Saviour:
+@ Knowing this first, ##that there##note:x[<<1 Tim 4:1–2; Jude 1:18>>] shall come in the last days scoffers, ##walking##note:x[<<Jude 1:18>>] after their own lusts,
+@ And saying, ##Where##note:x[<<Jer 5:12–13; 17:15; Mal 2:17>>] is the promise of his coming? for since the fathers fell asleep, all things continue as __they were__ from the beginning of the creation.
+@ For this they willingly are ignorant of, that ##by the word##note:x[<<Gen 1:9; Ps 24:2; Heb 11:3>>] of God the heavens were of old, and the earth standing out of the water and in the water:
+@ ##Whereby the world that then was, being overflowed with water, perished:##note:x[<<Matt 24:38–39; 2 Pet 2:5>>]
+@ But ##the heavens##note:x[<<Isa 51:6; 2 Pet 3:10; Rev 21:1>>] and the earth, which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.
+
+[discrete.pericope]
+==== The Day of the Lord
+
+[.parallel]
+(<<Zephaniah 1:7–18; Malachi 4:1–6; 1 Thessalonians 5:1–11>>)
+
+@ But, beloved, be not ignorant of this one thing, ##that one##note:x[<<Ps 90:4>>] day __is__ with the Lord as a thousand years, and a thousand years as one day.
+@ The Lord ##is not##note:x[<<Hab 2:3>>] slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, ##but that##note:x[<<Rom 2:4; 1 Tim 2:4>>] all should come to repentance.
+@ But the day of the Lord will come as a thief in the night; ##in the which##note:x[<<Matt 24:35; Rev 21:1>>] the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, ##the earth##note:x[<<2 Pet 3:7>>] also and the works that are therein shall be burned up.
+@ __Seeing__ then __that__ all these things shall be dissolved, what manner __of persons__ ought ye to be ##in __all__##note:x[<<Phil 1:27; 1 Pet 1:15; 2:12>>] holy conversation and godliness,
+@ Looking for and hasting unto the coming of ##the day of God##note:x[<<2 Pet 3:10>>], wherein ##the heavens##note:x[<<2 Pet 3:10>>] being on fire shall be dissolved, and the elements shall ##melt##note:x[<<2 Pet 3:10>>] with fervent heat?
+@ Nevertheless we, according to his promise, look for ##new heavens and a new earth##note:x[<<Isa 65:17; 66:22; Rev 21:1>>], wherein dwelleth righteousness.
+
+[discrete.pericope]
+==== Final Exhortations
+
+@ Wherefore, beloved, seeing that ye look for such things, be diligent that ye may be found of him ##in peace##note:x[<<1 Cor 15:58; 1 Thess 3:13; 5:23>>], without spot, and blameless.
+@ And account __that__ ##the longsuffering of our Lord##note:x[<<Rom 2:4; 1 Tim 1:16; 2 Pet 3:9>>] __is__ salvation; even as our beloved brother Paul also according to the wisdom given unto him hath written unto you;
+@ As also in all __his__ epistles, speaking in them of these things; in which are some things ##hard##note:x[<<Heb 5:11>>] to be understood, which they that are unlearned and ##unstable##note:x[<<2 Pet 2:14>>] wrest, as __they do__ also ##the other##note:x[<<Matt 15:6>>] scriptures, unto their own destruction.
+@ Ye therefore, beloved, seeing ye know __these things__ before, ##beware##note:x[<<Col 2:8>>] lest ye also, ##being##note:x[<<2 Cor 11:13–15>>] led away with the error of the wicked, fall ##from##note:x[<<Heb 3:14>>] your own stedfastness.
+@ But ##grow##note:x[<<Eph 4:15; Col 1:10>>] in grace, and __in__ the ##knowledge##note:x[<<Col 1:10>>] of our Lord and Saviour Jesus Christ. To him __be__ glory both now and for ever. Amen.

@@ -409,3 +409,16 @@ afterwards as unit marks, notes, footnotes and links; ranges and term
 rules become role spans around the markup inside them. The source is never rewritten: a block's source still holds what
 was written. HTML, DocBook, EPUB and PDF all render units, and so does
 the npm package. The units engine lives in `lib/src/units/` (ADR-0020).
+
+## Examples
+
+`test/units/corpus` holds real documents written in units, each checked
+against its source's own numbering when it was imported, with their
+schemes: the King James Version (with its notes, cross-references and
+maps), the Qur'an in Arabic and English, suttas in Pali and English,
+Plato and Aristotle in Greek and English, the Book of Common Prayer's
+psalter and offices, a hymnal, a catechism whose proof texts cite the KJV,
+5 U.S.C. 551–553, the GDPR, the Computer Misuse Act (with its amendments
+by date), a part of the C++ standard, and a commonplace book quoting them
+all by address. `NOTICE.md` gives each one's source and license; the
+units model each yields is frozen in `model/` and tested.

@@ -294,6 +294,17 @@ final class AfmFont extends FontFace {
   }
 }
 
+/// Family names of monospaced faces.
+final RegExp _monospaceRx = RegExp('mono|code|1mn|courier|consol|cursor');
+
+/// Family names of serif faces: those that say so, and the serifs (and
+/// their stand-ins) looks name.
+final RegExp _serifRx = RegExp(
+  'serif|times|roman|termes|schola|pagella|bonum|crimson|caslon|garamond|'
+  'bodoni|didot|baskerville|palatino|antiqua|century|gentium|georgia|'
+  'minion|old standard',
+);
+
 /// Prawn's built-in families, by style.
 const Map<String, Map<String, String>> _builtInFamilies = {
   'Courier': {
@@ -577,9 +588,11 @@ final class FontCatalog {
   /// and style.
   FontFace _fallback(String family, String style, String why) {
     final lower = family.toLowerCase();
-    final builtIn = RegExp('mono|code|1mn|courier|consol').hasMatch(lower)
+    // (The built-in font nearest in kind, by the family's name: the
+    // monospaces, the serifs the built-in looks and themes name.)
+    final builtIn = _monospaceRx.hasMatch(lower)
         ? 'Courier'
-        : RegExp('serif|times').hasMatch(lower) && !lower.contains('sans')
+        : _serifRx.hasMatch(lower) && !lower.contains('sans')
         ? 'Times-Roman'
         : 'Helvetica';
     final styles = _builtInFamilies[builtIn]!;
@@ -587,7 +600,7 @@ final class FontCatalog {
     if (_warned.add('$family/$style')) {
       _warn(
         '$why: using $name for $family ($style); `ptome doctor` installs '
-        "the default themes' fonts",
+        "the default themes' fonts, `ptome doctor --look LOOK` a look's",
       );
     }
     return AfmFont(family, style, StandardFont.named(name), shaping);

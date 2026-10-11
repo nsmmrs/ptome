@@ -1,0 +1,45 @@
+version: 2
+stream:
+  tn:
+    placement: "footnote"
+    reset: "verse"
+    origin: "{{chapter}}:{{verse}}"
+    origin-style: "strong"
+    lemma-style: "emphasis"
+    lemma-after: ": "
+  x:
+    placement: "entry"
+    caller: "a"
+    reset: "verse"
+    origin: "{{chapter}}:{{verse}}"
+    caller-style: "superscript"
+    caller-role: "xref-mark"
+    entry-role: "xref"
+    origin-style: "strong"
+    note-separator: " "
+    caller-after: "\u00a0"
+    entry-after: " "
+range:
+  wj:
+    role: "wj"
+term:
+  divine-name:
+    pattern: "(?<![A-Za-z])(?:LORD|GOD|JEHOVAH|JAH)(?![A-Za-z])"
+    role: "nd"
+    transform: "titlecase"
+level-presentation:
+  bible:
+    book:
+      role: "book"
+      attributes:
+        short-name: "{{book.abbr}}"
+      title: "{{book.name}}"
+    chapter:
+      role: "chapter"
+      attributes:
+        number: "{{chapter}}"
+      title: "{{book.chapter-label}} {{chapter}}"
+    verse:
+      label: "{{^first}}{{^zero}}{{label}}{{/zero}}{{/first}}"
+      label-style: "superscript"
+      label-after: "\u00a0"

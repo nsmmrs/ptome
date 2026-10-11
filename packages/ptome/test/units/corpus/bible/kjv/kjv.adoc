@@ -1,0 +1,190 @@
+= The Holy Bible: Authorized King James Version
+:units: bible, kjv
+:version: KJV
+:doctype: book
+:description: The King James Version (1769 standard text), with the 1611 translators' notes, cross-references, section headings and maps
+:lang: en
+:toc:
+:toclevels: 1
+:toc-title: Contents
+:sectids!:
+:figure-caption!:
+:table-caption!:
+:hyphens: en
+:reproducible:
+
+[colophon]
+[[about]]
+== About This Edition
+
+The text is the King James Version in the standard text of 1769, with the notes the translators of 1611 set in the margin, here at the foot of the page.
+The section headings and their parallel passages are those of the Berean Standard Bible; the cross-references, three at most for a verse, are those readers of OpenBible.info found most useful; the maps are drawn from Natural Earth and OpenBible.info's identifications of ancient places.
+
+*text, the 1611 translators' marginal notes*: Public domain (King James Version, 1769 standard text; Crown patent applies only in the UK). Source: https://ebible.org/Scriptures/eng-kjv_usfm.zip
+
+*section headings only*: CC0-1.0 (Berean Standard Bible, dedicated to the public domain 2023-04-30). Source: https://ebible.org/Scriptures/engbsb_usfm.zip
+
+*cross-reference ranking: readers' votes (the top 3 references a verse's phrases have, with at least 4 votes)*: CC-BY (OpenBible.info cross-references, seeded from the public-domain Treasury of Scripture Knowledge). Source: https://a.openbible.info/data/cross-references.zip
+
+*map places: coordinates of ancient places*: CC-BY-4.0 (OpenBible.info Bible Geocoding Data). Source: https://raw.githubusercontent.com/openbibleinfo/Bible-Geocoding-Data/7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f/data/ancient.jsonl
+
+*maps: coastlines*: Public domain (Natural Earth). Source: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_land.geojson
+
+*maps: lakes and inland seas*: Public domain (Natural Earth). Source: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_lakes.geojson
+
+*maps: rivers*: Public domain (Natural Earth). Source: https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_rivers_lake_centerlines.geojson
+
+*cross-reference anchors: the phrase each reference belongs to*: CC-BY-4.0 (CrossReferences.org: the Treasury of Scripture Knowledge anchored to KJV phrases). Source: https://raw.githubusercontent.com/CrossReferences-org/bible-cross-references/ab3259f89f40b9130d7923e864b26aaa1cdaf3d2/tsv/crossreferences_kjv.tsv
+
+include::front/translators-to-the-reader.adoc[]
+
+include::front/names-and-order.adoc[]
+
+ifeval::["{doctype}" == "book"]
+[[ot]]
+= The Old Testament
+endif::[]
+
+include::books/01-genesis.adoc[]
+
+include::books/02-exodus.adoc[]
+
+include::books/03-leviticus.adoc[]
+
+include::books/04-numbers.adoc[]
+
+include::books/05-deuteronomy.adoc[]
+
+include::books/06-joshua.adoc[]
+
+include::books/07-judges.adoc[]
+
+include::books/08-ruth.adoc[]
+
+include::books/09-1-samuel.adoc[]
+
+include::books/10-2-samuel.adoc[]
+
+include::books/11-1-kings.adoc[]
+
+include::books/12-2-kings.adoc[]
+
+include::books/13-1-chronicles.adoc[]
+
+include::books/14-2-chronicles.adoc[]
+
+include::books/15-ezra.adoc[]
+
+include::books/16-nehemiah.adoc[]
+
+include::books/17-esther.adoc[]
+
+include::books/18-job.adoc[]
+
+include::books/19-psalms.adoc[]
+
+include::books/20-proverbs.adoc[]
+
+include::books/21-ecclesiastes.adoc[]
+
+include::books/22-song-of-solomon.adoc[]
+
+include::books/23-isaiah.adoc[]
+
+include::books/24-jeremiah.adoc[]
+
+include::books/25-lamentations.adoc[]
+
+include::books/26-ezekiel.adoc[]
+
+include::books/27-daniel.adoc[]
+
+include::books/28-hosea.adoc[]
+
+include::books/29-joel.adoc[]
+
+include::books/30-amos.adoc[]
+
+include::books/31-obadiah.adoc[]
+
+include::books/32-jonah.adoc[]
+
+include::books/33-micah.adoc[]
+
+include::books/34-nahum.adoc[]
+
+include::books/35-habakkuk.adoc[]
+
+include::books/36-zephaniah.adoc[]
+
+include::books/37-haggai.adoc[]
+
+include::books/38-zechariah.adoc[]
+
+include::books/39-malachi.adoc[]
+
+ifeval::["{doctype}" == "book"]
+[[nt]]
+= The New Testament
+endif::[]
+
+include::books/40-matthew.adoc[]
+
+include::books/41-mark.adoc[]
+
+include::books/42-luke.adoc[]
+
+include::books/43-john.adoc[]
+
+include::books/44-acts.adoc[]
+
+include::books/45-romans.adoc[]
+
+include::books/46-1-corinthians.adoc[]
+
+include::books/47-2-corinthians.adoc[]
+
+include::books/48-galatians.adoc[]
+
+include::books/49-ephesians.adoc[]
+
+include::books/50-philippians.adoc[]
+
+include::books/51-colossians.adoc[]
+
+include::books/52-1-thessalonians.adoc[]
+
+include::books/53-2-thessalonians.adoc[]
+
+include::books/54-1-timothy.adoc[]
+
+include::books/55-2-timothy.adoc[]
+
+include::books/56-titus.adoc[]
+
+include::books/57-philemon.adoc[]
+
+include::books/58-hebrews.adoc[]
+
+include::books/59-james.adoc[]
+
+include::books/60-1-peter.adoc[]
+
+include::books/61-2-peter.adoc[]
+
+include::books/62-1-john.adoc[]
+
+include::books/63-2-john.adoc[]
+
+include::books/64-3-john.adoc[]
+
+include::books/65-jude.adoc[]
+
+include::books/66-revelation.adoc[]
+
+ifeval::["{doctype}" == "book"]
+[[back]]
+= Maps and Indexes
+endif::[]
+
+include::back/index-to-maps.adoc[]

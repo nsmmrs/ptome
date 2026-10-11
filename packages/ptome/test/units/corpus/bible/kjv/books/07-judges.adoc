@@ -1,0 +1,975 @@
+== @JDG
+
+[.book-title]
+The Book of Judges
+
+=== @1
+
+[discrete.pericope]
+==== The Conquest of Canaan Proceeds
+
+[.parallel]
+(<<Joshua 13:1–7>>)
+
+@ Now after the death of Joshua it came to pass, that the children of Israel ##asked##note:x[<<Num 27:21; Judg 20:18, 28>>] the LORD, saying, Who shall go up for us against the Canaanites first, to fight against them?
+@ ##And the LORD said, Judah shall go up: behold, I have delivered the land into his hand.##note:x[<<Gen 49:8–10; Heb 7:14; Rev 5:5>>]
+@ And Judah said unto Simeon his brother, Come up with me into my lot, that we may fight against the Canaanites; and I likewise will go with thee into thy lot. So Simeon went with him.
+@ And Judah went up; and the LORD delivered the Canaanites and the Perizzites into their hand: and they slew of them in Bezek ten thousand men.
+@ And they found Adoni-bezek in Bezek: and they fought against him, and they slew the Canaanites and the Perizzites.
+@ But Adoni-bezek fled; and they pursued after him, and caught him, and cut off his thumbs and his great toes.
+@ And Adoni-bezek said, Threescore and ten kings, having their thumbs and their great toes cut off, ##gathered##note:tn[or, gleaned] __their meat__ under my table: ##as I have##note:x[<<Lev 24:19–21; 1 Sam 15:33; Rev 13:10>>] done, so God hath requited me. And they brought him to Jerusalem, and there he died.note:tn[__their thumbs…__: Heb. the thumbs of their hands and of their feet]
+
+[discrete.pericope]
+==== The Capture of Jerusalem and Hebron
+
+[.parallel]
+(<<Joshua 15:13–19>>)
+
+@ ##Now the children of Judah had fought against Jerusalem, and had taken it, and smitten it with the edge of the sword, and set the city on fire.##note:x[<<Josh 15:63; Judg 1:21>>]
+
+@ ¶ And afterward the children of Judah went down to fight against the Canaanites, that dwelt in the mountain, and in the south, and in the ##valley##note:tn[or, low country].
+@ And Judah went against the Canaanites that dwelt in Hebron: (now the name of Hebron before __was__ Kirjath-arba:) and they slew Sheshai, and Ahiman, and Talmai.
+@ And from thence he went against the inhabitants of ##Debir##note:x[<<Josh 15:15>>]: and the name of Debir before __was__ Kirjath-sepher:
+@ And Caleb said, He that smiteth Kirjath-sepher, and taketh it, to him will I give Achsah my daughter to wife.
+@ note:x[<<Judg 3:9>>]And Othniel the son of Kenaz, Caleb’s younger brother, took it: and he gave him Achsah his daughter to wife.
+@ And it came to pass, when she came __to him__, that she moved him to ask of her father a field: and she lighted from off __her__ ass; and Caleb said unto her, What wilt thou?
+@ And she said unto him, Give me ##a blessing##note:x[<<Heb 6:7>>]: for thou hast given me a south land; give me also springs of water. And Caleb gave her the upper springs and the nether springs.
+
+@ ¶ And the children of ##the Kenite##note:x[<<Num 10:29–32>>], ##Moses##note:x[<<Num 10:29>>]’ father in law, went up out of the city of palm trees with the children of Judah into the wilderness of Judah, which __lieth__ in the south of Arad; and ##they went##note:x[<<Num 10:29–32>>] and dwelt among the people.
+@ note:x[<<Num 21:3>>]And Judah went with Simeon his brother, and they slew the Canaanites that inhabited Zephath, and utterly destroyed it. And the name of the city was called Hormah.
+@ Also Judah took ##Gaza##note:x[<<Josh 11:22>>] with the coast thereof, and Askelon with the coast thereof, and Ekron with the coast thereof.
+@ And ##the LORD##note:x[<<Judg 1:2; Ps 60:12; Isa 41:10>>] was with Judah; and he drave out __the inhabitants of__ the mountain; but could not drive out the inhabitants of the valley, because they had chariots of iron.note:tn[__drave…__: or, possessed the mountain]
+@ And ##they gave##note:x[<<Num 14:24; Deut 1:36>>] Hebron unto Caleb, as Moses said: and he expelled thence ##the three sons##note:x[<<Judg 1:10>>] of Anak.
+
+@ ##And the children of Benjamin did not drive out the Jebusites that inhabited Jerusalem; but the Jebusites dwell with the children of Benjamin in Jerusalem unto this day.##note:x[<<Josh 15:63>>]
+
+@ ¶ And the house of Joseph, they also went up against Beth-el: and the LORD __was__ with them.
+@ And the house of Joseph sent to descry Beth-el. (Now the name of the city before __was__ ##Luz##note:x[<<Gen 28:19; 48:3>>].)
+@ And the spies saw a man come forth out of the city, and they said unto him, Shew us, we pray thee, the entrance into the city, and we will shew thee mercy.
+@ And when he shewed them the entrance into the city, they smote the city with the edge of the sword; but they let go the man and all his family.
+@ And the man went into the land of the Hittites, and built a city, and called the name thereof Luz: which __is__ the name thereof unto this day.
+
+[discrete.pericope]
+==== The Failure to Complete the Conquest
+
+@ ¶ Neither did ##Manasseh##note:x[<<Josh 17:11–13>>] drive out __the inhabitants of__ Beth-shean and her towns, nor Taanach and her towns, nor the inhabitants of Dor and her towns, nor the inhabitants of Ibleam and her towns, nor the inhabitants of Megiddo and her towns: but ##the Canaanites##note:x[<<Ps 106:34–35; Jer 48:10>>] would dwell in that land.
+@ And it came to pass, when Israel was strong, that they put the Canaanites to tribute, and did not utterly drive them out.
+
+@ ¶ ##Neither did Ephraim drive out the Canaanites that dwelt in Gezer; but the Canaanites dwelt in Gezer among them.##note:x[<<Josh 16:10; 1 Kgs 9:16>>]
+
+@ ¶ Neither did Zebulun drive out the inhabitants of Kitron, nor the inhabitants of Nahalol; but the Canaanites dwelt among them, and became tributaries.
+
+@ ¶ Neither did ##Asher##note:x[<<Josh 19:24–30>>] drive out the inhabitants of Accho, nor the inhabitants of Zidon, nor of Ahlab, nor of Achzib, nor of Helbah, nor of Aphik, nor of Rehob:
+@ But the Asherites dwelt among the Canaanites, the inhabitants of the land: for they did not drive them out.
+
+@ ¶ Neither did Naphtali drive out the inhabitants of Beth-shemesh, nor the inhabitants of Beth-anath; but he dwelt among the Canaanites, the inhabitants of the land: nevertheless the inhabitants of Beth-shemesh and of Beth-anath became tributaries unto them.
+@ ##And the Amorites forced the children of Dan into the mountain: for they would not suffer them to come down to the valley:##note:x[<<Josh 19:47>>]
+@ But the Amorites would dwell in mount Heres in Aijalon, and in Shaalbim: yet the hand of the house of Joseph ##prevailed##note:tn[Heb. was heavy], so that they became tributaries.
+@ And the coast of the Amorites __was__ from the going up to Akrabbim, from the rock, and upward.note:tn[__the going…__: or, Maaleh-acrabbim]
+
+=== @2
+
+[discrete.pericope]
+==== Israel Rebuked at Bochim
+
+@ note:x[<<Exod 23:20>>]And an ##angel##note:tn[or, messenger] of the LORD came up from Gilgal to Bochim, and said, ##I made##note:x[<<Exod 20:2>>] you to go up out of Egypt, and have brought you unto the land which I sware unto your fathers; and I said, ##I will never##note:x[<<Gen 17:7–8>>] break my covenant with you.
+@ ##And ye shall##note:x[<<Deut 7:2–4>>] make no league with the inhabitants of this land; ye shall throw down their altars: but ye have not obeyed my voice: ##why have##note:x[<<Jer 2:36>>] ye done this?
+@ Wherefore ##I also said##note:x[<<Num 33:55; Josh 23:13>>], I will not drive them out from before you; but they shall be __as thorns__ in your sides, and ##their gods##note:x[<<Ps 106:36>>] shall be a snare unto you.
+@ And it came to pass, when the angel of the LORD spake these words unto all the children of Israel, that the people lifted up their voice, and wept.
+@ And they called the name of that place ##Bochim##note:tn[that is, Weepers]: and they sacrificed there unto the LORD.
+
+[discrete.pericope]
+==== Joshua’s Death and Burial
+
+[.parallel]
+(<<Joshua 24:29–33>>)
+
+@ ¶ And when ##Joshua##note:x[<<Josh 24:28–31>>] had let the people go, the children of Israel went every man unto his inheritance to possess the land.
+@ And ##the people##note:x[<<Phil 2:12>>] served the LORD all the days of Joshua, and all the days of the elders that ##outlived##note:tn[Heb. prolonged days after] Joshua, who had seen all the great works of the LORD, that he did for Israel.
+@ And Joshua the son of Nun, the servant of the LORD, died, __being__ an hundred and ten years old.
+@ And they buried him in the border of his inheritance in note:x[<<Josh 19:50>>]##Timnath-heres##note:tn[also called, Timnath-serah], in the mount of Ephraim, on the north side of the hill Gaash.
+
+[discrete.pericope]
+==== Israel’s Unfaithfulness
+
+[.parallel]
+(<<Isaiah 43:22–28; Jeremiah 2:23–37>>)
+
+@ And also all that generation were gathered unto their fathers: and there arose another generation after them, which ##knew not##note:x[<<Exod 5:2; 1 Sam 2:12; Titus 1:16>>] the LORD, nor yet the works which he had done for Israel.
+
+@ ¶ And the children of Israel ##did evil##note:x[<<Judg 4:1; 6:1>>] in the sight of the LORD, ##and served Baalim##note:x[<<Judg 3:7>>]:
+@ And they ##forsook##note:x[<<Deut 13:5; 29:25>>] the LORD God of their fathers, which brought them out of the land of Egypt, and followed other gods, of the gods of the people that __were__ round about them, and ##bowed##note:x[<<Exod 20:5>>] themselves unto them, and provoked the LORD to anger.
+@ And they forsook the LORD, and ##served##note:x[<<Judg 10:6; Ps 106:36>>] Baal and Ashtaroth.
+
+@ ¶ And ##the anger##note:x[<<Ps 106:40–42>>] of the LORD was hot against Israel, and ##he delivered##note:x[<<2 Kgs 17:20>>] them into the hands of spoilers that spoiled them, and he sold them into the hands of their enemies round about, so that they ##could not##note:x[<<Deut 32:30>>] any longer stand before their enemies.
+@ Whithersoever they went out, the hand of the LORD was against them for evil, as the LORD ##had said##note:x[<<Deut 28:15–68; Josh 23:15–16>>], and as the LORD had sworn unto them: and they were greatly distressed.
+
+[discrete.pericope]
+==== Judges Raised Up
+
+@ ¶ Nevertheless ##the LORD##note:x[<<1 Sam 12:11; Acts 13:20>>] raised up judges, which note:x[<<Ps 106:43–45>>]##delivered##note:tn[Heb. saved] them out of the hand of those that spoiled them.
+@ And yet they would not hearken unto their judges, but they went a whoring after other gods, and bowed themselves unto them: they turned ##quickly##note:x[<<Deut 9:12; Gal 1:6>>] out of the way ##which their##note:x[<<Judg 2:7>>] fathers walked in, obeying the commandments of the LORD; __but__ they did not so.
+@ And when the LORD raised them up judges, ##then the LORD##note:x[<<Josh 1:5>>] was with the judge, and delivered them out of the hand of their enemies all the days of the judge: for ##it repented##note:x[<<Deut 32:36>>] the LORD because of ##their groanings##note:x[<<Exod 2:24>>] by reason of them that oppressed them and vexed them.
+@ And it came to pass, ##when the##note:x[<<Judg 3:11–12; 4:1; 8:33>>] judge was dead, __that__ they returned, and corrupted __themselves__ more than their fathers, in following other gods to serve them, and to bow down unto them; they ceased not from their own doings, nor from their stubborn way.note:tn[__corrupted…__: or, were corrupt]note:tn[__ceased…__: Heb. let nothing fall of their]
+
+@ ¶ And ##the anger##note:x[<<Judg 2:14>>] of the LORD was hot against Israel; and he said, Because that this people hath ##transgressed##note:x[<<Josh 23:16>>] my covenant which I commanded their fathers, and have not hearkened unto my voice;
+@ ##I also will not henceforth drive out any from before them of the nations which Joshua left when he died:##note:x[<<Josh 23:13>>]
+@ That through them I may ##prove##note:x[<<Deut 8:2, 16; 13:3>>] Israel, whether they will keep the way of the LORD to walk therein, as their fathers did keep __it__, or not.
+@ Therefore the LORD ##left##note:tn[or, suffered] those nations, without driving them out hastily; neither delivered he them into the hand of Joshua.
+
+=== @3
+
+[discrete.pericope]
+==== Nations Left to Test Israel
+
+@ Now these __are__ ##the nations##note:x[<<Deut 7:22; Judg 2:21–22>>] which the LORD left, to ##prove##note:x[<<Prov 17:3>>] Israel by them, __even__ as many __of Israel__ as had not known all the wars of Canaan;
+@ Only that the generations of the children of Israel might know, to teach them war, at the least such as before knew nothing thereof;
+@ __Namely__, ##five lords##note:x[<<Josh 13:3>>] of the Philistines, and all the Canaanites, and the Sidonians, and the Hivites that dwelt in mount Lebanon, from mount Baal-hermon unto the entering in of Hamath.
+@ And they were ##to prove##note:x[<<Judg 2:22>>] Israel by them, to know whether they would hearken unto the commandments of the LORD, which he commanded their fathers by the hand of Moses.
+
+@ ¶ And the children of Israel ##dwelt##note:x[<<Ps 106:34–38>>] among the Canaanites, Hittites, and Amorites, and Perizzites, and Hivites, and Jebusites:
+@ ##And they took their daughters to be their wives, and gave their daughters to their sons, and served their gods.##note:x[<<Exod 34:16; Deut 7:3–4>>]
+
+[discrete.pericope]
+==== Othniel
+
+@ And the children of Israel did evil in the sight of the LORD, and forgat the LORD their God, and served Baalim and ##the groves##note:x[<<Exod 34:13>>].
+
+@ ¶ Therefore the anger of the LORD ##was hot##note:x[<<Judg 2:14>>] against Israel, and ##he sold##note:x[<<Judg 2:14>>] them into the hand of Chushan-rishathaim king of ##Mesopotamia##note:tn[Heb. Aram-naharaim]: and the children of Israel served Chushan-rishathaim eight years.
+@ And when the children of Israel ##cried##note:x[<<Judg 3:15; Ps 22:5>>] unto the LORD, the LORD raised up a ##deliverer##note:tn[Heb. saviour] to the children of Israel, who delivered them, __even__ ##Othniel##note:x[<<Judg 1:13>>] the son of Kenaz, Caleb’s younger brother.
+@ And ##the Spirit##note:x[<<Judg 11:29; 13:25; 14:6>>] of the LORD ##came##note:tn[Heb. was] upon him, and he judged Israel, and went out to war: and the LORD delivered Chushan-rishathaim king of ##Mesopotamia##note:tn[Heb. Aram] into his hand; and his hand prevailed against Chushan-rishathaim.
+@ And ##the land##note:x[<<Judg 3:30; 5:31; 8:28>>] had rest forty years. And Othniel the son of Kenaz died.
+
+[discrete.pericope]
+==== Ehud
+
+@ ¶ And the children of Israel did evil again in the sight of the LORD: and the LORD strengthened Eglon ##the king##note:x[<<1 Sam 12:9>>] of Moab against Israel, because they had done evil in the sight of the LORD.
+@ And he gathered unto him the children of Ammon and Amalek, and went and smote Israel, and possessed ##the city##note:x[<<Deut 34:3; Judg 1:16>>] of palm trees.
+@ So the children of Israel served Eglon the king of Moab eighteen years.
+@ But when the children of Israel ##cried unto##note:x[<<Judg 3:9; Ps 78:34; Jer 33:3>>] the LORD, the LORD raised them up a deliverer, Ehud the son of Gera, a Benjamite, a man ##lefthanded##note:tn[Heb. shut of his right hand]: and by him the children of Israel sent a present unto Eglon the king of Moab.note:tn[__a Benjamite__: or, the son of Jemini]
+@ But Ehud made him a dagger which had two edges, of a cubit length; and he did gird it under his raiment upon his right thigh.
+@ And he brought the present unto Eglon king of Moab: and Eglon __was__ ##a very fat##note:x[<<Job 15:27; Ezek 34:20>>] man.
+@ And when he had made an end to offer the present, he sent away the people that bare the present.
+@ But he himself turned again from the ##quarries##note:tn[or, graven images] that __were__ by Gilgal, and said, I have a secret errand unto thee, O king: who said, Keep silence. And all that stood by him went out from him.
+@ And Ehud came unto him; and he was sitting in a summer parlour, which he had for himself alone. And Ehud said, I have a message from God unto thee. And ##he arose##note:x[<<Jer 10:7>>] out of __his__ seat.note:tn[__a summer…__: Heb. a parlour of cooling]
+@ And Ehud put forth his left hand, and took the dagger from his right thigh, and thrust it into his belly:
+@ And the haft also went in after the blade; and the fat closed upon the blade, so that he could not draw the dagger out of his belly; and the dirt came out.note:tn[__the dirt…__: or, it came out at the buttocks]
+@ Then Ehud went forth through the porch, and shut the doors of the parlour upon him, and locked them.
+@ When he was gone out, his servants came; and when they saw that, behold, the doors of the parlour __were__ locked, they said, Surely he ##covereth##note:x[<<1 Sam 24:3>>] his feet in his summer chamber.note:tn[__covereth…__: or, doeth his easement]
+@ And they tarried till they were ashamed: and, behold, he opened not the doors of the parlour; therefore they took a key, and opened __them:__ and, behold, their lord __was__ fallen down dead on the earth.
+@ And Ehud escaped while they tarried, and passed beyond the quarries, and escaped unto Seirath.
+@ And it came to pass, when he was come, that ##he blew##note:x[<<Judg 6:34; 1 Sam 13:3>>] a trumpet in the mountain of Ephraim, and the children of Israel went down with him from the mount, and he before them.
+@ And he said unto them, Follow after me: for ##the LORD##note:x[<<Judg 7:9, 15>>] hath delivered your enemies the Moabites into your hand. And they went down after him, and took ##the fords##note:x[<<Judg 12:5>>] of Jordan toward Moab, and suffered not a man to pass over.
+@ And they slew of Moab at that time about ten thousand men, all ##lusty##note:tn[Heb. fat], and all men of valour; and there escaped not a man.
+@ So Moab was subdued that day under the hand of Israel. ##And the land##note:x[<<Judg 3:11>>] had rest fourscore years.
+
+[discrete.pericope]
+==== Shamgar
+
+@ ¶ And after him was ##Shamgar##note:x[<<Judg 5:6>>] the son of Anath, which slew of the Philistines six hundred men with ##an ox goad##note:x[<<1 Sam 17:47, 50>>]: and he also delivered Israel.
+
+=== @4
+
+[discrete.pericope]
+==== Deborah and Barak
+
+@ And the children of Israel again ##did evil##note:x[<<Lev 26:23–25; Jer 5:3>>] in the sight of the LORD, when Ehud was dead.
+@ And the LORD sold them into the hand of Jabin king of Canaan, that reigned in ##Hazor##note:x[<<Josh 11:1>>]; the captain of whose host __was__ Sisera, which dwelt in ##Harosheth##note:x[<<Judg 4:13, 16>>] of the Gentiles.
+@ And the children of Israel cried unto the LORD: for he had nine hundred ##chariots##note:x[<<Judg 1:19>>] of iron; and twenty years he ##mightily##note:x[<<Ps 106:42>>] oppressed the children of Israel.
+
+@ ¶ ##And Deborah, a prophetess, the wife of Lapidoth, she judged Israel at that time.##note:x[<<Exod 15:20; 2 Kgs 22:14>>]
+@ And she dwelt under the palm tree of Deborah between Ramah and Beth-el in mount Ephraim: and the children of Israel came up to her for judgment.
+@ And she sent and called ##Barak##note:x[<<Heb 11:32>>] the son of Abinoam out of Kedesh-naphtali, and said unto him, ##Hath##note:x[<<Acts 13:47>>] not the LORD God of Israel commanded, __saying__, Go and draw toward mount ##Tabor##note:x[<<Judg 8:18>>], and take with thee ten thousand men of the children of Naphtali and of the children of Zebulun?
+@ ##And I##note:x[<<Ezek 38:10–16>>] will draw unto thee to the river ##Kishon##note:x[<<Judg 5:21; 1 Kgs 18:40>>] Sisera, the captain of Jabin’s army, with his chariots and his multitude; and I will deliver him into thine hand.
+@ And Barak said unto her, If thou wilt go with me, then I will go: but if thou wilt not go with me, __then__ I will not go.
+@ And she said, I will surely go with thee: ##notwithstanding##note:x[<<1 Sam 2:30>>] the journey that thou takest shall not be for thine honour; for the LORD shall ##sell Sisera##note:x[<<Judg 2:14>>] ##into##note:x[<<Judg 4:17–22>>] the hand of a woman. And Deborah arose, and went with Barak to Kedesh.
+
+@ ¶ And Barak called ##Zebulun##note:x[<<Judg 5:18>>] and Naphtali to Kedesh; and he went up with ten thousand men ##at his##note:x[<<Judg 5:15>>] feet: and Deborah went up with him.
+@ Now ##Heber##note:x[<<Num 10:29; Judg 1:16>>] the Kenite, __which was__ of the children of Hobab the father in law of Moses, had severed himself from the Kenites, and pitched his tent unto the plain of ##Zaanaim##note:x[<<Josh 19:33>>], which __is__ by Kedesh.
+@ And they shewed Sisera that Barak the son of Abinoam was gone up to ##mount Tabor##note:x[<<Ps 89:12>>].
+@ And Sisera gathered ##together##note:tn[Heb. by cry, or, proclamation] all his chariots, __even__ ##nine##note:x[<<Judg 4:2–3>>] hundred chariots of iron, and all the people that __were__ with him, from Harosheth of the Gentiles unto the river of Kishon.
+@ And Deborah said unto Barak, Up; for this __is__ the day in which the LORD hath delivered Sisera into thine hand: ##is not##note:x[<<Deut 9:3; 2 Sam 5:24; Isa 52:12>>] the LORD gone out before thee? So Barak went down from mount Tabor, and ten thousand men after him.
+@ ##And the LORD discomfited Sisera, and all __his__ chariots, and all __his__ host, with the edge of the sword before Barak; so that Sisera lighted down off __his__ chariot, and fled away on his feet.##note:x[<<Josh 10:10; Ps 83:9–10>>]
+@ But Barak pursued after the chariots, and after the host, unto Harosheth of the Gentiles: and all the host of Sisera fell upon the edge of the sword; __and__ there was not a man left.note:tn[__a man__: Heb. unto one]
+
+[discrete.pericope]
+==== Jael Kills Sisera
+
+@ Howbeit Sisera fled away on his feet to the tent of Jael the wife of Heber the Kenite: for __there was__ ##peace##note:x[<<Isa 57:21>>] between Jabin the king of Hazor and the house of Heber the Kenite.
+
+@ ¶ And Jael went out to meet Sisera, and said unto him, Turn in, my lord, turn in to me; fear not. And when he had turned in unto her into the tent, she covered him with a ##mantle##note:tn[or, rug, or, blanket].
+@ And he said unto her, Give me, I pray thee, a little water to drink; for I am thirsty. And she opened a bottle of milk, and gave him drink, and covered him.
+@ Again he said unto her, Stand in the door of the tent, and it shall be, when any man doth come and enquire of thee, and say, Is there any man here? that thou shalt say, No.
+@ Then Jael Heber’s wife ##took##note:x[<<Judg 5:26; 1 Cor 1:27>>] a nail of the tent, and took an hammer in her hand, and went softly unto him, and ##smote##note:x[<<Ps 3:7>>] the nail into his temples, and fastened it into the ground: for he was fast asleep and weary. So he died.note:tn[__and took__: Heb. and put]
+@ And, behold, as Barak pursued Sisera, Jael came out to meet him, and said unto him, Come, ##and I will##note:x[<<2 Sam 17:3, 10–15>>] shew thee the man whom thou seekest. And when he came into her __tent__, behold, Sisera lay dead, and the nail __was__ in his temples.
+@ ##So God subdued on that day Jabin the king of Canaan before the children of Israel.##note:x[<<Neh 9:24; Ps 18:47>>]
+@ And the hand of the children of Israel prospered, and prevailed against Jabin the king of Canaan, until they had destroyed Jabin king of Canaan.note:tn[__prospered…__: Heb. going went and was hard]
+
+=== @5
+
+[discrete.pericope]
+==== The Song of Deborah and Barak
+
+[.parallel]
+(<<Exodus 15:1–21>>)
+
+@ Then ##sang Deborah##note:x[<<Exod 15:1>>] and Barak the son of Abinoam on that day, saying,
+@ Praise ye the LORD for the avenging of Israel, ##when##note:x[<<Judg 5:9; 2 Chr 17:16; Ps 110:3>>] the people willingly offered themselves.
+@ Hear, ##O ye kings##note:x[<<Ps 138:4–5>>]; give ear, O ye princes; I, __even__ I, will sing unto the LORD; I will sing __praise__ to the LORD God of Israel.
+@ ##LORD##note:x[<<Deut 33:2; Ps 68:7–8>>], when thou wentest out of Seir, when thou marchedst out of the field of Edom, the earth trembled, and the heavens ##dropped##note:x[<<Ps 77:17>>], the clouds also dropped water.
+@ The ##mountains##note:x[<<Ps 97:5; Isa 64:1–3>>] ##melted##note:tn[Heb. flowed] from before the LORD, __even__ ##that Sinai##note:x[<<Exod 19:18>>] from before the LORD God of Israel.
+
+@ In the days of ##Shamgar##note:x[<<Judg 3:31>>] the son of Anath, in the days of Jael, ##the highways##note:x[<<Isa 33:8>>] were unoccupied, and the ##travellers##note:tn[Heb. walkers of paths] walked through ##byways##note:tn[Heb. crooked ways].
+@ __The inhabitants of__ the villages ceased, they ceased in Israel, until that I Deborah arose, that I arose a mother in Israel.
+@ They chose ##new gods##note:x[<<Deut 32:16–17>>]; then __was__ war in the gates: was there a shield or spear seen among forty thousand in Israel?
+@ My heart __is__ toward the governors of Israel, that ##offered##note:x[<<Judg 5:2; 1 Chr 29:9; 2 Cor 8:3–4>>] themselves willingly among the people. Bless ye the LORD.
+@ ##Speak##note:tn[or, Meditate], ye that ##ride##note:x[<<Judg 10:4; 12:14>>] on white asses, ye that sit in judgment, and walk by the way.
+@ __They that are delivered__ from the noise of archers in the places of drawing water, there shall they rehearse the ##righteous acts##note:x[<<1 Sam 12:7; Mic 6:5>>] of the LORD, __even__ the righteous acts __toward the inhabitants__ of his villages in Israel: then shall the people of the LORD ##go down##note:x[<<Deut 22:24>>] to the gates.note:tn[__righteous…__: Heb. righteousnesses]
+
+@ Awake, ##awake, Deborah##note:x[<<Ps 57:8>>]: awake, awake, utter a song: arise, Barak, and ##lead##note:x[<<Ps 68:18; Eph 4:8>>] thy captivity captive, thou son of Abinoam.
+@ Then ##he made##note:x[<<Rev 2:26–27>>] him that remaineth have dominion over the nobles among the people: the LORD made me have dominion over the mighty.
+@ Out of Ephraim __was there__ a root of them against Amalek; after thee, Benjamin, among thy people; out of Machir came down governors, and out of Zebulun they that ##handle##note:tn[Heb. draw with] the pen of the writer.
+@ And the princes of Issachar __were__ with Deborah; even Issachar, and also Barak: he was sent on ##foot##note:tn[Heb. his feet] into the valley. ##For##note:tn[or, In] the divisions of Reuben __there were__ great ##thoughts##note:tn[Heb. impressions] of heart.
+@ Why abodest thou among the ##sheepfolds##note:x[<<Num 32:24>>], to hear the bleatings of the flocks? ##For##note:tn[or, In] the divisions of Reuben __there were__ great searchings of heart.
+@ Gilead abode beyond Jordan: and why did Dan remain in ships? Asher continued on the sea ##shore##note:tn[or, port], and abode in his ##breaches##note:tn[or, creeks].
+@ ##Zebulun##note:x[<<Judg 4:10>>] and Naphtali __were__ a people __that__ ##jeoparded##note:tn[Heb. exposed to reproach] their lives unto the death ##in the high##note:x[<<Judg 4:6, 10>>] places of the field.
+@ The kings came __and__ fought, then fought the kings of Canaan in ##Taanach##note:x[<<Judg 1:27>>] by the waters of Megiddo; ##they took##note:x[<<Judg 5:30>>] no gain of money.
+@ They ##fought##note:x[<<Josh 10:11; 1 Sam 7:10; Ps 77:17–18>>] from heaven; the stars in their ##courses##note:tn[Heb. paths] fought against Sisera.
+@ The river of ##Kishon##note:x[<<Judg 4:7>>] swept them away, that ancient river, the river Kishon. ##O my soul##note:x[<<Ps 44:5; Mic 7:10>>], thou hast trodden down strength.
+@ Then were the horsehoofs broken by the means of the ##pransings##note:tn[or, tramplings, or, plungings], the pransings of their mighty ones.
+@ Curse ye Meroz, said the angel of the LORD, curse ye bitterly the inhabitants thereof; because they came not to the help of the LORD, to the help of the LORD against the mighty.
+
+@ ##Blessed above women shall Jael the wife of Heber the Kenite be, blessed shall she be above women in the tent.##note:x[<<Judg 4:17; Luke 1:28, 42>>]
+@ He asked water, __and__ she gave __him__ milk; she brought forth butter in a lordly dish.
+@ She put her hand to the nail, and her right hand to the workmen’s hammer; and with the hammer she smote Sisera, she smote off his head, when she had pierced and stricken through his temples.note:tn[__with…__: Heb. she hammered]
+@ ##At##note:tn[Heb. Between] her feet he bowed, he fell, he lay down: at her feet he bowed, he fell: where he bowed, there he fell down ##dead##note:tn[Heb. destroyed].
+@ The mother of Sisera looked out at a window, and cried through the lattice, Why is his chariot __so__ long in coming? why tarry the wheels of his chariots?
+@ Her wise ladies answered her, yea, she returned ##answer##note:tn[Heb. her words] to herself,
+@ ##Have they not sped##note:x[<<Exod 15:9>>]? have they __not__ divided the prey; to every man a damsel __or__ two; to Sisera a prey of divers colours, a prey of divers colours of needlework, of divers colours of needlework on both sides, __meet__ for the necks of __them that take__ the spoil?note:tn[__every…__: Heb. the head of a man]
+@ So let all thine enemies perish, O LORD: but __let__ them that love him __be__ as ##the sun##note:x[<<2 Sam 23:4; Ps 19:4–5; 37:6>>] when he goeth forth in his might. And the land had rest forty years.
+
+=== @6
+
+[discrete.pericope]
+==== Midian Oppresses Israel
+
+@ And the children of Israel ##did evil##note:x[<<Judg 2:13–14, 19–20; Neh 9:26–29>>] in the sight of the LORD: and the LORD delivered them into the hand of Midian seven years.
+@ And ##the hand##note:x[<<Lev 26:17>>] of Midian note:x[<<1 Sam 13:6; Heb 11:38>>]##prevailed##note:tn[Heb. was strong] against Israel: __and__ because of the Midianites the children of Israel made them the dens which __are__ in the mountains, and caves, and strong holds.
+@ And __so__ it was, when Israel had sown, that the Midianites came up, and the ##Amalekites##note:x[<<Judg 3:13>>], and the ##children##note:x[<<Judg 6:33; 7:12>>] of the east, even they came up against them;
+@ And they encamped against them, and ##destroyed##note:x[<<Lev 26:16; Deut 28:51; Mic 6:15>>] the increase of the earth, till thou come unto Gaza, and left no sustenance for Israel, neither ##sheep##note:tn[or goat], nor ox, nor ass.
+@ For they came up with their cattle and their tents, and they came ##as grasshoppers##note:x[<<Judg 7:12; 8:10>>] for multitude; __for__ both they and ##their camels##note:x[<<Isa 60:6>>] were without number: and they entered into the land to destroy it.
+@ And Israel was greatly ##impoverished##note:x[<<Ps 106:43; Jer 5:17>>] because of the Midianites; and the children of Israel ##cried##note:x[<<Judg 3:9>>] unto the LORD.
+
+@ ¶ And it came to pass, when the children of Israel cried unto the LORD because of the Midianites,
+@ That the LORD sent a prophet unto the children of Israel, which said unto them, ##Thus saith##note:x[<<Ps 136:10–16; Isa 63:9–14; Ezek 20:5–32>>] the LORD God of Israel, I brought you up from Egypt, and brought you forth out of the house of bondage;note:tn[__a prophet__: Heb. a man a prophet]
+@ And I delivered you out of the hand of the Egyptians, and out of the hand of all that oppressed you, and ##drave them##note:x[<<Ps 44:2–3>>] out from before you, and gave you their land;
+@ And I said unto you, ##I __am__ the##note:x[<<Exod 20:2–3>>] LORD your God; ##fear not##note:x[<<2 Kgs 17:35–39; Jer 10:2>>] the gods of the Amorites, in whose land ye dwell: but ye have not obeyed my voice.
+
+[discrete.pericope]
+==== The Call of Gideon
+
+@ ¶ And there came ##an angel##note:x[<<Judg 13:3>>] of the LORD, and sat under an oak which __was__ in Ophrah, that __pertained__ unto Joash the ##Abi-ezrite##note:x[<<Josh 17:2>>]: and his son note:x[<<Heb 11:32>>]##Gideon##note:tn[Gr. Gedeon] threshed wheat by the winepress, to hide __it__ from the Midianites.note:tn[__to hide…__: Heb. to cause it to flee]
+@ And ##the angel##note:x[<<Luke 1:28>>] of ##the LORD##note:x[<<Josh 1:5; Luke 1:28>>] appeared unto him, and said unto him, The LORD __is__ with thee, thou mighty man of valour.
+@ And Gideon said unto him, Oh my Lord, if the LORD be with us, ##why then##note:x[<<Ps 77:7–9; Isa 59:1–2>>] is all this befallen us? and where __be__ all his miracles which our fathers told us of, saying, Did not the LORD bring us up from Egypt? but now the LORD hath ##forsaken us##note:x[<<2 Chr 15:2>>], and delivered us into the hands of the Midianites.
+@ And the LORD looked upon him, and said, ##Go in##note:x[<<Josh 1:5–9; 1 Sam 12:11; Heb 11:34>>] this thy might, and thou shalt save Israel from the hand of the Midianites: have not I sent thee?
+@ And he said unto him, Oh my Lord, ##wherewith##note:x[<<Exod 3:11; 4:10>>] shall I save Israel? behold, ##my family __is__ poor##note:x[<<1 Sam 9:21>>] in Manasseh, and I __am__ the least in my father’s house.note:tn[__my family…__: Heb. my thousand is the meanest]
+@ ##And the LORD said unto him, Surely I will be with thee, and thou shalt smite the Midianites as one man.##note:x[<<Exod 3:12; Josh 1:5; Acts 11:21>>]
+@ And he said unto him, ##If now##note:x[<<Exod 33:13>>] I have found grace in thy sight, then ##shew##note:x[<<Ps 86:17; Isa 7:11>>] me a sign that thou talkest with me.
+@ Depart not hence, I pray thee, until I come unto thee, and ##bring##note:x[<<Gen 18:3, 5; Judg 13:15>>] forth my ##present##note:tn[or, meat offering], and set __it__ before thee. And he said, I will tarry until thou come again.
+
+@ ¶ And Gideon went in, ##and made##note:x[<<Gen 18:6–8>>] ready a kid, and unleavened cakes of an ephah of flour: the flesh he put in a basket, and he put the broth in a pot, and brought __it__ out unto him under the oak, and presented __it__.note:tn[__a kid__: Heb. a kid of the goats]
+@ And the angel of God said unto him, Take the flesh and the unleavened cakes, and ##lay __them__##note:x[<<Judg 13:19>>] upon this rock, and ##pour out##note:x[<<1 Kgs 18:33–34>>] the broth. And he did so.
+
+@ ¶ Then the angel of the LORD put forth the end of the staff that __was__ in his hand, and touched the flesh and the unleavened cakes; and there ##rose up##note:x[<<Lev 9:24; 1 Kgs 18:38; 2 Chr 7:1>>] fire out of the rock, and consumed the flesh and the unleavened cakes. Then the angel of the LORD departed out of his sight.
+@ And when Gideon perceived that he __was__ an angel of the LORD, Gideon said, Alas, O Lord GOD! for ##because##note:x[<<Gen 32:30; Exod 33:20; Deut 5:26>>] I have seen an angel of the LORD face to face.
+@ And the LORD said unto him, ##Peace __be__##note:x[<<Gen 43:23; Dan 10:19; John 14:27>>] unto thee; fear not: thou shalt not die.
+@ Then Gideon built an altar there unto the LORD, and called it note:x[<<Gen 22:14; Exod 17:15; Ezek 48:35>>]##Jehovah-shalom##note:tn[that is, The LORD send peace]: unto this day it __is__ yet in Ophrah of the Abi-ezrites.
+
+[discrete.pericope]
+==== Gideon Destroys Baal’s Altar
+
+@ ¶ And it came to pass the same night, that the LORD said unto him, Take thy father’s young bullock, ##even##note:tn[or, and] the second bullock of seven years old, and ##throw##note:x[<<2 Cor 6:15–17>>] down the altar of Baal that thy father hath, and ##cut down##note:x[<<Exod 34:13; Judg 3:7>>] the grove that __is__ by it:
+@ And build an altar unto the LORD thy God upon the top of this note:x[<<1 Cor 14:33, 40>>]##rock##note:tn[Heb. strong place], in the ordered place, and take the second bullock, and offer a burnt sacrifice with the wood of the grove which thou shalt cut down.note:tn[__in the ordered…__: or, in an orderly manner]
+@ Then Gideon took ten men of his servants, ##and did##note:x[<<John 2:5; 1 Thess 2:4>>] as the LORD had said unto him: and __so__ it was, because he feared his father’s household, and the men of the city, that he could not do __it__ by day, that he did __it__ by night.
+
+@ ¶ And when the men of the city arose early in the morning, behold, the altar of Baal was cast down, and the grove was cut down that __was__ by it, and the second bullock was offered upon the altar __that was__ built.
+@ And they said one to another, Who hath done this thing? And when they enquired and asked, they said, Gideon the son of Joash hath done this thing.
+@ Then the men of the city said unto Joash, ##Bring##note:x[<<Acts 26:9>>] out thy son, that he may die: because he hath cast down the altar of Baal, and because he hath cut down the grove that __was__ by it.
+@ And Joash said unto all that stood against him, Will ye plead for Baal? will ye save him? he that will plead for him, let him be put to death whilst __it is yet__ morning: if he __be__ a god, let him plead for himself, because __one__ hath cast down his altar.
+@ Therefore on that day he called him note:x[<<1 Sam 12:11; 2 Sam 11:21>>]##Jerubbaal##note:tn[that is, Let Baal plead], saying, Let Baal plead against him, because he hath thrown down his altar.note:tn[__Jerubbesheth__: that is, Let the shameful thing plead]
+
+[discrete.pericope]
+==== The Sign of the Fleece
+
+@ ¶ Then all the Midianites and the Amalekites and the ##children##note:x[<<Judg 6:3>>] of the east were gathered together, and went over, and pitched in ##the valley##note:x[<<Josh 17:16>>] of Jezreel.
+@ But ##the Spirit##note:x[<<Judg 3:10; 1 Chr 12:18; 2 Chr 24:20>>] of the LORD came upon Gideon, and he blew a trumpet; and Abi-ezer was ##gathered##note:tn[Heb. called] after him.note:tn[__came…__: Heb. clothed]
+@ And he sent messengers throughout all Manasseh; who also was ##gathered##note:tn[Heb. called] after him: and he sent messengers unto Asher, and unto Zebulun, and unto Naphtali; and they came up to meet them.
+
+@ ¶ And Gideon said unto God, ##If thou wilt##note:x[<<Judg 6:14; Matt 16:1>>] save Israel by mine hand, as thou hast said,
+@ ##Behold##note:x[<<Hos 14:5>>], I will put a fleece of wool in the floor; __and__ if the dew be on the fleece ##only##note:x[<<Matt 15:24>>], and __it be__ dry upon all the earth __beside__, then shall I know that thou wilt save Israel by mine hand, as thou hast said.
+@ And it was so: for he rose up early on the morrow, and thrust the fleece together, and wringed the dew out of the fleece, a bowl full of water.
+@ And Gideon said unto God, ##Let not thine##note:x[<<Gen 18:32>>] anger be hot against me, and I will speak but this once: let me prove, I pray thee, but this once with the fleece; let it now be ##dry##note:x[<<Ps 107:33–35; Isa 50:2>>] only upon the fleece, and upon all the ground let there be dew.
+@ And God did so that night: for it was dry upon the fleece only, and there was dew on all the ground.
+
+=== @7
+
+[discrete.pericope]
+==== Gideon’s Army of Three Hundred
+
+@ Then ##Jerubbaal##note:x[<<Judg 6:32>>], who __is__ Gideon, and all the people that __were__ with him, ##rose up##note:x[<<Eccl 9:10>>] early, and pitched beside the well of Harod: so that the host of the Midianites were on the north side of them, by the hill of ##Moreh##note:x[<<Gen 12:6>>], in the valley.
+@ And the LORD said unto Gideon, The people that __are__ with thee __are__ ##too many##note:x[<<1 Cor 1:27–29; 2 Cor 4:7>>] for me to give the Midianites into their hands, lest Israel vaunt themselves against me, saying, ##Mine own##note:x[<<Deut 8:17>>] hand hath saved me.
+@ Now therefore go to, proclaim in the ears of the people, saying, ##Whosoever##note:x[<<Deut 20:8; Rev 17:14>>] __is__ fearful and afraid, let him return and depart early from mount Gilead. And there returned of the people twenty and two thousand; and there remained ten thousand.
+@ And the LORD said unto Gideon, The ##people##note:x[<<Ps 33:16>>] __are__ yet __too__ many; bring them down unto the water, and ##I will##note:x[<<1 Sam 16:7>>] try them for thee there: and it shall be, __that__ of whom I say unto thee, This shall go with thee, the same shall go with thee; and of whomsoever I say unto thee, This shall not go with thee, the same shall not go.
+@ So he brought down the people unto the water: and the LORD said unto Gideon, Every one that lappeth of the water with his tongue, as a dog lappeth, him shalt thou set by himself; likewise every one that boweth down upon his knees to drink.
+@ And the number of them that lapped, __putting__ their hand to their mouth, were three hundred men: but all the rest of the people bowed down upon their knees to drink water.
+@ ##And the LORD said unto Gideon, By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand: and let all the __other__ people go every man unto his place.##note:x[<<1 Sam 14:6; Isa 41:14–16>>]
+@ So the people took victuals in their hand, and their trumpets: and he sent all __the rest of__ Israel every man unto his tent, and retained those three hundred men: and the host of Midian was beneath him in the valley.
+
+[discrete.pericope]
+==== The Sword of Gideon
+
+@ ¶ And it came to pass ##the same##note:x[<<Acts 18:9–10>>] night, that the LORD said unto him, Arise, get thee down unto the host; for I have delivered it into thine hand.
+@ But if thou fear to go down, go thou with Phurah thy servant down to the host:
+@ And thou shalt hear what they say; and afterward shall ##thine hands##note:x[<<2 Cor 12:9–10; Eph 6:10; Phil 4:13>>] be strengthened to go down unto the host. Then went he down with Phurah his servant unto the outside of the armed men that __were__ in the host.note:tn[__armed men__: or, ranks by five]
+@ And ##the Midianites##note:x[<<Judg 6:3, 5>>] and the Amalekites and all the children of the east lay along in the valley like ##grasshoppers##note:x[<<Judg 8:10>>] for multitude; and their camels __were__ without number, as the sand by the sea side for multitude.
+@ And when Gideon was come, behold, __there was__ a man that told a dream unto his fellow, and said, Behold, I dreamed a dream, and, lo, a cake of barley bread tumbled into the host of Midian, and came unto a tent, and smote it that it fell, and overturned it, that the tent lay along.
+@ And his fellow answered and said, This __is__ nothing else save the sword of Gideon the son of Joash, a man of Israel: __for__ ##into his hand##note:x[<<Josh 2:9>>] hath God delivered Midian, and all the host.
+
+[discrete.pericope]
+==== Gideon Defeats Midian
+
+@ ¶ And it was __so__, when Gideon heard the telling of the dream, and the note:x[<<Gen 40:8>>]##interpretation##note:tn[Heb. breaking] thereof, that he ##worshipped##note:x[<<Gen 24:48>>], and returned into the host of Israel, and said, ##Arise##note:x[<<2 Cor 10:4–6>>]; for the LORD hath delivered into your hand the host of Midian.
+
+@ And he divided the three hundred men __into__ three companies, and he put a trumpet in every man’s hand, with ##empty##note:x[<<2 Cor 4:7>>] pitchers, and ##lamps##note:tn[or, firebrands, or, torches] within the pitchers.note:tn[__a trumpet…__: Heb. trumpets in the hand of all of them]
+@ ##And he said unto them, Look on me, and do likewise: and, behold, when I come to the outside of the camp, it shall be __that__, as I do, so shall ye do.##note:x[<<Matt 16:24; 1 Cor 11:1; Heb 13:7>>]
+@ When I blow with a trumpet, I and all that __are__ with me, then blow ye the trumpets also on every side of all the camp, and say, __The sword__ of the LORD, and of Gideon.
+
+@ ¶ So Gideon, and the hundred men that __were__ with him, came unto the outside of the camp ##in the beginning##note:x[<<Exod 14:24>>] of the middle watch; and they had but newly set the watch: and they blew the trumpets, and ##brake##note:x[<<Ps 2:9>>] the pitchers that __were__ in their hands.
+@ And the three companies ##blew##note:x[<<Josh 6:16; Isa 27:13; 1 Cor 15:52>>] the trumpets, and brake the pitchers, and held the lamps in their left hands, and the trumpets in their right hands to blow __withal:__ and they cried, The sword of the LORD, and of Gideon.
+@ And they stood every man in his place round about the camp: and ##all the host##note:x[<<Prov 28:1>>] ran, and cried, and fled.
+@ And the three hundred ##blew##note:x[<<Josh 6:4>>] the trumpets, and the LORD set every man’s sword against his fellow, even throughout all the host: and the host fled to Beth-shittah note:x[<<1 Kgs 4:12>>]##in##note:tn[or, toward] Zererath, __and__ to the note:x[<<1 Kgs 4:12>>]##border##note:tn[Heb. lip] of Abel-meholah, unto Tabbath.
+
+@ ##And the men of Israel gathered themselves together out of Naphtali, and out of Asher, and out of all Manasseh, and pursued after the Midianites.##note:x[<<Judg 6:35>>]
+
+@ ¶ And Gideon sent messengers throughout all mount Ephraim, saying, Come down against the Midianites, and take before them the waters unto Beth-barah and Jordan. Then all the men of Ephraim gathered themselves together, and took the waters unto Beth-barah and Jordan.
+@ And they took ##two princes##note:x[<<Judg 8:3; Ps 83:11–12>>] of the Midianites, Oreb and Zeeb; and they slew Oreb upon the ##rock##note:x[<<Isa 10:26>>] Oreb, and Zeeb they slew at the winepress of Zeeb, and pursued Midian, and brought the heads of Oreb and Zeeb to Gideon on the other side Jordan.
+
+=== @8
+
+[discrete.pericope]
+==== Gideon Defeats Zebah and Zalmunna
+
+@ And ##the men##note:x[<<2 Sam 19:41; Job 5:2>>] of Ephraim said unto him, Why hast thou served us thus, that thou calledst us not, when thou wentest to fight with the Midianites? And they did chide with him ##sharply##note:tn[Heb. strongly].note:tn[__Why…__: Heb. What thing is this thou hast done unto us]
+@ And he said unto them, What have I done now in comparison of you? __Is__ not the gleaning of the grapes of Ephraim better than the vintage of Abi-ezer?
+@ God hath delivered into your hands the princes of Midian, Oreb and Zeeb: and what was I able to do in comparison of you? ##Then##note:x[<<Prov 15:1>>] their ##anger##note:tn[Heb. spirit] was abated toward him, when he had said that.
+
+@ ¶ And Gideon came to Jordan, __and__ passed over, he, and the three hundred men that __were__ with him, ##faint##note:x[<<2 Cor 4:16; Gal 6:9>>], yet pursuing __them__.
+@ And he said unto the men of ##Succoth##note:x[<<Gen 33:17; Ps 60:6>>], Give, I pray you, loaves of bread unto the people that follow me; for they __be__ faint, and I am pursuing after Zebah and Zalmunna, kings of Midian.
+
+@ ¶ And the princes of Succoth said, __Are__ the hands of Zebah and Zalmunna now in thine hand, that we should give bread unto thine army?
+@ And Gideon said, Therefore when the LORD hath delivered Zebah and Zalmunna into mine hand, then I will ##tear##note:tn[Heb. thresh] your flesh with the thorns of the wilderness and with briers.
+
+@ ¶ ##And he went up thence to Penuel, and spake unto them likewise: and the men of Penuel answered him as the men of Succoth had answered __him__.##note:x[<<Gen 32:30–31; 1 Kgs 12:25>>]
+@ And he spake also unto the men of Penuel, saying, When I come again in peace, I will break down this tower.
+
+@ ¶ Now Zebah and Zalmunna __were__ in Karkor, and their hosts with them, about fifteen thousand __men__, all that were left of all the hosts of the ##children##note:x[<<Judg 7:12>>] of the east: for there fell an hundred and twenty thousand men that drew sword.note:tn[__men that…__: or, every one drawing a sword]
+
+@ ¶ And Gideon went up by the way of them that dwelt in tents on the east of ##Nobah##note:x[<<Num 32:35, 42>>] and Jogbehah, and smote the host: for the host was secure.
+@ And when Zebah and Zalmunna fled, he pursued after them, and ##took##note:x[<<Ps 83:11>>] the two kings of Midian, Zebah and Zalmunna, and ##discomfited##note:tn[Heb. terrified] all the host.
+
+@ ¶ And Gideon the son of Joash returned from battle before the sun __was up__,
+@ And caught a young man of the men of Succoth, and enquired of him: and he ##described##note:tn[Heb. writ] unto him the princes of Succoth, and the elders thereof, __even__ threescore and seventeen men.
+@ And he came unto the men of Succoth, and said, Behold Zebah and Zalmunna, with whom ye did upbraid me, saying, __Are__ the hands of Zebah and Zalmunna now in thine hand, that we should give bread unto thy men __that are__ weary?
+@ And he took the elders of the city, and thorns of the wilderness and briers, and with them he ##taught##note:tn[Heb. made to know] the men of Succoth.
+@ ##And he beat down the tower of Penuel, and slew the men of the city.##note:x[<<Judg 8:9>>]
+
+@ ¶ Then said he unto Zebah and Zalmunna, What manner of men __were they__ whom ye slew at ##Tabor##note:x[<<Judg 4:6>>]? And they answered, As thou __art__, so __were__ they; each one resembled the children of a king.note:tn[__resembled…__: Heb. according to the form, etc]
+@ And he said, They __were__ my brethren, __even__ the sons of my mother: __as__ the LORD liveth, if ye had saved them alive, I would not slay you.
+@ And he said unto Jether his firstborn, Up, __and__ slay them. But the youth drew not his sword: for he feared, because he __was__ yet a youth.
+@ Then Zebah and Zalmunna said, Rise thou, and fall upon us: for as the man __is, so is__ his strength. And Gideon arose, and slew Zebah and Zalmunna, and took away the ##ornaments##note:tn[or, ornaments like the moon] that __were__ on their camels’ necks.
+
+[discrete.pericope]
+==== Gideon’s Ephod
+
+@ ¶ Then the men of Israel said unto Gideon, Rule thou over us, both thou, and thy son, and thy son’s son also: for thou hast delivered us from the hand of Midian.
+@ And Gideon said unto them, I will not rule over you, neither shall my son rule over you: ##the LORD##note:x[<<1 Sam 10:19; 12:12; Isa 33:22>>] shall rule over you.
+
+@ ¶ And Gideon said unto them, I would desire a request of you, that ye would give me every man the earrings of his prey. (For they had golden earrings, ##because##note:x[<<Gen 25:13>>] they __were__ Ishmaelites.)
+@ And they answered, We will willingly give __them__. And they spread a garment, and did cast therein every man the earrings of his prey.
+@ And the weight of the golden earrings that he requested was a thousand and seven hundred __shekels__ of gold; beside ornaments, and ##collars##note:tn[or, sweet jewels], and purple raiment that __was__ on the kings of Midian, and beside the chains that __were__ about their camels’ necks.
+@ And Gideon made ##an ephod##note:x[<<Judg 17:5; 18:14>>] thereof, and put it in his city, __even__ in Ophrah: and all Israel went thither ##a whoring##note:x[<<Ps 106:39>>] after it: which thing became a snare unto Gideon, and to his house.
+
+[discrete.pericope]
+==== Forty Years of Peace
+
+@ ¶ Thus was Midian subdued before the children of Israel, so that they lifted up their heads no more. And the country was in quietness ##forty years##note:x[<<Judg 5:31>>] in the days of Gideon.
+
+@ ¶ And Jerubbaal the son of Joash went and dwelt in his own house.
+@ And Gideon had ##threescore##note:x[<<Judg 9:2, 5>>] and ten sons of his body begotten: for he had many wives.note:tn[__of his…__: Heb. going out of his thigh]
+@ And his concubine that __was__ in Shechem, she also bare him a son, whose name he ##called##note:tn[Heb. set] Abimelech.
+
+[discrete.pericope]
+==== Gideon’s Death
+
+@ ¶ And Gideon the son of Joash ##died in##note:x[<<Gen 25:8>>] a good old age, and was buried in the sepulchre of Joash his father, in Ophrah of the Abi-ezrites.
+@ And it came to pass, ##as soon##note:x[<<Judg 2:19>>] as Gideon was dead, that the children of Israel turned again, and went a whoring after Baalim, and made ##Baal-berith##note:x[<<Judg 9:4, 46>>] their god.
+@ And the children of Israel ##remembered##note:x[<<Ps 78:11, 42; 106:21>>] not the LORD their God, who had delivered them out of the hands of all their enemies on every side:
+@ Neither shewed they kindness to the house of Jerubbaal, __namely__, Gideon, according to all the goodness which he had shewed unto Israel.
+
+=== @9
+
+[discrete.pericope]
+==== Abimelech’s Conspiracy
+
+@ And ##Abimelech##note:x[<<Judg 8:31>>] the son of Jerubbaal went to Shechem unto his mother’s brethren, and communed with them, and with all the family of the house of his mother’s father, saying,
+@ Speak, I pray you, in the ears of all the men of Shechem, Whether __is__ better for you, either that all the sons of Jerubbaal, __which are__ ##threescore##note:x[<<Judg 8:30>>] and ten persons, reign over you, or that one reign over you? remember also that I __am__ ##your bone##note:x[<<Gen 29:14>>] and your flesh.note:tn[__Whether…__: Heb. What is good? whether, etc]
+@ And his mother’s brethren spake of him in the ears of all the men of Shechem all these words: and their hearts inclined to follow Abimelech; for they said, He __is__ our brother.note:tn[__to follow__: Heb. after]
+@ And they gave him threescore and ten __pieces__ of silver out of the ##house##note:x[<<Judg 8:33>>] of Baal-berith, wherewith Abimelech hired ##vain##note:x[<<Judg 11:3; 2 Chr 13:7>>] and light persons, which followed him.
+@ And he went unto his father’s house ##at Ophrah##note:x[<<Judg 6:24>>], and ##slew##note:x[<<2 Kgs 11:1–2; 2 Chr 21:4>>] his brethren the sons of Jerubbaal, __being__ threescore and ten persons, upon one stone: notwithstanding yet Jotham the youngest son of Jerubbaal was left; for he hid himself.
+@ And all the men of Shechem gathered together, and all the house of Millo, and went, and made Abimelech king, by the ##plain##note:tn[or, oak] of the pillar that __was__ in Shechem.
+
+[discrete.pericope]
+==== Jotham’s Parable
+
+@ ¶ And when they told __it__ to Jotham, he went and stood in the top of ##mount Gerizim##note:x[<<Deut 11:29; 27:12; John 4:20>>], and lifted up his voice, and cried, and said unto them, Hearken unto me, ye men of Shechem, that God may hearken unto you.
+@ The trees went forth __on a time__ to anoint a king over them; and they said unto the olive tree, Reign thou over us.
+@ But the olive tree said unto them, Should I leave my fatness, wherewith by me they honour God and man, and go to be promoted over the trees?note:tn[__go…__: or, go up and down for other trees]
+@ And the trees said to the fig tree, Come thou, __and__ reign over us.
+@ But the fig tree said unto them, Should I forsake my sweetness, and my good fruit, and go to be promoted over the trees?
+@ Then said the trees unto the vine, Come thou, __and__ reign over us.
+@ And the vine said unto them, Should I leave my wine, which ##cheereth##note:x[<<Num 15:10; Ps 104:15; Eccl 10:19>>] God and man, and go to be promoted over the trees?
+@ Then said all the trees unto the ##bramble##note:tn[or, thistle], Come thou, __and__ reign over us.
+@ And the bramble said unto the trees, If in truth ye anoint me king over you, __then__ come __and__ put your trust in my ##shadow##note:x[<<Isa 30:2; Hos 14:7>>]: and if not, ##let fire##note:x[<<Judg 9:20>>] come out of the bramble, and devour the cedars of Lebanon.
+@ Now therefore, if ye have done truly and sincerely, in that ye have made Abimelech king, and if ye have dealt well with Jerubbaal and his house, and have done unto him ##according##note:x[<<Judg 8:35>>] to the deserving of his hands;
+@ (For my father fought for you, and adventured his life far, and delivered you out of the hand of Midian&#58;note:tn[__adventured…__: Heb. cast his life]
+@ And ye ##are risen##note:x[<<Judg 9:5–6>>] up against my father’s house this day, and have slain his sons, threescore and ten persons, upon one stone, and have made Abimelech, the son of his maidservant, king over the men of Shechem, because he __is__ your brother;)
+@ If ye then have dealt truly and sincerely with Jerubbaal and with his house this day, __then__ rejoice ye in Abimelech, and let him also rejoice in you:
+@ But if not, ##let fire come out##note:x[<<Judg 9:15, 56–57>>] from Abimelech, and devour the men of Shechem, and the house of Millo; and let fire come out from the men of Shechem, and from the house of Millo, and devour Abimelech.
+@ And Jotham ran away, and fled, and went to Beer, and dwelt there, for fear of Abimelech his brother.
+
+[discrete.pericope]
+==== Gaal Conspires with the Shechemites
+
+@ ¶ When Abimelech had reigned three years over Israel,
+@ Then ##God##note:x[<<Isa 19:14>>] sent an evil spirit between Abimelech and the men of Shechem; and the men of Shechem ##dealt##note:x[<<Isa 33:1>>] treacherously with Abimelech:
+@ ##That the##note:x[<<1 Kgs 2:32; Ps 7:16>>] cruelty __done__ to the threescore and ten sons of Jerubbaal might come, and their blood be laid upon Abimelech their brother, which slew them; and upon the men of Shechem, which aided him in the killing of his brethren.note:tn[__aided…__: Heb. strengthened his hands to kill]
+@ And the men of Shechem set liers in wait for him in the top of the mountains, and they robbed all that came along that way by them: and it was told Abimelech.
+@ And Gaal the son of Ebed came with his brethren, and went over to Shechem: and the men of Shechem put their confidence in him.
+@ And they went out into the fields, and gathered their vineyards, and trode __the grapes__, and made ##merry##note:tn[or, songs], and went into the house of their god, and did eat and drink, and cursed Abimelech.
+@ And Gaal the son of Ebed said, ##Who __is__ Abimelech##note:x[<<1 Sam 25:10>>], and who __is__ Shechem, that we should serve him? __is__ not __he__ the son of Jerubbaal? and Zebul his officer? serve the men of ##Hamor##note:x[<<Gen 34:2, 6>>] the father of Shechem: for why should we serve him?
+@ And ##would to God##note:x[<<2 Sam 15:4>>] this people were under my hand! then would I remove Abimelech. And he said to Abimelech, Increase thine army, and come out.
+
+[discrete.pericope]
+==== The Fall of Shechem
+
+@ ¶ And when Zebul the ruler of the city heard the words of Gaal the son of Ebed, his anger was ##kindled##note:tn[or, hot].
+@ And he sent messengers unto Abimelech ##privily##note:tn[Heb. craftily or, to Tormah], saying, Behold, Gaal the son of Ebed and his brethren be come to Shechem; and, behold, they fortify the city against thee.
+@ Now therefore up by night, thou and the people that __is__ with thee, and lie in wait in the field:
+@ And it shall be, __that__ in the morning, as soon as the sun is up, thou shalt rise early, and set upon the city: and, behold, __when__ he and the people that __is__ with him come out against thee, then mayest thou do to them ##as thou shalt find##note:x[<<1 Sam 10:7; Eccl 9:10>>] occasion.note:tn[__as thou shalt…__: Heb. as thine hand shall find]
+
+@ ¶ And Abimelech rose up, and all the people that __were__ with him, by night, and they laid wait against Shechem in four companies.
+@ And Gaal the son of Ebed went out, and stood in the entering of the gate of the city: and Abimelech rose up, and the people that __were__ with him, from lying in wait.
+@ And when Gaal saw the people, he said to Zebul, Behold, there come people down from the top of the mountains. And Zebul said unto him, Thou seest the shadow of the mountains as __if they were__ men.
+@ And Gaal spake again and said, See there come people down by the ##middle##note:tn[Heb. navel] of the land, and another company come along by the plain of ##Meonenim##note:tn[or, the regarders of times].
+@ ##Then said Zebul unto him, Where __is__ now thy mouth, wherewith thou saidst, Who __is__ Abimelech, that we should serve him? __is__ not this the people that thou hast despised? go out, I pray now, and fight with them.##note:x[<<Judg 9:28–29>>]
+@ And Gaal went out before the men of Shechem, and fought with Abimelech.
+@ And Abimelech chased him, and he fled before him, and many were overthrown __and__ wounded, __even__ unto the entering of the gate.
+@ And Abimelech dwelt at Arumah: and Zebul thrust out Gaal and his brethren, that they should not dwell in Shechem.
+@ And it came to pass on the morrow, that the people went out into the field; and they told Abimelech.
+@ And he took the people, and divided them into three companies, and laid wait in the field, and looked, and, behold, the people __were__ come forth out of the city; and he rose up against them, and smote them.
+@ And Abimelech, and the company that __was__ with him, rushed forward, and stood in the entering of the gate of the city: and the two __other__ companies ran upon all __the people__ that __were__ in the fields, and slew them.
+@ And Abimelech fought against the city all that day; and he took the city, and slew the people that __was__ therein, and ##beat##note:x[<<Deut 29:23; 2 Kgs 3:25>>] down the city, and sowed it with salt.
+
+@ ¶ And when all the men of the tower of Shechem heard __that__, they entered into ##an hold##note:x[<<Judg 8:33>>] of the house of the god Berith.
+@ And it was told Abimelech, that all the men of the tower of Shechem were gathered together.
+@ And Abimelech gat him up to mount ##Zalmon##note:x[<<Ps 68:14>>], he and all the people that __were__ with him; and Abimelech took an axe in his hand, and cut down a bough from the trees, and took it, and laid __it__ on his shoulder, and said unto the people that __were__ with him, What ye have seen me do, make haste, __and__ do as I __have done__.note:tn[__me do__: Heb. I have done]
+@ And all the people likewise cut down every man his bough, and followed Abimelech, and put __them__ to the hold, and set the hold on fire upon them; so that all the men of the tower of Shechem died also, about a thousand men and women.
+
+[discrete.pericope]
+==== Abimelech’s Punishment
+
+@ ¶ Then went Abimelech to Thebez, and encamped against Thebez, and took it.
+@ But there was a strong tower within the city, and thither fled all the men and women, and all they of the city, and shut __it__ to them, and gat them up to the top of the tower.
+@ And Abimelech came unto the tower, and fought against it, and went hard unto the door of the tower to burn it with fire.
+@ And a certain ##woman##note:x[<<2 Sam 11:21; Job 31:3>>] cast a piece of a millstone upon Abimelech’s head, and all to brake his skull.
+@ Then he called hastily unto the young man his armourbearer, and said unto him, ##Draw thy##note:x[<<1 Sam 31:4–5>>] sword, and slay me, that men say not of me, A woman slew him. And his young man thrust him through, and he died.
+@ And when the men of Israel saw that Abimelech was dead, they departed every man unto his place.
+
+@ ¶ Thus ##God rendered##note:x[<<Ps 94:23; Prov 5:22>>] the wickedness of Abimelech, which he did unto his father, in slaying his seventy brethren:
+@ And all the evil of the men of Shechem did God render upon their heads: and ##upon them##note:x[<<Judg 9:20>>] came the curse of Jotham the son of Jerubbaal.
+
+=== @10
+
+[discrete.pericope]
+==== Tola
+
+@ And after Abimelech there ##arose##note:x[<<Judg 2:16>>] to ##defend##note:tn[or, deliver: Heb. save] Israel Tola the son of Puah, the son of Dodo, a man of Issachar; and he dwelt in Shamir in mount Ephraim.
+@ And he judged Israel twenty and three years, and died, and was buried in Shamir.
+
+[discrete.pericope]
+==== Jair
+
+@ ¶ And after him arose Jair, a Gileadite, and judged Israel twenty and two years.
+@ And he had thirty sons that rode on thirty ass colts, and they had thirty cities, which are ##called##note:x[<<Num 32:41>>] ##Havoth-jair##note:tn[or, the villages of Jair] unto this day, which __are__ in the land of Gilead.
+@ And Jair died, and was buried in Camon.
+
+[discrete.pericope]
+==== Oppression by the Philistines and Ammonites
+
+@ ¶ And the children of Israel did evil again in the sight of the LORD, and served ##Baalim##note:x[<<Ps 106:36>>], and Ashtaroth, and the gods of Syria, and ##the gods of Zidon##note:x[<<1 Kgs 11:5; 2 Kgs 23:13>>], and the gods of Moab, and the gods of the children of Ammon, and the gods of the Philistines, and forsook the LORD, and served not him.
+@ And the anger of the LORD ##was hot##note:x[<<Judg 2:14>>] against Israel, and he sold them into the hands of the Philistines, and into the hands of the children of Ammon.
+@ And that year they vexed and ##oppressed##note:tn[Heb. crushed] the children of Israel: eighteen years, all the children of Israel that __were__ on the other side Jordan in the land of the Amorites, which __is__ in Gilead.
+@ Moreover the children of Ammon passed over Jordan to fight also against Judah, and against Benjamin, and against the house of Ephraim; so that Israel was sore distressed.
+
+@ ¶ And the children of Israel ##cried##note:x[<<1 Sam 12:10; Ps 107:13, 28>>] unto the LORD, saying, We have sinned against thee, both because we have forsaken our God, and also served Baalim.
+@ And the LORD said unto the children of Israel, __Did__ not __I deliver you__ from the ##Egyptians##note:x[<<Exod 14:30>>], and from the ##Amorites##note:x[<<Num 21:21–25>>], from the children of Ammon, and from the ##Philistines##note:x[<<Judg 3:31>>]?
+@ The Zidonians also, and the Amalekites, and the Maonites, did oppress you; and ye cried to me, and I delivered you out of their hand.
+@ ##Yet ye have forsaken me, and served other gods: wherefore I will deliver you no more.##note:x[<<Judg 2:12; 1 Chr 28:9; Jer 2:13>>]
+@ ##Go and cry unto the gods which ye have chosen; let them deliver you in the time of your tribulation.##note:x[<<Deut 32:37–38; Prov 1:25–27; Jer 2:28>>]
+
+@ ¶ And the children of Israel said unto the LORD, ##We have sinned##note:x[<<Prov 28:13>>]: ##do thou##note:x[<<1 Sam 3:18; 2 Sam 15:26>>] unto us whatsoever seemeth good unto thee; deliver us only, we pray thee, this day.note:tn[__seemeth…__: Heb. is good in thine eyes]
+@ And they put away the strange gods from among them, and served the LORD: and ##his soul##note:x[<<Ps 106:44–45; Isa 63:9; Jer 31:20>>] was ##grieved##note:tn[Heb. shortened] for the misery of Israel.note:tn[__strange…__: Heb. gods of strangers]
+@ Then the children of Ammon were ##gathered##note:tn[Heb. cried] together, and encamped in Gilead. And the children of Israel assembled themselves together, and encamped in ##Mizpeh##note:x[<<Gen 31:49; Judg 11:29>>].
+@ And the people __and__ princes of Gilead said one to another, What man __is he__ that will begin to fight against the children of Ammon? ##he shall be##note:x[<<Judg 11:11>>] head over all the inhabitants of Gilead.
+
+=== @11
+
+[discrete.pericope]
+==== Jephthah Delivers Israel
+
+@ note:x[<<Judg 6:12; 2 Kgs 5:1>>]Now note:x[<<Heb 11:32>>]##Jephthah##note:tn[Gr. Jephthae] the Gileadite was a mighty man of valour, and he __was__ the son of an harlot: and Gilead begat Jephthah.note:tn[__an harlot__: Heb. a woman an harlot]
+@ And Gilead’s wife bare him sons; and his wife’s sons grew up, and they ##thrust out##note:x[<<Gen 12:10; Deut 23:2>>] Jephthah, and said unto him, Thou shalt not inherit in our father’s house; for thou __art__ the son of ##a strange##note:x[<<Prov 2:16>>] woman.
+@ Then Jephthah fled ##from##note:tn[Heb. from the face of] his brethren, and dwelt in the land of Tob: and there were gathered ##vain men##note:x[<<Judg 9:4; 1 Sam 22:2>>] to Jephthah, and went out with him.
+
+@ ¶ And it came to pass in process of time, that the children of Ammon made war against Israel.note:tn[__in process…__: Heb. after days]
+@ And it was so, that when the children of Ammon made war against Israel, the elders of Gilead went ##to fetch##note:x[<<1 Sam 11:12; Ps 118:22–23; 1 Cor 1:27–29>>] Jephthah out of the land of Tob:
+@ And they said unto Jephthah, Come, and be our captain, that we may fight with the children of Ammon.
+@ And Jephthah said unto the elders of Gilead, ##Did not ye hate##note:x[<<Gen 45:4–5; Prov 17:17; Rev 3:9>>] me, and expel me out of my father’s house? and why are ye come unto me now when ye are in distress?
+@ And ##the elders##note:x[<<Exod 9:28; 10:17>>] of Gilead said unto Jephthah, Therefore ##we turn##note:x[<<Judg 10:18>>] again to thee now, that thou mayest go with us, and fight against the children of Ammon, and be our head over all the inhabitants of Gilead.
+@ And Jephthah said unto the elders of Gilead, ##If ye bring##note:x[<<Num 32:20–29>>] me home again to fight against the children of Ammon, and the LORD deliver them before me, shall I be your head?
+@ And the elders of Gilead said unto Jephthah, ##The LORD##note:x[<<Gen 31:50; Jer 42:5>>] be witness between us, if we do not so according to thy words.note:tn[__witness…__: Heb. the hearer between us]
+@ Then Jephthah went with the elders of Gilead, and the people made him head and captain over them: and Jephthah ##uttered##note:x[<<Jas 1:5>>] all his words ##before##note:x[<<Judg 20:1; 1 Sam 10:17>>] the LORD in Mizpeh.
+
+@ ¶ And Jephthah ##sent messengers##note:x[<<Matt 18:15–16>>] unto the king of the children of Ammon, saying, What hast thou to do with me, that thou art come against me to fight in my land?
+@ And the king of the children of Ammon answered unto the messengers of Jephthah, ##Because Israel##note:x[<<Num 21:24–26>>] took away my land, when they came up out of Egypt, from Arnon even unto ##Jabbok##note:x[<<Gen 32:22>>], and unto Jordan: now therefore restore those __lands__ again peaceably.
+@ And Jephthah sent messengers again unto the king of the children of Ammon:
+@ And said unto him, Thus saith Jephthah, ##Israel took##note:x[<<Deut 2:9, 19>>] not away the land of Moab, nor the land of the children of Ammon:
+@ But when Israel ##came##note:x[<<Num 13:26>>] up from Egypt, and ##walked##note:x[<<Num 14:25; Deut 1:40>>] through the wilderness unto the Red sea, and came to Kadesh;
+@ Then Israel sent messengers unto the king of Edom, saying, Let me, I pray thee, pass through thy land: but the king of Edom would not hearken __thereto__. And in like manner they sent unto the king of Moab: but he would not __consent:__ and Israel abode in Kadesh.
+@ Then they ##went##note:x[<<Deut 2:1–8>>] along through the wilderness, and ##compassed##note:x[<<Num 21:4–9>>] the land of Edom, and the land of Moab, and came by the east side of the land of Moab, and pitched on the other side of Arnon, but came not within the border of Moab: for Arnon __was__ the border of Moab.
+@ And Israel sent messengers unto Sihon king of the Amorites, the king of Heshbon; and Israel said unto him, Let us pass, we pray thee, through thy land into my place.
+@ But Sihon trusted not Israel to pass through his coast: but Sihon gathered all his people together, and pitched in Jahaz, and fought against Israel.
+@ And the LORD God of Israel delivered Sihon and all his people into the hand of Israel, and they smote them: so Israel possessed all the land of the Amorites, the inhabitants of that country.
+@ ##And they##note:x[<<Deut 2:36>>] possessed all the coasts of the Amorites, from Arnon even unto Jabbok, and from the wilderness even unto Jordan.
+@ So now the LORD God of Israel hath dispossessed the Amorites from before his people Israel, and shouldest thou possess it?
+@ Wilt not thou possess that which ##Chemosh##note:x[<<Num 21:29>>] thy god giveth thee to possess? So ##whomsoever##note:x[<<Ps 78:55; Mic 4:5>>] the LORD our God shall drive out from before us, them will we possess.
+@ And now __art__ thou any thing better than ##Balak##note:x[<<Josh 24:9–10; Mic 6:5>>] the son of Zippor, king of Moab? did he ever strive against Israel, or did he ever fight against them,
+@ While Israel dwelt in Heshbon and her towns, and in ##Aroer##note:x[<<Deut 2:36>>] and her towns, and in all the cities that __be__ along by the coasts of Arnon, three hundred years? why therefore did ye not recover __them__ within that time?
+@ Wherefore I have not sinned against thee, but thou doest me wrong to war against me: the LORD ##the Judge##note:x[<<Gen 18:25>>] ##be judge##note:x[<<Gen 16:5; 1 Sam 24:12>>] this day between the children of Israel and the children of Ammon.
+@ Howbeit the king of the children of Ammon hearkened not unto the words of Jephthah which he sent him.
+
+[discrete.pericope]
+==== Jephthah’s Tragic Vow
+
+@ ¶ Then ##the Spirit##note:x[<<Num 11:25; Judg 3:10; 13:25>>] of the LORD came upon Jephthah, and he passed over Gilead, and Manasseh, and passed over Mizpeh of Gilead, and from Mizpeh of Gilead he passed over __unto__ the children of Ammon.
+@ ##And Jephthah vowed a vow unto the LORD, and said, If thou shalt without fail deliver the children of Ammon into mine hands,##note:x[<<Gen 28:20; Num 30:2–16; 1 Sam 1:11>>]
+@ Then it shall be, that whatsoever cometh forth of the doors of my house to meet me, when I return in peace from the children of Ammon, ##shall surely##note:x[<<Ps 66:13–14>>] be the LORD’s, ##and I will##note:x[<<Ps 66:13>>] offer it up for a burnt offering.note:tn[__whatsoever…__: Heb. that which cometh forth, which shall come forth]note:tn[__and…__: or, or I will offer it, etc]
+
+@ ¶ So Jephthah passed over unto the children of Ammon to fight against them; and the LORD delivered them into his hands.
+@ And he smote them from Aroer, even till thou come to ##Minnith##note:x[<<Ezek 27:17>>], __even__ twenty cities, and unto the plain of the vineyards, with a very great slaughter. Thus the children of Ammon were subdued before the children of Israel.note:tn[__the plain__: or, Abel]
+
+@ ¶ And Jephthah came to ##Mizpeh##note:x[<<Judg 11:11>>] unto his house, and, behold, ##his daughter##note:x[<<Exod 15:20; Jer 31:4>>] came out to meet him with timbrels and with dances: and she __was his__ only child; beside her he had neither son nor daughter.note:tn[__beside…__: or, he had not of his own either son or daughter: Heb. of himself]
+@ And it came to pass, when he saw her, that he rent his clothes, and said, Alas, my daughter! thou hast brought me very low, and thou art one of them that trouble me: for I have opened my mouth unto the LORD, and I cannot go back.
+@ And she said unto him, My father, __if__ thou hast opened thy mouth unto the LORD, do to me according to that which hath proceeded out of thy mouth; ##forasmuch##note:x[<<Acts 21:13>>] as the LORD hath taken vengeance for thee of thine enemies, __even__ of the children of Ammon.
+@ And she said unto her father, Let this thing be done for me: let me alone two months, that I may go up and down upon the mountains, and bewail my virginity, I and my fellows.note:tn[__go up…__: Heb. go and go down]
+@ And he said, Go. And he sent her away __for__ two months: and she went with her companions, and bewailed her virginity upon the mountains.
+@ And it came to pass at the end of two months, that she returned unto her father, who did with her __according__ to his vow which he had vowed: and she knew no man. And it was a ##custom##note:tn[or, ordinance] in Israel,
+@ __That__ the daughters of Israel went ##yearly##note:tn[Heb. from year to year] to lament the daughter of Jephthah the Gileadite four days in a year.note:tn[__to lament__: or, to talk with]
+
+=== @12
+
+[discrete.pericope]
+==== Jephthah Defeats Ephraim
+
+@ And the men of Ephraim gathered themselves together, and went northward, and said unto Jephthah, ##Wherefore##note:x[<<Judg 8:1; John 10:32>>] passedst thou over to fight against the children of Ammon, and didst not call us to go with thee? ##we will burn##note:x[<<Jas 3:16>>] thine house upon thee with fire.note:tn[__gathered…__: Heb. were called]
+@ And Jephthah said unto them, I and my people were at great strife with the children of Ammon; and when I called you, ye delivered me not out of their hands.
+@ And when I saw that ye delivered __me__ not, I ##put##note:x[<<1 Sam 19:5; 28:21; Job 13:14>>] my life in my hands, and passed over against the children of Ammon, and the LORD delivered them into my hand: wherefore then are ye come up unto me this day, to fight against me?
+@ Then Jephthah gathered together all the men of Gilead, and fought with Ephraim: and the men of Gilead smote Ephraim, because they said, Ye Gileadites __are__ fugitives of Ephraim among the Ephraimites, __and__ among the Manassites.
+@ ##And the Gileadites took the passages of Jordan before the Ephraimites: and it was __so__, that when those Ephraimites which were escaped said, Let me go over; that the men of Gilead said unto him, __Art__ thou an Ephraimite? If he said, Nay;##note:x[<<Judg 3:28>>]
+@ Then said they unto him, Say now Shibboleth: and he said Sibboleth: for he could not frame to pronounce __it__ right. Then they took him, and slew him at the passages of Jordan: and there fell at that time of the Ephraimites forty and two thousand.
+@ And Jephthah judged Israel six years. Then died Jephthah the Gileadite, and was buried in __one of__ the cities of Gilead.
+
+[discrete.pericope]
+==== Ibzan, Elon, and Abdon
+
+@ ¶ And after him Ibzan of Beth-lehem judged Israel.
+@ And he had thirty sons, and thirty daughters, __whom__ he sent abroad, and took in thirty daughters from abroad for his sons. And he judged Israel seven years.
+@ Then died Ibzan, and was buried at Beth-lehem.
+
+@ ¶ And after him Elon, a Zebulonite, judged Israel; and he judged Israel ten years.
+@ And Elon the Zebulonite died, and was buried in Aijalon in the country of Zebulun.
+
+@ ¶ And after him Abdon the son of Hillel, a Pirathonite, judged Israel.
+@ And he had forty sons and thirty ##nephews##note:tn[Heb. sons’ sons], that ##rode##note:x[<<Judg 5:10>>] on threescore and ten ass colts: and he judged Israel eight years.
+@ And Abdon the son of Hillel the Pirathonite died, and was buried in Pirathon in the land of Ephraim, in the mount of the Amalekites.
+
+=== @13
+
+[discrete.pericope]
+==== The Birth of Samson
+
+[.parallel]
+(<<Numbers 6:1–21>>)
+
+@ And the children of Israel ##did##note:x[<<Judg 6:1; Rom 2:6>>] evil again in the sight of the LORD; and the LORD delivered them ##into the##note:x[<<1 Sam 12:9>>] hand of the Philistines forty years.note:tn[__did evil…__: Heb. added to commit, etc]
+
+@ ¶ And there was a certain man of ##Zorah##note:x[<<Josh 15:33; 19:41>>], of the family of the Danites, whose name __was__ Manoah; and his wife __was__ ##barren##note:x[<<Gen 25:21>>], and bare not.
+@ And ##the angel##note:x[<<Judg 6:11–12; Luke 1:11>>] of the LORD appeared unto the woman, and said unto her, Behold now, thou __art__ barren, and bearest not: ##but thou##note:x[<<Luke 1:13>>] shalt conceive, and bear a son.
+@ Now therefore beware, I pray thee, and ##drink not##note:x[<<Num 6:2–3; Judg 13:14; Luke 1:15>>] wine nor strong drink, and eat not any unclean __thing:__
+@ note:x[<<Num 6:2–3, 5; 1 Sam 1:11>>]For, lo, thou shalt conceive, and bear a son; and no razor shall come on his head: for the child shall be a Nazarite unto God from the womb: and he shall begin to deliver Israel out of the hand of the Philistines.
+
+@ ¶ Then the woman came and told her husband, saying, ##A man##note:x[<<1 Sam 9:6>>] of God came unto me, and his ##countenance __was__##note:x[<<Matt 28:3>>] like the countenance of an angel of God, very terrible: but I asked him not whence he __was__, neither told he me ##his name##note:x[<<Judg 13:17–18>>]:
+@ But he said unto me, Behold, thou shalt conceive, and bear a son; and now drink no wine nor strong drink, neither eat any unclean __thing:__ for the child shall be a Nazarite to God from the womb to the day of his death.
+
+@ ¶ Then Manoah intreated the LORD, and said, O my Lord, let the man of God which thou didst send come again unto us, and ##teach us##note:x[<<Job 34:32; Acts 9:6>>] what we shall do unto the child that shall be born.
+@ And God ##hearkened##note:x[<<Ps 65:2; Matt 7:7–11>>] to the voice of Manoah; and the angel of God came again unto the woman as she sat in the field: but Manoah her husband __was__ not with her.
+@ And the woman made haste, and ran, and shewed her husband, and said unto him, Behold, the man hath appeared unto me, that came unto me the __other__ day.
+@ And Manoah arose, and went after his wife, and came to the man, and said unto him, __Art__ thou the man that spakest unto the woman? And he said, I __am__.
+@ And Manoah said, Now let thy words come to pass. ##How shall we order the child##note:x[<<Prov 22:6; Eph 6:4>>], and __how__ shall we do unto him?note:tn[__How shall we order…__: Heb. What shall be the manner of the, etc]note:tn[__how shall we do…__: or, what shall he do?: Heb. what shall be his work?]
+@ And the angel of the LORD said unto Manoah, Of all that I said unto the woman let her beware.
+@ She may not eat of any __thing__ that cometh of the vine, neither let her drink wine or strong drink, nor eat any unclean __thing:__ ##all that I##note:x[<<Deut 12:32; John 2:5>>] commanded her let her observe.
+
+@ ¶ And Manoah said unto the angel of the LORD, I pray thee, let us detain thee, until we shall have made ready a kid ##for thee##note:tn[Heb. before thee].
+@ And the angel of the LORD said unto Manoah, Though thou detain me, I will not eat of thy bread: and if thou wilt offer a burnt offering, thou must offer it unto the LORD. For Manoah knew not that he __was__ an angel of the LORD.
+@ And Manoah said unto the angel of the LORD, What __is__ thy name, that when thy sayings come to pass we may do thee honour?
+@ And the angel of the LORD said unto him, ##Why askest##note:x[<<Gen 32:29>>] thou thus after my name, seeing it __is__ ##secret##note:tn[or, wonderful]?
+@ So Manoah ##took##note:x[<<Judg 6:19–20>>] a kid with a meat offering, and offered __it__ upon a rock unto the LORD: and __the angel__ did wondrously; and Manoah and his wife looked on.
+@ For it came to pass, ##when the flame##note:x[<<2 Kgs 2:11>>] went up toward heaven from off the altar, that the angel of the LORD ascended in the flame of the altar. And Manoah and his wife looked on __it__, and ##fell on##note:x[<<Lev 9:24; 1 Chr 21:16>>] their faces to the ground.
+@ But the angel of the LORD did no more appear to Manoah and to his wife. Then Manoah ##knew##note:x[<<Judg 6:22>>] that he __was__ an angel of the LORD.
+@ And Manoah said unto his wife, ##We shall##note:x[<<Gen 32:30; Deut 5:26>>] surely die, because ##we have##note:x[<<John 1:18>>] seen God.
+@ But ##his wife##note:x[<<1 Cor 12:21>>] said unto him, If the LORD were pleased to kill us, ##he would not##note:x[<<Ps 86:17>>] have received a burnt offering and a meat offering at our hands, neither would ##he have shewed##note:x[<<Ps 25:14>>] us all these __things__, nor would as at this time have told us __such things__ as these.
+
+@ ¶ And the woman bare a son, and called his name ##Samson##note:x[<<Heb 11:32>>]: and ##the child##note:x[<<1 Sam 3:19; Luke 1:80>>] grew, and the LORD blessed him.
+@ And ##the Spirit##note:x[<<Judg 3:10>>] of the LORD began to move him at times in ##the camp of Dan##note:x[<<Josh 15:33>>] between Zorah and Eshtaol.note:tn[__the camp…__: Heb. Mahaneh-dan]
+
+=== @14
+
+[discrete.pericope]
+==== Samson’s Marriage
+
+@ And Samson went down to ##Timnath##note:x[<<Josh 15:10; 19:43>>], and s##aw##note:x[<<1 John 2:16>>] a woman in Timnath of the daughters of the Philistines.
+@ And he came up, and told his father and his mother, and said, I have seen a woman in Timnath of the daughters of the Philistines: now therefore ##get her##note:x[<<Gen 24:2–3; 34:4>>] for me to wife.
+@ Then his father and his mother said unto him, __Is there__ never a woman among the daughters of thy brethren, or among all my people, that thou goest to take a wife of the ##uncircumcised##note:x[<<Deut 7:2–3; Judg 15:18; 1 Sam 17:36>>] Philistines? And Samson said unto his father, Get her for me; for she pleaseth me well.note:tn[__pleaseth…__: Heb. is right in mine eyes]
+@ But his father and his mother knew not that ##it __was__ of the LORD##note:x[<<Josh 11:20; Ps 115:3>>], that he sought an occasion against the Philistines: for at that time the Philistines ##had dominion##note:x[<<Judg 13:1>>] over Israel.
+
+@ ¶ Then went Samson down, and his father and his mother, to Timnath, and came to the vineyards of Timnath: and, behold, a young lion roared against him.note:tn[__against…__: Heb. in meeting him]
+@ And ##the Spirit##note:x[<<Judg 3:10; 13:25>>] of the LORD came mightily upon him, and he ##rent him##note:x[<<Zech 4:6>>] as he would have rent a kid, and __he had__ nothing in his hand: but he told not his father or his mother what he had done.
+@ And he went down, and talked with the woman; and she pleased Samson well.
+
+[discrete.pericope]
+==== Samson’s Riddle
+
+@ ¶ And after a time he returned to take her, and he turned aside to see the carcase of the lion: and, behold, __there was__ a swarm of bees and honey in the carcase of the lion.
+@ And he took thereof in his hands, and went on eating, and came to his father and mother, and he gave them, and they did eat: but he told not them that he had taken the honey out of the carcase of the lion.
+
+@ ¶ So his father went down unto the woman: and Samson made there a feast; for so used the young men to do.
+@ And it came to pass, when they saw him, that they brought thirty companions to be with him.
+
+@ ¶ And Samson said unto them, I will now put forth ##a riddle##note:x[<<1 Kgs 10:1; Ezek 17:2>>] unto you: if ye can certainly declare it me within the seven days of the feast, and find __it__ out, then I will give you thirty ##sheets##note:tn[or, shirts] and thirty ##change##note:x[<<Gen 45:22>>] of garments:
+@ But if ye cannot declare __it__ me, then shall ye give me thirty ##sheets##note:tn[or, shirts] and thirty change of garments. And they said unto him, Put forth thy riddle, that we may hear it.
+@ And he said unto them, ##Out of the eater##note:x[<<1 Kgs 17:6; Jas 1:2–4>>] came forth meat, and out of the strong came forth sweetness. And they could not in three days expound the riddle.
+@ And it came to pass on the seventh day, that they said unto Samson’s wife, ##Entice##note:x[<<Judg 16:5>>] thy husband, that he may declare unto us the riddle, ##lest we burn##note:x[<<Judg 15:6>>] thee and thy father’s house with fire: have ye called us to take that we have? __is it__ not __so__?note:tn[__take…__: Heb. possess us, or, impoverish us?]
+@ And Samson’s wife wept before him, and said, ##Thou dost##note:x[<<Judg 16:15>>] but hate me, and lovest me not: thou hast put forth a riddle unto the children of my people, and hast not told __it__ me. And he said unto her, Behold, I have not told __it__ my father nor my mother, and shall I tell __it__ thee?
+@ And she wept before him the seven days, while their feast lasted: and it came to pass on the seventh day, that he told her, because she lay sore upon him: and she told the riddle to the children of her people.note:tn[__the seven…__: or, the rest of the seven days]
+@ And the men of the city said unto him on the seventh day before the sun went down, What __is__ sweeter than honey? and what __is__ stronger than a lion? And he said unto them, If ye had not plowed with my heifer, ye had not found out my riddle.
+
+@ ¶ And ##the Spirit##note:x[<<Judg 3:10; 13:25; 1 Sam 11:6>>] of the LORD came upon him, and he went down to Ashkelon, and slew thirty men of them, and took their ##spoil##note:tn[or, apparel], and gave change of garments unto them which expounded the riddle. And his anger was kindled, and he went up to his father’s house.
+@ But Samson’s wife was ##__given__ to##note:x[<<Judg 15:2>>] his companion, whom he had used as ##his friend##note:x[<<John 3:29>>].
+
+=== @15
+
+[discrete.pericope]
+==== Samson’s Revenge
+
+@ But it came to pass within a while after, in the time of wheat harvest, that Samson visited his wife with ##a kid##note:x[<<Gen 38:17; Luke 15:29>>]; and he said, ##I will go##note:x[<<Gen 29:21>>] in to my wife into the chamber. But her father would not suffer him to go in.
+@ And her father said, ##I verily##note:x[<<Judg 14:20>>] thought that thou hadst utterly hated her; therefore ##I gave##note:x[<<Judg 14:20>>] her to thy companion: __is__ not her younger sister fairer than she? take her, I pray thee, instead of her.note:tn[__take…__: Heb. let her be thine]
+
+@ ¶ And Samson said concerning them, Now shall I be more blameless than the Philistines, though I do them a displeasure.note:tn[__more…__: or, blameless from the Philistines though, etc]
+@ And Samson went and ##caught three##note:x[<<Lam 5:18>>] hundred foxes, and took ##firebrands##note:tn[or, torches], and turned tail to tail, and put a firebrand in the midst between two tails.
+@ And when he had set the brands on fire, he let __them__ go into the standing corn of the Philistines, and burnt up both the shocks, and also the standing corn, with the vineyards __and__ olives.
+
+@ ¶ Then the Philistines said, Who hath done this? And they answered, Samson, the son in law of the Timnite, because he had taken his wife, and given her to his companion. And the Philistines came up, ##and burnt##note:x[<<Judg 14:15; Prov 22:8; 1 Thess 4:6>>] her and her father with fire.
+
+@ ¶ And Samson said unto them, ##Though##note:x[<<Rom 12:19>>] ye have done this, yet will I be avenged of you, and after that I will cease.
+@ ##And he smote them hip and thigh with a great slaughter: and he went down and dwelt in the top of the rock Etam.##note:x[<<Isa 25:10>>]
+
+@ ¶ Then the Philistines went up, and pitched in Judah, and spread themselves in ##Lehi##note:x[<<Judg 15:17, 19>>].
+@ And the men of Judah said, Why are ye come up against us? And they answered, To bind Samson are we come up, to do to him as he hath done to us.
+@ Then three thousand men of Judah ##went##note:tn[Heb. went down] to the top of the rock Etam, and said to Samson, Knowest thou not that the ##Philistines##note:x[<<Judg 13:1; 14:4>>] __are__ rulers over us? what __is__ this __that__ thou hast done unto us? And he said unto them, As they did unto me, so have I done unto them.
+@ And they said unto him, We are come down to bind thee, that we may deliver thee into the hand of the Philistines. And Samson said unto them, Swear unto me, that ye will not fall upon me yourselves.
+@ And they spake unto him, saying, No; but we will bind thee fast, and deliver thee into their hand: but surely we will not kill thee. And they bound him with two new cords, and brought him up from the rock.
+
+@ ¶ __And__ when he came unto Lehi, the Philistines shouted against him: and ##the Spirit##note:x[<<Judg 3:10; 14:6, 19>>] of the LORD came mightily upon him, and the cords that __were__ upon his arms became as flax that was burnt with fire, and his bands ##loosed##note:tn[Heb. were melted] from off his hands.
+@ And he found a ##new##note:tn[Heb. moist] jawbone of an ass, and put forth his hand, and took it, and ##slew##note:x[<<Lev 26:8; Josh 23:10; Judg 3:31>>] a thousand men therewith.
+@ And Samson said, With the jawbone of an ass, heaps upon heaps, with the jaw of an ass have I slain a thousand men.note:tn[__heaps upon…__: Heb. an heap, two heaps]
+@ And it came to pass, when he had made an end of speaking, that he cast away the jawbone out of his hand, and called that place ##Ramath-lehi##note:tn[that is, the lifting up of the jawbone, or, casting away of the jawbone].
+
+@ ¶ And he was sore athirst, and called on the LORD, and said, ##Thou hast given##note:x[<<Ps 3:7–8>>] this great deliverance into the hand of thy servant: and now shall I die for thirst, and fall into the hand of the uncircumcised?
+@ But God clave an hollow place that __was__ in the jaw, and ##there came##note:x[<<Isa 44:3>>] water thereout; and when he had drunk, ##his spirit##note:x[<<Gen 45:27>>] came again, and he revived: wherefore he called the name thereof note:x[<<Ps 34:6>>]##En-hakkore##note:tn[that is, the well of him that called or, cried], which __is__ in Lehi unto this day.note:tn[__the jaw__: or, Lehi, as called in this chapter]
+@ ##And he judged Israel in the days of the Philistines twenty years.##note:x[<<Judg 13:1; 16:31>>]
+
+=== @16
+
+[discrete.pericope]
+==== Samson Escapes Gaza
+
+@ Then went Samson to ##Gaza##note:x[<<Josh 15:47>>], and saw there an ##harlot##note:tn[Heb. a woman an harlot], and went in unto her.
+@ __And it was told__ the Gazites, saying, Samson is come hither. And they ##compassed##note:x[<<1 Sam 23:26; Ps 118:10–12; Acts 9:24>>] __him__ in, and laid wait for him all night in the gate of the city, and were ##quiet##note:tn[Heb. silence] all the night, saying, In the morning, when it is day, we shall kill him.
+@ And Samson lay till midnight, and arose at midnight, and took the doors of the gate of the city, and the two posts, and went away with them, bar and all, and put __them__ upon his shoulders, and carried them up to the top of an hill that __is__ before Hebron.note:tn[__bar…__: Heb. with the bar]
+
+[discrete.pericope]
+==== Samson and Delilah
+
+@ ¶ And it came to pass afterward, that ##he loved##note:x[<<Prov 22:14>>] a woman in the valley of Sorek, whose name __was__ Delilah.note:tn[__in…__: or, by the brook]
+@ And ##the lords##note:x[<<Josh 13:3>>] of the Philistines came up unto her, and said unto her, ##Entice##note:x[<<Judg 14:15>>] him, and see wherein his great strength __lieth__, and by what __means__ we may prevail against him, that we may bind him to ##afflict##note:tn[or, humble] him: and ##we will##note:x[<<1 Tim 6:9–10>>] give thee every one of us eleven hundred __pieces__ of silver.
+
+@ ¶ And Delilah said to Samson, Tell me, I pray thee, wherein thy great strength __lieth__, and wherewith thou mightest be bound to afflict thee.
+@ And Samson said unto her, If they bind me with seven green withs that were never dried, then shall I be weak, and be as ##another##note:tn[Heb. one] man.note:tn[__green…__: or, new cords: Heb. moist]
+@ Then the lords of the Philistines brought up to her seven green withs which had not been dried, and she bound him with them.note:tn[__green…__: or, new cords: Heb. moist]
+@ Now __there were__ men lying in wait, abiding with her in the chamber. And she said unto him, The Philistines __be__ upon thee, Samson. And he brake the withs, as a thread of tow is broken when it ##toucheth##note:tn[Heb. smelleth] the fire. So his strength was not known.
+@ And Delilah said unto Samson, Behold, thou hast mocked me, and told me lies: now tell me, I pray thee, wherewith thou mightest be bound.
+@ And he said unto her, If they bind me fast with new ropes that never were occupied, then shall I be weak, and be as another man.note:tn[__that never…__: Heb. wherewith work hath not been done]
+@ Delilah therefore took new ropes, and bound him therewith, and said unto him, The Philistines __be__ upon thee, Samson. And __there were__ liers in wait abiding in the chamber. And he brake them from off his arms like a thread.
+@ And Delilah said unto Samson, Hitherto thou hast mocked me, and told me lies: tell me wherewith thou mightest be bound. And he said unto her, If thou weavest the seven locks of my head with the web.
+@ And she fastened __it__ with the pin, and said unto him, The Philistines __be__ upon thee, Samson. And he awaked out of his sleep, and went away with the pin of the beam, and with the web.
+
+[discrete.pericope]
+==== Delilah Learns the Secret
+
+@ ¶ And she said unto him, ##How canst##note:x[<<Judg 14:16>>] thou say, I love thee, ##when thine##note:x[<<Prov 23:26; John 15:10>>] heart __is__ not with me? thou hast mocked me these three times, and hast not told me wherein thy great strength __lieth__.
+@ And it came to pass, when ##she pressed##note:x[<<Prov 7:21–23; Luke 18:5>>] him daily with her words, and urged him, __so__ that his soul was ##vexed##note:tn[Heb. shortened] unto death;
+@ That he told her ##all his heart##note:x[<<Prov 12:23; Mic 7:5>>], and said unto her, ##There hath##note:x[<<Judg 13:5>>] not come a razor upon mine head; for I __have been__ a Nazarite unto God from my mother’s womb: if I be shaven, then my strength will go from me, and I shall become weak, and be like any __other__ man.
+
+@ And when Delilah saw that he had told her all his heart, she sent and called for the lords of the Philistines, saying, Come up this once, for he hath shewed me all his heart. Then the lords of the Philistines came up unto her, and ##brought money##note:x[<<Matt 26:15; 1 Tim 6:10>>] in their hand.
+@ And ##she made##note:x[<<Prov 7:26–27>>] him sleep upon her knees; and she called for a man, and she caused him to shave off the seven locks of his head; and she began to afflict him, and his strength went from him.
+@ And she said, The Philistines __be__ upon thee, Samson. And he awoke out of his sleep, and said, I will go out as at other times before, and shake myself. And he wist not that ##the LORD##note:x[<<Num 14:42–43; Josh 7:12; 1 Sam 16:14>>] was departed from him.
+
+@ ¶ But the Philistines took him, ##and put out##note:x[<<Prov 2:19; 14:14>>] his eyes, and brought him down to Gaza, and bound him with fetters of brass; and he did ##grind##note:x[<<Exod 11:5>>] in the prison house.note:tn[__put out__: Heb. bored out]
+
+@ Howbeit ##the hair##note:x[<<Lev 26:44; Ps 106:44–45; 107:13–14>>] of his head began to grow again after he was shaven.note:tn[__after…__: or, as when he was shaven]
+
+[discrete.pericope]
+==== Samson’s Vengeance and Death
+
+@ Then the lords of the Philistines gathered them together for to offer a great sacrifice unto Dagon their god, and ##to rejoice##note:x[<<Prov 24:17>>]: for they said, Our god hath delivered Samson our enemy into our hand.
+@ And when the people saw him, they ##praised##note:x[<<Dan 5:4>>] their god: for they said, Our god hath delivered into our hands our enemy, and the destroyer of our country, which slew many of us.note:tn[__which…__: Heb. and who multiplied our slain]
+@ And it came to pass, when their hearts were merry, that they said, Call for Samson, that he may make us sport. And they called for Samson out of the prison house; and he made ##them##note:tn[Heb. before them] sport: and they set him between the pillars.
+@ And Samson said unto the lad that held him by the hand, Suffer me that I may feel the pillars whereupon the house standeth, that I may lean upon them.
+@ Now the house was full of men and women; and all the lords of the Philistines __were__ there; and __there were__ upon ##the roof##note:x[<<Deut 22:8>>] about three thousand men and women, that beheld while Samson made sport.
+@ And Samson ##called##note:x[<<Ps 50:15; Lam 3:31–32>>] unto the LORD, and said, O Lord GOD, ##remember me##note:x[<<Jer 15:15>>], I pray thee, and strengthen me, I pray thee, only this once, O God, that I may be at once avenged of the Philistines for my two eyes.
+@ And Samson took hold of the two middle pillars upon which the house stood, and on which it was borne up, of the one with his right hand, and of the other with his left.note:tn[__on which…__: or, he leaned on them]
+@ And Samson said, Let ##me##note:tn[Heb. my soul] ##die##note:x[<<Matt 16:25>>] with the Philistines. And he bowed himself with __all his__ might; and the house fell upon the lords, and upon all the people that __were__ therein. ##So the dead##note:x[<<Phil 2:8>>] which he slew at his death were more than __they__ which he slew in his life.
+@ Then his brethren and all the house of his father came down, and took him, and brought __him__ up, and buried him between Zorah and Eshtaol in the buryingplace of Manoah his father. ##And he judged##note:x[<<Judg 15:20>>] Israel twenty years.
+
+=== @17
+
+[discrete.pericope]
+==== Micah’s Idolatry
+
+@ And there was a man of mount Ephraim, whose name __was__ Micah.
+@ And he said unto his mother, The eleven hundred __shekels__ of silver that were taken from thee, about which thou ##cursedst##note:x[<<Neh 13:25>>], and spakest of also in mine ears, behold, the silver __is__ with me; I took it. And his mother said, ##Blessed##note:x[<<Ruth 3:10; Neh 13:25>>] __be thou__ of the LORD, my son.
+@ And when he had restored the eleven hundred __shekels__ of silver to his mother, his mother said, I had wholly dedicated the silver unto the LORD from my hand for my son, to make ##a graven image##note:x[<<Exod 20:4, 23; Lev 19:4>>] and a molten image: now therefore I will restore it unto thee.
+@ Yet he restored the money unto his mother; and his mother took two hundred __shekels__ of silver, and gave them to the founder, who made thereof a graven image and a molten image: and they were in the house of Micah.
+@ And the man Micah had ##an house of gods##note:x[<<Gen 31:30>>], and made an ##ephod##note:x[<<Judg 8:27; 18:14>>], and teraphim, and ##consecrated##note:tn[Heb. filled the hand] one of his sons, who became his priest.
+@ In those days __there was__ no king in Israel, __but__ every man did __that which was__ ##right##note:x[<<Deut 12:8; Prov 12:15; 14:12>>] in his own eyes.
+
+@ ¶ And there was a young man out of ##Beth-lehem-judah##note:x[<<Ruth 1:1–2; Mic 5:2; Matt 2:1>>] of the family of Judah, who __was__ a Levite, and he sojourned there.
+@ And the man departed out of the city from Beth-lehem-judah to sojourn where he could find __a place:__ and he came to mount Ephraim to the house of Micah, as he journeyed.note:tn[__as he…__: Heb. in making his way]
+@ And Micah said unto him, Whence comest thou? And he said unto him, I __am__ a Levite of Beth-lehem-judah, and I go to sojourn where I may find __a place__.
+@ And Micah said unto him, Dwell with me, and be unto me a father and a priest, and ##I will give##note:x[<<1 Pet 5:2>>] thee ten __shekels__ of silver by the year, and a suit of apparel, and thy victuals. So the Levite went in.note:tn[__a suit…__: or, a double suit, etc: Heb. an order of garments]
+@ And the Levite was content to dwell with the man; and the young man was unto him as one of his sons.
+@ And Micah consecrated the Levite; and the young man became his priest, and was in the house of Micah.
+@ ##Then said Micah, Now know I that the LORD will do me good, seeing I have a Levite to __my__ priest.##note:x[<<Matt 15:13; John 16:2; Acts 26:9>>]
+
+=== @18
+
+[discrete.pericope]
+==== The Danites Settle in Laish
+
+@ In those days __there was__ ##no king##note:x[<<Judg 17:6; 19:1>>] in Israel: and in those days the tribe of the Danites sought them an inheritance to dwell in; ##for unto##note:x[<<Judg 1:34>>] that day __all their__ inheritance had not fallen unto them among the tribes of Israel.
+@ And the children of Dan sent of their family five men from their coasts, ##men of##note:tn[Heb. sons of] valour, from ##Zorah##note:x[<<Judg 13:25>>], and from Eshtaol, ##to spy##note:x[<<Josh 2:1>>] out the land, and to search it; and they said unto them, Go, search the land: who when they came to mount Ephraim, to the house of Micah, they lodged there.
+@ When they __were__ by the house of Micah, they knew the voice of the young man the Levite: and they turned in thither, and said unto him, Who brought thee hither? and what makest thou in this __place__? and what hast thou here?
+@ And he said unto them, Thus and thus dealeth Micah with me, and hath hired me, and I am his priest.
+@ And they said unto him, ##Ask counsel##note:x[<<1 Kgs 22:5; Isa 30:1; Acts 8:10>>], we pray thee, of God, that we may know whether our way which we go shall be prosperous.
+@ And the priest said unto them, Go in peace: before the LORD __is__ your way wherein ye go.
+
+@ ¶ Then the five men departed, and came to note:x[<<Josh 19:47>>]##Laish##note:tn[also called, Leshem], and saw the people that __were__ therein, how they dwelt careless, after the manner of the Zidonians, quiet and secure; and __there was__ no ##magistrate##note:tn[Heb. possessor, or, heir of restraints] in the land, that might put __them__ to shame in __any__ thing; and they __were__ far from the Zidonians, and had no business with __any__ man.
+@ And they came unto their brethren to Zorah and Eshtaol: and their brethren said unto them, What __say__ ye?
+@ And they said, ##Arise##note:x[<<Num 13:30; Josh 2:23–24>>], that we may go up against them: for we have seen the land, and, behold, it __is__ very good: and __are__ ye still? be not slothful to go, __and__ to enter to possess the land.
+@ When ye go, ye shall come unto a people ##secure##note:x[<<Judg 18:27>>], and to a large land: for God hath given it into your hands; a place where __there is__ no want of any thing that __is__ in the earth.
+
+@ ¶ And there went from thence of the family of the Danites, out of Zorah and out of Eshtaol, six hundred men ##appointed##note:tn[Heb. girded] with weapons of war.
+@ And they went up, and pitched in Kirjath-jearim, in Judah: wherefore they called that place ##Mahaneh-dan##note:x[<<Judg 13:25>>] unto this day: behold, __it is__ behind Kirjath-jearim.
+@ And they passed thence unto mount Ephraim, and came unto the house of Micah.
+
+[discrete.pericope]
+==== The Danites Take Micah’s Idols
+
+@ ¶ Then answered the five men that went to spy out the country of Laish, and said unto their brethren, Do ye know that there is ##in these##note:x[<<Judg 17:5>>] houses an ephod, and teraphim, and a graven image, and a molten image? now therefore consider what ye have to do.
+@ And they turned thitherward, and came to the house of the young man the Levite, __even__ unto the house of Micah, and saluted him.note:tn[__saluted…__: Heb. asked him of peace]
+@ And the six hundred men appointed with their weapons of war, which __were__ of the children of Dan, stood by the entering of the gate.
+@ And the ##five men##note:x[<<Judg 18:14>>] that went to spy out the land went up, __and__ came in thither, __and__ took the graven image, and the ephod, and the teraphim, and the molten image: and the priest stood in the entering of the gate with the six hundred men __that were__ appointed with weapons of war.
+@ And these went into Micah’s house, and fetched the carved image, the ephod, and the teraphim, and the molten image. Then said the priest unto them, What do ye?
+@ And they said unto him, Hold thy peace, ##lay thine##note:x[<<Job 21:5; 29:9>>] hand upon thy mouth, and go with us, and be to us ##a father##note:x[<<Judg 17:10>>] and a priest: __is it__ better for thee to be a priest unto the house of one man, or that thou be a priest unto a tribe and a family in Israel?
+@ And the priest’s heart was glad, and he took the ephod, and the teraphim, and the graven image, and went in the midst of the people.
+@ So they turned and departed, and put the little ones and the cattle and the carriage before them.
+
+@ ¶ __And__ when they were a good way from the house of Micah, the men that __were__ in the houses near to Micah’s house were gathered together, and overtook the children of Dan.
+@ And they cried unto the children of Dan. And they turned their faces, and said unto Micah, What aileth thee, that thou comest with such a company?note:tn[__comest…__: Heb. art gathered together?]
+@ And he said, Ye have taken away my gods which I made, and the priest, and ye are gone away: and ##what have##note:x[<<Hab 2:18–19>>] I more? and what __is__ this __that__ ye say unto me, What aileth thee?
+@ And the children of Dan said unto him, Let not thy voice be heard among us, lest ##angry##note:tn[Heb. bitter of soul] fellows run upon thee, and thou lose thy life, with the lives of thy household.
+@ And the children of Dan went their way: and when Micah saw that they __were__ too strong for him, he turned and went back unto his house.
+
+@ And they took __the things__ which Micah had made, and the priest which he had, and came unto ##Laish##note:x[<<Judg 18:7, 10>>], unto a people __that were__ at quiet and secure: and ##they smote##note:x[<<Josh 19:47>>] them with the edge of the sword, and burnt the city with fire.
+@ And __there was__ no deliverer, because it __was__ ##far from##note:x[<<Judg 18:7>>] Zidon, and they had no business with __any__ man; and it was in the valley that __lieth__ by note:x[<<Num 13:21>>]Beth-##rehob##note:x[<<2 Sam 10:6>>]. And they built a city, and dwelt therein.
+@ And they called the name of the city ##Dan##note:x[<<Gen 14:14; Josh 19:47; 1 Kgs 15:20>>], after the name of Dan their father, who was born unto Israel: howbeit the name of the city __was__ Laish at the first.
+
+@ ¶ And the children of Dan set up the graven image: and Jonathan, the son of Gershom, the son of Manasseh, he and his sons were priests to the tribe of Dan ##until##note:x[<<1 Sam 4:10–11>>] the day of the captivity of the land.
+@ And they set them up Micah’s graven image, which he made, ##all the time##note:x[<<Josh 18:1>>] that the house of God was in Shiloh.
+
+=== @19
+
+[discrete.pericope]
+==== The Crime of the Benjamites
+
+[.parallel]
+(<<Genesis 19:1–11>>)
+
+@ And it came to pass in those days, ##when __there__##note:x[<<Judg 18:1; 21:25>>] __was__ no king in Israel, that there was a certain Levite sojourning on the side of ##mount##note:x[<<Judg 17:8>>] Ephraim, who took to him a concubine out of Beth-lehem-judah.note:tn[__a concubine__: Heb. a woman a concubine, or, a wife a concubine]
+@ And his concubine ##played##note:x[<<Ezek 16:28>>] the whore against him, and went away from him unto her father’s house to Beth-lehem-judah, and was there four whole months.note:tn[__four whole months__: or, a year and four month: Heb. days, four months]
+@ And her husband arose, and went after her, to speak friendly unto her, __and__ to bring her again, having his servant with him, and a couple of asses: and she brought him into her father’s house: and when the father of the damsel saw him, he rejoiced to meet him.note:tn[__friendly…__: Heb. to her heart]
+@ And his father in law, the damsel’s father, retained him; and he abode with him three days: so they did eat and drink, and lodged there.
+
+@ ¶ And it came to pass on the fourth day, when they arose early in the morning, that he rose up to depart: and the damsel’s father said unto his son in law, note:x[<<Gen 18:5; Judg 19:8>>]##Comfort##note:tn[Heb. Strengthen] thine heart with a morsel of bread, and afterward go your way.
+@ And they sat down, and did eat and drink both of them together: for the damsel’s father had said unto the man, Be content, I pray thee, and tarry all night, and ##let thine heart##note:x[<<Judg 16:25; 19:9; Ruth 3:7>>] be merry.
+@ And when the man rose up to depart, his father in law urged him: therefore he lodged there again.
+@ And he arose early in the morning on the fifth day to depart: and the damsel’s father said, Comfort thine heart, I pray thee. And they tarried until afternoon, and they did eat both of them.note:tn[__until afternoon__: Heb. till the day declined]
+@ And when the man rose up to depart, he, and his concubine, and his servant, his father in law, the damsel’s father, said unto him, Behold, now the day ##draweth##note:tn[Heb. is weak] toward evening, I pray you tarry all night: behold, the day groweth to an end, lodge here, that thine heart may be merry; and to morrow get you early on your way, that thou mayest go ##home##note:tn[Heb. to thy tent].note:tn[__the day groweth to an end__: Heb. it is the pitching time of the day]
+@ But the man would not tarry that night, but he rose up and departed, and came over against ##Jebus##note:x[<<Josh 15:8, 63>>], which __is__ Jerusalem; and __there were__ with him two asses saddled, his concubine also __was__ with him.note:tn[__over against__: Heb. to over against]
+@ __And__ when they __were__ by Jebus, the day was far spent; and the servant said unto his master, Come, I pray thee, and let us turn in into this city of the Jebusites, and lodge in it.
+@ And his master said unto him, We will not turn aside hither into the city of a stranger, that __is__ not of the children of Israel; we will pass over to Gibeah.
+@ And he said unto his servant, Come, and let us draw near to one of these places to lodge all night, in Gibeah, or in Ramah.
+@ And they passed on and went their way; and the sun went down upon them __when they were__ by Gibeah, which __belongeth__ to Benjamin.
+@ And they turned aside thither, to go in __and__ to lodge in Gibeah: and when he went in, he sat him down in a street of the city: for __there was__ no man that took them into his house to lodging.
+
+@ ¶ And, behold, there came an old man from his work out of the field at even, which __was__ also of mount Ephraim; and he sojourned in Gibeah: but the men of the place __were__ Benjamites.
+@ And when he had lifted up his eyes, he saw a wayfaring man in the street of the city: and the old man said, ##Whither##note:x[<<Gen 16:8>>] goest thou? and whence comest thou?
+@ And he said unto him, We __are__ passing from Beth-lehem-judah toward the side of mount Ephraim; from thence __am__ I: and I went to Beth-lehem-judah, but I __am now__ going to ##the house##note:x[<<Judg 18:31>>] of the LORD; and there __is__ no man that ##receiveth##note:tn[Heb. gathereth] me to house.
+@ Yet there is both straw and provender for our asses; and there is bread and wine also for me, and for thy handmaid, and for the young man __which is__ with thy servants: __there is__ no want of any thing.
+@ And the old man said, Peace __be__ with thee; howsoever __let__ all thy wants __lie__ upon me; only lodge not in the street.
+@ So he brought him into his house, and gave provender unto the asses: and ##they washed##note:x[<<Luke 7:44>>] their feet, and did eat and drink.
+
+@ ¶ __Now__ as they were making their hearts merry, behold, ##the men##note:x[<<Gen 19:4; Judg 20:5>>] of the city, certain sons of Belial, beset the house round about, __and__ beat at the door, and spake to the master of the house, the old man, saying, ##Bring forth##note:x[<<1 Cor 6:9>>] the man that came into thine house, that we may know him.
+@ And the man, the master of the house, went out unto them, and said unto them, Nay, my brethren, __nay__, I pray you, do not __so__ wickedly; seeing that this man is come into mine house, ##do not this folly##note:x[<<Gen 34:7; Judg 20:6; 2 Sam 13:12>>].
+@ Behold, __here is__ my daughter a maiden, and his concubine; ##them##note:x[<<Gen 19:8>>] I will bring out now, and ##humble ye##note:x[<<Deut 21:14>>] them, and do with them what seemeth good unto you: but unto this man do not so vile a thing.note:tn[__so vile…__: Heb. the matter of this folly]
+@ But the men would not hearken to him: so the man took his concubine, and brought her forth unto them; and they knew her, and abused her all the night until the morning: and when the day began to spring, they let her go.
+@ Then came the woman in the dawning of the day, and fell down at the door of the man’s house where her lord __was__, till it was light.
+@ And her lord rose up in the morning, and opened the doors of the house, and went out to go his way: and, behold, the woman his concubine was fallen down __at__ the door of the house, and her hands __were__ upon the threshold.
+@ And he said unto her, Up, and let us be going. ##But none##note:x[<<Judg 20:5>>] answered. Then the man took her __up__ upon an ass, and the man rose up, and gat him unto his place.
+
+@ ¶ And when he was come into his house, he took a knife, and laid hold on his concubine, and ##divided her##note:x[<<Judg 20:6–7>>], __together__ with her bones, into twelve pieces, and sent her into all the coasts of Israel.
+@ And it was so, that all that saw it said, There was no such deed done nor seen from the day that the children of Israel came up out of the land of Egypt unto this day: ##consider##note:x[<<Judg 20:7; Prov 13:10>>] of it, take advice, and speak __your minds__.
+
+=== @20
+
+[discrete.pericope]
+==== The Decree of the Assembly
+
+@ ##Then all##note:x[<<Judg 21:5>>] the children of Israel went out, and the congregation was gathered together as one man, from Dan even to Beer-sheba, with the land of Gilead, ##unto the##note:x[<<Judg 11:11>>] LORD ##in Mizpeh##note:x[<<Judg 11:11>>].
+@ And the chief of all the people, __even__ of all the tribes of Israel, presented themselves in the assembly of the people of God, four hundred thousand footmen that ##drew sword##note:x[<<Judg 8:10>>].
+@ (Now the children of Benjamin heard that the children of Israel were gone up to Mizpeh.) Then said the children of Israel, Tell __us__, how was this wickedness?
+@ And the Levite, the husband of the woman that was slain, answered and said, I came into Gibeah that __belongeth__ to Benjamin, I and my concubine, to lodge.note:tn[__the Levite__: Heb. the man the Levite]
+@ ##And the men##note:x[<<Judg 19:22>>] of Gibeah rose against me, and beset the house round about upon me by night, __and__ thought to have slain me: ##and my concubine##note:x[<<Judg 19:25–26>>] have they ##forced##note:tn[Heb. humbled], that she is dead.
+@ And I took my concubine, and ##cut her##note:x[<<Judg 19:29>>] in pieces, and sent her throughout all the country of the inheritance of Israel: for they have committed lewdness and ##folly in Israel##note:x[<<Josh 7:15; Judg 19:23>>].
+@ Behold, ye __are__ all children of Israel; ##give here##note:x[<<Judg 19:30>>] your advice and counsel.
+
+@ ¶ And all the people arose as one man, saying, ##We will not##note:x[<<Eccl 9:10>>] any __of us__ go to his tent, neither will we any __of us__ turn into his house.
+@ But now this __shall be__ the thing which we will do to Gibeah; __we will go up__ by lot against it;
+@ And we will take ten men of an hundred throughout all the tribes of Israel, and an hundred of a thousand, and a thousand out of ten thousand, to fetch victual for the people, that they may do, when they come to Gibeah of Benjamin, according to all the folly that they have wrought in Israel.
+@ So all the men of Israel were gathered against the city, knit together as one man.note:tn[__knit…__: Heb. fellows]
+
+@ ¶ And the tribes of Israel sent men through all the tribe of Benjamin, saying, What wickedness __is__ this that is done among you?
+@ Now therefore deliver __us__ the men, the ##children of Belial##note:x[<<Deut 13:13; Judg 19:22>>], which __are__ in Gibeah, that we may put them to death, and ##put away##note:x[<<Deut 17:12>>] evil from Israel. But the children of Benjamin would not hearken to the voice of their brethren the children of Israel:
+@ But the children of Benjamin gathered themselves together out of the cities unto Gibeah, to go out to battle against the children of Israel.
+@ And the children of Benjamin were numbered at that time out of the cities ##twenty##note:x[<<Num 26:41>>] and six thousand men that drew sword, beside the inhabitants of Gibeah, which were numbered seven hundred chosen men.
+@ note:x[<<Judg 3:15; 1 Chr 12:2>>]Among all this people __there were__ seven hundred chosen men lefthanded; every one could sling stones at an hair __breadth__, and not miss.
+@ And the men of Israel, beside Benjamin, were numbered four hundred thousand men that drew sword: all these __were__ men of war.
+
+[discrete.pericope]
+==== Civil War against Benjamin
+
+@ ¶ And the children of Israel arose, and went up to the house of God, and ##asked##note:x[<<Num 27:21; Judg 20:23, 26–27>>] counsel of God, and said, Which of us shall go up first to the battle against the children of Benjamin? And the LORD said, Judah __shall go up__ first.
+@ And the children of Israel rose up in the morning, and encamped against Gibeah.
+@ And the men of Israel went out to battle against Benjamin; and the men of Israel put themselves in array to fight against them at Gibeah.
+@ And the children of Benjamin came forth out of Gibeah, and destroyed down to the ground of the Israelites that day twenty and two thousand men.
+@ And the people the men of Israel encouraged themselves, and set their battle again in array in the place where they put themselves in array the first day.
+@ (And the children of Israel went up and ##wept##note:x[<<Judg 20:26–27>>] before the LORD until even, and asked counsel of the LORD, saying, Shall I go up again to battle against the children of Benjamin my brother? And the LORD said, Go up against him.)
+@ And the children of Israel came near against the children of Benjamin the second day.
+@ And Benjamin went forth against them out of Gibeah the second day, and ##destroyed##note:x[<<Judg 20:21>>] down to the ground of the children of Israel again eighteen thousand men; all these drew the sword.
+
+@ ¶ Then ##all the children##note:x[<<Judg 20:18, 23>>] of Israel, and all the people, went up, and came unto the house of God, and ##wept##note:x[<<Joel 2:12–18>>], and sat there before the LORD, and fasted that day until even, and offered burnt offerings and peace offerings before the LORD.
+@ And the children of Israel enquired of the LORD, (for ##the ark##note:x[<<Josh 18:1; 1 Sam 4:3–4>>] of the covenant of God __was__ there in those days,
+@ And ##Phinehas##note:x[<<Josh 24:33>>], the son of Eleazar, the son of Aaron, ##stood##note:x[<<Deut 18:5>>] before it in those days,) saying, Shall I yet again go out to battle against the children of Benjamin my brother, or shall I cease? And the LORD said, ##Go up##note:x[<<Judg 7:9>>]; for to morrow I will deliver them into thine hand.
+@ And Israel set ##liers##note:x[<<Josh 8:4>>] in wait round about Gibeah.
+@ And the children of Israel went up against the children of Benjamin on the third day, and put themselves in array against Gibeah, as at other times.
+@ And the children of Benjamin went out against the people, __and__ were drawn away from the city; and they began to smite of the people, __and__ kill, as at other times, in the highways, of which one goeth up to the house of God, and the other to Gibeah in the field, about thirty men of Israel.note:tn[__to smite…__: Heb. to smite of the people wounded as at, etc]note:tn[__the house…__: or, Beth-el]
+@ And the children of Benjamin said, They __are__ smitten down before us, as at the first. But the children of Israel said, Let us flee, and draw them from the city unto the highways.
+@ And all the men of Israel rose up out of their place, and put themselves in array at Baal-tamar: and the liers in wait of Israel came forth out of their places, __even__ out of the meadows of Gibeah.
+@ And there came against Gibeah ten thousand chosen men out of all Israel, and the battle was sore: but they ##knew not##note:x[<<Josh 8:14; Isa 47:11>>] that evil __was__ near them.
+@ And the LORD smote Benjamin before Israel: and the children of Israel destroyed of the Benjamites that day twenty and five thousand and an hundred men: all these drew the sword.
+@ So the children of Benjamin saw that they were smitten: for the men of Israel gave place to the Benjamites, because they trusted unto the liers in wait which they had set beside Gibeah.
+@ And ##the liers in wait hasted##note:x[<<Josh 8:19>>], and rushed upon Gibeah; and the liers in wait drew __themselves__ along, and smote all the city with the edge of the sword.note:tn[__drew…__: or, made a long sound with the trumpet]
+@ Now there was an appointed ##sign##note:tn[or, time] between the men of Israel ##and##note:tn[Heb. with] the liers in wait, that they should make a great ##flame##note:tn[Heb. elevation] with smoke rise up out of the city.
+@ And when the men of Israel retired in the battle, Benjamin began to smite __and__ kill of the men of Israel about thirty persons: for they said, Surely they are smitten down before us, as __in__ the first battle.note:tn[__to smite…__: Heb. to smite the wounded]
+@ But when the flame began to arise up out of the city with a pillar of smoke, the Benjamites ##looked##note:x[<<Josh 8:20>>] behind them, and, behold, the flame of the city ascended up to heaven.note:tn[__the flame of__: Heb. the whole consumption of]
+@ And when the men of Israel turned again, the men of Benjamin were amazed: for they saw that evil was come upon them.note:tn[__was come…__: Heb. touched them]
+@ Therefore they turned __their backs__ before the men of Israel unto the way of the wilderness; but the battle overtook them; and them which __came__ out of the cities they destroyed in the midst of them.
+@ __Thus__ they inclosed the Benjamites round about, __and__ chased them, __and__ trode them down with ease over against Gibeah toward the sunrising.note:tn[__with ease…__: or, from Menuchah, etc]note:tn[__over…__: Heb. unto over against]
+@ And there fell of Benjamin eighteen thousand men; all these __were__ men of valour.
+@ And they turned and fled toward the wilderness unto the rock of ##Rimmon##note:x[<<Josh 15:32>>]: and they gleaned of them in the highways five thousand men; and pursued hard after them unto Gidom, and slew two thousand men of them.
+@ So that all which fell that day of Benjamin were twenty and five thousand men that drew the sword; all these __were__ men of valour.
+@ But six hundred men turned and fled to the wilderness unto the rock Rimmon, and abode in the rock Rimmon four months.
+@ And the men of Israel turned again upon the children of Benjamin, and smote them with the edge of the sword, as well the men of __every__ city, as the beast, and all that came to hand: also they set on fire all the cities that they came to.note:tn[__came to hand__: Heb. was found]note:tn[__they came…__: Heb. were found]
+
+=== @21
+
+[discrete.pericope]
+==== Wives for the Benjamites
+
+@ Now the men of Israel ##had sworn##note:x[<<Judg 20:1>>] in Mizpeh, saying, ##There##note:x[<<Acts 23:12>>] shall not any of us give his daughter unto Benjamin to wife.
+@ And the people came to ##the house##note:x[<<Judg 20:26>>] of God, and abode there till even before God, and lifted up their voices, and wept sore;
+@ And said, O LORD God of Israel, why is this come to pass in Israel, that there should be to day one tribe lacking in Israel?
+@ And it came to pass on the morrow, that the people rose early, and ##built there##note:x[<<2 Sam 24:25>>] an altar, and offered burnt offerings and peace offerings.
+@ And the children of Israel said, Who __is there__ among all the tribes of Israel that came not up with the congregation unto the LORD? For they had made ##a great oath##note:x[<<Judg 5:23>>] concerning him that came not up to the LORD to Mizpeh, saying, He shall surely be put to death.
+@ And the children of Israel repented them for Benjamin their brother, and said, There is one tribe cut off from Israel this day.
+@ How shall we do for wives for them that remain, seeing we have ##sworn##note:x[<<Judg 21:1>>] by the LORD that we will not give them of our daughters to wives?
+
+@ ¶ And they said, What one __is there__ of the tribes of Israel that came not up to Mizpeh to the LORD? And, behold, there came none to the camp from Jabesh-gilead to the assembly.
+@ For the people were numbered, and, behold, __there were__ none of the inhabitants of Jabesh-gilead there.
+@ And the congregation sent thither twelve thousand men of the valiantest, and commanded them, saying, Go and smite the inhabitants of Jabesh-gilead with the edge of the sword, with the women and the children.
+@ And this __is__ the thing that ye shall do, Ye shall utterly destroy every male, and every woman that hath lain by man.note:tn[__hath lain…__: Heb. knoweth the lying with man]
+@ And they found among the inhabitants of Jabesh-gilead four hundred young virgins, that had known no man by lying with any male: and they brought them unto the camp to ##Shiloh##note:x[<<Josh 18:1>>], which __is__ in the land of Canaan.note:tn[__young…__: Heb. young women virgins]
+@ And the whole congregation sent __some__ to speak to the children of Benjamin that __were__ in ##the rock Rimmon##note:x[<<Judg 20:47>>], and to ##call peaceably##note:x[<<Deut 20:10>>] unto them.note:tn[__to speak…__: Heb. and spake and called]note:tn[__call…__: or, proclaim peace]
+@ And Benjamin came again at that time; and they gave them wives which they had saved alive of the women of Jabesh-gilead: and yet so they sufficed them not.
+@ And the people ##repented##note:x[<<Judg 21:6>>] them for Benjamin, because that the LORD had made a breach in the tribes of Israel.
+
+@ ¶ Then the elders of the congregation said, How shall we do for wives for them that remain, seeing the women are destroyed out of Benjamin?
+@ And they said, __There must be__ an inheritance for them that be escaped of Benjamin, that a tribe be not destroyed out of Israel.
+@ Howbeit we may not give them wives of our daughters: for the children of Israel have ##sworn##note:x[<<Judg 21:1>>], saying, Cursed __be__ he that giveth a wife to Benjamin.
+@ Then they said, Behold, __there is__ a feast of the LORD in Shiloh ##yearly##note:tn[Heb. from year to year] __in a place__ which __is__ on the north side of Beth-el, on the east side of the highway that goeth up from Beth-el to Shechem, and on the south of Lebonah.note:tn[__on the east…__: or, toward the sunrising]note:tn[__of the highway__: or, on the highway]
+@ Therefore they commanded the children of Benjamin, saying, Go and lie in wait in the vineyards;
+@ And see, and, behold, if the daughters of Shiloh come out to ##dance##note:x[<<Exod 15:20; Judg 11:34; Jer 31:13>>] in dances, then come ye out of the vineyards, and catch you every man his wife of the daughters of Shiloh, and go to the land of Benjamin.
+@ And it shall be, when their fathers or their brethren come unto us to complain, that we will say unto them, Be favourable unto them for our sakes: because we reserved not to each man his wife in the war: for ye did not ##give unto##note:x[<<Judg 21:1, 18>>] them at this time, __that__ ye should be guilty.note:tn[__Be favourable…__: or, Gratify us in them]
+@ And the children of Benjamin did so, and took __them__ wives, according to their number, of them that danced, whom they caught: and they went and returned unto their inheritance, and ##repaired##note:x[<<Judg 20:48>>] the cities, and dwelt in them.
+@ And the children of Israel departed thence at that time, every man to his tribe and to his family, and they went out from thence every man to his inheritance.
+@ In those days __there was__ ##no##note:x[<<Judg 17:6>>] king in Israel: every man did __that which was__ ##right##note:x[<<Deut 12:8; Prov 3:5>>] in his own eyes.

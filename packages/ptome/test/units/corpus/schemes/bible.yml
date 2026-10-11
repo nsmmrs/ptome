@@ -1,0 +1,44 @@
+# The Bible: book > chapter > verse. Books and chapters are section
+# headings (`== @EXO`, `=== @34`); verses are markers inside paragraphs and
+# poetry lines (`@`, `@6`, `@14a`, `@4-5`). Text before a chapter's first
+# verse is verse 0 (a Psalm's title).
+version: 2
+canon: "canon-protestant"
+settings:
+  apparatus: "parallel book-title colophon"
+  unquoted: "parallel book-title colophon"
+citation:
+  default:
+    attribution: "{{passage-long}}"
+    title: "{{#doc.version}}{{doc.version}}{{/doc.version}}{{^doc.version}}{{title}}{{/doc.version}}"
+    labels: "none"
+  short:
+    attribution: "{{passage}}{{#doc.version}} {{doc.version}}{{/doc.version}}"
+    title: ""
+    labels: "none"
+scheme:
+  bible:
+    cite: "{{book.abbr}} {{chapter}}:{{verse}}"
+    level:
+      - name: "book"
+        type: "code"
+        break: "heading"
+        depth: 1
+        id: "b-{{book|lower}}"
+        reftext: "{{book.name}}"
+      - name: "chapter"
+        type: "int"
+        break: "heading"
+        depth: 2
+        sep: " "
+        id: "c-{{book|lower}}-{{chapter}}"
+        reftext: "{{book.name}} {{chapter}}"
+      - name: "verse"
+        type: "int"
+        sep: ":"
+        default: true
+        zero: true
+        parts: true
+        bridges: true
+        id: "v-{{book|lower}}-{{chapter}}-{{verse}}"
+        reftext: "{{book.name}} {{chapter}}:{{verse}}"

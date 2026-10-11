@@ -1,0 +1,212 @@
+== @LAM
+
+[.book-title]
+The Lamentations of Jeremiah
+
+=== @1
+
+[discrete.pericope]
+==== How Lonely Lies the City!
+
+[.parallel]
+(<<2 Kings 24:10–17>>)
+
+@ ##How doth##note:x[<<Rev 18:16–17>>] the city ##sit##note:x[<<Isa 3:26>>] solitary, __that was__ full of people! __how__ is she become as a widow! she __that was__ ##great##note:x[<<1 Kgs 4:21>>] among the nations, __and__ princess among the provinces, __how__ is she become tributary!
+@ She ##weepeth##note:x[<<Ps 6:6>>] sore in the night, and her tears __are__ on her cheeks: among all her lovers she hath none to comfort __her:__ ##all her friends##note:x[<<Mic 7:5>>] have dealt treacherously with her, they are become her enemies.
+@ Judah is gone into captivity because of affliction, and because of great servitude: she dwelleth among the heathen, she findeth no rest: all her persecutors overtook her between the straits.note:tn[__because of great…__: Heb. for the greatness of servitude]
+@ The ways of Zion do mourn, because none come to the solemn feasts: ##all her gates##note:x[<<Jer 9:11>>] are desolate: ##her priests##note:x[<<Joel 1:8–13>>] sigh, her virgins are afflicted, and she __is__ in bitterness.
+@ Her adversaries are the chief, her enemies prosper; for the LORD hath afflicted her for the multitude of her transgressions: her children are gone into captivity before the enemy.
+@ And from the daughter of Zion all her beauty is departed: her princes are become like harts __that__ find no pasture, and they are gone without strength before the pursuer.
+@ Jerusalem remembered in the days of her affliction and of her miseries all her ##pleasant##note:tn[or, desirable] things that she had in the days of old, when her people fell into the hand of the enemy, and none did help her: ##the adversaries##note:x[<<Ps 79:4>>] saw her, __and__ did mock at her sabbaths.
+@ Jerusalem ##hath##note:x[<<Isa 59:2–13; Lam 1:20>>] grievously sinned; therefore she is removed: all that honoured her despise her, because they have seen her nakedness: yea, she sigheth, and turneth backward.note:tn[__is…__: Heb. is become a removing, or, wandering]
+@ Her filthiness __is__ in her skirts; ##she remembereth##note:x[<<Deut 32:29; Isa 47:7>>] not her last end; therefore she came down wonderfully: she had no comforter. O LORD, ##behold##note:x[<<Ps 25:18>>] my affliction: for the enemy hath magnified __himself__.
+@ The adversary hath ##spread##note:x[<<Lam 1:7>>] out his hand upon all her ##pleasant##note:tn[or, desirable] things: for she hath ##seen##note:x[<<Jer 51:51>>] __that__ the heathen entered into her sanctuary, ##whom##note:x[<<Deut 23:3>>] thou didst command __that__ they should not enter into thy congregation.
+@ All her people sigh, they ##seek##note:x[<<Jer 38:9; 52:6; Lam 2:12>>] bread; they have given their pleasant things for meat to relieve the soul: see, O LORD, and consider; for I am become vile.note:tn[__to…__: or, to make the soul to come again]
+
+@ ¶ ##__Is it__ nothing##note:x[<<Dan 9:12; Luke 23:28–31>>] to you, all ye that pass by? behold, and see if there be any sorrow like unto my sorrow, which is done unto me, wherewith the LORD hath afflicted __me__ in the day of his fierce anger.note:tn[__Is it…__: or, It is nothing]note:tn[__pass by__: Heb. pass by the way?]
+@ From ##above##note:x[<<Job 30:30; Ps 22:14; Hab 3:16>>] hath he sent fire into my bones, and it prevaileth against them: he hath spread a net for my feet, he hath turned me back: he hath made me desolate __and__ faint all the day.
+@ The ##yoke##note:x[<<Deut 28:48; Isa 47:6>>] of my transgressions is bound by his hand: they are wreathed, __and__ come up upon my neck: he hath made my strength to fall, the Lord hath delivered me into __their__ hands, __from whom__ I am not able to rise up.
+@ The Lord hath ##trodden##note:x[<<Isa 28:18; Mal 4:3>>] under foot all my mighty __men__ in the midst of me: he hath called an assembly against me to crush my young men: the Lord hath trodden the virgin, the daughter of Judah, ##__as__ in##note:x[<<Isa 63:3>>] a winepress.note:tn[__the virgin…__: or, the winepress of the virgin, etc]
+@ For these __things__ ##I weep##note:x[<<Ps 119:136; Lam 1:2; 2:11>>]; mine eye, mine eye runneth down with water, because the comforter that should ##relieve##note:tn[Heb. bring back] my soul is far from me: my children are desolate, because the enemy prevailed.
+@ Zion ##spreadeth##note:x[<<Isa 1:15; Jer 4:31>>] forth her hands, __and there is__ ##none##note:x[<<Lam 1:9>>] to comfort her: the LORD hath commanded concerning Jacob, __that__ his adversaries __should be__ round about him: Jerusalem is as a menstruous woman among them.
+
+@ ¶ The ##LORD##note:x[<<Ps 119:75; Zeph 3:5>>] is righteous; ##for I##note:x[<<1 Sam 12:14–15>>] have rebelled against his ##commandment##note:tn[Heb. mouth]: hear, I pray you, all people, and behold my sorrow: my virgins and my young men are gone into captivity.
+@ I called ##for##note:x[<<Lam 1:2>>] my lovers, __but__ they deceived me: ##my priests##note:x[<<Lam 1:11; 2:20>>] and mine elders gave up the ghost in the city, while they sought their meat to relieve their souls.
+@ Behold, O LORD; for I __am__ in distress: ##my bowels##note:x[<<Isa 16:11; Lam 2:11>>] are troubled; mine heart is turned within me; for I have grievously rebelled: ##abroad##note:x[<<Ezek 7:15>>] the sword bereaveth, at home __there is__ as death.
+@ They ##have heard that##note:x[<<Lam 1:8, 16, 22>>] I sigh: __there is__ none to comfort me: all mine enemies have heard of my trouble; they are glad that thou hast done __it:__ thou wilt bring the day __that__ thou hast ##called##note:tn[or, proclaimed], and they shall be like unto me.
+@ Let ##all their##note:x[<<Ps 109:14–15; Rev 6:10>>] wickedness come before thee; and do unto them, as thou hast done unto me for all my transgressions: for my sighs __are__ many, and ##my heart##note:x[<<Jer 8:18>>] __is__ faint.
+
+=== @2
+
+[discrete.pericope]
+==== God’s Anger over Jerusalem
+
+@ How hath the Lord ##covered##note:x[<<Lam 3:43–44>>] the daughter of Zion with a cloud in his anger, __and__ cast down from heaven unto the earth the beauty of Israel, and remembered not ##his footstool##note:x[<<1 Chr 28:2; Ps 132:7>>] in the day of his anger!
+@ The Lord hath ##swallowed##note:x[<<Lam 2:17; 3:43>>] up all the habitations of Jacob, and hath not pitied: ##he hath thrown##note:x[<<Lam 2:17>>] down in his wrath the strong holds of the daughter of Judah; he hath brought __them__ down to the ground: he hath polluted the kingdom and the princes thereof.note:tn[__brought…__: Heb. made to touch]
+@ ##He hath##note:x[<<Ps 74:11>>] cut off in __his__ fierce anger all ##the horn##note:x[<<Ps 75:5, 10>>] of Israel: he hath drawn back his right hand from before the enemy, and he burned against Jacob like a flaming fire, __which__ devoureth round about.
+@ He hath ##bent##note:x[<<Job 6:4; Lam 3:12–13>>] his bow like an enemy: he stood with his right hand as an adversary, and slew all __that were__ pleasant to the eye in the tabernacle of the daughter of Zion: ##he poured##note:x[<<Jer 7:20>>] out his fury like fire.note:tn[__all…__: Heb. all the desirable of the eye]
+@ The Lord ##was##note:x[<<Jer 30:14>>] as an enemy: ##he hath swallowed up Israel##note:x[<<2 Kgs 25:9; Lam 2:2>>], he hath swallowed up all her palaces: he hath destroyed his strong holds, and hath increased in the daughter of Judah mourning and lamentation.
+@ And he hath violently taken away his ##tabernacle##note:tn[or, hedge], as __if it were of__ a garden: he hath destroyed his places of the assembly: the LORD hath ##caused##note:x[<<Lam 1:4; Zeph 3:18>>] the solemn feasts and sabbaths to be forgotten in Zion, and hath despised in the indignation of his anger the king and the priest.
+@ The Lord hath ##cast off##note:x[<<Ezek 24:21>>] his altar, he hath abhorred his sanctuary, he hath ##given up##note:x[<<Amos 2:5>>] into the hand of the enemy the walls of her palaces; ##they have##note:x[<<Ps 74:3–8>>] made a noise in the house of the LORD, as in the day of a solemn feast.note:tn[__given up__: Heb. shut up]
+@ The LORD hath purposed to destroy the wall of the daughter of Zion: he hath ##stretched##note:x[<<2 Kgs 21:13; Isa 34:11>>] out a line, he hath not withdrawn his hand from ##destroying##note:tn[Heb. swallowing up]: therefore ##he made##note:x[<<Isa 3:26>>] the rampart and the wall to lament; they languished together.
+@ Her ##gates##note:x[<<Neh 1:3>>] are sunk into the ground; he hath destroyed and broken her bars: her king and her princes __are__ among the Gentiles: ##the law##note:x[<<Ezek 7:26; Hos 3:4>>] __is__ no __more;__ her prophets also find no vision from the LORD.
+
+@ The ##elders##note:x[<<Isa 3:26>>] of the daughter of Zion sit upon the ground, __and__ keep silence: they have ##cast up##note:x[<<Job 2:12>>] dust upon their heads; ##they have girded##note:x[<<Isa 15:3>>] themselves with sackcloth: the virgins of Jerusalem hang down their heads to the ground.
+@ Mine ##eyes##note:x[<<Lam 1:16>>] do fail with tears, ##my bowels##note:x[<<Jer 4:19; Lam 1:20>>] are troubled, my liver is poured upon the earth, for the destruction of the daughter of my people; because the children and the sucklings ##swoon##note:tn[or, faint] in the streets of the city.
+@ They say to their mothers, Where __is__ corn and wine? when they swooned as the wounded in the streets of the city, when their soul was poured out into their mothers’ bosom.
+@ What thing ##shall I take##note:x[<<Lam 1:12>>] to witness for thee? what thing shall I liken to thee, O daughter of Jerusalem? what shall I equal to thee, that I may comfort thee, O virgin daughter of Zion? for thy breach __is__ great like the sea: who can heal thee?
+@ Thy ##prophets##note:x[<<Jer 5:31>>] have seen vain and foolish things for thee: and ##they have##note:x[<<Isa 58:1>>] not discovered thine iniquity, to turn away thy captivity; but have seen for thee ##false##note:x[<<Ezek 22:28>>] burdens and causes of banishment.
+@ All ##that pass##note:x[<<Jer 18:16>>] ##by##note:tn[Heb. by the way] clap __their__ hands at thee; they hiss and ##wag##note:x[<<Jer 18:16>>] their head at the daughter of Jerusalem, __saying,__ ##__Is__ this##note:x[<<Ps 48:2>>] the city that __men__ call The perfection of beauty, The joy of the whole earth?
+@ All ##thine##note:x[<<Ps 35:21; Lam 3:46>>] enemies have opened their mouth against thee: they hiss and gnash the teeth: they say, We have swallowed __her__ up: certainly this __is__ the day that we looked for; we have found, ##we have seen##note:x[<<Ps 35:21>>] __it__.
+@ The LORD hath ##done##note:x[<<Lev 26:14–46>>] __that__ which he had devised; he hath fulfilled his word that he had commanded in the days of old: ##he hath thrown##note:x[<<Ezek 5:11>>] down, and hath not pitied: and ##he hath caused##note:x[<<Ps 89:42>>] __thine__ enemy to rejoice over thee, he hath set up the horn of thine adversaries.
+@ Their ##heart##note:x[<<Ps 119:145>>] cried unto the Lord, ##O wall##note:x[<<Lam 2:8>>] of the daughter of Zion, ##let tears##note:x[<<Lam 1:16>>] run down like a river day and night: give thyself no rest; let not the apple of thine eye cease.
+@ Arise, ##cry out##note:x[<<Ps 62:8; 119:147–148>>] in the night: in the beginning of the watches ##pour##note:x[<<Ps 62:8>>] out thine heart like water before the face of the Lord: lift up thy hands toward him for the life of thy young children, that faint for hunger in the top of every street.
+
+@ ¶ Behold, O LORD, and consider to whom thou hast done this. ##Shall the women##note:x[<<Jer 19:9; Lam 4:10>>] eat their fruit, __and__ children of a span long? ##shall the priest##note:x[<<Ps 78:64>>] and the prophet be slain in the sanctuary of the Lord?note:tn[__of a span…__: or, swaddled with their hands?]
+@ The ##young##note:x[<<2 Chr 36:17>>] and the old lie on the ground in the streets: my virgins and my young men are fallen by the sword; thou hast slain __them__ in the day of thine anger; ##thou hast killed##note:x[<<Lam 3:43; Zech 11:6>>], __and__ not pitied.
+@ Thou hast called as in a solemn day ##my terrors##note:x[<<Ps 31:13; Jer 6:25>>] round about, so that in the day of the LORD’s anger none escaped nor remained: those that I have swaddled and brought up hath mine enemy consumed.
+
+=== @3
+
+[discrete.pericope]
+==== The Prophet’s Afflictions
+
+@ I __am__ ##the man##note:x[<<Ps 88:7>>] __that__ hath seen affliction by the rod of his wrath.
+@ He hath led me, and ##brought##note:x[<<Job 30:26; Isa 59:9>>] __me into__ darkness, but not __into__ light.
+@ Surely against me is he turned; he turneth his hand __against me__ all the day.
+@ ##My flesh##note:x[<<Ps 31:9–10>>] and my skin hath he made old; ##he hath##note:x[<<Ps 51:8; Isa 38:13>>] broken my bones.
+@ He hath builded against me, and compassed __me__ with ##gall##note:x[<<Jer 23:15; Lam 3:19>>] and travail.
+@ He hath set me ##in dark##note:x[<<Ps 88:5–6; 143:3>>] places, as __they that be__ dead of old.
+@ He hath ##hedged##note:x[<<Job 3:23; 19:8>>] me about, that I cannot get out: he hath made my chain heavy.
+@ ##Also when I cry and shout, he shutteth out my prayer.##note:x[<<Job 19:7; 30:20; Ps 22:2>>]
+@ He hath inclosed my ways with hewn stone, he hath ##made##note:x[<<Isa 63:17>>] my paths crooked.
+@ He __was__ unto me __as__ a bear lying in wait, __and as__ a lion in secret places.
+@ He hath turned aside my ways, and ##pulled##note:x[<<Job 16:12–13; Hos 6:1>>] me in pieces: he hath made me desolate.
+@ He hath ##bent##note:x[<<Job 7:20; Ps 38:2>>] his bow, and set me as a mark for the arrow.
+@ He hath caused the ##arrows##note:tn[Heb. sons] of his quiver to enter into my reins.
+@ ##I was a derision to all my people; __and__ their song all the day.##note:x[<<Jer 20:7; Lam 3:63>>]
+@ He hath ##filled##note:x[<<Jer 9:15>>] me with ##bitterness##note:tn[Heb. bitternesses], he hath made me drunken with wormwood.
+@ He hath also broken my teeth with ##gravel##note:x[<<Prov 20:17>>] stones, he hath ##covered me with ashes##note:x[<<Jer 6:26>>].note:tn[__covered…__: or, rolled me in the ashes]
+@ And ##thou##note:x[<<Isa 59:11>>] hast removed my soul far off from peace: I forgat ##prosperity##note:tn[Heb. good].
+@ ##And##note:x[<<Job 17:15>>] I said, My strength and my hope is perished from the LORD:
+
+[discrete.pericope]
+==== The Prophet’s Hope
+
+@ ##Remembering##note:tn[or, Remember] mine affliction and my misery, ##the##note:x[<<Lam 3:5, 15>>] wormwood and the gall.
+@ My soul hath __them__ still in remembrance, and is note:x[<<Ps 42:5–6, 11>>]##humbled##note:tn[Heb. bowed] in me.
+
+@ This I recall to my mind, ##therefore##note:x[<<Ps 130:7; Hab 2:3>>] have I hope.note:tn[__recall…__: Heb. make to return to my heart]
+
+@ ¶ __It is__ ##__of__##note:x[<<Neh 9:31>>] the LORD’s mercies that we are not consumed, ##because##note:x[<<Ps 86:15; Luke 1:50>>] his compassions fail not.
+@ __They are__ ##new##note:x[<<Ps 30:5; Isa 33:2>>] every morning: ##great##note:x[<<Heb 10:23>>] __is__ thy faithfulness.
+@ The LORD __is__ ##my portion##note:x[<<Ps 16:5; 73:26; 142:5>>], saith my soul; therefore will I hope in him.
+@ The LORD __is__ ##good##note:x[<<Ps 130:5–6; Isa 40:31; Mic 7:7–8>>] unto them that wait for him, to the soul __that__ seeketh him.
+@ __It is__ good that __a man__ should both hope and ##quietly##note:x[<<Ps 37:7, 34; 130:5>>] wait for the salvation of the LORD.
+@ __It is__ good for a man that he ##bear##note:x[<<Ps 119:71; Eccl 12:1; Matt 11:29–30>>] the yoke in his youth.
+@ ##He sitteth alone and keepeth silence, because he hath borne __it__ upon him.##note:x[<<Jer 15:17; Lam 2:10>>]
+@ He putteth his mouth in the dust; if so be there may be hope.
+@ He giveth ##__his__##note:x[<<Job 16:10; Isa 50:6; Matt 5:39>>] cheek to him that smiteth him: he is filled full with reproach.
+@ ##For the Lord will not cast off for ever:##note:x[<<Ps 77:7; 94:14; 103:8–10>>]
+@ ##But though he cause grief, yet will he have compassion according to the multitude of his mercies.##note:x[<<Ps 30:5; 78:38; 103:11>>]
+@ For he doth not ##afflict##note:x[<<Ezek 18:32; 33:11>>] ##willingly##note:tn[Heb. from his heart] nor grieve the children of men.
+@ To ##crush##note:x[<<Isa 51:22–23>>] under his feet ##all##note:x[<<Zech 9:11–12>>] the prisoners of the earth,
+@ To turn aside the right of a man before the face of the most High,note:tn[__the most High__: or, a superior]
+@ To subvert a man in his cause, ##the Lord##note:x[<<Isa 59:15>>] ##approveth not##note:tn[or, seeth not].
+
+[discrete.pericope]
+==== God’s Justice
+
+@ ¶ Who __is__ he __that__ ##saith##note:x[<<Ps 33:9–11; Prov 16:9; Isa 46:10>>], and it cometh to pass, __when__ the Lord commandeth __it__ not?
+@ ##Out of the mouth of the most High proceedeth not evil and good?##note:x[<<Job 2:10; Isa 45:7; Amos 3:6>>]
+@ Wherefore ##doth##note:x[<<Prov 19:3>>] a living man ##complain##note:tn[or, murmur], ##a man##note:x[<<Mic 7:9>>] for the punishment of his sins?
+@ Let us ##search##note:x[<<Ps 139:23–24; 2 Cor 13:5>>] and try our ways, and ##turn##note:x[<<Joel 2:12–13>>] again to the LORD.
+@ Let us ##lift##note:x[<<Ps 25:1; 86:4>>] up our heart ##with##note:x[<<Ps 28:2>>] __our__ hands unto God in the heavens.
+
+@ We have transgressed and have rebelled: thou hast not pardoned.
+@ Thou hast covered with anger, and persecuted us: ##thou hast slain##note:x[<<Lam 2:17, 21>>], thou hast not pitied.
+@ Thou hast ##covered##note:x[<<Ps 97:2>>] thyself with a cloud, ##that##note:x[<<Lam 3:8; Zech 7:13>>] __our__ prayer should not pass through.
+@ Thou hast made us ##__as__##note:x[<<1 Cor 4:13>>] the offscouring and refuse in the midst of the people.
+@ All our enemies ##have##note:x[<<Ps 22:6–8; Lam 2:16>>] opened their mouths against us.
+@ ##Fear##note:x[<<Isa 24:17–18; 51:19>>] and a snare is come upon us, desolation and destruction.
+@ ##Mine eye runneth down with rivers of water for the destruction of the daughter of my people.##note:x[<<Jer 9:1, 18; Lam 2:11>>]
+@ Mine eye trickleth down, ##and##note:x[<<Jer 14:17>>] ceaseth not, without any intermission,
+@ ##Till the LORD look down, and behold from heaven.##note:x[<<Isa 63:15>>]
+@ Mine eye affecteth mine heart because of all the daughters of my city.note:tn[__mine heart__: Heb. my soul]note:tn[__because…__: or, more than all]
+@ Mine enemies chased me sore, like a bird, ##without##note:x[<<Ps 35:7, 19>>] cause.
+@ They have ##cut##note:x[<<Jer 38:6, 9>>] off my life in the dungeon, ##and##note:x[<<Dan 6:17>>] cast a stone upon me.
+@ ##Waters##note:x[<<Jonah 2:3–5>>] flowed over mine head; __then__ ##I said##note:x[<<Ezek 37:11>>], I am cut off.
+
+@ ¶ I called upon thy name, O LORD, out of the low dungeon.
+@ Thou ##hast##note:x[<<Job 34:28; Ps 6:8–9; Isa 38:5>>] heard my voice: hide not thine ear at my breathing, at my cry.
+@ Thou ##drewest##note:x[<<Isa 58:9; Jas 4:8>>] near in the day __that__ I called upon thee: ##thou saidst##note:x[<<Isa 41:10>>], Fear not.
+@ O Lord, ##thou hast pleaded##note:x[<<Jer 51:36>>] the causes of my soul; ##thou hast redeemed##note:x[<<Ps 34:22; 103:4>>] my life.
+@ O LORD, thou hast seen my wrong: ##judge##note:x[<<Ps 43:1>>] thou my cause.
+@ ##Thou hast seen all their vengeance __and__ all their imaginations against me.##note:x[<<Jer 11:19–20>>]
+@ ##Thou hast heard their reproach, O LORD, __and__ all their imaginations against me;##note:x[<<Ps 89:50; Lam 5:1; Zeph 2:8>>]
+@ The ##lips##note:x[<<Ps 59:7, 12; Ezek 36:3>>] of those that rose up against me, and their device against me all the day.
+@ Behold ##their sitting##note:x[<<Ps 139:2>>] down, and their rising up; ##I __am__##note:x[<<Job 30:9; Lam 3:14>>] their musick.
+
+@ ¶ ##Render unto them a recompence, O LORD, according to the work of their hands.##note:x[<<Ps 28:4; Jer 11:20>>]
+@ Give them ##sorrow##note:x[<<Isa 6:10>>] of heart, thy curse unto them.note:tn[__sorrow…__: or, obstinacy of heart]
+@ Persecute and destroy them in anger from under the ##heavens##note:x[<<Ps 8:3>>] of the LORD.
+
+=== @4
+
+[discrete.pericope]
+==== The Distress of Zion
+
+@ ##How is the gold##note:x[<<Ezek 7:19–22>>] become dim! __how__ is the most fine gold changed! ##the stones##note:x[<<Lam 2:19>>] of the sanctuary are poured out in the top of every street.
+@ The precious sons of Zion, comparable to fine gold, ##how##note:x[<<Isa 30:14; Jer 19:11; Rom 9:21–23>>] are they esteemed as earthen pitchers, the work of the hands of the potter!
+@ Even the sea monsters draw out the breast, they give suck to their young ones: ##the daughter##note:x[<<Lam 2:20; Ezek 5:10; Luke 23:28–29>>] of my people __is become__ cruel, like the ostriches in the wilderness.note:tn[__sea…__: or, sea calves]
+@ The ##tongue##note:x[<<Ps 22:15>>] of the sucking child cleaveth to the roof of his mouth for thirst: ##the young##note:x[<<Lam 2:11–12>>] children ask bread, __and__ no man breaketh __it__ unto them.
+@ They ##that did##note:x[<<Amos 6:3–7>>] feed delicately are desolate in the streets: they that were ##brought##note:x[<<Prov 31:21; Luke 16:19>>] up in scarlet embrace dunghills.
+@ For ##the punishment##note:x[<<Gen 19:25>>] of the iniquity of the daughter of my people is greater than the punishment of the sin of Sodom, that was overthrown as in a moment, and no hands stayed on her.note:tn[__punishment of the iniquity__: or, iniquity]
+@ Her Nazarites were ##purer##note:x[<<Ps 51:7; 144:12; Song 5:10>>] than snow, they were whiter than milk, they were more ruddy in body than rubies, their polishing __was__ of sapphire:
+@ Their ##visage##note:x[<<Job 30:30; Lam 5:10>>] is blacker than a coal; they are not known in the streets: ##their skin##note:x[<<Ps 102:3–5>>] cleaveth to their bones; it is withered, it is become like a stick.note:tn[__blacker…__: Heb. darker than blackness]
+@ __They that be__ slain with the sword are better than __they that be__ slain with hunger: for these pine away, stricken through for __want of__ the fruits of the field.note:tn[__pine…__: Heb. flow out]
+@ The ##hands##note:x[<<2 Kgs 6:26–29; Lam 2:20>>] of the ##pitiful##note:x[<<Isa 49:15>>] women have sodden their own children: they were their meat in the destruction of the daughter of my people.
+@ The ##LORD##note:x[<<Jer 7:20; Ezek 22:31>>] hath accomplished his fury; he hath poured out his fierce anger, and hath kindled a fire in Zion, and it hath devoured the foundations thereof.
+@ The kings of the earth, and all the inhabitants of the world, would not have believed that the adversary and the enemy should have entered into the gates of Jerusalem.
+
+@ ¶ For ##the sins##note:x[<<Jer 5:31; 6:13>>] of her prophets, __and__ the iniquities of her priests, that have shed the blood of the just in the midst of her,
+@ They have wandered __as__ blind __men__ in the streets, ##they have polluted##note:x[<<Isa 1:15; Jer 2:34>>] themselves with blood, so that men could not touch their garments.note:tn[__so…__: or, in that they could not but touch]
+@ They cried unto them, Depart ye; __it is__ unclean; depart, depart, touch not: when they fled away and wandered, they said among the heathen, They shall no more sojourn __there__.note:tn[__it…__: or, ye polluted]
+@ The ##anger##note:tn[or, face] of the LORD ##hath##note:x[<<Deut 32:26>>] divided them; he will no more regard them: ##they respected##note:x[<<Isa 9:14–16; Lam 5:12>>] not the persons of the priests, they favoured not the elders.
+@ As for us, ##our eyes##note:x[<<Ezek 29:16>>] as yet failed for our vain help: in our watching we have watched for a nation __that__ could not save __us__.
+@ They ##hunt##note:x[<<Ps 140:11>>] our steps, that we cannot go in our streets: ##our end is near##note:x[<<Ezek 7:2–12; Amos 8:2>>], our days are fulfilled; for our end is come.
+@ Our ##persecutors##note:x[<<Isa 5:26–28; Jer 4:13; Hab 1:8>>] are swifter than the eagles of the heaven: they pursued us upon the mountains, they laid wait for us in the wilderness.
+@ The ##breath##note:x[<<Gen 2:7>>] of our nostrils, ##the anointed##note:x[<<2 Sam 1:14; 19:21>>] of the LORD, was taken in their pits, of whom we said, Under his shadow we shall live among the heathen.
+
+@ ¶ Rejoice and be glad, O daughter of Edom, that dwellest in ##the land##note:x[<<Job 1:1>>] of Uz; ##the cup##note:x[<<Amos 1:11>>] also shall pass through unto thee: thou shalt be drunken, ##and shalt##note:x[<<Rev 16:15>>] make thyself naked.
+
+@ ¶ ##The punishment of thine iniquity##note:x[<<Isa 40:2>>] is accomplished, O daughter of Zion; he will no more carry thee away into captivity: he will visit thine iniquity, O daughter of Edom; he will discover thy sins.note:tn[__The…__: or, Thine iniquity]note:tn[__discover…__: or, carry thee captive for thy sins]
+
+=== @5
+
+[discrete.pericope]
+==== A Prayer for Restoration
+
+@ Remember, O LORD, what is come upon us: consider, and ##behold##note:x[<<Ps 44:13–16; 89:50–51>>] our reproach.
+@ ##Our inheritance is turned to strangers, our houses to aliens.##note:x[<<Deut 28:30–68; Isa 1:7; Zeph 1:13>>]
+@ ##We are orphans and fatherless, our mothers __are__ as widows.##note:x[<<Exod 22:24; Jer 18:21>>]
+@ We ##have##note:x[<<Isa 3:1>>] drunken our water for money; our wood is sold unto us.note:tn[__is…__: Heb. cometh for price]
+@ ##Our necks __are__ under persecution##note:x[<<Lam 1:14>>]: we ##labour##note:x[<<Neh 9:36–37>>], __and__ have no rest.note:tn[__Our…__: Heb. On our necks are we persecuted]
+@ We have given the hand ##__to__ the Egyptians##note:x[<<Hos 9:3; 12:1>>], __and to__ the Assyrians, to be satisfied with bread.
+@ Our ##fathers##note:x[<<Jer 16:12; 31:29; Ezek 18:2>>] have sinned, __and are__ not; and we have borne their iniquities.
+@ ##Servants##note:x[<<Neh 5:15; Prov 30:22>>] have ruled over us: ##__there__##note:x[<<Zech 11:6>>] __is__ none that doth deliver __us__ out of their hand.
+@ ##We gat our bread with __the peril of__ our lives because of the sword of the wilderness.##note:x[<<Ezek 4:16–17>>]
+@ Our ##skin##note:x[<<Job 30:30; Lam 4:8>>] was black like an oven because of the ##terrible##note:tn[or, terrors, or, storms] famine.
+@ ##They ravished the women in Zion, __and__ the maids in the cities of Judah.##note:x[<<Isa 13:16; Zech 14:2>>]
+@ ##Princes are hanged up by their hand: the faces of elders were not honoured.##note:x[<<Isa 47:6; Lam 4:16>>]
+@ They took ##the young##note:x[<<Judg 16:21>>] men to grind, and the children fell under the wood.
+@ The elders have ceased from the gate, ##the young##note:x[<<Jer 7:34>>] men from their musick.
+@ The joy of our heart is ceased; ##our dance##note:x[<<Amos 8:10>>] is turned into mourning.
+@ ##The crown##note:x[<<Job 19:9; Ps 89:39>>] is fallen __from__ our head: ##woe##note:x[<<Isa 3:9–11>>] unto us, that we have sinned!note:tn[__The…__: Heb. The crown of our head is fallen]
+
+@ For this ##our heart##note:x[<<Isa 1:5>>] is faint; for these __things__ ##our eyes##note:x[<<Ps 6:7; Lam 2:11>>] are dim.
+@ Because ##of the##note:x[<<Mic 3:12>>] mountain of Zion, which is desolate, the foxes walk upon it.
+@ Thou, O LORD, ##remainest##note:x[<<Ps 102:12>>] for ever; ##thy throne##note:x[<<Ps 45:6; Heb 1:8–9>>] from generation to generation.
+@ Wherefore ##dost##note:x[<<Ps 13:1; 44:24>>] thou forget us for ever, __and__ forsake us so long time?note:tn[__so…__: Heb. for length of days?]
+@ ##Turn##note:x[<<Ps 80:3, 7; 85:4>>] thou us unto thee, O LORD, and we shall be turned; renew our days as of old.
+@ But thou hast utterly rejected us; thou art very wroth against us.note:tn[__But…__: or, For wilt thou utterly reject us?]

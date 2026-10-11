@@ -1,0 +1,419 @@
+== @2CO
+
+[.book-title]
+The Second Epistle of Paul the Apostle to the Corinthians
+
+=== @1
+
+[discrete.pericope]
+==== Paul Greets the Corinthians
+
+[.parallel]
+(<<Acts 18:1–11; 1 Corinthians 1:1–3>>)
+
+@ ##Paul##note:x[<<2 Tim 1:1>>], an apostle of Jesus Christ by the will of God, and ##Timothy##note:x[<<Phil 1:1>>] __our__ brother, unto the church of God which is at Corinth, with ##all##note:x[<<Eph 1:1>>] the saints which are in all Achaia:
+@ ##Grace __be__ to you and peace from God our Father, and __from__ the Lord Jesus Christ.##note:x[<<Rom 1:7; Eph 6:23; Phil 1:2>>]
+
+[discrete.pericope]
+==== The God of All Comfort
+
+@ ##Blessed##note:x[<<Eph 1:3; 1 Pet 1:3>>] __be__ God, even ##the Father of our##note:x[<<Eph 1:3>>] Lord Jesus Christ, the Father of mercies, and the God of all comfort;
+@ Who ##comforteth##note:x[<<Isa 51:12; 2 Thess 2:16–17>>] us in all our tribulation, ##that##note:x[<<1 Thess 5:11>>] we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.
+@ For ##as##note:x[<<Phil 1:20; 3:10; Col 1:24>>] the sufferings of Christ abound in us, so our consolation also aboundeth by Christ.
+@ And ##whether##note:x[<<2 Cor 1:4; 4:15–18; 2 Tim 2:10>>] we be afflicted, __it is__ for your consolation and salvation, which is effectual in the enduring of the same sufferings which we also suffer: or whether we be comforted, __it is__ for your consolation and salvation.
+@ And our hope of you __is__ stedfast, knowing, that ##as ye##note:x[<<Rom 8:17–18; 2 Thess 1:4–7; Jas 1:12>>] are partakers of the sufferings, so __shall ye be__ also of the consolation.
+@ For we would not, brethren, have you ignorant ##of our##note:x[<<1 Cor 15:32; 2 Cor 4:7–12>>] trouble which came to us in Asia, that we were pressed out of measure, above strength, ##insomuch##note:x[<<1 Cor 4:8>>] that we despaired even of life:
+@ But we had the sentence of death in ourselves, ##that##note:x[<<2 Cor 3:5; 4:7>>] we should not trust in ourselves, but ##in God##note:x[<<Heb 11:19>>] which raiseth the dead:
+@ ##Who delivered us from so great a death, and doth deliver: in whom we trust that he will yet deliver __us__;##note:x[<<1 Sam 17:37; Ps 34:19; 2 Pet 2:9>>]
+@ Ye also ##helping##note:x[<<Acts 12:5; Phil 1:19>>] together by prayer for us, ##that##note:x[<<2 Cor 4:15>>] for the gift __bestowed__ upon us by the means of many persons thanks may be given by many on our behalf.
+
+[discrete.pericope]
+==== Paul’s Change of Plans
+
+@ For our rejoicing is this, the testimony of our conscience, that in simplicity and ##godly##note:x[<<2 Cor 2:17>>] sincerity, ##not##note:x[<<1 Cor 2:13; Jas 3:13–18>>] with fleshly wisdom, but by the grace of God, we have had our conversation in the world, and more abundantly to you-ward.
+@ For we write none other things unto you, ##than##note:x[<<2 Cor 4:2; Phlm 1:6>>] what ye read or acknowledge; and I trust ye shall acknowledge even to the end;
+@ As also ye have acknowledged us in part, that we are your rejoicing, ##even##note:x[<<Phil 2:16; 1 Thess 2:19–20>>] as ye also __are__ ours ##in the##note:x[<<1 Cor 1:8>>] day of the Lord Jesus.
+
+@ And ##in##note:x[<<1 Cor 4:19>>] this confidence I was minded to come unto you before, ##that##note:x[<<Rom 1:11; 15:29>>] ye might have a second benefit;
+@ And to pass by you into Macedonia, ##and to come##note:x[<<1 Cor 16:5–7>>] again out of Macedonia unto you, and of you to be brought on my way toward Judaea.
+@ When I therefore was thus minded, did I use lightness? or the things that I purpose, do I purpose ##according##note:x[<<2 Cor 10:2–3>>] to the flesh, that with me there should be ##yea##note:x[<<Matt 5:37; Jas 5:12>>] yea, and nay nay?
+@ But ##__as__##note:x[<<John 7:28; Rev 3:7, 14>>] God __is__ true, our word toward you was not yea and nay.
+@ note:x[<<Heb 13:8; Rev 1:17>>]For ##the Son##note:x[<<2 John 1:9>>] of God, Jesus Christ, who was preached among you by us, __even__ by me and Silvanus and Timotheus, was not yea and nay, but in him was yea.
+@ For ##all##note:x[<<Gal 3:22; Heb 13:8; 1 John 2:24–25>>] the promises of God in him __are__ yea, and in him Amen, unto the glory of God by us.
+@ Now he which ##stablisheth##note:x[<<1 Pet 5:10>>] us with you in Christ, and hath ##anointed##note:x[<<1 John 2:20, 27>>] us, __is__ God;
+@ Who hath also ##sealed##note:x[<<Eph 1:13–14; 4:30>>] us, and given ##the earnest##note:x[<<2 Cor 5:5>>] of the Spirit in our hearts.
+@ Moreover ##I call##note:x[<<Rom 1:9; Gal 1:20>>] God for a record upon my soul, ##that##note:x[<<1 Cor 4:21>>] to spare you I came not as yet unto Corinth.
+@ Not ##for##note:x[<<1 Cor 15:1>>] ##that##note:x[<<2 Tim 2:24–26; 1 Pet 5:3>>] we have dominion over your faith, but are helpers of your joy: for by faith ye stand.
+
+=== @2
+
+[discrete.pericope]
+==== Reaffirm Your Love
+
+@ But I determined this with myself, ##that##note:x[<<2 Cor 1:23; 13:10>>] I would not come again to you in heaviness.
+@ For if I make you sorry, who is he then that maketh me glad, but the same which is made sorry by me?
+@ And I wrote this same unto you, lest, when I came, I should have sorrow from them of whom I ought to rejoice; ##having##note:x[<<2 Cor 8:22; Gal 5:10; Phlm 1:21>>] confidence in you all, that my joy is __the joy__ of you all.
+@ For ##out##note:x[<<Lev 19:17–18; Prov 27:5–6>>] of much affliction and anguish of heart I wrote unto you with many tears; ##not##note:x[<<2 Cor 7:12>>] that ye should be grieved, but that ye might know the love which I have more abundantly unto you.
+@ But if ##any##note:x[<<1 Cor 5:12–13>>] have caused grief, he hath not grieved me, but in part: that I may not overcharge you all.
+@ Sufficient to such a man __is__ this punishment, ##which##note:x[<<1 Cor 5:4–5; 1 Tim 5:20>>] __was inflicted__ of many.
+@ So that contrariwise ##ye##note:x[<<Gal 6:1–2; Eph 4:32; Col 3:13>>] __ought__ rather to forgive __him__, and comfort __him__, lest perhaps such a one should be swallowed up with overmuch sorrow.
+@ Wherefore I beseech you ##that##note:x[<<Jude 1:22–23>>] ye would confirm __your__ love toward him.
+@ For to this end also did I write, that I might know the proof of you, ##whether##note:x[<<2 Cor 10:6; Phlm 1:21>>] ye be obedient in all things.
+@ To ##whom ye##note:x[<<Matt 18:18; John 20:23; 2 Cor 5:20>>] forgive any thing, I __forgive__ also: for if I forgave any thing, to whom I forgave __it__, for your sakes __forgave I it__ in the person of Christ;
+@ ##Lest Satan should get an advantage of us: for we are not ignorant of his devices.##note:x[<<2 Cor 11:3; Eph 6:11–12; 1 Pet 5:8>>]
+
+[discrete.pericope]
+==== Triumph in Christ
+
+@ Furthermore, ##when##note:x[<<Acts 16:8>>] I came to Troas to __preach__ Christ’s gospel, ##and a##note:x[<<Acts 14:27; Col 4:3>>] door was opened unto me of the Lord,
+@ I had ##no rest##note:x[<<2 Cor 7:5–6>>] in my spirit, because I found not ##Titus##note:x[<<2 Cor 12:18>>] my brother: but taking my leave of them, I went from thence into Macedonia.
+@ Now ##thanks##note:x[<<2 Cor 9:15>>] __be__ unto God, ##which##note:x[<<Rom 8:37>>] always causeth us to triumph in Christ, and maketh manifest ##the savour##note:x[<<2 Cor 2:15–16>>] of his knowledge by us in every place.
+@ For we are unto God ##a sweet##note:x[<<Ezek 20:41; Eph 5:2>>] savour of Christ, ##in them##note:x[<<1 Cor 1:18>>] that are saved, and in them that perish:
+@ To the one __we are__ ##the savour of death##note:x[<<John 9:39; 1 Pet 2:7–8>>] unto death; and to the other the savour of life unto life. And ##who##note:x[<<2 Cor 3:5–6>>] __is__ sufficient for these things?
+@ For we are not as many, ##which##note:x[<<2 Cor 4:2>>] ##corrupt##note:x[<<2 Cor 4:2>>] the word of God: ##but as of sincerity##note:x[<<2 Cor 4:2>>], but as of God, in the sight of God speak we in Christ.
+
+=== @3
+
+[discrete.pericope]
+==== Ministers of a New Covenant
+
+@ Do we ##begin##note:x[<<2 Cor 5:12; 10:12; 12:11>>] again to commend ourselves? or need we, as some __others__, epistles of commendation to you, or __letters__ of commendation from you?
+@ Ye ##are##note:x[<<1 Cor 9:1–2>>] our epistle written in our hearts, ##known##note:x[<<Rom 1:8; 1 Thess 1:8>>] and read of all men:
+@ __Forasmuch as ye are__ manifestly declared to be the epistle of Christ ministered by us, written not with ink, ##but##note:x[<<Jer 31:33; Ezek 11:19; Heb 8:10>>] with the Spirit of the living God; not in tables of stone, but in fleshy tables of the heart.
+
+@ And ##such##note:x[<<2 Cor 2:14; Phil 1:6>>] trust have we through Christ to ##God-ward##note:x[<<Exod 18:19>>]:
+@ Not that we are sufficient of ourselves to think any thing as of ourselves; ##but##note:x[<<1 Cor 15:10; 2 Cor 12:9; Phil 4:13>>] our sufficiency __is__ of God;
+@ Who also hath made us able ministers of ##the new##note:x[<<Jer 31:31>>] testament; ##not##note:x[<<Rom 7:6>>] of the letter, but of the spirit: for the letter killeth, ##but the##note:x[<<John 6:63>>] spirit giveth life.
+
+[discrete.pericope]
+==== The Glory of the New Covenant
+
+[.parallel]
+(<<Exodus 34:10–35>>)
+
+@ But if ##the ministration##note:x[<<2 Cor 3:9>>] of death, ##written##note:x[<<Exod 31:18>>] __and__ engraven in stones, was glorious, so that the children of Israel could not stedfastly behold the face of Moses for the glory of his countenance; ##which##note:x[<<Rom 10:4>>] __glory__ was to be done away:
+@ How shall not ##the ministration##note:x[<<Isa 59:21; 1 Cor 3:16; Eph 2:18>>] of the spirit be rather glorious?
+@ For if ##the ministration of condemnation##note:x[<<Heb 12:18–21>>] __be__ glory, much more doth ##the ministration of righteousness##note:x[<<Rom 3:21–22; 2 Cor 5:21>>] exceed in glory.
+@ For even that which was made glorious ##had##note:x[<<Hag 2:7–9; 2 Pet 1:17>>] no glory in this respect, by reason of the glory that excelleth.
+@ For ##if##note:x[<<Rom 5:20–21; Heb 7:21–25; 8:13>>] that which is done away __was__ glorious, much more that which remaineth __is__ glorious.
+@ Seeing then that we have such hope, we use great ##plainness##note:x[<<2 Cor 7:4; Eph 6:19–20>>] of speech:
+@ And not as Moses, ##__which__##note:x[<<Exod 34:33–35>>] put a vail over his face, that the children of Israel could not stedfastly look ##to the##note:x[<<Eph 2:14–15; Col 2:17>>] end of that which is abolished:
+@ But ##their##note:x[<<Rom 11:25; 2 Cor 4:3–4>>] minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament; ##which __vail__##note:x[<<Acts 26:18>>] is done away in Christ.
+@ But even unto this day, when Moses is read, the vail is upon their heart.
+@ Nevertheless ##when##note:x[<<Exod 34:34>>] it shall turn to the Lord, ##the vail##note:x[<<Isa 25:7; 29:18>>] shall be taken away.
+@ Now ##the Lord##note:x[<<John 6:63>>] is that Spirit: and ##where##note:x[<<Rom 8:2; Gal 4:6>>] the Spirit of the Lord __is__, there __is__ liberty.
+@ But we all, with open face beholding as in a glass ##the glory##note:x[<<2 Cor 4:6>>] of the Lord, ##are##note:x[<<Rom 12:2; Eph 4:22–24>>] changed into the same image from glory to glory, __even__ as by the Spirit of the Lord.
+
+=== @4
+
+[discrete.pericope]
+==== The Light of the Gospel
+
+@ Therefore seeing we have this ministry, as we have received mercy, ##we faint not##note:x[<<Gal 6:9; Eph 3:13; 2 Thess 3:13>>];
+@ But have renounced the hidden things of dishonesty, ##not##note:x[<<2 Cor 2:17; 1 Thess 2:3–5>>] walking in craftiness, nor handling the word of God deceitfully; but ##by##note:x[<<2 Cor 5:11>>] manifestation of the truth commending ourselves to every man’s conscience in the sight of God.
+@ But if our gospel be hid, ##it is##note:x[<<1 Cor 1:18; 2 Cor 3:14; 2 Thess 2:9–11>>] hid to them that are lost:
+@ In whom ##the god##note:x[<<John 12:40>>] of this world hath ##blinded##note:x[<<John 12:40; 2 Cor 3:14>>] the minds of them which believe not, lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them.
+@ For ##we##note:x[<<1 Cor 1:23; 1 Thess 2:5–6>>] preach not ourselves, but ##Christ##note:x[<<1 Cor 1:23>>] Jesus the Lord; and ourselves your servants for Jesus’ sake.
+@ For God, ##who##note:x[<<Gen 1:3>>] commanded ##the light##note:x[<<Isa 60:2; 1 Pet 2:9>>] to shine out of darkness, hath shined in our hearts, to __give__ the light of the knowledge of the glory of God in the face of Jesus Christ.
+
+[discrete.pericope]
+==== Treasure in Jars of Clay
+
+[.parallel]
+(<<Romans 6:1–14>>)
+
+@ But we have this treasure ##in##note:x[<<2 Cor 5:1>>] earthen vessels, ##that##note:x[<<2 Cor 3:5–6; Eph 2:8–9>>] the excellency of the power may be of God, and not of us.
+@ __We are__ troubled on every side, ##yet##note:x[<<Rom 8:35–37; Jas 1:2–4; 1 Pet 4:12–14>>] not distressed; __we are__ perplexed, but not in despair;
+@ Persecuted, ##but##note:x[<<Isa 62:4>>] not forsaken; ##cast##note:x[<<Ps 37:24; Isa 43:2>>] down, but not destroyed;
+@ Always ##bearing##note:x[<<Phil 3:10–11>>] about in the body the dying of the Lord Jesus, ##that##note:x[<<2 Tim 2:11; 1 Pet 4:13>>] the life also of Jesus might be made manifest in our body.
+@ For we which live ##are alway##note:x[<<Ps 44:22; 1 Cor 15:49>>] delivered unto death for Jesus’ sake, that the life also of Jesus might be made manifest in ##our##note:x[<<1 Cor 15:53–54>>] mortal flesh.
+@ So then ##death##note:x[<<Acts 20:24; 1 Cor 4:10; 2 Cor 13:9>>] worketh in us, but life in you.
+@ We having ##the same##note:x[<<Heb 11:1–40>>] spirit of faith, according as it is written, ##I believed##note:x[<<Ps 116:10>>], and therefore have I spoken; ##we also##note:x[<<2 Cor 3:12>>] believe, and therefore speak;
+@ Knowing ##that##note:x[<<John 11:25–26; Rom 8:11; 1 Thess 4:14>>] he which raised up the Lord Jesus shall raise up us also by Jesus, and shall present __us__ with you.
+@ For ##all##note:x[<<Rom 8:28>>] things __are__ for your sakes, that ##the abundant##note:x[<<2 Cor 9:11–12; Eph 3:20–21>>] grace might through the thanksgiving of many redound to the glory of God.
+@ For which cause ##we##note:x[<<Isa 40:29>>] faint not; but though our outward man perish, yet the inward __man__ ##is##note:x[<<Isa 40:31; Col 3:10>>] renewed day by day.
+@ For ##our##note:x[<<Rom 8:18; 1 Pet 5:10>>] light affliction, which is but for a moment, worketh for us a ##far##note:x[<<1 Pet 5:10>>] more exceeding __and__ eternal weight of glory;
+@ While ##we##note:x[<<Rom 8:24–25; 2 Cor 5:7; Heb 11:1>>] look not at the things which are seen, but at the things which are not seen: for the things which are seen __are__ temporal; but the things which are not seen __are__ eternal.
+
+=== @5
+
+[discrete.pericope]
+==== Our Eternal Dwelling
+
+[.parallel]
+(<<Romans 8:18–27>>)
+
+@ For ##we know##note:x[<<Job 19:25–26; 1 John 3:2>>] that if ##our##note:x[<<2 Pet 1:13–14>>] earthly house of __this__ tabernacle were dissolved, we have a building of God, an house not made with hands, eternal in the heavens.
+@ For in this ##we##note:x[<<Rom 7:24; 8:23>>] groan, earnestly desiring to be ##clothed##note:x[<<1 Cor 15:53–54>>] upon with our house which is from heaven:
+@ If so be that ##being##note:x[<<Gen 3:7–11>>] clothed we shall not be found naked.
+@ For ##we that##note:x[<<2 Pet 1:13>>] are in __this__ tabernacle do groan, being burdened: not for that we would be unclothed, but clothed upon, ##that mortality##note:x[<<Isa 25:8; 1 Cor 15:53–54>>] might be swallowed up of life.
+@ Now he that hath wrought us for the selfsame thing __is__ God, who also hath given unto us ##the earnest##note:x[<<Rom 8:23; 2 Cor 1:22; Eph 1:13–14>>] of the Spirit.
+@ Therefore __we are__ always confident, knowing that, ##whilst##note:x[<<Ps 39:12; 2 Cor 5:1; Phil 3:20–21>>] we are at home in the body, we are absent from the Lord:
+@ ( note:x[<<Rom 8:24–25; 2 Cor 4:18; Heb 11:1–27>>]For we walk by faith, not by sight:)
+@ We are confident, __I say__, ##and willing##note:x[<<2 Cor 5:6; Phil 1:20–24>>] rather to be absent from the body, and to be ##present##note:x[<<John 14:3>>] with the Lord.
+@ Wherefore ##we labour##note:x[<<1 Thess 4:11; 1 Tim 4:10; 2 Pet 3:14>>], that, whether present or absent, we may be accepted of him.
+@ For ##we##note:x[<<Eccl 12:14>>] must all appear before the judgment seat of Christ; that every one may ##receive##note:x[<<Matt 16:27; Rev 22:12>>] the things __done__ in __his__ body, according to that he hath done, whether __it be__ good or bad.
+
+[discrete.pericope]
+==== Ambassadors for Christ
+
+@ Knowing therefore ##the terror##note:x[<<Heb 10:31; Jude 1:23>>] of the Lord, ##we persuade##note:x[<<2 Tim 2:24–26>>] men; but we are made manifest unto God; and I trust also are made manifest in your consciences.
+@ For ##we##note:x[<<2 Cor 3:1>>] commend not ourselves again unto you, but ##give##note:x[<<2 Cor 1:14>>] you occasion to glory on our behalf, that ye may have somewhat to __answer__ them which glory in ##appearance##note:x[<<Gal 6:12–14>>], and not in heart.
+@ For whether ##we be beside##note:x[<<2 Cor 11:1, 16–17; 12:6>>] ourselves, __it is__ to God: or whether we be sober, __it is__ for your cause.
+@ For ##the love##note:x[<<Matt 10:37–38; 1 Pet 1:8>>] of Christ constraineth us; because we thus judge, that if one died for all, ##then##note:x[<<Rom 14:7–9>>] were all dead:
+@ And __that__ he died for all, ##that they##note:x[<<Rom 14:7–8>>] which live should not ##henceforth##note:x[<<1 Pet 4:2–4>>] ##live unto##note:x[<<Rom 14:7–9>>] themselves, but unto him which died for them, and rose again.
+@ Wherefore henceforth ##know we no##note:x[<<Phil 3:7–8; Col 3:11>>] man after the flesh: yea, though we have known Christ after the flesh, ##yet##note:x[<<John 6:63>>] now henceforth know we __him__ no more.
+@ Therefore if any man __be__ in Christ, __he is__ ##a new##note:x[<<Ezek 36:26>>] creature: ##old##note:x[<<Isa 43:18–19; Eph 4:22–24>>] things are passed away; behold, all things are become new.
+@ And all things __are__ of God, ##who##note:x[<<Rom 5:10–11; Col 1:20–21>>] hath reconciled us to himself by Jesus Christ, and ##hath given##note:x[<<Col 1:20>>] to us the ministry of reconciliation;
+@ To wit, that God was in Christ, ##reconciling##note:x[<<1 John 2:1–2>>] the world unto himself, ##not##note:x[<<Isa 43:25; 44:22>>] imputing their trespasses unto them; and hath committed unto us the word of reconciliation.
+@ Now then we are ##ambassadors##note:x[<<Mal 2:7; Eph 6:20>>] for Christ, as though God did beseech __you__ by us: we pray __you__ in Christ’s stead, ##be##note:x[<<Luke 14:23>>] ye reconciled to God.
+@ For ##he##note:x[<<1 Pet 3:18>>] hath made him __to be__ sin for us, ##who##note:x[<<1 Pet 2:22–24>>] knew no sin; that ##we##note:x[<<Rom 5:19>>] might be made the righteousness of God in him.
+
+=== @6
+
+[discrete.pericope]
+==== Paul’s Hardships and God’s Grace
+
+@ We then, __as__ ##workers##note:x[<<1 Cor 3:9>>] together __with him__, beseech __you__ also that ##ye##note:x[<<Heb 12:15>>] receive not ##the##note:x[<<1 Pet 4:10>>] grace of God in vain.
+@ ( For he saith, I have heard thee in ##a time##note:x[<<Isa 49:8; Heb 3:13; 4:7>>] accepted, and in the day of salvation have I succoured thee: behold, now __is__ the accepted time; behold, now __is__ the day of salvation.)
+@ ##Giving no offence in any thing, that the ministry be not blamed:##note:x[<<Matt 17:27; Rom 14:13; 1 Cor 9:12>>]
+@ But in all __things__ approving ourselves as the ministers of God, in much patience, in afflictions, in ##necessities##note:x[<<2 Cor 11:27; 12:10>>], in ##distresses##note:x[<<2 Cor 4:8>>],
+@ In ##stripes##note:x[<<2 Cor 11:23–25>>], in imprisonments, in tumults, in ##labours##note:x[<<2 Cor 11:23>>], in ##watchings##note:x[<<2 Cor 11:27>>], in fastings;
+@ note:x[<<Gal 5:22; Eph 4:32>>]By pureness, by ##knowledge##note:x[<<Col 1:27>>], by longsuffering, by kindness, by the Holy Ghost, by love unfeigned,
+@ By ##the word##note:x[<<2 Cor 4:2; 2 Tim 2:15>>] of truth, by ##the power##note:x[<<2 Cor 10:4–5>>] of God, by the armour of righteousness on the right hand and on the left,
+@ By honour and dishonour, by ##evil##note:x[<<1 Pet 4:14>>] report and good report: ##as##note:x[<<Matt 27:63>>] deceivers, and __yet__ true;
+@ As unknown, and __yet__ ##well##note:x[<<2 Cor 4:2>>] known; as dying, and, ##behold##note:x[<<Rom 8:36; 2 Cor 4:10–11>>], we live; as chastened, and not killed;
+@ As ##sorrowful##note:x[<<John 16:22>>], yet alway rejoicing; as poor, yet ##making##note:x[<<2 Cor 8:9; Jas 2:5>>] many rich; as having nothing, and __yet__ possessing all things.
+
+@ O __ye__ Corinthians, ##our mouth##note:x[<<2 Cor 7:3–4>>] is open unto you, ##our heart##note:x[<<Ps 119:32; 2 Cor 12:15>>] is enlarged.
+@ Ye ##are not##note:x[<<Mic 2:7>>] straitened in us, but ye are straitened in your own bowels.
+@ Now for a recompence in the same, (##I speak##note:x[<<1 Cor 4:14–15; 1 John 3:18; 3 John 1:4>>] as unto __my__ children,) be ye also enlarged.
+
+[discrete.pericope]
+==== Do Not Be Unequally Yoked
+
+@ Be ye not ##unequally##note:x[<<1 Cor 15:33; Jas 4:4>>] yoked together with unbelievers: ##for##note:x[<<1 Cor 10:21>>] what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?
+@ And ##what concord##note:x[<<1 Kgs 18:21; 1 Cor 10:20–21>>] hath Christ with Belial? ##or##note:x[<<1 John 5:11–13>>] what part hath he that believeth with an infidel?
+@ And what agreement hath the temple of God with idols? for ye are the temple of the living God; as God hath said, ##I will dwell##note:x[<<Exod 29:45; Rev 21:3>>] in them, and walk in __them__; and ##I will be##note:x[<<Heb 8:10>>] their God, and they shall be my people.
+@ Wherefore ##come##note:x[<<Isa 52:11; 2 Cor 7:1; Rev 18:4>>] out from among them, and be ye separate, saith the Lord, and touch not the unclean __thing__; and I will receive you,
+@ And will be ##a Father##note:x[<<John 1:12; Rom 8:14–17; Rev 21:7>>] unto you, and ye shall be my sons and daughters, saith the Lord Almighty.
+
+=== @7
+
+[discrete.pericope]
+==== Paul’s Joy in the Corinthians
+
+@ Having therefore these promises, dearly beloved, ##let##note:x[<<Jas 4:8; 1 Pet 2:11>>] us cleanse ourselves from all filthiness of the flesh and spirit, ##perfecting##note:x[<<1 Thess 4:7>>] holiness in the fear of God.
+
+@ Receive us; ##we have wronged##note:x[<<Acts 20:33; 2 Cor 11:9>>] no man, we have corrupted no man, we have defrauded no man.
+@ I speak not __this__ to condemn __you__: ##for##note:x[<<2 Cor 6:11–12>>] I have said before, that ##ye##note:x[<<Phil 1:8–9>>] are in our hearts to die and live with __you__.
+@ Great __is__ ##my boldness##note:x[<<2 Cor 3:12>>] of speech toward you, great __is__ my glorying of you: ##I am filled##note:x[<<2 Cor 1:4; Jas 1:2>>] with comfort, I am exceeding joyful in all our tribulation.
+@ For, ##when##note:x[<<2 Cor 2:13>>] we were come into Macedonia, our flesh had no rest, but we were troubled on every side; ##without##note:x[<<Deut 32:25>>] __were__ fightings, within __were__ fears.
+@ Nevertheless God, ##that comforteth##note:x[<<2 Cor 1:3–4; 2 Thess 2:16–17>>] those that are cast down, ##comforted##note:x[<<3 John 1:2–4>>] us by the coming of Titus;
+@ And not by his coming only, ##but##note:x[<<2 John 1:4>>] by the consolation wherewith he was comforted in you, when he told us your ##earnest##note:x[<<Jude 1:3>>] desire, your mourning, your fervent mind toward me; so that I rejoiced the more.
+@ For ##though I made##note:x[<<John 16:6; Rev 3:19>>] you sorry with a letter, I do not repent, though I did repent: for I perceive that the same epistle hath made you sorry, though __it were__ but for a season.
+@ Now ##I rejoice##note:x[<<Jer 31:18–20; Luke 15:7; 2 Cor 7:10>>], not that ye were made sorry, but that ye sorrowed to repentance: for ye were made sorry after a godly manner, that ye might receive damage by us in nothing.
+@ For godly sorrow worketh ##repentance##note:x[<<Acts 3:19; 11:18; 2 Tim 2:25–26>>] to salvation not to be repented of: but the sorrow of the world worketh death.
+@ For behold this selfsame thing, that ye sorrowed after a godly sort, what carefulness it wrought in you, yea, __what__ ##clearing##note:x[<<1 Tim 5:21–22>>] of yourselves, yea, __what__ indignation, yea, __what__ fear, yea, __what__ vehement desire, yea, __what__ zeal, yea, __what__ revenge! In all __things__ ye have ##approved##note:x[<<Rom 14:18; 2 Tim 2:15>>] yourselves to be clear in this matter.
+@ Wherefore, though I wrote unto you, ##__I did__##note:x[<<2 Cor 2:9>>] __it__ not for his cause that had done the wrong, nor for his cause that suffered wrong, but ##that our##note:x[<<1 Tim 3:5>>] care for you in the sight of God might appear unto you.
+@ Therefore ##we were##note:x[<<Rom 12:15; 1 Pet 3:8>>] comforted in your comfort: yea, and exceedingly the more joyed we for the joy of Titus, ##because##note:x[<<Rom 15:32>>] his spirit was refreshed by you all.
+@ For ##if##note:x[<<2 Cor 7:4>>] I have boasted any thing to him of you, I am not ashamed; but as we spake all things to you in truth, even so our boasting, which __I made__ before Titus, is found a truth.
+@ And his ##inward affection is##note:x[<<1 John 3:17>>] more abundant toward you, whilst he remembereth ##the obedience##note:x[<<Phil 2:12>>] of you all, how ##with##note:x[<<Phil 2:12>>] fear and trembling ye received him.
+@ I rejoice therefore that I have confidence in you in all __things.__
+
+=== @8
+
+[discrete.pericope]
+==== Generosity Commended
+
+[.parallel]
+(<<Philippians 4:10–20>>)
+
+@ Moreover, brethren, we do you to wit of the grace of God bestowed on the ##churches##note:x[<<Acts 16:9; 2 Cor 9:2>>] of Macedonia;
+@ How that in a great trial of affliction the abundance of their joy and ##their deep##note:x[<<Jas 2:5>>] poverty abounded unto ##the riches##note:x[<<Prov 11:25; 2 Cor 6:10>>] of their liberality.
+@ For ##to##note:x[<<2 Cor 9:6–7>>] __their__ power, I bear record, yea, and ##beyond##note:x[<<Exod 35:5, 29>>] __their__ power __they were__ willing of themselves;
+@ Praying us with much intreaty that we would receive the gift, and __take upon us__ the fellowship of ##the ministering##note:x[<<Acts 24:17; 2 Cor 9:1; Gal 6:10>>] to the saints.
+@ And __this they did__, not as we hoped, but ##first##note:x[<<Rom 6:13; 12:1; 14:7–9>>] gave their own selves to the Lord, and unto us by the will of God.
+@ Insomuch that ##we##note:x[<<2 Cor 8:16–17; 12:18>>] desired Titus, that as he had begun, so he would also finish in you the same ##grace##note:x[<<2 Cor 8:19>>] also.
+@ Therefore, as ye abound in every __thing, in__ faith, and utterance, and knowledge, and __in__ all diligence, and __in__ your love to us, ##__see__##note:x[<<2 Cor 9:8; 2 Thess 1:3; 2 Pet 1:5–8>>] that ye abound in this grace also.
+@ I ##speak##note:x[<<1 Cor 7:6; 2 Cor 9:7>>] not by commandment, but by occasion of the forwardness of others, and to ##prove##note:x[<<1 John 3:17–19>>] the sincerity of your love.
+@ For ye know the grace of our Lord Jesus Christ, that, ##though##note:x[<<Phil 2:6>>] he was rich, yet for your sakes ##he became##note:x[<<Phil 2:6–8>>] poor, ##that ye##note:x[<<Rom 8:32>>] through his poverty might be rich.
+@ And herein I give __my__ advice: for this is ##expedient##note:x[<<Prov 19:17; 1 Tim 6:18–19; Heb 13:16>>] for you, who have begun before, not only to do, but also to be forward a year ago.
+@ Now therefore perform the doing __of it__; that as __there was__ a readiness to will, so __there may be__ a performance also out of that which ye have.
+@ For ##if##note:x[<<Exod 35:29; Mark 12:42–44; 2 Cor 9:7>>] there be first a willing mind, __it is__ accepted according to that a man hath, __and__ not according to that he hath not.
+@ For __I mean__ ##not##note:x[<<Acts 4:34>>] that other men be eased, and ye burdened:
+@ But by an equality, __that__ now at this time your abundance __may be a supply__ for their want, that their abundance also may be __a supply__ for your want: that there may be equality:
+@ ##As it is written, He that __had gathered__ much had nothing over; and he that __had gathered__ little had no lack.##note:x[<<Exod 16:18; Luke 22:35>>]
+
+[discrete.pericope]
+==== Titus Commended
+
+[.parallel]
+(<<Titus 1:1–4>>)
+
+@ But ##thanks##note:x[<<Jer 32:40; Rev 17:17>>] __be__ to God, which put the same earnest care into the heart of Titus for you.
+@ For indeed he ##accepted##note:x[<<2 Cor 8:6; Heb 13:22>>] the exhortation; but being more forward, of his own accord he went unto you.
+@ And we have sent with him ##the brother##note:x[<<2 Cor 12:18>>], whose praise __is__ in the gospel throughout all the churches;
+@ And not __that__ only, ##but##note:x[<<1 Cor 16:3–4>>] who was also chosen of the churches to travel with us with this grace, which is administered by us to the glory of the same Lord, and __declaration of__ your ready mind:
+@ Avoiding this, ##that##note:x[<<Eph 5:15; 1 Thess 5:22>>] no man should blame us in this abundance which is administered by us:
+@ Providing ##for##note:x[<<Rom 12:17; Phil 4:8; 1 Pet 2:12>>] honest things, not only in the sight of the Lord, but also in the sight of men.
+@ And we have sent with them our brother, whom we have oftentimes proved diligent in many things, but now much more diligent, upon the great confidence which __I have__ in you.
+@ note:x[<<Phil 2:25>>]Whether __any do enquire__ of Titus, __he__ ##__is__ my##note:x[<<Phlm 1:17>>] partner and fellowhelper concerning you: or our brethren __be enquired of, they are__ ##the messengers##note:x[<<Phil 2:25>>] of the churches, __and__ the glory of Christ.
+@ ##Wherefore shew ye to them, and before the churches, the proof of your love, and of our boasting on your behalf.##note:x[<<2 Cor 7:14>>]
+
+=== @9
+
+[discrete.pericope]
+==== God Loves a Cheerful Giver
+
+[.parallel]
+(<<1 Corinthians 16:1–4>>)
+
+@ For as touching ##the ministering##note:x[<<Gal 6:10>>] to the saints, it is superfluous for me to write to you:
+@ For I know ##the forwardness##note:x[<<2 Cor 8:8, 10>>] of your mind, for which I boast of you to them of Macedonia, ##that##note:x[<<2 Cor 8:10>>] Achaia was ready a year ago; and your zeal hath provoked very many.
+@ Yet have I sent the brethren, lest our boasting of you should be in vain in this behalf; that, as I said, ye may be ready:
+@ Lest haply if they of Macedonia come with me, and find you unprepared, we ( that we say not, ye) should be ashamed in this same confident boasting.
+@ Therefore I thought it necessary to exhort the brethren, that they would go before unto you, and make up beforehand your ##bounty##note:x[<<Gen 33:11; 1 Sam 25:27>>], whereof ye had notice before, that the same might be ready, as __a matter of__ bounty, and not as __of__ covetousness.
+@ But this __I say__, ##He which soweth sparingly##note:x[<<Prov 11:24; 22:9; Luke 6:38>>] shall reap also sparingly; and he which soweth bountifully shall reap also bountifully.
+@ Every man according as he purposeth in his heart, __so let him give__; not grudgingly, or of necessity: for ##God##note:x[<<1 Chr 29:17; Acts 20:35; 2 Cor 8:12>>] loveth a cheerful giver.
+@ And ##God##note:x[<<Prov 10:22; Mal 3:10; Phil 4:18>>] __is__ able to make all grace abound toward you; that ye, always having all sufficiency in all __things__, may abound to every good work:
+@ ( As it is written, ##He hath dispersed##note:x[<<Ps 112:9>>] abroad; he hath given to the poor: ##his##note:x[<<Ps 112:3; Prov 21:21>>] righteousness remaineth for ever.
+@ Now ##he##note:x[<<Isa 55:10>>] that ministereth seed to the sower both minister bread for __your__ food, and ##multiply##note:x[<<2 Cor 9:6>>] your seed sown, and ##increase##note:x[<<Hos 10:12>>] the fruits of your righteousness;)
+@ Being ##enriched##note:x[<<1 Chr 29:12–14; 1 Tim 6:17–18>>] in every thing to all bountifulness, ##which##note:x[<<2 Cor 4:15>>] causeth through us thanksgiving to God.
+@ For the administration of this service not ##only##note:x[<<2 Cor 8:14–15; Phil 2:25; Phlm 1:4–7>>] supplieth the want of the saints, but is abundant also by many thanksgivings unto God;
+@ Whiles by the experiment of this ministration ##they##note:x[<<Matt 5:16>>] glorify God for your professed subjection unto the gospel of Christ, ##and for##note:x[<<Heb 13:16>>] __your__ liberal distribution unto them, and unto all __men__;
+@ And ##by##note:x[<<2 Tim 1:16–18>>] their prayer for you, which ##long##note:x[<<Phil 4:1>>] after you for ##the exceeding##note:x[<<1 Tim 1:14>>] grace of God in you.
+@ ##Thanks##note:x[<<2 Cor 2:14; Eph 5:20>>] __be__ unto God for ##his##note:x[<<John 3:16>>] unspeakable gift.
+
+=== @10
+
+[discrete.pericope]
+==== Paul’s Apostolic Authority
+
+@ Now I Paul myself beseech you ##by##note:x[<<Matt 11:29>>] the meekness and gentleness of Christ, who in ##presence##note:x[<<2 Cor 10:10>>] __am__ ##base##note:x[<<2 Cor 10:10>>] among you, but being absent am bold toward you:
+@ But I beseech __you__, ##that I##note:x[<<2 Cor 13:2, 10>>] may not be bold when I am present with that confidence, wherewith I think to be bold against some, which think of us as if ##we walked##note:x[<<Gal 5:16–25>>] according to the flesh.
+@ For though we ##walk##note:x[<<Gal 2:20; 1 Pet 4:1–2>>] in the flesh, ##we do##note:x[<<2 Cor 10:4>>] not war after the flesh:
+@ ( For ##the weapons##note:x[<<2 Cor 6:7; Eph 6:13–18>>] of our warfare __are__ not carnal, but mighty through God ##to the##note:x[<<Jer 1:10>>] pulling down of strong holds;)
+@ Casting down imaginations, and every high thing that exalteth itself against the knowledge of God, and bringing into captivity ##every thought##note:x[<<Isa 55:7; Heb 4:12>>] to ##the obedience##note:x[<<1 Pet 1:14–15>>] of Christ;
+@ And having ##in##note:x[<<Num 16:26–30>>] a readiness to revenge all disobedience, ##when##note:x[<<2 Cor 2:9; 7:15>>] your obedience is fulfilled.
+@ Do ##ye look##note:x[<<John 7:24; 2 Cor 5:12>>] on things after the outward appearance? ##If##note:x[<<1 Cor 14:37>>] any man trust to himself that he is Christ’s, let him of himself think this again, that, as he __is__ Christ’s, even so __are__ we Christ’s.
+@ For ##though##note:x[<<2 Cor 13:10>>] I should boast somewhat more of our authority, which the Lord hath given us for edification, and not for your destruction, ##I should not##note:x[<<2 Tim 1:12>>] be ashamed:
+@ That I may not seem as if I would terrify you by letters.
+@ For __his__ letters, say they, __are__ weighty and powerful; but __his__ bodily presence __is__ weak, ##and __his__##note:x[<<Exod 4:10; 1 Cor 1:17; 2 Cor 11:6>>] speech contemptible.
+@ Let ##such##note:x[<<2 Cor 12:20; 13:2–3, 10>>] an one think this, that, such as we are in word by letters when we are absent, such __will we be__ also in deed when we are present.
+@ For ##we dare not##note:x[<<Prov 27:2; Luke 18:11>>] make ourselves of the number, or compare ourselves with some that commend themselves: but they measuring themselves by themselves, and comparing themselves among themselves, ##are not wise##note:x[<<Prov 26:12>>].
+@ But we will not boast of things without __our__ measure, but ##according##note:x[<<Rom 12:6; 2 Cor 10:14; 1 Pet 4:10>>] to the measure of the rule which God hath distributed to us, a measure to reach even unto you.
+@ For we stretch not ourselves beyond __our measure__, as though we reached not unto you: for we are come as far as to you also in __preaching__ ##the gospel##note:x[<<Rom 1:16>>] of Christ:
+@ Not ##boasting##note:x[<<Rom 15:20; 2 Cor 10:13>>] of things without __our__ measure, __that is__, of other men’s labours; but having hope, when your faith is increased, that we shall be enlarged by you according to our rule abundantly,
+@ To ##preach##note:x[<<Rom 15:24–28>>] the gospel in the __regions__ beyond you, __and__ not to boast in another man’s line of things made ready to our hand.
+@ ##But he that glorieth, let him glory in the Lord.##note:x[<<Jer 9:23–24; 1 Cor 1:31; Jas 1:9–10>>]
+@ For ##not##note:x[<<Prov 21:2; Luke 16:15>>] he that commendeth himself is approved, ##but##note:x[<<Rom 2:29>>] whom the Lord commendeth.
+
+=== @11
+
+[discrete.pericope]
+==== Paul and the False Apostles
+
+@ Would to God ye could ##bear with me a##note:x[<<2 Cor 11:4>>] little ##in##note:x[<<1 Cor 1:21; 2 Cor 11:19>>] __my__ folly: and indeed bear with me.
+@ For I am jealous over you with godly jealousy: for ##I have##note:x[<<Isa 54:5; Hos 2:19–20>>] espoused you to one husband, that ##I may##note:x[<<Col 1:28>>] present __you as__ a chaste virgin to Christ.
+@ But ##I fear##note:x[<<Gal 1:6>>], lest by any means, as the serpent beguiled Eve through his subtilty, ##so##note:x[<<Gal 1:6; Col 2:8>>] your minds should be corrupted from the simplicity that is in Christ.
+@ For if he that cometh ##preacheth##note:x[<<1 Tim 2:5>>] another Jesus, whom we have not preached, or __if__ ye ##receive##note:x[<<1 Cor 12:4–11; Eph 4:4–5>>] another spirit, which ye have not received, or another gospel, which ye have not accepted, ye might well bear with __him__.
+@ For I suppose ##I was not##note:x[<<1 Cor 15:10; 2 Cor 12:11–12>>] a whit behind the very chiefest apostles.
+@ But though __I be__ ##rude##note:x[<<1 Cor 1:17, 21>>] in speech, yet ##not##note:x[<<Eph 3:4>>] in knowledge; but we have been throughly made manifest among you in all things.
+@ Have I committed an offence ##in##note:x[<<2 Cor 12:13>>] abasing myself that ye might be exalted, because I have preached to you the gospel of God freely?
+@ I robbed other churches, taking wages __of them__, to do you service.
+@ And when ##I was##note:x[<<1 Thess 2:9; 2 Thess 3:8–9>>] present with you, and wanted, I was chargeable to no man: for that which was lacking to me the brethren which came from Macedonia supplied: and in all __things__ I have kept myself from being ##burdensome##note:x[<<1 Thess 2:6>>] unto you, and __so__ will I keep __myself__.
+@ As ##the truth##note:x[<<Rom 1:9; 9:1>>] of Christ is in me, no man shall stop me of this boasting in ##the regions##note:x[<<Acts 18:12>>] of Achaia.
+@ Wherefore? ##because##note:x[<<2 Cor 12:15>>] I love you not? God knoweth.
+@ But what I do, that I will do, ##that I may##note:x[<<1 Cor 9:12>>] cut off occasion from them which desire occasion; that wherein they glory, they may be found even as we.
+@ For such __are__ ##false##note:x[<<Gal 1:7; 1 John 4:1; Rev 2:2>>] apostles, deceitful workers, transforming themselves into the apostles of Christ.
+@ And no marvel; ##for##note:x[<<2 Cor 2:11; 11:3; Gal 1:8>>] Satan himself is transformed into an angel of light.
+@ Therefore __it is__ no great thing if ##his##note:x[<<Rev 9:11>>] ministers also be transformed as ##the ministers##note:x[<<2 Cor 3:9>>] of righteousness; ##whose##note:x[<<Phil 3:19>>] end shall be according to their works.
+
+[discrete.pericope]
+==== Paul’s Suffering and Service
+
+[.parallel]
+(<<Colossians 1:24–29>>)
+
+@ I say again, Let no man think me a fool; if otherwise, yet as a fool ##receive me##note:x[<<2 Cor 11:1>>], that I may boast myself a little.
+@ That which I speak, ##I speak __it__##note:x[<<1 Cor 7:12>>] not after the Lord, but as it were foolishly, in this confidence of boasting.
+@ Seeing that many glory after the flesh, I will glory also.
+@ For ye suffer fools gladly, ##seeing##note:x[<<1 Cor 4:10>>] ye __yourselves__ are wise.
+@ For ye suffer, ##if a man bring##note:x[<<Gal 2:4; 4:3, 9>>] you into bondage, if a man devour __you__, if a man take __of you__, if a man exalt himself, if a man smite you on the face.
+@ I speak as concerning reproach, ##as though##note:x[<<2 Cor 10:10>>] we had been weak. Howbeit whereinsoever any is bold, (I speak foolishly,) I am bold also.
+@ Are they ##Hebrews##note:x[<<Rom 11:1; Phil 3:5>>]? so __am__ I. Are they Israelites? so __am__ I. Are they the seed of Abraham? so __am__ I.
+@ Are they ##ministers##note:x[<<2 Cor 6:4>>] of Christ? ( I speak as a fool) I __am__ more; in labours more abundant, ##in stripes##note:x[<<2 Cor 6:4–5>>] above measure, in prisons more frequent, ##in deaths##note:x[<<2 Cor 1:9–10>>] oft.
+@ Of the Jews five times received I forty __stripes__ save one.
+@ Thrice was I beaten with rods, ##once##note:x[<<Acts 14:19>>] was I stoned, thrice I suffered shipwreck, a night and a day I have been in the deep;
+@ __In__ journeyings often, __in__ perils of waters, __in__ perils of robbers, ##__in__ perils by __mine__##note:x[<<Acts 13:50; 20:19>>] __own__ countrymen, ##__in__ perils by the##note:x[<<Acts 14:5>>] heathen, __in__ perils in the city, __in__ perils in the wilderness, __in__ perils in the sea, __in__ perils among false brethren;
+@ In ##weariness##note:x[<<2 Cor 6:5>>] and painfulness, in watchings often, ##in hunger##note:x[<<Phil 4:12>>] and thirst, in ##fastings##note:x[<<2 Cor 6:5>>] often, in cold and nakedness.
+@ Beside those things that are without, that which cometh upon me daily, ##the care##note:x[<<Acts 20:18–35; Rom 15:16>>] of all the churches.
+@ Who ##is weak##note:x[<<1 Cor 8:13; 9:22>>], and I am not weak? who is offended, and I burn not?
+@ If I ##must##note:x[<<Prov 25:27; Jer 9:23–24>>] needs glory, ##I will##note:x[<<2 Cor 12:5–10>>] glory of the things which concern mine infirmities.
+@ The ##God##note:x[<<Eph 1:3>>] and Father of our Lord Jesus Christ, ##which##note:x[<<Rom 9:5>>] is blessed for evermore, knoweth that I lie not.
+@ In Damascus the governor under Aretas the king kept the city of the Damascenes with a garrison, desirous to apprehend me:
+@ And through a window in a basket was I let down by the wall, and escaped his hands.
+
+=== @12
+
+[discrete.pericope]
+==== Paul’s Revelation
+
+@ It is not expedient for me doubtless to glory. I will come to ##visions##note:x[<<2 Cor 12:7; Gal 1:12; 1 John 5:20>>] and revelations of the Lord.
+@ I knew a man in Christ above fourteen years ago, ( whether ##in the##note:x[<<Ezek 8:1–3; Acts 22:17; Rev 4:2>>] body, I cannot tell; or whether out of the body, I cannot tell: God knoweth;) such an one caught up to the third heaven.
+@ And I knew such a man, ( whether in the body, or out of the body, I cannot tell: God knoweth;)
+@ How that he was caught up into ##paradise##note:x[<<Ezek 31:9; Luke 23:43; Rev 2:7>>], and heard unspeakable words, which it is not lawful for a man to utter.
+
+[discrete.pericope]
+==== Paul’s Thorn and God’s Grace
+
+@ Of such an one will I glory: yet of myself I will not glory, but in mine infirmities.
+@ For though ##I would##note:x[<<2 Cor 11:16>>] desire to glory, I shall not be a fool; for I will say the truth: but __now__ I forbear, lest any man should think of me above that which he seeth me __to be__, or __that__ he heareth of me.
+@ And ##lest##note:x[<<2 Chr 32:25–26>>] I should be exalted above measure through the abundance of the revelations, there was given to me ##a thorn##note:x[<<Gen 32:31; Judg 2:3>>] in the flesh, the messenger of Satan to buffet me, lest I should be exalted above measure.
+@ For this thing ##I besought##note:x[<<1 Sam 15:11; Matt 26:39–44; Heb 5:7>>] the Lord thrice, that it might depart from me.
+@ And he said unto me, [wj}##My grace##note:x[<<2 Cor 12:10>>] is sufficient ##for##note:x[<<Phil 4:13>>] thee: for my strength is made perfect in weakness.{wj] ##Most##note:x[<<2 Cor 12:10>>] gladly therefore will I rather glory in my infirmities, that the power of Christ may rest upon me.
+@ Therefore ##I take##note:x[<<Rom 5:3>>] pleasure in infirmities, in reproaches, in necessities, in persecutions, in distresses for Christ’s sake: ##for when##note:x[<<2 Cor 12:9; Eph 6:10>>] I am weak, then am I strong.
+
+[discrete.pericope]
+==== Paul’s Concern for the Corinthians
+
+@ I am ##become##note:x[<<2 Cor 11:1>>] a fool in glorying; ye have compelled me: for I ought to have been commended of you: ##for in##note:x[<<2 Cor 11:5>>] nothing am I behind the very chiefest apostles, ##though##note:x[<<1 Cor 15:8–10>>] I be nothing.
+@ ##Truly the signs of an apostle were wrought among you in all patience, in signs, and wonders, and mighty deeds.##note:x[<<Rom 15:18–19; 2 Cor 4:2>>]
+@ For what is it wherein ye were inferior to other churches, except __it be__ that ##I myself##note:x[<<1 Cor 9:6, 12>>] was not burdensome to you? forgive me this wrong.
+@ Behold, the third time I am ready to come to you; and I will not be burdensome to you: ##for I##note:x[<<1 Cor 10:33>>] seek not yours, but you: ##for the##note:x[<<Gen 24:35–36; Prov 19:14>>] children ought not to lay up for the parents, but the parents for the children.
+@ And I ##will##note:x[<<2 Cor 1:6; Phil 2:17; 1 Thess 2:8>>] very gladly spend and be spent for you; though the more abundantly I love you, the less I be loved.
+@ But be it so, I did not burden you: nevertheless, being crafty, I caught you with guile.
+@ Did I make a gain of you by any of them whom I sent unto you?
+@ I desired Titus, and ##with##note:x[<<2 Cor 8:6>>] __him__ I sent a brother. Did Titus make a gain of you? ##walked we not in the same spirit##note:x[<<2 Cor 8:6>>]? __walked we__ not in the same steps?
+@ Again, think ye that we excuse ourselves unto you? ##we speak##note:x[<<Rom 9:1>>] before God in Christ: ##but##note:x[<<1 Cor 14:26; 2 Cor 10:8>>] __we do__ all things, dearly beloved, for your edifying.
+@ For I fear, lest, when I come, I shall not find you such as I would, and __that__ I shall be found unto you such as ye would not: lest __there be__ ##debates##note:x[<<1 Cor 1:11; Gal 5:19–21; 1 Pet 2:1>>], envyings, wraths, strifes, backbitings, whisperings, swellings, tumults:
+@ __And__ lest, when I come again, my God will humble me among you, and __that__ I shall bewail many which have ##sinned##note:x[<<2 Cor 13:2>>] already, and have not repented of the ##uncleanness##note:x[<<1 Cor 5:1, 9–11>>] and fornication and lasciviousness which they have committed.
+
+=== @13
+
+[discrete.pericope]
+==== Examine Yourselves
+
+@ This __is__ the third __time__ I am coming to you. ##In##note:x[<<Deut 17:6; 19:15; Matt 18:16>>] the mouth of two or three witnesses shall every word be established.
+@ I ##told##note:x[<<2 Cor 1:23; 10:1–2, 8–11>>] you before, and foretell you, as if I were present, the second time; and being absent now I write to them which heretofore have sinned, and to all other, that, if I come again, I will not spare:
+@ Since ##ye seek##note:x[<<2 Cor 10:8–10>>] a proof of ##Christ##note:x[<<Matt 10:20; Luke 21:15>>] speaking in me, which to you-ward is not weak, but is mighty in you.
+@ For though ##he was##note:x[<<1 Pet 3:18>>] crucified through weakness, ##yet##note:x[<<Rom 6:4; 1 Pet 3:18>>] he liveth by the power of God. For we also are weak in him, but we shall live with him by the power of God toward you.
+@ ##Examine##note:x[<<Ps 139:23–24; Lam 3:40; 1 Cor 11:28>>] yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Jesus Christ is in you, except ye be reprobates?
+@ But I trust that ye shall know that we are not reprobates.
+@ Now I pray to God that ye do no evil; not that we should appear ##approved##note:x[<<Jas 1:12>>], but that ye should do that which is honest, though we be as reprobates.
+@ ##For we can do nothing against the truth, but for the truth.##note:x[<<Prov 21:30; Mark 9:39; Acts 4:28–30>>]
+@ For we are glad, ##when##note:x[<<1 Cor 4:10>>] we are weak, and ye are strong: and this also we wish, ##__even__##note:x[<<2 Cor 13:11; 1 Thess 3:10>>] your perfection.
+@ Therefore ##I write##note:x[<<2 Cor 2:3>>] these things being absent, ##lest##note:x[<<Titus 1:13>>] being present I should use sharpness, ##according##note:x[<<2 Cor 10:8>>] to the power which the Lord hath given me to edification, and not to destruction.
+
+[discrete.pericope]
+==== Benediction and Farewell
+
+@ Finally, brethren, farewell. Be perfect, be of good comfort, ##be of one##note:x[<<Rom 12:16; 1 Cor 1:10>>] mind, ##live##note:x[<<Heb 12:14>>] in peace; and the God of love and peace shall be with you.
+@ ##Greet one another with an holy kiss.##note:x[<<Rom 16:16; 1 Thess 5:26; 1 Pet 5:14>>]
+
+@ All the saints salute you.
+@ ##The grace##note:x[<<1 Cor 16:23>>] of the Lord Jesus Christ, and ##the love##note:x[<<Rom 5:5>>] of God, and ##the communion##note:x[<<Eph 2:22>>] of the Holy Ghost, __be__ with you all. Amen.
+
+[.colophon]
+The second __epistle__ to the Corinthians was written from Philippi, __a city__ of Macedonia, by Titus and Lucas.

@@ -1,0 +1,534 @@
+== @HEB
+
+[.book-title]
+The Epistle of Paul the Apostle to the Hebrews
+
+=== @1
+
+[discrete.pericope]
+==== The Supremacy of the Son
+
+[.parallel]
+(<<Colossians 1:15–23>>)
+
+@ God, who ##at##note:x[<<2 Pet 1:20–21>>] sundry times and ##in##note:x[<<Num 12:6–8; Joel 2:28>>] divers manners spake in time past unto the fathers by the prophets,
+@ Hath in these last days spoken unto us by __his__ Son, whom he hath ##appointed##note:x[<<1 Cor 8:6>>] heir of all things, ##by whom##note:x[<<John 1:3; 1 Cor 8:6>>] also he made the worlds;
+@ Who being ##the brightness##note:x[<<John 14:9–10>>] of __his__ glory, and the express ##image##note:x[<<Col 1:15–16>>] of his person, and ##upholding##note:x[<<Rev 4:11>>] all things by the word of his power, when he had by himself purged our sins, sat down on the right hand of the Majesty on high;
+@ Being made ##so##note:x[<<Eph 1:21; 1 Pet 3:22>>] much better than the angels, as he hath ##by##note:x[<<Phil 2:9–11>>] inheritance obtained a more excellent name than they.
+@ For unto which of the angels said he at any time, ##Thou##note:x[<<Ps 2:7; Acts 13:33; Heb 5:5>>] art my Son, this day have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?
+@ And again, when he bringeth in the firstbegotten into the world, he saith, ##And let##note:x[<<Deut 32:43; Ps 97:7; 1 Pet 3:22>>] all the angels of God worship him.
+@ And of the angels he saith, ##Who##note:x[<<2 Kgs 6:17; Ps 104:4; Heb 1:14>>] maketh his angels spirits, and his ministers a flame of fire.
+@ But unto the Son __he saith__, ##Thy throne##note:x[<<Ps 45:6–7>>], ##O God##note:x[<<Isa 9:6–7; Rom 9:5>>], __is__ for ever and ever: a sceptre of righteousness __is__ the sceptre of thy kingdom.
+@ Thou hast ##loved##note:x[<<Ps 45:7>>] righteousness, and hated iniquity; therefore God, __even__ thy God, hath anointed thee with the ##oil##note:x[<<Ps 23:5; Isa 61:3>>] of gladness above thy fellows.
+@ And, ##Thou##note:x[<<Ps 102:25–27>>], Lord, ##in##note:x[<<Gen 1:1; John 1:1–3>>] the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands:
+@ They ##shall perish##note:x[<<Mark 13:31; Luke 21:33>>]; but thou remainest; and they all ##shall wax##note:x[<<Isa 51:6>>] old as doth a garment;
+@ And as a vesture shalt thou fold them up, and they shall be changed: ##but##note:x[<<Heb 13:8; Jas 1:17>>] thou art the same, and thy years shall not fail.
+@ But to which of the angels said he at any time, ##Sit##note:x[<<Ps 110:1; Mark 12:36; Heb 10:12>>] on my right hand, until I make thine enemies thy footstool?
+@ Are they not all ##ministering##note:x[<<Ps 103:20–21, 20–21>>] spirits, sent forth to ##minister##note:x[<<Ps 34:7>>] for them who shall be heirs of salvation?
+
+=== @2
+
+[discrete.pericope]
+==== Salvation Confirmed
+
+@ Therefore we ought to give ##the more##note:x[<<Prov 7:1–2; Luke 8:15>>] earnest heed to the things which we have heard, lest at any time ##we should##note:x[<<2 Pet 1:12–13>>] let __them__ slip.
+@ For if the word ##spoken##note:x[<<Acts 7:53; Gal 3:19>>] by angels was stedfast, and ##every##note:x[<<Heb 10:28>>] transgression and disobedience received a just recompence of reward;
+@ ##How##note:x[<<Heb 10:28–29; 12:25>>] shall we escape, if we neglect ##so##note:x[<<Heb 5:9>>] great salvation; which at the first began to be spoken by the Lord, and was confirmed unto us by them that heard __him__;
+@ ##God##note:x[<<Mark 16:20; Acts 14:3>>] also bearing __them__ witness, both with signs and wonders, and with divers miracles, and gifts of the Holy Ghost, ##according##note:x[<<Eph 1:5>>] to his own will?
+
+[discrete.pericope]
+==== Jesus like His Brothers
+
+@ For unto the angels hath he not put in subjection ##the world##note:x[<<Heb 6:5; 2 Pet 3:13; Rev 11:15>>] to come, whereof we speak.
+@ But one in a certain place testified, saying, ##What##note:x[<<Job 7:17–18; Ps 8:4–8; 144:3>>] is man, that thou art mindful of him? or the son of man, that thou visitest him?
+@ Thou madest him a little lower than the angels; thou crownedst him with glory and honour, and didst set him over the works of thy hands:
+@ Thou ##hast##note:x[<<Dan 7:14; John 13:3; 1 Cor 15:27>>] put all things in subjection under his feet. For in that he put all in subjection under him, he left nothing __that is__ not put under him. But now we see not yet all things put under him.
+@ But we see ##Jesus##note:x[<<Phil 2:7–9>>], who was made a little lower than the angels for the suffering of death, crowned with glory and honour; that he ##by##note:x[<<Rom 5:18>>] the grace of God should taste death ##for every##note:x[<<Rev 5:9>>] man.
+@ ##For##note:x[<<Rom 11:36; Col 1:16–17>>] it became him, for whom __are__ all things, and by whom __are__ all things, in bringing many sons unto glory, to make the captain of their salvation ##perfect##note:x[<<Heb 5:8–9>>] through sufferings.
+@ For both ##he that##note:x[<<Heb 10:10, 14>>] sanctifieth and they who are sanctified __are__ all of one: for which cause he is not ashamed ##to call##note:x[<<Rom 8:29>>] them brethren,
+@ Saying, ##I will##note:x[<<Ps 22:22>>] declare thy name unto my brethren, ##in##note:x[<<Ps 40:10; John 18:20>>] the midst of the church will I sing praise unto thee.
+@ And again, ##I will##note:x[<<Ps 91:2; Isa 12:2>>] put my trust in him. And again, Behold I and the children ##which##note:x[<<Gen 48:9>>] God hath given me.
+@ Forasmuch then as the children are partakers of flesh and blood, ##he also##note:x[<<Rom 8:3>>] himself likewise took part of the same; ##that through##note:x[<<Col 2:15>>] death he might ##destroy##note:x[<<2 Tim 1:10>>] him that had the power of death, that is, the devil;
+@ And ##deliver##note:x[<<Luke 1:74–75>>] them who through fear of death were all their lifetime ##subject##note:x[<<Rom 8:15; 2 Tim 1:7>>] to bondage.
+@ For verily he took not on __him the nature of__ angels; but he took on __him__ ##the seed##note:x[<<Rom 4:16–25; Gal 3:16, 29>>] of Abraham.
+@ Wherefore in all things ##it##note:x[<<Phil 2:7–8; Heb 2:14>>] behoved him to be made like unto __his__ brethren, that he might be a merciful and faithful high priest in things __pertaining__ to God, ##to make##note:x[<<Rom 5:10>>] reconciliation for the sins of the people.
+@ For in that he himself hath ##suffered##note:x[<<Heb 4:15–16>>] being tempted, ##he is##note:x[<<Heb 7:25–26>>] able to succour ##them##note:x[<<1 Cor 10:13>>] that are tempted.
+
+=== @3
+
+[discrete.pericope]
+==== Jesus Our Apostle and High Priest
+
+@ Wherefore, ##holy##note:x[<<2 Tim 1:9>>] brethren, partakers of ##the heavenly##note:x[<<Phil 3:14; 2 Tim 1:9>>] calling, consider the Apostle and High Priest of our profession, Christ Jesus;
+@ Who was ##faithful##note:x[<<John 6:38–40>>] to him that appointed him, ##as##note:x[<<Num 12:7>>] also Moses __was faithful__ in ##all##note:x[<<1 Tim 3:15>>] his house.
+@ For this __man__ was counted worthy of more glory than Moses, inasmuch as he ##who##note:x[<<Zech 6:12–13; 1 Cor 3:9; 1 Pet 2:5–7>>] hath builded the house hath more honour than the house.
+@ For every house is builded by some __man__; ##but##note:x[<<Heb 1:2>>] he that built all things __is__ God.
+@ And Moses verily __was__ ##faithful##note:x[<<Num 12:7; Heb 3:2>>] in all his house, ##as##note:x[<<Exod 14:31>>] a servant, for a testimony of those things which were to be spoken after;
+@ But Christ as a son over his own house; ##whose##note:x[<<1 Cor 3:16; 2 Cor 6:16>>] house are we, ##if##note:x[<<Heb 10:35>>] we hold fast the confidence and the rejoicing of the hope firm unto the end.
+
+[discrete.pericope]
+==== Do Not Harden Your Hearts
+
+[.parallel]
+(<<Psalms 95:1–11>>)
+
+@ note:x[<<Ps 95:7–11; Heb 3:15>>]Wherefore ( as the Holy Ghost saith, To day if ye will ##hear##note:x[<<Isa 55:3>>] his voice,
+@ ##Harden##note:x[<<Prov 28:14; Zech 7:11–12>>] not your hearts, as in the provocation, in the day ##of##note:x[<<Exod 17:7>>] temptation in the wilderness:
+@ When your fathers tempted me, proved me, ##and##note:x[<<Deut 4:9>>] saw my works ##forty##note:x[<<Acts 7:36>>] years.
+@ Wherefore ##I was##note:x[<<Eph 4:30>>] grieved with that generation, and said, They do alway ##err##note:x[<<2 Thess 2:10–12>>] in __their__ heart; and ##they have##note:x[<<Ps 95:10>>] not known my ways.
+@ So ##I sware##note:x[<<Num 14:20–23; Deut 1:34–35; Heb 4:3>>] in my wrath, They shall not enter into my rest.)
+
+[discrete.pericope]
+==== The Peril of Unbelief
+
+@ Take heed, brethren, lest there be ##in##note:x[<<Jer 17:5>>] any of you ##an##note:x[<<Jer 7:24; 17:9>>] evil heart of unbelief, in departing from the living God.
+@ But ##exhort##note:x[<<1 Thess 5:11; 2 Tim 4:2; Heb 10:24–25>>] one another daily, while it is called To day; lest any of you be hardened through the deceitfulness of sin.
+@ For ##we are##note:x[<<Heb 12:10>>] made partakers of Christ, ##if##note:x[<<Heb 3:6; 6:11>>] we hold the beginning of our confidence stedfast unto the end;
+@ While it is said, ##To day##note:x[<<Heb 3:7–8; 10:29, 38>>] if ye will hear his voice, harden not your hearts, as in the provocation.
+@ For ##some##note:x[<<Num 14:2; 26:65>>], when they had heard, did provoke: howbeit ##not##note:x[<<Num 14:30>>] all that came out of Egypt by Moses.
+@ But with whom was he grieved forty years? ##__was it__##note:x[<<Num 26:64–65>>] not with them that had sinned, ##whose##note:x[<<Num 14:22, 29>>] carcases fell in the wilderness?
+@ And ##to whom##note:x[<<Num 14:30; Deut 1:34–35>>] sware he that they should not enter into his rest, ##but##note:x[<<Ps 106:24–26>>] to them that believed not?
+@ ##So we see that they could not enter in because of unbelief.##note:x[<<Mark 16:16; John 3:36; Jude 1:5>>]
+
+=== @4
+
+[discrete.pericope]
+==== The Sabbath Rest
+
+[.parallel]
+(<<Genesis 2:1–3; Exodus 16:22–30>>)
+
+@ Let ##us therefore##note:x[<<Prov 28:14; Heb 12:15>>] fear, lest, ##a promise##note:x[<<Heb 4:9>>] being left __us__ of entering into his rest, any of you should seem to come short of it.
+@ For unto us was the gospel ##preached##note:x[<<Rom 10:16–17>>], as well as unto them: but the word preached did not profit them, ##not being##note:x[<<1 Thess 2:13; Heb 11:6>>] mixed with faith in them that heard __it__.
+@ For ##we##note:x[<<Matt 11:28–29>>] which have believed do enter into rest, as he said, ##As I##note:x[<<Ps 95:11>>] have sworn in my wrath, if they shall enter into my rest: although the works were finished ##from##note:x[<<1 Pet 1:20>>] the foundation of the world.
+@ For he spake in a certain place of the seventh __day__ on this wise, And ##God##note:x[<<Gen 2:1–2; Exod 20:11; 31:17>>] did rest the seventh day from all his works.
+@ And in this __place__ again, If they shall enter into my rest.
+@ Seeing therefore it remaineth that ##some##note:x[<<Matt 21:43; 22:9–10>>] must enter there in, and they to whom it was first preached ##entered##note:x[<<Heb 3:18–19>>] not in because of unbelief:
+@ Again, he limiteth a certain day, ##saying##note:x[<<Heb 3:7–8>>] in David, ##To day##note:x[<<Ps 95:7; Heb 3:7>>], after so long a time; as it is said, To day if ye will hear his voice, harden not your hearts.
+@ For if Jesus ##had##note:x[<<Deut 12:9; Josh 1:15; 22:4>>] given them rest, then would he not afterward have spoken of another day.
+@ There ##remaineth##note:x[<<Rev 7:14–17; 21:4>>] therefore a rest to the ##people##note:x[<<1 Pet 2:10>>] of God.
+@ For ##he that##note:x[<<Rev 14:13>>] is entered into his rest, he also ##hath##note:x[<<1 Pet 4:1–2>>] ceased from his own works, ##as##note:x[<<Heb 4:3–4>>] God __did__ from his.
+@ ##Let##note:x[<<Matt 11:28–30; Luke 13:24>>] us labour therefore to enter into that rest, ##lest##note:x[<<Heb 3:18–19>>] any man fall after the same example of unbelief.
+
+[discrete.pericope]
+==== The Living Word
+
+[.parallel]
+(<<2 Timothy 3:10–17>>)
+
+@ For the word of God ##__is__ quick##note:x[<<Isa 55:11; Jer 23:29>>], and powerful, and ##sharper##note:x[<<Eph 6:17>>] than any twoedged sword, piercing even to the dividing asunder of soul and spirit, and of the joints and marrow, and __is__ a discerner of the thoughts and intents of the heart.
+@ Neither ##is there##note:x[<<Ps 33:13–15; Prov 15:3; 1 Cor 4:5>>] any creature that is not manifest in his sight: but all things __are__ naked and opened unto the eyes of him with whom we have to do.
+@ Seeing then that we have a great high priest, ##that is##note:x[<<Heb 9:12, 24; 12:2>>] passed into the heavens, Jesus the Son of God, let us hold fast __our__ profession.
+@ For ##we have##note:x[<<Isa 53:4–5>>] not an high priest which can not be touched with the feeling of our infirmities; but was in all points ##tempted##note:x[<<Heb 2:17–18>>] like as __we are,__ ##__yet__##note:x[<<2 Cor 5:21>>] without sin.
+@ Let us therefore ##come##note:x[<<Eph 3:12; Heb 10:19–23; 13:6>>] bold ly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need.
+
+=== @5
+
+[discrete.pericope]
+==== The Perfect High Priest
+
+[.parallel]
+(<<Psalms 110:1–7>>)
+
+@ For ##every##note:x[<<Heb 10:11>>] high priest taken from among men ##is ordained##note:x[<<Heb 8:3>>] for men in things __pertaining__ to God, that he may offer ##both##note:x[<<Heb 8:3>>] gifts and sacrifices for sins:
+@ ##Who##note:x[<<Heb 2:18; 4:15>>] can have compassion on the ignorant, and on them that are out of the way; for that he himself also ##is compassed##note:x[<<2 Cor 12:9–10>>] with infirmity.
+@ And by reason here of he ought, ##as##note:x[<<Lev 9:7; 16:6; Heb 9:7>>] for the people, so also for himself, to offer for sins.
+@ ##And no man taketh this honour unto himself, but he that is called of God, as __was__ Aaron.##note:x[<<Exod 28:1; Num 16:5, 40>>]
+@ So also ##Christ##note:x[<<John 7:18; 8:54>>] glorified not himself to be made an high priest; but he that said unto him, ##Thou##note:x[<<Ps 2:7>>] art my Son, to day have I begotten thee.
+@ As he saith also in another __place__, ##Thou##note:x[<<Ps 110:4; Heb 7:17, 21>>] __art__ a priest for ever after the order of Melchisedec.
+@ Who in the days of his flesh, ##when##note:x[<<Mark 14:32–39; John 17:1>>] he had offered up prayers and supplications ##with##note:x[<<Matt 27:46>>] strong crying and tears unto him that was able to save him from death, and was heard in that he feared;
+@ Though he were a Son, ##yet##note:x[<<John 4:34; Phil 2:8; Heb 10:5–9>>] learned he obedience by the things which he suffered;
+@ And ##being##note:x[<<Heb 2:10>>] made perfect, ##he became##note:x[<<Heb 12:2>>] the author of ##eternal##note:x[<<Heb 9:15>>] salvation unto all them that obey him;
+@ ##Called of God an high priest after the order of Melchisedec.##note:x[<<Heb 5:5–6; 6:20>>]
+
+[discrete.pericope]
+==== Milk and Solid Food
+
+[.parallel]
+(<<1 Corinthians 3:1–9>>)
+
+@ Of whom ##we##note:x[<<2 Pet 3:16>>] have many things to say, and hard to be uttered, seeing ye are ##dull##note:x[<<Matt 13:15; Acts 28:27>>] of hearing.
+@ For when for the time ye ought to be teachers, ye have need that one teach you again which __be__ ##the first##note:x[<<Heb 6:1>>] principles of the oracles of God; and are become such ##as have##note:x[<<1 Cor 3:1–3; 1 Pet 2:2>>] need of milk, and not of strong meat.
+@ For every one that useth milk __is__ unskilful in ##the word##note:x[<<2 Tim 3:16>>] of righteousness: for ##he##note:x[<<1 Cor 14:20; 1 Pet 2:2>>] is a babe.
+@ But strong meat belongeth to them that are of full age, __even__ those who by reason of use have their senses exercised ##to discern##note:x[<<1 Cor 2:14–15; Phil 1:9–10; 1 Thess 5:21>>] both good and evil.
+
+=== @6
+
+[discrete.pericope]
+==== A Call to Maturity
+
+@ Therefore ##leaving##note:x[<<Heb 5:12–14>>] the principles of the doctrine of Christ, ##let##note:x[<<2 Cor 7:1>>] us go on unto perfection; not laying again the foundation of repentance from ##dead##note:x[<<Heb 9:14>>] works, and of faith toward God,
+@ Of ##the doctrine##note:x[<<Rom 6:3–4>>] of baptisms, and of laying on of hands, and of ##resurrection##note:x[<<Acts 17:31–32; 1 Cor 15:13–57>>] of the dead, and of eternal judgment.
+@ And this will we do, ##if##note:x[<<Acts 18:21; 1 Cor 16:7>>] God permit.
+@ For ##__it is__##note:x[<<Matt 5:13; Heb 10:26–29; 2 Pet 2:20–22>>] impossible for those who were once enlightened, and have tasted of the heavenly gift, and were made partakers of the Holy Ghost,
+@ And have ##tasted##note:x[<<Matt 13:20–21; Luke 8:13; 1 Pet 2:3>>] the good word of God, and the powers of the world to come,
+@ If they shall fall away, ##to renew##note:x[<<Isa 1:28; Heb 6:4>>] them again unto repentance; seeing ##they crucify##note:x[<<Heb 10:29>>] to themselves the Son of God afresh, and put __him__ to an open shame.
+@ For ##the earth##note:x[<<Ps 65:9–13>>] which drinketh in the rain that cometh oft upon it, and bringeth forth herbs meet for them by whom it is dressed, ##receiveth##note:x[<<Isa 44:3; Hos 10:12>>] blessing from God:
+@ But that which ##beareth##note:x[<<Gen 3:17–18; Deut 29:28>>] thorns and briers __is__ rejected, and __is__ nigh unto cursing; ##whose##note:x[<<John 15:6>>] end __is__ to be burned.
+@ But, ##beloved##note:x[<<Heb 6:4–6; 10:39>>], we are persuaded better ##things##note:x[<<Heb 2:3>>] of you, and things that accompany salvation, though we thus speak.
+@ ##For##note:x[<<Matt 10:42>>] God __is__ not unrighteous to forget your work and labour of love, ##which##note:x[<<Matt 10:42; Heb 13:16>>] ye have shewed toward his name, in that ye have ministered to the saints, and do minister.
+@ And ##we desire##note:x[<<2 Pet 1:5–8>>] that every one of you do shew the same diligence ##to the##note:x[<<Heb 3:6>>] full assurance ##of hope##note:x[<<Rom 5:2–5>>] unto the end:
+@ That ye be not slothful, ##but##note:x[<<Heb 13:7>>] followers of them who through ##faith##note:x[<<Heb 10:36>>] and patience ##inherit##note:x[<<Heb 10:36>>] the promises.
+
+[discrete.pericope]
+==== God’s Unchangeable Promise
+
+@ For when God made promise to Abraham, because he could swear by no greater, ##he sware##note:x[<<Gen 22:15–18; Ps 105:9–10; Luke 1:73>>] by himself,
+@ Saying, Surely blessing I will bless thee, and ##multiplying##note:x[<<Gen 17:2; Deut 1:10; Neh 9:23>>] I will multiply thee.
+@ ##And so, after he had patiently endured, he obtained the promise.##note:x[<<Gen 12:2–3; 15:2–6; Rom 4:17–25>>]
+@ For men verily swear by the greater: and ##an oath##note:x[<<Exod 22:11>>] for confirmation __is__ to them an end of all strife.
+@ Where in God, willing more abundantly to shew unto the heirs of promise ##the immutability##note:x[<<Prov 19:21; Isa 55:11; Heb 6:18>>] of his counsel, confirmed __it__ by an oath:
+@ That by two immutable things, in which __it was__ ##impossible##note:x[<<Num 23:19; 1 Sam 15:29; Titus 1:2>>] for God to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us:
+@ Which __hope__ we have as an anchor of the soul, ##both##note:x[<<Ps 43:5; Rom 5:5–10; 8:28–39>>] sure and stedfast, and which entereth into that within the veil;
+@ Whither the forerunner is ##for##note:x[<<Heb 4:14>>] us entered, __even__ Jesus, made ##an##note:x[<<Heb 3:1; 5:6>>] high priest for ever after the order of Melchisedec.
+
+=== @7
+
+[discrete.pericope]
+==== Melchizedek and Abraham
+
+[.parallel]
+(<<Genesis 14:17–24>>)
+
+@ For ##this##note:x[<<Gen 14:18–20; Heb 6:20>>] Melchisedec, king of Salem, priest of ##the most##note:x[<<Ps 57:2>>] high God, who met Abraham returning from the slaughter of the kings, and blessed him;
+@ To whom also Abraham gave ##a tenth##note:x[<<Num 18:21>>] part of all; first being by interpretation King of righteousness, and after that also King of Salem, which is, King of peace;
+@ Without father, without mother, without ##descent##note:x[<<Exod 6:20–27>>], having neither beginning of days, nor end of life; but made like unto the Son of God; abideth ##a priest##note:x[<<Heb 7:17, 23–28>>] continually.
+@ Now consider how great this man __was__, unto whom even ##the patriarch##note:x[<<Acts 2:29>>] Abraham ##gave##note:x[<<Gen 14:20>>] the tenth of the spoils.
+@ And verily they that are of the sons of Levi, who receive the office of the priesthood, have a commandment ##to take##note:x[<<Lev 27:30–33; 2 Chr 31:4–6>>] tithes of the people according to the law, that is, of their brethren, though they come out of the loins of Abraham:
+@ But he whose descent is not counted from them received tithes of Abraham, and blessed him that ##had##note:x[<<Gen 13:14–17; 17:4–8; Rom 4:13>>] the promises.
+@ And ##without##note:x[<<1 Tim 3:16>>] all contradiction ##the less##note:x[<<Gen 48:15–20; 2 Chr 30:27>>] is blessed of the better.
+@ And here men that die receive tithes; but there he __receiveth them__, of whom it is witnessed that ##he liveth##note:x[<<Heb 5:6; 6:20; Rev 1:18>>].
+@ And as I may so say, Levi also, who receiveth tithes, payed tithes in Abraham.
+@ For he was yet in the loins of his father, when Melchisedec met him.
+
+[discrete.pericope]
+==== A Superior Priesthood
+
+@ If therefore ##perfection##note:x[<<Gal 2:21; 4:9; Heb 8:7>>] were by the Levitical priesthood, ( for under it the people received the law,) what further need __was there__ that another priest should rise after the order of Melchisedec, and not be called after the order of Aaron?
+@ For the priesthood being changed, there is made of necessity ##a change##note:x[<<Jer 31:31–34>>] also of the law.
+@ For he of whom these things are spoken pertaineth to another tribe, of which no man gave attendance at the altar.
+@ For __it is__ evident that our Lord ##sprang##note:x[<<Isa 11:1; Mic 5:2; Luke 3:33>>] out of Juda; of which tribe Moses spake nothing concerning priesthood.
+@ And it is yet far more evident: for that ##after##note:x[<<Ps 110:4>>] the similitude of Melchisedec there ariseth another priest,
+@ Who is made, not after ##the law##note:x[<<Gal 4:3, 9; Col 2:20>>] of a carnal commandment, but after the power of an endless life.
+@ ##For he testifieth, Thou __art__ a priest for ever after the order of Melchisedec.##note:x[<<Ps 110:4; Heb 5:6; 7:15>>]
+@ For there is verily ##a disannulling##note:x[<<Heb 7:11–12>>] of the commandment going before for ##the weakness##note:x[<<Acts 13:39; Rom 8:3>>] and unprofitableness thereof.
+@ For ##the law##note:x[<<Acts 13:39; Heb 9:9>>] made nothing perfect, but the bringing in of a better hope __did__; by the which ##we##note:x[<<Heb 4:16>>] draw nigh unto God.
+@ And inasmuch as not without an oath __he was made priest__:
+@ ( For those priests were made without an oath; but this with an oath by him that said unto him, ##The Lord##note:x[<<Ps 110:4; Heb 7:17>>] sware and will not repent, Thou __art__ a priest for ever after the order of Melchisedec:)
+@ By so much was Jesus made ##a surety##note:x[<<Gen 44:32>>] ##of a##note:x[<<1 Cor 11:25; Heb 8:6–12>>] better testament.
+@ And they truly were many priests, because they were not suffered to continue by reason of death:
+@ But this __man__, because ##he continueth##note:x[<<Isa 9:6–7; John 12:34; Heb 7:28>>] ever, hath an unchangeable priesthood.
+@ Wherefore he is able also to save them to the uttermost that come unto God ##by him##note:x[<<1 John 2:1–2>>], seeing he ever liveth ##to make##note:x[<<Rom 8:34; 1 John 2:1–2>>] intercession for them.
+@ For such an high priest became us, __who is__ ##holy##note:x[<<2 Cor 5:21; 1 Pet 2:22>>], harmless, undefiled, separate from sinners, and ##made##note:x[<<Heb 4:14>>] higher than the heavens;
+@ Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people’s: for ##this##note:x[<<Heb 9:12, 14, 28>>] he did once, when he offered up himself.
+@ For the law maketh men high priests which have infirmity; but ##the word##note:x[<<Heb 7:21>>] of the oath, which was since the law, ##__maketh__ the##note:x[<<Heb 1:2>>] Son, who is ##consecrated##note:x[<<Heb 2:10>>] for evermore.
+
+=== @8
+
+[discrete.pericope]
+==== Christ’s Eternal Priesthood
+
+@ Now of the things which we have spoken __this is__ the sum: We have such an high priest, ##who##note:x[<<Col 3:1; Heb 1:3; Rev 3:21>>] is set on the right hand of the throne of the Majesty in the heavens;
+@ A ##minister##note:x[<<Rom 15:8>>] of the sanctuary, and of the true tabernacle, ##which##note:x[<<2 Cor 5:1>>] the Lord pitched, and not man.
+@ note:x[<<Heb 5:1>>]For every high priest is ordained to offer gifts and sacrifices: wherefore __it is__ of necessity that this man ##have##note:x[<<Eph 5:2; Heb 9:14>>] somewhat also to offer.
+@ For if he were on earth, ##he should##note:x[<<Heb 7:11–15>>] not be a priest, seeing that there are priests that offer gifts according to the law:
+@ Who serve unto ##the example##note:x[<<Col 2:17; Heb 10:1>>] and shadow of heavenly things, as Moses was admonished of God when he was about to make the tabernacle: for, ##See##note:x[<<Exod 25:40>>], saith he, __that__ thou make all things according to the pattern shewed to thee in the mount.
+
+[discrete.pericope]
+==== The New Covenant
+
+[.parallel]
+(<<Jeremiah 31:26–40>>)
+
+@ But now hath he obtained a more excellent ministry, by how much also he is ##the mediator##note:x[<<Heb 7:22>>] of a better ##covenant##note:x[<<Heb 7:22>>], which was established ##upon##note:x[<<Gal 3:16–21>>] better promises.
+@ For if that first __covenant__ ##had##note:x[<<Gal 3:21; Heb 7:11, 18>>] been faultless, then should no place have been sought for the second.
+@ For finding fault with them, ##he saith##note:x[<<Jer 31:31–34>>], Behold, ##the days##note:x[<<Jer 31:31–34; Heb 10:16–17>>] come, saith the Lord, when I will make a new covenant with the house of Israel and with the house of Judah:
+@ Not according to ##the covenant##note:x[<<Gal 4:24>>] that I made with their fathers in the day when ##I took##note:x[<<Mark 8:23>>] them by the hand to lead them out of the land of Egypt; because ##they continued##note:x[<<Jer 31:32>>] not in my covenant, and I regarded them not, saith the Lord.
+@ For this __is__ the covenant that I will make with the house of Israel after those days, saith the Lord; ##I will put##note:x[<<Jer 31:33; Ezek 36:26–27>>] my laws into their mind, and write them in their hearts: and ##I will be##note:x[<<Jer 31:33>>] to them a God, and they shall be to me a people:
+@ And ##they shall##note:x[<<Isa 54:13; Jer 31:34; John 6:45>>] not teach every man his neighbour, and every man his brother, saying, Know the Lord: for all shall know me, from the least to the greatest.
+@ ##For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more.##note:x[<<Isa 43:25; Rom 11:27; Heb 10:16–17>>]
+@ In that he saith, A new __covenant__, ##he hath##note:x[<<Heb 7:11–12, 18–19>>] made the first old. Now that which decayeth and waxeth old __is__ ##ready##note:x[<<2 Cor 5:17>>] to vanish away.
+
+=== @9
+
+[discrete.pericope]
+==== The Earthly Tabernacle
+
+[.parallel]
+(<<Exodus 40:1–33; Acts 7:44–47>>)
+
+@ Then verily the first __covenant__ ##had##note:x[<<Heb 9:10>>] also ordinances of divine service, ##and##note:x[<<Exod 25:8; Heb 9:10–11>>] a worldly sanctuary.
+@ For there was a tabernacle made; ##the first##note:x[<<Exod 40:4>>], where in __was__ the candlestick, and ##the table##note:x[<<Exod 40:4; Lev 24:5–6>>], and the shewbread; which is called the sanctuary.
+@ And after ##the second##note:x[<<Exod 26:31–33; 40:3, 21>>] veil, the tabernacle which is called the Holiest of all;
+@ note:x[<<Num 17:10>>]Which had ##the golden##note:x[<<Lev 16:12>>] censer, and ##the ark##note:x[<<Exod 26:33>>] of the covenant overlaid round about with gold, where in __was__ the golden pot that had manna, and Aaron’s rod that budded, and the tables of the covenant;
+@ note:x[<<Lev 16:2>>]And ##over##note:x[<<Lev 16:2; Num 7:89>>] it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly.
+@ Now when these things were thus ordained, ##the priests##note:x[<<Num 28:3>>] went always into the first tabernacle, accomplishing the service __of God__.
+@ But ##into##note:x[<<Exod 30:10; Lev 16:34>>] the second __went__ the high priest alone once every year, not without blood, which he offered for himself, and __for__ the ##errors##note:x[<<Lev 5:18>>] of the people:
+@ The ##Holy Ghost##note:x[<<Heb 3:7>>] this signifying, that ##the way##note:x[<<John 14:6; Heb 10:19–22>>] into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing:
+@ Which __was__ ##a figure##note:x[<<1 Pet 3:21>>] for the time then present, in which were offered both ##gifts##note:x[<<Heb 5:1>>] and sacrifices, that could not make him that did the service perfect, as pertaining to the conscience;
+@ __Which stood__ only ##in meats##note:x[<<Lev 11:2–47; Col 2:16>>] and drinks, and divers washings, and ##carnal##note:x[<<Eph 2:15>>] ordinances, imposed __on them__ until the time of reformation.
+
+[discrete.pericope]
+==== Redemption through His Blood
+
+@ But Christ being come ##an high priest##note:x[<<Heb 8:1>>] of good things to come, by a greater and more perfect tabernacle, ##not made##note:x[<<Acts 17:24–25; Heb 9:23–24>>] with hands, that is to say, not of this building;
+@ Neither ##by the##note:x[<<Heb 10:4>>] blood of goats and calves, but ##by his##note:x[<<1 Pet 1:18–19>>] own blood he entered in once into the holy place, ##having##note:x[<<Heb 9:15>>] obtained eternal redemption __for us__.
+@ For ##if##note:x[<<Lev 16:14>>] the blood of bulls ##and##note:x[<<Num 19:2–21>>] of goats, and the ashes of an heifer sprinkling the unclean, sanctifieth to ##the purifying##note:x[<<Acts 15:9>>] of the flesh:
+@ How much more shall ##the blood##note:x[<<1 Pet 1:19>>] of Christ, who through the eternal Spirit offered himself ##without##note:x[<<1 Pet 1:19>>] spot to God, ##purge##note:x[<<Heb 10:22>>] your conscience from dead works to serve the living God?
+@ And ##for##note:x[<<Rom 3:24–26; Heb 9:12>>] this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions __that were__ under the first testament, ##they which##note:x[<<Rom 8:30>>] are called might receive the promise of eternal inheritance.
+@ For where a testament __is__, there must also of necessity be the death of the testator.
+@ For a testament __is__ of force after men are dead: otherwise it is of no strength at all while the testator liveth.
+@ Whereupon neither ##the first##note:x[<<Exod 24:3–8>>] __testament__ was dedicated without blood.
+@ For when Moses had spoken every precept to all the people according to the law, he took ##the blood##note:x[<<Exod 24:5–6; Heb 9:12; 10:4>>] of calves and of goats, with water, and scarlet wool, and hyssop, and sprinkled both the book, and all the people,
+@ Saying, ##This##note:x[<<Zech 9:11; Matt 26:28; Heb 13:20>>] __is__ the blood of the testament which God hath enjoined unto you.
+@ ##Moreover he sprinkled with blood both the tabernacle, and all the vessels of the ministry.##note:x[<<Exod 29:12; Lev 8:15, 19>>]
+@ And almost all things are by the law purged with blood; ##and without##note:x[<<Lev 4:35; 6:7; 17:11>>] shedding of blood is no remission.
+@ __It was__ therefore necessary that the patterns of things in the heavens should be purified with these; but ##the heavenly##note:x[<<Heb 9:14; 10:4; 1 Pet 1:19–21>>] things themselves with better sacrifices than these.
+@ For Christ is not entered into ##the holy##note:x[<<Heb 9:11>>] places made with hands, __which are__ ##the figures##note:x[<<Heb 9:23>>] of the true; ##but##note:x[<<Heb 12:2>>] into heaven itself, now to appear in the presence of God for us:
+@ Nor yet that he should ##offer##note:x[<<Heb 9:7, 14>>] himself often, ##as##note:x[<<Heb 9:12>>] the high priest entereth into the holy place every year with blood of others;
+@ For then must he often have suffered since ##the foundation##note:x[<<1 Pet 1:20>>] of the world: but now once ##in##note:x[<<1 Pet 1:20>>] the end of the world hath ##he appeared##note:x[<<Heb 9:12>>] to put away sin by the sacrifice of himself.
+@ And ##as##note:x[<<Eccl 12:7>>] it is appointed unto men once to die, ##but##note:x[<<Eccl 12:14; 2 Cor 5:10>>] after this the judgment:
+@ So Christ ##was##note:x[<<Rom 6:10>>] once offered ##to bear##note:x[<<1 Pet 2:24>>] the sins of many; and unto ##them##note:x[<<Titus 2:13>>] that look for him shall he appear the second time without sin unto salvation.
+
+=== @10
+
+[discrete.pericope]
+==== Christ’s Perfect Sacrifice
+
+[.parallel]
+(<<Psalms 40:1–17>>)
+
+@ For the law ##having##note:x[<<Col 2:17; Heb 8:5; 9:11>>] a shadow of good things to come, __and__ not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect.
+@ For then would they not have ceased to be offered? because that the worshippers ##once##note:x[<<Ps 103:12; Isa 43:25; Mic 7:19>>] purged should have had no more conscience of sins.
+@ But in those __sacrifices there is__ ##a remembrance##note:x[<<Exod 30:10; Heb 9:7>>] again __made__ of sins every year.
+@ For __it is__ ##not##note:x[<<Isa 1:11–15; Mic 6:6–8>>] possible that the blood of bulls and of goats should ##take##note:x[<<Heb 10:11>>] away sins.
+@ Wherefore when he cometh into the world, he saith, ##Sacrifice##note:x[<<Ps 40:6–8; Isa 1:11>>] and offering thou wouldest not, ##but##note:x[<<Isa 7:14>>] a body hast thou prepared me:
+@ In ##burnt##note:x[<<Heb 10:4>>] offerings and __sacrifices__ for sin thou hast had no pleasure.
+@ Then said I, ##Lo##note:x[<<John 4:34; 5:30; 6:38>>], I come ( in the volume of the book it is written of me,) to do thy will, O God.
+@ Above when he said, Sacrifice and offering and burnt offerings and __offering__ for sin thou wouldest not, neither hadst pleasure __therein__; which are offered by the law;
+@ Then said he, ##Lo##note:x[<<Heb 9:11–14>>], I come to do thy will, O God. ##He taketh##note:x[<<Heb 7:18–19; 12:27–28>>] away the first, that he may establish the second.
+@ By the which will ##we##note:x[<<1 Cor 6:11>>] are sanctified through ##the offering##note:x[<<Heb 10:12, 14>>] of the body of Jesus Christ once __for all__.
+@ And every priest standeth ##daily##note:x[<<Num 28:3>>] ministering and offering oftentimes the same sacrifices, ##which##note:x[<<Ps 50:8–13; Heb 10:4>>] can never take away sins:
+@ ##But this man, after he had offered one sacrifice for sins for ever, sat down on the right hand of God;##note:x[<<Rom 8:34; Col 3:1; Heb 1:3>>]
+@ ##From henceforth expecting till his enemies be made his footstool.##note:x[<<Ps 110:1; Luke 20:43; Heb 1:13>>]
+@ For by one offering ##he##note:x[<<Heb 7:25; 9:14; 10:1>>] hath perfected for ever them that are sanctified.
+@ ##__Whereof__ the Holy Ghost also is a witness to us: for after that he had said before,##note:x[<<Heb 3:7; 2 Pet 1:21; Rev 2:11>>]
+@ ##This __is__ the covenant that I will make with them after those days, saith the Lord, I will put my laws into their hearts, and in their minds will I write them;##note:x[<<Jer 31:33–34; Rom 11:27; Heb 8:8–12>>]
+@ And their sins and iniquities will I remember no more.
+@ ##Now where remission of these __is, there is__ no more offering for sin.##note:x[<<Heb 10:2>>]
+
+[discrete.pericope]
+==== A Call to Persevere
+
+[.parallel]
+(<<Jude 1:17–23>>)
+
+@ ##Having##note:x[<<Heb 4:16>>] therefore, brethren, boldness ##to enter##note:x[<<Eph 2:18; Heb 9:12>>] into the holiest by the blood of Jesus,
+@ By ##a new##note:x[<<John 10:9; 14:6>>] and living way, which he hath consecrated for us, ##through##note:x[<<Heb 9:3>>] the veil, that is to say, his flesh;
+@ And __having__ ##an##note:x[<<Heb 2:17; 4:14–16; 6:20>>] high priest over the house of God;
+@ Let us draw near with a true heart in full assurance of faith, having our hearts ##sprinkled##note:x[<<Ezek 36:25>>] from an evil conscience, and ##our bodies##note:x[<<Ezek 36:25; John 3:5>>] washed with pure water.
+@ Let us hold fast the profession of __our__ faith without wavering; ( ##for##note:x[<<1 Cor 1:9; 1 Thess 5:24; 2 Thess 3:3>>] he __is__ faithful that promised;)
+@ And let us ##consider##note:x[<<1 Thess 5:11>>] one another to provoke unto ##love##note:x[<<Heb 13:1; 1 John 3:18>>] and to good works:
+@ Not ##forsaking##note:x[<<Matt 18:20; Acts 2:42>>] the assembling of ourselves together, as the manner of some __is__; ##but##note:x[<<1 Thess 5:11>>] exhorting __one another__: and so much the more, as ye see the day approaching.
+@ For ##if##note:x[<<John 9:41; Heb 6:4–6; 2 Pet 2:20–22>>] we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins,
+@ But ##a certain##note:x[<<Heb 2:3; 12:25>>] fearful looking for of judgment and ##fiery##note:x[<<Zeph 1:18>>] indignation, which shall devour the adversaries.
+@ He that ##despised##note:x[<<Deut 17:2–13; Heb 2:2>>] Moses’ law died without mercy ##under##note:x[<<Deut 19:15>>] two or three witnesses:
+@ note:x[<<1 Cor 11:27>>]Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of God, ##and hath##note:x[<<Isa 63:10; Eph 4:30>>] counted the blood of the covenant, where with he was sanctified, an unholy thing, and hath done despite unto the Spirit of grace?
+@ For we know him that hath said, ##Vengeance##note:x[<<Deut 32:35; Nah 1:2; Rom 12:19>>] __belongeth__ unto me, I will recompense, saith the Lord. And again, The Lord shall judge his people.
+@ __It is__ a fearful thing ##to fall##note:x[<<Matt 10:28; Luke 12:5; Heb 12:29>>] into the hands of the living God.
+@ But ##call##note:x[<<Gal 3:3–4>>] to remembrance the former days, in which, ##after##note:x[<<Heb 6:4>>] ye were illuminated, ##ye endured##note:x[<<Heb 12:4>>] a great fight of afflictions;
+@ Partly, ##whilst##note:x[<<Phil 4:14>>] ye were ##made##note:x[<<1 Cor 4:9>>] a gazingstock both by reproaches and afflictions; and partly, whilst ye became companions of them that were so used.
+@ For ye had compassion of me ##in my##note:x[<<2 Tim 1:16>>] bonds, and took joyfully the spoiling of your goods, knowing ##in yourselves that ye have##note:x[<<Matt 6:19–20; 1 Pet 1:4>>] in heaven a better and an enduring substance.
+@ ##Cast##note:x[<<Heb 3:6>>] not away therefore your confidence, which hath ##great##note:x[<<1 Cor 15:58; Gal 6:8–10>>] recompence of reward.
+@ For ##ye have##note:x[<<Ps 37:7; Heb 12:1; Jas 5:7–11>>] need of patience, that, after ye have done the will of God, ye might receive the promise.
+@ ##For yet a little while, and he that shall come will come, and will not tarry.##note:x[<<Hab 2:3–4; Luke 18:8; Jas 5:7–9>>]
+@ Now ##the just##note:x[<<Hab 2:4; Rom 1:17; Gal 3:11>>] shall live by faith: but if __any man__ draw back, my soul shall have no pleasure in him.
+@ ##But##note:x[<<Mark 16:16; 1 Pet 1:5; 1 John 5:5>>] we are not of them who draw back unto perdition; but of them that believe to the saving of the soul.
+
+=== @11
+
+[discrete.pericope]
+==== Faith and Assurance
+
+[.parallel]
+(<<Genesis 1:1–2; John 1:1–5>>)
+
+@ Now faith is the substance of things hoped for, ##the evidence##note:x[<<Rom 8:24–25; 2 Cor 4:18; Heb 11:7>>] of things not seen.
+@ For by it the elders obtained a good report.
+@ Through ##faith##note:x[<<Ps 33:6; John 1:3; 2 Pet 3:5>>] we understand that the worlds were framed by the word of God, so that things which are seen were not made of things which do appear.
+
+[discrete.pericope]
+==== The Faith of Abel, Enoch, Noah
+
+[.parallel]
+(<<Genesis 4—9>>)
+
+@ By ##faith##note:x[<<Gen 4:3–5; 1 John 3:11–12>>] Abel offered unto God a more excellent sacrifice than Cain, by which he obtained witness that he was righteous, God testifying of his gifts: ##and by##note:x[<<Heb 12:24>>] it he being dead yet speaketh.
+@ By faith ##Enoch##note:x[<<Jude 1:14>>] was ##translated##note:x[<<2 Kgs 2:11>>] ##that he##note:x[<<Heb 11:6>>] should not see death; and was not found, because God had translated him: for before his translation he had this testimony, that he pleased God.
+@ But without faith __it is__ impossible to please __him__: for he that cometh to God must believe that he is, and __that__ he is a rewarder of them that ##diligently##note:x[<<Prov 8:17; Jer 29:13–14; Matt 6:33>>] seek him.
+@ By faith ##Noah##note:x[<<Gen 6:13>>], being ##warned##note:x[<<Gen 6:13>>] of God of things not seen as yet, moved with fear, ##prepared##note:x[<<1 Pet 3:20>>] an ark to the saving of his house; by the which he condemned the world, and became heir of the righteousness which is by faith.
+
+[discrete.pericope]
+==== The Faith of Abraham and Sarah
+
+[.parallel]
+(<<Genesis 15—22; Romans 4:1–12>>)
+
+@ By faith ##Abraham##note:x[<<Gen 12:1–4; Acts 7:2–4>>], when he was called to go out into a place which he should after receive for an inheritance, ##obeyed##note:x[<<Matt 7:24–25>>]; and he went out, not knowing whither he went.
+@ By faith he sojourned in the land of promise, as __in__ a strange country, ##dwelling##note:x[<<Gen 12:8; 13:3, 18>>] in tabernacles with Isaac and Jacob, the heirs with him of the same promise:
+@ For ##he looked##note:x[<<Phil 3:20; Heb 13:14>>] for a city which hath foundations, ##whose##note:x[<<2 Cor 5:1>>] builder and maker __is__ God.
+@ Through faith also ##Sara##note:x[<<Gen 18:11–14>>] herself received strength to conceive seed, and was delivered of a child when she was past age, ##because##note:x[<<Rom 4:20–21; Heb 10:23>>] she judged him faithful who had promised.
+@ Therefore sprang there even of one, and him as good as dead, __so many__ ##as the stars##note:x[<<Gen 22:17>>] of the sky in multitude, and ##as the sand##note:x[<<Gen 22:17; 32:12>>] which is by the sea shore innumerable.
+@ These all died in faith, not having received the promises, ##but##note:x[<<Heb 11:27>>] having seen them afar off, and were persuaded of __them__, and embraced __them__, and ##confessed##note:x[<<Gen 23:4; Ps 39:12>>] that they were strangers and pilgrims on the earth.
+@ For they that say such things declare plainly that ##they seek##note:x[<<2 Cor 4:18>>] a country.
+@ And truly, if they had been ##mindful##note:x[<<Gen 24:6–8>>] of that __country__ from whence they came out, they might have had opportunity to have returned.
+@ But now they desire a better __country__, that is, an heavenly: wherefore God is not ashamed to be called their God: ##for##note:x[<<Phil 3:20; Heb 11:10; 13:14>>] he hath prepared for them a city.
+@ By ##faith##note:x[<<Gen 22:1–12; Jas 2:21–24>>] Abraham, when he was tried, offered up Isaac: and he that had received the promises offered up his ##only##note:x[<<Gen 22:16>>] begotten __son__,
+@ Of whom it was said, ##That##note:x[<<Gen 17:19; 21:12; Rom 9:7>>] in Isaac shall thy seed be called:
+@ Accounting that ##God##note:x[<<Matt 9:28; Rom 4:17–21; Eph 3:20>>] __was__ able to raise __him__ up, even from the dead; from whence also he received him in a figure.
+
+[discrete.pericope]
+==== The Faith of Isaac, Jacob, and Joseph
+
+[.parallel]
+(<<Genesis 27—50>>)
+
+@ ##By faith Isaac blessed Jacob and Esau concerning things to come.##note:x[<<Gen 27:27–40>>]
+@ By ##faith##note:x[<<Gen 48:5–22>>] Jacob, when he was a dying, blessed both the sons of Joseph; ##and worshipped##note:x[<<Gen 47:31>>], __leaning__ upon the top of his staff.
+@ By ##faith##note:x[<<Gen 50:24–25; Exod 13:19; Josh 24:32>>] Joseph, when he died, made mention of the departing of the children of Israel; and gave commandment concerning his bones.
+
+[discrete.pericope]
+==== The Faith of Moses
+
+[.parallel]
+(<<Exodus 2—15; Acts 7:20–22>>)
+
+@ note:x[<<Exod 1:16, 22>>]By ##faith##note:x[<<Exod 2:2–10>>] Moses, when he was born, was hid three months of his parents, because they saw __he was__ a proper child; and they were not afraid of the king’s commandment.
+@ By faith Moses, ##when##note:x[<<Exod 2:10; Acts 7:21–24>>] he was come to years, refused to be called the son of Pharaoh’s daughter;
+@ ##Choosing##note:x[<<Job 36:21; Ps 84:10; 2 Tim 2:3–10>>] rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season;
+@ Esteeming ##the reproach##note:x[<<1 Pet 4:14>>] of Christ greater riches than the treasures in Egypt: ##for he had##note:x[<<Heb 10:35; 11:6>>] respect unto the recompence of the reward.
+@ By faith he forsook Egypt, ##not fearing##note:x[<<Exod 2:14–15>>] the wrath of the king: for he endured, as ##seeing##note:x[<<2 Cor 4:18; Heb 11:13>>] him who is invisible.
+@ Through faith ##he kept##note:x[<<Exod 12:21–30>>] the passover, and ##the sprinkling##note:x[<<Heb 9:19; 12:24>>] of blood, lest he that destroyed the firstborn should touch them.
+@ ##By faith they passed through the Red sea as by dry __land__: which the Egyptians assaying to do were drowned.##note:x[<<Exod 14:13–31; Ps 78:13; 106:9–11>>]
+
+[discrete.pericope]
+==== The Faith of Many
+
+[discrete.pericope]
+==== (Joshua–Malachi)
+
+@ ##By faith the walls of Jericho fell down, after they were compassed about seven days.##note:x[<<Josh 6:3–20; 2 Cor 10:4–5>>]
+@ By faith ##the harlot##note:x[<<Josh 6:22–25; Matt 1:5; Jas 2:25>>] Rahab perished not with them that believed not, when she had received the spies with peace.
+@ And what shall I more say? for the time would fail me to tell of Gedeon, and __of__ Barak, and __of__ Samson, and __of__ Jephthae; __of__ ##David##note:x[<<1 Sam 16:1, 13>>] also, and ##Samuel##note:x[<<1 Sam 1:20>>], and __of__ the prophets:
+@ Who ##through##note:x[<<Ps 144:1–2>>] faith subdued kingdoms, wrought righteousness, ##obtained##note:x[<<Heb 6:12–15; 10:36>>] promises, stopped the mouths of lions,
+@ Quenched the violence of fire, ##escaped##note:x[<<2 Kgs 6:16–18; Ps 144:10>>] the edge of the sword, out of weakness were made strong, waxed valiant in fight, ##turned##note:x[<<1 Sam 17:51–52>>] to flight the armies of the aliens.
+@ ##Women##note:x[<<1 Kgs 17:22–24; 2 Kgs 4:27–37>>] received their dead raised to life again: and others were tortured, not accepting deliverance; ##that they##note:x[<<Phil 3:11>>] might obtain a better resurrection:
+@ And others had trial of __cruel__ mockings ##and scourgings##note:x[<<Jer 20:2>>], yea, moreover of ##bonds##note:x[<<Gen 39:20; Jer 20:2>>] and imprisonment:
+@ They were ##stoned##note:x[<<2 Chr 24:21>>], they were sawn asunder, were tempted, ##were slain##note:x[<<1 Kgs 19:10; Jer 26:23>>] with the sword: they wandered about in sheepskins and goat skins; being destitute, afflicted, tormented;
+@ (Of whom the world was not worthy:) they ##wandered##note:x[<<1 Sam 22:1; 1 Kgs 18:4; 19:9>>] in deserts, and __in__ mountains, and __in__ dens and caves of the earth.
+@ ##And these all, having obtained a good report through faith, received not the promise:##note:x[<<Luke 10:23–24; Heb 11:2, 13>>]
+@ God having provided some ##better##note:x[<<Heb 8:6>>] thing for us, that ##they without##note:x[<<Heb 10:11–14>>] us should not be ##made##note:x[<<Rev 6:11>>] perfect.
+
+=== @12
+
+[discrete.pericope]
+==== A Call to Endurance
+
+[.parallel]
+(<<2 Timothy 2:1–13>>)
+
+@ Wherefore seeing we also are compassed about with so great a cloud of witnesses, let us lay aside every weight, and the sin which doth so easily beset __us__, ##and let us##note:x[<<1 Cor 9:24–27; Phil 2:16; 2 Tim 4:7>>] run with patience the race that is set before us,
+@ ##Looking##note:x[<<Mic 7:7>>] unto Jesus the author and finisher of __our__ faith; who for the joy that was set before him ##endured##note:x[<<1 Pet 3:18>>] the cross, ##despising##note:x[<<1 Pet 2:23>>] the shame, and is set down at the right hand of the throne of God.
+@ For consider him that endured such contradiction of sinners against himself, ##lest##note:x[<<1 Cor 15:58; 2 Cor 4:16; Gal 6:9>>] ye be wearied and faint in your minds.
+
+[discrete.pericope]
+==== God Disciplines His Sons
+
+@ ##Ye have not yet resisted unto blood, striving against sin.##note:x[<<1 Cor 10:13; Heb 10:32–34; Rev 2:13>>]
+@ And ye have forgotten ##the exhortation##note:x[<<Prov 3:11–12>>] which speaketh unto you as unto children, My son, ##despise##note:x[<<Job 5:17–18; Rev 3:19>>] not thou the chastening of the Lord, nor faint when thou art rebuked of him:
+@ For ##whom##note:x[<<Ps 119:75; Prov 3:12; Rev 3:19>>] the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.
+@ If ye ##endure##note:x[<<Prov 19:18; 29:15>>] chastening, God dealeth with you as with sons; ##for what##note:x[<<Prov 13:24>>] son is he whom the father chasteneth not?
+@ ##But if ye be without chastisement, whereof all are partakers, then are ye bastards, and not sons.##note:x[<<Ps 73:1; Heb 12:6; 1 Pet 5:9–10>>]
+@ Furthermore we have had fathers of our flesh which corrected __us__, and we gave __them__ reverence: shall we not much rather be in subjection unto ##the Father##note:x[<<Num 16:22; 27:16; Isa 42:5>>] of spirits, and live?
+@ For they verily for a few days chastened __us__ after their own pleasure; but he for __our__ profit, that __we__ might be ##partakers##note:x[<<Lev 11:44–45; Titus 2:14; 2 Pet 1:4>>] of his holiness.
+@ Now no chastening for the present seemeth to be joyous, but grievous: ##nevertheless##note:x[<<Heb 12:5–6>>] afterward it yieldeth the ##peaceable##note:x[<<Rom 5:3–5; 2 Cor 4:17>>] fruit of righteousness unto them which are exercised there by.
+@ ##Wherefore lift up the hands which hang down, and the feeble knees;##note:x[<<Job 4:3–4; Isa 35:3; Heb 12:3>>]
+@ And ##make##note:x[<<Prov 4:26–27; Isa 35:3>>] straight paths for your feet, lest that which is lame be turned out of the way; ##but let##note:x[<<Gal 6:1>>] it rather be healed.
+
+[discrete.pericope]
+==== A Call to Holiness
+
+[.parallel]
+(<<1 Peter 1:13–21>>)
+
+@ Follow peace with all __men__, ##and holiness##note:x[<<2 Cor 7:1; 1 Pet 1:15–16>>], without which ##no man##note:x[<<2 Cor 7:1>>] shall see the Lord:
+@ ##Looking##note:x[<<Heb 3:12>>] diligently lest any man fail of the grace of God; lest ##any root##note:x[<<Deut 29:18; Heb 3:12>>] of bitterness springing up trouble __you__, and there by many be defiled;
+@ Lest there __be__ ##any fornicator##note:x[<<1 Cor 6:15–20; Heb 13:4>>], or profane person, ##as Esau##note:x[<<Gen 25:31–34>>], who for one morsel of meat sold his birthright.
+@ For ye know how that afterward, when he would have inherited the blessing, ##he was##note:x[<<Prov 1:24–31; Matt 7:23; 25:11–12>>] rejected: for he found no place of repentance, though he sought it carefully with tears.
+
+[discrete.pericope]
+==== An Unshakable Kingdom
+
+[.parallel]
+(<<Exodus 20:18–21; Deuteronomy 5:22–33>>)
+
+@ ##For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest,##note:x[<<Exod 24:17; Deut 4:11; 5:22–26>>]
+@ And ##the sound##note:x[<<1 Cor 15:52>>] of a trumpet, ##and the voice##note:x[<<Exod 20:1–17>>] of words; which __voice__ ##they that##note:x[<<Deut 18:16>>] heard intreated that the word should not be spoken to them any more:
+@ ( For they could not endure that which was commanded, And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart:
+@ And so terrible was the sight, __that__ ##Moses##note:x[<<Exod 19:16, 19; Isa 6:3–5>>] said, I exceedingly fear and quake:)
+@ But ##ye are come##note:x[<<Ps 48:2; Gal 4:26>>] unto mount Sion, and unto ##the city##note:x[<<Phil 3:20>>] of the living God, the heavenly Jerusalem, and to an innumerable company of angels,
+@ To the general assembly and church of ##the firstborn##note:x[<<Jas 1:18>>], ##which##note:x[<<Luke 10:20>>] are written in heaven, and to God the Judge of all, and to ##the spirits##note:x[<<Heb 11:40>>] of just men made perfect,
+@ And to ##Jesus##note:x[<<Heb 8:6>>] the mediator of the new ##covenant##note:x[<<Heb 9:15>>], and ##to the blood##note:x[<<Heb 11:28>>] of sprinkling, that speaketh better things than __that of__ Abel.
+@ ##See##note:x[<<Heb 8:5>>] that ye refuse not him that speaketh. For ##if they##note:x[<<Heb 2:1–3>>] escaped not who refused him that spake on earth, much more __shall not__ we __escape__, if we ##turn away##note:x[<<Deut 30:17>>] from him that __speaketh__ from heaven:
+@ Whose ##voice##note:x[<<Exod 19:18>>] then shook the earth: but now he hath promised, saying, ##Yet once##note:x[<<Isa 13:13; Hag 2:6–7>>] more I shake not the earth only, but also heaven.
+@ And this __word__, Yet once more, ##signifieth##note:x[<<Matt 24:35; Rev 21:1>>] the removing of those things that are shaken, as of things that are made, that those things which cannot be shaken may remain.
+@ Wherefore we receiving ##a kingdom##note:x[<<Dan 2:44>>] which cannot be moved, let us have grace, whereby ##we may##note:x[<<Rom 12:1–2>>] serve God acceptably ##with reverence##note:x[<<Ps 2:11>>] and godly fear:
+@ ##For our God __is__ a consuming fire.##note:x[<<Deut 4:24; 9:3; Heb 10:27>>]
+
+=== @13
+
+[discrete.pericope]
+==== Brotherly Love
+
+@ ##Let brotherly love continue.##note:x[<<1 Pet 1:22; 3:8; 1 John 4:20–21>>]
+@ Be ##not##note:x[<<Matt 25:35; Rom 12:13; 1 Pet 4:9>>] forgetful to entertain strangers: for there by some have entertained angels unawares.
+@ Remember ##them that##note:x[<<Matt 25:36; Heb 10:34>>] are in bonds, as bound with them; __and__ them ##which suffer##note:x[<<Rom 12:15>>] adversity, as being yourselves also in the body.
+@ ##Marriage##note:x[<<Gen 2:24; Prov 5:15–23; 1 Cor 7:2–16>>] __is__ honourable in all, and the bed undefiled: but whoremongers and adulterers God will judge.
+
+[discrete.pericope]
+==== Christ’s Unchanging Nature
+
+@ __Let your__ conversation __be__ without covetousness; __and be__ content with such things as ye have: for he hath said, ##I will##note:x[<<Deut 31:6, 8; Josh 1:5>>] never leave thee, nor forsake thee.
+@ So that we may boldly say, ##The Lord##note:x[<<Isa 41:10; Rom 8:31>>] __is__ my helper, and ##I will##note:x[<<Ps 118:6>>] not fear what man shall do unto me.
+
+@ Remember them ##which##note:x[<<1 Thess 5:12–13; Heb 13:17>>] have the rule over you, who have spoken unto you the word of God: ##whose##note:x[<<Phil 3:17>>] faith follow, considering the end of __their__ conversation.
+@ ##Jesus Christ the same yesterday, and to day, and for ever.##note:x[<<Mal 3:6; Jas 1:17; Rev 1:8>>]
+@ Be not ##carried##note:x[<<Eph 4:14; 5:6; 1 Tim 6:3–5>>] about with divers and strange doctrines. For __it is__ a good thing that the heart be established with grace; not with meats, which have not profited them that have been occupied therein.
+@ We have ##an altar##note:x[<<1 Cor 5:7–8; 10:20>>], where of they have no right to eat which serve the tabernacle.
+@ For ##the bodies##note:x[<<Exod 29:14; Lev 9:11; 16:27>>] of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp.
+@ Wherefore Jesus also, that he might ##sanctify##note:x[<<1 Cor 6:11>>] the people with his own blood, ##suffered##note:x[<<Mark 15:20–24; John 19:17–18>>] without the gate.
+@ ##Let us go forth therefore unto him without the camp, bearing his reproach.##note:x[<<Matt 16:24; Heb 11:26; 1 Pet 4:14–16>>]
+@ ##For here have we no continuing city, but we seek one to come.##note:x[<<Phil 3:20; Col 3:1–3; Heb 11:12–16>>]
+
+[discrete.pericope]
+==== Sacrifice, Obedience, and Prayer
+
+@ By him therefore let us offer ##the sacrifice##note:x[<<Ps 50:14; 107:21–22>>] of praise to God continually, that is, ##the fruit##note:x[<<Rom 12:1>>] of __our__ lips giving thanks to his name.
+@ But ##to do##note:x[<<Gal 6:10; 2 Thess 3:13>>] good and to ##communicate##note:x[<<Rom 12:13>>] forget not: for with such sacrifices God is well pleased.
+@ ##Obey##note:x[<<1 Thess 5:12–13; 1 Tim 5:17; Heb 13:7>>] them that have the rule over you, and submit yourselves: for they watch for your souls, as they that must give account, that they may do it with joy, and not with grief: for that __is__ unprofitable for you.
+
+@ ##Pray##note:x[<<Col 4:3; 1 Thess 5:25; 2 Thess 3:1>>] for us: for we trust we have a good conscience, in all things willing to live honestly.
+@ But I beseech __you__ the rather to do this, ##that I##note:x[<<Phlm 1:22>>] may be restored to you the sooner.
+
+[discrete.pericope]
+==== Benediction and Farewell
+
+@ Now ##the God##note:x[<<Rom 15:33>>] of peace, that brought again from the dead our Lord Jesus, ##that great##note:x[<<John 10:11>>] shepherd of the sheep, through ##the blood##note:x[<<Heb 10:22>>] of the everlasting covenant,
+@ ##Make##note:x[<<2 Thess 2:17>>] you perfect in ##every##note:x[<<2 Thess 2:17>>] good work to do his will, ##working##note:x[<<Phil 2:13>>] in you that which is wellpleasing in his sight, through Jesus Christ; to whom __be__ glory for ever and ever. Amen.
+@ And I beseech you, brethren, ##suffer##note:x[<<2 Cor 6:1; Heb 3:1>>] the word of exhortation: ##for##note:x[<<1 Pet 5:12>>] I have written a letter unto you in few words.
+@ Know ye that __our__ brother Timothy is set at liberty; with whom, if he come shortly, I will see you.
+@ Salute all them that have ##the rule##note:x[<<Heb 13:7, 17>>] over you, and all the saints. They of Italy salute you.
+@ Grace __be__ with you all. Amen.
+
+[.colophon]
+Written to the Hebrews from Italy by Timothy.

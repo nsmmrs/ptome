@@ -1,0 +1,40 @@
+version: 2
+scheme:
+  catechism:
+    cite: "Q. {{question}}"
+    level:
+      - name: "question"
+        break: "block"
+        default: true
+        id: "q{{question}}"
+        reftext: "Q. {{question}}"
+        label: "Q. {{question}}."
+        label-style: "strong"
+        label-after: " "
+        block-role: "question"
+      - name: "part"
+        type: "enum"
+        values:
+          - "Q."
+          - "A."
+        auto: "block"
+        id: "q{{question}}-{{#first}}q{{/first}}{{^first}}a{{/first}}"
+        reftext: "Q. {{question}}, {{part}}"
+        label: "{{^first}}{{part}}{{/first}}"
+        label-style: "strong"
+        label-after: " "
+stream:
+  proof:
+    placement: "end"
+    caller: "1"
+    reset: "question"
+    caller-style: "superscript"
+    entry-role: "proofs"
+    entry-break: "block"
+    caller-after: "\u00a0"
+    note-separator: " "
+citation:
+  default:
+    attribution: "{{title}}, Q. {{passage}}"
+    title: ""
+    labels: "all"

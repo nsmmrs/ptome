@@ -1,0 +1,1447 @@
+== @JOB
+
+[.book-title]
+The Book of Job
+
+=== @1
+
+[discrete.pericope]
+==== Job’s Character and Wealth
+
+[.parallel]
+(<<James 5:7–12>>)
+
+@ There was a man in the land of Uz, whose name __was__ ##Job##note:x[<<Ezek 14:14, 20; Jas 5:11>>]; and that man was perfect and upright, and one that feared God, and eschewed evil.
+@ And there were born unto him ##seven sons##note:x[<<Esth 5:11; Job 13:13; Ps 127:3–5>>] and three daughters.
+@ His ##substance##note:tn[or, cattle] also was ##seven##note:x[<<Job 42:12; Prov 10:22>>] thousand sheep, and three thousand camels, and five hundred yoke of oxen, and five hundred she asses, and a very great ##household##note:tn[or, husbandry]; so that this man was the ##greatest##note:x[<<Job 29:25>>] of all the ##men##note:tn[Heb. sons] of the east.
+
+@ And his sons went and feasted __in their__ houses, every one his day; and ##sent and called##note:x[<<Ps 133:1; Heb 13:1>>] for their three sisters to eat and to drink with them.
+@ And it was so, when the days of __their__ feasting were gone about, that Job sent and ##sanctified##note:x[<<1 Sam 16:5>>] them, and rose up early in the morning, and ##offered##note:x[<<Gen 8:20; Job 42:8>>] burnt offerings __according__ to the number of them all: for Job said, It may be that my sons have sinned, and cursed God in their hearts. Thus did Job ##continually##note:tn[Heb. all the days].
+
+[discrete.pericope]
+==== Satan’s First Attack
+
+@ ¶ ##Now##note:x[<<Job 2:1>>] there was a day when ##the sons##note:x[<<Job 38:7>>] of God came to present themselves before the LORD, and note:x[<<Zech 3:1>>]##Satan##note:tn[Heb. the adversary] came also ##among##note:tn[Heb. in the midst of] them.
+@ And the LORD said unto Satan, ##Whence##note:x[<<Job 2:2>>] comest thou? Then Satan answered the LORD, and said, ##From going##note:x[<<Matt 12:43; 1 Pet 5:8>>] to and fro in the earth, and from walking up and down in it.
+@ And the LORD said unto Satan, Hast thou note:x[<<Job 2:3>>]##considered##note:tn[Heb. set thy heart on] ##my servant##note:x[<<Num 12:7–8>>] Job, that __there is__ none like him in the earth, ##a perfect##note:x[<<Job 1:1>>] and an upright man, one that feareth God, and escheweth evil?
+@ Then Satan answered the LORD, and said, ##Doth Job##note:x[<<Job 1:21; Matt 16:26; 1 Tim 4:8>>] fear God for nought?
+@ Hast not thou made ##an hedge##note:x[<<Ps 34:7; Zech 2:5; 1 Pet 1:5>>] about him, and about his house, and about all that he hath on every side? thou hast blessed the work of his hands, and his ##substance##note:tn[or, cattle] is increased in the land.
+@ ##But put##note:x[<<Job 2:5>>] forth thine hand now, and ##touch##note:x[<<Job 19:21>>] all that he hath, ##and he will curse thee##note:x[<<Rev 16:11>>] to thy face.note:tn[__and he…__: Heb. if he curse thee not to thy face]
+@ And the LORD said unto Satan, ##Behold##note:x[<<Luke 22:31–32; 2 Cor 12:7>>], all that he hath __is__ in thy note:x[<<John 3:35–36>>]##power##note:tn[Heb. hand]; only upon himself put not forth thine hand. So Satan went forth from the presence of the LORD.
+
+[discrete.pericope]
+==== Job Loses His Children and Possessions
+
+@ ¶ And there was a day ##when##note:x[<<Prov 27:1; Eccl 9:12; Luke 21:34>>] his sons and his daughters __were__ eating and drinking wine in their eldest brother’s house:
+@ And there came a messenger unto Job, and said, The oxen were plowing, and the asses feeding beside them:
+@ And the ##Sabeans##note:x[<<Gen 10:7>>] fell __upon them__, and took them away; yea, they have slain the servants with the edge of the sword; and I only am escaped alone to tell thee.
+@ While he __was__ yet speaking, ##there came##note:x[<<Gen 19:24; 1 Kgs 18:38; 2 Kgs 1:12>>] also another, and said, The fire of God is fallen from heaven, and hath burned up the sheep, and the servants, and consumed them; and I only am escaped alone to tell thee.note:tn[__The fire…__: or, A great fire]
+@ While he __was__ yet speaking, there came also another, and said, ##The Chaldeans##note:x[<<Gen 11:28; Hab 1:6>>] made out three bands, and ##fell##note:tn[Heb. rushed] upon the camels, and have carried them away, yea, and slain the servants with the edge of the sword; and I only am escaped alone to tell thee.
+@ While he __was__ yet speaking, there came also another, and said, ##Thy sons##note:x[<<Job 1:4, 13>>] and thy daughters __were__ eating and drinking wine in their eldest brother’s house:
+@ And, behold, there came a great wind from the wilderness, and smote the four corners of the house, and it fell upon the young men, and they are dead; and I only am escaped alone to tell thee.note:tn[__from…__: Heb. from aside, etc]
+
+@ Then Job arose, and ##rent##note:x[<<Gen 37:34>>] his ##mantle##note:tn[or, robe], and shaved his head, and ##fell##note:x[<<2 Sam 12:16–20; 1 Pet 5:6>>] down upon the ground, and worshipped,
+@ And said, ##Naked came##note:x[<<Eccl 5:15; 1 Tim 6:7>>] I out of my mother’s womb, and naked shall I return thither: the LORD gave, and the LORD hath taken away; ##blessed##note:x[<<1 Thess 5:18>>] be the name of the LORD.
+@ ##In all this##note:x[<<Job 2:10; Jas 1:12; 1 Pet 1:7>>] Job sinned not, nor charged God foolishly.note:tn[__charged…__: or, attributed folly to God]
+
+=== @2
+
+[discrete.pericope]
+==== Job Loses His Health
+
+@ ##Again##note:x[<<Job 1:6; Heb 1:14>>] there was a day when the sons of God came to present themselves before the LORD, and Satan came also among them to present himself before the LORD.
+@ And the LORD said unto Satan, From whence comest thou? And Satan answered the LORD, and said, ##From going##note:x[<<1 Pet 5:8>>] to and fro in the earth, and from walking up and down in it.
+@ And the LORD said unto Satan, ##Hast thou##note:x[<<Job 1:8>>] considered my servant Job, that __there is__ none like him in the earth, a perfect and an upright man, one that feareth God, and escheweth evil? and still he ##holdeth##note:x[<<Job 27:5–6; Jas 1:12>>] fast his integrity, although thou movedst me against him, to destroy him without cause.note:tn[__to destroy…__: Heb. to swallow him up]
+@ And Satan answered the LORD, and said, Skin for skin, yea, ##all that##note:x[<<Matt 6:25; 16:26; Phil 3:8–10>>] a man hath will he give for his life.
+@ But ##put forth##note:x[<<Job 1:11>>] thine hand now, and touch his bone and his flesh, and ##he will curse##note:x[<<Job 1:11>>] thee to thy face.
+@ And the LORD said unto Satan, ##Behold##note:x[<<Job 1:12>>], he __is__ in thine hand; ##but##note:tn[or, only] ##save##note:x[<<Luke 22:31–32; 1 Cor 10:13>>] his life.
+
+@ ¶ So went Satan forth from the presence of the LORD, and smote Job with ##sore boils##note:x[<<Deut 28:35; Job 30:30>>] ##from the sole##note:x[<<Isa 1:6>>] of his foot unto his crown.
+@ And he took him a potsherd to scrape himself withal; and ##he sat##note:x[<<Job 42:6; Ezek 27:30; Jonah 3:6>>] down among the ashes.
+
+@ ¶ Then said his wife unto him, Dost thou still ##retain##note:x[<<2 Kgs 6:33; Job 2:3>>] thine integrity? ##curse God##note:x[<<Job 2:5>>], and die.
+@ But he said unto her, Thou speakest as one of the foolish women speaketh. What? ##shall we receive##note:x[<<Job 1:21; Lam 3:38–41; Rom 12:12>>] good at the hand of God, and shall we not receive evil? In all this did not Job sin with his lips.
+
+[discrete.pericope]
+==== Job’s Three Friends
+
+@ ¶ Now when Job’s three ##friends##note:x[<<Job 6:14>>] heard of all this evil that was come upon him, they came every one from his own place; Eliphaz the Temanite, and Bildad the Shuhite, and Zophar the Naamathite: for they had made an appointment together ##to come##note:x[<<Job 42:11; Rom 12:15>>] to mourn with him and to comfort him.
+@ And when they lifted up their eyes afar off, and knew him not, they lifted up their voice, and wept; and they rent every one his mantle, and ##sprinkled dust upon##note:x[<<Neh 9:1; Lam 2:10; Ezek 27:30>>] their heads toward heaven.
+@ So ##they sat##note:x[<<Neh 1:4; Isa 3:26>>] down with him upon the ground ##seven days##note:x[<<Gen 50:10>>] and seven nights, and none spake a word unto him: for they saw that __his__ grief was very great.
+
+=== @3
+
+[discrete.pericope]
+==== Job Laments His Birth
+
+@ After this ##opened##note:x[<<Ps 106:33>>] Job his mouth, and ##cursed##note:x[<<Jer 20:14–15>>] his day.
+@ And Job ##spake##note:tn[Heb. answered], and said,
+@ ##Let the day##note:x[<<Job 10:18–19; Jer 15:10; 20:14–15>>] perish wherein I was born, and the night __in which__ it was said, There is a man child conceived.
+@ Let that day be darkness; let not God regard it from above, neither let the light shine upon it.
+@ Let darkness and ##the shadow##note:x[<<Job 10:21–22; 28:3; Ps 23:4>>] of death ##stain##note:tn[or, challenge] it; let a cloud dwell upon it; let the blackness of the day terrify it.note:tn[__let the…__: or, let them terrify it, as those who have a bitter day]
+@ As __for__ that night, let darkness seize upon it; let it not be joined unto the days of the year, let it not come into the number of the months.note:tn[__let it not be…__: or, let it not rejoice among the days]
+@ Lo, let that night be solitary, let no joyful voice come therein.
+@ Let them curse it that curse the day, who are ready to raise up ##their mourning##note:x[<<Job 41:1>>].note:tn[__their…__: or, leviathan]
+@ Let the stars of the twilight thereof be dark; let it look for light, but __have__ none; neither let it see ##the dawning of the day##note:x[<<Job 41:18>>]:note:tn[__the dawning…__: Heb. the eyelids of the morning]
+@ Because it shut not up the doors of my __mother’s__ womb, nor hid sorrow from mine eyes.
+
+@ Why died I not from the womb? __why__ did I __not__ give up the ghost when I came out of the belly?
+@ Why did ##the knees##note:x[<<Gen 30:3; Isa 66:12>>] prevent me? or why the breasts that I should suck?
+@ For now should I have lain still and been quiet, I should have slept: then had I been at rest,
+@ With kings and counsellors of the earth, ##which built##note:x[<<Job 15:28>>] desolate places for themselves;
+@ Or with princes that had gold, who filled their houses with silver:
+@ Or as ##an hidden##note:x[<<Ps 58:8>>] untimely birth I had not been; as infants __which__ never saw light.
+@ There the wicked cease __from__ troubling; and there the ##weary##note:tn[Heb. wearied in strength] be ##at rest##note:x[<<Rev 14:13>>].
+@ __There__ the prisoners rest together; they hear not the voice of the oppressor.
+@ The small and great are there; and the servant __is__ free from his master.
+
+@ ##Wherefore##note:x[<<Job 7:15–16; Jer 20:18>>] is light given to him that is in misery, and life unto ##the bitter##note:x[<<Job 7:15–16>>] __in__ soul;
+@ Which note:x[<<Rev 9:6>>]##long##note:tn[Heb. wait] for death, but it __cometh__ not; and ##dig##note:x[<<Prov 2:4>>] for it more than for hid treasures;
+@ Which rejoice exceedingly, __and__ are glad, when they can find the grave?
+@ __Why is light given__ to a man whose way is hid, and whom God hath ##hedged in##note:x[<<Job 19:8; Lam 3:7>>]?
+@ For ##my sighing##note:x[<<Ps 80:5; 102:9>>] cometh before I eat, and my roarings are poured out like the waters.note:tn[__I eat__: Heb. my meat]
+@ For the thing which I greatly feared is come upon me, and ##that which##note:x[<<Job 1:5; 31:23>>] I was afraid of is come unto me.note:tn[__the thing…__: Heb. I feared a fear, and it came upon me]
+@ I was not in safety, neither had I rest, neither was I quiet; yet trouble came.
+
+=== @4
+
+[discrete.pericope]
+==== Eliphaz: The Innocent Prosper
+
+@ Then Eliphaz the Temanite answered and said,
+@ __If__ we assay to commune with thee, wilt thou be grieved? but who can ##withhold himself from speaking##note:x[<<Job 32:18–20; Acts 4:20>>]?note:tn[__to…__: Heb. a word]note:tn[__withhold…__: Heb. refrain from words?]
+@ ##Behold##note:x[<<Prov 10:21>>], thou hast instructed many, ##and thou hast##note:x[<<Job 16:5; Isa 35:3>>] strengthened the weak hands.
+@ Thy words have upholden him that was falling, and thou hast strengthened the feeble knees.
+@ But now it is come upon thee, and thou faintest; ##it toucheth##note:x[<<Job 19:21>>] thee, and thou art troubled.
+@ __Is__ not __this__ ##thy fear##note:x[<<Job 1:1>>], ##thy confidence##note:x[<<Prov 3:26; 14:26>>], thy hope, and the uprightness of thy ways?
+
+@ Remember, I pray thee, ##who __ever__##note:x[<<Ps 37:25; Acts 28:4; 2 Pet 2:9>>] perished, being innocent? or where were the righteous cut off?
+@ Even as I have seen, ##they that plow##note:x[<<Prov 22:8; Hos 8:7; Gal 6:7–8>>] iniquity, and sow wickedness, reap the same.
+@ By the blast of God they perish, and ##by the breath of his nostrils##note:x[<<Job 15:30; Isa 11:4; 30:33>>] are they consumed.note:tn[__by the breath…__: that is, by his anger]
+@ The roaring of the lion, and the voice of the fierce lion, and ##the teeth##note:x[<<Ps 58:6>>] of the young lions, are broken.
+@ The old lion ##perisheth##note:x[<<Ps 34:10>>] for lack of prey, and the stout lion’s whelps are scattered abroad.
+
+@ Now ##a thing##note:x[<<Ps 62:11>>] was ##secretly##note:tn[Heb. by stealth] brought to me, and mine ear received ##a little##note:x[<<1 Cor 13:12>>] thereof.
+@ In ##thoughts##note:x[<<Job 33:14–16>>] from the visions of the night, when deep sleep falleth on men,
+@ Fear came upon me, and trembling, which made ##all##note:tn[Heb. the multitude of] my bones to shake.note:tn[__came…__: Heb. met]
+@ Then ##a spirit##note:x[<<Heb 1:7>>] passed before my face; the hair of my flesh stood up:
+@ It stood still, but I could not discern the form thereof: an image __was__ before mine eyes, __there was__ silence, and I heard a voice, __saying__,note:tn[__there…__: or, I heard a still voice]
+@ ##Shall mortal##note:x[<<Job 9:2; Eccl 7:20>>] man be more just than God? ##shall a man##note:x[<<Job 25:4>>] be more pure than his maker?
+@ Behold, ##he put##note:x[<<Job 25:5–6>>] no trust in his servants; ##and his angels he charged with folly##note:x[<<2 Pet 2:4; Jude 1:6>>]:note:tn[__and his…__: or, nor in his angels, in whom he put light]
+@ How much less __in__ them that ##dwell##note:x[<<Gen 2:7; 3:19; Job 10:9>>] in houses of clay, whose foundation __is__ in the dust, __which__ are crushed before the moth?
+@ They are ##destroyed##note:tn[Heb. beaten in pieces] from morning to evening: they perish for ever ##without##note:x[<<Job 20:7>>] any regarding __it__.
+@ Doth not their ##excellency##note:x[<<Ps 39:11; Luke 16:22–23>>] __which is__ in them go away? they ##die##note:x[<<Job 36:12>>], even without wisdom.
+
+=== @5
+
+[discrete.pericope]
+==== Eliphaz Continues: God Blesses those Who Seek Him
+
+@ Call now, if there be any that will answer thee; ##and to which##note:x[<<Job 15:8–10, 15>>] of ##the saints##note:x[<<Job 15:15>>] wilt thou ##turn##note:tn[or, look?]?
+@ For wrath killeth ##the foolish##note:x[<<Eccl 7:9>>] man, and ##envy##note:tn[or, indignation] slayeth the silly one.
+@ I have seen the foolish ##taking##note:x[<<Ps 73:18–20; 92:7>>] root: but suddenly I cursed his habitation.
+@ His ##children##note:x[<<Ps 127:5>>] are far from safety, and they are crushed in the gate, neither __is there__ any to deliver __them__.
+@ Whose harvest the hungry eateth up, and taketh it even out of the thorns, and ##the robber##note:x[<<Hos 8:7>>] ##swalloweth##note:x[<<Jer 51:44; Lam 2:16>>] up their substance.
+
+@ Although ##affliction##note:tn[or, iniquity] cometh not forth of the dust, neither doth ##trouble##note:x[<<Isa 45:7>>] spring out of the ground;
+@ Yet ##man##note:x[<<Gen 3:17–19; Job 14:1>>] is born unto note:x[<<Eccl 5:15–17>>]##trouble##note:tn[or, labour], as the sparks fly upward.note:tn[__sparks…__: Heb. the sons of the burning coal lift up to fly]
+@ I would ##seek##note:x[<<Job 22:21; Ps 50:15>>] ##unto God##note:x[<<Ps 37:5>>], and unto God would I commit my cause:
+@ Which ##doeth##note:x[<<Job 9:10; Ps 40:5>>] great things and ##unsearchable##note:tn[Heb. there is no search]; marvellous things ##without number##note:x[<<Ps 40:5>>]:note:tn[__without…__: Heb. till there be no number]
+@ Who ##giveth##note:x[<<Ps 65:9–11; Jer 5:24; Acts 14:17>>] rain upon the earth, and sendeth waters upon the ##fields##note:tn[Heb. outplaces]:
+@ To ##set up##note:x[<<1 Sam 2:7–8; Ps 107:41; Luke 1:52–53>>] on high those that be low; that those which mourn may be exalted to safety.
+@ He ##disappointeth##note:x[<<Ps 33:10–11; Isa 8:10>>] the devices of the crafty, so that ##their hands##note:x[<<Ps 21:11>>] cannot perform __their__ enterprise.note:tn[__their enterprise__: or, any thing]
+@ He ##taketh##note:x[<<Ps 7:15–16; 9:15–16; Luke 1:51>>] the wise in their own craftiness: and the counsel of the froward is carried headlong.
+@ They meet with ##darkness##note:x[<<Deut 28:29; Job 12:25; Isa 59:10>>] in the daytime, and grope in the noonday as in the night.note:tn[__meet…__: or, run into]
+@ But ##he saveth##note:x[<<Ps 35:10; 109:31; 140:12>>] the poor from the sword, from their mouth, and from the hand of the mighty.
+@ So the poor hath hope, ##and##note:x[<<Ps 107:42>>] iniquity stoppeth her mouth.
+
+@ Behold, ##happy##note:x[<<Ps 94:12; Prov 3:11–12; Jas 1:12>>] __is__ the man whom God correcteth: therefore despise not thou the chastening of the Almighty:
+@ ##For he maketh sore, and bindeth up: he woundeth, and his hands make whole.##note:x[<<Deut 32:39; Ps 147:3; Isa 30:26>>]
+@ He shall ##deliver thee##note:x[<<Ps 34:19; 91:3–7; 1 Cor 10:13>>] in six troubles: yea, in seven there shall no evil touch thee.
+@ In ##famine##note:x[<<Gen 45:7; Ps 33:19>>] he shall ##redeem##note:x[<<Hos 13:14>>] thee from death: and in war from the ##power##note:tn[Heb. hands] of the sword.
+@ Thou shalt ##be hid##note:x[<<Ps 31:20; Prov 12:18>>] from the scourge of the tongue: ##neither##note:x[<<Ps 91:5–7>>] shalt thou be afraid of destruction when it cometh.note:tn[__from…__: or, when the tongue scourgeth]
+@ At destruction and famine thou shalt laugh: neither shalt thou be ##afraid##note:x[<<Isa 35:9; Ezek 34:25>>] of the beasts of the earth.
+@ For ##thou##note:x[<<Ps 91:12–13>>] shalt be in league with the stones of the field: and the ##beasts##note:x[<<Lev 26:6; Dan 6:22>>] of the field shall be at peace with thee.
+@ And ##thou shalt know##note:x[<<Isa 4:5–6>>] that thy tabernacle __shall be__ in peace; and ##thou shalt visit##note:x[<<Ps 91:10; 121:7–8>>] thy habitation, and shalt not ##sin##note:tn[or, err].note:tn[__thy tabernacle…__: or, peace is thy tabernacle]
+@ Thou shalt know also that ##thy seed##note:x[<<Deut 28:4; Ps 112:2>>] __shall be__ ##great##note:tn[or, much], and thine offspring ##as the grass##note:x[<<Ps 72:16>>] of the earth.
+@ Thou shalt come to __thy__ grave ##in a full age##note:x[<<Job 42:16–17; Ps 91:16; Prov 9:11>>], like as a shock of corn cometh in in his season.note:tn[__cometh in__: Heb. ascendeth]
+@ Lo this, ##we have searched##note:x[<<Job 32:11–12; Ps 111:2>>] it, so it __is;__ hear it, and know thou __it__ ##for thy good##note:x[<<Prov 9:12>>].note:tn[__for…__: Heb. for thyself]
+
+=== @6
+
+[discrete.pericope]
+==== Job Replies: My Complaint Is Just
+
+@ But Job answered and said,
+@ Oh that my grief were throughly weighed, and my calamity ##laid##note:tn[Heb. lifted up] in the balances together!
+@ For now it would be ##heavier##note:x[<<Prov 27:3>>] than the sand of the sea: therefore my words are swallowed up.note:tn[__my words…__: that is, I want words to express my grief]
+@ For ##the arrows##note:x[<<Ps 38:2>>] of the Almighty __are__ within me, the poison whereof drinketh up my spirit: ##the terrors##note:x[<<Job 30:15; Ps 88:15–16>>] of God do set themselves in array against me.
+@ Doth the wild ass bray when he hath grass? or loweth the ox over his fodder?note:tn[__when he…__: Heb. at grass?]
+@ Can that which is unsavoury be eaten without salt? or is there __any__ ##taste##note:x[<<Job 34:3>>] in the white of an egg?
+@ The things __that__ my soul refused to touch __are__ as my sorrowful meat.
+
+@ Oh that I might have my request; and that God would grant __me__ ##the thing that I long for##note:x[<<Ps 119:81>>]!note:tn[__the thing…__: Heb. my expectation]
+@ Even ##that it would##note:x[<<1 Kgs 19:4; Job 7:15–16; Jonah 4:3>>] please God to destroy me; that he would let loose his hand, and cut me off!
+@ Then should I yet have comfort; yea, I would harden myself in sorrow: let him not spare; for I ##have not concealed##note:x[<<Job 23:12>>] the words of ##the Holy One##note:x[<<Lev 19:2; Isa 57:15>>].
+@ ##What##note:x[<<Ps 103:14–16>>] __is__ my strength, that I should hope? and what __is__ mine end, that I should prolong my life?
+@ __Is__ my strength the strength of stones? or __is__ my flesh of brass?note:tn[__of brass__: Heb. brasen?]
+@ __Is__ not my help in me? and is wisdom driven quite from me?
+
+@ ##To him##note:x[<<Prov 17:17; 1 Cor 12:26; Gal 6:2>>] that is afflicted pity __should be shewed__ from his friend; but he forsaketh the fear of the Almighty.note:tn[__is afflicted__: Heb. melteth]
+@ ##My brethren##note:x[<<Ps 38:11; 41:9>>] have dealt deceitfully as a brook, __and__ ##as the stream##note:x[<<Jer 15:18>>] of brooks they pass away;
+@ Which are blackish by reason of the ice, __and__ wherein the snow is hid:
+@ What time they wax warm, they ##vanish##note:tn[Heb. are cut off]: when it is hot, they are ##consumed##note:tn[Heb. extinguished] out of their place.note:tn[__when…__: Heb. in the heat thereof]
+@ The paths of their way are turned aside; they go to nothing, and perish.
+@ The troops of ##Tema##note:x[<<Gen 25:15; Isa 21:14; Jer 25:23>>] looked, the companies of Sheba waited for them.
+@ They were confounded because they had hoped; they came thither, and were ashamed.
+@ For now ye are ##nothing##note:tn[Heb. not]; ##ye see##note:x[<<Ps 38:11; 2 Tim 4:16>>] __my__ casting down, and are afraid.note:tn[__ye are…__: or, ye are like to them: Heb. to it]
+
+@ Did I say, Bring unto me? or, Give a reward for me of your substance?
+@ Or, Deliver me from the enemy’s hand? or, ##Redeem##note:x[<<Job 5:20; Ps 49:7–8, 15>>] me from the hand of the mighty?
+@ ##Teach me##note:x[<<Job 34:32; Prov 9:9>>], and ##I will##note:x[<<Jas 3:2>>] hold my tongue: and cause me to understand wherein I have erred.
+@ How forcible are right words! but what doth your arguing reprove?
+@ Do ye imagine to reprove words, and the speeches of one that is desperate, __which are__ ##as wind##note:x[<<Job 8:2>>]?
+@ Yea, ye overwhelm the fatherless, and ye dig __a pit__ for your friend.note:tn[__ye overwhelm__: Heb. ye cause to fall upon]
+@ Now therefore be content, look upon me; for __it is__ evident unto you if I lie.note:tn[__evident…__: Heb. before your face]
+@ Return, I pray you, let it not be iniquity; yea, return again, my righteousness __is__ ##in it##note:tn[that is, in this matter].
+@ Is there iniquity in my tongue? ##cannot##note:x[<<Job 6:6; 12:11; 34:3>>] my taste discern perverse things?note:tn[__my taste__: Heb. my palate]
+
+=== @7
+
+[discrete.pericope]
+==== Job Continues: Life Seems Futile
+
+@ ##__Is there__##note:x[<<Job 14:5, 13–14; Ps 39:4>>] not an appointed time to man upon earth? __are not__ his days also like the days of an hireling?note:tn[__an appointed…__: or, a warfare]
+@ As a servant earnestly desireth the shadow, and ##as an hireling##note:x[<<Lev 19:13; Deut 24:15>>] looketh for __the reward of__ his work&#58;note:tn[__earnestly…__: Heb. gapeth after]
+@ So am I made to possess ##months of##note:x[<<Ps 6:6>>] vanity, and wearisome nights are appointed to me.
+@ ##When##note:x[<<Deut 28:67; Job 7:13–14; Ps 77:4>>] I lie down, I say, When shall I arise, and the night be gone? and I am full of tossings to and fro unto the dawning of the day.note:tn[__the night…__: Heb. the evening be measured?]
+@ My ##flesh##note:x[<<Job 17:14; Isa 14:11>>] is clothed with worms and clods of dust; my skin is broken, and become loathsome.
+@ My days are ##swifter##note:x[<<Job 9:25; 17:11>>] than a weaver’s shuttle, and are spent ##without hope##note:x[<<Job 17:15>>].
+
+@ O ##remember##note:x[<<Ps 89:47>>] that ##my life##note:x[<<Ps 78:39; Jas 4:14>>] __is__ wind: mine eye shall no more ##see##note:tn[to see, that is, to enjoy] good.note:tn[__shall…__: Heb. shall not return]
+@ ##The eye##note:x[<<Job 20:9; Ps 37:36>>] of him that hath seen me shall see me no __more:__ thine eyes __are__ upon me, and I __am__ not.note:tn[__I am…__: that is, I can live no longer]
+@ __As__ the cloud is consumed and vanisheth away: so ##he##note:x[<<2 Sam 14:14; Job 10:21>>] that goeth down to the grave shall come up no __more__.
+@ He ##shall return##note:x[<<Job 8:18; 20:9; Ps 103:16>>] no more to his house, neither shall his place know him any more.
+@ Therefore ##I will not##note:x[<<Job 10:1; Ps 40:9>>] refrain my mouth; I will speak in the anguish of my spirit; I will complain in ##the bitterness##note:x[<<1 Sam 1:10>>] of my soul.
+@ __Am__ I a sea, or a whale, that thou settest a watch over me?
+@ When I say, ##My bed##note:x[<<Ps 6:6>>] shall comfort me, my couch shall ease my complaint;
+@ Then thou scarest me with dreams, and terrifiest me through visions:
+@ So that my soul chooseth strangling, __and__ death rather than my ##life##note:tn[Heb. bones].
+@ ##I loathe __it__##note:x[<<1 Kgs 19:4; Job 10:1>>]__;__ I would not live alway: ##let me alone##note:x[<<Job 14:6>>]; for my days __are__ vanity.
+
+@ ##What __is__ man##note:x[<<Ps 8:4; 144:3; Heb 2:6>>], that thou shouldest magnify him? and that thou shouldest set thine heart upon him?
+@ And __that__ thou shouldest ##visit##note:x[<<Isa 38:12–13>>] him every morning, __and__ ##try##note:x[<<Jer 9:7; 1 Pet 1:7>>] him every moment?
+@ ##How long##note:x[<<Job 9:18>>] wilt thou not depart from me, nor let me alone till I swallow down my spittle?
+@ I have sinned; what shall I do unto thee, O thou preserver of men? ##why hast##note:x[<<Lam 3:12>>] thou set me as a mark against thee, so that I am a burden to myself?
+@ And ##why dost##note:x[<<Job 10:14>>] thou not pardon my transgression, and take away mine iniquity? for now shall I ##sleep##note:x[<<Dan 12:2>>] in the dust; and thou shalt seek me in the morning, but I __shall__ not __be__.
+
+=== @8
+
+[discrete.pericope]
+==== Bildad: Job Should Repent
+
+@ Then answered ##Bildad##note:x[<<Job 2:11>>] the Shuhite, and said,
+@ How long wilt thou speak these __things__? and __how long shall__ ##the words##note:x[<<Job 6:26; 15:2>>] of thy mouth __be like__ a strong wind?
+@ Doth ##God##note:x[<<Gen 18:25; Deut 32:4; 2 Chr 19:7>>] pervert judgment? or doth the Almighty pervert justice?
+@ If thy children have sinned against him, and ##he have cast##note:x[<<Job 1:5>>] them away for their transgression;note:tn[__for…__: Heb. in the hand of their transgression]
+@ If ##thou wouldest##note:x[<<Job 11:13; Isa 55:6–7; Jas 4:7–10>>] seek unto God betimes, and make thy supplication to the Almighty;
+@ If ##thou __wert__##note:x[<<Prov 15:8>>] pure and upright; surely now ##he would##note:x[<<Isa 51:9>>] awake for thee, and ##make##note:x[<<Isa 3:10>>] the habitation of thy righteousness prosperous.
+@ Though ##thy beginning##note:x[<<Job 42:12–13; Zech 4:10; Matt 13:31–32>>] was small, yet thy latter end should greatly increase.
+
+@ For ##enquire##note:x[<<Deut 4:32; 32:7; Job 15:18>>], I pray thee, of the former age, and prepare thyself to the search of their fathers:
+@ (For ##we __are but__##note:x[<<1 Chr 29:15; Ps 102:11; 144:4>>] __of__ yesterday, and know ##nothing##note:tn[Heb. not], because our days upon earth __are__ a shadow:)
+@ Shall not they teach thee, __and__ tell thee, and ##utter words##note:x[<<Prov 18:15>>] out of their heart?
+@ Can the rush grow up without mire? can the flag grow without water?
+@ Whilst it __is__ yet in his greenness, __and__ not cut down, it withereth before any __other__ herb.
+@ note:x[<<Job 11:20; 13:16>>]So __are__ the paths of all ##that forget God##note:x[<<Ps 9:17>>]; and the hypocrite’s hope shall perish:
+@ Whose hope shall be cut off, and whose trust __shall be__ a spider’s note:x[<<Isa 59:5–6>>]##web##note:tn[Heb. house].
+@ He shall lean upon his house, but ##it shall not stand##note:x[<<Job 27:18>>]: he shall hold it fast, but it shall not endure.
+@ He __is__ green before the sun, and his branch shooteth forth in his garden.
+@ His roots are wrapped about the heap, __and__ seeth the place of stones.
+@ If ##he##note:x[<<Job 7:10>>] destroy him from his place, then __it__ shall deny him, __saying__, I have not seen thee.
+@ Behold, ##this __is__ the joy##note:x[<<Job 20:5>>] of his way, and out of the earth shall others grow.
+
+@ Behold, ##God##note:x[<<Job 4:7; Ps 37:24, 37>>] will not cast away a perfect __man__, neither will he help the evil doers&#58;note:tn[__help…__: Heb. take the ungodly by the hand]note:tn[__come__: Heb. shall not be]
+@ Till ##he fill##note:x[<<Gen 21:6; Ps 126:2, 6>>] thy mouth with laughing, and thy lips with ##rejoicing##note:tn[Heb. shouting for joy].
+@ They that hate thee shall be ##clothed##note:x[<<Ps 35:26; 109:29; 132:18>>] with shame; and the dwelling place of the wicked shall come to nought.note:tn[__shall come…__: Heb. shall not be]
+
+=== @9
+
+[discrete.pericope]
+==== Job: How Can I Contend with God?
+
+@ Then Job answered and said,
+@ I know __it is__ so of a truth: but ##how##note:x[<<Job 4:17; 25:4; Ps 143:2>>] should man be just with God?note:tn[__with God__: or, before God?]
+@ If ##he will contend##note:x[<<Job 10:2; 40:2>>] with him, he cannot answer him one of a thousand.
+@ __He is__ ##wise in heart##note:x[<<Job 36:5; Rom 11:33; Eph 3:20>>], and mighty in strength: who hath hardened __himself__ against him, and hath prospered?
+@ Which ##removeth##note:x[<<Hab 3:10>>] the mountains, and they know not: ##which overturneth##note:x[<<Matt 27:51; Luke 21:11>>] them in his anger.
+@ Which ##shaketh##note:x[<<Hag 2:6; Heb 12:26>>] the earth out of her place, and ##the pillars##note:x[<<Ps 75:3>>] thereof tremble.
+@ Which ##commandeth##note:x[<<Amos 8:9>>] the sun, and it riseth not; and ##sealeth##note:x[<<Isa 13:10; Luke 21:25–26>>] up the stars.
+@ ##Which##note:x[<<Ps 104:2–3; Isa 40:22; 44:24>>] alone spreadeth out the heavens, and treadeth upon the ##waves##note:tn[Heb. heights] of the sea.
+@ Which ##maketh##note:x[<<Gen 1:16; Job 38:31–41; Amos 5:8>>] Arcturus, Orion, and Pleiades, and the chambers of the south.note:tn[__Arcturus…__: Heb. Ash, Cesil, and Cimah]
+@ Which doeth ##great things##note:x[<<Job 5:9; Ps 72:18; Rom 11:33>>] past finding out; yea, and wonders without number.
+@ Lo, ##he goeth##note:x[<<Job 23:8–9; 35:14; Ps 77:19>>] by me, and I see __him__ not: he passeth on also, but I perceive him not.
+@ Behold, ##he taketh##note:x[<<Job 23:13>>] away, who can ##hinder him##note:x[<<Job 11:10>>]? who will say unto him, ##What##note:x[<<Isa 45:9>>] doest thou?note:tn[__hinder…__: Heb. turn him away?]
+@ __If__ God will not withdraw his anger, ##the proud helpers##note:x[<<Job 26:12; Isa 30:7; Jas 4:6–7>>] do stoop under him.note:tn[__proud…__: Heb. helpers of pride, or, strength]
+
+@ How much less shall I answer him, __and__ choose out my words __to reason__ with him?
+@ Whom, ##though##note:x[<<Job 10:15>>] I were righteous, __yet__ would I not answer, __but__ ##I would##note:x[<<Job 8:5>>] make supplication to my judge.
+@ If I had called, and he had answered me; __yet__ would I not believe that he had hearkened unto my voice.
+@ ##For he##note:x[<<Job 16:14>>] breaketh me with a tempest, and multiplieth my wounds ##without cause##note:x[<<Job 2:3>>].
+@ He ##will not##note:x[<<Job 7:19>>] suffer me to take my breath, but filleth me with bitterness.
+@ If __I speak__ of strength, lo, ##__he is__ strong##note:x[<<Job 9:4; 1 Cor 1:25>>]: and if of judgment, ##who shall##note:x[<<Job 9:32–33>>] set me a time __to plead__?
+@ If I justify myself, mine own mouth shall condemn me: __if I say__, I __am__ perfect, it shall also prove me perverse.
+@ __Though__ I __were__ perfect, ##__yet__ would##note:x[<<Ps 139:23–24>>] I not know my soul: I would despise my life.
+
+@ This __is__ one __thing__, therefore I said __it__, ##He destroyeth##note:x[<<Eccl 9:1–3>>] the perfect and the wicked.
+@ If the scourge slay suddenly, he will laugh at the trial of the innocent.
+@ The ##earth##note:x[<<Ps 73:3–7; Jer 12:1–2>>] is given into the hand of the wicked: he covereth the faces of the judges thereof; if not, where, __and__ who __is__ he?
+
+@ Now my days are ##swifter##note:x[<<Job 7:6–7>>] than a post: ##they flee away##note:x[<<Jas 4:14>>], they see no good.
+@ They are passed away as the swift ships: ##as the eagle##note:x[<<Hab 1:8>>] __that__ hasteth to the prey.note:tn[__swift…__: or, ships of Ebeh: Heb. ships of desire]
+@ If I say, I will forget my complaint, I will leave off my heaviness, and comfort __myself:__
+@ I am ##afraid##note:x[<<Ps 119:120>>] of all my sorrows, I know that thou wilt not hold me innocent.
+@ __If__ I be wicked, why then labour I in vain?
+@ ##If I wash myself with snow water, and make my hands never so clean;##note:x[<<Jer 2:22>>]
+@ Yet shalt thou plunge me in the ditch, and mine own clothes shall abhor me.note:tn[__abhor…__: or, make me to be abhorred]
+@ For __he is__ ##not a man##note:x[<<Eccl 6:10; Rom 9:20>>], as I __am, that__ I should answer him, __and__ we should come together in judgment.
+@ Neither ##is there##note:x[<<1 Sam 2:25; Job 9:19; 1 John 2:1–2>>] any ##daysman##note:tn[or, umpire] betwixt us, __that__ might lay his hand upon us both.note:tn[__any…__: Heb. one that should argue]
+@ Let him take his rod away from me, and ##let not##note:x[<<Ps 39:10>>] his fear terrify me:
+@ __Then__ would I speak, and not fear him; but __it is__ not so with me.note:tn[__it is…__: Heb. I am not so with myself]
+
+=== @10
+
+[discrete.pericope]
+==== Job’s Plea to God
+
+@ ##My soul##note:x[<<1 Kgs 19:4>>] is weary of my life; ##I will leave##note:x[<<Job 7:11>>] my complaint upon myself; ##I will speak##note:x[<<Job 7:11>>] in the bitterness of my soul.note:tn[__weary…__: or, cut off while I live]
+@ I will say unto God, Do not condemn me; ##shew me##note:x[<<Ps 139:23–24>>] wherefore thou contendest with me.
+@ __Is it__ good unto thee that thou shouldest oppress, that thou shouldest despise note:x[<<Job 14:15; Ps 138:8; Isa 64:8>>]the ##work##note:tn[Heb. labour] of thine hands, and shine upon the counsel of the wicked?
+@ Hast thou eyes of flesh? or ##seest thou##note:x[<<1 Sam 16:7>>] as man seeth?
+@ note:x[<<Ps 90:2–4; 2 Pet 3:8>>]__Are__ thy days as the days of man? __are__ thy years as man’s days,
+@ That thou enquirest after mine iniquity, and searchest after my sin?
+@ Thou knowest that I am not wicked; ##and __there__##note:x[<<Deut 32:39>>] __is__ none that can deliver out of thine hand.note:tn[__Thou…__: Heb. It is upon thy knowledge]
+
+@ Thine ##hands##note:x[<<Ps 119:73; Isa 43:7>>] have made me and fashioned me together round about; ##yet thou##note:x[<<Job 10:3>>] dost destroy me.note:tn[__have…__: Heb. took pains about me]
+@ Remember, I beseech thee, that ##thou hast##note:x[<<Gen 2:7; 3:19; Isa 64:8>>] made me as the clay; and wilt thou bring me into dust again?
+@ Hast thou not poured me out as milk, and curdled me like cheese?
+@ Thou hast clothed me with skin and flesh, and hast ##fenced##note:tn[Heb. hedged] me with bones and sinews.
+@ Thou hast granted me ##life and favour##note:x[<<Gen 19:19; Acts 17:25, 28>>], and thy visitation hath preserved my spirit.
+@ And these __things__ hast thou hid in thine heart: ##I know##note:x[<<Deut 32:39; Job 23:13>>] that this __is__ with thee.
+
+@ If I sin, ##then##note:x[<<Ps 130:3>>] thou markest me, and ##thou wilt##note:x[<<Job 7:21>>] not acquit me from mine iniquity.
+@ ##If I be wicked##note:x[<<Isa 3:11>>], woe unto me; and __if__ I be ##righteous##note:x[<<Job 9:15, 20–21>>], __yet__ will I not lift up my head. __I am__ full of confusion; therefore see thou mine affliction;
+@ For it increaseth. ##Thou huntest##note:x[<<Isa 38:13; Lam 3:10>>] me as a fierce lion: and again thou shewest thyself marvellous upon me.
+@ Thou renewest thy note:x[<<Ruth 1:21; Job 16:8>>]##witnesses##note:tn[that is, plagues] against me, and increasest thine indignation upon me; changes and war __are__ against me.
+@ Wherefore then hast thou brought me forth out of the womb? Oh that I had given up the ghost, and no eye had seen me!
+@ I should have been as though I had not been; I should have been carried from the womb to the grave.
+@ __Are__ not ##my days few##note:x[<<Job 14:1>>]? ##cease##note:x[<<Ps 39:13>>] __then, and__ let me alone, that I may take comfort a little,
+@ Before ##I go __whence__##note:x[<<2 Sam 12:23>>] I shall not return, __even__ to ##the land##note:x[<<Job 3:5>>] of darkness and ##the shadow##note:x[<<Job 3:5>>] of death;
+@ A land of darkness, as darkness __itself; and__ of the shadow of death, without any order, and __where__ the light __is__ as darkness.
+
+=== @11
+
+[discrete.pericope]
+==== Zophar Rebukes Job
+
+@ Then answered Zophar the Naamathite, and said,
+@ Should not ##the multitude##note:x[<<Job 18:2; Prov 10:19; Jas 1:19>>] of words be answered? and should a man full of talk be justified?note:tn[__full…__: Heb. of lips]
+@ Should thy ##lies##note:tn[or, devices] make men hold their peace? and when thou ##mockest##note:x[<<Job 17:2>>], shall no man make thee ashamed?
+@ ##For thou##note:x[<<Job 6:10; 10:7>>] hast said, My doctrine __is__ pure, and I am clean in thine eyes.
+@ But oh that God would speak, and open his lips against thee;
+@ And that he would ##shew thee##note:x[<<Dan 2:28>>] the secrets of wisdom, that __they are__ double to that which is! Know therefore that ##God exacteth##note:x[<<Ezra 9:13; Lam 3:22>>] of thee __less__ than thine iniquity __deserveth__.
+
+@ ##Canst##note:x[<<Ps 145:3; Eccl 3:11; Rom 11:33>>] thou by searching find out God? canst thou find out the Almighty unto perfection?
+@ ##__It is__ as high as heaven##note:x[<<Job 22:12; Isa 55:9>>]; what canst thou do? ##deeper##note:x[<<Ps 139:6–8>>] than hell; what canst thou know?note:tn[__as high…__: Heb. the heights of heaven]
+@ The measure thereof __is__ longer than the earth, and broader than the sea.
+@ ##If he cut off##note:x[<<Job 9:12–13; 12:14>>], and ##shut up##note:x[<<Rev 3:7>>], or gather together, then who can hinder him?note:tn[__cut…__: or, make a change]note:tn[__hinder…__: Heb. turn him away?]
+@ For ##he knoweth##note:x[<<Heb 4:13>>] vain men: ##he seeth##note:x[<<Ps 10:14; Heb 4:13>>] wickedness also; will he not then consider __it__?
+@ note:x[<<Jas 2:20>>]For ##vain##note:tn[Heb. empty] man would be wise, though man be born __like__ ##a wild##note:x[<<Job 39:5–8>>] ass’s colt.
+
+@ If thou ##prepare##note:x[<<1 Sam 7:3>>] thine heart, and ##stretch##note:x[<<Ps 88:9; 143:6>>] out thine hands toward him;
+@ If iniquity __be__ in thine hand, ##put it far##note:x[<<Job 22:23>>] away, and let not wickedness dwell in thy tabernacles.
+@ For then shalt thou ##lift up##note:x[<<Job 22:26; 1 John 2:28; 3:19–22>>] thy face without spot; yea, thou shalt be stedfast, and shalt not fear:
+@ ##Because##note:x[<<Eccl 5:20; Isa 54:4; 65:16>>] thou shalt forget __thy__ misery, __and__ remember __it__ as waters __that__ pass away:
+@ And __thine__ ##age##note:x[<<Ps 37:6; Prov 4:18; Isa 58:8–10>>] shall be clearer than the noonday; thou shalt shine forth, thou shalt be as the morning.note:tn[__be clearer…__: Heb. arise above]
+@ And thou shalt be secure, ##because##note:x[<<Ps 43:5>>] there is hope; yea, thou shalt dig __about thee, and__ ##thou shalt take##note:x[<<Ps 3:5; Prov 3:24–26>>] thy rest in safety.
+@ Also thou shalt lie down, and none shall make __thee__ afraid; yea, ##many##note:x[<<Job 42:8–9; Ps 45:12; Isa 60:14>>] shall make suit unto thee.note:tn[__make suit…__: Heb. intreat thy face]
+@ But ##the eyes##note:x[<<Deut 28:65>>] of the wicked shall fail, and they shall not escape, and their hope __shall be as__ the giving up of the ghost.note:tn[__they shall…__: Heb. flight shall perish from them]note:tn[__the giving…__: or, a puff of breath]
+
+=== @12
+
+[discrete.pericope]
+==== Job Presents His Case
+
+@ And Job answered and said,
+@ No doubt but ye __are__ the people, and wisdom shall die with you.
+@ ##But I have##note:x[<<Job 13:2–5>>] ##understanding##note:tn[Heb. an heart] as well as you; I __am__ not inferior to you: yea, who knoweth not such things as these?note:tn[__I am…__: Heb. I fall not lower than you]note:tn[__who…__: Heb. with whom are not such as these?]
+@ I am __as__ ##one mocked##note:x[<<Job 17:6; 21:3; 30:1>>] of his neighbour, who calleth upon God, and he answereth him: the just upright __man is__ laughed to scorn.
+@ He that is ready to slip with __his__ feet __is as__ a lamp despised in the thought of him that is at ease.
+
+@ The ##tabernacles##note:x[<<Job 9:24; Ps 73:11–12>>] of robbers prosper, and they that provoke God are secure; into whose hand God bringeth __abundantly__.
+@ ##But ask##note:x[<<Prov 6:6; Isa 1:3; Jer 8:7>>] now the beasts, and they shall teach thee; and the fowls of the air, and they shall tell thee:
+@ Or speak to the earth, and it shall teach thee: and the fishes of the sea shall declare unto thee.
+@ ##Who##note:x[<<Acts 19:35>>] knoweth not in all these that ##the hand##note:x[<<Jer 27:5–6; Rom 11:36>>] of the LORD hath wrought this?
+@ In ##whose hand##note:x[<<Num 16:22; Acts 17:25, 28>>] __is__ the ##soul##note:tn[or, life] of every living thing, and the breath of all mankind.note:tn[__all…__: Heb. all flesh of man]
+@ ##Doth##note:x[<<Job 34:3; Heb 5:14>>] not the ear try words? and the ##mouth##note:tn[Heb. palate] taste his meat?
+
+@ ##With the ancient __is__ wisdom; and in length of days understanding.##note:x[<<Job 15:10; 32:7>>]
+@ With him __is__ ##wisdom##note:x[<<Job 9:4; 36:5; Prov 2:6–7>>] and strength, he hath counsel and understanding.note:tn[__With…__: that is, With God]
+@ Behold, ##he breaketh##note:x[<<Job 11:10>>] down, and it cannot be built again: ##he shutteth##note:x[<<Isa 22:22; Rev 3:7>>] ##up##note:tn[Heb. upon] a man, and there can be no opening.
+@ ##Behold##note:x[<<1 Kgs 17:1>>], he withholdeth the waters, and they dry up: also he sendeth them out, and they overturn the earth.
+@ With him __is__ strength and wisdom: the deceived and the deceiver __are__ his.
+@ ##He leadeth counsellors away spoiled, and maketh the judges fools.##note:x[<<Isa 29:14; 1 Cor 1:19–20>>]
+@ ##He looseth the bond of kings, and girdeth their loins with a girdle.##note:x[<<Dan 2:21>>]
+@ He leadeth princes away spoiled, and overthroweth the mighty.
+@ He removeth away the speech of the trusty, and ##taketh##note:x[<<Job 17:4; 32:9>>] away the understanding of the aged.note:tn[__speech…__: Heb. lip of the faithful]
+@ He ##poureth##note:x[<<Ps 107:40>>] contempt upon princes, and weakeneth the strength of the mighty.note:tn[__weakeneth…__: or, looseth the girdle of the strong]
+@ He ##discovereth##note:x[<<Dan 2:22; 1 Cor 2:10; 4:5>>] deep things out of darkness, and bringeth out to light the shadow of death.
+@ He ##increaseth##note:x[<<Isa 9:3; 26:15; 60:22>>] the nations, and destroyeth them: he enlargeth the nations, and ##straiteneth##note:tn[Heb. leadeth in] them __again__.
+@ ##He taketh##note:x[<<Job 12:20; Hos 7:11>>] away the heart of the chief of the people of the earth, ##and causeth##note:x[<<Ps 107:40>>] them to wander in a wilderness __where there is__ no way.
+@ They ##grope##note:x[<<Job 5:14>>] in the dark without light, and he ##maketh##note:x[<<Ps 107:27; Isa 24:20>>] them to ##stagger##note:tn[Heb. wander] like __a__ drunken __man__.
+
+=== @13
+
+[discrete.pericope]
+==== Job Prepares His Case
+
+@ Lo, mine eye hath seen all __this__, mine ear hath heard and understood it.
+@ ##What ye know, __the same__ do I know also: I __am__ not inferior unto you.##note:x[<<Job 12:3>>]
+@ Surely I would speak to the Almighty, and ##I desire##note:x[<<Isa 41:21>>] to reason with God.
+@ But ##ye __are__ forgers##note:x[<<Ps 119:69>>] of lies, ye __are__ all ##physicians##note:x[<<Job 16:2; Jer 6:14>>] of no value.
+@ note:x[<<Job 13:13>>]O that ye would altogether hold your peace! ##and it##note:x[<<Prov 17:28; Jas 1:19>>] should be your wisdom.
+@ Hear now my reasoning, and hearken to the pleadings of my lips.
+@ ##Will ye speak wickedly for God? and talk deceitfully for him?##note:x[<<Job 36:4>>]
+@ Will ye accept his person? will ye contend for God?
+@ Is it good that he should ##search##note:x[<<Ps 44:21; Jer 17:10>>] you out? or ##as one##note:x[<<Gal 6:7–8>>] man mocketh another, do ye __so__ mock him?
+@ He will surely ##reprove##note:x[<<Jas 2:9>>] you, if ye do secretly accept persons.
+@ ##Shall##note:x[<<Ps 119:120>>] not his excellency make you afraid? and his dread fall upon you?
+@ Your remembrances __are__ like unto ashes, your bodies to bodies of clay.
+
+@ Hold your peace, ##let me##note:x[<<Job 7:11>>] alone, that I may speak, and let come on me what __will__.note:tn[__Hold…__: Heb. Be silent from me]
+@ Wherefore do I take my flesh in my teeth, ##and put##note:x[<<Judg 12:3; Ps 119:109>>] my life in mine hand?
+@ Though ##he slay me##note:x[<<Job 19:25–28; 23:10; Ps 23:4>>], yet will I trust in him: but I will ##maintain##note:tn[Heb. prove, or, argue] mine own ways before him.
+@ He also __shall be__ ##my salvation##note:x[<<Ps 118:21>>]: ##for an hypocrite##note:x[<<Isa 33:14>>] shall not come before him.
+@ Hear diligently my speech, and my declaration with your ears.
+@ Behold now, ##I have ordered##note:x[<<Job 23:4>>] __my__ cause; ##I know##note:x[<<Job 9:2–3>>] that I shall be justified.
+@ Who __is__ he __that__ will plead with me? for now, if I hold my tongue, I shall give up the ghost.
+@ Only do not two __things__ unto me: then will I not hide myself from thee.
+@ Withdraw thine hand far from me: and let not thy dread make me afraid.
+@ Then call thou, and I will answer: or let me speak, and answer thou me.
+
+@ How ##many##note:x[<<Ps 44:20–21>>] __are__ mine iniquities and sins? ##make me##note:x[<<Job 36:8–9; Ps 139:23>>] to know my transgression and my sin.
+@ Wherefore ##hidest thou##note:x[<<Ps 13:1>>] thy face, and ##holdest me##note:x[<<Job 19:11; Lam 2:5>>] for thine enemy?
+@ Wilt thou break a leaf driven to and fro? and wilt thou pursue the dry stubble?
+@ For thou writest bitter things against me, and ##makest##note:x[<<Ps 25:7>>] me to possess the iniquities of my youth.
+@ Thou ##puttest##note:x[<<Job 33:11>>] my feet also in the stocks, and lookest narrowly unto all my paths; thou settest a print upon the ##heels##note:tn[Heb. roots] of my feet.note:tn[__lookest…__: Heb. observest]
+@ And he, as a rotten thing, consumeth, ##as a garment##note:x[<<Ps 39:11>>] that is moth eaten.
+
+=== @14
+
+[discrete.pericope]
+==== Job Laments the Finality of Death
+
+@ Man __that is__ ##born##note:x[<<Job 25:4>>] of a woman __is__ of few days, and ##full##note:x[<<Job 5:7; Eccl 2:23>>] of trouble.note:tn[__few…__: Heb. short of days]
+@ He cometh forth ##like##note:x[<<Isa 40:6–8; 1 Pet 1:24>>] a flower, and is cut down: he ##fleeth##note:x[<<Job 8:9>>] also as a shadow, and continueth not.
+@ ##And dost##note:x[<<Ps 144:3>>] thou open thine eyes upon such an one, and ##bringest##note:x[<<Ps 143:2>>] me into judgment with thee?
+@ ##Who can bring##note:x[<<Job 15:14; John 3:6; Rom 8:8–9>>] a clean __thing__ out of an unclean? not one.note:tn[__can…__: Heb. will give]
+@ Seeing ##his days##note:x[<<Job 12:10; Ps 39:4; Acts 17:26>>] __are__ determined, the number of his months __are__ with thee, thou hast appointed his bounds that he cannot pass;
+@ ##Turn##note:x[<<Job 7:19; Ps 39:13>>] from him, that he may ##rest##note:tn[Heb. cease], till he shall accomplish, ##as an hireling##note:x[<<Job 7:1–2>>], his day.
+
+@ For there is hope of a tree, if it be cut down, ##that it will sprout##note:x[<<Job 14:14; Isa 11:1; 27:6>>] again, and that the tender branch thereof will not cease.
+@ Though the root thereof wax old in the earth, and the stock thereof die in the ground;
+@ __Yet__ through the scent of water it will bud, and bring forth boughs like a plant.
+@ But man dieth, and wasteth away: yea, man giveth up the ghost, and ##where __is__ he##note:x[<<Job 19:26>>]?note:tn[__wasteth…__: Heb. is weakened, or, cut off]
+@ __As__ the waters fail from the sea, and the flood decayeth and drieth up:
+@ ##So man##note:x[<<Job 10:21–22; Eccl 3:19–21>>] lieth down, and riseth not: till the heavens __be__ no more, they shall not ##awake##note:x[<<Job 3:13>>], nor be raised out of their sleep.
+@ O that thou wouldest ##hide me##note:x[<<Isa 57:1–2>>] in the grave, that thou wouldest keep me secret, ##until##note:x[<<Isa 26:20–21>>] thy wrath be past, that thou wouldest ##appoint me##note:x[<<Mark 13:32>>] a set time, and remember me!
+@ If a man die, ##shall he live##note:x[<<Acts 26:8>>] __again__? ##all the days##note:x[<<Job 7:1>>] of my appointed time ##will I wait##note:x[<<1 Cor 15:51–52>>], till my change come.
+@ Thou ##shalt call##note:x[<<Job 13:22>>], and I will answer thee: ##thou wilt have##note:x[<<Job 7:21; Ps 138:8>>] a desire to the work of thine hands.
+
+@ For now ##thou numberest##note:x[<<Job 10:6; 31:4; 34:21>>] my steps: dost thou not watch over my sin?
+@ My transgression __is__ ##sealed up##note:x[<<Deut 32:34; Hos 13:12>>] in a bag, and thou sewest up mine iniquity.
+@ And surely ##the mountain##note:x[<<Rev 6:14>>] falling cometh to nought, and ##the rock##note:x[<<Job 18:4>>] is removed out of his place.note:tn[__cometh…__: Heb. fadeth]
+@ The waters wear the stones: thou washest away the things which grow __out__ of the dust of the earth; and thou destroyest the hope of man.note:tn[__washest…__: Heb. overflowest]
+@ Thou prevailest for ever against him, and he passeth: thou changest his countenance, and sendest him away.
+@ His sons come to honour, and ##he knoweth __it__ not##note:x[<<Eccl 9:5>>]; and they are brought low, but he perceiveth __it__ not of them.
+@ But his flesh upon him shall have pain, and his soul within him shall mourn.
+
+=== @15
+
+[discrete.pericope]
+==== Eliphaz: Job Does Not Fear God
+
+@ Then answered ##Eliphaz##note:x[<<Job 2:11; 42:7>>] the Temanite, and said,
+@ Should a wise man utter ##vain knowledge##note:x[<<Job 6:26>>], and fill his belly with the east wind?note:tn[__vain…__: Heb. knowledge of wind]
+@ Should he reason with unprofitable talk? or with speeches wherewith he can do no good?
+@ Yea, thou castest off fear, and restrainest ##prayer##note:tn[or, speech] before God.note:tn[__castest…__: Heb. makest void]
+@ For thy mouth note:x[<<Luke 6:45; Jas 1:26>>]##uttereth##note:tn[Heb. teacheth] thine iniquity, and ##thou choosest##note:x[<<Jer 9:3–5>>] the tongue of the crafty.
+@ Thine ##own mouth##note:x[<<Job 9:20; Matt 12:37; Luke 19:22>>] condemneth thee, and not I: yea, thine own lips testify against thee.
+@ __Art__ thou ##the first##note:x[<<Job 12:12>>] man __that__ was born? ##or wast thou##note:x[<<Job 38:4–41; Ps 90:2>>] made before the hills?
+@ Hast thou heard ##the secret##note:x[<<Jer 23:18; Rom 11:34>>] of God? and dost thou restrain wisdom to thyself?
+@ What ##knowest##note:x[<<Job 13:2>>] thou, that we know not? __what__ understandest thou, which __is__ not in us?
+@ note:x[<<Job 32:6–7>>]With us __are__ both the grayheaded and very aged men, much elder than thy father.
+@ __Are__ the consolations of God small with thee? is there any secret thing with thee?
+@ Why doth ##thine heart##note:x[<<Mark 7:21–22>>] carry thee away? and what do ##thy eyes##note:x[<<Ps 35:19>>] wink at,
+@ That thou ##turnest##note:x[<<Job 15:25–27>>] thy spirit against God, ##and lettest##note:x[<<Jas 3:2–6>>] __such__ words go out of thy mouth?
+@ What ##__is__ man##note:x[<<Job 14:4; Prov 20:9; Eccl 7:20>>], that he should be clean? and __he which is__ born of a woman, that he should be righteous?
+@ Behold, ##he putteth##note:x[<<Job 4:18; 25:5>>] no trust in his saints; yea, the heavens are not clean in his sight.
+@ How much more abominable and filthy __is__ man, which ##drinketh##note:x[<<Job 34:7; Prov 19:28>>] iniquity like water?
+
+@ I will shew thee, hear me; and that __which__ I have seen I will declare;
+@ Which wise men have told ##from their##note:x[<<Job 8:8>>] fathers, and have not hid __it:__
+@ Unto whom alone the earth was given, and no stranger passed among them.
+@ The wicked man travaileth with pain all __his__ days, and ##the number##note:x[<<Jas 5:1–6>>] of years is hidden to the oppressor.
+@ A ##dreadful sound##note:x[<<Lev 26:36; Job 18:11>>] __is__ in his ears: ##in prosperity##note:x[<<1 Thess 5:3>>] the destroyer shall come upon him.note:tn[__A dreadful…__: Heb. A sound of fears]
+@ He believeth not that he shall return out of darkness, and he is waited for of the sword.
+@ He ##wandereth##note:x[<<Ps 59:15; 109:10>>] abroad for bread, __saying__, Where __is it__? he knoweth that ##the day##note:x[<<Job 18:12>>] of darkness is ready at his hand.
+@ Trouble and anguish shall make him afraid; they shall prevail against him, as a king ready to the battle.
+@ For ##he stretcheth##note:x[<<Ps 73:9; Dan 5:23>>] out his hand against God, and ##strengtheneth##note:x[<<Job 9:4>>] himself against the Almighty.
+@ He runneth upon him, __even__ on __his__ neck, upon the thick bosses of his bucklers:
+@ Because ##he covereth##note:x[<<Ps 17:10; 73:7; Isa 6:10>>] his face with his fatness, and maketh collops of fat on __his__ flanks.
+@ And he dwelleth in ##desolate##note:x[<<Job 3:14>>] cities, __and__ in houses which no man inhabiteth, which are ready to become heaps.
+@ He shall not be rich, ##neither shall##note:x[<<Job 27:16–17>>] his substance continue, neither shall he prolong the perfection thereof upon the earth.
+@ He shall not depart out of darkness; the flame shall dry up his branches, and ##by the breath##note:x[<<Job 4:9>>] of his mouth shall he go away.
+@ Let ##not him##note:x[<<Gal 6:3, 7>>] that is deceived ##trust##note:x[<<Isa 59:4>>] in vanity: for vanity shall be his recompence.
+@ It shall be note:x[<<Job 22:16; Ps 55:23; Eccl 7:17>>]##accomplished##note:tn[or, cut off] before his time, and his branch shall not be green.
+@ He shall shake off his unripe grape as the vine, and shall cast off his flower as the olive.
+@ For ##the congregation##note:x[<<Job 8:13; 27:8>>] of hypocrites __shall be__ desolate, and fire shall consume the tabernacles of bribery.
+@ They ##conceive##note:x[<<Ps 7:14; Isa 59:4–5; Hos 10:13>>] mischief, and bring forth ##vanity##note:tn[or, iniquity], and their belly prepareth deceit.
+
+=== @16
+
+[discrete.pericope]
+==== Job Decries His Comforters
+
+@ Then Job answered and said,
+@ I have heard many such things: note:x[<<Job 13:4>>]##miserable##note:tn[or, troublesome] comforters __are__ ye all.
+@ Shall ##vain words##note:x[<<Job 6:26>>] have an end? or what emboldeneth thee that thou answerest?note:tn[__vain…__: Heb. words of wind]
+@ I also could speak as ye __do:__ if your soul were in my soul’s stead, I could heap up words against you, and ##shake mine##note:x[<<Ps 22:7; 109:25; Lam 2:15>>] head at you.
+@ __But__ I would strengthen you with my mouth, and the moving of my lips should asswage __your grief__.
+
+@ Though I speak, ##my grief##note:x[<<Job 10:1>>] is not asswaged: and __though__ I forbear, what am I eased?note:tn[__what…__: Heb. what goeth from me?]
+@ But now ##he hath##note:x[<<Job 7:3>>] made me weary: thou hast made desolate all my company.
+@ And thou hast filled me with wrinkles, __which__ ##is a witness##note:x[<<Job 10:17>>] __against me:__ and my leanness rising up in me beareth witness to my face.
+@ He teareth __me__ in his wrath, who hateth me: ##he gnasheth##note:x[<<Ps 35:16; Lam 2:16>>] upon me with his teeth; ##mine##note:x[<<Job 13:24>>] enemy sharpeneth his eyes upon me.
+@ They have ##gaped##note:x[<<Ps 22:13>>] upon me with their mouth; ##they have smitten##note:x[<<Isa 50:6>>] me upon the cheek reproachfully; they have ##gathered##note:x[<<Ps 35:15>>] themselves together against me.
+@ God hath delivered me to the ungodly, and ##turned##note:x[<<Ps 27:12>>] me over into the hands of the wicked.note:tn[__hath…__: Heb. hath shut me up]
+@ I was at ease, but he hath ##broken me##note:x[<<Lam 3:4>>] asunder: he hath also taken __me__ by my neck, and ##shaken##note:x[<<Lam 3:11>>] me to pieces, and ##set me up##note:x[<<Job 7:20>>] for his mark.
+@ His ##archers##note:x[<<Job 6:4>>] compass me round about, he cleaveth my reins asunder, and doth not spare; he ##poureth##note:x[<<Job 20:25>>] out my gall upon the ground.
+@ He breaketh me with breach upon breach, he runneth upon me like a giant.
+@ I have sewed sackcloth upon my skin, and ##defiled my horn##note:x[<<Ps 7:5>>] in the dust.
+@ My ##face##note:x[<<Ps 102:3–5; Lam 1:16>>] is foul with weeping, and ##on my eyelids##note:x[<<Mark 14:34>>] __is__ the shadow of death;
+
+@ Not for __any__ injustice in mine hands: also ##my prayer##note:x[<<Ps 66:18–19; Prov 15:8>>] __is__ pure.
+@ O earth, ##cover not##note:x[<<Isa 26:21; Ezek 24:7>>] thou my blood, and let my cry have no place.
+@ Also now, behold, ##my witness##note:x[<<Rom 1:9>>] __is__ in heaven, and my record __is__ on high.note:tn[__on high__: Heb. in the high places]
+@ My friends note:x[<<Job 16:4>>]##scorn me##note:tn[Heb. are my scorners]: __but__ mine eye ##poureth##note:x[<<Ps 142:2; Heb 5:7>>] out __tears__ unto God.
+@ O that one might ##plead##note:x[<<Eccl 6:10; Isa 45:9; Rom 9:20>>] for a man with God, as a man __pleadeth__ for his ##neighbour##note:tn[or, friend]!
+@ When ##a few years##note:x[<<Job 14:5, 14>>] are come, then I shall go the way ##__whence__##note:x[<<Job 14:10>>] I shall not return.note:tn[__a few…__: Heb. years of number]
+
+=== @17
+
+[discrete.pericope]
+==== Job Prepares for Death
+
+@ My breath is corrupt, my days are extinct, ##the graves##note:x[<<Ps 88:3–5; Isa 38:10–14>>] __are ready__ for me.note:tn[__breath…__: or, spirit is spent]
+@ __Are there__ not ##mockers##note:x[<<Job 12:4; 16:20>>] with me? and doth not mine eye ##continue##note:tn[Heb. lodge] in their ##provocation##note:x[<<1 Sam 1:6–7>>]?
+@ Lay down now, ##put me##note:x[<<Prov 11:15; Heb 7:22>>] in a surety with thee; who __is__ he __that__ will ##strike##note:x[<<Prov 11:15>>] hands with me?
+@ ##For thou hast hid their heart from understanding: therefore shalt thou not exalt __them__.##note:x[<<2 Sam 17:14; Matt 11:25; 13:11>>]
+@ ##He that##note:x[<<Ps 12:2–3>>] speaketh flattery to __his__ friends, even the eyes of his children shall fail.
+@ note:x[<<Job 30:9; Ps 44:14>>]He hath made me also a byword of the people; and ##aforetime##note:tn[or, before them] I was as a tabret.
+@ ##Mine eye##note:x[<<Job 16:16; Ps 6:7>>] also is dim by reason of sorrow, and all my members __are__ as a shadow.note:tn[__my members__: or, my thoughts]
+@ Upright __men__ shall be ##astonied##note:x[<<Eccl 5:8; Hab 1:13>>] at this, and the innocent shall stir up himself against the hypocrite.
+@ The righteous also shall ##hold on##note:x[<<Ps 84:7; Prov 4:18>>] his way, and he that hath ##clean##note:x[<<Isa 1:15–16>>] hands shall be stronger and stronger.note:tn[__be…__: Heb. add strength]
+
+@ But as for you all, do ye return, and come now: for I cannot find __one__ wise __man__ among you.
+@ ##My days##note:x[<<Job 7:6; Isa 38:10>>] are past, my ##purposes##note:x[<<Prov 16:9>>] are broken off, __even__ the thoughts of my heart.note:tn[__the thoughts__: Heb. the possessions]
+@ They change the night into day: the light __is__ ##short##note:tn[Heb. near] because of darkness.
+@ If I wait, the grave __is__ mine house: I have made my bed in the darkness.
+@ I have ##said##note:tn[Heb. cried, or, called] to corruption, Thou __art__ my father: to the worm, __Thou art__ my mother, and my sister.
+@ And where __is__ now ##my hope##note:x[<<Job 13:15>>]? as for my hope, who shall see it?
+@ They shall go down to ##the bars of the pit##note:x[<<Jonah 2:6>>], when __our__ ##rest##note:x[<<Job 3:17–19>>] together __is__ in the dust.
+
+=== @18
+
+[discrete.pericope]
+==== Bildad: God Punishes the Wicked
+
+@ Then answered Bildad the Shuhite, and said,
+@ How long __will it be ere__ ye make an end of words? mark, and afterwards we will speak.
+@ ##Wherefore##note:x[<<Ps 73:22>>] are we counted as beasts, __and__ reputed vile in your sight?
+@ He ##teareth##note:x[<<Job 16:9>>] ##himself##note:tn[Heb. his soul] in his anger: shall the earth be forsaken for thee? and shall ##the rock##note:x[<<Job 14:18>>] be removed out of his place?
+
+@ Yea, ##the light##note:x[<<Prov 13:9; 20:20; 24:20>>] of the wicked shall be put out, and the spark of his fire shall not shine.
+@ The light shall be dark in his tabernacle, and his ##candle##note:tn[or, lamp] shall be put out with him.
+@ The ##steps##note:x[<<Prov 4:12>>] of his strength shall be straitened, and his own counsel shall cast him down.
+@ For ##he is cast##note:x[<<Job 22:10; Ps 9:15; 35:8>>] into a net by his own feet, and he walketh upon a snare.
+@ The gin shall take __him__ by the heel, __and__ the robber shall prevail against him.
+@ The snare __is__ ##laid##note:tn[Heb. hidden] for him in the ground, and a trap for him in the way.
+
+@ ##Terrors##note:x[<<Job 15:21; Jer 6:25>>] shall make him afraid on every side, and shall ##drive##note:tn[Heb. scatter] him to his feet.
+@ His strength shall be hungerbitten, and destruction __shall be__ ready at his side.
+@ It shall devour the ##strength##note:tn[Heb. bars] of his skin: __even__ the firstborn of death shall devour his strength.
+@ His confidence shall be rooted out of his tabernacle, and it shall bring him to the king of terrors.
+@ It shall dwell in his tabernacle, because __it is__ none of his: ##brimstone##note:x[<<Ps 11:6>>] shall be scattered upon his habitation.
+@ His ##roots##note:x[<<Isa 5:24; Hos 9:16; Amos 2:9>>] shall be dried up beneath, and above shall his branch be cut off.
+@ ##His remembrance shall perish from the earth, and he shall have no name in the street.##note:x[<<Ps 34:16; 109:13; Prov 10:7>>]
+@ He shall be driven from light into darkness, and ##chased##note:x[<<Job 20:8>>] out of the world.note:tn[__He…__: Heb. They shall drive him]
+@ He shall ##neither##note:x[<<Jer 22:30>>] have son nor nephew among his people, nor any remaining in his dwellings.
+@ They that come after __him__ shall be astonied at ##his day##note:x[<<Ps 37:13>>], as they that went before were affrighted.note:tn[__went…__: or, lived with him]note:tn[__were…__: Heb. laid hold on horror]
+@ Surely such __are__ the dwellings of the wicked, and this __is__ the place __of him that__ ##knoweth##note:x[<<Judg 2:10; Jer 9:3; Titus 1:16>>] not God.
+
+=== @19
+
+[discrete.pericope]
+==== Job: My Redeemer Lives
+
+@ Then Job answered and said,
+@ How long will ye vex my soul, and break me in pieces with words?
+@ These ##ten times##note:x[<<Gen 31:7>>] have ye reproached me: ye are not ashamed __that__ ye make yourselves strange to me.note:tn[__make…__: or, harden yourselves against me]
+@ And be it indeed __that__ I have erred, mine error remaineth with myself.
+@ If indeed ye will ##magnify##note:x[<<Ps 35:26; 38:16; 55:12>>] __yourselves__ against me, and plead against me my reproach:
+@ Know now that God hath overthrown me, and hath ##compassed##note:x[<<Job 18:8–10>>] me with his net.
+@ Behold, ##I cry##note:x[<<Lam 3:8; Hab 1:2–3>>] out of ##wrong##note:tn[or, violence], but I am not heard: I cry aloud, but __there is__ no judgment.
+
+@ He hath ##fenced##note:x[<<Job 3:23; Ps 88:8; Lam 3:7>>] up my way that I cannot pass, and he hath set darkness in my paths.
+@ He hath ##stripped##note:x[<<Job 29:7–14; Ps 89:44>>] me of my glory, and taken the crown __from__ my head.
+@ He hath destroyed me on every side, and I am gone: and ##mine hope##note:x[<<Job 24:20; Ps 37:35–36>>] hath he removed like a tree.
+@ He hath also kindled his wrath against me, and ##he counteth##note:x[<<Job 13:24; 16:9; 33:10>>] me unto him as __one of__ his enemies.
+@ His troops come together, and ##raise##note:x[<<Job 30:12>>] up their way against me, and encamp round about my tabernacle.
+@ He hath ##put my brethren##note:x[<<Ps 69:8; 88:8, 18>>] far from me, and mine acquaintance are verily estranged from me.
+@ My ##kinsfolk##note:x[<<Ps 38:11>>] have failed, and my familiar friends have forgotten me.
+@ They that dwell in mine house, and my maids, count me for a stranger: I am an alien in their sight.
+@ I called my servant, and he gave __me__ no answer; I intreated him with my mouth.
+@ My breath is strange to my wife, though I intreated for the children’s __sake__ of mine own body.note:tn[__mine…__: Heb. my belly]
+@ ##Yea##note:x[<<2 Kgs 2:23>>], young children despised me; I arose, and they spake against me.note:tn[__young…__: or, the wicked]
+@ All ##my inward friends##note:x[<<Ps 41:9>>] abhorred me: and they whom I loved are turned against me.note:tn[__my…__: Heb. the men of my secret]
+@ My ##bone##note:x[<<Ps 102:5; Lam 4:8>>] cleaveth to my skin ##and to##note:tn[or, as to] my flesh, and I am escaped with the skin of my teeth.
+@ Have pity upon me, have pity upon me, O ye my friends; for ##the hand##note:x[<<Job 1:11>>] of God hath touched me.
+@ Why do ye ##persecute##note:x[<<Ps 69:26>>] me as God, and are not satisfied with my flesh?
+
+@ Oh that ##my words##note:x[<<Isa 30:8>>] were now written! oh that they were printed in a book!note:tn[__Oh…__: Heb. Who will give, etc]
+@ That they were graven with an iron pen and lead in the rock for ever!
+@ For ##I know##note:x[<<Ps 19:14; Isa 54:5; Eph 1:7>>] __that__ my redeemer liveth, and __that__ he shall stand at the latter __day__ upon the earth:
+@ ##And __though__##note:x[<<Ps 17:15>>] after my skin __worms__ destroy this __body__, yet ##in my flesh##note:x[<<Matt 5:8; 1 John 3:2>>] shall I see God&#58;note:tn[__And…__: or, After I shall awake, though this body be destroyed, yet out of my flesh]
+@ Whom I shall see for myself, and mine eyes shall behold, and not ##another##note:tn[Heb. a stranger]; __though__ my reins be consumed within me.note:tn[__though…__: or, my reins within me are consumed with earnest desire (for that day)]note:tn[__within…__: Heb. in my bosom]
+@ But ye should say, ##Why##note:x[<<Job 19:22>>] persecute we him, seeing the root of the matter is found in me?note:tn[__seeing…__: or, and what root of matter is found in me?]
+@ Be ye afraid of the sword: for wrath __bringeth__ the punishments of the sword, ##that ye may##note:x[<<Eccl 11:9>>] know __there is__ a judgment.
+
+=== @20
+
+[discrete.pericope]
+==== Zophar: Destruction Awaits the Wicked
+
+@ Then answered Zophar the Naamathite, and said,
+@ Therefore do my thoughts cause me to answer, and for __this__ I make haste.note:tn[__I make…__: Heb. my haste is in me]
+@ I have heard the check of my reproach, and the spirit of my understanding causeth me to answer.
+@ Knowest thou __not__ this of old, since man was placed upon earth,
+@ That ##the triumphing##note:x[<<Job 18:5–6; Ps 37:35–36>>] of the wicked __is__ ##short##note:tn[Heb. from near], and the joy of the hypocrite __but__ for a moment?
+@ Though ##his excellency##note:x[<<Isa 14:13–14; Obad 1:3–4>>] mount up to the heavens, and his head reach unto the ##clouds##note:tn[Heb. cloud];
+@ __Yet__ he shall ##perish##note:x[<<1 Kgs 14:10; 2 Kgs 9:37; Ps 83:10>>] for ever like his own dung: they which have seen him shall say, Where __is__ he?
+@ He shall ##fly away##note:x[<<Ps 73:20; 90:5>>] as a dream, and shall not be found: yea, he shall be chased away as a vision of the night.
+@ ##The eye##note:x[<<Job 7:8, 10; 8:18>>] also __which__ saw him shall __see him__ no more; neither shall his place any more behold him.
+
+@ His children shall seek to please the poor, and ##his hands##note:x[<<Job 20:18>>] shall restore their goods.note:tn[__His children…__: or, The poor shall oppress his children]
+@ His ##bones##note:x[<<Job 13:26; Ps 25:7>>] are full __of the sin__ of his youth, ##which shall lie##note:x[<<Job 21:26>>] down with him in the dust.
+@ Though ##wickedness##note:x[<<Job 15:16; Eccl 11:9>>] be sweet in his mouth, __though__ ##he hide##note:x[<<Ps 10:7>>] it under his tongue;
+@ __Though__ he spare it, and forsake it not; but keep it still within his mouth&#58;note:tn[__within…__: Heb. in the midst of his palate]
+@ __Yet__ his meat in his bowels is turned, __it is__ the gall of asps within him.
+@ He hath ##swallowed##note:x[<<Prov 23:8; Matt 27:3–4>>] down riches, and he shall vomit them up again: God shall cast them out of his belly.
+@ He shall suck the poison of asps: the viper’s tongue shall slay him.
+@ He shall not see the rivers, the floods, the brooks ##of honey##note:x[<<Deut 32:13–14>>] and butter.note:tn[__the floods…__: or, streaming brooks]
+@ That which he laboured for ##shall he restore##note:x[<<Job 20:10, 15>>], and shall not ##swallow##note:x[<<Prov 1:12>>] __it__ down: according to __his__ substance __shall__ the restitution __be__, and he shall not rejoice __therein__.note:tn[__his…__: Heb. the substance of his exchange]
+@ ##Because##note:x[<<Job 35:9; Prov 14:31>>] he hath ##oppressed##note:tn[Heb. crushed] __and__ hath forsaken the poor; __because__ he hath violently taken away an house which he builded not;
+@ ##Surely##note:x[<<Eccl 5:13–14>>] he shall not ##feel##note:tn[Heb. know] quietness in his belly, he shall not save of that which he desired.
+@ There shall none of his meat be left; therefore shall no man look for his goods.note:tn[__none…__: or, be none left for his meat]
+@ In the fulness of his sufficiency he shall be in straits: every hand of the ##wicked##note:tn[or, troublesome] shall come upon him.
+
+@ __When__ ##he is about##note:x[<<Num 11:33; Ps 78:30–31>>] to fill his belly, __God__ shall cast the fury of his wrath upon him, and shall ##rain __it__##note:x[<<Ps 78:30–31>>] upon him while he is eating.
+@ He shall ##flee from##note:x[<<Isa 24:18; Amos 5:19>>] the iron weapon, __and__ the bow of steel shall strike him through.
+@ It is ##drawn##note:x[<<Deut 32:41; Job 16:13>>], and cometh out of the body; yea, the glittering sword cometh out of his gall: ##terrors##note:x[<<Job 18:11>>] __are__ upon him.
+@ All darkness __shall be__ hid in his secret places: ##a fire##note:x[<<Ps 21:9; 120:4>>] not blown shall consume him; it shall go ill with him that is left in his tabernacle.
+@ The heaven shall reveal his iniquity; and the earth shall rise up against him.
+@ The ##increase##note:x[<<Job 27:14–19>>] of his house shall depart, __and his goods__ shall flow away in the day of his wrath.
+@ This __is__ ##the portion##note:x[<<Job 18:21; 27:13; 31:2–3>>] of a wicked man from God, and the heritage appointed unto him by God.note:tn[__appointed…__: Heb. of his decree from God]
+
+=== @21
+
+[discrete.pericope]
+==== Job: God Will Punish the Wicked
+
+@ But Job answered and said,
+@ Hear diligently my speech, and let this be your consolations.
+@ Suffer me that I may speak; and after that I have spoken, ##mock on##note:x[<<Job 16:10; 17:2>>].
+@ As for me, __is__ my complaint to man? and if __it were so__, why should not my spirit be ##troubled##note:tn[Heb. shortened?]?
+@ Mark me, and be astonished, and ##lay __your__##note:x[<<Judg 18:19; Job 29:9; 40:4>>] hand upon __your__ mouth.note:tn[__Mark…__: Heb. Look unto me]
+@ Even when I remember I am afraid, and trembling taketh hold on my flesh.
+
+@ ##Wherefore##note:x[<<Job 12:6; Ps 73:3–12; Jer 12:1–3>>] do the wicked live, become old, yea, are mighty in power?
+@ Their seed is established in their sight with them, and their offspring before their eyes.
+@ Their houses __are__ safe from fear, neither __is__ ##the rod##note:x[<<Job 9:34; Ps 73:5>>] of God upon them.note:tn[__safe…__: Heb. peace from]
+@ Their bull gendereth, and faileth not; ##their cow##note:x[<<Exod 23:26>>] calveth, and casteth not her calf.
+@ They send forth their little ones like a flock, and their children dance.
+@ They take the timbrel and harp, and rejoice at the sound of the organ.
+@ ##They##note:x[<<Job 36:11>>] spend their days in wealth, and in a moment go down to the grave.note:tn[__in wealth__: or, in mirth]
+@ Therefore ##they say##note:x[<<Job 22:17; Ps 10:4; Rom 8:7>>] unto God, Depart from us; for we desire not the knowledge of thy ways.
+@ ##What __is__##note:x[<<Exod 5:2>>] the Almighty, that we should serve him? ##and what##note:x[<<Job 34:9; Mal 1:13–14>>] profit should we have, if we pray unto him?
+@ Lo, their good __is__ not in their hand: ##the counsel##note:x[<<Job 22:18; Ps 1:1>>] of the wicked is far from me.
+
+@ How ##oft##note:x[<<Job 18:5–6>>] is the ##candle##note:tn[or, lamp] of the wicked put out! and __how oft__ cometh their destruction upon them! __God__ distributeth sorrows in his anger.
+@ They are ##as stubble##note:x[<<Job 13:25; Ps 1:4; 83:13>>] before the wind, and as chaff that the storm ##carrieth##note:tn[Heb. stealeth] away.
+@ God layeth up his iniquity ##for his##note:x[<<Exod 20:5; Ezek 18:19–20>>] children: he rewardeth him, and he shall know __it__.note:tn[__his iniquity__: that is, the punishment of his iniquity]
+@ His eyes shall see his destruction, and he shall ##drink##note:x[<<Ps 75:8; Isa 51:17; Rev 14:10>>] of the wrath of the Almighty.
+@ For what pleasure __hath__ he in his house after him, when ##the number##note:x[<<Job 14:5>>] of his months is cut off in the midst?
+@ Shall __any__ ##teach##note:x[<<Rom 11:34; 1 Cor 2:16>>] God knowledge? seeing he judgeth those that are high.
+@ One dieth in his full strength, being wholly at ease and quiet.note:tn[__his…__: Heb. his very, or, the strength of, his perfection]
+@ His ##breasts##note:tn[or, milk pails] are full of milk, and his bones are ##moistened##note:x[<<Prov 3:8>>] with marrow.
+@ And another dieth in the bitterness of his soul, and ##never##note:x[<<Ezek 4:16–17>>] eateth with pleasure.
+@ They shall lie down ##alike##note:x[<<Job 20:11; Eccl 9:2>>] in the dust, and ##the worms##note:x[<<Isa 14:11>>] shall cover them.
+
+@ Behold, ##I know##note:x[<<Luke 5:22>>] your thoughts, and the devices __which__ ye wrongfully imagine against me.
+@ For ye say, Where __is__ the house of the prince? and where __are__ the dwelling places of the wicked?note:tn[__the dwelling…__: Heb. the tent of the tabernacles]
+@ Have ye not asked them that go by the way? and do ye not know their tokens,
+@ That ##the wicked##note:x[<<Prov 16:4; 2 Pet 2:9–17>>] is reserved to the day of destruction? they shall be brought forth to the day of ##wrath##note:tn[Heb. wraths].
+@ Who shall ##declare##note:x[<<Gal 2:11>>] his way to his face? and who shall ##repay##note:x[<<Deut 7:10>>] him __what__ he hath done?
+@ Yet shall ##he be##note:x[<<Luke 16:22>>] brought to the ##grave##note:tn[Heb. graves], and shall remain in the tomb.note:tn[__remain…__: Heb. watch in the heap]
+@ The clods of the valley shall be sweet unto him, and ##every man##note:x[<<Heb 9:27>>] shall draw after him, as __there are__ innumerable before him.
+@ How then ##comfort##note:x[<<Job 16:2>>] ye me in vain, seeing in your answers there remaineth ##falsehood##note:tn[Heb. transgression?]?
+
+=== @22
+
+[discrete.pericope]
+==== Eliphaz: Can a Man Be of Use to God?
+
+@ Then Eliphaz the Temanite answered and said,
+@ Can ##a man##note:x[<<Job 35:6–8; Luke 17:10>>] be profitable unto God, ##as he that##note:x[<<Gal 6:7–8>>] is wise may be profitable unto himself?note:tn[__as he…__: or, if he may be profitable, doth his good success depend thereon?]
+@ __Is it__ ##any pleasure##note:x[<<Ps 147:10–11; Prov 15:8>>] to the Almighty, that thou art righteous? or __is it__ gain __to him__, that ##thou makest##note:x[<<2 Cor 7:1>>] thy ways perfect?
+@ Will he ##reprove##note:x[<<Rev 3:19>>] thee for fear of thee? ##will he enter##note:x[<<Job 14:3; Ps 143:2>>] with thee into judgment?
+
+@ __Is__ not thy wickedness great? and thine iniquities infinite?
+@ ##For thou##note:x[<<Exod 22:26; Ezek 18:12, 16>>] hast taken a pledge from thy brother for nought, and stripped the naked of their clothing.note:tn[__the naked…__: Heb. the clothes of the naked]
+@ Thou hast ##not given##note:x[<<Job 31:17; Isa 58:7; Matt 25:42>>] water to the weary to drink, and thou hast withholden bread from the hungry.
+@ But __as for__ the mighty man, he had the earth; and the honourable man dwelt in it.note:tn[__mighty…__: Heb. man of arm]note:tn[__honourable…__: Heb. eminent, or, accepted for countenance]
+@ Thou hast sent ##widows##note:x[<<Job 24:3, 21; Ezek 22:7>>] away empty, and the arms of the fatherless have been broken.
+@ Therefore ##snares##note:x[<<Job 18:8–10>>] __are__ round about thee, and ##sudden##note:x[<<Job 6:4; 13:21>>] fear troubleth thee;
+@ Or darkness, __that__ thou canst not see; and ##abundance##note:x[<<Ps 69:1–2; Lam 3:54; Jonah 2:3>>] of waters cover thee.
+@ __Is__ not God in the height of heaven? and behold the height of the stars, how high they are!note:tn[__height of the stars__: Heb. head of the stars]
+@ And thou sayest, ##How##note:tn[or, What] ##doth God know##note:x[<<Ps 10:11; 73:11; Ezek 8:12>>]? can he judge through the dark cloud?
+@ ##Thick clouds __are__ a covering to him, that he seeth not; and he walketh in the circuit of heaven.##note:x[<<Ps 97:2>>]
+
+@ Hast thou marked ##the old way##note:x[<<Luke 17:26–27>>] which wicked men have trodden?
+@ Which were ##cut down##note:x[<<Job 15:32; Ps 55:23>>] out of time, ##whose foundation was overflown with a flood##note:x[<<Gen 7:17–24>>]:note:tn[__whose…__: Heb. a flood was poured upon their foundation]
+@ Which said unto God, ##Depart##note:x[<<Job 21:14–15; Rom 1:28>>] from us: ##and what##note:x[<<Ps 4:6>>] can the Almighty do ##for##note:tn[or, to] them?
+@ Yet ##he filled##note:x[<<Job 12:6>>] their houses with good __things:__ but ##the counsel##note:x[<<Job 21:16>>] of the wicked is far from me.
+@ The ##righteous##note:x[<<Ps 58:10; 107:42>>] see __it__, and are glad: and the ##innocent##note:x[<<Ps 52:6>>] laugh them to scorn.
+@ Whereas our ##substance##note:tn[or, estate] is not cut down, but the remnant of them the fire consumeth.note:tn[__the remnant…__: or, their excellency]
+
+@ ##Acquaint##note:x[<<1 Chr 28:9>>] now thyself with ##him##note:tn[that is, God], and ##be at peace##note:x[<<Isa 27:5; Phil 4:7>>]: thereby good shall come unto thee.
+@ ##Receive##note:x[<<Deut 4:1–2>>], I pray thee, the law from his mouth, and ##lay up##note:x[<<Job 23:12; Ps 119:11>>] his words in thine heart.
+@ If thou ##return##note:x[<<Job 8:5–6; 11:13–14; Zech 1:3>>] to the Almighty, thou shalt be built up, thou shalt put away iniquity far from thy tabernacles.
+@ Then shalt thou lay up gold as dust, and the __gold__ of ##Ophir##note:x[<<1 Kgs 9:28; Isa 13:12>>] as the stones of the brooks.note:tn[__as dust__: or, on the dust]
+@ Yea, ##the Almighty##note:x[<<Gen 15:1>>] shall be thy note:x[<<Ps 16:5–6; Isa 33:6>>]##defence##note:tn[or, gold], and thou shalt have plenty of silver.note:tn[__plenty…__: Heb. silver of strength]
+@ For then ##shalt thou##note:x[<<Job 27:10; Ps 37:4; Isa 58:14>>] have thy delight in the Almighty, and shalt lift up thy face unto God.
+@ Thou shalt ##make thy##note:x[<<Ps 116:1; Isa 58:9; 1 John 5:14–15>>] prayer unto him, and he shall hear thee, and thou shalt pay thy vows.
+@ Thou shalt also ##decree##note:x[<<Ps 20:4; 90:17; Matt 21:22>>] a thing, and it shall be established unto thee: and the light shall shine upon thy ways.
+@ When ##__men__##note:x[<<Job 5:19–27>>] are cast down, then thou shalt say, __There is__ lifting up; and ##he shall##note:x[<<Jas 4:6; 1 Pet 5:5>>] save the humble person.note:tn[__the humble…__: Heb. him that hath low eyes]
+@ ##He shall deliver the island of the innocent##note:x[<<Gen 18:26–32; Acts 27:24>>]: and it is delivered by the ##pureness##note:x[<<Jas 5:15–16>>] of thine hands.note:tn[__He shall…__: or, The innocent shall deliver the island]
+
+=== @23
+
+[discrete.pericope]
+==== Job Longs for God
+
+@ Then Job answered and said,
+@ Even to day __is__ ##my complaint##note:x[<<Job 10:1>>] bitter: my ##stroke##note:tn[Heb. hand] is heavier than my groaning.
+@ ##Oh that##note:x[<<Job 16:21>>] I knew where I might find him! __that__ I might come __even__ to his seat!
+@ I would ##order##note:x[<<Job 13:18>>] __my__ cause before him, and fill my mouth with arguments.
+@ I would know the words __which__ he would answer me, and understand what he would say unto me.
+@ Will he plead against me with __his__ great power? No; but he would put __strength__ in me.
+@ There the righteous might dispute with him; so should I be delivered for ever from my judge.
+
+@ ##Behold, I go forward, but he __is__ not __there;__ and backward, but I cannot perceive him:##note:x[<<Job 9:11; Ps 10:1; 1 Tim 6:16>>]
+@ On the left hand, where he doth work, but I cannot behold __him:__ ##he hideth himself##note:x[<<Ps 89:46; Isa 8:17>>] on the right hand, that I cannot see __him:__
+@ But he knoweth the way that I take: __when__ ##he hath##note:x[<<Jas 1:2–4, 12; 1 Pet 1:7>>] tried me, I shall come forth as gold.note:tn[__that…__: Heb. that is with me]
+@ ##My foot##note:x[<<Ps 44:18>>] hath held his steps, ##his way##note:x[<<Job 17:9; 2 Pet 2:20–22>>] have I kept, and not declined.
+@ Neither have I gone back from the commandment of his lips; note:x[<<Ps 119:11, 103; Jer 15:16>>]I have ##esteemed##note:tn[Heb. hid, or, laid up] the words of his mouth more than my necessary __food__.note:tn[__my…__: or, my appointed portion]
+
+@ But he __is__ in one __mind__, and who can turn him? ##and __what__##note:x[<<Ps 115:3; Prov 19:21; Isa 46:10>>] his soul desireth, even __that__ he doeth.
+@ For he performeth __the thing that is__ ##appointed##note:x[<<1 Thess 3:3; 5:9>>] for me: and ##many such##note:x[<<Ps 97:2>>] __things are__ with him.
+@ ##Therefore am I troubled at his presence: when I consider, I am afraid of him.##note:x[<<Ps 119:120>>]
+@ ##For God##note:x[<<Ps 22:14>>] maketh my heart soft, and the ##Almighty##note:x[<<Job 27:2>>] troubleth me:
+@ Because I was not ##cut off##note:x[<<Isa 57:1>>] before the darkness, __neither__ hath he covered ##the darkness from##note:x[<<Job 19:8>>] my face.
+
+=== @24
+
+[discrete.pericope]
+==== Job: Judgment for the Wicked
+
+@ Why, ##seeing##note:x[<<Eccl 3:17; 8:6–7; Acts 1:7>>] times are not hidden from the Almighty, do they that know him not see his days?
+@ __Some__ remove the ##landmarks##note:x[<<Deut 19:14; 27:17; Prov 23:10>>]; they violently take away flocks, and feed __thereof__.note:tn[__feed…__: or, feed them]
+@ They ##drive##note:x[<<Deut 24:6>>] away the ass of the fatherless, they take the widow’s ox for a pledge.
+@ They ##turn##note:x[<<Job 24:14>>] the needy out of the way: the poor of the earth ##hide##note:x[<<Prov 28:28>>] themselves together.
+@ Behold, __as__ wild asses in the desert, go they forth to their work; rising betimes for a prey: the wilderness __yieldeth__ food for them __and__ for __their__ children.
+@ They reap __every one__ his ##corn##note:tn[Heb. mingled corn, or, dredge] in the field: and they gather the vintage of the wicked.note:tn[__they gather…__: Heb. the wicked gather the vintage]
+@ They cause ##the naked##note:x[<<Exod 22:26–27; Job 22:6>>] to lodge without clothing, that __they have__ no covering in the cold.
+@ They are wet with the showers of the mountains, and ##embrace##note:x[<<Lam 4:5>>] the rock for want of a shelter.
+@ They pluck the fatherless from the breast, and take a pledge of the poor.
+@ They cause __him__ to go naked without clothing, and they take away the sheaf __from__ the hungry;
+@ __Which__ make oil within their walls, __and__ tread __their__ winepresses, and suffer thirst.
+@ Men ##groan##note:x[<<Eccl 4:1>>] from out of the city, and the soul of the wounded crieth out: yet God layeth not folly __to them__.
+
+@ They are of those that ##rebel##note:x[<<John 3:19–20>>] against the light; ##they know##note:x[<<Prov 4:19>>] not the ways thereof, ##nor abide##note:x[<<Jude 1:6>>] in the paths thereof.
+@ The murderer rising with the light killeth the poor and needy, and in the night is as a thief.
+@ The ##eye##note:x[<<Prov 7:9–10>>] also of the adulterer waiteth for the twilight, saying, ##No eye##note:x[<<Ps 10:11>>] shall see me: and disguiseth __his__ face.note:tn[__disguiseth…__: Heb. setteth his face in secret]
+@ In the dark they dig through houses, __which__ they had marked for themselves in the daytime: ##they know##note:x[<<John 3:20; Eph 5:11–13>>] not the light.
+@ For the morning __is__ to them even as the shadow of death: if __one__ know __them, they are in__ the terrors of the shadow of death.
+
+@ He __is__ swift as the waters; their portion is cursed in the earth: he beholdeth not the way of the vineyards.
+@ Drought and heat ##consume##note:tn[Heb. violently take] the snow waters: ##__so doth__##note:x[<<Ps 49:14>>] the grave __those which__ have sinned.
+@ The womb shall forget him; the worm shall feed sweetly on him; ##he shall be##note:x[<<Prov 10:7>>] no more remembered; and ##wickedness##note:x[<<Dan 4:14>>] shall be broken as a tree.
+@ He evil entreateth the barren __that__ beareth not: and doeth not good to the widow.
+@ He draweth also the mighty with his power: he riseth up, and no __man__ is sure of life.note:tn[__no…__: or, he trusteth not his own life]
+@ __Though__ it be given him __to be__ in safety, whereon he resteth; ##yet his eyes##note:x[<<Prov 15:3>>] __are__ upon their ways.
+@ They ##are exalted##note:x[<<Ps 37:10, 35–36; 92:7>>] for a little while, but ##are gone##note:tn[Heb. are not] and brought low; they are taken out of the way as all __other__, and cut off as the tops of the ears of corn.note:tn[__taken…__: Heb. closed up]
+@ And if __it be__ not __so__ now, ##who will make##note:x[<<Job 9:24>>] me a liar, and make my speech nothing worth?
+
+=== @25
+
+[discrete.pericope]
+==== Bildad: Man Cannot Be Righteous
+
+@ Then answered Bildad the Shuhite, and said,
+@ Dominion and fear __are__ with him, he maketh peace in his high places.
+@ Is there any number of his armies? and ##upon whom##note:x[<<Matt 5:45; Jas 1:17>>] doth not his light arise?
+@ ##How then##note:x[<<Job 4:17–19; Ps 130:3; Rom 5:1>>] can man be justified with God? or how can he be clean __that is__ born of a woman?
+@ ##Behold even to the moon, and it shineth not; yea, the stars are not pure in his sight.##note:x[<<Isa 60:19–20>>]
+@ ##How much less##note:x[<<Ps 22:6; Isa 41:14>>] man, __that is__ a worm? and the son of man, __which is__ a worm?
+
+=== @26
+
+[discrete.pericope]
+==== Job: Who Can Understand God’s Majesty?
+
+@ But Job answered and said,
+@ How hast thou helped __him that is__ without power? __how__ savest thou the arm __that hath__ no strength?
+@ How hast thou counselled __him that hath__ no wisdom? and __how__ hast thou plentifully declared the thing as it is?
+@ To whom hast thou uttered words? and ##whose spirit##note:x[<<1 Kgs 22:23–24; Job 20:3; 32:18>>] came from thee?
+
+@ Dead __things__ are formed from under the waters, and the inhabitants thereof.note:tn[__and the…__: or, with the inhabitants]
+@ ##Hell##note:x[<<Ps 139:8; Prov 15:11; Heb 4:13>>] __is__ naked before him, and destruction hath no covering.
+@ ##He stretcheth out the north over the empty place, __and__ hangeth the earth upon nothing.##note:x[<<Job 9:8; Ps 104:2–5; Isa 40:22>>]
+@ He ##bindeth up##note:x[<<Prov 30:4; Jer 10:13>>] the waters in his ##thick clouds##note:x[<<Job 37:11–16>>]; and the cloud is not rent under them.
+@ ##He holdeth back the face of his throne, __and__ spreadeth his cloud upon it.##note:x[<<Ps 97:2>>]
+@ He hath ##compassed##note:x[<<Job 38:8–11; Prov 8:29; Jer 5:22>>] the waters with bounds, until the day and night come to an end.note:tn[__until…__: Heb. until the end of light with darkness]
+@ The ##pillars##note:x[<<1 Sam 2:8>>] of heaven tremble and are astonished at his reproof.
+@ He ##divideth##note:x[<<Isa 51:15; Jer 31:35>>] the sea with his power, and by his understanding he smiteth through ##the proud##note:x[<<Ps 89:9–10>>].note:tn[__the proud__: Heb. pride]
+@ By ##his spirit##note:x[<<Ps 104:30>>] he hath garnished the heavens; his hand hath formed ##the crooked serpent##note:x[<<Ps 74:13–14; Isa 27:1>>].
+@ Lo, these __are__ parts of his ways: but ##how little##note:x[<<Job 11:7–9; Ps 139:6; Isa 40:26–29>>] a portion is heard of him? but the thunder of his power who can understand?
+
+=== @27
+
+[discrete.pericope]
+==== Job Affirms His Integrity
+
+@ Moreover ##Job##note:x[<<Num 23:7; 24:15>>] ##continued##note:tn[Heb. added to take up] his parable, and said,
+@ __As__ God liveth, __who__ hath ##taken##note:x[<<Job 34:5>>] away my judgment; and the Almighty, __who__ hath vexed my soul;note:tn[__vexed…__: Heb. made my soul bitter]
+@ All the while my breath __is__ in me, and ##the spirit of God##note:x[<<Gen 2:7; Isa 2:22; Acts 17:25>>] __is__ in my nostrils;note:tn[__the spirit…__: that is, the breath which God gave him]
+@ ##My lips shall not speak wickedness, nor my tongue utter deceit.##note:x[<<Job 13:7; 34:6; John 8:55>>]
+@ God forbid that I should justify you: till I die ##I will not##note:x[<<Job 2:9; 13:15>>] remove mine integrity from me.
+@ My righteousness ##I hold fast##note:x[<<Job 2:3>>], and will not let it go: ##my heart##note:x[<<Acts 24:16; 1 John 3:20–21>>] shall not reproach __me__ so long as I live.note:tn[__so long…__: Heb. from my days]
+
+[discrete.pericope]
+==== The Wicked Man’s Portion
+
+@ ##Let mine enemy be as the wicked, and he that riseth up against me as the unrighteous.##note:x[<<Dan 4:19>>]
+@ ##For what __is__ the hope of the hypocrite, though he hath gained, when God taketh away his soul?##note:x[<<Matt 16:26>>]
+@ ##Will God##note:x[<<Prov 1:28; Isa 1:15; Jer 14:12>>] hear his cry when trouble cometh upon him?
+@ Will he ##delight##note:x[<<Job 22:26–27; Ps 37:4>>] himself in the Almighty? will he always call upon God?
+
+@ I will ##teach##note:x[<<Job 4:3–4; Isa 8:11>>] you by the hand of God: ##__that__ which##note:x[<<Ps 71:17>>] __is__ with the Almighty will I not conceal.note:tn[__by…__: or, being in the hand, etc]
+@ Behold, all ye yourselves have seen __it;__ why then are ye thus altogether vain?
+@ This __is__ the portion of a wicked man with God, and ##the heritage##note:x[<<Job 20:19–29>>] of oppressors, __which__ they shall receive of the Almighty.
+@ If his ##children##note:x[<<Deut 28:41>>] be multiplied, __it is__ for the sword: and his offspring shall not be satisfied with bread.
+@ Those that remain of him shall be buried in death: and ##his widows##note:x[<<Ps 78:64>>] shall not weep.
+@ Though he ##heap up##note:x[<<Zech 9:3>>] silver as the dust, and prepare raiment as the clay;
+@ He may prepare __it__, ##but the just##note:x[<<Prov 13:22; 28:8; Eccl 2:26>>] shall put __it__ on, and the innocent shall divide the silver.
+@ He buildeth his house ##as a moth##note:x[<<Job 8:14–15>>], and ##as a booth##note:x[<<Isa 1:8>>] __that__ the keeper maketh.
+@ The rich man shall lie down, but he shall not be gathered: he openeth his eyes, and ##he __is__ not##note:x[<<Job 24:24>>].
+@ ##Terrors##note:x[<<Job 15:21; 18:11>>] take hold on him as waters, a tempest stealeth him away in the night.
+@ The east wind carrieth him away, and he departeth: and as ##a storm##note:x[<<Ps 11:6; 83:15>>] hurleth him out of his place.
+@ For __God__ shall cast upon him, and ##not spare##note:x[<<2 Pet 2:4–5>>]: he would fain flee out of his hand.note:tn[__he…__: Heb. in fleeing he would flee]
+@ __Men__ shall ##clap##note:x[<<Lam 2:15>>] their hands at him, and shall ##hiss him##note:x[<<1 Kgs 9:8>>] out of his place.
+
+=== @28
+
+[discrete.pericope]
+==== Where Can Wisdom Be Found?
+
+@ Surely there is a ##vein##note:tn[or, mine] for the silver, and a place for gold ##__where__ they fine __it__##note:x[<<1 Pet 1:7>>].
+@ ##Iron##note:x[<<Deut 8:9>>] is taken out of the ##earth##note:tn[or, dust], and brass __is__ molten __out of__ the stone.
+@ He setteth an end to darkness, and ##searcheth##note:x[<<Eccl 1:13>>] out all perfection: the stones of darkness, and the shadow of death.
+@ The flood breaketh out from the inhabitant; __even the waters__ forgotten of the foot: they are dried up, they are gone away from men.
+@ __As for__ the earth, out of it cometh bread: and under it is turned up as it were fire.
+@ The stones of it __are__ the place of ##sapphires##note:x[<<Exod 24:10; Job 28:16>>]: and it hath dust of gold.note:tn[__dust…__: or, gold ore]
+@ __There is__ ##a path##note:x[<<Job 11:6>>] which no fowl knoweth, and which the vulture’s eye hath not seen:
+@ The lion’s whelps have not trodden it, nor the fierce lion passed by it.
+@ He putteth forth his hand upon the ##rock##note:tn[or, flint]; he overturneth the mountains by the roots.
+@ He cutteth out rivers among the rocks; and his eye seeth every precious thing.
+@ He bindeth the floods from ##overflowing##note:tn[Heb. weeping]; ##and __the thing__##note:x[<<Isa 45:2–3; 1 Cor 4:5>>] __that is__ hid bringeth he forth to light.
+@ ##But where shall wisdom be found? and where __is__ the place of understanding?##note:x[<<Job 28:20; Prov 2:4–6; Jas 1:5>>]
+@ Man knoweth not the price thereof; neither is it found in the land of the living.
+
+@ The depth saith, It __is__ not in me: and the sea saith, __It is__ not with me.
+@ ##It cannot be gotten for gold##note:x[<<Prov 16:16>>], neither shall silver be weighed __for__ the price thereof.note:tn[__It…__: Heb. Fine gold shall not be given for it]
+@ It cannot be valued with the gold of Ophir, with the precious onyx, or the sapphire.
+@ The gold and the crystal cannot equal it: and the exchange of it __shall not be for__ jewels of fine gold.note:tn[__jewels…__: or, vessels of]
+@ No mention shall be made of ##coral##note:tn[or, Ramoth], or of pearls: for the price of wisdom __is__ above ##rubies##note:x[<<Prov 3:15; 31:10>>].
+@ The topaz of Ethiopia shall not equal it, neither shall it be valued with pure gold.
+
+@ ##Whence then cometh wisdom? and where __is__ the place of understanding?##note:x[<<Job 28:12; Jas 1:5, 17>>]
+@ Seeing it is ##hid##note:x[<<Ps 49:3–4; Matt 11:25; 1 Cor 2:7–10>>] from the eyes of all living, and kept close from the fowls of the ##air##note:tn[or, heaven].
+@ ##Destruction##note:x[<<Ps 83:10–12>>] and death say, We have heard the fame thereof with our ears.
+@ ##God understandeth the way thereof, and he knoweth the place thereof.##note:x[<<Rom 11:33; 1 Cor 1:30; Jude 1:25>>]
+@ ##For he looketh to the ends of the earth, __and__ seeth under the whole heaven;##note:x[<<Prov 15:3>>]
+@ ##To make the weight##note:x[<<Ps 135:7>>] for the winds; and he weigheth the waters by measure.
+@ When ##he made##note:x[<<Job 38:25>>] a decree for the rain, and ##a way##note:x[<<Job 37:3>>] for the lightning of the thunder:
+@ Then did he see it, and declare it; ##he prepared it##note:x[<<Ps 19:1>>], yea, and searched it out.note:tn[__declare…__: or, number it]
+@ And unto man he said, Behold, the ##fear##note:x[<<Ps 111:10; Prov 1:7; 9:10>>] of the Lord, that __is__ wisdom; and to depart from evil __is__ understanding.
+
+=== @29
+
+[discrete.pericope]
+==== Job’s Former Blessings
+
+@ Moreover Job note:x[<<Job 27:1>>]##continued##note:tn[Heb. added to take up] his parable, and said,
+@ Oh that I were as __in__ months past, as __in__ the days __when__ God preserved me;
+@ When his note:x[<<Job 18:6; Ps 18:28>>]##candle##note:tn[or, lamp] shined upon my head, __and when__ ##by his light##note:x[<<John 8:12>>] I walked __through__ darkness;
+@ As I was in the days of my youth, when ##the secret##note:x[<<Ps 25:14; Prov 3:32>>] of God __was__ upon my tabernacle;
+@ When the Almighty __was__ yet with me, __when__ ##my children##note:x[<<Ps 127:3–5; 128:3>>] __were__ about me;
+@ When ##I washed##note:x[<<Gen 49:11; Job 20:17; Ps 81:16>>] my steps with butter, and the rock poured ##me##note:tn[Heb. with me] out rivers of oil;
+
+@ ##When##note:x[<<Deut 16:18; Ruth 4:1–2; Zech 8:16>>] I went out to the gate through the city, __when__ I prepared my seat in the street!
+@ The ##young men##note:x[<<Lev 19:32>>] saw me, and hid themselves: and the aged arose, __and__ stood up.
+@ The princes ##refrained##note:x[<<Prov 10:19>>] talking, and ##laid##note:x[<<Job 21:5; 40:4>>] __their__ hand on their mouth.
+@ The nobles held their peace, and ##their tongue##note:x[<<Ps 137:6>>] cleaved to the roof of their mouth.note:tn[__The nobles…__: Heb. The voice of the nobles was hid]
+@ When ##the ear##note:x[<<Luke 4:22>>] heard __me__, then it blessed me; and when the eye saw __me__, it gave witness to me:
+@ Because ##I delivered##note:x[<<Ps 72:12; Prov 21:13>>] the poor that cried, and ##the fatherless##note:x[<<Exod 22:22–24>>], and __him that had__ none to help him.
+@ The blessing of him that was ready to perish came upon me: and I caused the widow’s heart to sing for joy.
+@ ##I put##note:x[<<Ps 132:9; Isa 59:17; 61:10>>] on righteousness, and it clothed me: my judgment __was__ as a robe and a diadem.
+@ I was ##eyes##note:x[<<Num 10:31>>] to the blind, and feet __was__ I to the lame.
+@ I __was__ ##a father##note:x[<<Ps 68:5>>] to the poor: and ##the cause##note:x[<<Prov 29:7>>] __which__ I knew not I searched out.
+@ And ##I brake##note:x[<<Ps 3:7; Prov 30:14>>] the jaws of the wicked, and ##plucked##note:tn[Heb. cast] the spoil out of his teeth.note:tn[__the jaws__: Heb. the jawteeth, or, the grinders]
+
+@ Then I said, ##I shall die##note:x[<<Ps 30:6–7>>] in my nest, and I shall multiply __my__ days as the sand.
+@ My ##root##note:x[<<Job 18:16; Ps 1:3; Jer 17:8>>] __was__ spread out by the waters, and the dew lay all night upon my branch.note:tn[__spread…__: Heb. opened]
+@ My glory __was__ ##fresh##note:tn[Heb. new] in me, and ##my bow##note:x[<<Gen 49:24>>] was note:x[<<Isa 40:31>>]##renewed##note:tn[Heb. changed] in my hand.
+@ Unto me __men__ gave ear, and waited, and kept silence at my counsel.
+@ After my words they spake not again; and my ##speech##note:x[<<Deut 32:2>>] dropped upon them.
+@ And they waited for me ##as for the rain##note:x[<<Ps 72:6>>]; and they opened their mouth wide __as__ for ##the latter rain##note:x[<<Hos 6:3; Zech 10:1>>].
+@ __If__ I laughed on them, ##they believed##note:x[<<Ps 126:1>>] __it__ not; and ##the light##note:x[<<Ps 4:6; 89:15>>] of my countenance they cast not down.
+@ I chose out their way, and sat chief, and dwelt as a king in the army, as ##one __that__##note:x[<<2 Cor 1:3–4>>] comforteth the mourners.
+
+=== @30
+
+[discrete.pericope]
+==== Job’s Honor Turned to Contempt
+
+@ But now __they that are__ younger than I have me in derision, ##whose##note:x[<<Ps 35:15–16; 69:12; Luke 23:35>>] fathers I would have disdained to have set with the dogs of my flock.note:tn[__younger…__: Heb. of fewer days than I]
+@ Yea, whereto __might__ the strength of their hands __profit__ me, in whom old age was perished?
+@ For want and famine __they were__ ##solitary##note:tn[or, dark as the night]; fleeing into the wilderness in former time desolate and waste.note:tn[__in…__: Heb. yesternight]
+@ Who cut up mallows by the bushes, and juniper roots __for__ their meat.
+@ They were driven forth from among __men__, (they cried after them as __after__ a thief;)
+@ To dwell in the clifts of the valleys, __in__ ##caves##note:tn[Heb. holes] of the earth, and __in__ the rocks.
+@ Among the bushes they brayed; under the nettles they were gathered together.
+@ __They were__ children of ##fools##note:x[<<Prov 16:22>>], yea, children of base men: they were viler than the earth.note:tn[__base…__: Heb. men of no name]
+@ And now ##am I##note:x[<<Job 17:6; Lam 3:14, 63>>] their song, yea, I am their byword.
+@ They ##abhor me##note:x[<<Ps 88:8>>], they flee far from me, and ##spare not to spit in my face##note:x[<<Isa 50:6; Matt 26:67>>].note:tn[__and…__: Heb. and withhold not spittle from]
+@ Because he hath ##loosed##note:x[<<Job 12:21>>] my cord, and afflicted me, they have also let loose the bridle before me.
+@ Upon __my__ right __hand__ rise the youth; they push away my feet, and ##they raise up##note:x[<<Job 19:12>>] against me the ways of their destruction.
+@ They mar my path, they set forward my calamity, they have no helper.
+@ They came __upon me__ as a wide breaking in __of waters:__ in the desolation they rolled themselves __upon me__.
+
+[discrete.pericope]
+==== Job’s Prosperity Becomes Calamity
+
+@ ##Terrors##note:x[<<Job 6:4>>] are turned upon me: they pursue my soul as the wind: and my welfare passeth away ##as a cloud##note:x[<<Hos 13:3>>].note:tn[__my soul__: Heb. my principal one]
+@ And now ##my soul##note:x[<<Ps 22:14; 42:4>>] is poured out upon me; the days of affliction have taken hold upon me.
+@ My bones are pierced in me in the night season: and my sinews take no rest.
+@ By the great force __of my disease__ is my garment changed: it bindeth me about as the collar of my coat.
+@ He hath ##cast me##note:x[<<Job 9:31>>] into the mire, and I am become like dust and ashes.
+@ ##I cry##note:x[<<Job 19:7; Ps 22:2; 80:4–5>>] unto thee, and thou dost not hear me: I stand up, and thou regardest me __not__.
+@ Thou art ##become cruel##note:x[<<Job 10:14–17; 16:9–14>>] to me: with thy strong hand thou opposest thyself against me.note:tn[__become…__: Heb. turned to be cruel]note:tn[__thy…__: Heb. the strength of thy hand]
+@ Thou liftest me up to the wind; thou causest me to ride __upon it__, and dissolvest my ##substance##note:tn[or, wisdom].
+@ For I know __that__ thou wilt bring me __to__ death, and __to__ ##the house##note:x[<<Eccl 12:5–7>>] appointed for all living.
+@ Howbeit he will not stretch out __his__ hand to the ##grave##note:tn[Heb. heap], though they cry in his destruction.
+@ ##Did not I##note:x[<<Ps 35:13–14; Rom 12:15>>] weep for him that was in trouble? was __not__ my soul grieved for the poor?note:tn[__in trouble__: Heb. hard of day?]
+@ ##When I looked##note:x[<<Job 3:25–26; Jer 8:15; 14:19>>] for good, then evil came __unto me:__ and when I waited for light, there came darkness.
+@ ##My bowels boiled, and rested not: the days of affliction prevented me.##note:x[<<Lam 2:11>>]
+@ ##I went mourning without the sun: I stood up, __and__ I cried in the congregation.##note:x[<<Ps 38:6; 42:9; 43:2>>]
+@ I am ##a brother##note:x[<<Ps 102:6; Mic 1:8>>] to dragons, and a companion to ##owls##note:tn[or, ostriches].
+@ ##My skin##note:x[<<Ps 119:83; Lam 4:8>>] is black upon me, and ##my bones##note:x[<<Ps 102:3>>] are burned with heat.
+@ ##My harp also is __turned__ to mourning, and my organ into the voice of them that weep.##note:x[<<Lam 5:15>>]
+
+=== @31
+
+[discrete.pericope]
+==== Job’s Final Appeal
+
+@ I made ##a covenant##note:x[<<Ps 119:37; Matt 5:28–29>>] with mine eyes; why then should I ##think##note:x[<<Jas 1:14–15>>] upon a maid?
+@ ##For what portion of God __is there__ from above? and __what__ inheritance of the Almighty from on high?##note:x[<<Job 20:29>>]
+@ __Is__ not ##destruction##note:x[<<Job 21:30>>] to the wicked? and a strange __punishment__ to the workers of iniquity?
+@ ##Doth not he see my ways, and count all my steps?##note:x[<<2 Chr 16:9; Job 34:21; Prov 5:21>>]
+@ If I have walked with vanity, or if my foot hath hasted to deceit;
+@ ##Let me be weighed in an even balance##note:x[<<1 Sam 2:3; Ps 7:8–9; Dan 5:27>>], that God may know mine integrity.note:tn[__Let…__: Heb. Let him weigh me in balances of justice]
+@ If my step hath turned out of the way, and ##mine heart##note:x[<<Num 15:39; Eccl 11:9>>] walked after mine eyes, and if any blot hath cleaved to mine hands;
+@ __Then__ ##let me##note:x[<<Lev 26:16; Mic 6:15>>] sow, and let another eat; yea, let my offspring be rooted out.
+
+@ ##If mine##note:x[<<Judg 16:5; 1 Kgs 11:4; Eccl 7:26>>] heart have been deceived by a woman, or __if__ I have laid wait at my neighbour’s door;
+@ __Then__ let my wife ##grind##note:x[<<Isa 47:2>>] unto another, ##and let##note:x[<<2 Sam 12:11; Jer 8:10>>] others bow down upon her.
+@ For this __is__ an heinous crime; yea, it __is__ ##an iniquity##note:x[<<Lev 20:10; Deut 22:22–24; Job 31:28>>] __to be punished by__ the judges.
+@ ##For it __is__ a fire __that__ consumeth to destruction, and would root out all mine increase.##note:x[<<Prov 6:27>>]
+@ If I did despise the cause of my manservant or of my maidservant, when they contended with me;
+@ What then shall I do when God riseth up? and ##when he##note:x[<<Jas 2:13>>] visiteth, what shall I answer him?
+@ ##Did not he##note:x[<<Job 34:19; Prov 14:31; 22:2>>] that made me in the womb make him? and did not one fashion us in the womb?note:tn[__did not one…__: or, did he not fashion us in one womb?]
+
+@ If I have withheld the poor from __their__ desire, or have caused the eyes of the widow to fail;
+@ Or have eaten my morsel myself alone, and the fatherless hath not eaten thereof;
+@ (For from my youth he was brought up with me, as __with__ a father, and I have guided ##her##note:tn[that is, the widow] from my mother’s womb;)
+@ ##If I have seen any perish for want of clothing, or any poor without covering;##note:x[<<Job 22:6>>]
+@ ##If his loins have not blessed me, and __if__ he were __not__ warmed with the fleece of my sheep;##note:x[<<Deut 24:13>>]
+@ If I have ##lifted##note:x[<<Job 22:9>>] up my hand against the fatherless, when I saw my help in the gate:
+@ __Then__ let mine arm fall from my shoulder blade, and mine arm be broken from the ##bone##note:tn[or, chanelbone].
+@ For ##destruction##note:x[<<Ps 119:120; 2 Cor 5:11>>] __from__ God __was__ a terror to me, and ##by##note:x[<<Job 13:11>>] reason of his highness I could not endure.
+
+@ ##If I have made gold my hope, or have said to the fine gold, __Thou art__ my confidence;##note:x[<<Deut 8:12–14; Ps 49:6–7; 52:7>>]
+@ If I rejoiced because my wealth __was__ great, and because mine hand had gotten much;note:tn[__gotten…__: Heb. found much]
+@ If I ##beheld##note:x[<<Deut 4:19; 17:3; Ezek 8:16>>] the ##sun##note:tn[Heb. light] when it shined, or the moon walking __in__ brightness;note:tn[__in…__: Heb. bright]
+@ And ##my heart##note:x[<<Deut 13:6>>] hath been secretly enticed, or my mouth hath kissed my hand&#58;note:tn[__my mouth…__: Heb. my hand hath kissed my mouth]
+@ This also __were__ ##an##note:x[<<Deut 17:2–7; Job 31:11; Ps 50:6>>] iniquity __to be punished by__ the judge: for I should have denied the God __that is__ above.
+@ ##If I rejoiced at the destruction of him that hated me, or lifted up myself when evil found him:##note:x[<<Ps 35:13–14; Prov 17:5; 24:17–18>>]
+@ Neither ##have##note:x[<<Rom 12:14; 1 Pet 3:9>>] I suffered my ##mouth##note:tn[Heb. palate] to sin by wishing a curse to his soul.
+@ If the men of my tabernacle said not, Oh that we had of his flesh! we cannot be satisfied.
+@ ##The stranger##note:x[<<Gen 19:2–3; Judg 19:20–21; Heb 13:2>>] did not lodge in the street: __but__ I opened my doors to the ##traveller##note:tn[or, way].
+
+@ If I ##covered##note:x[<<Gen 3:12; Prov 28:13; Acts 5:8>>] my transgressions as Adam, by hiding mine iniquity in my bosom&#58;note:tn[__as Adam__: or, after the manner of men]
+@ ##Did I##note:x[<<Exod 23:2>>] fear a great multitude, or did the contempt of families terrify me, that I kept silence, __and__ went not out of the door?
+@ ##Oh##note:x[<<Job 40:4–5>>] that one would hear me! behold, ##my desire __is, that__ the Almighty would answer me##note:x[<<Job 13:21–22>>], and __that__ mine adversary had written a book.note:tn[__my…__: or, my sign is that the Almighty will]
+@ Surely I would take it upon my shoulder, __and__ bind it __as__ a crown to me.
+@ I would ##declare##note:x[<<Job 13:15>>] unto him the number of my steps; as a prince would I go near unto him.
+@ If my land cry against me, or that the furrows likewise thereof ##complain##note:tn[Heb. weep];
+@ If I have eaten the ##fruits##note:tn[Heb. strength] thereof without money, or have ##caused the owners thereof to lose their life##note:x[<<1 Kgs 21:19>>]:note:tn[__the owners…__: Heb. the soul of the owners thereof to expire, or, breathe out]
+@ Let thistles grow instead of wheat, and ##cockle##note:tn[or, noisome weeds] instead of barley. The words of Job are ended.
+
+=== @32
+
+[discrete.pericope]
+==== Elihu Rebukes Job’s Friends
+
+@ So these three men ceased to answer Job, because he __was__ ##righteous##note:x[<<Job 10:7; 33:9>>] in his own eyes.note:tn[__to…__: Heb. from answering]
+@ Then was kindled the wrath of Elihu the son of Barachel the ##Buzite##note:x[<<Gen 22:21>>], of the kindred of Ram: against Job was his wrath kindled, because he justified ##himself##note:tn[Heb. his soul] rather than God.
+@ Also against his three friends was his wrath kindled, because they had found no answer, ##and __yet__##note:x[<<Job 8:6>>] had condemned Job.
+@ Now Elihu had waited till Job had spoken, because they __were__ ##elder##note:tn[Heb. elder for days] than he.note:tn[__waited…__: Heb. expected Job in words]
+@ When Elihu saw that __there was__ no answer in the mouth of __these__ three men, then his wrath was kindled.
+
+@ And Elihu the son of Barachel the Buzite answered and said, ##I __am__##note:x[<<1 Tim 5:1>>] ##young##note:tn[Heb. few of days], and ##ye __are__##note:x[<<Job 15:10>>] very old; wherefore I was afraid, and durst not shew you mine opinion.note:tn[__durst…__: Heb. feared]
+@ ##I said, Days should speak, and multitude of years should teach wisdom.##note:x[<<Job 12:12; Prov 16:31>>]
+@ But __there is__ a spirit in man: and ##the inspiration##note:x[<<Job 38:36; Prov 2:6; 2 Tim 3:16>>] of the Almighty giveth them understanding.
+@ ##Great##note:x[<<Matt 11:25; 1 Cor 1:26–27>>] men are not __always__ wise: ##neither##note:x[<<Job 12:20>>] do the aged understand judgment.
+@ Therefore I said, Hearken to me; I also will shew mine opinion.
+@ Behold, I waited for your words; I gave ear to your ##reasons##note:tn[Heb. understandings], whilst ye searched out what to say.note:tn[__what…__: Heb. words]
+@ Yea, I attended unto you, and, behold, __there was__ none of you that convinced Job, __or__ that answered his words:
+@ Lest ye should say, ##We##note:x[<<Jer 9:23>>] have found out wisdom: God thrusteth him down, not man.
+@ Now he hath not ##directed##note:tn[or, ordered] __his__ words against me: neither will I answer him with your speeches.
+
+@ They were amazed, they answered no more: they left off speaking.note:tn[__left…__: Heb. removed speeches from themselves]
+@ When I had waited, (for they spake not, but stood still, __and__ answered no more;)
+@ __I said__, I will answer also my part, I also will shew mine opinion.
+@ For I am full of ##matter##note:tn[Heb. words], ##the spirit##note:x[<<Ps 39:3; Acts 4:20>>] within me constraineth me.note:tn[__spirit…__: Heb. spirit of my belly]
+@ Behold, my belly __is__ as wine __which__ hath no vent; it is ready to burst like new bottles.note:tn[__hath…__: Heb. is not opened]
+@ ##I will speak##note:x[<<Job 21:3>>], that I may be refreshed: I will open my lips and answer.note:tn[__be…__: Heb. breathe]
+@ Let me not, I pray you, ##accept##note:x[<<Lev 19:15; Job 13:8>>] any man’s person, neither let me give flattering titles unto man.
+@ For ##I know not##note:x[<<Ps 12:2–3>>] to give flattering titles; __in so doing__ my maker would soon take me away.
+
+=== @33
+
+[discrete.pericope]
+==== Elihu Rebukes Job
+
+@ Wherefore, Job, I pray thee, ##hear##note:x[<<Job 13:6>>] my speeches, and hearken to all my words.
+@ Behold, now ##I##note:x[<<Job 3:1>>] have opened my mouth, my tongue hath spoken in my mouth.note:tn[__in my mouth__: Heb. in my palate]
+@ My words __shall be of__ ##the##note:x[<<Job 27:4>>] uprightness of my heart: and my lips shall utter knowledge clearly.
+@ ##The Spirit of God hath made me, and the breath of the Almighty hath given me life.##note:x[<<Gen 2:7; Job 10:12; 32:8>>]
+@ If thou canst answer me, set __thy words__ in order before me, stand up.
+@ Behold, I __am__ according to thy ##wish##note:tn[Heb. mouth] in God’s stead: ##I also##note:x[<<Job 4:19>>] am ##formed##note:tn[Heb. cut] out of the clay.
+@ Behold, ##my terror##note:x[<<Job 9:34; 13:21>>] shall not make thee afraid, neither shall my hand be heavy upon thee.
+
+@ Surely thou hast spoken in mine ##hearing##note:tn[Heb. ears], and I have heard the voice of __thy__ words, __saying__,
+@ I am ##clean##note:x[<<Job 10:7; 11:4; 16:17>>] without transgression, I __am__ innocent; neither __is there__ iniquity in me.
+@ Behold, he findeth occasions against me, he counteth me for his enemy,
+@ He ##putteth##note:x[<<Job 13:27>>] my feet in the stocks, he marketh all my paths.
+@ Behold, __in__ this thou art not just: I will answer thee, that God is greater than man.
+@ Why dost thou ##strive##note:x[<<Isa 45:9>>] against him? for he ##giveth not account##note:x[<<Job 40:2>>] of any of his matters.note:tn[__he giveth…__: Heb. he answereth not]
+
+@ For ##God##note:x[<<Ps 62:11>>] speaketh once, yea twice, __yet man__ ##perceiveth##note:x[<<2 Chr 33:10; Prov 1:24>>] it not.
+@ In ##a dream##note:x[<<Gen 20:3; Num 12:6; Job 4:13>>], in a vision of the night, when deep sleep falleth upon men, in slumberings upon the bed;
+@ Then he ##openeth##note:x[<<Job 36:10, 15; Ps 40:6>>] the ears of men, and sealeth their instruction,note:tn[__he…__: Heb. he revealeth, or, uncovereth]
+@ That he may withdraw man __from his__ ##purpose##note:tn[Heb. work], and ##hide##note:x[<<Isa 2:11; Jas 4:10>>] pride from man.
+@ He ##keepeth##note:x[<<Rom 2:4; 2 Pet 3:9>>] back his soul from the pit, and his life from perishing by the sword.note:tn[__from perishing__: Heb. from passing]
+
+@ He is ##chastened##note:x[<<Job 5:17–18>>] also with ##pain##note:x[<<Job 30:17>>] upon his bed, and the multitude of his bones with strong __pain:__
+@ So that his life abhorreth bread, and his soul dainty meat.note:tn[__dainty…__: Heb. meat of desire]
+@ ##His flesh##note:x[<<Job 19:20>>] is consumed away, that it cannot be seen; and his bones __that__ were not seen stick out.
+@ Yea, his soul draweth near unto the grave, and his life to the destroyers.
+@ If there be ##a messenger##note:x[<<Mal 3:1; 2 Cor 5:20>>] with him, an interpreter, ##one##note:x[<<Eccl 7:28>>] among a thousand, to shew unto man his uprightness:
+@ ##Then##note:x[<<Job 33:18>>] he is gracious unto him, and saith, Deliver him from going down to the pit: I have found a ##ransom##note:x[<<Ps 49:7–8; Matt 20:28>>].note:tn[__a ransom__: or, an atonement]
+@ ##His flesh##note:x[<<2 Kgs 5:14>>] shall be fresher than a child’s: he shall ##return##note:x[<<Josh 14:10–11; Ps 103:5>>] to the days of his youth&#58;note:tn[__a child’s__: Heb. childhood]
+@ He shall ##pray##note:x[<<Ps 50:15; Acts 9:11>>] unto God, and he will be favourable unto him: ##and he shall##note:x[<<Ps 30:5>>] see his face with joy: for he will render unto man his righteousness.
+@ He ##looketh##note:x[<<Ps 14:2>>] upon men, and __if any__ say, ##I##note:x[<<2 Sam 12:13>>] have sinned, and perverted __that which was__ right, and ##it profited##note:x[<<Rom 6:21>>] me not;note:tn[__He…__: or, He shall look upon men, and say]
+@ He ##will deliver##note:x[<<Job 33:24>>] his soul from going into the pit, and his life shall see the light.note:tn[__He…__: or, He hath delivered my soul, etc, and my life]
+
+@ Lo, ##all##note:x[<<1 Cor 12:6; Eph 1:11; Phil 2:13>>] these __things__ worketh God ##oftentimes##note:tn[Heb. twice and thrice] with man,
+@ ##To bring##note:x[<<Job 33:28>>] back his soul from the pit, to be ##enlightened##note:x[<<Ps 56:13; Isa 38:17>>] with the light of the living.
+@ Mark well, O Job, hearken unto me: hold thy peace, and I will speak.
+@ If thou hast any thing to say, answer me: speak, for I desire to justify thee.
+@ If not, ##hearken##note:x[<<Ps 34:11>>] unto me: hold thy peace, and I shall teach thee wisdom.
+
+=== @34
+
+[discrete.pericope]
+==== Elihu Confirms God’s Justice
+
+@ Furthermore Elihu answered and said,
+@ Hear my words, O ye wise __men;__ and give ear unto me, ye that have knowledge.
+@ For ##the ear##note:x[<<Job 12:11; 1 Cor 2:15>>] trieth words, as the ##mouth##note:tn[Heb. palate] tasteth meat.
+@ Let us ##choose##note:x[<<1 Thess 5:21>>] to us judgment: let us know among ourselves what __is__ good.
+@ For Job hath said, ##I##note:x[<<Job 33:9>>] am righteous: and ##God##note:x[<<Job 27:2>>] hath taken away my judgment.
+@ Should I lie against my right? my ##wound##note:x[<<Job 6:4>>] __is__ incurable without transgression.note:tn[__my wound__: Heb. mine arrow]
+@ ##What man __is__ like Job, __who__ drinketh up scorning like water?##note:x[<<Job 15:16>>]
+@ ##Which goeth in company with the workers of iniquity, and walketh with wicked men.##note:x[<<Ps 1:1; Prov 13:20; 1 Cor 15:33>>]
+@ For he hath said, ##It##note:x[<<Job 21:14–16; 35:3; Mal 3:14>>] profiteth a man nothing that he should delight himself with God.
+
+@ Therefore hearken unto me, ye men of understanding: ##far##note:x[<<Deut 32:4; Job 8:3; Rom 9:14>>] be it from God, __that he should do__ wickedness; and __from__ the Almighty, __that he should commit__ iniquity.note:tn[__men…__: Heb. men of heart]
+@ For ##the work##note:x[<<Rom 2:6; 2 Cor 5:10; Rev 22:12>>] of a man shall he render unto him, and cause every man to find according to __his__ ways.
+@ Yea, ##surely##note:x[<<Ps 11:7; 145:17>>] God will not do wickedly, neither will the Almighty ##pervert##note:x[<<Job 8:3>>] judgment.
+@ ##Who hath given##note:x[<<1 Chr 29:11; Isa 40:13–14; Rom 11:34–36>>] him a charge over the earth? or who hath disposed ##the whole##note:tn[Heb. all of it?] world?
+@ If he set his heart upon ##man##note:tn[Heb. him], __if__ ##he gather##note:x[<<Ps 104:29>>] unto himself his spirit and his breath;
+@ ##All flesh shall perish together, and man shall turn again unto dust.##note:x[<<Gen 3:19; Eccl 12:7>>]
+
+@ If now __thou hast__ understanding, hear this: hearken to the voice of my words.
+@ Shall ##even##note:x[<<Gen 18:25; 2 Sam 23:3>>] he that hateth right ##govern##note:tn[Heb. bind?]? and ##wilt##note:x[<<Job 40:8>>] thou condemn him that is most just?
+@ ##__Is it fit__ to say to a king, __Thou art__ wicked? __and__ to princes, __Ye are__ ungodly?##note:x[<<Exod 22:28; Prov 17:26; Rom 13:7>>]
+@ __How much less to him__ that ##accepteth##note:x[<<Deut 10:17; Acts 10:34>>] not the persons of princes, nor ##regardeth##note:x[<<Jas 2:5>>] the rich more than the poor? for they all __are__ the work of his hands.
+@ In ##a moment##note:x[<<Ps 73:19>>] shall they die, and the people shall be troubled at midnight, and pass away: and the mighty shall be taken away without hand.note:tn[__the mighty…__: Heb. they shall take away the mighty]
+@ ##For his eyes __are__ upon the ways of man, and he seeth all his goings.##note:x[<<Job 31:4; Prov 5:21; 15:3>>]
+@ __There is__ ##no##note:x[<<Amos 9:2–3; Heb 4:13>>] darkness, nor shadow of death, where ##the##note:x[<<Prov 10:29>>] workers of iniquity may hide themselves.
+@ For ##he will##note:x[<<Ezra 9:13; Ps 119:137; Dan 9:7–9>>] not lay upon man more __than right;__ that he should ##enter##note:tn[Heb. go] into judgment with God.
+@ He shall ##break##note:x[<<Ps 2:9; Dan 2:21>>] in pieces mighty men without ##number##note:tn[Heb. searching out], and ##set##note:x[<<Ps 113:7–8>>] others in their stead.
+@ Therefore he knoweth their works, and he overturneth __them__ in the night, so that they are ##destroyed##note:tn[Heb. crushed].
+@ He striketh them as wicked men in the open sight of others;note:tn[__open…__: Heb. place of beholders]
+@ Because they ##turned##note:x[<<1 Sam 15:11>>] back from ##him##note:tn[Heb. after him], and ##would##note:x[<<Ps 28:5; Isa 5:12>>] not consider any of his ways:
+@ So that ##they##note:x[<<Exod 3:7; Job 35:9; Jas 5:4>>] cause the cry of the poor to come unto him, and he heareth the cry of the afflicted.
+@ ##When he giveth##note:x[<<Isa 26:3; John 14:27>>] quietness, who then can make trouble? and when he hideth __his__ face, ##who then can behold##note:x[<<Job 23:13>>] him? whether __it be done__ against a nation, or against a man only:
+@ That the hypocrite reign not, lest the people be ensnared.
+
+@ Surely it is meet to be said unto God, I have borne __chastisement__, I will not offend __any more:__
+@ __That__ ##__which__##note:x[<<Ps 19:12; 25:4–5; 32:8>>] I see not teach thou me: if I have done iniquity, I will do no more.
+@ __Should it be__ according to thy mind? he will recompense it, whether thou refuse, or whether thou choose; and not I: therefore speak ##what##note:x[<<Job 33:32>>] thou knowest.note:tn[__according…__: Heb. from with thee?]
+@ Let men of understanding tell me, and let a wise man hearken unto me.note:tn[__of…__: Heb. of heart]
+@ ##Job hath spoken without knowledge, and his words __were__ without wisdom.##note:x[<<Job 35:16; 38:2>>]
+@ My desire __is that__ Job may be tried unto the end because of __his__ answers for wicked men.note:tn[__My…__: or, My father, let Job be tried]
+@ For he addeth rebellion unto his sin, ##he clappeth##note:x[<<Job 27:23>>] __his hands__ among us, and multiplieth his words against God.
+
+=== @35
+
+[discrete.pericope]
+==== Elihu Recalls God’s Justice
+
+@ Elihu spake moreover, and said,
+@ Thinkest thou this to be right, __that__ thou saidst, My righteousness __is__ more than God’s?
+@ For thou saidst, ##What advantage##note:x[<<Job 34:9>>] will it be unto thee? __and__, What profit shall I have, __if I be cleansed__ from my sin?note:tn[__if…__: or, by it more than by my sin]
+@ I will answer thee, and thy companions with thee.note:tn[__answer…__: Heb. return to thee words]
+@ ##Look##note:x[<<Job 22:12; Isa 55:9>>] unto the heavens, and see; and behold the clouds __which__ are higher than thou.
+@ ##If thou sinnest, what doest thou against him? or __if__ thy transgressions be multiplied, what doest thou unto him?##note:x[<<Prov 8:36; Jer 7:19>>]
+@ ##If thou be righteous, what givest thou him? or what receiveth he of thine hand?##note:x[<<Job 22:2–3; Ps 16:2; Prov 9:12>>]
+@ Thy wickedness __may hurt__ a man as thou __art;__ and thy righteousness __may profit__ the son of man.
+
+@ By reason of the multitude of oppressions ##they make##note:x[<<Exod 2:23; Job 34:28>>] __the oppressed__ to cry: they cry out by reason of the arm of the mighty.
+@ But none saith, Where __is__ God my maker, ##who##note:x[<<Ps 42:8; 149:5; Acts 16:25>>] giveth songs in the night;
+@ ##Who teacheth us more than the beasts of the earth, and maketh us wiser than the fowls of heaven?##note:x[<<Job 32:8; Ps 94:12>>]
+@ ##There##note:x[<<Prov 1:28; John 9:31>>] they cry, but none giveth answer, because of the pride of evil men.
+@ Surely ##God##note:x[<<Prov 15:29; Isa 1:15; Jer 11:11>>] will not hear vanity, neither will the Almighty regard it.
+
+@ Although ##thou sayest##note:x[<<Job 9:11>>] thou shalt not see him, __yet__ judgment __is__ before him; therefore trust thou in him.
+@ But now, because __it is__ not __so__, ##he hath##note:tn[that is, God hath] visited in his anger; yet he knoweth __it__ not in great extremity&#58;note:tn[__he knoweth__: that is, Job knoweth]
+@ ##Therefore doth Job open his mouth in vain; he multiplieth words without knowledge.##note:x[<<Job 38:2>>]
+
+=== @36
+
+[discrete.pericope]
+==== Elihu Describes God’s Power
+
+@ Elihu also proceeded, and said,
+@ ##Suffer##note:x[<<Job 21:3>>] me a little, and I will shew thee that __I have__ yet to speak on God’s behalf.note:tn[__I have…__: Heb. there are yet words for God]
+@ I will ##fetch##note:x[<<Jas 1:17; 3:17>>] my knowledge from afar, and will ascribe righteousness to my Maker.
+@ For truly ##my##note:x[<<Prov 8:7–8>>] words __shall__ not __be__ false: he that is ##perfect##note:x[<<Job 37:16>>] in knowledge __is__ with thee.
+
+@ Behold, God __is__ ##mighty##note:x[<<Jer 10:12>>], and ##despiseth##note:x[<<Ps 22:24; 138:6>>] not __any: he is__ mighty in strength __and__ ##wisdom##note:tn[Heb. heart].
+@ He ##preserveth##note:x[<<2 Pet 2:9>>] not the life of the wicked: but ##giveth##note:x[<<Ps 72:12–14>>] right to the note:x[<<Ps 140:12>>]##poor##note:tn[or, afflicted].
+@ He ##withdraw##note:x[<<Ps 33:18; 34:15>>]eth not his eyes from the righteous: but ##with##note:x[<<1 Sam 2:8>>] kings __are they__ on the throne; yea, he doth establish them for ever, and they are exalted.
+@ And ##if##note:x[<<Ps 107:10>>] __they be__ bound in fetters, __and__ be holden in ##cords##note:x[<<Prov 5:22>>] of affliction;
+@ Then ##he##note:x[<<1 Cor 11:32>>] sheweth them their work, and their transgressions that they have exceeded.
+@ He ##openeth##note:x[<<Job 36:15>>] also their ear to discipline, and ##commandeth##note:x[<<Isa 55:6–7; Matt 3:8>>] that they return from iniquity.
+@ ##If##note:x[<<Deut 4:30; Jer 7:23; 26:13>>] they obey and serve __him__, they shall spend their days in prosperity, and their years in pleasures.
+@ But ##if##note:x[<<Isa 3:11; Rom 2:8–9>>] they obey not, they shall ##perish##note:tn[Heb. pass away] by the sword, and they shall ##die##note:x[<<Job 4:21>>] without knowledge.
+@ But the hypocrites in heart ##heap##note:x[<<Rom 2:5>>] up wrath: ##they##note:x[<<Job 27:8–10>>] cry not when he ##bindeth##note:x[<<Job 36:8>>] them.
+@ ##They die##note:x[<<Job 15:32; 22:16>>] in youth, and their life __is__ among the note:x[<<Deut 23:17>>]##unclean##note:tn[or, sodomites].note:tn[__They…__: Heb. Their soul dieth]
+
+@ He delivereth the ##poor##note:tn[or, afflicted] in his affliction, and ##openeth##note:x[<<Job 36:10>>] their ears in oppression.
+@ Even so would he have removed thee out of the strait __into__ ##a broad##note:x[<<Ps 18:19; 118:5>>] place, where __there is__ no straitness; and that which should be set on thy table __should be__ ##full##note:x[<<Ps 23:5>>] of fatness.note:tn[__that…__: Heb. the rest of thy table]
+@ But thou hast fulfilled the judgment of the wicked: judgment and justice take hold __on thee__.note:tn[__take…__: or, should uphold thee]
+@ ##Because##note:x[<<Rom 1:18; Eph 5:6>>] __there is__ wrath, __beware__ lest he take thee away with __his__ stroke: ##then##note:x[<<Job 33:24>>] a great ransom cannot deliver thee.note:tn[__deliver…__: Heb. turn thee aside]
+@ ##Will##note:x[<<Prov 11:4>>] he esteem thy riches? __no__, not gold, nor all the forces of strength.
+@ Desire not the night, when people are cut off in their place.
+@ Take heed, ##regard##note:x[<<Ps 66:18>>] not iniquity: for ##this##note:x[<<Heb 11:25; 1 Pet 3:17>>] hast thou chosen rather than affliction.
+@ Behold, ##God##note:x[<<1 Sam 2:7–8; Luke 1:52; Rom 13:1>>] exalteth by his power: who teacheth like him?
+@ ##Who hath##note:x[<<Isa 40:13–14; 1 Cor 2:16>>] enjoined him his way? or who can say, ##Thou##note:x[<<Job 8:3>>] hast wrought iniquity?
+
+@ Remember that thou magnify his work, which men behold.
+@ Every man may see it; man may behold __it__ afar off.
+@ Behold, ##God##note:x[<<Ps 145:3>>] __is__ great, and ##we##note:x[<<Job 11:7–9>>] know __him__ not, ##neither##note:x[<<Ps 90:2>>] can the number of his years be searched out.
+@ For he maketh small the drops of water: they pour down rain according to the vapour thereof:
+@ ##Which the clouds do drop __and__ distil upon man abundantly.##note:x[<<Prov 3:20>>]
+@ Also can __any__ understand ##the spreadings##note:x[<<Job 37:16>>] of the clouds, __or__ the noise of his tabernacle?
+@ Behold, he spreadeth his light upon it, and covereth the ##bottom##note:tn[Heb. roots] of the sea.
+@ note:x[<<Job 37:13>>]For by them judgeth he the people; ##he giveth##note:x[<<Ps 136:25; Acts 14:17>>] meat in abundance.
+@ With clouds he covereth the light; and commandeth it __not to shine__ by __the cloud__ that cometh betwixt.
+@ The noise thereof sheweth concerning it, the cattle also concerning the vapour.note:tn[__the vapour__: Heb. that which goeth up]
+
+=== @37
+
+[discrete.pericope]
+==== Elihu Proclaims God’s Majesty
+
+@ At this also my heart trembleth, and is moved out of his place.
+@ Hear attentively ##the noise##note:x[<<Job 36:33; 37:5>>] of his voice, and the sound __that__ goeth out of his mouth.note:tn[__Hear…__: Heb. Hear in hearing]
+@ ##He##note:x[<<Matt 24:27>>] directeth it under the whole heaven, and his note:x[<<Job 38:13; Isa 11:12>>]##lightning##note:tn[Heb. light] unto the ##ends##note:tn[Heb. wings] of the earth.
+@ After it a voice roareth: he thundereth with the voice of his excellency; and he will not stay them when his voice is heard.
+@ God thundereth marvellously with his voice; ##great##note:x[<<Job 5:9; 9:10; Rom 11:33>>] things doeth he, which we cannot comprehend.
+
+@ For ##he##note:x[<<Job 38:22>>] saith to the snow, Be thou __on__ the earth; ##likewise to the small##note:x[<<Job 36:27>>] rain, and to the great rain of his strength.note:tn[__likewise…__: Heb. and to the shower of rain, and to the showers of rain of his strength]
+@ He sealeth up the hand of every man; ##that##note:x[<<Ps 109:27; 111:2>>] all men may know his work.
+@ ##Then the beasts go into dens, and remain in their places.##note:x[<<Ps 104:22>>]
+@ Out of the note:x[<<Job 9:9>>]##south##note:tn[Heb. chamber] cometh the whirlwind: and cold out of the ##north##note:tn[Heb. scattering winds].
+@ ##By the breath of God frost is given: and the breadth of the waters is straitened.##note:x[<<Job 38:29–30; Ps 147:16–18>>]
+@ Also by watering ##he wearieth##note:x[<<Job 36:27–28>>] the thick cloud: he scattereth his bright cloud&#58;note:tn[__his…__: Heb. the cloud of his light]
+@ And it is turned round about by his counsels: ##that##note:x[<<Ps 148:8>>] they may do whatsoever he commandeth them upon the face of the world in the earth.
+@ He causeth it to come, ##whether##note:x[<<1 Sam 12:18–19>>] for ##correction##note:tn[Heb. a rod], or ##for his##note:x[<<Job 38:26–27>>] land, or ##for mercy##note:x[<<1 Kgs 18:45>>].
+
+@ Hearken unto this, O Job: ##stand##note:x[<<Exod 14:13>>] still, and ##consider##note:x[<<Ps 111:2; 145:10–12>>] the wondrous works of God.
+@ Dost thou know when God disposed them, and caused the light of his cloud to shine?
+@ Dost thou know the balancings of the clouds, the wondrous works of him which is ##perfect##note:x[<<Job 36:4>>] in knowledge?
+@ How thy garments __are__ warm, when he quieteth the earth by the south __wind__?
+@ Hast thou with him ##spread##note:x[<<Ps 104:2; Isa 44:24>>] out the sky, __which is__ strong, __and__ as a molten looking glass?
+@ Teach us what we shall say unto him; __for__ we cannot order __our speech__ by reason of darkness.
+@ Shall it be told him that I speak? if a man speak, surely he shall be swallowed up.
+
+@ And now __men__ see not the bright light which __is__ in the clouds: but the wind passeth, and cleanseth them.
+@ Fair weather cometh out of the north: ##with##note:x[<<Ps 104:1; Heb 12:29; Jude 1:25>>] God __is__ terrible majesty.note:tn[__Fair…__: Heb. Gold]
+@ __Touching__ the Almighty, ##we##note:x[<<Rom 11:33; 1 Tim 6:16>>] cannot find him out: __he is__ ##excellent##note:x[<<Job 36:5>>] in power, and in judgment, and in plenty of justice: he will not afflict.
+@ Men do therefore ##fear##note:x[<<Matt 10:28>>] him: ##he##note:x[<<1 Cor 1:26>>] respecteth not any __that are__ wise of heart.
+
+=== @38
+
+[discrete.pericope]
+==== The LORD Challenges Job
+
+@ ##Then the LORD answered Job out of the whirlwind, and said,##note:x[<<Exod 19:16–19; 1 Kgs 19:11; Job 37:1–2>>]
+@ ##Who __is__ this that darkeneth counsel by words without knowledge?##note:x[<<Job 35:16; 42:3; 1 Tim 1:7>>]
+@ ##Gird##note:x[<<Exod 12:11; Job 40:7; Jer 1:17>>] up now thy loins like a man; for I will demand of thee, and answer thou me.note:tn[__answer…__: Heb. make me know]
+
+@ ##Where##note:x[<<Prov 30:4>>] wast thou when ##I##note:x[<<Ps 104:5; Heb 1:10>>] laid the foundations of the earth? declare, if thou hast understanding.note:tn[__hast…__: Heb. knowest understanding]
+@ Who hath ##laid##note:x[<<Job 11:9; Isa 40:12>>] the measures thereof, if thou knowest? or ##who hath stretched##note:x[<<Zech 2:1–2>>] the line upon it?
+@ ##Whereupon##note:x[<<Job 26:7; Ps 93:1; 104:5>>] are the ##foundations##note:tn[Heb. sockets] thereof ##fastened##note:tn[Heb. made to sink?]? or who laid the corner stone thereof;
+@ When the morning stars sang together, and all ##the sons##note:x[<<Job 1:6; Rev 5:11>>] of God ##shouted##note:x[<<Ezra 3:11–12>>] for joy?
+@ Or ##__who__##note:x[<<Gen 1:9; Prov 8:29; Jer 5:22>>] shut up the sea with doors, when it brake forth, __as if__ it had issued out of the womb?
+@ When I made the cloud the garment thereof, and thick darkness a swaddlingband for it,
+@ And ##brake up for it my decreed __place__##note:x[<<Job 26:10; Ps 104:9; Jer 5:22>>], and set bars and doors,note:tn[__brake…__: or, established my decree upon it]
+@ And said, ##Hitherto##note:x[<<Ps 65:6–7; Prov 8:29>>] shalt thou come, ##but##note:x[<<Ps 89:9>>] no further: and here shall thy proud waves be stayed?note:tn[__thy…__: Heb. the pride of thy waves]
+
+@ Hast thou ##commanded##note:x[<<Gen 1:5; Ps 74:16; 148:3–5>>] the morning since thy days; __and__ caused the dayspring to know his place;
+@ That it might take hold of the note:x[<<Job 37:3>>]##ends##note:tn[Heb. wings] of the earth, that ##the wicked##note:x[<<Exod 14:27; Ps 104:35>>] might be shaken out of it?
+@ It is turned as clay __to__ the seal; and they stand ##as a##note:x[<<Ps 104:2, 6>>] garment.
+@ And ##from##note:x[<<Job 18:5>>] the wicked their light is withholden, and ##the high##note:x[<<Ps 10:15; 37:17>>] arm shall be broken.
+@ Hast thou entered into ##the springs##note:x[<<Ps 77:19; Prov 8:24>>] of the sea? or hast thou ##walked##note:x[<<Job 26:5–6>>] in the search of the depth?
+@ Have ##the gates##note:x[<<Ps 9:13; 107:18>>] of death been opened unto thee? or hast thou seen the doors of ##the shadow##note:x[<<Job 3:5>>] of death?
+@ ##Hast thou perceived the breadth of the earth? declare if thou knowest it all.##note:x[<<Ps 89:11–12; Jer 31:37; Rev 20:9>>]
+@ Where __is__ ##the way##note:x[<<Gen 1:3–4; Job 38:12–13>>] __where__ light dwelleth? and __as for__ ##darkness##note:x[<<Ezek 32:8>>], where __is__ the place thereof,
+@ That thou shouldest take it to the bound thereof, and that thou shouldest know the paths __to__ the house thereof?note:tn[__to the bound__: or, at, etc]
+@ ##Knowest thou __it__, because thou wast then born? or __because__ the number of thy days __is__ great?##note:x[<<Job 15:7>>]
+@ ##Hast thou entered into the treasures of the snow? or hast thou seen the treasures of the hail,##note:x[<<Job 6:16; 37:6; Ps 135:7>>]
+@ ##Which I have reserved against the time of trouble, against the day of battle and war?##note:x[<<Exod 9:18; Josh 10:11; Isa 30:30>>]
+@ ##By what way is the light parted, __which__ scattereth the east wind upon the earth?##note:x[<<Job 38:12–13>>]
+
+@ ##Who hath divided a watercourse for the overflowing of waters, or a way for the lightning of thunder;##note:x[<<Job 28:26>>]
+@ To cause it to rain on the earth, __where__ no man __is;__ ##__on__ the wilderness##note:x[<<Jer 14:22>>], wherein __there is__ no man;
+@ To satisfy the desolate and waste __ground;__ and to cause the bud of the tender herb to spring forth?
+@ ##Hath the##note:x[<<Jer 10:13; 14:22>>] rain a father? or who hath begotten the drops of ##dew##note:x[<<Prov 3:20>>]?
+@ ##Out of whose womb came the ice? and the hoary frost of heaven, who hath gendered it?##note:x[<<Job 37:10; Ps 147:16–17>>]
+@ The waters are hid as __with__ a stone, and ##the face##note:x[<<Job 37:10>>] of the deep is frozen.note:tn[__is…__: Heb. is taken]
+@ Canst thou bind the sweet influences of note:x[<<Job 9:9; Amos 5:8>>]##Pleiades##note:tn[or, the seven stars: Heb. Cimah], or loose the bands of ##Orion##note:tn[Heb. Cesil?]?
+@ Canst thou bring forth ##Mazzaroth##note:tn[or, the twelve signs] in his season? or canst thou ##guide##note:tn[Heb. guide them] Arcturus with his sons?
+@ Knowest thou ##the ordinances##note:x[<<Gen 1:16; 8:22; Jer 31:35–36>>] of heaven? canst thou set the dominion thereof in the earth?
+@ Canst thou lift up thy voice to the clouds, that abundance of waters may cover thee?
+@ Canst thou send lightnings, that they may go, and say unto thee, Here we __are__?note:tn[__Here…__: Heb. Behold us?]
+@ ##Who hath put##note:x[<<Job 32:8; Ps 51:6; Prov 2:6>>] wisdom in the inward parts? or who hath given understanding to the heart?
+@ Who can ##number##note:x[<<Ps 147:4>>] the clouds in wisdom? or who can ##stay##note:tn[Heb. cause to lie down] the bottles of heaven,
+@ When the dust groweth into hardness, and the clods cleave fast together?note:tn[__groweth…__: or, is turned into mire: Heb. is poured]
+@ ##Wilt##note:x[<<Ps 104:21>>] thou hunt the prey for the lion? or fill the appetite of the young lions,note:tn[__the appetite__: Heb. the life]
+@ When they couch in __their__ dens, __and__ abide in the covert to lie in wait?
+@ ##Who provideth for the raven his food? when his young ones cry unto God, they wander for lack of meat.##note:x[<<Ps 147:9; Matt 6:26; Luke 12:24>>]
+
+=== @39
+
+[discrete.pericope]
+==== The LORD Speaks of His Creation
+
+@ Knowest thou the time ##when##note:x[<<Ps 29:9>>] ##the wild##note:x[<<1 Sam 24:2; Ps 104:18>>] goats of the rock bring forth? __or__ canst thou mark when the hinds do calve?
+@ Canst thou number the months __that__ they fulfil? or knowest thou the time when they bring forth?
+@ They bow themselves, they bring forth their young ones, they cast out their sorrows.
+@ Their young ones are in good liking, they grow up with corn; they go forth, and return not unto them.
+@ Who hath sent out ##the wild##note:x[<<Job 6:5; 11:12; 24:5>>] ass free? or who hath loosed the bands of the wild ass?
+@ Whose house I have made the wilderness, and the ##barren land##note:x[<<Ps 107:34>>] his dwellings.note:tn[__barren…__: Heb. salt places]
+@ He scorneth the multitude of the city, neither regardeth he the crying of the driver.note:tn[__of the driver__: Heb. of the exactor]
+@ The range of the mountains __is__ his pasture, and he searcheth after every green thing.
+@ Will ##the##note:x[<<Num 23:22; Deut 33:17; Ps 92:10>>] unicorn be willing to serve thee, or abide by thy crib?
+@ Canst thou bind the unicorn with his band in the furrow? or will he harrow the valleys after thee?
+@ Wilt thou trust him, because his strength __is__ great? or wilt thou leave thy labour to him?
+@ Wilt thou believe him, that he will bring home thy seed, and gather __it into__ thy barn?
+
+@ __Gavest thou__ the goodly wings unto the peacocks? or wings and feathers unto the ostrich?note:tn[__wings and…__: or, the feathers of the stork and ostrich]
+@ Which leaveth her eggs in the earth, and warmeth them in dust,
+@ And forgetteth that the foot may crush them, or that the wild beast may break them.
+@ She is ##hardened##note:x[<<Lam 4:3>>] against her young ones, as though __they were__ not hers: her labour is in vain without fear;
+@ ##Because God hath deprived her of wisdom, neither hath he imparted to her understanding.##note:x[<<Job 35:11>>]
+@ What time she lifteth up herself on high, she scorneth the horse and his rider.
+
+@ Hast thou given the horse strength? hast thou clothed his neck with thunder?
+@ Canst thou make him afraid as a grasshopper? ##the glory##note:x[<<Jer 8:16>>] of his nostrils __is__ ##terrible##note:tn[Heb. terror].
+@ He paweth in the valley, and rejoiceth in __his__ strength: ##he goeth##note:x[<<Jer 8:6>>] on to meet the armed men.note:tn[__He paweth__: or, His feet dig]note:tn[__the armed…__: Heb. the armour]
+@ He mocketh at fear, and is not affrighted; neither turneth he back from the sword.
+@ The quiver rattleth against him, the glittering spear and the shield.
+@ He swalloweth the ground with fierceness and rage: neither believeth he that __it is__ the sound of the trumpet.
+@ He saith among the trumpets, Ha, ha; and he smelleth the battle afar off, the thunder of the captains, and the shouting.
+
+@ Doth the hawk fly by thy wisdom, __and__ stretch her wings toward the south?
+@ Doth the eagle mount up at thy command, and ##make##note:x[<<Jer 49:16; Obad 1:4>>] her nest on high?note:tn[__at…__: Heb. by thy mouth]
+@ She dwelleth and abideth on the rock, upon the crag of the rock, and the strong place.
+@ From thence she seeketh the prey, __and__ her eyes behold afar off.
+@ Her young ones also suck up blood: and ##where##note:x[<<Matt 24:28; Luke 17:37>>] the slain __are__, there __is__ she.
+
+=== @40
+
+[discrete.pericope]
+==== Job Humbles Himself before the LORD
+
+@ ##Moreover the LORD answered Job, and said,##note:x[<<Job 38:1>>]
+@ Shall he that contendeth with the Almighty ##instruct##note:x[<<Isa 40:14; 1 Cor 2:16>>] __him__? ##he that reproveth##note:x[<<Rom 11:34–36>>] God, let him answer it.
+
+@ ¶ Then Job answered the LORD, and said,
+@ Behold, I am vile; what shall I answer thee? ##I will##note:x[<<Job 21:5; 29:9; Prov 30:32>>] lay mine hand upon my mouth.
+@ Once have I spoken; but I will not answer: yea, ##twice##note:x[<<Job 33:14; Ps 62:11>>]; but I will proceed no further.
+
+[discrete.pericope]
+==== The LORD Challenges Job Again
+
+@ ¶ Then answered the LORD unto Job ##out##note:x[<<Job 38:1>>] of the whirlwind, and said,
+@ ##Gird##note:x[<<Job 38:3>>] up thy loins now like a man: ##I##note:x[<<Job 42:4>>] will demand of thee, and declare thou unto me.
+@ ##Wilt##note:x[<<Rom 3:4>>] thou also ##disannul##note:x[<<Isa 28:18>>] my judgment? ##wilt thou condemn##note:x[<<Job 32:2>>] me, that thou mayest be righteous?
+@ Hast thou an arm like God? or canst thou thunder with a voice like him?
+@ ##Deck##note:x[<<Ps 93:1>>] thyself now __with__ majesty and excellency; and array thyself with ##glory##note:x[<<Ps 149:4>>] and beauty.
+@ Cast abroad the rage of thy wrath: and ##behold##note:x[<<Isa 2:11–12, 17; Dan 4:37>>] every one __that is__ proud, and abase him.
+@ Look on every one __that is__ proud, __and__ bring him low; and tread down the wicked in their place.
+@ ##Hide##note:x[<<Isa 2:10>>] them in the dust together; __and__ bind their faces in secret.
+@ Then will I also confess unto thee that thine own right hand can save thee.
+
+@ ¶ Behold now ##behemoth##note:tn[probably an extinct animal of some kind], which I made with thee; he eateth grass as an ox.
+@ Lo now, his strength __is__ in his loins, and his force __is__ in the navel of his belly.
+@ He moveth his tail like a cedar: the sinews of his stones are wrapped together.note:tn[__He…__: or, He setteth up]
+@ His bones __are as__ strong pieces of brass; his bones __are__ like bars of iron.
+@ He __is__ the chief of the ways of God: he that made him can make his sword to approach __unto him__.
+@ Surely the mountains bring him forth food, ##where##note:x[<<Ps 104:14, 26>>] all the beasts of the field play.
+@ He lieth under the shady trees, in the covert of the reed, and fens.
+@ The shady trees cover him __with__ their shadow; the willows of the brook compass him about.
+@ Behold, he drinketh up a river, __and__ hasteth not: he trusteth that he can draw up Jordan into his mouth.note:tn[__he drinketh up__: Heb. he oppresseth]
+@ He taketh it with his eyes: __his__ nose pierceth through snares.note:tn[__He…__: or, Will any take him in his sight, or, bore his nose with a gin?]
+
+=== @41
+
+[discrete.pericope]
+==== The LORD’s Power Shown in Leviathan
+
+@ Canst thou draw out note:x[<<Job 3:8; Ps 74:14; 104:26>>]##leviathan##note:tn[probably an extinct animal of some kind] with an hook? or his tongue with a cord __which__ thou lettest down?note:tn[__which…__: Heb. which thou drownest?]
+@ ##Canst thou put an hook into his nose? or bore his jaw through with a thorn?##note:x[<<Isa 37:29>>]
+@ Will he make many supplications unto thee? will he speak soft __words__ unto thee?
+@ Will he make a covenant with thee? wilt thou take him for ##a servant##note:x[<<Exod 21:6>>] for ever?
+@ Wilt thou play with him as __with__ a bird? or wilt thou bind him for thy maidens?
+@ Shall the companions make a banquet of him? shall they part him among the merchants?
+@ Canst thou fill his skin with barbed irons? or his head with fish spears?
+@ Lay thine hand upon him, remember the battle, do no more.
+@ Behold, the hope of him is in vain: shall not __one__ be cast down even at the sight of him?
+@ None __is so__ fierce that dare stir him up: who then is able to stand before me?
+
+@ ##Who##note:x[<<Rom 11:35>>] hath prevented me, that I should repay __him?__ ##__whatsoever__##note:x[<<1 Chr 29:11–14; Ps 24:1>>] __is__ under the whole heaven is mine.
+@ I will not conceal his parts, nor his power, nor his comely proportion.
+@ Who can discover the face of his garment? __or__ who can come __to him__ ##with##note:tn[or, within] his double bridle?
+@ Who can open the doors of his face? his teeth __are__ terrible round about.
+@ __His__ ##scales##note:tn[Heb. strong pieces of shields] __are his__ pride, shut up together __as with__ a close seal.
+@ One is so near to another, that no air can come between them.
+@ They are joined one to another, they stick together, that they cannot be sundered.
+@ note:x[<<Job 3:9>>]By his neesings a light doth shine, and his eyes __are__ like the eyelids of the morning.
+@ Out of his mouth go burning lamps, __and__ sparks of fire leap out.
+@ Out of his nostrils goeth smoke, as __out__ of a seething pot or caldron.
+@ ##His breath kindleth coals, and a flame goeth out of his mouth.##note:x[<<Ps 18:8>>]
+@ In his neck remaineth strength, and sorrow is turned into joy before him.note:tn[__is turned into joy__: Heb. rejoiceth]
+@ The ##flakes##note:tn[Heb. fallings] of his flesh are joined together: they are firm in themselves; they cannot be moved.
+@ His heart is as firm as a stone; yea, as hard as a piece of the nether __millstone__.
+@ When he raiseth up himself, the mighty are afraid: by reason of breakings they purify themselves.
+@ The sword of him that layeth at him cannot hold: the spear, the dart, nor the ##habergeon##note:tn[or, breastplate].
+@ He esteemeth iron as straw, __and__ brass as rotten wood.
+@ The arrow cannot make him flee: slingstones are turned with him into stubble.
+@ Darts are counted as stubble: he laugheth at the shaking of a spear.
+@ Sharp stones __are__ under him: he spreadeth sharp pointed things upon the mire.note:tn[__Sharp stones__: Heb. Sharp pieces of potsherd]
+@ He maketh the deep to boil like a pot: he maketh the sea like a pot of ointment.
+@ He maketh a path to shine after him; __one__ would think the deep __to be__ hoary.
+@ ##Upon##note:x[<<Job 40:19>>] earth there is not his like, who is made without fear.note:tn[__is made without fear__: or, behave themselves without fear]
+@ He beholdeth all high __things:__ ##he __is__##note:x[<<Ps 73:6; Ezek 29:3>>] a king over all the children of pride.
+
+=== @42
+
+[discrete.pericope]
+==== Job Submits Himself to the LORD
+
+@ Then Job answered the LORD, and said,
+@ I know that ##thou##note:x[<<Gen 18:14; Matt 19:26; Mark 10:27>>] canst do every __thing__, and __that__ no thought can be withholden from thee.note:tn[__no thought can be…__: or, no thought of thine can be hindered]
+@ ##Who##note:x[<<Job 38:2>>] __is__ he that hideth counsel without knowledge? therefore have I uttered that I understood not; ##things##note:x[<<Ps 131:1; 139:6>>] too wonderful for me, which I knew not.
+@ Hear, I beseech thee, and ##I will##note:x[<<Job 38:3; 40:7>>] speak: I will demand of thee, and declare thou unto me.
+@ I have ##heard##note:x[<<Rom 10:17>>] of thee by the hearing of the ear: but now ##mine##note:x[<<Isa 6:1; John 12:45>>] eye seeth thee.
+@ Wherefore ##I##note:x[<<Ezra 9:6; 1 Tim 1:13–16; Jas 4:7–10>>] abhor __myself__, and repent in dust and ashes.
+
+[discrete.pericope]
+==== The LORD Rebukes Job’s Friends
+
+@ ¶ And it was __so__, that after the LORD had spoken these words unto Job, the LORD said to Eliphaz the Temanite, ##My##note:x[<<Job 32:2–3, 5>>] wrath is kindled against thee, and against thy two friends: for ##ye have##note:x[<<Job 11:5–6>>] not spoken of me __the thing that is__ right, as my servant Job __hath__.
+@ Therefore take unto you now ##seven bullocks##note:x[<<Num 23:1; 1 Chr 15:26>>] and seven rams, and go to my servant Job, and offer up for yourselves a burnt offering; and ##my servant Job shall##note:x[<<Gen 20:17>>] pray for you: for ##him##note:tn[Heb. his face, or, person] will I accept: lest I deal with you __after your__ folly, in that ye have not spoken of me __the thing which is__ right, like my servant Job.
+@ So Eliphaz the Temanite and Bildad the Shuhite __and__ Zophar the Naamathite went, and ##did##note:x[<<Matt 7:24; Acts 9:6; Heb 11:8>>] according as the LORD commanded them: the LORD also accepted ##Job##note:tn[Heb. the face of Job].
+
+[discrete.pericope]
+==== The LORD Blesses Job
+
+@ And ##the LORD##note:x[<<Job 8:6–7; Prov 22:4>>] ##turned##note:x[<<Deut 30:3>>] the captivity of Job, when he prayed for his friends: also the LORD gave Job twice as much as he had before.note:tn[__gave…__: Heb. added all that had been to Job unto the double]
+@ Then came there unto him ##all his brethren##note:x[<<Job 19:13–14; Prov 16:7>>], and all his sisters, and all they that had been of his acquaintance before, and did eat bread with him in his house: and ##they bemoaned##note:x[<<Job 2:11>>] him, and comforted him over all the evil that the LORD had brought upon him: every man also gave him a piece of money, and every one an earring of gold.
+@ ##So##note:x[<<Job 8:7; Prov 10:22; Eccl 7:8>>] the LORD blessed the latter end of Job more than his beginning: for he had fourteen thousand sheep, and six thousand camels, and a thousand yoke of oxen, and a thousand she asses.
+@ ##He had also seven sons and three daughters.##note:x[<<Job 1:2; Ps 107:41; 127:3>>]
+@ And he called the name of the first, Jemima; and the name of the second, Kezia; and the name of the third, Keren-happuch.
+@ And in all the land were ##no##note:x[<<Ps 144:12; Acts 7:20>>] women found __so__ fair as the daughters of Job: and their father ##gave##note:x[<<Num 27:7>>] them inheritance among their brethren.
+@ After this lived Job an hundred and forty years, ##and saw##note:x[<<Gen 50:23; Ps 128:6; Prov 17:6>>] his sons, and his sons’ sons, __even__ four generations.
+@ ##So Job died, __being__ old and full of days.##note:x[<<Gen 15:15; 25:8; Job 5:26>>]

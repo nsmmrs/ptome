@@ -1,0 +1,1026 @@
+== @JOS
+
+[.book-title]
+The Book of Joshua
+
+=== @1
+
+[#map-canaan.map.wide,reftext="Map 3"]
+.Map 3. Canaan in the Time of Joshua and the Judges (Joshua; Judges)
+image::maps/03-canaan.svg[Canaan in the Time of Joshua and the Judges,pdfwidth=100%,scaledwidth=100%]
+
+[discrete.pericope]
+==== God Instructs Joshua
+
+[.parallel]
+(<<Deuteronomy 11:8–17>>)
+
+@ Now after the death of Moses the servant of the LORD it came to pass, that the LORD spake unto ##Joshua##note:x[<<Deut 1:38; 31:23; 34:9>>] the son of Nun, Moses’ minister, saying,
+@ Moses my servant is dead; now therefore ##arise##note:x[<<Num 27:16–21; Deut 3:28; 31:7>>], go over this Jordan, thou, and all this people, unto the land which I do give to them, __even__ to the children of Israel.
+@ ##Every place that the sole of your foot shall tread upon, that have I given unto you, as I said unto Moses.##note:x[<<Deut 11:24; Josh 14:9; Titus 1:2>>]
+@ ##From the wilderness##note:x[<<Gen 15:18–21; Exod 23:31; Num 34:2–18>>] and this Lebanon even unto the great river, the river Euphrates, all the land of the Hittites, and unto the great sea toward the going down of the sun, shall be your coast.
+@ ##There shall##note:x[<<Rom 8:31>>] not any man be able to stand before thee all the days of thy life: ##as I was##note:x[<<Matt 28:20>>] with Moses, __so__ I will be with thee: ##I will not##note:x[<<Deut 31:6–8>>] fail thee, nor forsake thee.
+@ ##Be strong##note:x[<<Josh 1:7; Dan 10:19; Eph 6:10>>] and of a good courage: for unto this people shalt thou divide for an inheritance the land, which I sware unto their fathers to give them.note:tn[__unto this…__: or, thou shalt cause this people to inherit the land, etc]
+@ Only be thou strong and very courageous, ##that##note:x[<<1 Chr 22:13>>] thou mayest observe to do according to all the law, ##which Moses##note:x[<<Josh 11:15>>] my servant commanded thee: ##turn not##note:x[<<Deut 5:32>>] from it __to__ the right hand or __to__ the left, that thou mayest ##prosper##note:tn[or, do wisely] whithersoever thou goest.
+@ This book of the law shall not depart out of thy mouth; but ##thou shalt##note:x[<<Ps 19:14; 119:15; Col 3:16>>] meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.note:tn[__have…__: or, do wisely]
+@ Have not I commanded thee? Be strong and of a good courage; ##be not##note:x[<<Gen 28:15; Ps 27:1–2; Jer 1:7–8>>] afraid, neither be thou dismayed: for the LORD thy God __is__ with thee whithersoever thou goest.
+
+[discrete.pericope]
+==== Joshua Takes Charge
+
+@ ¶ Then Joshua commanded the officers of the people, saying,
+@ Pass through the host, and command the people, saying, Prepare you victuals; for within ##three days##note:x[<<2 Kgs 20:5; Hos 6:2>>] ##ye shall##note:x[<<Deut 9:1>>] pass over this Jordan, to go in to possess the land, which the LORD your God giveth you to possess it.
+
+@ ¶ And to the Reubenites, and to the Gadites, and to half the tribe of Manasseh, spake Joshua, saying,
+@ ##Remember##note:x[<<Num 32:20–28; Deut 3:18; Josh 22:1–4>>] the word which Moses the servant of the LORD commanded you, saying, The LORD your God hath given you rest, and hath given you this land.
+@ Your wives, your little ones, and your cattle, shall remain in the land which Moses gave you on this side Jordan; but ye shall pass before your brethren ##armed##note:tn[Heb. marshalled by five], all the mighty men of valour, and help them;
+@ ##Until##note:x[<<Phil 2:4>>] the LORD have given your brethren rest, as __he hath given__ you, and they also have possessed the land which the LORD your God giveth them: then ye shall return unto the land of your possession, and enjoy it, which Moses the LORD’s servant gave you on this side Jordan toward the sunrising.
+
+@ ¶ ##And they answered Joshua, saying, All that thou commandest us we will do, and whithersoever thou sendest us, we will go.##note:x[<<Titus 3:1>>]
+@ According as we hearkened unto Moses in all things, so will we hearken unto thee: ##only the LORD##note:x[<<Josh 1:5>>] thy God be with thee, as he was with Moses.
+@ Whosoever __he be__ that doth rebel against thy commandment, and will not hearken unto thy words in all that thou commandest him, he shall be put to death: ##only be##note:x[<<Josh 1:9; Ezra 10:4; Eph 6:10>>] strong and of a good courage.
+
+=== @2
+
+[discrete.pericope]
+==== Rahab Welcomes the Spies
+
+[.parallel]
+(<<Hebrews 11:30–31>>)
+
+@ note:x[<<Heb 11:31; Jas 2:25>>]note:x[<<Matt 1:5>>]And Joshua the son of Nun ##sent##note:tn[or, had sent] out of Shittim two men to spy secretly, saying, Go view the land, even Jericho. And they went, and came into an harlot’s house, named Rahab, and ##lodged##note:tn[Heb. lay] there.
+@ And it was told the king of Jericho, saying, Behold, there came men in hither to night of the children of Israel to search out the country.
+@ And the king of Jericho sent unto Rahab, saying, Bring forth the men that are come to thee, which are entered into thine house: for they be come to search out all the country.
+@ And the woman took the two men, and hid them, and said thus, There came men unto me, but I wist not whence they __were:__
+@ And it came to pass __about the time__ of shutting of the gate, when it was dark, that the men went out: whither the men went I wot not: pursue after them quickly; for ye shall overtake them.
+@ But she had brought them up to the roof of the house, and ##hid them##note:x[<<2 Sam 17:19; Col 3:3; Heb 11:23>>] with the stalks of flax, which she had laid in order upon the roof.
+@ And the men pursued after them the way to Jordan unto the fords: and as soon as they which pursued after them were gone out, they shut the gate.
+
+[discrete.pericope]
+==== The Promise to Rahab
+
+@ ¶ And before they were laid down, she came up unto them upon the roof;
+@ And she said unto the men, ##I know##note:x[<<Eccl 8:12>>] that the LORD hath given you the land, and that ##your terror##note:x[<<Exod 23:27; Deut 2:25>>] is fallen upon us, and that all the inhabitants of the land ##faint##note:tn[Heb. melt] because of you.
+@ ##For we##note:x[<<Exod 14:21–31>>] have heard how the LORD dried up the water of the Red sea for you, when ye came out of Egypt; and ##what ye did##note:x[<<Num 21:21–35>>] unto the two kings of the Amorites, that __were__ on the other side Jordan, Sihon and Og, whom ye utterly destroyed.
+@ And as soon as we had heard __these things__, ##our hearts##note:x[<<Josh 5:1; 7:5>>] did melt, neither did there remain any more courage in any man, because of you: ##for the LORD##note:x[<<Deut 4:39>>] your God, he __is__ God in heaven above, and in earth beneath.note:tn[__did there…__: Heb. rose up]
+@ Now therefore, I pray you, swear unto me by the LORD, since I have shewed you kindness, that ye will also shew kindness unto my father’s house, and ##give me##note:x[<<Josh 2:18>>] a true token:
+@ And __that__ ye will save alive my father, and my mother, and my brethren, and my sisters, and all that they have, and deliver our lives from death.
+@ And the men answered her, Our life for yours, if ye utter not this our business. And it shall be, ##when the LORD##note:x[<<Judg 1:24–25; Matt 5:7>>] hath given us the land, that we will deal kindly and truly with thee.note:tn[__for…__: Heb. instead of you to die]
+@ Then ##she let them##note:x[<<Acts 9:25>>] down by a cord through the window: for her house __was__ upon the town wall, and she dwelt upon the wall.
+@ And she said unto them, Get you to the mountain, lest the pursuers meet you; and hide yourselves there three days, until the pursuers be returned: and afterward may ye go your way.
+@ ##And the men said unto her, We __will be__ blameless of this thine oath which thou hast made us swear.##note:x[<<Num 30:2; 2 Sam 21:7>>]
+@ Behold, __when__ we come into the land, thou shalt bind this line of ##scarlet thread##note:x[<<Lev 14:4; Josh 2:21>>] in the window which thou didst let us down by: and thou shalt ##bring##note:tn[Heb. gather] ##thy father##note:x[<<Josh 6:23>>], and thy mother, and thy brethren, and all thy father’s household, home unto thee.
+@ And it shall be, __that__ ##whosoever##note:x[<<Acts 27:31>>] shall go out of the doors of thy house into the street, his blood __shall be__ upon his head, and we __will be__ guiltless: and whosoever shall be with thee in the house, his blood __shall be__ on our head, if __any__ hand be upon him.
+@ ##And if thou##note:x[<<Prov 11:13>>] utter this our business, then we will be quit of thine oath which thou hast made us to swear.
+@ And she said, According unto your words, so __be__ it. And she sent them away, and they departed: and she bound the scarlet line in the window.
+
+@ And they went, and came unto the mountain, and abode there three days, until the pursuers were returned: and the pursuers sought __them__ throughout all the way, but found __them__ not.
+
+@ ¶ So the two men returned, and descended from the mountain, and passed over, and came to Joshua the son of Nun, and told him all __things__ that befell them:
+@ And they said unto Joshua, ##Truly the LORD##note:x[<<Exod 23:31>>] hath delivered into our hands all the land; for even all the inhabitants of the country do ##faint##note:tn[Heb. melt] because of us.
+
+=== @3
+
+[discrete.pericope]
+==== Crossing the Jordan
+
+@ And Joshua rose early in the morning; and they removed from ##Shittim##note:x[<<Josh 2:1>>], and came to Jordan, he and all the children of Israel, and lodged there before they passed over.
+@ And it came to pass after three days, that the officers went through the host;
+@ And they commanded the people, saying, When ye see the ark of the covenant of the LORD your God, and ##the priests##note:x[<<Deut 31:9; 2 Sam 6:13>>] the Levites bearing it, then ye shall remove from your place, and go after it.
+@ Yet there shall be ##a space##note:x[<<Ps 89:7>>] between you and it, about two thousand cubits by measure: come not near unto it, that ye may know the way by which ye must go: for ye have not passed __this__ way ##heretofore##note:tn[Heb. since yesterday, and the third day].
+@ And Joshua said unto the people, ##Sanctify##note:x[<<Lev 20:7; Josh 7:13; 1 Sam 16:5>>] yourselves: for to morrow the LORD will do wonders among you.
+@ And Joshua spake unto the priests, saying, Take up the ark of the covenant, and pass over before the people. And they took up the ark of the covenant, and went before the people.
+
+@ ¶ And the LORD said unto Joshua, This day will I begin to ##magnify thee##note:x[<<Josh 4:14; 1 Chr 29:25>>] in the sight of all Israel, that they may know ##that, as I was##note:x[<<Josh 1:5>>] with Moses, __so__ I will be with thee.
+@ And thou shalt ##command##note:x[<<Josh 3:3>>] the priests that bear the ark of the covenant, saying, When ye are come to the brink of the water of Jordan, ##ye shall stand##note:x[<<Josh 3:17>>] still in Jordan.
+
+@ ¶ And Joshua said unto the children of Israel, Come hither, and ##hear the words##note:x[<<Deut 4:1>>] of the LORD your God.
+@ And Joshua said, Hereby ye shall know that the living God __is__ among you, and __that__ he will without fail ##drive out from##note:x[<<Exod 33:2; Deut 7:1; Ps 44:2–3>>] before you the Canaanites, and the Hittites, and the Hivites, and the Perizzites, and the Girgashites, and the Amorites, and the Jebusites.
+@ Behold, the ark of the covenant of ##the Lord##note:x[<<Ps 24:1; Zech 4:14; 6:5>>] of all the earth passeth over before you into Jordan.
+@ ##Now therefore take you twelve men out of the tribes of Israel, out of every tribe a man.##note:x[<<Josh 4:2>>]
+@ And it shall come to pass, as soon as the soles of the feet of the priests that bear the ark of the LORD, the Lord of all the earth, shall rest in the waters of Jordan, __that__ the waters of Jordan shall be cut off __from__ the waters that come down from above; and they shall ##stand upon##note:x[<<Exod 15:8; Ps 78:13>>] an heap.
+
+@ ¶ And it came to pass, when the people removed from their tents, to pass over Jordan, and the priests ##bearing the ark##note:x[<<Acts 7:44–45>>] of the covenant before the people;
+@ And as they that bare the ark were come unto Jordan, and ##the feet##note:x[<<Josh 3:13>>] of the priests that bare the ark were dipped in the brim of the water, (for ##Jordan overfloweth##note:x[<<Josh 4:18; 1 Chr 12:15>>] all his banks all the time of harvest,)
+@ note:x[<<1 Kgs 7:46>>]That the waters which came down from above stood __and__ ##rose up##note:x[<<Josh 3:13>>] upon an heap very far from the city Adam, that __is__ beside ##Zaretan##note:x[<<1 Kgs 4:12>>]: and those that came down toward the sea of the plain, __even__ the salt sea, failed, __and__ were cut off: and the people passed over right against Jericho.
+@ And the priests that bare the ark of the covenant of the LORD stood firm on dry ground in the midst of Jordan, and ##all the Israelites##note:x[<<Exod 14:22, 29; Ps 66:6>>] passed over on dry ground, until all the people were passed clean over Jordan.
+
+=== @4
+
+[discrete.pericope]
+==== Twelve Stones from the Jordan
+
+@ And it came to pass, when all the people ##were clean passed##note:x[<<Deut 27:2>>] over Jordan, that the LORD spake unto Joshua, saying,
+@ Take you ##twelve men##note:x[<<Josh 3:12>>] out of the people, out of every tribe a man,
+@ note:x[<<Josh 3:13>>]And command ye them, saying, Take you hence out of the midst of Jordan, out of the place where the priests’ feet stood firm, twelve stones, and ye shall carry them over with you, and ##leave them##note:x[<<Josh 4:8, 19–20>>] in the lodging place, where ye shall lodge this night.
+@ Then Joshua called the twelve men, whom he had prepared of the children of Israel, out of every tribe a man:
+@ And Joshua said unto them, Pass over before the ark of the LORD your God into the midst of Jordan, and take ye up every man of you a stone upon his shoulder, according unto the number of the tribes of the children of Israel:
+@ That this may be a sign among you, __that__ ##when your##note:x[<<Exod 13:14; Josh 4:21; Ps 44:1>>] children ask __their fathers__ in time to come, saying, What __mean__ ye by these stones?note:tn[__in time…__: Heb. to morrow]
+@ Then ye shall answer them, That the waters of Jordan were cut off before the ark of the covenant of the LORD; when it passed over Jordan, the waters of Jordan were cut off: and these stones shall be for a ##memorial##note:x[<<Exod 12:14; 28:12; Num 16:40>>] unto the children of Israel for ever.
+@ And the children of Israel did so as Joshua commanded, and took up twelve stones out of the midst of Jordan, as the LORD spake unto Joshua, according to the number of the tribes of the children of Israel, and carried them over with them unto the place where they lodged, and laid them down there.
+@ And Joshua set up twelve stones in the midst of Jordan, in the place where the feet of the priests which bare the ark of the covenant stood: and they are there unto this day.
+
+@ ¶ For the priests which bare the ark ##stood in the midst##note:x[<<Josh 3:13>>] of Jordan, until every thing was finished that the LORD commanded Joshua to speak unto the people, according to all that Moses commanded Joshua: and the people hasted and passed over.
+@ And it came to pass, when all the people were clean passed over, that the ark of the LORD passed over, and the priests, in the presence of the people.
+@ And the children of Reuben, and the children of Gad, and half the tribe of Manasseh, passed over armed before the children of Israel, as Moses spake unto them:
+@ About forty thousand ##prepared##note:tn[or, ready armed] for war passed over before the LORD unto battle, to the plains of Jericho.
+
+@ ¶ On that day the LORD ##magnified##note:x[<<Josh 3:7>>] Joshua in the sight of all Israel; and ##they feared him##note:x[<<1 Kgs 3:28; 2 Chr 30:12>>], as they feared Moses, all the days of his life.
+@ And the LORD spake unto Joshua, saying,
+@ Command the priests that bear the ark of the testimony, that they come up out of Jordan.
+@ Joshua therefore commanded the priests, saying, ##Come ye up##note:x[<<Gen 8:16–18>>] out of Jordan.
+@ And it came to pass, when the priests that bare the ark of the covenant of the LORD were come up out of the midst of Jordan, __and__ ##the soles##note:x[<<Josh 3:15>>] of the priests’ feet were lifted up unto the dry land, that the waters of Jordan returned unto their place, note:x[<<Josh 3:15>>]and ##flowed##note:tn[Heb. went] over all his banks, as __they did__ before.note:tn[__lifted…__: Heb. plucked up]
+
+[discrete.pericope]
+==== The Camp at Gilgal
+
+@ ¶ And the people came up out of Jordan on the tenth __day__ of the first month, and encamped in ##Gilgal##note:x[<<Josh 5:9>>], in the east border of Jericho.
+
+@ ##And those twelve stones, which they took out of Jordan, did Joshua pitch in Gilgal.##note:x[<<Josh 4:3, 8>>]
+@ And he spake unto the children of Israel, saying, ##When your##note:x[<<Josh 4:6; Ps 145:4–7>>] children shall ask their fathers in time to come, saying, What __mean__ these stones?note:tn[__in time…__: Heb. to morrow]
+@ ##Then ye shall let your children know, saying, Israel came over this Jordan on dry land.##note:x[<<Josh 3:17>>]
+@ For the LORD your God dried up the waters of Jordan from before you, until ye were passed over, as the LORD your God did to the Red sea, ##which he dried##note:x[<<Exod 14:21; Isa 43:16; 63:12–14>>] up from before us, until we were gone over:
+@ That ##all the people##note:x[<<1 Kgs 8:42–43; Ps 106:8>>] of the earth might know the hand of the LORD, ##that it __is__##note:x[<<Ps 89:13>>] mighty: that ye might fear the LORD your God for ever.note:tn[__for ever__: Heb. all days]
+
+=== @5
+
+[discrete.pericope]
+==== The Circumcision and Passover at Gilgal
+
+@ And it came to pass, when all the kings of the Amorites, which __were__ on the side of Jordan westward, and all the kings of the Canaanites, ##which __were__ by##note:x[<<Num 13:29>>] the sea, ##heard##note:x[<<Josh 2:9–11>>] that the LORD had dried up the waters of Jordan from before the children of Israel, until we were passed over, that their heart melted, neither was there spirit in them any more, because of the children of Israel.
+
+@ ¶ At that time the LORD said unto Joshua, Make thee sharp knives, and ##circumcise##note:x[<<Gen 17:10–14; Deut 10:16; 30:6>>] again the children of Israel the second time.note:tn[__sharp…__: or, knives of flints]
+@ And Joshua made him sharp knives, and circumcised the children of Israel at the hill of the foreskins.note:tn[__sharp…__: or, knives of flints]note:tn[__the hill…__: or, Gibeah-haaraloth]
+@ And this __is__ the cause why Joshua did circumcise: All the people that came out of Egypt, __that were__ males, __even__ all the men of war, died in the wilderness by the way, after they came out of Egypt.
+@ Now all the people that came out were circumcised: but all the people __that were__ born in the wilderness by the way as they came forth out of Egypt, __them__ they had not circumcised.
+@ For the children of Israel ##walked##note:x[<<Deut 2:14>>] forty years in the wilderness, till all the people __that were__ men of war, which came out of Egypt, were consumed, because they obeyed not the voice of the LORD: unto whom the LORD ##sware that##note:x[<<Num 14:23; Heb 3:11>>] he would not shew them the land, which the LORD sware unto their fathers that he would give us, a land that floweth with milk and honey.
+@ And their children, __whom__ he raised up in their stead, them Joshua circumcised: for they were uncircumcised, because they had not circumcised them by the way.
+@ And it came to pass, when they had done circumcising all the people, that they abode in their places in the camp, till they were whole.note:tn[__they had…__: Heb. the people had made an end to be circumcised]
+@ And the LORD said unto Joshua, This day have ##I rolled away##note:x[<<Gen 34:14; 1 Sam 17:26>>] the reproach of Egypt from off you. Wherefore the name of the place is called note:x[<<Josh 4:19>>]##Gilgal##note:tn[that is Rolling] unto this day.
+
+@ ¶ And the children of Israel encamped in Gilgal, and kept the passover on the fourteenth day of the month at even in the plains of Jericho.
+@ And they did eat of the old corn of the land on the morrow after the passover, unleavened cakes, and parched __corn__ in the selfsame day.
+
+@ ¶ And ##the manna##note:x[<<Exod 16:35; Neh 9:20–21; Rev 7:16–17>>] ceased on the morrow after they had eaten of the old corn of the land; neither had the children of Israel manna any more; but they did eat of the fruit of the land of Canaan that year.
+
+[discrete.pericope]
+==== The Commander of the LORD’s Army
+
+@ ¶ And it came to pass, when Joshua was by Jericho, that he lifted up his eyes and looked, and, behold, there stood ##a man##note:x[<<Gen 18:2>>] over against him with ##his sword##note:x[<<Num 22:23; 1 Chr 21:16–17>>] drawn in his hand: and Joshua went unto him, and said unto him, __Art__ thou for us, or for our adversaries?
+@ And he said, Nay; note:x[<<Exod 23:20–22; Isa 55:4>>]but __as__ ##captain##note:tn[or, prince] of the host of the LORD am I now come. And Joshua ##fell on his##note:x[<<Gen 17:3>>] face to the earth, and did worship, and said unto him, What saith my lord unto his servant?
+@ And the captain of the LORD’s host said unto Joshua, ##Loose##note:x[<<Exod 3:5; Acts 7:32–33>>] thy shoe from off thy foot; for the place whereon thou standest __is__ holy. And Joshua did so.
+
+=== @6
+
+[discrete.pericope]
+==== The Walls of Jericho
+
+@ Now Jericho was straitly shut up ##because##note:x[<<Josh 2:9–14, 24; Ps 127:1>>] of the children of Israel: none went out, and none came in.note:tn[__was…__: Heb. did shut up, and was shut up]
+@ And the LORD said unto Joshua, ##See, I have##note:x[<<Josh 2:24; 8:1>>] given into thine hand Jericho, and ##the king##note:x[<<Deut 7:24>>] thereof, __and__ the mighty men of valour.
+@ And ##ye shall##note:x[<<Num 14:9; 2 Cor 4:7>>] compass the city, all __ye__ men of war, __and__ go round about the city once. Thus shalt thou do six days.
+@ note:x[<<Judg 7:15–22; 2 Chr 20:17>>]And seven priests shall bear before the ark seven trumpets of rams’ horns: and the seventh day ye shall compass the city ##seven times##note:x[<<Rev 16:1>>], and the priests shall blow with the trumpets.
+@ And it shall come to pass, that when they ##make a long##note:x[<<Exod 19:19>>] __blast__ with the ram’s horn, __and__ when ye hear the sound of the trumpet, all the people shall shout with a great shout; ##and the wall##note:x[<<2 Cor 10:4–5; Heb 11:30>>] of the city shall fall down ##flat##note:tn[Heb. under it], and the people shall ascend up every man straight before him.
+
+@ ¶ And Joshua the son of Nun called the priests, and said unto them, Take up the ark of the covenant, and let seven priests bear seven trumpets of rams’ horns before the ark of the LORD.
+@ And he said unto the people, Pass on, and compass the city, and let him ##that is armed##note:x[<<Josh 4:13>>] pass on before the ark of the LORD.
+
+@ ¶ And it came to pass, when Joshua had spoken unto the people, that the seven priests bearing the seven trumpets of rams’ horns passed on before the LORD, and blew with the trumpets: and the ark of the covenant of the LORD followed them.
+
+@ ¶ And the armed men went before the priests that blew with the trumpets, note:x[<<Num 10:25; Josh 6:13; Isa 58:8>>]and the ##rereward##note:tn[Heb. gathering host] came after the ark, __the priests__ going on, and blowing with the trumpets.
+@ And Joshua had commanded the people, saying, Ye shall not shout, nor make ##any noise with your voice##note:x[<<Isa 42:2; Matt 12:19>>], neither shall __any__ word proceed out of your mouth, ##until the day##note:x[<<Luke 24:49>>] I bid you shout; then shall ye shout.note:tn[__any noise…__: Heb. your voice to be heard]
+@ So the ark of the LORD compassed the city, going about __it__ once: and they came into the camp, and lodged in the camp.
+
+@ ¶ And ##Joshua rose##note:x[<<Josh 3:1>>] early in the morning, and ##the priests##note:x[<<Heb 11:7–8>>] took up the ark of the LORD.
+@ And seven priests bearing seven trumpets of rams’ horns before the ark of the LORD ##went on##note:x[<<1 Chr 15:26; Matt 24:13; Gal 6:9>>] continually, and blew with the trumpets: and the armed men went before them; but the rereward came after the ark of the LORD, __the priests__ going on, and blowing with the trumpets.
+@ And the second day they compassed the city once, and returned into the camp: so they did six days.
+@ And it came to pass on the seventh day, that they rose early ##about the dawning##note:x[<<Ps 119:147>>] of the day, and compassed the city after the same manner seven times: only on that day they compassed the city seven times.
+@ And it came to pass at the seventh time, when the priests blew with the trumpets, Joshua said unto the people, ##Shout##note:x[<<Josh 6:5; Judg 7:20–22; 2 Chr 13:15>>]; for the LORD hath given you the city.
+
+@ ¶ And the city shall be note:x[<<Mic 4:13>>]##accursed##note:tn[or, devoted], __even__ it, and all that __are__ therein, to the LORD: only Rahab the harlot shall live, she and all that __are__ with her in the house, ##because##note:x[<<Jas 2:25>>] she hid the messengers that we sent.
+@ And ye, ##in any wise##note:x[<<Eph 5:11; 1 John 5:21>>] keep __yourselves__ from the ##accursed##note:tn[or, devoted] thing, ##lest ye make##note:x[<<Josh 7:1>>] __yourselves__ accursed, when ye take of the accursed thing, and make the camp of Israel a curse, and trouble it.note:tn[__a curse__: or, devoted]
+@ But ##all the silver##note:x[<<1 Chr 26:20>>], and gold, and vessels of brass and iron, __are__ ##consecrated##note:tn[Heb. holiness] unto the LORD: they shall come into ##the treasury##note:x[<<1 Chr 26:20; Matt 27:6>>] of the LORD.
+@ So the people shouted when __the priests__ blew with the trumpets: and it came to pass, when the people heard the sound of the trumpet, and the people shouted with a great shout, that ##the wall##note:x[<<Josh 6:5; 2 Cor 10:4–5; Heb 11:30>>] fell down ##flat##note:tn[Heb. under it], so that the people went up into the city, every man straight before him, and they took the city.
+@ And they ##utterly##note:x[<<Ps 137:8–9>>] destroyed all that __was__ in the city, both man and woman, young and old, and ox, and sheep, and ass, with the edge of the sword.
+@ But Joshua had said unto the two men that had spied out the country, Go into the harlot’s house, and bring out thence the woman, and all that she hath, ##as ye sware unto her##note:x[<<Heb 11:31>>].
+@ And the young men that were spies went in, and brought ##out Rahab##note:x[<<Heb 11:7>>], and her father, and her mother, and her brethren, and all that she had; and they brought out all her ##kindred##note:tn[Heb. families], and left them without the camp of Israel.
+@ And they ##burnt##note:x[<<Josh 8:28; 2 Kgs 25:9; Rev 17:16>>] the city with fire, and all that __was__ therein: only the silver, and the gold, and the vessels of brass and of iron, they put into the treasury of the house of the LORD.
+@ And Joshua saved ##Rahab##note:x[<<Judg 1:24–25; Heb 11:31>>] the harlot alive, and her father’s household, and all that she had; and ##she dwelleth##note:x[<<Matt 1:5>>] in Israel __even__ unto this day; because she hid the messengers, which Joshua sent to spy out Jericho.
+
+@ ¶ And Joshua ##adjured##note:x[<<Num 5:19–21; Acts 19:13>>] __them__ at that time, saying, ##Cursed##note:x[<<1 Kgs 16:34>>] __be__ the man before the LORD, that riseth up and buildeth this city Jericho: he shall lay the foundation thereof in his firstborn, and in his youngest __son__ shall he set up the gates of it.
+@ So ##the LORD##note:x[<<Josh 1:5; Matt 18:20>>] was with Joshua; and ##his fame##note:x[<<Josh 9:3>>] was __noised__ throughout all the country.
+
+=== @7
+
+[discrete.pericope]
+==== The Defeat at Ai
+
+@ But the children of Israel committed a trespass in the accursed thing: note:x[<<Josh 22:20; 1 Chr 2:6–7>>]for ##Achan##note:tn[also called, Achar], the son of Carmi, the son of ##Zabdi##note:tn[also called, Zimri], the son of Zerah, of the tribe of Judah, took of the accursed thing: and ##the anger##note:x[<<Eccl 9:18>>] of the LORD was kindled against the children of Israel.
+@ note:x[<<Josh 18:12; Hos 4:15>>]And Joshua sent men from Jericho to Ai, which __is__ beside Beth-aven, on the east side of Beth-el, and spake unto them, saying, Go up and view the country. And the men went up and viewed Ai.
+@ And they returned to Joshua, and said unto him, Let not all the people go up; but let about two or three thousand men go up and smite Ai; __and__ make not all the people to ##labour##note:x[<<Heb 6:11–12>>] thither; for they __are but__ few.note:tn[__about…__: Heb. about two thousand men, or, about three thousand men]
+@ So there went up thither of the people about three thousand men: and they ##fled##note:x[<<Lev 26:17; Deut 28:25>>] before the men of Ai.
+@ And the men of Ai smote of them about thirty and six men: for they chased them __from__ before the gate __even__ unto Shebarim, and smote them in the going down: ##wherefore##note:x[<<Lev 26:36; Josh 2:9, 11>>] the hearts of the people melted, and became as water.note:tn[__in…__: or, in Morad]
+
+@ ¶ And Joshua ##rent##note:x[<<Gen 37:29, 34; Num 14:6>>] his clothes, and fell to the earth upon his face before the ark of the LORD until the eventide, he and the elders of Israel, and put dust upon their heads.
+@ And Joshua said, Alas, O Lord GOD, ##wherefore##note:x[<<2 Kgs 3:10; Heb 12:5>>] hast thou at all brought this people over Jordan, to deliver us into the hand of the Amorites, to destroy us? would to God we had been content, and dwelt on the other side Jordan!
+@ O Lord, ##what shall##note:x[<<Rom 3:5–6>>] I say, when Israel turneth their ##backs##note:tn[Heb. necks] before their enemies!
+@ For the Canaanites and all the inhabitants of the land ##shall hear##note:x[<<Exod 32:12>>] __of it__, and shall ##environ##note:x[<<Ps 83:4>>] us round, and cut off our name from the earth: and ##what wilt thou##note:x[<<Ezek 36:22–23>>] do unto thy great name?
+
+@ ¶ And the LORD said unto Joshua, Get thee up; ##wherefore##note:x[<<Exod 14:15; 1 Sam 15:22; 16:1>>] ##liest##note:tn[Heb. fallest] thou thus upon thy face?
+@ Israel hath sinned, and they have also transgressed my covenant which I commanded them: for they have even taken of ##the accursed##note:x[<<Josh 6:17–19>>] thing, and have also stolen, and ##dissembled##note:x[<<Acts 5:1–2; Heb 4:13>>] also, and they have put __it__ even among their own stuff.
+@ Therefore ##the children##note:x[<<Num 14:45; Ps 5:4–5; Isa 59:2>>] of Israel could not stand before their enemies, __but__ turned __their__ backs before their enemies, because they were accursed: neither will I be with you any more, except ye destroy the accursed from among you.
+@ Up, ##sanctify##note:x[<<Josh 3:5; Lam 3:40–41>>] the people, and say, Sanctify yourselves against to morrow: for thus saith the LORD God of Israel, __There is__ ##an accursed##note:x[<<Matt 7:5>>] thing in the midst of thee, O Israel: thou canst not stand before thine enemies, until ye take away the accursed thing from among you.
+@ In the morning therefore ye shall be brought according to your tribes: and it shall be, __that__ ##the tribe##note:x[<<Prov 16:33>>] which the LORD taketh shall come according to the families __thereof;__ and the family which the LORD shall take shall come by households; and the household which the LORD shall take shall come man by man.
+@ And it shall be, __that__ ##he that is##note:x[<<1 Sam 14:38–39>>] taken with the accursed thing shall be burnt with fire, he and all that he hath: because he hath transgressed the covenant of the LORD, and because he hath ##wrought##note:x[<<Gen 34:7; Judg 20:6>>] ##folly##note:tn[or, wickedness] in Israel.
+
+[discrete.pericope]
+==== The Sin of Achan
+
+@ ¶ So Joshua rose up early in the morning, and brought Israel by their tribes; and the tribe of Judah was taken:
+@ note:x[<<Num 26:20>>]And he brought the family of Judah; and he took the family of the Zarhites: and he brought the family of the Zarhites man by man; and Zabdi was taken:
+@ And he brought his household man by man; and Achan, the son of Carmi, the son of Zabdi, the son of Zerah, of the tribe of Judah, ##was taken##note:x[<<Num 32:23>>].
+@ And Joshua said unto Achan, My son, ##give##note:x[<<1 Sam 6:5; Jer 13:16; John 9:24>>], I pray thee, glory to the LORD God of Israel, and make confession unto him; and tell me now what thou hast done; hide __it__ not from me.
+@ And Achan answered Joshua, and said, Indeed I have sinned against the LORD God of Israel, and thus and thus have I done:
+@ When ##I saw##note:x[<<Ps 119:37; 1 John 2:15–16>>] among the spoils a goodly Babylonish garment, and two hundred shekels of silver, and a ##wedge##note:tn[Heb. tongue] of gold of fifty shekels weight, then I coveted them, and ##took them##note:x[<<Jas 1:15>>]; and, behold, they __are__ hid in the earth in the midst of my tent, and the silver under it.
+
+@ ¶ So Joshua sent messengers, and they ran unto the tent; and, behold, __it was__ hid in his tent, and the silver under it.
+@ And they took them out of the midst of the tent, and brought them unto Joshua, and unto all the children of Israel, and ##laid##note:tn[Heb. poured] them out before the LORD.
+@ And Joshua, and all Israel with him, ##took Achan##note:x[<<Prov 15:27; 1 Tim 6:9–10>>] the son of Zerah, and the silver, and the garment, and the wedge of gold, and his sons, and his daughters, and his oxen, and his asses, and his sheep, and his tent, and all that he had: and they brought them unto the valley of Achor.
+@ And Joshua said, ##Why hast##note:x[<<Josh 6:18; 1 Chr 2:7>>] thou troubled us? the LORD shall trouble thee this day. And ##all Israel##note:x[<<Lev 24:14>>] stoned him with stones, and burned them with fire, after they had stoned them with stones.
+@ And they raised over him a great heap of stones unto this day. ##So the LORD##note:x[<<Deut 13:17>>] turned from the fierceness of his anger. Wherefore the name of that place was called, ##The valley##note:x[<<Isa 65:10; Hos 2:15>>] of ##Achor##note:tn[that is, Trouble], unto this day.
+
+=== @8
+
+[discrete.pericope]
+==== The Conquest of Ai
+
+@ And the LORD said unto Joshua, ##Fear not##note:x[<<Deut 1:21; 7:18; Josh 1:9>>], neither be thou dismayed: take all the people of war with thee, and arise, go up to Ai: see, I have given into thy hand the king of Ai, and his people, and his city, and his land:
+@ And thou shalt ##do to Ai##note:x[<<Josh 6:21>>] and her king as thou didst unto Jericho and her king: ##only the spoil##note:x[<<Deut 20:14>>] thereof, and the cattle thereof, shall ye take for a prey unto yourselves: lay thee an ambush for the city behind it.
+
+@ ¶ So Joshua arose, and all the people of war, to go up against Ai: and Joshua chose out thirty thousand mighty men of valour, and sent them away by night.
+@ And he commanded them, saying, Behold, ye shall ##lie in wait##note:x[<<Judg 20:29>>] against the city, __even__ behind the city: go not very far from the city, but be ye all ready:
+@ And I, and all the people that __are__ with me, will approach unto the city: and it shall come to pass, when they come out against us, as at the first, that we will flee before them,
+@ (For they will come out after us) till we have ##drawn##note:tn[Heb. pulled] them from the city; for they will say, They flee before us, as at the first: therefore we will flee before them.
+@ Then ye shall rise up from the ambush, and seize upon the city: ##for the LORD##note:x[<<Prov 21:30–31>>] your God will deliver it into your hand.
+@ And it shall be, when ye have taken the city, __that__ ye shall set the city on fire: according to the commandment of the LORD shall ye do. See, I have commanded you.
+
+@ ¶ Joshua therefore sent them forth: and they went to lie in ambush, and abode between Beth-el and Ai, on the west side of Ai: but Joshua lodged that night among the people.
+@ And Joshua rose up early in the morning, and numbered the people, and went up, he and the elders of Israel, before the people to Ai.
+@ And all the people, __even the people__ of war that __were__ with him, went up, and drew nigh, and came before the city, and pitched on the north side of Ai: now __there was__ a valley between them and Ai.
+@ And he took about five thousand men, and set them to lie in ambush between Beth-el and Ai, on the west side of the city.note:tn[__of…__: or, of Ai]
+@ And when they had set the people, __even__ all the host that __was__ on the north of the city, and their liers in wait on the west of the city, Joshua went that night into the midst of the valley.note:tn[__liers…__: Heb. lying in wait]
+
+@ ¶ And it came to pass, when the king of Ai saw __it__, that they hasted and rose up early, and the men of the city went out against Israel to battle, he and all his people, at a time appointed, before the plain; but he wist not that __there were__ liers in ambush against him behind the city.
+@ And Joshua and all Israel made as if they were beaten before them, and fled ##by the way##note:x[<<Josh 18:12>>] of the wilderness.
+@ And all the people that __were__ in Ai were called together to pursue after them: and they pursued after Joshua, and were ##drawn away##note:x[<<Judg 20:31>>] from the city.
+@ And there was not a man left in Ai or Beth-el, that went not out after Israel: and they left the city open, and pursued after Israel.
+@ And the LORD said unto Joshua, ##Stretch##note:x[<<Josh 8:26>>] out the spear that __is__ in thy hand toward Ai; for I will give it into thine hand. And Joshua stretched out the spear that __he had__ in his hand toward the city.
+@ And the ambush arose quickly out of their place, and they ran as soon as he had stretched out his hand: and they entered into the city, and took it, and hasted and set the city on fire.
+@ And when the men of Ai looked behind them, they saw, and, behold, the smoke of the city ascended up to heaven, and they had no ##power##note:tn[Heb. hand] to flee this way or that way: and the people that fled to the wilderness turned back upon the pursuers.
+@ And when Joshua and all Israel saw that the ambush had taken the city, and that the smoke of the city ascended, then they turned again, and slew the men of Ai.
+@ And the other issued out of the city against them; so they were in the midst of Israel, some on this side, and some on that side: and they smote them, so that they ##let none##note:x[<<Deut 7:2>>] of them remain or escape.
+
+@ And the king of Ai they took alive, and brought him to Joshua.
+@ And it came to pass, when Israel had made an end of slaying all the inhabitants of Ai in the field, in the wilderness wherein they chased them, and when they were all fallen on the edge of the sword, until they were consumed, that all the Israelites returned unto Ai, and smote it with the edge of the sword.
+@ And __so__ it was, __that__ all that fell that day, both of men and women, __were__ twelve thousand, __even__ all the men of Ai.
+@ For Joshua ##drew not##note:x[<<Exod 17:11–12>>] his hand back, wherewith he stretched out the spear, until he had utterly destroyed all the inhabitants of Ai.
+@ Only ##the cattle##note:x[<<Josh 8:2>>] and the spoil of that city Israel took for a prey unto themselves, according unto the word of the LORD which he commanded Joshua.
+@ And Joshua burnt Ai, and made it ##an heap##note:x[<<Deut 13:16>>] for ever, __even__ a desolation unto this day.
+@ And the king of Ai he hanged on a tree until eventide: and as soon as the sun was down, Joshua commanded that they should take his carcase down from the tree, and cast it at the entering of the gate of the city, and raise thereon a great heap of stones, __that remaineth__ unto this day.
+
+[discrete.pericope]
+==== Joshua Renews the Covenant
+
+[.parallel]
+(<<Deuteronomy 27:1–10>>)
+
+@ ¶ Then Joshua built an altar unto the LORD God of Israel in mount Ebal,
+@ As Moses the servant of the LORD commanded the children of Israel, as it is written in the book of the law of Moses, an ##altar##note:x[<<Exod 20:24–25; Deut 27:5–6>>] of whole stones, over which no man hath lift up __any__ iron: and they offered thereon burnt offerings unto the LORD, and sacrificed peace offerings.
+
+@ ¶ ##And he wrote there upon the stones a copy of the law of Moses, which he wrote in the presence of the children of Israel.##note:x[<<Deut 27:2–3, 8>>]
+@ And all Israel, and their elders, and officers, and their judges, stood on this side the ark and on that side before the ##priests##note:x[<<Deut 31:9>>] the Levites, which bare the ark of the covenant of the LORD, as well the ##stranger##note:x[<<Deut 31:12>>], as he that was born among them; half of them over against mount Gerizim, and half of them over against mount Ebal; as ##Moses##note:x[<<Deut 11:29>>] the servant of the LORD had commanded before, that they should bless the people of Israel.
+@ And afterward ##he read##note:x[<<Neh 8:2–3>>] all the words of the law, the blessings and cursings, according to all that is written in the book of the law.
+@ There was not a word of all that Moses commanded, which Joshua read not before all the congregation of Israel, with the ##women##note:x[<<Deut 31:12; Neh 8:2>>], and the little ones, and the strangers that were conversant among them.note:tn[__were…__: Heb. walked]
+
+=== @9
+
+[discrete.pericope]
+==== The Deceit of the Gibeonites
+
+@ And it came to pass, when all the kings which __were__ on this side Jordan, in the hills, and in the valleys, and in all the coasts ##of the great##note:x[<<Num 34:6>>] sea over against Lebanon, the ##Hittite##note:x[<<Exod 3:17>>], and the Amorite, the Canaanite, the Perizzite, the Hivite, and the Jebusite, heard __thereof;__
+@ That they gathered themselves together, to fight with Joshua and with Israel, with one ##accord##note:tn[Heb. mouth].
+
+@ ¶ And when the inhabitants of ##Gibeon##note:x[<<Josh 9:17; 10:2>>] heard what Joshua had done unto Jericho and to Ai,
+@ They did work wilily, and went and made as if they had been ambassadors, and took old sacks upon their asses, and wine bottles, old, and rent, and bound up;
+@ And old shoes and clouted upon their feet, and old garments upon them; and all the bread of their provision was dry __and__ mouldy.
+@ And they went to Joshua unto ##the camp##note:x[<<Josh 5:10>>] at Gilgal, and said unto him, and to the men of Israel, We be come from a far country: now therefore make ye a league with us.
+@ And the men of Israel said unto the ##Hivites##note:x[<<Josh 11:19>>], Peradventure ye dwell among us; and how shall we make a league with you?
+@ ##And they said unto Joshua, We __are__ thy servants. And Joshua said unto them, Who __are__ ye? and from whence come ye?##note:x[<<Deut 20:11; 2 Kgs 10:5>>]
+@ And they said unto him, ##From a##note:x[<<Deut 20:15>>] very far country thy servants are come because of the name of the LORD thy God: for ##we have##note:x[<<Josh 9:24>>] heard the fame of him, and all that he did in Egypt,
+@ And all that he did to the two kings of the Amorites, that __were__ beyond Jordan, to Sihon king of Heshbon, and to Og king of Bashan, which __was__ at Ashtaroth.
+@ Wherefore ##our elders##note:x[<<Esth 8:17>>] and all the inhabitants of our country spake to us, saying, Take victuals with you for the journey, and go to meet them, and say unto them, ##We __are__ your##note:x[<<Josh 9:8; Esth 8:17>>] servants: therefore now make ye a league with us.note:tn[__with you__: Heb. in your hand]
+@ This our bread we took hot __for__ our provision out of our houses on the day we came forth to go unto you; but now, behold, it is dry, and it is mouldy:
+@ And these bottles of wine, which we filled, __were__ new; and, behold, they be rent: and these our garments and our shoes are become old by reason of the very long journey.
+@ And the men took of their victuals, and ##asked not##note:x[<<Num 27:21; 1 Chr 10:13–14; Prov 3:5–6>>] __counsel__ at the mouth of the LORD.note:tn[__the men…__: or, they received the men by reason of their victuals]
+
+@ And Joshua ##made peace##note:x[<<Josh 11:19; 2 Sam 21:2>>] with them, and made a league with them, to let them live: ##and the##note:x[<<2 Sam 21:2>>] princes of the congregation sware unto them.
+
+@ ¶ And it came to pass at the end of three days after they had made a league with them, that they heard that they __were__ their neighbours, and __that__ they dwelt among them.
+@ And the children of Israel journeyed, and came unto their cities on the third day. Now their cities __were__ Gibeon, and Chephirah, and Beeroth, and Kirjath-jearim.
+@ And the children of Israel smote them not, because the princes of the congregation had sworn unto them by the LORD God of Israel. And all the congregation murmured against the princes.
+@ But all the princes said unto all the congregation, We have sworn unto them by the LORD God of Israel: now therefore we may not touch them.
+@ This we will do to them; we will even let them live, lest wrath be upon us, because of the oath which we sware unto them.
+@ And the princes said unto them, ##Let them##note:x[<<Deut 29:11>>] live; but let them be hewers of wood and drawers of water unto all the congregation; as the princes had promised them.
+
+@ ¶ And Joshua called for them, and he spake unto them, saying, Wherefore have ye beguiled us, saying, ##We __are__##note:x[<<Josh 9:6>>] very far from you; when ye dwell among us?
+@ Now therefore ye __are__ cursed, and there shall ##none of you be freed##note:x[<<Josh 9:21>>] from being bondmen, and hewers of wood and drawers of water for the house of my God.note:tn[__none…__: Heb. not be cut off from you]
+@ And they answered Joshua, and said, Because it was certainly told thy servants, how that ##the LORD##note:x[<<Deut 7:1–2; 20:15–17>>] thy God commanded his servant Moses to give you all the land, and to destroy all the inhabitants of the land from before you, therefore we were sore afraid of our lives because of you, and have done this thing.
+@ And now, behold, ##we __are__##note:x[<<Gen 16:6>>] in thine hand: as it seemeth good and right unto thee to do unto us, do.
+@ And so did he unto them, and delivered them out of the hand of the children of Israel, that they slew them not.
+@ And Joshua ##made##note:tn[Heb. gave, or, delivered to be] them that day hewers of wood and drawers of water for the congregation, and for the altar of the LORD, even unto this day, in the place which he should choose.
+
+=== @10
+
+[discrete.pericope]
+==== The Day the Sun Stood Still
+
+@ Now it came to pass, when Adoni-zedek king of Jerusalem had heard how Joshua had taken Ai, and had utterly destroyed it; as he had done to Jericho and her king, so he had done to Ai and her king; and how the inhabitants of Gibeon had made peace with Israel, and were among them;
+@ That ##they feared##note:x[<<Deut 11:25>>] greatly, because Gibeon __was__ a great city, as one of the royal cities, and because it __was__ greater than Ai, and all the men thereof __were__ mighty.note:tn[__royal…__: Heb. cities of the kingdom]
+@ Wherefore Adoni-zedek king of Jerusalem sent unto Hoham king of Hebron, and unto Piram king of Jarmuth, and unto Japhia king of Lachish, and unto Debir king of Eglon, saying,
+@ Come up unto me, and help me, that ##we may##note:x[<<Josh 9:15>>] smite Gibeon: for it hath made peace with Joshua and with the children of Israel.
+@ Therefore the five kings of the Amorites, the king of Jerusalem, the king of Hebron, the king of Jarmuth, the king of Lachish, the king of Eglon, gathered themselves together, and went up, they and all their hosts, and encamped before Gibeon, and made war against it.
+
+@ ¶ And the men of Gibeon sent unto Joshua to the camp to Gilgal, saying, Slack not thy hand from thy servants; come up to us quickly, and save us, and help us: for all the kings of the Amorites that dwell in the mountains are gathered together against us.
+
+@ So Joshua ascended from Gilgal, he, and all the people of war with him, and all the mighty men of valour.
+
+@ ¶ ##And the LORD said unto Joshua, Fear them not: for I have delivered them into thine hand; there shall not a man of them stand before thee.##note:x[<<Josh 1:5–9; 11:6; Rom 8:31>>]
+@ Joshua therefore came unto them suddenly, __and__ went up from Gilgal all night.
+@ And ##the LORD##note:x[<<Ps 18:14>>] discomfited them before Israel, and slew them with a great slaughter at Gibeon, and chased them along the way that goeth up to ##Beth-horon##note:x[<<Josh 16:3, 5>>], and smote them to Azekah, and unto Makkedah.
+@ And it came to pass, as they fled from before Israel, __and__ were in the going down to Beth-horon, that ##the LORD##note:x[<<Exod 9:22–26; Judg 5:20; Isa 28:2>>] cast down great stones from heaven upon them unto Azekah, and they died: __they were__ more which died with hailstones than __they__ whom the children of Israel slew with the sword.
+
+@ ¶ Then spake Joshua to the LORD in the day when the LORD delivered up the Amorites before the children of Israel, and he said in the sight of Israel, ##Sun##note:x[<<Isa 38:8; 60:20; Hab 3:11>>], stand thou still upon Gibeon; and thou, Moon, in the valley of Ajalon.note:tn[__stand…__: Heb. be silent]
+@ And the sun stood still, and the moon stayed, ##until##note:x[<<Judg 16:28>>] the people had avenged themselves upon their enemies. __Is__ not this written in the book of ##Jasher##note:tn[or, the upright?]? ##So the sun##note:x[<<Josh 10:14; Isa 38:8>>] stood still in the midst of heaven, and hasted not to go down about a whole day.
+@ And there was no day like that before it or after it, that the LORD hearkened unto the voice of a man: ##for the LORD##note:x[<<Deut 1:30; Josh 10:42; 23:3>>] fought for Israel.
+
+@ ¶ ##And Joshua returned, and all Israel with him, unto the camp to Gilgal.##note:x[<<Josh 10:43>>]
+
+[discrete.pericope]
+==== The Victory at Makkedah
+
+@ But these five kings fled, and hid themselves in a cave at Makkedah.
+@ And it was told Joshua, saying, The five kings are found hid in a cave at Makkedah.
+@ And Joshua said, Roll great stones upon the mouth of the cave, and set men by it for to keep them:
+@ And stay ye not, __but__ pursue after your enemies, and smite the hindmost of them; suffer them not to enter into their cities: for the LORD your God hath delivered them into your hand.note:tn[__smite…__: Heb. cut off the tail]
+@ And it came to pass, when Joshua and the children of Israel had made an end of slaying them with a very great slaughter, till they were consumed, that the rest __which__ remained of them entered into fenced cities.
+@ And all the people returned to the camp to Joshua at Makkedah in peace: ##none##note:x[<<Exod 11:7>>] moved his tongue against any of the children of Israel.
+@ Then said Joshua, Open the mouth of the cave, and bring out those five kings unto me out of the cave.
+@ And they did so, and brought forth those five kings unto him out of the cave, the king of Jerusalem, the king of Hebron, the king of Jarmuth, the king of Lachish, __and__ the king of Eglon.
+@ And it came to pass, when they brought out those kings unto Joshua, that Joshua called for all the men of Israel, and said unto the captains of the men of war which went with him, Come near, ##put your feet##note:x[<<Mal 4:3; Rom 16:20; Rev 2:26–27>>] upon the necks of these kings. And they came near, and put their feet upon the necks of them.
+@ And Joshua said unto them, ##Fear not##note:x[<<Josh 1:9; 2 Cor 1:10>>], nor be dismayed, ##be strong##note:x[<<Eph 6:10>>] and of good courage: for thus shall the LORD do to all your enemies against whom ye fight.
+@ And afterward Joshua smote them, and slew them, and ##hanged##note:x[<<Josh 8:29>>] them on five trees: and they were hanging upon the trees until the evening.
+@ And it came to pass at the time of the going down of the sun, __that__ Joshua commanded, and ##they took##note:x[<<Josh 8:29>>] them down off the trees, and cast them into the cave wherein they had been hid, and laid great stones in the cave’s mouth, __which remain__ until this very day.
+
+@ ¶ And that day Joshua took Makkedah, and smote it with the edge of the sword, and the king thereof he utterly destroyed, ##them##note:x[<<Josh 6:21>>], and all the souls that __were__ therein; he let none remain: and he did to the king of Makkedah as he did unto the king of Jericho.
+
+[discrete.pericope]
+==== Conquest of the Southern Cities
+
+@ Then Joshua passed from Makkedah, and all Israel with him, unto ##Libnah##note:x[<<Josh 21:13>>], and fought against Libnah:
+@ And the LORD delivered it also, and the king thereof, into the hand of Israel; and he smote it with the edge of the sword, and all the souls that __were__ therein; he let none remain in it; but did unto the king thereof as he did unto the king of Jericho.
+
+@ ¶ And Joshua passed from Libnah, and all Israel with him, unto Lachish, and encamped against it, and fought against it:
+@ And the LORD delivered Lachish into the hand of Israel, which took it on the second day, and smote it with the edge of the sword, and all the souls that __were__ therein, according to all that he had done to Libnah.
+
+@ ¶ Then Horam king of ##Gezer##note:x[<<Josh 16:3, 10; Judg 1:29>>] came up to help Lachish; and Joshua smote him and his people, until he had left him none remaining.
+
+@ ¶ And from Lachish Joshua passed unto Eglon, and all Israel with him; and they encamped against it, and fought against it:
+@ And they took it on that day, and smote it with the edge of the sword, and all the souls that __were__ therein he utterly destroyed that day, according to all that he had done to Lachish.
+@ And Joshua went up from Eglon, and all Israel with him, unto ##Hebron##note:x[<<Josh 15:13; Judg 1:10>>]; and they fought against it:
+@ And they took it, and smote it with the edge of the sword, and the king thereof, and all the cities thereof, and all the souls that __were__ therein; he left none remaining, according to all that he had done to Eglon; but destroyed it utterly, and all the souls that __were__ therein.
+
+@ ¶ And Joshua returned, and all Israel with him, to ##Debir##note:x[<<Josh 15:15>>]; and fought against it:
+@ And he took it, and the king thereof, and all the cities thereof; and they smote them with the edge of the sword, and utterly destroyed all the souls that __were__ therein; he left none remaining: as he had done to Hebron, so he did to Debir, and to the king thereof; as he had done also to Libnah, and to her king.
+
+@ ¶ So Joshua smote all the country of the hills, and of the south, and of the vale, and of the springs, and all their kings: he left none remaining, but utterly destroyed all that breathed, ##as the LORD##note:x[<<Deut 7:2–16>>] God of Israel commanded.
+@ And Joshua smote them from Kadesh-barnea even unto Gaza, and ##all the country##note:x[<<Josh 11:16; 15:51>>] of Goshen, even unto Gibeon.
+@ And all these kings and their land did Joshua take at one time, ##because##note:x[<<Josh 10:14; Ps 46:7>>] the LORD God of Israel fought for Israel.
+@ And Joshua returned, and all Israel with him, ##unto the camp##note:x[<<Josh 10:15>>] to Gilgal.
+
+=== @11
+
+[discrete.pericope]
+==== Conquest of the Northern Cities
+
+@ And it came to pass, when ##Jabin##note:x[<<Josh 11:10>>] king of Hazor had heard __those things__, that he sent to Jobab king of Madon, and to the king of Shimron, and to the king of Achshaph,
+@ note:x[<<Judg 1:27>>]And to the kings that __were__ on the north of the mountains, and of the plains south of ##Chinneroth##note:x[<<Num 34:11; Josh 12:3>>], and in the valley, and in the borders of Dor on the west,
+@ __And to__ the Canaanite on the east and on the west, and __to__ the Amorite, and the Hittite, and the Perizzite, and the Jebusite in the mountains, and __to__ the ##Hivite##note:x[<<Judg 3:3>>] under Hermon in the ##land##note:x[<<Gen 31:49; Josh 18:26>>] of Mizpeh.
+@ And they went out, they and all their hosts with them, much people, even ##as the sand##note:x[<<Judg 7:12; 1 Sam 13:5>>] that __is__ upon the sea shore in multitude, with horses and chariots very many.
+@ And when all these kings were met together, they came and pitched together at the waters of Merom, to fight against Israel.note:tn[__met…__: Heb. assembled by appointment]
+
+@ ¶ And the LORD said unto Joshua, ##Be not##note:x[<<Josh 10:8>>] afraid because of them: for to morrow about this time will I deliver them up all slain before Israel: thou shalt ##hough##note:x[<<2 Sam 8:4>>] their horses, and burn their chariots with fire.
+@ So Joshua came, and all the people of war with him, against them by the waters of Merom suddenly; and they fell upon them.
+@ And the LORD delivered them into the hand of Israel, who smote them, and chased them unto great Zidon, and unto note:x[<<Josh 13:6>>]##Misrephoth-maim##note:tn[or, Salt pits: Heb. Burnings of waters], and unto the valley of Mizpeh eastward; and they smote them, until they left them none remaining.note:tn[__great Zidon__: or, Zidonrabbah]
+@ And Joshua did unto them as the LORD bade him: ##he houghed##note:x[<<Josh 11:6>>] their horses, and burnt their chariots with fire.
+
+@ ¶ And Joshua at that time turned back, and took Hazor, and smote the king thereof with the sword: for Hazor beforetime was the head of all those kingdoms.
+@ And they smote all the souls that __were__ therein with the edge of the sword, utterly destroying __them:__ there was not any left to breathe: and he burnt Hazor with fire.note:tn[__any…__: Heb. any breath]
+@ And all the cities of those kings, and all the kings of them, did Joshua take, and smote them with the edge of the sword, __and__ he utterly destroyed them, ##as Moses##note:x[<<Deut 7:2; 20:16–17>>] the servant of the LORD commanded.
+@ But __as for__ the cities that stood still in their strength, Israel burned none of them, save Hazor only; __that__ did Joshua burn.note:tn[__in their…__: Heb. on their heap]
+@ And all the spoil of these cities, and the cattle, the children of Israel took for a prey unto themselves; but every man they smote with the edge of the sword, until they had destroyed them, neither left they any to breathe.
+
+@ ¶ As ##the LORD##note:x[<<Exod 34:11–13>>] commanded Moses his servant, ##so did Moses##note:x[<<Deut 7:2>>] command Joshua, ##and so did Joshua##note:x[<<Josh 1:7>>]; he left nothing undone of all that the LORD commanded Moses.note:tn[__left…__: Heb. removed nothing]
+
+[discrete.pericope]
+==== Joshua Takes the Whole Land
+
+@ So Joshua took all that land, the hills, and all the south country, and all ##the land##note:x[<<Josh 10:41>>] of Goshen, and the valley, and the plain, and the mountain of Israel, and the valley of the same;
+@ __Even__ from the mount Halak, that goeth up to Seir, even unto Baal-gad in the valley of Lebanon under mount Hermon: and ##all their##note:x[<<Deut 7:24>>] kings he took, and smote them, and slew them.note:tn[__the mount…__: or, the smooth mountain]
+@ Joshua made war a long time with all those kings.
+@ There was not a city that made peace with the children of Israel, save the Hivites the inhabitants of Gibeon: all __other__ they took in battle.
+@ For ##it was##note:x[<<Exod 4:21; Rom 9:18>>] of the LORD to harden their hearts, that they should come against Israel in battle, that he might destroy them utterly, __and__ that they might have no favour, but that he might destroy them, ##as the LORD##note:x[<<Deut 20:16–17>>] commanded Moses.
+
+@ ¶ And at that time came Joshua, and cut off ##the Anakims##note:x[<<Deut 9:2>>] from the mountains, from Hebron, from Debir, from Anab, and from all the mountains of Judah, and from all the mountains of Israel: Joshua destroyed them utterly with their cities.
+@ There was none of the Anakims left in the land of the children of Israel: ##only in Gaza##note:x[<<1 Sam 17:4>>], in Gath, and in Ashdod, there remained.
+@ So Joshua took the whole land, according to all that the LORD said unto Moses; and Joshua gave it for an inheritance unto Israel ##according to their##note:x[<<Num 26:52–55>>] divisions by their tribes. ##And the land##note:x[<<Josh 21:44–45; Ps 46:9>>] rested from war.
+
+=== @12
+
+[discrete.pericope]
+==== The Kings Defeated East of the Jordan
+
+@ note:x[<<Deut 3:8–9>>]Now these __are__ the kings of the land, which the children of Israel smote, and possessed their land on the other side Jordan toward the rising of the sun, from the river Arnon unto mount Hermon, and all the plain on the east:
+@ Sihon king of the Amorites, who dwelt in Heshbon, __and__ ruled from Aroer, which __is__ upon the bank of the river Arnon, and from the middle of the river, and from half Gilead, even unto the river Jabbok, __which is__ the border of the children of Ammon;
+@ note:x[<<Deut 3:17>>]And from the plain to the ##sea of Chinneroth##note:x[<<Deut 3:17>>] on the east, and unto the sea of the plain, __even__ the salt sea on the east, the way to Beth-jeshimoth; and from the south, under note:x[<<Deut 3:17>>]##Ashdoth-pisgah##note:tn[or, the springs of Pisgah, or, the hill]:note:tn[__the south__: or, Teman]
+
+@ ¶ And ##the coast##note:x[<<Num 21:33–35; Deut 3:10>>] of Og king of Bashan, __which was__ of the remnant of the giants, that ##dwelt##note:x[<<Deut 1:4>>] at Ashtaroth and at Edrei,
+@ And reigned in mount Hermon, and in ##Salcah##note:x[<<Josh 13:11>>], and in all Bashan, ##unto the##note:x[<<Deut 3:14; 1 Sam 27:8>>] border of the Geshurites and the Maachathites, and half Gilead, the border of Sihon king of Heshbon.
+@ Them did Moses the servant of the LORD and the children of Israel smite: and Moses the servant of the LORD gave it __for__ a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh.
+
+[discrete.pericope]
+==== The Kings Defeated West of the Jordan
+
+@ ¶ And these __are__ the kings of the country which Joshua and the children of Israel smote on this side Jordan on the west, from ##Baal-gad##note:x[<<Josh 11:17>>] in the valley of Lebanon even unto the mount Halak, that goeth up to Seir; which Joshua gave unto the tribes of Israel __for__ a possession according to their divisions;
+@ In ##the mountains##note:x[<<Josh 10:40; 11:16>>], and in the valleys, and in the plains, and in the springs, and in the wilderness, and in the south country; ##the Hittites##note:x[<<Josh 9:1>>], the Amorites, and the Canaanites, the Perizzites, the Hivites, and the Jebusites:
+
+@ ¶ The king of Jericho, one; the king of ##Ai##note:x[<<Josh 8:29–35>>], which __is__ beside Beth-el, one;
+@ The king of ##Jerusalem##note:x[<<Josh 10:23>>], one; the king of ##Hebron##note:x[<<Josh 10:23>>], one;
+@ The king of Jarmuth, one; the king of Lachish, one;
+@ The king of Eglon, one; the king of ##Gezer##note:x[<<Josh 10:33>>], one;
+@ The king of Debir, one; the king of Geder, one;
+@ The king of Hormah, one; the king of ##Arad##note:x[<<Num 21:1>>], one;
+@ The king of Libnah, one; the king of Adullam, one;
+@ The king of ##Makkedah##note:x[<<Josh 10:28>>], one; the king of Beth-el, one;
+@ The king of Tappuah, one; the king of ##Hepher##note:x[<<1 Kgs 4:10>>], one;
+@ The king of Aphek, one; the king of ##Lasharon##note:tn[or, Sharon], one;
+@ The king of ##Madon##note:x[<<Josh 11:1>>], one; the king of ##Hazor##note:x[<<Josh 11:1>>], one;
+@ The king of ##Shimron-meron##note:x[<<Josh 11:1>>], one; the king of ##Achshaph##note:x[<<Josh 11:1>>], one;
+@ The king of Taanach, one; the king of Megiddo, one;
+@ The king of ##Kedesh##note:x[<<Josh 19:37; 21:32>>], one; the king of Jokneam of Carmel, one;
+@ The king of ##Dor##note:x[<<Josh 11:2>>] in the coast of Dor, one; the king of the nations of Gilgal, one;
+@ The king of Tirzah, one: all the kings thirty and one.
+
+=== @13
+
+[discrete.pericope]
+==== Lands Yet Unconquered
+
+[.parallel]
+(<<Judges 1:1–7>>)
+
+@ Now ##Joshua##note:x[<<Josh 14:10; 24:29>>] was old __and__ stricken in years; and the LORD said unto him, Thou art old __and__ stricken in years, and there remaineth yet very much land ##to be possessed##note:x[<<Deut 31:3>>].note:tn[__to…__: Heb. to possess it]
+@ This __is__ the land that yet remaineth: all the borders of the Philistines, and all ##Geshuri##note:x[<<Josh 13:11>>],
+@ From ##Sihor##note:x[<<Jer 2:18>>], which __is__ before Egypt, even unto the borders of Ekron northward, __which__ is counted to the Canaanite: ##five lords##note:x[<<Judg 3:3>>] of the Philistines; the Gazathites, and the Ashdothites, the Eshkalonites, the Gittites, and the Ekronites; also the ##Avites##note:x[<<Deut 2:23>>]:
+@ From the south, all the land of the Canaanites, and note:x[<<Josh 19:30>>]##Mearah##note:tn[or, the cave] that __is__ beside the Sidonians, unto Aphek, to the borders of the Amorites:
+@ And the land of the ##Giblites##note:x[<<1 Kgs 5:18; Ps 83:7>>], and all Lebanon, toward the sunrising, from ##Baal-gad##note:x[<<Josh 12:7>>] under mount Hermon unto the entering into Hamath.
+@ All the inhabitants of the hill country from Lebanon unto ##Misrephoth-maim##note:x[<<Josh 11:8>>], __and__ all the Sidonians, them will I drive out from before the children of Israel: only divide thou it by lot unto the Israelites for an inheritance, as I have commanded thee.
+
+@ Now therefore divide this land for an inheritance unto the nine tribes, and the half tribe of Manasseh,
+
+[discrete.pericope]
+==== The Inheritance East of the Jordan
+
+[.parallel]
+(<<Numbers 32:1–42; Deuteronomy 3:12–22>>)
+
+@ With whom the Reubenites and the Gadites have received their inheritance, which Moses gave them, beyond Jordan eastward, __even__ as Moses the servant of the LORD gave them;
+@ From ##Aroer##note:x[<<Josh 13:16>>], that __is__ upon the bank of the river Arnon, and the city that __is__ in the midst of the river, and ##all the plain##note:x[<<Num 21:30>>] of Medeba unto Dibon;
+@ And all the cities of Sihon king of the Amorites, which reigned in Heshbon, unto the border of the children of Ammon;
+@ And Gilead, and the border of the Geshurites and Maachathites, and all mount Hermon, and all Bashan unto Salcah;
+@ All the kingdom of ##Og##note:x[<<Josh 12:4>>] in Bashan, which reigned in Ashtaroth and in Edrei, who remained of the remnant of the giants: for these did Moses smite, and cast them out.
+@ Nevertheless the children of Israel expelled not the Geshurites, nor the Maachathites: but the Geshurites and the Maachathites dwell among the Israelites until this day.
+@ ##Only unto the tribe of Levi he gave none inheritance; the sacrifices of the LORD God of Israel made by fire __are__ their inheritance, as he said unto them.##note:x[<<Num 18:20–24; Josh 14:3–4>>]
+
+[discrete.pericope]
+==== Reuben’s Inheritance
+
+@ ¶ And Moses gave unto the tribe of the children of Reuben __inheritance__ according to their families.
+@ ##And their coast was from Aroer, that __is__ on the bank of the river Arnon, and the city that __is__ in the midst of the river, and all the plain by Medeba;##note:x[<<Josh 13:9>>]
+@ Heshbon, and all her cities that __are__ in the plain; Dibon, and Bamoth-baal, and Beth-baal-meon,note:tn[__Bamoth-baal…__: or, the high places of Baal, and house of Baal-meon]
+@ And ##Jahaza##note:x[<<Num 21:23>>]h, and Kedemoth, and Mephaath,
+@ And Kirjathaim, and Sibmah, and Zareth-shahar in the mount of the valley,
+@ And Beth-peor, and ##Ashdoth-pisgah##note:tn[or, springs of Pisgah, or, the hill], and Beth-jeshimoth,
+@ And all the cities of the plain, and all the kingdom of Sihon king of the Amorites, which reigned in Heshbon, whom Moses smote ##with the##note:x[<<Num 31:8>>] princes of Midian, Evi, and Rekem, and Zur, and Hur, and Reba, __which were__ dukes of Sihon, dwelling in the country.
+
+@ ¶ ##Balaam##note:x[<<Num 31:8; 2 Pet 2:15; Jude 1:11>>] also the son of Beor, the ##soothsayer##note:tn[or, diviner], did the children of Israel slay with the sword among them that were slain by them.
+@ And the border of the children of Reuben was Jordan, and the border __thereof__. This __was__ the inheritance of the children of Reuben after their families, the cities and the villages thereof.
+
+[discrete.pericope]
+==== Gad’s Inheritance
+
+@ And Moses gave __inheritance__ unto the tribe of Gad, __even__ unto the children of Gad according to their families.
+@ And their coast was Jazer, and all the cities of Gilead, and half the land of the children of Ammon, unto Aroer that __is__ before Rabbah;
+@ And from Heshbon unto Ramath-mizpeh, and Betonim; and from ##Mahanaim##note:x[<<2 Sam 17:27>>] unto the border of ##Debir##note:x[<<2 Sam 17:27>>];
+@ And in the valley, ##Beth-aram##note:x[<<Num 32:36>>], and ##Beth-nimrah##note:x[<<Num 32:36>>], and ##Succoth##note:x[<<Gen 33:17>>], and Zaphon, the rest of the kingdom of Sihon king of Heshbon, Jordan and __his__ border, __even__ unto the edge of the sea of Chinnereth on the other side Jordan eastward.
+@ This __is__ the inheritance of the children of Gad after their families, the cities, and their villages.
+
+[discrete.pericope]
+==== Manasseh’s Eastern Inheritance
+
+@ ¶ And Moses gave __inheritance__ unto the half tribe of Manasseh: and __this__ was __the possession__ of the half tribe of the children of Manasseh by their families.
+@ And their coast was from Mahanaim, all Bashan, all the kingdom of Og king of Bashan, and all the towns of Jair, which __are__ in Bashan, threescore cities:
+@ And half Gilead, and ##Ashtaroth##note:x[<<Josh 12:4>>], and Edrei, cities of the kingdom of Og in Bashan, __were pertaining__ unto the children of Machir the son of Manasseh, __even__ to the one half of the children of Machir by their families.
+@ These __are the countries__ which Moses did distribute for inheritance in the plains of Moab, on the other side Jordan, by Jericho, eastward.
+@ ##But unto the tribe of Levi Moses gave not __any__ inheritance: the LORD God of Israel __was__ their inheritance, as he said unto them.##note:x[<<Deut 10:9; 18:1–2; Josh 18:7>>]
+
+=== @14
+
+[discrete.pericope]
+==== Land Division West of the Jordan
+
+@ And these __are the countries__ which the children of Israel inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Israel, distributed for inheritance to them.
+@ By ##lot##note:x[<<Num 26:55–56; 33:54; 34:13>>] __was__ their inheritance, as the LORD commanded by the hand of Moses, for the nine tribes, and __for__ the half tribe.
+@ For Moses had given the inheritance of two tribes and an half tribe on the other side Jordan: ##but unto##note:x[<<Josh 13:14>>] the Levites he gave none inheritance among them.
+@ For ##the children##note:x[<<Gen 48:5>>] of Joseph were two tribes, Manasseh and Ephraim: therefore they gave no part unto the Levites in the land, save cities to dwell __in__, with their suburbs for their cattle and for their substance.
+@ As the LORD commanded Moses, so the children of Israel did, and they divided the land.
+
+[discrete.pericope]
+==== Caleb Requests Hebron
+
+@ ¶ Then the children of Judah came unto Joshua in Gilgal: and ##Caleb##note:x[<<Num 13:6>>] the son of Jephunneh the Kenezite said unto him, ##Thou knowest##note:x[<<Num 14:24, 30>>] the thing that the LORD said unto Moses the man of God concerning me and thee in Kadesh-barnea.
+@ Forty years old __was__ I when Moses the servant of the LORD ##sent me##note:x[<<Num 13:6>>] from Kadesh-barnea to espy out the land; and I brought him word again as __it was__ in mine heart.
+@ Nevertheless my brethren that went up with me made the heart of the people melt: but I ##wholly##note:x[<<Num 14:24; Deut 1:36>>] followed the LORD my God.
+@ note:x[<<Num 14:22–24; Josh 1:3>>]And Moses sware on that day, saying, Surely the land whereon thy feet have trodden shall be thine inheritance, and thy children’s for ever, because thou hast wholly followed the LORD my God.
+@ And now, behold, the LORD hath kept me alive, as he said, these forty and five years, even since the LORD spake this word unto Moses, while __the children of__ Israel ##wandered##note:tn[Heb. walked] in the wilderness: and now, lo, I __am__ this day fourscore and five years old.
+@ ##As yet I __am as__ strong this day as __I was__ in the day that Moses sent me: as my strength __was__ then, even so __is__ my strength now, for war, both to go out, and to come in.##note:x[<<Deut 31:2; 34:7; Ps 103:5>>]
+@ Now therefore give me this mountain, whereof the LORD spake in that day; for thou heardest in that day how ##the Anakims##note:x[<<Num 13:33>>] __were__ there, and __that__ the cities __were__ great __and__ fenced: ##if so be##note:x[<<Phil 4:13; Heb 11:33>>] the LORD __will be__ with me, then I shall be able to drive them out, as the LORD said.
+@ And Joshua ##blessed##note:x[<<Josh 22:6>>] him, and ##gave unto##note:x[<<Judg 1:20; 1 Chr 6:55–56>>] Caleb the son of Jephunneh Hebron for an inheritance.
+@ Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, ##because##note:x[<<Josh 14:8–9; 1 Cor 15:58>>] that he wholly followed the LORD God of Israel.
+@ ##And the name##note:x[<<Gen 23:2; Josh 15:13>>] of Hebron before __was__ Kirjath-arba; __which Arba was__ a great man among the Anakims. ##And the land##note:x[<<Josh 11:23>>] had rest from war.
+
+=== @15
+
+[discrete.pericope]
+==== Judah’s Inheritance
+
+@ __This__ then was the lot of the tribe of the children of Judah by their families; __even__ to the border of Edom the wilderness of Zin southward __was__ the uttermost part of the south coast.
+@ And their south border was from the shore of the salt sea, from the ##bay##note:tn[Heb. tongue] that looketh southward:
+@ And it went out to the south side to note:x[<<Num 34:4>>]##Maaleh-acrabbim##note:tn[or, the going up to Acrabbim], and passed along to Zin, and ascended up on the south side unto Kadesh-barnea, and passed along to Hezron, and went up to Adar, and fetched a compass to Karkaa:
+@ __From thence__ it passed toward ##Azmon##note:x[<<Num 34:5>>], and went out unto the river of Egypt; and the goings out of that coast were at the sea: this shall be your south coast.
+@ And the east border __was__ the salt sea, __even__ unto the end of Jordan. And __their__ border in the north quarter __was__ from the bay of the sea at the uttermost part of Jordan:
+@ And the border went up to Beth-hogla, and passed along by the north of Beth-arabah; and the border went up to ##the stone##note:x[<<Josh 18:17>>] of Bohan the son of Reuben:
+@ And the border went up toward Debir from the valley of Achor, and so northward, looking toward Gilgal, that __is__ before the going up to Adummim, which __is__ on the south side of the river: and the border passed toward the waters of En-shemesh, and the goings out thereof were at ##En-rogel##note:x[<<2 Sam 17:17; 1 Kgs 1:9>>]:
+@ And the border went up by the ##valley of the son##note:x[<<Josh 18:16>>] of Hinnom unto the south side of ##the Jebusite##note:x[<<Josh 15:63>>]; the same __is__ Jerusalem: and the border went up to the top of the mountain that __lieth__ before the valley of Hinnom westward, which __is__ at the end of the ##valley of the giants##note:x[<<Josh 18:16>>] northward:
+@ And the border was drawn from the top of the hill unto the fountain of the water of ##Nephtoah##note:x[<<Josh 18:15>>], and went out to the cities of mount Ephron; and the border was drawn to ##Baalah##note:x[<<1 Chr 13:6>>], which __is__ Kirjath-jearim:
+@ And the border compassed from Baalah westward unto mount Seir, and passed along unto the side of mount Jearim, which __is__ Chesalon, on the north side, and went down to Beth-shemesh, and passed on to ##Timnah##note:x[<<Judg 14:1>>]:
+@ And the border went out unto the side of Ekron northward: and the border was drawn to Shicron, and passed along to mount Baalah, and went out unto Jabneel; and the goings out of the border were at the sea.
+@ And the west border __was__ to ##the great sea##note:x[<<Ezek 47:20>>], and the coast __thereof__. This __is__ the coast of the children of Judah round about according to their families.
+
+[discrete.pericope]
+==== Caleb’s Portion and Conquest
+
+[.parallel]
+(<<Judges 1:8–26>>)
+
+@ ¶ And unto Caleb the son of Jephunneh he gave a part among the children of Judah, according to the commandment of the LORD to Joshua, __even__ the city of Arba the father of Anak, which __city is__ Hebron.note:tn[__the city…__: or, Kirjath-arba]
+@ ##And Caleb drove thence the three sons of Anak, Sheshai, and Ahiman, and Talmai, the children of Anak.##note:x[<<Judg 1:10, 20>>]
+@ And he went up thence to the inhabitants of Debir: and the name of Debir before __was__ Kirjath-sepher.
+
+@ ¶ And Caleb said, He that smiteth Kirjath-sepher, and taketh it, to him will I give Achsah my daughter to wife.
+@ And ##Othniel##note:x[<<Judg 1:13; 3:9>>] the son of Kenaz, the brother of Caleb, took it: and he gave him Achsah his daughter to wife.
+@ And it came to pass, as she came __unto him__, that she moved him to ask of her father a field: and she lighted off __her__ ass; and Caleb said unto her, What wouldest thou?
+@ Who answered, ##Give me##note:x[<<Judg 1:14–15>>] ##a blessing##note:x[<<2 Cor 9:5>>]; for thou hast given me a south land; give me also springs of water. And he gave her the upper springs, and the nether springs.
+
+[discrete.pericope]
+==== The Cities of Judah
+
+@ This __is__ the inheritance of the tribe of the children of Judah according to their families.
+@ And the uttermost cities of the tribe of the children of Judah toward the coast of Edom southward were Kabzeel, and ##Eder##note:x[<<Gen 35:21>>], and Jagur,
+@ And Kinah, and Dimonah, and Adadah,
+@ And Kedesh, and Hazor, and Ithnan,
+@ ##Ziph##note:x[<<1 Sam 23:14>>], and Telem, and Bealoth,
+@ And Hazor, Hadattah, and Kerioth, __and__ Hezron, which __is__ Hazor,
+@ Amam, and Shema, and Moladah,
+@ And Hazar-gaddah, and Heshmon, and Beth-palet,
+@ And Hazar-shual, and Beer-sheba, and Bizjothjah,
+@ Baalah, and Iim, and Azem,
+@ And Eltolad, and Chesil, and Hormah,
+@ And ##Ziklag##note:x[<<1 Sam 27:6; 30:1>>], and Madmannah, and Sansannah,
+@ And Lebaoth, and Shilhim, and Ain, and Rimmon: all the cities __are__ twenty and nine, with their villages:
+@ __And__ in the valley, ##Eshtaol##note:x[<<Judg 13:25; 16:31>>], and Zoreah, and Ashnah,
+@ And Zanoah, and En-gannim, Tappuah, and Enam,
+@ Jarmuth, and ##Adullam##note:x[<<1 Sam 22:1>>], ##Socoh##note:x[<<1 Sam 17:1>>], and ##Azekah##note:x[<<1 Sam 17:1>>],
+@ And Sharaim, and Adithaim, and Gederah, and Gederothaim; fourteen cities with their villages&#58;note:tn[__and Gederothaim__: or, or Gederothaim]
+@ Zenan, and Hadashah, and Migdal-gad,
+@ And Dilean, and Mizpeh, and Joktheel,
+@ ##Lachish##note:x[<<Josh 10:3>>], and Bozkath, and ##Eglon##note:x[<<Josh 10:3>>],
+@ And Cabbon, and Lahmam, and Kithlish,
+@ And Gederoth, Beth-dagon, and Naamah, and Makkedah; sixteen cities with their villages:
+@ Libnah, and Ether, and Ashan,
+@ And Jiphtah, and Ashnah, and Nezib,
+@ And Keilah, and Achzib, and Mareshah; nine cities with their villages:
+@ Ekron, with her towns and her villages:
+@ From Ekron even unto the sea, all that __lay__ ##near##note:tn[Heb. by the place of] Ashdod, with their villages:
+@ Ashdod with her towns and her villages, Gaza with her towns and her villages, unto ##the river##note:x[<<Josh 15:4>>] of Egypt, and the great sea, and the border __thereof:__
+
+@ ¶ And in the mountains, Shamir, and Jattir, and Socoh,
+@ And Dannah, and Kirjath-sannah, which __is__ Debir,
+@ And Anab, and Eshtemoh, and Anim,
+@ And ##Goshen##note:x[<<Josh 10:41; 11:16>>], and Holon, and Giloh; eleven cities with their villages:
+@ Arab, and Dumah, and Eshean,
+@ And ##Janum##note:tn[or, Janus], and Beth-tappuah, and Aphekah,
+@ And Humtah, and Kirjath-arba, which __is__ Hebron, and Zior; nine cities with their villages:
+@ Maon, Carmel, and Ziph, and Juttah,
+@ And Jezreel, and Jokdeam, and Zanoah,
+@ Cain, Gibeah, and Timnah; ten cities with their villages:
+@ Halhul, Beth-zur, and Gedor,
+@ And Maarath, and Beth-anoth, and Eltekon; six cities with their villages:
+@ Kirjath-baal, which __is__ Kirjath-jearim, and Rabbah; two cities with their villages:
+@ In the wilderness, Beth-arabah, Middin, and Secacah,
+@ And Nibshan, and the city of Salt, and ##En-gedi##note:x[<<1 Sam 23:29>>]; six cities with their villages.
+
+@ ¶ ##As for the Jebusites the inhabitants of Jerusalem, the children of Judah could not drive them out: but the Jebusites dwell with the children of Judah at Jerusalem unto this day.##note:x[<<Judg 1:8, 21; 2 Sam 5:6–9>>]
+
+=== @16
+
+[discrete.pericope]
+==== Ephraim’s Inheritance
+
+@ And the lot of the children of Joseph ##fell##note:tn[Heb. went forth] from Jordan by Jericho, unto ##the water##note:x[<<Josh 8:15; 18:12>>] of Jericho on the east, to the wilderness that goeth up from Jericho throughout mount Beth-el,
+@ And goeth out from ##Beth-el##note:x[<<Gen 28:19; Josh 18:13>>] to Luz, and passeth along unto the borders of Archi to Ataroth,
+@ And goeth down westward to the coast of Japhleti, unto the coast of Beth-horon the nether, and to Gezer: and the goings out thereof are at the sea.
+@ ##So the children of Joseph, Manasseh and Ephraim, took their inheritance.##note:x[<<Josh 17:14>>]
+
+@ ¶ And the border of the children of Ephraim according to their families was __thus:__ even the border of their inheritance on the east side was ##Ataroth-addar##note:x[<<Josh 18:13>>], unto Beth-horon the upper;
+@ And the border went out toward the sea to ##Michmethah##note:x[<<Josh 17:7>>] on the north side; and the border went about eastward unto Taanath-shiloh, and passed by it on the east to Janohah;
+@ And it went down from Janohah to ##Ataroth##note:x[<<1 Chr 7:28>>], and to Naarath, and came to Jericho, and went out at Jordan.
+@ The border went out from ##Tappuah##note:x[<<Josh 17:8>>] westward unto the river Kanah; and the goings out thereof were at the sea. This __is__ the inheritance of the tribe of the children of Ephraim by their families.
+@ And the separate cities for the children of Ephraim __were__ among the inheritance of the children of Manasseh, all the cities with their villages.
+@ And ##they drave##note:x[<<Judg 1:29; 1 Kgs 9:16>>] not out the Canaanites that dwelt in Gezer: but ##the Canaanites dwell##note:x[<<Deut 7:1–2>>] among the Ephraimites unto this day, and serve under tribute.
+
+=== @17
+
+[discrete.pericope]
+==== Manasseh’s Western Inheritance
+
+@ There was also a lot for the tribe of Manasseh; for he __was__ ##the firstborn##note:x[<<Gen 41:51>>] of Joseph; __to wit__, for ##Machir##note:x[<<Num 26:29>>] the firstborn of Manasseh, the father of ##Gilead##note:x[<<Num 26:29>>]: because he was a man of war, therefore he had Gilead and Bashan.
+@ There was also __a lot__ for the rest of the children of Manasseh by their families; for the children of ##Abiezer##note:tn[also called, Jeezer], and for the children of Helek, and for the children of Asriel, and for the children of Shechem, and for the children of Hepher, and for the children of Shemida: these __were__ the male children of Manasseh the son of Joseph by their families.
+
+@ ¶ ##But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters: and these __are__ the names of his daughters, Mahlah, and Noah, Hoglah, Milcah, and Tirzah.##note:x[<<Num 26:33; 27:1>>]
+@ And they came near before ##Eleazar##note:x[<<Josh 14:1>>] the priest, and before Joshua the son of Nun, and before the princes, saying, The LORD commanded Moses to give us an inheritance among our brethren. Therefore according to the commandment of the LORD he gave them an inheritance among the brethren of their father.
+@ And there fell ten portions to Manasseh, beside the land of Gilead and Bashan, which __were__ on the other side Jordan;
+@ Because the daughters of Manasseh had an inheritance among his sons: and the rest of Manasseh’s sons had the land of Gilead.
+
+@ ¶ And the coast of Manasseh was from Asher to Michmethah, that __lieth__ before Shechem; and the border went along on the right hand unto the inhabitants of En-tappuah.
+@ __Now__ Manasseh had the land ##of Tappuah##note:x[<<Josh 16:8>>]: but Tappuah on the border of Manasseh __belonged__ to the children of Ephraim;
+@ And the coast descended unto the river Kanah, southward of the river: these cities of Ephraim __are__ among the cities of Manasseh: the coast of Manasseh also __was__ on the north side of the river, and the outgoings of it were at the sea&#58;note:tn[__river Kanah__: or, brook of reeds]
+@ Southward __it was__ Ephraim’s, and northward __it was__ Manasseh’s, and the sea is his border; and they met together in Asher on the north, and in Issachar on the east.
+@ And ##Manasseh##note:x[<<1 Chr 7:29>>] had in Issachar and in Asher Beth-shean and her towns, and ##Ibleam##note:x[<<2 Kgs 9:27>>] and her towns, and the inhabitants of ##Dor##note:x[<<Josh 12:23>>] and her towns, and the inhabitants of Endor and her towns, and the inhabitants of Taanach and her towns, and the inhabitants of Megiddo and her towns, __even__ three countries.
+@ Yet the children of Manasseh could not drive out __the inhabitants of__ those cities; but the Canaanites would dwell in that land.
+@ Yet it came to pass, when the children of Israel were waxen strong, that they ##put the##note:x[<<Josh 16:10>>] Canaanites to tribute; but did not utterly drive them out.
+
+@ And the children of Joseph spake unto Joshua, saying, Why hast thou given me __but__ one lot and one portion to inherit, seeing I __am__ a great people, forasmuch as the LORD hath blessed me hitherto?
+@ And Joshua answered them, If thou __be__ a great people, __then__ get thee up to the wood __country__, and cut down for thyself there in the land of the Perizzites and of the ##giants##note:tn[or, Rephaims], if mount Ephraim be too narrow for thee.
+@ And the children of Joseph said, The hill is not enough for us: and all the Canaanites that dwell in the land of the valley have ##chariots##note:x[<<Judg 1:19; 4:3>>] of iron, __both they__ who __are__ of ##Beth-shean##note:x[<<1 Kgs 4:12>>] and her towns, and __they__ who __are__ of the valley of Jezreel.
+@ And Joshua spake unto the house of Joseph, __even__ to Ephraim and to Manasseh, saying, Thou __art__ a great people, and hast great power: thou shalt not have one lot __only:__
+@ But the mountain shall be thine; for it __is__ a wood, and thou shalt cut it down: and the outgoings of it shall be thine: ##for thou shalt##note:x[<<Deut 20:1–4; Rom 8:31; Heb 13:6>>] drive out the Canaanites, though they have iron chariots, __and__ though they __be__ strong.
+
+=== @18
+
+[discrete.pericope]
+==== The Remainder Divided
+
+@ And the whole congregation of the children of Israel assembled together at ##Shiloh##note:x[<<Josh 19:51; 21:2>>], and ##set up##note:x[<<1 Sam 1:3>>] the tabernacle of the congregation there. And the land was subdued before them.
+
+@ And there remained among the children of Israel seven tribes, which had not yet received their inheritance.
+@ And Joshua said unto the children of Israel, ##How long __are__##note:x[<<Judg 18:9; Prov 13:4; 15:19>>] ye slack to go to possess the land, which the LORD God of your fathers hath given you?
+@ Give out from among you three men for __each__ tribe: and I will send them, and they shall rise, and go through the land, and describe it according to the inheritance of them; and they shall come __again__ to me.
+@ And they shall divide it into seven parts: Judah shall abide in their coast on the south, and the house of Joseph shall abide in their coasts on the north.
+@ Ye shall therefore describe the land __into__ seven parts, and bring __the description__ hither to me, ##that I may cast##note:x[<<Josh 14:2; 18:10>>] lots for you here before the LORD our God.
+@ But ##the Levites##note:x[<<Num 18:20; Josh 13:33>>] have no part among you; for the priesthood of the LORD __is__ their inheritance: and Gad, and Reuben, and half the tribe of Manasseh, have received their inheritance beyond Jordan on the east, which Moses the servant of the LORD gave them.
+
+@ ¶ And the men arose, and went away: and Joshua charged them that went to describe the land, saying, Go and walk through the land, and describe it, and come again to me, that I may here cast lots for you before the LORD in Shiloh.
+@ And the men went and passed through the land, and described it by cities into seven parts in a book, and came __again__ to Joshua to the host at Shiloh.
+
+@ ¶ And Joshua ##cast lots##note:x[<<Acts 13:19>>] for them in Shiloh ##before the LORD##note:x[<<Col 1:12>>]: and there Joshua divided the land unto the children of Israel according to their divisions.
+
+[discrete.pericope]
+==== Benjamin’s Inheritance
+
+@ ¶ And the lot of the tribe of the children of Benjamin came up according to their families: and the coast of their lot came forth between the children of Judah and the children of Joseph.
+@ And their border on the north side was from Jordan; and the border went up to the side of ##Jericho##note:x[<<Josh 16:1>>] on the north side, and went up through the mountains westward; and the goings out thereof were at the wilderness of Beth-aven.
+@ And the border went over from thence toward Luz, to the ##side of Luz##note:x[<<Gen 28:19>>], which __is__ Beth-el, southward; and the border descended to Ataroth-adar, near the hill that __lieth__ on the south side of the nether Beth-horon.
+@ And the border was drawn __thence__, and compassed the corner of the sea southward, from the hill that __lieth__ before Beth-horon southward; and the goings out thereof were at Kirjath-baal, which __is__ Kirjath-jearim, a city of the children of Judah: this __was__ the west quarter.
+@ And the south quarter __was__ from the end of Kirjath-jearim, and the border went out on the west, and went out to the well of waters of ##Nephtoah##note:x[<<Josh 15:9>>]:
+@ And the border came down to the end of the mountain that __lieth__ before ##the valley of the son##note:x[<<2 Kgs 23:10>>] of Hinnom, __and__ which __is__ in the valley of the giants on the north, and descended to the valley of Hinnom, to the side of Jebusi on the south, and descended to ##En-rogel##note:x[<<Josh 15:7>>],
+@ And was drawn from the north, and went forth to En-shemesh, and went forth toward Geliloth, which __is__ over against the going up of Adummim, and descended to ##the stone##note:x[<<Josh 15:6>>] of Bohan the son of Reuben,
+@ And passed along toward the side over against note:x[<<Josh 15:6>>]##Arabah##note:tn[or, the plain] northward, and went down unto Arabah:
+@ And the border passed along to the side of Beth-hoglah northward: and the outgoings of the border were at the north ##bay##note:tn[Heb. tongue] of the salt sea at the south end of Jordan: this __was__ the south coast.
+@ And Jordan was the border of it on the east side. This __was__ the inheritance of the children of Benjamin, by the coasts thereof round about, according to their families.
+@ Now the cities of the tribe of the children of Benjamin according to their families were Jericho, and Beth-hoglah, and the valley of Keziz,
+@ And Beth-arabah, and Zemaraim, and Beth-el,
+@ And Avim, and Parah, and Ophrah,
+@ And Chephar-haammonai, and Ophni, and Gaba; twelve cities with their villages:
+@ Gibeon, and Ramah, and Beeroth,
+@ And Mizpeh, and Chephirah, and Mozah,
+@ And Rekem, and Irpeel, and Taralah,
+@ And ##Zelah##note:x[<<2 Sam 21:14>>], Eleph, and ##Jebusi##note:x[<<Josh 15:8>>], which __is__ Jerusalem, Gibeath, __and__ Kirjath; fourteen cities with their villages. This __is__ the inheritance of the children of Benjamin according to their families.
+
+=== @19
+
+[discrete.pericope]
+==== Simeon’s Inheritance
+
+@ And the second lot came forth to Simeon, __even__ for the tribe of the children of Simeon according to their families: and their inheritance was within the inheritance of the children of Judah.
+@ And they had in their inheritance Beer-sheba, or Sheba, and Moladah,
+@ And Hazar-shual, and Balah, and Azem,
+@ And Eltolad, and Bethul, and Hormah,
+@ And Ziklag, and Beth-marcaboth, and Hazar-susah,
+@ And Beth-lebaoth, and Sharuhen; thirteen cities and their villages:
+@ Ain, Remmon, and Ether, and Ashan; four cities and their villages:
+@ And all the villages that __were__ round about these cities to Baalath-beer, Ramath of the south. This __is__ the inheritance of the tribe of the children of Simeon according to their families.
+@ Out of the portion of the children of Judah __was__ the inheritance of the children of Simeon: for the part of the children of Judah was too much for them: therefore the children of Simeon had their inheritance within the inheritance of them.
+
+[discrete.pericope]
+==== Zebulun’s Inheritance
+
+@ ¶ And the third lot came up for the children of Zebulun according to their families: and the border of their inheritance was unto Sarid:
+@ And their border went up toward the sea, and Maralah, and reached to Dabbasheth, and reached to the river that __is__ before ##Jokneam##note:x[<<Josh 12:22>>];
+@ And turned from Sarid eastward toward the sunrising unto the border of Chisloth-tabor, and then goeth out to Daberath, and goeth up to Japhia,
+@ And from thence passeth on along on the east to Gittah-hepher, to Ittah-kazin, and goeth out to Remmon-##methoar##note:tn[or, which is drawn] to Neah;
+@ And the border compasseth it on the north side to Hannathon: and the outgoings thereof are in the valley of Jiphthah-el:
+@ And Kattath, and Nahallal, and Shimron, and Idalah, and Beth-lehem: twelve cities with their villages.
+@ This __is__ the inheritance of the children of Zebulun according to their families, these cities with their villages.
+
+[discrete.pericope]
+==== Issachar’s Inheritance
+
+@ ¶ __And__ the fourth lot came out to Issachar, for the children of Issachar according to their families.
+@ And their border was toward Jezreel, and Chesulloth, and ##Shunem##note:x[<<1 Sam 28:4; 2 Kgs 4:8>>],
+@ And Hapharaim, and Shion, and Anaharath,
+@ And Rabbith, and Kishion, and Abez,
+@ And Remeth, and En-gannim, and En-haddah, and Beth-pazzez;
+@ And the coast reacheth to ##Tabor##note:x[<<Judg 4:6>>], and Shahazimah, and Beth-shemesh; and the outgoings of their border were at Jordan: sixteen cities with their villages.
+@ This __is__ the inheritance of the tribe of the children of Issachar according to their families, the cities and their villages.
+
+[discrete.pericope]
+==== Asher’s Inheritance
+
+@ ¶ And the fifth lot came out for the tribe of the children of Asher according to their families.
+@ And their border was Helkath, and Hali, and Beten, and Achshaph,
+@ And Alammelech, and Amad, and Misheal; and reacheth to Carmel westward, and to Shihor-libnath;
+@ And turneth toward the sunrising to Beth-dagon, and reacheth to Zebulun, and to the valley of Jiphthah-el toward the north side of Beth-emek, and Neiel, and goeth out to ##Cabul##note:x[<<1 Kgs 9:13>>] on the left hand,
+@ note:x[<<Josh 11:8; Judg 1:31>>]And Hebron, and Rehob, and Hammon, and Kanah, __even__ unto great Zidon;
+@ And __then__ the coast turneth to Ramah, and to the strong city ##Tyre##note:tn[Heb. Tzor]; and the coast turneth to Hosah; and the outgoings thereof are at the sea from the coast to ##Achzib##note:x[<<Judg 1:31>>]:
+@ Ummah also, and Aphek, and Rehob: twenty and two cities with their villages.
+@ This __is__ the inheritance of the tribe of the children of Asher according to their families, these cities with their villages.
+
+[discrete.pericope]
+==== Naphtali’s Inheritance
+
+@ ¶ The sixth lot came out to the children of Naphtali, __even__ for the children of Naphtali according to their families.
+@ And their coast was from Heleph, from Allon to Zaanannim, and Adami, Nekeb, and Jabneel, unto Lakum; and the outgoings thereof were at Jordan:
+@ And __then__ the coast turneth westward to Aznoth-tabor, and goeth out from thence to Hukkok, and reacheth to Zebulun on the south side, and reacheth to Asher on the west side, and to Judah upon Jordan toward the sunrising.
+@ note:x[<<Josh 11:2>>]And the fenced cities __are__ Ziddim, Zer, and Hammath, Rakkath, and Chinnereth,
+@ And Adamah, and Ramah, and ##Hazor##note:x[<<Josh 11:1>>],
+@ And Kedesh, and Edrei, and En-hazor,
+@ And Iron, and Migdal-el, Horem, and Beth-anath, and Beth-shemesh; nineteen cities with their villages.
+@ This __is__ the inheritance of the tribe of the children of Naphtali according to their families, the cities and their villages.
+
+[discrete.pericope]
+==== Dan’s Inheritance
+
+@ ¶ __And__ the seventh lot came out for the tribe of the children of Dan according to their families.
+@ And the coast of their inheritance was Zorah, and Eshtaol, and Ir-shemesh,
+@ And ##Shaalabbin##note:x[<<Judg 1:35>>], and Ajalon, and Jethlah,
+@ And Elon, and Thimnathah, and Ekron,
+@ And Eltekeh, and Gibbethon, and Baalath,
+@ And Jehud, and Bene-berak, and Gath-rimmon,
+@ And Me-jarkon, and Rakkon, with the border ##before##note:tn[or, over against] ##Japho##note:tn[or, Joppa].
+@ And the coast of the children of Dan went out __too little__ for them: therefore the children of Dan went up to fight against Leshem, and took it, and smote it with the edge of the sword, and possessed it, and dwelt therein, and called Leshem, Dan, after the name of Dan their father.
+@ This __is__ the inheritance of the tribe of the children of Dan according to their families, these cities with their villages.
+
+[discrete.pericope]
+==== Joshua’s Inheritance
+
+@ ¶ When they had made an end of dividing the land for inheritance by their coasts, the children of Israel gave an inheritance to Joshua the son of Nun among them:
+@ According to the word of the LORD they gave him the city which he asked, __even__ ##Timnath-serah##note:x[<<Josh 24:30>>] in mount Ephraim: and he built the city, and dwelt therein.
+@ ##These __are__##note:x[<<Josh 14:1>>] the inheritances, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Israel, divided for an inheritance by lot ##in Shiloh##note:x[<<Josh 18:1, 10>>] before the LORD, at the door of the tabernacle of the congregation. So they made an end of dividing the country.
+
+=== @20
+
+[discrete.pericope]
+==== Six Cities of Refuge
+
+[.parallel]
+(<<Numbers 35:9–34; Deuteronomy 4:41–43; Deuteronomy 19:1–14>>)
+
+@ The LORD also spake unto Joshua, saying,
+@ Speak to the children of Israel, saying, ##Appoint##note:x[<<Num 35:6, 11–14; Deut 19:2–13>>] out for you cities of refuge, whereof I spake unto you by the hand of Moses:
+@ That the slayer that killeth __any__ person unawares __and__ unwittingly may flee thither: and they shall be your refuge from the avenger of blood.
+@ And when he that doth flee unto one of those cities shall stand ##at the entering##note:x[<<Jer 38:7>>] of the gate of the city, and shall declare his cause in the ears of the elders of that city, they shall take him into the city unto them, and give him a place, that he may dwell among them.
+@ ##And if the avenger of blood pursue after him, then they shall not deliver the slayer up into his hand; because he smote his neighbour unwittingly, and hated him not beforetime.##note:x[<<Num 35:12>>]
+@ And he shall dwell in that city, ##until##note:x[<<Num 35:12; Heb 9:26>>] he stand before the congregation for judgment, __and__ until the death of the high priest that shall be in those days: then shall the slayer return, and come unto his own city, and unto his own house, unto the city from whence he fled.
+
+@ ¶ And they note:x[<<Josh 21:32; 1 Chr 6:76>>]##appointed##note:tn[Heb. sanctified] Kedesh in Galilee in mount Naphtali, and Shechem in mount Ephraim, and ##Kirjath-arba##note:x[<<Josh 21:11>>], which __is__ Hebron, in the mountain of Judah.
+@ And on the other side Jordan by Jericho eastward, they assigned ##Bezer##note:x[<<Josh 21:36; 1 Chr 6:78>>] in the wilderness upon the plain out of the tribe of Reuben, and Ramoth in Gilead out of the tribe of Gad, and Golan in Bashan out of the tribe of Manasseh.
+@ These were ##the cities##note:x[<<Num 35:15>>] appointed for all the children of Israel, and for the stranger that sojourneth among them, that whosoever killeth __any__ person at unawares might flee thither, and not die by the hand of the avenger of blood, until he stood before the congregation.
+
+=== @21
+
+[discrete.pericope]
+==== Forty-Eight Cities for the Levites
+
+[.parallel]
+(<<Numbers 35:1–8; 1 Chronicles 6:54–81>>)
+
+@ Then came near the heads of the fathers of the Levites unto ##Eleazar##note:x[<<Josh 14:1>>] the priest, and unto Joshua the son of Nun, and unto the heads of the fathers of the tribes of the children of Israel;
+@ And they spake unto them at ##Shiloh##note:x[<<Josh 18:1>>] in the land of Canaan, saying, The LORD commanded by the hand of Moses to give us cities to dwell in, with the suburbs thereof for our cattle.
+@ And the children of Israel gave unto the Levites out of their inheritance, at the commandment of the LORD, these cities and their suburbs.
+@ And the lot came out for the families of the Kohathites: and the children of Aaron the priest, __which were__ of the Levites, had by lot out of the tribe of Judah, and out of the tribe of Simeon, and out of the tribe of Benjamin, thirteen cities.
+@ And the rest of the children of Kohath __had__ by lot out of the families of the tribe of Ephraim, and out of the tribe of Dan, and out of the half tribe of Manasseh, ten cities.
+@ And the children of Gershon __had__ by lot out of the families of the tribe of Issachar, and out of the tribe of Asher, and out of the tribe of Naphtali, and out of the half tribe of Manasseh in Bashan, thirteen cities.
+@ The children of Merari by their families __had__ out of the tribe of Reuben, and out of the tribe of Gad, and out of the tribe of Zebulun, twelve cities.
+@ And the children of Israel gave by lot unto the Levites these cities with their suburbs, as the LORD commanded by the hand of Moses.
+
+@ ¶ And they gave out of the tribe of the children of Judah, and out of the tribe of the children of Simeon, these cities which are __here__ ##mentioned##note:tn[Heb. called] by name,
+@ Which the children of Aaron, __being__ of the families of the Kohathites, __who were__ of the children of Levi, had: for theirs was the first lot.
+@ ##And they##note:x[<<1 Chr 6:55>>] gave them the city of Arba the father of Anak, which __city is__ Hebron, in the hill __country__ of Judah, with the suburbs thereof round about it.note:tn[__the city…__: or, Kirjath-arba]
+@ But the fields of the city, and the villages thereof, gave they to Caleb the son of Jephunneh for his possession.
+
+@ ¶ Thus they gave to the children of Aaron the priest Hebron with her suburbs, __to be__ a city of refuge for the slayer; and ##Libnah##note:x[<<Josh 15:42>>] with her suburbs,
+@ And ##Jattir##note:x[<<Josh 15:48>>] with her suburbs, and ##Eshtemoa##note:x[<<Josh 15:50>>] with her suburbs,
+@ And ##Holon##note:tn[also called, Hilen] with her suburbs, and Debir with her suburbs,
+@ And note:x[<<1 Chr 6:59>>]##Ain##note:tn[also called, Ashan] with her suburbs, and ##Juttah##note:x[<<Josh 15:55>>] with her suburbs, __and__ ##Beth-shemesh##note:x[<<Josh 15:10>>] with her suburbs; nine cities out of those two tribes.
+@ And out of the tribe of Benjamin, Gibeon with her suburbs, ##Geba##note:tn[also called, Gaba] with her suburbs,
+@ Anathoth with her suburbs, and ##Almon##note:tn[also called, Alemeth] with her suburbs; four cities.
+@ All the cities of the children of Aaron, the priests, __were__ thirteen cities with their suburbs.
+
+@ ¶ ##And the families of the children of Kohath, the Levites which remained of the children of Kohath, even they had the cities of their lot out of the tribe of Ephraim.##note:x[<<1 Chr 6:66>>]
+@ For they gave them ##Shechem##note:x[<<Josh 20:7>>] with her suburbs in mount Ephraim, __to be__ a city of refuge for the slayer; and Gezer with her suburbs,
+@ And Kibzaim with her suburbs, and Beth-horon with her suburbs; four cities.
+@ And out of the tribe of Dan, Eltekeh with her suburbs, Gibbethon with her suburbs,
+@ Aijalon with her suburbs, Gath-rimmon with her suburbs; four cities.
+@ And out of the half tribe of Manasseh, Tanach with her suburbs, and Gath-rimmon with her suburbs; two cities.
+@ All the cities __were__ ten with their suburbs for the families of the children of Kohath that remained.
+
+@ ¶ And unto the children of Gershon, of the families of the Levites, out of the __other__ half tribe of Manasseh __they gave__ ##Golan##note:x[<<1 Chr 6:71>>] in Bashan with her suburbs, __to be__ a city of refuge for the slayer; and Beesh-terah with her suburbs; two cities.
+@ And out of the tribe of Issachar, Kishon with her suburbs, Dabareh with her suburbs,
+@ Jarmuth with her suburbs, En-gannim with her suburbs; four cities.
+@ And out of the tribe of Asher, Mishal with her suburbs, Abdon with her suburbs,
+@ Helkath with her suburbs, and Rehob with her suburbs; four cities.
+@ And out of the tribe of Naphtali, ##Kedesh##note:x[<<Josh 20:7; 1 Chr 6:76>>] in Galilee with her suburbs, __to be__ a city of refuge for the slayer; and Hammoth-dor with her suburbs, and ##Kartan##note:x[<<1 Chr 6:76>>] with her suburbs; three cities.
+@ All the cities of the Gershonites according to their families __were__ thirteen cities with their suburbs.
+
+@ ¶ ##And unto##note:x[<<1 Chr 6:77>>] the families of the children of Merari, the rest of the Levites, out of the tribe of Zebulun, Jokneam with her suburbs, and Kartah with her suburbs,
+@ Dimnah with her suburbs, Nahalal with her suburbs; four cities.
+@ And out of the tribe of Reuben, ##Bezer##note:x[<<Josh 20:8>>] with her suburbs, and Jahazah with her suburbs,
+@ Kedemoth with her suburbs, and Mephaath with her suburbs; four cities.
+@ And out of the tribe of Gad, Ramoth in Gilead with her suburbs, __to be__ a city of refuge for the slayer; and ##Mahanaim##note:x[<<Gen 32:2>>] with her suburbs,
+@ Heshbon with her suburbs, Jazer with her suburbs; four cities in all.
+@ So all the cities for the children of Merari by their families, which were remaining of the families of the Levites, were __by__ their lot twelve cities.
+@ All the cities of the Levites within the possession of the children of Israel __were__ forty and eight cities with their suburbs.
+@ These cities were every one with their suburbs round about them: thus __were__ all these cities.
+
+@ ¶ ##And the LORD gave unto Israel all the land which he sware to give unto their fathers; and they possessed it, and dwelt therein.##note:x[<<Gen 13:15; 28:4; Exod 23:27–31>>]
+@ ##And the LORD gave them rest round about, according to all that he sware unto their fathers: and there stood not a man of all their enemies before them; the LORD delivered all their enemies into their hand.##note:x[<<Deut 31:3–5; Josh 11:23; Heb 4:9>>]
+@ ##There failed not ought of any good thing which the LORD had spoken unto the house of Israel; all came to pass.##note:x[<<Num 23:19; Josh 23:14–15; 1 Kgs 8:56>>]
+
+=== @22
+
+[discrete.pericope]
+==== The Eastern Tribes Return Home
+
+@ Then ##Joshua##note:x[<<Num 32:18–33>>] called the Reubenites, and the Gadites, and the half tribe of Manasseh,
+@ And said unto them, Ye have kept all that Moses the servant of the LORD commanded you, and have obeyed my voice in all that I commanded you:
+@ Ye have not left your brethren these many days unto this day, but have kept the charge of the commandment of the LORD your God.
+@ And now the LORD your God hath given rest unto your brethren, as he promised them: therefore now return ye, and ##get##note:x[<<Josh 13:8>>] you unto your tents, __and__ unto the land of your possession, which Moses the servant of the LORD gave you on the other side Jordan.
+@ But take diligent heed to do the commandment and the law, which Moses the servant of the LORD charged you, to ##love##note:x[<<Exod 20:6; Matt 22:37; Rom 8:28>>] the LORD your God, and to walk in all his ways, and to keep his commandments, and to cleave unto him, and to serve him with all your heart and with all your soul.
+@ ##So Joshua blessed them, and sent them away: and they went unto their tents.##note:x[<<Josh 14:13; Luke 24:50>>]
+
+@ ¶ ##Now to the __one__ half of the tribe of Manasseh Moses had given __possession__ in Bashan: but unto the __other__ half thereof gave Joshua among their brethren on this side Jordan westward. And when Joshua sent them away also unto their tents, then he blessed them,##note:x[<<Josh 17:1–12>>]
+@ And he spake unto them, saying, ##Return##note:x[<<Deut 8:9–14, 17–18>>] with much riches unto your tents, and with very much cattle, with silver, and with gold, and with brass, and with iron, and with very much raiment: ##divide##note:x[<<Num 31:27>>] the spoil of your enemies with your brethren.
+
+[discrete.pericope]
+==== The Altar of Witness
+
+@ ¶ And the children of Reuben and the children of Gad and the half tribe of Manasseh returned, and departed from the children of Israel out of Shiloh, which __is__ in the land of Canaan, to go unto ##the country of Gilead##note:x[<<Num 32:1, 26, 29>>], to the land of their possession, whereof they were possessed, according to the word of the LORD by the hand of Moses.
+
+@ ¶ And when they came unto the borders of Jordan, that __are__ in the land of Canaan, the children of Reuben and the children of Gad and the half tribe of Manasseh built there an altar by Jordan, a great altar to see to.
+
+@ ¶ And the children of Israel ##heard##note:x[<<Deut 13:12–14>>] say, Behold, the children of Reuben and the children of Gad and the half tribe of Manasseh have built an altar over against the land of Canaan, in the borders of Jordan, at the passage of the children of Israel.
+@ And when the children of Israel heard __of it__, the whole congregation of the children of Israel gathered themselves together at Shiloh, to go up to war against them.
+@ And the children of Israel sent unto the children of Reuben, and to the children of Gad, and to the half tribe of Manasseh, into the land of Gilead, ##Phinehas##note:x[<<Num 25:7>>] the son of Eleazar the priest,
+@ And with him ten princes, of each chief house a prince throughout all the tribes of Israel; and each one __was__ ##an head##note:x[<<Num 1:4>>] of the house of their fathers among the thousands of Israel.note:tn[__chief…__: Heb. house of the father]
+
+@ ¶ And they came unto the children of Reuben, and to the children of Gad, and to the half tribe of Manasseh, unto the land of Gilead, and they spake with them, saying,
+@ Thus saith the whole congregation of the LORD, What trespass __is__ this that ye have committed against the God of Israel, to turn away this day from following the LORD, in that ye have builded you an altar, that ye might rebel this day against the LORD?
+@ ##__Is__ the iniquity##note:x[<<Deut 4:3–4; Ps 106:28–29>>] of Peor too little for us, from which we are not cleansed until this day, although there was a plague in the congregation of the LORD,
+@ But that ye must turn away this day from following the LORD? and it will be, __seeing__ ye rebel to day against the LORD, that to morrow ##he will be##note:x[<<Num 16:22>>] wroth with the whole congregation of Israel.
+@ Notwithstanding, if the land of your possession __be__ unclean, __then__ pass ye over unto the land of the possession of the LORD, wherein the LORD’s tabernacle dwelleth, and take possession among us: but rebel not against the LORD, nor rebel against us, in building you an altar beside the altar of the LORD our God.
+@ ##Did not Achan the son of Zerah commit a trespass in the accursed thing, and wrath fell on all the congregation of Israel? and that man perished not alone in his iniquity.##note:x[<<Josh 7:1, 5>>]
+
+@ ¶ Then the children of Reuben and the children of Gad and the half tribe of Manasseh answered, and said unto the heads of the thousands of Israel,
+@ The ##LORD God##note:x[<<Deut 10:17>>] of gods, the LORD God of gods, ##he knoweth##note:x[<<1 Kgs 8:39; Ps 44:21>>], and Israel he shall know; if __it be__ in rebellion, or if in transgression against the LORD, ( save us not this day,)
+@ That we have built us an altar to turn from following the LORD, or if to offer thereon burnt offering or meat offering, or if to offer peace offerings thereon, ##let the LORD##note:x[<<Deut 18:19; 1 Sam 20:16>>] himself require __it;__
+@ And if we have not __rather__ done it for fear of __this__ thing, saying, In time to come your children might speak unto our children, saying, What have ye to do with the LORD God of Israel?note:tn[__In time…__: Heb. To morrow]
+@ For the LORD hath made Jordan a border between us and you, ye children of Reuben and children of Gad; ye have no part in the LORD: so shall your children make our children cease from fearing the LORD.
+@ Therefore we said, Let us now prepare to build us an altar, not for burnt offering, nor for sacrifice:
+@ But __that__ it __may be__ ##a witness##note:x[<<Gen 31:48; Josh 24:27>>] between us, and you, and our generations after us, that we might do the service of the LORD before him with our burnt offerings, and with our sacrifices, and with our peace offerings; that your children may not say to our children in time to come, Ye have no part in the LORD.
+@ Therefore said we, that it shall be, when they should __so__ say to us or to our generations in time to come, that we may say __again__, Behold the pattern of the altar of the LORD, which our fathers made, not for burnt offerings, nor for sacrifices; but it __is__ a witness between us and you.
+@ God forbid that we should rebel against the LORD, and turn this day from following the LORD, ##to build##note:x[<<Deut 12:13–14>>] an altar for burnt offerings, for meat offerings, or for sacrifices, beside the altar of the LORD our God that __is__ before his tabernacle.
+
+@ ¶ And when Phinehas the priest, and the princes of the congregation and heads of the thousands of Israel which __were__ with him, heard the words that the children of Reuben and the children of Gad and the children of Manasseh spake, it pleased them.note:tn[__pleased…__: Heb. was good in their eyes]
+@ And Phinehas the son of Eleazar the priest said unto the children of Reuben, and to the children of Gad, and to the children of Manasseh, This day we perceive that ##the LORD __is__##note:x[<<Lev 26:11–12; 2 Chr 15:2>>] among us, because ye have not committed this trespass against the LORD: ##now##note:tn[Heb. then] ye have delivered the children of Israel out of the hand of the LORD.
+
+@ ¶ And Phinehas the son of Eleazar the priest, and the princes, returned from the children of Reuben, and from the children of Gad, out of the land of Gilead, unto the land of Canaan, to the children of Israel, and brought them word again.
+@ And the thing pleased the children of Israel; and the children of Israel ##blessed##note:x[<<1 Chr 29:20; Dan 2:19; Luke 2:28>>] God, and did not intend to go up against them in battle, to destroy the land wherein the children of Reuben and Gad dwelt.
+@ And the children of Reuben and the children of Gad called the altar note:x[<<Josh 22:27>>]##__Ed__##note:tn[that is, A witness]__:__ for it __shall be__ a witness between us that the LORD __is__ God.
+
+=== @23
+
+[discrete.pericope]
+==== Joshua’s Charge to Leaders
+
+@ And it came to pass a long time after that ##the LORD##note:x[<<Josh 21:44>>] had given rest unto Israel from all their enemies round about, that Joshua ##waxed old##note:x[<<Josh 13:1>>] __and__ stricken in age.note:tn[__stricken…__: Heb. come into days]
+@ And Joshua called for ##all Israel##note:x[<<Josh 24:1>>], __and__ for their elders, and for their heads, and for their judges, and for their officers, and said unto them, I am old __and__ stricken in age:
+@ And ye have seen all that the LORD your God hath done unto all these nations because of you; ##for the##note:x[<<Exod 14:14>>] LORD your God __is__ he that hath fought for you.
+@ Behold, I have divided unto you by lot these nations that remain, to be an inheritance for your tribes, from Jordan, with all the nations that I have cut off, even unto the great sea ##westward##note:tn[Heb. at the sunset].
+@ And the LORD your God, he shall expel them from before you, and drive them from out of your sight; and ye shall possess their land, as the LORD your God hath promised unto you.
+@ Be ye therefore ##very##note:x[<<Heb 12:4>>] courageous to keep and to do all that is written in the book of the law of Moses, ##that ye##note:x[<<Deut 5:32; 28:14>>] turn not aside therefrom __to__ the right hand or __to__ the left;
+@ ##That ye come##note:x[<<Deut 7:2–3>>] not among these nations, these that remain among you; ##neither##note:x[<<Exod 23:13; Ps 16:4>>] make mention of the name of their gods, nor cause to swear __by them__, neither serve them, nor bow yourselves unto them:
+@ ##But cleave unto the LORD your God, as ye have done unto this day.##note:x[<<Deut 10:20; 11:22; Josh 22:5>>]note:tn[__But cleave…__: or, For if ye will cleave, etc]
+@ ##For the LORD##note:x[<<Deut 11:23; Josh 23:5>>] hath driven out from before you great nations and strong: but __as for__ you, ##no man##note:x[<<Josh 1:5>>] hath been able to stand before you unto this day.note:tn[__For the LORD…__: or, Then the LORD will drive]
+@ ##One man##note:x[<<Lev 26:8; Deut 32:30>>] of you shall chase a thousand: for the ##LORD##note:x[<<Deut 3:22>>] your God, he __it is__ that fighteth for you, as he hath promised you.
+
+@ ##Take good##note:x[<<Deut 6:5–12; Josh 22:5>>] heed therefore unto ##yourselves##note:tn[Heb. your souls], that ye ##love##note:x[<<Rom 8:28>>] the LORD your God.
+@ Else if ye do in any wise go back, and cleave unto the remnant of these nations, __even__ these that remain among you, and ##shall make##note:x[<<Deut 7:3>>] marriages with them, and go in unto them, and they to you:
+@ Know for a certainty that the LORD your God ##will no##note:x[<<Num 33:55; Deut 7:16>>] more drive out __any of__ these nations from before you; but they shall be ##snares##note:x[<<Deut 7:16>>] and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land which the LORD your God hath given you.
+@ And, behold, this day ##I __am__ going##note:x[<<1 Kgs 2:2>>] the way of all the earth: and ye know in all your hearts and in all your souls, that ##not one thing##note:x[<<Lev 26:3–13; Luke 21:33>>] hath failed of all the good things which the LORD your God spake concerning you; all are come to pass unto you, __and__ not one thing hath failed thereof.
+@ Therefore it shall come to pass, __that__ as all good things are come upon you, which the LORD your God promised you; so shall the LORD bring upon you all evil things, until he have destroyed you from off this good land which the LORD your God hath given you.
+@ When ye have transgressed the covenant of the LORD your God, which he commanded you, and have gone and served other gods, and bowed yourselves to them; then shall the anger of the LORD be kindled against you, and ye shall perish quickly from off the good land which he hath given unto you.
+
+=== @24
+
+[discrete.pericope]
+==== Joshua Reviews Israel’s History
+
+@ And Joshua gathered all the tribes of Israel to Shechem, and ##called##note:x[<<Josh 23:2>>] for the elders of Israel, and for their heads, and for their judges, and for their officers; and they ##presented##note:x[<<1 Sam 10:19>>] themselves before God.
+@ And Joshua said unto all the people, Thus saith the LORD God of Israel, ##Your fathers##note:x[<<Ezek 16:3>>] dwelt on the other side of the flood in old time, __even__ Terah, the father of Abraham, and the father of Nachor: and they ##served other gods##note:x[<<Gen 31:30; Josh 24:15>>].
+@ And ##I took##note:x[<<Gen 12:1–4>>] your father Abraham from the other side of the flood, and led him throughout all the land of Canaan, and multiplied his seed, and ##gave##note:x[<<Gen 21:2–3>>] him Isaac.
+@ And I gave unto Isaac Jacob and Esau: and I gave ##unto Esau##note:x[<<Gen 36:8; Deut 2:5>>] mount Seir, to possess it; but Jacob and his children went down into Egypt.
+@ I ##sent##note:x[<<Exod 3:10>>] Moses also and Aaron, and I plagued Egypt, according to that which I did among them: and afterward I brought you out.
+@ And I brought your fathers out of Egypt: and ye came unto the sea; and the Egyptians pursued after your fathers with chariots and horsemen unto the Red sea.
+@ ##And when##note:x[<<Exod 14:10>>] they cried unto the LORD, ##he put##note:x[<<Exod 14:20>>] darkness between you and the Egyptians, and brought the sea upon them, and covered them; and ##your eyes##note:x[<<Deut 4:34>>] have seen what I have done in Egypt: and ye dwelt in the wilderness a long season.
+@ ##And I brought you into the land of the Amorites, which dwelt on the other side Jordan; and they fought with you: and I gave them into your hand, that ye might possess their land; and I destroyed them from before you.##note:x[<<Num 21:21–35>>]
+@ ##Then Balak the son of Zippor, king of Moab, arose and warred against Israel, and sent and called Balaam the son of Beor to curse you:##note:x[<<Judg 11:25; Mic 6:5>>]
+@ ##But I would not hearken unto Balaam; therefore he blessed you still: so I delivered you out of his hand.##note:x[<<Num 22:11–12; 24:5–10; Isa 54:17>>]
+@ And ye went over Jordan, and came unto Jericho: and the men of Jericho fought against you, the Amorites, and the Perizzites, and the Canaanites, and the Hittites, and the Girgashites, the Hivites, and the Jebusites; and I delivered them into your hand.
+@ And ##I sent##note:x[<<Exod 23:28; Deut 7:20>>] the hornet before you, which drave them out from before you, __even__ the two kings of the Amorites; __but__ ##not##note:x[<<Ps 44:3–6>>] with thy sword, nor with thy bow.
+@ ##And I##note:x[<<Josh 21:45>>] have given you a land for which ye did not labour, and ##cities##note:x[<<Deut 6:10–12; 8:7>>] which ye built not, and ye dwell in them; of the vineyards and oliveyards which ye planted not do ye eat.
+
+[discrete.pericope]
+==== Choose Whom You Will Serve
+
+[.parallel]
+(<<Deuteronomy 10:12–22>>)
+
+@ ¶ Now therefore ##fear##note:x[<<Deut 10:12; 1 Sam 12:24>>] the LORD, and serve him in sincerity and in truth: and ##put##note:x[<<Gen 35:2>>] away the gods which your fathers served on the other side of the flood, and in Egypt; and serve ye the LORD.
+
+@ And if it seem evil unto you to serve the LORD, ##choose##note:x[<<Ruth 1:15–16; 1 Kgs 18:21; John 6:67>>] you this day whom ye will serve; whether the gods which your fathers served that __were__ on the other side of the flood, or the gods of the Amorites, in whose land ye dwell: but as for me and my house, we will serve the LORD.
+@ ##And the people answered and said, God forbid that we should forsake the LORD, to serve other gods;##note:x[<<Heb 10:38–39>>]
+@ ##For the LORD our God, he __it is__ that brought us up and our fathers out of the land of Egypt, from the house of bondage, and which did those great signs in our sight, and preserved us in all the way wherein we went, and among all the people through whom we passed:##note:x[<<Exod 19:4>>]
+@ And the LORD drave out from before us all the people, even the Amorites which dwelt in the land: __therefore__ ##will we also##note:x[<<Exod 10:2; Ps 116:16; Mic 4:2>>] serve the LORD; for he __is__ our God.
+@ And Joshua said unto the people, Ye cannot serve the LORD: for he __is__ an ##holy##note:x[<<Isa 5:16>>] God; he __is__ ##a jealous##note:x[<<Exod 20:5>>] God; ##he will not##note:x[<<Exod 23:21>>] forgive your transgressions nor your sins.note:tn[__holy God__: Heb. holy Gods]
+@ If ye forsake the LORD, and serve strange gods, then ##he will turn##note:x[<<1 Chr 28:9; Jer 17:13; Heb 10:26–27>>] and do you hurt, and consume you, after that he hath done you good.
+@ And the people said unto Joshua, Nay; but we will serve the LORD.
+@ And Joshua said unto the people, Ye __are__ witnesses against yourselves that ##ye have##note:x[<<Ps 119:11, 173>>] chosen you the LORD, to serve him. And they said, __We are__ witnesses.
+@ Now therefore ##put away##note:x[<<Josh 24:14; 2 Cor 6:16–18>>], __said he__, the strange gods which __are__ among you, and incline your heart unto the LORD God of Israel.
+@ And the people said unto Joshua, The LORD our God will we serve, and his voice will we obey.
+@ So Joshua ##made##note:x[<<Exod 15:25; 2 Chr 23:16; Neh 9:38>>] a covenant with the people that day, and set them a statute and an ordinance in Shechem.
+
+@ ¶ And Joshua wrote these words in the book of the law of God, and ##took##note:x[<<Judg 9:6>>] a great stone, and set it up there ##under##note:x[<<Judg 9:6>>] an oak, that __was__ by the sanctuary of the LORD.
+@ ##And Joshua said unto all the people, Behold, this stone shall be a witness unto us; for##note:x[<<Josh 22:27–28, 34>>] ##it hath##note:x[<<Luke 19:40>>] heard all the words of the LORD which he spake unto us: it shall be therefore a witness unto you, lest ye deny your God.
+@ So Joshua let the people depart, every man unto his inheritance.
+
+[discrete.pericope]
+==== Joshua’s Death and Burial
+
+[.parallel]
+(<<Judges 2:6–9>>)
+
+@ ¶ And it came to pass ##after these##note:x[<<Judg 2:8>>] things, that Joshua the son of Nun, the servant of the LORD, died, __being__ an hundred and ten years old.
+@ And they buried him in the border of his inheritance in ##Timnath-serah##note:x[<<Josh 19:50>>], which __is__ in mount Ephraim, on the north side of the hill of Gaash.
+@ And Israel ##served##note:x[<<Judg 2:7>>] the LORD all the days of Joshua, and all the days of the elders that overlived Joshua, and ##which had##note:x[<<Deut 31:13>>] known all the works of the LORD, that he had done for Israel.note:tn[__overlived…__: Heb. prolonged their days after Joshua]
+
+@ ¶ And the ##bones##note:x[<<Gen 50:25; Exod 13:19>>] of Joseph, which the children of Israel brought up out of Egypt, ##buried##note:x[<<Gen 33:19>>] they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor the father of Shechem for an hundred pieces of silver: and it became the inheritance of the children of Joseph.note:tn[__pieces…__: or, lambs]
+@ And Eleazar the son of Aaron died; and they buried him in a hill __that pertained to__ Phinehas his son, which was given him in mount Ephraim.

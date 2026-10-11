@@ -1,0 +1,31 @@
+version: 2
+scheme:
+  sutta:
+    absolute: true
+    level:
+      - name: "section"
+        zero: true
+        bridges: true
+        id: "{{doc.sutta}}:{{section}}"
+        reftext: "{{doc.sutta}}:{{section}}"
+      - name: "segment"
+        sep: "."
+        default: true
+        zero: true
+        bridges: true
+        id: "{{doc.sutta}}:{{section}}.{{segment}}"
+        reftext: "{{doc.sutta}}:{{section}}.{{segment}}"
+      - name: "sub"
+        sep: "."
+        id: "{{doc.sutta}}:{{section}}.{{segment}}.{{sub}}"
+        reftext: "{{doc.sutta}}:{{section}}.{{segment}}.{{sub}}"
+level-presentation:
+  sutta:
+    segment:
+      label: ""
+    sub:
+      label: ""
+citation:
+  default:
+    attribution: "{{doc.work}}:{{passage}}"
+    title: ""

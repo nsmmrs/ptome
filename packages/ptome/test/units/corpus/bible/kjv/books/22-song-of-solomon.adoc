@@ -1,0 +1,322 @@
+== @SNG
+
+[.book-title]
+The Song of Solomon
+
+=== @1
+
+[discrete.pericope]
+==== The Bride Confesses Her Love
+
+[.parallel]
+(<<Ephesians 5:22–33; 1 Peter 3:1–7>>)
+
+@ The song of songs, which __is__ Solomon’s.
+
+[discrete.subsection]
+===== The Bride
+
+@ Let him kiss me with the kisses of his mouth: for ##thy love##note:x[<<Ps 36:7; Song 1:4; 4:10>>] __is__ better than wine.note:tn[__thy…__: Heb. thy loves]
+@ Because of ##the savour##note:x[<<Exod 30:23–28; Eccl 7:1; Song 4:10>>] of thy good ointments thy name __is as__ ointment poured forth, therefore do the virgins love thee.
+@ ##Draw##note:x[<<Hos 11:4; John 6:44>>] me, we will run after thee: ##the king##note:x[<<Ps 45:14–15>>] hath brought me into his chambers: we will be glad and rejoice in thee, we will remember thy love more than wine: the upright love thee.note:tn[__the upright…__: or, they love thee uprightly]
+
+[discrete.subsection]
+===== The Friends
+
+[discrete.subsection]
+===== The Bride
+
+@ I __am__ black, but ##comely##note:x[<<Luke 15:22; 2 Cor 5:21>>], O ye daughters of Jerusalem, ##as the tents##note:x[<<Ps 120:5>>] of Kedar, as the curtains of Solomon.
+@ note:x[<<Luke 12:51–53>>]Look not upon me, ##because##note:x[<<Job 30:30>>] I __am__ black, because the sun hath looked upon me: my mother’s children were angry with me; they made me the ##keeper##note:x[<<Song 8:11–12>>] of the vineyards; __but__ mine own vineyard have I not kept.
+
+@ Tell me, ##O thou##note:x[<<Song 3:1–4>>] whom my soul loveth, where ##thou feedest##note:x[<<Ps 23:1–2>>], where thou makest __thy flock__ to rest at noon: for why should I be as one that turneth aside by the flocks of thy companions?note:tn[__as one…__: or, as one that is veiled]
+
+[discrete.subsection]
+===== The Friends
+
+@ ¶ If thou know not, ##O thou##note:x[<<Song 5:9; 6:1>>] fairest among women, go thy way forth by the footsteps of the flock, and feed thy kids beside the shepherds’ tents.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ I have compared thee, ##O my##note:x[<<Song 2:10, 13; John 15:14–15>>] love, to a company of horses in Pharaoh’s chariots.
+@ ##Thy cheeks##note:x[<<Gen 24:47; Ezek 16:11–13>>] are comely with rows __of jewels__, ##thy neck##note:x[<<1 Pet 3:4>>] with chains __of gold__.
+
+[discrete.subsection]
+===== The Friends
+
+@ ##We will make thee borders of gold with studs of silver.##note:x[<<Ps 149:4; Phil 3:21>>]
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ While the king ##__sitteth__##note:x[<<Rev 3:20>>] at his table, ##my##note:x[<<John 12:3>>] spikenard sendeth forth the smell thereof.
+@ A ##bundle##note:x[<<Ps 45:8; John 19:39>>] of myrrh __is__ my wellbeloved unto me; he shall lie all night betwixt my breasts.
+@ My beloved __is__ unto me __as__ a cluster of ##camphire##note:tn[or, cypress] in the vineyards of En-gedi.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ Behold, ##thou __art__ fair##note:x[<<Song 4:1; 5:12>>], my love; behold, thou __art__ fair; ##thou __hast__##note:x[<<Song 4:1>>] doves’ eyes.note:tn[__my love__: or, my companion]
+
+[discrete.subsection]
+===== The Bride
+
+@ Behold, ##thou __art__##note:x[<<Ps 45:2; Song 2:3>>] fair, my beloved, yea, pleasant: also our bed __is__ green.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ The ##beams##note:x[<<Heb 11:10>>] of our house __are__ cedar, __and__ our ##rafters##note:tn[or, galleries] of fir.
+
+=== @2
+
+[discrete.pericope]
+==== The Bride’s Admiration
+
+[discrete.subsection]
+===== The Bride
+
+@ I __am__ ##the rose##note:x[<<Isa 35:1–2>>] of Sharon, __and__ the ##lily##note:x[<<Song 2:16; Isa 57:15>>] of the valleys.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ ##As the lily among thorns, so __is__ my love among the daughters.##note:x[<<1 Pet 2:12>>]
+
+[discrete.subsection]
+===== The Bride
+
+@ As ##the apple tree##note:x[<<Song 8:5>>] among the trees of the wood, so __is__ ##my beloved##note:x[<<Heb 1:1–6>>] among the sons. ##I sat##note:x[<<Isa 25:4>>] down under his shadow with great delight, and his fruit __was__ sweet to my ##taste##note:tn[Heb. palate].note:tn[__I sat…__: Heb. I delighted and sat down, etc]
+@ He ##brought##note:x[<<Song 1:4>>] me to the ##banqueting house##note:x[<<Song 1:4>>], and ##his banner##note:x[<<John 15:9–15>>] over me __was__ love.note:tn[__banqueting…__: Heb. house of wine]
+@ Stay me with ##flagons##note:x[<<2 Sam 6:19; Hos 3:1>>], comfort me with apples: ##for##note:x[<<Song 5:8>>] I __am__ sick of love.note:tn[__comfort…__: Heb. straw me with apples]
+@ ##His left hand __is__ under my head, and his right hand doth embrace me.##note:x[<<Isa 54:5–10; Zeph 3:17>>]
+@ I charge you, O ye daughters of Jerusalem, ##by the roes##note:x[<<Song 3:5>>], and by the hinds of the field, that ##ye stir##note:x[<<Song 8:4>>] not up, nor awake __my__ love, till he please.note:tn[__I charge…__: Heb. I adjure you]
+
+@ ¶ The ##voice##note:x[<<John 3:29; 10:27; Rev 3:20>>] of my beloved! behold, he cometh leaping upon the mountains, skipping upon the hills.
+@ My beloved is ##like##note:x[<<Song 2:17; 8:14>>] a roe or a young hart: behold, he standeth behind our wall, he looketh forth at the windows, shewing himself through the lattice.note:tn[__shewing…__: Heb. flourishing]
+@ My beloved spake, and said unto me, ##Rise##note:x[<<Song 2:13; 4:7–8; Rev 22:17>>] up, my love, my fair one, and come away.
+@ ##For, lo, the winter is past, the rain is over __and__ gone;##note:x[<<Eccl 3:11; Isa 60:1–2; Eph 5:8>>]
+@ The flowers appear on the earth; the ##time##note:x[<<Ps 89:15; 148:7–13; Isa 55:12>>] of the singing __of birds__ is come, and the voice of the turtle is heard in our land;
+@ The fig tree putteth forth her green figs, and the vines __with__ the tender grape give a __good__ smell. ##Arise##note:x[<<Song 2:10>>], my love, my fair one, and come away.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ ¶ O ##my dove##note:x[<<Song 5:2>>], ##__that art__##note:x[<<Ezra 9:5–6>>] in the clefts of the rock, in the secret __places__ of the stairs, let me see ##thy countenance##note:x[<<Song 1:5>>], let me hear thy voice; for sweet __is__ thy voice, and thy countenance __is__ comely.
+
+[discrete.subsection]
+===== The Friends
+
+@ Take us ##the foxes##note:x[<<Luke 13:32; 2 Pet 2:1–3>>], the little foxes, that spoil the vines: for our vines __have__ ##tender##note:x[<<Song 7:12>>] grapes.
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ My ##beloved##note:x[<<Song 6:3; 7:10>>] __is__ mine, and I __am__ his: ##he##note:x[<<Song 6:3>>] feedeth among the lilies.
+@ Until ##the day##note:x[<<Song 4:6>>] break, and the shadows flee away, turn, my beloved, and be thou like a roe or a young hart upon the mountains of Bether.note:tn[__of Bether__: or, of division]
+
+=== @3
+
+[discrete.pericope]
+==== The Bride’s Dream
+
+@ By night on my bed I sought ##him whom##note:x[<<Song 1:7; 1 Pet 1:8>>] my soul loveth: ##I sought him, but##note:x[<<Song 5:6>>] I found him not.
+@ I will rise now, and go about the city in the streets, and in the broad ways I will seek him whom my soul loveth: I sought him, but I found him not.
+@ The ##watchmen##note:x[<<Song 5:7>>] that go about the city found me: __to whom I said__, Saw ye him whom my soul loveth?
+@ __It was__ ##but##note:x[<<Prov 8:17; Song 6:12; Matt 7:7>>] a little that I passed from them, but I found him whom my soul loveth: I held him, and would not let him go, until I had brought him into my mother’s house, and into the chamber of her that conceived me.
+@ ##I charge you, O ye daughters of Jerusalem, by the roes, and by the hinds of the field, that ye stir not up, nor awake __my__ love, till he please.##note:x[<<Song 2:7; 8:4>>]
+
+[discrete.pericope]
+==== Solomon Arrives on His Wedding Day
+
+@ ¶ Who __is__ ##this##note:x[<<Song 8:5; Rev 12:14>>] that cometh out of the wilderness like pillars of smoke, ##perfumed##note:x[<<Song 1:13>>] with myrrh and frankincense, with all powders of the merchant?
+
+@ Behold his bed, which __is__ Solomon’s; threescore valiant men __are__ about it, of the valiant of Israel.
+@ They ##all##note:x[<<Ps 45:3>>] hold swords, __being__ expert in war: every man __hath__ his sword upon his thigh because of fear in the night.
+@ King Solomon made himself a chariot of the wood of Lebanon.note:tn[__a chariot__: or, a bed]
+@ He made the pillars thereof __of__ silver, the bottom thereof __of__ gold, the covering of it __of__ purple, the midst thereof being paved __with__ love, for the daughters of Jerusalem.
+@ Go forth, O ye daughters of Zion, and behold king Solomon with the crown wherewith his mother crowned him ##in the day of his##note:x[<<Isa 62:5; Jer 2:2; Hos 2:19–20>>] espousals, and in the day of the gladness of his heart.
+
+=== @4
+
+[discrete.pericope]
+==== Solomon Admires His Bride
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ Behold, ##thou __art__ fair, my##note:x[<<Song 1:15>>] love; behold, thou __art__ fair; thou __hast__ doves’ eyes within thy locks: ##thy hair##note:x[<<Song 6:5, 7>>] __is__ as a flock of goats, that appear from mount Gilead.note:tn[__that…__: or, that eat of, etc]
+@ Thy ##teeth##note:x[<<Song 6:6>>] __are__ like a flock __of sheep that are even__ shorn, which came up from the washing; whereof every one bear twins, and none __is__ barren among them.
+@ Thy ##lips##note:x[<<Song 5:16>>] __are__ like a thread of ##scarlet##note:x[<<Josh 2:18>>], and thy speech __is__ comely: ##thy temples##note:x[<<Song 6:7>>] __are__ like a piece of a pomegranate within thy locks.
+@ Thy ##neck##note:x[<<Song 7:4; Eph 4:15–16; 1 Pet 1:5>>] __is__ like the tower of David builded for an armoury, whereon there hang a thousand bucklers, all shields of mighty men.
+@ Thy ##two breasts##note:x[<<Song 7:3>>] __are__ like two young roes that are twins, which ##feed##note:x[<<Song 2:16; 6:3>>] among the lilies.
+@ Until the ##day##note:x[<<Song 2:17>>] ##break##note:tn[Heb. breathe], and the shadows flee away, I will get me to the mountain of myrrh, and to the hill of frankincense.
+@ ##Thou __art__ all fair, my love; __there is__ no spot in thee.##note:x[<<Song 4:1; Eph 5:25–27; Col 1:22>>]
+
+@ ¶ Come ##with me##note:x[<<Ps 45:10; Song 2:13>>] from Lebanon, __my__ spouse, with me from Lebanon: look from the top of Amana, from the top of ##Shenir##note:x[<<Deut 3:9>>] and Hermon, from the lions’ dens, from the mountains of the leopards.
+@ ##Thou hast##note:x[<<Prov 5:19–20>>] ##ravished##note:tn[or, taken away] my heart, ##my sister##note:x[<<Song 4:12; 5:1–2>>], __my__ spouse; thou hast ravished my heart with one of thine eyes, with one chain of thy neck.
+@ How fair is thy ##love##note:x[<<Song 1:2>>], my sister, __my__ spouse! ##how much##note:x[<<Song 1:2>>] better is thy love than wine! and the smell of thine ointments than all spices!
+@ Thy lips, O __my__ spouse, drop __as__ the honeycomb: ##honey##note:x[<<Song 5:1>>] and milk __are__ under thy tongue; and the smell of thy garments __is__ like the smell of Lebanon.
+@ A ##garden##note:x[<<Prov 5:15–18; Isa 61:10–11; Rev 21:27>>] ##inclosed##note:tn[Heb. barred] __is__ my sister, __my__ spouse; a spring shut up, a fountain sealed. note:tn[__shut up__: Heb. barred]
+@ Thy plants ##__are__##note:x[<<Eccl 2:5; Song 6:11>>] an orchard of pomegranates, with pleasant fruits; note:x[<<Song 1:14>>]##camphire##note:tn[or, cypress], with spikenard,
+@ Spikenard and saffron; ##calamus##note:x[<<Exod 30:23>>] and cinnamon, with all ##trees##note:x[<<Song 4:6>>] of frankincense; myrrh and aloes, with all ##the chief##note:x[<<Song 6:2>>] spices:
+
+@ A fountain of gardens, ##a well##note:x[<<John 4:10, 14; 7:38>>] of living waters, and streams from Lebanon.
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ Awake, O north wind; and come, thou south; blow upon my garden, __that__ the spices thereof may flow out. ##Let##note:x[<<Song 5:1>>] my beloved come into his garden, and eat his pleasant fruits.
+
+=== @5
+
+[discrete.pericope]
+==== The Bride and Her Beloved
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ I am ##come##note:x[<<Song 4:16; 6:2>>] into my garden, ##my sister##note:x[<<Song 4:9–12>>], __my__ spouse: I have gathered my myrrh with my spice; I have eaten my honeycomb with my honey; I have drunk my wine with my milk: eat, O friends; drink, yea, drink abundantly, O beloved.note:tn[__yea…__: or, and be drunken with loves]
+
+[discrete.subsection]
+===== The Friends
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ I ##sleep##note:x[<<Zech 4:1>>], but my heart waketh: __it is__ the voice of my beloved that ##knocketh##note:x[<<Rev 3:20>>], __saying__, Open to me, my sister, my love, ##my dove##note:x[<<Song 2:14>>], my undefiled: for my head is filled with dew, __and__ my locks with the drops of the night.
+@ I ##have put##note:x[<<Luke 11:7>>] off my coat; how shall I put it on? I have washed my feet; how shall I defile them?
+@ My beloved put in his hand by the hole __of the door__, and my bowels were moved ##for him##note:tn[or, (as some read) in me].
+@ I rose up to open to my beloved; and ##my hands##note:x[<<Song 5:13>>] dropped __with__ myrrh, and my fingers __with__ sweet smelling myrrh, upon the handles of the lock.note:tn[__sweet…__: Heb. passing, or, running about]
+@ I opened to my beloved; but my beloved had withdrawn himself, __and__ was gone: ##my soul##note:x[<<Song 5:2>>] failed when he spake: I sought him, but I could not find him; I called him, but he gave me no answer.
+@ The ##watchmen##note:x[<<Song 3:3>>] that went about the city found me, they smote me, they wounded me; the keepers of the walls took away my veil from me.
+@ I ##charge##note:x[<<Song 2:7>>] you, O daughters of Jerusalem, if ye find my beloved, ##that ye##note:tn[Heb. what, etc] tell him, that I __am__ sick of love.
+
+[discrete.subsection]
+===== The Friends
+
+@ ¶ What __is__ thy beloved more than __another__ beloved, ##O thou##note:x[<<Song 1:8; 6:1, 9–10>>] fairest among women? what __is__ thy beloved more than __another__ beloved, that thou dost so charge us?
+
+[discrete.subsection]
+===== The Bride
+
+@ My beloved __is__ white and ruddy, the chiefest among ten thousand.note:tn[__the chiefest__: Heb. a standard-bearer]
+@ His head __is as__ the most fine gold, his locks __are__ ##bushy##note:tn[or, curled], __and__ black as a raven.
+@ ##His eyes##note:x[<<Song 1:15; 4:1>>] __are__ as __the eyes__ of doves by the rivers of waters, washed with milk, __and__ fitly set.note:tn[__fitly…__: Heb. sitting in fulness, that is, fitly placed, and set as a precious stone in the foil of a ring]
+@ His ##cheeks##note:x[<<Song 1:10>>] __are__ as a bed of spices, __as__ sweet flowers: his lips __like__ lilies, dropping sweet smelling myrrh.note:tn[__sweet flowers__: or, towers of perfumes]
+@ His hands __are as__ gold rings set with the beryl: ##his belly##note:x[<<Exod 24:10>>] __is as__ bright ivory overlaid __with__ sapphires.
+@ His legs __are as__ pillars of marble, set upon sockets of fine gold: his countenance __is__ as Lebanon, excellent as the cedars.
+@ His ##mouth##note:tn[Heb. palate] __is__ ##most##note:x[<<Ps 45:2>>] sweet: yea, he __is__ altogether lovely. This __is__ my beloved, and this __is__ my friend, O daughters of Jerusalem.
+
+=== @6
+
+[discrete.pericope]
+==== Together in the Garden
+
+[discrete.subsection]
+===== The Friends
+
+@ Whither is thy beloved gone, ##O thou##note:x[<<Song 1:8; 5:9; Jer 14:8>>] fairest among women? whither is thy beloved turned aside? that we may seek him with thee.
+
+[discrete.subsection]
+===== The Bride
+
+@ My beloved is gone down into his garden, to ##the beds##note:x[<<Song 5:13>>] of spices, to feed in the gardens, and to gather lilies.
+@ note:x[<<Song 2:16; 7:10>>]I __am__ my beloved’s, and my beloved __is__ mine: ##he##note:x[<<Song 2:16>>] feedeth among the lilies.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ ¶ Thou __art__ ##beautiful##note:x[<<Song 6:10>>], O my love, as Tirzah, ##comely##note:x[<<Ps 48:2>>] as Jerusalem, ##terrible##note:x[<<Song 6:10>>] as __an army__ with banners.
+@ Turn ##away##note:x[<<Gen 32:26–28; Exod 32:10; Jer 15:1>>] thine eyes from me, for they have overcome me: thy hair __is__ as a flock of goats that appear from Gilead.note:tn[__overcome…__: or, puffed me up]
+@ ##Thy teeth __are__ as a flock of sheep which go up from the washing, whereof every one beareth twins, and __there is__ not one barren among them.##note:x[<<Song 4:2>>]
+@ ##As a piece of a pomegranate __are__ thy temples within thy locks.##note:x[<<Song 4:3>>]
+@ ##There are threescore queens, and fourscore concubines, and virgins without number.##note:x[<<1 Kgs 11:1; 2 Chr 11:21; Ps 45:14>>]
+@ ##My dove##note:x[<<Song 2:14; 5:2>>], my undefiled is __but__ ##one; she##note:x[<<Ps 45:9>>] __is__ the __only__ one of her mother, she __is__ the choice __one__ of her that bare her. The daughters saw her, and blessed her; __yea__, the queens and the concubines, and they praised her.
+
+[discrete.subsection]
+===== The Friends
+
+@ ¶ Who __is__ she __that__ looketh forth as the morning, ##fair##note:x[<<Job 31:26>>] as the moon, ##clear##note:x[<<Rev 12:1>>] as the sun, __and__ ##terrible##note:x[<<Song 6:4>>] as __an army__ with banners?
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ I went down into the garden of nuts ##to see the##note:x[<<Song 7:12>>] fruits of the valley, __and__ to see whether the vine flourished, __and__ the pomegranates budded.
+@ Or ever I was aware, my soul made me __like__ the chariots of Amminadib.note:tn[__Or ever…__: Heb. I knew not]note:tn[__made…__: or, set me on the chariots of my willing people]
+
+[discrete.subsection]
+===== The Friends
+
+@ Return, return, O Shulamite; return, return, that we may look upon thee. What will ye see in the Shulamite? As it were the company of ##two armies##note:x[<<Gen 32:2>>].note:tn[__of…__: or, of Mahanaim]
+
+=== @7
+
+[discrete.subsection]
+===== The Bridegroom
+
+[discrete.pericope]
+==== Admiration by the Bridegroom
+
+@ note:x[<<Ps 45:13>>]How beautiful are thy feet with shoes, O prince’s daughter! the joints of thy thighs __are__ like jewels, the work of the hands of a cunning workman.
+@ Thy navel __is like__ a round goblet, __which__ wanteth not ##liquor##note:tn[Heb. mixture]: thy belly __is like__ an heap of wheat set about with lilies.
+@ ##Thy two breasts __are__ like two young roes __that are__ twins.##note:x[<<Song 4:5>>]
+@ Thy ##neck##note:x[<<Song 4:4>>] __is__ as a tower of ivory; thine eyes __like__ the fishpools in Heshbon, by the gate of Bath-rabbim: thy nose __is__ as the tower of Lebanon which looketh toward Damascus.
+@ Thine ##head##note:x[<<Isa 35:2>>] upon thee __is__ like ##Carmel##note:tn[or, crimson], and the hair of thine head like purple; the king __is__ ##held##note:tn[Heb. bound] in the galleries.
+@ ##How fair and how pleasant art thou, O love, for delights!##note:x[<<Ps 45:11; Song 1:15–16; 4:10>>]
+@ This thy stature is like to a palm tree, and ##thy breasts##note:x[<<Song 4:5>>] to clusters __of grapes__.
+@ I said, I will go up to the palm tree, I will take hold of the boughs thereof: now also thy breasts shall be as clusters of the vine, and the smell of thy nose like apples;
+@ And ##the roof##note:x[<<Song 5:16>>] of thy mouth like the best wine for my beloved, that goeth __down__ ##sweetly##note:tn[Heb. straightly], causing the lips of those that are asleep to speak.note:tn[__of those…__: or, of the ancient]
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ I __am__ ##my##note:x[<<Song 2:16; 6:3>>] beloved’s, and ##his##note:x[<<Ps 45:11>>] desire __is__ toward me.
+@ Come, my beloved, ##let us go##note:x[<<Song 2:10–13; 4:8>>] forth into the field; let us lodge in the villages.
+@ Let us get up early to the vineyards; ##let us see##note:x[<<Song 6:11; 2 Cor 13:5; 1 Thess 3:5–6>>] if the vine flourish, __whether__ the tender grape ##appear##note:tn[Heb. open], __and__ the pomegranates bud forth: there will I give thee my loves.
+@ The ##mandrakes##note:x[<<Gen 30:14>>] give a smell, and at our gates __are__ all manner of pleasant __fruits__, ##new##note:x[<<Matt 13:52>>] and old, __which__ I have laid up for thee, O my beloved.
+
+=== @8
+
+[discrete.pericope]
+==== Longing for Her Beloved
+
+@ O that thou __wert__ as my brother, that sucked the breasts of my mother! __when__ I should find thee without, I would kiss thee; yea, I should not be despised.note:tn[__I should not…__: Heb. they should not despise me]
+@ I would lead thee, __and__ ##bring##note:x[<<Song 3:4>>] thee into my mother’s house, __who__ would instruct me: ##I would cause##note:x[<<Song 4:10–16; 7:12>>] thee to drink of spiced wine of the juice of my pomegranate.
+@ ##His left hand __should be__ under my head, and his right hand should embrace me.##note:x[<<Song 2:6>>]
+@ I ##charge##note:x[<<Song 2:7; 3:5>>] you, O daughters of Jerusalem, that ye stir not up, nor awake __my__ love, until he please.note:tn[__that…__: Heb. why should ye stir up, or, why, etc]
+
+[discrete.subsection]
+===== The Friends
+
+@ ##Who __is__ this##note:x[<<Song 3:6>>] that cometh up ##from the##note:x[<<Isa 40:3>>] wilderness, ##leaning##note:x[<<Ps 63:8>>] upon her beloved? I raised thee up under the apple tree: there thy mother brought thee forth: there she brought thee forth __that__ bare thee.
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ Set me ##as a seal##note:x[<<Isa 49:16>>] upon thine heart, as a seal upon thine arm: for ##love##note:x[<<Phil 1:20–23; Rev 12:11>>] __is__ strong as death; jealousy __is__ ##cruel##note:tn[Heb. hard] as the grave: the coals thereof __are__ coals of fire, __which hath a__ most vehement flame.
+@ Many ##waters##note:x[<<Isa 43:2>>] cannot quench love, neither can the floods drown it: ##if __a__ man##note:x[<<Prov 6:31, 35>>] would give all the substance of his house for love, it would utterly be contemned.
+
+[discrete.subsection]
+===== The Friends
+
+@ ¶ We have a little sister, and she hath no breasts: what shall we do for our sister ##in the day##note:x[<<1 Pet 2:12>>] when she shall be spoken for?
+@ If she __be__ a wall, we will build upon her a palace of silver: and if she __be__ a door, we will inclose her with boards of cedar.
+
+[discrete.subsection]
+===== The Bride
+
+@ I __am__ a wall, and ##my##note:x[<<Ezek 16:7>>] breasts like towers: ##then##note:x[<<Isa 60:10; Luke 1:30>>] was I in his eyes as one that found ##favour##note:tn[Heb. peace].
+@ Solomon ##had a##note:x[<<Eccl 2:4>>] vineyard at Baal-hamon; he let out the vineyard unto keepers; every one for the fruit thereof was to bring ##a thousand##note:x[<<Isa 7:23>>] __pieces__ of silver.
+@ My ##vineyard##note:x[<<Song 1:6>>], which __is__ mine, __is__ before me: thou, O Solomon, __must have__ a thousand, and those that keep the fruit thereof two hundred.
+
+[discrete.subsection]
+===== The Bridegroom
+
+@ Thou that ##dwellest##note:x[<<Song 4:16>>] in the gardens, the companions hearken to thy voice: cause me to hear __it__.
+
+[discrete.subsection]
+===== The Bride
+
+@ ¶ ##Make haste##note:x[<<Song 2:17; Rev 22:20>>], my beloved, and be thou like to a roe or to a young hart upon the mountains of spices.note:tn[__Make…__: Heb. Flee away]

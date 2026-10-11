@@ -1,0 +1,131 @@
+[appendix]
+[[index-to-maps]]
+== Index to Maps
+
+Each place, the map it is on and its square in the map’s grid (letters across, numbers down).
+
+[.map-index,cols="5,1,1",options="header"]
+|===
+|Place |Map |Square
+|Achmetha |<<map-empires,5>> |E2
+|Ai |<<map-canaan,3>> |C3
+|Antioch |<<map-paul,7>> |F3
+|Antioch (Pisidia) |<<map-paul,7>> |E2
+|Ashdod |<<map-canaan,3>> |B3
+|Ashkelon |<<map-canaan,3>> |B3
+|Athens |<<map-paul,7>> |C2
+|Babel |<<map-patriarchs,1>> |E3
+|Babylon |<<map-empires,5>> |D2
+|Beer-sheba |<<map-patriarchs,1>> |B3
+|Beer-sheba |<<map-canaan,3>> |B4
+|Beer-sheba |<<map-david,4>> |B3
+|Berea |<<map-paul,7>> |C1
+|Beth-shan |<<map-canaan,3>> |D2
+|Bethany |<<map-gospels,6>> |D3
+|Bethel |<<map-patriarchs,1>> |B3
+|Bethel |<<map-canaan,3>> |C3
+|Bethlehem |<<map-gospels,6>> |C3
+|Bethsaida |<<map-gospels,6>> |E1
+|Caesarea |<<map-gospels,6>> |B2
+|Caesarea |<<map-paul,7>> |F4
+|Caesarea Philippi |<<map-gospels,6>> |E1
+|Cana |<<map-gospels,6>> |D2
+|Capernaum |<<map-gospels,6>> |D1
+|Carchemish |<<map-patriarchs,1>> |C1
+|Carchemish |<<map-empires,5>> |C1
+|Chorazin |<<map-gospels,6>> |D1
+|Corinth |<<map-paul,7>> |C2
+|Damascus |<<map-patriarchs,1>> |C2
+|Damascus |<<map-david,4>> |C2
+|Damascus |<<map-empires,5>> |B2
+|Damascus |<<map-paul,7>> |F4
+|Dan |<<map-canaan,3>> |D1
+|Dan |<<map-david,4>> |C2
+|Derbe |<<map-paul,7>> |F2
+|Ekron |<<map-canaan,3>> |B3
+|Elim |<<map-exodus,2>> |C3
+|Emmaus |<<map-gospels,6>> |C3
+|Ephesus |<<map-paul,7>> |D2
+|Etham |<<map-exodus,2>> |B2
+|Ezion-geber |<<map-exodus,2>> |E3
+|Ezion-geber |<<map-david,4>> |B4
+|Fair Havens |<<map-paul,7>> |D3
+|Gadara |<<map-gospels,6>> |E2
+|Gath |<<map-canaan,3>> |B3
+|Gaza |<<map-canaan,3>> |A4
+|Gaza |<<map-david,4>> |A3
+|Gerasa |<<map-gospels,6>> |E2
+|Gezer |<<map-david,4>> |B3
+|Gibeon |<<map-canaan,3>> |C3
+|Hamath |<<map-david,4>> |D1
+|Hamath |<<map-empires,5>> |B2
+|Haran |<<map-patriarchs,1>> |D1
+|Haran |<<map-empires,5>> |C1
+|Hazor |<<map-canaan,3>> |D1
+|Hazor |<<map-david,4>> |C2
+|Hebron |<<map-patriarchs,1>> |B3
+|Hebron |<<map-canaan,3>> |C3
+|Hebron |<<map-david,4>> |B3
+|Iconium |<<map-paul,7>> |E2
+|Jericho |<<map-exodus,2>> |E1
+|Jericho |<<map-canaan,3>> |D3
+|Jericho |<<map-gospels,6>> |D3
+|Jerusalem |<<map-canaan,3>> |C3
+|Jerusalem |<<map-david,4>> |B3
+|Jerusalem |<<map-empires,5>> |B3
+|Jerusalem |<<map-gospels,6>> |C3
+|Jerusalem |<<map-paul,7>> |F4
+|Joppa |<<map-gospels,6>> |B3
+|Kadesh-barnea |<<map-exodus,2>> |D2
+|Lachish |<<map-canaan,3>> |B3
+|Lystra |<<map-paul,7>> |E2
+|Magdala |<<map-gospels,6>> |D1
+|Marah |<<map-exodus,2>> |C3
+|Megiddo |<<map-canaan,3>> |C2
+|Megiddo |<<map-david,4>> |B2
+|Melita |<<map-paul,7>> |A3
+|Miletus |<<map-paul,7>> |D2
+|Mount Carmel |<<map-canaan,3>> |C2
+|Mount Hor |<<map-exodus,2>> |E2
+|Mount Nebo |<<map-exodus,2>> |F1
+|Mount Nebo |<<map-canaan,3>> |E3
+|Mount Sinai |<<map-exodus,2>> |D4
+|Nain |<<map-gospels,6>> |D2
+|Nazareth |<<map-gospels,6>> |D2
+|Nineveh |<<map-patriarchs,1>> |E1
+|Nineveh |<<map-empires,5>> |D1
+|Noph |<<map-patriarchs,1>> |A4
+|Noph |<<map-exodus,2>> |B3
+|Noph |<<map-empires,5>> |A3
+|Paphos |<<map-paul,7>> |E3
+|Perga |<<map-paul,7>> |E2
+|Philippi |<<map-paul,7>> |C1
+|Puteoli |<<map-paul,7>> |A1
+|Rabbah |<<map-canaan,3>> |E3
+|Rabbah |<<map-david,4>> |C3
+|Rameses |<<map-exodus,2>> |B2
+|Rephidim |<<map-exodus,2>> |D4
+|Rhegium |<<map-paul,7>> |A2
+|Rhodes |<<map-paul,7>> |D3
+|Rome |<<map-paul,7>> |A1
+|Salamis |<<map-paul,7>> |F3
+|Samaria |<<map-empires,5>> |B2
+|Shechem |<<map-patriarchs,1>> |B3
+|Shechem |<<map-canaan,3>> |C2
+|Shiloh |<<map-canaan,3>> |C3
+|Shushan |<<map-empires,5>> |E2
+|Sidon |<<map-david,4>> |B2
+|Succoth |<<map-exodus,2>> |B2
+|Sychar |<<map-gospels,6>> |D3
+|Syracuse |<<map-paul,7>> |A2
+|Tadmor |<<map-david,4>> |E1
+|Tarsus |<<map-paul,7>> |F2
+|Thessalonica |<<map-paul,7>> |C1
+|Tiberias |<<map-gospels,6>> |D2
+|Troas |<<map-paul,7>> |D2
+|Tyre |<<map-david,4>> |B2
+|Tyre |<<map-empires,5>> |B2
+|Ur |<<map-patriarchs,1>> |F3
+|Ur |<<map-empires,5>> |E3
+|Zoan |<<map-exodus,2>> |B2
+|===

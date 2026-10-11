@@ -1,0 +1,1392 @@
+== @LEV
+
+[.book-title]
+The Third Book of Moses, called Leviticus
+
+=== @1
+
+[discrete.pericope]
+==== Laws for Burnt Offerings
+
+[.parallel]
+(<<Leviticus 6:8–13>>)
+
+@ And the LORD ##called##note:x[<<Exod 19:3>>] unto Moses, and spake unto him ##out of##note:x[<<Exod 25:22; 40:34–35>>] the tabernacle of the congregation, saying,
+@ Speak unto the children of Israel, and say unto them, ##If any##note:x[<<Lev 22:18–19>>] man of you bring an offering unto the LORD, ye shall bring your offering of the cattle, __even__ of the herd, and of the flock.
+
+@ If his offering __be__ a burnt sacrifice of the herd, let him offer ##a male##note:x[<<Lev 22:19–24; Deut 15:21; Heb 9:14>>] without blemish: he shall offer it of his own voluntary will at the door of the tabernacle of the congregation before the LORD.
+@ And he shall ##put##note:x[<<Lev 3:2, 8>>] his hand upon the head of the burnt offering; and it shall be accepted for him to make ##atonement##note:x[<<2 Chr 29:23–24>>] for him.
+@ And he shall ##kill##note:x[<<Lev 1:11; 3:8>>] the bullock before the LORD: and ##the priests##note:x[<<Lev 1:11>>], Aaron’s sons, shall bring the blood, and sprinkle the blood round about upon the altar that __is by__ the door of the tabernacle of the congregation.
+@ ##And he shall flay the burnt offering, and cut it into his pieces.##note:x[<<Lev 7:8>>]
+@ And the sons of Aaron the priest shall put ##fire##note:x[<<Lev 6:12–13>>] upon the altar, and ##lay##note:x[<<Gen 22:9>>] the wood in order upon the fire:
+@ And the priests, Aaron’s sons, shall lay the parts, the head, and the fat, in order upon the wood that __is__ on the fire which __is__ upon the altar:
+@ But his ##inwards##note:x[<<Lev 1:13>>] and his legs shall he wash in water: and the priest shall ##burn all##note:x[<<Lev 1:13>>] on the altar, __to be__ a burnt sacrifice, an offering made by fire, of ##a sweet##note:x[<<Gen 8:21>>] savour unto the LORD.
+
+@ ¶ And if his offering __be__ ##of the flocks##note:x[<<Lev 1:2>>], __namely__, of the sheep, or of the goats, for a burnt sacrifice; he shall bring it a male without blemish.
+@ And ##he shall##note:x[<<Lev 1:5>>] kill it on the side of the altar northward before the LORD: and the priests, Aaron’s sons, shall sprinkle his blood round about upon the altar.
+@ And he shall cut it into his pieces, with his head and his fat: and the priest shall lay them in order on the wood that __is__ on the fire which __is__ upon the altar:
+@ But he shall wash the inwards and the legs with water: and the priest shall bring __it__ all, and burn __it__ upon the altar: it __is__ a burnt sacrifice, an offering made by fire, of a sweet savour unto the LORD.
+
+@ ¶ And if the burnt sacrifice for his offering to the LORD __be__ ##of fowls##note:x[<<Lev 5:7; 12:8; Luke 2:24>>], then he shall bring his offering of turtledoves, or of young pigeons.
+@ And the priest shall bring it unto the altar, and wring off his head, and burn __it__ on the altar; and the blood thereof shall be wrung out at the side of the altar&#58;note:tn[__wring…__: or, pinch off the head with the nail]
+@ And he shall pluck away his crop with his feathers, and cast it beside the altar on the east part, by the place of the ashes&#58;note:tn[__his feathers__: or, the filth thereof]
+@ And he shall cleave it with the wings thereof, __but__ ##shall not##note:x[<<Gen 15:10>>] divide __it__ asunder: and the priest shall burn it upon the altar, upon the wood that __is__ upon the fire: it __is__ a burnt sacrifice, an offering made by fire, of a sweet savour unto the LORD.
+
+=== @2
+
+[discrete.pericope]
+==== Laws for Grain Offerings
+
+[.parallel]
+(<<Leviticus 6:14–23>>)
+
+@ And when any will offer a ##meat offering##note:x[<<Lev 6:14–18; 9:17; Isa 66:20>>] unto the LORD, his offering shall be __of__ fine flour; and he shall pour oil upon it, and put frankincense thereon:
+@ And he shall bring it to Aaron’s sons the priests: and he shall take thereout his handful of the flour thereof, and of the oil thereof, with all the frankincense thereof; and the priest shall burn ##the memorial##note:x[<<Lev 5:12; 6:15; Acts 10:4>>] of it upon the altar, __to be__ an offering made by fire, of a sweet savour unto the LORD:
+@ And ##the remnant##note:x[<<Lev 6:16–17; 10:12–13>>] of the meat offering __shall be__ Aaron’s and his sons’: __it is__ a thing ##most holy##note:x[<<Lev 10:12>>] of the offerings of the LORD made by fire.
+
+@ ¶ And if thou bring an oblation of a ##meat offering##note:x[<<Ps 22:14>>] baken in ##the oven##note:x[<<1 Cor 5:7–8>>], __it shall be__ unleavened cakes of fine flour mingled with oil, or unleavened ##wafers##note:x[<<Exod 29:2>>] anointed with oil.
+
+@ ¶ And if thy oblation __be__ a meat offering __baken__ in a pan, it shall be __of__ fine flour unleavened, mingled with oil.note:tn[__in a pan__: or, on a flat plate, or, slice]
+@ Thou shalt part it in pieces, and pour oil thereon: it __is__ a meat offering.
+
+@ ¶ And if thy oblation __be__ a meat offering __baken__ in the fryingpan, it shall be made __of__ fine flour with oil.
+@ And thou shalt bring the meat offering that is made of these things unto the LORD: and when it is presented unto the priest, he shall bring it unto the altar.
+@ And the priest shall take from the meat offering ##a memorial##note:x[<<Lev 2:2>>] thereof, and shall burn __it__ upon the altar: __it is__ ##an offering##note:x[<<Lev 2:2; Phil 4:18>>] made by fire, of a sweet savour unto the LORD.
+@ And that which is left of the meat offering __shall be__ Aaron’s and his sons’: __it is__ a thing most holy of the offerings of the LORD made by fire.
+
+@ No meat offering, which ye shall bring unto the LORD, shall be made with leaven: for ye shall burn ##no leaven##note:x[<<Luke 12:1; Gal 5:9>>], nor any honey, in any offering of the LORD made by fire.
+
+@ ¶ As for the oblation of the firstfruits, ye shall offer them unto the LORD: but they shall not be burnt on the altar for a sweet savour.note:tn[__be burnt__: Heb. ascend]
+@ And every oblation of thy meat offering shalt thou season ##with salt##note:x[<<Ezek 43:24; Matt 5:13>>]; neither shalt thou suffer the salt of the covenant of thy God to be lacking from thy meat offering: ##with all thine##note:x[<<Ezek 43:24>>] offerings thou shalt offer salt.
+@ And if thou offer ##a meat offering##note:x[<<Lev 23:10>>] of thy firstfruits unto the LORD, thou shalt offer for the meat offering of thy firstfruits green ears of corn dried by the fire, __even__ corn beaten out of full ears.
+@ And thou shalt put oil upon it, and lay frankincense thereon: it __is__ a meat offering.
+@ And the priest shall burn the memorial of it, __part__ of the beaten corn thereof, and __part__ of the oil thereof, with all the frankincense thereof: __it is__ an offering made by fire unto the LORD.
+
+=== @3
+
+[discrete.pericope]
+==== Laws for Peace Offerings
+
+[.parallel]
+(<<Leviticus 7:11–21>>)
+
+@ And if his oblation __be__ ##a sacrifice##note:x[<<Num 6:14>>] of peace offering, if he offer __it__ of the herd; whether __it be__ a male or female, he shall offer it ##without##note:x[<<Lev 1:3; Num 6:14>>] blemish before the LORD.
+@ And he shall ##lay##note:x[<<Exod 29:10; Lev 1:4–5>>] his hand upon the head of his offering, and kill it __at__ the door of the tabernacle of the congregation: and Aaron’s sons the priests shall sprinkle the blood upon the altar round about.
+@ And he shall offer of the sacrifice of the peace offering an offering made by fire unto the LORD; note:x[<<Exod 29:13>>]the ##fat##note:tn[or, suet] that covereth the inwards, and all the fat that __is__ upon the inwards,
+@ And the two kidneys, and the fat that __is__ on them, which __is__ by the flanks, and the caul above the liver, with the kidneys, it shall he take away.note:tn[__caul…__: or, midriff over the liver, and over the kidneys]
+@ note:x[<<Lev 6:12>>]And Aaron’s sons shall burn it on the altar ##upon the burnt##note:x[<<Lev 6:12>>] sacrifice, which __is__ upon the wood that __is__ on the fire: __it is__ an offering made by fire, of a sweet savour unto the LORD.
+
+@ ¶ And if his offering for a sacrifice of peace offering unto the LORD __be__ of the flock; male or female, he shall offer it without blemish.
+@ If he offer a lamb for his offering, then shall he offer it before the LORD.
+@ And he shall lay his hand upon the head of his offering, and kill it before the tabernacle of the congregation: and Aaron’s sons shall ##sprinkle##note:x[<<Lev 1:5>>] the blood thereof round about upon the altar.
+@ And he shall offer of the sacrifice of the peace offering an offering made by fire unto the LORD; the fat thereof, __and__ the whole rump, it shall he take off hard by the backbone; and the fat that covereth the inwards, and all the fat that __is__ upon the inwards,
+@ And the two kidneys, and the fat that __is__ upon them, which __is__ by the flanks, and the caul above the liver, with the kidneys, it shall he take away.
+@ And the priest shall ##burn##note:x[<<Lev 3:5>>] it upon the altar: __it is__ ##the food##note:x[<<Lev 21:6, 17>>] of the offering made by fire unto the LORD.
+
+@ ¶ And if his offering __be__ a goat, then he shall offer it before the LORD.
+@ And he shall ##lay his hand##note:x[<<Lev 3:8>>] upon the head of it, and kill it before the tabernacle of the congregation: and the sons of Aaron shall ##sprinkle##note:x[<<Lev 3:8>>] the blood thereof upon the altar round about.
+@ And he shall offer thereof his offering, __even__ an offering made by fire unto the LORD; the fat that covereth the inwards, and all the fat that __is__ upon the inwards,
+@ And the two kidneys, and the fat that __is__ upon them, which __is__ by the flanks, and the caul above the liver, with the kidneys, it shall he take away.
+@ And the priest shall burn them upon the altar: __it is__ the food of the offering made by fire for a sweet savour: ##all the fat##note:x[<<Lev 7:23–25>>] __is__ the LORD’s.
+@ __It shall be__ a perpetual statute for your generations throughout all your dwellings, that ye eat neither fat nor ##blood##note:x[<<Gen 9:4; Deut 15:23; Matt 26:28>>].
+
+=== @4
+
+[discrete.pericope]
+==== Laws for Sin Offerings
+
+[.parallel]
+(<<Leviticus 5:1–13; Leviticus 6:24–30>>)
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, If a soul shall sin ##through##note:x[<<Num 15:22–29; Ps 19:12; Heb 9:7>>] ignorance against any of the commandments of the LORD __concerning things__ which ought not to be done, and shall do against any of them:
+@ If the priest that is anointed do sin according to the sin of the people; then let him bring for his sin, which he hath sinned, ##a young bullock##note:x[<<Lev 4:14; 9:2>>] without blemish unto the LORD ##for a sin##note:x[<<Heb 7:27–28>>] offering.
+@ And he shall ##bring##note:x[<<Lev 1:3>>] the bullock unto the door of the tabernacle of the congregation before the LORD; and shall lay his hand upon the bullock’s head, and kill the bullock before the LORD.
+@ note:x[<<Lev 16:14>>]And the priest that is anointed shall take of the bullock’s blood, and bring it to the tabernacle of the congregation:
+@ And the priest shall dip his finger in the blood, and sprinkle of the blood seven times before the LORD, before the vail of the sanctuary.
+@ And the priest shall put __some__ of the blood upon ##the horns##note:x[<<Lev 8:15; 9:9>>] of the altar of sweet incense before the LORD, which __is__ in the tabernacle of the congregation; and shall pour ##all the blood##note:x[<<Lev 8:15>>] of the bullock at the bottom of the altar of the burnt offering, which __is at__ the door of the tabernacle of the congregation.
+@ And he shall take off from it all the fat of the bullock for the sin offering; the fat that covereth the inwards, and all the fat that __is__ upon the inwards,
+@ And the two kidneys, and the fat that __is__ upon them, which __is__ by the flanks, and the caul above the liver, with the kidneys, it shall he take away,
+@ As it was taken off from the bullock of the sacrifice of peace offerings: and the priest shall burn them upon the altar of the burnt offering.
+@ ##And the skin of the bullock, and all his flesh, with his head, and with his legs, and his inwards, and his dung,##note:x[<<Exod 29:14; Num 19:5>>]
+@ Even the whole bullock shall he carry forth without the camp unto a clean place, where ##the ashes##note:x[<<Lev 6:10–11>>] are poured out, and ##burn him##note:x[<<Exod 29:14; Heb 13:11>>] on the wood with fire: where the ashes are poured out shall he be burnt.note:tn[__without…__: Heb. to without the camp]note:tn[__where…__: Heb. at the pouring out of the ashes]
+
+@ ¶ And if the whole congregation of Israel sin ##through ignorance##note:x[<<Lev 5:2–5, 17>>], and the thing be hid from the eyes of the assembly, and they have done __somewhat against__ any of the commandments of the LORD __concerning things__ which should not be done, ##and are guilty##note:x[<<Lev 5:17>>];
+@ When the sin, which they have sinned against it, is known, then the congregation shall offer a young bullock for the sin, and bring him before the tabernacle of the congregation.
+@ And the elders of the congregation shall ##lay##note:x[<<Lev 1:4>>] their hands upon the head of the bullock before the LORD: and the bullock shall be killed before the LORD.
+@ And the priest that is anointed shall bring of the bullock’s blood to the tabernacle of the congregation:
+@ And the priest shall dip his finger __in some__ of the blood, and sprinkle __it__ seven times before the LORD, __even__ before the vail.
+@ And he shall put __some__ of the blood upon the horns of the altar which __is__ before the LORD, that __is__ in the tabernacle of the congregation, and shall pour out all the blood at the bottom of the altar of the burnt offering, which __is at__ the door of the tabernacle of the congregation.
+@ And he shall take all his fat from him, and burn __it__ upon the altar.
+@ And he shall do with the bullock as he did with the bullock for a sin offering, so shall he do with this: and the priest shall make ##an atonement##note:x[<<Num 15:25>>] for them, and it shall be forgiven them.
+@ And he shall carry forth the bullock without the camp, and burn him as he burned the first bullock: it __is__ ##a sin offering##note:x[<<Lev 16:15>>] for the congregation.
+
+@ ¶ When a ruler hath sinned, ##and done##note:x[<<Lev 4:2>>] __somewhat__ through ignorance __against__ any of the commandments of the LORD his God __concerning things__ which should not be done, and is guilty;
+@ Or ##if his sin##note:x[<<Lev 4:14>>], wherein he hath sinned, come to his knowledge; he shall bring his offering, a kid of the goats, a male without blemish:
+@ And he shall lay his hand upon the head of the goat, and kill it in the place where they kill the burnt offering before the LORD: it __is__ a sin offering.
+@ And the priest shall take of the blood of the sin offering with his finger, and ##put##note:x[<<Lev 4:7, 18, 30>>] __it__ upon the horns of the altar of burnt offering, and shall pour out his blood at the bottom of the altar of burnt offering.
+@ And he shall burn all his fat upon the altar, as ##the fat##note:x[<<Lev 3:5>>] of the sacrifice of peace offerings: and the priest shall make ##an atonement##note:x[<<Lev 4:20; Num 15:28>>] for him as concerning his sin, and it shall be forgiven him.
+
+@ ¶ And if ##any one##note:x[<<Lev 4:2; Num 15:27>>] of the ##common people##note:x[<<Lev 4:2>>] sin through ignorance, while he doeth __somewhat against__ any of the commandments of the LORD __concerning things__ which ought not to be done, and be guilty;note:tn[__any one__: Heb. any soul]note:tn[__common…__: Heb. people of the land]
+@ Or if his sin, which he hath sinned, come to his knowledge: then he shall bring his offering, ##a kid##note:x[<<Lev 4:23>>] of the goats, ##a female##note:x[<<Lev 4:23>>] without blemish, for his sin which he hath sinned.
+@ ##And he shall lay his hand upon the head of the sin offering, and slay the sin offering in the place of the burnt offering.##note:x[<<Lev 4:4, 15, 24>>]
+@ And the priest shall take of the blood thereof with his finger, and put __it__ upon the horns of the altar of burnt offering, and shall pour out all the blood thereof at the bottom of the altar.
+@ And he shall take away ##all the fat##note:x[<<Lev 4:26, 35>>] thereof, as the fat is taken away from off the sacrifice of peace offerings; ##and the priest##note:x[<<Lev 4:26>>] shall burn __it__ upon the altar for a sweet savour unto the LORD; and the priest shall make an atonement for him, and it shall be forgiven him.
+@ And if he bring ##a lamb##note:x[<<Lev 4:28; 1 Pet 2:22>>] for a sin offering, he shall bring it a female ##without blemish##note:x[<<Lev 4:28>>].
+@ And he shall lay his hand upon the head of the sin offering, and slay it for a sin offering in the place where they kill the burnt offering.
+@ And the priest shall take of the blood of the sin offering with his finger, and put __it__ upon the horns of the altar of burnt offering, and shall pour out all the blood thereof at the bottom of the altar:
+@ And he shall take away all the fat thereof, as the fat of the lamb is taken away from the sacrifice of the peace offerings; and the priest shall burn them upon the altar, according to the offerings made by fire unto the LORD: ##and the priest shall make##note:x[<<Lev 4:20, 26, 30–31>>] an atonement for his sin that he hath committed, and it shall be forgiven him.
+
+=== @5
+
+[discrete.pericope]
+==== Sins Requiring a Sin Offering
+
+[.parallel]
+(<<Leviticus 4:1–35; Leviticus 6:24–30>>)
+
+@ And if ##a soul##note:x[<<Lev 5:17>>] sin, and ##hear##note:x[<<Prov 29:24>>] the voice of swearing, and __is__ a witness, whether he hath seen or known __of it;__ if he do not utter __it__, then he shall ##bear##note:x[<<Lev 5:17>>] his iniquity.
+@ Or if a soul ##touch##note:x[<<Deut 14:8>>] any unclean thing, whether __it be__ a carcase of an unclean beast, or a carcase of unclean cattle, or the carcase of unclean creeping things, and __if__ it be ##hidden##note:x[<<Lev 5:17>>] from him; he also shall be unclean, ##and guilty##note:x[<<Lev 5:17>>].
+@ Or if he touch the uncleanness of man, whatsoever uncleanness __it be__ that a man shall be defiled withal, and it be hid from him; when he knoweth __of it__, then he shall be guilty.
+@ Or if a soul swear, pronouncing with __his__ lips ##to do evil##note:x[<<Judg 11:31; Eccl 5:2–6; Mark 6:23>>], or to do good, whatsoever __it be__ that a man shall pronounce with an oath, and it be hid from him; when he knoweth __of it__, then he shall be guilty in one of these.
+@ And it shall be, when he shall be guilty in one of these __things__, that he shall ##confess##note:x[<<Lev 26:40; Num 5:7; Prov 28:13>>] that he hath sinned in that __thing:__
+@ And he shall bring his ##trespass offering##note:x[<<Lev 4:28, 32>>] unto the LORD for his sin which he hath sinned, ##a female##note:x[<<Lev 4:28>>] from the flock, a lamb or a kid of the goats, for a sin offering; and the priest shall make an atonement for him concerning his sin.
+
+@ And if ##he be not able to bring a lamb##note:x[<<Lev 12:8; 14:21>>], then he shall bring for his trespass, which he hath committed, two turtledoves, or two young pigeons, unto the LORD; one for a sin offering, and the other for a burnt offering.note:tn[__he be…__: Heb. his hand cannot reach to the sufficiency of a lamb]
+@ And he shall bring them unto the priest, who shall offer __that__ which __is__ for the sin offering first, and ##wring off##note:x[<<Lev 1:15>>] his head from his neck, but shall not divide __it__ asunder:
+@ And he shall ##sprinkle##note:x[<<Lev 4:30, 34>>] of the blood of the sin offering upon the side of the altar; and ##the rest##note:x[<<Lev 4:7>>] of the blood shall be wrung out at the bottom of the altar: it __is__ a sin offering.
+@ And he shall ##offer##note:x[<<Lev 1:14–17>>] the second __for__ a burnt offering, according to the note:x[<<Lev 1:14–17>>]##manner##note:tn[or, ordinance]: and the priest shall ##make##note:x[<<Lev 4:26>>] an atonement for him for his sin which he hath sinned, and it shall be forgiven him.
+
+@ ¶ But if he be not able to bring two turtledoves, or two young pigeons, then he that sinned shall bring for his offering the tenth part of an ephah of fine flour for a sin offering; he shall put ##no oil##note:x[<<Num 5:15>>] upon it, neither shall he put __any__ frankincense thereon: for it __is__ a sin offering.
+@ Then shall he bring it to the priest, and the priest shall take his handful of it, __even__ ##a memorial##note:x[<<Lev 2:9>>] thereof, and burn __it__ on the altar, ##according##note:x[<<Lev 2:9; 4:35>>] to the offerings made by fire unto the LORD: it __is__ a sin offering.
+@ And ##the priest##note:x[<<Lev 4:26>>] shall make an atonement for him as touching his sin that he hath sinned in one of these, and it ##shall be##note:x[<<Lev 2:3>>] forgiven him: and __the remnant__ shall be the priest’s, as a meat offering.
+
+[discrete.pericope]
+==== Laws for Guilt Offerings
+
+[.parallel]
+(<<Leviticus 6:1–7; Leviticus 7:1–10>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ If ##a soul##note:x[<<Lev 4:2>>] commit a trespass, and sin through ignorance, in the holy things of the LORD; then he shall bring for his trespass unto the LORD a ##ram##note:x[<<Ezra 10:19>>] without blemish out of the flocks, with thy estimation by shekels of silver, after ##the shekel##note:x[<<Exod 30:13>>] of the sanctuary, for a trespass offering:
+@ And he shall ##make##note:x[<<Lev 22:14>>] amends for the harm that he hath done in the holy thing, and shall add ##the fifth##note:x[<<Lev 6:4–5; Num 5:7>>] part thereto, and give it unto the priest: and the priest shall make an atonement for him with the ram of the trespass offering, and it shall be forgiven him.
+
+@ ¶ And if ##a soul sin##note:x[<<Lev 4:13, 27>>], and commit any of these things which are forbidden to be done by the commandments of the LORD; though he wist __it__ not, ##yet is he##note:x[<<Lev 4:27>>] guilty, and shall bear his iniquity.
+@ ##And he##note:x[<<Lev 5:15–16>>] shall bring a ram without blemish out of the flock, with thy estimation, for a trespass offering, unto the priest: and the priest shall make an atonement for him concerning his ignorance wherein he erred and wist __it__ not, and it shall be forgiven him.
+@ It __is__ a trespass offering: he hath certainly trespassed against the LORD.
+
+=== @6
+
+[discrete.pericope]
+==== Sins Requiring a Guilt Offering
+
+[.parallel]
+(<<Leviticus 5:14–19; Leviticus 7:1–10>>)
+
+@ And the LORD spake unto Moses, saying,
+@ If a soul sin, and commit a trespass against the LORD, and ##lie##note:x[<<Col 3:9>>] unto his neighbour in that which was delivered him to keep, or in ##fellowship##note:tn[Heb. putting of the hand], or in a thing taken away by violence, or hath deceived his neighbour;note:tn[__in fellowship__: or, in dealing]
+@ Or ##have found##note:x[<<Exod 23:4>>] that which was lost, and lieth concerning it, and ##sweareth##note:x[<<Lev 19:12>>] falsely; in any of all these that a man doeth, sinning therein:
+@ Then it shall be, because he hath sinned, and is guilty, that he shall restore that which he took violently away, or the thing which he hath deceitfully gotten, or that which was delivered him to keep, or the lost thing which he found,
+@ Or all that about which he hath sworn falsely; he shall even ##restore##note:x[<<Lev 5:16>>] it in the principal, and shall add the fifth part more thereto, __and__ give it unto him to whom it appertaineth, in the day of his trespass offering.note:tn[__in the day…__: or, in the day of his being found guilty: Heb. in the day of his trespass]
+@ And he shall bring his trespass offering unto the LORD, ##a ram##note:x[<<Lev 5:15>>] without blemish out of the flock, with thy estimation, for a trespass offering, unto the priest:
+@ And the priest shall ##make##note:x[<<Lev 4:26>>] an atonement for him before the LORD: and it shall be forgiven him for any thing of all that he hath done in trespassing therein.
+
+[discrete.pericope]
+==== The Burnt Offering
+
+[.parallel]
+(<<Leviticus 1:1–17>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Command Aaron and his sons, saying, This __is__ the law of the burnt offering: It __is__ the burnt offering, because of the burning upon the altar all night unto the morning, and the fire of the altar shall be burning in it.note:tn[__because…__: or, for the burning]
+@ And the priest shall put on his ##linen garment##note:x[<<Exod 28:39–43>>], and his linen breeches shall he put upon his flesh, and take up the ashes which the fire hath consumed with the burnt offering on the altar, and he shall put them beside the altar.
+@ And he shall put off his garments, and put on other garments, and carry forth the ashes without the camp unto a clean place.
+@ And ##the fire##note:x[<<Lev 9:24>>] upon the altar shall be burning in it; it shall not be put out: and the priest shall ##burn wood##note:x[<<Exod 29:38–42; Lev 1:7–9>>] on it every morning, and lay the burnt offering in order upon it; and he shall burn thereon the fat of the peace offerings.
+@ The fire shall ever be burning upon the altar; it shall never go out.
+
+[discrete.pericope]
+==== The Grain Offering
+
+[.parallel]
+(<<Leviticus 2:1–16>>)
+
+@ ¶ And this __is__ the law of the meat offering: the sons of Aaron shall offer it before the LORD, before the altar.
+@ And he shall take of it his handful, of the flour of the meat offering, and of the oil thereof, and all the frankincense which __is__ upon the meat offering, and shall burn __it__ upon the altar __for__ a sweet savour, __even__ ##the memorial##note:x[<<Lev 2:2, 9>>] of it, unto the LORD.
+@ And ##the remainder##note:x[<<Lev 2:3; Ezek 44:29>>] thereof shall Aaron and his sons eat: with unleavened bread ##shall it##note:x[<<Lev 10:12–13>>] be eaten in the holy place; in the court of the tabernacle of the congregation they shall eat it.
+@ It shall not be ##baken##note:x[<<Lev 2:11>>] with leaven. ##I have##note:x[<<Num 18:9–10>>] given it __unto them for__ their portion of my offerings made by fire; ##it __is__ most holy##note:x[<<Lev 6:25>>], as __is__ the sin offering, and as the trespass offering.
+@ All ##the males##note:x[<<Lev 6:29; Num 18:10>>] among the children of Aaron shall eat of it. __It shall be__ a statute for ever in your generations concerning the offerings of the LORD made by fire: every one that toucheth them shall be holy.
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ This __is__ ##the offering##note:x[<<Exod 29:2>>] of Aaron and of his sons, which they shall offer unto the LORD in the day when he is anointed; ##the tenth##note:x[<<Exod 16:36>>] part of an ephah of fine flour for a meat offering perpetual, half of it in the morning, and half thereof at night.
+@ ##In a pan it shall be made with oil; __and when it is__ baken, thou shalt bring it in: __and__ the baken pieces of the meat offering shalt thou offer __for__ a sweet savour unto the LORD.##note:x[<<Lev 2:5>>]
+@ And the priest of his sons that is anointed in his stead shall offer it: __it is__ a statute for ever unto the LORD; it shall be wholly burnt.
+@ For every meat offering for the priest shall be wholly burnt: it shall not be eaten.
+
+[discrete.pericope]
+==== The Sin Offering
+
+[.parallel]
+(<<Leviticus 4:1–35; Leviticus 5:1–13>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto Aaron and to his sons, saying, This __is__ ##the law##note:x[<<Lev 4:24>>] of the sin offering: ##In the##note:x[<<Lev 1:11; 4:24>>] place where the burnt offering is killed shall the sin offering be killed before the LORD: it __is__ most holy.
+@ The ##priest##note:x[<<Lev 10:17–18; Ezek 44:28–29>>] that offereth it for sin shall eat it: in the holy place shall it be eaten, in the court of the tabernacle of the congregation.
+@ Whatsoever shall touch the flesh thereof shall be holy: and when there is sprinkled of the blood thereof upon any garment, thou shalt wash that whereon it was sprinkled in the holy place.
+@ ##But the earthen vessel wherein it is sodden shall be broken: and if it be sodden in a brasen pot, it shall be both scoured, and rinsed in water.##note:x[<<Lev 11:33; 15:12>>]
+@ All the males among the priests shall eat thereof: it __is__ most holy.
+@ And no sin offering, whereof __any__ of the blood is brought into the tabernacle of the congregation to reconcile __withal__ in the holy __place__, shall be eaten: it shall be burnt in the fire.
+
+=== @7
+
+[discrete.pericope]
+==== The Guilt Offering
+
+[.parallel]
+(<<Leviticus 5:14–19; Leviticus 6:1–7>>)
+
+@ Likewise this __is__ the law of the trespass offering: ##it __is__##note:x[<<Lev 6:17, 25>>] most holy.
+@ ##In the place##note:x[<<Lev 1:5, 11>>] where they kill the burnt offering shall they kill the trespass offering: ##and the##note:x[<<Lev 1:5>>] blood thereof shall he sprinkle round about upon the altar.
+@ ##And he shall offer of it all the fat thereof; the rump, and the fat that covereth the inwards,##note:x[<<Exod 29:13>>]
+@ And the two kidneys, and the fat that __is__ on them, which __is__ by the flanks, and the caul __that is__ above the liver, with the kidneys, it shall he take away:
+@ And the priest shall burn them upon the altar __for__ an offering made by fire unto the LORD: it __is__ a trespass offering.
+@ Every ##male##note:x[<<Lev 6:29>>] among the priests shall eat thereof: it shall be eaten in the holy place: it __is__ most holy.
+@ As the sin offering __is__, so __is__ ##the trespass##note:x[<<Lev 6:25–26>>] offering: __there is__ one law for them: the priest that maketh atonement therewith shall have __it__.
+@ And the priest that offereth any man’s burnt offering, __even__ the priest shall have to himself the skin of the burnt offering which he hath offered.
+@ And all the meat offering that is baken in the oven, and all that is dressed in the fryingpan, and in the pan, shall be the priest’s that offereth it.note:tn[__in the pan__: or, on the flat plate or, slice]
+@ And every meat offering, mingled with oil, and dry, shall all the sons of Aaron have, one __as much__ as another.
+
+[discrete.pericope]
+==== The Peace Offering
+
+[.parallel]
+(<<Leviticus 3:1–17>>)
+
+@ And this __is__ the law of the sacrifice of peace offerings, which he shall offer unto the LORD.
+@ If he offer it for ##a thanksgiving##note:x[<<1 Pet 2:5>>], then he shall offer with the sacrifice of thanksgiving unleavened cakes mingled with oil, and ##unleavened wafers##note:x[<<Lev 2:4; Num 6:15>>] anointed with oil, and cakes mingled with oil, of fine flour, fried.
+@ Besides the cakes, he shall offer __for__ his offering ##leavened##note:x[<<Lev 23:17; Amos 4:5>>] bread with the sacrifice of thanksgiving of his peace offerings.
+@ note:x[<<Num 18:19>>]And of it he shall offer one out of the whole oblation __for__ an heave offering unto the LORD, __and__ it shall be the priest’s that sprinkleth the blood of the peace offerings.
+@ And the flesh of the sacrifice of his peace offerings for thanksgiving shall be eaten the same day that it is offered; he shall not leave any of it until the morning.
+@ But if the sacrifice of his offering ##__be__ a vow##note:x[<<Deut 12:6>>], or ##a voluntary##note:x[<<Deut 12:6>>] offering, it shall be eaten the same day that he offereth his sacrifice: and on the morrow ##also the##note:x[<<Lev 19:5–8>>] remainder of it shall be eaten:
+@ But the remainder of the flesh of the sacrifice on the third day shall be ##burnt##note:x[<<Exod 12:10>>] with fire.
+@ And if __any__ of the flesh of the sacrifice of his peace offerings be eaten at all on the third day, ##it shall##note:x[<<Lev 19:7–8>>] not be accepted, neither shall it be imputed unto him that offereth it: it shall be an abomination, and the soul that eateth of it shall ##bear##note:x[<<Lev 19:7–8>>] his iniquity.
+@ And the flesh that toucheth any unclean __thing__ shall not be eaten; it shall be burnt with fire: and as for the flesh, all that be clean shall eat thereof.
+@ But the soul that eateth __of__ the flesh of the sacrifice of peace offerings, that __pertain__ unto the LORD, having his uncleanness upon him, even that soul shall be cut off from his people.
+@ Moreover the soul that shall touch any unclean __thing, as__ the uncleanness of man, or __any__ unclean beast, or any abominable unclean __thing__, and eat of the flesh of the sacrifice of peace offerings, which __pertain__ unto the LORD, even that soul shall be cut off from his people.
+
+[discrete.pericope]
+==== Fat and Blood Forbidden
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, Ye shall eat no manner of ##fat##note:x[<<Lev 3:16–17>>], of ox, or of sheep, or of goat.
+@ And the fat of the ##beast##note:x[<<Exod 22:31; Lev 17:15; 22:8>>] that dieth of itself, and the fat of that which is torn with beasts, may be used in any other use: but ye shall in no wise eat of it.note:tn[__beast…__: Heb. carcase]
+@ For whosoever eateth the fat of the beast, of which men offer an offering made by fire unto the LORD, even the soul that eateth __it__ shall be cut off from his people.
+@ Moreover ##ye shall eat##note:x[<<Gen 9:4>>] no manner of blood, __whether it be__ of fowl or of beast, in any of your dwellings.
+@ Whatsoever soul __it be__ that eateth any manner of blood, even ##that soul##note:x[<<Heb 10:29>>] shall be cut off from his people.
+
+[discrete.pericope]
+==== The Priests’ Portion
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, He that offereth the sacrifice of his peace offerings unto the LORD shall bring his oblation unto the LORD of the sacrifice of his peace offerings.
+@ His own hands shall bring the offerings of the LORD made by fire, the fat ##with the breast##note:x[<<Num 6:20>>], it shall he bring, that the breast may be waved __for__ a wave offering before the LORD.
+@ And the priest shall burn the fat upon the altar: but the breast shall be Aaron’s and his sons’.
+@ ##And the right shoulder shall ye give unto the priest __for__ an heave offering of the sacrifices of your peace offerings.##note:x[<<Lev 7:34; 9:21; Num 6:20>>]
+@ He among the sons of Aaron, that offereth the blood of the peace offerings, and the fat, shall have the right shoulder for __his__ part.
+@ For ##the wave##note:x[<<Num 18:18–19>>] breast and the heave shoulder have I taken of the children of Israel from off the sacrifices of their peace offerings, and have given them unto Aaron the priest and unto his sons by a statute for ever from among the children of Israel.
+
+@ ¶ This __is the portion__ of the anointing of Aaron, and of the anointing of his sons, out of the offerings of the LORD made by fire, in the day __when__ he presented them to minister unto the LORD in the priest’s office;
+@ Which the LORD commanded to be given them of the children of Israel, ##in the day##note:x[<<Lev 8:12, 30>>] that he anointed them, __by__ a statute for ever throughout their generations.
+@ This __is__ the law of the burnt offering, of the meat offering, and of the sin offering, and of the trespass offering, and of the ##consecrations##note:x[<<Exod 29:1>>], and of the sacrifice of the peace offerings;
+@ Which the LORD commanded Moses in mount Sinai, in the day that he commanded the children of Israel to offer their oblations unto the LORD, in the wilderness of Sinai.
+
+=== @8
+
+[discrete.pericope]
+==== Moses Consecrates Aaron and His Sons
+
+[.parallel]
+(<<Exodus 29:1–9>>)
+
+@ And the LORD spake unto Moses, saying,
+@ Take Aaron and his sons with him, and the garments, and the anointing oil, and a bullock for the sin offering, and two rams, and a basket of unleavened bread;
+@ And gather thou all the congregation together unto the door of the tabernacle of the congregation.
+@ And Moses did as the LORD commanded him; and the assembly was gathered together unto the door of the tabernacle of the congregation.
+@ And Moses said unto the congregation, This __is__ the thing which the LORD commanded to be done.
+@ And Moses brought Aaron and his sons, and ##washed##note:x[<<Exod 29:4; 1 Cor 6:11; Eph 5:26>>] them with water.
+@ And ##he put##note:x[<<Exod 28:4>>] upon him the coat, and girded him with the girdle, and clothed him with the robe, and put the ephod upon him, and he girded him with the curious girdle of the ephod, and bound __it__ unto him therewith.
+@ And he put the breastplate upon him: also he put in the breastplate the Urim and the Thummim.
+@ And he put the mitre upon his head; also upon the mitre, __even__ upon his forefront, did he put the golden plate, the holy crown; as the LORD commanded Moses.
+@ And Moses took the anointing oil, and anointed the tabernacle and all that __was__ therein, and sanctified them.
+@ And he sprinkled thereof upon the altar seven times, and anointed the altar and all his vessels, both the laver and his foot, to sanctify them.
+@ note:x[<<Exod 29:7; 30:30; Ps 133:2>>]And he poured of the anointing oil upon Aaron’s head, and anointed him, to sanctify him.
+@ And Moses brought Aaron’s sons, and put coats upon them, and girded them with girdles, and put bonnets upon them; as the LORD commanded Moses.note:tn[__put bonnets__: Heb. bound bonnets]
+
+[discrete.pericope]
+==== The Priests’ Sin Offering
+
+@ And ##he brought##note:x[<<Ezek 43:19>>] the bullock for the sin offering: and Aaron and his sons laid their hands upon the head of the bullock for the sin offering.
+@ And he slew __it;__ and ##Moses##note:x[<<Lev 4:7>>] took the blood, and put __it__ upon the horns of the altar round about with his finger, and purified the altar, and poured the blood at the bottom of the altar, and sanctified it, to make reconciliation upon it.
+@ ##And he took all the fat that __was__ upon the inwards, and the caul __above__ the liver, and the two kidneys, and their fat, and Moses burned __it__ upon the altar.##note:x[<<Exod 29:13>>]
+@ ##But the bullock, and his hide, his flesh, and his dung, he burnt with fire without the camp; as the LORD commanded Moses.##note:x[<<Exod 29:14; Lev 4:11–12>>]
+
+[discrete.pericope]
+==== The Priests’ Burnt Offering
+
+@ ¶ And he brought the ram for the burnt offering: and Aaron and his sons laid their hands upon the head of the ram.
+@ And he killed __it;__ and Moses sprinkled the blood upon the altar round about.
+@ And he cut the ram into pieces; and Moses burnt the head, and the pieces, and the fat.
+@ And he washed the inwards and the legs in water; and Moses burnt the whole ram upon the altar: it __was__ a burnt sacrifice for a sweet savour, __and__ an offering made by fire unto the LORD; as the LORD commanded Moses.
+
+[discrete.pericope]
+==== The Ram of Ordination
+
+[.parallel]
+(<<Exodus 29:10–30>>)
+
+@ ¶ And he brought the other ram, ##the ram of consecration##note:x[<<Lev 8:2>>]: and Aaron and his sons laid their hands upon the head of the ram.
+@ And he slew __it;__ and ##Moses took##note:x[<<Exod 29:20>>] of the blood of it, and put __it__ upon the tip of Aaron’s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot.
+@ And he brought Aaron’s sons, and Moses put of the blood upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet: and Moses sprinkled the blood upon the altar round about.
+@ And he took the fat, and the rump, and all the fat that __was__ upon the inwards, and the caul __above__ the liver, and the two kidneys, and their fat, and the right shoulder:
+@ And out of the basket of unleavened bread, that __was__ before the LORD, he took one unleavened cake, and a cake of oiled bread, and one wafer, and put __them__ on the fat, and upon the right shoulder:
+@ And he put all upon Aaron’s hands, and upon his sons’ hands, and waved them __for__ a wave offering before the LORD.
+@ And Moses took them from off their hands, and burnt __them__ on the altar upon the burnt offering: they __were__ consecrations for a sweet savour: it __is__ an offering made by fire unto the LORD.
+@ And Moses took the breast, and waved it __for__ a wave offering before the LORD: __for__ of the ram of consecration it was Moses’ part; as the LORD commanded Moses.
+@ And Moses took of ##the anointing##note:x[<<Exod 29:21>>] oil, and of the blood which __was__ upon the altar, and sprinkled __it__ upon Aaron, __and__ upon his garments, and upon his sons, and upon his sons’ garments with him; and sanctified Aaron, __and__ his garments, and his sons, and his sons’ garments with him.
+
+@ ¶ And Moses said unto Aaron and to his sons, ##Boil##note:x[<<Exod 29:31–32>>] the flesh __at__ the door of the tabernacle of the congregation: and there eat it with the bread that __is__ in the basket of consecrations, as I commanded, saying, Aaron and his sons shall eat it.
+@ And that which remaineth of the flesh and of the bread shall ye burn with fire.
+@ And ye shall not go out of the door of the tabernacle of the congregation __in__ seven days, until the days of your consecration be at an end: for seven days shall he consecrate you.
+@ ##As he hath done this day, __so__ the LORD hath commanded to do, to make an atonement for you.##note:x[<<Heb 7:16, 27; 10:11–12>>]
+@ Therefore shall ye abide __at__ the door of the tabernacle of the congregation day and night seven days, and ##keep##note:x[<<Num 3:7; 9:19; Deut 11:1>>] the charge of the LORD, that ye die not: for so I am commanded.
+@ So ##Aaron##note:x[<<Deut 12:32>>] and his sons did all things which the LORD commanded by the hand of Moses.
+
+=== @9
+
+[discrete.pericope]
+==== Aaron’s First Offerings
+
+@ And it came to pass on the eighth day, __that__ Moses called Aaron and his sons, and the elders of Israel;
+@ And he said unto Aaron, Take thee ##a young##note:x[<<Exod 29:1; Lev 4:3; 8:14>>] calf for a sin offering, and a ram for a burnt offering, without blemish, and offer __them__ before the LORD.
+@ And unto the children of Israel thou shalt speak, saying, ##Take ye##note:x[<<Lev 4:23; Ezra 6:17>>] a kid of the goats for a sin offering; and a calf and a lamb, __both__ of the first year, without blemish, for a burnt offering;
+@ note:x[<<Exod 29:43; Lev 9:6, 23>>]Also a bullock and a ram for peace offerings, to sacrifice before the LORD; and a meat offering mingled with oil: for to day the LORD will appear unto you.
+
+@ ¶ And they brought __that__ which Moses commanded before the tabernacle of the congregation: and all the congregation drew near and stood before the LORD.
+@ And Moses said, This __is__ the thing which the LORD commanded that ye should do: ##and the glory##note:x[<<Exod 24:16; Lev 9:23; 2 Chr 5:13–14>>] of the LORD shall appear unto you.
+@ And Moses said unto Aaron, Go unto the altar, and ##offer thy##note:x[<<Lev 4:3; Heb 5:3>>] sin offering, and thy burnt offering, and make an atonement for thyself, and for the people: and ##offer the##note:x[<<Heb 5:1>>] offering of the people, and make an atonement for them; as the LORD commanded.
+
+@ ¶ Aaron therefore went unto the altar, and slew the calf of the sin offering, which __was__ for himself.
+@ And the sons of Aaron brought the blood unto him: and he dipped his finger in the blood, and put __it__ upon the horns of the altar, and poured out the blood at the bottom of the altar:
+@ But the fat, and the kidneys, and the caul above the liver of the sin offering, he burnt upon the altar; as the LORD commanded Moses.
+@ ##And the flesh and the hide he burnt with fire without the camp.##note:x[<<Lev 4:11–12; 8:17>>]
+@ And he slew the burnt offering; and Aaron’s sons presented unto him the blood, which he sprinkled round about upon the altar.
+@ And they presented the burnt offering unto him, with the pieces thereof, and the head: and he burnt __them__ upon the altar.
+@ And he did wash the inwards and the legs, and burnt __them__ upon the burnt offering on the altar.
+
+@ ¶ note:x[<<Lev 4:27–31>>]And he brought the people’s offering, and took the goat, which __was__ the sin offering for the people, and slew it, and offered it for sin, as the first.
+@ And he brought the burnt offering, and offered it according to the ##manner##note:tn[or, ordinance].
+@ And he brought ##the meat##note:x[<<Lev 2:1–2>>] offering, and took an handful thereof, and burnt __it__ upon the altar, beside the burnt sacrifice of the morning.note:tn[__took…__: Heb. filled his hand out of it]
+@ He slew also the bullock and the ram __for__ a sacrifice of peace offerings, which __was__ for the people: and Aaron’s sons presented unto him the blood, which he sprinkled upon the altar round about,
+@ And the fat of the bullock and of the ram, the rump, and that which covereth __the inwards__, and the kidneys, and the caul __above__ the liver:
+@ And they put the fat upon the breasts, and he burnt the fat upon the altar:
+@ And ##the breasts##note:x[<<Lev 7:30–34>>] and the right shoulder Aaron waved __for__ a wave offering before the LORD; as Moses commanded.
+@ And Aaron lifted up ##his hand##note:x[<<Deut 21:5; Luke 24:50>>] toward the people, and blessed them, and came down from offering of the sin offering, and the burnt offering, and peace offerings.
+
+@ And Moses and Aaron went into the tabernacle of the congregation, and came out, and blessed the people: and ##the glory##note:x[<<Lev 9:6>>] of the LORD appeared unto all the people.
+@ And ##there came a fire##note:x[<<Judg 6:21; 1 Kgs 18:38; 1 Chr 21:26>>] out from before the LORD, and consumed upon the altar the burnt offering and the fat: __which__ when all the people saw, they shouted, and fell on their faces.
+
+=== @10
+
+[discrete.pericope]
+==== The Sin of Nadab and Abihu
+
+[.parallel]
+(<<Numbers 3:1–4>>)
+
+@ And ##Nadab##note:x[<<Num 26:61>>] and Abihu, the sons of Aaron, took either of them his ##censer##note:x[<<Lev 16:12>>], and put fire therein, and put incense thereon, and offered strange fire before the LORD, ##which##note:x[<<Deut 12:32>>] he commanded them not.
+@ And there went out ##fire##note:x[<<Lev 9:24; Num 26:61>>] from the LORD, and devoured them, and ##they died##note:x[<<Num 26:61>>] before the LORD.
+
+@ Then Moses said unto Aaron, This __is it__ that the LORD spake, saying, ##I will be##note:x[<<Exod 19:22; Lev 21:6>>] sanctified in them that come nigh me, and ##before##note:x[<<Isa 49:3>>] all the people I will be glorified. And Aaron held his peace.
+@ And Moses called Mishael and Elzaphan, the sons of ##Uzziel##note:x[<<Exod 6:18, 22>>] the uncle of Aaron, and said unto them, Come near, carry your brethren from before the sanctuary out of the camp.
+@ So they went near, and carried them in their coats out of the camp; as Moses had said.
+@ And Moses said unto Aaron, and unto Eleazar and unto Ithamar, his sons, Uncover not your heads, neither rend your clothes; lest ye die, and ##lest wrath##note:x[<<Num 16:22; Josh 7:1; 22:18>>] come upon all the people: but let your brethren, the whole house of Israel, bewail the burning which the LORD hath kindled.
+@ And ##ye shall##note:x[<<Lev 21:12>>] not go out from the door of the tabernacle of the congregation, lest ye die: for ##the anointing##note:x[<<Acts 10:38; 2 Cor 1:21>>] oil of the LORD __is__ upon you. And they did according to the word of Moses.
+
+[discrete.pericope]
+==== Restrictions for Priests
+
+@ ¶ And the LORD spake unto Aaron, saying,
+@ ##Do not##note:x[<<Isa 28:7; Luke 1:15; 1 Tim 3:3>>] drink wine nor strong drink, thou, nor thy sons with thee, when ye go into the tabernacle of the congregation, lest ye die: __it shall be__ a statute for ever throughout your generations:
+@ ##And that ye may put difference between holy and unholy, and between unclean and clean;##note:x[<<Lev 11:47; Ezek 22:26; 1 Pet 1:14–16>>]
+@ ##And that ye may teach the children of Israel all the statutes which the LORD hath spoken unto them by the hand of Moses.##note:x[<<Neh 8:2; Mal 2:7; Matt 28:20>>]
+
+@ ¶ And Moses spake unto Aaron, and unto Eleazar and unto Ithamar, his sons that were left, ##Take##note:x[<<Lev 21:22>>] the meat offering that remaineth of the offerings of the LORD made by fire, and eat it without leaven beside the altar: ##for it __is__ most##note:x[<<Lev 21:22>>] holy:
+@ And ye shall eat it in the holy place, because it __is__ thy due, and thy sons’ due, of the sacrifices of the LORD made by fire: ##for so I##note:x[<<Lev 6:16>>] am commanded.
+@ note:x[<<Num 18:11>>]And the wave breast and heave shoulder shall ye eat in a clean place; thou, and thy sons, and thy daughters with thee: for __they be__ thy due, and thy sons’ due, __which__ are given out of the sacrifices of peace offerings of the children of Israel.
+@ The ##heave shoulder##note:x[<<Lev 7:34>>] and the wave breast shall they bring with the offerings made by fire of the fat, to wave __it for__ a wave offering before the LORD; and it shall be thine, and thy sons’ with thee, by a statute ##for ever##note:x[<<Lev 7:34>>]; as the LORD hath commanded.
+
+@ ¶ And Moses diligently sought ##the goat##note:x[<<Lev 9:3, 15>>] of the sin offering, and, behold, it was burnt: and he was angry with Eleazar and Ithamar, the sons of Aaron __which were__ left __alive__, saying,
+@ Wherefore have ye not eaten the sin offering in the holy place, seeing it __is__ most holy, and __God__ hath given it you to bear the iniquity of the congregation, to make atonement for them before the LORD?
+@ Behold, ##the blood##note:x[<<Lev 6:30>>] of it was not brought in within the holy __place:__ ye should indeed have eaten it in the holy __place__, ##as I commanded##note:x[<<Lev 6:26, 30>>].
+@ And Aaron said unto Moses, Behold, ##this day##note:x[<<Lev 9:8, 12>>] have they offered their sin offering and their burnt offering before the LORD; and such things have befallen me: and __if__ I had eaten the sin offering to day, should it have been accepted in the sight of the LORD?
+@ And when Moses heard __that__, he was content.
+
+=== @11
+
+[discrete.pericope]
+==== Clean and Unclean Animals
+
+[.parallel]
+(<<Deuteronomy 14:1–21; Acts 10:9–16>>)
+
+@ And the LORD spake unto Moses and to Aaron, saying unto them,
+@ Speak unto the children of Israel, saying, These __are__ the beasts which ye shall eat among all the beasts that __are__ on the earth.
+@ Whatsoever parteth the hoof, and is clovenfooted, __and__ cheweth the cud, among the beasts, that shall ye eat.
+@ Nevertheless these shall ye not eat of them that chew the cud, or of them that divide the hoof: __as__ the camel, because he cheweth the cud, but divideth not the hoof; he __is__ unclean unto you.
+@ And the coney, because he cheweth the cud, but divideth not the hoof; he __is__ unclean unto you.
+@ And the hare, because he cheweth the cud, but divideth not the hoof; he __is__ unclean unto you.
+@ And the ##swine##note:x[<<Deut 14:8; Isa 65:4; 66:3>>], though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he __is__ unclean to you.
+@ Of their flesh shall ye not eat, and their carcase shall ye not touch; ##they __are__ unclean##note:x[<<Col 2:16; Heb 9:10>>] to you.
+
+@ ¶ These shall ye eat of all that __are__ in the waters: whatsoever hath fins and scales in the waters, in the seas, and in the rivers, them shall ye eat.
+@ And all that have not fins and scales in the seas, and in the rivers, of all that move in the waters, and of any living thing which __is__ in the waters, they __shall be__ an abomination unto you:
+@ They shall be even an abomination unto you; ye shall not eat of their flesh, but ye shall have their carcases in abomination.
+@ Whatsoever hath no fins nor scales in the waters, that __shall be__ an abomination unto you.
+
+@ ¶ And these __are they which__ ye shall have in abomination among the fowls; they shall not be eaten, they __are__ an abomination: the eagle, and the ossifrage, and the ospray,
+@ And the vulture, and the kite after his kind;
+@ Every raven after his kind;
+@ And the owl, and the night hawk, and the cuckow, and the hawk after his kind,
+@ And the little owl, and the cormorant, and the great owl,
+@ And the swan, and the pelican, and the gier eagle,
+@ And the stork, the heron after her kind, and the lapwing, and the bat.
+
+@ All fowls that creep, going upon __all__ four, __shall be__ an abomination unto you.
+@ Yet these may ye eat of every flying creeping thing that goeth upon __all__ four, which have legs above their feet, to leap withal upon the earth;
+@ ##__Even__ these of them ye may eat; the locust after his kind, and the bald locust after his kind, and the beetle after his kind, and the grasshopper after his kind.##note:x[<<Matt 3:4; Mark 1:6>>]
+@ But all __other__ flying creeping things, which have four feet, __shall be__ an abomination unto you.
+@ And for these ye shall be unclean: whosoever toucheth the carcase of them shall be unclean until the even.
+@ And whosoever beareth __ought__ of the carcase of them shall ##wash his clothes, and be unclean##note:x[<<Lev 11:40; 14:8; 15:5>>] until the even.
+@ __The carcases__ of every beast which divideth the hoof, and __is__ not clovenfooted, nor cheweth the cud, __are__ unclean unto you: every one that toucheth them shall be unclean.
+@ And whatsoever goeth upon his paws, among all manner of beasts that go on __all__ four, those __are__ unclean unto you: whoso toucheth their carcase shall be unclean until the even.
+@ And he that beareth the carcase of them shall wash his clothes, and be unclean until the even: they __are__ unclean unto you.
+
+@ ¶ These also __shall be__ unclean unto you among the creeping things that creep upon the earth; the weasel, and the mouse, and the tortoise after his kind,
+@ And the ferret, and the chameleon, and the lizard, and the snail, and the mole.
+@ These __are__ unclean to you among all that creep: whosoever doth touch them, when they be dead, shall be unclean until the even.
+@ And upon whatsoever __any__ of them, when they are dead, doth fall, it shall be unclean; whether __it be__ any vessel of wood, or raiment, or skin, or sack, whatsoever vessel __it be__, wherein __any__ work is done, ##it must be put into water##note:x[<<Lev 15:12>>], and it shall be unclean until the even; so it shall be cleansed.
+@ And every earthen vessel, whereinto __any__ of them falleth, whatsoever __is__ in it shall be unclean; and ye shall break it.
+@ Of all meat which may be eaten, __that__ on which __such__ water cometh shall be unclean: and all drink that may be drunk in every __such__ vessel shall be unclean.
+@ And every __thing__ whereupon __any part__ of their carcase falleth shall be unclean; __whether it be__ oven, or ranges for pots, they shall be broken down: __for__ they __are__ unclean, and shall be unclean unto you.
+@ Nevertheless a fountain or pit, __wherein there is__ plenty of water, shall be clean: but that which toucheth their carcase shall be unclean.note:tn[__wherein…__: Heb. a gathering together of waters]
+@ And if __any part__ of their carcase fall upon any sowing seed which is to be sown, it __shall be__ clean.
+@ But if __any__ water be put upon the seed, and __any part__ of their carcase fall thereon, it __shall be__ unclean unto you.
+@ And if any beast, of which ye may eat, die; he that toucheth the carcase thereof shall be unclean until the even.
+@ And he that ##eateth##note:x[<<Lev 22:8; Deut 14:21; Ezek 44:31>>] of the carcase of it shall wash his clothes, and be unclean until the even: he also that beareth the carcase of it shall wash his clothes, and be unclean until the even.
+@ ##And every creeping thing that creepeth upon the earth __shall be__ an abomination; it shall not be eaten.##note:x[<<Lev 11:29>>]
+@ Whatsoever goeth upon the belly, and whatsoever goeth upon __all__ four, or whatsoever hath more feet among all creeping things that creep upon the earth, them ye shall not eat; for they __are__ an abomination.note:tn[__hath…__: Heb. doth multiply feet]
+
+@ ##Ye shall##note:x[<<Lev 20:25>>] not make yourselves abominable with any creeping thing that creepeth, neither shall ye make yourselves unclean with them, that ye should be defiled thereby.note:tn[__yourselves abominable__: Heb. your souls, etc]
+@ For ##I __am__ the##note:x[<<Exod 20:2>>] LORD your God: ##ye shall##note:x[<<Lev 19:2; 1 Pet 1:15–16>>] therefore sanctify yourselves, and ye shall be holy; for I __am__ holy: neither shall ye defile yourselves with any manner of creeping thing that creepeth upon the earth.
+@ For I __am__ the LORD ##that bringeth##note:x[<<Exod 6:7>>] you up out of the land of Egypt, to be your God: ye shall therefore ##be holy##note:x[<<Exod 20:2; Lev 11:44>>], for I __am__ holy.
+@ This __is__ the law of the beasts, and of the fowl, and of every living creature that moveth in the waters, and of every creature that creepeth upon the earth:
+@ ##To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten.##note:x[<<Lev 10:10; Ezek 44:23>>]
+
+=== @12
+
+[discrete.pericope]
+==== Purification after Childbirth
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, ##If a woman##note:x[<<Luke 2:22>>] have conceived seed, and born a man child: then she shall be unclean seven days; ##according##note:x[<<Lev 15:19>>] to the days of the separation for her infirmity shall she be unclean.
+@ ##And in the eighth day the flesh of his foreskin shall be circumcised.##note:x[<<Luke 1:59; 2:21; John 7:22–23>>]
+@ And she shall then continue in the blood of her purifying three and thirty days; she shall touch no hallowed thing, nor come into the sanctuary, until the days of her purifying be fulfilled.
+@ But if she bear a maid child, then she shall be unclean two weeks, as in her separation: and she shall continue in the blood of her purifying threescore and six days.
+
+@ And when the days of her purifying are fulfilled, for a son, or for a daughter, she shall bring ##a lamb##note:x[<<Luke 2:22>>] of the first year for a burnt offering, and a young pigeon, or a turtledove, for a sin offering, unto the door of the tabernacle of the congregation, unto the priest&#58;note:tn[__of the first…__: Heb. a son of his year]
+@ Who shall offer it before the LORD, and make an atonement for her; and she shall be cleansed from the issue of her blood. This __is__ the law for her that hath born a male or a female.
+@ And if ##she be not able to bring a lamb##note:x[<<Lev 5:7>>], then she shall bring two turtles, or two young pigeons; the one for the burnt offering, and the other for a sin offering: and the priest shall ##make an atonement##note:x[<<Lev 4:26>>] for her, and she shall be clean.note:tn[__she be…__: Heb. her hand find not sufficiency of]
+
+=== @13
+
+[discrete.pericope]
+==== Laws about Skin Diseases
+
+[.parallel]
+(<<Numbers 5:1–4>>)
+
+@ And the LORD spake unto Moses and Aaron, saying,
+@ When a man shall have in the skin of his flesh a ##rising##note:tn[or, swelling], ##a scab##note:x[<<Lev 14:56>>], or bright spot, and it be in the skin of his flesh __like__ the plague of leprosy; then ##he shall##note:x[<<Deut 24:8>>] be brought unto Aaron the priest, or unto one of his sons the priests:
+@ And the priest ##shall look##note:x[<<Rom 3:19–20>>] on the plague in the skin of the flesh: and __when__ the hair in the plague is turned white, and the plague in sight __be__ deeper than the skin of his flesh, it __is__ a plague of leprosy: and the priest shall look on him, and ##pronounce##note:x[<<Rom 3:19–20>>] him unclean.
+@ If the bright spot __be__ white in the skin of his flesh, and in sight __be__ not deeper than the skin, and the hair thereof be not turned white; then the priest shall shut up __him that hath__ the plague seven days:
+@ And the priest shall look on him the seventh day: and, behold, __if__ the plague in his sight be at a stay, __and__ the plague spread not in the skin; then the priest shall shut him up seven days more:
+@ And the priest shall look on him again the seventh day: and, behold, __if__ the plague __be__ somewhat dark, __and__ the plague spread not in the skin, the priest shall pronounce him clean: it __is but__ a scab: and he shall ##wash##note:x[<<Lev 11:25; 14:8>>] his clothes, and be clean.
+@ But if the scab spread much abroad in the skin, after that he hath been seen of the priest for his cleansing, he shall be seen of the priest again:
+@ And __if__ the priest see that, behold, the scab spreadeth in the skin, then the priest shall pronounce him unclean: it __is__ a leprosy.
+
+@ ¶ When the plague of leprosy is in a man, then he shall be brought unto the priest;
+@ And the priest ##shall see __him__##note:x[<<2 Kgs 5:27>>]__:__ and, behold, __if__ the rising __be__ white in the skin, and it have turned the hair white, and __there be__ quick raw flesh in the rising;note:tn[__quick…__: Heb. the quickening of living flesh]
+@ It __is__ an old leprosy in the skin of his flesh, and the priest shall pronounce him unclean, and shall not shut him up: for he __is__ unclean.
+@ And if a leprosy break out abroad in the skin, and the leprosy cover all the skin of __him that hath__ the plague from his head even to his foot, wheresoever the priest looketh;
+@ Then the priest shall consider: and, behold, __if__ the leprosy have covered all his flesh, he shall pronounce __him__ clean __that hath__ the plague: it is all turned white: he __is__ clean.
+@ But when raw flesh appeareth in him, he shall be unclean.
+@ And the priest shall see the raw flesh, and pronounce him to be unclean: __for__ the raw flesh __is__ unclean: it __is__ a leprosy.
+@ Or if the raw flesh turn again, and be changed unto white, he shall come unto the priest;
+@ And the priest shall see him: and, behold, __if__ the plague be turned into white; then the priest shall pronounce __him__ clean __that hath__ the plague: he __is__ clean.
+
+@ ¶ The flesh also, in which, __even__ in the skin thereof, was ##a boil##note:x[<<Exod 9:9>>], and is healed,
+@ And in the place of the boil there be a white rising, or a bright spot, white, and somewhat reddish, and it be shewed to the priest;
+@ And if, when the priest seeth it, behold, it __be__ in sight lower than the skin, and the hair thereof be turned white; the priest shall pronounce him unclean: it __is__ a plague of leprosy broken out of the boil.
+@ But if the priest look on it, and, behold, __there be__ no white hairs therein, and __if__ it __be__ not lower than the skin, but __be__ somewhat dark; then the priest shall shut him up seven days:
+@ And if it spread much abroad in the skin, then the priest shall pronounce him unclean: it __is__ a plague.
+@ But if the bright spot stay in his place, __and__ spread not, it __is__ a burning boil; and the priest shall pronounce him clean.
+
+@ ¶ Or if there be __any__ flesh, in the skin whereof __there is__ a hot burning, and the quick __flesh__ that burneth have a white bright spot, somewhat reddish, or white;note:tn[__a hot…__: Heb. a burning of fire]
+@ Then the priest shall look upon it: and, behold, __if__ the hair in the bright spot be turned white, and it __be in__ sight deeper than the skin; it __is__ a leprosy broken out of the burning: wherefore the priest shall pronounce him unclean: it __is__ the plague of leprosy.
+@ But if the priest look on it, and, behold, __there be__ no white hair in the bright spot, and it __be__ no lower than the __other__ skin, but __be__ somewhat dark; then the priest shall shut him up seven days:
+@ And the priest shall look upon him the seventh day: __and__ if it be spread much abroad in the skin, then the priest shall pronounce him unclean: it __is__ the plague of leprosy.
+@ And if the bright spot stay in his place, __and__ spread not in the skin, but it __be__ somewhat dark; it __is__ a rising of the burning, and the priest shall pronounce him clean: for it __is__ an inflammation of the burning.
+
+@ ¶ If a man or woman have a plague upon the head or the beard;
+@ Then the priest shall see the plague: and, behold, if it __be__ in sight deeper than the skin; __and there be__ in it a yellow thin hair; then the priest shall pronounce him unclean: it __is__ a dry scall, __even__ a leprosy upon the head or beard.
+@ And if the priest look on the plague of the scall, and, behold, it __be__ not in sight deeper than the skin, and __that there is__ no black hair in it; then the priest shall shut up __him that hath__ the plague of the scall seven days:
+@ And in the seventh day the priest shall look on the plague: and, behold, __if__ the scall spread not, and there be in it no yellow hair, and the scall __be__ not in sight deeper than the skin;
+@ He shall be shaven, but the scall shall he not shave; and the priest shall shut up __him that hath__ the scall seven days more:
+@ And in the seventh day the priest shall look on the scall: and, behold, __if__ the scall be not spread in the skin, nor __be__ in sight deeper than the skin; then the priest shall pronounce him clean: and he shall wash his clothes, and be clean.
+@ But if the scall spread much in the skin after his cleansing;
+@ Then the priest shall look on him: and, behold, if the scall be spread in the skin, the priest shall not seek for yellow hair; he __is__ unclean.
+@ But if the scall be in his sight at a stay, and __that__ there is black hair grown up therein; the scall is healed, he __is__ clean: and the priest shall pronounce him clean.
+
+@ ¶ If a man also or a woman have in the skin of their flesh bright spots, __even__ white bright spots;
+@ Then the priest shall look: and, behold, __if__ the bright spots in the skin of their flesh __be__ darkish white; it __is__ a freckled spot __that__ groweth in the skin; he __is__ clean.
+@ And the man whose hair is fallen off his head, he __is__ bald; __yet is__ he clean.note:tn[__hair…__: Heb. head is pilled]
+@ And he that hath his hair fallen off from the part of his head toward his face, he __is__ forehead bald: __yet is__ he clean.
+@ And if there be in the bald head, or bald forehead, a white reddish sore; it __is__ a leprosy sprung up in his bald head, or his bald forehead.
+@ Then the priest shall look upon it: and, behold, __if__ the rising of the sore __be__ white reddish in his bald head, or in his bald forehead, as the leprosy appeareth in the skin of the flesh;
+@ He is a leprous man, he __is__ unclean: the priest shall pronounce him utterly unclean; his plague __is__ in his head.
+@ And the leper in whom the plague __is__, his clothes shall be rent, ##and his head##note:x[<<Lev 10:6>>] bare, and he shall ##put##note:x[<<Ezek 24:17; Mic 3:7>>] a covering upon his upper lip, and shall cry, Unclean, unclean.
+@ All the days wherein the plague __shall be__ in him he shall be defiled; he __is__ unclean: he shall dwell alone; ##without##note:x[<<Num 12:14–15; 2 Kgs 7:3; 15:5>>] the camp __shall__ his habitation __be__.
+
+[discrete.pericope]
+==== Laws about Mildew
+
+@ ¶ The garment also that the plague of leprosy is in, __whether it be__ a woollen garment, or a linen garment;
+@ Whether __it be__ in the warp, or woof; of linen, or of woollen; whether in a skin, or in any thing made of skin;note:tn[__thing…__: Heb. work of]
+@ And if the plague be greenish or reddish in the garment, or in the skin, either in the warp, or in the woof, or in any ##thing##note:tn[Heb. vessel, or, instrument] of skin; it __is__ a plague of leprosy, and shall be shewed unto the priest:
+@ And the priest shall look upon the plague, and shut up __it that hath__ the plague seven days:
+@ And he shall look on the plague on the seventh day: if the plague be spread in the garment, either in the warp, or in the woof, or in a skin, __or__ in any work that is made of skin; the plague __is__ a ##fretting leprosy##note:x[<<Lev 14:44>>]; it __is__ unclean.
+@ He shall therefore burn that garment, whether warp or woof, in woollen or in linen, or any thing of skin, wherein the plague is: for it __is__ a fretting leprosy; it shall be burnt in the fire.
+@ And if the priest shall look, and, behold, the plague be not spread in the garment, either in the warp, or in the woof, or in any thing of skin;
+@ Then the priest shall command that they wash __the thing__ wherein the plague __is__, and he shall shut it up seven days more:
+@ And the priest shall look on the plague, after that it is washed: and, behold, __if__ the plague have not changed his colour, and the plague be not spread; it __is__ unclean; thou shalt burn it in the fire; it __is__ fret inward, __whether__ it __be__ bare within or without.note:tn[__whether…__: Heb. whether it be bald in the head thereof, or in the forehead thereof]
+@ And if the priest look, and, behold, the plague __be__ somewhat dark after the washing of it; then he shall rend it out of the garment, or out of the skin, or out of the warp, or out of the woof:
+@ And if it appear still in the garment, either in the warp, or in the woof, or in any thing of skin; it __is__ a spreading __plague:__ thou shalt burn that wherein the plague __is__ with fire.
+@ And the garment, either warp, or woof, or whatsoever thing of skin __it be__, which thou shalt wash, if the plague be departed from them, then it shall be washed the second time, and shall be clean.
+@ This __is__ the law of the plague of leprosy in a garment of woollen or linen, either in the warp, or woof, or any thing of skins, to pronounce it clean, or to pronounce it unclean.
+
+=== @14
+
+[discrete.pericope]
+==== Cleansing from Skin Diseases
+
+[.parallel]
+(<<Matthew 8:1–4; Mark 1:40–45; Luke 5:12–16>>)
+
+@ And the LORD spake unto Moses, saying,
+@ This shall be the law of the leper in the day of his cleansing: ##He shall##note:x[<<Mark 1:40–44; Luke 5:12–14; 17:14>>] be brought unto the priest:
+@ And the priest shall go forth ##out of##note:x[<<Lev 13:46>>] the camp; and the priest shall look, and, behold, __if__ the plague of leprosy be healed in the leper;
+@ Then shall the priest command to take for him that is to be cleansed two ##birds##note:tn[or, sparrows] alive __and__ clean, and ##cedar##note:x[<<Lev 14:6; Num 19:6>>] wood, and ##scarlet##note:x[<<Heb 9:19>>], and hyssop:
+@ And the priest shall command that one of the birds be killed in an earthen vessel over running water:
+@ As for the living bird, he shall take it, and the cedar wood, and the scarlet, and the hyssop, and shall dip them and the living bird in the blood of the bird __that was__ killed over the running water:
+@ And he shall ##sprinkle##note:x[<<Isa 52:15; Ezek 36:25>>] upon him that is to be cleansed from the leprosy ##seven times##note:x[<<2 Kgs 5:10>>], and shall pronounce him clean, and shall let the living bird loose into the open field.note:tn[__into…__: Heb. upon the face of the field]
+@ And he that is to be cleansed shall ##wash his##note:x[<<Lev 11:25>>] clothes, and shave off all his hair, and wash himself in water, that he may be clean: and after that he shall come into the camp, and shall tarry abroad out of his tent seven days.
+@ But it shall be on the seventh day, that he shall shave all his hair off his head and his beard and his eyebrows, even all his hair he shall shave off: and he shall wash his clothes, also he shall wash his flesh in water, and he shall be clean.
+
+@ And on the eighth day he shall ##take##note:x[<<Matt 8:4; Mark 1:44>>] two he lambs without blemish, and one ewe lamb of the first year without blemish, and three tenth deals of fine flour __for__ ##a meat offering##note:x[<<Lev 2:1>>], mingled with oil, and one log of oil.note:tn[__of the…__: Heb. the daughter of her year]
+@ And the priest that maketh __him__ clean shall present the man that is to be made clean, and those things, before the LORD, __at__ the door of the tabernacle of the congregation:
+@ And the priest shall take one he lamb, and offer him for a ##trespass##note:x[<<Lev 6:6–7>>] offering, and the log of oil, and ##wave them##note:x[<<Exod 29:24>>] __for__ a wave offering before the LORD:
+@ And he shall slay the lamb ##in the place##note:x[<<Exod 29:11; Lev 1:11; 4:24>>] where he shall kill the sin offering and the burnt offering, in the holy place: for as the sin offering __is__ the priest’s, __so is__ the trespass offering: it __is__ most holy:
+@ ##And the priest shall take __some__ of the blood of the trespass offering, and the priest shall put __it__ upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:##note:x[<<Exod 29:20; Lev 8:23–24; 2 Cor 7:1>>]
+@ And the priest shall take __some__ of the log of oil, and pour __it__ into the palm of his own left hand:
+@ And the priest shall dip his right finger in the oil that __is__ in his left hand, and shall sprinkle of the oil with his finger seven times before the LORD:
+@ And of the rest of the oil that __is__ in his hand shall the priest put upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the blood of the trespass offering:
+@ And ##the remnant##note:x[<<2 Cor 1:21–22>>] of the oil that __is__ in the priest’s hand he shall pour upon the head of him that is to be cleansed: and the priest shall ##make an atonement##note:x[<<Lev 4:26>>] for him before the LORD.
+@ And the priest shall offer the sin offering, and make an atonement for him that is to be cleansed from his uncleanness; and afterward he shall kill the burnt offering:
+@ And the priest shall offer the burnt offering and the meat offering upon the altar: and the priest shall make an atonement for him, and he shall be clean.
+
+@ And if he __be__ ##poor##note:x[<<Lev 5:7; 12:8>>], and cannot get so much; then he shall take one lamb __for__ a trespass offering to be waved, to make an atonement for him, and one tenth deal of fine flour mingled with oil for a meat offering, and a log of oil;note:tn[__cannot…__: Heb. his hand reach not]note:tn[__to be…__: Heb. for a waving]
+@ note:x[<<Ezek 7:16>>]And two turtledoves, or two young pigeons, such as he is able to get; and the one shall be a sin offering, and the other a burnt offering.
+@ And he shall bring them on the eighth day for his cleansing unto the priest, unto the door of the tabernacle of the congregation, before the LORD.
+@ And the priest shall take the lamb of the trespass offering, and the log of oil, and the priest shall wave them __for__ a wave offering before the LORD:
+@ And he shall kill the lamb of the trespass offering, and the priest shall take __some__ of the blood of the trespass offering, and put __it__ upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot:
+@ And the priest shall pour of the oil into the palm of his own left hand:
+@ And the priest shall sprinkle with his right finger __some__ of the oil that __is__ in his left hand seven times before the LORD:
+@ And the priest shall put of the oil that __is__ in his hand upon the tip of the right ear of him that is to be cleansed, and upon the thumb of his right hand, and upon the great toe of his right foot, upon the place of the blood of the trespass offering:
+@ note:x[<<Lev 14:18>>]And the rest of the oil that __is__ in the priest’s hand he shall put upon the head of him that is to be cleansed, to make an atonement for him before the LORD.
+@ And he shall offer the one of the turtledoves, or of the young pigeons, such as he can get;
+@ __Even__ such as he is able to get, the one __for__ a sin offering, and the other __for__ a burnt offering, with the meat offering: and the priest shall make an atonement for him that is to be cleansed before the LORD.
+@ This __is__ the law __of him__ in whom __is__ the plague of leprosy, whose hand is not able to get __that which pertaineth__ to his cleansing.
+
+[discrete.pericope]
+==== Signs of Home Contamination
+
+@ ¶ And the LORD spake unto Moses and unto Aaron, saying,
+@ When ye be come into the land of Canaan, ##which I##note:x[<<Gen 17:8; Deut 32:49>>] give to you for a possession, and I put the plague of leprosy in a house of the land of your possession;
+@ And he that owneth the house shall come and tell the priest, saying, It seemeth to me __there is__ as it were ##a plague##note:x[<<Ps 91:10>>] in the house:
+@ Then the priest shall command that they ##empty##note:tn[or, prepare] the house, before the priest go __into it__ to see the plague, that all that __is__ in the house be not made unclean: and afterward the priest shall go in to see the house:
+@ And he shall look on the plague, and, behold, __if__ the plague __be__ in the walls of the house with hollow strakes, greenish or reddish, which in sight __are__ lower than the wall;
+@ Then the priest shall go out of the house to the door of the house, and shut up the house seven days:
+@ And the priest shall come again the seventh day, and shall look: and, behold, __if__ the plague be spread in the walls of the house;
+@ Then the priest shall command that they take away the stones in which the plague __is__, and they shall cast them into an unclean place without the city:
+@ And he shall cause the house to be scraped within round about, and they shall pour out the dust that they scrape off without the city into an unclean place:
+@ And they shall take other stones, and put __them__ in the place of those stones; and he shall take other morter, and shall plaister the house.
+@ And if the plague come again, and break out in the house, after that he hath taken away the stones, and after he hath scraped the house, and after it is plaistered;
+@ Then the priest shall come and look, and, behold, __if__ the plague be spread in the house, it __is__ a fretting leprosy in the house: it __is__ unclean.
+@ And he shall break down the house, the stones of it, and the timber thereof, and all the morter of the house; and he shall carry __them__ forth out of the city into an unclean place.
+@ Moreover he that goeth into the house all the while that it is shut up shall be unclean until the even.
+@ And he that lieth in the house shall wash his clothes; and he that eateth in the house shall wash his clothes.
+
+[discrete.pericope]
+==== Cleansing a Home
+
+@ And if the priest shall come in, and look __upon it__, and, behold, the plague hath not spread in the house, after the house was plaistered: then the priest shall pronounce the house clean, because the plague is healed.note:tn[__shall come…__: Heb. in coming in shall come in, etc]
+@ And he shall take to cleanse the house two birds, and cedar wood, and scarlet, and hyssop:
+@ And he shall kill the one of the birds in an earthen vessel over running water:
+@ And he shall take the cedar wood, and the hyssop, and the scarlet, and the living bird, and dip them in the blood of the slain bird, and in the running water, and sprinkle the house seven times:
+@ And he shall cleanse the house with the blood of the bird, and with the running water, and with the living bird, and with the cedar wood, and with the hyssop, and with the scarlet:
+@ But he shall let go the living bird out of the city into the open fields, and make an atonement for the house: and it shall be clean.
+
+@ This __is__ the law for all manner of plague of leprosy, and scall,
+@ And for the leprosy of a garment, and of a house,
+@ And for ##a rising##note:x[<<Lev 13:2>>], and for a scab, and for a bright spot:
+@ To ##teach##note:x[<<Lev 10:10>>] when __it is__ unclean, and when __it is__ clean: this __is__ the law of leprosy.note:tn[__when it is unclean…__: Heb. in the day of the unclean, and in the day of the clean]
+
+=== @15
+
+[discrete.pericope]
+==== The Uncleanness of Men
+
+[.parallel]
+(<<Deuteronomy 23:9–14>>)
+
+@ And the LORD spake unto Moses and to Aaron, saying,
+@ Speak unto the children of Israel, and say unto them, ##When any man##note:x[<<Lev 22:4; Num 5:2; 2 Sam 3:29>>] hath a running issue out of his flesh, __because of__ his issue he __is__ unclean.note:tn[__running…__: or, running of the reins]
+@ And this shall be his uncleanness in his issue: whether his flesh run with his issue, or his flesh be stopped from his issue, it __is__ his uncleanness.
+@ Every bed, whereon he lieth that hath the issue, is unclean: and every ##thing##note:tn[Heb. vessel], whereon he sitteth, shall be unclean.
+@ ##And whosoever toucheth his bed shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.##note:x[<<Lev 11:25>>]
+@ And he that sitteth on __any__ thing whereon he sat that hath the issue shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And he that toucheth the flesh of him that hath the issue shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And if he that hath the issue spit upon him that is clean; then he shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And what saddle soever he rideth upon that hath the issue shall be unclean.
+@ And whosoever toucheth any thing that was under him shall be unclean until the even: and he that beareth __any of__ those things shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And whomsoever he toucheth that hath the issue, and hath not rinsed his hands in water, he shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And the ##vessel##note:x[<<Lev 6:28; 11:32–33>>] of earth, that he toucheth which hath the issue, shall be broken: and every vessel of wood shall be rinsed in water.
+
+[discrete.pericope]
+==== The Cleansing of Men
+
+@ And when he that hath an issue is cleansed of his issue; then he shall number to himself ##seven days##note:x[<<Lev 8:33; 14:8>>] for his cleansing, and wash his clothes, and bathe his flesh in running water, and shall be clean.
+@ And on the eighth day he shall take to him two turtledoves, or two young pigeons, and come before the LORD unto the door of the tabernacle of the congregation, and give them unto the priest:
+@ And the priest shall offer them, the one __for__ a sin offering, and the other __for__ a burnt offering; and the priest shall make an atonement for him before the LORD for his issue.
+@ note:x[<<Lev 15:5; 22:4; Deut 23:10–11>>]And if any man’s seed of copulation go out from him, then he shall wash all his flesh in water, and be unclean until the even.
+@ And every garment, and every skin, whereon is the seed of copulation, shall be washed with water, and be unclean until the even.
+@ The woman also with whom man shall lie __with__ seed of copulation, they shall __both__ bathe __themselves__ in water, and be unclean until the even.
+
+[discrete.pericope]
+==== The Uncleanness of Women
+
+@ ¶ And if a woman have an issue, ##__and__ her issue##note:x[<<Lev 12:2>>] in her flesh be blood, she shall be put apart seven days: and whosoever toucheth her shall be unclean until the even.note:tn[__put…__: Heb. in her separation]
+@ And every thing that she lieth upon in her separation shall be unclean: every thing also that she sitteth upon shall be unclean.
+@ And whosoever toucheth her bed shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And whosoever toucheth any thing that she sat upon shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+@ And if it __be__ on __her__ bed, or on any thing whereon she sitteth, when he toucheth it, he shall be unclean until the even.
+@ ##And if any man lie with her at all, and her flowers be upon him, he shall be unclean seven days; and all the bed whereon he lieth shall be unclean.##note:x[<<Lev 20:18; 1 Pet 2:11>>]
+@ ##And if a woman have an issue of her blood many days out of the time of her separation, or if it run beyond the time of her separation; all the days of the issue of her uncleanness shall be as the days of her separation: she __shall be__ unclean.##note:x[<<Matt 9:20; Mark 5:25; Luke 8:43>>]
+@ Every bed whereon she lieth all the days of her issue shall be unto her as the bed of her separation: and whatsoever she sitteth upon shall be unclean, as the uncleanness of her separation.
+@ And whosoever toucheth those things shall be unclean, and shall wash his clothes, and bathe __himself__ in water, and be unclean until the even.
+
+[discrete.pericope]
+==== The Cleansing of Women
+
+@ But if she be cleansed of her issue, then she shall number to herself seven days, and after that she shall be clean.
+@ And on the eighth day she shall take unto her two turtles, or two young pigeons, and bring them unto the priest, to the door of the tabernacle of the congregation.
+@ And the priest shall offer the one __for__ a sin offering, and the other __for__ a burnt offering; and the priest shall make an atonement for her before the LORD for the issue of her uncleanness.
+@ Thus shall ye separate the children of Israel from their uncleanness; ##that they##note:x[<<Num 19:13, 20; Ezek 5:11>>] die not in their uncleanness, when they defile my tabernacle that __is__ among them.
+@ This __is__ the law of him that hath an issue, and __of him__ whose seed goeth from him, and is defiled therewith;
+@ And of her that is sick of her flowers, and of him that hath an issue, of the man, and of the woman, and of him that lieth with her that is unclean.
+
+=== @16
+
+[discrete.pericope]
+==== The Day of Atonement
+
+[.parallel]
+(<<Leviticus 23:26–32; Numbers 29:7–11>>)
+
+@ ##And the LORD spake unto Moses after the death of the two sons of Aaron, when they offered before the LORD, and died;##note:x[<<Lev 10:1–2>>]
+@ And the LORD said unto Moses, Speak unto Aaron thy brother, that ##he come not##note:x[<<Exod 30:10; Heb 10:19–20>>] at all times into the holy __place__ within the vail before the mercy seat, which __is__ upon the ark; that he die not: for I will appear ##in the cloud##note:x[<<1 Kgs 8:10–12>>] upon the mercy seat.
+@ Thus shall ##Aaron##note:x[<<Heb 9:24–25>>] come into the holy __place:__ with ##a young##note:x[<<Lev 4:3>>] bullock for a sin offering, and a ram for a burnt offering.
+@ note:x[<<Exod 28:39–43; Ezek 44:17–18>>]He shall put on the holy linen coat, and he shall have the linen breeches upon his flesh, and shall be girded with a linen girdle, and with the linen mitre shall he be attired: these __are__ holy garments; ##therefore##note:x[<<Exod 30:20>>] shall he wash his flesh in water, and __so__ put them on.
+
+@ ##And he shall take of the congregation of the children of Israel two kids of the goats for a sin offering, and one ram for a burnt offering.##note:x[<<2 Chr 29:21>>]
+@ note:x[<<Lev 9:7>>]And Aaron shall offer his bullock of the sin offering, ##which##note:x[<<Heb 9:7>>] __is__ for himself, and make an atonement for himself, and for his house.
+@ And he shall take the two goats, and present them before the LORD __at__ the door of the tabernacle of the congregation.
+@ And Aaron shall ##cast lots##note:x[<<Acts 1:23–26>>] upon the two goats; one lot for the LORD, and the other lot for the ##scapegoat##note:tn[Heb. Azazel].
+@ And Aaron shall bring the goat upon which the LORD’s lot ##fell##note:tn[Heb. went up], and offer him __for__ a sin offering.
+@ note:x[<<Lev 16:21–22>>]But the goat, on which the lot fell to be the scapegoat, shall be presented alive before the LORD, ##to make##note:x[<<Heb 9:23–24; 1 John 2:2>>] an atonement with him, __and__ to let him go for a scapegoat into the wilderness.
+@ And Aaron shall bring the bullock of the sin offering, which __is__ for himself, and shall make an atonement for himself, and for his house, and shall kill the bullock of the sin offering which __is__ for himself:
+@ And he shall take a censer full of burning coals of fire ##from off##note:x[<<Lev 10:1>>] the altar before the LORD, and his hands full of ##sweet incense##note:x[<<Exod 30:34–38; Rev 8:3–4>>] beaten small, and bring __it__ within the vail:
+@ And he shall put the incense upon the fire before the LORD, that ##the cloud##note:x[<<Exod 25:21>>] of the incense may cover the mercy seat that __is__ upon the testimony, that he die not:
+@ ##And he shall take of the blood of the bullock, and sprinkle __it__ with his finger upon the mercy seat eastward; and before the mercy seat shall he sprinkle of the blood with his finger seven times.##note:x[<<Lev 4:5–6; Heb 9:13, 25>>]
+
+@ ¶ ##Then shall##note:x[<<Heb 2:17; 9:7>>] he kill the goat of the sin offering, that __is__ for the people, and ##bring##note:x[<<Heb 9:7>>] his blood within the vail, and do with that blood as he did with the blood of the bullock, and sprinkle it upon the mercy seat, and before the mercy seat:
+@ And he shall make ##an atonement##note:x[<<Heb 9:22–23>>] for the holy __place__, because of the uncleanness of the children of Israel, and because of their transgressions in all their sins: and so shall he do for the tabernacle of the congregation, that ##remaineth##note:tn[Heb. dwelleth] among them in the midst of their uncleanness.
+@ And there shall be no man in the tabernacle of the congregation when he goeth in to make an atonement in the holy __place__, until he come out, and have made an atonement for himself, and for his household, and for all the congregation of Israel.
+@ ##And he shall go out unto the altar that __is__ before the LORD, and make an atonement for it; and shall take of the blood of the bullock, and of the blood of the goat, and put __it__ upon the horns of the altar round about.##note:x[<<Lev 4:7>>]
+@ And he shall sprinkle of the blood upon it with his finger seven times, and cleanse it, and hallow it from the uncleanness of the children of Israel.
+
+@ ¶ And when he hath made an end of reconciling the holy __place__, and the tabernacle of the congregation, and the altar, he shall bring the live goat:
+@ And Aaron shall lay both his hands upon the head of the live goat, and ##confess over##note:x[<<Ezra 10:1>>] him all the iniquities of the children of Israel, and all their transgressions in all their sins, ##putting##note:x[<<Isa 53:6; 2 Cor 5:21>>] them upon the head of the goat, and shall send __him__ away by the hand of a fit man into the wilderness&#58;note:tn[__a fit…__: Heb. a man of opportunity]
+@ And the goat shall bear upon him all their iniquities unto a land not inhabited: and he shall let go the goat in the wilderness.note:tn[__not…__: Heb. of separation]
+@ ##And Aaron shall come into the tabernacle of the congregation, and shall put off the linen garments, which he put on when he went into the holy __place__, and shall leave them there:##note:x[<<Ezek 42:14; 44:19>>]
+@ And he shall wash his flesh with water in the holy place, and put on his garments, and come forth, and offer ##his burnt##note:x[<<Lev 16:3>>] offering, and the burnt offering of the people, and make an atonement for himself, and for the people.
+@ And the fat of the sin offering shall he burn upon the altar.
+@ And he that let go the goat for the scapegoat shall wash his clothes, and bathe his flesh in water, and afterward come into the camp.
+@ And the ##bullock##note:x[<<Lev 4:11–12, 21; 6:30>>] __for__ the sin offering, and the goat __for__ the sin offering, whose blood was brought in to make atonement in the holy __place__, shall __one__ carry forth without the camp; and they shall burn in the fire their skins, and their flesh, and their dung.
+@ And he that burneth them shall wash his clothes, and bathe his flesh in water, and afterward he shall come into the camp.
+
+@ ¶ And __this__ shall be a statute for ever unto you: __that__ ##in the seventh##note:x[<<Lev 23:27–32; Num 29:7>>] month, on the tenth __day__ of the month, ye ##shall afflict##note:x[<<Isa 58:3>>] your souls, and do no work at all, __whether it be__ one of your own country, or a stranger that sojourneth among you:
+@ ##For on that day shall __the priest__ make an atonement for you, to cleanse you, __that__ ye may be clean from all your sins before the LORD.##note:x[<<Ps 51:2; Jer 33:8; Eph 5:26>>]
+@ ##It __shall be__ a sabbath of rest unto you, and ye shall afflict your souls, by a statute for ever.##note:x[<<Lev 23:32>>]
+@ And the priest, whom he shall anoint, and whom he shall ##consecrate##note:tn[Heb. fill his hand] to minister in the priest’s office in his father’s stead, shall make the atonement, and shall put on the linen clothes, __even__ the holy garments:
+@ ##And he shall make an atonement for the holy sanctuary, and he shall make an atonement for the tabernacle of the congregation, and for the altar, and he shall make an atonement for the priests, and for all the people of the congregation.##note:x[<<Lev 16:16>>]
+@ And this shall be an everlasting statute unto you, to make an atonement for the children of Israel for all their sins ##once a year##note:x[<<Exod 30:10; Heb 9:7, 25>>]. And he did as the LORD commanded Moses.
+
+=== @17
+
+[discrete.pericope]
+==== The Place of Sacrifice
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto Aaron, and unto his sons, and unto all the children of Israel, and say unto them; This __is__ the thing which the LORD hath commanded, saying,
+@ What man soever __there be__ of the house of Israel, that killeth an ox, or lamb, or goat, in the camp, or that killeth __it__ out of the camp,
+@ And bringeth it not unto the door of the tabernacle of the congregation, to offer an offering unto the LORD before the tabernacle of the LORD; blood shall be imputed unto that man; he hath shed blood; and that man shall be cut off from among his people:
+@ To the end that the children of Israel may bring their sacrifices, which they offer in the open field, even that they may bring them unto the LORD, unto the door of the tabernacle of the congregation, unto the priest, and offer them __for__ peace offerings unto the LORD.
+@ And the priest shall sprinkle the blood upon the altar of the LORD __at__ the door of the tabernacle of the congregation, and ##burn##note:x[<<Num 18:17>>] the fat for a sweet savour unto the LORD.
+@ And they shall no more offer their sacrifices ##unto devils##note:x[<<Deut 32:17; 1 Cor 10:20>>], after whom they have ##gone a whoring##note:x[<<Exod 34:15>>]. This shall be a statute for ever unto them throughout their generations.
+
+@ ¶ And thou shalt say unto them, Whatsoever man __there be__ of the house of Israel, or of the strangers which sojourn among you, that offereth a burnt offering or sacrifice,
+@ And bringeth it not unto the door of the tabernacle of the congregation, to offer it unto the LORD; even that man shall be cut off from among his people.
+
+[discrete.pericope]
+==== Laws against Eating Blood
+
+@ ¶ And whatsoever man __there be__ of the house of Israel, or of the strangers that sojourn among you, ##that eateth##note:x[<<Lev 3:17; 17:11; Deut 12:16>>] any manner of blood; I will even set my face against that soul that eateth blood, and will cut him off from among his people.
+@ For the life of the flesh __is__ in the blood: and ##I have##note:x[<<Rom 3:25; Heb 9:22; 1 John 1:7>>] given it to you upon the altar to make an atonement for your souls: for it __is__ the blood __that__ maketh an atonement for the soul.
+@ Therefore I said unto the children of Israel, No soul of you shall eat blood, neither shall any stranger that sojourneth among you eat blood.
+@ And whatsoever man __there be__ of the children of Israel, or of the strangers that sojourn among you, ##which hunteth##note:x[<<Lev 7:26>>] and catcheth any beast or fowl that may be eaten; he shall even ##pour out##note:x[<<Deut 12:16, 24>>] the blood thereof, and cover it with dust.note:tn[__which…__: Heb. that hunteth any hunting]
+@ ##For __it is__ the life of all flesh; the blood of it __is__ for the life thereof: therefore I said unto the children of Israel, Ye shall eat the blood of no manner of flesh: for the life of all flesh __is__ the blood thereof: whosoever eateth it shall be cut off.##note:x[<<Gen 9:4; Lev 17:11–12; Deut 12:23>>]
+@ And ##every soul##note:x[<<Exod 22:31; Lev 22:8; Deut 14:21>>] that eateth that which died __of itself__, or that which was torn __with beasts, whether it be__ one of your own country, or a stranger, he shall both wash his clothes, and bathe __himself__ in water, and be unclean until the even: then shall he be clean.note:tn[__that which died…__: Heb. a carcase]
+@ But if he wash __them__ not, nor bathe his flesh; then he shall bear his iniquity.
+
+=== @18
+
+[discrete.pericope]
+==== Unlawful Sexual Relations
+
+[.parallel]
+(<<Matthew 5:27–30>>)
+
+@ And the LORD spake unto Moses, saying,
+@ ##Speak unto the children of Israel, and say unto them, I am the LORD your God.##note:x[<<Exod 6:7; Lev 11:44; Ezek 20:5>>]
+@ After ##the doings##note:x[<<Ezek 20:7–8>>] of the land of Egypt, wherein ye dwelt, shall ye not do: ##and after##note:x[<<Exod 23:24; Lev 20:23>>] the doings of the land of Canaan, whither I bring you, shall ye not do: neither shall ye walk in their ordinances.
+@ ##Ye shall do my judgments, and keep mine ordinances, to walk therein: I __am__ the LORD your God.##note:x[<<Ezek 20:19>>]
+@ Ye shall therefore keep my statutes, and my judgments: ##which if a man do##note:x[<<Ezek 20:11; Rom 10:5; Gal 3:12>>], he shall live in them: I __am__ the LORD.
+
+@ ¶ None of you shall approach to any that is near of kin to him, ##to uncover##note:x[<<Lev 20:17–21>>] __their__ nakedness: I __am__ the LORD.note:tn[__near…__: Heb. remainder of his flesh]
+@ ##The nakedness of thy father, or the nakedness of thy mother, shalt thou not uncover: she __is__ thy mother; thou shalt not uncover her nakedness.##note:x[<<Lev 20:11; Ezek 22:10>>]
+@ note:x[<<Lev 20:11; Deut 22:30; 27:20>>]The nakedness of thy father’s wife shalt thou not uncover: it __is__ thy father’s nakedness.
+@ ##The nakedness of thy sister, the daughter of thy father, or daughter of thy mother, __whether she be__ born at home, or born abroad, __even__ their nakedness thou shalt not uncover.##note:x[<<Lev 20:17; Deut 27:22; Ezek 22:11>>]
+@ The nakedness of thy son’s daughter, or of thy daughter’s daughter, __even__ their nakedness thou shalt not uncover: for theirs __is__ thine own nakedness.
+@ The nakedness of thy father’s wife’s daughter, begotten of thy father, she __is__ thy sister, thou shalt not uncover her nakedness.
+@ note:x[<<Lev 20:19>>]Thou shalt not uncover the nakedness of thy father’s sister: she __is__ thy father’s near kinswoman.
+@ Thou shalt not uncover the nakedness of thy mother’s sister: for she __is__ thy mother’s near kinswoman.
+@ note:x[<<Lev 20:20>>]Thou shalt not uncover the nakedness of thy father’s brother, thou shalt not approach to his wife: she __is__ thine aunt.
+@ note:x[<<Lev 20:12>>]Thou shalt not uncover the nakedness of thy daughter in law: she __is__ thy son’s wife; thou shalt not uncover her nakedness.
+@ note:x[<<Lev 20:21; Deut 25:5>>]Thou shalt not uncover the nakedness of thy brother’s wife: it __is__ thy brother’s nakedness.
+@ Thou shalt not uncover the nakedness of ##a woman##note:x[<<Lev 20:14>>] and her daughter, neither shalt thou take her son’s daughter, or her daughter’s daughter, to uncover her nakedness; __for__ they __are__ her near kinswomen: ##it __is__ wickedness##note:x[<<Lev 20:14>>].
+@ Neither shalt thou take a wife to her sister, to vex __her__, to uncover her nakedness, beside the other in her life __time__.note:tn[__a wife…__: or, one wife to another]
+
+@ ##Also thou shalt not approach unto a woman to uncover her nakedness, as long as she is put apart for her uncleanness.##note:x[<<Lev 15:24; 20:18; Ezek 22:10>>]
+@ note:x[<<Exod 20:14; Lev 20:10; Matt 5:27–28>>]Moreover thou shalt not lie carnally with thy neighbour’s wife, to defile thyself with her.
+@ And thou shalt not let any of thy seed ##pass through##note:x[<<Lev 20:2; Deut 12:31; 18:10>>] __the fire__ to ##Molech##note:tn[Gr. Moloch], neither shalt thou profane the name of thy God: I __am__ the LORD.
+@ ##Thou shalt not lie with mankind, as with womankind: it __is__ abomination.##note:x[<<Lev 20:13; Rom 1:26–27; 1 Cor 6:9>>]
+@ Neither shalt thou lie with ##any beast##note:x[<<Exod 22:19; Lev 20:15–16>>] to defile thyself therewith: neither shall any woman stand before a beast to lie down thereto: it __is__ confusion.
+@ ##Defile##note:x[<<Lev 18:30>>] not ye yourselves in any of these things: ##for##note:x[<<Lev 20:22–23; Deut 18:12>>] in all these the nations are defiled which I cast out before you:
+@ And ##the land##note:x[<<Jer 2:7>>] is defiled: therefore I do visit the iniquity thereof upon it, and the land itself ##vomiteth##note:x[<<Lev 18:28; 20:22>>] out her inhabitants.
+@ Ye shall therefore keep my statutes and my judgments, and shall not commit __any__ of these abominations; __neither__ any of your own nation, nor any stranger that sojourneth among you:
+@ (For all these abominations have the men of the land done, which __were__ before you, and the land is defiled;)
+@ ##That the land spue not you out also, when ye defile it, as it spued out the nations that __were__ before you.##note:x[<<Lev 18:25; 20:22; Rev 3:16>>]
+@ For whosoever shall commit any of these abominations, even the souls that commit __them__ shall be cut off from among their people.
+@ Therefore shall ye keep mine ordinance, that __ye__ commit not __any one__ of these ##abominable##note:x[<<Lev 20:23; Deut 18:9–12>>] customs, which were committed before you, and that ye defile not yourselves therein: I __am__ the LORD your God.
+
+=== @19
+
+[discrete.pericope]
+==== Commandments for Holiness
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto all the congregation of the children of Israel, and say unto them, ##Ye shall##note:x[<<Lev 11:44–45; 20:7; 1 Pet 1:15–16>>] be holy: for I the LORD your God __am__ holy.
+
+@ ¶ Ye shall ##fear##note:x[<<Exod 20:12; Eph 6:1–3>>] every man his mother, and his father, and ##keep##note:x[<<Exod 20:8>>] my sabbaths: I __am__ the LORD your God.
+
+@ ¶ Turn ye ##not unto##note:x[<<Lev 26:1>>] idols, nor make to yourselves ##molten gods##note:x[<<Exod 20:23; 34:17>>]: I __am__ the LORD your God.
+
+@ ¶ And if ye offer ##a sacrifice##note:x[<<Lev 7:16>>] of peace offerings unto the LORD, ##ye shall##note:x[<<Lev 22:19, 29>>] offer it at your own will.
+@ It shall be eaten the same day ye offer it, and on the morrow: and if ought remain until the third day, it shall be burnt in the fire.
+@ And if it be eaten at all on the third day, it __is__ abominable; it shall not be accepted.
+@ Therefore __every one__ that eateth it shall bear his iniquity, because he hath profaned the hallowed thing of the LORD: and that soul shall be cut off from among his people.
+
+[discrete.pericope]
+==== Love Your Neighbor
+
+[.parallel]
+(<<Romans 13:8–10>>)
+
+@ ¶ And when ##ye reap the harvest##note:x[<<Deut 24:19–21; Ruth 2:2, 15>>] of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest.
+@ And thou shalt not glean thy vineyard, neither shalt thou gather __every__ grape of thy vineyard; thou shalt leave them for the poor and stranger: I __am__ the LORD your God.
+
+@ ¶ note:x[<<Exod 20:15>>]Ye shall not steal, neither deal falsely, neither ##lie one##note:x[<<Ps 101:7; Eph 4:25>>] to another.
+
+@ ¶ And ##ye shall##note:x[<<Exod 20:7; Deut 5:11>>] not swear by my name falsely, neither shalt thou ##profane##note:x[<<Lev 18:21>>] the name of thy God: I __am__ the LORD.
+
+@ ¶ Thou shalt not defraud thy neighbour, neither rob __him:__ ##the wages##note:x[<<Deut 24:14–15; Mal 3:5; Jas 5:4>>] of him that is hired shall not abide with thee all night until the morning.
+
+@ ¶ Thou shalt ##not curse##note:x[<<Deut 27:18; Rom 14:13>>] the deaf, nor put a stumblingblock before the blind, but shalt ##fear##note:x[<<Lev 19:32>>] thy God: I __am__ the LORD.
+
+@ ¶ ##Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: __but__ in righteousness shalt thou judge thy neighbour.##note:x[<<Deut 1:17; 27:19; Prov 24:23>>]
+
+@ ¶ note:x[<<Exod 23:1>>]Thou shalt not go up and down __as__ a talebearer among thy people: neither shalt thou ##stand##note:x[<<Exod 23:1, 7>>] against the blood of thy neighbour: I __am__ the LORD.
+
+@ ¶ Thou shalt not ##hate##note:x[<<1 John 2:9, 11>>] thy brother in thine heart: thou shalt in any wise ##rebuke##note:x[<<Luke 17:3>>] thy neighbour, and not suffer sin upon him.note:tn[__and…__: or, that thou bear not sin for him]
+
+@ ¶ ##Thou shalt##note:x[<<Matt 22:39–40; Mark 12:31–34; Rom 13:9>>] not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I __am__ the LORD.
+
+[discrete.pericope]
+==== Keep My Statutes
+
+@ ¶ Ye shall keep my statutes. Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with ##mingled##note:x[<<Deut 22:9–11; Matt 9:16–17; 2 Cor 6:14–17>>] seed: neither shall a garment mingled of linen and woollen come upon thee.
+
+@ ¶ And whosoever lieth carnally with a woman, that __is__ a bondmaid, betrothed to an husband, and not at all redeemed, nor freedom given her; she shall be scourged; ##they shall##note:x[<<Deut 22:23–24>>] not be put to death, because she was not free.note:tn[__betrothed…__: or, abused by any: Heb. reproached by (or, for) man]note:tn[__she shall…__: or, they, etc: Heb. there shall be a scourging]
+@ And he shall bring his trespass offering unto the LORD, unto the door of the tabernacle of the congregation, __even__ a ram for a trespass offering.
+@ And the priest shall make an atonement for him with the ram of the trespass offering before the LORD for his sin which he hath done: and the sin which he hath done shall be forgiven him.
+
+@ ¶ And when ye shall come into the land, and shall have planted all manner of trees for food, then ye shall count the fruit thereof as ##uncircumcised##note:x[<<Lev 22:27; Acts 7:51>>]: three years shall it be as uncircumcised unto you: it shall not be eaten of.
+@ But in the fourth year all the fruit thereof shall be holy to praise the LORD __withal__.note:tn[__holy…__: Heb. holiness of praises to the LORD]
+@ And in the fifth year shall ye eat of the fruit thereof, that it may yield unto you the increase thereof: I __am__ the LORD your God.
+
+@ ¶ Ye shall not eat __any thing__ with the blood: neither shall ye use enchantment, ##nor##note:x[<<Deut 18:10–14; 2 Kgs 17:17; 2 Chr 33:6>>] observe times.
+@ ##Ye shall not round the corners of your heads, neither shalt thou mar the corners of thy beard.##note:x[<<Lev 21:5; Jer 48:37; Ezek 44:20>>]
+@ Ye shall not make any ##cuttings##note:x[<<Lev 21:5; Deut 14:1; 1 Kgs 18:28>>] in your flesh for the dead, nor print any marks upon you: I __am__ the LORD.
+
+@ ¶ Do not ##prostitute##note:tn[Heb. profane] thy daughter, ##to cause##note:x[<<Deut 23:17; 1 Cor 6:15>>] her to be a whore; lest the land fall to whoredom, and the land become full of wickedness.
+
+@ ¶ Ye shall ##keep##note:x[<<Lev 19:3; 26:2>>] my sabbaths, and ##reverence##note:x[<<Eccl 5:1>>] my sanctuary: I __am__ the LORD.
+
+@ ¶ ##Regard not them that have familiar spirits, neither seek after wizards, to be defiled by them: I __am__ the LORD your God.##note:x[<<Lev 20:6–7, 27; Isa 8:19>>]
+
+@ ¶ ##Thou shalt rise up before the hoary head, and honour the face of the old man, and fear thy God: I __am__ the LORD.##note:x[<<Prov 16:31; 20:29; 1 Tim 5:1>>]
+
+@ ¶ ##And if##note:x[<<Exod 22:21; 23:9; Deut 24:14>>] a stranger sojourn with thee in your land, ye shall not ##vex##note:tn[or, oppress] him.
+@ ##__But__ the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I __am__ the LORD your God.##note:x[<<Exod 12:48–49; Lev 19:18; Deut 10:19>>]
+
+@ ¶ Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure.
+@ ##Just balances##note:x[<<Prov 11:1>>], just ##weights##note:tn[Heb. stones], a just ephah, and a just hin, shall ye have: ##I __am__##note:x[<<Exod 20:2>>] the LORD your God, which brought you out of the land of Egypt.
+@ ##Therefore shall ye observe all my statutes, and all my judgments, and do them: I __am__ the LORD.##note:x[<<Lev 18:4–5; Deut 8:1>>]
+
+=== @20
+
+[discrete.pericope]
+==== Punishments for Disobedience
+
+[.parallel]
+(<<Leviticus 26:14–39; Deuteronomy 28:15–68>>)
+
+@ And the LORD spake unto Moses, saying,
+@ Again, thou shalt say to the children of Israel, Whosoever __he be__ of the children of Israel, or of the strangers that sojourn in Israel, that giveth __any__ of his seed unto Molech; he shall surely be put to death: the people of the land shall stone him with stones.
+@ And I will set my face against that man, and will cut him off from among his people; because he hath given of his seed unto Molech, to defile my sanctuary, and to ##profane##note:x[<<Lev 18:21>>] my holy name.
+@ And if the people of the land do any ways hide their eyes from the man, when he giveth of his seed unto Molech, ##and kill##note:x[<<Deut 17:2–5>>] him not:
+@ Then I will set my face against that man, and against his family, and will cut him off, and all that go a ##whoring##note:x[<<Ps 106:39>>] after him, to commit whoredom with Molech, from among their people.
+
+@ ¶ And the soul that turneth after such as have ##familiar##note:x[<<Lev 19:31; 20:27; Isa 8:19>>] spirits, and after wizards, to go a whoring after them, I will even set my face against that soul, and will cut him off from among his people.
+
+@ ¶ ##Sanctify yourselves therefore, and be ye holy: for I __am__ the LORD your God.##note:x[<<Lev 11:44; 19:2; 1 Pet 1:15–16>>]
+@ ##And ye##note:x[<<Jas 1:22>>] shall keep my statutes, and do them: I __am__ the LORD which ##sanctify##note:x[<<Exod 31:13; 1 Thess 5:23>>] you.
+
+@ ¶ For every one that ##curseth##note:x[<<Exod 21:17; Deut 27:16; Mark 7:10>>] his father or his mother shall be surely put to death: he hath cursed his father or his mother; his blood __shall be__ upon him.
+
+[discrete.pericope]
+==== Punishments for Sexual Immorality
+
+[.parallel]
+(<<Proverbs 5:1–23; 1 Corinthians 5:1–8>>)
+
+@ ¶ And the man that committeth adultery with __another__ man’s wife, __even he__ that committeth adultery with his neighbour’s wife, ##the adulterer##note:x[<<Deut 22:22–24; 2 Sam 12:13; John 8:4–5>>] and the adulteress shall surely be put to death.
+@ And the man that lieth with his father’s wife hath uncovered his father’s nakedness: both of them shall surely be put to death; their blood __shall be__ upon them.
+@ And if a man ##lie##note:x[<<Lev 18:15>>] with his daughter in law, both of them shall surely be put to death: they have wrought confusion; their blood __shall be__ upon them.
+@ ##If a man also lie with mankind, as he lieth with a woman, both of them have committed an abomination: they shall surely be put to death; their blood __shall be__ upon them.##note:x[<<Lev 18:22; 1 Cor 6:9; Jude 1:7>>]
+@ And if a man take ##a wife##note:x[<<Lev 18:17; Deut 27:23>>] and her mother, it __is__ wickedness: they shall be burnt with fire, both he and they; that there be no wickedness among you.
+@ ##And if a man lie with a beast, he shall surely be put to death: and ye shall slay the beast.##note:x[<<Exod 22:19; Lev 18:23; Deut 27:21>>]
+@ And if a woman approach unto any beast, and lie down thereto, thou shalt kill the woman, and the beast: they shall surely be put to death; their blood __shall be__ upon them.
+@ note:x[<<Lev 18:9; Deut 27:22>>]And if a man shall take his sister, his father’s daughter, or his mother’s daughter, and see her nakedness, and she see his nakedness; it __is__ a wicked thing; and they shall be cut off in the sight of their people: he hath uncovered his sister’s nakedness; he shall bear his iniquity.
+@ And if a man shall lie with a woman ##having##note:x[<<Lev 15:24; 18:19>>] her sickness, and shall uncover her nakedness; he hath ##discovered##note:tn[Heb. made naked] her fountain, and she hath uncovered the fountain of her blood: and both of them shall be cut off from among their people.
+@ And thou shalt not uncover the nakedness of thy mother’s sister, nor of thy father’s sister: for he ##uncovereth##note:tn[Heb. hath made naked] his near kin: they shall bear their iniquity.
+@ note:x[<<Lev 18:14>>]And if a man shall lie with his uncle’s wife, he hath uncovered his uncle’s nakedness: they shall bear their sin; they shall die childless.
+@ note:x[<<Lev 18:16>>]And if a man shall take his brother’s wife, it __is__ an unclean thing: he hath uncovered his brother’s nakedness; they shall be childless.note:tn[__an…__: Heb. a separation]
+
+[discrete.pericope]
+==== Distinguish between Clean and Unclean
+
+@ ¶ note:x[<<Ezek 36:27>>]Ye shall therefore keep all my statutes, and all my judgments, and do them: that the land, whither I bring you to dwell therein, ##spue you##note:x[<<Lev 18:25–28>>] not out.
+@ And ye shall not walk ##in the manners##note:x[<<Lev 18:3, 24>>] of the nation, which I cast out before you: for they committed all these things, and ##therefore##note:x[<<Deut 9:5>>] I abhorred them.
+@ ##But I##note:x[<<Exod 3:8, 17>>] have said unto you, Ye shall inherit their land, and I will give it unto you to possess it, a land that floweth with milk and honey: I __am__ the LORD your God, ##which##note:x[<<Deut 14:2>>] have separated you from __other__ people.
+@ Ye shall therefore ##put difference##note:x[<<Lev 11:1–47; Deut 14:3–21>>] between clean beasts and unclean, and between unclean fowls and clean: and ye shall not make your souls abominable by beast, or by fowl, or by any manner of living thing that ##creepeth##note:tn[or, moveth] on the ground, which I have separated from you as unclean.
+@ And ye shall be holy unto me: for I ##the LORD##note:x[<<Lev 20:7; 1 Pet 1:15–16>>] __am__ holy, and have ##severed##note:x[<<Lev 20:24>>] you from __other__ people, that ye should be mine.
+
+@ ¶ A man also or woman that hath ##a familiar##note:x[<<Lev 19:31; 20:6; 1 Sam 28:7–9>>] spirit, or that is a wizard, shall surely be put to death: they shall stone them with stones: their blood __shall be__ upon them.
+
+=== @21
+
+[discrete.pericope]
+==== Holiness Required of Priests
+
+@ And the LORD said unto Moses, Speak unto the priests the sons of Aaron, and say unto them, ##There##note:x[<<Lev 10:6–7; 21:11; Ezek 44:25>>] shall none be defiled for the dead among his people:
+@ But for his kin, that is near unto him, __that is__, for his mother, and for his father, and for his son, and for his daughter, and for his brother,
+@ And for his sister a virgin, that is nigh unto him, which hath had no husband; for her may he be defiled.
+@ __But__ he shall not defile himself, __being__ a chief man among his people, to profane himself.note:tn[__he…__: or, being an husband among his people, he shall not defile himself for his wife, etc]
+@ They shall ##not make baldness##note:x[<<Lev 19:27–28; Deut 14:1; Ezek 44:20>>] upon their head, neither shall they shave off the corner of their beard, nor make any cuttings in their flesh.
+@ They shall be holy unto their God, and not ##profane##note:x[<<Lev 18:21>>] the name of their God: for the offerings of the LORD made by fire, __and__ the ##bread##note:x[<<Lev 3:11>>] of their God, they do offer: therefore they shall be holy.
+@ They shall not take a wife ##__that is__ a whore##note:x[<<Lev 21:8; Ezek 44:22; 1 Tim 3:11>>], or profane; neither shall they take a woman put away from her husband: for he __is__ holy unto his God.
+@ Thou shalt sanctify him therefore; for he offereth the bread of thy God: he shall be holy unto thee: ##for I##note:x[<<Lev 11:44–45; 19:2; 20:7–8>>] the LORD, which sanctify you, __am__ holy.
+
+@ ¶ And the daughter of any priest, if she profane herself by playing the whore, she profaneth her father: ##she shall be burnt##note:x[<<Gen 38:24>>] with fire.
+
+@ And __he that is__ the high priest among his brethren, ##upon##note:x[<<Lev 16:32>>] whose head the anointing oil was poured, and that is consecrated to put on the garments, shall not ##uncover##note:x[<<Lev 10:6–7>>] his head, ##nor rend##note:x[<<Matt 26:65>>] his clothes;
+@ Neither shall he go in to any dead body, nor defile himself for ##his father##note:x[<<Num 19:14>>], or for his mother;
+@ Neither shall he ##go out##note:x[<<Lev 10:7>>] of the sanctuary, nor profane the sanctuary of his God; for the crown of the anointing oil of his God __is__ upon him: I __am__ the LORD.
+@ ##And he shall take a wife in her virginity.##note:x[<<Lev 21:7; Ezek 44:22; 2 Cor 11:2>>]
+@ A widow, or a divorced woman, or profane, __or__ an harlot, these shall he not take: but he shall take a virgin of his own people to wife.
+@ Neither shall he profane his seed among his people: for I the LORD do sanctify him.
+
+[discrete.pericope]
+==== Restrictions against Those with Blemishes
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto Aaron, saying, Whosoever __he be__ of thy seed in their generations that hath __any__ blemish, let him not approach to offer the ##bread##note:tn[or, food] of his God.
+@ For whatsoever man __he be__ that hath a blemish, he shall not approach: ##a blind man##note:x[<<1 Tim 3:2–3>>], or a lame, or he that hath a flat nose, or any thing superfluous,
+@ Or a man that is brokenfooted, or brokenhanded,
+@ Or crookbackt, or a dwarf, or that hath a blemish in his eye, or be scurvy, or scabbed, ##or hath##note:x[<<Deut 23:1>>] his stones broken;note:tn[__a dwarf__: or, too slender]
+@ No man that hath a blemish of the seed of Aaron the priest shall come nigh ##to offer##note:x[<<Lev 21:6>>] the offerings of the LORD made by fire: he hath a blemish; he shall not come nigh to offer the bread of his God.
+@ He shall eat the bread of his God, ##__both__##note:x[<<Lev 2:3>>] of the most holy, and of the holy.
+@ Only he shall not go in unto the vail, nor come nigh unto the altar, because he hath a blemish; that he profane not my sanctuaries: for I the LORD do sanctify them.
+@ And Moses told __it__ unto Aaron, and to his sons, and unto all the children of Israel.
+
+=== @22
+
+[discrete.pericope]
+==== Restrictions against the Unclean
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto Aaron and to his sons, that they separate themselves from the holy things of the children of Israel, and ##that they profane not##note:x[<<Lev 18:21>>] my holy name __in those things__ which they ##hallow##note:x[<<Deut 15:19>>] unto me: I __am__ the LORD.
+@ Say unto them, Whosoever __he be__ of all your seed among your generations, that goeth unto the holy things, which the children of Israel hallow unto the LORD, ##having his uncleanness upon him##note:x[<<Lev 7:20–21>>], that soul shall be cut off from my presence: I __am__ the LORD.
+@ What man soever of the seed of Aaron __is__ a leper, or hath a running issue; he shall not eat of the holy things, until he be clean. And whoso toucheth any thing __that is__ unclean __by__ the dead, or a man whose seed goeth from him;note:tn[__running…__: Heb. running of the reins]
+@ Or ##whosoever##note:x[<<Lev 11:43–44>>] toucheth any creeping thing, whereby he may be made unclean, ##or a man##note:x[<<Lev 15:7>>] of whom he may take uncleanness, whatsoever uncleanness he hath;
+@ The soul which hath touched any such shall be unclean until even, and shall not eat of the holy things, unless he wash his flesh with water.
+@ And when the sun is down, he shall be clean, and shall afterward eat of the holy things; because it __is__ his food.
+@ ##That which dieth of itself, or is torn __with beasts__, he shall not eat to defile himself therewith: I __am__ the LORD.##note:x[<<Lev 17:15>>]
+@ They shall therefore keep mine ordinance, lest they ##bear sin for it##note:x[<<Exod 28:43>>], and die therefore, if they profane it: I the LORD do sanctify them.
+
+@ There shall no stranger eat __of__ the holy thing: a sojourner of the priest, or an hired servant, shall not eat __of__ the holy thing.
+@ But if the priest buy __any__ soul with ##his money##note:x[<<Gen 17:13>>], he shall eat of it, and he that is born in his house: they shall eat of his meat.note:tn[__with…__: Heb. with the purchase of his money]
+@ If the priest’s daughter also be __married__ unto a stranger, she may not eat of an offering of the holy things.note:tn[__a stranger__: Heb. a man a stranger]
+@ But if the priest’s daughter be a widow, or divorced, and have no child, and is returned unto her father’s house, as in her youth, she shall eat of her father’s meat: but there shall no stranger eat thereof.
+
+@ ¶ And if a man eat __of__ the holy thing unwittingly, then he shall put the fifth __part__ thereof unto it, and shall give __it__ unto the priest with the holy thing.
+@ ##And they shall not profane the holy things of the children of Israel, which they offer unto the LORD;##note:x[<<Lev 19:8; Num 18:32>>]
+@ Or suffer them to bear the iniquity of trespass, when they eat their holy things: ##for I##note:x[<<Lev 22:9>>] the LORD do sanctify them.note:tn[__suffer…__: or, lade themselves with the iniquity of trespass in their eating]
+
+[discrete.pericope]
+==== Worthy Offerings
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto Aaron, and to his sons, and unto all the children of Israel, and say unto them, ##Whatsoever##note:x[<<Lev 1:2>>] __he be__ of the house of Israel, or of the strangers in Israel, that will offer his oblation for all his ##vows##note:x[<<Num 15:3; Deut 12:6>>], and for all his freewill offerings, which they will offer unto the LORD for a burnt offering;
+@ ##__Ye shall offer__ at your own will a male without blemish, of the beeves, of the sheep, or of the goats.##note:x[<<Lev 1:3, 10>>]
+@ ##__But__ whatsoever hath a blemish, __that__ shall ye not offer: for it shall not be acceptable for you.##note:x[<<Deut 15:21; 17:1; Mal 1:8>>]
+@ And whosoever offereth a sacrifice of ##peace##note:x[<<Lev 3:6>>] offerings unto the LORD ##to accomplish##note:x[<<Num 15:3, 8>>] __his__ vow, or a freewill offering in beeves or ##sheep##note:tn[or, goats], it shall be perfect to be accepted; there shall be no blemish therein.
+@ ##Blind##note:x[<<Lev 22:20; Mal 1:8>>], or broken, or maimed, or having a wen, or scurvy, or scabbed, ye shall not offer these unto the LORD, nor make ##an offering##note:x[<<Lev 1:9>>] by fire of them upon the altar unto the LORD.
+@ Either a bullock or a ##lamb##note:tn[or, kid] that hath any thing superfluous or lacking in his parts, that mayest thou offer __for__ a freewill offering; but for a vow it shall not be accepted.
+@ Ye shall not offer unto the LORD that which is bruised, or crushed, or ##broken##note:x[<<Lev 22:20>>], or cut; neither shall ye make __any offering thereof__ in your land.
+@ note:x[<<Num 15:14–16>>]Neither from a stranger’s hand shall ye offer ##the bread##note:x[<<Lev 21:6; Mal 1:12–14>>] of your God of any of these; because their corruption __is__ in them, __and__ blemishes __be__ in them: they shall not be accepted for you.
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ When a bullock, or a sheep, or a goat, is brought forth, then it shall be ##seven days##note:x[<<Exod 22:30>>] under the dam; and from the eighth day and thenceforth it shall be accepted for an offering made by fire unto the LORD.
+@ And __whether it be__ cow or ##ewe##note:tn[or, she goat], ##ye shall not kill it##note:x[<<Deut 14:21; 22:6–7>>] and her young both in one day.
+@ ##And when ye will offer a sacrifice of thanksgiving unto the LORD, offer __it__ at your own will.##note:x[<<Ps 107:22; 116:17>>]
+@ On the same day it shall be eaten up; ye shall leave none of it until the morrow: I __am__ the LORD.
+@ ##Therefore shall ye keep my commandments, and do them: I __am__ the LORD.##note:x[<<Lev 19:37; Num 15:40; Deut 4:40>>]
+@ ##Neither shall ye profane my holy name; but##note:x[<<Lev 18:21>>] ##I will##note:x[<<Lev 10:3; Luke 11:2>>] be hallowed among the children of Israel: I __am__ the LORD which hallow you,
+@ ##That brought you out of the land of Egypt, to be your God: I __am__ the LORD.##note:x[<<Lev 11:45>>]
+
+=== @23
+
+[discrete.pericope]
+==== Feasts and Sabbaths
+
+[.parallel]
+(<<Exodus 23:14–19>>)
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, and say unto them, __Concerning__ ##the feasts##note:x[<<Lev 23:4, 37>>] of the LORD, which ye shall proclaim __to be__ holy convocations, __even__ these __are__ my feasts.
+@ ##Six days shall work be done: but the seventh day __is__ the sabbath of rest, an holy convocation; ye shall do no work __therein:__ it __is__ the sabbath of the LORD in all your dwellings.##note:x[<<Exod 23:12; 35:2–3; Lev 19:3>>]
+
+[discrete.pericope]
+==== Passover and the Feast of Unleavened Bread
+
+[.parallel]
+(<<Exodus 12:14–28; Numbers 28:16–25; Deuteronomy 16:1–8>>)
+
+@ ¶ ##These __are__ the feasts of the LORD, __even__ holy convocations, which ye shall proclaim in their seasons.##note:x[<<Exod 23:14; Lev 23:2, 37>>]
+@ note:x[<<Exod 12:2–14; Deut 16:1–8; Josh 5:10>>]In the fourteenth __day__ of the first month at even __is__ the LORD’s passover.
+@ And on the fifteenth day of the same month __is__ the feast of unleavened bread unto the LORD: seven days ye must eat unleavened bread.
+@ In the first day ye shall have an holy convocation: ye shall do no servile work therein.
+@ But ye shall offer an offering made by fire unto the LORD seven days: in the seventh day __is__ an holy convocation: ye shall do no servile work __therein__.
+
+[discrete.pericope]
+==== The Feast of Firstfruits
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, and say unto them, When ye be come into the land which I give unto you, ##and shall##note:x[<<Exod 23:19; 34:26>>] reap the harvest thereof, then ye shall bring a ##sheaf##note:tn[or, handful: Heb. omer] of the firstfruits of your harvest unto the priest:
+@ ##And he shall wave the sheaf before the LORD, to be accepted for you: on the morrow after the sabbath the priest shall wave it.##note:x[<<Exod 29:24>>]
+@ And ye shall offer that day when ye wave the sheaf an he lamb without blemish of the first year for a burnt offering unto the LORD.
+@ And ##the meat##note:x[<<Lev 2:14–16>>] offering thereof __shall be__ two tenth deals of fine flour mingled with oil, an offering made by fire unto the LORD __for__ a sweet savour: and the drink offering thereof __shall be__ of wine, the fourth __part__ of an hin.
+@ And ye shall eat neither bread, nor parched corn, nor green ears, until the selfsame day that ye have brought an offering unto your God: __it shall be__ a statute for ever throughout your generations in all your dwellings.
+
+[discrete.pericope]
+==== The Feast of Weeks
+
+[.parallel]
+(<<Acts 2:1–13>>)
+
+@ ¶ ##And ye shall count unto you from the morrow after the sabbath, from the day that ye brought the sheaf of the wave offering; seven sabbaths shall be complete:##note:x[<<Exod 34:22; Lev 23:10–11; 25:8>>]
+@ ##Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto the LORD.##note:x[<<Acts 2:1>>]
+@ note:x[<<Lev 23:10>>]Ye shall bring out of your habitations two wave loaves of two tenth deals: they shall be of fine flour; they shall be baken with leaven; __they are__ the firstfruits unto the LORD.
+@ And ye shall offer with the bread seven lambs without blemish of the first year, and one young bullock, and two rams: they shall be __for__ a burnt offering unto the LORD, with their meat offering, and their drink offerings, __even__ an offering made by fire, of sweet savour unto the LORD.
+@ Then ye shall sacrifice ##one kid##note:x[<<Num 28:30>>] of the goats for a sin offering, and two lambs of the first year for a sacrifice of peace offerings.
+@ And the priest shall wave them with the bread of the firstfruits __for__ a wave offering before the LORD, with the two lambs: they shall be holy to the LORD for the priest.
+@ And ye shall ##proclaim##note:x[<<Lev 23:2, 4>>] on the selfsame day, __that__ it may be an holy convocation unto you: ye shall do no servile work __therein: it shall be__ ##a statute##note:x[<<Lev 23:14>>] for ever in all your dwellings throughout your generations.
+
+@ ¶ ##And when ye reap the harvest of your land, thou shalt not make clean riddance of the corners of thy field when thou reapest, neither shalt thou gather any gleaning of thy harvest: thou shalt leave them unto the poor, and to the stranger: I __am__ the LORD your God.##note:x[<<Lev 19:9–10; Deut 24:19–21; Prov 11:24–25>>]
+
+[discrete.pericope]
+==== The Feast of Trumpets
+
+[.parallel]
+(<<Numbers 29:1–6>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, ##In the seventh##note:x[<<Num 29:1–6; 1 Cor 15:52; 1 Thess 4:16>>] month, in the first __day__ of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation.
+@ Ye shall do no servile work __therein:__ but ye shall offer an offering made by fire unto the LORD.
+
+[discrete.pericope]
+==== The Day of Atonement
+
+[.parallel]
+(<<Leviticus 16:1–34; Numbers 29:7–11>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Also on ##the tenth##note:x[<<Lev 16:29–30; Num 29:7–11>>] __day__ of this seventh month __there shall be__ a day of atonement: it shall be an holy convocation unto you; and ye shall ##afflict##note:x[<<Num 29:7>>] your souls, and offer an offering made by fire unto the LORD.
+@ And ye shall do no work in that same day: for it __is__ a day of atonement, to make an atonement for you before the LORD your God.
+@ For whatsoever soul __it be__ that shall not be afflicted in that same day, ##he shall be##note:x[<<Gen 17:14>>] cut off from among his people.
+@ ##And whatsoever soul __it be__ that doeth any work in that same day, the same soul will I destroy from among his people.##note:x[<<Lev 20:3>>]
+@ Ye shall do no manner of work: __it shall be__ a statute for ever throughout your generations in all your dwellings.
+@ It __shall be__ unto you a sabbath of rest, and ye shall afflict your souls: in the ninth __day__ of the month at even, from even unto even, shall ye ##celebrate##note:tn[Heb. rest] your sabbath.
+
+[discrete.pericope]
+==== The Feast of Tabernacles
+
+[.parallel]
+(<<Nehemiah 8:13–18; Zechariah 14:16–21>>)
+
+@ ¶ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, saying, ##The fifteenth##note:x[<<Num 29:12; Neh 8:14; John 7:2>>] day of this seventh month __shall be__ the feast of tabernacles __for__ seven days unto the LORD.
+@ On the first day __shall be__ an holy convocation: ye shall do no servile work __therein__.
+@ ##Seven##note:x[<<Num 29:12–38>>] days ye shall offer an offering made by fire unto the LORD: on ##the eighth##note:x[<<Neh 8:18; John 7:37>>] day shall be an holy convocation unto you; and ye shall offer an offering made by fire unto the LORD: it __is__ a solemn assembly; __and__ ye shall do no servile work __therein__.note:tn[__solemn…__: Heb. day of restraint]
+@ These __are__ ##the feasts##note:x[<<Lev 23:2, 4>>] of the LORD, which ye shall proclaim __to be__ holy convocations, to offer an offering made by fire unto the LORD, a burnt offering, and a meat offering, a sacrifice, and drink offerings, every thing upon his day:
+@ Beside the sabbaths of the LORD, and beside your gifts, and beside all your vows, and beside all your freewill offerings, which ye give unto the LORD.
+@ Also in the fifteenth day of the seventh month, ##when##note:x[<<Exod 23:16; Deut 16:13>>] ye have gathered in the fruit of the land, ye shall keep a feast unto the LORD seven days: on the first day __shall be__ a sabbath, and on the eighth day __shall be__ a sabbath.
+@ And ye shall take you on the first day ##the boughs##note:x[<<Matt 21:8>>] of goodly trees, branches ##of palm trees##note:x[<<Rev 7:9>>], and the boughs of thick trees, and willows of the brook; and ye shall ##rejoice##note:x[<<Phil 4:4>>] before the LORD your God seven days.note:tn[__boughs of goodly trees__: Heb. fruit of, etc]
+@ And ye shall keep it a feast unto the LORD seven days in the year. __It shall be__ a statute for ever in your generations: ye shall celebrate it in the seventh month.
+@ ##Ye shall dwell in booths seven days; all that are Israelites born shall dwell in booths:##note:x[<<Neh 8:14–17>>]
+@ That your generations may know that I made the children of Israel to dwell in booths, when I brought them out of the land of Egypt: I __am__ the LORD your God.
+@ And Moses declared unto the children of Israel the feasts of the LORD.
+
+=== @24
+
+[discrete.pericope]
+==== The Oil for the Lamps
+
+[.parallel]
+(<<Exodus 27:20–21>>)
+
+@ And the LORD spake unto Moses, saying,
+@ Command the children of Israel, ##that they##note:x[<<Exod 27:20–21>>] bring unto thee pure oil olive beaten for the light, ##to cause##note:tn[Heb. to cause to ascend] ##the lamps##note:x[<<2 Cor 4:6; Eph 5:8–14>>] to burn continually.
+@ Without the vail of the testimony, in the tabernacle of the congregation, shall Aaron order it from the evening unto the morning before the LORD continually: __it shall be__ a statute for ever in your generations.
+@ He shall order the lamps upon ##the pure##note:x[<<Exod 31:8>>] candlestick before the LORD continually.
+
+[discrete.pericope]
+==== The Showbread
+
+[.parallel]
+(<<Exodus 25:23–30; Exodus 37:10–16>>)
+
+@ ¶ ##And thou shalt take fine flour, and bake twelve cakes thereof: two tenth deals shall be in one cake.##note:x[<<Exod 25:30; 40:23; 1 Kgs 18:31>>]
+@ And thou shalt set them in two rows, six on a row, upon the ##pure##note:x[<<Exod 25:23–24; 1 Kgs 7:48>>] table before the LORD.
+@ And thou shalt put ##pure##note:x[<<Lev 2:2>>] frankincense upon __each__ row, that it may be on the bread for a memorial, __even__ an offering made by fire unto the LORD.
+@ ##Every sabbath he shall set it in order before the LORD continually, __being taken__ from the children of Israel by an everlasting covenant.##note:x[<<Num 4:7; 1 Chr 9:32; 2 Chr 2:4>>]
+@ note:x[<<Lev 8:31; Luke 6:4>>]And it shall be Aaron’s and his sons’; and ##they shall##note:x[<<Lev 8:31>>] eat it in the holy place: for it __is__ most holy unto him of the offerings of the LORD made by fire by a perpetual statute.
+
+[discrete.pericope]
+==== Punishment for Blasphemy
+
+@ ¶ And the son of an Israelitish woman, whose father __was__ an Egyptian, went out among the children of Israel: and this son of the Israelitish __woman__ and a man of Israel strove together in the camp;
+@ And the Israelitish woman’s son ##blasphemed##note:x[<<Exod 20:7>>] the name __of the__ __LORD__, and cursed. And they brought him unto Moses: (and his mother’s name __was__ Shelomith, the daughter of Dibri, of the tribe of Dan:)
+@ And they put him in ward, ##that the mind of the LORD might be shewed them##note:x[<<Exod 18:15–16>>].note:tn[__that…__: Heb. to expound unto them according to the mouth of the LORD]
+@ And the LORD spake unto Moses, saying,
+@ Bring forth him that hath cursed without the camp; and let ##all that##note:x[<<Deut 17:7>>] heard __him__ lay their hands upon his head, and ##let all the##note:x[<<Lev 20:27; Deut 21:21>>] congregation stone him.
+@ And thou shalt speak unto the children of Israel, saying, Whosoever curseth his God shall bear his sin.
+@ And he that ##blasphemeth##note:x[<<Matt 12:31; John 10:33–36; Jas 2:7>>] the name of the LORD, he shall surely be put to death, __and__ all the congregation shall certainly stone him: as well the stranger, as he that is born in the land, when he blasphemeth the name __of the__ __LORD__, shall be put to death.
+
+[discrete.pericope]
+==== An Eye for an Eye
+
+[.parallel]
+(<<Matthew 5:38–48>>)
+
+@ ¶ ##And he##note:x[<<Gen 9:5–6; Deut 19:11–12>>] that killeth any man shall surely be put to death.note:tn[__killeth…__: Heb. smiteth the life of a man]
+@ And he ##that killeth##note:x[<<Lev 24:21>>] a beast shall make it good; beast for beast.note:tn[__beast for…__: Heb. life for life]
+@ And if a man cause a blemish in his neighbour; as he hath done, so shall it be done to him;
+@ ##Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him __again__.##note:x[<<Deut 19:21; Matt 5:38>>]
+@ And he that killeth a beast, he shall restore it: and he that killeth a man, he shall be put to death.
+@ ##Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I __am__ the LORD your God.##note:x[<<Exod 12:49; Num 9:14; 15:15–16>>]
+
+@ ¶ And Moses spake to the children of Israel, that they should bring forth him that had cursed out of the camp, and stone him with stones. And the children of Israel did as the LORD commanded Moses.
+
+=== @25
+
+[discrete.pericope]
+==== The Seventh Year
+
+[.parallel]
+(<<Exodus 23:10–13; Deuteronomy 15:1–6>>)
+
+@ And the LORD spake unto Moses in mount Sinai, saying,
+@ Speak unto the children of Israel, and say unto them, When ye come into the land which I give you, then shall the land ##keep##note:tn[Heb. rest] ##a sabbath##note:x[<<Exod 23:10; Lev 26:34–35; 2 Chr 36:21>>] unto the LORD.
+@ Six years thou shalt sow thy field, and six years thou shalt prune thy vineyard, and gather in the fruit thereof;
+@ ##But in the seventh year shall be a sabbath of rest unto the land, a sabbath for the LORD: thou shalt neither sow thy field, nor prune thy vineyard.##note:x[<<Lev 25:20–23; 2 Chr 36:21>>]
+@ That which groweth of its own accord of thy harvest thou shalt not reap, neither gather the grapes of thy vine undressed: __for__ it is a year of rest unto the land.note:tn[__of thy vine…__: Heb. of thy separation]
+@ And the sabbath of the land shall be meat for you; for thee, and for thy servant, and for thy maid, and for thy hired servant, and for thy stranger that sojourneth with thee,
+@ And for thy cattle, and for the beast that __are__ in thy land, shall all the increase thereof be meat.
+
+[discrete.pericope]
+==== The Year of Jubilee
+
+@ ¶ ##And thou shalt number seven sabbaths of years unto thee, seven times seven years; and the space of the seven sabbaths of years shall be unto thee forty and nine years.##note:x[<<Gen 2:2; Lev 23:15>>]
+@ Then shalt thou cause the trumpet of the jubile to sound on the tenth __day__ of the seventh month, in ##the day##note:x[<<Lev 23:24, 27>>] of atonement shall ye make the trumpet sound throughout all your land.note:tn[__of the jubile__: Heb. loud of sound]
+@ And ye shall hallow the fiftieth year, and ##proclaim##note:x[<<Isa 61:1–3; 63:4; Jer 34:8>>] liberty throughout __all__ the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family.
+@ A jubile shall that fiftieth year be unto you: ye shall not sow, neither reap that which groweth of itself in it, nor gather __the grapes__ in it of thy vine undressed.
+@ ##For it __is__ the jubile; it shall be holy unto you: ye shall eat the increase thereof out of the field.##note:x[<<Lev 25:6–7>>]
+
+[discrete.pericope]
+==== Return of Property
+
+@ ##In the year of this jubile ye shall return every man unto his possession.##note:x[<<Lev 25:10; 27:17–24>>]
+@ note:x[<<Lev 19:13; 25:17>>]And if thou sell ought unto thy neighbour, or buyest __ought__ of thy neighbour’s hand, ye shall not oppress one another:
+@ ##According to the number of years after the jubile thou shalt buy of thy neighbour, __and__ according unto the number of years of the fruits he shall sell unto thee:##note:x[<<Lev 27:18–23>>]
+@ According to the multitude of years thou shalt increase the price thereof, and according to the fewness of years thou shalt diminish the price of it: for __according__ to the number __of the years__ of the fruits doth he sell unto thee.
+@ Ye shall not therefore oppress one another; but thou shalt ##fear##note:x[<<Lev 19:14, 32; 25:43>>] thy God: for I __am__ the LORD your God.
+
+[discrete.pericope]
+==== The Blessing of Obedience
+
+[.parallel]
+(<<Deuteronomy 28:1–14>>)
+
+@ ¶ Wherefore ye shall do my statutes, and keep my judgments, and do them; ##and ye##note:x[<<Deut 12:10; Prov 1:33; Jer 23:6>>] shall dwell in the land in safety.
+@ ##And the land shall yield her fruit, and ye shall eat your fill, and dwell therein in safety.##note:x[<<Ps 85:12; Joel 2:26>>]
+@ ##And if ye shall say, What shall we eat the seventh year? behold, we shall not sow, nor gather in our increase:##note:x[<<Luke 12:29>>]
+@ Then ##I will##note:x[<<Deut 28:8; Prov 10:22; 2 Cor 9:10>>] command my blessing upon you in the sixth year, and it shall bring forth fruit for three years.
+@ And ye shall sow the eighth year, and eat __yet__ of old fruit until the ninth year; until her fruits come in ye shall eat __of__ the old __store__.
+
+[discrete.pericope]
+==== The Law of Redemption
+
+@ ¶ ##The land##note:x[<<Ezek 48:14>>] shall not be sold for ever: ##for the land##note:x[<<Ps 24:1>>] __is__ mine; ##for ye __are__##note:x[<<1 Pet 2:11>>] strangers and sojourners with me.note:tn[__for ever__: or, to be quite cut off: Heb. for cutting off]
+@ And in all the land of your possession ye shall grant a redemption for the land.
+
+@ ¶ ##If thy brother be waxen poor, and hath sold away __some__ of his possession, and if any of his kin come to redeem it, then shall he redeem that which his brother sold.##note:x[<<Ruth 2:20>>]
+@ And if the man have none to redeem it, and himself be able to redeem it;note:tn[__himself…__: Heb. his hand hath attained and found sufficiency]
+@ Then let him count the years of the sale thereof, and restore the overplus unto the man to whom he sold it; that he may return unto his possession.
+@ But if he be not able to restore __it__ to him, then that which is sold shall remain in the hand of him that hath bought it until the year of jubile: and in the jubile it shall go out, and he shall return unto his possession.
+@ And if a man sell a dwelling house in a walled city, then he may redeem it within a whole year after it is sold; __within__ a full year may he redeem it.
+@ And if it be not redeemed within the space of a full year, then the house that __is__ in the walled city shall be established for ever to him that bought it throughout his generations: it shall not go out in the jubile.
+@ But the houses of the villages which have no wall round about them shall be counted as the fields of the country: they may be redeemed, and they shall go out in the jubile.note:tn[__they may…__: Heb. redemption belongeth unto it]
+@ Notwithstanding the cities of the Levites, __and__ the houses of the cities of their possession, may the Levites redeem at any time.
+@ And if a man purchase of the Levites, then the house that was sold, and the city of his possession, shall go out in __the year of__ jubile: for the houses of the cities of the Levites __are__ their possession among the children of Israel.note:tn[__a man…__: or, one of the Levites redeem them]
+@ But the field of the suburbs of their cities may not be sold; for it __is__ their perpetual possession.
+
+[discrete.pericope]
+==== Redemption of the Poor
+
+@ ¶ And if ##thy brother##note:x[<<Deut 15:7–8>>] be waxen poor, and fallen in decay with thee; ##then##note:x[<<Acts 11:29>>] thou shalt ##relieve##note:tn[Heb. strengthen] him: __yea, though he be__ a stranger, or a sojourner; that he may live with thee.note:tn[__fallen…__: Heb. his hand faileth]
+@ Take thou no ##usury##note:x[<<Exod 22:25; Deut 23:19–20; Ezek 18:8>>] of him, or increase: but fear thy God; that thy brother may live with thee.
+@ Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase.
+@ I __am__ the LORD your God, which brought you forth out of the land of Egypt, to give you the land of Canaan, ##__and__ to be##note:x[<<Lev 11:45>>] your God.
+
+[discrete.pericope]
+==== Redemption of Bondmen
+
+@ ¶ And if thy brother __that dwelleth__ by thee be waxen poor, and ##be sold##note:x[<<Exod 21:2; 1 Kgs 9:22>>] unto thee; thou shalt not compel him to serve as a bondservant&#58;note:tn[__compel…__: Heb. serve thyself with him with the service, etc]
+@ ##__But__ as an hired servant, __and__ as a sojourner, he shall be with thee, __and__ shall serve thee unto the year of jubile:##note:x[<<Exod 21:2–3>>]
+@ And __then__ shall he depart from thee, __both__ he and his children with him, and ##shall return##note:x[<<Lev 25:28>>] unto his own family, and unto the possession of his fathers shall he return.
+@ For they __are__ ##my servants##note:x[<<Lev 25:55; Rom 6:22>>], which I brought forth out of the land of Egypt: they shall not be sold as bondmen.note:tn[__as…__: Heb. with the sale of a bondman]
+@ Thou shalt not ##rule##note:x[<<Exod 1:13–14; Lev 25:46; Col 4:1>>] over him with rigour; but shalt fear thy God.
+@ Both thy bondmen, and thy bondmaids, which thou shalt have, __shall be__ of the heathen that are round about you; of them shall ye buy bondmen and bondmaids.
+@ Moreover of the children of the strangers that do sojourn among you, of them shall ye buy, and of their families that __are__ with you, which they begat in your land: and they shall be your possession.
+@ And ye shall take them as an inheritance for your children after you, to inherit __them for__ a possession; they shall be your bondmen for ever: but over your brethren the children of Israel, ye shall not rule one over another with rigour.note:tn[__they…__: Heb. ye shall serve yourselves with them]
+
+[discrete.pericope]
+==== Redemption of Servants
+
+@ ¶ And if a sojourner or stranger wax rich by thee, and thy brother __that dwelleth__ by him wax poor, and sell himself unto the stranger __or__ sojourner by thee, or to the stock of the stranger’s family&#58;note:tn[__wax rich…__: Heb. his hand obtain, etc]
+@ After that he is sold he may be redeemed again; one of his brethren may redeem him:
+@ Either his uncle, or his uncle’s son, may redeem him, or __any__ that is nigh of kin unto him of his family may redeem him; or if he be able, he may redeem himself.
+@ And he shall reckon with him that bought him from the year that he was sold to him unto the year of jubile: and the price of his sale shall be according unto the number of years, ##according to the time##note:x[<<Isa 16:14; 21:16>>] of an hired servant shall it be with him.
+@ If __there be__ yet many years __behind__, according unto them he shall give again the price of his redemption out of the money that he was bought for.
+@ And if there remain but few years unto the year of jubile, then he shall count with him, __and__ according unto his years shall he give him again the price of his redemption.
+@ __And__ as a yearly hired servant shall he be with him: __and the other__ shall not rule with rigour over him in thy sight.
+@ And if he be not redeemed in these __years__, then he shall go out in the year of jubile, __both__ he, and his children with him.note:tn[__in these…__: or, by these means]
+@ For unto me the children of Israel __are__ servants; they __are__ my servants whom I brought forth out of the land of Egypt: I __am__ the LORD your God.
+
+=== @26
+
+[discrete.pericope]
+==== Additional Blessings of Obedience
+
+@ ##Ye shall##note:x[<<Exod 23:24; Lev 19:4; Deut 27:15>>] make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up __any__ image of stone in your land, to bow down unto it: for I __am__ the LORD your God.note:tn[__standing…__: or, pillar]note:tn[__image of…__: or, figured stone: Heb. a stone of picture]
+
+@ ¶ ##Ye shall keep my sabbaths, and reverence my sanctuary: I __am__ the LORD.##note:x[<<Lev 19:30>>]
+
+@ ¶ ##If ye walk in my statutes, and keep my commandments, and do them;##note:x[<<Deut 11:13–15; 28:1–14; Isa 1:19>>]
+@ ##Then I##note:x[<<Isa 30:23>>] will give you rain in due season, and ##the land##note:x[<<Ps 67:6; Zech 8:12>>] shall yield her increase, and the trees of the field shall yield their fruit.
+@ And your ##threshing##note:x[<<Amos 9:13>>] shall reach unto the vintage, and the vintage shall reach unto the sowing time: and ye shall ##eat your##note:x[<<Joel 2:19, 26>>] bread to the full, and dwell in your land safely.
+@ And I will give peace in the land, and ##ye shall##note:x[<<Isa 35:9; Zeph 3:13>>] lie down, and none shall make __you__ afraid: and I will note:x[<<Isa 35:9>>]##rid##note:tn[Heb. cause to cease] evil beasts out of the land, neither shall the sword go through your land.
+@ And ye shall chase your enemies, and they shall fall before you by the sword.
+@ ##And five of you shall chase an hundred, and an hundred of you shall put ten thousand to flight: and your enemies shall fall before you by the sword.##note:x[<<Deut 28:7; 32:30; Josh 23:10>>]
+@ For I will have respect unto you, and ##make you##note:x[<<Gen 17:6–7; Neh 9:23; Ps 107:38>>] fruitful, and multiply you, and establish my covenant with you.
+@ ##And ye shall eat old store, and bring forth the old because of the new.##note:x[<<Lev 25:22>>]
+@ And ##I will##note:x[<<Exod 25:8; 29:45; Rev 21:3>>] set my tabernacle among you: and my soul shall not abhor you.
+@ And ##I will##note:x[<<2 Cor 6:16>>] walk among you, and ##will be##note:x[<<Jer 7:23; 30:22>>] your God, and ye shall be my people.
+@ ##I __am__##note:x[<<Lev 25:38>>] the LORD your God, which brought you forth out of the land of Egypt, that ye should not be their bondmen; ##and I have##note:x[<<Ps 116:16; Ezek 34:27>>] broken the bands of your yoke, and made you go upright.
+
+[discrete.pericope]
+==== Punishments for Disobedience
+
+[.parallel]
+(<<Leviticus 20:1–9; Deuteronomy 28:15–68>>)
+
+@ ¶ ##But if ye will not hearken unto me, and will not do all these commandments;##note:x[<<Lev 26:18; Deut 28:15–68; Lam 2:17>>]
+@ And if ye shall ##despise##note:x[<<2 Kgs 17:15>>] my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, __but__ that ye ##break##note:x[<<Deut 31:16>>] my covenant:
+@ I also will do this unto you; I will even appoint ##over##note:tn[Heb. upon] you terror, consumption, and the burning ague, that shall consume the eyes, and cause sorrow of heart: ##and ye shall##note:x[<<Job 31:8; Jer 5:17; Mic 6:15>>] sow your seed in vain, for your enemies shall eat it.
+@ And I will ##set##note:x[<<Lev 17:10>>] my face against you, and ##ye shall be##note:x[<<Deut 28:25>>] slain before your enemies: they that hate you shall reign over you; and ye ##shall flee##note:x[<<Lev 26:36>>] when none pursueth you.
+@ And if ye will not yet for all this hearken unto me, then I will punish you ##seven times##note:x[<<Lev 26:21, 24, 28>>] more for your sins.
+@ And I ##will break##note:x[<<Isa 25:11>>] the pride of your power; and I will ##make##note:x[<<Deut 28:23; 1 Kgs 17:1>>] your heaven as iron, and your earth as brass:
+@ And ##your strength##note:x[<<Ps 127:1; Isa 49:4>>] shall be spent in vain: ##for your land##note:x[<<Deut 11:17>>] shall not yield her increase, neither shall the trees of the land yield their fruits.
+
+@ ¶ And if ye walk contrary unto me, and will not hearken unto me; I will bring seven times more plagues upon you according to your sins.note:tn[__contrary…__: or, at all adventures with me]
+@ I will also send ##wild##note:x[<<Deut 32:24; Ezek 14:15>>] beasts among you, which shall rob you of your children, and destroy your cattle, and make you few in number; and ##your __high__##note:x[<<Ezek 14:15>>] ways shall be desolate.
+@ ##And if ye will not be reformed by me by these things, but will walk contrary unto me;##note:x[<<Jer 2:30; 5:3; Amos 4:6–12>>]
+@ ##Then will I also walk contrary unto you, and will punish you yet seven times for your sins.##note:x[<<Ps 18:26>>]
+@ And I ##will bring##note:x[<<Ezek 5:17>>] a sword upon you, that shall avenge the quarrel of __my__ covenant: and when ye are gathered together within your cities, ##I will send##note:x[<<Num 14:12; Deut 28:21>>] the pestilence among you; and ye shall be delivered into the hand of the enemy.
+@ ##__And__ when I have broken the staff of your bread, ten women shall bake your bread in one oven, and they shall deliver __you__ your bread again by weight: and ye shall eat, and not be satisfied.##note:x[<<Ps 105:16; Isa 3:1; Mic 6:14>>]
+@ ##And if ye will not for all this hearken unto me, but walk contrary unto me;##note:x[<<Lev 26:21, 24>>]
+@ Then I will walk contrary unto you also ##in fury##note:x[<<Isa 59:18; Jer 21:5; Ezek 5:13>>]; and I, even I, will chastise you seven times for your sins.
+@ And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat.
+@ And ##I will destroy##note:x[<<2 Kgs 23:20>>] your high places, and cut down your images, and cast your carcases upon the carcases of your idols, and my soul shall abhor you.
+@ ##And I will make##note:x[<<Neh 2:3>>] your cities waste, and bring your sanctuaries unto desolation, and I will not smell the savour of your sweet odours.
+@ ##And I##note:x[<<Jer 9:11; 25:11>>] will bring the land into desolation: ##and your##note:x[<<Jer 18:16>>] enemies which dwell therein shall be astonished at it.
+@ ##And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste.##note:x[<<Deut 4:27; Ezek 20:23; Zech 7:14>>]
+@ note:x[<<Lev 25:2–4; 2 Chr 36:21>>]Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye __be__ in your enemies’ land; __even__ then shall the land rest, and enjoy her sabbaths.
+@ As long as it lieth desolate it shall rest; because it did not rest in your sabbaths, when ye dwelt upon it.
+@ And upon them that are left __alive__ of you ##I will send##note:x[<<Ezek 21:7>>] a faintness into their hearts in the lands of their enemies; ##and the##note:x[<<Lev 26:17; Isa 30:17>>] sound of a ##shaken##note:tn[Heb. driven] leaf shall chase them; and they shall flee, as fleeing from a sword; and they shall fall when none pursueth.
+@ And they shall fall one upon another, as it were before a sword, when none pursueth: and ye shall have no power to stand before your enemies.
+@ And ye shall perish among the heathen, and the land of your enemies shall eat you up.
+@ And they that are left of you ##shall pine##note:x[<<Ezek 4:17; 24:23; 33:10>>] away in their iniquity in your enemies’ lands; and also in the iniquities of their fathers shall they pine away with them.
+
+[discrete.pericope]
+==== God Remembers Those Who Repent
+
+@ If they shall ##confess##note:x[<<Neh 9:2–5; Prov 28:13; 1 John 1:8–10>>] their iniquity, and the iniquity of their fathers, with their trespass which they trespassed against me, and that also they have walked contrary unto me;
+@ And __that__ I also have walked contrary unto them, and have brought them into the land of their enemies; if then ##their uncircumcised##note:x[<<Ezek 44:7; Acts 7:51>>] hearts be ##humbled##note:x[<<2 Chr 12:6–7>>], and they then accept of the punishment of their iniquity:
+@ Then ##will I##note:x[<<Exod 2:24; 6:5; Ezek 16:60>>] remember my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham will I remember; and I will remember the land.
+@ The land also shall be left of them, and shall enjoy her sabbaths, while she lieth desolate without them: and they shall accept of the punishment of their iniquity: because, even because ##they despised##note:x[<<Lev 26:15>>] my judgments, and because ##their soul##note:x[<<Lev 26:15>>] abhorred my statutes.
+@ And yet for all that, when they be in the land of their enemies, ##I will##note:x[<<Deut 4:29–31; 2 Kgs 13:23; Rom 11:2>>] not cast them away, neither will I abhor them, to destroy them utterly, and to break my covenant with them: for I __am__ the LORD their God.
+@ But I will for their sakes remember the covenant of their ancestors, ##whom I##note:x[<<Lev 22:33; 25:38>>] brought forth out of the land of Egypt ##in the sight##note:x[<<Ps 98:2–3>>] of the heathen, that I might be their God: I __am__ the LORD.
+@ note:x[<<Lev 27:34; Deut 6:1; 12:1>>]These __are__ the statutes and judgments and laws, which the LORD made between him and the children of Israel in mount Sinai by the hand of Moses.
+
+=== @27
+
+[discrete.pericope]
+==== Rules about Valuations
+
+@ And the LORD spake unto Moses, saying,
+@ Speak unto the children of Israel, and say unto them, ##When##note:x[<<Num 6:2>>] a man shall make a singular vow, the persons __shall be__ for the LORD by thy estimation.
+@ ##And thy estimation##note:x[<<Num 18:16>>] shall be of the male from twenty years old even unto sixty years old, even thy estimation shall be fifty shekels of silver, ##after the##note:x[<<Exod 30:13; Lev 27:25>>] shekel of the sanctuary.
+@ And if it __be__ a female, then thy estimation shall be thirty shekels.
+@ And if __it be__ from five years old even unto twenty years old, then thy estimation shall be of the male twenty shekels, and for the female ten shekels.
+@ And if __it be__ from a month old even unto five years old, then thy estimation shall be of the male five shekels of silver, and for the female thy estimation __shall be__ three shekels of silver.
+@ And if __it be__ from sixty years old and above; if __it be__ a male, then thy estimation shall be fifteen shekels, and for the female ten shekels.
+@ But if he be poorer than thy estimation, then he shall present himself before the priest, and the priest shall value him; according to his ability that vowed shall the priest value him.
+@ And if __it be__ a beast, whereof men bring an offering unto the LORD, all that __any man__ giveth of such unto the LORD shall be holy.
+@ He shall not alter it, nor change it, a good for a bad, or a bad for a good: and if he shall at all change beast for beast, then it and the exchange thereof shall be holy.
+@ And if __it be__ any unclean beast, of which they do not offer a sacrifice unto the LORD, then he shall present the beast before the priest:
+@ And the priest shall value it, whether it be good or bad: as thou valuest it, __who art__ the priest, so shall it be.note:tn[__as…__: Heb. according to thy estimation, O priest, etc]
+@ ##But if he will at all redeem it, then he shall add a fifth __part__ thereof unto thy estimation.##note:x[<<Lev 27:15, 19>>]
+
+@ ¶ And when a man shall sanctify his house __to be__ holy unto the LORD, then the priest shall estimate it, whether it be good or bad: as the priest shall estimate it, so shall it stand.
+@ And if he that sanctified it will redeem his house, then he shall add the fifth __part__ of the money of thy estimation unto it, and it shall be his.
+@ And if a man shall sanctify unto the LORD __some part__ of a field of his possession, then thy estimation shall be according to the seed thereof: an homer of barley seed __shall be valued__ at fifty shekels of silver.note:tn[__an…__: or, the land of an homer, etc]
+@ If he sanctify his field from the year of jubile, according to thy estimation it shall stand.
+@ But if he sanctify his field after the jubile, then the priest shall reckon unto him the money according to the years that remain, even unto the year of the jubile, and it shall be abated from thy estimation.
+@ And if he that sanctified the field will in any wise redeem it, then he shall add the fifth __part__ of the money of thy estimation unto it, and it shall be assured to him.
+@ And if he will not redeem the field, or if he have sold the field to another man, it shall not be redeemed any more.
+@ note:x[<<Num 18:14; Ezek 44:29>>]But the field, when it goeth out in the jubile, shall be holy unto the LORD, as a field ##devoted##note:x[<<Ezek 44:29>>]; the possession thereof shall be the priest’s.
+@ And if __a man__ sanctify unto the LORD a field which he hath bought, which __is__ not of the fields of his possession;
+@ Then the priest shall reckon unto him the worth of thy estimation, __even__ unto the year of the jubile: and he shall give thine estimation in that day, __as__ a holy thing unto the LORD.
+@ ##In the year of the jubile the field shall return unto him of whom it was bought, __even__ to him to whom the possession of the land __did belong__.##note:x[<<Lev 25:28>>]
+@ And all thy estimations shall be according to the shekel of the sanctuary: ##twenty##note:x[<<Exod 30:13; Num 3:47; 18:16>>] gerahs shall be the shekel.
+
+@ ¶ Only the ##firstling of##note:tn[Heb. firstborn, etc] the beasts, ##which##note:x[<<Exod 13:2, 12–13; 22:30>>] should be the LORD’s firstling, no man shall sanctify it; whether __it be__ ox, or sheep: it __is__ the LORD’s.
+@ And if __it be__ of an unclean beast, then he shall redeem __it__ according to thine estimation, and shall add a fifth __part__ of it thereto: or if it be not redeemed, then it shall be sold according to thy estimation.
+@ Notwithstanding ##no devoted##note:x[<<Exod 22:20; Lev 27:21; Josh 6:17–19>>] thing, that a man shall devote unto the LORD of all that he hath, __both__ of man and beast, and of the field of his possession, shall be sold or redeemed: every devoted thing __is__ most holy unto the LORD.
+@ ##None##note:x[<<Num 21:2–3; 1 Sam 15:18–23>>] devoted, which shall be devoted of men, shall be redeemed; __but__ shall surely be put to death.
+
+[discrete.pericope]
+==== Instruction on Tithes
+
+[.parallel]
+(<<Deuteronomy 14:22–29; Deuteronomy 26:1–15; Nehemiah 13:10–14>>)
+
+@ note:x[<<Gen 28:22; Neh 10:37–38; Matt 23:23>>]And all the tithe of the land, __whether__ of the seed of the land, __or__ of the fruit of the tree, __is__ the LORD’s: __it is__ holy unto the LORD.
+@ And if a man will at all redeem __ought__ of his tithes, he shall add thereto the fifth __part__ thereof.
+@ And concerning the tithe of the herd, or of the flock, __even__ of whatsoever ##passeth under the rod##note:x[<<Jer 33:13; Ezek 20:37>>], the tenth shall be holy unto the LORD.
+@ He shall not search whether it be good or bad, neither shall he change it: and if he change it at all, then both it and the change thereof shall be holy; it shall not be redeemed.
+@ These __are__ the ##commandments##note:x[<<Lev 26:46>>], which the LORD commanded Moses for the children of Israel in mount Sinai.

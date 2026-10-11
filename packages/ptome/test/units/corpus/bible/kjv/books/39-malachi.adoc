@@ -1,0 +1,118 @@
+== @MAL
+
+[.book-title]
+Malachi
+
+=== @1
+
+[discrete.pericope]
+==== The LORD’s Love for Israel
+
+[.parallel]
+(<<Genesis 25:19–28; Romans 9:6–29>>)
+
+@ The burden of the word of the LORD to Israel by Malachi.note:tn[__by…__: Heb. by the hand of]
+@ ##I have##note:x[<<Deut 10:15; Isa 41:8–9; Jer 31:3>>] loved you, saith the LORD. Yet ye say, Wherein hast thou loved us? __Was__ not Esau Jacob’s brother? saith the LORD: yet I loved Jacob,
+@ And I hated Esau, and ##laid##note:x[<<Joel 3:19; Obad 1:10>>] his mountains and his heritage waste for the dragons of the wilderness.
+@ Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith the LORD of hosts, They shall build, but I will throw down; and they shall call them, The border of wickedness, and, ##The people##note:x[<<Ezek 25:14; 35:9>>] against whom the LORD hath indignation for ever.
+@ And ##your##note:x[<<Deut 11:7; Luke 10:23–24>>] eyes shall see, and ye shall say, ##The LORD##note:x[<<Ps 35:26–27>>] will be magnified ##from##note:tn[or, upon: Heb. from upon] the border of Israel.
+
+[discrete.pericope]
+==== The Polluted Offerings
+
+@ ¶ A son honoureth __his__ father, and a servant his master: ##if then##note:x[<<Isa 1:2; Luke 6:46>>] I __be__ a father, where __is__ mine honour? ##and if##note:x[<<Luke 6:46>>] I __be__ a master, where __is__ my fear? saith the LORD of hosts unto you, O priests, that despise my name. And ye say, Wherein have we despised thy name?
+@ Ye offer polluted bread upon mine altar; and ye say, Wherein have we polluted thee? In that ye say, ##The table##note:x[<<Mal 1:12; 1 Cor 10:21; 11:27–32>>] of the LORD __is__ contemptible.note:tn[__offer…__: or, bring unto, etc]
+@ And ##if ye offer the blind##note:x[<<Lev 22:19–25; Deut 15:21>>] ##for##note:tn[Heb. to] sacrifice, __is it__ not evil? and if ye offer the lame and sick, __is it__ not evil? offer it now unto thy governor; will he be pleased with thee, ##or accept##note:x[<<Hos 8:13>>] thy person? saith the LORD of hosts.
+@ And now, I pray you, ##beseech##note:x[<<Jer 27:18; John 9:31>>] ##God##note:tn[Heb. the face of God] that he will be gracious unto us: this hath been by your means: ##will he##note:x[<<1 Pet 1:17>>] regard your persons? saith the LORD of hosts.note:tn[__by…__: Heb. from your hand]
+@ Who __is there__ ##even##note:x[<<Mic 3:11; 1 Pet 5:2>>] among you that would shut the doors __for nought?__ neither do ye kindle __fire__ on mine altar for nought. ##I have##note:x[<<Jer 6:20>>] no pleasure in you, saith the LORD of hosts, neither will I accept an offering at your hand.
+@ For ##from##note:x[<<Isa 45:6>>] the rising of the sun even unto the going down of the same ##my name##note:x[<<Isa 54:5>>] __shall be__ great among the Gentiles; and in every place ##incense##note:x[<<Heb 13:15–16>>] __shall be__ offered unto my name, and a pure offering: for my name __shall be__ great among the heathen, saith the LORD of hosts.
+
+@ ¶ But ye have profaned it, in that ye say, The table of the LORD __is__ polluted; and the fruit thereof, __even__ his meat, __is__ contemptible.
+@ Ye said also, ##Behold##note:x[<<Mic 6:3; Mark 14:37–38>>], what a weariness __is it!__ and ye have snuffed at it, saith the LORD of hosts; and ye brought __that which was__ torn, and the lame, and the sick; thus ye brought an offering: should I accept this of your hand? saith the LORD.note:tn[__and ye have…__: or, whereas ye might have blown it away]
+@ But ##cursed##note:x[<<Acts 5:1–10>>] __be__ the deceiver, ##which hath in his flock##note:x[<<Eccl 5:4–5; 2 Cor 8:12>>] a male, and voweth, and sacrificeth unto the Lord a corrupt thing: for I __am__ a great King, saith the LORD of hosts, and my name __is__ dreadful among the heathen.note:tn[__which…__: Heb. in whose flock is]
+
+=== @2
+
+[discrete.pericope]
+==== A Warning to the Priests
+
+@ And now, O ye priests, this commandment __is__ for you.
+@ If ##ye will not hear##note:x[<<Ps 81:11–12>>], and if ye will not lay __it__ to heart, ##to give##note:x[<<Luke 17:18; Rev 14:7>>] glory unto my name, saith the LORD of hosts, I will even send a curse upon you, and I will curse your blessings: yea, I have cursed them already, because ye do not lay __it__ to heart.
+@ Behold, I will note:x[<<Nah 3:6; Mal 2:9>>]##corrupt##note:tn[or, reprove] your seed, and ##spread##note:tn[Heb. scatter] dung upon your faces, __even__ the dung of your solemn feasts; and __one__ shall take you away with it.note:tn[__one…__: or, it shall take you away to it]
+@ And ##ye##note:x[<<Ezek 38:23>>] shall know that I have sent this commandment unto you, that my covenant might be with Levi, saith the LORD of hosts.
+@ My ##covenant##note:x[<<Num 25:12–13; Ezek 34:25; 37:26>>] was with him of life and peace; and I gave them to him __for__ the fear wherewith he feared me, and was afraid before my name.
+@ The ##law##note:x[<<2 Tim 2:15–16; Rev 14:5>>] of truth was in his mouth, and iniquity was not found in his lips: he walked with me in peace and equity, ##and did##note:x[<<Dan 12:3>>] turn many away from iniquity.
+@ note:x[<<Lev 10:11; Deut 21:5; 2 Tim 2:24–25>>]For the priest’s lips should keep knowledge, and they should seek the law at his mouth: for he __is__ the messenger of the LORD of hosts.
+@ But ##ye are##note:x[<<Jer 17:5>>] departed out of the way; ##ye have caused##note:x[<<Jer 18:15>>] many to ##stumble at##note:tn[or, fall in] the law; ##ye have corrupted##note:x[<<Neh 13:29>>] the covenant of Levi, saith the LORD of hosts.
+@ Therefore have I also ##made##note:x[<<1 Sam 2:30>>] you contemptible and base before all the people, according as ye have not kept my ways, ##but##note:x[<<Luke 11:42>>] ##have been partial in##note:x[<<Deut 1:17>>] the law.note:tn[__have been…__: or, lifted up the face against: Heb. accepted faces]
+
+[discrete.pericope]
+==== Judah’s Unfaithfulness
+
+@ Have we not all one father? ##hath##note:x[<<Ps 100:3>>] not one God created us? ##why##note:x[<<Mal 2:11>>] do we deal treacherously every man against his brother, ##by##note:x[<<Mal 2:11>>] profaning the covenant of our fathers?
+
+@ ¶ Judah hath dealt treacherously, and an abomination is committed in Israel and in Jerusalem; for Judah hath profaned the holiness of the LORD which he ##loved##note:tn[or, ought to love], ##and hath##note:x[<<Ezra 9:1–2; 2 Cor 6:14–18>>] married the daughter of a strange god.
+@ The LORD will cut off the man that doeth this, the master and the scholar, out of the tabernacles of Jacob, and him that offereth an offering unto the LORD of hosts.note:tn[__the master…__: or, him that waketh, and him that answereth]
+@ And this have ye done again, covering the altar of the LORD with tears, with weeping, and with crying out, ##insomuch##note:x[<<Isa 1:11–15>>] that he regardeth not the offering any more, or receiveth __it__ with good will at your hand.
+
+@ ¶ Yet ye say, Wherefore? Because the LORD hath been witness between thee and ##the wife##note:x[<<Eccl 9:9; Isa 54:6; Mal 2:15>>] of thy youth, against whom thou hast dealt treacherously: yet __is__ she thy companion, and the wife of thy covenant.
+@ And ##did##note:x[<<Matt 19:4–6; Mark 10:6–8>>] not he make one? Yet had he the ##residue##note:tn[or, excellency] of the spirit. And wherefore one? That he might seek a godly seed. Therefore ##take##note:x[<<Mal 2:14>>] heed to your spirit, and let none deal ##treacherously##note:tn[or, unfaithfully] against the wife of his youth.note:tn[__godly…__: Heb. seed of God]
+@ For ##the LORD##note:x[<<Matt 5:31–32; 19:3–9; Mark 10:2–12>>], the God of Israel, saith that he hateth putting away: for __one__ covereth violence with his garment, saith the LORD of hosts: therefore take heed to your spirit, that ye deal not treacherously.note:tn[__that he…__: or, if he hate her, put her away]note:tn[__putting…__: Heb. to put away]
+
+@ ¶ Ye have ##wearied##note:x[<<Isa 43:24>>] the LORD with your words. Yet ye say, Wherein have we wearied __him?__ When ye say, Every one that doeth evil __is__ good in the sight of the LORD, and he delighteth in them; or, ##Where##note:x[<<Eccl 8:11; 2 Pet 3:3–4>>] __is__ the God of judgment?
+
+=== @3
+
+[discrete.pericope]
+==== I Will Send My Messenger
+
+[.parallel]
+(<<Matthew 11:7–19; Luke 7:24–35>>)
+
+@ Behold, ##I will##note:x[<<Mal 4:5; Mark 1:2–3; Luke 1:76>>] send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith the LORD of hosts.
+@ But who may abide the day of his coming? and who shall stand when he appeareth? ##for##note:x[<<Isa 4:4; Zech 13:9; 1 Cor 3:13–15>>] he __is__ like a refiner’s fire, and like fullers’ soap:
+@ And he shall ##sit##note:x[<<Prov 17:3; Isa 1:25; Zech 13:9>>] __as__ a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto the LORD an offering in righteousness.
+@ Then shall ##the offering##note:x[<<Isa 56:7; Zech 8:3>>] of Judah and Jerusalem be pleasant unto the LORD, ##as##note:x[<<2 Chr 7:1–3>>] in the days of old, and as in ##former##note:tn[or, ancient] years.
+@ And ##I will come##note:x[<<Jas 5:8–9>>] near to you to judgment; and I will be a swift witness against ##the sorcerers##note:x[<<Deut 5:11; Heb 13:4>>], and against the adulterers, and against false swearers, and against those that ##oppress##note:tn[or, defraud] the hireling in __his__ wages, the widow, and the fatherless, and that turn aside the stranger __from his right__, and fear not me, saith the LORD of hosts.
+
+[discrete.pericope]
+==== Robbing God
+
+@ For I __am__ the LORD, ##I change not##note:x[<<Num 23:19; Heb 13:8; Jas 1:17>>]; therefore ye sons of Jacob are not consumed.
+
+@ ¶ Even from the days of your fathers ye are gone away from mine ordinances, and have not kept __them__. ##Return unto me##note:x[<<Zech 1:3; Jas 4:8>>], and I will return unto you, saith the LORD of hosts. But ye said, ##Wherein##note:x[<<Rom 10:21>>] shall we return?
+
+@ ¶ Will ##a man##note:x[<<Prov 3:9–10; Matt 22:21; Mark 12:17>>] rob God? Yet ye have robbed me. But ye say, Wherein have we robbed thee? In tithes and offerings.
+@ ##Ye __are__ cursed with a curse: for ye have robbed me, __even__ this whole nation.##note:x[<<Deut 28:15–19; Hag 1:6–11; Mal 2:2>>]
+@ Bring ye ##all##note:x[<<Prov 3:9–10>>] the tithes into the storehouse, that there may be meat in mine house, ##and prove##note:x[<<Matt 6:33; 2 Cor 9:6–8>>] me now herewith, saith the LORD of hosts, if I will not open you the windows of heaven, and pour you out a blessing, that __there shall__ not __be room__ enough __to receive it__.note:tn[__pour…__: Heb. empty out]
+@ And I will rebuke the devourer for your sakes, and he shall not ##destroy##note:tn[Heb. corrupt] the fruits of your ground; ##neither##note:x[<<Deut 11:14; Joel 2:22; Zech 8:12>>] shall your vine cast her fruit before the time in the field, saith the LORD of hosts.
+@ And ##all##note:x[<<Isa 61:9; Zech 8:23; Luke 1:48>>] nations shall call you blessed: for ye shall be a delightsome land, saith the LORD of hosts.
+
+[discrete.pericope]
+==== The Book of Remembrance
+
+@ ¶ ##Your##note:x[<<Isa 37:23; Mal 2:17>>] words have been stout against me, saith the LORD. Yet ye say, ##What##note:x[<<Mal 2:17>>] have we spoken __so much__ against thee?
+@ Ye have said, ##It __is__##note:x[<<Ps 73:8–13; Isa 58:3>>] vain to serve God: and what profit __is it__ that we have kept his ##ordinance##note:tn[Heb. observation], ##and that##note:x[<<Isa 58:3>>] we have walked ##mournfully##note:tn[Heb. in black] before the LORD of hosts?
+@ And now ##we call##note:x[<<Mal 4:1>>] the proud happy; ##yea##note:x[<<Jer 12:1–2; Mal 2:17>>], they that work wickedness are set up; yea, __they that__ tempt God are even delivered.note:tn[__are set up__: Heb. are built]
+
+@ ¶ Then they ##that feared##note:x[<<Mal 4:2>>] the LORD spake often one to another: and the LORD hearkened, and heard __it__, and ##a book##note:x[<<Ps 56:8; Rev 20:12>>] of remembrance was written before him for them that feared the LORD, and that thought upon his name.
+@ And they shall be mine, saith the LORD of hosts, in that day when I make up my note:x[<<Exod 19:5; Deut 7:6>>]##jewels##note:tn[or, special treasure]; ##and I##note:x[<<2 Cor 6:18>>] will spare them, as a man spareth his own son that serveth him.
+@ Then shall ye return, and ##discern##note:x[<<Gen 18:25; Ps 58:10–11; Matt 25:46>>] between the righteous and the wicked, between him that serveth God and him that serveth him not.
+
+=== @4
+
+[discrete.pericope]
+==== The Day of the LORD
+
+[.parallel]
+(<<Zephaniah 1:7–18; 1 Thessalonians 5:1–11; 2 Peter 3:8–13>>)
+
+@ For, behold, ##the day##note:x[<<Mal 3:2; 2 Pet 3:7>>] cometh, that ##shall burn##note:x[<<2 Thess 1:8>>] as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith the LORD of hosts, that it shall leave them neither root nor branch.
+
+@ ¶ But unto you that fear my name shall ##the Sun##note:x[<<Ps 84:11; Isa 30:26>>] of righteousness arise with ##healing##note:x[<<Jer 33:6>>] in his wings; and ye shall go forth, and grow up as calves of the stall.
+@ And ye shall ##tread down##note:x[<<Job 40:12; Mic 7:10; Rom 16:20>>] the wicked; for they shall be ashes under the soles of your feet in the day that I shall do __this__, saith the LORD of hosts.
+
+@ ¶ Remember ye ##the law##note:x[<<Jas 2:9–13>>] of Moses my servant, which I commanded unto him ##in##note:x[<<Deut 4:10>>] Horeb for all Israel, __with__ the statutes and judgments.
+
+@ ¶ Behold, ##I will##note:x[<<Matt 17:10–13; Mark 9:11–13; Luke 1:17>>] send you Elijah the prophet before the coming of the great and dreadful day of the LORD:
+@ And he shall ##turn##note:x[<<Luke 1:16–17>>] the heart of the fathers to the children, and the heart of the children to their fathers, ##lest##note:x[<<Matt 23:35–38>>] I come ##and smite##note:x[<<Heb 10:26–31>>] the earth with a curse.

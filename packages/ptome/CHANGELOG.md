@@ -95,11 +95,12 @@ Asciidoctor project.
     backend (semantic HTML: `class="unit"`, `data-unit`).
   - `ptome check --format=json --list` reports units and problems (each
     with its kind, file, line and column) to tools.
-  - Checked against the loci experiment's 26 documents (scripture, law,
-    classics, drama, liturgy, a hymnal, a catechism, a specification) and
-    a commonplace book quoting them all: the units model each yields
-    agrees with the first, preprocessing implementation's
-    (`tool/units_model_check.dart`).
+  - The units corpus (`test/units/corpus`, from the loci experiment): 23
+    real documents (the KJV, the Qur'an, suttas, Greek classics, liturgy,
+    a hymnal, a catechism, US, EU and UK law, a specification) and a
+    commonplace book quoting them, each with its units model frozen and
+    tested (`test/units/corpus_model_test.dart`); it agreed with the first,
+    preprocessing implementation's before that was removed.
   - Documents without `:units:` or `:works:` are unaffected.
 - Follows Asciidoctor's development version (upstream `main` at
   `30fb8cd5`, 2.1.0.alpha.0) rather than the 2.0.26 release: the CLI's

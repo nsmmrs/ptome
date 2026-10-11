@@ -1,0 +1,203 @@
+== @JAS
+
+[.book-title]
+The General Epistle of James
+
+=== @1
+
+[discrete.pericope]
+==== A Greeting from James
+
+[.parallel]
+(<<Jude 1:1–2>>)
+
+@ James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are ##scattered##note:x[<<Ezek 12:15; John 7:35; 1 Pet 1:1>>] abroad, greeting.
+
+[discrete.pericope]
+==== Rejoicing in Trials
+
+[.parallel]
+(<<Philippians 1:12–20>>)
+
+@ My brethren, ##count##note:x[<<2 Cor 12:9; Jas 1:12>>] it all joy when ye fall into ##divers##note:x[<<1 Pet 1:6–8>>] temptations;
+@ Knowing __this__, ##that##note:x[<<Rom 5:3–4>>] the trying of your faith worketh ##patience##note:x[<<Col 1:11; Heb 10:36>>].
+@ But ##let##note:x[<<Luke 21:19>>] patience have __her__ perfect work, that ye may be ##perfect and##note:x[<<Matt 5:48; 1 Pet 5:10>>] entire, wanting nothing.
+@ If any of you lack wisdom, ##let##note:x[<<Prov 2:3–6; Jer 29:12; John 15:7>>] him ask of God, that giveth to all __men__ liberally, and upbraideth not; and it shall be given him.
+@ But ##let##note:x[<<Mark 11:22–24; Heb 11:6>>] him ask in faith, nothing wavering. For ##he##note:x[<<Eph 4:14>>] that wavereth is like a wave of the sea driven with the wind and tossed.
+@ ##For let not that man think that he shall receive any thing of the Lord.##note:x[<<Prov 15:8; Isa 1:15; Jas 4:3>>]
+@ ##A double minded man __is__ unstable in all his ways.##note:x[<<1 Kgs 18:21; Matt 6:24; Jas 4:8>>]
+@ Let ##the brother##note:x[<<Prov 19:1; Jas 2:5–6>>] of low degree ##rejoice##note:x[<<Jer 9:23–24>>] in that he is exalted:
+@ But the rich, in that he is made low: ##because##note:x[<<Job 14:2; 1 Pet 1:24; 1 John 2:17>>] as the flower of the grass he shall pass away.
+@ For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: ##so##note:x[<<Ps 37:35–36; Isa 40:7–8; Luke 16:19–25>>] also shall the rich man fade away in his ways.
+@ Blessed __is__ the man that endureth temptation: for ##when##note:x[<<1 Pet 1:6–7; 5:10>>] he is tried, he shall receive ##the crown##note:x[<<Rev 2:10>>] of life, which the Lord hath promised to them that love him.
+
+[discrete.pericope]
+==== Good and Perfect Gifts
+
+@ Let ##no man##note:x[<<Hab 2:12–13; Rom 9:19–20; Jas 1:12>>] say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:
+@ But every man is tempted, ##when##note:x[<<Matt 15:18; Mark 7:21; Eph 4:22>>] he is drawn away of his own lust, and enticed.
+@ Then ##when##note:x[<<Job 15:35; Ps 7:14>>] lust hath conceived, it bringeth forth sin: and ##sin, when##note:x[<<Rom 5:12–21>>] it is finished, bringeth forth death.
+@ ##Do##note:x[<<Gal 6:7; Col 2:8>>] not err, ##my##note:x[<<Jas 1:19>>] beloved brethren.
+@ Every ##good##note:x[<<Matt 7:11; John 3:27>>] gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is ##no variableness##note:x[<<Heb 13:8>>], neither shadow of turning.
+@ Of ##his own##note:x[<<Rom 8:29–31; 1 Pet 1:23>>] will begat he us ##with##note:x[<<1 Pet 1:23>>] the word of truth, that we should be a kind of firstfruits of his creatures.
+
+[discrete.pericope]
+==== Hearing and Doing
+
+@ Wherefore, my beloved brethren, let every man be swift to hear, ##slow to speak##note:x[<<Prov 17:27; 21:23>>], ##slow to wrath##note:x[<<Prov 14:29>>]:
+@ ##For the wrath of man worketh not the righteousness of God.##note:x[<<Num 20:11–12; 2 Tim 2:24–25; Jas 3:17–18>>]
+@ Wherefore ##lay##note:x[<<Eph 4:22; 1 Pet 2:11>>] apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, ##which##note:x[<<Eph 1:13>>] is able to save your souls.
+@ But ##be##note:x[<<Luke 6:46–48; John 13:17; Rom 2:13>>] ye doers of the word, and not hearers only, deceiving your own selves.
+@ ##For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:##note:x[<<Ezek 33:31–32; Matt 7:26–27; Jas 2:14–26>>]
+@ For he beholdeth himself, and goeth his way, and straightway forgetteth ##what##note:x[<<Luke 1:66; 7:39; 2 Pet 3:11>>] manner of man he was.
+@ But whoso looketh into the perfect law of ##liberty##note:x[<<2 Cor 3:17–18>>], and continueth __therein__, he being not a forgetful hearer, but a doer of the work, ##this##note:x[<<Luke 11:28; John 13:17>>] man shall be blessed in his deed.
+@ If any man among you seem to be religious, and ##bridleth##note:x[<<Ps 141:3; Eph 4:29; 1 Pet 3:10>>] not his tongue, but deceiveth his own heart, this man’s religion __is__ vain.
+@ Pure religion and undefiled before God and the Father is this, ##To visit##note:x[<<Isa 1:16–17; Gal 6:9–10; 1 John 3:17–19>>] the fatherless and widows in their affliction, __and__ to keep himself unspotted from the world.
+
+=== @2
+
+[discrete.pericope]
+==== A Warning against Favoritism
+
+@ My brethren, have not the faith of our Lord Jesus Christ, __the Lord__ of glory, ##with##note:x[<<Lev 19:15; Prov 24:23; Jas 2:9>>] respect of persons.
+@ For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment;
+@ And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say ##to the##note:x[<<Luke 7:44–46; 2 Cor 8:9; Jas 2:6>>] poor, Stand thou there, or sit here under my footstool:
+@ Are ye not then ##partial##note:x[<<Job 34:19>>] in yourselves, and are become ##judges##note:x[<<Matt 7:1–5; John 7:24>>] of evil thoughts?
+@ Hearken, my beloved brethren, ##Hath not##note:x[<<Luke 6:20>>] God chosen ##the##note:x[<<Matt 5:3>>] poor of this world rich in faith, and ##heirs##note:x[<<Matt 5:3>>] of the kingdom which he hath promised to them that love him?
+@ But ##ye##note:x[<<Prov 14:31; 17:5; 1 Cor 11:22>>] have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?
+@ Do not they blaspheme that ##worthy##note:x[<<Phil 2:9–11>>] name by the which ye are called?
+@ If ye fulfil the royal law according to the scripture, ##Thou##note:x[<<Lev 19:18; Matt 22:39; Gal 5:14>>] shalt love thy neighbour as thyself, ye do well:
+@ But ##if##note:x[<<Lev 19:15; Jas 2:1–4>>] ye have respect to persons, ye commit sin, and are convinced of the law as transgressors.
+@ For ##whosoever##note:x[<<Deut 27:26; Matt 5:18–19; Gal 3:10>>] shall keep the whole law, and yet offend in one __point__, he is guilty of all.
+@ For he that said, ##Do not commit##note:x[<<Exod 20:13–14; Deut 5:17–18; Matt 5:21–28>>] adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.
+@ So ##speak##note:x[<<Phil 4:8>>] ye, and so do, as they that shall be judged by ##the##note:x[<<Jas 1:25; 2:8>>] law of liberty.
+@ For ##he##note:x[<<Prov 21:13; Matt 5:7; 6:15>>] shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.
+
+[discrete.pericope]
+==== Faith and Works
+
+[.parallel]
+(<<Galatians 3:1–9>>)
+
+@ What __doth it__ profit, my brethren, ##though##note:x[<<Matt 7:21–23, 26–27; Jas 1:22–25>>] a man say he hath faith, and have not works? can faith save him?
+@ ##If a brother or sister be naked, and destitute of daily food,##note:x[<<Isa 58:7; Matt 25:35–40; Luke 3:11>>]
+@ And ##one##note:x[<<Prov 3:27–28; Matt 25:42–45; 1 John 3:16–18>>] of you say unto them, Depart in peace, be __ye__ warmed and filled; notwithstanding ye give them not those things which are needful to the body; what __doth it__ profit?
+@ Even ##so##note:x[<<Jas 2:19–20, 26; 2 Pet 1:5–9>>] faith, if it hath not works, is dead, being alone.
+@ Yea, a man may say, ##Thou##note:x[<<Gal 5:6; Jas 2:14>>] hast faith, and I have works: shew me thy faith without thy works, ##and I will##note:x[<<Jas 3:13>>] shew thee my faith by my works.
+@ Thou believest that there is one God; thou doest well: ##the##note:x[<<Matt 8:29; Mark 1:24; Luke 4:34>>] devils also believe, and tremble.
+@ But wilt thou know, ##O vain##note:x[<<Prov 12:11; Rom 1:21>>] man, that faith without works is dead?
+@ Was not ##Abraham##note:x[<<John 8:39>>] our father justified by works, ##when##note:x[<<Gen 22:9–12, 16–18>>] he had offered Isaac his son upon the altar?
+@ Seest thou how ##faith##note:x[<<Gal 5:6; Heb 11:17–19>>] wrought with his works, and by works was ##faith made##note:x[<<1 John 2:5>>] perfect?
+@ And the scripture was fulfilled which saith, ##Abraham##note:x[<<Gen 15:6>>] believed God, and it was imputed unto him for righteousness: and he was called ##the Friend##note:x[<<2 Chr 20:7; Isa 41:8>>] of God.
+@ ##Ye see then how that by works a man is justified, and not by faith only.##note:x[<<Jas 2:15–18, 21–22>>]
+@ Likewise also was not Rahab the harlot justified by works, ##when##note:x[<<Josh 2:19–21; 6:22–25; Heb 11:31>>] she had received the messengers, and had sent __them__ out another way?
+@ For as the body without the spirit is dead, ##so##note:x[<<Jas 2:14, 17, 20>>] faith without works is dead also.
+
+=== @3
+
+[discrete.pericope]
+==== Taming the Tongue
+
+[.parallel]
+(<<Psalms 64:1–10>>)
+
+@ My brethren, ##be##note:x[<<1 Cor 12:28; 1 Pet 5:3>>] not many masters, ##knowing##note:x[<<Luke 12:47–48>>] that we shall receive the greater condemnation.
+@ For in many things we offend all. ##If##note:x[<<Prov 13:3; Jas 1:26; 1 Pet 3:10>>] any man offend not in word, the same __is__ a perfect man, __and__ able also to bridle the whole body.
+@ note:x[<<Ps 32:9; 39:1; Jas 1:26>>]Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body.
+@ Behold also the ships, which though __they be__ so great, and __are__ driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth.
+@ Even ##so##note:x[<<Prov 12:18; 18:21; Jer 9:3–8>>] the tongue is a little member, and boasteth great things. Behold, how great a matter a little fire kindleth!
+@ And ##the tongue##note:x[<<Prov 16:27>>] __is__ a fire, ##a world##note:x[<<Matt 15:11–20; Mark 7:15>>] of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.
+@ For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind:
+@ But the tongue can no man tame; __it is__ ##an unruly##note:x[<<Ps 55:21>>] evil, ##full##note:x[<<Ps 140:3; Rom 3:13>>] of deadly poison.
+@ Therewith bless we God, even the Father; and ##therewith curse##note:x[<<Ps 10:7>>] we men, which are ##made##note:x[<<Gen 1:26–27; 9:6>>] after the similitude of God.
+@ Out ##of##note:x[<<Ps 50:16–20; Rom 12:14; 1 Pet 3:9>>] the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.
+@ Doth a fountain send forth at the same place sweet __water__ and bitter?
+@ Can ##the fig tree##note:x[<<Matt 7:16–20; 12:33; Luke 6:43–44>>], my brethren, bear olive berries? either a vine, figs? so __can__ no fountain both yield salt water and fresh.
+
+[discrete.pericope]
+==== The Wisdom from Above
+
+@ Who __is__ a wise man and endued with knowledge among you? let him shew out of a good conversation his works ##with meekness##note:x[<<Matt 5:5; Gal 5:23; Jas 3:17>>] of wisdom.
+@ But ##if##note:x[<<1 Cor 13:4; Phil 2:3; Jas 3:16>>] ye have bitter envying and strife in your hearts, glory not, and lie not against the truth.
+@ This ##wisdom##note:x[<<Jas 1:17; 3:17>>] descendeth not from above, ##but##note:x[<<1 Cor 3:19>>] __is__ earthly, sensual, devilish.
+@ For ##where##note:x[<<1 Cor 3:3; Jas 3:14>>] envying and strife __is__, ##there##note:x[<<1 Cor 14:33>>] __is__ confusion and every evil work.
+@ But ##the wisdom##note:x[<<Prov 2:6>>] that is from above is first pure, then peaceable, ##gentle##note:x[<<1 Cor 13:4–7; Gal 5:22–23>>], __and__ easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.
+@ And ##the fruit##note:x[<<Hos 10:12; Matt 5:9>>] of righteousness is sown in peace of them that ##make##note:x[<<Matt 5:9>>] peace.
+
+=== @4
+
+[discrete.pericope]
+==== A Warning against Pride
+
+@ From whence __come__ wars and fightings among you? ##__come they__##note:x[<<1 Pet 2:11>>] not hence, __even__ of your lusts that war ##in##note:x[<<Rom 7:23; Gal 5:17>>] your members?
+@ Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, ##because##note:x[<<Matt 7:7–8; John 16:24; Jas 1:5>>] ye ask not.
+@ Ye ##ask, and##note:x[<<Jas 1:6–7; 1 John 3:22; 5:14>>] receive not, because ye ask amiss, that ye may consume __it__ upon your lusts.
+@ Ye adulterers and adulteresses, know ye not that ##the friendship##note:x[<<John 15:19; 1 John 2:15–16>>] of the world is ##enmity##note:x[<<Rom 8:7>>] with God? whosoever therefore will be a friend of the world is the enemy of God.
+@ Do ye think that the scripture saith in vain, ##The spirit##note:x[<<Num 11:29; Titus 3:3>>] that dwelleth in us lusteth to envy?
+@ But he giveth more grace. Wherefore he saith, ##God##note:x[<<Prov 3:34; Matt 23:12; 1 Pet 5:5>>] resisteth the proud, but giveth grace unto the humble.
+
+[discrete.pericope]
+==== Drawing Near to God
+
+@ Submit yourselves therefore to God. ##Resist##note:x[<<Eph 4:27; 6:11–12; 1 Pet 5:8–9>>] the devil, and he will flee from you.
+@ ##Draw nigh to God##note:x[<<Ps 145:18; Mal 3:7; Heb 10:22>>], and he will draw nigh to you. Cleanse __your__ hands, __ye__ sinners; and purify __your__ hearts, __ye__ double minded.
+@ Be ##afflicted##note:x[<<Matt 5:4; 2 Cor 7:10–11>>], and mourn, and weep: ##let##note:x[<<Luke 6:25>>] your laughter be turned to mourning, and __your__ joy to heaviness.
+@ Humble yourselves in the sight of the Lord, and ##he##note:x[<<Ps 147:6; Matt 23:12; 1 Pet 5:6>>] shall lift you up.
+@ ##Speak##note:x[<<1 Pet 2:1>>] not evil one of another, brethren. He that speaketh evil of __his__ brother, ##and judgeth##note:x[<<Luke 6:37; Rom 2:1>>] his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.
+@ There is one lawgiver, ##who##note:x[<<Rom 2:1; 14:4>>] is ##able##note:x[<<Matt 10:28>>] to save and to destroy: who art thou that judgest another?
+
+[discrete.pericope]
+==== Do Not Boast about Tomorrow
+
+[.parallel]
+(<<Proverbs 27:1>>)
+
+@ ##Go to##note:x[<<Gen 11:3–4>>] now, ye that say, ##To day##note:x[<<Prov 27:1; Luke 12:17–20>>] or to morrow we will go into such a city, and continue there a year, and buy and sell, and get gain:
+@ Whereas ye know not what __shall be__ on the morrow. For what __is__ your life? It is even ##a vapour##note:x[<<Ps 39:5; 1 Pet 1:24; 1 John 2:17>>], that appeareth for a little time, and then vanisheth away.
+@ For that ye __ought__ to say, ##If##note:x[<<Prov 19:21; Lam 3:37; Heb 6:3>>] the Lord will, we shall live, and do this, or that.
+@ ##But now ye rejoice in your boastings: all such rejoicing is evil.##note:x[<<Ps 52:7; Prov 27:1; 1 Cor 5:6>>]
+@ ##Therefore to him that knoweth to do good, and doeth __it__ not, to him it is sin.##note:x[<<John 9:41; 13:17; 15:22>>]
+
+=== @5
+
+[discrete.pericope]
+==== A Warning to the Rich
+
+[.parallel]
+(<<Proverbs 23:1–5; 1 Timothy 6:17–19>>)
+
+@ Go to now, ##__ye__##note:x[<<Prov 11:4, 28; 1 Tim 6:9–10>>] rich men, weep and howl for your miseries that shall come upon __you__.
+@ ##Your riches##note:x[<<Matt 6:19–20; Luke 12:33>>] are corrupted, and ##your garments##note:x[<<Job 13:28>>] are motheaten.
+@ Your gold and silver is cankered; and the rust of them shall be a witness against you, ##and shall##note:x[<<Rev 21:8>>] eat your flesh as it were fire. ##Ye have##note:x[<<Rom 2:5>>] heaped treasure together for the last days.
+@ Behold, ##the hire##note:x[<<Lev 19:13; Deut 24:14–15; Jer 22:13>>] of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.
+@ Ye ##have lived##note:x[<<Luke 16:19, 25; 1 Tim 5:6>>] in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.
+@ Ye have condemned __and__ killed the just; ##__and__ he##note:x[<<Isa 53:7; John 19:9–11; 1 Pet 2:22–23>>] doth not resist you.
+
+[discrete.pericope]
+==== Patience in Suffering
+
+[.parallel]
+(<<Job 1:1–5>>)
+
+@ ##Be patient##note:x[<<Heb 12:1–3>>] therefore, brethren, ##unto##note:x[<<Jas 5:8–9>>] the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, ##until##note:x[<<Joel 2:23>>] he receive the early and latter rain.
+@ Be ##ye also##note:x[<<Ps 37:7; Gal 5:22>>] patient; stablish your hearts: ##for##note:x[<<Jas 5:9>>] the coming of the Lord draweth nigh.
+@ ##Grudge not##note:x[<<Lev 19:18; Jas 4:11>>] one against another, brethren, lest ye be condemned: behold, ##the judge##note:x[<<1 Cor 4:5>>] standeth before the door.
+@ Take, my brethren, the prophets, ##who##note:x[<<Heb 13:7>>] have spoken in the name of the Lord, ##for##note:x[<<Matt 5:11–12; Heb 11:32–38>>] an example of suffering affliction, and of patience.
+@ Behold, ##we count##note:x[<<Jas 1:12>>] them happy which endure. ##Ye##note:x[<<Job 1:21–22>>] have heard of the patience of Job, and have seen the end of the Lord; that ##the Lord is##note:x[<<Exod 34:6>>] very pitiful, and of tender mercy.
+@ ##But##note:x[<<2 Cor 1:17–20>>] above all things, my brethren, ##swear not##note:x[<<Matt 5:33–37; 23:16–22>>], neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and __your__ nay, nay; lest ye fall into condemnation.
+
+[discrete.pericope]
+==== The Prayer of Faith
+
+@ Is ##any among##note:x[<<Ps 50:15; Jonah 2:2>>] you afflicted? let him pray. Is any merry? ##let him sing##note:x[<<Eph 5:19>>] psalms.
+@ Is any sick among you? let him call for the elders of the church; and let them ##pray##note:x[<<Acts 28:8>>] over him, ##anointing##note:x[<<Mark 6:13; 16:18>>] him with oil in the name of the Lord:
+@ And ##the prayer##note:x[<<Jas 5:13, 16>>] of faith shall save the sick, and the Lord shall raise him up; and ##if he##note:x[<<1 John 5:14–16>>] have committed sins, they shall be forgiven him.
+@ Confess __your__ faults one to another, and pray one for another, that ye may be healed. ##The effectual##note:x[<<Prov 15:29; Jer 29:12–13; Matt 21:22>>] fervent prayer of a righteous man availeth much.
+@ ##Elias##note:x[<<1 Kgs 17:1>>] was a man subject to like passions as we are, ##and he##note:x[<<Rev 11:6>>] prayed earnestly that it might not rain: ##and it rained not##note:x[<<Luke 4:25>>] on the earth by the space of three years and six months.
+@ ##And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.##note:x[<<1 Kgs 18:42–45>>]
+
+[discrete.pericope]
+==== Restoring a Sinner
+
+@ Brethren, if any of you do err from the truth, ##and one##note:x[<<Matt 18:15; Gal 6:1; Jas 5:20>>] convert him;
+@ Let him know, that he which converteth the sinner from the error of his way ##shall save##note:x[<<1 Tim 4:16>>] a soul from death, and shall ##hide##note:x[<<Prov 10:12; 1 Pet 4:8>>] a multitude of sins.

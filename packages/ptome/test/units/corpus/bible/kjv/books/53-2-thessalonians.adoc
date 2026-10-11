@@ -1,0 +1,96 @@
+== @2TH
+
+[.book-title]
+The Second Epistle of Paul the Apostle to the Thessalonians
+
+=== @1
+
+[discrete.pericope]
+==== Greetings to the Thessalonians
+
+[.parallel]
+(<<1 Thessalonians 1:1–10>>)
+
+@ Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians in God our Father and the Lord Jesus Christ:
+@ ##Grace unto you, and peace, from God our Father and the Lord Jesus Christ.##note:x[<<Rom 1:7; 1 Cor 1:3>>]
+
+@ We are bound to thank God always for you, brethren, as it is meet, because that ##your##note:x[<<Prov 4:18; 2 Pet 1:5–10; 3:18>>] faith groweth exceedingly, and the charity of every one of you all toward each other aboundeth;
+@ So that we ourselves glory in you in the churches of God for ##your patience##note:x[<<Heb 10:36; 12:1–3; Jas 5:7–8>>] and faith in all your persecutions and tribulations that ye endure:
+
+[discrete.pericope]
+==== Christ’s Coming
+
+@ __Which is__ a ##manifest##note:x[<<Phil 1:28>>] token of the ##righteous##note:x[<<Rev 19:2>>] judgment of God, that ye may be counted worthy of the kingdom of God, ##for##note:x[<<Acts 14:22>>] which ye also suffer:
+@ ##Seeing __it is__ a righteous thing with God to recompense tribulation to them that trouble you;##note:x[<<Deut 32:41–43; Ps 94:20–23; Zech 2:8>>]
+@ And to you ##who##note:x[<<Rev 14:13>>] are troubled rest with us, ##when##note:x[<<Matt 16:27; Jude 1:14–15>>] the Lord Jesus shall be revealed from heaven with his mighty angels,
+@ In ##flaming##note:x[<<Heb 10:27; 2 Pet 3:7>>] fire taking vengeance on them that know not God, ##and that##note:x[<<1 Pet 4:17>>] obey not the gospel of our Lord Jesus Christ:
+@ Who shall ##be##note:x[<<Matt 25:41, 46>>] punished with everlasting destruction ##from the presence##note:x[<<Matt 25:41>>] of the Lord, and from the glory of his power;
+@ When he shall come ##to be glorified##note:x[<<John 17:10; Eph 1:18>>] in his saints, and to be admired in all them that believe ( because our testimony among you was believed) ##in that##note:x[<<2 Tim 4:8>>] day.
+@ Wherefore also ##we pray##note:x[<<Col 1:9–13>>] always for you, that our God would count you worthy of __this__ calling, and fulfil all ##the good##note:x[<<Phil 2:13>>] pleasure of __his__ goodness, and ##the work##note:x[<<1 Thess 1:3>>] of faith with power:
+@ That ##the name##note:x[<<John 17:10; 2 Thess 1:10; 1 Pet 4:14>>] of our Lord Jesus Christ may be glorified in you, and ye in him, according to the grace of our God and the Lord Jesus Christ.
+
+=== @2
+
+[discrete.pericope]
+==== The Man of Lawlessness
+
+@ Now we beseech you, brethren, ##by the##note:x[<<1 Thess 4:14–16>>] coming of our Lord Jesus Christ, ##and __by__##note:x[<<Matt 24:31; Mark 13:27>>] our gathering together unto him,
+@ That ye be not soon ##shaken##note:x[<<Mark 13:7>>] in mind, or be troubled, neither ##by spirit##note:x[<<Matt 24:4–5; 1 John 4:1–2>>], nor by word, nor by letter as from us, as that the day of Christ is at hand.
+@ Let ##no note:x[<<1 John 2:18>>]man##note:x[<<Matt 24:4–6; Eph 5:6>>] deceive you by any means: for __that day shall not come__, except there come a falling away first, and that man of sin be revealed, the son of perdition;
+@ Who opposeth ##and exalteth##note:x[<<Isa 14:13; Ezek 28:2; Dan 7:25>>] himself above all that is called God, or that is worshipped; so that he as God sitteth in the temple of God, shewing himself that he is God.
+@ Remember ye not, that, when I was yet with you, I told you these things?
+@ And now ye know what withholdeth that he might be revealed in his time.
+@ For the mystery of iniquity ##doth##note:x[<<1 John 4:3>>] already work: only he who now letteth __will let__, until he be taken out of the way.
+@ And then shall ##that##note:x[<<2 Thess 2:3>>] Wicked be revealed, ##whom##note:x[<<Rev 19:20>>] the Lord shall consume with ##the spirit##note:x[<<Rev 19:20–21>>] of his mouth, and shall destroy with the brightness of his coming:
+@ __Even him__, whose coming ##is##note:x[<<Rev 19:20>>] after the working of Satan with all power ##and signs##note:x[<<Matt 24:24; Rev 19:20>>] and lying wonders,
+@ And with all ##deceivableness##note:x[<<2 Cor 4:2>>] of unrighteousness ##in them##note:x[<<1 Cor 1:18>>] that perish; because ##they received##note:x[<<Prov 1:7>>] not the love of the truth, that they might be saved.
+@ And ##for##note:x[<<John 12:39–43; Rom 1:28>>] this cause God shall send them strong delusion, ##that##note:x[<<1 Tim 4:1>>] they should believe a lie:
+@ That ##they##note:x[<<Mark 16:16>>] all might be damned who believed not the truth, ##but##note:x[<<Rom 1:32; 8:7–8>>] had pleasure in unrighteousness.
+
+[discrete.pericope]
+==== Stand Firm
+
+@ But we are bound to give thanks alway to God for you, brethren beloved of the Lord, because God hath from the beginning ##chosen##note:x[<<Eph 1:4–5; 1 Thess 1:4; 2 Tim 1:9>>] you to salvation through sanctification of the Spirit and belief of the truth:
+@ Whereunto ##he called##note:x[<<1 Thess 2:12; 1 Pet 5:10>>] you by our gospel, ##to##note:x[<<1 Thess 2:12>>] the obtaining of the glory of our Lord Jesus Christ.
+@ Therefore, brethren, ##stand##note:x[<<1 Cor 16:13>>] fast, and ##hold##note:x[<<1 Cor 11:2; 2 Thess 3:6>>] the traditions which ye have been taught, whether by word, or our epistle.
+@ Now our Lord Jesus Christ himself, and God, even our Father, ##which##note:x[<<John 3:16>>] hath loved us, and hath given __us__ everlasting consolation and ##good##note:x[<<Rom 5:2–5>>] hope ##through##note:x[<<Rom 5:2>>] grace,
+@ Comfort your hearts, and ##stablish##note:x[<<1 Thess 3:2, 13; 2 Thess 3:3>>] you in every good word and work.
+
+=== @3
+
+[discrete.pericope]
+==== Request for Prayer
+
+@ Finally, brethren, ##pray##note:x[<<Eph 6:19–20; Col 4:3; 1 Thess 5:25>>] for us, that the word of the Lord may have __free__ course, and be glorified, even as __it is__ with you:
+@ And that we may be ##delivered##note:x[<<Rom 15:31>>] from unreasonable and wicked men: ##for##note:x[<<Deut 32:20; 2 Cor 4:3–4>>] all __men__ have not faith.
+@ But ##the Lord##note:x[<<1 Cor 10:13; 1 Thess 5:24>>] is faithful, who shall stablish you, ##and##note:x[<<2 Tim 4:18>>] keep __you__ from evil.
+@ And ##we have##note:x[<<Phil 1:6; Phlm 1:21>>] confidence in the Lord touching you, ##that##note:x[<<1 Thess 4:10>>] ye both do and will do the things which we command you.
+@ And ##the Lord##note:x[<<1 Chr 29:18; Ps 119:36>>] direct your hearts ##into##note:x[<<Deut 30:6>>] the love of God, and into the patient waiting for Christ.
+
+[discrete.pericope]
+==== A Warning against Idleness
+
+@ Now we command you, brethren, ##in the##note:x[<<Col 3:17>>] name of our Lord Jesus Christ, that ye withdraw yourselves from every brother that ##walketh##note:x[<<2 Thess 3:7>>] disorderly, and not ##after##note:x[<<2 Thess 3:10>>] the tradition which he received of us.
+@ ##For##note:x[<<2 Thess 3:6>>] yourselves know ##how##note:x[<<1 Cor 4:16; 2 Thess 3:9>>] ye ought to follow us: for we behaved not ourselves disorderly among you;
+@ Neither did we ##eat##note:x[<<Matt 6:11>>] any man’s bread for nought; ##but##note:x[<<Acts 18:3>>] wrought with labour and travail ##night##note:x[<<1 Thess 2:9>>] and day, that we might not be chargeable to any of you:
+@ ##Not##note:x[<<1 Cor 9:4–14; 1 Thess 2:6>>] because we have not power, but ##to make##note:x[<<2 Thess 3:7>>] ourselves an ensample unto you to follow us.
+@ For even when we were with you, this we commanded you, ##that##note:x[<<Gen 3:19; Prov 13:4; 1 Thess 4:11>>] if any would not work, neither should he eat.
+@ For we hear that there are some which walk among you disorderly, ##working##note:x[<<1 Thess 4:11; 1 Tim 5:13; 1 Pet 4:15>>] not at all, but are busybodies.
+@ Now them that are such we command and exhort by our Lord Jesus Christ, ##that with##note:x[<<Eph 4:28; 1 Thess 4:11>>] quietness they work, and ##eat##note:x[<<2 Thess 3:8>>] their own bread.
+@ But ##ye##note:x[<<Gal 6:9–10; Heb 12:3>>], brethren, ##be not weary##note:x[<<2 Cor 4:1>>] in well doing.
+@ And if any man obey not our word ##by this epistle, note that man##note:x[<<1 Cor 5:11; 2 Thess 3:6; Titus 3:10>>], and have no company with him, that he may be ashamed.
+@ Yet ##count##note:x[<<1 Cor 5:5; 1 Thess 5:14>>] __him__ not as an enemy, but ##admonish##note:x[<<Titus 3:10>>] __him__ as a brother.
+
+[discrete.pericope]
+==== Signature and Final Greetings
+
+[.parallel]
+(<<1 Corinthians 16:19–24; Colossians 4:15–18>>)
+
+@ Now the Lord of peace himself ##give##note:x[<<Ps 29:11; John 16:33>>] you peace always by all means. ##The Lord __be__##note:x[<<Matt 1:23>>] with you all.
+
+@ The salutation of Paul ##with##note:x[<<1 Cor 16:21; Col 4:18>>] mine own hand, which is the token in every epistle: so I write.
+@ ##The grace of our Lord Jesus Christ __be__ with you all. Amen.##note:x[<<Rom 16:20>>]
+
+[.colophon]
+The second __epistle__ to the Thessalonians was written from Athens.

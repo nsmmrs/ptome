@@ -1,0 +1,76 @@
+== @NAM
+
+[.book-title]
+Nahum
+
+=== @1
+
+[discrete.pericope]
+==== The Burden against Nineveh
+
+[.parallel]
+(<<Jonah 1:1–3>>)
+
+@ The ##burden##note:x[<<Zech 9:1>>] of ##Nineveh##note:x[<<Zeph 2:13>>]. The book of the vision of Nahum the Elkoshite.
+
+@ ##God __is__ jealous, and the LORD revengeth##note:x[<<Exod 20:5; Zech 8:2>>]; the LORD revengeth, and ##__is__ furious##note:x[<<Zech 8:2>>]; the LORD will take vengeance on his adversaries, and he reserveth __wrath__ for his enemies.note:tn[__God…__: or, The LORD is a jealous God, and a revenger, etc]note:tn[__is furious__: Heb. that hath fury]
+@ The LORD __is__ ##slow##note:x[<<Exod 34:6–7; Neh 9:17>>] to anger, and ##great##note:x[<<Ps 147:5>>] in power, and will not at all acquit __the wicked:__ the LORD hath his way in the whirlwind and in the storm, and the clouds __are__ the dust of his feet.
+@ He ##rebuketh##note:x[<<Ps 104:7; 106:9>>] the sea, and maketh it dry, and drieth up all the rivers: ##Bashan##note:x[<<Isa 33:9>>] languisheth, and Carmel, and the flower of Lebanon languisheth.
+@ The ##mountains##note:x[<<2 Sam 22:8; Jer 4:24>>] quake at him, and ##the hills##note:x[<<Mic 1:4>>] melt, and the earth is burned at his presence, yea, the world, and all that dwell therein.
+@ Who ##can stand##note:x[<<Ps 76:7; Jer 10:10; Mal 3:2>>] before his indignation? and who can ##abide##note:tn[Heb. stand up] in the fierceness of his anger? his fury is poured out like fire, and the rocks are thrown down by him.
+@ The ##LORD##note:x[<<Lam 3:25>>] __is__ good, a strong hold in the day of trouble; ##and he##note:x[<<John 10:27; 2 Tim 2:19>>] knoweth them that trust in him.note:tn[__strong hold__: or, strength]
+@ But ##with##note:x[<<Isa 28:17; Ezek 13:13>>] an overrunning flood he will make an utter end of the place thereof, and ##darkness##note:x[<<Isa 8:22>>] shall pursue his enemies.
+
+@ What ##do##note:x[<<Ps 21:11; 33:10; Prov 21:30>>] ye imagine against the LORD? he will make an utter end: affliction shall not rise up the second time.
+@ For ##while __they be__##note:x[<<Mic 7:4>>] folden together __as__ thorns, and while they are ##drunken##note:x[<<Nah 3:11>>] __as__ drunkards, ##they shall##note:x[<<Mal 4:1>>] be devoured as stubble fully dry.
+@ There is ##__one__##note:x[<<2 Kgs 18:13–14; Nah 1:9>>] come out of thee, that imagineth evil against the LORD, a ##wicked counsellor##note:x[<<2 Chr 13:7>>].note:tn[__a wicked…__: Heb. a counsellor of Belial]
+@ Thus saith the LORD; Though __they be__ quiet, and likewise many, ##yet##note:x[<<Isa 17:14>>] thus shall they be cut down, when he shall pass through. Though I have afflicted thee, ##I will##note:x[<<Isa 30:19; Joel 2:19>>] afflict thee no more.note:tn[__Though…__: or, If they would have been at peace, so should they have been many, and so should they have been shorn, and he should have passed away]note:tn[__cut down__: Heb. shorn]
+@ For now ##will I##note:x[<<Isa 9:4; 10:27; Jer 2:20>>] break his yoke from off thee, and will burst thy bonds in sunder.
+@ And the LORD hath given a commandment concerning thee, ##__that__##note:x[<<Ps 109:13; Prov 10:7>>] no more of thy name be sown: ##out##note:x[<<Isa 46:1–2>>] of the house of thy gods will I cut off the graven image and the molten image: I will make thy grave; for thou art vile.
+@ Behold ##upon##note:x[<<Isa 40:9–10; 52:7; Rom 10:15>>] the mountains the feet of him that bringeth good tidings, that publisheth peace! O Judah, keep thy solemn feasts, perform thy vows: for the wicked shall no more pass through thee; he is utterly cut off.note:tn[__keep…__: Heb. feast]note:tn[__the wicked__: Heb. Belial]
+
+=== @2
+
+[discrete.pericope]
+==== The Overthrow of Nineveh
+
+@ ##He that dasheth in pieces##note:x[<<Jer 51:20–23>>] is come up before thy face: ##keep##note:x[<<2 Chr 25:8; Joel 3:9–11>>] the munition, watch the way, make __thy__ loins strong, fortify __thy__ power mightily.note:tn[__He…__: or, The disperser, or, hammer]
+@ note:x[<<Zeph 3:11>>]##For##note:x[<<Ps 80:12–13>>] the LORD hath turned away the excellency of Jacob, as the excellency of Israel: for the emptiers have emptied them out, and marred their vine branches.note:tn[__the excellency of Jacob…__: or, the pride of Jacob as the pride, etc]
+@ The shield of his mighty men is made red, the valiant men __are__ in scarlet: the chariots __shall be__ with ##flaming##note:tn[or, fiery] torches in the day of his preparation, and the fir trees shall be terribly shaken.note:tn[__in scarlet__: or, dyed scarlet]
+@ The ##chariots##note:x[<<Jer 4:13>>] shall rage in the streets, ##they##note:tn[Heb. their show] shall justle one against another in the broad ways: they shall seem like torches, they shall run like the lightnings.
+@ He shall recount his ##worthies##note:tn[or, gallants]: ##they shall stumble##note:x[<<Jer 46:12>>] in their walk; they shall make haste to the wall thereof, and the ##defence##note:tn[Heb. covering, or, coverer] shall be prepared.
+@ The gates of the rivers shall be opened, and the palace shall be ##dissolved##note:tn[or, molten].
+@ And ##Huzzab##note:tn[or, that which was established, or, there was a stand made] shall be led away captive, she shall be brought up, and her maids shall lead __her__ as with the voice of ##doves##note:x[<<Isa 38:14; 59:11>>], tabering upon their breasts.note:tn[__led…__: or, discovered]
+@ But Nineveh __is__ of old like a pool of water: yet they shall flee away. Stand, stand, __shall they cry;__ but none shall look back.note:tn[__of old__: or, from the days that she hath been]note:tn[__look back__: or, cause them to turn]
+@ Take ye the spoil of silver, take the spoil of gold: for __there is__ none end of the store __and__ glory out of all the pleasant furniture.note:tn[__for…__: or, and their infinite store, etc]note:tn[__pleasant…__: Heb. vessels of desire]
+@ She is empty, and void, and waste: and ##the heart##note:x[<<Ps 22:14>>] melteth, and ##the knees##note:x[<<Dan 5:6>>] smite together, and much pain __is__ in all loins, ##and the faces##note:x[<<Joel 2:6>>] of them all gather blackness.
+
+@ Where __is__ ##the dwelling##note:x[<<Isa 5:29>>] of the lions, and the feedingplace of the young lions, where the lion, __even__ the old lion, walked, __and__ the lion’s whelp, and none made __them__ afraid?
+@ The lion did tear in pieces enough for his whelps, and strangled for his lionesses, and filled his holes with prey, and his dens with ravin.
+@ Behold, ##I __am__##note:x[<<Jer 21:13; Nah 3:5>>] against thee, saith the LORD of hosts, and ##I will burn##note:x[<<Ps 46:9>>] her chariots in the smoke, and the sword shall devour thy young lions: and I will cut off thy prey from the earth, and the voice of thy messengers shall no more be heard.
+
+=== @3
+
+[discrete.pericope]
+==== Judgment on Nineveh
+
+@ Woe ##to##note:x[<<Ezek 22:2–3; Hab 2:12; Zeph 3:1–3>>] the bloody city! it __is__ all full of lies __and__ robbery; the prey departeth not;note:tn[__bloody…__: Heb. city of bloods]
+@ The ##noise##note:x[<<Jer 47:3; Nah 2:3–4>>] of a whip, and the noise of the rattling of the wheels, and of the pransing horses, and of the jumping chariots.
+@ The horseman lifteth up both the ##bright sword and the glittering spear##note:x[<<Hab 3:11>>]: ##and __there__##note:x[<<Isa 37:36; Ezek 39:4>>] __is__ a multitude of slain, and a great number of carcases; and __there is__ none end of __their__ corpses; they stumble upon their corpses&#58;note:tn[__the bright…__: Heb. the flame of the sword, and the lightning of the spear]
+@ Because of the multitude of the whoredoms of the wellfavoured harlot, ##the mistress##note:x[<<Isa 47:9, 12–13>>] of witchcrafts, that selleth nations through her whoredoms, and families through her witchcrafts.
+@ Behold, I __am__ against thee, saith the LORD of hosts; and ##I will discover##note:x[<<Jer 13:22, 26; Ezek 23:29>>] thy skirts upon thy face, and I will shew the nations thy nakedness, and the kingdoms thy shame.
+@ And ##I will cast##note:x[<<Job 9:31; Ps 38:5–7>>] abominable filth upon thee, and ##make##note:x[<<Mal 2:9>>] thee vile, and will set thee as a gazingstock.
+@ And it shall come to pass, ##__that__ all##note:x[<<Rev 18:10>>] they that look upon thee shall flee from thee, and say, Nineveh is laid waste: ##who##note:x[<<Isa 51:19; Jer 15:5>>] will bemoan her? whence shall I seek comforters for thee?
+
+@ Art ##thou##note:x[<<Amos 6:2>>] better than populous No, that was situate among the rivers, __that had__ the waters round about it, whose rampart __was__ the sea, __and__ her wall __was__ from the sea?note:tn[__populous…__: or, nourishing, etc: Heb. No Amon]
+@ Ethiopia and Egypt __were__ her strength, and __it was__ infinite; ##Put##note:x[<<Ezek 27:10; 30:5>>] and Lubim were thy helpers.note:tn[__thy helpers__: Heb. in thy help]
+@ Yet __was__ ##she carried##note:x[<<Isa 20:4>>] away, she went into captivity: ##her young##note:x[<<Hos 13:16>>] children also were dashed in pieces at the top of all the streets: and they ##cast##note:x[<<Joel 3:3>>] lots for her honourable men, and all her great men were bound in chains.
+@ Thou also ##shalt be drunken##note:x[<<Isa 49:26>>]: ##thou shalt be hid##note:x[<<Isa 2:10; Luke 23:30>>], thou also shalt seek strength because of the enemy.
+@ ##All thy strong holds __shall be like__ fig trees with the firstripe figs: if they be shaken, they shall even fall into the mouth of the eater.##note:x[<<Rev 6:13>>]
+@ Behold, ##thy people##note:x[<<Isa 19:16; Jer 51:30>>] in the midst of thee __are__ women: the gates of thy land shall be set wide open unto thine enemies: the fire shall devour ##thy bars##note:x[<<Jer 51:30>>].
+@ ##Draw##note:x[<<2 Chr 32:3–4>>] thee waters for the siege, ##fortify##note:x[<<Nah 2:1>>] thy strong holds: go into clay, and tread the morter, make strong the brickkiln.
+@ There shall the fire devour thee; the sword shall cut thee off, ##it##note:x[<<Joel 1:4>>] shall eat thee up like the cankerworm: make thyself many as the cankerworm, make thyself many as the locusts.
+@ Thou hast multiplied thy merchants above the stars of heaven: the cankerworm ##spoileth##note:tn[or, spreadeth himself], and flieth away.
+@ Thy crowned __are__ as the locusts, and thy captains as the great grasshoppers, which camp in the hedges in the cold day, __but__ when the sun ariseth they flee away, and their place is not known where they __are__.
+@ ##Thy shepherds##note:x[<<Ps 76:5–6>>] slumber, O king of Assyria: thy ##nobles##note:tn[or, valiant ones] shall dwell __in the dust:__ ##thy people##note:x[<<1 Kgs 22:17>>] is scattered upon the mountains, and no man gathereth __them__.
+@ __There is__ ##no##note:x[<<Mic 1:9>>] ##healing##note:tn[Heb. wrinkling] of thy bruise; thy wound is grievous: all that hear the bruit of thee ##shall##note:x[<<Job 27:23; Lam 2:15>>] clap the hands over thee: for upon whom hath not thy wickedness passed continually?

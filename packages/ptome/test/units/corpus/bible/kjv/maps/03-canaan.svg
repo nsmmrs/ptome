@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 486.6" width="400" height="486.6" font-family="serif">
+<rect x="12" y="12" width="376" height="462.6" fill="#D6E6EE"/>
+<path d="M12 474.6L12 408.2L31.2 395.7L33.4 392.7L40.4 386.4L43.6 380.7L50.9 375.1L54 369.5L65.8 357.2L71.3 349.1L73 345L76.8 340.1L91.8 314.4L104.9 284.7L107.9 280L112.8 263.7L112.8 259.9L114.9 258.7L127.6 219.1L138 167.3L138.9 165.5L139.8 157.3L140.6 154.8L140.3 152.1L143.9 137L144.8 120.4L146 116.7L148.4 115.4L150.4 115.9L153.5 117.9L155.9 118.4L157.3 118.1L162.8 112.2L165.5 103.4L165.2 101.2L163.3 100.2L164.2 97.5L165.3 86.2L167.4 80.2L168.1 76.7L167.4 73.5L169.7 71.1L168.6 69.8L169.5 69.5L169.7 68.4L168.7 68.3L168.6 67.3L171 63.1L172.7 61.5L176.1 60.1L179.3 54.5L178.3 53.3L179.8 53.3L180.4 54.5L185.1 44.4L185.8 38.9L182.5 34.2L185.9 31.7L188.2 28.3L191.2 20.2L191.8 12L388 12L388 474.6Z" fill="#EFE6CC" stroke="#8E7F5C" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M253.2 113.8L252.8 117L253.4 119.2L252.5 124.1L252.6 126.4L253.4 128.2L252.5 128.6L252.3 131.9L246.9 138.2L243.4 137.8L242.2 134.6L241.7 131L239.1 128.6L237.3 124.2L234 119.2L235 113.4L239.9 108.1L245.7 104.9L249.1 105.3L251.7 107.7L252.9 109.1L253.4 111L253.2 113.8ZM240.6 314.4L244.9 316.8L245.1 320.9L243.6 326.3L239.9 356.5L242.1 364.2L242.6 369.5L238.3 390.6L238.8 394.7L235 398.7L233.3 399.7L231.9 399.4L231.5 397.2L233.3 390.5L233 388.1L230 388.2L222.3 396.5L218 395.7L216.6 392.3L216 383L214.7 375.4L215.8 368.7L214.5 361L218 351.3L216.9 342.3L221.2 334.8L224.2 327.5L227.7 320.9L232.4 316.2L240.6 314.4ZM233.1 419.2L235.5 421.1L236.2 424.7L231.9 430.4L234.1 435.7L229.1 439.7L227.6 440.1L218.2 438.7L215.8 437.4L214.6 435.3L213.8 429.9L210 423.6L209.2 417.2L210.9 412.5L215.8 413.5L219 409.5L227.5 417.1L233.1 419.2Z" fill="#D6E6EE" stroke="#7FA3B8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M246.8 104.6L246.1 129.2L245.6 133.4L243.4 137.8M219.2 395.9L219.8 392.8L223.9 381.9L224.5 377.7L225.7 350.8L228.1 337.4L235.6 320L240.2 317L240.6 314.5M259 9.9L257.2 14L253.1 28.3L251.4 38.9L246.5 49.5L246 52.5L244.5 86.8L246.7 100L246.8 104.6M243.4 137.8L241.5 140.5L242.6 142L240.8 142.9L240.4 145L241.6 150.3L240.7 153.9L241.3 155.3L242.6 156.1L242.6 157.2L241.5 157.2L241.5 158.6L242.4 160.3L242.9 165L243.8 167.3L242.9 168.4L242.6 167.3L241.5 170L240.6 168.7L241.5 173.7L239.4 173.7L239.4 175L240.9 175L243.8 178.9L243.8 180.1L242.4 180.5L240.9 182.7L240.6 184L242.6 185.1L242.6 186.5L240.6 187.7L241.5 188.9L239.4 190.3L240.3 190.7L240.6 191.6L239.4 191.6L239.4 192.7L240.5 194.4L238.3 195.2L239 197.3L240.8 199.8L241.5 202.9L240.6 202.9L240.6 201.7L239.4 201.7L239.4 202.9L240.2 204.7L240.1 210.3L241.5 213L240.8 215.2L240.8 218.7L241.4 222.2L242.6 224.4L241.3 225.3L240.6 227L242.6 227L239.9 238.7L240.6 242.3L238.6 243.8L238.6 244.8L239.4 246L236.8 250.5L236.7 252.7L238.3 255L235.7 257.1L234.8 260.3L235.1 268.9L236.8 273.2L237.5 279.2L238.4 281.3L238.3 282.7L235.6 284.5L235.1 286L238.9 300.8L237.3 303.1L237.3 304.5L240.6 314.5M219.3 396L219.1 400L214.9 408.4L215.8 413.4" fill="none" stroke="#6E9FC0" stroke-width="0.7"/>
+<path d="M74.7 12V474.6M137.3 12V474.6M200 12V474.6M262.7 12V474.6M325.3 12V474.6M12 127.7H388M12 243.3H388M12 359H388" stroke="#9A8E70" stroke-width="0.25" stroke-dasharray="1 2" fill="none"/>
+<text x="43.3" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">A</text>
+<text x="43.3" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">A</text>
+<text x="106" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">B</text>
+<text x="106" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">B</text>
+<text x="168.7" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">C</text>
+<text x="168.7" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">C</text>
+<text x="231.3" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">D</text>
+<text x="231.3" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">D</text>
+<text x="294" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">E</text>
+<text x="294" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">E</text>
+<text x="356.7" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">F</text>
+<text x="356.7" y="483.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">F</text>
+<text x="6" y="72" font-size="6.5" text-anchor="middle" fill="#5A4E36">1</text>
+<text x="394" y="72" font-size="6.5" text-anchor="middle" fill="#5A4E36">1</text>
+<text x="6" y="187.7" font-size="6.5" text-anchor="middle" fill="#5A4E36">2</text>
+<text x="394" y="187.7" font-size="6.5" text-anchor="middle" fill="#5A4E36">2</text>
+<text x="6" y="303.3" font-size="6.5" text-anchor="middle" fill="#5A4E36">3</text>
+<text x="394" y="303.3" font-size="6.5" text-anchor="middle" fill="#5A4E36">3</text>
+<text x="6" y="419" font-size="6.5" text-anchor="middle" fill="#5A4E36">4</text>
+<text x="394" y="419" font-size="6.5" text-anchor="middle" fill="#5A4E36">4</text>
+<text x="51.2" y="169.3" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">THE GREAT SEA</text>
+<text x="231.3" y="391.3" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">SALT SEA</text>
+<text x="270.5" y="104.5" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">CHINNERETH</text>
+<text x="66.8" y="419.1" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">PHILISTIA</text>
+<text x="301.8" y="409.8" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">MOAB</text>
+<text x="341" y="243.3" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">AMMON</text>
+<text x="250.1" y="215.5" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">Jordan</text>
+<circle cx="255.1" cy="39.9" r="1.6" fill="#2E2416"/>
+<text x="258.1" y="42.2" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Dan</text>
+<text x="258.1" y="42.2" font-size="6.8" text-anchor="start" fill="#2E2416">Dan</text>
+<circle cx="242.2" cy="82.6" r="1.6" fill="#2E2416"/>
+<text x="245.2" y="84.9" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Hazor</text>
+<text x="245.2" y="84.9" font-size="6.8" text-anchor="start" fill="#2E2416">Hazor</text>
+<circle cx="181.9" cy="162.8" r="1.6" fill="#2E2416"/>
+<text x="184.9" y="165.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Megiddo</text>
+<text x="184.9" y="165.1" font-size="6.8" text-anchor="start" fill="#2E2416">Megiddo</text>
+<circle cx="231.8" cy="177.9" r="1.6" fill="#2E2416"/>
+<text x="234.8" y="180.2" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Beth-shan</text>
+<text x="234.8" y="180.2" font-size="6.8" text-anchor="start" fill="#2E2416">Beth-shan</text>
+<circle cx="197.2" cy="231.5" r="1.6" fill="#2E2416"/>
+<text x="200.2" y="233.8" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Shechem</text>
+<text x="200.2" y="233.8" font-size="6.8" text-anchor="start" fill="#2E2416">Shechem</text>
+<circle cx="198.4" cy="260.8" r="1.6" fill="#2E2416"/>
+<text x="201.4" y="263.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Shiloh</text>
+<text x="201.4" y="263.1" font-size="6.8" text-anchor="start" fill="#2E2416">Shiloh</text>
+<circle cx="190.8" cy="285.3" r="1.6" fill="#2E2416"/>
+<text x="187.8" y="287.6" font-size="6.8" text-anchor="end" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Bethel</text>
+<text x="187.8" y="287.6" font-size="6.8" text-anchor="end" fill="#2E2416">Bethel</text>
+<circle cx="193.9" cy="286.4" r="1.6" fill="#2E2416"/>
+<text x="196.9" y="288.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Ai</text>
+<text x="196.9" y="288.7" font-size="6.8" text-anchor="start" fill="#2E2416">Ai</text>
+<circle cx="181.7" cy="299.3" r="1.6" fill="#2E2416"/>
+<text x="184.7" y="301.6" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Gibeon</text>
+<text x="184.7" y="301.6" font-size="6.8" text-anchor="start" fill="#2E2416">Gibeon</text>
+<circle cx="189.7" cy="312.4" r="1.6" fill="#2E2416"/>
+<text x="192.7" y="314.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Jerusalem</text>
+<text x="192.7" y="314.7" font-size="6.8" text-anchor="start" fill="#2E2416">Jerusalem</text>
+<circle cx="222.6" cy="294.8" r="1.6" fill="#2E2416"/>
+<text x="225.6" y="297.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Jericho</text>
+<text x="225.6" y="297.1" font-size="6.8" text-anchor="start" fill="#2E2416">Jericho</text>
+<circle cx="169" cy="358.9" r="1.6" fill="#2E2416"/>
+<text x="172" y="361.2" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Hebron</text>
+<text x="172" y="361.2" font-size="6.8" text-anchor="start" fill="#2E2416">Hebron</text>
+<circle cx="129.4" cy="351.5" r="1.6" fill="#2E2416"/>
+<text x="132.4" y="353.8" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Lachish</text>
+<text x="132.4" y="353.8" font-size="6.8" text-anchor="start" fill="#2E2416">Lachish</text>
+<circle cx="69.1" cy="362.8" r="1.6" fill="#2E2416"/>
+<text x="72.1" y="365.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Gaza</text>
+<text x="72.1" y="365.1" font-size="6.8" text-anchor="start" fill="#2E2416">Gaza</text>
+<circle cx="99.4" cy="316" r="1.6" fill="#2E2416"/>
+<text x="102.4" y="318.3" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Ashdod</text>
+<text x="102.4" y="318.3" font-size="6.8" text-anchor="start" fill="#2E2416">Ashdod</text>
+<circle cx="81.8" cy="333.3" r="1.6" fill="#2E2416"/>
+<text x="84.8" y="335.6" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Ashkelon</text>
+<text x="84.8" y="335.6" font-size="6.8" text-anchor="start" fill="#2E2416">Ashkelon</text>
+<circle cx="129.8" cy="312.2" r="1.6" fill="#2E2416"/>
+<text x="132.8" y="314.5" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Ekron</text>
+<text x="132.8" y="314.5" font-size="6.8" text-anchor="start" fill="#2E2416">Ekron</text>
+<circle cx="129" cy="326.6" r="1.6" fill="#2E2416"/>
+<text x="132" y="328.9" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Gath</text>
+<text x="132" y="328.9" font-size="6.8" text-anchor="start" fill="#2E2416">Gath</text>
+<circle cx="128.1" cy="410.8" r="1.6" fill="#2E2416"/>
+<text x="131.1" y="413.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Beer-sheba</text>
+<text x="131.1" y="413.1" font-size="6.8" text-anchor="start" fill="#2E2416">Beer-sheba</text>
+<circle cx="156.7" cy="146.6" r="1.6" fill="#2E2416"/>
+<text x="159.7" y="148.9" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Mount Carmel</text>
+<text x="159.7" y="148.9" font-size="6.8" text-anchor="start" fill="#2E2416">Mount Carmel</text>
+<circle cx="270.5" cy="314.2" r="1.6" fill="#2E2416"/>
+<text x="273.5" y="316.5" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Mount Nebo</text>
+<text x="273.5" y="316.5" font-size="6.8" text-anchor="start" fill="#2E2416">Mount Nebo</text>
+<circle cx="299.4" cy="279.4" r="1.6" fill="#2E2416"/>
+<text x="302.4" y="281.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Rabbah</text>
+<text x="302.4" y="281.7" font-size="6.8" text-anchor="start" fill="#2E2416">Rabbah</text>
+<rect x="15" y="453.6" width="100.9" height="19" fill="#FFFFFF" fill-opacity="0.7"/>
+<path d="M18 462.6h41.6" stroke="#2E2416" stroke-width="1.2"/>
+<text x="62.6" y="464.6" font-size="5.5" fill="#2E2416">25 km</text>
+<path d="M18 468.6h66.9" stroke="#2E2416" stroke-width="1.2"/>
+<text x="87.9" y="470.6" font-size="5.5" fill="#2E2416">25 mi</text>
+<path d="M378 30l4 -12l4 12l-4 -3z" fill="#2E2416"/>
+<text x="382 " y="37" font-size="6" text-anchor="middle" fill="#2E2416">N</text>
+<rect x="12" y="12" width="376" height="462.6" fill="none" stroke="#5A4E36" stroke-width="0.8"/>
+</svg>

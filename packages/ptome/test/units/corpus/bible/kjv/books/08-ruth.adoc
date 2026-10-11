@@ -1,0 +1,143 @@
+== @RUT
+
+[.book-title]
+The Book of Ruth
+
+=== @1
+
+[discrete.pericope]
+==== Naomi Becomes a Widow
+
+[.parallel]
+(<<1 Timothy 5:3–16>>)
+
+@ Now it came to pass in the days when the judges ##ruled##note:tn[Heb. judged], that there was ##a famine##note:x[<<Gen 12:10; 26:1; Ezek 14:13>>] in the land. And a certain man of Beth-lehem-judah went to sojourn in the country of Moab, he, and his wife, and his two sons.
+@ And the name of the man __was__ Elimelech, and the name of his wife Naomi, and the name of his two sons Mahlon and Chilion, ##Ephrathites##note:x[<<Gen 35:19>>] of Beth-lehem-judah. And they came into the country of Moab, and ##continued##note:tn[Heb. were] there.
+@ And Elimelech Naomi’s husband died; ##and she was##note:x[<<Ps 34:19>>] left, and her two sons.
+@ And they took them wives of the women of Moab; the name of the one __was__ Orpah, and the name of the other ##Ruth##note:x[<<Matt 1:5>>]: and they dwelled there about ten years.
+@ And Mahlon and Chilion died also both of them; and the woman was left of her two sons and her husband.
+
+[discrete.pericope]
+==== Ruth’s Loyalty to Naomi
+
+@ ¶ Then she arose with her daughters in law, that she might return from the country of Moab: for she had heard in the country of Moab how that the LORD had ##visited##note:x[<<Exod 4:31>>] his people ##in giving##note:x[<<Ps 111:5; 132:15>>] them bread.
+@ Wherefore she went forth out of the place where she was, and her two daughters in law with her; and they went on the way to return unto the land of Judah.
+@ And Naomi said unto her two daughters in law, Go, return each to her mother’s house: the LORD deal kindly with you, as ye have dealt with ##the dead##note:x[<<Ruth 1:5; 2:20; Col 3:18>>], and with me.
+@ The LORD grant you that ye may find ##rest##note:x[<<Ruth 3:1>>], each __of you__ in the house of her husband. Then ##she kissed##note:x[<<Gen 29:11; Acts 20:37>>] them; and they lifted up their voice, and wept.
+@ And they said unto her, ##Surely##note:x[<<Zech 8:23>>] we will return with thee unto thy people.
+@ And Naomi said, Turn again, my daughters: why will ye go with me? __are__ there yet __any more__ sons in my womb, ##that they##note:x[<<Gen 38:11; Deut 25:5>>] may be your husbands?
+@ Turn again, my daughters, go __your way;__ for I am ##too old##note:x[<<Gen 17:17>>] to have an husband. If I should say, I have hope, __if__ I should have an husband also to night, and should also bear sons;note:tn[__should have…__: or were with an husband]
+@ Would ye note:x[<<Judg 2:15; Job 19:21; Ps 32:4>>]##tarry##note:tn[Heb. hope] for them till they were grown? would ye stay for them from having husbands? nay, my daughters; for it grieveth me much for your sakes that the hand of the LORD is gone out against me.note:tn[__it grieveth…__: Heb. I have much bitterness]
+@ And they lifted up their voice, and wept again: and ##Orpah##note:x[<<Matt 10:37>>] kissed her mother in law; ##but Ruth##note:x[<<Prov 18:24; Matt 16:24>>] clave unto her.
+@ And she said, Behold, thy sister in law is ##gone back##note:x[<<Zeph 1:6>>] unto her people, and unto ##her gods##note:x[<<Judg 11:24>>]: return thou after thy sister in law.
+@ And Ruth said, Intreat me not ##to leave##note:x[<<2 Kgs 2:2–6>>] thee, __or__ to return from following after thee: for ##whither##note:x[<<2 Sam 15:21>>] thou goest, I will go; and where thou lodgest, I will lodge: ##thy people##note:x[<<Ruth 2:11–12>>] __shall be__ my people, and thy God my God&#58;note:tn[__Intreat…__: or, Be not against me]
+@ Where thou diest, will I die, and there will I be buried: ##the LORD##note:x[<<1 Sam 3:17; 2 Sam 19:13; 1 Kgs 2:23>>] do so to me, and more also, __if ought__ but death part thee and me.
+@ ##When##note:x[<<Acts 21:14>>] she saw that she was stedfastly minded to go with her, then she left speaking unto her.note:tn[__was…__: Heb. strengthened herself]
+
+[discrete.pericope]
+==== The Return to Bethlehem
+
+@ ¶ So they two went until they came to Beth-lehem. And it came to pass, when they were come to Beth-lehem, that ##all the city##note:x[<<Matt 21:10>>] was moved about them, and they said, __Is__ this Naomi?
+@ And she said unto them, Call me not ##Naomi##note:tn[that is, Pleasant], call me ##Mara##note:tn[that is, Bitter]: for the Almighty hath ##dealt##note:x[<<Job 6:4; Ps 88:15; Heb 12:11>>] very bitterly with me.
+@ I went out full, ##and note:x[<<Job 13:26>>]the##note:x[<<1 Sam 2:7–8; Job 1:21>>] LORD hath brought me home again empty: why __then__ call ye me Naomi, seeing the LORD hath testified against me, and the Almighty hath afflicted me?
+@ So Naomi returned, and Ruth the Moabitess, her daughter in law, with her, which returned out of the country of Moab: and they came to Beth-lehem ##in the beginning##note:x[<<Ruth 2:23>>] of barley harvest.
+
+=== @2
+
+[discrete.pericope]
+==== Boaz Meets Ruth
+
+@ And Naomi had a ##kinsman##note:x[<<Ruth 3:2, 12>>] of her husband’s, a mighty man of wealth, of the family of Elimelech; and his name __was__ note:x[<<Ruth 4:21>>]##Boaz##note:tn[Gr. Booz].
+@ And Ruth the Moabitess said unto Naomi, Let me now go to the field, and ##glean ears##note:x[<<Lev 19:9; 23:22; Deut 24:19–21>>] of corn after __him__ in whose sight I shall find grace. And she said unto her, Go, my daughter.
+@ And she went, and came, and ##gleaned##note:x[<<2 Thess 3:12>>] in the field after the reapers: and her hap was to light on a part of the field __belonging__ unto Boaz, who __was__ of the kindred of Elimelech.note:tn[__hap…__: Heb. hap happened]
+
+@ ¶ And, behold, Boaz came from Beth-lehem, and said unto the reapers, ##The LORD##note:x[<<Ps 129:7–8; Luke 1:28; 2 Thess 3:16>>] __be__ with you. And they answered him, The LORD bless thee.
+@ Then said Boaz unto his servant that was set over the reapers, Whose damsel __is__ this?
+@ And the servant that was set over the reapers answered and said, ##It __is__ the##note:x[<<Ruth 1:22>>] Moabitish damsel that came back with Naomi out of the country of Moab:
+@ And she said, ##I pray##note:x[<<Prov 15:33>>] you, let me glean and gather after the reapers among the sheaves: so she came, and hath continued even from the morning until now, that she tarried a little in the house.
+@ Then said Boaz unto Ruth, Hearest thou not, ##my daughter##note:x[<<1 Sam 3:6, 16; 2 Kgs 5:13>>]? Go not to glean in another field, neither go from hence, but abide here fast by my maidens:
+@ __Let__ thine eyes __be__ on the field that they do reap, and go thou after them: have I not charged the young men that they shall not ##touch thee##note:x[<<Gen 20:6; Ps 105:15; 1 John 5:18>>]? and when thou art athirst, go unto the vessels, and drink of __that__ which the young men have drawn.
+@ Then she ##fell##note:x[<<1 Sam 25:23>>] on her face, and bowed herself to the ground, and said unto him, ##Why have##note:x[<<Ruth 2:13; 2 Sam 19:28>>] I found grace in thine eyes, that thou shouldest take knowledge of me, seeing I __am__ a stranger?
+@ And Boaz answered and said unto her, It hath fully been shewed me, ##all that##note:x[<<Ruth 1:14–22>>] thou hast done unto thy mother in law since the death of thine husband: ##and __how__##note:x[<<Luke 14:33; 18:29–30>>] thou hast left thy father and thy mother, and the land of thy nativity, and art come unto a people which thou knewest not heretofore.
+@ The LORD recompense thy work, and a full reward be given thee of the LORD God of Israel, under whose ##wings##note:x[<<Ps 36:7; 63:7; 91:4>>] thou art come to trust.
+@ Then she said, ##Let me find##note:x[<<Gen 33:8; 1 Sam 1:18>>] favour in thy sight, my lord; for that thou hast comforted me, and for that thou hast spoken note:x[<<Gen 34:3>>]##friendly##note:tn[Heb. to the heart] unto thine handmaid, though I be not like unto one of thine handmaidens.note:tn[__Let me…__: or, I find]
+@ note:x[<<Luke 14:12–14>>]And Boaz said unto her, At mealtime come thou hither, and eat of the bread, and dip thy morsel in the vinegar. And she sat beside the reapers: and he reached her parched __corn__, and ##she did##note:x[<<Deut 8:10>>] eat, and ##was sufficed##note:x[<<Ruth 2:18>>], and left.
+@ And when she was risen up to glean, Boaz commanded his young men, saying, Let her glean even among the sheaves, and reproach her not&#58;note:tn[__reproach…__: Heb. shame her not]
+@ ##And let fall also __some__ of the handfuls of purpose for her, and leave __them__, that she may glean __them__, and rebuke her not.##note:x[<<Deut 24:19–21; Rom 12:13; 1 John 3:17–18>>]
+
+@ So ##she gleaned##note:x[<<Prov 31:27>>] in the field until even, and beat out that she had gleaned: and it was about an ephah of barley.
+
+@ ¶ And she took __it__ up, and went into the city: and her mother in law saw what she had gleaned: and she brought forth, and gave to her that ##she had reserved##note:x[<<Ruth 2:14>>] after she was sufficed.
+@ And her mother in law said unto her, Where hast thou gleaned to day? and where wroughtest thou? ##blessed##note:x[<<Ruth 2:10; Ps 41:1>>] be he that did take knowledge of thee. And she shewed her mother in law with whom she had wrought, and said, The man’s name with whom I wrought to day __is__ Boaz.
+@ And Naomi said unto her daughter in law, ##Blessed##note:x[<<2 Sam 2:5>>] __be__ he of the LORD, who hath not left off his kindness to the living and to the dead. And Naomi said unto her, The man __is__ near of kin unto us, ##one of our##note:x[<<Lev 25:25; Ruth 3:9>>] next kinsmen.note:tn[__one of…__: or, one that hath right to redeem]
+@ And Ruth the Moabitess said, He said unto me also, Thou shalt keep fast by my young men, until they have ended all my harvest.
+@ And Naomi said unto Ruth her daughter in law, ##__It is__ good##note:x[<<Song 1:8>>], my daughter, that thou go out with his maidens, that they meet thee not in any other field.note:tn[__meet…__: or, fall upon thee]
+@ ##So she kept fast by the maidens of Boaz to glean unto the end of barley harvest and of wheat harvest; and dwelt with her mother in law.##note:x[<<Eph 6:1–3>>]
+
+=== @3
+
+[discrete.pericope]
+==== Ruth’s Redemption Assured
+
+@ Then Naomi her mother in law said unto her, My daughter, ##shall I not##note:x[<<Ruth 1:9; 1 Tim 5:8, 14>>] seek rest for thee, that it may be well with thee?
+@ And now ##__is__ not Boaz##note:x[<<Deut 25:5–6; Ruth 2:20–23>>] of our kindred, ##with whose##note:x[<<Ruth 2:8>>] maidens thou wast? Behold, he winnoweth barley to night in the threshingfloor.
+@ Wash thyself therefore, and ##anoint thee##note:x[<<2 Sam 14:2>>], and ##put thy##note:x[<<Esth 5:1; 1 Tim 2:9–10>>] raiment upon thee, and get thee down to the floor: __but__ make not thyself known unto the man, until he shall have done eating and drinking.
+@ And it shall be, when he lieth down, that thou shalt mark the place where he shall lie, and thou shalt go in, and ##uncover##note:tn[or, lift up the clothes that are on] his feet, and lay thee down; and he will tell thee what thou shalt do.
+@ And she said unto her, All that thou sayest unto me I will do.
+
+@ ¶ And she went down unto the floor, and did according to all that her mother in law bade her.
+@ And when Boaz had eaten and drunk, and ##his heart##note:x[<<Judg 19:6, 9; Esth 1:10>>] was merry, he went to lie down at the end of the heap of corn: and she came softly, and uncovered his feet, and laid her down.
+
+@ ¶ And it came to pass at midnight, that the man was afraid, and ##turned##note:tn[or, took hold on] himself: and, behold, a woman lay at his feet.
+@ And he said, Who __art__ thou? And she answered, I __am__ Ruth thine handmaid: ##spread therefore##note:x[<<Ezek 16:8>>] thy skirt over thine handmaid; for thou __art__ ##a near kinsman##note:x[<<Ruth 2:20; 3:12>>].note:tn[__a near…__: or, one that hath right to redeem]
+@ And he said, ##Blessed##note:x[<<Ruth 2:4, 20; 1 Cor 13:4–5>>] __be__ thou of the LORD, my daughter: __for__ thou hast shewed more kindness in the latter end than at the beginning, inasmuch as thou followedst not young men, whether poor or rich.
+@ And now, my daughter, fear not; I will do to thee all that thou requirest: for all the note:x[<<Prov 12:4; 31:10, 29–31>>]##city##note:tn[Heb. gate] of my people doth know that thou __art__ a virtuous woman.
+@ And now it is true that I __am thy__ near kinsman: howbeit ##there is##note:x[<<Ruth 4:1; Matt 7:12; 1 Thess 4:6>>] a kinsman nearer than I.
+@ Tarry this night, and it shall be in the morning, __that__ ##if he will##note:x[<<Ruth 2:20; 4:5>>] perform unto thee the part of a kinsman, well; let him do the kinsman’s part: but if he will not do the part of a kinsman to thee, then will I do the part of a kinsman to thee, __as__ ##the LORD liveth##note:x[<<Jer 4:2>>]: lie down until the morning.
+
+@ ¶ And she lay at his feet until the morning: and she rose up before one could know another. And he said, ##Let it not##note:x[<<Rom 14:16; 2 Cor 8:21>>] be known that a woman came into the floor.
+@ Also he said, Bring the ##vail##note:tn[or, sheet, or, apron] that __thou hast__ upon thee, and hold it. And when she held it, ##he measured##note:x[<<Isa 32:8>>] six __measures__ of barley, and laid __it__ on her: and she went into the city.
+@ And when she came to her mother in law, she said, Who __art__ thou, my daughter? And she told her all that the man had done to her.
+@ And she said, These six __measures__ of barley gave he me; for he said to me, Go not empty unto thy mother in law.
+@ Then said she, ##Sit still##note:x[<<Ps 37:3–5; Isa 28:16; 30:7>>], my daughter, until thou know how the matter will fall: for the man will not be in rest, until he have finished the thing this day.
+
+=== @4
+
+[discrete.pericope]
+==== Boaz Redeems Ruth
+
+@ Then went Boaz up ##to the gate##note:x[<<Deut 25:7>>], and sat him down there: and, behold, ##the kinsman##note:x[<<Ruth 3:12>>] of whom Boaz spake came by; unto whom he said, Ho, such a one! turn aside, sit down here. And he turned aside, and sat down.
+@ And he took ten men of ##the elders##note:x[<<1 Kgs 21:8; Prov 31:23>>] of the city, and said, Sit ye down here. And they sat down.
+@ And he said unto the kinsman, Naomi, that is come again out of the country of Moab, selleth a parcel of land, which __was__ our brother Elimelech’s:
+@ And I thought to advertise thee, saying, Buy __it__ before the inhabitants, and before the elders of my people. If thou wilt redeem __it__, redeem __it:__ but if thou wilt not redeem __it, then__ tell me, that I may know: for __there is__ none to redeem __it__ beside thee; and I __am__ after thee. And he said, I will redeem __it__.note:tn[__I thought…__: Heb. I said, I will reveal in thine ear]
+@ Then said Boaz, What day thou buyest the field of the hand of Naomi, thou must buy __it__ also of Ruth the Moabitess, the wife of the dead, ##to raise up##note:x[<<Gen 38:8; Deut 25:5–6; Matt 22:24>>] the name of the dead upon his inheritance.
+
+@ ¶ And the kinsman said, I cannot redeem __it__ for myself, lest I mar mine own inheritance: redeem thou my right to thyself; for I cannot redeem __it__.
+@ Now this __was the manner__ in former time in Israel concerning redeeming and concerning changing, for to confirm all things; ##a man plucked off##note:x[<<Deut 25:7–10>>] his shoe, and gave __it__ to his neighbour: and this __was__ a testimony in Israel.
+@ Therefore the kinsman said unto Boaz, Buy __it__ for thee. So he drew off his shoe.
+
+@ ¶ And Boaz said unto the elders, and __unto__ all the people, Ye __are__ witnesses this day, that I have bought all that __was__ Elimelech’s, and all that __was__ Chilion’s and Mahlon’s, of the hand of Naomi.
+@ Moreover Ruth the Moabitess, the wife of Mahlon, ##have I##note:x[<<Eph 5:25>>] purchased to be my wife, to raise up ##the name##note:x[<<Deut 25:6>>] of the dead upon his inheritance, that the name of the dead be not cut off from among his brethren, and from the gate of his place: ye __are__ witnesses this day.
+@ And all the people that __were__ in the gate, and the elders, said, __We are__ witnesses. The LORD make the woman that is come into thine house like ##Rachel##note:x[<<Gen 29:32–35>>] and like Leah, which two did build the house of Israel: and do thou worthily in ##Ephratah##note:x[<<Mic 5:2; Matt 2:6>>], and be famous in Beth-lehem&#58;note:tn[__do thou…__: or, get thee riches, or, power]note:tn[__be famous__: Heb. proclaim thy name]
+@ And let thy house be like the house of Pharez, ##whom##note:x[<<Gen 38:29; 1 Chr 2:4>>] Tamar bare unto Judah, ##of the seed##note:x[<<1 Sam 2:20>>] which the LORD shall give thee of this young woman.
+
+[discrete.pericope]
+==== Boaz Marries Ruth
+
+@ ¶ So Boaz took Ruth, and she was his wife: and when he went in unto her, ##the LORD##note:x[<<Gen 29:31; 33:5; Ps 127:3>>] gave her conception, and she bare a son.
+@ And ##the women##note:x[<<Luke 1:58>>] said unto Naomi, Blessed __be__ the LORD, which hath not ##left thee##note:x[<<Gen 12:2; Matt 1:5–20>>] this day without a ##kinsman##note:tn[or, redeemer], that his name may be famous in Israel.note:tn[__left…__: Heb. caused to cease unto thee]
+@ And he shall be unto thee a restorer of __thy__ life, and ##a nourisher##note:x[<<Gen 45:11; Ps 55:22; Isa 46:4>>] of thine old age: for thy daughter in law, which loveth thee, which is better to thee than seven sons, hath born him.note:tn[__a nourisher of__: Heb. to nourish]note:tn[__thine…__: Heb. thy gray hairs]
+@ And Naomi took the child, and laid it in her bosom, and became nurse unto it.
+@ And the women her neighbours gave it a name, saying, There is a son born to Naomi; and they called his name Obed: he __is__ the father of Jesse, the father of David.
+
+[discrete.pericope]
+==== The Line of David
+
+[.parallel]
+(<<Matthew 1:1–17; Luke 3:23–38>>)
+
+@ ¶ Now these __are__ the generations of ##Pharez##note:x[<<1 Chr 2:4–8; Matt 1:3; Luke 3:33>>]: Pharez begat Hezron,
+@ And Hezron begat Ram, and Ram begat Amminadab,
+@ And Amminadab begat Nahshon, and Nahshon begat ##Salmon##note:tn[or, Salmah],
+@ And ##Salmon##note:x[<<Matt 1:5; Luke 3:32>>] begat Boaz, ##and Boaz##note:x[<<Matt 1:5>>] begat Obed,
+@ And Obed begat Jesse, and Jesse begat David.

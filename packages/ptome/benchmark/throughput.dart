@@ -15,7 +15,7 @@
 //   dart run benchmark/throughput.dart --two-byte
 //
 // --two-byte times the corpus with its apostrophes curly (’) and a verse
-// mark (`@ `) before each line of prose, as in loci's Bible dialect: text
+// mark (`@ `) before each line of prose, as a Bible in units has: text
 // outside Latin-1 takes the VM's slower two-byte paths, which the plain
 // corpus never reaches (the e-mail pass once cost the KJV 12 s this way).
 //

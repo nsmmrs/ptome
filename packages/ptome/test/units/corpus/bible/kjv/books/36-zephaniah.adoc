@@ -1,0 +1,120 @@
+== @ZEP
+
+[.book-title]
+Zephaniah
+
+=== @1
+
+[discrete.pericope]
+==== Zephaniah Prophesies Judgment on Judah
+
+[.parallel]
+(<<Matthew 13:36–43>>)
+
+@ The word of the LORD which came unto Zephaniah the son of Cushi, the son of Gedaliah, the son of Amariah, the son of Hizkiah, ##in the days##note:x[<<2 Chr 34:1–33; Jer 1:2>>] of Josiah the son of Amon, king of Judah.
+@ I will ##utterly##note:x[<<2 Kgs 22:16–17; Jer 36:29; Mic 7:13>>] consume all __things__ from off the land, saith the LORD.note:tn[__I will…__: Heb. By taking away I will make an end]note:tn[__the land__: Heb. the face of the land]
+@ note:x[<<Ezek 7:19>>]I will ##consume man##note:x[<<Hos 4:3>>] and beast; I will consume the fowls of the heaven, and the fishes of the sea, and the ##stumblingblocks##note:tn[or, idols] with the wicked; and I will cut off man from off the land, saith the LORD.
+@ I will also stretch out mine hand upon Judah, and upon all the inhabitants of Jerusalem; and I will cut off the remnant of Baal from this place, __and__ the name of ##the Chemarims##note:x[<<Hos 10:5>>] with the priests;
+@ ##And them##note:x[<<2 Kgs 17:33>>] that ##worship##note:x[<<2 Kgs 23:12; Jer 19:13>>] the host of heaven upon the housetops; and them that worship __and__ that swear by the LORD, and that swear by Malcham;note:tn[__by the…__: or, to the LORD]
+@ And them that are ##turned##note:x[<<Isa 1:4; Jer 2:13; 15:6>>] back from the LORD; and __those__ that have not sought the LORD, nor enquired for him.
+
+[discrete.pericope]
+==== The Day of the LORD
+
+[.parallel]
+(<<Malachi 4:1–6; 1 Thessalonians 5:1–11; 2 Peter 3:8–13>>)
+
+@ Hold ##thy##note:x[<<Hab 2:20; Zech 2:13>>] peace at the presence of the Lord GOD: ##for the day##note:x[<<Zeph 1:14>>] of the LORD __is__ at hand: for the LORD hath prepared a sacrifice, he hath ##bid##note:tn[Heb. sanctified, or, prepared] his guests.
+@ And it shall come to pass in the day of the LORD’s sacrifice, that I will note:x[<<Isa 24:21>>]##punish##note:tn[Heb. visit upon] ##the princes##note:x[<<2 Kgs 25:19–21>>], and the king’s children, and all such as are clothed with ##strange##note:x[<<Isa 3:18–24>>] apparel.
+@ In the same day also will I punish all those that ##leap##note:x[<<1 Sam 5:5>>] on the threshold, which fill their masters’ houses with violence and deceit.
+@ And it shall come to pass in that day, saith the LORD, __that there shall be__ ##the noise##note:x[<<Amos 8:3>>] of a cry from ##the fish gate##note:x[<<2 Chr 33:14>>], and an howling from ##the second##note:x[<<2 Kgs 22:14>>], and a great crashing from the hills.
+@ ##Howl##note:x[<<Jas 5:1>>], ye inhabitants of Maktesh, for all the merchant people are cut down; all they that bear silver are cut off.
+@ And it shall come to pass at that time, __that__ I will search Jerusalem with candles, and punish ##the men##note:x[<<Jer 48:11; Amos 6:1>>] that are ##settled##note:tn[Heb. curded, or, thickened] on their lees: that say in their heart, ##The LORD##note:x[<<Ezek 8:12>>] will not do good, neither will he do evil.
+@ Therefore their goods shall become a booty, and their houses a desolation: they shall also ##build##note:x[<<Deut 28:30; Amos 5:11; Mic 6:15>>] houses, but not inhabit __them;__ and they shall plant vineyards, but not drink the wine thereof.
+
+@ The ##great##note:x[<<Ezek 30:3; Zeph 1:7; Mal 4:5>>] day of the LORD __is__ near, __it is__ near, and hasteth greatly, __even__ the voice of the day of the LORD: the mighty man shall cry there bitterly.
+@ That day __is__ a day of wrath, a day of trouble and distress, a day of wasteness and desolation, ##a day of darkness##note:x[<<Joel 2:2>>] and gloominess, a day of clouds and thick darkness,
+@ A day of the trumpet and alarm against the fenced cities, and against the high towers.
+@ And I will bring distress upon men, that ##they shall##note:x[<<Rev 3:17>>] walk like blind men, because they have sinned against the LORD: ##and their blood##note:x[<<Ps 83:10>>] shall be poured out as dust, and their flesh as the dung.
+@ Neither ##their silver##note:x[<<Ezek 7:19>>] nor their gold shall be able to deliver them in the day of the LORD’s wrath; ##but##note:x[<<Zeph 3:8>>] the whole land shall be devoured by ##the fire##note:x[<<Zeph 3:8>>] of his jealousy: for he shall make even a speedy riddance of all them that dwell in the land.
+
+=== @2
+
+[discrete.pericope]
+==== A Call to Repentance
+
+[.parallel]
+(<<Joel 1:13–20; Amos 5:4–15; Luke 13:1–5>>)
+
+@ Gather yourselves together, yea, ##gather together##note:x[<<2 Chr 20:4; Neh 8:1; Joel 1:14>>], O nation not desired;note:tn[__not…__: or, not desirous]
+@ Before the decree bring forth, __before__ the day pass ##as##note:x[<<Ps 1:4; Isa 17:13>>] the chaff, ##before the fierce##note:x[<<Nah 1:6>>] anger of the LORD come upon you, before the day of the LORD’s anger come upon you.
+@ ##Seek ye##note:x[<<Amos 5:14–15>>] the LORD, ##all##note:x[<<Ps 76:9>>] ye meek of the earth, which have wrought his judgment; seek righteousness, seek meekness: it may be ye shall be ##hid##note:x[<<Isa 26:20–21>>] in the day of the LORD’s anger.
+
+[discrete.pericope]
+==== Judgment on the Philistines
+
+[.parallel]
+(<<Jeremiah 47:1–7>>)
+
+@ ¶ For ##Gaza##note:x[<<Jer 47:1–7; Amos 1:6–8; Zech 9:5–7>>] shall be forsaken, and Ashkelon a desolation: they shall drive out Ashdod at the noon day, and Ekron shall be rooted up.
+@ note:x[<<Amos 3:1>>]Woe unto the inhabitants of the sea coast, the nation of the ##Cherethites##note:x[<<Jer 47:7; Ezek 25:16>>]! the word of the LORD __is__ against you; O Canaan, the land of the Philistines, I will even destroy thee, that there shall be no inhabitant.
+@ And the sea coast shall be dwellings __and__ cottages for shepherds, and folds for flocks.
+@ And the coast shall be for ##the remnant##note:x[<<Mic 5:3–8>>] of the house of Judah; they shall feed thereupon: in the houses of Ashkelon shall they lie down in the evening: for the LORD their God ##shall visit##note:x[<<Exod 4:31>>] them, and ##turn##note:x[<<Zeph 3:20>>] away their captivity.note:tn[__for the LORD__: or, when, etc]
+
+[discrete.pericope]
+==== Judgment on Moab and Ammon
+
+[.parallel]
+(<<Isaiah 16:1–14; Jeremiah 48:1–47>>)
+
+@ ¶ I have heard the reproach of Moab, and ##the revilings##note:x[<<Ps 83:4–7; Ezek 25:3–7>>] of the children of Ammon, whereby they have reproached my people, and magnified __themselves__ against their border.
+@ Therefore __as__ I live, saith the LORD of hosts, the God of Israel, ##Surely##note:x[<<Isa 11:14; 15:1–9>>] Moab shall be as Sodom, and the children of Ammon ##as Gomorrah##note:x[<<Deut 29:23>>], __even__ the breeding of nettles, and saltpits, and a perpetual desolation: the residue of my people shall spoil them, and the remnant of my people shall possess them.
+@ This shall they have ##for##note:x[<<Isa 16:6; Jer 48:29>>] their pride, because they have reproached and magnified __themselves__ against the people of the LORD of hosts.
+@ The LORD __will be__ terrible unto them: ##for##note:x[<<Zech 13:2>>] he will ##famish##note:tn[Heb. make lean] all the gods of the earth; ##and __men__##note:x[<<Mic 4:1–3; Zech 14:9–21>>] shall worship him, every one from his place, __even__ all the isles of the heathen.
+
+[discrete.pericope]
+==== Judgment on Cush and Assyria
+
+@ ¶ Ye ##Ethiopians##note:x[<<Ezek 30:4–9>>] also, ye __shall be__ slain by my sword.
+@ And he will stretch out his hand against the north, and destroy Assyria; and ##will make##note:x[<<Nah 3:7>>] Nineveh a desolation, __and__ dry like a wilderness.
+@ And flocks shall lie down in the midst of her, all the beasts of the nations: both the ##cormorant##note:tn[or, pelican] and the bittern shall lodge in the upper lintels of it; __their__ voice shall sing in the windows; desolation __shall be__ in the thresholds: for he shall uncover the cedar work.note:tn[__upper…__: or, knops, or, chapiters]note:tn[__for…__: or, when he hath uncovered]
+@ This __is__ ##the rejoicing##note:x[<<Isa 22:2; 47:7>>] city that dwelt carelessly, that said in her heart, ##I __am__##note:x[<<Ezek 28:2>>], and __there is__ none beside me: how is she become a desolation, a place for beasts to lie down in! every one that passeth by her shall hiss, __and__ wag his hand.
+
+=== @3
+
+[discrete.pericope]
+==== Judgment on Jerusalem
+
+@ Woe to her that is filthy and polluted, ##to the##note:x[<<Isa 30:12; 59:13; Jer 6:6>>] oppressing city!note:tn[__her…__: or, gluttonous: Heb. craw]
+@ She ##obeyed##note:x[<<Jer 7:23–28; 22:21>>] not the voice; ##she received##note:x[<<Jer 5:3>>] not ##correction##note:tn[or, instruction]; she trusted not in the LORD; she drew not near to her God.
+@ Her princes within her __are__ roaring lions; her judges __are__ ##evening##note:x[<<Hab 1:8>>] wolves; they gnaw not the bones till the morrow.
+@ Her prophets __are__ ##light##note:x[<<Lam 2:14; Hos 9:7>>] __and__ treacherous persons: ##her priests##note:x[<<Ezek 22:26>>] have polluted the sanctuary, they have done violence to the law.
+@ The ##just##note:x[<<Deut 32:4; Ps 145:17>>] LORD __is__ in the midst thereof; he will not do iniquity: ##every morning##note:x[<<Lam 3:23>>] doth he bring his judgment to light, he faileth not; but the unjust knoweth no shame.note:tn[__every…__: Heb. morning by morning]
+
+[discrete.pericope]
+==== Purification of the Nations
+
+@ I have ##cut##note:x[<<1 Cor 10:6>>] off the nations: their ##towers##note:tn[or, corners] are desolate; I made their streets waste, that none passeth by: their cities are destroyed, so that there is no man, that there is none inhabitant.
+@ I said, ##Surely##note:x[<<Jer 36:3>>] thou wilt fear me, thou wilt receive instruction; so their dwelling should not be cut off, howsoever I punished them: but they rose early, __and__ ##corrupted##note:x[<<Hos 9:9>>] all their doings.
+
+@ ¶ Therefore ##wait##note:x[<<Ps 27:14>>] ye upon me, saith the LORD, until the day that I rise up to the prey: for my determination __is__ ##to gather##note:x[<<Joel 3:2>>] the nations, that I may assemble the kingdoms, to pour upon them mine indignation, __even__ all my fierce anger: ##for all##note:x[<<Zeph 1:18>>] the earth shall be devoured with the fire of my jealousy.
+
+[discrete.pericope]
+==== A Faithful Remnant
+
+@ For then ##will##note:x[<<Isa 19:18>>] I turn to the people a pure note:x[<<Gen 11:1>>]##language##note:tn[Heb. lip], ##that##note:x[<<Ps 22:27>>] they may all call upon the name of the LORD, to serve him with one ##consent##note:tn[Heb. shoulder].
+@ ##From beyond the rivers of Ethiopia my suppliants, __even__ the daughter of my dispersed, shall bring mine offering.##note:x[<<Ps 68:31; Isa 11:11; 18:1>>]
+@ In that day ##shalt thou##note:x[<<Isa 54:4; Joel 2:26–27>>] not be ashamed for all thy doings, wherein thou hast transgressed against me: for then I will take away out of the midst of thee them that rejoice in thy pride, and thou shalt no more be haughty ##because of my holy##note:x[<<Isa 11:9>>] mountain.note:tn[__because…__: Heb. in my holy]
+@ I will also ##leave##note:x[<<Isa 14:32; 61:1–3>>] in the midst of thee an afflicted ##and##note:x[<<Nah 1:7>>] poor people, and they shall trust in the name of the LORD.
+@ The ##remnant##note:x[<<Mic 4:7; Zeph 2:7>>] of Israel shall not do iniquity, ##nor##note:x[<<Rev 14:5>>] speak lies; neither shall a deceitful tongue be found in their mouth: for they shall feed and lie down, and none shall make __them__ afraid.
+
+[discrete.pericope]
+==== Israel’s Restoration
+
+@ ¶ Sing, O daughter of Zion; ##shout##note:x[<<Isa 12:6; Zech 2:10–11>>], O Israel; be glad and rejoice with all the heart, ##O daughter of Jerusalem##note:x[<<Mic 4:8>>].
+@ The LORD ##hath taken##note:x[<<Isa 51:22>>] away thy judgments, he hath cast out thine enemy: the king of Israel, __even__ the LORD, __is__ in the midst of thee: ##thou##note:x[<<Isa 51:22; 60:18>>] shalt not see evil any more.
+@ In that day it shall ##be said##note:x[<<Isa 35:3–4; 41:10; Heb 12:12>>] to Jerusalem, Fear thou not: __and to__ Zion, Let not thine hands be ##slack##note:tn[or, faint].
+@ The LORD thy God in the midst of thee ##__is__ mighty##note:x[<<Heb 7:25>>]; he will save, he ##will rejoice##note:x[<<Ps 147:11; 149:4>>] over thee with joy; he will ##rest##note:tn[Heb. be silent] in his love, he will joy over thee with singing.
+@ I will gather __them that are__ ##sorrowful##note:x[<<Ps 42:2–4>>] for the solemn assembly, __who__ are of thee, __to whom__ the reproach of it __was__ a burden.note:tn[__reproach…__: Heb. the burden upon it was reproach]
+@ Behold, at that time ##I will undo##note:x[<<Isa 49:25–26; Jer 30:16>>] all that afflict thee: ##and I will##note:x[<<Isa 60:14>>] save her that halteth, and gather her that was driven out; and I will get them praise and fame in every land where they have been put to shame.note:tn[__get…__: Heb. set them for a praise]note:tn[__where…__: Heb. of their shame]
+@ At that time will I bring you __again__, even in the time that I gather you: ##for##note:x[<<Isa 60:15; Mal 3:12>>] I will make you a name and a praise among all people of the earth, when ##I turn##note:x[<<Jer 29:14>>] back your captivity before your eyes, saith the LORD.

@@ -1,0 +1,83 @@
+version: 2
+scheme:
+  uk:
+    cite: "s. {{section}}"
+    level:
+      - name: "section"
+        insert: "uk"
+        break: "heading"
+        cite-wrap: "s. %"
+        cite-range-wrap: "ss. %"
+        gaps: true
+        id: "section-{{section}}"
+        reftext: "s. {{section}}"
+        title: "{{section}} {{title}}"
+      - name: "subsection"
+        insert: "uk"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "section-{{section}}-{{subsection}}"
+        reftext: "s. {{section}}({{subsection}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "subsection"
+      - name: "paragraph"
+        type: "alpha-uk"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "section-{{section}}{{#subsection}}-{{subsection}}{{/subsection}}-{{paragraph}}{{#version}}n{{version}}{{/version}}"
+        reftext: "s. {{section}}{{#subsection}}({{subsection}}){{/subsection}}({{paragraph}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "paragraph"
+      - name: "subparagraph"
+        type: "roman"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "section-{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}-{{subparagraph}}"
+        reftext: "s. {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}({{subparagraph}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "subparagraph"
+      - name: "clause"
+        type: "ALPHA"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "section-{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}{{#subparagraph}}-{{subparagraph}}{{/subparagraph}}-{{clause}}"
+        reftext: "s. {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}{{#subparagraph}}({{subparagraph}}){{/subparagraph}}({{clause}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "clause"
+range:
+  ins:
+    role: "inserted"
+  sub:
+    role: "substituted"
+stream:
+  F:
+    placement: "footnote"
+    prefix: "F: "
+  M:
+    placement: "footnote"
+    prefix: "M: "
+  C:
+    placement: "footnote"
+    prefix: "C: "
+  I:
+    placement: "footnote"
+    prefix: "I: "
+  E:
+    placement: "footnote"
+    prefix: "E: "
+citation:
+  default:
+    attribution: "{{title}}, {{passage}}"
+    title: ""

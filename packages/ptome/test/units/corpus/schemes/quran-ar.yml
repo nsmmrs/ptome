@@ -1,0 +1,6 @@
+version: 2
+level-presentation:
+  quran:
+    ayah:
+      end: "۝{{ayah|arabic-indic}}"
+      end-before: " "

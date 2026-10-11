@@ -1,0 +1,22 @@
+# A reference Bible from a document in units: cross-references in the center
+# column, the page's first and last verse in the running head.
+extends: ./kjv-theme.yml
+page:
+  column-gap: 72
+role:
+  xref:
+    display: side
+    font-size: 6
+    font-color: #5A5A5A
+side-notes:
+  column: center
+  item-spacing: 2
+running-content:
+  units: verse
+header:
+  recto:
+    center:
+      content: '{page-units-long}'
+  verso:
+    center:
+      content: '{page-units-long}'

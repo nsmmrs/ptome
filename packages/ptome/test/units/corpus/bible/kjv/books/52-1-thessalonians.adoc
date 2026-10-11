@@ -1,0 +1,154 @@
+== @1TH
+
+[.book-title]
+The First Epistle of Paul the Apostle to the Thessalonians
+
+=== @1
+
+[discrete.pericope]
+==== Greetings to the Thessalonians
+
+[.parallel]
+(<<2 Thessalonians 1:1–4>>)
+
+@ note:x[<<2 Thess 1:1>>]Paul, and Silvanus, and Timotheus, unto the church of the Thessalonians __which is__ ##in God##note:x[<<2 Thess 1:1>>] the Father and __in__ the Lord Jesus Christ: ##Grace##note:x[<<Rom 1:7>>] __be__ unto you, and peace, from God our Father, and the Lord Jesus Christ.
+@ ##We give thanks to God always for you all, making mention of you in our prayers;##note:x[<<Rom 1:8–9; Eph 1:15–16; Phlm 1:4>>]
+@ Remembering without ceasing ##your##note:x[<<Gal 5:6; Rev 2:19>>] work of faith, and labour of love, ##and patience##note:x[<<1 Cor 13:13>>] of hope in our Lord Jesus Christ, in the sight of God and our Father;
+@ ##Knowing##note:x[<<2 Pet 1:10>>], brethren ##beloved, your election of God##note:x[<<2 Thess 2:13; Titus 3:4–5>>].
+@ For our gospel came not unto you in word only, ##but##note:x[<<Mark 16:20>>] also in power, and in the Holy Ghost, and in much assurance; as ye know ##what##note:x[<<1 Cor 2:2–5; 2 Thess 3:7–9>>] manner of men we were among you for your sake.
+@ And ##ye##note:x[<<1 Cor 4:16; 11:1>>] became followers of us, and of the Lord, having received the word in much affliction, ##with joy##note:x[<<Acts 13:52>>] of the Holy Ghost:
+@ So that ye were ##ensamples##note:x[<<1 Tim 4:12; Titus 2:7; 1 Pet 5:3>>] to all that believe in Macedonia and Achaia.
+@ For ##from##note:x[<<Isa 52:7; Rom 10:14–18>>] you sounded out the word of the Lord not only in Macedonia and Achaia, but also ##in every##note:x[<<Rom 1:8>>] place your faith to God- ward is spread abroad; so that we need not to speak any thing.
+@ For they themselves shew of us what manner of entering in we had unto you, and how ##ye##note:x[<<1 Cor 12:2; Gal 4:8–9>>] turned to God from idols to serve ##the living##note:x[<<1 Tim 4:10>>] and true God;
+@ And to ##wait##note:x[<<Isa 25:8–9>>] for his Son from heaven, whom he raised from the dead, __even__ ##Jesus##note:x[<<Rom 5:9–10; 1 Thess 5:9>>], which delivered us from the wrath to come.
+
+=== @2
+
+[discrete.pericope]
+==== Paul’s Ministry
+
+@ For yourselves, brethren, know ##our##note:x[<<1 Thess 2:13; 2 Thess 3:1>>] entrance in unto you, that it was not ##in vain##note:x[<<Hab 2:13>>]:
+@ But even after that we had suffered before, and were ##shamefully##note:x[<<Acts 16:22–24; 2 Tim 1:12>>] entreated, as ye know, at Philippi, we were ##bold##note:x[<<Acts 4:13>>] in our God to speak unto you the gospel of God with much contention.
+@ ##For our exhortation __was__ not of deceit, nor of uncleanness, nor in guile:##note:x[<<2 Cor 2:17; 4:2; 1 Thess 2:5–6>>]
+@ But as we were allowed of God ##to be##note:x[<<Gal 2:7>>] put in trust with the gospel, even so we speak; ##not##note:x[<<Gal 1:10>>] as pleasing men, ##but God##note:x[<<Rom 8:27>>], which trieth our hearts.
+@ For neither at any time used we flattering words, as ye know, nor ##a cloke##note:x[<<Acts 20:33; 2 Cor 12:17>>] of covetousness; ##God##note:x[<<Rom 1:9>>] __is__ witness:
+@ Nor ##of men##note:x[<<John 5:41, 44; Gal 1:10>>] sought we glory, neither of you, nor __yet__ of others, when we might have been burden some, as the apostles of Christ.
+@ But ##we##note:x[<<2 Tim 2:24–25>>] were gentle among you, even ##as##note:x[<<Isa 66:13; 1 Thess 2:11>>] a nurse cherisheth her children:
+@ So being affectionately desirous of you, we were willing to have imparted unto you, not the gospel of God only, ##but##note:x[<<2 Cor 12:15; Phil 2:17; 1 John 3:16>>] also our own souls, because ye were dear unto us.
+@ For ye remember, brethren, ##our##note:x[<<Acts 18:3; 2 Thess 3:7–9>>] labour and travail: for labouring night and day, because we would not be ##chargeable##note:x[<<2 Cor 11:9>>] unto any of you, we preached unto you the gospel of God.
+@ Ye __are__ ##witnesses##note:x[<<1 Thess 1:5>>], and God __also__, ##how##note:x[<<2 Cor 1:12; 1 Pet 5:3>>] holily and justly and unblameably we behaved ourselves among you that believe:
+@ ##As##note:x[<<1 Cor 4:14–15>>] ye know ##how##note:x[<<2 Thess 3:12; Heb 13:22>>] we exhorted and comforted and charged every one of you, as a father __doth__ his children,
+@ That ye would ##walk##note:x[<<Eph 4:1; 1 John 1:6–7; 2:6>>] worthy of God, who hath called you unto his kingdom and glory.
+
+@ For this cause also thank we God without ceasing, because, when ye received ##the word of God##note:x[<<Rom 10:17; Heb 4:12>>] which ye heard of us, ye received __it__ not __as__ the word of men, but as it is in truth, the word of God, which ##effectually##note:x[<<Heb 4:12>>] worketh also in you that believe.
+@ For ye, brethren, became followers of the churches of God which in Judaea are in Christ Jesus: for ##ye also##note:x[<<1 Thess 3:4>>] have suffered like things of your own countrymen, ##even##note:x[<<Heb 5:7–8; 10:33–34>>] as they __have__ of the Jews:
+@ Who both ##killed##note:x[<<Matt 5:12; Luke 11:48–51; Acts 7:52>>] the Lord Jesus, and their own prophets, and have persecuted us; and they please not God, and are contrary to all men:
+@ ##Forbidding##note:x[<<Acts 14:5, 19; 17:13>>] us to speak to the Gentiles that they might be saved, to fill up their sins alway: for the wrath is come upon them to the uttermost.
+
+[discrete.pericope]
+==== Paul’s Longing to Visit
+
+@ But we, brethren, being taken from you for a short time ##in presence##note:x[<<1 Cor 5:3; Col 2:5>>], not in heart, ##endeavoured##note:x[<<1 Thess 3:6>>] the more abundantly to see your face with great desire.
+@ Wherefore we would have come unto you, even I Paul, once and again; but ##Satan##note:x[<<Rom 1:13; 15:22; Rev 2:10>>] hindered us.
+@ For what __is__ ##our hope##note:x[<<Phil 4:1>>], or joy, or crown of rejoicing? __Are__ not even ye ##in##note:x[<<Phil 4:1; 1 Thess 3:13>>] the presence of our Lord Jesus Christ at his coming?
+@ For ye are our glory and joy.
+
+=== @3
+
+[discrete.pericope]
+==== Timothy’s Visit
+
+@ Wherefore ##when##note:x[<<1 Thess 2:17; 3:5>>] we could no longer forbear, ##we thought##note:x[<<Acts 17:15>>] it good to be left at Athens alone;
+@ And sent Timotheus, ##our brother##note:x[<<Eph 6:21>>], and minister of God, and our fellowlabourer in the gospel of Christ, ##to establish##note:x[<<Acts 14:22–23>>] you, and to comfort you concerning your faith:
+@ That no man should be ##moved##note:x[<<Rom 5:3>>] by these afflictions: for yourselves know that ##we are##note:x[<<Acts 9:16; 14:22>>] appointed thereunto.
+@ For verily, when we were with you, we told you before that we should suffer tribulation; ##even##note:x[<<2 Cor 8:1–2; 1 Thess 2:2, 14>>] as it came to pass, and ye know.
+@ For this cause, when I could no longer forbear, I sent to know your faith, ##lest##note:x[<<Matt 4:3; 2 Cor 2:11; Jas 1:13–14>>] by some means the tempter have tempted you, and our labour be in vain.
+
+[discrete.pericope]
+==== Timothy’s Encouraging Report
+
+@ But now ##when##note:x[<<Acts 18:5>>] Timotheus came from you unto us, ##and brought##note:x[<<Isa 52:7>>] us good tidings of your faith and charity, ##and that##note:x[<<1 Cor 11:2>>] ye have good remembrance of us always, desiring greatly to see us, as we also __to see__ you:
+@ Therefore, brethren, ##we were##note:x[<<2 Cor 1:4>>] comforted over you in all our affliction and distress by your faith:
+@ For now we live, ##if##note:x[<<1 Cor 16:13; Col 1:23; Rev 3:11>>] ye stand fast in the Lord.
+@ For ##what##note:x[<<2 Cor 9:15; 1 Thess 1:2–3>>] thanks can we render to God again for you, for all the joy wherewith we joy for your sakes ##before##note:x[<<Ps 96:12–13>>] our God;
+@ Night and day ##praying##note:x[<<1 Thess 2:17–18; 3:11>>] exceedingly that we might see your face, and ##might perfect##note:x[<<2 Cor 13:9>>] that which is lacking in your faith?
+@ Now ##God##note:x[<<Matt 6:32>>] himself and our Father, ##and our Lord##note:x[<<2 Thess 2:16>>] Jesus Christ, direct ##our way##note:x[<<Prov 3:5–6>>] unto you.
+@ And the Lord make you to increase and ##abound##note:x[<<Phil 1:9>>] in ##love##note:x[<<Matt 22:39; Rom 13:8>>] one toward another, and toward all __men__, even as we __do__ toward you:
+@ To the end ##he may##note:x[<<1 Thess 5:23>>] stablish your hearts ##unblameable##note:x[<<Col 1:22>>] in holiness before God, even our Father, ##at the##note:x[<<1 Thess 5:23>>] coming of our Lord Jesus Christ with all his saints.
+
+=== @4
+
+[discrete.pericope]
+==== Living to Please God
+
+@ Furthermore then we beseech you, brethren, and exhort __you__ by the Lord Jesus, that as ye have received of us how ye ought to walk and ##to please##note:x[<<Col 1:10>>] God, ##__so__ ye##note:x[<<2 Thess 1:3; 2 Pet 3:18>>] would abound more and more.
+@ ##For ye know what commandments we gave you by the Lord Jesus.##note:x[<<Matt 28:20>>]
+@ For ##this##note:x[<<Rom 12:2; 1 Pet 4:2>>] is the will of God, __even__ ##your##note:x[<<1 Thess 5:23>>] sanctification, that ye should abstain from fornication:
+@ That every one of you ##should##note:x[<<Rom 6:19; 12:1>>] know how to possess his vessel in sanctification and ##honour##note:x[<<Heb 13:4>>];
+@ Not in the lust of concupiscence, even ##as the##note:x[<<Eph 4:17–19>>] Gentiles which ##know##note:x[<<Acts 17:30–31; Gal 4:8>>] not God:
+@ That no __man__ ##go##note:x[<<Exod 20:15, 17>>] beyond and defraud his brother ##in __any__ matter##note:x[<<Rom 12:19>>]: because that the Lord __is__ the avenger of all such, as we also have forewarned you and testified.
+@ For ##God##note:x[<<Lev 11:44; Eph 1:4; 1 Pet 2:9–12>>] hath not called us unto uncleanness, but unto holiness.
+@ He therefore that ##despiseth##note:x[<<1 Sam 8:7>>], ##despiseth not##note:x[<<Luke 10:16>>] man, but God, ##who##note:x[<<1 John 3:24>>] hath also given unto us his holy Spirit.
+@ But as ##touching##note:x[<<Rom 12:10; 1 John 3:11>>] brotherly love ye need not that I write unto you: ##for ye##note:x[<<1 John 3:11>>] yourselves are taught of God to love one another.
+@ And indeed ye do it toward ##all the##note:x[<<2 Thess 1:3>>] brethren which are in all Macedonia: but we beseech you, brethren, ##that ye##note:x[<<Phil 1:9; 1 Thess 3:12>>] increase more and more;
+@ And ##that##note:x[<<Eccl 4:6; 1 Pet 3:4>>] ye study to be quiet, and to do your own business, and ##to work##note:x[<<Eph 4:28>>] with your own hands, as we commanded you;
+@ That ##ye may walk##note:x[<<Rom 12:17; 1 Pet 2:12>>] honestly toward ##them##note:x[<<Col 4:5>>] that are without, and __that__ ye may have lack of nothing.
+
+[discrete.pericope]
+==== The Return of the Lord
+
+@ But I would not have you to be ignorant, brethren, concerning them ##which are##note:x[<<Dan 12:2; 1 Thess 4:15; 5:10>>] asleep, that ye sorrow not, even as others which have no hope.
+@ For ##if we##note:x[<<Isa 26:19; Rom 8:11>>] believe that Jesus died and rose again, even so them also which sleep in Jesus will ##God##note:x[<<Phil 3:20–21>>] bring with him.
+@ For this we say unto you by the word of the Lord, that we ##which are##note:x[<<1 Cor 15:51–53; 2 Cor 4:14>>] alive __and__ remain unto the coming of the Lord shall not prevent them which are asleep.
+@ For ##the Lord##note:x[<<Matt 24:30–31; Rev 1:7>>] himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: ##and the##note:x[<<1 Cor 15:51–52>>] dead in Christ shall rise first:
+@ Then ##we which##note:x[<<1 Cor 15:52>>] are alive __and__ remain shall be ##caught##note:x[<<Rev 11:12>>] up together with them in the clouds, to meet the Lord in the air: ##and so##note:x[<<John 14:3>>] shall we ever be with the Lord.
+@ ##Wherefore##note:x[<<Luke 21:28; 1 Thess 5:11, 14>>] comfort one another with these words.
+
+=== @5
+
+[discrete.pericope]
+==== The Day of the Lord
+
+[.parallel]
+(<<Zephaniah 1:7–18; Malachi 4:1–6; 2 Peter 3:8–13>>)
+
+@ But of ##the times##note:x[<<Matt 24:36; Acts 1:7>>] and the seasons, brethren, ##ye##note:x[<<1 Thess 4:9>>] have no need that I write unto you.
+@ For yourselves know perfectly that ##the day##note:x[<<Matt 24:42–44; 2 Pet 3:10; Rev 16:15>>] of the Lord so cometh as a thief in the night.
+@ For when they shall say, ##Peace##note:x[<<Matt 24:37–39; Luke 21:34–35>>] and safety; ##then##note:x[<<Luke 21:34–35>>] sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape.
+@ But ye, brethren, ##are##note:x[<<1 John 2:8>>] not in darkness, that that day should overtake you as a thief.
+@ ##Ye are all the children of light, and the children of the day: we are not of the night, nor of darkness.##note:x[<<John 12:36; Acts 26:18; Eph 5:8>>]
+@ Therefore ##let us not##note:x[<<Luke 22:46>>] sleep, as __do__ others; but let us ##watch##note:x[<<Matt 24:42>>] and be ##sober##note:x[<<1 Pet 1:13>>].
+@ For ##they that sleep##note:x[<<Rom 13:13; 1 Cor 15:34>>] sleep in the night; ##and they##note:x[<<2 Pet 2:13>>] that be drunken are drunken in the night.
+@ But let us, who are of the day, be sober, putting on ##the breastplate##note:x[<<Rom 13:12; Eph 6:11>>] of faith and love; and for an helmet, ##the hope##note:x[<<1 Pet 1:13>>] of salvation.
+@ For God hath ##not##note:x[<<1 Thess 1:10>>] appointed us to wrath, but to ##obtain##note:x[<<2 Tim 2:10; 1 Pet 2:10>>] salvation by our Lord Jesus Christ,
+@ Who ##died##note:x[<<Matt 20:28; Rom 14:8–9; 1 Pet 3:18>>] for us, that, whether we wake or sleep, we should live together with him.
+@ Wherefore ##comfort##note:x[<<Heb 10:25>>] yourselves together, ##and edify##note:x[<<Rom 15:2; Eph 4:29>>] one another, even as also ye do.
+
+[discrete.pericope]
+==== Christian Living
+
+@ And we beseech you, brethren, ##to know##note:x[<<Heb 13:7, 17>>] them which labour among you, ##and are##note:x[<<Heb 13:17>>] over you in the Lord, and admonish you;
+@ And to ##esteem##note:x[<<1 Cor 9:7–11>>] them very highly in love for their work’s sake. ##__And__ be##note:x[<<Mark 9:50; Heb 12:14>>] at peace among yourselves.
+@ Now we exhort you, brethren, warn them that are unruly, ##comfort##note:x[<<Rom 14:1>>] the feebleminded, ##support##note:x[<<Acts 20:35>>] the weak, ##be##note:x[<<2 Tim 4:2>>] patient toward all __men__.
+@ See that ##none##note:x[<<Lev 19:18; 1 Pet 3:9>>] render evil for evil unto any __man__; but ever follow that which is good, both among yourselves, ##and##note:x[<<Gal 6:10>>] to all __men__.
+@ ##Rejoice##note:x[<<Matt 5:12; Rom 12:12; Phil 4:4>>] evermore.
+@ ##Pray##note:x[<<Rom 12:12; Eph 6:18; Col 4:2>>] without ceasing.
+@ In ##every##note:x[<<Eph 5:20; Phil 4:6; Col 3:17>>] thing give thanks: for this is the will of God in Christ Jesus concerning you.
+@ ##Quench##note:x[<<Eph 4:30>>] not ##the Spirit##note:x[<<Acts 7:51; Eph 4:30>>].
+@ ##Despise not prophesyings.##note:x[<<Num 11:25–29; 1 Cor 14:1, 3–6>>]
+@ ##Prove##note:x[<<Rom 12:2; Eph 5:10; 1 John 4:1>>] all things; hold fast that which is good.
+@ ##Abstain from all appearance of evil.##note:x[<<2 Cor 6:3; 8:20–21; Phil 4:8>>]
+
+[discrete.pericope]
+==== Final Blessings and Instructions
+
+@ And the very God of peace sanctify you wholly; and __I pray God__ ##your##note:x[<<Heb 4:12>>] whole spirit and soul and body be ##preserved##note:x[<<1 Cor 1:8–9; Jude 1:24>>] blameless unto the coming of our Lord Jesus Christ.
+@ ##Faithful##note:x[<<Deut 7:9; 2 Thess 3:3>>] __is__ he that calleth you, ##who##note:x[<<Num 23:19>>] also will do __it.__
+@ ##Brethren, pray for us.##note:x[<<2 Cor 1:11; Phil 1:19; Heb 13:18–19>>]
+
+@ ##Greet all the brethren with an holy kiss.##note:x[<<Rom 16:16; 1 Cor 16:20>>]
+@ ##I charge##note:x[<<2 Tim 4:1>>] you by the Lord ##that##note:x[<<Col 4:16>>] this epistle be read unto all the holy brethren.
+@ ##The grace of our Lord Jesus Christ __be__ with you. Amen.##note:x[<<Rom 16:20; 2 Thess 3:18>>]
+
+[.colophon]
+The first __epistle__ unto the Thessalonians was written from Athens.

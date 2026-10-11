@@ -1,0 +1,24 @@
+version: 2
+scheme:
+  quran:
+    cite: "{{surah}}:{{ayah}}"
+    level:
+      - name: "surah"
+        break: "heading"
+        depth: 1
+        id: "s{{surah}}"
+        reftext: "Surah {{surah}}"
+        title: "{{title}}"
+      - name: "ayah"
+        sep: ":"
+        default: true
+        id: "q{{surah}}-{{ayah}}"
+        reftext: "{{surah}}:{{ayah}}"
+        label: ""
+settings:
+  overlay-role: "juz"
+  overlay-after: " "
+citation:
+  default:
+    attribution: "Qur’an {{passage}}"
+    title: "{{title}}"

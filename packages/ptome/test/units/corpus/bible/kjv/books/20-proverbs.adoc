@@ -1,0 +1,1345 @@
+== @PRO
+
+[.book-title]
+The Proverbs
+
+=== @1
+
+[discrete.pericope]
+==== The Beginning of Knowledge
+
+[.parallel]
+(<<Proverbs 9:1–12>>)
+
+@ The ##proverbs##note:x[<<Prov 10:1>>] of ##Solomon##note:x[<<1 Chr 22:9; 28:5>>] the son of David, king of Israel;
+@ ##To know wisdom and instruction; to perceive the words of understanding;##note:x[<<Deut 4:5–6; Prov 7:4>>]
+@ To ##receive##note:x[<<Job 22:22; Prov 2:1–9; 8:10–11>>] the instruction of wisdom, justice, and judgment, and ##equity##note:tn[Heb. equities];
+@ To give ##subtilty##note:x[<<Prov 8:5>>] ##to the##note:x[<<Ps 119:9; Prov 8:17>>] simple, to the young man knowledge and ##discretion##note:tn[or, advisement].
+@ A ##wise##note:x[<<Prov 9:9; 12:1; 1 Cor 10:15>>] __man__ will hear, and will increase learning; and a man of understanding shall attain unto wise counsels:
+@ To understand ##a proverb##note:x[<<Mark 4:11>>], and the interpretation; the words of the wise, and their ##dark##note:x[<<Ps 49:4; 78:2>>] sayings.note:tn[__the interpretation__: or, an eloquent speech]
+
+@ ¶ The ##fear##note:x[<<Job 28:28; Ps 111:10; Prov 9:10>>] of the LORD __is__ the beginning of knowledge: __but__ fools despise wisdom and instruction.note:tn[__the beginning__: or, the principal part]
+
+[discrete.pericope]
+==== The Enticement of Sin
+
+@ My son, ##hear##note:x[<<Prov 5:1–2; 6:20; 30:17>>] the instruction of thy father, and forsake not the law of thy mother:
+@ For ##they##note:x[<<Prov 4:9>>] __shall be__ ##an ornament##note:x[<<Gen 41:42; Dan 5:29>>] of grace unto thy head, and chains about thy neck.note:tn[__an…__: Heb. an adding]
+
+@ ¶ ##My son, if sinners entice thee, consent thou not.##note:x[<<Ps 1:1; Prov 13:20; Eph 5:11>>]
+@ If they say, Come with us, ##let us lay##note:x[<<Prov 12:6; Jer 5:26>>] wait for blood, ##let us lurk##note:x[<<Prov 1:18>>] privily for the innocent without cause:
+@ Let us ##swallow##note:x[<<Ps 124:3>>] them up alive as the grave; and ##whole##note:x[<<Ps 28:1>>], as those that go down into the pit:
+@ ##We shall find all precious substance, we shall fill our houses with spoil:##note:x[<<1 Tim 6:9–10>>]
+@ Cast in thy lot among us; let us all have one purse:
+@ My son, ##walk##note:x[<<Ps 1:1; Prov 4:14–15>>] not thou in the way with them; ##refrain##note:x[<<Ps 119:101>>] thy foot from their path:
+@ ##For their feet run to evil, and make haste to shed blood.##note:x[<<Prov 4:16; 6:18; Isa 59:7>>]
+@ Surely ##in vain##note:x[<<Job 35:11>>] the net is spread in the sight of any bird.note:tn[__in the…__: Heb. in the eyes of every thing that hath a wing]
+@ ##And they lay wait for their __own__ blood; they lurk privily for their __own__ lives.##note:x[<<Esth 7:10; Ps 9:16; Prov 5:22–23>>]
+@ So __are__ the ways of ##every##note:x[<<Prov 15:27; 23:3–4; 2 Pet 2:3>>] one that is greedy of gain; __which__ taketh away the life of the owners thereof.
+
+[discrete.pericope]
+==== Wisdom Calls Aloud
+
+@ ¶ note:x[<<Luke 11:49; Col 2:3>>]##Wisdom##note:tn[Heb. Wisdoms, that is, Excellent wisdom] ##crieth##note:x[<<Prov 9:3>>] without; she uttereth her voice in the streets:
+@ ##She crieth in the chief place of concourse, in the openings of the gates: in the city she uttereth her words, __saying__,##note:x[<<Prov 9:3; Matt 10:27; Acts 5:20>>]
+@ How long, ye simple ones, will ye love simplicity? and ##the scorners##note:x[<<Ps 1:1; 2 Pet 3:3>>] delight in their scorning, and ##fools##note:x[<<Prov 1:29>>] hate knowledge?
+@ ##Turn##note:x[<<Ezek 18:27–30; 33:11; Acts 3:19>>] you at my reproof: behold, I will pour out my spirit unto you, I will make known my words unto you.
+
+@ ¶ Because ##I have called##note:x[<<Isa 65:12; Jer 7:13>>], and ye refused; I have ##stretched##note:x[<<Rom 10:21>>] out my hand, and no man regarded;
+@ But ##ye##note:x[<<Prov 1:30; Luke 7:30>>] have set at nought all my counsel, and ##would##note:x[<<Ps 81:11>>] none of my reproof:
+@ ##I also will laugh at your calamity; I will mock when your fear cometh;##note:x[<<Ps 2:4; 37:13; Luke 14:24>>]
+@ When ##your fear##note:x[<<Prov 3:25–26>>] cometh as desolation, and your destruction cometh as a whirlwind; when distress and anguish cometh upon you.
+@ Then ##shall they##note:x[<<Isa 1:15; Jer 11:11; Mic 3:4>>] call upon me, but I will not answer; they shall seek me early, but they shall not find me:
+@ For ##that##note:x[<<Job 21:14–15; Prov 1:22; 6:23>>] they hated knowledge, and did not choose the fear of the LORD:
+@ ##They would none of my counsel: they despised all my reproof.##note:x[<<Ps 81:11; Prov 1:25>>]
+@ ##Therefore shall they eat of the fruit of their own way, and be filled with their own devices.##note:x[<<Prov 14:14; 22:8; Jer 6:19>>]
+@ For ##the turning##note:x[<<Prov 8:36; John 3:36>>] away of the simple shall slay them, and the prosperity of fools shall destroy them.note:tn[__turning…__: or, ease of the simple]
+@ But ##whoso##note:x[<<Ps 25:12–13>>] hearkeneth unto me shall dwell safely, ##and shall##note:x[<<Ps 112:7; Isa 26:3>>] be quiet from fear of evil.
+
+=== @2
+
+[discrete.pericope]
+==== The Benefits of Wisdom
+
+@ My son, ##if##note:x[<<Prov 1:3; 4:1>>] thou wilt receive my words, and ##hide##note:x[<<Prov 3:1>>] my commandments with thee;
+@ So that ##thou##note:x[<<Ps 119:111–112; Prov 18:1>>] incline thine ear unto wisdom, __and__ ##apply##note:x[<<Prov 23:12>>] thine heart to understanding;
+@ Yea, ##if##note:x[<<Prov 3:6; Eph 1:17–18; Jas 1:5>>] thou criest after knowledge, __and__ liftest up thy voice for understanding;note:tn[__liftest…__: Heb. givest thy voice]
+@ If ##thou##note:x[<<Prov 16:16; Matt 13:44; 19:29>>] seekest her as silver, and searchest for her as __for__ hid treasures;
+@ Then ##shalt##note:x[<<2 Chr 1:10–12; Luke 11:9–13>>] thou understand the fear of the LORD, and ##find##note:x[<<Jer 24:7>>] the knowledge of God.
+@ For ##the LORD##note:x[<<Luke 21:15; Eph 1:17–18; Jas 1:5>>] giveth wisdom: out of his mouth __cometh__ knowledge and understanding.
+@ He ##layeth##note:x[<<Jas 3:15–17>>] up sound wisdom for the righteous: __he is__ ##a buckler##note:x[<<Ps 84:11; Prov 30:5>>] to them that walk uprightly.
+@ He ##keepeth##note:x[<<Ps 23:3; John 10:28–29>>] the paths of judgment, ##and##note:x[<<1 Sam 2:9>>] preserveth the way of his saints.
+@ ##Then shalt thou understand righteousness, and judgment, and equity; __yea__, every good path.##note:x[<<Ps 143:8–10; Isa 48:17; Jer 6:16>>]
+
+@ ¶ ##When wisdom entereth into thine heart, and knowledge is pleasant unto thy soul;##note:x[<<Job 23:12; Jer 15:16; Col 3:16>>]
+@ ##Discretion shall preserve thee, understanding shall keep thee:##note:x[<<Ps 25:21; Prov 4:6; Eph 5:15>>]
+@ To ##deliver##note:x[<<Prov 13:20>>] thee from the way of the evil __man__, ##from the man##note:x[<<Prov 8:13; 1 Cor 15:33>>] that speaketh froward things;
+@ Who leave the paths of uprightness, to ##walk##note:x[<<Prov 4:19; John 3:19–20>>] in the ways of darkness;
+@ Who ##rejoice##note:x[<<Prov 10:23; Jer 11:15>>] to do evil, ##__and__##note:x[<<Rom 1:32>>] delight in the frowardness of the wicked;
+@ ##Whose ways __are__ crooked, and __they__ froward in their paths:##note:x[<<Deut 32:5; Ps 125:5; Phil 2:15>>]
+@ To ##deliver##note:x[<<Prov 6:24; 7:5–23; Eccl 7:26>>] thee from the strange woman, __even__ from the stranger __which__ flattereth with her words;
+@ Which forsaketh ##the guide##note:x[<<Jer 3:4>>] of her youth, and ##forgetteth##note:x[<<Ezek 16:8, 59–60>>] the covenant of her God.
+@ ##For her house inclineth unto death, and her paths unto the dead.##note:x[<<Prov 9:18; 1 Cor 6:9–11>>]
+@ ##None##note:x[<<Ps 81:12; Eccl 7:26>>] that go unto her return again, neither take they hold of the paths of life.
+@ ##That thou mayest walk in the way of good __men__, and keep the paths of the righteous.##note:x[<<Heb 6:12; 3 John 1:11>>]
+@ ##For the upright shall dwell in the land, and the perfect shall remain in it.##note:x[<<Ps 37:9, 29; 84:11>>]
+@ But ##the wicked##note:x[<<Ps 52:5; Isa 3:10–11>>] shall be cut off from the earth, and the transgressors shall be note:x[<<Deut 7:22>>]##rooted##note:tn[or, plucked up] out of it.
+
+=== @3
+
+[discrete.pericope]
+==== Trust in the LORD with All Your Heart
+
+@ My son, ##forget##note:x[<<Prov 4:5>>] not my law; but ##let##note:x[<<Deut 6:6–9; John 14:21–24>>] thine heart keep my commandments:
+@ For ##length##note:x[<<Ps 91:16; Prov 4:10; Eph 6:1–3>>] of days, and long life, and peace, shall they add to thee.note:tn[__long…__: Heb. years of life]
+@ Let not mercy and truth forsake thee: ##bind##note:x[<<Prov 7:3>>] them about thy neck; ##write##note:x[<<2 Cor 3:3; Heb 10:16>>] them upon the table of thine heart:
+@ So ##shalt##note:x[<<1 Sam 2:26; Ps 111:10; Luke 2:52>>] thou find favour and good understanding in the sight of God and man.note:tn[__good…__: or, good success]
+
+@ ¶ ##Trust in the LORD##note:x[<<Ps 37:5; Jer 17:7–8>>] with all thine heart; and ##lean not unto thine own understanding##note:x[<<Prov 28:26>>].
+@ ##In##note:x[<<Prov 16:3; Phil 4:6–7>>] all thy ways acknowledge him, ##and##note:x[<<Ps 32:8>>] he shall direct thy paths.
+
+@ ¶ ##Be##note:x[<<Prov 26:12; Rom 12:16>>] not wise in thine own eyes: ##fear##note:x[<<Job 28:28>>] the LORD, and depart from evil.
+@ It ##shall##note:x[<<Ps 147:3; Prov 4:22; 16:24>>] be ##health##note:tn[Heb. medicine] to thy navel, and ##marrow##note:tn[Heb. watering, or, moistening] to thy bones.
+@ ##Honour the LORD with thy substance, and with the firstfruits of all thine increase:##note:x[<<Deut 26:2–15; Prov 14:31; 1 Cor 16:2>>]
+@ ##So shall thy barns be filled with plenty, and thy presses shall burst out with new wine.##note:x[<<Deut 28:8; Prov 11:24–25; 19:17>>]
+
+@ ¶ ##My##note:x[<<Job 5:17; Heb 12:5–6; Rev 3:19>>] son, despise not the chastening of the LORD; neither be weary of his correction:
+@ ##For whom the LORD loveth he correcteth; even as a father the son __in whom__ he delighteth.##note:x[<<Deut 8:5; Ps 103:13; Prov 29:17>>]
+
+[discrete.pericope]
+==== The Blessings of Wisdom
+
+@ ¶ Happy ##__is__ the##note:x[<<Prov 4:5–9; 8:32–35>>] man __that__ findeth wisdom, and the man __that__ getteth understanding.note:tn[__that getteth…__: Heb. that draweth out understanding]
+@ ##For the merchandise of it __is__ better than the merchandise of silver, and the gain thereof than fine gold.##note:x[<<Prov 8:10–11, 19; 16:16>>]
+@ She __is__ ##more##note:x[<<Prov 8:11; 31:10>>] precious than rubies: and ##all##note:x[<<Ps 73:25–26>>] the things thou canst desire are not to be compared unto her.
+@ ##Length##note:x[<<Prov 3:2>>] of days __is__ in her right hand; ##__and__##note:x[<<1 Kgs 3:13; 2 Cor 6:10>>] in her left hand riches and honour.
+@ Her ways __are__ ways of pleasantness, and ##all##note:x[<<Isa 26:3; Luke 1:79; Phil 4:8–9>>] her paths __are__ peace.
+@ ##She __is__ a tree of life to them that lay hold upon her: and happy __is every one__ that retaineth her.##note:x[<<Gen 2:9; Prov 11:30; 13:12>>]
+@ The ##LORD##note:x[<<Ps 104:24; Jer 10:12; John 1:3>>] by wisdom hath founded the earth; by understanding hath he ##established##note:tn[or, prepared] the heavens.
+@ By his knowledge ##the depths##note:x[<<Gen 1:9; 7:11>>] are broken up, and ##the clouds##note:x[<<Ps 65:9–12>>] drop down the dew.
+
+@ ¶ My son, ##let##note:x[<<Deut 6:6–9; Josh 1:8>>] not them depart from thine eyes: ##keep##note:x[<<Deut 32:46–47>>] sound wisdom and discretion:
+@ So shall they be ##life##note:x[<<Prov 4:22; Isa 38:16>>] unto thy soul, and ##grace##note:x[<<Prov 1:9>>] to thy neck.
+@ ##Then shalt thou walk in thy way safely, and thy foot shall not stumble.##note:x[<<Ps 91:11; Prov 4:12; 10:9>>]
+@ When thou ##liest##note:x[<<Ps 3:5; 4:8; Prov 6:22>>] down, thou shalt not be afraid: yea, thou shalt lie down, and thy sleep shall be sweet.
+@ ##Be##note:x[<<Ps 91:5; 112:7; Isa 41:10–14>>] not afraid of sudden fear, neither of the desolation of the wicked, when it cometh.
+@ For the ##LORD##note:x[<<Ps 91:3; Prov 14:26>>] shall be thy confidence, and ##shall keep##note:x[<<1 Sam 2:9>>] thy foot from being taken.
+
+@ ¶ ##Withhold##note:x[<<Rom 13:7; Gal 6:10; Jas 2:15–16>>] not good from them to whom it is due, when it is in the power of thine hand to do __it__.note:tn[__them…__: Heb. the owners thereof]
+@ ##Say not unto thy neighbour, Go, and come again, and to morrow I will give; when thou hast it by thee.##note:x[<<Lev 19:13; Deut 24:12–15; 2 Cor 8:11>>]
+@ ##Devise not evil##note:x[<<Prov 6:14>>] against thy neighbour, seeing he dwelleth securely by thee.note:tn[__Devise…__: or, Practise no evil]
+
+@ ¶ ##Strive not with a man without cause, if he have done thee no harm.##note:x[<<Prov 29:22; Rom 12:18–21; 2 Tim 2:24>>]
+
+@ ¶ ##Envy##note:x[<<Ps 37:1; Prov 24:1; Gal 5:21>>] thou not the oppressor, and choose none of his ways.note:tn[__the oppressor__: Heb. a man of violence]
+@ For ##the froward##note:x[<<Prov 11:20; 17:15>>] __is__ abomination to the LORD: but ##his##note:x[<<Ps 25:14>>] secret __is__ with the righteous.
+
+@ ¶ The ##curse##note:x[<<Lev 26:14–46; Ps 37:22>>] of the LORD __is__ in the house of the wicked: but ##he blesseth##note:x[<<Job 8:6–7>>] the habitation of the just.
+@ Surely ##he scorneth##note:x[<<Ps 138:6>>] the scorners: but ##he giveth##note:x[<<Jas 4:6; 1 Pet 5:5>>] grace unto the lowly.
+@ The ##wise##note:x[<<1 Sam 2:30>>] shall inherit glory: ##but##note:x[<<Ps 132:18; Isa 65:13–15>>] shame shall be the promotion of fools.note:tn[__shall be…__: Heb. exalteth the fools]
+
+=== @4
+
+[discrete.pericope]
+==== A Father’s Instruction
+
+@ Hear, ##ye##note:x[<<Ps 34:11; Prov 1:8>>] children, the instruction of a father, and ##attend##note:x[<<Heb 2:1>>] to know understanding.
+@ For I give you ##good##note:x[<<Prov 8:6–9; 1 Tim 4:6; Titus 1:9>>] doctrine, forsake ye not my law.
+@ note:x[<<1 Chr 22:5>>]For I was my father’s son, tender and only __beloved__ in the sight of my mother.
+@ ##He##note:x[<<Eph 6:4>>] taught me also, and said unto me, ##Let##note:x[<<Prov 3:1>>] thine heart retain my words: ##keep##note:x[<<John 12:50>>] my commandments, and live.
+@ ##Get wisdom##note:x[<<Prov 1:22–23; 3:13–18; Jas 1:5>>], get understanding: forget __it__ not; neither decline from the words of my mouth.
+@ Forsake her not, and she shall preserve thee: ##love##note:x[<<Prov 4:21–22; Eph 3:17; 2 Thess 2:10>>] her, and she shall keep thee.
+@ ##Wisdom __is__##note:x[<<Eccl 7:12; 9:16–18>>] the principal thing; __therefore__ get wisdom: and ##with##note:x[<<Prov 16:16>>] all thy getting get understanding.
+@ ##Exalt her, and she shall promote thee: she shall bring thee to honour, when thou dost embrace her.##note:x[<<1 Sam 2:30; Prov 3:35; Dan 12:3>>]
+@ She shall ##give##note:x[<<Prov 1:9>>] to thine head an ornament of grace: ##a crown##note:x[<<Heb 2:7–9; 1 Pet 5:4>>] of glory shall she deliver to thee.note:tn[__a crown…__: or, she shall compass thee with a crown of glory]
+@ Hear, O ##my##note:x[<<Jer 9:20; 1 Thess 2:13>>] son, and receive my sayings; and ##the##note:x[<<Prov 3:2>>] years of thy life shall be many.
+@ I have ##taught##note:x[<<Eccl 12:9>>] thee in the way of wisdom; I have ##led##note:x[<<Ps 25:4–5; Prov 8:9>>] thee in right paths.
+@ When ##thou goest##note:x[<<2 Sam 22:37; Ps 18:36>>], thy steps shall not be straitened; and when thou runnest, ##thou shalt##note:x[<<Prov 3:23>>] not stumble.
+@ ##Take##note:x[<<Prov 3:18; 23:23; Heb 2:1>>] fast hold of instruction; let __her__ not go: keep her; for she __is__ thy life.
+
+@ ¶ ##Enter not into the path of the wicked, and go not in the way of evil __men__.##note:x[<<Ps 1:1; Prov 1:10; 1 Cor 15:33>>]
+@ ##Avoid it, pass not by it, turn from it, and pass away.##note:x[<<Job 22:23; Eph 5:11; 1 Thess 5:22>>]
+@ ##For they sleep not, except they have done mischief; and their sleep is taken away, unless they cause __some__ to fall.##note:x[<<Ps 36:4; Isa 57:20; Mic 2:1>>]
+@ For they eat the bread of wickedness, and drink the wine of violence.
+@ ##But the path of the just __is__ as the shining light, that shineth more and more unto the perfect day.##note:x[<<Job 11:17; John 8:12; Phil 2:15>>]
+@ ##The way of the wicked __is__ as darkness: they know not at what they stumble.##note:x[<<Job 18:5–6; Isa 59:9–10; John 12:35>>]
+
+@ ¶ ##My son, attend to my words; incline thine ear unto my sayings.##note:x[<<Prov 5:1; 6:20–21; Isa 55:3>>]
+@ Let them not ##depart##note:x[<<Prov 3:3, 21>>] from thine eyes; keep them ##in the##note:x[<<Ps 40:8>>] midst of thine heart.
+@ For they __are__ ##life##note:x[<<Prov 4:10>>] unto those that find them, and note:x[<<Prov 12:18; Jer 33:6>>]##health##note:tn[Heb. medicine] to all their flesh.
+
+@ ¶ ##Keep##note:x[<<Ps 139:23–24>>] thy heart ##with all diligence##note:x[<<Prov 13:3>>]; ##for##note:x[<<Mark 7:21–23>>] out of it __are__ the issues of life.note:tn[__with…__: Heb. above all keeping]
+@ ##Put##note:x[<<Eph 4:25–31; Jas 1:26>>] away from thee ##a##note:x[<<Prov 8:8>>] froward mouth, and perverse lips put far from thee.note:tn[__a froward…__: Heb. frowardness of mouth and perverseness of lips]
+@ ##Let thine eyes look right on, and let thine eyelids look straight before thee.##note:x[<<Job 31:1; Ps 119:37; Matt 6:22>>]
+@ ##Ponder##note:x[<<Hag 1:5>>] the path of thy feet, and ##let all thy ways be established##note:x[<<Ps 37:23; 2 Thess 3:3>>].note:tn[__let…__: or, all thy ways shall be ordered aright]
+@ ##Turn##note:x[<<Deut 5:32; 28:14; Josh 1:7>>] not to the right hand nor to the left: remove thy foot from evil.
+
+=== @5
+
+[discrete.pericope]
+==== Avoiding Immorality
+
+[.parallel]
+(<<Leviticus 20:10–21; 1 Corinthians 5:1–8>>)
+
+@ My son, ##attend##note:x[<<Prov 2:1; 4:20>>] unto my wisdom, __and__ ##bow##note:x[<<Prov 22:17>>] thine ear to my understanding:
+@ That thou mayest regard discretion, and __that__ ##thy lips##note:x[<<Prov 15:7; 16:23; Mal 2:6–7>>] may keep knowledge.
+
+@ ¶ For ##the lips##note:x[<<Prov 2:16; 6:24; 7:21>>] of a strange woman drop __as__ an honeycomb, and her ##mouth##note:tn[Heb. palate] __is__ smoother than oil:
+@ But ##her##note:x[<<Eccl 7:26>>] end is bitter as wormwood, ##sharp##note:x[<<Ps 55:21; Heb 4:12>>] as a twoedged sword.
+@ ##Her feet go down to death; her steps take hold on hell.##note:x[<<Prov 2:18–19; 7:27>>]
+@ Lest thou shouldest ##ponder##note:x[<<Prov 4:26>>] ##the path##note:x[<<Ps 16:11>>] of life, her ways are moveable, __that__ thou canst not know __them__.
+@ ##Hear##note:x[<<Prov 4:1>>] me now therefore, O ye children, and depart not from the words of my mouth.
+@ ##Remove thy way far from her, and come not nigh the door of her house:##note:x[<<Prov 4:15; Matt 6:13; Eph 5:11>>]
+@ Lest thou give thine honour unto others, and thy years unto the cruel:
+@ Lest strangers be filled with thy wealth; and thy labours __be__ in the house of a stranger;note:tn[__thy wealth__: Heb. thy strength]
+@ And ##thou##note:x[<<Rom 6:21; Rev 22:15>>] mourn at the last, when thy flesh and thy body are consumed,
+@ And say, ##How##note:x[<<Prov 1:7, 22>>] have I hated instruction, ##and my##note:x[<<Prov 12:1>>] heart despised reproof;
+@ ##And have not obeyed the voice of my teachers, nor inclined mine ear to them that instructed me!##note:x[<<1 Thess 4:8>>]
+@ ##I was almost in all evil in the midst of the congregation and assembly.##note:x[<<Prov 13:20; 1 Cor 10:6–8; 2 Pet 2:10–18>>]
+
+@ ¶ ##Drink waters out of thine own cistern, and running waters out of thine own well.##note:x[<<Prov 5:18–19; 1 Cor 7:2–5; Heb 13:4>>]
+@ Let ##thy##note:x[<<Deut 33:28>>] fountains be ##dispersed##note:x[<<Ps 127:3; 128:3>>] abroad, __and__ rivers of waters in the streets.
+@ Let them be only thine own, and not strangers’ with thee.
+@ Let thy fountain be blessed: and ##rejoice##note:x[<<Eccl 9:9; Mal 2:14–15>>] with the wife of thy youth.
+@ __Let her be__ ##__as__ the##note:x[<<Song 2:9; 4:5; 7:3>>] loving hind and pleasant roe; let her breasts satisfy thee at all times; and be thou ravished always with her love.note:tn[__satisfy…__: Heb. water thee]note:tn[__be thou…__: Heb. err thou always in her love]
+@ And why wilt thou, my son, be ravished with a strange woman, and embrace the bosom of a stranger?
+@ ##For the ways of man __are__ before the eyes of the LORD, and he pondereth all his goings.##note:x[<<Job 34:21; Prov 15:3; Heb 4:13>>]
+
+@ ¶ ##His##note:x[<<Prov 1:31; 11:5>>] own iniquities shall take the wicked himself, and he shall be holden with the cords of his ##sins##note:tn[Heb. sin].
+@ He ##shall die##note:x[<<Job 4:21; 36:12>>] without instruction; and ##in the##note:x[<<2 Pet 2:15–22>>] greatness of his folly he shall go astray.
+
+=== @6
+
+[discrete.pericope]
+==== Warnings against Foolishness
+
+@ My son, ##if thou be##note:x[<<Prov 11:15; 17:18; 22:26>>] surety for thy friend, __if__ thou hast stricken thy hand with a stranger,
+@ ##Thou art snared with the words of thy mouth, thou art taken with the words of thy mouth.##note:x[<<Prov 12:13; 18:7>>]
+@ Do this now, my son, and deliver thyself, when thou art come into the hand of thy friend; ##go##note:x[<<Jas 4:10>>], humble thyself, and make sure thy friend.note:tn[__and make…__: or, so shalt thou prevail with thy friend]
+@ ##Give not sleep to thine eyes, nor slumber to thine eyelids.##note:x[<<Ps 132:4; Prov 6:10–11; Mark 13:35–36>>]
+@ Deliver thyself as a roe from the hand __of the hunter__, and ##as a bird##note:x[<<Ps 124:7>>] from the hand of the fowler.
+
+@ ¶ Go to the ant, ##thou##note:x[<<Prov 6:9; 18:9; 20:4>>] sluggard; consider her ways, and be wise:
+@ ##Which having no guide, overseer, or ruler,##note:x[<<Job 38:39–41>>]
+@ ##Provideth her meat in the summer, __and__ gathereth her food in the harvest.##note:x[<<Prov 30:25; 1 Tim 6:19>>]
+@ ##How##note:x[<<Prov 24:33–34; Jer 4:14>>] long wilt thou sleep, O sluggard? ##when##note:x[<<Ps 94:8>>] wilt thou arise out of thy sleep?
+@ ##__Yet__ a little sleep, a little slumber, a little folding of the hands to sleep:##note:x[<<Prov 24:33–34>>]
+@ ##So shall thy poverty come as one that travelleth, and thy want as an armed man.##note:x[<<Prov 10:4; 13:4; 20:4>>]
+
+@ ¶ A naughty person, a wicked man, ##walketh##note:x[<<Prov 4:24; Matt 12:34; 1 Tim 5:13>>] with a froward mouth.
+@ ##He winketh with his eyes, he speaketh with his feet, he teacheth with his fingers;##note:x[<<Job 15:12; Ps 35:19; Prov 10:10>>]
+@ Frowardness __is__ in his heart, ##he deviseth##note:x[<<Prov 6:18; Mic 2:1>>] mischief continually; he note:x[<<Rom 16:17>>]##soweth##note:tn[Heb. casteth forth] discord.
+@ Therefore ##shall his##note:x[<<1 Thess 5:3>>] calamity come suddenly; suddenly shall ##he be##note:x[<<2 Chr 36:16; Jer 19:11>>] broken without remedy.
+
+@ ¶ These ##six##note:x[<<Prov 8:13>>] __things__ doth the LORD hate: yea, seven __are__ ##an##note:x[<<Prov 11:20>>] abomination ##unto him##note:x[<<Ps 11:5>>]:note:tn[__unto…__: Heb. of his soul]
+@ ##A proud look##note:x[<<Ps 101:5>>], a ##lying##note:x[<<Ps 120:2–3; Prov 12:22>>] tongue, and hands that shed innocent blood,note:tn[__A proud…__: Heb. Haughty eyes]
+@ An ##heart##note:x[<<Gen 6:5; Ps 36:4>>] that deviseth wicked imaginations, ##feet##note:x[<<Prov 1:16>>] that be swift in running to mischief,
+@ ##A false##note:x[<<Prov 19:5>>] witness __that__ speaketh lies, and he ##that soweth##note:x[<<Prov 6:14; Jas 3:18>>] discord among brethren.
+
+[discrete.pericope]
+==== Warnings against Adultery
+
+@ ¶ note:x[<<Deut 27:16; Prov 7:1–4; Eph 6:1>>]My son, keep thy father’s commandment, and forsake not the law of thy mother:
+@ ##Bind them continually upon thine heart, __and__ tie them about thy neck.##note:x[<<Prov 3:3; 7:3–4>>]
+@ ##When thou goest, it shall lead thee; when thou sleepest, it shall keep thee; and __when__ thou awakest, it shall talk with thee.##note:x[<<Ps 119:11; Prov 2:11; 3:23–24>>]
+@ For ##the commandment##note:x[<<Ps 19:8; 119:105; 2 Pet 1:19>>] __is__ a ##lamp##note:tn[or, candle]; and the law __is__ light; and reproofs of instruction __are__ the way of life:
+@ To ##keep##note:x[<<Prov 2:16; 5:3; 7:5>>] thee from the evil woman, from the flattery of the tongue of a strange woman.note:tn[__of the…__: or, of the strange tongue]
+@ ##Lust##note:x[<<Matt 5:28; Jas 1:14–15>>] not after her beauty in thine heart; neither let her ##take##note:x[<<2 Kgs 9:30>>] thee with her eyelids.
+@ For ##by##note:x[<<Prov 29:3; Luke 15:30>>] means of a whorish woman __a man is brought__ to a piece of bread: and the adulteress will hunt for the precious life.note:tn[__the adulteress__: Heb. the woman of a man, or, a man’s wife]
+@ ##Can a man take fire in his bosom, and his clothes not be burned?##note:x[<<Job 31:9–12; Hos 7:4–7; Jas 3:5>>]
+@ Can one go upon hot coals, and his feet not be burned?
+@ So he that goeth in to his neighbour’s wife; whosoever ##toucheth##note:x[<<1 Cor 7:1>>] her shall not be innocent.
+@ __Men__ do not despise a thief, if he steal to satisfy his soul when he is hungry;
+@ But ##__if__##note:x[<<Exod 22:1; 2 Sam 12:6; Luke 19:8>>] he be found, he shall restore sevenfold; he shall give all the substance of his house.
+@ __But__ whoso committeth adultery with a woman ##lacketh##note:x[<<Prov 7:7>>] ##understanding##note:tn[Heb. heart]: he __that__ doeth it ##destroyeth##note:x[<<Prov 7:22–23; Heb 13:4>>] his own soul.
+@ A wound and dishonour shall he get; and his reproach shall not be wiped away.
+@ For jealousy __is__ the rage of a man: therefore he will not spare in the day of vengeance.
+@ He will not regard any ransom; neither will he rest content, though thou givest many gifts.note:tn[__He will…__: Heb. He will not accept the face of any ransom]
+
+=== @7
+
+[discrete.pericope]
+==== Warnings about the Adulteress
+
+@ ##My son##note:x[<<Prov 1:8>>], ##keep##note:x[<<Luke 11:28; Rev 1:3>>] my words, and lay up my commandments with thee.
+@ ##Keep##note:x[<<Lev 18:5; 1 John 2:3–4>>] my commandments, and live; and my law ##as the##note:x[<<Ps 17:8>>] apple of thine eye.
+@ ##Bind them upon thy fingers, write them upon the table of thine heart.##note:x[<<Deut 6:8–9; 11:18–20; Prov 3:3>>]
+@ ##Say##note:x[<<Prov 2:2–4; 4:6–8>>] unto wisdom, Thou __art__ my sister; and call understanding __thy__ kinswoman:
+@ ##That they may keep thee from the strange woman, from the stranger __which__ flattereth with her words.##note:x[<<Prov 2:16; 6:24>>]
+
+@ ¶ For at the window of my house I looked through my casement,
+@ And beheld among ##the simple##note:x[<<Prov 1:22>>] ones, I discerned among the youths, a young man ##void##note:x[<<Prov 6:32>>] of understanding,note:tn[__the youths__: Heb. the sons]
+@ Passing through the street near her corner; and he went the way to her house,
+@ In the twilight, in the evening, in the black and dark night&#58;note:tn[__in the evening__: Heb. in the evening of days]
+@ And, behold, there met him a woman __with__ ##the attire##note:x[<<Isa 3:16–24; 1 Tim 2:9>>] of an harlot, and ##subtil##note:x[<<2 Cor 11:2–3>>] of heart.
+@ (She __is__ ##loud##note:x[<<Prov 9:13; 31:10–31>>] and stubborn; ##her feet##note:x[<<Titus 2:5>>] abide not in her house:
+@ ##Now __is she__ without, now in the streets, and lieth in wait at every corner.)##note:x[<<Prov 9:14; 23:28>>]
+@ So she caught him, and kissed him, __and__ with an impudent face said unto him,note:tn[__with…__: Heb. she strengthened her face and said]
+@ ##__I have__ peace offerings with me##note:x[<<Prov 21:27>>]; this day have I payed my vows.note:tn[__I have…__: Heb. Peace offerings are upon me]
+@ Therefore came I forth to meet thee, diligently to seek thy face, and I have found thee.
+@ I have decked my bed with coverings of tapestry, with carved __works__, with ##fine##note:x[<<Isa 19:9>>] linen of Egypt.
+@ I have perfumed my bed ##with##note:x[<<Ps 45:8>>] myrrh, aloes, and cinnamon.
+@ Come, let us take our fill of love until the morning: let us solace ourselves with loves.
+@ For the goodman __is__ not at home, he is gone a long journey:
+@ He hath taken a bag of money with him, __and__ will come home at the day appointed.note:tn[__with…__: Heb. in his hand]note:tn[__the day…__: or, the new moon]
+@ ##With her##note:x[<<Prov 5:3; 7:5>>] much fair speech she caused him to yield, with the flattering of her lips she ##forced##note:x[<<2 Kgs 4:8>>] him.
+@ He goeth after her ##straightway##note:tn[Heb. suddenly], as an ox goeth to the slaughter, or as a fool to the correction of the stocks;
+@ Till a dart strike through his liver; ##as a bird##note:x[<<Eccl 9:12>>] hasteth to the snare, and knoweth not that it __is__ for his life.
+
+@ ¶ Hearken unto me now therefore, ##O##note:x[<<Prov 4:1; 5:7>>] ye children, and attend to the words of my mouth.
+@ Let not ##thine##note:x[<<Prov 5:8; 6:25>>] heart decline to her ways, ##go##note:x[<<Isa 53:6>>] not astray in her paths.
+@ For she hath cast down many wounded: yea, many strong __men__ have been slain by her.
+@ ##Her house __is__ the way to hell, going down to the chambers of death.##note:x[<<Prov 2:18–19; 5:5; 9:18>>]
+
+=== @8
+
+[discrete.pericope]
+==== The Excellence of Wisdom
+
+@ ##Doth not wisdom cry? and understanding put forth her voice?##note:x[<<Prov 1:20–21; Matt 3:3>>]
+@ She standeth in the top of high places, by the way in the places of the paths.
+@ She crieth at the gates, at the entry of the city, at the coming in at the doors.
+@ ##Unto you, O men, I call; and my voice __is__ to the sons of man.##note:x[<<Ps 49:1–3; 50:1; Matt 11:15>>]
+@ ##O ye simple, understand wisdom: and, ye fools, be ye of an understanding heart.##note:x[<<Prov 1:22>>]
+@ Hear; ##for##note:x[<<Prov 4:2; Col 1:26>>] I will speak of excellent things; and ##the opening##note:x[<<Matt 7:28–29>>] of my lips __shall be__ right things.
+@ For ##my mouth##note:x[<<John 8:14>>] shall speak truth; and wickedness __is__ an abomination to my lips.note:tn[__an…__: Heb. the abomination of my lips]
+@ ##All##note:x[<<Ps 12:6>>] the words of my mouth __are__ in righteousness; ##__there__##note:x[<<Prov 8:13; John 7:46>>] __is__ nothing ##froward##note:tn[Heb. wreathed] or perverse in them.
+@ ##They __are__ all plain to him that understandeth, and right to them that find knowledge.##note:x[<<Prov 14:6; John 7:17; Jas 1:5>>]
+@ ##Receive my instruction, and not silver; and knowledge rather than choice gold.##note:x[<<Ps 119:72, 127; Prov 2:4–5>>]
+@ For ##wisdom##note:x[<<Prov 3:14; 4:5–7; 16:16>>] __is__ better than rubies; and all the things that may be desired are not to be compared to it.
+
+@ ##I wisdom##note:x[<<Rom 11:33>>] dwell with ##prudence##note:tn[or, subtilty], and find out ##knowledge##note:x[<<Exod 35:30–35; Isa 28:26>>] of witty inventions.
+@ ##The fear##note:x[<<Ps 97:10; Prov 16:6>>] of the LORD __is__ to hate evil: ##pride##note:x[<<1 Sam 2:3>>], and arrogancy, and the evil way, and the froward mouth, do I hate.
+@ ##Counsel##note:x[<<Isa 9:6; 40:14>>] __is__ mine, and sound wisdom: I __am__ understanding; ##I have##note:x[<<Eccl 7:19>>] strength.
+@ ##By##note:x[<<Dan 2:21; Matt 28:18; Rom 13:1>>] me kings reign, and princes decree justice.
+@ By me princes rule, and nobles, __even__ all the judges of the earth.
+@ ##I love##note:x[<<Ps 91:14; John 14:21, 23>>] them that love me; and those that seek me early shall find me.
+@ ##Riches and honour##note:x[<<Prov 3:16>>] __are__ with me; __yea__, ##durable##note:x[<<Luke 16:11–12>>] riches ##and righteousness##note:x[<<Matt 6:33>>].
+@ ##My fruit __is__ better than gold, yea, than fine gold; and my revenue than choice silver.##note:x[<<Prov 3:14>>]
+@ I note:x[<<Ps 32:8; John 10:27–28>>]##lead##note:tn[or, walk] ##in the##note:x[<<Deut 5:32>>] way of righteousness, in the midst of the paths of judgment:
+@ That I may cause those that love me ##to inherit##note:x[<<Gen 15:14; Matt 25:46; 1 Pet 1:4>>] substance; and I will fill their treasures.
+
+@ ##The LORD possessed me in the beginning of his way, before his works of old.##note:x[<<Prov 3:19; John 1:1–2; Col 1:17>>]
+@ ##I was set up from everlasting, from the beginning, or ever the earth was.##note:x[<<Gen 1:26; Mic 5:2; John 17:24>>]
+@ When __there were__ no depths, ##I was##note:x[<<1 John 4:9>>] brought forth; when __there were__ no fountains abounding with water.
+@ ##Before the mountains were settled, before the hills was I brought forth:##note:x[<<Job 15:7–8; 38:4–11; Ps 90:2>>]
+@ While as yet he had not made the earth, nor the ##fields##note:tn[or, open places], nor the highest part of the dust of the world.note:tn[__the highest…__: or, the chief part]
+@ When ##he prepared##note:x[<<Ps 136:5; Col 1:16>>] the heavens, I __was__ there: when he set a ##compass##note:x[<<Isa 40:22>>] upon the face of the depth&#58;note:tn[__a compass__: or, a circle]
+@ When he established the clouds above: when he strengthened the fountains of the deep:
+@ When ##he gave##note:x[<<Gen 1:9–10; Ps 104:9; Jer 5:22>>] to the sea his decree, that the waters should not pass his commandment: when he appointed the foundations of the earth:
+@ Then I was by him, __as__ ##one##note:x[<<John 1:1–3, 18>>] brought up __with him:__ and ##I was daily##note:x[<<Matt 3:17>>] __his__ delight, rejoicing always before him;
+@ Rejoicing in the habitable part of his earth; ##and my##note:x[<<Ps 16:3; 40:6–8; John 13:1>>] delights __were__ with the sons of men.
+
+@ Now therefore hearken unto me, O ye children: ##for##note:x[<<Ps 1:1–4; 119:1–2; Luke 11:28>>] blessed __are they that__ keep my ways.
+@ ##Hear##note:x[<<Prov 1:8; 4:1>>] instruction, and be wise, and ##refuse##note:x[<<Ps 81:11–12>>] it not.
+@ Blessed __is__ the man that heareth me, ##watching##note:x[<<Ps 27:4; Matt 7:24; Luke 11:28>>] daily at my gates, waiting at the posts of my doors.
+@ For ##whoso##note:x[<<John 3:36; 1 John 5:11–12>>] findeth me findeth life, and shall ##obtain##note:tn[Heb. bring forth] ##favour##note:x[<<Prov 12:2>>] of the LORD.
+@ But ##he##note:x[<<Prov 1:31>>] that sinneth against me wrongeth his own soul: ##all##note:x[<<John 15:23–24; 1 Cor 16:22>>] they that hate me love death.
+
+=== @9
+
+[discrete.pericope]
+==== The Way of Wisdom
+
+[.parallel]
+(<<Proverbs 1:1–7>>)
+
+@ Wisdom hath ##builded##note:x[<<Matt 16:18; 1 Cor 3:9–15>>] her house, she hath hewn out her seven ##pillars##note:x[<<Rev 3:12>>]:
+@ She hath ##killed##note:x[<<Isa 25:6; Matt 22:3–14>>] her beasts; she hath ##mingled##note:x[<<Prov 9:5>>] her wine; she hath also furnished her table.note:tn[__her beasts__: Heb. her killing]
+@ She hath ##sent##note:x[<<Matt 22:3–4>>] forth her maidens: ##she crieth##note:x[<<Prov 8:1–3; 9:14>>] upon the highest places of the city,
+@ ##Whoso __is__ simple, let him turn in hither: __as for__ him that wanteth understanding, she saith to him,##note:x[<<Prov 6:32; 8:5; 9:16>>]
+@ ##Come, eat of my bread, and drink of the wine __which__ I have mingled.##note:x[<<Prov 9:17; Song 5:1; John 6:27>>]
+@ ##Forsake##note:x[<<Prov 13:20>>] the foolish, and live; and go ##in##note:x[<<Prov 4:11; Luke 13:24>>] the way of understanding.
+@ ##He that reproveth a scorner getteth to himself shame: and he that rebuketh a wicked __man getteth__ himself a blot.##note:x[<<2 Chr 25:15–16; 36:16; Prov 15:12>>]
+@ ##Reprove##note:x[<<Prov 23:9>>] not a scorner, lest he hate thee: ##rebuke##note:x[<<Ps 141:5; Prov 13:18>>] a wise man, and he will love thee.
+@ ##Give __instruction__ to a wise __man__, and he will be yet wiser: teach a just __man__, and he will increase in learning.##note:x[<<Prov 1:5; Matt 13:11–12; 1 John 5:13>>]
+@ ##The fear##note:x[<<Job 28:28; Ps 111:10; Prov 1:7>>] of the LORD __is__ the beginning of wisdom: and the knowledge of the holy __is__ understanding.
+@ ##For by me thy days shall be multiplied, and the years of thy life shall be increased.##note:x[<<Prov 3:2, 16; 10:27>>]
+@ ##If thou be wise, thou shalt be wise for thyself: but __if__ thou scornest, thou alone shalt bear __it__.##note:x[<<Job 22:2–3; Ezek 18:20; 2 Pet 3:3–4>>]
+
+[discrete.pericope]
+==== The Way of Folly
+
+@ ¶ ##A foolish woman __is__ clamorous: __she is__ simple, and knoweth nothing.##note:x[<<Prov 7:11>>]
+@ For she sitteth at the door of her house, on a seat in the high places of the city,
+@ To call passengers who go right on their ways:
+@ Whoso __is__ simple, let him turn in hither: and __as for__ him that wanteth understanding, she saith to him,
+@ ##Stolen##note:x[<<Prov 20:17; 23:31–32; Jas 1:14–15>>] waters are sweet, and bread __eaten__ in secret is pleasant.note:tn[__eaten…__: Heb. of secrecies]
+@ But he knoweth not that ##the dead##note:x[<<Prov 7:27>>] __are__ there; __and that__ her guests __are__ in the depths of hell.
+
+=== @10
+
+[discrete.pericope]
+==== Solomon’s Proverbs: The Wise Son
+
+@ The ##proverbs##note:x[<<Prov 1:1>>] of Solomon. ##A wise##note:x[<<Prov 17:25; 29:15>>] son maketh a glad father: but a foolish son __is__ the heaviness of his mother.
+
+@ ##Treasures##note:x[<<Ps 49:6–10; Prov 11:4>>] of wickedness profit nothing: ##but##note:x[<<Prov 12:28>>] righteousness delivereth from death.
+@ The LORD ##will##note:x[<<Ps 34:9–10; 37:3; Matt 6:30–33>>] not suffer the soul of the righteous to famish: but he casteth away the substance of the wicked.note:tn[__the substance…__: or, the wicked for their wickedness]
+@ He ##becometh##note:x[<<Prov 19:15; 20:4>>] poor that dealeth __with__ a slack hand: ##but##note:x[<<Prov 13:4>>] the hand of the diligent maketh rich.
+@ He that ##gathereth##note:x[<<Prov 6:8; 30:25>>] in summer __is__ a wise son: __but__ he that sleepeth in harvest __is__ ##a son##note:x[<<Prov 17:2>>] that causeth shame.
+@ ##Blessings##note:x[<<Deut 28:2; Prov 24:25; 28:20>>] __are__ upon the head of the just: but violence covereth the mouth of the wicked.
+@ The ##memory##note:x[<<Ps 112:6; Mark 14:9; Luke 1:48>>] of the just __is__ blessed: but the name of the wicked shall rot.
+@ The ##wise##note:x[<<Prov 9:9; 12:1; Jas 3:13>>] in heart will receive commandments: but a prating fool shall ##fall##note:tn[Heb. be beaten].note:tn[__a prating…__: Heb. a fool of lips]
+@ He ##that walketh##note:x[<<Ps 26:11–12; Prov 28:18; Isa 33:15–16>>] uprightly walketh surely: but he that perverteth his ways shall be known.
+@ He ##that##note:x[<<Ps 35:19; Prov 6:13>>] winketh with the eye causeth sorrow: but a prating fool shall ##fall##note:tn[Heb. be beaten].
+@ The ##mouth of a##note:x[<<Prov 10:20–21; 13:14; Eph 4:29>>] righteous __man is__ a well of life: but violence covereth the mouth of the wicked.
+@ Hatred stirreth up strifes: but ##love##note:x[<<Prov 17:9; 1 Cor 13:4; 1 Pet 4:8>>] covereth all sins.
+@ In ##the lips##note:x[<<Prov 26:3>>] of him that hath ##understanding##note:x[<<Prov 6:32>>] wisdom is found: but ##a rod##note:x[<<Prov 26:3>>] __is__ for the back of him that is void of understanding.note:tn[__of understanding__: Heb. of heart]
+@ Wise __men__ lay up knowledge: but ##the mouth##note:x[<<Prov 10:8; 13:3; 18:7>>] of the foolish __is__ near destruction.
+@ The ##rich##note:x[<<Ps 52:7; Prov 18:11>>] man’s wealth __is__ his strong city: ##the destruction##note:x[<<Prov 19:7>>] of the poor __is__ their poverty.
+@ The ##labour##note:x[<<Isa 3:10–11; John 6:27>>] of the righteous __tendeth__ to life: ##the fruit##note:x[<<Rom 6:23>>] of the wicked to sin.
+@ He __is in__ ##the way##note:x[<<Luke 11:28>>] of life that keepeth instruction: but ##he that##note:x[<<Prov 5:12; 15:10>>] refuseth reproof ##erreth##note:tn[or, causeth to err].
+@ He ##that hideth##note:x[<<Ps 55:21; Prov 26:24–26>>] hatred __with__ lying lips, and he that uttereth a slander, __is__ a fool.
+@ In ##the multitude##note:x[<<Jas 3:2>>] of words there wanteth not sin: ##but##note:x[<<Prov 17:27–28; Jas 1:19>>] he that refraineth his lips __is__ wise.
+
+@ The ##tongue##note:x[<<Prov 12:18>>] of the just __is as__ choice silver: ##the heart##note:x[<<Gen 6:5; Jer 17:9>>] of the wicked __is__ little worth.
+@ The lips of the righteous feed many: but ##fools##note:x[<<Prov 1:29; Hos 4:6>>] die for want of ##wisdom##note:x[<<Prov 17:16>>].note:tn[__of wisdom__: Heb. of heart]
+@ The blessing of the LORD, ##it##note:x[<<Gen 26:12; 1 Sam 2:7–8; Ps 107:38>>] maketh rich, and he addeth no sorrow with it.
+@ ##__It is__ as sport to a fool to do mischief: but a man of understanding hath wisdom.##note:x[<<Prov 14:9; 15:21; 26:18–19>>]
+
+@ The ##fear##note:x[<<Job 15:21>>] of the wicked, it shall come upon him: but ##the desire##note:x[<<Ps 145:19; Matt 5:6>>] of the righteous shall be granted.
+@ As ##the whirlwind##note:x[<<Ps 58:9>>] passeth, so __is__ the wicked no __more:__ but the righteous __is__ ##an##note:x[<<Ps 15:5; Matt 7:24–25>>] everlasting foundation.
+@ As ##vinegar##note:x[<<Prov 25:13>>] to the teeth, and as smoke to the eyes, so __is__ the sluggard to them that send him.
+
+@ The ##fear##note:x[<<Ps 91:16; Prov 3:2; 9:11>>] of the LORD ##prolongeth##note:tn[Heb. addeth] days: but the years of the wicked shall be shortened.
+@ The ##hope##note:x[<<Ps 73:24–26; Rom 15:13>>] of the righteous __shall be__ gladness: ##but##note:x[<<Job 8:13>>] the expectation of the wicked shall perish.
+
+@ The ##way##note:x[<<Phil 4:13>>] of the LORD __is__ strength to the upright: ##but##note:x[<<Prov 21:15; Rom 2:8–9>>] destruction __shall be__ to the workers of iniquity.
+@ The righteous shall ##never##note:x[<<Ps 37:22; 125:1>>] be removed: but ##the wicked##note:x[<<Ps 37:22>>] shall not inhabit the earth.
+
+@ The ##mouth##note:x[<<Ps 37:30; Prov 10:13>>] of the just bringeth forth wisdom: but the froward tongue shall be cut out.
+@ The lips of the righteous know what is acceptable: ##but##note:x[<<Prov 11:11; 12:6, 18>>] the mouth of the wicked __speaketh__ ##frowardness##note:tn[Heb. frowardnesses].
+
+=== @11
+
+[discrete.pericope]
+==== Dishonest Scales
+
+[.parallel]
+(<<Deuteronomy 25:13–16; Ezekiel 45:10–12>>)
+
+@ ##A false balance##note:x[<<Deut 25:13–16; Prov 16:11; 20:23>>] __is__ abomination to the LORD: but a just weight __is__ his delight.note:tn[__A false…__: Heb. Balances of deceit]note:tn[__just…__: Heb. perfect stone]
+@ __When__ ##pride##note:x[<<Prov 16:18–19; Luke 18:14>>] cometh, then cometh shame: ##but##note:x[<<Prov 15:33>>] with the lowly __is__ wisdom.
+@ ##The integrity##note:x[<<Ps 25:21; Prov 13:6>>] of the upright shall guide them: but ##the perverseness##note:x[<<Prov 28:18>>] of transgressors shall destroy them.
+@ ##Riches##note:x[<<Prov 10:2; Zeph 1:18>>] profit not in the day of wrath: ##but##note:x[<<Gen 7:1>>] righteousness delivereth from death.
+
+@ The righteousness of the perfect shall note:x[<<Prov 5:22>>]##direct##note:tn[Heb. rectify] his way: but the wicked shall fall by his own wickedness.
+@ The ##righteousness##note:x[<<1 Sam 12:3–4>>] of the upright shall deliver them: ##but##note:x[<<Prov 5:22; Eccl 10:8>>] transgressors shall be taken in __their own__ naughtiness.
+@ ##When a wicked man dieth, __his__ expectation shall perish: and the hope of unjust __men__ perisheth.##note:x[<<Job 8:13–14; Prov 10:28>>]
+@ ##The righteous is delivered out of trouble, and the wicked cometh in his stead.##note:x[<<Esth 7:9–10; Prov 21:18; Dan 6:23–24>>]
+@ An hypocrite with __his__ mouth destroyeth his neighbour: but ##through##note:x[<<Prov 2:10–16; 4:5–6; 1 John 2:27>>] knowledge shall the just be delivered.
+
+@ ##When##note:x[<<Ps 58:10–11>>] ##it goeth##note:x[<<Prov 28:12>>] well with the righteous, the city rejoiceth: and when the wicked perish, __there is__ shouting.
+@ By ##the blessing##note:x[<<Prov 14:34; 29:8>>] of the upright the city is exalted: but ##it##note:x[<<Jas 3:6>>] is overthrown by the mouth of the wicked.
+
+@ He ##that##note:x[<<Luke 16:14>>] is void of wisdom despiseth his neighbour: but ##a man##note:x[<<Prov 10:19; 1 Pet 2:23>>] of understanding holdeth his peace.note:tn[__void…__: Heb. destitute of heart]
+@ note:x[<<Lev 19:16; Prov 20:19>>]A talebearer ##revealeth##note:x[<<Prov 25:9>>] secrets: but he that is of a faithful spirit concealeth the matter.note:tn[__A talebearer__: Heb. He that walketh, being a talebearer]
+@ ##Where no counsel __is__, the people fall: but in the multitude of counsellors __there is__ safety.##note:x[<<Prov 15:22; 16:22; 24:6>>]
+@ He ##that is surety##note:x[<<Prov 6:1–5; 17:18; 20:16>>] for a stranger shall ##smart##note:tn[Heb. be sore broken] __for it:__ and he that hateth ##suretiship##note:tn[Heb. those that strike hands] is sure.
+@ A ##gracious##note:x[<<Prov 31:30–31; Luke 10:42; Acts 16:14–15>>] woman retaineth honour: and strong __men__ retain riches.
+@ The ##merciful##note:x[<<Matt 5:7; 25:34–40>>] man doeth good to his own soul: ##but##note:x[<<Jas 2:13>>] __he that is__ cruel troubleth his own flesh.
+@ The ##wicked##note:x[<<Eccl 10:8>>] worketh a deceitful work: ##but##note:x[<<Hos 10:12–13; Gal 6:8–9>>] to him that soweth righteousness __shall be__ a sure reward.
+@ As ##righteousness##note:x[<<Prov 10:16; 12:28; 19:23>>] __tendeth__ to life: so he that pursueth evil __pursueth it__ to his own death.
+@ They that are ##of##note:x[<<Prov 6:14>>] a froward heart __are__ abomination to the LORD: but __such as are__ ##upright##note:x[<<Ps 140:13; Prov 21:29>>] in __their__ way __are__ his delight.
+@ __Though__ hand __join__ in hand, the wicked shall not be unpunished: but ##the seed##note:x[<<Ps 112:1–2; Jer 32:39; Acts 2:39>>] of the righteous shall be delivered.
+@ __As__ ##a jewel##note:x[<<Prov 31:30; Nah 3:4–6; 1 Pet 3:3–4>>] of gold in a swine’s snout, __so is__ a fair woman which is without discretion.note:tn[__is without__: Heb. departeth from]
+@ The ##desire##note:x[<<Ps 37:4; Matt 5:6>>] of the righteous __is__ only good: __but__ the ##expectation##note:x[<<Rom 2:8–9>>] of the wicked __is__ wrath.
+@ There is ##that scattereth##note:x[<<Deut 15:10; Prov 19:17; Luke 6:38>>], and yet increaseth; and __there is__ that withholdeth more than is meet, but __it tendeth__ to poverty.
+@ The ##liberal soul##note:x[<<Isa 58:7–11; Matt 5:7; 25:34–35>>] shall be made fat: and he that watereth shall be watered also himself.note:tn[__liberal…__: Heb. soul of blessing]
+@ He that withholdeth corn, the people shall curse him: but ##blessing##note:x[<<Job 29:13>>] __shall be__ upon the head of him that selleth __it__.
+@ note:x[<<Esth 7:10; Ps 7:15–16; Prov 17:11>>]He that diligently seeketh good procureth favour: but he that seeketh mischief, it shall come unto him.
+@ He ##that##note:x[<<Ps 52:7; 1 Tim 6:17>>] trusteth in his riches shall fall: ##but##note:x[<<Jer 17:8>>] the righteous shall flourish as a branch.
+@ He that troubleth his own house shall ##inherit##note:x[<<Eccl 5:16>>] the wind: and the fool __shall be__ servant to the wise of heart.
+@ The fruit of the righteous __is__ a tree of life; ##and##note:x[<<Dan 12:3; 1 Cor 9:19–23; Jas 5:20>>] he that ##winneth##note:tn[Heb. taketh] souls __is__ wise.
+@ ##Behold, the righteous shall be recompensed in the earth: much more the wicked and the sinner.##note:x[<<Jer 25:29; 1 Cor 11:30–32; 1 Pet 4:17–18>>]
+
+=== @12
+
+[discrete.pericope]
+==== Loving Discipline and Knowledge
+
+@ Whoso ##loveth##note:x[<<Ps 119:97–100; Prov 18:1>>] instruction loveth knowledge: but ##he that##note:x[<<Prov 9:7–8>>] hateth reproof __is__ brutish.
+@ A ##good##note:x[<<Ps 112:5; Prov 8:35; Acts 11:24>>] __man__ obtaineth favour of the LORD: but a man of wicked devices will he condemn.
+@ A man ##shall not be established##note:x[<<Prov 10:25>>] by wickedness: but ##the root##note:x[<<Prov 12:12; Eph 3:17>>] of the righteous shall not be moved.
+@ A ##virtuous##note:x[<<Prov 14:1; 31:10–25>>] woman __is__ a crown to her husband: but she that maketh ashamed __is__ ##as##note:x[<<Prov 14:30>>] rottenness in his bones.
+@ The ##thoughts##note:x[<<Ps 139:23; Isa 55:7>>] of the righteous __are__ right: __but__ the counsels of the wicked __are__ deceit.
+@ The words of the wicked __are__ to lie in wait for blood: but ##the mouth##note:x[<<Prov 14:3>>] of the upright shall deliver them.
+@ The ##wicked##note:x[<<Prov 11:21>>] are overthrown, and __are__ not: but ##the house##note:x[<<Matt 7:24–27>>] of the righteous shall stand.
+@ A man shall be ##commended##note:x[<<1 Cor 3:10–15; 2 Cor 10:18>>] according to his wisdom: but ##he##note:x[<<Prov 3:35>>] that is of a perverse heart shall be despised.note:tn[__of a…__: Heb. perverse of heart]
+@ __He that is__ ##despised##note:x[<<Prov 13:7; Luke 14:11>>], and hath a servant, __is__ better than he that honoureth himself, and lacketh bread.
+@ A ##righteous##note:x[<<Gen 33:13–14; Num 22:28–32; Deut 25:4>>] __man__ regardeth the life of his beast: but the tender mercies of the wicked __are__ cruel.note:tn[__tender…__: or, bowels]
+@ He that ##tilleth##note:x[<<Prov 14:23; 28:19; 1 Thess 4:11–12>>] his land shall be satisfied with bread: but he that followeth vain __persons is__ void of understanding.
+@ The wicked ##desireth##note:x[<<Prov 29:5–6>>] the net of evil __men:__ but ##the root##note:x[<<Ps 1:3; Jer 17:7–8>>] of the righteous yieldeth __fruit__.note:tn[__the net__: or, the fortress]
+@ The ##wicked is snared by the transgression of __his__ lips##note:x[<<Ps 64:8; Prov 6:2>>]: ##but##note:x[<<Prov 11:8>>] the just shall come out of trouble.note:tn[__The wicked…__: Heb. The snare of the wicked is in the transgression of lips]
+@ A man shall be ##satisfied##note:x[<<Prov 13:2; 18:20–21>>] with good by the fruit of __his__ mouth: ##and##note:x[<<Isa 3:10–11>>] the recompence of a man’s hands shall be rendered unto him.
+@ The ##way##note:x[<<Prov 3:7; 14:16; 26:12>>] of a fool __is__ right in his own eyes: but he that hearkeneth unto counsel __is__ wise.
+@ note:x[<<Prov 29:11>>]A fool’s wrath is ##presently##note:tn[Heb. in that day] known: ##but##note:x[<<Prov 29:11; Jas 1:19>>] a prudent __man__ covereth shame.
+@ __He__ ##__that__##note:x[<<Prov 14:5, 25>>] speaketh truth sheweth forth righteousness: ##but##note:x[<<Prov 6:19>>] a false witness deceit.
+@ There is ##that##note:x[<<Ps 57:4>>] speaketh like the piercings of a sword: ##but##note:x[<<Prov 10:20–21; 16:24>>] the tongue of the wise __is__ health.
+@ The ##lip##note:x[<<Zech 1:4–6>>] of truth shall be established for ever: ##but##note:x[<<Job 20:5; Prov 19:9>>] a lying tongue __is__ but for a moment.
+@ ##Deceit##note:x[<<Mark 7:21–22>>] __is__ in the heart of them that imagine evil: ##but##note:x[<<Matt 5:9; 1 Pet 3:8–13>>] to the counsellors of peace __is__ joy.
+@ There shall ##no##note:x[<<Rom 8:28; 1 Cor 3:22–23>>] evil happen to the just: but the wicked shall be ##filled##note:x[<<Prov 1:31>>] with mischief.
+@ ##Lying##note:x[<<Ps 5:6; Prov 6:16–17; Rev 22:15>>] lips __are__ abomination to the LORD: but they that deal truly __are__ his delight.
+@ ##A prudent##note:x[<<Prov 10:19; 11:13; 13:16>>] man concealeth knowledge: but the heart of fools proclaimeth foolishness.
+@ The ##hand##note:x[<<Prov 10:4>>] of the diligent shall bear rule: ##but##note:x[<<Prov 12:27; 21:25–26>>] the ##slothful##note:tn[or, deceitful] shall be under tribute.
+@ ##Heaviness##note:x[<<Prov 15:13; 17:22>>] in the heart of man maketh it stoop: ##but##note:x[<<Prov 16:24>>] a good word maketh it glad.
+@ The ##righteous##note:x[<<Prov 17:27>>] __is__ more ##excellent##note:tn[or, abundant] than his neighbour: ##but##note:x[<<Jas 1:13–14; 1 John 2:26>>] the way of the wicked seduceth them.
+@ The ##slothful##note:x[<<Prov 13:4>>] __man__ roasteth not that which he took in hunting: but the substance of a diligent man __is__ precious.
+@ ##In the way of righteousness __is__ life; and __in__ the pathway __thereof there is__ no death.##note:x[<<Ezek 18:20–24; Rom 5:21; 3 John 1:11>>]
+
+=== @13
+
+[discrete.pericope]
+==== A Father’s Discipline
+
+@ A ##wise##note:x[<<Prov 15:5, 20>>] son __heareth__ his father’s instruction: ##but##note:x[<<Prov 9:7–8>>] a scorner heareth not rebuke.
+@ A man shall ##eat##note:x[<<Prov 12:14; 18:20>>] good by the fruit of __his__ mouth: but ##the soul##note:x[<<Prov 10:11>>] of the transgressors __shall eat__ violence.
+@ ##He that keepeth his mouth keepeth his life: __but__ he that openeth wide his lips shall have destruction.##note:x[<<Ps 39:1; Prov 21:23; Jas 3:2–12>>]
+@ The soul of the sluggard ##desireth##note:x[<<Prov 12:11, 24>>], and __hath__ nothing: ##but##note:x[<<2 Pet 1:5–11>>] the soul of the diligent shall be made fat.
+@ A ##righteous##note:x[<<Ps 119:163; Eph 4:25; Col 3:9>>] __man__ hateth lying: but a wicked __man__ is loathsome, and cometh to shame.
+@ ##Righteousness##note:x[<<Prov 11:3, 5–6>>] keepeth __him that is__ upright in the way: but wickedness overthroweth the sinner.note:tn[__the sinner__: Heb. sin]
+@ There ##is that maketh himself rich##note:x[<<Prov 12:9; Luke 18:11–14; Rev 3:17>>], yet __hath__ nothing: __there is__ that maketh himself poor, yet __hath__ great riches.
+@ The ##ransom##note:x[<<Ps 49:6–10; Matt 16:26; 1 Pet 1:18–19>>] of a man’s life __are__ his riches: but the poor heareth not rebuke.
+@ The ##light##note:x[<<Prov 4:18>>] of the righteous rejoiceth: but the note:x[<<Prov 20:20; 24:20>>]##lamp##note:tn[or, candle] of the wicked shall be put out.
+@ ##Only##note:x[<<1 Tim 6:4>>] by pride cometh contention: but ##with##note:x[<<Prov 12:15–16; 19:20>>] the well advised __is__ wisdom.
+@ ##Wealth##note:x[<<Prov 10:2; 20:21>>] __gotten__ by vanity shall be diminished: but ##he##note:x[<<Prov 20:21>>] that gathereth by labour shall increase.note:tn[__by labour__: Heb. with the hand]
+@ ##Hope##note:x[<<Ps 119:81–83>>] deferred maketh the heart sick: but ##__when__##note:x[<<Prov 13:19; John 16:22>>] the desire cometh, __it is__ a tree of life.
+@ Whoso ##despiseth##note:x[<<2 Chr 36:16>>] the word shall be destroyed: but he that feareth the commandment shall be ##rewarded##note:x[<<Ps 119:165; 2 John 1:8>>].note:tn[__shall be rewarded__: or, shall be in peace]
+@ The ##law##note:x[<<Prov 10:11; 14:27>>] of the wise __is__ a fountain of life, ##to##note:x[<<Ps 18:5>>] depart from the snares of death.
+@ Good understanding giveth favour: ##but##note:x[<<Prov 4:19; 15:10; Jer 2:19>>] the way of transgressors __is__ hard.
+@ Every ##prudent##note:x[<<Prov 12:22–23; 15:2; Eph 5:17>>] __man__ dealeth with knowledge: but a fool layeth open __his__ folly.note:tn[__layeth…__: Heb. spreadeth]
+@ A ##wicked##note:x[<<Ezek 33:7–8>>] messenger falleth into mischief: ##but##note:x[<<Prov 25:13; 1 Cor 4:2>>] a faithful ambassador __is__ health.note:tn[__a faithful…__: Heb. an ambassador of faithfulness]
+@ ##Poverty##note:x[<<Prov 12:1; 15:5, 31–32>>] and shame __shall be to__ him that refuseth instruction: but he that regardeth reproof shall be honoured.
+@ ##The desire##note:x[<<Prov 13:12; Rev 7:14–17>>] accomplished is sweet to the soul: but ##__it is__##note:x[<<Prov 29:27>>] abomination to fools to depart from evil.
+@ He that walketh with wise __men__ shall be wise: ##but##note:x[<<Prov 9:6; 1 Cor 15:33–34; 2 Cor 6:14–18>>] a companion of fools shall be ##destroyed##note:tn[Heb. broken].
+@ Evil ##pursueth##note:x[<<Ps 32:10>>] sinners: but to the ##righteous##note:x[<<Isa 3:10–11; Rom 2:7–10>>] good shall be repayed.
+@ A good __man__ leaveth an inheritance to his children’s children: and ##the wealth##note:x[<<Job 27:16–17; Prov 28:8; Eccl 2:26>>] of the sinner __is__ laid up for the just.
+@ Much ##food##note:x[<<Prov 12:11; 28:19; Eccl 5:9>>] __is in__ the tillage of the poor: but there is __that is__ destroyed for want of judgment.
+@ ##He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes.##note:x[<<Prov 23:13–14; 29:15, 17>>]
+@ The ##righteous##note:x[<<Ps 34:10; Heb 13:5>>] eateth to the satisfying of his soul: but the belly of the wicked shall want.
+
+=== @14
+
+[discrete.pericope]
+==== The Wise Woman
+
+@ Every ##wise##note:x[<<Prov 24:3–4; 31:10–31>>] woman buildeth her house: but ##the foolish##note:x[<<Prov 21:9>>] plucketh it down with her hands.
+@ He ##that walketh##note:x[<<Prov 28:6; Acts 10:35>>] in his uprightness feareth the LORD: ##but##note:x[<<2 Tim 3:2–3>>] __he that is__ perverse in his ways despiseth him.
+@ In ##the mouth##note:x[<<Jas 3:5–6>>] of the foolish __is__ a rod of pride: ##but##note:x[<<Prov 12:6; Rev 12:11>>] the lips of the wise shall preserve them.
+@ Where no oxen __are__, the crib __is__ clean: ##but##note:x[<<Prov 13:23; 1 Cor 9:9–11>>] much increase __is__ by the strength of the ox.
+@ ##A faithful witness will not lie: but a false witness will utter lies.##note:x[<<Exod 23:1; Prov 6:19; 19:5>>]
+@ A ##scorner##note:x[<<Matt 11:25–27>>] seeketh wisdom, and __findeth it__ not: but ##knowledge##note:x[<<Matt 13:11–12; Jas 1:5>>] __is__ easy unto him that understandeth.
+@ ##Go from the presence of a foolish man, when thou perceivest not __in him__ the lips of knowledge.##note:x[<<Prov 9:6; 13:20; 1 Cor 5:11>>]
+@ The ##wisdom##note:x[<<Eph 5:17; Jas 3:13>>] of the prudent __is__ to understand his way: but the ##folly##note:x[<<2 Tim 3:13>>] of fools __is__ deceit.
+@ ##Fools##note:x[<<Prov 10:23; 26:18–19>>] make a mock at sin: but ##among##note:x[<<Rom 14:17–18>>] the righteous __there is__ favour.
+@ The ##heart##note:x[<<Prov 15:13; 18:14>>] knoweth his own bitterness; ##and##note:x[<<Phil 4:7>>] a stranger doth not intermeddle with his joy.note:tn[__his own…__: Heb. the bitterness of his soul]
+@ The ##house##note:x[<<Prov 3:33; 12:7; Matt 7:26–27>>] of the wicked shall be overthrown: but the tabernacle of the upright shall flourish.
+@ ##There is a way which seemeth right unto a man, but the end thereof __are__ the ways of death.##note:x[<<Prov 12:15; 16:25; Matt 7:13–14>>]
+@ ##Even in laughter the heart is sorrowful; and the end of that mirth __is__ heaviness.##note:x[<<Eccl 2:2>>]
+@ The ##backslider##note:x[<<Heb 3:12>>] in heart shall be ##filled##note:x[<<Prov 12:14>>] with his own ways: and ##a good##note:x[<<Gal 6:8>>] man __shall be satisfied__ from himself.
+@ The ##simple##note:x[<<Eph 5:17; 1 John 4:1>>] believeth every word: but ##the prudent##note:x[<<Prov 14:8>>] __man__ looketh well to his going.
+@ A wise __man__ ##feareth##note:x[<<Prov 3:7; 22:3; 1 Thess 5:22>>], and departeth from evil: but the fool rageth, and is confident.
+@ __He__ ##__that__##note:x[<<Prov 14:29; 29:22; Eccl 7:9>>] __is__ soon angry dealeth foolishly: and a man of wicked devices is hated.
+@ The simple ##inherit##note:x[<<1 Pet 1:18>>] folly: but ##the prudent##note:x[<<1 Pet 5:4>>] are crowned with knowledge.
+@ ##The evil bow before the good; and the wicked at the gates of the righteous.##note:x[<<Gen 42:6; Exod 8:8; Mal 4:3>>]
+@ The ##poor##note:x[<<Prov 10:15>>] is hated even of his own neighbour: ##but##note:x[<<Prov 19:4>>] the rich __hath__ many friends.note:tn[__the rich…__: Heb. many are the lovers of the rich]
+@ He ##that despiseth##note:x[<<Prov 11:12>>] his neighbour sinneth: but ##he that hath##note:x[<<Prov 19:17; 28:27>>] mercy on the poor, happy __is__ he.
+@ Do they not ##err##note:x[<<Prov 12:2>>] that devise evil? but mercy and truth __shall be__ to them that devise good.
+@ In ##all##note:x[<<Prov 12:24; 28:19>>] labour there is profit: ##but##note:x[<<2 Thess 3:10–12>>] the talk of the lips __tendeth__ only to penury.
+@ The ##crown##note:x[<<Eccl 7:11–12>>] of the wise __is__ their riches: __but__ the foolishness of fools __is__ folly.
+@ ##A true witness delivereth souls: but a deceitful __witness__ speaketh lies.##note:x[<<Prov 14:5; Acts 20:26–27; 26:16–20>>]
+
+@ In the ##fear##note:x[<<Ps 115:13–14; Prov 19:23>>] of the LORD __is__ strong confidence: and ##his##note:x[<<Jer 32:39–40>>] children shall have a place of refuge.
+@ The fear of the LORD __is__ ##a fountain##note:x[<<Prov 13:14; Rev 21:6>>] of life, ##to##note:x[<<Prov 2:10–18>>] depart from the snares of death.
+@ note:x[<<1 Kgs 4:20–21>>]In the multitude of people __is__ the king’s honour: but in the want of people __is__ the destruction of the prince.
+@ __He that is__ ##slow##note:x[<<Prov 14:17; Jas 1:19>>] to wrath __is__ of great understanding: ##but##note:x[<<Eccl 7:9>>] __he that is__ hasty of spirit exalteth folly.note:tn[__hasty…__: Heb. short of spirit]
+@ A ##sound##note:x[<<Prov 4:23>>] heart __is__ the life of the flesh: but ##envy##note:x[<<Job 5:2>>] the ##rottenness##note:x[<<Prov 17:22>>] of the bones.
+@ He ##that oppresseth##note:x[<<Prov 17:5; 22:2, 16>>] the poor reproacheth his Maker: but he that honoureth him hath mercy on the poor.
+@ The wicked is driven away in his wickedness: but ##the righteous##note:x[<<Ps 23:4; 2 Cor 5:8; 2 Tim 4:18>>] hath hope in his death.
+@ ##Wisdom resteth in the heart of him that hath understanding: but __that which is__ in the midst of fools is made known.##note:x[<<Prov 12:16, 23; 15:28>>]
+@ ##Righteousness##note:x[<<Deut 28:1–14>>] exalteth a nation: ##but##note:x[<<Deut 29:18–28; Ps 107:34>>] sin __is__ a reproach to any people.note:tn[__to any…__: Heb. to nations]
+@ note:x[<<Matt 24:45–51>>]The king’s favour __is__ toward a wise servant: but his wrath is __against__ him that causeth shame.
+
+=== @15
+
+[discrete.pericope]
+==== A Gentle Answer Turns Away Wrath
+
+@ A ##soft##note:x[<<Judg 8:1–3; 1 Sam 25:10–11; Prov 25:15>>] answer turneth away wrath: but grievous words stir up anger.
+@ The ##tongue##note:x[<<Prov 12:23; 13:16; 15:28>>] of the wise useth knowledge aright: but the mouth of fools ##poureth##note:tn[Heb. belcheth, or, bubbleth] out foolishness.
+@ ##The eyes of the LORD __are__ in every place, beholding the evil and the good.##note:x[<<Jer 16:17; 23:24; Heb 4:13>>]
+@ ##A wholesome##note:x[<<Prov 12:18; 16:24>>] tongue __is__ a tree of life: but perverseness therein __is__ ##a breach##note:x[<<Prov 18:8>>] in the spirit.note:tn[__A wholesome…__: Heb. The healing of the tongue]
+@ A ##fool##note:x[<<Prov 13:1, 18>>] despiseth his father’s instruction: ##but##note:x[<<Prov 15:31–32>>] he that regardeth reproof is prudent.
+@ In ##the house##note:x[<<Prov 8:21; 21:20>>] of the righteous __is__ much treasure: but ##in the revenues##note:x[<<Prov 10:22>>] of the wicked is trouble.
+@ The ##lips##note:x[<<Eph 4:29>>] of the wise disperse knowledge: but ##the heart##note:x[<<Matt 12:34>>] of the foolish __doeth__ not so.
+@ The ##sacrifice##note:x[<<Prov 21:27>>] of the wicked __is__ an abomination to the LORD: but ##the prayer##note:x[<<1 Chr 29:17; Prov 15:29>>] of the upright __is__ his delight.
+@ The way of the wicked __is__ an abomination unto the LORD: but ##he loveth##note:x[<<Prov 21:21; 1 Tim 6:11>>] him that followeth after righteousness.
+@ ##Correction##note:tn[or, Instruction] __is__ ##grievous##note:x[<<Prov 12:1; 13:1; John 3:20>>] unto him that forsaketh the way: __and__ he that hateth reproof shall die.
+@ ##Hell##note:x[<<Ps 139:8>>] and destruction __are__ before the LORD: how much more then ##the hearts##note:x[<<Ps 44:21; Heb 4:13>>] of the children of men?
+@ A ##scorner##note:x[<<Prov 9:7–8; Amos 5:10>>] loveth not one that reproveth him: ##neither##note:x[<<Job 21:14>>] will he go unto the wise.
+@ A ##merry##note:x[<<Prov 17:22>>] heart maketh a cheerful countenance: but ##by##note:x[<<Prov 12:25; John 14:1>>] sorrow of the heart the spirit is broken.
+@ The ##heart##note:x[<<Prov 9:9; 2 Pet 3:18>>] of him that hath understanding seeketh knowledge: but ##the mouth##note:x[<<Isa 30:10>>] of fools feedeth on foolishness.
+@ All the days of the afflicted __are__ evil: ##but##note:x[<<Prov 17:22; Rom 12:12; 2 Cor 6:10>>] he that is of a merry heart __hath__ a continual feast.
+
+@ Better __is__ ##little##note:x[<<Ps 37:16; Prov 16:8>>] with the fear of the LORD than ##great##note:x[<<Eccl 5:10–12>>] treasure and trouble therewith.
+@ ##Better __is__ a dinner of herbs where love is, than a stalled ox and hatred therewith.##note:x[<<Prov 17:1; 21:19>>]
+@ A ##wrathful##note:x[<<Prov 26:21; 29:22>>] man stirreth up strife: but ##__he__##note:x[<<Prov 15:1>>] __that is__ slow to anger appeaseth strife.
+@ The ##way of the slothful##note:x[<<Prov 22:5, 13>>] __man is__ as an hedge of thorns: but ##the way of the righteous##note:x[<<Isa 35:8>>] __is__ made plain.note:tn[__is made…__: Heb. is raised up as a causey]
+@ A ##wise##note:x[<<Prov 10:1; 23:15–16; 29:3>>] son maketh a glad father: but a foolish man despiseth his mother.
+@ Folly __is__ ##joy##note:x[<<Prov 10:23>>] to __him that is__ destitute of wisdom: but ##a man##note:x[<<Prov 14:16; Eph 5:15>>] of understanding walketh uprightly.note:tn[__destitute…__: Heb. void of heart]
+@ ##Without counsel purposes are disappointed: but in the multitude of counsellors they are established.##note:x[<<Prov 11:14; 20:18>>]
+@ A man hath ##joy##note:x[<<Prov 25:11–12; Eph 4:29>>] by the answer of his mouth: and a word __spoken__ ##in due season##note:x[<<Isa 50:4>>], how good __is it__!note:tn[__due…__: Heb. his season]
+@ The ##way##note:x[<<Ps 16:11; Matt 7:14>>] of life __is__ ##above##note:x[<<Col 3:1–2>>] to the wise, that he may depart from hell beneath.
+@ The LORD will ##destroy##note:x[<<Prov 12:7>>] the house of the proud: ##but##note:x[<<Ps 68:5–6; 146:9>>] he will establish the border of the widow.
+@ The ##thoughts##note:x[<<Prov 6:16–19; Jer 4:14>>] of the wicked __are__ an abomination to the LORD: ##but##note:x[<<Prov 15:23>>] __the words__ of the pure __are__ pleasant words.note:tn[__pleasant…__: Heb. words of pleasantness]
+@ ##He that is##note:x[<<Prov 1:19; Jer 17:11>>] greedy of gain troubleth his own house; ##but##note:x[<<Exod 23:8>>] he that hateth gifts shall live.
+@ The ##heart##note:x[<<Eccl 5:2; 1 Pet 3:15>>] of the righteous studieth to answer: but ##the mouth##note:x[<<Prov 29:11>>] of the wicked poureth out evil things.
+@ The LORD __is__ far from the wicked: but ##he heareth##note:x[<<Ps 145:18–19; Prov 15:8; John 9:31>>] the prayer of the righteous.
+@ The ##light##note:x[<<Rev 22:5>>] of the eyes rejoiceth the heart: __and__ ##a good##note:x[<<Prov 25:25; Luke 2:10–19>>] report maketh the bones fat.
+@ The ##ear##note:x[<<Prov 9:8–9; 15:5; 25:12>>] that heareth the reproof of life abideth among the wise.
+@ He that ##refuseth##note:x[<<Prov 1:24–33>>] ##instruction##note:tn[or, correction] despiseth his own soul: but he that note:x[<<Rev 3:19>>]##heareth##note:tn[or, obeyeth] reproof getteth understanding.note:tn[__getteth…__: Heb. possesseth an heart]
+@ The ##fear##note:x[<<Prov 1:7>>] of the LORD __is__ the instruction of wisdom; ##and##note:x[<<Prov 18:12; 1 Pet 5:5>>] before honour __is__ humility.
+
+=== @16
+
+[discrete.pericope]
+==== The Reply of the Tongue Is from the LORD
+
+@ The note:x[<<Prov 16:9; 19:21>>]##preparations##note:tn[or, disposings] of the heart in man, ##and##note:x[<<Luke 21:14–15>>] the answer of the tongue, __is__ from the LORD.
+@ All ##the ways##note:x[<<Prov 21:2>>] of a man __are__ clean in his own eyes; ##but##note:x[<<1 Sam 16:7; Luke 16:15>>] the LORD weigheth the spirits.
+@ ##Commit##note:tn[Heb. Roll] ##thy works##note:x[<<Ps 37:4–5; 55:22; Phil 4:6>>] unto the LORD, and thy thoughts shall be established.
+@ The ##LORD##note:x[<<Isa 43:21>>] hath made all __things__ for himself: ##yea##note:x[<<Rom 9:22; 2 Pet 2:9>>], even the wicked for the day of evil.
+@ Every one ##__that__##note:x[<<Prov 6:16–17; 8:13>>] __is__ proud in heart __is__ an abomination to the LORD: ##__though__##note:x[<<Prov 11:21>>] hand __join__ in hand, he shall not be ##unpunished##note:tn[Heb. held innocent].
+@ By mercy and truth iniquity is purged: and ##by the##note:x[<<Job 28:28; Prov 14:16; 2 Cor 7:1>>] fear of the LORD __men__ depart from evil.
+@ When a man’s ways ##please##note:x[<<Rom 8:31; Col 1:10; 1 John 3:22>>] the LORD, he maketh even his enemies to be at peace with him.
+@ Better ##__is__##note:x[<<Ps 37:16; Prov 15:16; 1 Tim 6:6–9>>] a little with righteousness than great revenues without right.
+@ note:x[<<Ps 37:23; Prov 16:1; 19:21>>]A man’s heart deviseth his way: but the LORD directeth his steps.
+@ ##A divine sentence##note:x[<<Isa 32:1–2>>] __is__ in the lips of the king: his mouth transgresseth not in judgment.note:tn[__A divine…__: Heb. Divination]
+@ A ##just##note:x[<<Prov 11:1; 20:10, 23>>] weight and balance __are__ the LORD’s: all the weights of the bag __are__ his work.note:tn[__the weights__: Heb. the stones]
+@ __It is__ ##an##note:x[<<Prov 28:9>>] abomination to kings to commit wickedness: ##for##note:x[<<Prov 25:5; 29:14>>] the throne is established by righteousness.
+@ ##Righteous lips __are__ the delight of kings; and they love him that speaketh right.##note:x[<<Ps 101:5–7; Prov 14:35; 22:11>>]
+
+@ The ##wrath##note:x[<<Prov 19:12; 20:2>>] of a king __is as__ messengers of death: but a wise man will pacify it.
+@ In ##the light##note:x[<<Job 29:23–24>>] of the king’s countenance __is__ life; and ##his##note:x[<<Job 29:23; Ps 72:6>>] favour __is__ as a cloud of the latter rain.
+@ ##How much better __is it__ to get wisdom than gold! and to get understanding rather to be chosen than silver!##note:x[<<Prov 8:10–11, 19; Matt 16:26>>]
+@ The ##highway##note:x[<<Isa 35:8>>] of the upright __is__ to depart from evil: ##he##note:x[<<Prov 10:9; 19:16>>] that keepeth his way preserveth his soul.
+@ ##Pride __goeth__ before destruction, and an haughty spirit before a fall.##note:x[<<Prov 11:2; 18:12; Isa 2:11–12>>]
+@ Better __it is__ ##__to be__##note:x[<<Ps 138:6; Isa 57:15; Matt 5:3>>] of an humble spirit with the lowly, than to divide the spoil with the proud.
+@ He that handleth a matter wisely shall find good: and ##whoso##note:x[<<Ps 2:12; Isa 26:3–4; Jer 17:7–8>>] trusteth in the LORD, happy __is__ he.note:tn[__handleth…__: or, understandeth a matter]
+@ The ##wise##note:x[<<Prov 16:23>>] in heart shall be called prudent: and ##the sweetness##note:x[<<Prov 15:7; Isa 50:4>>] of the lips increaseth learning.
+@ note:x[<<Prov 13:14; John 5:24; 6:63>>]Understanding __is__ a wellspring of life unto him that hath it: but the instruction of fools __is__ folly.
+@ The ##heart##note:x[<<Prov 15:28; Matt 12:34–35>>] of the wise ##teacheth##note:tn[Heb. maketh wise] his mouth, and addeth learning to his lips.
+@ ##Pleasant##note:x[<<Prov 12:18; 25:11–12>>] words __are as__ ##an##note:x[<<Prov 24:13–14>>] honeycomb, sweet to the soul, and health to the bones.
+@ ##There is a way that seemeth right unto a man, but the end thereof __are__ the ways of death.##note:x[<<Prov 12:26; 14:12; 2 Cor 13:5>>]
+@ He that ##laboureth##note:x[<<Prov 14:23; Eccl 6:7>>] laboureth for himself; for his mouth craveth it of him.note:tn[__He…__: Heb. The soul of him that]note:tn[__craveth…__: Heb. boweth unto him]
+
+@ An ungodly man diggeth up evil: and ##in##note:x[<<Jas 3:6>>] his lips __there is__ as a burning fire.note:tn[__An…__: Heb. A man of Belial]
+@ A ##froward##note:x[<<Prov 18:8; Jas 3:14–16>>] man ##soweth##note:tn[Heb. sendeth forth] strife: and ##a whisperer##note:x[<<Prov 17:9>>] separateth chief friends.
+
+@ ##A violent man enticeth his neighbour, and leadeth him into the way __that is__ not good.##note:x[<<Prov 1:10–14; 2:12–15; 2 Pet 3:17>>]
+@ He shutteth his eyes to devise froward things: moving his lips he bringeth evil to pass.
+@ The ##hoary##note:x[<<Lev 19:32; Prov 20:29>>] head __is__ a crown of glory, ##__if__##note:x[<<1 Sam 12:2–5>>] it be found in the way of righteousness.
+@ __He__ ##__that is__##note:x[<<Prov 15:18; Jas 1:19>>] slow to anger __is__ better than the mighty; ##and he##note:x[<<Prov 25:28>>] that ruleth his spirit than he that taketh a city.
+@ ##The lot is cast into the lap; but the whole disposing thereof __is__ of the LORD.##note:x[<<1 Sam 14:41–42; Jonah 1:7; Acts 1:26>>]
+
+=== @17
+
+[discrete.pericope]
+==== Better a Dry Morsel in Quietness
+
+@ Better __is__ ##a dry##note:x[<<Ps 37:16; Prov 15:17>>] morsel, and quietness therewith, than an house full of ##sacrifices##note:tn[or, good cheer] ##__with__##note:x[<<Prov 21:19>>] strife.
+@ A ##wise##note:x[<<Prov 14:35; Eccl 4:13>>] servant shall have rule over a son ##that##note:x[<<Prov 10:5>>] causeth shame, and shall have part of the inheritance among the brethren.
+@ ##The fining pot __is__ for silver, and the furnace for gold: but the LORD trieth the hearts.##note:x[<<Ps 26:2; Isa 48:10; Jer 17:10>>]
+@ ##A wicked doer giveth heed to false lips; __and__ a liar giveth ear to a naughty tongue.##note:x[<<Prov 28:4; 2 Tim 4:3–4; 1 John 4:5>>]
+@ Whoso ##mocketh##note:x[<<Prov 14:31; 1 John 3:17>>] the poor reproacheth his Maker: ##__and__##note:x[<<Job 31:29>>] he that is glad at calamities shall not be ##unpunished##note:tn[Heb. held innocent].
+@ note:x[<<Ps 127:3–5; 128:3–6>>]Children’s children __are__ the crown of old men; ##and the##note:x[<<Exod 3:14–15>>] glory of children __are__ their fathers.
+@ Excellent speech becometh not a fool: ##much##note:x[<<Prov 29:12>>] less do lying lips a prince.note:tn[__Excellent…__: Heb. A lip of excellency]note:tn[__lying…__: Heb. a lip of lying]
+@ A ##gift##note:x[<<Exod 23:8>>] __is as__ a precious stone in the eyes of him that hath it: ##whithersoever##note:x[<<Mic 7:3>>] it turneth, it prospereth.note:tn[__a precious…__: Heb. a stone of grace]
+@ He ##that covereth##note:x[<<Prov 10:12; 1 Pet 4:8>>] a transgression ##seeketh##note:tn[or, procureth] love; ##but##note:x[<<Prov 16:28>>] he that repeateth a matter separateth __very__ friends.
+@ ##A reproof entereth more into a wise man than an hundred stripes into a fool.##note:x[<<Prov 9:8–9; Rev 3:19>>]note:tn[__entereth…__: or, aweth more a wise man, than to strike a fool an hundred times]
+@ ##An evil __man__ seeketh only rebellion: therefore a cruel messenger shall be sent against him.##note:x[<<1 Kgs 2:46>>]
+@ Let ##a bear##note:x[<<2 Sam 17:8; Hos 13:8>>] robbed of her whelps meet a man, rather than a fool in his folly.
+@ ##Whoso rewardeth evil for good, evil shall not depart from his house.##note:x[<<Ps 55:12–15; 109:4–13; Rom 12:17>>]
+@ The beginning of strife __is as__ when one letteth out water: therefore ##leave##note:x[<<Prov 20:3; 25:8; 2 Tim 2:23–24>>] off contention, before it be meddled with.
+@ He ##that justifieth##note:x[<<Exod 23:7; Prov 24:23–24; Isa 5:23>>] the wicked, and he that condemneth the just, even they both __are__ abomination to the LORD.
+@ Wherefore __is there__ ##a price##note:x[<<Prov 8:4–5>>] in the hand of a fool to get wisdom, ##seeing##note:x[<<Prov 18:15; 21:25–26>>] __he hath__ no heart __to it__?
+@ ##A friend loveth at all times, and a brother is born for adversity.##note:x[<<1 Sam 20:17; Prov 18:24; John 15:13–14>>]
+@ A man ##void##note:x[<<Prov 6:1–5; 11:15; 20:16>>] of ##understanding##note:tn[Heb. heart] striketh hands, __and__ becometh surety in the presence of his friend.
+@ He ##loveth##note:x[<<Jas 3:14–16>>] transgression that loveth strife: __and__ ##he that##note:x[<<Prov 16:18; 18:12>>] exalteth his gate seeketh destruction.
+@ He that hath a froward heart findeth no good: ##and he##note:x[<<Jas 3:6–8>>] that hath a perverse tongue falleth into mischief.note:tn[__He that hath a froward…__: Heb. The froward of heart]
+@ He ##that##note:x[<<Prov 10:1; 19:13>>] begetteth a fool __doeth it__ to his sorrow: and the father of a fool hath no joy.
+@ A ##merry##note:x[<<Prov 12:25; 15:13; 18:14>>] heart doeth good ##__like__##note:tn[or, to] a medicine: but a broken spirit drieth the bones.
+@ ##A wicked __man__ taketh a gift out of the bosom to pervert the ways of judgment.##note:x[<<Exod 23:8; Deut 16:19; Prov 17:8>>]
+@ Wisdom __is__ ##before##note:x[<<Eccl 2:14; 8:1>>] him that hath understanding; but the eyes of a fool __are__ in the ends of the earth.
+@ ##A foolish son __is__ a grief to his father, and bitterness to her that bare him.##note:x[<<Prov 10:1>>]
+@ Also ##to punish##note:x[<<Prov 17:15; 18:5>>] the just __is__ not good, __nor__ ##to strike##note:x[<<John 18:22>>] princes for equity.
+
+@ He that hath knowledge ##spareth##note:x[<<Prov 10:19; Jas 1:19>>] his words: __and__ a man of understanding is of ##an excellent spirit##note:x[<<Jas 3:18>>].note:tn[__an…__: or, a cool]
+@ ##Even a fool, when he holdeth his peace, is counted wise: __and__ he that shutteth his lips __is esteemed__ a man of understanding.##note:x[<<Job 13:5; Prov 15:2; Eccl 10:14>>]
+
+=== @18
+
+[discrete.pericope]
+==== The Selfishness of the Unfriendly
+
+@ Through desire a man, having separated himself, ##seeketh##note:x[<<Prov 2:1–6; Eph 5:15–17>>] __and__ ##intermeddleth##note:x[<<Prov 20:3>>] with all wisdom.note:tn[__Through…__: or, He that separateth himself seeketh according to his desire, and intermeddleth in every business]
+@ A ##fool##note:x[<<Ps 1:1–2; Prov 1:7; 17:16>>] hath no delight in understanding, but that his heart may discover itself.
+@ ##When the wicked cometh, __then__ cometh also contempt, and with ignominy reproach.##note:x[<<Prov 22:10; 1 Pet 4:14>>]
+@ The ##words##note:x[<<Prov 10:11; 20:5; Col 4:6>>] of a man’s mouth __are as__ deep waters, __and__ the wellspring of wisdom __as__ a flowing brook.
+@ __It is__ ##not##note:x[<<Lev 19:15; Deut 16:19; Prov 28:21>>] good to accept the person of the wicked, to overthrow the righteous in judgment.
+
+@ note:x[<<Prov 27:3>>]A fool’s lips enter into contention, and his mouth calleth for strokes.
+@ A fool’s mouth __is__ ##his destruction##note:x[<<Prov 10:14; 12:13; 13:3>>], and his lips __are__ the snare of his soul.
+@ The ##words##note:x[<<Lev 19:16; Prov 12:18; 16:28>>] of a ##talebearer##note:tn[or, whisperer] __are__ as wounds, and they go down into the innermost parts of the belly.note:tn[__as wounds__: or, like as when men are wounded]note:tn[__innermost…__: Heb. chambers]
+@ He also ##that is slothful##note:x[<<Prov 10:4; 24:30–34; Heb 6:12>>] in his work is brother to him that is a great waster.
+@ The name of the LORD __is__ ##a strong##note:x[<<2 Sam 22:3; Ps 91:2; Isa 26:4>>] tower: the righteous runneth into it, and is ##safe##note:tn[Heb. set aloft].
+@ note:x[<<Ps 52:5–7; Prov 10:15; Eccl 7:12>>]The rich man’s wealth __is__ his strong city, and as an high wall in his own conceit.
+@ Before ##destruction##note:x[<<Prov 11:2>>] the heart of man is haughty, ##and##note:x[<<Prov 15:33; 1 Pet 5:5>>] before honour __is__ humility.
+@ He ##that##note:x[<<Deut 13:14; John 7:51>>] answereth a matter before he heareth __it__, it __is__ folly and shame unto him.note:tn[__answereth…__: Heb. returneth a word]
+@ The ##spirit##note:x[<<2 Cor 12:9–10; 1 Pet 1:6>>] of a man will sustain his infirmity; ##but##note:x[<<Prov 17:22>>] a wounded spirit who can bear?
+@ ##The heart of the prudent getteth knowledge; and the ear of the wise seeketh knowledge.##note:x[<<Prov 1:5; 15:14; Jas 1:5>>]
+@ note:x[<<Gen 33:10; 43:11; Prov 19:6>>]A man’s gift maketh room for him, and bringeth him before great men.
+@ ##__He that is__ first in his own cause __seemeth__ just; but his neighbour cometh and searcheth him.##note:x[<<Prov 18:13>>]
+@ ##The lot causeth contentions to cease, and parteth between the mighty.##note:x[<<Neh 11:1; Prov 16:33>>]
+@ A ##brother##note:x[<<Prov 6:19; Acts 15:39>>] offended __is harder to be won__ ##than##note:x[<<Prov 16:32>>] a strong city: and __their__ contentions __are__ like the bars of a castle.
+@ note:x[<<Prov 12:13–14; 13:2; 25:11–12>>]A man’s belly shall be satisfied with the fruit of his mouth; __and__ with the increase of his lips shall he be filled.
+@ ##Death##note:x[<<Matt 12:35–37; Eph 4:29; Col 4:6>>] and life __are__ in the power of the tongue: and they that love it shall eat the fruit thereof.
+@ __Whoso__ ##findeth a wife##note:x[<<Prov 12:4; 19:14; 31:10–31>>] findeth a good __thing__, and obtaineth favour of the LORD.
+@ The ##poor##note:x[<<Jas 1:9–11>>] useth intreaties; but the ##rich##note:x[<<Exod 5:2; Jas 2:3>>] answereth roughly.
+@ A man ##__that hath__##note:x[<<Prov 17:17; 27:9>>] friends must shew himself friendly: and ##there##note:x[<<2 Sam 1:26>>] is a friend __that__ sticketh closer than a brother.
+
+=== @19
+
+[discrete.pericope]
+==== The Man of Integrity
+
+@ ##Better##note:x[<<Prov 16:8; 28:6; Matt 16:26>>] __is__ the poor that walketh in his integrity, than __he that is__ perverse in his lips, and is a fool.
+@ Also, ##__that__ the##note:x[<<Phil 1:9>>] soul __be__ without knowledge, __it is__ not good; ##and##note:x[<<Prov 21:5; Eccl 7:9>>] he that hasteth with __his__ feet sinneth.
+@ The ##foolishness##note:x[<<1 Sam 22:13–23>>] of man perverteth his way: and his heart ##fretteth##note:x[<<Ps 37:7; Rev 16:9–11>>] against the LORD.
+@ Wealth ##maketh##note:x[<<Prov 14:20; 19:6–7; Luke 15:13–15>>] many friends; but the poor is separated from his neighbour.
+@ A ##false##note:x[<<Exod 23:1; Prov 6:19; 21:28>>] witness shall not be ##unpunished##note:tn[Heb. held innocent], and __he that__ speaketh lies shall not escape.
+
+@ Many ##will##note:x[<<Prov 29:26>>] intreat the favour of the prince: ##and##note:x[<<Prov 17:8; 18:16>>] every man __is__ a friend to him that giveth gifts.note:tn[__him…__: Heb. a man of gifts]
+@ All ##the brethren##note:x[<<Ps 38:11; 88:8; Prov 19:4>>] of the poor do hate him: how much more do his friends go far from him? he pursueth __them with__ words, __yet__ they __are__ wanting __to him__.
+@ He that getteth ##wisdom##note:tn[Heb. an heart] ##loveth##note:x[<<Prov 8:35–36>>] his own soul: ##he that keepeth##note:x[<<Prov 3:18; 16:20>>] understanding shall find good.
+@ A false witness shall not be unpunished, ##and##note:x[<<Rev 22:15>>] __he that__ speaketh lies shall perish.
+@ ##Delight##note:x[<<Prov 30:21–22>>] is not seemly for a fool; much less for a servant to have rule over princes.
+@ The ##discretion##note:tn[or, prudence] of a man ##deferreth##note:x[<<Prov 14:29; 16:32>>] his anger; ##and##note:x[<<Prov 16:32>>] __it is__ his glory to pass over a transgression.
+@ note:x[<<Prov 16:14–15; 20:2>>]The king’s wrath __is__ as the roaring of a lion; but ##his##note:x[<<Hos 14:5>>] favour __is__ as dew upon the grass.
+@ A ##foolish##note:x[<<Prov 10:1>>] son __is__ the calamity of his father: and ##the contentions##note:x[<<Prov 21:9; 27:15>>] of a wife __are__ a continual dropping.
+@ House and riches __are__ ##the inheritance##note:x[<<Prov 13:22>>] of fathers: ##and a##note:x[<<Prov 18:22; 31:10–31>>] prudent wife __is__ from the LORD.
+@ Slothfulness ##casteth##note:x[<<Prov 20:13; 23:21>>] into a deep sleep; ##and##note:x[<<Prov 23:21>>] an idle soul shall suffer hunger.
+@ He that ##keepeth the##note:x[<<Luke 10:28; 1 John 5:3>>] commandment keepeth his own soul; __but__ ##he that despiseth##note:x[<<Prov 13:13>>] his ways shall die.
+@ He ##that hath##note:x[<<Prov 28:27>>] pity upon the poor ##lendeth##note:x[<<Prov 28:27; Heb 6:10>>] unto the LORD; and that which he hath given will he pay him again.note:tn[__that which…__: or, his deed]
+@ ##Chasten##note:x[<<Prov 13:24; 22:15; 29:15>>] thy son while there is hope, and let not thy soul spare for his crying.note:tn[__for…__: or, to his destruction: or, to cause him to die]
+@ A ##man##note:x[<<1 Sam 24:17–22; Prov 25:28; 29:22>>] of great wrath shall suffer punishment: for if thou deliver __him__, yet thou must ##do##note:tn[Heb. add] it again.
+@ Hear counsel, and ##receive##note:x[<<Prov 1:8; 2:1–9; 8:34–35>>] instruction, that thou mayest be wise in thy latter end.
+@ __There are__ many devices in a man’s heart; ##nevertheless##note:x[<<Prov 16:1, 9; Isa 14:24>>] the counsel of the LORD, that shall stand.
+@ The ##desire##note:x[<<2 Chr 6:8; Mark 14:6–8; 2 Cor 8:12>>] of a man __is__ his kindness: and a poor man __is__ better than a liar.
+@ The ##fear##note:x[<<Prov 14:26–27>>] of the LORD __tendeth__ to life: and __he that hath it__ ##shall abide##note:x[<<Isa 58:10–11; Matt 5:6>>] satisfied; he shall not be visited with evil.
+@ ##A slothful __man__ hideth his hand in __his__ bosom, and will not so much as bring it to his mouth again.##note:x[<<Prov 6:9–10; 15:19; 26:13–16>>]
+@ ##Smite##note:x[<<Prov 21:11>>] a scorner, and the simple will beware: and ##reprove##note:x[<<Prov 15:5; 17:10>>] one that hath understanding, __and__ he will understand knowledge.note:tn[__will beware__: Heb. will be cunning]
+@ He that ##wasteth##note:x[<<Prov 30:17>>] __his__ father, __and__ chaseth away __his__ mother, __is__ ##a son##note:x[<<Prov 10:5; 17:2>>] that causeth shame, and bringeth reproach.
+@ ##Cease, my son, to hear the instruction __that causeth__ to err from the words of knowledge.##note:x[<<Prov 14:7; Mark 4:24; 1 Tim 6:3–5>>]
+@ ##An ungodly witness##note:x[<<Acts 6:11–13>>] ##scorneth##note:x[<<Luke 18:2–4>>] judgment: and ##the##note:x[<<Job 15:16>>] mouth of the wicked devoureth iniquity.note:tn[__An…__: Heb. A witness of Belial]
+@ ##Judgments##note:x[<<Prov 9:12>>] are prepared for scorners, ##and##note:x[<<Prov 10:13; 26:3>>] stripes for the back of fools.
+
+=== @20
+
+[discrete.pericope]
+==== Wine Is a Mocker
+
+@ ##Wine __is__ a mocker, strong drink __is__ raging: and whosoever is deceived thereby is not wise.##note:x[<<Isa 28:7; Hos 4:11; Eph 5:18>>]
+@ The ##fear##note:x[<<Prov 19:12; Eccl 10:4>>] of a king __is__ as the roaring of a lion: __whoso__ provoketh him to anger ##sinneth##note:x[<<Prov 8:36>>] __against__ his own soul.
+@ __It is__ ##an##note:x[<<Prov 16:32; 17:14; 19:11>>] honour for a man to cease from strife: but every fool will be meddling.
+@ The ##sluggard##note:x[<<Prov 10:4; 19:15>>] will not plow by reason of the ##cold##note:tn[or, winter]; ##__therefore__##note:x[<<Prov 19:15>>] shall he beg in harvest, and __have__ nothing.
+@ ##Counsel in the heart of man __is like__ deep water; but a man of understanding will draw it out.##note:x[<<Ps 64:6; Prov 18:4; 1 Cor 2:11>>]
+@ Most men will ##proclaim##note:x[<<Prov 27:2; Matt 6:2>>] every one his own ##goodness##note:tn[or, bounty]: ##but##note:x[<<Ps 12:1>>] a faithful man who can find?
+@ The just __man__ walketh in his integrity: ##his children##note:x[<<Ps 37:26; 112:2; Jer 32:39>>] __are__ blessed after him.
+@ ##A king that sitteth in the throne of judgment scattereth away all evil with his eyes.##note:x[<<Ps 99:4; Prov 20:26; 29:14>>]
+@ ##Who can say, I have made my heart clean, I am pure from my sin?##note:x[<<1 Kgs 8:46; Eccl 7:20; 1 John 1:8–10>>]
+@ Divers weights, __and__ divers measures, ##both##note:x[<<Prov 11:1; 20:23>>] of them __are__ alike abomination to the LORD.note:tn[__Divers weights__: Heb. A stone and a stone]note:tn[__divers measures__: Heb. an ephah and an ephah]
+@ ##Even a child is known by his doings, whether his work __be__ pure, and whether __it be__ right.##note:x[<<Prov 21:8; Matt 7:16; Luke 6:43–44>>]
+@ ##The hearing ear, and the seeing eye, the LORD hath made even both of them.##note:x[<<Ps 94:9; 119:18; Matt 13:13–16>>]
+@ ##Love##note:x[<<Prov 10:4; 19:15; Rom 12:11>>] not sleep, lest thou come to poverty; open thine eyes, __and__ thou shalt be satisfied with bread.
+@ __It is__ naught, __it is__ naught, saith the buyer: but when he is gone his way, then he boasteth.
+@ There is gold, and a multitude of rubies: ##but##note:x[<<Prov 8:11; 16:16; 25:12>>] the lips of knowledge __are__ a precious jewel.
+@ ##Take his##note:x[<<Exod 22:26–27; Prov 27:13>>] garment that is surety __for__ a stranger: and take a pledge of him for a strange woman.
+@ Bread of ##deceit##note:tn[Heb. lying, or, falsehood] ##__is__ sweet##note:x[<<Job 20:12–20; Prov 9:17–18; Eccl 11:9>>] to a man; but afterwards his mouth shall be filled with gravel.
+@ __Every__ ##purpose##note:x[<<Prov 15:22; 24:6>>] is established by counsel: ##and##note:x[<<Luke 14:31>>] with good advice make war.
+@ He ##that goeth##note:x[<<Prov 11:13; 18:8>>] about __as__ a talebearer revealeth secrets: therefore meddle not with him that note:x[<<Rom 16:18>>]##flattereth##note:tn[or, enticeth] with his lips.
+@ Whoso ##curseth##note:x[<<Exod 21:17; Prov 30:11, 17>>] his father or his mother, his ##lamp##note:tn[or, candle] shall be put out in obscure darkness.
+@ An inheritance __may be__ ##gotten##note:x[<<1 Tim 6:9>>] hastily at the beginning; ##but##note:x[<<Prov 13:22; 28:8>>] the end thereof shall not be blessed.
+@ Say not thou, ##I##note:x[<<Prov 24:29; Rom 12:17–19; 1 Thess 5:15>>] will recompense evil; __but__ wait on the LORD, and he shall save thee.
+@ Divers ##weights##note:x[<<Prov 20:10; Ezek 45:10>>] __are__ an abomination unto the LORD; and ##a false balance##note:x[<<Hos 12:7>>] __is__ not good.note:tn[__a false…__: Heb. balance of deceit]
+@ note:x[<<Jer 10:23>>]Man’s goings __are__ of the LORD; ##how##note:x[<<Ps 25:12; Prov 16:9>>] can a man then understand his own way?
+@ __It is__ a snare to the man __who__ devoureth __that which is__ holy, and ##after##note:x[<<Lev 27:9–10; Eccl 5:4–6; Matt 5:33>>] vows to make enquiry.
+@ A ##wise##note:x[<<Prov 20:8>>] king scattereth the wicked, and ##bringeth##note:x[<<2 Sam 12:31>>] the wheel over them.
+@ The ##spirit##note:x[<<Job 32:8; 1 Cor 2:11>>] of man __is__ the ##candle##note:tn[or, lamp] of the LORD, ##searching##note:x[<<Heb 4:12–13>>] all the inward parts of the belly.
+@ ##Mercy##note:x[<<Ps 101:1>>] and truth preserve the king: and ##his##note:x[<<Prov 16:12; 29:14>>] throne is upholden by mercy.
+@ The ##glory##note:x[<<1 John 2:14>>] of young men __is__ their strength: and ##the beauty##note:x[<<Lev 19:32; Prov 16:31>>] of old men __is__ the gray head.
+@ The blueness of a wound cleanseth away evil: so __do__ ##stripes##note:x[<<Prov 19:25; 22:15; Heb 12:10>>] the inward parts of the belly.note:tn[__cleanseth…__: Heb. is a purging medicine against]
+
+=== @21
+
+[discrete.pericope]
+==== The King’s Heart
+
+[.parallel]
+(<<Psalms 21:1–13>>)
+
+@ note:x[<<Prov 16:9; 20:24; Acts 7:10>>]The king’s heart __is__ in the hand of the LORD, __as__ the rivers of water: he turneth it whithersoever he will.
+@ Every way of a man __is__ ##right##note:x[<<Prov 16:2, 25>>] in his own eyes: but ##the LORD##note:x[<<Luke 16:15>>] pondereth the hearts.
+@ ##To do justice and judgment __is__ more acceptable to the LORD than sacrifice.##note:x[<<1 Sam 15:22; Prov 15:8; Hos 6:6>>]
+@ ##An high look##note:x[<<Prov 6:17; 8:13; 1 Pet 5:5>>], and a proud heart, __and__ the plowing of the wicked, __is__ sin.note:tn[__An…__: Heb. Haughtiness of eyes]note:tn[__the plowing__: or, the light]
+@ The ##thoughts##note:x[<<Prov 10:4; 13:4; 27:23–27>>] of the diligent __tend__ only to plenteousness; but of every one __that is__ hasty only to want.
+@ The ##getting##note:x[<<Prov 10:2; 13:11; 20:21>>] of treasures by a lying tongue __is__ a vanity tossed to and fro of them that seek death.
+@ The robbery of the wicked shall destroy them; ##because##note:x[<<Prov 21:21>>] they refuse to do judgment.note:tn[__destroy…__: Heb. saw them, or, dwell with them]
+@ The way of man __is__ froward and strange: ##but##note:x[<<1 John 3:3>>] __as for__ the pure, his work __is__ right.
+@ __It is__ ##better##note:x[<<Prov 19:13; 21:19; 25:24>>] to dwell in a corner of the housetop, than with a brawling woman in a wide house.note:tn[__a brawling…__: Heb. a woman of contentions]note:tn[__a wide…__: Heb. an house of society]
+@ The ##soul##note:x[<<Prov 3:29; 1 John 2:16>>] of the wicked desireth evil: his neighbour ##findeth no favour##note:x[<<Mic 3:2–3>>] in his eyes.note:tn[__findeth…__: Heb. is not favoured]
+@ When ##the scorner##note:x[<<Prov 19:25; Acts 5:5>>] is punished, the simple is made wise: and ##when the wise##note:x[<<Prov 18:15>>] is instructed, he receiveth knowledge.
+@ The righteous __man__ ##wisely##note:x[<<Ps 37:35–36; 107:43>>] considereth the house of the wicked: __but God__ ##overthroweth##note:x[<<Prov 14:32>>] the wicked for __their__ wickedness.
+@ Whoso stoppeth his ears ##at##note:x[<<Prov 28:27; Matt 6:14>>] the cry of the poor, he also shall ##cry himself##note:x[<<Prov 1:28>>], but shall not be heard.
+@ A ##gift##note:x[<<Prov 18:16; 19:6>>] in secret pacifieth anger: and a reward in the bosom strong wrath.
+@ __It is__ ##joy##note:x[<<Eccl 3:12>>] to the just to do judgment: but ##destruction##note:x[<<Prov 10:29; Matt 7:23>>] __shall be__ to the workers of iniquity.
+@ The man that ##wandereth##note:x[<<Ps 125:5; Heb 10:38>>] out of the way of understanding shall remain in the congregation of the dead.
+@ He that ##loveth##note:x[<<Prov 23:21; 1 Tim 5:6; 2 Tim 3:4>>] ##pleasure##note:tn[or, sport] __shall be__ a poor man: he that loveth wine and oil shall not be rich.
+@ The ##wicked##note:x[<<Prov 11:8; Isa 43:3–4; 53:4–5>>] __shall be__ a ransom for the righteous, and the transgressor for the upright.
+@ __It is__ ##better##note:x[<<Ps 55:6–7; 120:5–6; Prov 21:9>>] to dwell in the wilderness, than with a contentious and an angry woman.note:tn[__in…__: Heb. in the land of the desert]
+@ __There is__ ##treasure##note:x[<<Ps 112:3>>] to be desired and ##oil##note:x[<<Matt 25:3–4>>] in the dwelling of the wise; ##but##note:x[<<Matt 25:3–4>>] a foolish man spendeth it up.
+@ He ##that##note:x[<<Matt 5:6>>] followeth after righteousness and mercy ##findeth##note:x[<<Prov 22:4; 1 Cor 15:58>>] life, righteousness, and honour.
+@ ##A wise __man__ scaleth the city of the mighty, and casteth down the strength of the confidence thereof.##note:x[<<Eccl 7:19>>]
+@ ##Whoso keepeth his mouth and his tongue keepeth his soul from troubles.##note:x[<<Prov 13:3; 17:27–28; 18:21>>]
+@ Proud __and__ ##haughty##note:x[<<Eccl 7:8–9>>] scorner __is__ his name, who dealeth in proud wrath.note:tn[__in proud…__: Heb. in the wrath of pride]
+
+@ ##The desire of the slothful killeth him; for his hands refuse to labour.##note:x[<<Prov 12:24; 13:4; Matt 25:26>>]
+@ He ##coveteth##note:x[<<Acts 20:33–35>>] greedily all the day long: but ##the righteous##note:x[<<Ps 37:26; 112:9>>] giveth and spareth not.
+@ The ##sacrifice##note:x[<<Prov 15:8; Isa 66:3; Jer 6:20>>] of the wicked __is__ abomination: how much more, __when__ he bringeth it with a wicked mind?note:tn[__with…__: Heb. in wickedness?]
+@ A ##false witness##note:x[<<Prov 19:5, 9>>] shall perish: but ##the man##note:x[<<2 Cor 4:13>>] that heareth speaketh constantly.note:tn[__A…__: Heb. A witness of lies]
+@ A wicked man hardeneth his face: but __as for__ the upright, note:x[<<Prov 11:5; Hag 1:7; 1 Thess 3:11>>]he ##directeth##note:tn[or, considereth] his way.
+
+@ ##__There is__ no wisdom nor understanding nor counsel against the LORD.##note:x[<<Prov 19:21; Jer 9:23; Acts 5:39>>]
+@ The ##horse##note:x[<<Ps 20:7; 33:17–18; Isa 31:1>>] __is__ prepared against the day of battle: but ##safety##note:tn[or, victory] __is__ of the LORD.
+
+=== @22
+
+[discrete.pericope]
+==== A Good Name
+
+@ ##A __good__ name __is__ rather to be chosen than great riches, __and__ loving favour rather than silver and gold.##note:x[<<Eccl 7:1; Luke 10:20>>]note:tn[__loving…__: or, favour is better than, etc]
+@ The ##rich##note:x[<<1 Sam 2:7>>] and poor meet together: ##the LORD##note:x[<<Job 31:15; Prov 14:31>>] __is__ the maker of them all.
+@ A ##prudent##note:x[<<Prov 14:16; 27:12>>] __man__ foreseeth the evil, and hideth himself: but ##the simple##note:x[<<Prov 29:1>>] pass on, and are punished.
+@ ##By##note:x[<<Ps 34:9–10; Matt 6:33; Jas 4:10>>] humility __and__ the fear of the LORD __are__ riches, and honour, and life.note:tn[__By…__: or, The reward of humility, etc]
+@ ##Thorns##note:x[<<Prov 15:19>>] __and__ snares __are__ in the way of the froward: ##he##note:x[<<Prov 16:17; 1 John 5:18>>] that doth keep his soul shall be far from them.
+@ Train up ##a child##note:x[<<Deut 6:7; Eph 6:4; 2 Tim 3:15>>] in the way he should go: and when he is old, he will not depart from it.note:tn[__Train…__: or, Catechise]note:tn[__in…__: Heb. in his way]
+@ The ##rich##note:x[<<Prov 22:16>>] ruleth over the poor, and ##the borrower##note:x[<<2 Kgs 4:1; Matt 18:25>>] __is__ servant to the lender.note:tn[__the lender__: Heb. the man that lendeth]
+@ He ##that##note:x[<<Job 4:8; Gal 6:7–8>>] soweth iniquity shall reap vanity: and ##the rod of his anger shall fail##note:x[<<Isa 30:31>>].note:tn[__the rod…__: or, with the rod of his anger he shall be consumed]
+@ ##He that hath a bountiful eye##note:x[<<Prov 19:17; 1 Tim 6:18–19; Heb 6:10>>] shall be blessed; for he giveth of his bread to the poor.note:tn[__He that…__: Heb. Good of eye]
+@ ##Cast out the scorner, and contention shall go out; yea, strife and reproach shall cease.##note:x[<<Prov 26:20–21; 1 Cor 5:5–6, 13>>]
+@ He ##that##note:x[<<Ps 101:6; Prov 16:13; Matt 5:8>>] loveth pureness of heart, __for__ the grace of his lips the king __shall be__ his friend.note:tn[__for…__: or, and hath grace in his lips]
+@ The ##eyes##note:x[<<2 Chr 16:9>>] of the LORD preserve knowledge, and ##he##note:x[<<Acts 13:8–12; 2 Tim 3:8–9>>] overthroweth the words of the transgressor.note:tn[__the words__: or, the matters]
+@ ##The slothful##note:x[<<Num 13:32–33; Prov 15:19; 26:13–16>>] __man__ saith, __There is__ a lion without, I shall be slain in the streets.
+@ The ##mouth##note:x[<<Prov 6:24–29; 23:27; Eccl 7:26>>] of strange women __is__ a deep pit: he that is abhorred of the LORD shall fall therein.
+@ Foolishness __is__ bound in the heart of a child; ##__but__##note:x[<<Prov 13:24; 19:18; 29:15>>] the rod of correction shall drive it far from him.
+@ He ##that oppresseth##note:x[<<Ps 12:5; Prov 22:22–23; Jas 2:13>>] the poor to increase his __riches, and__ he that giveth to the rich, __shall__ surely __come__ to want.
+
+[discrete.pericope]
+==== Thirty Sayings of the Wise
+
+[discrete.subsection]
+===== Saying 1
+
+@ ##Bow##note:x[<<Prov 2:2–5>>] down thine ear, and hear the words of the wise, and ##apply##note:x[<<Ps 90:12; Prov 23:12>>] thine heart unto my knowledge.
+@ For ##__it is__##note:x[<<Prov 2:10; Jer 15:16>>] a pleasant thing if thou keep them within thee; they shall withal be ##fitted##note:x[<<Prov 8:6>>] in thy lips.note:tn[__within…__: Heb. in thy belly]
+@ That ##thy##note:x[<<Ps 62:8; Prov 3:5; Isa 12:2>>] trust may be in the LORD, I have made known to thee this day, even to thee.note:tn[__even…__: or, trust thou also]
+@ ##Have not I written to thee excellent things in counsels and knowledge,##note:x[<<Ps 12:6; Prov 8:6; 2 Pet 1:19–21>>]
+@ That ##I##note:x[<<Luke 1:3–4>>] might make thee know the certainty of the words of truth; that thou mightest ##answer##note:x[<<1 Pet 3:15>>] the words of truth to them that send unto thee?note:tn[__to them…__: or, to those that send thee?]
+
+[discrete.subsection]
+===== Saying 2
+
+@ Rob not the poor, because he __is__ poor: neither ##oppress##note:x[<<Prov 22:16; Zech 7:10; Mal 3:5>>] the afflicted in the gate:
+@ For ##the LORD##note:x[<<Ps 12:5; 140:12; Jer 51:36>>] will plead their cause, and spoil the soul of those that spoiled them.
+
+[discrete.subsection]
+===== Saying 3
+
+@ ##Make no friendship with an angry man; and with a furious man thou shalt not go:##note:x[<<Prov 21:24; 29:22; 2 Cor 6:14–17>>]
+@ ##Lest thou learn his ways, and get a snare to thy soul.##note:x[<<Ps 106:35; Prov 13:20; 1 Cor 15:33>>]
+
+[discrete.subsection]
+===== Saying 4
+
+@ ##Be not thou __one__ of them that strike hands, __or__ of them that are sureties for debts.##note:x[<<Prov 6:1–5; 11:15; 17:18>>]
+@ ##If thou hast nothing to pay, why should he take away thy bed from under thee?##note:x[<<Prov 20:16>>]
+
+[discrete.subsection]
+===== Saying 5
+
+@ ##Remove##note:x[<<Deut 19:14; 27:17; Prov 23:10>>] not the ancient ##landmark##note:tn[or, bound], which thy fathers have set.
+
+[discrete.subsection]
+===== Saying 6
+
+@ Seest thou ##a man##note:x[<<1 Kgs 11:28; Prov 12:24; Matt 25:21>>] diligent in his business? he shall stand before kings; he shall not stand before mean __men__.note:tn[__mean…__: Heb. obscure men]
+
+=== @23
+
+[discrete.pericope]
+==== True Riches
+
+[.parallel]
+(<<1 Timothy 6:17–19; James 5:1–6>>)
+
+[discrete.subsection]
+===== Saying 7
+
+@ When thou sittest to eat with a ruler, consider diligently what __is__ before thee:
+@ ##And put a knife to thy throat, if thou __be__ a man given to appetite.##note:x[<<Matt 18:8–9; 1 Cor 9:27; Phil 3:19>>]
+@ ##Be not desirous of his dainties: for they __are__ deceitful meat.##note:x[<<Ps 141:4; Prov 23:6; Luke 21:34>>]
+
+[discrete.subsection]
+===== Saying 8
+
+@ ##Labour##note:x[<<Prov 28:20; 1 Tim 6:8–10>>] not to be rich: ##cease##note:x[<<Prov 3:5>>] from thine own wisdom.
+@ Wilt ##thou##note:x[<<1 John 2:16>>] set thine eyes upon that which is not? for ##__riches__##note:x[<<Prov 27:24; Matt 6:19>>] certainly make themselves wings; they fly away as an eagle toward heaven.note:tn[__set…__: Heb. cause thine eyes to fly upon]
+
+[discrete.subsection]
+===== Saying 9
+
+@ Eat thou not the bread of __him that hath__ an evil eye, neither ##desire##note:x[<<Ps 141:4; Prov 23:3; Dan 1:8–10>>] thou his dainty meats:
+@ For as he thinketh in his heart, so __is__ he: ##Eat##note:x[<<Judg 16:15; Ps 12:2; 55:21>>] and drink, saith he to thee; but his heart __is__ not with thee.
+@ The morsel __which__ thou hast eaten shalt thou vomit up, and lose thy sweet words.
+
+[discrete.subsection]
+===== Saying 10
+
+@ ##Speak##note:x[<<Prov 9:7–8; 26:4–5; Matt 7:6>>] not in the ears of a fool: for he will despise the wisdom of thy words.
+
+[discrete.subsection]
+===== Saying 11
+
+@ ##Remove##note:x[<<Deut 27:17; Prov 22:28>>] not the old ##landmark##note:tn[or, bound]; and enter not into the fields of the ##fatherless##note:x[<<Zech 7:10>>]:
+@ ##For their redeemer __is__ mighty; he shall plead their cause with thee.##note:x[<<Prov 22:23>>]
+
+[discrete.subsection]
+===== Saying 12
+
+@ ##Apply thine heart unto instruction, and thine ears to the words of knowledge.##note:x[<<Prov 2:2–6; 5:1–2; 23:19>>]
+
+[discrete.subsection]
+===== Saying 13
+
+@ ##Withhold not correction from the child: for __if__ thou beatest him with the rod, he shall not die.##note:x[<<Prov 13:24; 19:18; 29:15>>]
+@ ##Thou shalt beat him with the rod, and shalt deliver his soul from hell.##note:x[<<Prov 22:15; 1 Cor 5:5; 11:32>>]
+
+[discrete.subsection]
+===== Saying 14
+
+@ My son, ##if##note:x[<<Prov 23:24–25; 29:3; 2 John 1:4>>] thine heart be wise, my heart shall rejoice, even mine.note:tn[__even…__: or, even I will rejoice]
+@ Yea, my reins shall rejoice, when ##thy##note:x[<<Prov 8:6; Eph 5:4>>] lips speak right things.
+
+[discrete.subsection]
+===== Saying 15
+
+@ Let not thine heart envy sinners: but ##__be thou__##note:x[<<Prov 15:16; 28:14; 2 Cor 7:1>>] in the fear of the LORD all the day long.
+@ For ##surely##note:x[<<Jer 29:11>>] there is an note:x[<<Heb 10:35>>]##end##note:tn[or, reward]; and ##thine##note:x[<<Jer 29:11>>] expectation shall not be cut off.
+
+[discrete.subsection]
+===== Saying 16
+
+@ Hear thou, my son, and be wise, ##and guide##note:x[<<Prov 4:10–23; 23:12, 26>>] thine heart in the way.
+@ Be ##not##note:x[<<Isa 5:22; Luke 21:34; Eph 5:18>>] among winebibbers; among riotous eaters of flesh&#58;note:tn[__of flesh__: Heb. of their flesh]
+@ For ##the drunkard##note:x[<<Prov 21:17; Phil 3:19>>] and the glutton shall come to poverty: and ##drowsiness##note:x[<<Prov 19:15>>] shall clothe __a man__ with rags.
+
+[discrete.subsection]
+===== Saying 17
+
+@ ##Hearken##note:x[<<Prov 1:8; 6:20; Eph 6:1–2>>] unto thy father that begat thee, and despise not thy mother when she is old.
+@ ##Buy##note:x[<<Ps 119:72; Prov 16:16; Matt 13:44>>] the truth, and sell __it__ not; __also__ wisdom, and instruction, and understanding.
+@ The ##father##note:x[<<Prov 10:1; 15:20; 23:15–16>>] of the righteous shall greatly rejoice: and he that begetteth a wise __child__ shall have joy of him.
+@ Thy father and thy mother shall be glad, ##and she##note:x[<<Prov 17:25>>] that bare thee shall rejoice.
+
+[discrete.subsection]
+===== Saying 18
+
+@ My son, ##give##note:x[<<Deut 6:5>>] me thine heart, and ##let##note:x[<<Ps 119:2, 9–11>>] thine eyes observe my ways.
+@ ##For a whore __is__ a deep ditch; and a strange woman __is__ a narrow pit.##note:x[<<Prov 22:14>>]
+@ She also lieth in wait ##as __for__ a prey##note:x[<<Prov 7:12; Eccl 7:26>>], and ##increaseth##note:x[<<Hos 4:11>>] the transgressors among men.note:tn[__as for…__: or, as a robber]
+
+[discrete.subsection]
+===== Saying 19
+
+@ ##Who hath woe##note:x[<<1 Sam 25:36–37; Prov 23:21; Eph 5:18>>]? who hath sorrow? who hath contentions? who hath babbling? who hath wounds without cause? who hath redness of eyes?
+@ They that ##tarry##note:x[<<Prov 20:1; Isa 5:11; Eph 5:18>>] long at the wine; they that go to seek mixed wine.
+@ ##Look not thou upon the wine when it is red, when it giveth his colour in the cup, __when__ it moveth itself aright.##note:x[<<Ps 119:37; 1 John 2:16>>]
+@ At the last it biteth like a serpent, and stingeth like an adder.note:tn[__an…__: or, a cockatrice]
+@ Thine eyes shall behold strange women, ##and##note:x[<<Jude 1:12–13>>] thine heart shall utter perverse things.
+@ Yea, ##thou##note:x[<<1 Thess 5:2–7>>] shalt be as he that lieth down in the midst of the sea, or as he that lieth upon the top of a mast.note:tn[__the midst…__: Heb. the heart of the sea]
+@ They have ##stricken##note:x[<<Jer 5:3>>] me, __shalt thou say, and__ I was not sick; they have beaten me, __and__ I felt __it__ not: when shall I awake? ##I will##note:x[<<Isa 56:12; 1 Cor 15:32–34>>] seek it yet again.note:tn[__I felt…__: Heb. I knew it not]
+
+=== @24
+
+[discrete.pericope]
+==== Do Not Envy
+
+[discrete.subsection]
+===== Saying 20
+
+@ Be ##not##note:x[<<Ps 37:7; Prov 3:31; 23:17>>] thou envious against evil men, neither desire to be with them.
+@ ##For their heart studieth destruction, and their lips talk of mischief.##note:x[<<Ps 7:14; 10:7; 28:3>>]
+
+[discrete.subsection]
+===== Saying 21
+
+@ Through ##wisdom##note:x[<<Prov 9:1; 14:1; 1 Cor 3:9>>] is an house builded; and by understanding it is established:
+@ ##And by knowledge shall the chambers be filled with all precious and pleasant riches.##note:x[<<Prov 15:6; 20:15; 21:20>>]
+
+[discrete.subsection]
+===== Saying 22
+
+@ ##A wise##note:x[<<Prov 8:14; Eccl 7:19>>] man __is__ ##strong##note:x[<<Col 1:11>>]; yea, a man of knowledge increaseth strength.note:tn[__is strong__: Heb. is in strength]note:tn[__increaseth…__: Heb. strengtheneth might]
+@ For ##by##note:x[<<Prov 20:18; Luke 14:31>>] wise counsel thou shalt make thy war: ##and##note:x[<<Prov 11:14>>] in multitude of counsellors __there is__ safety.
+
+[discrete.subsection]
+===== Saying 23
+
+@ Wisdom __is__ ##too##note:x[<<Ps 10:5; Prov 14:6; 1 Cor 2:14>>] high for a fool: he openeth not his mouth in the gate.
+
+[discrete.subsection]
+===== Saying 24
+
+@ ##He that deviseth to do evil shall be called a mischievous person.##note:x[<<Ps 21:11; Ezek 38:10–11>>]
+@ The ##thought##note:x[<<Isa 55:7; Matt 15:19; 2 Cor 10:5>>] of foolishness __is__ sin: and the scorner __is__ an abomination to men.
+
+[discrete.subsection]
+===== Saying 25
+
+@ __If__ ##thou##note:x[<<1 Sam 27:1; Isa 40:28–31; Eph 3:13>>] faint in the day of adversity, thy strength __is__ ##small##note:tn[Heb. narrow].
+
+@ ##If##note:x[<<Ps 82:4; Isa 58:6–7; 1 John 3:16–17>>] thou forbear to deliver __them that are__ drawn unto death, and __those that are__ ready to be slain;
+@ If thou sayest, Behold, we knew it not; ##doth not he that##note:x[<<Jer 17:10; Rev 2:23>>] pondereth the heart consider __it__? and he that keepeth thy soul, doth __not__ he know __it__? ##and shall##note:x[<<Job 34:11>>] __not__ he render to __every__ man according to his works?
+
+[discrete.subsection]
+===== Saying 26
+
+@ My son, ##eat##note:x[<<Song 5:1; Isa 7:15>>] thou honey, because __it is__ good; and the honeycomb, __which is__ sweet to thy taste&#58;note:tn[__to…__: Heb. upon thy palate]
+@ So ##__shall__ the##note:x[<<Jer 15:16>>] knowledge of wisdom __be__ unto thy soul: ##when##note:x[<<Prov 2:10>>] thou hast found __it__, then ##there##note:x[<<Jas 1:25>>] shall be a reward, and thy expectation shall not be cut off.
+
+[discrete.subsection]
+===== Saying 27
+
+@ ##Lay##note:x[<<Jer 11:19; Acts 9:24>>] not wait, O wicked __man__, against the dwelling of the righteous; spoil not his resting place:
+@ For ##a just##note:x[<<Ps 34:19; 37:24; Mic 7:8–10>>] __man__ falleth seven times, and riseth up again: but the wicked shall fall into mischief.
+
+[discrete.subsection]
+===== Saying 28
+
+@ ##Rejoice not when thine enemy falleth, and let not thine heart be glad when he stumbleth:##note:x[<<Job 31:29; Prov 17:5; Obad 1:12>>]
+@ Lest the LORD see __it__, and it displease him, and he turn away his wrath from him.note:tn[__it displease…__: Heb. it be evil in his eyes]
+
+[discrete.subsection]
+===== Saying 29
+
+@ ##Fret##note:x[<<Ps 1:1; 119:115; Prov 13:20>>] not thyself because of evil __men__, neither be thou envious at the wicked;note:tn[__Fret…__: or, Keep not company with the wicked]
+@ For there shall be no reward to the evil __man;__ the note:x[<<Job 18:5–6; Prov 13:9>>]##candle##note:tn[or, lamp] of the wicked shall be put out.
+
+[discrete.subsection]
+===== Saying 30
+
+@ My son, ##fear##note:x[<<Rom 13:1–7; Titus 3:1; 1 Pet 2:13–17>>] thou the LORD and the king: __and__ meddle not with them that are given to change&#58;note:tn[__them…__: Heb. changers]
+@ For their calamity shall rise suddenly; and who knoweth the ruin of them both?
+
+[discrete.pericope]
+==== Further Sayings of the Wise
+
+@ These ##__things__##note:x[<<Jas 3:17>>] also __belong__ to the wise. ##__It__##note:x[<<Prov 18:5; 28:21>>] __is__ not good to have respect of persons in judgment.
+@ He ##that##note:x[<<Prov 17:15; Isa 5:23>>] saith unto the wicked, Thou __art__ righteous; ##him shall##note:x[<<Prov 11:26>>] the people curse, nations shall abhor him:
+@ But to ##them##note:x[<<1 Tim 5:20>>] that rebuke __him__ shall be delight, and a good blessing shall come upon them.note:tn[__a good…__: Heb. a blessing of good]
+@ __Every man__ ##shall##note:x[<<Gen 41:38–57; Prov 15:23; 25:11–12>>] kiss __his__ lips that giveth a right answer.note:tn[__that…__: Heb. that answereth right words]
+@ ##Prepare thy work without, and make it fit for thyself in the field; and afterwards build thine house.##note:x[<<1 Kgs 5:17–18; 6:7; Luke 14:28–30>>]
+
+@ Be not a witness against thy neighbour without cause; and ##deceive##note:x[<<Eph 4:25>>] __not__ with thy lips.
+@ ##Say##note:x[<<Prov 20:22; Rom 12:17–21; 1 Thess 5:15>>] not, I will do so to him as he hath done to me: I will render to the man according to his work.
+
+@ I went by the field of the slothful, and by the vineyard of the man ##void##note:x[<<Prov 12:11>>] of understanding;
+@ And, lo, ##it##note:x[<<Gen 3:17–19; Jer 4:3>>] was all grown over with thorns, __and__ nettles had covered the face thereof, ##and the##note:x[<<Eccl 10:18>>] stone wall thereof was broken down.
+@ Then I saw, __and__ considered __it__ well: ##I looked##note:x[<<1 Cor 10:11>>] upon __it, and__ received instruction.note:tn[__considered…__: Heb. set my heart]
+@ ##__Yet__ a little sleep, a little slumber, a little folding of the hands to sleep:##note:x[<<Prov 6:4–11; Rom 13:11; 1 Thess 5:6–8>>]
+@ So shall ##thy poverty##note:x[<<Prov 10:4; 13:4>>] come __as__ one that travelleth; and thy want as an armed man.note:tn[__an…__: Heb. a man of shield]
+
+=== @25
+
+[discrete.pericope]
+==== More Proverbs of Solomon
+
+@ These __are__ also ##proverbs##note:x[<<1 Kgs 4:32; Prov 1:1>>] of Solomon, which the men of Hezekiah king of Judah copied out.
+
+@ __It is__ ##the glory##note:x[<<Deut 29:29; Job 11:7–8; Rom 11:33–34>>] of God to conceal a thing: but the honour of kings __is__ to search out a matter.
+@ The ##heaven##note:x[<<Ps 103:11; Isa 55:9>>] for height, and the earth for depth, and the heart of kings ##__is__ unsearchable##note:x[<<1 Kgs 4:29>>].note:tn[__is…__: Heb. there is no searching]
+
+@ ##Take away the dross from the silver, and there shall come forth a vessel for the finer.##note:x[<<Prov 17:3; Isa 1:25–27; 2 Tim 2:20–21>>]
+@ Take ##away##note:x[<<Ps 101:7–8; Prov 20:8>>] the wicked __from__ before the king, and ##his##note:x[<<Prov 16:12>>] throne shall be established in righteousness.
+
+@ ##Put not forth thyself##note:x[<<Prov 25:27; 27:2>>] ##in the presence##note:x[<<Prov 16:19>>] of the king, and stand not in the place of great __men:__note:tn[__Put…__: Heb. Set not out thy glory]
+@ For better __it is__ that it be said unto thee, Come up hither; ##than##note:x[<<Luke 18:14; 1 Pet 5:5>>] that thou shouldest be put lower in the presence of the prince whom thine eyes have seen.
+
+@ Go not forth ##hastily##note:x[<<Prov 17:14; 18:6>>] to strive, lest __thou know not__ ##what##note:x[<<Matt 5:25>>] to do in the end thereof, when thy neighbour hath put thee to shame.
+@ Debate thy cause ##with##note:x[<<Matt 18:5–17>>] thy neighbour __himself;__ and discover not ##a secret to another##note:x[<<Prov 11:13>>]:note:tn[__a secret…__: or, the secret of]
+@ Lest he that heareth __it__ put thee to shame, and thine infamy turn not away.
+
+@ A ##word##note:x[<<Prov 15:23; Eccl 12:10; Isa 50:4>>] fitly spoken __is like__ apples of gold in pictures of silver.note:tn[__fitly…__: Heb. spoken upon his wheels]
+@ __As__ an earring of gold, and an ornament of fine gold, __so is__ ##a wise##note:x[<<Ps 141:5; Prov 9:8; 15:31–32>>] reprover upon an obedient ear.
+@ ##As the cold of snow in the time of harvest, __so is__ a faithful messenger to them that send him: for he refresheth the soul of his masters.##note:x[<<Prov 13:17; 25:25>>]
+@ Whoso ##boasteth##note:x[<<Prov 20:6; Luke 14:11>>] himself of a false gift __is like__ clouds and wind without rain.note:tn[__of a…__: Heb. in a gift of falsehood]
+@ By ##long##note:x[<<Prov 15:1; Eccl 10:4>>] forbearing is a prince persuaded, and a soft tongue breaketh the bone.
+@ ##Hast##note:x[<<Prov 24:13–14>>] thou found honey? eat so much as is sufficient for thee, ##lest##note:x[<<Prov 25:27; Eph 5:18>>] thou be filled therewith, and vomit it.
+@ Withdraw thy foot from thy neighbour’s house; lest he be weary of thee, and __so__ hate thee.note:tn[__Withdraw…__: or, Let thy foot be seldom in]note:tn[__weary…__: Heb. full of thee]
+@ ##A man that beareth false witness against his neighbour __is__ a maul, and a sword, and a sharp arrow.##note:x[<<Ps 57:4; Prov 12:18; Jer 9:8>>]
+@ ##Confidence in an unfaithful man in time of trouble __is like__ a broken tooth, and a foot out of joint.##note:x[<<Isa 36:6; Ezek 29:6–7>>]
+@ __As__ he ##that taketh##note:x[<<Jas 2:15–16>>] away a garment in cold weather, __and as__ vinegar upon nitre, ##so##note:x[<<Eccl 3:4; Rom 12:15>>] __is__ he that singeth songs to an heavy heart.
+
+@ ##If thine enemy be hungry, give him bread to eat; and if he be thirsty, give him water to drink:##note:x[<<Prov 24:17; Matt 5:44; Rom 12:20–21>>]
+@ For thou shalt heap coals of fire upon his head, and ##the LORD##note:x[<<2 Sam 16:12; Matt 10:13>>] shall reward thee.
+@ The north wind driveth away rain: ##so##note:x[<<Prov 26:20>>] __doth__ an angry countenance a backbiting tongue.note:tn[__driveth…__: or, bringeth forth rain: so doth a backbiting tongue an angry countenance]
+@ ##__It is__ better to dwell in the corner of the housetop, than with a brawling woman and in a wide house.##note:x[<<Prov 21:9, 19; 27:15–16>>]
+@ __As__ ##cold##note:x[<<Ps 63:1>>] waters to a thirsty soul, ##so##note:x[<<Prov 15:30; Rom 10:15>>] __is__ good news from a far country.
+@ A righteous man falling down before the wicked __is as__ a troubled fountain, and a corrupt spring.
+@ __It is__ not good to eat much honey: ##so##note:x[<<Prov 27:2; John 5:44; Phil 2:3>>] __for men__ to search their own glory __is not__ glory.
+@ ##He that __hath__ no rule over his own spirit __is like__ a city __that is__ broken down, __and__ without walls.##note:x[<<1 Sam 20:30; Prov 16:32; 22:24>>]
+
+=== @26
+
+[discrete.pericope]
+==== Similitudes and Instructions
+
+@ As snow in summer, and as rain in harvest, ##so##note:x[<<Prov 28:16>>] honour is not seemly for a fool.
+@ As the bird by wandering, as the swallow by flying, ##so##note:x[<<Num 23:8; Neh 13:2; Ps 109:28>>] the curse causeless shall not come.
+@ note:x[<<Ps 32:9; Prov 10:13; 1 Cor 4:21>>]A whip for the horse, a bridle for the ass, and a rod for the fool’s back.
+
+@ ##Answer not a fool according to his folly, lest thou also be like unto him.##note:x[<<Prov 17:14; 1 Pet 3:9; Jude 1:9>>]
+@ Answer ##a fool##note:x[<<Matt 16:1–4; 21:23–27>>] according to his folly, lest he be wise in his own note:x[<<Rom 12:16>>]##conceit##note:tn[Heb. eyes].
+
+@ He that ##sendeth##note:x[<<Prov 10:26; 13:17; 25:13>>] a message by the hand of a fool cutteth off the feet, __and__ drinketh ##damage##note:tn[or, violence].
+@ The legs of the lame are not equal: ##so##note:x[<<Ps 64:8; Prov 17:7; 26:9>>] __is__ a parable in the mouth of fools.note:tn[__are…__: Heb. are lifted up]
+@ As he that bindeth a stone in a sling, ##so##note:x[<<Prov 26:1>>] __is__ he that giveth honour to a fool.note:tn[__bindeth…__: or, putteth a precious stone in an heap of stones]
+@ __As__ a thorn goeth up into the hand of a drunkard, so __is__ a parable in the mouth of fools.
+@ The great __God__ that formed all __things__ both rewardeth the fool, and rewardeth transgressors.note:tn[__The great…__: or, A great man grieveth all, and he hireth the fool, he hireth also transgressors]
+@ As ##a dog##note:x[<<Exod 8:15; Matt 12:45; 2 Pet 2:22>>] returneth to his vomit, __so__ a fool returneth to his folly.note:tn[__returneth to his folly__: Heb. iterateth his folly]
+@ ##Seest##note:x[<<Prov 29:20>>] thou ##a man##note:x[<<Prov 29:20; 1 Cor 3:18–19>>] wise in his own conceit? __there is__ more hope of a fool than of him.
+@ ##The slothful __man__ saith, __There is__ a lion in the way; a lion __is__ in the streets.##note:x[<<Prov 15:19; 19:15; 22:13>>]
+@ ##__As__ the door turneth upon his hinges, so __doth__ the slothful upon his bed.##note:x[<<Heb 6:12>>]
+@ The ##slothful##note:x[<<Prov 19:24>>] hideth his hand in __his__ bosom; it grieveth him to bring it again to his mouth.note:tn[__it grieveth…__: or, he is weary]
+@ ##The##note:x[<<Prov 12:15; 26:12; 1 Pet 3:15>>] sluggard __is__ wiser in his own conceit than seven men that can render a reason.
+@ He that ##passeth##note:x[<<Prov 18:6; 20:3; 2 Tim 2:23–24>>] by, __and__ ##meddleth##note:tn[or, is enraged] with strife __belonging__ not to him, __is like__ one that taketh a dog by the ears.
+
+@ As a mad __man__ who casteth ##firebrands##note:tn[Heb. flames, or, sparks], ##arrows##note:x[<<Prov 25:18>>], and death,
+@ So __is__ the man __that__ deceiveth his neighbour, ##and##note:x[<<Prov 10:23; Eph 5:4>>] saith, Am not I in sport?
+
+@ Where no wood is, __there__ the fire goeth out: ##so##note:x[<<Prov 16:28; 22:10; Jas 3:6>>] where __there is__ no ##talebearer##note:tn[or, whisperer], the strife ##ceaseth##note:tn[Heb. is silent].note:tn[__Where no…__: Heb. Without wood]
+@ ##__As__ coals __are__ to burning coals, and wood to fire; so __is__ a contentious man to kindle strife.##note:x[<<Prov 15:18; 29:22>>]
+@ The ##words##note:x[<<Prov 18:8>>] of a talebearer __are__ as wounds, and they go down into the innermost parts of the belly.note:tn[__innermost…__: Heb. chambers]
+@ ##Burning lips and a wicked heart __are like__ a potsherd covered with silver dross.##note:x[<<Prov 10:18; Luke 22:47–48>>]
+
+@ He that hateth ##dissembleth##note:tn[or, is known] with his lips, and layeth up ##deceit##note:x[<<Prov 12:5, 17, 20>>] within him;
+@ When he ##speaketh fair##note:x[<<Ps 28:3>>], ##believe##note:x[<<Jer 12:6>>] him not: for __there are__ ##seven##note:x[<<Prov 6:16–19>>] abominations in his heart.note:tn[__speaketh…__: Heb. maketh his voice gracious]
+@ ##__Whose__ hatred is covered by deceit##note:x[<<1 Sam 18:17; Ps 55:21–23>>], his wickedness shall be shewed before the __whole__ congregation.note:tn[__by…__: or, in secret]
+@ Whoso ##diggeth##note:x[<<Ps 7:15–16; 9:15; Prov 28:10>>] a pit shall fall therein: and he that rolleth a stone, it will return upon him.
+@ A ##lying##note:x[<<John 8:44–49; 10:32–33>>] tongue hateth __those that are__ afflicted by it; and ##a flattering##note:x[<<Luke 20:20–21>>] mouth worketh ruin.
+
+=== @27
+
+[discrete.pericope]
+==== Do Not Boast about Tomorrow
+
+[.parallel]
+(<<James 4:13–17>>)
+
+@ ##Boast##note:x[<<Luke 12:19–20; 2 Cor 6:2; Jas 4:13–16>>] not thyself of to morrow; for thou knowest not what a day may bring forth.note:tn[__to…__: Heb. to morrow day]
+@ ##Let another man praise thee, and not thine own mouth; a stranger, and not thine own lips.##note:x[<<Prov 25:27; 2 Cor 10:12, 18>>]
+
+@ A stone __is__ ##heavy##note:tn[Heb. heaviness], and the sand weighty; ##but##note:x[<<Dan 3:19; 1 John 3:12>>] a fool’s wrath __is__ heavier than them both.
+@ Wrath __is__ cruel, and anger __is__ outrageous; ##but##note:x[<<Prov 14:30; Jas 3:14–16>>] who __is__ able to stand before note:x[<<Prov 6:34>>]##envy##note:tn[or, jealousy?]?note:tn[__Wrath…__: Heb. Wrath is cruelty, and anger an overflowing]
+
+@ ##Open rebuke __is__ better than secret love.##note:x[<<Prov 28:23; Gal 2:14; 1 Tim 5:20>>]
+@ Faithful __are__ ##the wounds##note:x[<<Job 5:17–18; Ps 141:5; Rev 3:19>>] of a friend; but the kisses of an enemy __are__ ##deceitful##note:tn[or, earnest, or, frequent].
+@ The ##full##note:x[<<Num 11:18–20; 21:5>>] soul ##loatheth##note:tn[Heb. treadeth under foot] an honeycomb; but ##to##note:x[<<Luke 15:16–17>>] the hungry soul every bitter thing is sweet.
+@ As ##a bird##note:x[<<Isa 16:2>>] that wandereth from her nest, so __is__ a ##man##note:x[<<Prov 21:16; Jonah 1:3>>] that wandereth from his place.
+
+@ ##Ointment##note:x[<<Ps 104:15>>] and perfume rejoice the heart: ##so##note:x[<<Prov 16:21, 23–24>>] __doth__ the sweetness of a man’s friend by hearty counsel.note:tn[__by…__: Heb. from the counsel of the soul]
+@ Thine ##own##note:x[<<1 Kgs 12:6–8>>] friend, and thy father’s friend, forsake not; neither go into thy brother’s house in the day of thy calamity: __for__ ##better##note:x[<<Prov 17:17; 18:24>>] __is__ a neighbour __that is__ near than a brother far off.
+@ My son, ##be wise##note:x[<<Prov 10:1; 23:15–16>>], and make my heart glad, ##that I##note:x[<<Ps 119:42>>] may answer him that reproacheth me.
+@ ##A prudent __man__ foreseeth the evil, __and__ hideth himself; __but__ the simple pass on, __and__ are punished.##note:x[<<Prov 18:10; 22:3; Heb 11:7>>]
+@ ##Take his garment that is surety for a stranger, and take a pledge of him for a strange woman.##note:x[<<Prov 6:1–4; 20:16; 22:26–27>>]
+@ ##He that##note:x[<<2 Sam 16:16–19; Acts 12:22–23>>] blesseth his friend with a loud voice, rising early in the morning, it shall be counted a curse to him.
+
+@ ##A continual##note:x[<<Prov 19:13; 21:9, 19>>] dropping in a very rainy day and a contentious woman are alike.
+@ Whosoever hideth her hideth the wind, and ##the ointment##note:x[<<John 12:3>>] of his right hand, __which__ bewrayeth __itself__.
+@ Iron sharpeneth iron; ##so##note:x[<<Job 4:3–4; Prov 27:9; Heb 10:24>>] a man sharpeneth the countenance of his friend.
+@ Whoso ##keepeth##note:x[<<Song 8:12; 1 Cor 9:7>>] the fig tree shall eat the fruit thereof: so he that waiteth on his master ##shall be##note:x[<<Luke 12:37>>] honoured.
+@ As ##in##note:x[<<Jas 1:22–25>>] water face __answereth__ to face, ##so##note:x[<<Ps 33:15; Mark 7:21–22>>] the heart of man to man.
+@ ##Hell##note:x[<<Prov 30:15–16>>] and destruction are ##never##note:tn[Heb. not] full; ##so##note:x[<<Eccl 1:8; 1 John 2:16>>] the eyes of man are never satisfied.
+@ __As__ ##the fining##note:x[<<Ps 66:10; Prov 17:3; Zech 13:9>>] pot for silver, and the furnace for gold; so __is__ a man to his praise.
+@ ##Though thou shouldest bray a fool in a mortar among wheat with a pestle, __yet__ will not his foolishness depart from him.##note:x[<<Prov 23:35; Isa 1:5; Jer 5:3>>]
+
+@ Be thou ##diligent##note:x[<<Gen 33:13; John 21:15–17; 1 Pet 5:2>>] to know the state of thy flocks, __and__ look well to thy herds.note:tn[__look…__: Heb. set thy heart]
+@ ##For##note:x[<<Prov 23:5; 1 Tim 6:17–18>>] ##riches##note:tn[Heb. strength] __are__ not for ever: and doth the crown __endure__ to every generation?note:tn[__to…__: Heb. to generation and generation?]
+@ The ##hay##note:x[<<Prov 10:5>>] appeareth, and the tender grass sheweth itself, and herbs of the mountains are gathered.
+@ The lambs __are__ for thy clothing, and the goats __are__ the price of the field.
+@ And __thou shalt have__ goats’ milk ##enough##note:x[<<Matt 6:33>>] for thy food, for the food of thy household, and __for__ the ##maintenance##note:tn[Heb. life] for thy maidens.
+
+=== @28
+
+[discrete.pericope]
+==== The Boldness of the Righteous
+
+@ The ##wicked##note:x[<<Deut 28:7; Ps 53:5>>] flee when no man pursueth: but ##the righteous##note:x[<<Isa 26:3–4>>] are bold as a lion.
+@ For ##the transgression##note:x[<<1 Kgs 16:8–29>>] of a land many __are__ the princes thereof: ##but##note:x[<<Gen 45:5–8; Job 22:28–30>>] by a man of understanding __and__ knowledge the state __thereof__ shall be prolonged.note:tn[__by…__: or, by men of understanding and wisdom shall they likewise be prolonged]
+@ A ##poor man##note:x[<<Matt 18:28–30>>] that oppresseth the poor __is like__ a sweeping rain which leaveth no food.note:tn[__which…__: Heb. without food]
+@ They ##that##note:x[<<Rom 1:32>>] forsake the law praise the wicked: ##but##note:x[<<Matt 14:4; Eph 5:11>>] such as keep the law contend with them.
+@ ##Evil men understand not judgment: but they that seek the LORD understand all __things__.##note:x[<<Ps 92:6; Jas 1:5; 1 John 2:27>>]
+@ ##Better __is__ the poor that walketh in his uprightness, than __he that is__ perverse __in his__ ways, though he __be__ rich.##note:x[<<Prov 19:1; 28:18; Luke 16:19–23>>]
+@ Whoso keepeth the law __is__ a wise son: ##but##note:x[<<Prov 29:3, 15; 1 Pet 4:3–4>>] he that is a companion of riotous __men__ shameth his father.note:tn[__is a companion…__: or, feedeth gluttons]
+@ He ##that by##note:x[<<Job 27:16–17; Prov 13:22; Eccl 2:26>>] usury and unjust gain increaseth his substance, he shall gather it for him that will pity the poor.note:tn[__unjust…__: Heb. by increase]
+@ He that ##turneth##note:x[<<Zech 7:11–13; 2 Tim 4:3–4>>] away his ear from hearing the law, ##even##note:x[<<Ps 66:18>>] his prayer __shall be__ abomination.
+@ Whoso causeth the righteous to go astray in an evil way, ##he shall##note:x[<<Ps 7:15–16; Prov 26:27>>] fall himself into his own pit: ##but##note:x[<<Ps 37:25–26>>] the upright shall have good __things__ in possession.
+@ The ##rich##note:x[<<Luke 16:13–14>>] man __is__ wise in his own conceit; but ##the poor##note:x[<<Prov 18:17; Eccl 9:15–17>>] that hath understanding searcheth him out.note:tn[__own…__: Heb. eyes]
+@ When ##righteous##note:x[<<Prov 11:10; 28:28; 29:2>>] __men__ do rejoice, __there is__ great glory: but when the wicked rise, a man is ##hidden##note:tn[or, sought for].
+@ He ##that##note:x[<<Job 31:33; Ps 32:3–5>>] covereth his sins shall not prosper: but ##whoso##note:x[<<1 John 1:8–10>>] confesseth and forsaketh __them__ shall have mercy.
+@ ##Happy##note:x[<<Ps 2:11; Prov 23:17; Isa 66:2>>] __is__ the man that feareth alway: but he that hardeneth his heart shall fall into mischief.
+@ __As__ ##a roaring##note:x[<<Prov 20:2; 1 Pet 5:8>>] lion, and a ranging bear; ##__so__##note:x[<<Matt 2:16>>] __is__ a wicked ruler over the poor people.
+@ The prince that wanteth understanding __is__ also a great oppressor: __but__ ##he that##note:x[<<Exod 18:21>>] hateth covetousness shall prolong __his__ days.
+@ ##A man that doeth violence to the blood of __any__ person shall flee to the pit; let no man stay him.##note:x[<<Gen 9:6; Exod 21:14; 1 Kgs 21:19>>]
+@ Whoso ##walketh##note:x[<<Prov 10:9; 11:3–6>>] uprightly shall be saved: ##but##note:x[<<Prov 28:6>>] __he that is__ perverse __in his__ ways shall fall at once.
+@ He ##that tilleth##note:x[<<Prov 12:11; 27:23–27>>] his land shall have plenty of bread: ##but##note:x[<<Prov 13:20>>] he that followeth after vain __persons__ shall have poverty enough.
+@ A ##faithful##note:x[<<Neh 7:2; Luke 16:10–12>>] man shall abound with blessings: ##but##note:x[<<Prov 13:11>>] he that maketh haste to be rich shall not be ##innocent##note:tn[or, unpunished].
+@ To have ##respect##note:x[<<Prov 18:5; 24:23>>] of persons __is__ not good: ##for##note:x[<<Ezek 13:19>>] for a piece of bread __that__ man will transgress.
+@ He ##that hasteth##note:x[<<Prov 28:20; 1 Tim 6:9>>] to be rich __hath__ ##an evil##note:x[<<Prov 23:6>>] eye, and considereth not that poverty shall come upon him.note:tn[__hasteth…__: or, hath and evil eye hasteth to be rich]
+@ ##He that rebuketh a man afterwards shall find more favour than he that flattereth with the tongue.##note:x[<<Ps 141:5; Prov 27:5–6; Matt 18:15>>]
+@ Whoso ##robbeth##note:x[<<Prov 19:26; Matt 15:4–6>>] his father or his mother, and saith, __It is__ no transgression; ##the same##note:x[<<Prov 18:9>>] __is__ the companion of a destroyer.note:tn[__a destroyer__: Heb. a man destroying]
+@ He ##that is##note:x[<<Prov 10:12>>] of a proud heart stirreth up strife: but ##he that putteth##note:x[<<1 Tim 6:6>>] his trust in the LORD shall be ##made##note:x[<<Prov 11:25>>] fat.
+@ He ##that##note:x[<<Prov 3:5; Jer 17:9>>] trusteth in his own heart is a fool: ##but##note:x[<<Job 28:28>>] whoso walketh wisely, he shall be delivered.
+@ He ##that giveth##note:x[<<Deut 15:7; Ps 41:1–3; Prov 19:17>>] unto the poor shall not lack: but he that hideth his eyes shall have many a curse.
+@ When ##the wicked##note:x[<<Prov 28:12; 29:2>>] rise, men ##hide##note:x[<<Job 24:4>>] themselves: but when they perish, the righteous increase.
+
+=== @29
+
+[discrete.pericope]
+==== The Flourishing of the Righteous
+
+@ ##He, that being often reproved##note:x[<<1 Sam 2:25; Prov 1:24–31>>] hardeneth __his__ neck, ##shall##note:x[<<Prov 6:15>>] suddenly be destroyed, and that without remedy.note:tn[__He…__: Heb. A man of reproofs]
+@ When ##the righteous##note:x[<<Prov 11:10; 28:12, 28>>] are in authority, the people rejoice: but when the wicked beareth rule, the people mourn. note:tn[__in…__: or, increased]
+@ Whoso ##loveth##note:x[<<Prov 10:1; 15:20; 27:11>>] wisdom rejoiceth his father: but he that keepeth company with harlots spendeth __his__ substance.
+@ The ##king##note:x[<<Prov 29:14>>] by judgment establisheth the land: but he that receiveth gifts overthroweth it.note:tn[__he…__: Heb. a man of oblations]
+@ A man ##that##note:x[<<Job 17:5; Ps 5:9; Prov 26:24–25>>] flattereth his neighbour spreadeth a net for his feet.
+@ In ##the transgression##note:x[<<2 Tim 2:26>>] of an evil man __there is__ a snare: but the righteous doth sing and rejoice.
+@ The righteous ##considereth##note:x[<<Job 29:16; Ps 41:1>>] the cause of the poor: ##__but__##note:x[<<Prov 21:13>>] the wicked regardeth not to know __it__.
+@ ##Scornful##note:x[<<Prov 11:11>>] men bring a city into a snare: but ##wise##note:x[<<Jer 15:1>>] __men__ turn away wrath.note:tn[__bring…__: or, set a city on fire]
+@ ##__If__ a wise man contendeth with a foolish man, whether he rage or laugh, __there is__ no rest.##note:x[<<Prov 26:4; Eccl 10:13>>]
+@ note:x[<<Gen 4:5–8; John 15:18–19; 1 John 3:12–13>>]The bloodthirsty hate the upright: but the just seek his soul.note:tn[__The bloodthirsty__: Heb. Men of blood]
+@ ##A fool uttereth all his mind: but a wise __man__ keepeth it in till afterwards.##note:x[<<Prov 12:16; Amos 5:13; Mic 7:5>>]
+@ ##If a ruler hearken to lies, all his servants __are__ wicked.##note:x[<<Prov 20:8>>]
+@ The poor and the deceitful man ##meet##note:x[<<Prov 22:2>>] together: the ##LORD##note:x[<<Ps 13:3; Matt 5:45>>] lighteneth both their eyes.note:tn[__the deceitful…__: or, the usurer]
+@ The ##king##note:x[<<Prov 16:12; 29:4; Isa 11:4>>] that faithfully judgeth the poor, his throne shall be established for ever.
+@ note:x[<<Prov 29:17>>]The rod and reproof give wisdom: but ##a child##note:x[<<Prov 10:1; 17:25>>] left __to himself__ bringeth his mother to shame.
+@ When the wicked are multiplied, transgression increaseth: ##but##note:x[<<Ps 37:34, 36; 58:10>>] the righteous shall see their fall.
+@ ##Correct thy son, and he shall give thee rest; yea, he shall give delight unto thy soul.##note:x[<<Prov 13:24; 23:13–14; 29:15>>]
+@ Where ##__there__##note:x[<<Hos 4:6>>] __is__ no vision, the people ##perish##note:tn[or, is made naked]: ##but##note:x[<<Luke 11:28; Jas 1:25>>] he that keepeth the law, happy __is__ he.
+@ A servant will not be corrected by words: for though he understand he will not answer.
+@ ##Seest##note:x[<<Jas 1:19>>] thou a man __that is__ hasty in his note:x[<<Prov 14:29>>]##words##note:tn[or, matters?]? __there is__ ##more##note:x[<<Prov 26:12>>] hope of a fool than of him.
+@ He that delicately bringeth up his servant from a child shall have him become __his__ son at the length.
+@ An ##angry##note:x[<<Prov 15:18; 17:19>>] man stirreth up strife, and ##a furious##note:x[<<Prov 17:19>>] man aboundeth in transgression.
+@ note:x[<<Luke 14:11>>]A man’s pride shall bring him low: but ##honour##note:x[<<Isa 66:2; Matt 23:12>>] shall uphold the humble in spirit.
+@ Whoso is ##partner##note:x[<<Prov 1:11–19>>] with a thief ##hateth##note:x[<<Prov 8:36>>] his own soul: ##he##note:x[<<Lev 5:1>>] heareth cursing, and bewrayeth __it__ not.
+@ The fear of man bringeth a snare: but ##whoso##note:x[<<Ps 118:8; Prov 18:10>>] putteth his trust in the LORD shall be note:x[<<Ps 91:14>>]##safe##note:tn[Heb. set on high].
+@ note:x[<<Prov 19:21>>]Many ##seek##note:x[<<Ps 20:9; Prov 19:6>>] the ruler’s favour; but __every__ man’s judgment __cometh__ from the LORD.note:tn[__the ruler’s…__: Heb. the face of a ruler]
+@ ##An unjust man __is__ an abomination to the just: and __he that is__ upright in the way __is__ abomination to the wicked.##note:x[<<Ps 139:21; John 15:17–19; 1 John 3:13>>]
+
+=== @30
+
+[discrete.pericope]
+==== The Words of Agur
+
+@ The words of Agur the son of Jakeh, __even__ the prophecy: the man spake unto Ithiel, even unto Ithiel and Ucal,
+@ Surely ##I __am__##note:x[<<Ps 73:22; 1 Cor 3:18>>] more brutish than __any__ man, and have not the understanding of a man.
+@ I neither learned wisdom, nor ##have##note:tn[Heb. know] the knowledge of the holy.
+@ ##Who hath ascended##note:x[<<John 3:13>>] up into heaven, or descended? who hath gathered the wind in his fists? who hath bound the waters in a garment? who hath established all the ends of the earth? what __is__ his name, ##and what##note:x[<<Isa 7:14; 9:6>>] __is__ his son’s name, if thou canst tell?
+@ Every ##word##note:x[<<Ps 12:6; 18:30; Jas 3:17>>] of God __is__ ##pure##note:tn[Heb. purified]: he __is__ a shield unto them that put their trust in him.
+@ ##Add##note:x[<<Deut 4:2; 12:32; Rev 22:18–19>>] thou not unto his words, lest he reprove thee, and thou be found a liar.
+
+@ Two __things__ ##have##note:x[<<2 Kgs 2:9; Ps 27:4; Luke 10:42>>] I required of thee; deny me __them__ not before I die&#58;note:tn[__deny…__: Heb. withhold not from me]
+@ ##Remove##note:x[<<Ps 62:9–10; 119:37>>] far from me vanity and lies: give me neither poverty nor riches; ##feed##note:x[<<1 Tim 6:6–8>>] me with food convenient for me&#58;note:tn[__convenient…__: Heb. of my allowance]
+@ Lest ##I be full##note:x[<<Deut 31:20; Ezek 16:49–50; Hos 13:6>>], and deny __thee__, and say, Who __is__ the LORD? or lest I be poor, and steal, and take the name of my God __in vain__.note:tn[__deny…__: Heb. belie thee]
+
+@ ##Accuse not##note:x[<<2 Sam 19:26–27; Prov 24:23; Rom 14:4>>] a servant unto his master, lest he curse thee, and thou be found guilty.note:tn[__Accuse…__: Heb. Hurt not with thy tongue]
+@ __There is__ a generation ##__that__ curseth##note:x[<<Deut 27:16; Prov 20:20; 30:17>>] their father, and doth not bless their mother.
+@ __There is__ a generation ##__that are__##note:x[<<Jer 2:35; Luke 18:11; 2 Tim 3:5>>] pure in their own eyes, and __yet__ is not washed from their filthiness.
+@ ##__There is__ a generation, O how lofty are their eyes! and their eyelids are lifted up.##note:x[<<Prov 6:17; Isa 2:11>>]
+@ __There is__ a generation, ##whose##note:x[<<Ps 3:7; 57:4>>] teeth __are as__ swords, and their jaw teeth __as__ knives, ##to devour##note:x[<<Ps 14:4>>] the poor from off the earth, and the needy from __among__ men.
+
+@ The horseleach hath two daughters, __crying__, ##Give##note:x[<<Rom 16:18>>], give. ##There##note:x[<<Prov 30:21, 29>>] are three __things that__ are never satisfied, __yea__, four __things__ say not, __It is__ enough&#58;note:tn[__It is…__: Heb. Wealth]
+@ ##The grave; and the barren womb; the earth __that__ is not filled with water; and the fire __that__ saith not, __It is__ enough.##note:x[<<Prov 27:20; Hab 2:5>>]
+@ The ##eye##note:x[<<Deut 21:18–21; Prov 23:22; 30:11>>] __that__ mocketh at __his__ father, and despiseth to obey __his__ mother, the ravens of the valley shall pick it out, and the young eagles shall eat it.note:tn[__the valley__: or, the brook]
+
+@ There be three __things which__ are too wonderful for me, yea, four which I know not:
+@ The way of an eagle in the air; the way of a serpent upon a rock; the way of a ship in the ##midst##note:tn[Heb. heart] of the sea; and the way of a man with a maid.
+@ ##Such __is__ the way of an adulterous woman; she eateth, and wipeth her mouth, and saith, I have done no wickedness.##note:x[<<Prov 7:13–23>>]
+@ For three __things__ the earth is disquieted, and for four __which__ it cannot bear:
+@ For ##a servant##note:x[<<Prov 19:10>>] when he reigneth; and a fool when he is filled with meat;
+@ For ##an odious##note:x[<<Prov 21:9, 19; 27:15>>] __woman__ when she is married; and an handmaid that is heir to her mistress.
+
+@ There be four __things which are__ ##little##note:x[<<Job 12:7>>] upon the earth, but they __are__ exceeding wise&#58;note:tn[__exceeding…__: Heb. wise, made wise]
+@ ##The ants __are__ a people not strong, yet they prepare their meat in the summer;##note:x[<<Prov 6:6–8>>]
+@ ##The conies __are but__ a feeble folk, yet make they their houses in the rocks;##note:x[<<Lev 11:5; Ps 104:18>>]
+@ ##The locusts##note:x[<<Exod 10:4–6; Ps 105:34; Joel 1:6–7>>] have no king, yet go they forth all of them by bands;note:tn[__by…__: Heb. gathered together]
+@ The spider taketh hold with her hands, and is in kings’ palaces.
+
+@ There be three __things__ which go well, yea, four are comely in going:
+@ A lion __which is__ strongest among beasts, and turneth not away for any;
+@ A ##greyhound##note:tn[or, horse: Heb. girt in the loins]; an he goat also; and a king, against whom __there is__ no rising up.
+@ If thou hast done foolishly in lifting up thyself, or if thou hast thought evil, ##__lay__##note:x[<<Job 21:5>>] thine hand upon thy mouth.
+@ Surely the churning of milk bringeth forth butter, and the wringing of the nose bringeth forth blood: ##so##note:x[<<Prov 17:14; 28:25; 29:22>>] the forcing of wrath bringeth forth strife.
+
+=== @31
+
+[discrete.pericope]
+==== The Sayings for King Lemuel
+
+@ The words of king Lemuel, the prophecy that ##his##note:x[<<Prov 1:8; 6:20; 2 Tim 1:5>>] mother taught him.
+@ What, my son? and what, ##the son of my womb##note:x[<<Isa 49:15>>]? and what, ##the son of my vows##note:x[<<1 Sam 1:11>>]?
+@ Give not thy ##strength##note:x[<<Prov 7:26–27>>] unto women, nor thy ways ##to that##note:x[<<Deut 17:17; Neh 13:26>>] which destroyeth kings.
+@ ##__It is__ not for kings, O Lemuel, __it is__ not for kings to drink wine; nor for princes strong drink:##note:x[<<1 Kgs 20:16–20; Eccl 10:17; Hos 4:11–12>>]
+@ Lest they drink, and forget the law, and note:x[<<Hab 2:5>>]##pervert##note:tn[Heb. alter] the judgment of any of the afflicted.note:tn[__of any…__: Heb. of all the sons of affliction]
+@ Give ##strong##note:x[<<Ps 104:15; 1 Tim 5:23>>] drink unto him that is ready to perish, and wine unto those that be ##of heavy hearts##note:x[<<1 Sam 1:10>>].note:tn[__of…__: Heb. bitter of soul]
+@ ##Let him drink, and forget his poverty, and remember his misery no more.##note:x[<<Eph 5:18>>]
+@ ##Open##note:x[<<Esth 4:13–16; Ps 82:3–4; Prov 24:11–12>>] thy mouth for the dumb in the cause of all such as are appointed to destruction.note:tn[__such…__: Heb. the sons of destruction]
+@ ##Open thy mouth, judge righteously, and plead the cause of the poor and needy.##note:x[<<Lev 19:15; Isa 1:17; Amos 5:11–12>>]
+
+[discrete.pericope]
+==== The Virtues of a Noble Woman
+
+@ ¶ Who ##can##note:x[<<Prov 12:4; 18:22; 19:14>>] find a virtuous woman? for her price __is__ far above rubies.
+@ ##The heart of her husband doth safely trust in her, so that he shall have no need of spoil.##note:x[<<1 Pet 3:1–7>>]
+@ She will do him good and not evil all the days of her life.
+@ She seeketh wool, and flax, and ##worketh##note:x[<<2 Thess 3:10–12; 1 Tim 5:10; Titus 2:5>>] willingly with her hands.
+@ She is like the merchants’ ships; she bringeth her food from afar.
+@ She ##riseth##note:x[<<Mark 1:35; Rom 12:11>>] also while it is yet night, ##and giveth##note:x[<<Luke 12:42>>] meat to her household, and a portion to her maidens.
+@ She ##considereth##note:x[<<Song 8:12; Matt 13:44>>] a field, and ##buyeth##note:tn[Heb. taketh] it: with the fruit of her hands she planteth a vineyard.
+@ She ##girdeth##note:x[<<Job 38:3; Eph 6:10; 1 Pet 1:13>>] her loins with strength, and strengtheneth her arms.
+@ She perceiveth that her merchandise __is__ good: ##her candle##note:x[<<Matt 25:3–10; 1 Thess 2:9>>] goeth not out by night.note:tn[__She…__: Heb. She tasteth]
+@ ##She layeth her hands to the spindle, and her hands hold the distaff.##note:x[<<Exod 35:25–26>>]
+@ She stretcheth out her hand to the poor; yea, ##she reacheth##note:x[<<Prov 19:17; Eph 4:28; Heb 13:16>>] forth her hands to the needy.note:tn[__She…__: Heb. She spreadeth]
+@ She is not afraid of the snow for her household: for all her household __are__ clothed with note:x[<<Gen 45:22>>]##scarlet##note:tn[or, double garments].
+@ She maketh herself ##coverings##note:x[<<Prov 7:16>>] of tapestry; her ##clothing##note:x[<<Gen 41:42; Esth 8:15>>] __is__ silk and purple.
+@ Her ##husband##note:x[<<Prov 12:4>>] is known ##in the##note:x[<<Deut 16:18; Ruth 4:1>>] gates, when he sitteth among the elders of the land.
+@ ##She maketh fine linen, and selleth __it;__ and delivereth girdles unto the merchant.##note:x[<<Ezek 27:16; Luke 16:19>>]
+@ ##Strength##note:x[<<Job 40:10; Rom 13:14; 1 Tim 2:10>>] and honour __are__ her clothing; and she shall rejoice in time to come.
+@ She ##openeth##note:x[<<Eph 4:29>>] her mouth with wisdom; and ##in her##note:x[<<Prov 12:18; 16:24>>] tongue __is__ the law of kindness.
+@ ##She looketh well to the ways of her household, and eateth not the bread of idleness.##note:x[<<2 Thess 3:6; 1 Tim 5:10; Titus 2:4>>]
+@ Her ##children##note:x[<<1 Kgs 2:19; 2 Tim 1:5; 3:15–17>>] arise up, and call her blessed; her husband __also__, and he praiseth her.
+@ Many daughters have done virtuously, but ##thou##note:x[<<Song 6:8–9; Eph 5:27>>] excellest them all.note:tn[__have…__: or, have gotten riches]
+@ Favour __is__ deceitful, and beauty __is__ vain: __but__ ##a woman##note:x[<<Prov 1:7; 1 Pet 3:4–5>>] __that__ feareth the LORD, ##she##note:x[<<1 Pet 3:4>>] shall be praised.
+@ Give her ##of the##note:x[<<Ps 128:2; Matt 7:16>>] fruit of her hands; ##and let##note:x[<<Heb 6:10>>] her own works praise her in the gates.

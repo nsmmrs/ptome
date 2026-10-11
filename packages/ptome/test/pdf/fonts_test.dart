@@ -115,9 +115,15 @@ void main() {
     expect(
       warnings.single,
       'font family Nope is not installed: using Helvetica for Nope (normal); '
-      "`ptome doctor` installs the default themes' fonts",
+      "`ptome doctor` installs the default themes' fonts, "
+      "`ptome doctor --look LOOK` a look's",
     );
     expect(catalog.font('Some Serif', 'bold'), isA<AfmFont>());
     expect(warnings.last, contains('using Times-Bold'));
+    catalog
+      ..font('TeX Gyre Pagella')
+      ..font('TeX Gyre Cursor');
+    expect(warnings[warnings.length - 2], contains('using Times-Roman'));
+    expect(warnings.last, contains('using Courier'));
   });
 }

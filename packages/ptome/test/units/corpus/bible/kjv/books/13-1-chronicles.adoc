@@ -1,0 +1,1520 @@
+== @1CH
+
+[.book-title]
+The First Book of the Chronicles
+
+=== @1
+
+[discrete.pericope]
+==== From Adam to Abraham
+
+[.parallel]
+(<<Genesis 5:1–32; Genesis 10:1–32; Genesis 11:10–26>>)
+
+@ note:x[<<Luke 3:38>>]Adam, ##Sheth##note:x[<<Gen 4:25–26; Luke 3:38>>], Enosh,
+@ note:x[<<Luke 3:37>>]note:x[<<Luke 3:37>>]##Kenan##note:x[<<Luke 3:37>>], Mahalaleel, Jered,
+@ ##Henoch##note:x[<<Jude 1:14>>], Methuselah, Lamech,
+@ ##Noah##note:x[<<Gen 5:32>>], ##Shem##note:x[<<Gen 5:32>>], Ham, and Japheth.
+
+@ ¶ The sons of Japheth; Gomer, and Magog, and Madai, and Javan, and Tubal, and Meshech, and Tiras.
+@ And the sons of Gomer; Ashchenaz, and ##Riphath##note:tn[or, Diphath as it is in some copies], and Togarmah.
+@ And the sons of Javan; Elishah, and Tarshish, Kittim, and ##Dodanim##note:tn[or, Rodanim, according to some copies].
+
+@ ¶ The ##sons##note:x[<<Gen 10:6–7>>] of Ham; Cush, and Mizraim, ##Put##note:x[<<Gen 10:6>>], and Canaan.
+@ And the sons of Cush; Seba, and Havilah, and Sabta, and Raamah, and Sabtecha. And the sons of Raamah; Sheba, and Dedan.
+@ And Cush begat Nimrod: he began to be mighty upon the earth.
+@ ##And Mizraim begat Ludim, and Anamim, and Lehabim, and Naphtuhim,##note:x[<<Gen 10:13–14>>]
+@ And Pathrusim, and Casluhim, (of whom came the Philistines,) and Caphthorim.
+@ And Canaan begat Zidon his firstborn, and Heth,
+@ The ##Jebusite##note:x[<<Gen 15:21>>] also, and the ##Amorite##note:x[<<Josh 3:10>>], and the ##Girgashite##note:x[<<Gen 15:21>>],
+@ And the Hivite, and the Arkite, and the Sinite,
+@ And the Arvadite, and the Zemarite, and the Hamathite.
+
+@ ¶ The sons of Shem; Elam, and Asshur, and Arphaxad, and Lud, and Aram, and Uz, and Hul, and Gether, and ##Meshech##note:tn[or, Mash].
+@ And Arphaxad begat Shelah, and Shelah begat Eber.
+@ And unto Eber were born two sons: the name of the one __was__ ##Peleg##note:tn[that is, division]; because in his days the earth was divided: and his brother’s name __was__ Joktan.
+@ And Joktan begat Almodad, and Sheleph, and Hazarmaveth, and Jerah,
+@ Hadoram also, and Uzal, and Diklah,
+@ And Ebal, and Abimael, and Sheba,
+@ And Ophir, and Havilah, and Jobab. All these __were__ the sons of Joktan.
+
+@ ¶ ##Shem##note:x[<<Gen 11:10–26>>], Arphaxad, Shelah,
+@ note:x[<<Luke 3:35>>]note:x[<<Luke 3:35>>]##Eber##note:x[<<Luke 3:35>>], Peleg, Reu,
+@ Serug, Nahor, Terah,
+@ Abram; the same __is__ Abraham.
+
+[discrete.pericope]
+==== The Descendants of Abraham
+
+[.parallel]
+(<<Genesis 25:12–18>>)
+
+@ The sons of Abraham; Isaac, and Ishmael.
+
+@ ¶ These __are__ their generations: The firstborn of Ishmael, Nebaioth; then Kedar, and Adbeel, and Mibsam,
+@ Mishma, and Dumah, Massa, ##Hadad##note:tn[also called, Hadar], and Tema,
+@ Jetur, Naphish, and Kedemah. These are the sons of Ishmael.
+
+@ ¶ Now ##the sons##note:x[<<Gen 25:1–4>>] of Keturah, Abraham’s concubine: she bare Zimran, and Jokshan, and Medan, and Midian, and Ishbak, and Shuah. And the sons of Jokshan; Sheba, and Dedan.
+@ And the sons of Midian; Ephah, and Epher, and Henoch, and Abida, and Eldaah. All these __are__ the sons of Keturah.
+@ And Abraham begat Isaac. The sons of Isaac; Esau and ##Israel##note:x[<<Gen 32:28>>].
+
+[discrete.pericope]
+==== The Descendants of Esau
+
+[.parallel]
+(<<Genesis 36:1–19>>)
+
+@ ¶ The ##sons of Esau##note:x[<<Gen 36:4–5, 9–10>>]; Eliphaz, Reuel, and Jeush, and Jaalam, and Korah.
+@ The sons of Eliphaz; Teman, and Omar, ##Zephi##note:tn[or, Zepho], and Gatam, Kenaz, and Timna, and Amalek.
+@ The sons of Reuel; Nahath, Zerah, Shammah, and Mizzah.
+
+[discrete.pericope]
+==== The Descendants of Seir
+
+[.parallel]
+(<<Genesis 36:20–30>>)
+
+@ And the sons of Seir; Lotan, and Shobal, and Zibeon, and Anah, and Dishon, and Ezer, and Dishan.
+@ And the sons of Lotan; Hori, and ##Homam##note:tn[or, Hemam]: and Timna __was__ Lotan’s sister.
+@ The sons of Shobal; ##Alian##note:tn[also called, Alvan], and Manahath, and Ebal, ##Shephi##note:tn[also called, Shepho], and Onam. And the sons of Zibeon; Aiah, and Anah.
+@ The sons of Anah; Dishon. And the sons of Dishon; ##Amram##note:tn[or, Hemdan], and Eshban, and Ithran, and Cheran.
+@ The sons of Ezer; Bilhan, and Zavan, __and__ ##Jakan##note:tn[or, Akan]. The sons of Dishan; Uz, and Aran.
+
+[discrete.pericope]
+==== The Kings of Edom
+
+[.parallel]
+(<<Genesis 36:31–43>>)
+
+@ ¶ Now these __are__ the kings that reigned in the land of Edom before __any__ king reigned over the children of Israel; Bela the son of Beor: and the name of his city __was__ Dinhabah.
+@ And when Bela was dead, Jobab the son of Zerah of ##Bozrah##note:x[<<Isa 34:6>>] reigned in his stead.
+@ And when Jobab was dead, Husham of the land of the Temanites reigned in his stead.
+@ And when Husham was dead, Hadad the son of Bedad, which smote Midian in the field of Moab, reigned in his stead: and the name of his city __was__ Avith.
+@ And when Hadad was dead, Samlah of Masrekah reigned in his stead.
+@ And when Samlah was dead, Shaul of Rehoboth by the river reigned in his stead.
+@ And when Shaul was dead, Baal-hanan the son of Achbor reigned in his stead.
+@ note:x[<<Gen 36:39>>]And when Baal-hanan was dead, note:x[<<Gen 36:39>>]##Hadad##note:tn[or, Hadar] reigned in his stead: and the name of his city __was__ ##Pai##note:tn[or, Pau]; and his wife’s name __was__ Mehetabel, the daughter of Matred, the daughter of Mezahab.
+
+@ ¶ Hadad died also. And the dukes of Edom were; duke Timnah, duke Aliah, duke Jetheth,
+@ Duke Aholibamah, duke Elah, duke Pinon,
+@ Duke Kenaz, duke Teman, duke Mibzar,
+@ Duke Magdiel, duke Iram. These __are__ the dukes of Edom.
+
+=== @2
+
+[discrete.pericope]
+==== The Sons of Israel
+
+[.parallel]
+(<<Genesis 35:21–26; Genesis 38:1–30>>)
+
+@ note:x[<<Gen 32:28>>]These __are__ the sons of ##Israel##note:tn[or, Jacob]; ##Reuben##note:x[<<Gen 35:22–26; Rev 7:5–8>>], Simeon, Levi, and Judah, Issachar, and Zebulun,
+@ Dan, Joseph, and Benjamin, Naphtali, Gad, and Asher.
+
+@ ¶ The sons of Judah; ##Er, and##note:x[<<Gen 38:2–10; 46:12; Num 26:19>>] Onan, and Shelah: __which__ three were born unto him of the daughter of Shua the Canaanitess. And Er, the firstborn of Judah, was evil in the sight of the LORD; and he slew him.
+@ note:x[<<Matt 1:3>>]note:x[<<Matt 1:3>>]And ##Tamar##note:x[<<Matt 1:3>>] his daughter in law bare him Pharez and Zerah. All the sons of Judah __were__ five.
+@ The sons of Pharez; ##Hezron##note:x[<<Gen 46:12>>], and Hamul.
+@ And the sons of Zerah; ##Zimri##note:tn[or, Zabdi], and Ethan, and Heman, and Calcol, and ##Dara##note:tn[or, Darda]: five of them in all.
+@ And the sons of Carmi; ##Achar##note:tn[or, Achan], the troubler of Israel, who transgressed in the thing accursed.
+@ And the sons of Ethan; Azariah.
+@ The sons also of Hezron, that were born unto him; Jerahmeel, and ##Ram##note:tn[Gr. Aram], and ##Chelubai##note:tn[or, Caleb].
+@ note:x[<<Num 1:7; Matt 1:4>>]And Ram begat ##Amminadab##note:x[<<Matt 1:4>>]; and Amminadab begat Nahshon, prince of the children of Judah;
+@ And Nahshon begat note:x[<<Ruth 4:21>>]##Salma##note:tn[also called, Salmon], and Salma begat Boaz,
+@ And Boaz begat Obed, and Obed begat Jesse,
+
+@ ¶ note:x[<<1 Sam 17:13>>]And Jesse begat his firstborn Eliab, and Abinadab the second, and ##Shimma##note:tn[or, Shammah] the third,
+@ Nethaneel the fourth, Raddai the fifth,
+@ Ozem the sixth, David the seventh:
+@ Whose sisters __were__ Zeruiah, and Abigail. And the sons of Zeruiah; Abishai, and Joab, and Asahel, three.
+@ And Abigail bare ##Amasa##note:x[<<2 Sam 17:25>>]: and the father of Amasa __was__ ##Jether##note:x[<<2 Sam 17:25>>] the Ishmeelite.note:tn[__Jether…__: also called, Ithra an Israelite]
+
+@ ¶ And Caleb the son of Hezron begat __children__ of Azubah __his__ wife, and of Jerioth: her sons __are__ these; Jesher, and Shobab, and Ardon.
+@ And when Azubah was dead, Caleb took unto him Ephrath, which bare him Hur.
+@ And Hur begat Uri, and Uri begat ##Bezaleel##note:x[<<Exod 31:2>>].
+
+@ ¶ And afterward Hezron went in to the daughter of ##Machir##note:x[<<Num 27:1>>] the father of Gilead, whom he ##married##note:tn[Heb. took] when he __was__ threescore years old; and she bare him Segub.
+@ And Segub begat Jair, who had three and twenty cities in the land of Gilead.
+@ And he took Geshur, and Aram, with the towns of Jair, from them, with Kenath, and the towns thereof, __even__ threescore cities. All these __belonged to__ the sons of Machir the father of Gilead.
+@ And after that Hezron was dead in Caleb-ephratah, then Abiah Hezron’s wife bare him ##Ashur##note:x[<<1 Chr 4:5>>] the father of Tekoa.
+
+@ ¶ And the sons of Jerahmeel the firstborn of Hezron were, Ram the firstborn, and Bunah, and Oren, and Ozem, __and__ Ahijah.
+@ Jerahmeel had also another wife, whose name __was__ Atarah; she __was__ the mother of Onam.
+@ And the sons of Ram the firstborn of Jerahmeel were, Maaz, and Jamin, and Eker.
+@ And the sons of Onam were, Shammai, and Jada. And the sons of Shammai; Nadab, and Abishur.
+@ And the name of the wife of Abishur __was__ Abihail, and she bare him Ahban, and Molid.
+@ And the sons of Nadab; Seled, and Appaim: but Seled died without children.
+@ And the sons of Appaim; Ishi. And the sons of Ishi; Sheshan. And the children of Sheshan; Ahlai.
+@ And the sons of Jada the brother of Shammai; Jether, and Jonathan: and Jether died without children.
+@ And the sons of Jonathan; Peleth, and Zaza. These were the sons of Jerahmeel.
+
+@ ¶ Now Sheshan had no sons, but daughters. And Sheshan had a servant, an Egyptian, whose name __was__ Jarha.
+@ And Sheshan gave his daughter to Jarha his servant to wife; and she bare him Attai.
+@ And Attai begat Nathan, and Nathan begat ##Zabad##note:x[<<1 Chr 11:41>>],
+@ And Zabad begat Ephlal, and Ephlal begat Obed,
+@ And Obed begat Jehu, and Jehu begat Azariah,
+@ And Azariah begat Helez, and Helez begat Eleasah,
+@ And Eleasah begat Sisamai, and Sisamai begat Shallum,
+@ And Shallum begat Jekamiah, and Jekamiah begat Elishama.
+
+@ ¶ Now the sons of Caleb the brother of Jerahmeel __were__, Mesha his firstborn, which was the father of Ziph; and the sons of Mareshah the father of Hebron.
+@ And the sons of Hebron; Korah, and Tappuah, and Rekem, and Shema.
+@ And Shema begat Raham, the father of Jorkoam: and Rekem begat Shammai.
+@ And the son of Shammai __was__ Maon: and Maon __was__ the father of Beth-zur.
+@ And Ephah, Caleb’s concubine, bare Haran, and Moza, and Gazez: and Haran begat Gazez.
+@ And the sons of Jahdai; Regem, and Jotham, and Geshan, and Pelet, and Ephah, and Shaaph.
+@ Maachah, Caleb’s concubine, bare Sheber, and Tirhanah.
+@ She bare also Shaaph the father of Madmannah, Sheva the father of Machbenah, and the father of Gibea: and the daughter of Caleb __was__ Achsah.
+
+@ ¶ These were the sons of Caleb the son of Hur, the firstborn of ##Ephratah##note:tn[also called, Ephreth]; Shobal the father of Kirjath-jearim,
+@ Salma the father of Beth-lehem, Hareph the father of Beth-gader.
+@ And Shobal the father of Kirjath-jearim had sons; ##Haroeh##note:tn[or, Reaiah], __and__ half of the Manahethites.note:tn[__half…__: or, half of the Menuchites, or, Hatsi-ham-menuchoth]
+@ And the families of Kirjath-jearim; the Ithrites, and the Puhites, and the Shumathites, and the Mishraites; of them came the Zareathites, and the Eshtaulites.
+@ The sons of Salma; Beth-lehem, and the Netophathites, Ataroth, the house of Joab, and half of the Manahethites, the Zorites.note:tn[__Ataroth…__: or, Atarites, or, crowns of the house of Joab]
+@ And the families of the scribes which dwelt at Jabez; the Tirathites, the Shimeathites, __and__ Suchathites. These __are__ the ##Kenites##note:x[<<Judg 1:16; 4:11>>] that came of Hemath, the father of the house of ##Rechab##note:x[<<2 Kgs 10:15>>].
+
+=== @3
+
+[discrete.pericope]
+==== The Descendants of David
+
+[.parallel]
+(<<2 Samuel 3:1–5>>)
+
+@ Now these were ##the sons of David##note:x[<<2 Sam 3:2–5>>], which were born unto him in Hebron; the firstborn Amnon, of Ahinoam the Jezreelitess; the second ##Daniel##note:tn[or, Chileab], of Abigail the Carmelitess:
+@ The third, Absalom the son of Maachah the daughter of Talmai king of Geshur: the fourth, Adonijah the son of Haggith:
+@ The fifth, Shephatiah of Abital: the sixth, Ithream by Eglah his wife.
+@ __These__ six were born unto him in Hebron; and ##there he reigned##note:x[<<2 Sam 2:11; 5:4–5>>] seven years and six months: ##and in Jerusalem##note:x[<<2 Sam 5:4>>] he reigned thirty and three years.
+@ And these were born unto him in Jerusalem; ##Shimea##note:tn[or, Shammua], and Shobab, and Nathan, and Solomon, four, of note:x[<<2 Sam 11:3>>]##Bath-shua##note:tn[or, Bath-sheba] the daughter of note:x[<<2 Sam 11:3>>]##Ammiel##note:tn[or, Eliam]:
+@ Ibhar also, and ##Elishama##note:tn[also called, Elishua], and Eliphelet,
+@ And Nogah, and Nepheg, and Japhia,
+@ note:x[<<1 Chr 14:7>>]And Elishama, and note:x[<<1 Chr 14:7>>]##Eliada##note:tn[or, Beeliada], and Eliphelet, nine.
+@ __These were__ all the sons of David, beside the sons of the concubines, and Tamar their sister.
+
+[discrete.pericope]
+==== The Descendants of Solomon
+
+@ ¶ And Solomon’s son __was__ ##Rehoboam##note:x[<<1 Kgs 11:43>>], ##Abia##note:tn[or, Abijam] his son, Asa his son, Jehoshaphat his son,
+@ note:x[<<2 Kgs 8:24>>]Joram his son, ##Ahaziah##note:tn[or, Azariah] his son, Joash his son,
+@ Amaziah his son, ##Azariah##note:tn[or, Uzziah] his son, Jotham his son,
+@ Ahaz his son, Hezekiah his son, Manasseh his son,
+@ note:x[<<2 Kgs 23:30>>]note:x[<<2 Kgs 23:30>>]Amon his son, Josiah his son.
+@ And the sons of Josiah __were__, the firstborn ##Johanan##note:tn[or, Jehoahaz], the second ##Jehoiakim##note:tn[or, Eliakim], the third ##Zedekiah##note:tn[or, Mattaniah], the fourth Shallum.
+@ And the sons of Jehoiakim: note:x[<<2 Kgs 24:6>>]##Jenote:x[<<Matt 1:11>>]coniah##note:tn[also called, Jehoiachin or Coniah] his son, Zedekiah his son.
+
+[discrete.pericope]
+==== The Royal Line After the Exile
+
+@ ¶ And the sons of Jeconiah; Assir, note:x[<<Ezra 3:2>>]##Salathiel##note:tn[Heb. Shealtiel] his son,
+@ Malchiram also, and Pedaiah, and Shenazar, Jecamiah, Hoshama, and Nedabiah.
+@ And the sons of Pedaiah __were__, ##Zerubbabel##note:x[<<Ezra 2:2; 3:2>>], and Shimei: and the sons of Zerubbabel; Meshullam, and Hananiah, and Shelomith their sister:
+@ And Hashubah, and Ohel, and Berechiah, and Hasadiah, Jushab-hesed, five.
+@ And the sons of Hananiah; Pelatiah, and Jesaiah: the sons of Rephaiah, the sons of Arnan, the sons of Obadiah, the sons of Shechaniah.
+@ And the sons of Shechaniah; Shemaiah: and the sons of Shemaiah; Hattush, and Igeal, and Bariah, and Neariah, and Shaphat, six.
+@ And the sons of Neariah; Elioenai, and ##Hezekiah##note:tn[Heb. Hiskijah], and Azrikam, three.
+@ And the sons of Elioenai __were__, Hodaiah, and Eliashib, and Pelaiah, and Akkub, and Johanan, and Dalaiah, and Anani, seven.
+
+=== @4
+
+[discrete.pericope]
+==== The Descendants of Judah
+
+@ The sons of Judah; ##Pharez##note:x[<<Gen 38:29; 46:12>>], Hezron, and ##Carmi##note:tn[also called, Chelubai or Caleb], and Hur, and Shobal.
+@ And ##Reaiah##note:tn[or, Haroeh] the son of Shobal begat Jahath; and Jahath begat Ahumai, and Lahad. These __are__ the families of the Zorathites.
+@ And these __were of__ the father of Etam; Jezreel, and Ishma, and Idbash: and the name of their sister __was__ Hazelelponi:
+@ And Penuel the father of ##Gedor##note:x[<<1 Chr 4:18, 39>>], and Ezer the father of Hushah. These __are__ the sons of ##Hur##note:x[<<1 Chr 2:50>>], the firstborn of Ephratah, the father of Beth-lehem.
+
+@ ¶ ##And Ashur the father of Tekoa had two wives, Helah and Naarah.##note:x[<<1 Chr 2:24>>]
+@ And Naarah bare him Ahuzam, and Hepher, and Temeni, and Haahashtari. These __were__ the sons of Naarah.
+@ And the sons of Helah __were__, Zereth, and Jezoar, and Ethnan.
+@ And Coz begat Anub, and Zobebah, and the families of Aharhel the son of Harum.
+
+[discrete.pericope]
+==== The Prayer of Jabez
+
+@ ¶ And ##Jabez##note:tn[that is, Sorrowful] was ##more##note:x[<<Gen 34:19>>] honourable than his brethren: and his mother called his name Jabez, saying, Because ##I bare him##note:x[<<Gen 35:18; 1 Sam 4:21>>] with sorrow.
+@ And Jabez called on the God of Israel, saying, Oh that thou wouldest bless me indeed, and ##enlarge##note:x[<<Prov 10:22>>] my coast, and that thine hand might be with me, and that thou wouldest keep __me__ from evil, that it may not grieve me! And ##God granted##note:x[<<Ps 116:1–2; Matt 7:7–11>>] him that which he requested.note:tn[__Oh…__: Heb. If thou wilt, etc]note:tn[__keep…__: Heb. do me]
+
+[discrete.pericope]
+==== More Descendants of Judah
+
+@ ¶ And Chelub the brother of Shuah begat Mehir, which __was__ the father of Eshton.
+@ And Eshton begat Beth-rapha, and Paseah, and Tehinnah the father of ##Ir-nahash##note:tn[or, the city of Nahash]. These __are__ the men of Rechah.
+@ And the sons of ##Kenaz##note:x[<<Josh 15:17; Judg 1:13>>]; Othniel, and Seraiah: and the sons of Othniel; Hathath.note:tn[__Hathath…__: or, Hathath, and Meonothai, who begat, etc]
+@ And Meonothai begat Ophrah: and Seraiah begat Joab, the father of the ##valley##note:tn[or, inhabitants of the valley] of ##Charashim##note:tn[that is, craftsmen]; for they were craftsmen.note:tn[__Hathath…__: or, Hathath, and Meonothai, who begat, etc]
+@ And the sons of Caleb the son of Jephunneh; Iru, Elah, and Naam: and the sons of Elah, even Kenaz.note:tn[__even Kenaz__: or, Uknaz]
+@ And the sons of Jehaleleel; Ziph, and Ziphah, Tiria, and Asareel.
+@ And the sons of Ezra __were__, Jether, and Mered, and Epher, and Jalon: and she bare Miriam, and Shammai, and Ishbah the father of Eshtemoa.
+@ And his wife note:x[<<1 Chr 4:4, 39>>]##Jehudijah##note:tn[or, the Jewess] bare Jered the father of Gedor, and Heber the father of Socho, and Jekuthiel the father of Zanoah. And these __are__ the sons of Bithiah the daughter of Pharaoh, which Mered took.
+@ And the sons of __his__ wife ##Hodiah##note:tn[or, Jehudijah, mentioned before] the sister of Naham, the father of ##Keilah##note:x[<<Josh 15:44>>] the Garmite, and Eshtemoa the Maachathite.
+@ And the sons of Shimon __were__, Amnon, and Rinnah, Ben-hanan, and Tilon. And the sons of Ishi __were__, Zoheth, and Ben-zoheth.
+
+@ ¶ The sons of ##Shelah##note:x[<<Gen 38:5; 46:12; 1 Chr 2:3>>] the son of Judah __were__, Er the father of Lecah, and Laadah the father of Mareshah, and the families of the house of them that wrought fine linen, of the house of Ashbea,
+@ And Jokim, and the men of Chozeba, and Joash, and Saraph, who had the dominion in Moab, and Jashubi-lehem. And __these are__ ancient things.
+@ These __were__ the potters, and those that dwelt among plants and hedges: there they dwelt with the king for his work.
+
+[discrete.pericope]
+==== The Descendants of Simeon
+
+@ ¶ note:x[<<Gen 46:10>>]The sons of Simeon __were__, note:x[<<Gen 46:10>>]##Nemuel##note:tn[or, Jemuel], and Jamin, Jarib, Zerah, __and__ Shaul&#58;note:tn[__Jarib, Zerah__: or, Jachin Zohar]
+@ Shallum his son, Mibsam his son, Mishma his son.
+@ And the sons of Mishma; Hamuel his son, Zacchur his son, Shimei his son.
+@ And Shimei had sixteen sons and six daughters; but his brethren had not many children, neither did all their family multiply, ##like to##note:x[<<Num 26:14>>] the children of Judah.note:tn[__like…__: Heb. unto]
+@ And they dwelt at ##Beer-sheba##note:x[<<Josh 19:2–3>>], and Moladah, and Hazar-shual,
+@ And at note:x[<<Josh 19:3>>]##Bilhah##note:tn[or, Balah], and at Ezem, and at ##Tolad##note:tn[or, Eltolad],
+@ And at Bethuel, and at Hormah, and at Ziklag,
+@ And at Beth-marcaboth, and ##Hazar-susim##note:tn[or, Hazar-susah], and at Beth-birei, and at Shaaraim. These __were__ their cities unto the reign of David.
+@ And their villages __were__, ##Etam##note:tn[or, Ether], and Ain, Rimmon, and Tochen, and Ashan, five cities:
+@ And all their villages that __were__ round about the same cities, unto note:x[<<Josh 19:8>>]##Baal##note:tn[or, Baalath-beer]. These __were__ their habitations, and their genealogy.note:tn[__their genealogy__: or, as they divided themselves by nations among them]
+@ And Meshobab, and Jamlech, and Joshah the son of Amaziah,
+@ And Joel, and Jehu the son of Josibiah, the son of Seraiah, the son of Asiel,
+@ And Elioenai, and Jaakobah, and Jeshohaiah, and Asaiah, and Adiel, and Jesimiel, and Benaiah,
+@ And Ziza the son of Shiphi, the son of Allon, the son of Jedaiah, the son of Shimri, the son of Shemaiah;
+@ These ##mentioned##note:tn[Heb. coming] by __their__ names __were__ princes in their families: and the house of their fathers increased greatly.
+
+@ ¶ And they went to the entrance of Gedor, __even__ unto the east side of the valley, to seek pasture for their flocks.
+@ And they found fat pasture and good, and ##the land##note:x[<<Judg 18:7–10>>] __was__ wide, and quiet, and peaceable; for __they__ of Ham had dwelt there of old.
+@ And these written by name came in the days of Hezekiah king of Judah, and smote their tents, and the habitations that were found there, and destroyed them utterly unto this day, and dwelt in their rooms: because __there was__ pasture there for their flocks.
+@ And __some__ of them, __even__ of the sons of Simeon, five hundred men, went to ##mount Seir##note:x[<<Gen 36:8–9>>], having for their captains Pelatiah, and Neariah, and Rephaiah, and Uzziel, the sons of Ishi.
+@ And they smote ##the rest##note:x[<<1 Sam 15:7–8; 30:17; 2 Sam 8:12>>] of the Amalekites that were escaped, and dwelt there unto this day.
+
+=== @5
+
+[discrete.pericope]
+==== The Descendants of Reuben
+
+@ Now the sons of Reuben the firstborn of Israel, (for ##he __was__##note:x[<<Gen 29:32>>] the firstborn; but, ##forasmuch##note:x[<<Gen 35:22>>] as he defiled his father’s bed, his ##birthright##note:x[<<Gen 48:15–22>>] was given unto the sons of Joseph the son of Israel: and the genealogy is not to be reckoned after the birthright.
+@ note:x[<<Matt 2:6>>]For ##Judah##note:x[<<Mic 5:2; Matt 2:6>>] prevailed above his brethren, and of him __came__ the chief ruler; but the birthright __was__ Joseph’s:)note:tn[__chief…__: or, prince]
+@ The ##sons##note:x[<<Gen 46:9; Exod 6:14>>], __I say__, of Reuben the firstborn of Israel __were__, Hanoch, and ##Pallu##note:x[<<Gen 46:9>>], Hezron, and Carmi.
+@ The sons of Joel; Shemaiah his son, Gog his son, Shimei his son,
+@ Micah his son, Reaia his son, Baal his son,
+@ Beerah his son, whom note:x[<<1 Chr 5:26>>]##Tilgath-pilneser##note:tn[also called, Tiglath-pileser] king of Assyria carried away __captive:__ he __was__ prince of the Reubenites.
+@ And his brethren by their families, when the genealogy of their generations was reckoned, __were__ the chief, Jeiel, and Zechariah,
+@ And Bela the son of Azaz, the son of ##Shema##note:tn[or, Shemaiah], the son of Joel, who dwelt in Aroer, even unto ##Nebo##note:x[<<Num 32:38>>] and Baal-meon:
+@ And eastward he inhabited unto the entering in of the wilderness from the river Euphrates: ##because##note:x[<<Josh 22:8–9>>] their cattle were multiplied in the land of Gilead.
+@ And in the days of Saul they made war with the Hagarites, who fell by their hand: and they dwelt in their tents throughout all the east __land__ of Gilead.note:tn[__throughout…__: Heb. upon all the face of the east]
+
+[discrete.pericope]
+==== The Descendants of Gad
+
+@ ¶ And the children of Gad dwelt over against them, ##in the land##note:x[<<Josh 13:11, 24–28>>] of Bashan unto Salchah:
+@ Joel the chief, and Shapham the next, and Jaanai, and Shaphat in Bashan.
+@ And their brethren of the house of their fathers __were__, Michael, and Meshullam, and Sheba, and Jorai, and Jachan, and Zia, and Heber, seven.
+@ These __are__ the children of Abihail the son of Huri, the son of Jaroah, the son of Gilead, the son of Michael, the son of Jeshishai, the son of Jahdo, the son of Buz;
+@ Ahi the son of Abdiel, the son of Guni, chief of the house of their fathers.
+@ And they dwelt in Gilead in Bashan, and in her towns, and in all the suburbs of ##Sharon##note:x[<<1 Chr 27:29; Song 2:1; Isa 35:2>>], upon their borders.note:tn[__their…__: Heb. their goings forth]
+@ All these were reckoned by genealogies in the days of ##Jotham##note:x[<<2 Kgs 15:32>>] king of Judah, and in the days of ##Jeroboam##note:x[<<2 Kgs 14:16, 28>>] king of Israel.
+
+@ ¶ The sons of Reuben, and the Gadites, and half the tribe of Manasseh, of valiant men, men able to bear buckler and sword, and to shoot with bow, and skilful in war, __were__ ##four and forty##note:x[<<Josh 4:12–13>>] thousand seven hundred and threescore, that went out to the war.note:tn[__valiant…__: Heb. sons of valour]
+@ And they made war with the Hagarites, with Jetur, and ##Nephish##note:x[<<Gen 25:15; 1 Chr 1:31>>], and Nodab.
+@ And they were helped against them, and the Hagarites were delivered into their hand, and all that __were__ with them: ##for they cried##note:x[<<2 Chr 18:31>>] to God in the battle, and he was intreated of them; ##because##note:x[<<Ps 9:10; 22:4–5>>] they put their trust in him.
+@ And they took away their cattle; of their camels fifty thousand, and of sheep two hundred and fifty thousand, and of asses two thousand, and of note:x[<<Num 31:35; Rev 18:13>>]##men##note:tn[Heb. souls of men] an hundred thousand.note:tn[__took…__: Heb. led captive]
+@ For there fell down many slain, because ##the war##note:x[<<Josh 23:10; 2 Chr 32:8; Rom 8:31>>] __was__ of God. And they dwelt in their steads until the captivity.
+
+[discrete.pericope]
+==== The Half-Tribe of Manasseh
+
+@ ¶ And the children of the half tribe of Manasseh dwelt in the land: they increased from Bashan unto Baal-##hermon##note:x[<<Deut 3:8–9>>] and Senir, and unto mount Hermon.
+@ And these __were__ the heads of the house of their fathers, even Epher, and Ishi, and Eliel, and Azriel, and Jeremiah, and Hodaviah, and Jahdiel, mighty men of valour, famous men, __and__ heads of the house of their fathers.note:tn[__famous…__: Heb. men of names]
+
+@ ¶ And they transgressed against the God of their fathers, and ##went##note:x[<<Hos 1:2; Rev 17:5>>] a whoring ##after the gods##note:x[<<Ps 106:34–39>>] of the people of the land, whom God destroyed before them.
+@ note:x[<<2 Kgs 15:29>>]note:x[<<2 Kgs 17:6>>]And the God of Israel stirred up the spirit of ##Pul##note:x[<<2 Kgs 15:19>>] king of Assyria, and the spirit of Tilgath-pilneser king of Assyria, and he carried them away, even the Reubenites, and the Gadites, and the half tribe of Manasseh, and brought them unto Halah, and Habor, and Hara, and to the river Gozan, unto this day.
+
+=== @6
+
+[discrete.pericope]
+==== The Descendants of Levi
+
+@ The ##sons of Levi##note:x[<<Gen 46:11; Exod 6:16; Num 26:57>>]; ##Gershon##note:tn[or, Gershom], Kohath, and Merari.
+@ And the sons of Kohath; Amram, Izhar, and Hebron, and Uzziel.
+@ And the children of Amram; ##Aaron##note:x[<<Exod 6:20>>], and Moses, and Miriam. The sons also of Aaron; ##Nadab##note:x[<<Lev 10:1>>], and Abihu, Eleazar, and Ithamar.
+
+@ ¶ Eleazar begat ##Phinehas##note:x[<<Exod 6:25; 1 Chr 6:50>>], Phinehas begat Abishua,
+@ And Abishua begat Bukki, and Bukki begat Uzzi,
+@ And Uzzi begat Zerahiah, and Zerahiah begat Meraioth,
+@ Meraioth begat Amariah, and Amariah begat Ahitub,
+@ And ##Ahitub##note:x[<<2 Sam 8:17>>] begat Zadok, and Zadok begat ##Ahimaaz##note:x[<<2 Sam 15:27>>],
+@ And Ahimaaz begat Azariah, and Azariah begat Johanan,
+@ And Johanan begat Azariah, (he __it is__ that executed the priest’s office in the temple that Solomon built in Jerusalem:)note:tn[__in the temple__: Heb. in the house]
+@ And Azariah begat ##Amariah##note:x[<<Ezra 7:3>>], and Amariah begat Ahitub,
+@ And Ahitub begat Zadok, and Zadok begat ##Shallum##note:tn[or, Meshullam],
+@ And Shallum begat Hilkiah, and Hilkiah begat Azariah,
+@ And Azariah begat ##Seraiah##note:x[<<2 Kgs 25:18; Neh 11:11>>], and Seraiah begat Jehozadak,
+@ note:x[<<Hag 1:1; 2:2>>]note:x[<<2 Kgs 25:18>>]And Jehozadak went __into captivity__, when the LORD carried away Judah and Jerusalem by the hand of Nebuchadnezzar.
+
+@ ¶ The sons of Levi; note:x[<<Exod 6:16>>]##Gershom##note:tn[or, Gershon], Kohath, and Merari.
+@ And these __be__ the names of the sons of Gershom; Libni, and Shimei.
+@ And the sons of Kohath __were__, Amram, and Izhar, and Hebron, and Uzziel.
+@ The sons of Merari; ##Mahli##note:x[<<1 Chr 23:21>>], and Mushi. And these __are__ the families of the Levites according to their fathers.
+@ Of Gershom; Libni his son, Jahath his son, Zimmah his son,
+@ ##Joah##note:tn[or, Ethan] his son, ##Iddo##note:tn[or, Adaiah] his son, Zerah his son, ##Jeaterai##note:tn[also called, Ethni] his son.
+@ The sons of Kohath; note:x[<<Exod 6:24>>]##Amminadab##note:tn[or, Izhar] his son, Korah his son, Assir his son,
+@ Elkanah his son, and Ebiasaph his son, and Assir his son,
+@ Tahath his son, Uriel his son, Uzziah his son, and Shaul his son.
+@ And the sons of ##Elkanah##note:x[<<Exod 6:24>>]; Amasai, and Ahimoth.
+@ note:x[<<1 Sam 1:1>>]__As for__ Elkanah: the sons of Elkanah; note:x[<<1 Sam 1:1>>]##Zophai##note:tn[or, Zuph] his son, and Nahath his son,
+@ note:x[<<1 Sam 1:1>>]note:x[<<1 Sam 1:1>>]Eliab his son, Jeroham his son, Elkanah his son.
+@ And the sons of Samuel; the firstborn note:x[<<1 Sam 8:2; 1 Chr 6:33>>]##Vashni##note:tn[called also Joel], and Abiah.
+@ The sons of Merari; Mahli, Libni his son, Shimei his son, Uzza his son,
+@ Shimea his son, Haggiah his son, Asaiah his son.
+
+[discrete.pericope]
+==== The Temple Musicians
+
+@ And these __are they__ whom David set over the service of song in the house of the LORD, ##after that##note:x[<<2 Sam 6:17>>] the ark had rest.
+@ And they ministered before the dwelling place of the tabernacle of the congregation with singing, until Solomon had built the house of the LORD in Jerusalem: and __then__ they waited on their office according to their order.
+@ note:x[<<1 Chr 6:28>>]And these __are__ they that ##waited##note:tn[Heb. stood] with their children. Of the sons of the Kohathites: Heman a singer, the son of Joel, the son of Shemuel,
+@ The son of Elkanah, the son of Jeroham, the son of Eliel, the son of Toah,
+@ The son of Zuph, the son of Elkanah, the son of Mahath, the son of Amasai,
+@ The son of Elkanah, the son of Joel, the son of Azariah, the son of Zephaniah,
+@ The son of Tahath, the son of Assir, the son of Ebiasaph, the son of Korah,
+@ The son of Izhar, the son of Kohath, the son of Levi, the son of Israel.
+@ And his brother ##Asaph##note:x[<<Ezra 2:41; Neh 7:44>>], who stood on his right hand, __even__ Asaph the son of Berachiah, the son of Shimea,
+@ The son of Michael, the son of Baaseiah, the son of Malchiah,
+@ The son of Ethni, the son of Zerah, the son of Adaiah,
+@ The son of Ethan, the son of Zimmah, the son of Shimei,
+@ The son of Jahath, the son of Gershom, the son of Levi.
+@ And their brethren the sons of Merari __stood__ on the left hand: Ethan the son of ##Kishi##note:tn[or, Kushaiah], the son of Abdi, the son of Malluch,
+@ The son of Hashabiah, the son of Amaziah, the son of Hilkiah,
+@ The son of Amzi, the son of Bani, the son of Shamer,
+@ The son of Mahli, the son of Mushi, the son of Merari, the son of Levi.
+
+[discrete.pericope]
+==== The Descendants of Aaron
+
+@ Their brethren also the Levites __were__ appointed unto all manner of service of the tabernacle of the house of God.
+
+@ ¶ But ##Aaron##note:x[<<Exod 27:1–8; 30:1–7>>] and his sons offered upon the altar of the burnt offering, and on the altar of incense, __and were appointed__ for all the work of the __place__ most holy, and to ##make an atonement##note:x[<<Lev 4:20>>] for Israel, according to all that Moses the servant of God had commanded.
+@ And these __are__ the sons of Aaron; Eleazar his son, Phinehas his son, Abishua his son,
+@ Bukki his son, Uzzi his son, Zerahiah his son,
+@ Meraioth his son, Amariah his son, Ahitub his son,
+@ Zadok his son, Ahimaaz his son.
+
+[discrete.pericope]
+==== Territories for the Levites
+
+[.parallel]
+(<<Numbers 35:1–8; Joshua 21:1–45>>)
+
+@ ¶ Now these __are__ their dwelling places throughout their castles in their coasts, of the sons of Aaron, of the families of the Kohathites: for theirs was the lot.
+@ And they gave them Hebron in the land of Judah, and the suburbs thereof round about it.
+@ But the fields of the city, and the villages thereof, they gave to Caleb the son of Jephunneh.
+@ And to the sons of Aaron they gave the cities of Judah, __namely__, Hebron, __the city__ of refuge, and Libnah with her suburbs, and Jattir, and Eshtemoa, with their suburbs,
+@ And ##Hilen##note:tn[or, Holon] with her suburbs, Debir with her suburbs,
+@ note:x[<<Josh 21:16>>]And note:x[<<Josh 21:16>>]##Ashan##note:tn[or, Ain] with her suburbs, and Beth-shemesh with her suburbs:
+@ And out of the tribe of Benjamin; Geba with her suburbs, and ##Alemeth##note:tn[or, Almon] with her suburbs, and Anathoth with her suburbs. All their cities throughout their families __were__ thirteen cities.
+@ And unto the sons of Kohath, __which were__ left of the family of that tribe, __were cities given__ out of the half tribe, __namely, out of__ the half __tribe__ of Manasseh, by lot, ten cities.
+@ And to the sons of Gershom throughout their families out of the tribe of Issachar, and out of the tribe of Asher, and out of the tribe of Naphtali, and out of the tribe of Manasseh in Bashan, thirteen cities.
+@ Unto the sons of ##Merari##note:x[<<Josh 21:7>>] __were given__ by lot, throughout their families, out of the tribe of Reuben, and out of the tribe of Gad, and out of the tribe of Zebulun, twelve cities.
+@ And ##the children##note:x[<<Josh 21:41–42>>] of Israel gave to the Levites __these__ cities with their suburbs.
+@ And they gave by lot out of the tribe of the children of Judah, and out of the tribe of the children of Simeon, and out of the tribe of the children of Benjamin, these cities, which are called by __their__ names.
+@ And __the residue__ of the families of the sons of Kohath had cities of their coasts out of the tribe of Ephraim.
+@ And they gave unto them, __of__ the cities of refuge, ##Shechem##note:x[<<Josh 21:21>>] in mount Ephraim with her suburbs; __they gave__ also ##Gezer##note:x[<<Josh 21:21>>] with her suburbs,
+@ And Jokmeam with her suburbs, and Beth-horon with her suburbs,
+@ And Aijalon with her suburbs, and Gath-rimmon with her suburbs:
+@ And out of the half tribe of Manasseh; Aner with her suburbs, and Bileam with her suburbs, for the family of the remnant of the sons of Kohath.
+@ Unto the sons of Gershom __were given__ out of the family of the half tribe of Manasseh, ##Golan##note:x[<<Josh 21:27>>] in Bashan with her suburbs, and ##Ashtaroth##note:x[<<Josh 21:27>>] with her suburbs:
+@ And out of the tribe of Issachar; Kedesh with her suburbs, Daberath with her suburbs,
+@ And Ramoth with her suburbs, and Anem with her suburbs:
+@ And out of the tribe of Asher; Mashal with her suburbs, and Abdon with her suburbs,
+@ And Hukok with her suburbs, and Rehob with her suburbs:
+@ note:x[<<Josh 21:32>>]And out of the tribe of Naphtali; ##Kedesh##note:x[<<Josh 21:32>>] in Galilee with her suburbs, and Hammon with her suburbs, and Kirjathaim with her suburbs.
+@ Unto the rest of the children of Merari __were given__ out of the tribe of Zebulun, Rimmon with her suburbs, Tabor with her suburbs:
+@ And on the other side Jordan by Jericho, on the east side of Jordan, __were given them__ out of the tribe of Reuben, Bezer in the wilderness with her suburbs, and Jahzah with her suburbs,
+@ Kedemoth also with her suburbs, and Mephaath with her suburbs:
+@ And out of the tribe of Gad; Ramoth in Gilead with her suburbs, and ##Mahanaim##note:x[<<Gen 32:2>>] with her suburbs,
+@ And Heshbon with her suburbs, and ##Jazer##note:x[<<Josh 21:39>>] with her suburbs.
+
+=== @7
+
+[discrete.pericope]
+==== The Descendants of Issachar
+
+@ ##Now the sons of Issachar __were__, Tola, and Puah, Jashub, and Shimron, four.##note:x[<<Gen 46:13>>]
+@ And the sons of Tola; Uzzi, and Rephaiah, and Jeriel, and Jahmai, and Jibsam, and Shemuel, heads of their father’s house, __to wit__, of Tola: __they were__ valiant men of might in their generations; whose number __was__ in the days of David two and twenty thousand and six hundred.
+@ And the sons of Uzzi; Izrahiah: and the sons of Izrahiah; Michael, and Obadiah, and Joel, Ishiah, five: all of them chief men.
+@ And with them, by their generations, after the house of their fathers, __were__ bands of soldiers for war, six and thirty thousand __men:__ for they had many wives and sons.
+@ And their brethren among all the families of Issachar __were__ valiant men of might, reckoned in all by their genealogies fourscore and seven thousand.
+
+[discrete.pericope]
+==== The Descendants of Benjamin
+
+@ ¶ __The sons__ ##of Benjamin##note:x[<<Gen 46:21>>]; Bela, and Becher, and Jediael, three.
+@ And the sons of Bela; Ezbon, and Uzzi, and Uzziel, and Jerimoth, and Iri, five; heads of the house of __their__ fathers, mighty men of valour; and were reckoned by their genealogies twenty and two thousand and thirty and four.
+@ And the sons of Becher; Zemira, and Joash, and Eliezer, and Elioenai, and Omri, and Jerimoth, and Abiah, and Anathoth, and Alameth. All these __are__ the sons of Becher.
+@ And the number of them, after their genealogy by their generations, heads of the house of their fathers, mighty men of valour, __was__ twenty thousand and two hundred.
+@ The sons also of Jediael; Bilhan: and the sons of Bilhan; Jeush, and Benjamin, and Ehud, and Chenaanah, and Zethan, and Tharshish, and Ahishahar.
+@ All these the sons of Jediael, by the heads of their fathers, mighty men of valour, __were__ seventeen thousand and two hundred __soldiers__, fit to go out for war __and__ battle.
+@ Shuppim also, and Huppim, the children of ##Ir##note:tn[or, Iri], __and__ Hushim, the sons of ##Aher##note:tn[or, Ahiram].
+
+[discrete.pericope]
+==== The Descendants of Naphtali
+
+@ ¶ The sons of Naphtali; ##Jahziel##note:x[<<Num 26:48>>], and Guni, and Jezer, and Shallum, the sons of Bilhah.
+
+[discrete.pericope]
+==== The Descendants of Manasseh
+
+@ ¶ The sons of Manasseh; Ashriel, whom she bare: ( __but__ his concubine the Aramitess bare Machir the father of Gilead:
+@ And Machir took to wife __the sister__ of Huppim and Shuppim, whose sister’s name __was__ Maachah;) and the name of the second __was__ Zelophehad: and Zelophehad had daughters.
+@ And Maachah the wife of Machir bare a son, and she called his name Peresh; and the name of his brother __was__ Sheresh; and his sons __were__ Ulam and Rakem.
+@ And the sons of Ulam; ##Bedan##note:x[<<1 Sam 12:11>>]. These __were__ the sons of Gilead, the son of Machir, the son of Manasseh.
+@ And his sister Hammoleketh bare Ishod, and Abiezer, and Mahalah.
+@ And the sons of Shemida were, Ahian, and Shechem, and Likhi, and Aniam.
+
+[discrete.pericope]
+==== The Descendants of Ephraim
+
+@ ¶ ##And the sons of Ephraim; Shuthelah, and Bered his son, and Tahath his son, and Eladah his son, and Tahath his son,##note:x[<<Num 26:35–36>>]
+
+@ ¶ And Zabad his son, and Shuthelah his son, and Ezer, and Elead, whom the men of Gath __that were__ born in __that__ land slew, because they came down to take away their cattle.
+@ And Ephraim their father mourned many days, and his brethren came to comfort him.
+
+@ ¶ And when he went in to his wife, she conceived, and bare a son, and he called his name Beriah, because it went evil with his house.
+@ (And his daughter __was__ Sherah, who built ##Beth-horon##note:x[<<Josh 16:3, 5>>] the nether, and the upper, and Uzzen-sherah.)
+@ And Rephah __was__ his son, also Resheph, and Telah his son, and Tahan his son,
+@ Laadan his son, Ammihud his son, Elishama his son,
+@ note:x[<<Num 13:16>>]note:x[<<Num 27:18; Deut 31:23>>]##Non##note:tn[or, Nun] his son, ##Jehoshua##note:tn[or, Joshua] his son.
+
+@ ¶ And their possessions and habitations __were__, Beth-el and the ##towns##note:tn[Heb. daughters] thereof, and eastward Naaran, and westward Gezer, with the towns thereof; Shechem also and the towns thereof, unto Gaza and the towns thereof&#58;note:tn[__unto Gaza__: or, Adassa]
+@ And by the borders of the children of Manasseh, Beth-shean and her ##towns##note:tn[Heb. daughters], Taanach and her towns, Megiddo and her towns, Dor and her towns. ##In these dwelt##note:x[<<Judg 1:22–29>>] the children of Joseph the son of Israel.
+
+[discrete.pericope]
+==== The Descendants of Asher
+
+@ ¶ note:x[<<Gen 46:17>>]The sons of Asher; ##Imnah##note:x[<<Gen 46:17; Num 26:44–46>>], and Isuah, and Ishuai, and Beriah, and Serah their sister.
+@ And the sons of Beriah; Heber, and Malchiel, who __is__ the father of Birzavith.
+@ And Heber begat Japhlet, and Shomer, and Hotham, and Shua their sister.
+@ And the sons of Japhlet; Pasach, and Bimhal, and Ashvath. These __are__ the children of Japhlet.
+@ And the sons of Shamer; Ahi, and Rohgah, Jehubbah, and Aram.
+@ And the sons of his brother Helem; Zophah, and Imna, and Shelesh, and Amal.
+@ The sons of Zophah; Suah, and Harnepher, and Shual, and Beri, and Imrah,
+@ Bezer, and Hod, and Shamma, and Shilshah, and Ithran, and Beera.
+@ And the sons of Jether; Jephunneh, and Pispah, and Ara.
+@ And the sons of Ulla; Arah, and Haniel, and Rezia.
+@ All these __were__ the children of Asher, heads of __their__ father’s house, choice __and__ mighty men of valour, chief of the princes. And the number throughout the genealogy of them that were apt to the war __and__ to battle __was__ twenty and six thousand men.
+
+=== @8
+
+[discrete.pericope]
+==== Genealogy from Benjamin to Saul
+
+@ Now Benjamin begat ##Bela##note:x[<<Gen 46:21>>] his firstborn, Ashbel the second, and ##Aharah##note:x[<<Num 26:38>>] the third,
+@ Nohah the fourth, and Rapha the fifth.
+@ And the sons of Bela were, ##Addar##note:tn[or, Ard], and Gera, and Abihud,
+@ And Abishua, and Naaman, and Ahoah,
+@ And Gera, and ##Shephuphan##note:tn[or, Shupham], and Huram.
+@ And these __are__ the sons of Ehud: these are the heads of the fathers of the inhabitants of Geba, and they removed them to Manahath:
+@ And Naaman, and Ahiah, and Gera, he removed them, and begat Uzza, and Ahihud.
+@ And Shaharaim begat __children__ in the country of Moab, after he had sent them away; Hushim and Baara __were__ his wives.
+@ And he begat of Hodesh his wife, Jobab, and Zibia, and Mesha, and Malcham,
+@ And Jeuz, and Shachia, and Mirma. These __were__ his sons, heads of the fathers.
+@ And of Hushim he begat Abitub, and Elpaal.
+@ The sons of Elpaal; Eber, and Misham, and Shamed, who built ##Ono##note:x[<<Ezra 2:33; Neh 6:2; 7:37>>], and Lod, with the towns thereof:
+@ Beriah also, and Shema, who __were__ heads of the fathers of the inhabitants of Aijalon, who drove away the inhabitants of Gath:
+@ And Ahio, Shashak, and Jeremoth,
+@ And Zebadiah, and Arad, and Ader,
+@ And Michael, and Ispah, and Joha, the sons of Beriah;
+@ And Zebadiah, and Meshullam, and Hezeki, and Heber,
+@ Ishmerai also, and Jezliah, and Jobab, the sons of Elpaal;
+@ And Jakim, and Zichri, and Zabdi,
+@ And Elienai, and Zilthai, and Eliel,
+@ And Adaiah, and Beraiah, and Shimrath, the sons of ##Shimhi##note:tn[or, Shema];
+@ And Ishpan, and Heber, and Eliel,
+@ And Abdon, and Zichri, and Hanan,
+@ And Hananiah, and Elam, and Antothijah,
+@ And Iphedeiah, and Penuel, the sons of Shashak;
+@ And Shamsherai, and Shehariah, and Athaliah,
+@ And Jaresiah, and Eliah, and Zichri, the sons of Jeroham.
+@ These __were__ heads of the fathers, by their generations, chief __men__. These dwelt in Jerusalem.
+@ And at Gibeon dwelt the father of Gibeon; whose wife’s name __was__ Maachah&#58;note:tn[__father…__: also called Jehiel]
+@ And his firstborn son Abdon, and Zur, and Kish, and Baal, and Nadab,
+@ And Gedor, and Ahio, and ##Zacher##note:tn[or, Zechariah].
+@ And Mikloth begat ##Shimeah##note:tn[or, Shimeam]. And these also dwelt with their brethren in Jerusalem, over against them.
+
+[discrete.pericope]
+==== The Family of Saul
+
+@ ¶ note:x[<<1 Sam 31:2>>]And ##Ner##note:x[<<1 Sam 9:1>>] begat ##Kish##note:x[<<1 Sam 9:1>>], and Kish begat Saul, and Saul begat Jonathan, and Malchi-shua, and ##Abinadab##note:tn[also called, Ishui], and ##Esh-baal##note:tn[or, Ish-bosheth].
+@ note:x[<<2 Sam 9:12>>]And the son of Jonathan __was__ note:x[<<2 Sam 4:4>>]##Merib-baal##note:tn[or, Mephibosheth]; and Merib-baal begat Micah.
+@ And the sons of Micah __were__, Pithon, and Melech, and ##Tarea##note:tn[or, Tahrea], and Ahaz.
+@ And Ahaz begat ##Jehoadah##note:tn[also called, Jarah]; and Jehoadah begat Alemeth, and Azmaveth, and Zimri; and Zimri begat Moza,
+@ And Moza begat Binea: ##Rapha##note:tn[also called, Rephaiah] __was__ his son, Eleasah his son, Azel his son:
+@ And Azel had six sons, whose names __are__ these, Azrikam, Bocheru, and Ishmael, and Sheariah, and Obadiah, and Hanan. All these __were__ the sons of Azel.
+@ And the sons of Eshek his brother __were__, Ulam his firstborn, Jehush the second, and Eliphelet the third.
+@ And the sons of Ulam were mighty men of valour, archers, and had many sons, and sons’ sons, an hundred and fifty. All these __are__ of the sons of Benjamin.
+
+=== @9
+
+[discrete.pericope]
+==== The People of Jerusalem
+
+@ So ##all Israel##note:x[<<Neh 7:5, 64>>] were reckoned by genealogies; and, behold, they __were__ written in the book of the kings of Israel and Judah, __who__ were carried away to Babylon for their transgression.
+
+@ ¶ Now ##the first##note:x[<<Ezra 2:70; Neh 7:73>>] inhabitants that __dwelt__ in their possessions in their cities __were__, the Israelites, the priests, Levites, and ##the Nethinims##note:x[<<Neh 7:73>>].
+@ And in ##Jerusalem##note:x[<<Neh 11:1>>] dwelt of the children of Judah, and of the children of Benjamin, and of the children of Ephraim, and Manasseh;
+@ Uthai the son of Ammihud, the son of Omri, the son of Imri, the son of Bani, of the children of ##Pharez##note:x[<<Gen 46:12; Num 26:20; 1 Chr 2:5>>] the son of Judah.
+@ And of the Shilonites; Asaiah the firstborn, and his sons.
+@ And of the sons of Zerah; Jeuel, and their brethren, six hundred and ninety.
+@ And of the sons of Benjamin; Sallu the son of Meshullam, the son of Hodaviah, the son of Hasenuah,
+@ And Ibneiah the son of Jeroham, and Elah the son of Uzzi, the son of Michri, and Meshullam the son of Shephathiah, the son of Reuel, the son of Ibnijah;
+@ And their brethren, according to their generations, nine hundred and fifty and six. All these men __were__ chief of the fathers in the house of their fathers.
+
+@ ¶ And of the priests; Jedaiah, and Jehoiarib, and Jachin,
+@ note:x[<<Neh 11:11>>]And note:x[<<Neh 11:11>>]##Azariah##note:tn[also called, Seraiah] the son of Hilkiah, the son of Meshullam, the son of Zadok, the son of Meraioth, the son of Ahitub, the ruler of the house of God;
+@ And Adaiah the son of Jeroham, the son of Pashur, the son of Malchijah, and Maasiai the son of Adiel, the son of Jahzerah, the son of Meshullam, the son of Meshillemith, the son of Immer;
+@ And their brethren, heads of the house of their fathers, a thousand and seven hundred and threescore; very able men for the work of the service of the house of God.note:tn[__very…__: Heb. mighty men of valour]
+
+@ And of the Levites; Shemaiah the son of Hasshub, the son of Azrikam, the son of Hashabiah, of the sons of Merari;
+@ And Bakbakkar, Heresh, and Galal, and ##Mattaniah##note:x[<<Neh 11:22>>] the son of Micah, the son of Zichri, the son of Asaph;
+@ And Obadiah the son of Shemaiah, the son of Galal, the son of Jeduthun, and Berechiah the son of Asa, the son of Elkanah, that dwelt in the villages of the Netophathites.
+@ And the porters __were__, Shallum, and Akkub, and Talmon, and Ahiman, and their brethren: Shallum __was__ the chief;
+@ note:x[<<Ezek 46:1–2>>]Who hitherto __waited__ in the king’s gate eastward: they __were__ porters in the companies of the children of Levi.
+@ And Shallum the son of Kore, the son of Ebiasaph, the son of Korah, and his brethren, of the house of his father, the Korahites, __were__ over the work of the service, keepers of the ##gates##note:tn[Heb. thresholds] of the tabernacle: and their fathers, __being__ over the host of the LORD, __were__ keepers of the entry.
+@ And Phinehas the son of Eleazar was the ruler over them in time past, __and__ the LORD __was__ with him.
+@ __And__ ##Zechariah##note:x[<<1 Chr 26:14>>] the son of Meshelemiah __was__ porter of the door of the tabernacle of the congregation.
+@ All these __which were__ chosen to be porters in the gates __were__ two hundred and twelve. These were reckoned by their genealogy in their villages, whom ##David##note:x[<<1 Chr 23:1–32>>] and ##Samuel##note:x[<<1 Sam 9:9>>] the seer did ordain in their set office.note:tn[__did…__: Heb. founded]note:tn[__set…__: or, trust]
+@ So they and their children __had__ the oversight of the gates of the house of the LORD, __namely__, the house of the tabernacle, by wards.
+@ In four quarters were the porters, toward the east, west, north, and south.
+@ And their brethren, __which were__ in their villages, __were__ to come after ##seven##note:x[<<2 Kgs 11:5>>] days from time to time with them.
+@ For these Levites, the four chief porters, were in __their__ set office, and were over the ##chambers##note:tn[or, storehouses] and treasuries of the house of God.note:tn[__set…__: or, trust]
+
+@ ¶ And they lodged round about the house of God, because the charge __was__ upon them, and the opening thereof every morning __pertained__ to them.
+@ And __certain__ of them had the charge of the ministering vessels, that they should bring them in and out by tale.note:tn[__bring…__: Heb. bring them in by tale, and carry them out by tale]
+@ __Some__ of them also __were__ appointed to oversee the vessels, and all the ##instruments##note:tn[or, vessels] of the sanctuary, and the fine flour, and the wine, and the oil, and the frankincense, and the spices.
+@ And __some__ of the sons of the priests made the ointment of the spices.
+@ And Mattithiah, __one__ of the Levites, who __was__ the firstborn of ##Shallum##note:x[<<1 Chr 9:19>>] the Korahite, had the set office over the things that were made in the pans.note:tn[__set…__: or, trust]note:tn[__in…__: or, on flat plates, or, slices]
+@ And __other__ of their brethren, of the sons of the Kohathites, __were__ over the ##shewbread##note:tn[Heb. bread of ordering], ##to##note:x[<<Lev 24:5–8>>] prepare __it__ every sabbath.
+@ And these __are__ ##the singers##note:x[<<1 Chr 6:31–33; 16:4–6; 25:1–31>>], chief of the fathers of the Levites, __who remaining__ in the chambers __were__ free: for they were employed in __that__ work day and night.note:tn[__they…__: Heb. upon them]
+@ These chief fathers of the Levites __were__ chief throughout their generations; these dwelt at Jerusalem.
+
+[discrete.pericope]
+==== The Descendants of Saul
+
+@ ¶ And in Gibeon dwelt the father of Gibeon, Jehiel, whose wife’s name __was__ Maachah:
+@ And his firstborn son Abdon, then Zur, and Kish, and Baal, and Ner, and Nadab,
+@ And Gedor, and Ahio, and Zechariah, and Mikloth.
+@ And Mikloth begat Shimeam. And they also dwelt with their brethren at Jerusalem, over against their brethren.
+@ And Ner begat Kish; and Kish begat Saul; and Saul begat Jonathan, and Malchi-shua, and Abinadab, and Esh-baal.
+@ And the son of Jonathan __was__ Merib-baal: and Merib-baal begat Micah.
+@ And the sons of Micah __were__, Pithon, and Melech, and Tahrea, __and__ ##__Ahaz__##note:x[<<1 Chr 8:35>>].
+@ And Ahaz begat Jarah; and Jarah begat Alemeth, and Azmaveth, and Zimri; and Zimri begat Moza;
+@ And Moza begat Binea; and Rephaiah his son, Eleasah his son, Azel his son.
+@ And Azel had six sons, whose names __are__ these, Azrikam, Bocheru, and Ishmael, and Sheariah, and Obadiah, and Hanan: these __were__ the sons of Azel.
+
+=== @10
+
+[discrete.pericope]
+==== Saul’s Overthrow and Death
+
+[.parallel]
+(<<1 Samuel 31:1–6; 2 Samuel 1:1–16>>)
+
+@ Now ##the Philistines fought##note:x[<<1 Sam 31:1–13>>] against Israel; and the men of Israel fled from before the Philistines, and fell down ##slain##note:tn[or, wounded] in ##mount##note:x[<<1 Sam 31:1; 1 Chr 10:8>>] Gilboa.
+@ And the Philistines followed hard after Saul, and after his sons; and the Philistines slew Jonathan, and ##Abinadab##note:tn[also called, Ishui], and Malchi-shua, the sons of Saul.
+@ And the battle went sore against Saul, and the archers ##hit##note:tn[Heb. found] him, and he was wounded of the archers.note:tn[__and the archers__: Heb. and the shooters with bows]
+@ Then said Saul to his armourbearer, Draw thy sword, and thrust me through therewith; lest these uncircumcised come and ##abuse me##note:tn[or, mock me]. But his armourbearer would not; for ##he was##note:x[<<1 Sam 31:4>>] sore afraid. So Saul took a sword, and fell upon it.
+@ And when his armourbearer saw that Saul was dead, he fell likewise on the sword, and died.
+@ So Saul died, and his three sons, and all his house died together.
+
+[discrete.pericope]
+==== The Philistines Possess the Towns
+
+[.parallel]
+(<<1 Samuel 31:7–10>>)
+
+@ And when all the men of Israel that __were__ in the valley saw that they fled, and that Saul and his sons were dead, then they forsook their cities, and fled: and the Philistines came and dwelt in them.
+
+@ ¶ And it came to pass on the morrow, when the Philistines came to strip the slain, that they found Saul and his sons fallen in mount Gilboa.
+@ And when they had stripped him, they took his head, and his armour, and sent into the land of the Philistines round about, to carry tidings unto their idols, and to the people.
+@ note:x[<<1 Sam 5:2–7>>]And they put his armour in the house of ##their gods##note:x[<<1 Sam 31:10>>], and fastened his head in the temple of Dagon.
+
+[discrete.pericope]
+==== Jabesh-gilead’s Tribute to Saul
+
+[.parallel]
+(<<1 Samuel 31:11–13>>)
+
+@ ¶ And when all Jabesh-gilead heard all that the Philistines had done to Saul,
+@ They arose, all the valiant men, and took away the body of Saul, and the bodies of his sons, and brought them to Jabesh, and buried their bones under the oak in Jabesh, and fasted seven days.
+
+@ ¶ So Saul died for his transgression which he ##committed##note:tn[Heb. transgressed] against the LORD, ##__even__ against##note:x[<<1 Sam 15:23>>] the word of the LORD, which he kept not, and also for asking __counsel__ of __one that had__ ##a familiar##note:x[<<Lev 19:31; 20:6>>] spirit, to enquire __of it;__
+@ And enquired not of the LORD: therefore he slew him, and ##turned##note:x[<<1 Sam 13:14; 15:28; 16:1>>] the kingdom unto David the son of ##Jesse##note:tn[Heb. Isai].
+
+=== @11
+
+[discrete.pericope]
+==== David Anointed King of All Israel
+
+[.parallel]
+(<<2 Samuel 5:1–5>>)
+
+@ Then all Israel gathered themselves to David unto Hebron, saying, Behold, we __are__ thy bone and thy flesh.
+@ And moreover in time past, even when Saul was king, thou __wast__ he ##that leddest##note:x[<<John 10:4>>] out and broughtest in Israel: and the LORD thy God said unto thee, ##Thou shalt##note:x[<<Ps 78:71>>] ##feed##note:tn[or, rule] my people Israel, and thou shalt be ##ruler##note:x[<<2 Sam 5:2>>] over my people Israel.note:tn[__in time…__: Heb. both yesterday and the third day]
+@ Therefore came all the ##elders##note:x[<<2 Sam 5:3>>] of Israel to the king to Hebron; and David made a covenant with them in Hebron before the LORD; and they ##anointed##note:x[<<1 Sam 16:1, 12–13>>] David king over Israel, according to the word of the LORD ##by##note:tn[Heb. by the hand of] Samuel.
+
+[discrete.pericope]
+==== David Conquers Jerusalem
+
+[.parallel]
+(<<2 Samuel 5:6–11>>)
+
+@ ¶ And David and all Israel went to Jerusalem, which __is__ ##Jebus##note:x[<<Josh 15:63>>]; where the ##Jebusi##note:x[<<Judg 1:21>>]tes __were__, the inhabitants of the land.
+@ And the inhabitants of Jebus said to David, Thou shalt not come hither. Nevertheless David took the castle of Zion, which __is__ the city of David.
+@ And David said, Whosoever smiteth the Jebusites first shall be ##chief##note:tn[Heb. head] and captain. So ##Joab##note:x[<<2 Sam 8:16>>] the son of Zeruiah went first up, and was chief.
+@ And David dwelt in the castle; therefore they called ##it##note:tn[that is, Zion] the city of David.
+@ And he built the city round about, even from Millo round about: and Joab ##repaired##note:tn[Heb. revived] the rest of the city.
+@ So David ##waxed greater and greater##note:x[<<2 Sam 3:1; 5:10>>]: ##for##note:x[<<Isa 41:10>>] the LORD of hosts __was__ with him.note:tn[__waxed…__: Heb. went in going and increasing]
+
+[discrete.pericope]
+==== David’s Mighty Men
+
+[.parallel]
+(<<2 Samuel 23:8–39>>)
+
+@ ¶ These also __are__ the chief of the mighty men whom David had, who strengthened themselves with him in his kingdom, __and__ with all Israel, to make him king, according to the word of the LORD concerning Israel.note:tn[__strengthened…__: or, held strongly with him]
+@ And this __is__ the number of the mighty men whom David had; ##Jashobeam##note:x[<<2 Sam 23:8>>], an Hachmonite, the chief of the captains: he lifted up his spear against three hundred slain __by him__ at one time.note:tn[__an Hachmonite__: or, son of Hachmoni]
+@ And after him __was__ ##Eleazar##note:x[<<1 Chr 27:4>>] the son of Dodo, the Ahohite, who __was one__ of the three mighties.
+@ He was with David at ##Pas-dammim##note:tn[also called, Ephes-dammim], and there the Philistines were gathered together to battle, where was a parcel of ground full of barley; and the people fled from before the Philistines.
+@ And they set themselves in the midst of __that__ parcel, and delivered it, and slew the Philistines; and the LORD saved __them__ by a great note:x[<<Ps 144:10>>]##deliverance##note:tn[or, salvation].note:tn[__set…__: or, stood]
+
+@ ¶ Now three of the thirty captains went down to the rock to David, into the cave of Adullam; and the host of the Philistines encamped ##in the##note:x[<<2 Sam 5:18; 1 Chr 14:9; Isa 17:5>>] valley of Rephaim.note:tn[__three…__: or, three captains over the thirty]
+@ note:x[<<1 Sam 10:5; 13:23>>]And David __was__ then in the hold, and the Philistines’ garrison __was__ then at Beth-lehem.
+@ And David ##longed##note:x[<<2 Sam 23:15–16>>], and said, Oh that one would give me drink ##of the water##note:x[<<Isa 12:3; John 4:10>>] of the well of Beth-lehem, that __is__ at the gate!
+@ And the three brake through the host of the Philistines, and drew water out of the well of Beth-lehem, that __was__ by the gate, and took __it__, and brought __it__ to David: but David would not drink __of__ it, but poured it out to the LORD,
+@ And said, ##My God##note:x[<<2 Sam 23:17>>] forbid it me, that I should do this thing: shall I drink the blood of these men that have put their lives in jeopardy? for with __the jeopardy of__ their lives they brought it. Therefore he would not drink it. These things did these three mightiest.note:tn[__that have…__: Heb. with their lives?]
+
+@ ¶ And Abishai the brother of Joab, he was chief of the three: for lifting up his spear against three hundred, he slew __them__, and had a name among the three.
+@ Of the three, he was more honourable than the two; for he was their captain: howbeit he attained not to the __first__ three.
+@ Benaiah the son of Jehoiada, the son of a valiant man of Kabzeel, who had done many acts; he slew two lionlike men of Moab: also he went down and slew a lion in a pit in a snowy day.note:tn[__who had…__: Heb. great of deeds]
+@ And he slew an Egyptian, a man of __great__ stature, five cubits high; and in the Egyptian’s hand __was__ a spear like a weaver’s beam; and he went down to him with a staff, and plucked the spear out of the Egyptian’s hand, and slew him with his own spear.note:tn[__great…__: Heb. measure]
+@ These __things__ did Benaiah the son of Jehoiada, and had the name among the three mighties.
+@ Behold, he was honourable among the thirty, but attained not to the __first__ three: and David set him over his guard.
+
+@ ¶ Also the valiant men of the armies __were__, Asahel the brother of Joab, Elhanan the son of Dodo of Beth-lehem,
+@ ##Shammoth##note:tn[or, Shammah] the ##Harorite##note:tn[or, Harodite], Helez the ##Pelonite##note:tn[or, Paltite],
+@ Ira the son of Ikkesh the Tekoite, Abi-ezer the Antothite,
+@ ##Sibbecai##note:tn[or, Mebunnai] the Hushathite, ##Ilai##note:tn[or, Zalmon] the Ahohite,
+@ Maharai the Netophathite, ##Heled##note:tn[or, Heleb] the son of Baanah the Netophathite,
+@ Ithai the son of Ribai of Gibeah, __that pertained__ to the children of Benjamin, Benaiah the Pirathonite,
+@ ##Hurai##note:tn[or, Hiddai] of the brooks of Gaash, ##Abiel##note:tn[or, Abi-albon] the Arbathite,
+@ Azmaveth the Baharumite, Eliahba the Shaalbonite,
+@ The sons of ##Hashem##note:tn[or, Jashen] the Gizonite, Jonathan the son of Shage the Hararite,
+@ Ahiam the son of ##Sacar##note:tn[or, Sharar] the Hararite, ##Eliphal##note:tn[or, Eliphelet] the son of ##Ur##note:tn[or, Ahasbai],
+@ Hepher the Mecherathite, Ahijah the Pelonite,
+@ ##Hezro##note:tn[or Hezrai] the Carmelite, ##Naarai##note:tn[or Paarai the Arbite] the son of Ezbai,
+@ Joel the brother of Nathan, Mibhar the son of Haggeri,note:tn[__the son…__: or, the Haggerite]
+@ Zelek the Ammonite, Naharai the Berothite, the armourbearer of Joab the son of Zeruiah,
+@ Ira the Ithrite, Gareb the Ithrite,
+@ Uriah the Hittite, Zabad the son of Ahlai,
+@ Adina the son of Shiza the Reubenite, a captain of the Reubenites, and thirty with him,
+@ Hanan the son of Maachah, and Joshaphat the Mithnite,
+@ Uzzia the Ashterathite, Shama and Jehiel the sons of Hothan the Aroerite,
+@ Jediael the son of Shimri, and Joha his brother, the Tizite,note:tn[__son…__: or, Shimrite]
+@ Eliel the Mahavite, and Jeribai, and Joshaviah, the sons of Elnaam, and Ithmah the Moabite,
+@ Eliel, and Obed, and Jasiel the Mesobaite.
+
+=== @12
+
+[discrete.pericope]
+==== The Mighty Men Join David at Ziklag
+
+@ Now ##these __are__##note:x[<<1 Sam 27:2>>] they that came to David to Ziklag, while he yet kept himself close because of Saul the son of Kish: and they __were__ among the mighty men, helpers of the war.note:tn[__while…__: Heb. being yet shut up]
+@ __They were__ armed with bows, and ##could use##note:x[<<Judg 3:15; 20:16>>] both the right hand and the left in __hurling__ stones and __shooting__ arrows out of a bow, __even__ of Saul’s brethren of Benjamin.
+@ The chief __was__ Ahiezer, then Joash, the sons of ##Shemaah##note:tn[or, Hasmaah] the Gibeathite; and Jeziel, and Pelet, the sons of Azmaveth; and Berachah, and Jehu ##the Antothite##note:x[<<1 Chr 11:28>>],
+@ And Ismaiah the Gibeonite, a mighty man among the thirty, and over the thirty; and Jeremiah, and Jahaziel, and Johanan, and Josabad the Gederathite,
+@ Eluzai, and Jerimoth, and Bealiah, and Shemariah, and Shephatiah the Haruphite,
+@ Elkanah, and Jesiah, and Azareel, and Joezer, and Jashobeam, the Korhites,
+@ And Joelah, and Zebadiah, the sons of Jeroham of Gedor.
+@ And of the Gadites there separated themselves unto David into the hold to the wilderness men of might, __and__ men of war __fit__ for the battle, that could handle shield and buckler, ##whose faces##note:x[<<2 Sam 17:10; 23:20>>] __were like__ the faces of lions, and __were__ ##as swift as the roes upon the mountains##note:x[<<2 Sam 2:18>>];note:tn[__of war__: Heb. of the host]note:tn[__as swift…__: Heb. as the roes upon the mountains to make haste]
+@ Ezer the first, Obadiah the second, Eliab the third,
+@ Mishmannah the fourth, Jeremiah the fifth,
+@ Attai the sixth, Eliel the seventh,
+@ Johanan the eighth, Elzabad the ninth,
+@ Jeremiah the tenth, Machbanai the eleventh.
+@ These __were__ of the sons of Gad, captains of the host: ##one of the least __was__ over an hundred, and the greatest over a thousand##note:x[<<Lev 26:8; Deut 32:30>>].note:tn[__one…__: or, one that was least could resist an hundred, and the greatest a thousand]
+@ These __are__ they that went over Jordan in the first month, when note:x[<<Josh 3:15>>]it had ##overflown##note:tn[Heb. filled over] all his banks; and they put to flight all __them__ of the valleys, __both__ toward the east, and toward the west.
+@ And there came of the children of Benjamin and Judah to the hold unto David.
+@ And David went out to meet them, and answered and said unto them, If ye be come peaceably unto me to help me, mine heart shall be knit unto you: but if __ye be come__ to betray me to mine enemies, seeing __there is__ no ##wrong##note:tn[or, violence] in mine hands, the God of our fathers look __thereon__, and rebuke __it__.note:tn[__to meet…__: Heb. before them]note:tn[__be knit__: Heb. be one]
+@ Then ##the spirit##note:x[<<Judg 6:34>>] ##came upon Amasai##note:x[<<2 Sam 17:25>>], __who was__ chief of the captains, __and he said__, Thine __are we__, David, and on thy side, thou son of Jesse: peace, peace __be__ unto thee, and peace __be__ to thine helpers; for ##thy God##note:x[<<John 6:67–68>>] helpeth thee. Then David received them, and made them captains of the band.note:tn[__came…__: Heb. clothed]
+@ And there fell __some__ of Manasseh to David, ##when he came##note:x[<<1 Sam 29:2–4>>] with the Philistines against Saul to battle: but they helped them not: for the lords of the Philistines upon advisement sent him away, saying, He will fall to his master Saul to __the jeopardy of__ our heads.note:tn[__to the…__: Heb. on our heads]
+@ As he went to Ziklag, there fell to him of Manasseh, Adnah, and Jozabad, and Jediael, and Michael, and Jozabad, and Elihu, and Zilthai, captains of the thousands that __were__ of Manasseh.
+@ And they helped David against the band __of the rovers:__ for they __were__ all mighty men of valour, and were captains in the host.note:tn[__against…__: or, with a band]
+@ For at __that__ time ##day by day##note:x[<<2 Sam 3:1; Job 17:9>>] there came to David to help him, until __it was__ a great host, like the host of God.
+
+[discrete.pericope]
+==== David’s Army Grows at Hebron
+
+@ ¶ And these __are__ ##the numbers##note:x[<<2 Sam 2:3–4>>] of the ##bands##note:tn[or, captains, or, men: Heb. heads] __that were__ ready armed to the war, __and__ came to David to Hebron, to turn the kingdom of Saul to him, ##according##note:x[<<1 Sam 16:1; 1 Chr 11:10>>] to the word of the LORD.
+@ The children of Judah that bare shield and spear __were__ six thousand and eight hundred, ready ##armed##note:tn[or, prepared] to the war.
+@ Of the children of Simeon, mighty men of valour for the war, seven thousand and one hundred.
+@ Of the children of Levi four thousand and six hundred.
+@ And Jehoiada __was__ the leader of the Aaronites, and with him __were__ three thousand and seven hundred;
+@ And ##Zadok##note:x[<<2 Sam 8:17; 1 Chr 6:8>>], a young man mighty of valour, and of his father’s house twenty and two captains.
+@ And of the children of Benjamin, the note:x[<<1 Chr 12:2>>]##kindred##note:tn[Heb. brethren] of Saul, three thousand: for hitherto ##the greatest part of them##note:x[<<2 Sam 2:8–9>>] had kept the ward of the house of Saul.note:tn[__the greatest…__: Heb. a multitude of them]
+@ And of the children of Ephraim twenty thousand and eight hundred, mighty men of valour, ##famous##note:tn[Heb. men of names] throughout the house of their fathers.
+@ And of the half tribe of Manasseh eighteen thousand, which were expressed by name, to come and make David king.
+@ And of the children of Issachar, __which were men__ that had ##understanding of the times##note:x[<<Esth 1:13; Luke 12:56–57>>], ##to know##note:x[<<Eph 5:17>>] what Israel ought to do; the heads of them __were__ two hundred; and all their brethren __were__ at their commandment.
+@ Of Zebulun, such as went forth to battle, ##expert in war##note:x[<<Ps 12:2>>], with all instruments of war, fifty thousand, which could keep rank: __they were__ not of double heart.note:tn[__expert…__: or, rangers of battle, or, ranged in battle]note:tn[__keep…__: or, set the battle in array]note:tn[__not…__: Heb. without a heart and a heart]
+@ And of Naphtali a thousand captains, and with them with shield and spear thirty and seven thousand.
+@ And of the Danites expert in war twenty and eight thousand and six hundred.
+@ And of Asher, such as went forth to battle, ##expert##note:tn[or, keeping their rank] in war, forty thousand.
+@ And on the other side of Jordan, of the Reubenites, and the Gadites, and of the half tribe of Manasseh, with all manner of instruments of war for the battle, an hundred and twenty thousand.
+@ All these men of war, that could keep rank, came ##with a perfect heart##note:x[<<1 Kgs 8:61>>] to Hebron, to make David king over all Israel: and ##all the rest##note:x[<<Gen 49:8–10>>] also of Israel __were__ of one heart to make David king.
+@ And there they were with David three days, eating and drinking: for their brethren had prepared for them.
+@ Moreover they that were nigh them, __even__ unto Issachar and Zebulun and Naphtali, brought bread on asses, and on camels, and on mules, and on oxen, __and__ meat, meal, ##cakes of figs##note:x[<<1 Sam 25:18>>], and bunches of raisins, and wine, and oil, and oxen, and sheep abundantly: for __there was__ joy in Israel.note:tn[__meat…__: or, victual of meal]
+
+=== @13
+
+[discrete.pericope]
+==== David Fetches the Ark
+
+[.parallel]
+(<<2 Samuel 6:1–4>>)
+
+@ And David consulted with the captains of thousands and hundreds, __and__ with every leader.
+@ And David said unto all the congregation of Israel, If __it seem__ good unto you, and __that it be__ of the LORD our God, let us send abroad unto our brethren every where, __that are__ left in all the land of Israel, and with them __also__ to the priests and Levites __which are__ in their cities __and__ suburbs, that they may gather themselves unto us&#58;note:tn[__send…__: Heb. break forth and send]note:tn[__in their…__: Heb. in the cities of their suburbs]
+@ And let us bring again ##the ark##note:x[<<1 Sam 7:1–2>>] of our God to us: for ##we enquired##note:x[<<1 Sam 14:18; 23:2>>] not at it in the days of Saul.note:tn[__bring…__: Heb. bring about]
+@ And all the congregation said that they would do so: for the thing was right in the eyes of all the people.
+@ note:x[<<1 Sam 6:21>>]note:x[<<1 Kgs 8:65>>]So ##David##note:x[<<2 Sam 6:1>>] gathered all Israel together, from Shihor of Egypt even unto the entering of Hemath, to bring the ark of God from Kirjath-jearim.
+@ note:x[<<Exod 25:22>>]And David went up, and all Israel, to ##Baalah##note:x[<<Josh 15:9; 2 Sam 6:2>>], __that is__, to Kirjath-jearim, which __belonged__ to Judah, to bring up thence the ark of God the LORD, that dwelleth __between__ the cherubims, whose name is called __on it__.
+@ And they carried the ark of God ##in a new cart##note:x[<<Num 4:15>>] out of the house of Abinadab: and Uzza and Ahio drave the cart.note:tn[__carried…__: Heb. made the ark to ride]
+
+[discrete.pericope]
+==== Uzzah Touches the Ark
+
+[.parallel]
+(<<2 Samuel 6:5–11>>)
+
+@ And David and all Israel played before God with all __their__ might, and with ##singing##note:tn[Heb. songs], and with harps, and with psalteries, and with timbrels, and with cymbals, and with trumpets.
+
+@ ¶ And when they came unto the threshingfloor of note:x[<<2 Sam 6:6>>]##Chidon##note:tn[also called Nachon], Uzza put forth his hand to hold the ark; for the oxen ##stumbled##note:tn[or, shook it].
+@ And the anger of the LORD was kindled against Uzza, and he smote him, because ##he put##note:x[<<Num 4:15; 1 Chr 15:13, 15>>] his hand to the ark: and there he died before God.
+@ And David was ##displeased##note:x[<<2 Sam 6:7>>], because the LORD had made a breach upon Uzza: wherefore that place is called ##Perez-uzza##note:tn[that is, The breach of Uzza] to this day.
+@ And David was afraid of God that day, saying, How shall I bring the ark of God __home__ to me?
+@ So David ##brought##note:tn[Heb. removed] not the ark __home__ to himself to the city of David, but carried it aside into the house of Obed-edom the Gittite.
+@ And the ark of God remained with the family of Obed-edom in his house three months. And ##the LORD##note:x[<<Gen 30:27; Prov 3:9–10; 10:22>>] blessed the house of Obed-edom, and all that he had.
+
+=== @14
+
+[discrete.pericope]
+==== David’s Family Grows
+
+[.parallel]
+(<<2 Samuel 5:12–16>>)
+
+@ Now Hiram king of Tyre sent messengers to David, and timber of cedars, with masons and carpenters, to build him an house.
+@ And David perceived that ##the LORD##note:x[<<Ps 89:20–37>>] had confirmed him king over Israel, for ##his kingdom##note:x[<<Num 24:7>>] was lifted up on high, because of his people Israel.
+
+@ ¶ And David took ##more##note:tn[Heb. yet] wives at Jerusalem: and David begat more sons and daughters.
+@ Now these __are__ the names of __his__ children which he had in Jerusalem; Shammua, and Shobab, Nathan, and Solomon,
+@ And Ibhar, and Elishua, and Elpalet,
+@ And Nogah, and Nepheg, and Japhia,
+@ And Elishama, and ##Beeliada##note:tn[also called, Eliada], and Eliphalet.
+
+[discrete.pericope]
+==== Two Victories over the Philistines
+
+[.parallel]
+(<<2 Samuel 5:17–25>>)
+
+@ ¶ ##And when##note:x[<<1 Sam 21:11>>] the Philistines heard that David was anointed king over all Israel, all the Philistines went up to seek David. And David heard __of it__, and went out against them.
+@ And the Philistines came and spread themselves in ##the valley##note:x[<<1 Chr 11:15>>] of Rephaim.
+@ And David ##enquired##note:x[<<1 Chr 14:14>>] of God, saying, ##Shall I go##note:x[<<Prov 3:6>>] up against the Philistines? and wilt thou deliver them into mine hand? And the LORD said unto him, Go up; for I will deliver them into thine hand.
+@ So they came up to note:x[<<2 Sam 5:20; Isa 28:21>>]##Baal-perazim##note:tn[that is, A place of breaches]; and David smote them there. Then David said, ##God##note:x[<<Ps 144:10>>] hath broken in upon mine enemies by mine hand like the breaking forth of waters: therefore they called the name of that place Baal-perazim.
+@ And when they had left their gods there, David gave a commandment, and they ##were burned##note:x[<<Exod 32:20>>] with fire.
+@ And the Philistines ##yet again##note:x[<<1 Chr 14:9>>] spread themselves abroad in the valley.
+@ Therefore David ##enquired##note:x[<<Ps 27:4>>] again of God; and God said unto him, Go not up after them; turn away from them, and come upon them over against the mulberry trees.
+@ And it shall be, ##when thou shalt hear##note:x[<<Acts 2:2>>] a sound of going in the tops of the mulberry trees, __that__ then thou shalt go out to battle: ##for God##note:x[<<Isa 13:4>>] is gone forth before thee to smite the host of the Philistines.
+@ David therefore ##did as God##note:x[<<John 13:17; 15:14>>] commanded him: and they smote the host of the Philistines from ##Gibeon##note:tn[also called, Geba] even to Gazer.
+@ And the ##fame of David##note:x[<<Josh 6:27>>] went out into all lands; and the LORD brought ##the fear of him##note:x[<<Exod 15:14–16; Deut 2:25>>] upon all nations.
+
+=== @15
+
+[discrete.pericope]
+==== Preparing to Move the Ark
+
+[.parallel]
+(<<2 Samuel 6:12–15>>)
+
+@ note:x[<<1 Chr 16:1; Ps 132:5>>]And __David__ made him houses in the city of David, and prepared a place for the ark of God, and pitched for it a tent.
+@ Then David said, None ought to carry the ark of God but the Levites: for ##them hath##note:x[<<Deut 10:8; 31:9>>] the LORD chosen to carry the ark of God, and ##to minister##note:x[<<Num 18:1–8>>] unto him for ever.note:tn[__None…__: Heb. It is not to carry the ark of God, but for the Levites]
+@ And David ##gathered##note:x[<<1 Kgs 8:1; 1 Chr 13:5>>] all Israel together to Jerusalem, ##to bring up##note:x[<<1 Chr 15:1>>] the ark of the LORD unto his place, which he had prepared for it.
+@ And David assembled the children of Aaron, and the Levites:
+@ Of the sons of Kohath; Uriel the chief, and his ##brethren##note:tn[or, kinsmen] an hundred and twenty:
+@ Of the sons of Merari; Asaiah the chief, and his brethren two hundred and twenty:
+@ Of the sons of Gershom; Joel the chief, and his brethren an hundred and thirty:
+@ Of the sons of Elizaphan; Shemaiah the chief, and his brethren two hundred:
+@ Of the sons of ##Hebron##note:x[<<Exod 6:18>>]; Eliel the chief, and his brethren fourscore:
+@ Of the sons of Uzziel; Amminadab the chief, and his brethren an hundred and twelve.
+@ And David called for ##Zadok##note:x[<<1 Chr 12:28>>] and Abiathar the priests, and for the Levites, for Uriel, Asaiah, and Joel, Shemaiah, and Eliel, and Amminadab,
+@ And said unto them, Ye __are__ the chief of the fathers of the Levites: ##sanctify##note:x[<<Exod 19:14–15; 1 Chr 15:14; 2 Chr 35:6>>] yourselves, __both__ ye and your brethren, that ye may bring up the ark of the LORD God of Israel unto __the place that__ I have prepared for it.
+@ For because ##ye __did it__##note:x[<<2 Sam 6:3>>] not at the first, the LORD our God made a breach upon us, ##for that##note:x[<<1 Cor 11:2; 14:40>>] we sought him not after the due order.
+
+[discrete.pericope]
+==== The Priests and Levites Carry the Ark
+
+@ So the priests and the Levites sanctified themselves to bring up the ark of the LORD God of Israel.
+@ And the children of the Levites ##bare the ark##note:x[<<Num 4:15; 7:9>>] of God upon their shoulders with the staves thereon, as Moses commanded according to the word of the LORD.
+@ And David spake to the chief of the Levites to appoint their brethren __to be__ ##the singers##note:x[<<1 Chr 13:8>>] with instruments of musick, psalteries and harps and cymbals, sounding, by lifting up the voice with joy.
+@ So the Levites appointed ##Heman##note:x[<<1 Chr 6:33>>] the son of Joel; and of his brethren, ##Asaph##note:x[<<1 Chr 6:39>>] the son of Berechiah; and of the sons of Merari their brethren, ##Ethan##note:x[<<1 Chr 6:44>>] the son of Kushaiah;
+@ And with them their brethren of the second __degree__, Zechariah, Ben, and Jaaziel, and Shemiramoth, and Jehiel, and Unni, Eliab, and Benaiah, and Maaseiah, and Mattithiah, and Elipheleh, and Mikneiah, and Obed-edom, and Jeiel, the porters.
+@ So the singers, Heman, Asaph, and Ethan, __were appointed__ to sound with cymbals of brass;
+@ And Zechariah, and Aziel, and Shemiramoth, and Jehiel, and Unni, and Eliab, and Maaseiah, and Benaiah, with psalteries on Alamoth;
+@ And Mattithiah, and Elipheleh, and Mikneiah, and Obed-edom, and Jeiel, and Azaziah, with harps on the Sheminith to excel.note:tn[__on the…__: or, on the eighth to oversee]
+@ And Chenaniah, chief of the Levites, __was__ for ##song##note:tn[Heb. lifting up]: he instructed about the song, because he __was__ skilful.note:tn[__was for…__: or, was for the carriage: he instructed about the carriage]
+@ And Berechiah and Elkanah __were__ doorkeepers for the ark.
+@ And Shebaniah, and Jehoshaphat, and Nethaneel, and Amasai, and Zechariah, and Benaiah, and Eliezer, ##the priest##note:x[<<1 Chr 16:6>>]s, did blow with the trumpets before the ark of God: and Obed-edom and Jehiah __were__ doorkeepers for the ark.
+
+[discrete.pericope]
+==== Moving the Ark to Jerusalem
+
+@ ¶ So David, and the elders of Israel, and the captains over thousands, went to bring up the ark of the covenant of the LORD out of the house of Obed-edom with joy.
+@ And it came to pass, when ##God##note:x[<<1 Chr 29:14>>] helped the Levites that bare the ark of the covenant of the LORD, that ##they##note:x[<<Ps 66:13–15>>] offered seven ##bullocks##note:x[<<Num 23:29>>] and seven rams.
+@ And David __was__ clothed with a robe of fine linen, and all the Levites that bare the ark, and the singers, and Chenaniah the master of the ##song##note:tn[or, carriage] with the singers: David also __had__ upon him an ephod of linen.
+@ Thus all Israel brought up the ark of the covenant of the LORD ##with shouting##note:x[<<1 Chr 13:8>>], and with sound of the cornet, and with trumpets, and with cymbals, making a noise with psalteries and harps.
+
+[discrete.pericope]
+==== Michal’s Contempt for David
+
+[.parallel]
+(<<2 Samuel 6:16>>)
+
+@ ¶ And it came to pass, __as__ the ark of the covenant of the ##LORD##note:x[<<2 Sam 6:16>>] came to the city of David, that Michal the daughter of Saul looking out at a window saw king David dancing and playing: and ##she despised##note:x[<<2 Sam 6:20–23>>] him in her heart.
+
+=== @16
+
+[discrete.pericope]
+==== A Tent for the Ark
+
+[.parallel]
+(<<2 Samuel 6:17–19>>)
+
+@ So they brought the ark of God, and set it ##in the midst##note:x[<<1 Chr 15:1>>] of the tent that David had pitched for it: and they offered burnt sacrifices and peace offerings before God.
+@ And when David had made an end of offering the burnt offerings and the peace offerings, ##he blessed##note:x[<<Gen 47:10>>] the people in the name of the LORD.
+@ And he dealt ##to every one##note:x[<<Neh 8:10; Ezek 45:17; 1 Pet 4:9>>] of Israel, both man and woman, to every one a loaf of bread, and a good piece of flesh, and a flagon __of wine__.
+
+@ ¶ And he appointed __certain__ of the Levites to minister before the ark of the LORD, and to record, and to thank and praise the LORD God of Israel:
+@ Asaph the chief, and next to him Zechariah, Jeiel, and Shemiramoth, and Jehiel, and Mattithiah, and Eliab, and Benaiah, and Obed-edom: and Jeiel with psalteries and with harps; but Asaph made a sound with cymbals;note:tn[__with psalteries…__: Heb. with instruments of psalteries and harps]
+@ Benaiah also and Jahaziel the priests with trumpets continually before the ark of the covenant of God.
+
+[discrete.pericope]
+==== David’s Psalms of Thanksgiving
+
+[.parallel]
+(<<Psalms 105:1–15>>)
+
+@ ¶ Then ##on that day##note:x[<<2 Sam 22:1; 23:1–2>>] David delivered first __this psalm__ to thank the LORD ##into the hand##note:x[<<Ps 18:1>>] of Asaph and his brethren.
+@ ##Give thanks##note:x[<<Ps 105:1–15>>] unto the LORD, ##call##note:x[<<Isa 12:4>>] upon his name, ##make##note:x[<<2 Kgs 19:19>>] known his deeds among the people.
+@ ##Sing unto##note:x[<<Ps 96:1–2; 98:1–4>>] him, sing ##psalms##note:x[<<Col 3:16>>] unto him, talk ye of all his wondrous works.
+@ Glory ye in his holy name: ##let the heart##note:x[<<Prov 8:17; Jer 29:13; Matt 7:7–8>>] of them rejoice that seek the LORD.
+@ ##Seek##note:x[<<Zeph 2:2–3>>] the LORD and ##his strength##note:x[<<Ps 68:35>>], ##seek his##note:x[<<Ps 27:8–9>>] face continually.
+@ ##Remember##note:x[<<Ps 103:2; 111:4>>] his marvellous works that he hath done, his wonders, and ##the judgments##note:x[<<Ps 119:20>>] of his mouth;
+@ O ye seed of Israel his servant, ye children of Jacob, his chosen ones.
+@ He __is__ the LORD our God; ##his judgments##note:x[<<Ps 48:10–11>>] __are__ in all the earth.
+@ Be ##ye mindful##note:x[<<Ps 25:10; 105:8; Mal 4:4>>] always of his covenant; the word __which__ he commanded to a thousand generations;
+@ __Even of the covenant__ ##which he made##note:x[<<Gen 17:2; 26:3; 35:11>>] with Abraham, and of his oath unto Isaac;
+@ And hath confirmed the same to Jacob for a law, __and__ to Israel __for__ an everlasting covenant,
+@ Saying, ##Unto thee##note:x[<<Gen 13:15>>] will I give the land of Canaan, the lot of your ##inheritance##note:x[<<Deut 32:8>>];note:tn[__the lot__: Heb. the cord]
+@ When ye were but ##few, even##note:tn[Heb. men of number, etc] ##a few##note:x[<<Gen 34:30>>], and strangers in it.
+@ And __when__ they went from nation to nation, and from __one__ kingdom to another people;
+@ ##He suffered##note:x[<<Gen 31:29>>] no man to do them wrong: yea, ##he reproved##note:x[<<Gen 12:17; 20:3>>] kings for their sakes,
+@ __Saying__, ##Touch##note:x[<<Ps 105:15>>] not mine anointed, and do my ##prophets##note:x[<<Gen 20:7; 49:8–10>>] no harm.
+
+[discrete.pericope]
+==== Sing to the LORD, All the Earth
+
+[.parallel]
+(<<Psalms 96:1–13>>)
+
+@ ##Sing##note:x[<<Ps 96:1–13>>] unto the LORD, all the earth; ##shew forth##note:x[<<Ps 71:15; Isa 51:6–8>>] from day to day his salvation.
+@ ##Declare his glory among the heathen; his marvellous works among all nations.##note:x[<<Ps 22:27; Isa 12:2–6; Dan 4:1–3>>]
+@ For ##great##note:x[<<Ps 89:7; Rev 15:3–4>>] __is__ the LORD, and greatly to be praised: ##he also##note:x[<<Ps 66:3–5>>] __is__ to be feared above all gods.
+@ For all the gods of the people __are__ idols: but ##the LORD##note:x[<<Ps 102:25; Isa 42:5; 44:24>>] made the heavens.
+@ ##Glory##note:x[<<Ps 16:11>>] and honour __are__ in his presence; ##strength##note:x[<<Ps 28:7–8>>] and gladness __are__ in his ##place##note:x[<<Ps 96:6>>].
+@ Give unto the LORD, ##ye kindreds##note:x[<<Ps 100:1–2>>] of the people, give unto the LORD ##glory##note:x[<<1 Cor 15:10; Phil 4:13>>] and strength.
+@ Give unto the LORD ##the glory##note:x[<<Isa 6:3>>] __due__ unto his name: bring an offering, and ##come##note:x[<<Ps 100:4>>] before him: worship the LORD in ##the beauty##note:x[<<Ps 96:9>>] of holiness.
+@ Fear before him, all the earth: the world also shall be ##stable##note:x[<<Ps 33:9; Heb 1:3>>], that it be not moved.
+@ Let the heavens be glad, and ##let the earth##note:x[<<Ps 97:1>>] rejoice: and let __men__ say among the nations, ##The LORD##note:x[<<Ps 96:10; 99:1>>] reigneth.
+@ Let the sea roar, and the fulness thereof: let the fields rejoice, and all that __is__ therein.
+@ Then shall ##the trees##note:x[<<Ps 96:12–13>>] of the wood sing out at the presence of the LORD, ##because##note:x[<<Ps 98:9>>] he cometh to judge the earth.
+@ O ##give thanks##note:x[<<2 Chr 7:3; Ezra 3:11; Ps 106:1>>] unto the LORD; for __he is__ good; for his mercy __endureth__ for ever.
+@ And say ye, ##Save us##note:x[<<Ps 79:9–10; 106:47–48>>], O God of our salvation, and gather us together, and deliver us from the heathen, ##that we may give##note:x[<<1 Pet 2:9>>] thanks to thy holy name, __and__ glory in thy praise.
+@ ##Blessed##note:x[<<1 Kgs 8:15, 56; Ps 72:18–19>>] __be__ the LORD God of Israel for ever and ever. And all the people said, Amen, and praised the LORD.
+
+[discrete.pericope]
+==== Worship before the Ark
+
+@ ¶ So he left there before the ark of the covenant of the LORD Asaph and his brethren, to minister before the ark continually, ##as every##note:x[<<2 Chr 8:14>>] day’s work required:
+@ And Obed-edom with their brethren, threescore and eight; Obed-edom also the son of Jeduthun and Hosah __to be__ porters:
+@ And Zadok the priest, and his brethren the priests, before the tabernacle of the LORD ##in the high##note:x[<<1 Kgs 3:4>>] place that __was__ at Gibeon,
+@ ##To offer##note:x[<<Exod 29:38–42; Num 28:3–8>>] burnt offerings unto the LORD upon the altar of the burnt offering continually morning and evening, and __to do__ according to all that is written in the law of the LORD, which he commanded Israel;note:tn[__morning…__: Heb. in the morning, and in the evening]
+@ And with them ##Heman##note:x[<<1 Chr 25:1–6>>] and Jeduthun, and the rest that were chosen, who were expressed by name, ##to give##note:x[<<2 Chr 5:13>>] thanks to the LORD, because his mercy __endureth__ for ever;
+@ And with them Heman and Jeduthun with trumpets and cymbals for those that should make a sound, and with musical instruments of God. And the sons of Jeduthun __were__ ##porters##note:tn[Heb. for the gate].
+@ And ##all the people##note:x[<<2 Sam 6:19–20>>] departed every man to his house: and David returned to bless his house.
+
+=== @17
+
+[discrete.pericope]
+==== God’s Covenant with David
+
+[.parallel]
+(<<2 Samuel 7:1–17>>)
+
+@ Now it came to pass, ##as David##note:x[<<2 Chr 6:7–9>>] sat in his house, that David said to Nathan the prophet, Lo, I dwell in an house of cedars, but the ark of the covenant of the LORD __remaineth__ ##under curtains##note:x[<<1 Chr 15:1; 17:5>>].
+@ Then Nathan said unto David, Do all that __is__ in thine heart; for God __is__ with thee.
+
+@ ¶ And it came to pass the same night, that the word of God came to Nathan, saying,
+@ Go and tell David my servant, Thus saith the LORD, ##Thou shalt not##note:x[<<1 Chr 28:2–3>>] build me an house to dwell in:
+@ For I have not ##dwelt##note:x[<<2 Sam 7:6; Isa 66:1–2>>] in an house since the day that I brought up Israel unto this day; but ##have gone##note:tn[Heb. have been] ##from tent to tent##note:x[<<1 Kgs 8:16>>], and from __one__ tabernacle __to another__.
+@ Wheresoever I have walked with all Israel, spake I a word to any of ##the judges##note:x[<<2 Sam 7:7>>] of Israel, whom I commanded to feed my people, saying, Why have ye not built me an house of cedars?
+@ Now therefore thus shalt thou say unto my servant David, Thus saith the LORD of hosts, I took thee from the sheepcote, __even__ from following the sheep, that thou shouldest be ##ruler##note:x[<<2 Sam 6:21>>] over my people Israel&#58;note:tn[__from following__: Heb. from after]
+@ And ##I have been##note:x[<<1 Sam 18:14; 1 Chr 17:2>>] with thee whithersoever thou hast walked, and have cut off all thine enemies from before thee, and have ##made thee##note:x[<<Ps 113:7–8>>] a name like the name of the great men that __are__ in the earth.
+@ Also I will ordain a place for my people Israel, and will ##plant##note:x[<<Ps 44:2>>] them, and they shall dwell in their place, ##and shall be##note:x[<<Ezek 36:14–15; Rev 21:4>>] moved no more; neither shall the children of wickedness waste them any more, as at the beginning,
+@ And since the time that I commanded judges __to be__ over my people Israel. ##Moreover##note:x[<<Ps 18:40–50; 89:23>>] I will subdue all thine enemies. Furthermore I tell thee that ##the LORD##note:x[<<2 Sam 7:11>>] will build thee an house.
+
+@ ¶ And it shall come to pass, when thy days be expired that thou must go __to be__ with thy fathers, that ##I will raise##note:x[<<2 Sam 7:12–13; Ps 132:11>>] up thy seed after thee, which shall be of thy sons; and I will establish his kingdom.
+@ ##He shall##note:x[<<1 Kgs 5:5>>] build me an house, and ##I will##note:x[<<Isa 9:7; Dan 2:44>>] stablish his throne for ever.
+@ ##I will be##note:x[<<Heb 1:5>>] his father, and he shall be ##my son##note:x[<<Ps 2:7>>]: and I will not take my mercy away from him, as I took __it__ from __him__ that was before thee:
+@ But I will settle him ##in mine##note:x[<<Ps 72:17; 89:36; Luke 1:32–33>>] house and in my kingdom for ever: and his throne shall be established for evermore.
+@ According to all these words, and according to all this vision, so did Nathan speak unto David.
+
+[discrete.pericope]
+==== David’s Prayer of Thanksgiving
+
+[.parallel]
+(<<2 Samuel 7:18–29>>)
+
+@ ¶ And David the king came and ##sat before##note:x[<<2 Sam 7:18>>] the LORD, and said, ##Who __am__ I##note:x[<<Gen 32:10; Eph 3:8>>], O LORD God, and what __is__ mine house, that thou hast brought me hitherto?
+@ And __yet__ this was ##a small thing##note:x[<<Isa 49:6>>] in thine eyes, O God; for thou hast __also__ spoken of thy servant’s house for a great while to come, and ##hast regarded##note:x[<<Phil 2:8–11>>] me according to the estate of a man of high degree, O LORD God.
+@ What can David __speak__ more to thee for the honour of thy servant? for thou knowest thy servant.
+@ note:x[<<Isa 37:35>>]O LORD, for thy servant’s sake, and according to thine own heart, hast thou done all this greatness, in making known all __these__ great things.note:tn[__great…__: Heb. greatnesses]
+@ O LORD, __there is__ ##none##note:x[<<Exod 15:11; Jer 10:6–7>>] like thee, neither __is there any__ God ##beside thee##note:x[<<Isa 44:6>>], according to all that we have heard with our ears.
+@ And what one nation in the earth __is__ like thy people Israel, whom God went to redeem __to be__ his own people, to make thee a name of greatness and terribleness, by driving out nations from before thy people, whom thou hast redeemed out of Egypt?
+@ For ##thy people##note:x[<<Exod 19:5–6>>] Israel didst thou make thine own people for ever; and thou, LORD, becamest their God.
+@ Therefore now, LORD, ##let the thing##note:x[<<Gen 32:12; Ps 119:49; Jer 11:5>>] that thou hast spoken concerning thy servant and concerning his house be established for ever, and do as thou hast said.
+@ Let it even be established, that thy name may be magnified for ever, saying, The LORD of hosts __is__ the God of Israel, __even__ a God to Israel: and __let__ the house of David thy servant __be__ established before thee.
+@ For thou, O my God, hast told thy servant that thou wilt build him an house: therefore thy servant hath found __in his heart__ to pray before thee.note:tn[__hast…__: Heb. hast revealed the ear of thy servant]
+@ And now, LORD, thou art God, and hast promised this goodness unto thy servant:
+@ Now therefore let it please thee to bless the house of thy servant, that it may be before thee for ever: for thou ##blessest##note:x[<<Rom 11:29; Eph 1:3>>], O LORD, and __it shall be__ blessed for ever.note:tn[__let…__: or, it hath pleased thee]
+
+=== @18
+
+[discrete.pericope]
+==== David’s Triumphs
+
+[.parallel]
+(<<2 Samuel 8:1–14; Psalms 60:1–12>>)
+
+@ Now ##after this##note:x[<<2 Sam 8:1–18>>] it came to pass, that David smote the Philistines, and subdued them, and took ##Gath##note:x[<<2 Sam 8:1>>] and her towns out of the hand of the Philistines.
+@ And he smote Moab; and the Moabites became David’s servants, __and__ brought gifts.
+
+@ ¶ note:x[<<Ps 60:1>>]And David smote ##Hadarezer##note:tn[or, Hadadezer] king of Zobah unto Hamath, as he went to stablish his dominion by the river Euphrates.
+@ And David took from him a thousand chariots, and ##seven thousand##note:x[<<2 Sam 8:4>>] horsemen, and twenty thousand footmen: David also houghed all the chariot __horses__, but reserved of them an hundred chariots.note:tn[__seven…__: or, seven hundred]
+@ And when the Syrians of ##Damascus##note:tn[Heb. Darmesek] came to help Hadarezer king of Zobah, David slew of the Syrians two and twenty thousand men.
+@ Then David put __garrisons__ in Syria-damascus; and the Syrians became David’s servants, __and__ brought gifts. Thus the LORD preserved David whithersoever he went.
+@ And David took the shields of gold that were on the servants of Hadarezer, and brought them to Jerusalem.
+@ Likewise from ##Tibhath##note:x[<<2 Sam 8:8>>], and from Chun, cities of Hadarezer, brought David very much brass, wherewith Solomon made the brasen sea, and the pillars, and the vessels of brass.note:tn[__Tibhath…__: called in the book of Samuel Betah, and Berothai]
+
+@ ¶ Now when note:x[<<2 Sam 8:9>>]##Tou##note:tn[also called, Toi] king of Hamath heard how David had smitten all the host of Hadarezer king of Zobah;
+@ He sent note:x[<<2 Sam 8:10>>]##Hadoram##note:tn[also called, Joram] his son to king David, to enquire of his welfare, and to congratulate him, because he had fought against Hadarezer, and smitten him; (for Hadarezer had war with Tou;) and __with him__ all manner of vessels of gold and silver and brass.note:tn[__to enquire…__: or, to salute]note:tn[__to congratulate__: Heb. to bless]note:tn[__had war__: Heb. was the man of wars]
+
+@ ¶ Them also king David dedicated unto the LORD, with the silver and the gold that he brought from all __these__ nations; from Edom, and from Moab, and from the children of Ammon, and from the Philistines, and from Amalek.
+@ Moreover ##Abishai##note:tn[Heb. Abshai] the son of Zeruiah ##slew of the Edomites##note:x[<<Ps 60:1>>] in the valley of salt eighteen thousand.
+
+@ ¶ And he put ##garrisons##note:x[<<1 Chr 18:6>>] in Edom; and all the Edomites became David’s servants. ##Thus the LORD##note:x[<<1 Chr 18:6>>] preserved David whithersoever he went.
+
+[discrete.pericope]
+==== David’s Officers
+
+[.parallel]
+(<<2 Samuel 8:15–18>>)
+
+@ ¶ So David reigned over all Israel, and ##executed##note:x[<<Ps 89:14; Jer 33:15>>] judgment and justice among all his people.
+@ And ##Joab##note:x[<<1 Chr 11:6>>] the son of Zeruiah __was__ over the host; and Jehoshaphat the son of Ahilud, ##recorder##note:tn[or, remembrancer].
+@ note:x[<<2 Sam 20:25>>]And Zadok the son of Ahitub, and note:x[<<2 Sam 8:17>>]##Abimelech##note:tn[also called, Ahimelech] the son of Abiathar, __were__ the priests; and note:x[<<2 Sam 8:17>>]##Shavsha##note:tn[also called Seraiah or Shisha] was scribe;
+@ And ##Benaiah##note:x[<<2 Sam 8:18>>] the son of Jehoiada __was__ over the Cherethites and the Pelethites; and the sons of David __were__ chief about the king.note:tn[__about…__: Heb. at the hand of the king]
+
+=== @19
+
+[discrete.pericope]
+==== David’s Messengers Disgraced
+
+[.parallel]
+(<<2 Samuel 10:1–8>>)
+
+@ Now it came to pass after this, that Nahash the king of the children of Ammon died, and his son reigned in his stead.
+@ And David said, ##I will shew##note:x[<<1 Sam 30:26>>] kindness unto Hanun the son of Nahash, because his father shewed kindness to me. And David sent messengers to comfort him concerning his father. So the servants of David came into the land of ##the children##note:x[<<Deut 23:3–6>>] of Ammon to Hanun, to comfort him.
+@ But the princes of the children of Ammon said to Hanun, Thinkest thou that David doth honour thy father, that he hath sent comforters unto thee? are not his servants come unto thee for to search, and to overthrow, and to spy out the land?note:tn[__Thinkest…__: Heb. In thine eyes doth David, etc]
+@ Wherefore Hanun took David’s servants, and shaved them, and cut off their garments in the midst hard by their buttocks, and ##sent them##note:x[<<2 Sam 10:4–5>>] away.
+@ Then there went __certain__, and told David how the men were served. And he sent to meet them: for the men were greatly ashamed. And the king said, Tarry at Jericho until your beards be grown, and __then__ return.
+
+@ ¶ And when the children of Ammon saw that they had made themselves ##odious##note:tn[Heb. to stink] to David, Hanun and the children of Ammon sent a thousand talents of silver to hire them chariots and horsemen out of Mesopotamia, and out of Syria-maachah, and out of Zobah.
+@ note:x[<<Num 21:30; Josh 13:9>>]So they hired thirty and two thousand chariots, and the king of Maachah and his people; who came and pitched before Medeba. And the children of Ammon gathered themselves together from their cities, and came to battle.
+@ And when David heard __of it__, he sent Joab, and all the host of the mighty men.
+@ And the children of Ammon came out, and put the battle in array before the gate of the city: and the kings that were come __were__ by themselves in the field.
+
+[discrete.pericope]
+==== David Defeats Ammon and Aram
+
+[.parallel]
+(<<2 Samuel 10:9–19>>)
+
+@ Now when Joab saw that the battle was set against him before and behind, he chose out of all the ##choice##note:tn[or, young men] of Israel, and put __them__ in array against the Syrians.note:tn[__the battle…__: Heb. the face of the battle was]
+@ And the rest of the people he delivered unto the hand of ##Abishai##note:tn[Heb. Abshai] his brother, and they set __themselves__ in array against the children of Ammon.
+@ And he said, If the Syrians be too strong for me, then thou shalt help me: but if the children of Ammon be too strong for thee, then I will help thee.
+@ Be ##of good##note:x[<<Josh 10:25; 2 Sam 10:12; Ps 27:14>>] courage, and let us behave ourselves valiantly for our people, and for the cities of our God: and let the LORD do __that which is__ good in his sight.
+@ So Joab and the people that __were__ with him drew nigh before the Syrians unto the battle; and they fled before him.
+@ And when the children of Ammon saw that the Syrians were fled, they likewise fled before Abishai his brother, and entered into the city. Then Joab came to Jerusalem.
+
+@ ¶ And when the Syrians saw that they were put to the worse before Israel, they sent messengers, and drew forth the Syrians that __were__ beyond the ##river##note:tn[that is, Euphrates]: and note:x[<<2 Sam 10:16>>]##Shophach##note:tn[also called, Shobach] the captain of the host of Hadarezer __went__ before them.
+@ And it was told David; and he gathered all Israel, and passed over Jordan, and came upon them, and set __the battle__ in array against them. So when David had put the battle in array against the Syrians, they fought with him.
+@ But the Syrians fled before Israel; and David slew of the Syrians seven thousand __men which fought in__ chariots, and forty thousand ##footmen##note:x[<<2 Sam 10:18>>], and killed Shophach the captain of the host.
+@ And when the servants of Hadarezer saw that they were put to the worse before Israel, they made peace with David, and became his servants: neither would the Syrians help the children of Ammon any more.
+
+=== @20
+
+[discrete.pericope]
+==== The Capture of Rabbah
+
+[.parallel]
+(<<2 Samuel 12:26–31>>)
+
+@ ##And it came##note:x[<<2 Sam 11:1>>] to pass, that after the year was expired, at the time that kings go out __to battle__, Joab led forth the power of the army, and wasted the country of the children of Ammon, and came and besieged ##Rabbah##note:x[<<2 Sam 12:26>>]. But David tarried at Jerusalem. And ##Joab smote##note:x[<<2 Sam 12:26–31>>] Rabbah, and destroyed it.note:tn[__after…__: Heb. at the return of the year]
+@ And David took the crown of their king from off his head, and found it to weigh a talent of gold, and __there were__ precious stones in it; and it was set upon David’s head: and he brought also exceeding much spoil out of the city.note:tn[__to weigh__: Heb. the weight of]
+@ And he brought out the people that __were__ in it, and cut __them__ with saws, and with harrows of iron, and with axes. Even so dealt David with all the cities of the children of Ammon. And David and all the people returned to Jerusalem.
+
+[discrete.pericope]
+==== Battles against the Philistines
+
+[.parallel]
+(<<2 Samuel 21:15–22>>)
+
+@ ¶ And it came to pass after this, that there ##arose##note:tn[or, continued: Heb. stood] war at note:x[<<2 Sam 21:18–22>>]##Gezer##note:tn[also called, Gob] with the Philistines; at which time Sibbechai the Hushathite slew note:x[<<2 Sam 21:18>>]##Sippai##note:tn[also called, Saph], __that was__ of the children of the giant: and they were subdued.note:tn[__the giant__: or, Rapha]
+@ note:x[<<2 Sam 21:19>>]And there was war again with the Philistines; and Elhanan the son of note:x[<<2 Sam 21:19>>]##Jair##note:tn[also called, Jaare-oregim] slew Lahmi the brother of Goliath the Gittite, whose spear staff __was__ like a weaver’s beam.
+@ And yet again there was war at Gath, where was a man of __great__ stature, whose fingers and toes __were__ four and twenty, six __on each hand__, and six __on each foot:__ and he also was the son of the giant.note:tn[__great…__: Heb. measure]note:tn[__the son…__: Heb. born to the giant, or, Rapha]
+@ But when he ##defied##note:tn[or, reproached] Israel, Jonathan the son of ##Shimea##note:tn[also called Shammah] David’s brother slew him.
+@ These were born unto the giant in Gath; and they fell by the hand of David, and by the hand of his servants.
+
+=== @21
+
+[discrete.pericope]
+==== David’s Military Census
+
+[.parallel]
+(<<Exodus 30:11–16; 2 Samuel 24:1–9>>)
+
+@ And ##Satan##note:x[<<2 Sam 24:1; 1 Kgs 22:20–22; Zech 3:1>>] stood up against Israel, and provoked David to number Israel.
+@ And David said to Joab and to the rulers of the people, Go, number Israel from Beer-sheba even to Dan; and bring the number of them to me, that I may know __it__.
+@ And Joab answered, The LORD make his people an hundred times so many more as they __be:__ but, my lord the king, __are__ they not all my lord’s servants? why then doth my lord require this thing? why will he be a cause of trespass to Israel?
+@ Nevertheless the king’s word prevailed against Joab. Wherefore Joab departed, and went throughout all Israel, and came to Jerusalem.
+
+@ ¶ And Joab gave the sum of the number of the people unto David. And all __they of__ Israel were ##a thousand##note:x[<<2 Sam 24:9>>] thousand and an hundred thousand men that drew sword: and Judah __was__ four hundred threescore and ten thousand men that drew sword.
+@ But Levi and Benjamin counted he not among them: for the king’s word was abominable to Joab.
+
+[discrete.pericope]
+==== Judgment for David’s Sin
+
+[.parallel]
+(<<2 Samuel 24:10–14>>)
+
+@ And God was displeased with this thing; therefore he smote Israel.note:tn[__And…__: Heb. And it was evil in the eyes of the LORD concerning this thing]
+@ And David said unto God, ##I have sinned##note:x[<<2 Sam 12:13>>] greatly, because I have done this thing: but now, I beseech thee, do away the iniquity of thy servant; for I have done very foolishly.
+
+@ ¶ And the LORD spake unto ##Gad##note:x[<<1 Sam 9:9; 2 Sam 24:11; 1 Chr 29:29>>], David’s seer, saying,
+@ Go and tell David, saying, Thus saith the LORD, I ##offer##note:tn[Heb. stretch out] thee three __things:__ choose thee one of them, that I may do __it__ unto thee.
+@ So Gad came to David, and said unto him, Thus saith the LORD, Choose theenote:tn[__Choose…__: Heb. Take to thee]
+@ Either three years’ famine; or three months to be destroyed before thy foes, while that the sword of thine enemies overtaketh __thee;__ or else three days the sword of the LORD, even the pestilence, in the land, and the angel of the LORD destroying throughout all the coasts of Israel. Now therefore advise thyself what word I shall bring again to him that sent me.
+@ And David said unto Gad, ##I am in##note:x[<<Phil 1:23>>] a ##great##note:x[<<Ps 130:7>>] strait: ##let me fall##note:x[<<Heb 10:31>>] now into the hand of the LORD; for very great __are__ his mercies: but let me not fall into the hand of man.note:tn[__very great__: or, very many]
+
+[discrete.pericope]
+==== A Plague on Israel
+
+[.parallel]
+(<<2 Samuel 24:15–17>>)
+
+@ ¶ So the LORD sent pestilence upon Israel: and there fell of Israel seventy thousand men.
+@ And God sent an angel unto Jerusalem to destroy it: and as he was destroying, the LORD beheld, and he ##repented him##note:x[<<Gen 6:6; Exod 32:14>>] of the evil, and said to the angel that destroyed, It is enough, stay now thine hand. And the angel of the LORD stood by the threshingfloor of ##Ornan##note:tn[also called, Araunah] the Jebusite.
+@ And David lifted up his eyes, and ##saw the angel##note:x[<<Josh 5:13–14>>] of the LORD stand between the earth and the heaven, having a drawn sword in his hand stretched out over Jerusalem. Then David and the elders __of Israel, who were__ ##clothed##note:x[<<1 Kgs 21:27>>] in sackcloth, ##fell upon##note:x[<<Num 14:5>>] their faces.
+@ And David said unto God, __Is it__ not I __that__ commanded the people to be numbered? even I it is that have sinned and done evil indeed; but __as for__ these sheep, what have they done? let thine hand, I pray thee, O LORD my God, be on me, and on my father’s house; but not on thy people, that they should be plagued.
+
+[discrete.pericope]
+==== David Builds an Altar
+
+[.parallel]
+(<<2 Samuel 24:18–25>>)
+
+@ ¶ Then the angel of the LORD commanded Gad to say to David, ##that David##note:x[<<2 Chr 3:1>>] should go up, and set up an altar unto the LORD in the threshingfloor of Ornan the Jebusite.
+@ And David went up at the saying of Gad, which he spake in the name of the LORD.
+@ And Ornan turned back, and saw the angel; and his four sons with him hid themselves. Now Ornan was threshing wheat.note:tn[__And Ornan…__: or, When Ornan turned back and saw the angel, then he and his four sons with him hid themselves]
+@ And as David came to Ornan, Ornan looked and saw David, and went out of the threshingfloor, and bowed himself to David with __his__ face to the ground.
+@ Then David said to Ornan, ##Grant##note:tn[Heb. Give] me the place of __this__ threshingfloor, that I may build an altar therein unto the LORD: thou shalt grant it me for the full price: that the plague may be stayed from the people.
+@ And Ornan said unto David, ##Take __it__##note:x[<<2 Sam 24:22–23>>] to thee, and let my lord the king do __that which is__ good in his eyes: lo, I give __thee__ ##the oxen##note:x[<<1 Sam 6:14>>] __also__ for burnt offerings, and the threshing instruments for wood, and the wheat for the meat offering; I give it all.
+@ And king David said to Ornan, Nay; but I will verily buy it for the full price: for I will not take __that__ which __is__ thine for the LORD, nor offer burnt offerings without cost.
+@ So David gave to Ornan for the place six hundred shekels of gold by weight.
+@ And David built there an altar unto the LORD, and offered burnt offerings and peace offerings, and called upon the LORD; and he answered him from heaven ##by fire##note:x[<<Lev 9:24; Judg 6:21>>] upon the altar of burnt offering.
+@ And the LORD commanded the angel; and he put up his sword again into the sheath thereof.
+
+@ ¶ At that time when David saw that the LORD had answered him in the threshingfloor of Ornan the Jebusite, then he sacrificed there.
+@ For the tabernacle of the LORD, which Moses made in the wilderness, and the altar of the burnt offering, __were__ at that season in the high place at ##Gibeon##note:x[<<1 Chr 16:39>>].
+@ But David could not go before it to enquire of God: for he was afraid because of the sword of the angel of the LORD.
+
+=== @22
+
+[discrete.pericope]
+==== Preparations for the Temple
+
+@ Then David said, ##This __is__ the house##note:x[<<Gen 28:17; 1 Chr 21:18–28; 2 Chr 3:1>>] of the LORD God, and this __is__ the altar of the burnt offering for Israel.
+@ And David commanded to gather together ##the strangers##note:x[<<1 Kgs 9:20–21; 2 Chr 2:17>>] that __were__ in the land of Israel; and he set ##masons##note:x[<<1 Kgs 5:17–18>>] to hew wrought stones to build the house of God.
+@ And David ##prepared iron##note:x[<<1 Chr 29:2>>] in abundance for the nails for the doors of the gates, and for the joinings; and brass in abundance ##without weight##note:x[<<1 Kgs 7:47; 1 Chr 22:14>>];
+@ Also cedar trees in abundance: for the Zidonians and they of Tyre brought much cedar wood to David.
+@ And David said, ##Solomon##note:x[<<1 Kgs 3:7; 1 Chr 29:1>>] my son __is__ young and tender, and the house __that is__ to be builded for the LORD __must be__ exceeding magnifical, of fame and of glory throughout all countries: I will __therefore__ now make preparation for it. So David prepared abundantly before his death.
+
+[discrete.pericope]
+==== Solomon Anointed to Build the Temple
+
+@ ¶ Then he called for Solomon his son, and charged him to build an house for the LORD God of Israel.
+@ And David said to Solomon, My son, as for me, ##it was in##note:x[<<Ps 132:5>>] my mind to build an house unto the name of the LORD my God:
+@ note:x[<<1 Kgs 5:3; 1 Chr 28:3>>]But the word of the LORD came to me, saying, Thou hast shed blood abundantly, and hast made great wars: ##thou shalt not##note:x[<<1 Chr 17:4–10>>] build an house unto my name, because thou hast shed much blood upon the earth in my sight.
+@ Behold, a son shall be born to thee, who shall be a man of rest; and ##I will give##note:x[<<1 Kgs 4:20, 25; 5:4>>] him rest from all his enemies round about: for his name shall be ##Solomon##note:tn[that is, Peaceable], and I will give peace and quietness unto Israel in his days.
+@ ##He shall build##note:x[<<2 Sam 7:13; 1 Chr 17:12–13>>] an house for my name; and ##he shall be##note:x[<<Heb 1:5>>] my son, and I __will be__ his father; and I will establish the throne of his kingdom over Israel for ever.
+@ Now, my son, ##the LORD##note:x[<<1 Chr 22:16>>] be with thee; and prosper thou, and build the house of the LORD thy God, as he hath said of thee.
+@ ##Only the##note:x[<<1 Kgs 3:9–12; 2 Chr 1:10; Jas 1:5>>] LORD give thee wisdom and understanding, and give thee charge concerning Israel, that thou mayest keep the law of the LORD thy God.
+@ ##Then shalt##note:x[<<1 Chr 28:7>>] thou prosper, if thou takest heed to fulfil the statutes and judgments which the LORD charged Moses with concerning Israel: ##be strong##note:x[<<Josh 1:6–9; 1 Chr 28:20>>], and of good courage; dread not, nor be dismayed.
+@ Now, behold, in my ##trouble##note:tn[or, poverty] I have prepared for the house of the LORD an hundred thousand talents of gold, and a thousand thousand talents of silver; and of brass and iron ##without weight##note:x[<<1 Chr 22:3>>]; for it is in abundance: timber also and stone have I prepared; and thou mayest add thereto.
+@ Moreover __there are__ workmen with thee in abundance, hewers and workers of stone and timber, and all manner of cunning men for every manner of work.note:tn[__workers…__: that is, masons and carpenters]
+@ Of the gold, the silver, and the brass, and the iron, __there is__ no number. ##Arise##note:x[<<Eph 5:14; Phil 4:13>>] __therefore__, and be doing, ##and the LORD##note:x[<<1 Chr 22:11>>] be with thee.
+
+@ ¶ David also commanded all the princes of Israel to help Solomon his son, __saying__,
+@ __Is__ not the LORD your God with you? ##and hath##note:x[<<2 Sam 7:1; 1 Chr 22:9; 23:25>>] he __not__ given you rest on every side? for he hath given the inhabitants of the land into mine hand; and the land is subdued before the LORD, and before his people.
+@ Now ##set your##note:x[<<Deut 4:29; 1 Chr 16:11; 28:9>>] heart and your soul to seek the LORD your God; arise therefore, and build ye the sanctuary of the LORD God, to bring the ark of the covenant of the LORD, and the holy vessels of God, into the house that is to be built to the name of the LORD.
+
+=== @23
+
+[discrete.pericope]
+==== The Divisions of the Levites
+
+@ So when David was ##old##note:x[<<1 Chr 29:28>>] and full of days, ##he made##note:x[<<1 Kgs 1:33–39; 1 Chr 28:5>>] Solomon his son king over Israel.
+
+@ ¶ And he gathered together all the princes of Israel, with the priests and the Levites.
+@ Now the Levites were numbered from the age of thirty years and upward: and their number by their polls, man by man, was thirty and eight thousand.
+@ Of which, twenty and four thousand __were__ to set forward the work of the house of the LORD; and six thousand __were__ ##officers and judges##note:x[<<2 Chr 19:8>>]:note:tn[__set…__: or, oversee]
+@ Moreover four thousand __were__ porters; and four thousand praised the LORD with the instruments which I made, __said David__, to praise __therewith__.
+@ And David ##divided##note:x[<<2 Chr 8:14>>] them into ##courses##note:tn[Heb. divisions] among the sons of Levi, __namely__, ##Gershon##note:x[<<1 Chr 6:1>>], Kohath, and Merari.
+
+[discrete.pericope]
+==== The Gershonites
+
+[.parallel]
+(<<Numbers 3:21–26; Numbers 4:21–28>>)
+
+@ ¶ Of the Gershonites __were__, ##Laadan##note:tn[or, Libni], and Shimei.
+@ The sons of Laadan; the chief __was__ Jehiel, and Zetham, and Joel, three.
+@ The sons of Shimei; Shelomith, and Haziel, and Haran, three. These __were__ the chief of the fathers of Laadan.
+@ And the sons of Shimei __were__, Jahath, ##Zina##note:tn[or, Zizah], and Jeush, and Beriah. These four __were__ the sons of Shimei.
+@ And Jahath was the chief, and Zizah the second: but Jeush and Beriah had not many sons; therefore they were in one reckoning, according to __their__ father’s house.note:tn[__had…__: Heb. did not multiply sons]
+
+[discrete.pericope]
+==== The Kohathites
+
+[.parallel]
+(<<Numbers 3:27–32; Numbers 4:1–20>>)
+
+@ ¶ The ##sons of Kohath##note:x[<<Exod 6:18>>]; Amram, Izhar, Hebron, and Uzziel, four.
+@ ##The sons##note:x[<<Exod 6:20>>] of Amram; Aaron and Moses: and Aaron was separated, that he should sanctify the most holy things, he and his sons for ever, to burn incense before the LORD, to minister unto him, and ##to bless##note:x[<<Deut 21:5>>] in his name for ever.
+@ Now __concerning__ Moses ##the man##note:x[<<Deut 33:1>>] of God, his sons were named of the tribe of Levi.
+@ The sons of Moses __were__, Gershom, and Eliezer.
+@ note:x[<<1 Chr 26:24>>]Of the sons of Gershom, ##Shebuel##note:tn[also called, Shubael] __was__ the chief.
+@ And the sons of Eliezer __were__, Rehabiah the chief. And Eliezer had none other sons; but the sons of Rehabiah were very many.note:tn[__the chief__: or, the first]note:tn[__very many__: Heb. highly multiplied]
+@ Of the sons of Izhar; ##Shelomith##note:tn[also called, Shelomoth] the chief.
+@ Of the sons of ##Hebron##note:x[<<1 Chr 24:23>>]; Jeriah the first, Amariah the second, Jahaziel the third, and Jekameam the fourth.
+@ Of the sons of Uzziel; Michah the first, and Jesiah the second.
+
+[discrete.pericope]
+==== The Merarites
+
+[.parallel]
+(<<Numbers 3:33–37; Numbers 4:29–33>>)
+
+@ ¶ The sons of Merari; Mahli, and Mushi. The sons of Mahli; Eleazar, and Kish.
+@ And Eleazar died, and had no sons, but daughters: and their ##brethren##note:tn[or, kinsmen] the sons of Kish took them.
+@ The sons of Mushi; Mahli, and Eder, and Jeremoth, three.
+
+[discrete.pericope]
+==== Levite Duties Revised
+
+@ ¶ These __were__ ##the sons of Levi##note:x[<<Num 10:17, 21>>] after the house of their fathers; __even__ the chief of the fathers, as they were counted by number of names by their polls, that did the work for the service of the house of the LORD, from the age of ##twenty##note:x[<<1 Chr 23:3>>] years and upward.
+@ For David said, ##The LORD##note:x[<<2 Sam 7:11; 1 Chr 22:18>>] God of Israel hath given rest unto his people, ##that they may dwell in Jerusalem##note:x[<<Ps 132:13–14>>] for ever&#58;note:tn[__that…__: or, and he dwelleth in Jerusalem, etc]
+@ And also unto the Levites; they shall no __more__ ##carry##note:x[<<Num 4:5; 7:9>>] the tabernacle, nor any vessels of it for the service thereof.
+@ For by the last words of David the Levites __were__ ##numbered##note:tn[Heb. number] from twenty years old and above:
+@ Because their office __was__ to wait on the sons of Aaron for the service of the house of the LORD, in the courts, and in the chambers, and in the purifying of all holy things, and the work of the service of the house of God;note:tn[__their…__: Heb. their station was at the hand of the sons of Aaron]
+@ Both for the shewbread, and for the fine flour for meat offering, and for the unleavened cakes, and for __that which is baked in__ the note:x[<<Lev 19:35–36>>]##pan##note:tn[or, flat plate], and for that which is fried, and for all manner of measure and size;
+@ And to ##stand##note:x[<<1 Chr 9:33>>] ##every morning##note:x[<<Ps 92:1–3>>] to thank and praise the LORD, and likewise at even;
+@ And to offer all burnt sacrifices unto the LORD ##in the sabbaths##note:x[<<Isa 1:13–14>>], in the new moons, and on the set feasts, by number, according to the order commanded unto them, continually before the LORD:
+@ And that they should ##keep##note:x[<<Num 1:53>>] the charge of the tabernacle of the congregation, and the charge of the holy __place__, and ##the charge of the sons##note:x[<<Num 3:6–9, 38>>] of Aaron their brethren, in the service of the house of the LORD.
+
+=== @24
+
+[discrete.pericope]
+==== Twenty-Four Divisions of Priests
+
+@ Now __these are__ ##the divisions##note:x[<<1 Chr 23:6>>] of ##the sons##note:x[<<Exod 6:23; Num 26:60>>] of Aaron. The sons of Aaron; Nadab, and Abihu, Eleazar, and Ithamar.
+@ But Nadab and Abihu ##died##note:x[<<Lev 10:2; Num 3:4>>] before their father, and had no children: therefore Eleazar and Ithamar executed the priest’s office.
+@ And David distributed them, both Zadok of the sons of Eleazar, and ##Ahimelech##note:x[<<2 Sam 8:17>>] of the sons of Ithamar, according to their offices in their service.
+@ And there were more chief men found of the sons of Eleazar than of the sons of Ithamar; and __thus__ were they divided. Among the sons of Eleazar __there were__ sixteen chief men of the house of __their__ fathers, and eight among the sons of Ithamar according to the house of their fathers.
+@ Thus were they divided by lot, one sort with another; for the governors of the sanctuary, and governors __of the house__ of God, were of the sons of Eleazar, and of the sons of Ithamar.
+@ And Shemaiah the son of Nethaneel the scribe, __one__ of the Levites, wrote them before the king, and the princes, and Zadok the priest, and Ahimelech the son of Abiathar, and __before__ the chief of the fathers of the priests and Levites: one principal household being taken for Eleazar, and __one__ taken for Ithamar.note:tn[__principal…__: Heb. house of the father]
+@ note:x[<<Ezra 2:36>>]Now the first lot came forth to Jehoiarib, the second to Jedaiah,
+@ The third to Harim, the fourth to Seorim,
+@ The fifth to Malchijah, the sixth to Mijamin,
+@ The seventh to Hakkoz, the eighth to ##Abijah##note:x[<<Neh 12:4; Luke 1:5>>],
+@ The ninth to Jeshua, the tenth to Shecaniah,
+@ The eleventh to Eliashib, the twelfth to Jakim,
+@ The thirteenth to Huppah, the fourteenth to Jeshebeab,
+@ The fifteenth to Bilgah, the sixteenth to Immer,
+@ The seventeenth to Hezir, the eighteenth to Aphses,
+@ The nineteenth to Pethahiah, the twentieth to Jehezekel,
+@ The one and twentieth to Jachin, the two and twentieth to Gamul,
+@ The three and twentieth to Delaiah, the four and twentieth to Maaziah.
+@ These __were__ ##the orderings##note:x[<<1 Chr 9:25>>] of them in their service to come into the house of the LORD, according to their manner, under Aaron their father, as the LORD God of Israel had commanded him.
+
+[discrete.pericope]
+==== The Rest of the Levites
+
+@ ¶ And the rest of the sons of Levi __were these:__ Of the sons of Amram; ##Shubael##note:tn[also called, Shebuel]: of the sons of Shubael; Jehdeiah.
+@ Concerning ##Rehabiah##note:x[<<1 Chr 23:17>>]: of the sons of Rehabiah, the first __was__ Isshiah.
+@ note:x[<<1 Chr 23:18>>]Of the ##Izharites##note:x[<<1 Chr 23:18>>]; ##Shelomoth##note:tn[also called, Shelomith]: of the sons of Shelomoth; Jahath.
+@ And the sons __of Hebron;__ ##Jeriah##note:x[<<1 Chr 23:19>>] __the first__, Amariah the second, Jahaziel the third, Jekameam the fourth.
+@ __Of__ the sons of Uzziel; ##Michah##note:x[<<1 Chr 23:20>>]: of the sons of Michah; Shamir.
+@ The brother of Michah __was__ Isshiah: of the sons of Isshiah; Zechariah.
+@ The sons of Merari __were__ Mahli and Mushi: the sons of Jaaziah; Beno.
+
+@ ¶ The sons of Merari by Jaaziah; Beno, and Shoham, and Zaccur, and Ibri.
+@ Of Mahli __came__ Eleazar, who had no sons.
+@ Concerning Kish: the son of Kish __was__ Jerahmeel.
+@ The sons also of Mushi; Mahli, and Eder, and Jerimoth. These __were__ the sons of the Levites after the house of their fathers.
+@ These likewise cast ##lots##note:x[<<1 Chr 24:5–6>>] over against their brethren the sons of Aaron in the presence of David the king, and Zadok, and Ahimelech, and the chief of the fathers of the priests and Levites, even the principal fathers over against their younger brethren.
+
+=== @25
+
+[discrete.pericope]
+==== Twenty-Four Divisions of Musicians
+
+@ Moreover David and the captains of the host separated to the service of the sons of ##Asaph##note:x[<<1 Chr 6:33, 39>>], and of Heman, and of Jeduthun, who should ##prophesy##note:x[<<2 Kgs 3:15>>] with harps, with psalteries, and with cymbals: and the number of the workmen according to their service was:
+@ Of the sons of ##Asaph##note:x[<<1 Chr 25:1>>]; Zaccur, and Joseph, and Nethaniah, and ##Asarelah##note:tn[otherwise called Jesharelah], the sons of Asaph ##under the hands##note:x[<<1 Chr 25:6>>] of Asaph, which prophesied ##according to the order of the king##note:x[<<1 Chr 25:6>>].note:tn[__according…__: Heb. by the hands of the king]
+@ Of ##Jeduthun##note:x[<<1 Chr 16:41–42>>]: the sons of Jeduthun; Gedaliah, and ##Zeri##note:tn[or, Izri], and Jeshaiah, Hashabiah, and Mattithiah, six, under the hands of their father Jeduthun, who prophesied with a harp, to give thanks and to praise the LORD.
+@ Of Heman: the sons of Heman; Bukkiah, Mattaniah, ##Uzziel##note:tn[also called, Azareel], ##Shebuel##note:tn[also called, Shubael], and Jerimoth, Hananiah, Hanani, Eliathah, Giddalti, and Romamti-ezer, Joshbekashah, Mallothi, Hothir, __and__ Mahazioth:
+@ note:x[<<1 Chr 21:9>>]All these __were__ the sons of Heman the king’s seer in the ##words##note:tn[or, matters] of God, to lift up the horn. And God gave to Heman fourteen sons and three daughters.
+@ All these __were__ under the hands of their father for song __in__ the house of the LORD, with cymbals, psalteries, and harps, for the service of the house of God, according to the king’s order to Asaph, Jeduthun, and Heman.note:tn[__according…__: Heb. by the hands of the king]
+@ So the number of them, with their brethren that were instructed in the songs of the LORD, __even__ all that were cunning, was two hundred fourscore and eight.
+
+@ ¶ And they ##cast lots##note:x[<<Prov 16:33>>], ##ward against __ward__##note:x[<<1 Chr 26:13>>], as well the small as the great, the teacher as the scholar.
+@ Now the first lot came forth for Asaph to Joseph: the second to Gedaliah, who with his brethren and sons __were__ twelve:
+@ The third to Zaccur, __he__, his sons, and his brethren, __were__ twelve:
+@ The fourth to Izri, __he__, his sons, and his brethren, __were__ twelve:
+@ The fifth to Nethaniah, __he__, his sons, and his brethren, __were__ twelve:
+@ The sixth to Bukkiah, __he__, his sons, and his brethren, __were__ twelve:
+@ The seventh to Jesharelah, __he__, his sons, and his brethren, __were__ twelve:
+@ The eighth to Jeshaiah, __he__, his sons, and his brethren, __were__ twelve:
+@ The ninth to Mattaniah, __he__, his sons, and his brethren, __were__ twelve:
+@ The tenth to Shimei, __he__, his sons, and his brethren, __were__ twelve:
+@ The eleventh to Azareel, __he__, his sons, and his brethren, __were__ twelve:
+@ The twelfth to Hashabiah, __he__, his sons, and his brethren, __were__ twelve:
+@ The thirteenth to Shubael, __he__, his sons, and his brethren, __were__ twelve:
+@ The fourteenth to Mattithiah, __he__, his sons, and his brethren, __were__ twelve:
+@ The fifteenth to Jeremoth, __he__, his sons, and his brethren, __were__ twelve:
+@ The sixteenth to Hananiah, __he__, his sons, and his brethren, __were__ twelve:
+@ The seventeenth to Joshbekashah, __he__, his sons, and his brethren, __were__ twelve:
+@ The eighteenth to Hanani, __he__, his sons, and his brethren, __were__ twelve:
+@ The nineteenth to Mallothi, __he__, his sons, and his brethren, __were__ twelve:
+@ The twentieth to Eliathah, __he__, his sons, and his brethren, __were__ twelve:
+@ The one and twentieth to Hothir, __he__, his sons, and his brethren, __were__ twelve:
+@ The two and twentieth to Giddalti, __he__, his sons, and his brethren, __were__ twelve:
+@ The three and twentieth to Mahazioth, __he__, his sons, and his brethren, __were__ twelve:
+@ The four and twentieth to Romamti-ezer, __he__, his sons, and his brethren, __were__ twelve.
+
+=== @26
+
+[discrete.pericope]
+==== The Divisions of the Gatekeepers
+
+@ Concerning the divisions of the porters: Of the Korhites __was__ ##Meshelemiah##note:tn[also called, Shelemiah] the son of Kore, of the sons of ##Asaph##note:tn[also called, Ebiasaph].
+@ And the sons of Meshelemiah __were__, Zechariah the firstborn, Jediael the second, Zebadiah the third, Jathniel the fourth,
+@ Elam the fifth, Jehohanan the sixth, Elioenai the seventh.
+@ Moreover the sons of Obed-edom __were__, Shemaiah the firstborn, Jehozabad the second, Joah the third, and Sacar the fourth, and Nethaneel the fifth,
+@ Ammiel the sixth, Issachar the seventh, Peulthai the eighth: for God blessed ##him##note:tn[that is, Obed-edom].
+@ Also unto Shemaiah his son were sons born, that ruled throughout the house of their father: for they __were__ mighty men of valour.
+@ The sons of Shemaiah; Othni, and Rephael, and Obed, Elzabad, whose brethren __were__ strong men, Elihu, and Semachiah.
+@ All these of the sons of Obed-edom: they and their sons and their brethren, able men for strength for the service, __were__ threescore and two of Obed-edom.
+@ And Meshelemiah had sons and brethren, strong men, eighteen.
+@ Also ##Hosah##note:x[<<1 Chr 16:38>>], of the children of Merari, had sons; Simri the chief, (for __though__ he was not the firstborn, yet his father made him the chief;)
+@ Hilkiah the second, Tebaliah the third, Zechariah the fourth: all the sons and brethren of Hosah __were__ thirteen.
+@ Among these __were__ the divisions of the porters, __even__ among the chief men, __having__ wards one against another, to minister in the house of the LORD.
+
+@ ¶ And they cast lots, ##as well the small as the great##note:x[<<1 Chr 24:31; 25:8>>], according to the house of their fathers, for every gate.note:tn[__as well…__: or, as well for the small as for the great]
+@ And the lot eastward fell to ##Shelemiah##note:tn[also called Meshelemiah]. Then for Zechariah his son, a wise counsellor, they cast lots; and his lot came out northward.
+@ To Obed-edom southward; and to his sons the house of ##Asuppim##note:tn[Heb. gatherings].
+@ To Shuppim and Hosah __the lot came forth__ westward, with the gate Shallecheth, by the causeway of the going up, ward against ward.
+@ Eastward __were__ six Levites, northward four a day, southward four a day, and toward Asuppim two __and__ two.
+@ At Parbar westward, four at the causeway, __and__ two at Parbar.
+@ These __are__ the divisions of the porters among the sons of Kore, and among the sons of Merari.
+
+[discrete.pericope]
+==== The Treasurers, Officers, and Judges
+
+@ ¶ And of the Levites, Ahijah __was__ over the ##treasures##note:x[<<1 Chr 26:22>>] of the house of God, and over the treasures of the dedicated things.note:tn[__dedicated…__: Heb. holy things]
+@ __As concerning__ the sons of ##Laadan##note:tn[also called, Libni]; the sons of the Gershonite Laadan, chief fathers, __even__ of Laadan the Gershonite, __were__ ##Jehieli##note:tn[also called, Jehiel].
+@ The sons of Jehieli; Zetham, and Joel his brother, __which were__ over the treasures of the house of the LORD.
+@ Of the Amramites, __and__ the Izharites, the Hebronites, __and__ the Uzzielites:
+@ And Shebuel the son of Gershom, the son of Moses, __was__ ruler of the treasures.
+@ And his brethren by Eliezer; Rehabiah his son, and Jeshaiah his son, and Joram his son, and Zichri his son, and Shelomith his son.
+@ Which Shelomith and his brethren __were__ over all the treasures of the dedicated things, which David the king, and the chief fathers, the captains over thousands and hundreds, and the captains of the host, had dedicated.
+@ Out of the spoils won in battles did they dedicate to maintain the house of the LORD.note:tn[__spoils…__: Heb. battles and spoils]
+@ And all that ##Samuel##note:x[<<1 Sam 9:9>>] the seer, and Saul the son of Kish, and Abner the son of Ner, and Joab the son of Zeruiah, had dedicated; __and__ whosoever had dedicated __any thing, it was__ under the hand of Shelomith, and of his brethren.
+
+@ ¶ Of the Izharites, Chenaniah and his sons __were__ for ##the outward##note:x[<<Neh 11:16>>] business over Israel, for ##officers##note:x[<<1 Chr 23:4>>] and judges.
+@ __And__ of the Hebronites, Hashabiah and his brethren, men of valour, a thousand and seven hundred, __were__ officers among them of Israel on this side Jordan westward in all the business of the LORD, and in the service of the king.note:tn[__officers…__: Heb. over the charge]
+@ Among the Hebronites __was__ ##Jerijah##note:x[<<1 Chr 23:19>>] the chief, __even__ among the Hebronites, according to the generations of his fathers. In the fortieth year of the reign of David they were sought for, and there were found among them mighty men of valour at Jazer of Gilead.
+@ And his brethren, men of valour, __were__ two thousand and seven hundred chief fathers, whom king David made rulers over the Reubenites, the Gadites, and the half tribe of Manasseh, for every matter pertaining to God, note:x[<<2 Chr 19:11>>]and ##affairs##note:tn[Heb. thing] of the king.
+
+=== @27
+
+[discrete.pericope]
+==== Twelve Captains for Twelve Months
+
+@ Now the children of Israel after their number, __to wit__, the chief fathers and captains of thousands and hundreds, and their officers that served the king in any matter of the courses, which came in and went out month by month throughout all the months of the year, of every course __were__ twenty and four thousand.
+@ Over the first course for the first month __was__ ##Jashobeam##note:x[<<2 Sam 23:8; 1 Chr 11:11>>] the son of Zabdiel: and in his course __were__ twenty and four thousand.
+@ Of the children of Perez __was__ the chief of all the captains of the host for the first month.
+@ And over the course of the second month __was__ note:x[<<2 Sam 23:9>>]##Dodai##note:tn[also called, Dodo] an Ahohite, and of his course __was__ Mikloth also the ruler: in his course likewise __were__ twenty and four thousand.
+@ The third captain of the host for the third month __was__ Benaiah the son of Jehoiada, a chief priest: and in his course __were__ twenty and four thousand.note:tn[__chief…__: or, principal officer]
+@ This __is that__ Benaiah, __who was__ mighty __among__ the thirty, and above the thirty: and in his course __was__ Ammizabad his son.
+@ The fourth __captain__ for the fourth month __was__ ##Asahel##note:x[<<1 Chr 11:26>>] the brother of Joab, and Zebadiah his son after him: and in his course __were__ twenty and four thousand.
+@ The fifth captain for the fifth month __was__ ##Shamhuth##note:x[<<1 Chr 11:27>>] the Izrahite: and in his course __were__ twenty and four thousand.
+@ The sixth __captain__ for the sixth month __was__ ##Ira##note:x[<<1 Chr 11:28>>] the son of Ikkesh the Tekoite: and in his course __were__ twenty and four thousand.
+@ The seventh __captain__ for the seventh month __was__ ##Helez##note:x[<<1 Chr 11:27>>] the Pelonite, of the children of Ephraim: and in his course __were__ twenty and four thousand.
+@ The eighth __captain__ for the eighth month __was__ ##Sibbecai##note:x[<<2 Sam 21:18; 1 Chr 11:29>>] the Hushathite, of the Zarhites: and in his course __were__ twenty and four thousand.
+@ The ninth __captain__ for the ninth month __was__ Abi-ezer the ##Anetothite##note:x[<<1 Chr 11:28>>], of the Benjamites: and in his course __were__ twenty and four thousand.
+@ The tenth __captain__ for the tenth month __was__ ##Maharai##note:x[<<1 Chr 11:30>>] the Netophathite, of the Zarhites: and in his course __were__ twenty and four thousand.
+@ The eleventh __captain__ for the eleventh month __was__ ##Benaiah##note:x[<<1 Chr 11:31>>] the Pirathonite, of the children of Ephraim: and in his course __were__ twenty and four thousand.
+@ note:x[<<2 Sam 23:29>>]The twelfth __captain__ for the twelfth month __was__ ##Heldai##note:tn[also called, Heled] the Netophathite, of Othniel: and in his course __were__ twenty and four thousand.
+
+[discrete.pericope]
+==== The Leaders of the Twelve Tribes
+
+@ ¶ Furthermore over the tribes of Israel: the ruler of the Reubenites __was__ Eliezer the son of Zichri: of the Simeonites, Shephatiah the son of Maachah:
+@ Of the Levites, ##Hashabiah##note:x[<<1 Chr 26:30>>] the son of Kemuel: of the Aaronites, Zadok:
+@ Of Judah, ##Elihu##note:tn[also called, Eliab], __one__ of the brethren of David: of Issachar, Omri the son of Michael:
+@ Of Zebulun, Ishmaiah the son of Obadiah: of Naphtali, Jerimoth the son of Azriel:
+@ Of the children of Ephraim, Hoshea the son of Azaziah: of the half tribe of Manasseh, Joel the son of Pedaiah:
+@ Of the half __tribe__ of Manasseh in Gilead, Iddo the son of Zechariah: of Benjamin, Jaasiel the son of Abner:
+@ Of Dan, Azareel the son of Jeroham. These __were__ the princes of the tribes of Israel.
+
+@ ¶ But David took not the number of them ##from twenty##note:x[<<Num 1:18>>] years old and under: because the LORD had said ##he would increase##note:x[<<Gen 15:5; Heb 11:12>>] Israel like to the stars of the heavens.
+@ Joab the son of Zeruiah began to number, but he finished not, because there fell wrath for it against Israel; neither ##was##note:tn[Heb. ascended] the number put in the account of the chronicles of king David.
+
+[discrete.pericope]
+==== David’s Various Overseers
+
+@ ¶ And over the king’s treasures __was__ Azmaveth the son of Adiel: and over the storehouses in the fields, in the cities, and in the villages, and in the castles, __was__ Jehonathan the son of Uzziah:
+@ And over them that did the work of the field for tillage of the ground __was__ Ezri the son of Chelub:
+@ And over the vineyards __was__ Shimei the Ramathite: over the increase of the vineyards for the wine cellars __was__ Zabdi the Shiphmite&#58;note:tn[__over the increase…__: Heb. over that which was of the vineyards]
+@ And over the olive trees and the sycomore trees that __were__ in the low plains __was__ Baal-hanan the Gederite: and over the cellars of oil __was__ Joash:
+@ And over the herds that fed in ##Sharon##note:x[<<1 Chr 5:16>>] __was__ Shitrai the Sharonite: and over the herds __that were__ in the valleys __was__ Shaphat the son of Adlai:
+@ Over the camels also __was__ Obil the Ishmaelite: and over the asses __was__ Jehdeiah the Meronothite:
+@ And over the flocks __was__ Jaziz the Hagerite. All these __were__ the rulers of the substance which __was__ king David’s.
+
+[discrete.pericope]
+==== The Counselors
+
+@ Also Jonathan David’s uncle was a counsellor, a wise man, and a ##scribe##note:tn[or, secretary]: and Jehiel the son of Hachmoni __was__ with the king’s sons&#58;note:tn[__son…__: or, Hachmonite]
+@ And ##Ahithophel##note:x[<<2 Sam 15:12>>] __was__ the king’s counsellor: and ##Hushai##note:x[<<2 Sam 15:37>>] the Archite __was__ the king’s companion:
+@ And after Ahithophel __was__ Jehoiada the son of Benaiah, and ##Abiathar##note:x[<<1 Kgs 1:7>>]: and ##the general##note:x[<<1 Chr 11:6>>] of the king’s army __was__ Joab.
+
+=== @28
+
+[discrete.pericope]
+==== David Commissions Solomon
+
+@ And David ##assembled##note:x[<<1 Chr 23:2>>] all the princes of Israel, the princes of the tribes, and the captains of the companies that ministered to the king by course, and the captains over the thousands, and captains over the hundreds, and the stewards over all the substance and ##possession##note:tn[or, cattle] of the king, and of his sons, with the ##officers##note:tn[or, eunuchs], and with ##the mighty men##note:x[<<1 Chr 11:10–47>>], and with all the valiant men, unto Jerusalem.note:tn[__and of…__: or, and his sons]
+@ Then David the king stood up upon his feet, and said, Hear me, my brethren, and my people: __As for me__, I __had__ in mine heart to build an house of rest for the ark of the covenant of the LORD, and for ##the footstool##note:x[<<Ps 99:5; Isa 66:1>>] of our God, and had made ready for the building:
+@ But God said unto me, ##Thou shalt##note:x[<<1 Kgs 5:3; 1 Chr 17:4; 22:8>>] not build an house for my name, because thou __hast been__ a man of war, and hast shed ##blood##note:tn[Heb. bloods].
+@ Howbeit the LORD God of Israel ##chose me##note:x[<<1 Sam 16:6–13>>] before all the house of my father to be king over Israel for ever: for he hath ##chosen Judah##note:x[<<1 Chr 5:2>>] __to be__ the ruler; and of ##the house of Judah##note:x[<<1 Sam 16:1>>], the house of my father; and among the sons of my father he liked me to make __me__ king over all Israel:
+@ And of ##all my sons##note:x[<<1 Chr 3:1–9>>], (for the LORD hath given me many sons,) ##he hath chosen##note:x[<<1 Chr 23:1>>] Solomon my son to sit upon the throne of the kingdom of the LORD over Israel.
+@ And he said unto me, Solomon thy son, ##he shall##note:x[<<2 Sam 7:13–14>>] build my house and my courts: for I have chosen him __to be__ my son, and I will be his father.
+@ Moreover I will establish his kingdom for ever, ##if##note:x[<<1 Chr 22:13>>] he be ##constant##note:tn[Heb. strong] to do my commandments and my judgments, as at this day.
+@ Now therefore in the sight of all Israel the congregation of the LORD, and in the audience of our God, keep and seek for all the commandments of the LORD your God: ##that ye may##note:x[<<Deut 4:1>>] possess this good land, and leave __it__ for an inheritance for your children after you for ever.
+
+@ ¶ And thou, Solomon my son, know thou the God of thy father, and serve him with a perfect heart and with a willing mind: for the LORD searcheth all hearts, and understandeth all the imaginations of the thoughts: ##if thou seek##note:x[<<Jer 29:13; Matt 7:7–8; Jas 4:8–11>>] him, he will be found of thee; but if thou forsake him, he will cast thee off for ever.
+@ ##Take heed now##note:x[<<1 Chr 28:6>>]; for the LORD hath chosen thee to build an house for the sanctuary: be strong, and do __it__.
+
+[discrete.pericope]
+==== The Plans for the Temple
+
+@ ¶ Then David gave to Solomon his son ##the pattern##note:x[<<Exod 25:40; 1 Chr 28:19>>] of ##the porch##note:x[<<1 Kgs 6:3>>], and of the houses thereof, and of the treasuries thereof, and of the upper chambers thereof, and of the inner parlours thereof, and of the place of the mercy seat,
+@ And the pattern of all that he had by the spirit, of the courts of the house of the LORD, and of all the chambers round about, of ##the treasuries##note:x[<<1 Chr 26:20>>] of the house of God, and of the treasuries of the dedicated things&#58;note:tn[__of all that…__: Heb. of all that was with him]
+@ Also for the courses of the priests and the Levites, and for all the work of the service of the house of the LORD, and for all the vessels of service in the house of the LORD.
+@ __He gave__ of gold by weight for __things__ of gold, for all instruments of all manner of service; __silver also__ for all instruments of silver by weight, for all instruments of every kind of service:
+@ Even the weight for the candlesticks of gold, and for their lamps of gold, by weight for every candlestick, and for the lamps thereof: and for the candlesticks of silver by weight, __both__ for the candlestick, and __also__ for the lamps thereof, according to the use of every candlestick.
+@ And by weight __he gave__ gold for the tables of shewbread, for every table; and __likewise__ silver for the tables of silver:
+@ Also pure gold for the fleshhooks, and the bowls, and the cups: and for the golden basons __he gave gold__ by weight for every bason; and __likewise silver__ by weight for every bason of silver:
+@ And for ##the altar##note:x[<<Exod 30:1–10>>] of incense refined gold by weight; and gold for the pattern of ##the chariot##note:x[<<Exod 25:18–22>>] of the cherubims, that spread out __their wings__, and covered the ark of the covenant of the LORD.
+@ All __this, said David__, ##the LORD##note:x[<<Exod 25:40; 1 Chr 28:11–12>>] made me understand in writing by __his__ hand upon me, __even__ all the works of this pattern.
+@ And David said to Solomon his son, ##Be strong##note:x[<<1 Chr 22:13>>] and of good courage, and do __it:__ ##fear not##note:x[<<Isa 41:10>>], nor be dismayed: for the LORD God, __even__ my God, __will be__ with thee; ##he will not fail thee##note:x[<<Josh 1:5>>], nor forsake thee, until thou hast finished all the work for the service of the house of the LORD.
+@ And, behold, the courses of the priests and the Levites, __even they shall be with thee__ for all the service of the house of God: and __there shall be__ with thee for all manner of workmanship every willing skilful man, for any manner of service: also the princes and all the people __will be__ wholly at thy commandment.
+
+=== @29
+
+[discrete.pericope]
+==== Offerings for the Temple
+
+@ Furthermore David the king said unto all the congregation, Solomon my son, whom alone God hath chosen, __is yet__ ##young##note:x[<<1 Kgs 3:7; 1 Chr 22:5>>] and tender, and the work __is__ great: for the palace __is__ not for man, but for the LORD God.
+@ Now ##I have prepared##note:x[<<1 Chr 22:3–5>>] with all my might for the house of my God the gold for __things to be made__ of gold, and the silver for __things__ of silver, and the brass for __things__ of brass, the iron for __things__ of iron, and wood for __things__ of wood; onyx stones, and __stones__ to be set, glistering stones, and of divers colours, and all manner of precious stones, and marble stones in abundance.
+@ Moreover, because ##I have##note:x[<<1 Chr 21:24>>] set my affection to the house of my God, I have of mine own proper good, of gold and silver, __which__ I have given to the house of my God, over and above all that I have prepared for the holy house,
+@ __Even__ three thousand talents of gold, of the ##gold of Ophir##note:x[<<1 Kgs 9:28>>], and seven thousand talents of refined silver, to overlay the walls of the houses __withal:__
+@ The gold for __things__ of gold, and the silver for __things__ of silver, and for all manner of work __to be made__ by the hands of artificers. And who __then__ is willing to consecrate his service this day unto the LORD?note:tn[__consecrate his service__: Heb. fill his hand]
+
+@ ¶ Then the chief of the fathers and princes of the tribes of Israel, and the captains of thousands and of hundreds, with ##the rulers##note:x[<<2 Cor 9:7>>] of the king’s work, offered willingly,
+@ And gave for the service of the house of God of gold five thousand talents and ten thousand drams, and of silver ten thousand talents, and of brass eighteen thousand talents, and one hundred thousand talents of iron.
+@ And they with whom __precious__ stones were found gave __them__ to the treasure of the house of the LORD, by the hand of Jehiel the Gershonite.
+@ Then the people rejoiced, for that ##they offered##note:x[<<2 Cor 8:3; 9:7–8>>] willingly, because with ##perfect heart##note:x[<<1 Kgs 8:61>>] they offered willingly to the LORD: and David the king also rejoiced with great joy.
+
+[discrete.pericope]
+==== David’s Prayer of Blessing
+
+@ ¶ Wherefore David blessed the LORD before all the congregation: and David said, ##Blessed __be__ thou##note:x[<<Eph 1:3; 1 Tim 1:17; 1 Pet 1:3>>], LORD God of Israel our father, for ever and ever.
+@ Thine, O LORD, ##__is__ the greatness##note:x[<<Dan 4:34–35; 1 Tim 1:17>>], and the power, and the glory, and the victory, and the ##majesty##note:x[<<Heb 1:3>>]: for all __that is__ in the heaven and in the earth __is thine;__ thine __is__ the kingdom, O LORD, and thou art exalted as head above all.
+@ Both ##riches##note:x[<<Deut 8:18>>] and honour __come__ of thee, and thou ##reignest over all##note:x[<<Dan 6:26>>]; and in thine hand __is__ power and might; and in thine hand __it is__ to make great, and to ##give strength##note:x[<<Eph 3:16>>] unto all.
+@ Now therefore, our God, ##we thank##note:x[<<Ps 106:1; 2 Cor 9:15>>] thee, and praise thy glorious name.
+@ But ##who __am__ I##note:x[<<2 Cor 3:5>>], and what __is__ my people, that we should be able to offer so ##willingly##note:x[<<Jas 1:17>>] after this sort? for ##all things##note:x[<<Rom 11:36>>] __come__ of thee, and of thine own have we given thee.note:tn[__be able__: Heb. retain, or, obtain strength]note:tn[__of thine…__: Heb. of thine hand]
+@ ##For we##note:x[<<Ps 39:12>>] __are__ strangers before thee, and sojourners, as __were__ all our fathers: ##our days##note:x[<<Ps 102:11; 144:4>>] on the earth __are__ as a shadow, and __there is__ none ##abiding##note:tn[Heb. expectation].
+@ O LORD our God, ##all this store##note:x[<<1 Chr 29:14>>] that we have prepared to build thee an house for thine holy name __cometh__ of thine hand, and __is__ all thine own.
+@ note:x[<<Prov 11:20>>]I know also, my God, that thou ##triest the heart##note:x[<<1 Chr 28:9; Jer 17:10>>], and hast pleasure in uprightness. As for me, in the uprightness of mine heart I have willingly offered all these things: and now have I seen with joy thy people, which are ##present##note:tn[Heb. found] here, to offer willingly unto thee.
+@ O LORD God of Abraham, Isaac, and of Israel, our fathers, ##keep##note:x[<<Jer 32:39>>] this for ever in the imagination of the thoughts of the heart of thy people, and ##prepare##note:tn[or, stablish] their heart unto thee:
+@ ##And give##note:x[<<1 Chr 28:9; Ps 72:1>>] unto Solomon my son a perfect heart, to keep thy commandments, thy testimonies, and thy statutes, and to do all __these things__, and to build the palace, __for__ the which I have made provision.
+
+@ ¶ And David said to all the congregation, Now bless the LORD your God. And all the congregation blessed the LORD God of their fathers, and bowed down their heads, and worshipped the LORD, and the king.
+
+[discrete.pericope]
+==== Solomon Anointed King
+
+[.parallel]
+(<<1 Kings 1:32–40>>)
+
+@ And they sacrificed sacrifices unto the LORD, and offered burnt offerings unto the LORD, on the morrow after that day, __even__ a thousand bullocks, a thousand rams, __and__ a thousand lambs, with their drink offerings, and sacrifices in abundance for all Israel:
+@ And did eat and drink before the LORD on that day with great gladness. And they made Solomon the son of David king ##the second time##note:x[<<1 Chr 23:1>>], and anointed __him__ unto the LORD __to be__ the chief governor, and ##Zadok##note:x[<<1 Kgs 2:35>>] __to be__ priest.
+
+@ Then Solomon sat on the throne of the LORD as king instead of David his father, and prospered; and all Israel obeyed him.
+@ And all the princes, and the mighty men, and all the sons likewise of king David, submitted themselves unto Solomon the king.note:tn[__submitted…__: Heb. gave the hand under Solomon]
+@ And the LORD ##magnified Solomon##note:x[<<2 Chr 1:1>>] exceedingly in the sight of all Israel, and ##bestowed##note:x[<<1 Kgs 3:13; 2 Chr 1:12>>] upon him __such__ royal majesty as had not been on any king before him in Israel.
+
+[discrete.pericope]
+==== David’s Reign and Death
+
+[.parallel]
+(<<1 Kings 2:10–12>>)
+
+@ ¶ Thus David the son of Jesse reigned ##over all Israel##note:x[<<1 Chr 18:14>>].
+@ And the time that he reigned over Israel __was__ ##forty years##note:x[<<2 Sam 5:4–5; 1 Kgs 2:11; 1 Chr 3:4>>]; seven years reigned he in Hebron, and thirty and three __years__ reigned he in Jerusalem.
+@ And he died in ##a good old age##note:x[<<Gen 15:15; Job 5:26; Acts 13:36>>], full of days, riches, and honour: and Solomon his son reigned in his stead.
+@ Now the acts of David the king, first and last, behold, they __are__ written in the ##book##note:tn[or, history: Heb. words] of ##Samuel##note:x[<<1 Sam 9:9>>] the seer, and in the book of Nathan the prophet, and in the book of Gad the seer,
+@ With all his reign and his might, and the times that went over him, and over Israel, and over all the kingdoms of the countries.

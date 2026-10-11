@@ -1,0 +1,70 @@
+== @HAG
+
+[.book-title]
+Haggai
+
+=== @1
+
+[discrete.pericope]
+==== A Call to Rebuild the Temple
+
+[.parallel]
+(<<Ezra 5:1–5>>)
+
+@ note:x[<<Ezra 2:2; 3:2>>]In the second year of Darius the king, in the sixth month, in the first day of the month, came the word of the LORD ##by##note:tn[Heb. by the hand of] Haggai the prophet unto Zerubbabel the son of Shealtiel, ##governor##note:tn[or, captain] of Judah, and to ##Joshua##note:x[<<Ezra 2:2>>] the son of Josedech, the high priest, saying,
+@ Thus speaketh the LORD of hosts, saying, ##This##note:x[<<Ezra 4:23–24; Neh 4:10>>] people say, The time is not come, the time that the LORD’s house should be built.
+@ Then came the word of the LORD ##by Haggai##note:x[<<Ezra 5:1>>] the prophet, saying,
+@ __Is it__ time for you, O ye, ##to##note:x[<<2 Sam 7:2; Ps 132:3–5; Phil 2:21>>] dwell in your cieled houses, and this house __lie__ waste?
+@ Now therefore ##thus##note:x[<<Lam 3:40; Hag 2:15–18; 2 Cor 13:5>>] saith the LORD of hosts; Consider your ways.note:tn[__Consider…__: Heb. Set your heart on your ways]
+@ Ye ##have##note:x[<<Deut 28:38–40; Hos 4:10; Hag 1:9>>] sown much, and bring in little; ye eat, but ye have not enough; ye drink, but ye are not filled with drink; ye clothe you, but there is none warm; and he that earneth wages earneth wages __to put it__ into a bag with holes.note:tn[__with holes__: Heb. pierced through]
+
+@ ¶ note:x[<<Ps 119:59–60; Hag 1:5; Phil 3:1>>]Thus saith the LORD of hosts; Consider your ways.note:tn[__Consider…__: Heb. Set your heart on your ways]
+@ Go up ##to##note:x[<<2 Chr 2:8–10>>] the mountain, and bring wood, and build the house; ##and I will take##note:x[<<2 Chr 7:16; Ps 132:13–14>>] pleasure in it, and I will be glorified, saith the LORD.
+@ ##Ye looked##note:x[<<Hag 2:16–17>>] for much, and, lo, __it came__ to little; and when ye brought __it__ home, I did ##blow upon it##note:x[<<Mal 2:2>>]. Why? saith the LORD of hosts. ##Because##note:x[<<Hag 1:4>>] of mine house that __is__ waste, and ye run every man unto his own house.note:tn[__blow…__: or, blow it away]
+@ ##Therefore the heaven over you is stayed from dew, and the earth is stayed __from__ her fruit.##note:x[<<Lev 26:19; Deut 28:23–24; 1 Kgs 8:35>>]
+@ And ##I called##note:x[<<Deut 28:22>>] for a drought upon the land, and upon the mountains, and upon the corn, and upon the new wine, and upon the oil, and upon __that__ which the ground bringeth forth, and upon men, and upon cattle, and ##upon all##note:x[<<Hag 2:17>>] the labour of the hands.
+
+[discrete.pericope]
+==== The People Obey
+
+@ ¶ Then ##Zerubbabel##note:x[<<Ezra 5:2; Hag 1:14>>] the son of Shealtiel, and Joshua the son of Josedech, the high priest, with all the remnant of the people, obeyed the voice of the LORD their God, and the words of Haggai the prophet, as the LORD their God had sent him, and the people did ##fear##note:x[<<Isa 50:10>>] before the LORD.
+@ note:x[<<Mal 3:1>>]Then spake Haggai the LORD’s messenger in the LORD’s message unto the people, saying, ##I __am__##note:x[<<Isa 43:2; Matt 28:20>>] with you, saith the LORD.
+@ And the LORD ##stirred##note:x[<<2 Chr 36:22; Ezra 1:1; Heb 13:21>>] up the spirit of Zerubbabel the son of Shealtiel, governor of Judah, and the spirit of Joshua the son of Josedech, the high priest, and the spirit of all the remnant of the people; and they came and did work in the house of the LORD of hosts, their God,
+@ ##In the four and twentieth day of the sixth month, in the second year of Darius the king.##note:x[<<Hag 1:1>>]
+
+=== @2
+
+[discrete.pericope]
+==== The Coming Glory of God’s House
+
+@ In the seventh __month__, in the one and twentieth __day__ of the month, came the word of the LORD ##by##note:tn[Heb. by the hand of] ##the prophet##note:x[<<2 Pet 1:21>>] Haggai, saying,
+@ Speak now to Zerubbabel the son of Shealtiel, governor of Judah, and to Joshua the son of Josedech, the high priest, and to the residue of the people, saying,
+@ Who ##__is__ left##note:x[<<Ezra 3:12>>] among you that saw this house in her first glory? and how do ye see it now? __is it__ not in your eyes in comparison of it as nothing?
+@ Yet ##now##note:x[<<Deut 31:23; Josh 1:9; 1 Chr 28:20>>] be strong, O Zerubbabel, saith the LORD; and be strong, O Joshua, son of Josedech, the high priest; and be strong, all ye people of the land, saith the LORD, and work: for I __am__ with you, saith the LORD of hosts:
+@ __According__ ##__to__ the##note:x[<<Exod 29:45–46; 34:10>>] word that I covenanted with you when ye came out of Egypt, so my spirit remaineth among you: ##fear##note:x[<<Isa 41:13>>] ye not.
+@ For thus saith the LORD of hosts; ##Yet##note:x[<<Heb 12:26–28>>] once, ##it __is__##note:x[<<Isa 10:25>>] a little while, ##and I##note:x[<<Heb 12:26>>] will shake the heavens, and the earth, and the sea, and the dry __land;__
+@ And I will shake all nations, and the desire of all nations shall come: and ##I will fill##note:x[<<1 Kgs 8:11; Mal 3:1; John 7:37–39>>] this house with glory, saith the LORD of hosts.
+@ ##The silver __is__ mine, and the gold __is__ mine, saith the LORD of hosts.##note:x[<<1 Chr 29:14–16; Ps 24:1; 50:10–12>>]
+@ The ##glory##note:x[<<2 Cor 3:9–10>>] of this latter house shall be greater than of the former, saith the LORD of hosts: and in this place will I ##give##note:x[<<Ps 85:8–9; Col 1:19–21>>] peace, saith the LORD of hosts.
+
+[discrete.pericope]
+==== Blessings for a Defiled People
+
+@ ¶ ##In the four and twentieth __day__ of the ninth __month__, in the second year of Darius, came the word of the LORD by Haggai the prophet, saying,##note:x[<<Hag 2:20>>]
+@ ##Thus saith the LORD of hosts; Ask now the priests __concerning__ the law, saying,##note:x[<<Lev 10:10–11>>]
+@ ##If one bear holy flesh in the skirt of his garment, and with his skirt do touch bread, or pottage, or wine, or oil, or any meat, shall it be holy? And the priests answered and said, No.##note:x[<<Lev 6:27; Matt 23:19>>]
+@ Then said Haggai, If __one that is__ unclean by a dead body touch any of these, shall it be unclean? And the priests answered and said, It shall be unclean.
+@ Then answered Haggai, and said, ##So __is__ this people##note:x[<<Prov 28:9; Titus 1:15>>], and so __is__ this nation before me, saith the LORD; and so __is__ every work of their hands; and that which they offer there __is__ unclean.
+@ And now, I pray you, ##consider##note:x[<<Hag 1:5, 7; 2:18>>] from this day and upward, from before a stone was laid upon a stone in the temple of the LORD:
+@ Since those __days__ were, ##when __one__ came to an##note:x[<<Hag 1:6>>] heap of twenty __measures__, there were __but__ ten: when __one__ came to the pressfat for to draw out fifty __vessels__ out of the press, there were __but__ twenty.
+@ I smote you ##with blasting##note:x[<<Deut 28:22; Hag 1:9>>] and with mildew and with hail ##in all##note:x[<<Hag 1:11>>] the labours of your hands; yet ye __turned__ not to me, saith the LORD.
+@ ##Consider##note:x[<<Hag 2:15>>] now from this day and upward, from the four and twentieth day of the ninth __month,__ ##__even__##note:x[<<Ezra 5:1–2; Zech 8:9>>] from the day that the foundation of the LORD’s temple was laid, consider __it__.
+@ Is the seed yet in the barn? yea, ##as##note:x[<<Hab 3:17–18>>] yet the vine, and the fig tree, and the pomegranate, and the olive tree, hath not brought forth: ##from##note:x[<<Prov 3:9–10; Mal 3:10>>] this day will I bless __you__.
+
+[discrete.pericope]
+==== Zerubbabel the LORD’s Signet Ring
+
+@ ¶ And again the word of the LORD came unto Haggai in the four and twentieth __day__ of the month, saying,
+@ Speak to ##Zerubbabel##note:x[<<Hag 1:1; Zech 4:6–10>>], governor of Judah, saying, ##I will##note:x[<<Hag 2:6–7>>] shake the heavens and the earth;
+@ And I will ##overthrow##note:x[<<Mic 5:15>>] the throne of kingdoms, and I will destroy the strength of the kingdoms of the heathen; ##and I will overthrow the chariots##note:x[<<Mic 5:10>>], and those that ride in them; and the horses and their riders shall come down, ##every##note:x[<<Judg 7:22>>] one by the sword of his brother.
+@ In that day, saith the LORD of hosts, will I take thee, O Zerubbabel, my servant, the son of Shealtiel, saith the LORD, ##and will##note:x[<<Song 8:6>>] make thee as a signet: ##for##note:x[<<Isa 42:1; 43:10>>] I have chosen thee, saith the LORD of hosts.

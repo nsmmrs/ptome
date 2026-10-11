@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 535.3" width="400" height="535.3" font-family="serif">
+<rect x="12" y="12" width="376" height="511.3" fill="#D6E6EE"/>
+<path d="M12 523.3L12 467.1L17.9 461.8L21.7 454.9L30.5 448.2L34.2 441.4L48.4 426.7L55 417L57 412L61.6 406.1L79.6 375.3L95.3 339.6L98.8 334L104.7 314.4L104.7 309.8L107.3 308.4L122.5 260.8L135 198.6L136.1 196.4L137.2 186.5L138.1 183.6L137.8 180.3L142.1 162.2L143.1 142.2L144.6 137.7L147.4 136.2L149.8 136.8L153.6 139.3L156.5 139.8L158.2 139.5L164.8 132.4L168 121.9L167.6 119.2L165.3 118L166.5 114.7L167.8 101.2L170.3 94L171.1 89.7L170.3 85.9L173 83L171.7 81.4L172.8 81.1L173 79.8L171.9 79.6L171.7 78.4L174.6 73.4L176.6 71.5L180.8 69.7L184.5 63.1L183.4 61.6L185.2 61.7L185.8 63.1L191.5 50.9L192.3 44.3L188.4 38.7L192.4 35.7L195.3 31.6L198.8 21.8L199.6 12L388 12L388 523.3Z" fill="#EFE6CC" stroke="#8E7F5C" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M273.3 134.3L272.8 138.2L273.5 140.7L272.4 146.7L272.5 149.4L273.5 151.5L272.4 152.1L272.2 156L265.7 163.6L261.5 163.1L260.1 159.3L259.5 154.9L256.3 152.1L254.1 146.8L250.2 140.7L251.5 133.8L257.3 127.5L264.2 123.6L268.3 124.1L271.5 127L272.9 128.7L273.5 130.9L273.3 134.3ZM258.1 375.3L263.2 378.1L263.6 383.1L261.8 389.6L257.3 425.8L259.9 435.1L260.5 441.4L255.4 466.8L255.9 471.7L251.5 476.6L249.4 477.7L247.7 477.4L247.3 474.8L249.4 466.7L249 463.8L245.4 463.9L236.1 473.9L231 472.9L229.3 468.8L228.5 457.6L227 448.6L228.3 440.5L226.8 431.2L227.9 427.2L231 419.6L229.7 411.6L229.7 408.8L234.9 399.7L238.5 391L242.6 383.1L248.3 377.5L258.1 375.3ZM249.1 501.2L252 503.5L252.8 507.8L247.7 514.6L248.8 516.2L250.4 521L247.8 523.3L228.3 523.1L226.9 520.5L226 514L221.4 506.5L220.4 498.7L222.5 493.2L228.3 494.3L232.2 489.6L239.7 496.8L242.4 498.7L249.1 501.2Z" fill="#D6E6EE" stroke="#7FA3B8" stroke-width="0.4" fill-rule="evenodd"/>
+<path d="M265.6 123.2L264.7 152.8L264.1 157.9L261.5 163.1M232.5 473.2L233.2 469.5L238.1 456.4L238.8 451.3L239 436.1L240.2 419.1L243.2 402.9L252.1 382.1L257.7 378.4L258.1 375.3M280.2 9.5L278 14.4L273.1 31.6L272 41L271.1 44.4L265.2 57L264.6 60.6L262.8 101.8L265.5 117.8L265.6 123.2M261.5 163.1L259.6 165.1L259.2 166.4L259.4 167.4L260.5 168.2L258.4 169.3L257.9 171.8L259.3 178.2L258.3 180.7L258.2 182.5L259 184.1L260.5 185.1L260.5 186.4L259.3 186.4L259.3 188.1L260.3 190.1L260.9 195.8L261.9 198.6L260.9 199.9L260.5 198.6L259.3 201.8L258.1 200.2L259.3 206.3L256.7 206.3L256.7 207.8L258.4 207.8L261.9 212.5L261.9 213.9L260.2 214.4L258.4 217.1L258.1 218.6L260.5 220L260.5 221.6L258.1 223L259.3 224.5L256.7 226.2L257.8 226.7L258.1 227.7L256.7 227.7L256.7 229.1L258 231.1L255.4 232.1L256.2 234.6L258.4 237.6L259.3 241.4L258.1 241.4L258.1 239.8L256.7 239.8L256.7 241.4L257.7 243.5L257.6 250.2L259.3 253.5L258.4 256.1L258.3 260.3L259 264.6L260.5 267.2L258.9 268.3L258.1 270.3L260.5 270.3L257.3 284.4L258.1 288.7L255.7 290.5L255.7 291.7L256.7 293.1L253.5 298.5L253.4 301.1L255.4 303.9L252.2 306.5L251.2 310.3L251.5 320.6L253.6 325.8L254.4 333L255.5 335.5L255.4 337.3L254.5 338.3L252.1 339.3L251.5 341.1L256.1 358.9L254.1 361.7L254.1 363.3L258.1 375.3M232.6 473.3L232.3 478.1L227.3 488.2L228.3 494.3" fill="none" stroke="#6E9FC0" stroke-width="0.7"/>
+<path d="M74.7 12V523.3M137.3 12V523.3M200 12V523.3M262.7 12V523.3M325.3 12V523.3M12 139.8H388M12 267.6H388M12 395.5H388" stroke="#9A8E70" stroke-width="0.25" stroke-dasharray="1 2" fill="none"/>
+<text x="43.3" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">A</text>
+<text x="43.3" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">A</text>
+<text x="106" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">B</text>
+<text x="106" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">B</text>
+<text x="168.7" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">C</text>
+<text x="168.7" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">C</text>
+<text x="231.3" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">D</text>
+<text x="231.3" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">D</text>
+<text x="294" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">E</text>
+<text x="294" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">E</text>
+<text x="356.7" y="8.5" font-size="6.5" text-anchor="middle" fill="#5A4E36">F</text>
+<text x="356.7" y="531.8" font-size="6.5" text-anchor="middle" fill="#5A4E36">F</text>
+<text x="6" y="78.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">1</text>
+<text x="394" y="78.1" font-size="6.5" text-anchor="middle" fill="#5A4E36">1</text>
+<text x="6" y="205.9" font-size="6.5" text-anchor="middle" fill="#5A4E36">2</text>
+<text x="394" y="205.9" font-size="6.5" text-anchor="middle" fill="#5A4E36">2</text>
+<text x="6" y="333.7" font-size="6.5" text-anchor="middle" fill="#5A4E36">3</text>
+<text x="394" y="333.7" font-size="6.5" text-anchor="middle" fill="#5A4E36">3</text>
+<text x="6" y="461.6" font-size="6.5" text-anchor="middle" fill="#5A4E36">4</text>
+<text x="394" y="461.6" font-size="6.5" text-anchor="middle" fill="#5A4E36">4</text>
+<text x="49.6" y="156.5" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">GREAT SEA</text>
+<text x="312.8" y="156.5" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">SEA OF GALILEE</text>
+<text x="256.4" y="456.6" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">DEAD SEA</text>
+<text x="209.4" y="89.8" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">GALILEE</text>
+<text x="162.4" y="245.4" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">SAMARIA</text>
+<text x="143.6" y="423.2" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">JUDAEA</text>
+<text x="331.6" y="223.2" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">DECAPOLIS</text>
+<text x="303.4" y="334.3" font-size="7.5" text-anchor="middle" fill="#6B5B3A" letter-spacing="1.2">PERAEA</text>
+<text x="269.6" y="256.5" font-size="6.5" text-anchor="middle" fill="#3E6E8E" font-style="italic">Jordan</text>
+<circle cx="209" cy="167.1" r="1.6" fill="#2E2416"/>
+<text x="212" y="169.4" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Nazareth</text>
+<text x="212" y="169.4" font-size="6.8" text-anchor="start" fill="#2E2416">Nazareth</text>
+<circle cx="209.9" cy="140.4" r="1.6" fill="#2E2416"/>
+<text x="212.9" y="142.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Cana</text>
+<text x="212.9" y="142.7" font-size="6.8" text-anchor="start" fill="#2E2416">Cana</text>
+<circle cx="261.1" cy="127.3" r="1.6" fill="#2E2416"/>
+<text x="264.1" y="129.6" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Capernaum</text>
+<text x="264.1" y="129.6" font-size="6.8" text-anchor="start" fill="#2E2416">Capernaum</text>
+<circle cx="271.6" cy="120.8" r="1.6" fill="#2E2416"/>
+<text x="274.1" y="118.3" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Bethsaida</text>
+<text x="274.1" y="118.3" font-size="6.8" text-anchor="start" fill="#2E2416">Bethsaida</text>
+<circle cx="259" cy="120.6" r="1.6" fill="#2E2416"/>
+<text x="256" y="122.9" font-size="6.8" text-anchor="end" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Chorazin</text>
+<text x="256" y="122.9" font-size="6.8" text-anchor="end" fill="#2E2416">Chorazin</text>
+<circle cx="249.5" cy="139.4" r="1.6" fill="#2E2416"/>
+<text x="252.5" y="141.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Magdala</text>
+<text x="252.5" y="141.7" font-size="6.8" text-anchor="start" fill="#2E2416">Magdala</text>
+<circle cx="255.3" cy="151.2" r="1.6" fill="#2E2416"/>
+<text x="258.3" y="153.5" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Tiberias</text>
+<text x="258.3" y="153.5" font-size="6.8" text-anchor="start" fill="#2E2416">Tiberias</text>
+<circle cx="283.3" cy="46.2" r="1.6" fill="#2E2416"/>
+<text x="286.3" y="48.5" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Caesarea Philippi</text>
+<text x="286.3" y="48.5" font-size="6.8" text-anchor="start" fill="#2E2416">Caesarea Philippi</text>
+<circle cx="218.8" cy="183" r="1.6" fill="#2E2416"/>
+<text x="221.8" y="185.3" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Nain</text>
+<text x="221.8" y="185.3" font-size="6.8" text-anchor="start" fill="#2E2416">Nain</text>
+<circle cx="235" cy="356.1" r="1.6" fill="#2E2416"/>
+<text x="238" y="358.4" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Jericho</text>
+<text x="238" y="358.4" font-size="6.8" text-anchor="start" fill="#2E2416">Jericho</text>
+<circle cx="201.1" cy="374" r="1.6" fill="#2E2416"/>
+<text x="204.1" y="376.3" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Bethany</text>
+<text x="204.1" y="376.3" font-size="6.8" text-anchor="start" fill="#2E2416">Bethany</text>
+<circle cx="192" cy="388.9" r="1.6" fill="#2E2416"/>
+<text x="195" y="391.2" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Bethlehem</text>
+<text x="195" y="391.2" font-size="6.8" text-anchor="start" fill="#2E2416">Bethlehem</text>
+<circle cx="197" cy="372.9" r="1.6" fill="#2E2416"/>
+<text x="194.5" y="380.4" font-size="6.8" text-anchor="end" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Jerusalem</text>
+<text x="194.5" y="380.4" font-size="6.8" text-anchor="end" fill="#2E2416">Jerusalem</text>
+<circle cx="183.9" cy="369.3" r="1.6" fill="#2E2416"/>
+<text x="180.9" y="371.6" font-size="6.8" text-anchor="end" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Emmaus</text>
+<text x="180.9" y="371.6" font-size="6.8" text-anchor="end" fill="#2E2416">Emmaus</text>
+<circle cx="207.3" cy="274.8" r="1.6" fill="#2E2416"/>
+<text x="210.3" y="277.1" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Sychar</text>
+<text x="210.3" y="277.1" font-size="6.8" text-anchor="start" fill="#2E2416">Sychar</text>
+<circle cx="132.6" cy="212.1" r="1.6" fill="#2E2416"/>
+<text x="135.6" y="214.4" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Caesarea</text>
+<text x="135.6" y="214.4" font-size="6.8" text-anchor="start" fill="#2E2416">Caesarea</text>
+<circle cx="106.6" cy="311.1" r="1.6" fill="#2E2416"/>
+<text x="109.6" y="313.4" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Joppa</text>
+<text x="109.6" y="313.4" font-size="6.8" text-anchor="start" fill="#2E2416">Joppa</text>
+<circle cx="280.7" cy="177.4" r="1.6" fill="#2E2416"/>
+<text x="283.7" y="179.7" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Gadara</text>
+<text x="283.7" y="179.7" font-size="6.8" text-anchor="start" fill="#2E2416">Gadara</text>
+<circle cx="320.6" cy="262.7" r="1.6" fill="#2E2416"/>
+<text x="323.6" y="265" font-size="6.8" text-anchor="start" fill="#EFE6CC" stroke="#EFE6CC" stroke-width="1.6">Gerasa</text>
+<text x="323.6" y="265" font-size="6.8" text-anchor="start" fill="#2E2416">Gerasa</text>
+<rect x="15" y="502.3" width="98.3" height="19" fill="#FFFFFF" fill-opacity="0.7"/>
+<path d="M18 511.3h49.9" stroke="#2E2416" stroke-width="1.2"/>
+<text x="70.9" y="513.3" font-size="5.5" fill="#2E2416">25 km</text>
+<path d="M18 517.3h64.3" stroke="#2E2416" stroke-width="1.2"/>
+<text x="85.3" y="519.3" font-size="5.5" fill="#2E2416">20 mi</text>
+<path d="M378 30l4 -12l4 12l-4 -3z" fill="#2E2416"/>
+<text x="382 " y="37" font-size="6" text-anchor="middle" fill="#2E2416">N</text>
+<rect x="12" y="12" width="376" height="511.3" fill="none" stroke="#5A4E36" stroke-width="0.8"/>
+</svg>

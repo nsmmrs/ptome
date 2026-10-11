@@ -1,0 +1,262 @@
+== @AMO
+
+[.book-title]
+Amos
+
+=== @1
+
+[discrete.pericope]
+==== Judgment on Israel’s Neighbors
+
+[.parallel]
+(<<Jeremiah 12:14–17>>)
+
+@ note:x[<<2 Chr 26:1–23>>]The words of Amos, ##who##note:x[<<Amos 7:14>>] was among the herdmen of Tekoa, which he saw concerning Israel in the days of Uzziah king of Judah, and in the days of Jeroboam the son of Joash king of Israel, two years before ##the earthquake##note:x[<<Zech 14:5>>].
+@ And he said, ##The LORD##note:x[<<Isa 42:13; Jer 25:30; Joel 3:16>>] will roar from Zion, and utter his voice from Jerusalem; and the habitations of the shepherds shall mourn, and the top of Carmel shall wither.
+
+@ Thus saith the LORD; ##For##note:x[<<Amos 1:9; 2:6>>] three transgressions of ##Damascus##note:x[<<Isa 8:4>>], and for four, I will not turn away __the punishment__ thereof; because they have threshed Gilead with threshing instruments of iron&#58;note:tn[__and…__: or, yea, for four]note:tn[__turn…__: or, convert it, or, let it be quiet]
+@ note:x[<<2 Kgs 13:3>>]But ##I will##note:x[<<Jer 49:27>>] send a fire into the house of ##Hazael##note:x[<<2 Kgs 8:7–15>>], which shall devour the palaces of Ben-hadad.
+@ I will ##break##note:x[<<Jer 51:30>>] also the bar of Damascus, and cut off the inhabitant from the plain of Aven, and him that holdeth the sceptre from the house of Eden: and ##the people##note:x[<<2 Kgs 16:9; Amos 9:7>>] of Syria shall go into captivity unto Kir, saith the LORD.note:tn[__the plain…__: or, Bikathaven]note:tn[__the house…__: or, Beth-eden]
+
+@ ¶ Thus saith the LORD; For ##three##note:x[<<Amos 1:11>>] transgressions of ##Gaza##note:x[<<2 Chr 28:18>>], and for four, I will not turn away __the punishment__ thereof; because they ##carried##note:x[<<2 Chr 28:18>>] away captive the whole captivity, to deliver __them__ up to Edom&#58;note:tn[__away captive…__: or, them away with an entire]
+@ But ##I will##note:x[<<Zeph 2:4>>] send ##a fire##note:x[<<2 Kgs 18:8; Jer 47:1>>] on the wall of Gaza, which shall devour the palaces thereof:
+@ And ##I will cut##note:x[<<Ezek 25:16>>] off the inhabitant from Ashdod, and him that holdeth the sceptre from Ashkelon, and I will turn mine hand against Ekron: ##and the##note:x[<<Isa 14:29–31; Ezek 25:16>>] remnant of the Philistines shall perish, saith the Lord GOD.
+
+@ ¶ Thus saith the LORD; For three transgressions of ##Tyrus##note:x[<<Isa 23:1–18; Joel 3:4–8>>], and for four, I will not turn away __the punishment__ thereof; because they delivered up the whole captivity to Edom, and remembered not the ##brotherly covenant##note:x[<<1 Kgs 9:11–14>>]:note:tn[__the brotherly…__: Heb. the covenant of brethren]
+@ ##But I will send a fire on the wall of Tyrus, which shall devour the palaces thereof.##note:x[<<Zech 9:4>>]
+
+@ ¶ Thus saith the LORD; For three transgressions of ##Edom##note:x[<<Ezek 25:12–14>>], and for four, I will not turn away __the punishment__ thereof; ##because##note:x[<<Num 20:14–21; Ezek 25:12>>] he did pursue his brother with the sword, and did cast off all pity, and his anger did tear perpetually, and he kept his wrath for ever&#58;note:tn[__did cast…__: Heb. corrupted his compassions]
+@ But I will send a fire upon ##Teman##note:x[<<Jer 49:7; Obad 1:9–10>>], which shall devour the palaces of Bozrah.
+
+@ ¶ Thus saith the LORD; For three transgressions of ##the children##note:x[<<Jer 49:1–6; Ezek 25:2–7>>] of Ammon, and for four, I will not turn away __the punishment__ thereof; ##because##note:x[<<Hos 13:16>>] they have ripped up the women with child of Gilead, that they might enlarge their border&#58;note:tn[__ripped…__: or, divided the mountains]
+@ But I will kindle a fire in the wall of ##Rabbah##note:x[<<Deut 3:11; Jer 49:2>>], and it shall devour the palaces thereof, ##with shouting##note:x[<<Amos 2:2>>] in the day of battle, with a tempest in the day of the whirlwind:
+@ ##And their king shall go into captivity, he and his princes together, saith the LORD.##note:x[<<Jer 49:3>>]
+
+=== @2
+
+[discrete.pericope]
+==== Judgment on Moab, Judah, and Israel
+
+@ Thus saith the LORD; ##For three##note:x[<<Amos 1:3>>] transgressions ##of Moab##note:x[<<Ezek 25:8–9; Zeph 2:8–9>>], and for four, I will not turn away __the punishment__ thereof; because he burned the bones of the king of Edom into lime:
+@ note:x[<<Jer 48:24, 41>>]But I will send a fire upon Moab, and it shall devour the palaces of Kerioth: and Moab shall die ##with tumult##note:x[<<Amos 1:14>>], with shouting, __and__ with the sound of the trumpet:
+@ And I will cut off the judge from the midst thereof, and will slay all the princes thereof with him, saith the LORD.
+
+@ ¶ Thus saith the LORD; For three transgressions of Judah, and for four, I will not turn away __the punishment__ thereof; ##because##note:x[<<Ezek 20:13, 24>>] they have despised the law of the LORD, and have not kept his commandments, and their lies caused them to err, ##after##note:x[<<Ezek 20:24>>] the which their fathers have walked:
+@ But ##I will##note:x[<<Jer 17:27; 21:10; Hos 8:14>>] send a fire upon Judah, and it shall devour the palaces of Jerusalem.
+
+@ ¶ Thus saith the LORD; For three transgressions of Israel, and for four, I will not turn away __the punishment__ thereof; ##because##note:x[<<Joel 3:3>>] they sold the righteous for silver, and the poor for a pair of shoes;
+@ That pant after the dust of the earth on the head of the poor, ##and turn##note:x[<<Isa 10:2; Amos 5:12>>] aside the way of the meek: ##and a##note:x[<<Ezek 22:11>>] man and his father will go in unto the __same__ ##maid##note:tn[or, young woman], to profane my holy name:
+@ And they lay __themselves__ down upon clothes ##laid##note:x[<<Exod 22:26–27; Deut 24:12–17>>] to pledge by every altar, and ##they drink##note:x[<<Amos 6:6>>] the wine of the condemned __in__ the house of their god.note:tn[__the condemned__: or, such as have fined, or, mulcted]
+
+@ ¶ Yet destroyed I the Amorite before them, whose height __was__ like the height of the cedars, and he __was__ strong as the oaks; yet ##I destroyed##note:x[<<Job 18:16; Mal 4:1>>] his fruit from above, and his roots from beneath.
+@ note:x[<<Exod 12:51>>]Also I brought you up from the land of Egypt, ##and led##note:x[<<Deut 2:7; Acts 7:42>>] you forty years through the wilderness, to possess the land of the Amorite.
+@ And I raised up of your sons for prophets, and of your young men for ##Nazarites##note:x[<<Num 6:2>>]. __Is it__ not even thus, O ye children of Israel? saith the LORD.
+@ But ye gave the Nazarites wine to drink; and commanded the prophets, saying, Prophesy not.
+@ Behold, I am pressed under you, as a cart is pressed __that is__ full of sheaves.note:tn[__I am…__: or, I will press your place, as a cart full of sheaves presseth]
+@ Therefore ##the flight##note:x[<<Jer 9:23>>] shall perish from the swift, and the strong shall not strengthen his force, neither shall the mighty deliver ##himself##note:tn[Heb. his soul, or, life]:
+@ ##Neither##note:x[<<Ps 33:16–17>>] shall he stand that handleth the bow; and __he that is__ swift of foot shall not deliver __himself:__ neither shall he that rideth the horse deliver himself.
+@ And __he that is__ ##courageous##note:tn[Heb. strong of his heart] among the mighty shall ##flee##note:x[<<Mark 14:52>>] away naked in that day, saith the LORD.
+
+=== @3
+
+[discrete.pericope]
+==== Witnesses against Israel
+
+@ ##Hear##note:x[<<Mic 3:1>>] this word that the LORD hath spoken ##against##note:x[<<Jer 8:3>>] you, O children of Israel, against the whole family ##which##note:x[<<Amos 2:10>>] I brought up from the land of Egypt, saying,
+@ You ##only##note:x[<<Exod 19:5–6; Deut 7:6; 10:15>>] have I known of all the families of the earth: therefore I will ##punish##note:tn[Heb. visit upon] you for all your iniquities.
+@ ##Can two walk together, except they be agreed?##note:x[<<Gen 5:22; 17:1; 2 Cor 6:14–16>>]
+@ Will ##a lion##note:x[<<Ps 104:21; Hos 11:10; Amos 1:2>>] roar in the forest, when he hath no prey? will a young lion ##cry##note:tn[Heb. give forth his voice] out of his den, if he have taken nothing?
+@ ##Can a bird fall in a snare upon the earth, where no gin __is__ for him? shall __one__ take up a snare from the earth, and have taken nothing at all?##note:x[<<Eccl 9:12>>]
+@ Shall ##a trumpet##note:x[<<Zeph 1:16>>] be blown in the city, and the people not ##be afraid##note:x[<<Isa 14:24–27; 45:7>>]? shall there be evil in a city, and the LORD hath not done __it__?note:tn[__be afraid__: or, run together?]note:tn[__the LORD…__: or, shall not the LORD do somewhat?]
+@ Surely the Lord GOD will do nothing, ##but##note:x[<<Gen 18:17; Ps 25:14; John 15:15>>] he revealeth his secret unto his servants the prophets.
+@ The ##lion##note:x[<<Amos 3:4>>] hath roared, who will not fear? the Lord GOD hath spoken, ##who can##note:x[<<Jer 20:9; Acts 4:20>>] but prophesy?
+
+@ ¶ Publish in the palaces at Ashdod, and in the palaces in the land of Egypt, and say, Assemble yourselves upon ##the mountains##note:x[<<Amos 4:1; 6:1>>] of Samaria, and behold the great tumults in the midst thereof, and the note:x[<<Amos 4:1>>]##oppressed##note:tn[or, oppressions] in the midst thereof.
+@ For ##they##note:x[<<Jer 4:22>>] know not to do right, saith the LORD, ##who##note:x[<<Zeph 1:9>>] store up violence and ##robbery##note:tn[or, spoil] in their palaces.
+@ Therefore thus saith the Lord GOD; ##An##note:x[<<2 Kgs 18:9–11>>] adversary __there shall be__ even round about the land; and he shall bring down thy strength from thee, and thy palaces shall be spoiled.
+@ Thus saith the LORD; ##As the##note:x[<<1 Sam 17:34–37>>] shepherd ##taketh##note:tn[Heb. delivereth] out of the mouth of the lion two legs, or a piece of an ear; ##so shall##note:x[<<Rom 11:4–5>>] the children of Israel be taken out that dwell in Samaria in the corner of a bed, and in Damascus __in__ a couch.note:tn[__in Damascus…__: or, on the bed’s feet]
+@ Hear ye, and testify in the house of Jacob, saith the Lord GOD, the God of hosts,
+@ That in the day that I shall ##visit##note:tn[or, punish Israel for] the transgressions of Israel upon him ##I will##note:x[<<2 Kgs 23:15; 2 Chr 34:6–7; Hos 10:5–8>>] also visit the altars of Beth-el: and the horns of the altar shall be cut off, and fall to the ground.
+@ And I will smite ##the winter##note:x[<<Jer 36:22>>] house with the summer house; and ##the houses##note:x[<<1 Kgs 22:39>>] of ivory shall perish, and ##the great##note:x[<<Amos 6:11>>] houses shall have an end, saith the LORD.
+
+=== @4
+
+[discrete.pericope]
+==== Punishment Brings No Repentance
+
+@ note:x[<<Amos 6:1>>]Hear this word, ##ye kine##note:x[<<Ps 22:12; Ezek 39:18>>] of Bashan, that __are__ in the mountain of Samaria, which oppress the poor, which crush the needy, which say to their masters, Bring, and let us drink.
+@ The Lord GOD ##hath sworn##note:x[<<Ps 89:35>>] by his holiness, that, lo, the days shall come upon you, that ##he will##note:x[<<Jer 16:16; Hab 1:15–16>>] take you away with hooks, and your posterity with fishhooks.
+@ And ##ye shall go##note:x[<<Ezek 12:5, 12>>] out at the breaches, every __cow at that which is__ before her; and ye shall cast __them__ into the palace, saith the LORD.note:tn[__cast…__: or, cast away the things of the palace]
+
+@ ¶ ##Come##note:x[<<Ezek 20:39; Hos 4:15>>] to Beth-el, and transgress; at Gilgal multiply transgression; ##and bring##note:x[<<Num 28:3–4>>] your sacrifices every morning, __and__ your tithes after three years&#58;note:tn[__three…__: Heb. three years of days]
+@ And ##offer##note:tn[Heb. offer by burning] a sacrifice of thanksgiving with leaven, and ##proclaim##note:x[<<Lev 22:18–21>>] __and__ publish the free offerings: ##for##note:x[<<Ps 81:12>>] ##this liketh you##note:x[<<Hos 9:10>>], O ye children of Israel, saith the Lord GOD.note:tn[__this…__: Heb. so ye love]
+
+@ ¶ And I also have given you cleanness of teeth in all your cities, and want of bread in all your places: ##yet##note:x[<<Isa 9:13; Jer 5:3; Hag 2:17>>] have ye not returned unto me, saith the LORD.
+@ And also ##I have##note:x[<<2 Chr 7:13–14; Jer 3:3>>] withholden the rain from you, when __there were__ yet three months to the harvest: ##and I##note:x[<<Exod 9:26>>] caused it to rain upon one city, and caused it not to rain upon another city: one piece was rained upon, and the piece whereupon it rained not withered.
+@ So two __or__ three cities wandered unto one city, to drink water; but they were not satisfied: ##yet##note:x[<<Amos 4:6>>] have ye not returned unto me, saith the LORD.
+@ note:x[<<Joel 1:4>>]I have smitten you ##with##note:x[<<Deut 28:22; Hag 2:17>>] blasting and mildew: when your gardens and your vineyards and your fig trees and your olive trees increased, the palmerworm devoured __them:__ yet have ye not returned unto me, saith the LORD.note:tn[__when…__: or, the multitude of your gardens, etc. did the palmerworm]
+@ I have sent among you the ##pestilence##note:x[<<Lev 26:25; Deut 28:60>>] after the manner of Egypt: ##your young##note:x[<<Lev 26:25>>] men have I slain with the sword, and have taken away your horses; and I have made the stink of your camps to come up unto your nostrils: yet have ye not returned unto me, saith the LORD.note:tn[__after…__: or, in the way]note:tn[__and have…__: Heb. with the captivity of your horses]
+@ I have overthrown __some__ of you, ##as God##note:x[<<Gen 19:24–25; Isa 13:19>>] overthrew Sodom and Gomorrah, and ye were ##as a##note:x[<<Zech 3:2>>] firebrand plucked out of the burning: yet have ye not returned unto me, saith the LORD.
+@ Therefore ##thus##note:x[<<Amos 9:1–4>>] will I do unto thee, O Israel: __and__ because I will do this unto thee, ##prepare##note:x[<<1 Thess 5:2–4; Jas 4:1–10>>] to meet thy God, O Israel.
+@ For, lo, he that formeth the mountains, and createth the ##wind##note:tn[or, spirit], and declareth unto man what __is__ his thought, ##that maketh##note:x[<<Amos 5:8>>] the morning darkness, ##and treadeth##note:x[<<Mic 1:3>>] upon the high places of the earth, ##The LORD##note:x[<<Amos 5:8>>], The God of hosts, __is__ his name.
+
+=== @5
+
+[discrete.pericope]
+==== A Lamentation against Israel
+
+@ Hear ye this word which ##I take##note:x[<<Ezek 19:1>>] up against you, __even__ a lamentation, O house of Israel.
+@ The ##virgin##note:x[<<Jer 14:17>>] of Israel is fallen; she shall no more rise: she is forsaken upon her land; __there is__ none to raise her up.
+@ For thus saith the Lord GOD; ##The city##note:x[<<Isa 10:22; Ezek 12:16; Rom 9:27>>] that went out __by__ a thousand shall leave an hundred, and that which went forth __by__ an hundred shall leave ten, to the house of Israel.
+
+[discrete.pericope]
+==== A Call to Repentance
+
+[.parallel]
+(<<Joel 1:13–20; Zephaniah 2:1–3; Luke 13:1–5>>)
+
+@ ¶ For thus saith the LORD unto the house of Israel, ##Seek##note:x[<<2 Chr 15:2; Jer 29:12–13; Zeph 2:3>>] ye me, and ye shall live:
+@ But ##seek##note:x[<<Hos 4:15; Amos 4:4>>] not Beth-el, nor enter into Gilgal, and pass not to Beer-sheba: for Gilgal shall surely go into captivity, ##and Beth-el##note:x[<<Hos 4:15>>] shall come to nought.
+@ ##Seek##note:x[<<Ezek 33:11>>] the LORD, and ye shall live; lest he break out like fire in the house of Joseph, and devour __it__, and ##__there__##note:x[<<Ezek 20:47–48>>] __be__ none to quench __it__ in Beth-el.
+@ Ye who ##turn##note:x[<<Amos 6:12>>] judgment to wormwood, and leave off righteousness in the earth,
+@ __Seek him__ that ##maketh##note:x[<<Job 9:9; Amos 4:13>>] the seven stars and Orion, and turneth the shadow of death into the morning, and maketh the day dark with night: that calleth for the waters of the sea, and poureth them out upon the face of the earth: ##The LORD##note:x[<<Amos 4:13>>] __is__ his name:
+@ That strengtheneth the ##spoiled##note:tn[Heb. spoil] against the strong, so that the spoiled shall come against the fortress.
+@ They ##hate##note:x[<<1 Kgs 22:8; Isa 29:21>>] him that rebuketh in the gate, and they ##abhor##note:x[<<John 8:45–47>>] him that speaketh uprightly.
+@ Forasmuch therefore as your treading __is__ upon the poor, and ye take from him burdens of wheat: ##ye have built##note:x[<<Deut 28:30; Mic 6:15; Zeph 1:13>>] houses of hewn stone, but ye shall not dwell in them; ye have planted pleasant vineyards, but ye shall not drink wine of them.note:tn[__pleasant…__: Heb. vineyards of desire]
+@ For I know your manifold transgressions and your mighty sins: ##they afflict##note:x[<<Amos 2:6–7>>] the just, they ##take##note:x[<<Isa 1:23>>] a bribe, and they turn aside the poor ##in the##note:x[<<Amos 5:10>>] gate __from their right__.note:tn[__a bribe__: or, a ransom]
+@ Therefore ##the prudent##note:x[<<Eccl 3:7; Hos 4:4>>] shall keep silence in that time; for it __is__ ##an evil##note:x[<<Mic 2:3>>] time.
+@ ##Seek##note:x[<<Mic 6:8; Matt 6:33>>] good, and not evil, that ye may live: ##and so##note:x[<<Josh 1:9>>] the LORD, the God of hosts, shall be with you, as ye have spoken.
+@ ##Hate##note:x[<<Ps 97:10; Rom 12:9; 3 John 1:11>>] the evil, and love the good, and establish judgment in the gate: it may be that the LORD God of hosts will be gracious unto the remnant of Joseph.
+
+[discrete.pericope]
+==== Woe to Rebellious Israel
+
+[.parallel]
+(<<Acts 7:39–43>>)
+
+@ Therefore the LORD, the God of hosts, the Lord, saith thus; ##Wailing##note:x[<<Joel 1:11>>] __shall be__ in all streets; and they shall say in all the highways, Alas! alas! and they shall call the husbandman to mourning, and ##such##note:x[<<Jer 9:17–19>>] as are skilful of lamentation to wailing.
+@ And ##in##note:x[<<Isa 16:10; Jer 48:33>>] all vineyards __shall be__ wailing: for ##I will##note:x[<<Exod 12:12>>] pass through thee, saith the LORD.
+@ Woe unto you that desire the day of the LORD! to what end __is__ it for you? ##the day of the LORD __is__##note:x[<<Joel 1:15; 2:1–2, 31>>] darkness, and not light.
+@ ##As if##note:x[<<Isa 24:17–18; Jer 15:2–3; 48:43–44>>] a man did flee from a lion, and a bear met him; or went into the house, and leaned his hand on the wall, and a serpent bit him.
+@ __Shall__ not the day of the LORD __be__ ##darkness##note:x[<<Isa 13:10; Ezek 34:12>>], and not light? even very dark, and no brightness in it?
+
+@ ¶ I ##hate##note:x[<<Prov 28:9; Isa 1:11–16>>], I despise your feast days, and ##I will##note:x[<<Lev 26:31>>] not smell in your solemn assemblies.note:tn[__in…__: or, your holy days]
+@ Though ye ##offer##note:x[<<Isa 66:3; Mic 6:6–7>>] me burnt offerings and your meat offerings, I will not accept __them:__ neither will I regard the ##peace offerings##note:x[<<Amos 4:4–5>>] of your fat beasts.note:tn[__peace…__: or, thank offerings]
+@ Take thou away from me ##the noise##note:x[<<Amos 6:5; 8:3, 10>>] of thy songs; for I will not hear the melody of thy viols.
+@ But ##let##note:x[<<Prov 21:3; Hos 6:6; Mic 6:8>>] judgment ##run##note:tn[Heb. roll] down as waters, and righteousness as a mighty stream.
+@ ##Have ye offered unto me sacrifices and offerings in the wilderness forty years, O house of Israel?##note:x[<<Neh 9:18; Ezek 20:8; Acts 7:42–43>>]
+@ But ye have borne ##the tabernacle of your Moloch##note:x[<<Lev 20:2–5; 1 Kgs 11:33; 2 Kgs 23:12–13>>] and Chiun your images, the star of your god, which ye made to yourselves.note:tn[__the tabernacle…__: or, Siccuth your king]
+@ Therefore will I cause you to go into captivity ##beyond##note:x[<<2 Kgs 17:6; Acts 7:43>>] Damascus, saith the LORD, whose name __is__ The God of hosts.
+
+=== @6
+
+[discrete.pericope]
+==== Woe to Those at Ease in Zion
+
+[.parallel]
+(<<Luke 6:24–26>>)
+
+@ Woe ##to them##note:x[<<Isa 32:9–11; Luke 12:17–20; Jas 5:5>>] __that are__ at ease in Zion, and trust in the mountain of Samaria, __which are__ named ##chief##note:tn[or, firstfruits] of the nations, to whom the house of Israel came!note:tn[__are at…__: or, are secure]
+@ ##Pass##note:x[<<Nah 3:8>>] ye unto ##Calneh##note:x[<<Gen 10:10>>], and see; and from thence go ye to Hamath the great: then go down to Gath of the Philistines: __be they__ ##better##note:x[<<Nah 3:8>>] than these kingdoms? or their border greater than your border?
+@ Ye that ##put##note:x[<<Isa 56:12; Ezek 12:27; Amos 9:10>>] far away the evil day, and cause the ##seat##note:tn[or, habitation] of violence to come near;
+@ That lie upon beds of ivory, and stretch themselves upon their couches, and eat the lambs out of the flock, and the calves out of the midst of the stall;note:tn[__stretch…__: or, abound with superfluities]
+@ That ##chant##note:tn[or, quaver] ##to the##note:x[<<Isa 5:12>>] sound of the viol, __and__ invent to themselves instruments of musick, ##like##note:x[<<Amos 5:23; 8:3>>] David;
+@ That drink wine in bowls, and anoint themselves with the chief ointments: but they are not grieved for the ##affliction##note:tn[Heb. breach] of Joseph.note:tn[__wine…__: or, in bowls of wine]
+
+@ ¶ Therefore now ##shall they##note:x[<<Amos 7:11>>] go captive with the first that go captive, and the banquet of them that stretched themselves shall be removed.
+
+[discrete.pericope]
+==== The Pride of Israel
+
+@ The Lord GOD hath ##sworn##note:x[<<Jer 51:14; Amos 4:2>>] by himself, saith the LORD the God of hosts, I abhor ##the excellency##note:x[<<Amos 8:7>>] of Jacob, and hate his palaces: therefore will I deliver up the city with all that is therein.note:tn[__that…__: Heb. the fulness thereof]
+@ And it shall come to pass, ##if##note:x[<<Amos 5:3>>] there remain ten men in one house, that they shall die.
+@ And a man’s uncle shall take him up, and he ##that burneth##note:x[<<1 Sam 31:12; Amos 8:3>>] him, to bring out the bones out of the house, and shall say unto him that __is__ by the sides of the house, __Is there__ yet __any__ with thee? and he shall say, No. Then shall he say, ##Hold##note:x[<<Amos 5:13>>] thy tongue: for we may not make mention of the name of the LORD.note:tn[__we…__: or, they will not, or, have not]
+@ For, behold, ##the LORD##note:x[<<Isa 55:11>>] commandeth, and ##he will##note:x[<<2 Kgs 25:9; Amos 3:15>>] smite the great house with ##breaches##note:tn[or, droppings], and the little house with clefts.
+
+@ ¶ Shall horses run upon the rock? will __one__ plow __there__ with oxen? ##for##note:x[<<Hos 10:4; Amos 5:7, 11–12>>] ye have turned judgment into gall, and the fruit of righteousness into hemlock:
+@ Ye ##which##note:x[<<Luke 12:19–20>>] rejoice in a thing of nought, which say, ##Have##note:x[<<Isa 28:14–15>>] we not taken to us horns by our own strength?
+@ But, behold, I will raise up against you a nation, O house of Israel, saith the LORD the God of hosts; and they shall afflict you ##from##note:x[<<1 Kgs 8:65>>] the entering in of Hemath unto the ##river##note:tn[or, valley] of the wilderness.
+
+=== @7
+
+[discrete.pericope]
+==== The Locusts, Fire, and Plumb Line
+
+[.parallel]
+(<<Joel 2:1–11>>)
+
+@ Thus hath the Lord GOD ##shewed##note:x[<<Amos 8:1>>] unto me; and, behold, ##he##note:x[<<Joel 1:4>>] formed ##grasshoppers##note:tn[or, green worms] in the beginning of the shooting up of the latter growth; and, lo, __it was__ the latter growth after the king’s mowings.
+@ And it came to pass, __that__ when they had made an end of eating the grass of the land, then I said, O Lord GOD, forgive, I beseech thee: ##by whom shall Jacob arise##note:x[<<Ezek 11:13>>]? ##for##note:x[<<Isa 37:4>>] he __is__ small.note:tn[__by…__: or, who of (or, for,) Jacob shall stand?]
+@ ##The LORD repented for this: It shall not be, saith the LORD.##note:x[<<Deut 32:36; Hos 11:8; Jonah 3:10>>]
+
+@ ¶ Thus hath the Lord GOD shewed unto me: and, behold, the Lord GOD called to contend by fire, and it devoured the great deep, and did eat up a part.
+@ Then said I, O Lord GOD, cease, I beseech thee: by whom shall Jacob arise? for he __is__ small.note:tn[__by…__: or, who of (or, for,) Jacob shall stand?]
+@ The LORD repented for this: This also shall not be, saith the Lord GOD.
+
+@ ¶ Thus he shewed me: and, behold, the Lord stood upon ##a wall##note:x[<<2 Kgs 21:13; Isa 28:17>>] __made__ by a plumbline, with a plumbline in his hand.
+@ And the LORD said unto me, Amos, what seest thou? And I said, A plumbline. Then said the Lord, Behold, ##I will set##note:x[<<Lam 2:8>>] a plumbline in the midst of my people Israel: ##I will not##note:x[<<Jer 15:6; Amos 8:2>>] again pass by them any more:
+@ And the high places of Isaac shall be desolate, and the sanctuaries of Israel shall be laid waste; and I will rise against the house of Jeroboam with the sword.
+
+[discrete.pericope]
+==== Amaziah Accuses Amos
+
+@ ¶ Then Amaziah ##the priest##note:x[<<1 Kgs 12:31–32; Matt 21:23>>] of Beth-el sent to Jeroboam king of Israel, saying, Amos ##hath##note:x[<<Jer 38:4>>] conspired against thee in the midst of the house of Israel: the land is not able to bear all his words.
+@ For thus Amos saith, Jeroboam shall die by the sword, and Israel shall surely be led away captive out of their own land.
+@ Also Amaziah said unto Amos, O thou seer, ##go##note:x[<<Matt 8:34>>], flee thee away into the land of Judah, and there ##eat##note:x[<<1 Cor 2:14>>] bread, and prophesy there:
+@ But ##prophesy##note:x[<<Amos 2:12>>] not again any more at Beth-el: ##for##note:x[<<1 Kgs 12:29, 32>>] it __is__ the king’s ##chapel##note:tn[or, sanctuary], and it __is__ the king’s court.note:tn[__king’s court__: Heb. house of the kingdom]
+
+@ ¶ Then answered Amos, and said to Amaziah, I __was__ no prophet, ##neither##note:x[<<2 Kgs 2:5>>] __was__ I a prophet’s son; but I __was__ ##an herdman##note:x[<<Amos 1:1; Zech 13:5>>], and a gatherer of sycomore fruit&#58;note:tn[__sycomore…__: or, wild figs]
+@ And the LORD ##took##note:x[<<2 Sam 7:8>>] me as I followed the flock, and the LORD said unto me, ##Go##note:x[<<Ezek 2:3–4>>], prophesy unto my people Israel.note:tn[__as…__: Heb. from behind]
+
+@ ¶ Now therefore hear thou the word of the LORD: Thou sayest, ##Prophesy##note:x[<<Mic 2:6>>] not against Israel, ##and drop##note:x[<<Ezek 20:46; 21:2>>] not __thy word__ against the house of Isaac.
+@ Therefore thus saith the LORD; ##Thy wife##note:x[<<Jer 28:16>>] shall be an harlot in the city, and thy sons and thy daughters shall fall by the sword, and thy land shall be divided by line; and thou shalt ##die##note:x[<<2 Kgs 17:6; Hos 9:3>>] in a polluted land: and Israel shall surely go into captivity forth of his land.
+
+=== @8
+
+[discrete.pericope]
+==== The Basket of Summer Fruit
+
+@ ##Thus hath the Lord GOD shewed unto me: and behold a basket of summer fruit.##note:x[<<Amos 7:1>>]
+@ And he said, ##Amos##note:x[<<Amos 7:8>>], what seest thou? And I said, A basket of summer fruit. Then said the LORD unto me, ##The end##note:x[<<Lam 4:18>>] is come upon my people of Israel; ##I will not##note:x[<<Amos 7:8>>] again pass by them any more.
+@ And ##the songs##note:x[<<Amos 5:23>>] of the temple shall be howlings in that day, saith the Lord GOD: __there shall be__ ##many##note:x[<<Jer 9:21–22>>] dead bodies in every place; ##they shall##note:x[<<Amos 6:9–10>>] cast __them__ forth with silence.note:tn[__shall be howlings__: Heb. shall howl]note:tn[__with…__: Heb. be silent]
+
+@ ¶ Hear this, O ye that ##swallow##note:x[<<Ps 14:4; Prov 30:14; Amos 5:11>>] up the needy, even to make the poor of the land to fail,
+@ Saying, When will the new moon be gone, that we may sell corn? ##and the##note:x[<<Neh 13:15–21>>] sabbath, that we may set forth wheat, ##making##note:x[<<Mic 6:10–11>>] the ephah small, and the shekel great, and ##falsifying the balances by deceit##note:x[<<Hos 12:7>>]?note:tn[__new…__: or, month]note:tn[__set…__: Heb. open]note:tn[__falsifying…__: Heb. perverting the balances of deceit]
+@ ##That we may buy the poor for silver, and the needy for a pair of shoes; __yea__, and sell the refuse of the wheat?##note:x[<<Amos 2:6>>]
+@ The LORD hath ##sworn##note:x[<<Amos 6:8>>] by the excellency of Jacob, Surely ##I will##note:x[<<Hos 7:2; 9:9>>] never forget any of their works.
+@ Shall not the land tremble for this, and ##every one##note:x[<<Hos 4:3; Amos 9:5>>] mourn that dwelleth therein? and it shall ##rise##note:x[<<Amos 9:5>>] up wholly as a flood; and it shall be cast out and drowned, as __by__ the flood of Egypt.
+@ And it shall come to pass in that day, saith the Lord GOD, ##that I##note:x[<<Jer 15:9>>] will cause the sun to go down at noon, ##and I##note:x[<<Matt 27:45; Mark 15:33>>] will darken the earth in the clear day:
+@ And ##I will turn##note:x[<<Job 20:23>>] your feasts into mourning, and all your songs into lamentation; and I will bring up sackcloth upon all loins, and baldness upon every head; and I will make it ##as the##note:x[<<Jer 6:26; Zech 12:10>>] mourning of an only __son__, and the end thereof as a bitter day.
+
+@ ¶ Behold, the days come, saith the Lord GOD, that I will send a famine in the land, not a famine of bread, nor a thirst for water, ##but##note:x[<<1 Sam 3:1; 28:6; Ps 74:9>>] of hearing the words of the LORD:
+@ And they shall wander from sea to sea, and from the north even to the east, they ##shall run##note:x[<<Rom 11:7–10>>] to and fro to seek the word of the LORD, and shall not find __it__.
+@ ##In that day shall the fair virgins and young men faint for thirst.##note:x[<<Hos 2:3>>]
+@ They that swear by the ##sin##note:x[<<Deut 9:21; 1 Kgs 12:28–29>>] of Samaria, and say, Thy god, O Dan, liveth; and, The ##manner##note:tn[Heb. way] of Beer-sheba liveth; even they shall fall, and never rise up again.
+
+=== @9
+
+[discrete.pericope]
+==== The Destruction of Israel
+
+@ ##I saw##note:x[<<Isa 6:1; John 1:18>>] the Lord standing upon the altar: and he said, Smite the ##lintel##note:tn[or, chapiter, or, knop] of the door, that the posts may shake: and cut them ##in the head##note:x[<<Ps 68:21>>], all of them; and I will slay the last of them with the sword: he that fleeth of them shall not flee away, and he that escapeth of them shall not be delivered.note:tn[__cut…__: or, wound them]
+@ Though they ##dig##note:x[<<Ps 139:7–10>>] into hell, thence shall mine hand take them; though they ##climb##note:x[<<Jer 51:53>>] up to heaven, thence will I bring them down:
+@ And though they ##hide##note:x[<<Job 34:22; Jer 23:23–24>>] themselves in the top of Carmel, I will search and take them out thence; and though they be ##hid##note:x[<<Jer 16:16>>] from my sight in the bottom of the sea, thence will I command the serpent, and he shall bite them:
+@ And though they ##go##note:x[<<Lev 26:33>>] into captivity before their enemies, thence will I command the sword, and it shall slay them: and I will ##set##note:x[<<Jer 44:11>>] mine eyes upon them for evil, and not for good.
+@ And the Lord GOD of hosts __is__ he that ##toucheth##note:x[<<Ps 46:6; Isa 64:1>>] the land, and it shall melt, ##and all##note:x[<<Amos 8:8>>] that dwell therein shall mourn: and it shall rise up wholly like a flood; and shall be drowned, as __by__ the flood of Egypt.
+@ __It is__ he that ##buildeth##note:x[<<Ps 104:3>>] his ##stories##note:tn[or, spheres: Heb. ascensions] in the heaven, and hath founded his ##troop##note:tn[or, bundle] in the earth; he that ##calleth##note:x[<<Amos 5:8>>] for the waters of the sea, and poureth them out upon the face of the earth: ##The LORD##note:x[<<Amos 4:13>>] __is__ his name.
+@ __Are__ ye not as children of the Ethiopians unto me, O children of Israel? saith the LORD. Have not I brought up Israel out of the land of Egypt? and ##the Philistines##note:x[<<Deut 2:23; Jer 47:4>>] from Caphtor, and ##the Syrians##note:x[<<2 Kgs 16:9>>] from Kir?
+@ note:x[<<Jer 30:11>>]Behold, ##the eyes##note:x[<<Jer 44:27; Amos 9:4>>] of the Lord GOD __are__ upon the sinful kingdom, and I will destroy it from off the face of the earth; saving that I will not utterly destroy the house of Jacob, saith the LORD.
+@ For, lo, I will command, and I will ##sift##note:tn[Heb. cause to move] the house of Israel among all nations, like as __corn__ is sifted in a sieve, yet shall not the least ##grain##note:tn[Heb. stone] fall upon the earth.
+@ All ##the sinners##note:x[<<Isa 33:14; Matt 13:49–50>>] of my people shall die by the sword, which say, ##The evil##note:x[<<Amos 6:3>>] shall not overtake nor prevent us.
+
+[discrete.pericope]
+==== A Promise of Restoration
+
+[.parallel]
+(<<Acts 15:5–21>>)
+
+@ ¶ In ##that day##note:x[<<Acts 15:15–17>>] will I ##raise##note:x[<<Jer 33:14–16>>] up ##the tabernacle##note:x[<<Isa 16:5>>] of David that is fallen, and ##close##note:tn[Heb. hedge, or, wall] up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old:
+@ That they may possess the remnant of Edom, and of all the heathen, ##which are called by my name##note:x[<<Isa 43:7; 63:19; 65:1>>], saith the LORD that doeth this.note:tn[__which…__: Heb. upon whom my name is called]
+@ Behold, the days come, saith the LORD, that the ##plowman##note:x[<<Lev 26:5; John 4:35>>] shall overtake the reaper, and the treader of grapes him that ##soweth##note:tn[Heb. draweth forth] seed; and ##the mountains##note:x[<<Joel 3:18>>] shall drop ##sweet##note:tn[or, new] wine, and all the hills shall melt.
+@ And ##I will bring##note:x[<<Jer 30:3, 18>>] again the captivity of my people of Israel, and they shall ##build##note:x[<<Isa 61:4>>] the waste cities, and inhabit __them;__ and they shall plant vineyards, and drink the wine thereof; they shall also make gardens, and eat the fruit of them.
+@ And I will plant them upon their land, and ##they shall##note:x[<<Isa 60:21; Jer 24:6; Ezek 37:25>>] no more be pulled up out of their land which I have given them, saith the LORD thy God.

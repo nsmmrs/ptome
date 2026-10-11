@@ -1,0 +1,29 @@
+version: 2
+scheme:
+  psalter:
+    cite: "{{psalm}}:{{verse}}"
+    level:
+      - name: "psalm"
+        break: "heading"
+        depth: 1
+        id: "ps{{psalm}}"
+        reftext: "Psalm {{psalm}}"
+        title: "Psalm {{psalm}}{{#title}}. __{{title}}__{{/title}}"
+      - name: "verse"
+        sep: ":"
+        break: "line"
+        default: true
+        id: "ps{{psalm}}-{{verse}}"
+        reftext: "{{psalm}}:{{verse}}"
+        label: "{{^first}}{{verse}}.{{/first}}"
+        label-after: " "
+settings:
+  overlay-role: "day"
+  overlay-after: " "
+citation:
+  default:
+    attribution: "Psalm {{passage}}"
+    title: "{{title}}"
+  bcp:
+    attribution: "Psalm {{start.psalm|roman}}."
+    title: ""

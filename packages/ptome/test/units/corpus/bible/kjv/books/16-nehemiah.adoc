@@ -1,0 +1,600 @@
+== @NEH
+
+[.book-title]
+The Book of Nehemiah
+
+=== @1
+
+[discrete.pericope]
+==== Nehemiah’s Prayer
+
+[.parallel]
+(<<Deuteronomy 30:1–10>>)
+
+@ The words of ##Nehemiah##note:x[<<Neh 10:1>>] the son of Hachaliah. And it came to pass ##in the month##note:x[<<Zech 7:1>>] Chisleu, in the twentieth year, as I was in ##Shushan##note:x[<<Esth 1:2>>] the palace,
+@ That ##Hanani##note:x[<<Neh 7:2>>], one of my brethren, came, he and __certain__ men of Judah; and I asked them concerning the Jews that had escaped, which were left of the captivity, and concerning Jerusalem.
+@ And they said unto me, The remnant that are left of the captivity there in the province __are__ in great affliction and reproach: ##the wall##note:x[<<2 Kgs 25:10; Neh 2:17>>] of Jerusalem also __is__ broken down, and the gates thereof are burned with fire.
+
+@ ¶ And it came to pass, when I heard these words, that ##I sat down##note:x[<<Ezra 10:1; Ps 137:1; Dan 9:3>>] and wept, and mourned __certain__ days, and fasted, and prayed before the God of heaven,
+
+@ And said, I beseech thee, O LORD God of heaven, ##the great##note:x[<<Deut 7:21; Dan 9:4–19>>] and terrible God, that ##keepeth##note:x[<<Exod 20:6>>] covenant and mercy for them that love him and observe his commandments:
+@ Let ##thine ear##note:x[<<Ps 34:15>>] now be attentive, and thine eyes open, that thou mayest hear the prayer of thy servant, which I pray before thee now, day and night, for the children of Israel thy servants, and ##confess##note:x[<<Dan 9:4, 20>>] the sins of the children of Israel, which we have sinned against thee: both I and my father’s house have sinned.
+@ We have ##dealt##note:x[<<Dan 9:5–6>>] very corruptly against thee, and have not kept the commandments, nor the statutes, nor the judgments, ##which thou##note:x[<<Dan 9:11, 13>>] commandedst thy servant Moses.
+@ Remember, I beseech thee, the word that thou commandedst thy servant Moses, saying, ##__If__ ye transgress##note:x[<<Lev 26:33–46; Deut 4:25–27; 28:64>>], I will scatter you abroad among the nations:
+@ But ##__if__ ye turn##note:x[<<Deut 4:29–31; 30:2–5; Jer 29:11–14>>] unto me, and keep my commandments, and do them; though there were of you cast out unto the uttermost part of the heaven, __yet__ will I gather them from thence, and will bring them unto the place that I have chosen to set my name there.
+@ ##Now these##note:x[<<Deut 9:29; Dan 9:15–27>>] __are__ thy servants and thy people, whom thou hast redeemed by thy great power, and by ##thy strong##note:x[<<Dan 9:15>>] hand.
+@ O Lord, I beseech thee, ##let now##note:x[<<Neh 1:6>>] thine ear be attentive to the prayer of thy servant, and to the prayer of thy servants, who desire to fear thy name: and prosper, I pray thee, thy servant this day, and ##grant##note:x[<<Neh 2:8; Prov 21:1>>] him mercy in the sight of this man. For I was the king’s cupbearer.
+
+=== @2
+
+[discrete.pericope]
+==== Nehemiah Sent to Jerusalem
+
+@ And it came to pass in the month Nisan, in ##the twentieth##note:x[<<Ezra 7:1; Neh 1:1>>] year of Artaxerxes the king, __that__ wine __was__ before him: and ##I took up##note:x[<<Neh 1:11>>] the wine, and gave __it__ unto the king. Now I had not been __beforetime__ sad in his presence.
+@ Wherefore the king said unto me, Why __is__ thy countenance sad, seeing thou __art__ not sick? this __is__ nothing __else__ but ##sorrow##note:x[<<Prov 15:13>>] of heart. Then I was very sore afraid,
+@ And said unto the king, ##Let the king##note:x[<<1 Kgs 1:31; Dan 2:4>>] live for ever: why should not my countenance be sad, when ##the city##note:x[<<Neh 1:3>>], the place of my fathers’ sepulchres, __lieth__ waste, and the gates thereof are consumed with fire?
+@ Then the king said unto me, For what dost thou make request? ##So I prayed##note:x[<<Neh 1:4; Prov 3:6; Phil 4:6>>] to the God of heaven.
+@ And I said unto the king, If it please the king, and if thy servant have found favour in thy sight, that thou wouldest send me unto Judah, unto the city of my fathers’ sepulchres, that I may build it.
+@ And the king said unto me, (the ##queen##note:tn[Heb. wife] also sitting by him,) For how long shall thy journey be? and when wilt thou return? ##So it pleased##note:x[<<Isa 65:24>>] the king to send me; and ##I set him a time##note:x[<<Neh 5:14; 13:6>>].
+@ Moreover I said unto the king, If it please the king, ##let letters##note:x[<<Ezra 6:6; 7:21; Neh 2:9>>] be given me to the governors beyond the river, that they may convey me over till I come into Judah;
+@ And a letter unto Asaph the keeper of ##the king##note:x[<<Ezra 7:6; Isa 66:14>>]’s forest, that he may give me timber to make beams for the gates of the palace which __appertained__ to ##the house##note:x[<<Neh 7:2>>], and for the wall of the city, and for the house that I shall enter into. And the king granted me, according to the good hand of my God upon me.
+
+@ ¶ Then I came to the governors beyond the river, and gave them the king’s letters. Now the king had sent captains of the army and horsemen with me.
+@ When ##Sanballat##note:x[<<Neh 2:19; 4:7; 6:1>>] the Horonite, and Tobiah the servant, the Ammonite, heard __of it__, it grieved them exceedingly that there was come a man to seek the welfare of the children of Israel.
+
+[discrete.pericope]
+==== Nehemiah Inspects the Walls
+
+@ ##So I came to Jerusalem, and was there three days.##note:x[<<Ezra 8:32>>]
+
+@ ¶ And I arose in the night, I and some few men with me; neither told I __any__ man what ##my God##note:x[<<Ezra 7:27; Jer 31:33; Rev 17:17>>] had put in my heart to do at Jerusalem: neither __was there any__ beast with me, save the beast that I rode upon.
+@ And I went out by night by ##the gate##note:x[<<2 Chr 26:9; Neh 3:13>>] of the valley, even before the dragon well, and to the dung port, and viewed ##the walls##note:x[<<Neh 1:3>>] of Jerusalem, which were broken down, and the gates thereof were consumed with fire.
+@ Then I went on to ##the gate of the fountain##note:x[<<2 Kgs 20:20; 2 Chr 32:30; Neh 3:15>>], and to the king’s pool: but __there was__ no place for the beast __that was__ under me to pass.
+@ Then went I up in the night by ##the brook##note:x[<<2 Sam 15:23>>], and viewed the wall, and turned back, and entered by the gate of the valley, and __so__ returned.
+@ And the rulers knew not whither I went, or what I did; neither had I as yet told __it__ to the Jews, nor to the priests, nor to the nobles, nor to the rulers, nor to the rest that did the work.
+
+@ ¶ Then said I unto them, ##Ye see##note:x[<<Lam 3:51>>] the distress that we __are__ in, how Jerusalem __lieth__ waste, and the gates thereof are burned with fire: ##come##note:x[<<Isa 35:3–4>>], and let us build up the wall of Jerusalem, that we be no more ##a reproach##note:x[<<Ezek 5:14>>].
+@ Then I told them of the hand of my God which was good upon me; as also the king’s words that he had spoken unto me. And they said, Let us rise up and build. ##So they strengthened##note:x[<<1 Chr 19:13; 2 Chr 32:5; Phil 2:13>>] their hands for __this__ good __work__.
+@ note:x[<<Ps 44:13–14>>]But when ##Sanballat##note:x[<<Neh 6:1–2>>] the Horonite, and Tobiah the servant, the Ammonite, and Geshem the Arabian, heard __it__, they laughed us to scorn, and despised us, and said, What __is__ this thing that ye do? ##will ye rebel##note:x[<<Neh 6:6>>] against the king?
+@ Then answered I them, and said unto them, ##The God##note:x[<<Neh 2:4>>] of heaven, he will prosper us; therefore we his servants will arise and build: but ##ye have no##note:x[<<Ezra 4:3; Acts 8:21>>] portion, nor right, nor memorial, in Jerusalem.
+
+=== @3
+
+[discrete.pericope]
+==== The Builders of the Walls
+
+@ Then Eliashib the high priest rose up with his brethren the priests, and they builded ##the sheep gate##note:x[<<Neh 12:39>>]; they sanctified it, and set up the doors of it; even unto ##the tower##note:x[<<Neh 12:39; Jer 31:38>>] of Meah they sanctified it, unto the tower of Hananeel.
+@ And next unto him builded ##the men##note:x[<<Neh 7:36>>] of Jericho. And next to them builded Zaccur the son of Imri.note:tn[__next unto…__: Heb. at his hand]
+@ But ##the fish gate##note:x[<<2 Chr 33:14; Neh 12:39>>] did the sons of Hassenaah build, who __also__ laid the beams thereof, and set up the doors thereof, the locks thereof, and the bars thereof.
+@ And next unto them repaired ##Meremoth##note:x[<<Neh 3:21>>] the son of ##Urijah##note:x[<<Ezra 8:33>>], the son of Koz. And next unto them repaired Meshullam the son of Berechiah, the son of Meshezabeel. And next unto them repaired Zadok the son of Baana.
+@ And next unto them ##the Tekoites##note:x[<<Neh 3:27>>] repaired; but their nobles put not their necks to the work of their Lord.
+@ ##Moreover the old gate repaired Jehoiada the son of Paseah, and Meshullam the son of Besodeiah; they laid the beams thereof, and set up the doors thereof, and the locks thereof, and the bars thereof.##note:x[<<Neh 12:39>>]
+@ And next unto them repaired Melatiah the Gibeonite, and Jadon the Meronothite, the men of Gibeon, and of Mizpah, unto the throne of the governor on this side the river.
+@ Next unto him repaired Uzziel the son of Harhaiah, of the goldsmiths. Next unto him also repaired Hananiah the son of __one of__ the apothecaries, and they fortified Jerusalem unto ##the broad wall##note:x[<<Neh 12:38>>].note:tn[__fortified…__: or, left Jerusalem unto the broad wall]
+@ And next unto them repaired Rephaiah the son of Hur, ##the ruler##note:x[<<Neh 3:12>>] of the half part of Jerusalem.
+@ And next unto them repaired Jedaiah the son of Harumaph, even over against his house. And next unto him repaired Hattush the son of Hashabniah.
+@ Malchijah the son of Harim, and Hashub the son of Pahath-moab, repaired the other piece, and ##the tower##note:x[<<Neh 12:38>>] of the furnaces.note:tn[__other…__: Heb. second measure]
+@ And next unto him repaired Shallum the son of Halohesh, ##the ruler##note:x[<<Neh 3:9>>] of the half part of Jerusalem, he and his daughters.
+@ ##The valley gate##note:x[<<Neh 2:13>>] repaired Hanun, and the inhabitants of Zanoah; they built it, and set up the doors thereof, the locks thereof, and the bars thereof, and a thousand cubits on the wall unto the dung gate.
+@ But the dung gate repaired Malchiah the son of Rechab, the ruler of part of ##Beth-haccerem##note:x[<<Jer 6:1>>]; he built it, and set up the doors thereof, the locks thereof, and the bars thereof.
+@ note:x[<<John 9:7>>]But ##the gate##note:x[<<Neh 12:37>>] of the fountain repaired Shallun the son of Col-hozeh, the ruler of part of Mizpah; he built it, and covered it, and set up the doors thereof, the locks thereof, and the bars thereof, and the wall of the pool of ##Siloah##note:x[<<Isa 8:6>>] by the king’s garden, and unto the stairs that go down from the city of David.
+@ After him repaired Nehemiah the son of Azbuk, ##the ruler##note:x[<<Neh 3:9, 12>>] of the half part of Beth-zur, unto __the place__ over against ##the sepulchres##note:x[<<Acts 2:29>>] of David, and to the pool that was made, and unto the house of the mighty.
+@ After him repaired the Levites, Rehum the son of Bani. Next unto him repaired Hashabiah, the ruler of the half part of Keilah, in his part.
+@ After him repaired their brethren, Bavai the son of Henadad, the ruler of the half part of Keilah.
+@ And next to him repaired Ezer the son of Jeshua, the ruler of Mizpah, another piece over against the going up to the armoury at ##the turning##note:x[<<2 Chr 26:9>>] __of the wall__.
+@ After him Baruch the son of ##Zabbai##note:tn[also called, Zaccai] earnestly repaired the other piece, from the turning __of the wall__ unto the door of the house of ##Eliashib##note:x[<<Neh 3:1>>] the high priest.
+@ After him repaired Meremoth the son of Urijah the son of Koz another piece, from the door of the house of Eliashib even to the end of the house of Eliashib.
+@ And after him repaired the priests, ##the men of the plain##note:x[<<Neh 12:28>>].
+@ After him repaired Benjamin and Hashub over against their house. After him repaired Azariah the son of Maaseiah the son of Ananiah by his house.
+@ After him repaired Binnui the son of Henadad another piece, from the house of Azariah unto the turning __of the wall__, even unto the corner.
+@ Palal the son of Uzai, over against the turning __of the wall__, and the tower which lieth out from the king’s high house, that __was__ ##by the court##note:x[<<Jer 32:2; 37:21>>] of the prison. After him Pedaiah the son of Parosh.
+@ Moreover the Nethinims ##dwelt##note:x[<<Neh 11:21>>] in ##Ophel##note:tn[or, tower], unto __the place__ over against ##the water##note:x[<<Neh 8:1, 3>>] gate toward the east, and the tower that lieth out.note:tn[__dwelt…__: or, which dwelt in Ophel, repaired unto]
+@ After them the Tekoites repaired another piece, over against the great tower that lieth out, even unto the wall of Ophel.
+@ From above ##the horse##note:x[<<2 Kgs 11:16; 2 Chr 23:15; Jer 31:40>>] gate repaired the priests, every one over against his house.
+@ After them repaired Zadok the son of Immer over against his house. After him repaired also Shemaiah the son of Shechaniah, the keeper of the east gate.
+@ After him repaired Hananiah the son of Shelemiah, and Hanun the sixth son of Zalaph, another piece. After him repaired Meshullam the son of Berechiah over against his chamber.
+@ After him repaired Malchiah the goldsmith’s son unto the place of the Nethinims, and of the merchants, over against the gate Miphkad, and to the going up of the corner.note:tn[__going…__: or, corner chamber]
+@ And between the going up of the corner unto ##the sheep gate##note:x[<<Neh 3:1>>] repaired the goldsmiths and the merchants.note:tn[__going…__: or, corner chamber]
+
+=== @4
+
+[discrete.pericope]
+==== The Work Ridiculed
+
+@ But it came to pass, that when ##Sanballat##note:x[<<Neh 2:10>>] heard that we builded the wall, he was wroth, and took great indignation, and ##mocked##note:x[<<Ps 35:15–16; Heb 11:36>>] the Jews.
+@ And he spake before his brethren and ##the army##note:x[<<Ezra 4:9–10>>] of Samaria, and said, What do these ##feeble##note:x[<<1 Cor 1:27>>] Jews? will they fortify themselves? will they sacrifice? will they make an end in a day? will they revive the stones out of the heaps of the rubbish which are burned?note:tn[__fortify…__: Heb. leave to themselves]
+@ Now Tobiah the Ammonite __was__ by him, and he said, Even that which they build, if a fox go up, he shall even break down their stone wall.
+@ ##Hear##note:x[<<Ps 123:3–4>>], O our God; for we are ##despised##note:tn[Heb. despite]: and ##turn##note:x[<<Ps 79:12; Prov 3:34>>] their reproach upon their own head, and give them for a prey in the land of captivity:
+@ And ##cover not##note:x[<<Ps 69:27; 109:14; Jer 18:23>>] their iniquity, and let not their sin be blotted out from before thee: for they have provoked __thee__ to anger before the builders.
+@ So built we the wall; and all the wall was joined together unto the half thereof: for the people ##had a mind##note:x[<<1 Chr 29:3; Neh 6:15; Phil 2:13>>] to work.
+
+@ ¶ But it came to pass, __that__ when ##Sanballat##note:x[<<Neh 2:10; 4:1>>], and Tobiah, and the Arabians, and the Ammonites, and the Ashdodites, heard that the walls of Jerusalem were made up, __and__ that the breaches began to be stopped, then they were very wroth, note:tn[__were made up__: Heb. ascended]
+@ And conspired all of them together to come __and__ to fight against Jerusalem, and to hinder it.note:tn[__to hinder…__: Heb. to make an error to it]
+
+[discrete.pericope]
+==== Discouragement Overcome
+
+@ ##Nevertheless##note:x[<<Ps 50:15; Acts 4:24–30>>] we made our prayer unto our God, and ##set a watch##note:x[<<1 Pet 5:8>>] against them day and night, because of them.
+@ And Judah said, The strength of the bearers of burdens is decayed, and __there is__ much rubbish; so that we are not able to build the wall.
+@ And our adversaries said, They shall not know, neither see, till we come in the midst among them, and slay them, and cause the work to cease.
+@ And it came to pass, that when the Jews which dwelt by them came, they said unto us ten times, From all places whence ye shall return unto us __they will be upon you__.note:tn[__From all…__: or, That from all places ye must return to us]
+
+@ ¶ Therefore set I in the lower places behind the wall, __and__ on the higher places, I even set the people after their families with their swords, their spears, and their bows.note:tn[__in the…__: Heb. from the lower parts of the place, etc]
+@ note:x[<<Num 14:9; Isa 41:10–14>>]And I looked, and rose up, and said unto the nobles, and to the rulers, and to the rest of the people, Be not ye afraid of them: remember the Lord, __which is__ great and terrible, and ##fight##note:x[<<2 Sam 10:12>>] for your brethren, your sons, and your daughters, your wives, and your houses.
+@ And it came to pass, when our enemies heard that it was known unto us, and ##God##note:x[<<2 Sam 17:14; Job 5:12–13>>] had brought their counsel to nought, that we returned all of us to the wall, ##every one##note:x[<<Rom 12:11>>] unto his work.
+
+@ And it came to pass from that time forth, __that__ the half of my servants wrought in the work, and the other half of them held both the spears, the shields, and the bows, and the habergeons; and the rulers __were__ behind all the house of Judah.
+@ They which builded on the wall, and they that bare burdens, with those that laded, __every one__ ##with one##note:x[<<2 Cor 6:7; 2 Tim 2:3; 4:7>>] of his hands wrought in the work, and with the other __hand__ held a weapon.
+@ For the builders, every one had his sword girded by his side, and __so__ builded. And he that sounded the trumpet __was__ by me.note:tn[__by his side__: Heb. on his loins]
+
+@ ¶ And I said unto the nobles, and to the rulers, and to the rest of the people, The work __is__ great and large, and we are separated upon the wall, one far from another.
+@ In what place __therefore__ ye hear the sound of the trumpet, resort ye thither unto us: ##our God##note:x[<<Exod 14:14; Deut 1:30; 20:4>>] shall fight for us.
+@ ##So we##note:x[<<Gal 6:9>>] laboured in the work: and half of them held the spears from the rising of the morning till the stars appeared.
+@ Likewise at the same time said I unto the people, Let every one with his servant lodge within Jerusalem, that in the night they may be a guard to us, and labour on the day.
+@ So neither I, nor my brethren, nor my servants, nor the men of the guard which followed me, none of us put off our clothes, __saving that__ every one put them off for washing.note:tn[__saving…__: or, every one went with his weapon for water]
+
+=== @5
+
+[discrete.pericope]
+==== Nehemiah Defends the Oppressed
+
+@ And there was ##a great cry##note:x[<<Isa 5:7>>] of the people and of their wives against their brethren the Jews.
+@ For there were that said, We, our sons, and our daughters, __are__ many: therefore we take up corn __for them__, that we may eat, and live.
+@ __Some__ also there were that said, We have ##mortgaged##note:x[<<Lev 25:35–39>>] our lands, vineyards, and houses, that we might buy corn, because of the dearth.
+@ note:x[<<Ezra 4:13>>]There were also that said, We have borrowed money for the king’s tribute, __and that upon__ our lands and vineyards.
+@ Yet now our flesh __is__ as the flesh of our brethren, our children as their children: and, lo, ##we##note:x[<<Lev 25:39–43; 2 Kgs 4:1>>] bring into bondage our sons and our daughters to be servants, and __some__ of our daughters are brought unto bondage __already:__ neither __is it__ in our power __to redeem them;__ for other men have our lands and vineyards.
+
+@ ¶ ##And I was very angry when I heard their cry and these words.##note:x[<<Exod 11:8; Neh 13:25>>]
+@ Then I consulted with myself, and I rebuked the nobles, and the rulers, and said unto them, ##Ye exact usury##note:x[<<Exod 22:25; Lev 25:36; Deut 23:19–20>>], every one of his brother. And I set a great assembly against them.note:tn[__I consulted…__: Heb. my heart consulted in me]
+@ And I said unto them, We after our ability have ##redeemed##note:x[<<Lev 25:47–49>>] our brethren the Jews, which were sold unto the heathen; and will ye even sell your brethren? or shall they be sold unto us? Then held they their peace, and found nothing __to answer__.
+@ Also I said, It __is__ not good that ye do: ought ye not to ##walk##note:x[<<Lev 25:36>>] in the fear of our God because of the reproach of the heathen our enemies?
+@ I likewise, __and__ my brethren, and my servants, might exact of them money and corn: I pray you, let us leave off this usury.
+@ ##Restore##note:x[<<Isa 58:6>>], I pray you, to them, even this day, their lands, their vineyards, their oliveyards, and their houses, also the hundredth __part__ of the money, and of the corn, the wine, and the oil, that ye exact of them.
+@ Then said they, We will restore __them__, and will require nothing of them; so will we do as thou sayest. Then ##I called##note:x[<<Ezra 10:5>>] the priests, and took an oath of them, that they should do according to this promise.
+@ Also ##I shook my lap##note:x[<<Acts 18:6>>], and said, So God shake out every man from his house, and from his labour, that performeth not this promise, even thus be he shaken out, and ##emptied##note:tn[Heb. empty, or, void]. And all the congregation said, Amen, and praised the LORD. And the people did according to this promise.
+
+[discrete.pericope]
+==== Nehemiah’s Generosity
+
+@ ¶ Moreover from the time that I was appointed to be their governor in the land of Judah, ##from the twentieth##note:x[<<Neh 13:6>>] year even unto the two and thirtieth year of Artaxerxes the king, __that is__, twelve years, I and my brethren have not eaten the bread of the governor.
+@ But the former governors that __had been__ before me were chargeable unto the people, and had taken of them bread and wine, beside forty shekels of silver; yea, even their servants bare rule over the people: but so did not I, ##because##note:x[<<Neh 5:9; Prov 16:6; Isa 50:10>>] of the fear of God.
+@ Yea, also ##I continued##note:x[<<Gal 6:9>>] in the work of this wall, neither bought we any land: and all my servants __were__ gathered thither unto the work.
+@ Moreover __there were__ ##at my table##note:x[<<1 Kgs 18:19>>] an hundred and fifty of the Jews and rulers, beside those that came unto us from among the heathen that __are__ about us.
+@ ##Now __that__##note:x[<<1 Kgs 4:22–23>>] which was prepared __for me__ daily __was__ one ox __and__ six choice sheep; also fowls were prepared for me, and once in ten days store of all sorts of wine: yet for all this required not I the bread of the governor, because the bondage was heavy upon this people.
+@ ##Think##note:x[<<Neh 13:14, 22, 31>>] upon me, my God, for good, __according__ to all that I have done for this people.
+
+=== @6
+
+[discrete.pericope]
+==== Sanballat’s Conspiracy
+
+@ Now it came to pass, ##when Sanballat##note:x[<<Neh 2:10, 19; 4:1>>], and Tobiah, and Geshem the Arabian, and the rest of our enemies, heard that I had builded the wall, and __that__ there was no breach left therein; ( though at that time I had not set up the doors upon the gates;)
+@ That Sanballat and Geshem sent unto me, saying, ##Come##note:x[<<Ps 37:12>>], let us meet together in __some one of__ the villages in the plain of ##Ono##note:x[<<1 Chr 8:12>>]. But ##they thought##note:x[<<Ps 37:12>>] to do me mischief.
+@ ##And I sent##note:x[<<Matt 10:16>>] messengers unto them, saying, ##I __am__ doing##note:x[<<John 9:4; 1 Tim 4:15–16>>] a great work, so that I cannot come down: why should the work cease, whilst I leave it, and come down to you?
+@ Yet they sent unto me four times after this sort; and I answered them after the same manner.
+@ Then sent Sanballat his servant unto me in like manner the fifth time ##with an open letter##note:x[<<2 Cor 11:13–15; 2 Thess 2:10>>] in his hand;
+@ note:x[<<Neh 2:19>>]Wherein __was__ written, It is reported among the heathen, and ##Gashmu##note:tn[also called, Geshem] saith __it, that__ thou and the Jews think to rebel: for which cause thou buildest the wall, that thou mayest be their king, according to these words.
+@ And thou hast also appointed prophets to preach of thee at Jerusalem, saying, __There is__ a king in Judah: and now shall it be reported to the king according to these words. ##Come now##note:x[<<Prov 26:24–26>>] therefore, and let us take counsel together.
+@ Then I sent unto him, saying, There are no such things done as thou sayest, but ##thou feignest##note:x[<<Job 13:4; Ps 52:2>>] them out of thine own heart.
+@ ##For they##note:x[<<Neh 4:10–14>>] all made us afraid, saying, ##Their hands##note:x[<<Heb 12:12>>] shall be weakened from the work, that it be not done. ##Now therefore##note:x[<<Ps 138:3>>], __O God__, strengthen my hands.
+
+@ Afterward I came unto the house of Shemaiah the son of Delaiah the son of Mehetabeel, who __was__ ##shut up##note:x[<<Jer 36:5>>]; and he said, Let us meet together in the house of God, within the temple, and let us shut the doors of the temple: for they will come to slay thee; yea, in the night will they come to slay thee.
+@ And I said, ##Should such##note:x[<<Ps 11:1–2; Prov 28:1; Acts 21:13>>] a man as I flee? and who __is there__, that, __being__ as I __am__, would go into the temple to save his life? I will not go in.
+@ And, lo, ##I perceived##note:x[<<Ezek 13:22>>] that God had not sent him; but that he pronounced this prophecy against me: for Tobiah and Sanballat had hired him.
+@ Therefore __was__ he hired, ##that I should##note:x[<<Prov 29:5; 2 Tim 1:7>>] be afraid, and do so, and sin, and __that__ they might have __matter__ for an evil ##report, that##note:x[<<Jer 20:10>>] they might reproach me.
+@ My God, ##think thou##note:x[<<Neh 13:29; 2 Tim 4:14–15>>] upon Tobiah and Sanballat according to these their works, and on the prophetess Noadiah, and the rest of the prophets, that would have put me in fear.
+
+[discrete.pericope]
+==== Completion of the Wall
+
+@ ¶ So the ##wall##note:x[<<Ps 1:3>>] was finished in the twenty and fifth __day__ of __the month__ Elul, in ##fifty##note:x[<<Neh 4:1–2>>] and two days.
+@ And it came to pass, that ##when all our enemies##note:x[<<Neh 4:7>>] heard __thereof__, and all the heathen that __were__ about us saw __these things__, they were much cast down in their own eyes: ##for they perceived##note:x[<<Josh 5:1; Ps 126:2>>] that this work was wrought of our God.
+
+@ ¶ Moreover in those days the nobles of Judah sent many letters unto Tobiah, and __the letters__ of Tobiah came unto them.note:tn[__sent…__: Heb. multiplied their letters passing to Tobiah]
+@ For __there were__ many in Judah sworn unto him, because he __was__ the son in law of Shechaniah the son of ##Arah##note:x[<<Ezra 2:5; Neh 7:10>>]; and his son Johanan had taken the daughter of Meshullam the son of Berechiah.
+@ Also they reported his good deeds before me, and uttered my ##words##note:tn[or, matters] to him. __And__ Tobiah sent letters to put me in fear.
+
+=== @7
+
+[discrete.pericope]
+==== Securing the City
+
+@ Now it came to pass, when ##the wall##note:x[<<Neh 6:15>>] was built, and ##I had set up##note:x[<<Neh 6:1>>] the doors, and the porters and the singers and the Levites were appointed,
+@ That I gave ##my brother##note:x[<<Neh 1:2>>] Hanani, and Hananiah the ruler of the palace, charge over Jerusalem: for he __was__ ##a faithful man##note:x[<<Ps 101:6; Matt 25:21>>], and feared God above many.
+@ And I said unto them, Let not the gates of Jerusalem be opened until the sun be hot; and while they stand by, let them shut the doors, and bar __them:__ and appoint watches of the inhabitants of Jerusalem, every one in his watch, and every one __to be__ over against his house.
+
+[discrete.pericope]
+==== The List of Returning Exiles
+
+[.parallel]
+(<<Ezra 2:1–67>>)
+
+@ Now the city __was__ ##large##note:tn[Heb. broad in spaces] and great: but the people __were__ few therein, and the houses __were__ not builded.
+
+@ ¶ And my God put into mine heart to gather together the nobles, and the rulers, and the people, that they might be reckoned by genealogy. And I found a register of the genealogy of them which came up at the first, and found written therein,
+@ These __are__ ##the children##note:x[<<Ezra 2:1–70; 5:8>>] of the province, that went up out of the captivity, of those that had been carried away, ##whom Nebuchadnezzar##note:x[<<Jer 52:1–34>>] the king of Babylon had carried away, and came again to Jerusalem and to Judah, every one unto his city;
+@ note:x[<<Ezra 2:2>>]note:x[<<Ezra 2:2>>]note:x[<<Ezra 2:2>>]Who came with Zerubbabel, Jeshua, Nehemiah, ##Azariah##note:tn[also called, Seraiah], Raamiah, Nahamani, Mordecai, Bilshan, Mispereth, Bigvai, Nehum, Baanah. The number, __I say__, of the men of the people of Israel __was this;__
+@ The children of Parosh, two thousand an hundred seventy and two.
+@ The children of Shephatiah, three hundred seventy and two.
+@ The children of Arah, six hundred fifty and two.
+@ The children of Pahath-moab, of the children of Jeshua and Joab, two thousand and eight hundred __and__ eighteen.
+@ The children of Elam, a thousand two hundred fifty and four.
+@ The children of Zattu, eight hundred forty and five.
+@ The children of Zaccai, seven hundred and threescore.
+@ The children of ##Binnui##note:tn[also called, Bani], six hundred forty and eight.
+@ The children of Bebai, six hundred twenty and eight.
+@ The children of ##Azgad##note:x[<<Ezra 2:12>>], two thousand three hundred twenty and two.
+@ The children of Adonikam, six hundred threescore and seven.
+@ The children of Bigvai, two thousand threescore and seven.
+@ The children of Adin, six hundred fifty and five.
+@ The children of Ater of Hezekiah, ninety and eight.
+@ The children of Hashum, three hundred twenty and eight.
+@ The children of Bezai, three hundred twenty and four.
+@ The children of ##Hariph##note:tn[also called, Jora], an hundred and twelve.
+@ The children of ##Gibeon##note:tn[also called, Gibbar], ninety and five.
+@ The men of Beth-lehem and Netophah, an hundred fourscore and eight.
+@ The men of Anathoth, an hundred twenty and eight.
+@ The men of ##Beth-azmaveth##note:tn[also called, Azmaveth], forty and two.
+@ The men of ##Kirjath-jearim##note:tn[also called, Kirjath-arim], Chephirah, and Beeroth, seven hundred forty and three.
+@ The men of Ramah and Geba, six hundred twenty and one.
+@ The men of Michmas, an hundred and twenty and two.
+@ The men of Beth-el and Ai, an hundred twenty and three.
+@ The men of the other Nebo, fifty and two.
+@ The children of the other Elam, a thousand two hundred fifty and four.
+@ The children of Harim, three hundred and twenty.
+@ The children of Jericho, three hundred forty and five.
+@ The children of Lod, Hadid, and Ono, seven hundred twenty and one.
+@ The children of Senaah, three thousand nine hundred and thirty.
+
+@ ¶ The priests: the children of Jedaiah, of the house of Jeshua, nine hundred seventy and three.
+@ The children of Immer, a thousand fifty and two.
+@ The children of Pashur, a thousand two hundred forty and seven.
+@ The children of Harim, a thousand and seventeen.
+
+@ ¶ The Levites: the children of Jeshua, of Kadmiel, __and__ of the children of ##Hodevah##note:tn[also called, Hodaviah or Judah], seventy and four.
+
+@ ¶ The singers: the children of Asaph, an hundred forty and eight.
+
+@ ¶ The porters: the children of Shallum, the children of Ater, the children of Talmon, the children of Akkub, the children of Hatita, the children of Shobai, an hundred thirty and eight.
+
+@ ¶ The Nethinims: the children of Ziha, the children of Hashupha, the children of Tabbaoth,
+@ The children of Keros, the children of Sia, the children of Padon,
+@ The children of Lebana, the children of Hagaba, the children of Shalmai,
+@ The children of Hanan, the children of Giddel, the children of Gahar,
+@ The children of Reaiah, the children of Rezin, the children of Nekoda,
+@ The children of Gazzam, the children of Uzza, the children of Phaseah,
+@ The children of Besai, the children of Meunim, the children of Nephishesim,
+@ The children of Bakbuk, the children of Hakupha, the children of Harhur,
+@ The children of Bazlith, the children of Mehida, the children of Harsha,
+@ The children of Barkos, the children of Sisera, the children of Tamah,
+@ The children of Neziah, the children of Hatipha.
+
+@ ¶ The children of Solomon’s servants: the children of Sotai, the children of Sophereth, the children of Perida,
+@ The children of Jaala, the children of Darkon, the children of Giddel,
+@ The children of Shephatiah, the children of Hattil, the children of Pochereth of Zebaim, the children of ##Amon##note:tn[also called, Ami].
+@ All the Nethinims, and the children of Solomon’s servants, __were__ three hundred ninety and two.
+@ And these __were__ they which went up __also__ from Tel-melah, ##Tel-haresha##note:x[<<Ezra 2:59>>], Cherub, Addon, and Immer: but they could not shew their father’s house, nor their ##seed##note:tn[or, pedigree], whether they __were__ of Israel.
+@ The children of Delaiah, the children of Tobiah, the children of Nekoda, six hundred forty and two.
+
+@ ¶ And of the priests: the children of Habaiah, the children of Koz, the children of Barzillai, which took __one__ of the daughters of Barzillai the Gileadite to wife, and was called after their name.
+@ These sought their register __among__ ##those that were##note:x[<<1 Chr 9:1; Neh 7:5>>] reckoned by genealogy, but it was not found: therefore were they, as polluted, put from the priesthood.
+@ And ##the Tirshatha##note:x[<<Neh 8:9; 10:1>>] said unto them, that they should not eat of the most holy things, ##till there##note:x[<<Exod 28:30>>] stood __up__ a priest with Urim and Thummim.note:tn[__the Tirshatha__: or, the governor]
+
+@ ¶ The whole congregation together __was__ forty and two thousand three hundred and threescore,
+@ Beside their manservants and their maidservants, of whom __there were__ seven thousand three hundred thirty and seven: and they had two hundred forty and five singing men and singing women.
+@ Their horses, seven hundred thirty and six: their mules, two hundred forty and five:
+@ __Their__ camels, four hundred thirty and five: six thousand seven hundred and twenty asses.
+
+[discrete.pericope]
+==== Offerings by the Exiles
+
+[.parallel]
+(<<Exodus 38:21–31; Ezra 2:68–70>>)
+
+@ ¶ And ##some##note:tn[Heb. part.] of the chief of the fathers gave unto the work. The Tirshatha gave to the treasure a thousand drams of gold, fifty basons, five hundred and thirty priests’ garments.note:tn[__The Tirshatha__: or, the governor]
+@ And __some__ of the chief of the fathers gave to the treasure of the work twenty thousand drams of gold, and two thousand and two hundred pound of silver.
+@ And __that__ which the rest of the people gave __was__ twenty thousand drams of gold, and two thousand pound of silver, and threescore and seven priests’ garments.
+@ So the priests, and the Levites, and the porters, and the singers, and __some__ of the people, and the Nethinims, and all Israel, dwelt in their cities; and when the seventh month came, the children of Israel __were__ in their cities.
+
+=== @8
+
+[discrete.pericope]
+==== Ezra Reads the Law
+
+[.parallel]
+(<<Deuteronomy 31:9–13>>)
+
+@ And all the people gathered themselves together as one man into the street that __was__ ##before##note:x[<<Neh 3:26>>] the water gate; and they spake unto ##Ezra##note:x[<<Ezra 7:6>>] the scribe to ##bring##note:x[<<2 Chr 34:15>>] the book of the law of Moses, which the LORD had commanded to Israel.
+@ And Ezra the ##priest##note:x[<<Mal 2:7>>] brought the law before the congregation both of men and women, and all that could hear with understanding, upon ##the first##note:x[<<Lev 23:24>>] day of the seventh month.note:tn[__that…__: Heb. that understood in hearing]
+@ And he read therein before the street that __was__ before the water gate from the morning until midday, before the men and the women, and those that could understand; and the ##ears##note:x[<<Rev 3:22>>] of all the people __were attentive__ unto the book of the law.note:tn[__from…__: Heb. from the light]
+@ And Ezra the scribe stood upon a pulpit of wood, which they had made for the purpose; and beside him stood Mattithiah, and Shema, and Anaiah, and Urijah, and Hilkiah, and Maaseiah, on his right hand; and on his left hand, Pedaiah, and Mishael, and Malchiah, and Hashum, and Hashbadana, Zechariah, __and__ Meshullam.note:tn[__pulpit…__: Heb. tower of wood]
+@ And Ezra opened the book in the ##sight##note:tn[Heb. eyes] of all the people; (for he was above all the people;) and when he opened it, all the people ##stood up##note:x[<<Judg 3:20>>]:
+@ And Ezra blessed the LORD, the great God. And all the people answered, Amen, Amen, ##with lifting##note:x[<<Lam 3:41; 1 Tim 2:8>>] up their hands: and they ##bowed##note:x[<<Exod 4:31>>] their heads, and worshipped the LORD with __their__ faces to the ground.
+@ Also ##Jeshua##note:x[<<Neh 9:4>>], and ##Bani##note:x[<<Neh 9:4>>], and ##Sherebiah##note:x[<<Neh 9:4>>], Jamin, Akkub, Shabbethai, Hodijah, Maaseiah, Kelita, Azariah, Jozabad, Hanan, Pelaiah, and the Levites, caused the people to understand the law: and the people __stood__ in their place.
+@ So they read in the book in the law of God distinctly, ##and gave the sense##note:x[<<Hab 2:2; Luke 24:45; Acts 28:23>>], and caused __them__ to understand the reading.
+
+@ ¶ And ##Nehemiah##note:x[<<Neh 7:65, 70>>], which __is__ the Tirshatha, and Ezra the priest the scribe, and the Levites that taught the people, said unto all the people, This day __is__ holy unto the LORD your God; ##mourn not##note:x[<<Deut 12:12>>], nor weep. For all the people wept, when they heard the words of the law.note:tn[__the Tirshatha__: or, the governor]
+@ Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for __this__ day __is__ holy unto our Lord: neither be ye sorry; for ##the joy##note:x[<<Ps 28:7–8; Prov 17:22; 2 Cor 12:8–9>>] of the LORD is your strength.
+@ So the Levites stilled all the people, saying, Hold your peace, for the day __is__ holy; neither be ye grieved.
+@ And all the people went their way to eat, and to drink, and to send portions, and to make great mirth, ##because##note:x[<<Neh 8:7–8; Ps 119:72, 174>>] they had understood the words that were declared unto them.
+
+[discrete.pericope]
+==== The Feast of Tabernacles
+
+[.parallel]
+(<<Leviticus 23:33–44; Zechariah 14:16–21>>)
+
+@ ¶ And on the second day were gathered together the chief of the fathers of all the people, the priests, and the Levites, unto Ezra the scribe, even to understand the words of the law.note:tn[__to understand…__: or, that they might instruct in the words of the law]
+@ And they found written in the law which the LORD had commanded ##by##note:tn[Heb. by the hand of] Moses, that the children of Israel should ##dwell##note:x[<<Lev 23:34, 40–43; Deut 16:13–15>>] in booths in the feast of the seventh month:
+@ ##And that##note:x[<<Lev 23:4>>] they should publish and proclaim in all their cities, and ##in Jerusalem##note:x[<<Deut 16:16>>], saying, Go forth unto the mount, and ##fetch##note:x[<<Lev 23:40>>] olive branches, and pine branches, and myrtle branches, and palm branches, and branches of thick trees, to make booths, as __it is__ written.
+
+@ ¶ So the people went forth, and brought __them__, and made themselves booths, every one upon the roof of his house, and in their courts, and in the courts of the house of God, and in ##the street of the water gate##note:x[<<Neh 3:26>>], and in the street of the ##gate of Ephraim##note:x[<<2 Kgs 14:13; Neh 12:39>>].
+@ note:x[<<2 Chr 8:13>>]And all the congregation of them that were come again out of the captivity made booths, and sat under the booths: for since the days of Jeshua the son of Nun unto that day had not the children of Israel done so. And there was very great gladness.
+@ Also day by day, from the first day unto the last day, he read in the book of the law of God. And they kept the feast seven days; and on the eighth day __was__ a solemn assembly, ##according##note:x[<<Lev 23:36; Num 29:35>>] unto the manner.note:tn[__a solemn…__: Heb. a restraint]
+
+=== @9
+
+[discrete.pericope]
+==== The People Confess Their Sins
+
+@ Now in the twenty and fourth day ##of this month##note:x[<<Neh 8:2>>] the ##children##note:x[<<Ezra 8:23; Acts 13:2–3>>] of Israel were assembled with fasting, and with sackclothes, and earth upon them.
+@ And ##the seed##note:x[<<Ezra 10:11; Neh 13:3>>] of Israel separated themselves from all ##strangers##note:tn[Heb. strange children], and stood and ##confessed##note:x[<<Dan 9:3–10>>] their sins, and the iniquities of their fathers.
+@ And they stood up in their place, and read in the book of the law of the LORD their God __one__ fourth part of the day; and __another__ fourth part they confessed, and worshipped the LORD their God.
+
+@ ¶ Then stood up upon the ##stairs##note:tn[or, scaffold], of the Levites, ##Jeshua##note:x[<<Neh 8:7>>], and Bani, Kadmiel, Shebaniah, Bunni, Sherebiah, Bani, __and__ Chenani, and cried with a loud voice unto the LORD their God.
+@ Then the Levites, Jeshua, and Kadmiel, Bani, Hashabniah, Sherebiah, Hodijah, Shebaniah, __and__ Pethahiah, said, Stand up __and__ ##bless##note:x[<<Ps 103:1–2; 1 Pet 1:3>>] the LORD your God for ever and ever: and blessed be ##thy glorious##note:x[<<2 Cor 4:6>>] name, which is exalted above all blessing and praise.
+@ Thou, ##__even__ thou##note:x[<<Isa 37:16>>], __art__ LORD alone; ##thou hast##note:x[<<Gen 1:1; Rev 4:11>>] made heaven, the heaven of heavens, with all their host, the earth, and all __things__ that __are__ therein, the seas, and all that __is__ therein, and thou preservest them all; and the host of heaven worshippeth thee.
+@ Thou __art__ the LORD the God, who didst ##choose##note:x[<<Isa 51:2>>] Abram, and broughtest him forth out of ##Ur##note:x[<<Gen 11:31>>] of the Chaldees, and ##gavest##note:x[<<Gen 17:5>>] him the name of Abraham;
+@ And ##foundest##note:x[<<Gen 15:6, 18>>] his heart faithful before thee, and ##madest##note:x[<<Gen 15:18>>] a covenant with him to give the land of the Canaanites, the Hittites, the Amorites, and the Perizzites, and the Jebusites, and the Girgashites, to give __it, I say__, to his seed, and hast performed thy words; for thou __art__ righteous:
+@ And ##didst see##note:x[<<Exod 3:7–9>>] the affliction of our fathers in Egypt, and heardest their cry by the Red sea;
+@ And shewedst signs and wonders upon Pharaoh, and on all his servants, and on all the people of his land: for thou knewest that they dealt proudly against them. So ##didst##note:x[<<Jer 32:20; Dan 9:15>>] thou get thee a name, as __it is__ this day.
+@ And thou didst ##divide##note:x[<<Exod 14:21–22, 27–28; Ps 78:13>>] the sea before them, so that they went through the midst of the sea on the dry land; and their persecutors thou threwest into the deeps, as a stone into the mighty waters.
+@ Moreover ##thou leddest##note:x[<<Exod 13:21–22; Neh 9:19>>] them in the day by a cloudy pillar; and in the night by a pillar of fire, to give them light in the way wherein they should go.
+@ Thou ##camest##note:x[<<Exod 19:11>>] down also upon mount Sinai, and ##spakest##note:x[<<Exod 20:1>>] with them from heaven, and gavest them right judgments, and ##true laws##note:x[<<Ps 119:160>>], good statutes and commandments&#58;note:tn[__true…__: Heb. laws of truth]
+@ And ##madest##note:x[<<Gen 2:3; Exod 20:8–11; Ezek 20:12>>] known unto them thy holy sabbath, and commandedst them precepts, statutes, and laws, by the hand of Moses thy servant:
+@ And ##gavest##note:x[<<1 Cor 10:3>>] them bread from heaven for their hunger, and ##broughtest##note:x[<<Exod 17:6>>] forth water for them out of the rock for their thirst, and promisedst them that they should ##go##note:x[<<Deut 1:8>>] in to possess the land which thou hadst sworn to give them.note:tn[__which…__: Heb. which thou hadst lift up thine hand to give them]
+@ But they and our fathers ##dealt##note:x[<<Neh 9:29>>] proudly, and hardened their necks, and ##hearkened##note:x[<<Ps 81:11–14>>] not to thy commandments,
+@ And refused to obey, neither were ##mindful##note:x[<<Ps 86:5>>] of thy wonders that thou didst among them; but hardened their necks, and in their rebellion appointed a captain to return to their bondage: but thou __art__ ##a God##note:x[<<Ps 86:5>>] ready to pardon, ##gracious##note:x[<<Joel 2:13>>] and merciful, slow to anger, and of great kindness, and forsookest them not.note:tn[__a God…__: Heb. a God of pardons]
+@ ##Yea, when they had made them a molten calf, and said, This __is__ thy God that brought thee up out of Egypt, and had wrought great provocations;##note:x[<<Ps 106:19–23>>]
+@ Yet thou ##in thy##note:x[<<Neh 9:27; Ps 106:45; Mal 3:6>>] manifold mercies forsookest them not in the wilderness: the pillar of the cloud departed not from them by day, to lead them in the way; neither the pillar of fire by night, to shew them light, and the way wherein they should go.
+@ Thou ##gavest##note:x[<<Num 11:17; Isa 63:11–14>>] also thy ##good##note:x[<<Ps 143:10>>] spirit to instruct them, and withheldest not thy manna from their mouth, and gavest them water for their thirst.
+@ Yea, ##forty##note:x[<<Deut 2:7>>] years didst thou sustain them in the wilderness, __so that__ they lacked nothing; ##their##note:x[<<Deut 8:4; 29:5>>] clothes waxed not old, and their feet swelled not.
+@ Moreover thou gavest them kingdoms and nations, and didst divide them into corners: so they possessed the land of ##Sihon##note:x[<<Num 21:21–35>>], and the land of the king of Heshbon, and the land of Og king of Bashan.
+@ Their children also ##multipliedst##note:x[<<Gen 15:5; 22:17>>] thou as the stars of heaven, and broughtest them into the land, concerning which thou hadst promised to their fathers, that they should go in to possess __it__.
+@ ##So the##note:x[<<Josh 21:43>>] children went in and possessed the land, and ##thou subduedst##note:x[<<Josh 18:1>>] before them the inhabitants of the land, the Canaanites, and gavest them into their hands, with their kings, and the people of the land, that they might do with them as they would.note:tn[__as they…__: Heb. according to their will]
+@ And they took ##strong##note:x[<<Deut 3:5>>] cities, and ##a fat land##note:x[<<Neh 9:35>>], and possessed houses full of all goods, ##wells##note:tn[or, cisterns] digged, vineyards, and oliveyards, and fruit trees in abundance: so they ##did eat##note:x[<<Deut 32:15>>], and were filled, and became fat, and delighted themselves in thy great goodness.note:tn[__fruit…__: Heb. tree of food]
+@ Nevertheless ##they were##note:x[<<Judg 2:11–12>>] disobedient, and rebelled against thee, and ##cast thy law##note:x[<<1 Kgs 14:9>>] behind their backs, and slew thy prophets which testified against them to turn them to thee, and they ##wrought##note:x[<<Neh 9:18>>] great provocations.
+@ Therefore ##thou deliveredst##note:x[<<Ps 106:41–42>>] them into the hand of their enemies, who vexed them: and in the time of their trouble, when they cried unto thee, thou heardest __them__ from heaven; and according to thy manifold mercies thou gavest them saviours, who saved them out of the hand of their enemies.
+@ But after they had rest, they ##did evil again##note:x[<<Judg 5:31>>] before thee: therefore leftest thou them in the hand of their enemies, so that they had the dominion over them: yet when they returned, and cried unto thee, thou heardest __them__ from heaven; and many times didst thou deliver them according to thy mercies;note:tn[__they did…__: Heb. they returned to do evil]
+@ And ##testifiedst##note:x[<<Neh 9:26>>] against them, that thou mightest bring them again unto thy law: ##yet they##note:x[<<Neh 9:16>>] dealt proudly, and hearkened not unto thy commandments, but sinned against thy judgments, (##which##note:x[<<Lev 18:5>>] if a man do, he shall live in them;) and withdrew the shoulder, and hardened their neck, and would not hear.note:tn[__withdrew…__: Heb. they gave a withdrawing shoulder]
+@ Yet ##many years##note:x[<<Rom 2:4>>] didst thou forbear them, and ##testifiedst##note:x[<<2 Kgs 17:13; 2 Chr 36:15>>] against them by thy spirit in thy prophets: yet would they not give ear: therefore gavest thou them into the hand of the people of the lands.note:tn[__forbear…__: Heb. protract over them]note:tn[__in thy…__: Heb. in the hand of thy prophets]
+@ Nevertheless ##for thy great##note:x[<<Jer 4:27; Lam 3:22>>] mercies’ sake thou didst not utterly consume them, nor forsake them; for thou __art__ a ##gracious##note:x[<<Neh 9:17>>] and merciful God.
+@ Now therefore, ##our God##note:x[<<Neh 1:5>>], the great, the mighty, and the terrible God, who ##keepest##note:x[<<Deut 7:9; Dan 9:4>>] covenant and mercy, let not all the ##trouble##note:tn[Heb. weariness] seem little before thee, that hath come upon us, on our kings, on our princes, and on our priests, and on our prophets, and on our fathers, and on all thy people, since the time of the kings of Assyria unto this day.note:tn[__that…__: Heb. that hath found us]
+@ ##Howbeit##note:x[<<Gen 18:25; Dan 9:5–14>>] thou __art__ just in all that is brought upon us; for thou hast done right, ##but we##note:x[<<Ps 106:6>>] have done wickedly:
+@ Neither have our kings, our princes, our priests, nor our fathers, kept thy law, nor hearkened unto thy commandments and thy testimonies, wherewith thou didst testify against them.
+@ ##For they##note:x[<<Deut 28:47>>] have not served thee in their kingdom, and in thy great goodness that thou gavest them, and in the large and fat land which thou gavest before them, neither turned they from their wicked works.
+@ ##Behold, we __are__ servants this day, and __for__ the land that thou gavest unto our fathers to eat the fruit thereof and the good thereof, behold, we __are__ servants in it:##note:x[<<Ezra 9:9>>]
+@ And ##it yieldeth##note:x[<<Deut 28:33>>] much increase unto the kings whom thou hast set over us because of our sins: also they have ##dominion##note:x[<<Deut 28:48>>] over our bodies, and over our cattle, at their pleasure, and we __are__ in great distress.
+@ And because of all this ##we make##note:x[<<2 Chr 34:31; Neh 10:29>>] a sure __covenant__, and write __it;__ and our princes, Levites, __and__ priests, note:x[<<Neh 10:1>>]##seal##note:tn[Heb. are at the sealing, or, sealed] __unto it__.
+
+=== @10
+
+[discrete.pericope]
+==== Signers of the Covenant
+
+@ Now ##those that sealed##note:x[<<Neh 9:38>>] __were__, Nehemiah, the Tirshatha, the son of Hachaliah, and Zidkijah,note:tn[__those…__: Heb. at the sealings]note:tn[__the Tirshatha__: or, the governor]
+@ Seraiah, Azariah, Jeremiah,
+@ Pashur, Amariah, Malchijah,
+@ Hattush, Shebaniah, Malluch,
+@ Harim, Meremoth, Obadiah,
+@ Daniel, Ginnethon, Baruch,
+@ Meshullam, Abijah, Mijamin,
+@ Maaziah, Bilgai, Shemaiah: these __were__ the priests.
+@ And the Levites: both Jeshua the son of Azaniah, Binnui of the sons of Henadad, Kadmiel;
+@ And their brethren, Shebaniah, Hodijah, Kelita, Pelaiah, Hanan,
+@ Micha, Rehob, Hashabiah,
+@ Zaccur, Sherebiah, Shebaniah,
+@ Hodijah, Bani, Beninu.
+@ The chief of the people; Parosh, Pahath-moab, Elam, Zatthu, Bani,
+@ Bunni, Azgad, Bebai,
+@ Adonijah, Bigvai, Adin,
+@ Ater, Hizkijah, Azzur,
+@ Hodijah, Hashum, Bezai,
+@ Hariph, Anathoth, Nebai,
+@ Magpiash, Meshullam, Hezir,
+@ Meshezabeel, Zadok, Jaddua,
+@ Pelatiah, Hanan, Anaiah,
+@ Hoshea, Hananiah, Hashub,
+@ Hallohesh, Pileha, Shobek,
+@ Rehum, Hashabnah, Maaseiah,
+@ And Ahijah, Hanan, Anan,
+@ Malluch, Harim, Baanah.
+
+[discrete.pericope]
+==== The Vows of the Covenant
+
+@ ¶ And the rest of the people, the priests, the Levites, the porters, the singers, the Nethinims, and ##all they##note:x[<<Neh 9:2; 2 Cor 6:14–17>>] that had separated themselves from the people of the lands unto the law of God, their wives, their sons, and their daughters, ##every one##note:x[<<Jer 4:2>>] having knowledge, and having understanding;
+@ They clave to their brethren, their nobles, and ##entered##note:x[<<Ps 119:106>>] into a curse, and into an oath, to walk in God’s law, which was given ##by##note:tn[Heb. by the hand of] Moses the servant of God, and ##to observe##note:x[<<Ezek 36:27; John 15:14>>] and do all the commandments of the LORD our Lord, and his judgments and his statutes;
+@ ##And that we would not give our daughters unto the people of the land, nor take their daughters for our sons:##note:x[<<Exod 34:16; Deut 7:3; Ezra 9:1–3>>]
+@ And __if__ ##the people##note:x[<<Lev 23:3; Neh 13:15–22>>] of the land bring ware or any victuals on the sabbath day to sell, __that__ we would not buy it of them on the sabbath, or on the holy day: ##and __that__ we##note:x[<<Exod 23:10–11>>] would leave the seventh year, and the exaction of every debt.note:tn[__every…__: Heb. every hand]
+
+@ Also we made ordinances for us, to charge ourselves yearly with ##the third part##note:x[<<Exod 30:11–16; Matt 17:24–27>>] of a shekel for the service of the house of our God;
+@ For ##the shewbread##note:x[<<Lev 24:5; 2 Chr 2:4>>], and for the continual meat offering, and for ##the continual burnt##note:x[<<Num 28:1–29>>] offering, of the sabbaths, of the new moons, for the set feasts, and for the holy __things__, and for the sin offerings to make an atonement for Israel, and __for__ all the work of the house of our God.
+@ And we cast the lots among the priests, the Levites, and the people, for ##the wood offering##note:x[<<Neh 13:31>>], to bring __it__ into the house of our God, after the houses of our fathers, at times appointed year by year, to burn upon the altar of the LORD our God, as __it is__ written in the law:
+@ ##And to bring the firstfruits of our ground, and the firstfruits of all fruit of all trees, year by year, unto the house of the LORD:##note:x[<<Exod 23:19; 34:26; Deut 26:2>>]
+@ note:x[<<Exod 13:2; Lev 27:26–27>>]Also the firstborn of our sons, and of our cattle, as __it is__ written in the law, and the firstlings of our herds and of our flocks, to bring to the house of our God, unto the priests that minister in the house of our God:
+@ note:x[<<Lev 23:17>>]And __that__ we should bring the firstfruits of our dough, and our offerings, and the fruit of all manner of trees, of wine and of oil, unto the priests, to the chambers of the house of our God; ##and the tithes##note:x[<<Num 18:21>>] of our ground unto the Levites, that the same Levites might have the tithes in all the cities of our tillage.
+@ And the priest the son of Aaron shall be with the Levites, ##when the Levites##note:x[<<Num 18:26–28>>] take tithes: and the Levites shall bring up the tithe of the tithes unto the house of our God, to the chambers, into ##the treasure house##note:x[<<1 Chr 9:26; Neh 13:12–13>>].
+@ ##For note:x[<<Num 18:30>>]the children##note:x[<<Deut 14:23–27; 2 Chr 31:12>>] of Israel and the children of Levi shall bring the offering of the corn, of the new wine, and the oil, unto the chambers, where __are__ the vessels of the sanctuary, and the priests that minister, and the porters, and the singers: and we will not forsake the house of our God.
+
+=== @11
+
+[discrete.pericope]
+==== Jerusalem’s New Settlers
+
+@ And the rulers of the people dwelt at Jerusalem: the rest of the people also ##cast lots##note:x[<<Neh 10:34>>], to bring one of ten to dwell in Jerusalem ##the holy##note:x[<<Isa 48:2; 52:1>>] city, and nine parts __to dwell__ in __other__ cities.
+@ And the people blessed all the men, that ##willingly##note:x[<<Judg 5:9>>] offered themselves to dwell at Jerusalem.
+
+@ ¶ Now these __are__ the chief of the province that dwelt in Jerusalem: but in the cities of Judah dwelt every one in his possession in their cities, __to wit__, Israel, the priests, and the Levites, and the Nethinims, and the children of Solomon’s servants.
+@ And at Jerusalem dwelt __certain__ of the children of Judah, and of the children of Benjamin. Of the children of Judah; Athaiah the son of Uzziah, the son of Zechariah, the son of Amariah, the son of Shephatiah, the son of Mahalaleel, of the children of ##Perez##note:tn[also called, Pharez];
+@ And Maaseiah the son of Baruch, the son of Col-hozeh, the son of Hazaiah, the son of Adaiah, the son of Joiarib, the son of Zechariah, the son of Shiloni.
+@ All the sons of Perez that dwelt at Jerusalem __were__ four hundred threescore and eight valiant men.
+@ And these __are__ the sons of Benjamin; Sallu the son of Meshullam, the son of Joed, the son of Pedaiah, the son of Kolaiah, the son of Maaseiah, the son of Ithiel, the son of Jesaiah.
+@ And after him Gabbai, Sallai, nine hundred twenty and eight.
+@ And Joel the son of Zichri __was__ their overseer: and Judah the son of Senuah __was__ second over the city.
+@ Of the priests: Jedaiah the son of Joiarib, Jachin.
+@ Seraiah the son of Hilkiah, the son of Meshullam, the son of Zadok, the son of Meraioth, the son of Ahitub, __was__ the ruler of the house of God.
+@ And their brethren that did the work of the house __were__ eight hundred twenty and two: and Adaiah the son of Jeroham, the son of Pelaliah, the son of Amzi, the son of Zechariah, the son of Pashur, the son of Malchiah,
+@ And his brethren, chief of the fathers, two hundred forty and two: and Amashai the son of Azareel, the son of Ahasai, the son of Meshillemoth, the son of Immer,
+@ And their brethren, mighty men of valour, an hundred twenty and eight: and their overseer __was__ Zabdiel, the son of __one of__ the great men.note:tn[__the son…__: or, the son of Haggedolim]
+@ Also of the Levites: Shemaiah the son of Hashub, the son of Azrikam, the son of Hashabiah, the son of Bunni;
+@ And Shabbethai and Jozabad, of the chief of the Levites, __had__ the oversight of the outward business of the house of God.note:tn[__had…__: Heb. were over]
+@ And Mattaniah the son of Micha, the son of Zabdi, the son of Asaph, __was__ the principal to begin the thanksgiving in prayer: and Bakbukiah the second among his brethren, and Abda the son of Shammua, the son of Galal, the son of Jeduthun.
+@ All the Levites in ##the holy##note:x[<<Neh 11:1>>] city __were__ two hundred fourscore and four.
+@ Moreover the porters, Akkub, Talmon, and their brethren that kept the gates, __were__ an hundred seventy and two.note:tn[__the gates__: Heb. at the gates]
+
+[discrete.pericope]
+==== Residents Outside Jerusalem
+
+@ ¶ And the residue of Israel, of the priests, __and__ the Levites, __were__ in all the cities of Judah, every one in his inheritance.
+@ But ##the##note:x[<<Neh 3:26>>] Nethinims dwelt in ##Ophel##note:tn[or, the tower]: and Ziha and Gispa __were__ over the Nethinims.
+@ The overseer also of the Levites at Jerusalem __was__ Uzzi the son of Bani, the son of Hashabiah, the son of Mattaniah, the son of Micha. Of the sons of Asaph, the singers __were__ over the business of the house of God.
+@ For __it was__ the king’s commandment concerning them, that a certain portion should be for the singers, due for every day.note:tn[__a certain…__: or, a sure ordinance]
+@ And Pethahiah the son of Meshezabeel, of the children of note:x[<<Gen 38:30>>]##Zerah##note:tn[also called, Zarah] the son of Judah, __was__ at the king’s hand in all matters concerning the people.
+@ And for the villages, with their fields, __some__ of the children of Judah dwelt at ##Kirjath-arba##note:x[<<Josh 14:15>>], and __in__ the villages thereof, and at Dibon, and __in__ the villages thereof, and at Jekabzeel, and __in__ the villages thereof,
+@ And at Jeshua, and at Moladah, and at Beth-phelet,
+@ And at Hazar-shual, and at Beer-sheba, and __in__ the villages thereof,
+@ And at Ziklag, and at Mekonah, and in the villages thereof,
+@ And at En-rimmon, and at Zareah, and at Jarmuth,
+@ Zanoah, Adullam, and __in__ their villages, at Lachish, and the fields thereof, at Azekah, and __in__ the villages thereof. And they dwelt from Beer-sheba unto the valley of Hinnom.
+@ The children also of Benjamin ##from##note:tn[or, of] Geba __dwelt__ ##at##note:tn[or, to] Michmash, and Aija, and Beth-el, and __in__ their villages,
+@ __And__ at Anathoth, Nob, Ananiah,
+@ Hazor, Ramah, Gittaim,
+@ Hadid, Zeboim, Neballat,
+@ ##Lod##note:x[<<1 Chr 8:12>>], and Ono, the valley of craftsmen.
+@ And of the Levites __were__ divisions __in__ Judah, __and__ in Benjamin.
+
+=== @12
+
+[discrete.pericope]
+==== The Priests and Levites Who Returned
+
+@ note:x[<<Neh 10:2–8; 12:12–21>>]Now these __are__ ##the priests##note:x[<<Ezra 2:1–2>>] and the Levites that went up with Zerubbabel the son of Shealtiel, and Jeshua: Seraiah, Jeremiah, Ezra,
+@ Amariah, ##Malluch##note:tn[also called, Melicu], Hattush,
+@ ##Shechaniah##note:tn[also called, Shebaniah], ##Rehum##note:tn[also called, Harim], ##Meremoth##note:tn[also called, Meraioth],
+@ Iddo, ##Ginnetho##note:tn[also called, Ginnethon], Abijah,
+@ ##Miamin##note:tn[also called, Miniamin], ##Maadiah##note:tn[also called, Moadiah], Bilgah,
+@ Shemaiah, and Joiarib, Jedaiah,
+@ ##Sallu##note:tn[also called, Sallai], Amok, Hilkiah, Jedaiah. These __were__ the chief of the priests and of their brethren in the days of Jeshua.
+@ Moreover the Levites: Jeshua, Binnui, Kadmiel, Sherebiah, Judah, __and__ ##Mattaniah##note:x[<<Neh 11:17>>], __which was__ over the thanksgiving, he and his brethren.note:tn[__the thanksgiving__: that is, the psalms of thanksgiving]
+@ Also Bakbukiah and Unni, their brethren, __were__ over against them in the watches.
+
+@ ¶ And Jeshua begat Joiakim, Joiakim also begat Eliashib, and Eliashib begat Joiada,
+@ And Joiada begat Jonathan, and Jonathan begat Jaddua.
+@ And in the days of Joiakim were priests, the chief of the fathers: of Seraiah, Meraiah; of Jeremiah, Hananiah;
+@ Of Ezra, Meshullam; of Amariah, Jehohanan;
+@ Of Melicu, Jonathan; of Shebaniah, Joseph;
+@ Of Harim, Adna; of Meraioth, Helkai;
+@ Of Iddo, Zechariah; of Ginnethon, Meshullam;
+@ Of Abijah, Zichri; of Miniamin, of Moadiah, Piltai;
+@ Of Bilgah, Shammua; of Shemaiah, Jehonathan;
+@ And of Joiarib, Mattenai; of Jedaiah, Uzzi;
+@ Of Sallai, Kallai; of Amok, Eber;
+@ Of Hilkiah, Hashabiah; of Jedaiah, Nethaneel.
+
+@ ¶ The Levites in the days of Eliashib, Joiada, and Johanan, and Jaddua, __were__ recorded chief of the fathers: also the priests, to the reign of Darius the Persian.
+@ The sons of Levi, the chief of the fathers, __were__ written in the book of the chronicles, even until the days of Johanan the son of Eliashib.
+@ And the chief of the Levites: Hashabiah, Sherebiah, and Jeshua the son of Kadmiel, with their brethren over against them, to praise __and__ to give thanks, according to the commandment of David the man of God, ward over against ward.
+@ Mattaniah, and Bakbukiah, Obadiah, Meshullam, Talmon, Akkub, __were__ porters keeping the ward at the ##thresholds##note:tn[or, treasuries, or, assemblies] of the gates.
+@ These __were__ in the days of Joiakim the son of Jeshua, the son of Jozadak, and in the days of ##Nehemiah##note:x[<<Neh 8:9>>] the governor, and of Ezra the priest, the scribe.
+
+[discrete.pericope]
+==== The Dedication of the Wall
+
+@ ¶ And at ##the dedication##note:x[<<Deut 20:5>>] of the wall of Jerusalem they sought the Levites ##out##note:x[<<2 Chr 5:13>>] of all their places, to bring them to Jerusalem, to keep the dedication with gladness, both with ##thanksgivings##note:x[<<1 Chr 15:16>>], and with singing, __with__ cymbals, psalteries, and with harps.
+@ And the sons of the singers gathered themselves together, both out of the plain country round about Jerusalem, and from the villages of ##Netophathi##note:x[<<1 Chr 9:16>>];
+@ Also from the house of Gilgal, and out of the fields of Geba and Azmaveth: for the singers had builded them villages round about Jerusalem.
+@ And the priests and the Levites purified themselves, and purified the people, and the gates, and the wall.
+@ Then I brought up the princes of Judah upon the wall, and appointed ##two great##note:x[<<Neh 12:38>>] __companies of them that gave__ thanks, __whereof one__ went on the right hand upon the wall toward the ##dung gate##note:x[<<Neh 2:13>>]:
+@ And after them went Hoshaiah, and half of the princes of Judah,
+@ And Azariah, Ezra, and Meshullam,
+@ Judah, and Benjamin, and Shemaiah, and Jeremiah,
+@ And __certain__ of the priests’ sons with trumpets; __namely__, Zechariah the son of Jonathan, the son of Shemaiah, the son of Mattaniah, the son of Michaiah, the son of Zaccur, the son of Asaph:
+@ And his brethren, Shemaiah, and Azarael, Milalai, Gilalai, Maai, Nethaneel, and Judah, Hanani, with the ##musical instruments##note:x[<<Neh 12:24>>] of David the man of God, and Ezra the scribe before them.
+@ And at ##the fountain gate##note:x[<<Neh 2:14>>], which was over against them, they went up by the stairs of the city of David, at the going up of the wall, above the house of David, even unto the ##water gate##note:x[<<Neh 3:26>>] eastward.
+@ And the other __company of them that gave__ thanks went over against __them__, and I after them, and the half of the people upon the wall, from beyond the ##tower##note:x[<<Neh 3:11>>] of the furnaces even unto the ##broad##note:x[<<Neh 3:8>>] wall;
+@ And from above ##the gate of Ephraim##note:x[<<Neh 8:16>>], and above ##the old##note:x[<<Neh 3:6>>] gate, and above the fish gate, and ##the tower##note:x[<<Neh 3:1>>] of Hananeel, and the tower of Meah, even unto the sheep gate: and they stood still in the prison gate.
+@ So stood the two __companies of them that gave__ thanks in the house of God, and I, and the half of the rulers with me:
+@ And the priests; Eliakim, Maaseiah, Miniamin, Michaiah, Elioenai, Zechariah, __and__ Hananiah, with trumpets;
+@ And Maaseiah, and Shemaiah, and Eleazar, and Uzzi, and Jehohanan, and Malchijah, and Elam, and Ezer. And the singers sang loud, with Jezrahiah __their__ overseer.note:tn[__sang…__: Heb. made their voice to be heard]
+@ Also that day they offered great sacrifices, and rejoiced: for ##God##note:x[<<Ps 92:4>>] had made them rejoice with great joy: ##the wives also##note:x[<<Ps 148:11–13>>] and the children rejoiced: so that ##the joy##note:x[<<Ezra 3:13>>] of Jerusalem was heard even afar off.
+
+[discrete.pericope]
+==== Provisions for Temple Worship
+
+@ ¶ And at that time were ##some##note:x[<<Neh 10:37–39; 13:12–13>>] appointed over the chambers for the treasures, for the offerings, for the firstfruits, and for the tithes, to gather into them out of the fields of the cities the portions of the law for the priests and Levites: for Judah rejoiced for the priests and for the Levites that ##waited##note:tn[Heb. stood].note:tn[__of the law__: that is, appointed by the law]note:tn[__for Judah…__: Heb. for the joy of Judah]
+@ And both ##the singers##note:x[<<1 Chr 25:1–26>>] and the porters kept the ward of their God, and the ward of the purification, according to the commandment of David, __and__ of Solomon his son.
+@ For in the days of David and Asaph of old __there were__ chief of the singers, and songs of praise and thanksgiving unto God.
+@ And all Israel in the days of Zerubbabel, and in the days of Nehemiah, gave the portions of the singers and the porters, every day his portion: and they ##sanctified##note:tn[that is, set apart] __holy things__ unto the Levites; and the Levites sanctified __them__ unto the children of Aaron.
+
+=== @13
+
+[discrete.pericope]
+==== Foreigners Excluded
+
+@ On that day ##they read##note:x[<<Deut 31:11–12; Neh 9:3>>] in the book of Moses in the ##audience##note:tn[Heb. ears] of the people; and therein was found written, that ##the Ammonite##note:x[<<Deut 23:3–5>>] and the Moabite should not come into the congregation of God for ever;note:tn[__they…__: Heb. there was read]
+@ Because they met not the children of Israel with bread and with water, but ##hired Balaam##note:x[<<Josh 24:9–10>>] against them, that he should curse them: howbeit ##our God##note:x[<<Deut 23:5; Ps 109:28>>] turned the curse into a blessing.
+@ Now it came to pass, when they had heard the law, ##that they##note:x[<<Neh 9:2; 10:28>>] separated from Israel all ##the mixed##note:x[<<Exod 12:38>>] multitude.
+
+[discrete.pericope]
+==== The Temple Cleansed
+
+@ ¶ And before this, Eliashib the priest, ##having the oversight of##note:x[<<Neh 12:44>>] the chamber of the house of our God, __was__ ##allied##note:x[<<Neh 6:17–18; 13:28>>] unto Tobiah&#58;note:tn[__having…__: Heb. being set over]
+@ And he had prepared for him a great chamber, where aforetime they laid the meat offerings, the frankincense, and the vessels, and the tithes of the corn, the new wine, and the oil, which was commanded __to be given__ to the Levites, and the singers, and the porters; and the offerings of the priests.note:tn[__which…__: Heb. the commandment of the Levites]
+@ But in all this __time__ was not I at Jerusalem: for in ##the two##note:x[<<Neh 5:14>>] and thirtieth year of Artaxerxes king of Babylon came I unto the king, and after certain days obtained I leave of the king&#58;note:tn[__after…__: Heb. at the end of days]note:tn[__obtained…__: or, I earnestly requested]
+@ And I came to Jerusalem, and understood of the evil that Eliashib did for Tobiah, ##in preparing##note:x[<<Neh 13:5>>] him a chamber in the courts of the house of God.
+@ And it grieved me sore: therefore I cast forth all the household stuff of Tobiah out of the chamber.
+@ Then I commanded, and ##they cleansed##note:x[<<2 Chr 29:5>>] the chambers: and thither brought I again the vessels of the house of God, with the meat offering and the frankincense.
+
+[discrete.pericope]
+==== Tithes Restored
+
+[.parallel]
+(<<Leviticus 27:30–34; Deuteronomy 14:22–29; Deuteronomy 26:1–15>>)
+
+@ ¶ And I perceived that ##the portions##note:x[<<Neh 10:37; Mal 3:8>>] of the Levites had not been given __them:__ for the Levites and the singers, that did the work, were fled every one to his field.
+@ Then ##contend##note:x[<<Neh 13:17, 25>>]ed I with the rulers, and said, ##Why is the house##note:x[<<Neh 10:39>>] of God forsaken? And I gathered them together, and set them in their ##place##note:tn[Heb. standing].
+@ Then ##brought##note:x[<<Neh 10:37–39; 12:44>>] all Judah the tithe of the corn and the new wine and the oil unto the note:x[<<Mal 3:10>>]##treasuries##note:tn[or, storehouses].
+@ And I made treasurers over the ##treasuries##note:tn[or, storehouses], Shelemiah the priest, and Zadok the scribe, and of the Levites, Pedaiah: and next to them __was__ Hanan the son of Zaccur, the son of Mattaniah: for they were ##counted##note:x[<<2 Kgs 22:7; Neh 7:2>>] faithful, and their office __was__ to distribute unto their brethren.note:tn[__next…__: Heb. at their hand]note:tn[__their office…__: Heb. it was upon them]
+@ ##Remember me##note:x[<<Neh 13:22; Ps 122:6–9>>], O my God, concerning this, and wipe not out my good deeds that I have done for the ##house##note:x[<<Ps 122:6–9>>] of my God, and for the ##offices##note:tn[or, observations] thereof.note:tn[__good…__: Heb. kindnesses]
+
+[discrete.pericope]
+==== The Sabbath Restored
+
+[.parallel]
+(<<Jeremiah 17:19–27>>)
+
+@ ¶ In those days saw I in Judah __some__ ##treading wine##note:x[<<Exod 34:21>>] presses on the sabbath, and bringing in sheaves, and lading asses; as also wine, grapes, and figs, and all __manner of__ ##burdens##note:x[<<Neh 10:31>>], which they brought into Jerusalem on the sabbath day: and ##I testified##note:x[<<Neh 13:21>>] __against them__ in the day wherein they sold victuals.
+@ There dwelt men of Tyre also therein, which brought fish, and all manner of ware, and sold on the sabbath unto the children of Judah, and in Jerusalem.
+@ Then ##I contended##note:x[<<Neh 13:11>>] with the nobles of Judah, and said unto them, What evil thing __is__ this that ye do, and profane the sabbath day?
+@ ##Did not your##note:x[<<Jer 17:21–23>>] fathers thus, and did not our God bring all this evil upon us, and upon this city? yet ye bring more wrath upon Israel by profaning the sabbath.
+@ And it came to pass, that when the gates of Jerusalem began to be dark before the sabbath, I commanded that the gates should be shut, and charged that they should not be opened till after the sabbath: and __some__ of my servants set I at the gates, __that__ there should no burden be brought in on the sabbath day.
+@ So the merchants and sellers of all kind of ware lodged without Jerusalem once or twice.
+@ Then I testified against them, and said unto them, Why lodge ye ##about##note:tn[Heb. before] the wall? if ye do __so__ again, ##I will lay##note:x[<<Rom 13:3–4>>] hands on you. From that time forth came they no __more__ on the sabbath.
+@ And ##I commanded##note:x[<<Neh 12:30>>] the Levites that they should cleanse themselves, and __that__ they should come __and__ keep the gates, to sanctify the sabbath day. ##Remember##note:x[<<Neh 13:14, 31>>] me, O my God, __concerning__ this also, and spare me according to the ##greatness##note:tn[or, multitude] of thy mercy.
+
+[discrete.pericope]
+==== Intermarriage Forbidden
+
+[.parallel]
+(<<Ezra 9:1–4>>)
+
+@ ¶ In those days also saw I Jews __that__ had ##married##note:x[<<Ezra 10:10; Neh 10:30>>] wives of Ashdod, of Ammon, __and__ of Moab&#58;note:tn[__had…__: Heb. had made to dwell with them]
+@ And their children spake half in the speech of Ashdod, and could not speak in the Jews’ language, but according to the language of each people.note:tn[__could…__: Heb. they discerned not to speak]note:tn[__of each…__: Heb. of people and people]
+@ And ##I contended##note:x[<<Neh 13:17>>] with them, and ##cursed##note:tn[or, reviled] them, and smote certain of them, and plucked off their hair, and ##made them##note:x[<<Ezra 10:5; Neh 10:29–30>>] swear by God, __saying__, Ye shall not give your daughters unto their sons, nor take their daughters unto your sons, or for yourselves.
+@ ##Did not Solomon##note:x[<<1 Kgs 11:1–8; Eccl 7:26>>] king of Israel sin by these things? ##yet among##note:x[<<1 Kgs 3:13>>] many nations was there no king like him, who was beloved of his God, and God made him king over all Israel: nevertheless even him did outlandish women cause to sin.
+@ Shall we then hearken unto you to do all this great evil, ##to transgress##note:x[<<Ezra 10:2>>] against our God in marrying strange wives?
+@ And __one__ of the sons of Joiada, the son of Eliashib the high priest, __was__ son in law to ##Sanballat##note:x[<<Neh 2:19>>] the Horonite: therefore I chased him from me.
+@ ##Remember##note:x[<<Neh 6:14>>] them, O my God, because they have defiled the priesthood, and the covenant of the priesthood, and of the Levites.note:tn[__because…__: Heb. for the defilings]
+@ Thus ##cleansed##note:x[<<Neh 10:30>>] I them from all strangers, and appointed the wards of the priests and the Levites, every one in his business;
+@ And for the wood offering, at times appointed, and for the firstfruits. ##Remember##note:x[<<Neh 13:14, 22; Ps 106:4>>] me, O my God, for good.

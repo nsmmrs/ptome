@@ -1,0 +1,54 @@
+== @PHM
+
+[.book-title]
+The Epistle of Paul the Apostle to Philemon
+
+=== @1
+
+[discrete.pericope]
+==== Greetings from Paul and Timothy
+
+[.parallel]
+(<<Philippians 1:1–2; Colossians 1:1–2>>)
+
+@ Paul, ##a prisoner##note:x[<<Eph 3:1; Phlm 1:9>>] of Jesus Christ, and ##Timothy##note:x[<<Col 1:1>>] __our__ brother, unto Philemon our dearly beloved, and fellowlabourer,
+@ note:x[<<Phil 2:25>>]And to __our__ beloved Apphia, and ##Archippus##note:x[<<Col 4:17>>] our fellowsoldier, and to ##the church##note:x[<<Rom 16:5>>] in thy house:
+@ ##Grace to you, and peace, from God our Father and the Lord Jesus Christ.##note:x[<<Rom 1:7; Eph 1:2>>]
+
+[discrete.pericope]
+==== Philemon’s Faith and Love
+
+@ ##I thank my God, making mention of thee always in my prayers,##note:x[<<Rom 1:8; Eph 1:16; Phil 1:3>>]
+@ ##Hearing##note:x[<<Eph 1:15; Col 1:4>>] of thy love and faith, which thou hast toward the Lord Jesus, and toward all saints;
+@ That ##the communication##note:x[<<Phil 1:9–11>>] of thy faith may become effectual by ##the acknowledging##note:x[<<1 Pet 1:5–8>>] of every good thing which is ##in you##note:x[<<2 Pet 1:8>>] in Christ Jesus.
+@ For we have ##great joy##note:x[<<1 Thess 2:19; 3:9>>] and consolation in thy love, because ##the bowels##note:x[<<2 Cor 7:13>>] of the saints are refreshed by thee, brother.
+
+[discrete.pericope]
+==== Paul’s Appeal for Onesimus
+
+@ Wherefore, though I might be much ##bold##note:x[<<1 Thess 2:6>>] in Christ to ##enjoin##note:x[<<2 Cor 10:8>>] thee that which is convenient,
+@ note:x[<<Rom 12:1; 2 Cor 5:20; Eph 4:1>>]Yet for love’s sake I rather beseech __thee__, being such an one as Paul the aged, and now also a prisoner of Jesus Christ.
+@ I beseech thee for ##my son##note:x[<<1 Tim 1:2>>] ##Onesimus##note:x[<<Col 4:9>>], ##whom##note:x[<<1 Cor 4:15>>] I have begotten in my bonds:
+@ Which in time past was to thee ##unprofitable##note:x[<<Job 30:1–2; 1 Pet 2:10>>], but now ##profitable##note:x[<<2 Tim 4:11>>] to thee and to me:
+@ Whom I have sent again: ##thou##note:x[<<Matt 6:14–15; Mark 11:25; Eph 4:32>>] therefore receive him, that is, mine own bowels:
+@ Whom I would have retained with me, that in thy stead he might have ministered unto me in ##the bonds##note:x[<<Eph 3:1>>] of the gospel:
+@ But without thy mind would I do nothing; that ##thy benefit##note:x[<<2 Cor 9:7>>] should not be as it were of necessity, but willingly.
+@ ##For perhaps he therefore departed for a season, that thou shouldest receive him for ever;##note:x[<<Gen 45:5–8; 50:20>>]
+@ Not now as a servant, but above a servant, ##a brother##note:x[<<Matt 23:8; 1 Tim 6:2>>] beloved, specially to me, but how much more unto thee, ##both in##note:x[<<Col 3:22>>] the flesh, and in the Lord?
+@ If ##thou count##note:x[<<2 Cor 8:23>>] me therefore a partner, ##receive##note:x[<<Matt 10:40; Phlm 1:12>>] him as myself.
+@ If he hath wronged thee, or oweth __thee__ ought, ##put that##note:x[<<Isa 53:4–7>>] on mine account;
+@ ##I Paul##note:x[<<Gal 6:11>>] have written __it__ with mine own hand, I will repay __it__: albeit I do not say to thee how thou owest unto me even thine own self besides.
+@ Yea, brother, ##let me##note:x[<<3 John 1:4>>] have joy of thee in the Lord: ##refresh##note:x[<<Phlm 1:7>>] my bowels in the Lord.
+
+@ ##Having confidence in thy obedience I wrote unto thee, knowing that thou wilt also do more than I say.##note:x[<<2 Cor 2:3; 2 Thess 3:4>>]
+@ But withal prepare me also a lodging: ##for I trust##note:x[<<Phil 2:24>>] that ##through##note:x[<<2 Cor 1:11>>] your prayers I shall be given unto you.
+
+[discrete.pericope]
+==== Additional Greetings
+
+@ note:x[<<Rom 16:7>>]There salute thee ##Epaphras##note:x[<<Col 1:7; 4:12>>], my fellowprisoner in Christ Jesus;
+@ ##Marcus##note:x[<<Col 4:10>>], Aristarchus, ##Demas##note:x[<<Col 4:14; 2 Tim 4:10>>], Lucas, my fellowlabourers.
+@ The ##grace##note:x[<<Rom 16:20>>] of our Lord Jesus Christ __be__ with ##your spirit##note:x[<<2 Tim 4:22>>]. Amen.
+
+[.colophon]
+Written from Rome to Philemon, by Onesimus, a servant.

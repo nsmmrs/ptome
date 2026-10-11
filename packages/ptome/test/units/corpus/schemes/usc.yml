@@ -1,0 +1,93 @@
+version: 2
+scheme:
+  usc:
+    cite: "{{section}}"
+    level:
+      - name: "section"
+        insert: "a"
+        break: "heading"
+        depth: 1
+        gaps: true
+        id: "s{{section}}"
+        reftext: "§ {{section}}"
+        title: "§{{section}}. {{title}}"
+      - name: "subsection"
+        type: "alpha"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        default: true
+        id: "s{{section}}-{{subsection}}"
+        reftext: "§ {{section}}({{subsection}})"
+      - name: "paragraph"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "s{{section}}{{#subsection}}-{{subsection}}{{/subsection}}-{{paragraph}}"
+        reftext: "§ {{section}}{{#subsection}}({{subsection}}){{/subsection}}({{paragraph}})"
+      - name: "subparagraph"
+        type: "ALPHA"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "s{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}-{{subparagraph}}"
+        reftext: "§ {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}({{subparagraph}})"
+      - name: "clause"
+        type: "roman"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "s{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}{{#subparagraph}}-{{subparagraph}}{{/subparagraph}}-{{clause}}"
+        reftext: "§ {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}{{#subparagraph}}({{subparagraph}}){{/subparagraph}}({{clause}})"
+      - name: "subclause"
+        type: "ROMAN"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "s{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}{{#subparagraph}}-{{subparagraph}}{{/subparagraph}}{{#clause}}-{{clause}}{{/clause}}-{{subclause}}"
+        reftext: "§ {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}{{#subparagraph}}({{subparagraph}}){{/subparagraph}}{{#clause}}({{clause}}){{/clause}}({{subclause}})"
+      - name: "item"
+        type: "alpha2"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "s{{section}}{{#subsection}}-{{subsection}}{{/subsection}}{{#paragraph}}-{{paragraph}}{{/paragraph}}{{#subparagraph}}-{{subparagraph}}{{/subparagraph}}{{#clause}}-{{clause}}{{/clause}}{{#subclause}}-{{subclause}}{{/subclause}}-{{item}}"
+        reftext: "§ {{section}}{{#subsection}}({{subsection}}){{/subsection}}{{#paragraph}}({{paragraph}}){{/paragraph}}{{#subparagraph}}({{subparagraph}}){{/subparagraph}}{{#clause}}({{clause}}){{/clause}}{{#subclause}}({{subclause}}){{/subclause}}({{item}})"
+settings:
+  apparatus: "source-credit note-body note-body-1em note-body-2em note-body-3em"
+level-presentation:
+  usc:
+    subsection:
+      block-role: "subsection"
+      label: "{{label}}"
+      label-after: " "
+    paragraph:
+      block-role: "paragraph"
+      label: "{{label}}"
+      label-after: " "
+    subparagraph:
+      block-role: "subparagraph"
+      label: "{{label}}"
+      label-after: " "
+    clause:
+      block-role: "clause"
+      label: "{{label}}"
+      label-after: " "
+    subclause:
+      block-role: "subclause"
+      label: "{{label}}"
+      label-after: " "
+    item:
+      block-role: "item"
+      label: "{{label}}"
+      label-after: " "
+citation:
+  default:
+    attribution: "{{doc.work}} § {{passage}}"
+    title: ""

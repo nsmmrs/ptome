@@ -1,0 +1,78 @@
+version: 2
+scheme:
+  eu:
+    cite: "Article {{article}}"
+    level:
+      - name: "article"
+        insert: "a"
+        break: "heading"
+        cite-wrap: "Article %"
+        cite-range-wrap: "Articles %"
+        gaps: true
+        id: "art-{{article}}"
+        reftext: "Article {{article}}"
+        title: "Article {{article}}: {{title}}"
+      - name: "paragraph"
+        wrap: "%."
+        cite-wrap: "(%)"
+        insert: "a"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "art-{{article}}-{{paragraph}}"
+        reftext: "Article {{article}}({{paragraph}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "paragraph"
+      - name: "subparagraph"
+        hidden: true
+        auto: "paragraph"
+        id: "art-{{article}}{{#paragraph}}-{{paragraph}}{{/paragraph}}-s{{subparagraph}}"
+        reftext: "Article {{article}}{{#paragraph}}({{paragraph}}){{/paragraph}}, subparagraph {{subparagraph}}"
+        label: ""
+      - name: "point"
+        type: "alpha|int"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "art-{{article}}{{#paragraph}}-{{paragraph}}{{/paragraph}}-{{point}}"
+        reftext: "Article {{article}}{{#paragraph}}({{paragraph}}){{/paragraph}}({{point}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "point"
+      - name: "subpoint"
+        type: "alpha|roman"
+        wrap: "(%)"
+        break: "block"
+        stepping: false
+        gaps: true
+        id: "art-{{article}}{{#paragraph}}-{{paragraph}}{{/paragraph}}-{{point}}-{{subpoint}}"
+        reftext: "Article {{article}}{{#paragraph}}({{paragraph}}){{/paragraph}}({{point}})({{subpoint}})"
+        label: "{{label}}"
+        label-after: " "
+        block-role: "subpoint"
+      - name: "indent"
+        hidden: true
+        auto: "item"
+        id: "art-{{article}}{{#paragraph}}-{{paragraph}}{{/paragraph}}{{#point}}-{{point}}{{/point}}-i{{indent}}"
+        reftext: "Article {{article}}{{#paragraph}}({{paragraph}}){{/paragraph}}{{#point}}({{point}}){{/point}}, indent {{indent}}"
+        label: ""
+  recital:
+    level:
+      - name: "recital"
+        wrap: "(%)"
+        cite-wrap: "recital %"
+        cite-range-wrap: "recitals %"
+        default: true
+        id: "rct-{{recital}}"
+        reftext: "Recital {{recital}}"
+        label: "{{label}}"
+        label-after: " "
+stream:
+  oj:
+    placement: "footnote"
+citation:
+  default:
+    attribution: "{{passage}} of {{doc.work}}"
+    title: ""

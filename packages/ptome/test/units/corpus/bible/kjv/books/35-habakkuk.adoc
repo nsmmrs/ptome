@@ -1,0 +1,104 @@
+== @HAB
+
+[.book-title]
+Habakkuk
+
+=== @1
+
+[discrete.pericope]
+==== Habakkuk’s First Complaint
+
+@ The burden which Habakkuk the prophet did see.
+@ O LORD, ##how##note:x[<<Ps 13:1–2>>] long shall I cry, and thou wilt not hear! __even__ cry out unto thee __of__ violence, ##and thou wilt not save##note:x[<<Ps 22:1–2; Lam 3:8>>]!
+@ ##Why dost thou shew me iniquity, and cause __me__ to behold grievance? for spoiling and violence __are__ before me: and there are __that__ raise up strife and contention.##note:x[<<Ps 55:9–11; Eccl 5:8; Jer 9:2–6>>]
+@ Therefore ##the law##note:x[<<Ps 119:126>>] is slacked, and judgment doth never go forth: ##for##note:x[<<Job 21:7; Ps 94:20–21>>] the wicked doth compass about the righteous; therefore ##wrong##note:tn[or, wrested] judgment proceedeth.
+
+[discrete.pericope]
+==== The LORD’s Answer
+
+@ ¶ Behold ye among the heathen, ##and regard##note:x[<<Isa 29:14; Lam 4:12; Acts 13:40–41>>], and wonder marvellously: for __I__ will work a work in your days, __which__ ye will not believe, though it be told __you__.
+@ For, lo, ##I raise##note:x[<<2 Kgs 24:2; 2 Chr 36:6, 17>>] up the Chaldeans, __that__ bitter and hasty nation, which shall march through the ##breadth##note:tn[Heb. breadths] of the land, to possess the dwellingplaces __that are__ not theirs.
+@ They __are__ terrible and dreadful: ##their judgment##note:x[<<Jer 39:5–9>>] and their dignity shall proceed of themselves.note:tn[__their judgment…__: or, from them shall proceed the judgment of these, and the captivity of these]
+@ Their horses also are swifter than the leopards, and are more ##fierce##note:tn[Heb. sharp] than the ##evening##note:x[<<Zeph 3:3>>] wolves: and their horsemen shall spread themselves, and their horsemen shall come from far; ##they##note:x[<<Jer 4:13>>] shall fly as the eagle __that__ hasteth to eat.
+@ They shall come all for violence: their faces shall sup up __as__ the east wind, and they shall gather the captivity as the sand.note:tn[__their…__: or, the supping up of their faces, etc: or, their faces shall look (Heb. the opposition of their faces) toward the east]
+@ And they shall ##scoff##note:x[<<2 Chr 36:6>>] at the kings, and the princes shall be a scorn unto them: they shall deride every strong hold; for they shall heap dust, and take it.
+@ Then shall __his__ mind change, and he shall pass over, and offend, __imputing__ this his power unto his god.
+
+[discrete.pericope]
+==== Habakkuk’s Second Complaint
+
+[.parallel]
+(<<Psalms 11:1–7>>)
+
+@ ¶ __Art__ ##thou not##note:x[<<Deut 33:27; Ps 90:2>>] from everlasting, O LORD my God, mine Holy One? we shall not die. O LORD, thou hast ordained them for judgment; and, O ##mighty God##note:x[<<Deut 32:4>>], thou hast ##established##note:tn[Heb. founded] them for correction.note:tn[__mighty…__: Heb. rock]
+@ __Thou art__ ##of##note:x[<<Ps 5:4–5; 34:15–16>>] purer eyes than to behold evil, and canst not look on ##iniquity##note:tn[or, grievance]: ##wherefore##note:x[<<Jer 12:1–2>>] lookest thou upon them that deal treacherously, __and__ holdest thy tongue when the wicked devoureth __the man that is__ more righteous than he?
+@ And makest men as the fishes of the sea, as the ##creeping##note:tn[or, moving] things, __that have__ no ruler over them?
+@ They ##take##note:x[<<Jer 16:16; Amos 4:2>>] up all of them with the angle, they catch them in their net, and gather them in their ##drag##note:tn[or, flue net]: therefore they rejoice and are glad.
+@ Therefore ##they##note:x[<<Deut 8:17; Ezek 28:3; Hab 1:11>>] sacrifice unto their net, and burn incense unto their drag; because by them their portion __is__ fat, and their meat ##plenteous##note:tn[or, dainty: Heb. fat].
+@ Shall they therefore empty their net, and not spare continually to slay the nations?
+
+=== @2
+
+[discrete.pericope]
+==== The LORD Answers Again
+
+@ I will ##stand##note:x[<<Isa 21:8>>] upon my watch, and set me upon the note:x[<<2 Sam 18:24; Isa 62:6>>]##tower##note:tn[Heb. fenced place], and will watch to see what he will say ##unto me##note:tn[or, in me], and what I shall answer when I am reproved.note:tn[__when…__: or, when I am argued with: Heb. upon my reproof, or, arguing]
+@ And the LORD answered me, and said, ##Write##note:x[<<Isa 30:8; Rev 1:18–19; 14:13>>] the vision, and make __it__ plain upon tables, that he may run that readeth it.
+@ For the vision __is__ yet for an appointed time, ##but##note:x[<<Heb 10:36>>] at the end it shall speak, and not lie: though it tarry, ##wait##note:x[<<Ps 27:14; Lam 3:25–26>>] for it; because it will surely come, it will not tarry.
+@ Behold, his soul __which__ is lifted up is not upright in him: ##but##note:x[<<Rom 1:17; Gal 3:11–12; Heb 10:38>>] the just shall live by his faith.
+
+@ ¶ Yea also, because ##he transgresseth##note:x[<<Prov 20:1; Isa 5:11–12>>] by wine, __he is__ a proud man, neither keepeth at home, who enlargeth his desire ##as hell##note:x[<<Prov 27:20>>], and __is__ as death, and cannot be satisfied, but gathereth unto him all nations, and heapeth unto him all people&#58;note:tn[__Yea…__: or, How much more]
+
+[discrete.pericope]
+==== Woe to the Chaldeans
+
+@ Shall not all these take up a parable against him, and a taunting proverb against him, and say, Woe to him that increaseth __that which is__ not his! how long? and to him that ladeth himself with thick clay!note:tn[__Woe…__: or, Ho, he]
+@ Shall ##they##note:x[<<Prov 29:1>>] not rise up suddenly that shall bite thee, and awake that shall vex thee, and thou shalt be for booties unto them?
+@ Because ##thou##note:x[<<Isa 33:1; Hab 2:17>>] hast spoiled many nations, all the remnant of the people shall spoil thee; because of men’s ##blood##note:tn[Heb. bloods], and __for__ the violence of the land, of the city, and of all that dwell therein.
+
+@ ¶ Woe to him ##that coveteth an evil covetousness##note:x[<<Jer 22:13–19>>] to his house, that he may ##set##note:x[<<Jer 49:16>>] his nest on high, that he may be delivered from the power of evil!note:tn[__coveteth…__: or, gaineth and evil gain]note:tn[__power…__: Heb. palm of the hand]
+@ Thou hast consulted shame to thy house by cutting off many people, and hast sinned __against__ thy soul.
+@ For ##the stone##note:x[<<Josh 24:27; Job 31:38–40; Luke 19:40>>] shall cry out of the wall, and the ##beam##note:tn[or, piece, or, fastening] out of the timber shall ##answer it##note:tn[or, witness against it].
+
+@ ¶ Woe to ##him##note:x[<<Dan 4:27–31; Mic 3:10; Nah 3:1>>] that buildeth a town with ##blood##note:tn[Heb. bloods], and stablisheth a city by iniquity!
+@ Behold, ##__is it__##note:x[<<Prov 21:30; Isa 50:11; Jer 51:58>>] not of the LORD of hosts that the people shall labour in the very fire, and the people shall weary themselves for very vanity?note:tn[__for…__: or, in vain?]
+@ For ##the earth##note:x[<<Ps 22:27; 72:19; Isa 11:9>>] shall be filled with the knowledge of the glory of the LORD, as the waters cover the sea.note:tn[__with…__: or, by knowing the glory]
+
+@ ¶ Woe ##unto##note:x[<<Jer 51:7; Rev 17:2>>] him that giveth his neighbour drink, that puttest thy bottle to __him__, and makest __him__ drunken also, ##that thou##note:x[<<Gen 9:22>>] mayest look on their nakedness!
+@ Thou art filled ##with shame for glory##note:x[<<Isa 47:3>>]: drink thou also, ##and let##note:x[<<Isa 47:3; Nah 3:5>>] thy foreskin be uncovered: the cup of the LORD’s right hand shall be turned unto thee, and shameful spewing __shall be__ on thy glory.note:tn[__with…__: or, more with shame than with glory]
+@ For ##the violence##note:x[<<Zech 11:1>>] of Lebanon shall cover thee, and the spoil of beasts, __which__ made them afraid, ##because##note:x[<<Ps 55:23; Hab 2:8>>] of men’s blood, and for the violence of the land, of the city, and of all that dwell therein.
+
+@ ¶ What ##profiteth##note:x[<<Isa 44:9–10>>] the graven image that the maker thereof hath graven it; the molten image, and ##a teacher##note:x[<<Jer 10:8; Zech 10:2>>] of lies, that the maker of his work trusteth therein, to make dumb idols?note:tn[__maker of…__: Heb. fashioner of his fashion]
+@ Woe unto him ##that##note:x[<<1 Kgs 18:26–29>>] saith to the wood, Awake; to the dumb stone, Arise, it shall teach! Behold, ##it __is__##note:x[<<Jer 10:4>>] laid over with gold and silver, ##and __there__##note:x[<<Ps 135:17>>] __is__ no breath at all in the midst of it.
+@ But the LORD __is__ in his holy temple: ##let all the earth keep silence before him##note:x[<<Ps 46:10; Zeph 1:7; Zech 2:13>>].note:tn[__let…__: Heb. be silent all the earth before him]
+
+=== @3
+
+[discrete.pericope]
+==== Habakkuk’s Prayer
+
+@ A prayer of Habakkuk the prophet upon Shigionoth.note:tn[__upon…__: or, according to variable songs, or, tunes, called in Hebrew, Shigionoth]
+@ ##O LORD##note:x[<<Ps 85:6; 90:13–17; Hos 6:2–3>>], I have heard thy ##speech##note:tn[Heb. report, or, hearing], __and__ was afraid: O LORD, ##revive##note:tn[or, preserve alive] thy work in the midst of the years, in the midst of the years make known; in wrath remember mercy.
+
+@ God came ##from##note:x[<<Amos 1:12; Obad 1:9>>] ##Teman##note:tn[or, the south], and the Holy One from mount ##Paran##note:x[<<Deut 33:2>>]. Selah. His glory covered the heavens, and the earth was full of his praise.
+@ And __his__ ##brightness##note:x[<<Exod 14:20; Isa 60:19–20; Matt 17:2>>] was as the light; he had horns __coming__ out of his hand: and there __was__ the hiding of his power.note:tn[__horns…__: or, bright beams out of his side]
+@ Before him ##went##note:x[<<Exod 12:29–30; Num 16:46–49; Nah 1:2–3>>] the pestilence, and burning ##coals##note:tn[or, diseases] went forth at his feet.
+@ He stood, and measured the earth: he beheld, and drove asunder the nations; and ##the everlasting##note:x[<<Gen 49:26; Deut 33:15; Nah 1:5>>] mountains were scattered, the perpetual hills did bow: his ways __are__ everlasting.
+@ I saw the tents of ##Cushan##note:tn[or, Ethiopia] in affliction: __and__ the curtains of the land of Midian did tremble.note:tn[__in…__: or, under affliction, or, vanity]
+@ Was ##the LORD##note:x[<<Exod 14:21–22>>] displeased against the rivers? __was__ thine anger against the rivers? __was__ thy wrath against the sea, that thou didst ##ride##note:x[<<Deut 33:26–27; Ps 68:17>>] upon thine horses __and__ thy chariots of salvation?note:tn[__of…__: or, were salvation?]
+@ Thy ##bow##note:x[<<Ps 7:12–13>>] was made quite naked, __according__ to the oaths of the tribes, __even thy__ word. Selah. ##Thou##note:x[<<Ps 78:15–16; 105:41>>] didst cleave the earth with rivers.note:tn[__earth…__: or, rivers of the earth]
+@ The ##mountains##note:x[<<Jer 4:24>>] saw thee, __and__ they trembled: ##the overflowing##note:x[<<Josh 4:23–24>>] of the water passed by: ##the deep##note:x[<<Ps 93:3>>] uttered his voice, __and__ lifted up his hands on high.
+@ The sun __and__ moon stood still in their habitation: ##at the light of thine arrows they went##note:x[<<Josh 10:11; Ps 18:12–14; 144:5–6>>], __and__ at the shining of thy glittering spear.note:tn[__at the light…__: or, thine arrows walked in the light]
+@ Thou didst march through the land in indignation, thou didst ##thresh##note:x[<<Jer 51:33>>] the heathen in anger.
+@ Thou wentest forth for the salvation of thy people, __even__ for salvation ##with##note:x[<<Ps 105:15>>] thine anointed; ##thou woundedst##note:x[<<Ps 110:6>>] the head out of the house of the wicked, by discovering the foundation unto the neck. Selah.note:tn[__by…__: Heb. making naked]
+@ Thou didst strike through with his staves the head of his villages: they ##came out##note:x[<<Dan 11:40; Zech 9:14>>] as a whirlwind to scatter me: their rejoicing __was__ as to devour the poor secretly.note:tn[__came…__: Heb. were tempestuous]
+@ Thou didst ##walk##note:x[<<Ps 77:19; Hab 3:8>>] through the sea with thine horses, __through__ the ##heap##note:tn[or, mud] of great waters.
+
+@ When ##I heard##note:x[<<Hab 1:5–11; 3:2>>], ##my belly##note:x[<<Jer 23:9>>] trembled; my lips quivered at the voice: rottenness entered into my bones, and I trembled in myself, that I might rest in the day of trouble: when he cometh up unto the people, he will invade them with his troops.note:tn[__invade…__: or, cut them in pieces]
+
+[discrete.pericope]
+==== Habakkuk Rejoices
+
+@ ¶ note:x[<<Deut 28:15–18, 30–41; Joel 1:16–18>>]Although the fig tree shall not blossom, neither __shall__ fruit __be__ in the vines; the labour of the olive shall ##fail##note:tn[Heb. lie], and the fields shall yield no meat; the flock shall be cut off from the fold, and __there shall be__ no herd in the stalls:
+@ Yet ##I will rejoice##note:x[<<Job 13:15; Phil 4:4>>] in the LORD, I will joy in ##the God##note:x[<<Mic 7:7>>] of my salvation.
+@ The LORD God __is__ ##my strength##note:x[<<Phil 4:13>>], and he will make my feet ##like##note:x[<<2 Sam 22:34; Ps 18:33>>] hinds’ __feet__, and he will make me to walk upon mine high places. To the chief singer on my stringed instruments.note:tn[__chief…__: or, overseer]note:tn[__stringed…__: Heb. Neginoth]

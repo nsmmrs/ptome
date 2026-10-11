@@ -1,0 +1,3 @@
+= MN 1 in Parallel
+
+include::mn1/mn1-pli.adoc[parallel=mn1/mn1-en.adoc,leveloffset=+1]

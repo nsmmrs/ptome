@@ -1,0 +1,449 @@
+== @EZR
+
+[.book-title]
+Ezra
+
+=== @1
+
+[discrete.pericope]
+==== The Proclamation of Cyrus
+
+[.parallel]
+(<<2 Chronicles 36:22–23; Isaiah 45:1–25>>)
+
+@ ##Now in the##note:x[<<2 Chr 36:22–23>>] first year of Cyrus king of Persia, that the word of the LORD ##by the mouth##note:x[<<Jer 25:12–14; 29:10>>] of Jeremiah might be fulfilled, the LORD stirred up the spirit of Cyrus king of Persia, that he made a proclamation throughout all his kingdom, and __put it__ also in writing, saying,note:tn[__made…__: Heb. caused a voice to pass]
+@ Thus saith Cyrus king of Persia, The ##LORD God##note:x[<<Dan 5:23>>] of heaven hath given me all the kingdoms of the earth; and ##he hath charged##note:x[<<Isa 44:26–28; 45:12–13>>] me to build him an house at Jerusalem, which __is__ in Judah.
+@ Who __is there__ among you of all his people? his God be with him, and let him go up to Jerusalem, which __is__ in Judah, and build the house of the LORD God of Israel, (##he __is__ the God##note:x[<<Isa 45:5; Jer 10:10; Dan 6:26>>],) which __is__ in Jerusalem.
+@ And whosoever remaineth in any place where he sojourneth, let the men of his place help him with silver, and with gold, and with goods, and with beasts, beside the freewill offering for the house of God that __is__ in Jerusalem.note:tn[__help…__: Heb. lift him up]
+
+@ ¶ Then rose up the chief of the fathers of Judah and Benjamin, and the priests, and the Levites, with all __them__ ##whose spirit##note:x[<<2 Chr 36:22; Ezra 1:1>>] God had raised, to go up to build the house of the LORD which __is__ in Jerusalem.
+@ And all they that __were__ about them strengthened their hands with vessels of silver, with gold, with goods, and with beasts, and with precious things, beside all __that__ was willingly offered.note:tn[__strengthened…__: that is, helped them]
+
+[discrete.pericope]
+==== Cyrus Restores the Holy Vessels
+
+@ ¶ ##Also Cyrus##note:x[<<Ezra 5:14; 6:5>>] the king brought forth the vessels of the house of the LORD, which ##Nebuchadnezzar##note:x[<<2 Chr 36:7>>] had brought forth out of Jerusalem, and had put them in the house of his gods;
+@ Even those did Cyrus king of Persia bring forth by the hand of Mithredath the treasurer, and numbered them unto ##Sheshbazzar##note:x[<<Ezra 5:14>>], the prince of Judah.
+@ And this __is__ the number of them: thirty chargers of gold, a thousand chargers of silver, nine and twenty knives,
+@ Thirty basons of gold, silver basons of a second __sort__ four hundred and ten, __and__ other vessels a thousand.
+@ All the vessels of gold and of silver __were__ five thousand and four hundred. All __these__ did Sheshbazzar bring up with __them of__ the captivity that were brought up from Babylon unto Jerusalem.note:tn[__the captivity__: Heb. the transportation]
+
+=== @2
+
+[discrete.pericope]
+==== The List of Returning Exiles
+
+[.parallel]
+(<<Nehemiah 7:4–69>>)
+
+@ Now these __are__ ##the children##note:x[<<Neh 7:6–73>>] of the province that went up out of the captivity, of those which had been carried away, ##whom Nebuchadnezzar##note:x[<<2 Kgs 24:14–16; 25:11>>] the king of Babylon had carried away unto Babylon, and came again unto Jerusalem and Judah, every one unto his city;
+@ note:x[<<Neh 7:7; Hag 1:12, 14>>]Which came with Zerubbabel: Jeshua, Nehemiah, ##Seraiah##note:tn[also called, Azariah], ##Reelaiah##note:tn[or, Raamiah], Mordecai, Bilshan, ##Mispar##note:tn[or, Mispereth], Bigvai, ##Rehum##note:tn[or, Nehum], Baanah. The number of the men of the people of Israel:
+@ The children of ##Parosh##note:x[<<Ezra 8:3>>], two thousand an hundred seventy and two.
+@ The children of Shephatiah, three hundred seventy and two.
+@ The children of Arah, seven hundred seventy and five.
+@ The children of ##Pahath-moab##note:x[<<Neh 7:11>>], of the children of Jeshua __and__ Joab, two thousand eight hundred and twelve.
+@ The children of Elam, a thousand two hundred fifty and four.
+@ The children of Zattu, nine hundred forty and five.
+@ The children of Zaccai, seven hundred and threescore.
+@ The children of ##Bani##note:tn[also called, Binnui], six hundred forty and two.
+@ The children of Bebai, six hundred twenty and three.
+@ The children of Azgad, a thousand two hundred twenty and two.
+@ The children of ##Adonikam##note:x[<<Ezra 8:13>>], six hundred sixty and six.
+@ The children of Bigvai, two thousand fifty and six.
+@ The children of Adin, four hundred fifty and four.
+@ The children of Ater of Hezekiah, ninety and eight.
+@ The children of Bezai, three hundred twenty and three.
+@ The children of ##Jorah##note:tn[also called, Hariph], an hundred and twelve.
+@ The children of Hashum, two hundred twenty and three.
+@ The children of ##Gibbar##note:tn[also called, Gibeon], ninety and five.
+@ The children of Beth-lehem, an hundred twenty and three.
+@ The men of Netophah, fifty and six.
+@ The men of Anathoth, an hundred twenty and eight.
+@ The children of ##Azmaveth##note:tn[also called, Beth-azmaveth], forty and two.
+@ The children of Kirjath-arim, Chephirah, and Beeroth, seven hundred and forty and three.
+@ The children of Ramah and Gaba, six hundred twenty and one.
+@ The men of Michmas, an hundred twenty and two.
+@ The men of Beth-el and Ai, two hundred twenty and three.
+@ The children of Nebo, fifty and two.
+@ The children of Magbish, an hundred fifty and six.
+@ The children of the other Elam, a thousand two hundred fifty and four.
+@ The children of Harim, three hundred and twenty.
+@ The children of Lod, ##Hadid##note:tn[or, Harid, as it is in some copies], and Ono, seven hundred twenty and five.
+@ The children of ##Jericho##note:x[<<1 Kgs 16:34>>], three hundred forty and five.
+@ The children of Senaah, three thousand and six hundred and thirty.
+
+@ ¶ The priests: the children of Jedaiah, of the house of Jeshua, nine hundred seventy and three.
+@ The children of ##Immer##note:x[<<1 Chr 24:14>>], a thousand fifty and two.
+@ The children of ##Pashur##note:x[<<1 Chr 9:12>>], a thousand two hundred forty and seven.
+@ The children of ##Harim##note:x[<<1 Chr 24:8>>], a thousand and seventeen.
+
+@ ¶ The Levites: the children of Jeshua and Kadmiel, of the children of ##Hodaviah##note:tn[also called, Judah or Hodevah], seventy and four.
+
+@ ¶ The singers: the children of Asaph, an hundred twenty and eight.
+
+@ ¶ The children of the porters: the children of Shallum, the children of Ater, the children of Talmon, the children of Akkub, the children of Hatita, the children of Shobai, __in__ all an hundred thirty and nine.
+
+@ ¶ The ##Nethinims##note:x[<<1 Chr 9:2>>]: the children of Ziha, the children of Hasupha, the children of Tabbaoth,
+@ The children of Keros, the children of ##Siaha##note:tn[also called, Sia], the children of Padon,
+@ The children of Lebanah, the children of Hagabah, the children of Akkub,
+@ The children of Hagab, the children of ##Shalmai##note:tn[also called, Shamlai], the children of Hanan,
+@ The children of Giddel, the children of Gahar, the children of Reaiah,
+@ The children of Rezin, the children of Nekoda, the children of Gazzam,
+@ The children of Uzza, the children of Paseah, the children of Besai,
+@ The children of Asnah, the children of Mehunim, the children of ##Nephusim##note:tn[also called, Nephishesim],
+@ The children of Bakbuk, the children of Hakupha, the children of Harhur,
+@ The children of ##Bazluth##note:tn[also called, Bazlith], the children of Mehida, the children of Harsha,
+@ The children of Barkos, the children of Sisera, the children of Thamah,
+@ The children of Neziah, the children of Hatipha.
+
+@ ¶ note:x[<<1 Kgs 9:21>>]The children of Solomon’s servants: the children of Sotai, the children of Sophereth, the children of ##Peruda##note:tn[also called, Perida],
+@ The children of Jaalah, the children of Darkon, the children of Giddel,
+@ The children of Shephatiah, the children of Hattil, the children of ##Pochereth##note:x[<<Neh 7:59>>] of Zebaim, the children of note:x[<<Neh 7:59>>]##Ami##note:tn[also called, Amon].
+@ note:x[<<1 Kgs 9:21>>]All the ##Nethinims##note:x[<<1 Chr 9:2>>], and the children of Solomon’s servants, __were__ three hundred ninety and two.
+@ And these __were__ they which went up from Tel-melah, ##Tel-harsa##note:x[<<Neh 7:61>>], Cherub, ##Addan##note:tn[also called, Addon], __and__ Immer: but they could not shew their father’s house, and their ##seed##note:tn[or, pedigree], whether they __were__ of Israel:
+@ The children of Delaiah, the children of Tobiah, the children of Nekoda, six hundred fifty and two.
+
+@ ¶ And of the children of the priests: the children of Habaiah, the children of Koz, the children of ##Barzillai##note:x[<<2 Sam 17:27>>]; which took a wife of the daughters of Barzillai the Gileadite, and was called after their name:
+@ These sought their register __among__ those that were reckoned by genealogy, but they were not found: ##therefore##note:x[<<Num 3:10>>] were they, as polluted, put from the priesthood.note:tn[__were they…__: Heb. they were polluted from the priesthood]
+@ And the ##Tirshatha##note:tn[or, governor] said unto them, that they ##should not##note:x[<<Lev 2:3, 10>>] eat of the most holy things, till there stood up a priest with ##Urim##note:x[<<Exod 28:30>>] and with Thummim.
+
+@ ¶ The whole congregation together __was__ forty and two thousand three hundred __and__ threescore,
+@ Beside their servants and their maids, of whom __there were__ seven thousand three hundred thirty and seven: and __there were__ among them two hundred singing men and singing women.
+@ Their horses __were__ seven hundred thirty and six; their mules, two hundred forty and five;
+@ Their camels, four hundred thirty and five; __their__ asses, six thousand seven hundred and twenty.
+
+[discrete.pericope]
+==== Offerings by the Exiles
+
+[.parallel]
+(<<Exodus 38:21–31; Nehemiah 7:70–73>>)
+
+@ ¶ And __some__ of the chief of the fathers, when they came to the house of the LORD which __is__ at Jerusalem, ##offered freely##note:x[<<2 Cor 9:7>>] for the house of God to set it up in his place:
+@ They gave after their ability unto the treasure of the work threescore and one thousand drams of gold, and five thousand pound of silver, and one hundred priests’ garments.
+@ ##So the priests, and the Levites, and __some__ of the people, and the singers, and the porters, and the Nethinims, dwelt in their cities, and all Israel in their cities.##note:x[<<Neh 7:73>>]
+
+=== @3
+
+[discrete.pericope]
+==== Sacrifices Restored
+
+@ And when ##the seventh##note:x[<<Lev 23:24>>] month was come, and the children of Israel __were__ in the cities, the people gathered themselves together ##as one##note:x[<<Acts 4:32; 1 Cor 1:10>>] man to Jerusalem.
+@ note:x[<<Ezra 2:2; Luke 3:27>>]Then stood up note:x[<<Hag 1:1>>]##Jeshua##note:tn[also called, Joshua] the son of Jozadak, and his brethren the priests, and ##Zerubbabel##note:tn[Gr. Zorobabel] the son of ##Shealtiel##note:tn[Gr. Salathiel], and his brethren, and builded the altar of the God of Israel, to offer burnt offerings thereon, as __it is__ written in the law of Moses the man of God.
+@ And they set the altar upon his bases; for fear __was__ upon them because of the people of those countries: and they offered burnt offerings thereon unto the LORD, __even__ burnt offerings morning and evening.
+@ They kept also ##the feast##note:x[<<Exod 23:16; Neh 8:14–17>>] of tabernacles, as __it is__ written, and __offered__ ##the daily##note:x[<<Num 29:12–38>>] burnt offerings by number, according to the custom, as the duty of every day required;note:tn[__as the duty…__: Heb. the matter of the day in his day]
+@ And afterward __offered__ the continual burnt offering, both of the new moons, and of all the set feasts of the LORD that were consecrated, and of every one that willingly offered a freewill offering unto the LORD.
+@ From the first day of the seventh month began they to offer burnt offerings unto the LORD. But the foundation of the temple of the LORD was not __yet__ laid.note:tn[__the foundation…__: Heb. the temple of the LORD was not yet founded]
+@ They gave money also unto the masons, and to the ##carpenters##note:tn[or, workmen]; and ##meat##note:x[<<1 Kgs 5:6>>], and drink, and oil, unto them of Zidon, and to them of Tyre, to bring cedar trees from Lebanon to the sea of Joppa, according to the grant that they had of Cyrus king of Persia.
+
+[discrete.pericope]
+==== Temple Restoration Begins
+
+@ ¶ Now in the second year of their coming unto the house of God at Jerusalem, in the second month, began Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and the remnant of their brethren the priests and the Levites, and all they that were come out of the captivity unto Jerusalem; and appointed the Levites, from twenty years old and upward, to set forward the work of the house of the LORD.
+@ Then stood ##Jeshua##note:x[<<Ezra 2:40>>] __with__ his sons and his brethren, Kadmiel and his sons, the sons of ##Judah##note:tn[also called, Hodaviah], ##together##note:tn[Heb. as one], to set forward the workmen in the house of God: the sons of Henadad, __with__ their sons and their brethren the Levites.
+@ And when the builders laid the foundation of the temple of the LORD, they set the priests in their apparel with trumpets, and the Levites the sons of Asaph with cymbals, to praise the LORD, after the ordinance of David king of Israel.
+@ And they sang together by course in praising and giving thanks unto the LORD; ##because##note:x[<<1 Chr 16:34; Ps 106:1; 107:1>>] __he is__ good, for his mercy __endureth__ for ever toward Israel. And all the people shouted with a great shout, when they praised the LORD, because the foundation of the house of the LORD was laid.
+@ But ##many##note:x[<<Hag 2:3>>] of the priests and Levites and chief of the fathers, __who were__ ancient men, that had seen the first house, when the foundation of this house was laid before their eyes, wept with a loud voice; and many shouted aloud for joy:
+@ So that the people could not discern the noise of the shout of joy from the noise of the weeping of the people: for the people ##shouted##note:x[<<Luke 19:37–40>>] with a loud shout, ##and the noise##note:x[<<1 Sam 4:5>>] was heard afar off.
+
+=== @4
+
+[discrete.pericope]
+==== Adversaries Hinder the Work
+
+@ Now when the adversaries of Judah and Benjamin heard that the children of the captivity builded the temple unto the LORD God of Israel;note:tn[__the children…__: Heb. the sons of the transportation]
+@ note:x[<<2 Kgs 19:37>>]Then they came to Zerubbabel, and to the chief of the fathers, and said unto them, ##Let us##note:x[<<Gal 2:4>>] build with you: for we seek your God, as ye __do;__ and ##we do##note:x[<<2 Kgs 17:24>>] sacrifice unto him since the days of Esar-haddon king of Assur, which brought us up hither.
+@ But Zerubbabel, and Jeshua, and the rest of the chief of the fathers of Israel, said unto them, ##Ye have nothing##note:x[<<Neh 2:20>>] to do with us to build an house unto our God; but we ourselves together will build unto the LORD God of Israel, as king Cyrus the king of Persia hath commanded us.
+@ Then the people of the land ##weakened##note:x[<<Ezra 3:3; Neh 6:9; Jer 38:4>>] the hands of the people of Judah, and troubled them in building,
+@ And ##hired##note:x[<<Nah 1:11>>] counsellors against them, to frustrate their purpose, all the days of Cyrus king of Persia, even until the reign of Darius king of Persia.
+
+[discrete.pericope]
+==== Opposition under Xerxes and Artaxerxes
+
+@ And in the reign of ##Ahasuerus##note:tn[Heb. Ahashverosh], in the beginning of his reign, wrote they __unto him__ an accusation against the inhabitants of Judah and Jerusalem.
+
+@ ¶ And in the days of ##Artaxerxes##note:x[<<Ezra 4:9>>] wrote ##Bishlam##note:tn[or, in peace], Mithredath, Tabeel, and the rest of their ##companions##note:tn[Heb. societies], unto Artaxerxes king of Persia; and the writing of the letter __was__ written in ##the Syrian tongue##note:x[<<2 Kgs 18:26; Dan 2:4>>], and interpreted in the Syrian tongue.
+@ Rehum the chancellor and Shimshai the ##scribe##note:tn[or, secretary] wrote a letter against Jerusalem to Artaxerxes the king in this sort:
+@ Then __wrote__ Rehum the chancellor, and Shimshai the scribe, and the rest of their ##companions##note:tn[Chaldee, societies]; ##the Dinaites##note:x[<<2 Kgs 17:24>>], the ##Apharsathchites##note:x[<<Ezra 5:6; 6:6>>], the Tarpelites, the Apharsites, the Archevites, the Babylonians, the Susanchites, the Dehavites, __and__ the Elamites,
+@ note:x[<<Ezra 4:11, 17; 7:12>>]And the rest of the nations whom the great and noble Asnappar brought over, and set in the cities of Samaria, and the rest __that are__ on this side the river, and at such a time.note:tn[__at such…__: Chaldee, Cheeneth]
+
+@ ¶ This __is__ the copy of the letter that they sent unto him, __even__ unto Artaxerxes the king; Thy servants the men on this side the river, and at such a time.
+@ Be it known unto the king, that the Jews which came up from thee to us are come unto Jerusalem, building the rebellious and the bad city, and have set up the walls __thereof__, and ##joined##note:tn[Chaldee, sewed together] the foundations.note:tn[__set up__: or, finished]
+@ Be it known now unto the king, that, if this city be builded, and the walls set up __again, then__ will they not ##pay##note:tn[Chaldee, give] ##toll##note:x[<<Ezra 7:24>>], tribute, and custom, and __so__ thou shalt endamage the ##revenue##note:tn[or, strength] of the kings.
+@ Now because we have maintenance from __the king’s__ palace, and it was not meet for us to see the king’s dishonour, therefore have we sent and certified the king;note:tn[__we have…__: Chaldee, we are salted with the salt of the palace]
+@ That search may be made in the book of the records of thy fathers: so shalt thou find in the book of the records, and know that this city __is__ a rebellious city, and hurtful unto kings and provinces, and that they have ##moved##note:tn[Chaldee, made] sedition within the same of old time: for which cause was this city destroyed. note:tn[__within…__: Chaldee, in the midst thereof]
+@ We certify the king that, if this city be builded __again__, and the walls thereof set up, by this means thou shalt have no portion on this side the river.
+
+[discrete.pericope]
+==== The Decree of Artaxerxes
+
+@ ¶ __Then__ sent the king an answer unto Rehum the chancellor, and __to__ Shimshai the scribe, and __to__ the rest of their ##companions##note:tn[Chaldee, societies] that dwell in Samaria, and __unto__ the rest beyond the river, Peace, and at such a time.
+@ The letter which ye sent unto us hath been plainly read before me.
+@ And I commanded, and search hath been made, and it is found that this city of old time hath made insurrection against kings, and __that__ rebellion and sedition have been made therein.note:tn[__I commanded__: Chaldee, by me a decree is set]note:tn[__made insurrection__: Chaldee, lifted up itself]
+@ There have been ##mighty king##note:x[<<1 Kgs 4:21; 1 Chr 18:3>>]s also over Jerusalem, which have ruled over all __countries__ ##beyond##note:x[<<Gen 15:18>>] the river; and toll, tribute, and custom, was paid unto them.
+@ Give ye now commandment to cause these men to cease, and that this city be not builded, until __another__ commandment shall be given from me.note:tn[__Give…__: Chaldee, Make a decree]
+@ Take heed now that ye fail not to do this: why should damage grow to the hurt of the kings?
+
+@ ¶ Now when the copy of king Artaxerxes’ letter __was__ read before Rehum, and Shimshai the scribe, and their companions, they went up in haste to Jerusalem unto the Jews, and made them to cease by force and power.note:tn[__by force…__: Chaldee, by arm and power]
+@ Then ceased the work of the house of God which __is__ at Jerusalem. So it ceased unto the second year of the reign of Darius king of Persia.
+
+=== @5
+
+[discrete.pericope]
+==== Temple Rebuilding Resumes
+
+[.parallel]
+(<<Haggai 1:1–11>>)
+
+@ Then the prophets, ##Haggai##note:x[<<Hag 1:1–15>>] the prophet, and Zechariah the son of Iddo, prophesied unto the Jews that __were__ in Judah and Jerusalem ##in the name##note:x[<<Zech 4:6–10>>] of the God of Israel, __even__ unto them.
+@ note:x[<<Ezra 6:14>>]Then ##rose up##note:x[<<Ezra 3:2>>] Zerubbabel the son of Shealtiel, and Jeshua the son of Jozadak, and began to build the house of God which __is__ at Jerusalem: and with them __were__ the prophets of God helping them.
+
+@ ¶ At the same time came to them ##Tatnai##note:x[<<Ezra 6:6, 13>>], governor on this side the river, and Shethar-boznai, and their companions, and said thus unto them, ##Who hath commanded you##note:x[<<Ezra 5:9>>] to build this house, and to make up this wall?
+@ Then said we unto them after this manner, What are the names of the men that ##make##note:tn[Chaldee, build] this building?
+@ ##But the eye##note:x[<<Ezra 7:6, 28; Ps 33:18>>] of their God was upon the elders of the Jews, that they could not cause them to cease, till the matter came to Darius: and then they returned answer by letter concerning this __matter__.
+
+[discrete.pericope]
+==== Tattenai’s Letter to Darius
+
+@ ¶ The copy of the letter that Tatnai, governor on this side the river, and Shethar-boznai, and his companions the ##Apharsachites##note:x[<<Ezra 4:9>>], which __were__ on this side the river, sent unto Darius the king:
+@ They sent a letter unto him, ##wherein##note:tn[Chaldee, in the midst whereof] was written thus; Unto Darius the king, all peace.
+@ Be it known unto the king, that we went into the province of Judea, to the house of the great God, which is builded with great stones, and timber is laid in the walls, and this work goeth fast on, and prospereth in their hands.note:tn[__great…__: Chaldee, stones of rolling]
+@ Then asked we those elders, __and__ said unto them thus, Who commanded you to build this house, and to make up these walls?
+@ We asked their names also, to certify thee, that we might write the names of the men that __were__ the chief of them.
+@ And thus they returned us answer, saying, We are the servants of the God of heaven and earth, and build the house that was builded these many years ago, which a great king of Israel builded and set up.
+@ ##But after##note:x[<<2 Chr 36:16–17; Dan 9:5>>] that our fathers had provoked the God of heaven unto wrath, he gave them into the hand of Nebuchadnezzar the king of Babylon, the Chaldean, who destroyed this house, and carried the people away into Babylon.
+@ But in the first year of Cyrus the king of Babylon __the same__ king Cyrus made a decree to build this house of God.
+@ And ##the vessels##note:x[<<Ezra 6:5>>] also of gold and silver of the house of God, which Nebuchadnezzar took out of the temple that __was__ in Jerusalem, and brought them into the temple of Babylon, those did Cyrus the king take out of the temple of Babylon, and they were delivered unto __one__, whose name __was__ Sheshbazzar, whom he had made ##governor##note:tn[or, deputy];
+@ And said unto him, Take these vessels, go, carry them into the temple that __is__ in Jerusalem, and let the house of God be builded in his place.
+@ Then came the same Sheshbazzar, __and__ ##laid##note:x[<<Ezra 3:8, 10>>] the foundation of the house of God which __is__ in Jerusalem: and since that time even until now hath it been in building, and __yet__ ##it is not finished##note:x[<<Ezra 6:15>>].
+@ Now therefore, if __it seem__ good to the king, let there be search made in the king’s treasure house, which __is__ there at Babylon, whether it be __so__, that a decree was made of Cyrus the king to build this house of God at Jerusalem, and let the king send his pleasure to us concerning this matter.
+
+=== @6
+
+[discrete.pericope]
+==== The Decree of Darius
+
+@ Then Darius the king made a decree, ##and search##note:x[<<Ezra 5:17>>] was made in the house of the ##rolls##note:tn[Chaldee, books], where the treasures were laid up in Babylon.note:tn[__laid up__: Chaldee, made to descend]
+@ And there was found at ##Achmetha##note:tn[or, Ecbatana, or, in a coffer], in the palace that __is__ in the province of the Medes, a roll, and therein __was__ a record thus written:
+@ In ##the first year##note:x[<<2 Chr 36:22–23>>] of Cyrus the king __the same__ Cyrus the king made a decree __concerning__ the house of God at Jerusalem, Let the house be builded, the place where they offered sacrifices, and let the foundations thereof be strongly laid; ##the height##note:x[<<Rev 21:16>>] thereof threescore cubits, __and__ the breadth thereof threescore cubits;
+@ __With__ ##three rows##note:x[<<1 Kgs 6:36>>] of great stones, and a row of new timber: and let the expenses be given out of the king’s house:
+@ And also let ##the golden##note:x[<<Ezra 5:14; Jer 27:16; Dan 5:2>>] and silver vessels of the house of God, which Nebuchadnezzar took forth out of the temple which __is__ at Jerusalem, and brought unto Babylon, be restored, and brought again unto the temple which __is__ at Jerusalem, __every one__ to his place, and place __them__ in the house of God.note:tn[__brought again__: Chaldee, go]
+@ Now __therefore__, ##Tatnai##note:x[<<Ezra 5:3>>], governor beyond the river, Shethar-boznai, and your companions the Apharsachites, which __are__ beyond the river, ##be ye far##note:x[<<Prov 21:30; Rom 8:31>>] from thence&#58;note:tn[__your…__: Chaldee, their societies]
+@ ##Let the work##note:x[<<Acts 5:38–39>>] of this house of God alone; let the governor of the Jews and the elders of the Jews build this house of God in his place.
+@ note:x[<<Ezra 6:4>>]Moreover I make a decree what ye shall do to the elders of these Jews for the building of this house of God: that of the king’s goods, __even__ of the tribute beyond the river, forthwith expenses be given unto these men, that they be not ##hindered##note:tn[Chaldee, made to cease].note:tn[__I make…__: Chaldee, by me a decree is made]
+@ And that which they have need of, both young bullocks, and rams, and lambs, for the burnt offerings of the God of heaven, wheat, salt, wine, and oil, according to the appointment of the priests which __are__ at Jerusalem, let it be given them day by day without fail:
+@ That they may offer sacrifices of sweet savours unto the God of heaven, and ##pray##note:x[<<Ezra 7:23; Jer 29:7; 1 Tim 2:1–2>>] for the life of the king, and of his sons.note:tn[__of sweet…__: Chaldee, of rest]
+@ Also I have made a decree, that ##whosoever##note:x[<<Ezra 7:26>>] shall alter this word, let timber be pulled down from ##his house##note:x[<<Dan 2:5; 3:29>>], and being set up, let him be hanged thereon; and let his house be made a dunghill for this.note:tn[__let him…__: Chaldee, let him be destroyed]
+@ And the God that hath ##caused##note:x[<<Exod 20:24; Deut 12:5; 1 Kgs 9:3>>] his name to dwell there destroy all kings and people, that shall put to their hand to alter __and__ to destroy this house of God which __is__ at Jerusalem. I Darius have made a decree; let it be done with speed.
+
+[discrete.pericope]
+==== The Temple Completed
+
+@ ¶ Then Tatnai, governor on this side the river, Shethar-boznai, and their companions, according to that which Darius the king had sent, so they did speedily.
+@ And the elders of the Jews builded, and they prospered through the prophesying of Haggai the prophet and Zechariah the son of Iddo. And they builded, and finished __it__, according to the ##commandment##note:tn[Chaldee, decree] of the God of Israel, and according to the commandment of ##Cyrus##note:x[<<Ezra 4:24; 5:13>>], and Darius, and ##Artaxerxes##note:x[<<Ezra 7:1>>] king of Persia.
+@ And this house was finished on the third day of the month ##Adar##note:x[<<Esth 3:7>>], which was in the sixth year of the reign of Darius the king.
+
+[discrete.pericope]
+==== Dedication of the Temple
+
+@ ¶ And the children of Israel, the priests, and the Levites, and the rest of the children of the captivity, kept ##the dedication##note:x[<<1 Kgs 8:63; 2 Chr 7:5>>] of this house of God ##with joy##note:x[<<Phil 4:4>>],note:tn[__the children of the captivity__: Chaldee, the sons of the transportation]
+@ And ##offered##note:x[<<Ezra 8:35>>] at the dedication of this house of God an hundred bullocks, two hundred rams, four hundred lambs; and for ##a sin offering##note:x[<<2 Chr 29:21–23>>] for all Israel, twelve he goats, ##according to##note:x[<<Rev 7:4–8>>] the number of the tribes of Israel.
+@ And they set the priests in their divisions, and the Levites in their courses, for the service of God, which __is__ at Jerusalem; ##as it is written##note:x[<<Num 3:6>>] in the book of Moses.note:tn[__as it is…__: Chaldee, according to the writing]
+
+[discrete.pericope]
+==== The Returned Exiles Keep the Passover
+
+@ And the children of the captivity kept the passover upon the fourteenth __day__ of the first month.
+@ For the priests and the Levites were purified together, all of them __were__ pure, and ##killed##note:x[<<2 Chr 35:11>>] the passover for all the children of the captivity, and for their brethren the priests, and for themselves.
+@ And the children of Israel, which were come again out of captivity, and ##all such##note:x[<<Ezra 9:11; Isa 52:11; 2 Cor 7:1>>] as had separated themselves unto them from the filthiness of the heathen of the land, to seek the LORD God of Israel, did eat,
+@ And kept ##the feast##note:x[<<2 Chr 30:21>>] of unleavened bread seven days with joy: for the LORD had made them joyful, and ##turned##note:x[<<Prov 21:1>>] the heart of ##the king##note:x[<<Ezra 1:1>>] of Assyria unto them, to strengthen their hands in the work of the house of God, the God of Israel.
+
+=== @7
+
+[discrete.pericope]
+==== Ezra Arrives in Jerusalem
+
+@ Now after these things, in the reign of ##Artaxerxes##note:x[<<Neh 2:1>>] king of Persia, Ezra the son of ##Seraiah##note:x[<<1 Chr 6:4–14>>], the son of Azariah, the son of Hilkiah,
+@ The son of Shallum, the son of Zadok, the son of Ahitub,
+@ The son of Amariah, the son of Azariah, the son of Meraioth,
+@ The son of Zerahiah, the son of Uzzi, the son of Bukki,
+@ The son of Abishua, the son of Phinehas, the son of Eleazar, the son of Aaron the chief priest:
+@ This Ezra went up from Babylon; and he __was__ a ready scribe in the law of Moses, which the LORD God of Israel had given: and the king granted him all his request, ##according to##note:x[<<Ezra 7:28; 8:22, 31>>] the hand of the LORD his God upon him.
+@ And there went up __some__ of ##the children##note:x[<<Ezra 8:1–14>>] of Israel, and of the priests, and the Levites, and the singers, and the porters, and the Nethinims, unto Jerusalem, in the seventh year of ##Artaxerxes##note:x[<<Ezra 8:1>>] the king.
+@ And he came to Jerusalem in the fifth month, which __was__ in the seventh year of the king.
+@ For upon the first __day__ of the first month began he to go up from Babylon, and on the first __day__ of the fifth month came he to Jerusalem, ##according to##note:x[<<Ezra 7:6; Neh 2:8>>] the good hand of his God upon him.note:tn[__began…__: Heb. was the foundation of the going up]
+@ For Ezra had prepared his heart to seek the law of the LORD, and ##to do __it__##note:x[<<Matt 7:24>>], ##and to teach##note:x[<<Mal 2:7; 2 Tim 4:2>>] in Israel statutes and judgments.
+
+[discrete.pericope]
+==== Artaxerxes’ Letter for Ezra
+
+@ ¶ Now this __is__ the copy of the letter that the king Artaxerxes gave unto Ezra the priest, the scribe, __even__ a scribe of the words of the commandments of the LORD, and of his statutes to Israel.
+@ ##Artaxerxes##note:x[<<Ezek 26:7; Dan 2:37>>], king of kings, unto Ezra the priest, a scribe of the law of the God of heaven, perfect __peace__, and at such a time.note:tn[__unto…__: or, to Ezra the priest, a perfect scribe of the law of the God of heaven, peace, etc]
+@ I make a decree, that all they of the people of Israel, and __of__ his priests and Levites, in my realm, which are minded of their own freewill to go up to Jerusalem, go with thee.
+@ Forasmuch as thou art sent ##of the king##note:x[<<Esth 1:14>>], and of his seven counsellors, to enquire concerning Judah and Jerusalem, according to the law of thy God which __is__ in thine hand;note:tn[__of the king__: Chaldee, from before the king]
+@ And to carry the silver and gold, which the king and his counsellors have freely offered unto the God of Israel, ##whose habitation##note:x[<<2 Chr 6:2; Ezra 6:12; Ps 135:21>>] __is__ in Jerusalem,
+@ And all the silver and gold that thou canst find in all the province of Babylon, with the freewill ##offering##note:x[<<1 Chr 29:6>>] of the people, and of the priests, offering willingly for the house of their God which __is__ in Jerusalem:
+@ That thou mayest ##buy speedily##note:x[<<Ezra 6:9–10>>] with this money bullocks, rams, lambs, with ##their meat offerings##note:x[<<Num 15:4–13>>] and their drink offerings, and ##offer them##note:x[<<Deut 12:5–11>>] upon the altar of the house of your God which __is__ in Jerusalem.
+@ And whatsoever shall seem good to thee, and to thy brethren, to do with the rest of the silver and the gold, that do after the will of your God.
+@ The vessels also that are given thee for the service of the house of thy God, __those__ deliver thou before the God of Jerusalem.
+@ And whatsoever more shall be needful for the house of thy God, which thou shalt have occasion to bestow, ##bestow __it__##note:x[<<Ezra 6:4>>] out of the king’s treasure house.
+@ And I, __even__ I Artaxerxes the king, do make a decree to all the treasurers which __are__ ##beyond the river##note:x[<<Ezra 4:16>>], that whatsoever ##Ezra the priest##note:x[<<Ezra 7:6>>], the scribe of the law of the God of heaven, shall require of you, it be done speedily,
+@ Unto an hundred talents of silver, and to an hundred ##measures##note:tn[Chaldee, cors] of wheat, and to an hundred baths of wine, and to an hundred baths of oil, and salt without prescribing __how much__.
+@ Whatsoever is commanded by the God of heaven, let it be diligently done for the house of the God of heaven: for why should there be wrath against the realm of the king and his sons?note:tn[__Whatsoever…__: Chaldee, Whatsoever is of the decree]
+@ Also we certify you, that touching any of the priests and Levites, singers, porters, Nethinims, or ministers of this house of God, it shall not be lawful to impose toll, tribute, or custom, upon them.
+@ And thou, Ezra, after ##the wisdom##note:x[<<Jas 1:5>>] of thy God, that __is__ in thine hand, ##set magistrates##note:x[<<Deut 16:18>>] and judges, which may judge all the people that __are__ beyond the river, all such as know the laws of thy God; and ##teach ye##note:x[<<Ezra 7:10>>] them that know __them__ not.
+@ And ##whosoever##note:x[<<Ezra 6:11>>] will not do the law of thy God, and the law of the king, let judgment be executed speedily upon him, ##whether __it be__##note:x[<<Lev 20:1–27; Deut 13:1–18>>] unto death, or to banishment, or to confiscation of goods, or to imprisonment.note:tn[__to banishment__: Chaldee, to rooting out]
+
+[discrete.pericope]
+==== Ezra Blesses God
+
+@ ¶ ##Blessed##note:x[<<Ezra 6:22>>] __be__ the LORD God of our fathers, which hath ##put __such__##note:x[<<Ezra 6:22; Rev 17:17>>] __a thing__ as this in the king’s heart, to beautify the house of the LORD which __is__ in Jerusalem:
+@ And hath ##extended##note:x[<<Gen 32:28; Ezra 9:9>>] mercy unto me before the king, and his counsellors, and before all the king’s mighty princes. And I was strengthened ##as the hand##note:x[<<2 Tim 4:17–18>>] of the LORD my God __was__ upon me, and I gathered together out of Israel chief men to go up with me.
+
+=== @8
+
+[discrete.pericope]
+==== The Exiles Who Returned with Ezra
+
+@ These __are__ now the chief of their fathers, and __this is__ the genealogy of them that went up with me from Babylon, in the reign of Artaxerxes the king.
+@ Of the sons of Phinehas; Gershom: of the sons of Ithamar; Daniel: of the sons of ##David##note:x[<<1 Chr 3:22>>]; Hattush.
+@ Of the sons of Shechaniah, of the sons of ##Pharosh##note:x[<<Ezra 2:3>>]; Zechariah: and with him were reckoned by genealogy of the males an hundred and fifty.
+@ Of the sons of Pahath-moab; Elihoenai the son of Zerahiah, and with him two hundred males.
+@ Of the sons of Shechaniah; the son of Jahaziel, and with him three hundred males.
+@ Of the sons also of ##Adin##note:x[<<Ezra 2:15; Neh 7:20; 10:16>>]; Ebed the son of Jonathan, and with him fifty males.
+@ And of the sons of Elam; Jeshaiah the son of Athaliah, and with him seventy males.
+@ And of the sons of Shephatiah; Zebadiah the son of Michael, and with him fourscore males.
+@ Of the sons of Joab; Obadiah the son of Jehiel, and with him two hundred and eighteen males.
+@ And of the sons of Shelomith; the son of Josiphiah, and with him an hundred and threescore males.
+@ And of the sons of Bebai; Zechariah the son of Bebai, and with him twenty and eight males.
+@ And of the sons of Azgad; Johanan the son of Hakkatan, and with him an hundred and ten males.note:tn[__the son…__: or, the youngest son]
+@ And of the last sons of Adonikam, whose names __are__ these, Eliphelet, Jeiel, and Shemaiah, and with them threescore males.
+@ Of the sons also of Bigvai; Uthai, and ##Zabbud##note:tn[or, Zaccur, as some read], and with them seventy males.
+
+[discrete.pericope]
+==== Ezra Sends for the Levites
+
+@ ¶ And I gathered them together to the river that runneth to ##Ahava##note:x[<<Ezra 8:21, 31>>]; and there ##abode##note:tn[or, pitched] we in tents three days: and I viewed the people, and the priests, ##and found##note:x[<<Ezra 7:7>>] there none of the sons of Levi.
+@ Then sent I for Eliezer, for Ariel, for Shemaiah, and for Elnathan, and for Jarib, and for Elnathan, and for Nathan, and for Zechariah, and for Meshullam, chief men; also for Joiarib, and for Elnathan, men of understanding.
+@ And I sent them with commandment unto Iddo the chief at the place Casiphia, and I told them what they should say unto Iddo, __and__ to his brethren ##the Nethinims##note:x[<<Ezra 2:43>>], at the place Casiphia, that they should bring unto us ministers for the house of our God.note:tn[__I told…__: Heb. I put words in their mouth]
+@ And ##by the good hand##note:x[<<Ezra 7:28; Neh 2:8>>] of our God upon us they brought us ##a man of understanding##note:x[<<Jer 3:15>>], of the sons of Mahli, the son of Levi, the son of Israel; and Sherebiah, with his sons and his brethren, eighteen;
+@ And Hashabiah, and with him Jeshaiah of the sons of Merari, his brethren and their sons, twenty;
+@ Also of the ##Nethinims##note:x[<<Ezra 2:43; 7:7>>], whom David and the princes had appointed for the service of the Levites, two hundred and twenty Nethinims: all of them were expressed by name.
+
+[discrete.pericope]
+==== Fasting for Protection
+
+@ ¶ Then ##I proclaimed##note:x[<<1 Sam 7:6; 2 Chr 20:3; Joel 1:14>>] a fast there, at the river of Ahava, that we might afflict ourselves before our God, to seek of him a right way for us, and for our little ones, and for all our substance.
+@ For I was ashamed to require of the king a band of soldiers and horsemen to help us against the enemy in the way: because we had spoken unto the king, saying, ##The hand##note:x[<<Ps 33:18–19; 1 Pet 3:12>>] of our God __is__ upon all them for good that seek him; but ##his power and his wrath##note:x[<<1 Pet 3:12>>] __is__ against all them that forsake him.
+@ So we fasted and ##besought##note:x[<<Jer 29:12–13>>] our God for this: ##and he was intreated##note:x[<<Jer 29:12–13; Matt 7:7–8>>] of us.
+
+[discrete.pericope]
+==== Priests to Guard the Offerings
+
+@ ¶ Then I separated twelve of the chief of the priests, ##Sherebiah##note:x[<<Ezra 8:18–19>>], Hashabiah, and ten of their brethren with them,
+@ And ##weighed##note:x[<<Ezra 8:33>>] unto them the silver, and the gold, and the vessels, __even__ the offering of the house of our God, which the king, and his counsellors, and his lords, and all Israel __there__ present, had offered:
+@ I even weighed unto their hand six hundred and fifty talents of silver, and silver vessels an hundred talents, __and__ of gold an hundred talents;
+@ Also twenty basons of gold, of a thousand drams; and two vessels of fine copper, ##precious##note:tn[Heb. desirable] as gold.note:tn[__fine…__: Heb. yellow, or, shining brass]
+@ And I said unto them, ##Ye __are__ holy##note:x[<<Lev 21:6–8>>] unto the LORD; ##the vessels##note:x[<<Lev 22:2–3>>] __are__ holy also; and the silver and the gold __are__ a freewill offering unto the LORD God of your fathers.
+@ Watch ye, and keep __them__, until ye weigh __them__ before the chief of the priests and the Levites, and chief of the fathers of Israel, at Jerusalem, in the chambers of the house of the LORD.
+@ So took the priests and the Levites the weight of the silver, and the gold, and the vessels, to bring __them__ to Jerusalem unto the house of our God.
+
+@ ¶ Then we departed from ##the river of Ahava##note:x[<<Ezra 8:15, 21>>] on the twelfth __day__ of the first month, to go unto Jerusalem: and ##the hand##note:x[<<Ezra 7:9>>] of our God was upon us, and he delivered us from the hand of the enemy, and of such as lay in wait by the way.
+
+[discrete.pericope]
+==== Arrival in Jerusalem
+
+@ ##And we came to Jerusalem, and abode there three days.##note:x[<<Neh 2:11>>]
+
+@ ¶ Now on the fourth day was the silver and the gold and the vessels weighed in the house of our God by the hand of Meremoth the son of ##Uriah##note:x[<<Neh 3:4>>] the priest; and with him __was__ Eleazar the son of Phinehas; and with them __was__ Jozabad the son of Jeshua, and Noadiah the son of Binnui, Levites;
+@ By number __and__ by weight of every one: and all the weight was written at that time.
+@ __Also__ the children of those that had been carried away, which were come out of the captivity, offered burnt offerings unto the God of Israel, ##twelve bullocks##note:x[<<Ezra 6:17>>] for all Israel, ninety and six rams, seventy and seven lambs, twelve he goats __for__ a sin offering: all __this was__ a burnt offering unto the LORD.
+
+@ ¶ note:x[<<Ezra 7:21–24>>]And they delivered the king’s commissions unto the king’s lieutenants, and to the governors on this side the river: and they furthered the people, and the house of God.
+
+=== @9
+
+[discrete.pericope]
+==== Intermarriage with Neighboring Peoples
+
+[.parallel]
+(<<Nehemiah 13:23–31>>)
+
+@ Now when these things were done, the princes came to me, saying, The people of Israel, and the priests, and the Levites, ##have not separated##note:x[<<Ezra 10:10–11; Neh 9:2>>] themselves from the people of the lands, ##__doing__ according##note:x[<<Lev 18:24–30>>] to their abominations, __even__ of the Canaanites, the Hittites, the Perizzites, the Jebusites, the Ammonites, the Moabites, the Egyptians, and the Amorites.
+@ For they have ##taken of their##note:x[<<Ezra 10:18–44; Neh 13:23–24>>] daughters for themselves, and for their sons: so that the holy seed have ##mingled##note:x[<<Neh 13:23–24>>] themselves with the people of __those__ lands: yea, the hand of the princes and rulers hath been chief in this trespass.
+@ And when I heard this thing, I rent my garment and my mantle, and plucked off the hair of my head and of my beard, and ##sat##note:x[<<Neh 1:4>>] down astonied.
+@ Then were assembled unto me every one that ##trembled##note:x[<<Ezra 10:3; Isa 66:2>>] at the words of the God of Israel, because of the transgression of those that had been carried away; and I sat astonied ##until##note:x[<<Exod 29:39>>] the evening sacrifice.
+
+[discrete.pericope]
+==== Ezra’s Prayer of Confession
+
+@ ¶ And at the evening sacrifice I arose up from my ##heaviness##note:tn[or, affliction]; and having rent my garment and my mantle, I fell upon my knees, and ##spread##note:x[<<1 Kgs 8:22, 38, 54>>] out my hands unto the LORD my God,
+@ And said, O my God, I am ashamed and blush to lift up my face to thee, my God: for ##our iniquities##note:x[<<Ps 38:4>>] are increased over __our__ head, and our ##trespass##note:tn[or, guiltiness] is ##grown up##note:x[<<2 Chr 28:9; Rev 18:5>>] unto the heavens.
+@ ##Since the days##note:x[<<2 Chr 29:6>>] of our fathers __have__ we __been__ in a great trespass unto this day; and for our iniquities have we, our kings, __and__ our priests, been delivered into the hand of the kings of the lands, to the sword, to captivity, and to a spoil, and to confusion of face, as __it is__ this day.
+@ And now for a little ##space##note:tn[Heb. moment] grace hath been __shewed__ from the LORD our God, to leave us ##a remnant##note:x[<<Rom 11:5–6>>] to escape, and to give us a nail in his holy place, that our God may ##lighten##note:x[<<Ps 13:3>>] our eyes, and give us a little ##reviving##note:x[<<Hos 6:2>>] in our bondage.note:tn[__a nail__: or, a pin: that is, a constant and sure abode]
+@ For we __were__ bondmen; ##yet our God##note:x[<<Ps 136:23–24>>] hath not forsaken us in our bondage, but hath extended mercy unto us ##in the sight##note:x[<<Ezra 7:6>>] of the kings of Persia, to give us a reviving, to set up the house of our God, and to repair the desolations thereof, and to give us a wall in Judah and in Jerusalem.note:tn[__to repair__: Heb. to set up]
+@ And now, O our God, what shall we say after this? for we have forsaken thy commandments,
+@ Which thou hast commanded ##by##note:tn[Heb. by the hand of] thy servants the prophets, saying, ##The land##note:x[<<Lev 18:24–30>>], unto which ye go to possess it, is an unclean land with the filthiness of the people of the lands, with their abominations, which have filled it from one end to another with their uncleanness.note:tn[__from…__: Heb. from mouth to mouth]
+@ Now therefore ##give not##note:x[<<Deut 7:3; Josh 23:12–13>>] your daughters unto their sons, neither take their daughters unto your sons, ##nor seek their peace##note:x[<<Deut 23:6>>] or their wealth for ever: that ye may be strong, and eat the good of the land, and leave __it__ for an inheritance to your children for ever.
+@ And after all that is come upon us for our evil deeds, and for our great trespass, seeing that thou our God hast punished us ##less##note:x[<<Ps 103:10; Lam 3:22, 39–40>>] than our iniquities __deserve__, and hast given us __such__ deliverance as this;note:tn[__hast punished…__: Heb. hast withheld beneath our iniquities]
+@ Should we again break thy commandments, and ##join in##note:x[<<Ezra 9:2>>] affinity with the people of these abominations? ##wouldest not thou##note:x[<<Deut 9:8, 14>>] be angry with us till thou hadst consumed __us__, so that __there should be__ no remnant nor escaping?
+@ O LORD God of Israel, thou __art__ righteous: for we remain yet escaped, as __it is__ this day: behold, we __are__ before thee ##in our trespasses##note:x[<<John 8:21, 24>>]: for ##we cannot##note:x[<<Ps 130:3>>] stand before thee because of this.
+
+=== @10
+
+[discrete.pericope]
+==== Shecaniah’s Encouragement
+
+@ Now ##when Ezra##note:x[<<Dan 9:20>>] had prayed, and when he had confessed, ##weeping##note:x[<<Ps 119:136; Rom 9:2>>] and casting himself down before the house of God, there assembled unto him out of Israel a very great congregation of men and women and children: for the people wept very sore.note:tn[__wept…__: Heb. wept a great weeping]
+@ note:x[<<Neh 13:27>>]And Shechaniah the son of Jehiel, __one__ of the sons of Elam, answered and said unto Ezra, We have trespassed against our God, and have taken strange wives of the people of the land: yet now there is hope in Israel concerning this thing.
+@ Now therefore let us make a covenant with our God to put away all the wives, and such as are born of them, according to the counsel of my lord, and ##of those that##note:x[<<Ezra 9:4; Ps 119:120>>] tremble ##at the commandment##note:x[<<Deut 7:2–3>>] of our God; and let it be done according to the law.note:tn[__to put…__: Heb. to bring forth]
+@ ##Arise##note:x[<<1 Chr 22:19; Eccl 9:10>>]; for __this__ matter __belongeth__ unto thee: ##we also __will__##note:x[<<1 Chr 28:10>>] __be__ with thee: be of good courage, and do __it__.
+@ Then arose Ezra, and ##made##note:x[<<Neh 5:12; 13:25>>] the chief priests, the Levites, and all Israel, to swear that they should do according to this word. And they sware.
+
+[discrete.pericope]
+==== The People’s Confession of Sin
+
+@ ¶ Then Ezra rose up from before the house of God, and went into the chamber of Johanan the son of Eliashib: and __when__ he came thither, ##he did eat##note:x[<<Deut 9:18>>] no bread, nor drink water: for he mourned because of the transgression of them that had been carried away.
+@ And they made proclamation throughout Judah and Jerusalem unto all the children of the captivity, that they should gather themselves together unto Jerusalem;
+@ And that whosoever would not come within three days, according to the counsel of the princes and the elders, all his substance should be ##forfeited##note:tn[Heb. devoted], and himself separated from the congregation of those that had been carried away.
+
+@ ¶ Then all the men of Judah and Benjamin gathered themselves together unto Jerusalem within three days. It __was__ the ninth month, on the twentieth __day__ of the month; and all the people sat in the street of the house of God, ##trembling##note:x[<<1 Sam 12:17–18>>] because of __this__ matter, and for the great rain.note:tn[__the great…__: Heb. the showers]
+@ And Ezra the priest stood up, and said unto them, Ye have transgressed, and have taken strange wives, to increase the trespass of Israel.note:tn[__have taken__: Heb. have caused to dwell, or, have brought back]
+@ Now therefore ##make confession##note:x[<<Lev 26:40–42; Josh 7:19>>] unto the LORD God of your fathers, and ##do his##note:x[<<Rom 12:2>>] pleasure: and separate yourselves from the people of the land, and from the strange wives.
+@ Then all the congregation answered and said with a loud voice, As thou hast said, so must we do.
+@ But the people __are__ many, and __it is__ a time of much rain, and we are not able to stand without, neither __is this__ a work of one day or two: for we are many that have transgressed in this thing.note:tn[__we are many…__: or, we have greatly offended in this thing]
+@ Let now our rulers of all the congregation stand, and let all them which have taken strange wives in our cities come at appointed times, and with them the elders of every city, and the judges thereof, until ##the fierce##note:x[<<Num 25:4; 2 Chr 29:10; 30:8>>] wrath of our God for this matter be turned from us.note:tn[__for this…__: or, till this matter be dispatched]
+
+@ ¶ Only Jonathan the son of Asahel and Jahaziah the son of Tikvah were employed about this __matter:__ and Meshullam and ##Shabbethai##note:x[<<Neh 11:16>>] the Levite helped them.note:tn[__were…__: Heb. stood]
+@ And the children of the captivity did so. And Ezra the priest, __with__ certain chief of the fathers, after the house of their fathers, and all of them by __their__ names, were separated, and sat down in the first day of the tenth month to examine the matter.
+@ And they made an end with all the men that had taken strange wives by the first day of the first month.
+
+[discrete.pericope]
+==== Those Guilty of Intermarriage
+
+@ ¶ And among the sons of the priests there were found that had taken strange wives: __namely__, of the sons of Jeshua the son of Jozadak, and his brethren; Maaseiah, and Eliezer, and Jarib, and Gedaliah.
+@ And they ##gave their hands##note:x[<<2 Kgs 10:15>>] that they would put away their wives; and __being__ guilty, __they offered__ ##a ram##note:x[<<Lev 6:6>>] of the flock for their trespass.
+@ And of the sons of ##Immer##note:x[<<Ezra 2:37>>]; Hanani, and Zebadiah.
+@ And of the sons of Harim; Maaseiah, and Elijah, and Shemaiah, and Jehiel, and Uzziah.
+@ And of the sons of Pashur; Elioenai, Maaseiah, Ishmael, Nethaneel, Jozabad, and Elasah.
+@ Also of the Levites; Jozabad, and Shimei, and Kelaiah, (the same __is__ Kelita,) Pethahiah, Judah, and Eliezer.
+@ Of the singers also; Eliashib: and of the porters; Shallum, and Telem, and Uri.
+@ Moreover of Israel: of the ##sons of Parosh##note:x[<<Ezra 2:3>>]; Ramiah, and Jeziah, and Malchiah, and Miamin, and Eleazar, and Malchijah, and Benaiah.
+@ And of the sons of Elam; Mattaniah, Zechariah, and Jehiel, and Abdi, and Jeremoth, and Eliah.
+@ And of the sons of Zattu; Elioenai, Eliashib, Mattaniah, and Jeremoth, and Zabad, and Aziza.
+@ Of the sons also of Bebai; Jehohanan, Hananiah, Zabbai, __and__ Athlai.
+@ And of the sons of Bani; Meshullam, Malluch, and Adaiah, Jashub, and Sheal, and Ramoth.
+@ And of the sons of Pahath-moab; Adna, and Chelal, Benaiah, Maaseiah, Mattaniah, Bezaleel, and Binnui, and Manasseh.
+@ And __of__ the sons of Harim; Eliezer, Ishijah, Malchiah, Shemaiah, Shimeon,
+@ Benjamin, Malluch, __and__ Shemariah.
+@ Of the sons of Hashum; Mattenai, Mattathah, Zabad, Eliphelet, Jeremai, Manasseh, __and__ Shimei.
+@ Of the sons of Bani; Maadai, Amram, and Uel,
+@ Benaiah, Bedeiah, Chelluh,
+@ Vaniah, Meremoth, Eliashib,
+@ Mattaniah, Mattenai, and Jaasau,
+@ And Bani, and Binnui, Shimei,
+@ And Shelemiah, and Nathan, and Adaiah,
+@ ##Machnadebai##note:tn[or, Mabnadebai, according to some copies], Shashai, Sharai,
+@ Azareel, and Shelemiah, Shemariah,
+@ Shallum, Amariah, __and__ Joseph.
+@ Of the sons of Nebo; Jeiel, Mattithiah, Zabad, Zebina, Jadau, and Joel, Benaiah.
+@ All these had taken strange wives: and __some__ of them had wives by whom they had children.

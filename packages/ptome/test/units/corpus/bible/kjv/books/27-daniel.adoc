@@ -1,0 +1,550 @@
+== @DAN
+
+[.book-title]
+The Book of Daniel
+
+=== @1
+
+[discrete.pericope]
+==== Daniel Removed to Babylon
+
+@ ##In the third year of the reign of Jehoiakim king of Judah came Nebuchadnezzar king of Babylon unto Jerusalem, and besieged it.##note:x[<<2 Kgs 24:1–2, 13; 2 Chr 36:5–7>>]
+@ And the Lord gave Jehoiakim king of Judah into his hand, ##with part##note:x[<<2 Chr 36:7; Jer 27:19–20>>] of the vessels of the house of God: which he carried into the land of ##Shinar##note:x[<<Zech 5:11>>] to the house of his god; and he brought the vessels into the treasure house of his god.
+
+@ ¶ note:x[<<2 Kgs 20:17–18; Isa 39:7>>]And the king spake unto Ashpenaz the master of his eunuchs, that he should bring __certain__ of the children of Israel, and of the king’s seed, and of the princes;
+@ Children in whom __was__ no blemish, but well favoured, ##and skilful##note:x[<<Dan 5:11; Acts 7:22>>] in all wisdom, and cunning in knowledge, and understanding science, and such as __had__ ##ability##note:x[<<Prov 22:29>>] in them to stand in the king’s palace, and whom they might teach the learning and the tongue of the Chaldeans.
+@ And the king appointed them a daily provision of the king’s meat, and of the wine which he drank: so nourishing them three years, that at the end thereof they might ##stand##note:x[<<Dan 1:19>>] before the king.note:tn[__the wine…__: Heb. the wine of his drink]
+@ Now among these were of the children of Judah, ##Daniel##note:x[<<Ezek 14:14>>], Hananiah, Mishael, and Azariah:
+@ Unto whom the prince of the eunuchs ##gave names##note:x[<<Dan 4:8; 5:12>>]: for he gave unto Daniel __the name__ of Belteshazzar; and to ##Hananiah##note:x[<<Dan 2:49>>], of Shadrach; and to Mishael, of Meshach; and to Azariah, of Abed-nego.
+
+[discrete.pericope]
+==== Daniel’s Faithfulness
+
+@ ¶ But Daniel purposed in his heart that he would not ##defile##note:x[<<Lev 11:45–47; Ps 141:4; Ezek 4:13–14>>] himself with the portion of the king’s meat, nor with the wine which he drank: therefore he requested of the prince of the eunuchs that he might not defile himself.
+@ ##Now God had brought Daniel into favour and tender love with the prince of the eunuchs.##note:x[<<Gen 39:21; 1 Kgs 8:50; Ps 106:46>>]
+@ And the prince of the eunuchs said unto Daniel, I fear my lord the king, who hath appointed your meat and your drink: for why should he see your faces ##worse liking##note:x[<<Matt 6:16–18>>] than the children which __are__ of your ##sort##note:tn[or, term, or, continuance?]? then shall ye make __me__ endanger my head to the king.note:tn[__worse…__: Heb. sadder]
+@ Then said Daniel to ##Melzar##note:tn[or, the steward], whom the prince of the eunuchs had set over Daniel, Hananiah, Mishael, and Azariah,
+@ Prove thy servants, I beseech thee, ten days; and let them give us note:x[<<Gen 1:29–30; Dan 1:16; Rom 14:2>>]##pulse##note:tn[Heb. of pulse] to eat, and water to drink.note:tn[__to eat…__: Heb. that we may eat, etc]
+@ Then let our countenances be looked upon before thee, and the countenance of the children that eat of the portion of the king’s meat: and as thou seest, deal with thy servants.
+@ So he consented to them in this matter, and proved them ten days.
+@ And at the end of ten days ##their##note:x[<<Exod 23:25; Prov 10:22>>] countenances appeared fairer and fatter in flesh than all the children which did eat the portion of the king’s meat.
+@ Thus Melzar took away the portion of their meat, and the wine that they should drink; and gave them pulse.
+
+[discrete.pericope]
+==== Daniel’s Wisdom
+
+@ ¶ As for these four children, ##God##note:x[<<1 Kgs 3:12; Job 32:8; Jas 1:5>>] gave them knowledge and skill in all learning and wisdom: and Daniel had understanding in all visions and dreams.note:tn[__Daniel…__: or, he made Daniel understand]
+@ Now at the end of the days that the king had said he should bring them in, then the prince of the eunuchs brought them in before Nebuchadnezzar.
+@ And the king communed with them; and among them all was found none like Daniel, Hananiah, Mishael, and Azariah: therefore stood they before the king.
+@ And ##in all##note:x[<<1 Kgs 4:29–34>>] matters of wisdom __and__ understanding, that the king enquired of them, he found them ten times better than all ##the magicians##note:x[<<Exod 8:19; Isa 47:12–14>>] __and__ astrologers that __were__ in all his realm.note:tn[__wisdom…__: Heb. wisdom of understanding]
+@ ##And Daniel continued __even__ unto the first year of king Cyrus.##note:x[<<Dan 6:28; 10:1>>]
+
+=== @2
+
+[discrete.pericope]
+==== Nebuchadnezzar’s Troubling Dream
+
+@ And in the second year of the reign of ##Nebuchadnezzar##note:x[<<Dan 4:5>>] Nebuchadnezzar dreamed dreams, wherewith his spirit was troubled, and his sleep brake from him.
+@ ##Then the king commanded to call the magicians, and the astrologers, and the sorcerers, and the Chaldeans, for to shew the king his dreams. So they came and stood before the king.##note:x[<<Gen 41:8; Dan 1:20; 4:6>>]
+@ ##And the king said unto them, I have dreamed a dream, and my spirit was troubled to know the dream.##note:x[<<Gen 40:8; 41:15>>]
+@ Then spake the Chaldeans to the king ##in##note:x[<<Ezra 4:7>>] Syriack, ##O king##note:x[<<Dan 3:9; 5:10>>], live for ever: tell thy servants the dream, and we will shew the interpretation.note:tn[__O king…__: (Chaldee, to the end of chapter seven)]
+@ The king answered and said to the Chaldeans, The thing is gone from me: if ye will not make known unto me the dream, with the interpretation thereof, ##ye shall##note:x[<<Dan 3:29>>] be cut in pieces, and your houses shall be ##made##note:x[<<2 Kgs 10:27; Ezra 6:11>>] a dunghill.note:tn[__cut…__: Chaldee, made pieces]
+@ But if ye shew the dream, and the interpretation thereof, ##ye shall##note:x[<<Dan 2:48; 5:7>>] receive of me gifts and ##rewards##note:tn[or, fee] and great honour: therefore shew me the dream, and the interpretation thereof.
+@ They answered again and said, Let the king tell his servants the dream, and we will shew the interpretation of it.
+@ The king answered and said, I know of certainty that ye would ##gain##note:tn[Chaldee, buy] the time, because ye see the thing is gone from me.
+@ But if ye will not make known unto me the dream, ##__there is__##note:x[<<Esth 4:11>>] __but__ one decree for you: for ye have prepared lying and corrupt words to speak before me, till ##the time##note:x[<<Dan 2:21; 7:25>>] be changed: therefore tell me the dream, and I shall know that ye can shew me the interpretation thereof.
+
+@ ¶ The Chaldeans answered before the king, and said, There is not a man upon the earth that can shew the king’s matter: therefore __there is__ no king, lord, nor ruler, __that__ asked such things at any magician, or astrologer, or Chaldean.
+@ And __it is__ a rare thing that the king requireth, ##and there##note:x[<<Dan 5:11>>] is none other that can shew it before the king, except the gods, whose dwelling is not with flesh.
+@ ##For this cause the king was angry and very furious, and commanded to destroy all the wise __men__ of Babylon.##note:x[<<Dan 3:13>>]
+@ And the decree went forth that the wise __men__ should be slain; and they sought Daniel and his fellows to be slain.
+
+[discrete.pericope]
+==== The Dream Revealed to Daniel
+
+@ ¶ Then Daniel answered with counsel and wisdom to Arioch the captain of the king’s guard, which was gone forth to slay the wise __men__ of Babylon&#58;note:tn[__answered…__: Chaldee, returned]note:tn[__captain…__: or, chief marshal: Chaldee, chief of the executioners, or, slaughtermen]
+@ He answered and said to Arioch the king’s captain, Why __is__ the decree __so__ hasty from the king? Then Arioch made the thing known to Daniel.
+@ Then Daniel went in, and desired of the king that he would give him time, and that he would shew the king the interpretation.
+@ Then Daniel went to his house, and made the thing known to Hananiah, Mishael, and Azariah, his companions:
+@ That ##they would##note:x[<<Ps 50:15; Jer 33:3; Matt 18:19>>] desire mercies of the God of heaven concerning this secret; that Daniel and his fellows should not perish with the rest of the wise __men__ of Babylon.note:tn[__of the God__: Chaldee, from before God]note:tn[__that Daniel…__: or, that they should not destroy Daniel, etc]
+
+@ ¶ Then ##was##note:x[<<Ps 25:14; Amos 3:7>>] the secret revealed unto Daniel ##in##note:x[<<Num 12:6>>] a night vision. Then Daniel blessed the God of heaven.
+@ Daniel answered and said, ##Blessed##note:x[<<Ps 113:2; 145:1–2>>] be the name of God for ever and ever: ##for wisdom##note:x[<<Job 12:13>>] and might are his:
+@ And ##he changeth##note:x[<<Ps 31:14–15>>] the times and the seasons: ##he removeth##note:x[<<Ps 75:5–6; 113:7–8>>] kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding:
+@ He ##revealeth##note:x[<<Job 12:22>>] the deep and secret things: ##he knoweth##note:x[<<Jer 23:24>>] what __is__ in the darkness, ##and the##note:x[<<1 John 1:5>>] light dwelleth with him.
+@ I thank thee, and praise thee, ##O thou##note:x[<<Exod 3:15>>] God of my fathers, who hast given me wisdom and might, ##and hast##note:x[<<Dan 2:18; Amos 3:7>>] made known unto me now what we desired of thee: for thou hast __now__ made known unto us the king’s matter.
+
+[discrete.pericope]
+==== Daniel Interprets the Dream
+
+@ ¶ Therefore Daniel went in unto Arioch, whom the king had ordained to destroy the wise __men__ of Babylon: he went and said thus unto him; Destroy not the wise __men__ of Babylon: bring me in before the king, and I will shew unto the king the interpretation.
+@ Then Arioch brought in Daniel before the king in haste, and said thus unto him, ##I have##note:x[<<1 Cor 1:27–28>>] found a man of the captives of Judah, that will make known unto the king the interpretation.note:tn[__I have…__: Chaldee, That I have found]note:tn[__captives…__: Chaldee, children of the captivity of Judah]
+@ The king answered and said to ##Daniel##note:x[<<Dan 1:7>>], whose name __was__ Belteshazzar, Art thou able to make known unto me the dream which I have seen, and the interpretation thereof?
+@ Daniel answered in the presence of the king, and said, The secret which the king hath demanded cannot the wise __men__, the astrologers, the magicians, the soothsayers, shew unto the king;
+@ But there is a God in heaven ##that revealeth##note:x[<<Gen 40:8; Amos 4:13>>] secrets, and maketh known to the king Nebuchadnezzar what shall be ##in the##note:x[<<Dan 10:14>>] latter days. Thy dream, and the visions of thy head upon thy bed, are these;note:tn[__maketh…__: Chaldee, hath made known]
+@ As for thee, O king, thy thoughts ##came##note:tn[Chaldee, came up] __into thy mind__ upon thy bed, what should come to pass hereafter: and ##he that##note:x[<<Dan 2:28>>] revealeth secrets maketh known to thee what shall come to pass.
+@ But as for me, ##this secret##note:x[<<Gen 41:16; Acts 3:12>>] is not revealed to me for __any__ wisdom that I have more than any living, but for __their__ sakes that shall make known the interpretation to the king, and that thou mightest know the thoughts of thy heart.note:tn[__but for…__: or, but for the intent that the interpretation may be made known to the king]
+
+@ ¶ Thou, O king, ##sawest##note:tn[Chaldee, wast seeing], and behold a great image. This great image, whose brightness __was__ excellent, stood before thee; and the form thereof __was__ ##terrible##note:x[<<Hab 1:7>>].
+@ This image’s head __was__ of fine gold, his breast and his arms of silver, his belly and his ##thighs##note:tn[or, sides] of brass,
+@ His legs of iron, his feet part of iron and part of clay.
+@ Thou sawest till that ##a stone##note:x[<<Dan 2:44–45; Zech 12:3>>] ##was cut##note:x[<<Dan 8:25>>] out without hands, which smote the image upon his feet __that were__ of iron and clay, and brake them to pieces.note:tn[__without…__: or, which was not in hands]
+@ Then was the iron, the clay, the brass, the silver, and the gold, broken to pieces together, and ##became##note:x[<<Isa 2:2–3>>] ##like##note:x[<<Hos 13:3>>] the chaff of the summer threshingfloors; and the wind carried them away, that ##no place##note:x[<<Ps 37:10>>] was found for them: and the stone that smote the image became a great mountain, and filled the whole earth.
+
+@ ¶ This __is__ the dream; and we will tell the interpretation thereof before the king.
+@ Thou, O king, __art__ ##a king##note:x[<<Jer 27:6–7; Ezek 26:7>>] of kings: for the God of heaven hath given thee a kingdom, power, and strength, and glory.
+@ And wheresoever the children of men dwell, ##the beasts##note:x[<<Ps 50:10–11; Dan 4:21–22>>] of the field and the fowls of the heaven hath he given into thine hand, and hath made thee ruler over them all. Thou __art__ this head of gold.
+@ And after thee shall arise ##another kingdom##note:x[<<Isa 44:28; Dan 2:32; 5:28–31>>] inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth.
+@ And the fourth kingdom shall be strong as iron: ##forasmuch##note:x[<<Dan 7:7>>] as iron breaketh in pieces and subdueth all __things:__ and as iron that breaketh all these, shall it break in pieces and bruise.
+@ And whereas thou sawest the feet and toes, part of potters’ clay, and part of iron, the kingdom shall be divided; but there shall be in it of the strength of the iron, forasmuch as thou sawest the iron mixed with miry clay.
+@ And __as__ the toes of the feet __were__ part of iron, and part of clay, __so__ the kingdom shall be partly strong, and partly ##broken##note:tn[or, brittle].
+@ And whereas thou sawest iron mixed with miry clay, they shall mingle themselves with the seed of men: but they shall not cleave one to another, even as iron is not mixed with clay.note:tn[__one…__: Chaldee, this with this]
+@ And in the days of these kings shall the God of heaven ##set up##note:x[<<Matt 28:18>>] a kingdom, ##which shall never##note:x[<<Dan 6:26; Luke 1:32–33>>] be destroyed: and the kingdom shall not be left to other people, __but__ it shall break in pieces and consume all these kingdoms, and it shall stand for ever.note:tn[__the days__: Chaldee, their days]note:tn[__the kingdom__: Chaldee, the kingdom thereof]
+@ note:x[<<Gen 41:32>>]Forasmuch as ##thou sawest##note:x[<<Isa 28:16>>] that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold; the great God hath made known to the king what shall come to pass ##hereafter##note:tn[Chaldee, after this]: and the dream __is__ certain, and the interpretation thereof sure.note:tn[__without…__: or, which was not in hands]
+
+[discrete.pericope]
+==== Nebuchadnezzar Promotes Daniel
+
+@ ¶ Then the king Nebuchadnezzar ##fell##note:x[<<Acts 10:25; 14:13>>] upon his face, and worshipped Daniel, and commanded that they should offer an oblation ##and sweet##note:x[<<Ezra 6:10>>] odours unto him.
+@ The king answered unto Daniel, and said, Of a truth __it is__, that your God __is__ ##a God##note:x[<<Dan 11:36>>] of gods, and a Lord of kings, and ##a revealer##note:x[<<Dan 2:28; Amos 3:7>>] of secrets, seeing thou couldest reveal this secret.
+@ Then the king made Daniel ##a great##note:x[<<Gen 41:39–43; Dan 2:6>>] man, and gave him many great gifts, and made him ruler over the whole province of Babylon, ##and chief##note:x[<<Dan 5:11>>] of the governors over all the wise __men__ of Babylon.
+@ Then Daniel requested of the king, and he set Shadrach, Meshach, and Abed-nego, over the affairs of the province of Babylon: but Daniel ##__sat__##note:x[<<Esth 2:19>>] in the gate of the king.
+
+=== @3
+
+[discrete.pericope]
+==== Nebuchadnezzar’s Golden Statue
+
+@ Nebuchadnezzar the king ##made##note:x[<<Isa 46:6; Jer 16:20; Hab 2:19>>] an image of gold, whose height __was__ threescore cubits, __and__ the breadth thereof six cubits: he set it up in the plain of Dura, in the province of Babylon.
+@ Then Nebuchadnezzar the king sent to gather together the princes, the governors, and the captains, the judges, the treasurers, the counsellors, the sheriffs, and all the rulers of the provinces, to come to the dedication of the image which Nebuchadnezzar the king had set up.
+@ Then ##the princes##note:x[<<Rev 17:13, 17>>], the governors, and captains, the judges, the treasurers, the counsellors, the sheriffs, and all the rulers of the provinces, were gathered together unto the dedication of the image that Nebuchadnezzar the king had set up; and they stood before the image that Nebuchadnezzar had set up.
+@ Then an herald cried ##aloud##note:tn[Chaldee, with might], To you ##it is commanded##note:x[<<Mic 6:16>>], ##O people##note:x[<<Dan 4:1; 6:25>>], nations, and languages,note:tn[__it…__: Chaldee, they command]
+@ __That__ at what time ye hear the sound of ##the cornet##note:x[<<Dan 3:10, 15>>], flute, harp, sackbut, psaltery, ##dulcimer##note:tn[or, singing: Chaldee, symphony], and all kinds of musick, ye fall down and worship the golden image that Nebuchadnezzar the king hath set up:
+@ And whoso falleth not down and worshippeth shall the same hour be cast into the midst of ##a burning##note:x[<<Jer 29:22; Matt 13:42, 50>>] fiery furnace.
+@ Therefore at that time, when all the people heard the sound of the cornet, flute, harp, sackbut, psaltery, and all kinds of musick, all the people, the nations, and the languages, fell down __and__ worshipped the golden image that Nebuchadnezzar the king had set up.
+
+[discrete.pericope]
+==== Shadrach, Meshach, and Abednego Accused
+
+@ ¶ Wherefore at that time certain Chaldeans came near, ##and accused##note:x[<<Ezra 4:12–16>>] the Jews.
+@ They spake and said to the king Nebuchadnezzar, ##O king##note:x[<<Dan 5:10; 6:6>>], live for ever.
+@ Thou, O king, ##hast made##note:x[<<Esth 3:12–14; Dan 3:4–7; 6:12>>] a decree, that every man that shall hear the sound of the cornet, flute, harp, sackbut, psaltery, and ##dulcimer##note:tn[or, singing: Chaldee, symphony], and all kinds of musick, shall fall down and worship the golden image:
+@ And whoso falleth not down and worshippeth, __that__ he should be cast into the midst of a burning fiery furnace.
+@ There are ##certain##note:x[<<Dan 2:49; 6:13>>] Jews whom thou hast set over the affairs of the province of Babylon, Shadrach, Meshach, and Abed-nego; these men, O king, have ##not regarded thee##note:x[<<Acts 17:7>>]: they serve not thy gods, nor worship the golden image which thou hast set up.note:tn[__have…__: Chaldee, have set no regard upon thee]
+
+@ ¶ Then Nebuchadnezzar ##in __his__##note:x[<<Dan 2:12; 3:19>>] rage and fury commanded to bring Shadrach, Meshach, and Abed-nego. Then they brought these men before the king.
+@ Nebuchadnezzar spake and said unto them, __Is it__ ##true##note:tn[or, of purpose], O Shadrach, Meshach, and Abed-nego, do not ye serve ##my gods##note:x[<<Isa 46:1; Jer 50:2; Dan 3:1>>], nor worship the golden image which I have set up?
+@ note:x[<<Acts 5:29>>]Now if ye be ready that at what time ye hear the sound of the cornet, flute, harp, sackbut, psaltery, and ##dulcimer##note:tn[or, singing: Chaldee, symphony], and all kinds of musick, ye fall down and worship the image which I have made; ##__well__##note:x[<<Dan 3:17>>]__:__ but if ye worship not, ye shall be cast the same hour into the midst of a burning fiery furnace; ##and who##note:x[<<2 Chr 32:15–17>>] __is__ that God that shall deliver you out of my hands?
+@ Shadrach, Meshach, and Abed-nego, answered and said to the king, O Nebuchadnezzar, we __are__ not careful to answer thee in this matter.
+@ If it be __so__, ##our God##note:x[<<Luke 1:37; Rom 8:31; Heb 7:25>>] whom we serve is able to deliver us from the burning fiery furnace, and he will deliver __us__ out of thine hand, O king.
+@ But if not, ##be it##note:x[<<Matt 10:39; Acts 5:29–32; Rev 2:10–11>>] known unto thee, O king, that we will not serve thy gods, nor worship the golden image which thou hast set up.
+
+[discrete.pericope]
+==== The Fiery Furnace
+
+@ ¶ Then ##was Nebuchadnezzar##note:x[<<Prov 21:24; Dan 3:13>>] ##full##note:tn[Chaldee, filled] of fury, and the form of his visage was changed against Shadrach, Meshach, and Abed-nego: __therefore__ he spake, and commanded that they should heat the furnace ##one seven##note:x[<<Lev 26:24>>] times more than it was wont to be heated.
+@ And he commanded the most mighty men that __were__ in his army to bind Shadrach, Meshach, and Abed-nego, __and__ to cast __them__ into the burning fiery furnace.note:tn[__most…__: Chaldee, mighty of strength]
+@ Then these men were bound in their ##coats##note:tn[or, mantles], their hosen, and their ##hats##note:tn[or, turbans], and their __other__ garments, and were cast into the midst of the burning fiery furnace.
+@ Therefore because the king’s ##commandment##note:tn[Chaldee, word] was urgent, and the furnace exceeding hot, the ##flame##note:tn[or, spark] of the fire ##slew##note:x[<<Prov 11:8; 21:18>>] those men that took up Shadrach, Meshach, and Abed-nego.
+@ And these three men, Shadrach, Meshach, and Abed-nego, ##fell##note:x[<<Jer 38:6; Dan 6:16–17>>] down bound into the midst of the burning fiery furnace.
+@ Then Nebuchadnezzar the king was astonied, and rose up in haste, __and__ spake, and said unto his ##counsellors##note:tn[or, governors], Did not we cast three men bound into the midst of the fire? They answered and said unto the king, True, O king.
+@ He answered and said, Lo, I see four men loose, ##walking##note:x[<<Isa 43:2>>] in the midst of the fire, and ##they have no hurt##note:x[<<Mark 16:18; Acts 28:5>>]; and the form of the fourth is like the Son of God.note:tn[__they…__: Chaldee, there is no hurt in them]
+
+@ ¶ Then Nebuchadnezzar came near to the ##mouth##note:tn[Chaldee, door] of the burning fiery furnace, __and__ spake, and said, Shadrach, Meshach, and Abed-nego, ##ye servants##note:x[<<Dan 3:17; Rev 19:5>>] of the most high God, ##come forth##note:x[<<Isa 52:12>>], and come __hither__. Then Shadrach, Meshach, and Abed-nego, came forth of the midst of the fire.
+@ And ##the princes##note:x[<<Isa 26:11>>], governors, and captains, and the king’s counsellors, being gathered together, saw these men, ##upon##note:x[<<Isa 43:2; Heb 11:34>>] whose bodies the fire had no power, nor was an hair of their head singed, neither were their coats changed, nor the smell of fire had passed on them.
+
+@ __Then__ Nebuchadnezzar spake, and said, Blessed __be__ the God of Shadrach, Meshach, and Abed-nego, who ##hath sent##note:x[<<Ps 34:7–8>>] his angel, and delivered his servants ##that trusted##note:x[<<Ps 84:11–12>>] in him, and have changed the king’s word, and ##yielded##note:x[<<Rom 14:7–8>>] their bodies, that they might not serve nor worship any god, except their own God.
+@ Therefore I make a decree, That every people, nation, and language, which speak any thing amiss against the God of Shadrach, Meshach, and Abed-nego, shall be cut in pieces, and their houses shall be made a dunghill: because there is no other God that can deliver after this sort.note:tn[__I make…__: Chaldee, a decree is made by me]note:tn[__any…__: Chaldee, error]note:tn[__cut…__: Chaldee, made pieces]
+@ Then the king ##promoted##note:tn[Chaldee, made to prosper] Shadrach, Meshach, and Abed-nego, in the province of Babylon.
+
+=== @4
+
+[discrete.pericope]
+==== Nebuchadnezzar Confesses God’s Kingdom
+
+@ Nebuchadnezzar the king, ##unto all##note:x[<<Dan 3:4>>] people, nations, and languages, that dwell in all the earth; ##Peace##note:x[<<Dan 6:25; 1 Pet 1:2>>] be multiplied unto you.
+@ I thought it good to shew the signs and wonders ##that##note:x[<<Ps 66:16; Dan 3:26>>] the high God hath wrought toward me.note:tn[__I thought…__: Chaldee, It was seemly before me]
+@ How ##great##note:x[<<Isa 25:1>>] __are__ his signs! and how mighty __are__ his wonders! ##his kingdom##note:x[<<Ps 145:13; Dan 2:44>>] __is__ an everlasting kingdom, and his dominion __is__ from generation to generation.
+
+[discrete.pericope]
+==== Nebuchadnezzar’s Dream of a Great Tree
+
+@ ¶ I Nebuchadnezzar ##was##note:x[<<Isa 47:7–8>>] at rest in mine house, and flourishing in my palace:
+@ I saw ##a dream##note:x[<<Dan 2:1>>] which made me afraid, and the thoughts upon my bed and the visions of my head troubled me.
+@ Therefore made I a decree ##to bring##note:x[<<Dan 2:2>>] in all the wise __men__ of Babylon before me, that they might make known unto me the interpretation of the dream.
+@ Then came in the magicians, the astrologers, the Chaldeans, and the soothsayers: and I told the dream before them; ##but##note:x[<<Isa 44:25>>] they did not make known unto me the interpretation thereof.
+
+@ ¶ But at the last Daniel came in before me, whose name __was__ ##Belteshazzar##note:x[<<Dan 1:7>>], according to the name of my god, ##and in##note:x[<<Dan 4:18; 5:14>>] whom __is__ the spirit of the holy gods: and before him I told the dream, __saying__,
+@ O Belteshazzar, ##master##note:x[<<Dan 2:48; 5:11>>] of the magicians, because I know that ##the spirit##note:x[<<Dan 4:8>>] of the holy gods __is__ in thee, and no secret troubleth thee, tell me the visions of my dream that I have seen, and the interpretation thereof.
+@ Thus __were__ the visions of mine head in my bed; I ##saw##note:x[<<Ps 37:35–36; Isa 10:33–34; Jer 12:2>>], and behold a tree in the midst of the earth, and the height thereof __was__ great.note:tn[__I saw__: Chaldee, I was seeing]
+@ The tree grew, and was strong, and the height thereof ##reached##note:x[<<Deut 9:1; Dan 4:21–22; Matt 11:23>>] unto heaven, and the sight thereof to the end of all the earth:
+@ The leaves thereof __were__ fair, and the fruit thereof much, and in it __was__ meat for all: the beasts of the field had shadow under it, and ##the fowls##note:x[<<Luke 13:19>>] of the heaven dwelt in the boughs thereof, and all flesh was fed of it.
+@ I saw ##in the##note:x[<<Dan 7:1>>] visions of my head upon my bed, and, behold, a watcher and ##an holy##note:x[<<Deut 33:2; Dan 8:13>>] one came down from heaven;
+@ He cried ##aloud##note:tn[Chaldee, with might], and said thus, ##Hew##note:x[<<Dan 4:23; Matt 3:10>>] down the tree, and cut off his branches, shake off his leaves, and scatter his fruit: ##let##note:x[<<Ezek 31:12–13>>] the beasts get away from under it, and the fowls from his branches:
+@ Nevertheless leave the stump of his roots in the earth, even with a band of iron and brass, in the tender grass of the field; and let it be wet with the dew of heaven, and __let__ his portion __be__ with the beasts in the grass of the earth:
+@ Let his heart be changed from man’s, and let a beast’s heart be given unto him; and let ##seven times##note:x[<<Dan 4:23>>] pass over him.
+@ This matter __is__ by the decree of the watchers, and the demand by the word of the holy ones: to the intent that the living may know that ##the most High##note:x[<<Dan 2:21; 4:25>>] ruleth in the kingdom of men, and giveth it to whomsoever he will, and setteth up over it ##the basest##note:x[<<Dan 4:25>>] of men.
+@ This dream I king Nebuchadnezzar have seen. Now thou, O Belteshazzar, declare the interpretation thereof, ##forasmuch##note:x[<<Gen 41:8; Dan 4:7; 5:15>>] as all the wise __men__ of my kingdom are not able to make known unto me the interpretation: but thou __art__ able; for the spirit of the holy gods __is__ in thee.
+
+[discrete.pericope]
+==== Daniel Interprets the Second Dream
+
+@ ¶ note:x[<<Dan 7:28; 8:27>>]Then Daniel, whose name __was__ Belteshazzar, was astonied for one hour, and his thoughts troubled him. The king spake, and said, Belteshazzar, let not the dream, or the interpretation thereof, trouble thee. Belteshazzar answered and said, My lord, the dream __be__ to them that hate thee, and the interpretation thereof to thine enemies.
+@ The tree that thou sawest, which grew, and was strong, whose height reached unto the heaven, and the sight thereof to all the earth;
+@ Whose leaves __were__ fair, and the fruit thereof much, and in it __was__ meat for all; under which the beasts of the field dwelt, and upon whose branches the fowls of the heaven had their habitation:
+@ It __is__ ##thou##note:x[<<2 Sam 12:7; Dan 2:37–38>>], O king, that art grown and become strong: for thy greatness is grown, and reacheth unto heaven, and thy dominion to the end of the earth.
+@ And whereas the king saw a watcher and an holy one coming down from heaven, and saying, Hew the tree down, and destroy it; yet leave the stump of the roots thereof in the earth, even with a band of iron and brass, in the tender grass of the field; and let it be wet with the dew of heaven, and __let__ his portion __be__ with the beasts of the field, till seven times pass over him;
+@ This __is__ the interpretation, O king, and this __is__ the decree of the most High, which is ##come##note:x[<<Ps 107:40>>] upon my lord the king:
+@ That they shall drive thee from men, and thy dwelling shall be with the beasts of the field, and they shall make thee to eat grass as oxen, and they shall wet thee with the dew of heaven, and seven times shall pass over thee, ##till##note:x[<<Ps 83:18; Jer 27:5; Dan 4:17>>] thou know that the most High ruleth in the kingdom of men, and giveth it to whomsoever he will.
+@ And whereas they commanded to leave the stump of the tree roots; thy kingdom shall be sure unto thee, after that thou shalt have known that the heavens do rule.
+@ Wherefore, O king, let my counsel be acceptable unto thee, and ##break##note:x[<<Isa 55:6–7; Ezek 18:27–32>>] off thy sins by righteousness, and thine iniquities by shewing mercy to the poor; ##if it##note:x[<<Jonah 3:9>>] may be a lengthening of thy tranquillity.note:tn[__a lengthening…__: or, an healing of thine error]
+
+[discrete.pericope]
+==== The Second Dream Fulfilled
+
+@ ¶ All this came upon the king Nebuchadnezzar.
+@ At the end of twelve months he walked ##in##note:tn[or, upon] the palace of the kingdom of Babylon.
+@ The king spake, and said, ##Is not##note:x[<<Prov 16:18; Luke 14:11>>] this ##great##note:x[<<Rev 17:5>>] Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?
+@ While ##the word##note:x[<<Luke 12:20>>] __was__ in the king’s mouth, there ##fell##note:x[<<Acts 9:3–5; Rev 16:7>>] a voice from heaven, __saying__, O king Nebuchadnezzar, to thee it is spoken; The kingdom is departed from thee.
+@ And ##they shall drive##note:x[<<Dan 5:21>>] thee from men, and thy dwelling __shall be__ with the beasts of the field: they shall make thee to eat grass as oxen, and seven times shall pass over thee, ##until##note:x[<<Job 12:18–21; Jer 27:5>>] thou know that the most High ruleth in the kingdom of men, and giveth it to whomsoever he will.
+@ The same hour was the thing fulfilled upon Nebuchadnezzar: and he was driven from men, and did eat grass as oxen, and his body was wet with the dew of heaven, till his hairs were grown like eagles’ __feathers__, and his nails like birds’ __claws__.
+
+[discrete.pericope]
+==== Nebuchadnezzar Restored
+
+@ And at the end of the days I Nebuchadnezzar lifted up mine eyes unto heaven, and mine understanding returned unto me, and I blessed the most High, and I praised and honoured ##him##note:x[<<Dan 12:7; Rev 4:10>>] that liveth for ever, ##whose##note:x[<<Ps 145:13>>] dominion __is__ an everlasting dominion, and his kingdom __is__ from generation to generation:
+@ And all the inhabitants of the earth __are__ reputed as nothing: ##and he##note:x[<<Ps 115:3; 135:6>>] doeth according to his will in the army of heaven, and __among__ the inhabitants of the earth: and ##none##note:x[<<Job 42:2>>] can stay his hand, or say unto him, What doest thou?
+@ At the same time my reason returned unto me; and for the glory of my kingdom, ##mine##note:x[<<Dan 4:15–16, 32>>] honour and brightness returned unto me; and my counsellors and my lords sought unto me; and I was established in my kingdom, and excellent majesty was ##added##note:x[<<Prov 22:4>>] unto me.
+@ Now I Nebuchadnezzar praise and extol and honour the King of heaven, ##all##note:x[<<Ps 33:4–5>>] whose works __are__ truth, and his ways judgment: and ##those that walk##note:x[<<Jas 4:6–7; 1 Pet 5:5–6>>] in pride he is able to abase.
+
+=== @5
+
+[discrete.pericope]
+==== Belshazzar’s Feast
+
+@ Belshazzar the king ##made##note:x[<<Esth 1:3>>] a great feast to a thousand of his lords, and drank wine before the thousand.
+@ Belshazzar, whiles he tasted the wine, commanded to bring ##the golden##note:x[<<2 Kgs 24:13; Dan 1:2>>] and silver vessels which his ##father##note:tn[or, grandfather] Nebuchadnezzar had ##taken##note:tn[Chaldee, brought forth] out of the temple which __was__ in Jerusalem; that the king, and his princes, his wives, and his concubines, might drink therein.
+@ Then they brought the golden vessels that were taken out of the temple of the house of God which __was__ at Jerusalem; and the king, and his princes, his wives, and his concubines, drank in them.
+@ They drank wine, and ##praised##note:x[<<Dan 5:23>>] the gods ##of gold##note:x[<<Ps 135:15–18; Hab 2:19>>], and of silver, of brass, of iron, of wood, and of stone.
+
+[discrete.pericope]
+==== The Handwriting on the Wall
+
+@ ¶ In ##the same##note:x[<<Job 20:5; Dan 4:31>>] hour came forth fingers of a man’s hand, and ##wrote##note:x[<<Dan 5:24–28>>] over against the candlestick upon the plaister of the wall of the king’s palace: and the king saw the part of the hand that wrote.
+@ Then the king’s ##countenance##note:tn[Chaldee, brightnesses] was changed, ##and his thoughts##note:x[<<Dan 7:28>>] troubled him, so that the ##joints##note:tn[or, girdles: Chaldee, bindings, or, knots] of his loins were loosed, ##and his knees##note:x[<<Ezek 7:17; Nah 2:10>>] smote one against another.note:tn[__was changed__: Chaldee, changed it]
+@ The king cried ##aloud##note:tn[Chaldee, with might] to bring in the astrologers, the Chaldeans, and the soothsayers. __And__ the king spake, and said to the wise __men__ of Babylon, Whosoever shall read this writing, and shew me the interpretation thereof, shall ##be clothed##note:x[<<Dan 5:16, 29>>] with ##scarlet##note:tn[or, purple], and __have__ a chain of gold about his neck, and shall be ##the third##note:x[<<Dan 2:48>>] ruler in the kingdom.
+@ Then came in all the king’s wise __men:__ ##but##note:x[<<Gen 41:8; Dan 2:27; 4:7>>] they could not read the writing, nor make known to the king the interpretation thereof.
+@ Then was king Belshazzar ##greatly##note:x[<<Dan 2:1; 5:6>>] troubled, and his note:x[<<Dan 5:6>>]##countenance##note:tn[Chaldee, brightnesses] was changed in him, and his lords were astonied.
+
+@ ¶ __Now__ the queen, by reason of the words of the king and his lords, came into the banquet house: __and__ the queen spake and said, ##O king##note:x[<<Dan 3:9>>], live for ever: let not thy thoughts trouble thee, nor let thy countenance be changed:
+@ There is ##a man##note:x[<<Dan 2:47; 4:8–9, 18>>] in thy kingdom, in whom __is__ the spirit of the holy gods; and in the days of thy ##father##note:tn[or, grandfather] light and understanding and wisdom, like the wisdom of the gods, was found in him; whom the king Nebuchadnezzar thy father, the king, __I say__, thy father, made master of the magicians, astrologers, Chaldeans, __and__ soothsayers;
+@ Forasmuch as ##an excellent##note:x[<<Dan 5:14; 6:3>>] spirit, and knowledge, and understanding, ##interpreting##note:tn[or, of an interpreter] of dreams, and shewing of hard sentences, and ##dissolving##note:tn[or, of a dissolver] of ##doubts##note:tn[Chaldee, knots], were found in the same Daniel, ##whom##note:x[<<Dan 1:7>>] the king named Belteshazzar: now let Daniel be called, and he will shew the interpretation.
+
+[discrete.pericope]
+==== Daniel Interprets the Handwriting
+
+@ Then was Daniel brought in before the king. __And__ the king spake and said unto Daniel, ##__Art__ thou##note:x[<<Dan 5:11>>] that Daniel, which __art__ of ##the children##note:x[<<Dan 6:13>>] of the captivity of Judah, whom the king my note:x[<<Dan 5:11>>]##father##note:tn[or, grandfather] brought out of Jewry?
+@ I have even heard of thee, that the spirit of the gods __is__ in thee, and __that__ light and understanding and excellent wisdom is found in thee.
+@ ##And now the wise __men__, the astrologers, have been brought in before me, that they should read this writing, and make known unto me the interpretation thereof: but they could not shew the interpretation of the thing:##note:x[<<Dan 5:7–8>>]
+@ And I have heard of thee, that thou canst make ##interpret##note:x[<<Gen 40:8>>]ations, and dissolve doubts: now if thou canst read the writing, and make known to me the interpretation thereof, ##thou shalt##note:x[<<Dan 5:7>>] be clothed with scarlet, and __have__ a chain of gold about thy neck, and shalt be the third ruler in the kingdom.note:tn[__make interpretations__: Chaldee, interpret, etc]
+
+@ ¶ Then Daniel answered and said before the king, ##Let##note:x[<<2 Kgs 5:16>>] thy gifts be to thyself, and give thy ##rewards##note:tn[or, fee] to another; yet I will read the writing unto the king, and make known to him the interpretation.
+@ O thou king, ##the most##note:x[<<Dan 2:37–38>>] high God gave Nebuchadnezzar thy father a kingdom, and majesty, and glory, and honour:
+@ And for the majesty that he gave him, all people, nations, and languages, trembled and feared before him: ##whom he would he slew##note:x[<<Dan 2:12–13; 3:6>>]; and whom he would he kept alive; and whom he would he set up; and whom he would he put down.
+@ But ##when##note:x[<<Exod 9:17; Prov 16:18>>] his heart was lifted up, and his mind ##hardened##note:x[<<2 Kgs 17:14>>] in pride, he was ##deposed##note:tn[Chaldee, made to come down] from his kingly throne, and they took his glory from him&#58;note:tn[__in pride__: or, to deal proudly]
+@ And ##he was driven##note:x[<<Dan 4:25>>] from the sons of men; and his heart was made like the beasts, and his dwelling __was__ with the wild asses: they fed him with grass like oxen, and his body was wet with the dew of heaven; ##till##note:x[<<Ezek 17:24; Dan 4:25>>] he knew that the most high God ruled in the kingdom of men, and __that__ he appointeth over it whomsoever he will.note:tn[__his heart…__: or, he made his heart equal, etc]
+@ And thou his son, O Belshazzar, ##hast##note:x[<<Exod 10:3; 2 Chr 33:23; 36:12>>] not humbled thine heart, though thou knewest all this;
+@ But hast ##lifted##note:x[<<Isa 2:12>>] up thyself against ##the Lord##note:x[<<Dan 4:37>>] of heaven; and they have brought the vessels of his house before thee, and thou, and thy lords, thy wives, and thy concubines, have drunk wine in them; and thou hast praised the gods of silver, and gold, of brass, iron, wood, and stone, which see not, nor hear, nor know: and the God ##in whose##note:x[<<Job 12:10>>] hand thy breath __is__, and whose __are__ all thy ways, hast thou not glorified:
+@ Then was the part of the hand sent from him; and this writing was written.
+
+@ ¶ And this __is__ the writing that was written, MENE, MENE, TEKEL, UPHARSIN.
+@ This __is__ the interpretation of the thing: MENE; God hath numbered thy kingdom, and finished it.
+@ TEKEL; ##Thou##note:x[<<Job 31:6; Ps 62:9>>] ##art##note:x[<<1 Cor 3:13>>] weighed in the balances, and art found wanting.
+@ PERES; ##Thy##note:x[<<Isa 13:17; Dan 5:31; 6:28>>] kingdom is divided, and given to the Medes and Persians.
+@ Then commanded Belshazzar, and ##they clothed##note:x[<<Dan 5:7, 16>>] Daniel with scarlet, and __put__ a chain of gold about his neck, and made a proclamation concerning him, that he should be the third ruler in the kingdom.
+
+@ ¶ ##In that night was Belshazzar the king of the Chaldeans slain.##note:x[<<Jer 51:31, 39, 57>>]
+@ And ##Darius##note:x[<<Dan 6:1; 9:1>>] the Median took the kingdom, __being__ ##about##note:tn[or, now] threescore and two years old.note:tn[__being…__: Chaldee, he as the son of, etc]
+
+=== @6
+
+[discrete.pericope]
+==== The Plot against Daniel
+
+@ It pleased Darius to set over the kingdom ##an##note:x[<<Exod 18:21–22>>] hundred and twenty princes, which should be over the whole kingdom;
+@ And over these three presidents; ##of##note:x[<<Dan 2:48–49; 5:16, 29>>] whom Daniel __was__ first: that the princes might give accounts unto them, and the king should have no damage.
+@ Then this Daniel ##was preferred##note:x[<<Prov 22:29>>] above the presidents and princes, because ##an##note:x[<<Gen 41:38–41; Dan 5:14>>] excellent spirit __was__ in him; and the king thought to set him over the whole realm.
+
+@ ¶ Then the presidents and princes sought to find occasion against Daniel concerning the kingdom; ##but##note:x[<<Phil 2:15; 1 Pet 2:12; 3:16>>] they could find none occasion nor fault; forasmuch as he __was__ faithful, neither was there any error or fault found in him.
+@ ##Then said these men, We shall not find any occasion against this Daniel, except we find __it__ against him concerning the law of his God.##note:x[<<1 Sam 24:17; Esth 3:8; Acts 24:13–16>>]
+
+@ Then these presidents and princes assembled together to the ##king##note:x[<<Dan 2:4>>], and said thus unto him, King Darius, live for ever.note:tn[__assembled…__: or, came tumultuously]
+@ ##All##note:x[<<Dan 3:2, 27>>] the presidents of the kingdom, the governors, and the princes, the counsellors, and the captains, ##have consulted##note:x[<<Ps 59:3>>] together to establish a royal statute, and to make a firm ##decree##note:tn[or, interdict], that whosoever shall ask a petition of any God or man for thirty days, save of thee, O king, he shall be cast into the den of lions.
+@ Now, O king, ##establish##note:x[<<Isa 10:1>>] the decree, and sign the writing, that it be not changed, ##according##note:x[<<Esth 1:19; Dan 6:15>>] to the law of the Medes and Persians, which altereth not.note:tn[__altereth not__: Chaldee, passeth not]
+@ Wherefore king Darius ##signed##note:x[<<Ps 118:9; 146:3>>] the writing and the decree.
+
+[discrete.pericope]
+==== Daniel in the Lions’ Den
+
+@ ¶ Now when Daniel knew that the writing was signed, he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled upon his knees ##three##note:x[<<Ps 55:17>>] times a day, and prayed, and ##gave##note:x[<<1 Thess 5:17–18>>] thanks before his God, ##as he##note:x[<<Acts 5:29>>] did aforetime.
+
+@ Then these men ##assembled##note:x[<<Ps 10:9; 37:32–33>>], and found Daniel praying and making supplication before his God.
+@ Then ##they##note:x[<<Dan 3:8–12>>] came near, and spake before the king concerning the king’s decree; Hast thou not signed a decree, that every man that shall ask __a petition__ of any God or man within thirty days, save of thee, O king, shall be cast into the den of lions? The king answered and said, ##The thing##note:x[<<Esth 1:19; Dan 6:8>>] __is__ true, according to the law of the Medes and Persians, which altereth not.
+@ Then answered they and said before the king, ##That Daniel##note:x[<<Dan 2:25>>], which __is__ of the children of the captivity of Judah, ##regardeth##note:x[<<Dan 3:12; Acts 5:29>>] not thee, O king, nor the decree that thou hast signed, but maketh his petition three times a day.
+@ Then the king, when he heard __these__ words, ##was sore##note:x[<<Mark 6:26>>] displeased with himself, and set __his__ heart on Daniel to deliver him: and he laboured till the going down of the sun to deliver him.
+@ Then these men assembled unto the king, and said unto the king, ##Know##note:x[<<Esth 8:8; Dan 6:8, 12>>], O king, that the law of the Medes and Persians __is__, That no decree nor statute which the king establisheth may be changed.
+@ Then the king commanded, and they brought Daniel, and cast __him__ into the den of lions. __Now__ the king spake and said unto Daniel, ##Thy God##note:x[<<Job 5:19; Ps 37:39–40; 91:14–16>>] whom thou servest continually, he will deliver thee.
+@ And a stone was brought, and laid upon the mouth of the den; and the king sealed it with his own signet, and with the signet of his lords; that the purpose might not be changed concerning Daniel.
+
+@ ¶ Then the king went to his palace, note:x[<<2 Sam 12:16–17>>]##and##note:x[<<Esth 6:1; Dan 2:1>>] passed the night fasting: neither were instruments of musick brought before him: and his sleep went from him.note:tn[__instruments…__: or, table]
+@ Then the king arose very early in the morning, and went in haste unto the den of lions.
+@ And when he came to the den, he cried with a lamentable voice unto Daniel: __and__ the king spake and said to Daniel, O Daniel, servant of the living God, ##is##note:x[<<Dan 6:27>>] thy God, whom thou ##servest##note:x[<<1 Chr 16:11>>] continually, ##able##note:x[<<Heb 7:25>>] to deliver thee from the lions?
+@ Then said Daniel unto the king, ##O king##note:x[<<Dan 2:4>>], live for ever.
+@ My God hath sent his angel, and ##hath shut##note:x[<<Ps 91:11–13; 2 Tim 4:17; Heb 11:33>>] the lions’ mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt.
+@ Then was the king exceeding glad for him, and commanded that they should take Daniel up out of the den. So Daniel was taken up out of the den, and no manner of hurt was found upon him, ##because##note:x[<<1 Chr 5:20; Dan 3:25, 27–28>>] he believed in his God.
+
+@ ¶ And the king commanded, ##and they brought##note:x[<<Esth 7:10>>] those men which had accused Daniel, and they cast __them__ into the den of lions, them, their children, and their wives; and ##the lions##note:x[<<Isa 38:13>>] had the mastery of them, and brake all their bones in pieces or ever they came at the bottom of the den.
+
+[discrete.pericope]
+==== Darius Honors God
+
+@ ¶ Then ##king##note:x[<<Ezra 1:1–2; Dan 4:1>>] Darius wrote unto all people, nations, and languages, that dwell in all the earth; Peace be multiplied unto you.
+@ I make a decree, That in every dominion of my kingdom men tremble and fear before the God of Daniel: ##for##note:x[<<Dan 4:34>>] he __is__ the living God, and stedfast for ever, ##and his kingdom##note:x[<<Dan 4:34; Luke 1:33>>] __that__ which shall not be destroyed, and his dominion __shall be even__ unto the end.
+@ He ##delivereth##note:x[<<Ps 18:50; 97:10>>] and rescueth, ##and he##note:x[<<Dan 4:2–3>>] worketh signs and wonders in heaven and in earth, who hath delivered Daniel from the ##power##note:tn[Chaldee, hand] of the lions.
+@ So this Daniel prospered in the reign of Darius, ##and in##note:x[<<Dan 1:21>>] the reign of Cyrus the Persian.
+
+=== @7
+
+[discrete.pericope]
+==== Daniel’s Vision of the Four Beasts
+
+[.parallel]
+(<<Revelation 13:1–10>>)
+
+@ In the first year of ##Belshazzar##note:x[<<Dan 5:1>>] king of Babylon ##Daniel##note:x[<<Jer 23:28; Dan 4:5>>] ##had##note:tn[Chaldee, saw] a dream and visions of his head upon his bed: then he wrote the dream, __and__ told the sum of the ##matters##note:tn[or, words].
+@ Daniel spake and said, I saw in my vision by night, and, behold, ##the four##note:x[<<Rev 7:1>>] winds of the heaven strove upon the great sea.
+@ And four great ##beasts##note:x[<<Dan 7:17; Rev 13:1>>] came up from the sea, diverse one from another.
+@ The first __was__ ##like##note:x[<<Jer 4:7; Ezek 17:3>>] a lion, and had eagle’s wings: I beheld till the wings thereof were plucked, ##and it##note:tn[or, wherewith it] was ##lifted##note:x[<<Isa 14:13–17>>] up from the earth, and made stand upon the feet as a man, and a man’s heart was given to it.
+@ And behold ##another##note:x[<<Dan 2:39>>] beast, a second, like to a bear, and it raised up itself on one side, and __it had__ three ribs in the mouth of it between the teeth of it: and they said thus unto it, Arise, devour much flesh.note:tn[__it raised…__: or, it raised up one dominion]
+@ After this I beheld, and ##lo##note:x[<<Rev 13:2>>] another, like a leopard, which had upon the back of it four wings of a fowl; the beast had also four heads; and dominion was given to it.
+@ After this I saw in the night visions, and behold a fourth beast, dreadful and terrible, and strong exceedingly; and it had great iron teeth: it devoured and brake in pieces, and stamped the residue with the feet of it: and it __was__ diverse from all the beasts that __were__ before it; ##and it had ten##note:x[<<Rev 12:3; 13:1; 17:12>>] horns.
+@ I considered the horns, and, behold, there came up among them ##another##note:x[<<Rev 13:11–13>>] little horn, before whom there were three of the first horns plucked up by the roots: and, behold, in this horn __were__ eyes like the eyes of man, and ##a mouth##note:x[<<Rev 13:1, 5–6>>] speaking great things.
+
+[discrete.pericope]
+==== Daniel’s Vision of the Ancient of Days
+
+@ ¶ I beheld till the thrones were cast down, and ##the Ancient##note:x[<<Dan 7:13>>] of days did sit, ##whose##note:x[<<Mark 9:3; Rev 1:14>>] garment __was__ white as snow, and the hair of his head like the pure wool: his throne __was like__ the fiery flame, __and__ his wheels __as__ burning fire.
+@ A ##fiery##note:x[<<Isa 30:27>>] stream issued and came forth from before him: ##thousand thousands##note:x[<<Deut 33:2>>] ministered unto him, and ten thousand times ten thousand stood before him: ##the judgment##note:x[<<Rev 20:11–15>>] was set, and the books were opened.
+@ I beheld then because of ##the voice##note:x[<<Dan 7:8>>] of the great words which the horn spake: I beheld ##__even__##note:x[<<Rev 19:20; 20:10>>] till the beast was slain, and his body destroyed, and given to the burning flame.
+@ As concerning the rest of the beasts, they had their dominion taken away: yet their lives were prolonged for a season and time.note:tn[__their lives…__: Chaldee, a prolonging in life was given them]
+
+[discrete.pericope]
+==== Daniel’s Vision of the Son of Man
+
+@ I saw in the night visions, and, behold, ##__one__ like##note:x[<<Matt 26:64; Luke 21:27; Rev 1:7>>] the Son of man came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him.
+@ And there was ##given##note:x[<<Dan 7:27>>] him dominion, and glory, and a kingdom, ##that all##note:x[<<Rev 11:15>>] people, nations, and languages, should serve him: his dominion __is__ ##an everlasting##note:x[<<Dan 7:27>>] dominion, which shall not pass away, and his kingdom __that__ which shall not be destroyed.
+
+[discrete.pericope]
+==== Daniel’s Visions Interpreted
+
+@ ¶ I Daniel was grieved in my spirit in the midst of __my__ ##body##note:tn[Chaldee, sheath], and the visions of my head troubled me.
+@ I came near unto ##one##note:x[<<Rev 7:13–14>>] of them that stood by, and asked him the truth of all this. So he told me, and made me know the interpretation of the things.
+@ These great beasts, which are four, __are__ four kings, __which__ shall arise out of the earth.
+@ But ##the saints##note:x[<<Isa 60:12–14; Dan 7:27; Rev 5:10>>] of the most High shall take the kingdom, and possess the kingdom for ever, even for ever and ever.note:tn[__most…__: Chaldee, high ones, that is, things, or, places]
+@ Then I would know the truth of ##the fourth##note:x[<<Dan 7:7>>] beast, which was diverse from all the others, exceeding dreadful, whose teeth __were of__ iron, and his nails __of__ brass; __which__ devoured, brake in pieces, and stamped the residue with his feet;note:tn[__from…__: Chaldee, from all those]
+@ And of the ten horns that __were__ in his head, and __of__ the other which came up, and before whom three fell; even __of__ that horn that had eyes, and a mouth that spake very great things, whose look __was__ more stout than his fellows.
+@ ##I beheld, and the same horn made war with the saints, and prevailed against them;##note:x[<<Dan 8:24; 12:7; Rev 13:5–18>>]
+@ Until ##the Ancient##note:x[<<Rev 5:10; 20:4>>] of days came, and judgment was given to the saints of the most High; and the time came that the saints possessed the kingdom.
+@ Thus he said, ##The fourth##note:x[<<Dan 2:40; 7:7; Luke 2:1>>] beast shall be the fourth kingdom upon earth, which shall be diverse from all kingdoms, and shall devour the whole earth, and shall tread it down, and break it in pieces.
+@ And ##the ten##note:x[<<Dan 7:20>>] horns out of this kingdom __are__ ten kings __that__ shall arise: and ##another##note:x[<<Dan 7:20; 11:36>>] shall rise after them; and he shall be diverse from the first, and he shall subdue three kings.
+@ And ##he shall speak##note:x[<<2 Thess 2:4>>] __great__ words against the most High, and shall wear out the saints of the most High, and think to change times and laws: and they shall be given into his hand until ##a time##note:x[<<Dan 12:7; Rev 12:14>>] and times and the dividing of time.
+@ But the judgment shall sit, and they shall take away his dominion, to consume and to destroy __it__ unto the end.
+@ And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the most High, ##whose kingdom##note:x[<<Luke 1:33>>] __is__ an everlasting kingdom, ##and all##note:x[<<Ps 72:11; Rev 11:15>>] ##dominions##note:tn[or, rulers] shall serve and obey him.
+@ Hitherto __is__ the end of the matter. As for me Daniel, my cogitations much troubled me, and my countenance changed in me: ##but##note:x[<<Luke 2:19, 51>>] I kept the matter in my heart.
+
+=== @8
+
+[discrete.pericope]
+==== Daniel’s Vision of the Ram and the Goat
+
+@ In the third year of the reign of king Belshazzar a vision appeared unto me, __even unto__ me Daniel, after that which appeared unto me at the first.
+@ And I saw in a vision; and it came to pass, when I saw, that I __was__ at ##Shushan##note:x[<<Neh 1:1; Esth 1:2; 2:8>>] __in__ the palace, which __is__ in the province of Elam; and I saw in a vision, and I was by the river of Ulai.
+@ Then I lifted up mine eyes, and saw, and, behold, there stood before the river ##a ram##note:x[<<Dan 8:20>>] which had __two__ horns: and the __two__ horns __were__ high; but one __was__ higher than the other, and the higher came up last.note:tn[__the other__: Heb. the second]
+@ I saw the ram pushing westward, and northward, and southward; so that no beasts might stand before him, neither __was there any__ that could deliver out of his hand; ##but##note:x[<<Dan 11:16>>] he did according to his will, and became great.
+@ note:x[<<Dan 8:21>>]And as I was considering, behold, an he goat came from the west on the face of the whole earth, and touched not the ground: and the goat __had__ ##a notable horn##note:x[<<Dan 8:21>>] between his eyes.note:tn[__touched…__: or, none touched him in the earth]note:tn[__a notable…__: Heb. a horn of sight]
+@ And he came to the ram that had __two__ horns, which I had seen standing before the river, and ran unto him in the fury of his power.
+@ And I saw him come close unto the ram, and he was moved with choler against him, and smote the ram, and brake his two horns: and there was no power in the ram to stand before him, but he cast him down to the ground, and stamped upon him: and there was none that could deliver the ram out of his hand.
+@ Therefore the he goat waxed very great: and when he was strong, the great horn was broken; and for it came up four notable ones ##toward##note:x[<<Dan 7:2; Rev 7:1>>] the four winds of heaven.
+@ And out of one of them came forth a little horn, which waxed exceeding great, toward the south, and toward the east, and toward ##the pleasant##note:x[<<Dan 11:16>>] __land__.
+@ And it waxed great, __even__ ##to the host##note:x[<<Isa 14:13; Rev 12:4>>] of heaven; and it cast down __some__ of the host and of the stars to the ground, ##and stamped##note:x[<<Dan 8:7>>] upon them.note:tn[__to the host__: or, against the host]
+@ Yea, ##he magnified##note:x[<<Dan 8:25; Rev 13:5–7>>] __himself__ even ##to##note:tn[or, against] the prince of the host, and ##by him##note:tn[or, from him] ##the daily##note:x[<<Dan 12:11>>] __sacrifice__ was taken away, and the place of his sanctuary was cast down.
+@ And an host was given __him__ against the daily __sacrifice__ by reason of transgression, ##and it cast##note:x[<<Isa 59:14>>] down the truth to the ground; ##and it practised##note:x[<<Jer 12:1>>], and prospered.note:tn[__an host…__: or, the host was given over for the transgression against the daily sacrifice]
+
+@ ¶ Then I heard one saint speaking, and another saint said unto that certain __saint__ which spake, ##How##note:x[<<Rev 6:10>>] long __shall be__ the vision __concerning__ the daily __sacrifice__, ##and the##note:x[<<Dan 9:27>>] transgression of desolation, to give both the sanctuary and the host ##to be##note:x[<<Rev 11:2>>] trodden under foot?note:tn[__that…__: or, the numberer of secrets, or, the wonderful numberer: Heb. Palmoni]note:tn[__of…__: or, making desolate]
+@ And he said ##unto##note:x[<<Dan 7:25; 12:7; Rev 11:2–3>>] me, Unto two thousand and three hundred ##days##note:tn[Heb. evening morning]; then shall the sanctuary be ##cleansed##note:tn[Heb. justified].
+
+[discrete.pericope]
+==== Gabriel Interprets Daniel’s Vision
+
+@ ¶ And it came to pass, when I, __even__ I Daniel, had seen the vision, and sought for the meaning, then, behold, there stood before me ##as##note:x[<<Dan 10:16>>] the appearance of a man.
+@ And I heard a man’s voice ##between##note:x[<<Dan 8:2>>] __the banks of__ Ulai, which called, and said, ##Gabriel##note:x[<<Luke 1:19, 26>>], make this __man__ to understand the vision.
+@ So he came near where I stood: and when he came, ##I was##note:x[<<Rev 1:17>>] afraid, and fell upon my face: but he said unto me, Understand, O son of man: for ##at##note:x[<<Dan 8:19; 12:4>>] the time of the end __shall be__ the vision.
+@ Now as he was speaking with me, ##I was##note:x[<<Luke 9:32>>] in a deep sleep on my face toward the ground: but ##he touched##note:x[<<Dan 10:16, 18>>] me, and set me upright.note:tn[__set…__: Heb. made me stand upon my standing]
+@ And he said, Behold, ##I will##note:x[<<Dan 8:15–17>>] make thee know what shall be in ##the last##note:x[<<Dan 11:27; Hab 2:3>>] end of the indignation: for at the time appointed the end __shall be__.
+@ The ram which thou sawest having __two__ horns __are__ the kings of Media and Persia.
+@ And ##the rough##note:x[<<Dan 10:20>>] goat __is__ the king of Grecia: and ##the great##note:x[<<Dan 11:3>>] horn that __is__ between his eyes __is__ the first king.
+@ Now that being broken, whereas four stood up for it, four kingdoms shall stand up out of the nation, but not in his power.
+@ And in the latter time of their kingdom, when the transgressors are come to the full, a king of fierce countenance, ##and understanding##note:x[<<2 Thess 2:9–11; Rev 13:11–14; 19:20>>] dark sentences, shall stand up.note:tn[__are…__: Heb. are accomplished]
+@ And his power shall be mighty, but not by his own power: and he ##shall destroy##note:x[<<Dan 8:12>>] wonderfully, and ##shall prosper##note:x[<<Dan 8:12>>], and practise, and shall destroy the mighty and the holy people.note:tn[__holy…__: Heb. people of the holy ones]
+@ And ##through##note:x[<<Dan 11:32–33>>] his policy also he shall cause craft to prosper in his hand; and he shall ##magnify##note:x[<<Dan 8:11>>] __himself__ in his heart, and by ##peace##note:tn[or, prosperity] shall destroy many: he shall also ##stand##note:x[<<Dan 8:11>>] up against the Prince of princes; but he shall be broken without hand.
+@ And ##the vision of##note:x[<<Dan 10:1>>] the evening and the morning which was told __is__ true: ##wherefore##note:x[<<Dan 12:9>>] shut thou up the vision; ##for##note:x[<<Dan 10:1>>] it __shall be__ for many days.
+@ And I Daniel ##fainted##note:x[<<Dan 7:28; Hab 3:16>>], and was sick __certain__ days; afterward I rose up, and did the king’s business; and I was astonished at the vision, but none understood __it__.
+
+=== @9
+
+[discrete.pericope]
+==== Daniel’s Prayer for His People
+
+@ In the first year of Darius the son of Ahasuerus, of the seed of the Medes, ##which##note:tn[or, in which he] was made king over the realm of the Chaldeans;
+@ In the first year of his reign I Daniel understood by books the number of the years, whereof the word of the LORD came ##to Jeremiah##note:x[<<2 Chr 36:21; Jer 25:11–12; 29:10>>] the prophet, that he would accomplish seventy years in the desolations of Jerusalem.
+
+@ ¶ And ##I set##note:x[<<Jer 29:10–13; 33:3; Jas 5:16–18>>] my face unto the Lord God, to seek by prayer and supplications, with fasting, and sackcloth, and ashes:
+
+@ And I prayed unto the LORD my God, and made my confession, and said, O Lord, ##the great##note:x[<<Exod 20:6; Deut 5:10; Rom 8:28>>] and dreadful God, keeping the covenant and mercy to them that love him, and to them that keep his commandments;
+@ We ##have sinned##note:x[<<Ps 106:6; Dan 9:15>>], and have committed iniquity, and have done wickedly, and have rebelled, even by ##departing##note:x[<<Mal 3:7>>] from thy precepts and from thy judgments:
+@ Neither ##have we##note:x[<<2 Chr 36:15–16; Jer 44:4–5; Dan 9:10>>] hearkened unto thy servants the prophets, which spake in thy name to our kings, our princes, and our fathers, and to all the people of the land.
+@ O Lord, ##righteousness##note:x[<<Dan 9:8, 14>>] __belongeth__ unto thee, but ##unto us##note:x[<<Ps 44:15>>] confusion of faces, as at this day; to the men of Judah, and to the inhabitants of Jerusalem, and unto all Israel, __that are__ near, and __that are__ far off, through all the countries whither thou hast driven them, because of their trespass that they have trespassed against thee.note:tn[__belongeth…__: or, thou hast]
+@ O Lord, ##to us##note:x[<<Dan 9:6–7>>] __belongeth__ confusion of face, to our kings, to our princes, and to our fathers, because we have sinned against thee.
+@ ##To the Lord##note:x[<<Ps 86:15; Dan 9:7; Eph 1:6–8>>] our God __belong__ mercies and forgivenesses, though we have rebelled against him;
+@ Neither have we obeyed the voice of the LORD our God, to walk in his laws, ##which##note:x[<<2 Kgs 18:12; Neh 9:13–17; Dan 9:6>>] he set before us by his servants the prophets.
+@ Yea, ##all##note:x[<<Isa 1:4–6; Jer 8:5–10>>] Israel have transgressed thy law, even by departing, that they might not obey thy voice; therefore ##the curse##note:x[<<Deut 28:15–68>>] is poured upon us, and the oath that __is__ written in the law of Moses the servant of God, because we have sinned against him.
+@ And he hath confirmed his words, which he spake against us, and against our judges that judged us, by bringing upon us a great evil: ##for under##note:x[<<Lam 1:12; Ezek 5:9>>] the whole heaven hath not been done as hath been done upon Jerusalem.
+@ ##As __it is__##note:x[<<Deut 28:15–68; Dan 9:11>>] written in the law of Moses, all this evil is come upon us: yet ##made we not our prayer before##note:x[<<Isa 9:13>>] the LORD our God, that we might turn from our iniquities, and understand thy truth.note:tn[__made…__: Heb. intreated we not the face of the, etc]
+@ Therefore hath ##the LORD##note:x[<<Neh 9:33; Dan 9:7>>] ##watched##note:x[<<Jer 44:27>>] upon the evil, and brought it upon us: for the LORD our God __is__ righteous in all his works which he doeth: for we obeyed not his voice.
+@ And now, O Lord our God, that hast brought thy people forth out of the land of Egypt with a mighty hand, ##and hast##note:x[<<Neh 9:10>>] gotten thee renown, as at this day; ##we have sinned##note:x[<<Dan 9:5>>], we have done wickedly.note:tn[__gotten…__: Heb. made thee a name]
+
+@ ¶ O Lord, ##according##note:x[<<Ps 31:1>>] to all thy righteousness, I beseech thee, let thine anger and thy fury be turned away from thy city Jerusalem, ##thy holy##note:x[<<Dan 9:20; Zech 8:3>>] mountain: because for our sins, and for the iniquities of our fathers, Jerusalem and thy people __are become__ a reproach to all __that are__ about us.
+@ Now therefore, O our God, hear the prayer of thy servant, and his supplications, and ##cause##note:x[<<Ps 80:19>>] thy face to shine upon ##thy sanctuary##note:x[<<Lam 5:18>>] that is desolate, for the Lord’s sake.
+@ O my God, ##incline##note:x[<<2 Kgs 19:16; Isa 37:17>>] thine ear, and hear; open thine eyes, and behold our desolations, and the city which is called by thy name: for we do not note:x[<<Jer 36:7>>]##present##note:tn[Heb. cause to fall] our supplications before thee for our righteousnesses, but for thy great mercies.note:tn[__which…__: Heb. whereupon thy name is called]
+@ O Lord, hear; ##O Lord, forgive##note:x[<<Num 14:19; 2 Chr 6:25–30>>]; O Lord, hearken and do; defer not, for thine own sake, O my God: ##for thy##note:x[<<Dan 9:18>>] city and thy people are called by thy name.
+
+[discrete.pericope]
+==== Gabriel’s Prophecy of the Seventy Weeks
+
+@ ¶ And ##whiles##note:x[<<Ps 145:18; Isa 58:9>>] I __was__ speaking, and praying, and ##confessing##note:x[<<Rom 3:23>>] my sin and the sin of my people Israel, and presenting my supplication before the LORD my God for the holy mountain of my God;
+@ Yea, whiles I __was__ speaking in prayer, even ##the man##note:x[<<Dan 8:16; 10:16; Luke 1:19>>] Gabriel, whom I had seen in the vision at the beginning, being caused to fly ##swiftly##note:tn[Heb. with weariness, or, flight], touched me about the time of the evening oblation.
+@ And ##he informed##note:x[<<Dan 8:16; 9:24–27; 10:21>>] __me__, and talked with me, and said, O Daniel, I am now come forth to give thee skill and understanding.note:tn[__to…__: Heb. to make thee skilful of]
+@ At the beginning of thy supplications the ##commandment##note:tn[Heb. word] came forth, and I am come to shew __thee;__ ##for##note:x[<<Dan 10:11, 19>>] thou __art__ greatly beloved: therefore ##understand##note:x[<<Matt 24:15>>] the matter, and consider the vision.note:tn[__greatly…__: Heb. a man of desires]
+@ Seventy weeks are determined upon thy people and upon thy holy city, to ##finish##note:tn[or, restrain] the transgression, and ##to make##note:x[<<Rom 5:10>>] an end of sins, and to make reconciliation for iniquity, and ##to bring##note:x[<<Jer 23:5–6>>] in everlasting righteousness, and to seal up the vision and ##prophecy##note:tn[Heb. prophet], ##and to anoint##note:x[<<Heb 9:11>>] the most Holy.note:tn[__make an…__: or, seal up]
+@ Know therefore and understand, __that__ ##from##note:x[<<Ezra 4:24>>] the going forth of the commandment to restore and to build Jerusalem unto ##the Messiah##note:x[<<John 1:41; 4:25>>] the Prince __shall be__ seven weeks, and threescore and two weeks: the street shall be built again, and the ##wall##note:tn[or, breach, or, ditch], even in ##troublous##note:tn[Heb. strait of] times.note:tn[__be built…__: Heb. return and be built]
+@ And after threescore and two weeks shall ##Messiah##note:x[<<Isa 53:8; Luke 24:26>>] be cut off, but not for himself: and the people of the prince that shall come shall destroy the city and the sanctuary; and the end thereof __shall be__ ##with##note:x[<<Nah 1:8>>] a flood, and unto the end of the war desolations are determined.note:tn[__but…__: or, and shall have nothing]note:tn[__desolations…__: or, it shall be cut off by desolations]
+@ And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and ##for the overspreading of abominations he shall make __it__ desolate##note:x[<<Dan 12:11; Matt 24:15; Mark 13:14>>], even until the consummation, and that determined shall be poured upon the desolate.note:tn[__the covenant__: or, a covenant]note:tn[__for the…__: or, with the abominable armies]note:tn[__the desolate__: or, the desolator]
+
+=== @10
+
+[discrete.pericope]
+==== Daniel’s Vision by the Tigris
+
+@ In the third year of ##Cyrus##note:x[<<Dan 1:21; 6:28>>] king of Persia a thing was revealed unto Daniel, whose name was called Belteshazzar; ##and the##note:x[<<Dan 8:26>>] thing __was__ true, but the time appointed __was__ ##long##note:tn[Heb. great]: and he understood the thing, and had understanding of the vision.
+@ In those days ##I Daniel##note:x[<<Neh 1:4>>] was mourning three ##full weeks##note:x[<<Dan 9:24–27>>].note:tn[__full…__: Heb. weeks of days]
+@ I ate no ##pleasant bread##note:x[<<Dan 11:8>>], neither came flesh nor wine in my mouth, ##neither did##note:x[<<Matt 6:17>>] I anoint myself at all, till three whole weeks were fulfilled.note:tn[__pleasant…__: Heb. bread of desires]
+@ And in the four and twentieth day of the first month, as I was by the side of the great river, which __is__ ##Hiddekel##note:x[<<Gen 2:14>>];
+@ Then I lifted up mine eyes, and looked, ##and behold##note:x[<<Dan 12:6–7; Rev 1:13–15>>] a certain man ##clothed##note:x[<<Dan 12:6–7>>] in linen, whose loins __were__ girded with fine gold of Uphaz&#58;note:tn[__a…__: Heb. one man]
+@ His body also __was__ like the beryl, and ##his face##note:x[<<Matt 17:2; Rev 1:13–17; 19:12>>] as the appearance of lightning, and his eyes as lamps of fire, and his arms and his feet like in colour to polished brass, and the voice of his words like the voice of a multitude.
+@ And I Daniel ##alone##note:x[<<Acts 9:7; 22:9>>] saw the vision: for the men that were with me saw not the vision; but a great quaking fell upon them, ##so##note:x[<<Gen 3:10>>] that they fled to hide themselves.
+@ Therefore I was left alone, and saw this great vision, ##and there##note:x[<<Dan 7:28; 8:27; Hab 3:16>>] remained no strength in me: for my ##comeliness##note:tn[or, vigour] was turned in me into corruption, and I retained no strength.
+@ Yet heard I the voice of his words: and when I heard the voice of his words, then ##was I##note:x[<<Gen 15:12; Job 4:13; Dan 8:18>>] in a deep sleep on my face, and my face toward the ground.
+
+@ ¶ And, behold, ##an hand##note:x[<<Jer 1:9; Dan 8:18; Rev 1:17>>] touched me, which ##set##note:tn[Heb. moved] me upon my knees and __upon__ the palms of my hands.
+@ And he said unto me, O Daniel, a man greatly beloved, ##understand##note:x[<<Dan 8:16–17>>] the words that I speak unto thee, and stand note:x[<<Acts 26:16>>]##upright##note:tn[Heb. upon thy standing]: for unto thee am I now sent. And when he had spoken this word unto me, ##I stood##note:x[<<Mark 16:8>>] trembling.note:tn[__greatly…__: Heb. of desires]
+@ Then said he unto me, ##Fear not##note:x[<<Dan 10:19>>], Daniel: for ##from##note:x[<<Acts 10:30–31>>] the first day that thou didst set thine heart to understand, and to chasten thyself before thy God, thy words were heard, ##and I##note:x[<<Acts 10:30–31>>] am come for thy words.
+@ But ##the prince##note:x[<<Dan 10:20>>] of the kingdom of Persia withstood me one and twenty days: but, lo, ##Michael##note:x[<<Dan 12:1; Jude 1:9>>], one of the ##chief##note:tn[or, first] princes, came to help me; and I remained there with the kings of Persia.
+@ Now I am come to make thee understand what shall befall thy people ##in the##note:x[<<Dan 2:28>>] latter days: for yet ##the vision##note:x[<<Dan 8:26; 12:4>>] __is__ for __many__ days.
+@ And when he had spoken such words unto me, ##I set##note:x[<<Ezek 24:27; Dan 10:9; Luke 1:20>>] my face toward the ground, and I became dumb.
+@ And, behold, __one__ ##like##note:x[<<Dan 8:15>>] the similitude of the sons of men ##touched##note:x[<<Isa 6:7; Jer 1:9>>] my lips: then I opened my mouth, and spake, and said unto him that stood before me, O my lord, by the vision my sorrows are turned upon me, and I have retained no strength.
+@ For how can the servant of this my lord talk with this my lord? for as for me, straightway there remained no strength in me, neither is there breath left in me.note:tn[__the…__: or, this servant of my lord]
+@ Then there came ##again##note:x[<<Dan 10:16>>] and touched me __one__ like the appearance of a man, and he strengthened me,
+@ And said, O man greatly beloved, ##fear not##note:x[<<Judg 6:23>>]: peace __be__ unto thee, ##be strong##note:x[<<Josh 1:9; Isa 35:4>>], yea, be strong. And when he had spoken unto me, I was strengthened, and said, Let my lord speak; for thou hast strengthened me.
+@ Then said he, Knowest thou wherefore I come unto thee? and now will I return to fight with the prince of Persia: and when I am gone forth, lo, ##the prince of Grecia##note:x[<<Dan 8:21>>] shall come.
+@ But I will shew thee that which is noted in the scripture of truth: and __there is__ none that ##holdeth##note:tn[Heb. strengtheneth himself] with me in these things, but ##Michael##note:x[<<Dan 10:13; 12:1; Rev 12:7>>] your prince.
+
+=== @11
+
+[discrete.pericope]
+==== Kings of the South and North
+
+@ Also I ##in the##note:x[<<Dan 5:31; 9:1>>] first year of Darius the Mede, __even__ I, stood to confirm and to strengthen him.
+@ And now will I shew thee the truth. Behold, there shall stand up yet ##three##note:x[<<Ezra 4:5–6>>] kings in Persia; and the fourth shall be far richer than __they__ all: and by his strength through his riches he shall stir up all against the realm of Grecia.
+@ And ##a mighty##note:x[<<Dan 8:21>>] king shall stand up, that shall rule with great dominion, and ##do##note:x[<<Dan 11:16, 36>>] according to his will.
+@ And when he shall stand up, his kingdom shall be broken, ##and shall be##note:x[<<Dan 8:8, 22>>] divided toward the four winds of heaven; and not to his posterity, nor according to his dominion which he ruled: for his kingdom shall ##be plucked##note:x[<<Jer 12:17>>] up, even for others beside those.
+
+@ ¶ And the king of the south shall be strong, and __one__ of his princes; and he shall be strong above him, and have dominion; his dominion __shall be__ a great dominion.
+@ And in ##the end##note:x[<<Dan 11:13>>] of years they shall join themselves together; for the ##king##note:x[<<Dan 11:13>>]’s daughter of the south shall come to the king of the north to make an agreement: but she shall not retain the power of the arm; neither shall he stand, nor his arm: but she shall be given up, and they that brought her, and he that begat her, and he that strengthened her in __these__ times.note:tn[__join…__: Heb. associate themselves]note:tn[__an…__: Heb. rights]note:tn[__he that begat…__: or, whom she brought forth]
+@ But out of a branch of her roots shall __one__ stand up in his estate, which shall come with an army, and shall enter into the fortress of the king of the north, and shall deal against them, and shall prevail&#58;note:tn[__in…__: or, in his place, or, office]
+@ And shall also carry captives into Egypt ##their gods##note:x[<<Isa 37:19; 46:1–2>>], with their princes, __and__ with their precious vessels of silver and of gold; and he shall continue __more__ years than the king of the north.note:tn[__their precious…__: Heb. vessels of their desire]
+@ So the king of the south shall come into __his__ kingdom, and shall return into his own land.
+@ But his sons shall be stirred up, and shall assemble a multitude of great forces: and __one__ shall certainly come, and overflow, and pass through: then shall he return, and be stirred up, __even__ to his fortress.note:tn[__shall be…__: or, shall war]note:tn[__return…__: or, be stirred up again]
+@ And the king of the south shall be ##moved##note:x[<<Dan 8:7>>] with choler, and shall come forth and fight with him, __even__ with the king of the north: and he shall set forth a great multitude; but the multitude shall be given into his hand.
+@ __And__ when he hath taken away the multitude, his heart shall be lifted up; and he shall cast down __many__ ten thousands: but he shall not be strengthened __by it__.
+@ For the king of the north shall return, and shall set forth a multitude greater than the former, and shall certainly come ##after certain years##note:x[<<Dan 4:16; 12:7>>] with a great army and with much riches.note:tn[__after…__: Heb. at the end of times, even years]
+@ And in those times there shall many stand up against the king of the south: also the robbers of thy people shall exalt themselves to establish the vision; but they shall fall.note:tn[__the robbers__: Heb. the children of robbers]
+@ So the king of the north shall come, and ##cast up##note:x[<<Jer 6:6; Ezek 17:17>>] a mount, and take the most fenced cities: and the arms of the south shall not withstand, neither his chosen people, neither __shall there be any__ strength to withstand.note:tn[__the most…__: Heb. the city of munitions]note:tn[__his…__: Heb. the people of his choices]
+@ But he that cometh against him ##shall do##note:x[<<Dan 11:3, 36>>] according to his own will, and none shall stand before him: and he shall stand in the ##glorious land##note:x[<<Dan 8:9>>], which by his hand shall be consumed.note:tn[__glorious…__: or, goodly, etc.: Heb. land of ornament]
+@ He shall also set his face to enter with the strength of his whole kingdom, and upright ones with him; thus shall he do: and he shall give him the daughter of women, ##corrupting##note:tn[Heb. to corrupt] her: but she shall not stand __on his side__, neither be for him.note:tn[__upright…__: or, much uprightness: or, equal conditions]
+@ After this shall he turn his face unto ##the isles##note:x[<<Jer 31:10; Zeph 2:11>>], and shall take many: but a prince ##for his own behalf##note:x[<<Hos 12:14>>] shall cause the reproach offered by him to cease; without his own reproach he shall cause __it__ to turn upon him.note:tn[__for…__: Heb. for him]note:tn[__the reproach…__: Heb. his reproach]
+@ Then he shall turn his face toward the fort of his own land: ##but##note:x[<<Job 20:8; Ps 37:36; Ezek 26:21>>] he shall stumble and fall, and not be found.
+@ Then shall stand up in his ##estate##note:tn[or, place] a raiser of taxes __in__ the glory of the kingdom: but within few days he shall be destroyed, neither in ##anger##note:tn[Heb. angers], nor in battle.note:tn[__a…__: Heb. one that causeth an exacter to pass over]
+
+@ And in his ##estate##note:tn[or, place] shall stand up a vile person, to whom they shall not give the honour of the kingdom: but he shall come in peaceably, and obtain the kingdom ##by flatteries##note:x[<<Dan 11:34>>].
+@ And ##with##note:x[<<Dan 9:26; 11:10>>] the arms of a flood shall they be overflown from before him, and shall be broken; yea, ##also##note:x[<<Dan 8:10–11>>] the prince of the covenant.
+@ And after the league __made__ with him he shall work deceitfully: for he shall come up, and shall become strong with a small people.
+@ He shall enter peaceably even upon the fattest places of the province; and he shall do __that__ which his fathers have not done, nor his fathers’ fathers; he shall scatter among them the prey, and spoil, and riches: __yea__, and he shall forecast his devices against the strong holds, even for a time.note:tn[__peaceably…__: or, into the peaceable and fat, etc]note:tn[__forecast…__: Heb. think his thoughts]
+@ And he shall stir up his power and his courage against the king of the south with a great army; and the king of the south shall be stirred up to battle with a very great and mighty army; but he shall not stand: for they shall forecast devices against him.
+@ Yea, they that feed of the portion of his meat shall destroy him, and his army shall ##overflow##note:x[<<Dan 11:10>>]: and many shall fall down slain.
+@ And both these kings’ ##hearts##note:tn[Heb. their hearts] ##__shall be__ to##note:x[<<Ps 12:2>>] do mischief, and they shall ##speak lies##note:x[<<Jer 9:3–5>>] at one table; but it shall not prosper: for ##yet##note:x[<<Dan 11:35>>] the end __shall be__ at the time appointed.
+@ Then shall he return into his land with great riches; and his heart __shall be__ against the holy covenant; and he shall do __exploits__, and return to his own land.
+@ At the time appointed he shall return, and come toward the south; but it shall not be as the former, or as the latter.
+
+@ ¶ For ##the ships##note:x[<<Gen 10:4; Num 24:24; Isa 23:12>>] of Chittim shall come against him: therefore he shall be grieved, and return, and have indignation against the holy covenant: so shall he do; he shall even return, and have intelligence with them that forsake the holy covenant.
+@ And arms shall stand on his part, and ##they shall pollute##note:x[<<Dan 12:11>>] the sanctuary of strength, and ##shall take##note:x[<<Dan 9:27>>] away the daily __sacrifice__, and they shall place ##the abomination##note:x[<<Dan 12:11>>] that maketh desolate.note:tn[__maketh…__: or, astonisheth]
+@ And such as do wickedly against the covenant shall he ##corrupt##note:tn[or, cause to dissemble] by flatteries: but ##the people##note:x[<<1 Chr 28:9; Ps 9:10; John 17:3>>] that do know their God shall be strong, and do __exploits__.
+@ And they that ##understand##note:x[<<Mal 2:7>>] among the people shall instruct many: ##yet##note:x[<<Matt 24:9; John 16:2>>] they shall fall by the sword, and by flame, by captivity, and by spoil, __many__ days.
+@ Now when they shall fall, they shall be holpen with a little help: but many shall ##cleave##note:x[<<Matt 7:15; Rom 16:18>>] to them with flatteries.
+@ And __some__ of them of understanding shall fall, note:x[<<Prov 17:3; Zech 13:9; Mal 3:2–4>>]to ##try them##note:tn[or, try by them], and to purge, and to make __them__ white, __even__ to the time of the end: because __it is__ yet for a time appointed.
+
+[discrete.pericope]
+==== The King Who Exalts Himself
+
+@ And the king shall do according to his will; and he shall ##exalt##note:x[<<2 Thess 2:4; Rev 13:5>>] himself, and magnify himself above every god, and shall speak marvellous things against the God of gods, and shall prosper ##till##note:x[<<Rev 13:5>>] the indignation be accomplished: for that that is determined shall be done.
+@ Neither shall he ##regard##note:x[<<Isa 14:13; 2 Thess 2:4>>] the God of his fathers, nor ##the desire##note:x[<<1 Tim 4:3>>] of women, nor regard any god: for he shall magnify himself above all.
+@ But in his ##estate##note:tn[or, stead] shall he honour the God of ##forces##note:tn[or, munitions: Heb. Mauzzim, or, God’s protectors]: and a god whom his fathers knew not shall he honour with gold, and silver, and with precious stones, and ##pleasant##note:tn[Heb. things desired] things.note:tn[__in…__: or, as for the Almighty God, in his seat he shall honour yea, he shall honour a god, whom, etc]
+@ Thus shall he do in the most strong holds with a strange god, whom he shall acknowledge __and__ increase with glory: and he shall cause them to rule over many, and shall divide the land for ##gain##note:tn[Heb. a price].note:tn[__most…__: Heb. fortresses of munitions]
+@ And ##at the##note:x[<<Dan 11:35>>] time of the end shall the king of the south push at him: and the king of the north shall come against him ##like##note:x[<<Isa 5:28>>] a whirlwind, with chariots, and ##with horsemen##note:x[<<Rev 16:12>>], and with many ships; and he shall enter into the countries, and shall overflow and pass over.
+@ He shall ##enter##note:x[<<Dan 11:45>>] also into the glorious land, and many __countries__ shall be overthrown: but these shall escape out of his hand, ##__even__##note:x[<<Jer 48:47; 49:6>>] Edom, and Moab, and the chief of the children of Ammon.note:tn[__glorious…__: or, goodly, etc.: Heb. land of delight, or, ornament]
+@ He shall stretch forth his hand also upon the countries: and the land of Egypt shall not escape.note:tn[__stretch…__: Heb. send forth]
+@ But he shall have power over the treasures of gold and of silver, and over all the precious things of Egypt: and the Libyans and the Ethiopians __shall be__ at his steps.
+@ But tidings out of the east and out of the north shall trouble him: therefore he shall go forth with great fury to destroy, and utterly to make away many.
+@ And he shall plant the tabernacles of his palace between the seas ##in the##note:x[<<2 Thess 2:4>>] glorious holy mountain; yet he shall come to his end, and none shall help him.note:tn[__glorious…__: or, goodly, etc.: Heb. mountain of delight of holiness]
+
+=== @12
+
+[discrete.pericope]
+==== The End Times
+
+[.parallel]
+(<<Revelation 1:1–3>>)
+
+@ And at that time shall Michael stand up, the great prince which standeth for the children of ##thy people##note:x[<<Jer 30:7>>]: and ##there shall##note:x[<<Jer 30:7; Matt 24:21>>] be a time of trouble, such as never was since there was a nation __even__ to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book.
+@ And ##many##note:x[<<Isa 26:19>>] of them that sleep in the dust of the earth shall awake, ##some to everlasting life##note:x[<<Matt 25:46; John 5:28–29>>], and some to shame __and__ everlasting contempt.
+@ And they that be ##wise##note:tn[or, teachers] shall ##shine##note:x[<<Prov 4:18; Matt 13:43>>] as the brightness of the firmament; and they that ##turn##note:x[<<Jas 5:19–20>>] many to righteousness as the stars for ever and ever.
+@ But thou, O Daniel, ##shut##note:x[<<Dan 8:26; Rev 22:10>>] up the words, and seal the book, __even__ ##to the##note:x[<<Dan 12:9>>] time of the end: many shall run to and fro, and knowledge shall be increased.
+
+@ ¶ Then I Daniel looked, and, behold, there stood other two, the one on this side of the ##bank##note:tn[Heb. lip] of the river, and the other on that side of the bank of the river.
+@ And ##__one__ said##note:x[<<Zech 1:12–13>>] to the ##man##note:x[<<Ezek 9:2>>] clothed in linen, which __was__ upon the waters of the river, ##How long##note:x[<<Dan 8:13>>] __shall it be to__ the end of these wonders?note:tn[__upon…__: or, from above]
+@ And I heard the man clothed in linen, which __was__ upon the waters of the river, when he held up his right hand and his left hand unto heaven, and sware by him that liveth for ever ##that __it__##note:x[<<Dan 7:25; Rev 12:14>>] __shall be__ for a time, times, and an half; and when he shall have accomplished to scatter the power of ##the holy##note:x[<<Dan 8:24>>] people, all these __things__ shall be finished.note:tn[__a time…__: or, part]
+@ And I heard, but I understood not: then said I, O my Lord, what __shall be__ the end of these __things__?
+@ And he said, Go thy way, Daniel: for the words __are__ ##closed##note:x[<<Isa 8:16; Dan 8:26; 12:4>>] up and sealed till the time of the end.
+@ Many ##shall be##note:x[<<Dan 11:35>>] purified, and made white, and tried; ##but the wicked##note:x[<<Rev 22:11>>] shall do wickedly: and none of the wicked shall understand; ##but the wise##note:x[<<Dan 11:35>>] shall understand.
+@ And from ##the time##note:x[<<Dan 11:31>>] __that__ the daily __sacrifice__ shall be taken away, and ##the abomination##note:x[<<Dan 11:31; Matt 24:15>>] that maketh desolate set up, __there shall be__ a thousand two hundred and ninety days.note:tn[__the abomination__: Heb. to set up the abomination]note:tn[__maketh…__: or, astonisheth]
+@ ##Blessed __is__ he that waiteth, and cometh to the thousand three hundred and five and thirty days.##note:x[<<Rom 11:15; Rev 20:4>>]
+@ But go thou thy way till the end __be:__ ##for thou##note:tn[or, and thou, etc] shalt ##rest##note:x[<<Zech 3:7; 2 Tim 4:7–8; Rev 14:13>>], and stand in thy lot at the end of the days.
