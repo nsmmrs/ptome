@@ -38,9 +38,12 @@ test('npm pack lists the expected files', () => {
   // code, the bundle 2.74 MB) and ptome (math, formats) the rest. Units
   // (ADR-0020: schemes, the engine, rendering, includes, citations, their
   // node kinds and model API) are about 165 KB of it: 1.75 MB on
-  // 2026-10-09.
+  // 2026-10-09. Looks (ADR-0023: the YAML loader with package:yaml and
+  // source_span, the HTML and EPUB CSS compiler) brought it to 1.83 MB on
+  // 2026-10-11; the house look's stylesheet is made from them at run
+  // time, so they are in the core.
   const bundle = report.files.find((file) => file.path === 'ptome.js')
-  assert.ok(bundle.size < 1_800_000, `bundle is ${bundle.size} bytes`)
+  assert.ok(bundle.size < 1_900_000, `bundle is ${bundle.size} bytes`)
   // The parts under 2.4 MB together: 2.24 MB on 2026-10-08 (the PDF
   // backend with plain_pdf, hyphenation and themes; the EPUB backend).
   const partsSize = report.files

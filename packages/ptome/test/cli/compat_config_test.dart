@@ -113,6 +113,8 @@ void main() {
       project = Directory('${root.path}/project/doc')
         ..createSync(recursive: true);
     });
+    // (The resolver writes paths with forward slashes.)
+    String slashed(String path) => path.replaceAll(r'\', '/');
     ({String look, String looksDir})? resolve() => resolveLook(
       env: {'XDG_CONFIG_HOME': '${root.path}/config'},
       startDir: project.path,
@@ -123,12 +125,15 @@ void main() {
 
     test("the nearest ptome.yml's, found beside it or in its looksdir", () {
       File('${root.path}/project/ptome.yml').writeAsStringSync('look: book\n');
-      expect(resolve(), (look: 'book', looksDir: '${root.path}/project'));
+      expect(resolve(), (
+        look: 'book',
+        looksDir: slashed('${root.path}/project'),
+      ));
       File('${root.path}/project/ptome.yml')
           .writeAsStringSync('look: book\nlooksdir: design\n');
       expect(resolve(), (
         look: 'book',
-        looksDir: '${root.path}/project/design',
+        looksDir: slashed('${root.path}/project/design'),
       ));
     });
 
@@ -179,7 +184,7 @@ void main() {
       File('${root.path}/ptome.yml').writeAsStringSync('look: book\n');
       expect(attributes(const []), {
         'look': 'book@',
-        'looksdir': '${root.path}@',
+        'looksdir': '${root.path.replaceAll(r'\', '/')}@',
       });
       expect(attributes(['-a', 'look=other']), {'look': 'other'});
     });
