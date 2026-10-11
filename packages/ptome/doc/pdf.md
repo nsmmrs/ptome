@@ -400,7 +400,7 @@ beside it.
 
 | Key | Default | What it does |
 | --- | --- | --- |
-| `role_<role>_float` | | `left` or `right`: blocks with the role (an open block, a sidebar, an image) float to that side. |
+| `role_<role>_float` | | `left` or `right`: blocks with the role (an open block, a sidebar, a quote, an image) float to that side. A paragraph beside one runs around it: its first lines beside it as far as they go, the rest set again at the full width below it; other blocks beside it go below it unless they fit beside it whole. |
 | `role_<role>_float_width` | a third of the text's width | Its width: a length or a percentage of the page's text width. |
 | `role_<role>_float_gap` | the font size | The space between it and the blocks beside it. |
 | `example_collapsible` | `frame` | A collapsible example block (`[%collapsible]`), which print can't collapse: `frame`, as any example block; `details`, as an open details element shows: its title (else "Details") after a ▼, as a caption, over its content set in by the marker's width, with no frame. |

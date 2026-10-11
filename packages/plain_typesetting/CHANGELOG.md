@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.runsAround`: a paragraph's custom box that doesn't fit beside
+  blocks floating to a side runs around them, its first lines beside
+  them as far as they go, its rest set again at the full width below
+  them (a runaround); without it, it goes below them whole.
 - Paragraph and page layout (`Paragraph`, the line breakers, `FlowLayout`
   and its boxes), the math layout (`MathLayout`), geometry, colors, the
   text style and `Graphic` moved from plain_pdf with their history, and

@@ -3961,6 +3961,9 @@ final class PdfConverter extends BuiltInConverter
         style: BoxStyle(
           margin: EdgeInsets(bottom: marginBottom),
           anchor: node.id,
+          // The modern engine: beside a block floating to a side (a pull
+          // quote, a sidebar), the paragraph runs around it.
+          runsAround: !asciidoctorCompat(_document, CompatFormat.pdf),
         ),
       ),
     );

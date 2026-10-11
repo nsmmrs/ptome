@@ -51,7 +51,10 @@ Asciidoctor project.
   in balanced columns from where it starts (`columns_count`,
   `column-count`; modern engine). A paragraph's role may set its own
   first letter as an initial lines deep (`role_<role>_drop_lines`),
-  opening punctuation hung, lead-in words in the role `lead-in`.
+  opening punctuation hung, lead-in words in the role `lead-in`. A
+  paragraph beside a block floating to a side (`role_<role>_float`: a
+  pull quote, a sidebar) runs around it, its rest set again at the full
+  width below it.
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and

@@ -115,6 +115,7 @@ final class BoxStyle {
     this.side,
     this.sideWidth = 0,
     this.sideGap = 0,
+    this.runsAround = false,
   });
 
   /// The space outside the border.
@@ -212,6 +213,13 @@ final class BoxStyle {
   /// beside it.
   final double sideGap;
 
+  /// Whether the box, a paragraph's [CustomBox] (whose content places
+  /// its rest at any width, as text set again), runs around blocks
+  /// floating to a [side] when it doesn't fit beside them whole: its
+  /// first lines set beside them as far as they go, its rest at the full
+  /// width below them. Otherwise it goes below them whole.
+  final bool runsAround;
+
   /// This style with [tag] ([BoxStyle.tag]).
   BoxStyle withTag(String? tag) => _copy(tag: (tag,));
 
@@ -269,6 +277,7 @@ final class BoxStyle {
     side: side == null ? this.side : side.$1,
     sideWidth: sideWidth ?? this.sideWidth,
     sideGap: sideGap ?? this.sideGap,
+    runsAround: runsAround,
   );
 }
 

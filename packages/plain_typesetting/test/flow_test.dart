@@ -2,6 +2,7 @@
 // and rendered into a recording document, whose own page type the
 // layout hands back, with anchors, links, decorations and page templates.
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
@@ -432,6 +433,43 @@ void main() {
     expect(lines.first.$2, closeTo(190, 1e-6));
   });
 
+  test('a paragraph runs around a side float: beside it, then below', () {
+    List<(double, double, double, int)> pieces({required bool around}) {
+      final log = <(double, double, double, int)>[];
+      FlowLayout(template: _rows(10))
+          .layout([
+            BlockBox(
+              [_para('s1\ns2\ns3')],
+              style: const BoxStyle(
+                side: FloatSide.right,
+                sideWidth: 160,
+                sideGap: 10,
+              ),
+            ),
+            CustomBox(_Words(40, log), style: BoxStyle(runsAround: around)),
+          ])
+          .render(RecordingDocument());
+      return log;
+    }
+
+    // As many lines as fit beside the float, in the 90 points left of
+    // it; the rest set again across the page (260 points) under the
+    // float (no line fits in what is left beside it).
+    final around = pieces(around: true);
+    expect(around, hasLength(2));
+    final (x, top, width, lines) = around.first;
+    expect((x, width), (20, 90));
+    expect(lines, (3 * _lineHeight / _Words.lineHeight).floor());
+    expect(around.last.$1, 20);
+    expect(around.last.$3, 260);
+    // (PDF's y, up the page.)
+    expect(around.last.$2, closeTo(top - 3 * _lineHeight, 1e-6));
+    // Without: the whole paragraph below the float, at its width.
+    final below = pieces(around: false);
+    expect(below.single.$3, 260);
+    expect(below.single.$2, lessThan(top - 3 * _lineHeight + 1e-6));
+  });
+
   test('links are made on the page the text is on', () {
     final document = RecordingDocument();
     FlowLayout(template: _rows(4))
@@ -514,4 +552,45 @@ final class _Overrunning implements CustomContent {
 
   @override
   (double, double) intrinsicWidths() => (0, 0);
+}
+
+/// [words] words of [wordWidth] each on lines of [lineHeight], set at any
+/// width from word [from] on; each piece placed logged (x, top, width,
+/// lines).
+final class _Words implements CustomContent {
+  new(this.words, this.log, {this.from = 0});
+
+  static const double lineHeight = 12;
+  static const double wordWidth = 30;
+
+  final int words;
+  final List<(double, double, double, int)> log;
+  final int from;
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final perLine = math.max(1, (width / wordWidth).floor());
+    final total = ((words - from) / perLine).ceil();
+    var lines = math.min(total, (available / lineHeight + 1e-6).floor());
+    if (lines == 0) {
+      if (!atTop) return null;
+      lines = 1;
+    }
+    final next = from + lines * perLine;
+    return CustomPlacement(
+      height: lines * lineHeight,
+      rest: next < words ? _Words(words, log, from: next) : null,
+      paint: (page, x, top) => log.add((x, top, width, lines)),
+    );
+  }
+
+  @override
+  double minHeight(double width) => lineHeight;
+
+  @override
+  (double, double) intrinsicWidths() => (wordWidth, words * wordWidth);
 }

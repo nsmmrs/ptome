@@ -129,8 +129,10 @@ css: |
 ```
 
 The PDF edition of an issue is partly the engine's work still: its
-`[.columns]` sections are set in balanced columns and `[.dropcap]`
-paragraphs with their own initial already (`columns_count`, `role:
-dropcap: drop_lines` in each era's `pdf:`), while runarounds and
+`[.columns]` sections are set in balanced columns, `[.dropcap]`
+paragraphs with their own initial and `[.pullquote]`s floated with the
+text running around them already (`columns_count`, `role: dropcap:
+drop_lines`, `role: pullquote: float` in each era's `pdf:`), while
+runarounds of image contours, threaded frames ("continued on page") and
 per-piece page templates are to come (TASK-3d66jt). In
 print, the magazine looks keep the base theme's faces.

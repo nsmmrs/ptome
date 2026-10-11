@@ -2421,6 +2421,48 @@ templates:
       expect(plain, contains('The snow.'));
     });
 
+    test('a paragraph runs around a block floating to a side', () {
+      const words =
+          'The first skiers made it down without incident, stopping in a '
+          'cluster of trees to wait for the others while the slope above '
+          'them began to move. ';
+      final pdf = _pdf(
+        '= Doc\n\n[.pull]\n____\nIt was the longest minute of my '
+        'life.\n____\n\n${words * 6}\n',
+        theme:
+            'role:\n  pull:\n    float: right\n    float_width: 50%\n'
+            '    float_gap: 12\n',
+      );
+      final out =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      // Each line's right end, top to bottom.
+      final ends = <double, double>{};
+      final quote = <double>{};
+      for (final m in RegExp(
+        r'yMin="([\d.]+)" xMax="([\d.]+)"[^>]*>([^<]*)<',
+      ).allMatches(out.replaceAll(RegExp(r'xMin="[\d.]+" '), ''))) {
+        final y = double.parse(m[1]!);
+        final x = double.parse(m[2]!);
+        if (const {'longest', 'minute', 'life.'}.contains(m[3])) {
+          quote.add(y);
+        } else if (m[3] != 'Doc') {
+          ends[y] = math.max(ends[y] ?? 0, x);
+        }
+      }
+      final rows = [
+        for (final y in ends.keys)
+          if (!quote.contains(y)) y,
+      ]..sort();
+      // The first lines beside the quote end short of it; those after it
+      // run on across the page.
+      expect(rows.take(2).map((y) => ends[y]!), everyElement(lessThan(300)));
+      expect(
+        rows.skip(2).map((y) => ends[y]!).reduce(math.max),
+        greaterThan(450),
+      );
+      expect(quote, isNotEmpty);
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';
