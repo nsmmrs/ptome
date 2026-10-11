@@ -587,6 +587,7 @@ final class CliOptions {
 
     inputFiles = infiles;
     _defaultCompat(infiles.firstOrNull ?? '-', env, errSink);
+    _defaultLook(infiles.firstOrNull ?? '-', env, errSink);
 
     if (attributes != null && attributes!.isEmpty) attributes = null;
 
@@ -950,6 +951,37 @@ final class CliOptions {
       warn: (message) => errSink.writeln('ptome: WARNING: $message'),
     );
     if (value != null) _attributeMap[name] = '$value@';
+  }
+
+  /// Sets `look` and `looksdir` from a configuration file (see
+  /// [resolveLook]) when the command line sets no look, as defaults the
+  /// document may override (ADR-0023).
+  void _defaultLook(
+    String infile,
+    Map<String, String> env,
+    StringSink errSink,
+  ) {
+    final given = attributes?.keys ?? const <String>[];
+    if (given.any((key) => key.replaceAll(RegExp(r'^!|[!@]$'), '') == 'look')) {
+      return;
+    }
+    final slash = infile.replaceAll(r'\', '/').lastIndexOf('/');
+    final found = resolveLook(
+      env: env,
+      startDir: infile == '-' || slash < 0
+          ? io.currentDirectory
+          : slash == 0
+          ? '/'
+          : infile.substring(0, slash),
+      warn: (message) => errSink.writeln('ptome: WARNING: $message'),
+    );
+    if (found == null) return;
+    _attributeMap['look'] = '${found.look}@';
+    if (!given.any(
+      (key) => key.replaceAll(RegExp(r'^!|[!@]$'), '') == 'looksdir',
+    )) {
+      _attributeMap['looksdir'] = '${found.looksDir}@';
+    }
   }
 
   /// The attribute map, recreating it when [parse] already nulled it.

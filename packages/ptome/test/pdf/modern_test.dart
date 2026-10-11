@@ -2154,6 +2154,26 @@ base:
       expect(set.$3 - plain, closeTo(12, 0.01));
     });
 
+    test("a look's measure sets the side margins", () {
+      File('${_dir.path}/narrow-look.yml').writeAsStringSync(
+        'extends: ptome\ntokens:\n'
+        '  size: { text: { print: 10pt } }\n'
+        '  measure: { print: 30em }\n'
+        '  page: { size: A4, margin: ~ }\n',
+      );
+      final pdf = _pdf(
+        '= Doc\n:nofooter:\n\nWords.\n',
+        attributes: {'looksdir': _dir.path, 'look': 'narrow', 'pdf-theme!': ''},
+      );
+      // 30em of 10pt is 300pt: centered on A4's 595.28pt.
+      final x = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Words').firstMatch(
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+        )![1]!,
+      );
+      expect(x, closeTo((595.28 - 300) / 2, 0.5));
+    });
+
     test("a document's look is its PDF theme; a named theme replaces it", () {
       // A look that sets the text size; a theme that extends it.
       File('${_dir.path}/big-look.yml').writeAsStringSync(

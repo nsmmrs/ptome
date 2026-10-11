@@ -105,6 +105,49 @@ void main() {
     });
   });
 
+  group('resolveLook', () {
+    late Directory project;
+    final warnings = <String>[];
+    setUp(() {
+      warnings.clear();
+      project = Directory('${root.path}/project/doc')
+        ..createSync(recursive: true);
+    });
+    ({String look, String looksDir})? resolve() => resolveLook(
+      env: {'XDG_CONFIG_HOME': '${root.path}/config'},
+      startDir: project.path,
+      warn: warnings.add,
+    );
+
+    test('none named: null', () => expect(resolve(), isNull));
+
+    test("the nearest ptome.yml's, found beside it or in its looksdir", () {
+      File('${root.path}/project/ptome.yml').writeAsStringSync('look: book\n');
+      expect(resolve(), (look: 'book', looksDir: '${root.path}/project'));
+      File('${root.path}/project/ptome.yml')
+          .writeAsStringSync('look: book\nlooksdir: design\n');
+      expect(resolve(), (
+        look: 'book',
+        looksDir: '${root.path}/project/design',
+      ));
+    });
+
+    test("the user's configuration when the project names none", () {
+      Directory('${root.path}/config/ptome').createSync(recursive: true);
+      File('${root.path}/config/ptome/config.yml')
+          .writeAsStringSync('look: mine\n');
+      expect(resolve()?.look, 'mine');
+      File('${root.path}/project/ptome.yml').writeAsStringSync('compat: pdf\n');
+      expect(resolve()?.look, 'mine');
+    });
+
+    test('a look that is not a name is reported', () {
+      File('${root.path}/project/ptome.yml').writeAsStringSync('look: [a]\n');
+      expect(resolve(), isNull);
+      expect(warnings.single, contains('look: and looksdir: are names'));
+    });
+  });
+
   group('the CLI', () {
     late File input;
     setUp(() {
@@ -130,6 +173,15 @@ void main() {
       });
       File('${root.path}/ptome.yml').writeAsStringSync('compat: true\n');
       expect(attributes(const []), {'asciidoctor-compat': 'true@'});
+    });
+
+    test("a configured look is a default the command line overrides", () {
+      File('${root.path}/ptome.yml').writeAsStringSync('look: book\n');
+      expect(attributes(const []), {
+        'look': 'book@',
+        'looksdir': '${root.path}@',
+      });
+      expect(attributes(['-a', 'look=other']), {'look': 'other'});
     });
 
     test('-a asciidoctor-compat wins, set or unset', () {

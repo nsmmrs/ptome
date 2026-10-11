@@ -168,7 +168,7 @@ tokens:
   test('what the PDF cannot render is reported, by item', () {
     _look('screen', '''
 tokens:
-  measure: 66ch
+  leading: { screen: 1.6 }
 styles:
   paragraph: { keep-with-next: true }
   .dek: { rows: none }
@@ -178,7 +178,6 @@ templates:
     final warnings = <String>[];
     lookThemeEntries(_load('screen'), warn: warnings.add);
     expect(warnings, [
-      contains('tokens.measure has no effect in the PDF yet'),
       contains('styles.paragraph.keep-with-next has no effect in the PDF'),
       contains('styles..dek.rows has no effect in the PDF'),
       contains('templates.footnote-reference has no effect in the PDF'),

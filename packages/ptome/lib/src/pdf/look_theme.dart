@@ -211,14 +211,11 @@ final class _Compiler {
       _set('page_margin_inner', page.inner?.let(_length));
       _set('page_margin_outer', page.outer?.let(_length));
     }
-    // (The line length comes from the page's margins in print.)
-    if (tokens.measure?.of(Medium.print) != null &&
-        tokens.page?.margin == null) {
-      _unsupported(
-        'tokens.measure',
-        'has no effect in the PDF yet: its line length comes from '
-            'tokens.page.margin',
-      );
+    // A measure sets the side margins, unless the look gives them.
+    if (tokens.measure?.of(Medium.print) case final measure?) {
+      if (tokens.page?.margin == null) {
+        _set('page_measure', _string('$measure'));
+      }
     }
   }
 

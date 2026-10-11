@@ -1,7 +1,7 @@
-/// Where the CLI finds the `asciidoctor-compat` setting when the command
-/// line doesn't give it (ADR-0015): the `PTOME_COMPAT` environment
-/// variable, the project's `ptome.yml`, the user's
-/// `ptome/config.yml`.
+/// Where the CLI finds the settings the command line doesn't give: the
+/// `asciidoctor-compat` setting (ADR-0015: the `PTOME_COMPAT` environment
+/// variable, the project's `ptome.yml`, the user's `ptome/config.yml`)
+/// and the look (ADR-0023: `look:` in the same files).
 library;
 
 import 'dart:convert';
@@ -24,14 +24,59 @@ String? resolveCompat({
   required void Function(String message) warn,
 }) {
   if (env['PTOME_COMPAT'] case final value?) return value;
+  for (final path in _configFiles(env, startDir)) {
+    if (_compatIn(path, warn) case final value?) return value;
+  }
+  return null;
+}
+
+/// The look a configuration file names (ADR-0023), with the folder its
+/// look files are found in: `look:` in the nearest [projectConfigName] in
+/// [startDir] or a directory above it, else in the user's
+/// `ptome/config.yml`; looked for in the file's `looksdir:` (relative to
+/// the file), else beside it. Null when none names one. Problems with a
+/// file are reported through [warn].
+({String look, String looksDir})? resolveLook({
+  required Map<String, String> env,
+  required String startDir,
+  required void Function(String message) warn,
+}) {
+  for (final path in _configFiles(env, startDir)) {
+    final config = _config(path, warn);
+    if (config == null) continue;
+    final dir = _dirname(path);
+    switch ((config['look'], config['looksdir'])) {
+      case (null, _):
+        continue;
+      case (final String look, null):
+        return (look: look, looksDir: dir);
+      case (final String look, final String looksDir):
+        return (
+          look: look,
+          looksDir: PathResolver().systemPath(looksDir, start: dir),
+        );
+      case (final look, final looksDir):
+        warn(
+          '$path: look: and looksdir: are names or paths, not '
+          '${look is String ? looksDir : look}',
+        );
+        return null;
+    }
+  }
+  return null;
+}
+
+/// The configuration files to read, in order: the project's (the nearest
+/// [projectConfigName] in [startDir] or above; no directory above it is
+/// searched), then the user's.
+List<String> _configFiles(Map<String, String> env, String startDir) {
+  final files = <String>[];
   for (var dir = _absolute(startDir); ; dir = _parent(dir)) {
     final path = dir.endsWith('/')
         ? '$dir$projectConfigName'
         : '$dir/$projectConfigName';
     if (io.isFile(path)) {
-      // The nearest project file is the project's: no directory above it
-      // is searched.
-      if (_compatIn(path, warn) case final value?) return value;
+      files.add(path);
       break;
     }
     if (_parent(dir) == dir) break;
@@ -45,14 +90,14 @@ String? resolveCompat({
   };
   if (configHome != null) {
     final path = '$configHome/ptome/config.yml';
-    if (io.isFile(path)) return _compatIn(path, warn);
+    if (io.isFile(path)) files.add(path);
   }
-  return null;
+  return files;
 }
 
-/// The `compat:` value of the configuration file at [path] as an
-/// attribute value, or null when the file doesn't set it.
-String? _compatIn(String path, void Function(String message) warn) {
+/// The configuration file at [path], or null when it is empty or isn't
+/// one (reported).
+YamlMap? _config(String path, void Function(String message) warn) {
   final YamlNode config;
   try {
     config = loadYamlNode(
@@ -68,6 +113,14 @@ String? _compatIn(String path, void Function(String message) warn) {
     warn('$path: not a configuration file (expected keys and values)');
     return null;
   }
+  return config;
+}
+
+/// The `compat:` value of the configuration file at [path] as an
+/// attribute value, or null when the file doesn't set it.
+String? _compatIn(String path, void Function(String message) warn) {
+  final config = _config(path, warn);
+  if (config == null) return null;
   return switch (config['compat']) {
     null => null,
     final bool on => '$on',
@@ -92,6 +145,12 @@ String _absolute(String path) {
         ? path
         : resolver.joinPath([io.currentDirectory, path]),
   );
+}
+
+/// The folder [path] is in.
+String _dirname(String path) {
+  final slash = path.lastIndexOf('/');
+  return slash <= 0 ? '/' : path.substring(0, slash);
 }
 
 /// The directory above [dir] (the root is its own).

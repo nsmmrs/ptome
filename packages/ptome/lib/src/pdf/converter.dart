@@ -2402,17 +2402,46 @@ final class PdfConverter extends BuiltInConverter
   }
 
   EdgeInsets _pageMargins(Document document) {
+    final given = document.attr('pdf-page-margin');
     final values = _edgeValues(
-      document.attr('pdf-page-margin') != null
-          ? ThemeString(document.attr('pdf-page-margin')!)
-          : _theme.value('page_margin'),
+      given != null ? ThemeString(given) : _theme.value('page_margin'),
     );
+    // A measure (`page_measure`) sets the side margins that center a text
+    // block that wide, unless the document gives the margins.
+    if (given == null) {
+      if (_theme.value('page_measure') case final measure?) {
+        final width = _pageSize(document).$1;
+        final side = math.max(0.0, (width - _measure(measure)) / 2);
+        return EdgeInsets(
+          top: values[0],
+          right: side,
+          bottom: values[2],
+          left: side,
+        );
+      }
+    }
     return EdgeInsets(
       top: values[0],
       right: values[1],
       bottom: values[2],
       left: values[3],
     );
+  }
+
+  /// A measure in points: a length, or `ch` (the width of a zero in the
+  /// text face at the text size) or `em` (the text size).
+  double _measure(ThemeValue measure) {
+    final text = measure.rubyString.trim();
+    if (RegExp(r'^([\d.]+)\s*(ch|em)$').firstMatch(text) case final m?) {
+      final count = double.parse(m[1]!);
+      return m[2] == 'em'
+          ? count * _rootFontSize
+          : count *
+                _fonts
+                    .font(_font.family, _font.style)
+                    .widthOf('0', _rootFontSize, kerning: false);
+    }
+    return _toPoints(measure);
   }
 
   /// A margin or padding value: one number for all sides, or two, three or
