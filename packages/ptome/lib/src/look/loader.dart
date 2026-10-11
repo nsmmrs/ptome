@@ -780,7 +780,7 @@ final class _Parser {
   };
 
   static final RegExp _lengthPattern = RegExp(
-    r'^(-?\d+(?:\.\d+)?|-?\.\d+)\s*(pt|px|in|mm|em|ch|lines)$',
+    r'^(-?\d+(?:\.\d+)?|-?\.\d+)\s*(pt|px|in|mm|rem|em|ch|lines)$',
   );
 
   static Length _length(_Raw raw, String what) {
@@ -798,7 +798,7 @@ final class _Parser {
     }
     throw LookException(
       '$what is a length with its unit (10.5pt, 1.5in, 1em, 2lines; '
-      'pt, px, in, mm, em, ch or lines)',
+      'pt, px, in, mm, em, rem, ch or lines)',
       scalar.span,
     );
   }

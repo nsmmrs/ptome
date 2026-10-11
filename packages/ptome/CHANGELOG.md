@@ -43,6 +43,16 @@ Asciidoctor project.
   in the running head), `eu-journal` (one column of 9.6/10.5, centred
   italic article headings) and `uk-act` (11/12, bold section headings,
   italic running heads).
+- The magazine website (`doc/magazine.md`): a role vocabulary for a
+  piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
+  pullquote, caption-lead, columns, end; aligned with IPTC NITF and
+  Apple News Format) and looks that set them as a print magazine of an
+  era (`magazine`, `-1950s`, `-1960s`, `-1970s`, `-1980s`, `broadsheet`,
+  `compact`): a twelve-unit grid, the kicker, credit and issue lines
+  from attributes (title page slots), runarounds, drop caps, pull
+  quotes, bounded column sections, end marks, a thick-and-thin frame,
+  each device with a fallback; one column on a phone. Looks' lengths
+  may be `rem`.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

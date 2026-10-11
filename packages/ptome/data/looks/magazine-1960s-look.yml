@@ -1,0 +1,28 @@
+# The 1960s Swiss magazine (Fleckhaus's *Twen*, Vignelli's canon): a
+# 12-unit grid combined into 2, 3, 4 or 6 columns, gutters one line of
+# type, at most two sizes (heads about twice the text), flush left, a
+# grotesque, type hung from 2 pt and ½ pt rules. Stand-in: Inter.
+extends: magazine
+tokens:
+  font:
+    text: { family: { screen: Inter } }
+    display: { family: { screen: Inter }, weight: bold }
+    utility: { family: { screen: Inter } }
+  size: { text: { print: 9pt, screen: 1rem } }
+  leading: { print: 1.35, screen: 1.5 }
+  align: { print: start }
+  rule:
+    major: { print: 2pt, screen: 3px, ebook: 3px }
+    minor: { print: 0.5pt, screen: 1px, ebook: 1px }
+styles:
+  title: { style: normal }
+webfonts:
+  - Inter:400,400italic,700
+css: |
+  :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
+  #header{border-top:var(--ptome-rule-major) solid;padding-top:.5rem}
+  #header>h1,#header>.title-page-title{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.02em}
+  #header>.dek,.paragraph.dek p{font-size:1.5rem}
+  h2,h3{border-top:var(--ptome-rule-minor) solid;padding-top:.4rem;font-size:1.5rem}
+  .paragraph.dropcap p::first-letter{initial-letter:normal;-webkit-initial-letter:normal;float:none;font-size:inherit;margin:0;color:inherit;font-family:inherit}
+  .quoteblock.pullquote{border-block:0;border-top:var(--ptome-rule-major) solid}

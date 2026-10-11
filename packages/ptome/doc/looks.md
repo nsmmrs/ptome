@@ -57,6 +57,10 @@ What each output does with a look:
 | `eu-journal` | EU legislation as the Official Journal's L series sets it: one column on A4, the text 9.6 on 10.5, articles' headings centred and italic. Set in Crimson Pro. |
 | `uk-act` | Acts of the UK Parliament as printed since 2001: the text 11 on 12, sections headed in bold, italic running heads (the Act and the page). Set in TeX Gyre Pagella. |
 
+The magazine looks (`magazine`, `magazine-1950s`, `magazine-1960s`,
+`magazine-1970s`, `magazine-1980s`, `broadsheet`, `compact`) set a
+website as a print magazine of an era: `doc/magazine.md`.
+
 The statute looks name the act in their running heads (the document's
 title), never the publication they follow. Two of their layouts wait on
 the engine: the UK Acts' section numbers hung in the margin, and the
@@ -96,7 +100,7 @@ and `epub-css:` parts apply look by look, the one extended first.
 ### Values
 
 - **Lengths** carry their unit: `pt`, `px` (0.75pt), `in`, `mm`, `em`
-  (the font size), `ch` (a `0`'s width), `lines` (the line spacing). `0`
+  (the font size), `rem` (the base font size), `ch` (a `0`'s width), `lines` (the line spacing). `0`
   needs none.
 - **Ratios** are bare numbers: `size: 1.25` is 1.25 times the text around
   it, `leading: 1.4` is 1.4 times the size.

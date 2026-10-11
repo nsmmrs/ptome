@@ -1,0 +1,21 @@
+# The 1950s fashion magazine (Brodovitch's *Harper's Bazaar*, Henry
+# Wolf's *Esquire*): a hairline Didone in white space, huge black
+# initials, photographs floating on white; Bauer Bodoni for the text.
+# Stand-ins: Bodoni Moda for Didot, Libre Bodoni for Bauer Bodoni.
+extends: magazine
+tokens:
+  font:
+    text: { family: { screen: Libre Bodoni } }
+    display: { family: { screen: Bodoni Moda }, weight: normal }
+    utility: { family: { screen: Libre Bodoni } }
+  align: { print: start }
+styles:
+  title: { style: normal }
+  .kicker: { font: text, weight: normal }
+webfonts:
+  - Bodoni Moda:400,400italic,700
+  - Libre Bodoni:400,400italic,700
+css: |
+  :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-tracking:.3em;--mag-dropcap-lines:5;--mag-text-align:start;--mag-gutter:2.5rem;--mag-body-span:6}
+  #content,#footnotes,#footer{grid-column:4/span var(--mag-body-span)}
+  #header>h1,#header>.title-page-title{font-weight:400;letter-spacing:-.01em}

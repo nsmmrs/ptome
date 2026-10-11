@@ -363,6 +363,40 @@ templates:
     });
   });
 
+  test("the magazine looks: the piece's parts in the header's order", () {
+    for (final look in ['magazine', 'magazine-1970s', 'compact']) {
+      final html = File(
+        convertWith(
+          'html5',
+          '= Hed: The dek\nA Writer\n:look: $look\n:kicker: Mountains\n'
+              ':credit: Photographed by A. Lens\n\n[.lede.dropcap]\nText.\n',
+        ),
+      ).readAsStringSync();
+      final header = html.substring(
+        html.indexOf('<div id="header">'),
+        html.indexOf('<div id="content">'),
+      );
+      expect(
+        RegExp('class="([a-z -]+)"')
+            .allMatches(header)
+            .map((m) => m[1])
+            .where(
+              (c) => c!.startsWith('title-page') || c.contains(' title-page'),
+            )
+            .toList(),
+        [
+          'title-page-kicker kicker',
+          'title-page-title',
+          'subtitle title-page-subtitle dek',
+          'details title-page-authors byline',
+          'title-page-credit credit',
+        ],
+        reason: look,
+      );
+      expect(html, contains('--mag-dropcap-lines'), reason: look);
+    }
+  });
+
   test("a look's webfonts after Asciidoctor's; none with its stylesheet", () {
     File('${dir.path}/web-look.yml').writeAsStringSync(
       "webfonts: ['Crimson Pro:400,700', 'Ubuntu Mono:400']\n",

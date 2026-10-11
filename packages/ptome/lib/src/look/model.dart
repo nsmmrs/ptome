@@ -58,6 +58,10 @@ enum LengthUnit {
   /// The font size.
   em('em'),
 
+  /// The base font size (the root element's in CSS, the theme's base in
+  /// the PDF).
+  rem('rem'),
+
   /// The width of a `0` in the text face.
   ch('ch'),
 
@@ -89,7 +93,10 @@ final class Length {
     LengthUnit.px => value * 0.75,
     LengthUnit.inch => value * 72.0,
     LengthUnit.mm => value * 72 / 25.4,
-    LengthUnit.em || LengthUnit.ch || LengthUnit.lines => null,
+    LengthUnit.em ||
+    LengthUnit.rem ||
+    LengthUnit.ch ||
+    LengthUnit.lines => null,
   };
 
   /// As written: `0.75in`, `10.5pt`.

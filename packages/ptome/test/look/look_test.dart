@@ -413,6 +413,18 @@ tokens:
     );
   });
 
+  test('rem: the base font size, in CSS and the theme', () {
+    _look(
+      'rem',
+      'tokens:\n  size: { text: { screen: 1.0625rem } }\n'
+          '  measure: 30rem\n',
+    );
+    final look = _load('rem');
+    expect(lookCss(look, CssTarget.html), contains('font-size:1.0625rem'));
+    final measure = lookThemeEntries(look)['page_measure'];
+    expect(measure is YScalar ? measure.value.rubyString : null, '30rem');
+  });
+
   test('every built-in look compiles for each output without a warning', () {
     for (final name in builtInLooks.keys) {
       final look = LookLoader().load(name);
@@ -422,7 +434,10 @@ tokens:
       lookCss(look, CssTarget.epub, warn: warnings.add);
       expect(warnings, isEmpty, reason: name);
     }
-    expect(builtInLooks.keys, containsAll(['ptome', 'troff']));
+    expect(
+      builtInLooks.keys,
+      containsAll(['ptome', 'troff', 'tech-book', 'us-code', 'magazine']),
+    );
   });
 
   test('the built-in looks are embedded as they are in data/looks', () {

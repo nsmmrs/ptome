@@ -1,0 +1,25 @@
+# The 1980s technical monthly (*BYTE*, *Creative Computing*): Univers,
+# three justified columns, tinted editor's-note sidebars, numbered
+# monospace listings, a dinkus between short items. Stand-ins: Archivo
+# for Univers, IBM Plex Mono for the listings.
+extends: magazine
+tokens:
+  font:
+    text: { family: { screen: Archivo } }
+    display: { family: { screen: Archivo }, weight: bold }
+    utility: { family: { screen: Archivo } }
+    code: { family: { screen: IBM Plex Mono } }
+  size: { text: { print: 9pt, screen: 1rem } }
+  color: { accent: '#0B5C8E', tint: '#E8EEF4' }
+styles:
+  title: { style: normal }
+  sidebar: { background: tint, border: none }
+  code-block: { background: none, border: { width: minor, color: ink } }
+webfonts:
+  - Archivo:400,400italic,700
+  - IBM Plex Mono:400,700
+css: |
+  :root{--mag-display-style:normal;--mag-section-columns:3;--mag-column-min:12rem;--mag-end-mark:"\2022\2009\2022\2009\2022\2009\2022"}
+  .sidebarblock{border:0;padding:1rem}
+  hr{border:0;text-align:center;height:auto}
+  hr::after{content:"\2022\2003\2022\2003\2022\2003\2022"}

@@ -1,0 +1,18 @@
+# The 1970s rock tabloid (*Rolling Stone*): an Oxford-rule frame (a
+# thick rule and a thin one), slab display type, serif text in three
+# columns where columns are wanted, display-italic pull quotes. Stand-in:
+# Zilla Slab for the slab.
+extends: magazine
+tokens:
+  font:
+    display: { family: { screen: Zilla Slab }, weight: bold }
+    utility: { family: { screen: Zilla Slab } }
+  color: { accent: '#B3261E' }
+styles:
+  title: { style: normal }
+webfonts:
+  - Zilla Slab:400,400italic,700,700italic
+css: |
+  :root{--mag-frame-width:6px;--mag-frame-gap:4px;--mag-display-style:normal;--mag-kicker-tracking:.08em}
+  body{margin:1rem;min-height:calc(100vh - 2rem)}
+  .quoteblock.pullquote blockquote,.quoteblock.pullquote blockquote p{font-style:italic;color:var(--ptome-color-accent)}

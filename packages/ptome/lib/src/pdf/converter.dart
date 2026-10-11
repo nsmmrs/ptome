@@ -2569,9 +2569,9 @@ final class PdfConverter extends BuiltInConverter
   /// text face at the text size) or `em` (the text size).
   double _measure(ThemeValue measure) {
     final text = measure.rubyString.trim();
-    if (RegExp(r'^([\d.]+)\s*(ch|em)$').firstMatch(text) case final m?) {
+    if (RegExp(r'^([\d.]+)\s*(ch|r?em)$').firstMatch(text) case final m?) {
       final count = double.parse(m[1]!);
-      return m[2] == 'em'
+      return m[2] != 'ch'
           ? count * _rootFontSize
           : count *
                 _fonts

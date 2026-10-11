@@ -1,0 +1,98 @@
+# The print magazine, for the web (EPIC-kzdb6h; doc/magazine.md): the
+# base of the era looks (magazine-1955, ...). Its parts are roles
+# (kicker, hed, dek, byline, dateline, lede, dropcap, pullquote,
+# caption-lead, credit, end), named after IPTC NITF and Apple News
+# Format's roles; its device rules (the `css:` below) never change
+# between eras, which set its tokens and the `--mag-*` knobs:
+#
+# --mag-grid-units, --mag-gutter, --mag-body-span: the page's grid
+# --mag-head-align, --mag-display-style: the head's alignment, style
+# --mag-kicker-case, --mag-kicker-tracking: the kicker's capitals
+# --mag-dropcap-lines: the initial's depth, in lines
+# --mag-frame-width, --mag-frame-gap: a thick-and-thin frame (0: none)
+# --mag-end-mark: the end of a piece
+# --mag-section-columns, --mag-column-min: [.columns] sections
+# --mag-text-align: the text's alignment
+#
+# Its look follows the mid-century general magazine (the 1955 *Look*,
+# the 1957 *Scientific American*): a letterspaced capital kicker, an
+# italic Didone head, a dek in large text type, three justified columns
+# in bounded sections, bold small-capital caption lead-ins. The faces'
+# free stand-ins (on the web, from Google Fonts): Bodoni Moda, Libre
+# Caslon Text, Libre Franklin. The PDF edition is its own work
+# (TASK-3d66jt): in print the faces are the base theme's.
+tokens:
+  font:
+    text: { family: { screen: Libre Caslon Text } }
+    display: { family: { screen: Bodoni Moda }, weight: bold }
+    utility: { family: { screen: Libre Franklin } }
+  size:
+    text: { print: 10pt, screen: 1.0625rem }
+  leading: { print: 1.3, screen: 1.5 }
+  align: { print: justify }
+  hyphenate: true
+  color:
+    ink: '#1A1A1A'
+    accent: '#1A1A1A'
+    muted: '#555555'
+  rule:
+    major: { print: 1.5pt, screen: 2px, ebook: 2px }
+    minor: { print: 0.5pt, screen: 1px, ebook: 1px }
+styles:
+  heading: { font: display, color: ink }
+  title: { font: display, style: italic, color: ink }
+  caption: { font: utility, size: 0.85, color: muted }
+  .kicker: { font: utility, weight: 600, color: accent }
+  .dek: { font: text, size: 1.3 }
+  .byline: { font: utility, size: 0.85 }
+  .credit: { font: utility, size: 0.8, color: muted }
+templates:
+  title-page:
+    recto:
+      - { attribute: kicker, style: .kicker }
+      - title
+      - { slot: subtitle, style: .dek }
+      - { slot: authors, before: 'By ', separator: ' and ', style: .byline }
+      - { attribute: credit, style: .credit }
+      - { attribute: issue, style: .credit }
+webfonts:
+  - Bodoni Moda:400,400italic,700,700italic
+  - Libre Caslon Text:400,400italic,700
+  - Libre Franklin:400,600,700
+css: |
+  :root{--mag-grid-units:12;--mag-gutter:1.5rem;--mag-body-span:8;--mag-head-align:start;--mag-display-style:italic;--mag-kicker-case:uppercase;--mag-kicker-tracking:.14em;--mag-dropcap-lines:3;--mag-frame-width:0px;--mag-frame-gap:0px;--mag-end-mark:"\25A0";--mag-section-columns:3;--mag-column-min:14rem;--mag-text-align:justify}
+  body{display:grid;grid-template-columns:repeat(var(--mag-grid-units),minmax(0,1fr));column-gap:var(--mag-gutter);align-content:start;margin:0;padding:3rem var(--mag-gutter);min-height:100vh;box-sizing:border-box;border:var(--mag-frame-width) solid currentColor;outline:calc(var(--mag-frame-width)/4) solid currentColor;outline-offset:calc(-1*(var(--mag-frame-width) + var(--mag-frame-gap)))}
+  #header,#content,#footnotes,#footer{max-width:none;margin:0;padding-left:0;padding-right:0}
+  #header{grid-column:2/-2;text-align:var(--mag-head-align);margin-bottom:2rem}
+  #header>h1,#header>.title-page-title{font-style:var(--mag-display-style);font-size:clamp(2.25rem,6vw,4.5rem);line-height:1.05;margin:.25em 0;text-wrap:balance;border:0}
+  #header>.kicker{font-size:.8rem;text-transform:var(--mag-kicker-case);letter-spacing:var(--mag-kicker-tracking)}
+  #header>.dek{font-size:1.35rem;line-height:1.3;margin:.5em 0 1em;text-wrap:balance}
+  #header>.details{display:block;border:0;padding:0;margin:.25em 0;color:inherit;line-height:1.4}
+  #header>.details span{margin:0}
+  #header>.details br{display:none}
+  #content,#footnotes{grid-column:3/span var(--mag-body-span);container-type:inline-size}
+  #footer{grid-column:3/span var(--mag-body-span);background:none;border-top:var(--ptome-rule-minor) solid;margin-top:2rem;padding:.75rem 0}
+  #footer-text{color:var(--ptome-color-muted);font-family:var(--ptome-font-utility);font-size:.8rem}
+  #content p{text-align:var(--mag-text-align);hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:6 2 3;text-wrap:pretty}
+  .paragraph.dek p{font-size:1.35rem;line-height:1.3;text-align:var(--mag-head-align);text-wrap:balance}
+  .dateline,.caption-lead{font-variant-caps:small-caps;font-weight:700;letter-spacing:.04em}
+  .paragraph.dropcap p::first-letter{-webkit-initial-letter:var(--mag-dropcap-lines);initial-letter:var(--mag-dropcap-lines);font-family:var(--ptome-font-display);color:var(--ptome-color-accent);margin-inline-end:.08em}
+  @supports not ((initial-letter:1) or (-webkit-initial-letter:1)){.paragraph.dropcap p::first-letter{float:left;font-size:calc(var(--mag-dropcap-lines)*1.4em);line-height:.85;margin-top:.05em}}
+  .imageblock.right,.imageblock.left{width:50%;margin-bottom:1rem;shape-outside:margin-box}
+  .imageblock.right{float:right;margin-inline-start:var(--mag-gutter)}
+  .imageblock.left{float:left;margin-inline-end:var(--mag-gutter)}
+  .imageblock.right img,.imageblock.left img{width:100%;height:auto}
+  .imageblock>.title{font-style:normal;margin-top:.4em}
+  .quoteblock.pullquote{float:right;width:45%;margin:0 0 1rem var(--mag-gutter);padding:.5rem 0;border:0;border-block:var(--ptome-rule-major) solid}
+  .quoteblock.pullquote blockquote{padding:0;border:0}
+  .quoteblock.pullquote blockquote,.quoteblock.pullquote blockquote p{font-family:var(--ptome-font-display);font-style:var(--mag-display-style);font-size:1.6rem;line-height:1.2;color:inherit;text-align:start;hanging-punctuation:first last}
+  .quoteblock.pullquote blockquote::before{content:none}
+  .sect1.columns{clear:both}
+  .sect1.columns>.sectionbody{columns:var(--mag-section-columns) var(--mag-column-min);column-gap:var(--mag-gutter);column-rule:var(--ptome-rule-minor) solid}
+  .sect1.columns>.sectionbody :is(h3,.imageblock){column-span:all}
+  .paragraph.end p::after,#content>.sect1:last-child>.sectionbody>.paragraph:last-child p::after,#content>.paragraph:last-child p::after{content:"\00a0" var(--mag-end-mark);color:var(--ptome-color-accent)}
+  .sidebarblock{border:0;border-block:var(--ptome-rule-minor) solid;border-radius:0}
+  .multipage-nav{grid-column:3/span var(--mag-body-span);display:flex;justify-content:space-between;font-family:var(--ptome-font-utility);font-size:.8rem;border-block:var(--ptome-rule-minor) solid}
+  @media (max-width:44rem){#header,#content,#footnotes,#footer,.multipage-nav{grid-column:1/-1}}
+  @container (max-width:34rem){.imageblock.right,.imageblock.left,.quoteblock.pullquote{float:none;width:auto;margin-inline:0;shape-outside:none}.sect1.columns>.sectionbody{columns:auto}}
+  @media print{body{display:block;border:0;outline:0;padding:0}}

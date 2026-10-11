@@ -1,0 +1,22 @@
+# The European compact newspaper (the *Guardian*'s Berliner of 2005 and
+# its tabloid of 2018): five equal columns, the lead across all five and
+# its picture across four, a slab-serif display, news justified and
+# comment (a [.comment] section) ranged left. Stand-ins: Zilla Slab for
+# the display, Source Serif 4 for the text.
+extends: magazine
+tokens:
+  font:
+    text: { family: { screen: Source Serif 4 } }
+    display: { family: { screen: Zilla Slab }, weight: bold }
+    utility: { family: { screen: Source Serif 4 } }
+  color: { accent: '#052962' }
+styles:
+  title: { style: normal }
+webfonts:
+  - Zilla Slab:400,700
+  - Source Serif 4:400,400italic,700
+css: |
+  :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
+  #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}
+  #header>.kicker{color:var(--ptome-color-accent);font-weight:700}
+  .sect1.comment p{text-align:start}
