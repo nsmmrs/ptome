@@ -123,14 +123,9 @@ final class LookColor {
   String toString() => '#$hex';
 }
 
-/// A weight of a face.
-enum FontWeight {
-  /// Regular.
-  normal,
-
-  /// Bold.
-  bold,
-}
+/// A weight of a face: 100 to 900 (`normal` is 400, `bold` 700), as
+/// CSS has them; the PDF sets 600 and up in the bold face.
+typedef FontWeight = int;
 
 /// The shape of a face.
 enum FontShape {
@@ -187,16 +182,43 @@ final class Face {
   const new({this.family, this.weight, this.shape, this.size});
 
   /// The family's name.
-  final String? family;
+  final ByMedium<String>? family;
 
   /// Its weight where a style doesn't say.
-  final FontWeight? weight;
+  final ByMedium<FontWeight>? weight;
 
   /// Its shape where a style doesn't say.
-  final FontShape? shape;
+  final ByMedium<FontShape>? shape;
 
   /// Its size, as a ratio of the text around it (a code face a little
   /// smaller than the text).
+  final ByMedium<double>? size;
+
+  /// The face as [medium] shows it.
+  MediumFace at(Medium medium) => MediumFace(
+    family: family?.of(medium),
+    weight: weight?.of(medium),
+    shape: shape?.of(medium),
+    size: size?.of(medium),
+  );
+}
+
+/// A [Face] as one medium shows it.
+@immutable
+final class MediumFace {
+  /// A face of [family].
+  const new({this.family, this.weight, this.shape, this.size});
+
+  /// The family's name.
+  final String? family;
+
+  /// Its weight.
+  final FontWeight? weight;
+
+  /// Its shape.
+  final FontShape? shape;
+
+  /// Its size, as a ratio of the text around it.
   final double? size;
 }
 
@@ -208,13 +230,13 @@ final class Paragraph {
   const new({this.signal, this.space, this.indent});
 
   /// What sets paragraphs apart.
-  final ParagraphSignal? signal;
+  final ByMedium<ParagraphSignal>? signal;
 
   /// The space between paragraphs.
-  final Length? space;
+  final ByMedium<Length>? space;
 
   /// The first line's indent.
-  final Length? indent;
+  final ByMedium<Length>? indent;
 }
 
 /// The page, in print.
@@ -263,16 +285,16 @@ final class Tokens {
   final ByMedium<Length>? textSize;
 
   /// The headings' sizes, from level 1 (`h1`) down.
-  final List<Length>? headingSizes;
+  final ByMedium<List<Length>>? headingSizes;
 
   /// Small text (captions, notes) as a ratio of the text.
-  final double? small;
+  final ByMedium<double>? small;
 
   /// The line spacing, as a ratio of the size.
   final ByMedium<double>? leading;
 
   /// The line length.
-  final Length? measure;
+  final ByMedium<Length>? measure;
 
   /// What sets paragraphs apart.
   final Paragraph? paragraph;
@@ -284,10 +306,10 @@ final class Tokens {
   final ByMedium<bool>? hyphenate;
 
   /// Colors by role (`ink`, `link`, `tint`, ...).
-  final Map<String, LookColor> colors;
+  final Map<String, ByMedium<LookColor>> colors;
 
   /// Rule widths by name (`hairline`, `heavy`).
-  final Map<String, Length> rules;
+  final Map<String, ByMedium<Length>> rules;
 
   /// The page, in print.
   final Page? page;
@@ -569,68 +591,185 @@ final class Style {
   });
 
   /// The face, by its role in the tokens.
-  final String? font;
+  final ByMedium<String>? font;
 
   /// The size.
-  final SizeValue? size;
+  final ByMedium<SizeValue>? size;
 
   /// The weight (the face's where null).
-  final FontWeight? weight;
+  final ByMedium<FontWeight>? weight;
 
   /// The shape (the face's where null).
-  final FontShape? shape;
+  final ByMedium<FontShape>? shape;
 
   /// The variant.
-  final FontVariant? variant;
+  final ByMedium<FontVariant>? variant;
 
   /// The text's color.
-  final ColorValue? color;
+  final ByMedium<ColorValue>? color;
 
   /// The background's color.
-  final ColorValue? background;
+  final ByMedium<ColorValue>? background;
 
   /// The line spacing, as a ratio of the size.
-  final num? leading;
+  final ByMedium<num>? leading;
 
   /// The space above.
-  final Length? spaceBefore;
+  final ByMedium<Length>? spaceBefore;
 
   /// The space below.
-  final Length? spaceAfter;
+  final ByMedium<Length>? spaceAfter;
 
   /// The space inside, around the content.
-  final Length? padding;
+  final ByMedium<Length>? padding;
 
   /// The corners' radius.
-  final Length? radius;
+  final ByMedium<Length>? radius;
 
   /// The border.
-  final RuleValue? border;
+  final ByMedium<RuleValue>? border;
 
   /// The rule beside the content (an admonition's).
-  final RuleValue? rule;
+  final ByMedium<RuleValue>? rule;
 
   /// Whether it stays with what follows it.
-  final bool? keepWithNext;
+  final ByMedium<bool>? keepWithNext;
 
   /// A table's rules: its top and bottom, its sides, between its rows,
   /// between its columns, under its head; and its rows' alternate
   /// background.
-  final RuleValue? frame;
+  final ByMedium<RuleValue>? frame;
 
   /// A table's left and right sides.
-  final RuleValue? frameSides;
+  final ByMedium<RuleValue>? frameSides;
 
   /// The rules between a table's rows.
-  final RuleValue? rows;
+  final ByMedium<RuleValue>? rows;
 
   /// The rules between a table's columns.
-  final RuleValue? columns;
+  final ByMedium<RuleValue>? columns;
 
   /// The rule under a table's head.
-  final RuleValue? headRule;
+  final ByMedium<RuleValue>? headRule;
 
   /// The background of every other body row.
+  final ByMedium<ColorValue>? stripes;
+
+  /// The style as [medium] shows it.
+  MediumStyle at(Medium medium) => MediumStyle(
+    font: font?.of(medium),
+    size: size?.of(medium),
+    weight: weight?.of(medium),
+    shape: shape?.of(medium),
+    variant: variant?.of(medium),
+    color: color?.of(medium),
+    background: background?.of(medium),
+    leading: leading?.of(medium),
+    spaceBefore: spaceBefore?.of(medium),
+    spaceAfter: spaceAfter?.of(medium),
+    padding: padding?.of(medium),
+    radius: radius?.of(medium),
+    border: border?.of(medium),
+    rule: rule?.of(medium),
+    keepWithNext: keepWithNext?.of(medium),
+    frame: frame?.of(medium),
+    frameSides: frameSides?.of(medium),
+    rows: rows?.of(medium),
+    columns: columns?.of(medium),
+    headRule: headRule?.of(medium),
+    stripes: stripes?.of(medium),
+  );
+}
+
+/// A [Style] as one medium shows it.
+@immutable
+final class MediumStyle {
+  /// The style's values in a medium.
+  const new({
+    this.font,
+    this.size,
+    this.weight,
+    this.shape,
+    this.variant,
+    this.color,
+    this.background,
+    this.leading,
+    this.spaceBefore,
+    this.spaceAfter,
+    this.padding,
+    this.radius,
+    this.border,
+    this.rule,
+    this.keepWithNext,
+    this.frame,
+    this.frameSides,
+    this.rows,
+    this.columns,
+    this.headRule,
+    this.stripes,
+  });
+
+  /// The [Style]'s `font` in the medium.
+  final String? font;
+
+  /// The [Style]'s `size` in the medium.
+  final SizeValue? size;
+
+  /// The [Style]'s `weight` in the medium.
+  final FontWeight? weight;
+
+  /// The [Style]'s `shape` in the medium.
+  final FontShape? shape;
+
+  /// The [Style]'s `variant` in the medium.
+  final FontVariant? variant;
+
+  /// The [Style]'s `color` in the medium.
+  final ColorValue? color;
+
+  /// The [Style]'s `background` in the medium.
+  final ColorValue? background;
+
+  /// The [Style]'s `leading` in the medium.
+  final num? leading;
+
+  /// The [Style]'s `spaceBefore` in the medium.
+  final Length? spaceBefore;
+
+  /// The [Style]'s `spaceAfter` in the medium.
+  final Length? spaceAfter;
+
+  /// The [Style]'s `padding` in the medium.
+  final Length? padding;
+
+  /// The [Style]'s `radius` in the medium.
+  final Length? radius;
+
+  /// The [Style]'s `border` in the medium.
+  final RuleValue? border;
+
+  /// The [Style]'s `rule` in the medium.
+  final RuleValue? rule;
+
+  /// The [Style]'s `keepWithNext` in the medium.
+  final bool? keepWithNext;
+
+  /// The [Style]'s `frame` in the medium.
+  final RuleValue? frame;
+
+  /// The [Style]'s `frameSides` in the medium.
+  final RuleValue? frameSides;
+
+  /// The [Style]'s `rows` in the medium.
+  final RuleValue? rows;
+
+  /// The [Style]'s `columns` in the medium.
+  final RuleValue? columns;
+
+  /// The [Style]'s `headRule` in the medium.
+  final RuleValue? headRule;
+
+  /// The [Style]'s `stripes` in the medium.
   final ColorValue? stripes;
 }
 

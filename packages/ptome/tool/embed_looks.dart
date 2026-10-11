@@ -41,15 +41,19 @@ void main(List<String> args) {
       exitCode = 1;
       return;
     }
-    // (As dart format writes it: the string on a line of its own.)
-    out
-      ..writeln("  '$name':")
-      ..writeln("      r'''$text''',");
+    out.writeln("  '$name': r'''$text''',");
   }
   out.writeln('};');
+  // (As dart format writes it, which the gate checks.)
+  final scratch = Directory.systemTemp.createTempSync('embed_looks.');
+  final generated = File('${scratch.path}/looks.g.dart')
+    ..writeAsStringSync('$out');
+  Process.runSync(Platform.resolvedExecutable, ['format', generated.path]);
+  final formatted = generated.readAsStringSync();
+  scratch.deleteSync(recursive: true);
   final target = File('${root.path}/lib/src/look/looks.g.dart');
   if (args.contains('--check')) {
-    if (!target.existsSync() || target.readAsStringSync() != '$out') {
+    if (!target.existsSync() || target.readAsStringSync() != formatted) {
       stderr.writeln(
         'embed_looks: lib/src/look/looks.g.dart is out of date; run '
         'dart run tool/embed_looks.dart',
@@ -58,6 +62,6 @@ void main(List<String> args) {
     }
     return;
   }
-  target.writeAsStringSync('$out');
+  target.writeAsStringSync(formatted);
   stdout.writeln('embed_looks: ${files.length} looks');
 }

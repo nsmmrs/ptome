@@ -15,15 +15,25 @@ document chooses another with an attribute:
 path ending in `.yml` names a file. A look that can't be read is reported,
 with its line and column, and the house look is used.
 
-What each output does with a look today:
+What each output does with a look:
 
 - **PDF:** the look becomes the theme (its keys, over asciidoctor-pdf's
   `default` theme). A theme the document names (`pdf-theme`) replaces the
   look, as naming a theme always has (`pdf-theme=default` is
   asciidoctor-pdf's theme); a theme that wants the look under it says
   `extends: look` (the document's) or `extends: ptome` (the house look).
-- **HTML, the website, EPUB:** the house stylesheets still apply as
-  written; compiling looks into them is the next step (lane TASK-sq53bn).
+- **HTML and the website:** the default stylesheet is Asciidoctor's, then
+  the look's CSS (its tokens as custom properties, `--ptome-color-link`,
+  `--ptome-font-text`, `--ptome-rule-hairline`; its styles as rules over
+  Asciidoctor's markup that read them; the print values in
+  `@media print`, the page in `@page`), then the device rules
+  (`data/stylesheets/ptome-device.css`), which hold no values. A
+  `stylesheet` the document names replaces it.
+- **EPUB:** asciidoctor-epub3's stylesheet, then the look's rules with
+  the `ebook` values written out (e-readers such as Kindle's don't read
+  custom properties), then the device rules. Unless the look sets an
+  `ebook` line spacing or alignment, asciidoctor-epub3's justified,
+  1.6-spaced paragraphs are undone, so the reader's settings apply.
 - **`asciidoctor-compat`:** no look applies; the classic theme and
   stylesheets do.
 
@@ -63,15 +73,20 @@ and `epub-css:` parts apply look by look, the one extended first.
 - **Colors** are `'#RRGGBB'` or `'#RGB'`, quoted (YAML reads `#` as a
   comment, and `191919` as a number); a style may name a color token
   instead, or say `none`.
-- **By medium:** a token may differ by where it is shown, `print` (the
-  PDF, and CSS print media), `screen` (HTML) and `ebook` (EPUB):
-  `leading: { print: 1.4, screen: 1.6 }`. A plain value is every
-  medium's. An e-book's reading system owns the body text: the house
-  look sets no size, line spacing or alignment for `ebook`.
+- **By medium:** any value, a token's or a style's, may differ by where
+  it is shown, `print` (the PDF, and CSS print media), `screen` (HTML)
+  and `ebook` (EPUB): `leading: { print: 1.4, screen: 1.6 }`,
+  `weight: { print: bold, screen: 600 }`. A plain value is every
+  medium's; a value with media applies in those alone, and elsewhere the
+  output's base stylesheet or theme decides. An e-book's reading system
+  owns the body text: the house look sets no size, line spacing or
+  alignment for `ebook`.
+- **Weights** are `normal` (400), `bold` (700) or 100 to 900; the PDF
+  sets 600 and up in the bold face.
 
 ## Tokens
 
-| Token | What it is | PDF |
+| Token | What it is | PDF (HTML and EPUB: the same values, as CSS) |
 | --- | --- | --- |
 | `font.<role>` | A face: `family`, `weight` (`normal`, `bold`), `style` (`normal`, `italic`), `size` (a ratio, for `code`). Roles: `text`, `display`, `code`, `utility`, or any a style names | `text`: `base_font_family`; `code`: `code_font_family`, `codespan_font_family`, `codespan_font_size` |
 | `size.text` | The text's size | `base_font_size` (print) |
@@ -92,20 +107,23 @@ Elements: `heading`, `h1` to `h6`, `title`, `subtitle`, `paragraph`,
 `link`, `code` (in a line), `code-block`, `caption`, `quote`,
 `admonition`, `admonition-label`, `sidebar`, `sidebar-title`, `table`,
 `table-head`, `footnote`. A role starts with a dot: `.dek` styles
-`[.dek]`.
+`[.dek]`. In CSS each element is its selectors in the output's markup
+(`heading` is Asciidoctor's `h1,h2,h3,#toctitle,...`, an EPUB's
+`h1,...,h6`); an output without the element (HTML has no separate
+subtitle) leaves its style out.
 
-| Property | Value | PDF (the element's category) |
-| --- | --- | --- |
-| `font` | a font token | `_font_family`, and `_font_style` from its weight and style |
-| `weight`, `style`, `variant` | `bold`; `italic`; `small-caps` | `_font_style`, `_font_variant` |
-| `size` | a length, a ratio, or `small` | `_font_size` |
-| `color`, `background` | a color token, a color, or `none` | `_font_color`, `_background_color` |
-| `leading` | a ratio | `_line_height` |
-| `space-before`, `space-after` | lengths | `_margin_top`, `_margin_bottom` |
-| `padding`, `radius` | lengths | `_padding`, `_border_radius` |
-| `border`, `rule` | `none`, or `{ width, color }` (a width may name a rule token) | `_border_width`, `_border_color`; `_column_rule_*` (an admonition's rule) |
-| `keep-with-next` | `true` | `_min_height_after: auto` (headings) |
-| `frame`, `frame-sides`, `rows`, `columns`, `head-rule`, `stripes` | a table's rules, and its alternate rows' background | `table_border_*`, `table_grid_*`, `table_head_border_bottom_*`, `table_body_stripe_background_color` |
+| Property | Value | PDF (the element's category) | CSS |
+| --- | --- | --- | --- |
+| `font` | a font token | `_font_family`, and `_font_style` from its weight and style | `font-family`, `font-weight`, `font-style` |
+| `weight`, `style`, `variant` | a weight; `italic`; `small-caps` | `_font_style`, `_font_variant` | `font-weight`, `font-style`, `font-variant` (and `smcp`) |
+| `size` | a length, a ratio, or `small` | `_font_size` | `font-size` (a ratio in `em`) |
+| `color`, `background` | a color token, a color, or `none` | `_font_color`, `_background_color` | `color`, `background-color` |
+| `leading` | a ratio | `_line_height` | `line-height` |
+| `space-before`, `space-after` | lengths | `_margin_top`, `_margin_bottom` | `margin-top`, `margin-bottom` |
+| `padding`, `radius` | lengths | `_padding`, `_border_radius` | `padding`, `border-radius` |
+| `border`, `rule` | `none`, or `{ width, color }` (a width may name a rule token) | `_border_width`, `_border_color`; `_column_rule_*` (an admonition's rule) | `border`; `border-left` |
+| `keep-with-next` | `true` | `_min_height_after: auto` (headings) | `break-after: avoid` |
+| `frame`, `frame-sides`, `rows`, `columns`, `head-rule`, `stripes` | a table's rules, and its alternate rows' background | `table_border_*`, `table_grid_*`, `table_head_border_bottom_*`, `table_body_stripe_background_color` | the table's, its cells' and its head's borders |
 
 ## What an output can't render
 

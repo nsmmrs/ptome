@@ -121,7 +121,10 @@ style maps, each output dropping what it cannot render.
      overlay becomes one **device stylesheet** that reads tokens and holds
      no values of its own, written after Asciidoctor's stylesheet, so a
      look changes values without new CSS.
-   - **EPUB:** the same stylesheet with the `ebook` values. The reading
+   - **EPUB:** the same rules over asciidoctor-epub3's markup with the
+     `ebook` values written out, not read from custom properties (Kindle's
+     KF8 and Adobe's engine, which Kobo uses for `.epub`, don't support
+     them; amended 2026-10-11 while building it). The reading
      system owns the body text (Kindle asks for its default size and line
      height, Apple Books applies the reader's justification): a look sets
      no text size, line spacing or alignment for `ebook` unless it says

@@ -25,6 +25,7 @@ import 'package:ptome/src/html5.dart' show Html5Converter;
 import 'package:ptome/src/http_fetch.dart' show fetchHttp;
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/logging.dart' show LoggerManager, NullLogger;
+import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/options.dart';
 import 'package:ptome/src/parallel.dart';
 import 'package:ptome/src/path_resolver.dart' show PathResolver;
@@ -628,7 +629,11 @@ void _copyStylesheets(Document doc, String outdir, {required bool mkdirs}) {
   }
 
   if (copyAsciidoctorStylesheet) {
-    Stylesheets.instance.writePrimaryStylesheet(stylesoutdir, stylesheet);
+    Stylesheets.instance.writePrimaryStylesheet(
+      stylesoutdir,
+      stylesheet,
+      Stylesheets.isAsciidoctor(stylesheet) ? null : documentLook(doc),
+    );
   } else if (copyUserStylesheet) {
     final copycss = doc.attr('copycss');
     final String stylesheetSrc;

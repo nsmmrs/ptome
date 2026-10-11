@@ -16,7 +16,10 @@ Asciidoctor project.
   The house style is the built-in look `ptome`; the PDF theme is
   compiled from it, byte for byte the PDFs its hand-written theme
   made. A theme a document names still replaces the look, and can
-  extend it (`extends: look`). The HTML and EPUB stylesheets follow.
+  extend it (`extends: look`). The HTML and EPUB stylesheets are
+  compiled from it too (HTML as custom properties, pages rendering as
+  before); the EPUB now leaves its body text's alignment and line
+  spacing to the reader and hyphenates it.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

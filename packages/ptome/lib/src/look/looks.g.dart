@@ -8,28 +8,35 @@ library;
 
 /// The text of each built-in look, by name.
 const Map<String, String> builtInLooks = {
-  'ptome':
-      r'''# Ptome's house look (ADR-0011, ADR-0023; doc/style.md): Asciidoctor's
-# and asciidoctor-pdf's looks, changed as the rules of typesetting ask:
-# a measure of about 75 characters in print, more open lines, headings in
-# the sans, code in a tint, tables with rows only. Every format reads it;
-# a look that changes it starts with `extends: ptome`.
+  'ptome': r'''# Ptome's house look (ADR-0011, ADR-0023; doc/style.md): Asciidoctor's,
+# asciidoctor-pdf's and asciidoctor-epub3's looks, changed as the rules of
+# typesetting ask: in print, a measure of about 75 characters, more open
+# lines, headings in the sans, code in a tint, tables with rows only; on
+# screen, a 42em measure and near-black headings; in an e-book, the
+# reader's body text, hyphenated. A value by medium (`print`: the PDF;
+# `screen`: HTML; `ebook`: EPUB) applies there alone; a plain one applies
+# everywhere. A look that changes this one starts with `extends: ptome`.
 tokens:
   font:
-    text: { family: Noto Serif }
-    display: { family: Noto Sans, weight: bold }
-    code: { family: M+ 1mn, size: 0.9 }
+    text: { family: { print: Noto Serif } }
+    display:
+      family: { print: Noto Sans }
+      weight: { print: bold, screen: 600 }
+    code: { family: { print: M+ 1mn }, size: { print: 0.9 } }
   size:
     # 10–12 pt in print (Practical Typography).
     text: { print: 10.5pt }
-    headings: [26pt, 20pt, 14pt, 12pt, 11pt, 10.5pt]
+    headings: { print: [26pt, 20pt, 14pt, 12pt, 11pt, 10.5pt] }
   # 120–145% in print: open for a serif with a large x-height.
   leading: { print: 1.4 }
-  paragraph: { signal: space, space: 6pt }
-  # The reader's in an e-book (ADR-0023 decision 2), hyphenated.
+  # About 80 characters on screen; print takes its measure from the page.
+  measure: { screen: 42em }
+  paragraph: { signal: { print: space }, space: { print: 6pt } }
+  # An e-book's reading system owns the body text (ADR-0023 decision 2):
+  # no size, line spacing or alignment for `ebook`; hyphenated.
   hyphenate: { ebook: true }
   color:
-    ink: '#1F1F1F'
+    ink: { print: '#1F1F1F' }
     ink-strong: '#191919'
     ink-soft: '#444444'
     muted: '#555555'
@@ -38,8 +45,8 @@ tokens:
     rule: '#DDDDDD'
     rule-soft: '#CCCCCC'
   rule:
-    hairline: 0.5pt
-    heavy: 1pt
+    hairline: { print: 0.5pt, screen: 1px }
+    heavy: { print: 1pt, screen: 1px }
   page:
     # About 75 characters of 10.5pt Noto Serif on A4 or Letter.
     margin: [0.75in, 1.5in, 0.875in, 1.5in]
@@ -50,35 +57,44 @@ styles:
   heading:
     font: display
     color: ink-strong
-    space-before: 16pt
-    space-after: 6pt
-    leading: 1.2
-    keep-with-next: true
+    space-before: { print: 16pt }
+    space-after: { print: 6pt }
+    leading: { print: 1.2 }
+    keep-with-next: { print: true }
   title: { color: ink-strong }
-  subtitle: { color: ink-soft }
-  caption: { font: display, weight: normal, size: 9.5pt, color: muted }
+  subtitle: { color: { print: ink-soft } }
+  caption:
+    font: { print: display }
+    weight: { print: normal }
+    size: { print: 9.5pt }
+    color: { print: muted }
   code-block:
-    size: 9.5pt
-    color: ink
-    background: tint
-    border: none
-    radius: 2pt
-    padding: 9pt
-    leading: 1.35
-  code: { color: ink }
-  sidebar: { background: tint, border: none }
-  sidebar-title: { font: display, color: ink-strong }
+    size: { print: 9.5pt }
+    color: { print: ink }
+    background: { print: tint }
+    border: { print: none, screen: none }
+    radius: { print: 2pt }
+    padding: { print: 9pt }
+    leading: { print: 1.35 }
+  code: { color: { print: ink } }
+  sidebar: { background: { print: tint }, border: { print: none } }
+  sidebar-title: { font: { print: display }, color: { print: ink-strong } }
   admonition:
-    rule: { width: 2pt, color: rule-soft }
-  admonition-label: { font: display, weight: bold, color: ink-soft }
+    rule: { print: { width: 2pt, color: rule-soft } }
+  admonition-label:
+    font: { print: display }
+    weight: { print: bold }
+    color: { print: ink-soft }
   table:
-    frame: { width: heavy, color: ink-strong }
-    frame-sides: none
-    rows: { width: hairline, color: rule }
-    columns: none
-    head-rule: { width: heavy, color: ink-strong }
-    stripes: none
-  table-head: { font: display, background: none }
+    frame: { print: { width: heavy, color: ink-strong }, screen: { width: heavy } }
+    frame-sides: { print: none, screen: none }
+    rows: { print: { width: hairline, color: rule }, screen: { width: hairline } }
+    columns: { print: none, screen: none }
+    head-rule:
+      print: { width: heavy, color: ink-strong }
+      screen: { width: heavy, color: ink-strong }
+    stripes: { print: none }
+  table-head: { font: { print: display }, background: { print: none } }
   .small-caps: { variant: small-caps }
 # What tokens can't say, in the PDF theme's own keys: the files of the
 # sans asciidoctor-pdf bundles.

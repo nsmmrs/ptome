@@ -374,11 +374,15 @@ final class _Parser {
       },
       headingSizes: switch (size?.entries['headings']) {
         null => null,
-        final v => _list(v, 'tokens.size.headings', _length),
+        final v => _byMedium(
+          v,
+          'tokens.size.headings',
+          (raw, what) => _list(raw, what, _length),
+        ),
       },
       small: switch (size?.entries['small']) {
         null => null,
-        final v => _ratio(v, 'tokens.size.small'),
+        final v => _byMedium(v, 'tokens.size.small', _ratio),
       },
       leading: switch (e['leading']) {
         null => null,
@@ -386,7 +390,7 @@ final class _Parser {
       },
       measure: switch (e['measure']) {
         null => null,
-        final v => _length(v, 'tokens.measure'),
+        final v => _byMedium(v, 'tokens.measure', _length),
       },
       paragraph: switch (e['paragraph']) {
         null => null,
@@ -411,7 +415,7 @@ final class _Parser {
             color,
             'tokens.color',
           ).entries.entries)
-            key: _color(value, 'tokens.color.$key'),
+            key: _byMedium(value, 'tokens.color.$key', _color),
         },
       },
       rules: switch (e['rule']) {
@@ -421,7 +425,7 @@ final class _Parser {
             rule,
             'tokens.rule',
           ).entries.entries)
-            key: _length(value, 'tokens.rule.$key'),
+            key: _byMedium(value, 'tokens.rule.$key', _length),
         },
       },
       page: switch (e['page']) {
@@ -434,35 +438,35 @@ final class _Parser {
   Face _face(_RawMap raw, String what) {
     _only(raw, what, const {'family', 'weight', 'style', 'size'});
     final e = raw.entries;
+    ByMedium<T>? get<T extends Object>(
+      String key,
+      T Function(_Raw, String) parse,
+    ) => switch (e[key]) {
+      null => null,
+      final v => _byMedium(v, '$what.$key', parse),
+    };
     return Face(
-      family: e['family'] == null ? null : _text(e['family']!, '$what.family'),
-      weight: e['weight'] == null
-          ? null
-          : _choice(e['weight']!, '$what.weight', FontWeight.values),
-      shape: e['style'] == null
-          ? null
-          : _choice(e['style']!, '$what.style', FontShape.values),
-      size: e['size'] == null ? null : _ratio(e['size']!, '$what.size'),
+      family: get('family', _text),
+      weight: get('weight', _weight),
+      shape: get('style', (v, w) => _choice(v, w, FontShape.values)),
+      size: get('size', _ratio),
     );
   }
 
   Paragraph _paragraph(_RawMap raw) {
     _only(raw, 'tokens.paragraph', const {'signal', 'space', 'indent'});
     final e = raw.entries;
+    ByMedium<T>? get<T extends Object>(
+      String key,
+      T Function(_Raw, String) parse,
+    ) => switch (e[key]) {
+      null => null,
+      final v => _byMedium(v, 'tokens.paragraph.$key', parse),
+    };
     return Paragraph(
-      signal: e['signal'] == null
-          ? null
-          : _choice(
-              e['signal']!,
-              'tokens.paragraph.signal',
-              ParagraphSignal.values,
-            ),
-      space: e['space'] == null
-          ? null
-          : _length(e['space']!, 'tokens.paragraph.space'),
-      indent: e['indent'] == null
-          ? null
-          : _length(e['indent']!, 'tokens.paragraph.indent'),
+      signal: get('signal', (v, w) => _choice(v, w, ParagraphSignal.values)),
+      space: get('space', _length),
+      indent: get('indent', _length),
     );
   }
 
@@ -536,14 +540,17 @@ final class _Parser {
       'stripes',
     });
     final e = raw.entries;
-    T? get<T>(String key, T Function(_Raw, String) parse) => switch (e[key]) {
+    ByMedium<T>? get<T extends Object>(
+      String key,
+      T Function(_Raw, String) parse,
+    ) => switch (e[key]) {
       null => null,
-      final v => parse(v, '$what.$key'),
+      final v => _byMedium(v, '$what.$key', parse),
     };
     return Style(
       font: get('font', _text),
       size: get('size', _size),
-      weight: get('weight', (v, w) => _choice(v, w, FontWeight.values)),
+      weight: get('weight', _weight),
       shape: get('style', (v, w) => _choice(v, w, FontShape.values)),
       variant: get(
         'variant',
@@ -731,6 +738,20 @@ final class _Parser {
     );
   }
 
+  /// A weight: `normal` (400), `bold` (700) or 100 to 900.
+  static FontWeight _weight(_Raw raw, String what) {
+    final scalar = _scalar(raw, what);
+    return switch (scalar.value) {
+      'normal' => 400,
+      'bold' => 700,
+      final int n when n >= 100 && n <= 900 && n % 100 == 0 => n,
+      _ => throw LookException(
+        '$what is normal, bold or a weight from 100 to 900',
+        scalar.span,
+      ),
+    };
+  }
+
   static T _choice<T extends Enum>(
     _Raw raw,
     String what,
@@ -764,7 +785,13 @@ final class _Parser {
     String what,
     T Function(_Raw, String) item,
   ) {
-    if (raw is! _RawMap) return ByMedium(all: item(raw, what));
+    // (A map is by medium when every key names one; a rule is a map of
+    // its own.)
+    if (raw is! _RawMap ||
+        raw.entries.isEmpty ||
+        !raw.entries.keys.every((k) => Medium.named(k) != null)) {
+      return ByMedium(all: item(raw, what));
+    }
     final each = <Medium, T>{};
     for (final MapEntry(:key, :value) in raw.entries.entries) {
       final medium =

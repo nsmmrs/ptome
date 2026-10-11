@@ -10,6 +10,8 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:ptome/src/internal.dart';
+import 'package:ptome/src/look/css.dart';
+import 'package:ptome/src/look/loader.dart';
 import 'package:test/test.dart';
 
 /// Reads the repository `data/` file at [relativePath].
@@ -43,8 +45,8 @@ void main() {
           'stylesheets/asciidoctor-2.0.26.css',
           'stylesheets/asciidoctor-default.css',
           'stylesheets/coderay-asciidoctor.css',
-          'stylesheets/ptome-epub3-house.css',
-          'stylesheets/ptome-house.css',
+          'stylesheets/ptome-device.css',
+          'stylesheets/ptome-epub3-device.css',
         ]),
       );
       expect(keys, hasLength(42));
@@ -100,11 +102,16 @@ void main() {
       expect(stylesheets.dataFor('asciidoctor'), equals(rstrip(raw)));
     });
 
-    test('the default stylesheet is the classic one, then the house rules', () {
-      final house = utf8.decode(readDataFile('stylesheets/ptome-house.css'));
+    test('the default stylesheet: the classic one, the house look, the '
+        'device rules', () {
+      final device = utf8.decode(readDataFile('stylesheets/ptome-device.css'));
+      final house = lookCss(LookLoader().load('ptome'), CssTarget.html);
       expect(
         stylesheets.primaryStylesheetData,
-        equals('${stylesheets.classicStylesheetData}\n${rstrip(house)}'),
+        equals(
+          '${stylesheets.classicStylesheetData}\n${house.trimRight()}\n'
+          '${rstrip(device)}',
+        ),
       );
       expect(stylesheets.dataFor(''), stylesheets.primaryStylesheetData);
       expect(stylesheets.primaryStylesheetData, isNot(endsWith('\n')));

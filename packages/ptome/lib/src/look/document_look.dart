@@ -1,0 +1,24 @@
+/// The look a document names (ADR-0023): `look`, found in `looksdir`
+/// before the built-in looks, else the house look `ptome`.
+library;
+
+import 'package:ptome/src/document.dart';
+import 'package:ptome/src/logging.dart';
+import 'package:ptome/src/look/loader.dart';
+import 'package:ptome/src/look/model.dart';
+
+/// The look [doc] names, or the house look ([house], or no `look`
+/// attribute); a look that can't be read is reported and the house look
+/// used.
+Look documentLook(Document doc, {bool house = false}) {
+  final name = house ? 'ptome' : doc.attr('look') ?? 'ptome';
+  final dir = doc
+      .attr('looksdir')
+      ?.replaceAll('{docdir}', doc.attr('docdir') ?? '');
+  try {
+    return LookLoader(looksDir: dir).load(name);
+  } on LookException catch (error) {
+    LoggerManager.logger.error('$error');
+    return LookLoader().load('ptome');
+  }
+}

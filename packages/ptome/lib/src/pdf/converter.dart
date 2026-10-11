@@ -25,8 +25,7 @@ import 'package:ptome/src/index_catalog.dart' show indexHasCategoryHeadings;
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
-import 'package:ptome/src/look/loader.dart';
-import 'package:ptome/src/look/model.dart' show Look;
+import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
@@ -2281,19 +2280,8 @@ final class PdfConverter extends BuiltInConverter
   /// before the built-in looks), or of the house look; a look that can't
   /// be read is reported and the house look used.
   Theme _lookTheme(Document document, {bool house = false}) {
-    final name = house ? 'ptome' : document.attr('look') ?? 'ptome';
-    final dir = document
-        .attr('looksdir')
-        ?.replaceAll('{docdir}', document.attr('docdir') ?? '');
-    Look look;
-    try {
-      look = LookLoader(looksDir: dir).load(name);
-    } on LookException catch (error) {
-      logger.error('$error');
-      look = LookLoader().load('ptome');
-    }
     return lookTheme(
-      look,
+      documentLook(document, house: house),
       loader: ThemeLoader(logger: logger),
       warn: logger.warn,
     );

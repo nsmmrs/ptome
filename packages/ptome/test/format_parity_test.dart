@@ -224,7 +224,7 @@ void main() {
   });
 
   test("HTML: the house stylesheet by default, Asciidoctor's by name", () {
-    const house = 'ptome house style';
+    const house = 'look ptome (ADR-0023';
     expect(
       File(convertWith('html5', '= Doc\n\nText.\n')).readAsStringSync(),
       contains(house),
@@ -240,15 +240,15 @@ void main() {
     String css(String source) => unzipText(
       File(convertWith('epub3', source)).readAsBytesSync(),
     )['EPUB/styles/epub3.css']!;
-    expect(css('= Doc\n\nText.\n'), contains('ptome house style'));
+    expect(css('= Doc\n\nText.\n'), contains('look ptome (ADR-0023'));
     expect(
       css('= Doc\n:epub3-stylesheet: asciidoctor-epub3\n\nText.\n'),
-      isNot(contains('ptome house style')),
+      isNot(contains('look ptome (ADR-0023')),
     );
   });
 
   test('asciidoctor-compat: the classic stylesheets of the formats named', () {
-    const house = 'ptome house style';
+    const house = 'look ptome (ADR-0023';
     String html(String compat) => File(
       convertWith('html5', '= Doc\n:asciidoctor-compat: $compat\n\nText.\n'),
     ).readAsStringSync();

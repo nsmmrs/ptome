@@ -36,6 +36,9 @@ import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
+import 'package:ptome/src/logging.dart';
+import 'package:ptome/src/look/css.dart';
+import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
@@ -1905,7 +1908,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
             .setText(
               [
                 css,
-                if (name == 'epub3' && !classic) _houseRules,
+                if (name == 'epub3' && !classic) _lookRules(doc),
                 if (!_embedFonts) _withoutIconFonts[name],
               ].nonNulls.join('\n'),
             );
@@ -2048,9 +2051,16 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
 
   static String _asset(String path) => Epub3Assets.text(path) ?? '';
 
-  /// Ptome's house rules for the EPUB (doc/style.md).
-  static String get _houseRules =>
-      EmbeddedData.file('stylesheets/ptome-epub3-house.css');
+  /// The document's look for the EPUB (ADR-0023), then the device rules
+  /// that hold no values.
+  static String _lookRules(Document doc) => [
+    lookCss(
+      documentLook(doc),
+      CssTarget.epub,
+      warn: LoggerManager.logger.warn,
+    ).trimRight(),
+    EmbeddedData.file('stylesheets/ptome-epub3-device.css'),
+  ].join('\n');
 
   /// Adds the cover page [name] (`front-cover`, `back-cover`) for the
   /// `<name>-image` attribute.

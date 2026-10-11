@@ -9,6 +9,10 @@ library;
 
 import 'package:ptome/src/data.g.dart';
 import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/logging.dart';
+import 'package:ptome/src/look/css.dart';
+import 'package:ptome/src/look/loader.dart';
+import 'package:ptome/src/look/model.dart';
 
 /// A utility class for working with the built-in stylesheets.
 ///
@@ -44,11 +48,17 @@ class Stylesheets {
   /// The file name of the primary stylesheet.
   String get primaryStylesheetName => defaultStylesheetName;
 
-  /// The default stylesheet: Asciidoctor's, then Ptome's house rules
-  /// (doc/style.md).
+  /// The default stylesheet: the house look's ([primaryStylesheetFor]).
   String get primaryStylesheetData => _primaryStylesheetData ??=
-      '$classicStylesheetData\n'
-      '${_rstrip(EmbeddedData.file('stylesheets/ptome-house.css'))}';
+      primaryStylesheetFor(LookLoader().load('ptome'));
+
+  /// The default stylesheet for [look] (ADR-0023): Asciidoctor's, then
+  /// the look's CSS, then the device rules that hold no values.
+  String primaryStylesheetFor(Look look) {
+    final css = lookCss(look, CssTarget.html, warn: LoggerManager.logger.warn);
+    return '$classicStylesheetData\n${css.trimRight()}\n'
+        '${_rstrip(EmbeddedData.file('stylesheets/ptome-device.css'))}';
+  }
 
   /// Asciidoctor's default stylesheet, as it is (`stylesheet=asciidoctor`).
   String get classicStylesheetData => _classicStylesheetData ??= _rstrip(
@@ -64,11 +74,12 @@ class Stylesheets {
 
   /// The built-in stylesheet for a `stylesheet` attribute of [key]: the
   /// classic one for [classicStylesheetKey], the stable release's for
-  /// [stableStylesheetKey], else the default.
-  String dataFor(String? key) => switch (key) {
+  /// [stableStylesheetKey], else the default ([look]'s, or the house
+  /// look's).
+  String dataFor(String? key, {Look? look}) => switch (key) {
     classicStylesheetKey => classicStylesheetData,
     stableStylesheetKey => stableStylesheetData,
-    _ => primaryStylesheetData,
+    _ => look == null ? primaryStylesheetData : primaryStylesheetFor(look),
   };
 
   /// The Google Fonts families the built-in stylesheet of [key] is set in
@@ -79,10 +90,17 @@ class Stylesheets {
       'Noto+Serif:400,400italic,700,700italic%7C'
       '${key == stableStylesheetKey ? 'Droid' : 'Noto'}+Sans+Mono:400,700';
 
-  /// Writes the built-in stylesheet for a `stylesheet` attribute of [key] to
-  /// [targetDir].
-  void writePrimaryStylesheet([String targetDir = '.', String? key]) {
-    io.writeString('$targetDir/$primaryStylesheetName', dataFor(key));
+  /// Writes the built-in stylesheet for a `stylesheet` attribute of [key]
+  /// (with [look]) to [targetDir].
+  void writePrimaryStylesheet([
+    String targetDir = '.',
+    String? key,
+    Look? look,
+  ]) {
+    io.writeString(
+      '$targetDir/$primaryStylesheetName',
+      dataFor(key, look: look),
+    );
   }
 }
 

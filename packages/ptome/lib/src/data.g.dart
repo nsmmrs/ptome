@@ -1794,28 +1794,8 @@ abstract final class EmbeddedData {
         '#footer{background:none}\n'
         '#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}\n'
         '@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}\n',
-    'stylesheets/ptome-epub3-house.css':
-        '/*! ptome house style (doc/style.md, ADR-0011): rules after asciidoctor-epub3\'s */\n'
-        'body a:link{color:#2156A5}\n'
-        'h1,h2,h3,h4,h5,h6{color:#191919}\n'
-        '.small-caps{font-variant:small-caps;font-feature-settings:"smcp"}\n'
-        '.unbreakable{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid}\n'
-        'figure.image.text{text-align:center}\n'
-        'figure.image.text pre{display:inline-block;margin:0;padding:0;border:0;background:none;text-align:left;font-size:0.75em;line-height:1.2;white-space:pre}\n'
-        'div.index ul.index-terms{list-style:none;margin-left:0 !important}\n'
-        'div.index ul.index-terms ul.index-terms{margin-left:1.25em !important}\n'
-        'div.index ul.index-terms>li::before{content:none}\n'
-        'nav.toc ol{list-style-type:none}\n',
-    'stylesheets/ptome-house.css':
-        '/*! ptome house style (doc/style.md, ADR-0011): rules after Asciidoctor\'s stylesheet */\n'
-        '@media screen{#header,#content,#footnotes,#footer{max-width:42em}}\n'
-        'h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{color:#191919;font-weight:600}\n'
-        '#header>h1:first-child{color:#191919}\n'
-        'table.grid-all>*>tr>*{border-width:1px 0}\n'
-        'table.frame-all{border-width:1px 0}\n'
-        'table.tableblock>thead>tr>th{border-bottom:1px solid #191919}\n'
-        '.listingblock pre,.literalblock pre{border:0}\n'
-        '.small-caps{font-variant:small-caps;font-feature-settings:"smcp"}\n'
+    'stylesheets/ptome-device.css':
+        '/*! ptome\'s device rules for HTML (ADR-0023): what the look\'s values don\'t say, after Asciidoctor\'s stylesheet and the look\'s */\n'
         '.unbreakable{break-inside:avoid;page-break-inside:avoid}\n'
         '.imageblock.text pre{display:inline-block;margin:0;padding:0;background:none;text-align:left;font-size:.875em;line-height:1.25;white-space:pre}\n'
         '.index .index-letter{break-inside:avoid}\n'
@@ -1824,6 +1804,15 @@ abstract final class EmbeddedData {
         '@media screen and (min-width:48em){.index{columns:2;column-gap:2em}}\n'
         '#cover{text-align:center;margin:2em auto}\n'
         '#cover img{max-width:100%;max-height:85vh}\n',
+    'stylesheets/ptome-epub3-device.css':
+        '/*! ptome\'s device rules for EPUB (ADR-0023): what the look\'s values don\'t say, after asciidoctor-epub3\'s stylesheet and the look\'s */\n'
+        '.unbreakable{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid}\n'
+        'figure.image.text{text-align:center}\n'
+        'figure.image.text pre{display:inline-block;margin:0;padding:0;border:0;background:none;text-align:left;font-size:0.75em;line-height:1.2;white-space:pre}\n'
+        'div.index ul.index-terms{list-style:none;margin-left:0 !important}\n'
+        'div.index ul.index-terms ul.index-terms{margin-left:1.25em !important}\n'
+        'div.index ul.index-terms>li::before{content:none}\n'
+        'nav.toc ol{list-style-type:none}\n',
   };
 
   /// Returns the embedded contents of the file at [relativePath]

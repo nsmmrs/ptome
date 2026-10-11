@@ -27,6 +27,7 @@ import 'package:ptome/src/highlight/syntax_highlighter.dart';
 import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/list.dart';
+import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/rx.dart';
@@ -389,7 +390,7 @@ class Html5Converter extends BuiltInConverter {
         result.add('<link rel="stylesheet" href="$href"$slash>');
       } else {
         result.add(
-          '<style>\n${Stylesheets.instance.dataFor(stylesheetKey)}\n</style>',
+          '<style>\n${Stylesheets.instance.dataFor(stylesheetKey, look: documentLook(node))}\n</style>',
         );
       }
     } else if (node.hasAttr('stylesheet')) {

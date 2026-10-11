@@ -96,7 +96,8 @@ final class _Compiler {
     NoColor() => _string('transparent'),
     ColorLiteral(:final color) => _string(color.hex),
     ColorToken(:final name) => switch (tokens.colors[name]) {
-      final color? => _string(color.hex),
+      // (A token without a print value is another medium's.)
+      final color? => color.of(Medium.print)?.hex.let(_string),
       null => () {
         _unsupported(item, 'names no color token $name');
         return null;
@@ -107,7 +108,7 @@ final class _Compiler {
   Y? _width(WidthValue value, String item) => switch (value) {
     WidthLength(:final length) => _length(length),
     WidthToken(:final name) => switch (tokens.rules[name]) {
-      final length? => _length(length),
+      final length? => length.of(Medium.print)?.let(_length),
       null => () {
         _unsupported(item, 'names no rule token $name');
         return null;
@@ -120,24 +121,25 @@ final class _Compiler {
   }
 
   /// A face's weight and shape as asciidoctor-pdf's font style.
+  /// (The bold face for 600 and up.)
   static String _fontStyle(FontWeight? weight, FontShape? shape) =>
-      switch ((weight ?? FontWeight.normal, shape ?? FontShape.normal)) {
-        (FontWeight.bold, FontShape.italic) => 'bold_italic',
-        (FontWeight.bold, FontShape.normal) => 'bold',
-        (FontWeight.normal, FontShape.italic) => 'italic',
-        (FontWeight.normal, FontShape.normal) => 'normal',
+      switch (((weight ?? 400) >= 600, shape ?? FontShape.normal)) {
+        (true, FontShape.italic) => 'bold_italic',
+        (true, FontShape.normal) => 'bold',
+        (false, FontShape.italic) => 'italic',
+        (false, FontShape.normal) => 'normal',
       };
 
   // Tokens.
 
   void _tokens() {
-    if (tokens.fonts['text'] case final face?) {
+    if (tokens.fonts['text']?.at(Medium.print) case final face?) {
       _set('base_font_family', face.family?.let(_string));
       if (face.weight != null || face.shape != null) {
         _set('base_font_style', _string(_fontStyle(face.weight, face.shape)));
       }
     }
-    if (tokens.fonts['code'] case final face?) {
+    if (tokens.fonts['code']?.at(Medium.print) case final face?) {
       if (face.family case final family?) {
         _set('codespan_font_family', _string(family));
         _set('code_font_family', _string(family));
@@ -149,7 +151,8 @@ final class _Compiler {
     if (tokens.textSize?.of(Medium.print) case final size?) {
       _set('base_font_size', _length(size));
     }
-    for (final (i, size) in (tokens.headingSizes ?? const <Length>[]).indexed) {
+    final headings = tokens.headingSizes?.of(Medium.print) ?? const <Length>[];
+    for (final (i, size) in headings.indexed) {
       if (i < 6) {
         _set('heading_h${i + 1}_font_size', _length(size));
       } else {
@@ -160,20 +163,18 @@ final class _Compiler {
       _set('base_line_height', _number(_num(leading)));
     }
     if (tokens.paragraph case final paragraph?) {
-      switch (paragraph.signal) {
+      final space = paragraph.space?.of(Medium.print);
+      final indent = paragraph.indent?.of(Medium.print);
+      switch (paragraph.signal?.of(Medium.print)) {
         case ParagraphSignal.indent:
           _set('prose_margin_bottom', _number(0));
           _set(
             'prose_text_indent',
-            _length(paragraph.indent ?? const Length(1.5, LengthUnit.em)),
+            _length(indent ?? const Length(1.5, LengthUnit.em)),
           );
         case ParagraphSignal.space || null:
-          if (paragraph.space case final space?) {
-            _set('prose_margin_bottom', _length(space));
-          }
-          if (paragraph.indent case final indent?) {
-            _set('prose_text_indent', _length(indent));
-          }
+          _set('prose_margin_bottom', space?.let(_length));
+          _set('prose_text_indent', indent?.let(_length));
       }
     }
     if (tokens.align?.of(Medium.print) case final align?) {
@@ -191,10 +192,10 @@ final class _Compiler {
       _set('base_hyphens', YScalar(ThemeBool(hyphenate)));
     }
     // The color roles the PDF applies itself: the text and the paper.
-    if (tokens.colors['ink'] case final ink?) {
+    if (tokens.colors['ink']?.of(Medium.print) case final ink?) {
       _set('base_font_color', _string(ink.hex));
     }
-    if (tokens.colors['paper'] case final paper?) {
+    if (tokens.colors['paper']?.of(Medium.print) case final paper?) {
       _set('page_background_color', _string(paper.hex));
     }
     if (tokens.page case final page?) {
@@ -211,7 +212,8 @@ final class _Compiler {
       _set('page_margin_outer', page.outer?.let(_length));
     }
     // (The line length comes from the page's margins in print.)
-    if (tokens.measure != null && tokens.page?.margin == null) {
+    if (tokens.measure?.of(Medium.print) != null &&
+        tokens.page?.margin == null) {
       _unsupported(
         'tokens.measure',
         'has no effect in the PDF yet: its line length comes from '
@@ -227,7 +229,8 @@ final class _Compiler {
 
   // Styles.
 
-  void _style(StyleTarget target, Style style) {
+  void _style(StyleTarget target, Style styled) {
+    final style = styled.at(Medium.print);
     final category = switch (target) {
       ElementTarget(:final element) => _categories[element]!,
       RoleTarget(:final role) => 'role_$role',
@@ -239,7 +242,7 @@ final class _Compiler {
     final face = switch (style.font) {
       null => null,
       final name =>
-        tokens.fonts[name] ??
+        tokens.fonts[name]?.at(Medium.print) ??
             () {
               _unsupported('$item.font', 'names no font token $name');
               return null;
@@ -260,9 +263,8 @@ final class _Compiler {
       key('font_size', switch (size) {
         SizeLength(:final length) => _length(length),
         SizeRatio(:final ratio) => _string('${_trim(ratio)}em'),
-        SizeToken(name: 'small') when tokens.small != null => _string(
-          '${_trim(tokens.small!)}em',
-        ),
+        SizeToken(name: 'small') when tokens.small?.of(Medium.print) != null =>
+          _string('${_trim(tokens.small!.of(Medium.print)!)}em'),
         SizeToken(:final name) => () {
           _unsupported('$item.size', 'names no size token $name');
           return null;
@@ -332,7 +334,7 @@ final class _Compiler {
     ),
   };
 
-  void _table(Style style, String item) {
+  void _table(MediumStyle style, String item) {
     void pair(
       String widthKey,
       String colorKey,

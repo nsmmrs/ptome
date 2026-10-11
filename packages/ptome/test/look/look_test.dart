@@ -5,6 +5,7 @@ library;
 
 import 'dart:io';
 
+import 'package:ptome/src/look/css.dart';
 import 'package:ptome/src/look/loader.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/pdf/look_theme.dart';
@@ -58,14 +59,18 @@ styles:
 ''');
     final look = _load('child');
     expect(look.name, 'child');
-    expect(look.tokens.colors, {'ink': const LookColor('222222')});
+    expect(look.tokens.colors.keys, ['ink']);
+    expect(
+      look.tokens.colors['ink']?.of(Medium.screen),
+      const LookColor('222222'),
+    );
     expect(
       look.tokens.textSize?.of(Medium.print),
       const Length(10, LengthUnit.pt),
     );
     final dek = look.styles[const RoleTarget('dek')]!;
-    expect(dek.shape, FontShape.normal);
-    expect(switch (dek.size) {
+    expect(dek.shape?.all, FontShape.normal);
+    expect(switch (dek.size?.all) {
       SizeRatio(:final ratio) => ratio,
       _ => null,
     }, 1.25);
@@ -144,6 +149,71 @@ templates:
       contains('styles..dek.rows has no effect in the PDF'),
       contains('templates.footnote-reference has no effect in the PDF'),
     ]);
+  });
+
+  group('CSS', () {
+    test("the house look's screen rules are the house stylesheet's", () {
+      final css = lookCss(LookLoader().load('ptome'), CssTarget.html);
+      final screen = css.substring(0, css.indexOf('@media print'));
+      expect(
+        screen,
+        allOf(
+          contains(
+            '@media screen{#header,#content,#footnotes,#footer'
+            '{max-width:42em}}',
+          ),
+          contains(
+            'h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6'
+            '{font-weight:600;color:var(--ptome-color-ink-strong)}',
+          ),
+          contains('--ptome-color-ink-strong:#191919'),
+          contains('.listingblock pre,.literalblock pre{border:0}'),
+          contains('table.frame-all{border-width:var(--ptome-rule-heavy) 0}'),
+        ),
+      );
+      // The print values in print alone.
+      expect(screen, isNot(contains('10.5pt')));
+      expect(css, contains('@media print{'));
+    });
+
+    test('a role and a value by medium, in HTML and an EPUB', () {
+      _look('dek', '''
+tokens:
+  color: { accent: '#AA0000' }
+styles:
+  .dek: { size: 1.25, style: italic, color: accent, weight: { screen: 300 } }
+''');
+      final look = _load('dek');
+      final html = lookCss(look, CssTarget.html);
+      expect(
+        html,
+        contains(
+          '.dek{font-weight:300;font-style:italic;font-size:1.25em;'
+          'color:var(--ptome-color-accent)}',
+        ),
+      );
+      final epub = lookCss(look, CssTarget.epub);
+      expect(
+        epub,
+        contains('.dek{font-style:italic;font-size:1.25em;color:#AA0000}'),
+      );
+    });
+
+    test("an e-book's body text is the reader's unless the look says", () {
+      final reader = lookCss(LookLoader().load('ptome'), CssTarget.epub);
+      expect(reader, contains('{text-align:inherit}'));
+      expect(reader, contains('body{line-height:normal}'));
+      expect(reader, contains('hyphens:auto'));
+      _look('set', '''
+tokens:
+  leading: { ebook: 1.5 }
+  align: { ebook: justify }
+''');
+      final set = lookCss(_load('set'), CssTarget.epub);
+      expect(set, contains('body{line-height:1.5;text-align:justify}'));
+      expect(set, isNot(contains('text-align:inherit')));
+      expect(set, isNot(contains('line-height:normal')));
+    });
   });
 
   test('the built-in looks are embedded as they are in data/looks', () {
