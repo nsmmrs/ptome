@@ -12,6 +12,8 @@ import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/pdf/theme.dart';
 import 'package:test/test.dart';
 
+import '../../tool/style_table.dart' show withValues;
+
 late Directory _dir;
 
 /// A look file [name]-look.yml in the scratch folder.
@@ -126,6 +128,38 @@ tokens:
       );
     });
 
+    // Each kind of mistake, with what the error says.
+    for (final (text, message) in [
+      ('- a list\n', 'a look is a mapping'),
+      ('colours: {}\n', 'unknown part colours'),
+      ('pdf: 3\n', 'pdf is a mapping of theme keys'),
+      ('css: [a]\n', 'css is a string'),
+      ('tokens: 3\n', 'tokens is a mapping'),
+      ('tokens:\n  font: { text: 3 }\n', 'tokens.font.text is a mapping'),
+      (
+        'tokens:\n  size: { headings: 26pt }\n',
+        'tokens.size.headings is a list',
+      ),
+      ('tokens:\n  leading: -1\n', 'tokens.leading is a positive number'),
+      ('tokens:\n  hyphenate: maybe\n', 'tokens.hyphenate is true or false'),
+      ('tokens:\n  align: middle\n', 'tokens.align is one of start'),
+      ('tokens:\n  page: { margin: [1in, 1in, 1in] }\n', '1, 2 or 4 lengths'),
+      (
+        'tokens:\n  leading: { print: 1.4, paper: 1.2 }\n',
+        'unknown medium tokens.leading.paper',
+      ),
+      ('styles:\n  heading: { weight: 650 }\n', 'normal, bold or a weight'),
+      ('styles:\n  heading: { border: { color: ink } }\n', 'has no width'),
+      ('styles:\n  heading: { border: thick }\n', 'is none or { width'),
+      ('styles:\n  heading: { color: 3 }\n', "a color token's name"),
+      ('styles:\n  heading: { size: [1] }\n', 'is a single value'),
+      ('styles:\n  heading: { font: { family: x } }\n', 'styles.heading.font'),
+      ('styles:\n  heading: { tint: x }\n', 'unknown styles.heading.tint'),
+      ('extends: nowhere\n', 'no look named nowhere'),
+    ]) {
+      test(message, () => fails(text, contains(message)));
+    }
+
     test('a look that extends itself', () {
       fails('extends: bad\n', contains('extends itself'));
     });
@@ -214,6 +248,11 @@ tokens:
       expect(set, isNot(contains('text-align:inherit')));
       expect(set, isNot(contains('line-height:normal')));
     });
+  });
+
+  test("doc/style.md's values are the house look's", () {
+    final doc = File('doc/style.md').readAsStringSync();
+    expect(withValues(doc), doc, reason: 'run dart run tool/style_table.dart');
   });
 
   test('the built-in looks are embedded as they are in data/looks', () {

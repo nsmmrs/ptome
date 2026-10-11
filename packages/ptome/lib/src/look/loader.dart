@@ -789,7 +789,7 @@ final class _Parser {
     // its own.)
     if (raw is! _RawMap ||
         raw.entries.isEmpty ||
-        !raw.entries.keys.every((k) => Medium.named(k) != null)) {
+        !raw.entries.keys.any((k) => Medium.named(k) != null)) {
       return ByMedium(all: item(raw, what));
     }
     final each = <Medium, T>{};
