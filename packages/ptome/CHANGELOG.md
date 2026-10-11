@@ -39,6 +39,10 @@ Asciidoctor project.
   10.5/12.6 on 30 pc, semibold condensed headings, code 8.5/10.2
   indented 17 pt, a running foot, notes between rules, a copyright
   verso). A look's `webfonts` are loaded by its HTML pages.
+  Statutes: `us-code` (two columns of 8/9, catchlines in bold, sections
+  in the running head), `eu-journal` (one column of 9.6/10.5, centred
+  italic article headings) and `uk-act` (11/12, bold section headings,
+  italic running heads).
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

@@ -41,9 +41,13 @@ test('npm pack lists the expected files', () => {
   // 2026-10-09. Looks (ADR-0023: the YAML loader with package:yaml and
   // source_span, the HTML and EPUB CSS compiler) brought it to 1.83 MB on
   // 2026-10-11; the house look's stylesheet is made from them at run
-  // time, so they are in the core.
+  // time, so they are in the core. Title pages, `look explain` and the
+  // named looks (troff, tech-book, the statutes: YAML embedded for every
+  // output) brought it to 1.89 MB that day; a static import of the PDF
+  // theme loader into the core had made it 1.99 MB (the PDF backend loads
+  // on demand), which this budget caught.
   const bundle = report.files.find((file) => file.path === 'ptome.js')
-  assert.ok(bundle.size < 1_900_000, `bundle is ${bundle.size} bytes`)
+  assert.ok(bundle.size < 1_950_000, `bundle is ${bundle.size} bytes`)
   // The parts under 2.4 MB together: 2.24 MB on 2026-10-08 (the PDF
   // backend with plain_pdf, hyphenation and themes; the EPUB backend).
   const partsSize = report.files

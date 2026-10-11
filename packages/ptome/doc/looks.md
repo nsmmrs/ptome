@@ -53,6 +53,14 @@ What each output does with a look:
 | `ptome` | The house style (`doc/style.md`), the default. |
 | `troff` | The troff-era manual: the Bell Labs books set with troff and ms (*The C Programming Language*, *The UNIX Programming Environment*, *The AWK Programming Language*), measured from them: Times 11 on 12 on a 4.8 in measure, code in Courier indented half an inch, headings in Times Bold, the running head 32 pt above the first line, a 6.25 × 9.25 in trim. Set in TeX Gyre Termes and Cursor (`ptome doctor --look troff`); without them in the PDF's own Times and Courier. |
 | `tech-book` | The tech book: the O'Reilly animal books, measured from one of 2018: a 7 × 9.1875 in trim, a 30 pc text block, body 10.5 on 12.6, headings in a semibold condensed sans, code 8.5 on 10.2 indented 17 pt, a running foot and no head, notes as an uppercase label between 0.5 pt rules, a title page with a copyright verso. Set in Crimson Pro, Fira Sans Condensed and Ubuntu Mono (`ptome doctor --look tech-book`; on the web from Google Fonts). |
+| `us-code` | The United States Code as the Government Publishing Office prints it: two justified columns about 17½ pc wide, the text 8 on 9, notes (`[.source-credit]`, `[.notes]`) 7 on 8, catchlines in bold, a running head with the page number inside and the sections on the page outside (`§ 551–552`, from a document in units). Set in TeX Gyre Schola. |
+| `eu-journal` | EU legislation as the Official Journal's L series sets it: one column on A4, the text 9.6 on 10.5, articles' headings centred and italic. Set in Crimson Pro. |
+| `uk-act` | Acts of the UK Parliament as printed since 2001: the text 11 on 12, sections headed in bold, italic running heads (the Act and the page). Set in TeX Gyre Pagella. |
+
+The statute looks name the act in their running heads (the document's
+title), never the publication they follow. Two of their layouts wait on
+the engine: the UK Acts' section numbers hung in the margin, and the
+Journal's "Article 1" on a line of its own over its bold title.
 
 ## The file
 

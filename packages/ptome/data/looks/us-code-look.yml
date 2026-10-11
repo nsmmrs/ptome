@@ -1,0 +1,61 @@
+# The United States Code as the Government Publishing Office prints it,
+# measured (TASK-d0359h): two justified columns about 17½ pc wide; the
+# text in Ionic 8 on 9, the notes (source credits, editorial notes) 7 on
+# 8; catchlines (a section's number and title) in New Century Schoolbook
+# Bold; a running head with the page number inside and the sections on
+# the page outside ("§§ 551–552", from a document in units: :units: usc).
+# The trim is Letter's, not measured.
+#
+# The faces' free stand-in is TeX Gyre Schola, a New Century Schoolbook
+# (`ptome doctor --look us-code`), for the catchlines and, near enough,
+# the Ionic of the text.
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Schola, screen: Century Schoolbook } }
+    display: { family: { print: TeX Gyre Schola, screen: Century Schoolbook }, weight: bold }
+  size:
+    text: { print: 8pt, screen: 17px }
+    headings: { print: [14pt, 10pt, 8.5pt, 8pt, 8pt, 8pt] }
+  leading: { print: 1.125, screen: 1.5 }
+  measure: { screen: 36em }
+  paragraph: { signal: indent, indent: 1em }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  # Two columns of 17.5 pc and a 1.5 pc gutter: 36.5 pc of 51 pc.
+  page: { size: Letter, margin: [0.75in, 1.21in, 0.8in, 1.21in] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 8pt }, space-after: { print: 3pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+  .source-credit: { size: { print: 7pt }, leading: { print: 1.14 } }
+  .notes: { size: { print: 7pt }, leading: { print: 1.14 } }
+  table: { frame: { width: hairline, color: ink }, frame-sides: none, rows: none, columns: none, head-rule: { width: hairline, color: ink } }
+  table-head: { font: text, weight: bold, background: none }
+pdf:
+  page:
+    columns: 2
+    column_gap: 18
+  heading:
+    h1: { text_align: center }
+    h2: { text_align: center }
+  # The page number inside, the sections on the page outside.
+  running_content_units: section
+  header:
+    height: 0.6in
+    vertical_align: bottom
+    font_size: 8
+    border_width: 0.5
+    border_color: '000000'
+    recto:
+      left: { content: '{page-number}' }
+      center: { content: '{document-title}' }
+      right: { content: '§ {page-units}' }
+    verso:
+      left: { content: '§ {page-units}' }
+      center: { content: '{document-title}' }
+      right: { content: '{page-number}' }
+  footer:
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
