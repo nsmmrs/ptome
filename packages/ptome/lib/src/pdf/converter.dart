@@ -3032,7 +3032,11 @@ final class PdfConverter extends BuiltInConverter
         head = _out.length - start;
       }
       if (dropText case final text?) {
-        _pendingDrop = (text: text, level: hlevel, lines: dropLines);
+        _pendingDrop = (
+          text: text,
+          category: 'heading_h${hlevel}_drop',
+          lines: dropLines,
+        );
       }
       _sections.add((section, anchor));
       if (indexSection) {
@@ -3632,12 +3636,10 @@ final class PdfConverter extends BuiltInConverter
   /// The drop waiting for [node], when it takes it: a paragraph with none
   /// of the roles `heading_h<n>_drop_skip_roles` names (a psalm's title,
   /// a heading's parallel passages, which go before the drop).
-  ({String text, int level, int lines})? _takeDrop(Block node) {
+  _Drop? _takeDrop(Block node) {
     final drop = _pendingDrop;
     if (drop == null) return null;
-    final skip = switch (_theme.value(
-      'heading_h${drop.level}_drop_skip_roles',
-    )) {
+    final skip = switch (_theme.value('${drop.category}_skip_roles')) {
       ThemeList(:final values) => {for (final v in values) v.rubyString},
       ThemeString(:final value) => value.split(RegExp(r'[\s,]+')).toSet(),
       _ => const <String>{},
@@ -3652,7 +3654,7 @@ final class PdfConverter extends BuiltInConverter
   /// run from the first line's to the last of its lines' baseline,
   /// `heading_h<n>_drop_gap` (0.3em) from the text.
   CustomContent _dropped(
-    ({String text, int level, int lines}) drop,
+    _Drop drop,
     String content,
     _FontState font, {
     required String align,
@@ -3666,14 +3668,17 @@ final class PdfConverter extends BuiltInConverter
         ? cap
         : metrics.paddingTop + face.ascenderAt(font.size);
     final pitch = (capLines ? cap : face.heightAt(font.size)) + metrics.leading;
-    final category = 'heading_h${drop.level}_drop';
+    final category = drop.category;
     final unsized = _themeFont(category, font);
     final dropFace = _fonts.font(unsized.family, unsized.style);
     final size = ((drop.lines - 1) * pitch + cap) / dropFace.capHeightAt(1);
     final dropFont = unsized.copyWith(size: size);
     final text = drop.text.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
     final gap = _length('${category}_gap', font.size) ?? font.size * 0.3;
-    final width = dropFace.widthOf(drop.text, size) + gap;
+    // (Opening punctuation hung left of the text's edge.)
+    final punctuation = _openingPunctuation.stringMatch(drop.text) ?? '';
+    final shift = dropFace.widthOf(punctuation, size);
+    final width = dropFace.widthOf(drop.text, size) - shift + gap;
     final dropBox = _textBox(
       text,
       dropFont,
@@ -3697,9 +3702,99 @@ final class PdfConverter extends BuiltInConverter
         dropIndent: width,
       ),
       dropBox,
-      width,
+      width + shift,
       baseline + (drop.lines - 1) * pitch - dropBaseline,
+      shift: shift,
     );
+  }
+
+  /// The paragraph [markup]'s initial: its first letter (or figure) and
+  /// the opening punctuation before it, and the markup without them; null
+  /// when it doesn't start with one.
+  static (String, String)? _initialOf(String markup) {
+    final initial = StringBuffer();
+    final tags = StringBuffer();
+    var i = 0;
+    while (i < markup.length) {
+      if (markup.startsWith('<', i)) {
+        final end = markup.indexOf('>', i);
+        if (end < 0) return null;
+        tags.write(markup.substring(i, end + 1));
+        i = end + 1;
+        continue;
+      }
+      final String char;
+      final int length;
+      if (markup.startsWith('&', i)) {
+        final end = markup.indexOf(';', i);
+        if (end < 0) return null;
+        final entity = markup.substring(i, end + 1);
+        char = switch (entity) {
+          '&amp;' => '&',
+          '&lt;' => '<',
+          '&gt;' => '>',
+          '&quot;' => '"',
+          _ when entity.startsWith('&#x') => String.fromCharCode(
+            int.parse(entity.substring(3, entity.length - 1), radix: 16),
+          ),
+          _ when entity.startsWith('&#') => String.fromCharCode(
+            int.parse(entity.substring(2, entity.length - 1)),
+          ),
+          _ => '',
+        };
+        length = entity.length;
+        if (char.isEmpty) return null;
+      } else {
+        final rune = markup.runes.elementAt(
+          markup.substring(0, i).runes.length,
+        );
+        char = String.fromCharCode(rune);
+        length = char.length;
+      }
+      if (_openingPunctuation.hasMatch(char)) {
+        initial.write(char);
+        i += length;
+        continue;
+      }
+      if (!RegExp(r'[\p{L}\p{N}]', unicode: true).hasMatch(char)) return null;
+      initial.write(char);
+      return ('$initial', '$tags${markup.substring(i + length)}');
+    }
+    return null;
+  }
+
+  /// [markup] with the text of its first [words] words in spans of the
+  /// role `lead-in` (a run of text each, so that the spans close inside
+  /// the tags they meet).
+  static String _leadIn(String markup, int words) {
+    final out = StringBuffer();
+    var count = 0;
+    var inWord = false;
+    var i = 0;
+    while (i < markup.length && count < words) {
+      if (markup.startsWith('<', i)) {
+        final end = markup.indexOf('>', i);
+        if (end < 0) break;
+        out.write(markup.substring(i, end + 1));
+        i = end + 1;
+        continue;
+      }
+      // A run of text up to the next tag or the end of the words.
+      final run = StringBuffer();
+      while (i < markup.length && !markup.startsWith('<', i)) {
+        final space = markup[i] == ' ';
+        if (space && inWord) {
+          inWord = false;
+          if (++count == words) break;
+        } else if (!space) {
+          inWord = true;
+        }
+        run.write(markup[i]);
+        i++;
+      }
+      if (run.isNotEmpty) out.write('<span class="lead-in">$run</span>');
+    }
+    return '$out${markup.substring(i)}';
   }
 
   /// Adds the paragraph [node], aligned to [textAlign] unless a role
@@ -3783,6 +3878,24 @@ final class PdfConverter extends BuiltInConverter
     if (font.transform case final transform? when transform != 'none') {
       content = transformText(content, transform);
     }
+    // The modern engine's `role_<role>_drop_lines`: the paragraph's own
+    // first letter as an initial beside its first lines (and its first
+    // `role_<role>_drop_lead_in` words in the role `lead-in`).
+    _Drop? initial;
+    if (_pendingDrop == null &&
+        firstLine == null &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      for (final role in roles) {
+        final lines = (_n('role_${role}_drop_lines') ?? 0).toInt();
+        if (lines < 2) continue;
+        if (_initialOf(content) case (final letter, final rest)) {
+          final words = (_n('role_${role}_drop_lead_in') ?? 0).toInt();
+          content = words > 0 ? _leadIn(rest, words) : rest;
+          initial = (text: letter, category: 'role_${role}_drop', lines: lines);
+        }
+        break;
+      }
+    }
     content = _hyphenated(content, align);
     if (node.hasTitle) _caption(node, labeled: false);
     // The modern engine keeps a paragraph's lines together at page
@@ -3825,7 +3938,7 @@ final class PdfConverter extends BuiltInConverter
       return;
     }
     CustomContent text = box;
-    if (_takeDrop(node) case final drop? when firstLine == null) {
+    if (initial ?? _takeDrop(node) case final drop? when firstLine == null) {
       text = _dropped(drop, content, font, align: align);
     }
     if (firstLine != null) {
@@ -4981,8 +5094,9 @@ final class PdfConverter extends BuiltInConverter
   bool _inColumns = false;
 
   /// A drop waiting for the paragraph it starts (`heading_h<n>_drop_lines`):
-  /// its text, the heading's level and the lines it spans.
-  ({String text, int level, int lines})? _pendingDrop;
+  /// its text, its theme category (`heading_h<n>_drop`) and the lines it
+  /// spans.
+  _Drop? _pendingDrop;
 
   /// The columns each chapter of a book is set in (`page_columns`, modern
   /// engine), its heading across them and the columns balanced where it
@@ -11032,15 +11146,26 @@ final class _Marked implements CustomContent {
   (double, double) intrinsicWidths() => content.intrinsicWidths();
 }
 
+/// A drop: its text, its theme category (`heading_h2_drop`,
+/// `role_dropcap_drop`) and the lines it spans.
+typedef _Drop = ({String text, String category, int lines});
+
+/// Opening punctuation, which an initial takes with its letter.
+final RegExp _openingPunctuation = RegExp('^[“‘"\'«‹(\\[¿¡„‚]+');
+
 /// Text with a drop beside its first lines: [drop] drawn [width] wide at
 /// the text's left, [dy] points down from its top.
 final class _Dropped implements CustomContent {
-  const new(this.text, this.drop, this.width, this.dy);
+  const new(this.text, this.drop, this.width, this.dy, {this.shift = 0});
 
   final CustomContent text;
   final CustomContent drop;
   final double width;
   final double dy;
+
+  /// How far left of the text's edge the drop starts (its opening
+  /// punctuation's width).
+  final double shift;
 
   @override
   CustomPlacement? place(
@@ -11051,12 +11176,17 @@ final class _Dropped implements CustomContent {
     final placed = text.place(width, available, atTop: atTop);
     if (placed == null) return null;
     final mark = drop.place(this.width, double.infinity, atTop: true);
+    // (A paragraph shorter than its drop as deep as the drop, so that
+    // what follows clears it.)
+    final depth = mark == null ? 0.0 : dy + mark.height;
     return CustomPlacement(
-      height: placed.height,
+      height: placed.rest == null && depth > placed.height
+          ? depth
+          : placed.height,
       rest: placed.rest,
       anchors: placed.anchors,
       paint: (page, x, top) {
-        mark?.paint(page, x, top - dy);
+        mark?.paint(page, x - shift, top - dy);
         placed.paint(page, x, top);
       },
     );

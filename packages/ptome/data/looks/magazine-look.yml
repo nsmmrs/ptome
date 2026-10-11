@@ -59,8 +59,9 @@ webfonts:
   - Bodoni Moda:400,400italic,700,700italic
   - Libre Caslon Text:400,400italic,700
   - Libre Franklin:400,600,700
-# [.columns] sections in print.
+# [.columns] sections and the initial in print.
 pdf:
+  role: { dropcap: { drop_lines: 3 } }
   columns_count: 3
 css: |
   :root{--mag-grid-units:12;--mag-gutter:1.5rem;--mag-body-span:8;--mag-head-align:start;--mag-display-style:italic;--mag-kicker-case:uppercase;--mag-kicker-tracking:.14em;--mag-dropcap-lines:3;--mag-frame-width:0px;--mag-frame-gap:0px;--mag-end-mark:"\25A0";--mag-section-columns:3;--mag-column-min:14rem;--mag-text-align:justify}

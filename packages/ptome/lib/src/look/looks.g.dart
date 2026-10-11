@@ -27,6 +27,7 @@ webfonts:
   - Gentium Book Plus:400,400italic,700
 # [.columns] sections in print.
 pdf:
+  role: { dropcap: { drop_lines: 0 } }
   columns_count: 6
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-section-columns:6;--mag-column-min:9rem;--mag-body-span:10;--mag-end-mark:""}
@@ -53,6 +54,7 @@ webfonts:
   - Source Serif 4:400,400italic,700
 # [.columns] sections in print.
 pdf:
+  role: { dropcap: { drop_lines: 2 } }
   columns_count: 5
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
@@ -138,6 +140,9 @@ styles:
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700
+# The initial in print.
+pdf:
+  role: { dropcap: { drop_lines: 5 } }
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-tracking:.3em;--mag-dropcap-lines:5;--mag-text-align:start;--mag-gutter:2.5rem;--mag-body-span:6}
   #content,#footnotes,#footer{grid-column:4/span var(--mag-body-span)}
@@ -166,6 +171,7 @@ webfonts:
   - Inter:400,400italic,700
 # [.columns] sections in print.
 pdf:
+  role: { dropcap: { drop_lines: 0 } }
   columns_count: 2
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
@@ -285,8 +291,9 @@ webfonts:
   - Bodoni Moda:400,400italic,700,700italic
   - Libre Caslon Text:400,400italic,700
   - Libre Franklin:400,600,700
-# [.columns] sections in print.
+# [.columns] sections and the initial in print.
 pdf:
+  role: { dropcap: { drop_lines: 3 } }
   columns_count: 3
 css: |
   :root{--mag-grid-units:12;--mag-gutter:1.5rem;--mag-body-span:8;--mag-head-align:start;--mag-display-style:italic;--mag-kicker-case:uppercase;--mag-kicker-tracking:.14em;--mag-dropcap-lines:3;--mag-frame-width:0px;--mag-frame-gap:0px;--mag-end-mark:"\25A0";--mag-section-columns:3;--mag-column-min:14rem;--mag-text-align:justify}

@@ -15,6 +15,9 @@ styles:
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700
+# The initial in print.
+pdf:
+  role: { dropcap: { drop_lines: 5 } }
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-tracking:.3em;--mag-dropcap-lines:5;--mag-text-align:start;--mag-gutter:2.5rem;--mag-body-span:6}
   #content,#footnotes,#footer{grid-column:4/span var(--mag-body-span)}

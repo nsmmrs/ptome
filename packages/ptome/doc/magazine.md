@@ -129,7 +129,8 @@ css: |
 ```
 
 The PDF edition of an issue is partly the engine's work still: its
-`[.columns]` sections are set in balanced columns already (`columns_count`
-in each era's `pdf:`), while runarounds, drop caps from the paragraph's
-own letter and per-piece page templates are to come (TASK-3d66jt). In
+`[.columns]` sections are set in balanced columns and `[.dropcap]`
+paragraphs with their own initial already (`columns_count`, `role:
+dropcap: drop_lines` in each era's `pdf:`), while runarounds and
+per-piece page templates are to come (TASK-3d66jt). In
 print, the magazine looks keep the base theme's faces.

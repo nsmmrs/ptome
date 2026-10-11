@@ -2373,6 +2373,54 @@ templates:
       expect(widestGap(_pdf(source, compat: true)), lessThan(10));
     });
 
+    test("a paragraph's initial: its own first letter, lines deep", () {
+      const theme =
+          'role:\n  dropcap:\n    drop_lines: 3\n    drop_lead_in: 2\n'
+          '  lead-in:\n    text_transform: uppercase\n';
+      final pdf = _pdf(
+        '= Doc\n\n[.dropcap]\nThe snow came in the night, the first big '
+        'storm of the season, and by morning the ridge above the creek held '
+        'more than two feet of new powder, and sixteen skiers gathered at '
+        'the top of the lift to wait for the others.\n\n'
+        '[.dropcap]\n"`It was long,`" she said.\n\nAfter.\n',
+        theme: theme,
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      ({double x, double top, double bottom}) box(String word) {
+        final m = RegExp(
+          r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="[\d.]+" '
+          'yMax="([\\d.]+)">${RegExp.escape(word)}<',
+        ).firstMatch(bbox)!;
+        return (
+          x: double.parse(m[1]!),
+          top: double.parse(m[2]!),
+          bottom: double.parse(m[3]!),
+        );
+      }
+
+      // The letter beside three lines, the text after it; its first two
+      // words (what's left of the first) in the lead-in's role.
+      final initial = box('T');
+      final he = box('HE');
+      expect(he.x, greaterThan(initial.x + 10));
+      expect(initial.bottom - initial.top, greaterThan(25));
+      expect(bbox, contains('>SNOW<'));
+      expect(bbox, contains('>came<'));
+      // Opening punctuation hung left of the text's edge.
+      expect(box('“I').x, lessThan(box('After.').x));
+      // A paragraph shorter than its initial: what follows clears it.
+      expect(box('After.').top, greaterThan(box('“I').bottom));
+      // asciidoctor-pdf's: no initial.
+      final plain =
+          Process.runSync('pdftotext', [
+                _pdf('[.dropcap]\nThe snow.\n', compat: true, theme: theme),
+                '-',
+              ]).stdout
+              as String;
+      expect(plain, contains('The snow.'));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

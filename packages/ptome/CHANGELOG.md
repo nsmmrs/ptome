@@ -49,7 +49,9 @@ Asciidoctor project.
   Journal's headings. A face's family may be a font stack.
 - PDF: a section or open block with the role `columns` sets its content
   in balanced columns from where it starts (`columns_count`,
-  `column-count`; modern engine).
+  `column-count`; modern engine). A paragraph's role may set its own
+  first letter as an initial lines deep (`role_<role>_drop_lines`),
+  opening punctuation hung, lead-in words in the role `lead-in`.
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and

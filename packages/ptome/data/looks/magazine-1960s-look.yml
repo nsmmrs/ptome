@@ -20,6 +20,7 @@ webfonts:
   - Inter:400,400italic,700
 # [.columns] sections in print.
 pdf:
+  role: { dropcap: { drop_lines: 0 } }
   columns_count: 2
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
