@@ -3016,6 +3016,7 @@ final class PdfConverter extends BuiltInConverter
 
   /// The theme keys of a section role's page template.
   static const List<String> _pageRoleKeys = [
+    'page_columns',
     'page_margin',
     'page_background_color',
     'page_background_image',
@@ -4750,14 +4751,24 @@ final class PdfConverter extends BuiltInConverter
 
   /// The number of columns [node] sets its content in, the modern
   /// engine's `[.columns]` (a section's or an open block's): its
-  /// `column-count` attribute, else `columns_count` (2); null for none
-  /// (or inside columns already).
+  /// `column-count` attribute, else `columns_count` (2); a section role's
+  /// `section_role_<role>_page_columns`; null for none (or inside columns
+  /// already).
   int? _columnSetOf(AbstractBlock node) {
-    if (_inColumns ||
-        !node.includesRole('columns') ||
-        asciidoctorCompat(_document, CompatFormat.pdf)) {
+    if (_inColumns || asciidoctorCompat(_document, CompatFormat.pdf)) {
       return null;
     }
+    // (A section role's page template's columns.)
+    if (node is Section) {
+      for (final role in node.roles) {
+        final name = role.replaceAll('-', '_');
+        if (_n('section_role_${name}_page_columns') case final count?
+            when count >= 2) {
+          return count.toInt();
+        }
+      }
+    }
+    if (!node.includesRole('columns')) return null;
     final count =
         int.tryParse(node.attr('column-count') ?? '') ??
         (_n('columns_count') ?? 2).toInt();

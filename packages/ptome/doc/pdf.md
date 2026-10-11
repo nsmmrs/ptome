@@ -449,8 +449,9 @@ out by the role's page template (a magazine's feature on tinted pages
 with wider margins), and what follows it starts a page of the layout's
 again (modern engine): `section_role_<role>_page_margin` (as
 `page_margin`), `_page_background_color`, `_page_background_image` (as
-`page_background_image`) and `_page_running_content: none` (no header
-or footer on its pages). Its pages keep the layout's size.
+`page_background_image`), `_page_running_content: none` (no header
+or footer on its pages) and `_page_columns` (its content in that many
+balanced columns under its heading). Its pages keep the layout's size.
 
 A part on a page of its own is asciidoctor-pdf's
 `heading_part_break_after: always`; a title lower on its page,

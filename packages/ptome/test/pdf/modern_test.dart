@@ -2508,6 +2508,20 @@ templates:
         isNot(contains(RegExp(r'^\s*2\s*$', multiLine: true))),
       );
       expect(_content(pdf), contains('0.95294 0.92157 0.86667 rg'));
+      // Its columns: two, the text starting at both.
+      final columned = _pdf(
+        '= Issue\n\n[.feature]\n== Feature\n\n$words $words\n',
+        theme: '$theme      page_columns: 2\n',
+      );
+      final starts = RegExp(r'<line xMin="([\d.]+)"')
+          .allMatches(
+            Process.runSync('pdftotext', ['-bbox-layout', columned, '-']).stdout
+                as String,
+          )
+          .map((m) => double.parse(m[1]!).round())
+          .toSet();
+      expect(starts, containsAll([144]));
+      expect(starts.where((x) => x > 250), isNotEmpty, reason: '$starts');
       // Last in the document: no page after it.
       final last = _pdf(
         '= Issue\n\n== News\n\n$words\n\n[.feature]\n== Feature\n\n$words\n',
