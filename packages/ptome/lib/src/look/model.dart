@@ -776,14 +776,115 @@ final class MediumStyle {
 /// Level 3: generated text and structure (ADR-0010).
 @immutable
 final class Templates {
-  /// [named] templates and the [nodeTemplates] folder.
-  const new({this.named = const {}, this.nodeTemplates});
+  /// [named] templates, the [nodeTemplates] folder and the [titlePage].
+  const new({this.named = const {}, this.nodeTemplates, this.titlePage});
 
   /// Mustache templates by name.
   final Map<String, String> named;
 
   /// The folder of `-T` node templates.
   final String? nodeTemplates;
+
+  /// The title page's slots; null for each output's own.
+  final TitlePage? titlePage;
+}
+
+/// A title page as DocBook XSL's `titlepage.templates.xml` writes one:
+/// the parts of the document on the [recto], in order, and on the
+/// [verso] (the back of the title page: a book's copyright page).
+@immutable
+final class TitlePage {
+  /// A title page of [recto] and [verso] slots.
+  const new({this.recto = const [], this.verso = const []});
+
+  /// The front's slots, in order.
+  final List<Slot> recto;
+
+  /// The back's slots, in order (none: no verso).
+  final List<Slot> verso;
+}
+
+/// A part of the document's header a title page shows.
+enum TitlePart {
+  /// The title (before the `title-separator`, when the look shows the
+  /// subtitle).
+  title,
+
+  /// The subtitle (after the `title-separator`).
+  subtitle,
+
+  /// The authors.
+  authors,
+
+  /// The revision: its number, date and remark.
+  revision,
+
+  /// The logo (`title-logo-image`).
+  logo,
+}
+
+/// What a slot shows.
+sealed class SlotContent {
+  const new();
+}
+
+/// A [part] of the document's header.
+final class PartContent extends SlotContent {
+  /// A slot of [part].
+  const new(this.part);
+
+  /// The part.
+  final TitlePart part;
+
+  @override
+  String toString() => part.name;
+}
+
+/// The value of the document attribute [name] (`copyright`,
+/// `publisher`), where the document sets it.
+final class AttributeContent extends SlotContent {
+  /// A slot of the attribute [name].
+  const new(this.name);
+
+  /// The attribute.
+  final String name;
+
+  @override
+  String toString() => 'attribute $name';
+}
+
+/// One slot of a title page: what it shows, its role (a style the look's
+/// `styles` give it), the space around it, text before it, and the
+/// separator between its items (the authors').
+@immutable
+final class Slot {
+  /// A slot of [content].
+  const new(
+    this.content, {
+    this.role,
+    this.spaceBefore,
+    this.spaceAfter,
+    this.before,
+    this.separator,
+  });
+
+  /// What it shows.
+  final SlotContent content;
+
+  /// The role it is styled as (`.dek`'s `dek`).
+  final String? role;
+
+  /// The space above it.
+  final ByMedium<Length>? spaceBefore;
+
+  /// The space below it.
+  final ByMedium<Length>? spaceAfter;
+
+  /// Text before it (`by `).
+  final String? before;
+
+  /// The text between its items (authors).
+  final String? separator;
 }
 
 /// A look: its levels, and what it says in an output's own terms where

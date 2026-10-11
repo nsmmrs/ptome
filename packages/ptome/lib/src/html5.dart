@@ -28,6 +28,7 @@ import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
+import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/rx.dart';
@@ -35,6 +36,7 @@ import 'package:ptome/src/section.dart';
 import 'package:ptome/src/stylesheets.dart';
 import 'package:ptome/src/table.dart';
 import 'package:ptome/src/text_case.dart';
+import 'package:ptome/src/title_page.dart';
 import 'package:ptome/src/unbreakable.dart';
 import 'package:ptome/src/units/html.dart';
 
@@ -498,7 +500,17 @@ class Html5Converter extends BuiltInConverter {
           result.add(_generateMannameSection(node));
         }
       } else {
-        if (node.hasHeader) {
+        final titlePage = _titlePage(node);
+        if (node.hasHeader && titlePage != null && titlePage.recto.isNotEmpty) {
+          result.addAll(
+            titleSlotsHtml(
+              node,
+              titlePage.recto,
+              br: br,
+              voidSlash: _voidElementSlash,
+            ),
+          );
+        } else if (node.hasHeader) {
           if (!node.notitle) {
             result.add('<h1>${_s(node.header!.title)}</h1>');
           }
@@ -536,6 +548,19 @@ class Html5Converter extends BuiltInConverter {
               ..addAll(details)
               ..add('</div>');
           }
+        }
+        if (node.hasHeader && titlePage != null && titlePage.verso.isNotEmpty) {
+          result
+            ..add('<div class="verso">')
+            ..addAll(
+              titleSlotsHtml(
+                node,
+                titlePage.verso,
+                br: br,
+                voidSlash: _voidElementSlash,
+              ),
+            )
+            ..add('</div>');
         }
 
         if (sectioned &&
@@ -2377,6 +2402,13 @@ class Html5Converter extends BuiltInConverter {
     }
     return '$open${_s(node.text)}$close';
   }
+
+  /// The look's title page (ADR-0023), unless `asciidoctor-compat` names
+  /// HTML: null for the header as Asciidoctor writes it.
+  TitlePage? _titlePage(Document node) =>
+      asciidoctorCompat(node, CompatFormat.html)
+      ? null
+      : documentLook(node).templates.titlePage;
 
   /// The cover of [node] (its `front-cover-image`: a path or an
   /// `image:cover.png[]` macro), or null (also with `asciidoctor-compat`:

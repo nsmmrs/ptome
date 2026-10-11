@@ -11,7 +11,14 @@ import 'package:ptome/src/look/model.dart';
 /// attribute); a look that can't be read is reported and the house look
 /// used.
 Look documentLook(Document doc, {bool house = false}) {
-  final name = house ? 'ptome' : doc.attr('look') ?? 'ptome';
+  if (house) return _load(doc, 'ptome');
+  // (Read once a document: its stylesheet, header and theme ask.)
+  return _looks[doc] ??= _load(doc, doc.attr('look') ?? 'ptome');
+}
+
+final Expando<Look> _looks = Expando('documentLook');
+
+Look _load(Document doc, String name) {
   final dir = doc
       .attr('looksdir')
       ?.replaceAll('{docdir}', doc.attr('docdir') ?? '');

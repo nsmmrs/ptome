@@ -10,6 +10,7 @@ import 'package:ptome/src/look/loader.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/pdf/theme.dart';
+import 'package:ptome/src/pdf/yaml11.dart';
 import 'package:test/test.dart';
 
 import '../../tool/style_table.dart' show withValues;
@@ -246,6 +247,130 @@ tokens:
       expect(set, contains('body{line-height:1.5;text-align:justify}'));
       expect(set, isNot(contains('text-align:inherit')));
       expect(set, isNot(contains('line-height:normal')));
+    });
+  });
+
+  group('title pages', () {
+    const look = '''
+templates:
+  title-page:
+    recto:
+      - { slot: authors, space-before: { print: 1in, screen: 2em }, separator: ' & ' }
+      - title
+      - subtitle
+      - { attribute: publisher, style: .publisher, space-after: 6pt }
+    verso:
+      - { attribute: copyright }
+      - { slot: revision, before: 'Edition: ' }
+''';
+
+    test('slots: parts by name, or what they show and how', () {
+      final page = _load(_look('tp', look)).templates.titlePage!;
+      expect(
+        [for (final slot in page.recto) '${slot.content}'],
+        ['authors', 'title', 'subtitle', 'attribute publisher'],
+      );
+      final authors = page.recto.first;
+      expect(authors.separator, ' & ');
+      expect('${authors.spaceBefore?.of(Medium.print)}', '1in');
+      expect('${authors.spaceBefore?.of(Medium.screen)}', '2em');
+      expect(page.recto.last.role, 'publisher');
+      expect(page.verso.last.before, 'Edition: ');
+      // A look that extends it may give a verso alone.
+      _look('child', 'extends: tp\ntemplates:\n  title-page:\n    verso: ~\n');
+      final child = _load('child').templates.titlePage!;
+      expect(child.recto, hasLength(4));
+      expect(child.verso, isEmpty);
+      expect(_load('child').templates.named, isEmpty);
+    });
+
+    test("the PDF's title_page_recto and title_page_verso", () {
+      final entries = lookThemeEntries(_load(_look('tp', look)));
+      late String Function(MapEntry<String, Y>) entry;
+      String show(Y value) => switch (value) {
+        YScalar(:final value) => value.rubyString,
+        YList(:final items) => '[${items.map(show).join(', ')}]',
+        YMap(:final entries) => '{${entries.entries.map(entry).join(', ')}}',
+      };
+      entry = (e) => '${e.key}: ${show(e.value)}';
+      expect(
+        show(entries['title_page_recto']!),
+        '[{content: authors, margin_top: 1in, separator:  &amp; }, title, '
+        'subtitle, {attribute: publisher, role: publisher, margin_bottom: 6}]',
+      );
+      expect(
+        show(entries['title_page_verso']!),
+        '[{attribute: copyright}, {content: revision, before: Edition: }]',
+      );
+    });
+
+    test('CSS: the space around slots, by medium; a verso on its page', () {
+      final page = _load(_look('tp', look));
+      final html = lookCss(page, CssTarget.html);
+      expect(html, contains('#header .title-page-authors{margin-top:2em}'));
+      expect(
+        html,
+        contains(
+          '@media print{'
+          '#header .title-page-authors{margin-top:1in}',
+        ),
+      );
+      expect(
+        html,
+        contains('#header .title-page-publisher{margin-bottom:6pt}'),
+      );
+      expect(html, contains('#header>.verso{break-before:page'));
+      final epub = lookCss(page, CssTarget.epub);
+      expect(
+        epub,
+        contains('.titlepage .title-page-publisher{margin-bottom:6pt}'),
+      );
+      expect(epub, contains('.titlepage.verso{break-before:page'));
+      expect(epub, isNot(contains('title-page-authors{')));
+    });
+
+    group('errors', () {
+      void fails(String slots, Matcher message) {
+        _look('bad', 'templates:\n  title-page:\n    recto:\n$slots');
+        expect(
+          () => _load('bad'),
+          throwsA(isA<LookException>().having((e) => '$e', 'message', message)),
+        );
+      }
+
+      test('an unknown part', () {
+        fails(
+          '      - colophon\n',
+          allOf(
+            contains('bad-look.yml:4:9'),
+            contains('unknown templates.title-page.recto[0] colophon'),
+          ),
+        );
+      });
+      test('a part and an attribute both', () {
+        fails(
+          '      - { slot: title, attribute: x }\n',
+          contains(
+            'shows a part (slot: title, subtitle, authors, revision, '
+            'logo) or an attribute',
+          ),
+        );
+      });
+      test('a style without its dot', () {
+        fails(
+          '      - { slot: title, style: big }\n',
+          contains('recto[0].style is a role, written with its dot'),
+        );
+      });
+      test('an unknown property', () {
+        fails(
+          '      - { slot: title, color: red }\n',
+          contains('unknown templates.title-page.recto[0].color'),
+        );
+      });
+      test('not a list', () {
+        fails('      title\n', contains('recto is a list of slots'));
+      });
     });
   });
 

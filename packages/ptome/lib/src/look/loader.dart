@@ -595,15 +595,116 @@ final class _Parser {
   Templates _templates(_RawMap raw) {
     final named = <String, String>{};
     String? nodeTemplates;
+    TitlePage? titlePage;
     for (final MapEntry(:key, :value) in raw.entries.entries) {
-      if (key == 'node-templates') {
-        nodeTemplates = _text(value, 'templates.node-templates');
-      } else {
-        named[key] = _text(value, 'templates.$key');
+      switch (key) {
+        case 'node-templates':
+          nodeTemplates = _text(value, 'templates.node-templates');
+        case 'title-page':
+          titlePage = _titlePage(_map(value, 'templates.title-page'));
+        default:
+          named[key] = _text(value, 'templates.$key');
       }
     }
-    return Templates(named: named, nodeTemplates: nodeTemplates);
+    return Templates(
+      named: named,
+      nodeTemplates: nodeTemplates,
+      titlePage: titlePage,
+    );
   }
+
+  /// A title page: its `recto` and `verso` slot lists.
+  static TitlePage _titlePage(_RawMap raw) {
+    const what = 'templates.title-page';
+    _only(raw, what, {'recto', 'verso'});
+    List<Slot> side(String name) => switch (raw.entries[name]) {
+      null => const [],
+      _RawLeaf(node: YamlList(:final nodes)) => [
+        for (final (i, node) in nodes.indexed) _slot(node, '$what.$name[$i]'),
+      ],
+      final other => throw LookException(
+        '$what.$name is a list of slots',
+        other.span,
+      ),
+    };
+    return TitlePage(recto: side('recto'), verso: side('verso'));
+  }
+
+  /// A slot: a part's name, or a mapping of what it shows (`slot:` a
+  /// part, or `attribute:` a document attribute) and how.
+  static Slot _slot(YamlNode node, String what) {
+    switch (_raw(node)) {
+      case _RawLeaf(node: YamlScalar(value: final String name)):
+        return Slot(PartContent(_part(name, node.span, what)));
+      case final _RawMap map:
+        _only(map, what, {
+          'slot',
+          'attribute',
+          'style',
+          'space-before',
+          'space-after',
+          'before',
+          'separator',
+        });
+        final content = switch ((
+          map.entries['slot'],
+          map.entries['attribute'],
+        )) {
+          (final slot?, null) => PartContent(
+            _part(_text(slot, '$what.slot'), slot.span, '$what.slot'),
+          ),
+          (null, final attribute?) => AttributeContent(
+            _text(attribute, '$what.attribute'),
+          ),
+          _ => throw LookException(
+            '$what shows a part (slot: ${_parts.join(', ')}) or an '
+            'attribute (attribute: copyright), one of them',
+            map.span,
+          ),
+        };
+        final style = switch (map.entries['style']) {
+          null => null,
+          final raw => switch (_text(raw, '$what.style')) {
+            final role when role.startsWith('.') && role.length > 1 =>
+              role.substring(1),
+            _ => throw LookException(
+              '$what.style is a role, written with its dot (.publisher)',
+              raw.span,
+            ),
+          },
+        };
+        ByMedium<Length>? length(String key) => switch (map.entries[key]) {
+          null => null,
+          final raw => _byMedium(raw, '$what.$key', _length),
+        };
+        String? text(String key) => switch (map.entries[key]) {
+          null => null,
+          final raw => _text(raw, '$what.$key'),
+        };
+        return Slot(
+          content,
+          role: style,
+          spaceBefore: length('space-before'),
+          spaceAfter: length('space-after'),
+          before: text('before'),
+          separator: text('separator'),
+        );
+      case final other:
+        throw LookException(
+          '$what is a part (${_parts.join(', ')}) or a mapping',
+          other.span,
+        );
+    }
+  }
+
+  static Iterable<String> get _parts => TitlePart.values.map((p) => p.name);
+
+  static TitlePart _part(String name, SourceSpan? span, String what) =>
+      TitlePart.values.asNameMap()[name] ??
+      (throw LookException(
+        'unknown $what $name (known: ${_parts.join(', ')})',
+        span,
+      ));
 
   // Values.
 

@@ -229,6 +229,14 @@ Map<String, Set<Medium>> _items(Look look) {
   for (final name in look.templates.named.keys) {
     items['templates.$name'] = {...Medium.values};
   }
+  if (look.templates.titlePage case final page?) {
+    if (page.recto.isNotEmpty) {
+      items['templates.title-page.recto'] = {...Medium.values};
+    }
+    if (page.verso.isNotEmpty) {
+      items['templates.title-page.verso'] = {...Medium.values};
+    }
+  }
   if (look.pdf.isNotEmpty) items['pdf'] = {Medium.print};
   if (look.css.isNotEmpty) items['css'] = {Medium.screen, Medium.print};
   if (look.epubCss.isNotEmpty) items['epub-css'] = {Medium.ebook};

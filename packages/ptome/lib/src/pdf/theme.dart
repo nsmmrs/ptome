@@ -679,6 +679,24 @@ final class ThemeLoader {
                 : _evaluate(v, data),
         });
       }
+    } else if (key == 'title_page_recto' || key == 'title_page_verso') {
+      // A title page's slots (ADR-0023): parts by name, or mappings whose
+      // margins are evaluated as lengths.
+      data[key] = ThemeList([
+        if (value case YList(:final items))
+          for (final item in items)
+            switch (item) {
+              YMap(:final entries) => ThemeMap({
+                for (final MapEntry(key: k, value: v) in entries.entries)
+                  k.replaceAll('-', '_'): _evaluate(
+                    v,
+                    data,
+                    math: k.startsWith('margin'),
+                  ),
+              }),
+              _ => _evaluate(item, data, math: false),
+            },
+      ]);
     } else if (value is YMap) {
       if (_deprecatedCategories[key] case final rekey?) {
         _logger.warn(

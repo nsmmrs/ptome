@@ -86,6 +86,19 @@ final class _Compiler {
     for (final name in look.templates.named.keys) {
       _unsupported('templates.$name');
     }
+    if (look.templates.titlePage case final page?) {
+      for (final (side, slots) in [
+        ('recto', page.recto),
+        ('verso', page.verso),
+      ]) {
+        if (slots.isEmpty) continue;
+        _item = 'templates.title-page.$side';
+        _set(
+          'title_page_$side',
+          YList([for (final slot in slots) _slot(slot)]),
+        );
+      }
+    }
     if (look.pdf.isNotEmpty) {
       trace(const Became('pdf', 'its keys, after these, as written'));
     }
@@ -155,12 +168,15 @@ final class _Compiler {
   /// [value] as a theme file writes it.
   static String _show(Y value) => switch (value) {
     YScalar(value: ThemeString(:final value))
-        when value.startsWith('#') || num.tryParse(value) != null =>
-      "'$value'",
+        when num.tryParse(value) != null || !_plain.hasMatch(value) =>
+      "'${value.replaceAll("'", "''")}'",
     YScalar(:final value) => value.rubyString,
     YList(:final items) => '[${items.map(_show).join(', ')}]',
     YMap(:final entries) => '{${entries.entries.map(_entry).join(', ')}}',
   };
+
+  /// Text a theme file writes without quotes.
+  static final RegExp _plain = RegExp(r'^[\w.%+-](?:[\w .%+/-]*[\w.%+/-])?$');
 
   static String _entry(MapEntry<String, Y> entry) =>
       '${entry.key}: ${_show(entry.value)}';
@@ -174,6 +190,41 @@ final class _Compiler {
         (false, FontShape.italic) => 'italic',
         (false, FontShape.normal) => 'normal',
       };
+
+  static String _escape(String text) => text
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;');
+
+  /// A title page's slot as the theme writes it: a part's name, or a
+  /// mapping (`content` or `attribute`, `role`, `margin_top`,
+  /// `margin_bottom`, `before`, `separator`).
+  static Y _slot(Slot slot) => switch (slot) {
+    Slot(
+      content: PartContent(:final part),
+      role: null,
+      spaceBefore: null,
+      spaceAfter: null,
+      before: null,
+      separator: null,
+    ) =>
+      _string(part.name),
+    _ => YMap({
+      ...switch (slot.content) {
+        PartContent(:final part) => {'content': _string(part.name)},
+        AttributeContent(:final name) => {'attribute': _string(name)},
+      },
+      if (slot.role case final role?) 'role': _string(role),
+      if (slot.spaceBefore?.of(Medium.print) case final space?)
+        'margin_top': _length(space),
+      if (slot.spaceAfter?.of(Medium.print) case final space?)
+        'margin_bottom': _length(space),
+      // (Text, where the theme's is formatted text.)
+      if (slot.before case final before?) 'before': _string(_escape(before)),
+      if (slot.separator case final separator?)
+        'separator': _string(_escape(separator)),
+    }),
+  };
 
   // Tokens.
 

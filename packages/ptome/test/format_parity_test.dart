@@ -269,6 +269,100 @@ epub-css: '.own{color:blue}'
     expect(epub, isNot(contains('.own{color:red}')));
   });
 
+  group("a look's title page", () {
+    const look = '''
+extends: ptome
+templates:
+  title-page:
+    recto:
+      - { slot: authors, separator: ' & ', before: 'By ' }
+      - title
+      - subtitle
+      - { attribute: publisher, style: .publisher }
+    verso:
+      - { attribute: copyright }
+      - revision
+''';
+    const source =
+        '= Slots: A Subtitle\nAda Lovelace; Charles Babbage\n'
+        'v2.1, 2026-10-11: Reprinted\n'
+        ':look: tp\n:looksdir: {docdir}\n:publisher: Anticomplex\n'
+        ':copyright: Copyright 2026\n\n== One\n\nText.\n';
+    setUp(() => File('${dir.path}/tp-look.yml').writeAsStringSync(look));
+
+    test("HTML: the header's slots in order, the verso after them", () {
+      final html = File(convertWith('html5', source)).readAsStringSync();
+      final header = html.substring(
+        html.indexOf('<div id="header">'),
+        html.indexOf('<div id="content">'),
+      );
+      expect(
+        header,
+        '<div id="header">\n'
+        '<div class="details title-page-authors">By <span id="author" '
+        'class="author">Ada Lovelace</span> &amp; <span id="author2" '
+        'class="author">Charles Babbage</span></div>\n'
+        '<h1 class="title-page-title">Slots</h1>\n'
+        '<div class="subtitle title-page-subtitle">A Subtitle</div>\n'
+        '<div class="title-page-publisher publisher">Anticomplex</div>\n'
+        '<div class="verso">\n'
+        '<div class="title-page-copyright">Copyright 2026</div>\n'
+        '<div class="details title-page-revision"><span id="revnumber">'
+        'version 2.1,</span> <span id="revdate">2026-10-11</span><br>'
+        '<span id="revremark">Reprinted</span></div>\n'
+        '</div>\n'
+        '</div>\n',
+      );
+      // asciidoctor-compat: Asciidoctor's header.
+      final compat = File(
+        convertWith(
+          'html5',
+          source.replaceFirst(':look:', ':asciidoctor-compat: html\n:look:'),
+        ),
+      ).readAsStringSync();
+      expect(compat, isNot(contains('title-page-')));
+    });
+
+    test('EPUB: a title page after the cover, its verso a page of its own', () {
+      final files = unzipText(
+        File(convertWith('epub3', source)).readAsBytesSync(),
+      );
+      final page = files['EPUB/titlepage.xhtml']!;
+      expect(
+        page,
+        contains(
+          '<section class="titlepage" epub:type="titlepage">\n'
+          '<div class="details title-page-authors">By ',
+        ),
+      );
+      expect(
+        page,
+        contains(
+          '<section class="titlepage verso" epub:type="copyright-page">\n'
+          '<div class="title-page-copyright">Copyright 2026</div>',
+        ),
+      );
+      expect(page, contains('<br/><span id="revremark">'));
+      expect(
+        files['EPUB/package.opf'],
+        contains('<itemref idref="titlepage"/>'),
+      );
+      expect(
+        files['EPUB/nav.xhtml'],
+        contains('<a epub:type="titlepage" href="titlepage.xhtml">'),
+      );
+      expect(
+        files['EPUB/styles/epub3.css'],
+        contains('.titlepage.verso{break-before:page'),
+      );
+      // None without slots.
+      final plain = unzipText(
+        File(convertWith('epub3', '= Doc\n\nText.\n')).readAsBytesSync(),
+      );
+      expect(plain.keys, isNot(contains('EPUB/titlepage.xhtml')));
+    });
+  });
+
   test('asciidoctor-compat: the classic stylesheets of the formats named', () {
     const house = 'look ptome (ADR-0023';
     String html(String compat) => File(

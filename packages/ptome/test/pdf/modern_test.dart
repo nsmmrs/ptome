@@ -2211,6 +2211,58 @@ base:
       expect(_content(extended), contains('1 0 0 rg'));
     });
 
+    test("a look's title page: its slots in order, a verso after it", () {
+      File('${_dir.path}/tp-look.yml').writeAsStringSync('''
+extends: ptome
+templates:
+  title-page:
+    recto:
+      - { slot: authors, separator: ' & ' }
+      - { slot: title, space-before: 2in }
+      - subtitle
+      - { attribute: publisher, space-before: 3in }
+    verso:
+      - { attribute: copyright }
+      - { slot: revision, before: 'Edition: ' }
+''');
+      final pdf = _pdf(
+        '= The Art of Slots: Title Pages\n'
+        'Ada Lovelace; Charles Babbage\n'
+        'v2.1, 2026-10-11\n'
+        ':doctype: book\n:publisher: Anticomplex\n'
+        ':copyright: Copyright 2026\n\n== One\n\nText.\n',
+        attributes: {'looksdir': _dir.path, 'look': 'tp', 'pdf-theme!': ''},
+      );
+      final pages = _pages(pdf);
+      expect(pages[0], [
+        'Ada Lovelace & Charles Babbage',
+        'The Art of Slots',
+        'Title Pages',
+        'Anticomplex',
+      ]);
+      expect(pages[1], ['Copyright 2026', 'Edition: Version 2.1, 2026-10-11']);
+      expect(pages[2].first, 'One');
+      // (The slots placed by their space, not the theme's title_top.)
+      expect(_top(pdf, 'Art')! - _top(pdf, 'Ada')!, greaterThan(144));
+      expect(_top(pdf, 'Anticomplex')! - _top(pdf, 'Title')!, greaterThan(216));
+    });
+
+    test("a theme's title_page_recto: its parts alone, margins as lengths", () {
+      const source =
+          '= Doc Title\nAn Author\nv1.0\n:doctype: book\n\n'
+          '== One\n\nText.\n';
+      final plain = _pages(_pdf(source))[0];
+      expect(plain, ['Doc Title', 'An Author', 'Version 1.0']);
+      final pdf = _pdf(
+        source,
+        theme:
+            'title_page:\n  recto:\n  - revision\n'
+            '  - content: title\n    margin-top: 1in\n',
+      );
+      expect(_pages(pdf)[0], ['Version 1.0', 'Doc Title']);
+      expect(_top(pdf, 'Doc')! - _top(pdf, 'Version')!, greaterThan(72));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

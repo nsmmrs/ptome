@@ -155,6 +155,7 @@ a page of its own after the heading, with its title.
 | `title_page_authors_delimiter` | `, ` | Its spaces are kept as written: `'    '` sets the authors in a row with a gap (asciidoctor-pdf collapses them to one). |
 | `list_body_indent` | none | The marker at `list_indent`, the text this far after the widest marker (else the text at `list_indent`, the marker a space before it, as asciidoctor-pdf). |
 | `title_page_title_skew` (also `_subtitle_`, `_authors_`, `_revision_`) | none | Degrees the text leans right, sheared as one block about its last baseline (the upper lines further right), in place of a slanted face. |
+| `title_page_recto`, `title_page_verso` | the title, subtitle, authors, revision and logo; none | The title page's slots, in order (after DocBook XSL's title page templates): a part's name (`title`, `subtitle`, `authors`, `revision`, `logo`), or a mapping of `content` (a part) or `attribute` (a document attribute's value, `copyright`), with `role` (its font from `role_<role>_*` over the part's), `margin_top`, `margin_bottom` (over `title_page_<part>_margin_*`), `before` (text before it) and `separator` (between authors, or the revision's number and date). Slots the theme lists are placed by their margins (`title_page_title_top` is the default order's); a verso is the page after the title page. A look writes them as `templates.title-page` (`doc/looks.md`). |
 
 ### Hyphenation
 

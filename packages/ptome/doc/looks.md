@@ -134,6 +134,45 @@ subtitle) leaves its style out.
 | `keep-with-next` | `true` | `_min_height_after: auto` (headings) | `break-after: avoid` |
 | `frame`, `frame-sides`, `rows`, `columns`, `head-rule`, `stripes` | a table's rules, and its alternate rows' background | `table_border_*`, `table_grid_*`, `table_head_border_bottom_*`, `table_body_stripe_background_color` | the table's, its cells' and its head's borders |
 
+## Title pages
+
+A look's title page is a list of slots, as DocBook XSL's title page
+templates are: the parts of the header on the front (`recto`), in
+order, and on its back (`verso`, a book's copyright page).
+
+```yaml
+templates:
+  title-page:
+    recto:
+      - { slot: authors, separator: ' & ', space-before: { print: 1in } }
+      - { slot: title, space-before: { print: 2in, screen: 1em } }
+      - subtitle
+      - { attribute: publisher, style: .publisher }
+    verso:
+      - { attribute: copyright, style: .legal }
+      - { slot: revision, before: 'Edition: ' }
+```
+
+A slot is a part's name (`title`, `subtitle`, `authors`, `revision`,
+`logo`), or a mapping of what it shows (`slot:` a part, or `attribute:`
+the value of a document attribute, where the document sets it) and how:
+`style` (a role the look's `styles` give, with its dot), `space-before`
+and `space-after` (lengths, by medium), `before` (text before it) and
+`separator` (between the authors). The title is the whole title unless
+the subtitle has a slot of its own (`title-separator` divides them).
+
+- **PDF:** `title_page_recto` and `title_page_verso` (`doc/pdf.md`); the
+  slots placed by their space alone, the verso on the next page. A
+  theme without them keeps asciidoctor-pdf's order.
+- **HTML:** the header's parts in the slots' order, each of the class
+  `title-page-<part>` (or `title-page-<attribute>`) and its role's, the
+  verso's in a `div.verso` (a page of its own in print).
+- **EPUB:** a title page after the cover (`titlepage.xhtml`, a landmark),
+  its verso a page of its own (`epub:type="copyright-page"`).
+
+A look without `title-page` leaves each output's own; `asciidoctor-compat`
+the classic ones.
+
 ## What an output can't render
 
 Each output applies what it can and leaves out, quietly, what it doesn't

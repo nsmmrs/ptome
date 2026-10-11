@@ -26,6 +26,7 @@ import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
+import 'package:ptome/src/look/model.dart' show TitlePart;
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
@@ -104,6 +105,33 @@ const Map<String, (double, double)> _pageSizes = {
 };
 
 /// The font settings in effect (the gem's `theme_font` state).
+/// A slot of the title page (a theme's `title_page_recto` or
+/// `title_page_verso`, ADR-0023): a part of the header or an attribute's
+/// value, its role, the space around it, text before it and the
+/// separator between its items.
+final class _TitleSlot {
+  const new({
+    this.part,
+    this.attribute,
+    this.role,
+    this.marginTop,
+    this.marginBottom,
+    this.before,
+    this.separator,
+  });
+
+  /// A slot of [part], as the theme's or the gem's.
+  const new part(TitlePart? part) : this(part: part);
+
+  final TitlePart? part;
+  final String? attribute;
+  final String? role;
+  final double? marginTop;
+  final double? marginBottom;
+  final String? before;
+  final String? separator;
+}
+
 final class _FontState {
   const new({
     required this.family,
@@ -1033,19 +1061,96 @@ final class PdfConverter extends BuiltInConverter
     }
   }
 
-  /// Adds the title page of [doc]: the title, subtitle, authors and
-  /// revision (the gem's `ink_title_page`; logos aren't drawn yet).
+  /// The title page's slots on [side] (`recto`, `verso`): the theme's
+  /// `title_page_<side>` (ADR-0023), else the gem's fixed order on the
+  /// recto and no verso.
+  List<_TitleSlot> _titleSlots(String side) =>
+      switch (_theme.value('title_page_$side')) {
+        ThemeList(:final values) => [
+          for (final value in values)
+            switch (value) {
+              ThemeMap(:final entries) => _TitleSlot(
+                part: switch (entries['content']) {
+                  final ThemeValue part => _titlePart(part.rubyString),
+                  null => null,
+                },
+                attribute: entries['attribute']?.rubyString,
+                role: entries['role']?.rubyString,
+                marginTop: switch (entries['margin_top']) {
+                  ThemeNumber(:final value) => value.toDouble(),
+                  _ => null,
+                },
+                marginBottom: switch (entries['margin_bottom']) {
+                  ThemeNumber(:final value) => value.toDouble(),
+                  _ => null,
+                },
+                before: entries['before']?.rubyString,
+                separator: entries['separator']?.rubyString,
+              ),
+              final part => _TitleSlot.part(_titlePart(part.rubyString)),
+            },
+        ],
+        _ when side == 'recto' => [
+          for (final part in TitlePart.values) _TitleSlot.part(part),
+        ],
+        _ => const [],
+      };
+
+  /// The part [name] names; null for an unknown name (the slot shows
+  /// nothing).
+  TitlePart? _titlePart(String name) =>
+      TitlePart.values.asNameMap()[name] ??
+      () {
+        logger.warn('unknown title page part: $name');
+        return null;
+      }();
+
+  /// Adds the title page of [doc]: its slots (the theme's
+  /// `title_page_recto`; by default the title, subtitle, authors and
+  /// revision, as the gem's `ink_title_page`), and a verso, when the
+  /// theme gives `title_page_verso`, on the page after it.
   void _titlePage(Document doc) {
     final align = _s('title_page_text_align') ?? _baseTextAlign;
-    _titleLogo(doc, align);
-    final base = _themeFont('title_page', _font);
+    final recto = _titleSlots('recto');
+    if (recto.any((slot) => slot.part == TitlePart.logo)) {
+      _titleLogo(doc, align);
+    }
+    // (Slots the theme lists are placed by their margins alone; the gem's
+    // order starts at `title_page_title_top`.)
     var offset = 0.0;
+    if (_theme['title_page_title_top'] case final top?
+        when _theme.value('title_page_recto') == null) {
+      offset = _titlePageTop(top);
+    }
+    _titleSlotsInto(doc, recto, align, offset);
+    final verso = _titleSlots('verso');
+    if (verso.isNotEmpty) {
+      _out.add(const BreakBox.page());
+      _titleSlotsInto(doc, verso, align, 0);
+    }
+  }
+
+  /// Adds [slots] of [doc]'s title page, [top] below the top.
+  void _titleSlotsInto(
+    Document doc,
+    List<_TitleSlot> slots,
+    String align,
+    double top,
+  ) {
+    var offset = top;
+    final base = _themeFont('title_page', _font);
     void gap(double points) {
       if (points != 0) offset += points;
     }
 
-    void prose(String text, String category, {bool normalize = true}) {
+    void prose(
+      String text,
+      String category, {
+      bool normalize = true,
+      String? role,
+    }) {
       var font = _themeFont(category, base);
+      if (role != null) font = _themeFont('role_$role', font);
       var content = text;
       if (font.transform case final transform? when transform != 'none') {
         content = transformText(content, transform);
@@ -1077,109 +1182,141 @@ final class PdfConverter extends BuiltInConverter
         ),
       );
       offset = 0;
-      font = base;
     }
 
-    if (_theme['title_page_title_top'] case final top?) {
-      offset = _titlePageTop(top);
-    }
-    final title = doc.partitionedTitle(separator: doc.attr('title-separator'));
-    if (_s('title_page_title_display') != 'none' && title != null) {
-      gap((_n('title_page_title_margin_top') ?? 0).toDouble());
-      prose(title.main, 'title_page_title');
-      gap((_n('title_page_title_margin_bottom') ?? 0).toDouble());
-    }
-    final subtitle = title?.subtitle;
-    if (_s('title_page_subtitle_display') != 'none' && subtitle != null) {
-      gap((_n('title_page_subtitle_margin_top') ?? 0).toDouble());
-      prose(subtitle, 'title_page_subtitle');
-      gap((_n('title_page_subtitle_margin_bottom') ?? 0).toDouble());
-    }
-    if (_s('title_page_authors_display') != 'none' && doc.hasAttr('authors')) {
-      gap((_n('title_page_authors_margin_top') ?? 0).toDouble());
-      final generic = _s('title_page_authors_content');
-      final templates = {
-        'name_only': _s('title_page_authors_content_name_only') ?? generic,
-        'with_email': _s('title_page_authors_content_with_email') ?? generic,
-        'with_url': _s('title_page_authors_content_with_url') ?? generic,
-      };
-      // Each author's content, with the author's attributes in effect
-      // (the gem's `with_author`): `url` is the email as a mailto: link,
-      // or the URL in its place.
-      final names = [
-        for (final (i, author) in doc.authors.indexed)
-          () {
-            final attributes = <String, String>{};
-            final unset = <String>{'url'};
-            String? email;
-            if (i == 0) {
-              email = doc.attr('email');
-            } else {
-              for (final (name, value) in [
-                ('author', author.name),
-                ('authorinitials', author.initials),
-                ('firstname', author.firstname),
-                ('middlename', author.middlename),
-                ('lastname', author.lastname),
-                ('email', author.email),
-              ]) {
-                if (value == null) {
-                  unset.add(name);
-                } else {
-                  attributes[name] = value;
-                }
-              }
-              email = author.email;
-            }
-            String? url;
-            if (email != null) {
-              url = email.contains('@') ? 'mailto:$email' : email;
-              attributes['url'] = url;
-              unset.remove('url');
-            }
-            final key = url == null
-                ? 'name_only'
-                : url.startsWith('mailto:')
-                ? 'with_email'
-                : 'with_url';
-            final template = templates[key];
-            if (template == null) {
-              return i == 0
-                  ? doc.attr('author') ?? ''
-                  : attributes['author'] ?? '';
-            }
-            return _applySubsDiscretely(
-              template,
-              attributes,
-              unset: unset,
-              dropLines: true,
-            );
-          }(),
-      ];
+    /// [text] in [slot], styled by [category], within the slot's margins
+    /// (else the category's).
+    void place(
+      _TitleSlot slot,
+      String text,
+      String category, {
+      bool normalize = true,
+    }) {
+      gap(slot.marginTop ?? (_n('${category}_margin_top') ?? 0).toDouble());
       prose(
-        // The delimiter's spaces as they are (a gap between names in a
-        // row; the gem collapses them).
-        names.join(
-          (_s('title_page_authors_delimiter') ?? ', ').replaceAll(
-            RegExp(' (?= )'),
-            '&#160;',
-          ),
-        ),
-        'title_page_authors',
+        '${slot.before ?? ''}$text',
+        category,
+        normalize: normalize,
+        role: slot.role,
       );
-      gap((_n('title_page_authors_margin_bottom') ?? 0).toDouble());
+      gap(
+        slot.marginBottom ?? (_n('${category}_margin_bottom') ?? 0).toDouble(),
+      );
     }
-    final revision = [
-      if (doc.attr('revnumber') case final number?)
-        '${doc.attr('version-label') ?? ''} $number',
-      ?doc.attr('revdate'),
+
+    final title = doc.partitionedTitle(separator: doc.attr('title-separator'));
+    // (The whole title, when no slot shows the subtitle.)
+    final subtitled = slots.any((slot) => slot.part == TitlePart.subtitle);
+    for (final slot in slots) {
+      switch (slot) {
+        case _TitleSlot(part: TitlePart.title)
+            when _s('title_page_title_display') != 'none' && title != null:
+          place(
+            slot,
+            subtitled ? title.main : title.combined,
+            'title_page_title',
+          );
+        case _TitleSlot(part: TitlePart.subtitle)
+            when _s('title_page_subtitle_display') != 'none':
+          if (title?.subtitle case final subtitle?) {
+            place(slot, subtitle, 'title_page_subtitle');
+          }
+        case _TitleSlot(part: TitlePart.authors)
+            when _s('title_page_authors_display') != 'none' &&
+                doc.hasAttr('authors'):
+          place(slot, _titleAuthors(doc, slot.separator), 'title_page_authors');
+        case _TitleSlot(part: TitlePart.revision)
+            when _s('title_page_revision_display') != 'none':
+          final revision = [
+            if (doc.attr('revnumber') case final number?)
+              '${doc.attr('version-label') ?? ''} $number',
+            ?doc.attr('revdate'),
+          ];
+          if (revision.isEmpty) continue;
+          var text = revision.join(
+            slot.separator ?? _s('title_page_revision_delimiter') ?? ', ',
+          );
+          if (doc.attr('revremark') case final remark?) text = '$text: $remark';
+          place(slot, text, 'title_page_revision', normalize: false);
+        case _TitleSlot(part: null, attribute: final name?):
+          if (doc.attr(name) case final value? when value.isNotEmpty) {
+            place(slot, value, 'title_page');
+          }
+        case _:
+      }
+    }
+  }
+
+  /// The title page's authors, each by the theme's content template,
+  /// joined by [separator] (else the theme's delimiter).
+  String _titleAuthors(Document doc, String? separator) {
+    final generic = _s('title_page_authors_content');
+    final templates = {
+      'name_only': _s('title_page_authors_content_name_only') ?? generic,
+      'with_email': _s('title_page_authors_content_with_email') ?? generic,
+      'with_url': _s('title_page_authors_content_with_url') ?? generic,
+    };
+    // Each author's content, with the author's attributes in effect
+    // (the gem's `with_author`): `url` is the email as a mailto: link,
+    // or the URL in its place.
+    final names = [
+      for (final (i, author) in doc.authors.indexed)
+        () {
+          final attributes = <String, String>{};
+          final unset = <String>{'url'};
+          String? email;
+          if (i == 0) {
+            email = doc.attr('email');
+          } else {
+            for (final (name, value) in [
+              ('author', author.name),
+              ('authorinitials', author.initials),
+              ('firstname', author.firstname),
+              ('middlename', author.middlename),
+              ('lastname', author.lastname),
+              ('email', author.email),
+            ]) {
+              if (value == null) {
+                unset.add(name);
+              } else {
+                attributes[name] = value;
+              }
+            }
+            email = author.email;
+          }
+          String? url;
+          if (email != null) {
+            url = email.contains('@') ? 'mailto:$email' : email;
+            attributes['url'] = url;
+            unset.remove('url');
+          }
+          final key = url == null
+              ? 'name_only'
+              : url.startsWith('mailto:')
+              ? 'with_email'
+              : 'with_url';
+          final template = templates[key];
+          if (template == null) {
+            return i == 0
+                ? doc.attr('author') ?? ''
+                : attributes['author'] ?? '';
+          }
+          return _applySubsDiscretely(
+            template,
+            attributes,
+            unset: unset,
+            dropLines: true,
+          );
+        }(),
     ];
-    if (_s('title_page_revision_display') != 'none' && revision.isNotEmpty) {
-      gap((_n('title_page_revision_margin_top') ?? 0).toDouble());
-      var text = revision.join(_s('title_page_revision_delimiter') ?? ', ');
-      if (doc.attr('revremark') case final remark?) text = '$text: $remark';
-      prose(text, 'title_page_revision', normalize: false);
-    }
+    // The delimiter's spaces as they are (a gap between names in a row;
+    // the gem collapses them).
+    return names.join(
+      (separator ?? _s('title_page_authors_delimiter') ?? ', ').replaceAll(
+        RegExp(' (?= )'),
+        '&#160;',
+      ),
+    );
   }
 
   /// The floated image the paragraphs after it wrap around, and the

@@ -24,7 +24,10 @@ Asciidoctor project.
   output (theme keys, custom properties, CSS) and what an output left
   out and why, from the compilers' own results, the ones conversion
   warns of. A look's own `css:` and `epub-css:` come after the device
-  rules.
+  rules. A look's title page is a list of slots, recto and verso, after
+  DocBook XSL's (`templates.title-page`): the PDF's title page and a
+  verso page (`title_page_recto`, `title_page_verso`, also for themes),
+  HTML's header in their order, and an EPUB title page.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

@@ -154,14 +154,44 @@ final class _CssCompiler {
       _medium(print, Medium.print, except: '$screen'.split('\n').toSet());
       if (print.isNotEmpty) out.write('@media print{$print}\n');
       if (_page() case final page?) out.write('$page\n');
+      if (look.templates.titlePage?.verso case [_, ...]) {
+        out.write(_versoBreak('#header>.verso', '@media print{', '}'));
+      }
       if (look.css.isNotEmpty) trace(const Became('css', _own));
     } else {
       _medium(out, Medium.ebook);
       _readerOwns(out);
+      if (look.templates.titlePage?.verso case [_, ...]) {
+        out.write(_versoBreak('.titlepage.verso'));
+      }
       if (look.epubCss.isNotEmpty) trace(const Became('epub-css', _own));
     }
     for (final name in look.templates.named.keys) {
       _unsupported('templates.$name');
+    }
+    if (look.templates.titlePage case final page?) {
+      for (final (side, slots) in [
+        ('recto', page.recto),
+        ('verso', page.verso),
+      ]) {
+        if (slots.isEmpty) continue;
+        final where = switch ((html, side)) {
+          (true, 'recto') => 'the header',
+          (true, _) => "the header's verso",
+          (false, 'recto') => 'the title page',
+          (false, _) => "the title page's verso",
+        };
+        final parts = [
+          for (final slot in slots)
+            switch (slot.content) {
+              PartContent(:final part) => part.name,
+              AttributeContent(:final name) => 'the attribute $name',
+            },
+        ];
+        trace(
+          Became('templates.title-page.$side', '$where: ${parts.join(', ')}'),
+        );
+      }
     }
     return '$out';
   }
@@ -333,6 +363,28 @@ final class _CssCompiler {
     }
     for (final MapEntry(key: target, value: style) in look.styles.entries) {
       _style(rules, target, style.at(medium), medium);
+    }
+    // The title page's slots' space (the header in HTML, the title page
+    // in an EPUB).
+    if (look.templates.titlePage case final page?) {
+      for (final (side, slots) in [
+        ('recto', page.recto),
+        ('verso', page.verso),
+      ]) {
+        final item = 'templates.title-page.$side';
+        for (final slot in slots) {
+          final name = switch (slot.content) {
+            PartContent(:final part) => part.name,
+            AttributeContent(:final name) => name,
+          };
+          rule('${html ? '#header' : '.titlepage'} .title-page-$name', [
+            if (slot.spaceBefore?.of(medium) case final space?)
+              (item, 'margin-top:${_length(space)}'),
+            if (slot.spaceAfter?.of(medium) case final space?)
+              (item, 'margin-bottom:${_length(space)}'),
+          ]);
+        }
+      }
     }
     for (final (selector, declarations) in rules) {
       // (A declaration two items make, as a table's frame and its sides'
@@ -637,6 +689,20 @@ final class _CssCompiler {
         ));
       }
     }
+  }
+
+  /// The title page's verso on a page of its own: [selector]'s rule,
+  /// within [open] and [close].
+  String _versoBreak(String selector, [String open = '', String close = '']) {
+    final rule = '$selector{break-before:page;page-break-before:always}';
+    trace(
+      Became(
+        'templates.title-page.verso',
+        rule,
+        medium: html ? Medium.print : null,
+      ),
+    );
+    return '$open$rule$close\n';
   }
 
   /// In an EPUB, what the look leaves to the reader: asciidoctor-epub3's

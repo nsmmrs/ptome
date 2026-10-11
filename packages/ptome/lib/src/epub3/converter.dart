@@ -39,11 +39,13 @@ import 'package:ptome/src/list.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/look/css.dart';
 import 'package:ptome/src/look/document_look.dart';
+import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
+import 'package:ptome/src/title_page.dart';
 import 'package:ptome/src/unbreakable.dart';
 import 'package:ptome/src/units/html.dart';
 import 'package:ptome/src/xml_balance.dart';
@@ -468,6 +470,14 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         type: 'cover',
         href: frontCover.href,
         title: 'Front Cover',
+      ));
+    }
+
+    if (_addTitlePage(node) case final titlePage?) {
+      landmarks.add((
+        type: 'titlepage',
+        href: titlePage.href,
+        title: 'Title Page',
       ));
     }
 
@@ -2158,6 +2168,80 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     return book.addOrderedItem('$name.xhtml', id: name)
       ..setText(content)
       ..addProperty('calibre:title-page');
+  }
+
+  /// The title page (ADR-0023): the look's recto slots, then its verso's
+  /// on the next page, as a content document after the cover; none when
+  /// the look gives no title page, or `asciidoctor-compat` names EPUB.
+  EpubItem? _addTitlePage(Document doc) {
+    if (asciidoctorCompat(doc, CompatFormat.epub)) return null;
+    final page = documentLook(doc).templates.titlePage;
+    if (page == null || (page.recto.isEmpty && page.verso.isEmpty)) {
+      return null;
+    }
+    // (A look that gives a verso alone: the recto in the gem's order.)
+    final recto = page.recto.isNotEmpty
+        ? page.recto
+        : [
+            for (final part in [
+              TitlePart.title,
+              TitlePart.subtitle,
+              TitlePart.authors,
+              TitlePart.revision,
+            ])
+              Slot(PartContent(part)),
+          ];
+    String side(String type, String classes, List<Slot> slots) => [
+      '<section class="$classes" epub:type="$type">',
+      ...titleSlotsHtml(doc, slots, br: '<br/>', voidSlash: '/'),
+      '</section>',
+    ].join('\n');
+    final lang = _s(doc.attr('lang', 'en'));
+    final head =
+        "<?xml version='1.0' encoding='utf-8'?>\n"
+        '<!DOCTYPE html>\n'
+        '<html xmlns="http://www.w3.org/1999/xhtml" '
+        'xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="$lang" '
+        'lang="$lang">\n'
+        '<head>\n'
+        '<title>${_sanitizeDoctitle(doc, _Spec.cdata)}</title>\n'
+        '$_stylesheetLinks\n'
+        '</head>\n'
+        '<body>';
+    final content = [
+      head,
+      side('titlepage', 'titlepage', recto),
+      if (page.verso.isNotEmpty)
+        side('copyright-page', 'titlepage verso', page.verso),
+      '</body>\n</html>',
+    ].join('\n');
+    _addTitleLogo(doc, recto);
+    return _book!.addOrderedItem('titlepage.xhtml', id: 'titlepage')
+      ..setText(content);
+  }
+
+  /// The logo a title page's [slots] show, in the book.
+  void _addTitleLogo(Document doc, List<Slot> slots) {
+    final shown = slots.any(
+      (slot) => switch (slot.content) {
+        PartContent(part: TitlePart.logo) => true,
+        _ => false,
+      },
+    );
+    final value = doc.attr('title-logo-image');
+    if (!shown || value == null) return;
+    final target =
+        RegExp(r'^image::?(.+?)\[').firstMatch(value)?.group(1) ?? value;
+    if (target.contains(':')) return;
+    final href = doc.imageUri(target);
+    var workdir = _s(doc.attr('docdir'));
+    if (workdir.isEmpty) workdir = '.';
+    final path = _join(workdir, href);
+    if (io.isReadable(path)) {
+      _book!.addItem(href).setBytes(io.readBytes(path));
+    } else {
+      logger.warn('title logo image not found or readable: $path');
+    }
   }
 
   List<String> _frontMatterFiles(Document doc, String workdir) {
