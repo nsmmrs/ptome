@@ -58,6 +58,7 @@ final class LookLoader {
       pdf: [for (final s in chain) ?s.pdf],
       css: [for (final s in chain) ?s.css],
       epubCss: [for (final s in chain) ?s.epubCss],
+      webfonts: chain.reversed.map((s) => s.webfonts).nonNulls.firstOrNull,
     );
   }
 
@@ -129,6 +130,7 @@ final class LookLoader {
     YamlMap? pdf;
     String? css;
     String? epubCss;
+    List<String>? webfonts;
     final body = <String, _Raw>{};
     for (final MapEntry(key: keyNode, value: node) in root.nodes.entries) {
       if (keyNode is! YamlNode) continue;
@@ -145,12 +147,19 @@ final class LookLoader {
           css = _string(node, 'css');
         case 'epub-css':
           epubCss = _string(node, 'epub-css');
+        case 'webfonts':
+          webfonts = switch (node) {
+            YamlList(:final nodes) => [
+              for (final family in nodes) _string(family, 'webfonts'),
+            ],
+            _ => [_string(node, 'webfonts')],
+          };
         case 'tokens' || 'styles' || 'templates':
           body[key] = _raw(node);
         default:
           throw LookException(
             'unknown part $key (a look has tokens, styles, templates, '
-            'extends, pdf, css and epub-css)',
+            'extends, pdf, css, epub-css and webfonts)',
             keyNode.span,
           );
       }
@@ -161,6 +170,7 @@ final class LookLoader {
       pdf: pdf,
       css: css,
       epubCss: epubCss,
+      webfonts: webfonts,
       directory: switch (location) {
         _FileLocation(:final path) => _dirname(path),
         _BuiltIn() => null,
@@ -221,6 +231,7 @@ final class _Source {
     this.pdf,
     this.css,
     this.epubCss,
+    this.webfonts,
     this.directory,
   });
 
@@ -232,6 +243,7 @@ final class _Source {
   final YamlMap? pdf;
   final String? css;
   final String? epubCss;
+  final List<String>? webfonts;
   final String? directory;
 }
 
@@ -319,6 +331,7 @@ final class _Parser {
     required List<YamlMap> pdf,
     required List<String> css,
     required List<String> epubCss,
+    List<String>? webfonts,
   }) {
     final tokens = raw.entries['tokens'];
     final styles = raw.entries['styles'];
@@ -333,6 +346,7 @@ final class _Parser {
       pdf: pdf,
       css: css,
       epubCss: epubCss,
+      webfonts: webfonts ?? const [],
       directory: directory,
     );
   }

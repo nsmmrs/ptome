@@ -52,6 +52,7 @@ What each output does with a look:
 | --- | --- |
 | `ptome` | The house style (`doc/style.md`), the default. |
 | `troff` | The troff-era manual: the Bell Labs books set with troff and ms (*The C Programming Language*, *The UNIX Programming Environment*, *The AWK Programming Language*), measured from them: Times 11 on 12 on a 4.8 in measure, code in Courier indented half an inch, headings in Times Bold, the running head 32 pt above the first line, a 6.25 × 9.25 in trim. Set in TeX Gyre Termes and Cursor (`ptome doctor --look troff`); without them in the PDF's own Times and Courier. |
+| `tech-book` | The tech book: the O'Reilly animal books, measured from one of 2018: a 7 × 9.1875 in trim, a 30 pc text block, body 10.5 on 12.6, headings in a semibold condensed sans, code 8.5 on 10.2 indented 17 pt, a running foot and no head, notes as an uppercase label between 0.5 pt rules, a title page with a copyright verso. Set in Crimson Pro, Fira Sans Condensed and Ubuntu Mono (`ptome doctor --look tech-book`; on the web from Google Fonts). |
 
 ## The file
 
@@ -71,11 +72,16 @@ templates:                # 3. generated text (ADR-0010)
 pdf:                      # what tokens can't say, in the theme's own keys
   font:
     catalog: { merge: true, Noto Sans: { normal: notosans.ttf } }
+webfonts:                 # Google Fonts families HTML pages load
+  - Crimson Pro:400,400italic,700,700italic
 css: ''                   # rules after the device stylesheet (HTML)
 epub-css: ''              # rules after it in an EPUB
 ```
 
-A look sets only what it means to. Merged over the looks it extends, a
+`webfonts` lists the Google Fonts families an HTML page loads for the
+look's faces (after those of Asciidoctor's stylesheet, when the
+`webfonts` attribute is set but empty, its default); the latest look of
+a chain that gives any. A look sets only what it means to. Merged over the looks it extends, a
 later value wins and `null` removes one (`link: ~`). The `pdf:`, `css:`
 and `epub-css:` parts apply look by look, the one extended first.
 

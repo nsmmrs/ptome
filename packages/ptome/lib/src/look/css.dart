@@ -65,7 +65,14 @@ const Map<LookElement, (String?, String?)> _selectors = {
   LookElement.paragraph: ('.paragraph>p', 'body p'),
   LookElement.link: ('a', 'body a:link'),
   LookElement.code: (':not(pre)>code', ':not(pre)>code'),
-  LookElement.codeBlock: ('.listingblock pre,.literalblock pre', 'pre'),
+  // (Asciidoctor's own selectors for its code blocks' background, which
+  // a look's must match to override.)
+  LookElement.codeBlock: (
+    '.literalblock pre,.listingblock>.content>pre:not(.highlight),'
+        '.listingblock>.content>pre[class=highlight],'
+        '.listingblock>.content>pre[class^="highlight "]',
+    'pre',
+  ),
   LookElement.caption: (
     '.admonitionblock td.content>.title,.audioblock>.title,'
         '.exampleblock>.title,.imageblock>.title,.listingblock>.title,'

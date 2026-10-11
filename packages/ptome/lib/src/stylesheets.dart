@@ -87,11 +87,15 @@ class Stylesheets {
 
   /// The Google Fonts families the built-in stylesheet of [key] is set in
   /// (the `webfonts` attribute's default): the stable release's monospace
-  /// face is Droid Sans Mono, the others' Noto Sans Mono.
-  String webfontsFor(String? key) =>
-      'Open+Sans:300,300italic,400,400italic,600,600italic%7C'
-      'Noto+Serif:400,400italic,700,700italic%7C'
-      '${key == stableStylesheetKey ? 'Droid' : 'Noto'}+Sans+Mono:400,700';
+  /// face is Droid Sans Mono, the others' Noto Sans Mono; then [look]'s
+  /// (ADR-0023).
+  String webfontsFor(String? key, {Look? look}) => [
+    'Open+Sans:300,300italic,400,400italic,600,600italic',
+    'Noto+Serif:400,400italic,700,700italic',
+    '${key == stableStylesheetKey ? 'Droid' : 'Noto'}+Sans+Mono:400,700',
+    for (final family in look?.webfonts ?? const <String>[])
+      family.replaceAll(' ', '+'),
+  ].join('%7C');
 
   /// Writes the built-in stylesheet for a `stylesheet` attribute of [key]
   /// (with [look]) to [targetDir].

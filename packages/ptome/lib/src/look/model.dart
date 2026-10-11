@@ -932,6 +932,7 @@ final class Look {
     this.pdf = const [],
     this.css = const [],
     this.epubCss = const [],
+    this.webfonts = const [],
     this.directory,
   });
 
@@ -961,4 +962,9 @@ final class Look {
 
   /// CSS rules after the device stylesheet in an EPUB, each look's.
   final List<String> epubCss;
+
+  /// The Google Fonts families HTML pages load for the look's faces
+  /// (`Crimson Pro:400,400italic,700`), the latest look's that names
+  /// any.
+  final List<String> webfonts;
 }

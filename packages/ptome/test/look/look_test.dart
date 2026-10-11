@@ -202,7 +202,7 @@ templates:
             '{font-weight:600;color:var(--ptome-color-ink-strong)}',
           ),
           contains('--ptome-color-ink-strong:#191919'),
-          contains('.listingblock pre,.literalblock pre{border:0}'),
+          contains('pre[class^="highlight "]{border:0}'),
           contains('table.frame-all{border-width:var(--ptome-rule-heavy) 0}'),
         ),
       );

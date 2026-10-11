@@ -23,8 +23,8 @@ import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/look/loader.dart';
 import 'package:ptome/src/look/model.dart';
-import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/remote.dart';
+import 'package:yaml/yaml.dart';
 
 /// Usage text for `doctor` (printed by `--help` and on misuse).
 const String doctorUsage = '''
@@ -341,13 +341,31 @@ final List<NeededFont> lookFonts = [
   ),
 ];
 
-/// The families [look]'s PDF theme names (its `*_font_family` keys).
+/// The families [look] sets in print: its faces' and those its `pdf:`
+/// entries name (`font_family` keys). (Read from the look, not its
+/// compiled theme, which would bring the PDF themes into every build of
+/// the command.)
 Set<String> lookFamilies(Look look) {
-  final theme = lookTheme(look);
-  return {
-    for (final key in theme.keys)
-      if (key.endsWith('_font_family')) ?theme.string(key),
+  final families = {
+    for (final face in look.tokens.fonts.values) ?face.family?.of(Medium.print),
   };
+  void scan(YamlNode node, String key) {
+    switch (node) {
+      case YamlMap(:final nodes):
+        for (final MapEntry(key: k, value: v) in nodes.entries) {
+          scan(v, '$k');
+        }
+      case YamlScalar(value: final String family)
+          when key == 'family' || key.endsWith('font_family'):
+        families.add(family);
+      case _:
+    }
+  }
+
+  for (final section in look.pdf) {
+    scan(section, '');
+  }
+  return families;
 }
 
 /// The fonts of the built-in PDF themes, their fallbacks, math and icons.

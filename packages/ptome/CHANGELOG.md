@@ -35,6 +35,10 @@ Asciidoctor project.
   indents a paragraph after another alone (`prose_text_indent_inner`).
   `ptome doctor --look LOOK` installs a look's fonts too (TeX Gyre from
   CTAN, pinned; Google Fonts families).
+  `tech-book`, the O'Reilly animal books (a 7 × 9.1875 in trim, body
+  10.5/12.6 on 30 pc, semibold condensed headings, code 8.5/10.2
+  indented 17 pt, a running foot, notes between rules, a copyright
+  verso). A look's `webfonts` are loaded by its HTML pages.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

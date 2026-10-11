@@ -377,7 +377,12 @@ class Html5Converter extends BuiltInConverter {
       final webfonts = node.attr('webfonts');
       if (webfonts != null) {
         final families = webfonts.isEmpty
-            ? Stylesheets.instance.webfontsFor(stylesheetKey)
+            ? Stylesheets.instance.webfontsFor(
+                stylesheetKey,
+                look: Stylesheets.isAsciidoctor(stylesheetKey)
+                    ? null
+                    : documentLook(node),
+              )
             : webfonts;
         result.add(
           '<link rel="stylesheet" href="$assetUriScheme//fonts.googleapis.com/css?family=$families"$slash>',

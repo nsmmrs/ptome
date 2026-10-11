@@ -30,7 +30,7 @@ List<String> titleSlotsHtml(
     };
     final classes = ['title-page-$name', ?slot.role].join(' ');
     final before = switch (slot.before) {
-      final before? => node.subSpecialchars(before),
+      final before? => _spaces(node.subSpecialchars(before)),
       null => '',
     };
     switch (slot.content) {
@@ -64,7 +64,7 @@ List<String> titleSlotsHtml(
         ];
         if (authors.isNotEmpty) {
           final separator = switch (slot.separator) {
-            final separator? => node.subSpecialchars(separator),
+            final separator? => _spaces(node.subSpecialchars(separator)),
             null => br,
           };
           result.add(
@@ -115,3 +115,8 @@ List<String> titleSlotsHtml(
   }
   return result;
 }
+
+/// [text]'s spaces kept: Asciidoctor's stylesheet sets the header's
+/// details as a flex row, which drops the spaces at the ends of the text
+/// between its spans.
+String _spaces(String text) => text.replaceAll(' ', '&#160;');

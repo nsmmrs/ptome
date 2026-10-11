@@ -299,8 +299,8 @@ templates:
       expect(
         header,
         '<div id="header">\n'
-        '<div class="details title-page-authors">By <span id="author" '
-        'class="author">Ada Lovelace</span> &amp; <span id="author2" '
+        '<div class="details title-page-authors">By&#160;<span id="author" '
+        'class="author">Ada Lovelace</span>&#160;&amp;&#160;<span id="author2" '
         'class="author">Charles Babbage</span></div>\n'
         '<h1 class="title-page-title">Slots</h1>\n'
         '<div class="subtitle title-page-subtitle">A Subtitle</div>\n'
@@ -332,7 +332,7 @@ templates:
         page,
         contains(
           '<section class="titlepage" epub:type="titlepage">\n'
-          '<div class="details title-page-authors">By ',
+          '<div class="details title-page-authors">By&#160;',
         ),
       );
       expect(
@@ -361,6 +361,27 @@ templates:
       );
       expect(plain.keys, isNot(contains('EPUB/titlepage.xhtml')));
     });
+  });
+
+  test("a look's webfonts after Asciidoctor's; none with its stylesheet", () {
+    File('${dir.path}/web-look.yml').writeAsStringSync(
+      "webfonts: ['Crimson Pro:400,700', 'Ubuntu Mono:400']\n",
+    );
+    const source = '= Doc\n:look: web\n:looksdir: {docdir}\n\nText.\n';
+    final html = File(convertWith('html5', source)).readAsStringSync();
+    expect(
+      html,
+      contains(
+        'Noto+Sans+Mono:400,700%7CCrimson+Pro:400,700%7CUbuntu+Mono:400"',
+      ),
+    );
+    final classic = File(
+      convertWith(
+        'html5',
+        source.replaceFirst(':look:', ':stylesheet: asciidoctor\n:look:'),
+      ),
+    ).readAsStringSync();
+    expect(classic, isNot(contains('Crimson')));
   });
 
   test('asciidoctor-compat: the classic stylesheets of the formats named', () {
