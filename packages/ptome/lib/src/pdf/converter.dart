@@ -25,6 +25,8 @@ import 'package:ptome/src/index_catalog.dart' show indexHasCategoryHeadings;
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
+import 'package:ptome/src/look/loader.dart';
+import 'package:ptome/src/look/model.dart' show Look;
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
@@ -33,6 +35,7 @@ import 'package:ptome/src/pdf/highlight_style.dart';
 import 'package:ptome/src/pdf/hyphenate.dart';
 import 'package:ptome/src/pdf/icons.dart';
 import 'package:ptome/src/pdf/index.dart';
+import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/pdf/markup.dart';
 import 'package:ptome/src/pdf/math.dart';
 import 'package:ptome/src/pdf/svg_size.dart';
@@ -2244,17 +2247,24 @@ final class PdfConverter extends BuiltInConverter
     final dir = document
         .attr('pdf-themesdir')
         ?.replaceAll('{docdir}', document.attr('docdir') ?? '');
-    // The default is Ptome's house theme (ADR-0011); with
-    // asciidoctor-compat (ADR-0015), asciidoctor-pdf's.
-    if (name == null && !asciidoctorCompat(document, CompatFormat.pdf)) {
-      name = 'ptome';
-    } else if (name == null &&
-        (document.attr('media') ?? 'screen') != 'screen') {
+    final compat = asciidoctorCompat(document, CompatFormat.pdf);
+    // The default is the document's look (ADR-0023), the house look
+    // unless it names another (ADR-0011); `pdf-theme=ptome` is the house
+    // look's. With asciidoctor-compat (ADR-0015), asciidoctor-pdf's
+    // theme: no look applies.
+    if ((name == null && !compat) || name == 'ptome') {
+      return _lookTheme(document, house: name == 'ptome');
+    }
+    if (name == null && (document.attr('media') ?? 'screen') != 'screen') {
       name = 'default-for-print';
     }
+    final loader = ThemeLoader(
+      logger: logger,
+      looks: (look) => _lookTheme(document, house: look == 'ptome'),
+    );
     Theme theme;
     try {
-      theme = ThemeLoader(logger: logger).load(name, dir);
+      theme = loader.load(name, dir);
     } on ThemeException catch (error) {
       logger.error(error.message);
       theme = ThemeLoader(logger: logger).load();
@@ -2265,6 +2275,28 @@ final class PdfConverter extends BuiltInConverter
       }
     }
     return theme;
+  }
+
+  /// The PDF theme of the document's look (`look`, found in `looksdir`
+  /// before the built-in looks), or of the house look; a look that can't
+  /// be read is reported and the house look used.
+  Theme _lookTheme(Document document, {bool house = false}) {
+    final name = house ? 'ptome' : document.attr('look') ?? 'ptome';
+    final dir = document
+        .attr('looksdir')
+        ?.replaceAll('{docdir}', document.attr('docdir') ?? '');
+    Look look;
+    try {
+      look = LookLoader(looksDir: dir).load(name);
+    } on LookException catch (error) {
+      logger.error('$error');
+      look = LookLoader().load('ptome');
+    }
+    return lookTheme(
+      look,
+      loader: ThemeLoader(logger: logger),
+      warn: logger.warn,
+    );
   }
 
   /// The modern engine's keys as asciidoctor-pdf sets pages, for

@@ -1,0 +1,82 @@
+# Ptome's house look (ADR-0011, ADR-0023; doc/style.md): Asciidoctor's
+# and asciidoctor-pdf's looks, changed as the rules of typesetting ask:
+# a measure of about 75 characters in print, more open lines, headings in
+# the sans, code in a tint, tables with rows only. Every format reads it;
+# a look that changes it starts with `extends: ptome`.
+tokens:
+  font:
+    text: { family: Noto Serif }
+    display: { family: Noto Sans, weight: bold }
+    code: { family: M+ 1mn, size: 0.9 }
+  size:
+    # 10–12 pt in print (Practical Typography).
+    text: { print: 10.5pt }
+    headings: [26pt, 20pt, 14pt, 12pt, 11pt, 10.5pt]
+  # 120–145% in print: open for a serif with a large x-height.
+  leading: { print: 1.4 }
+  paragraph: { signal: space, space: 6pt }
+  # The reader's in an e-book (ADR-0023 decision 2), hyphenated.
+  hyphenate: { ebook: true }
+  color:
+    ink: '#1F1F1F'
+    ink-strong: '#191919'
+    ink-soft: '#444444'
+    muted: '#555555'
+    link: '#2156A5'
+    tint: '#F7F7F8'
+    rule: '#DDDDDD'
+    rule-soft: '#CCCCCC'
+  rule:
+    hairline: 0.5pt
+    heavy: 1pt
+  page:
+    # About 75 characters of 10.5pt Noto Serif on A4 or Letter.
+    margin: [0.75in, 1.5in, 0.875in, 1.5in]
+    inner: 1.75in
+    outer: 1.25in
+styles:
+  link: { color: link }
+  heading:
+    font: display
+    color: ink-strong
+    space-before: 16pt
+    space-after: 6pt
+    leading: 1.2
+    keep-with-next: true
+  title: { color: ink-strong }
+  subtitle: { color: ink-soft }
+  caption: { font: display, weight: normal, size: 9.5pt, color: muted }
+  code-block:
+    size: 9.5pt
+    color: ink
+    background: tint
+    border: none
+    radius: 2pt
+    padding: 9pt
+    leading: 1.35
+  code: { color: ink }
+  sidebar: { background: tint, border: none }
+  sidebar-title: { font: display, color: ink-strong }
+  admonition:
+    rule: { width: 2pt, color: rule-soft }
+  admonition-label: { font: display, weight: bold, color: ink-soft }
+  table:
+    frame: { width: heavy, color: ink-strong }
+    frame-sides: none
+    rows: { width: hairline, color: rule }
+    columns: none
+    head-rule: { width: heavy, color: ink-strong }
+    stripes: none
+  table-head: { font: display, background: none }
+  .small-caps: { variant: small-caps }
+# What tokens can't say, in the PDF theme's own keys: the files of the
+# sans asciidoctor-pdf bundles.
+pdf:
+  font:
+    catalog:
+      merge: true
+      Noto Sans:
+        normal: GEM_FONTS_DIR/notosans-regular-subset.ttf
+        bold: GEM_FONTS_DIR/notosans-bold-subset.ttf
+        italic: GEM_FONTS_DIR/notosans-italic-subset.ttf
+        bold_italic: GEM_FONTS_DIR/notosans-bold_italic-subset.ttf

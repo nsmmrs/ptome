@@ -47,9 +47,11 @@ same (`benchmark/PARITY.md`).
 
 ## The modern engine
 
-Its default theme is Ptome's house theme (`ptome`, `doc/style.md`):
+Its default theme is the document's look (`doc/looks.md`), Ptome's
+house look unless the document names another (`ptome`, `doc/style.md`):
 asciidoctor-pdf's default with a shorter measure, more open lines,
 headings in the sans, code in a tint and tables with rows only.
+`pdf-theme` names a theme instead (`pdf-theme=ptome` is the house look's).
 `-a pdf-theme=default` is asciidoctor-pdf's theme; a theme of your own
 `extends: ptome` or `extends: default`.
 

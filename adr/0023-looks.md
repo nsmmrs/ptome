@@ -1,6 +1,6 @@
 # ADR-0023: Looks: One Design File, Every Output
 
-**Status:** Proposed on 2026-10-11 (lane TASK-t24g6w, EPIC-x68zbv).
+**Status:** Accepted on 2026-10-11 (lane TASK-t24g6w, EPIC-x68zbv).
 Builds on [ADR-0010](0010-output-templates.md),
 [ADR-0011](0011-house-style.md) and
 [ADR-0013](0013-typst-derived-options.md); leaves

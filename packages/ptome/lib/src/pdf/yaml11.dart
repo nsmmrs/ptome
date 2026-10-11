@@ -46,6 +46,10 @@ Y? parseYaml11(String text, {Uri? sourceUrl}) {
   return _convert(node);
 }
 
+/// [node] (read by `package:yaml`) as a tree, its plain scalars resolved
+/// by YAML 1.1's rules, as a theme file's are.
+Y? yamlToY(YamlNode node) => _convert(node);
+
 Y? _convert(YamlNode node) => switch (node) {
   YamlMap(:final nodes) => YMap({
     for (final entry in nodes.entries)

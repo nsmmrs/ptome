@@ -6,7 +6,9 @@ changes what the rules of typesetting ask for: Matthew Butterick's
 *Practical Typography* (and *Typography for Lawyers*), Robert
 Bringhurst's *The Elements of Typographic Style*, and, for code, notes and
 figures, the conventions of technical publishers' books. The markup is
-Asciidoctor's; only the PDF theme and the stylesheets change.
+Asciidoctor's; only the PDF theme and the stylesheets change. The
+values are the built-in look `ptome` (`data/looks/ptome-look.yml`,
+`doc/looks.md`), which the PDF theme is compiled from.
 
 The classic looks are one setting away: `asciidoctor-compat` (an
 attribute, `PTOME_COMPAT`, or `compat:` in `ptome.yml`; ADR-0015
@@ -17,7 +19,7 @@ epub3-stylesheet=asciidoctor-epub3` (EPUB), `-a pdf-theme=default` (PDF;
 
 ## Values
 
-| Element | Rule | PDF (theme `ptome`) | HTML and website | EPUB |
+| Element | Rule | PDF (look `ptome`) | HTML and website | EPUB |
 | --- | --- | --- | --- | --- |
 | Text face | a serif with real italics and small capitals | Noto Serif | Noto Serif | Noto Serif |
 | Heading and label face | a sans, bold | Noto Sans | Open Sans, 600 | M+ 1p |

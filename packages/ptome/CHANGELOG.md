@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Looks (ADR-0023, `doc/looks.md`): a document's design in one YAML
+  file of tokens, styles of elements and roles, and templates, which
+  each output compiles into its own terms (`:look:`, `:looksdir:`).
+  The house style is the built-in look `ptome`; the PDF theme is
+  compiled from it, byte for byte the PDFs its hand-written theme
+  made. A theme a document names still replaces the look, and can
+  extend it (`extends: look`). The HTML and EPUB stylesheets follow.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

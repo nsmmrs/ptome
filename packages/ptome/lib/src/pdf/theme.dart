@@ -361,10 +361,16 @@ final class _File extends _ThemeSource {
 
 /// Loads PDF themes.
 final class ThemeLoader {
-  /// A loader reporting to [logger].
-  new({LoggerBase? logger}) : _logger = logger ?? LoggerManager.logger;
+  /// A loader reporting to [logger]; [looks] gives the PDF theme of a
+  /// look a theme extends (`extends: look`, the document's; `extends:
+  /// ptome`, the house look's; ADR-0023).
+  new({LoggerBase? logger, this.looks})
+    : _logger = logger ?? LoggerManager.logger;
 
   final LoggerBase _logger;
+
+  /// The PDF theme of the look named `look` or `ptome`, or null.
+  final Theme? Function(String name)? looks;
 
   static const Map<String, String> _deprecatedCategories = {
     'blockquote': 'quote',
@@ -530,6 +536,15 @@ final class ThemeLoader {
             }
             continue;
           }
+          if ((path == 'look' || path == 'ptome') &&
+              !bundledThemeNames.contains(path)) {
+            if (looks?.call(path) case final look?) {
+              if (loaded.add('look:$path') || force) {
+                result = Theme._({...result._values, ...look._values}, null);
+              }
+              continue;
+            }
+          }
           final _ThemeSource next;
           if (bundledThemeNames.contains(path)) {
             next = _Bundled(path);
@@ -597,6 +612,27 @@ final class ThemeLoader {
         key: _fromYaml(value),
     }),
   };
+
+  /// The theme [base] (a bundled theme) with [entries] over it (flat
+  /// theme keys, `heading_h2_font_size`, written as in a theme file),
+  /// then each of [sections] (theme files' entries, in order): a look's
+  /// PDF theme (ADR-0023).
+  Theme loadOver(
+    String base,
+    Map<String, Y> entries, [
+    List<YMap> sections = const [],
+  ]) {
+    final theme = load(base);
+    for (final MapEntry(:key, :value) in entries.entries) {
+      _process(key, value, theme);
+    }
+    for (final section in sections) {
+      for (final MapEntry(:key, :value) in section.entries.entries) {
+        _process(key, value, theme, normalizeKey: true);
+      }
+    }
+    return theme;
+  }
 
   /// Loads the entries of the YAML document [text] into [theme] (a new
   /// theme when null), without resolving `extends`: the gem's

@@ -1,3 +1,6 @@
+# The house PDF theme as written by hand before looks (ADR-0023), frozen:
+# the house look must compile to the theme it gives, key for key, until the
+# house look first changes on purpose (then this file and its test go).
 # ptome's house style for the modern PDF engine (doc/style.md,
 # ADR-0011): asciidoctor-pdf's default theme, with a measure of about 75
 # characters, more open lines, headings in the sans, code in a tint, tables

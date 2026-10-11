@@ -2154,6 +2154,43 @@ base:
       expect(set.$3 - plain, closeTo(12, 0.01));
     });
 
+    test("a document's look is its PDF theme; a named theme replaces it", () {
+      // A look that sets the text size; a theme that extends it.
+      File('${_dir.path}/big-look.yml').writeAsStringSync(
+        'extends: ptome\ntokens:\n  size: { text: { print: 14pt } }\n',
+      );
+      File('${_dir.path}/over-theme.yml')
+          .writeAsStringSync('extends: look\nheading:\n  font_color: FF0000\n');
+      // (No pdf-theme: the helper's default unset.)
+      final looks = {'looksdir': _dir.path, 'look': 'big', 'pdf-theme!': ''};
+      String sizes(String pdf) =>
+          RegExp(r'/F\d+ (\d+(?:\.\d+)?) Tf')
+              .allMatches(_content(pdf))
+              .map((m) => m[1])
+              .toSet()
+              .join(' ');
+      final looked = _pdf('= Doc\n\nText.\n', attributes: looks);
+      expect(sizes(looked), contains('14'));
+      // A theme the document names replaces the look...
+      final named = _pdf(
+        '= Doc\n\nText.\n',
+        attributes: {'looksdir': _dir.path, 'look': 'big'},
+      );
+      expect(sizes(named), isNot(contains('14')));
+      // ...unless it extends it.
+      final extended = _pdf(
+        '= Doc\n\n== Heading\n\nText.\n',
+        attributes: {
+          'looksdir': _dir.path,
+          'look': 'big',
+          'pdf-theme': 'over',
+          'pdf-themesdir': _dir.path,
+        },
+      );
+      expect(sizes(extended), contains('14'));
+      expect(_content(extended), contains('1 0 0 rg'));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

@@ -183,7 +183,8 @@ Ptome reads asciidoctor-pdf themes unchanged. Two ways to switch:
   `benchmark/PARITY.md`). Hyphenation (`hyphens`) works without the
   text-hyphen gem.
 - **Better pages**: without it, Ptome keeps your theme and improves
-  the typesetting (without a theme, it uses Ptome's house theme:
+  the typesetting (without a theme, it uses the document's look,
+  Ptome's house look unless `:look:` names another (`doc/looks.md`):
   `-a pdf-theme=default` for asciidoctor-pdf's). Expect different line
   and page breaks: justified text is broken by Knuth and Plass and
   hyphenated, paragraphs and listings keep two lines on each side of a
