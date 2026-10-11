@@ -2411,7 +2411,7 @@ final class PdfConverter extends BuiltInConverter
     if (given == null) {
       if (_theme.value('page_measure') case final measure?) {
         final width = _pageSize(document).$1;
-        final side = math.max(0.0, (width - _measure(measure)) / 2);
+        final double side = math.max(0, (width - _measure(measure)) / 2);
         return EdgeInsets(
           top: values[0],
           right: side,

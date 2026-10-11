@@ -175,7 +175,7 @@ void main() {
       expect(attributes(const []), {'asciidoctor-compat': 'true@'});
     });
 
-    test("a configured look is a default the command line overrides", () {
+    test('a configured look is a default the command line overrides', () {
       File('${root.path}/ptome.yml').writeAsStringSync('look: book\n');
       expect(attributes(const []), {
         'look': 'book@',

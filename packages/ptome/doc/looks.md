@@ -13,7 +13,15 @@ document chooses another with an attribute:
 
 `look` names a file `<name>-look.yml` in `looksdir`, or a built-in look; a
 path ending in `.yml` names a file. A look that can't be read is reported,
-with its line and column, and the house look is used.
+with its line and column, and the house look is used. A project names its
+look once in its `ptome.yml` (or a user in `~/.config/ptome/config.yml`),
+found beside that file or in its `looksdir:`; the command line uses it
+unless `-a look` says otherwise:
+
+```yaml
+look: book
+looksdir: design      # relative to ptome.yml; beside it if left out
+```
 
 What each output does with a look:
 
@@ -93,7 +101,7 @@ and `epub-css:` parts apply look by look, the one extended first.
 | `size.headings` | Levels 1 to 6 | `heading_h<n>_font_size` |
 | `size.small` | Small text, a ratio (`size: small` in a style) | |
 | `leading` | Line spacing, a ratio | `base_line_height` (print) |
-| `measure` | The line length | (the PDF takes it from `page.margin`) |
+| `measure` | The line length | `page_measure` (the side margins), when `page.margin` isn't set |
 | `paragraph` | `signal` (`space`, `indent`), `space`, `indent` | `prose_margin_bottom`, `prose_text_indent` |
 | `align` | `start`, `center`, `end`, `justify` | `base_text_align` (print) |
 | `hyphenate` | `true` or `false` | `base_hyphens` (print) |

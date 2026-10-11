@@ -351,6 +351,7 @@ each use, which is asciidoctor-pdf's default). With `media` other than
 
 | Key | Default | What it does |
 | --- | --- | --- |
+| `page_measure` | none | The text block's width (`66ch`: 66 zeros of the text face at the text size; `30em`; a length): the left and right margins center it, the top and bottom are `page_margin`'s. A look's `tokens.measure` sets it when the look gives no page margins (`doc/looks.md`); `pdf-page-margin` overrides it. |
 | `running_content_on_blank_pages` | `false` | A blank page (the verso before a chapter that starts on a recto page) has no header or footer unless this is `true`. |
 | `running_content_layer` | `under` | Whether the header is painted `under` the page's content (content reaching into the top margin, a large title's ascenders, covers its rule) or `over` it, as the footer always is. |
 | `running_content_on_openers` | `false` | A page that opens a part or chapter has no header or footer unless this is `true`. |
