@@ -26,6 +26,7 @@ import 'package:ptome/src/highlight/highlight.dart' show CssMode;
 import 'package:ptome/src/highlight/syntax_highlighter.dart';
 import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
+import 'package:ptome/src/jump.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart';
@@ -1561,6 +1562,12 @@ class Html5Converter extends BuiltInConverter {
       ? '<div style="page-break-after: always;"></div>'
       : '<div class="page-break"></div>';
 
+  /// A jump line's cross reference: its target and text.
+  static final RegExp _jumpLinkRx = RegExp(
+    r'^<a href="#([^"]+)">(.*)</a>$',
+    dotAll: true,
+  );
+
   /// Converts the [node] paragraph.
   String convertParagraph(Block node) {
     final String attributes;
@@ -1573,13 +1580,28 @@ class Html5Converter extends BuiltInConverter {
     } else {
       attributes = ' class="paragraph"';
     }
+    var content = _s(node.content());
+    // A jump line: a `[.jump]` paragraph that is a cross reference alone,
+    // worded by the `jump-template` attribute ("Continued in The Science").
+    final doc = node.document! as Document;
+    final link = isJump(node) && !asciidoctorCompat(doc, CompatFormat.html)
+        ? _jumpLinkRx.firstMatch(content)
+        : null;
+    if (link != null) {
+      final text = jumpText(
+        doc,
+        title: link[2]!,
+        back: jumpsBack(doc, node, link[1]!),
+      );
+      content = '<a href="#${link[1]}">$text</a>';
+    }
     if (node.hasTitle) {
       return '<div$attributes>\n'
           '<div class="title">${_s(node.title)}</div>\n'
-          '<p>${_s(node.content())}</p>\n'
+          '<p>$content</p>\n'
           '</div>';
     }
-    return '<div$attributes>\n<p>${_s(node.content())}</p>\n</div>';
+    return '<div$attributes>\n<p>$content</p>\n</div>';
   }
 
   /// Converts the [node] preamble.

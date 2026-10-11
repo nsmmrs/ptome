@@ -24,6 +24,7 @@ import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/index_catalog.dart' show indexHasCategoryHeadings;
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/jump.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart' show TitlePart;
@@ -3996,6 +3997,33 @@ final class PdfConverter extends BuiltInConverter
     if (font.transform case final transform? when transform != 'none') {
       content = transformText(content, transform);
     }
+    // A jump line (`[.jump]`, a cross reference alone; modern engine):
+    // worded by `jump-template` with the target's page, known once the
+    // pages are laid out ("Continued on page 7").
+    if (isJump(node) && !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      if (_jumpAnchorRx.firstMatch(content) case final link?) {
+        final target = link[1]!;
+        final back = jumpsBack(_document, node, target);
+        TextBox jump(String page) => _textBox(
+          '<a anchor="$target">'
+          '${jumpText(_document, title: link[2]!, back: back, page: page)}'
+          '</a>',
+          font,
+          align: align,
+          indent: indent,
+        );
+        _out.add(
+          CustomBox(
+            _LateText(jump, () => _anchorLabel(target)),
+            style: BoxStyle(
+              margin: EdgeInsets(bottom: marginBottom),
+              anchor: node.id,
+            ),
+          ),
+        );
+        return;
+      }
+    }
     // The modern engine's `role_<role>_drop_lines`: the paragraph's own
     // first letter as an initial beside its first lines (and its first
     // `role_<role>_drop_lead_in` words in the role `lead-in`).
@@ -4637,7 +4665,7 @@ final class PdfConverter extends BuiltInConverter
   /// (or inside columns already).
   int? _columnSetOf(AbstractBlock node) {
     if (_inColumns ||
-        !node.hasRole('columns') ||
+        !node.includesRole('columns') ||
         asciidoctorCompat(_document, CompatFormat.pdf)) {
       return null;
     }
@@ -11628,6 +11656,45 @@ final class _Widened implements CustomContent {
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
+}
+
+/// A jump line's cross reference: its target and text.
+final RegExp _jumpAnchorRx = RegExp(
+  r'^<a anchor="([^"]+)">(.*)</a>$',
+  dotAll: true,
+);
+
+/// Text worded only once the pages are laid out: [text] measured with a
+/// placeholder page (`000`) and painted with [page]'s.
+final class _LateText implements CustomContent {
+  const new(this.text, this.page);
+
+  final CustomContent Function(String page) text;
+  final String Function() page;
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final measured = text('000').place(width, available, atTop: atTop);
+    if (measured == null || measured.rest != null) return measured;
+    return CustomPlacement(
+      height: measured.height,
+      anchors: measured.anchors,
+      paint: (canvas, x, top) =>
+          text(page())
+              .place(width, double.infinity, atTop: true)
+              ?.paint(canvas, x, top),
+    );
+  }
+
+  @override
+  double minHeight(double width) => text('000').minHeight(width);
+
+  @override
+  (double, double) intrinsicWidths() => text('000').intrinsicWidths();
 }
 
 /// A heading's number: its title's first `[.number]` span (group 1), and

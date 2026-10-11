@@ -46,6 +46,14 @@ ptome -b docbook5 -o book.xml book.adoc
   (`chapter`, `part`, `chapter introduction`), and its section lists
   have the class `multipage-sections`, for a stylesheet that shows or
   hides them.
+  A paragraph with the role `jump` that is a cross reference alone is a
+  jump line: a piece that goes on in a later section says where, and
+  where it goes on says where it came from (`[.jump]` then
+  `<<avalanche-more>>`). The `jump-template` attribute words it
+  (`{{title}}`, the target's; `{{page}}`, its page in a PDF, none on the
+  web; `{{back}}` when the target comes before): by default "Continued
+  on page 7" or "Continued from page 1" in a PDF, "Continued in The
+  Science" on the web.
   `multipage-page-toclevels` puts a page's own sections at its top, as
   a table of contents (`toc-title`), or in a `multipage_toc.mustache`
   template (`title`, and `entries`: the list).

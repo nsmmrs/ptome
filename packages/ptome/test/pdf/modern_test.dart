@@ -2523,6 +2523,30 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('jump lines: continued on the page the piece goes on, and from', () {
+      const source =
+          '= Issue\n\n[#a]\n== A Piece\n\nIt starts.\n\n'
+          '[.jump.text-right]\n<<a-more>>\n\n<<<\n\n== News\n\nOther.\n\n'
+          '<<<\n\n[#a-more]\n== A Piece, Continued\n\n[.jump]\n<<a>>\n\n'
+          'It ends.\n';
+      final pages = _pages(_pdf(source));
+      expect(pages[0], contains('Continued on page 3'));
+      expect(pages[2], contains('Continued from page 1'));
+      // Its wording, the document's.
+      final worded = _pages(
+        _pdf(
+          source,
+          attributes: {'jump-template': '{{^back}}See p. {{page}}{{/back}}'},
+        ),
+      );
+      expect(worded[0], contains('See p. 3'));
+      // asciidoctor-pdf's: the cross reference as it is.
+      expect(
+        _pages(_pdf(source, compat: true))[0],
+        contains('A Piece, Continued'),
+      );
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

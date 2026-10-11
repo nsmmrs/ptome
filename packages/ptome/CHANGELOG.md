@@ -58,6 +58,10 @@ Asciidoctor project.
   (`section_role_<role>_page_margin`, `_page_background_color`,
   `_page_background_image`, `_page_running_content`) is set on pages of
   its own, laid out by that page template.
+- Jump lines: a `[.jump]` paragraph that is a cross reference alone says
+  where a piece goes on, or came from: "Continued on page 7" in a PDF
+  (the page known once laid out), "Continued in The Science" on the web
+  (`jump-template`).
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and

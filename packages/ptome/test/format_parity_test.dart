@@ -397,6 +397,18 @@ templates:
     }
   });
 
+  test('HTML jump lines: continued in the piece, and from', () {
+    final html = File(
+      convertWith(
+        'html5',
+        '= Issue\n\n[#a]\n== A Piece\n\n[.jump]\n<<a-more>>\n\n'
+            '[#a-more]\n== More\n\n[.jump]\n<<a>>\n',
+      ),
+    ).readAsStringSync();
+    expect(html, contains('<p><a href="#a-more">Continued in More</a></p>'));
+    expect(html, contains('<p><a href="#a">Continued from A Piece</a></p>'));
+  });
+
   test("a look's webfonts after Asciidoctor's; none with its stylesheet", () {
     File('${dir.path}/web-look.yml').writeAsStringSync(
       "webfonts: ['Crimson Pro:400,700', 'Ubuntu Mono:400']\n",
