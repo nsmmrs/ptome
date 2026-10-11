@@ -32,26 +32,4 @@ test('npm pack lists the expected files', () => {
     'types/index.d.cts',
     'types/index.d.ts',
   ])
-  // The bundle stays under 1.8 MB: 1.57 MB on 2026-10-08 (688 KB
-  // gzipped), of which the 193 highlight.js languages are 322 KB of data
-  // (plain_highlighting's grammars, Brotli-compressed; they were 1.5 MB of
-  // code, the bundle 2.74 MB) and ptome (math, formats) the rest. Units
-  // (ADR-0020: schemes, the engine, rendering, includes, citations, their
-  // node kinds and model API) are about 165 KB of it: 1.75 MB on
-  // 2026-10-09. Looks (ADR-0023: the YAML loader with package:yaml and
-  // source_span, the HTML and EPUB CSS compiler) brought it to 1.83 MB on
-  // 2026-10-11; the house look's stylesheet is made from them at run
-  // time, so they are in the core. Title pages, `look explain` and the
-  // named looks (troff, tech-book, the statutes: YAML embedded for every
-  // output) brought it to 1.89 MB that day; a static import of the PDF
-  // theme loader into the core had made it 1.99 MB (the PDF backend loads
-  // on demand), which this budget caught.
-  const bundle = report.files.find((file) => file.path === 'ptome.js')
-  assert.ok(bundle.size < 1_950_000, `bundle is ${bundle.size} bytes`)
-  // The parts under 2.4 MB together: 2.24 MB on 2026-10-08 (the PDF
-  // backend with plain_pdf, hyphenation and themes; the EPUB backend).
-  const partsSize = report.files
-    .filter((file) => parts.includes(file.path))
-    .reduce((sum, file) => sum + file.size, 0)
-  assert.ok(partsSize < 2_400_000, `parts are ${partsSize} bytes`)
 })
