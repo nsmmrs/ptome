@@ -18,6 +18,9 @@ styles:
   title: { style: normal }
 webfonts:
   - Inter:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 2
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
   #header{border-top:var(--ptome-rule-major) solid;padding-top:.5rem}

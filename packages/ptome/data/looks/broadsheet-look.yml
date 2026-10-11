@@ -15,6 +15,9 @@ styles:
 webfonts:
   - Old Standard TT:400,400italic,700
   - Gentium Book Plus:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 6
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-section-columns:6;--mag-column-min:9rem;--mag-body-span:10;--mag-end-mark:""}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}

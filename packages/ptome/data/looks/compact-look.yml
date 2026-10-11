@@ -15,6 +15,9 @@ styles:
 webfonts:
   - Zilla Slab:400,700
   - Source Serif 4:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 5
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}

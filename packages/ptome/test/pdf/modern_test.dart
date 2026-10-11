@@ -2288,6 +2288,91 @@ templates:
       expect(x(inline, 'Offences'), greaterThan(x(inline, '17')));
     });
 
+    test('[.columns]: a section or open block in balanced columns', () {
+      const para =
+          'Avalanches of this kind, called slab avalanches, form when a '
+          'cohesive layer of snow rests on a weaker layer beneath it. ';
+      final body = [
+        for (final n in [2, 3, 1, 2, 3]) para * n,
+      ].join('\n\n');
+      final source =
+          '= Doc\n\nIntro.\n\n[.columns]\n== Science\n\n$body\n\n'
+          '== After\n\nAcross.\n\n[.columns,column-count=2]\n--\n$body\n--\n';
+      List<int> counts(String pdf, String from, String to, int columns) {
+        final out =
+            Process.runSync('pdftotext', [
+                  '-bbox',
+                  '-f',
+                  '1',
+                  '-l',
+                  '1',
+                  pdf,
+                  '-',
+                ]).stdout
+                as String;
+        final words = [
+          for (final m in RegExp(
+            r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]*)<',
+          ).allMatches(out))
+            (double.parse(m[1]!), double.parse(m[2]!), m[3]!),
+        ];
+        final top = words.firstWhere((w) => w.$3 == from).$2;
+        final bottom = words.firstWhere((w) => w.$3 == to).$2;
+        final width = 612 / columns;
+        final lines = [for (var i = 0; i < columns; i++) <double>{}];
+        for (final (x, y, _) in words) {
+          if (y > top + 1 && y < bottom - 1) {
+            lines[(x / width).floor().clamp(0, columns - 1)].add(y);
+          }
+        }
+        return [for (final l in lines) l.length];
+      }
+
+      final pdf = _pdf(source, theme: 'columns_count: 3\n');
+      final three = counts(pdf, 'Science', 'After', 3);
+      // Balanced: the last at most a line shorter than the first.
+      expect(
+        three.first - three.last,
+        inInclusiveRange(0, 1),
+        reason: '$three',
+      );
+      expect(three.every((n) => n > 5), isTrue, reason: '$three');
+      // asciidoctor-pdf's: one column (no gutter in its lines).
+      double widestGap(String pdf) {
+        final out =
+            Process.runSync('pdftotext', [
+                  '-bbox',
+                  '-f',
+                  '1',
+                  '-l',
+                  '1',
+                  pdf,
+                  '-',
+                ]).stdout
+                as String;
+        final byLine = <double, List<(double, double)>>{};
+        for (final m in RegExp(
+          r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)"[^>]*>(?:[^<]*)<',
+        ).allMatches(out)) {
+          (byLine[double.parse(m[2]!)] ??= []).add((
+            double.parse(m[1]!),
+            double.parse(m[3]!),
+          ));
+        }
+        var widest = 0.0;
+        for (final words in byLine.values) {
+          words.sort((a, b) => a.$1.compareTo(b.$1));
+          for (var k = 1; k < words.length; k++) {
+            widest = math.max(widest, words[k].$1 - words[k - 1].$2);
+          }
+        }
+        return widest;
+      }
+
+      expect(widestGap(pdf), greaterThan(10));
+      expect(widestGap(_pdf(source, compat: true)), lessThan(10));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

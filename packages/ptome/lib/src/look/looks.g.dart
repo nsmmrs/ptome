@@ -25,6 +25,9 @@ styles:
 webfonts:
   - Old Standard TT:400,400italic,700
   - Gentium Book Plus:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 6
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-section-columns:6;--mag-column-min:9rem;--mag-body-span:10;--mag-end-mark:""}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}
@@ -48,6 +51,9 @@ styles:
 webfonts:
   - Zilla Slab:400,700
   - Source Serif 4:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 5
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}
@@ -158,6 +164,9 @@ styles:
   title: { style: normal }
 webfonts:
   - Inter:400,400italic,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 2
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
   #header{border-top:var(--ptome-rule-major) solid;padding-top:.5rem}
@@ -276,6 +285,9 @@ webfonts:
   - Bodoni Moda:400,400italic,700,700italic
   - Libre Caslon Text:400,400italic,700
   - Libre Franklin:400,600,700
+# [.columns] sections in print.
+pdf:
+  columns_count: 3
 css: |
   :root{--mag-grid-units:12;--mag-gutter:1.5rem;--mag-body-span:8;--mag-head-align:start;--mag-display-style:italic;--mag-kicker-case:uppercase;--mag-kicker-tracking:.14em;--mag-dropcap-lines:3;--mag-frame-width:0px;--mag-frame-gap:0px;--mag-end-mark:"\25A0";--mag-section-columns:3;--mag-column-min:14rem;--mag-text-align:justify}
   body{display:grid;grid-template-columns:repeat(var(--mag-grid-units),minmax(0,1fr));column-gap:var(--mag-gutter);align-content:start;margin:0;padding:3rem var(--mag-gutter);min-height:100vh;box-sizing:border-box;border:var(--mag-frame-width) solid currentColor;outline:calc(var(--mag-frame-width)/4) solid currentColor;outline-offset:calc(-1*(var(--mag-frame-width) + var(--mag-frame-gap)))}

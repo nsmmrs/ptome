@@ -3059,6 +3059,8 @@ final class PdfConverter extends BuiltInConverter
             balance: true,
           ),
         );
+      } else if (_columnSetOf(section) case final count?) {
+        _out.add(_columns(section, count, () => _traverse(section)));
       } else {
         _traverse(section);
       }
@@ -4369,6 +4371,7 @@ final class PdfConverter extends BuiltInConverter
       _abstract(node);
       return;
     }
+    final count = _columnSetOf(node);
     final children = _collect(() {
       if (node.hasTitle) {
         _caption(
@@ -4377,7 +4380,11 @@ final class PdfConverter extends BuiltInConverter
           labeled: false,
         );
       }
-      _traverse(node);
+      if (count == null) {
+        _traverse(node);
+      } else {
+        _out.add(_columns(node, count, () => _traverse(node)));
+      }
     });
     _out.add(
       BlockBox(
@@ -4387,6 +4394,43 @@ final class PdfConverter extends BuiltInConverter
           anchor: node.id,
         ),
       ),
+    );
+  }
+
+  /// The number of columns [node] sets its content in, the modern
+  /// engine's `[.columns]` (a section's or an open block's): its
+  /// `column-count` attribute, else `columns_count` (2); null for none
+  /// (or inside columns already).
+  int? _columnSetOf(AbstractBlock node) {
+    if (_inColumns ||
+        !node.hasRole('columns') ||
+        asciidoctorCompat(_document, CompatFormat.pdf)) {
+      return null;
+    }
+    final count =
+        int.tryParse(node.attr('column-count') ?? '') ??
+        (_n('columns_count') ?? 2).toInt();
+    return count >= 2 ? count : null;
+  }
+
+  /// What [content] adds, in [count] columns balanced where they end
+  /// (what follows starts under the longer of them), [node]'s.
+  LayoutBox _columns(AbstractBlock node, int count, void Function() content) {
+    final saved = _inColumns;
+    _inColumns = true;
+    final List<LayoutBox> body;
+    try {
+      body = _collect(content);
+    } finally {
+      _inColumns = saved;
+    }
+    return ColumnsBox(
+      body,
+      count: count,
+      gap:
+          _length('columns_gap', _font.size) ??
+          (_n('page_column_gap') ?? _rootFontSize).toDouble(),
+      balance: true,
     );
   }
 

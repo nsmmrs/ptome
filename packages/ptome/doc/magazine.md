@@ -128,7 +128,8 @@ css: |
   :root{--mag-frame-width:4px;--mag-frame-gap:3px;--mag-dropcap-lines:4}
 ```
 
-The PDF edition of an issue is the engine's work still: column sets
-begun mid-page, runarounds, drop caps from the paragraph's own letter
-and per-piece page templates (TASK-3d66jt). In print, the magazine looks
-keep the base theme's faces.
+The PDF edition of an issue is partly the engine's work still: its
+`[.columns]` sections are set in balanced columns already (`columns_count`
+in each era's `pdf:`), while runarounds, drop caps from the paragraph's
+own letter and per-piece page templates are to come (TASK-3d66jt). In
+print, the magazine looks keep the base theme's faces.

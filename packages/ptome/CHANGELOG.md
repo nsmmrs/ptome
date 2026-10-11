@@ -47,6 +47,9 @@ Asciidoctor project.
   stands on a line of its own (`number: hang | line` in a look,
   `heading_number_placement` in a theme): the UK Acts' and the
   Journal's headings. A face's family may be a font stack.
+- PDF: a section or open block with the role `columns` sets its content
+  in balanced columns from where it starts (`columns_count`,
+  `column-count`; modern engine).
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and
