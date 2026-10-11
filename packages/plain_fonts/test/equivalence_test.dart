@@ -5,6 +5,7 @@
 // font. More fonts (files or folders) can be named in
 // PLAIN_FONTS_EQUIVALENCE_FONTS, separated by colons.
 @TestOn('vm')
+@Tags(['nightly'])
 library;
 
 import 'dart:io';

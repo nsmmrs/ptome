@@ -1,5 +1,8 @@
 // OpenTypeShaper against a frozen copy of it (test/support/frozen): every
 // glyph, advance and kerning, and every width, must be what it was.
+@Tags(['nightly'])
+library;
+
 import 'dart:io';
 import 'dart:math' as math;
 

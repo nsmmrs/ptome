@@ -62,10 +62,14 @@ page comparisons: more bookkeeping than the question it answers.
    corpus included. The full tier (before a push, and CI's `gate` job) runs
    every test under coverage, holds ptome's line and branch coverage to a
    floor (`tool/coverage_floor.txt`, raised as it rises), and adds the API
-   and JavaScript projection checks, the CLI on a built executable, the
-   `plain_*` packages and the Node.js and npm suites. Live oracles (the
-   gem's CLI, asciidoctor-epub3 with EPUBCheck, the goldens made again from
-   the pinned bundle) and the slow tests on macOS and Windows run nightly.
+   and JavaScript projection checks, the CLI on a built executable and the
+   `plain_*` packages' tests and APIs. The parts that don't depend on each
+   other run at the same time (about 3 minutes). The Node.js and npm
+   suites run in CI's `npm` job. Live oracles (the gem's CLI,
+   asciidoctor-epub3 with EPUBCheck, the goldens made again from the
+   pinned bundle), the slow tests on macOS and Windows, and the libraries'
+   tests tagged `nightly` (comparisons with frozen copies of rewritten
+   code, fuzzing) run nightly.
 8. **A unit test the black-box suites make redundant goes.** When the
    corpus and the upstream fixes reach everything a test file reaches, it
    is deleted; property tests (an optimized scan against its pattern on

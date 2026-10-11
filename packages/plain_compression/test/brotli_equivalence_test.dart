@@ -4,6 +4,7 @@
 // the brotli tool is installed, larger ones it makes at several qualities
 // and windows.
 @TestOn('vm')
+@Tags(['nightly'])
 library;
 
 import 'dart:io';

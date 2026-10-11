@@ -38,10 +38,15 @@ From the repository root, the gate in two tiers (ADR-0022):
 ```sh
 tool/gate.sh          # every commit, about 40 s: format, analyze, ptome's
                       # tests but the slow ones, the corpus included
-tool/gate.sh full     # before a push: every test with the coverage floor,
-                      # API and JavaScript projection checks, the CLI (bats),
-                      # the plain_* packages, the Node.js and npm suites
+tool/gate.sh full     # before a push, about 3 min: every test with the
+                      # coverage floor, API and JavaScript projection
+                      # checks, the CLI (bats), the plain_* packages
 ```
+
+Their parts run at the same time, each printed with the time it took. CI
+runs the Node.js and npm suites (its `npm` job), and the nightly workflow
+the libraries' tests tagged `nightly` (`dart test -t nightly` in a
+package): comparisons with frozen copies of rewritten code, and fuzzing.
 
 The corpus (`test/corpus`, `dart test -t corpus`) checks ptome against the
 files the Asciidoctor command line writes for about 1,700 documents. It is

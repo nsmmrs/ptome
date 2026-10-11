@@ -37,11 +37,11 @@ jobs:
       run: dart analyze --fatal-infos .
     - name: Check formatting
       run: dart format --output=none --set-exit-if-changed .
-    - name: Test the libraries
+    - name: Test the libraries (but the nightly tests, nightly.yml)
       run: |
         for pkg in packages/plain_*/; do
           echo "::group::$pkg"
-          (cd "$pkg" && dart test)
+          (cd "$pkg" && dart test -x nightly)
           echo "::endgroup::"
         done
     - name: Check the libraries' public APIs against their snapshots

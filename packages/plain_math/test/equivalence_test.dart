@@ -10,6 +10,7 @@
 /// `PLAIN_MATH_FUZZ_SEED` (and `PLAIN_MATH_FUZZ_COUNT`, 20,000 by
 /// default); the digest isn't checked then.
 @TestOn('vm')
+@Tags(['nightly'])
 library;
 
 import 'dart:convert';

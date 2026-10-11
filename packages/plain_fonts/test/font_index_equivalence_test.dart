@@ -3,6 +3,7 @@
 // cache files and answers, on the test fonts and, when the machine has
 // them, the fonts in /usr/share/fonts.
 @TestOn('vm')
+@Tags(['nightly'])
 library;
 
 import 'dart:io';

@@ -1,7 +1,9 @@
 name: Nightly
 # What the per-push gate leaves out (ADR-0022): the slow tests on macOS and
-# Windows, and the live oracles (the gem's CLI, asciidoctor-epub3 and
-# EPUBCheck, and the goldens made again from the pinned bundle).
+# Windows, the libraries' tests tagged nightly (comparisons with frozen
+# copies of rewritten code, fuzzing), and the live oracles (the gem's CLI,
+# asciidoctor-epub3 and EPUBCheck, and the goldens made again from the
+# pinned bundle).
 on:
   schedule:
     - cron: '17 6 * * *'
@@ -34,6 +36,30 @@ jobs:
         echo "PTOME_EXE=$exe" >> "$GITHUB_ENV"
     - name: Run every Dart test but the corpus
       run: dart test -x corpus
+  libraries:
+    # The plain_* packages' tests tagged nightly.
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
+        shell: bash
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Set up Dart
+      uses: dart-lang/setup-dart@v1
+    - name: Install Dart dependencies (the whole workspace)
+      run: dart pub get
+    - name: Run the libraries' nightly tests
+      run: |
+        status=0
+        for pkg in packages/plain_*/; do
+          grep -q nightly "$pkg/dart_test.yaml" 2>/dev/null || continue
+          echo "::group::$pkg"
+          (cd "$pkg" && dart test -t nightly) || status=1
+          echo "::endgroup::"
+        done
+        exit $status
   oracles:
     # The CLI suite against the gem (each test states the gem's behavior),
     # the differential harness's self-check, and EPUB parity with

@@ -2,6 +2,9 @@
 // same formulas, random trees among them, must come out the same to the
 // last bit of every double (items are moved in place and glyph metrics
 // cached now; neither may change a coordinate).
+@Tags(['nightly'])
+library;
+
 import 'dart:io';
 import 'dart:math' as math;
 
