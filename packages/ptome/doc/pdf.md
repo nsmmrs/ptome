@@ -443,6 +443,14 @@ and fits on it in the middle (at the bottom) of the page: a dedication. Any othe
 under the role's (`section_role_<role>_prose_margin_bottom`) takes the place
 of that key (`prose_margin_bottom`) inside the section.
 
+A section whose role has page keys is set on pages of its own, laid
+out by the role's page template (a magazine's feature on tinted pages
+with wider margins), and what follows it starts a page of the layout's
+again (modern engine): `section_role_<role>_page_margin` (as
+`page_margin`), `_page_background_color`, `_page_background_image` (as
+`page_background_image`) and `_page_running_content: none` (no header
+or footer on its pages). Its pages keep the layout's size.
+
 A part on a page of its own is asciidoctor-pdf's
 `heading_part_break_after: always`; a title lower on its page,
 `heading_h2_padding: [3in, 0, 0, 0]`.

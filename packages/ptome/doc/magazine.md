@@ -144,7 +144,9 @@ The PDF edition of an issue is partly the engine's work still: its
 `[.columns]` sections are set in balanced columns, `[.dropcap]`
 paragraphs with their own initial and `[.pullquote]`s floated with the
 text running around them already (`columns_count`, `role: dropcap:
-drop_lines`, `role: pullquote: float` in each era's `pdf:`), while
-runarounds of image contours, threaded frames ("continued on page") and
-per-piece page templates are to come (TASK-3d66jt). In
+drop_lines`, `role: pullquote: float` in each era's `pdf:`), and a
+piece whose section role has page keys is set on pages of its own (its
+margins, a tint or an image behind it, no running content:
+`section: role: <role>: page_background_color` and the like in `pdf:`;
+`doc/pdf.md`). In
 print, the magazine looks keep the base theme's faces.

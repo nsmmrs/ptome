@@ -2463,6 +2463,66 @@ templates:
       expect(quote, isNotEmpty);
     });
 
+    test("a section role's page template: its pages, then the layout's", () {
+      const theme =
+          'section:\n  role:\n    feature:\n'
+          '      page_margin: [72, 144, 72, 144]\n'
+          '      page_background_color: F3EBDD\n'
+          '      page_running_content: none\n';
+      final words = 'Words of the piece run on across the page. ' * 10;
+      final pdf = _pdf(
+        '= Issue\n\n== News\n\n$words\n\n[.feature]\n== Feature\n\n'
+        '$words\n\n== Letters\n\n$words\n',
+        theme: theme,
+      );
+      final pages = [
+        for (final page in _pages(pdf))
+          if (page.isNotEmpty) page,
+      ];
+      expect(pages, hasLength(3));
+      expect(pages[1].first, 'Feature');
+      expect(pages[2].first, 'Letters');
+      // Its margins: the text 144 pt in; its tint; no running content.
+      final bbox =
+          Process.runSync('pdftotext', [
+                '-bbox',
+                '-f',
+                '2',
+                '-l',
+                '2',
+                pdf,
+                '-',
+              ]).stdout
+              as String;
+      expect(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Words<')
+            .allMatches(bbox)
+            .map((m) => double.parse(m[1]!))
+            .reduce(math.min),
+        closeTo(144, 0.5),
+      );
+      final footers =
+          Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String;
+      expect(
+        footers.split('\f')[1],
+        isNot(contains(RegExp(r'^\s*2\s*$', multiLine: true))),
+      );
+      expect(_content(pdf), contains('0.95294 0.92157 0.86667 rg'));
+      // Last in the document: no page after it.
+      final last = _pdf(
+        '= Issue\n\n== News\n\n$words\n\n[.feature]\n== Feature\n\n$words\n',
+        theme: theme,
+      );
+      expect(_pages(last).where((p) => p.isNotEmpty), hasLength(2));
+      // asciidoctor-pdf's: no page of its own.
+      final compat = _pdf(
+        '= Issue\n\n== News\n\nText.\n\n[.feature]\n== Feature\n\nText.\n',
+        theme: theme,
+        compat: true,
+      );
+      expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

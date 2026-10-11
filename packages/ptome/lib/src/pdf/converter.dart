@@ -602,6 +602,8 @@ final class PdfConverter extends BuiltInConverter
     final templates = {
       for (final layout in const ['portrait', 'landscape'])
         layout: templateFor(layout),
+      for (final role in _pageRoles)
+        'section-role-$role': _pageRoleTemplate(role, templateFor),
       for (final MapEntry(:key, value: page) in _importedPages.entries)
         key: PageTemplate(
           Rect(0, 0, page.intrinsicWidth, page.intrinsicHeight),
@@ -2904,6 +2906,122 @@ final class PdfConverter extends BuiltInConverter
 
   /// Converts [section]: its heading, then its blocks.
   void convertSection(Section section) {
+    // A section whose role has page keys (modern engine): on pages of its
+    // own, laid out by the role's page template, the pages after it by
+    // the layout's again (a magazine's piece).
+    if (_pageRoleOf(section) case final role?) {
+      _pageRoles.add(role);
+      _out.add(BreakBox.page(template: 'section-role-$role'));
+      _section(section);
+      if (!_lastInDocument(section)) {
+        _out.add(BreakBox.page(template: _layout));
+      }
+      return;
+    }
+    _section(section);
+  }
+
+  /// The section roles whose page templates the document uses.
+  final Set<String> _pageRoles = {};
+
+  /// The theme keys of a section role's page template.
+  static const List<String> _pageRoleKeys = [
+    'page_margin',
+    'page_background_color',
+    'page_background_image',
+    'page_running_content',
+  ];
+
+  /// The role of [section] that has a page template (any of the theme's
+  /// `section_role_<role>_page_*` keys), in the modern engine.
+  String? _pageRoleOf(Section section) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    for (final role in section.roles) {
+      final name = role.replaceAll('-', '_');
+      if (_pageRoleKeys.any(
+        (key) => _theme.value('section_role_${name}_$key') != null,
+      )) {
+        return name;
+      }
+    }
+    return null;
+  }
+
+  /// Whether nothing comes after [block] in the document.
+  static bool _lastInDocument(AbstractBlock block) {
+    AbstractNode node = block;
+    for (var up = node.parent; up is AbstractBlock; up = node.parent) {
+      if (!identical(up.blocks.last, node)) return false;
+      node = up;
+    }
+    return true;
+  }
+
+  /// The page template of the section role [role]: the layout's page,
+  /// with the role's margins (`section_role_<role>_page_margin`), its
+  /// background (`_page_background_color`, `_page_background_image`) and
+  /// no running content when `_page_running_content` is `none`.
+  PageTemplate _pageRoleTemplate(
+    String role,
+    PageTemplate Function(String layout) templateFor,
+  ) {
+    final base = templateFor(_initialLayout(_document));
+    final prefix = 'section_role_${role}_page';
+    final margins = switch (_theme.value('${prefix}_margin')) {
+      null => base.margins,
+      final value => switch (_edgeValues(value)) {
+        [final top, final right, final bottom, final left] => EdgeInsets(
+          top: top,
+          right: right,
+          bottom: bottom,
+          left: left,
+        ),
+        _ => base.margins,
+      },
+    };
+    final color = switch (_c('${prefix}_background_color')) {
+      final c? => _color(c),
+      null => null,
+    };
+    final image = _resolveBackgroundImage(
+      'section-role-$role-page-background-image',
+      themeKey: '${prefix}_background_image',
+    )?.image;
+    final running = _s('${prefix}_running_content') != 'none';
+    return PageTemplate(
+      base.size,
+      margins: margins,
+      header: running ? base.header : null,
+      footer: running ? base.footer : null,
+      runningOver: base.runningOver,
+      background: color == null && image == null
+          ? base.background
+          : (canvas, info) {
+              final (width, height) = (
+                info.template.size.width,
+                info.template.size.height,
+              );
+              if (color != null) {
+                final bleed = info.template.bleed ?? 0;
+                canvas
+                  ..save()
+                  ..setFillColor(color)
+                  ..rect(
+                    Rect(-bleed, -bleed, width + 2 * bleed, height + 2 * bleed),
+                  )
+                  ..fill()
+                  ..restore();
+              }
+              if (image != null) {
+                _drawPageImage(canvas, image, size: (width, height));
+              }
+            },
+      foreground: base.foreground,
+      bleed: base.bleed,
+    );
+  }
+
+  void _section(Section section) {
     final sectname = section.sectname;
     if (_isAbstract(section)) {
       _abstract(section);
