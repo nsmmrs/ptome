@@ -7,8 +7,8 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Source Serif 4 } }
-    display: { family: { screen: Zilla Slab }, weight: bold }
-    utility: { family: { screen: Source Serif 4 } }
+    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { screen: [Source Serif 4, serif] } }
   color: { accent: '#052962' }
 styles:
   title: { style: normal }

@@ -6,8 +6,8 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Libre Bodoni } }
-    display: { family: { screen: Bodoni Moda }, weight: normal }
-    utility: { family: { screen: Libre Bodoni } }
+    display: { family: { screen: [Bodoni Moda, serif] }, weight: normal }
+    utility: { family: { screen: [Libre Bodoni, serif] } }
   align: { print: start }
 styles:
   title: { style: normal }

@@ -62,9 +62,10 @@ The magazine looks (`magazine`, `magazine-1950s`, `magazine-1960s`,
 website as a print magazine of an era: `doc/magazine.md`.
 
 The statute looks name the act in their running heads (the document's
-title), never the publication they follow. Two of their layouts wait on
-the engine: the UK Acts' section numbers hung in the margin, and the
-Journal's "Article 1" on a line of its own over its bold title.
+title), never the publication they follow. A section's number hangs in
+the margin (`uk-act`) or stands on a line of its own over the title
+(`eu-journal`) when the scheme's title template marks it:
+`title: "[.number]#{{section}}# {{title}}"`.
 
 ## The file
 
@@ -122,7 +123,7 @@ and `epub-css:` parts apply look by look, the one extended first.
 
 | Token | What it is | PDF (HTML and EPUB: the same values, as CSS) |
 | --- | --- | --- |
-| `font.<role>` | A face: `family`, `weight` (`normal`, `bold`), `style` (`normal`, `italic`), `size` (a ratio, for `code`). Roles: `text`, `display`, `code`, `utility`, or any a style names | `text`: `base_font_family`; `code`: `code_font_family`, `codespan_font_family`, `codespan_font_size` |
+| `font.<role>` | A face: `family` (a name, or a list: the web's font stack, `[Palatino Linotype, Palatino, serif]`, of which the PDF sets the first), `weight` (`normal`, `bold`), `style` (`normal`, `italic`), `size` (a ratio, for `code`). Roles: `text`, `display`, `code`, `utility`, or any a style names | `text`: `base_font_family`; `code`: `code_font_family`, `codespan_font_family`, `codespan_font_size` |
 | `size.text` | The text's size | `base_font_size` (print) |
 | `size.headings` | Levels 1 to 6 | `heading_h<n>_font_size` |
 | `size.small` | Small text, a ratio (`size: small` in a style) | |
@@ -157,6 +158,7 @@ subtitle) leaves its style out.
 | `padding`, `radius` | lengths | `_padding`, `_border_radius` | `padding`, `border-radius` |
 | `border`, `rule` | `none`, or `{ width, color }` (a width may name a rule token) | `_border_width`, `_border_color`; `_column_rule_*` (an admonition's rule) | `border`; `border-left` |
 | `keep-with-next` | `true` | `_min_height_after: auto` (headings) | `break-after: avoid` |
+| `number`, `hang` | a heading's number (its first `[.number]` span): `inline`, `hang` (left of the title's edge, `hang` wide, 2.5em by default), `line` (a line of its own) | `_number_placement`, `_number_hang` | a float pulled into the margin; `display: block` |
 | `frame`, `frame-sides`, `rows`, `columns`, `head-rule`, `stripes` | a table's rules, and its alternate rows' background | `table_border_*`, `table_grid_*`, `table_head_border_bottom_*`, `table_body_stripe_background_color` | the table's, its cells' and its head's borders |
 
 ## Title pages

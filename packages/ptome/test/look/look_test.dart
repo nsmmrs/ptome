@@ -425,6 +425,59 @@ tokens:
     expect(measure is YScalar ? measure.value.rubyString : null, '30rem');
   });
 
+  test("a heading's number: hung, or on a line of its own", () {
+    _look('num', '''
+styles:
+  heading: { number: hang, hang: 3em }
+  h3: { number: line }
+  paragraph: { number: line }
+''');
+    final look = _load('num');
+    final warnings = <String>[];
+    final entries = lookThemeEntries(look, warn: warnings.add);
+    String? key(String name) => switch (entries[name]) {
+      YScalar(:final value) => value.rubyString,
+      _ => null,
+    };
+    expect(key('heading_number_placement'), 'hang');
+    expect(key('heading_number_hang'), '3em');
+    expect(key('heading_h3_number_placement'), 'line');
+    expect(warnings, [
+      'look num: styles.paragraph.number has no effect in the PDF',
+    ]);
+    final css = lookCss(look, CssTarget.html);
+    expect(
+      css,
+      contains(
+        'h1>.number:first-child,h2>.number:first-child,h3>.number:first-child',
+      ),
+    );
+    expect(css, contains('{float:left;width:3em;margin-left:-3em}'));
+    expect(css, contains('h3>.number:first-child{display:block}'));
+  });
+
+  test('a font stack: the PDF sets its first family, CSS all of them', () {
+    _look('stack', '''
+tokens:
+  font:
+    text: { family: [Palatino Linotype, Palatino, serif] }
+    display: { family: [Bodoni Moda] }
+''');
+    final look = _load('stack');
+    final family = lookThemeEntries(look)['base_font_family'];
+    expect(
+      family is YScalar ? family.value.rubyString : null,
+      'Palatino Linotype',
+    );
+    final css = lookCss(look, CssTarget.html);
+    expect(
+      css,
+      contains('--ptome-font-text:"Palatino Linotype","Palatino",serif'),
+    );
+    // (No generic family in the stack: the role's.)
+    expect(css, contains('--ptome-font-display:"Bodoni Moda",sans-serif'));
+  });
+
   test('every built-in look compiles for each output without a warning', () {
     for (final name in builtInLooks.keys) {
       final look = LookLoader().load(name);

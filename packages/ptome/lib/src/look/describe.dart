@@ -192,6 +192,15 @@ String? _style(MediumStyle style) {
     if (style.border case final border?) 'border ${_rule(border)}',
     if (style.rule case final rule?) 'rule beside ${_rule(rule)}',
     if (style.keepWithNext == true) 'kept with what follows',
+    if (style.number case final number? when number != NumberPlacement.inline)
+      switch (number) {
+        NumberPlacement.hang =>
+          'its number hung${switch (style.hang) {
+            final hang? => ' $hang',
+            null => '',
+          }}',
+        _ => 'its number on a line of its own',
+      },
     if (style.frame case final frame?) 'frame ${_rule(frame)}',
     if (style.frameSides case final sides?) 'sides ${_rule(sides)}',
     if (style.rows case final rows?) 'rows ${_rule(rows)}',

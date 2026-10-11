@@ -13,9 +13,9 @@
 # own Times and Courier, which are the faces themselves.
 tokens:
   font:
-    text: { family: { print: TeX Gyre Termes, screen: Times New Roman } }
-    display: { family: { print: TeX Gyre Termes, screen: Times New Roman }, weight: bold }
-    code: { family: { print: TeX Gyre Cursor, screen: Courier New }, size: 0.82 }
+    text: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] } }
+    display: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] }, weight: bold }
+    code: { family: { print: TeX Gyre Cursor, screen: [Courier New, Courier, monospace] }, size: 0.82 }
   size:
     text: { print: 11pt, screen: 18px }
     # The title, chapters (a book's level 1), sections, the rest: ms's

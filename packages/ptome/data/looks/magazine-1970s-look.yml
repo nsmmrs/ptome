@@ -5,8 +5,8 @@
 extends: magazine
 tokens:
   font:
-    display: { family: { screen: Zilla Slab }, weight: bold }
-    utility: { family: { screen: Zilla Slab } }
+    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { screen: [Zilla Slab, serif] } }
   color: { accent: '#B3261E' }
 styles:
   title: { style: normal }

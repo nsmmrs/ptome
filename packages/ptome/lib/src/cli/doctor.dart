@@ -347,7 +347,8 @@ final List<NeededFont> lookFonts = [
 /// the command.)
 Set<String> lookFamilies(Look look) {
   final families = {
-    for (final face in look.tokens.fonts.values) ?face.family?.of(Medium.print),
+    for (final face in look.tokens.fonts.values)
+      ?face.family?.of(Medium.print)?.primary,
   };
   void scan(YamlNode node, String key) {
     switch (node) {

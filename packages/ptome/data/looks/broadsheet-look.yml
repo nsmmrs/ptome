@@ -7,7 +7,7 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Gentium Book Plus } }
-    display: { family: { screen: Old Standard TT }, weight: bold }
+    display: { family: { screen: [Old Standard TT, serif] }, weight: bold }
   size: { text: { print: 9pt, screen: 1rem } }
   leading: { print: 1.2, screen: 1.45 }
 styles:

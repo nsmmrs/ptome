@@ -11,8 +11,8 @@
 # the Ionic of the text.
 tokens:
   font:
-    text: { family: { print: TeX Gyre Schola, screen: Century Schoolbook } }
-    display: { family: { print: TeX Gyre Schola, screen: Century Schoolbook }, weight: bold }
+    text: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] } }
+    display: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] }, weight: bold }
   size:
     text: { print: 8pt, screen: 17px }
     headings: { print: [14pt, 10pt, 8.5pt, 8pt, 8pt, 8pt] }

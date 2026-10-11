@@ -421,11 +421,16 @@ final class _CssCompiler {
 
   /// A face's `font-family` value: its custom property in HTML, the
   /// family itself in an EPUB.
-  String _fontFamily(String family, String role) =>
+  String _fontFamily(FontStack family, String role) =>
       html ? 'var(--ptome-font-$role)' : _family(family, role);
 
-  static String _family(String family, String role) =>
-      '"$family",${_generic(role)}';
+  /// [stack] as CSS writes it: each family quoted, then the generic one
+  /// the stack names, else [role]'s.
+  static String _family(FontStack stack, String role) => [
+    for (final family in stack.families)
+      if (FontStack.generics.contains(family)) family else '"$family"',
+    if (!stack.families.any(FontStack.generics.contains)) _generic(role),
+  ].join(',');
 
   static String _align(Alignment align) => switch (align) {
     Alignment.start => 'start',
@@ -569,6 +574,42 @@ final class _CssCompiler {
     if (style.keepWithNext case final keep?) {
       add('keep-with-next', 'break-after:${keep ? 'avoid' : 'auto'}');
       add('keep-with-next', 'page-break-after:${keep ? 'avoid' : 'auto'}');
+    }
+    // A heading's number: its first `[.number]` span, hung left of the
+    // title's edge (a float as wide as the hang, pulled into the margin)
+    // or on a line of its own.
+    if (style.number case final number?) {
+      final heading = switch (styleTarget) {
+        ElementTarget(:final element) =>
+          element == LookElement.heading ||
+              element.name.length == 2 && element.name.startsWith('h'),
+        RoleTarget() => false,
+      };
+      if (!heading || selector == null) {
+        _unsupported('$item.number');
+      } else {
+        final hang = _length(style.hang ?? const Length(2.5, LengthUnit.em));
+        rules.add((
+          [for (final s in selector.split(',')) '$s>.number:first-child']
+              .join(','),
+          [
+            for (final css in switch (number) {
+              NumberPlacement.hang => [
+                'float:left',
+                'width:$hang',
+                'margin-left:-$hang',
+              ],
+              NumberPlacement.line => ['display:block'],
+              NumberPlacement.inline => [
+                'display:inline',
+                'float:none',
+                'margin-left:0',
+              ],
+            })
+              ('$item.number', css),
+          ],
+        ));
+      }
     }
     // (A target without the element, as HTML without a subtitle's: left
     // out by design.)

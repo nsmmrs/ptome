@@ -2263,6 +2263,31 @@ templates:
       expect(_top(pdf, 'Doc')! - _top(pdf, 'Version')!, greaterThan(72));
     });
 
+    test("a heading's number hung in the margin, or on a line of its own", () {
+      double x(String pdf, String word) => double.parse(
+        RegExp('xMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<').firstMatch(
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+        )![1]!,
+      );
+      const source =
+          '= Act\n\n== [.number]#17# Offences\n\nWords at the margin.\n';
+      final hung = _pdf(
+        source,
+        theme: 'heading:\n  number_placement: hang\n  number_hang: 40\n',
+      );
+      // The title at the text's edge, its number 40 pt left of it.
+      expect(x(hung, 'Offences'), closeTo(x(hung, 'Words'), 0.5));
+      expect(x(hung, '17'), closeTo(x(hung, 'Words') - 40, 0.5));
+      expect(_top(hung, '17'), closeTo(_top(hung, 'Offences')!, 0.5));
+      final lined = _pdf(source, theme: 'heading:\n  number_placement: line\n');
+      expect(_top(lined, 'Offences'), greaterThan(_top(lined, '17')! + 10));
+      expect(x(lined, 'Offences'), closeTo(x(lined, '17'), 0.5));
+      // Without a placement, in its line.
+      final inline = _pdf(source);
+      expect(_top(inline, '17'), closeTo(_top(inline, 'Offences')!, 0.5));
+      expect(x(inline, 'Offences'), greaterThan(x(inline, '17')));
+    });
+
     test('base_font_embedding: simple embeds simple TrueType fonts', () {
       final source = 'Words in a line that is set justified and wraps.\n' * 4;
       const theme = 'base_text_align: justify\n';

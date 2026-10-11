@@ -3328,14 +3328,39 @@ final class PdfConverter extends BuiltInConverter
       if (font.style == 'bold' || font.style == 'bold_italic') 'bold',
       if (font.style == 'italic' || font.style == 'bold_italic') 'italic',
     };
-    final box = _textBox(
-      text,
-      font,
-      align: align,
+    TextBox textBox(String markup, {String? align_}) => _textBox(
+      markup,
+      font!,
+      align: align_ ?? align,
       inheritedStyles: styles,
       inherit: _decoration('heading', level),
       normalize: false,
     );
+    // The title's number (its first `[.number]` span, ADR-0023): hung
+    // left of the title's edge, or on a line of its own.
+    final placement =
+        _s('heading_h${level}_number_placement') ??
+        _s('heading_number_placement');
+    final number = placement == 'hang' || placement == 'line'
+        ? _headingNumberRx.firstMatch(text)
+        : null;
+    final CustomContent box;
+    if (number != null && placement == 'line') {
+      box = textBox('${number[1]}<br>${text.substring(number.end)}');
+    } else if (number != null) {
+      final hang =
+          _length('heading_h${level}_number_hang', font.size) ??
+          _length('heading_number_hang', font.size) ??
+          2.5 * font.size;
+      box = _Hung(
+        textBox(text.substring(number.end)),
+        textBox(number[1]!, align_: 'left'),
+        hang,
+        gap: font.size / 2,
+      );
+    } else {
+      box = textBox(text);
+    }
     final role = _headingRole;
     // (Right after another heading, the larger of its space below and
     // this one's above: [collapse] is that space below.)
@@ -3354,7 +3379,7 @@ final class PdfConverter extends BuiltInConverter
                 _n('heading_margin_bottom') ??
                 0)
             .toDouble();
-    CustomContent content = box;
+    var content = box;
     // The modern engine's `heading_min_height_after: auto`: the heading
     // stays with what starts after it (as much of it as may start a page:
     // a paragraph's first lines): a heading is never the last thing on a
@@ -11308,6 +11333,52 @@ final class _Widened implements CustomContent {
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
+}
+
+/// A heading's number: its title's first `[.number]` span (group 1), and
+/// the space after it.
+final RegExp _headingNumberRx = RegExp(
+  r'^(<span class="(?:[^"]* )?number(?: [^"]*)?">.*?</span>)\s*',
+);
+
+/// A heading's [title] with its [number] hung left of its edge: [hang]
+/// from it, or the number's width and [gap] when that is more, at the
+/// title's top (their first lines' baselines meet).
+final class _Hung implements CustomContent {
+  const new(this.title, this.number, this.hang, {required this.gap});
+
+  final CustomContent title;
+  final CustomContent number;
+  final double hang;
+  final double gap;
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final placed = title.place(width, available, atTop: atTop);
+    if (placed == null) return null;
+    final numberWidth = number.intrinsicWidths().$2;
+    final mark = number.place(numberWidth + 1, double.infinity, atTop: true);
+    final offset = math.max(hang, numberWidth + gap);
+    return CustomPlacement(
+      height: placed.height,
+      rest: placed.rest,
+      anchors: placed.anchors,
+      paint: (page, x, top) {
+        placed.paint(page, x, top);
+        mark?.paint(page, x - offset, top);
+      },
+    );
+  }
+
+  @override
+  double minHeight(double width) => title.minHeight(width);
+
+  @override
+  (double, double) intrinsicWidths() => title.intrinsicWidths();
 }
 
 /// [content] with a [gap] above it at the top of a page (a heading's

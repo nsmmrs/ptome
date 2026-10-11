@@ -1,14 +1,15 @@
 # Acts of the UK Parliament as printed since 2001, measured
 # (TASK-d0359h): the text in Book Antiqua 11 on 12; sections headed in
-# bold, their numbers before them (the printed Acts hang them in the
-# margin); italic running heads, the Act's title and the section. A4.
+# bold, their numbers hung in the margin (the `[.number]` part of a
+# unit's title: `title: "[.number]#{{section}}# {{title}}"` in the
+# scheme); italic running heads, the Act's title and the section. A4.
 #
 # The face's free stand-in: TeX Gyre Pagella, a Palatino as Book Antiqua
 # is (`ptome doctor --look uk-act`).
 tokens:
   font:
-    text: { family: { print: TeX Gyre Pagella, screen: Palatino Linotype } }
-    display: { family: { print: TeX Gyre Pagella, screen: Palatino Linotype }, weight: bold }
+    text: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] } }
+    display: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] }, weight: bold }
   size:
     text: { print: 11pt, screen: 19px }
     headings: { print: [18pt, 13pt, 11pt, 11pt, 11pt, 11pt] }
@@ -21,7 +22,7 @@ tokens:
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
   page: { size: A4, margin: [25mm, 32mm, 25mm, 32mm] }
 styles:
-  heading: { font: display, color: ink, space-before: { print: 12pt }, space-after: { print: 4pt }, keep-with-next: true }
+  heading: { font: display, color: ink, space-before: { print: 12pt }, space-after: { print: 4pt }, keep-with-next: true, number: hang, hang: 2.5em }
   # Parts and cross-headings: centred, in capitals' place a larger size.
   h2: { font: text, weight: normal }
   title: { font: display, color: ink }
@@ -49,3 +50,5 @@ pdf:
   footer:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content h2{text-align:center}

@@ -231,14 +231,14 @@ final class _Compiler {
   void _tokens() {
     _item = 'tokens.font.text';
     if (tokens.fonts['text']?.at(Medium.print) case final face?) {
-      _set('base_font_family', face.family?.let(_string));
+      _set('base_font_family', face.family?.primary.let(_string));
       if (face.weight != null || face.shape != null) {
         _set('base_font_style', _string(_fontStyle(face.weight, face.shape)));
       }
     }
     _item = 'tokens.font.code';
     if (tokens.fonts['code']?.at(Medium.print) case final face?) {
-      if (face.family case final family?) {
+      if (face.family?.primary case final family?) {
         _set('codespan_font_family', _string(family));
         _set('code_font_family', _string(family));
       }
@@ -377,7 +377,7 @@ final class _Compiler {
       },
     };
     from('font');
-    key('font_family', face?.family?.let(_string));
+    key('font_family', face?.family?.primary.let(_string));
     final weight = style.weight ?? face?.weight;
     final shape = style.shape ?? face?.shape;
     if (face != null || style.weight != null || style.shape != null) {
@@ -445,6 +445,18 @@ final class _Compiler {
           key('column_rule_color', _color(color, '$item.rule'));
         }
       case null:
+    }
+    for (final (property, suffix, value) in [
+      ('number', 'number_placement', style.number?.name.let(_string)),
+      ('hang', 'number_hang', style.hang?.let(_length)),
+    ]) {
+      if (value == null) continue;
+      if (category.startsWith('heading')) {
+        from(property);
+        key(suffix, value);
+      } else {
+        none(property);
+      }
     }
     if (style.keepWithNext case final keep?) {
       from('keep-with-next');

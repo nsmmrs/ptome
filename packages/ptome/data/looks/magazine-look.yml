@@ -24,7 +24,7 @@
 tokens:
   font:
     text: { family: { screen: Libre Caslon Text } }
-    display: { family: { screen: Bodoni Moda }, weight: bold }
+    display: { family: { screen: [Bodoni Moda, serif] }, weight: bold }
     utility: { family: { screen: Libre Franklin } }
   size:
     text: { print: 10pt, screen: 1.0625rem }

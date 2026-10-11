@@ -216,6 +216,8 @@ Map<String, Set<Medium>> _items(Look look) {
       ('border', style.border),
       ('rule', style.rule),
       ('keep-with-next', style.keepWithNext),
+      ('number', style.number),
+      ('hang', style.hang),
       ('frame', style.frame),
       ('frame-sides', style.frameSides),
       ('rows', style.rows),

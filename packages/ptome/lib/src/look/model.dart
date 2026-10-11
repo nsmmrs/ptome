@@ -188,8 +188,8 @@ final class Face {
   /// A face of [family].
   const new({this.family, this.weight, this.shape, this.size});
 
-  /// The family's name.
-  final ByMedium<String>? family;
+  /// The family, and the families after it on the web.
+  final ByMedium<FontStack>? family;
 
   /// Its weight where a style doesn't say.
   final ByMedium<FontWeight>? weight;
@@ -216,8 +216,8 @@ final class MediumFace {
   /// A face of [family].
   const new({this.family, this.weight, this.shape, this.size});
 
-  /// The family's name.
-  final String? family;
+  /// The family, and the families after it on the web.
+  final FontStack? family;
 
   /// Its weight.
   final FontWeight? weight;
@@ -276,6 +276,37 @@ final class PageDimensions extends PageSize {
 
   @override
   String toString() => '$width × $height';
+}
+
+/// A family and those that stand in for it where it isn't installed
+/// (CSS's font stack): the PDF sets the [primary] family; the web asks
+/// for each in turn, then a generic family.
+@immutable
+final class FontStack {
+  /// The [families], the first the face's own.
+  const new(this.families);
+
+  /// The families, in order (at least one).
+  final List<String> families;
+
+  /// The face's own family.
+  String get primary => families.first;
+
+  /// CSS's generic families, which a stack may end with.
+  static const Set<String> generics = {
+    'serif',
+    'sans-serif',
+    'monospace',
+    'cursive',
+    'fantasy',
+    'system-ui',
+    'ui-serif',
+    'ui-sans-serif',
+    'ui-monospace',
+  };
+
+  @override
+  String toString() => families.join(', ');
 }
 
 /// The page, in print.
@@ -621,6 +652,8 @@ final class Style {
     this.border,
     this.rule,
     this.keepWithNext,
+    this.number,
+    this.hang,
     this.frame,
     this.frameSides,
     this.rows,
@@ -674,6 +707,12 @@ final class Style {
   /// Whether it stays with what follows it.
   final ByMedium<bool>? keepWithNext;
 
+  /// Where a heading's number (its `[.number]` part) goes.
+  final ByMedium<NumberPlacement>? number;
+
+  /// The width a hung number takes, left of the heading's text.
+  final ByMedium<Length>? hang;
+
   /// A table's rules: its top and bottom, its sides, between its rows,
   /// between its columns, under its head; and its rows' alternate
   /// background.
@@ -711,6 +750,8 @@ final class Style {
     border: border?.of(medium),
     rule: rule?.of(medium),
     keepWithNext: keepWithNext?.of(medium),
+    number: number?.of(medium),
+    hang: hang?.of(medium),
     frame: frame?.of(medium),
     frameSides: frameSides?.of(medium),
     rows: rows?.of(medium),
@@ -740,6 +781,8 @@ final class MediumStyle {
     this.border,
     this.rule,
     this.keepWithNext,
+    this.number,
+    this.hang,
     this.frame,
     this.frameSides,
     this.rows,
@@ -792,6 +835,12 @@ final class MediumStyle {
 
   /// The [Style]'s `keepWithNext` in the medium.
   final bool? keepWithNext;
+
+  /// The [Style]'s `number` in the medium.
+  final NumberPlacement? number;
+
+  /// The [Style]'s `hang` in the medium.
+  final Length? hang;
 
   /// The [Style]'s `frame` in the medium.
   final RuleValue? frame;
@@ -860,6 +909,20 @@ enum TitlePart {
 
   /// The logo (`title-logo-image`).
   logo,
+}
+
+/// Where a heading's number goes: the part of its title a `[.number]`
+/// span holds (a unit scheme's title template writes it:
+/// `[.number]#{{section}}# {{title}}`).
+enum NumberPlacement {
+  /// Before the title, in its line.
+  inline,
+
+  /// Hung left of the title's edge, in the margin (the UK's Acts).
+  hang,
+
+  /// On a line of its own, over the title (the EU's Official Journal).
+  line,
 }
 
 /// What a slot shows.

@@ -17,7 +17,7 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Gentium Book Plus } }
-    display: { family: { screen: Old Standard TT }, weight: bold }
+    display: { family: { screen: [Old Standard TT, serif] }, weight: bold }
   size: { text: { print: 9pt, screen: 1rem } }
   leading: { print: 1.2, screen: 1.45 }
 styles:
@@ -40,8 +40,8 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Source Serif 4 } }
-    display: { family: { screen: Zilla Slab }, weight: bold }
-    utility: { family: { screen: Source Serif 4 } }
+    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { screen: [Source Serif 4, serif] } }
   color: { accent: '#052962' }
 styles:
   title: { style: normal }
@@ -57,9 +57,10 @@ css: |
   'eu-journal':
       r'''# EU legislation as the Official Journal's L series has set it since
 # 1 April 2014, measured (TASK-d0359h): one column, the text 9.6 on
-# 10.5; an article's heading centred and italic, its title bold (here
-# on one line: "Article 1: Subject-matter"); recitals and paragraphs
-# numbered. A4. The running head names the act (the document's title),
+# 10.5; an article's number centred and italic on a line of its own,
+# its title bold under it (the `[.number]` part of a unit's title:
+# `title: "[.number]#Article {{article}}# {{title}}"` in the scheme);
+# recitals and paragraphs numbered. A4. The running head names the act (the document's title),
 # not the Journal.
 #
 # The face's free stand-in: Crimson Pro for Albertina (`ptome doctor
@@ -67,7 +68,7 @@ css: |
 tokens:
   font:
     text: { family: Crimson Pro }
-    display: { family: Crimson Pro, weight: bold }
+    display: { family: [Crimson Pro, serif], weight: bold }
   size:
     text: { print: 9.6pt, screen: 18px }
     headings: { print: [14pt, 11pt, 9.6pt, 9.6pt, 9.6pt, 9.6pt] }
@@ -81,8 +82,9 @@ tokens:
   page: { size: A4, margin: [22mm, 24mm, 20mm, 24mm] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 9pt }, space-after: { print: 5pt }, keep-with-next: true }
-  # Articles: centred, italic.
-  h3: { font: text, weight: normal, style: italic }
+  # Articles: the number centred and italic over the title in bold.
+  h3: { font: text, number: line }
+  .number: { weight: normal, style: italic }
   title: { font: display, color: ink }
   link: { color: ink }
   table: { frame: { width: hairline, color: ink }, rows: { width: hairline, color: ink }, columns: { width: hairline, color: ink }, head-rule: { width: hairline, color: ink } }
@@ -109,6 +111,8 @@ pdf:
   footer:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content h2,#content h3,#content h4{text-align:center}
 ''',
   'magazine-1950s':
       r'''# The 1950s fashion magazine (Brodovitch's *Harper's Bazaar*, Henry
@@ -119,8 +123,8 @@ extends: magazine
 tokens:
   font:
     text: { family: { screen: Libre Bodoni } }
-    display: { family: { screen: Bodoni Moda }, weight: normal }
-    utility: { family: { screen: Libre Bodoni } }
+    display: { family: { screen: [Bodoni Moda, serif] }, weight: normal }
+    utility: { family: { screen: [Libre Bodoni, serif] } }
   align: { print: start }
 styles:
   title: { style: normal }
@@ -171,8 +175,8 @@ css: |
 extends: magazine
 tokens:
   font:
-    display: { family: { screen: Zilla Slab }, weight: bold }
-    utility: { family: { screen: Zilla Slab } }
+    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { screen: [Zilla Slab, serif] } }
   color: { accent: '#B3261E' }
 styles:
   title: { style: normal }
@@ -237,7 +241,7 @@ css: |
 tokens:
   font:
     text: { family: { screen: Libre Caslon Text } }
-    display: { family: { screen: Bodoni Moda }, weight: bold }
+    display: { family: { screen: [Bodoni Moda, serif] }, weight: bold }
     utility: { family: { screen: Libre Franklin } }
   size:
     text: { print: 10pt, screen: 1.0625rem }
@@ -529,9 +533,9 @@ css: |
 # own Times and Courier, which are the faces themselves.
 tokens:
   font:
-    text: { family: { print: TeX Gyre Termes, screen: Times New Roman } }
-    display: { family: { print: TeX Gyre Termes, screen: Times New Roman }, weight: bold }
-    code: { family: { print: TeX Gyre Cursor, screen: Courier New }, size: 0.82 }
+    text: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] } }
+    display: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] }, weight: bold }
+    code: { family: { print: TeX Gyre Cursor, screen: [Courier New, Courier, monospace] }, size: 0.82 }
   size:
     text: { print: 11pt, screen: 18px }
     # The title, chapters (a book's level 1), sections, the rest: ms's
@@ -592,15 +596,16 @@ css: |
 ''',
   'uk-act': r'''# Acts of the UK Parliament as printed since 2001, measured
 # (TASK-d0359h): the text in Book Antiqua 11 on 12; sections headed in
-# bold, their numbers before them (the printed Acts hang them in the
-# margin); italic running heads, the Act's title and the section. A4.
+# bold, their numbers hung in the margin (the `[.number]` part of a
+# unit's title: `title: "[.number]#{{section}}# {{title}}"` in the
+# scheme); italic running heads, the Act's title and the section. A4.
 #
 # The face's free stand-in: TeX Gyre Pagella, a Palatino as Book Antiqua
 # is (`ptome doctor --look uk-act`).
 tokens:
   font:
-    text: { family: { print: TeX Gyre Pagella, screen: Palatino Linotype } }
-    display: { family: { print: TeX Gyre Pagella, screen: Palatino Linotype }, weight: bold }
+    text: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] } }
+    display: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] }, weight: bold }
   size:
     text: { print: 11pt, screen: 19px }
     headings: { print: [18pt, 13pt, 11pt, 11pt, 11pt, 11pt] }
@@ -613,7 +618,7 @@ tokens:
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
   page: { size: A4, margin: [25mm, 32mm, 25mm, 32mm] }
 styles:
-  heading: { font: display, color: ink, space-before: { print: 12pt }, space-after: { print: 4pt }, keep-with-next: true }
+  heading: { font: display, color: ink, space-before: { print: 12pt }, space-after: { print: 4pt }, keep-with-next: true, number: hang, hang: 2.5em }
   # Parts and cross-headings: centred, in capitals' place a larger size.
   h2: { font: text, weight: normal }
   title: { font: display, color: ink }
@@ -641,6 +646,8 @@ pdf:
   footer:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content h2{text-align:center}
 ''',
   'us-code': r'''# The United States Code as the Government Publishing Office prints it,
 # measured (TASK-d0359h): two justified columns about 17½ pc wide; the
@@ -655,8 +662,8 @@ pdf:
 # the Ionic of the text.
 tokens:
   font:
-    text: { family: { print: TeX Gyre Schola, screen: Century Schoolbook } }
-    display: { family: { print: TeX Gyre Schola, screen: Century Schoolbook }, weight: bold }
+    text: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] } }
+    display: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] }, weight: bold }
   size:
     text: { print: 8pt, screen: 17px }
     headings: { print: [14pt, 10pt, 8.5pt, 8pt, 8pt, 8pt] }

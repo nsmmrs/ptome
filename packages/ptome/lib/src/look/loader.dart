@@ -460,12 +460,20 @@ final class _Parser {
       final v => _byMedium(v, '$what.$key', parse),
     };
     return Face(
-      family: get('family', _text),
+      family: get('family', _fontStack),
       weight: get('weight', _weight),
       shape: get('style', (v, w) => _choice(v, w, FontShape.values)),
       size: get('size', _ratio),
     );
   }
+
+  /// A family, or a list of them (a font stack).
+  static FontStack _fontStack(_Raw raw, String what) => switch (raw) {
+    _RawLeaf(node: YamlList(:final nodes)) when nodes.isNotEmpty => FontStack([
+      for (final node in nodes) _string(node, what),
+    ]),
+    _ => FontStack([_text(raw, what)]),
+  };
 
   Paragraph _paragraph(_RawMap raw) {
     _only(raw, 'tokens.paragraph', const {'signal', 'space', 'indent'});
@@ -560,6 +568,8 @@ final class _Parser {
       'border',
       'rule',
       'keep-with-next',
+      'number',
+      'hang',
       'frame',
       'frame-sides',
       'rows',
@@ -594,6 +604,8 @@ final class _Parser {
       border: get('border', _rule),
       rule: get('rule', _rule),
       keepWithNext: get('keep-with-next', _bool),
+      number: get('number', (v, w) => _choice(v, w, NumberPlacement.values)),
+      hang: get('hang', _length),
       frame: get('frame', _rule),
       frameSides: get('frame-sides', _rule),
       rows: get('rows', _rule),

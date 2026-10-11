@@ -42,7 +42,11 @@ Asciidoctor project.
   Statutes: `us-code` (two columns of 8/9, catchlines in bold, sections
   in the running head), `eu-journal` (one column of 9.6/10.5, centred
   italic article headings) and `uk-act` (11/12, bold section headings,
-  italic running heads).
+  italic running heads). A heading's number (its title's `[.number]`
+  span, from a unit scheme's title template) hangs in the margin or
+  stands on a line of its own (`number: hang | line` in a look,
+  `heading_number_placement` in a theme): the UK Acts' and the
+  Journal's headings. A face's family may be a font stack.
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and

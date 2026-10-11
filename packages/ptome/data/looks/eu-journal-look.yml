@@ -1,8 +1,9 @@
 # EU legislation as the Official Journal's L series has set it since
 # 1 April 2014, measured (TASK-d0359h): one column, the text 9.6 on
-# 10.5; an article's heading centred and italic, its title bold (here
-# on one line: "Article 1: Subject-matter"); recitals and paragraphs
-# numbered. A4. The running head names the act (the document's title),
+# 10.5; an article's number centred and italic on a line of its own,
+# its title bold under it (the `[.number]` part of a unit's title:
+# `title: "[.number]#Article {{article}}# {{title}}"` in the scheme);
+# recitals and paragraphs numbered. A4. The running head names the act (the document's title),
 # not the Journal.
 #
 # The face's free stand-in: Crimson Pro for Albertina (`ptome doctor
@@ -10,7 +11,7 @@
 tokens:
   font:
     text: { family: Crimson Pro }
-    display: { family: Crimson Pro, weight: bold }
+    display: { family: [Crimson Pro, serif], weight: bold }
   size:
     text: { print: 9.6pt, screen: 18px }
     headings: { print: [14pt, 11pt, 9.6pt, 9.6pt, 9.6pt, 9.6pt] }
@@ -24,8 +25,9 @@ tokens:
   page: { size: A4, margin: [22mm, 24mm, 20mm, 24mm] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 9pt }, space-after: { print: 5pt }, keep-with-next: true }
-  # Articles: centred, italic.
-  h3: { font: text, weight: normal, style: italic }
+  # Articles: the number centred and italic over the title in bold.
+  h3: { font: text, number: line }
+  .number: { weight: normal, style: italic }
   title: { font: display, color: ink }
   link: { color: ink }
   table: { frame: { width: hairline, color: ink }, rows: { width: hairline, color: ink }, columns: { width: hairline, color: ink }, head-rule: { width: hairline, color: ink } }
@@ -52,3 +54,5 @@ pdf:
   footer:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content h2,#content h3,#content h4{text-align:center}
