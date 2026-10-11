@@ -36,7 +36,11 @@ ptome -b docbook5 -o book.xml book.adoc
   `{{basic-title}}` and `{{number}}`), `-up-` and `-next-template`, or are laid out by a `multipage_nav.mustache`
   template in a `-T` directory (`previous`, `up`, `next`, each with
   `href`, `title`, `basic-title` (without its number), `number` and
-  `label`). The list's entries read
+  `label`). `multipage-nav-folio-template` adds a folio between the
+  links (none by default; `{{doctitle}}`, the page's `{{title}}`,
+  `{{page}}` of `{{pages}}`, the document's attributes as
+  `{{attr-<name>}}`), and a `multipage_nav.mustache` template has
+  `{{page}}`, `{{pages}}` and `{{folio}}` too. The list's entries read
   `multipage-toc-entry-template` (`{{title}}`, `{{basic-title}}`,
   `{{number}}`), each with the section's kind and roles as its class
   (`chapter`, `part`, `chapter introduction`), and its section lists

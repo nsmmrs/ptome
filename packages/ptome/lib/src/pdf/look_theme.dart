@@ -84,7 +84,7 @@ final class _Compiler {
       _style(key, style);
     }
     for (final name in look.templates.named.keys) {
-      _unsupported('templates.$name');
+      trace(Became('templates.$name', 'the attribute $name-template'));
     }
     if (look.templates.titlePage case final page?) {
       for (final (side, slots) in [

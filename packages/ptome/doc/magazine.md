@@ -84,6 +84,18 @@ extends the era (`font.text.family`, its `webfonts` or `css:`
 `@font-face`). Never imitate a publication's real nameplate: the head is
 the piece's own.
 
+## An issue as a website
+
+An issue is a document whose sections are its pieces, set as linked
+pages (`ptome -b multipage_html5 -a multipage-level=1 issue.adoc`): the
+home page holds what comes before the first piece, each piece a page.
+The magazine looks lay the links between pages out as a magazine's
+furniture: the link on is a jump line ("Continued in The Last Lift
+Operator →", `multipage-nav-next-template`), and between the links a
+folio ("Mountain Quarterly · Vol. 12, No. 4 · 2",
+`multipage-nav-folio-template`, from the title, `:issue:` and the
+page's place). Any of them is the document's to change, as an attribute.
+
 ## How it is laid out
 
 The page is a grid of twelve units: the head across ten, the text across

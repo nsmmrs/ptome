@@ -18,6 +18,19 @@ Look documentLook(Document doc, {bool house = false}) {
 
 final Expando<Look> _looks = Expando('documentLook');
 
+/// [doc]'s look's named templates (ADR-0010's, ADR-0023 decision 1) as
+/// the defaults of their attributes: the look's `templates.<name>` is the
+/// `<name>-template` attribute where the document (or the command line)
+/// sets none. Only a look the document names (the house look has none).
+void applyLookTemplates(Document doc) {
+  if (doc.attr('look') == null) return;
+  for (final MapEntry(:key, :value) in documentLook(
+    doc,
+  ).templates.named.entries) {
+    doc.attributes.putIfAbsent('$key-template', () => value);
+  }
+}
+
 Look _load(Document doc, String name) {
   final dir = doc
       .attr('looksdir')

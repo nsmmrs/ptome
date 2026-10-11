@@ -317,6 +317,31 @@ void main() {
     expect(site['_chapter_a.html'], contains('>Next: 2. Chapter B</a>'));
   });
 
+  test("a folio: the page's place, title and the document's attributes", () {
+    final site = _site(
+      _book,
+      attributes: {
+        'issue': 'No. 4',
+        'multipage-nav-folio-template':
+            '{{doctitle}} · {{attr-issue}} · {{page}} of {{pages}}',
+      },
+    );
+    // Its place between the links back and the link on.
+    expect(
+      site['_chapter_b.html'],
+      matches(
+        RegExp(
+          'rel="up"[^\n]*\n<span class="folio">The Book · No. 4 · '
+          r'\d+ of \d+</span>\n<a class="next"',
+        ),
+      ),
+    );
+    expect(
+      site['book.html'],
+      contains('<span class="folio">The Book · No. 4 · 1 of '),
+    );
+  });
+
   test('navigation from a multipage_nav template', () {
     final dir = Directory.systemTemp.createTempSync('multipage_test.');
     addTearDown(() => dir.deleteSync(recursive: true));

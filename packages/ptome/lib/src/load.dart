@@ -407,7 +407,11 @@ Document _load(_Input input, AsciidoctorOptions options, {bool parse = true}) {
       ..start('parse');
 
     var doc = Document(source, opts);
-    if (parse) doc = doc.parse();
+    if (parse) {
+      doc = doc.parse();
+      // (The look's templates, the defaults of their attributes.)
+      applyLookTemplates(doc);
+    }
     timings?.record('parse');
     return doc;
   } catch (e, st) {

@@ -287,6 +287,11 @@ templates:
       - { slot: authors, before: 'By ', separator: ' and ', style: .byline }
       - { attribute: credit, style: .credit }
       - { attribute: issue, style: .credit }
+  # A website of pieces (multipage_html5): the link on is a jump line,
+  # and each page has a folio.
+  multipage-nav-previous: '&#8592; {{title}}'
+  multipage-nav-next: 'Continued in {{title}} &#8594;'
+  multipage-nav-folio: '{{doctitle}}{{#attr-issue}} · {{attr-issue}}{{/attr-issue}} · {{page}}'
 webfonts:
   - Bodoni Moda:400,400italic,700,700italic
   - Libre Caslon Text:400,400italic,700
@@ -325,14 +330,17 @@ css: |
   .quoteblock.pullquote blockquote{padding:0;border:0}
   .quoteblock.pullquote blockquote,.quoteblock.pullquote blockquote p{font-family:var(--ptome-font-display);font-style:var(--mag-display-style);font-size:1.6rem;line-height:1.2;color:inherit;text-align:start;hanging-punctuation:first last}
   .quoteblock.pullquote blockquote::before{content:none}
-  .sect1.columns{clear:both}
-  .sect1.columns>.sectionbody{columns:var(--mag-section-columns) var(--mag-column-min);column-gap:var(--mag-gutter);column-rule:var(--ptome-rule-minor) solid}
-  .sect1.columns>.sectionbody :is(h3,.imageblock){column-span:all}
+  .columns{clear:both}
+  .sect1.columns>.sectionbody,:is(.sect2,.sect3,.sect4).columns{columns:var(--mag-section-columns) var(--mag-column-min);column-gap:var(--mag-gutter);column-rule:var(--ptome-rule-minor) solid}
+  .sect1.columns>.sectionbody :is(h3,.imageblock),:is(.sect2,.sect3,.sect4).columns>:is(h3,h4,h5,.imageblock){column-span:all}
   .paragraph.end p::after,#content>.sect1:last-child>.sectionbody>.paragraph:last-child p::after,#content>.paragraph:last-child p::after{content:"\00a0" var(--mag-end-mark);color:var(--ptome-color-accent)}
   .sidebarblock{border:0;border-block:var(--ptome-rule-minor) solid;border-radius:0}
-  .multipage-nav{grid-column:3/span var(--mag-body-span);display:flex;justify-content:space-between;font-family:var(--ptome-font-utility);font-size:.8rem;border-block:var(--ptome-rule-minor) solid}
+  .multipage-nav{grid-column:3/span var(--mag-body-span);display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:1rem 0;padding:.4rem 0;font-family:var(--ptome-font-utility);font-size:.8rem;border-block:var(--ptome-rule-minor) solid}
+  .multipage-nav a{color:inherit;text-decoration:none}
+  .multipage-nav a.next{font-style:italic;margin-left:auto}
+  .multipage-nav .folio{color:var(--ptome-color-muted);letter-spacing:.06em;text-transform:uppercase;font-size:.7rem}
   @media (max-width:44rem){#header,#content,#footnotes,#footer,.multipage-nav{grid-column:1/-1}}
-  @container (max-width:34rem){.imageblock.right,.imageblock.left,.quoteblock.pullquote{float:none;width:auto;margin-inline:0;shape-outside:none}.sect1.columns>.sectionbody{columns:auto}}
+  @container (max-width:34rem){.imageblock.right,.imageblock.left,.quoteblock.pullquote{float:none;width:auto;margin-inline:0;shape-outside:none}.sect1.columns>.sectionbody,:is(.sect2,.sect3,.sect4).columns{columns:auto}}
   @media print{body{display:block;border:0;outline:0;padding:0}}
 ''',
   'ptome': r'''# Ptome's house look (ADR-0011, ADR-0023; doc/style.md): Asciidoctor's,

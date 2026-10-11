@@ -5,6 +5,7 @@ library;
 
 import 'dart:io';
 
+import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/look/css.dart';
 import 'package:ptome/src/look/loader.dart';
 import 'package:ptome/src/look/looks.g.dart';
@@ -182,8 +183,28 @@ templates:
     expect(warnings, [
       contains('styles.paragraph.keep-with-next has no effect in the PDF'),
       contains('styles..dek.rows has no effect in the PDF'),
-      contains('templates.footnote-reference has no effect in the PDF'),
     ]);
+  });
+
+  test("a look's templates are their attributes' defaults", () {
+    final dir = _dir.path;
+    File('$dir/tpl-look.yml').writeAsStringSync(
+      "templates:\n  multipage-nav-next: 'Continued in {{title}}'\n",
+    );
+    Document parse(String header) => load(
+      '= Doc\n:look: tpl\n:looksdir: $dir\n$header\nText.\n',
+      options: const AsciidoctorOptions(safe: SafeMode.unsafe),
+    );
+    expect(
+      parse('').attr('multipage-nav-next-template'),
+      'Continued in {{title}}',
+    );
+    // The document's own wins.
+    expect(
+      parse(':multipage-nav-next-template: Next')
+          .attr('multipage-nav-next-template'),
+      'Next',
+    );
   });
 
   group('CSS', () {

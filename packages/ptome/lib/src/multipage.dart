@@ -150,6 +150,7 @@ class MultipageHtml5Converter extends Html5Converter
         previous: null,
         up: null,
         next: order.isEmpty ? null : link(order.first),
+        page: (1, order.length + 1),
       );
       node.attributes['noheader'] = '';
       for (final (i, page) in order.indexed) {
@@ -181,6 +182,7 @@ class MultipageHtml5Converter extends Html5Converter
             previous: i == 0 ? root : link(order[i - 1]),
             up: page.up == null ? root : link(page.up!),
             next: i + 1 < order.length ? link(order[i + 1]) : null,
+            page: (i + 2, order.length + 1),
           );
         } finally {
           section.blocks
@@ -335,15 +337,23 @@ class MultipageHtml5Converter extends Html5Converter
 
   /// [html] (a page titled [title], the root when null) with links to the
   /// [previous], enclosing ([up]) and [next] pages above and below its
-  /// content.
+  /// content; [page] is its place among the site's pages (and their
+  /// count).
   String _withNavigation(
     String html, {
     required String? title,
     required _Link? previous,
     required _Link? up,
     required _Link? next,
+    required (int, int) page,
   }) {
-    final nav = _navigation(previous: previous, up: up, next: next);
+    final nav = _navigation(
+      previous: previous,
+      up: up,
+      next: next,
+      title: title,
+      page: page,
+    );
     var result = html
         .replaceFirst('<div id="content"', '$nav\n<div id="content"')
         .replaceFirstMapped(
@@ -365,11 +375,16 @@ class MultipageHtml5Converter extends Html5Converter
   /// `previous`, `up` and `next`, each `href`, `title`, `basic-title`,
   /// `number` and `label`), or the default markup; each link's text from
   /// the `multipage-nav-<kind>-template` attribute (ADR-0010; `{{title}}`,
-  /// `{{basic-title}}`, `{{number}}`).
+  /// `{{basic-title}}`, `{{number}}`); and a folio, the
+  /// `multipage-nav-folio-template` attribute's (none by default:
+  /// `{{doctitle}}`, the page's `{{title}}`, `{{page}}` of `{{pages}}`,
+  /// the document's attributes as `{{attr-<name>}}`).
   String _navigation({
     required _Link? previous,
     required _Link? up,
     required _Link? next,
+    required String? title,
+    required (int, int) page,
   }) {
     final document = _document;
     String label(String kind, String fallback, _Link page) => renderTemplate(
@@ -386,10 +401,30 @@ class MultipageHtml5Converter extends Html5Converter
             'number': ?page.number,
             'label': label(kind, fallback, page),
           };
+    final doctitle = document?.doctitle() ?? '';
+    final folio = switch (document?.attr('multipage-nav-folio-template')) {
+      final template? => renderTemplate(template, {
+        'doctitle': doctitle,
+        'title': title ?? doctitle,
+        'page': '${page.$1}',
+        'pages': '${page.$2}',
+        for (final MapEntry(:key, :value)
+            in document?.attributes.entries ??
+                const <MapEntry<String, String>>[])
+          'attr-$key': value,
+      }),
+      null => null,
+    };
+    final previousLink = link('previous', '&#8592; {{title}}', previous);
+    final upLink = link('up', '&#8593; {{title}}', up);
+    final nextLink = link('next', '{{title}} &#8594;', next);
     final context = {
-      'previous': ?link('previous', '&#8592; {{title}}', previous),
-      'up': ?link('up', '&#8593; {{title}}', up),
-      'next': ?link('next', '{{title}} &#8594;', next),
+      'previous': ?previousLink,
+      'up': ?upLink,
+      'next': ?nextLink,
+      'folio': ?folio,
+      'page': '${page.$1}',
+      'pages': '${page.$2}',
     };
     if (_navTemplate case final template?) {
       return template.renderString(context).trimRight();
@@ -397,9 +432,10 @@ class MultipageHtml5Converter extends Html5Converter
     String a(String rel, Map<String, String> page) =>
         '<a class="$rel" rel="$rel" href="${page['href']}">${page['label']}</a>';
     final links = [
-      if (context['previous'] case final page?) a('prev', page),
-      if (context['up'] case final page?) a('up', page),
-      if (context['next'] case final page?) a('next', page),
+      if (previousLink != null) a('prev', previousLink),
+      if (upLink != null) a('up', upLink),
+      if (folio != null) '<span class="folio">$folio</span>',
+      if (nextLink != null) a('next', nextLink),
     ];
     return '<nav class="multipage-nav">\n${links.join('\n')}\n</nav>';
   }

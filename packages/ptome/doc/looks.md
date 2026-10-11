@@ -80,8 +80,8 @@ tokens:                   # 1. the design's values
 styles:                   # 2. elements and roles, in token terms
   heading: { font: display, color: ink }
   .dek: { size: 1.25, style: italic }
-templates:                # 3. generated text (ADR-0010)
-  footnote-reference: '{{number}}'
+templates:                # 3. generated text (ADR-0010): the defaults
+  footnote-reference: '{{number}}'   # of the <name>-template attributes
 pdf:                      # what tokens can't say, in the theme's own keys
   font:
     catalog: { merge: true, Noto Sans: { normal: notosans.ttf } }
