@@ -427,13 +427,19 @@ final class _CssCompiler {
     Alignment.justify => 'justify',
   };
 
+  static String _pageSize(PageSize size) => switch (size) {
+    NamedPageSize(:final name) => name,
+    PageDimensions(:final width, :final height) =>
+      '${_length(width)} ${_length(height)}',
+  };
+
   /// The `@page` rules of the page tokens (HTML printed): a recto's
   /// inner margin is its left, a verso's its right.
   String? _page() {
     final page = tokens.page;
     if (page == null) return null;
     final all = [
-      if (page.size case final size?) 'size:$size',
+      if (page.size case final size?) 'size:${_pageSize(size)}',
       if (page.margin case final margin?)
         'margin:${margin.map(_length).join(' ')}',
     ];

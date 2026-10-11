@@ -7,6 +7,7 @@ import 'dart:io';
 
 import 'package:ptome/src/look/css.dart';
 import 'package:ptome/src/look/loader.dart';
+import 'package:ptome/src/look/looks.g.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/pdf/theme.dart';
@@ -377,6 +378,51 @@ templates:
   test("doc/style.md's values are the house look's", () {
     final doc = File('doc/style.md').readAsStringSync();
     expect(withValues(doc), doc, reason: 'run dart run tool/style_table.dart');
+  });
+
+  test('a trim size; paragraphs indented after paragraphs alone', () {
+    _look('trim', '''
+tokens:
+  page: { size: [6.25in, 9.25in] }
+  paragraph: { signal: indent, indent: 2.5em }
+''');
+    final look = _load('trim');
+    final entries = lookThemeEntries(look);
+    expect(
+      [
+        for (final key in [
+          'page_size',
+          'prose_margin_inner',
+          'prose_text_indent_inner',
+        ])
+          switch (entries[key]) {
+            YList(:final items) => [
+              for (final item in items)
+                if (item case YScalar(:final value)) value.rubyString,
+            ].join(' '),
+            YScalar(:final value) => value.rubyString,
+            _ => null,
+          },
+      ],
+      ['6.25in 9.25in', '0', '2.5em'],
+    );
+    expect(entries.containsKey('prose_text_indent'), isFalse);
+    expect(
+      lookCss(look, CssTarget.html),
+      contains('@page{size:6.25in 9.25in}'),
+    );
+  });
+
+  test('every built-in look compiles for each output without a warning', () {
+    for (final name in builtInLooks.keys) {
+      final look = LookLoader().load(name);
+      final warnings = <String>[];
+      lookTheme(look, warn: warnings.add);
+      lookCss(look, CssTarget.html, warn: warnings.add);
+      lookCss(look, CssTarget.epub, warn: warnings.add);
+      expect(warnings, isEmpty, reason: name);
+    }
+    expect(builtInLooks.keys, containsAll(['ptome', 'troff']));
   });
 
   test('the built-in looks are embedded as they are in data/looks', () {

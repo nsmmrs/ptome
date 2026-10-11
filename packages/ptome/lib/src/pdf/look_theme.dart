@@ -267,16 +267,18 @@ final class _Compiler {
     if (tokens.paragraph case final paragraph?) {
       final space = paragraph.space?.of(Medium.print);
       final indent = paragraph.indent?.of(Medium.print);
+      // (A first-line indent after another paragraph alone, as books
+      // and the CSS set it.)
       switch (paragraph.signal?.of(Medium.print)) {
         case ParagraphSignal.indent:
-          _set('prose_margin_bottom', _number(0));
+          _set('prose_margin_inner', _number(0));
           _set(
-            'prose_text_indent',
+            'prose_text_indent_inner',
             _length(indent ?? const Length(1.5, LengthUnit.em)),
           );
         case ParagraphSignal.space || null:
           _set('prose_margin_bottom', space?.let(_length));
-          _set('prose_text_indent', indent?.let(_length));
+          _set('prose_text_indent_inner', indent?.let(_length));
       }
     }
     _item = 'tokens.align';
@@ -306,7 +308,14 @@ final class _Compiler {
     }
     _item = 'tokens.page';
     if (tokens.page case final page?) {
-      _set('page_size', page.size?.let(_string));
+      _set('page_size', switch (page.size) {
+        NamedPageSize(:final name) => _string(name),
+        PageDimensions(:final width, :final height) => YList([
+          _length(width),
+          _length(height),
+        ]),
+        null => null,
+      });
       if (page.margin case final margin?) {
         _set(
           'page_margin',

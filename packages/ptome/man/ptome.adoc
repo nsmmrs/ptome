@@ -16,7 +16,7 @@ ptome - convert AsciiDoc documents to HTML, DocBook, man pages, EPUB and PDF
 
 *ptome init-config* [_DIR_] [*-f*]
 
-*ptome doctor* [*-y*] [*-c*]
+*ptome doctor* [*-y*] [*-c*] [*--look*=_LOOK_]
 
 *ptome check* [*-q*] _FILE_...
 
@@ -149,6 +149,7 @@ Messages about the document (warnings, errors) go to standard error.
 Ptome compiles no fonts in: PDFs are set in the fonts installed on the machine that their theme names, and an EPUB embeds installed fonts only with *-a epub-embed-fonts*.
 *ptome doctor* lists the fonts of the built-in PDF themes (Noto Serif, Noto Sans, M+ 1mn, the M+ 1p and Noto Emoji fallbacks, Noto Sans Math, and the Font Awesome, Foundation and Payment icon fonts) and where they are found, and offers to download the missing ones from their official sources (Google Fonts, the projects' repositories) into this user's font folder.
 *-y* (*--yes*) installs them without asking; *-c* (*--check*) only checks, and exits with status 1 when fonts are missing.
+*--look*=_LOOK_ (or the look _ptome.yml_ names) adds the fonts that look names: the built-in looks set in TeX Gyre (from CTAN) and Google Fonts families.
 A font a theme names that isn't installed is replaced by a built-in PDF font (Times, Helvetica or Courier), with a warning.
 
 == Looks

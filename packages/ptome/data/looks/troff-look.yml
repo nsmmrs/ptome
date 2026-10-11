@@ -1,0 +1,75 @@
+# The troff-era manual: the Bell Labs books typeset with troff and the
+# ms macros. Measured (TASK-jbw2vx) from Kernighan and Ritchie's *The C
+# Programming Language* (1978), Kernighan and Pike's *The UNIX
+# Programming Environment* (1984) and Aho, Kernighan and Weinberger's
+# *The AWK Programming Language* (1988): Times 11 on 12 on a 4.8 in
+# measure; code in Courier about 9 on 10–11, indented 0.5 in (ms's
+# `.DS I`); headings in Times Bold; the running head's baseline 32 pt
+# above the first line of text; AWK's trim, 6.25 × 9.25 in. Paragraphs
+# indented as ms's `.PP` (5 ens), with no space between them.
+#
+# The faces' free stand-ins are TeX Gyre Termes and Cursor
+# (`ptome doctor --look troff` installs them); without them the PDF's
+# own Times and Courier, which are the faces themselves.
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Termes, screen: Times New Roman } }
+    display: { family: { print: TeX Gyre Termes, screen: Times New Roman }, weight: bold }
+    code: { family: { print: TeX Gyre Cursor, screen: Courier New }, size: 0.82 }
+  size:
+    text: { print: 11pt, screen: 18px }
+    # The title, chapters (a book's level 1), sections, the rest: ms's
+    # numbered headings are the text's size, in bold.
+    headings: { print: [20pt, 18pt, 12pt, 11pt, 11pt, 11pt] }
+  leading: { print: 1.09, screen: 1.4 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: 2.5em }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  # 4.8 in of 6.25 in: 0.725 in each side.
+  page: { size: [6.25in, 9.25in], margin: [1in, 0.725in, 1.1in, 0.725in] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 15pt }, space-after: { print: 5pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  subtitle: { color: ink }
+  link: { color: ink }
+  code: { color: ink }
+  code-block: { size: { print: 9pt }, leading: { print: 1.17 }, color: ink, background: none, border: none }
+  caption: { font: text, weight: bold, size: 1, color: ink }
+  sidebar: { background: none, border: { width: hairline, color: ink } }
+  admonition-label: { font: text, weight: bold, color: ink }
+  table: { frame: { width: hairline, color: ink }, frame-sides: none, rows: none, columns: none, head-rule: { width: hairline, color: ink } }
+  table-head: { font: text, weight: bold, background: none }
+pdf:
+  title_page:
+    text_align: center
+    title_top: 35%
+    authors: { font_color: '000000', margin_top: 18 }
+    revision: { font_color: '000000' }
+  # ms's .DS I: the code indented 0.5 in, nothing around it.
+  code:
+    padding: [0, 0, 0, 36]
+  codespan:
+    font_size: 0.9em
+  # The running head: the page number outside, the chapter's (or the
+  # document's) title across from it, in capitals; its baseline 32 pt
+  # above the first line. No running foot.
+  header:
+    height: 0.76in
+    vertical_align: bottom
+    padding: [0, 0, 0, 0]
+    font_size: 9
+    text_transform: uppercase
+    recto:
+      left: { content: '{section-or-chapter-title}' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      right: { content: '{document-title}' }
+  footer:
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  .listingblock pre,.literalblock pre{padding:0 0 0 .5in}

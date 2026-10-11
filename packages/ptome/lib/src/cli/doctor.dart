@@ -10,14 +10,20 @@
 /// M PLUS families from Google Fonts (each file checked to be the family
 /// asked for), the icon fonts from their projects' repositories at pinned
 /// commits (each file checked against its SHA-256 digest). Each font's
-/// license is saved beside it.
+/// license is saved beside it. With a look (`--look`, or the look
+/// `ptome.yml` names), the fonts its PDF theme names too, from
+/// [lookFonts]: TeX Gyre from CTAN (pinned), Google Fonts families.
 library;
 
 import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
+import 'package:ptome/src/cli/compat_config.dart';
 import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/look/loader.dart';
+import 'package:ptome/src/look/model.dart';
+import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/remote.dart';
 
 /// Usage text for `doctor` (printed by `--help` and on misuse).
@@ -30,10 +36,17 @@ Math and the icon fonts), and offers to download the missing ones from
 their official sources (Google Fonts, the projects' repositories) into
 this user's font folder, in a folder of its own named ptome.
 
+With a look (--look, or the look ptome.yml names), the fonts that look
+names too: the built-in looks' are TeX Gyre (from CTAN) and Google
+Fonts families.
+
 Options:
-  -y, --yes      install the missing fonts without asking
-  -c, --check    only check: exit with status 1 when fonts are missing
-  -h, --help     show this help
+  -y, --yes             install the missing fonts without asking
+  -c, --check           only check: exit with status 1 when fonts are
+                        missing
+      --look=LOOK       the fonts of LOOK too (troff, tech-book, ...)
+      --looksdir=DIR    the folder of the looks
+  -h, --help            show this help
 ''';
 
 /// A face of a family.
@@ -203,6 +216,139 @@ const PinnedFile _fontAwesomeLicense = (
   sha256: 'e779748dfe75e84f974df3c7bc07f842011a100159158b0f1f49b2f2a5a515cb',
   name: 'FontAwesome-LICENSE.txt',
 );
+
+const String _ctanTexGyre = 'https://mirrors.ctan.org/fonts/tex-gyre';
+
+const PinnedFile _gustLicense = (
+  url: '$_ctanTexGyre/doc/GUST-FONT-LICENSE.txt',
+  sha256: '2bd69affc3da00715116f713f57eab9707e96daf3562ad0215987b15b9c16f73',
+  name: 'GUST-FONT-LICENSE.txt',
+);
+
+/// A TeX Gyre family from CTAN: its files ([name] lower-cased, `termes`)
+/// pinned to their digests, by style.
+NeededFont _texGyre(
+  String name,
+  String usedBy,
+  Map<FontStyle, String> digests,
+) {
+  final family = 'TeX Gyre ${name[0].toUpperCase()}${name.substring(1)}';
+  String file(FontStyle style) =>
+      'texgyre$name-${switch (style) {
+        FontStyle.normal => 'regular',
+        FontStyle.bold => 'bold',
+        FontStyle.italic => 'italic',
+        FontStyle.boldItalic => 'bolditalic',
+      }}.otf';
+  return NeededFont(
+    name: family,
+    usedBy: usedBy,
+    families: [family],
+    styles: [...digests.keys],
+    fileNames: {
+      for (final style in digests.keys) style: [file(style)],
+    },
+    source: PinnedFiles('$family from CTAN', {
+      for (final MapEntry(key: style, value: digest) in digests.entries)
+        style: (
+          url: '$_ctanTexGyre/opentype/${file(style)}',
+          sha256: digest,
+          name: file(style),
+        ),
+    }, _gustLicense),
+    license: 'GUST Font License',
+  );
+}
+
+/// The fonts the built-in looks name beyond the themes' (ADR-0023):
+/// checked and installed for a look that names them (`--look`).
+final List<NeededFont> lookFonts = [
+  _texGyre('termes', 'the troff look (Times)', {
+    FontStyle.normal:
+        'cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659',
+    FontStyle.bold:
+        '2fb3e952065fa153c7e4e64e04b98b9d79225739b6025aa3f0f0782d299ff61e',
+    FontStyle.italic:
+        '6dd103a1672e50568cd2f8a706ccd48443d44d7d073a59d2286f4e6f746575d6',
+    FontStyle.boldItalic:
+        '1bf6af99cb0e26c12951317032d79b96ae009551e59ccf02a5b24f325ecfec87',
+  }),
+  _texGyre('cursor', 'the troff look (Courier)', {
+    FontStyle.normal:
+        '0667deb48aa0e88be8f499c4d308e8b9116f290e7f969b0f5a34ee15c9644272',
+    FontStyle.bold:
+        '95e9755bfa05759e8d1f8fba21a919ba46091e1275aeb5bf831dffd9c93b041e',
+    FontStyle.italic:
+        '545f24a2a9e5dd5ace865fe5e80134f55a37794b36e26abae5424aebff600056',
+    FontStyle.boldItalic:
+        '6aa5c41f489b898aa890c543e7dcd5e732c63894babc65569e01ee7e46533d82',
+  }),
+  _texGyre('schola', 'the us-code look (Century Schoolbook)', {
+    FontStyle.normal:
+        '935b82e25f56b1d1276ca82793205e8ce254fbb37ebd38bedf7388cef21fbf44',
+    FontStyle.bold:
+        '988c7b2a0ff0eae77d1df3338751b3c47a5e759117734a375b8e7f9de80e698b',
+    FontStyle.italic:
+        '2f45b8c394037951aaec73d947f0b0c3af715950f8f207c9f4290ba37a53a4d2',
+    FontStyle.boldItalic:
+        '95f085da44c04817771f2a3a754b6eeb442b9a79e79f51dc3b0612e3cc0d75cc',
+  }),
+  _texGyre('pagella', 'the uk-act look (Palatino)', {
+    FontStyle.normal:
+        '44e64260716d8f2bbe412baa1ee99b7c995190ac4573177c24def0b9200438c7',
+    FontStyle.bold:
+        'dd4f9b69f0b24f1fb9be8634abf1fce2009e5c68a30842a3e9f5d6e535900abd',
+    FontStyle.italic:
+        '069bb27f48eb98a741715227fc6e4b7baf3639c29fc13925f70d1ed8884ac29a',
+    FontStyle.boldItalic:
+        '556fd64655a92bd9f5485ae2c03f7b9cdaf745a27a91d7edb3c3abde997206d2',
+  }),
+  NeededFont(
+    name: 'Crimson Pro',
+    usedBy: 'the tech-book and eu-journal looks (Minion, Albertina)',
+    families: const ['Crimson Pro'],
+    styles: _all,
+    fileNames: const {},
+    source: _google('Crimson Pro', 'CrimsonPro', _all),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'Fira Sans Condensed',
+    usedBy: 'the tech-book look (Myriad Condensed)',
+    families: ['Fira Sans Condensed'],
+    // (Its semibold as the bold: Myriad's semibold condensed.)
+    styles: [FontStyle.normal, FontStyle.bold],
+    fileNames: {},
+    source: GoogleFonts('Fira Sans Condensed', {
+      FontStyle.normal: 'FiraSansCondensed-Regular.ttf',
+      FontStyle.bold: 'FiraSansCondensed-SemiBold.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'Ubuntu Mono',
+    usedBy: 'the tech-book look (code)',
+    families: ['Ubuntu Mono'],
+    styles: _all,
+    fileNames: {},
+    source: GoogleFonts('Ubuntu Mono', {
+      FontStyle.normal: 'UbuntuMono-Regular.ttf',
+      FontStyle.bold: 'UbuntuMono-Bold.ttf',
+      FontStyle.italic: 'UbuntuMono-Italic.ttf',
+      FontStyle.boldItalic: 'UbuntuMono-BoldItalic.ttf',
+    }),
+    license: 'Ubuntu Font Licence 1.0',
+  ),
+];
+
+/// The families [look]'s PDF theme names (its `*_font_family` keys).
+Set<String> lookFamilies(Look look) {
+  final theme = lookTheme(look);
+  return {
+    for (final key in theme.keys)
+      if (key.endsWith('_font_family')) ?theme.string(key),
+  };
+}
 
 /// The fonts of the built-in PDF themes, their fallbacks, math and icons.
 final List<NeededFont> neededFonts = [
@@ -410,7 +556,8 @@ String? installedPath(FontIndex index, NeededFont font, FontStyle style) {
 /// installed into [installDirectory] (this user's font folder's
 /// `ptome`), fetched with [fetch]; a question is asked when
 /// [interactive] (standard input is a terminal) and answered by
-/// [readLine].
+/// [readLine]. Without `--look`, the look a configuration file names
+/// (found with [environment]) adds its fonts.
 Future<int> runDoctor(
   List<String> args, {
   StringSink? out,
@@ -420,12 +567,16 @@ Future<int> runDoctor(
   Future<RemoteResource> Function(Uri uri)? fetch,
   bool? interactive,
   String? Function()? readLine,
+  Map<String, String>? environment,
 }) async {
   final output = out ?? io.standardOutput;
   final errors = err ?? io.standardError;
   var yes = false;
   var check = false;
-  for (final arg in args) {
+  String? lookName;
+  String? looksDir;
+  for (var i = 0; i < args.length; i++) {
+    final arg = args[i];
     switch (arg) {
       case '-y' || '--yes':
         yes = true;
@@ -434,6 +585,14 @@ Future<int> runDoctor(
       case '-h' || '--help':
         output.write(doctorUsage);
         return 0;
+      case '--look' when i + 1 < args.length:
+        lookName = args[++i];
+      case '--looksdir' when i + 1 < args.length:
+        looksDir = args[++i];
+      case _ when arg.startsWith('--look='):
+        lookName = arg.substring('--look='.length);
+      case _ when arg.startsWith('--looksdir='):
+        looksDir = arg.substring('--looksdir='.length);
       default:
         errors
           ..writeln('ptome doctor: unknown option $arg')
@@ -441,10 +600,42 @@ Future<int> runDoctor(
         return 64;
     }
   }
+  if (lookName == null) {
+    final configured = resolveLook(
+      env: environment ?? io.environment,
+      startDir: io.currentDirectory,
+      warn: (message) => errors.writeln('ptome: WARNING: $message'),
+    );
+    lookName = configured?.look;
+    looksDir ??= configured?.looksDir;
+  }
+  final List<NeededFont> needed;
+  try {
+    needed = switch (lookName) {
+      null || 'ptome' => neededFonts,
+      final name => () {
+        final families = lookFamilies(
+          LookLoader(looksDir: looksDir ?? io.currentDirectory).load(name),
+        );
+        return [
+          ...neededFonts,
+          for (final font in lookFonts)
+            if (font.families.any(families.contains)) font,
+        ];
+      }(),
+    };
+  } on LookException catch (error) {
+    errors.writeln('ptome doctor: $error');
+    return 1;
+  }
   final fonts = (index ?? Fonts.machine)();
   final missing = <(NeededFont, List<FontStyle>)>[];
-  output.writeln("The fonts of ptome's built-in PDF themes:");
-  for (final font in neededFonts) {
+  output.writeln(
+    lookName == null || lookName == 'ptome'
+        ? "The fonts of ptome's built-in PDF themes:"
+        : "The fonts of ptome's built-in PDF themes and the look $lookName:",
+  );
+  for (final font in needed) {
     final absent = <FontStyle>[];
     final found = <String>{};
     for (final style in font.styles) {
@@ -473,7 +664,7 @@ Future<int> runDoctor(
   output
     ..writeln()
     ..writeln(
-      '${missing.length} of ${neededFonts.length} fonts are missing; in their '
+      '${missing.length} of ${needed.length} fonts are missing; in their '
       'place PDFs use the built-in PDF fonts (Times, Helvetica, Courier) and '
       'show icons as text.',
     );
@@ -603,7 +794,16 @@ Future<List<int>> _pinned(
   PinnedFile file,
   Future<RemoteResource> Function(Uri uri) fetch,
 ) async {
-  final bytes = (await fetch(Uri.parse(file.url))).body;
+  // (A mirror, CTAN's, may fail: each try may reach another.)
+  late List<int> bytes;
+  for (var attempt = 1; ; attempt++) {
+    try {
+      bytes = (await fetch(Uri.parse(file.url))).body;
+      break;
+    } on Exception {
+      if (attempt == 3) rethrow;
+    }
+  }
   if ('${sha256.convert(bytes)}' != file.sha256) {
     throw DoctorException(
       '${file.url} is not the file expected (its SHA-256 differs)',

@@ -239,14 +239,46 @@ final class Paragraph {
   final ByMedium<Length>? indent;
 }
 
+/// A page's size.
+sealed class PageSize {
+  const new();
+}
+
+/// A size by name: `A4`, `Letter`.
+final class NamedPageSize extends PageSize {
+  /// The size [name].
+  const new(this.name);
+
+  /// The name.
+  final String name;
+
+  @override
+  String toString() => name;
+}
+
+/// A trim: [width] by [height].
+final class PageDimensions extends PageSize {
+  /// A page [width] by [height].
+  const new(this.width, this.height);
+
+  /// The width.
+  final Length width;
+
+  /// The height.
+  final Length height;
+
+  @override
+  String toString() => '$width × $height';
+}
+
 /// The page, in print.
 @immutable
 final class Page {
   /// A page of [size] inside [margin].
   const new({this.size, this.margin, this.inner, this.outer});
 
-  /// A named size (`A4`, `Letter`) or `<width> x <height>`.
-  final String? size;
+  /// The paper's size.
+  final PageSize? size;
 
   /// One, two or four margins (top, sides; or top, right, bottom, left).
   final List<Length>? margin;

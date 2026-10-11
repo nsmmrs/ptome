@@ -489,7 +489,21 @@ final class _Parser {
       );
     }
     return Page(
-      size: e['size'] == null ? null : _text(e['size']!, 'tokens.page.size'),
+      size: switch (e['size']) {
+        null => null,
+        final v && _RawLeaf(node: YamlList()) => switch (_list(
+          v,
+          'tokens.page.size',
+          _length,
+        )) {
+          [final width, final height] => PageDimensions(width, height),
+          _ => throw LookException(
+            'tokens.page.size is a name (A4) or [width, height]',
+            v.span,
+          ),
+        },
+        final v => NamedPageSize(_text(v, 'tokens.page.size')),
+      },
       margin: margin,
       inner: e['inner'] == null
           ? null

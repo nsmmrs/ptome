@@ -28,6 +28,13 @@ Asciidoctor project.
   DocBook XSL's (`templates.title-page`): the PDF's title page and a
   verso page (`title_page_recto`, `title_page_verso`, also for themes),
   HTML's header in their order, and an EPUB title page.
+  Named looks, measured from the books they follow: `troff`, the Bell
+  Labs manuals set with troff (Times 11/12 on a 4.8 in measure, code in
+  Courier indented half an inch, a 6.25 × 9.25 in trim). A page may be a
+  trim (`page.size: [6.25in, 9.25in]`); an indented paragraph look
+  indents a paragraph after another alone (`prose_text_indent_inner`).
+  `ptome doctor --look LOOK` installs a look's fonts too (TeX Gyre from
+  CTAN, pinned; Google Fonts families).
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

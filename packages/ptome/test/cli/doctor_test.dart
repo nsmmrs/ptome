@@ -41,6 +41,7 @@ void main() {
       fetch: fetch ?? (uri) => throw StateError('no download expected: $uri'),
       interactive: interactive,
       readLine: () => answer,
+      environment: const {},
     );
     return (code, '$out', '$err');
   }
@@ -163,6 +164,59 @@ void main() {
     expect(err, contains('its SHA-256 differs'));
     expect(out, contains('installed Noto Serif'));
     expect(out, contains('fonts could not be installed'));
+  });
+
+  test("--look: the look's fonts too, from their sources", () async {
+    final (code, out, _) = await doctor([
+      '--check',
+      '--look',
+      'troff',
+    ], fonts: vendoredFontDirectories);
+    expect(code, 1);
+    expect(out, contains('the look troff'));
+    for (final family in ['Termes', 'Cursor']) {
+      expect(out, matches(RegExp('TeX Gyre $family +missing')));
+    }
+    expect(out, isNot(contains('Schola')));
+    expect(out, contains('2 of 13 fonts are missing'));
+    final (_, listed, _) = await doctor([
+      '--look=troff',
+    ], fonts: vendoredFontDirectories);
+    expect(listed, contains('TeX Gyre Termes from CTAN, GUST Font License'));
+    // A look that can't be read.
+    final (status, _, err) = await doctor(['--look', 'nope']);
+    expect(status, 1);
+    expect(err, contains('ptome doctor: '));
+  });
+
+  test('a pinned file that fails to download is tried again', () async {
+    final icons = Directory('vendor/asciidoctor-pdf/icons');
+    var tries = 0;
+    final (code, out, err) = await doctor(
+      ['--yes'],
+      fonts: [
+        ...vendoredFontDirectories.where((dir) => !dir.contains('icons')),
+        for (final set in ['fas', 'far', 'fab', 'pf']) '${icons.path}/$set',
+      ],
+      fetch: (uri) async {
+        if (uri.pathSegments.last != 'foundation-icons.ttf') {
+          throw HttpException('not served: $uri');
+        }
+        if (tries++ == 0) throw const HttpException('a mirror failed');
+        return (
+          body: File('${icons.path}/fi/foundation-icons.ttf').readAsBytesSync(),
+          contentType: null,
+        );
+      },
+    );
+    // The font on the second try; then its license, which the fake
+    // doesn't serve (three tries).
+    expect(tries, 2);
+    expect(code, 1);
+    expect(out, isNot(contains('installed Foundation Icons')));
+    expect(err, contains('not served: '));
+    expect(err, contains('foundation-icons.css'));
+    expect(err, isNot(contains('a mirror failed')));
   });
 
   test('--help, and unknown options', () async {

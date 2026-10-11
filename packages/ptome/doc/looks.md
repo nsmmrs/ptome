@@ -46,6 +46,13 @@ What each output does with a look:
 - **`asciidoctor-compat`:** no look applies; the classic theme and
   stylesheets do.
 
+## Built-in looks
+
+| Look | What it is |
+| --- | --- |
+| `ptome` | The house style (`doc/style.md`), the default. |
+| `troff` | The troff-era manual: the Bell Labs books set with troff and ms (*The C Programming Language*, *The UNIX Programming Environment*, *The AWK Programming Language*), measured from them: Times 11 on 12 on a 4.8 in measure, code in Courier indented half an inch, headings in Times Bold, the running head 32 pt above the first line, a 6.25 × 9.25 in trim. Set in TeX Gyre Termes and Cursor (`ptome doctor --look troff`); without them in the PDF's own Times and Courier. |
+
 ## The file
 
 ```yaml
@@ -103,12 +110,12 @@ and `epub-css:` parts apply look by look, the one extended first.
 | `size.small` | Small text, a ratio (`size: small` in a style) | |
 | `leading` | Line spacing, a ratio | `base_line_height` (print) |
 | `measure` | The line length | `page_measure` (the side margins), when `page.margin` isn't set |
-| `paragraph` | `signal` (`space`, `indent`), `space`, `indent` | `prose_margin_bottom`, `prose_text_indent` |
+| `paragraph` | `signal` (`space`, `indent`), `space`, `indent` (after another paragraph) | `prose_margin_bottom`; `prose_margin_inner: 0`, `prose_text_indent_inner` |
 | `align` | `start`, `center`, `end`, `justify` | `base_text_align` (print) |
 | `hyphenate` | `true` or `false` | `base_hyphens` (print) |
 | `color.<name>` | Colors by role; `ink` is the text's, `paper` the page's | `base_font_color`, `page_background_color` |
 | `rule.<name>` | Rule widths by name (`hairline`, `heavy`) | |
-| `page` | `size`, `margin` (1, 2 or 4 lengths), `inner`, `outer` | `page_size`, `page_margin`, `page_margin_inner`, `page_margin_outer` |
+| `page` | `size` (a name, `A4`, or a trim, `[6.25in, 9.25in]`), `margin` (1, 2 or 4 lengths), `inner`, `outer` | `page_size`, `page_margin`, `page_margin_inner`, `page_margin_outer` |
 
 ## Styles
 

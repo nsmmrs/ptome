@@ -72,7 +72,7 @@ String describeLook(Look look) {
     final page = tokens.page;
     if (page == null || m != Medium.print) return null;
     return [
-      ?page.size,
+      if (page.size case final size?) '$size',
       if (page.margin case final margin?)
         'margins ${margin.map((l) => '$l').join(' ')}',
       if (page.inner case final inner?) 'inner $inner',
