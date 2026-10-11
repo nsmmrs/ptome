@@ -23,10 +23,10 @@ epub3-stylesheet=asciidoctor-epub3` (EPUB), `-a pdf-theme=default` (PDF;
 | Heading and label face | a sans, bold | Noto Sans | Open Sans, 600 | M+ 1p |
 | Code face | a monospace, a little smaller than the text | M+ 1mn, 0.9 of the text | Droid Sans Mono, 0.9em | M+ 1mn |
 | Text size | 10–12 pt in print, 16–20 px on screen | 10.5 pt | 1.0625rem (17 px) | the reader's |
-| Line spacing | 120–145% in print, about 160% on screen | 1.4 | 1.6 | 1.5 |
+| Line spacing | 120–145% in print, about 160% on screen | 1.4 | 1.6 | 1.6 (asciidoctor-epub3's) |
 | Measure | 45–90 characters, 60–75 best | about 75: Letter or A4 with 1.5in side margins | 42em (about 80 characters) | the reader's |
 | Paragraphs | space between or a first-line indent, not both: space, as technical books do | 6 pt apart, no indent | 1em apart (Asciidoctor's) | Asciidoctor-epub3's |
-| Alignment | justified only with hyphenation | justified and hyphenated | left | left, hyphenated with `:hyphens:` |
+| Alignment | justified only with hyphenation | justified and hyphenated | left | justified (asciidoctor-epub3's), hyphenated with `:hyphens:` |
 | Headings | bold, near-black, a modest scale, more space above than below, kept with what follows | 26 / 20 / 14 / 12 / 11 / 10.5 pt; 1.5em above, 0.5em below; `heading_min_height_after: auto` | #191919 (not Asciidoctor's red) | M+ 1p (asciidoctor-epub3's) |
 | Text color | not pure black on screen | #1F1F1F | Asciidoctor's | asciidoctor-epub3's |
 | Color | for links and labels only | links #2156A5 | links #2156A5 | links #2156A5 |

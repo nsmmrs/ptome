@@ -122,9 +122,12 @@ style maps, each output dropping what it cannot render.
      no values of its own, written after Asciidoctor's stylesheet, so a
      look changes values without new CSS.
    - **EPUB:** the same stylesheet with the `ebook` values. The reading
-     system owns the body text: by default a look sets no text size,
-     leading or alignment for `ebook`, as Standard Ebooks' core
-     stylesheet doesn't.
+     system owns the body text (Kindle asks for its default size and line
+     height, Apple Books applies the reader's justification): a look sets
+     no text size, line spacing or alignment for `ebook` unless it says
+     so, and the house look sets none and turns hyphenation on, as
+     Standard Ebooks' core stylesheet does (decided with the user,
+     2026-10-11).
    - **Man pages:** styles map roles onto bold, italic and indentation;
      nothing else applies.
    - **DocBook:** nothing applies; it records structure.
@@ -190,6 +193,9 @@ style maps, each output dropping what it cannot render.
   `modern_test`), and the HTML and EPUB pages it styles render as they do
   now (their page images compared), the stylesheets changing only by the
   custom properties they read.
+- The house EPUB stops imposing asciidoctor-epub3's justified
+  paragraphs and 1.6 line height: reading systems set them from their
+  defaults and the reader's settings, and the text is hyphenated.
 - Existing PDF themes and stylesheets keep working unchanged
   (precedence 4); a look is optional for anyone who has one, and can be
   adopted one format at a time.
