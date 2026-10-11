@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/media.adoc"
+formats: [pdf]
+safe: unsafe

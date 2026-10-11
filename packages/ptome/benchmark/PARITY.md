@@ -376,10 +376,10 @@ code is ported.
 Two tools compare the PDF files of the gem and ptome:
 
 - `tool/pdf_look.dart`: page images, blurred, the share of pixels that
-  differ (the look check below; `test/pdf/converter_test.dart` holds 32
-  fixtures and the gem's chronicles and edge-cases examples to it,
-  against PDFs the gem made, with `SOURCE_DATE_EPOCH=0`, along with their
-  page counts, outlines and page labels);
+  differ (the look check below; the 32 fixtures and the gem's chronicles
+  and edge-cases examples it held ptome to are corpus cases since
+  2026-10-11, `ptome-pdf-*`, compared pixel for pixel with their outlines
+  and page labels);
 - `tool/pdf_parity.dart`: what a reader extracts: the words in order
   (`pdftotext`), where each is to the point (`pdftotext -bbox`), the
   outline, the link annotations and the page labels, and the mean gray

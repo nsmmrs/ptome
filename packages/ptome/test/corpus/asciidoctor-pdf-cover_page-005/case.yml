@@ -3,3 +3,5 @@ formats: [pdf]
 attributes:
   "imagesdir": "images"
   "nofooter": ""
+defects:
+  pdf: "a front cover image that can't be embedded leaves no cover page, but the gem still counts one: the outline's entry for the document is left out"

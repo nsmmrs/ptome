@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/abstract.adoc"
+formats: [pdf]
+safe: unsafe

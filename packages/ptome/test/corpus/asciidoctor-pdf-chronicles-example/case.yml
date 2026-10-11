@@ -1,0 +1,3 @@
+source: "vendor:vendor/asciidoctor-pdf/test/examples/chronicles-example.adoc"
+formats: [pdf]
+safe: unsafe

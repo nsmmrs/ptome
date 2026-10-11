@@ -274,16 +274,77 @@ String? comparePages(List<int> golden, List<int> pdf) {
       return 'page ${i + 1}: $share% of its pixels';
     }
   }
+  // What a viewer shows beside the pages: the outline and page labels.
+  final (x, y) = (_structure(golden), _structure(pdf));
+  if (x != null && y != null) {
+    for (final (name, want, got) in [
+      ('outline', x.outline, y.outline),
+      ('page labels', x.labels, y.labels),
+    ]) {
+      for (var i = 0; i < want.length || i < got.length; i++) {
+        final (w, g) = (
+          i < want.length ? want[i] : '(none)',
+          i < got.length ? got[i] : '(none)',
+        );
+        if (w != g) return '$name, item ${i + 1}: $g, not $w';
+      }
+    }
+  }
   return 'identical';
+}
+
+/// The outline of [pdf] (`level page title` per item, from pdftohtml) and
+/// its page labels (from qpdf); null without those tools.
+({List<String> outline, List<String> labels})? _structure(List<int> pdf) {
+  final file = _pdfFile(pdf);
+  final xml = io.commandOutput('pdftohtml', [
+    '-xml',
+    '-i',
+    '-stdout',
+    '-q',
+    file,
+  ]);
+  final json = io.commandOutput('qpdf', ['--json', '--json-key=pages', file]);
+  if (xml == null || json == null) return null;
+  final outline = <String>[];
+  var level = 0;
+  for (final m in RegExp(
+    r'<outline>|</outline>|<item page="(\d+)">([^<]*)</item>',
+  ).allMatches(xml)) {
+    switch (m[0]) {
+      case '<outline>':
+        level++;
+      case '</outline>':
+        level--;
+      default:
+        outline.add('$level ${m[1]} ${m[2]}');
+    }
+  }
+  return (
+    outline: outline,
+    labels: [
+      for (final m in RegExp(r'"label": (\{[^}]*\}|null)').allMatches(json))
+        m[1]!.replaceAll(RegExp(r'\s+'), ' '),
+    ],
+  );
+}
+
+/// [pdf] in a file of the scratch folder, written once.
+String _pdfFile(List<int> pdf) {
+  final dir = p.posix.join(_scratch, 'pages', sha256Of(pdf));
+  final file = p.posix.join(dir, 'document.pdf');
+  if (!io.isFile(file)) {
+    io.createDirectories(dir);
+    io.writeBytes(file, pdf);
+  }
+  return file;
 }
 
 /// The gray page images of [pdf] at 50 dpi (`pdftoppm -gray`), made once.
 List<List<int>>? _pages(List<int> pdf) {
   final dir = p.posix.join(_scratch, 'pages', sha256Of(pdf));
   if (!io.isFile(p.posix.join(dir, 'done'))) {
-    io.createDirectories(dir);
-    final file = p.posix.join(dir, 'document.pdf');
-    io.writeBytes(file, pdf);
+    final file = _pdfFile(pdf);
     final rendered = io.commandOutput('pdftoppm', [
       '-r',
       '50',

@@ -1,5 +1,7 @@
 # The corpus cases known red (`<case> <format>`): differences
 # compatibility settings haven't closed yet. Written by
 # `dart run tool/corpus_red.dart REPORT.json --update`.
+asciidoctor-pdf-chronicles-example pdf
 asciidoctor-pdf-image_spec-pdf-aaa6566d pdf
 asciidoctor.js-semantic-html5-reference-pdf-0d63b137 pdf
+ptome-pdf-theme-keys2 pdf

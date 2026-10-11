@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/prepress.adoc"
+formats: [pdf]
+safe: unsafe

@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/covers.adoc"
+formats: [pdf]
+safe: unsafe

@@ -68,6 +68,9 @@
   A block whose content runs past the room it was given (a text box's
   last line, its gap below) and whose bottom edge the region's end cuts
   off reaches that end too, rather than running past it.
+- `PageTemplate.runningOver`: the header painted after the page's
+  content, as the footer is (content reaching into the top margin goes
+  under it), rather than before it.
 - A table cell is as tall as its content placed: rows were measured with
   the margin above a cell's first block (or a spacer starting it), which
   placing drops, so such a cell had that much room left at its bottom (29

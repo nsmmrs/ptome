@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/footnotes-book.adoc"
+formats: [pdf]
+safe: unsafe

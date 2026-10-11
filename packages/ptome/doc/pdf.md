@@ -32,6 +32,7 @@ same (`benchmark/PARITY.md`).
 | `footnotes_placement` | `end` | `page` |
 | `toc_macro_in_section` | `false` | `true` |
 | `running_content_on_openers` | `true` | `false` |
+| `running_content_layer` | `over` | `under` |
 | `base_glyph_widths` | `thousandths` | `exact` |
 | `base_kerning_source` | `kern_table` | `font` |
 | `base_font_embedding` | `simple` | `composite` |
@@ -349,6 +350,7 @@ each use, which is asciidoctor-pdf's default). With `media` other than
 | Key | Default | What it does |
 | --- | --- | --- |
 | `running_content_on_blank_pages` | `false` | A blank page (the verso before a chapter that starts on a recto page) has no header or footer unless this is `true`. |
+| `running_content_layer` | `under` | Whether the header is painted `under` the page's content (content reaching into the top margin, a large title's ascenders, covers its rule) or `over` it, as the footer always is. |
 | `running_content_on_openers` | `false` | A page that opens a part or chapter has no header or footer unless this is `true`. |
 | `section_role_<role>_running_content_on_openers` | | `true` keeps the running content on the first page of a part or chapter with that role (a foreword set as an ordinary heading). |
 | `header_title_style`, `footer_title_style` | `document` | As in asciidoctor-pdf (`document`, `toc`, `basic`). |

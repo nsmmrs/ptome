@@ -440,6 +440,25 @@ void main() {
     expect(document.pages.single.links.single, endsWith('-> #there'));
   });
 
+  test('the header is painted before the content, or after it', () {
+    // The texts drawn on the page, in order, the header in its margin.
+    List<String> drawn({required bool over}) {
+      final document = RecordingDocument();
+      FlowLayout(
+        template: PageTemplate(
+          const Rect(0, 0, 300, 200),
+          margins: const EdgeInsets.all(40),
+          header: (page) => [_para('header')],
+          runningOver: over,
+        ),
+      ).layout([_para('body')]).render(document);
+      return [for (final t in document.pages.single.texts) t.trim()];
+    }
+
+    expect(drawn(over: false), ['header', 'body']);
+    expect(drawn(over: true), ['body', 'header']);
+  });
+
   test('templates and decorations paint on the pages the layout made', () {
     final document = RecordingDocument();
     final order = <String>[];

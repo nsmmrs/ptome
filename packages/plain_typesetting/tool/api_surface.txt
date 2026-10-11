@@ -460,8 +460,9 @@ final class PageTemplate
   List<LayoutBox> Function(PageInfo)? footer
   List<LayoutBox> Function(PageInfo)? header
   List<Rect> regions
-  PageTemplate(Rect size, {EdgeInsets margins = const EdgeInsets.all(72), int columns = 1, double columnGap = 12, List<LayoutBox> Function(PageInfo)? header, List<LayoutBox> Function(PageInfo)? footer, void Function(Canvas, PageInfo)? background, void Function(Canvas, PageInfo)? foreground, double? bleed})
+  PageTemplate(Rect size, {EdgeInsets margins = const EdgeInsets.all(72), int columns = 1, double columnGap = 12, List<LayoutBox> Function(PageInfo)? header, List<LayoutBox> Function(PageInfo)? footer, bool runningOver = false, void Function(Canvas, PageInfo)? background, void Function(Canvas, PageInfo)? foreground, double? bleed})
   Rect size
+  bool runningOver
   double columnGap
   double? bleed
   int columns

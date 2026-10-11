@@ -135,7 +135,8 @@ final class PageInfo {
 final class PageTemplate {
   /// Pages of [size] whose content area is inside [margins], in
   /// [columns] columns [columnGap] apart; [header] and [footer] give the
-  /// boxes of the top and bottom margins, [background] paints under the
+  /// boxes of the top and bottom margins (the header painted before the
+  /// content, unless [runningOver]), [background] paints under the
   /// content and [foreground] over everything.
   const new(
     this.size, {
@@ -144,6 +145,7 @@ final class PageTemplate {
     this.columnGap = 12,
     this.header,
     this.footer,
+    this.runningOver = false,
     this.background,
     this.foreground,
     this.bleed,
@@ -173,6 +175,11 @@ final class PageTemplate {
 
   /// The boxes of the bottom margin for a page.
   final List<LayoutBox> Function(PageInfo page)? footer;
+
+  /// Whether the header is painted after the content, as the footer is
+  /// (content reaching into the top margin then goes under it), rather
+  /// than before it.
+  final bool runningOver;
 
   /// Paints under a page's content.
   final void Function(Canvas canvas, PageInfo page)? background;

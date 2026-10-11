@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/icons.adoc"
+formats: [pdf]
+safe: unsafe

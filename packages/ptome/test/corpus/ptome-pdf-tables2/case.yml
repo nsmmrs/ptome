@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/tables2.adoc"
+formats: [pdf]
+safe: unsafe

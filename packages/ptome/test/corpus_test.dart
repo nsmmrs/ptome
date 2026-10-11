@@ -2,8 +2,9 @@
 /// `asciidoctor-compat`, to the files the Asciidoctor command line writes
 /// for it. Text formats match the golden file's bytes (its generator
 /// stamp aside); a PDF matches its pages, pixel for pixel, an EPUB the
-/// files in it, and the last ptome file found equal is kept by its hash
-/// (ptome.yml), so an unchanged one isn't compared again.
+/// files in it (and a PDF its outline and page labels), and the last
+/// ptome file found equal is kept by its hash (ptome.yml), so an unchanged
+/// one isn't compared again (unless `CORPUS_RECHECK` is set).
 @Tags(['corpus'])
 library;
 
@@ -50,7 +51,7 @@ void main() {
               );
             }
             final hash = sha256Of(got);
-            if (c.verified[format] == hash) return;
+            if (c.verified[format] == hash && !_recheck) return;
             final result = format == Format.pdf
                 ? comparePages(want, got)
                 : compareEntries(want, got);
@@ -76,3 +77,7 @@ String _text(List<int> bytes) =>
     withoutGenerator(utf8.decode(bytes, allowMalformed: true));
 
 const _onJs = bool.fromEnvironment('dart.library.js_interop');
+
+/// Whether every PDF and EPUB is compared again, its hash recorded or not
+/// (`CORPUS_RECHECK=1`): after the comparison itself changes.
+final bool _recheck = io.environment['CORPUS_RECHECK'] != null;

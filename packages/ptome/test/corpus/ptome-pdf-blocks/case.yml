@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/blocks.adoc"
+formats: [pdf]
+safe: unsafe

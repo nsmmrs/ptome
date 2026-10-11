@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/theme-keys.adoc"
+formats: [pdf]
+safe: unsafe

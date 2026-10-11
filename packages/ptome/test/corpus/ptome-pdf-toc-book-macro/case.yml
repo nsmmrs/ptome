@@ -1,0 +1,3 @@
+source: "ptome:test/pdf/fixtures/toc-book-macro.adoc"
+formats: [pdf]
+safe: unsafe

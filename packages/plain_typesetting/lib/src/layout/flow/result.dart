@@ -107,9 +107,15 @@ final class LayoutResult {
       }
       final painter = _Painter(target.canvas, target);
       template.background?.call(target.canvas, info);
-      _running(template.header?.call(info), template, painter, header: true);
+      final header = template.header?.call(info);
+      if (!template.runningOver) {
+        _running(header, template, painter, header: true);
+      }
       for (final (region, placed) in [...page.placed, ...page.side]) {
         placed?.paint(painter, region.left, region.top);
+      }
+      if (template.runningOver) {
+        _running(header, template, painter, header: true);
       }
       _running(template.footer?.call(info), template, painter, header: false);
       template.foreground?.call(target.canvas, info);

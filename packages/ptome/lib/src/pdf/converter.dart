@@ -559,6 +559,10 @@ final class PdfConverter extends BuiltInConverter
         margins: _marginsFor(document, layout),
         header: _header,
         footer: _footer,
+        // (`running_content_layer: over`: the header painted after the
+        // page's content, as the footer is.)
+        runningOver:
+            _choice('running_content_layer', const ['under', 'over']) == 'over',
         background: _pageBackground,
         foreground: _pageForeground,
         bleed: _bleed,
@@ -1954,6 +1958,7 @@ final class PdfConverter extends BuiltInConverter
       columnGap: template.columnGap,
       header: template.header,
       footer: template.footer,
+      runningOver: template.runningOver,
       background: template.background,
       foreground: template.foreground,
       bleed: template.bleed,
@@ -2284,6 +2289,7 @@ final class PdfConverter extends BuiltInConverter
     'toc_macro_in_section': ThemeBool(false),
     'running_content_on_openers': ThemeBool(true),
     'running_content_on_blank_pages': ThemeBool(true),
+    'running_content_layer': ThemeString('over'),
     'base_emphasis_inversion': ThemeBool(false),
     'base_glyph_widths': ThemeString('thousandths'),
     'base_kerning_source': ThemeString('kern_table'),
@@ -9127,12 +9133,16 @@ final class PdfConverter extends BuiltInConverter
       final Section section => section,
       _ => null,
     };
-    void addToc(PdfOutlineItem? parent) {
+    // (At the level of the section its macro follows, else of the first
+    // section; left out, as a section is, below the levels shown.)
+    void addToc(PdfOutlineItem? parent, int levels) {
       final pages_ = _tocPages;
+      final sections = _sectionsOf(_document);
       if (pages_ == null ||
           tocTitle.isEmpty ||
-          _sectionsOf(_document).isEmpty ||
-          pages_.$1 > pages.length) {
+          sections.isEmpty ||
+          pages_.$1 > pages.length ||
+          ((tocAfter ?? sections.first).level ?? 1) > levels) {
         return;
       }
       final anchor = tocNode == null
@@ -9185,11 +9195,11 @@ final class PdfConverter extends BuiltInConverter
             ? pdf.addOutline(title, target, open: open && expand >= 1)
             : parent.add(title, target, open: open && expand >= 1);
         if (open) level(children, sectionLevels, expand - 1, item);
-        if (section == tocAfter) addToc(parent);
+        if (section == tocAfter) addToc(parent, levels);
       }
     }
 
-    if (tocAfter == null) addToc(null);
+    if (tocAfter == null) addToc(null, levels);
     level(_sectionsOf(_document), levels, expand, null);
   }
 
