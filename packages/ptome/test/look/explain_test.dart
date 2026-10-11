@@ -134,8 +134,8 @@ void main() {
     );
     expect(_under(explanation, 'tokens.measure'), [
       'PDF  page_measure: 34em',
-      'HTML  #header, … (3 more){max-width:34em}  (screen)',
-      '#header, … (3 more){max-width:34em}  (print)',
+      'HTML  #header, … (4 more){max-width:34em}  (screen)',
+      '#header, … (4 more){max-width:34em}  (print)',
       "EPUB  left out: is the reader's in an EPUB (a warning)",
     ]);
     // A table's frame and its sides make one key, and one declaration:

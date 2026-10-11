@@ -1803,7 +1803,13 @@ abstract final class EmbeddedData {
         '.index ul.index-terms ul.index-terms{margin-left:1.25em}\n'
         '@media screen and (min-width:48em){.index{columns:2;column-gap:2em}}\n'
         '#cover{text-align:center;margin:2em auto}\n'
-        '#cover img{max-width:100%;max-height:85vh}\n',
+        '#cover img{max-width:100%;max-height:85vh}\n'
+        ':where(.multipage-nav){max-width:62.5em}\n'
+        '.multipage-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.25em 1.5em;margin:1.25em auto;padding:.5em .9375em;border-top:1px solid #dddddf;border-bottom:1px solid #dddddf}\n'
+        '.multipage-nav>*{font-size:.9375em}\n'
+        '.multipage-nav a{text-decoration:none}\n'
+        '.multipage-nav a.next{margin-left:auto;text-align:right}\n'
+        '.multipage-nav .folio{color:rgba(0,0,0,.6)}\n',
     'stylesheets/ptome-epub3-device.css':
         '/*! ptome\'s device rules for EPUB (ADR-0023): what the look\'s values don\'t say, after asciidoctor-epub3\'s stylesheet and the look\'s */\n'
         '.unbreakable{-webkit-column-break-inside:avoid;page-break-inside:avoid;break-inside:avoid}\n'

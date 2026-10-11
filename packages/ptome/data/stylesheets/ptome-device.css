@@ -7,3 +7,9 @@
 @media screen and (min-width:48em){.index{columns:2;column-gap:2em}}
 #cover{text-align:center;margin:2em auto}
 #cover img{max-width:100%;max-height:85vh}
+:where(.multipage-nav){max-width:62.5em}
+.multipage-nav{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.25em 1.5em;margin:1.25em auto;padding:.5em .9375em;border-top:1px solid #dddddf;border-bottom:1px solid #dddddf}
+.multipage-nav>*{font-size:.9375em}
+.multipage-nav a{text-decoration:none}
+.multipage-nav a.next{margin-left:auto;text-align:right}
+.multipage-nav .folio{color:rgba(0,0,0,.6)}

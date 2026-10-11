@@ -215,7 +215,7 @@ templates:
         screen,
         allOf(
           contains(
-            '@media screen{#header,#content,#footnotes,#footer'
+            '@media screen{#header,#content,#footnotes,#footer,.multipage-nav'
             '{max-width:42em}}',
           ),
           contains(

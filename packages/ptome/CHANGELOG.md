@@ -62,6 +62,8 @@ Asciidoctor project.
   (or a role floated with `float_shape: alpha`) is a cutout, its opaque
   pixels' edge what the lines beside it follow, in the PDF line by line,
   on the web as a `shape-outside` polygon computed from the image.
+- The website's navigation bar (`multipage_html5`) is laid out in the
+  house style: a ruled row in the text's column, the link on at the right.
 - Jump lines: a `[.jump]` paragraph that is a cross reference alone says
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web

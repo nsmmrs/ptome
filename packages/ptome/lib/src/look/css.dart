@@ -352,7 +352,7 @@ final class _CssCompiler {
     }
     if (tokens.measure?.of(medium) case final measure?) {
       if (html) {
-        const selector = '#header,#content,#footnotes,#footer';
+        const selector = '#header,#content,#footnotes,#footer,.multipage-nav';
         final declaration = '$selector{max-width:${_length(measure)}}';
         // (The screen's measure on screens alone.)
         if (medium == Medium.screen) {
