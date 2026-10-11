@@ -35,11 +35,12 @@ What each output does with a look:
   `--ptome-font-text`, `--ptome-rule-hairline`; its styles as rules over
   Asciidoctor's markup that read them; the print values in
   `@media print`, the page in `@page`), then the device rules
-  (`data/stylesheets/ptome-device.css`), which hold no values. A
-  `stylesheet` the document names replaces it.
+  (`data/stylesheets/ptome-device.css`), which hold no values, then the
+  look's own `css:`. A `stylesheet` the document names replaces it.
 - **EPUB:** asciidoctor-epub3's stylesheet, then the look's rules with
   the `ebook` values written out (e-readers such as Kindle's don't read
-  custom properties), then the device rules. Unless the look sets an
+  custom properties), then the device rules, then the look's own
+  `epub-css:`. Unless the look sets an
   `ebook` line spacing or alignment, asciidoctor-epub3's justified,
   1.6-spaced paragraphs are undone, so the reader's settings apply.
 - **`asciidoctor-compat`:** no look applies; the classic theme and
@@ -136,8 +137,41 @@ subtitle) leaves its style out.
 ## What an output can't render
 
 Each output applies what it can and leaves out, quietly, what it doesn't
-by design (an e-book's text size). Anything else a look sets that an
-output can't render is a warning naming the look, the item and the
-output (`look magazine: styles.paragraph.keep-with-next has no effect in
-the PDF`); an unknown token, element or property is an error with its
-line and column.
+by design (an e-book's alignment and line spacing, HTML's subtitle).
+Anything else a look sets that an output can't render is a warning
+naming the look, the item and the output (`look magazine:
+styles.paragraph.keep-with-next has no effect in the PDF`); an unknown
+token, element or property is an error with its line and column.
+
+## Explaining a look
+
+`ptome look explain` prints what each item of a look became in each
+output, and what an output left out and why:
+
+```console
+$ ptome look explain magazine --looksdir design
+look magazine (design): what each item became, by output
+
+tokens.size.text
+  PDF   base_font_size: 10.5
+  HTML  body{font-size:17px}
+        body{font-size:10.5pt}  (print)
+  EPUB  — set for print and screen only
+styles.paragraph.keep-with-next
+  PDF   left out: has no effect in the PDF (a warning)
+  HTML  .paragraph>p{break-after:avoid}
+        .paragraph>p{page-break-after:avoid}
+  EPUB  body p{break-after:avoid}
+        body p{page-break-after:avoid}
+...
+```
+
+The PDF's lines are theme keys, as a theme file writes them; HTML's and
+an EPUB's are custom properties and declarations with their selectors
+(a long list of selectors shortened to its first), HTML's print-only
+ones marked `(print)`. A token that only styles read (a color, a rule
+width) says so where the output doesn't declare it. The results and the
+drops are the compilers' own, the ones conversion warns of, so the two
+can't disagree. `--format pdf` (or `html`, `epub3`, or a list) explains
+those outputs alone; without a look it explains the one `ptome.yml`
+names, else `ptome`.

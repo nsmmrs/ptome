@@ -13,6 +13,7 @@ import 'package:ptome/src/cli/diagnostics.dart';
 import 'package:ptome/src/cli/doctor.dart';
 import 'package:ptome/src/cli/init_config.dart';
 import 'package:ptome/src/cli/invoker.dart';
+import 'package:ptome/src/cli/look.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/options.dart';
 
@@ -24,7 +25,9 @@ import 'package:ptome/src/options.dart';
 ///
 /// A first argument of `init-config` runs the project scaffold instead
 /// of converting (see [runInitConfig]), and `doctor` checks and installs
-/// the default themes' fonts (see [runDoctor]); everything else behaves
+/// the default themes' fonts (see [runDoctor]), `check` analyzes numbered
+/// units (see [runCheck]) and `look explain` explains a look (see
+/// [runLook]); everything else behaves
 /// exactly like the stock CLI.
 Future<void> runCli(
   List<String> args, {
@@ -70,6 +73,9 @@ Future<int> runCliCode(
   }
   if (args.isNotEmpty && args.first == 'check') {
     return runCheck(args.sublist(1), out: out, err: err);
+  }
+  if (args.isNotEmpty && args.first == 'look') {
+    return runLook(args.sublist(1), out: out, err: err);
   }
   try {
     final invoker = Invoker.fromArgs(args, out: out, err: err)

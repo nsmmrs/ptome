@@ -20,6 +20,11 @@ Asciidoctor project.
   compiled from it too (HTML as custom properties, pages rendering as
   before); the EPUB now leaves its body text's alignment and line
   spacing to the reader and hyphenates it.
+  `ptome look explain` prints what each token and style became in each
+  output (theme keys, custom properties, CSS) and what an output left
+  out and why, from the compilers' own results, the ones conversion
+  warns of. A look's own `css:` and `epub-css:` come after the device
+  rules.
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

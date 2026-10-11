@@ -53,11 +53,14 @@ class Stylesheets {
       primaryStylesheetFor(LookLoader().load('ptome'));
 
   /// The default stylesheet for [look] (ADR-0023): Asciidoctor's, then
-  /// the look's CSS, then the device rules that hold no values.
+  /// the look's CSS, then the device rules that hold no values, then the
+  /// CSS the look writes itself.
   String primaryStylesheetFor(Look look) {
     final css = lookCss(look, CssTarget.html, warn: LoggerManager.logger.warn);
+    final own = lookOwnCss(look, CssTarget.html);
     return '$classicStylesheetData\n${css.trimRight()}\n'
-        '${_rstrip(EmbeddedData.file('stylesheets/ptome-device.css'))}';
+        '${_rstrip(EmbeddedData.file('stylesheets/ptome-device.css'))}'
+        '${own.isEmpty ? '' : '\n$own'}';
   }
 
   /// Asciidoctor's default stylesheet, as it is (`stylesheet=asciidoctor`).

@@ -8,6 +8,7 @@
 library;
 
 import 'package:ptome/src/look/model.dart';
+import 'package:ptome/src/look/outcome.dart';
 
 /// The output a look's CSS is for.
 enum CssTarget {
@@ -18,13 +19,33 @@ enum CssTarget {
   epub,
 }
 
-/// The CSS of [look] for [target]; what [target] can't render of it
-/// reported to [warn].
+/// The CSS of [look]'s tokens and styles for [target] (its own CSS is
+/// [lookOwnCss]); what [target] can't render of it
+/// reported to [warn], and what each item became, or why it was left
+/// out, to [trace] (`ptome look explain`).
 String lookCss(
   Look look,
   CssTarget target, {
   void Function(String message)? warn,
-}) => _CssCompiler(look, target, warn ?? (_) {}).compile();
+  void Function(LookOutcome outcome)? trace,
+}) => _CssCompiler(look, target, warn ?? (_) {}, trace ?? (_) {}).compile();
+
+/// The CSS [look] writes itself for [target], its `css:` or `epub-css:`
+/// (the looks it extends first): laid after the device rules, to have
+/// the last word.
+String lookOwnCss(Look look, CssTarget target) => [
+  for (final css in target == CssTarget.html ? look.css : look.epubCss)
+    css.trim(),
+].join('\n');
+
+/// What a look's own CSS becomes ([lookOwnCss]).
+const String _own = 'after the device rules, as written';
+
+/// A declaration and the item of the look it comes from.
+typedef _Declaration = (String item, String css);
+
+/// A rule: a selector and its declarations.
+typedef _Rule = (String selector, List<_Declaration> declarations);
 
 /// The selectors of each element in each target's markup (null: the
 /// target has no such element).
@@ -84,11 +105,12 @@ String _generic(String role) => switch (role) {
 };
 
 final class _CssCompiler {
-  new(this.look, this.target, this.warn);
+  new(this.look, this.target, this.warn, this.trace);
 
   final Look look;
   final CssTarget target;
   final void Function(String message) warn;
+  final void Function(LookOutcome outcome) trace;
 
   Tokens get tokens => look.tokens;
 
@@ -96,8 +118,29 @@ final class _CssCompiler {
 
   String get _output => html ? 'HTML' : 'an EPUB';
 
-  void _unsupported(String item, [String? why]) =>
-      warn('look ${look.name}: $item ${why ?? 'has no effect in $_output'}');
+  void _unsupported(String item, [String? why]) {
+    final reason = why ?? 'has no effect in $_output';
+    warn('look ${look.name}: $item $reason');
+    trace(Dropped(item, reason));
+  }
+
+  /// Nothing, for [item], which names a [kind] token without a value in
+  /// [medium].
+  String? _noValue(String item, String kind, String name, Medium medium) {
+    trace(
+      Dropped(
+        item,
+        'the $kind token $name has no ${medium.name} value',
+        warned: false,
+      ),
+    );
+    return null;
+  }
+
+  /// The medium an outcome in [medium] is told apart by: HTML's print
+  /// rules are print's alone, its others every medium's.
+  Medium? _only(Medium medium) =>
+      html && medium == Medium.print ? Medium.print : null;
 
   String compile() {
     final out = StringBuffer(
@@ -111,15 +154,11 @@ final class _CssCompiler {
       _medium(print, Medium.print, except: '$screen'.split('\n').toSet());
       if (print.isNotEmpty) out.write('@media print{$print}\n');
       if (_page() case final page?) out.write('$page\n');
-      for (final css in look.css) {
-        out.write('${css.trim()}\n');
-      }
+      if (look.css.isNotEmpty) trace(const Became('css', _own));
     } else {
       _medium(out, Medium.ebook);
       _readerOwns(out);
-      for (final css in look.epubCss) {
-        out.write('${css.trim()}\n');
-      }
+      if (look.epubCss.isNotEmpty) trace(const Became('epub-css', _own));
     }
     for (final name in look.templates.named.keys) {
       _unsupported('templates.$name');
@@ -144,7 +183,7 @@ final class _CssCompiler {
         ColorToken(:final name) => switch (tokens.colors[name]) {
           final color? => switch (color.of(medium)) {
             final c? => html ? 'var(--ptome-color-$name)' : '$c',
-            null => null,
+            null => _noValue(item, 'color', name, medium),
           },
           null => () {
             _unsupported(item, 'names no color token $name');
@@ -159,7 +198,7 @@ final class _CssCompiler {
         WidthToken(:final name) => switch (tokens.rules[name]) {
           final rule? => switch (rule.of(medium)) {
             final length? => html ? 'var(--ptome-rule-$name)' : _length(length),
-            null => null,
+            null => _noValue(item, 'rule', name, medium),
           },
           null => () {
             _unsupported(item, 'names no rule token $name');
@@ -177,82 +216,99 @@ final class _CssCompiler {
     Medium medium, {
     Set<String> except = const {},
   }) {
-    final rules = <(String, List<String>)>[];
-    void rule(String selector, List<String> declarations) {
+    final rules = <_Rule>[];
+    void rule(String selector, List<_Declaration> declarations) {
       if (declarations.isNotEmpty) rules.add((selector, declarations));
     }
 
     if (html) {
       final screen = medium == Medium.screen
           ? const <String>{}
-          : _properties(Medium.screen).toSet();
+          : {for (final (_, p) in _properties(Medium.screen)) p};
       final properties = [
         for (final p in _properties(medium))
-          if (!screen.contains(p)) p,
+          if (!screen.contains(p.$2)) p,
       ];
       if (properties.isNotEmpty) {
-        out.write(':root{${properties.join(';')}}\n');
+        out.write(':root{${properties.map((p) => p.$2).join(';')}}\n');
+      }
+      for (final (item, property) in properties) {
+        trace(Became(item, property, medium: _only(medium)));
       }
     }
     // Tokens the base stylesheet's elements take.
-    final body = <String>[];
+    final body = <_Declaration>[];
     if (tokens.fonts['text']?.at(medium) case MediumFace(:final family?)) {
-      body.add('font-family:${_fontFamily(family, 'text')}');
+      body.add((
+        'tokens.font.text',
+        'font-family:${_fontFamily(family, 'text')}',
+      ));
     }
     if (tokens.textSize?.of(medium) case final size?) {
-      body.add('font-size:${_length(size)}');
+      body.add(('tokens.size.text', 'font-size:${_length(size)}'));
     }
     if (tokens.leading?.of(medium) case final leading?) {
-      body.add('line-height:$leading');
+      body.add(('tokens.leading', 'line-height:$leading'));
     }
     if (tokens.align?.of(medium) case final align?) {
-      body.add('text-align:${_align(align)}');
+      body.add(('tokens.align', 'text-align:${_align(align)}'));
     }
     if (tokens.hyphenate?.of(medium) case final hyphenate?) {
       final value = hyphenate ? 'auto' : 'manual';
-      body.addAll([
+      for (final css in [
         '-webkit-hyphens:$value',
         '-epub-hyphens:$value',
         'adobe-hyphenate:${hyphenate ? 'auto' : 'none'}',
         'hyphens:$value',
-      ]);
+      ]) {
+        body.add(('tokens.hyphenate', css));
+      }
     }
     if (tokens.colors['ink']?.of(medium) != null) {
-      body.add('color:${_color(const ColorToken('ink'), medium, 'ink')}');
+      body.add((
+        'tokens.color.ink',
+        'color:${_color(const ColorToken('ink'), medium, 'ink')}',
+      ));
     }
     if (tokens.colors['paper']?.of(medium) != null) {
-      body.add(
+      body.add((
+        'tokens.color.paper',
         'background-color:'
-        '${_color(const ColorToken('paper'), medium, 'paper')}',
-      );
+            '${_color(const ColorToken('paper'), medium, 'paper')}',
+      ));
     }
     rule('body', body);
     if (tokens.headingSizes?.of(medium) case final sizes?) {
       for (final (i, size) in sizes.take(6).indexed) {
-        rule('h${i + 1}', ['font-size:${_length(size)}']);
+        rule('h${i + 1}', [
+          ('tokens.size.headings', 'font-size:${_length(size)}'),
+        ]);
       }
     }
     if (tokens.fonts['code']?.at(medium) case MediumFace(:final family?)) {
-      rule('code,kbd,pre,samp', ['font-family:${_fontFamily(family, 'code')}']);
+      rule('code,kbd,pre,samp', [
+        ('tokens.font.code', 'font-family:${_fontFamily(family, 'code')}'),
+      ]);
     }
     if (tokens.paragraph case final paragraph?) {
+      const item = 'tokens.paragraph';
       final space = paragraph.space?.of(medium);
       final indent = paragraph.indent?.of(medium);
       final selector = html ? '.paragraph>p' : 'body p';
       switch (paragraph.signal?.of(medium)) {
         case ParagraphSignal.indent:
-          rule(selector, ['margin-bottom:0']);
+          rule(selector, [(item, 'margin-bottom:0')]);
           final first = indent ?? const Length(1.5, LengthUnit.em);
           rule(html ? '.paragraph+.paragraph>p' : 'body p+p', [
-            'text-indent:${_length(first)}',
+            (item, 'text-indent:${_length(first)}'),
           ]);
         case ParagraphSignal.space || null:
           if (space != null) {
-            rule(selector, ['margin-bottom:${_length(space)}']);
+            rule(selector, [(item, 'margin-bottom:${_length(space)}')]);
           }
           if (indent != null) {
             rule(html ? '.paragraph+.paragraph>p' : 'body p+p', [
-              'text-indent:${_length(indent)}',
+              (item, 'text-indent:${_length(indent)}'),
             ]);
           }
       }
@@ -264,8 +320,12 @@ final class _CssCompiler {
         // (The screen's measure on screens alone.)
         if (medium == Medium.screen) {
           out.write('@media screen{$declaration}\n');
+          trace(Became('tokens.measure', declaration, medium: Medium.screen));
         } else {
-          rules.add((selector, ['max-width:${_length(measure)}']));
+          rules.add((
+            selector,
+            [('tokens.measure', 'max-width:${_length(measure)}')],
+          ));
         }
       } else {
         _unsupported('tokens.measure', "is the reader's in an EPUB");
@@ -275,21 +335,29 @@ final class _CssCompiler {
       _style(rules, target, style.at(medium), medium);
     }
     for (final (selector, declarations) in rules) {
-      final line = '$selector{${declarations.join(';')}}';
-      if (!except.contains(line)) out.write('$line\n');
+      // (A declaration two items make, as a table's frame and its sides'
+      // one border-width, written once.)
+      final css = {for (final (_, css) in declarations) css};
+      final line = '$selector{${css.join(';')}}';
+      if (except.contains(line)) continue;
+      out.write('$line\n');
+      for (final (item, css) in declarations) {
+        trace(Became(item, '$selector{$css}', medium: _only(medium)));
+      }
     }
   }
 
-  /// The custom properties of [medium]'s tokens.
-  List<String> _properties(Medium medium) => [
+  /// The custom properties of [medium]'s tokens, with their items.
+  List<_Declaration> _properties(Medium medium) => [
     for (final MapEntry(key: role, value: face) in tokens.fonts.entries)
       if (face.at(medium).family case final family?)
-        '--ptome-font-$role:${_family(family, role)}',
+        ('tokens.font.$role', '--ptome-font-$role:${_family(family, role)}'),
     for (final MapEntry(:key, :value) in tokens.colors.entries)
-      if (value.of(medium) case final color?) '--ptome-color-$key:$color',
+      if (value.of(medium) case final color?)
+        ('tokens.color.$key', '--ptome-color-$key:$color'),
     for (final MapEntry(:key, :value) in tokens.rules.entries)
       if (value.of(medium) case final width?)
-        '--ptome-rule-$key:${_length(width)}',
+        ('tokens.rule.$key', '--ptome-rule-$key:${_length(width)}'),
   ];
 
   /// A face's `font-family` value: its custom property in HTML, the
@@ -329,12 +397,15 @@ final class _CssCompiler {
         '@page :left{${margins(outer, inner)}}',
       ],
     ];
+    for (final rule in rules) {
+      trace(Became('tokens.page', rule, medium: Medium.print));
+    }
     return rules.isEmpty ? null : rules.join('\n');
   }
 
   /// The declarations of [style] (in [medium]) on its target's selector.
   void _style(
-    List<(String, List<String>)> rules,
+    List<_Rule> rules,
     StyleTarget styleTarget,
     MediumStyle style,
     Medium medium,
@@ -347,7 +418,9 @@ final class _CssCompiler {
       },
       RoleTarget(:final role) => '.$role',
     };
-    final declarations = <String>[];
+    final declarations = <_Declaration>[];
+    void add(String property, String css) =>
+        declarations.add(('$item.$property', css));
     final face = switch (style.font) {
       null => null,
       final role => switch (tokens.fonts[role]) {
@@ -358,18 +431,26 @@ final class _CssCompiler {
         }(),
       },
     };
-    if (face case (final role, MediumFace(:final family?))) {
-      declarations.add('font-family:${_fontFamily(family, role)}');
+    if (face case (
+      final role,
+      MediumFace(family: null, weight: null, shape: null, size: null),
+    )) {
+      _noValue('$item.font', 'font', role, medium);
     }
-    final weight = style.weight ?? face?.$2.weight;
-    if (weight != null) declarations.add('font-weight:$weight');
-    final shape = style.shape ?? face?.$2.shape;
-    if (shape != null) declarations.add('font-style:${shape.name}');
+    if (face case (final role, MediumFace(:final family?))) {
+      add('font', 'font-family:${_fontFamily(family, role)}');
+    }
+    if (style.weight ?? face?.$2.weight case final weight?) {
+      add(style.weight == null ? 'font' : 'weight', 'font-weight:$weight');
+    }
+    if (style.shape ?? face?.$2.shape case final shape?) {
+      add(style.shape == null ? 'font' : 'style', 'font-style:${shape.name}');
+    }
     if (style.variant case final variant?) {
-      declarations.addAll([
-        'font-variant:${variant.wire}',
-        if (variant == FontVariant.smallCaps) 'font-feature-settings:"smcp"',
-      ]);
+      add('variant', 'font-variant:${variant.wire}');
+      if (variant == FontVariant.smallCaps) {
+        add('variant', 'font-feature-settings:"smcp"');
+      }
     }
     if (style.size case final size?) {
       final value = switch (size) {
@@ -379,57 +460,58 @@ final class _CssCompiler {
           '${tokens.small!.of(medium)}em',
         SizeToken() => null,
       };
-      if (value != null) declarations.add('font-size:$value');
+      if (value != null) add('size', 'font-size:$value');
     }
     if (style.color case final color?) {
       if (_color(color, medium, '$item.color') case final c?) {
-        declarations.add('color:$c');
+        add('color', 'color:$c');
       }
     }
     if (style.background case final background?) {
       if (_color(background, medium, '$item.background') case final c?) {
-        declarations.add('background-color:$c');
+        add('background', 'background-color:$c');
       }
     }
     if (style.leading case final leading?) {
-      declarations.add('line-height:$leading');
+      add('leading', 'line-height:$leading');
     }
     if (style.spaceBefore case final space?) {
-      declarations.add('margin-top:${_length(space)}');
+      add('space-before', 'margin-top:${_length(space)}');
     }
     if (style.spaceAfter case final space?) {
-      declarations.add('margin-bottom:${_length(space)}');
+      add('space-after', 'margin-bottom:${_length(space)}');
     }
     if (style.padding case final padding?) {
-      declarations.add('padding:${_length(padding)}');
+      add('padding', 'padding:${_length(padding)}');
     }
     if (style.radius case final radius?) {
-      declarations.add('border-radius:${_length(radius)}');
+      add('radius', 'border-radius:${_length(radius)}');
     }
     if (style.border case final border?) {
-      declarations.add(switch (_rule(border, medium, '$item.border')) {
+      add('border', switch (_rule(border, medium, '$item.border')) {
         null => 'border:0',
         (final w, null) => 'border-width:$w',
         (final w, final c) => 'border:$w solid $c',
       });
     }
     if (style.rule case final rule?) {
-      declarations.add(switch (_rule(rule, medium, '$item.rule')) {
+      add('rule', switch (_rule(rule, medium, '$item.rule')) {
         null => 'border-left:0',
         (final w, null) => 'border-left-width:$w',
         (final w, final c) => 'border-left:$w solid $c',
       });
     }
     if (style.keepWithNext case final keep?) {
-      declarations.addAll(
-        keep
-            ? ['break-after:avoid', 'page-break-after:avoid']
-            : ['break-after:auto', 'page-break-after:auto'],
-      );
+      add('keep-with-next', 'break-after:${keep ? 'avoid' : 'auto'}');
+      add('keep-with-next', 'page-break-after:${keep ? 'avoid' : 'auto'}');
     }
     // (A target without the element, as HTML without a subtitle's: left
     // out by design.)
-    if (selector != null && declarations.isNotEmpty) {
+    if (selector == null) {
+      for (final item in {for (final (item, _) in declarations) item}) {
+        trace(Dropped(item, '$_output has no such element', warned: false));
+      }
+    } else if (declarations.isNotEmpty) {
       rules.add((selector, declarations));
     }
     if (styleTarget case ElementTarget(element: LookElement.table)) {
@@ -467,7 +549,7 @@ final class _CssCompiler {
       };
 
   void _table(
-    List<(String, List<String>)> rules,
+    List<_Rule> rules,
     MediumStyle style,
     Medium medium,
     String item,
@@ -492,10 +574,20 @@ final class _CssCompiler {
         width(first, firstName),
         width(second, secondName),
       ].where((w) => w.isNotEmpty);
-      final c = color(first, firstName) ?? color(second, secondName);
+      final firstColor = color(first, firstName);
+      final c = firstColor ?? color(second, secondName);
       rules.add((
         selector,
-        ['border-width:${widths.join(' ')}', if (c != null) 'border-color:$c'],
+        [
+          for (final (name, rule) in [(firstName, first), (secondName, second)])
+            if (rule != null)
+              ('$item.$name', 'border-width:${widths.join(' ')}'),
+          if (c != null)
+            (
+              '$item.${firstColor != null ? firstName : secondName}',
+              'border-color:$c',
+            ),
+        ],
       ));
     }
 
@@ -522,11 +614,14 @@ final class _CssCompiler {
       rules.add((
         head,
         [
-          switch (_rule(rule, medium, '$item.head-rule')) {
-            null => 'border-bottom:0',
-            (final w, null) => 'border-bottom-width:$w',
-            (final w, final c) => 'border-bottom:$w solid $c',
-          },
+          (
+            '$item.head-rule',
+            switch (_rule(rule, medium, '$item.head-rule')) {
+              null => 'border-bottom:0',
+              (final w, null) => 'border-bottom-width:$w',
+              (final w, final c) => 'border-bottom:$w solid $c',
+            },
+          ),
         ],
       ));
     }
@@ -538,7 +633,7 @@ final class _CssCompiler {
                     'table.stripes-odd>tbody>tr:nth-of-type(odd),'
                     'table.stripes-even>tbody>tr:nth-of-type(even)'
               : 'table.table tbody tr:nth-of-type(even)',
-          ['background-color:$c'],
+          [('$item.stripes', 'background-color:$c')],
         ));
       }
     }
@@ -553,11 +648,26 @@ final class _CssCompiler {
         'body p,li>span.principal,dd>span.principal,'
         'aside.sidebar>div.content{text-align:inherit}\n',
       );
+      trace(
+        const Dropped(
+          'tokens.align',
+          "is the reader's in an EPUB (asciidoctor-epub3's justified "
+              'text undone)',
+          warned: false,
+        ),
+      );
     }
     if (tokens.leading?.of(Medium.ebook) == null) {
       out.write(
         'body{line-height:normal}\n'
         'body p,li,dt,dd,footer{line-height:inherit}\n',
+      );
+      trace(
+        const Dropped(
+          'tokens.leading',
+          "is the reader's in an EPUB (asciidoctor-epub3's 1.6 undone)",
+          warned: false,
+        ),
       );
     }
   }

@@ -2,12 +2,12 @@
 .\"     Title: ptome
 .\"    Author: Noah Summers
 .\" Generator: Ptome 0.1.0
-.\"      Date: 2026-10-09
+.\"      Date: 2026-10-11
 .\"    Manual: Ptome Manual
 .\"    Source: Ptome 0.1.0
 .\"  Language: English
 .\"
-.TH "PTOME" "1" "2026-10-09" "Ptome 0.1.0" "Ptome Manual"
+.TH "PTOME" "1" "2026-10-11" "Ptome 0.1.0" "Ptome Manual"
 .ie \n(.g .ds Aq \(aq
 .el       .ds Aq '
 .ss \n[.ss] 0
@@ -38,6 +38,8 @@ ptome \- convert AsciiDoc documents to HTML, DocBook, man pages, EPUB and PDF
 \fBptome doctor\fP [\fB\-y\fP] [\fB\-c\fP]
 .sp
 \fBptome check\fP [\fB\-q\fP] \fIFILE\fP.\|.\|.
+.sp
+\fBptome look explain\fP [\fB\-\-looksdir\fP=\fIDIR\fP] [\fB\-\-format\fP=\fIFORMAT\fP] [\fILOOK\fP]
 .SH "DESCRIPTION"
 .sp
 \fBptome\fP reads each AsciiDoc \fIFILE\fP and writes the converted document next to it, under the same name with the extension of the output format (for example, \fIguide.adoc\fP becomes \fIguide.html\fP).
@@ -207,6 +209,15 @@ Ptome compiles no fonts in: PDFs are set in the fonts installed on the machine t
 \fBptome doctor\fP lists the fonts of the built\-in PDF themes (Noto Serif, Noto Sans, M+ 1mn, the M+ 1p and Noto Emoji fallbacks, Noto Sans Math, and the Font Awesome, Foundation and Payment icon fonts) and where they are found, and offers to download the missing ones from their official sources (Google Fonts, the projects\*(Aq repositories) into this user\(cqs font folder.
 \fB\-y\fP (\fB\-\-yes\fP) installs them without asking; \fB\-c\fP (\fB\-\-check\fP) only checks, and exits with status 1 when fonts are missing.
 A font a theme names that isn\(cqt installed is replaced by a built\-in PDF font (Times, Helvetica or Courier), with a warning.
+.SH "LOOKS"
+.sp
+A look is a document\(cqs design, written once for every output: a YAML file of tokens (faces, sizes, line spacing, measure, colors, rules, the page) and styles of elements and roles in their terms (see \fIdoc/looks.md\fP).
+The built\-in look \fBptome\fP is the default; \fB\-a look=*\fINAME\fB chooses another, a file \fINAME\fB\-look.yml in *\-a looksdir\fR, and \fBlook:\fP in \fIptome.yml\fP names a project\(cqs.
+Each output compiles the look into its own terms: the PDF\(cqs theme keys, HTML\(cqs custom properties and CSS, an EPUB\(cqs CSS.
+.sp
+\fBptome look explain\fP [\fILOOK\fP] prints what each token and style became in each output, and what an output left out and why; what an output can\(cqt render is also a warning when converting.
+\fB\-\-format\fP=\fIFORMAT\fP (\fBpdf\fP, \fBhtml\fP, \fBepub3\fP, or a list) explains those outputs alone; \fB\-\-looksdir\fP=\fIDIR\fP is the folder of the looks.
+Without \fILOOK\fP, it explains the look \fIptome.yml\fP names, else \fBptome\fP.
 .SH "TEXTS CITED BY NUMBERED UNITS"
 .sp
 A document whose header names schemes (\fB:units:\fP) or works it quotes by address (\fB:works:\fP) is written in numbered units: verses, sections, lines, paragraphs, marked with \fB@\fP and found by address (see \fIdoc/units.md\fP).

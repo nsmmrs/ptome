@@ -20,6 +20,8 @@ ptome - convert AsciiDoc documents to HTML, DocBook, man pages, EPUB and PDF
 
 *ptome check* [*-q*] _FILE_...
 
+*ptome look explain* [*--looksdir*=_DIR_] [*--format*=_FORMAT_] [_LOOK_]
+
 == Description
 
 *ptome* reads each AsciiDoc _FILE_ and writes the converted document next to it, under the same name with the extension of the output format (for example, _guide.adoc_ becomes _guide.html_).
@@ -148,6 +150,16 @@ Ptome compiles no fonts in: PDFs are set in the fonts installed on the machine t
 *ptome doctor* lists the fonts of the built-in PDF themes (Noto Serif, Noto Sans, M+ 1mn, the M+ 1p and Noto Emoji fallbacks, Noto Sans Math, and the Font Awesome, Foundation and Payment icon fonts) and where they are found, and offers to download the missing ones from their official sources (Google Fonts, the projects' repositories) into this user's font folder.
 *-y* (*--yes*) installs them without asking; *-c* (*--check*) only checks, and exits with status 1 when fonts are missing.
 A font a theme names that isn't installed is replaced by a built-in PDF font (Times, Helvetica or Courier), with a warning.
+
+== Looks
+
+A look is a document's design, written once for every output: a YAML file of tokens (faces, sizes, line spacing, measure, colors, rules, the page) and styles of elements and roles in their terms (see _doc/looks.md_).
+The built-in look *ptome* is the default; *-a look=*_NAME_ chooses another, a file _NAME_-look.yml in *-a looksdir*, and *look:* in _ptome.yml_ names a project's.
+Each output compiles the look into its own terms: the PDF's theme keys, HTML's custom properties and CSS, an EPUB's CSS.
+
+*ptome look explain* [_LOOK_] prints what each token and style became in each output, and what an output left out and why; what an output can't render is also a warning when converting.
+*--format*=_FORMAT_ (*pdf*, *html*, *epub3*, or a list) explains those outputs alone; *--looksdir*=_DIR_ is the folder of the looks.
+Without _LOOK_, it explains the look _ptome.yml_ names, else *ptome*.
 
 == Texts cited by numbered units
 

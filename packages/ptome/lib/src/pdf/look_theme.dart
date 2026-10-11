@@ -6,6 +6,7 @@
 library;
 
 import 'package:ptome/src/look/model.dart';
+import 'package:ptome/src/look/outcome.dart';
 import 'package:ptome/src/pdf/theme.dart';
 import 'package:ptome/src/pdf/yaml11.dart';
 
@@ -17,7 +18,7 @@ Theme lookTheme(
   ThemeLoader? loader,
   void Function(String message)? warn,
 }) {
-  final compiler = _Compiler(look, warn ?? (_) {});
+  final compiler = _Compiler(look, warn ?? (_) {}, (_) {});
   final entries = compiler.compile();
   return (loader ?? ThemeLoader()).loadOver(base, entries, [
     for (final section in look.pdf)
@@ -25,12 +26,13 @@ Theme lookTheme(
   ])..directory = look.directory;
 }
 
-/// The theme keys a look compiles to, in order (for `ptome look
-/// explain` and the tests).
+/// The theme keys a look compiles to, in order; what each item became,
+/// or why it was left out, reported to [trace] (`ptome look explain`).
 Map<String, Y> lookThemeEntries(
   Look look, {
   void Function(String message)? warn,
-}) => _Compiler(look, warn ?? (_) {}).compile();
+  void Function(LookOutcome outcome)? trace,
+}) => _Compiler(look, warn ?? (_) {}, trace ?? (_) {}).compile();
 
 /// The theme category of each element.
 const Map<LookElement, String> _categories = {
@@ -59,16 +61,22 @@ const Map<LookElement, String> _categories = {
 };
 
 final class _Compiler {
-  new(this.look, this.warn);
+  new(this.look, this.warn, this.trace);
 
   final Look look;
   final void Function(String message) warn;
+  final void Function(LookOutcome outcome) trace;
   final Map<String, Y> out = {};
+
+  /// The item the keys being set come from.
+  String _item = '';
 
   Tokens get tokens => look.tokens;
 
-  void _unsupported(String item, [String why = 'has no effect in the PDF']) =>
-      warn('look ${look.name}: $item $why');
+  void _unsupported(String item, [String why = 'has no effect in the PDF']) {
+    warn('look ${look.name}: $item $why');
+    trace(Dropped(item, why));
+  }
 
   Map<String, Y> compile() {
     _tokens();
@@ -77,6 +85,9 @@ final class _Compiler {
     }
     for (final name in look.templates.named.keys) {
       _unsupported('templates.$name');
+    }
+    if (look.pdf.isNotEmpty) {
+      trace(const Became('pdf', 'its keys, after these, as written'));
     }
     return out;
   }
@@ -97,7 +108,10 @@ final class _Compiler {
     ColorLiteral(:final color) => _string(color.hex),
     ColorToken(:final name) => switch (tokens.colors[name]) {
       // (A token without a print value is another medium's.)
-      final color? => color.of(Medium.print)?.hex.let(_string),
+      final color? => switch (color.of(Medium.print)) {
+        final c? => _string(c.hex),
+        null => _noValue(item, 'color', name),
+      },
       null => () {
         _unsupported(item, 'names no color token $name');
         return null;
@@ -108,7 +122,10 @@ final class _Compiler {
   Y? _width(WidthValue value, String item) => switch (value) {
     WidthLength(:final length) => _length(length),
     WidthToken(:final name) => switch (tokens.rules[name]) {
-      final length? => length.of(Medium.print)?.let(_length),
+      final length? => switch (length.of(Medium.print)) {
+        final l? => _length(l),
+        null => _noValue(item, 'rule', name),
+      },
       null => () {
         _unsupported(item, 'names no rule token $name');
         return null;
@@ -116,9 +133,37 @@ final class _Compiler {
     },
   };
 
-  void _set(String key, Y? value) {
-    if (value != null) out[key] = value;
+  /// Nothing, for [item], which names a [kind] token without a print
+  /// value.
+  Y? _noValue(String item, String kind, String name) {
+    trace(
+      Dropped(item, 'the $kind token $name has no print value', warned: false),
+    );
+    return null;
   }
+
+  /// Sets [key] to [value] (unless null), from [items] (the current
+  /// item's).
+  void _set(String key, Y? value, [List<String>? items]) {
+    if (value == null) return;
+    out[key] = value;
+    for (final item in items ?? [_item]) {
+      trace(Became(item, '$key: ${_show(value)}'));
+    }
+  }
+
+  /// [value] as a theme file writes it.
+  static String _show(Y value) => switch (value) {
+    YScalar(value: ThemeString(:final value))
+        when value.startsWith('#') || num.tryParse(value) != null =>
+      "'$value'",
+    YScalar(:final value) => value.rubyString,
+    YList(:final items) => '[${items.map(_show).join(', ')}]',
+    YMap(:final entries) => '{${entries.entries.map(_entry).join(', ')}}',
+  };
+
+  static String _entry(MapEntry<String, Y> entry) =>
+      '${entry.key}: ${_show(entry.value)}';
 
   /// A face's weight and shape as asciidoctor-pdf's font style.
   /// (The bold face for 600 and up.)
@@ -133,12 +178,14 @@ final class _Compiler {
   // Tokens.
 
   void _tokens() {
+    _item = 'tokens.font.text';
     if (tokens.fonts['text']?.at(Medium.print) case final face?) {
       _set('base_font_family', face.family?.let(_string));
       if (face.weight != null || face.shape != null) {
         _set('base_font_style', _string(_fontStyle(face.weight, face.shape)));
       }
     }
+    _item = 'tokens.font.code';
     if (tokens.fonts['code']?.at(Medium.print) case final face?) {
       if (face.family case final family?) {
         _set('codespan_font_family', _string(family));
@@ -148,9 +195,11 @@ final class _Compiler {
         _set('codespan_font_size', _string('${_trim(size)}em'));
       }
     }
+    _item = 'tokens.size.text';
     if (tokens.textSize?.of(Medium.print) case final size?) {
       _set('base_font_size', _length(size));
     }
+    _item = 'tokens.size.headings';
     final headings = tokens.headingSizes?.of(Medium.print) ?? const <Length>[];
     for (final (i, size) in headings.indexed) {
       if (i < 6) {
@@ -159,9 +208,11 @@ final class _Compiler {
         _unsupported('tokens.size.headings[$i]', 'is past h6');
       }
     }
+    _item = 'tokens.leading';
     if (tokens.leading?.of(Medium.print) case final leading?) {
       _set('base_line_height', _number(_num(leading)));
     }
+    _item = 'tokens.paragraph';
     if (tokens.paragraph case final paragraph?) {
       final space = paragraph.space?.of(Medium.print);
       final indent = paragraph.indent?.of(Medium.print);
@@ -177,6 +228,7 @@ final class _Compiler {
           _set('prose_text_indent', indent?.let(_length));
       }
     }
+    _item = 'tokens.align';
     if (tokens.align?.of(Medium.print) case final align?) {
       _set(
         'base_text_align',
@@ -188,16 +240,20 @@ final class _Compiler {
         }),
       );
     }
+    _item = 'tokens.hyphenate';
     if (tokens.hyphenate?.of(Medium.print) case final hyphenate?) {
       _set('base_hyphens', YScalar(ThemeBool(hyphenate)));
     }
     // The color roles the PDF applies itself: the text and the paper.
+    _item = 'tokens.color.ink';
     if (tokens.colors['ink']?.of(Medium.print) case final ink?) {
       _set('base_font_color', _string(ink.hex));
     }
+    _item = 'tokens.color.paper';
     if (tokens.colors['paper']?.of(Medium.print) case final paper?) {
       _set('page_background_color', _string(paper.hex));
     }
+    _item = 'tokens.page';
     if (tokens.page case final page?) {
       _set('page_size', page.size?.let(_string));
       if (page.margin case final margin?) {
@@ -212,9 +268,18 @@ final class _Compiler {
       _set('page_margin_outer', page.outer?.let(_length));
     }
     // A measure sets the side margins, unless the look gives them.
+    _item = 'tokens.measure';
     if (tokens.measure?.of(Medium.print) case final measure?) {
       if (tokens.page?.margin == null) {
         _set('page_measure', _string('$measure'));
+      } else {
+        trace(
+          const Dropped(
+            'tokens.measure',
+            'gives way to tokens.page.margin',
+            warned: false,
+          ),
+        );
       }
     }
   }
@@ -235,28 +300,41 @@ final class _Compiler {
     final item = 'styles.$target';
     void key(String suffix, Y? value) => _set('${category}_$suffix', value);
     void none(String property) => _unsupported('$item.$property');
+    void from(String property) => _item = '$item.$property';
 
     final face = switch (style.font) {
       null => null,
-      final name =>
-        tokens.fonts[name]?.at(Medium.print) ??
-            () {
-              _unsupported('$item.font', 'names no font token $name');
-              return null;
-            }(),
+      final name => switch (tokens.fonts[name]?.at(Medium.print)) {
+        MediumFace(family: null, weight: null, shape: null, size: null) => () {
+          _noValue('$item.font', 'font', name);
+          return null;
+        }(),
+        final face? => face,
+        null => () {
+          _unsupported('$item.font', 'names no font token $name');
+          return null;
+        }(),
+      },
     };
+    from('font');
     key('font_family', face?.family?.let(_string));
     final weight = style.weight ?? face?.weight;
     final shape = style.shape ?? face?.shape;
     if (face != null || style.weight != null || style.shape != null) {
       if (weight != null || shape != null) {
-        key('font_style', _string(_fontStyle(weight, shape)));
+        _set('${category}_font_style', _string(_fontStyle(weight, shape)), [
+          if (style.font != null) '$item.font',
+          if (style.weight != null) '$item.weight',
+          if (style.shape != null) '$item.style',
+        ]);
       }
     }
     if (style.variant case final variant?) {
+      from('variant');
       key('font_variant', _string(variant.wire));
     }
     if (style.size case final size?) {
+      from('size');
       key('font_size', switch (size) {
         SizeLength(:final length) => _length(length),
         SizeRatio(:final ratio) => _string('${_trim(ratio)}em'),
@@ -269,18 +347,26 @@ final class _Compiler {
       });
     }
     if (style.color case final color?) {
+      from('color');
       key('font_color', _color(color, '$item.color'));
     }
     if (style.background case final background?) {
+      from('background');
       key('background_color', _color(background, '$item.background'));
     }
     if (style.leading case final leading?) {
+      from('leading');
       key('line_height', _number(leading));
     }
+    from('space-before');
     key('margin_top', style.spaceBefore?.let(_length));
+    from('space-after');
     key('margin_bottom', style.spaceAfter?.let(_length));
+    from('padding');
     key('padding', style.padding?.let(_length));
+    from('radius');
     key('border_radius', style.radius?.let(_length));
+    from('border');
     switch (style.border) {
       case NoRule():
         key('border_width', _number(0));
@@ -289,6 +375,7 @@ final class _Compiler {
         if (color != null) key('border_color', _color(color, '$item.border'));
       case null:
     }
+    from('rule');
     switch (style.rule) {
       case NoRule():
         key('column_rule_width', _number(0));
@@ -300,6 +387,7 @@ final class _Compiler {
       case null:
     }
     if (style.keepWithNext case final keep?) {
+      from('keep-with-next');
       if (category.startsWith('heading')) {
         key('min_height_after', keep ? _string('auto') : _number(0));
       } else {
@@ -347,12 +435,18 @@ final class _Compiler {
       final (w2, c2) = second == null
           ? (null, null)
           : _rule(second, '$item.$secondName');
+      final items = [
+        if (first != null) '$item.$firstName',
+        if (second != null) '$item.$secondName',
+      ];
       if (w1 != null && w2 != null) {
-        _set(widthKey, YList([w1, w2]));
+        _set(widthKey, YList([w1, w2]), items);
       } else {
-        _set(widthKey, w1 ?? w2);
+        _set(widthKey, w1 ?? w2, items);
       }
-      _set(colorKey, c1 ?? c2);
+      _set(colorKey, c1 ?? c2, [
+        if (c1 != null) '$item.$firstName' else '$item.$secondName',
+      ]);
     }
 
     pair(
@@ -372,11 +466,13 @@ final class _Compiler {
       'columns',
     );
     if (style.headRule case final rule?) {
-      final (width, color) = _rule(rule, '$item.head-rule');
+      _item = '$item.head-rule';
+      final (width, color) = _rule(rule, _item);
       _set('table_head_border_bottom_width', width);
       _set('table_head_border_bottom_color', color);
     }
     if (style.stripes case final stripes?) {
+      _item = '$item.stripes';
       _set(
         'table_body_stripe_background_color',
         _color(stripes, '$item.stripes'),

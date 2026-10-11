@@ -247,6 +247,28 @@ void main() {
     );
   });
 
+  test("a look's own CSS after the device rules, for the last word", () {
+    File('${dir.path}/own-look.yml').writeAsStringSync('''
+extends: ptome
+css: '.own{color:red}'
+epub-css: '.own{color:blue}'
+''');
+    const source = '= Doc\n:look: own\n:looksdir: {docdir}\n\nText.\n';
+    final html = File(convertWith('html5', source)).readAsStringSync();
+    expect(
+      html.indexOf('.own{color:red}'),
+      greaterThan(html.indexOf("ptome's device rules for HTML")),
+    );
+    final epub = unzipText(
+      File(convertWith('epub3', source)).readAsBytesSync(),
+    )['EPUB/styles/epub3.css']!;
+    expect(
+      epub.indexOf('.own{color:blue}'),
+      greaterThan(epub.indexOf("ptome's device rules for EPUB")),
+    );
+    expect(epub, isNot(contains('.own{color:red}')));
+  });
+
   test('asciidoctor-compat: the classic stylesheets of the formats named', () {
     const house = 'look ptome (ADR-0023';
     String html(String compat) => File(

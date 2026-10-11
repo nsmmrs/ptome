@@ -2052,15 +2052,20 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
   static String _asset(String path) => Epub3Assets.text(path) ?? '';
 
   /// The document's look for the EPUB (ADR-0023), then the device rules
-  /// that hold no values.
-  static String _lookRules(Document doc) => [
-    lookCss(
-      documentLook(doc),
-      CssTarget.epub,
-      warn: LoggerManager.logger.warn,
-    ).trimRight(),
-    EmbeddedData.file('stylesheets/ptome-epub3-device.css'),
-  ].join('\n');
+  /// that hold no values, then the CSS the look writes itself.
+  static String _lookRules(Document doc) {
+    final look = documentLook(doc);
+    return [
+      lookCss(
+        look,
+        CssTarget.epub,
+        warn: LoggerManager.logger.warn,
+      ).trimRight(),
+      EmbeddedData.file('stylesheets/ptome-epub3-device.css'),
+      if (lookOwnCss(look, CssTarget.epub) case final own when own.isNotEmpty)
+        own,
+    ].join('\n');
+  }
 
   /// Adds the cover page [name] (`front-cover`, `back-cover`) for the
   /// `<name>-image` attribute.
