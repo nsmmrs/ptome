@@ -286,8 +286,16 @@ final class _Pass {
         // the content in what the top ones leave.
         final top = <LayoutBox>[...waitingTop];
         final bottom = <LayoutBox>[...waitingBottom];
+        final pinnedBottom = Map<LayoutBox, List<LayoutBox>>.identity();
         if (fit.pinned.isNotEmpty) {
-          fit = _pinFloats(content, region, fit, top, bottom);
+          fit = _pinFloats(
+            content,
+            region,
+            fit,
+            top,
+            bottom,
+            pinnedBottom: pinnedBottom,
+          );
         }
         final topFit = top.isEmpty
             ? null
@@ -321,6 +329,7 @@ final class _Pass {
             fit,
             bottom: bottom,
             above: top,
+            pinnedBottom: pinnedBottom,
           );
           fit = withNotes;
           page.placed.add((area, fit.placed));
@@ -1135,10 +1144,14 @@ final class _Pass {
       if (!placed) {
         fit = _place(child, inner, room - cursor, atTop: childAtTop);
       }
+      // (One taller than a region starts the next region in the flow
+      // instead, going on as it must: waiting at its edge, it would be
+      // cut where the region ends.)
       if (fit.placed == null &&
           child.style.floating &&
           !childAtTop &&
-          _floats(child)) {
+          _floats(child) &&
+          _measure(child, inner) <= _regionHeight + 1e-6) {
         _exclusions.length = mark;
         floated.add(child);
         _floatsWaiting++;

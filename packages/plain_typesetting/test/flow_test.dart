@@ -876,6 +876,60 @@ void main() {
     expect(on(0), contains('note'));
   });
 
+  test('a box for the bottom is never set a page before its text', () {
+    // A page of 12 rows: eight lines, each with a one-line note, then a
+    // box of two lines for the bottom. The box is pinned when the text
+    // reaches it, but the notes leave room for only five lines of text and
+    // their notes: the lines before the box go on to the next page, and
+    // the box with them.
+    final document = RecordingDocument();
+    FlowLayout(
+          template: _rows(12),
+          notes: {for (var i = 1; i <= 8; i++) 'n$i': _para('note$i')},
+        )
+        .layout([
+          for (var i = 1; i <= 8; i++)
+            BlockBox([_para('t$i')], style: BoxStyle(anchor: 'n$i')),
+          BlockBox([
+            _para('b1\nb2'),
+          ], style: const BoxStyle(float: FloatPlacement.bottom)),
+          _para('t9'),
+        ])
+        .render(document);
+    int pageOf(String text) => document.pages.indexWhere(
+      (page) => page.texts.map((t) => t.trim()).contains(text),
+    );
+    expect(pageOf('t8'), greaterThan(0));
+    expect(pageOf('b1'), greaterThanOrEqualTo(pageOf('t8')));
+    // Every note set, once.
+    final texts = [
+      for (final page in document.pages) ...page.texts.map((t) => t.trim()),
+    ];
+    for (var i = 1; i <= 8; i++) {
+      expect(texts.where((t) => t == 'note$i'), hasLength(1));
+    }
+  });
+
+  test('a floating box taller than a page is set whole, not cut', () {
+    // A page of four rows, full when the text reaches a box of six lines
+    // floating to the top: it can't wait for the next page's top (it would
+    // be cut there); it starts the next page and goes on as it must.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(4))
+        .layout([
+          _para('t1\nt2\nt3\nt4'),
+          BlockBox([
+            _para('b1\nb2\nb3\nb4\nb5\nb6'),
+          ], style: const BoxStyle(float: FloatPlacement.top)),
+          _para('t5'),
+        ])
+        .render(document);
+    final texts = [
+      for (final page in document.pages) ...page.texts.map((t) => t.trim()),
+    ];
+    expect(texts, containsAll(['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 't5']));
+  });
+
   test('the notes of a box floating to the bottom are set', () {
     // A note referred to from a box set at the bottom of the page (not in
     // the text's flow): set under it all the same.

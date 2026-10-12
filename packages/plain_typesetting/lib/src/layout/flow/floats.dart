@@ -12,11 +12,12 @@ extension _Floats on _Pass {
     Rect region,
     _Fit first,
     List<LayoutBox> top,
-    List<LayoutBox> bottom,
-  ) {
+    List<LayoutBox> bottom, {
+    Map<LayoutBox, List<LayoutBox>>? pinnedBottom,
+  }) {
     var fit = first;
     // The floating boxes pinned here, with what each added to its edge.
-    final pinned = <LayoutBox, List<LayoutBox>>{};
+    final pinned = Map<LayoutBox, List<LayoutBox>>.identity();
     double measured(List<LayoutBox> boxes) =>
         boxes.isEmpty ? 0 : _measure(BlockBox(boxes), region.width);
     void place() {
@@ -77,6 +78,13 @@ extension _Floats on _Pass {
           _floatsNotHere.add(box);
         }
         place();
+      }
+    }
+    if (pinnedBottom != null) {
+      for (final MapEntry(key: box, value: pieces) in pinned.entries) {
+        if (pieces.isNotEmpty && bottom.contains(pieces.last)) {
+          pinnedBottom[box] = pieces;
+        }
       }
     }
     return fit;

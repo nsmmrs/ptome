@@ -17,7 +17,11 @@
   room runs out (one for `next` is set where it is, as before), and one
   for the bottom with no room for it under the text there waits for the
   next region's bottom. The notes referred to in a floating box set at a
-  region's top or bottom are set (they were left out).
+  region's top or bottom are set (they were left out). A box pinned to
+  the bottom that the text no longer reaches once its notes shorten it
+  waits for the next region, never set a page before its text; a
+  floating box taller than a region starts the next region in the flow
+  rather than waiting at its edge, where its overflow was dropped.
 - `BoxStyle.gridLine`: with a baseline grid, a box starts on that line of
   the region's grid, or the next one when it is past it.
 - `FlowLayout.notesMinText` and `notesLag`: notes in step with their

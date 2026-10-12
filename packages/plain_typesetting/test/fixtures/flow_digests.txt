@@ -9,17 +9,21 @@
 # floating to the top or bottom that doesn't fit whole went to the next
 # region whole rather than cut, and the notes in the floating boxes set at
 # a region's top and bottom were set too, and a word wider than a line
-# across several runs broke as one in a single run does (2026-10-12): seed,
+# across several runs broke as one in a single run does (2026-10-12), and
+# a box floating to the bottom that the text chosen with its notes no
+# longer reaches waited for the next region, and a floating box taller
+# than a region started the next region in the flow rather than waiting,
+# to be cut, at its edge (2026-10-12): seed,
 # digest, lines recorded; 'skip': too slow for a test there (or too deep for the
 # stack).
 0 f3ab75d5 567
-1 b3698ff7 2428
+1 42503376 5858
 2 ec544f25 616
 3 7bcdf2f0 1791
 4 e2049b19 2032
 5 19d2c987 5467
 6 ef11583e 1858
-7 a1768d57 155
+7 c1aa6933 338
 8 ff20c196 5980
 9 a4148a91 38
 10 6dec15de 6012
@@ -28,7 +32,7 @@
 13 66f69534 1088
 14 5ab2a976 4670
 15 823d6d01 92
-16 36845bca 916
+16 ee6d6ec6 1308
 17 9288be10 3474
 18 1db54dc6 305
 19 5af95b82 1688
@@ -41,11 +45,11 @@
 26 c743cf42 1156
 27 3173e291 4536
 28 d89e0d5a 5796
-29 7545d1d8 91590
+29 7c404c75 91859
 30 fefda6fd 965
 31 f0ebfba3 3772
 32 skip
-33 3425fd35 1548
+33 b7558ee0 1657
 34 e7421e6b 973
 35 aaa5ec98 63
 36 f613cd45 1465
@@ -53,17 +57,17 @@
 38 11bd4d3a 2159
 39 skip
 40 c157b42d 24811
-41 aecb737c 3173
+41 7e0d9feb 3140
 42 c8d33761 33993
 43 f5e93af2 2989
 44 249ba7d0 2636
-45 f9fa583c 9340
+45 ead8a243 9309
 46 13816254 2096
 47 6107ee67 405
 48 15b90ec6 498
 49 86fb7eb4 11156
 50 ae8ef6d3 1446
-51 1501fa81 366
+51 15106537 449
 52 ca925696 4908
 53 607cfea3 4133
 54 86098f8a 2196
@@ -109,6 +113,6 @@
 94 3acc1fe4 744
 95 552476d2 729
 96 059cafa1 2775
-97 1ca8b75c 1151
+97 bf45b0cc 2057
 98 6d538011 583
 99 a148f5d9 181

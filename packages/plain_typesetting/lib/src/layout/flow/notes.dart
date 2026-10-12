@@ -224,12 +224,18 @@ extension _Notes on _Pass {
   /// notes its anchors refer to, and the notes placed at the bottom: the
   /// content placed again in less height until its notes fit below it.
   /// Notes that don't fit are deferred to the next region.
+  ///
+  /// [pinnedBottom]: the floating boxes [first] reached that were pinned
+  /// to the bottom, with their pieces in [bottom]; one the text chosen no
+  /// longer reaches waits for the next region (a float never comes before
+  /// the text it belongs to), the region fitted again without it.
   (_Fit, _Fit?) _notes(
     LayoutBox content,
     Rect region,
     _Fit first, {
     List<LayoutBox> bottom = const [],
     List<LayoutBox> above = const [],
+    Map<LayoutBox, List<LayoutBox>> pinnedBottom = const {},
   }) {
     final width = region.width;
     // (The floating boxes for the bottom kept here.)
@@ -249,6 +255,16 @@ extension _Notes on _Pass {
           ),
     ];
     var fit = first;
+    // The floating boxes pinned here that the text placed reaches.
+    var reached = Set<LayoutBox>.identity()..addAll(_floatsReached);
+    _Fit placeTracked(double room) {
+      _floatsWaiting = 0;
+      _floatsReached.clear();
+      final placed = _placeRegion(content, width, room);
+      reached = Set.identity()..addAll(_floatsReached);
+      return placed;
+    }
+
     final deferred = _deferredNotes;
     // The notes of the anchors placed: the main series' (after those
     // deferred from the region before), then each stream's in turn, under
@@ -338,14 +354,13 @@ extension _Notes on _Pass {
       // takes for not fitting on a page at all.)
       var low = math.min(_minHeight(content, width), fit.height);
       var high = fit.height;
-      (_Fit, List<LayoutBox>)? best;
+      (_Fit, List<LayoutBox>, Set<LayoutBox>)? best;
       for (var step = 0; step < 12; step++) {
         final room = (low + high) / 2;
-        _floatsWaiting = 0;
-        final tried = _placeRegion(content, width, room);
+        final tried = placeTracked(room);
         final tryNotes = pending(tried);
         if (total(tried, tryNotes) <= region.height + allowance + 1e-6) {
-          best = (tried, tryNotes);
+          best = (tried, tryNotes, reached);
           low = room;
         } else {
           high = room;
@@ -358,23 +373,20 @@ extension _Notes on _Pass {
       // within the lag.)
       final least = layout.notesMinText;
       final lagged = layout.notesLag != null;
-      if (best case (final tried, final tryNotes)
+      if (best case (final tried, final tryNotes, final triedReached)
           when tried.placed != null &&
               tried.height > 0 &&
               tried.height >= (least ?? (lagged ? 0 : region.height / 4))) {
         fit = tried;
         notes = tryNotes;
+        reached = triedReached;
       } else {
-        _floatsWaiting = 0;
-        fit = _placeRegion(
-          content,
-          width,
+        fit = placeTracked(
           math.min(least ?? (lagged ? 0 : region.height), region.height),
         );
         // (Nothing placed and no notes waiting: the text as it goes.)
         if ((fit.placed == null || fit.height == 0) && deferred == null) {
-          _floatsWaiting = 0;
-          fit = _placeRegion(content, width, region.height);
+          fit = placeTracked(region.height);
         }
         notes = pending(fit);
       }
@@ -388,13 +400,36 @@ extension _Notes on _Pass {
     };
     if (overdue.isNotEmpty &&
         !_starts(overdue, area(notes), width, region.height - fit.height)) {
-      _floatsWaiting = 0;
-      fit = _placeRegion(
-        content,
-        width,
-        math.min(layout.notesMinText ?? 0, region.height),
-      );
+      fit = placeTracked(math.min(layout.notesMinText ?? 0, region.height));
       notes = pending(fit);
+    }
+    // A box pinned to the bottom the text no longer reaches (the text
+    // before it goes on in the next region): it waits for that region, the
+    // text and its notes chosen again without it.
+    final unreached = [
+      for (final box in pinnedBottom.keys)
+        if (!reached.contains(box)) box,
+    ];
+    if (unreached.isNotEmpty) {
+      final kept = [...atBottom];
+      for (final box in unreached) {
+        pinnedBottom[box]!.forEach(kept.remove);
+        _floatsSet.remove(box);
+        _floatsNotHere.add(box);
+      }
+      final again = placeTracked(
+        region.height - (kept.isEmpty ? 0 : _measure(BlockBox(kept), width)),
+      );
+      return _notes(
+        content,
+        region,
+        again,
+        bottom: kept,
+        above: above,
+        pinnedBottom: Map.identity()
+          ..addAll(pinnedBottom)
+          ..removeWhere((box, _) => unreached.contains(box)),
+      );
     }
     final number = _noteRegions++;
     for (final name in [..._Pass._anchorsOf(fit.placed), ...floatAnchors()]) {
