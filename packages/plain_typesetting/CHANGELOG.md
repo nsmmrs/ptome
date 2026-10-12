@@ -12,6 +12,8 @@
   has it (text taken from the page joins the word up), and a word's
   pieces at its breaks are measured with the kerning between them, as
   the word is drawn whole.
+- `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
+  rather than its text's top (where a label hung beside the line aligns).
 - `FlowLayout.dropsSpaceAtBreaks`: a paragraph's last line in a region
   fits when its text does, the space under it left out (interline space
   goes at a break, as TeX's glue). A justified paragraph's last line set

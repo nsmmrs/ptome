@@ -26,6 +26,7 @@ final class TextRun extends InlineContent {
     this.strikethrough = false,
     this.link,
     this.anchor,
+    this.anchorOnBaseline = false,
     this.decoration,
     this.fallbackFonts = const [],
   }) : super._();
@@ -49,8 +50,13 @@ final class TextRun extends InlineContent {
   final LinkTarget? link;
 
   /// A name for the position of the text: layout reports where it ends
-  /// up (for destinations, a table of contents, an index).
+  /// up (for destinations, a table of contents, an index), at the text's
+  /// top.
   final String? anchor;
+
+  /// Whether [anchor] is reported at the text's baseline instead (where
+  /// something set beside the line, a label hung left of it, aligns).
+  final bool anchorOnBaseline;
 
   /// A background and border drawn behind the text.
   final InlineDecoration? decoration;
@@ -68,6 +74,7 @@ final class TextRun extends InlineContent {
     strikethrough: strikethrough,
     link: link,
     anchor: anchor,
+    anchorOnBaseline: anchorOnBaseline,
     decoration: decoration,
     fallbackFonts: fallbackFonts,
   );
@@ -81,6 +88,7 @@ final class TextRun extends InlineContent {
     strikethrough: strikethrough,
     link: link,
     anchor: anchor,
+    anchorOnBaseline: anchorOnBaseline,
     decoration: decoration,
   );
 }

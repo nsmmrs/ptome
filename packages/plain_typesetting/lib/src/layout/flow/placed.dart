@@ -367,7 +367,11 @@ final class _PlacedLines extends _Placed {
           anchor(
             run.anchor!,
             x + left + fragment.x,
-            y - line.baseline + style.font.ascender * style.size / 1000,
+            y -
+                line.baseline +
+                (run.anchorOnBaseline
+                    ? 0
+                    : style.font.ascender * style.size / 1000),
           );
         }
       }

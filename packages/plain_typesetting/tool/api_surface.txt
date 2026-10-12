@@ -643,8 +643,9 @@ final class TextRun extends InlineContent
   String? anchor
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, InlineDecoration? decoration, List<Font> fallbackFonts = const []})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const []})
   TextStyle style
+  bool anchorOnBaseline
   bool strikethrough
   bool underline
 final class TextStyle

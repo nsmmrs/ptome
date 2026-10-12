@@ -1441,7 +1441,11 @@ final class Line {
             );
           }
           if (run.anchor case final name? when anchor != null) {
-            anchor(name, left, y + font.ascender * size / 1000);
+            anchor(
+              name,
+              left,
+              y + (run.anchorOnBaseline ? 0 : font.ascender * size / 1000),
+            );
           }
         case ImageFragment(:final image, :final bottom):
           image.image.paint(

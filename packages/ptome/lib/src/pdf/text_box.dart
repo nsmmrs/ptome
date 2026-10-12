@@ -604,6 +604,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           strikethrough: styles.contains(FragmentStyle.strikethrough),
           link: link,
           anchor: fragment.isMarker ? fragment.name : null,
+          // (A hung label's anchor at the baseline, as the box reports
+          // it.)
+          anchorOnBaseline:
+              fragment.isMarker &&
+              (fragment.name?.startsWith(hangAnchorPrefix) ?? false),
         ),
       );
     }

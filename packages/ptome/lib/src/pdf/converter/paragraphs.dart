@@ -9,13 +9,11 @@ extension _Paragraphs on PdfConverter {
   /// Whether the engine's paragraphs can set text with [markup] in [font]
   /// as the text box does: none of what they don't do yet (FEAT-thzbh8)
   /// in play, text running around a block floating to a side (after the
-  /// first), a baseline grid, lines from their cap heights
-  /// (`base_leading`), labels hung from their anchors or side notes beside
-  /// them.
+  /// first), lines from their cap heights (`base_leading`), side notes
+  /// beside the text.
   bool _engineCanSet(String markup, _FontState font) =>
       !_sideFloated &&
       _capLeading(font) == null &&
-      !markup.contains(hangAnchorPrefix) &&
       !markup.contains(sideNoteAnchorPrefix) &&
       !markup.contains('<side ');
 

@@ -93,7 +93,8 @@ Asciidoctor project.
   paragraphs with protrusion (`base_overhang`), font expansion and
   `base_text_align_last`, and break each paragraph as the text box would
   (ragged, centered or justified, at its own size, `base_line_breaking`
-  too), on a baseline grid as well; lines from their cap heights
+  too), on a baseline grid as well, and with labels hung beside their
+  lines (units' `label_hang`, `heading_h<n>_display: margin`); lines from their cap heights
   (`base_leading`) stay in the text box for now. Every word where the box puts it (test/pdf/
   engine_paragraphs_test.dart), and the Hypermedia Systems book the
   same.

@@ -220,6 +220,26 @@ void main() {
     );
   });
 
+  test('labels hung left of their lines, units and margin headings', () {
+    final schemes = Directory('${_dir.path}/schemes')..createSync();
+    File('test/units/corpus/schemes/uk-act.yml')
+        .copySync('${schemes.path}/uk-act.yml');
+    _same(
+      '= An Act\n:units: uk-act\n\n=== @1 Offences\n\n'
+      '@(1) Subsection $_words40\n'
+      '@(a) Paragraph $_words40\n'
+      '@(2) Second $_words40\n',
+      theme:
+          'units:\n  subsection: { margin_left: 36, label_hang: true }\n'
+          '  paragraph: { margin_left: 36, label_hang: true }\n',
+    );
+    // (A section's heading in the margin beside its first line.)
+    _same(
+      '= Doc\n\n== A heading\n\n$_words40\n\n== Another\n\n$_words40\n',
+      theme: 'heading:\n  h2_display: margin\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(
