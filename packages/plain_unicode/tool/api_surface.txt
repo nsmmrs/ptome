@@ -1,12 +1,49 @@
+BidiClass bidiClass(int codePoint)
+JoiningType joiningType(int codePoint)
 LineBreakClass lineBreakClass(int codePoint)
 LineBreakOffsets lineBreakOffsets(String text)
+List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
 List<LineBreak> lineBreaks(String text)
+String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
 String lowerCase(String text, {bool finalSigma = false})
 String upperCase(String text)
 bool isCaseIgnorable(int rune)
 bool isCased(int rune)
+enum BidiClass
+  static BidiClass al
+  static BidiClass an
+  static BidiClass b
+  static BidiClass bn
+  static BidiClass cs
+  static BidiClass en
+  static BidiClass es
+  static BidiClass et
+  static BidiClass fsi
+  static BidiClass l
+  static BidiClass lre
+  static BidiClass lri
+  static BidiClass lro
+  static BidiClass nsm
+  static BidiClass on
+  static BidiClass pdf
+  static BidiClass pdi
+  static BidiClass r
+  static BidiClass rle
+  static BidiClass rli
+  static BidiClass rlo
+  static BidiClass s
+  static BidiClass ws
+  static List<BidiClass> values
+enum JoiningType
+  static JoiningType dualJoining
+  static JoiningType joinCausing
+  static JoiningType leftJoining
+  static JoiningType nonJoining
+  static JoiningType rightJoining
+  static JoiningType transparent
+  static List<JoiningType> values
 enum LineBreakClass
   static LineBreakClass ai
   static LineBreakClass ak
@@ -58,10 +95,23 @@ enum LineBreakClass
   static LineBreakClass zw
   static LineBreakClass zwj
   static List<LineBreakClass> values
+enum TextDirection
+  static List<TextDirection> values
+  static TextDirection ltr
+  static TextDirection rtl
 extension type LineBreakOffsets(List<int> _codes)
   bool isMandatoryAt(int index)
   int length
   int offsetAt(int index)
+final class BidiText
+  BidiText(String text, {TextDirection? direction})
+  BidiText.classes(Uint8List classes, {Int32List? codePoints, TextDirection? direction})
+  List<(int, int, int)> visualRuns(int start, int end)
+  List<int> visualOrder(int start, int end)
+  TextDirection paragraphDirection(int offset)
+  Uint8List levels
+  Uint8List lineLevels(int start, int end)
+  int paragraphLevel(int offset)
 final class LineBreak
   LineBreak(int offset, {required bool mandatory})
   String toString()
@@ -69,3 +119,4 @@ final class LineBreak
   bool mandatory
   int hashCode
   int offset
+int bidiMirror(int codePoint)

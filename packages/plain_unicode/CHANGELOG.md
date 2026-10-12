@@ -2,6 +2,15 @@
 
 ## 0.1.0-dev (unreleased)
 
+- The Unicode Bidirectional Algorithm (UAX #9, Unicode 18.0.0):
+  `BidiText`, each code unit's embedding level in its paragraph (the
+  base direction given, or the first strong character's), a line's
+  levels with its trailing whitespace set back (L1) and its runs or
+  characters in visual order (L2); explicit embeddings, overrides and
+  isolates, and bracket pairs (N0). It passes BidiTest.txt and
+  BidiCharacterTest.txt. The Bidi_Class, Bidi_Mirroring_Glyph and
+  Joining_Type properties (`bidiClass`, `bidiMirror`, `joiningType`),
+  generated from the Unicode data.
 - Line breaking (UAX #14, Unicode 18.0.0), moved from plain_pdf with its
   history; it passes LineBreakTest.txt.
 - Full case mapping (Unicode 17.0.0), generated from UnicodeData.txt and

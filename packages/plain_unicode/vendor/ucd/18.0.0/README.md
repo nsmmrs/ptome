@@ -11,6 +11,16 @@ From https://www.unicode.org/Public/18.0.0/ucd/, for
   General_Category, for Pi, Pf, Mn, Mc and Cn.
 - `emoji/emoji-data.txt` (as `emoji-data.txt`): Extended_Pictographic.
 
-The conformance test, `auxiliary/LineBreakTest.txt`, is in
-`test/unicode/LineBreakTest.txt.gz`. Terms: `license.txt` (Unicode License
+For `tool/generate_bidi.dart` (which writes `lib/src/bidi_data.g.dart`):
+
+- `extracted/DerivedBidiClass.txt` (as `DerivedBidiClass.txt`):
+  Bidi_Class, with its `@missing` defaults.
+- `extracted/DerivedJoiningType.txt` (as `DerivedJoiningType.txt`):
+  Joining_Type.
+- `BidiBrackets.txt`: Bidi_Paired_Bracket and its type.
+- `BidiMirroring.txt`: Bidi_Mirroring_Glyph.
+- `ArabicShaping.txt`: the joining groups (for reference).
+
+The conformance tests, `auxiliary/LineBreakTest.txt`, `BidiTest.txt` and
+`BidiCharacterTest.txt`, are in `test/unicode/` (gzipped). Terms: `license.txt` (Unicode License
 v3).
