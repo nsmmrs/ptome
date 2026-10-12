@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Table cells are laid out once: the content a row measured is placed as
+  it is where it fits whole.
 - `KnuthPlassLineBreaker.expansion` (font expansion, counted as stretch
   and shrink of the line's letters; `buildLines` and the paragraph lines
   set it by horizontal scaling) and `maxHyphenRun` (the most hyphenated

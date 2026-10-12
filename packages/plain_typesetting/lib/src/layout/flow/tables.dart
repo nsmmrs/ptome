@@ -170,11 +170,13 @@ extension _Tables on _Pass {
 
   /// The heights of [rows] (cells spanning down add to the last row they
   /// span), their cells' first blocks keeping their margins above when
-  /// [containsMargins].
+  /// [containsMargins]; each cell's content as measured kept in [fits],
+  /// to be placed as it is.
   List<double> _rowHeights(
     List<_GridRow> rows,
     List<double> widths, {
     required bool containsMargins,
+    Map<TableCell, _Fit>? fits,
   }) {
     final heights = [for (final row in rows) row.minHeight];
     final spans = <(int, int, double)>[];
@@ -182,13 +184,16 @@ extension _Tables on _Pass {
       for (final (col, cell) in row.cells) {
         final width = _cellWidth(col, cell, widths) - cell.padding.horizontal;
         // (Measured as placed: at the top of the cell.)
-        final needs =
-            _measure(
-              BlockBox._cell(cell.content, containsMargins: containsMargins),
-              width,
-              atTop: true,
-            ) +
-            cell.padding.vertical;
+        final fit = _withoutExclusions(
+          () => _place(
+            BlockBox._cell(cell.content, containsMargins: containsMargins),
+            width,
+            double.infinity,
+            atTop: true,
+          ),
+        );
+        fits?[cell] = fit;
+        final needs = fit.height + cell.padding.vertical;
         final span = math.min(cell.rowSpan, rows.length - i);
         if (span == 1) {
           heights[i] = math.max(heights[i], needs);
@@ -251,6 +256,9 @@ extension _Tables on _Pass {
     final cells = <_PlacedCell>[];
     final space = available - top;
     var used = 0.0;
+    // The cells' contents as their rows measured them: placed as they are
+    // where they fit whole (laid out once).
+    final measured = Map<TableCell, _Fit>.identity();
 
     /// Places [cell] (at [col]) [height] tall at [y]; returns the rest of
     /// its content if it didn't all fit.
@@ -264,12 +272,21 @@ extension _Tables on _Pass {
     }) {
       final width = _cellWidth(col, cell, widths);
       final padding = cell.padding;
-      final fit = _place(
-        BlockBox._cell(cell.content, containsMargins: box.cellsContainMargins),
-        width - padding.horizontal,
-        height - padding.vertical,
-        atTop: true,
-      );
+      final fit = switch (measured[cell]) {
+        final fit?
+            when fit.rest == null &&
+                fit.height <= height - padding.vertical + 1e-9 =>
+          fit,
+        _ => _place(
+          BlockBox._cell(
+            cell.content,
+            containsMargins: box.cellsContainMargins,
+          ),
+          width - padding.horizontal,
+          height - padding.vertical,
+          atTop: true,
+        ),
+      };
       cells.add(
         _PlacedCell(
           cell,
@@ -325,6 +342,7 @@ extension _Tables on _Pass {
       headers,
       widths,
       containsMargins: box.cellsContainMargins,
+      fits: measured,
     );
     final headerHeight = headerHeights.fold<double>(0, (a, b) => a + b);
     if (headerHeight > space + 1e-6 && !atTop) return _Fit.moved(box);
@@ -340,6 +358,7 @@ extension _Tables on _Pass {
         group,
         widths,
         containsMargins: box.cellsContainMargins,
+        fits: measured,
       );
       final groupHeight = heights.fold<double>(0, (a, b) => a + b);
       if (used + groupHeight <= space + 1e-6) {
