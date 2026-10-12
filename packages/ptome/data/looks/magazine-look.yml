@@ -48,7 +48,7 @@ styles:
   heading: { font: display, color: ink }
   title: { font: display, style: italic, color: ink }
   caption: { font: utility, size: 0.85, color: muted }
-  .kicker: { font: utility, weight: 600, color: accent }
+  .kicker: { font: utility, weight: 600, color: accent, tracking: { print: 0.14em } }
   .dek: { font: text, size: 1.3 }
   .byline: { font: utility, size: 0.85 }
   .credit: { font: utility, size: 0.8, color: muted }
@@ -74,6 +74,8 @@ webfonts:
 # columns; the initial, the pull quote across its column between rules,
 # the folio at the foot.
 pdf:
+  # Capitals and small capitals letterspaced (microtype's 0.05 em).
+  caps_letter_spacing: 0.05em
   title_page_inline: true
   title_page:
     text_align: left

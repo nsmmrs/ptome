@@ -401,6 +401,20 @@ templates:
     expect(withValues(doc), doc, reason: 'run dart run tool/style_table.dart');
   });
 
+  test('tracking: letter_spacing in print, letter-spacing on the web', () {
+    _look('tracked', 'styles:\n  .kicker: { tracking: 0.14em }\n');
+    final look = _load('tracked');
+    expect(
+      lookThemeEntries(look)['role_kicker_letter_spacing'],
+      isA<YScalar>().having(
+        (y) => y.value,
+        'value',
+        const ThemeString('0.14em'),
+      ),
+    );
+    expect(lookCss(look, CssTarget.html), contains('letter-spacing:0.14em'));
+  });
+
   test('a page on a baseline grid', () {
     _look('grid', 'tokens:\n  page: { grid: true }\n');
     expect(

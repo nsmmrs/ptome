@@ -68,6 +68,12 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Tracking in the PDF: `<category>_letter_spacing` (a heading, a role, a
+  title page part), a look style's `tracking` (CSS `letter-spacing` on the
+  web), and `caps_letter_spacing`, which letterspaces words in capitals
+  and small capitals by themselves (microtype's 0.05 em), half the space
+  outside the word, word spaces widened with it. The magazine looks'
+  kickers are tracked in print.
 - Note streams at the foot of the PDF's page apart from the footnotes
   (`note_streams`, `note_stream_<name>_*`): each units stream under its
   own separator, by its caller, in its own size and columns (a critical

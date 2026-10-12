@@ -394,6 +394,10 @@ final class _Compiler {
       from('variant');
       key('font_variant', _string(variant.wire));
     }
+    if (style.tracking case final tracking?) {
+      from('tracking');
+      key('letter_spacing', _length(tracking));
+    }
     if (style.size case final size?) {
       from('size');
       key('font_size', switch (size) {

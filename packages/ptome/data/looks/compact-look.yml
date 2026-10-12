@@ -25,7 +25,7 @@ pdf:
   title_page:
     title: { font_size: 46, line_height: 1 }
     subtitle: { font_size: 17 }
-  role: { dropcap: { drop_lines: 2 } }
+  role: { dropcap: { drop_lines: 2 }, kicker: { text_transform: none, letter_spacing: 0 } }
   page_columns: 5
   page_column_gap: 11
   columns_count: 5

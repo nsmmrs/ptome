@@ -647,6 +647,7 @@ final class Style {
     this.weight,
     this.shape,
     this.variant,
+    this.tracking,
     this.color,
     this.background,
     this.leading,
@@ -681,6 +682,10 @@ final class Style {
 
   /// The variant.
   final ByMedium<FontVariant>? variant;
+
+  /// The space added between letters (CSS's `letter-spacing`): a length,
+  /// ems most often (a kicker's capitals, letterspaced small capitals).
+  final ByMedium<Length>? tracking;
 
   /// The text's color.
   final ByMedium<ColorValue>? color;
@@ -745,6 +750,7 @@ final class Style {
     weight: weight?.of(medium),
     shape: shape?.of(medium),
     variant: variant?.of(medium),
+    tracking: tracking?.of(medium),
     color: color?.of(medium),
     background: background?.of(medium),
     leading: leading?.of(medium),
@@ -776,6 +782,7 @@ final class MediumStyle {
     this.weight,
     this.shape,
     this.variant,
+    this.tracking,
     this.color,
     this.background,
     this.leading,
@@ -810,6 +817,9 @@ final class MediumStyle {
 
   /// The [Style]'s `variant` in the medium.
   final FontVariant? variant;
+
+  /// The [Style]'s `tracking` in the medium.
+  final Length? tracking;
 
   /// The [Style]'s `color` in the medium.
   final ColorValue? color;

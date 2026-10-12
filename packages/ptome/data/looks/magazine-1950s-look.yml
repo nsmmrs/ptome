@@ -18,7 +18,7 @@ tokens:
   page: { size: [10in, 13in], margin: [1in, 1.125in, 1in, 1.125in] }
 styles:
   title: { style: normal }
-  .kicker: { font: text, weight: normal }
+  .kicker: { font: text, weight: normal, tracking: { print: 0.3em } }
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700

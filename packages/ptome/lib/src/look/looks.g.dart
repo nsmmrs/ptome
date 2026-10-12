@@ -35,7 +35,7 @@ pdf:
     text_align: center
     title: { font_size: 48, line_height: 1.05 }
     subtitle: { font_size: 18, font_style: italic }
-  role: { dropcap: { drop_lines: 0 } }
+  role: { dropcap: { drop_lines: 0 }, kicker: { text_transform: none, letter_spacing: 0 } }
   page_columns: 6
   page_column_gap: 9
   page_column_rule_width: 0.25
@@ -78,7 +78,7 @@ pdf:
   title_page:
     title: { font_size: 46, line_height: 1 }
     subtitle: { font_size: 17 }
-  role: { dropcap: { drop_lines: 2 } }
+  role: { dropcap: { drop_lines: 2 }, kicker: { text_transform: none, letter_spacing: 0 } }
   page_columns: 5
   page_column_gap: 11
   columns_count: 5
@@ -173,7 +173,7 @@ tokens:
   page: { size: [10in, 13in], margin: [1in, 1.125in, 1in, 1.125in] }
 styles:
   title: { style: normal }
-  .kicker: { font: text, weight: normal }
+  .kicker: { font: text, weight: normal, tracking: { print: 0.3em } }
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700
@@ -224,7 +224,7 @@ pdf:
   title_page:
     title: { font_size: 40, line_height: 1.05 }
     subtitle: { font_size: 18, line_height: 1.2 }
-  role: { dropcap: { drop_lines: 0 } }
+  role: { dropcap: { drop_lines: 0 }, kicker: { text_transform: none, letter_spacing: 0 } }
   page_column_gap: 12.15
   columns_count: 2
   heading:
@@ -368,7 +368,7 @@ styles:
   heading: { font: display, color: ink }
   title: { font: display, style: italic, color: ink }
   caption: { font: utility, size: 0.85, color: muted }
-  .kicker: { font: utility, weight: 600, color: accent }
+  .kicker: { font: utility, weight: 600, color: accent, tracking: { print: 0.14em } }
   .dek: { font: text, size: 1.3 }
   .byline: { font: utility, size: 0.85 }
   .credit: { font: utility, size: 0.8, color: muted }
@@ -394,6 +394,8 @@ webfonts:
 # columns; the initial, the pull quote across its column between rules,
 # the folio at the foot.
 pdf:
+  # Capitals and small capitals letterspaced (microtype's 0.05 em).
+  caps_letter_spacing: 0.05em
   title_page_inline: true
   title_page:
     text_align: left

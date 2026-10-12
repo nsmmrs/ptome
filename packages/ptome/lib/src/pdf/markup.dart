@@ -250,6 +250,10 @@ final class Fragment {
   /// The size: points (`10.5`) or relative (`1.2em`, `80%`).
   String? size;
 
+  /// The space added after each character (tracking): points (`0.5`) or
+  /// relative to the size (`0.05em`).
+  String? letterSpacing;
+
   /// The color: a theme color.
   ThemeColor? color;
 
@@ -337,6 +341,7 @@ final class Fragment {
     ..styles = styles == null ? null : {...styles!}
     ..font = font
     ..size = size
+    ..letterSpacing = letterSpacing
     ..color = color
     ..link = link
     ..anchor = anchor
@@ -407,6 +412,9 @@ final class FragmentSettings {
 
   /// The font size.
   String? size;
+
+  /// The tracking ([Fragment.letterSpacing]).
+  String? letterSpacing;
 
   /// The styles to add (`normal` clears bold and italic).
   Set<FragmentStyle>? styles;
@@ -482,6 +490,7 @@ final class FragmentSettings {
       fragment.textDecorationWidth = textDecorationWidth;
     }
     if (textTransform != null) fragment.textTransform = textTransform;
+    if (letterSpacing != null) fragment.letterSpacing = letterSpacing;
     if (align != null) fragment.align = align;
     if (callbacks != null) fragment.callbacks = [...callbacks!];
   }
@@ -660,6 +669,8 @@ final class MarkupTransform {
           target.textDecorationWidth = theme.number(key);
         case 'text_transform':
           target.textTransform = theme.string(key);
+        case 'letter_spacing':
+          target.letterSpacing = theme.value(key)?.rubyString;
         case 'font_variant' || 'font_variant_numeric':
           // The modern engine's OpenType features, as CSS names them.
           if (_features[theme.string(key)] case final feature?) {

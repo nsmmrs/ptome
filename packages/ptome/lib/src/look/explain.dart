@@ -208,6 +208,7 @@ Map<String, Set<Medium>> _items(Look look) {
       ('size', style.size),
       ('color', style.color),
       ('background', style.background),
+      ('tracking', style.tracking),
       ('leading', style.leading),
       ('space-before', style.spaceBefore),
       ('space-after', style.spaceAfter),

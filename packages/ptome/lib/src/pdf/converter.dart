@@ -144,6 +144,7 @@ final class _FontState {
     this.kerning = true,
     this.transform,
     this.leadingKey,
+    this.letterSpacing = 0,
   });
 
   final String family;
@@ -158,6 +159,9 @@ final class _FontState {
   /// when its category or one it inherits from sets one (else
   /// `base_leading`).
   final String? leadingKey;
+
+  /// The tracking, in ems (`<category>_letter_spacing`, modern engine).
+  final double letterSpacing;
 
   _FontState copyWith({
     String? family,
@@ -176,6 +180,7 @@ final class _FontState {
     kerning: kerning ?? this.kerning,
     transform: transform ?? this.transform,
     leadingKey: leadingKey,
+    letterSpacing: letterSpacing,
   );
 }
 
@@ -394,6 +399,16 @@ final class PdfConverter extends BuiltInConverter
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
       decorationWidth: (_n('base_text_decoration_width') ?? 1).toDouble(),
+      // (`caps_letter_spacing`, modern engine: capitals and small capitals
+      // letterspaced, 0.05em as microtype's.)
+      capsTracking: asciidoctorCompat(document, CompatFormat.pdf)
+          ? 0
+          : switch (_theme.value('caps_letter_spacing')) {
+              ThemeNumber(:final value) => value / _rootFontSize,
+              ThemeString(:final value) when value.trim().endsWith('em') =>
+                double.tryParse(value.trim().replaceFirst('em', '')) ?? 0,
+              _ => 0,
+            },
       lineBreaking: switch (_choice('base_line_breaking', const [
         'auto',
         'optimal',
@@ -3649,6 +3664,17 @@ final class PdfConverter extends BuiltInConverter
     return section.captionedTitle();
   }
 
+  /// The tracking theme key [key] gives text [size] points, in ems: a
+  /// length (points) or ems (modern engine); null when it gives none.
+  double? _letterSpacing(String key, double size) =>
+      switch (_theme.value(key)) {
+        _ when asciidoctorCompat(_document, CompatFormat.pdf) => null,
+        ThemeNumber(:final value) => value / size,
+        ThemeString(:final value) when value.trim().endsWith('em') =>
+          double.tryParse(value.trim().replaceFirst('em', '')),
+        _ => null,
+      };
+
   /// The font of heading level [level] (the gem's `theme_font :heading,
   /// level:`).
   _FontState _headingFont(int level) {
@@ -3690,6 +3716,13 @@ final class PdfConverter extends BuiltInConverter
         _ => _font.kerning,
       },
       transform: h('text_transform'),
+      letterSpacing:
+          (role == null
+              ? null
+              : _letterSpacing('${role}_heading_letter_spacing', size)) ??
+          _letterSpacing('heading_h${level}_letter_spacing', size) ??
+          _letterSpacing('heading_letter_spacing', size) ??
+          0,
       // Lines from their cap heights: the level's leading
       // (heading_h<n>_leading).
       leadingKey: [
@@ -4015,6 +4048,9 @@ final class PdfConverter extends BuiltInConverter
       leadingKey: _theme.value('${category}_leading') != null
           ? '${category}_leading'
           : inherited.leadingKey,
+      letterSpacing:
+          _letterSpacing('${category}_letter_spacing', size) ??
+          inherited.letterSpacing,
     );
   }
 
@@ -9010,7 +9046,7 @@ final class PdfConverter extends BuiltInConverter
         size: font.size,
         color: font.color,
         kerning: font.kerning,
-        characterSpacing: characterSpacing,
+        characterSpacing: characterSpacing + font.letterSpacing * font.size,
         features: {..._baseFeatures, ...features},
       ),
       TextLayout(

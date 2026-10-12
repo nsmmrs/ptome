@@ -151,6 +151,7 @@ subtitle) leaves its style out.
 | --- | --- | --- | --- |
 | `font` | a font token | `_font_family`, and `_font_style` from its weight and style | `font-family`, `font-weight`, `font-style` |
 | `weight`, `style`, `variant` | a weight; `italic`; `small-caps` | `_font_style`, `_font_variant` | `font-weight`, `font-style`, `font-variant` (and `smcp`) |
+| `tracking` | a length (`0.14em`) | `_letter_spacing` | `letter-spacing` |
 | `size` | a length, a ratio, or `small` | `_font_size` | `font-size` (a ratio in `em`) |
 | `color`, `background` | a color token, a color, or `none` | `_font_color`, `_background_color` | `color`, `background-color` |
 | `leading` | a ratio | `_line_height` | `line-height` |

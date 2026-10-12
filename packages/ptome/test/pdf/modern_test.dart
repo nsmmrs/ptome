@@ -2559,6 +2559,56 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('tracking: a role, a heading, and capitals by themselves', () {
+      // Where the word [word] starts and ends on the first page of [pdf].
+      (double, double) extent(String pdf, String word) {
+        final m = RegExp('xMin="([\\d.]+)"[^>]*xMax="([\\d.]+)"[^>]*>$word<')
+            .firstMatch(
+              Process.runSync('pdftotext', [
+                    '-f',
+                    '1',
+                    '-l',
+                    '1',
+                    '-bbox',
+                    pdf,
+                    '-',
+                  ]).stdout
+                  as String,
+            )!;
+        return (double.parse(m[1]!), double.parse(m[2]!));
+      }
+
+      double width(String pdf, String word) {
+        final (left, right) = extent(pdf, word);
+        return right - left;
+      }
+
+      const source =
+          '== Heading\n\nThe NASA probe [.spaced]#wide# and plain words.\n';
+      final plain = _pdf(source, theme: 'base:\n  font_size: 10\n');
+      final tracked = _pdf(
+        source,
+        theme:
+            'base:\n  font_size: 10\ncaps_letter_spacing: 0.1em\n'
+            'role:\n  spaced:\n    letter_spacing: 1.2\n'
+            'heading:\n  h2_letter_spacing: 0.04em\n',
+      );
+      // Four capitals a tenth of an em further apart: three gaps, 3 pt
+      // wider (the half spaces outside them aren't ink); lower case as it
+      // was; the role's four letters 1.2 pt each: what follows them 4 +
+      // 4.8 pt further on.
+      expect(width(tracked, 'NASA') - width(plain, 'NASA'), closeTo(3, 0.3));
+      expect(width(tracked, 'probe'), closeTo(width(plain, 'probe'), 0.05));
+      expect(
+        extent(tracked, 'and').$1 - extent(plain, 'and').$1,
+        closeTo(8.8, 0.3),
+      );
+      expect(
+        width(tracked, 'Heading'),
+        greaterThan(width(plain, 'Heading') + 3),
+      );
+    });
+
     test('a note stream at the foot of the page, apart, by its own keys', () {
       // The sample's translators' notes (the `tn` stream), set apart from
       // the footnotes, red by their own keys.

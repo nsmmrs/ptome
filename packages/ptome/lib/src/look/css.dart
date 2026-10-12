@@ -522,6 +522,9 @@ final class _CssCompiler {
         add('variant', 'font-feature-settings:"smcp"');
       }
     }
+    if (style.tracking case final tracking?) {
+      add('tracking', 'letter-spacing:${_length(tracking)}');
+    }
     if (style.size case final size?) {
       final value = switch (size) {
         SizeLength(:final length) => _length(length),

@@ -247,8 +247,13 @@ final class TextContext {
     this.hyphenRepetition = HyphenRepetition.none,
     this.typographicScripts = false,
     this.labels,
+    this.capsTracking = 0,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
+
+  /// The tracking of text set in capitals or small capitals, in ems (the
+  /// modern engine's `caps_letter_spacing`; microtype's 0.05 em).
+  final double capsTracking;
 
   /// Whether the modern engine sets superscripts and subscripts in the
   /// font's own glyphs for them (its `sups` and `subs` features) at the
@@ -321,11 +326,28 @@ final class _Format {
     this.features = const {},
     this.smallCapitals = false,
     this.typographic = false,
+    this.tracking = 0,
   });
 
   final Fragment fragment;
   final FontFace font;
   final double size;
+
+  /// The space after each character, in points (half of it before the
+  /// first and after the last: microtype's outer kerning).
+  final double tracking;
+
+  /// This format with [tracking].
+  _Format _tracked(double tracking) => _Format(
+    fragment,
+    font,
+    size,
+    image: image,
+    features: features,
+    smallCapitals: smallCapitals,
+    typographic: typographic,
+    tracking: tracking,
+  );
 
   /// Whether a superscript or subscript is set in the font's glyphs for
   /// it (on the baseline, at the text's size).
@@ -438,9 +460,16 @@ final class TextBox implements ShapedContent, BaselineContent {
         final format = _resolve(run, state, context);
         var text = format.font.normalize(run.text);
         if (format.smallCapitals) text = text.toUpperCase();
-        // One item per line of the fragment (Prawn's `format_array=`).
+        // One item per line of the fragment (Prawn's `format_array=`), its
+        // words in capitals apart when they are tracked.
         for (final m in _linesRx.allMatches(text)) {
-          items.add(_Item(m[0]!, format, defaultColor: defaultColor));
+          for (final (piece, pieceFormat) in _capitalWords(
+            m[0]!,
+            format,
+            context,
+          )) {
+            items.add(_Item(piece, pieceFormat, defaultColor: defaultColor));
+          }
         }
       }
     }
@@ -510,6 +539,73 @@ final class TextBox implements ShapedContent, BaselineContent {
   /// modern engine its OpenType features (small capitals the font lacks
   /// set as smaller capitals).
   static _Format _resolve(
+    Fragment fragment,
+    TextState state,
+    TextContext context,
+  ) {
+    final format = _resolveFeatures(fragment, state, context);
+    final tracking = _trackingOf(format, context);
+    return tracking == 0 ? format : format._tracked(tracking);
+  }
+
+  /// The tracking of [format], in points: its fragment's letter spacing,
+  /// else, for text in capitals or small capitals, the context's
+  /// [TextContext.capsTracking].
+  static double _trackingOf(_Format format, TextContext context) {
+    final size = format.size;
+    if (format.fragment.letterSpacing case final spacing?) {
+      final value =
+          double.tryParse(
+            RegExp(r'^\s*[+-]?(?:\d+(?:\.\d+)?|\.\d+)').stringMatch(spacing) ??
+                '',
+          ) ??
+          0;
+      return spacing.trim().endsWith('em') ? value * size : value;
+    }
+    final caps = context.capsTracking;
+    if (caps == 0 || format.image != null || format.fragment.isMarker) {
+      return 0;
+    }
+    final smallCaps =
+        format.smallCapitals ||
+        format.features.contains('smcp') ||
+        format.features.contains('c2sc');
+    return smallCaps ? caps * size : 0;
+  }
+
+  /// A word of two or more capitals (and the figures and marks in it).
+  static final RegExp _capitalsRx = RegExp(
+    r"(?<![\p{L}\p{N}])\p{Lu}[\p{Lu}\p{N}'’.&-]*\p{Lu}(?![\p{L}\p{N}])",
+    unicode: true,
+  );
+
+  /// [text] in [format] cut where words in capitals start and end, those
+  /// tracked by [TextContext.capsTracking] (unless their format is).
+  static List<(String, _Format)> _capitalWords(
+    String text,
+    _Format format,
+    TextContext context,
+  ) {
+    final caps = context.capsTracking;
+    if (caps == 0 ||
+        format.tracking != 0 ||
+        format.image != null ||
+        format.fragment.isMarker) {
+      return [(text, format)];
+    }
+    final pieces = <(String, _Format)>[];
+    var at = 0;
+    for (final m in _capitalsRx.allMatches(text)) {
+      if (m.start > at) pieces.add((text.substring(at, m.start), format));
+      pieces.add((m[0]!, format._tracked(caps * format.size)));
+      at = m.end;
+    }
+    if (pieces.isEmpty) return [(text, format)];
+    if (at < text.length) pieces.add((text.substring(at), format));
+    return pieces;
+  }
+
+  static _Format _resolveFeatures(
     Fragment fragment,
     TextState state,
     TextContext context,
@@ -1440,13 +1536,13 @@ final class TextBox implements ShapedContent, BaselineContent {
           canvas
             ..text(
               f.text,
-              textX,
+              textX + f.format.tracking / 2,
               y,
               TextStyle(
                 f.format.font.pdf,
                 f.format.size,
                 wordSpacing: f.wordSpacing,
-                characterSpacing: _state.characterSpacing,
+                characterSpacing: _state.characterSpacing + f.format.tracking,
                 kerning: _state.kerning,
                 ligatures: f.format.font.ligates,
                 features: f.format.features,
@@ -1795,11 +1891,13 @@ base class _Wrap {
       kerning: _state.kerning,
       features: format?.features ?? _state.features,
     );
+    // (Tracking after each character.)
+    final tracked = width + (format?.tracking ?? 0) * text.runes.length;
     // Prawn 2.4 adds the character spacing between characters.
     final spacing = _state.characterSpacing;
-    if (spacing == 0 || text.length < 2) return width;
+    if (spacing == 0 || text.length < 2) return tracked;
     final count = text.runes.length;
-    return count > 1 ? width + spacing * (count - 1) : width;
+    return count > 1 ? tracked + spacing * (count - 1) : tracked;
   }
 
   late final FontFace _baseFont = TextBox._font(
