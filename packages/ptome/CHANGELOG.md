@@ -87,6 +87,8 @@ Asciidoctor project.
   level's indent and space above (`units_<level>_margin_left`,
   `_margin_top`), and `units_<level>_label_hang: true` hangs a level's
   labels in any block.
+  The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
+  numbers flush right: `line_numbers_align` and `line_numbers_width`.
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books

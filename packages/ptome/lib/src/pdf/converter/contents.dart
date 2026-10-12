@@ -1393,9 +1393,11 @@ final class _LineNumbering {
     required this.restart,
     required this.side,
     required this.gap,
+    required this.width,
     required this.font,
     required this.pitch,
     required this.firstBaseline,
+    this.align,
     this.rules = const [],
     this.ruleColor,
   });
@@ -1419,6 +1421,11 @@ final class _LineNumbering {
 
   /// The space between the text and the numbers.
   final double gap;
+
+  /// How the numbers align in their column, `left` or `right` (null:
+  /// toward the text), and the column's width.
+  final String? align;
+  final double width;
 
   final _FontState font;
 

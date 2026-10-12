@@ -2,8 +2,8 @@
 # Employment Rights Bill (HL Bill 81, as brought from the Commons, 2024)
 # and the research in doc/typography.md: A4, the text 11 on 13.3 in Book
 # Antiqua, 1.5 in from each edge; every fifth line numbered at the right
-# in italic 9 point, from 1 on each page, on both pages; a section headed
-# in bold, its number before its title; a subsection's text 36 pt in, its
+# in italic 9 point, flush right, from 1 on each page, on both pages; a
+# section headed in bold, its number before its title; a subsection's text 36 pt in, its
 # number hung left of the text, a paragraph's 36 pt further, its letter
 # hung likewise, 8 pt between subsections; the running head the bill's
 # title, the page number outside. (The Lords print sets 11 on 12.)
@@ -44,6 +44,9 @@ pdf:
     restart: page
     font_size: 9
     font_style: italic
+    # (Flush right, their right edge 35 pt from the text.)
+    align: right
+    width: 9
     gap: 26
   # (A subsection's text 36 pt in, a paragraph's and each level's after
   # it 36 pt further, the numbers and letters hung left of it.)

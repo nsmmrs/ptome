@@ -1337,8 +1337,8 @@ css: |
 # Employment Rights Bill (HL Bill 81, as brought from the Commons, 2024)
 # and the research in doc/typography.md: A4, the text 11 on 13.3 in Book
 # Antiqua, 1.5 in from each edge; every fifth line numbered at the right
-# in italic 9 point, from 1 on each page, on both pages; a section headed
-# in bold, its number before its title; a subsection's text 36 pt in, its
+# in italic 9 point, flush right, from 1 on each page, on both pages; a
+# section headed in bold, its number before its title; a subsection's text 36 pt in, its
 # number hung left of the text, a paragraph's 36 pt further, its letter
 # hung likewise, 8 pt between subsections; the running head the bill's
 # title, the page number outside. (The Lords print sets 11 on 12.)
@@ -1379,6 +1379,9 @@ pdf:
     restart: page
     font_size: 9
     font_style: italic
+    # (Flush right, their right edge 35 pt from the text.)
+    align: right
+    width: 9
     gap: 26
   # (A subsection's text 36 pt in, a paragraph's and each level's after
   # it 36 pt further, the numbers and letters hung left of it.)
@@ -1411,12 +1414,15 @@ css: |
 # `subparagraph`, `clause`, `subclause`) 2 em further each, their lines
 # after the first back one step; sections headed in New Century
 # Schoolbook Bold capitals, flush left on a line of the grid; the page
-# number centred at the head. Senate bills are set the same.
+# number centred at the head; the bill's slug (its number and version,
+# `•HR 2 IH`) at the foot, 8 point sans 12 pt in from the text, its
+# baseline 36 pt above the page's edge. Senate bills are set the same.
 #
 # Its faces are DeVinne and New Century Schoolbook; the free stand-in for
 # both is TeX Gyre Schola (`ptome doctor --look us-bill`), wider than
 # DeVinne, so a line holds a few characters fewer. The document turns the
-# numbers on (`:line-numbers:`) and names its units (`:units: usc`).
+# numbers on (`:line-numbers:`), names its units (`:units: usc`) and
+# gives its slug (`:bill-slug: HR 2 IH`; none without it).
 tokens:
   font:
     text: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] } }
@@ -1468,10 +1474,15 @@ pdf:
     font_size: 10
     recto: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
+  role:
+    slug: { font_family: Noto Sans, font_size: 8 }
   footer:
+    height: 74pt
     border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    vertical_align: bottom
+    padding: [0, 0, 33, 12]
+    recto: { left: { content: '[.slug]#•{bill-slug}#' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '[.slug]#•{bill-slug}#' }, center: { content: '' }, right: { content: '' } }
 css: |
   #content h2,#content h3{text-transform:uppercase;font-size:.75em}
   #content .paragraph p{text-indent:2em}

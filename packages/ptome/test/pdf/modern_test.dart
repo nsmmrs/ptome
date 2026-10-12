@@ -3071,8 +3071,14 @@ templates:
         }
       });
 
-      String bill(String look, String units, String body) => _pdf(
-        '= A Bill\n:units: $units\n:look: $look\n:line-numbers:\n\n$body',
+      String bill(
+        String look,
+        String units,
+        String body, {
+        String header = '',
+      }) => _pdf(
+        '= A Bill\n:units: $units\n:look: $look\n:line-numbers:\n$header\n'
+        '$body',
         // (The look as the theme: the helper names asciidoctor-pdf's.)
         attributes: {
           'pdf-theme': (File(
@@ -3119,6 +3125,23 @@ templates:
         expect(numbers.take(5), [1, 2, 3, 4, 5]);
       });
 
+      test("a US bill's slug at the foot, none without one", () {
+        const body = '== @101 Definitions\n\n@(a) Subsection text.\n';
+        final slugged = bill(
+          'us-bill',
+          'usc',
+          body,
+          header: ':bill-slug: HR 2 IH\n',
+        );
+        final x = lefts(slugged);
+        // (12 pt in from the text, at 150.)
+        expect(x['•HR'] ?? x['•HR2IH'], closeTo(162, 0.5));
+        expect(
+          _pages(bill('us-bill', 'usc', body)).first.join('\n'),
+          isNot(contains('bill-slug')),
+        );
+      });
+
       test("a UK bill's: every fifth line, the labels hung", () {
         final pdf = bill(
           'uk-bill',
@@ -3138,6 +3161,16 @@ templates:
         final text = _pages(pdf).first.join('\n');
         expect(text, contains(RegExp(r'\s5$', multiLine: true)));
         expect(text, isNot(contains(RegExp(r'\s4$', multiLine: true))));
+        // (Flush right: 5 and 10 end at the same place.)
+        final bbox =
+            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+        final rights = {
+          for (final m in RegExp(
+            r'xMax="([\d.]+)"[^>]*>(5|10)<',
+          ).allMatches(bbox))
+            m[2]!: double.parse(m[1]!),
+        };
+        expect(rights['5'], closeTo(rights['10']!, 0.01));
       });
     });
 

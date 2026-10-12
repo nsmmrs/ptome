@@ -1721,6 +1721,11 @@ extension _DocumentParts on PdfConverter {
           ]) ??
           'left',
       gap: _length('line_numbers_gap', _rootFontSize) ?? _rootFontSize,
+      // (`line_numbers_align`: the numbers flush left or right in a
+      // column `line_numbers_width` wide (two figures' room by default),
+      // its near edge the gap from the text; toward the text unless set.)
+      align: _choice('line_numbers_align', const ['left', 'right']),
+      width: _length('line_numbers_width', font.size) ?? font.size * 1.2,
       font: font,
       pitch:
           _length('line_numbers_grid_pitch', _rootFontSize) ??
@@ -1873,18 +1878,22 @@ extension _DocumentParts on PdfConverter {
       }
       _lineCount++;
       if (label == null && _lineCount % numbering.interval != 0) continue;
+      final align = numbering.align ?? (right ? 'left' : 'right');
       final text = _textBox(
         label ?? '$_lineCount',
         numbering.font,
-        align: right ? 'left' : 'right',
+        align: align,
       );
+      // (Set in a box wide enough for any number, its edge at the
+      // column's.)
       const width = 60.0;
       final placed = text.place(width, double.infinity, atTop: true);
       if (placed == null) continue;
       final baseline = text.firstBaseline(width) ?? 0;
-      final x = right
+      final column = right
           ? area.right + numbering.gap
-          : area.left - numbering.gap - width;
+          : area.left - numbering.gap - numbering.width;
+      final x = align == 'left' ? column : column + numbering.width - width;
       placed.paint(_CanvasPage(canvas), x, line.baseline + baseline);
     }
   }
