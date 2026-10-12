@@ -1,0 +1,119 @@
+# A documentation site: the reference pages of a software project, as the
+# documentation tools measured in doc/typography.md set them, code first.
+# The text in the reader's own interface sans, 16 px on 1.65 (Docusaurus's
+# Infima; MDN's 1.75) on a 46em measure (Furo's column; about 75
+# characters, where Stripe's 104 are too many); code in the platform's
+# monospace, in a tint, inline code a tinted chip; headings in a semibold
+# sans; admonitions with a 5 px left border and a tint, by type (note,
+# tip, important, warning, caution: Infima's), a mark before each label.
+# With `:toc:`, the contents in a sidebar at the left on a wide screen,
+# the page beside it; a dark mode when the reader's system asks for one.
+#
+# In print (PDF) the text is Noto Sans 10 on 15, code in M+ 1mn.
+extends: ptome
+tokens:
+  font:
+    text:
+      family:
+        print: Noto Sans
+        screen: [system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif]
+    display:
+      family:
+        print: Noto Sans
+        screen: [system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif]
+      weight: { print: bold, screen: 600 }
+    code:
+      family:
+        print: M+ 1mn
+        screen: [ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace]
+      size: { print: 0.9, screen: 0.875 }
+  size:
+    text: { print: 10pt, screen: 16px }
+    headings: { print: [24pt, 18pt, 14pt, 12pt, 10.5pt, 10pt], screen: [2.25em, 1.75em, 1.375em, 1.125em, 1em, 0.875em] }
+  leading: { print: 1.5, screen: 1.65 }
+  measure: { screen: 46em }
+  paragraph: { signal: space, space: { print: 6pt } }
+  align: { print: start }
+  color:
+    ink: '#1C1E21'
+    ink-strong: '#111827'
+    ink-soft: '#4B5563'
+    muted: '#6B7280'
+    link: '#2563EB'
+    tint: '#F3F4F6'
+    rule: '#E5E7EB'
+    rule-soft: '#D1D5DB'
+styles:
+  link: { color: link }
+  heading:
+    font: display
+    color: ink-strong
+    space-before: { print: 18pt }
+    space-after: { print: 6pt }
+    leading: { print: 1.25 }
+    keep-with-next: { print: true }
+  code-block:
+    size: { print: 9pt }
+    background: tint
+    border: { print: none, screen: none }
+    radius: { print: 3pt }
+    padding: { print: 9pt }
+    leading: { print: 1.4 }
+css: |
+  /* Code first: inline code a tinted chip, blocks rounded. */
+  #content :not(pre):not([class^=L])>code{background:var(--ptome-color-tint);color:var(--ptome-color-ink);border-radius:4px;padding:.1em .35em;font-size:.875em}
+  .sect1+.sect1{border-top-color:var(--ptome-color-rule)}
+  table thead,table tfoot{background:var(--ptome-color-tint)}
+  .listingblock>.content>pre,.literalblock pre{border-radius:6px;line-height:1.5}
+  /* Admonitions: a 5 px left border and a tint, by type (Infima). */
+  .admonitionblock{--admonition:#3B82F6;--admonition-tint:#EFF6FF}
+  .admonitionblock.tip{--admonition:#10B981;--admonition-tint:#ECFDF5}
+  .admonitionblock.important{--admonition:#8B5CF6;--admonition-tint:#F5F3FF}
+  .admonitionblock.warning{--admonition:#F59E0B;--admonition-tint:#FFFBEB}
+  .admonitionblock.caution{--admonition:#EF4444;--admonition-tint:#FEF2F2}
+  .admonitionblock>table,.admonitionblock>table>tbody,.admonitionblock>table tr{display:block}
+  .admonitionblock>table{background:var(--admonition-tint);border-left:5px solid var(--admonition);border-radius:0 6px 6px 0;padding:.75em 1em}
+  .admonitionblock>table td{display:block;border:0;padding:0}
+  .admonitionblock>table td.content{border-left:0;padding:0;color:inherit}
+  .admonitionblock>table td.icon{text-align:left;width:auto;white-space:nowrap;margin-bottom:.35em}
+  .admonitionblock td.icon .title{font-size:.8em;text-transform:uppercase;letter-spacing:.06em;color:var(--admonition)}
+  .admonitionblock td.icon .title::before{display:inline-flex;align-items:center;justify-content:center;width:1.35em;height:1.35em;margin-right:.5em;border-radius:50%;background:var(--admonition);color:#fff;font-weight:700;letter-spacing:0;vertical-align:-.2em}
+  .admonitionblock.note td.icon .title::before{content:"i";font-family:Georgia,serif;font-style:italic}
+  .admonitionblock.tip td.icon .title::before{content:"+"}
+  .admonitionblock.important td.icon .title::before{content:"!"}
+  .admonitionblock.warning td.icon .title::before{content:"!"}
+  .admonitionblock.caution td.icon .title::before{content:"\00D7"}
+  .admonitionblock td.icon>i.fa{display:none}
+  /* The contents in a sidebar at the left of a wide screen. */
+  @media screen and (min-width:64em){
+    body.toc2,body:has(#toc){padding-left:17rem;padding-right:2rem}
+    #toc.toc,#toc.toc2{position:fixed;top:0;left:0;bottom:0;width:15rem;margin:0;padding:1.5rem 1rem;overflow:auto;border:0;border-right:1px solid var(--ptome-color-rule);background:var(--ptome-color-tint);font-size:.9em}
+    #header>#toc.toc{border-top:0;border-bottom:0}
+    #toc ul{padding-left:0}
+    #toc ul ul{padding-left:1em}
+  }
+  #toc a{color:var(--ptome-color-ink-soft)}
+  #toc a:hover{color:var(--ptome-color-link)}
+  /* A dark mode, when the reader's system asks for one. */
+  @media screen and (prefers-color-scheme:dark){
+    :root{--ptome-color-ink:#E5E7EB;--ptome-color-ink-strong:#F9FAFB;--ptome-color-ink-soft:#C0C6CF;--ptome-color-muted:#9CA3AF;--ptome-color-link:#7AA7FF;--ptome-color-tint:#1F2430;--ptome-color-rule:#2E3440;--ptome-color-rule-soft:#3B4252;color-scheme:dark}
+    html,body{background:#12151C;color:var(--ptome-color-ink)}
+    #header,#content,#footnotes,#footer{color:var(--ptome-color-ink)}
+    #footer{background:#0C0F14}
+    #footer-text{color:var(--ptome-color-muted)}
+    h1,h2,h3,h4,h5,h6,#toctitle,.sidebarblock>.content>.title{color:var(--ptome-color-ink-strong)}
+    p,li,dd,dt,td,th,blockquote,.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{color:var(--ptome-color-ink)}
+    table.tableblock>thead>tr>th,table.tableblock>tfoot>tr>*,table.tableblock th{color:var(--ptome-color-ink-strong)}
+    .listingblock>.content>pre,.literalblock pre,.sidebarblock,.exampleblock>.content{background:var(--ptome-color-tint);color:var(--ptome-color-ink)}
+    table.tableblock{background:transparent}
+    .exampleblock>.content,.sidebarblock{border-color:var(--ptome-color-rule)}
+    table.tableblock,th.tableblock,td.tableblock{border-color:var(--ptome-color-rule)}
+    .admonitionblock{--admonition-tint:#1A2333}
+    .admonitionblock.tip{--admonition-tint:#13261F}
+    .admonitionblock.important{--admonition-tint:#221B33}
+    .admonitionblock.warning{--admonition-tint:#2A2212}
+    .admonitionblock.caution{--admonition-tint:#2C1718}
+    .title,.quoteblock .attribution,.verseblock .attribution{color:var(--ptome-color-muted)}
+    #toc.toc,#toc.toc2{background:#171B24}
+    mark{background:#5B4A00;color:inherit}
+  }

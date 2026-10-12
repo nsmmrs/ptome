@@ -521,6 +521,22 @@ tokens:
     expect(css, contains('--ptome-font-display:"Bodoni Moda",sans-serif'));
   });
 
+  test('the docs-site look: code first, a sidebar, a dark mode', () {
+    final look = LookLoader().load('docs-site');
+    final css = lookCss(look, CssTarget.html);
+    final own = lookOwnCss(look, CssTarget.html);
+    // (The reader's interface sans, 1.65 on a 46em measure.)
+    expect(css, contains('--ptome-font-text:system-ui,'));
+    expect(css, contains('line-height:1.65'));
+    expect(css, contains('max-width:46em'));
+    // (Admonitions by type, a 5 px border; the contents beside the page;
+    // the colors again for a dark scheme.)
+    expect(own, contains('border-left:5px solid var(--admonition)'));
+    expect(own, contains('.admonitionblock.caution{--admonition:#EF4444'));
+    expect(own, contains('#toc.toc,#toc.toc2{position:fixed'));
+    expect(own, contains('(prefers-color-scheme:dark)'));
+  });
+
   test('every built-in look compiles for each output without a warning', () {
     for (final name in builtInLooks.keys) {
       final look = LookLoader().load(name);
