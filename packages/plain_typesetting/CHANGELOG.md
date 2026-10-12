@@ -10,8 +10,23 @@
   counting them); `ItemLineBreaker.breakItems` takes the protrusion
   callbacks. A hyphenated line ends in the soft hyphen where the font
   has it (text taken from the page joins the word up), and a word's
-  pieces at its breaks are measured with the kerning between them, as
-  the word is drawn whole.
+  pieces at its breaks are measured within the word (the word up to a
+  piece's end less the word before it), the kerning and any ligature
+  across a break counted, so they add up to the word as it is drawn
+  whole.
+- `LineHeight.cap`: lines from their cap heights to their baselines (CSS's
+  `text-box-edge: cap alphabetic`), the leading between them; a
+  paragraph ends at its last baseline. `Paragraph.justifyToWidest`:
+  justified lines stretched to the widest line's natural width, not the
+  measure. `Paragraph.copyWith`. A font's cap height, where it gives
+  none, is its typographic ascender. A break after a compound's hyphen
+  is a hyphenated one (TeX's `\exhyphenpenalty`, 50, flagged); a space
+  before what no line starts with (a comma, a closing bracket, a slash)
+  or after an opening bracket is no break (UAX #14's LB13 and LB14); a
+  justified paragraph's last line set wider than its measure hangs its
+  first character too; a paragraph's margin below takes no more than the
+  room left in its region, as a custom box's; a paragraph with page
+  references keeps its other settings when they are filled in.
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

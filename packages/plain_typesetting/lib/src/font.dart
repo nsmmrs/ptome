@@ -134,9 +134,13 @@ final class OpenTypeShaper implements OpenTypeTextFont {
   @override
   double get lineGap => scale(font.lineGap);
 
-  /// The height of capital letters (the ascender if the font doesn't say).
+  /// The height of capital letters (the typographic ascender if the font
+  /// doesn't say, as an `OS/2` table before version 2 doesn't).
   @override
-  double get capHeight => scale(font.capHeight ?? font.ascender);
+  double get capHeight => scale(switch (font.capHeight) {
+    final cap? when cap > 0 => cap,
+    _ => font.typoAscender ?? font.ascender,
+  });
 
   /// The height of lowercase letters (half the ascender if the font
   /// doesn't say).

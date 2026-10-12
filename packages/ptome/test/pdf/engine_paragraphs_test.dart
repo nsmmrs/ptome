@@ -240,6 +240,56 @@ void main() {
     );
   });
 
+  test('lines from their cap heights (base_leading), across pages', () {
+    final long = List.filled(8, _words40).join(' ');
+    for (final align in ['justify', 'left']) {
+      _same(
+        '= Doc\n\n== A heading\n\n$long\n\n$_words40 +\n$_words40\n\n'
+        '[.big]\n$_words40\n\n$long\n\n$long\n',
+        theme:
+            'base:\n  text_align: $align\n  leading: 5\n'
+            'role:\n  big:\n    font_size: 14\n',
+      );
+    }
+  });
+
+  test('hyphenated (:hyphens:), justified, punctuation hung', () {
+    const intro =
+        'To explain what a hypermedia-driven application looks like, and to '
+        'contrast it with the popular SPA approach of today, we need to first '
+        'explore the entire _hypermedia system_ of the web, beyond just '
+        'discussing HTML. We need to look at the _network architecture_ of '
+        'the web, including how a web server delivers a hypermedia API, and '
+        'how to effectively use the hypermedia features available in the '
+        'hypermedia _client_ (e.g., the browser).\n\n'
+        'Each of these are important aspects of building an effective '
+        'hypermedia-driven application, and it is the entire _hypermedia '
+        'system_ that comes together to make hypermedia such a powerful '
+        'architecture.\n\n'
+        // (Ligatures across hyphenation points: effective, official.)
+        'The effective official offered sufficient affluent efficiency, '
+        'the officers effectively affirming difficult effervescent '
+        'offerings, sufficiently efficient for the affluent officials.\n';
+    for (final leading in ['', '  leading: 0.6em\n']) {
+      _same(
+        '= Doc\n:hyphens:\n\n$intro\n$intro\n$intro',
+        theme:
+            'page:\n  margin: [72, 126, 72, 72]\n'
+            'base:\n  text_align: justify\n  overhang: true\n$leading'
+            'prose:\n  text_indent_inner: 1em\n',
+      );
+    }
+  });
+
+  test('base_justify_width: justified to the widest line', () {
+    _same(
+      '[.big]\n$_words40 -- the author\n\n$_words40\n',
+      theme:
+          'base:\n  text_align: justify\n  justify_width: widest\n'
+          'role:\n  big:\n    font_size: 15\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

@@ -33,6 +33,12 @@ sealed class LineHeight {
 
   /// [points] per line.
   const factory exact(double points) = ExactLineHeight;
+
+  /// Lines from their cap heights to their baselines (CSS's
+  /// `text-box-edge: cap alphabetic`), [leading] between them: a
+  /// paragraph's first line has its capitals' tops at its top, and it
+  /// ends at its last line's baseline.
+  const factory cap({double leading}) = CapLineHeight;
 }
 
 /// Lines as tall as their fonts, plus leading.
@@ -67,6 +73,15 @@ final class ExactLineHeight extends LineHeight {
 
   /// The height, in points.
   final double points;
+}
+
+/// Lines from their cap heights to their baselines, leading between them.
+final class CapLineHeight extends LineHeight {
+  /// [leading] between one line's baseline and the next one's cap height.
+  const new({this.leading = 0}) : super._();
+
+  /// The space between lines, in points.
+  final double leading;
 }
 
 /// How lines sit between the margins.
@@ -136,7 +151,28 @@ final class Paragraph {
     this.riseInLineHeight = true,
     this.alignLast = TextAlign.left,
     this.protrusion = 0,
+    this.justifyToWidest = false,
   });
+
+  /// This paragraph with [content], [align] or [justifyToWidest] instead
+  /// of its own.
+  Paragraph copyWith({
+    List<InlineContent>? content,
+    TextAlign? align,
+    bool? justifyToWidest,
+  }) => Paragraph(
+    content ?? this.content,
+    align: align ?? this.align,
+    lineHeight: lineHeight,
+    firstLineIndent: firstLineIndent,
+    hyphenator: hyphenator,
+    breakLongWords: breakLongWords,
+    hyphenRepetition: hyphenRepetition,
+    riseInLineHeight: riseInLineHeight,
+    alignLast: alignLast,
+    protrusion: protrusion,
+    justifyToWidest: justifyToWidest ?? this.justifyToWidest,
+  );
 
   /// The inline content.
   final List<InlineContent> content;
@@ -160,6 +196,12 @@ final class Paragraph {
   /// character at its end always, its first at its start when the line is
   /// justified, the breaker counting them as the lines are then drawn.
   final double protrusion;
+
+  /// Whether a justified paragraph's lines are stretched to its widest
+  /// line's natural width (its first line's indent counted) rather than to
+  /// the measure: a paragraph in a block sized to its content, where
+  /// stretching to the measure would make it wider than its text.
+  final bool justifyToWidest;
 
   /// The line spacing.
   final LineHeight lineHeight;
@@ -1032,13 +1074,27 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   }
 
   var offset = 0;
-  void breakBefore(int at) {
+  // (Whether spaces were the last of the text.)
+  var spaced = false;
+  void breakBefore(int at, {bool space = false}) {
     if (at == 0) return;
     while (nextBreak < breaks.length && breaks.offsetAt(nextBreak) < at) {
       nextBreak++;
     }
     final opportunity =
         nextBreak < breaks.length && breaks.offsetAt(nextBreak) == at;
+    // (Spaces before what no line may start with, a closing bracket or a
+    // slash, or after an opening one: no break at them, UAX #14's LB13 and
+    // LB14.)
+    final afterSpaces = spaced && !space;
+    if (!space) spaced = false;
+    if (afterSpaces && !opportunity && items.lastOrNull is GlueItem) {
+      var first = items.length;
+      while (first > 0 && items[first - 1] is GlueItem) {
+        first--;
+      }
+      items.insert(first, const PenaltyItem(0, PenaltyItem.never));
+    }
     if (opportunity && breaks.isMandatoryAt(nextBreak)) {
       flush();
       items
@@ -1051,17 +1107,20 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
           PenaltyItem(run.style.measure('-'), 50, flagged: true, run: run),
         );
       } else if (items.lastOrNull is! GlueItem) {
-        // After a compound's hyphen, repeated on the next line where the
-        // language has it so.
+        // After a compound's hyphen, a hyphenated break (TeX's explicit
+        // hyphens, \exhyphenpenalty 50), the hyphen repeated on the next
+        // line where the language has it so.
         final run = lastRun;
+        final hyphen = whole.codeUnitAt(at - 1) == 0x2d;
         final repeat =
             run != null &&
-            whole.codeUnitAt(at - 1) == 0x2d &&
+            hyphen &&
             paragraph.hyphenRepetition.repeatsBefore(whole.substring(at));
         items.add(
           PenaltyItem(
             0,
-            0,
+            hyphen ? 50 : 0,
+            flagged: hyphen,
             run: run,
             carry: repeat ? run.style.measure('-') : 0,
           ),
@@ -1093,7 +1152,7 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         wordRun = content;
         lastRun = content;
         for (final rune in text.runes) {
-          breakBefore(offset);
+          breakBefore(offset, space: rune == 0x20 || rune == 0x09);
           wordRun = content;
           final length = rune > 0xffff ? 2 : 1;
           switch (rune) {
@@ -1105,6 +1164,7 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
               // Spaces only shrink in justified text: elsewhere nothing
               // would shrink them when the line is drawn.
               items.add(GlueItem(content, ' ', space, space / 2, shrink));
+              spaced = true;
             case 0xad:
               softHyphen = true;
             case 0x200b || 0x2060 || 0xfeff:
@@ -1119,7 +1179,7 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   }
   flush();
   if (items.isEmpty) return items;
-  _kernAcrossBreaks(items);
+  _measureWithinWords(items);
   items
     ..add(const GlueItem.fill())
     ..add(PenaltyItem(0, PenaltyItem.forced, run: lastRun));
@@ -1127,34 +1187,36 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
 }
 
 /// [items] with each piece of a word that a break divides (at a soft
-/// hyphen, a hyphenation point, after a hyphen) as wide as it is set when
-/// the word isn't broken there: with the kerning between its last letter
-/// and the next piece's first, as the word is drawn whole.
-void _kernAcrossBreaks(List<LineItem> items) {
-  for (var i = 0; i + 2 < items.length; i++) {
-    if ((items[i], items[i + 1], items[i + 2])
-        case (
-          BoxItem(content: final TextRun run, :final text, :final width),
-          PenaltyItem(isForced: false),
-          BoxItem(content: final TextRun next, text: final after),
-        )
-        when identical(run, next) && text.isNotEmpty && after.isNotEmpty) {
-      final style = run.style;
-      final pair = style.shape(
-        String.fromCharCode(text.runes.last) +
-            String.fromCharCode(after.runes.first),
-      );
-      if (pair.length != 2 || pair.first.kerning == 0) continue;
-      items[i] = BoxItem(
-        run,
-        text,
-        width +
-            pair.first.kerning *
-                style.size /
-                1000 *
-                style.horizontalScaling /
-                100,
-      );
+/// hyphen, a hyphenation point, after a hyphen) as wide as it is within
+/// the word: the word up to its end measured less the word before it, so
+/// the kerning and any ligature across the break count with the piece
+/// after it and the pieces add up to the word as it is drawn whole.
+void _measureWithinWords(List<LineItem> items) {
+  TextRun? run;
+  var soFar = '';
+  for (var i = 0; i < items.length; i++) {
+    switch (items[i]) {
+      // (A break within the word.)
+      case PenaltyItem(isForced: false):
+        continue;
+      case BoxItem(content: final TextRun next, :final text)
+          when text.isNotEmpty:
+        if (identical(next, run) && soFar.isNotEmpty) {
+          final style = next.style;
+          final word = '$soFar$text';
+          items[i] = BoxItem(
+            next,
+            text,
+            style.measure(word) - style.measure(soFar),
+          );
+          soFar = word;
+        } else {
+          run = next;
+          soFar = text;
+        }
+      case _:
+        run = null;
+        soFar = '';
     }
   }
 }
@@ -1497,6 +1559,24 @@ List<Line> buildLines(
   LineWidths widths, {
   double expansion = 0,
 }) {
+  // (Justified to the widest line: each line's natural width first.)
+  var widest = double.infinity;
+  if (paragraph.justifyToWidest && paragraph.align == TextAlign.justify) {
+    final natural = buildLines(
+      paragraph.copyWith(align: TextAlign.left, justifyToWidest: false),
+      items,
+      breaks,
+      widths,
+      expansion: expansion,
+    );
+    widest = 0;
+    for (final (number, line) in natural.indexed) {
+      widest = math.max(
+        widest,
+        line.width + (number == 0 ? paragraph.firstLineIndent : 0),
+      );
+    }
+  }
   final lines = <Line>[];
   var start = 0;
   for (final (number, end) in breaks.indexed) {
@@ -1506,7 +1586,10 @@ List<Line> buildLines(
       content.removeLast();
     }
     final breakItem = items[end];
-    final hyphen = breakItem is PenaltyItem && breakItem.flagged
+    // (A hyphen added where a word is hyphenated; a break after the
+    // text's own hyphen, flagged too, adds none.)
+    final hyphen =
+        breakItem is PenaltyItem && breakItem.flagged && breakItem.width > 0
         ? breakItem.run
         : null;
     final last =
@@ -1525,11 +1608,12 @@ List<Line> buildLines(
         content,
         hyphen,
         leading,
-        widths(number) - indent,
+        math.min(widths(number), widest) - indent,
         indent,
         justify: paragraph.align == TextAlign.justify && !last,
         emptyRun: emptyRun,
         expansion: expansion,
+        end: number == breaks.length - 1,
       ),
     );
     start = end + 1;
@@ -1547,6 +1631,7 @@ Line _line(
   required bool justify,
   required TextRun? emptyRun,
   double expansion = 0,
+  bool end = false,
 }) {
   var available = room;
   // Runs of items of the same content, in order.
@@ -1600,6 +1685,15 @@ Line _line(
         throw StateError('page references are resolved before breaking');
     }
   }
+  // (A justified paragraph's last line, or one before a hard break, the
+  // breaker set wider than its measure, its spaces shrunk: justified too,
+  // shrunk to fit, never stretched.)
+  final overfull =
+      !justify &&
+      paragraph.align == TextAlign.justify &&
+      spaces > 0 &&
+      natural > room + 1e-4;
+  final justified = justify || overfull;
   // Protrusion: the line's last character hangs past its end and, when it
   // is justified, its first before its start, the line that much wider
   // (as the breaker counted them).
@@ -1614,7 +1708,7 @@ Line _line(
       }
       break;
     }
-    if (justify && spaces > 0) {
+    if (justified && spaces > 0) {
       for (final (content, text, _, _) in shaped) {
         final trimmed = text.replaceAll('\u200b', '').trimLeft();
         if (trimmed.isEmpty) continue;
@@ -1631,7 +1725,7 @@ Line _line(
   // against the spaces' stretch or shrink), within the expansion, the
   // spaces the rest.
   var scale = 1.0;
-  if (justify && expansion > 0) {
+  if (justified && expansion > 0) {
     final difference = available - natural;
     var letters = 0.0;
     var glue = 0.0;
@@ -1651,17 +1745,11 @@ Line _line(
       scale = 1 + (share / letters).clamp(-expansion, expansion);
     }
   }
-  // (A justified paragraph's last line, or one before a hard break, the
-  // breaker set wider than its measure, its spaces shrunk: shrunk to fit,
-  // never stretched.)
-  final overfull =
-      !justify &&
-      paragraph.align == TextAlign.justify &&
-      spaces > 0 &&
-      natural > available + 1e-4;
-  final extra = (justify || overfull) && spaces > 0
-      ? (available / scale - natural) / spaces
-      : 0.0;
+  final extra = !justified || spaces == 0
+      ? 0.0
+      : overfull
+      ? math.min<double>(0, (available / scale - natural) / spaces)
+      : (available / scale - natural) / spaces;
   final width = (natural + extra * spaces) * scale;
   // (A justified paragraph's line that isn't stretched: by alignLast.)
   final align = paragraph.align == TextAlign.justify && !justify && !overfull
@@ -1704,6 +1792,23 @@ Line _line(
   }
   if (shaped.isEmpty && emptyRun != null) text(emptyRun.style);
   final textAscent = ascent;
+  // (Lines from their cap heights: the tallest capitals of the line's
+  // text, a line of spaces alone as tall as theirs.)
+  var cap = 0.0;
+  var blankCap = 0.0;
+  double capOf(TextStyle style) =>
+      style.font.capHeight * style.size / 1000 +
+      (paragraph.riseInLineHeight ? math.max(0, style.rise) : 0);
+  for (final (content, string, _, _) in shaped) {
+    if (content is TextRun) {
+      if (string.trim().isEmpty) {
+        blankCap = math.max(blankCap, capOf(content.style));
+      } else {
+        cap = math.max(cap, capOf(content.style));
+      }
+    }
+  }
+  if (shaped.isEmpty && emptyRun != null) blankCap = capOf(emptyRun.style);
   final fragments = <LineFragment>[];
   for (final (content, string, glyphs, natural) in shaped) {
     switch (content) {
@@ -1726,6 +1831,7 @@ Line _line(
         };
         ascent = math.max(ascent, bottom + height);
         descent = math.min(descent, bottom);
+        cap = math.max(cap, bottom + height);
         if (size == 0) size = height;
         fragments.add(ImageFragment(x, content.width, content, bottom));
         x += content.width;
@@ -1744,14 +1850,22 @@ Line _line(
       descent,
     ),
     ExactLineHeight(:final points) => _centered(points, ascent, descent),
+    // (The leading under each line but a paragraph's last.)
+    CapLineHeight(:final leading) => (
+      (cap > 0 ? cap : blankCap) + (end ? 0 : leading),
+      cap > 0 ? cap : blankCap,
+    ),
   };
+  final capLines = paragraph.lineHeight is CapLineHeight;
   return Line(
     fragments,
     width: width,
     height: height,
     baseline: baseline,
-    ascent: ascent,
-    descent: descent,
+    // (Lines from their cap heights: no more of them above the baseline,
+    // nothing below it but the leading.)
+    ascent: capLines ? baseline : ascent,
+    descent: capLines ? 0 : descent,
     hyphenated: hyphen != null,
   );
 }

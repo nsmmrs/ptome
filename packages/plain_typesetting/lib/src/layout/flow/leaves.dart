@@ -47,10 +47,17 @@ extension _Leaves on _Pass {
     final trimmed =
         below.isNotEmpty && count > 0 && top + linesHeight > available + 1e-6;
     if (trimmed) linesHeight -= below[count - 1];
+    // (Its margin below no more than the room left: a region's end takes
+    // what doesn't fit of it.)
     final height =
         top +
         linesHeight +
-        (from + count >= all.length && !trimmed ? margin.bottom : 0);
+        (from + count >= all.length && !trimmed
+            ? math.min(
+                margin.bottom,
+                math.max(0.0, available - top - linesHeight),
+              )
+            : 0);
     return _Fit(
       _PlacedLines(
         placed,

@@ -114,11 +114,18 @@ Asciidoctor project.
   paragraphs with protrusion (`base_overhang`), font expansion and
   `base_text_align_last`, and break each paragraph as the text box would
   (ragged, centered or justified, at its own size, `base_line_breaking`
-  too), on a baseline grid as well, and with labels hung beside their
-  lines (units' `label_hang`, `heading_h<n>_display: margin`); lines from their cap heights
-  (`base_leading`) stay in the text box for now. Every word where the box puts it (test/pdf/
-  engine_paragraphs_test.dart), and the Hypermedia Systems book the
-  same.
+  too), on a baseline grid as well, with labels hung beside their lines
+  (units' `label_hang`, `heading_h<n>_display: margin`), with lines from
+  their cap heights (`base_leading`) and justified to their widest line
+  (`base_justify_width: widest`). Every word where the box puts it
+  (test/pdf/engine_paragraphs_test.dart). The Hypermedia Systems book's
+  paragraphs go through the engine (313 pages, the same words); its lines
+  differ from the box's only where the engine is right and the box isn't:
+  a paragraph split across pages keeps its own breaks (the box breaks its
+  rest again), no line starts with a comma, and a code path may break
+  after a slash before digits (Unicode 15.1's line breaking). A footnote's
+  number on its page (`footnotes_numbering: page`) keeps its paragraph in
+  the box for now.
 - Units note streams: `entry-first-in` and `entry-heading` head the first
   entry under each unit of a level (`Chapter {{chapter}}` over each
   chapter's cross-references), so the entries can give the verse alone;

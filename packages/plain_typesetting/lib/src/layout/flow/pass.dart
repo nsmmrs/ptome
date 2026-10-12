@@ -530,19 +530,14 @@ final class _Pass {
   Paragraph _resolve(Paragraph paragraph) {
     if (!_hasReferences(paragraph)) return paragraph;
     hasReferences = true;
-    return Paragraph(
-      [
+    return paragraph.copyWith(
+      content: [
         for (final c in paragraph.content)
           if (c case PageReference(:final anchor, :final placeholder))
             c.resolve(_pageOf(anchor) ?? placeholder)
           else
             c,
       ],
-      align: paragraph.align,
-      lineHeight: paragraph.lineHeight,
-      firstLineIndent: paragraph.firstLineIndent,
-      hyphenator: paragraph.hyphenator,
-      breakLongWords: paragraph.breakLongWords,
     );
   }
 

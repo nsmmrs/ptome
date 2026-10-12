@@ -85,6 +85,7 @@ export 'src/layout/inline.dart'
 export 'src/layout/paragraph.dart'
     show
         BoxItem,
+        CapLineHeight,
         ExactLineHeight,
         FirstFitLineBreaker,
         FontLineHeight,

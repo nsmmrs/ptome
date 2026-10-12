@@ -12,14 +12,12 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
-  /// Whether the engine's paragraphs can set text with [markup] in [font]
-  /// as the text box does: none of what they don't do yet (FEAT-thzbh8)
+  /// Whether the engine's paragraphs can set text with [markup]
+  /// as the text box does: none of what they don't do yet (FEAT-5w237r)
   /// in play, text running around a block floating to a side (after the
-  /// first), lines from their cap heights (`base_leading`), side notes
-  /// beside the text.
-  bool _engineCanSet(String markup, _FontState font) =>
+  /// first), side notes beside the text.
+  bool _engineCanSet(String markup) =>
       !_sideFloated &&
-      _capLeading(font) == null &&
       !markup.contains(sideNoteAnchorPrefix) &&
       !markup.contains('<side ');
 
@@ -318,7 +316,7 @@ extension _Paragraphs on PdfConverter {
         firstLine == null &&
         initial == null &&
         _pendingDrop == null &&
-        _engineCanSet(content, font)) {
+        _engineCanSet(content)) {
       if (box.engineContent() case final runs? when runs.isNotEmpty) {
         _engineParagraphCount++;
         final metrics = _lineMetrics(font);
@@ -350,11 +348,14 @@ extension _Paragraphs on PdfConverter {
                 _ => TextAlign.left,
               },
               // (Half the leading and the font's line gap above each line,
-              // as the text box sets them.)
-              lineHeight: LineHeight.font(
-                leading: metrics.leading + heightShift,
-                above: metrics.paddingTop + ascentShift,
-              ),
+              // as the text box sets them; with `base_leading`, the lines
+              // from their cap heights, as it sets them then.)
+              lineHeight: _capLeading(font) != null
+                  ? LineHeight.cap(leading: metrics.leading)
+                  : LineHeight.font(
+                      leading: metrics.leading + heightShift,
+                      above: metrics.paddingTop + ascentShift,
+                    ),
               firstLineIndent: indent,
               // (`base_text_align_last`: a justified paragraph's last line,
               // and those before a hard break, as the box sets them.)
@@ -369,6 +370,11 @@ extension _Paragraphs on PdfConverter {
               },
               // (`base_overhang`: protrusion, as the box draws it.)
               protrusion: _overhangAmount(),
+              // (`base_justify_width: widest`: justified to the widest
+              // line, as the box sets a paragraph in a block sized to it.)
+              justifyToWidest:
+                  _choice('base_justify_width', const ['room', 'widest']) ==
+                  'widest',
               // (A superscript in the space between lines, as the text
               // box sets it.)
               riseInLineHeight: false,

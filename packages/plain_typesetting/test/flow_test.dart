@@ -1053,6 +1053,43 @@ void main() {
     expect(result.pageCount, 1);
   });
 
+  test('a paragraph with a page reference keeps its own settings', () {
+    // Its last line centered (alignLast), set again with the page filled
+    // in: still centered, not at the left.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(4))
+        .layout([
+          ParagraphBox(
+            Paragraph(
+              [
+                TextRun(
+                  'aaa bbb ccc ddd eee fff ggg hhh iii jjj kkk lll mmm see '
+                  'page ',
+                  _body,
+                ),
+                PageReference('target', _body),
+              ],
+              align: TextAlign.justify,
+              alignLast: TextAlign.center,
+            ),
+            style: const BoxStyle(anchor: 'target'),
+          ),
+        ])
+        .render(document);
+    final placed = [
+      for (final call in document.pages.first.canvas.calls)
+        if (RegExp(r'^glyphs ".*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          (double.parse(m[1]!), double.parse(m[2]!)),
+    ];
+    final lastY = placed.map((p) => p.$2).reduce(math.min);
+    final x = placed
+        .where((p) => p.$2 == lastY)
+        .map((p) => p.$1)
+        .reduce(math.min);
+    expect(x, greaterThan(21));
+  });
+
   test('a repeated head kept whole and with what follows it', () {
     // Three rows used, a two-line head and its body: the head would break
     // after its first line, so the block starts the next page; there, the

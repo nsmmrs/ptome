@@ -126,6 +126,40 @@ void main() {
     expect(last.x + last.width, closeTo(150, 1e-6));
   });
 
+  test("a word's pieces measured within it: its ligatures counted", () {
+    // "official" broken after "off" (its "ffi" a ligature when whole):
+    // the pieces add up to the word as drawn whole, the ligature's width
+    // counted with the piece after the break.
+    final ligated = TextStyle(
+      OpenTypeShaper(
+        OpenTypeFont.parse(
+          File('test/fonts/notoserif-features.ttf').readAsBytesSync(),
+        ),
+      ),
+      10,
+      ligatures: true,
+    );
+    final items = paragraphItems(
+      Paragraph([
+        TextRun('official', ligated),
+      ], hyphenator: const _AfterThree()),
+    );
+    final pieces = [
+      for (final item in items)
+        if (item case BoxItem(:final text, :final width)) (text, width),
+    ];
+    expect([for (final (text, _) in pieces) text], ['off', 'icial']);
+    expect(pieces.first.$2, closeTo(ligated.measure('off'), 1e-9));
+    expect(
+      pieces.first.$2 + pieces.last.$2,
+      closeTo(ligated.measure('official'), 1e-9),
+    );
+    expect(
+      ligated.measure('off') + ligated.measure('icial'),
+      isNot(closeTo(ligated.measure('official'), 1e-3)),
+    );
+  });
+
   test("a justified paragraph's last line wider than its measure shrinks", () {
     // One line, a point wider than its measure (as a breaker may set a
     // last line, its spaces shrunk): set to the measure, not past it.

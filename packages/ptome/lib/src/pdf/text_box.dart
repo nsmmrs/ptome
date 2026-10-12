@@ -552,8 +552,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     for (final item in _items) {
       final format = item.format;
       final fragment = format.fragment;
+      // (Text the layout labels, a footnote's number on its page: the box
+      // relabels it as the pages are laid out.)
       if (format.image != null ||
           format.smallCapitals ||
+          (fragment.label != null && _context.labels != null) ||
           (fragment.callbacks?.any(
                 (callback) =>
                     callback != FragmentCallback.inlineDestinationMarker,
