@@ -142,13 +142,35 @@ css: |
   :root{--mag-frame-width:4px;--mag-frame-gap:3px;--mag-dropcap-lines:4}
 ```
 
-The PDF edition of an issue is partly the engine's work still: its
-`[.columns]` sections are set in balanced columns, `[.dropcap]`
-paragraphs with their own initial and `[.pullquote]`s floated with the
-text running around them already (`columns_count`, `role: dropcap:
-drop_lines`, `role: pullquote: float` in each era's `pdf:`), and a
-piece whose section role has page keys is set on pages of its own (its
-margins, a tint or an image behind it, no running content:
-`section: role: <role>: page_background_color` and the like in `pdf:`;
-`doc/pdf.md`). In
-print, the magazine looks keep the base theme's faces.
+## In print
+
+Each era is a print design too: `ptome -b pdf` sets a piece on the
+era's page, in its columns, in its faces (`ptome doctor --look
+magazine-1960s` installs them; Bodoni Moda and Inter in their text and
+display optical sizes, `Bodoni Moda 28pt`, `Inter 18pt`).
+
+| Look | Page | Columns | Text |
+| --- | --- | --- | --- |
+| `magazine` | 8⅜ × 10⅞ in | 3, a pica apart | Libre Caslon Text 9½/12½, justified |
+| `magazine-1950s` | about 10 × 13 in, wide margins | 2, two picas apart | Libre Bodoni 10/14, ragged |
+| `magazine-1960s` | about 265 × 335 mm | 3, a line apart | Inter 9/12, flush left |
+| `magazine-1970s` | about 11 × 14½ in | 4 | Libre Caslon Text 9½/12½ |
+| `magazine-1980s` | 8⅜ × 10⅞ in | 3, hairlines between | Archivo 9/11, justified |
+| `broadsheet` | about 13½ × 22¾ in | 6, hairlines between | Gentium Book Plus 9/10.8 |
+| `compact` | 315 × 470 mm (the Berliner) | 5 | Source Serif 4 9/12 |
+
+The piece's kicker, head, dek and byline go across the top of its first
+page (`title_page_inline`), its columns under them, balanced where it
+ends (`page_columns_balance`). In the columns, the initial, the pull
+quote across its column between rules (`quote: role: pullquote:` keys),
+pictures across their column (a floated one would leave too narrow a
+column beside it), a cutout floated with the text running around its
+outline, and jump lines with the page they jump to. The folio at the
+foot carries the `issue` attribute and the page number. A piece whose
+section role has page keys is set on pages of its own (its margins, a
+tint or an image behind it, no running content, its own columns:
+`section: role: <role>: page_columns` and the like in `pdf:`;
+`doc/pdf.md`).
+
+`test/look/magazine/feature.adoc` is a sample piece that uses every
+part; convert it with `-a look=<era>` to compare the eras.

@@ -249,8 +249,13 @@ final class CmykColor extends Color
   double magenta
   double yellow
   int hashCode
+final class ColumnRule
+  Color color
+  ColumnRule({double width = 0.5, Color color = const GrayColor(0)})
+  double width
 final class ColumnsBox extends LayoutBox
-  ColumnsBox(List<LayoutBox> children, {int count = 2, double gap = 12, bool balance = false, BoxStyle style = const BoxStyle()})
+  ColumnRule? rule
+  ColumnsBox(List<LayoutBox> children, {int count = 2, double gap = 12, bool balance = false, ColumnRule? rule, BoxStyle style = const BoxStyle()})
   List<LayoutBox> children
   bool balance
   double gap

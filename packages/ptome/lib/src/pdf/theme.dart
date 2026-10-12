@@ -740,6 +740,10 @@ final class ThemeLoader {
       }
     } else if (key.endsWith('_content')) {
       data[key] = ThemeString(_expand(_rubyToS(value), data).rubyString);
+    } else if (key.endsWith('font_family')) {
+      // (A family's name as written: no arithmetic, and no measurement
+      // in it, as in `Bodoni Moda 28pt`.)
+      data[key] = _evaluate(value, data, math: false);
     } else {
       data[key] = _evaluate(value, data);
     }

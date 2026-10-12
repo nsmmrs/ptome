@@ -159,6 +159,9 @@ a page of its own after the heading, with its title.
 | `columns_count`, `columns_gap` | `2`, `page_column_gap` | A section or open block with the role `columns` (`[.columns]`) sets its content in that many columns (its `column-count` attribute sets its own), from where it starts on the page, balanced where it ends: the last column at most a line shorter than the first, what follows starting under them. Footnotes go to the page's foot. Not under `asciidoctor-compat`. |
 | `heading_number_placement`, `heading_h<n>_number_placement` | `inline` | Where a heading's number goes, the first `[.number]` span of its title (a unit scheme's title template writes it: `[.number]#{{section}}# {{title}}`): `hang`, left of the title's edge (the title's lines start at the text's edge); `line`, on a line of its own over the title. |
 | `heading_number_hang`, `heading_h<n>_number_hang` | `2.5em` | How far left of the title's edge a hung number starts (its width and half the font size, when that is more). |
+| `title_page_inline`, `title_page_inline_margin_bottom` | `false`, 1.5 × the base font size | `true`: an article without a title page (no `title-page` attribute) sets the title page's slots (`title_page_recto`) at the top of its first page in place of the document title, across its columns, with that space after them: a magazine piece's kicker, head, dek and byline. Not under `asciidoctor-compat`. |
+| `page_columns_balance` | `false` | `true`: the page columns of an article's last page as even as they can be, as a magazine piece ends. |
+| `page_column_rule_width`, `page_column_rule_color` (also `columns_rule_*`) | none, `base_border_color` | A rule between the page's columns (or a `[.columns]` block's, which take the page's when they have none of their own) that have content, down the taller of the two. Not under `asciidoctor-compat`. |
 | `title_page_recto`, `title_page_verso` | the title, subtitle, authors, revision and logo; none | The title page's slots, in order (after DocBook XSL's title page templates): a part's name (`title`, `subtitle`, `authors`, `revision`, `logo`), or a mapping of `content` (a part) or `attribute` (a document attribute's value, `copyright`), with `role` (its font from `role_<role>_*` over the part's), `margin_top`, `margin_bottom` (over `title_page_<part>_margin_*`), `before` (text before it) and `separator` (between authors, or the revision's number and date). Slots the theme lists are placed by their margins (`title_page_title_top` is the default order's); a verso is the page after the title page. A look writes them as `templates.title-page` (`doc/looks.md`). |
 
 ### Hyphenation
@@ -386,6 +389,14 @@ the chapter ends, so that the next chapter starts under its shorter
 column (with `heading_chapter_break_before: auto`). The asciidoctor-pdf
 compatibility setting keeps a book in one column, as the gem does.
 
+In columns, a block floating to a side floats in its column, a share of
+the column's width: one that doesn't fit in the room left in its column
+starts the next, and one taller than a column is set in the flow. An
+image floated by its `float` attribute that would leave the text beside it
+narrower than 12 ems is set across its column instead. A heading kept with
+what follows it (`heading_min_height_after: auto`) keeps with an image
+whole.
+
 ### Sidebars, callouts and banners
 
 A block whose role the theme floats goes to the left or the right of the
@@ -401,11 +412,11 @@ beside it.
 | Key | Default | What it does |
 | --- | --- | --- |
 | `role_<role>_float` | | `left` or `right`: blocks with the role (an open block, a sidebar, a quote, an image) float to that side. A paragraph beside one runs around it: its first lines beside it as far as they go, the rest set again at the full width below it; other blocks beside it go below it unless they fit beside it whole. |
-| `role_<role>_float_width` | a third of the text's width | Its width: a length or a percentage of the page's text width. |
+| `role_<role>_float_width` | a third of the text's width | Its width: a length or a percentage of the page's text width (in columns, the column's). |
 | `role_<role>_float_gap` | the font size | The space between it and the blocks beside it. |
 | `role_<role>_float_shape` | | `alpha`: an image floating by the role has its outline, the edge of its opaque pixels (those above `_float_shape_threshold`, 0.5, of opacity), not its box: a paragraph beside it runs around the outline line by line (CSS's `shape-outside`), `_float_shape_margin` (0) from it. An image's `shape=alpha` attribute does the same, and an image with it and `float=left` or `right` floats so (`image_float_gap`, `image_float_shape_margin`, `image_float_shape_threshold`), as on the web. A PNG with alpha; other images keep their box. |
 | `example_collapsible` | `frame` | A collapsible example block (`[%collapsible]`), which print can't collapse: `frame`, as any example block; `details`, as an open details element shows: its title (else "Details") after a ▼, as a caption, over its content set in by the marker's width, with no frame. |
-| `example_role_<role>_<key>`, `sidebar_role_<role>_<key>` | | For an example block or a sidebar with the role (`[.callout]`), replaces `example_<key>` or `sidebar_<key>`; `_link_font_color` and `_link_text_decoration` style the links in it (a pill-shaped link). |
+| `example_role_<role>_<key>`, `sidebar_role_<role>_<key>`, `quote_role_<role>_<key>`, `verse_role_<role>_<key>` | | For an example block, a sidebar, a quote or a verse with the role (`[.callout]`, `[.pullquote]`), replaces `example_<key>`, `sidebar_<key>`, `quote_<key>` or `verse_<key>`; `_link_font_color` and `_link_text_decoration` style the links in it (a pill-shaped link). |
 | `<category>_shadow_color` | | A shadow under a framed block (`example`, `sidebar`, their roles' keys): `_shadow_offset` (right and down, `[0, 2]`), `_shadow_blur` (`4`), `_shadow_opacity` (`0.3`). |
 | `<category>_background_image` | | An image over a framed block's background, clipped to it: `image:stripes.svg[fit=contain,position=right top]`, as `page_background_image`. |
 | `sidebar_title_rule_width` | | A rule under a sidebar's title, as `heading_h<n>_rule_*`. |

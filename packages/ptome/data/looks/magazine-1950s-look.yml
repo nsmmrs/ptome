@@ -2,22 +2,37 @@
 # Wolf's *Esquire*): a hairline Didone in white space, huge black
 # initials, photographs floating on white; Bauer Bodoni for the text.
 # Stand-ins: Bodoni Moda for Didot, Libre Bodoni for Bauer Bodoni.
+#
+# In print: the large page of the fashion monthlies (about 10 × 13 in),
+# wide margins, two columns two picas apart, ragged text 10 on 14 pt,
+# the head centred, a five-line initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Libre Bodoni } }
-    display: { family: { screen: [Bodoni Moda, serif] }, weight: normal }
-    utility: { family: { screen: [Libre Bodoni, serif] } }
+    text: { family: Libre Bodoni }
+    display: { family: { print: Bodoni Moda 28pt, screen: [Bodoni Moda, serif] }, weight: normal }
+    utility: { family: { print: Libre Bodoni, screen: [Libre Bodoni, serif] } }
+  size: { text: { print: 10pt, screen: 1.0625rem } }
+  leading: { print: 1.4, screen: 1.5 }
   align: { print: start }
+  page: { size: [10in, 13in], margin: [1in, 1.125in, 1in, 1.125in] }
 styles:
   title: { style: normal }
   .kicker: { font: text, weight: normal }
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700
-# The initial in print.
 pdf:
+  title_page:
+    text_align: center
+    inline_margin_bottom: 30
+    title: { font_size: 56, line_height: 1, margin_bottom: 14 }
+    subtitle: { font_size: 15 }
   role: { dropcap: { drop_lines: 5 } }
+  page_columns: 2
+  page_column_gap: 24
+  heading: { h2: { font_style: normal, font_size: 15 } }
+  quote: { role: { pullquote: { font_style: normal, font_size: 18, border_width: [0.5, 0, 0.5, 0] } } }
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-tracking:.3em;--mag-dropcap-lines:5;--mag-text-align:start;--mag-gutter:2.5rem;--mag-body-span:6}
   #content,#footnotes,#footer{grid-column:4/span var(--mag-body-span)}

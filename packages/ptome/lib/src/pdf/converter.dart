@@ -477,7 +477,24 @@ final class PdfConverter extends BuiltInConverter
       _hasTitlePage = true;
     }
     if (!titlePage) _out.add(_bodyMarker());
-    if (!titlePage && document.hasHeader && !document.notitle) {
+    // (`title_page_inline`, modern engine: an article's title page set at
+    // the top of its first page, its slots in place of the title.)
+    final inlineTitle =
+        !titlePage &&
+        document.hasHeader &&
+        !document.notitle &&
+        _theme['title_page_inline'] == const ThemeBool(true) &&
+        !asciidoctorCompat(document, CompatFormat.pdf);
+    if (inlineTitle) {
+      _titleSlotsInto(
+        document,
+        _titleSlots('recto'),
+        _s('title_page_text_align') ?? _baseTextAlign,
+        0,
+      );
+      final gap = _length('title_page_inline_margin_bottom', _rootFontSize);
+      _out.add(SpacerBox(gap ?? _rootFontSize * 1.5));
+    } else if (!titlePage && document.hasHeader && !document.notitle) {
       final title = document.doctitle();
       if (title != null) {
         _heading(
@@ -531,6 +548,8 @@ final class PdfConverter extends BuiltInConverter
           ? columns
           : 0;
       if (_inColumns) {
+        final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();
+        _columnWidth = _columnWidthOf(columns, gap);
         final body = _collect(() {
           _manNameSection(document);
           _traverse(document);
@@ -540,7 +559,13 @@ final class PdfConverter extends BuiltInConverter
           ColumnsBox(
             body,
             count: columns,
-            gap: (_n('page_column_gap') ?? _rootFontSize).toDouble(),
+            gap: gap,
+            // (`page_columns_balance`, modern engine: the last page's
+            // columns as even as they can be, as a piece ends.)
+            balance:
+                _theme['page_columns_balance'] == const ThemeBool(true) &&
+                !asciidoctorCompat(document, CompatFormat.pdf),
+            rule: _columnRule('page_column'),
           ),
         );
       } else {
@@ -2656,7 +2681,8 @@ final class PdfConverter extends BuiltInConverter
   /// The boxes [block] added from [from] on, floating to a side when the
   /// theme floats one of its roles (`role_<role>_float: left` or `right`,
   /// `role_<role>_float_width`, a length or a percentage of the page's
-  /// content width, `role_<role>_float_gap`; modern engine): the blocks
+  /// content width (the column's, in columns), `role_<role>_float_gap`;
+  /// modern engine): the blocks
   /// after it are set beside it, or below it where they don't fit beside
   /// it whole, and what doesn't fit on its page goes on at the top of the
   /// next, beside what is set there (a report's sidebar).
@@ -2673,9 +2699,11 @@ final class PdfConverter extends BuiltInConverter
       };
       if (side != null) {
         final pageWidth = _pageSize(_document).$1;
-        final content = pageWidth - _pageMargins(_document).horizontal;
-        final width =
-            _imageWidth(block).resolve(content, pageWidth) ?? content / 3;
+        final content = _floatRoom;
+        final width = math.min(
+          _imageWidth(block).resolve(content, pageWidth) ?? content / 3,
+          content,
+        );
         final gap = switch (_theme.value('image_float_gap')) {
           ThemeList(:final values) when values.isNotEmpty => _toPoints(
             values.first,
@@ -2708,8 +2736,7 @@ final class PdfConverter extends BuiltInConverter
         _ => null,
       };
       if (side == null) continue;
-      final content =
-          _pageSize(_document).$1 - _pageMargins(_document).horizontal;
+      final content = _floatRoom;
       final width = switch (_theme.value('${key}_width')) {
         ThemeString(:final value) when value.trim().endsWith('%') =>
           content *
@@ -3256,20 +3283,19 @@ final class PdfConverter extends BuiltInConverter
       } else if (chapterlike && _bookColumns >= 2) {
         // The chapter's content in the book's columns, balanced where it
         // ends (what follows starts under its shorter column).
-        final saved = _inColumns;
-        _inColumns = true;
-        final List<LayoutBox> body;
-        try {
-          body = _collect(() => _traverse(section));
-        } finally {
-          _inColumns = saved;
-        }
+        final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();
+        final body = _inColumnSet(
+          _bookColumns,
+          gap,
+          () => _collect(() => _traverse(section)),
+        );
         _out.add(
           ColumnsBox(
             body,
             count: _bookColumns,
-            gap: (_n('page_column_gap') ?? _rootFontSize).toDouble(),
+            gap: gap,
             balance: true,
+            rule: _columnRule('page_column'),
           ),
         );
       } else if (_columnSetOf(section) case final count?) {
@@ -4778,22 +4804,42 @@ final class PdfConverter extends BuiltInConverter
   /// What [content] adds, in [count] columns balanced where they end
   /// (what follows starts under the longer of them), [node]'s.
   LayoutBox _columns(AbstractBlock node, int count, void Function() content) {
-    final saved = _inColumns;
-    _inColumns = true;
-    final List<LayoutBox> body;
-    try {
-      body = _collect(content);
-    } finally {
-      _inColumns = saved;
-    }
+    final gap =
+        _length('columns_gap', _font.size) ??
+        (_n('page_column_gap') ?? _rootFontSize).toDouble();
+    final body = _inColumnSet(count, gap, () => _collect(content));
     return ColumnsBox(
       body,
       count: count,
-      gap:
-          _length('columns_gap', _font.size) ??
-          (_n('page_column_gap') ?? _rootFontSize).toDouble(),
+      gap: gap,
       balance: true,
+      rule: _columnRule('columns') ?? _columnRule('page_column'),
     );
+  }
+
+  /// The rule between columns the theme's `<prefix>_rule_width` and
+  /// `_rule_color` give (modern engine), if any.
+  ColumnRule? _columnRule(String prefix) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    final width = _n('${prefix}_rule_width')?.toDouble() ?? 0;
+    if (width <= 0) return null;
+    final color = pdfColorOf(
+      _c('${prefix}_rule_color') ?? _c('base_border_color'),
+    );
+    return color == null ? null : ColumnRule(width: width, color: color);
+  }
+
+  /// What [content] makes set in [count] columns [gap] apart.
+  T _inColumnSet<T>(int count, double gap, T Function() content) {
+    final (saved, savedWidth) = (_inColumns, _columnWidth);
+    _inColumns = true;
+    _columnWidth = _columnWidthOf(count, gap);
+    try {
+      return content();
+    } finally {
+      _inColumns = saved;
+      _columnWidth = savedWidth;
+    }
   }
 
   /// Whether [section] is an article's abstract (its first section, named
@@ -5118,8 +5164,16 @@ final class PdfConverter extends BuiltInConverter
     _framed(node, 'sidebar', children);
   }
 
-  /// Converts the quote or verse block [node].
+  /// Converts the quote or verse block [node] (with a role, by the
+  /// theme's `quote_role_<role>_*` or `verse_role_<role>_*` keys over its
+  /// `quote_*` or `verse_*` keys, modern engine).
   void convertQuote(Block node) {
+    final key = node.context == BlockContext.quote ? 'quote' : 'verse';
+    if (_withRoleKeys(node, key, () => _convertQuote(node))) return;
+    _convertQuote(node);
+  }
+
+  void _convertQuote(Block node) {
     final category = node.context == BlockContext.quote ? 'quote' : 'verse';
     final leftWidth = (_n('${category}_border_left_width') ?? 0).toDouble();
     final leftColor = leftWidth > 0
@@ -5341,6 +5395,22 @@ final class PdfConverter extends BuiltInConverter
 
   /// Whether the body is set in the theme's page columns.
   bool _inColumns = false;
+
+  /// The width of the columns the content is set in, null outside them.
+  double? _columnWidth;
+
+  /// The page's content width, or [_columnWidth] in columns: what a
+  /// block floating to a side takes a share of.
+  double get _floatRoom =>
+      _columnWidth ??
+      _pageSize(_document).$1 - _pageMargins(_document).horizontal;
+
+  /// The width of [count] columns [gap] apart across the page's content.
+  double _columnWidthOf(int count, double gap) =>
+      (_pageSize(_document).$1 -
+          _pageMargins(_document).horizontal -
+          gap * (count - 1)) /
+      count;
 
   /// A drop waiting for the paragraph it starts (`heading_h<n>_drop_lines`):
   /// its text, its theme category (`heading_h<n>_drop`) and the lines it
@@ -5680,7 +5750,22 @@ final class PdfConverter extends BuiltInConverter
     final border = node.hasRole('noborder') ? null : _imageBorder();
     // A floated image followed by a paragraph: the paragraphs after it
     // wrap around it (the gem's `init_float_box`).
-    final side = floatTo == 'left' || floatTo == 'right' ? floatTo! : null;
+    var side = floatTo == 'left' || floatTo == 'right' ? floatTo! : null;
+    // (In columns, modern engine: one that would leave the text beside it
+    // narrower than 12 ems takes its column instead, across it.)
+    var across = false;
+    if (side != null &&
+        !node.hasAttr('shape') &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      if (_columnWidth case final column?) {
+        final width = _imageWidth(node)
+            .resolve(column, _pageSize(_document).$1);
+        if (width != null && column - width < 12 * _font.size) {
+          side = null;
+          across = true;
+        }
+      }
+    }
     // (One with a `shape`, in the modern engine: a block floating to a side
     // (`_sideFloat`) the text runs around.)
     final shaped =
@@ -5743,6 +5828,11 @@ final class PdfConverter extends BuiltInConverter
           }
         : null;
     final shown = graphic;
+    // (One floating to a side with a shape: as wide as its float, which
+    // its width sets.)
+    final width = (shaped && side != null) || across
+        ? const _ImageWidth.percent(1)
+        : _imageWidth(node);
     // A floating image: no margin of its own, its clearance
     // (`image_float_clearance`) between it and the text instead.
     if (float != null && float != FloatPlacement.next) margin = 0;
@@ -5752,12 +5842,13 @@ final class PdfConverter extends BuiltInConverter
         CustomBox(
           _ImageContent(
             shown,
-            width: _imageWidth(node),
+            width: width,
             align: align,
             pageWidth: _pageSize(_document).$1,
             caption: captionBottom ? caption : null,
             border: border,
             link: node.attr('link'),
+            whole: !asciidoctorCompat(_document, CompatFormat.pdf),
           ),
           style: BoxStyle(
             anchor: node.id,
@@ -11589,6 +11680,7 @@ final class _ImageContent implements CustomContent {
     this.caption,
     this.border,
     this.link,
+    this.whole = false,
   });
 
   final Graphic graphic;
@@ -11598,6 +11690,10 @@ final class _ImageContent implements CustomContent {
   final CustomBox? caption;
   final _Border? border;
   final String? link;
+
+  /// Whether it starts only whole (modern engine): its height is the
+  /// least a heading before it keeps with it.
+  final bool whole;
 
   /// The image's size for [available] points of width (and [height] of
   /// region, for SVG sizes in percent).
@@ -11700,7 +11796,7 @@ final class _ImageContent implements CustomContent {
   }
 
   @override
-  double minHeight(double width) => 0;
+  double minHeight(double width) => whole ? _size(width, 1000000000).$2 : 0;
 
   @override
   (double, double) intrinsicWidths() => (0, graphic.intrinsicWidth);

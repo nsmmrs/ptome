@@ -242,6 +242,82 @@ void main() {
     expect(at['l4']!.$2, closeTo(at['l1']!.$2, 1e-6));
   });
 
+  test('a rule between columns with content, down the taller', () {
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(8))
+        .layout([
+          ColumnsBox(
+            [for (var i = 1; i <= 3; i++) _para('l$i')],
+            count: 3,
+            balance: true,
+            rule: const ColumnRule(width: 0.25),
+          ),
+        ])
+        .render(document);
+    final calls = document.pages.single.canvas.calls;
+    // Three columns 78.67 wide, 12 apart: rules 6 left of the second
+    // and third.
+    final moves = [
+      for (final call in calls)
+        if (call.startsWith('moveTo ')) call,
+    ];
+    expect(calls, contains('lineWidth 0.25'));
+    expect(moves, hasLength(2));
+    expect(double.parse(moves.first.split(' ')[1]), closeTo(104.67, 0.01));
+  });
+
+  test(
+    'a side float in a column: beside it there, in the next, or in the flow',
+    () {
+      Map<String, (double, double)> placed(String float, {int before = 0}) {
+        final document = RecordingDocument();
+        FlowLayout(template: _rows(8))
+            .layout([
+              ColumnsBox([
+                for (var i = 1; i <= before; i++) _para('b$i'),
+                BlockBox(
+                  [_para(float)],
+                  style: const BoxStyle(
+                    side: FloatSide.left,
+                    sideWidth: 40,
+                    sideGap: 6,
+                  ),
+                ),
+                for (var i = 1; i <= 10; i++) _para('l$i'),
+              ]),
+            ])
+            .render(document);
+        return {
+          for (final call in document.pages.first.canvas.calls)
+            if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+                case final m?)
+              m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+        };
+      }
+
+      // Two columns 124 wide, 12 apart: the float at the first one's left
+      // edge, the lines beside it from 66, then below it from 20; the
+      // second column's lines from 156, nothing floating there.
+      final beside = placed('s1\ns2');
+      expect(beside['s1']!.$1, closeTo(20, 1e-6));
+      expect(beside['l1']!.$1, closeTo(66, 1e-6));
+      expect(beside['l1']!.$2, closeTo(beside['s1']!.$2, 1e-6));
+      expect(beside['l3']!.$1, closeTo(20, 1e-6));
+      expect(beside['l10']!.$1, closeTo(156, 1e-6));
+      // Taller than the column, it can't go to a side there: set in the
+      // flow, the lines after it below it.
+      final tall = placed([for (var i = 1; i <= 9; i++) 's$i'].join('\n'));
+      expect(tall['s1']!.$1, closeTo(20, 1e-6));
+      expect(tall['l1']!.$1, closeTo(156, 1e-6));
+      // Too tall for the room left in its column: at the top of the next,
+      // the lines after it beside it there.
+      final next = placed('s1\ns2\ns3\ns4', before: 6);
+      expect(next['b6']!.$1, closeTo(20, 1e-6));
+      expect(next['s1']!.$1, closeTo(156, 1e-6));
+      expect(next['l1']!.$1, closeTo(202, 1e-6));
+    },
+  );
+
   test('side notes beside their lines, pushed down, carried over', () {
     final document = RecordingDocument();
     FlowLayout(

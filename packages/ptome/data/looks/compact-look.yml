@@ -3,22 +3,36 @@
 # its picture across four, a slab-serif display, news justified and
 # comment (a [.comment] section) ranged left. Stand-ins: Zilla Slab for
 # the display, Source Serif 4 for the text.
+#
+# In print: the Berliner page (315 × 470 mm), five columns, text about 9
+# on 12 pt justified, slab heads, a two-line initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Source Serif 4 } }
-    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
-    utility: { family: { screen: [Source Serif 4, serif] } }
+    text: { family: Source Serif 4 }
+    display: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { print: Source Serif 4, screen: [Source Serif 4, serif] } }
+  size: { text: { print: 9pt } }
+  leading: { print: 1.33 }
   color: { accent: '#052962' }
+  page: { size: [315mm, 470mm], margin: [12mm, 12mm, 14mm, 12mm] }
 styles:
   title: { style: normal }
 webfonts:
   - Zilla Slab:400,700
   - Source Serif 4:400,400italic,700
-# [.columns] sections in print.
 pdf:
+  title_page:
+    title: { font_size: 46, line_height: 1 }
+    subtitle: { font_size: 17 }
   role: { dropcap: { drop_lines: 2 } }
+  page_columns: 5
+  page_column_gap: 11
   columns_count: 5
+  heading: { h2: { font_style: bold, font_size: 12 } }
+  quote:
+    role:
+      pullquote: { font_family: Zilla Slab, font_style: bold, font_size: 17, font_color: '052962', border_width: [2, 0, 0, 0], border_color: '052962' }
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}

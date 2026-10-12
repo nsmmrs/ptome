@@ -849,40 +849,54 @@ final class _Pass {
             : _withoutExclusions(
                 () => _place(_unsided(child), width, floatRoom, atTop: false),
               );
-        if (floatFit?.placed case final piece?) {
-          children.add((
-            cursor + floatTop - y,
-            _PlacedBlock(
-              BoxStyle(margin: EdgeInsets(left: x - left)),
-              inner,
-              floatFit!.height,
-              [(0, piece)],
-              top: 0,
-              openTop: false,
-              openBottom: false,
-              marks: const {},
-              anchor: null,
-            ),
-          ));
-          _exclusions.add(
-            _Exclusion(
-              side,
-              x,
-              x + width,
-              gap: child.style.sideGap,
-              top: floatTop,
-              bottom: floatFit.rest == null
-                  ? floatTop + floatFit.height
-                  : double.infinity,
-              shape: child.style.sideShape,
-            ),
-          );
-          if (floatFit.rest case final rest?) {
-            carried.add(_sided(rest, child.style));
+        // (In a column, one that doesn't fit whole in the room left goes
+        // on in the next column, and one taller than a column is set in
+        // the flow: a column carries nothing to the next region.)
+        final inFlow =
+            _inColumn && (floatFit?.placed == null || floatFit!.rest != null);
+        if (!inFlow) {
+          if (floatFit?.placed case final piece?) {
+            children.add((
+              cursor + floatTop - y,
+              _PlacedBlock(
+                BoxStyle(margin: EdgeInsets(left: x - left)),
+                inner,
+                floatFit!.height,
+                [(0, piece)],
+                top: 0,
+                openTop: false,
+                openBottom: false,
+                marks: const {},
+                anchor: null,
+              ),
+            ));
+            _exclusions.add(
+              _Exclusion(
+                side,
+                x,
+                x + width,
+                gap: child.style.sideGap,
+                top: floatTop,
+                bottom: floatFit.rest == null
+                    ? floatTop + floatFit.height
+                    : double.infinity,
+                shape: child.style.sideShape,
+              ),
+            );
+            if (floatFit.rest case final rest?) {
+              carried.add(_sided(rest, child.style));
+            }
+          } else {
+            carried.add(child);
           }
-        } else {
-          carried.add(child);
+          continue;
         }
+        if (!childAtTop) {
+          _exclusions.length = mark;
+          return split(kids.sublist(i), from: i);
+        }
+        kids[i] = _unsided(child);
+        i--;
         continue;
       }
       // Beside blocks floating to a side: a block that fits beside them
@@ -1304,6 +1318,33 @@ final class _Pass {
   double _left = 0;
 
   double _right = 0;
+
+  /// Whether the region being filled is a column of a set: a block
+  /// floating to a side there floats only when it fits in it whole.
+  bool _inColumn = false;
+
+  /// [place] in a column [width] wide: a region of its own for blocks
+  /// floating to a side (the column's, from its top).
+  _Fit _column(double width, _Fit Function() place) {
+    final saved = (_exclusions, _regionWidth, _y, _left, _right, _excluding);
+    final savedInColumn = _inColumn;
+    _exclusions = [];
+    _regionWidth = width;
+    _y = _left = _right = 0;
+    _excluding = true;
+    _inColumn = true;
+    try {
+      return place();
+    } finally {
+      _exclusions = saved.$1;
+      _regionWidth = saved.$2;
+      _y = saved.$3;
+      _left = saved.$4;
+      _right = saved.$5;
+      _excluding = saved.$6;
+      _inColumn = savedInColumn;
+    }
+  }
 
   /// [place] with no block floating to a side.
   _Fit _withoutExclusions(_Fit Function() place) {

@@ -13,22 +13,38 @@ const Map<String, String> builtInLooks = {
 # text, heads set after a schedule (Hyde's *Newspaper Editing*, 1915).
 # Stand-ins: Old Standard TT for the head, Gentium Book Plus for the
 # text, Libre Franklin for the lines around them.
+#
+# In print: the broadsheet page (about 13½ × 22¾ in), six columns with
+# hairlines between them, text 9 on 10.8 pt, the head centred across
+# them, no initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Gentium Book Plus } }
-    display: { family: { screen: [Old Standard TT, serif] }, weight: bold }
+    text: { family: Gentium Book Plus }
+    display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: bold }
   size: { text: { print: 9pt, screen: 1rem } }
   leading: { print: 1.2, screen: 1.45 }
+  page: { size: [13.5in, 22.75in], margin: [0.5in, 0.5in, 0.6in, 0.5in] }
 styles:
   title: { style: normal }
 webfonts:
   - Old Standard TT:400,400italic,700
   - Gentium Book Plus:400,400italic,700
-# [.columns] sections in print.
 pdf:
+  title_page:
+    text_align: center
+    title: { font_size: 48, line_height: 1.05 }
+    subtitle: { font_size: 18, font_style: italic }
   role: { dropcap: { drop_lines: 0 } }
+  page_columns: 6
+  page_column_gap: 9
+  page_column_rule_width: 0.25
+  page_column_rule_color: '555555'
   columns_count: 6
+  heading: { h2: { font_style: bold, font_size: 12, text_align: center } }
+  quote:
+    role:
+      pullquote: { font_family: Old Standard TT, font_style: italic, font_size: 15, border_width: [0.5, 0, 0.5, 0] }
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-section-columns:6;--mag-column-min:9rem;--mag-body-span:10;--mag-end-mark:""}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}
@@ -40,22 +56,36 @@ css: |
 # its picture across four, a slab-serif display, news justified and
 # comment (a [.comment] section) ranged left. Stand-ins: Zilla Slab for
 # the display, Source Serif 4 for the text.
+#
+# In print: the Berliner page (315 × 470 mm), five columns, text about 9
+# on 12 pt justified, slab heads, a two-line initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Source Serif 4 } }
-    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
-    utility: { family: { screen: [Source Serif 4, serif] } }
+    text: { family: Source Serif 4 }
+    display: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { print: Source Serif 4, screen: [Source Serif 4, serif] } }
+  size: { text: { print: 9pt } }
+  leading: { print: 1.33 }
   color: { accent: '#052962' }
+  page: { size: [315mm, 470mm], margin: [12mm, 12mm, 14mm, 12mm] }
 styles:
   title: { style: normal }
 webfonts:
   - Zilla Slab:400,700
   - Source Serif 4:400,400italic,700
-# [.columns] sections in print.
 pdf:
+  title_page:
+    title: { font_size: 46, line_height: 1 }
+    subtitle: { font_size: 17 }
   role: { dropcap: { drop_lines: 2 } }
+  page_columns: 5
+  page_column_gap: 11
   columns_count: 5
+  heading: { h2: { font_style: bold, font_size: 12 } }
+  quote:
+    role:
+      pullquote: { font_family: Zilla Slab, font_style: bold, font_size: 17, font_color: '052962', border_width: [2, 0, 0, 0], border_color: '052962' }
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-section-columns:5;--mag-column-min:8rem;--mag-body-span:10;--mag-dropcap-lines:2}
   #content,#footnotes,#footer{grid-column:2/span var(--mag-body-span)}
@@ -127,22 +157,37 @@ css: |
 # Wolf's *Esquire*): a hairline Didone in white space, huge black
 # initials, photographs floating on white; Bauer Bodoni for the text.
 # Stand-ins: Bodoni Moda for Didot, Libre Bodoni for Bauer Bodoni.
+#
+# In print: the large page of the fashion monthlies (about 10 × 13 in),
+# wide margins, two columns two picas apart, ragged text 10 on 14 pt,
+# the head centred, a five-line initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Libre Bodoni } }
-    display: { family: { screen: [Bodoni Moda, serif] }, weight: normal }
-    utility: { family: { screen: [Libre Bodoni, serif] } }
+    text: { family: Libre Bodoni }
+    display: { family: { print: Bodoni Moda 28pt, screen: [Bodoni Moda, serif] }, weight: normal }
+    utility: { family: { print: Libre Bodoni, screen: [Libre Bodoni, serif] } }
+  size: { text: { print: 10pt, screen: 1.0625rem } }
+  leading: { print: 1.4, screen: 1.5 }
   align: { print: start }
+  page: { size: [10in, 13in], margin: [1in, 1.125in, 1in, 1.125in] }
 styles:
   title: { style: normal }
   .kicker: { font: text, weight: normal }
 webfonts:
   - Bodoni Moda:400,400italic,700
   - Libre Bodoni:400,400italic,700
-# The initial in print.
 pdf:
+  title_page:
+    text_align: center
+    inline_margin_bottom: 30
+    title: { font_size: 56, line_height: 1, margin_bottom: 14 }
+    subtitle: { font_size: 15 }
   role: { dropcap: { drop_lines: 5 } }
+  page_columns: 2
+  page_column_gap: 24
+  heading: { h2: { font_style: normal, font_size: 15 } }
+  quote: { role: { pullquote: { font_style: normal, font_size: 18, border_width: [0.5, 0, 0.5, 0] } } }
 css: |
   :root{--mag-head-align:center;--mag-display-style:normal;--mag-kicker-tracking:.3em;--mag-dropcap-lines:5;--mag-text-align:start;--mag-gutter:2.5rem;--mag-body-span:6}
   #content,#footnotes,#footer{grid-column:4/span var(--mag-body-span)}
@@ -152,16 +197,22 @@ css: |
       r'''# The 1960s Swiss magazine (Fleckhaus's *Twen*, Vignelli's canon): a
 # 12-unit grid combined into 2, 3, 4 or 6 columns, gutters one line of
 # type, at most two sizes (heads about twice the text), flush left, a
-# grotesque, type hung from 2 pt and ½ pt rules. Stand-in: Inter.
+# grotesque, type hung from 2 pt and ½ pt rules. Stand-in: Inter (its
+# 18 pt text cut in print).
+#
+# In print: *Twen*'s large page (about 265 × 335 mm), the grid's three
+# columns a line apart, text 9 on 12 pt flush left, heads hung from a
+# 2 pt rule, no initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Inter } }
-    display: { family: { screen: Inter }, weight: bold }
-    utility: { family: { screen: Inter } }
+    text: { family: { print: Inter 18pt, screen: Inter } }
+    display: { family: { print: Inter 18pt, screen: Inter }, weight: bold }
+    utility: { family: { print: Inter 18pt, screen: Inter } }
   size: { text: { print: 9pt, screen: 1rem } }
   leading: { print: 1.35, screen: 1.5 }
   align: { print: start }
+  page: { size: [265mm, 335mm], margin: [20mm, 18mm, 22mm, 18mm] }
   rule:
     major: { print: 2pt, screen: 3px, ebook: 3px }
     minor: { print: 0.5pt, screen: 1px, ebook: 1px }
@@ -169,10 +220,18 @@ styles:
   title: { style: normal }
 webfonts:
   - Inter:400,400italic,700
-# [.columns] sections in print.
 pdf:
+  title_page:
+    title: { font_size: 40, line_height: 1.05 }
+    subtitle: { font_size: 18, line_height: 1.2 }
   role: { dropcap: { drop_lines: 0 } }
+  page_column_gap: 12.15
   columns_count: 2
+  heading:
+    h2: { font_style: bold, font_size: 9, border_width: [2, 0, 0, 0], border_color: '1A1A1A', padding: [4, 0, 0, 0] }
+  quote:
+    role:
+      pullquote: { font_family: Inter 18pt, font_style: bold, font_size: 18, line_height: 1.2, border_width: [2, 0, 0.5, 0] }
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
   #header{border-top:var(--ptome-rule-major) solid;padding-top:.5rem}
@@ -187,16 +246,29 @@ css: |
 # thick rule and a thin one), slab display type, serif text in three
 # columns where columns are wanted, display-italic pull quotes. Stand-in:
 # Zilla Slab for the slab.
+#
+# In print: the tabloid page (about 11 × 14½ in), four columns, slab
+# heads, red italic pull quotes between thick and thin rules.
 extends: magazine
 tokens:
   font:
-    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
-    utility: { family: { screen: [Zilla Slab, serif] } }
+    display: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] } }
   color: { accent: '#B3261E' }
+  page: { size: [11in, 14.5in], margin: [0.75in, 0.6in, 0.8in, 0.6in] }
 styles:
   title: { style: normal }
 webfonts:
   - Zilla Slab:400,400italic,700,700italic
+pdf:
+  title_page:
+    title: { font_size: 48, line_height: 1 }
+    subtitle: { font_size: 16 }
+  page_columns: 4
+  heading: { h2: { font_style: bold } }
+  quote:
+    role:
+      pullquote: { font_family: Zilla Slab, font_style: bold_italic, font_size: 17, font_color: 'B3261E', border_width: [3, 0, 1, 0], border_color: 'B3261E' }
 css: |
   :root{--mag-frame-width:6px;--mag-frame-gap:4px;--mag-display-style:normal;--mag-kicker-tracking:.08em}
   body{margin:1rem;min-height:calc(100vh - 2rem)}
@@ -207,14 +279,19 @@ css: |
 # three justified columns, tinted editor's-note sidebars, numbered
 # monospace listings, a dinkus between short items. Stand-ins: Archivo
 # for Univers, IBM Plex Mono for the listings.
+#
+# In print: the standard page, three justified columns with hairlines
+# between them, text 9 on 11 pt, tinted sidebars, the pull quote in the
+# accent blue.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Archivo } }
-    display: { family: { screen: Archivo }, weight: bold }
-    utility: { family: { screen: Archivo } }
-    code: { family: { screen: IBM Plex Mono } }
+    text: { family: Archivo }
+    display: { family: Archivo, weight: bold }
+    utility: { family: Archivo }
+    code: { family: IBM Plex Mono }
   size: { text: { print: 9pt, screen: 1rem } }
+  leading: { print: 1.22, screen: 1.5 }
   color: { accent: '#0B5C8E', tint: '#E8EEF4' }
 styles:
   title: { style: normal }
@@ -223,6 +300,17 @@ styles:
 webfonts:
   - Archivo:400,400italic,700
   - IBM Plex Mono:400,700
+pdf:
+  title_page:
+    title: { font_size: 34, line_height: 1.05 }
+    subtitle: { font_size: 13 }
+  role: { dropcap: { drop_lines: 2 } }
+  page_column_rule_width: 0.25
+  page_column_rule_color: '555555'
+  heading: { h2: { font_style: bold, font_size: 11 } }
+  quote:
+    role:
+      pullquote: { font_family: Archivo, font_style: bold, font_size: 13, font_color: '0B5C8E', border_color: '0B5C8E' }
 css: |
   :root{--mag-display-style:normal;--mag-section-columns:3;--mag-column-min:12rem;--mag-end-mark:"\2022\2009\2022\2009\2022\2009\2022"}
   .sidebarblock{border:0;padding:1rem}
@@ -250,17 +338,23 @@ css: |
 # the 1957 *Scientific American*): a letterspaced capital kicker, an
 # italic Didone head, a dek in large text type, three justified columns
 # in bounded sections, bold small-capital caption lead-ins. The faces'
-# free stand-ins (on the web, from Google Fonts): Bodoni Moda, Libre
-# Caslon Text, Libre Franklin. The PDF edition is its own work
-# (TASK-3d66jt): in print the faces are the base theme's.
+# free stand-ins (from Google Fonts; `ptome doctor --look magazine`
+# installs them for print): Bodoni Moda (its 28 pt cut in print), Libre
+# Caslon Text, Libre Franklin.
+#
+# In print (doc/magazine.md): the American standard magazine page
+# (8⅜ × 10⅞ in), three columns a pica apart, text 9½ on 12½ pt, the
+# head, dek and byline across the columns at the top of the piece.
 tokens:
   font:
-    text: { family: { screen: Libre Caslon Text } }
-    display: { family: { screen: [Bodoni Moda, serif] }, weight: bold }
-    utility: { family: { screen: Libre Franklin } }
+    text: { family: Libre Caslon Text }
+    display: { family: { print: Bodoni Moda 28pt, screen: [Bodoni Moda, serif] }, weight: bold }
+    utility: { family: Libre Franklin }
   size:
-    text: { print: 10pt, screen: 1.0625rem }
-  leading: { print: 1.3, screen: 1.5 }
+    text: { print: 9.5pt, screen: 1.0625rem }
+    headings: { print: [36pt, 12pt, 10.5pt, 9.5pt, 9.5pt, 9.5pt] }
+  leading: { print: 1.32, screen: 1.5 }
+  page: { size: [8.375in, 10.875in], margin: [0.625in, 0.5in, 0.75in, 0.5in] }
   align: { print: justify }
   hyphenate: true
   color:
@@ -296,12 +390,53 @@ webfonts:
   - Bodoni Moda:400,400italic,700,700italic
   - Libre Caslon Text:400,400italic,700
   - Libre Franklin:400,600,700
-# [.columns] sections, the initial and the pull quote in print.
+# Print: the piece's head across the top of its first page, then its
+# columns; the initial, the pull quote across its column between rules,
+# the folio at the foot.
 pdf:
+  title_page_inline: true
+  title_page:
+    text_align: left
+    inline_margin_bottom: 18
+    title: { font_size: 36, line_height: 1.02, margin_top: 4, margin_bottom: 8 }
+    subtitle: { font_style: normal, font_size: 14, line_height: 1.22, margin_bottom: 10 }
+    authors: { margin_bottom: 2 }
   role:
+    kicker: { font_size: 7.5, text_transform: uppercase }
+    byline: { font_size: 8 }
+    credit: { font_size: 7 }
     dropcap: { drop_lines: 3 }
-    pullquote: { float: right, float_width: 45%, float_gap: 14 }
+    dateline: { font_style: bold }
+    jump: { font_style: italic }
+  link: { font_color: '1A1A1A' }
+  page_columns: 3
+  page_columns_balance: true
+  page_column_gap: 12
   columns_count: 3
+  heading:
+    margin_top: 10
+    margin_bottom: 4
+    min_height_after: auto
+    h2: { font_style: bold_italic }
+  quote:
+    role:
+      pullquote:
+        font_family: Bodoni Moda 28pt
+        font_style: italic
+        font_size: 15
+        line_height: 1.15
+        border_left_width: 0
+        border_width: [1.5, 0, 1.5, 0]
+        border_color: '1A1A1A'
+        padding: [8, 0, 8, 0]
+  image:
+    caption: { font_size: 7.5 }
+  footer:
+    font_family: Libre Franklin
+    font_size: 7
+    border_width: 0
+    recto: { left: { content: '{issue}' }, right: { content: '{page-number}' } }
+    verso: { left: { content: '{page-number}' }, right: { content: '{issue}' } }
 css: |
   :root{--mag-grid-units:12;--mag-gutter:1.5rem;--mag-body-span:8;--mag-head-align:start;--mag-display-style:italic;--mag-kicker-case:uppercase;--mag-kicker-tracking:.14em;--mag-dropcap-lines:3;--mag-frame-width:0px;--mag-frame-gap:0px;--mag-end-mark:"\25A0";--mag-section-columns:3;--mag-column-min:14rem;--mag-text-align:justify}
   body{display:grid;grid-template-columns:repeat(var(--mag-grid-units),minmax(0,1fr));column-gap:var(--mag-gutter);align-content:start;margin:0;padding:3rem var(--mag-gutter);min-height:100vh;box-sizing:border-box;border:var(--mag-frame-width) solid currentColor;outline:calc(var(--mag-frame-width)/4) solid currentColor;outline-offset:calc(-1*(var(--mag-frame-width) + var(--mag-frame-gap)))}

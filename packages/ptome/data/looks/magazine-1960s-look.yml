@@ -1,16 +1,22 @@
 # The 1960s Swiss magazine (Fleckhaus's *Twen*, Vignelli's canon): a
 # 12-unit grid combined into 2, 3, 4 or 6 columns, gutters one line of
 # type, at most two sizes (heads about twice the text), flush left, a
-# grotesque, type hung from 2 pt and ½ pt rules. Stand-in: Inter.
+# grotesque, type hung from 2 pt and ½ pt rules. Stand-in: Inter (its
+# 18 pt text cut in print).
+#
+# In print: *Twen*'s large page (about 265 × 335 mm), the grid's three
+# columns a line apart, text 9 on 12 pt flush left, heads hung from a
+# 2 pt rule, no initial.
 extends: magazine
 tokens:
   font:
-    text: { family: { screen: Inter } }
-    display: { family: { screen: Inter }, weight: bold }
-    utility: { family: { screen: Inter } }
+    text: { family: { print: Inter 18pt, screen: Inter } }
+    display: { family: { print: Inter 18pt, screen: Inter }, weight: bold }
+    utility: { family: { print: Inter 18pt, screen: Inter } }
   size: { text: { print: 9pt, screen: 1rem } }
   leading: { print: 1.35, screen: 1.5 }
   align: { print: start }
+  page: { size: [265mm, 335mm], margin: [20mm, 18mm, 22mm, 18mm] }
   rule:
     major: { print: 2pt, screen: 3px, ebook: 3px }
     minor: { print: 0.5pt, screen: 1px, ebook: 1px }
@@ -18,10 +24,18 @@ styles:
   title: { style: normal }
 webfonts:
   - Inter:400,400italic,700
-# [.columns] sections in print.
 pdf:
+  title_page:
+    title: { font_size: 40, line_height: 1.05 }
+    subtitle: { font_size: 18, line_height: 1.2 }
   role: { dropcap: { drop_lines: 0 } }
+  page_column_gap: 12.15
   columns_count: 2
+  heading:
+    h2: { font_style: bold, font_size: 9, border_width: [2, 0, 0, 0], border_color: '1A1A1A', padding: [4, 0, 0, 0] }
+  quote:
+    role:
+      pullquote: { font_family: Inter 18pt, font_style: bold, font_size: 18, line_height: 1.2, border_width: [2, 0, 0.5, 0] }
 css: |
   :root{--mag-display-style:normal;--mag-kicker-case:none;--mag-kicker-tracking:0;--mag-dropcap-lines:0;--mag-text-align:start;--mag-gutter:1.5em;--mag-end-mark:"";--mag-section-columns:2;--mag-column-min:16rem}
   #header{border-top:var(--ptome-rule-major) solid;padding-top:.5rem}

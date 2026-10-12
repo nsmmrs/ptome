@@ -1,7 +1,8 @@
 # Digests of the random flow documents (test/support/random_flow.dart) as
 # plain_typesetting laid them out once Knuth and Plass's breaker, with
 # TeX's costs, became the optimal one (2026-10-09, ADR-0021), and cells
-# were measured as placed, their first margin dropped (2026-10-10): seed,
+# were measured as placed, their first margin dropped (2026-10-10), and
+# blocks floating to a side were set in a column's own width (2026-10-11): seed,
 # digest, lines recorded; 'skip': too slow for a test there (or too deep for the
 # stack).
 0 f3ab75d5 567
@@ -10,9 +11,9 @@
 3 7bcdf2f0 1791
 4 fb955391 2032
 5 aa116283 5674
-6 8dce8e40 1858
+6 ef11583e 1858
 7 45816ed6 131
-8 2febaf1a 6419
+8 d5f06a20 6423
 9 a4148a91 38
 10 be9350c7 6052
 11 0bf9da9f 662
@@ -41,14 +42,14 @@
 34 e7421e6b 973
 35 aaa5ec98 63
 36 88bf28f6 1464
-37 4201cf0e 780
+37 63a76f14 798
 38 07de7ad8 2159
 39 skip
 40 1fb44da5 25111
 41 a5f9b617 3173
 42 36ac7621 34759
 43 f5e93af2 2989
-44 cac343c0 2557
+44 ce495021 2633
 45 ab6b364a 9277
 46 13816254 2096
 47 6107ee67 405
@@ -73,7 +74,7 @@
 66 2997faf4 140
 67 8367a974 1
 68 433a448c 928
-69 5301d9f3 13619
+69 0fba3db7 13468
 70 416749f7 345
 71 b61bcc40 5726
 72 114d51a9 1182
@@ -85,12 +86,12 @@
 78 a736d8d9 19616
 79 0f3b52bb 6742
 80 e50373f6 3967
-81 828f32de 3972
+81 ddabe7f4 3969
 82 e13391e8 2405
-83 6ea529d9 1262
+83 672f9f17 1251
 84 9e1f7d6f 2785
 85 6a5611b0 407
-86 879cb4ed 1923
+86 d70bbbec 1967
 87 3fcdf5eb 2614
 88 b182e5da 2545
 89 45e58ae4 740

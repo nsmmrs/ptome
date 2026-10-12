@@ -2,16 +2,29 @@
 # thick rule and a thin one), slab display type, serif text in three
 # columns where columns are wanted, display-italic pull quotes. Stand-in:
 # Zilla Slab for the slab.
+#
+# In print: the tabloid page (about 11 × 14½ in), four columns, slab
+# heads, red italic pull quotes between thick and thin rules.
 extends: magazine
 tokens:
   font:
-    display: { family: { screen: [Zilla Slab, serif] }, weight: bold }
-    utility: { family: { screen: [Zilla Slab, serif] } }
+    display: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] }, weight: bold }
+    utility: { family: { print: Zilla Slab, screen: [Zilla Slab, serif] } }
   color: { accent: '#B3261E' }
+  page: { size: [11in, 14.5in], margin: [0.75in, 0.6in, 0.8in, 0.6in] }
 styles:
   title: { style: normal }
 webfonts:
   - Zilla Slab:400,400italic,700,700italic
+pdf:
+  title_page:
+    title: { font_size: 48, line_height: 1 }
+    subtitle: { font_size: 16 }
+  page_columns: 4
+  heading: { h2: { font_style: bold } }
+  quote:
+    role:
+      pullquote: { font_family: Zilla Slab, font_style: bold_italic, font_size: 17, font_color: 'B3261E', border_width: [3, 0, 1, 0], border_color: 'B3261E' }
 css: |
   :root{--mag-frame-width:6px;--mag-frame-gap:4px;--mag-display-style:normal;--mag-kicker-tracking:.08em}
   body{margin:1rem;min-height:calc(100vh - 2rem)}

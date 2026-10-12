@@ -520,12 +520,14 @@ final class _PlacedCustom extends _Placed {
 }
 
 final class _PlacedColumns extends _Placed {
-  const new(this.columns, this.top, this.height);
+  const new(this.columns, this.top, this.height, this.gap, this.rule);
 
   final List<(double, _Placed)> columns;
   final double top;
   @override
   final double height;
+  final double gap;
+  final ColumnRule? rule;
 
   @override
   void visit(
@@ -544,6 +546,22 @@ final class _PlacedColumns extends _Placed {
   void paint(_Painter painter, double x, double top) {
     for (final (left, column) in columns) {
       column.paint(painter, x + left, top - this.top);
+    }
+    if (rule case final rule? when rule.width > 0) {
+      final canvas = painter.canvas
+        ..save()
+        ..setStrokeColor(rule.color)
+        ..setLineWidth(rule.width);
+      for (var i = 1; i < columns.length; i++) {
+        final (left, column) = columns[i];
+        final down = math.max(column.height, columns[i - 1].$2.height);
+        final at = x + left - gap / 2;
+        canvas
+          ..moveTo(at, top - this.top)
+          ..lineTo(at, top - this.top - down)
+          ..stroke();
+      }
+      canvas.restore();
     }
   }
 }

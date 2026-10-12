@@ -38,7 +38,11 @@ extension _Columns on _Pass {
       for (var c = 0; c < box.count && rest != null; c++) {
         // Each column starts at the top of a region (a break or a margin
         // at the top of the first one counts for nothing too).
-        final fit = _place(rest, columnWidth, room, atTop: true);
+        final column = rest;
+        final fit = _column(
+          columnWidth,
+          () => _place(column, columnWidth, room, atTop: true),
+        );
         if (fit.placed == null) {
           if (c == 0) return null;
           break;
@@ -100,7 +104,7 @@ extension _Columns on _Pass {
     final done = rest == null;
     final total = top + height + (done ? style.margin.bottom : 0);
     return _Fit(
-      _PlacedColumns(columns, top, total),
+      _PlacedColumns(columns, top, total, box.gap, box.rule),
       total,
       done
           ? null
@@ -112,6 +116,7 @@ extension _Columns on _Pass {
               box.count,
               box.gap,
               box.balance,
+              box.rule,
               style,
             ),
       hit: hit,

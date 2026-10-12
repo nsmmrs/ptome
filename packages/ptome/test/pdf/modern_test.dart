@@ -525,6 +525,28 @@ void main() {
         contains('no hyphenation patterns for tlh; not hyphenating'),
       );
     });
+
+    test('a hyphen where the font has no soft hyphen', () {
+      final pdf = _pdf(
+        narrow(''),
+        theme:
+            'font:\n  catalog:\n    merge: true\n    Yrsa:\n'
+            '      normal: yrsa-regular-latin.ttf\n'
+            '      italic: yrsa-italic-latin.ttf\n'
+            '      bold: yrsa-regular-latin.ttf\n'
+            '      bold_italic: yrsa-italic-latin.ttf\n'
+            'base:\n  font_family: Yrsa\n',
+      );
+      final words = [
+        for (final page in _pages(pdf))
+          for (final line in page) ...line.split(RegExp(r'\s+')),
+      ];
+      expect(words.where((w) => w.endsWith('\u00ad')), isEmpty);
+      expect(
+        words.where((w) => w.endsWith('-') && !_paragraph.contains(w)),
+        isNotEmpty,
+      );
+    });
   }, skip: _tools ? false : 'needs poppler');
 
   group(
@@ -2535,6 +2557,78 @@ templates:
         compat: true,
       );
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
+    });
+
+    test("an article's title page set inline, at the top of its page", () {
+      const source =
+          '= The Head: The dek under it\nAnne Author\n:kicker: Coastlines\n\n'
+          'The text.\n';
+      const theme =
+          'title_page_inline: true\ntitle_page_recto:\n'
+          '- attribute: kicker\n- title\n- subtitle\n- authors\n';
+      expect(_pages(_pdf(source, theme: theme)).first, [
+        'Coastlines',
+        'The Head',
+        'The dek under it',
+        'Anne Author',
+        'The text.',
+      ]);
+      // asciidoctor-pdf's: the document title alone.
+      expect(
+        _pages(_pdf(source, theme: theme, compat: true)).first.first,
+        'The Head: The dek under it',
+      );
+    });
+
+    test("a quote's role styles it by quote_role_<role>_* keys", () {
+      const source = '[.pull]\n____\nQuoted.\n____\n';
+      const theme = "quote:\n  role:\n    pull:\n      font_color: 'FF0000'\n";
+      expect(_content(_pdf(source, theme: theme)), contains('1 0 0 rg'));
+      expect(
+        _content(_pdf('____\nQuoted.\n____\n', theme: theme)),
+        isNot(contains('1 0 0 rg')),
+      );
+    });
+
+    test('page columns: rules between them, balanced where they end', () {
+      final words = 'Words of the piece run on across the page. ' * 20;
+      const theme =
+          'page_columns: 3\npage_columns_balance: true\n'
+          "page_column_rule_width: 0.5\npage_column_rule_color: 'FF0000'\n";
+      final pdf = _pdf('= Issue\n\n$words\n', theme: theme);
+      expect(_content(pdf), contains('1 0 0 RG'));
+      // A short text: in all three columns, not the first alone.
+      final starts = RegExp(r'<line xMin="([\d.]+)"')
+          .allMatches(
+            Process.runSync('pdftotext', ['-bbox-layout', pdf, '-']).stdout
+                as String,
+          )
+          .map((m) => double.parse(m[1]!).round())
+          .toSet();
+      expect(starts, hasLength(3), reason: '$starts');
+      // asciidoctor-pdf's: no rules.
+      expect(
+        _content(_pdf('= Issue\n\n$words\n', theme: theme, compat: true)),
+        isNot(contains('1 0 0 RG')),
+      );
+    });
+
+    test('a block floating to a side in columns: a share of its column', () {
+      final words = 'Words of the piece run on across the page. ' * 30;
+      const theme = 'role:\n  aside:\n    float: right\n    float_width: 50%\n';
+      final pdf = _pdf(
+        '[.columns]\n== Piece\n\n[.aside]\n****\nAside\n****\n\n$words\n',
+        theme: theme,
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      final aside = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Aside<').firstMatch(bbox)![1]!,
+      );
+      // Two columns of the A4 page's 498 pt: the aside in the right half
+      // of the first (it ends at about 291).
+      expect(aside, greaterThan(150));
+      expect(aside, lessThan(291));
     });
 
     test('jump lines: continued on the page the piece goes on, and from', () {

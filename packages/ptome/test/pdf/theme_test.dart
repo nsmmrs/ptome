@@ -366,6 +366,12 @@ toc:
         theme('role: {big: {font-size: 1.2em}}').string('role_big_font_size'),
         '1.2em',
       );
+      // (Not in a family's name: an optical size's, as written.)
+      expect(
+        theme('heading:\n  font_family: Bodoni Moda 28pt')
+            .string('heading_font_family'),
+        'Bodoni Moda 28pt',
+      );
     });
   });
 

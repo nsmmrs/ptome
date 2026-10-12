@@ -2051,6 +2051,10 @@ base class _Wrap {
         text = text.replaceAll(_shy, '');
       }
       final format = item.format;
+      // (A soft hyphen ending a line in a font without one: a hyphen.)
+      if (text.endsWith(_shy) && !format.font.hasGlyph(_shyUnit)) {
+        text = '${text.substring(0, text.length - 1)}-';
+      }
       final isMarker = format.fragment.isMarker;
       final width = isMarker ? 0.0 : _fragmentWidth(text, format);
       final printed = _Printed(

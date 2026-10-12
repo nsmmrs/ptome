@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A block floating to a side inside a `ColumnsBox` floats in its column:
+  the column is a region of its own for it; one that doesn't fit in the
+  room left starts the next column, and one taller than a column is set
+  in the flow. `ColumnsBox.rule` (`ColumnRule`) draws a rule between
+  columns that have content.
 - `BoxStyle.sideShape` (`FloatShape`): a side float's outline, band by
   band; a paragraph that runs around it with `ShapedContent`
   (`placeAround`) is set line by line in the room the outline leaves.

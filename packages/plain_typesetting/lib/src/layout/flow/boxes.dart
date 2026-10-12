@@ -559,6 +559,20 @@ final class BreakBox extends LayoutBox {
   final PageSide? side;
 }
 
+/// A rule between the columns of a set that have content ([ColumnsBox.rule]),
+/// down the taller of the two.
+@immutable
+final class ColumnRule {
+  /// A rule [width] wide in [color].
+  const new({this.width = 0.5, this.color = const GrayColor(0)});
+
+  /// The rule's width.
+  final double width;
+
+  /// The rule's color.
+  final Color color;
+}
+
 /// Boxes flowing through [count] columns, column by column, from where
 /// the set starts to the bottom of the region (and on to the next); with
 /// [balance], the columns of the region the set ends in as even as they
@@ -571,6 +585,7 @@ final class ColumnsBox extends LayoutBox {
     this.count = 2,
     this.gap = 12,
     this.balance = false,
+    this.rule,
     BoxStyle style = const BoxStyle(),
   }) : _continued = false,
        super._(style);
@@ -580,6 +595,7 @@ final class ColumnsBox extends LayoutBox {
     this.count,
     this.gap,
     this.balance,
+    this.rule,
     BoxStyle style,
   ) : _continued = true,
       super._(style);
@@ -595,6 +611,9 @@ final class ColumnsBox extends LayoutBox {
 
   /// Whether the columns of the set's last region are balanced.
   final bool balance;
+
+  /// The rule between columns, if any.
+  final ColumnRule? rule;
 
   final bool _continued;
 }

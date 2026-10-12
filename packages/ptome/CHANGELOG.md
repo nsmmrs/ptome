@@ -77,7 +77,15 @@ Asciidoctor project.
   from attributes (title page slots), runarounds, drop caps, pull
   quotes, bounded column sections, end marks, a thick-and-thin frame,
   each device with a fallback; one column on a phone. Looks' lengths
-  may be `rem`.
+  may be `rem`. Each era is a print design too: its page size,
+  columns (balanced where the piece ends, hairlines between them in
+  some), faces (installed by `ptome doctor --look`, optical sizes
+  included), the head, dek and byline across the top of the piece's
+  first page (`title_page_inline`), pull quotes styled by
+  `quote_role_<role>_*` keys, and a folio. In columns a block floats to
+  a side within its column, and a soft hyphen ending a line is a hyphen
+  in a font that has none. A theme's font family keeps a measurement in
+  its name (`Bodoni Moda 28pt`).
 - The ptome language: texts cited by numbered units (ADR-0019, ADR-0020,
   `doc/units.md`), read by ptome's own parser and rendered by every
   backend.

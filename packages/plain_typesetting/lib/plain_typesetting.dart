@@ -34,6 +34,7 @@ export 'src/layout/flow.dart'
         BoxStyle,
         BreakBox,
         BreakKind,
+        ColumnRule,
         ColumnWidth,
         ColumnsBox,
         ComputedColumnWidth,
