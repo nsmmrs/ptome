@@ -685,6 +685,81 @@ void main() {
     expect(at['app1']!.$2, lessThan(at['l3']!.$2));
   });
 
+  test('notes carried to the next region go on in their own stream', () {
+    // A study Bible's foot: translators' notes run in, study notes in
+    // three columns under them. The study notes of the first page don't
+    // all fit: what is left of them goes on, on the next page, in their
+    // columns under the run-in notes there; the run-in notes carried
+    // whole join the next page's in one paragraph.
+    final document = RecordingDocument();
+    FlowLayout(
+          template: _rows(16),
+          notes: {
+            for (var i = 1; i <= 6; i++) 't$i': _para('tn$i'),
+            for (var i = 1; i <= 6; i++)
+              's$i': _para(
+                [for (var k = 1; k <= (i == 2 ? 24 : 5); k++) 's${i}x$k']
+                    .join('\n'),
+              ),
+          },
+          noteStreams: [
+            NoteStream(
+              'tn',
+              separator: _para('TN'),
+              runIn: NoteStream.joined(separator: ' '),
+            ),
+            NoteStream('study', separator: _para('SN'), columns: 3),
+          ],
+          noteStreamOf: {
+            for (var i = 1; i <= 6; i++) 't$i': 'tn',
+            for (var i = 1; i <= 6; i++) 's$i': 'study',
+          },
+        )
+        .layout([
+          for (var i = 1; i <= 6; i++)
+            BlockBox([
+              for (var k = 0; k < (i == 3 ? 12 : 1); k++) _para('x$i$k'),
+              BlockBox([_para('l$i')], style: BoxStyle(anchor: 't$i')),
+            ], style: BoxStyle(anchor: 's$i')),
+        ])
+        .render(document);
+    Map<String, (double, double)> at(int page) => {
+      for (final call in document.pages[page].canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    // Each page: its run-in notes on one line, then the study notes under
+    // their separator, below it.
+    for (var page = 0; page < document.pages.length; page++) {
+      final words = at(page);
+      final tn = [
+        for (final MapEntry(:key, :value) in words.entries)
+          if (key.startsWith('tn')) value.$2,
+      ];
+      final study = [
+        for (final MapEntry(:key, :value) in words.entries)
+          if (RegExp(r'^s\dx').hasMatch(key)) value.$2,
+      ];
+      if (tn.isEmpty || study.isEmpty) continue;
+      expect(tn.toSet(), hasLength(1), reason: 'page $page');
+      expect(words['SN'], isNotNull, reason: 'page $page');
+      expect(
+        study.every((y) => y < words['SN']!.$2 && y < tn.first),
+        isTrue,
+        reason: 'page $page',
+      );
+    }
+    // The study notes, carried or not, in one set of columns: the second
+    // note's last lines and the third's in the same rows as each other.
+    final last = document.pages.lastWhere(
+      (page) => page.texts.any((t) => t.trim() == 's2x24'),
+    );
+    final words = at(document.pages.indexOf(last));
+    expect(words['s2x24']!.$1, isNot(words['s6x5']!.$1));
+    expect(words.keys.where((key) => key == 'SN'), hasLength(1));
+  });
+
   test('side notes stay above the notes at the bottom of the page', () {
     final document = RecordingDocument();
     FlowLayout(

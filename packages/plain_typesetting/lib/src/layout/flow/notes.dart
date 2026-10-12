@@ -2,11 +2,74 @@ part of '../flow.dart';
 
 // Notes at the bottom of a region, and side notes beside the text.
 
-/// [boxes] as one block, kept in [groups].
-LayoutBox _group(Set<LayoutBox> groups, List<LayoutBox> boxes) {
-  final group = BlockBox(boxes);
-  groups.add(group);
-  return group;
+/// A stream's notes at the bottom of a region: `before`, what was left
+/// of some on the region before, set as it is, then `notes`, whole.
+typedef _StreamNotes = ({List<LayoutBox> before, List<LayoutBox> notes});
+
+/// The notes that didn't fit at the bottom of a region: the main series'
+/// (with the floating boxes there), and each stream's.
+typedef _WaitingNotes = ({
+  List<LayoutBox> main,
+  Map<String, _StreamNotes> streams,
+});
+
+/// A stream's group of notes at the bottom of a region: its `stream` and
+/// its `notes`.
+typedef _Group = ({String stream, _StreamNotes notes});
+
+/// What is left of the notes at the bottom of a region, [area] placed
+/// and [rest] left of it: the main series' and the floating boxes'
+/// (without the main [separator]), and each stream's (its group in
+/// [groups]): a group left whole, its notes as they were (to be arranged
+/// again with the next region's), else what is left of its boxes but the
+/// stream's separator, of [streamSeparators].
+_WaitingNotes? _left(
+  LayoutBox? rest,
+  List<LayoutBox> area,
+  Map<LayoutBox, _Group> groups, {
+  required LayoutBox? separator,
+  required Map<String, LayoutBox?> streamSeparators,
+}) {
+  if (rest == null) return null;
+  final children = rest is BlockBox ? rest.children : [rest];
+  final main = <LayoutBox>[];
+  final streams = <String, _StreamNotes>{};
+  // (The rest is what was left of the box the region ended in, then the
+  // boxes after it as they were.)
+  final whole = Set<LayoutBox>.identity()..addAll(area);
+  for (final (i, child) in children.indexed) {
+    final LayoutBox owner;
+    if (whole.contains(child)) {
+      owner = child;
+    } else {
+      final next = children.skip(i + 1).where(whole.contains).firstOrNull;
+      final at = next == null ? area.length : area.indexOf(next);
+      owner = area[at - 1];
+    }
+    switch (groups[owner]) {
+      case (:final stream, :final notes) when identical(child, owner):
+        streams[stream] = notes;
+      case (:final stream, notes: _):
+        final own = streamSeparators[stream];
+        final before = <LayoutBox>[];
+        for (final box in (child as BlockBox).children) {
+          switch (box) {
+            case _ when identical(box, own):
+              break;
+            case ColumnsBox(:final children):
+              before.addAll(children);
+            case _:
+              before.add(box);
+          }
+        }
+        streams[stream] = (before: before, notes: const []);
+      case null when identical(child, separator):
+        break;
+      case null:
+        main.add(child);
+    }
+  }
+  return (main: main, streams: streams);
 }
 
 extension _Notes on _Pass {
@@ -130,10 +193,17 @@ extension _Notes on _Pass {
     // The notes of the anchors placed: the main series' (after those
     // deferred from the region before), then each stream's in turn, under
     // its separator, in its columns.
-    final groups = <LayoutBox>{};
+    final groups = Map<LayoutBox, _Group>.identity();
+    final separators = {
+      for (final stream in layout.noteStreams) stream.name: stream.separator,
+    };
     List<LayoutBox> pending(_Fit fit) {
-      final main = <LayoutBox>[?deferred];
-      final streams = <String, List<LayoutBox>>{};
+      final main = [...?deferred?.main];
+      final carried = deferred?.streams ?? const {};
+      final streams = <String, List<LayoutBox>>{
+        for (final MapEntry(:key, :value) in carried.entries)
+          key: [...value.notes],
+      };
       for (final name in _Pass._anchorsOf(fit.placed)) {
         if (_notesSet.contains(name)) continue;
         final note = layout.notes[name];
@@ -145,33 +215,46 @@ extension _Notes on _Pass {
             main.add(note);
         }
       }
-      if (streams.isEmpty) return main;
-      return [
-        ...main,
-        for (final stream in layout.noteStreams)
-          if (streams[stream.name] case final notes?)
-            _group(groups, [
-              ?stream.separator,
-              if (stream.runIn case final runIn?)
-                runIn(notes)
-              else if (stream.columns > 1)
-                ColumnsBox(
-                  notes,
-                  count: stream.columns,
-                  gap: stream.columnGap,
-                  balance: true,
-                )
-              else
-                ...notes,
-            ]),
-      ];
+      if (streams.isEmpty && carried.isEmpty) return main;
+      final boxes = [...main];
+      for (final stream in layout.noteStreams) {
+        final before = carried[stream.name]?.before ?? const [];
+        final notes = streams[stream.name] ?? const [];
+        if (before.isEmpty && notes.isEmpty) continue;
+        // (What was left of the stream's notes on the region before
+        // first: in its columns with the new ones, or ahead of the new
+        // ones run in.)
+        final group = BlockBox([
+          ?stream.separator,
+          if (stream.runIn case final runIn?) ...[
+            ...before,
+            if (notes.isNotEmpty) runIn(notes),
+          ] else if (stream.columns > 1)
+            ColumnsBox(
+              [...before, ...notes],
+              count: stream.columns,
+              gap: stream.columnGap,
+              balance: true,
+            )
+          else ...[
+            ...before,
+            ...notes,
+          ],
+        ]);
+        groups[group] = (
+          stream: stream.name,
+          notes: (before: before, notes: notes),
+        );
+        boxes.add(group);
+      }
+      return boxes;
     }
 
     // The bottom of the region: its floating boxes, then its notes under
     // the separator (the main series', when it has some).
     List<LayoutBox> area(List<LayoutBox> notes) => [
       ...bottom,
-      if (notes.isNotEmpty && !groups.contains(notes.first))
+      if (notes.isNotEmpty && !groups.containsKey(notes.first))
         ?layout.noteSeparator,
       ...notes,
     ];
@@ -220,14 +303,28 @@ extension _Notes on _Pass {
     if (placed.placed == null || placed.height == 0) {
       // No note fits: all of them on the next region, without a
       // separator; the floating boxes stay, as they were measured to.
-      _deferredNotes = notes.isEmpty ? null : BlockBox(notes);
+      _deferredNotes = notes.isEmpty
+          ? null
+          : _left(
+              BlockBox(notes),
+              notes,
+              groups,
+              separator: layout.noteSeparator,
+              streamSeparators: separators,
+            );
       if (bottom.isEmpty) return (fit, null);
       return (
         fit,
         _place(BlockBox(bottom), width, double.infinity, atTop: false),
       );
     }
-    _deferredNotes = placed.rest;
+    _deferredNotes = _left(
+      placed.rest,
+      area(notes),
+      groups,
+      separator: layout.noteSeparator,
+      streamSeparators: separators,
+    );
     return (fit, placed);
   }
 }

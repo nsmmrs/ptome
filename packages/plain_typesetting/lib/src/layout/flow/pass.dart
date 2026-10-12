@@ -464,8 +464,10 @@ final class _Pass {
   /// The notes whose anchors were placed (each set once).
   final Set<String> _notesSet = {};
 
-  /// The notes that didn't fit in the region before.
-  LayoutBox? _deferredNotes;
+  /// The notes that didn't fit in the region before: the main series'
+  /// (with the floating boxes at the bottom), and each stream's, to go
+  /// first in its own place (under its separator, in its columns).
+  _WaitingNotes? _deferredNotes;
 
   /// The anchors [placed] reports, in order.
   static List<String> _anchorsOf(_Placed? placed) {

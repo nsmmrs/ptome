@@ -2775,6 +2775,84 @@ templates:
       );
     });
 
+    test('notes at the foot: run in, then study notes in columns', () {
+      // A study Bible's page: the translators' notes run in under the
+      // text, the study notes under them in three columns, a heading
+      // over a run of them; study notes too long for a page go on in
+      // their own place on the next (under the translators' notes there).
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      File('${schemes.path}/study.yml')
+          .writeAsStringSync('stream:\n  sn:\n    placement: "footnote"\n');
+      final study = [
+        for (var k = 0; k < 4; k++)
+          'Study$k the words of the verse read with the others, at length.',
+      ].join(' ');
+      String verse(int v) {
+        final heading = v == 1 ? '[.heading]#The Days of Creation# ' : '';
+        return '@ Verse $v ##text##note:tn[Heb. tn$v] goes '
+            'on.note:sn[$heading*1:$v* Lemma$v $study]\n';
+      }
+
+      final verses = [for (var v = 1; v <= 8; v++) verse(v)].join('\n');
+      final pdf = _pdf(
+        '= Notes\n:units: bible, kjv, study\n\n== @GEN\n\n=== @1\n\n$verses',
+        theme:
+            'page:\n  size: [360, 400]\n  margin: [36, 36, 36, 36]\n'
+            'note_streams: [tn, sn]\n'
+            'note_stream:\n'
+            '  tn:\n    arrangement: run_in\n'
+            '  sn:\n    columns: 3\n    column_gap: 8\n    font_size: 7\n',
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      // Each word: its page, x and y.
+      final words = <(int, String, double, double)>[];
+      var page = -1;
+      for (final line in bbox.split('\n')) {
+        if (line.contains('<page ')) page++;
+        if (RegExp(r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]*)<')
+                .firstMatch(line)
+            case final m?) {
+          words.add((page, m[3]!, double.parse(m[1]!), double.parse(m[2]!)));
+        }
+      }
+      (int, double, double) at(String word) {
+        final (p, _, x, y) = words.firstWhere((w) => w.$2 == word);
+        return (p, x, y);
+      }
+
+      // The heading over the first study note, on a line of its own.
+      final (hp, _, hy) = at('Creation');
+      final (lp, _, ly) = at('Lemma1');
+      expect(hp, lp);
+      expect(ly, greaterThan(hy));
+      // The translators' notes run in, one line; the study notes below.
+      final (tp, _, ty) = at('tn1');
+      expect((at('tn2').$1, at('tn2').$3), (tp, ty));
+      expect(hy, greaterThan(ty));
+      // Three columns of study notes.
+      final columns = {
+        for (final (p, w, x, _) in words)
+          if (p == 0 && w.startsWith('Study')) (x / 50).floor(),
+      };
+      expect(columns.length, greaterThanOrEqualTo(3), reason: '$columns');
+      // On each page, every study note's words below the translators'
+      // notes there: a study note carried over goes on in its stream.
+      for (var p = 0; p <= page; p++) {
+        final tn = words.where((w) => w.$1 == p && w.$2.startsWith('tn'));
+        final sn = words.where((w) => w.$1 == p && w.$2.startsWith('Study'));
+        if (tn.isEmpty || sn.isEmpty) continue;
+        final lowest = tn.map((w) => w.$4).reduce(math.max);
+        expect(sn.every((w) => w.$4 > lowest), isTrue, reason: 'page $p');
+      }
+      expect(words.where((w) => w.$2.startsWith('Lemma')), hasLength(8));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

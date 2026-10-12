@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF note streams for a study Bible's foot: a note that opens with a
+  `[.heading]#…#` has it as a heading above it (`footnotes_heading_*`,
+  `note_stream_<name>_heading_*`); notes carried to the next page go on
+  in their own stream and columns.
 - Optimal pagination in the PDF (`pagination: optimal`): the pages' breaks
   chosen together, the unused room spread rather than one nearly empty
   page.

@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Note streams: the notes left over at the bottom of a region go on in
+  the next in their own stream (under its separator, in its columns, run
+  in with that region's notes when the stream runs its notes in), not
+  ahead of all the streams.
 - `FlowLayout.pagination` (`Pagination.optimal`): the breaks of the pages
   chosen together by dynamic programming over a galley of the content
   (paragraphs' lines within their widow and orphan limits, other blocks

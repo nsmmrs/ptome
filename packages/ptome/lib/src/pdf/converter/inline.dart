@@ -793,6 +793,30 @@ extension _InlineElements on PdfConverter {
       (_choice('footnotes_placement', const ['page', 'end']) ?? 'page') ==
       'page';
 
+  /// A note's opening heading (`[.heading]#…#`), and the space after it.
+  static final _noteHeadingRx = RegExp(
+    r'^<span class="heading">(.*?)</span>\s*',
+  );
+
+  /// The heading [markup] above a note (`footnotes_heading_*`, italic and
+  /// set left by default, [spacing] above it), kept with the note.
+  LayoutBox _noteHeading(String markup, double spacing) => CustomBox(
+    _textBox(
+      markup,
+      _themeFont('footnotes_heading', _font.copyWith(style: 'italic')),
+      align: _keys('footnotes_heading').string('text_align') ?? 'left',
+      hyphenate: true,
+    ),
+    style: BoxStyle(
+      margin: EdgeInsets(
+        top:
+            _length('footnotes_heading_margin_top', _font.size) ??
+            spacing + _font.size / 2,
+      ),
+      keepWithNext: true,
+    ),
+  );
+
   /// The space between footnotes (`footnotes_item_spacing`, an em of the
   /// body's size).
   double get _footnoteItemSpacing =>
@@ -1005,10 +1029,17 @@ extension _InlineElements on PdfConverter {
             } else if (stream != null) {
               _noteStreamOf[id] = stream;
             }
-            (side ? _sideNotes : _notes)[id] = CustomBox(
+            // (A note that opens with a heading, `[.heading]#…#`: the
+            // heading a paragraph of its own above it, kept with it, as a
+            // study Bible heads a run of its notes.)
+            final opening = _noteHeadingRx.firstMatch(footnote.text);
+            final text = opening == null
+                ? footnote.text
+                : footnote.text.substring(opening.end);
+            final note = CustomBox(
               _textBox(
                 '<a id="_footnotedef_$index">$_dummyText</a>'
-                '${_footnoteNoteLabel(index, label)}$gap${footnote.text}',
+                '${_footnoteNoteLabel(index, label)}$gap$text',
                 _font,
                 align: _baseTextAlign,
                 indent: indent,
@@ -1016,6 +1047,9 @@ extension _InlineElements on PdfConverter {
               ),
               style: BoxStyle(margin: EdgeInsets(top: spacing)),
             );
+            (side ? _sideNotes : _notes)[id] = opening == null
+                ? note
+                : BlockBox([_noteHeading(opening[1]!, spacing), note]);
           }),
         );
       }
