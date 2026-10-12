@@ -123,7 +123,7 @@ For addressed texts on the web, all apparatus (verse numbers, notes, headings, w
 - **Penguin** ([Composition Rules](https://plain-xetex.neocities.org/typography/penguinrules.pdf)): words spaced as closely as possible, a one-em indent and none after a heading, asterisks for unheaded breaks, single quotes, spaced en rules, letterspaced small-cap running heads (book on the verso, chapter on the recto), notes 2 pt smaller. Penguin Classics: 10.25/12.25 Sabon, heads 8.25, folios 8.5, heading space in multiples or halves of the line.
 - **Harry Potter** ([Errington's bibliography](https://archive.org/details/jkrowlingbibliog0000erri)): Scholastic US, 12 pt Adobe Garamond, a vignette between "CHAPTER n" and the title, "CHAPTER n" on the verso and the title on the recto; Bloomsbury UK, 198 × 129 mm, "HARRY POTTER" on the verso, a drop capital, no images.
 - **Children's books**: 14/22 to 16/26 Sassoon Primary; Puffin middle grade 13/16 to 15/22.
-- **Scholarly**: displayed quotations from about 50 words (*New Hart's*) or 100 words (Chicago); verse centred on its longest line on each page.
+- **Scholarly**: displayed quotations from about 50 words (*New Hart's*) or 100 words (Chicago); verse centred on its longest line on each page; a run-on index (Chicago's run-in style) in two columns. The `scholarly-monograph` look.
 
 ### Technical
 

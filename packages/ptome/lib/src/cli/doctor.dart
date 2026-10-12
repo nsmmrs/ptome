@@ -305,7 +305,9 @@ final List<NeededFont> lookFonts = [
   }),
   NeededFont(
     name: 'Crimson Pro',
-    usedBy: 'the tech-book, eu-journal and Bible looks (Minion, Albertina)',
+    usedBy:
+        'the tech-book, eu-journal, Bible and scholarly-monograph looks '
+        '(Minion, Albertina)',
     families: const ['Crimson Pro'],
     styles: _all,
     fileNames: const {},

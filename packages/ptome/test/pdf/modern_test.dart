@@ -1075,6 +1075,25 @@ base:
       expect(index(_pdf(book)), contains('alpha, 1, 2'));
     });
 
+    test('runs subentries into their entry with index_layout: run-on', () {
+      const nested =
+          '= Doc\n:doctype: book\n\n== Chap\n\n'
+          '((alpha)) (((alpha, beta))) (((alpha, gamma))) '
+          '(((alpha, gamma, zeta))) '
+          '(((delta, epsilon))).\n\n[index]\n== Index\n';
+      final lines = index(_pdf(nested, theme: 'index_layout: run-on\n'));
+      // ("Term, pages; subterm, pages": Chicago's run-in style; a term
+      // without pages of its own before a colon.)
+      expect(lines, contains('alpha, 1; beta, 1; gamma, 1 (zeta, 1)'));
+      expect(lines, contains('delta: epsilon, 1'));
+      expect(lines, isNot(contains('beta, 1')));
+      // asciidoctor-pdf's: indented, one to a line.
+      expect(
+        index(_pdf(nested, compat: true, theme: 'index_layout: run-on\n')),
+        contains('beta, 1'),
+      );
+    });
+
     test('is set in the index font', () {
       double height(String pdf) {
         final bbox =
@@ -3010,6 +3029,39 @@ templates:
       expect(heads, contains(matches(RegExp(r'^one$', caseSensitive: false))));
     });
 
+    test('the scholarly-monograph look: margins, extracts, index', () {
+      final words = [for (var k = 0; k < 500; k++) 'word$k'].join(' ');
+      final quote = [for (var k = 0; k < 40; k++) 'quoted$k'].join(' ');
+      final pdf = _pdf(
+        '= The State\n:doctype: book\n:look: scholarly-monograph\n'
+        ':media: prepress\n\n'
+        '== One\n\nOpening ((capital)) (((capital, labour))) $words\n\n'
+        '[quote]\n____\n$quote\n____\n\n'
+        'After (((capital, finance))).\n\n[index]\n== Index\n',
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      double left(String word) => double.parse(
+        RegExp('xMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<')
+            .firstMatch(bbox)![1]!,
+      );
+      // The university press's margins, the inner one at the binding, in
+      // place of the default theme's inner and outer (a recto's text at
+      // 0.79 in).
+      expect(left('Opening'), closeTo(0.79 * 72, 0.5));
+      // The extract indented, 9 pt.
+      expect(left('quoted0'), greaterThan(left('Opening') + 10));
+      // The index run on.
+      final text = _pages(pdf).expand((page) => page).join('\n');
+      expect(text, contains(RegExp(r'capital, 1; finance, \d+; labour, 1')));
+    });
+
     test('the pleading look: numbered lines, the court on line 8', () {
       final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
           .join(' ');
@@ -3088,22 +3140,25 @@ templates:
             '== @GEN\n\n=== @1\n\n$verses\n=== @2\n\n$verses';
         // (The look as the theme: the helper names asciidoctor-pdf's.)
         final pdf = _pdf(source, attributes: {'pdf-theme': themeFile.path});
-        return Process.runSync('pdftotext', ['-raw', pdf, '-']).stdout
-            as String;
+        // (Without spaces: pdftotext joins words a narrow face's spaces
+        // set close, as Crimson Pro's are at 6 pt.)
+        return (Process.runSync('pdftotext', ['-raw', pdf, '-']).stdout
+                as String)
+            .replaceAll(RegExp(r'\s'), '');
       }
 
       // The reference Bible: the verse numbers (not the first's) and the
       // cross-references in the centre column; the page's verses in its
       // running head.
       final reference = textOf('reference-bible');
-      expect(reference, contains('Gen 2:'));
-      expect(reference, matches(RegExp(r'\b17\s+Verse17\b')));
-      expect(reference, matches(RegExp(r'Genesis \d:\d+–\d+')));
+      expect(reference, contains('Gen2:'));
+      expect(reference, contains('17Verse17'));
+      expect(reference, matches(RegExp(r'Genesis\d:\d+–\d+')));
       // The reader's edition: neither (nor the callers in the text).
       final reader = textOf('readers-bible');
-      expect(reader, contains('Verse17 of the chapter goes on'));
-      expect(reader, isNot(contains('Gen 2:')));
-      expect(reader, isNot(matches(RegExp(r'\b17\s+Verse17\b'))));
+      expect(reader, contains('Verse17ofthechaptergoeson'));
+      expect(reader, isNot(contains('Gen2:')));
+      expect(reader, isNot(contains('17Verse17')));
     });
 
     test('a box across the columns at the foot, its body in columns', () {

@@ -1927,8 +1927,10 @@ extension _DocumentParts on PdfConverter {
     final ruled = asciidoctorCompat(_document, CompatFormat.pdf)
         ? null
         : _ruledMargins(_document);
-    final outer = _n('page_margin_outer')?.toDouble() ?? ruled?.right;
-    var inner = _n('page_margin_inner')?.toDouble() ?? ruled?.left;
+    // (A rule the theme names before the inner and outer margins it
+    // inherits: asciidoctor-pdf's default theme gives those.)
+    final outer = ruled?.right ?? _n('page_margin_outer')?.toDouble();
+    var inner = ruled?.left ?? _n('page_margin_inner')?.toDouble();
     // (`page_margin_gutter: kdp`: no less than KDP's least inner margin
     // for the book's page count.)
     if (_gutterLeast > 0) {

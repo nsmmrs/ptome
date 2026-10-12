@@ -439,10 +439,58 @@ extension _InlineElements on PdfConverter {
 
   /// Adds the entry of index [term] (the gem's `convert_index_term`).
   void _indexTerm(IndexTerm term, String? style) {
+    // `index_layout: run-on` (modern engine): a term's subterms run into
+    // its own paragraph, after semicolons, as Chicago's run-in style sets
+    // them ("Term, 23; subterm, 46"; "Term: subterm, 46" without pages of
+    // its own); a subterm's own subterms in parentheses after it.
+    if (term.terms.isNotEmpty &&
+        _s('index_layout') == 'run-on' &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      String runOn(IndexTerm term) {
+        final (text, _, also) = _indexParts(term, style, inline: true);
+        final own = [text, ...also].join(' ');
+        if (term.terms.isEmpty) return own;
+        final parts = [for (final subterm in term.terms) runOn(subterm)];
+        return '$own (${parts.join('; ')})';
+      }
+
+      final (main, _, mainAlso) = _indexParts(term, style, inline: true);
+      final own = [main, ...mainAlso].join(' ');
+      final parts = [for (final subterm in term.terms) runOn(subterm)];
+      final hasPages = !term.isContainer;
+      final indent =
+          _length('description_list_description_indent', _font.size) ?? 0;
+      _out.add(
+        CustomBox(
+          _textBox(
+            '$own${hasPages ? '; ' : ': '}${parts.join('; ')}',
+            _font,
+            align: 'left',
+            normalize: false,
+            indent: -indent * 2,
+          ),
+          style: BoxStyle(margin: EdgeInsets(left: indent * 2)),
+        ),
+      );
+      return;
+    }
+    final (text, pagenums, seeAlso) = _indexParts(term, style);
+    _indexEntries(term, style, text, pagenums, seeAlso);
+  }
+
+  /// The text of index [term] (its name, its page numbers after commas or,
+  /// with `index_pagenum_text_align: right` and not [inline], apart), and
+  /// its see-also references.
+  (String, String?, List<String>) _indexParts(
+    IndexTerm term,
+    String? style, {
+    bool inline = false,
+  }) {
     final markup = StringBuffer();
     // `index_pagenum_text_align: right` (modern engine): the page numbers
     // in a column at the right, in tabular figures, as books set them.
     final column =
+        !inline &&
         _choice('index_pagenum_text_align', const ['left', 'right']) == 'right';
     String? pagenums;
     final seeAlso = <String>[];
@@ -514,6 +562,18 @@ extension _InlineElements on PdfConverter {
         }
       }
     }
+    return (markup.toString(), pagenums, seeAlso);
+  }
+
+  /// Adds the entry of index [term], [text] and its [pagenums] (apart, or
+  /// null), then its [seeAlso] references and subterms under it.
+  void _indexEntries(
+    IndexTerm term,
+    String? style,
+    String text,
+    String? pagenums,
+    List<String> seeAlso,
+  ) {
     final indent =
         _length('description_list_description_indent', _font.size) ?? 0;
     final hanging = indent * 2;
@@ -546,7 +606,7 @@ extension _InlineElements on PdfConverter {
       );
     }
 
-    entry(markup.toString(), 0, pagenums);
+    entry(text, 0, pagenums);
     if (seeAlso.isEmpty && term.isLeaf) return;
     final nested = _collect(() {
       for (final item in seeAlso) {

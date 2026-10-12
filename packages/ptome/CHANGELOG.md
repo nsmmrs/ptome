@@ -75,11 +75,18 @@ Asciidoctor project.
   opened on a recto by an initial and a lead-in in small capitals
   (`heading_h<n>_initial_lines`), scene breaks one line on the baseline
   grid, running heads in letterspaced small capitals.
+- The `scholarly-monograph` look: a university press's 6 × 9 in book,
+  its margins the measured profile's, extracts and notes 9 on 11, and a
+  run-on index in two columns (`index_layout: run-on`: a term's
+  subterms after semicolons in its own paragraph, Chicago's run-in
+  style).
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books
   (`page_margin_profile`), and a gutter that grows with the page count
-  as KDP's minimums do (`page_margin_gutter: kdp`).
+  as KDP's minimums do (`page_margin_gutter: kdp`); with `media=prepress` a rule's
+  inner and outer margins come before the theme's `page_margin_inner` and
+  `_outer`.
 - The modern engine's plain paragraphs are set by plain_typesetting's
   paragraphs (`base_text_engine: paragraph`, the default; `box` for the
   text box), their lines where the text box would set them; paragraphs
