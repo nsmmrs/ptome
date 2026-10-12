@@ -924,7 +924,16 @@ extension _Framed on PdfConverter {
             bottom: padding[2],
             left: padding[3],
           ),
-          margin: EdgeInsets(bottom: _marginBelow(node)),
+          // (`thematic_break_margin_bottom`, when given, in place of the
+          // block's: a scene break one blank line.)
+          margin: EdgeInsets(
+            bottom: _marginBelow(
+              node,
+              fallback: _n('thematic_break_margin_bottom') == null
+                  ? 'block'
+                  : 'thematic_break',
+            ),
+          ),
         ),
       ),
     );

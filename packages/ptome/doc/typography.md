@@ -156,7 +156,7 @@ A look is a parameter file over three levels, tokens, role styles and templates,
 
 | Recipe | Distinguishing values |
 | --- | --- |
-| Penguin Classics | 10.25/12.25 Sabon; heads 8.25, folios 8.5; heading space in lines; asterisk breaks; letterspaced small-cap heads |
+| Penguin Classics | 10.25/12.25 Sabon; heads 8.25, folios 8.5; heading space in lines; asterisk breaks; letterspaced small-cap heads (the `trade-novel` look) |
 | Harry Potter, Scholastic US | 12 pt Garamond; "CHAPTER n", vignette slot, title, initial; a three-star running-head ornament |
 | Early reader | 14/22 to 16/26; leading ratio about 1.6 (1.1 to 2.0) |
 | DEC manual | Letter; New Century Schoolbook 10/12 ragged at 162 pt; heads hung at 90 pt; "1–8 Title" foot |

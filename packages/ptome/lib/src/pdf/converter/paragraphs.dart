@@ -236,6 +236,22 @@ extension _Paragraphs on PdfConverter {
         }
         break;
       }
+      // (`heading_h<n>_initial_lines`: the section's first paragraph opens
+      // with its own first letter as an initial, its lead-in words
+      // `_initial_lead_in`, as a novel's chapter opens.)
+      if (initial == null) {
+        if (_pendingInitial case (final category, final lines)) {
+          _pendingInitial = null;
+          if (PdfConverter._initialOf(content) case (
+            final letter,
+            final rest,
+          )) {
+            final words = (_keys(category).number('lead_in') ?? 0).toInt();
+            content = words > 0 ? PdfConverter._leadIn(rest, words) : rest;
+            initial = (text: letter, category: category, lines: lines);
+          }
+        }
+      }
     }
     // (A section's heading for the margin, hung left of the first line.)
     if (_pendingMargin case final margin?

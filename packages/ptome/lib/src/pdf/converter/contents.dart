@@ -293,7 +293,7 @@ final class _Nothing implements CustomContent {
 /// [content], drawn only when [shown] says so as the page is drawn (it
 /// takes its room either way): a thematic break's mark set where the break
 /// falls at a page's top or bottom.
-final class _ShownWhen implements CustomContent {
+final class _ShownWhen implements BaselineContent {
   const new(this.content, this.shown);
 
   final CustomContent content;
@@ -321,6 +321,14 @@ final class _ShownWhen implements CustomContent {
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
+
+  // (On a baseline grid as the content would be, shown or not: a scene
+  // break one line deep.)
+  @override
+  double? firstBaseline(double width) => switch (content) {
+    final BaselineContent text => text.firstBaseline(width),
+    _ => null,
+  };
 }
 
 /// How wide an image is asked to be.

@@ -258,6 +258,14 @@ extension _Sections on PdfConverter {
           lines: dropLines,
         );
       }
+      // (`heading_h<n>_initial_lines`: an initial from the first letter
+      // of the section's first paragraph.)
+      _pendingInitial = null;
+      if (!asciidoctorCompat(_document, CompatFormat.pdf) && dropText == null) {
+        final lines = (_keys('heading_h$hlevel').number('initial_lines') ?? 0)
+            .toInt();
+        if (lines >= 2) _pendingInitial = ('heading_h${hlevel}_initial', lines);
+      }
       if (marginText case final text?) {
         _pendingMargin = (
           text: text,

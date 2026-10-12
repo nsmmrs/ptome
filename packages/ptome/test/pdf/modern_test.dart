@@ -79,6 +79,28 @@ List<List<String>> _pages(String pdf) => [
     ],
 ];
 
+/// The bottom of each line of [pdf]'s first page, by the line's first
+/// word.
+Map<String, double> _baselines(String pdf) {
+  final xml =
+      Process.runSync('pdftotext', [
+            '-bbox-layout',
+            '-f',
+            '1',
+            '-l',
+            '1',
+            pdf,
+            '-',
+          ]).stdout
+          as String;
+  return {
+    for (final m in RegExp(
+      r'<line [^>]*yMax="([\d.]+)">\s*<word [^>]*>([^<]*)<',
+    ).allMatches(xml))
+      m[2]!: double.parse(m[1]!),
+  };
+}
+
 /// The content of [pdf], uncompressed (its drawing operators readable).
 String _content(String pdf) {
   final out = '$pdf.qdf';
@@ -2949,6 +2971,41 @@ templates:
       );
     });
 
+    test('the trade-novel look: chapters on rectos, running heads', () {
+      final words = [for (var k = 0; k < 900; k++) 'word$k'].join(' ');
+      final pdf = _pdf(
+        '= The Harbour\n:doctype: book\n:look: trade-novel\n'
+        ':media: prepress\n\n'
+        '== One\n\nWhen the boat came in $words\n\n'
+        "'''\n\nLater.\n\n== Two\n\nAfter all of it.\n",
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+      final pages = _pages(pdf);
+      // Each chapter on a recto (an odd page), its first letter an
+      // initial, the next words in small capitals.
+      int pageOf(String text) =>
+          pages.indexWhere((page) => page.any((l) => l.contains(text))) + 1;
+      expect(pageOf('One').isOdd, isTrue);
+      expect(pageOf('all of it').isOdd, isTrue);
+      expect(pages.expand((p) => p), contains(matches(r'^W\s')));
+      // The running heads in small capitals: the book's title on a verso,
+      // the chapter's on a recto; none on an opener.
+      final heads = [
+        for (final page in pages)
+          if (page.isNotEmpty) page.first,
+      ];
+      expect(
+        heads,
+        contains(matches(RegExp('^the harbour', caseSensitive: false))),
+      );
+      expect(heads, contains(matches(RegExp(r'^one$', caseSensitive: false))));
+    });
+
     test('the pleading look: numbered lines, the court on line 8', () {
       final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
           .join(' ');
@@ -3324,6 +3381,44 @@ templates:
       // block, which goes on the next page: a mark.)
       expect(marks, hasLength(1));
       expect(pages.first.last, contains('*'));
+    });
+
+    test('a scene break one line deep on a baseline grid', () {
+      final pitch = _baselines(
+        _pdf(
+          "One.\n\nTwo.\n\n'''\n\nThree.\n",
+          theme:
+              'base_line_pitch: 14\npage_baseline_grid: true\n'
+              'prose_margin_bottom: 0\nprose_margin_inner: 0\n'
+              "thematic_break_content: '*'\n"
+              'thematic_break_content_display: boundary\n'
+              'thematic_break_padding: 0\nthematic_break_margin_bottom: 0\n',
+        ),
+      );
+      // (One blank line where the break is: two pitches.)
+      expect(pitch['Two.']! - pitch['One.']!, closeTo(14, 0.1));
+      expect(pitch['Three.']! - pitch['Two.']!, closeTo(28, 0.1));
+    });
+
+    test("a section's first paragraph opens with an initial", () {
+      const source =
+          '= Doc\n:doctype: book\n\n== One\n\nWhen the snow came in the '
+          'night the ridge above the creek held more than two feet of new '
+          'powder by morning, and the skiers waited at the lift.\n\n'
+          'Second paragraph.\n';
+      const theme =
+          'heading_h2_initial_lines: 2\nheading_h2_initial_lead_in: 2\n'
+          'role:\n  lead-in:\n    text_transform: uppercase\n';
+      final text = _pages(_pdf(source, theme: theme)).expand((p) => p);
+      // (The letter apart, its next words in the lead-in's role.)
+      expect(text, contains(matches(r'^W\s')));
+      expect(text, contains(contains('HEN THE')));
+      expect(text, isNot(contains(contains('HEN THE SNOW'))));
+      expect(text.join(' '), isNot(contains('SECOND')));
+      // asciidoctor-pdf's: no initial.
+      final plain = _pages(_pdf(source, compat: true, theme: theme))
+          .expand((p) => p);
+      expect(plain, contains(contains('When the snow')));
     });
 
     test('a note stream run in, or in a margin column of its own', () {

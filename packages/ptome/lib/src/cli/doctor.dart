@@ -312,6 +312,15 @@ final List<NeededFont> lookFonts = [
     source: _google('Crimson Pro', 'CrimsonPro', _all),
     license: 'SIL Open Font License 1.1',
   ),
+  NeededFont(
+    name: 'EB Garamond',
+    usedBy: 'the trade-novel look (Garamond, Sabon)',
+    families: const ['EB Garamond'],
+    styles: _all,
+    fileNames: const {},
+    source: _google('EB Garamond', 'EBGaramond', _all),
+    license: 'SIL Open Font License 1.1',
+  ),
   const NeededFont(
     name: 'Fira Sans Condensed',
     usedBy: 'the tech-book look (Myriad Condensed)',

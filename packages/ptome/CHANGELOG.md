@@ -71,6 +71,10 @@ Asciidoctor project.
 - PDF thematic breaks as a mark (`thematic_break_content`: a dinkus, a
   fleuron, an image), or as space with the mark only where a break falls
   at the top or the bottom of a page (`content_display: boundary`).
+- The `trade-novel` look: a B-format paperback of fiction, its chapters
+  opened on a recto by an initial and a lead-in in small capitals
+  (`heading_h<n>_initial_lines`), scene breaks one line on the baseline
+  grid, running heads in letterspaced small capitals.
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books

@@ -634,6 +634,10 @@ final class PdfConverter extends BuiltInConverter
       _s('base_text_engine') != 'box' &&
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
+  /// A section's first paragraph's initial waiting (the theme key
+  /// category of its font and lead-in, and its depth in lines).
+  (String, int)? _pendingInitial;
+
   /// A section heading waiting to be hung in the margin of its first
   /// paragraph (`heading_h<n>_display: margin`).
   ({String text, _FontState font, String category})? _pendingMargin;
