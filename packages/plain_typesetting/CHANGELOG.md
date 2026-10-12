@@ -49,6 +49,14 @@
   last line ends (a heading's or a table cell's text ending at its
   descender), and `Paragraph.strut` (TeX's `\strut`: each line at least
   as tall as text in a style).
+- A document's logical structure: `StructureElement` (a standard
+  structure type, alternate text, language, attributes) on a box's
+  `BoxStyle.structure`; painted on a `StructureCanvas`, a tagged box's
+  content is its element's, a tagged table's rows and cells its `TR`s
+  and `TH`s or `TD`s (a header row repeated on a later piece an
+  artifact), and the page template's content (running heads, page
+  numbers) and blocks' backgrounds and borders artifacts.
+  `BoxStyle.withStructure`.
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

@@ -694,6 +694,34 @@ final class _Pass {
     if (box.style.gridLine case final line? when !_isContinued(box)) {
       _gridLine = line;
     }
+    return _tagged(
+      box.style.structure,
+      _placeBox(box, width, available, atTop: atTop),
+    );
+  }
+
+  /// [fit] with what it placed painted as [element]'s content, if any.
+  static _Fit _tagged(StructureElement? element, _Fit fit) {
+    if (element == null) return fit;
+    final placed = fit.placed;
+    if (placed == null) return fit;
+    return _Fit(
+      _PlacedTagged(element, placed),
+      fit.height,
+      fit.rest,
+      hit: fit.hit,
+      floated: fit.floated,
+      pinned: fit.pinned,
+      carried: fit.carried,
+    );
+  }
+
+  _Fit _placeBox(
+    LayoutBox box,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
     return switch (box) {
       // Nothing floats out of a framed block (padded, bordered, filled or
       // decorated): it stays in its frame.
@@ -1596,17 +1624,21 @@ final class _Pass {
         (done
             ? math.min(margin.bottom, math.max(0.0, room - top - linesHeight))
             : 0);
+    final piece = _PlacedLines(
+      placed,
+      margin.left,
+      top,
+      height,
+      first ? style.anchor : null,
+      first ? style.marks : const {},
+      style.tag,
+      first: first,
+    );
     return (
-      _PlacedLines(
-        placed,
-        margin.left,
-        top,
-        height,
-        first ? style.anchor : null,
-        first ? style.marks : const {},
-        style.tag,
-        first: first,
-      ),
+      switch (style.structure) {
+        final element? => _PlacedTagged(element, piece),
+        null => piece,
+      },
       height,
       done
           ? null

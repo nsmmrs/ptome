@@ -511,6 +511,24 @@ isn't an output profile, and content in RGB with a CMYK printing
 condition (Ptome's colors are RGB: use an RGB output profile, or
 convert the PDF to the printer's CMYK).
 
+### Accessibility
+
+`-a pdf-ua` makes a tagged PDF that conforms to PDF/UA-1 (ISO 14289-1),
+for screen readers and reflow. Its structure tree records what the
+content is: headings (`H1` for the title, `H2`… for the sections, by
+their level), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
+`TR`, header cells `TH` with their scope, `TD`), figures with their
+alternate text (an image's `alt`), and links (`Link`, each annotation
+described). Running heads, page numbers, backgrounds and borders are
+artifacts, and the document's language (`:lang:`, `en` by default) and
+title are given. veraPDF finds the Hypermedia Systems book conforming.
+
+A character the font lacks reads as U+FFFD, the replacement character;
+give a fallback font that has it. Tagging adds about a sixth to a
+book's PDF and a few percent to the time it takes, so it is not on by
+default. Inline images are read as part of their paragraph's text, and
+a figure's caption is a paragraph of its own.
+
 ### Cores
 
 The work that doesn't depend on the order of the pages runs on the

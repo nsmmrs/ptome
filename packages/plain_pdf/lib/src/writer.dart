@@ -83,6 +83,7 @@ final class PdfInfo {
     this.identifier,
     this.contributors = const [],
     this.rights,
+    this.pdfuaPart,
   });
 
   /// The title.
@@ -122,6 +123,11 @@ final class PdfInfo {
 
   /// The rights statement (a copyright), the XMP metadata's `dc:rights`.
   final String? rights;
+
+  /// The part of PDF/UA the document conforms to (1: ISO 14289-1), written
+  /// as the XMP metadata's `pdfuaid:part`; the document must be tagged and
+  /// meet the rest of that part.
+  final int? pdfuaPart;
 }
 
 /// Writes a PDF file to a sink.
@@ -445,9 +451,17 @@ String xmpPacket(PdfInfo info, DateTime date) {
     ..write(' xmlns:pdf="http://ns.adobe.com/pdf/1.3/"')
     ..write(
       info.pdfxVersion == null
+          ? ''
+          : '\n xmlns:pdfxid="http://www.npes.org/pdfx/ns/id/"',
+    )
+    ..write(
+      info.pdfuaPart == null
           ? '>\n'
-          : '\n xmlns:pdfxid="http://www.npes.org/pdfx/ns/id/">\n',
+          : '\n xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/">\n',
     );
+  if (info.pdfuaPart case final part?) {
+    out.write('<pdfuaid:part>$part</pdfuaid:part>\n');
+  }
   if (info.pdfxVersion case final version?) {
     out.write(
       '<pdfxid:GTS_PDFXVersion>${escape(version)}</pdfxid:GTS_PDFXVersion>\n',

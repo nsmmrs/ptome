@@ -470,6 +470,9 @@ extension _Paragraphs on PdfConverter {
             anchor: node.id,
             runsAround: true,
             gridLine: _gridLineOf(node),
+            // (With a drop, the block around it the paragraph, the drop's
+            // letter its first.)
+            structure: dropped == null ? _struct('P') : null,
           ),
           orphans: (_n('prose_orphans') ?? 2).toInt(),
           widows: (_n('prose_widows') ?? 2).toInt(),
@@ -490,6 +493,7 @@ extension _Paragraphs on PdfConverter {
               [paragraph],
               style: BoxStyle(
                 margin: EdgeInsets(bottom: marginBottom),
+                structure: _struct('P'),
                 minHeight: mark == null ? 0 : dropped.dy + mark.height,
                 decoration: (page, rect, {required first, required last}) {
                   if (first) {
@@ -533,6 +537,7 @@ extension _Paragraphs on PdfConverter {
           // quote, a sidebar), the paragraph runs around it.
           runsAround: !asciidoctorCompat(_document, CompatFormat.pdf),
           gridLine: _gridLineOf(node),
+          structure: _struct('P'),
         ),
       ),
     );

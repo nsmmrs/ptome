@@ -144,10 +144,12 @@ final class PdfBool extends PdfObject
   bool value
   int hashCode
   void writeTo(BytesBuilder out)
-final class PdfCanvas implements Canvas
+final class PdfCanvas implements StructureCanvas
   double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style)
   double text(String text, double x, double y, TextStyle style)
+  void beginArtifact()
   void beginMarkedContent(String tag, {String? actualText})
+  void beginStructure(StructureElement element)
   void circle(double cx, double cy, double radius)
   void clearSoftMask()
   void clip({bool evenOdd = false})
@@ -155,8 +157,10 @@ final class PdfCanvas implements Canvas
   void curveTo(double x1, double y1, double x2, double y2, double x3, double y3)
   void dash(List<double> pattern, [double phase = 0])
   void ellipse(double cx, double cy, double rx, double ry)
+  void endArtifact()
   void endMarkedContent()
   void endPath()
+  void endStructure()
   void fill({bool evenOdd = false})
   void fillAndStroke({bool evenOdd = false})
   void form(PdfForm form)
@@ -197,13 +201,14 @@ final class PdfDocument implements LayoutDocument<PdfPage>
   PageMode? nonFullScreenPageMode
   PageMode? pageMode
   PdfDestination? openAction (settable)
-  PdfDocument({PdfInfo info = const PdfInfo(), String? language, PageMode? pageMode, PageMode? nonFullScreenPageMode, bool displayTitle = false})
+  PdfDocument({PdfInfo info = const PdfInfo(), String? language, PageMode? pageMode, PageMode? nonFullScreenPageMode, bool displayTitle = false, bool tagged = false})
   PdfInfo info
   PdfOutlineItem addOutline(String title, LinkTarget? target, {bool open = false, bool bold = false, bool italic = false, RgbColor? color})
   PdfPage addPage(Rect mediaBox, {Rect? cropBox, Rect? bleedBox, Rect? trimBox, Rect? artBox, int rotation = 0})
   String? language
   Uint8List save({PdfWriterOptions options = const PdfWriterOptions()})
   bool displayTitle
+  bool tagged
   void addAnchor(String name, PdfPage page, double left, double top)
   void addDestination(String name, PdfDestination destination)
   void labelPages(int pageIndex, PageLabel label)
@@ -226,7 +231,7 @@ final class PdfFormatException implements Exception
   String toString()
 final class PdfInfo
   List<String> contributors
-  PdfInfo({String? title, String? author, String? subject, String? keywords, String? creator, String? producer, bool? trapped, String? pdfxVersion, String? identifier, List<String> contributors = const [], String? rights})
+  PdfInfo({String? title, String? author, String? subject, String? keywords, String? creator, String? producer, bool? trapped, String? pdfxVersion, String? identifier, List<String> contributors = const [], String? rights, int? pdfuaPart})
   String? author
   String? creator
   String? identifier
@@ -237,6 +242,7 @@ final class PdfInfo
   String? subject
   String? title
   bool? trapped
+  int? pdfuaPart
 final class PdfInt extends PdfObject
   PdfInt(int value)
   bool ==(Object other)

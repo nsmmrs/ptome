@@ -83,10 +83,11 @@ final class PdfPage implements LayoutPage {
   /// compression and its content is as long as it was.
   StreamPayload? contentPayload;
 
-  final List<(Rect, LinkTarget)> _links = [];
+  final List<(Rect, LinkTarget, StructureElement?)> _links = [];
 
   @override
-  void link(Rect rect, LinkTarget target) => _links.add((rect, target));
+  void link(Rect rect, LinkTarget target) =>
+      _links.add((rect, target, canvasElement(canvas)));
 
   /// The page's width.
   double get width => mediaBox.width;
@@ -391,7 +392,17 @@ final class PdfDocument implements LayoutDocument<PdfPage> {
     this.pageMode,
     this.nonFullScreenPageMode,
     this.displayTitle = false,
+    this.tagged = false,
   });
+
+  /// Whether the document is a tagged PDF (ISO 32000-2, 14.8): its pages'
+  /// content marked as the elements of its logical structure their
+  /// canvases are told it is ([StructureCanvas]), or as artifacts, its
+  /// structure tree written with it, its links in it.
+  final bool tagged;
+
+  /// The logical structure painted on the pages, when [tagged].
+  final _StructureTree _structure = _StructureTree();
 
   /// The document information.
   final PdfInfo info;
@@ -448,6 +459,7 @@ final class PdfDocument implements LayoutDocument<PdfPage> {
       artBox: artBox,
       rotation: rotation,
     );
+    if (tagged) tagCanvas(page.canvas, _structure.page(_pages.length));
     _pages.add(page);
     return page;
   }
@@ -576,12 +588,17 @@ final class _Saver {
       pages,
     );
     final info = writer.writeInfo(document.info);
+    final structure = document.tagged ? _writeStructure() : null;
     writer
       ..write(
         PdfDict({
           'Type': const PdfName('Catalog'),
           'Pages': pages,
           'Metadata': info.metadata,
+          if (structure != null) ...{
+            'MarkInfo': PdfDict({'Marked': const PdfBool(true)}),
+            'StructTreeRoot': structure,
+          },
           'Outlines': ?_writeOutline(),
           if (document._destinations.isNotEmpty)
             'Names': PdfDict({'Dests': _destinationTree()}),
@@ -634,6 +651,7 @@ final class _Saver {
   }
 
   void _writePage(PdfPage page, PdfRef parent) {
+    closeCanvasMarks(page.canvas);
     final data = canvasContent(page.canvas);
     final options = writer.options;
     final content = writer.write(switch (page.contentPayload) {
@@ -651,18 +669,29 @@ final class _Saver {
               ),
       _ => PdfStream(data),
     });
-    final annotations = [
-      for (final (rect, target) in page._links)
-        writer.write(
-          PdfDict({
-            'Type': const PdfName('Annot'),
-            'Subtype': const PdfName('Link'),
-            'Rect': rect.toArray(),
-            'Border': PdfArray.numbers([0, 0, 0]),
-            ..._linkEntries(target),
-          }),
-        ),
-    ];
+    final tagged = document.tagged;
+    final annotations = <PdfRef>[];
+    for (final (rect, target, element) in page._links) {
+      final ref = writer.reserve();
+      // (In a tagged document, each link a Link element of the element
+      // whose text it is, the annotation described.)
+      final key = tagged ? _structure.link(ref, page, element) : null;
+      writer.write(
+        PdfDict({
+          'Type': const PdfName('Annot'),
+          'Subtype': const PdfName('Link'),
+          'Rect': rect.toArray(),
+          'Border': PdfArray.numbers([0, 0, 0]),
+          ..._linkEntries(target),
+          if (key != null) ...{
+            'StructParent': PdfInt(key),
+            'Contents': PdfString.text(_describe(target)),
+          },
+        }),
+        ref,
+      );
+      annotations.add(ref);
+    }
     writer.write(
       PdfDict({
         'Type': const PdfName('Page'),
@@ -677,9 +706,121 @@ final class _Saver {
         'Contents': content,
         if (annotations.isNotEmpty) 'Annots': PdfArray(annotations),
         if (canvasUsesTransparency(page.canvas)) 'Group': _group(null),
+        if (tagged) ...{
+          'StructParents': PdfInt(document._pages.indexOf(page)),
+          // (Annotations in the order of the structure, as PDF/UA has
+          // them.)
+          if (annotations.isNotEmpty) 'Tabs': const PdfName('S'),
+        },
       }),
       _pageRefs[page],
     );
+  }
+
+  _StructureTree get _structure => document._structure;
+
+  /// What a link to [target] is, for assistive technology.
+  static String _describe(LinkTarget target) => switch (target) {
+    UriTarget(:final uri) => uri,
+    NamedTarget(:final name) => 'Go to $name',
+    _ => 'Link',
+  };
+
+  /// The structure tree, its root's reference: each element's dictionary
+  /// (its role, parent, kids: elements, marked content on a page, link
+  /// annotations), the parent tree from the pages' marked-content ids and
+  /// the links' keys to their elements.
+  PdfRef _writeStructure() {
+    final structure = _structure;
+    final root = writer.reserve();
+    final document = _StructureNode(StructureElement('Document'));
+    document.kids.addAll(structure.roots);
+    final refs = <_StructureNode, PdfRef>{};
+    void reserve(_StructureNode node) {
+      refs[node] = writer.reserve();
+      for (final kid in node.kids) {
+        if (kid is _StructureNode) reserve(kid);
+      }
+    }
+
+    reserve(document);
+    void write(_StructureNode node, PdfRef parent) {
+      final element = node.element;
+      final kids = <PdfObject>[];
+      for (final kid in node.kids) {
+        switch (kid) {
+          case final _StructureNode child:
+            write(child, refs[node]!);
+            kids.add(refs[child]!);
+          case (final int page, final int mcid):
+            kids.add(
+              PdfDict({
+                'Type': const PdfName('MCR'),
+                'Pg': _pageRefs[this.document._pages[page]]!,
+                'MCID': PdfInt(mcid),
+              }),
+            );
+          case (final PdfRef annotation, final PdfPage page):
+            kids.add(
+              PdfDict({
+                'Type': const PdfName('OBJR'),
+                'Obj': annotation,
+                'Pg': _pageRefs[page]!,
+              }),
+            );
+        }
+      }
+      final attributes = element.attributes;
+      writer.write(
+        PdfDict({
+          'Type': const PdfName('StructElem'),
+          'S': PdfName(element.role),
+          'P': parent,
+          if (kids.isNotEmpty) 'K': PdfArray(kids),
+          if (element.alt case final alt?) 'Alt': PdfString.text(alt),
+          if (element.language case final language?)
+            'Lang': PdfString.text(language),
+          if (element.actualText case final text?)
+            'ActualText': PdfString.text(text),
+          if (attributes.isNotEmpty)
+            'A': PdfDict({
+              'O': PdfName(switch (element.role) {
+                'Table' || 'TR' || 'TH' || 'TD' => 'Table',
+                'L' || 'LI' || 'Lbl' || 'LBody' => 'List',
+                _ => 'Layout',
+              }),
+              for (final MapEntry(:key, :value) in attributes.entries)
+                key: value.startsWith('/')
+                    ? PdfName(value.substring(1))
+                    : PdfString.text(value),
+            }),
+        }),
+        refs[node],
+      );
+    }
+
+    write(document, root);
+    final nums = <PdfObject>[];
+    for (final (page, marks) in structure.marks.indexed) {
+      nums
+        ..add(PdfInt(page))
+        ..add(PdfArray([for (final node in marks) refs[node]!]));
+    }
+    for (final (key, node) in structure.links) {
+      nums
+        ..add(PdfInt(key))
+        ..add(refs[node]!);
+    }
+    writer.write(
+      PdfDict({
+        'Type': const PdfName('StructTreeRoot'),
+        'K': refs[document]!,
+        'ParentTree': PdfDict({'Nums': PdfArray(nums)}),
+        'ParentTreeNextKey': PdfInt(structure.nextKey),
+      }),
+      root,
+    );
+    return root;
   }
 
   /// The `Dest` or `A` (action) entry for [target].
@@ -912,5 +1053,90 @@ final class _Saver {
         ],
       ]),
     });
+  }
+}
+
+/// A node of the structure tree: an element, its kids in order (nodes,
+/// marked content as a page index and a marked-content id, link
+/// annotations as their reference and page).
+final class _StructureNode {
+  new(this.element);
+
+  final StructureElement element;
+  final List<Object> kids = [];
+}
+
+/// The logical structure painted on a tagged document's pages.
+final class _StructureTree {
+  /// Each element's node.
+  final Map<StructureElement, _StructureNode> _nodes = Map.identity();
+
+  /// The nodes begun at the top, in order.
+  final List<_StructureNode> roots = [];
+
+  /// Each page's marked content: the node of each marked-content id.
+  final List<List<_StructureNode>> marks = [];
+
+  /// The links' keys in the parent tree and their Link nodes.
+  final List<(int, _StructureNode)> links = [];
+
+  /// The next key of the parent tree (the pages' are their indices).
+  int get nextKey => marks.length + links.length;
+
+  _StructureNode _node(StructureElement element, StructureElement? parent) {
+    if (_nodes[element] case final node?) return node;
+    final node = _nodes[element] = _StructureNode(element);
+    switch (parent) {
+      case final parent? when _nodes[parent] != null:
+        _nodes[parent]!.kids.add(node);
+      case _:
+        roots.add(node);
+    }
+    return node;
+  }
+
+  /// The recorder of page [index]'s structure.
+  StructureRecorder page(int index) {
+    while (marks.length <= index) {
+      marks.add([]);
+    }
+    return _PageStructure(this, index);
+  }
+
+  /// A Link element for the annotation [ref] on [page], in [element] (at
+  /// the top without one): the annotation's key in the parent tree.
+  int link(PdfRef ref, PdfPage page, StructureElement? element) {
+    final node = _StructureNode(StructureElement('Link'))
+      ..kids.add((ref, page));
+    switch (element) {
+      case final element? when _nodes[element] != null:
+        _nodes[element]!.kids.add(node);
+      case _:
+        roots.add(node);
+    }
+    final key = marks.length + links.length;
+    links.add((key, node));
+    return key;
+  }
+}
+
+/// Records one page's structure in the tree.
+final class _PageStructure implements StructureRecorder {
+  const new(this.tree, this.index);
+
+  final _StructureTree tree;
+  final int index;
+
+  @override
+  void begin(StructureElement element, StructureElement? parent) =>
+      tree._node(element, parent);
+
+  @override
+  int mark(StructureElement element) {
+    final node = tree._node(element, null);
+    final marks = tree.marks[index];
+    node.kids.add((index, marks.length));
+    marks.add(node);
+    return marks.length - 1;
   }
 }

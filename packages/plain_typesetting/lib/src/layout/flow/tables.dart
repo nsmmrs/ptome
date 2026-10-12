@@ -268,6 +268,8 @@ extension _Tables on _Pass {
       double y,
       double height, {
       required bool openBottom,
+      required _GridRow row,
+      bool header = false,
       Color? stripe,
     }) {
       final width = _cellWidth(col, cell, widths);
@@ -298,6 +300,10 @@ extension _Tables on _Pass {
           fit.height,
           openBottom: openBottom || fit.rest != null,
           stripe: stripe,
+          row: row,
+          header: header,
+          // (A header row repeated at the top of the table's next piece.)
+          repeated: header && continued,
         ),
       );
       return fit.rest;
@@ -323,7 +329,16 @@ extension _Tables on _Pass {
           final height = heights
               .sublist(i, i + span)
               .fold<double>(0, (a, b) => a + b);
-          cellAt(col, cell, y, height, openBottom: false, stripe: stripe);
+          cellAt(
+            col,
+            cell,
+            y,
+            height,
+            openBottom: false,
+            stripe: stripe,
+            row: row,
+            header: !body,
+          );
         }
         y += heights[i];
       }
@@ -393,7 +408,15 @@ extension _Tables on _Pass {
               final height = heights
                   .sublist(r, r + span)
                   .fold<double>(0, (a, b) => a + b);
-              cellAt(col, cell, y, height, openBottom: false, stripe: stripe);
+              cellAt(
+                col,
+                cell,
+                y,
+                height,
+                openBottom: false,
+                stripe: stripe,
+                row: group[r],
+              );
             } else {
               final height = heights
                   .sublist(r, fitting)
@@ -405,6 +428,7 @@ extension _Tables on _Pass {
                 height,
                 openBottom: true,
                 stripe: stripe,
+                row: group[r],
               );
               carried.add((
                 col,
@@ -438,6 +462,7 @@ extension _Tables on _Pass {
             room,
             openBottom: true,
             stripe: stripe,
+            row: row,
           );
           carried.add((col, TableCell._rest(cell, [?left], span)));
         }
@@ -457,6 +482,7 @@ extension _Tables on _Pass {
         rest == null ? style.anchor : null,
         style.tag,
         box.borders,
+        tagged: style.structure != null,
       ),
       height,
       rest == null ? null : TableBox._rest(box, [...headers, ...rest], widths),

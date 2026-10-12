@@ -181,6 +181,7 @@ extension _Lists on PdfConverter {
             bottom: nested ? 0 : _marginBelow(node, fallback: 'prose'),
           ),
           anchor: node.id,
+          structure: _struct('L'),
         ),
       ),
     );
@@ -340,7 +341,16 @@ extension _Lists on PdfConverter {
     }
     _traverse(item);
     _out = saved;
-    _out.add(BlockBox(children, style: BoxStyle(anchor: item.id)));
+    _out.add(
+      BlockBox(
+        // (Tagged, the item's content its body, as a list item's holds
+        // its label and its body alone.)
+        _pdfUa
+            ? [BlockBox(children, style: BoxStyle(structure: _struct('LBody')))]
+            : children,
+        style: BoxStyle(anchor: item.id, structure: _struct('LI')),
+      ),
+    );
   }
 
   /// Converts the description list [node].

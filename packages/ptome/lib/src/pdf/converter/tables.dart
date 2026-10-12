@@ -605,6 +605,7 @@ extension _Tables on PdfConverter {
           'right' => BoxAlign.right,
           _ => BoxAlign.left,
         },
+        style: BoxStyle(structure: _struct('Table')),
       ),
     );
   }

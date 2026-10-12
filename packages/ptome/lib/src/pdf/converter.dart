@@ -623,6 +623,18 @@ final class PdfConverter extends BuiltInConverter
   /// How many paragraphs the engine's paragraphs set (a debug count).
   int _engineParagraphCount = 0;
 
+  /// Whether the PDF is to conform to PDF/UA-1 (`pdf-ua`, the modern
+  /// engine): tagged, its content's logical structure recorded for
+  /// assistive technology (FEAT-cs3j22).
+  bool get _pdfUa =>
+      _document.hasAttr('pdf-ua') &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
+  /// An element of the logical structure of [role] (with [alt], a
+  /// figure's description) for a box, when the PDF is tagged ([_pdfUa]).
+  StructureElement? _struct(String role, {String? alt}) =>
+      _pdfUa ? StructureElement(role, alt: alt) : null;
+
   /// Whether plain paragraphs are set by the engine's paragraphs (the
   /// modern engine's, FEAT-n1bkgf; `base_text_engine: box` keeps them in
   /// this converter's text box).

@@ -141,6 +141,35 @@ final class _Painter {
   final List<TypesetLine> lines = [];
 }
 
+/// [placed] painted as [element]'s content (on a [StructureCanvas]).
+final class _PlacedTagged extends _Placed {
+  const new(this.element, this.placed);
+
+  final StructureElement element;
+  final _Placed placed;
+
+  @override
+  double get height => placed.height;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) => placed.visit(x, top, anchor, mark, tag);
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    final canvas = painter.canvas;
+    if (canvas is! StructureCanvas) return placed.paint(painter, x, top);
+    canvas.beginStructure(element);
+    placed.paint(painter, x, top);
+    canvas.endStructure();
+  }
+}
+
 final class _PlacedSpace extends _Placed {
   const new(this.height);
 
@@ -240,6 +269,15 @@ final class _PlacedBlock extends _Placed {
     final bottomMargin = openBottom ? 0 : marginBottom ?? style.margin.bottom;
     final boxHeight = height - this.top - bottomMargin;
     final rect = Rect(left, boxTop - boxHeight, boxWidth, boxHeight);
+    // (A block's background and border no part of its content.)
+    final structure = switch (canvas) {
+      final StructureCanvas canvas
+          when style.background != null ||
+              style.border.widths != EdgeInsets.zero =>
+        canvas,
+      _ => null,
+    };
+    structure?.beginArtifact();
     final uniform =
         border.widths.top == border.widths.left &&
         border.widths.left == border.widths.right &&
@@ -307,6 +345,7 @@ final class _PlacedBlock extends _Placed {
       }
       canvas.restore();
     }
+    structure?.endArtifact();
     style.decoration?.call(
       painter.page,
       rect,
@@ -614,10 +653,22 @@ final class _PlacedCell {
     this.content,
     this.contentHeight, {
     required this.openBottom,
+    required this.row,
     this.stripe,
+    this.header = false,
+    this.repeated = false,
   });
 
   final TableCell cell;
+
+  /// The row the cell starts in.
+  final Object row;
+
+  /// Whether the cell is in a header row.
+  final bool header;
+
+  /// Whether the cell is a header row's repeated on a table's later piece.
+  final bool repeated;
 
   /// The background of the cell's row, for a cell without its own.
   final Color? stripe;
@@ -650,9 +701,25 @@ final class _PlacedCell {
 }
 
 final class _PlacedTable extends _Placed {
-  const new(this.cells, this.height, this.anchor, this.tag, this.borders);
+  const new(
+    this.cells,
+    this.height,
+    this.anchor,
+    this.tag,
+    this.borders, {
+    this.tagged = false,
+  });
 
   final List<_PlacedCell> cells;
+
+  /// Whether the table's rows and cells are elements of the document's
+  /// structure (the table is one).
+  final bool tagged;
+
+  /// The `TR` of each row, the `TH` or `TD` of each cell, the same
+  /// elements for each piece of a table.
+  static final Expando<StructureElement> _rows = Expando();
+  static final Expando<StructureElement> _cells = Expando();
 
   /// When the cells' borders are painted.
   final TableBorders borders;
@@ -687,6 +754,12 @@ final class _PlacedTable extends _Placed {
   @override
   void paint(_Painter painter, double x, double top) {
     final canvas = painter.canvas;
+    // (The cells' backgrounds and borders no part of the table's content.)
+    final structure = switch (canvas) {
+      final StructureCanvas canvas when tagged => canvas,
+      _ => null,
+    };
+    structure?.beginArtifact();
     for (final placed in cells) {
       if (placed.cell.background ?? placed.stripe case final background?) {
         canvas
@@ -704,22 +777,52 @@ final class _PlacedTable extends _Placed {
           ..restore();
       }
     }
-    void content(_PlacedCell placed) => placed.content?.paint(
-      painter,
-      x + placed.x + placed.cell.padding.left,
-      top - placed._contentTop,
-    );
+    structure?.endArtifact();
+    void content(_PlacedCell placed) {
+      void paint() => placed.content?.paint(
+        painter,
+        x + placed.x + placed.cell.padding.left,
+        top - placed._contentTop,
+      );
+      if (!tagged || canvas is! StructureCanvas) return paint();
+      // (A repeated header no part of the content; the others a row's
+      // cells, header cells heading their columns.)
+      if (placed.repeated) {
+        canvas.beginArtifact();
+        paint();
+        canvas.endArtifact();
+        return;
+      }
+      final cell = placed.cell._source ?? placed.cell;
+      canvas
+        ..beginStructure(_rows[placed.row] ??= StructureElement('TR'))
+        ..beginStructure(
+          _cells[cell] ??= placed.header
+              ? StructureElement('TH', attributes: const {'Scope': '/Column'})
+              : StructureElement('TD'),
+        );
+      paint();
+      canvas
+        ..endStructure()
+        ..endStructure();
+    }
+
+    void border(_PlacedCell placed) {
+      structure?.beginArtifact();
+      _paintBorder(painter, placed, x, top);
+      structure?.endArtifact();
+    }
+
     if (borders == TableBorders.withCells) {
       for (final placed in cells) {
-        _paintBorder(painter, placed, x, top);
+        border(placed);
         content(placed);
       }
       return;
     }
-    cells.forEach(content);
-    for (final placed in cells) {
-      _paintBorder(painter, placed, x, top);
-    }
+    cells
+      ..forEach(content)
+      ..forEach(border);
   }
 
   /// Paints the border of [placed] (its decoration, if it has one).

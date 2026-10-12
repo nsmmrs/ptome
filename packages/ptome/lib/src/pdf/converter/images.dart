@@ -405,6 +405,8 @@ extension _Images on PdfConverter {
             margin: EdgeInsets(
               bottom: caption != null && captionBottom ? 0 : margin,
             ),
+            // (A figure, its alternate text what is read for it.)
+            structure: _struct('Figure', alt: node.attr('alt') ?? ''),
           ),
         ),
       );

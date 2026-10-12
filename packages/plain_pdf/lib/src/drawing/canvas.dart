@@ -81,6 +81,34 @@ PdfCanvas formCanvas(PdfForm form) => form._canvas;
 @internal
 PdfCanvas newCanvas() => PdfCanvas._();
 
+/// Where a tagged page's canvas records the logical structure painted on
+/// it (the document's structure tree).
+@internal
+abstract interface class StructureRecorder {
+  /// [element] begun, inside [parent] (null: at the top).
+  void begin(StructureElement element, StructureElement? parent);
+
+  /// The marked-content id of the next piece of [element]'s content on
+  /// the page.
+  int mark(StructureElement element);
+}
+
+/// Has [canvas] record the structure painted on it in [recorder]: its
+/// content marked as its elements' (`BDC` with an `MCID`) or as
+/// artifacts (ISO 32000-2, 14.7.2 and 14.8.2.2).
+@internal
+void tagCanvas(PdfCanvas canvas, StructureRecorder recorder) =>
+    canvas._recorder = recorder;
+
+/// The element whose content [canvas] is painting now, if any (a link's).
+@internal
+StructureElement? canvasElement(PdfCanvas canvas) =>
+    canvas._elements.lastOrNull;
+
+/// Ends the marked-content sequence open at the end of [canvas]'s content.
+@internal
+void closeCanvasMarks(PdfCanvas canvas) => canvas._unmark();
+
 /// [canvas] as the PDF canvas it must be for [what] (a PDF image, form or
 /// page, which belong to a PDF's resources) to paint on.
 PdfCanvas pdfCanvasOf(Canvas canvas, String what) => switch (canvas) {
@@ -223,8 +251,79 @@ final class GraphicsStateResource extends Resource {
 }
 
 /// A page's or form's content: operators appended in order.
-final class PdfCanvas implements Canvas {
+final class PdfCanvas implements StructureCanvas {
   new _();
+
+  /// Where the structure painted is recorded (a tagged page's).
+  StructureRecorder? _recorder;
+
+  /// The elements begun and not ended, innermost last.
+  final List<StructureElement> _elements = [];
+
+  /// How many artifacts are begun and not ended.
+  int _artifacts = 0;
+
+  /// The save depth the open marked-content sequence began at, if one is.
+  int? _markedAt;
+
+  /// Begins a marked-content sequence for the content about to be painted,
+  /// on a tagged page, unless one is open: the innermost element's, its
+  /// next marked-content id, or an artifact's.
+  void _mark() {
+    final recorder = _recorder;
+    if (recorder == null || _markedAt != null) return;
+    _markedAt = _depth;
+    if (_artifacts > 0 || _elements.isEmpty) {
+      _content
+        ..name('Artifact')
+        ..operator(' BMC');
+      return;
+    }
+    final element = _elements.last;
+    _content
+      ..name(element.role)
+      ..byte(0x20)
+      ..bytes(PdfDict({'MCID': PdfInt(recorder.mark(element))}).toBytes())
+      ..operator(' BDC');
+  }
+
+  /// Ends the open marked-content sequence, if any.
+  void _unmark() {
+    if (_markedAt == null) return;
+    _markedAt = null;
+    _op('EMC');
+  }
+
+  @override
+  void beginStructure(StructureElement element) {
+    _noPath('a structure element');
+    _unmark();
+    _recorder?.begin(element, _elements.lastOrNull);
+    _elements.add(element);
+  }
+
+  @override
+  void endStructure() {
+    _noPath('a structure element');
+    if (_elements.isEmpty) throw StateError('endStructure() without begin');
+    _unmark();
+    _elements.removeLast();
+  }
+
+  @override
+  void beginArtifact() {
+    _noPath('an artifact');
+    _unmark();
+    _artifacts++;
+  }
+
+  @override
+  void endArtifact() {
+    _noPath('an artifact');
+    if (_artifacts == 0) throw StateError('endArtifact() without begin');
+    _unmark();
+    _artifacts--;
+  }
 
   final ByteWriter _content = ByteWriter();
 
@@ -241,6 +340,10 @@ final class PdfCanvas implements Canvas {
       ? '$_depth save() calls without restore()'
       : _path
       ? 'a path was left without painting it'
+      : _elements.isNotEmpty
+      ? '${_elements.length} structure elements begun without end'
+      : _artifacts != 0
+      ? '$_artifacts artifacts begun without end'
       : null;
 
   // Each operator is written straight to bytes, its operands formatted as
@@ -339,6 +442,9 @@ final class PdfCanvas implements Canvas {
   void restore() {
     _noPath('restore()');
     if (_depth == 0) throw StateError('restore() without save()');
+    // (A marked-content sequence begun inside what is restored ends
+    // before it: the two nest.)
+    if (_markedAt case final at? when at >= _depth) _unmark();
     _depth -= 1;
     _op('Q');
   }
@@ -476,6 +582,7 @@ final class PdfCanvas implements Canvas {
   /// Starts a subpath at ([x], [y]) (`m`).
   @override
   void moveTo(double x, double y) {
+    if (!_path) _mark();
     _path = true;
     _op2(x, y, 'm');
   }
@@ -516,6 +623,7 @@ final class PdfCanvas implements Canvas {
   /// A rectangle (`re`).
   @override
   void rect(Rect rect) {
+    if (!_path) _mark();
     _path = true;
     _op4(rect.left, rect.bottom, rect.width, rect.height, 're');
   }
@@ -596,6 +704,7 @@ final class PdfCanvas implements Canvas {
   /// first to fill it with a gradient.
   void shade(PdfShading shading) {
     _noPath('shade()');
+    _mark();
     _named('sh', _use('Shading', shading, ShadingResource(shading), 'Sh'));
   }
 
@@ -604,6 +713,7 @@ final class PdfCanvas implements Canvas {
   /// Paints [image] into [rect].
   void image(PdfImage image, Rect rect) {
     _noPath('image()');
+    _mark();
     final name = _use('XObject', image, ImageResource(image), 'Im');
     _op('q');
     _op6(rect.width, 0, 0, rect.height, rect.left, rect.bottom, 'cm');
@@ -614,6 +724,7 @@ final class PdfCanvas implements Canvas {
   /// Paints [page], a page of another file, into [rect].
   void page(ImportedPage page, Rect rect) {
     _noPath('page()');
+    _mark();
     if (page.group != null) _usesTransparency = true;
     final name = _use('XObject', page, ImportedPageResource(page), 'Pg');
     final m = page.placement(rect);
@@ -626,6 +737,7 @@ final class PdfCanvas implements Canvas {
   /// Paints [form] (`Do`).
   void form(PdfForm form) {
     _noPath('form()');
+    _mark();
     if (form.group != null || form._canvas._usesTransparency) {
       _usesTransparency = true;
     }
@@ -641,6 +753,7 @@ final class PdfCanvas implements Canvas {
   @override
   void beginMarkedContent(String tag, {String? actualText}) {
     _noPath('marked content');
+    _mark();
     _content.name(tag);
     if (actualText != null) {
       _content
@@ -669,6 +782,7 @@ final class PdfCanvas implements Canvas {
   @override
   double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style) {
     _noPath('text');
+    _mark();
     final font = _pdfFont(style);
     // A single-byte font shows the glyphs in runs of one simple font each.
     final runs = switch (font) {

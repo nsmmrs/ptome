@@ -110,6 +110,13 @@ Asciidoctor project.
 - `:quotation-lint:` (PDF): a quotation of a hundred words or more run
   in, or a block quotation shorter than five lines, is reported (Chicago
   13.9), for the scholarly-monograph look's books.
+- `-a pdf-ua` (modern engine): a tagged PDF conforming to PDF/UA-1, its
+  structure tree recording headings, paragraphs, lists, tables (header
+  cells with their scope), figures with their alternate text and links,
+  running content and backgrounds as artifacts, the language given
+  (`en` by default) (FEAT-cs3j22). veraPDF finds the Hypermedia Systems
+  book conforming. The text box no longer draws an anchor's placeholder
+  (an invisible `.notdef` that took room on the page).
 - The modern engine's paragraphs (plain_typesetting's) now also set
   paragraphs with protrusion (`base_overhang`), font expansion and
   `base_text_align_last`, and break each paragraph as the text box would

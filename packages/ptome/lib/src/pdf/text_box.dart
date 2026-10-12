@@ -2415,7 +2415,8 @@ base class _Wrap {
     var anyText = false;
     double? markerAscender;
     for (final item in _consumed) {
-      var text = item.text.replaceAll(_zwsp, '');
+      // (An anchor's placeholder, of no width, not drawn either.)
+      var text = item.text.replaceAll(_zwsp, '').replaceAll(_nul, '');
       if (item.excludeTrailingWhiteSpace) {
         text = _rstrip(text);
         if (item.normalizedSoftHyphen && text.isNotEmpty) {

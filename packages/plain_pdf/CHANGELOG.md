@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Tagged PDF (`PdfDocument(tagged: true)`): a page's canvas is a
+  `StructureCanvas`, its content marked as the elements it is told it is
+  (an MCID each) or as artifacts; the document gets its structure tree
+  (marked content and link annotations as each element's kids, a
+  `Document` root), the parent tree, `/MarkInfo`, each page's
+  `/StructParents` and `/Tabs /S`, each link a `Link` element with its
+  annotation described (`/Contents`). `PdfInfo.pdfuaPart` writes PDF/UA's
+  identification in the XMP metadata.
+- `.notdef`, shown for a character a font lacks, reads as U+FFFD in the
+  ToUnicode map (every glyph shown maps to text, as PDF/UA has it).
 - `EmbeddedFont.shaped`: an embedded font from a parsed font's shaper,
   shared by the documents that embed it (its kerning too).
 - `EmbeddedFont.parse(singleByte: true)` writes a font with TrueType

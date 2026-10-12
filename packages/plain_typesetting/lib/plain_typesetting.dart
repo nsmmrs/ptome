@@ -113,6 +113,7 @@ export 'src/layout/paragraph.dart'
 export 'src/link.dart' show LinkTarget, NamedTarget, UriTarget;
 export 'src/math_layout.dart' show MathBox, MathLayout;
 export 'src/page.dart' show LayoutDocument, LayoutPage;
+export 'src/structure.dart' show StructureCanvas, StructureElement;
 
 /// The version of plain_typesetting.
 const String plainTypesettingVersion = '0.1.0-dev';

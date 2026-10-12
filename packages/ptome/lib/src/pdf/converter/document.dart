@@ -441,6 +441,7 @@ extension _DocumentParts on PdfConverter {
       return '';
     }
     _phase('pdf layout');
+    if (_pdfUa) _tagUntagged(_out, inElement: false);
     var result = layout.layout(_out);
     // Where the body, the table of contents and each anchor are, and the
     // front matter they make.
@@ -557,11 +558,14 @@ extension _DocumentParts on PdfConverter {
               identifier: info.identifier,
               contributors: info.contributors,
               rights: info.rights,
+              pdfuaPart: info.pdfuaPart,
             ),
       pageMode: pageMode,
       nonFullScreenPageMode: nonFullScreen,
       displayTitle: true,
-      language: document.attr('lang'),
+      // (PDF/UA: the document's language always given.)
+      language: document.attr('lang') ?? (_pdfUa ? 'en' : null),
+      tagged: _pdfUa,
     );
     if (standard != null) pdf.outputIntents.add(standard);
     _phase('pdf render');
@@ -849,6 +853,7 @@ extension _DocumentParts on PdfConverter {
       String category, {
       bool normalize = true,
       String? role,
+      String structure = 'P',
     }) {
       var font = _themeFont(category, base);
       if (role != null) font = _themeFont('role_$role', font);
@@ -874,6 +879,7 @@ extension _DocumentParts on PdfConverter {
                     ? null
                     : math.tan(degrees.toDouble() * math.pi / 180),
               ),
+              style: BoxStyle(structure: _struct(structure)),
             ),
           ],
           style: BoxStyle(
@@ -892,6 +898,7 @@ extension _DocumentParts on PdfConverter {
       String text,
       String category, {
       bool normalize = true,
+      String structure = 'P',
     }) {
       gap(
         slot.marginTop ??
@@ -902,6 +909,7 @@ extension _DocumentParts on PdfConverter {
         category,
         normalize: normalize,
         role: slot.role,
+        structure: structure,
       );
       gap(
         slot.marginBottom ??
@@ -916,10 +924,12 @@ extension _DocumentParts on PdfConverter {
       switch (slot) {
         case _TitleSlot(part: TitlePart.title)
             when _s('title_page_title_display') != 'none' && title != null:
+          // (The book's title its first heading.)
           place(
             slot,
             subtitled ? title.main : title.combined,
             'title_page_title',
+            structure: 'H1',
           );
         case _TitleSlot(part: TitlePart.subtitle)
             when _s('title_page_subtitle_display') != 'none':
@@ -1320,6 +1330,68 @@ extension _DocumentParts on PdfConverter {
 
   /// The information of the PDF (the gem's `build_pdf_info`; the producer
   /// is Ptome unless the document names one).
+  /// [boxes] (a tagged PDF's, [_pdfUa]) with each block of text no
+  /// element holds yet a paragraph (`P`): its text read, not an artifact.
+  /// Within an element of text ([inElement]: a heading, a paragraph, a
+  /// figure) none is.
+  static void _tagUntagged(List<LayoutBox> boxes, {required bool inElement}) {
+    for (final (i, box) in boxes.indexed) {
+      final element = box.style.structure;
+      // (The roles that hold text themselves; the others hold blocks.)
+      final holds =
+          inElement ||
+          switch (element?.role) {
+            null ||
+            'Document' ||
+            'Part' ||
+            'Sect' ||
+            'Div' ||
+            'L' ||
+            'LI' ||
+            'LBody' ||
+            'Table' ||
+            'TR' ||
+            'TH' ||
+            'TD' ||
+            'BlockQuote' ||
+            'Note' => false,
+            _ => true,
+          };
+      switch (box) {
+        case CustomBox(:final content, :final style)
+            when element == null && !inElement:
+          boxes[i] = CustomBox(
+            content,
+            style: style.withStructure(StructureElement('P')),
+          );
+        case ParagraphBox(
+              :final paragraph,
+              :final style,
+              :final orphans,
+              :final widows,
+              :final lineBreaker,
+            )
+            when element == null && !inElement:
+          boxes[i] = ParagraphBox(
+            paragraph,
+            style: style.withStructure(StructureElement('P')),
+            orphans: orphans,
+            widows: widows,
+            lineBreaker: lineBreaker,
+          );
+        case BlockBox(:final children) || ColumnsBox(:final children):
+          _tagUntagged(children, inElement: holds);
+        case TableBox(:final rows):
+          for (final row in rows) {
+            for (final cell in row.cells) {
+              _tagUntagged(cell.content, inElement: holds);
+            }
+          }
+        case _:
+      }
+    }
+  }
+
   PdfInfo _info(Document doc) {
     String? plain(String? text) =>
         text == null ? null : PdfConverter._plain(text);
@@ -1348,6 +1420,7 @@ extension _DocumentParts on PdfConverter {
           if (editor.trim().isNotEmpty) plain(editor.trim())!,
       ],
       rights: plain(doc.attr('copyright')),
+      pdfuaPart: _pdfUa ? 1 : null,
     );
   }
 

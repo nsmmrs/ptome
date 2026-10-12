@@ -107,19 +107,38 @@ final class LayoutResult {
         isEmpty: page.placed.every((p) => (p.$2?.height ?? 0) == 0),
         lines: painter.lines,
       );
-      template.background?.call(target.canvas, info);
+      // (What the template paints, running heads and page numbers among
+      // it, no part of the document's structure.)
+      final structure = switch (target.canvas) {
+        final StructureCanvas canvas => canvas,
+        _ => null,
+      };
+      void artifact(void Function() paint) {
+        structure?.beginArtifact();
+        paint();
+        structure?.endArtifact();
+      }
+
+      artifact(() => template.background?.call(target.canvas, info));
       final header = template.header?.call(info);
       if (!template.runningOver) {
-        _running(header, template, painter, header: true);
+        artifact(() => _running(header, template, painter, header: true));
       }
       for (final (region, placed) in [...page.placed, ...page.side]) {
         placed?.paint(painter, region.left, region.top);
       }
       if (template.runningOver) {
-        _running(header, template, painter, header: true);
+        artifact(() => _running(header, template, painter, header: true));
       }
-      _running(template.footer?.call(info), template, painter, header: false);
-      template.foreground?.call(target.canvas, info);
+      artifact(
+        () => _running(
+          template.footer?.call(info),
+          template,
+          painter,
+          header: false,
+        ),
+      );
+      artifact(() => template.foreground?.call(target.canvas, info));
       rendered.add(target);
     }
     for (final MapEntry(key: name, value: position) in anchors.entries) {

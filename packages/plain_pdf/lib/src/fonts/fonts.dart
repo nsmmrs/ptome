@@ -409,8 +409,8 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     var at = 0;
     for (final glyph in glyphs) {
       final id = glyph.id;
-      // `.notdef` stands for no character: it stays out of the ToUnicode
-      // map (and still goes into the subset).
+      // `.notdef` stands for a character the font lacks: the ToUnicode
+      // map reads it as U+FFFD (and it still goes into the subset).
       if (id == 0) {
         _usedNotdef = true;
       } else {
@@ -721,7 +721,15 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     String hex4(int v) => v.toRadixString(16).padLeft(4, '0').toUpperCase();
     String utf16(String text) =>
         [for (final unit in text.codeUnits) hex4(unit)].join();
-    final ids = _used.keys.toList()..sort();
+    // (`.notdef`, where shown for a character the font lacks, and a glyph
+    // standing for no text, read as U+FFFD, the replacement character:
+    // every glyph shown maps to text, as PDF/UA has it.)
+    final texts = {
+      if (_usedNotdef) 0: '\ufffd',
+      for (final MapEntry(:key, :value) in _used.entries)
+        key: value.isEmpty ? '\ufffd' : value,
+    };
+    final ids = texts.keys.toList()..sort();
     final out = StringBuffer()
       ..write('/CIDInit /ProcSet findresource begin\n')
       ..write('12 dict begin\nbegincmap\n')
@@ -734,7 +742,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
       final chunk = ids.sublist(start, (start + 100).clamp(0, ids.length));
       out.write('${chunk.length} beginbfchar\n');
       for (final id in chunk) {
-        out.write('<${hex4(id)}> <${utf16(_used[id]!)}>\n');
+        out.write('<${hex4(id)}> <${utf16(texts[id]!)}>\n');
       }
       out.write('endbfchar\n');
     }

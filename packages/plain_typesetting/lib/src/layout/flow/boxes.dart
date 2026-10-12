@@ -120,6 +120,7 @@ final class BoxStyle {
     this.numberLines = false,
     this.gridLine,
     this.minHeight = 0,
+    this.structure,
   });
 
   /// The space outside the border.
@@ -146,6 +147,12 @@ final class BoxStyle {
   /// go when that is past it: a pleading's court title on line 8 of its
   /// first page, whatever is above it.
   final int? gridLine;
+
+  /// What the box's content is in the document's logical structure, or
+  /// null for none of its own (its content its parent's): painted on a
+  /// [StructureCanvas], the box's content is that element's. A table's
+  /// rows and cells are its `TR`s and `TH`s or `TD`s.
+  final StructureElement? structure;
 
   /// The least height of a block's content (CSS's `min-height`): one that
   /// ends shorter, unbroken, is as tall (a paragraph shorter than its drop
@@ -281,6 +288,7 @@ final class BoxStyle {
     (VerticalAlign?,)? verticalAlign,
     (FloatSide?,)? side,
     (FloatShape?,)? sideShape,
+    (StructureElement?,)? structure,
   }) => BoxStyle(
     margin: margin ?? this.margin,
     padding: padding,
@@ -309,7 +317,12 @@ final class BoxStyle {
     numberLines: numberLines,
     gridLine: gridLine,
     minHeight: minHeight,
+    structure: structure == null ? this.structure : structure.$1,
   );
+
+  /// This style with [structure] in place of its own.
+  BoxStyle withStructure(StructureElement? structure) =>
+      _copy(structure: (structure,));
 }
 
 /// The outline of a block floating to a side ([BoxStyle.sideShape]):
@@ -1053,10 +1066,12 @@ final class TableCell {
     this.verticalAlign = VerticalAlign.top,
     this.verticalOffset,
     this.decoration,
-  }) : _openTop = false;
+  }) : _openTop = false,
+       _source = null;
 
   new _rest(TableCell cell, this.content, this.rowSpan)
-    : colSpan = cell.colSpan,
+    : _source = cell._source ?? cell,
+      colSpan = cell.colSpan,
       padding = cell.padding,
       background = cell.background,
       border = cell.border,
@@ -1098,6 +1113,9 @@ final class TableCell {
 
   /// Whether this is the rest of a cell split by a break.
   final bool _openTop;
+
+  /// The cell this is the rest of.
+  final TableCell? _source;
 }
 
 /// A table row.

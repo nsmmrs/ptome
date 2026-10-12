@@ -108,6 +108,12 @@ abstract interface class PageBreaker
 abstract interface class ShapedContent implements CustomContent
   CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
   ShapedContent()
+abstract interface class StructureCanvas implements Canvas
+  StructureCanvas()
+  void beginArtifact()
+  void beginStructure(StructureElement element)
+  void endArtifact()
+  void endStructure()
 double leftProtrusion(String char)
 double rightProtrusion(String char)
 enum BlendMode
@@ -229,8 +235,9 @@ final class BoxItem extends LineItem
   double width
 final class BoxStyle
   Border border
+  BoxStyle withStructure(StructureElement? structure)
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine, double minHeight = 0})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine, double minHeight = 0, StructureElement? structure})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -240,6 +247,7 @@ final class BoxStyle
   Map<String, String> marks
   String? anchor
   String? tag
+  StructureElement? structure
   VerticalAlign? verticalAlign
   bool cloneEdges
   bool floatBarrier
@@ -616,6 +624,13 @@ final class SpotColor extends Color
   bool ==(Object other)
   double tint
   int hashCode
+final class StructureElement
+  Map<String, String> attributes
+  String role
+  String? actualText
+  String? alt
+  String? language
+  StructureElement(String role, {String? alt, String? language, String? actualText, Map<String, String> attributes = const {}})
 final class TableBox extends LayoutBox
   BoxAlign align
   List<Color?> stripes

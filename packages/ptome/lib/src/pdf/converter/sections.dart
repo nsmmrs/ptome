@@ -693,6 +693,7 @@ extension _Sections on PdfConverter {
         marks: marks,
         floatBarrier: barrier,
         keepWithNext: sticky || rule != null,
+        structure: _struct('H${level.clamp(1, 6)}'),
       );
       // (Set by the engine's paragraphs where it can: a heading of text
       // alone, kept whole, asking for no room after it.)
@@ -714,6 +715,7 @@ extension _Sections on PdfConverter {
             floatBarrier: barrier,
             verticalAlign: verticalAlign,
             keepWithNext: sticky || rule != null,
+            structure: _struct('H${level.clamp(1, 6)}'),
           ),
         ),
       );
