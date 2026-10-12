@@ -540,6 +540,91 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// Whether there is no text.
   bool get isEmpty => _items.isEmpty;
 
+  /// The text as the engine's inline content (FEAT-n1bkgf: text set by
+  /// plain_typesetting's paragraphs rather than this box's own lines):
+  /// each item a text run in its resolved font, size, tracking, features,
+  /// color, decorations, link and anchor, a superscript or subscript
+  /// raised or lowered as this box sets it. Null when the text has what
+  /// a run can't carry yet (an inline image or formula, a background or
+  /// border, small capitals the font lacks), for the box to set it.
+  List<InlineContent>? engineContent() {
+    final runs = <InlineContent>[];
+    for (final item in _items) {
+      final format = item.format;
+      final fragment = format.fragment;
+      if (format.image != null ||
+          format.smallCapitals ||
+          (fragment.callbacks?.any(
+                (callback) =>
+                    callback != FragmentCallback.inlineDestinationMarker,
+              ) ??
+              false) ||
+          fragment.backgroundColor != null ||
+          fragment.borderWidth != null) {
+        return null;
+      }
+      final font = format.font;
+      final rise = format.typographic
+          ? 0.0
+          : format.subscript
+          // (Lowered by the font's descender, a positive length here.)
+          ? -font.descenderAt(format.size)
+          : format.superscript
+          ? 0.85 * font.ascenderAt(format.size)
+          : 0.0;
+      final styles = fragment.styles ?? const {};
+      final link = switch (fragment.link) {
+        final String target when target.startsWith('#') => NamedTarget(
+          target.substring(1),
+        ),
+        final String target => UriTarget(target),
+        null => switch (fragment.anchor) {
+          final String name => NamedTarget(name),
+          null => null,
+        },
+      };
+      runs.add(
+        TextRun(
+          // (A destination marker's placeholder isn't drawn, as the box
+          // doesn't draw it: its anchor alone.)
+          fragment.isMarker ? '' : item.text,
+          TextStyle(
+            font.pdf,
+            format.size,
+            characterSpacing: _state.characterSpacing + format.tracking,
+            rise: rise,
+            kerning: _state.kerning,
+            ligatures: font.ligates,
+            features: format.features,
+            skew: font.slanted ? 0.2 : 0,
+            embolden: font.emboldened ? format.size / 40 : 0,
+          ),
+          color: _pdfColor(fragment.color),
+          underline: styles.contains(FragmentStyle.underline),
+          strikethrough: styles.contains(FragmentStyle.strikethrough),
+          link: link,
+          anchor: fragment.isMarker ? fragment.name : null,
+        ),
+      );
+    }
+    // (The paragraph starts at its first character: spaces before it,
+    // after the anchors of index terms say, take no room, as the box's
+    // lines start.)
+    for (final (i, run) in runs.indexed) {
+      if (run is! TextRun) break;
+      // (An anchor's marker, of no width, passed over.)
+      if (run.anchor != null) continue;
+      final trimmed = run.text.trimLeft();
+      if (trimmed.isEmpty) {
+        runs[i] = run.withText('');
+        continue;
+      }
+      runs[i] = run.withText(trimmed);
+      break;
+    }
+    return runs;
+  }
+
   /// This (left over) text in [state] and laid out by [layout] (the rest
   /// of a first line set in another style).
   TextBox restyled(TextState state, TextLayout layout) => TextBox._(

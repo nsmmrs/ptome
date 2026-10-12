@@ -3170,6 +3170,78 @@ templates:
       expect(text, isNot(contains('?')));
     });
 
+    test("the engine's paragraphs set the text as the text box", () {
+      String sentence(int k) {
+        final note = k % 10 == 0 ? 'footnote:[Note $k.]' : '';
+        return 'Sentence $k has *bold* and _italic_ words, x^2^ and H~2~O, '
+            'a https://example.com/path[link] and a footnote.$note';
+      }
+
+      // Paragraphs set by the engine's paragraphs (FEAT-n1bkgf, first
+      // stage): the same words in the same order, links and footnotes,
+      // the lines where the text box sets them.
+      final body = [for (var k = 0; k < 40; k++) sentence(k)].join(' ');
+      final source = '= Doc\n\n$body\n\n$body\n';
+      String text(String theme) {
+        final pdf = _pdf(source, theme: theme);
+        return Process.runSync('pdftotext', [pdf, '-']).stdout as String;
+      }
+
+      List<String> words(String text) => text
+          .split(RegExp(r'\s+'))
+          .where((w) => w.isNotEmpty && !RegExp(r'^\d+$').hasMatch(w))
+          .toList();
+      final box = text('base:\n  text_align: justify\n  text_engine: box\n');
+      final engine = text('base:\n  text_align: justify\n');
+      // (Set by the engine, at the places the text box sets it.)
+      final messages = MemoryLogger();
+      _pdf(source, theme: 'base:\n  text_align: justify\n', logger: messages);
+      expect(
+        messages.messages.map((m) => '${m.message}'),
+        contains(matches(RegExp('^paragraphs set by the engine: [1-9]'))),
+      );
+      List<(double, double)> placesOf(String theme) {
+        final bbox =
+            Process.runSync('pdftotext', [
+                  '-bbox',
+                  _pdf(source, theme: theme),
+                  '-',
+                ]).stdout
+                as String;
+        return [
+          for (final m in RegExp(
+            r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>Sentence<',
+          ).allMatches(bbox))
+            (double.parse(m[1]!), double.parse(m[2]!)),
+        ];
+      }
+
+      final engineAt = placesOf('base:\n  text_align: justify\n');
+      final boxAt = placesOf(
+        'base:\n  text_align: justify\n  text_engine: box\n',
+      );
+      expect(engineAt, hasLength(boxAt.length));
+      for (final (i, (x, y)) in engineAt.indexed) {
+        expect(x, closeTo(boxAt[i].$1, 0.05), reason: 'word $i');
+        expect(y, closeTo(boxAt[i].$2, 0.05), reason: 'word $i');
+      }
+      // (Hyphens at line ends may fall elsewhere: words compared joined.)
+      // (And figures and spaces left out: a raised or lowered figure may
+      // come apart from its word in the extracted text.)
+      String joined(String t) =>
+          words(t)
+              .join(' ')
+              .replaceAll('- ', '')
+              .replaceAll(RegExp(r'[\d\s]'), '');
+      expect(joined(engine), joined(box));
+      final boxLines = box.split('\n').where((l) => l.trim().isNotEmpty);
+      final engineLines = engine.split('\n').where((l) => l.trim().isNotEmpty);
+      expect(
+        engineLines.length,
+        inInclusiveRange(boxLines.length * 0.9, boxLines.length * 1.1),
+      );
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

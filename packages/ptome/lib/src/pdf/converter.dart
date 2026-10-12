@@ -613,6 +613,20 @@ final class PdfConverter extends BuiltInConverter
   /// left end of its line.
   List<(int, double, double, String, _FontState)> _hungAt = const [];
 
+  /// Whether a block has floated to a side yet (the text after one runs
+  /// around it, which the engine's paragraphs don't do yet).
+  bool _sideFloated = false;
+
+  /// How many paragraphs the engine's paragraphs set (a debug count).
+  int _engineParagraphCount = 0;
+
+  /// Whether plain paragraphs are set by the engine's paragraphs (the
+  /// modern engine's, FEAT-n1bkgf; `base_text_engine: box` keeps them in
+  /// this converter's text box).
+  bool get _engineParagraphs =>
+      _s('base_text_engine') != 'box' &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
   /// A section heading waiting to be hung in the margin of its first
   /// paragraph (`heading_h<n>_display: margin`).
   ({String text, _FontState font, String category})? _pendingMargin;

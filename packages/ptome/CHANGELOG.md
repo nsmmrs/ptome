@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The modern engine's plain paragraphs are set by plain_typesetting's
+  paragraphs (`base_text_engine: paragraph`, the default; `box` for the
+  text box), their lines where the text box would set them; paragraphs
+  with what the engine doesn't do yet stay in the text box.
 - PDF headings in the margin (`heading_h<n>_display: margin`): a
   reader's edition's chapter numbers beside the first line, the
   `readers-bible` look's now. A run-in note stream's separator in a face

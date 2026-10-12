@@ -66,6 +66,7 @@ extension _Traversal on PdfConverter {
           ThemeNumber(:final value) => value.toDouble(),
           _ => 12.0,
         };
+        _sideFloated = true;
         final boxes = _out.sublist(from);
         _out
           ..removeRange(from, _out.length)
@@ -125,6 +126,7 @@ extension _Traversal on PdfConverter {
               100,
         _ => _keys(key).length('width', _font.size) ?? content / 3,
       };
+      _sideFloated = true;
       final boxes = _out.sublist(from);
       _out
         ..removeRange(from, _out.length)

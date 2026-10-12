@@ -23,8 +23,9 @@ sealed class LineHeight {
   const new _();
 
   /// The fonts' height (ascender to descender, plus their line gap) and
-  /// [leading] more.
-  const factory font({double leading}) = FontLineHeight;
+  /// [leading] more; [above] of that space between lines set above the
+  /// text, the rest under it.
+  const factory font({double leading, double above}) = FontLineHeight;
 
   /// [factor] times the largest font size on the line, the extra split
   /// above and below the text (as CSS does).
@@ -36,11 +37,18 @@ sealed class LineHeight {
 
 /// Lines as tall as their fonts, plus leading.
 final class FontLineHeight extends LineHeight {
-  /// The fonts' height plus [leading].
-  const new({this.leading = 0}) : super._();
+  /// The fonts' height plus [leading], [above] of the space between lines
+  /// (the leading and the fonts' line gap) over the text.
+  const new({this.leading = 0, this.above = 0}) : super._();
 
   /// The extra space between lines, in points.
   final double leading;
+
+  /// How much of the space between lines (the leading and the fonts'
+  /// line gap) is set above each line's text, in points: none (all of it
+  /// under the text, the default), half the leading (CSS's half-leading),
+  /// or as a Prawn text box sets it, half the leading and the line gap.
+  final double above;
 }
 
 /// Lines a multiple of their font size tall.
@@ -95,10 +103,17 @@ final class Paragraph {
     this.hyphenator,
     this.breakLongWords = true,
     this.hyphenRepetition = HyphenRepetition.none,
+    this.riseInLineHeight = true,
   });
 
   /// The inline content.
   final List<InlineContent> content;
+
+  /// Whether text raised or lowered ([TextStyle.rise], a superscript or a
+  /// subscript) makes its line taller (as CSS's line boxes grow); false
+  /// keeps the line's pitch, the raised text reaching into the space
+  /// between lines (as TeX's \baselineskip and Prawn's lines do).
+  final bool riseInLineHeight;
 
   /// The alignment.
   final TextAlign align;
@@ -971,6 +986,11 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         flush();
         items.add(BoxItem(content, '', width));
         offset += 1;
+      // An anchor with no text of its own (a destination where it is):
+      // a box of no width, for the line to place it.
+      case TextRun(:final text, anchor: _?) when text.isEmpty:
+        flush();
+        items.add(BoxItem(content, '', 0));
       case TextRun(:final text, :final style):
         final shrink = paragraph.align == TextAlign.justify
             ? style.measure(' ') / 3
@@ -1102,19 +1122,44 @@ bool _isWord(String text) => text.runes.every(
 /// [items] with each box wider than [maxWidth] split into its grapheme
 /// clusters, with costly breaks between them.
 List<LineItem> _splitWide(List<LineItem> items, double maxWidth) {
-  if (!items.any((item) => item is BoxItem && item.width > maxWidth)) {
-    return items;
+  // The words wider than a line: runs of boxes with no break between them
+  // (a word in several styles, or across anchors, is one word).
+  final wide = <int>{};
+  var start = 0;
+  var width = 0.0;
+  void close(int end) {
+    if (width > maxWidth) {
+      for (var i = start; i < end; i++) {
+        wide.add(i);
+      }
+    }
   }
+
+  for (final (i, item) in items.indexed) {
+    if (item is BoxItem) {
+      if (i == 0 || items[i - 1] is! BoxItem) {
+        start = i;
+        width = 0;
+      }
+      width += item.width;
+      if (i + 1 == items.length || items[i + 1] is! BoxItem) close(i + 1);
+    }
+  }
+  if (wide.isEmpty) return items;
   return [
-    for (final item in items)
+    for (final (index, item) in items.indexed)
       if (item case BoxItem(content: final TextRun run, :final text)
-          when item.width > maxWidth)
+          when wide.contains(index)) ...[
+        // (Between the word's boxes too.)
+        if (index > 0 && wide.contains(index - 1) && text.isNotEmpty)
+          PenaltyItem(0, 1000, run: run),
         // (Between grapheme clusters, never inside one.)
         for (final (i, char) in _clusters(text).indexed) ...[
           if (i > 0) PenaltyItem(0, 1000, run: run),
           BoxItem(run, char, run.style.measure(char)),
-        ]
-      else
+        ],
+        if (text.isEmpty) item,
+      ] else
         item,
   ];
 }
@@ -1465,11 +1510,13 @@ Line _line(
     final scale = style.size / 1000;
     ascent = math.max(
       ascent,
-      style.font.ascender * scale + math.max(0, style.rise),
+      style.font.ascender * scale +
+          (paragraph.riseInLineHeight ? math.max(0, style.rise) : 0),
     );
     descent = math.min(
       descent,
-      style.font.descender * scale + math.min(0, style.rise),
+      style.font.descender * scale +
+          (paragraph.riseInLineHeight ? math.min(0, style.rise) : 0),
     );
     gap = math.max(gap, style.font.lineGap * scale);
     size = math.max(size, style.size);
@@ -1511,9 +1558,9 @@ Line _line(
     }
   }
   final (height, baseline) = switch (paragraph.lineHeight) {
-    FontLineHeight(:final leading) => (
+    FontLineHeight(:final leading, :final above) => (
       ascent - descent + gap + leading,
-      ascent,
+      above + ascent,
     ),
     MultipleLineHeight(:final factor) => _centered(
       factor * size,

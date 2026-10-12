@@ -354,7 +354,8 @@ final class FlowLayout
   int maxPasses
   int? notesLag
 final class FontLineHeight extends LineHeight
-  FontLineHeight({double leading = 0})
+  FontLineHeight({double leading = 0, double above = 0})
+  double above
   double leading
 final class FractionColumnWidth extends ColumnWidth
   FractionColumnWidth(double weight)
@@ -528,9 +529,10 @@ final class Paragraph
   Hyphenator? hyphenator
   LineHeight lineHeight
   List<InlineContent> content
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true})
   TextAlign align
   bool breakLongWords
+  bool riseInLineHeight
   double firstLineIndent
 final class ParagraphBox extends LayoutBox
   LineBreaker? lineBreaker
@@ -688,7 +690,7 @@ sealed class LineFragment
   double x
 sealed class LineHeight
   LineHeight.exact(double points)
-  LineHeight.font({double leading})
+  LineHeight.font({double leading, double above})
   LineHeight.multiple(double factor)
 sealed class LineItem
   double width

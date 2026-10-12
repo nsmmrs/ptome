@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `Paragraph.riseInLineHeight` (false: a superscript reaches into the
+  space between lines, the pitch kept); `LineHeight.font(above:)`, how
+  much of the space between lines goes above the text (a Prawn text
+  box's half the leading and the line gap); a run with an anchor and no
+  text places its anchor; a word wider than a line across several runs
+  breaks as one in a single run does.
 - Grapheme clusters kept whole: font fallback picks one font for a base
   and its combining marks (or an emoji sequence, a flag), and a word too
   wide for its line splits between clusters, never inside one (clusters

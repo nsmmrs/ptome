@@ -797,6 +797,7 @@ final class NoteStream {
           hyphenator: first.paragraph.hyphenator,
           breakLongWords: first.paragraph.breakLongWords,
           hyphenRepetition: first.paragraph.hyphenRepetition,
+          riseInLineHeight: first.paragraph.riseInLineHeight,
         ),
         style: first.style,
         orphans: first.orphans,

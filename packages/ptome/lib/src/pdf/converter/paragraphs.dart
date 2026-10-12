@@ -6,6 +6,22 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
+  /// Whether the engine's paragraphs can set text with [markup] as the
+  /// text box does: none of what they don't do yet (FEAT-n1bkgf) in play,
+  /// text running around a block floating to a side (after the first), a
+  /// baseline grid,
+  /// protrusion (`base_overhang`), font expansion, a last line aligned
+  /// apart, labels hung from their anchors or side notes beside them.
+  bool _engineCanSet(String markup) =>
+      !_sideFloated &&
+      _baselineGrid() == null &&
+      _overhangAmount() == 0 &&
+      _text.expansion == 0 &&
+      _s('base_text_align_last') == null &&
+      !markup.contains(hangAnchorPrefix) &&
+      !markup.contains(sideNoteAnchorPrefix) &&
+      !markup.contains('<side ');
+
   /// The roles of paragraphs a heading for the margin passes
   /// (`heading_h<n>_margin_skip_roles`: a pericope's parallel passages).
   Set<String> _marginSkipRoles(String category) =>
@@ -269,6 +285,69 @@ extension _Paragraphs on PdfConverter {
         _floatGroup = _floatNext = null;
       }
       return;
+    }
+    // (The modern engine: a plain paragraph set by plain_typesetting's
+    // paragraphs rather than this converter's text box, FEAT-n1bkgf; one
+    // with what they don't do yet is set by the box, as is everything
+    // with `base_text_engine: box`.)
+    if (_engineParagraphs &&
+        firstLine == null &&
+        initial == null &&
+        _pendingDrop == null &&
+        _engineCanSet(content)) {
+      if (box.engineContent() case final runs? when runs.isNotEmpty) {
+        _engineParagraphCount++;
+        final metrics = _lineMetrics(font);
+        // (The text box sets half the leading and the font's line gap
+        // above its first line, the engine's paragraph all of it under
+        // each line: the space above as padding, kept at a page's top as
+        // the box keeps it, and that much less below.)
+        // (The text box's font metrics are Prawn's, an embedded font's
+        // rounded to thousandths of the em; the engine's the font's own:
+        // the leading and the space above take up the difference, so the
+        // lines fall where the box sets them.)
+        final face = _fonts.font(font.family, font.style);
+        final engineFont = face.pdf;
+        final scale = font.size / 1000;
+        final engineHeight =
+            (engineFont.ascender - engineFont.descender + engineFont.lineGap) *
+            scale;
+        final heightShift = face.heightAt(font.size) - engineHeight;
+        final ascentShift =
+            face.ascenderAt(font.size) - engineFont.ascender * scale;
+        _out.add(
+          ParagraphBox(
+            Paragraph(
+              runs,
+              align: switch (align) {
+                'justify' => TextAlign.justify,
+                'center' => TextAlign.center,
+                'right' => TextAlign.right,
+                _ => TextAlign.left,
+              },
+              // (Half the leading and the font's line gap above each line,
+              // as the text box sets them.)
+              lineHeight: LineHeight.font(
+                leading: metrics.leading + heightShift,
+                above: metrics.paddingTop + ascentShift,
+              ),
+              firstLineIndent: indent,
+              // (A superscript in the space between lines, as the text
+              // box sets it.)
+              riseInLineHeight: false,
+            ),
+            style: BoxStyle(
+              margin: EdgeInsets(bottom: marginBottom),
+              anchor: node.id,
+              runsAround: true,
+              gridLine: _gridLineOf(node),
+            ),
+            orphans: (_n('prose_orphans') ?? 2).toInt(),
+            widows: (_n('prose_widows') ?? 2).toInt(),
+          ),
+        );
+        return;
+      }
     }
     CustomContent text = box;
     if (initial ?? _takeDrop(node) case final drop? when firstLine == null) {

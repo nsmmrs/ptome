@@ -151,6 +151,8 @@ extension _DocumentParts on PdfConverter {
     }
     _sections.clear();
     _hungLabels.clear();
+    _engineParagraphCount = 0;
+    _sideFloated = false;
     _madeUpAnchors.clear();
     _floatGroup = _floatNext = null;
     _hasTitlePage = _frontCover = _backCover = _noCover = false;
@@ -361,6 +363,17 @@ extension _DocumentParts on PdfConverter {
         ),
     };
     final layout = FlowLayout(
+      // (Paragraphs the engine sets, `base_text_engine: paragraph`: broken
+      // as the text box breaks justified text, Knuth and Plass's total fit
+      // with TeX's costs and 2em of emergency stretch.)
+      lineBreaker: _engineParagraphs
+          ? KnuthPlassLineBreaker(
+              emergencyStretch: 2 * _rootFontSize,
+              expansion: _text.expansion,
+              maxHyphenRun: _text.maxHyphenRun,
+              lastLineMin: _text.lastLineMin,
+            )
+          : const FirstFitLineBreaker(),
       template: templates[_initialLayout(document)],
       templates: templates,
       keepTemplate: true,
@@ -549,6 +562,9 @@ extension _DocumentParts on PdfConverter {
     logger.info(
       'laid out ${pages.length} ${pages.length == 1 ? 'page' : 'pages'}',
     );
+    if (_engineParagraphs) {
+      logger.debug('paragraphs set by the engine: $_engineParagraphCount');
+    }
     _outline(pdf, pages, result);
     if (pages.isNotEmpty) {
       final first = pages.first;
@@ -2052,6 +2068,18 @@ extension _DocumentParts on PdfConverter {
           content,
           style: style.withTag(tag),
         ),
+        ParagraphBox(
+          :final paragraph,
+          :final style,
+          :final orphans,
+          :final widows,
+        ) =>
+          ParagraphBox(
+            paragraph,
+            style: style.withTag(tag),
+            orphans: orphans,
+            widows: widows,
+          ),
         TableBox(:final rows, :final columns, :final style) && final table =>
           TableBox(
             rows,
