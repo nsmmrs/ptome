@@ -42,6 +42,7 @@ extension _Leaves on _Pass {
         from == 0 ? box.style.anchor : null,
         from == 0 ? box.style.marks : const {},
         box.style.tag,
+        first: from == 0,
       ),
       height,
       done ? null : ParagraphBox._rest(box, from + count),

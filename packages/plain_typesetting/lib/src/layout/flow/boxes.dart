@@ -117,6 +117,7 @@ final class BoxStyle {
     this.sideGap = 0,
     this.sideShape,
     this.runsAround = false,
+    this.numberLines = false,
   });
 
   /// The space outside the border.
@@ -226,6 +227,11 @@ final class BoxStyle {
   /// image's shape, say. Null: its box.
   final FloatShape? sideShape;
 
+  /// Whether the lines of text in the box are numbered: the page's
+  /// [PageInfo.lines] lists where they are, for a page template to set
+  /// numbers beside them (line-numbered bills, critical editions).
+  final bool numberLines;
+
   /// This style with [tag] ([BoxStyle.tag]).
   BoxStyle withTag(String? tag) => _copy(tag: (tag,));
 
@@ -287,6 +293,7 @@ final class BoxStyle {
     sideGap: sideGap ?? this.sideGap,
     sideShape: sideShape == null ? this.sideShape : sideShape.$1,
     runsAround: runsAround,
+    numberLines: numberLines,
   );
 }
 
@@ -730,6 +737,7 @@ final class CustomPlacement {
     required this.paint,
     this.rest,
     this.anchors = const [],
+    this.lines = const [],
   });
 
   /// The height of the piece.
@@ -744,6 +752,63 @@ final class CustomPlacement {
   /// Names and offsets (right and down from the top left) of positions in
   /// the piece.
   final List<(String, double, double)> anchors;
+
+  /// Its lines of text, for line numbers ([BoxStyle.numberLines]): their
+  /// baselines down from its top, their ends right of its left edge.
+  final List<PieceLine> lines;
+}
+
+/// A line of text in a [CustomPlacement]: its [baseline] down from the
+/// piece's top, from [left] to [right] of its left edge; [continues] when
+/// it goes on with the line before (a wrapped verse line, which logical
+/// line numbers count once).
+@immutable
+final class PieceLine {
+  /// A line at [baseline], [left] to [right].
+  const new(
+    this.baseline, {
+    required this.left,
+    required this.right,
+    this.continues = false,
+  });
+
+  /// The baseline, down from the piece's top.
+  final double baseline;
+
+  /// The line's left end, right of the piece's left edge.
+  final double left;
+
+  /// The line's right end.
+  final double right;
+
+  /// Whether it goes on with the line before.
+  final bool continues;
+}
+
+/// A numbered line of text on a page ([PageInfo.lines]), in the page's
+/// coordinates: its [baseline], from [left] to [right].
+@immutable
+final class TypesetLine {
+  /// A line at [baseline], [left] to [right].
+  const new(
+    this.baseline, {
+    required this.left,
+    required this.right,
+    this.continues = false,
+  });
+
+  /// The baseline's height on the page.
+  final double baseline;
+
+  /// The line's left end.
+  final double left;
+
+  /// The line's right end.
+  final double right;
+
+  /// Whether it goes on with the line before (not the start of a line of
+  /// the source).
+  final bool continues;
 }
 
 /// A box of content that lays itself out (see [CustomContent]); its

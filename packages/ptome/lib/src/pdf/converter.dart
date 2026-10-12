@@ -547,12 +547,15 @@ final class PdfConverter extends BuiltInConverter
           book && columns >= 2 && !asciidoctorCompat(document, CompatFormat.pdf)
           ? columns
           : 0;
+      _lineNumbering = _lineNumberingOf(document);
       if (_inColumns) {
         final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();
         _columnWidth = _columnWidthOf(columns, gap);
         final body = _collect(() {
-          _manNameSection(document);
-          _traverse(document);
+          _numbered(() {
+            _manNameSection(document);
+            _traverse(document);
+          });
           _footnotes(document);
         });
         _out.add(
@@ -569,8 +572,10 @@ final class PdfConverter extends BuiltInConverter
           ),
         );
       } else {
-        _manNameSection(document);
-        _traverse(document);
+        _numbered(() {
+          _manNameSection(document);
+          _traverse(document);
+        });
         _footnotes(document);
       }
     });
@@ -783,6 +788,14 @@ final class PdfConverter extends BuiltInConverter
         '${role.isEmpty ? '' : ' (role $role)'}: $text',
       );
     }
+    _lineCount = 0;
+    _lineRestarts = _lineNumbering?.restart == 'section'
+        ? [
+            for (final (section, anchor) in _sections)
+              if ((section.level ?? 0) <= 1)
+                if (result.anchors[anchor] case final at?) (at.page + 1, at.y),
+          ]
+        : const [];
     final pages = result.render(pdf, destinationName: destinationName);
     _compressingElsewhere(pages);
     if (standard != null) _preflight(standard);
@@ -2029,12 +2042,151 @@ final class PdfConverter extends BuiltInConverter
   /// Paints the foreground of [page] (the gem's `stamp_foreground_image`).
   void _pageForeground(Canvas canvas, PageInfo page) {
     if (_frontCover && page.number == 1) return;
+    if (_lineNumbering case final numbering?) {
+      _drawLineNumbers(canvas, page, numbering);
+    }
     if (_foregroundImage case final image?) {
       _drawPageImage(
         canvas,
         image,
         size: (page.template.size.width, page.template.size.height),
       );
+    }
+  }
+
+  /// How the body's lines are numbered (the `line-numbers` attribute),
+  /// if they are.
+  _LineNumbering? _lineNumbering;
+
+  /// The lines counted so far (as the pages are drawn, in order).
+  int _lineCount = 0;
+
+  /// Where the count starts again: each first-level section's page and
+  /// height (`line_numbers_restart: section`).
+  List<(int, double)> _lineRestarts = const [];
+
+  /// The line numbering [document] asks for (modern engine): its
+  /// `line-numbers` attribute, `typeset` (empty too), `logical` or `grid`,
+  /// set by the theme's `line_numbers_*` keys.
+  _LineNumbering? _lineNumberingOf(Document document) {
+    final kind = switch (document.attr('line-numbers')) {
+      null => null,
+      '' || 'typeset' => _LineKind.typeset,
+      'logical' => _LineKind.logical,
+      'grid' => _LineKind.grid,
+      final other => () {
+        logger.warn(
+          'line-numbers is typeset, logical or grid, not $other; '
+          'numbering the typeset lines',
+        );
+        return _LineKind.typeset;
+      }(),
+    };
+    if (kind == null || asciidoctorCompat(document, CompatFormat.pdf)) {
+      return null;
+    }
+    final font = _themeFont(
+      'line_numbers',
+      _font.copyWith(size: _rootFontSize * 0.8),
+    );
+    final body = _textBox('Ag Ag', _font, align: 'left');
+    return _LineNumbering(
+      kind,
+      interval: math.max(1, (_n('line_numbers_interval') ?? 1).toInt()),
+      restart:
+          _choice('line_numbers_restart', const ['page', 'section', 'none']) ??
+          'page',
+      side:
+          _choice('line_numbers_side', const [
+            'left',
+            'right',
+            'outer',
+            'inner',
+          ]) ??
+          'left',
+      gap: _length('line_numbers_gap', _rootFontSize) ?? _rootFontSize,
+      font: font,
+      pitch:
+          _length('line_numbers_grid_pitch', _rootFontSize) ??
+          body.linePitch(1),
+      firstBaseline: body.firstBaseline(1) ?? _rootFontSize,
+    );
+  }
+
+  /// Adds [content] with its lines numbered, when the document numbers
+  /// them.
+  void _numbered(void Function() content) {
+    if (_lineNumbering == null) {
+      content();
+      return;
+    }
+    _out.add(
+      BlockBox(_collect(content), style: const BoxStyle(numberLines: true)),
+    );
+  }
+
+  /// Draws the numbers of [page]'s lines (or, for a grid, of the lines of
+  /// its text area) in its margin, as [numbering] says.
+  void _drawLineNumbers(
+    Canvas canvas,
+    PageInfo page,
+    _LineNumbering numbering,
+  ) {
+    final template = page.template;
+    final margins = template.margins;
+    final area = Rect(
+      template.size.left + margins.left,
+      template.size.bottom + margins.bottom,
+      template.size.width - margins.horizontal,
+      template.size.height - margins.vertical,
+    );
+    if (numbering.restart == 'page' || numbering.kind == _LineKind.grid) {
+      _lineCount = 0;
+    }
+    final lines = switch (numbering.kind) {
+      _LineKind.grid => [
+        for (
+          var y = area.top - numbering.firstBaseline;
+          y >= area.bottom;
+          y -= numbering.pitch
+        )
+          TypesetLine(y, left: area.left, right: area.right),
+      ],
+      _ => page.lines,
+    };
+    final recto = page.number.isOdd;
+    final right = switch (numbering.side) {
+      'right' => true,
+      'outer' => recto,
+      'inner' => !recto,
+      _ => false,
+    };
+    final restarts = [
+      for (final (number, y) in _lineRestarts)
+        if (number == page.number) y,
+    ];
+    for (final line in lines) {
+      if (numbering.kind == _LineKind.logical && line.continues) continue;
+      // (Past the start of a section: from 1 again.)
+      while (restarts.isNotEmpty && line.baseline <= restarts.first + 1e-6) {
+        restarts.removeAt(0);
+        _lineCount = 0;
+      }
+      _lineCount++;
+      if (_lineCount % numbering.interval != 0) continue;
+      final text = _textBox(
+        '$_lineCount',
+        numbering.font,
+        align: right ? 'left' : 'right',
+      );
+      const width = 60.0;
+      final placed = text.place(width, double.infinity, atTop: true);
+      if (placed == null) continue;
+      final baseline = text.firstBaseline(width) ?? 0;
+      final x = right
+          ? area.right + numbering.gap
+          : area.left - numbering.gap - width;
+      placed.paint(_CanvasPage(canvas), x, line.baseline + baseline);
     }
   }
 
@@ -11509,6 +11661,7 @@ final class _Marked implements BaselineContent {
       height: placed.height,
       rest: placed.rest,
       anchors: placed.anchors,
+      lines: placed.lines,
       paint: (page, x, top) {
         mark?.paint(page, x + offset, top);
         placed.paint(page, x, top);
@@ -11568,6 +11721,7 @@ final class _Dropped implements BaselineContent {
           : placed.height,
       rest: placed.rest,
       anchors: placed.anchors,
+      lines: placed.lines,
       paint: (page, x, top) {
         mark?.paint(page, x - shift, top - dy);
         placed.paint(page, x, top);
@@ -11699,6 +11853,7 @@ final class _Aligned implements CustomContent {
       anchors: [
         for (final (name, x, y) in placed.anchors) (name, x + offset, y),
       ],
+      lines: placed.lines._shifted(dx: offset),
       rest: placed.rest == null ? null : _Aligned(placed.rest!, align: align),
       paint: (page, x, top) => placed.paint(page, x + offset, top),
     );
@@ -11934,6 +12089,7 @@ final class _LateText implements CustomContent {
     return CustomPlacement(
       height: measured.height,
       anchors: measured.anchors,
+      lines: measured.lines,
       paint: (canvas, x, top) =>
           text(page())
               .place(width, double.infinity, atTop: true)
@@ -11980,6 +12136,7 @@ final class _Hung implements BaselineContent {
       height: placed.height,
       rest: placed.rest,
       anchors: placed.anchors,
+      lines: placed.lines,
       paint: (page, x, top) {
         placed.paint(page, x, top);
         mark?.paint(page, x - offset, top);
@@ -12021,6 +12178,7 @@ final class _PageTopGap implements CustomContent {
       height: placed.height + gap,
       rest: placed.rest,
       anchors: [for (final (name, x, y) in placed.anchors) (name, x, y + gap)],
+      lines: placed.lines._shifted(dy: gap),
       paint: (page, x, top) => placed.paint(page, x, top - gap),
     );
   }
@@ -12615,6 +12773,7 @@ final class _Indented implements BaselineContent {
       height: placed.height,
       rest: placed.rest,
       anchors: [for (final (name, x, y) in placed.anchors) (name, x + left, y)],
+      lines: placed.lines._shifted(dx: left),
       paint: (page, x, top) => placed.paint(page, x + left, top),
     );
   }
@@ -12636,4 +12795,67 @@ final class _Indented implements BaselineContent {
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
+}
+
+extension on List<PieceLine> {
+  /// These lines [dx] further right and [dy] further down.
+  List<PieceLine> _shifted({double dx = 0, double dy = 0}) => [
+    for (final line in this)
+      PieceLine(
+        line.baseline + dy,
+        left: line.left + dx,
+        right: line.right + dx,
+        continues: line.continues,
+      ),
+  ];
+}
+
+/// Which lines are numbered: those the text is set in, the source's
+/// (a wrapped line counted once), or a fixed grid down the page.
+enum _LineKind { typeset, logical, grid }
+
+/// How the body's lines are numbered (`line-numbers`, `line_numbers_*`).
+final class _LineNumbering {
+  const new(
+    this.kind, {
+    required this.interval,
+    required this.restart,
+    required this.side,
+    required this.gap,
+    required this.font,
+    required this.pitch,
+    required this.firstBaseline,
+  });
+
+  final _LineKind kind;
+
+  /// Every how many lines a number is shown.
+  final int interval;
+
+  /// Where the count starts again: `page`, `section` or `none`.
+  final String restart;
+
+  /// The margin the numbers are in: `left`, `right`, `outer`, `inner`.
+  final String side;
+
+  /// The space between the text and the numbers.
+  final double gap;
+
+  final _FontState font;
+
+  /// A grid's line pitch and its first line's baseline below the top.
+  final double pitch;
+  final double firstBaseline;
+}
+
+/// A page that is only its [canvas] (no links): for text drawn over a
+/// page's content.
+final class _CanvasPage implements LayoutPage {
+  const new(this.canvas);
+
+  @override
+  final Canvas canvas;
+
+  @override
+  void link(Rect rect, LinkTarget target) {}
 }

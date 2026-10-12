@@ -98,6 +98,7 @@ final class PageInfo {
     this.template,
     this._topMarks, {
     this.isEmpty = false,
+    this.lines = const [],
   });
 
   /// The template of the page.
@@ -117,6 +118,11 @@ final class PageInfo {
   /// Whether nothing was laid out on the page (a blank page before a
   /// recto or verso start, say).
   final bool isEmpty;
+
+  /// The lines of text on the page whose boxes number them
+  /// ([BoxStyle.numberLines]), in order: known once the page's content is
+  /// painted (to its [PageTemplate.foreground]).
+  final List<TypesetLine> lines;
 
   /// The value of the running mark [name] on this page: the first one set
   /// on the page, or else the last one set before it.

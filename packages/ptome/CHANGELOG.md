@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Line numbers in the PDF's margin (`:line-numbers:` `typeset`,
+  `logical` or `grid`; `line_numbers_*` theme keys): every line or every
+  nth, restarting each page, section or never, the lines the text is set
+  in (a bill's), the source's (a wrapped verse line counted once) or a
+  fixed grid (pleading paper).
 - A baseline grid (`page_baseline_grid`, a look's `page: { grid: true }`):
   the body text's lines keep to a grid a body line apart, in every
   column and on every page, each paragraph starting where its first

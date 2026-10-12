@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.numberLines`: the lines of text in the box are listed, where
+  they are, in the page's `PageInfo.lines` (`TypesetLine`) for its
+  template's foreground to number; custom content reports its lines in
+  `CustomPlacement.lines` (`PieceLine`).
 - `FlowLayout.baselineGrid` (`BaselineGrid`): a region's paragraphs, and
   custom content that is `BaselineContent`, start where their first
   baseline falls on a line of the grid, in columns and under floats at

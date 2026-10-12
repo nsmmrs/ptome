@@ -133,6 +133,12 @@ final class _Painter {
 
   final Canvas canvas;
   final LayoutPage page;
+
+  /// How many of the blocks being painted number their lines.
+  int numbering = 0;
+
+  /// The numbered lines painted, in order.
+  final List<TypesetLine> lines = [];
 }
 
 final class _PlacedSpace extends _Placed {
@@ -307,9 +313,11 @@ final class _PlacedBlock extends _Placed {
       first: _topEdge,
       last: _bottomEdge,
     );
+    if (style.numberLines) painter.numbering++;
     for (final (offset, child) in children) {
       child.paint(painter, x + _contentLeft, top - _contentTop - offset);
     }
+    if (style.numberLines) painter.numbering--;
   }
 }
 
@@ -321,13 +329,17 @@ final class _PlacedLines extends _Placed {
     this.height,
     this.anchor,
     this.marks,
-    this.tag,
-  );
+    this.tag, {
+    required this.first,
+  });
 
   final Map<String, String> marks;
 
   /// The paragraph's tag ([BoxStyle.tag]).
   final String? tag;
+
+  /// Whether the lines start the paragraph.
+  final bool first;
 
   final List<Line> lines;
   final double left;
@@ -366,8 +378,18 @@ final class _PlacedLines extends _Placed {
   @override
   void paint(_Painter painter, double x, double top) {
     var y = top - this.top;
-    for (final line in lines) {
+    for (final (i, line) in lines.indexed) {
       line.paint(painter.canvas, x + left, y, link: painter.page.link);
+      if (painter.numbering > 0) {
+        painter.lines.add(
+          TypesetLine(
+            y - line.baseline,
+            left: x + left,
+            right: x + left + line.width,
+            continues: i > 0 || !first,
+          ),
+        );
+      }
       y -= line.height;
     }
   }
@@ -516,6 +538,18 @@ final class _PlacedCustom extends _Placed {
       last: last,
     );
     placement.paint(painter.page, x + left, top - this.top);
+    if (painter.numbering > 0) {
+      for (final line in placement.lines) {
+        painter.lines.add(
+          TypesetLine(
+            top - this.top - line.baseline,
+            left: x + left + line.left,
+            right: x + left + line.right,
+            continues: line.continues,
+          ),
+        );
+      }
+    }
   }
 }
 

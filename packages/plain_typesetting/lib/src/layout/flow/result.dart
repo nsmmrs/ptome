@@ -82,15 +82,6 @@ final class LayoutResult {
         if (firsts.add(name)) marks[name] = value;
         carried[name] = value;
       }
-      final info = PageInfo._(
-        i + 1,
-        _pages.length,
-        _layout.pageLabel(i + 1),
-        marks,
-        page.template,
-        top,
-        isEmpty: page.placed.every((p) => (p.$2?.height ?? 0) == 0),
-      );
       final template = page.template;
       final size = template.size;
       final P target;
@@ -106,6 +97,16 @@ final class LayoutResult {
         target = document.addPage(size);
       }
       final painter = _Painter(target.canvas, target);
+      final info = PageInfo._(
+        i + 1,
+        _pages.length,
+        _layout.pageLabel(i + 1),
+        marks,
+        page.template,
+        top,
+        isEmpty: page.placed.every((p) => (p.$2?.height ?? 0) == 0),
+        lines: painter.lines,
+      );
       template.background?.call(target.canvas, info);
       final header = template.header?.call(info);
       if (!template.runningOver) {

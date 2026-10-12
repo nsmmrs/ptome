@@ -61,12 +61,14 @@ export 'src/layout/flow.dart'
         PageSide,
         PageTemplate,
         ParagraphBox,
+        PieceLine,
         ShapedContent,
         SpacerBox,
         TableBorders,
         TableBox,
         TableCell,
         TableRow,
+        TypesetLine,
         VerticalAlign;
 export 'src/layout/inline.dart'
     show

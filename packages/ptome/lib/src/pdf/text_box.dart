@@ -414,6 +414,9 @@ final class _Line {
 
   /// Whether the line wraps: the text of its line goes on in the next.
   bool wrapped = false;
+
+  /// Whether the line ends with a line break of the source.
+  bool hard = false;
 }
 
 /// Text laid out in lines (Knuth and Plass's line breaking, or for code
@@ -451,7 +454,12 @@ final class TextBox implements ShapedContent, BaselineContent {
     this._context, {
     required this.first,
     this.continuedIndent,
-  });
+    bool? startsLine,
+  }) : startsLine = startsLine ?? first;
+
+  /// Whether its first line starts a line of the source (the text before
+  /// it, if any, ended with a line break): logical line numbers count it.
+  final bool startsLine;
 
   final List<_Item> _items;
   final TextState _state;
@@ -1069,6 +1077,7 @@ final class TextBox implements ShapedContent, BaselineContent {
       final TextBox rest => CustomPlacement(
         height: placed!.height,
         anchors: placed.anchors,
+        lines: placed.lines,
         paint: placed.paint,
         rest: TextBox._(
           rest._items,
@@ -1077,6 +1086,7 @@ final class TextBox implements ShapedContent, BaselineContent {
           rest._context,
           first: false,
           continuedIndent: rest.continuedIndent,
+          startsLine: rest.startsLine,
         ),
       ),
       _ => placed,
@@ -1302,6 +1312,16 @@ final class TextBox implements ShapedContent, BaselineContent {
     return CustomPlacement(
       height: height,
       anchors: anchors,
+      lines: [
+        for (final (i, line) in lines.indexed)
+          if (line.fragments.isNotEmpty)
+            PieceLine(
+              gap + line.fragments.first.baseline,
+              left: line.fragments.first.left,
+              right: line.fragments.last.left + line.fragments.last.width,
+              continues: i == 0 ? !startsLine : !lines[i - 1].hard,
+            ),
+      ],
       rest: done
           ? null
           : TextBox._(
@@ -1311,6 +1331,7 @@ final class TextBox implements ShapedContent, BaselineContent {
               _context,
               first: false,
               continuedIndent: wrap.continuedIndent,
+              startsLine: lines.isNotEmpty && lines.last.hard,
             ),
       paint: (page, x, top) => _paint(page, lines, x, top - gap, width),
     );
@@ -2272,7 +2293,7 @@ base class _Wrap {
         ..baseline = -_baseline;
       x += f.width;
     }
-    _lines.add(_Line(printed));
+    _lines.add(_Line(printed)..hard = _newline);
     _fragments = [];
   }
 
@@ -2353,6 +2374,7 @@ final class FirstLineTextBox implements BaselineContent {
       return CustomPlacement(
         height: head.height,
         anchors: head.anchors,
+        lines: head.lines,
         rest: tail,
         paint: head.paint,
       );
@@ -2363,6 +2385,16 @@ final class FirstLineTextBox implements BaselineContent {
       anchors: [
         ...head.anchors,
         for (final (name, x, y) in body.anchors) (name, x, y + head.height),
+      ],
+      lines: [
+        ...head.lines,
+        for (final line in body.lines)
+          PieceLine(
+            line.baseline + head.height,
+            left: line.left,
+            right: line.right,
+            continues: line.continues,
+          ),
       ],
       rest: next is TextBox ? next.restyled(state, layout) : next,
       paint: (page, x, top) {
@@ -2410,6 +2442,7 @@ final class FirstLineTextBox implements BaselineContent {
     return CustomPlacement(
       height: placed.height,
       anchors: placed.anchors,
+      lines: placed.lines,
       rest: rest,
       paint: placed.paint,
     );

@@ -218,7 +218,7 @@ final class BoxItem extends LineItem
 final class BoxStyle
   Border border
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -235,6 +235,7 @@ final class BoxStyle
   bool floating
   bool keepTogether
   bool keepWithNext
+  bool numberLines
   bool runsAround
   bool splitToRegionEnd
   double floatClearance
@@ -276,8 +277,9 @@ final class CustomBox extends LayoutBox
   CustomContent content
 final class CustomPlacement
   CustomContent? rest
-  CustomPlacement({required double height, required void Function(LayoutPage, double, double) paint, CustomContent? rest, List<(String, double, double)> anchors = const []})
+  CustomPlacement({required double height, required void Function(LayoutPage, double, double) paint, CustomContent? rest, List<(String, double, double)> anchors = const [], List<PieceLine> lines = const []})
   List<(String, double, double)> anchors
+  List<PieceLine> lines
   double height
   void Function(LayoutPage, double, double) paint
 final class DefaultPageBreaker implements PageBreaker
@@ -463,6 +465,7 @@ final class OpenTypeShaper implements OpenTypeTextFont
   double xHeight
   int? kernTableSubtable
 final class PageInfo
+  List<TypesetLine> lines
   PageTemplate template
   String label
   String? mark(String name)
@@ -516,6 +519,12 @@ final class PenaltyItem extends LineItem
   double width
   static double forced
   static double never
+final class PieceLine
+  PieceLine(double baseline, {required double left, required double right, bool continues = false})
+  bool continues
+  double baseline
+  double left
+  double right
 final class Rect
   Rect(double left, double bottom, double width, double height)
   Rect.fromEdges(double left, double bottom, double right, double top)
@@ -618,6 +627,12 @@ final class TextStyle
   double widthOf(List<ShapedGlyph> glyphs)
   double wordSpacing
   int hashCode
+final class TypesetLine
+  TypesetLine(double baseline, {required double left, required double right, bool continues = false})
+  bool continues
+  double baseline
+  double left
+  double right
 final class UriTarget extends LinkTarget
   String uri
   UriTarget(String uri)

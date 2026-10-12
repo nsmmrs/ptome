@@ -2559,6 +2559,47 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('line numbers: typeset, logical and grid lines', () {
+      const verse =
+          '[verse]\n____\nShall I compare thee to a summer day, thou art '
+          'more lovely and more temperate than any other day of the long '
+          'and lovely year, and so on\nRough winds do shake the darling buds\n'
+          '____\n';
+      // The numbers in the left margin of the first page.
+      List<String> numbers(String kind, {String theme = ''}) {
+        final pdf = _pdf(
+          '= Poem\n:line-numbers: $kind\n\n$verse',
+          theme: theme.isEmpty ? 'line_numbers:\n  gap: 6\n' : theme,
+        );
+        return [
+          for (final m in RegExp(r'xMax="([\d.]+)"[^>]*>(\d+)<').allMatches(
+            Process.runSync('pdftotext', [
+                  '-f',
+                  '1',
+                  '-l',
+                  '1',
+                  '-bbox',
+                  pdf,
+                  '-',
+                ]).stdout
+                as String,
+          ))
+            if (double.parse(m[1]!) < 48) m[2]!,
+        ];
+      }
+
+      // The first source line wraps: three typeset lines, two logical.
+      expect(numbers('typeset'), ['1', '2', '3']);
+      expect(numbers('logical'), ['1', '2']);
+      // Every 2nd line on a grid down the whole page.
+      final grid = numbers(
+        'grid',
+        theme: 'line_numbers:\n  interval: 2\n  gap: 6\n',
+      );
+      expect(grid.length, greaterThan(20));
+      expect(grid.take(3), ['2', '4', '6']);
+    });
+
     test('a baseline grid: body lines a whole number of lines apart', () {
       final words = 'Body words run on across the column here. ' * 6;
       final source = [

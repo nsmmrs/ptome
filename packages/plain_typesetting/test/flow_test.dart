@@ -242,6 +242,32 @@ void main() {
     expect(at['l4']!.$2, closeTo(at['l1']!.$2, 1e-6));
   });
 
+  test('numbered lines: where they are on each page, for the template', () {
+    final seen = <int, List<TypesetLine>>{};
+    final template = PageTemplate(
+      Rect(0, 0, 300, 40 + 3 * _lineHeight),
+      margins: const EdgeInsets.all(20),
+      foreground: (canvas, page) => seen[page.number] = [...page.lines],
+    );
+    FlowLayout(template: template)
+        .layout([
+          _para('before'),
+          BlockBox([
+            _para('a1\na2'),
+            _para('b1\nb2'),
+          ], style: const BoxStyle(numberLines: true)),
+          _para('after'),
+        ])
+        .render(RecordingDocument());
+    // Two numbered lines on the first page, two on the second; the first
+    // line of each paragraph starts a line, the next goes on with it.
+    expect(seen[1]!.map((l) => l.continues), [false, true]);
+    expect(seen[2]!.map((l) => l.continues), [false, true]);
+    expect(seen[1]![0].baseline, greaterThan(seen[1]![1].baseline));
+    expect(seen[1]![0].left, closeTo(20, 1e-6));
+    expect(seen[1]![0].right, greaterThan(20));
+  });
+
   test('on a baseline grid, text lines keep to it past other things', () {
     final document = RecordingDocument();
     final head = ParagraphBox(
