@@ -2148,7 +2148,15 @@ String? _footnote(
     } else if (content != null) {
       finalContent = prepare(content);
       index = doc.counter('footnote-number');
-      doc.registerFootnote(Footnote(index, id, finalContent));
+      doc.registerFootnote(
+        Footnote(
+          index,
+          id,
+          finalContent,
+          stream: attributes['stream'],
+          caller: attributes['caller'],
+        ),
+      );
       type = 'ref';
       target = null;
     } else {
@@ -2161,7 +2169,15 @@ String? _footnote(
   } else if (content != null) {
     finalContent = prepare(content);
     index = doc.counter('footnote-number');
-    doc.registerFootnote(Footnote(index, id, finalContent));
+    doc.registerFootnote(
+      Footnote(
+        index,
+        id,
+        finalContent,
+        stream: attributes['stream'],
+        caller: attributes['caller'],
+      ),
+    );
     type = null;
     target = null;
   } else {

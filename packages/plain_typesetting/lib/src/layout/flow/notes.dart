@@ -2,6 +2,13 @@ part of '../flow.dart';
 
 // Notes at the bottom of a region, and side notes beside the text.
 
+/// [boxes] as one block, kept in [groups].
+LayoutBox _group(Set<LayoutBox> groups, List<LayoutBox> boxes) {
+  final group = BlockBox(boxes);
+  groups.add(group);
+  return group;
+}
+
 extension _Notes on _Pass {
   /// Sets the side notes beside their anchors on every page (see
   /// [FlowLayout.sideNotes]), the pages' text as it is.
@@ -101,16 +108,50 @@ extension _Notes on _Pass {
     final width = region.width;
     var fit = first;
     final deferred = _deferredNotes;
-    List<LayoutBox> pending(_Fit fit) => [
-      ?deferred,
-      for (final name in _Pass._anchorsOf(fit.placed))
-        if (!_notesSet.contains(name)) ?layout.notes[name],
-    ];
+    // The notes of the anchors placed: the main series' (after those
+    // deferred from the region before), then each stream's in turn, under
+    // its separator, in its columns.
+    final groups = <LayoutBox>{};
+    List<LayoutBox> pending(_Fit fit) {
+      final main = <LayoutBox>[?deferred];
+      final streams = <String, List<LayoutBox>>{};
+      for (final name in _Pass._anchorsOf(fit.placed)) {
+        if (_notesSet.contains(name)) continue;
+        final note = layout.notes[name];
+        if (note == null) continue;
+        switch (layout.noteStreamOf[name]) {
+          case final stream?:
+            (streams[stream] ??= []).add(note);
+          case null:
+            main.add(note);
+        }
+      }
+      if (streams.isEmpty) return main;
+      return [
+        ...main,
+        for (final stream in layout.noteStreams)
+          if (streams[stream.name] case final notes?)
+            _group(groups, [
+              ?stream.separator,
+              if (stream.columns > 1)
+                ColumnsBox(
+                  notes,
+                  count: stream.columns,
+                  gap: stream.columnGap,
+                  balance: true,
+                )
+              else
+                ...notes,
+            ]),
+      ];
+    }
+
     // The bottom of the region: its floating boxes, then its notes under
-    // the separator.
+    // the separator (the main series', when it has some).
     List<LayoutBox> area(List<LayoutBox> notes) => [
       ...bottom,
-      if (notes.isNotEmpty) ?layout.noteSeparator,
+      if (notes.isNotEmpty && !groups.contains(notes.first))
+        ?layout.noteSeparator,
       ...notes,
     ];
     var notes = pending(fit);

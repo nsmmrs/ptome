@@ -321,12 +321,14 @@ final class FloatShape
   double bandHeight
 final class FlowLayout
   BaselineGrid? baselineGrid
-  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2, BaselineGrid? baselineGrid})
+  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2, BaselineGrid? baselineGrid})
   LayoutBox? noteSeparator
   LayoutResult layout(List<LayoutBox> content, {LayoutResult? reuse, int unchangedBefore = 0, Set<int>? changedPages})
   LineBreaker lineBreaker
+  List<NoteStream> noteStreams
   Map<String, LayoutBox> notes
   Map<String, LayoutBox> sideNotes
+  Map<String, String> noteStreamOf
   Map<String?, PageTemplate> templates
   PageBreaker pageBreaker
   PageTemplate Function(PageTemplate, int)? templateForPage
@@ -448,6 +450,12 @@ final class MultipleLineHeight extends LineHeight
 final class NamedTarget extends LinkTarget
   NamedTarget(String name)
   String name
+final class NoteStream
+  LayoutBox? separator
+  NoteStream(String name, {LayoutBox? separator, int columns = 1, double columnGap = 12})
+  String name
+  double columnGap
+  int columns
 final class OpenTypeShaper implements OpenTypeTextFont
   List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}})
   OpenTypeFont font

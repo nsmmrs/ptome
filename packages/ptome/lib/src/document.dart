@@ -227,8 +227,9 @@ class ImageReference {
 ///
 /// Port of `Asciidoctor::Document::Footnote`.
 class Footnote {
-  /// Creates a footnote with [index], [id] and [text].
-  const new(this.index, this.id, this.text);
+  /// Creates a footnote with [index], [id] and [text], of the note
+  /// [stream] with [caller] (a units note, ADR-0020).
+  const new(this.index, this.id, this.text, {this.stream, this.caller});
 
   /// The footnote index (its number).
   final String index;
@@ -238,6 +239,12 @@ class Footnote {
 
   /// The footnote text.
   final String text;
+
+  /// The note stream it is of (`note:x[…]`), if any.
+  final String? stream;
+
+  /// Its caller in its stream, if the stream has callers.
+  final String? caller;
 }
 
 /// The document catalog: references, footnotes, links, images, callouts

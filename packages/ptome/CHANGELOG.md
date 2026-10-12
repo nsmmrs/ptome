@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Note streams at the foot of the PDF's page apart from the footnotes
+  (`note_streams`, `note_stream_<name>_*`): each units stream under its
+  own separator, by its caller, in its own size and columns (a critical
+  apparatus); the footnotes are numbered without them.
 - Line numbers in the PDF's margin (`:line-numbers:` `typeset`,
   `logical` or `grid`; `line_numbers_*` theme keys): every line or every
   nth, restarting each page, section or never, the lines the text is set

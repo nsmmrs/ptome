@@ -85,7 +85,14 @@ extension _Columns on _Pass {
         filled.hit == null &&
         box.count > 1) {
       final kept = filled;
-      var low = kept.height / box.count;
+      // (Never less than the first box needs: content placed at the top of
+      // a column too short for its first line may give up on it.)
+      var low = math.max(
+        kept.height / box.count,
+        box.children.isEmpty
+            ? 0.0
+            : _minHeight(box.children.first, columnWidth),
+      );
       var high = kept.height;
       for (var step = 0; step < 16 && high - low > 0.01; step++) {
         final room = (low + high) / 2;

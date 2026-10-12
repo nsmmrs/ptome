@@ -243,6 +243,8 @@ final class FlowLayout {
     this.templateForPage,
     this.notes = const {},
     this.noteSeparator,
+    this.noteStreams = const [],
+    this.noteStreamOf = const {},
     this.sideNotes = const {},
     this.sideColumn,
     this.sideNoteGap = 2,
@@ -292,6 +294,16 @@ final class FlowLayout {
 
   /// What is set above the notes of a region (a short rule, say).
   final LayoutBox? noteSeparator;
+
+  /// The series of [notes] besides the main one, set under it in this
+  /// order, each under its own separator and in its own columns: a
+  /// critical apparatus, a reference Bible's cross-references, a second
+  /// series of footnotes.
+  final List<NoteStream> noteStreams;
+
+  /// The stream of each note in one ([NoteStream.name]), by its anchor;
+  /// the others are the main series.
+  final Map<String, String> noteStreamOf;
 
   /// Notes set beside the text by the anchor that refers to them (a
   /// reference Bible's cross-references in its center column): each in

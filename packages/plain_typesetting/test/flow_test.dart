@@ -181,6 +181,58 @@ void main() {
     );
   });
 
+  test('note streams: each under its own separator, in its columns', () {
+    final document = RecordingDocument();
+    final pages =
+        FlowLayout(
+              template: _rows(12),
+              notes: {
+                'f1': _para('foot1'),
+                for (var i = 1; i <= 4; i++) 'a$i': _para('app$i'),
+              },
+              noteSeparator: _para('MAIN'),
+              noteStreams: [
+                NoteStream('apparatus', separator: _para('APP'), columns: 2),
+              ],
+              noteStreamOf: {for (var i = 1; i <= 4; i++) 'a$i': 'apparatus'},
+            )
+            .layout([
+              BlockBox([_para('text1')], style: const BoxStyle(anchor: 'a1')),
+              BlockBox([_para('text2')], style: const BoxStyle(anchor: 'f1')),
+              for (var i = 2; i <= 4; i++)
+                BlockBox([_para('t$i')], style: BoxStyle(anchor: 'a$i')),
+            ])
+            .render(document);
+    // The main series first, then the apparatus under its own separator,
+    // its four notes in two columns of two.
+    expect(
+      pages.single.texts.map((t) => t.trim()).join(' '),
+      'text1 text2 t2 t3 t4 MAIN foot1 APP app1 app2 app3 app4',
+    );
+    final at = {
+      for (final call in document.pages.single.canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    expect(at['app3']!.$1, greaterThan(at['app1']!.$1));
+    expect(at['app3']!.$2, closeTo(at['app1']!.$2, 1e-6));
+    // Only apparatus notes: no main separator.
+    final only =
+        FlowLayout(
+              template: _rows(12),
+              notes: {'a1': _para('app1')},
+              noteSeparator: _para('MAIN'),
+              noteStreams: [NoteStream('apparatus', separator: _para('APP'))],
+              noteStreamOf: const {'a1': 'apparatus'},
+            )
+            .layout([
+              BlockBox([_para('text1')], style: const BoxStyle(anchor: 'a1')),
+            ])
+            .render(RecordingDocument());
+    expect(only.single.texts.map((t) => t.trim()).join(' '), 'text1 APP app1');
+  });
+
   test('balanced columns: the last region of a set as even as can be', () {
     // Where each line is drawn: its text, x and y.
     Map<String, (double, double)> placed({required bool balance}) {

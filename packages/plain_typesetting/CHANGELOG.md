@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FlowLayout.noteStreams` (`NoteStream`) and `noteStreamOf`: series of
+  notes at the bottom of a region under the main one, each under its own
+  separator and in its own balanced columns. Balanced columns no longer
+  try a height shorter than their first box.
 - `BoxStyle.numberLines`: the lines of text in the box are listed, where
   they are, in the page's `PageInfo.lines` (`TypesetLine`) for its
   template's foreground to number; custom content reports its lines in

@@ -2559,6 +2559,41 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('a note stream at the foot of the page, apart, by its own keys', () {
+      // The sample's translators' notes (the `tn` stream), set apart from
+      // the footnotes, red by their own keys.
+      String convert(String theme) {
+        final themeFile = File('${_dir.path}/stream-${_count++}-theme.yml')
+          ..writeAsStringSync('extends: default\n$theme');
+        final out = '${themeFile.path}.pdf';
+        convertFile(
+          'test/units/fixtures/bible/sample.adoc',
+          AsciidoctorOptions(
+            safe: SafeMode.unsafe,
+            backend: 'pdf',
+            toFile: out,
+            attributes: {'pdf-theme': themeFile.path},
+          ),
+        );
+        return out;
+      }
+
+      const red = "  tn:\n    font_color: 'FF0000'\n";
+      final apart = convert('note_streams: [tn]\nnote_stream:\n$red');
+      expect(_content(apart), contains('1 0 0 rg'));
+      expect(_pages(apart).expand((p) => p).join(' '), contains('Heb.'));
+      // Not listed: a footnote as before.
+      expect(
+        _content(convert('note_stream:\n$red')),
+        isNot(contains('1 0 0 rg')),
+      );
+      // In two columns: one note, whole.
+      final columned = convert(
+        'note_streams: [tn]\nnote_stream:\n  tn:\n    columns: 2\n',
+      );
+      expect(_pages(columned).expand((p) => p).join(' '), contains('Heb.'));
+    });
+
     test('line numbers: typeset, logical and grid lines', () {
       const verse =
           '[verse]\n____\nShall I compare thee to a summer day, thou art '

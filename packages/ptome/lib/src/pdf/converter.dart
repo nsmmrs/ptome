@@ -650,6 +650,8 @@ final class PdfConverter extends BuiltInConverter
       pageLabel: _pageLabel,
       notes: _notes,
       noteSeparator: _notes.isEmpty ? null : _footnoteSeparator(),
+      noteStreams: _layoutNoteStreams(),
+      noteStreamOf: _noteStreamOf,
       sideNotes: _sideNotes,
       sideColumn: _sideNotes.isEmpty
           ? null
@@ -10970,6 +10972,7 @@ final class PdfConverter extends BuiltInConverter
         index!,
         anchored: node.type != 'xref',
         rendered: _renderedFootnotes.contains(footnote),
+        caller: _streamOf(footnote) == null ? null : footnote.caller ?? index,
       );
     }
     if (node.type == 'xref') {
@@ -10996,16 +10999,19 @@ final class PdfConverter extends BuiltInConverter
     String index, {
     bool anchored = true,
     bool rendered = false,
+    String? caller,
   }) {
     final anchor = anchored
         ? '<a id="_footnoteref_$index">$_dummyText</a>'
         : '';
     if (!anchored) _unanchoredFootnotes.add(index);
-    final label = _footnoteNumbering == 'document'
-        ? index
-        : rendered
-        ? _footnoteLabels[index] ?? index
-        : '${(int.tryParse(index) ?? 0) - _renderedFootnotes.length}';
+    final label =
+        caller ??
+        (_footnoteNumbering == 'document'
+            ? '${_mainNumber(index)}'
+            : rendered
+            ? _footnoteLabels[index] ?? index
+            : '${_mainNumber(index) - _mainRendered}');
     // `footnotes_reference_content` (modern engine, ADR-0010), else the
     // document's `footnote-reference-template` (every format's, ADR-0012):
     // `[1]` by default, raised, the number the link.
@@ -11052,7 +11058,15 @@ final class PdfConverter extends BuiltInConverter
   /// The `label` attribute that has the layout number footnote [index]'s
   /// reference and note on their page (when footnotes are numbered so).
   String _footnoteLabelKey(String index) =>
-      _footnoteNumbering == 'page' ? ' label="fn$index"' : '';
+      _footnoteNumbering == 'page' && !_streamed(index)
+      ? ' label="fn$index"'
+      : '';
+
+  /// Whether footnote [index] is a stream's note (by its caller, not
+  /// numbered).
+  bool _streamed(String index) =>
+      _noteStreams.isNotEmpty &&
+      _document.footnotes.any((f) => f.index == index && _streamOf(f) != null);
 
   /// The texts of the labels the layout gives (a footnote's number on its
   /// page, `fn<index>`), from the layout before.
@@ -11195,6 +11209,80 @@ final class PdfConverter extends BuiltInConverter
   double get _footnoteItemSpacing =>
       _length('footnotes_item_spacing', _rootFontSize) ?? 0;
 
+  /// The note streams set at the foot of the page apart from the
+  /// footnotes, in order (`note_streams`, modern engine): units notes of
+  /// those streams (`note:x[…]`), each styled by its own
+  /// `note_stream_<name>_*` keys (as the `footnotes_*` keys style the
+  /// footnotes), in `note_stream_<name>_columns`.
+  late final List<String> _noteStreams = switch (_theme.value('note_streams')) {
+    ThemeList(:final values)
+        when !asciidoctorCompat(_document, CompatFormat.pdf) =>
+      [for (final value in values) value.rubyString],
+    _ => const [],
+  };
+
+  /// The stream of each note set in one, by its anchor.
+  final Map<String, String> _noteStreamOf = {};
+
+  /// The stream [footnote] is set in apart from the footnotes, if any.
+  String? _streamOf(Footnote footnote) => switch (footnote.stream) {
+    final stream? when _noteStreams.contains(stream) => stream,
+    _ => null,
+  };
+
+  /// Footnote [index]'s number in the main series: the notes of the
+  /// streams apart before it not counted.
+  int _mainNumber(String index) {
+    final number = int.tryParse(index) ?? 0;
+    if (_noteStreams.isEmpty) return number;
+    return number -
+        _document.footnotes
+            .where(
+              (f) =>
+                  _streamOf(f) != null && (int.tryParse(f.index) ?? 0) < number,
+            )
+            .length;
+  }
+
+  /// How many of the main series' footnotes are rendered.
+  int get _mainRendered =>
+      _renderedFootnotes.where((f) => _streamOf(f) == null).length;
+
+  /// [body] with the note stream [stream]'s keys over the footnotes'.
+  T _asStream<T>(String? stream, T Function() body) {
+    if (stream == null) return body();
+    final saved = _theme;
+    _theme = _theme.overlaid(
+      'note_stream_${stream.replaceAll('-', '_')}_',
+      'footnotes_',
+    );
+    try {
+      return body();
+    } finally {
+      _theme = saved;
+    }
+  }
+
+  /// The note streams the layout sets under the footnotes.
+  List<NoteStream> _layoutNoteStreams() => [
+    for (final stream in _noteStreams)
+      if (_noteStreamOf.containsValue(stream))
+        _asStream(stream, () {
+          late NoteStream made;
+          _withFont('footnotes', () {
+            made = NoteStream(
+              stream,
+              separator: _footnoteSeparator(),
+              columns: (_n('footnotes_columns') ?? 1).toInt(),
+              columnGap:
+                  _length('footnotes_column_gap', _rootFontSize) ??
+                  _rootFontSize,
+            );
+          });
+          return made;
+        }),
+  ];
+
   /// The rule above the footnotes at the bottom of a page: a third of the
   /// column long (`footnotes_separator_length`), `footnotes_separator_width`
   /// thick, `footnotes_margin_top` below the text.
@@ -11248,44 +11336,56 @@ final class PdfConverter extends BuiltInConverter
     ];
     if (footnotes.isEmpty) return;
     if (_pageFootnotes) {
-      _withFont('footnotes', () {
-        final spacing = _footnoteItemSpacing;
-        // How far each note's first line is set in (footnotes_indent, an
-        // em of the notes' size), and the space after its label
-        // (footnotes_label_gap): a no-break space that wide.
-        final indent = _length('footnotes_indent', _font.size) ?? 0;
-        final gapWidth = _length('footnotes_label_gap', _font.size) ?? 0;
-        final space = _fonts
-            .font(_font.family, _font.style)
-            .widthOf('\u00a0', 1, kerning: false);
-        final gap = gapWidth > 0 && space > 0
-            ? '<font size="${gapWidth / space}">\u00a0</font>'
-            : '';
-        final offset = _renderedFootnotes.length;
-        final sectionText = node is Section
-            ? node.xreftext(doc.attr('xrefstyle'))
-            : null;
-        for (final footnote in footnotes) {
-          final index = footnote.index;
-          final label = _footnoteNumbering == 'document'
-              ? index
-              : '${(int.tryParse(index) ?? 0) - offset}';
-          if (sectionText != null) {
-            _footnoteLabels[index] = '$label - $sectionText';
-          }
-          _notes['_footnoteref_$index'] = CustomBox(
-            _textBox(
-              '<a id="_footnotedef_$index">$_dummyText</a>'
-              '${_footnoteNoteLabel(index, label)}$gap${footnote.text}',
-              _font,
-              align: _baseTextAlign,
-              indent: indent,
-              hyphenate: true,
-            ),
-            style: BoxStyle(margin: EdgeInsets(top: spacing)),
-          );
-        }
-      });
+      final offset = _renderedFootnotes
+          .where((f) => _streamOf(f) == null)
+          .length;
+      final sectionText = node is Section
+          ? node.xreftext(doc.attr('xrefstyle'))
+          : null;
+      for (final footnote in footnotes) {
+        final stream = _streamOf(footnote);
+        _asStream(
+          stream,
+          () => _withFont('footnotes', () {
+            final spacing = _footnoteItemSpacing;
+            // How far each note's first line is set in (footnotes_indent,
+            // an em of the notes' size), and the space after its label
+            // (footnotes_label_gap): a no-break space that wide.
+            final indent = _length('footnotes_indent', _font.size) ?? 0;
+            final gapWidth = _length('footnotes_label_gap', _font.size) ?? 0;
+            final space = _fonts
+                .font(_font.family, _font.style)
+                .widthOf('\u00a0', 1, kerning: false);
+            final gap = gapWidth > 0 && space > 0
+                ? '<font size="${gapWidth / space}">\u00a0</font>'
+                : '';
+            final index = footnote.index;
+            // (A stream's note by its caller; the main series numbered
+            // without the streams' notes.)
+            final label = stream != null
+                ? footnote.caller ?? index
+                : _footnoteNumbering == 'document'
+                ? '${_mainNumber(index)}'
+                : '${_mainNumber(index) - offset}';
+            if (sectionText != null && stream == null) {
+              _footnoteLabels[index] = '$label - $sectionText';
+            }
+            final id = '_footnoteref_$index';
+            if (stream != null) _noteStreamOf[id] = stream;
+            _notes[id] = CustomBox(
+              _textBox(
+                '<a id="_footnotedef_$index">$_dummyText</a>'
+                '${_footnoteNoteLabel(index, label)}$gap${footnote.text}',
+                _font,
+                align: _baseTextAlign,
+                indent: indent,
+                hyphenate: true,
+              ),
+              style: BoxStyle(margin: EdgeInsets(top: spacing)),
+            );
+          }),
+        );
+      }
       _renderedFootnotes.addAll(footnotes);
       return;
     }

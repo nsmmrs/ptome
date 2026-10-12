@@ -701,6 +701,27 @@ abstract interface class BaselineContent implements CustomContent {
   double? firstBaseline(double width);
 }
 
+/// A series of notes at the bottom of a region besides the main one
+/// ([FlowLayout.noteStreams]): its notes under its [separator], in
+/// [columns] [columnGap] apart, balanced.
+@immutable
+final class NoteStream {
+  /// The stream [name].
+  const new(this.name, {this.separator, this.columns = 1, this.columnGap = 12});
+
+  /// The stream's name ([FlowLayout.noteStreamOf]).
+  final String name;
+
+  /// What is set above its notes, if anything.
+  final LayoutBox? separator;
+
+  /// The columns its notes are set in.
+  final int columns;
+
+  /// The space between the columns.
+  final double columnGap;
+}
+
 /// Lines a region's text keeps its baselines to ([FlowLayout.baselineGrid]):
 /// [step] apart, the first [offset] below the region's top (where a line
 /// of text starting at the top has its baseline), the same in every
