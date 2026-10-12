@@ -898,11 +898,20 @@ extension _InlineElements on PdfConverter {
   }
 
   /// Whether footnotes go at the bottom of the page their reference is on
-  /// (the modern engine's default, `footnotes_placement: page`), rather
-  /// than at the end of the chapter or document (`end`, the gem's).
+  /// (the modern engine's default, `footnotes_placement: page`; `column`,
+  /// at the foot of its column), rather than at the end of the chapter or
+  /// document (`end`, the gem's).
   bool get _pageFootnotes =>
-      (_choice('footnotes_placement', const ['page', 'end']) ?? 'page') ==
-      'page';
+      (_choice('footnotes_placement', const ['page', 'column', 'end']) ??
+          'page') !=
+      'end';
+
+  /// Whether an article's page columns are the page's own, each with its
+  /// notes at its foot (`footnotes_placement: column`, modern engine).
+  bool get _columnFootnotes =>
+      _choice('footnotes_placement', const ['page', 'column', 'end']) ==
+          'column' &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
 
   /// A note's opening heading (`[.heading]#…#`), and the space after it.
   static final _noteHeadingRx = RegExp(

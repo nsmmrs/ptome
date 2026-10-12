@@ -164,7 +164,7 @@ A look is a parameter file over three levels, tokens, role styles and templates,
 | The TeXbook | 29 × 44 pc; 3 pc indent; inch-high chapter numbers; hung folio |
 | Pragmatic Bookshelf | 7.5 × 9 in; Bookman Light 9.7 (TeX Gyre Bonum); Myriad heads; mono at 7.76 |
 | Tufte | 26 pc text, 12 pc margin column; 10/14 body, 8/10 notes; small-caps openers |
-| Federal Register | three 14¼ pc columns; Melior 9/10 ragged |
+| Federal Register | three 14 pc columns 9 pt apart (measured, 89 FR 47855); Melior 9/10 ragged; notes at the column foot (the `federal-register` look) |
 | US bill | 26 pt grid; every line numbered, restarting per page; DeVinne 14 (the `us-bill` look) |
 | UK bill | every fifth line numbered right in italic 9 pt; Book Antiqua 11 on 12 or 13.3 (the `uk-bill` look) |
 | Loeb facing pages | original verso, translation recto; recto head with the line range |

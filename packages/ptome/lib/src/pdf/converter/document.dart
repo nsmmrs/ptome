@@ -137,17 +137,10 @@ extension _DocumentParts on PdfConverter {
     // (`base_line_pitch`, modern engine: the body's lines that far apart,
     // whatever the face's height, as a pleading's are 24 pt: the line
     // height that gives it, from the pitch at two.)
+    _pitchedHeights.clear();
     if (_length('base_line_pitch', _rootFontSize) case final pitch?
-        when pitch > 0 && !asciidoctorCompat(document, CompatFormat.pdf)) {
-      double at(double height) => _textBox(
-        'Ag Ag',
-        _font.copyWith(lineHeight: height),
-        align: 'left',
-      ).linePitch(1);
-      final (one, two) = (at(1), at(2));
-      if (two - one > 1e-6) {
-        _font = _font.copyWith(lineHeight: 1 + (pitch - one) / (two - one));
-      }
+        when !asciidoctorCompat(document, CompatFormat.pdf)) {
+      _font = _pitched(_font, pitch);
     }
     _sections.clear();
     _hungLabels.clear();
@@ -269,7 +262,20 @@ extension _DocumentParts on PdfConverter {
           ? columns
           : 0;
       _lineNumbering = _lineNumberingOf(document);
-      if (_inColumns) {
+      _pageColumns = null;
+      if (_inColumns && _columnFootnotes) {
+        // (The page's own columns: each a region with its notes at its
+        // foot, as the Federal Register sets a note under the column its
+        // reference is in.)
+        final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();
+        _columnWidth = _columnWidthOf(columns, gap);
+        _pageColumns = (columns, gap);
+        _numbered(() {
+          _manNameSection(document);
+          _traverse(document);
+        });
+        _footnotes(document);
+      } else if (_inColumns) {
         final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();
         _columnWidth = _columnWidthOf(columns, gap);
         final body = _collect(() {
@@ -340,6 +346,8 @@ extension _DocumentParts on PdfConverter {
       return PageTemplate(
         Rect(0, 0, width, height),
         margins: _marginsFor(document, layout),
+        columns: _pageColumns?.$1 ?? 1,
+        columnGap: _pageColumns?.$2 ?? 12,
         header: _header,
         footer: _footer,
         // (`running_content_layer: over`: the header painted after the

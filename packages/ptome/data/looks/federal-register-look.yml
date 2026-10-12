@@ -1,0 +1,124 @@
+# A document of the Federal Register as the Office of the Federal
+# Register prints its Rules and Regulations section, measured from 89 FR
+# 47855 (USCG–2023–0600, June 4, 2024): Letter, three columns 14 pc wide
+# with a 9 pt gutter from 45 pt in on each side; the text 9 on 10, flush
+# left and ragged, hyphenated, each paragraph's first line indented 1 em
+# (under a heading too), no space between paragraphs; headings in bold
+# (a lettered one in italic) 5 pt below the text above them; footnotes
+# 7 point at the foot of their column. The head: the folio in bold at the
+# outer corner, `Federal Register` in bold and the issue's citation
+# centred, a heavy rule under them across the page.
+#
+# A document opens with its agency block in sans bold (the department,
+# the agency, the CFR parts, the docket number and RIN, the title) and the
+# preamble's captions run in in bold capitals (`AGENCY:`, `ACTION:`,
+# `SUMMARY:`: a description list, `Agency:: Coast Guard, DHS.`), and ends
+# with its FR Doc line and billing code: roles the document gives its
+# paragraphs (`[.agency]`, `[.docket]`, `[.fr-title]`, `[.fr-doc]`,
+# `[.billing-code]`); a thematic break is the heavy rule between
+# documents.
+#
+# The document gives the issue (`:fr-issue: Vol. 89, No. 108 / Tuesday,
+# June 4, 2024 / Rules and Regulations`; the head has no citation without
+# it) and its first page's number (`:folio-start: 47855`).
+#
+# The faces' free stand-ins: Charis SIL for Melior (`ptome doctor --look
+# federal-register`), Noto Sans for Helvetica.
+tokens:
+  font:
+    text: { family: { print: Charis SIL, screen: [Charis SIL, Melior, Georgia, serif] } }
+    display: { family: { print: Charis SIL, screen: [Charis SIL, Melior, Georgia, serif] }, weight: bold }
+  size:
+    text: { print: 9pt, screen: 17px }
+    headings: { print: [9pt, 9pt, 9pt, 9pt, 9pt, 9pt] }
+  leading: { print: 1.11, screen: 1.5 }
+  measure: { screen: 36em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: start }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  # Three columns of 14 pc and two 9 pt gutters: 522 pt of 612.
+  page: { size: Letter, margin: [60pt, 45pt, 50pt, 45pt] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 5pt }, space-after: { print: 3pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  # (9 on 10 whatever the face's own line spacing.)
+  base_line_pitch: 10
+  page:
+    columns: 3
+    column_gap: 9
+  # (Roman-numbered headings bold, lettered ones under them italic.)
+  heading:
+    line_pitch: 10
+    margin_top: 5
+    margin_bottom: 3
+    h3: { font_style: italic }
+    h4: { font_style: italic }
+  # (Every paragraph's first line indented, the first under a heading
+  # too; none apart.)
+  prose:
+    margin_bottom: 0
+    text_indent: 9
+  # The agency block and the end of a document: flush left, in the sans.
+  role:
+    agency: { font_family: Noto Sans, font_style: bold, font_size: 9, text_indent: 0, margin_bottom: 8, hyphens: false }
+    docket: { font_family: Noto Sans, font_style: bold, font_size: 8, text_indent: 0, margin_bottom: 6, hyphens: false }
+    fr-title: { font_family: Noto Sans, font_style: bold, font_size: 9, text_indent: 0, margin_bottom: 8, hyphens: false }
+    fr-doc: { font_size: 7, text_indent: 0 }
+    billing-code: { font_family: Noto Sans, font_style: bold, font_size: 6, text_indent: 0, margin_bottom: 12 }
+  # The preamble's captions: a description list, each term run in before
+  # its text in bold sans capitals with a colon (`Agency:: Coast Guard,
+  # DHS.`).
+  description_list:
+    term_display: inline
+    term_font_family: Noto Sans
+    term_font_style: bold
+    term_font_size: 7.5
+    term_text_transform: uppercase
+    term_suffix: ':'
+    term_gap: 2.5
+    description_indent: 0
+    margin_bottom: 2
+  # (The heavy rule between documents.)
+  thematic_break:
+    border_width: 2
+    border_color: '000000'
+    margin_top: 6
+    margin_bottom: 10
+  # (At the foot of the column the reference is in, numbered in plain
+  # superior figures.)
+  footnotes:
+    placement: column
+    font_size: 7
+    line_pitch: 8
+    reference_content: '{{number}}'
+    label_content: '<sup>{{number}}</sup>'
+    reference_space: collapse
+    separator_length: 50%
+  header:
+    height: 52pt
+    vertical_align: middle
+    font_size: 10
+    border_width: 1.5
+    border_color: '000000'
+    recto:
+      left: { content: '' }
+      center: { content: '*Federal Register* / {fr-issue}' }
+      right: { content: '*{page-number}*' }
+    verso:
+      left: { content: '*{page-number}*' }
+      center: { content: '*Federal Register* / {fr-issue}' }
+      right: { content: '' }
+  footer:
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content .paragraph p{text-indent:1em;margin:0}
+  #content .agency p,#content .docket p,#content .fr-title p{font-family:"Noto Sans",Helvetica,Arial,sans-serif;font-weight:bold;text-indent:0}
+  #content .dlist dt{font-family:"Noto Sans",Helvetica,Arial,sans-serif;font-weight:bold;font-size:.83em;text-transform:uppercase}
+  #content .billing-code p{font-family:"Noto Sans",Helvetica,Arial,sans-serif;font-weight:bold;font-size:.67em;text-indent:0}
+  #content hr{border-top:2px solid #000}

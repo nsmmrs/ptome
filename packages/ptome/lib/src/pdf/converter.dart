@@ -1148,6 +1148,10 @@ final class PdfConverter extends BuiltInConverter
   /// Whether the body is set in the theme's page columns.
   bool _inColumns = false;
 
+  /// An article's page columns as the page template's own (their count
+  /// and gap), each with its notes (`footnotes_placement: column`).
+  (int, double)? _pageColumns;
+
   /// The width of the columns the content is set in, null outside them.
   double? _columnWidth;
 
@@ -1532,6 +1536,13 @@ final class PdfConverter extends BuiltInConverter
 
   /// The page the body starts on (1-based).
   int _bodyStart = 1;
+
+  /// The line heights that set a font's lines a pitch apart, by its
+  /// family, style, size and the pitch (`<category>_line_pitch`).
+  final Map<(String, String, double, double), double?> _pitchedHeights = {};
+
+  /// `folio-start`, read once (see `_folioStart`).
+  int? _folioStartValue;
 
   /// The pages of the table of contents (1-based, inclusive), if any.
   (int, int)? _tocPages;

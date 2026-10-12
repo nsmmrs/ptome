@@ -261,7 +261,13 @@ extension _Paragraphs on PdfConverter {
       _hungLabels[id] = (margin.text, margin.font);
       content = '<a id="$id">$_dummyText</a>$content';
     }
-    content = _hyphenated(content, align);
+    // (The modern engine: `role_<role>_hyphens: false` keeps a role's
+    // paragraphs whole, as an agency's name in capitals.)
+    if (!roles.any(
+      (role) => _theme.value('role_${role}_hyphens') == const ThemeBool(false),
+    )) {
+      content = _hyphenated(content, align);
+    }
     if (node.hasTitle) _caption(node, labeled: false);
     // The modern engine keeps a paragraph's lines together at page
     // breaks: no fewer than prose_orphans at the bottom of a page and

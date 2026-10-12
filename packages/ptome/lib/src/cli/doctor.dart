@@ -318,6 +318,20 @@ final List<NeededFont> lookFonts = [
     source: _google('Crimson Pro', 'CrimsonPro', _all),
     license: 'SIL Open Font License 1.1',
   ),
+  const NeededFont(
+    name: 'Charis SIL',
+    usedBy: 'the federal-register look (Melior)',
+    families: ['Charis SIL'],
+    styles: _all,
+    fileNames: {},
+    source: GoogleFonts('Charis SIL', {
+      FontStyle.normal: 'CharisSIL-Regular.ttf',
+      FontStyle.bold: 'CharisSIL-Bold.ttf',
+      FontStyle.italic: 'CharisSIL-Italic.ttf',
+      FontStyle.boldItalic: 'CharisSIL-BoldItalic.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
   NeededFont(
     name: 'EB Garamond',
     usedBy: 'the trade-novel look (Garamond, Sabon)',

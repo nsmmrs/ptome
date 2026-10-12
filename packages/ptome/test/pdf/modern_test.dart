@@ -3174,6 +3174,95 @@ templates:
       });
     });
 
+    group('the federal-register look', () {
+      final words = [for (var k = 0; k < 40; k++) 'word$k'].join(' ');
+      String rule(String body) => _pdf(
+        '= Digital Certificate of Number\n:look: federal-register\n'
+        ':notitle:\n'
+        ':fr-issue: Vol. 89, No. 108 / Tuesday, June 4, 2024 / Rules\n'
+        ':folio-start: 47855\n\n$body',
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+
+      /// Each word of page [page] of [pdf] with its left and baseline-ish
+      /// bottom.
+      List<(String, double, double)> words0(String pdf, [int page = 1]) => [
+        for (final m
+            in RegExp(
+              r'xMin="([\d.]+)" yMin="[\d.]+" xMax="[\d.]+" yMax="([\d.]+)">'
+              '([^<]*)<',
+            ).allMatches(
+              Process.runSync('pdftotext', [
+                    '-f',
+                    '$page',
+                    '-l',
+                    '$page',
+                    '-bbox',
+                    pdf,
+                    '-',
+                  ]).stdout
+                  as String,
+            ))
+          (m[3]!, double.parse(m[1]!), double.parse(m[2]!)),
+      ];
+
+      test('three columns, the head with the issue and the folio', () {
+        final pdf = rule(
+          '[.agency]\nDEPARTMENT OF HOMELAND SECURITY\n\n'
+          'Agency:: Coast Guard, DHS.\n\n'
+          '== I. Background\n\n'
+          '${List.filled(30, '$words.').join('\n\n')}\n',
+        );
+        final page = words0(pdf);
+        // The text from 45 pt in, in columns 14 pc wide 9 pt apart.
+        final lefts = {
+          for (final (_, x, y) in page)
+            if (y > 60) x.round(),
+        };
+        expect(lefts, containsAll([45, 222, 399]));
+        // The head: the folio from folio-start, the citation.
+        final text = _pages(pdf).first.join('\n');
+        expect(text, contains('47855'));
+        expect(text, contains('Federal Register'));
+        expect(text, contains('Vol. 89, No. 108'));
+        // The agency's name whole; the caption run in, with its colon.
+        expect(text, isNot(contains('SECU-')));
+        expect(text, contains(RegExp(r'AGENCY:\s*Coast Guard')));
+      });
+
+      test("a footnote at the foot of its reference's column", () {
+        final pdf = rule(
+          '$words\n\n[.column]\n<<<\n\n'
+          '$words.footnote:[5 U.S.C. 553.]\n',
+        );
+        final page = words0(pdf);
+        final (_, x, y) = page.firstWhere((w) => w.$1 == 'U.S.C.');
+        // (In the second column, at the foot of the page.)
+        expect(x, greaterThan(222));
+        expect(x, lessThan(399));
+        expect(y, greaterThan(700));
+      });
+
+      test("a heading of two lines on the text's pitch", () {
+        final pdf = rule(
+          '== II. Basis, Purpose, and Regulatory History of This Rule\n\n'
+          '$words\n',
+        );
+        final page = words0(pdf);
+        final first = page.firstWhere((w) => w.$1 == 'II.').$3;
+        final next = page
+            .where((w) => w.$2 < 100 && w.$3 > first + 1)
+            .map((w) => w.$3)
+            .reduce(math.min);
+        expect(next - first, closeTo(10, 0.01));
+      });
+    });
+
     test('the pleading look: numbered lines, the court on line 8', () {
       final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
           .join(' ');

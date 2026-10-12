@@ -518,7 +518,7 @@ extension _Sections on PdfConverter {
       ),
       _ => _rootFontSize,
     };
-    return _FontState(
+    final font = _FontState(
       family:
           keys.string('font_family') ?? _s('base_font_family') ?? _font.family,
       style: PdfConverter._fontStyle(keys.string('font_style')) ?? 'normal',
@@ -541,6 +541,13 @@ extension _Sections on PdfConverter {
         'heading_leading',
       ].where((key) => _theme.value(key) != null).firstOrNull,
     );
+    // (`heading_line_pitch`, `heading_h<n>_line_pitch`; modern engine: a
+    // heading's lines that far apart, whatever the face's height.)
+    if (levelKeys.length('line_pitch', size) case final pitch?
+        when !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      return _pitched(font, pitch);
+    }
+    return font;
   }
 
   /// A heading of [level]: its text box, margins, and the space it needs

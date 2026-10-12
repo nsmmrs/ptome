@@ -89,6 +89,13 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- The `federal-register` look: a Federal Register document (measured
+  from 89 FR 47855) in three columns, its agency block, run-in
+  captions and footnotes at the foot of their column. New: the
+  `folio-start` attribute (pages numbered within a volume),
+  `footnotes_placement: column`, `<category>_line_pitch` (a heading's
+  or the notes' lines a pitch apart, as `base_line_pitch` the body's),
+  `role_<role>_hyphens: false`, `description_list_term_suffix`.
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books

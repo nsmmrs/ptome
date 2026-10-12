@@ -80,11 +80,29 @@ extension _RunningContent on PdfConverter {
   };
 
   /// The label of page [number]: its number after the front matter, else
-  /// its number in lower-case roman numerals.
+  /// its number in lower-case roman numerals. The modern engine numbers
+  /// the first page after the front matter `folio-start` (a journal's or
+  /// the Federal Register's pages, numbered through a volume).
   String _pageLabel(int number) {
     final virtual = number - _skip.$2;
-    return virtual < 1 ? PdfConverter._roman(number).toLowerCase() : '$virtual';
+    if (virtual < 1) return PdfConverter._roman(number).toLowerCase();
+    return '${virtual + _folioStart - 1}';
   }
+
+  /// The number of the first page after the front matter (`folio-start`;
+  /// modern engine).
+  int get _folioStart => _folioStartValue ??= () {
+    final value = _document.attr('folio-start');
+    if (value == null || asciidoctorCompat(_document, CompatFormat.pdf)) {
+      return 1;
+    }
+    final start = int.tryParse(value.trim());
+    if (start == null || start < 1) {
+      logger.warn('folio-start is a page number, not $value; starting at 1');
+      return 1;
+    }
+    return start;
+  }();
 
   List<LayoutBox> _header(PageInfo page) => _running('header', page);
   List<LayoutBox> _footer(PageInfo page) => _running('footer', page);

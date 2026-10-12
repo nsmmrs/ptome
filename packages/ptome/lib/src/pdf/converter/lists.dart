@@ -509,7 +509,9 @@ extension _Lists on PdfConverter {
     double hang, {
     bool last = false,
   }) {
-    var text = term.text ?? '';
+    // (`description_list_term_suffix`: after the term, as the colon of a
+    // Federal Register caption, `AGENCY:`.)
+    var text = '${term.text ?? ''}${_s('description_list_term_suffix') ?? ''}';
     if (termFont.transform case final transform? when transform != 'none') {
       text = transformText(text, transform);
     }
