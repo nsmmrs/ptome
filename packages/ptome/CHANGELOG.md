@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Microtypography in the PDF: font expansion in the line breaker
+  (`base_font_expansion`, microtype's 2%, the letters' share of a line's
+  adjustment set by horizontal scaling), a limit on hyphenated lines in a
+  row (`base_hyphenate_limit_lines`), and protrusion at the left of
+  justified lines with `base_overhang`.
 - Tracking in the PDF: `<category>_letter_spacing` (a heading, a role, a
   title page part), a look style's `tracking` (CSS `letter-spacing` on the
   web), and `caps_letter_spacing`, which letterspaces words in capitals

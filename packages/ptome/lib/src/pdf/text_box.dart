@@ -248,8 +248,17 @@ final class TextContext {
     this.typographicScripts = false,
     this.labels,
     this.capsTracking = 0,
+    this.expansion = 0,
+    this.maxHyphenRun,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
+
+  /// How much wider or narrower the letters of a justified line may be set
+  /// (font expansion: `base_font_expansion`, modern engine).
+  final double expansion;
+
+  /// The most hyphenated lines in a row (`base_hyphenate_limit_lines`).
+  final int? maxHyphenRun;
 
   /// The tracking of text set in capitals or small capitals, in ems (the
   /// modern engine's `caps_letter_spacing`; microtype's 0.05 em).
@@ -403,13 +412,23 @@ const sideNoteAnchorPrefix = '_side_';
 
 /// A fragment as printed on a line.
 final class _Printed {
-  new(this.text, this.format, this.width, this.wordSpacing, this.spaces);
+  new(
+    this.text,
+    this.format,
+    this.width,
+    this.wordSpacing,
+    this.spaces, {
+    this.scale = 1,
+  });
 
   String text;
   final _Format format;
   double width;
   final double wordSpacing;
   final int spaces;
+
+  /// How much wider its letters are set (font expansion).
+  final double scale;
   double left = 0;
   double baseline = 0;
 
@@ -1543,6 +1562,7 @@ final class TextBox implements ShapedContent, BaselineContent {
                 f.format.size,
                 wordSpacing: f.wordSpacing,
                 characterSpacing: _state.characterSpacing + f.format.tracking,
+                horizontalScaling: f.scale * 100,
                 kerning: _state.kerning,
                 ligatures: f.format.font.ligates,
                 features: f.format.features,
@@ -2339,6 +2359,28 @@ base class _Wrap {
     return 0;
   }
 
+  /// How far the line's first character may hang before its start, as a
+  /// fraction of its width: microtype's default left protrusion (a
+  /// hyphen half, opening quotes three tenths, a few capitals a
+  /// twentieth).
+  double _leftOverhang() {
+    for (final f in _fragments) {
+      if (f.format.fragment.isMarker) continue;
+      final text = f.text.replaceAll(_zwsp, '').trimLeft();
+      if (text.isEmpty || text == '\n') continue;
+      final char = String.fromCharCode(text.runes.first);
+      final factor = switch (char) {
+        '-' || '\u2010' => 0.5,
+        '\u2018' || '\u201c' || '\u201e' || "'" || '"' || '\u00ab' => 0.3,
+        'A' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
+        _ => 0.0,
+      };
+      if (factor == 0) return 0;
+      return factor * f.format.font.widthOf(char, f.format.size);
+    }
+    return 0;
+  }
+
   void _printLine(double indent, [double right = 0]) {
     // (A line beside a float's outline ends [right] short of the width.)
     final room = _width - right;
@@ -2352,9 +2394,34 @@ base class _Wrap {
             !_paragraphFinished ||
             _accumulatedWidth > room - indent + 0.0001);
     final hang = _layout.overhang > 0 ? _layout.overhang * _overhang() : 0.0;
+    // (Justified, the first character hangs at the left too.)
+    final leftHang = _layout.overhang > 0 && justify
+        ? _layout.overhang * _leftOverhang()
+        : 0.0;
     final measure = math.min(_justifyTo ?? room, room);
+    final target = measure - indent + hang + leftHang;
+    // Font expansion (TextContext.expansion): the letters take their share
+    // of the difference, as the breaker counted it (their width times the
+    // expansion against the spaces' stretch, half a space, or shrink, a
+    // third), within the expansion; the spaces the rest.
+    var scale = 1.0;
+    final expansion = _context.expansion;
+    if (justify && expansion > 0) {
+      final difference = target - _accumulatedWidth;
+      var spaceWidth = 0.0;
+      for (final f in _fragments) {
+        if (f.spaces > 0) spaceWidth += f.spaces * _widthOf(' ', f.format);
+      }
+      final letters = _accumulatedWidth - spaceWidth;
+      final glue = difference >= 0 ? spaceWidth / 2 : spaceWidth / 3;
+      if (letters > 0) {
+        final share =
+            difference * letters * expansion / (glue + letters * expansion);
+        scale = 1 + (share / letters).clamp(-expansion, expansion);
+      }
+    }
     var wordSpacing = justify
-        ? (measure - indent + hang - _accumulatedWidth) / _spaceCount
+        ? (target / scale - _accumulatedWidth) / _spaceCount
         : 0.0;
     // A last line justified for being too wide only shrinks (with what
     // hangs past the room it may fit as it is).
@@ -2371,20 +2438,21 @@ base class _Wrap {
         _Printed(
           f.text,
           f.format,
-          f.width + wordSpacing * f.spaces,
+          (f.width + wordSpacing * f.spaces) * scale,
           wordSpacing,
           f.spaces,
+          scale: scale,
         ),
       );
     }
     final lineWidth = printed.fold<double>(0, (sum, f) => sum + f.width);
-    final available = room - indent + hang;
+    final available = room - indent + hang + leftHang;
     final offset = switch (justify ? 'justify' : _lineAlign) {
       'center' => available * 0.5 - lineWidth * 0.5,
       'right' => available - lineWidth,
       _ => 0.0,
     };
-    var x = indent + offset;
+    var x = indent + offset - leftHang;
     for (final f in printed) {
       f
         ..left = x
@@ -2843,11 +2911,19 @@ final class _OptimalWrap extends _Wrap {
     final justify = _layout.align == 'justify';
     final size = _state.size;
     final breaker = switch (_context.lineBreaking) {
-      LineBreaking.optimal || LineBreaking.auto when justify =>
-        KnuthPlassLineBreaker(emergencyStretch: 2 * size),
-      LineBreaking.optimal => KnuthPlassLineBreaker(raggedStretch: 2 * size),
+      LineBreaking.optimal ||
+      LineBreaking.auto when justify => KnuthPlassLineBreaker(
+        emergencyStretch: 2 * size,
+        expansion: _context.expansion,
+        maxHyphenRun: _context.maxHyphenRun,
+      ),
+      LineBreaking.optimal => KnuthPlassLineBreaker(
+        raggedStretch: 2 * size,
+        maxHyphenRun: _context.maxHyphenRun,
+      ),
       LineBreaking.auto when _layout.align == 'left' => KnuthPlassLineBreaker(
         raggedStretch: 2 * size,
+        maxHyphenRun: _context.maxHyphenRun,
       ),
       _ => const FirstFitLineBreaker(),
     };
@@ -3016,8 +3092,11 @@ String _describeBreaker(ItemLineBreaker breaker, (int, double)? drop) {
       :final tolerance,
       :final emergencyStretch,
       :final raggedStretch,
+      :final expansion,
+      :final maxHyphenRun,
     ) =>
-      'knuth-plass $tolerance $emergencyStretch $raggedStretch',
+      'knuth-plass $tolerance $emergencyStretch $raggedStretch '
+          '$expansion $maxHyphenRun',
     _ => breaker.runtimeType.toString(),
   };
   return drop == null ? costs : '$costs drop ${drop.$1} ${drop.$2}';

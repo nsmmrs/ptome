@@ -77,6 +77,38 @@ void main() {
     );
   });
 
+  test('font expansion: letters a little wider or narrower, lines full', () {
+    final lines = _lines(
+      [TextRun(_lorem, _body)],
+      breaker: const KnuthPlassLineBreaker(expansion: 0.02),
+      align: TextAlign.justify,
+    );
+    final scales = [
+      for (final line in lines.take(lines.length - 1))
+        for (final fragment in line.fragments)
+          if (fragment is TextFragment) fragment.style.horizontalScaling,
+    ];
+    // Every line but the last fills the measure; its letters within 2%.
+    for (final line in lines.take(lines.length - 1)) {
+      expect(line.width, closeTo(150, 1e-6));
+    }
+    expect(scales.every((s) => s >= 98 - 1e-9 && s <= 102 + 1e-9), isTrue);
+    expect(scales.any((s) => (s - 100).abs() > 0.01), isTrue);
+    // Without it, letters as they are.
+    final plain = _lines(
+      [TextRun(_lorem, _body)],
+      breaker: const KnuthPlassLineBreaker(),
+      align: TextAlign.justify,
+    );
+    expect(
+      plain
+          .expand((l) => l.fragments)
+          .whereType<TextFragment>()
+          .every((f) => f.style.horizontalScaling == 100),
+      isTrue,
+    );
+  });
+
   test('alignment: right and center move the line, justify fills it', () {
     final left = _lines([TextRun(_lorem, _body)]).first;
     final right = _lines([

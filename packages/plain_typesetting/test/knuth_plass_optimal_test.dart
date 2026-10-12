@@ -1,5 +1,6 @@
 // The Knuth-Plass line breaker finds the least demerits there are: on
-// small random paragraphs, justified or ragged, with lines of one width or
+// small random paragraphs, justified or ragged, with no two hyphenated
+// lines in a row or with font expansion, with lines of one width or
 // narrow first lines (an indent, a drop), the demerits of its breaks are
 // the least of every way to break them within its tolerance, found by
 // trying them all.
@@ -53,6 +54,8 @@ void main() {
       for (final breaker in const [
         KnuthPlassLineBreaker(),
         KnuthPlassLineBreaker(raggedStretch: 20),
+        KnuthPlassLineBreaker(maxHyphenRun: 1),
+        KnuthPlassLineBreaker(expansion: 0.02),
       ]) {
         var best = double.infinity;
         for (var mask = 0; mask < 1 << opportunities.length; mask++) {
@@ -71,10 +74,80 @@ void main() {
         expect(
           breaker.demeritsOf(items, widths, found),
           closeTo(best, best * 1e-9),
-          reason: 'seed $seed, ragged ${breaker.raggedStretch}',
+          reason:
+              'seed $seed, ragged ${breaker.raggedStretch}, '
+              'run ${breaker.maxHyphenRun}, expansion ${breaker.expansion}',
         );
       }
     }
-    expect(checked, greaterThan(200));
+    expect(checked, greaterThan(300));
+  });
+
+  test('no more hyphenated lines in a row than the limit, the least else', () {
+    final font = OpenTypeShaper(
+      OpenTypeFont.parse(
+        File('test/fonts/notoserif-regular-latin.ttf').readAsBytesSync(),
+      ),
+    );
+    final run = TextRun('', TextStyle(font, 10));
+    // Every word hyphenable, hyphens costing nothing more in a row: the
+    // breaker without a limit sets runs of them, the one with sets none.
+    const free = KnuthPlassLineBreaker(flaggedDemerits: 0);
+    const limited = KnuthPlassLineBreaker(flaggedDemerits: 0, maxHyphenRun: 1);
+    int longest(List<LineItem> items, List<int> breaks) {
+      var most = 0;
+      var run = 0;
+      for (final at in breaks) {
+        final item = items[at];
+        run = item is PenaltyItem && item.flagged ? run + 1 : 0;
+        most = math.max(most, run);
+      }
+      return most;
+    }
+
+    var runs = 0;
+    for (var seed = 0; seed < 300; seed++) {
+      final random = math.Random(seed);
+      final items = <LineItem>[];
+      for (var i = 0, n = 4 + random.nextInt(8); i < n; i++) {
+        items
+          ..add(BoxItem(run, 'word', 8 + random.nextDouble() * 20))
+          ..add(PenaltyItem(0, 0, flagged: true, run: run))
+          ..add(BoxItem(run, 'ing', 8 + random.nextDouble() * 20))
+          ..add(GlueItem(run, ' ', 3, 1.5, 1));
+      }
+      items
+        ..add(const GlueItem.fill())
+        ..add(PenaltyItem(0, PenaltyItem.forced, run: run));
+      final width = 30 + random.nextDouble() * 40;
+      double widths(int line) => width;
+      if (longest(items, free.breakItems(items, widths)) > 1) runs++;
+      final found = limited.breakItems(items, widths);
+      final demerits = limited.demeritsOf(items, widths, found);
+      if (demerits.isInfinite) continue;
+      expect(longest(items, found), lessThanOrEqualTo(1), reason: 'seed $seed');
+      final opportunities = [
+        for (var i = 0; i < items.length - 1; i++)
+          if (switch (items[i]) {
+            GlueItem() => i > 0 && items[i - 1] is BoxItem,
+            PenaltyItem(:final penalty) => penalty < PenaltyItem.never,
+            BoxItem() => false,
+          })
+            i,
+      ];
+      var best = double.infinity;
+      for (var mask = 0; mask < 1 << opportunities.length; mask++) {
+        best = math.min(
+          best,
+          limited.demeritsOf(items, widths, [
+            for (var b = 0; b < opportunities.length; b++)
+              if (mask & (1 << b) != 0) opportunities[b],
+            items.length - 1,
+          ]),
+        );
+      }
+      expect(demerits, closeTo(best, best * 1e-9), reason: 'seed $seed');
+    }
+    expect(runs, greaterThan(20));
   });
 }

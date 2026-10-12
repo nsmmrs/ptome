@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `KnuthPlassLineBreaker.expansion` (font expansion, counted as stretch
+  and shrink of the line's letters; `buildLines` and the paragraph lines
+  set it by horizontal scaling) and `maxHyphenRun` (the most hyphenated
+  lines in a row, part of each break's state).
 - `FlowLayout.noteStreams` (`NoteStream`) and `noteStreamOf`: series of
   notes at the bottom of a region under the main one, each under its own
   separator and in its own balanced columns. Balanced columns no longer

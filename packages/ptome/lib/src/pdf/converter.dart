@@ -399,6 +399,22 @@ final class PdfConverter extends BuiltInConverter
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
       decorationWidth: (_n('base_text_decoration_width') ?? 1).toDouble(),
+      // (`base_font_expansion`: true for microtype's 2%, or a fraction;
+      // `base_hyphenate_limit_lines`: the most hyphenated lines in a row;
+      // modern engine.)
+      expansion: asciidoctorCompat(document, CompatFormat.pdf)
+          ? 0
+          : switch (_theme.value('base_font_expansion')) {
+              ThemeBool(value: true) => 0.02,
+              ThemeNumber(:final value) when value > 0 => value.toDouble(),
+              _ => 0,
+            },
+      maxHyphenRun: asciidoctorCompat(document, CompatFormat.pdf)
+          ? null
+          : switch (_n('base_hyphenate_limit_lines')) {
+              final limit? when limit >= 1 => limit.toInt(),
+              _ => null,
+            },
       // (`caps_letter_spacing`, modern engine: capitals and small capitals
       // letterspaced, 0.05em as microtype's.)
       capsTracking: asciidoctorCompat(document, CompatFormat.pdf)

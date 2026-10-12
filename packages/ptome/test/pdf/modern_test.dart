@@ -526,6 +526,31 @@ void main() {
       );
     });
 
+    test('no more hyphenated lines in a row than the limit', () {
+      // The longest run of lines ending in a hyphen the source hasn't.
+      int longestRun(String pdf) {
+        var most = 0;
+        var run = 0;
+        for (final line in _pages(pdf).expand((page) => page)) {
+          final last = line.split(RegExp(r'\s+')).last;
+          final hyphenated =
+              last.endsWith('\u00ad') ||
+              last.endsWith('-') && !_paragraph.contains(last);
+          run = hyphenated ? run + 1 : 0;
+          if (run > most) most = run;
+        }
+        return most;
+      }
+
+      // (TeX's costs rarely give a run; the line breaker's own tests show
+      // the limit holding where they would.)
+      final source = narrow('') * 3;
+      expect(
+        longestRun(_pdf(source, theme: 'base:\n  hyphenate_limit_lines: 1\n')),
+        1,
+      );
+    });
+
     test('a hyphen where the font has no soft hyphen', () {
       final pdf = _pdf(
         narrow(''),
@@ -2557,6 +2582,36 @@ templates:
         compat: true,
       );
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
+    });
+
+    test('font expansion and protrusion at the left of justified lines', () {
+      final words =
+          'Words of the piece run on across the page, set justified. ' * 8;
+      final source =
+          '[.text-justify]\n$words\n\n[.text-justify]\n\u201cA quote opens '
+          'this line, its mark hanging into the margin before the text.\u201d '
+          '$words\n';
+      // The horizontal scales the lines are set at.
+      List<double> scales(String pdf) => [
+        for (final m in RegExp(r'([\d.]+) Tz').allMatches(_content(pdf)))
+          double.parse(m[1]!),
+      ];
+      final plain = _pdf(source, theme: 'base:\n  overhang: true\n');
+      expect(scales(plain).where((s) => s != 100), isEmpty);
+      final expanded = _pdf(source, theme: 'base:\n  font_expansion: true\n');
+      final set = scales(expanded).where((s) => s != 100).toList();
+      expect(set, isNotEmpty);
+      expect(set.every((s) => s >= 98 - 1e-6 && s <= 102 + 1e-6), isTrue);
+      // The opening quote hangs left of the text's edge.
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', plain, '-']).stdout as String;
+      final quote = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>\u201cA<').firstMatch(bbox)![1]!,
+      );
+      final edge = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Words<').firstMatch(bbox)![1]!,
+      );
+      expect(quote, lessThan(edge - 0.5));
     });
 
     test('tracking: a role, a heading, and capitals by themselves', () {

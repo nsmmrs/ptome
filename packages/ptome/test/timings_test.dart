@@ -86,12 +86,14 @@ void main() {
         lines[3],
         matches(r'^  Total time \(read, parse and convert\): \d+\.\d{5}$'),
       );
+      // (Each figure rounded to five places: the total's rounding and the
+      // parts' differ by up to one and a half units in the last place.)
       expect(
         double.parse(lines[3].split(': ').last),
         closeTo(
           double.parse(lines[1].split(': ').last) +
               double.parse(lines[2].split(': ').last),
-          0.00001,
+          0.000016,
         ),
       );
     });

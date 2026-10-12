@@ -1,11 +1,12 @@
 ({double alpha, double blue, double green, double red})? parseCssColor(String text)
-List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths)
+List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths, {double expansion = 0})
 List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth})
 String get plainTypesettingVersion
 abstract base class ItemLineBreaker implements LineBreaker
   ItemLineBreaker()
   List<Line> breakLines(Paragraph paragraph, double Function(int) widths)
   List<int> breakItems(List<LineItem> items, double Function(int) widths)
+  double expansion
 abstract base class LinkTarget
   LinkTarget()
   LinkTarget.named(String name)
@@ -384,16 +385,18 @@ final class InlineImage extends InlineContent
   double height
   double width
 final class KnuthPlassLineBreaker extends ItemLineBreaker
-  KnuthPlassLineBreaker({double tolerance = 1.26, double linePenalty = 10, double flaggedDemerits = 10000, double fitnessDemerits = 10000, double finalHyphenDemerits = 5000, double emergencyStretch = 0, double? raggedStretch})
+  KnuthPlassLineBreaker({double tolerance = 1.26, double linePenalty = 10, double flaggedDemerits = 10000, double fitnessDemerits = 10000, double finalHyphenDemerits = 5000, double emergencyStretch = 0, double? raggedStretch, double expansion = 0, int? maxHyphenRun})
   List<int> breakItems(List<LineItem> items, double Function(int) widths)
   double demeritsOf(List<LineItem> items, double Function(int) widths, List<int> breaks)
   double emergencyStretch
+  double expansion
   double finalHyphenDemerits
   double fitnessDemerits
   double flaggedDemerits
   double linePenalty
   double tolerance
   double? raggedStretch
+  int? maxHyphenRun
 final class LayoutResult
   List<P> render<P extends LayoutPage>(LayoutDocument<P> document, {String Function(String)? destinationName})
   List<String> unsetSideNotes

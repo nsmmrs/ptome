@@ -273,6 +273,10 @@ abstract base class ItemLineBreaker implements LineBreaker {
   /// the last is the final forced break.
   List<int> breakItems(List<LineItem> items, LineWidths widths);
 
+  /// How much wider or narrower the letters of a justified line may be set
+  /// (see [KnuthPlassLineBreaker.expansion]); none by default.
+  double get expansion => 0;
+
   @override
   List<Line> breakLines(Paragraph paragraph, LineWidths widths) {
     final indent = paragraph.firstLineIndent;
@@ -282,7 +286,13 @@ abstract base class ItemLineBreaker implements LineBreaker {
       maxWidth: paragraph.breakLongWords ? indented(0) : null,
     );
     if (items.isEmpty) return const [];
-    return buildLines(paragraph, items, breakItems(items, indented), widths);
+    return buildLines(
+      paragraph,
+      items,
+      breakItems(items, indented),
+      widths,
+      expansion: expansion,
+    );
   }
 }
 
@@ -385,7 +395,21 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     this.finalHyphenDemerits = 5000,
     this.emergencyStretch = 0,
     this.raggedStretch,
+    this.expansion = 0,
+    this.maxHyphenRun,
   });
+
+  /// How much wider or narrower a line's letters may be set (font
+  /// expansion, as pdfTeX's and microtype's: 0.02, their 20 thousandths,
+  /// by the line, never penalised): stretch and shrink of that much of
+  /// the line's text, besides its spaces' (Hàn Thế Thành, "Micro-
+  /// typographic extensions to the TeX typesetting system", 2000).
+  @override
+  final double expansion;
+
+  /// The most hyphenated lines in a row (none: no limit, as TeX, which
+  /// only charges [flaggedDemerits]; the Chicago Manual of Style's three).
+  final int? maxHyphenRun;
 
   /// The largest stretch ratio of a line in the first pass (1.26: a
   /// badness of 200, TeX's `\tolerance`).
@@ -419,6 +443,34 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     // Running totals of the items before each index, the first item of
     // the line after a break at each index, and each line's width: the
     // same for every tolerance tried.
+    final sums = _sumsOf(items);
+    final lineWidths = <double>[];
+    double widthOf(int line) {
+      while (lineWidths.length <= line) {
+        lineWidths.add(widths(lineWidths.length));
+      }
+      return lineWidths[line];
+    }
+
+    final passes = [
+      (tolerance, 0.0),
+      if (emergencyStretch > 0) (tolerance, emergencyStretch),
+      (100.0, emergencyStretch),
+    ];
+    for (final (ratio, extra) in passes) {
+      final breaks = _total(items, sums, widthOf, ratio, extra);
+      if (breaks != null) return breaks;
+    }
+    return const FirstFitLineBreaker().breakItems(items, widths);
+  }
+
+  /// The running totals of [items] before each index (their widths,
+  /// stretch and shrink, expansion counted, and fills apart, so their
+  /// totals subtract), and the first item of the line after a break at
+  /// each index.
+  (Float64List, Float64List, Float64List, Int32List, Int32List) _sumsOf(
+    List<LineItem> items,
+  ) {
     final n = items.length;
     final totalWidth = Float64List(n + 1);
     final totalStretch = Float64List(n + 1);
@@ -430,10 +482,15 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       totalWidth[i + 1] =
           totalWidth[i] + (item is PenaltyItem ? 0 : item.width);
       final fill = item is GlueItem && item.stretch.isInfinite;
+      // (Expansion: a share of the boxes' width too.)
       totalStretch[i + 1] =
-          totalStretch[i] + (item is GlueItem && !fill ? item.stretch : 0);
+          totalStretch[i] +
+          (item is GlueItem && !fill ? item.stretch : 0) +
+          (item is BoxItem ? item.width * expansion : 0);
       totalShrink[i + 1] =
-          totalShrink[i] + (item is GlueItem ? item.shrink : 0);
+          totalShrink[i] +
+          (item is GlueItem ? item.shrink : 0) +
+          (item is BoxItem ? item.width * expansion : 0);
       totalFills[i + 1] = totalFills[i] + (fill ? 1 : 0);
     }
     final next = Int32List(n + 1)..[n] = n;
@@ -445,25 +502,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       };
       next[i] = discarded ? next[i + 1] : i;
     }
-    final lineWidths = <double>[];
-    double widthOf(int line) {
-      while (lineWidths.length <= line) {
-        lineWidths.add(widths(lineWidths.length));
-      }
-      return lineWidths[line];
-    }
-
-    final sums = (totalWidth, totalStretch, totalShrink, totalFills, next);
-    final passes = [
-      (tolerance, 0.0),
-      if (emergencyStretch > 0) (tolerance, emergencyStretch),
-      (100.0, emergencyStretch),
-    ];
-    for (final (ratio, extra) in passes) {
-      final breaks = _total(items, sums, widthOf, ratio, extra);
-      if (breaks != null) return breaks;
-    }
-    return const FirstFitLineBreaker().breakItems(items, widths);
+    return (totalWidth, totalStretch, totalShrink, totalFills, next);
   }
 
   /// The line of [items] from [start] (after the break at [position]) to
@@ -539,36 +578,13 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
   /// checking that the breaker finds the least there is.
   @visibleForTesting
   double demeritsOf(List<LineItem> items, LineWidths widths, List<int> breaks) {
-    final n = items.length;
-    final totalWidth = Float64List(n + 1);
-    final totalStretch = Float64List(n + 1);
-    final totalShrink = Float64List(n + 1);
-    final totalFills = Int32List(n + 1);
-    for (var i = 0; i < n; i++) {
-      final item = items[i];
-      totalWidth[i + 1] =
-          totalWidth[i] + (item is PenaltyItem ? 0 : item.width);
-      final fill = item is GlueItem && item.stretch.isInfinite;
-      totalStretch[i + 1] =
-          totalStretch[i] + (item is GlueItem && !fill ? item.stretch : 0);
-      totalShrink[i + 1] =
-          totalShrink[i] + (item is GlueItem ? item.shrink : 0);
-      totalFills[i + 1] = totalFills[i] + (fill ? 1 : 0);
-    }
-    final next = Int32List(n + 1)..[n] = n;
-    for (var i = n - 1; i >= 0; i--) {
-      final discarded = switch (items[i]) {
-        GlueItem() => true,
-        PenaltyItem(:final isForced) => !isForced,
-        BoxItem() => false,
-      };
-      next[i] = discarded ? next[i + 1] : i;
-    }
-    final sums = (totalWidth, totalStretch, totalShrink, totalFills, next);
+    final sums = _sumsOf(items);
+    final (_, _, _, _, next) = sums;
     var total = 0.0;
     var position = -1;
     var flagged = false;
     var fitness = 1;
+    var run = 0;
     for (final (line, at) in breaks.indexed) {
       final item = items[at];
       final (:ratio, :demerits, fitness: lineFitness) = _line(
@@ -587,9 +603,14 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
         fitnessBefore: fitness,
       );
       if (ratio < -1 || ratio > tolerance) return double.infinity;
+      final hyphenated = item is PenaltyItem && item.flagged;
+      run = hyphenated ? run + 1 : 0;
+      if (maxHyphenRun case final most? when run > most) {
+        return double.infinity;
+      }
       total += demerits;
       position = at;
-      flagged = item is PenaltyItem && item.flagged;
+      flagged = hyphenated;
       fitness = lineFitness;
     }
     return total;
@@ -604,13 +625,17 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
   ) {
     final (totalWidth, totalStretch, totalShrink, totalFills, next) = sums;
     final n = items.length;
-    var active = <_Node>[_Node(-1, 0, 1, 0, null, flagged: false, start: 0)];
+    var active = <_Node>[
+      _Node(-1, 0, 1, 0, null, flagged: false, start: 0, hyphens: 0),
+    ];
     var survivors = <_Node>[];
     // The best break at this index for each fitness class and line count,
     // in the order they were first found.
     final bestFitness = <int>[];
     final bestLine = <int>[];
+    final bestHyphens = <int>[];
     final best = <_Node>[];
+    final hyphenLimit = maxHyphenRun;
     for (var i = 0; i < n; i++) {
       final item = items[i];
       final penalty = switch (item) {
@@ -625,6 +650,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       final forced = item is PenaltyItem && item.isForced;
       bestFitness.clear();
       bestLine.clear();
+      bestHyphens.clear();
       best.clear();
       survivors.clear();
       for (final node in active) {
@@ -645,11 +671,18 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
         );
         if (ratio >= -1 && !forced) survivors.add(node);
         if (ratio < -1 || ratio > limit) continue;
+        // (Hyphenated lines in a row: no more than [maxHyphenRun]; the
+        // run is part of the state the best break is kept for.)
+        final hyphens = flagged ? node.hyphens + 1 : 0;
+        if (hyphenLimit != null && hyphens > hyphenLimit) continue;
+        final run = hyphenLimit == null ? 0 : hyphens;
         final total = node.demerits + demerits;
         final line = node.line + 1;
         var at = 0;
         while (at < best.length &&
-            (bestFitness[at] != fitness || bestLine[at] != line)) {
+            (bestFitness[at] != fitness ||
+                bestLine[at] != line ||
+                bestHyphens[at] != run)) {
           at++;
         }
         if (at == best.length || total < best[at].demerits) {
@@ -661,10 +694,12 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
             node,
             flagged: flagged,
             start: next[i + 1],
+            hyphens: hyphens,
           );
           if (at == best.length) {
             bestFitness.add(fitness);
             bestLine.add(line);
+            bestHyphens.add(run);
             best.add(found);
           } else {
             best[at] = found;
@@ -698,6 +733,7 @@ final class _Node {
     this.previous, {
     required this.flagged,
     required this.start,
+    required this.hyphens,
   });
 
   /// The item the break is at (-1 for the start of the paragraph).
@@ -713,6 +749,9 @@ final class _Node {
 
   /// The first item of the line after the break.
   final int start;
+
+  /// How many hyphenated lines in a row end at the break.
+  final int hyphens;
 }
 
 const double _epsilon = 1e-6;
@@ -1146,8 +1185,9 @@ List<Line> buildLines(
   Paragraph paragraph,
   List<LineItem> items,
   List<int> breaks,
-  LineWidths widths,
-) {
+  LineWidths widths, {
+  double expansion = 0,
+}) {
   final lines = <Line>[];
   var start = 0;
   for (final (number, end) in breaks.indexed) {
@@ -1180,6 +1220,7 @@ List<Line> buildLines(
         indent,
         justify: paragraph.align == TextAlign.justify && !last,
         emptyRun: emptyRun,
+        expansion: expansion,
       ),
     );
     start = end + 1;
@@ -1196,6 +1237,7 @@ Line _line(
   double indent, {
   required bool justify,
   required TextRun? emptyRun,
+  double expansion = 0,
 }) {
   // Runs of items of the same content, in order.
   final pieces = <(InlineContent, StringBuffer)>[
@@ -1244,8 +1286,35 @@ Line _line(
         throw StateError('page references are resolved before breaking');
     }
   }
-  final extra = justify && spaces > 0 ? (available - natural) / spaces : 0.0;
-  final width = natural + extra * spaces;
+  // Justified with expansion: the letters take their share of the
+  // difference (as the breaker counted it: their width times [expansion]
+  // against the spaces' stretch or shrink), within the expansion, the
+  // spaces the rest.
+  var scale = 1.0;
+  if (justify && expansion > 0) {
+    final difference = available - natural;
+    var letters = 0.0;
+    var glue = 0.0;
+    for (final item in items) {
+      switch (item) {
+        case BoxItem(:final width):
+          letters += width;
+        case GlueItem(:final stretch, :final shrink) when stretch.isFinite:
+          glue += difference >= 0 ? stretch : shrink;
+        case _:
+      }
+    }
+    if (letters > 0) {
+      final share = spaces == 0
+          ? difference
+          : difference * letters * expansion / (glue + letters * expansion);
+      scale = 1 + (share / letters).clamp(-expansion, expansion);
+    }
+  }
+  final extra = justify && spaces > 0
+      ? (available / scale - natural) / spaces
+      : 0.0;
+  final width = (natural + extra * spaces) * scale;
   var x =
       indent +
       switch (paragraph.align) {
@@ -1285,10 +1354,13 @@ Line _line(
     switch (content) {
       case TextRun(:final style):
         final count = ' '.allMatches(string).length;
-        final adjusted = extra == 0
+        final adjusted = extra == 0 && scale == 1
             ? style
-            : style.copyWith(wordSpacing: style.wordSpacing + extra);
-        final w = natural + extra * count;
+            : style.copyWith(
+                wordSpacing: style.wordSpacing + extra,
+                horizontalScaling: style.horizontalScaling * scale,
+              );
+        final w = (natural + extra * count) * scale;
         fragments.add(TextFragment(x, w, content, string, glyphs, adjusted));
         x += w;
       case InlineImage(:final height, :final alignment):
