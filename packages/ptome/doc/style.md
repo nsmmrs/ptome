@@ -55,7 +55,7 @@ by `dart run tool/style_table.dart` from the look (the tests check it).
 | Text size | 10.5pt | Asciidoctor's | the reader's |
 | Heading sizes | 26pt / 20pt / 14pt / 12pt / 11pt / 10.5pt | Asciidoctor's | asciidoctor-epub3's |
 | Line spacing | 1.4 | Asciidoctor's | the reader's |
-| Measure | asciidoctor-pdf's | 42em | the reader's |
+| Measure | asciidoctor-pdf's | 75ch | the reader's |
 | Paragraphs | space between, 6pt apart | Asciidoctor's | asciidoctor-epub3's |
 | Alignment | asciidoctor-pdf's | Asciidoctor's | the reader's |
 | Hyphenation | asciidoctor-pdf's | Asciidoctor's | hyphenated |

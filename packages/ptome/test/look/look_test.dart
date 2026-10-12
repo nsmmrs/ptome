@@ -216,7 +216,7 @@ templates:
         allOf(
           contains(
             '@media screen{#header,#content,#footnotes,#footer,.multipage-nav'
-            '{max-width:42em}}',
+            '{max-width:75ch}}',
           ),
           contains(
             'h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6'
@@ -519,6 +519,23 @@ tokens:
     );
     // (No generic family in the stack: the role's.)
     expect(css, contains('--ptome-font-display:"Bodoni Moda",sans-serif'));
+  });
+
+  test("the house look's prose on screen: print-grade where it can be", () {
+    final look = LookLoader().load('ptome');
+    // (Hyphenated, its last lines balanced, old-style figures, hung
+    // punctuation: prose alone, never headings or code; the measure in
+    // the face's own characters.)
+    final own = lookOwnCss(look, CssTarget.html);
+    expect(own, contains('#content .paragraph>p,'));
+    expect(own, contains('hyphens:auto;text-wrap:pretty'));
+    expect(own, contains('.nohyphens #content p'));
+    expect(own, contains('font-variant-numeric:oldstyle-nums'));
+    expect(own, contains('hanging-punctuation:first allow-end last'));
+    expect(own, contains('h6,#toctitle,.sidebarblock>.content>.title'));
+    expect(lookCss(look, CssTarget.html), contains('max-width:75ch'));
+    // (Not in an e-book: the reader's.)
+    expect(lookOwnCss(look, CssTarget.epub), isNot(contains('text-wrap')));
   });
 
   test('the docs-site look: code first, a sidebar, a dark mode', () {

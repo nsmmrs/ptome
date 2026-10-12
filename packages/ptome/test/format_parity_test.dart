@@ -159,10 +159,12 @@ void main() {
           .value,
       contains('hyphens: auto'),
     );
-    // Without it, the stylesheets' own.
+    // Without it, the house stylesheet's (which hyphenates prose), unless
+    // the document unsets it.
     expect(
-      File(convertWith('html5', '= Doc\n\nText.\n')).readAsStringSync(),
-      isNot(contains('hyphens:auto')),
+      File(convertWith('html5', '= Doc\n:hyphens!:\n\nText.\n'))
+          .readAsStringSync(),
+      contains('<body class="article nohyphens">'),
     );
   });
 

@@ -105,12 +105,13 @@ void main() {
     test('the default stylesheet: the classic one, the house look, the '
         'device rules', () {
       final device = utf8.decode(readDataFile('stylesheets/ptome-device.css'));
-      final house = lookCss(LookLoader().load('ptome'), CssTarget.html);
+      final look = LookLoader().load('ptome');
+      final house = lookCss(look, CssTarget.html);
       expect(
         stylesheets.primaryStylesheetData,
         equals(
           '${stylesheets.classicStylesheetData}\n${house.trimRight()}\n'
-          '${rstrip(device)}',
+          '${rstrip(device)}\n${lookOwnCss(look, CssTarget.html)}',
         ),
       );
       expect(stylesheets.dataFor(''), stylesheets.primaryStylesheetData);

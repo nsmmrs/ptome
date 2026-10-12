@@ -892,8 +892,10 @@ tokens:
     headings: { print: [26pt, 20pt, 14pt, 12pt, 11pt, 10.5pt] }
   # 120–145% in print: open for a serif with a large x-height.
   leading: { print: 1.4 }
-  # About 80 characters on screen; print takes its measure from the page.
-  measure: { screen: 42em }
+  # About 80 characters on screen (75 zeros of the text face: the old
+  # 42em, kept as the face changes); print takes its measure from the
+  # page.
+  measure: { screen: 75ch }
   paragraph: { signal: { print: space }, space: { print: 6pt } }
   # An e-book's reading system owns the body text (ADR-0023 decision 2):
   # no size, line spacing or alignment for `ebook`; hyphenated.
@@ -970,6 +972,17 @@ pdf:
         bold: GEM_FONTS_DIR/notosans-bold-subset.ttf
         italic: GEM_FONTS_DIR/notosans-italic-subset.ttf
         bold_italic: GEM_FONTS_DIR/notosans-bold_italic-subset.ttf
+# Print-grade prose on screen, where the browser can (progressive
+# enhancement: one that lacks a property ignores it, and the text reads as
+# before): words hyphenated in the document's language (`lang`; not when
+# the document unsets `hyphens`, its body then `nohyphens`), the
+# paragraph's last lines balanced against a short last line (text-wrap:
+# pretty), old-style figures, punctuation hung at the ends (Safari), and
+# headings' lines balanced.
+css: |
+  #content .paragraph>p,#content li>p,#content dd>p,#content .quoteblock blockquote p,#content .admonitionblock td.content>.paragraph>p{-webkit-hyphens:auto;hyphens:auto;text-wrap:pretty;font-variant-numeric:oldstyle-nums proportional-nums;hanging-punctuation:first allow-end last}
+  h1,h2,h3,h4,h5,h6,#toctitle,.sidebarblock>.content>.title{text-wrap:balance}
+  .nohyphens #content p,.nohyphens #content li,.nohyphens #content dd{-webkit-hyphens:manual;hyphens:manual}
 ''',
   'readers-bible':
       r'''# A reader's edition of the Bible from a document in units (`:units:

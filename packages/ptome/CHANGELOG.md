@@ -89,6 +89,14 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- HTML: the house look's prose hyphenated in the document's `lang`
+  unless the document unsets `hyphens` (`:hyphens!:`, its body then
+  `nohyphens`), as the PDF's modern engine; its last lines balanced
+  (`text-wrap: pretty`),
+  old-style figures and hung punctuation where the browser and face can,
+  headings balanced; the measure 75ch (the old 42em in the face's own
+  characters). Browsers without a property ignore it; compat output is
+  unchanged.
 - The `docs-site` look: a documentation site, code first, its contents in
   a sidebar (`:toc:`), admonitions tinted by type, and a dark mode.
 - `:quotation-lint:` (PDF): a quotation of a hundred words or more run

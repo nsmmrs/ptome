@@ -481,6 +481,13 @@ class Html5Converter extends BuiltInConverter {
     if (node.hasRole()) {
       classes.add(_s(node.role));
     }
+    // (The document unsets `hyphens`: the house stylesheet's hyphenation
+    // off.)
+    if (!node.hasAttr('hyphens') &&
+        !node.attributeUnspecified('hyphens') &&
+        !asciidoctorCompat(node, CompatFormat.html)) {
+      classes.add('nohyphens');
+    }
     result.add('<body$idAttr class="${classes.join(' ')}">');
 
     final headerDocinfo = node.docinfo('header');
