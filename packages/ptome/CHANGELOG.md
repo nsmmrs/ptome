@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF unit labels bold (`units_<level>_label_font_style`) and hung left
+  of their lines in blocks with given roles (`units_<level>_label_hang:
+  [poetry]`: a poem's verse numbers in the gutter); side notes in the
+  inner margin (`side_notes_column: inside`).
 - PDF: a block with a role can float to the top or the bottom of the
   page, across its columns (`role_<role>_float: bottom`,
   `_float_scope: page`), and a sidebar's body can be set in columns

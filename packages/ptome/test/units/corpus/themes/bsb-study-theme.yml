@@ -18,10 +18,38 @@ note_stream:
     line_height: 1.15
     label_content: ''
     reference_content: ''
+# (Verse numbers bold, and in a poem hung left of its lines.)
+units:
+  verse:
+    label_font_style: bold
+    label_hang: [poetry]
+heading:
+  # (Section heads in letterspaced capitals; a pericope's parallel
+  # passages small under it.)
+  h4:
+    font_style: bold
+    text_transform: uppercase
+    letter_spacing: 0.08em
+    font_size: 7.5
+running_content_marks: v-
+header:
+  font_size: 7.5
+  text_transform: uppercase
+  letter_spacing: 0.06em
+  recto:
+    left: { content: '' }
+    center: { content: '{page-number}' }
+    right: { content: '{page-last-mark}' }
+  verso:
+    left: { content: '{page-first-mark}' }
+    center: { content: '{page-number}' }
+    right: { content: '' }
 footnotes:
   text_min_lines: 6
   lag: 0
 role:
+  parallel: { font_size: 7, text_align: center }
+  xref: { font_size: 6.5, font_family: Noto Sans }
   sn-ref: { font_style: bold }
   sn-excerpt: { font_style: bold }
   hebrew: { font_style: italic }

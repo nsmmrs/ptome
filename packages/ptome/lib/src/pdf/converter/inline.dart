@@ -66,8 +66,9 @@ extension _InlineElements on PdfConverter {
 
   /// A unit's mark: its anchor, then its label, as its level's
   /// `units_<level>_label_*` keys say (modern engine): `_font_color` (a
-  /// reference Bible's light verse numbers), `_display: none` (a reader's
-  /// edition, without them).
+  /// reference Bible's light verse numbers), `_font_style: bold`,
+  /// `_display: none` (a reader's edition, without them), `_hang` (the
+  /// block roles it hangs left of its line in: a poem's verse numbers).
   String _inlineUnit(Inline node) {
     final anchor = node.id != null ? '<a id="${node.id}">$_dummyText</a>' : '';
     final text = node.text ?? '';
@@ -81,10 +82,28 @@ extension _InlineElements on PdfConverter {
     if (_s('${key}_display') == 'none') {
       return '$anchor${PdfConverter._hiddenMark}';
     }
+    var label = text;
     if (_theme.value('${key}_font_color')?.rubyString case final color?) {
-      return '$anchor<font color="$color">$text</font>';
+      label = '<font color="$color">$label</font>';
     }
-    return '$anchor$text';
+    if (_s('${key}_font_style') case 'bold' || 'bold_italic') {
+      label = '<strong>$label</strong>';
+    }
+    // (`_hang`: in a block with one of those roles, a poem's, the label
+    // hung left of its line, its anchor where it was.)
+    final hang = switch (_theme.value('${key}_hang')) {
+      ThemeList(:final values) => [for (final v in values) v.rubyString],
+      ThemeString(:final value) => [value],
+      _ => const <String?>[],
+    };
+    if (node.parent case final AbstractBlock block
+        when hang.isNotEmpty && block.roles.any(hang.contains)) {
+      final id = '$hangAnchorPrefix${_hungLabels.length}';
+      _hungLabels[id] = (label, _font);
+      return '$anchor<a id="$id">$_dummyText</a>'
+          '${PdfConverter._hiddenMark}';
+    }
+    return '$anchor$label';
   }
 
   String _inlineAnchor(Inline node) {
@@ -779,15 +798,16 @@ extension _InlineElements on PdfConverter {
 
   /// The column side notes are set in on page [number] of [template]
   /// (`side_notes_column`): `center`, the gap between the middle columns
-  /// (the default in columns), or `outside`, the outer margin (the right
-  /// one, or the left one of a verso page of a [sided] book); each inset
-  /// by `side_notes_padding`.
+  /// (the default in columns), `outside`, the outer margin (the right
+  /// one, or the left one of a verso page of a [sided] book), or
+  /// `inside`, the inner (the left one, or the right one of a verso);
+  /// each inset by `side_notes_padding`.
   Rect? _sideColumn(int number, PageTemplate template, {required bool sided}) {
     final columns = (_n('page_columns') ?? 1).toInt();
     final m = template.margins;
     final size = template.size;
     final column =
-        _choice('side_notes_column', const ['center', 'outside']) ??
+        _choice('side_notes_column', const ['center', 'outside', 'inside']) ??
         (columns >= 2 ? 'center' : 'outside');
     final double left;
     final double width;
@@ -798,7 +818,7 @@ extension _InlineElements on PdfConverter {
       final before = columns ~/ 2;
       left = size.left + m.left + before * columnWidth + (before - 1) * gap;
       width = gap;
-    } else if (!sided || number.isOdd) {
+    } else if ((!sided || number.isOdd) == (column != 'inside')) {
       (left, width) = (size.right - m.right, m.right);
     } else {
       (left, width) = (size.left, m.left);

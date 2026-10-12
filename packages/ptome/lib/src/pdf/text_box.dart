@@ -415,6 +415,10 @@ final class _Image {
 /// of the text they are in rather than its baseline).
 const sideNoteAnchorPrefix = '_side_';
 
+/// The prefix of the anchors of labels hung left of their line (a poem's
+/// verse numbers): placed at the text's baseline.
+const hangAnchorPrefix = '_hang_';
+
 /// A fragment as printed on a line.
 final class _Printed {
   new(
@@ -1452,7 +1456,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           final top = name.startsWith(sideNoteAnchorPrefix)
               ? f.format.font.ascenderAt(f.format.size)
               : f.ascender;
-          anchors.add((name, f.left, gap + f.baseline - top));
+          anchors.add((
+            name,
+            f.left,
+            gap + f.baseline - (name.startsWith(hangAnchorPrefix) ? 0 : top),
+          ));
         }
       }
     }

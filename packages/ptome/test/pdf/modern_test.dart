@@ -3088,6 +3088,32 @@ templates:
       expect(feat.every((w) => w.$3 < noteY), isTrue);
     });
 
+    test('verse numbers: bold, and hung left of the lines of a poem', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      final pdf = _pdf(
+        '= Psalm\n:units: bible, kjv\n\n== @GEN\n\n=== @1\n\n'
+        '@ Prose verse one.\n\n[.poetry%hardbreaks]\n'
+        '@ Poem line two\n@ poem line three\n',
+        theme:
+            'units:\n  verse:\n    label_font_style: bold\n'
+            '    label_hang: [poetry]\n',
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      double x(String word, {String edge = 'xMin'}) => double.parse(
+        RegExp('$edge="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
+      );
+      // Each number left of its line's first word, ending before it.
+      expect(x('2', edge: 'xMax'), lessThan(x('Poem')));
+      expect(x('3', edge: 'xMax'), lessThan(x('poem')));
+      expect(x('Poem'), closeTo(x('poem'), 0.5));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

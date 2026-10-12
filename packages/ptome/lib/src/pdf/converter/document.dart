@@ -150,6 +150,7 @@ extension _DocumentParts on PdfConverter {
       }
     }
     _sections.clear();
+    _hungLabels.clear();
     _madeUpAnchors.clear();
     _floatGroup = _floatNext = null;
     _hasTitlePage = _frontCover = _backCover = _noCover = false;
@@ -535,6 +536,11 @@ extension _DocumentParts on PdfConverter {
     }
     _lineCount = 0;
     _lineRestarts = _lineNumbering == null ? const [] : _lineRestartsOf(result);
+    _hungAt = [
+      for (final MapEntry(key: id, value: (text, font)) in _hungLabels.entries)
+        if (result.anchors[id] case final at?)
+          (at.page + 1, at.y, at.x, text, font),
+    ];
     final pages = result.render(pdf, destinationName: destinationName);
     _compressingElsewhere(pages);
     if (standard != null) _preflight(standard);
@@ -1614,6 +1620,21 @@ extension _DocumentParts on PdfConverter {
   /// Paints the foreground of [page] (the gem's `stamp_foreground_image`).
   void _pageForeground(Canvas canvas, PageInfo page) {
     if (_frontCover && page.number == 1) return;
+    // Labels hung left of their lines, `units_<level>_label_hang_gap` (a
+    // third of an em) from the text.
+    for (final (number, baseline, left, text, font) in _hungAt) {
+      if (number != page.number) continue;
+      final box = _textBox(text, font, align: 'right');
+      const width = 60.0;
+      final placed = box.place(width, double.infinity, atTop: true);
+      if (placed == null) continue;
+      final gap = font.size / 3;
+      placed.paint(
+        _CanvasPage(canvas),
+        left - gap - width,
+        baseline + (box.firstBaseline(width) ?? 0),
+      );
+    }
     if (_lineNumbering case final numbering?) {
       _drawLineNumbers(canvas, page, numbering);
     }

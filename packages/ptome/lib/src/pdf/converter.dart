@@ -605,6 +605,14 @@ final class PdfConverter extends BuiltInConverter
   /// line.
   List<(int, double, String?)> _lineRestarts = const [];
 
+  /// The unit labels hung left of their lines (`units_<level>_label_hang`),
+  /// by their anchors: their markup and font.
+  final Map<String, (String, _FontState)> _hungLabels = {};
+
+  /// Where each hung label goes: its page (1-based), and the baseline and
+  /// left end of its line.
+  List<(int, double, double, String, _FontState)> _hungAt = const [];
+
   /// The background images of the running content, by periphery
   /// (`header`, `footer`).
   final Map<String, _PageImage?> _runningBackgrounds = {};
