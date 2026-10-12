@@ -256,6 +256,20 @@ void main() {
             : '$c1:$v1–$c2:$v2';
         expect(page.first, 'Genesis $range');
       }
+      // Structured: the levels' labels at the page's first and last unit.
+      const head =
+          "'{page-first-chapter}.{page-first-verse} to "
+          "{page-last-chapter}.{page-last-verse}'";
+      final structured = _pdf(
+        '= Units\n:units: bible, kjv\n\n== @GEN\n\n'
+        '${chapter(1)}\n\n${chapter(2)}\n',
+        theme:
+            'running-content:\n  units: verse\nheader:\n  height: 0.5in\n'
+            '  recto:\n    center:\n      content: $head\n'
+            '  verso:\n    center:\n      content: $head\n',
+      );
+      final first = _pages(structured).firstWhere((p) => p.isNotEmpty);
+      expect(first.first, matches(RegExp(r'^1\.1 to \d\.\d+$')));
     }, skip: _tools ? false : 'needs pdftotext');
 
     test('a heading set as a drop beside the first lines', () {

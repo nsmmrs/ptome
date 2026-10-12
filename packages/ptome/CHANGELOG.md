@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Running content in units: `{page-first-<level>}` and
+  `{page-last-<level>}`, each level's label at the page's first and last
+  unit, for heads of a form of their own.
 - Microtypography in the PDF: font expansion in the line breaker
   (`base_font_expansion`, microtype's 2%, the letters' share of a line's
   adjustment set by horizontal scaling), a limit on hyphenated lines in a

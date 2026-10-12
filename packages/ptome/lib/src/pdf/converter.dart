@@ -9876,6 +9876,16 @@ final class PdfConverter extends BuiltInConverter
           config,
           long: true,
         );
+      // Structured: each level's label at the page's first and last unit
+      // (`{page-first-chapter}`, `{page-last-verse}`), for a template of
+      // its own (`{page-first-chapter}:{page-first-verse}`).
+      for (final (unit, end) in [(first, 'first'), (last, 'last')]) {
+        final levels = unit.level.scheme.levels;
+        for (final (i, label) in unit.labels.indexed) {
+          if (label == null || i >= levels.length) continue;
+          attributes['page-$end-${levels[i].name}'] = levels[i].bare(label);
+        }
+      }
     }
     final sectlevels = (_n('${periphery}_sectlevels') ?? 2).toInt();
     final partMark = page.mark('part');
