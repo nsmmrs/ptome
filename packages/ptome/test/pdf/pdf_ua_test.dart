@@ -104,6 +104,11 @@ void main() {
       final tree =
           Process.runSync(pdfinfo, ['-struct-text', _convert()]).stdout
               as String;
+      // (An older Poppler's pdfinfo prints no structure tree.)
+      if (!tree.trimLeft().startsWith('Document')) {
+        markTestSkipped("needs a pdfinfo that prints a PDF's structure tree");
+        return;
+      }
       final roles = [
         for (final line in tree.split('\n'))
           if (RegExp(r'^\s*([A-Z][A-Za-z0-9]*)').firstMatch(line) case final m?)
