@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A float that spans columns (`BoxStyle.floatSpan`) on a page template
+  with columns goes across the top of the next page, its columns under
+  it (as LaTeX's `figure*`). A column set inside a column is one unit:
+  in the next column when it doesn't fit whole (a balanced set inside a
+  balanced one was chopped into pieces).
 - `FlowLayout.sideNoteStreams` (`SideNoteStream`) and `sideNoteStreamOf`:
   side notes in columns of their own. `NoteStream.runIn` sets a stream's
   notes in a region as one box; `NoteStream.joined` runs in paragraphs

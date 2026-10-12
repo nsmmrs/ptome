@@ -463,6 +463,82 @@ void main() {
     },
   );
 
+  test('a balanced set inside a balanced set: one unit, not chopped', () {
+    final document = RecordingDocument();
+    FlowLayout(
+          template: PageTemplate(
+            Rect(0, 0, 400, 40 + 30 * _lineHeight),
+            margins: const EdgeInsets.all(20),
+          ),
+        )
+        .layout([
+          ColumnsBox([
+            for (var i = 1; i <= 4; i++) _para('a$i'),
+            ColumnsBox([
+              for (var i = 1; i <= 6; i++) _para('n$i'),
+            ], balance: true),
+            for (var i = 5; i <= 8; i++) _para('a$i'),
+          ], balance: true),
+        ])
+        .render(document);
+    final at = {
+      for (final call in document.pages.single.canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    // The inner set whole in the outer first column, three and three.
+    final outer = at['a5']!.$1;
+    for (var i = 1; i <= 6; i++) {
+      expect(at['n$i']!.$1, lessThan(outer), reason: 'n$i');
+    }
+    expect(at['n4']!.$2, closeTo(at['n1']!.$2, 1e-6));
+    expect(at['n4']!.$1, greaterThan(at['n1']!.$1));
+  });
+
+  test('a float spanning page columns: across the top of the next page', () {
+    final document = RecordingDocument();
+    final pages =
+        FlowLayout(
+              template: PageTemplate(
+                Rect(0, 0, 300, 40 + 8 * _lineHeight),
+                margins: const EdgeInsets.all(20),
+                columns: 2,
+                columnGap: 20,
+              ),
+            )
+            .layout([
+              for (var i = 1; i <= 3; i++) _para('l$i'),
+              BlockBox(
+                [_para('map')],
+                style: const BoxStyle(
+                  float: FloatPlacement.top,
+                  floatSpan: true,
+                ),
+              ),
+              for (var i = 4; i <= 24; i++) _para('l$i'),
+            ])
+            .render(document);
+    Map<String, (double, double)> at(int page) => {
+      for (final call in document.pages[page].canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    expect(pages.length, greaterThan(1));
+    final first = at(0);
+    final second = at(1);
+    // Not on the first page; on the second at the top, at the left
+    // margin, both columns under it.
+    expect(first.containsKey('map'), isFalse);
+    expect(second['map']!.$1, closeTo(20, 1e-6));
+    final topLine = second.values.where((p) => p.$1 > 100).map((p) => p.$2);
+    expect(topLine, isNotEmpty);
+    expect(topLine.every((y) => y < second['map']!.$2), isTrue);
+    // The first page's columns are full: text in both.
+    expect(first.values.any((p) => p.$1 > 100), isTrue);
+  });
+
   test('side notes beside their lines, pushed down, carried over', () {
     final document = RecordingDocument();
     FlowLayout(

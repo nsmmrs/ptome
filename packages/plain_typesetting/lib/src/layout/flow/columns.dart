@@ -15,6 +15,13 @@ extension _Columns on _Pass {
     final origin = _y + top;
     final inner = width - style.margin.horizontal;
     final columnWidth = (inner - box.gap * (box.count - 1)) / box.count;
+    // A set inside a column: one unit, in the next column when it doesn't
+    // fit whole in the room left (not split by the column's balancing into
+    // pieces each balanced again); at a column's top, as it goes.
+    if (_inColumn && !atTop && !box._continued && available.isFinite) {
+      final whole = _measure(box, width);
+      if (whole > available + 1e-6) return _Fit.moved(box);
+    }
     // Too little room for the first box: the set goes on in the next
     // region.
     if (!atTop &&

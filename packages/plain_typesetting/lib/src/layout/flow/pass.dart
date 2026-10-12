@@ -108,7 +108,11 @@ final class _Pass {
     // What is left of blocks floating to a side, for the top of the next
     // region.
     var carriedFloats = <LayoutBox>[];
+    // Floating boxes that span a page's columns, for the top of the next
+    // page across them (as LaTeX's `figure*`).
+    final spans = <LayoutBox>[];
     while (rest != null ||
+        spans.isNotEmpty ||
         _deferredNotes != null ||
         floats.isNotEmpty ||
         carriedFloats.isNotEmpty) {
@@ -116,7 +120,45 @@ final class _Pass {
       if (!layout.keepTemplate) template = null;
       var discard = false;
       PageSide? side;
-      for (final (i, region) in page.template.regions.indexed) {
+      var regions = page.template.regions;
+      // (Page columns: the floating boxes that span them, across the top
+      // of the page, the columns under them.)
+      final paged = regions.length > 1;
+      if (paged) {
+        spans.addAll([
+          for (final float in floats)
+            if (float.style.floatSpan &&
+                float.style.float != FloatPlacement.bottom)
+              float,
+        ]);
+        floats.removeWhere(spans.contains);
+      }
+      if (paged && spans.isNotEmpty) {
+        final left = regions.first.left;
+        final width = regions.last.right - left;
+        final spanned = _place(
+          BlockBox([for (final span in spans) ..._cleared(span, top: true)]),
+          width,
+          regions.first.height,
+          atTop: true,
+        );
+        spans.clear();
+        final height = spanned.height;
+        page.placed.add((
+          Rect(left, regions.first.top - height, width, height),
+          spanned.placed,
+        ));
+        regions = [
+          for (final region in regions)
+            Rect(
+              region.left,
+              region.bottom,
+              region.width,
+              math.max(0, region.height - height),
+            ),
+        ];
+      }
+      for (final (i, region) in regions.indexed) {
         _regionHeight = region.height;
         // Floating boxes that waited: at the top of the region, those for
         // the bottom at its bottom.
@@ -225,6 +267,21 @@ final class _Pass {
           region.height - reserved,
           below: reservedTop,
         );
+        // (Page columns: a floating box that spans them waits for the top
+        // of the next page, the column placed again without it.)
+        if (paged && fit.pinned.any((pin) => pin.$1.style.floatSpan)) {
+          for (final (box, _, _) in fit.pinned) {
+            if (box.style.floatSpan && _floatsSet.add(box)) spans.add(box);
+          }
+          _floatsWaiting = 0;
+          _floatsReached.clear();
+          fit = _placeRegion(
+            content,
+            region.width,
+            region.height - reserved,
+            below: reservedTop,
+          );
+        }
         // Floating boxes that fit, at the top or the bottom of the region:
         // the content in what the top ones leave.
         final top = <LayoutBox>[...waitingTop];
@@ -280,6 +337,7 @@ final class _Pass {
         if (rest == null &&
             _deferredNotes == null &&
             floats.isEmpty &&
+            spans.isEmpty &&
             carriedFloats.isEmpty) {
           break;
         }
@@ -311,7 +369,10 @@ final class _Pass {
       }
       // A clean boundary: the rest is the top-level boxes from one on,
       // nothing pending.
-      if (carried.isEmpty && floats.isEmpty && _deferredNotes == null) {
+      if (carried.isEmpty &&
+          floats.isEmpty &&
+          spans.isEmpty &&
+          _deferredNotes == null) {
         if (rest case BlockBox(:final children, _continued: true)
             when children.isNotEmpty &&
                 children.length < content.length &&
