@@ -2907,6 +2907,48 @@ templates:
       ], everyElement(inInclusiveRange(0, 1)));
     });
 
+    test('the critical-edition look: labels in the margin, apparatus', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      File('test/units/corpus/schemes/stephanus.yml')
+          .copySync('${schemes.path}/stephanus.yml');
+      File('${schemes.path}/app.yml').writeAsStringSync(
+        'stream:\n  app:\n    placement: "footnote"\n'
+        '    origin: "{{page}}{{section}}"\n    lemma-after: "] "\n',
+      );
+      final words = [for (var k = 0; k < 40; k++) 'verbum$k'].join(' ');
+      final pdf = _pdf(
+        '= Dialogus\n:units: stephanus, app\n:look: critical-edition\n'
+        ':line-numbers:\n\n'
+        '@2a Primum ##dicit##note:app[dixit B] $words\n\n'
+        '@ Secundum $words\n',
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+      final text = _pages(pdf).expand((page) => page).join('\n');
+      // The Stephanus labels beside the lines only, not in the text; the
+      // apparatus entry at the foot by its section, with no mark in the
+      // text.
+      expect(text, contains('Primum dicit verbum0'));
+      expect(text, contains('Secundum verbum0'));
+      expect(text, isNot(contains('2b Secundum')));
+      expect(text, contains('2a dicit] dixit B'));
+      expect(text, isNot(contains('[1]')));
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      final label = RegExp(r'xMin="([\d.]+)"[^>]*>2b<').firstMatch(bbox);
+      final body = RegExp(r'xMax="([\d.]+)"[^>]*>Secundum<').firstMatch(bbox);
+      expect(label, isNotNull);
+      expect(
+        double.parse(label![1]!),
+        greaterThan(double.parse(body![1]!)),
+        reason: 'the label in the outer margin',
+      );
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

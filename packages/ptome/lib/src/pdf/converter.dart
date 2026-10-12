@@ -1827,6 +1827,10 @@ final class PdfConverter extends BuiltInConverter
   /// The side notes marked so far, for their anchors' names.
   int _sideCount = 0;
 
+  /// Where a phrase the theme leaves out of the text was (a private-use
+  /// character, taken out with the space after it before the text is set).
+  static const _hiddenMark = '\u{F8FF}';
+
   static final _sideRx = RegExp(
     '<side id="([^"]+)" role="([^"]+)">(.*?)</side>',
     dotAll: true,

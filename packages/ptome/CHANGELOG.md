@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The `critical-edition` look, after the Oxford Classical Texts: margin
+  line numbers counted from each Stephanus section or Bekker column, the
+  labels in the margin only (`role_<role>_display: none` leaves a role's
+  phrases out of the PDF's text), and the apparatus run in at the foot
+  without marks in the text (a note stream's `_reference_content`).
 - PDF notes in step with their text (`footnotes_text_min_lines`,
   `footnotes_lag`): the least text a page with notes keeps, and how many
   pages after its reference's a note may start, for a study Bible's notes

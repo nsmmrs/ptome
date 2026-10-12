@@ -500,7 +500,7 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'Gentium Book Plus',
-    usedBy: 'the broadsheet look (Bookman)',
+    usedBy: 'the broadsheet look (Bookman), the critical-edition look (Porson)',
     families: ['Gentium Book Plus'],
     styles: [
       FontStyle.normal,

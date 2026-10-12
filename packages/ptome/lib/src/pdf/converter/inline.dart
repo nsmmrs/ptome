@@ -596,11 +596,17 @@ extension _InlineElements on PdfConverter {
             ..._document.footnotes,
           ].where((f) => f.index == index).firstOrNull;
     if (footnote != null) {
-      return _footnoteReference(
-        index!,
-        anchored: node.type != 'xref',
-        rendered: _renderedFootnotes.contains(footnote),
-        caller: _streamOf(footnote) == null ? null : footnote.caller ?? index,
+      // (A stream's reference by its own keys: an apparatus has none in
+      // the text, `note_stream_<name>_reference_content: ''`.)
+      final stream = _streamOf(footnote);
+      return _asStream(
+        stream,
+        () => _footnoteReference(
+          index!,
+          anchored: node.type != 'xref',
+          rendered: _renderedFootnotes.contains(footnote),
+          caller: stream == null ? null : footnote.caller ?? index,
+        ),
       );
     }
     if (node.type == 'xref') {
@@ -1214,6 +1220,10 @@ extension _InlineElements on PdfConverter {
       quoted = '$open$inner$close';
     }
     final anchor = node.id != null ? '<a id="${node.id}">$_dummyText</a>' : '';
+    // A role the theme leaves out of the text (`role_<role>_display:
+    // none`: a unit's label the margin sets already), its anchor kept,
+    // a mark for the space after it to go with it.
+    if (_hiddenRole(node)) return '$anchor${PdfConverter._hiddenMark}';
     // A side note: marked here, its text substituted with the rest (the
     // macros in it are still to come), then taken out of its line.
     if (_sideRole(node) case final role?) {
@@ -1223,6 +1233,17 @@ extension _InlineElements on PdfConverter {
     }
     return '$anchor$quoted';
   }
+
+  /// Whether the theme leaves a role of [node] out of the text
+  /// (`role_<role>_display: none`); not in asciidoctor-pdf compatibility.
+  bool _hiddenRole(Inline node) =>
+      node.role != null &&
+      !asciidoctorCompat(_document, CompatFormat.pdf) &&
+      node.roles.any(
+        (role) =>
+            _keys('role_${role.replaceAll('-', '_')}').string('display') ==
+            'none',
+      );
 
   /// The first role of [node] the theme sets beside the text
   /// (`role_<role>_display: side`), as a theme key part; not in
