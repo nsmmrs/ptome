@@ -4,18 +4,20 @@
 library;
 
 import 'package:mustache_template/mustache_template.dart' show Template;
+import 'package:ptome/src/lru.dart';
 
-final Map<String, Template> _parsed = {};
+/// (At most 256 kept: templates come from documents.)
+final LruCache<String, Template> _parsed = LruCache(256);
 
 /// [template] rendered with [values] (an empty or missing value leaves a
 /// `{{#name}}...{{/name}}` part out). Values are written as they are: the
 /// caller escapes them for its output.
-String renderTemplate(String template, Map<String, String?> values) =>
-    (_parsed[template] ??= Template(
+String renderTemplate(String template, Map<String, String?> values) => _parsed
+    .putIfAbsent(
       template,
-      lenient: true,
-      htmlEscapeValues: false,
-    )).renderString({
+      () => Template(template, lenient: true, htmlEscapeValues: false),
+    )
+    .renderString({
       for (final MapEntry(:key, :value) in values.entries)
         if (value != null && value.isNotEmpty) key: value,
     });

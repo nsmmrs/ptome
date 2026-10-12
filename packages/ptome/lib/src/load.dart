@@ -26,6 +26,7 @@ import 'package:ptome/src/http_fetch.dart' show fetchHttp;
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/logging.dart' show LoggerManager, NullLogger;
 import 'package:ptome/src/look/document_look.dart';
+import 'package:ptome/src/lru.dart';
 import 'package:ptome/src/options.dart';
 import 'package:ptome/src/parallel.dart';
 import 'package:ptome/src/path_resolver.dart' show PathResolver;
@@ -255,8 +256,9 @@ UriReader cachedUriReader(Map<String, RemoteResource?> cache) =>
     (uri) => cache[uri] ?? (throw AsciidoctorException('cannot read $uri'));
 
 /// Remote content kept across conversions for documents that set the
-/// `cache-uri` attribute, by URI (`null` for content that failed).
-final Map<String, RemoteResource?> _sharedUriCache = {};
+/// `cache-uri` attribute, by URI (`null` for content that failed): the
+/// 256 used last.
+final LruCache<String, RemoteResource?> _sharedUriCache = LruCache(256);
 
 /// The most discovery passes run for one document; each pass fetches at
 /// least one new URI, so this bounds documents that keep naming new ones.
