@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- EPUB: `epub-font-families` embeds a document's own faces besides the
+  stylesheet's (and, with embedded fonts, its look's), each with its
+  `@font-face` rules.
 - Note streams run in (`note_stream_<name>_arrangement: run_in`, one
   paragraph a page, as an apparatus) or in a margin column of their own
   (`note_stream_<name>_column`, each note beside its reference: a

@@ -1940,12 +1940,18 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     if (scripts != 'latin') {
       fontCss = fontCss.replaceAll(RegExp(r'(?<=-)latin(?=\.ttf\))'), scripts);
     }
-    if (!_embedFonts) {
+    // The document's own faces (`epub-font-families`; embedded fonts: the
+    // look's too): @font-face rules and files besides the stylesheet's.
+    final (extraCss, extraFiles) = _ownFonts(doc);
+    final String css;
+    final List<(String, String)> fontFiles;
+    if (_embedFonts) {
+      final (embedded, files) = _embeddableFonts(fontCss);
+      (css, fontFiles) = (embedded + extraCss, [...files, ...extraFiles]);
+    } else {
       // The reader's fonts (`epub-embed-fonts` embeds the stylesheet's).
-      book.addItem('styles/epub3-fonts.css').setText(_noFontsCss);
-      return;
+      (css, fontFiles) = (_noFontsCss + extraCss, extraFiles);
     }
-    final (css, fontFiles) = _embeddableFonts(fontCss);
     book.addItem('styles/epub3-fonts.css').setText(css);
     if (fontFiles.isNotEmpty) {
       book.addOptionalFile(
@@ -1962,6 +1968,92 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         book.addItem(name).setBytes(fonts.fontBytes(path));
       }
     }
+  }
+
+  /// The faces [doc] embeds of its own: the families its
+  /// `epub-font-families` attribute lists (commas between them), and with
+  /// embedded fonts those its look names for e-books; each family's
+  /// installed regular,
+  /// bold, italic and bold italic as @font-face rules under the family's
+  /// name (a family installed in an optical size only, `Bodoni Moda
+  /// 28pt`, under the name the CSS gives it), and their files in the
+  /// book. A family not installed is said once.
+  (String, List<(String, String)>) _ownFonts(Document doc) {
+    final families = <String>{
+      for (final family in (doc.attr('epub-font-families') ?? '').split(','))
+        if (family.trim().isNotEmpty) family.trim(),
+      if (_embedFonts)
+        for (final face in documentLook(doc).tokens.fonts.values)
+          if (face.family?.of(Medium.ebook) case final stack?)
+            for (final family in stack.families)
+              if (!FontStack.generics.contains(family)) family,
+    };
+    if (families.isEmpty) return ('', const []);
+    final installed = Fonts.current;
+    final css = StringBuffer();
+    final files = <(String, String)>[];
+    final named = <String>{};
+    for (final family in families) {
+      var found = false;
+      for (final (bold, italic) in const [
+        (false, false),
+        (true, false),
+        (false, true),
+        (true, true),
+      ]) {
+        final font = _installedFace(
+          installed,
+          family,
+          bold: bold,
+          italic: italic,
+        );
+        if (font == null || font.italic != italic || font.bold != bold) {
+          continue;
+        }
+        found = true;
+        final base = font.fileName;
+        var name = 'fonts/$base';
+        for (var i = 2; !named.add(name); i++) {
+          name = 'fonts/$i-$base';
+        }
+        files.add((name, font.path));
+        css.write(
+          '@font-face{font-family:"$family";src:url(../$name);'
+          'font-weight:${bold ? 'bold' : 'normal'};'
+          'font-style:${italic ? 'italic' : 'normal'}}\n',
+        );
+      }
+      if (!found && _missingFonts.add(family)) {
+        logger.warn('font $family is not installed: not embedded in the EPUB');
+      }
+    }
+    return ('$css', files);
+  }
+
+  /// The installed face of [family], or of the family in an optical size
+  /// (`Bodoni Moda 28pt` for `Bodoni Moda`).
+  static InstalledFont? _installedFace(
+    FontIndex installed,
+    String family, {
+    required bool bold,
+    required bool italic,
+  }) {
+    if (installed.find(family, bold: bold, italic: italic) case final font?) {
+      return font;
+    }
+    final sized = RegExp(
+      '^${RegExp.escape(family)} \\d+pt\$',
+      caseSensitive: false,
+    );
+    for (final other in {
+      for (final font in installed.fonts)
+        if (sized.hasMatch(font.family)) font.family,
+    }) {
+      if (installed.find(other, bold: bold, italic: italic) case final font?) {
+        return font;
+      }
+    }
+    return null;
   }
 
   /// Whether the stylesheet's fonts are embedded (`epub-embed-fonts`):

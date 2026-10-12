@@ -92,6 +92,43 @@ void main() {
       expect(files['EPUB/_one.xhtml'], contains(r'content: "\f004"'));
     });
 
+    test("epub-font-families embeds a document's own faces", () {
+      Fonts.installed = FontIndex([
+        'test/pdf/fixtures/fonts',
+      ], cacheFile: '${dir.path}/cache.tsv');
+      final logger = MemoryLogger();
+      final saved = LoggerManager.logger;
+      LoggerManager.logger = logger;
+      addTearDown(() => LoggerManager.logger = saved);
+      final files = epub(
+        attributes: {'epub-font-families': 'Yrsa, Nowhere Sans'},
+      );
+      expect(
+        files.keys,
+        containsAll([
+          'EPUB/fonts/yrsa-regular-latin.ttf',
+          'EPUB/fonts/yrsa-italic-latin.ttf',
+          'META-INF/com.apple.ibooks.display-options.xml',
+        ]),
+      );
+      final css = files['EPUB/styles/epub3-fonts.css']!;
+      expect(
+        RegExp(r'@font-face\{font-family:"Yrsa"').allMatches(css),
+        hasLength(2),
+      );
+      expect(css, contains('src:url(../fonts/yrsa-italic-latin.ttf)'));
+      expect(
+        files['EPUB/package.opf'],
+        contains('fonts/yrsa-regular-latin.ttf'),
+      );
+      expect(
+        [for (final m in logger.messages) '${m.message}'],
+        contains(
+          'font Nowhere Sans is not installed: not embedded in the EPUB',
+        ),
+      );
+    });
+
     test('an installed WOFF2 font is embedded as the font it wraps', () {
       Fonts.installed = FontIndex([
         'test/fixtures/fonts',

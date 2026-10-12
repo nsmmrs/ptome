@@ -269,6 +269,7 @@ release's:
 | `html-nohighlight` | `honored`: the `nohighlight` option leaves a block plain | `ignored` |
 | `docbook-quote-roles` | `written`: `<quote role="double">` | `none`: `<quote>` |
 | `epub-fonts` | `reader`: the reading system's fonts | `embedded`: asciidoctor-epub3's, in the book (`epub-embed-fonts` too) |
+| `epub-font-families` | none | Families embedded besides the stylesheet's, commas between them: each one's installed regular, bold, italic and bold italic with their `@font-face` rules (a look's faces, a theme's small capitals and old-style figures), whether or not the stylesheet's fonts are. With embedded fonts, the families the document's look names for e-books are embedded too. |
 | `epub-toc-macro` | `contents`: `toc::[]` lists the book's contents | `none` |
 | `epub-toc-title` | `default`: an empty `toc-title` is Table of Contents | `empty` |
 | `tilde-blocks` | `open`: `~~~~` delimits an open block | `text` |
