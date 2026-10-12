@@ -416,10 +416,21 @@ final class ParagraphBox extends LayoutBox {
     this.widows = 2,
     this.lineBreaker,
   }) : _from = 0,
+       _to = null,
        _source = null,
        super._(style);
 
   new _rest(ParagraphBox source, this._from)
+    : paragraph = source.paragraph,
+      orphans = source.orphans,
+      widows = source.widows,
+      lineBreaker = source.lineBreaker,
+      _to = null,
+      _source = source._source ?? source,
+      super._(source.style);
+
+  /// Lines [_from] to [_to] of [source] (a page planned to end after them).
+  new _slice(ParagraphBox source, this._from, int this._to)
     : paragraph = source.paragraph,
       orphans = source.orphans,
       widows = source.widows,
@@ -441,6 +452,9 @@ final class ParagraphBox extends LayoutBox {
 
   /// The first line of this piece.
   final int _from;
+
+  /// The line after this piece's last, or null for the paragraph's end.
+  final int? _to;
 
   /// The paragraph this is the rest of.
   final ParagraphBox? _source;

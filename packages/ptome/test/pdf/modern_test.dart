@@ -2613,6 +2613,30 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('pagination: optimal spreads the room a kept block leaves', () {
+      final paragraph = List.filled(
+        110,
+        'The keepers logged the weather and painted the tower.',
+      ).join(' ');
+      final block = [for (var i = 1; i <= 40; i++) 'Line $i of the log.'];
+      final source =
+          '$paragraph\n\n[%unbreakable]\n....\n${block.join('\n')}\n....\n';
+      List<int> perPage(String mode) => [
+        for (final page in _pages(_pdf(source, theme: 'pagination: $mode\n')))
+          if (page.isNotEmpty)
+            page.where((l) => l.contains(RegExp('[a-z]'))).length,
+      ];
+      final firstFit = perPage('first_fit');
+      final optimal = perPage('optimal');
+      // One page at a time: a full page, then a few lines alone before the
+      // block; together, the paragraph halved over two pages.
+      expect(firstFit.length, 3);
+      expect(firstFit[0] - firstFit[1], greaterThan(20));
+      expect(optimal.length, 3);
+      expect((optimal[0] - optimal[1]).abs(), lessThanOrEqualTo(1));
+      expect(optimal.last, firstFit.last);
+    });
+
     test(
       'no runt: a last line too short is set another way when it can be',
       () {

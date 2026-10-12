@@ -364,6 +364,13 @@ extension _DocumentParts on PdfConverter {
           _length('side_notes_item_spacing', _rootFontSize) ??
           _rootFontSize / 4,
       baselineGrid: _baselineGrid(),
+      // (`pagination: optimal`, modern engine: the pages' breaks chosen
+      // together.)
+      pagination:
+          !asciidoctorCompat(document, CompatFormat.pdf) &&
+              _choice('pagination', const ['first_fit', 'optimal']) == 'optimal'
+          ? Pagination.optimal
+          : Pagination.firstFit,
       templateForPage: media == 'prepress'
           ? (template, number) => _sidedTemplate(
               template,

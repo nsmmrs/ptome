@@ -21,6 +21,7 @@ part 'flow/boxes.dart';
 part 'flow/pagination.dart';
 part 'flow/pass.dart';
 part 'flow/notes.dart';
+part 'flow/optimal.dart';
 part 'flow/floats.dart';
 part 'flow/leaves.dart';
 part 'flow/tables.dart';

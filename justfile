@@ -92,12 +92,15 @@ ci:
     #!/usr/bin/env bash
     set -euo pipefail
     sha="$(git rev-parse HEAD)"
+    runs=""
     for _ in $(seq 1 80); do
       sleep 30
-      runs="$(gh run list --commit "$sha" --json name,status,conclusion)"
+      # (A failed query, the network say, is tried again.)
+      runs="$(gh run list --commit "$sha" --json name,status,conclusion 2>/dev/null)" || continue
       [ "$(jq length <<< "$runs")" -gt 0 ] || continue
       [ "$(jq '[.[] | select(.status != "completed")] | length' <<< "$runs")" -eq 0 ] && break
     done
+    [ -n "${runs:-}" ] || { echo "just: CI's runs could not be read" >&2; exit 1; }
     jq -r '.[] | "\(.conclusion // .status)  \(.name)"' <<< "$runs"
     if jq -e '[.[] | select(.status != "completed" or (.conclusion != "success" and .conclusion != "skipped"))] | length > 0' <<< "$runs" > /dev/null; then
       echo "just: CI is not green for $sha" >&2

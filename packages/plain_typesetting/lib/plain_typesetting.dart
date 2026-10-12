@@ -62,6 +62,7 @@ export 'src/layout/flow.dart'
         PageInfo,
         PageSide,
         PageTemplate,
+        Pagination,
         ParagraphBox,
         PieceLine,
         ShapedContent,

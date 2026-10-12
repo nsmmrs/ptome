@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Optimal pagination in the PDF (`pagination: optimal`): the pages' breaks
+  chosen together, the unused room spread rather than one nearly empty
+  page.
 - `:index-sort:` orders the index by The Chicago Manual of Style's
   letter-by-letter or word-by-word system, in every format.
 - The PDF's line breaker counts protrusion (with `base_overhang`) and

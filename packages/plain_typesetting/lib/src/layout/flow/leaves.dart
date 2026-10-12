@@ -11,7 +11,12 @@ extension _Leaves on _Pass {
     required bool atTop,
   }) {
     final margin = box.style.margin;
-    final lines = _linesOf(box, width - margin.horizontal);
+    final all = _linesOf(box, width - margin.horizontal);
+    // (A slice of the paragraph: its lines up to its end.)
+    final lines = switch (box._to) {
+      final to? when to < all.length => all.sublist(0, to),
+      _ => all,
+    };
     final from = box._from;
     var top = atTop || from > 0 ? 0.0 : margin.top;
     // (On a baseline grid, down to where its first baseline is on it.)
@@ -32,7 +37,7 @@ extension _Leaves on _Pass {
     final height =
         top +
         placed.fold<double>(0, (sum, line) => sum + line.height) +
-        (done ? margin.bottom : 0);
+        (from + count >= all.length ? margin.bottom : 0);
     return _Fit(
       _PlacedLines(
         placed,

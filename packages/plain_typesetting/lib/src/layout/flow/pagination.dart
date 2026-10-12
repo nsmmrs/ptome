@@ -251,6 +251,7 @@ final class FlowLayout {
     this.sideNoteStreamOf = const {},
     this.sideNoteGap = 2,
     this.baselineGrid,
+    this.pagination = Pagination.firstFit,
   }) : templates = {null: ?template, ...?templates},
        pageLabel = pageLabel ?? _decimal {
     if (this.templates[null] == null) {
@@ -338,7 +339,37 @@ final class FlowLayout {
   /// step apart, are on the grid too, the same on every page.
   final BaselineGrid? baselineGrid;
 
+  /// How the pages' breaks are chosen: one page at a time, or together
+  /// (see [Pagination.optimal]).
+  final Pagination pagination;
+
   static String _decimal(int number) => '$number';
+
+  /// [content] with the optimal plan's page breaks, when every page is
+  /// one region of the same size and nothing goes to the foot of a page;
+  /// else null.
+  List<LayoutBox>? _optimal(List<LayoutBox> content) {
+    if (notes.isNotEmpty) return null;
+    final first = templates[startTemplate] ?? templates[null]!;
+    // (The pages of the template the layout starts with; a break to
+    // another template is content the plan doesn't model.)
+    final pages = [
+      for (var number = 1; number <= 2; number++)
+        templateForPage?.call(first, number) ?? first,
+    ];
+    final regions = [for (final page in pages) page.regions];
+    if (regions.any((r) => r.length != 1)) return null;
+    final region = regions.first.single;
+    if (regions.any(
+      (r) =>
+          (r.single.width - region.width).abs() > 1e-6 ||
+          (r.single.height - region.height).abs() > 1e-6,
+    )) {
+      return null;
+    }
+    final pass = _Pass(this, const {}).._regionHeight = region.height;
+    return pass._optimallyPaged(content, region.width, region.height);
+  }
 
   /// The lines of the paragraphs without page references, by paragraph
   /// box and width: kept from one [layout] to the next (the boxes and
@@ -356,16 +387,21 @@ final class FlowLayout {
     int unchangedBefore = 0,
     Set<int>? changedPages,
   }) {
+    // (Pages chosen together: the content with the plan's page breaks,
+    // laid out afresh.)
+    final planned = pagination == Pagination.optimal ? _optimal(content) : null;
+    final boxes = planned ?? content;
+    final previous = planned == null ? reuse : null;
     var anchors = <String, AnchorPosition>{};
     // Laid out again after a change at or after [unchangedBefore]: the
     // pages before the last clean boundary before it are kept, and the
     // first pass goes on from there.
     _Boundary? resumeAt;
-    if (reuse != null && identical(reuse._layout, this)) {
-      anchors = reuse.anchors;
-      for (final boundary in reuse._boundaries) {
+    if (previous != null && identical(previous._layout, this)) {
+      anchors = previous.anchors;
+      for (final boundary in previous._boundaries) {
         if (boundary.index > unchangedBefore) break;
-        if (boundary.index <= content.length && !boundary.hasReferences) {
+        if (boundary.index <= boxes.length && !boundary.hasReferences) {
           resumeAt = boundary;
         }
       }
@@ -374,9 +410,9 @@ final class FlowLayout {
     for (var i = 0; i < maxPasses; i++) {
       pass = _Pass(this, anchors);
       if (i == 0 && resumeAt != null) {
-        pass.resume(content, reuse!, resumeAt, changedPages);
+        pass.resume(boxes, previous!, resumeAt, changedPages);
       } else {
-        pass.run(content);
+        pass.run(boxes);
       }
       final found = pass.anchors;
       final stable =

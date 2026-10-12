@@ -539,6 +539,31 @@ void main() {
     expect(first.values.any((p) => p.$1 > 100), isTrue);
   });
 
+  test('optimal pagination: the room left over spread, not one empty page', () {
+    // Ten lines a page: a paragraph of fifteen, then a block of eight kept
+    // whole.
+    final content = [
+      _para([for (var i = 1; i <= 15; i++) 'p$i'].join('\n')),
+      BlockBox([
+        for (var i = 1; i <= 8; i++) _para('k$i'),
+      ], style: const BoxStyle(keepTogether: true)),
+    ];
+    List<int> perPage(Pagination pagination) => [
+      for (final page in FlowLayout(
+        template: _rows(10),
+        pagination: pagination,
+      ).layout(content).render(RecordingDocument()))
+        page.texts.length,
+    ];
+    // One at a time: ten, then five alone (the block doesn't fit after
+    // them), then the block. Together: eight and seven (or seven and
+    // eight, as dear), then the block.
+    expect(perPage(Pagination.firstFit), [10, 5, 8]);
+    final optimal = perPage(Pagination.optimal);
+    expect(optimal.take(2).toSet(), {7, 8});
+    expect(optimal.last, 8);
+  });
+
   test('side notes beside their lines, pushed down, carried over', () {
     final document = RecordingDocument();
     FlowLayout(

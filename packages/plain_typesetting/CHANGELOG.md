@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FlowLayout.pagination` (`Pagination.optimal`): the breaks of the pages
+  chosen together by dynamic programming over a galley of the content
+  (paragraphs' lines within their widow and orphan limits, other blocks
+  whole), given to the layout as page breaks; content the plan can't
+  model is laid out first-fit.
 - `KnuthPlassLineBreaker.breakItems(protrudeLeft:, protrudeRight:)`: each
   line chosen as the wider measure its ends hang into. `lastLineMin` and
   `runtDemerits`: a paragraph's last line short of the least only when
