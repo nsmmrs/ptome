@@ -250,6 +250,7 @@ final class TextContext {
     this.capsTracking = 0,
     this.expansion = 0,
     this.maxHyphenRun,
+    this.lastLineMin = 0,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -259,6 +260,10 @@ final class TextContext {
 
   /// The most hyphenated lines in a row (`base_hyphenate_limit_lines`).
   final int? maxHyphenRun;
+
+  /// The least a paragraph's last line fills of its measure
+  /// (`base_last_line_min_width`): no runts where there is another way.
+  final double lastLineMin;
 
   /// The tracking of text set in capitals or small capitals, in ems (the
   /// modern engine's `caps_letter_spacing`; microtype's 0.05 em).
@@ -2366,25 +2371,38 @@ base class _Wrap {
       final text = f.text.trimRight();
       if (text.isEmpty || text == '\n') continue;
       final char = String.fromCharCode(text.runes.last);
-      final factor = switch (char) {
-        '.' => 0.7,
-        ',' || ':' || '-' || '\u00ad' || '\u2010' => 0.5,
-        '\u2019' || "'" => 0.4,
-        ';' || '\u201d' || '"' => 0.3,
-        '~' || '+' => 0.25,
-        '\u2013' || '/' || ')' || '*' => 0.2,
-        '\u2014' => 0.15,
-        '!' || '?' => 0.1,
-        'A' || 'F' || 'K' || 'L' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
-        'k' || 'r' || 'v' || 'w' || 'x' || 'y' => 0.05,
-        '1' || '4' || '7' || '@' || '%' => 0.05,
-        _ => 0.0,
-      };
+      final factor = _rightFactor(char);
       if (factor == 0) return 0;
       return factor * f.format.font.widthOf(char, f.format.size);
     }
     return 0;
   }
+
+  /// How far [char] may hang past a line's end, as a fraction of its
+  /// width (microtype's default right protrusion).
+  static double _rightFactor(String char) => switch (char) {
+    '.' => 0.7,
+    ',' || ':' || '-' || '\u00ad' || '\u2010' => 0.5,
+    '\u2019' || "'" => 0.4,
+    ';' || '\u201d' || '"' => 0.3,
+    '~' || '+' => 0.25,
+    '\u2013' || '/' || ')' || '*' => 0.2,
+    '\u2014' => 0.15,
+    '!' || '?' => 0.1,
+    'A' || 'F' || 'K' || 'L' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
+    'k' || 'r' || 'v' || 'w' || 'x' || 'y' => 0.05,
+    '1' || '4' || '7' || '@' || '%' => 0.05,
+    _ => 0.0,
+  };
+
+  /// How far [char] may hang before a line's start (microtype's default
+  /// left protrusion).
+  static double _leftFactor(String char) => switch (char) {
+    '-' || '\u2010' => 0.5,
+    '\u2018' || '\u201c' || '\u201e' || "'" || '"' || '\u00ab' => 0.3,
+    'A' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
+    _ => 0.0,
+  };
 
   /// How far the line's first character may hang before its start, as a
   /// fraction of its width: microtype's default left protrusion (a
@@ -2396,12 +2414,7 @@ base class _Wrap {
       final text = f.text.replaceAll(_zwsp, '').trimLeft();
       if (text.isEmpty || text == '\n') continue;
       final char = String.fromCharCode(text.runes.first);
-      final factor = switch (char) {
-        '-' || '\u2010' => 0.5,
-        '\u2018' || '\u201c' || '\u201e' || "'" || '"' || '\u00ab' => 0.3,
-        'A' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
-        _ => 0.0,
-      };
+      final factor = _leftFactor(char);
       if (factor == 0) return 0;
       return factor * f.format.font.widthOf(char, f.format.size);
     }
@@ -2943,6 +2956,7 @@ final class _OptimalWrap extends _Wrap {
         emergencyStretch: 2 * size,
         expansion: _context.expansion,
         maxHyphenRun: _context.maxHyphenRun,
+        lastLineMin: _context.lastLineMin,
       ),
       LineBreaking.optimal => KnuthPlassLineBreaker(
         raggedStretch: 2 * size,
@@ -2962,10 +2976,47 @@ final class _OptimalWrap extends _Wrap {
       widthOf(0),
       widthOf(math.max(drop, 1)),
     );
+    // (Protrusion, with `base_overhang`: the breaker counts what hangs at
+    // a line's ends, as the line is then drawn: at its end always, at its
+    // start when justified.)
+    List<int> breakLines() {
+      final hang = _layout.overhang;
+      if (breaker is! KnuthPlassLineBreaker || hang <= 0) {
+        return breaker.breakItems(items, widthOf);
+      }
+      double protrusion(int item, {required bool right}) {
+        final (i, _) = pieces[from[item]];
+        final format = _unconsumed[i].format;
+        if (format.fragment.isMarker || format.image != null) return 0;
+        final text = switch (items[item]) {
+          BoxItem(:final text) => text,
+          _ => '-',
+        };
+        if (text.isEmpty) return 0;
+        final char = String.fromCharCode(
+          right ? text.runes.last : text.runes.first,
+        );
+        final factor = right
+            ? _Wrap._rightFactor(char)
+            : _Wrap._leftFactor(char);
+        return factor == 0
+            ? 0
+            : hang * factor * format.font.widthOf(char, format.size);
+      }
+
+      return breaker.breakItems(
+        items,
+        widthOf,
+        protrudeLeft: justify ? (item) => protrusion(item, right: false) : null,
+        protrudeRight: (item) => protrusion(item, right: true),
+      );
+    }
+
     final memo = _breakMemo;
     final breaks = memo == null
-        ? breaker.breakItems(items, widthOf)
-        : memo[key] ??= breaker.breakItems(items, widthOf);
+        ? breakLines()
+        : memo[('${key.$1} hang ${_layout.overhang}', key.$2, key.$3)] ??=
+              breakLines();
 
     // The pieces of each line: up to the piece its break is in (a space
     // or a newline ends the line it breaks), then on from the next. A line
@@ -3121,9 +3172,10 @@ String _describeBreaker(ItemLineBreaker breaker, (int, double)? drop) {
       :final raggedStretch,
       :final expansion,
       :final maxHyphenRun,
+      :final lastLineMin,
     ) =>
       'knuth-plass $tolerance $emergencyStretch $raggedStretch '
-          '$expansion $maxHyphenRun',
+          '$expansion $maxHyphenRun $lastLineMin',
     _ => breaker.runtimeType.toString(),
   };
   return drop == null ? costs : '$costs drop ${drop.$1} ${drop.$2}';

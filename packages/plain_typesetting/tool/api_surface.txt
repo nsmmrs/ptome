@@ -391,15 +391,17 @@ final class InlineImage extends InlineContent
   double height
   double width
 final class KnuthPlassLineBreaker extends ItemLineBreaker
-  KnuthPlassLineBreaker({double tolerance = 1.26, double linePenalty = 10, double flaggedDemerits = 10000, double fitnessDemerits = 10000, double finalHyphenDemerits = 5000, double emergencyStretch = 0, double? raggedStretch, double expansion = 0, int? maxHyphenRun})
-  List<int> breakItems(List<LineItem> items, double Function(int) widths)
+  KnuthPlassLineBreaker({double tolerance = 1.26, double linePenalty = 10, double flaggedDemerits = 10000, double fitnessDemerits = 10000, double finalHyphenDemerits = 5000, double emergencyStretch = 0, double? raggedStretch, double expansion = 0, int? maxHyphenRun, double lastLineMin = 0, double runtDemerits = 1000000})
+  List<int> breakItems(List<LineItem> items, double Function(int) widths, {double Function(int)? protrudeLeft, double Function(int)? protrudeRight})
   double demeritsOf(List<LineItem> items, double Function(int) widths, List<int> breaks)
   double emergencyStretch
   double expansion
   double finalHyphenDemerits
   double fitnessDemerits
   double flaggedDemerits
+  double lastLineMin
   double linePenalty
+  double runtDemerits
   double tolerance
   double? raggedStretch
   int? maxHyphenRun

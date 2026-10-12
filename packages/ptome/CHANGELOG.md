@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The PDF's line breaker counts protrusion (with `base_overhang`) and
+  avoids runts (`base_last_line_min_width`): a last line too short only
+  when there's no other way.
 - EPUB: `epub-font-families` embeds a document's own faces besides the
   stylesheet's (and, with embedded fonts, its look's), each with its
   `@font-face` rules.

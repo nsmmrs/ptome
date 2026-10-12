@@ -2598,6 +2598,45 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test(
+      'no runt: a last line too short is set another way when it can be',
+      () {
+        const source =
+            '[.text-justify]\nThe keepers logged the weather four times a day '
+            'and painted the tower every third summer while the\n';
+        List<String> lines(String theme) => [
+          for (final line in _pages(_pdf(source, theme: theme)).first)
+            if (RegExp('[a-z]').hasMatch(line)) line,
+        ];
+        // A last line of one word; with a least of 40%, none.
+        expect(lines('').last, 'the');
+        expect(
+          lines('base:\n  last_line_min_width: 40%\n').last,
+          endsWith('while the'),
+        );
+      },
+    );
+
+    test('protrusion the line breaker counts: a hanging comma fits', () {
+      final text = List.filled(
+        12,
+        'Go on, then. Do it, now: run, fast. Yes, again.',
+      );
+      final source =
+          '[cols="1,3"]\n|===\na|[.text-justify]\n${text.join(' ')}\n'
+          '| \n|===\n';
+      List<String> lines({required bool overhang}) => [
+        for (final line in _pages(
+          _pdf(source, theme: 'base:\n  overhang: $overhang\n'),
+        ).expand((page) => page))
+          line.replaceAll(RegExp(r'\s+'), ' '),
+      ];
+      // A line can end "now: run," only when its comma may hang.
+      bool ends(String line) => line.endsWith('now: run,');
+      expect(lines(overhang: false).where(ends), isEmpty);
+      expect(lines(overhang: true).where(ends), isNotEmpty);
+    });
+
     test('font expansion and protrusion at the left of justified lines', () {
       final words =
           'Words of the piece run on across the page, set justified. ' * 8;

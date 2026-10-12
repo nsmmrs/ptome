@@ -56,6 +56,7 @@ void main() {
         KnuthPlassLineBreaker(raggedStretch: 20),
         KnuthPlassLineBreaker(maxHyphenRun: 1),
         KnuthPlassLineBreaker(expansion: 0.02),
+        KnuthPlassLineBreaker(lastLineMin: 0.4),
       ]) {
         var best = double.infinity;
         for (var mask = 0; mask < 1 << opportunities.length; mask++) {
@@ -76,7 +77,8 @@ void main() {
           closeTo(best, best * 1e-9),
           reason:
               'seed $seed, ragged ${breaker.raggedStretch}, '
-              'run ${breaker.maxHyphenRun}, expansion ${breaker.expansion}',
+              'run ${breaker.maxHyphenRun}, expansion ${breaker.expansion}, '
+              'last line ${breaker.lastLineMin}',
         );
       }
     }
@@ -149,5 +151,74 @@ void main() {
       expect(demerits, closeTo(best, best * 1e-9), reason: 'seed $seed');
     }
     expect(runs, greaterThan(20));
+  });
+
+  test('protrusion counted: a line whose end hangs fits the wider measure', () {
+    final font = OpenTypeShaper(
+      OpenTypeFont.parse(
+        File('test/fonts/notoserif-regular-latin.ttf').readAsBytesSync(),
+      ),
+    );
+    final run = TextRun('', TextStyle(font, 10));
+    // 30 + 5 + 20 = 55 wide, 1 of shrink: too wide for 50, unless the
+    // last box's period hangs 6 into the margin.
+    final items = <LineItem>[
+      BoxItem(run, 'aaaa', 30),
+      GlueItem(run, ' ', 5, 1, 1),
+      BoxItem(run, 'bb.', 20),
+      GlueItem(run, ' ', 5, 1, 1),
+      BoxItem(run, 'cc', 30),
+      const GlueItem.fill(),
+      PenaltyItem(0, PenaltyItem.forced, run: run),
+    ];
+    const breaker = KnuthPlassLineBreaker();
+    expect(breaker.breakItems(items, (_) => 50).first, 1);
+    expect(
+      breaker
+          .breakItems(
+            items,
+            (_) => 50,
+            protrudeRight: (i) =>
+                (items[i] as BoxItem).text.endsWith('.') ? 6 : 0,
+          )
+          .first,
+      3,
+    );
+  });
+
+  test('a runt costs more: the last line not short of the least', () {
+    final font = OpenTypeShaper(
+      OpenTypeFont.parse(
+        File('test/fonts/notoserif-regular-latin.ttf').readAsBytesSync(),
+      ),
+    );
+    final style = TextStyle(font, 10);
+    final paragraph = Paragraph([
+      TextRun(
+        'The quick brown fox jumps over the lazy dog and runs off into '
+        'the woods beyond the hill near the farm, far away from home today',
+        style,
+      ),
+    ], align: TextAlign.justify);
+    double lastWidth(KnuthPlassLineBreaker breaker, double width) =>
+        breaker.breakLines(paragraph, (_) => width).last.width;
+    // Across measures, the ones that leave a runt (a last line under 40%
+    // of the measure) leave fewer with a least of 40%.
+    var runts = 0;
+    var mended = 0;
+    for (var width = 100.0; width <= 260; width += 4) {
+      if (lastWidth(const KnuthPlassLineBreaker(emergencyStretch: 20), width) >=
+          0.4 * width) {
+        continue;
+      }
+      runts++;
+      final kept = lastWidth(
+        const KnuthPlassLineBreaker(emergencyStretch: 20, lastLineMin: 0.4),
+        width,
+      );
+      if (kept >= 0.4 * width) mended++;
+    }
+    expect(runts, greaterThan(0));
+    expect(mended, greaterThan(0));
   });
 }

@@ -397,7 +397,18 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     this.raggedStretch,
     this.expansion = 0,
     this.maxHyphenRun,
+    this.lastLineMin = 0,
+    this.runtDemerits = 1000000,
   });
+
+  /// The least a paragraph's last line should fill of its measure (a
+  /// fraction, 0 for none): a shorter one, a runt, costs [runtDemerits],
+  /// by default more than any line within the tolerance does, so the
+  /// breaker takes one only when there is no other way.
+  final double lastLineMin;
+
+  /// The demerits of a last line shorter than [lastLineMin].
+  final double runtDemerits;
 
   /// How much wider or narrower a line's letters may be set (font
   /// expansion, as pdfTeX's and microtype's: 0.02, their 20 thousandths,
@@ -438,12 +449,25 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
   /// `\rightskip` stretch); `null` for justified lines.
   final double? raggedStretch;
 
+  /// The breaks of [items] in [widths]; with [protrudeLeft] and
+  /// [protrudeRight] (how far the item's first or last character may hang
+  /// into the margin, by its index: a box, or the flagged penalty of a
+  /// hyphen), each line is chosen as the wider measure its ends hang into
+  /// (pdfTeX's `\pdfprotrudechars=2`).
   @override
-  List<int> breakItems(List<LineItem> items, LineWidths widths) {
+  List<int> breakItems(
+    List<LineItem> items,
+    LineWidths widths, {
+    double Function(int item)? protrudeLeft,
+    double Function(int item)? protrudeRight,
+  }) {
     // Running totals of the items before each index, the first item of
     // the line after a break at each index, and each line's width: the
     // same for every tolerance tried.
     final sums = _sumsOf(items);
+    final protrusion = protrudeLeft == null && protrudeRight == null
+        ? null
+        : _protrusionOf(items, protrudeLeft, protrudeRight);
     final lineWidths = <double>[];
     double widthOf(int line) {
       while (lineWidths.length <= line) {
@@ -457,11 +481,66 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       if (emergencyStretch > 0) (tolerance, emergencyStretch),
       (100.0, emergencyStretch),
     ];
-    for (final (ratio, extra) in passes) {
-      final breaks = _total(items, sums, widthOf, ratio, extra);
-      if (breaks != null) return breaks;
+    // (A pass whose best ends in a runt is kept while the passes with more
+    // stretch are tried for a way without one; the last pass, at any
+    // looseness, never takes its place.)
+    List<int>? runt;
+    for (final (i, (ratio, extra)) in passes.indexed) {
+      final last = i == passes.length - 1;
+      if (last && runt != null) return runt;
+      final breaks = _total(items, sums, widthOf, ratio, extra, protrusion);
+      if (breaks == null) continue;
+      if (last || !_endsInRunt(items, sums, widthOf, breaks)) return breaks;
+      runt ??= breaks;
     }
-    return const FirstFitLineBreaker().breakItems(items, widths);
+    return runt ?? const FirstFitLineBreaker().breakItems(items, widths);
+  }
+
+  /// Whether the last line of [items] broken at [breaks] fills less of its
+  /// measure than [lastLineMin].
+  bool _endsInRunt(
+    List<LineItem> items,
+    (Float64List, Float64List, Float64List, Int32List, Int32List) sums,
+    LineWidths widths,
+    List<int> breaks,
+  ) {
+    if (lastLineMin <= 0 || breaks.isEmpty) return false;
+    final (totalWidth, _, _, _, next) = sums;
+    final position = breaks.length > 1 ? breaks[breaks.length - 2] : -1;
+    final start = position < 0 ? 0 : next[position + 1];
+    final end = breaks.last;
+    final width = totalWidth[end] - totalWidth[start] + _carry(items, position);
+    return width < lastLineMin * widths(breaks.length - 1);
+  }
+
+  /// How much wider a line from item `start` to the break at `at` is for
+  /// what hangs at its ends.
+  static double Function(int start, int at) _protrusionOf(
+    List<LineItem> items,
+    double Function(int item)? left,
+    double Function(int item)? right,
+  ) {
+    // The last box before each index.
+    final lastBox = Int32List(items.length + 1);
+    var box = -1;
+    for (var i = 0; i <= items.length; i++) {
+      lastBox[i] = box;
+      if (i < items.length && items[i] is BoxItem) box = i;
+    }
+    final lefts = <int, double>{};
+    final rights = <int, double>{};
+    return (start, at) {
+      var extra = 0.0;
+      if (left != null && start < items.length && items[start] is BoxItem) {
+        extra += lefts[start] ??= left(start);
+      }
+      if (right != null) {
+        final item = items[at];
+        final last = item is PenaltyItem && item.flagged ? at : lastBox[at];
+        if (last >= 0) extra += rights[last] ??= right(last);
+      }
+      return extra;
+    };
   }
 
   /// The running totals of [items] before each index (their widths,
@@ -523,6 +602,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     required bool flagged,
     required bool flaggedBefore,
     required int fitnessBefore,
+    double Function(int start, int at)? protrusion,
   }) {
     final (totalWidth, totalStretch, totalShrink, totalFills, _) = sums;
     final item = items[at];
@@ -535,7 +615,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
         ? double.infinity
         : (ragged ?? totalStretch[at] - totalStretch[start]) + extraStretch;
     final shrink = ragged == null ? totalShrink[at] - totalShrink[start] : 0.0;
-    final available = widths(line);
+    final available = widths(line) + (protrusion?.call(start, at) ?? 0);
     final double ratio;
     if (width < available - _epsilon) {
       ratio = stretch > 0 ? (available - width) / stretch : double.infinity;
@@ -557,6 +637,13 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       demerits -= penalty * penalty;
     }
     if (flagged && flaggedBefore) demerits += flaggedDemerits;
+    // A runt: the paragraph's last line short of [lastLineMin].
+    if (forced &&
+        at == items.length - 1 &&
+        lastLineMin > 0 &&
+        width < lastLineMin * available) {
+      demerits += runtDemerits;
+    }
     // The paragraph's last line after a hyphenated one.
     if (forced && at == items.length - 1 && flaggedBefore) {
       demerits += finalHyphenDemerits;
@@ -621,8 +708,9 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     (Float64List, Float64List, Float64List, Int32List, Int32List) sums,
     LineWidths widths,
     double limit,
-    double extraStretch,
-  ) {
+    double extraStretch, [
+    double Function(int start, int at)? protrusion,
+  ]) {
     final (totalWidth, totalStretch, totalShrink, totalFills, next) = sums;
     final n = items.length;
     var active = <_Node>[
@@ -668,6 +756,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
           flagged: flagged,
           flaggedBefore: node.flagged,
           fitnessBefore: node.fitness,
+          protrusion: protrusion,
         );
         if (ratio >= -1 && !forced) survivors.add(node);
         if (ratio < -1 || ratio > limit) continue;

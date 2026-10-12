@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `KnuthPlassLineBreaker.breakItems(protrudeLeft:, protrudeRight:)`: each
+  line chosen as the wider measure its ends hang into. `lastLineMin` and
+  `runtDemerits`: a paragraph's last line short of the least only when
+  no pass with more stretch finds another way.
 - A float that spans columns (`BoxStyle.floatSpan`) on a page template
   with columns goes across the top of the next page, its columns under
   it (as LaTeX's `figure*`). A column set inside a column is one unit:

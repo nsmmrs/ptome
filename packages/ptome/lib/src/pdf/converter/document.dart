@@ -59,6 +59,18 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (`base_last_line_min_width`: a fraction or a percentage of the
+      // measure a paragraph's last line fills at least.)
+      lastLineMin: asciidoctorCompat(document, CompatFormat.pdf)
+          ? 0
+          : switch (_theme.value('base_last_line_min_width')) {
+              ThemeNumber(:final value) when value > 0 && value < 1 =>
+                value.toDouble(),
+              ThemeString(:final value) when value.trim().endsWith('%') =>
+                (double.tryParse(value.trim().replaceFirst('%', '')) ?? 0) /
+                    100,
+              _ => 0,
+            },
       maxHyphenRun: asciidoctorCompat(document, CompatFormat.pdf)
           ? null
           : switch (_n('base_hyphenate_limit_lines')) {
