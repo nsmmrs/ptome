@@ -81,7 +81,8 @@ enum TextAlign {
   right,
 
   /// Against both margins, stretching the spaces (the last line, and
-  /// lines ending in a hard break, are left aligned).
+  /// lines ending in a hard break, are aligned by
+  /// [Paragraph.alignLast], left unless it says otherwise).
   justify,
 }
 
@@ -90,6 +91,35 @@ abstract interface class Hyphenator {
   /// The offsets in [word] (letters only) a hyphen may go before.
   List<int> hyphenate(String word);
 }
+
+/// How far [char] may hang past a line's end, as a fraction of its
+/// width: margin kerning (character protrusion, Hàn Thế Thành,
+/// "Micro-typographic extensions to the TeX typesetting system", 2000),
+/// the right-hand amounts of LaTeX's microtype package's default set.
+double rightProtrusion(String char) => switch (char) {
+  '.' => 0.7,
+  ',' || ':' || '-' || '\u00ad' || '\u2010' => 0.5,
+  '\u2019' || "'" => 0.4,
+  ';' || '\u201d' || '"' => 0.3,
+  '~' || '+' => 0.25,
+  '\u2013' || '/' || ')' || '*' => 0.2,
+  '\u2014' => 0.15,
+  '!' || '?' => 0.1,
+  'A' || 'F' || 'K' || 'L' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
+  'k' || 'r' || 'v' || 'w' || 'x' || 'y' => 0.05,
+  '1' || '4' || '7' || '@' || '%' => 0.05,
+  _ => 0.0,
+};
+
+/// How far [char] may hang before a line's start, as a fraction of its
+/// width: microtype's default left protrusion (a hyphen half, opening
+/// quotes three tenths, a few capitals a twentieth).
+double leftProtrusion(String char) => switch (char) {
+  '-' || '\u2010' => 0.5,
+  '\u2018' || '\u201c' || '\u201e' || "'" || '"' || '\u00ab' => 0.3,
+  'A' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
+  _ => 0.0,
+};
 
 /// A paragraph: inline content, aligned and spaced.
 @immutable
@@ -104,6 +134,8 @@ final class Paragraph {
     this.breakLongWords = true,
     this.hyphenRepetition = HyphenRepetition.none,
     this.riseInLineHeight = true,
+    this.alignLast = TextAlign.left,
+    this.protrusion = 0,
   });
 
   /// The inline content.
@@ -117,6 +149,17 @@ final class Paragraph {
 
   /// The alignment.
   final TextAlign align;
+
+  /// The alignment of a justified paragraph's lines that aren't stretched:
+  /// its last, and those ending in a hard break (CSS's `text-align-last`).
+  final TextAlign alignLast;
+
+  /// How far a line's end characters hang into the margin, as a share of
+  /// [rightProtrusion]'s and [leftProtrusion]'s amounts (0: none; 1:
+  /// microtype's default set): character protrusion, a line's last
+  /// character at its end always, its first at its start when the line is
+  /// justified, the breaker counting them as the lines are then drawn.
+  final double protrusion;
 
   /// The line spacing.
   final LineHeight lineHeight;
@@ -285,8 +328,16 @@ abstract base class ItemLineBreaker implements LineBreaker {
   const new();
 
   /// The indices of the items lines end at (glue or penalties), in order;
-  /// the last is the final forced break.
-  List<int> breakItems(List<LineItem> items, LineWidths widths);
+  /// the last is the final forced break. [protrudeLeft] and
+  /// [protrudeRight]: how far an item's first or last character may hang
+  /// into the margin (see [KnuthPlassLineBreaker.breakItems]), which a
+  /// breaker may count.
+  List<int> breakItems(
+    List<LineItem> items,
+    LineWidths widths, {
+    double Function(int item)? protrudeLeft,
+    double Function(int item)? protrudeRight,
+  });
 
   /// How much wider or narrower the letters of a justified line may be set
   /// (see [KnuthPlassLineBreaker.expansion]); none by default.
@@ -301,14 +352,52 @@ abstract base class ItemLineBreaker implements LineBreaker {
       maxWidth: paragraph.breakLongWords ? indented(0) : null,
     );
     if (items.isEmpty) return const [];
+    // (Protrusion: what hangs at a line's ends counted as the line is
+    // then drawn, at its end always, at its start when justified.)
+    double Function(int)? protrude({required bool right}) {
+      if (paragraph.protrusion <= 0) return null;
+      if (!right && paragraph.align != TextAlign.justify) return null;
+      return (item) {
+        final (run, text) = switch (items[item]) {
+          BoxItem(:final content, :final text) => (content, text),
+          PenaltyItem(:final run) => (run, '-'),
+          _ => (null, ''),
+        };
+        if (run is! TextRun || text.isEmpty) return 0;
+        return _protrusionOf(paragraph, run, text, right: right);
+      };
+    }
+
     return buildLines(
       paragraph,
       items,
-      breakItems(items, indented),
+      breakItems(
+        items,
+        indented,
+        protrudeLeft: protrude(right: false),
+        protrudeRight: protrude(right: true),
+      ),
       widths,
       expansion: expansion,
     );
   }
+}
+
+/// How far [text]'s last ([right]) or first character hangs into the
+/// margin in [run], with [paragraph]'s protrusion.
+double _protrusionOf(
+  Paragraph paragraph,
+  TextRun run,
+  String text, {
+  required bool right,
+}) {
+  final char = String.fromCharCode(right ? text.runes.last : text.runes.first);
+  final factor = right ? rightProtrusion(char) : leftProtrusion(char);
+  return factor == 0
+      ? 0
+      : paragraph.protrusion *
+            factor *
+            run.style.font.widthOf(char, run.style.size);
 }
 
 /// The cost from which a break is a last resort for [FirstFitLineBreaker].
@@ -323,7 +412,12 @@ final class FirstFitLineBreaker extends ItemLineBreaker {
   const new();
 
   @override
-  List<int> breakItems(List<LineItem> items, LineWidths widths) {
+  List<int> breakItems(
+    List<LineItem> items,
+    LineWidths widths, {
+    double Function(int item)? protrudeLeft,
+    double Function(int item)? protrudeRight,
+  }) {
     final breaks = <int>[];
     var start = 0;
     while (start < items.length) {
@@ -1025,10 +1119,44 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   }
   flush();
   if (items.isEmpty) return items;
+  _kernAcrossBreaks(items);
   items
     ..add(const GlueItem.fill())
     ..add(PenaltyItem(0, PenaltyItem.forced, run: lastRun));
   return maxWidth == null ? items : _splitWide(items, maxWidth);
+}
+
+/// [items] with each piece of a word that a break divides (at a soft
+/// hyphen, a hyphenation point, after a hyphen) as wide as it is set when
+/// the word isn't broken there: with the kerning between its last letter
+/// and the next piece's first, as the word is drawn whole.
+void _kernAcrossBreaks(List<LineItem> items) {
+  for (var i = 0; i + 2 < items.length; i++) {
+    if ((items[i], items[i + 1], items[i + 2])
+        case (
+          BoxItem(content: final TextRun run, :final text, :final width),
+          PenaltyItem(isForced: false),
+          BoxItem(content: final TextRun next, text: final after),
+        )
+        when identical(run, next) && text.isNotEmpty && after.isNotEmpty) {
+      final style = run.style;
+      final pair = style.shape(
+        String.fromCharCode(text.runes.last) +
+            String.fromCharCode(after.runes.first),
+      );
+      if (pair.length != 2 || pair.first.kerning == 0) continue;
+      items[i] = BoxItem(
+        run,
+        text,
+        width +
+            pair.first.kerning *
+                style.size /
+                1000 *
+                style.horizontalScaling /
+                100,
+      );
+    }
+  }
 }
 
 /// [run] split where its font lacks characters a fallback font has, a
@@ -1410,12 +1538,13 @@ Line _line(
   List<LineItem> items,
   TextRun? hyphen,
   TextRun? leadingHyphen,
-  double available,
+  double room,
   double indent, {
   required bool justify,
   required TextRun? emptyRun,
   double expansion = 0,
 }) {
+  var available = room;
   // Runs of items of the same content, in order.
   final pieces = <(InlineContent, StringBuffer)>[
     if (leadingHyphen != null) (leadingHyphen, StringBuffer('-')),
@@ -1436,10 +1565,14 @@ Line _line(
     }
   }
   if (hyphen != null) {
+    // (The soft hyphen, where the font has it: the line's hyphen divides
+    // a word, which text taken from the page joins up again, as ISO 32000
+    // has a soft hyphen at a line's end read.)
+    final mark = hyphen.style.font.covers(0xad) ? '\u00ad' : '-';
     if (pieces.isNotEmpty && identical(pieces.last.$1, hyphen)) {
-      pieces.last.$2.write('-');
+      pieces.last.$2.write(mark);
     } else {
-      pieces.add((hyphen, StringBuffer('-')));
+      pieces.add((hyphen, StringBuffer(mark)));
     }
   }
 
@@ -1462,6 +1595,32 @@ Line _line(
       case PageReference():
         throw StateError('page references are resolved before breaking');
     }
+  }
+  // Protrusion: the line's last character hangs past its end and, when it
+  // is justified, its first before its start, the line that much wider
+  // (as the breaker counted them).
+  var leftHang = 0.0;
+  if (paragraph.protrusion > 0) {
+    var hang = 0.0;
+    for (final (content, text, _, _) in shaped.reversed) {
+      final trimmed = text.trimRight();
+      if (trimmed.isEmpty) continue;
+      if (content is TextRun) {
+        hang = _protrusionOf(paragraph, content, trimmed, right: true);
+      }
+      break;
+    }
+    if (justify && spaces > 0) {
+      for (final (content, text, _, _) in shaped) {
+        final trimmed = text.replaceAll('\u200b', '').trimLeft();
+        if (trimmed.isEmpty) continue;
+        if (content is TextRun) {
+          leftHang = _protrusionOf(paragraph, content, trimmed, right: false);
+        }
+        break;
+      }
+    }
+    available += hang + leftHang;
   }
   // Justified with expansion: the letters take their share of the
   // difference (as the breaker counted it: their width times [expansion]
@@ -1492,9 +1651,14 @@ Line _line(
       ? (available / scale - natural) / spaces
       : 0.0;
   final width = (natural + extra * spaces) * scale;
+  // (A justified paragraph's line that isn't stretched: by alignLast.)
+  final align = paragraph.align == TextAlign.justify && !justify
+      ? paragraph.alignLast
+      : paragraph.align;
   var x =
-      indent +
-      switch (paragraph.align) {
+      indent -
+      leftHang +
+      switch (align) {
         TextAlign.left || TextAlign.justify => 0.0,
         TextAlign.center => (available - width) / 2,
         TextAlign.right => available - width,

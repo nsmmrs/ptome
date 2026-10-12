@@ -2464,38 +2464,12 @@ base class _Wrap {
       final text = f.text.trimRight();
       if (text.isEmpty || text == '\n') continue;
       final char = String.fromCharCode(text.runes.last);
-      final factor = _rightFactor(char);
+      final factor = rightProtrusion(char);
       if (factor == 0) return 0;
       return factor * f.format.font.widthOf(char, f.format.size);
     }
     return 0;
   }
-
-  /// How far [char] may hang past a line's end, as a fraction of its
-  /// width (microtype's default right protrusion).
-  static double _rightFactor(String char) => switch (char) {
-    '.' => 0.7,
-    ',' || ':' || '-' || '\u00ad' || '\u2010' => 0.5,
-    '\u2019' || "'" => 0.4,
-    ';' || '\u201d' || '"' => 0.3,
-    '~' || '+' => 0.25,
-    '\u2013' || '/' || ')' || '*' => 0.2,
-    '\u2014' => 0.15,
-    '!' || '?' => 0.1,
-    'A' || 'F' || 'K' || 'L' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
-    'k' || 'r' || 'v' || 'w' || 'x' || 'y' => 0.05,
-    '1' || '4' || '7' || '@' || '%' => 0.05,
-    _ => 0.0,
-  };
-
-  /// How far [char] may hang before a line's start (microtype's default
-  /// left protrusion).
-  static double _leftFactor(String char) => switch (char) {
-    '-' || '\u2010' => 0.5,
-    '\u2018' || '\u201c' || '\u201e' || "'" || '"' || '\u00ab' => 0.3,
-    'A' || 'T' || 'V' || 'W' || 'X' || 'Y' => 0.05,
-    _ => 0.0,
-  };
 
   /// How far the line's first character may hang before its start, as a
   /// fraction of its width: microtype's default left protrusion (a
@@ -2507,7 +2481,7 @@ base class _Wrap {
       final text = f.text.replaceAll(_zwsp, '').trimLeft();
       if (text.isEmpty || text == '\n') continue;
       final char = String.fromCharCode(text.runes.first);
-      final factor = _leftFactor(char);
+      final factor = leftProtrusion(char);
       if (factor == 0) return 0;
       return factor * f.format.font.widthOf(char, f.format.size);
     }
@@ -2602,6 +2576,36 @@ base class _Wrap {
   String get _lineAlign =>
       _layout.align == 'justify' ? _layout.alignLast ?? 'left' : _layout.align;
 }
+
+/// The line breaker text aligned [align] (`justify`, `left`, …) in a
+/// font of [size] is broken with in [context]: Knuth and Plass's total
+/// fit with TeX's costs, justified lines with a third pass of 2em more
+/// stretch (LaTeX's \sloppy has 3em), ragged ones as plain TeX's
+/// \raggedright (each may fall 2em short at a badness of 100, so their
+/// ends are even); or one line at a time. The text box's and the engine's
+/// paragraphs break with the same one.
+ItemLineBreaker textLineBreaker(
+  TextContext context,
+  String align,
+  double size,
+) => switch (context.lineBreaking) {
+  LineBreaking.optimal ||
+  LineBreaking.auto when align == 'justify' => KnuthPlassLineBreaker(
+    emergencyStretch: 2 * size,
+    expansion: context.expansion,
+    maxHyphenRun: context.maxHyphenRun,
+    lastLineMin: context.lastLineMin,
+  ),
+  LineBreaking.optimal => KnuthPlassLineBreaker(
+    raggedStretch: 2 * size,
+    maxHyphenRun: context.maxHyphenRun,
+  ),
+  LineBreaking.auto when align == 'left' => KnuthPlassLineBreaker(
+    raggedStretch: 2 * size,
+    maxHyphenRun: context.maxHyphenRun,
+  ),
+  _ => const FirstFitLineBreaker(),
+};
 
 /// A character wider than the line (Prawn's `CannotFit`).
 final class _CannotFit implements Exception {
@@ -3036,31 +3040,10 @@ final class _OptimalWrap extends _Wrap {
     }
     add(const GlueItem.fill(), pieces.length);
     add(const PenaltyItem(0, PenaltyItem.forced), pieces.length);
-    // Knuth and Plass's total fit with TeX's costs (The TeXbook, ch. 14):
-    // justified lines with a third pass of 2em more stretch (LaTeX's
-    // \sloppy has 3em), ragged ones as plain TeX's \raggedright (each may
-    // fall 2em short at a badness of 100, so their ends are even); or one
-    // line at a time.
+    // (Knuth and Plass's total fit with TeX's costs, The TeXbook, ch. 14,
+    // or one line at a time: see textLineBreaker.)
     final justify = _layout.align == 'justify';
-    final size = _state.size;
-    final breaker = switch (_context.lineBreaking) {
-      LineBreaking.optimal ||
-      LineBreaking.auto when justify => KnuthPlassLineBreaker(
-        emergencyStretch: 2 * size,
-        expansion: _context.expansion,
-        maxHyphenRun: _context.maxHyphenRun,
-        lastLineMin: _context.lastLineMin,
-      ),
-      LineBreaking.optimal => KnuthPlassLineBreaker(
-        raggedStretch: 2 * size,
-        maxHyphenRun: _context.maxHyphenRun,
-      ),
-      LineBreaking.auto when _layout.align == 'left' => KnuthPlassLineBreaker(
-        raggedStretch: 2 * size,
-        maxHyphenRun: _context.maxHyphenRun,
-      ),
-      _ => const FirstFitLineBreaker(),
-    };
+    final breaker = textLineBreaker(_context, _layout.align, _state.size);
     // The same paragraph is broken at the same width again and again (as
     // pages are tried and the book laid out again): its breaks are kept by
     // its text box, whose items at a width are the same each time.
@@ -3089,9 +3072,7 @@ final class _OptimalWrap extends _Wrap {
         final char = String.fromCharCode(
           right ? text.runes.last : text.runes.first,
         );
-        final factor = right
-            ? _Wrap._rightFactor(char)
-            : _Wrap._leftFactor(char);
+        final factor = right ? rightProtrusion(char) : leftProtrusion(char);
         return factor == 0
             ? 0
             : hang * factor * format.font.widthOf(char, format.size);

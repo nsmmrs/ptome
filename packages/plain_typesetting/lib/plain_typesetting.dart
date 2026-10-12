@@ -106,7 +106,9 @@ export 'src/layout/paragraph.dart'
         TextAlign,
         TextFragment,
         buildLines,
-        paragraphItems;
+        leftProtrusion,
+        paragraphItems,
+        rightProtrusion;
 export 'src/link.dart' show LinkTarget, NamedTarget, UriTarget;
 export 'src/math_layout.dart' show MathBox, MathLayout;
 export 'src/page.dart' show LayoutDocument, LayoutPage;

@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `Paragraph.alignLast` (CSS's `text-align-last`: a justified paragraph's
+  last line and those before a hard break) and `Paragraph.protrusion`
+  (character protrusion with microtype's default amounts,
+  `rightProtrusion` and `leftProtrusion`: a line's last character hung
+  past its end, its first before its start when justified, the breaker
+  counting them); `ItemLineBreaker.breakItems` takes the protrusion
+  callbacks. A hyphenated line ends in the soft hyphen where the font
+  has it (text taken from the page joins the word up), and a word's
+  pieces at its breaks are measured with the kerning between them, as
+  the word is drawn whole.
 - `Paragraph.riseInLineHeight` (false: a superscript reaches into the
   space between lines, the pitch kept); `LineHeight.font(above:)`, how
   much of the space between lines goes above the text (a Prawn text

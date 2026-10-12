@@ -135,7 +135,8 @@ void main() {
       hyphenator: const _AfterThree(),
     );
     expect(lines.first.hyphenated, isTrue);
-    expect(_text(lines.first), 'an ext-');
+    // (Its hyphen the soft hyphen, which the font has: a word divided.)
+    expect(_text(lines.first), 'an ext\u00ad');
     final plain = _lines([
       TextRun('an extraordinary day', _body),
     ], width: width);

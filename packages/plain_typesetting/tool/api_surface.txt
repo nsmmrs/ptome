@@ -5,7 +5,7 @@ String get plainTypesettingVersion
 abstract base class ItemLineBreaker implements LineBreaker
   ItemLineBreaker()
   List<Line> breakLines(Paragraph paragraph, double Function(int) widths)
-  List<int> breakItems(List<LineItem> items, double Function(int) widths)
+  List<int> breakItems(List<LineItem> items, double Function(int) widths, {double Function(int)? protrudeLeft, double Function(int)? protrudeRight})
   double expansion
 abstract base class LinkTarget
   LinkTarget()
@@ -107,6 +107,8 @@ abstract interface class PageBreaker
 abstract interface class ShapedContent implements CustomContent
   CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
   ShapedContent()
+double leftProtrusion(String char)
+double rightProtrusion(String char)
 enum BlendMode
   static BlendMode colorBurn
   static BlendMode colorDodge
@@ -321,7 +323,7 @@ final class ExactLineHeight extends LineHeight
   double points
 final class FirstFitLineBreaker extends ItemLineBreaker
   FirstFitLineBreaker()
-  List<int> breakItems(List<LineItem> items, double Function(int) widths)
+  List<int> breakItems(List<LineItem> items, double Function(int) widths, {double Function(int)? protrudeLeft, double Function(int)? protrudeRight})
 final class FixedColumnWidth extends ColumnWidth
   FixedColumnWidth(double points)
   double points
@@ -529,11 +531,13 @@ final class Paragraph
   Hyphenator? hyphenator
   LineHeight lineHeight
   List<InlineContent> content
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0})
   TextAlign align
+  TextAlign alignLast
   bool breakLongWords
   bool riseInLineHeight
   double firstLineIndent
+  double protrusion
 final class ParagraphBox extends LayoutBox
   LineBreaker? lineBreaker
   Paragraph paragraph

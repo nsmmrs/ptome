@@ -89,6 +89,14 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- The modern engine's paragraphs (plain_typesetting's) now also set
+  paragraphs with protrusion (`base_overhang`), font expansion and
+  `base_text_align_last`, and break each paragraph as the text box would
+  (ragged, centered or justified, at its own size, `base_line_breaking`
+  too); lines from their cap heights (`base_leading`) stay in the text
+  box for now. Every word where the box puts it (test/pdf/
+  engine_paragraphs_test.dart), and the Hypermedia Systems book the
+  same.
 - Units note streams: `entry-first-in` and `entry-heading` head the first
   entry under each unit of a level (`Chapter {{chapter}}` over each
   chapter's cross-references), so the entries can give the verse alone;

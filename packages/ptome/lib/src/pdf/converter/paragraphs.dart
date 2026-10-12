@@ -6,18 +6,16 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
-  /// Whether the engine's paragraphs can set text with [markup] as the
-  /// text box does: none of what they don't do yet (FEAT-n1bkgf) in play,
-  /// text running around a block floating to a side (after the first), a
-  /// baseline grid,
-  /// protrusion (`base_overhang`), font expansion, a last line aligned
-  /// apart, labels hung from their anchors or side notes beside them.
-  bool _engineCanSet(String markup) =>
+  /// Whether the engine's paragraphs can set text with [markup] in [font]
+  /// as the text box does: none of what they don't do yet (FEAT-thzbh8)
+  /// in play, text running around a block floating to a side (after the
+  /// first), a baseline grid, lines from their cap heights
+  /// (`base_leading`), labels hung from their anchors or side notes beside
+  /// them.
+  bool _engineCanSet(String markup, _FontState font) =>
       !_sideFloated &&
       _baselineGrid() == null &&
-      _overhangAmount() == 0 &&
-      _text.expansion == 0 &&
-      _s('base_text_align_last') == null &&
+      _capLeading(font) == null &&
       !markup.contains(hangAnchorPrefix) &&
       !markup.contains(sideNoteAnchorPrefix) &&
       !markup.contains('<side ');
@@ -316,7 +314,7 @@ extension _Paragraphs on PdfConverter {
         firstLine == null &&
         initial == null &&
         _pendingDrop == null &&
-        _engineCanSet(content)) {
+        _engineCanSet(content, font)) {
       if (box.engineContent() case final runs? when runs.isNotEmpty) {
         _engineParagraphCount++;
         final metrics = _lineMetrics(font);
@@ -354,6 +352,19 @@ extension _Paragraphs on PdfConverter {
                 above: metrics.paddingTop + ascentShift,
               ),
               firstLineIndent: indent,
+              // (`base_text_align_last`: a justified paragraph's last line,
+              // and those before a hard break, as the box sets them.)
+              alignLast: switch (_choice('base_text_align_last', const [
+                'left',
+                'center',
+                'right',
+              ])) {
+                'center' => TextAlign.center,
+                'right' => TextAlign.right,
+                _ => TextAlign.left,
+              },
+              // (`base_overhang`: protrusion, as the box draws it.)
+              protrusion: _overhangAmount(),
               // (A superscript in the space between lines, as the text
               // box sets it.)
               riseInLineHeight: false,
@@ -366,6 +377,9 @@ extension _Paragraphs on PdfConverter {
             ),
             orphans: (_n('prose_orphans') ?? 2).toInt(),
             widows: (_n('prose_widows') ?? 2).toInt(),
+            // (Broken as the text box breaks a paragraph of its alignment
+            // and size: ragged and justified in one document.)
+            lineBreaker: textLineBreaker(_text, align, font.size),
           ),
         );
         return;

@@ -158,7 +158,8 @@ void main() {
     const word = 'extra­ordinary';
     expect(lines(word).map(textOf), ['extraordinary']);
     final narrow = lines('an $word thing', width: body.measure('an extra-'));
-    expect(narrow.map(textOf), ['an extra-', 'ordinary', 'thing']);
+    // (The line's hyphen the soft hyphen, which the font has.)
+    expect(narrow.map(textOf), ['an extra\u00ad', 'ordinary', 'thing']);
     expect(narrow.first.hyphenated, isTrue);
   });
 
@@ -169,9 +170,9 @@ void main() {
       hyphenator: const EveryThird(),
     );
     expect(result.length, greaterThan(1));
-    expect(textOf(result.first), endsWith('-'));
+    expect(textOf(result.first), endsWith('\u00ad'));
     expect(
-      result.map(textOf).join().replaceAll('-', ''),
+      result.map(textOf).join().replaceAll('\u00ad', ''),
       'internationalization',
     );
   });
