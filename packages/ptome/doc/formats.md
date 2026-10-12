@@ -22,7 +22,7 @@ feature the format has no use for.
 | Text files as images (`image::art.txt[]`) | the text, in the code font | the text, `<pre>` in the image block | same | same, the file not packed | `<literallayout>` in the media object |
 | Figure placement (`placement=`, `image_placement`) | floats | n/a | n/a | n/a | `floatstyle` (`before`, `none`) |
 | Keep together (`%unbreakable`) | yes | class `unbreakable` (the house stylesheet: `break-inside: avoid`) | same | same | `<?dbfo keep-together="always"?>` |
-| Hyphenation (`:hyphens:`) | patterns, 72 languages | CSS `hyphens: auto` | same | same | n/a |
+| Hyphenation (`:hyphens:`) | patterns, 72 languages | CSS `hyphens: auto` (the house look's prose without it too; off with `:hyphens!:`) | same | same | n/a |
 | Roles for text (`[.sc]#...#`) | theme `role_<role>_*` | CSS (the author's) | CSS | CSS | `role` attribute |
 | Built-in roles (`small-caps`, `big`, `small`, colors) | `small-caps` in the house look (`.small-caps`, `role_small-caps_font_variant`) | colors, sizes; `small-caps` in the house stylesheet | same | same | `role` attribute |
 | Section roles (a boxed `[.html-note]`) | theme `section_role_<role>_*` | class (CSS) | class | class | `role` |
@@ -35,6 +35,19 @@ feature the format has no use for.
 | Page paths (`page-path`) | n/a | n/a | yes | n/a | n/a |
 | Show link URIs (`show-link-uri`) | footnote or after | n/a | n/a | n/a | n/a |
 | Help text lists the backend | yes | yes | yes | yes | yes |
+
+## Man pages
+
+The `manpage` output is Asciidoctor's, byte for byte: links as its own
+`.URL` and `.MTO` macros, list items as a hand-made hanging indent for
+terminals, a description list's terms as plain lines. Through mandoc
+(`man`'s HTML, `mandoc -T html`) that makes links that don't click, list
+numbers run into their text ("1.First step") and terms without anchors.
+`:man-semantic:` writes man(7)'s own macros instead: `.UR`/`.UE` and
+`.MT`/`.ME` for links (groff 1.24 makes OSC 8 links of them in a
+terminal), `.IP` for list items, `.TP` for a description list's entries
+(each an anchor in mandoc's HTML), inside `.RS 0`/`.RE` so the text after
+the list goes back to the margin. Never under `asciidoctor-compat`.
 
 ## Fonts
 

@@ -89,6 +89,10 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- Man pages: `:man-semantic:` writes man(7)'s own macros, `.UR`/`.UE`,
+  `.MT`/`.ME`, `.IP` and `.TP`: links that click in mandoc's HTML and
+  groff's terminal output, list numbers apart from their text, terms
+  with anchors. Off by default and under asciidoctor-compat.
 - HTML: the house look's prose hyphenated in the document's `lang`
   unless the document unsets `hyphens` (`:hyphens!:`, its body then
   `nohyphens`), as the PDF's modern engine; its last lines balanced

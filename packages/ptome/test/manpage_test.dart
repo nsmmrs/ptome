@@ -2337,4 +2337,51 @@ void main() {
       expect(convOf(doc).convertInlineAnchor(node), 'A B [A]');
     });
   });
+
+  group("man(7)'s own macros (man-semantic)", () {
+    const source =
+        '= tool(1)\n:doctype: manpage\n:manmanual: Tool Manual\n'
+        ':mansource: Tool 1.0\n\n== NAME\n\ntool - does things\n\n'
+        '== OPTIONS\n\n*-v*::\n  Talk more.\n\n'
+        'After it, see https://example.com/docs[the docs]. '
+        'Mail mailto:help@example.com[help].\n\n'
+        '. First step\n\n* One\n';
+    List<String> man(Map<String, String> attributes) => Document(
+      source,
+      AsciidoctorOptions(
+        backend: 'manpage',
+        standalone: true,
+        attributes: attributes,
+      ),
+    ).parse().convert().split('\n');
+
+    test('links, list items and tagged paragraphs', () {
+      final lines = man({'man-semantic': ''});
+      // (A link between .UR and .UE, the text after it on .UE; an email
+      // address between .MT and .ME.)
+      expect(
+        lines.join('\n'),
+        contains('.UR https://example.com/docs\nthe docs\n.UE .'),
+      );
+      expect(lines.join('\n'), contains('.MT help@example.com\nhelp\n.ME .'));
+      // (Items as .IP, their numbers apart from the text; the description
+      // list's entries tagged, inside .RS 0/.RE.)
+      expect(lines, containsAllInOrder(['.RS 4', '.IP " 1." 4.2']));
+      expect(lines, contains(r'.IP \(bu 2.3'));
+      expect(lines, containsAllInOrder(['.RS 0', '.TP', r'\fB\-v\fP']));
+      expect(lines, isNot(contains(startsWith('.URL'))));
+    });
+
+    test("Asciidoctor's forms without it, and under asciidoctor-compat", () {
+      for (final attributes in [
+        <String, String>{},
+        {'man-semantic': '', 'asciidoctor-compat': ''},
+      ]) {
+        final text = man(attributes).join('\n');
+        expect(text, contains('.URL "https://example.com/docs"'));
+        expect(text, isNot(contains('.UR ')));
+        expect(text, isNot(contains('.TP')));
+      }
+    });
+  });
 }

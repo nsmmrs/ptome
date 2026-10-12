@@ -18,6 +18,7 @@ library;
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/block.dart';
+import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/constants.dart';
 import 'package:ptome/src/converter.dart';
 import 'package:ptome/src/document.dart';
@@ -293,6 +294,17 @@ class ManpageConverter extends BuiltInConverter {
   /// `@resolving_xref`; guards against recursive xrefs).
   bool _resolvingXref = false;
 
+  /// Whether links and lists are written with man(7)'s own macros
+  /// (`man-semantic`; never under asciidoctor-compat): `.UR`/`.UE` and
+  /// `.MT`/`.ME` for links, `.IP` for list items, `.TP` for a
+  /// description list's entries, which mandoc and groff render as links,
+  /// with their numbers apart from the text, and with anchors.
+  bool _semantic = false;
+
+  static bool _semanticOf(Document node) =>
+      node.hasAttr('man-semantic') &&
+      !asciidoctorCompat(node, CompatFormat.manpage);
+
   /// Registers this converter for [backends]. Called by document
   /// initialization; idempotent.
   static void registerFor([List<String> backends = const ['manpage']]) {
@@ -301,6 +313,7 @@ class ManpageConverter extends BuiltInConverter {
 
   /// Converts the [node] document to a standalone man page.
   String convertDocument(Document node) {
+    _semantic = _semanticOf(node);
     if (!node.hasAttr('mantitle')) {
       throw const AsciidoctorException(
         'doctype must be set to manpage when using manpage backend',
@@ -412,6 +425,7 @@ class ManpageConverter extends BuiltInConverter {
   ///
   /// NOTE embedded doesn't really make sense in the manpage backend.
   String convertEmbedded(Document node) {
+    _semantic = _semanticOf(node);
     final result = <String>[_s(node.content())];
 
     _appendFootnotes(result, node);
@@ -486,6 +500,7 @@ class ManpageConverter extends BuiltInConverter {
     if (node.hasTitle) {
       result.add('.sp\n.B ${_manify(node.title!)}\n.br');
     }
+    if (_semantic && node.style != 'qanda') return _tagged(node, result);
     var counter = 0;
     for (final DlistEntry(:terms, description: dd) in node.entries) {
       counter += 1;
@@ -516,6 +531,34 @@ class ManpageConverter extends BuiltInConverter {
       }
       result.add('.RE');
     }
+    return result.join('\n');
+  }
+
+  /// [node], a description list, as man(7)'s tagged paragraphs (`.TP`)
+  /// after [result] (its title): each term a tag, mandoc's anchor; inside
+  /// `.RS 0`/`.RE`, so the text after it goes back to the margin.
+  String _tagged(ListBlock node, List<String> result) {
+    result.add('.RS 0');
+    for (final DlistEntry(:terms, description: dd) in node.entries) {
+      final term = _manify(
+        terms.map((dt) => _s(dt.text)).join(', '),
+        whitespace: _WhitespaceMode.normalize,
+      );
+      result.add('.TP\n$term');
+      if (dd == null) continue;
+      final hasText = dd.hasText;
+      if (hasText) {
+        result.add(_manify(dd.text!, whitespace: _WhitespaceMode.normalize));
+      }
+      if (dd.hasBlocks) {
+        var content = dd.content() ?? '';
+        if (!hasText && content.startsWith('.sp\n')) {
+          content = content.substring(4);
+        }
+        result.add(content);
+      }
+    }
+    result.add('.RE');
     return result.join('\n');
   }
 
@@ -602,8 +645,11 @@ class ManpageConverter extends BuiltInConverter {
         whitespace: _WhitespaceMode.normalize,
       );
       result.add(
-        '.sp\n.RS 4\n.ie n \\{\\\n\\h\'-04\' $numeral.\\h\'+01\'\\c\n.\\}\n.el \\{\\\n.  sp -1\n.  IP " $numeral." 4.2\n.\\}'
-        '${listText.isEmpty ? '' : '\n$listText'}',
+        _semantic
+            ? '.RS 4\n.IP " $numeral." 4.2'
+                  '${listText.isEmpty ? '' : '\n$listText'}'
+            : '.sp\n.RS 4\n.ie n \\{\\\n\\h\'-04\' $numeral.\\h\'+01\'\\c\n.\\}\n.el \\{\\\n.  sp -1\n.  IP " $numeral." 4.2\n.\\}'
+                  '${listText.isEmpty ? '' : '\n$listText'}',
       );
       if (listItem.hasBlocks) {
         var itemContent = listItem.content() ?? '';
@@ -834,8 +880,11 @@ class ManpageConverter extends BuiltInConverter {
         whitespace: _WhitespaceMode.normalize,
       );
       result.add(
-        ".sp\n.RS 4\n.ie n \\{\\\n\\h'-04'\\(bu\\h'+03'\\c\n.\\}\n.el \\{\\\n.  sp -1\n.  IP \\(bu 2.3\n.\\}"
-        '${listText.isEmpty ? '' : '\n$listText'}',
+        _semantic
+            ? '.RS 4\n.IP \\(bu 2.3'
+                  '${listText.isEmpty ? '' : '\n$listText'}'
+            : ".sp\n.RS 4\n.ie n \\{\\\n\\h'-04'\\(bu\\h'+03'\\c\n.\\}\n.el \\{\\\n.  sp -1\n.  IP \\(bu 2.3\n.\\}"
+                  '${listText.isEmpty ? '' : '\n$listText'}',
       );
       if (listItem.hasBlocks) {
         var itemContent = listItem.content() ?? '';
@@ -883,6 +932,26 @@ class ManpageConverter extends BuiltInConverter {
         : '.sp';
     final target = node.mediaUri(node.attr('target')!);
     return '$titleLine\n<$target$startParam$endParam> (video)';
+  }
+
+  /// A link's escaped `.URL`/`.MTO` call [call] (`URL "target" "text" `),
+  /// with the text right after it [trailing] and the line's [rest], as
+  /// man(7)'s link macros: `.UR`/`.UE` (`.MT`/`.ME` for an email address),
+  /// the text between them (none: the address shown), the trailing text
+  /// after `.UE`, as groff and mandoc make links of them.
+  String _linkMacros(String call, String trailing, String rest) {
+    final m = RegExp(r'^(URL|MTO) "(.*?)" "(.*?)" $').firstMatch(call);
+    if (m == null) return '.$call"$trailing"${rest.isEmpty ? '' : '\n$rest'}';
+    final mail = m[1] == 'MTO';
+    final target = mail ? m[2]!.replaceAll('$_escBs(at', '@') : m[2]!;
+    final text = m[3]!;
+    final after = trailing.trimRightAscii();
+    return [
+      '.${mail ? 'MT' : 'UR'} $target',
+      if (text.isNotEmpty) text,
+      '.${mail ? 'ME' : 'UE'}${after.isEmpty ? '' : ' $after'}',
+      if (rest.isNotEmpty) rest,
+    ].join('\n');
   }
 
   /// Converts the [node] inline anchor.
@@ -1172,6 +1241,9 @@ class ManpageConverter extends BuiltInConverter {
     if (result.contains(_escFs)) {
       result = result.replaceAllMapped(_escapedMacroRx, (match) {
         final rest = trimLeftAscii(match.group(3)!);
+        if (_semantic) {
+          return _linkMacros(match.group(1)!, match.group(2)!, rest);
+        }
         if (rest.isEmpty) {
           return '.${match.group(1)}"${match.group(2)}"';
         }
