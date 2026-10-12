@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The `reference-bible` and `readers-bible` looks: two columns with the
+  cross-references between them, chapter numbers dropped into the
+  first verse, light verse numbers and the page's verses in the running
+  head; or one column without verse numbers or cross-references. New
+  PDF keys: `units_<level>_label_font_color`, `_display: none`.
 - The `scotus-booklet` and `pleading` looks: a Supreme Court brief by
   Rule 33.1, a California pleading by the Rules of Court (28 numbered
   lines, a double line beside them, the court's title on line 8). New

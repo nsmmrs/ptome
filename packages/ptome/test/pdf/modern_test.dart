@@ -3008,6 +3008,43 @@ templates:
       }
     });
 
+    test("the Bible looks: a reference Bible's, a reader's edition", () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      String verse(int v) =>
+          '@ Verse$v of the ##chapter##note:x[<<Gen 2:$v>>] goes on '
+          'for a while, word upon word.\n';
+      final verses = [for (var v = 1; v <= 30; v++) verse(v)].join();
+      final themeFile = File('${_dir.path}/look-theme.yml')
+        ..writeAsStringSync('extends: look\n');
+      String textOf(String look) {
+        final source =
+            '= Bible\n:units: bible, kjv\n:look: $look\n:doctype: book\n\n'
+            '== @GEN\n\n=== @1\n\n$verses\n=== @2\n\n$verses';
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        final pdf = _pdf(source, attributes: {'pdf-theme': themeFile.path});
+        return Process.runSync('pdftotext', ['-raw', pdf, '-']).stdout
+            as String;
+      }
+
+      // The reference Bible: the verse numbers (not the first's) and the
+      // cross-references in the centre column; the page's verses in its
+      // running head.
+      final reference = textOf('reference-bible');
+      expect(reference, contains('Gen 2:'));
+      expect(reference, matches(RegExp(r'\b17\s+Verse17\b')));
+      expect(reference, matches(RegExp(r'Genesis \d:\d+–\d+')));
+      // The reader's edition: neither (nor the callers in the text).
+      final reader = textOf('readers-bible');
+      expect(reader, contains('Verse17 of the chapter goes on'));
+      expect(reader, isNot(contains('Gen 2:')));
+      expect(reader, isNot(matches(RegExp(r'\b17\s+Verse17\b'))));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

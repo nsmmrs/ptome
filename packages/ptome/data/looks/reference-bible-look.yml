@@ -1,0 +1,82 @@
+# A reference Bible from a document in units (`:units: bible, kjv`): two
+# justified columns with the cross-references in a column between them
+# (the scheme's `x` stream, entries in the role `xref`); each chapter's
+# number dropped two lines into its first verse, no heading over it;
+# light verse numbers; the running head the page's first and last verse
+# (`Genesis 2:20–3:7`); the lines matched on a baseline grid, so that on
+# thin paper the show-through falls between them; the translators' notes
+# at the foot. A personal size, 5½ × 8¼ in, the text 9 on 11 (settings
+# after PTXprint's reference-Bible defaults, not measured from a book).
+#
+# Options over it, in a theme that `extends: look`: red letter,
+# `role: { wj: { font_color: A01818 } }`. A chapter's first verse goes
+# without its number when the scheme says (`{{^first}}…{{/first}}` in the
+# verse's `label`).
+#
+# Set in Crimson Pro (`ptome doctor --look reference-bible`).
+tokens:
+  font:
+    text: { family: { print: Crimson Pro, screen: [Crimson Pro, Georgia, serif] } }
+    display: { family: { print: Crimson Pro, screen: [Crimson Pro, Georgia, serif] }, weight: bold }
+  size:
+    text: { print: 9pt, screen: 18px }
+    headings: { print: [16pt, 9pt, 9pt, 9pt, 9pt, 9pt] }
+  leading: { print: 1.22, screen: 1.5 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.4pt, screen: 1px, ebook: 1px } }
+  page: { size: [5.5in, 8.25in], margin: [0.55in, 0.45in, 0.55in, 0.45in], grid: true }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 4pt }, space-after: { print: 2pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  page:
+    columns: 2
+    column_gap: 0.85in
+  heading:
+    h2: { text_align: center }
+    # (A chapter's number dropped into its first verse.)
+    h3_drop_lines: 2
+    h3_drop_content: '{{attr-number}}'
+    h3_drop_font_style: bold
+    # (Past a pericope's parallel passages, to its first verse.)
+    h3_drop_skip_roles: [parallel, psalm-title]
+    h4: { font_style: italic, text_align: center }
+    h5: { font_style: italic }
+  side_notes:
+    column: center
+    item_spacing: 2
+  role:
+    xref: { display: side, font_size: 6.5 }
+    nd: { text_transform: smallcaps }
+    book-title: { font_style: italic, text_align: center }
+    psalm-title: { font_style: italic }
+    poetry: { text_align: left }
+  # (Light verse numbers.)
+  units:
+    verse:
+      label_font_color: '707070'
+  footnotes:
+    font_size: 7
+    placement: page
+  running_content_units: verse
+  header:
+    height: 0.45in
+    font_size: 8
+    recto:
+      left: { content: '' }
+      center: { content: '{page-units-long}' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: '{page-units-long}' }
+      right: { content: '' }
+  footer:
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content .chapter>h3{float:left;font-size:2.6em;line-height:1;margin:0 .15em 0 0}

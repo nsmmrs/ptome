@@ -58,13 +58,35 @@ extension _InlineElements on PdfConverter {
     InlineContext.menu => _inlineMenu(node),
     InlineContext.quoted => _inlineQuoted(node),
     // A unit's mark: its anchor, then its label (ADR-0020).
-    InlineContext.unit =>
-      '${node.id != null ? '<a id="${node.id}">$_dummyText</a>' : ''}'
-          '${node.text ?? ''}',
+    InlineContext.unit => _inlineUnit(node),
     // A note's caller, or its unit's entry: text in the entry's role (a
     // reference Bible's cross-references, set beside their verse).
     InlineContext.note => _inlineQuoted(node),
   };
+
+  /// A unit's mark: its anchor, then its label, as its level's
+  /// `units_<level>_label_*` keys say (modern engine): `_font_color` (a
+  /// reference Bible's light verse numbers), `_display: none` (a reader's
+  /// edition, without them).
+  String _inlineUnit(Inline node) {
+    final anchor = node.id != null ? '<a id="${node.id}">$_dummyText</a>' : '';
+    final text = node.text ?? '';
+    final level = node.attr('level');
+    if (text.isEmpty ||
+        level == null ||
+        asciidoctorCompat(_document, CompatFormat.pdf)) {
+      return '$anchor$text';
+    }
+    final key = 'units_${level.replaceAll('-', '_')}_label';
+    if (_s('${key}_display') == 'none') {
+      return '$anchor${PdfConverter._hiddenMark}';
+    }
+    if (_theme.value('${key}_font_color')?.rubyString case final color?) {
+      return '$anchor<font color="$color">$text</font>';
+    }
+    return '$anchor$text';
+  }
+
   String _inlineAnchor(Inline node) {
     final doc = _document;
     final target = node.target ?? '';
@@ -1241,7 +1263,9 @@ extension _InlineElements on PdfConverter {
       !asciidoctorCompat(_document, CompatFormat.pdf) &&
       node.roles.any(
         (role) =>
-            _keys('role_${role.replaceAll('-', '_')}').string('display') ==
+            // (A role's keys keep its hyphens, as asciidoctor-pdf's do.)
+            (_keys('role_$role').string('display') ??
+                _keys('role_${role.replaceAll('-', '_')}').string('display')) ==
             'none',
       );
 

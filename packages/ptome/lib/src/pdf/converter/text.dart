@@ -36,10 +36,14 @@ extension _Text on PdfConverter {
         : markup;
     var text = hyphenate ? _hyphenated(taken, align) : taken;
     if (normalize) text = text.replaceAll(RegExp('[ \t\n]+'), ' ');
-    // A label left out of the text (`role_<role>_display: none`) takes
-    // the space after it with it.
+    // A label left out of the text (`role_<role>_display: none`,
+    // `units_<level>_label_display: none`) takes the space after it with
+    // it.
     if (text.contains(PdfConverter._hiddenMark)) {
-      text = text.replaceAll(RegExp('${PdfConverter._hiddenMark} ?'), '');
+      text = text.replaceAll(
+        RegExp('${PdfConverter._hiddenMark}[ \u00a0]?'),
+        '',
+      );
     }
     // `footnotes_reference_space: collapse`: no space before a footnote's
     // reference (a note's number follows its word or punctuation without
