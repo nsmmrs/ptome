@@ -89,6 +89,10 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- PDF streams and EPUB entries are compressed by plain_compression on
+  every platform (ADR-0024): the same document makes the same bytes on
+  the VM, Node.js and the web, whatever the CPU or the SDK's zlib. The
+  JavaScript host no longer needs Node.js's `zlib`.
 - Man pages: `:man-semantic:` writes man(7)'s own macros, `.UR`/`.UE`,
   `.MT`/`.ME`, `.IP` and `.TP`: links that click in mandoc's HTML and
   groff's terminal output, list numbers apart from their text, terms

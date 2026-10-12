@@ -1,9 +1,10 @@
 /// The I/O seam on JavaScript (see `io.dart`).
 ///
-/// On Node.js, the built-in modules this file uses (`fs`, `zlib`) come from
-/// `process.getBuiltinModule`, so the compiled bundle never imports
-/// `node:*` modules and stays safe for bundlers; an embedder can also
-/// supply them as `globalThis.ptomeHost` (`{fs, process, zlib}`).
+/// On Node.js, the built-in modules this file uses (`fs`,
+/// `child_process`) come from `process.getBuiltinModule`, so the compiled
+/// bundle never imports `node:*` modules and stays safe for bundlers; an
+/// embedder can also supply them as `globalThis.ptomeHost`
+/// (`{fs, process}`). Compression is plain_compression's (ADR-0024).
 /// Without them (in a browser), there is no file system: files read as
 /// missing, the working directory is `/`, the environment is empty, and
 /// output goes to the console.
@@ -47,7 +48,6 @@ _Host? _nodeHost() {
     JSObject()
       ..setProperty('fs'.toJS, fs)
       ..setProperty('process'.toJS, process)
-      ..setProperty('zlib'.toJS, process.getBuiltinModule('node:zlib'))
       ..setProperty(
         'childProcess'.toJS,
         process.getBuiltinModule('node:child_process'),
@@ -64,7 +64,6 @@ extension type _NodeProcess(JSObject _) implements JSObject {
 extension type _Host(JSObject _) implements JSObject {
   external _Fs get fs;
   external _Process get process;
-  external _Zlib? get zlib;
   external _ChildProcess? get childProcess;
 }
 
@@ -124,10 +123,6 @@ extension type _Stdin(JSObject _) implements JSObject {
 
 extension type _Stream(JSObject _) implements JSObject {
   external bool write(String chunk);
-}
-
-extension type _Zlib(JSObject _) implements JSObject {
-  external JSUint8Array deflateRawSync(JSUint8Array bytes);
 }
 
 extension type _Console(JSObject _) implements JSObject {
@@ -286,13 +281,9 @@ void writeBytes(String path, List<int> bytes) {
   );
 }
 
-/// [bytes] compressed with raw DEFLATE (no zlib header): Node.js's zlib,
-/// or plain_compression's deflate where there is none (a browser).
-List<int> deflateRaw(List<int> bytes) {
-  final zlib = _host?.zlib;
-  if (zlib == null) return deflate(bytes);
-  return zlib.deflateRawSync(Uint8List.fromList(bytes).toJS).toDart;
-}
+/// [bytes] compressed with raw DEFLATE (no zlib header): by
+/// plain_compression, the same bytes as on the VM (ADR-0024).
+List<int> deflateRaw(List<int> bytes) => deflate(bytes);
 
 /// The size of the file at [path], in bytes.
 int fileSize(String path) {

@@ -4,6 +4,8 @@ library;
 import 'dart:convert';
 import 'dart:io' as io;
 
+import 'package:plain_compression/plain_compression.dart' as compression;
+
 import 'package:plain_fonts/plain_fonts.dart'
     show FontPlatform, cacheDirectoryFor, fontDirectoriesFor;
 import 'package:ptome/src/errors.dart';
@@ -54,8 +56,9 @@ void writeString(String path, String contents) =>
 void writeBytes(String path, List<int> bytes) =>
     _guard(() => io.File(path).writeAsBytesSync(bytes));
 
-/// [bytes] compressed with raw DEFLATE (no zlib header).
-List<int> deflateRaw(List<int> bytes) => io.ZLibCodec(raw: true).encode(bytes);
+/// [bytes] compressed with raw DEFLATE (no zlib header): by
+/// plain_compression, the same bytes on every platform and SDK (ADR-0024).
+List<int> deflateRaw(List<int> bytes) => compression.deflate(bytes);
 
 /// The size of the file at [path], in bytes.
 int fileSize(String path) => _guard(() => io.File(path).lengthSync());
@@ -133,13 +136,16 @@ int _physicalCores() {
   return logical;
 }
 
-/// Whether [zlibEncode] and [zlibDecode] are the platform's own (faster
-/// than the PDF library's).
+/// Whether [zlibDecode] is the platform's own (faster than the PDF
+/// library's).
 bool get hasNativeZlib => true;
 
-/// [bytes] compressed in zlib format at [level] (1-9).
+/// [bytes] compressed in zlib format at [level] (1-9): by
+/// plain_compression, not the SDK's zlib (Chromium's fork, whose output
+/// may change with the CPU's features or an SDK roll), so the same
+/// document makes the same bytes everywhere (ADR-0024).
 List<int> zlibEncode(List<int> bytes, int level) =>
-    io.ZLibCodec(level: level).encode(bytes);
+    compression.zlibEncode(bytes, level: level);
 
 /// [bytes] (zlib format) expanded.
 List<int> zlibDecode(List<int> bytes) => io.ZLibCodec().decode(bytes);

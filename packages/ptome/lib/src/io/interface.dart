@@ -64,8 +64,8 @@ String? readLine() => _unsupported();
 /// The physical cores of the machine.
 int get physicalCores => 1;
 
-/// Whether [zlibEncode] and [zlibDecode] are the platform's own (faster
-/// than the PDF library's).
+/// Whether [zlibDecode] is the platform's own (faster than the PDF
+/// library's); [zlibEncode] is plain_compression's everywhere (ADR-0024).
 bool get hasNativeZlib => false;
 
 /// [bytes] compressed in zlib format at [level] (1-9).
