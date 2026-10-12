@@ -613,6 +613,10 @@ final class PdfConverter extends BuiltInConverter
   /// left end of its line.
   List<(int, double, double, String, _FontState)> _hungAt = const [];
 
+  /// The least inner margin the book's page count asks for
+  /// (`page_margin_gutter: kdp`), once it is known.
+  double _gutterLeast = 0;
+
   /// Whether a block has floated to a side yet (the text after one runs
   /// around it, which the engine's paragraphs don't do yet).
   bool _sideFloated = false;

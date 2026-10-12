@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF margins from a rule: the classical canon (`page_margin_canon`),
+  KOMA-Script's DIV and binding allowance with whole lines
+  (`page_margin_div`, `page_margin_bcor`), profiles measured from books
+  (`page_margin_profile`), and a gutter that grows with the page count
+  as KDP's minimums do (`page_margin_gutter: kdp`).
 - The modern engine's plain paragraphs are set by plain_typesetting's
   paragraphs (`base_text_engine: paragraph`, the default; `box` for the
   text box), their lines where the text box would set them; paragraphs

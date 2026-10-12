@@ -3242,6 +3242,60 @@ templates:
       );
     });
 
+    test('margins from a rule: the canon, DIV and BCOR, a gutter', () {
+      final words = [for (var k = 0; k < 40; k++) 'Words $k go on.'].join(' ');
+      double firstLeft(String pdf, {int page = 1}) {
+        final bbox =
+            Process.runSync('pdftotext', [
+                  '-f',
+                  '$page',
+                  '-l',
+                  '$page',
+                  '-bbox',
+                  pdf,
+                  '-',
+                ]).stdout
+                as String;
+        return RegExp(r'xMin="([\d.]+)"[^>]*>Words<')
+            .allMatches(bbox)
+            .map((m) => double.parse(m[1]!))
+            .reduce(math.min);
+      }
+
+      // The canon of 9 on a 540 pt wide page: the text 60 pt in.
+      final canon = _pdf(
+        '= Doc\n\n$words\n',
+        theme: 'page:\n  size: [540, 720]\n  margin_canon: 9\n',
+      );
+      expect(firstLeft(canon), closeTo(60, 0.5));
+      // DIV 10 and a 20 pt allowance: (540 - 20) / 10 = 52 pt a stripe,
+      // the inner margin 72 pt.
+      final div = _pdf(
+        '= Doc\n\n$words\n',
+        theme:
+            'page:\n  size: [540, 720]\n  margin_div: 10\n'
+            '  margin_bcor: 20\n',
+      );
+      expect(firstLeft(div), closeTo(72, 0.5));
+      // A prepress book of more than 150 pages: KDP's inner margin of
+      // half an inch on a recto, though the theme asks for less.
+      final long = [for (var k = 0; k < 170; k++) 'Words $k.\n\n<<<\n'].join();
+      final book = _pdf(
+        '= Book\n:doctype: book\n:media: prepress\n\n== One\n\n$long',
+        theme:
+            'page:\n  size: [300, 400]\n  margin: [36, 18, 36, 18]\n'
+            '  margin_inner: 18\n  margin_outer: 18\n'
+            '  margin_gutter: kdp\n',
+      );
+      final pages = _pages(book).length;
+      expect(pages, greaterThan(150));
+      final recto = [
+        for (var p = 5; p < 15; p++)
+          if (p.isOdd) firstLeft(book, page: p),
+      ];
+      expect(recto, everyElement(closeTo(36, 0.5)));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

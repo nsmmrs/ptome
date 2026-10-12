@@ -153,6 +153,7 @@ extension _DocumentParts on PdfConverter {
     _hungLabels.clear();
     _engineParagraphCount = 0;
     _sideFloated = false;
+    _gutterLeast = 0;
     _madeUpAnchors.clear();
     _floatGroup = _floatNext = null;
     _hasTitlePage = _frontCover = _backCover = _noCover = false;
@@ -460,6 +461,22 @@ extension _DocumentParts on PdfConverter {
     }
 
     measure();
+    // `page_margin_gutter: kdp` (with `media=prepress`): the inner margin
+    // KDP asks for at least at the book's page count (24-150 pages 0.375
+    // in, to 300 0.5, to 500 0.625, to 700 0.75, more 0.875), laid out
+    // again when the count calls for a wider one.
+    if (media == 'prepress' &&
+        _s('page_margin_gutter') == 'kdp' &&
+        !asciidoctorCompat(document, CompatFormat.pdf)) {
+      for (var pass = 0; pass < 2; pass++) {
+        final least = _kdpGutter(result.pageCount);
+        if (least <= _gutterLeast) break;
+        _gutterLeast = least;
+        _phase('pdf layout (gutter)');
+        result = layout.layout(_out);
+        measure();
+      }
+    }
     // The index, once the pages of its terms are known.
     if (_indexSlot case final slot?) {
       _phase('pdf layout (index)');
@@ -1905,8 +1922,17 @@ extension _DocumentParts on PdfConverter {
     required bool cover,
   }) {
     if (cover || !sided.contains(template)) return template;
-    final outer = _n('page_margin_outer')?.toDouble();
-    final inner = _n('page_margin_inner')?.toDouble();
+    // (A rule's margins are a recto's: inner on the left.)
+    final ruled = asciidoctorCompat(_document, CompatFormat.pdf)
+        ? null
+        : _ruledMargins(_document);
+    final outer = _n('page_margin_outer')?.toDouble() ?? ruled?.right;
+    var inner = _n('page_margin_inner')?.toDouble() ?? ruled?.left;
+    // (`page_margin_gutter: kdp`: no less than KDP's least inner margin
+    // for the book's page count.)
+    if (_gutterLeast > 0) {
+      inner = math.max(inner ?? template.margins.left, _gutterLeast);
+    }
     if (outer == null && inner == null) return template;
     final m = template.margins;
     // (An inverted folio placement swaps the sides, margins too.)
@@ -2327,6 +2353,11 @@ extension _DocumentParts on PdfConverter {
 
   EdgeInsets _pageMargins(Document document) {
     final given = document.attr('pdf-page-margin');
+    // (Margins from a rule, modern engine, unless the document gives
+    // them: `page_margin_canon`, `page_margin_div`, a measured profile.)
+    if (given == null && !asciidoctorCompat(document, CompatFormat.pdf)) {
+      if (_ruledMargins(document) case final ruled?) return ruled;
+    }
     final values = _edgeValues(
       given != null ? ThemeString(given) : _theme.value('page_margin'),
     );
@@ -2351,6 +2382,111 @@ extension _DocumentParts on PdfConverter {
       left: values[3],
     );
   }
+
+  /// The margins a rule gives (modern engine), the inner one on the left
+  /// (a recto's), or null for the theme's `page_margin`:
+  ///
+  /// - `page_margin_canon: n`: the classical canon, inner W/n, outer 2W/n,
+  ///   head H/n, foot 2H/n of the page's width W and height H (9: Van de
+  ///   Graaf's and Tschichold's);
+  /// - `page_margin_div: n` with `page_margin_bcor` (a length, the
+  ///   binding's allowance): KOMA-Script's type area, the page less the
+  ///   allowance in n stripes each way, inner one stripe and the
+  ///   allowance, outer two, head one, foot two;
+  /// - `page_margin_profile`: margins measured from books,
+  ///   `university-press` (6×9 in books' medians: inner 0.79, outer 0.83,
+  ///   head 0.88, foot 1 in), `ucl-press` (inner 0.94, outer 1.11 in, the
+  ///   head and foot `page_margin`'s), `trade` (5.5×8.5 in books: the
+  ///   gutter 1.3 times the fore-edge of `page_margin`).
+  ///
+  /// With `page_margin_div`, or `page_margin_whole_lines: true`, the foot
+  /// is as much larger as makes the text area hold whole body lines.
+  EdgeInsets? _ruledMargins(Document document) {
+    final (width, height) = _pageSize(document);
+    final theme = _edgeValues(_theme.value('page_margin'));
+    EdgeInsets? margins;
+    if (_n('page_margin_canon') case final n? when n > 2) {
+      margins = EdgeInsets(
+        top: height / n,
+        bottom: 2 * height / n,
+        left: width / n,
+        right: 2 * width / n,
+      );
+    } else if (_n('page_margin_div') case final div? when div > 3) {
+      final bcor = _length('page_margin_bcor', _rootFontSize) ?? 0;
+      final stripe = (width - bcor) / div;
+      margins = EdgeInsets(
+        top: height / div,
+        bottom: 2 * height / div,
+        left: stripe + bcor,
+        right: 2 * stripe,
+      );
+    } else {
+      const inch = 72.0;
+      margins = switch (_s('page_margin_profile')) {
+        'university-press' => const EdgeInsets(
+          top: 0.88 * inch,
+          bottom: 1.0 * inch,
+          left: 0.79 * inch,
+          right: 0.83 * inch,
+        ),
+        'ucl-press' => EdgeInsets(
+          top: theme[0],
+          bottom: theme[2],
+          left: 0.94 * inch,
+          right: 1.11 * inch,
+        ),
+        'trade' => EdgeInsets(
+          top: theme[0],
+          bottom: theme[2],
+          left: 1.3 * theme[1],
+          right: theme[1],
+        ),
+        _ => null,
+      };
+    }
+    if (margins == null) return null;
+    final whole =
+        _n('page_margin_div') != null ||
+        _theme.value('page_margin_whole_lines') == const ThemeBool(true);
+    if (!whole) return margins;
+    // (The text area a whole number of body lines tall.)
+    final pitch = _bodyPitch();
+    final area = height - margins.vertical;
+    if (pitch <= 0 || area <= pitch) return margins;
+    final lines = (area / pitch + 1e-6).floor();
+    return EdgeInsets(
+      top: margins.top,
+      bottom: margins.bottom + (area - lines * pitch),
+      left: margins.left,
+      right: margins.right,
+    );
+  }
+
+  /// The distance between two body lines (`base_line_pitch`, else the
+  /// body font's height and its leading).
+  double _bodyPitch() {
+    if (_length('base_line_pitch', _rootFontSize) case final pitch?) {
+      return pitch;
+    }
+    final face = _fonts.font(
+      _s('base_font_family') ?? 'Helvetica',
+      PdfConverter._fontStyle(_s('base_font_style')) ?? 'normal',
+    );
+    final lineHeight = (_n('base_line_height') ?? 1).toDouble();
+    return face.heightAt(_rootFontSize) + (lineHeight - 1) * _rootFontSize;
+  }
+
+  /// KDP's least inner margin for a book of [pages] pages, in points.
+  static double _kdpGutter(int pages) =>
+      72 *
+      switch (pages) {
+        <= 150 => 0.375,
+        <= 300 => 0.5,
+        <= 500 => 0.625,
+        <= 700 => 0.75,
+        _ => 0.875,
+      };
 
   /// A measure in points: a length, or `ch` (the width of a zero in the
   /// text face at the text size) or `em` (the text size).
