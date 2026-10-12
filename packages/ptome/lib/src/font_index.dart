@@ -32,12 +32,8 @@ abstract final class Fonts {
   /// the installed ones ([current]).
   static T withFonts<T>(Map<String, List<int>> fonts, T Function() body) {
     if (fonts.isEmpty) return body();
-    final index = FontIndex(
-      installed.directories,
-      cacheFile: installed.cacheFile,
-      memory: fonts,
-      fileSystem: _files,
-    );
+    // (Over the installed index: its folders aren't walked again.)
+    final index = FontIndex.over(installed, memory: fonts);
     return runZoned(body, zoneValues: {_zoneKey: index});
   }
 

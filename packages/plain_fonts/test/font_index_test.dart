@@ -18,6 +18,9 @@ final class _MemoryFiles implements FontFiles {
   final Map<String, List<int>> files;
   final Map<String, String> written = {};
 
+  /// How many times a folder was listed or a file read.
+  int reads = 0;
+
   @override
   List<String> get fontDirectories => const ['/fonts'];
 
@@ -29,17 +32,20 @@ final class _MemoryFiles implements FontFiles {
       files.keys.any((file) => file.startsWith('$path/'));
 
   @override
-  List<FontFolderEntry> list(String directory) => [
-    for (final path in files.keys)
-      if (path.startsWith('$directory/') &&
-          !path.substring(directory.length + 1).contains('/'))
-        (
-          path: path,
-          name: path.substring(directory.length + 1),
-          isDirectory: false,
-          isFile: true,
-        ),
-  ];
+  List<FontFolderEntry> list(String directory) {
+    reads++;
+    return [
+      for (final path in files.keys)
+        if (path.startsWith('$directory/') &&
+            !path.substring(directory.length + 1).contains('/'))
+          (
+            path: path,
+            name: path.substring(directory.length + 1),
+            isDirectory: false,
+            isFile: true,
+          ),
+    ];
+  }
 
   @override
   ({int size, DateTime modified}) stat(String path) =>
@@ -54,6 +60,7 @@ final class _MemoryFiles implements FontFiles {
 
   @override
   List<int> readRange(String path, int offset, int length) {
+    reads++;
     final data = files[path]!;
     return data.sublist(
       offset.clamp(0, data.length),
@@ -154,6 +161,26 @@ void main() {
     expect(fonts.isInMemory(mine.path), isTrue);
     expect(fonts.bytes(mine.path), _font('libertinus-smcp.otf'));
     expect(fonts.fileNamed('mine.otf'), 'memory:/Mine.otf');
+  });
+
+  test('fonts given as bytes over another index, its folders read once', () {
+    final files = _MemoryFiles({
+      '/fonts/Serif.ttf': _font('notoserif-regular-latin.ttf'),
+    });
+    final base = FontIndex(['/fonts'], fileSystem: files);
+    expect(base.find('Noto Serif')?.path, '/fonts/Serif.ttf');
+    final reads = files.reads;
+    final over = FontIndex.over(
+      base,
+      memory: {'Mine.otf': _font('libertinus-smcp.otf')},
+    );
+    expect(over.find('Libertinus Serif')?.path, 'memory:/Mine.otf');
+    expect(over.find('Noto Serif')?.path, '/fonts/Serif.ttf');
+    expect(over.isInMemory('memory:/Mine.otf'), isTrue);
+    expect(over.fileNamed('serif.ttf'), '/fonts/Serif.ttf');
+    // (The base's files and fonts as they were: nothing read again.)
+    expect(identical(over.fonts.last, base.fonts.last), isTrue);
+    expect(files.reads, reads);
   });
 
   test('reads the files an embedder gives', () {

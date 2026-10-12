@@ -272,14 +272,29 @@ final class _StandardGlyphs {
 /// Identity-H encoding and a ToUnicode map, so text extracts and searches.
 final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
   new _(
-    this.font, {
+    this._shaper, {
     required this.subset,
     required this.truncateWidths,
     required bool singleByte,
-    this.kernTableSubtable,
-  }) : _shaper = OpenTypeShaper(font, kernTableSubtable: kernTableSubtable),
-       singleByte = singleByte && font.isTrueType,
+  }) : font = _shaper.font,
+       kernTableSubtable = _shaper.kernTableSubtable,
+       singleByte = singleByte && _shaper.font.isTrueType,
        super._();
+
+  /// The font [shaper] shapes, embedded as [EmbeddedFont.parse] embeds
+  /// it: the parsed font and the shaper's kerning shared by the documents
+  /// that embed it (each subsets it to its own glyphs).
+  factory shaped(
+    OpenTypeShaper shaper, {
+    bool subset = true,
+    bool truncateWidths = false,
+    bool singleByte = false,
+  }) => EmbeddedFont._(
+    shaper,
+    subset: subset,
+    truncateWidths: truncateWidths,
+    singleByte: singleByte,
+  );
 
   /// The font in [bytes] (the font at [index] of a collection); with
   /// [subset] (the default), only the glyphs used are embedded. The
@@ -298,11 +313,13 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     bool singleByte = false,
     int? kernTableSubtable,
   }) => EmbeddedFont._(
-    OpenTypeFont.parse(bytes, index: index),
+    OpenTypeShaper(
+      OpenTypeFont.parse(bytes, index: index),
+      kernTableSubtable: kernTableSubtable,
+    ),
     subset: subset,
     truncateWidths: truncateWidths,
     singleByte: singleByte,
-    kernTableSubtable: kernTableSubtable,
   );
 
   @override

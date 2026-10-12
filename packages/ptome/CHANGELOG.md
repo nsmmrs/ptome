@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Conversions in one process (batch, serve) share the machine's font
+  index and each installed font parsed once (its shaper and kerning); a
+  conversion's own fonts are layered over the index.
 - Running content in units: `{page-first-<level>}` and
   `{page-last-<level>}`, each level's label at the page's first and last
   unit, for heads of a form of their own.

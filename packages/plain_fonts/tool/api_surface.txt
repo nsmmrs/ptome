@@ -92,6 +92,7 @@ final class FontFormatException implements Exception
 final class FontIndex
   FontFiles fileSystem
   FontIndex(List<String> directories, {String? cacheFile, Map<String, List<int>> memory = const {}, FontFiles? fileSystem})
+  FontIndex.over(FontIndex base, {Map<String, List<int>> memory = const {}})
   FontIndex.system({List<String> before = const [], String? cacheFile, Map<String, List<int>> memory = const {}, FontFiles? fileSystem})
   Future<void> loadWebFontDecoder()
   InstalledFont? find(String family, {bool bold = false, bool italic = false})

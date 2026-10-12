@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `EmbeddedFont.shaped`: an embedded font from a parsed font's shaper,
+  shared by the documents that embed it (its kerning too).
 - `EmbeddedFont.parse(singleByte: true)` writes a font with TrueType
   outlines as simple TrueType fonts of up to 256 glyphs each, a byte a
   glyph and the space code 32 in each, with their own `cmap` and

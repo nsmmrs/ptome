@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FontIndex.over`: fonts given as bytes over another index, whose
+  folders aren't walked nor fonts read again.
 - `subsetTrueType(codes:)`: a `cmap` mapping one-byte codes to the
   glyphs they show (Macintosh Roman and Windows symbol subtables), for a
   font embedded in a PDF as a simple font.

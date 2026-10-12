@@ -5,7 +5,9 @@
 /// standard families and the icon fonts.
 library;
 
+import 'package:plain_fonts/plain_fonts.dart' show OpenTypeFont;
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_typesetting/plain_typesetting.dart' show OpenTypeShaper;
 import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/path_resolver.dart';
@@ -617,13 +619,33 @@ final class FontCatalog {
   }
 
   /// The font in the file at [path] ([index] in a collection).
-  EmbeddedFont _parse(String path, {int index = 0}) => EmbeddedFont.parse(
-    _bytes(path),
-    index: index,
-    truncateWidths: thousandthWidths,
-    kernTableSubtable: kernTableOnly ? 0 : null,
-    singleByte: singleByteFonts,
-  );
+  /// (An installed file's font is parsed once per process, its shaper,
+  /// kerning included, shared by the conversions; a font given as bytes
+  /// is its conversion's.)
+  EmbeddedFont _parse(String path, {int index = 0}) {
+    final kern = kernTableOnly ? 0 : null;
+    if (_installed.isInMemory(path)) {
+      return EmbeddedFont.parse(
+        _bytes(path),
+        index: index,
+        truncateWidths: thousandthWidths,
+        kernTableSubtable: kern,
+        singleByte: singleByteFonts,
+      );
+    }
+    final shaper = _shapers[(path, index, kern)] ??= OpenTypeShaper(
+      OpenTypeFont.parse(_bytes(path), index: index),
+      kernTableSubtable: kern,
+    );
+    return EmbeddedFont.shaped(
+      shaper,
+      truncateWidths: thousandthWidths,
+      singleByte: singleByteFonts,
+    );
+  }
+
+  /// The installed fonts parsed, by file, index and kerning.
+  static final Map<(String, int, int?), OpenTypeShaper> _shapers = {};
 
   /// (Files are read once per process; fonts given as bytes belong to
   /// their conversion.)

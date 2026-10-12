@@ -81,7 +81,21 @@ final class FontIndex {
        _memory = {
          for (final MapEntry(:key, :value) in memory.entries)
            '$_memoryPrefix$key': value,
-       };
+       },
+       _base = null;
+
+  /// [base]'s fonts with those in [memory] (file names and their bytes)
+  /// first: [base]'s folders aren't walked again, nor its fonts read
+  /// again (a conversion's own fonts over the machine's, many times).
+  new over(FontIndex base, {Map<String, List<int>> memory = const {}})
+    : directories = base.directories,
+      cacheFile = base.cacheFile,
+      fileSystem = base.fileSystem,
+      _memory = {
+        for (final MapEntry(:key, :value) in memory.entries)
+          '$_memoryPrefix$key': value,
+      },
+      _base = base;
 
   /// The machine's fonts: those of [before], then the user's and the
   /// system's font folders ([FontFiles.fontDirectories]).
@@ -100,6 +114,9 @@ final class FontIndex {
   /// Where the font files are read.
   final FontFiles fileSystem;
 
+  /// The index this one adds its [_memory] fonts to, if any.
+  final FontIndex? _base;
+
   /// The fonts given as bytes, by their paths (`memory:/name`).
   final Map<String, List<int>> _memory;
 
@@ -107,7 +124,8 @@ final class FontIndex {
 
   /// The bytes of the font file at [path] (a file, or one given in
   /// memory).
-  List<int> bytes(String path) => _memory[path] ?? fileSystem.read(path);
+  List<int> bytes(String path) =>
+      _memory[path] ?? _base?.bytes(path) ?? fileSystem.read(path);
 
   /// The TrueType or OpenType font at [path]: its [bytes], decoded when
   /// it is a WOFF or WOFF2 font.
@@ -133,7 +151,8 @@ final class FontIndex {
 
   /// Whether WOFF or WOFF2 files were passed over, the decoder not loaded
   /// (an index built again once it is finds them).
-  bool get passedOverWebFonts => _passedOverWebFonts;
+  bool get passedOverWebFonts =>
+      _passedOverWebFonts || (_base?.passedOverWebFonts ?? false);
   bool _passedOverWebFonts = false;
 
   /// Loads the WOFF and WOFF2 decoder: on JavaScript, a part of the program
@@ -152,7 +171,8 @@ final class FontIndex {
   }
 
   /// Whether the font at [path] was given as bytes.
-  bool isInMemory(String path) => _memory.containsKey(path);
+  bool isInMemory(String path) =>
+      _memory.containsKey(path) || (_base?.isInMemory(path) ?? false);
 
   /// The folders searched, in order.
   final List<String> directories;
@@ -164,7 +184,8 @@ final class FontIndex {
   List<InstalledFont>? _fonts;
 
   /// The font files, folder by folder, in order.
-  List<String> get files => _files ??= [..._memory.keys, ..._walk()];
+  List<String> get files =>
+      _files ??= [..._memory.keys, ...(_base?.files ?? _walk())];
 
   /// The first font file named [name] (any case).
   String? fileNamed(String name) => _byFileName[name.toLowerCase()];
@@ -179,7 +200,17 @@ final class FontIndex {
   }();
 
   /// Every font of every file.
-  List<InstalledFont> get fonts => _fonts ??= _read();
+  List<InstalledFont> get fonts => _fonts ??= switch (_base) {
+    final base? => [
+      for (final path in _memory.keys)
+        ..._parse(path, _rangesOf(_bytesOf(_memory[path]!))),
+      ...base.fonts,
+    ],
+    null => _read(),
+  };
+
+  static Uint8List _bytesOf(List<int> bytes) =>
+      bytes is Uint8List ? bytes : Uint8List.fromList(bytes);
 
   /// The fonts of each family key (family or legacy family), in order.
   late final Map<String, List<InstalledFont>> _byFamily = () {

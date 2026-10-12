@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
 /// A page with each of [lines] in its font, at 14 points.
@@ -273,4 +275,28 @@ void main() {
       skip: _tools ? false : 'qpdf or poppler missing',
     );
   }
+
+  test('a parsed font shared by documents: each as if it parsed its own', () {
+    final bytes = File('test/fonts/notoserif-regular-latin.ttf')
+        .readAsBytesSync();
+    final shared = OpenTypeShaper(OpenTypeFont.parse(bytes));
+    List<int> draw(EmbeddedFont font, String text) {
+      final document = PdfDocument();
+      document
+          .addPage(const Rect(0, 0, 200, 100))
+          .canvas
+          .text(text, 10, 50, TextStyle(font, 12));
+      return document.save(
+        options: const PdfWriterOptions(deterministic: true),
+      );
+    }
+
+    for (final text in ['AVA Wave', 'Quick brown fox', 'AVA Wave']) {
+      expect(
+        draw(EmbeddedFont.shaped(shared), text),
+        draw(EmbeddedFont.parse(bytes), text),
+        reason: text,
+      );
+    }
+  });
 }
