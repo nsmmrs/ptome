@@ -71,6 +71,7 @@ part 'converter/running_content.dart';
 part 'converter/sections.dart';
 part 'converter/tables.dart';
 part 'converter/text.dart';
+part 'converter/theme_keys.dart';
 part 'converter/theme_values.dart';
 part 'converter/traversal.dart';
 

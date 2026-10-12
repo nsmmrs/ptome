@@ -56,9 +56,8 @@ extension _Framed on PdfConverter {
     bool noBorder = false,
     BoxDecoration? extra,
   }) {
-    final widthValue = noBorder
-        ? null
-        : _theme.value('${category}_border_width');
+    final keys = _Keys(this, [category]);
+    final widthValue = noBorder ? null : keys.value('border_width');
     var borderWidth = switch (widthValue) {
       ThemeNumber(:final value) => value.toDouble(),
       ThemeList(:final values) when values.isNotEmpty => PdfConverter._toPoints(
@@ -67,7 +66,7 @@ extension _Framed on PdfConverter {
       _ => 0.0,
     };
     final sideWidths = widthValue is ThemeList;
-    var fill = background ?? _c('${category}_background_color');
+    var fill = background ?? keys.color('background_color');
     if (fill is TransparentColor) fill = null;
     // The modern engine: a shadow under the block and an image over its
     // background (`<category>_shadow_*`, `<category>_background_image`).
@@ -79,12 +78,12 @@ extension _Framed on PdfConverter {
     if (borderWidth <= 0 && fill == null && shadow == null && image == null) {
       return extra;
     }
-    final stroke = _c('${category}_border_color') ?? _c('base_border_color');
+    final stroke = keys.color('border_color') ?? _c('base_border_color');
     final pageBackground =
         _c('page_background_color') ?? const HexColor('FFFFFF');
     final radius = sideWidths
         ? 0.0
-        : (_n('${category}_border_radius') ?? 0).toDouble();
+        : (keys.number('border_radius') ?? 0).toDouble();
     final dashRadius = radius + borderWidth;
     final Color? gapColor;
     final double shift;
@@ -100,7 +99,7 @@ extension _Framed on PdfConverter {
       borderWidth = 0.5;
       (gapColor, shift) = (pdfColorOf(pageBackground), borderWidth * 0.5);
     }
-    final hasStroke = (_n('${category}_border_width') ?? 0) > 0 || sideWidths;
+    final hasStroke = (keys.number('border_width') ?? 0) > 0 || sideWidths;
     return (page, rect, {required first, required last}) {
       final canvas = page.canvas..save();
       shadow?.call(canvas, rect, radius);
@@ -126,7 +125,7 @@ extension _Framed on PdfConverter {
             color,
             width: borderWidth,
             widths: _sideWidths(widthValue),
-            style: _s('${category}_border_style'),
+            style: keys.string('border_style'),
             radius: radius,
           );
         }

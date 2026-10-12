@@ -454,19 +454,23 @@ extension _Sections on PdfConverter {
         _ => null,
       };
 
+  /// The keys of heading level [level]: the heading role's
+  /// (`<role>_heading_*`, with [role]), the level's (`heading_h<n>_*`),
+  /// then every heading's (`heading_*`).
+  _Keys _headingKeys(int level, {bool role = true}) => _Keys(this, [
+    if (role && _headingRole != null) '${_headingRole}_heading',
+    'heading_h$level',
+    'heading',
+  ]);
+
   /// The font of heading level [level] (the gem's `theme_font :heading,
   /// level:`).
   _FontState _headingFont(int level) {
     final role = _headingRole;
-    String? h(String key) =>
-        (role == null ? null : _s('${role}_heading_$key')) ??
-        _s('heading_h${level}_$key') ??
-        _s('heading_$key');
-    final sizeValue =
-        (role == null ? null : _theme.value('${role}_heading_font_size')) ??
-        _theme.value('heading_h${level}_font_size') ??
-        _theme.value('heading_font_size');
-    final size = switch (sizeValue) {
+    final keys = _headingKeys(level);
+    // (Some keys aren't a role's: the level's, then every heading's.)
+    final levelKeys = _headingKeys(level, role: false);
+    final size = switch (keys.value('font_size')) {
       ThemeNumber(:final value) => value.toDouble(),
       ThemeString(:final value) => resolveFontSize(
         value,
@@ -476,32 +480,20 @@ extension _Sections on PdfConverter {
       _ => _rootFontSize,
     };
     return _FontState(
-      family: h('font_family') ?? _s('base_font_family') ?? _font.family,
-      style: PdfConverter._fontStyle(h('font_style')) ?? 'normal',
+      family:
+          keys.string('font_family') ?? _s('base_font_family') ?? _font.family,
+      style: PdfConverter._fontStyle(keys.string('font_style')) ?? 'normal',
       size: size,
-      color:
-          (role == null ? null : _c('${role}_heading_font_color')) ??
-          _c('heading_h${level}_font_color') ??
-          _c('heading_font_color') ??
-          _font.color,
-      lineHeight:
-          (_n('heading_h${level}_line_height') ??
-                  _n('heading_line_height') ??
-                  _font.lineHeight)
-              .toDouble(),
-      kerning: switch (h('font_kerning')) {
+      color: keys.color('font_color') ?? _font.color,
+      lineHeight: (levelKeys.number('line_height') ?? _font.lineHeight)
+          .toDouble(),
+      kerning: switch (keys.string('font_kerning')) {
         'normal' => true,
         'none' => false,
         _ => _font.kerning,
       },
-      transform: h('text_transform'),
-      letterSpacing:
-          (role == null
-              ? null
-              : _letterSpacing('${role}_heading_letter_spacing', size)) ??
-          _letterSpacing('heading_h${level}_letter_spacing', size) ??
-          _letterSpacing('heading_letter_spacing', size) ??
-          0,
+      transform: keys.string('text_transform'),
+      letterSpacing: keys.letterSpacing('letter_spacing', size) ?? 0,
       // Lines from their cap heights: the level's leading
       // (heading_h<n>_leading).
       leadingKey: [
@@ -546,9 +538,8 @@ extension _Sections on PdfConverter {
     );
     // The title's number (its first `[.number]` span, ADR-0023): hung
     // left of the title's edge, or on a line of its own.
-    final placement =
-        _s('heading_h${level}_number_placement') ??
-        _s('heading_number_placement');
+    final levelKeys = _headingKeys(level, role: false);
+    final placement = levelKeys.string('number_placement');
     final number = placement == 'hang' || placement == 'line'
         ? _headingNumberRx.firstMatch(text)
         : null;
@@ -557,9 +548,7 @@ extension _Sections on PdfConverter {
       box = textBox('${number[1]}<br>${text.substring(number.end)}');
     } else if (number != null) {
       final hang =
-          _length('heading_h${level}_number_hang', font.size) ??
-          _length('heading_number_hang', font.size) ??
-          2.5 * font.size;
+          levelKeys.length('number_hang', font.size) ?? 2.5 * font.size;
       box = _Hung(
         textBox(text.substring(number.end)),
         textBox(number[1]!, align_: 'left'),
@@ -569,24 +558,14 @@ extension _Sections on PdfConverter {
     } else {
       box = textBox(text);
     }
-    final role = _headingRole;
+    final keys = _headingKeys(level);
     // (Right after another heading, the larger of its space below and
     // this one's above: [collapse] is that space below.)
     final marginTop = math.max<double>(
       0,
-      ((role == null ? null : _n('${role}_heading_margin_top')) ??
-                  _n('heading_h${level}_margin_top') ??
-                  _n('heading_margin_top') ??
-                  0)
-              .toDouble() -
-          collapse,
+      (keys.number('margin_top') ?? 0).toDouble() - collapse,
     );
-    final marginBottom =
-        ((role == null ? null : _n('${role}_heading_margin_bottom')) ??
-                _n('heading_h${level}_margin_bottom') ??
-                _n('heading_margin_bottom') ??
-                0)
-            .toDouble();
+    final marginBottom = (keys.number('margin_bottom') ?? 0).toDouble();
     var content = box;
     // The modern engine's `heading_min_height_after: auto`: the heading
     // stays with what starts after it (as much of it as may start a page:
