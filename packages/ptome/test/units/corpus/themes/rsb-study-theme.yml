@@ -1,0 +1,43 @@
+# The study edition set as the Reformation Study Bible's sample pages
+# (Genesis 1, Mark 1), measured from them in proportion to the page and
+# sized for a 6.5 in trim (their ratio gives 9.56 in): one justified text
+# column, 9.5 on 11.25, bold verse numbers, a poem's numbers hung left;
+# the cross-references in a narrow column on the inner side, 6 on 7.8 in
+# a condensed sans; the translators' notes run in under the text; the
+# feature articles in tinted boxes across the page above the notes; the
+# study notes in three sans columns, 7 on 8.65, starting on their verse's
+# page; running heads of the page's first verse (verso) and last (recto),
+# the folio centred. Free faces for the RSB's: Crimson Pro for the text,
+# Fira Sans Condensed for the notes and references.
+extends: ./bsb-study-theme.yml
+page:
+  size: [6.5in, 9.56in]
+  # (The inner margin holds the reference column: 37 pt wide, 11 pt from
+  # the text; the outer, 30 pt.)
+  margin: [54, 30, 23, 30]
+  margin_inner: 79
+  margin_outer: 30
+  columns: 1
+base:
+  font_family: Crimson Pro
+  font_size: 9.5
+  line_pitch: 11.25
+side_notes:
+  column: inside
+  padding: 11
+  item_spacing: 1
+role:
+  xref: { display: side, font_size: 6, line_height: 1.3, font_family: Fira Sans Condensed }
+note_stream:
+  tn:
+    arrangement: run_in
+    font_size: 6.5
+  sn:
+    columns: 3
+    column_gap: 9
+    font_size: 7
+    font_family: Fira Sans Condensed
+    line_height: 1.24
+footnotes:
+  text_min_lines: 8
+  lag: 0

@@ -68,6 +68,12 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- A study Bible's page from open data, set as the Reformation Study
+  Bible's samples (`test/units/corpus/themes/rsb-study-theme.yml`), with
+  its acceptance and verdict in `doc/study-bible.md`. The Bible looks set
+  the divine name in small capitals by `font_variant` (the face's, or
+  made from its capitals), not Unicode's small-capital letters, which few
+  faces have.
 - PDF unit labels bold (`units_<level>_label_font_style`) and hung left
   of their lines in blocks with given roles (`units_<level>_label_hang:
   [poetry]`: a poem's verse numbers in the gutter); side notes in the

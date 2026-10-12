@@ -853,6 +853,48 @@ void main() {
     expect(five['a1']! - five['court']!, closeTo(5 * 2 * _lineHeight, 0.01));
   });
 
+  test('a box for the bottom with no room for it whole waits, whole', () {
+    // A page of 12 rows, a note and a box of 4 lines for the bottom
+    // reached after 10 lines of text: the box doesn't fit whole under
+    // them; it goes whole to the bottom of the next page, not cut.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(12), notes: {'n': _para('note')})
+        .layout([
+          BlockBox([
+            for (var i = 1; i <= 10; i++) _para('t$i'),
+          ], style: const BoxStyle(anchor: 'n')),
+          BlockBox([
+            _para('b1\nb2\nb3\nb4'),
+          ], style: const BoxStyle(float: FloatPlacement.bottom)),
+          for (var i = 11; i <= 14; i++) _para('t$i'),
+        ])
+        .render(document);
+    List<String> on(int page) =>
+        document.pages[page].texts.map((t) => t.trim()).toList();
+    expect(on(0).where((t) => t.startsWith('b')), isEmpty);
+    expect(on(1), containsAll(['b1', 'b2', 'b3', 'b4']));
+    expect(on(0), contains('note'));
+  });
+
+  test('the notes of a box floating to the bottom are set', () {
+    // A note referred to from a box set at the bottom of the page (not in
+    // the text's flow): set under it all the same.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(12), notes: {'n': _para('thenote')})
+        .layout([
+          _para('t1'),
+          BlockBox([
+            BlockBox([_para('box')], style: const BoxStyle(anchor: 'n')),
+          ], style: const BoxStyle(float: FloatPlacement.bottom)),
+          _para('t2'),
+        ])
+        .render(document);
+    expect(
+      document.pages.expand((page) => page.texts).map((t) => t.trim()),
+      contains('thenote'),
+    );
+  });
+
   test('side notes stay above the notes at the bottom of the page', () {
     final document = RecordingDocument();
     FlowLayout(

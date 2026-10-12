@@ -229,8 +229,25 @@ extension _Notes on _Pass {
     Rect region,
     _Fit first, {
     List<LayoutBox> bottom = const [],
+    List<LayoutBox> above = const [],
   }) {
     final width = region.width;
+    // (The floating boxes for the bottom kept here.)
+    var atBottom = bottom;
+    // The anchors in the floating boxes set at the top and the bottom of
+    // the region: the notes they refer to are the region's too.
+    List<String> floatAnchors() => [
+      for (final boxes in [above, atBottom])
+        if (boxes.isNotEmpty)
+          ..._Pass._anchorsOf(
+            _place(
+              BlockBox(boxes),
+              width,
+              double.infinity,
+              atTop: false,
+            ).placed,
+          ),
+    ];
     var fit = first;
     final deferred = _deferredNotes;
     // The notes of the anchors placed: the main series' (after those
@@ -247,7 +264,7 @@ extension _Notes on _Pass {
         for (final MapEntry(:key, :value) in carried.entries)
           key: [...value.notes],
       };
-      for (final name in _Pass._anchorsOf(fit.placed)) {
+      for (final name in [..._Pass._anchorsOf(fit.placed), ...floatAnchors()]) {
         if (_notesSet.contains(name)) continue;
         final note = layout.notes[name];
         if (note == null) continue;
@@ -296,7 +313,7 @@ extension _Notes on _Pass {
     // The bottom of the region: its floating boxes, then its notes under
     // the separator (the main series', when it has some).
     List<LayoutBox> area(List<LayoutBox> notes) => [
-      ...bottom,
+      ...atBottom,
       if (notes.isNotEmpty && !groups.containsKey(notes.first))
         ?layout.noteSeparator,
       ...notes,
@@ -304,7 +321,7 @@ extension _Notes on _Pass {
     var notes = pending(fit);
     double total(_Fit fit, List<LayoutBox> notes) =>
         fit.height + _measure(BlockBox(area(notes)), width);
-    if ((notes.isNotEmpty || bottom.isNotEmpty) &&
+    if ((notes.isNotEmpty || atBottom.isNotEmpty) &&
         total(fit, notes) > region.height + 1e-6) {
       // The most content whose notes fit under it: more room places more
       // content, which refers to more notes, so the room is found by
@@ -380,14 +397,33 @@ extension _Notes on _Pass {
       notes = pending(fit);
     }
     final number = _noteRegions++;
-    for (final name in _Pass._anchorsOf(fit.placed)) {
+    for (final name in [..._Pass._anchorsOf(fit.placed), ...floatAnchors()]) {
       if (layout.notes[name] case final note?) {
         if (_notesSet.add(name)) _noteRegion[note] = number;
       }
     }
     _deferredNotes = null;
-    if (notes.isEmpty && bottom.isEmpty) return (fit, null);
+    if (notes.isEmpty && atBottom.isEmpty) return (fit, null);
     final room = region.height - fit.height;
+    // (Floating boxes for the bottom that don't fit whole in the room the
+    // text leaves: whole at the bottom of the next region, never cut where
+    // the room runs out; those taller than a region, and those under no
+    // text, are set here, going on as they must.)
+    final floatHeight = atBottom.isEmpty
+        ? 0.0
+        : _measure(BlockBox(atBottom), width);
+    if (floatHeight > room + 1e-6 &&
+        floatHeight <= region.height + 1e-6 &&
+        fit.placed != null &&
+        fit.height > 0) {
+      // (They are set as they are pinned, not floating: as one box
+      // floating to the bottom again.)
+      _bottomCarried.add(
+        BlockBox(atBottom, style: const BoxStyle(float: FloatPlacement.bottom)),
+      );
+      atBottom = const [];
+      if (notes.isEmpty) return (fit, null);
+    }
     final placed = _place(BlockBox(area(notes)), width, room, atTop: false);
     if (placed.placed == null || placed.height == 0) {
       // No note fits: all of them on the next region, without a
@@ -401,10 +437,10 @@ extension _Notes on _Pass {
               separator: layout.noteSeparator,
               streamSeparators: separators,
             );
-      if (bottom.isEmpty) return (fit, null);
+      if (atBottom.isEmpty) return (fit, null);
       return (
         fit,
-        _place(BlockBox(bottom), width, double.infinity, atTop: false),
+        _place(BlockBox(atBottom), width, double.infinity, atTop: false),
       );
     }
     _deferredNotes = _left(

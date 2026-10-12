@@ -5,26 +5,29 @@
 # blocks floating to a side were set in a column's own width (2026-10-11),
 # and balancing stopped trying columns shorter than their first box
 # (2026-10-11), and the room for text above its notes stopped being
-# tried shorter than the text's first box (2026-10-12): seed,
+# tried shorter than the text's first box (2026-10-12), and a box
+# floating to the top or bottom that doesn't fit whole went to the next
+# region whole rather than cut, and the notes in the floating boxes set at
+# a region's top and bottom were set too (2026-10-12): seed,
 # digest, lines recorded; 'skip': too slow for a test there (or too deep for the
 # stack).
 0 f3ab75d5 567
-1 6c4b62bc 2391
+1 83681def 2428
 2 ec544f25 616
 3 7bcdf2f0 1791
 4 e2049b19 2032
-5 569076f6 5458
+5 19d2c987 5467
 6 ef11583e 1858
-7 45816ed6 131
+7 a1768d57 155
 8 c4ee78b2 5976
 9 a4148a91 38
-10 be9350c7 6052
+10 dcab7827 6012
 11 0bf9da9f 662
 12 196a64e4 696
 13 66f69534 1088
 14 0cb72f03 4667
 15 823d6d01 92
-16 b514e4d1 873
+16 36845bca 916
 17 86ac98e6 3456
 18 1db54dc6 305
 19 5af95b82 1688
@@ -37,11 +40,11 @@
 26 c743cf42 1156
 27 208ed079 4536
 28 70aadf0c 5817
-29 db97b2d3 91559
+29 427076fb 91588
 30 fefda6fd 965
 31 abdb1631 3772
 32 skip
-33 2c0462cc 1537
+33 7f1c0621 1548
 34 e7421e6b 973
 35 aaa5ec98 63
 36 f613cd45 1465
@@ -53,7 +56,7 @@
 42 dd6f9ccc 33990
 43 f5e93af2 2989
 44 cace87b7 2633
-45 090c0c72 9277
+45 bbdf291d 9340
 46 13816254 2096
 47 6107ee67 405
 48 15b90ec6 498
@@ -70,7 +73,7 @@
 59 1da33194 695
 60 1661fcc1 301
 61 skip
-62 8c6faa6b 1456
+62 5ca45a4b 1432
 63 31507a9d 1705
 64 skip
 65 587d2ec0 271
@@ -105,6 +108,6 @@
 94 3acc1fe4 744
 95 552476d2 729
 96 059cafa1 2775
-97 20713293 1059
+97 1ca8b75c 1151
 98 6d538011 583
 99 a148f5d9 181

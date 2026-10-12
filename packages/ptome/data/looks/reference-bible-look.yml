@@ -52,7 +52,9 @@ pdf:
     item_spacing: 2
   role:
     xref: { display: side, font_size: 6.5 }
-    nd: { text_transform: smallcaps }
+    # (The divine name in small capitals: the face's, or made from its
+    # capitals; not Unicode's small-capital letters, which few faces have.)
+    nd: { font_variant: small-caps }
     book-title: { font_style: italic, text_align: center }
     psalm-title: { font_style: italic }
     poetry: { text_align: left }

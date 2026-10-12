@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A box floating to the top or the bottom that doesn't fit whole where
+  the text reaches it goes whole to the next region, not cut where the
+  room runs out (one for `next` is set where it is, as before), and one
+  for the bottom with no room for it under the text there waits for the
+  next region's bottom. The notes referred to in a floating box set at a
+  region's top or bottom are set (they were left out).
 - `BoxStyle.gridLine`: with a baseline grid, a box starts on that line of
   the region's grid, or the next one when it is past it.
 - `FlowLayout.notesMinText` and `notesLag`: notes in step with their

@@ -315,7 +315,13 @@ final class _Pass {
         if (layout.notes.isNotEmpty ||
             _deferredNotes != null ||
             bottom.isNotEmpty) {
-          final (withNotes, notes) = _notes(content, area, fit, bottom: bottom);
+          final (withNotes, notes) = _notes(
+            content,
+            area,
+            fit,
+            bottom: bottom,
+            above: top,
+          );
           fit = withNotes;
           page.placed.add((area, fit.placed));
           if (notes != null) {
@@ -332,7 +338,10 @@ final class _Pass {
           page.placed.add((area, fit.placed));
         }
         rest = fit.rest;
-        floats.addAll(fit.floated);
+        floats
+          ..addAll(fit.floated)
+          ..addAll(_bottomCarried);
+        _bottomCarried.clear();
         carriedFloats.addAll(fit.carried);
         if (rest == null &&
             _deferredNotes == null &&
@@ -470,6 +479,10 @@ final class _Pass {
 
   /// How many regions [_notes] has set the notes of.
   int _noteRegions = 0;
+
+  /// Floating boxes for a region's bottom that [_notes] found no room for
+  /// whole: for the next region's bottom.
+  final List<LayoutBox> _bottomCarried = [];
 
   /// The notes that didn't fit in the region before: the main series'
   /// (with the floating boxes at the bottom), and each stream's, to go
@@ -1126,6 +1139,22 @@ final class _Pass {
           child.style.floating &&
           !childAtTop &&
           _floats(child)) {
+        _exclusions.length = mark;
+        floated.add(child);
+        _floatsWaiting++;
+        continue;
+      }
+      // A box floating to the top or the bottom that doesn't fit whole
+      // where the text reaches it (but would in a region of its own): for
+      // the next region, whole, not cut where the room runs out. (One that
+      // floats only when it doesn't fit, `next`, is set where it is.)
+      if (fit.placed != null &&
+          fit.rest != null &&
+          child.style.floating &&
+          child.style.float != FloatPlacement.next &&
+          !childAtTop &&
+          _floats(child) &&
+          _measure(child, inner) <= _regionHeight + 1e-6) {
         _exclusions.length = mark;
         floated.add(child);
         _floatsWaiting++;
