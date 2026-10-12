@@ -1011,13 +1011,23 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   return maxWidth == null ? items : _splitWide(items, maxWidth);
 }
 
-/// [run] split where its font lacks characters a fallback font has.
+/// [run] split where its font lacks characters a fallback font has, a
+/// grapheme cluster at a time: a base and its combining marks, an emoji
+/// sequence, set in one font (the first that has all of it, else the one
+/// that has its first character).
 List<TextRun> _withFallbacks(TextRun run) {
   final primary = run.style.font;
-  Font fontFor(int rune) {
-    if (primary.covers(rune) || rune <= 0x20) return primary;
+  Font fontFor(String cluster) {
+    final runes = cluster.runes.toList();
+    if (runes.every((rune) => primary.covers(rune) || rune <= 0x20)) {
+      return primary;
+    }
     for (final font in run.fallbackFonts) {
-      if (font.covers(rune)) return font;
+      if (runes.every(font.covers)) return font;
+    }
+    if (primary.covers(runes.first)) return primary;
+    for (final font in run.fallbackFonts) {
+      if (font.covers(runes.first)) return font;
     }
     return primary;
   }
@@ -1036,17 +1046,51 @@ List<TextRun> _withFallbacks(TextRun run) {
     text.clear();
   }
 
-  for (final rune in run.text.runes) {
+  for (final cluster in _clusters(run.text)) {
     // Spaces and controls stay with the font around them.
-    final font = rune <= 0x20 && current != null ? current : fontFor(rune);
+    final font = cluster.runes.first <= 0x20 && current != null
+        ? current
+        : fontFor(cluster);
     if (!identical(font, current)) {
       flush();
       current = font;
     }
-    text.writeCharCode(rune);
+    text.write(cluster);
   }
   flush();
   return runs;
+}
+
+/// [text] in its grapheme clusters, as near as the line breaking classes
+/// tell them (UAX #14's, not UAX #29's tables): a character with the
+/// combining marks after it (class CM), a sequence joined by zero width
+/// joiners (ZWJ) with its emoji modifiers (EM), a pair of regional
+/// indicators (RI, a flag); a cluster is never split between lines or
+/// fonts.
+List<String> _clusters(String text) {
+  final clusters = <String>[];
+  final cluster = StringBuffer();
+  int? previous;
+  var indicators = 0;
+  for (final rune in text.runes) {
+    final kind = lineBreakClass(rune);
+    final joins =
+        previous != null &&
+        (kind == LineBreakClass.cm ||
+            kind == LineBreakClass.zwj ||
+            kind == LineBreakClass.em ||
+            lineBreakClass(previous) == LineBreakClass.zwj ||
+            (kind == LineBreakClass.ri && indicators.isOdd));
+    if (!joins && cluster.isNotEmpty) {
+      clusters.add(cluster.toString());
+      cluster.clear();
+    }
+    indicators = kind == LineBreakClass.ri ? indicators + 1 : 0;
+    cluster.writeCharCode(rune);
+    previous = rune;
+  }
+  if (cluster.isNotEmpty) clusters.add(cluster.toString());
+  return clusters;
 }
 
 bool _isWord(String text) => text.runes.every(
@@ -1055,8 +1099,8 @@ bool _isWord(String text) => text.runes.every(
       lineBreakClass(c) == LineBreakClass.hl,
 );
 
-/// [items] with each box wider than [maxWidth] split into characters,
-/// with costly breaks between them.
+/// [items] with each box wider than [maxWidth] split into its grapheme
+/// clusters, with costly breaks between them.
 List<LineItem> _splitWide(List<LineItem> items, double maxWidth) {
   if (!items.any((item) => item is BoxItem && item.width > maxWidth)) {
     return items;
@@ -1065,9 +1109,8 @@ List<LineItem> _splitWide(List<LineItem> items, double maxWidth) {
     for (final item in items)
       if (item case BoxItem(content: final TextRun run, :final text)
           when item.width > maxWidth)
-        for (final (i, char) in [
-          for (final rune in text.runes) String.fromCharCode(rune),
-        ].indexed) ...[
+        // (Between grapheme clusters, never inside one.)
+        for (final (i, char) in _clusters(text).indexed) ...[
           if (i > 0) PenaltyItem(0, 1000, run: run),
           BoxItem(run, char, run.style.measure(char)),
         ]

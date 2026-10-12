@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Grapheme clusters kept whole: font fallback picks one font for a base
+  and its combining marks (or an emoji sequence, a flag), and a word too
+  wide for its line splits between clusters, never inside one (clusters
+  as the line breaking classes tell them: CM, ZWJ, EM, RI pairs).
 - A box floating to the top or the bottom that doesn't fit whole where
   the text reaches it goes whole to the next region, not cut where the
   room runs out (one for `next` is set where it is, as before), and one
