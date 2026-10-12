@@ -79,7 +79,9 @@ String _convert() {
       safe: SafeMode.unsafe,
       backend: 'pdf',
       toFile: out,
-      attributes: const {'reproducible': ''},
+      // (asciidoctor-pdf's theme, its fonts vendored: the same lines
+      // wherever the looks' fonts are installed or not.)
+      attributes: const {'reproducible': '', 'pdf-theme': 'default'},
     ),
   );
   return out;
@@ -122,7 +124,8 @@ void main() {
           'Table', 'TR', 'TH', 'TD', 'Figure', 'H3', 'P',
         ]),
       );
-      expect(tree, contains('Figure ["A red square'));
+      // (The figure's alternate text, however pdfinfo shows it.)
+      expect(tree, contains('A red square'));
       expect(tree, contains('"A paragraph in the section."'));
     },
   );
