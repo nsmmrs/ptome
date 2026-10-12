@@ -154,6 +154,7 @@ extension _DocumentParts on PdfConverter {
     _engineParagraphCount = 0;
     _sideFloated = false;
     _gutterLeast = 0;
+    _thematicBreaks = 0;
     _madeUpAnchors.clear();
     _floatGroup = _floatNext = null;
     _hasTitlePage = _frontCover = _backCover = _noCover = false;

@@ -3296,6 +3296,36 @@ templates:
       expect(recto, everyElement(closeTo(36, 0.5)));
     });
 
+    test('a thematic break as a mark, shown at a page boundary', () {
+      // As a dinkus wherever it is.
+      final always = _pages(
+        _pdf(
+          "Before.\n\n'''\n\nAfter.\n",
+          theme: "thematic_break:\n  content: '* * *'\n",
+        ),
+      ).expand((page) => page);
+      expect(always, contains(matches(r'^\*\s*\*\s*\*$')));
+      // As space mid-page, but as a mark where the text after it goes
+      // on on the next page.
+      final kept = List.filled(18, 'Kept line.').join(' +\n');
+      final pages = _pages(
+        _pdf(
+          "Before.\n\n'''\n\nMiddle.\n\n'''\n\n"
+          '[%unbreakable]\n--\n$kept\n--\n',
+          theme:
+              'page:\n  size: [300, 400]\n'
+              'thematic_break:\n  content_display: boundary\n',
+        ),
+      );
+      final marks = pages
+          .expand((page) => page)
+          .where((line) => line.contains('*'));
+      // (The first break mid-page: no mark; the second before the kept
+      // block, which goes on the next page: a mark.)
+      expect(marks, hasLength(1));
+      expect(pages.first.last, contains('*'));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF thematic breaks as a mark (`thematic_break_content`: a dinkus, a
+  fleuron, an image), or as space with the mark only where a break falls
+  at the top or the bottom of a page (`content_display: boundary`).
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books

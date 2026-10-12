@@ -290,6 +290,39 @@ final class _Nothing implements CustomContent {
   (double, double) intrinsicWidths() => (0, 0);
 }
 
+/// [content], drawn only when [shown] says so as the page is drawn (it
+/// takes its room either way): a thematic break's mark set where the break
+/// falls at a page's top or bottom.
+final class _ShownWhen implements CustomContent {
+  const new(this.content, this.shown);
+
+  final CustomContent content;
+  final bool Function() shown;
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final placed = content.place(width, available, atTop: atTop);
+    if (placed == null) return null;
+    return CustomPlacement(
+      height: placed.height,
+      paint: (page, x, top) {
+        if (shown()) placed.paint(page, x, top);
+      },
+      anchors: placed.anchors,
+    );
+  }
+
+  @override
+  double minHeight(double width) => content.minHeight(width);
+
+  @override
+  (double, double) intrinsicWidths() => content.intrinsicWidths();
+}
+
 /// How wide an image is asked to be.
 enum _ImageWidthKind { natural, points, percent, scale, viewport }
 

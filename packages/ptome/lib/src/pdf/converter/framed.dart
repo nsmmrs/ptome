@@ -816,6 +816,7 @@ extension _Framed on PdfConverter {
 
   /// Converts the thematic break [node].
   void convertThematicBreak(Block node) {
+    if (_thematicMark(node)) return;
     final padding = _edgeValues(
       _theme.value('thematic_break_padding') ??
           ThemeList([
@@ -865,6 +866,75 @@ extension _Framed on PdfConverter {
         ),
       ),
     );
+  }
+
+  /// The thematic break [node] as a mark (modern engine), when the theme
+  /// gives one: `thematic_break_content` (a template: a dinkus, `* * *`,
+  /// a fleuron, an image), centered in `thematic_break_font_*` in place
+  /// of the rule, the break's padding around it. With
+  /// `thematic_break_content_display: boundary`, the break is blank space
+  /// but where it falls at the top or the bottom of a page, where the
+  /// mark is set (`* * *` without a content of its own), as Penguin's
+  /// rule has it: without one, a reader can't tell that a part ends at the
+  /// bottom of a page. False for the rule.
+  bool _thematicMark(Block node) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return false;
+    final boundary = _s('thematic_break_content_display') == 'boundary';
+    final content =
+        _s('thematic_break_content') ?? (boundary ? '*\u2003*\u2003*' : null);
+    if (content == null) return false;
+    final padding = _edgeValues(
+      _theme.value('thematic_break_padding') ??
+          ThemeList([
+            ThemeNumber(_n('thematic_break_margin_top') ?? 0),
+            const ThemeNumber(0),
+          ]),
+    );
+    final mark = _textBox(
+      content,
+      _themeFont('thematic_break', _font),
+      align: 'center',
+      normalize: false,
+    );
+    // (Where it fell, by anchors: the text before it, the break, and the
+    // text after it, which the anchor after the break keeps with.)
+    final id = '__ptome-break-${_thematicBreaks++}';
+    _out.add(
+      CustomBox(const _Nothing(), style: BoxStyle(anchor: '$id-before')),
+    );
+    _out.add(
+      BlockBox(
+        [
+          CustomBox(
+            boundary
+                ? _ShownWhen(mark, () {
+                    final at = _anchorPages[id];
+                    return at != null &&
+                        (_anchorPages['$id-before'] != at ||
+                            _anchorPages['$id-after'] != at);
+                  })
+                : mark,
+          ),
+        ],
+        style: BoxStyle(
+          anchor: id,
+          padding: EdgeInsets(
+            top: padding[0],
+            right: padding[1],
+            bottom: padding[2],
+            left: padding[3],
+          ),
+          margin: EdgeInsets(bottom: _marginBelow(node)),
+        ),
+      ),
+    );
+    _out.add(
+      CustomBox(
+        const _Nothing(),
+        style: BoxStyle(anchor: '$id-after', keepWithNext: true),
+      ),
+    );
+    return true;
   }
 
   /// Converts the page break [node].

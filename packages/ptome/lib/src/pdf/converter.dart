@@ -613,6 +613,9 @@ final class PdfConverter extends BuiltInConverter
   /// left end of its line.
   List<(int, double, double, String, _FontState)> _hungAt = const [];
 
+  /// How many thematic breaks are marks (for their anchors' names).
+  int _thematicBreaks = 0;
+
   /// The least inner margin the book's page count asks for
   /// (`page_margin_gutter: kdp`), once it is known.
   double _gutterLeast = 0;
