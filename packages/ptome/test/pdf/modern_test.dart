@@ -3263,6 +3263,47 @@ templates:
       });
     });
 
+    group('the quotation lint (quotation-lint)', () {
+      String words(int n) => [
+        for (var k = 0; k < n; k++) ['quoted', 'words', 'of', 'text'][k % 4],
+      ].join(' ');
+      List<String> warnings(String body, {bool lint = true}) {
+        final logger = MemoryLogger();
+        _pdf(
+          '= Doc\n${lint ? ':quotation-lint:\n' : ''}\n$body',
+          logger: logger,
+        );
+        return [
+          for (final m in logger.messages)
+            if (m.severity == Severity.warn) '${m.message}',
+        ];
+      }
+
+      test('a quotation of a hundred words or more run in', () {
+        expect(warnings('He wrote "`${words(120)}`" and stopped.'), [
+          contains('quotation of 120 words run in'),
+        ]);
+        expect(warnings('He wrote "`${words(20)}`" and stopped.'), isEmpty);
+      });
+
+      test('a block quotation shorter than five lines', () {
+        expect(warnings('____\n${words(12)}\n____\n'), [
+          contains('block quotation of 1 line'),
+        ]);
+        expect(warnings('____\n${words(150)}\n____\n'), isEmpty);
+      });
+
+      test('nothing without the attribute', () {
+        expect(
+          warnings(
+            'He wrote "`${words(120)}`".\n\n____\n${words(12)}\n____\n',
+            lint: false,
+          ),
+          isEmpty,
+        );
+      });
+    });
+
     test('the pleading look: numbered lines, the court on line 8', () {
       final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
           .join(' ');

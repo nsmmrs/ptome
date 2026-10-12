@@ -537,3 +537,11 @@ Layout warnings name the file and line of the block they are about
 (`doc.adoc: line 6: table column 1 is too narrow for its text`): `-b pdf`
 keeps every block's source location. `--progress` reports each phase of
 a conversion as it finishes, and `-v` how many pages were laid out.
+
+`:quotation-lint:` reports quotations set otherwise than The Chicago
+Manual of Style sets them (13.9): one of a hundred words or more run in
+(between double quotation marks) rather than set off as a block
+quotation, and a block quotation shorter than five lines once laid out
+(one that goes on to another page is long enough). An editor's check for
+a book that follows Chicago, as the `scholarly-monograph` look does; not
+under `asciidoctor-compat`.

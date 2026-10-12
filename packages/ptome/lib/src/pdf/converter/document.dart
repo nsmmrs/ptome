@@ -144,6 +144,7 @@ extension _DocumentParts on PdfConverter {
     }
     _sections.clear();
     _hungLabels.clear();
+    _quotationChecks.clear();
     _engineParagraphCount = 0;
     _sideFloated = false;
     _gutterLeast = 0;
@@ -576,6 +577,7 @@ extension _DocumentParts on PdfConverter {
         '${role.isEmpty ? '' : ' (role $role)'}: $text',
       );
     }
+    _lintBlockQuotations(result);
     _lineCount = 0;
     _lineRestarts = _lineNumbering == null ? const [] : _lineRestartsOf(result);
     _hungAt = [

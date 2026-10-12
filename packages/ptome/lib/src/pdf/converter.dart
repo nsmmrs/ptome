@@ -1495,6 +1495,11 @@ final class PdfConverter extends BuiltInConverter
   /// messages.
   Cursor? _at;
 
+  /// The block quotations the quotation lint measures once laid out
+  /// (`quotation-lint`): the anchors at their text's start and end, where
+  /// they are in the source, and their line pitch.
+  final List<(String, String, Cursor?, double)> _quotationChecks = [];
+
   /// Hyphenates words (soft hyphens where they may break), or null.
   PatternHyphenator? _hyphenator;
 

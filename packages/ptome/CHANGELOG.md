@@ -89,6 +89,9 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- `:quotation-lint:` (PDF): a quotation of a hundred words or more run
+  in, or a block quotation shorter than five lines, is reported (Chicago
+  13.9), for the scholarly-monograph look's books.
 - The modern engine's paragraphs (plain_typesetting's) now also set
   paragraphs with protrusion (`base_overhang`), font expansion and
   `base_text_align_last`, and break each paragraph as the text box would

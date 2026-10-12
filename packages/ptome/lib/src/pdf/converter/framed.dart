@@ -775,7 +775,34 @@ extension _Framed on PdfConverter {
     final children = _collect(() {
       _withFont(category, () {
         if (category == 'quote') {
+          // (The quotation lint: anchors at the text's start and end, to
+          // count its lines once laid out.)
+          final check = _quotationLint
+              ? '_quotation_${_quotationChecks.length}'
+              : null;
+          if (check != null) {
+            _out.add(
+              CustomBox(
+                const _Nothing(),
+                style: BoxStyle(anchor: '$check-start'),
+              ),
+            );
+          }
           _withBaseKeys(category, () => _traverse(node));
+          if (check != null) {
+            _out.add(
+              CustomBox(
+                const _Nothing(),
+                style: BoxStyle(anchor: '$check-end'),
+              ),
+            );
+            _quotationChecks.add((
+              '$check-start',
+              '$check-end',
+              node.sourceLocation ?? _at,
+              _textBox('Ag Ag', _font, align: 'left').linePitch(1),
+            ));
+          }
         } else {
           _out.add(
             CustomBox(

@@ -2,6 +2,12 @@ part of '../converter.dart';
 
 // Paragraphs.
 
+/// The words from which a quotation is set off (Chicago 13.9).
+const int _runInLimit = 100;
+
+/// The lines a block quotation has at the least (fewer: run in).
+const int _blockLeast = 5;
+
 extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
@@ -261,6 +267,7 @@ extension _Paragraphs on PdfConverter {
     if (!roles.any(
       (role) => _theme.value('role_${role}_hyphens') == const ThemeBool(false),
     )) {
+      if (_quotationLint) _lintRunIn(node, content);
       content = _hyphenated(content, align);
     }
     if (node.hasTitle) _caption(node, labeled: false);
@@ -450,4 +457,56 @@ extension _Paragraphs on PdfConverter {
       block.lines.every(
         (line) => RegExp(r'^\s*(\(\(\(.*?\)\)\)\s*)+$').hasMatch(line),
       );
+
+  /// Whether the quotation lint is on (`quotation-lint`, modern engine):
+  /// quotations set otherwise than The Chicago Manual of Style has them
+  /// (13.9: a hundred words or more set off as a block quotation, fewer
+  /// run in) are reported.
+  bool get _quotationLint =>
+      _document.hasAttr('quotation-lint') &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
+  /// Reports a quotation of a hundred words or more run in to [node]'s
+  /// [markup] (between its double quotation marks).
+  void _lintRunIn(Block node, String markup) {
+    // (The marks as characters or as the references the markup has.)
+    final text = markup
+        .replaceAll(RegExp('<[^>]*>'), '')
+        .replaceAll('&#8220;', '\u201c')
+        .replaceAll('&#8221;', '\u201d');
+    for (final match in RegExp(
+      '\u201c([^\u201c\u201d]*)\u201d',
+    ).allMatches(text)) {
+      final words = RegExp(
+        r"[\p{L}\p{N}][\p{L}\p{N}'\u2019-]*",
+        unicode: true,
+      ).allMatches(match[1]!).length;
+      if (words >= _runInLimit) {
+        logger.warn(
+          'a quotation of $words words run in: one of a hundred words or '
+          'more is set off as a block quotation (Chicago 13.9)',
+          at: node.sourceLocation ?? _at,
+        );
+      }
+    }
+  }
+
+  /// The block quotations of fewer than five lines, laid out in [result]:
+  /// reported (run in, Chicago 13.9).
+  void _lintBlockQuotations(LayoutResult result) {
+    for (final (start, end, at, pitch) in _quotationChecks) {
+      final (from, to) = (result.anchors[start], result.anchors[end]);
+      // (One that goes on to another page is long enough.)
+      if (from == null || to == null || from.page != to.page) continue;
+      final lines = ((from.y - to.y) / pitch).round();
+      if (lines > 0 && lines < _blockLeast) {
+        logger.warn(
+          'a block quotation of $lines '
+          '${lines == 1 ? 'line' : 'lines'}: one shorter than '
+          '$_blockLeast lines is run in (Chicago 13.9)',
+          at: at,
+        );
+      }
+    }
+  }
 }
