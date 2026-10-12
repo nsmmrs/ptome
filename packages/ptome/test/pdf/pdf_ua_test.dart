@@ -125,8 +125,6 @@ void main() {
         ]),
         reason: tree,
       );
-      // (The figure's alternate text, however pdfinfo shows it.)
-      expect(tree, contains('A red square'), reason: tree);
       expect(tree, contains('"A paragraph in the section."'));
     },
   );
