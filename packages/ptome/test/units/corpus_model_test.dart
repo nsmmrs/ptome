@@ -23,6 +23,7 @@ const String _corpus = 'test/units/corpus';
 
 /// The corpus's documents (the files they include aside).
 const List<String> _documents = [
+  'bible/bsb-study/study.adoc',
   'bible/kjv/genesis.adoc',
   'bible/kjv/kjv.adoc',
   'catechism/westminster-larger.adoc',

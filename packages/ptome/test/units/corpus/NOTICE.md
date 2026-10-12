@@ -26,6 +26,37 @@ form no secret scanner mistakes for an API key.
 | [rivers](https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_10m_rivers_lake_centerlines.geojson) | maps: rivers | Public domain (Natural Earth) | `bb854a900ecbd3b4…` |
 | [phrases](https://raw.githubusercontent.com/CrossReferences-org/bible-cross-references/ab3259f89f40b9130d7923e864b26aaa1cdaf3d2/tsv/crossreferences_kjv.tsv) | cross-reference anchors: the phrase each reference belongs to | CC-BY-4.0 (CrossReferences.org: the Treasury of Scripture Knowledge anchored to KJV phrases) | `fdd80ebd94dfb59d…` |
 
+## bible/bsb-study: a study edition (Genesis 1–3, Mark 1)
+
+`study.adoc`, written by `tool/import_study_bible.dart` from these
+sources (unzipped into one folder): the Berean Standard Bible's text and
+translators' notes, OpenBible.info's cross-references, and Tyndale Open
+Study Notes, for a study Bible's page (`themes/bsb-study-theme.yml`).
+
+| Source | Used for | License | SHA-256 |
+| --- | --- | --- | --- |
+| [bsb](https://ebible.org/Scriptures/engbsb_usfm.zip) | text, headings, parallel passages, translators' notes (stream `tn`) | CC0-1.0 (Berean Standard Bible, dedicated to the public domain 2023-04-30) | `09cdf4340d239564…` |
+| [xrefs](https://a.openbible.info/data/cross-references.zip) | cross-references (stream `x`): a verse's 4 most voted with at least 10 votes, in canonical order | CC-BY (OpenBible.info cross-references, www.openbible.info) | `19aafdf923275142…` |
+| [tosn](https://tyndaleopenresources.com/wp-content/themes/tyndale-openresources/files/tyndale_open-studynotes.zip) | study notes (stream `sn`), theme notes and profiles (sidebars), book introductions | CC BY-SA 4.0 (Tyndale Open Study Notes, © 2022 Tyndale House Publishers) | `7b4d5ae088449d5a…` |
+
+Adapted from Tyndale Open Study Notes. The original work by Tyndale
+House Publishers is available for free at
+http://www.tyndaleopenresources.com. This adaptation is licensed under
+the Creative Commons Attribution-ShareAlike 4.0 International License.
+The changes made:
+
+- only the notes, theme notes, profiles and introductions on Genesis 1–3
+  and Mark 1 are kept;
+- each study note is set at the first verse of its passage, a theme note
+  or profile after the paragraph of its first verse, an introduction
+  before its book;
+- the HTML is written as AsciiDoc: its classes as roles (`sn-ref`,
+  `sn-excerpt`, `hebrew`, `sn-list-1`…; `divine-name` as `nd`), italic
+  as emphasis, a note's list paragraphs run into one paragraph, and the
+  links to other passages as plain text;
+- the notes' excerpts, which quote the New Living Translation, are kept
+  as they are beside the Berean Standard Bible's text.
+
 ## catechism
 
 | Source | Used for | License | SHA-256 |

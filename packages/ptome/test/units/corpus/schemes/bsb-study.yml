@@ -1,0 +1,42 @@
+version: 2
+stream:
+  # A study Bible's notes: the translators' (BSB footnotes), the
+  # cross-references keyed by verse in the centre column (OpenBible.info
+  # gives no words to letter), the study notes (Tyndale Open Study Notes,
+  # each opening with its verse in bold) at the foot.
+  tn:
+    placement: "footnote"
+    reset: "verse"
+    origin: "{{chapter}}:{{verse}}"
+    origin-style: "strong"
+  x:
+    placement: "entry"
+    reset: "verse"
+    origin: "{{chapter}}:{{verse}}"
+    entry-role: "xref"
+    origin-style: "strong"
+    note-separator: "; "
+    entry-after: " "
+  sn:
+    placement: "footnote"
+term:
+  divine-name:
+    pattern: "(?<![A-Za-z])(?:LORD|GOD)(?![A-Za-z])"
+    role: "nd"
+    transform: "titlecase"
+level-presentation:
+  bible:
+    book:
+      role: "book"
+      attributes:
+        short-name: "{{book.abbr}}"
+      title: "{{book.name}}"
+    chapter:
+      role: "chapter"
+      attributes:
+        number: "{{chapter}}"
+      title: "{{book.chapter-label}} {{chapter}}"
+    verse:
+      label: "{{^first}}{{^zero}}{{label}}{{/zero}}{{/first}}"
+      label-style: "superscript"
+      label-after: " "

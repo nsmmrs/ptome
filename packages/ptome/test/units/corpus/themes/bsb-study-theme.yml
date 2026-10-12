@@ -1,0 +1,29 @@
+# A study Bible from the BSB study edition (bible/bsb-study): the
+# reference Bible's page (`:look: reference-bible`), the cross-references
+# by verse in its centre column, and at the foot the translators' notes
+# run in, then the study notes in three columns, each opening with its
+# verse in bold, the words it comments on bold too; the notes kept in step
+# with their verses (at least six lines of text a page, each note starting
+# on its verse's page as far as that allows).
+extends: look
+note_streams: [tn, sn]
+note_stream:
+  tn:
+    arrangement: run_in
+    font_size: 7
+  sn:
+    columns: 3
+    column_gap: 9
+    font_size: 6.5
+    line_height: 1.15
+    label_content: ''
+    reference_content: ''
+footnotes:
+  text_min_lines: 6
+  lag: 0
+role:
+  sn-ref: { font_style: bold }
+  sn-excerpt: { font_style: bold }
+  hebrew: { font_style: italic }
+  greek: { font_style: italic }
+  feature: { font_size: 8 }

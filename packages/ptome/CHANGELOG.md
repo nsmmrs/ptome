@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The units corpus has a study edition (`bible/bsb-study`, Genesis 1–3
+  and Mark 1): the Berean Standard Bible with its translators' notes,
+  OpenBible.info's cross-references and Tyndale Open Study Notes, made by
+  `tool/import_study_bible.dart`, and a study Bible's theme for it.
 - The `reference-bible` and `readers-bible` looks: two columns with the
   cross-references between them, chapter numbers dropped into the
   first verse, light verse numbers and the page's verses in the running
