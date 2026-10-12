@@ -1845,4 +1845,8 @@ final class PdfConverter extends BuiltInConverter
 
   /// The stream of each note set in one, by its anchor.
   final Map<String, String> _noteStreamOf = {};
+
+  /// The stream of each note set in a margin column of its own, by its
+  /// anchor.
+  final Map<String, String> _sideNoteStreamOf = {};
 }

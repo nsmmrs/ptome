@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FlowLayout.sideNoteStreams` (`SideNoteStream`) and `sideNoteStreamOf`:
+  side notes in columns of their own. `NoteStream.runIn` sets a stream's
+  notes in a region as one box; `NoteStream.joined` runs in paragraphs
+  and `JoinableContent`.
 - `BaselineGrid.fromFirstLine`: each region's grid from its first line.
 - Table cells are laid out once: the content a row measured is placed as
   it is where it fits whole.

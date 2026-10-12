@@ -196,6 +196,8 @@ extension _DocumentParts on PdfConverter {
     _tocNoHeader = _tocNoFooter = false;
     _notes.clear();
     _sideNotes.clear();
+    _noteStreamOf.clear();
+    _sideNoteStreamOf.clear();
     _sideNoteTexts.clear();
     _sideCount = 0;
     _layoutLabels.clear();
@@ -335,6 +337,8 @@ extension _DocumentParts on PdfConverter {
       noteStreams: _layoutNoteStreams(),
       noteStreamOf: _noteStreamOf,
       sideNotes: _sideNotes,
+      sideNoteStreams: _layoutSideNoteStreams(sided: media == 'prepress'),
+      sideNoteStreamOf: _sideNoteStreamOf,
       sideColumn: _sideNotes.isEmpty
           ? null
           : (number, template) =>

@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Note streams run in (`note_stream_<name>_arrangement: run_in`, one
+  paragraph a page, as an apparatus) or in a margin column of their own
+  (`note_stream_<name>_column`, each note beside its reference: a
+  Talmud page's commentaries).
 - Line numbers restart at units (`line_numbers_restart_units`), their
   labels in the margin (Stephanus sections, Bekker columns); a baseline
   grid may start at each page's first line

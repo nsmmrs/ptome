@@ -462,7 +462,7 @@ final class _Line {
 
 /// Text laid out in lines (Knuth and Plass's line breaking, or for code
 /// one line at a time with a hanging indent), as plain_pdf custom content.
-final class TextBox implements ShapedContent, BaselineContent {
+final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// The text of [fragments] (from the markup) starting from [state],
   /// laid out by [layout].
   factory(
@@ -829,6 +829,33 @@ final class TextBox implements ShapedContent, BaselineContent {
           for (final item in _items)
             if (item.format.fragment.label != null) item.text,
         ].join('\u0000');
+
+  /// This text and [following] texts, in order, [separator] between each
+  /// in the style the text before it ends in, as one text (notes run in).
+  @override
+  CustomContent? joinedWith(
+    List<CustomContent> following, {
+    required String separator,
+  }) {
+    if (following.any((content) => content is! TextBox)) return null;
+    final items = [for (final item in _items) item.copy()];
+    for (final other in following.cast<TextBox>()) {
+      if (items.lastOrNull case final last?) {
+        items.add(
+          _Item(separator, last.format, defaultColor: last.defaultColor),
+        );
+      }
+      items.addAll([for (final item in other._items) item.copy()]);
+    }
+    return TextBox._(
+      items,
+      _state,
+      _layout,
+      _context,
+      first: first,
+      continuedIndent: continuedIndent,
+    );
+  }
 
   /// Its first line's baseline below its top at [width] (the baseline
   /// grid's), none without text.

@@ -2697,6 +2697,40 @@ templates:
       );
     });
 
+    test('a note stream run in, or in a margin column of its own', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      const source =
+          '= Notes\n:units: bible, kjv\n\n== @GEN\n\n=== @1\n\n'
+          '@ In the beginning ##God##note:tn[Heb. Elohim] created.\n\n'
+          '@ And the ##earth##note:tn[Heb. erets] was without form.\n\n'
+          '@ And ##God##note:tn[Heb. said] said.\n';
+      String pdf(String keys) =>
+          _pdf(source, theme: 'note_streams: [tn]\nnote_stream:\n  tn:\n$keys');
+      // Run in: the three notes on one line.
+      final runIn = _pages(pdf('    arrangement: run_in\n'))
+          .expand((page) => page)
+          .where((line) => line.contains('Heb.'))
+          .toList();
+      expect(runIn, hasLength(1));
+      expect(runIn.single, contains('Elohim'));
+      expect(runIn.single, contains('erets'));
+      // In the left margin, each beside its verse.
+      final side = pdf('    column: left\n    font_size: 7\n');
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', side, '-']).stdout as String;
+      final notes = RegExp(r'xMax="([\d.]+)"[^>]*>Heb\.<')
+          .allMatches(bbox)
+          .map((m) => double.parse(m[1]!))
+          .toList();
+      expect(notes, hasLength(3));
+      expect(notes.every((x) => x < 48), isTrue, reason: '$notes');
+    });
+
     test('a note stream at the foot of the page, apart, by its own keys', () {
       // The sample's translators' notes (the `tn` stream), set apart from
       // the footnotes, red by their own keys.

@@ -851,11 +851,64 @@ extension _InlineElements on PdfConverter {
               columnGap:
                   _length('footnotes_column_gap', _rootFontSize) ??
                   _rootFontSize,
+              // (`note_stream_<name>_arrangement: run_in`: its notes in one
+              // paragraph, `_run_in_separator` between them.)
+              runIn: _s('footnotes_arrangement') == 'run_in'
+                  ? NoteStream.joined(
+                      separator: _s('footnotes_run_in_separator') ?? '\u2003',
+                    )
+                  : null,
             );
           });
           return made;
         }),
   ];
+
+  /// The note streams set in a margin column of their own
+  /// (`note_stream_<name>_column`: `left`, `right`, `outside`, `inside`),
+  /// each note level with its reference: a Talmud page's commentaries, a
+  /// marginal apparatus.
+  List<SideNoteStream> _layoutSideNoteStreams({required bool sided}) => [
+    for (final stream in _noteStreams)
+      if (_sideNoteStreamOf.containsValue(stream))
+        SideNoteStream(
+          stream,
+          (number, template) =>
+              _streamColumn(stream, number, template, sided: sided),
+        ),
+  ];
+
+  /// The margin column of note stream [stream] on page [number]: in the
+  /// margin its `_column` names, `_column_offset` (half an em) from the
+  /// text, `_column_width` wide (the margin's width less twice the
+  /// offset); null when it has no room.
+  Rect? _streamColumn(
+    String stream,
+    int number,
+    PageTemplate template, {
+    required bool sided,
+  }) {
+    final keys = _Keys(this, ['note_stream_${stream.replaceAll('-', '_')}']);
+    final m = template.margins;
+    final size = template.size;
+    final recto = !sided || number.isOdd;
+    final right = switch (keys.string('column')) {
+      'right' => true,
+      'outside' => recto,
+      'inside' => !recto,
+      _ => false,
+    };
+    final offset =
+        keys.length('column_offset', _rootFontSize) ?? _rootFontSize / 2;
+    final margin = right ? m.right : m.left;
+    final width =
+        keys.length('column_width', _rootFontSize) ?? margin - 2 * offset;
+    if (width <= 0) return null;
+    final left = right
+        ? size.right - m.right + offset
+        : size.left + m.left - offset - width;
+    return Rect(left, size.bottom + m.bottom, width, size.height - m.vertical);
+  }
 
   /// The rule above the footnotes at the bottom of a page: a third of the
   /// column long (`footnotes_separator_length`), `footnotes_separator_width`
@@ -945,8 +998,14 @@ extension _InlineElements on PdfConverter {
               _footnoteLabels[index] = '$label - $sectionText';
             }
             final id = '_footnoteref_$index';
-            if (stream != null) _noteStreamOf[id] = stream;
-            _notes[id] = CustomBox(
+            // (A stream in a margin column: beside its anchor.)
+            final side = stream != null && _s('footnotes_column') != null;
+            if (side) {
+              _sideNoteStreamOf[id] = stream;
+            } else if (stream != null) {
+              _noteStreamOf[id] = stream;
+            }
+            (side ? _sideNotes : _notes)[id] = CustomBox(
               _textBox(
                 '<a id="_footnotedef_$index">$_dummyText</a>'
                 '${_footnoteNoteLabel(index, label)}$gap${footnote.text}',

@@ -11,10 +11,31 @@ LayoutBox _group(Set<LayoutBox> groups, List<LayoutBox> boxes) {
 
 extension _Notes on _Pass {
   /// Sets the side notes beside their anchors on every page (see
-  /// [FlowLayout.sideNotes]), the pages' text as it is.
+  /// [FlowLayout.sideNotes]), the pages' text as it is: the main series
+  /// in the side column, each of [FlowLayout.sideNoteStreams] in its own.
   void _placeSideNotes() {
-    final notes = layout.sideNotes;
-    final column = layout.sideColumn;
+    unsetSideNotes.clear();
+    for (final page in pages) {
+      page.side.clear();
+    }
+    final streamOf = layout.sideNoteStreamOf;
+    _placeSideStream({
+      for (final MapEntry(:key, :value) in layout.sideNotes.entries)
+        if (!streamOf.containsKey(key)) key: value,
+    }, layout.sideColumn);
+    for (final stream in layout.sideNoteStreams) {
+      _placeSideStream({
+        for (final MapEntry(:key, :value) in layout.sideNotes.entries)
+          if (streamOf[key] == stream.name) key: value,
+      }, stream.column);
+    }
+  }
+
+  /// Sets [notes] beside their anchors in [column] on every page.
+  void _placeSideStream(
+    Map<String, LayoutBox> notes,
+    Rect? Function(int number, PageTemplate template)? column,
+  ) {
     if (notes.isEmpty || column == null) return;
     // Each page's notes, in reading order (the left column's, then the
     // right's, as a reference Bible's center column has them).
@@ -26,14 +47,12 @@ extension _Notes on _Pass {
     }
     // The notes waiting for room, with their names.
     var carried = <(String, LayoutBox)>[];
-    unsetSideNotes.clear();
     for (var i = 0; i < pages.length || carried.isNotEmpty; i++) {
       // Notes still waiting when the text has ended go on pages of their
       // own, with only their margin (as long as a page takes one).
       final added = i == pages.length;
       if (added) pages.add(_newPage(null));
       final page = pages[i];
-      page.side.clear();
       final full = column(i + 1, page.template);
       if (full == null) {
         if (added) break;
@@ -133,7 +152,9 @@ extension _Notes on _Pass {
           if (streams[stream.name] case final notes?)
             _group(groups, [
               ?stream.separator,
-              if (stream.columns > 1)
+              if (stream.runIn case final runIn?)
+                runIn(notes)
+              else if (stream.columns > 1)
                 ColumnsBox(
                   notes,
                   count: stream.columns,

@@ -503,6 +503,87 @@ void main() {
     expect(second['n8b'], second['l10']);
   });
 
+  test('side note streams, each in a column of its own', () {
+    final document = RecordingDocument();
+    FlowLayout(
+          template: PageTemplate(
+            Rect(0, 0, 400, 40 + 8 * _lineHeight),
+            margins: const EdgeInsets(
+              top: 20,
+              bottom: 20,
+              left: 100,
+              right: 100,
+            ),
+          ),
+          sideNotes: {
+            'a1': _para('rashi1'),
+            'a2': _para('tos2'),
+            'a3': _para('rashi3'),
+          },
+          sideNoteStreams: [
+            SideNoteStream(
+              'rashi',
+              (number, template) => Rect(10, 20, 80, 8 * _lineHeight),
+            ),
+            SideNoteStream(
+              'tosafot',
+              (number, template) => Rect(310, 20, 80, 8 * _lineHeight),
+            ),
+          ],
+          sideNoteStreamOf: const {
+            'a1': 'rashi',
+            'a2': 'tosafot',
+            'a3': 'rashi',
+          },
+        )
+        .layout([
+          for (var i = 1; i <= 4; i++)
+            BlockBox([_para('l$i')], style: BoxStyle(anchor: 'a$i')),
+        ])
+        .render(document);
+    final at = {
+      for (final call in document.pages.single.canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    // Each stream in its margin, level with its lines.
+    expect(at['rashi1']!.$1, closeTo(10, 1e-6));
+    expect(at['rashi3']!.$1, closeTo(10, 1e-6));
+    expect(at['tos2']!.$1, closeTo(310, 1e-6));
+    expect(at['rashi1']!.$2, at['l1']!.$2);
+    expect(at['tos2']!.$2, at['l2']!.$2);
+    expect(at['rashi3']!.$2, at['l3']!.$2);
+  });
+
+  test('a note stream run in: its notes in a region as one paragraph', () {
+    final document = RecordingDocument();
+    FlowLayout(
+          template: _rows(12),
+          notes: {for (var i = 1; i <= 3; i++) 'a$i': _para('app$i')},
+          noteStreams: [
+            NoteStream('apparatus', runIn: NoteStream.joined(separator: ' ')),
+          ],
+          noteStreamOf: {for (var i = 1; i <= 3; i++) 'a$i': 'apparatus'},
+        )
+        .layout([
+          for (var i = 1; i <= 3; i++)
+            BlockBox([_para('l$i')], style: BoxStyle(anchor: 'a$i')),
+        ])
+        .render(document);
+    final at = {
+      for (final call in document.pages.single.canvas.calls)
+        if (RegExp(r'^glyphs "\s*(\S+)\s*" at (\S+) (\S+)').firstMatch(call)
+            case final m?)
+          m[1]!: (double.parse(m[2]!), double.parse(m[3]!)),
+    };
+    // The three notes on one line, one after another, under the text.
+    expect(at['app2']!.$2, at['app1']!.$2);
+    expect(at['app3']!.$2, at['app1']!.$2);
+    expect(at['app2']!.$1, greaterThan(at['app1']!.$1));
+    expect(at['app1']!.$2, lessThan(at['l3']!.$2));
+  });
+
   test('side notes stay above the notes at the bottom of the page', () {
     final document = RecordingDocument();
     FlowLayout(

@@ -693,6 +693,17 @@ abstract interface class ShapedContent implements CustomContent {
   });
 }
 
+/// Custom content that can be set one after another with other content
+/// in one run (notes run in, [NoteStream.joined]).
+abstract interface class JoinableContent implements CustomContent {
+  /// This content and [following], in order, [separator] between each,
+  /// as one; null when they don't join (content of another kind).
+  CustomContent? joinedWith(
+    List<CustomContent> following, {
+    required String separator,
+  });
+}
+
 /// Custom content set in lines that knows where its first baseline is:
 /// on a [BaselineGrid] it starts where that falls on a line of the grid.
 abstract interface class BaselineContent implements CustomContent {
@@ -701,13 +712,90 @@ abstract interface class BaselineContent implements CustomContent {
   double? firstBaseline(double width);
 }
 
+/// A series of side notes in a column of its own
+/// ([FlowLayout.sideNoteStreams]).
+@immutable
+final class SideNoteStream {
+  /// The stream [name], set in [column].
+  const new(this.name, this.column);
+
+  /// The stream's name ([FlowLayout.sideNoteStreamOf]).
+  final String name;
+
+  /// The column its notes are set in on a page, from its number (1-based)
+  /// and its template, or null for none there.
+  final Rect? Function(int number, PageTemplate template) column;
+}
+
 /// A series of notes at the bottom of a region besides the main one
 /// ([FlowLayout.noteStreams]): its notes under its [separator], in
 /// [columns] [columnGap] apart, balanced.
 @immutable
 final class NoteStream {
   /// The stream [name].
-  const new(this.name, {this.separator, this.columns = 1, this.columnGap = 12});
+  const new(
+    this.name, {
+    this.separator,
+    this.columns = 1,
+    this.columnGap = 12,
+    this.runIn,
+  });
+
+  /// Its notes in a region as one box (run in: one paragraph, as a
+  /// critical apparatus sets its entries), if they are; else each its own.
+  /// [joined] runs in paragraphs and [JoinableContent].
+  final LayoutBox Function(List<LayoutBox> notes)? runIn;
+
+  /// A [runIn] that sets notes one after another in one paragraph,
+  /// [separator] between them: notes that are all [ParagraphBox]es, or
+  /// all [CustomBox]es of [JoinableContent] that join; others as they
+  /// are.
+  static LayoutBox Function(List<LayoutBox> notes) joined({
+    String separator = '\u2003',
+  }) => (notes) {
+    if (notes.length < 2) return BlockBox(notes);
+    if (notes.every((note) => note is ParagraphBox)) {
+      final paragraphs = [for (final note in notes) note as ParagraphBox];
+      final first = paragraphs.first;
+      final style = first.paragraph.content
+          .whereType<TextRun>()
+          .firstOrNull
+          ?.style;
+      return ParagraphBox(
+        Paragraph(
+          [
+            for (final (i, box) in paragraphs.indexed) ...[
+              if (i > 0 && style != null) TextRun(separator, style),
+              ...box.paragraph.content,
+            ],
+          ],
+          align: first.paragraph.align,
+          lineHeight: first.paragraph.lineHeight,
+          firstLineIndent: first.paragraph.firstLineIndent,
+          hyphenator: first.paragraph.hyphenator,
+          breakLongWords: first.paragraph.breakLongWords,
+          hyphenRepetition: first.paragraph.hyphenRepetition,
+        ),
+        style: first.style,
+        orphans: first.orphans,
+        widows: first.widows,
+      );
+    }
+    if (notes
+        case [
+          CustomBox(content: final JoinableContent first, :final style),
+          ...final rest,
+        ]
+        when rest.every((note) => note is CustomBox)) {
+      if (first.joinedWith([
+            for (final note in rest) (note as CustomBox).content,
+          ], separator: separator)
+          case final joined?) {
+        return CustomBox(joined, style: style);
+      }
+    }
+    return BlockBox(notes);
+  };
 
   /// The stream's name ([FlowLayout.noteStreamOf]).
   final String name;

@@ -75,6 +75,9 @@ abstract interface class Graphic
 abstract interface class Hyphenator
   Hyphenator()
   List<int> hyphenate(String word)
+abstract interface class JoinableContent implements CustomContent
+  CustomContent? joinedWith(List<CustomContent> following, {required String separator})
+  JoinableContent()
 abstract interface class LayoutDocument<P extends LayoutPage>
   LayoutDocument<P>()
   P addPage(Rect mediaBox, {Rect? bleedBox, Rect? trimBox})
@@ -323,14 +326,16 @@ final class FloatShape
   double bandHeight
 final class FlowLayout
   BaselineGrid? baselineGrid
-  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2, BaselineGrid? baselineGrid})
+  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, List<SideNoteStream> sideNoteStreams = const [], Map<String, String> sideNoteStreamOf = const {}, double sideNoteGap = 2, BaselineGrid? baselineGrid})
   LayoutBox? noteSeparator
   LayoutResult layout(List<LayoutBox> content, {LayoutResult? reuse, int unchangedBefore = 0, Set<int>? changedPages})
   LineBreaker lineBreaker
   List<NoteStream> noteStreams
+  List<SideNoteStream> sideNoteStreams
   Map<String, LayoutBox> notes
   Map<String, LayoutBox> sideNotes
   Map<String, String> noteStreamOf
+  Map<String, String> sideNoteStreamOf
   Map<String?, PageTemplate> templates
   PageBreaker pageBreaker
   PageTemplate Function(PageTemplate, int)? templateForPage
@@ -455,8 +460,10 @@ final class NamedTarget extends LinkTarget
   NamedTarget(String name)
   String name
 final class NoteStream
+  LayoutBox Function(List<LayoutBox>) joined({String separator = '\u2003'})
+  LayoutBox Function(List<LayoutBox>)? runIn
   LayoutBox? separator
-  NoteStream(String name, {LayoutBox? separator, int columns = 1, double columnGap = 12})
+  NoteStream(String name, {LayoutBox? separator, int columns = 1, double columnGap = 12, LayoutBox Function(List<LayoutBox>)? runIn})
   String name
   double columnGap
   int columns
@@ -563,6 +570,10 @@ final class ShapedGlyph
   double advance
   double kerning
   int id
+final class SideNoteStream
+  Rect? Function(int, PageTemplate) column
+  SideNoteStream(String name, Rect? Function(int, PageTemplate) column)
+  String name
 final class SpacerBox extends LayoutBox
   SpacerBox(double height)
   double height

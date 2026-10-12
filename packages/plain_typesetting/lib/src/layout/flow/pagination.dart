@@ -247,6 +247,8 @@ final class FlowLayout {
     this.noteStreamOf = const {},
     this.sideNotes = const {},
     this.sideColumn,
+    this.sideNoteStreams = const [],
+    this.sideNoteStreamOf = const {},
     this.sideNoteGap = 2,
     this.baselineGrid,
   }) : templates = {null: ?template, ...?templates},
@@ -317,6 +319,15 @@ final class FlowLayout {
   /// The column [sideNotes] are set in on a page, from its number
   /// (1-based) and its template, or null for none there.
   final Rect? Function(int number, PageTemplate template)? sideColumn;
+
+  /// Series of [sideNotes] each in a column of its own (a Talmud page's
+  /// commentaries around its text, a critical edition's marginal
+  /// apparatus), set as the main series is in [sideColumn].
+  final List<SideNoteStream> sideNoteStreams;
+
+  /// The stream of each side note in one ([SideNoteStream.name]), by its
+  /// anchor; the others are the main series.
+  final Map<String, String> sideNoteStreamOf;
 
   /// The space between two side notes.
   final double sideNoteGap;
