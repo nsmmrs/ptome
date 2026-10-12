@@ -1502,6 +1502,56 @@ extension _DocumentParts on PdfConverter {
     if (image != null) {
       _drawPageImage(canvas, image, size: (pageWidth, pageHeight));
     }
+    _pageFrame(canvas, page);
+  }
+
+  /// The rules framing the page's text (`page_frame_width`, a width or
+  /// widths from the outside in: `[3, 1]`, the Oxford rule's thick and
+  /// thin; `page_frame_gap` between them, `page_frame_color`,
+  /// `page_frame_offset` outside the text area; modern engine).
+  void _pageFrame(Canvas canvas, PageInfo page) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return;
+    final widths = switch (_theme.value('page_frame_width')) {
+      ThemeNumber(:final value) when value > 0 => [value.toDouble()],
+      ThemeList(:final values) => [
+        for (final value in values) PdfConverter._toPoints(value),
+      ],
+      _ => const <double>[],
+    };
+    if (widths.isEmpty) return;
+    final color = PdfConverter._color(
+      _c('page_frame_color') ?? _c('base_font_color'),
+    );
+    if (color == null) return;
+    final gap =
+        _length('page_frame_gap', _rootFontSize) ?? widths.reduce(math.max);
+    final offset = _length('page_frame_offset', _rootFontSize) ?? _rootFontSize;
+    final size = page.template.size;
+    final margins = page.template.margins;
+    // From the outside in: the first rule [offset] outside the text area
+    // and the others its width and the gap inside each other.
+    final inner =
+        widths.fold<double>(0, (a, b) => a + b) + gap * (widths.length - 1);
+    var out = offset + inner;
+    canvas
+      ..save()
+      ..setStrokeColor(color);
+    for (final width in widths) {
+      final inset = out - width / 2;
+      canvas
+        ..setLineWidth(width)
+        ..rect(
+          Rect(
+            size.left + margins.left - inset,
+            size.bottom + margins.bottom - inset,
+            size.width - margins.horizontal + 2 * inset,
+            size.height - margins.vertical + 2 * inset,
+          ),
+        )
+        ..stroke();
+      out -= width + gap;
+    }
+    canvas.restore();
   }
 
   /// Paints the foreground of [page] (the gem's `stamp_foreground_image`).

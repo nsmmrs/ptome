@@ -247,8 +247,9 @@ css: |
 # columns where columns are wanted, display-italic pull quotes. Stand-in:
 # Zilla Slab for the slab.
 #
-# In print: the tabloid page (about 11 × 14½ in), four columns, slab
-# heads, red italic pull quotes between thick and thin rules.
+# In print: the tabloid page (about 11 × 14½ in) in an Oxford-rule frame,
+# four columns, slab heads, red italic pull quotes between thick and thin
+# rules.
 extends: magazine
 tokens:
   font:
@@ -265,6 +266,7 @@ pdf:
     title: { font_size: 48, line_height: 1 }
     subtitle: { font_size: 16 }
   page_columns: 4
+  page_frame: { width: [4, 1], gap: 3, offset: 14, color: '1A1A1A' }
   heading: { h2: { font_style: bold } }
   quote:
     role:

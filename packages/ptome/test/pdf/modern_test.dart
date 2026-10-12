@@ -2628,6 +2628,25 @@ templates:
       expect(quote, lessThan(edge - 0.5));
     });
 
+    test('a page frame: rules around the text, from the outside in', () {
+      const theme =
+          'page_frame:\n  width: [3, 1]\n  gap: 2\n  offset: 10\n'
+          "  color: 'FF0000'\n";
+      final content = _content(_pdf('Text.\n', theme: theme));
+      expect(content, contains('1 0 0 RG'));
+      // The thick rule outside, the thin one inside it.
+      final rules = RegExp(r'([\d.]+) w\n([\d.-]+) ([\d.-]+) [\d.]+ [\d.]+ re')
+          .allMatches(content)
+          .map((m) => (double.parse(m[1]!), double.parse(m[2]!)))
+          .toList();
+      expect(rules.map((r) => r.$1), containsAllInOrder([3, 1]));
+      expect(rules.first.$2, lessThan(rules.last.$2));
+      expect(
+        _content(_pdf('Text.\n', theme: theme, compat: true)),
+        isNot(contains('1 0 0 RG')),
+      );
+    });
+
     test('tracking: a role, a heading, and capitals by themselves', () {
       // Where the word [word] starts and ends on the first page of [pdf].
       (double, double) extent(String pdf, String word) {

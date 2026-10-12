@@ -154,7 +154,7 @@ display optical sizes, `Bodoni Moda 28pt`, `Inter 18pt`).
 | `magazine` | 8⅜ × 10⅞ in | 3, a pica apart | Libre Caslon Text 9½/12½, justified |
 | `magazine-1950s` | about 10 × 13 in, wide margins | 2, two picas apart | Libre Bodoni 10/14, ragged |
 | `magazine-1960s` | about 265 × 335 mm | 3, a line apart | Inter 9/12, flush left |
-| `magazine-1970s` | about 11 × 14½ in | 4 | Libre Caslon Text 9½/12½ |
+| `magazine-1970s` | about 11 × 14½ in, an Oxford-rule frame | 4 | Libre Caslon Text 9½/12½ |
 | `magazine-1980s` | 8⅜ × 10⅞ in | 3, hairlines between | Archivo 9/11, justified |
 | `broadsheet` | about 13½ × 22¾ in | 6, hairlines between | Gentium Book Plus 9/10.8 |
 | `compact` | 315 × 470 mm (the Berliner) | 5 | Source Serif 4 9/12 |

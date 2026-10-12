@@ -68,6 +68,9 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- A page frame in the PDF (`page_frame_*`): rules around the text area,
+  an Oxford rule's thick and thin; the 1970s magazine look has one in
+  print as on the web.
 - Conversions in one process (batch, serve) share the machine's font
   index and each installed font parsed once (its shaper and kerning); a
   conversion's own fonts are layered over the index.
