@@ -926,15 +926,46 @@ extension _InlineElements on PdfConverter {
               // (`note_stream_<name>_arrangement: run_in`: its notes in one
               // paragraph, `_run_in_separator` between them.)
               runIn: _s('footnotes_arrangement') == 'run_in'
-                  ? NoteStream.joined(
-                      separator: _s('footnotes_run_in_separator') ?? '\u2003',
-                    )
+                  ? NoteStream.joined(separator: _runInSeparator())
                   : null,
             );
           });
           return made;
         }),
   ];
+
+  /// The space between a run-in stream's notes
+  /// (`footnotes_run_in_separator`, an em space): when the notes' face has
+  /// none of its characters, as many no-break spaces as make its width (an
+  /// em for the em space), not a missing glyph.
+  String _runInSeparator() {
+    final separator = _s('footnotes_run_in_separator') ?? '\u2003';
+    final face = _fonts.font(_font.family, _font.style);
+    if (separator.runes.every(face.hasGlyph)) return separator;
+    final space = face.widthOf('\u00a0', 1, kerning: false);
+    final width = separator.runes.fold<double>(
+      0,
+      (sum, rune) =>
+          sum +
+          (face.hasGlyph(rune)
+              ? face.widthOf(String.fromCharCode(rune), 1, kerning: false)
+              : _emWidthOf(rune)),
+    );
+    if (space <= 0) return ' ';
+    return '\u00a0' * math.max(1, (width / space).round());
+  }
+
+  /// The width, in ems, of the space [rune] (Unicode's spaces' widths).
+  static double _emWidthOf(int rune) => switch (rune) {
+    0x2003 => 1,
+    0x2002 => 0.5,
+    0x2004 => 1 / 3,
+    0x2005 => 0.25,
+    0x2006 => 1 / 6,
+    0x2009 => 0.2,
+    0x200A => 0.1,
+    _ => 0.25,
+  };
 
   /// The note streams set in a margin column of their own
   /// (`note_stream_<name>_column`: `left`, `right`, `outside`, `inside`),

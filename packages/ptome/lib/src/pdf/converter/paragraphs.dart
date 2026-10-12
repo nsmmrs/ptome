@@ -6,6 +6,15 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
+  /// The roles of paragraphs a heading for the margin passes
+  /// (`heading_h<n>_margin_skip_roles`: a pericope's parallel passages).
+  Set<String> _marginSkipRoles(String category) =>
+      switch (_keys(category).value('skip_roles')) {
+        ThemeList(:final values) => {for (final v in values) v.rubyString},
+        ThemeString(:final value) => value.split(RegExp(r'[\s,]+')).toSet(),
+        _ => const <String>{},
+      };
+
   /// The drop waiting for [node], when it takes it: a paragraph with none
   /// of the roles `heading_h<n>_drop_skip_roles` names (a psalm's title,
   /// a heading's parallel passages, which go before the drop).
@@ -211,6 +220,14 @@ extension _Paragraphs on PdfConverter {
         }
         break;
       }
+    }
+    // (A section's heading for the margin, hung left of the first line.)
+    if (_pendingMargin case final margin?
+        when !node.roles.any(_marginSkipRoles(margin.category).contains)) {
+      _pendingMargin = null;
+      final id = '$hangAnchorPrefix${_hungLabels.length}';
+      _hungLabels[id] = (margin.text, margin.font);
+      content = '<a id="$id">$_dummyText</a>$content';
     }
     content = _hyphenated(content, align);
     if (node.hasTitle) _caption(node, labeled: false);

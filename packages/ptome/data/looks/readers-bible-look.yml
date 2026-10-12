@@ -1,9 +1,9 @@
 # A reader's edition of the Bible from a document in units (`:units:
 # bible, kjv`), the text as a book's: one column, no verse numbers, no
 # cross-references (the translators' notes stay at the foot); each
-# chapter's number dropped two lines into its first verse (a reader's edition such as the ESV Reader's sets
-# it in the margin, which the PDF doesn't yet do for a heading); the
-# running head the page's first and last verse, to find a passage by.
+# chapter's number in the margin beside its first line, as a reader's
+# edition such as the ESV Reader's sets it; the running head the page's
+# first and last verse, to find a passage by.
 # A 5½ × 8½ in page, the text 11 on 14.
 #
 # Set in Crimson Pro (`ptome doctor --look readers-bible`).
@@ -17,6 +17,14 @@ tokens:
 pdf:
   page:
     columns: 1
+  heading:
+    # (The chapter's number in the margin, not dropped into the text.)
+    h3_drop_lines: 0
+    h3_display: margin
+    h3_margin_content: '{{attr-number}}'
+    h3_margin_font_size: 18
+    h3_margin_font_style: bold
+    h3_margin_skip_roles: [parallel, psalm-title]
   units:
     verse:
       label_display: none

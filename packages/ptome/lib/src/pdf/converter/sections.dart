@@ -143,7 +143,29 @@ extension _Sections on PdfConverter {
       ).trim();
       if (dropText.isEmpty) dropText = null;
     }
-    final hidden = section.hasOption('notitle') || dropText != null;
+    // `heading_h<n>_display: margin` (modern engine): the heading hung in
+    // the margin left of the first line of the section's first paragraph
+    // (a reader's edition's chapter number), its text from
+    // `heading_h<n>_margin_content` (the numeral by default), styled by
+    // `heading_h<n>_margin_font_*`.
+    _pendingMargin = null;
+    String? marginText;
+    if (dropText == null &&
+        _keys('heading_h$hlevel').string('display') == 'margin' &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      marginText = _render(
+        _keys('heading_h$hlevel').string('margin_content') ?? '{{numeral}}',
+        {
+          'title': section.title,
+          'numeral': section.numeral,
+          for (final MapEntry(:key, :value) in section.attributes.entries)
+            'attr-$key': value,
+        },
+      ).trim();
+      if (marginText.isEmpty) marginText = null;
+    }
+    final hidden =
+        section.hasOption('notitle') || dropText != null || marginText != null;
     final part = sectname == 'part';
     final chapterlike =
         !part &&
@@ -234,6 +256,13 @@ extension _Sections on PdfConverter {
           text: text,
           category: 'heading_h${hlevel}_drop',
           lines: dropLines,
+        );
+      }
+      if (marginText case final text?) {
+        _pendingMargin = (
+          text: text,
+          font: _themeFont('heading_h${hlevel}_margin', _font),
+          category: 'heading_h${hlevel}_margin',
         );
       }
       _sections.add((section, anchor));

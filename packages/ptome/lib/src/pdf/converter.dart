@@ -613,6 +613,10 @@ final class PdfConverter extends BuiltInConverter
   /// left end of its line.
   List<(int, double, double, String, _FontState)> _hungAt = const [];
 
+  /// A section heading waiting to be hung in the margin of its first
+  /// paragraph (`heading_h<n>_display: margin`).
+  ({String text, _FontState font, String category})? _pendingMargin;
+
   /// The background images of the running content, by periphery
   /// (`header`, `footer`).
   final Map<String, _PageImage?> _runningBackgrounds = {};

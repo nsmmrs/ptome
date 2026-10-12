@@ -3114,6 +3114,62 @@ templates:
       expect(x('Poem'), closeTo(x('poem'), 0.5));
     });
 
+    test('a heading in the margin: a chapter number left of its text', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      final pdf = _pdf(
+        '= Bible\n:units: bible, kjv\n:doctype: book\n\n== @GEN\n\n'
+        '=== @1\n\n@ Opening words of the chapter.\n@ More words.\n\n'
+        '=== @2\n\n@ Second chapter words.\n',
+        theme:
+            'heading:\n  h3:\n    display: margin\n'
+            '    margin_font_size: 16\n'
+            "    margin_content: '{{attr-number}}'\n",
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      (double, double) at(String word, {String edge = 'xMin'}) {
+        final m = RegExp('$edge="([\\d.]+)"[^>]*yMax="([\\d.]+)">$word<')
+            .firstMatch(bbox)!;
+        return (double.parse(m[1]!), double.parse(m[2]!));
+      }
+
+      // No heading line: the numeral left of the first line, about on its
+      // baseline (set larger), the chapter's words where they were.
+      expect(bbox, isNot(contains('>Chapter<')));
+      // (The chapter's numeral, set larger than verse 2's number.)
+      final twos = [
+        for (final m in RegExp(
+          r'yMin="([\d.]+)" xMax="([\d.]+)" yMax="([\d.]+)">2<',
+        ).allMatches(bbox))
+          (
+            double.parse(m[3]!) - double.parse(m[1]!),
+            double.parse(m[2]!),
+            double.parse(m[3]!),
+          ),
+      ]..sort((a, b) => b.$1.compareTo(a.$1));
+      final (_, numeral, numeralBottom) = twos.first;
+      final (text, textBottom) = at('Second');
+      expect(numeral, lessThan(text));
+      expect(numeralBottom, closeTo(textBottom, 3));
+    });
+
+    test('run-in notes in a face without an em space: spaces, no ?', () {
+      final pdf = _pdf(
+        'Text.footnote:[First note.] More.footnote:[Second note.]\n',
+        theme:
+            'base:\n  font_family: Times-Roman\n'
+            'footnotes:\n  arrangement: run_in\n  font_family: Times-Roman\n',
+      );
+      final text = _pages(pdf).expand((page) => page).join('\n');
+      expect(text, contains('note.'));
+      expect(text, isNot(contains('?')));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

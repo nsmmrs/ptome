@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF headings in the margin (`heading_h<n>_display: margin`): a
+  reader's edition's chapter numbers beside the first line, the
+  `readers-bible` look's now. A run-in note stream's separator in a face
+  without the em space is no-break spaces of its width, not a missing
+  glyph.
 - A study Bible's page from open data, set as the Reformation Study
   Bible's samples (`test/units/corpus/themes/rsb-study-theme.yml`), with
   its acceptance and verdict in `doc/study-bible.md`. The Bible looks set
