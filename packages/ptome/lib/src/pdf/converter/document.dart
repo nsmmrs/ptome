@@ -208,6 +208,11 @@ extension _DocumentParts on PdfConverter {
     _tocNoHeader = _tocNoFooter = false;
     _notes.clear();
     _sideNotes.clear();
+    // (`index-sort`, modern engine: Chicago's letter-by-letter or
+    // word-by-word order.)
+    _index.order = asciidoctorCompat(document, CompatFormat.pdf)
+        ? IndexOrder.asciidoctor
+        : IndexOrder.of(document);
     _noteStreamOf.clear();
     _sideNoteStreamOf.clear();
     _sideNoteTexts.clear();

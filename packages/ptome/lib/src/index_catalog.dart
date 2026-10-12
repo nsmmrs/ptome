@@ -7,6 +7,7 @@ library;
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/document.dart';
+import 'package:ptome/src/index_order.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/section.dart';
 
@@ -16,8 +17,11 @@ typedef IndexUse = ({String anchor, AbstractNode node, Section? section});
 
 /// A term of the index, with its subterms.
 final class IndexEntry {
-  /// The term [markup] (converted inline markup), read as [text].
-  new(this.text, this.markup);
+  /// The term [markup] (converted inline markup), read as [text], in the
+  /// index of [_catalog].
+  new(this.text, this.markup, [this._catalog]);
+
+  final IndexCatalog? _catalog;
 
   /// The term as plain text (for sorting).
   final String text;
@@ -37,7 +41,11 @@ final class IndexEntry {
   final Map<String, IndexEntry> _subentries = {};
 
   /// The subterms, in index order.
-  List<IndexEntry> get subentries => _sorted(_subentries.values);
+  List<IndexEntry> get subentries => _sorted(
+    _subentries.values,
+    _catalog?.order ?? IndexOrder.asciidoctor,
+    subentry: true,
+  );
 }
 
 /// The terms of the index under one heading: a letter, or `@` for terms
@@ -55,6 +63,9 @@ final class IndexCatalog {
   final bool always;
 
   final Map<String, IndexEntry> _entries = {};
+
+  /// How its terms are ordered (`index-sort`).
+  IndexOrder order = IndexOrder.asciidoctor;
   final Map<(Object, String, int), String> _anchors = {};
   final Map<(Object, String), int> _occurrences = {};
   int _sequence = 0;
@@ -64,6 +75,7 @@ final class IndexCatalog {
   /// when it has an `[index]` section and doesn't unset `index-html`.
   void begin(Document document) {
     _occurrences.clear();
+    order = IndexOrder.of(document);
     final unset =
         !document.attributeUnspecified('index-html') &&
         !document.hasAttr('index-html');
@@ -124,7 +136,7 @@ final class IndexCatalog {
     IndexEntry? entry;
     for (final level in markup.take(3)) {
       final text = _plain(level);
-      entry = entries[text] ??= IndexEntry(text, level);
+      entry = entries[text] ??= IndexEntry(text, level, this);
       entries = entry._subentries;
     }
     entry!.uses.add((anchor: anchor, node: parent, section: _sectionOf(node)));
@@ -151,23 +163,18 @@ final class IndexCatalog {
   IndexEntry? primary(String text) => _entries[text];
 
   /// The terms (top level), in index order.
-  List<IndexEntry> get entries => _sorted(_entries.values);
+  List<IndexEntry> get entries => _sorted(_entries.values, order);
 
   /// The terms by letter, in index order.
   List<IndexLetter> get letters {
     final byLetter = <String, List<IndexEntry>>{};
     for (final entry in _entries.values) {
-      final first = entry.text.isEmpty
-          ? ''
-          : String.fromCharCode(entry.text.runes.first);
-      final letter = RegExp(r'^\p{L}', unicode: true).hasMatch(first)
-          ? first.toUpperCase()
-          : '@';
-      (byLetter[letter] ??= []).add(entry);
+      (byLetter[order.letterOf(entry.text)] ??= []).add(entry);
     }
-    final keys = byLetter.keys.toList()..sort(_compare);
+    final keys = byLetter.keys.toList()..sort(order.compare);
     return [
-      for (final key in keys) (letter: key, entries: _sorted(byLetter[key]!)),
+      for (final key in keys)
+        (letter: key, entries: _sorted(byLetter[key]!, order)),
     ];
   }
 }
@@ -182,17 +189,13 @@ String _plain(String markup) => markup
     .replaceAll('&amp;', '&')
     .trim();
 
-/// The index's order (asciidoctor-pdf's): case-insensitively in ASCII
-/// letters, then by the characters.
-int _compare(String a, String b) {
-  String fold(String text) =>
-      text.replaceAllMapped(RegExp('[A-Z]'), (m) => m[0]!.toLowerCase());
-  final folded = fold(a).compareTo(fold(b));
-  return folded != 0 ? folded : a.compareTo(b);
-}
-
-List<IndexEntry> _sorted(Iterable<IndexEntry> entries) =>
-    entries.toList()..sort((a, b) => _compare(a.text, b.text));
+List<IndexEntry> _sorted(
+  Iterable<IndexEntry> entries,
+  IndexOrder order, {
+  bool subentry = false,
+}) =>
+    entries.toList()
+      ..sort((a, b) => order.compare(a.text, b.text, subentry: subentry));
 
 /// The index of [catalog] as HTML, for an `[index]` section at [level]:
 /// a heading per letter, then the terms, each with a link to every

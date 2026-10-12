@@ -1025,6 +1025,21 @@ base:
   }, skip: _tools ? false : 'needs poppler');
 
   group('index', () {
+    test("index-sort: Chicago's orders in the PDF's index too", () {
+      const source =
+          '= Book\n:doctype: book\n\n== One\n\n'
+          '((New York)) ((Newark)) ((news))\n\n[index]\n== Index\n';
+      List<String> order(String sort) => [
+        for (final line in _pages(
+          _pdf(source, attributes: {'index-sort': sort}),
+        ).expand((page) => page))
+          if (RegExp('^(New York|Newark|news),').hasMatch(line))
+            line.split(',').first,
+      ];
+      expect(order('letter-by-letter'), ['Newark', 'news', 'New York']);
+      expect(order('word-by-word'), ['New York', 'Newark', 'news']);
+    });
+
     const book =
         '= Doc\n:doctype: book\n\n== Chap\n\n'
         '((alpha)) and ((alpha)) and ((hypermedia)).\n\n<<<\n\n'

@@ -29,6 +29,7 @@ import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/image_shape.dart';
 import 'package:ptome/src/index_catalog.dart' show indexHasCategoryHeadings;
+import 'package:ptome/src/index_order.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/jump.dart';

@@ -34,6 +34,33 @@ String _html(String source, {Map<String, String> attributes = const {}}) =>
     );
 
 void main() {
+  test("index-sort: Chicago's letter-by-letter or word-by-word order", () {
+    const source =
+        '= Book\n:doctype: book\n\n== One\n\n'
+        '((New York)) ((Newark)) ((news)) ((Élan)) ((eland))\n\n'
+        '[index]\n== Index\n';
+    List<String> order(String sort) => [
+      for (final m in RegExp(
+        '<span class="index-term">([^<]+)<',
+      ).allMatches(_html(source, attributes: {'index-sort': sort})))
+        m[1]!.trim(),
+    ];
+    expect(order('letter-by-letter'), [
+      'Élan',
+      'eland',
+      'Newark',
+      'news',
+      'New York',
+    ]);
+    expect(order('word-by-word'), [
+      'Élan',
+      'eland',
+      'New York',
+      'Newark',
+      'news',
+    ]);
+  });
+
   test('the index by letter, and index-category-headings!', () {
     const source =
         '= Book\n:doctype: book\n\n== One\n\n((htmx)) ((HTTP)) ((Alpine))\n\n'

@@ -68,6 +68,8 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- `:index-sort:` orders the index by The Chicago Manual of Style's
+  letter-by-letter or word-by-word system, in every format.
 - The PDF's line breaker counts protrusion (with `base_overhang`) and
   avoids runts (`base_last_line_min_width`): a last line too short only
   when there's no other way.

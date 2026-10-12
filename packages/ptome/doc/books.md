@@ -85,6 +85,16 @@ section the term is used in (the EPUB's marked up as an EPUB index).
 `:index-category-headings!:` leaves out the letter above each group, in
 every format (a PDF theme's `index_category_headings` takes
 precedence).
+`:index-sort:` orders the terms by one of the two systems of The
+Chicago Manual of Style's indexing chapter instead of Asciidoctor's
+order: `letter-by-letter` (spaces and hyphens count for nothing:
+Newark, news, New York) or `word-by-word` (a word ends at a space or
+hyphen and comes first: New York, Newark, news). In both, a heading sorts
+up to its first comma or parenthesis, then by the rest (Smith, Adam;
+Smith, John; Smith Barney); punctuation and diacritics don't count
+(Élan under E); symbols come first, then numerals by their values, then
+letters; and a subentry's opening article or preposition is passed over
+(in poetry with poetry). In every format.
 `Document.index` gives the same entries to programs (`doc/api.md`).
 
 ## Print pages in the EPUB

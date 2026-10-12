@@ -7,6 +7,7 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:meta/meta.dart';
+import 'package:ptome/src/index_order.dart';
 
 /// A name in the index: its text (for sorting) and its inline markup.
 @immutable
@@ -59,8 +60,11 @@ final class IndexDestination {
 /// A group of terms: the index's letter categories, and terms with
 /// subterms.
 base class IndexGroup implements Comparable<IndexGroup> {
-  /// The group named [name].
-  new(this.name);
+  /// The group named [name], its terms in [order].
+  new(this.name, [this.order = IndexOrder.asciidoctor]);
+
+  /// How its terms are ordered.
+  final IndexOrder order;
 
   /// The name.
   final IndexName name;
@@ -75,7 +79,7 @@ base class IndexGroup implements Comparable<IndexGroup> {
     IndexName? see,
     List<IndexName> seeAlso = const [],
   }) {
-    final term = _terms[name] ??= IndexTerm(name);
+    final term = _terms[name] ??= IndexTerm(name, order);
     if (destination != null) term._destinations.add(destination);
     if (term._seeName == null && see != null) term._seeName = see;
     term._seeAlsoNames.addAll(seeAlso);
@@ -83,7 +87,11 @@ base class IndexGroup implements Comparable<IndexGroup> {
   }
 
   /// The terms, in order.
-  List<IndexTerm> get terms => _terms.values.toList()..sort();
+  List<IndexTerm> get terms => _terms.values.toList()
+    ..sort(
+      (a, b) =>
+          order.compare(a.name.text, b.name.text, subentry: this is IndexTerm),
+    );
 
   @override
   int compareTo(IndexGroup other) => name.compareTo(other.name);
@@ -92,13 +100,13 @@ base class IndexGroup implements Comparable<IndexGroup> {
 /// A letter of the index (`@` for terms that don't start with one).
 final class IndexCategory extends IndexGroup {
   /// The category [name].
-  new(super.name);
+  new(super.name, [super.order]);
 }
 
 /// A term of the index.
 final class IndexTerm extends IndexGroup {
   /// The term [name].
-  new(super.name)
+  new(super.name, [super.order])
     : anchor = '__indextermdef-${md5.convert(utf8.encode(name.text))}';
 
   /// The anchor of its entry in the index.
@@ -133,6 +141,9 @@ final class IndexTerm extends IndexGroup {
 /// The index of a document.
 final class IndexCatalog {
   final Map<String, IndexCategory> _categories = {};
+
+  /// How its terms are ordered (`index-sort`).
+  IndexOrder order = IndexOrder.asciidoctor;
   final Map<String, IndexDestination> _destinations = {};
   int _sequence = 0;
 
@@ -168,12 +179,11 @@ final class IndexCatalog {
   }
 
   IndexCategory _category(IndexName name) {
-    final text = name.text;
-    final first = text.isEmpty ? '' : String.fromCharCode(text.runes.first);
-    final letter = RegExp(r'^\p{L}', unicode: true).hasMatch(first)
-        ? first.toUpperCase()
-        : '@';
-    return _categories[letter] ??= IndexCategory(IndexName(letter, letter));
+    final letter = order.letterOf(name.text);
+    return _categories[letter] ??= IndexCategory(
+      IndexName(letter, letter),
+      order,
+    );
   }
 
   /// Sets the page of the term uses at each anchor, by [pages] (the
