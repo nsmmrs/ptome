@@ -910,6 +910,34 @@ void main() {
     }
   });
 
+  test("a page's last line may leave out the space under its text", () {
+    // Lines with 10 pt of leading under each; a page with room for two
+    // and a third's text: with dropsSpaceAtBreaks, the third goes on it.
+    ParagraphBox spaced(String text) => ParagraphBox(
+      Paragraph([
+        TextRun(text, _body),
+      ], lineHeight: const LineHeight.font(leading: 10)),
+      orphans: 1,
+      widows: 1,
+    );
+    final line = _lineHeight + _serif.lineGap / 100 + 10;
+    final template = PageTemplate(
+      Rect(0, 0, 300, 40 + 3 * line - 5),
+      margins: const EdgeInsets.all(20),
+    );
+    int onFirst({required bool drops}) {
+      final document = RecordingDocument();
+      FlowLayout(
+        template: template,
+        dropsSpaceAtBreaks: drops,
+      ).layout([spaced('l1\nl2\nl3\nl4')]).render(document);
+      return document.pages.first.texts.length;
+    }
+
+    expect(onFirst(drops: false), 2);
+    expect(onFirst(drops: true), 3);
+  });
+
   test('a floating box taller than a page is set whole, not cut', () {
     // A page of four rows, full when the text reaches a box of six lines
     // floating to the top: it can't wait for the next page's top (it would

@@ -14,7 +14,6 @@ extension _Paragraphs on PdfConverter {
   /// them.
   bool _engineCanSet(String markup, _FontState font) =>
       !_sideFloated &&
-      _baselineGrid() == null &&
       _capLeading(font) == null &&
       !markup.contains(hangAnchorPrefix) &&
       !markup.contains(sideNoteAnchorPrefix) &&

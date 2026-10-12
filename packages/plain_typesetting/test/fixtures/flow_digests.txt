@@ -15,12 +15,13 @@
 # than a region started the next region in the flow rather than waiting,
 # to be cut, at its edge, and a hyphenated line ended in the soft hyphen
 # where the font has it, and a word's pieces at its breaks were measured
-# with the kerning between them (2026-10-12): seed,
+# with the kerning between them, and a justified paragraph's last line
+# set wider than its measure was shrunk to it (2026-10-12): seed,
 # digest, lines recorded; 'skip': too slow for a test there (or too deep for the
 # stack).
 0 b2dc65e5 567
 1 8cbe1796 5858
-2 327d7ffb 616
+2 1ebc0e59 616
 3 b81b9151 1788
 4 8dcd6263 2032
 5 4caccc62 5467
@@ -34,8 +35,8 @@
 13 14622be4 1088
 14 51024250 4670
 15 5e1c7eeb 92
-16 d9207f1e 1308
-17 247824ee 3474
+16 d221fbd9 1308
+17 55e89bef 3474
 18 24616390 305
 19 c263090e 1688
 20 e4996783 33101
@@ -60,17 +61,17 @@
 39 skip
 40 5390c459 24811
 41 50c5fccd 3140
-42 99f5345f 33993
+42 4da4b18d 33993
 43 c8440ee0 2989
 44 d95acd08 2636
 45 286bdc41 9309
 46 5f26f8ca 2096
 47 0ea9ba93 405
 48 8b3f07d2 498
-49 149395a8 11156
+49 7e505eda 11156
 50 8c7fbe5f 1446
 51 5833915f 449
-52 168aba08 4908
+52 8a209ec3 4908
 53 013967f5 4133
 54 787889a4 2196
 55 21b4a8aa 4163

@@ -126,6 +126,43 @@ void main() {
     expect(last.x + last.width, closeTo(150, 1e-6));
   });
 
+  test("a justified paragraph's last line wider than its measure shrinks", () {
+    // One line, a point wider than its measure (as a breaker may set a
+    // last line, its spaces shrunk): set to the measure, not past it.
+    final run = TextRun('aaa bbb ccc ddd', _body);
+    final paragraph = Paragraph([run], align: TextAlign.justify);
+    final items = paragraphItems(paragraph);
+    final width = _body.measure('aaa bbb ccc ddd') - 1;
+    final lines = buildLines(paragraph, items, [
+      items.length - 1,
+    ], (_) => width);
+    final last = lines.single.fragments.last;
+    expect(last.x + last.width, closeTo(width, 1e-6));
+  });
+
+  test("protrusion hangs a justified line's full stop past its end", () {
+    // The first line, "aaaa bbbb.", justified: its stop hangs 0.7 of its
+    // width past the measure (microtype's amount), the line that much
+    // wider.
+    final width = _body.measure('aaaa bbbb. c');
+    final line = const FirstFitLineBreaker()
+        .breakLines(
+          Paragraph(
+            [TextRun('aaaa bbbb. cccc dddd eeee', _body)],
+            align: TextAlign.justify,
+            protrusion: 1,
+          ),
+          (_) => width,
+        )
+        .first;
+    expect(_text(line).trim(), 'aaaa bbbb.');
+    final last = line.fragments.last;
+    expect(
+      last.x + last.width,
+      closeTo(width + 0.7 * _body.font.widthOf('.', _body.size), 1e-6),
+    );
+  });
+
   test("a hyphenator's points break words that don't fit", () {
     // "an extraordinary" doesn't fit; "an ext-" does.
     final width = _body.measure('an extra');

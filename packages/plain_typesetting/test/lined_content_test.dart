@@ -241,12 +241,14 @@ final class _Halves implements PageBreaker {
     required int orphans,
     required int widows,
     required bool atTop,
+    List<double> below = const [],
   }) => const DefaultPageBreaker().linesThatFit(
     heights,
     available,
     orphans: orphans,
     widows: widows,
     atTop: atTop,
+    below: below,
   );
 
   @override

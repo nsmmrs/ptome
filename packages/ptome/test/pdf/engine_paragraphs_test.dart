@@ -96,7 +96,9 @@ void _same(String source, {String theme = ''}) {
       expect(
         actual[i].$3[k],
         closeTo(at[k], 0.01),
-        reason: '"$word" on page $page',
+        reason:
+            '"$word" on page $page (word $i, '
+            "${const ['xMin', 'yMin', 'xMax', 'yMax'][k]})",
       );
     }
   }
@@ -184,6 +186,38 @@ void main() {
         'described at length by Roy Fielding in his dissertation, which '
         'introduced the term representational state transfer, or REST.';
     _same(paragraph, theme: 'base_line_breaking: greedy\n');
+  });
+
+  test('on a baseline grid: headings and paragraphs back on its lines', () {
+    final long = List.filled(6, _words40).join(' ');
+    _same(
+      '= Doc\n\n== A heading\n\n$long\n\n$_words40\n\n'
+      '=== A smaller heading\n\n$long\n\n[.big]\n$_words40\n\n$long\n',
+      theme:
+          'page_baseline_grid: true\nbase_line_pitch: 14\n'
+          'role:\n  big:\n    font_size: 13\n',
+    );
+    // (Each page's grid from its first line.)
+    _same(
+      '= Doc\n\n== A heading\n\n$long\n\n$long\n\n$long\n',
+      theme:
+          'page_baseline_grid: true\n'
+          'page_baseline_grid_anchor: first_line\n',
+    );
+  });
+
+  test("a page ends at its last line's text, not the space under it", () {
+    final lines = [for (var i = 0; i < 60; i++) 'Line $i of the bill.'];
+    _same(
+      ':line-numbers:\n\n== SEC. 2. DEFINITIONS.\n\n${lines.join('\n\n')}\n',
+      theme:
+          'page:\n  size: [612, 690]\n  margin: [40, 72, 40, 72]\n'
+          'base:\n  font_size: 14\n  line_height: 1.857\n'
+          'prose:\n  margin_bottom: 0\n'
+          'heading:\n  h2_font_size: 10\n  margin_top: 0\n'
+          '  margin_bottom: 0\n'
+          'page_baseline_grid: true\npage_baseline_grid_anchor: first_line\n',
+    );
   });
 
   test('base_text_align_last: the unstretched lines aligned apart', () {

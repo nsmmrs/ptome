@@ -12,6 +12,10 @@
   has it (text taken from the page joins the word up), and a word's
   pieces at its breaks are measured with the kerning between them, as
   the word is drawn whole.
+- `FlowLayout.dropsSpaceAtBreaks`: a paragraph's last line in a region
+  fits when its text does, the space under it left out (interline space
+  goes at a break, as TeX's glue). A justified paragraph's last line set
+  wider than its measure is shrunk to it, not left overfull.
 - `Paragraph.riseInLineHeight` (false: a superscript reaches into the
   space between lines, the pitch kept); `LineHeight.font(above:)`, how
   much of the space between lines goes above the text (a Prawn text

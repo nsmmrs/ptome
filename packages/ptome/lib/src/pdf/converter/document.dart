@@ -419,6 +419,9 @@ extension _DocumentParts on PdfConverter {
           _length('side_notes_item_spacing', _rootFontSize) ??
           _rootFontSize / 4,
       baselineGrid: _baselineGrid(),
+      // (A paragraph's last line on a page fits when its text does, as
+      // the text box's does.)
+      dropsSpaceAtBreaks: true,
       // (`pagination: optimal`, modern engine: the pages' breaks chosen
       // together.)
       pagination:

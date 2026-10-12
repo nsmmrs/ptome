@@ -24,20 +24,33 @@ extension _Leaves on _Pass {
       top += _gridShift(_y + top, lines[from].baseline);
     }
     final heights = [for (final line in lines.skip(from)) line.height];
+    // (The space under each line's text, which the region's last line
+    // may leave out.)
+    final below = <double>[
+      if (layout.dropsSpaceAtBreaks)
+        for (final line in lines.skip(from))
+          math.max(0, line.height - line.baseline - line.descent.abs()),
+    ];
     final count = layout.pageBreaker.linesThatFit(
       heights,
       available - top,
       orphans: box.orphans,
       widows: box.widows,
       atTop: atTop,
+      below: below,
     );
     if (count == 0 && heights.isNotEmpty) return _Fit.moved(box);
     final placed = lines.sublist(from, from + count);
     final done = from + count >= lines.length;
+    var linesHeight = placed.fold<double>(0, (sum, line) => sum + line.height);
+    // (The last line ending the region with the space under it left out.)
+    final trimmed =
+        below.isNotEmpty && count > 0 && top + linesHeight > available + 1e-6;
+    if (trimmed) linesHeight -= below[count - 1];
     final height =
         top +
-        placed.fold<double>(0, (sum, line) => sum + line.height) +
-        (from + count >= all.length ? margin.bottom : 0);
+        linesHeight +
+        (from + count >= all.length && !trimmed ? margin.bottom : 0);
     return _Fit(
       _PlacedLines(
         placed,

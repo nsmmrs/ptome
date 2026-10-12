@@ -1647,12 +1647,20 @@ Line _line(
       scale = 1 + (share / letters).clamp(-expansion, expansion);
     }
   }
-  final extra = justify && spaces > 0
+  // (A justified paragraph's last line, or one before a hard break, the
+  // breaker set wider than its measure, its spaces shrunk: shrunk to fit,
+  // never stretched.)
+  final overfull =
+      !justify &&
+      paragraph.align == TextAlign.justify &&
+      spaces > 0 &&
+      natural > available + 1e-4;
+  final extra = (justify || overfull) && spaces > 0
       ? (available / scale - natural) / spaces
       : 0.0;
   final width = (natural + extra * spaces) * scale;
   // (A justified paragraph's line that isn't stretched: by alignLast.)
-  final align = paragraph.align == TextAlign.justify && !justify
+  final align = paragraph.align == TextAlign.justify && !justify && !overfull
       ? paragraph.alignLast
       : paragraph.align;
   var x =

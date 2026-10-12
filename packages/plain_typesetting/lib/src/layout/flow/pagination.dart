@@ -7,13 +7,15 @@ abstract interface class PageBreaker {
   /// How many of the lines of [heights] go in [available] height (0 moves
   /// them all to the next region), keeping [orphans] lines before the
   /// break and [widows] after it; [atTop] when nothing is above them in
-  /// the region (they can't move to a fresher one).
+  /// the region (they can't move to a fresher one). [below]: the space
+  /// under each line's text, which the region's last line may leave out.
   int linesThatFit(
     List<double> heights,
     double available, {
     required int orphans,
     required int widows,
     required bool atTop,
+    List<double> below = const [],
   });
 
   /// How many lines of [total] go in a region where the first [fit] of
@@ -48,10 +50,15 @@ final class DefaultPageBreaker implements PageBreaker {
     required int orphans,
     required int widows,
     required bool atTop,
+    List<double> below = const [],
   }) {
     var fit = 0;
     var used = 0.0;
-    while (fit < heights.length && used + heights[fit] <= available + 1e-6) {
+    // (The region's last line may leave out the space under its text:
+    // the space between lines goes at a break, as TeX's glue does.)
+    while (fit < heights.length &&
+        used + heights[fit] - (fit < below.length ? below[fit] : 0) <=
+            available + 1e-6) {
       used += heights[fit];
       fit++;
     }
@@ -253,6 +260,7 @@ final class FlowLayout {
     this.sideNoteStreamOf = const {},
     this.sideNoteGap = 2,
     this.baselineGrid,
+    this.dropsSpaceAtBreaks = false,
     this.pagination = Pagination.firstFit,
   }) : templates = {null: ?template, ...?templates},
        pageLabel = pageLabel ?? _decimal {
@@ -354,6 +362,11 @@ final class FlowLayout {
   /// of it, the space before it rounded up to that, so its lines, set a
   /// step apart, are on the grid too, the same on every page.
   final BaselineGrid? baselineGrid;
+
+  /// Whether a paragraph's last line in a region may leave the space under
+  /// its text out of it (the space between lines goes at a break, as TeX's
+  /// glue does), so a line fits when its text does.
+  final bool dropsSpaceAtBreaks;
 
   /// How the pages' breaks are chosen: one page at a time, or together
   /// (see [Pagination.optimal]).

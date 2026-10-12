@@ -102,7 +102,7 @@ abstract interface class OpenTypeTextFont implements Font
 abstract interface class PageBreaker
   PageBreaker()
   bool moveKeptBox(double height, double available, double regionHeight)
-  int linesThatFit(List<double> heights, double available, {required int orphans, required int widows, required bool atTop})
+  int linesThatFit(List<double> heights, double available, {required int orphans, required int widows, required bool atTop, List<double> below = const []})
   int linesToKeep(int fit, int total, {required int orphans, required int widows, required bool atTop})
 abstract interface class ShapedContent implements CustomContent
   CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
@@ -297,7 +297,7 @@ final class CustomPlacement
 final class DefaultPageBreaker implements PageBreaker
   DefaultPageBreaker()
   bool moveKeptBox(double height, double available, double regionHeight)
-  int linesThatFit(List<double> heights, double available, {required int orphans, required int widows, required bool atTop})
+  int linesThatFit(List<double> heights, double available, {required int orphans, required int widows, required bool atTop, List<double> below = const []})
   int linesToKeep(int fit, int total, {required int orphans, required int widows, required bool atTop})
 final class DrawingBox extends LayoutBox
   BoxAlign align
@@ -333,7 +333,7 @@ final class FloatShape
   double bandHeight
 final class FlowLayout
   BaselineGrid? baselineGrid
-  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, double? notesMinText, int? notesLag, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, List<SideNoteStream> sideNoteStreams = const [], Map<String, String> sideNoteStreamOf = const {}, double sideNoteGap = 2, BaselineGrid? baselineGrid, Pagination pagination = Pagination.firstFit})
+  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, double? notesMinText, int? notesLag, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, List<SideNoteStream> sideNoteStreams = const [], Map<String, String> sideNoteStreamOf = const {}, double sideNoteGap = 2, BaselineGrid? baselineGrid, bool dropsSpaceAtBreaks = false, Pagination pagination = Pagination.firstFit})
   LayoutBox? noteSeparator
   LayoutResult layout(List<LayoutBox> content, {LayoutResult? reuse, int unchangedBefore = 0, Set<int>? changedPages})
   LineBreaker lineBreaker
@@ -350,6 +350,7 @@ final class FlowLayout
   Rect? Function(int, PageTemplate)? sideColumn
   String Function(int) pageLabel
   String? startTemplate
+  bool dropsSpaceAtBreaks
   bool keepTemplate
   double sideNoteGap
   double? notesMinText
