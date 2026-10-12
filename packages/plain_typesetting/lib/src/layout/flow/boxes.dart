@@ -426,15 +426,22 @@ final class ParagraphBox extends LayoutBox {
   }) : _from = 0,
        _to = null,
        _source = null,
+       _width = null,
+       _items = null,
+       _continuation = false,
        super._(style);
 
-  new _rest(ParagraphBox source, this._from)
+  /// The lines of [source] from [_from] on, broken at [_width] (null: at
+  /// whatever width it is placed).
+  new _rest(ParagraphBox source, this._from, [this._width])
     : paragraph = source.paragraph,
       orphans = source.orphans,
       widows = source.widows,
       lineBreaker = source.lineBreaker,
       _to = null,
       _source = source._source ?? source,
+      _items = source._items,
+      _continuation = source._continuation,
       super._(source.style);
 
   /// Lines [_from] to [_to] of [source] (a page planned to end after them).
@@ -444,7 +451,32 @@ final class ParagraphBox extends LayoutBox {
       widows = source.widows,
       lineBreaker = source.lineBreaker,
       _source = source._source ?? source,
+      _width = null,
+      _items = source._items,
+      _continuation = source._continuation,
       super._(source.style);
+
+  /// The rest of [source], its [_items] after the lines set, broken again
+  /// (where it goes on at another width: beside a block floating to a
+  /// side, below it, in a column of another width).
+  ///
+  /// With [first], all of [source], its items as they are.
+  new _reflowed(
+    ParagraphBox source,
+    List<LineItem> this._items, {
+    bool first = false,
+  }) : paragraph = first
+           ? source.paragraph
+           : source.paragraph.copyWith(firstLineIndent: 0),
+       orphans = source.orphans,
+       widows = source.widows,
+       lineBreaker = source.lineBreaker,
+       _from = 0,
+       _to = null,
+       _source = null,
+       _width = null,
+       _continuation = !first,
+       super._(source.style);
 
   /// The paragraph.
   final Paragraph paragraph;
@@ -466,6 +498,18 @@ final class ParagraphBox extends LayoutBox {
 
   /// The paragraph this is the rest of.
   final ParagraphBox? _source;
+
+  /// The width this rest's lines were broken at, when it may go on at
+  /// another (then broken again).
+  final double? _width;
+
+  /// The items of the rest of a paragraph broken again, or null for its
+  /// paragraph's own.
+  final List<LineItem>? _items;
+
+  /// Whether this goes on from lines set before (no margin above, anchor
+  /// or marks of its own).
+  final bool _continuation;
 }
 
 /// An image of a given size.

@@ -290,6 +290,26 @@ void main() {
     );
   });
 
+  test('running around a block floating to a side, and an outline', () {
+    final long = List.filled(3, _words40).join(' ');
+    // (A sidebar floated right: lines beside it, then below it, broken
+    // again; on the next page beside what goes on of it.)
+    _same(
+      '= Doc\n\n$_words40\n\n[.aside]\n****\n$long\n****\n\n'
+      '$long\n\n$long\n\n$long\n',
+      theme:
+          'base:\n  text_align: justify\n'
+          'role:\n  aside:\n    float: right\n    float_width: 45%\n',
+    );
+    // (An image's outline, its alpha: each line in the room it leaves.)
+    final circle =
+        '${Directory.current.path}/test/pdf/fixtures/images/circle.png';
+    _same(
+      '= Doc\n\nimage::$circle[Circle,pdfwidth=40%,float=right,'
+      'shape=alpha]\n\n$long\n\n$long\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

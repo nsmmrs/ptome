@@ -27,6 +27,14 @@
   first character too; a paragraph's margin below takes no more than the
   room left in its region, as a custom box's; a paragraph with page
   references keeps its other settings when they are filled in.
+- A `ParagraphBox` that `runsAround` a block floating to a side is set
+  beside it (its first lines in the room left, the rest broken again
+  below it, as a custom box's), and beside an outline line by line
+  (`FloatShape`). The rest of a paragraph going on at another width (in
+  a column of another width) is broken again from its words after the
+  lines set; it was broken whole at the new width and its first lines
+  skipped. `ItemLineBreaker.breakItemLines` (a paragraph's lines from
+  given items, with the item each breaks at) and `buildLines(offsets:)`.
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

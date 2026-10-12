@@ -12,14 +12,11 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
-  /// Whether the engine's paragraphs can set text with [markup]
-  /// as the text box does: none of what they don't do yet (FEAT-5w237r)
-  /// in play, text running around a block floating to a side (after the
-  /// first), side notes beside the text.
+  /// Whether the engine's paragraphs can set text with [markup] as the
+  /// text box does: none of what they don't do yet (FEAT-5w237r) in play,
+  /// side notes beside the text.
   bool _engineCanSet(String markup) =>
-      !_sideFloated &&
-      !markup.contains(sideNoteAnchorPrefix) &&
-      !markup.contains('<side ');
+      !markup.contains(sideNoteAnchorPrefix) && !markup.contains('<side ');
 
   /// The roles of paragraphs a heading for the margin passes
   /// (`heading_h<n>_margin_skip_roles`: a pericope's parallel passages).

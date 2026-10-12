@@ -1239,6 +1239,57 @@ void main() {
     expect(below.single.$2, lessThan(top - 3 * _lineHeight + 1e-6));
   });
 
+  test('a ParagraphBox runs around a side float, its rest broken again', () {
+    // Words w1...w40 justified: beside the float (90 points), three rows
+    // of narrow lines; below it, the rest broken again across the page
+    // (260 points), every word once, in order.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(10))
+        .layout([
+          BlockBox(
+            [_para('s1\ns2\ns3')],
+            style: const BoxStyle(
+              side: FloatSide.right,
+              sideWidth: 160,
+              sideGap: 10,
+            ),
+          ),
+          ParagraphBox(
+            Paragraph([
+              TextRun([for (var i = 1; i <= 40; i++) 'w$i'].join(' '), _body),
+            ], align: TextAlign.justify),
+            style: const BoxStyle(runsAround: true),
+            orphans: 1,
+            widows: 1,
+          ),
+        ])
+        .render(document);
+    final lines = <double, List<(String, double, double)>>{};
+    for (final call in document.pages.first.canvas.calls) {
+      if (RegExp(r'^glyphs "([^"]*)" at (\S+) (\S+)').firstMatch(call)
+          case final m? when !m[1]!.trim().startsWith('s')) {
+        (lines[double.parse(m[3]!)] ??= []).add((
+          m[1]!,
+          double.parse(m[2]!),
+          0,
+        ));
+      }
+    }
+    final rows = lines.keys.toList()..sort((a, b) => b.compareTo(a));
+    final words = [
+      for (final y in rows)
+        for (final (text, _, _) in lines[y]!) ...text.trim().split(' '),
+    ];
+    expect(words, [for (var i = 1; i <= 40; i++) 'w$i']);
+    // The rows beside the float hold fewer words than those below it.
+    int count(double y) => lines[y]!
+        .map((f) => f.$1.trim().split(' ').length)
+        .reduce((a, b) => a + b);
+    expect(count(rows[0]), lessThan(count(rows[3])));
+    // (The first row at the page's top, beside the float.)
+    expect(rows.first, closeTo(rows[3] + 3 * _lineHeight, 0.01));
+  });
+
   test("a paragraph runs around a float's outline, line by line", () {
     // A float 160 wide, 72 tall, at the right: its outline a triangle, its
     // left edge 20 further right each band of 12 (so the room beside it
@@ -1266,6 +1317,53 @@ void main() {
     // Beside each band, the room it leaves (the float's left at 100 +
     // 20 per band, less the gap): 270 - 100 - 20 i + 10 at the right.
     expect(insets.take(6), [for (var i = 0; i < 6; i++) 170.0 - 20 * i]);
+  });
+
+  test("a ParagraphBox runs around a float's outline, line by line", () {
+    // The outline of the earlier test, at the left: the room beside it
+    // grows down the page, each line starting further left, every word
+    // set once, in order.
+    final document = RecordingDocument();
+    FlowLayout(template: _rows(10))
+        .layout([
+          BlockBox(
+            const [SpacerBox(72)],
+            style: BoxStyle(
+              side: FloatSide.left,
+              sideWidth: 160,
+              sideGap: 10,
+              sideShape: FloatShape(12, [
+                for (var i = 0; i < 6; i++) (0.0, 160.0 - i * 20.0),
+              ]),
+            ),
+          ),
+          ParagraphBox(
+            Paragraph([
+              TextRun([for (var i = 1; i <= 60; i++) 'w$i'].join(' '), _body),
+            ]),
+            style: const BoxStyle(runsAround: true),
+            orphans: 1,
+            widows: 1,
+          ),
+        ])
+        .render(document);
+    final starts = <double, double>{};
+    final words = <String>[];
+    for (final call in document.pages.first.canvas.calls) {
+      if (RegExp(r'^glyphs "([^"]*)" at (\S+) (\S+)').firstMatch(call)
+          case final m?) {
+        starts[double.parse(m[3]!)] ??= double.parse(m[2]!);
+        words.addAll(m[1]!.trim().split(' '));
+      }
+    }
+    expect(words, [for (var i = 1; i <= 60; i++) 'w$i']);
+    final rows = starts.keys.toList()..sort((a, b) => b.compareTo(a));
+    // (Down the outline, each line's start further left.)
+    final xs = [for (final y in rows.take(5)) starts[y]!];
+    for (var i = 1; i < xs.length; i++) {
+      expect(xs[i], lessThan(xs[i - 1]));
+    }
+    expect(starts[rows.last], 20);
   });
 
   test('links are made on the page the text is on', () {

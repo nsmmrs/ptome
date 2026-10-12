@@ -154,17 +154,18 @@ final class Paragraph {
     this.justifyToWidest = false,
   });
 
-  /// This paragraph with [content], [align] or [justifyToWidest] instead
-  /// of its own.
+  /// This paragraph with [content], [align], [firstLineIndent] or
+  /// [justifyToWidest] instead of its own.
   Paragraph copyWith({
     List<InlineContent>? content,
     TextAlign? align,
+    double? firstLineIndent,
     bool? justifyToWidest,
   }) => Paragraph(
     content ?? this.content,
     align: align ?? this.align,
     lineHeight: lineHeight,
-    firstLineIndent: firstLineIndent,
+    firstLineIndent: firstLineIndent ?? this.firstLineIndent,
     hyphenator: hyphenator,
     breakLongWords: breakLongWords,
     hyphenRepetition: hyphenRepetition,
@@ -394,6 +395,24 @@ abstract base class ItemLineBreaker implements LineBreaker {
       maxWidth: paragraph.breakLongWords ? indented(0) : null,
     );
     if (items.isEmpty) return const [];
+    return breakItemLines(paragraph, items, widths).lines;
+  }
+
+  /// The lines of [paragraph] made of [items] (its [paragraphItems], or
+  /// those after one of its lines, to be broken again) in [widths], and
+  /// the item each line breaks at.
+  ///
+  /// Each line is set [offsets] in from the start, where given (a line
+  /// beside an outline, in the room it leaves).
+  ({List<Line> lines, List<int> breaks}) breakItemLines(
+    Paragraph paragraph,
+    List<LineItem> items,
+    LineWidths widths, {
+    LineWidths? offsets,
+  }) {
+    if (items.isEmpty) return (lines: const [], breaks: const []);
+    final indent = paragraph.firstLineIndent;
+    double indented(int line) => widths(line) - (line == 0 ? indent : 0);
     // (Protrusion: what hangs at a line's ends counted as the line is
     // then drawn, at its end always, at its start when justified.)
     double Function(int)? protrude({required bool right}) {
@@ -410,17 +429,22 @@ abstract base class ItemLineBreaker implements LineBreaker {
       };
     }
 
-    return buildLines(
-      paragraph,
+    final breaks = breakItems(
       items,
-      breakItems(
+      indented,
+      protrudeLeft: protrude(right: false),
+      protrudeRight: protrude(right: true),
+    );
+    return (
+      lines: buildLines(
+        paragraph,
         items,
-        indented,
-        protrudeLeft: protrude(right: false),
-        protrudeRight: protrude(right: true),
+        breaks,
+        widths,
+        expansion: expansion,
+        offsets: offsets,
       ),
-      widths,
-      expansion: expansion,
+      breaks: breaks,
     );
   }
 }
@@ -1558,6 +1582,7 @@ List<Line> buildLines(
   List<int> breaks,
   LineWidths widths, {
   double expansion = 0,
+  LineWidths? offsets,
 }) {
   // (Justified to the widest line: each line's natural width first.)
   var widest = double.infinity;
@@ -1609,7 +1634,7 @@ List<Line> buildLines(
         hyphen,
         leading,
         math.min(widths(number), widest) - indent,
-        indent,
+        indent + (offsets?.call(number) ?? 0),
         justify: paragraph.align == TextAlign.justify && !last,
         emptyRun: emptyRun,
         expansion: expansion,

@@ -620,10 +620,6 @@ final class PdfConverter extends BuiltInConverter
   /// (`page_margin_gutter: kdp`), once it is known.
   double _gutterLeast = 0;
 
-  /// Whether a block has floated to a side yet (the text after one runs
-  /// around it, which the engine's paragraphs don't do yet).
-  bool _sideFloated = false;
-
   /// How many paragraphs the engine's paragraphs set (a debug count).
   int _engineParagraphCount = 0;
 

@@ -117,7 +117,8 @@ Asciidoctor project.
   too), on a baseline grid as well, with labels hung beside their lines
   (units' `label_hang`, `heading_h<n>_display: margin`), with lines from
   their cap heights (`base_leading`) and justified to their widest line
-  (`base_justify_width: widest`). Every word where the box puts it
+  (`base_justify_width: widest`), and running around a block floating
+  to a side and an image's outline. Every word where the box puts it
   (test/pdf/engine_paragraphs_test.dart). The Hypermedia Systems book's
   paragraphs go through the engine (313 pages, the same words); its lines
   differ from the box's only where the engine is right and the box isn't:

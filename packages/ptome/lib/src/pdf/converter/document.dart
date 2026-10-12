@@ -146,7 +146,6 @@ extension _DocumentParts on PdfConverter {
     _hungLabels.clear();
     _quotationChecks.clear();
     _engineParagraphCount = 0;
-    _sideFloated = false;
     _gutterLeast = 0;
     _thematicBreaks = 0;
     _madeUpAnchors.clear();

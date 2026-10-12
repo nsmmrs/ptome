@@ -18,7 +18,8 @@ extension _Leaves on _Pass {
       _ => all,
     };
     final from = box._from;
-    var top = atTop || from > 0 ? 0.0 : margin.top;
+    final first = from == 0 && !box._continuation;
+    var top = atTop || !first ? 0.0 : margin.top;
     // (On a baseline grid, down to where its first baseline is on it.)
     if (from < lines.length) {
       top += _gridShift(_y + top, lines[from].baseline);
@@ -64,13 +65,15 @@ extension _Leaves on _Pass {
         margin.left,
         top,
         height,
-        from == 0 ? box.style.anchor : null,
-        from == 0 ? box.style.marks : const {},
+        first ? box.style.anchor : null,
+        first ? box.style.marks : const {},
         box.style.tag,
-        first: from == 0,
+        first: first,
       ),
       height,
-      done ? null : ParagraphBox._rest(box, from + count),
+      done
+          ? null
+          : ParagraphBox._rest(box, from + count, width - margin.horizontal),
     );
   }
 

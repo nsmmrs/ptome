@@ -1,8 +1,9 @@
 ({double alpha, double blue, double green, double red})? parseCssColor(String text)
-List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths, {double expansion = 0})
+List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths, {double expansion = 0, double Function(int)? offsets})
 List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth})
 String get plainTypesettingVersion
 abstract base class ItemLineBreaker implements LineBreaker
+  ({List<int> breaks, List<Line> lines}) breakItemLines(Paragraph paragraph, List<LineItem> items, double Function(int) widths, {double Function(int)? offsets})
   ItemLineBreaker()
   List<Line> breakLines(Paragraph paragraph, double Function(int) widths)
   List<int> breakItems(List<LineItem> items, double Function(int) widths, {double Function(int)? protrudeLeft, double Function(int)? protrudeRight})
@@ -534,7 +535,7 @@ final class Paragraph
   Hyphenator? hyphenator
   LineHeight lineHeight
   List<InlineContent> content
-  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, bool? justifyToWidest})
+  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest})
   Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false})
   TextAlign align
   TextAlign alignLast

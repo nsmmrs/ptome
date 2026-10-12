@@ -513,14 +513,59 @@ final class _Pass {
 
   List<Line> _linesOf(ParagraphBox box, double width) {
     final source = box._source ?? box;
-    List<Line> lines() => (source.lineBreaker ?? layout.lineBreaker).breakLines(
-      _resolve(source.paragraph),
-      (_) => width,
-    );
+    final breaker = source.lineBreaker ?? layout.lineBreaker;
+    List<Line> lines() => switch ((source._items, breaker)) {
+      (final items?, final ItemLineBreaker breaker) =>
+        breaker
+            .breakItemLines(_resolve(source.paragraph), items, (_) => width)
+            .lines,
+      _ => breaker.breakLines(_resolve(source.paragraph), (_) => width),
+    };
     if (_hasReferences(source.paragraph)) {
       return _lines[(source, width)] ??= lines();
     }
     return (layout._lines[source] ??= {})[width] ??= lines();
+  }
+
+  /// [box] as it goes on at [width]: the rest of a paragraph whose lines
+  /// were broken at another width becomes its items after them, broken
+  /// again (as a paragraph beside a block floating to a side goes on
+  /// below it).
+  ParagraphBox _reflowedAt(ParagraphBox box, double width) {
+    final at = box._width;
+    if (box._from == 0 || at == null || (at - width).abs() < 1e-9) return box;
+    return _reflowed(box, at) ?? box;
+  }
+
+  /// The rest of [box] (its lines from its first on, broken at [width])
+  /// as its items, to be broken again; null where its breaker doesn't
+  /// break items.
+  ParagraphBox? _reflowed(ParagraphBox box, double width) {
+    final source = box._source ?? box;
+    final breaker = source.lineBreaker ?? layout.lineBreaker;
+    if (breaker is! ItemLineBreaker) return null;
+    final paragraph = _resolve(source.paragraph);
+    final items =
+        source._items ??
+        paragraphItems(
+          paragraph,
+          maxWidth: paragraph.breakLongWords
+              ? width - paragraph.firstLineIndent
+              : null,
+        );
+    if (box._from == 0) {
+      return source._items != null
+          ? box
+          : ParagraphBox._reflowed(box, items, first: true);
+    }
+    final breaks = breaker
+        .breakItemLines(paragraph, items, (_) => width)
+        .breaks;
+    if (box._from > breaks.length) return null;
+    return ParagraphBox._reflowed(
+      box,
+      items.sublist(breaks[box._from - 1] + 1),
+    );
   }
 
   static bool _hasReferences(Paragraph paragraph) =>
@@ -583,10 +628,11 @@ final class _Pass {
     switch (box) {
       case ParagraphBox(:final orphans):
         // (The rest of one from the line it goes on with.)
-        final lines = _linesOf(box, width - margin.horizontal);
-        return (box._from > 0 ? 0 : margin.top) +
+        final rest = _reflowedAt(box, width - margin.horizontal);
+        final lines = _linesOf(rest, width - margin.horizontal);
+        return (rest._from > 0 || rest._continuation ? 0 : margin.top) +
             lines
-                .skip(box._from)
+                .skip(rest._from)
                 .take(orphans)
                 .fold(0, (sum, line) => sum + line.height);
       case BlockBox(:final children) || ColumnsBox(:final children):
@@ -653,7 +699,12 @@ final class _Pass {
               style.decoration != null =>
         _withoutFloats(() => _block(box, width, available, atTop: atTop)),
       BlockBox() => _block(box, width, available, atTop: atTop),
-      ParagraphBox() => _paragraph(box, width, available, atTop: atTop),
+      ParagraphBox() => _paragraph(
+        _reflowedAt(box, width - box.style.margin.horizontal),
+        width,
+        available,
+        atTop: atTop,
+      ),
       ImageBox() => _image(box, width, available, atTop: atTop),
       DrawingBox() => _drawing(box, width, available, atTop: atTop),
       SpacerBox(:final height) =>
@@ -1364,6 +1415,9 @@ final class _Pass {
     double y,
     double room,
   ) {
+    if (child is ParagraphBox) {
+      return _paragraphAroundShapes(child, left, right, y, room);
+    }
     if (child is! CustomBox ||
         !child.style.runsAround ||
         child.style.floating ||
@@ -1438,6 +1492,122 @@ final class _Pass {
     );
   }
 
+  /// [_aroundShapes] for a paragraph: its lines, a step apart (its second
+  /// line's height), each in the room the outlines beside it leave, the
+  /// paragraph broken in those widths; what doesn't fit beside them goes
+  /// on below, broken again.
+  (_Placed, double, LayoutBox?)? _paragraphAroundShapes(
+    ParagraphBox child,
+    double left,
+    double right,
+    double y,
+    double room,
+  ) {
+    final style = child.style;
+    if (!style.runsAround || style.floating || style.side != null) {
+      return null;
+    }
+    final beside = [
+      for (final other in _exclusions)
+        if (other.top <= y + 1e-6 && other.bottom > y + 1e-6) other,
+    ];
+    if (!beside.any((other) => other.shape != null)) return null;
+    final margin = style.margin;
+    final from = left + margin.left;
+    final to = right - margin.right;
+    final width = to - from;
+    final source = child._source ?? child;
+    final breaker = source.lineBreaker ?? layout.lineBreaker;
+    if (breaker is! ItemLineBreaker) return null;
+    final box = _reflowed(_reflowedAt(child, width), width);
+    if (box == null) return null;
+    final first = !box._continuation;
+    final top = _topOf(box, margin);
+    final contentTop = y + top;
+    // (The step and the space above the first line's text, as the lines
+    // are set across the width.)
+    final plain = _linesOf(box, width);
+    if (plain.isEmpty) return null;
+    final pitch = (plain.length > 1 ? plain[1] : plain[0]).height;
+    final gap = plain[0].baseline - plain[0].ascent;
+    (double, double) insets(int line) {
+      final lineTop = gap + line * pitch;
+      final lineBottom = lineTop + pitch;
+      var inLeft = 0.0;
+      var inRight = 0.0;
+      for (final other in beside) {
+        final covered = other.covered(
+          contentTop + lineTop,
+          contentTop + lineBottom,
+        );
+        if (covered == null) continue;
+        if (other.side == FloatSide.right) {
+          inRight = math.max(inRight, to - (covered.$1 - other.gap));
+        } else {
+          inLeft = math.max(inLeft, covered.$2 + other.gap - from);
+        }
+      }
+      return (math.max(0, inLeft), math.max(0, inRight));
+    }
+
+    final deepest = beside.map((other) => other.bottom).reduce(math.max);
+    final available = math.min(deepest - contentTop, room - top);
+    final count = available.isFinite ? (available / pitch).ceil() + 1 : 0;
+    final bands = [for (var i = 0; i < count; i++) insets(i)];
+    final paragraph = _resolve(box.paragraph);
+    final items = box._items!;
+    final (:lines, :breaks) = breaker.breakItemLines(
+      paragraph,
+      items,
+      (line) => line < count ? width - bands[line].$1 - bands[line].$2 : width,
+      offsets: (line) => line < count ? bands[line].$1 : 0,
+    );
+    final below = [
+      for (final line in lines)
+        math.max<double>(0, line.height - line.baseline - line.descent.abs()),
+    ];
+    final fit = layout.pageBreaker.linesThatFit(
+      [for (final line in lines) line.height],
+      available,
+      orphans: box.orphans,
+      widows: box.widows,
+      atTop: false,
+      below: below,
+    );
+    if (fit == 0) return null;
+    final placed = lines.sublist(0, fit);
+    var linesHeight = placed.fold<double>(0, (sum, line) => sum + line.height);
+    final done = fit >= lines.length;
+    if (!done && linesHeight > available + 1e-6) linesHeight -= below[fit - 1];
+    final height =
+        top +
+        linesHeight +
+        (done
+            ? math.min(margin.bottom, math.max(0.0, room - top - linesHeight))
+            : 0);
+    return (
+      _PlacedLines(
+        placed,
+        margin.left,
+        top,
+        height,
+        first ? style.anchor : null,
+        first ? style.marks : const {},
+        style.tag,
+        first: first,
+      ),
+      height,
+      done
+          ? null
+          : ParagraphBox._reflowed(box, items.sublist(breaks[fit - 1] + 1)),
+    );
+  }
+
+  /// The space above [box] where it starts: its margin, unless it goes on
+  /// from lines set before.
+  static double _topOf(ParagraphBox box, EdgeInsets margin) =>
+      box._from > 0 || box._continuation ? 0 : margin.top;
+
   /// [child]'s first lines at [width] in the [height] beside blocks
   /// floating to a side, when it runs around them ([BoxStyle.runsAround])
   /// and some, not all, of it fits there: the piece, its height and the
@@ -1447,7 +1617,7 @@ final class _Pass {
     double width,
     double height,
   ) {
-    if (child is! CustomBox ||
+    if ((child is! CustomBox && child is! ParagraphBox) ||
         !child.style.runsAround ||
         child.style.floating ||
         child.style.side != null ||
@@ -1511,7 +1681,8 @@ final class _Pass {
   /// Whether [box] is the rest of one split by a break.
   static bool _isContinued(LayoutBox box) => switch (box) {
     BlockBox(:final _continued) || ColumnsBox(:final _continued) => _continued,
-    ParagraphBox(:final _from) => _from > 0,
+    ParagraphBox(:final _from, :final _continuation) =>
+      _from > 0 || _continuation,
     _ => false,
   };
 
