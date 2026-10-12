@@ -3,6 +3,7 @@
 // text box (`base_text_engine: box`): every word where the box puts it,
 // within 0.01 pt, and the engine setting them (not the box again).
 @TestOn('vm')
+@Tags(['slow'])
 library;
 
 import 'dart:io';
@@ -12,6 +13,11 @@ import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
 import '../vendored_fonts.dart';
+
+/// Poppler's pdftotext, which reads the words' boxes.
+final bool _poppler =
+    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
+    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
 
 late Directory _dir;
 var _count = 0;
@@ -71,6 +77,10 @@ List<(int, String, List<double>)> _words(String pdf) {
 
 /// Expects [source] under [theme] set by the engine as the box sets it.
 void _same(String source, {String theme = ''}) {
+  if (!_poppler) {
+    markTestSkipped('needs poppler');
+    return;
+  }
   final (boxSet, box) = _pdf(source, theme, 'box');
   final (set, engine) = _pdf(source, theme, 'paragraph');
   expect(boxSet, 0, reason: "the engine set some of the box's");
