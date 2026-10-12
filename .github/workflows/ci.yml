@@ -105,6 +105,9 @@ jobs:
         sudo npm i -g bats
     - name: Run the full gate's ptome part
       run: tool/gate.sh ptome
+    - name: Show the failing tests' output
+      if: failure()
+      run: grep -B2 -A40 -- '\[E\]' /tmp/ptome-gate/tests.log | head -400 || true
   dart:
     # The tests on the other systems, but the slow ones and the corpus
     # (nightly.yml runs those there).

@@ -116,16 +116,17 @@ void main() {
           if (RegExp(r'^\s*([A-Z][A-Za-z0-9]*)').firstMatch(line) case final m?)
             m[1]!,
       ];
-      expect(roles.first, 'Document');
+      expect(roles.first, 'Document', reason: tree);
       expect(
         roles,
         containsAllInOrder([
           'H1', 'P', 'Link', 'H2', 'P', 'L', 'LI', 'LBody', 'P', //
           'Table', 'TR', 'TH', 'TD', 'Figure', 'H3', 'P',
         ]),
+        reason: tree,
       );
       // (The figure's alternate text, however pdfinfo shows it.)
-      expect(tree, contains('A red square'));
+      expect(tree, contains('A red square'), reason: tree);
       expect(tree, contains('"A paragraph in the section."'));
     },
   );
