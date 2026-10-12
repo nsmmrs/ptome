@@ -283,17 +283,21 @@ final List<NeededFont> lookFonts = [
     FontStyle.boldItalic:
         '6aa5c41f489b898aa890c543e7dcd5e732c63894babc65569e01ee7e46533d82',
   }),
-  _texGyre('schola', 'the us-code and scotus-booklet looks (Century)', {
-    FontStyle.normal:
-        '935b82e25f56b1d1276ca82793205e8ce254fbb37ebd38bedf7388cef21fbf44',
-    FontStyle.bold:
-        '988c7b2a0ff0eae77d1df3338751b3c47a5e759117734a375b8e7f9de80e698b',
-    FontStyle.italic:
-        '2f45b8c394037951aaec73d947f0b0c3af715950f8f207c9f4290ba37a53a4d2',
-    FontStyle.boldItalic:
-        '95f085da44c04817771f2a3a754b6eeb442b9a79e79f51dc3b0612e3cc0d75cc',
-  }),
-  _texGyre('pagella', 'the uk-act look (Palatino)', {
+  _texGyre(
+    'schola',
+    'the us-code, us-bill and scotus-booklet looks (Century)',
+    {
+      FontStyle.normal:
+          '935b82e25f56b1d1276ca82793205e8ce254fbb37ebd38bedf7388cef21fbf44',
+      FontStyle.bold:
+          '988c7b2a0ff0eae77d1df3338751b3c47a5e759117734a375b8e7f9de80e698b',
+      FontStyle.italic:
+          '2f45b8c394037951aaec73d947f0b0c3af715950f8f207c9f4290ba37a53a4d2',
+      FontStyle.boldItalic:
+          '95f085da44c04817771f2a3a754b6eeb442b9a79e79f51dc3b0612e3cc0d75cc',
+    },
+  ),
+  _texGyre('pagella', 'the uk-act and uk-bill looks (Palatino)', {
     FontStyle.normal:
         '44e64260716d8f2bbe412baa1ee99b7c995190ac4573177c24def0b9200438c7',
     FontStyle.bold:

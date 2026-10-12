@@ -1,0 +1,75 @@
+# A bill of the US Congress as the Government Publishing Office sets an
+# introduced bill, measured from H.R. 2 of the 118th Congress (govinfo,
+# BILLS-118hr2ih) and the research in doc/typography.md: Letter paper,
+# the text 14 point on a 26 point grid, every line numbered at the left
+# from 1 on each page (25 a page), the numbers set flush right 10 pt
+# from the text; a 28 pc measure from 150 pt in; each paragraph's first
+# line indented 2 em, a subsection's paragraphs (the units `paragraph`,
+# `subparagraph`, `clause`, `subclause`) 2 em further each, their lines
+# after the first back one step; sections headed in New Century
+# Schoolbook Bold capitals, flush left on a line of the grid; the page
+# number centred at the head. Senate bills are set the same.
+#
+# Its faces are DeVinne and New Century Schoolbook; the free stand-in for
+# both is TeX Gyre Schola (`ptome doctor --look us-bill`), wider than
+# DeVinne, so a line holds a few characters fewer. The document turns the
+# numbers on (`:line-numbers:`) and names its units (`:units: usc`).
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] } }
+    display: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] }, weight: bold }
+  size:
+    text: { print: 14pt, screen: 18px }
+    headings: { print: [14pt, 10.5pt, 10.5pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.6, screen: 1.7 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: { print: 2em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  # The first baseline 85 pt down, 25 lines 26 pt apart; the text from
+  # 150 to 486 pt across.
+  page: { size: Letter, margin: [72pt, 126pt, 74pt, 150pt] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 0pt }, space-after: { print: 0pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  page_baseline_grid: 26
+  # (Lines 26 pt apart whatever the face: the grid's step.)
+  base_line_pitch: 26
+  heading:
+    text_transform: uppercase
+    h1: { text_align: center }
+  # (Every paragraph's first line indented, the first under a heading
+  # too; none apart.)
+  prose:
+    margin_bottom: 0
+    text_indent: 28
+  line_numbers:
+    side: left
+    interval: 1
+    restart: page
+    font_size: 14
+    gap: 10
+  # (Each level 2 em inside the one it is in.)
+  units:
+    paragraph: { margin_left: 28 }
+    subparagraph: { margin_left: 28 }
+    clause: { margin_left: 28 }
+    subclause: { margin_left: 28 }
+  header:
+    height: 72pt
+    vertical_align: middle
+    font_size: 10
+    recto: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
+  footer:
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content h2,#content h3{text-transform:uppercase;font-size:.75em}
+  #content .paragraph p{text-indent:2em}
+  #content .unit.paragraph,#content .unit.subparagraph,#content .unit.clause,#content .unit.subclause{margin-left:2em}

@@ -1,0 +1,67 @@
+# A bill of the UK Parliament as its prints set one, measured from the
+# Employment Rights Bill (HL Bill 81, as brought from the Commons, 2024)
+# and the research in doc/typography.md: A4, the text 11 on 13.3 in Book
+# Antiqua, 1.5 in from each edge; every fifth line numbered at the right
+# in italic 9 point, from 1 on each page, on both pages; a section headed
+# in bold, its number before its title; a subsection's text 36 pt in, its
+# number hung left of the text, a paragraph's 36 pt further, its letter
+# hung likewise, 8 pt between subsections; the running head the bill's
+# title, the page number outside. (The Lords print sets 11 on 12.)
+#
+# The face's free stand-in is TeX Gyre Pagella, a Palatino as Book
+# Antiqua is (`ptome doctor --look uk-bill`). The document turns the
+# numbers on (`:line-numbers:`) and names its units (`:units: uk-act`).
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] } }
+    display: { family: { print: TeX Gyre Pagella, screen: [Palatino Linotype, Palatino, Book Antiqua, serif] }, weight: bold }
+  size:
+    text: { print: 11pt, screen: 18px }
+    headings: { print: [16pt, 11pt, 11pt, 11pt, 11pt, 11pt] }
+  leading: { print: 1.21, screen: 1.6 }
+  measure: { screen: 34em }
+  paragraph: { signal: space, space: { print: 0pt } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  page: { size: A4, margin: [1.6in, 1.5in, 1.1in, 1.5in] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 13.3pt }, space-after: { print: 4pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  # (11 on 13.3 whatever the face's own line spacing.)
+  base_line_pitch: 13.3
+  heading:
+    h1: { text_align: center }
+    h2: { text_align: center, font_style: normal, text_transform: uppercase }
+  prose:
+    margin_bottom: 0
+  line_numbers:
+    side: right
+    interval: 5
+    restart: page
+    font_size: 9
+    font_style: italic
+    gap: 26
+  # (A subsection's text 36 pt in, a paragraph's and each level's after
+  # it 36 pt further, the numbers and letters hung left of it.)
+  units:
+    subsection: { margin_left: 36, margin_top: 8, label_hang: true }
+    paragraph: { margin_left: 36, label_hang: true }
+    subparagraph: { margin_left: 36, label_hang: true }
+    clause: { margin_left: 36, label_hang: true }
+  header:
+    height: 1.4in
+    vertical_align: middle
+    font_size: 11
+    recto: { left: { content: '{document-title}' }, center: { content: '' }, right: { content: '{page-number}' } }
+    verso: { left: { content: '{page-number}' }, center: { content: '' }, right: { content: '{document-title}' } }
+  footer:
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  #content .unit.subsection,#content .unit.paragraph,#content .unit.subparagraph,#content .unit.clause{margin-left:36pt}
+  #content .unit.subsection{margin-top:8pt}

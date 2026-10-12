@@ -89,15 +89,18 @@ extension _InlineElements on PdfConverter {
     if (_s('${key}_font_style') case 'bold' || 'bold_italic') {
       label = '<strong>$label</strong>';
     }
-    // (`_hang`: in a block with one of those roles, a poem's, the label
-    // hung left of its line, its anchor where it was.)
-    final hang = switch (_theme.value('${key}_hang')) {
+    // (`_hang`: in a block with one of those roles, a poem's, or in any
+    // block (`true`: a bill's subsection numbers), the label hung left of
+    // its line, its anchor where it was.)
+    final hangValue = _theme.value('${key}_hang');
+    final hang = switch (hangValue) {
       ThemeList(:final values) => [for (final v in values) v.rubyString],
       ThemeString(:final value) => [value],
       _ => const <String?>[],
     };
     if (node.parent case final AbstractBlock block
-        when hang.isNotEmpty && block.roles.any(hang.contains)) {
+        when hangValue == const ThemeBool(true) ||
+            hang.isNotEmpty && block.roles.any(hang.contains)) {
       final id = '$hangAnchorPrefix${_hungLabels.length}';
       _hungLabels[id] = (label, _font);
       return '$anchor<a id="$id">$_dummyText</a>'

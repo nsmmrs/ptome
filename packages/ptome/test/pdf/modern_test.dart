@@ -3062,6 +3062,85 @@ templates:
       expect(text, contains(RegExp(r'capital, 1; finance, \d+; labour, 1')));
     });
 
+    group('the bill looks', () {
+      setUpAll(() {
+        final schemes = Directory('${_dir.path}/schemes')..createSync();
+        for (final name in ['usc', 'uk-act']) {
+          File('test/units/corpus/schemes/$name.yml')
+              .copySync('${schemes.path}/$name.yml');
+        }
+      });
+
+      String bill(String look, String units, String body) => _pdf(
+        '= A Bill\n:units: $units\n:look: $look\n:line-numbers:\n\n$body',
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+
+      /// The left edge of each word in [pdf], by its text (the first).
+      Map<String, double> lefts(String pdf) {
+        final bbox =
+            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+        final lefts = <String, double>{};
+        for (final m in RegExp(
+          r'xMin="([\d.]+)"[^>]*>([^<]*)<',
+        ).allMatches(bbox)) {
+          lefts.putIfAbsent(m[2]!, () => double.parse(m[1]!));
+        }
+        return lefts;
+      }
+
+      final words = [for (var k = 0; k < 30; k++) 'word$k'].join(' ');
+
+      test("a US bill's: every line numbered, levels 2 em in", () {
+        final pdf = bill(
+          'us-bill',
+          'usc',
+          '== @101 Definitions\n\n'
+              '@(a) Subsection $words\n'
+              '@(1) Paragraph $words\n'
+              '@(A) Subparagraph $words\n',
+        );
+        final x = lefts(pdf);
+        // (Each level's first line 2 em (28 pt) inside the one before.)
+        expect(x['(1)']! - x['(a)']!, closeTo(28, 1));
+        expect(x['(A)']! - x['(1)']!, closeTo(28, 1));
+        // Every line numbered from 1, at the left of the text.
+        final lines = _pages(pdf).first;
+        final numbers = [
+          for (final line in lines)
+            if (RegExp(r'^(\d+)\s').firstMatch(line) case final m?)
+              int.parse(m[1]!),
+        ];
+        expect(numbers.take(5), [1, 2, 3, 4, 5]);
+      });
+
+      test("a UK bill's: every fifth line, the labels hung", () {
+        final pdf = bill(
+          'uk-bill',
+          'uk-act',
+          '=== @1 Offences\n\n'
+              '@(1) Subsection $words\n'
+              '@(a) Paragraph $words\n'
+              '@(2) Second $words\n',
+        );
+        final x = lefts(pdf);
+        // (The label hung left of the text, which lines up with the
+        // lines after it.)
+        expect(x['(1)'], lessThan(x['Subsection']! - 5));
+        expect(x['(a)'], lessThan(x['Paragraph']! - 5));
+        expect(x['Paragraph']! - x['Subsection']!, closeTo(36, 1));
+        // Every fifth line numbered, at the right.
+        final text = _pages(pdf).first.join('\n');
+        expect(text, contains(RegExp(r'\s5$', multiLine: true)));
+        expect(text, isNot(contains(RegExp(r'\s4$', multiLine: true))));
+      });
+    });
+
     test('the pleading look: numbered lines, the court on line 8', () {
       final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
           .join(' ');

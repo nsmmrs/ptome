@@ -252,7 +252,25 @@ extension _Framed on PdfConverter {
   /// as an open block keeps them, with the unit's ID.
   void convertUnit(Block node) {
     final children = _collect(() => _traverse(node));
-    _out.add(BlockBox(children, style: BoxStyle(anchor: node.id)));
+    // (`units_<level>_margin_left` and `_margin_top`, modern engine: the
+    // level's blocks indented inside the unit they are in, a bill's
+    // paragraphs inside its subsection, and space above each.)
+    final level = node.attr('level');
+    final keys = level == null || asciidoctorCompat(_document, CompatFormat.pdf)
+        ? null
+        : _keys('units_${level.replaceAll('-', '_')}');
+    _out.add(
+      BlockBox(
+        children,
+        style: BoxStyle(
+          anchor: node.id,
+          margin: EdgeInsets(
+            left: keys?.length('margin_left', _font.size) ?? 0,
+            top: keys?.length('margin_top', _font.size) ?? 0,
+          ),
+        ),
+      ),
+    );
   }
 
   /// Converts the open block [node].

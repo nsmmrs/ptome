@@ -80,6 +80,13 @@ Asciidoctor project.
   run-on index in two columns (`index_layout: run-on`: a term's
   subterms after semicolons in its own paragraph, Chicago's run-in
   style).
+- The `us-bill` and `uk-bill` looks: a bill of the US Congress (every
+  line numbered on a 26 pt grid, each level 2 em in) and of the UK
+  Parliament (every fifth line numbered at the right, the labels hung),
+  measured from H.R. 2 and HL Bill 81. Units that are blocks take a
+  level's indent and space above (`units_<level>_margin_left`,
+  `_margin_top`), and `units_<level>_label_hang: true` hangs a level's
+  labels in any block.
 - PDF margins from a rule: the classical canon (`page_margin_canon`),
   KOMA-Script's DIV and binding allowance with whole lines
   (`page_margin_div`, `page_margin_bcor`), profiles measured from books

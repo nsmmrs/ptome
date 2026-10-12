@@ -120,9 +120,11 @@ void main() {
     );
     expect(catalog.font('Some Serif', 'bold'), isA<AfmFont>());
     expect(warnings.last, contains('using Times-Bold'));
+    // (Families no look's `ptome doctor` installs: this machine's fonts
+    // don't change the answer.)
     catalog
-      ..font('TeX Gyre Pagella')
-      ..font('TeX Gyre Cursor');
+      ..font('TeX Gyre Bonum')
+      ..font('Absent Mono');
     expect(warnings[warnings.length - 2], contains('using Times-Roman'));
     expect(warnings.last, contains('using Courier'));
   });
