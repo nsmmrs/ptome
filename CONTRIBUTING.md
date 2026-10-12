@@ -116,6 +116,12 @@ ASCIIDOCTOR_EXE=test/e2e/bin/ptome-node bats test/e2e/
 The browser test looks for Chromium at `/usr/bin/chromium`; set
 `CHROMIUM_PATH` to use another build.
 
+The magazine looks' screenshots (`test/look/magazine_shots_test.dart`,
+in the full gate) need Chromium, Firefox (`FIREFOX_PATH`, else
+`/usr/bin/firefox` or `~/.cache/asciidart-work/firefox/firefox`),
+ImageMagick and the looks' faces (`ptome doctor --look magazine-1960s`
+and so on); without them they are skipped.
+
 ## Layout
 
 - `lib/ptome.dart`, `io.dart`, `cli.dart`: the public libraries

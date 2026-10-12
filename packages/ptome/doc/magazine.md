@@ -173,4 +173,7 @@ tint or an image behind it, no running content, its own columns:
 `doc/pdf.md`).
 
 `test/look/magazine/feature.adoc` is a sample piece that uses every
-part; convert it with `-a look=<era>` to compare the eras.
+part; convert it with `-a look=<era>` to compare the eras. Its pages in
+each look, as headless Chromium and Firefox draw them, are the
+references in `test/look/magazine/shots` (`test/look/magazine_shots_test.dart`;
+`MAGAZINE_SHOTS_UPDATE=1` makes them again after a change on purpose).
