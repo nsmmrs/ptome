@@ -77,6 +77,7 @@ String describeLook(Look look) {
         'margins ${margin.map((l) => '$l').join(' ')}',
       if (page.inner case final inner?) 'inner $inner',
       if (page.outer case final outer?) 'outer $outer',
+      if (page.grid == true) 'on a baseline grid',
     ].join(', ');
   });
   for (final MapEntry(key: target, value: style) in look.styles.entries) {

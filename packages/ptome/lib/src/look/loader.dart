@@ -493,7 +493,13 @@ final class _Parser {
   }
 
   Page _page(_RawMap raw) {
-    _only(raw, 'tokens.page', const {'size', 'margin', 'inner', 'outer'});
+    _only(raw, 'tokens.page', const {
+      'size',
+      'margin',
+      'inner',
+      'outer',
+      'grid',
+    });
     final e = raw.entries;
     final margin = switch (e['margin']) {
       null => null,
@@ -533,6 +539,7 @@ final class _Parser {
       outer: e['outer'] == null
           ? null
           : _length(e['outer']!, 'tokens.page.outer'),
+      grid: e['grid'] == null ? null : _bool(e['grid']!, 'tokens.page.grid'),
     );
   }
 

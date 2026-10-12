@@ -240,6 +240,7 @@ final class FlowLayout {
     this.sideNotes = const {},
     this.sideColumn,
     this.sideNoteGap = 2,
+    this.baselineGrid,
   }) : templates = {null: ?template, ...?templates},
        pageLabel = pageLabel ?? _decimal {
     if (this.templates[null] == null) {
@@ -301,6 +302,12 @@ final class FlowLayout {
 
   /// The space between two side notes.
   final double sideNoteGap;
+
+  /// The grid the text's baselines keep to, if any: each paragraph (and
+  /// [BaselineContent]) starts where its first baseline falls on a line
+  /// of it, the space before it rounded up to that, so its lines, set a
+  /// step apart, are on the grid too, the same on every page.
+  final BaselineGrid? baselineGrid;
 
   static String _decimal(int number) => '$number';
 

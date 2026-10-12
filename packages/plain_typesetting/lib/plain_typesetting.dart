@@ -27,6 +27,8 @@ export 'src/layout/flow.dart'
     show
         AnchorPosition,
         AutoColumnWidth,
+        BaselineContent,
+        BaselineGrid,
         BlockBox,
         Border,
         BoxAlign,

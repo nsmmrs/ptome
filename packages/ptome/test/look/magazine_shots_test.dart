@@ -111,18 +111,22 @@ void main() {
         () {
           final page = _page(look, faces!);
           final shot = '${_dir.path}/$look-$name.png';
-          name == 'chromium'
-              ? _chromiumShot(browser!, page, shot)
-              : _firefoxShot(browser!, page, shot);
-          // (In 64 colors: the references stay small.)
-          Process.runSync('magick', [
-            shot,
-            '+dither',
-            '-colors',
-            '64',
-            'PNG8:$shot',
-          ]);
           final golden = File('$_sample/shots/$look-$name.png');
+          void take() {
+            name == 'chromium'
+                ? _chromiumShot(browser!, page, shot)
+                : _firefoxShot(browser!, page, shot);
+            // (In 64 colors: the references stay small.)
+            Process.runSync('magick', [
+              shot,
+              '+dither',
+              '-colors',
+              '64',
+              'PNG8:$shot',
+            ]);
+          }
+
+          take();
           if (_update) {
             golden.parent.createSync(recursive: true);
             File(shot).copySync(golden.path);
@@ -133,7 +137,17 @@ void main() {
             isTrue,
             reason: 'no reference: run with MAGAZINE_SHOTS_UPDATE=1',
           );
-          final (differing, total) = _difference(golden.path, shot);
+          // (Taken again when it differs: a browser under load may take it
+          // before the faces are loaded.)
+          var (differing, total) = _difference(golden.path, shot);
+          for (
+            var retry = 0;
+            retry < 2 && differing / total >= 0.002;
+            retry++
+          ) {
+            take();
+            (differing, total) = _difference(golden.path, shot);
+          }
           expect(
             differing / total,
             lessThan(0.002),

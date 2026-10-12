@@ -686,6 +686,40 @@ abstract interface class ShapedContent implements CustomContent {
   });
 }
 
+/// Custom content set in lines that knows where its first baseline is:
+/// on a [BaselineGrid] it starts where that falls on a line of the grid.
+abstract interface class BaselineContent implements CustomContent {
+  /// How far below its top the content's first baseline is at [width];
+  /// null when it has no line of text.
+  double? firstBaseline(double width);
+}
+
+/// Lines a region's text keeps its baselines to ([FlowLayout.baselineGrid]):
+/// [step] apart, the first [offset] below the region's top (where a line
+/// of text starting at the top has its baseline), the same in every
+/// region of the page template, so lines on the two sides of a leaf back
+/// each other (line matching).
+@immutable
+final class BaselineGrid {
+  /// Lines [step] apart, the first [offset] down.
+  const new(this.step, {this.offset = 0});
+
+  /// The space between two lines of the grid (the text's line height).
+  final double step;
+
+  /// Where the first line is, below the region's top.
+  final double offset;
+
+  /// How far [baseline], down from the region's top, is above the next
+  /// line of the grid (zero on one).
+  double shift(double baseline) {
+    if (step <= 0) return 0;
+    final above = baseline - offset;
+    final lines = above <= 1e-6 ? 0 : ((above - 1e-6) / step).ceil();
+    return math.max(0, offset + lines * step - baseline);
+  }
+}
+
 /// What placing custom content gave.
 final class CustomPlacement {
   /// A piece [height] tall that [paint] draws with its top left at (x,

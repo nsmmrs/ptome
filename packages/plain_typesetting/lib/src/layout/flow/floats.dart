@@ -22,10 +22,12 @@ extension _Floats on _Pass {
     void place() {
       _floatsWaiting = 0;
       _floatsReached.clear();
+      final above = measured(top);
       fit = _placeRegion(
         content,
         region.width,
-        region.height - measured(top) - measured(bottom),
+        region.height - above - measured(bottom),
+        below: above,
       );
     }
 

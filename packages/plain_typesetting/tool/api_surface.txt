@@ -10,6 +10,9 @@ abstract base class LinkTarget
   LinkTarget()
   LinkTarget.named(String name)
   LinkTarget.uri(String uri)
+abstract interface class BaselineContent implements CustomContent
+  BaselineContent()
+  double? firstBaseline(double width)
 abstract interface class Canvas
   Canvas()
   double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style)
@@ -192,6 +195,11 @@ final class AnchorPosition
   int page
 final class AutoColumnWidth extends ColumnWidth
   AutoColumnWidth()
+final class BaselineGrid
+  BaselineGrid(double step, {double offset = 0})
+  double offset
+  double shift(double baseline)
+  double step
 final class BlockBox extends LayoutBox
   BlockBox(List<LayoutBox> children, {BoxStyle style = const BoxStyle(), int repeatedHead = 0})
   List<LayoutBox> children
@@ -310,7 +318,8 @@ final class FloatShape
   List<(double, double)?> bands
   double bandHeight
 final class FlowLayout
-  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2})
+  BaselineGrid? baselineGrid
+  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, double sideNoteGap = 2, BaselineGrid? baselineGrid})
   LayoutBox? noteSeparator
   LayoutResult layout(List<LayoutBox> content, {LayoutResult? reuse, int unchangedBefore = 0, Set<int>? changedPages})
   LineBreaker lineBreaker

@@ -418,7 +418,7 @@ final class _Line {
 
 /// Text laid out in lines (Knuth and Plass's line breaking, or for code
 /// one line at a time with a hanging indent), as plain_pdf custom content.
-final class TextBox implements ShapedContent {
+final class TextBox implements ShapedContent, BaselineContent {
   /// The text of [fragments] (from the markup) starting from [state],
   /// laid out by [layout].
   factory(
@@ -706,6 +706,32 @@ final class TextBox implements ShapedContent {
           for (final item in _items)
             if (item.format.fragment.label != null) item.text,
         ].join('\u0000');
+
+  /// Its first line's baseline below its top at [width] (the baseline
+  /// grid's), none without text.
+  @override
+  double? firstBaseline(double width) {
+    if (_items.isEmpty) return null;
+    _relabel();
+    return _firstBaselines[(width, _labelState())] ??= () {
+      final wrap = _wrapOf(
+        [for (final item in _items) item.copy()],
+        _state,
+        _layout,
+        _context,
+        width,
+        double.infinity,
+        firstPiece: first,
+        breaks: _breaksNow(),
+        continuedIndent: continuedIndent,
+        maxLines: 1,
+      );
+      if (wrap.run().isEmpty) return null;
+      return _layout.initialGap + wrap._baseline.abs();
+    }();
+  }
+
+  final Map<(double, String), double?> _firstBaselines = {};
 
   /// The least height [minHeight] computes (not kept).
   double _minHeight(double width) {
@@ -1056,6 +1082,10 @@ final class TextBox implements ShapedContent {
       _ => placed,
     };
   }
+
+  /// The distance between the text's lines at [width] (the baseline
+  /// grid's step for body text).
+  double linePitch(double width) => _pitch(width);
 
   /// The distance between the text's lines at [width]: its second line's
   /// height (its first's when it has one line).
@@ -2286,7 +2316,7 @@ String _strip(String text) => _lstrip(_rstrip(text));
 /// Text whose first line is set in another style (the gem's
 /// `text_with_formatted_first_line`): the first line laid out alone, the
 /// rest after it without another gap above.
-final class FirstLineTextBox implements CustomContent {
+final class FirstLineTextBox implements BaselineContent {
   /// [first] (laid out with a single line) followed by its rest in
   /// [state], laid out by [layout] (without the initial gap right after
   /// the first line, with it on later pages).
@@ -2389,13 +2419,16 @@ final class FirstLineTextBox implements CustomContent {
   double minHeight(double width) => first.minHeight(width);
 
   @override
+  double? firstBaseline(double width) => first.firstBaseline(width);
+
+  @override
   (double, double) intrinsicWidths() => first.intrinsicWidths();
 }
 
 /// Text set smaller when its longest line is wider than the room (the
 /// gem's `autofit` option: `compute_autofit_font_size`), no smaller than
 /// [minimum].
-final class AutofitTextBox implements CustomContent {
+final class AutofitTextBox implements BaselineContent {
   /// [text], shrunk to fit.
   const new(this.text, {this.minimum});
 
@@ -2422,6 +2455,9 @@ final class AutofitTextBox implements CustomContent {
 
   @override
   double minHeight(double width) => _fitted(width).minHeight(width);
+
+  @override
+  double? firstBaseline(double width) => _fitted(width).firstBaseline(width);
 
   @override
   (double, double) intrinsicWidths() => text.intrinsicWidths();

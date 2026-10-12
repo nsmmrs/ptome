@@ -2559,6 +2559,66 @@ templates:
       expect(_pages(compat).where((p) => p.isNotEmpty), hasLength(1));
     });
 
+    test('a baseline grid: body lines a whole number of lines apart', () {
+      final words = 'Body words run on across the column here. ' * 6;
+      final source = [
+        '= Grid',
+        '',
+        for (var i = 1; i <= 4; i++) ...[
+          '== Head $i',
+          '',
+          'Lead$i $words',
+          '',
+          'More$i $words',
+          '',
+        ],
+      ].join('\n');
+
+      // Each body line's top (but the title's, the heads' and the folio's).
+      List<double> tops(String pdf) => [
+        for (final m
+            in RegExp(
+              r'<line xMin="[\d.]+" yMin="([\d.]+)"[^>]*>\s*<word[^>]*>([^<]+)<',
+            ).allMatches(
+              Process.runSync('pdftotext', [
+                    '-f',
+                    '1',
+                    '-l',
+                    '1',
+                    '-bbox-layout',
+                    pdf,
+                    '-',
+                  ]).stdout
+                  as String,
+            ))
+          if (!m[2]!.startsWith('Head') &&
+              m[2] != 'Grid' &&
+              int.tryParse(m[2]!) == null)
+            double.parse(m[1]!),
+      ];
+      bool onGrid(List<double> ys) {
+        // The step: the least distance between two lines.
+        final sorted = {...ys}.toList()..sort();
+        var step = double.infinity;
+        for (var i = 1; i < sorted.length; i++) {
+          final d = sorted[i] - sorted[i - 1];
+          if (d > 1) step = math.min(step, d);
+        }
+        return ys.every((y) {
+          final lines = (y - sorted.first) / step;
+          return (lines - lines.round()).abs() < 0.02;
+        });
+      }
+
+      const theme = 'page_columns: 2\nheading:\n  h2_font_size: 17\n';
+      expect(onGrid(tops(_pdf(source, theme: theme))), isFalse);
+      final gridded = tops(
+        _pdf(source, theme: '${theme}page_baseline_grid: true\n'),
+      );
+      expect(gridded.length, greaterThan(20));
+      expect(onGrid(gridded), isTrue);
+    });
+
     test("an article's title page set inline, at the top of its page", () {
       const source =
           '= The Head: The dek under it\nAnne Author\n:kicker: Coastlines\n\n'

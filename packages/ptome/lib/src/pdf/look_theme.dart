@@ -326,6 +326,7 @@ final class _Compiler {
       }
       _set('page_margin_inner', page.inner?.let(_length));
       _set('page_margin_outer', page.outer?.let(_length));
+      _set('page_baseline_grid', page.grid?.let((g) => YScalar(ThemeBool(g))));
     }
     // A measure sets the side margins, unless the look gives them.
     _item = 'tokens.measure';

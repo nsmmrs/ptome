@@ -313,7 +313,7 @@ final class FontStack {
 @immutable
 final class Page {
   /// A page of [size] inside [margin].
-  const new({this.size, this.margin, this.inner, this.outer});
+  const new({this.size, this.margin, this.inner, this.outer, this.grid});
 
   /// The paper's size.
   final PageSize? size;
@@ -327,6 +327,11 @@ final class Page {
 
   /// The margin away from the binding.
   final Length? outer;
+
+  /// Whether the text keeps to a baseline grid, its lines matched on the
+  /// two sides of a leaf (for thin paper, whose show-through then falls
+  /// between them).
+  final bool? grid;
 }
 
 /// Level 1: the design's values, in no output's terms.

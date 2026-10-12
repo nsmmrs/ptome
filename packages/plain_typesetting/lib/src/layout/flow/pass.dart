@@ -150,18 +150,19 @@ final class _Pass {
         floats.clear();
         _floatsWaiting = 0;
         _floatsNotHere.clear();
+        final reservedTop = waitingTop.isEmpty
+            ? 0.0
+            : _place(
+                BlockBox(waitingTop),
+                region.width,
+                double.infinity,
+                atTop: true,
+              ).height;
         final reserved =
             (waitingBottom.isEmpty
                 ? 0.0
                 : _measure(BlockBox(waitingBottom), region.width)) +
-            (waitingTop.isEmpty
-                ? 0.0
-                : _place(
-                    BlockBox(waitingTop),
-                    region.width,
-                    double.infinity,
-                    atTop: true,
-                  ).height);
+            reservedTop;
         // What is left of blocks floating to a side: at the top of the
         // region first, the content going around them.
         _seedExclusions = [];
@@ -179,11 +180,13 @@ final class _Pass {
           final floatFit = floatTop.isInfinite
               ? null
               : _withoutExclusions(
-                  () => _place(
-                    _unsided(float),
-                    width,
-                    region.height - reserved - floatTop,
-                    atTop: true,
+                  () => _offGrid(
+                    () => _place(
+                      _unsided(float),
+                      width,
+                      region.height - reserved - floatTop,
+                      atTop: true,
+                    ),
                   ),
                 );
           if (floatFit?.placed case final piece?) {
@@ -216,7 +219,12 @@ final class _Pass {
             carriedFloats.add(float);
           }
         }
-        var fit = _placeRegion(content, region.width, region.height - reserved);
+        var fit = _placeRegion(
+          content,
+          region.width,
+          region.height - reserved,
+          below: reservedTop,
+        );
         // Floating boxes that fit, at the top or the bottom of the region:
         // the content in what the top ones leave.
         final top = <LayoutBox>[...waitingTop];
@@ -846,8 +854,10 @@ final class _Pass {
         final x = side == FloatSide.right ? right - width : left;
         final floatFit = floatTop.isInfinite || floatRoom <= 0
             ? null
-            : _withoutExclusions(
-                () => _place(_unsided(child), width, floatRoom, atTop: false),
+            : _offGrid(
+                () => _withoutExclusions(
+                  () => _place(_unsided(child), width, floatRoom, atTop: false),
+                ),
               );
         // (In a column, one that doesn't fit whole in the room left goes
         // on in the next column, and one taller than a column is set in
@@ -1323,11 +1333,33 @@ final class _Pass {
   /// floating to a side there floats only when it fits in it whole.
   bool _inColumn = false;
 
+  /// How far below the region's top [_y]'s origin is (a column's top: a
+  /// column set resets [_y] for blocks floating to a side in it).
+  double _yShift = 0;
+
+  /// How far content whose first baseline is [baseline] below its top,
+  /// which is [top] below [_y]'s origin, moves down to the baseline grid.
+  double _gridShift(double top, double? baseline) =>
+      switch ((_onGrid ? layout.baselineGrid : null, baseline)) {
+        (final grid?, final baseline?) => grid.shift(_yShift + top + baseline),
+        _ => 0,
+      };
+
+  /// Whether what is placed is a region's text, which keeps to the
+  /// baseline grid (not notes, nor blocks floating out of it).
+  bool _onGrid = false;
+
+  /// How far below the top of the page's region the last region's content
+  /// was placed (see [_placeRegion]).
+  double _below = 0;
+
   /// [place] in a column [width] wide: a region of its own for blocks
   /// floating to a side (the column's, from its top).
-  _Fit _column(double width, _Fit Function() place) {
+  _Fit _column(double width, double origin, _Fit Function() place) {
     final saved = (_exclusions, _regionWidth, _y, _left, _right, _excluding);
     final savedInColumn = _inColumn;
+    final savedShift = _yShift;
+    _yShift += origin;
     _exclusions = [];
     _regionWidth = width;
     _y = _left = _right = 0;
@@ -1343,6 +1375,7 @@ final class _Pass {
       _right = saved.$5;
       _excluding = saved.$6;
       _inColumn = savedInColumn;
+      _yShift = savedShift;
     }
   }
 
@@ -1357,17 +1390,40 @@ final class _Pass {
     }
   }
 
+  /// [place] off the baseline grid (a block floating to a side).
+  _Fit _offGrid(_Fit Function() place) {
+    final saved = _onGrid;
+    _onGrid = false;
+    try {
+      return place();
+    } finally {
+      _onGrid = saved;
+    }
+  }
+
   /// [content] placed in a region [width] wide and [room] high, beside
-  /// the blocks floating to a side carried there.
-  _Fit _placeRegion(LayoutBox content, double width, double room) {
+  /// the blocks floating to a side carried there, [below] the top of the
+  /// page's region (under floating boxes at its top: the baseline grid is
+  /// the page's).
+  _Fit _placeRegion(
+    LayoutBox content,
+    double width,
+    double room, {
+    double? below,
+  }) {
+    // (Placed again, for notes say: as far down as the last time.)
+    _below = below ??= _below;
     _exclusions = [..._seedExclusions];
     _regionWidth = width;
     _y = _left = _right = 0;
+    _yShift = below;
     _excluding = true;
+    _onGrid = true;
     try {
       return _place(content, width, room, atTop: true);
     } finally {
       _excluding = false;
+      _onGrid = false;
     }
   }
 

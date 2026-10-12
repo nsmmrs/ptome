@@ -653,6 +653,7 @@ final class PdfConverter extends BuiltInConverter
       sideNoteGap:
           _length('side_notes_item_spacing', _rootFontSize) ??
           _rootFontSize / 4,
+      baselineGrid: _baselineGrid(),
       templateForPage: media == 'prepress'
           ? (template, number) => _sidedTemplate(
               template,
@@ -4827,6 +4828,24 @@ final class PdfConverter extends BuiltInConverter
       _c('${prefix}_rule_color') ?? _c('base_border_color'),
     );
     return color == null ? null : ColumnRule(width: width, color: color);
+  }
+
+  /// The grid the body text's baselines keep to (`page_baseline_grid`,
+  /// modern engine): `true` for the body text's line pitch, or a length;
+  /// the first line where a body line at the top of the page has its
+  /// baseline. For thin paper, whose show-through then falls between the
+  /// lines (a line-matched Bible), and columns whose lines align.
+  BaselineGrid? _baselineGrid() {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    // (Two lines a paragraph breaks into, one word each.)
+    final body = _textBox('Ag Ag', _font, align: 'left');
+    final step = switch (_theme.value('page_baseline_grid')) {
+      ThemeBool(value: true) => body.linePitch(1),
+      ThemeNumber(:final value) when value > 0 => value.toDouble(),
+      _ => null,
+    };
+    if (step == null) return null;
+    return BaselineGrid(step, offset: body.firstBaseline(1) ?? 0);
   }
 
   /// What [content] makes set in [count] columns [gap] apart.
@@ -11303,7 +11322,7 @@ final class PdfConverter extends BuiltInConverter
 
 /// Content that moves to the next region unless [room] points fit below
 /// it (a heading kept with what follows).
-final class _NeedsRoom implements CustomContent {
+final class _NeedsRoom implements BaselineContent {
   const new(this.content, this.room);
 
   final CustomContent content;
@@ -11326,6 +11345,12 @@ final class _NeedsRoom implements CustomContent {
 
   @override
   double minHeight(double width) => content.minHeight(width) + room;
+
+  @override
+  double? firstBaseline(double width) => switch (content) {
+    final BaselineContent c => c.firstBaseline(width),
+    _ => null,
+  };
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
@@ -11432,7 +11457,7 @@ String _romanOf(int number, {required bool upper}) {
 
 /// Content that moves to the next region unless [minimum] points are
 /// left (the gem's `allocate_space_for_list_item`).
-final class _MinRoom implements CustomContent {
+final class _MinRoom implements BaselineContent {
   const new(this.content, this.minimum);
 
   final CustomContent content;
@@ -11452,12 +11477,18 @@ final class _MinRoom implements CustomContent {
   double minHeight(double width) => content.minHeight(width);
 
   @override
+  double? firstBaseline(double width) => switch (content) {
+    final BaselineContent c => c.firstBaseline(width),
+    _ => null,
+  };
+
+  @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
 }
 
 /// Content with a marker drawn beside its first piece: [marker] laid out
 /// [markerWidth] wide, [offset] points from the content's left edge.
-final class _Marked implements CustomContent {
+final class _Marked implements BaselineContent {
   const new(this.content, this.marker, this.markerWidth, this.offset);
 
   final CustomContent content;
@@ -11489,6 +11520,12 @@ final class _Marked implements CustomContent {
   double minHeight(double width) => content.minHeight(width);
 
   @override
+  double? firstBaseline(double width) => switch (content) {
+    final BaselineContent c => c.firstBaseline(width),
+    _ => null,
+  };
+
+  @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
 }
 
@@ -11501,7 +11538,7 @@ final RegExp _openingPunctuation = RegExp('^[“‘"\'«‹(\\[¿¡„‚]+');
 
 /// Text with a drop beside its first lines: [drop] drawn [width] wide at
 /// the text's left, [dy] points down from its top.
-final class _Dropped implements CustomContent {
+final class _Dropped implements BaselineContent {
   const new(this.text, this.drop, this.width, this.dy, {this.shift = 0});
 
   final CustomContent text;
@@ -11540,6 +11577,12 @@ final class _Dropped implements CustomContent {
 
   @override
   double minHeight(double width) => text.minHeight(width);
+
+  @override
+  double? firstBaseline(double width) => switch (text) {
+    final BaselineContent c => c.firstBaseline(width),
+    _ => null,
+  };
 
   @override
   (double, double) intrinsicWidths() => text.intrinsicWidths();
@@ -11840,7 +11883,7 @@ final class _Side {
 
 /// [content] laid out [extra] points wider than it is given (prawn-table
 /// widens a cell's text by its `FPTolerance`, a point).
-final class _Widened implements CustomContent {
+final class _Widened implements BaselineContent {
   const new(this.content, this.extra);
 
   final CustomContent content;
@@ -11855,6 +11898,12 @@ final class _Widened implements CustomContent {
 
   @override
   double minHeight(double width) => content.minHeight(width + extra);
+
+  @override
+  double? firstBaseline(double width) => switch (content) {
+    final BaselineContent c => c.firstBaseline(width + extra),
+    _ => null,
+  };
 
   @override
   (double, double) intrinsicWidths() => content.intrinsicWidths();
@@ -11908,7 +11957,7 @@ final RegExp _headingNumberRx = RegExp(
 /// A heading's [title] with its [number] hung left of its edge: [hang]
 /// from it, or the number's width and [gap] when that is more, at the
 /// title's top (their first lines' baselines meet).
-final class _Hung implements CustomContent {
+final class _Hung implements BaselineContent {
   const new(this.title, this.number, this.hang, {required this.gap});
 
   final CustomContent title;
@@ -11940,6 +11989,12 @@ final class _Hung implements CustomContent {
 
   @override
   double minHeight(double width) => title.minHeight(width);
+
+  @override
+  double? firstBaseline(double width) => switch (title) {
+    final BaselineContent c => c.firstBaseline(width),
+    _ => null,
+  };
 
   @override
   (double, double) intrinsicWidths() => title.intrinsicWidths();
@@ -12541,7 +12596,7 @@ final class _PageImage {
 
 /// [content] indented by [indents] (left and right) for the width it's
 /// given.
-final class _Indented implements CustomContent {
+final class _Indented implements BaselineContent {
   const new(this.content, this.indents);
 
   final CustomContent content;
@@ -12568,6 +12623,15 @@ final class _Indented implements CustomContent {
   double minHeight(double width) {
     final (left, right) = indents(width);
     return content.minHeight(width - left - right);
+  }
+
+  @override
+  double? firstBaseline(double width) {
+    final (left, right) = indents(width);
+    return switch (content) {
+      final BaselineContent c => c.firstBaseline(width - left - right),
+      _ => null,
+    };
   }
 
   @override

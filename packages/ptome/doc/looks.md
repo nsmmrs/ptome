@@ -134,7 +134,7 @@ and `epub-css:` parts apply look by look, the one extended first.
 | `hyphenate` | `true` or `false` | `base_hyphens` (print) |
 | `color.<name>` | Colors by role; `ink` is the text's, `paper` the page's | `base_font_color`, `page_background_color` |
 | `rule.<name>` | Rule widths by name (`hairline`, `heavy`) | |
-| `page` | `size` (a name, `A4`, or a trim, `[6.25in, 9.25in]`), `margin` (1, 2 or 4 lengths), `inner`, `outer` | `page_size`, `page_margin`, `page_margin_inner`, `page_margin_outer` |
+| `page` | `size` (a name, `A4`, or a trim, `[6.25in, 9.25in]`), `margin` (1, 2 or 4 lengths), `inner`, `outer`, `grid` (`true`: the text on a baseline grid, for thin paper) | `page_size`, `page_margin`, `page_margin_inner`, `page_margin_outer`, `page_baseline_grid` |
 
 ## Styles
 

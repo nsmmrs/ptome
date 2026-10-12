@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FlowLayout.baselineGrid` (`BaselineGrid`): a region's paragraphs, and
+  custom content that is `BaselineContent`, start where their first
+  baseline falls on a line of the grid, in columns and under floats at
+  the top of the page too (notes and blocks floating to a side keep
+  their own places).
 - A block floating to a side inside a `ColumnsBox` floats in its column:
   the column is a region of its own for it; one that doesn't fit in the
   room left starts the next column, and one taller than a column is set

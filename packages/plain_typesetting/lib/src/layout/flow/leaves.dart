@@ -13,7 +13,11 @@ extension _Leaves on _Pass {
     final margin = box.style.margin;
     final lines = _linesOf(box, width - margin.horizontal);
     final from = box._from;
-    final top = atTop || from > 0 ? 0.0 : margin.top;
+    var top = atTop || from > 0 ? 0.0 : margin.top;
+    // (On a baseline grid, down to where its first baseline is on it.)
+    if (from < lines.length) {
+      top += _gridShift(_y + top, lines[from].baseline);
+    }
     final heights = [for (final line in lines.skip(from)) line.height];
     final count = layout.pageBreaker.linesThatFit(
       heights,
@@ -167,9 +171,13 @@ extension _Leaves on _Pass {
   }) {
     final style = box.style;
     final margin = style.margin;
-    final top = atTop || box._continued ? 0.0 : margin.top;
+    var top = atTop || box._continued ? 0.0 : margin.top;
     final content = box.content;
     final inner = width - margin.horizontal;
+    // (On a baseline grid, down to where its first baseline is on it.)
+    if (content is BaselineContent && layout.baselineGrid != null) {
+      top += _gridShift(_y + top, content.firstBaseline(inner));
+    }
     final room = available - top;
     CustomPlacement? placement;
     if (content is LinedContent) {

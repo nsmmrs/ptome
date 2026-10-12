@@ -242,6 +242,41 @@ void main() {
     expect(at['l4']!.$2, closeTo(at['l1']!.$2, 1e-6));
   });
 
+  test('on a baseline grid, text lines keep to it past other things', () {
+    final document = RecordingDocument();
+    final head = ParagraphBox(
+      Paragraph([TextRun('Head', TextStyle(_serif, 17))]),
+    );
+    // The grid: a body line's height apart, the first where a body line
+    // at the top of the region has its baseline.
+    final body = const FirstFitLineBreaker()
+        .breakLines(_para('b0').paragraph, (_) => 1000)
+        .single;
+    final grid = BaselineGrid(body.height, offset: body.baseline);
+    FlowLayout(template: _rows(30), baselineGrid: grid)
+        .layout([
+          _para('b1'),
+          head,
+          const SpacerBox(7),
+          _para('b2\nb3'),
+          const SpacerBox(3.3),
+          ColumnsBox([_para('c1\nc2'), head, _para('c3\nc4')], balance: true),
+        ])
+        .render(document);
+    final top = 20 + 30 * _lineHeight;
+    var checked = 0;
+    for (final call in document.pages.single.canvas.calls) {
+      final m = RegExp(r'^glyphs "\s*([bc]\d)\s*" at \S+ (\S+)')
+          .firstMatch(call);
+      if (m == null) continue;
+      final down = top - double.parse(m[2]!) - grid.offset;
+      final lines = down / grid.step;
+      expect(lines, closeTo(lines.roundToDouble(), 0.01), reason: m[1]);
+      checked++;
+    }
+    expect(checked, 7);
+  });
+
   test('a rule between columns with content, down the taller', () {
     final document = RecordingDocument();
     FlowLayout(template: _rows(8))

@@ -401,6 +401,14 @@ templates:
     expect(withValues(doc), doc, reason: 'run dart run tool/style_table.dart');
   });
 
+  test('a page on a baseline grid', () {
+    _look('grid', 'tokens:\n  page: { grid: true }\n');
+    expect(
+      lookThemeEntries(_load('grid'))['page_baseline_grid'],
+      isA<YScalar>().having((y) => y.value, 'value', const ThemeBool(true)),
+    );
+  });
+
   test('a trim size; paragraphs indented after paragraphs alone', () {
     _look('trim', '''
 tokens:

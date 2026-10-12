@@ -11,6 +11,8 @@ extension _Columns on _Pass {
   }) {
     final style = box.style;
     final top = atTop || box._continued ? 0.0 : style.margin.top;
+    // (Where its columns start, for the baseline grid.)
+    final origin = _y + top;
     final inner = width - style.margin.horizontal;
     final columnWidth = (inner - box.gap * (box.count - 1)) / box.count;
     // Too little room for the first box: the set goes on in the next
@@ -41,6 +43,7 @@ extension _Columns on _Pass {
         final column = rest;
         final fit = _column(
           columnWidth,
+          origin,
           () => _place(column, columnWidth, room, atTop: true),
         );
         if (fit.placed == null) {

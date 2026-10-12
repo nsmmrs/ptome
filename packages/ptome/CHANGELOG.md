@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- A baseline grid (`page_baseline_grid`, a look's `page: { grid: true }`):
+  the body text's lines keep to a grid a body line apart, in every
+  column and on every page, each paragraph starting where its first
+  baseline falls on it (the space before it rounded up), so lines match
+  on the two sides of a leaf of thin paper.
 - The magazine website (`doc/magazine.md`): a role vocabulary for a
   piece's parts (kicker, hed, dek, byline, dateline, lede, dropcap,
   pullquote, caption-lead, columns, end; aligned with IPTC NITF and
