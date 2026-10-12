@@ -2,6 +2,10 @@ part of '../converter.dart';
 
 // Paragraphs.
 
+/// Orphans and widows that keep a paragraph's lines together (more than
+/// a heading has).
+const int _wholeLines = 1 << 20;
+
 /// The words from which a quotation is set off (Chicago 13.9).
 const int _runInLimit = 100;
 
@@ -11,6 +15,117 @@ const int _blockLeast = 5;
 extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
+
+  /// [box]'s text as the engine's paragraph ([runs], its
+  /// [TextBox.engineContent]) set as the box sets it: its leading, the
+  /// space above its first line and under its last, its lines at least as
+  /// tall as its base text where it asks (`normalizeLineHeight`), its last
+  /// line's alignment, protrusion and width; with [hangIndent] for
+  /// [hangLines] lines and [firstLineContent] where given.
+  Paragraph _engineParagraphOf(
+    TextBox box,
+    List<InlineContent> runs, {
+    double hangIndent = 0,
+    int hangLines = 0,
+    List<InlineContent>? firstLineContent,
+  }) {
+    final layout = box.layout;
+    final state = box.state;
+    final size = state.size;
+    // (The text box's font metrics are Prawn's, an embedded font's
+    // rounded to thousandths of the em; the engine's the font's own: the
+    // leading and the space above take up the difference, so the lines
+    // fall where the box sets them.)
+    final face = _fonts.font(state.family, state.style);
+    final engineFont = face.pdf;
+    final scale = size / 1000;
+    final engineHeight =
+        (engineFont.ascender - engineFont.descender + engineFont.lineGap) *
+        scale;
+    final heightShift = face.heightAt(size) - engineHeight;
+    final ascentShift = face.ascenderAt(size) - engineFont.ascender * scale;
+    // (The space under the last line where it isn't the space between
+    // lines' share, half the leading: none, a cell's line gap.)
+    final ownEnd =
+        (layout.initialGap - (layout.leading / 2 + face.lineGapAt(size)))
+                .abs() >
+            1e-9 ||
+        (layout.paddingBottom - layout.leading / 2).abs() > 1e-9 ||
+        layout.trailingLineGap;
+    return Paragraph(
+      runs,
+      hangIndent: hangIndent,
+      hangLines: hangLines,
+      firstLineContent: firstLineContent,
+      align: switch (layout.align) {
+        'justify' => TextAlign.justify,
+        'center' => TextAlign.center,
+        'right' => TextAlign.right,
+        _ => TextAlign.left,
+      },
+      // (The space above each line as the text box sets it; with
+      // `base_leading`, the lines from their cap heights.)
+      lineHeight: layout.capLines
+          ? LineHeight.cap(leading: layout.leading)
+          : LineHeight.font(
+              leading: layout.leading + heightShift,
+              above: layout.initialGap + ascentShift,
+              endDepth: ownEnd
+                  ? face.descenderAt(size) +
+                        layout.paddingBottom +
+                        (layout.trailingLineGap ? face.lineGapAt(size) : 0)
+                  : null,
+            ),
+      firstLineIndent: layout.indentFirstLine,
+      strut: layout.normalizeLineHeight ? TextStyle(engineFont, size) : null,
+      // (`base_text_align_last`: a justified paragraph's last line, and
+      // those before a hard break.)
+      alignLast: switch (layout.alignLast) {
+        'center' => TextAlign.center,
+        'right' => TextAlign.right,
+        _ => TextAlign.left,
+      },
+      // (`base_overhang`: protrusion.)
+      protrusion: layout.overhang,
+      justifyToWidest: layout.justifyWidest,
+      // (A superscript in the space between lines, as the text box sets
+      // it.)
+      riseInLineHeight: false,
+    );
+  }
+
+  /// [box] in [style] as the engine's paragraph, where the engine sets it
+  /// as the box does (FEAT-5w237r), else the box itself.
+  ///
+  /// With [whole], its lines kept together (as a heading's).
+  LayoutBox _engineOr(
+    TextBox box, {
+    BoxStyle style = const BoxStyle(),
+    bool whole = false,
+  }) {
+    final layout = box.layout;
+    if (!_engineParagraphs ||
+        layout.singleLine ||
+        layout.shrinkToFit ||
+        layout.finalGap ||
+        layout.forceJustify ||
+        layout.wrapIndent != null ||
+        layout.dropLines > 0 ||
+        layout.lineInsets.isNotEmpty ||
+        (layout.capLines && layout.trailingLineGap)) {
+      return CustomBox(box, style: style);
+    }
+    final runs = box.engineContent();
+    if (runs == null || runs.isEmpty) return CustomBox(box, style: style);
+    _engineParagraphCount++;
+    return ParagraphBox(
+      _engineParagraphOf(box, runs),
+      style: style,
+      orphans: whole ? _wholeLines : layout.orphans,
+      widows: whole ? _wholeLines : layout.widows,
+      lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
+    );
+  }
 
   /// The roles of paragraphs a heading for the margin passes
   /// (`heading_h<n>_margin_skip_roles`: a pericope's parallel passages).
@@ -336,72 +451,20 @@ extension _Paragraphs on PdfConverter {
     if (_engineParagraphs && (firstLine == null || firstRuns != null)) {
       if (box.engineContent() case final runs? when runs.isNotEmpty) {
         _engineParagraphCount++;
-        final metrics = _lineMetrics(font);
-        // (The text box sets half the leading and the font's line gap
-        // above its first line, the engine's paragraph all of it under
-        // each line: the space above as padding, kept at a page's top as
-        // the box keeps it, and that much less below.)
-        // (The text box's font metrics are Prawn's, an embedded font's
-        // rounded to thousandths of the em; the engine's the font's own:
-        // the leading and the space above take up the difference, so the
-        // lines fall where the box sets them.)
-        final face = _fonts.font(font.family, font.style);
-        final engineFont = face.pdf;
-        final scale = font.size / 1000;
-        final engineHeight =
-            (engineFont.ascender - engineFont.descender + engineFont.lineGap) *
-            scale;
-        final heightShift = face.heightAt(font.size) - engineHeight;
-        final ascentShift =
-            face.ascenderAt(font.size) - engineFont.ascender * scale;
         // (A drop: the first lines set in beside it, as the text box sets
         // them, the drop painted at the paragraph's top, the paragraph as
         // deep as the drop at least.)
         final dropped = drop == null ? null : _dropOf(drop, font);
+        var text = _engineParagraphOf(
+          box,
+          runs,
+          hangIndent: dropped?.width ?? 0,
+          hangLines: drop?.lines ?? 0,
+          firstLineContent: firstRuns,
+        );
+        if (drop != null) text = text.copyWith(firstLineIndent: 0);
         final paragraph = ParagraphBox(
-          Paragraph(
-            runs,
-            hangIndent: dropped?.width ?? 0,
-            hangLines: drop?.lines ?? 0,
-            firstLineContent: firstRuns,
-            align: switch (align) {
-              'justify' => TextAlign.justify,
-              'center' => TextAlign.center,
-              'right' => TextAlign.right,
-              _ => TextAlign.left,
-            },
-            // (Half the leading and the font's line gap above each line,
-            // as the text box sets them; with `base_leading`, the lines
-            // from their cap heights, as it sets them then.)
-            lineHeight: _capLeading(font) != null
-                ? LineHeight.cap(leading: metrics.leading)
-                : LineHeight.font(
-                    leading: metrics.leading + heightShift,
-                    above: metrics.paddingTop + ascentShift,
-                  ),
-            firstLineIndent: drop == null ? indent : 0,
-            // (`base_text_align_last`: a justified paragraph's last line,
-            // and those before a hard break, as the box sets them.)
-            alignLast: switch (_choice('base_text_align_last', const [
-              'left',
-              'center',
-              'right',
-            ])) {
-              'center' => TextAlign.center,
-              'right' => TextAlign.right,
-              _ => TextAlign.left,
-            },
-            // (`base_overhang`: protrusion, as the box draws it.)
-            protrusion: _overhangAmount(),
-            // (`base_justify_width: widest`: justified to the widest
-            // line, as the box sets a paragraph in a block sized to it.)
-            justifyToWidest:
-                _choice('base_justify_width', const ['room', 'widest']) ==
-                'widest',
-            // (A superscript in the space between lines, as the text
-            // box sets it.)
-            riseInLineHeight: false,
-          ),
+          text,
           style: BoxStyle(
             margin: EdgeInsets(bottom: dropped == null ? marginBottom : 0),
             anchor: node.id,

@@ -361,9 +361,10 @@ final class FlowLayout
   int maxPasses
   int? notesLag
 final class FontLineHeight extends LineHeight
-  FontLineHeight({double leading = 0, double above = 0})
+  FontLineHeight({double leading = 0, double above = 0, double? endDepth})
   double above
   double leading
+  double? endDepth
 final class FractionColumnWidth extends ColumnWidth
   FractionColumnWidth(double weight)
   double weight
@@ -541,9 +542,10 @@ final class Paragraph
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest, int? hangLines})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut})
   TextAlign align
   TextAlign alignLast
+  TextStyle? strut
   bool breakLongWords
   bool justifyToWidest
   bool riseInLineHeight
@@ -709,7 +711,7 @@ sealed class LineFragment
 sealed class LineHeight
   LineHeight.cap({double leading})
   LineHeight.exact(double points)
-  LineHeight.font({double leading, double above})
+  LineHeight.font({double leading, double above, double? endDepth})
   LineHeight.multiple(double factor)
 sealed class LineItem
   double width

@@ -25,7 +25,8 @@ sealed class LineHeight {
   /// The fonts' height (ascender to descender, plus their line gap) and
   /// [leading] more; [above] of that space between lines set above the
   /// text, the rest under it.
-  const factory font({double leading, double above}) = FontLineHeight;
+  const factory font({double leading, double above, double? endDepth}) =
+      FontLineHeight;
 
   /// [factor] times the largest font size on the line, the extra split
   /// above and below the text (as CSS does).
@@ -45,7 +46,12 @@ sealed class LineHeight {
 final class FontLineHeight extends LineHeight {
   /// The fonts' height plus [leading], [above] of the space between lines
   /// (the leading and the fonts' line gap) over the text.
-  const new({this.leading = 0, this.above = 0}) : super._();
+  const new({this.leading = 0, this.above = 0, this.endDepth}) : super._();
+
+  /// Where given, how far below its baseline a paragraph's last line ends
+  /// (the space under it the paragraph's own, not a line's after it: a
+  /// heading's or a table cell's text ends at its descender).
+  final double? endDepth;
 
   /// The extra space between lines, in points.
   final double leading;
@@ -155,6 +161,7 @@ final class Paragraph {
     this.hangIndent = 0,
     this.hangLines = 0,
     this.firstLineContent,
+    this.strut,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -180,6 +187,7 @@ final class Paragraph {
     hangIndent: hangIndent,
     hangLines: hangLines ?? this.hangLines,
     firstLineContent: firstLineContent,
+    strut: strut,
   );
 
   /// The inline content.
@@ -218,6 +226,11 @@ final class Paragraph {
 
   /// How many lines [hangIndent] sets in.
   final int hangLines;
+
+  /// A style each line is at least as tall as text in (TeX's `\strut`: a
+  /// caption's lines as tall as the body text's, whatever their size), or
+  /// null.
+  final TextStyle? strut;
 
   /// The same text in its first line's style (CSS's `::first-line`: an
   /// abstract's first line in bold), or null: the paragraph is broken in
@@ -1913,6 +1926,7 @@ Line _line(
     if (content is TextRun) text(content.style);
   }
   if (shaped.isEmpty && emptyRun != null) text(emptyRun.style);
+  if (paragraph.strut case final strut?) text(strut);
   final textAscent = ascent;
   // (Lines from their cap heights: the tallest capitals of the line's
   // text, a line of spaces alone as tall as theirs.)
@@ -1965,8 +1979,10 @@ Line _line(
     }
   }
   final (height, baseline) = switch (paragraph.lineHeight) {
-    FontLineHeight(:final leading, :final above) => (
-      ascent - descent + gap + leading,
+    FontLineHeight(:final leading, :final above, :final endDepth) => (
+      end && endDepth != null
+          ? above + ascent + endDepth
+          : ascent - descent + gap + leading,
       above + ascent,
     ),
     MultipleLineHeight(:final factor) => _centered(

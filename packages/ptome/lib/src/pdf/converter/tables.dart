@@ -641,7 +641,16 @@ extension _Tables on PdfConverter {
         cell: true,
         inlineFormat: data.inlineFormat,
       );
-      content = [CustomBox(_Widened(box, 1))];
+      // (A point wider than its room, as Prawn sets a cell's text.)
+      content = [
+        switch (_engineOr(
+          box,
+          style: const BoxStyle(margin: EdgeInsets(right: -1)),
+        )) {
+          final ParagraphBox paragraph => paragraph,
+          _ => CustomBox(_Widened(box, 1)),
+        },
+      ];
       // Prawn aligns the text in a box a point taller than the room (its
       // FPTolerance), by the text's height without the trailing line gap.
       final gap = _fonts.font(font.family, font.style).lineGapAt(font.size);

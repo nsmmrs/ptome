@@ -687,18 +687,20 @@ extension _Sections on PdfConverter {
     // beside it).
     final rule = modern ? _headingRule(category) : null;
     if (padding == null && border == null && verticalAlign == null) {
-      _out.add(
-        CustomBox(
-          content,
-          style: BoxStyle(
-            margin: margin,
-            anchor: anchor,
-            marks: marks,
-            floatBarrier: barrier,
-            keepWithNext: sticky || rule != null,
-          ),
-        ),
+      final style = BoxStyle(
+        margin: margin,
+        anchor: anchor,
+        marks: marks,
+        floatBarrier: barrier,
+        keepWithNext: sticky || rule != null,
       );
+      // (Set by the engine's paragraphs where it can: a heading of text
+      // alone, kept whole, asking for no room after it.)
+      _out.add(switch (content) {
+        _NeedsRoom(content: final TextBox text, room: 0) ||
+        final TextBox text => _engineOr(text, style: style, whole: true),
+        _ => CustomBox(content, style: style),
+      });
     } else {
       _out.add(
         BlockBox(

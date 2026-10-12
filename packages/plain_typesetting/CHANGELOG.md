@@ -45,6 +45,10 @@
   image sits from the baseline and how far it reaches for its line's
   height, where those aren't its own (a formula on its depth; an icon no
   taller than its text).
+- `LineHeight.font(endDepth:)`: how far below its baseline a paragraph's
+  last line ends (a heading's or a table cell's text ending at its
+  descender), and `Paragraph.strut` (TeX's `\strut`: each line at least
+  as tall as text in a style).
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

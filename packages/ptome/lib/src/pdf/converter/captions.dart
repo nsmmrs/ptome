@@ -12,15 +12,20 @@ extension _Captions on PdfConverter {
     bool bottom = false,
     String? blockAlign,
   }) {
-    _out.add(
-      _captionBox(
-        node,
-        category: category,
-        labeled: labeled,
-        bottom: bottom,
-        blockAlign: blockAlign,
-      ),
+    final box = _captionBox(
+      node,
+      category: category,
+      labeled: labeled,
+      bottom: bottom,
+      blockAlign: blockAlign,
     );
+    // (Set by the engine's paragraphs where it can, without a background.)
+    _out.add(switch (box) {
+      CustomBox(content: final TextBox text, :final style)
+          when style.decoration == null =>
+        _engineOr(text, style: style),
+      _ => box,
+    });
   }
 
   /// The caption of [node] (see [_caption]), or nothing for a node without

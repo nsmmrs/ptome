@@ -122,8 +122,9 @@ Asciidoctor project.
   drop initials (a role's `drop_lines`, a section's
   `heading_h<n>_initial_lines`), an abstract's first line in its own
   style, inline images and formulas, text on a background or in a
-  border, and small capitals made from capitals. Every word where the
-  box puts it
+  border, and small capitals made from capitals; and headings, captions
+  and table cells' text are set by them too. Every word where the box
+  puts it
   (test/pdf/engine_paragraphs_test.dart). The Hypermedia Systems book's
   paragraphs go through the engine (313 pages, the same words); its lines
   differ from the box's only where the engine is right and the box isn't:

@@ -386,6 +386,43 @@ void main() {
     );
   });
 
+  test('captions: a titled paragraph, an example, a listing', () {
+    final long = List.filled(2, _words40).join(' ');
+    _same(
+      '.A paragraph titled at some length, its caption over two lines when '
+      'it runs on as this one does across the page\n$long\n\n'
+      '.An example\n====\n$long\n====\n\n'
+      '.A listing\n----\ncode\n----\n\n$long\n',
+      theme: 'caption:\n  font_style: italic\n  font_size: 9\n',
+    );
+  });
+
+  test('table cells', () {
+    String row(int r) =>
+        '|${_words40.substring(0, 60 + r * 20)} |cell $r '
+        '|${_words40.substring(r * 10, 100 + r * 10)}';
+    final rows = [for (var r = 0; r < 6; r++) row(r)].join('\n');
+    _same('[cols="2,1,3"]\n|===\n$rows\n|===\n\n$_words40\n');
+    _same(
+      '[cols="a,a",options=header]\n|===\n|Head one |Head two\n'
+      '|${_words40.substring(0, 90)} |short\n|===\n',
+    );
+    _same('|===\n|auto width |${_words40.substring(0, 140)}\n|===\n');
+  });
+
+  test('headings', () {
+    final long = List.filled(3, _words40).join(' ');
+    String section(int i) =>
+        '== Section $i, a title long enough to run over two lines when it '
+        'is set this large\n\n$long\n\n=== A smaller one\n\n$long\n';
+    final sections = [for (var i = 0; i < 6; i++) section(i)].join('\n');
+    _same('= Doc\n\n$sections');
+    _same(
+      '= Doc\n:doctype: book\n\n$sections',
+      theme: 'heading:\n  h2_text_align: center\n  h3_font_style: italic\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(
