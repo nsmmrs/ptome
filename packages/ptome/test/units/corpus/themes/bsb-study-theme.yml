@@ -26,4 +26,22 @@ role:
   sn-excerpt: { font_style: bold }
   hebrew: { font_style: italic }
   greek: { font_style: italic }
-  feature: { font_size: 8 }
+  # (A theme note or a profile: a tinted box across the page between the
+  # text and the notes, its body in two columns.)
+  feature: { float: bottom, float_scope: page }
+  # (Its first paragraph opening with a two-line initial.)
+  theme-body-fl: { drop_lines: 2 }
+  profile-body-fl: { drop_lines: 2 }
+sidebar:
+  role:
+    feature:
+      background_color: EFE9DD
+      border_width: 0
+      padding: [6, 9, 6, 9]
+      font_size: 7.5
+      columns: 2
+      column_gap: 12
+      title:
+        font_size: 9
+        font_style: bold
+        text_align: center

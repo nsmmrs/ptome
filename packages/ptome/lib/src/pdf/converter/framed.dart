@@ -694,6 +694,34 @@ extension _Framed on PdfConverter {
       }
       // (The modern engine: `sidebar_*` keys for the blocks inside it,
       // `sidebar_prose_margin_bottom`...)
+      // (`sidebar_columns`, modern engine: its body in that many balanced
+      // columns, `sidebar_column_gap` apart: a study Bible's feature
+      // article.)
+      final columns = asciidoctorCompat(_document, CompatFormat.pdf)
+          ? 1
+          : (_n('sidebar_columns') ?? 1).toInt();
+      if (columns >= 2) {
+        final gap =
+            _length('sidebar_column_gap', _rootFontSize) ?? _rootFontSize;
+        _out.add(
+          ColumnsBox(
+            _inColumnSet(
+              columns,
+              gap,
+              () => _collect(
+                () => _withFont(
+                  'sidebar',
+                  () => _withBaseKeys('sidebar', () => _traverse(node)),
+                ),
+              ),
+            ),
+            count: columns,
+            gap: gap,
+            balance: true,
+          ),
+        );
+        return;
+      }
       _withFont(
         'sidebar',
         () => _withBaseKeys('sidebar', () => _traverse(node)),

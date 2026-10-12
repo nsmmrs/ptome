@@ -3045,6 +3045,49 @@ templates:
       expect(reader, isNot(matches(RegExp(r'\b17\s+Verse17\b'))));
     });
 
+    test('a box across the columns at the foot, its body in columns', () {
+      // A study Bible's feature article: in page columns, a sidebar with
+      // the role floats to the bottom of the page across both columns,
+      // above the notes, its own body in two balanced columns.
+      final text = [for (var k = 0; k < 30; k++) 'Text sentence $k goes on.']
+          .join(' ');
+      final feature = [for (var k = 0; k < 60; k++) 'Feat$k word.'].join(' ');
+      final pdf = _pdf(
+        '= Doc\n\n$text footnote:[A note.]\n\n[.feature]\n.Article\n'
+        '****\n$feature\n****\n\n$text\n',
+        theme:
+            'page:\n  columns: 2\n'
+            'role:\n  feature: { float: bottom, float_scope: page }\n'
+            'sidebar:\n  role:\n    feature:\n      columns: 2\n',
+      );
+      final bbox =
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      final words = [
+        for (final m in RegExp(
+          r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]*)<',
+        ).allMatches(bbox))
+          (m[3]!, double.parse(m[1]!), double.parse(m[2]!)),
+      ];
+      final feat = words.where((w) => w.$1.startsWith('Feat')).toList();
+      final body = words.where((w) => w.$1 == 'Text').toList();
+      final (_, _, noteY) = words.firstWhere((w) => w.$1 == 'note.');
+      final xs = feat.map((w) => w.$2).toList();
+      final mid = (xs.reduce(math.min) + xs.reduce(math.max)) / 2;
+      // Its body in two columns, the second's first word level with the
+      // first's.
+      final first = feat.first;
+      final second = feat.firstWhere((w) => w.$2 > mid);
+      expect(second.$3, closeTo(first.$3, 1));
+      // Under the text of both page columns (each half of the Letter
+      // page), above the note.
+      final topOfFeature = feat.map((w) => w.$3).reduce(math.min);
+      expect({
+        for (final w in body)
+          if (w.$3 < topOfFeature) w.$2 < 306,
+      }, hasLength(2));
+      expect(feat.every((w) => w.$3 < noteY), isTrue);
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

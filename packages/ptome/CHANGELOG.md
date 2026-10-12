@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF: a block with a role can float to the top or the bottom of the
+  page, across its columns (`role_<role>_float: bottom`,
+  `_float_scope: page`), and a sidebar's body can be set in columns
+  (`sidebar_columns`): a study Bible's feature articles, tinted boxes
+  between the text and the notes.
 - The units corpus has a study edition (`bible/bsb-study`, Genesis 1–3
   and Mark 1): the Berean Standard Bible with its translators' notes,
   OpenBible.info's cross-references and Tyndale Open Study Notes, made by

@@ -85,6 +85,32 @@ extension _Traversal on PdfConverter {
     }
     for (final role in block.roles) {
       final key = 'role_${role.replaceAll('-', '_')}_float';
+      // (`top`, `bottom`, `auto`, `next`: the block floats to the top or
+      // the bottom of its region, above the notes; `_float_scope: page`
+      // across the page's columns, as a study Bible's feature article
+      // sits between the text and the notes.)
+      final placement = switch (_s(key)) {
+        'top' => FloatPlacement.top,
+        'bottom' => FloatPlacement.bottom,
+        'auto' => FloatPlacement.auto,
+        'next' => FloatPlacement.next,
+        _ => null,
+      };
+      if (placement != null) {
+        final boxes = _out.sublist(from);
+        _out
+          ..removeRange(from, _out.length)
+          ..add(
+            BlockBox(
+              boxes,
+              style: BoxStyle(
+                float: placement,
+                floatSpan: _keys(key).string('scope') == 'page',
+              ),
+            ),
+          );
+        return;
+      }
       final side = switch (_s(key)) {
         'left' => FloatSide.left,
         'right' => FloatSide.right,
