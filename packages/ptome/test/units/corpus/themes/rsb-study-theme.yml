@@ -28,6 +28,8 @@ side_notes:
   item_spacing: 1
 role:
   xref: { display: side, font_size: 6, line_height: 1.3, font_family: Fira Sans Condensed }
+  # (Over each chapter's run of cross-references.)
+  entry-heading: { font_style: bold }
 note_stream:
   tn:
     arrangement: run_in

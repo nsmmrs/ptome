@@ -1,0 +1,13 @@
+version: 2
+stream:
+  # Cross-references gathered at each verse, each chapter's run of them
+  # headed `Chapter n`, so each entry gives its verse alone.
+  hx:
+    placement: "entry"
+    reset: "verse"
+    entry-first-in: "chapter"
+    entry-heading: "Chapter {{chapter}}"
+    origin: "{{verse}}"
+    origin-style: "strong"
+    entry-role: "xref"
+    entry-after: " "

@@ -349,6 +349,10 @@ final class _Renderer {
   /// proofs).
   final Map<AbstractNode, List<UnitAtom>> _blocksAfter = Map.identity();
 
+  /// The unit of each stream's `entry-first-in` level its last entry was
+  /// under (its labels' keys down to that level), by stream.
+  final Map<String, String> _entryUnder = {};
+
   /// The unit each block that starts a unit of blocks starts.
   final Map<AbstractBlock, Unit> _blockUnits = Map.identity();
 
@@ -714,6 +718,33 @@ final class _Renderer {
       }
       final look = stream.look;
       final parts = <UnitAtom>[];
+      // The first entry under a unit of the `entry-first-in` level
+      // (`chapter`) opens with the `entry-heading` (`Chapter {{chapter}}`)
+      // on a line of its own, so the entries under it may give the verse
+      // alone, as a study Bible's reference column does.
+      if ((look.entryFirstIn, stream.templates['entry-heading']) case (
+        final level?,
+        final template?,
+      )) {
+        final depth = u.level.scheme.levels
+            .where((l) => l.name == level)
+            .firstOrNull
+            ?.depth;
+        if (depth != null && depth <= u.level.depth) {
+          final under = [
+            for (final label in u.labels.take(depth + 1)) label?.keyText,
+          ].join('/');
+          if (_entryUnder[name] != under) {
+            _entryUnder[name] = under;
+            final heading = render(template, _unitCtx(u));
+            if (heading.isNotEmpty) {
+              parts
+                ..add(PartAtom(heading, role: look.entryHeadingRole))
+                ..add(const BreakAtom());
+            }
+          }
+        }
+      }
       if (stream.templates['origin'] case final origin?) {
         final text = render(origin, _unitCtx(u));
         if (text.isNotEmpty) {

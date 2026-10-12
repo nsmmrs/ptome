@@ -131,4 +131,12 @@ final class StreamLook {
 
   /// Text between two notes of an entry.
   String get noteSeparator => map.string('note-separator') ?? ' ';
+
+  /// The level under each of whose units the first entry opens with the
+  /// stream's `entry-heading` (`chapter`).
+  String? get entryFirstIn => map.string('entry-first-in');
+
+  /// The role the entry heading is set in (`entry-heading` by default).
+  String get entryHeadingRole =>
+      map.string('entry-heading-role') ?? 'entry-heading';
 }

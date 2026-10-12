@@ -105,6 +105,20 @@ void main() {
       );
     });
 
+    test("a chapter's first entry opens with the stream's heading", () {
+      final out = html('bible/headed');
+      // (On a line of its own over the first entry of each chapter; the
+      // entries give the verse alone.)
+      expect(
+        RegExp('<span class="entry-heading">Chapter 1</span><br>')
+            .allMatches(out),
+        hasLength(1),
+      );
+      expect(out, contains('<span class="entry-heading">Chapter 2</span>'));
+      expect(out, contains('<strong>2</strong> Jer 4:23'));
+      expect(out, isNot(contains('<strong>1:1</strong>')));
+    });
+
     test('ranges and terms are role spans around the markup inside', () {
       final out = html('bible/sample');
       expect(out, contains('<span class="nd">Lord</span>'));

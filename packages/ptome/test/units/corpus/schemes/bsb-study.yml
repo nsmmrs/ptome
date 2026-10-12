@@ -12,7 +12,11 @@ stream:
   x:
     placement: "entry"
     reset: "verse"
-    origin: "{{chapter}}:{{verse}}"
+    # (Each chapter's run of entries headed `Chapter n`, so each gives its
+    # verse alone.)
+    entry-first-in: "chapter"
+    entry-heading: "Chapter {{chapter}}"
+    origin: "{{verse}}"
     entry-role: "xref"
     origin-style: "strong"
     note-separator: "; "

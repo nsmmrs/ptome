@@ -322,7 +322,12 @@ A scheme file declares the following.
   `caller-role`, `caller-after`; `origin-style`, `lemma-style`,
   `lemma-after`, `prefix` (in a footnote); `entry-role`, `entry-after`,
   `note-separator`, `entry-break: block` (an entry that is a block of its
-  own).
+  own); `entry-first-in` (a level, `chapter`) with `entry-heading` (a
+  template, `Chapter {{chapter}}`): the first entry under each unit of
+  that level opens with the heading on a line of its own, in the role
+  `entry-heading` (`entry-heading-role`), so the entries under it can
+  give the verse alone (`origin: "{{verse}}"`), as a study Bible's
+  reference column does.
 - *Ranges* and *term rules*.
 - *Settings*: `apparatus` roles, `overlay-role` and `overlay-after`.
 - *Citation styles* (`citation:`): how another document cites a passage of

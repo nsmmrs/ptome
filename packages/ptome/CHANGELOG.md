@@ -89,6 +89,10 @@ Asciidoctor project.
   labels in any block.
   The US bill's slug at the foot (`:bill-slug:`), and the UK bill's
   numbers flush right: `line_numbers_align` and `line_numbers_width`.
+- Units note streams: `entry-first-in` and `entry-heading` head the first
+  entry under each unit of a level (`Chapter {{chapter}}` over each
+  chapter's cross-references), so the entries can give the verse alone;
+  the study Bible's scheme does.
 - The `federal-register` look: a Federal Register document (measured
   from 89 FR 47855) in three columns, its agency block, run-in
   captions and footnotes at the foot of their column. New: the

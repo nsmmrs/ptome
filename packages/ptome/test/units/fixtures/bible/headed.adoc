@@ -1,0 +1,14 @@
+= Headed
+:units: bible, headed
+:excerpt:
+
+== @GEN
+
+=== @1
+
+@1 In the beginning note:hx[Ps 33:6] God created the heaven and the earth.
+@2 And the earth was without form note:hx[Jer 4:23], and void.
+
+=== @2
+
+@1 Thus the heavens note:hx[Exod 20:11] and the earth were finished.

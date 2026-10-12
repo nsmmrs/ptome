@@ -64,10 +64,12 @@ feature articles across the page above the notes, the study notes in
 three columns starting on their verse's page, the running heads. What
 it needs for a whole Bible:
 
-1. **Floats after their text** (BUG-3llqq1): a box pinned to the bottom
-   must move on with its text when the notes shorten the text.
-2. **"Chapter n" over the references** (FEAT-000j3n), so the entries can
-   give the verse alone, as the RSB's do.
+1. Done: **floats after their text** (BUG-3llqq1): a box pinned to the
+   bottom moves on with its text when the notes shorten the text.
+2. Done: **"Chapter n" over the references** (FEAT-000j3n): the scheme's
+   `x` stream heads each chapter's run of entries (`entry-first-in`,
+   `entry-heading`), and the entries give the verse alone, as the RSB's
+   do.
 3. **A heading banner**: a sidebar title on a dark bar in capitals
    (`sidebar_title_background_color` or the like).
 4. **Tighter section heads**: the theme's heading spacing, measured from
