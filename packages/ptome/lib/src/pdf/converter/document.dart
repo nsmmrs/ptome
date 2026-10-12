@@ -662,7 +662,7 @@ extension _DocumentParts on PdfConverter {
   /// `title_page_<side>` (ADR-0023), else the gem's fixed order on the
   /// recto and no verso.
   List<_TitleSlot> _titleSlots(String side) =>
-      switch (_theme.value('title_page_$side')) {
+      switch (_keys('title_page').value(side)) {
         ThemeList(:final values) => [
           for (final value in values)
             switch (value) {
@@ -752,11 +752,11 @@ extension _DocumentParts on PdfConverter {
       if (font.transform case final transform? when transform != 'none') {
         content = transformText(content, transform);
       }
-      final left = (_n('${category}_margin_left') ?? 0).toDouble();
-      final right = (_n('${category}_margin_right') ?? 0).toDouble();
+      final left = (_keys(category).number('margin_left') ?? 0).toDouble();
+      final right = (_keys(category).number('margin_right') ?? 0).toDouble();
       // The modern engine: the text sheared as a block, by an angle in
       // degrees leaning right (`<category>_skew`).
-      final degrees = _n('${category}_skew');
+      final degrees = _keys(category).number('skew');
       _out.add(
         BlockBox(
           [
@@ -789,7 +789,10 @@ extension _DocumentParts on PdfConverter {
       String category, {
       bool normalize = true,
     }) {
-      gap(slot.marginTop ?? (_n('${category}_margin_top') ?? 0).toDouble());
+      gap(
+        slot.marginTop ??
+            (_keys(category).number('margin_top') ?? 0).toDouble(),
+      );
       prose(
         '${slot.before ?? ''}$text',
         category,
@@ -797,7 +800,8 @@ extension _DocumentParts on PdfConverter {
         role: slot.role,
       );
       gap(
-        slot.marginBottom ?? (_n('${category}_margin_bottom') ?? 0).toDouble(),
+        slot.marginBottom ??
+            (_keys(category).number('margin_bottom') ?? 0).toDouble(),
       );
     }
 
@@ -998,7 +1002,7 @@ extension _DocumentParts on PdfConverter {
     // an ordinary heading).
     final role = _boxedRole(section);
     return role == null ||
-        _theme.value('section_role_${role}_running_content_on_openers') !=
+        _keys('section_role_$role').value('running_content_on_openers') !=
             const ThemeBool(true);
   }
 

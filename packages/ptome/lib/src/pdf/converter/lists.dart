@@ -197,17 +197,19 @@ extension _Lists on PdfConverter {
     // figures for an ordered list's numbers).
     final markerFeatures = <String>{};
     void styleFrom(String prefix) {
-      if (fontFeature(_s('${prefix}_font_variant_numeric')) case final f?) {
+      if (fontFeature(_keys(prefix).string('font_variant_numeric'))
+          case final f?) {
         markerFeatures.add(f);
       }
 
-      markerColor = _c('${prefix}_font_color') ?? markerColor;
-      markerFamily = _s('${prefix}_font_family') ?? markerFamily;
-      markerSize = (_n('${prefix}_font_size') ?? markerSize).toDouble();
+      markerColor = _keys(prefix).color('font_color') ?? markerColor;
+      markerFamily = _keys(prefix).string('font_family') ?? markerFamily;
+      markerSize = (_keys(prefix).number('font_size') ?? markerSize).toDouble();
       markerStyle =
-          PdfConverter._fontStyle(_s('${prefix}_font_style')) ?? markerStyle;
-      markerLineHeight = (_n('${prefix}_line_height') ?? markerLineHeight)
-          .toDouble();
+          PdfConverter._fontStyle(_keys(prefix).string('font_style')) ??
+          markerStyle;
+      markerLineHeight =
+          (_keys(prefix).number('line_height') ?? markerLineHeight).toDouble();
     }
 
     if (list.context == BlockContext.olist) {
@@ -238,12 +240,12 @@ extension _Lists on PdfConverter {
         if (item.hasAttr('checkbox')) {
           type = item.hasAttr('checked') ? 'checked' : 'unchecked';
           marker =
-              _s('ulist_marker_${type}_content') ??
+              _keys('ulist_marker_$type').string('content') ??
               (type == 'checked' ? '\u2611' : '\u2610');
         }
       } else {
         marker =
-            _s('ulist_marker_${type}_content') ??
+            _keys('ulist_marker_$type').string('content') ??
             switch (type) {
               'disc' => '\u2022',
               'circle' => '\u25e6',
@@ -363,7 +365,7 @@ extension _Lists on PdfConverter {
     final savedAlign = _baseTextAlign;
     final savedTheme = _theme;
     _theme = _theme.overlaid('${category}_', '');
-    if (_s('${category}_base_text_align') case final align?) {
+    if (_keys(category).string('base_text_align') case final align?) {
       _baseTextAlign = align;
     }
     try {

@@ -80,7 +80,7 @@ extension _Tables on PdfConverter {
     required String blockAlign,
   }) {
     if (setting == null || setting == 'none') return caption;
-    var align = _s('${captionKey}_align') ?? _s('caption_align');
+    var align = _keys(captionKey).string('align') ?? _s('caption_align');
     if (align == 'inherit') align = blockAlign;
     align ??= _baseTextAlign;
     (double, double) indents(double width) {
@@ -312,9 +312,9 @@ extension _Tables on PdfConverter {
           // keys.
           if (PdfConverter._cellRole(text) case final role?) {
             final key = 'table_cell_role_${role.replaceAll('-', '_')}';
-            background = _c('${key}_background_color') ?? background;
+            background = _keys(key).color('background_color') ?? background;
             font = _themeFont(key, font);
-            cellAlign = _s('${key}_text_align') ?? cellAlign;
+            cellAlign = _keys(key).string('text_align') ?? cellAlign;
           }
         }
         cells.add(

@@ -92,12 +92,12 @@ extension _Traversal on PdfConverter {
       };
       if (side == null) continue;
       final content = _floatRoom;
-      final width = switch (_theme.value('${key}_width')) {
+      final width = switch (_keys(key).value('width')) {
         ThemeString(:final value) when value.trim().endsWith('%') =>
           content *
               (double.tryParse(value.trim().replaceFirst('%', '')) ?? 50) /
               100,
-        _ => _length('${key}_width', _font.size) ?? content / 3,
+        _ => _keys(key).length('width', _font.size) ?? content / 3,
       };
       final boxes = _out.sublist(from);
       _out
@@ -108,7 +108,7 @@ extension _Traversal on PdfConverter {
             style: BoxStyle(
               side: side,
               sideWidth: width,
-              sideGap: _length('${key}_gap', _font.size) ?? _font.size,
+              sideGap: _keys(key).length('gap', _font.size) ?? _font.size,
               sideShape: _floatShape(block, key, width),
             ),
           ),
@@ -124,7 +124,7 @@ extension _Traversal on PdfConverter {
   /// box.
   FloatShape? _floatShape(AbstractBlock block, String key, double width) {
     if (block.context != BlockContext.image) return null;
-    final kind = block.attr('shape') ?? _s('${key}_shape');
+    final kind = block.attr('shape') ?? _keys(key).string('shape');
     if (kind != 'alpha') return null;
     final target = block.attr('target');
     if (target == null) return null;
@@ -132,12 +132,12 @@ extension _Traversal on PdfConverter {
     if (bytes == null) return null;
     final outline = alphaOutline(
       bytes,
-      threshold: (_n('${key}_shape_threshold') ?? 0.5).toDouble(),
+      threshold: (_keys(key).number('shape_threshold') ?? 0.5).toDouble(),
     );
     if (outline == null) return null;
     final scale = width / outline.width;
     final band = outline.bandRows * scale;
-    final margin = _length('${key}_shape_margin', _font.size) ?? 0;
+    final margin = _keys(key).length('shape_margin', _font.size) ?? 0;
     // Each band's columns in points, then grown by the margin: across
     // and to the bands within it above and below.
     final reach = (margin / band).ceil();
@@ -223,7 +223,7 @@ extension _Traversal on PdfConverter {
   double _themeMargin(String category, String side, AbstractBlock? next) {
     if (next == null) return 0;
     final key = next is Section ? 'block' : category;
-    return (_n('${key}_margin_$side') ?? 0).toDouble();
+    return (_keys(key).number('margin_$side') ?? 0).toDouble();
   }
 
   /// The space below [node], followed by [next] (the next enclosed block
@@ -249,7 +249,7 @@ extension _Traversal on PdfConverter {
     // category's.)
     double? roleMargin(AbstractBlock block, String side) {
       for (final role in block.roles.reversed) {
-        if (_n('role_${role}_margin_$side') case final value?) {
+        if (_keys('role_$role').number('margin_$side') case final value?) {
           return value.toDouble();
         }
       }
@@ -258,7 +258,8 @@ extension _Traversal on PdfConverter {
 
     final own =
         roleMargin(node, 'bottom') ??
-        _n('${PdfConverter._spacingCategory(node)}_margin_bottom')
+        _keys(PdfConverter._spacingCategory(node))
+            .number('margin_bottom')
             ?.toDouble() ??
         base;
     // A section's heading: the larger of the two, the heading's margin
@@ -268,7 +269,7 @@ extension _Traversal on PdfConverter {
     }
     final above =
         roleMargin(following, 'top') ??
-        _n('${PdfConverter._spacingCategory(following)}_margin_top') ??
+        _keys(PdfConverter._spacingCategory(following)).number('margin_top') ??
         0;
     return math.max(own, above.toDouble());
   }
@@ -320,14 +321,16 @@ extension _Traversal on PdfConverter {
     final level = (section.level ?? 0) + 1;
     if (_boxedRole(section) case final role?) {
       final category = 'section_role_$role';
-      return ((_n('${category}_margin_top') ?? 0) +
-              (_n('${category}_heading_margin_top') ??
-                  _n('heading_h${level}_margin_top') ??
+      return ((_keys(category).number('margin_top') ?? 0) +
+              (_keys(category).number('heading_margin_top') ??
+                  _keys('heading_h$level').number('margin_top') ??
                   _n('heading_margin_top') ??
                   0))
           .toDouble();
     }
-    return (_n('heading_h${level}_margin_top') ?? _n('heading_margin_top') ?? 0)
+    return (_keys('heading_h$level').number('margin_top') ??
+            _n('heading_margin_top') ??
+            0)
         .toDouble();
   }
 
@@ -337,7 +340,8 @@ extension _Traversal on PdfConverter {
   /// section, after a heading what its margin below leaves.
   double _marginAbove(AbstractBlock node) {
     if (!_collapseMargins) return 0;
-    final above = _n('${PdfConverter._spacingCategory(node)}_margin_top')
+    final above = _keys(PdfConverter._spacingCategory(node))
+        .number('margin_top')
         ?.toDouble();
     if (above == null || above <= 0) return 0;
     if (_previousSibling(node) != null) return 0;
@@ -345,7 +349,7 @@ extension _Traversal on PdfConverter {
     if (parent is! Section) return 0;
     final level = (parent.level ?? 0) + 1;
     final heading =
-        (_n('heading_h${level}_margin_bottom') ??
+        (_keys('heading_h$level').number('margin_bottom') ??
                 _n('heading_margin_bottom') ??
                 0)
             .toDouble();

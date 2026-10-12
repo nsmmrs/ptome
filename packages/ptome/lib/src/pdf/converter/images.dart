@@ -437,7 +437,8 @@ extension _Images on PdfConverter {
     if (!_inColumns) return false;
     var scope = node.attr('scope');
     for (final role in node.roles) {
-      scope ??= _s('image_role_${role.replaceAll('-', '_')}_scope');
+      scope ??= _keys('image_role_${role.replaceAll('-', '_')}')
+          .string('scope');
     }
     scope ??= _s('image_scope');
     return scope == 'parent' || scope == 'page';

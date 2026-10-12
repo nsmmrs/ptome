@@ -149,7 +149,7 @@ extension _Admonitions on PdfConverter {
       null => null,
     };
     var size = defaults?.$3 ?? 24;
-    if (_theme.value('admonition_icon_$type') case ThemeMap(:final entries)) {
+    if (_keys('admonition_icon').value(type) case ThemeMap(:final entries)) {
       if (entries['name'] case final value?) {
         name = value.rubyString;
         if (!iconSets.any((set) => name!.startsWith('$set-')) &&

@@ -124,7 +124,7 @@ extension _RunningContent on PdfConverter {
   List<LayoutBox> _running(String periphery, PageInfo page) {
     final doc = _document;
     if (periphery == 'header' ? doc.noheader : doc.nofooter) return const [];
-    final height = (_n('${periphery}_height') ?? 0).toDouble();
+    final height = (_keys(periphery).number('height') ?? 0).toDouble();
     if (height == 0) return const [];
     if (page.count < _bodyStart) return const [];
     final number = page.number;
@@ -167,18 +167,18 @@ extension _RunningContent on PdfConverter {
       margins.left,
     ];
     final trimMargin = _trimValues(
-      _theme.value('${periphery}_${side}_margin') ??
-          _theme.value('${periphery}_margin'),
+      _keys(periphery).value('${side}_margin') ??
+          _keys(periphery).value('margin'),
       pageMargin,
     );
     final contentMargin = _trimValues(
-      _theme.value('${periphery}_${side}_content_margin') ??
-          _theme.value('${periphery}_content_margin'),
+      _keys(periphery).value('${side}_content_margin') ??
+          _keys(periphery).value('content_margin'),
       [for (var i = 0; i < 4; i++) pageMargin[i] - trimMargin[i]],
     );
     final paddingValue =
-        _theme.value('${periphery}_${side}_padding') ??
-        _theme.value('${periphery}_padding');
+        _keys(periphery).value('${side}_padding') ??
+        _keys(periphery).value('padding');
     final padding = paddingValue == null
         ? contentMargin
         : [
@@ -187,7 +187,8 @@ extension _RunningContent on PdfConverter {
           ];
     final baseFont = _themeFont(periphery, _font);
     final metrics = _lineMetrics(baseFont);
-    final borderWidth = (_n('${periphery}_border_width') ?? 0).toDouble();
+    final borderWidth = (_keys(periphery).number('border_width') ?? 0)
+        .toDouble();
     final top = periphery == 'header'
         ? pageHeight - trimMargin[0]
         : height + trimMargin[2];
@@ -199,14 +200,14 @@ extension _RunningContent on PdfConverter {
     final proseHeight =
         contentHeight - metrics.paddingTop - metrics.paddingBottom;
     final contentOffset = periphery == 'footer' ? borderWidth * 0.5 : 0.0;
-    var valign = _s('${periphery}_vertical_align') ?? 'middle';
+    var valign = _keys(periphery).string('vertical_align') ?? 'middle';
     if (valign == 'middle') valign = 'center';
 
     // The columns: their alignment, width and left edge.
     final columns = <String, (String, double, double)>{};
     final spec =
-        _theme.value('${periphery}_${side}_columns') ??
-        _theme.value('${periphery}_columns');
+        _keys(periphery).value('${side}_columns') ??
+        _keys(periphery).value('columns');
     if (spec != null) {
       final parts = spec.rubyString.replaceAll(',', ' ').split(RegExp(r'\s+'))
         ..removeWhere((p) => p.isEmpty);
@@ -256,9 +257,13 @@ extension _RunningContent on PdfConverter {
     // The attributes the content refers to.
     final attributes = _runningAttributes(periphery, page, label);
     final pieces = <void Function(LayoutPage page)>[];
-    final background = PdfConverter._color(_c('${periphery}_background_color'));
+    final background = PdfConverter._color(
+      _keys(periphery).color('background_color'),
+    );
     final borderColor = borderWidth > 0
-        ? pdfColorOf(_c('${periphery}_border_color') ?? _c('base_border_color'))
+        ? pdfColorOf(
+            _keys(periphery).color('border_color') ?? _c('base_border_color'),
+          )
         : null;
     if (background != null || (borderWidth > 0 && borderColor != null)) {
       pieces.add((pdfPage) {
@@ -279,7 +284,7 @@ extension _RunningContent on PdfConverter {
             left + width,
             periphery == 'header' ? top - height : top,
             borderWidth,
-            _s('${periphery}_border_style'),
+            _keys(periphery).string('border_style'),
           );
         }
       });
@@ -301,16 +306,17 @@ extension _RunningContent on PdfConverter {
     // Rules between columns, a spacing apart (the gem leaves the spacing
     // out of each column after the first, and half of it out of the
     // first).
-    final ruleWidth = (_n('${periphery}_column_rule_width') ?? 0).toDouble();
-    final ruleColor = ruleWidth > 0
-        ? pdfColorOf(_c('${periphery}_column_rule_color'))
-        : null;
-    final ruleSpacing = (_n('${periphery}_column_rule_spacing') ?? 0)
+    final ruleWidth = (_keys(periphery).number('column_rule_width') ?? 0)
         .toDouble();
-    final ruleStyle = _s('${periphery}_column_rule_style');
+    final ruleColor = ruleWidth > 0
+        ? pdfColorOf(_keys(periphery).color('column_rule_color'))
+        : null;
+    final ruleSpacing = (_keys(periphery).number('column_rule_spacing') ?? 0)
+        .toDouble();
+    final ruleStyle = _keys(periphery).string('column_rule_style');
     String? previous;
     for (final position in const ['left', 'center', 'right']) {
-      var template = _s('${periphery}_${side}_${position}_content');
+      var template = _keys(periphery).string('${side}_${position}_content');
       if (template == null || template.isEmpty) continue;
       var (align, columnWidth, x) = columns[position]!;
       if (columnWidth <= 0) continue;
@@ -351,7 +357,8 @@ extension _RunningContent on PdfConverter {
         if (graphic != null) {
           final boxLeft = contentLeft + x;
           final boxTop = top - padding[0] - contentOffset;
-          final imageValign = switch (_s('${periphery}_image_vertical_align')) {
+          final imageValign = switch (_keys(periphery)
+              .string('image_vertical_align')) {
             null => valign,
             'middle' => 'center',
             final other => other,
@@ -538,7 +545,7 @@ extension _RunningContent on PdfConverter {
     if (doc.hasAttr('pagenums')) attributes['page-number'] = label;
     // `<periphery>_title_style`: `document` (the default) as headings are
     // titled, `toc` as the contents list them, `basic` without numbers.
-    final titleStyle = _s('${periphery}_title_style');
+    final titleStyle = _keys(periphery).string('title_style');
     String titleOf(String? mark) {
       final index = int.tryParse(mark ?? '');
       if (index == null || index >= _sections.length) return '';
@@ -595,7 +602,7 @@ extension _RunningContent on PdfConverter {
         }
       }
     }
-    final sectlevels = (_n('${periphery}_sectlevels') ?? 2).toInt();
+    final sectlevels = (_keys(periphery).number('sectlevels') ?? 2).toInt();
     final partMark = page.mark('part');
     var chapterMark = page.mark('chapter');
     var sectionMark = page.mark('section-$sectlevels');

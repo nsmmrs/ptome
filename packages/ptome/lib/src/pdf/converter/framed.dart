@@ -10,17 +10,18 @@ extension _Framed on PdfConverter {
   void Function(Canvas canvas, Rect rect, double radius)? _shadow(
     String category,
   ) {
-    final color = pdfColorOf(_c('${category}_shadow_color'));
+    final color = pdfColorOf(_keys(category).color('shadow_color'));
     if (color == null) return null;
-    final offset = switch (_theme.value('${category}_shadow_offset')) {
+    final offset = switch (_keys(category).value('shadow_offset')) {
       ThemeList(:final values) when values.length >= 2 => (
         PdfConverter._toPoints(values[0]),
         PdfConverter._toPoints(values[1]),
       ),
       _ => (0.0, 2.0),
     };
-    final blur = (_n('${category}_shadow_blur') ?? 4).toDouble();
-    final opacity = (_n('${category}_shadow_opacity') ?? 0.3).toDouble();
+    final blur = (_keys(category).number('shadow_blur') ?? 4).toDouble();
+    final opacity = (_keys(category).number('shadow_opacity') ?? 0.3)
+        .toDouble();
     // (PDF has no blur: rounded rectangles shrinking inward, each adding a
     // little more of the color, so it fades out over the blur.)
     const steps = 8;
@@ -207,7 +208,8 @@ extension _Framed on PdfConverter {
   /// has its padding and border at its top and bottom (the modern
   /// engine's `<category>_box_decoration_break: clone`, as CSS's).
   bool _cloneEdges(String category) =>
-      _choice('${category}_box_decoration_break', const ['slice', 'clone']) ==
+      _keys(category)
+          .choice('box_decoration_break', const ['slice', 'clone']) ==
       'clone';
 
   /// Whether the piece of a framed block a page's end cuts off reaches it
@@ -230,7 +232,7 @@ extension _Framed on PdfConverter {
       BlockBox(
         children,
         style: BoxStyle(
-          padding: _padding('${category}_padding'),
+          padding: _keys(category).edges('padding'),
           margin: EdgeInsets(bottom: _marginBelow(node)),
           keepTogether: node.hasOption('unbreakable'),
           cloneEdges: _cloneEdges(category),
@@ -298,7 +300,7 @@ extension _Framed on PdfConverter {
     if (node is Section) {
       for (final role in node.roles) {
         final name = role.replaceAll('-', '_');
-        if (_n('section_role_${name}_page_columns') case final count?
+        if (_keys('section_role_$name').number('page_columns') case final count?
             when count >= 2) {
           return count.toInt();
         }
@@ -331,10 +333,10 @@ extension _Framed on PdfConverter {
   /// `_rule_color` give (modern engine), if any.
   ColumnRule? _columnRule(String prefix) {
     if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
-    final width = _n('${prefix}_rule_width')?.toDouble() ?? 0;
+    final width = _keys(prefix).number('rule_width')?.toDouble() ?? 0;
     if (width <= 0) return null;
     final color = pdfColorOf(
-      _c('${prefix}_rule_color') ?? _c('base_border_color'),
+      _keys(prefix).color('rule_color') ?? _c('base_border_color'),
     );
     return color == null ? null : ColumnRule(width: width, color: color);
   }
@@ -711,9 +713,10 @@ extension _Framed on PdfConverter {
 
   void _convertQuote(Block node) {
     final category = node.context == BlockContext.quote ? 'quote' : 'verse';
-    final leftWidth = (_n('${category}_border_left_width') ?? 0).toDouble();
+    final leftWidth = (_keys(category).number('border_left_width') ?? 0)
+        .toDouble();
     final leftColor = leftWidth > 0
-        ? _c('${category}_border_color') ?? _c('base_border_color')
+        ? _keys(category).color('border_color') ?? _c('base_border_color')
         : null;
     final hasLeft = leftWidth > 0 && pdfColorOf(leftColor) != null;
     String? escape(String? text) =>
@@ -745,7 +748,7 @@ extension _Framed on PdfConverter {
         // The modern engine's `<category>_cite_margin_top` and
         // `<category>_cite_text_align`; the gem's block margin, at the left.
         final margin =
-            _length('${category}_cite_margin_top', _font.size) ??
+            _keys(category).length('cite_margin_top', _font.size) ??
             (_n('block_margin_bottom') ?? 0).toDouble();
         if (margin > 0) _out.add(SpacerBox(margin));
         _withFont('${category}_cite', () {
@@ -755,7 +758,7 @@ extension _Framed on PdfConverter {
               _textBox(
                 '— $parts',
                 _font,
-                align: (_s('${category}_cite_text_align')) ?? 'left',
+                align: (_keys(category).string('cite_text_align')) ?? 'left',
                 normalize: false,
               ),
             ),

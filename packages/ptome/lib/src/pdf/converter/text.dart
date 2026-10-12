@@ -220,7 +220,7 @@ extension _Text on PdfConverter {
   /// from; null when it has none (the gem's `apply_text_decoration`).
   Fragment? _decoration(String category, [int? level]) {
     String key(String name) =>
-        level != null && _theme.value('${category}_h${level}_$name') != null
+        level != null && _keys(category).value('h${level}_$name') != null
         ? '${category}_h${level}_$name'
         : '${category}_$name';
     final style = switch (_s(key('text_decoration'))) {

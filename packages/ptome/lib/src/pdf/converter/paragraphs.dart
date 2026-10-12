@@ -12,7 +12,7 @@ extension _Paragraphs on PdfConverter {
   _Drop? _takeDrop(Block node) {
     final drop = _pendingDrop;
     if (drop == null) return null;
-    final skip = switch (_theme.value('${drop.category}_skip_roles')) {
+    final skip = switch (_keys(drop.category).value('skip_roles')) {
       ThemeList(:final values) => {for (final v in values) v.rubyString},
       ThemeString(:final value) => value.split(RegExp(r'[\s,]+')).toSet(),
       _ => const <String>{},
@@ -47,7 +47,7 @@ extension _Paragraphs on PdfConverter {
     final size = ((drop.lines - 1) * pitch + cap) / dropFace.capHeightAt(1);
     final dropFont = unsized.copyWith(size: size);
     final text = drop.text.replaceAll('&', '&amp;').replaceAll('<', '&lt;');
-    final gap = _length('${category}_gap', font.size) ?? font.size * 0.3;
+    final gap = _keys(category).length('gap', font.size) ?? font.size * 0.3;
     // (Opening punctuation hung left of the text's edge.)
     final punctuation = _openingPunctuation.stringMatch(drop.text) ?? '';
     final shift = dropFace.widthOf(punctuation, size);
@@ -93,7 +93,8 @@ extension _Paragraphs on PdfConverter {
     String? roleAlign;
     for (final role in roles.reversed) {
       roleAlign =
-          PdfConverter._alignOf([role]) ?? _s('role_${role}_text_align');
+          PdfConverter._alignOf([role]) ??
+          _keys('role_$role').string('text_align');
       if (roleAlign != null) break;
     }
     final align = roleAlign ?? textAlign ?? _baseTextAlign;
@@ -122,13 +123,15 @@ extension _Paragraphs on PdfConverter {
     // in place of the prose's (`role_<role>_text_indent`,
     // `role_<role>_margin_bottom`).
     for (final role in roles) {
-      if (_length('role_${role}_text_indent', font.size) case final value?) {
+      if (_keys('role_$role').length('text_indent', font.size)
+          case final value?) {
         indent = value;
       }
       final parent = node.parent;
       final last =
           parent is! AbstractBlock || identical(parent.blocks.last, node);
-      if (_n('role_${role}_margin_bottom') case final value? when !last) {
+      if (_keys('role_$role').number('margin_bottom') case final value?
+          when !last) {
         marginBottom = value.toDouble();
       }
     }
@@ -198,10 +201,11 @@ extension _Paragraphs on PdfConverter {
         firstLine == null &&
         !asciidoctorCompat(_document, CompatFormat.pdf)) {
       for (final role in roles) {
-        final lines = (_n('role_${role}_drop_lines') ?? 0).toInt();
+        final lines = (_keys('role_$role').number('drop_lines') ?? 0).toInt();
         if (lines < 2) continue;
         if (PdfConverter._initialOf(content) case (final letter, final rest)) {
-          final words = (_n('role_${role}_drop_lead_in') ?? 0).toInt();
+          final words = (_keys('role_$role').number('drop_lead_in') ?? 0)
+              .toInt();
           content = words > 0 ? PdfConverter._leadIn(rest, words) : rest;
           initial = (text: letter, category: 'role_${role}_drop', lines: lines);
         }

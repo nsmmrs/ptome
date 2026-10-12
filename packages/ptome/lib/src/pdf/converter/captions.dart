@@ -39,18 +39,24 @@ extension _Captions on PdfConverter {
     }
     final captionKey = category == null ? 'caption' : '${category}_caption';
     final outside =
-        (_n('${captionKey}_margin_outside') ??
+        (_keys(captionKey).number('margin_outside') ??
                 _n('caption_margin_outside') ??
                 0)
             .toDouble();
     final inside =
-        (_n('${captionKey}_margin_inside') ?? _n('caption_margin_inside') ?? 0)
+        (_keys(captionKey).number('margin_inside') ??
+                _n('caption_margin_inside') ??
+                0)
             .toDouble();
     var align =
-        _s('${captionKey}_align') ?? _s('caption_align') ?? _baseTextAlign;
+        _keys(captionKey).string('align') ??
+        _s('caption_align') ??
+        _baseTextAlign;
     if (align == 'inherit') align = blockAlign ?? _baseTextAlign;
     var textAlign =
-        _s('${captionKey}_text_align') ?? _s('caption_text_align') ?? align;
+        _keys(captionKey).string('text_align') ??
+        _s('caption_text_align') ??
+        align;
     if (textAlign == 'inherit') textAlign = align;
     var font = _themeFont('caption', _font);
     if (category != null) font = _themeFont(captionKey, font);
@@ -61,12 +67,13 @@ extension _Captions on PdfConverter {
     // The modern engine's `<category>_caption_indent`: set in from the
     // left (a code block's caption over its padded code).
     final indent =
-        _length('${captionKey}_indent', font.size) ??
+        _keys(captionKey).length('indent', font.size) ??
         _length('caption_indent', font.size) ??
         0.0;
     // A background behind the text, as wide as the block's room.
     final background = pdfColorOf(
-      _c('${captionKey}_background_color') ?? _c('caption_background_color'),
+      _keys(captionKey).color('background_color') ??
+          _c('caption_background_color'),
     );
     return CustomBox(
       _textBox(

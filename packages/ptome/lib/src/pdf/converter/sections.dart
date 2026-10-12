@@ -27,7 +27,7 @@ extension _Sections on PdfConverter {
     for (final role in section.roles) {
       final name = role.replaceAll('-', '_');
       if (PdfConverter._pageRoleKeys.any(
-        (key) => _theme.value('section_role_${name}_$key') != null,
+        (key) => _keys('section_role_$name').value(key) != null,
       )) {
         return name;
       }
@@ -45,7 +45,7 @@ extension _Sections on PdfConverter {
   ) {
     final base = templateFor(_initialLayout(_document));
     final prefix = 'section_role_${role}_page';
-    final margins = switch (_theme.value('${prefix}_margin')) {
+    final margins = switch (_keys(prefix).value('margin')) {
       null => base.margins,
       final value => switch (_edgeValues(value)) {
         [final top, final right, final bottom, final left] => EdgeInsets(
@@ -57,7 +57,7 @@ extension _Sections on PdfConverter {
         _ => base.margins,
       },
     };
-    final color = switch (_c('${prefix}_background_color')) {
+    final color = switch (_keys(prefix).color('background_color')) {
       final c? => PdfConverter._color(c),
       null => null,
     };
@@ -65,7 +65,7 @@ extension _Sections on PdfConverter {
       'section-role-$role-page-background-image',
       themeKey: '${prefix}_background_image',
     )?.image;
-    final running = _s('${prefix}_running_content') != 'none';
+    final running = _keys(prefix).string('running_content') != 'none';
     return PageTemplate(
       base.size,
       margins: margins,
@@ -119,7 +119,7 @@ extension _Sections on PdfConverter {
     }
     final hlevel = (section.level ?? 0) + 1;
     final align =
-        _s('heading_h${hlevel}_text_align') ??
+        _keys('heading_h$hlevel').string('text_align') ??
         _s('heading_text_align') ??
         _baseTextAlign;
     final anchor = section.id ?? _madeUpAnchor(section);
@@ -128,11 +128,12 @@ extension _Sections on PdfConverter {
     // chapter number), its text from `heading_h<n>_drop_content` (the
     // section's numeral by default; its attributes as `attr-<name>`).
     _pendingDrop = null;
-    final dropLines = (_n('heading_h${hlevel}_drop_lines') ?? 0).toInt();
+    final dropLines = (_keys('heading_h$hlevel').number('drop_lines') ?? 0)
+        .toInt();
     String? dropText;
     if (dropLines >= 2 && !asciidoctorCompat(_document, CompatFormat.pdf)) {
       dropText = _render(
-        _s('heading_h${hlevel}_drop_content') ?? '{{numeral}}',
+        _keys('heading_h$hlevel').string('drop_content') ?? '{{numeral}}',
         {
           'title': section.title,
           'numeral': section.numeral,
@@ -184,7 +185,7 @@ extension _Sections on PdfConverter {
       final repeat =
           !hidden &&
           !asciidoctorCompat(_document, CompatFormat.pdf) &&
-          _theme.value('heading_h${hlevel}_repeat') == const ThemeBool(true);
+          _keys('heading_h$hlevel').value('repeat') == const ThemeBool(true);
       if (hidden) {
         // No heading, but the section still names its pages' running
         // content.
@@ -209,7 +210,8 @@ extension _Sections on PdfConverter {
                 parent.blocks.firstOrNull == section &&
                 !parent.hasOption('notitle') &&
                 _boxedRole(parent) == null
-            ? (_n('heading_h${(parent.level ?? 0) + 1}_margin_bottom') ??
+            ? (_keys('heading_h${(parent.level ?? 0) + 1}')
+                          .number('margin_bottom') ??
                       _n('heading_margin_bottom') ??
                       0)
                   .toDouble()
@@ -292,12 +294,12 @@ extension _Sections on PdfConverter {
         BlockBox(
           children,
           style: BoxStyle(
-            padding: _padding('${category}_padding'),
+            padding: _keys(category).edges('padding'),
             cloneEdges: _cloneEdges(category),
             splitToRegionEnd: _splitToRegionEnd,
             margin: _outdented(
               EdgeInsets(
-                top: (_n('${category}_margin_top') ?? 0).toDouble(),
+                top: (_keys(category).number('margin_top') ?? 0).toDouble(),
                 bottom: _marginBelow(section),
               ),
             ),
@@ -339,7 +341,7 @@ extension _Sections on PdfConverter {
   String _headingText(Section section) {
     final numbered = _numberedTitle(section);
     final level = (section.level ?? 0) + 1;
-    final template = _s('heading_h${level}_content');
+    final template = _keys('heading_h$level').string('content');
     if (template == null) return numbered;
     final isNumbered = _isNumbered(section);
     final part = section.sectname == 'part';
@@ -404,7 +406,7 @@ extension _Sections on PdfConverter {
     final hlevel = (node.level ?? 0) + 1;
     final align =
         PdfConverter._alignOf(node.roles) ??
-        _s('heading_h${hlevel}_text_align') ??
+        _keys('heading_h$hlevel').string('text_align') ??
         _s('heading_text_align') ??
         _baseTextAlign;
     final last = node.parent?.blocks.lastOrNull == node;
@@ -585,7 +587,7 @@ extension _Sections on PdfConverter {
       content = _NeedsRoom(box, below);
     }
     final pageTop =
-        (_n('heading_h${level}_margin_page_top') ??
+        (_keys('heading_h$level').number('margin_page_top') ??
                 _n('heading_margin_page_top') ??
                 0)
             .toDouble();
@@ -597,23 +599,26 @@ extension _Sections on PdfConverter {
     final sides = EdgeInsets(
       top: marginTop,
       bottom: marginBottom,
-      left: modern ? _length('${category}_margin_left', _font.size) ?? 0 : 0,
-      right: modern ? _length('${category}_margin_right', _font.size) ?? 0 : 0,
+      left: modern ? _keys(category).length('margin_left', _font.size) ?? 0 : 0,
+      right: modern
+          ? _keys(category).length('margin_right', _font.size) ?? 0
+          : 0,
     );
     final margin = outdent ? _outdented(sides) : sides;
     // The padding and border of the level (the gem's `pad_box` and
     // `theme_fill_and_stroke_bounds`), and in the modern engine its
     // background.
-    final padding = _theme.value('${category}_padding');
+    final padding = _keys(category).value('padding');
     final background = modern
-        ? switch (_c('${category}_background_color')) {
+        ? switch (_keys(category).color('background_color')) {
             TransparentColor() || null => null,
             final color => pdfColorOf(color),
           }
         : null;
     final border =
-        (_theme.value('${category}_border_width') != null &&
-                (_c('${category}_border_color') ?? _c('base_border_color')) !=
+        (_keys(category).value('border_width') != null &&
+                (_keys(category).color('border_color') ??
+                        _c('base_border_color')) !=
                     null) ||
             background != null
         ? _headingBorder(category, background: background)
@@ -656,7 +661,7 @@ extension _Sections on PdfConverter {
           [CustomBox(content)],
           style: BoxStyle(
             margin: margin,
-            padding: _padding('${category}_padding'),
+            padding: _keys(category).edges('padding'),
             anchor: anchor,
             marks: marks,
             decoration: border,
@@ -675,18 +680,18 @@ extension _Sections on PdfConverter {
   /// and gaps in turn, and `_cap`, `round` or `square`, for a rule of
   /// segments), if any.
   LayoutBox? _headingRule(String category) {
-    final width = (_n('${category}_rule_width') ?? 0).toDouble();
+    final width = (_keys(category).number('rule_width') ?? 0).toDouble();
     final color = pdfColorOf(
-      _c('${category}_rule_color') ?? _c('base_border_color'),
+      _keys(category).color('rule_color') ?? _c('base_border_color'),
     );
     if (width <= 0 || color == null) return null;
-    final dash = switch (_theme.value('${category}_rule_dash')) {
+    final dash = switch (_keys(category).value('rule_dash')) {
       ThemeList(:final values) => [
         for (final v in values) PdfConverter._toPoints(v),
       ],
       _ => const <double>[],
     };
-    final cap = switch (_s('${category}_rule_cap')) {
+    final cap = switch (_keys(category).string('rule_cap')) {
       'round' => LineCap.round,
       'square' => LineCap.projectingSquare,
       _ => LineCap.butt,
@@ -699,8 +704,9 @@ extension _Sections on PdfConverter {
         padding: EdgeInsets(top: width),
         margin: _outdented(
           EdgeInsets(
-            top: _length('${category}_rule_margin_top', _font.size) ?? 0,
-            bottom: _length('${category}_rule_margin_bottom', _font.size) ?? 0,
+            top: _keys(category).length('rule_margin_top', _font.size) ?? 0,
+            bottom:
+                _keys(category).length('rule_margin_bottom', _font.size) ?? 0,
           ),
         ),
         keepWithNext: true,
@@ -725,18 +731,18 @@ extension _Sections on PdfConverter {
   /// The border of heading theme [category] (`heading_h2`...), around the
   /// heading and its padding, over its [background].
   BoxDecoration _headingBorder(String category, {Color? background}) {
-    final widthValue = _theme.value('${category}_border_width');
+    final widthValue = _keys(category).value('border_width');
     final width = switch (widthValue) {
       ThemeNumber(:final value) => value.toDouble(),
       _ => 0.0,
     };
     final widths = _sideWidths(widthValue);
     final color = pdfColorOf(
-      _c('${category}_border_color') ?? _c('base_border_color'),
+      _keys(category).color('border_color') ?? _c('base_border_color'),
     );
-    final style = _s('${category}_border_style');
+    final style = _keys(category).string('border_style');
     final radius = widths == null
-        ? (_n('${category}_border_radius') ?? 0).toDouble()
+        ? (_keys(category).number('border_radius') ?? 0).toDouble()
         : 0.0;
     return (page, rect, {required first, required last}) {
       if (background != null) {

@@ -742,7 +742,7 @@ extension _InlineElements on PdfConverter {
           _textBox(
             m[3]!,
             font,
-            align: _s('role_${m[2]}_text_align') ?? 'left',
+            align: _keys('role_${m[2]}').string('text_align') ?? 'left',
             hyphenate: true,
           ),
         );
@@ -1199,7 +1199,7 @@ extension _InlineElements on PdfConverter {
     }
     for (final role in node.roles) {
       final key = role.replaceAll('-', '_');
-      if (_s('role_${key}_display') == 'side') return key;
+      if (_keys('role_$key').string('display') == 'side') return key;
     }
     return null;
   }
