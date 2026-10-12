@@ -263,7 +263,7 @@ NeededFont _texGyre(
 /// The fonts the built-in looks name beyond the themes' (ADR-0023):
 /// checked and installed for a look that names them (`--look`).
 final List<NeededFont> lookFonts = [
-  _texGyre('termes', 'the troff look (Times)', {
+  _texGyre('termes', 'the troff and pleading looks (Times)', {
     FontStyle.normal:
         'cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659',
     FontStyle.bold:
@@ -283,7 +283,7 @@ final List<NeededFont> lookFonts = [
     FontStyle.boldItalic:
         '6aa5c41f489b898aa890c543e7dcd5e732c63894babc65569e01ee7e46533d82',
   }),
-  _texGyre('schola', 'the us-code look (Century Schoolbook)', {
+  _texGyre('schola', 'the us-code and scotus-booklet looks (Century)', {
     FontStyle.normal:
         '935b82e25f56b1d1276ca82793205e8ce254fbb37ebd38bedf7388cef21fbf44',
     FontStyle.bold:

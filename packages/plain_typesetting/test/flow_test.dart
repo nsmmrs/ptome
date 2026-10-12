@@ -814,6 +814,45 @@ void main() {
     expect(prompt, everyElement(0));
   });
 
+  test('a box on a line of the baseline grid', () {
+    // A pleading's first page: the attorney's lines, then the court's
+    // title on the grid's eighth line, however few lines are above it;
+    // past that line, on the next.
+    Map<String, double> laidOut(int above) {
+      final document = RecordingDocument();
+      FlowLayout(
+            template: _rows(16),
+            baselineGrid: BaselineGrid(
+              _lineHeight * 2,
+              offset: _serif.ascender / 100,
+            ),
+          )
+          .layout([
+            for (var i = 1; i <= above; i++) _para('a$i'),
+            BlockBox([_para('court')], style: const BoxStyle(gridLine: 4)),
+            _para('after'),
+          ])
+          .render(document);
+      return {
+        for (final call in document.pages.single.canvas.calls)
+          if (RegExp(r'^glyphs "\s*(\S+)\s*" at \S+ (\S+)').firstMatch(call)
+              case final m?)
+            m[1]!: double.parse(m[2]!),
+      };
+    }
+
+    final one = laidOut(1);
+    final two = laidOut(2);
+    // On the fourth line, three grid steps below the first.
+    expect(one['a1']! - one['court']!, closeTo(3 * 2 * _lineHeight, 0.01));
+    expect(two['court'], one['court']);
+    // The next line on the next grid line.
+    expect(one['court']! - one['after']!, closeTo(2 * _lineHeight, 0.01));
+    // Five lines above it: past the fourth, on the sixth.
+    final five = laidOut(5);
+    expect(five['a1']! - five['court']!, closeTo(5 * 2 * _lineHeight, 0.01));
+  });
+
   test('side notes stay above the notes at the bottom of the page', () {
     final document = RecordingDocument();
     FlowLayout(

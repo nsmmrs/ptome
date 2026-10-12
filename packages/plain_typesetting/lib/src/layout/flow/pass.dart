@@ -621,41 +621,47 @@ final class _Pass {
     double width,
     double available, {
     required bool atTop,
-  }) => switch (box) {
-    // Nothing floats out of a framed block (padded, bordered, filled or
-    // decorated): it stays in its frame.
-    BlockBox(:final style)
-        when style.padding != EdgeInsets.zero ||
-            style.border != Border.none ||
-            style.background != null ||
-            style.decoration != null =>
-      _withoutFloats(() => _block(box, width, available, atTop: atTop)),
-    BlockBox() => _block(box, width, available, atTop: atTop),
-    ParagraphBox() => _paragraph(box, width, available, atTop: atTop),
-    ImageBox() => _image(box, width, available, atTop: atTop),
-    DrawingBox() => _drawing(box, width, available, atTop: atTop),
-    SpacerBox(:final height) =>
-      atTop
-          ? const _Fit(_PlacedSpace(0), 0, null)
-          : _Fit(
-              _PlacedSpace(math.min(height, available)),
-              math.min(height, available),
-              null,
-            ),
-    BreakBox() => _Fit(const _PlacedSpace(0), 0, null, hit: box),
-    ColumnsBox() => _withoutFloats(() {
-      _columnsDepth++;
-      try {
-        return _columns(box, width, available, atTop: atTop);
-      } finally {
-        _columnsDepth--;
-      }
-    }),
-    TableBox() => _withoutFloats(
-      () => _table(box, width, available, atTop: atTop),
-    ),
-    CustomBox() => _custom(box, width, available, atTop: atTop),
-  };
+  }) {
+    // (A box that goes on a line of the grid: its first line does.)
+    if (box.style.gridLine case final line? when !_isContinued(box)) {
+      _gridLine = line;
+    }
+    return switch (box) {
+      // Nothing floats out of a framed block (padded, bordered, filled or
+      // decorated): it stays in its frame.
+      BlockBox(:final style)
+          when style.padding != EdgeInsets.zero ||
+              style.border != Border.none ||
+              style.background != null ||
+              style.decoration != null =>
+        _withoutFloats(() => _block(box, width, available, atTop: atTop)),
+      BlockBox() => _block(box, width, available, atTop: atTop),
+      ParagraphBox() => _paragraph(box, width, available, atTop: atTop),
+      ImageBox() => _image(box, width, available, atTop: atTop),
+      DrawingBox() => _drawing(box, width, available, atTop: atTop),
+      SpacerBox(:final height) =>
+        atTop
+            ? const _Fit(_PlacedSpace(0), 0, null)
+            : _Fit(
+                _PlacedSpace(math.min(height, available)),
+                math.min(height, available),
+                null,
+              ),
+      BreakBox() => _Fit(const _PlacedSpace(0), 0, null, hit: box),
+      ColumnsBox() => _withoutFloats(() {
+        _columnsDepth++;
+        try {
+          return _columns(box, width, available, atTop: atTop);
+        } finally {
+          _columnsDepth--;
+        }
+      }),
+      TableBox() => _withoutFloats(
+        () => _table(box, width, available, atTop: atTop),
+      ),
+      CustomBox() => _custom(box, width, available, atTop: atTop),
+    };
+  }
 
   _Fit _block(
     BlockBox box,
@@ -1425,14 +1431,31 @@ final class _Pass {
   /// How far content whose first baseline is [baseline] below its top,
   /// which is [top] below [_y]'s origin, moves down to the baseline grid.
   double _gridShift(double top, double? baseline) {
+    final line = _gridLine;
+    _gridLine = null;
     final grid = _onGrid ? layout.baselineGrid : null;
     if (grid == null || baseline == null) return 0;
     final at = _yShift + top + baseline;
-    if (!grid.fromFirstLine) return grid.shift(at);
-    // (The region's first line starts its grid.)
-    final origin = _gridOrigin ??= at;
-    return grid._shift(at, origin);
+    // (The region's first line starts its grid, when it does.)
+    final origin = grid.fromFirstLine ? _gridOrigin ??= at : grid.offset;
+    final shift = grid._shift(at, origin);
+    // (A box that goes on a line of the grid, down to it.)
+    if (line != null && line > 0) {
+      return math.max(shift, origin + (line - 1) * grid.step - at);
+    }
+    return shift;
   }
+
+  /// Whether [box] is the rest of one split by a break.
+  static bool _isContinued(LayoutBox box) => switch (box) {
+    BlockBox(:final _continued) || ColumnsBox(:final _continued) => _continued,
+    ParagraphBox(:final _from) => _from > 0,
+    _ => false,
+  };
+
+  /// The grid line the next line placed goes on, at the least
+  /// ([BoxStyle.gridLine] of the box it starts).
+  int? _gridLine;
 
   /// Where the region's grid starts, for one from its first line
   /// ([BaselineGrid.fromFirstLine]): set by the first line placed.
@@ -1511,6 +1534,7 @@ final class _Pass {
     _y = _left = _right = 0;
     _yShift = below;
     _gridOrigin = null;
+    _gridLine = null;
     _excluding = true;
     _onGrid = true;
     try {

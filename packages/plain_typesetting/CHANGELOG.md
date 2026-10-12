@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.gridLine`: with a baseline grid, a box starts on that line of
+  the region's grid, or the next one when it is past it.
 - `FlowLayout.notesMinText` and `notesLag`: notes in step with their
   text (the least text a region with notes holds; how many regions late
   a note may start, the text stopping where its notes would start

@@ -280,9 +280,23 @@ extension _Paragraphs on PdfConverter {
           // The modern engine: beside a block floating to a side (a pull
           // quote, a sidebar), the paragraph runs around it.
           runsAround: !asciidoctorCompat(_document, CompatFormat.pdf),
+          gridLine: _gridLineOf(node),
         ),
       ),
     );
+  }
+
+  /// The line of the baseline grid a paragraph with one of its roles
+  /// starts on at the least (`role_<role>_grid_line`, modern engine): a
+  /// pleading's court title on line 8 of its first page.
+  int? _gridLineOf(AbstractBlock node) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    for (final role in node.roles) {
+      if (_n('role_${role.replaceAll('-', '_')}_grid_line') case final line?) {
+        return line.toInt();
+      }
+    }
+    return null;
   }
 
   AbstractBlock? _previousSibling(AbstractBlock node) {

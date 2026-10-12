@@ -134,6 +134,21 @@ extension _DocumentParts on PdfConverter {
       lineHeight: (_n('base_line_height') ?? 1).toDouble(),
       kerning: _s('base_font_kerning') != 'none',
     );
+    // (`base_line_pitch`, modern engine: the body's lines that far apart,
+    // whatever the face's height, as a pleading's are 24 pt: the line
+    // height that gives it, from the pitch at two.)
+    if (_length('base_line_pitch', _rootFontSize) case final pitch?
+        when pitch > 0 && !asciidoctorCompat(document, CompatFormat.pdf)) {
+      double at(double height) => _textBox(
+        'Ag Ag',
+        _font.copyWith(lineHeight: height),
+        align: 'left',
+      ).linePitch(1);
+      final (one, two) = (at(1), at(2));
+      if (two - one > 1e-6) {
+        _font = _font.copyWith(lineHeight: 1 + (pitch - one) / (two - one));
+      }
+    }
     _sections.clear();
     _madeUpAnchors.clear();
     _floatGroup = _floatNext = null;
@@ -1656,6 +1671,24 @@ extension _DocumentParts on PdfConverter {
           _length('line_numbers_grid_pitch', _rootFontSize) ??
           body.linePitch(1),
       firstBaseline: body.firstBaseline(1) ?? _rootFontSize,
+      // (`line_numbers_rule`: `single` or `double`, a vertical line
+      // between the numbers and the text down the page, as pleading paper
+      // separates them; `_rule_width`, `_rule_color`.)
+      rules: switch (_choice('line_numbers_rule', const [
+        'none',
+        'single',
+        'double',
+      ])) {
+        'single' => [_length('line_numbers_rule_width', _rootFontSize) ?? 0.5],
+        'double' => [
+          for (var i = 0; i < 2; i++)
+            _length('line_numbers_rule_width', _rootFontSize) ?? 0.5,
+        ],
+        _ => const [],
+      },
+      ruleColor: PdfConverter._color(
+        _c('line_numbers_rule_color') ?? _c('base_font_color'),
+      ),
     );
   }
 
@@ -1748,6 +1781,28 @@ extension _DocumentParts on PdfConverter {
       'inner' => !recto,
       _ => false,
     };
+    // The rules midway between the numbers and the text, two of them
+    // their width apart about that line.
+    if (numbering.ruleColor case final color? when numbering.rules.isNotEmpty) {
+      final middle = right
+          ? area.right + numbering.gap / 2
+          : area.left - numbering.gap / 2;
+      final size = template.size;
+      canvas
+        ..save()
+        ..setStrokeColor(color);
+      for (final (i, width) in numbering.rules.indexed) {
+        final x = numbering.rules.length == 1
+            ? middle
+            : middle + (i == 0 ? -1.5 : 1.5) * width;
+        canvas
+          ..setLineWidth(width)
+          ..moveTo(x, size.bottom)
+          ..lineTo(x, size.top)
+          ..stroke();
+      }
+      canvas.restore();
+    }
     final restarts = [
       for (final (number, y, label) in _lineRestarts)
         if (number == page.number) (y, label),

@@ -1355,7 +1355,15 @@ final class _LineNumbering {
     required this.font,
     required this.pitch,
     required this.firstBaseline,
+    this.rules = const [],
+    this.ruleColor,
   });
+
+  /// The widths of the vertical rules between the numbers and the text,
+  /// the page's height (pleading paper's single or double line), and
+  /// their color.
+  final List<double> rules;
+  final Color? ruleColor;
 
   final _LineKind kind;
 

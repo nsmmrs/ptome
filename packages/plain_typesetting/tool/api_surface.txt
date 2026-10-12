@@ -227,7 +227,7 @@ final class BoxItem extends LineItem
 final class BoxStyle
   Border border
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -250,6 +250,7 @@ final class BoxStyle
   double floatClearance
   double sideGap
   double sideWidth
+  int? gridLine
   void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration
 final class BreakBox extends LayoutBox
   BreakBox.column({bool force = false})

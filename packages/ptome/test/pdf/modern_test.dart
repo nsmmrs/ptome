@@ -2949,6 +2949,65 @@ templates:
       );
     });
 
+    test('the pleading look: numbered lines, the court on line 8', () {
+      final words = [for (var k = 0; k < 120; k++) 'Plaintiff alleges $k.']
+          .join(' ');
+      final pdf = _pdf(
+        '= Complaint\n:look: pleading\n:line-numbers: grid\n:notitle:\n\n'
+        'Jane Q. Attorney (SBN 123456) +\n100 Main Street +\n'
+        'Attorney for Plaintiff\n\n'
+        '[.court]\nSUPERIOR COURT OF CALIFORNIA\n\n== Allegations\n\n$words\n',
+        // (The look as the theme: the helper names asciidoctor-pdf's.)
+        attributes: {
+          'pdf-theme': (File(
+            '${_dir.path}/look-theme.yml',
+          )..writeAsStringSync('extends: look\n')).path,
+        },
+      );
+      final bbox =
+          Process.runSync('pdftotext', [
+                '-f',
+                '1',
+                '-l',
+                '1',
+                '-bbox',
+                pdf,
+                '-',
+              ]).stdout
+              as String;
+      final words0 = [
+        for (final m in RegExp(
+          r'xMin="([\d.]+)" yMin="[\d.]+" xMax="[\d.]+" yMax="([\d.]+)">([^<]*)<',
+        ).allMatches(bbox))
+          (m[3]!, double.parse(m[1]!), double.parse(m[2]!)),
+      ];
+      // The numbers in the margin, 1 to 28, 24 pt apart.
+      final numbers = {
+        for (final (w, x, y) in words0)
+          if (x < 100 && RegExp(r'^\d+$').hasMatch(w)) int.parse(w): y,
+      };
+      expect(numbers.keys, containsAll([1, 8, 28]));
+      expect(numbers[2]! - numbers[1]!, closeTo(24, 0.01));
+      // The attorney on line 1, the court's title on line 8 (the
+      // attorney's three lines would have it on 4), each line of the
+      // text beside a number.
+      double yOf(String word) => words0.firstWhere((w) => w.$1 == word).$3;
+      expect(yOf('Jane'), closeTo(numbers[1]!, 0.5));
+      expect(yOf('SUPERIOR'), closeTo(numbers[8]!, 0.5));
+      final text = {
+        for (final (w, x, y) in words0)
+          if (x > 100 && w == 'Plaintiff') y,
+      };
+      expect(text, hasLength(greaterThan(10)));
+      for (final y in text) {
+        expect(
+          numbers.values.any((n) => (n - y).abs() < 0.5),
+          isTrue,
+          reason: 'a line at $y',
+        );
+      }
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

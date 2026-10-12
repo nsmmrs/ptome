@@ -68,6 +68,12 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- The `scotus-booklet` and `pleading` looks: a Supreme Court brief by
+  Rule 33.1, a California pleading by the Rules of Court (28 numbered
+  lines, a double line beside them, the court's title on line 8). New
+  PDF keys for them: `base_line_pitch` (the body's lines a length
+  apart), `role_<role>_grid_line` (a paragraph on a line of the
+  baseline grid), `line_numbers_rule`.
 - The `critical-edition` look, after the Oxford Classical Texts: margin
   line numbers counted from each Stephanus section or Bekker column, the
   labels in the margin only (`role_<role>_display: none` leaves a role's

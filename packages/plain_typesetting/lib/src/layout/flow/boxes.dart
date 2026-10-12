@@ -118,6 +118,7 @@ final class BoxStyle {
     this.sideShape,
     this.runsAround = false,
     this.numberLines = false,
+    this.gridLine,
   });
 
   /// The space outside the border.
@@ -138,6 +139,12 @@ final class BoxStyle {
 
   /// Whether the box stays in the region where the next box starts.
   final bool keepWithNext;
+
+  /// With a [BaselineGrid], the line of the region's grid (from 1) the
+  /// box's first baseline goes on, or the first one after where it would
+  /// go when that is past it: a pleading's court title on line 8 of its
+  /// first page, whatever is above it.
+  final int? gridLine;
 
   /// A name for the box's position (its top), for destinations.
   final String? anchor;
@@ -294,6 +301,7 @@ final class BoxStyle {
     sideShape: sideShape == null ? this.sideShape : sideShape.$1,
     runsAround: runsAround,
     numberLines: numberLines,
+    gridLine: gridLine,
   );
 }
 

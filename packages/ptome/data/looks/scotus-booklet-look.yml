@@ -1,0 +1,53 @@
+# A brief in the booklet format of the Supreme Court of the United
+# States, by its Rule 33.1: a 6⅛ × 9¼ in page; the text in a Century
+# family, 12 point with 2 points or more of leading (12 on 14), the
+# footnotes 10 point, also with 2 points (10 on 12); the text field,
+# footnotes included, no more than 4⅛ × 7⅛ in, so margins of an inch at
+# the sides and 1 1/16 in at the head and foot (at least ¾ in, as the rule
+# asks). Headings centred in bold; the page number at the foot.
+#
+# The cover's colour is the brief's (Rule 33.1(g): a petition white, a
+# brief in opposition orange, a petitioner's brief on the merits light
+# blue, a respondent's light red, a reply yellow, an amicus green; the
+# others tan): a brief sets it over the look, `extends: look` and
+# `title_page: { background_color: … }` (doc/looks.md).
+#
+# The Century family's free stand-in is TeX Gyre Schola, a New Century
+# Schoolbook (`ptome doctor --look scotus-booklet`).
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] } }
+    display: { family: { print: TeX Gyre Schola, screen: [Century Schoolbook, New Century Schoolbook, serif] }, weight: bold }
+  size:
+    text: { print: 12pt, screen: 18px }
+    headings: { print: [14pt, 12pt, 12pt, 12pt, 12pt, 12pt] }
+  leading: { print: 1.17, screen: 1.5 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: { print: 2em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  page: { size: [6.125in, 9.25in], margin: [1.0625in, 1in, 1.0625in, 1in] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 12pt }, space-after: { print: 6pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  heading:
+    text_align: center
+  title_page:
+    text_align: center
+  footnotes:
+    font_size: 10
+    line_height: 1.2
+  header:
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  footer:
+    height: 0.75in
+    font_size: 12
+    recto: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
+css: |
+  #content h2,#content h3{text-align:center}

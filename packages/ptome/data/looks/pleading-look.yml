@@ -1,0 +1,63 @@
+# A pleading for a California trial court, by the California Rules of
+# Court, rules 2.100–2.119: Letter paper; the text 12 point (rule 2.104),
+# double-spaced (rule 2.108(1)), on 28 numbered lines a page, three to
+# the inch and more (rule 2.108(4): here 24 pt apart), numbered from 1 on
+# each page at the left margin, a double line between the numbers and
+# the text (rule 2.108(4)); the left margin an inch and more, the right
+# half an inch and more (rule 2.107); the page number at the foot and
+# the paper's title under it (rule 2.110). On the first page (rule 2.111)
+# the attorney's name, address and bar number from line 1, and the
+# court's title (`[.court]`) on line 8; the case's title, its number and
+# the paper's nature below. The document turns the numbers on
+# (`:line-numbers: grid`).
+#
+# Set in TeX Gyre Termes, a Times (`ptome doctor --look pleading`).
+tokens:
+  font:
+    text: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] } }
+    display: { family: { print: TeX Gyre Termes, screen: [Times New Roman, Times, serif] }, weight: bold }
+  size:
+    text: { print: 12pt, screen: 17px }
+    headings: { print: [12pt, 12pt, 12pt, 12pt, 12pt, 12pt] }
+  leading: { print: 2, screen: 1.6 }
+  measure: { screen: 36em }
+  paragraph: { signal: indent, indent: { print: 0.5in } }
+  align: { print: start }
+  hyphenate: { print: false }
+  color: { ink: '#000000', link: '#000000' }
+  rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
+  # 28 lines 24 pt apart from an inch down; the text an inch and a half
+  # in, the numbers in the margin beside it.
+  page: { size: Letter, margin: [1in, 0.5in, 0.6667in, 1.5in] }
+styles:
+  heading: { font: display, color: ink, space-before: { print: 0pt }, space-after: { print: 0pt }, keep-with-next: true }
+  title: { font: display, color: ink }
+  link: { color: ink }
+pdf:
+  page_baseline_grid: 24
+  # (Double spacing at 24 pt whatever the face: the grid's step.)
+  base_line_pitch: 24
+  heading:
+    text_align: center
+  line_numbers:
+    side: left
+    interval: 1
+    restart: page
+    grid_pitch: 24
+    font_size: 12
+    gap: 0.3in
+    rule: double
+    rule_width: 0.5
+  role:
+    court: { grid_line: 8, text_align: center, font_style: bold }
+    # (The first paragraph, the attorney's, at the body's size.)
+    lead: { font_size: 12 }
+  header:
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  footer:
+    height: 0.6in
+    font_size: 10
+    border_width: 0.5
+    recto: { left: { content: '' }, center: { content: "{page-number} +\n{document-title}" }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: "{page-number} +\n{document-title}" }, right: { content: '' } }
