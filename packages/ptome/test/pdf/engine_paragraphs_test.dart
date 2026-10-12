@@ -310,6 +310,51 @@ void main() {
     );
   });
 
+  test('side notes beside their lines', () {
+    final long = List.filled(3, _words40).join(' ');
+    _same(
+      '= Doc\n\n[[v1]]Verse one. [.xref]##*1:1* see <<v2,Two>>## '
+      '$_words40\n\n$long\n\n'
+      '[[v2]]Verse two. [.xref]##*1:2* see <<v1,One>>## $long\n',
+      theme:
+          'page:\n  columns: 2\n  column-gap: 72\n'
+          'role:\n  xref:\n    display: side\n',
+    );
+  });
+
+  test('drop initials beside their first lines', () {
+    final long = List.filled(3, _words40).join(' ');
+    // (A role's: the paragraph's own first letter, three lines deep, its
+    // next words a lead-in; and one shorter than its initial.)
+    _same(
+      '= Doc\n\n[.dropcap]\nThe $long\n\n$long\n\n'
+      '[.dropcap]\nShort one.\n\n$long\n',
+      theme:
+          'base:\n  text_align: justify\n'
+          'role:\n  dropcap:\n    drop_lines: 3\n    drop_lead_in: 2\n'
+          '  lead-in:\n    text_transform: uppercase\n',
+    );
+    // (A section's first paragraph, a book's chapter.)
+    _same(
+      '= Doc\n:doctype: book\n\n== One\n\nWhen $long\n\n$long\n',
+      theme: 'heading_h2_initial_lines: 2\nheading_h2_initial_lead_in: 2\n',
+    );
+  });
+
+  test("an abstract's first line in its own style", () {
+    final long = List.filled(3, _words40).join(' ');
+    _same(
+      '= Doc\n\n[abstract]\n.Abstract\n--\n$long\n\n$long\n--\n',
+      theme:
+          'base:\n  text_align: justify\n'
+          'abstract:\n  first_line_font_style: bold\n',
+    );
+    _same(
+      '= Doc\n\n[abstract]\n.Abstract\n--\n$long\n\n$long\n--\n',
+      theme: 'abstract:\n  first_line_font_color: "FF0000"\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

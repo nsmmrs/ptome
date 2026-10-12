@@ -545,6 +545,10 @@ final class _Pass {
     final breaker = source.lineBreaker ?? layout.lineBreaker;
     if (breaker is! ItemLineBreaker) return null;
     final paragraph = _resolve(source.paragraph);
+    // (One with a first line of its own style isn't broken again.)
+    if (paragraph.firstLineContent != null && source._items == null) {
+      return null;
+    }
     final items =
         source._items ??
         paragraphItems(
@@ -565,6 +569,7 @@ final class _Pass {
     return ParagraphBox._reflowed(
       box,
       items.sublist(breaks[box._from - 1] + 1),
+      after: box._from,
     );
   }
 
@@ -1298,6 +1303,12 @@ final class _Pass {
     if (carried.isNotEmpty && box.repeatedHead > 0 && _excluding) {
       return split(const [], from: box.children.length, headOnly: true);
     }
+    // (At least its least height, unbroken.)
+    if (!continued && cursor < style.minHeight) {
+      cursor = room.isFinite
+          ? math.max(cursor, math.min(style.minHeight, room))
+          : style.minHeight;
+    }
     // Its margin below no more than the room left (a region's end takes
     // what doesn't fit of it).
     final marginBottom = math.min<double>(
@@ -1599,7 +1610,11 @@ final class _Pass {
       height,
       done
           ? null
-          : ParagraphBox._reflowed(box, items.sublist(breaks[fit - 1] + 1)),
+          : ParagraphBox._reflowed(
+              box,
+              items.sublist(breaks[fit - 1] + 1),
+              after: fit,
+            ),
     );
   }
 

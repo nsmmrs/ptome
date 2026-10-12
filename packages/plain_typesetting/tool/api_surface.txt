@@ -230,7 +230,7 @@ final class BoxItem extends LineItem
 final class BoxStyle
   Border border
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine, double minHeight = 0})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -251,6 +251,7 @@ final class BoxStyle
   bool runsAround
   bool splitToRegionEnd
   double floatClearance
+  double minHeight
   double sideGap
   double sideWidth
   int? gridLine
@@ -535,15 +536,18 @@ final class Paragraph
   Hyphenator? hyphenator
   LineHeight lineHeight
   List<InlineContent> content
-  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false})
+  List<InlineContent>? firstLineContent
+  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest, int? hangLines})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent})
   TextAlign align
   TextAlign alignLast
   bool breakLongWords
   bool justifyToWidest
   bool riseInLineHeight
   double firstLineIndent
+  double hangIndent
   double protrusion
+  int hangLines
 final class ParagraphBox extends LayoutBox
   LineBreaker? lineBreaker
   Paragraph paragraph

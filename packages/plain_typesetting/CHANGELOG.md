@@ -35,6 +35,12 @@
   lines set; it was broken whole at the new width and its first lines
   skipped. `ItemLineBreaker.breakItemLines` (a paragraph's lines from
   given items, with the item each breaks at) and `buildLines(offsets:)`.
+- `Paragraph.hangIndent` and `hangLines` (TeX's `\hangindent` with a
+  negative `\hangafter`: the first lines set in, a drop initial's room
+  beside them), `Paragraph.firstLineContent` (CSS's `::first-line`: the
+  paragraph broken in its first line's style, that line kept, the rest
+  broken again in its own) and `BoxStyle.minHeight` (CSS's `min-height`
+  for a block's content).
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

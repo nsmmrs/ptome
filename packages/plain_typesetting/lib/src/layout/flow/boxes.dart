@@ -119,6 +119,7 @@ final class BoxStyle {
     this.runsAround = false,
     this.numberLines = false,
     this.gridLine,
+    this.minHeight = 0,
   });
 
   /// The space outside the border.
@@ -145,6 +146,11 @@ final class BoxStyle {
   /// go when that is past it: a pleading's court title on line 8 of its
   /// first page, whatever is above it.
   final int? gridLine;
+
+  /// The least height of a block's content (CSS's `min-height`): one that
+  /// ends shorter, unbroken, is as tall (a paragraph shorter than its drop
+  /// initial, as deep as the initial).
+  final double minHeight;
 
   /// A name for the box's position (its top), for destinations.
   final String? anchor;
@@ -302,6 +308,7 @@ final class BoxStyle {
     runsAround: runsAround,
     numberLines: numberLines,
     gridLine: gridLine,
+    minHeight: minHeight,
   );
 }
 
@@ -459,15 +466,21 @@ final class ParagraphBox extends LayoutBox {
   /// The rest of [source], its [_items] after the lines set, broken again
   /// (where it goes on at another width: beside a block floating to a
   /// side, below it, in a column of another width).
+  /// [after] lines set (those of them its [Paragraph.hangLines] set in
+  /// counted off).
   ///
   /// With [first], all of [source], its items as they are.
   new _reflowed(
     ParagraphBox source,
     List<LineItem> this._items, {
     bool first = false,
+    int after = 0,
   }) : paragraph = first
            ? source.paragraph
-           : source.paragraph.copyWith(firstLineIndent: 0),
+           : source.paragraph.copyWith(
+               firstLineIndent: 0,
+               hangLines: math.max(0, source.paragraph.hangLines - after),
+             ),
        orphans = source.orphans,
        widows = source.widows,
        lineBreaker = source.lineBreaker,

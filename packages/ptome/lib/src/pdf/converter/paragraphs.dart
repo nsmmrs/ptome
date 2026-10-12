@@ -12,12 +12,6 @@ extension _Paragraphs on PdfConverter {
   /// Converts the paragraph [node].
   void convertParagraph(Block node) => _paragraph(node);
 
-  /// Whether the engine's paragraphs can set text with [markup] as the
-  /// text box does: none of what they don't do yet (FEAT-5w237r) in play,
-  /// side notes beside the text.
-  bool _engineCanSet(String markup) =>
-      !markup.contains(sideNoteAnchorPrefix) && !markup.contains('<side ');
-
   /// The roles of paragraphs a heading for the margin passes
   /// (`heading_h<n>_margin_skip_roles`: a pericope's parallel passages).
   Set<String> _marginSkipRoles(String category) =>
@@ -43,16 +37,16 @@ extension _Paragraphs on PdfConverter {
     return drop;
   }
 
-  /// [content] (in [font], set by [align]) with [drop] beside its first
-  /// lines: set in `heading_h<n>_drop_font_*`, sized so that its capitals
-  /// run from the first line's to the last of its lines' baseline,
-  /// `heading_h<n>_drop_gap` (0.3em) from the text.
-  CustomContent _dropped(
+  /// [drop] beside the first lines of text in [font]: set in
+  /// `heading_h<n>_drop_font_*`, sized so that its capitals run from the
+  /// first line's to the last of its lines' baseline,
+  /// `heading_h<n>_drop_gap` (0.3em) from the text: the drop's text, the
+  /// room it takes beside the lines, how far left of the text it starts
+  /// (its opening punctuation) and how far down from the text's top.
+  ({CustomContent box, double width, double shift, double dy}) _dropOf(
     _Drop drop,
-    String content,
-    _FontState font, {
-    required String align,
-  }) {
+    _FontState font,
+  ) {
     final face = _fonts.font(font.family, font.style);
     final capLines = _capLeading(font) != null;
     final metrics = _lineMetrics(font);
@@ -85,6 +79,23 @@ extension _Paragraphs on PdfConverter {
     final dropBaseline = _capLeading(dropFont) != null
         ? dropFace.capHeightAt(size)
         : dropFace.ascenderAt(size);
+    return (
+      box: dropBox,
+      width: width,
+      shift: shift,
+      dy: baseline + (drop.lines - 1) * pitch - dropBaseline,
+    );
+  }
+
+  /// [content] (in [font], set by [align]) with [drop] beside its first
+  /// lines (see [_dropOf]).
+  CustomContent _dropped(
+    _Drop drop,
+    String content,
+    _FontState font, {
+    required String align,
+  }) {
+    final (:box, :width, :shift, :dy) = _dropOf(drop, font);
     return _Dropped(
       _textBox(
         content,
@@ -95,9 +106,9 @@ extension _Paragraphs on PdfConverter {
         dropLines: drop.lines,
         dropIndent: width,
       ),
-      dropBox,
+      box,
       width + shift,
-      baseline + (drop.lines - 1) * pitch - dropBaseline,
+      dy,
       shift: shift,
     );
   }
@@ -309,11 +320,20 @@ extension _Paragraphs on PdfConverter {
     // paragraphs rather than this converter's text box, FEAT-n1bkgf; one
     // with what they don't do yet is set by the box, as is everything
     // with `base_text_engine: box`.)
-    if (_engineParagraphs &&
-        firstLine == null &&
-        initial == null &&
-        _pendingDrop == null &&
-        _engineCanSet(content)) {
+    // (Its initial, a drop beside its first lines.)
+    final drop = firstLine == null ? initial ?? _takeDrop(node) : null;
+    // (A first line of its own style, an abstract's: the same text in that
+    // style for the engine; one transformed stays in the box.)
+    final firstRuns = firstLine == null || firstLineTransform != null
+        ? null
+        : _textBox(
+            content,
+            firstLine,
+            align: align,
+            indent: indent,
+            singleLine: true,
+          ).engineContent();
+    if (_engineParagraphs && (firstLine == null || firstRuns != null)) {
       if (box.engineContent() case final runs? when runs.isNotEmpty) {
         _engineParagraphCount++;
         final metrics = _lineMetrics(font);
@@ -334,68 +354,98 @@ extension _Paragraphs on PdfConverter {
         final heightShift = face.heightAt(font.size) - engineHeight;
         final ascentShift =
             face.ascenderAt(font.size) - engineFont.ascender * scale;
-        _out.add(
-          ParagraphBox(
-            Paragraph(
-              runs,
-              align: switch (align) {
-                'justify' => TextAlign.justify,
-                'center' => TextAlign.center,
-                'right' => TextAlign.right,
-                _ => TextAlign.left,
-              },
-              // (Half the leading and the font's line gap above each line,
-              // as the text box sets them; with `base_leading`, the lines
-              // from their cap heights, as it sets them then.)
-              lineHeight: _capLeading(font) != null
-                  ? LineHeight.cap(leading: metrics.leading)
-                  : LineHeight.font(
-                      leading: metrics.leading + heightShift,
-                      above: metrics.paddingTop + ascentShift,
-                    ),
-              firstLineIndent: indent,
-              // (`base_text_align_last`: a justified paragraph's last line,
-              // and those before a hard break, as the box sets them.)
-              alignLast: switch (_choice('base_text_align_last', const [
-                'left',
-                'center',
-                'right',
-              ])) {
-                'center' => TextAlign.center,
-                'right' => TextAlign.right,
-                _ => TextAlign.left,
-              },
-              // (`base_overhang`: protrusion, as the box draws it.)
-              protrusion: _overhangAmount(),
-              // (`base_justify_width: widest`: justified to the widest
-              // line, as the box sets a paragraph in a block sized to it.)
-              justifyToWidest:
-                  _choice('base_justify_width', const ['room', 'widest']) ==
-                  'widest',
-              // (A superscript in the space between lines, as the text
-              // box sets it.)
-              riseInLineHeight: false,
-            ),
-            style: BoxStyle(
-              margin: EdgeInsets(bottom: marginBottom),
-              anchor: node.id,
-              runsAround: true,
-              gridLine: _gridLineOf(node),
-            ),
-            orphans: (_n('prose_orphans') ?? 2).toInt(),
-            widows: (_n('prose_widows') ?? 2).toInt(),
-            // (Broken as the text box breaks a paragraph of its alignment
-            // and size: ragged and justified in one document.)
-            lineBreaker: textLineBreaker(_text, align, font.size),
+        // (A drop: the first lines set in beside it, as the text box sets
+        // them, the drop painted at the paragraph's top, the paragraph as
+        // deep as the drop at least.)
+        final dropped = drop == null ? null : _dropOf(drop, font);
+        final paragraph = ParagraphBox(
+          Paragraph(
+            runs,
+            hangIndent: dropped?.width ?? 0,
+            hangLines: drop?.lines ?? 0,
+            firstLineContent: firstRuns,
+            align: switch (align) {
+              'justify' => TextAlign.justify,
+              'center' => TextAlign.center,
+              'right' => TextAlign.right,
+              _ => TextAlign.left,
+            },
+            // (Half the leading and the font's line gap above each line,
+            // as the text box sets them; with `base_leading`, the lines
+            // from their cap heights, as it sets them then.)
+            lineHeight: _capLeading(font) != null
+                ? LineHeight.cap(leading: metrics.leading)
+                : LineHeight.font(
+                    leading: metrics.leading + heightShift,
+                    above: metrics.paddingTop + ascentShift,
+                  ),
+            firstLineIndent: drop == null ? indent : 0,
+            // (`base_text_align_last`: a justified paragraph's last line,
+            // and those before a hard break, as the box sets them.)
+            alignLast: switch (_choice('base_text_align_last', const [
+              'left',
+              'center',
+              'right',
+            ])) {
+              'center' => TextAlign.center,
+              'right' => TextAlign.right,
+              _ => TextAlign.left,
+            },
+            // (`base_overhang`: protrusion, as the box draws it.)
+            protrusion: _overhangAmount(),
+            // (`base_justify_width: widest`: justified to the widest
+            // line, as the box sets a paragraph in a block sized to it.)
+            justifyToWidest:
+                _choice('base_justify_width', const ['room', 'widest']) ==
+                'widest',
+            // (A superscript in the space between lines, as the text
+            // box sets it.)
+            riseInLineHeight: false,
           ),
+          style: BoxStyle(
+            margin: EdgeInsets(bottom: dropped == null ? marginBottom : 0),
+            anchor: node.id,
+            runsAround: true,
+            gridLine: _gridLineOf(node),
+          ),
+          orphans: (_n('prose_orphans') ?? 2).toInt(),
+          widows: (_n('prose_widows') ?? 2).toInt(),
+          // (Broken as the text box breaks a paragraph of its alignment
+          // and size: ragged and justified in one document.)
+          lineBreaker: textLineBreaker(_text, align, font.size),
         );
+        if (dropped == null) {
+          _out.add(paragraph);
+        } else {
+          final mark = dropped.box.place(
+            dropped.width + dropped.shift,
+            double.infinity,
+            atTop: true,
+          );
+          _out.add(
+            BlockBox(
+              [paragraph],
+              style: BoxStyle(
+                margin: EdgeInsets(bottom: marginBottom),
+                minHeight: mark == null ? 0 : dropped.dy + mark.height,
+                decoration: (page, rect, {required first, required last}) {
+                  if (first) {
+                    mark?.paint(
+                      page,
+                      rect.left - dropped.shift,
+                      rect.top - dropped.dy,
+                    );
+                  }
+                },
+              ),
+            ),
+          );
+        }
         return;
       }
     }
     CustomContent text = box;
-    if (initial ?? _takeDrop(node) case final drop? when firstLine == null) {
-      text = _dropped(drop, content, font, align: align);
-    }
+    if (drop != null) text = _dropped(drop, content, font, align: align);
     if (firstLine != null) {
       text = FirstLineTextBox(
         _textBox(

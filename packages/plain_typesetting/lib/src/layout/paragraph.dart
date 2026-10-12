@@ -152,15 +152,19 @@ final class Paragraph {
     this.alignLast = TextAlign.left,
     this.protrusion = 0,
     this.justifyToWidest = false,
+    this.hangIndent = 0,
+    this.hangLines = 0,
+    this.firstLineContent,
   });
 
-  /// This paragraph with [content], [align], [firstLineIndent] or
-  /// [justifyToWidest] instead of its own.
+  /// This paragraph with [content], [align], [firstLineIndent],
+  /// [justifyToWidest] or [hangLines] instead of its own.
   Paragraph copyWith({
     List<InlineContent>? content,
     TextAlign? align,
     double? firstLineIndent,
     bool? justifyToWidest,
+    int? hangLines,
   }) => Paragraph(
     content ?? this.content,
     align: align ?? this.align,
@@ -173,6 +177,9 @@ final class Paragraph {
     alignLast: alignLast,
     protrusion: protrusion,
     justifyToWidest: justifyToWidest ?? this.justifyToWidest,
+    hangIndent: hangIndent,
+    hangLines: hangLines ?? this.hangLines,
+    firstLineContent: firstLineContent,
   );
 
   /// The inline content.
@@ -203,6 +210,20 @@ final class Paragraph {
   /// the measure: a paragraph in a block sized to its content, where
   /// stretching to the measure would make it wider than its text.
   final bool justifyToWidest;
+
+  /// How far the first [hangLines] lines are set in from the start, the
+  /// room beside them left (a drop initial's): TeX's `\hangindent`, with
+  /// `\hangafter` the negative of [hangLines].
+  final double hangIndent;
+
+  /// How many lines [hangIndent] sets in.
+  final int hangLines;
+
+  /// The same text in its first line's style (CSS's `::first-line`: an
+  /// abstract's first line in bold), or null: the paragraph is broken in
+  /// that style, its first line kept, and the rest of the text broken
+  /// again in its own.
+  final List<InlineContent>? firstLineContent;
 
   /// The line spacing.
   final LineHeight lineHeight;
@@ -389,13 +410,84 @@ abstract base class ItemLineBreaker implements LineBreaker {
   @override
   List<Line> breakLines(Paragraph paragraph, LineWidths widths) {
     final indent = paragraph.firstLineIndent;
-    double indented(int line) => widths(line) - (line == 0 ? indent : 0);
+    double indented(int line) =>
+        widths(line) -
+        (line == 0 ? indent : 0) -
+        (line < paragraph.hangLines ? paragraph.hangIndent : 0);
     final items = paragraphItems(
       paragraph,
       maxWidth: paragraph.breakLongWords ? indented(0) : null,
     );
     if (items.isEmpty) return const [];
+    if (paragraph.firstLineContent case final first?) {
+      return _withFirstLine(paragraph, first, items, widths, indented(0));
+    }
     return breakItemLines(paragraph, items, widths).lines;
+  }
+
+  /// [paragraph]'s lines with its first in [first]'s style: broken in
+  /// that style, its first line kept, the rest of [items] (the text after
+  /// the text that line takes) broken again.
+  List<Line> _withFirstLine(
+    Paragraph paragraph,
+    List<InlineContent> first,
+    List<LineItem> items,
+    LineWidths widths,
+    double firstWidth,
+  ) {
+    final styled = Paragraph(
+      first,
+      align: paragraph.align,
+      lineHeight: paragraph.lineHeight,
+      firstLineIndent: paragraph.firstLineIndent,
+      hyphenator: paragraph.hyphenator,
+      breakLongWords: paragraph.breakLongWords,
+      hyphenRepetition: paragraph.hyphenRepetition,
+      riseInLineHeight: paragraph.riseInLineHeight,
+      alignLast: paragraph.alignLast,
+      protrusion: paragraph.protrusion,
+      hangIndent: paragraph.hangIndent,
+      hangLines: paragraph.hangLines,
+    );
+    final firstItems = paragraphItems(
+      styled,
+      maxWidth: paragraph.breakLongWords ? firstWidth : null,
+    );
+    final (:lines, :breaks) = breakItemLines(styled, firstItems, widths);
+    if (lines.length < 2) return lines;
+    // (How much of the text the first line takes, and where that ends in
+    // the paragraph's own items.)
+    int length(LineItem item) => switch (item) {
+      BoxItem(:final text) || GlueItem(:final text) => text.length,
+      _ => 0,
+    };
+    var taken = 0;
+    for (var i = 0; i <= breaks.first; i++) {
+      taken += length(firstItems[i]);
+    }
+    var at = 0;
+    var counted = 0;
+    while (at < items.length && counted < taken) {
+      counted += length(items[at]);
+      at++;
+    }
+    while (at < items.length &&
+        switch (items[at]) {
+          GlueItem() => true,
+          PenaltyItem(:final isForced) => !isForced,
+          BoxItem() => false,
+        }) {
+      at++;
+    }
+    final rest = breakItemLines(
+      paragraph.copyWith(
+        firstLineIndent: 0,
+        hangLines: math.max(0, paragraph.hangLines - 1),
+      ),
+      items.sublist(at),
+      (line) => widths(line + 1),
+    ).lines;
+    return [lines.first, ...rest];
   }
 
   /// The lines of [paragraph] made of [items] (its [paragraphItems], or
@@ -412,7 +504,10 @@ abstract base class ItemLineBreaker implements LineBreaker {
   }) {
     if (items.isEmpty) return (lines: const [], breaks: const []);
     final indent = paragraph.firstLineIndent;
-    double indented(int line) => widths(line) - (line == 0 ? indent : 0);
+    double indented(int line) =>
+        widths(line) -
+        (line == 0 ? indent : 0) -
+        (line < paragraph.hangLines ? paragraph.hangIndent : 0);
     // (Protrusion: what hangs at a line's ends counted as the line is
     // then drawn, at its end always, at its start when justified.)
     double Function(int)? protrude({required bool right}) {
@@ -1620,7 +1715,9 @@ List<Line> buildLines(
     final last =
         number == breaks.length - 1 ||
         (breakItem is PenaltyItem && breakItem.isForced);
-    final indent = number == 0 ? paragraph.firstLineIndent : 0.0;
+    final indent =
+        (number == 0 ? paragraph.firstLineIndent : 0.0) +
+        (number < paragraph.hangLines ? paragraph.hangIndent : 0.0);
     final emptyRun = breakItem is PenaltyItem ? breakItem.run : null;
     // The hyphen repeated from the line before (see PenaltyItem.carry).
     final leading = switch (start > 0 ? items[start - 1] : null) {
