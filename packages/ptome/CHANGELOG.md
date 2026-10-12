@@ -120,14 +120,20 @@ Asciidoctor project.
   (`base_justify_width: widest`), running around a block floating to a
   side and an image's outline, with side notes beside their lines, with
   drop initials (a role's `drop_lines`, a section's
-  `heading_h<n>_initial_lines`) and an abstract's first line in its own
-  style. Every word where the box puts it
+  `heading_h<n>_initial_lines`), an abstract's first line in its own
+  style, inline images and formulas, text on a background or in a
+  border, and small capitals made from capitals. Every word where the
+  box puts it
   (test/pdf/engine_paragraphs_test.dart). The Hypermedia Systems book's
   paragraphs go through the engine (313 pages, the same words); its lines
   differ from the box's only where the engine is right and the box isn't:
   a paragraph split across pages keeps its own breaks (the box breaks its
   rest again), no line starts with a comma, and a code path may break
-  after a slash before digits (Unicode 15.1's line breaking). A footnote's
+  after a slash before digits (Unicode 15.1's line breaking). A line
+  mixing fonts (inline code) is as tall as its tallest ascender and
+  deepest descender, where the box took its tallest font's height, and a
+  formula taller than its text makes its line taller, where the box let
+  it reach into the line above. A footnote's
   number on its page (`footnotes_numbering: page`) keeps its paragraph in
   the box for now.
 - Units note streams: `entry-first-in` and `entry-heading` head the first

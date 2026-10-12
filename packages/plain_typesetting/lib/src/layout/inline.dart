@@ -139,13 +139,33 @@ enum InlineAlignment {
 final class InlineImage extends InlineContent {
   /// [image] (raster or SVG) drawn [width] by [height] points, aligned
   /// by [alignment].
+  ///
+  /// [bottom], where given, places its bottom that far above the baseline
+  /// (below it when negative) instead; [lineAscent] and [lineDescent], how
+  /// far above and below the baseline it reaches for its line's height,
+  /// where they aren't its own (a formula as deep as its depth, an icon
+  /// that takes no more room than the text around it).
   const new(
     this.image,
     this.width,
     this.height, {
     this.alignment = InlineAlignment.baseline,
     this.link,
+    this.bottom,
+    this.lineAscent,
+    this.lineDescent,
   }) : super._();
+
+  /// Where its bottom is above the baseline, or null for [alignment]'s.
+  final double? bottom;
+
+  /// How far above the baseline it reaches for its line's height, or null
+  /// for its top.
+  final double? lineAscent;
+
+  /// How far below the baseline it reaches for its line's height (a
+  /// positive depth), or null for its bottom.
+  final double? lineDescent;
 
   /// The image.
   final Graphic image;

@@ -1946,14 +1946,17 @@ Line _line(
         fragments.add(TextFragment(x, w, content, string, glyphs, adjusted));
         x += w;
       case InlineImage(:final height, :final alignment):
-        final bottom = switch (alignment) {
-          InlineAlignment.baseline => 0.0,
-          InlineAlignment.middle => xHeight / 2 - height / 2,
-          InlineAlignment.top => textAscent - height,
-        };
-        ascent = math.max(ascent, bottom + height);
-        descent = math.min(descent, bottom);
-        cap = math.max(cap, bottom + height);
+        final bottom =
+            content.bottom ??
+            switch (alignment) {
+              InlineAlignment.baseline => 0.0,
+              InlineAlignment.middle => xHeight / 2 - height / 2,
+              InlineAlignment.top => textAscent - height,
+            };
+        final top = content.lineAscent ?? bottom + height;
+        ascent = math.max(ascent, top);
+        descent = math.min(descent, -(content.lineDescent ?? -bottom));
+        cap = math.max(cap, top);
         if (size == 0) size = height;
         fragments.add(ImageFragment(x, content.width, content, bottom));
         x += content.width;

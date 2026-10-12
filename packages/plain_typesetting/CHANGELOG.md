@@ -41,6 +41,10 @@
   paragraph broken in its first line's style, that line kept, the rest
   broken again in its own) and `BoxStyle.minHeight` (CSS's `min-height`
   for a block's content).
+- `InlineImage.bottom`, `lineAscent` and `lineDescent`: where an inline
+  image sits from the baseline and how far it reaches for its line's
+  height, where those aren't its own (a formula on its depth; an icon no
+  taller than its text).
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
 - A paragraph's last line in a region fits when its text does, the space

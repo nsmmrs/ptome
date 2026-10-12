@@ -355,6 +355,37 @@ void main() {
     );
   });
 
+  test('inline images, formulas, decorated code and faked small capitals', () {
+    final images = '${Directory.current.path}/test/pdf/fixtures/images';
+    final words = List.filled(2, _words40).join(' ');
+    // (Images at the size they ask for, beside text and on their own
+    // line; one taller than a line raising it.)
+    _same(
+      '= Doc\n\n$words image:$images/red.png[width=10] $words '
+      'image:$images/box.svg[width=14] $words\n\n'
+      '$words image:$images/tall.png[width=20] $words\n',
+    );
+    // (Formulas, standing on their depth. One taller than the text makes
+    // its line taller, where the box lets it reach into the line above.)
+    _same(
+      '= Doc\n:stem:\n\n$words stem:[x+y] $words stem:[a b] and '
+      'stem:[n] $words\n',
+    );
+    // (Text on a background with a border, none of its own room.)
+    _same(
+      '$words [.hl]#marked text here# $words [.hl]#more# $words\n',
+      theme:
+          'role:\n  hl:\n    background_color: EEEEEE\n'
+          '    border_color: CCCCCC\n    border_width: 0.5\n'
+          '    border_radius: 2\n',
+    );
+    // (Small capitals the font lacks, made from its capitals.)
+    _same(
+      '$words [.sc]#small capitals here# $words\n',
+      theme: 'role:\n  sc:\n    font_variant: small-caps\n',
+    );
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

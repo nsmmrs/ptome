@@ -549,21 +549,42 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// border, small capitals the font lacks), for the box to set it.
   List<InlineContent>? engineContent() {
     final runs = <InlineContent>[];
+    final images = _context.images;
+    int? lastImage;
     for (final item in _items) {
-      final format = item.format;
+      var format = item.format;
       final fragment = format.fragment;
+      // (An inline image or formula, which the box arranges as it lays out
+      // its text: arranged here at the size it asks for, as the box does
+      // unless that is a share of the width.)
+      if (fragment.imagePath case final path? when format.image == null) {
+        if (images == null) return null;
+        final id = fragment.objectId;
+        if (id != null && id == lastImage) continue;
+        lastImage = id;
+        final (graphic, _) = images(path, fragment.imageFormat);
+        if (graphic == null) return null;
+        if (graphic is! InlineMath &&
+            (fragment.imageWidth ?? '100%').contains('%')) {
+          return null;
+        }
+        format = _arrangeImage(item, graphic, double.infinity).format;
+      }
+      // (A background or border drawn around the text, with no room of
+      // its own around it: the engine's decoration.)
+      final decorated =
+          fragment.backgroundColor != null || fragment.borderWidth != null;
       // (Text the layout labels, a footnote's number on its page: the box
       // relabels it as the pages are laid out.)
-      if (format.image != null ||
-          format.smallCapitals ||
-          (fragment.label != null && _context.labels != null) ||
+      if ((fragment.label != null && _context.labels != null) ||
           (fragment.callbacks?.any(
                 (callback) =>
-                    callback != FragmentCallback.inlineDestinationMarker,
+                    callback == FragmentCallback.inlineTextAligner ||
+                    (callback == FragmentCallback.inlineImage &&
+                        format.image == null),
               ) ??
               false) ||
-          fragment.backgroundColor != null ||
-          fragment.borderWidth != null) {
+          (decorated && (fragment.borderOffset ?? 0) != 0)) {
         return null;
       }
       final font = format.font;
@@ -586,6 +607,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           null => null,
         },
       };
+      if (format.image case final image?) {
+        runs.add(_engineImage(image, format, link));
+        continue;
+      }
       runs.add(
         TextRun(
           // (A destination marker's placeholder isn't drawn, as the box
@@ -612,6 +637,14 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           anchorOnBaseline:
               fragment.isMarker &&
               (fragment.name?.startsWith(hangAnchorPrefix) ?? false),
+          decoration: decorated
+              ? InlineDecoration(
+                  background: _pdfColor(fragment.backgroundColor),
+                  borderColor: _pdfColor(fragment.borderColor),
+                  borderWidth: (fragment.borderWidth ?? 0).toDouble(),
+                  radius: (fragment.borderRadius ?? 0).toDouble(),
+                )
+              : null,
         ),
       );
     }
@@ -1112,6 +1145,47 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       }
       _items[i] = _arrangeImage(item, graphic, width);
     }
+  }
+
+  /// [image], arranged in [format], as the engine's inline image, placed
+  /// and measured as the box draws it: a formula standing on its depth;
+  /// an image taller than the line raising it, standing on the line's
+  /// descender; another centered in its text, its line no taller.
+  InlineImage _engineImage(_Image image, _Format format, LinkTarget? link) {
+    if (image.graphic case final InlineMath formula) {
+      final depth = image.mathDepth ?? 0;
+      return InlineImage(
+        _EngineFormula(formula, format.size, _pdfColor(format.fragment.color)),
+        image.width,
+        image.height,
+        bottom: -depth,
+        lineAscent: image.height - depth,
+        lineDescent: depth,
+        link: link,
+      );
+    }
+    if (image.lineHeightIncreased) {
+      return InlineImage(
+        image.graphic,
+        image.drawWidth,
+        image.drawHeight,
+        bottom: -(image.descender ?? 0),
+        lineAscent: image.ascender,
+        lineDescent: image.descender,
+        link: link,
+      );
+    }
+    final ascender = format.font.ascenderAt(format.size);
+    final descender = format.font.descenderAt(format.size);
+    return InlineImage(
+      image.graphic,
+      image.drawWidth,
+      image.drawHeight,
+      bottom: (ascender - descender + image.height) / 2 - image.drawHeight,
+      lineAscent: 0,
+      lineDescent: 0,
+      link: link,
+    );
   }
 
   _Item _arrangeImage(_Item item, Graphic graphic, double available) {
@@ -3261,4 +3335,37 @@ String _describeBreaker(ItemLineBreaker breaker, (int, double)? drop) {
     _ => breaker.runtimeType.toString(),
   };
   return drop == null ? costs : '$costs drop ${drop.$1} ${drop.$2}';
+}
+
+/// A formula drawn by the engine as an inline image: set at [size], in
+/// [color], copied as its source, as the box draws it.
+final class _EngineFormula implements Graphic {
+  const new(this.formula, this.size, this.color);
+
+  final InlineMath formula;
+  final double size;
+  final Color? color;
+
+  @override
+  double get intrinsicWidth => formula.at(size).width;
+
+  @override
+  double get intrinsicHeight => formula.at(size).intrinsicHeight;
+
+  @override
+  void paint(Canvas canvas, Rect rect) {
+    final box = formula.at(size);
+    canvas
+      ..save()
+      ..beginMarkedContent('Span', actualText: formula.source);
+    if (color case final color?) {
+      canvas
+        ..setFillColor(color)
+        ..setStrokeColor(color);
+    }
+    box.paintAt(canvas, rect.left, rect.bottom + box.depth);
+    canvas
+      ..endMarkedContent()
+      ..restore();
+  }
 }
