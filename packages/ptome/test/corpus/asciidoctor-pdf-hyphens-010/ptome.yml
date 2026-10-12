@@ -1,4 +1,4 @@
 # The last ptome files found equal to the goldens (by their pages,
 # or the files in them), by SHA-256; written by the corpus test.
 asciidoctor-2.0.26:
-  pdf: e270f4e970c72ea8fd84a382d9f5d14f9d29a77ed923c1c24eb00522ae6302ea
+  pdf: c6ee94373eb9337237f5938976d1421073a7cdb14e755d493d064dc3d1f60802

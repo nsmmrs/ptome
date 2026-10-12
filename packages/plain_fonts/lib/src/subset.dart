@@ -57,7 +57,7 @@ Uint8List subsetTrueType(
   loca.setUint32(4 * font.numGlyphs, glyf.length);
 
   final head = Uint8List.fromList(font.table('head')!);
-  final headView = ByteData.sublistView(head)
+  ByteData.sublistView(head)
     ..setUint32(8, 0) // checkSumAdjustment, set below
     ..setInt16(50, 1); // long loca offsets
 
@@ -69,18 +69,13 @@ Uint8List subsetTrueType(
     if (codes != null) 'cmap': _byteCmap(codes),
   };
   final file = assembleFont(tables);
-  // The checksum adjustment makes the whole file sum to 0xb1b0afba; set
-  // in the file, it adds itself to the head table's checksum too.
+  // The checksum adjustment makes the whole file sum to 0xb1b0afba. The
+  // head table's own checksum is taken with it 0 (OpenType's `head`), as
+  // assembled: only the adjustment itself goes into the file.
   final adjustment = (0xb1b0afba - _checksum(file)) & 0xffffffff;
-  headView.setUint32(8, adjustment);
   final view = ByteData.sublistView(file);
   final record = 12 + 16 * (tables.keys.toList()..sort()).indexOf('head');
-  view
-    ..setUint32(view.getUint32(record + 8) + 8, adjustment)
-    ..setUint32(
-      record + 4,
-      (view.getUint32(record + 4) + adjustment) & 0xffffffff,
-    );
+  view.setUint32(view.getUint32(record + 8) + 8, adjustment);
   return file;
 }
 

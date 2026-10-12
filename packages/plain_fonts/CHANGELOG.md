@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A TrueType subset's checksums are OpenType's: the head table's own
+  taken with its checkSumAdjustment 0, and the file summing to
+  0xB1B0AFBA. The adjustment was added into the head table's record too,
+  so neither held. Every subset's bytes change.
 - `FontIndex.over`: fonts given as bytes over another index, whose
   folders aren't walked nor fonts read again.
 - `subsetTrueType(codes:)`: a `cmap` mapping one-byte codes to the

@@ -54,6 +54,42 @@ void main() {
     expect(subset.glyphBounds(used.first), font.glyphBounds(used.first));
   });
 
+  test("a subset's checksums are OpenType's", () {
+    // Each table record's checksum that of its table (the head table's
+    // taken with its checkSumAdjustment 0), and the whole file summing to
+    // 0xB1B0AFBA with the adjustment in place.
+    final font = OpenTypeFont.parse(_read('notoserif-regular-latin.ttf'));
+    final file = subsetTrueType(
+      font,
+      glyphClosure(font, [font.glyphFor(0x41)]),
+    );
+    final view = ByteData.sublistView(file);
+    int sum(int from, int length) {
+      var total = 0;
+      for (var i = 0; i < length; i += 4) {
+        var word = 0;
+        for (var k = 0; k < 4; k++) {
+          word = word << 8 | (i + k < length ? file[from + i + k] : 0);
+        }
+        total = (total + word) & 0xffffffff;
+      }
+      return total;
+    }
+
+    for (var t = 0; t < view.getUint16(4); t++) {
+      final record = 12 + 16 * t;
+      final tag = String.fromCharCodes(file.sublist(record, record + 4));
+      final offset = view.getUint32(record + 8);
+      final length = view.getUint32(record + 12);
+      var expected = sum(offset, length);
+      if (tag == 'head') {
+        expected = (expected - view.getUint32(offset + 8)) & 0xffffffff;
+      }
+      expect(view.getUint32(record + 4), expected, reason: tag);
+    }
+    expect(sum(0, file.length), 0xb1b0afba);
+  });
+
   test('a simple font subset maps its one-byte codes to its glyphs', () {
     final font = OpenTypeFont.parse(_read('notoserif-regular-latin.ttf'));
     final codes = {

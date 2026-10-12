@@ -1,6 +1,7 @@
 // The text path pinned to what plain_pdf wrote before it was made faster
 // (commit 17001e86; since 2026-10-10 with `TJ` adjustments to five
-// decimals and word spacing to a hundred-thousandth of a point):
+// decimals and word spacing to a hundred-thousandth of a point, since
+// 2026-10-12 with embedded subsets' head checksums as OpenType has them):
 // digests of the shaped glyphs of the 14 standard fonts
 // and of the content streams drawing seeded random text in standard and
 // embedded fonts, with kerning, word and character spacing, rise, skew and
@@ -101,6 +102,6 @@ void main() {
         ..write(latin1.decode(pdf))
         ..write('\n');
     }
-    expect(digest(out), '65844065e866adf1895d9bf95dcf9a82');
+    expect(digest(out), '10906f5b46c56b874e17a6e25d193b67');
   });
 }
