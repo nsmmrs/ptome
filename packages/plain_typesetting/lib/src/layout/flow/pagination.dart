@@ -260,7 +260,6 @@ final class FlowLayout {
     this.sideNoteStreamOf = const {},
     this.sideNoteGap = 2,
     this.baselineGrid,
-    this.dropsSpaceAtBreaks = false,
     this.pagination = Pagination.firstFit,
   }) : templates = {null: ?template, ...?templates},
        pageLabel = pageLabel ?? _decimal {
@@ -362,11 +361,6 @@ final class FlowLayout {
   /// of it, the space before it rounded up to that, so its lines, set a
   /// step apart, are on the grid too, the same on every page.
   final BaselineGrid? baselineGrid;
-
-  /// Whether a paragraph's last line in a region may leave the space under
-  /// its text out of it (the space between lines goes at a break, as TeX's
-  /// glue does), so a line fits when its text does.
-  final bool dropsSpaceAtBreaks;
 
   /// How the pages' breaks are chosen: one page at a time, or together
   /// (see [Pagination.optimal]).

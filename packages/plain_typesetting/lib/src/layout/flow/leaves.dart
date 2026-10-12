@@ -25,11 +25,11 @@ extension _Leaves on _Pass {
     }
     final heights = [for (final line in lines.skip(from)) line.height];
     // (The space under each line's text, which the region's last line
-    // may leave out.)
+    // leaves out: the space between lines goes at a break, as TeX's glue
+    // does, so a line fits when its text does.)
     final below = <double>[
-      if (layout.dropsSpaceAtBreaks)
-        for (final line in lines.skip(from))
-          math.max(0, line.height - line.baseline - line.descent.abs()),
+      for (final line in lines.skip(from))
+        math.max(0, line.height - line.baseline - line.descent.abs()),
     ];
     final count = layout.pageBreaker.linesThatFit(
       heights,

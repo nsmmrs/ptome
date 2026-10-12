@@ -834,7 +834,28 @@ final class _Pass {
         _exclusions.length = entryMark;
         return _Fit.moved(box);
       }
-      final head = box.repeatedHead;
+      // A break in its repeated head, or right after it with nothing of
+      // what follows placed: the head kept whole and with what follows it,
+      // the block moved to the next region (once: a head that doesn't fit
+      // there with what follows it either, as one taller than a region, is
+      // not repeated, as a table's header rows taller than a page).
+      final inHead =
+          box.repeatedHead > 0 &&
+          !headOnly &&
+          rest.isNotEmpty &&
+          from != null &&
+          (partial ? from < box.repeatedHead : from <= box.repeatedHead);
+      if (inHead &&
+          hit == null &&
+          !atTop &&
+          floated.isEmpty &&
+          pinned.isEmpty &&
+          carried.isEmpty &&
+          _headsMoved.add(box)) {
+        _exclusions.length = entryMark;
+        return _Fit.moved(box);
+      }
+      final head = inHead ? 0 : box.repeatedHead;
       final repeat =
           head > 0 &&
           (rest.isNotEmpty || headOnly) &&
@@ -1447,6 +1468,10 @@ final class _Pass {
   }
 
   List<_Exclusion> _exclusions = [];
+
+  /// The blocks moved to the next region to keep their repeated head
+  /// whole, each moved once.
+  final Set<BlockBox> _headsMoved = Set.identity();
 
   /// Those carried over from the region before, set at its top.
   List<_Exclusion> _seedExclusions = [];

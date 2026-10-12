@@ -14,9 +14,13 @@
   the word is drawn whole.
 - `TextRun.anchorOnBaseline`: a run's anchor reported at its baseline
   rather than its text's top (where a label hung beside the line aligns).
-- `FlowLayout.dropsSpaceAtBreaks`: a paragraph's last line in a region
-  fits when its text does, the space under it left out (interline space
-  goes at a break, as TeX's glue). A justified paragraph's last line set
+- A paragraph's last line in a region fits when its text does, the space
+  under it left out (interline space goes at a break, as TeX's glue). A
+  block's repeated head is kept whole and with what follows it: a break
+  inside it, or right after it with nothing of what follows placed, moves
+  the block to the next region once, and where it doesn't fit there
+  either the head isn't repeated (the rest of a block broken in its head
+  repeated the wrong children). A justified paragraph's last line set
   wider than its measure is shrunk to it, not left overfull.
 - `Paragraph.riseInLineHeight` (false: a superscript reaches into the
   space between lines, the pitch kept); `LineHeight.font(above:)`, how

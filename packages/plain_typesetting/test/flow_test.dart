@@ -910,32 +910,32 @@ void main() {
     }
   });
 
-  test("a page's last line may leave out the space under its text", () {
+  test("a page's last line leaves out the space under its text", () {
     // Lines with 10 pt of leading under each; a page with room for two
-    // and a third's text: with dropsSpaceAtBreaks, the third goes on it.
-    ParagraphBox spaced(String text) => ParagraphBox(
-      Paragraph([
-        TextRun(text, _body),
-      ], lineHeight: const LineHeight.font(leading: 10)),
-      orphans: 1,
-      widows: 1,
-    );
-    final line = _lineHeight + _serif.lineGap / 100 + 10;
-    final template = PageTemplate(
-      Rect(0, 0, 300, 40 + 3 * line - 5),
-      margins: const EdgeInsets.all(20),
-    );
-    int onFirst({required bool drops}) {
-      final document = RecordingDocument();
-      FlowLayout(
-        template: template,
-        dropsSpaceAtBreaks: drops,
-      ).layout([spaced('l1\nl2\nl3\nl4')]).render(document);
-      return document.pages.first.texts.length;
-    }
-
-    expect(onFirst(drops: false), 2);
-    expect(onFirst(drops: true), 3);
+    // and a third's text: the third goes on it.
+    final document = RecordingDocument();
+    FlowLayout(
+          template: PageTemplate(
+            Rect(
+              0,
+              0,
+              300,
+              40 + 3 * (_lineHeight + _serif.lineGap / 100 + 10) - 5,
+            ),
+            margins: const EdgeInsets.all(20),
+          ),
+        )
+        .layout([
+          ParagraphBox(
+            Paragraph([
+              TextRun('l1\nl2\nl3\nl4', _body),
+            ], lineHeight: const LineHeight.font(leading: 10)),
+            orphans: 1,
+            widows: 1,
+          ),
+        ])
+        .render(document);
+    expect(document.pages.first.texts, hasLength(3));
   });
 
   test('a floating box taller than a page is set whole, not cut', () {
@@ -1051,6 +1051,43 @@ void main() {
         ]);
     expect(result.unsetSideNotes, ['a1']);
     expect(result.pageCount, 1);
+  });
+
+  test('a repeated head kept whole and with what follows it', () {
+    // Three rows used, a two-line head and its body: the head would break
+    // after its first line, so the block starts the next page; there, the
+    // head repeats whole on each page after.
+    List<String> texts(double rows, List<LayoutBox> content) {
+      final document = RecordingDocument();
+      FlowLayout(template: _rows(rows)).layout(content).render(document);
+      return [
+        for (final page in document.pages)
+          page.texts.map((t) => t.trim()).join(' '),
+      ];
+    }
+
+    expect(
+      texts(4, [
+        _para('x1\nx2\nx3'),
+        BlockBox([
+          _para('h1\nh2'),
+          for (var i = 1; i <= 4; i++) _para('b$i'),
+        ], repeatedHead: 1),
+      ]),
+      ['x1 x2 x3', 'h1 h2 b1 b2', 'h1 h2 b3 b4'],
+    );
+    // A head and the first of its body that don't fit a page together
+    // (the head four lines, a page three): not repeated, the rest of the
+    // head and the body going on as they are.
+    expect(
+      texts(3, [
+        BlockBox([
+          _para('h1\nh2\nh3\nh4'),
+          for (var i = 1; i <= 4; i++) _para('b$i'),
+        ], repeatedHead: 1),
+      ]),
+      ['h1 h2 h3', 'h4 b1 b2', 'b3 b4'],
+    );
   });
 
   test('a side float: blocks beside it, the rest on the next page', () {
