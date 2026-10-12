@@ -2987,10 +2987,14 @@ templates:
       );
       final pages = _pages(pdf);
       // Each chapter on a recto (an odd page), its first letter an
-      // initial, the next words in small capitals.
+      // initial, the next words in small capitals (capitals, in a face
+      // without them).
       int pageOf(String text) =>
-          pages.indexWhere((page) => page.any((l) => l.contains(text))) + 1;
-      expect(pageOf('One').isOdd, isTrue);
+          pages.indexWhere(
+            (page) => page.any((l) => l.toLowerCase().contains(text)),
+          ) +
+          1;
+      expect(pageOf('one').isOdd, isTrue);
       expect(pageOf('all of it').isOdd, isTrue);
       expect(pages.expand((p) => p), contains(matches(r'^W\s')));
       // The running heads in small capitals: the book's title on a verso,
