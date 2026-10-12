@@ -73,6 +73,49 @@ _WaitingNotes? _left(
 }
 
 extension _Notes on _Pass {
+  /// The notes of [waiting] that haven't started and have waited [lag]
+  /// regions since their references'.
+  List<LayoutBox> _overdue(_WaitingNotes? waiting, int lag) => [
+    if (waiting != null)
+      for (final note in [
+        ...waiting.main,
+        for (final notes in waiting.streams.values) ...[
+          ...notes.before,
+          ...notes.notes,
+        ],
+      ])
+        if (_noteRegion[note] case final region?
+            when region + lag <= _noteRegions)
+          note,
+  ];
+
+  /// Whether each of [overdue] starts in [room] at the bottom of a region
+  /// [width] wide, [area] set there.
+  bool _starts(
+    List<LayoutBox> overdue,
+    List<LayoutBox> area,
+    double width,
+    double room,
+  ) {
+    final placed = _place(BlockBox(area), width, room, atTop: false);
+    if (placed.placed == null || placed.height == 0) return false;
+    final rest = placed.rest;
+    if (rest == null) return true;
+    // (A note not started is still in what is left, whole.)
+    final whole = Set<LayoutBox>.identity();
+    void collect(LayoutBox box) {
+      whole.add(box);
+      switch (box) {
+        case BlockBox(:final children) || ColumnsBox(:final children):
+          children.forEach(collect);
+        case _:
+      }
+    }
+
+    collect(rest);
+    return !overdue.any(whole.contains);
+  }
+
   /// Sets the side notes beside their anchors on every page (see
   /// [FlowLayout.sideNotes]), the pages' text as it is: the main series
   /// in the side column, each of [FlowLayout.sideNoteStreams] in its own.
@@ -266,7 +309,17 @@ extension _Notes on _Pass {
       // The most content whose notes fit under it: more room places more
       // content, which refers to more notes, so the room is found by
       // halving.
-      var low = 0.0;
+      // (With a lag, notes may run on as far as the regions it allows
+      // take them, under their least text.)
+      final allowance = switch (layout.notesLag) {
+        final lag? when lag > 0 =>
+          lag * math.max(0.0, region.height - (layout.notesMinText ?? 0)),
+        _ => 0.0,
+      };
+      // (No room less than the content's first piece is tried: placed at
+      // the top, that would be forced in, which content that sets itself
+      // takes for not fitting on a page at all.)
+      var low = math.min(_minHeight(content, width), fit.height);
       var high = fit.height;
       (_Fit, List<LayoutBox>)? best;
       for (var step = 0; step < 12; step++) {
@@ -274,7 +327,7 @@ extension _Notes on _Pass {
         _floatsWaiting = 0;
         final tried = _placeRegion(content, width, room);
         final tryNotes = pending(tried);
-        if (total(tried, tryNotes) <= region.height + 1e-6) {
+        if (total(tried, tryNotes) <= region.height + allowance + 1e-6) {
           best = (tried, tryNotes);
           low = room;
         } else {
@@ -282,19 +335,55 @@ extension _Notes on _Pass {
         }
       }
       // Notes taller than most of the region: as many as fit under what
-      // is placed first, the rest on the next region.
+      // is placed first, the rest on the next region; or, with a least
+      // height of text, under that much.
+      // (With a lag and no least height, any text that keeps the notes
+      // within the lag.)
+      final least = layout.notesMinText;
+      final lagged = layout.notesLag != null;
       if (best case (final tried, final tryNotes)
-          when tried.placed != null && tried.height >= region.height / 4) {
+          when tried.placed != null &&
+              tried.height > 0 &&
+              tried.height >= (least ?? (lagged ? 0 : region.height / 4))) {
         fit = tried;
         notes = tryNotes;
       } else {
         _floatsWaiting = 0;
-        fit = _placeRegion(content, width, region.height);
+        fit = _placeRegion(
+          content,
+          width,
+          math.min(least ?? (lagged ? 0 : region.height), region.height),
+        );
+        // (Nothing placed and no notes waiting: the text as it goes.)
+        if ((fit.placed == null || fit.height == 0) && deferred == null) {
+          _floatsWaiting = 0;
+          fit = _placeRegion(content, width, region.height);
+        }
         notes = pending(fit);
       }
     }
+    // A note waiting longer than the lag allows that wouldn't start here
+    // under the text: the text stops at its least height (none, without
+    // one), the notes under it.
+    final overdue = switch (layout.notesLag) {
+      final lag? => _overdue(deferred, lag),
+      null => const <LayoutBox>[],
+    };
+    if (overdue.isNotEmpty &&
+        !_starts(overdue, area(notes), width, region.height - fit.height)) {
+      _floatsWaiting = 0;
+      fit = _placeRegion(
+        content,
+        width,
+        math.min(layout.notesMinText ?? 0, region.height),
+      );
+      notes = pending(fit);
+    }
+    final number = _noteRegions++;
     for (final name in _Pass._anchorsOf(fit.placed)) {
-      if (layout.notes.containsKey(name)) _notesSet.add(name);
+      if (layout.notes[name] case final note?) {
+        if (_notesSet.add(name)) _noteRegion[note] = number;
+      }
     }
     _deferredNotes = null;
     if (notes.isEmpty && bottom.isEmpty) return (fit, null);

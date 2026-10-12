@@ -68,6 +68,10 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- PDF notes in step with their text (`footnotes_text_min_lines`,
+  `footnotes_lag`): the least text a page with notes keeps, and how many
+  pages after its reference's a note may start, for a study Bible's notes
+  far longer than its verses.
 - PDF note streams for a study Bible's foot: a note that opens with a
   `[.heading]#…#` has it as a heading above it (`footnotes_heading_*`,
   `note_stream_<name>_heading_*`); notes carried to the next page go on

@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `FlowLayout.notesMinText` and `notesLag`: notes in step with their
+  text (the least text a region with notes holds; how many regions late
+  a note may start, the text stopping where its notes would start
+  later). The search for the most text whose notes fit no longer tries
+  rooms smaller than the content's first piece (forced in at the top),
+  and the least height a box needs where it starts counts a column
+  set's first box in a column's width and a paragraph's rest from the
+  line it goes on with.
 - Note streams: the notes left over at the bottom of a region go on in
   the next in their own stream (under its separator, in its columns, run
   in with that region's notes when the stream runs its notes in), not

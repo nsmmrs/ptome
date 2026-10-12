@@ -464,6 +464,13 @@ final class _Pass {
   /// The notes whose anchors were placed (each set once).
   final Set<String> _notesSet = {};
 
+  /// The number of the region each note's reference was placed in (of
+  /// those [_notes] counted), for [FlowLayout.notesLag].
+  final Map<LayoutBox, int> _noteRegion = Map.identity();
+
+  /// How many regions [_notes] has set the notes of.
+  int _noteRegions = 0;
+
   /// The notes that didn't fit in the region before: the main series'
   /// (with the floating boxes at the bottom), and each stream's, to go
   /// first in its own place (under its separator, in its columns).
@@ -558,16 +565,24 @@ final class _Pass {
     }
     switch (box) {
       case ParagraphBox(:final orphans):
+        // (The rest of one from the line it goes on with.)
         final lines = _linesOf(box, width - margin.horizontal);
-        return margin.top +
-            lines.take(orphans).fold(0, (sum, line) => sum + line.height);
+        return (box._from > 0 ? 0 : margin.top) +
+            lines
+                .skip(box._from)
+                .take(orphans)
+                .fold(0, (sum, line) => sum + line.height);
       case BlockBox(:final children) || ColumnsBox(:final children):
         final style = box.style;
-        final inner =
+        var inner =
             width -
             margin.horizontal -
             style.border.widths.horizontal -
             style.padding.horizontal;
+        // (A column set's first box in a column's width.)
+        if (box case ColumnsBox(:final count, :final gap)) {
+          inner = (inner - gap * (count - 1)) / count;
+        }
         return margin.top +
             style.border.widths.top +
             style.padding.top +

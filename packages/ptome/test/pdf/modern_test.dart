@@ -2853,6 +2853,60 @@ templates:
       expect(words.where((w) => w.$2.startsWith('Lemma')), hasLength(8));
     });
 
+    test('study notes in step with their verses: least text, a lag', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/fixtures/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      File('${schemes.path}/study.yml')
+          .writeAsStringSync('stream:\n  sn:\n    placement: "footnote"\n');
+      final study = [
+        for (var k = 0; k < 14; k++)
+          'Study$k the words of the verse read with the others, at length.',
+      ].join(' ');
+      final verses = [
+        for (var v = 1; v <= 8; v++)
+          '@ Verse$v goes on.note:sn[*1:$v* Lemma$v $study]\n',
+      ].join('\n');
+      // Each verse's page, and its note's first.
+      (List<int>, List<int>) pagesOf(String keys) {
+        final pages = _pages(
+          _pdf(
+            '= Notes\n:units: bible, kjv, study\n\n== @GEN\n\n=== @1\n\n'
+            '$verses',
+            theme:
+                'page:\n  size: [360, 400]\n  margin: [36, 36, 36, 36]\n'
+                'note_streams: [sn]\n'
+                'note_stream:\n  sn:\n    columns: 3\n    font_size: 7\n'
+                '$keys',
+          ),
+        );
+        int find(String word) =>
+            pages.indexWhere((page) => page.any((l) => l.contains(word)));
+        return (
+          [for (var v = 1; v <= 8; v++) find('Verse$v ')],
+          [for (var v = 1; v <= 8; v++) find('Lemma$v ')],
+        );
+      }
+
+      // As the text goes: notes pages behind their verses.
+      final (verse, note) = pagesOf('');
+      expect(
+        [for (var v = 0; v < 8; v++) note[v] - verse[v]].reduce(math.max),
+        greaterThan(1),
+      );
+      // Three lines of text at least, no note more than a page late.
+
+      final (heldVerse, heldNote) = pagesOf(
+        'footnotes:\n  text_min_lines: 3\n  lag: 1\n',
+      );
+      expect([
+        for (var v = 0; v < 8; v++) heldNote[v] - heldVerse[v],
+      ], everyElement(inInclusiveRange(0, 1)));
+    });
+
     test('a note stream run in, or in a margin column of its own', () {
       final schemes = Directory('${_dir.path}/schemes')..createSync();
       for (final f in Directory('test/units/fixtures/schemes').listSync()) {

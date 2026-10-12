@@ -760,6 +760,60 @@ void main() {
     expect(words.keys.where((key) => key == 'SN'), hasLength(1));
   });
 
+  test('notes in step with their text: a least text height, a lag', () {
+    // Each line of text with a note four lines long, on pages of 16 rows:
+    // where each note starts, and how many lines of text each page has.
+    (List<int> lag, List<int> text) laidOut({double? least, int? lag}) {
+      final document = RecordingDocument();
+      FlowLayout(
+            template: _rows(16),
+            notes: {
+              for (var i = 1; i <= 12; i++)
+                'n$i': _para(
+                  [for (var k = 1; k <= 4; k++) 'n${i}x$k'].join('\n'),
+                ),
+            },
+            notesMinText: least,
+            notesLag: lag,
+          )
+          .layout([
+            for (var i = 1; i <= 12; i++)
+              BlockBox([_para('l$i')], style: BoxStyle(anchor: 'n$i')),
+          ])
+          .render(document);
+      final pageOf = <String, int>{};
+      final text = <int>[];
+      for (final (number, page) in document.pages.indexed) {
+        var lines = 0;
+        for (final t in page.texts.map((t) => t.trim())) {
+          pageOf.putIfAbsent(t, () => number);
+          if (t.startsWith('l')) lines++;
+        }
+        text.add(lines);
+      }
+      return (
+        [for (var i = 1; i <= 12; i++) pageOf['n${i}x1']! - pageOf['l$i']!],
+        text,
+      );
+    }
+
+    // First fit: a page of text, its notes trailing pages behind it.
+    final (loose, _) = laidOut();
+    expect(loose.reduce(math.max), greaterThan(1));
+    // At least two lines of text a page and no note a page late: each
+    // note starts on its page or the next, each page with text has two
+    // lines of it or more.
+    final (held, text) = laidOut(least: 2 * _lineHeight, lag: 1);
+    expect(held, everyElement(lessThanOrEqualTo(1)));
+    expect(
+      text.where((n) => n > 0).toList()..removeLast(),
+      everyElement(greaterThanOrEqualTo(2)),
+    );
+    // A lag of none alone: each note on its reference's page.
+    final (prompt, _) = laidOut(lag: 0);
+    expect(prompt, everyElement(0));
+  });
+
   test('side notes stay above the notes at the bottom of the page', () {
     final document = RecordingDocument();
     FlowLayout(

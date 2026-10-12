@@ -330,7 +330,7 @@ final class FloatShape
   double bandHeight
 final class FlowLayout
   BaselineGrid? baselineGrid
-  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, List<SideNoteStream> sideNoteStreams = const [], Map<String, String> sideNoteStreamOf = const {}, double sideNoteGap = 2, BaselineGrid? baselineGrid, Pagination pagination = Pagination.firstFit})
+  FlowLayout({PageTemplate? template, Map<String?, PageTemplate>? templates, PageBreaker pageBreaker = const DefaultPageBreaker(), LineBreaker lineBreaker = const FirstFitLineBreaker(), String Function(int)? pageLabel, int maxPasses = 5, String? startTemplate, bool keepTemplate = false, PageTemplate Function(PageTemplate, int)? templateForPage, Map<String, LayoutBox> notes = const {}, LayoutBox? noteSeparator, List<NoteStream> noteStreams = const [], Map<String, String> noteStreamOf = const {}, double? notesMinText, int? notesLag, Map<String, LayoutBox> sideNotes = const {}, Rect? Function(int, PageTemplate)? sideColumn, List<SideNoteStream> sideNoteStreams = const [], Map<String, String> sideNoteStreamOf = const {}, double sideNoteGap = 2, BaselineGrid? baselineGrid, Pagination pagination = Pagination.firstFit})
   LayoutBox? noteSeparator
   LayoutResult layout(List<LayoutBox> content, {LayoutResult? reuse, int unchangedBefore = 0, Set<int>? changedPages})
   LineBreaker lineBreaker
@@ -349,7 +349,9 @@ final class FlowLayout
   String? startTemplate
   bool keepTemplate
   double sideNoteGap
+  double? notesMinText
   int maxPasses
+  int? notesLag
 final class FontLineHeight extends LineHeight
   FontLineHeight({double leading = 0})
   double leading

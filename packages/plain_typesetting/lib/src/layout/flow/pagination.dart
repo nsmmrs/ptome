@@ -245,6 +245,8 @@ final class FlowLayout {
     this.noteSeparator,
     this.noteStreams = const [],
     this.noteStreamOf = const {},
+    this.notesMinText,
+    this.notesLag,
     this.sideNotes = const {},
     this.sideColumn,
     this.sideNoteStreams = const [],
@@ -307,6 +309,20 @@ final class FlowLayout {
   /// The stream of each note in one ([NoteStream.name]), by its anchor;
   /// the others are the main series.
   final Map<String, String> noteStreamOf;
+
+  /// The least height of text a region with notes holds when the notes
+  /// of more text wouldn't all fit under it: so much text, its notes set
+  /// under it as far as they go, the rest of them going on in the next
+  /// regions (a study Bible's page, its notes far longer than its text).
+  /// Null: a quarter of the region, and when even that much text's notes
+  /// don't fit, the text fills the region, its notes going on after it.
+  final double? notesMinText;
+
+  /// How many regions after the one its reference is in a note may start
+  /// in, at most: when one has waited so long, the text of the region
+  /// stops at [notesMinText] (none, without it) to make room for it. Null
+  /// for no limit.
+  final int? notesLag;
 
   /// Notes set beside the text by the anchor that refers to them (a
   /// reference Bible's cross-references in its center column): each in

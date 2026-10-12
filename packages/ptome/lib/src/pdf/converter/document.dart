@@ -353,6 +353,22 @@ extension _DocumentParts on PdfConverter {
       noteSeparator: _notes.isEmpty ? null : _footnoteSeparator(),
       noteStreams: _layoutNoteStreams(),
       noteStreamOf: _noteStreamOf,
+      // (Notes in step with their text, modern engine: the least lines of
+      // text a page with notes keeps, `footnotes_text_min_lines`, and how
+      // many pages after its reference's a note may start,
+      // `footnotes_lag`: a study Bible's notes.)
+      notesMinText: asciidoctorCompat(document, CompatFormat.pdf)
+          ? null
+          : switch (_n('footnotes_text_min_lines')) {
+              final lines? =>
+                lines *
+                    _rootFontSize *
+                    (_n('base_line_height') ?? 1).toDouble(),
+              null => null,
+            },
+      notesLag: asciidoctorCompat(document, CompatFormat.pdf)
+          ? null
+          : _n('footnotes_lag')?.toInt(),
       sideNotes: _sideNotes,
       sideNoteStreams: _layoutSideNoteStreams(sided: media == 'prepress'),
       sideNoteStreamOf: _sideNoteStreamOf,
