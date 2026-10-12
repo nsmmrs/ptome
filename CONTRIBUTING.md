@@ -43,6 +43,13 @@ tool/gate.sh full     # before a push, about 3 min: every test with the
                       # checks, the CLI (bats), the plain_* packages
 ```
 
+The `justfile` runs them in a capped scope (12 GB, no swap) and commits
+and pushes through them: `just commit MESSAGE_FILE` (the fast gate, then a
+commit of every change), `just amend`, `just push` (the full gate, a push
+to master, then CI's runs watched to the end); `just fast` and `just full`
+alone. A gate that isn't green stops the commit or the push, and says
+which files failed formatting or analysis.
+
 Their parts run at the same time, each printed with the time it took. CI
 runs the Node.js and npm suites (its `npm` job), and the nightly workflow
 the libraries' tests tagged `nightly` (`dart test -t nightly` in a
