@@ -89,6 +89,13 @@ void main() {
     brackets[start] = int.parse(fields[0], radix: 16);
     values[start] |= (fields[1] == 'o' ? 1 : 2) << 8;
   });
+  // Canonical_Combining_Class, as ranges of a non-zero class.
+  final combining = <(int, int, int)>[];
+  each('DerivedCombiningClass.txt', (start, end, fields) {
+    final value = int.parse(fields.first);
+    if (value != 0) combining.add((start, end, value));
+  });
+  combining.sort((a, b) => a.$1 - b.$1);
   final mirrors = <int, int>{};
   each('BidiMirroring.txt', (start, end, fields) {
     mirrors[start] = int.parse(fields[0], radix: 16);
@@ -178,6 +185,16 @@ void main() {
     ..writeln('/// mirror, in order of code point.')
     ..writeln('const List<int> mirrors = [')
     ..writeln(_wrap(pairs(mirrors)))
+    ..writeln('];')
+    ..writeln()
+    ..writeln('/// The Canonical_Combining_Class ranges of a non-zero class:')
+    ..writeln('/// each first and last code point, then the class, in order.')
+    ..writeln('const List<int> combining = [')
+    ..writeln(
+      _wrap([
+        for (final (a, b, c) in combining) ...[a, b, c],
+      ]),
+    )
     ..writeln('];')
     ..writeln()
     ..writeln('/// The Bidi_Paired_Bracket pairs: each bracket, then its')

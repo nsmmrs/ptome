@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A glyph's x and y offsets are drawn (an Arabic or Hebrew mark on its
+  base): the pen moved in the `TJ` array and a run of raised glyphs given
+  its own rise. A single-byte font's runs still draw glyphs at their pen
+  positions. `PdfFont.shape` takes `rightToLeft`; a standard font
+  reverses the run, unshaped.
 - Tagged PDF (`PdfDocument(tagged: true)`): a page's canvas is a
   `StructureCanvas`, its content marked as the elements it is told it is
   (an MCID each) or as artifacts; the document gets its structure tree

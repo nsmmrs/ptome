@@ -170,6 +170,25 @@ final Map<int, int> _bracketPairs = {
     data.brackets[i]: data.brackets[i + 1],
 };
 
+/// The Canonical_Combining_Class of [codePoint]: 0 for a base character,
+/// else the class its mark is ordered by (Unicode's canonical ordering).
+int canonicalCombiningClass(int codePoint) {
+  const ranges = data.combining;
+  var lo = 0;
+  var hi = ranges.length ~/ 3 - 1;
+  while (lo <= hi) {
+    final mid = (lo + hi) >> 1;
+    if (codePoint < ranges[3 * mid]) {
+      hi = mid - 1;
+    } else if (codePoint > ranges[3 * mid + 1]) {
+      lo = mid + 1;
+    } else {
+      return ranges[3 * mid + 2];
+    }
+  }
+  return 0;
+}
+
 /// The character that mirrors [codePoint] in right-to-left text (`(` for
 /// `)`, `«` for `»`: its Bidi_Mirroring_Glyph), or [codePoint] itself.
 int bidiMirror(int codePoint) => _mirrors[codePoint] ?? codePoint;

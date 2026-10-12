@@ -18,3 +18,11 @@ whose README says how each was made):
   Greek letters, the math italic letters and the operators the math tests
   use, its `MATH` table kept (SIL Open Font License 1.1; © 2022 The Noto
   Project Authors).
+- `notonaskharabic-subset.ttf`: Noto Naskh Arabic 2.021, subset to the
+  Arabic blocks (letters, vowels, Qur'anic marks, Arabic-Indic digits)
+  with its `GDEF`, `GSUB` and `GPOS` tables kept, for the right-to-left
+  shaping tests (SIL Open Font License 1.1; © 2022 The Noto Project
+  Authors).
+- `notoserifhebrew-subset.ttf`: Noto Serif Hebrew 2.004, subset to the
+  Hebrew block with its layout tables kept (SIL Open Font License 1.1;
+  © 2022 The Noto Project Authors).

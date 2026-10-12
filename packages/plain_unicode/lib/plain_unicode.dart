@@ -19,6 +19,7 @@ export 'src/bidi.dart'
         TextDirection,
         bidiClass,
         bidiMirror,
+        canonicalCombiningClass,
         joiningType,
         reorderRuns;
 export 'src/bidi_data.g.dart' show bidiUnicodeVersion;

@@ -72,6 +72,7 @@ final class FrozenShaper {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) {
     final runes = text.runes.toList();
     // The features' single substitutions come first (as `smcp` comes

@@ -154,5 +154,10 @@ void main() {
     expect(joiningType(0x64e), JoiningType.transparent);
     expect(joiningType(0x640), JoiningType.joinCausing);
     expect(joiningType(0x41), JoiningType.nonJoining);
+    expect(canonicalCombiningClass(0x41), 0);
+    expect(canonicalCombiningClass(0x651), 33); // shadda
+    expect(canonicalCombiningClass(0x650), 32); // kasra
+    expect(canonicalCombiningClass(0x5bc), 21); // dagesh
+    expect(canonicalCombiningClass(0x301), 230);
   });
 }

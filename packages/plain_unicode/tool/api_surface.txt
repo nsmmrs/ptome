@@ -120,3 +120,4 @@ final class LineBreak
   int hashCode
   int offset
 int bidiMirror(int codePoint)
+int canonicalCombiningClass(int codePoint)

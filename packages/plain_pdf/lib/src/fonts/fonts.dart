@@ -158,7 +158,18 @@ final class StandardFont extends PdfFont {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) {
+    // (A right-to-left run in a standard font: its characters reversed,
+    // none of them shaped.)
+    if (rightToLeft) {
+      return shape(
+        String.fromCharCodes(text.runes.toList().reversed),
+        kerning: kerning,
+        ligatures: ligatures,
+        features: features,
+      );
+    }
     final glyphs = <ShapedGlyph>[];
     final widths = _widths;
     final kerns = kerning ? _kernTable : null;
@@ -396,11 +407,13 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) => _shaper.shape(
     text,
     kerning: kerning,
     ligatures: ligatures,
     features: features,
+    rightToLeft: rightToLeft,
   );
 
   @override

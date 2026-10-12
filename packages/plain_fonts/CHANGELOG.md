@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `OpenTypeLayout`: a font's GSUB and GPOS lookups applied in full, for
+  the scripts that shape (Arabic, Hebrew): the lookups of a feature for
+  a script and language, every substitution type (single, multiple,
+  alternate, ligature, contextual, chained, extension, reverse chained)
+  and positioning type (single, pair, cursive, mark to base, ligature
+  and mark, contextual, chained, extension), GDEF's glyph classes and
+  mark filtering, on `LayoutGlyph` runs that keep their clusters,
+  ligature components and attachments.
 - A TrueType subset's checksums are OpenType's: the head table's own
   taken with its checkSumAdjustment 0, and the file summing to
   0xB1B0AFBA. The adjustment was added into the head table's record too,

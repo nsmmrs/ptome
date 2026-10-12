@@ -17,6 +17,7 @@ export 'src/font_files.dart'
         cacheDirectoryFor,
         fontDirectoriesFor;
 export 'src/font_index.dart' show FontIndex, InstalledFont;
+export 'src/layout.dart' show LayoutGlyph, OpenTypeLayout;
 export 'src/math_table.dart'
     show
         GlyphConstruction,

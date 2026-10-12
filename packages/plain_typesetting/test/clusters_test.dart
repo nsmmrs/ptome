@@ -51,11 +51,13 @@ final class _Without implements Font {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) => _serif.shape(
     text,
     kerning: kerning,
     ligatures: ligatures,
     features: features,
+    rightToLeft: rightToLeft,
   );
   @override
   double widthOf(String text, double size, {bool kerning = true}) =>

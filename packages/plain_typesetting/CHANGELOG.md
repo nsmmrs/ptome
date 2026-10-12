@@ -2,6 +2,19 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Right-to-left text and complex shaping: `Font.shape` (and
+  `TextStyle.shape`) take `rightToLeft`, and `OpenTypeShaper` shapes a
+  right-to-left run, or Arabic or Hebrew text, with the font's layout
+  tables in full: marks reordered by their modified combining classes,
+  Arabic compositions, the joining forms (`isol`, `fina`, `medi`,
+  `init`) from the Joining_Type, the GSUB features in OpenType's order
+  for the script (`ccmp`, `locl`, `rlig`, `calt`, `liga`, `mset`...),
+  then `kern`, `mark` and `mkmk`; the glyphs come in visual order, mirrored
+  where the character has a mirror. `ShapedGlyph.positioned` gives a
+  glyph's `xOffset` and `yOffset` (a mark on its base). Checked against
+  HarfBuzz (harfbuzzjs) on Arabic and Hebrew with their vowels and points
+  in four Arabic and three Hebrew fonts: the same glyphs, advances and
+  offsets for 6,225 to 6,229 of the Qur'an's 6,236 verses.
 - `Paragraph.alignLast` (CSS's `text-align-last`: a justified paragraph's
   last line and those before a hard break) and `Paragraph.protrusion`
   (character protrusion with microtype's default amounts,

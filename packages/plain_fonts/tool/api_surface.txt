@@ -125,6 +125,20 @@ final class InstalledFont
   int index
   int weight
   int width
+final class LayoutGlyph
+  LayoutGlyph(int glyph, int cluster, {int mask = -1})
+  int attachChain (settable)
+  int attachType (settable)
+  int cluster (settable)
+  int components (settable)
+  int glyph (settable)
+  int ligatureComponent (settable)
+  int ligatureId (settable)
+  int mask (settable)
+  int xAdvance (settable)
+  int xOffset (settable)
+  int yAdvance (settable)
+  int yOffset (settable)
 final class OpenTypeFont
   (int, int, int, int) glyphBounds(int glyph)
   Iterable<String> tableTags
@@ -166,6 +180,15 @@ final class OpenTypeFont
   int? underlinePosition (settable)
   int? underlineThickness (settable)
   int? xHeight (settable)
+final class OpenTypeLayout
+  List<int> lookupsFor(String feature, {required String script, String? language, bool positioning = false})
+  OpenTypeFont font
+  OpenTypeLayout(OpenTypeFont font)
+  bool hasLayout
+  bool hasScript(String script)
+  int glyphClass(int glyph)
+  void position(List<LayoutGlyph> run, List<(int, int)> lookups, {required bool rightToLeft, bool zeroMarks = false})
+  void substitute(List<LayoutGlyph> run, List<(int, int)> lookups)
 final class OpenTypeMathTable
   GlyphConstruction? horizontal(int glyph)
   GlyphConstruction? vertical(int glyph)

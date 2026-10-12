@@ -887,26 +887,50 @@ final class PdfCanvas implements StructureCanvas {
     final wordSpacing = style.wordSpacing != 0
         ? (style.wordSpacing * 1e5).round() / 1e5 * 1000 / style.size
         : 0.0;
-    final out = _content..byte(0x5b); // [
+    // A glyph drawn off its pen position (a mark on its base) moves the
+    // pen by its x offset before it and back after it, and a run of
+    // glyphs raised by the same y offset is shown with its own rise.
+    final positioned = _positioned(glyphs);
     final last = glyphs.length - 1;
+    var out = _content..byte(0x5b); // [
     var start = 0;
+    var rise = 0.0;
+    void adjust(double adjustment, int end) {
+      if (end != start) out.string(codes, start, end, hex: hex);
+      start = end;
+      out
+        ..byte(0x20)
+        ..number(adjustment, 5)
+        ..byte(0x20);
+    }
+
     for (var i = 0; i <= last; i++) {
       final glyph = glyphs[i];
+      if (positioned) {
+        if (glyph.yOffset != rise) {
+          if (i * width != start) out.string(codes, start, i * width, hex: hex);
+          start = i * width;
+          out.operator('] TJ');
+          rise = glyph.yOffset;
+          _op1(style.rise + rise * style.size / 1000, 'Ts');
+          out = _content..byte(0x5b);
+        }
+        if (glyph.xOffset != 0) adjust(-glyph.xOffset, i * width);
+      }
       var adjustment = 0.0;
       if (i < last) adjustment -= glyph.kerning;
       if (wordSpacing != 0 && glyph.text == ' ') adjustment -= wordSpacing;
-      if (adjustment != 0) {
-        final end = (i + 1) * width;
-        if (end != start) out.string(codes, start, end, hex: hex);
-        start = end;
-        out
-          ..byte(0x20)
-          ..number(adjustment, 5)
-          ..byte(0x20);
-      }
+      if (positioned) adjustment += glyph.xOffset;
+      if (adjustment != 0) adjust(adjustment, (i + 1) * width);
     }
     final end = glyphs.length * width;
     if (end != start) out.string(codes, start, end, hex: hex);
     out.operator('] TJ');
+    // (The rise set back: it outlasts the text object.)
+    if (rise != 0) _op1(style.rise, 'Ts');
   }
+
+  /// Whether any of [glyphs] is drawn off its pen position.
+  static bool _positioned(List<ShapedGlyph> glyphs) =>
+      glyphs.any((g) => g.xOffset != 0 || g.yOffset != 0);
 }

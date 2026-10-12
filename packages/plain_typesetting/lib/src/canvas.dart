@@ -236,13 +236,16 @@ final class TextStyle {
   /// The width of [text] set in this style, in points.
   double measure(String text) => widthOf(shape(text));
 
-  /// [text] as glyphs of this style's font.
-  List<ShapedGlyph> shape(String text) => font.shape(
-    text,
-    kerning: kerning,
-    ligatures: ligatures,
-    features: features,
-  );
+  /// [text] as glyphs of this style's font (a right-to-left run with
+  /// [rightToLeft]: in visual order).
+  List<ShapedGlyph> shape(String text, {bool rightToLeft = false}) =>
+      font.shape(
+        text,
+        kerning: kerning,
+        ligatures: ligatures,
+        features: features,
+        rightToLeft: rightToLeft,
+      );
 }
 
 /// Something to draw on: paths, painted or clipping, text, and the

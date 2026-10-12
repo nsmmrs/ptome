@@ -57,7 +57,7 @@ abstract interface class CustomContent
   double minHeight(double width)
 abstract interface class Font
   Font()
-  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}})
+  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   String name
   bool covers(int codePoint)
   double ascender
@@ -498,7 +498,7 @@ final class NoteStream
   double columnGap
   int columns
 final class OpenTypeShaper implements OpenTypeTextFont
-  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}})
+  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   OpenTypeFont font
   OpenTypeShaper(OpenTypeFont font, {int? kernTableSubtable})
   String name
@@ -605,9 +605,12 @@ final class RgbColor extends Color
   int hashCode
 final class ShapedGlyph
   ShapedGlyph(int id, String text, double advance, [double kerning = 0])
+  ShapedGlyph.positioned(int id, String text, double advance, {double kerning = 0, double xOffset = 0, double yOffset = 0})
   String text
   double advance
   double kerning
+  double xOffset
+  double yOffset
   int id
 final class SideNoteStream
   Rect? Function(int, PageTemplate) column
@@ -679,7 +682,7 @@ final class TextRun extends InlineContent
   bool underline
 final class TextStyle
   Font font
-  List<ShapedGlyph> shape(String text)
+  List<ShapedGlyph> shape(String text, {bool rightToLeft = false})
   Set<String> features
   TextRenderMode renderMode
   TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden})

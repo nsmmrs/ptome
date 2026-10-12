@@ -32,6 +32,7 @@ final class _Font implements Font {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) => [
     for (final rune in text.runes)
       ShapedGlyph(

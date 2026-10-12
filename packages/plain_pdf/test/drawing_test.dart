@@ -608,6 +608,36 @@ void main() {
     }
   });
 
+  test('glyphs drawn off their pen positions, as marks on their bases', () {
+    final style = TextStyle(StandardFont.helvetica, 20);
+    final [h, i, j] = style.shape('HIJ');
+    // I moved back 300 and up 400 thousandths of the em; J where it was.
+    final moved = ShapedGlyph.positioned(
+      i.id,
+      i.text,
+      i.advance,
+      xOffset: -300,
+      yOffset: 400,
+    );
+    final document = PdfDocument();
+    document.addPage(const Rect(0, 0, 200, 100)).canvas
+      ..glyphs([h, moved, j], 10, 50, style)
+      ..text('after', 10, 10, style);
+    final x = 10 + h.advance * 20 / 1000;
+    document.addPage(const Rect(0, 0, 200, 100)).canvas
+      ..glyphs([h], 10, 50, style)
+      ..glyphs([i], x - 300 * 20 / 1000, 50 + 400 * 20 / 1000, style)
+      ..glyphs([j], x + i.advance * 20 / 1000, 50, style)
+      ..text('after', 10, 10, style);
+    final pdf = saved(document);
+    final (a, b) = (render(pdf), render(pdf, page: 2));
+    var differ = 0;
+    for (var k = 0; k < a.samples.length; k++) {
+      if ((a.samples[k] - b.samples[k]).abs() > 8) differ++;
+    }
+    expect(differ, 0, reason: 'the offsets and the rise set back');
+  });
+
   test('text slanted and emboldened from an upright, regular face', () {
     final document = PdfDocument();
     document.addPage(const Rect(0, 0, 300, 100)).canvas

@@ -5,12 +5,26 @@
 library;
 
 import 'package:plain_fonts/plain_fonts.dart';
+import 'package:plain_typesetting/src/shaping.dart';
 
 /// A glyph of shaped text: what to draw and how far it moves.
 final class ShapedGlyph {
   /// A glyph [id] standing for [text], advancing [advance] plus [kerning]
   /// (in 1000ths of the em).
-  const new(this.id, this.text, this.advance, [this.kerning = 0]);
+  const new(this.id, this.text, this.advance, [this.kerning = 0])
+    : xOffset = 0,
+      yOffset = 0;
+
+  /// A glyph drawn [xOffset] across and [yOffset] up from its pen
+  /// position (a mark on its base), in 1000ths of the em.
+  const new positioned(
+    this.id,
+    this.text,
+    this.advance, {
+    this.kerning = 0,
+    this.xOffset = 0,
+    this.yOffset = 0,
+  });
 
   /// The glyph: its id in an embedded font, its code in a standard font.
   final int id;
@@ -24,6 +38,14 @@ final class ShapedGlyph {
   /// The kerning before the next glyph, in 1000ths of the em (negative
   /// brings it closer).
   final double kerning;
+
+  /// How far across from its pen position the glyph is drawn, in 1000ths
+  /// of the em (a mark placed on its base).
+  final double xOffset;
+
+  /// How far up from its pen position the glyph is drawn, in 1000ths of
+  /// the em.
+  final double yOffset;
 }
 
 /// A font text can be set in.
@@ -59,11 +81,15 @@ abstract interface class Font {
   /// [text] as glyphs, with kerning (and ligatures, where the font has
   /// them) when asked, and the single substitutions of the OpenType
   /// [features] the font has (`onum`, `smcp`...).
+  ///
+  /// With [rightToLeft], the text is a right-to-left run (Arabic, Hebrew):
+  /// shaped as such, its glyphs in visual order, left to right.
   List<ShapedGlyph> shape(
     String text, {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   });
 
   /// The width of [text] at [size] points.
@@ -170,7 +196,20 @@ final class OpenTypeShaper implements OpenTypeTextFont {
     bool kerning = true,
     bool ligatures = false,
     Set<String> features = const {},
+    bool rightToLeft = false,
   }) {
+    // (A right-to-left run, or text in a script that shapes, laid out by
+    // the OpenType layout tables in full.)
+    if (rightToLeft || needsComplexShaping(text)) {
+      return shapeComplex(
+        this,
+        text,
+        kerning: kerning,
+        ligatures: ligatures,
+        features: features,
+        rightToLeft: rightToLeft,
+      );
+    }
     final runes = text.runes.toList();
     // The features' single substitutions come first (as `smcp` comes
     // before `liga`): a substituted glyph doesn't ligate.

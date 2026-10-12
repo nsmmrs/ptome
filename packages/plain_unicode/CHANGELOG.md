@@ -10,6 +10,7 @@
   isolates, and bracket pairs (N0). It passes BidiTest.txt and
   BidiCharacterTest.txt. The Bidi_Class, Bidi_Mirroring_Glyph and
   Joining_Type properties (`bidiClass`, `bidiMirror`, `joiningType`),
+  and the Canonical_Combining_Class (`canonicalCombiningClass`),
   generated from the Unicode data.
 - Line breaking (UAX #14, Unicode 18.0.0), moved from plain_pdf with its
   history; it passes LineBreakTest.txt.

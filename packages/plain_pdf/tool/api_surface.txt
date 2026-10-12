@@ -63,7 +63,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
   EmbeddedFont.parse(List<int> bytes, {int index = 0, bool subset = true, bool truncateWidths = false, bool singleByte = false, int? kernTableSubtable})
   EmbeddedFont.shaped(OpenTypeShaper shaper, {bool subset = true, bool truncateWidths = false, bool singleByte = false})
   List<({Uint8List codes, int end, int start, int subset})> encodeRuns(List<ShapedGlyph> glyphs)
-  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}})
+  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   List<int> encode(List<ShapedGlyph> glyphs)
   OpenTypeFont font
   PdfRef subsetReference(PdfWriter writer, int subset)
@@ -361,7 +361,7 @@ final class RadialShading extends PdfShading
   double fy
   double r
 final class StandardFont extends PdfFont
-  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}})
+  List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   List<int> boundingBox
   List<int> encode(List<ShapedGlyph> glyphs)
   StandardFont.named(String name)
