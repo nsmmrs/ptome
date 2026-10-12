@@ -294,6 +294,38 @@ void main() {
     expect(at['l4']!.$2, closeTo(at['l1']!.$2, 1e-6));
   });
 
+  test("a grid from each page's first line: one line more after a head", () {
+    // A page 5.9 body lines high: five lines on a grid from a body line's
+    // baseline. A head in smaller type (as a bill's section heading, set
+    // higher than its text) has its baseline higher, the grid with it,
+    // and one line more fits.
+    final body = const FirstFitLineBreaker()
+        .breakLines(_para('b').paragraph, (_) => 1000)
+        .single;
+    final head = ParagraphBox(
+      Paragraph([TextRun('Head', TextStyle(_serif, 4))]),
+    );
+    final grid = BaselineGrid(
+      body.height,
+      offset: body.baseline,
+      fromFirstLine: true,
+    );
+    List<int> perPage(List<LayoutBox> content, [BaselineGrid? on]) {
+      final pages = FlowLayout(
+        template: _rows(5.9),
+        baselineGrid: on ?? grid,
+      ).layout(content).render(RecordingDocument());
+      return [for (final page in pages) page.texts.length];
+    }
+
+    final lines = [for (var i = 0; i < 12; i++) _para('l$i')];
+    expect(perPage(lines).first, 5);
+    expect(perPage([head, ...lines]).first, 6);
+    // (On a grid from a fixed line, the head's page has five.)
+    final fixed = BaselineGrid(body.height, offset: body.baseline);
+    expect(perPage([head, ...lines], fixed).first, 5);
+  });
+
   test('numbered lines: where they are on each page, for the template', () {
     final seen = <int, List<TypesetLine>>{};
     final template = PageTemplate(

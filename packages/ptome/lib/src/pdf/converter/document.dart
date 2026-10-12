@@ -475,13 +475,7 @@ extension _DocumentParts on PdfConverter {
       );
     }
     _lineCount = 0;
-    _lineRestarts = _lineNumbering?.restart == 'section'
-        ? [
-            for (final (section, anchor) in _sections)
-              if ((section.level ?? 0) <= 1)
-                if (result.anchors[anchor] case final at?) (at.page + 1, at.y),
-          ]
-        : const [];
+    _lineRestarts = _lineNumbering == null ? const [] : _lineRestartsOf(result);
     final pages = result.render(pdf, destinationName: destinationName);
     _compressingElsewhere(pages);
     if (standard != null) _preflight(standard);
@@ -1617,6 +1611,47 @@ extension _DocumentParts on PdfConverter {
     );
   }
 
+  /// Where the line count starts again in [result]: each first-level
+  /// section (`line_numbers_restart: section`), and each unit of the level
+  /// `line_numbers_restart_units` names (`section`, `stephanus.section`:
+  /// Burnet's Plato counts from each Stephanus section, a Bekker
+  /// edition from each column), its label set beside its first line.
+  List<(int, double, String?)> _lineRestartsOf(LayoutResult result) {
+    final restarts = <(int, double, String?)>[
+      if (_lineNumbering?.restart == 'section')
+        for (final (section, anchor) in _sections)
+          if ((section.level ?? 0) <= 1)
+            if (result.anchors[anchor] case final at?)
+              (at.page + 1, at.y, null),
+    ];
+    final name = _s('line_numbers_restart_units');
+    final session = _document.unitsSession;
+    final analysis = session?.analysis;
+    if (name != null &&
+        name.isNotEmpty &&
+        session != null &&
+        analysis != null) {
+      final dot = name.indexOf('.');
+      final (scheme, level) = dot < 0
+          ? (null, name)
+          : (name.substring(0, dot), name.substring(dot + 1));
+      for (final unit in analysis.units) {
+        if (unit.level.name != level ||
+            (scheme != null && unit.level.scheme.name != scheme)) {
+          continue;
+        }
+        if (result.anchors[unit.id] case final at?) {
+          restarts.add((
+            at.page + 1,
+            at.y,
+            passageText(Passage(unit, unit), session.config),
+          ));
+        }
+      }
+    }
+    return restarts;
+  }
+
   /// Adds [content] with its lines numbered, when the document numbers
   /// them.
   void _numbered(void Function() content) {
@@ -1666,20 +1701,22 @@ extension _DocumentParts on PdfConverter {
       _ => false,
     };
     final restarts = [
-      for (final (number, y) in _lineRestarts)
-        if (number == page.number) y,
-    ];
+      for (final (number, y, label) in _lineRestarts)
+        if (number == page.number) (y, label),
+    ]..sort((a, b) => b.$1.compareTo(a.$1));
     for (final line in lines) {
       if (numbering.kind == _LineKind.logical && line.continues) continue;
-      // (Past the start of a section: from 1 again.)
-      while (restarts.isNotEmpty && line.baseline <= restarts.first + 1e-6) {
-        restarts.removeAt(0);
+      // (Past the start of a section or a unit: from 1 again, the unit's
+      // label beside its first line.)
+      String? label;
+      while (restarts.isNotEmpty && line.baseline <= restarts.first.$1 + 1e-6) {
+        label = restarts.removeAt(0).$2 ?? label;
         _lineCount = 0;
       }
       _lineCount++;
-      if (_lineCount % numbering.interval != 0) continue;
+      if (label == null && _lineCount % numbering.interval != 0) continue;
       final text = _textBox(
-        '$_lineCount',
+        label ?? '$_lineCount',
         numbering.font,
         align: right ? 'left' : 'right',
       );

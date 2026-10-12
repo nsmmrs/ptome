@@ -472,10 +472,17 @@ final class _Pass {
 
   /// The height of [box] laid out with no limit (beside no block floating
   /// to a side).
-  double _measure(LayoutBox box, double width, {bool atTop = false}) =>
-      _withoutExclusions(
+  double _measure(LayoutBox box, double width, {bool atTop = false}) {
+    // (A grid's origin is set by what is placed, not measured.)
+    final origin = _gridOrigin;
+    try {
+      return _withoutExclusions(
         () => _place(box, width, double.infinity, atTop: atTop),
       ).height;
+    } finally {
+      _gridOrigin = origin;
+    }
+  }
 
   /// The least height [box] needs where it starts (to keep a box with
   /// it).
@@ -1339,11 +1346,19 @@ final class _Pass {
 
   /// How far content whose first baseline is [baseline] below its top,
   /// which is [top] below [_y]'s origin, moves down to the baseline grid.
-  double _gridShift(double top, double? baseline) =>
-      switch ((_onGrid ? layout.baselineGrid : null, baseline)) {
-        (final grid?, final baseline?) => grid.shift(_yShift + top + baseline),
-        _ => 0,
-      };
+  double _gridShift(double top, double? baseline) {
+    final grid = _onGrid ? layout.baselineGrid : null;
+    if (grid == null || baseline == null) return 0;
+    final at = _yShift + top + baseline;
+    if (!grid.fromFirstLine) return grid.shift(at);
+    // (The region's first line starts its grid.)
+    final origin = _gridOrigin ??= at;
+    return grid._shift(at, origin);
+  }
+
+  /// Where the region's grid starts, for one from its first line
+  /// ([BaselineGrid.fromFirstLine]): set by the first line placed.
+  double? _gridOrigin;
 
   /// Whether what is placed is a region's text, which keeps to the
   /// baseline grid (not notes, nor blocks floating out of it).
@@ -1417,6 +1432,7 @@ final class _Pass {
     _regionWidth = width;
     _y = _left = _right = 0;
     _yShift = below;
+    _gridOrigin = null;
     _excluding = true;
     _onGrid = true;
     try {

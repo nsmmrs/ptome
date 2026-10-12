@@ -354,7 +354,15 @@ extension _Framed on PdfConverter {
       _ => null,
     };
     if (step == null) return null;
-    return BaselineGrid(step, offset: body.firstBaseline(1) ?? 0);
+    // (`page_baseline_grid_anchor: first_line`: each page's grid from its
+    // first line, a bill's page opening with a heading set higher.)
+    return BaselineGrid(
+      step,
+      offset: body.firstBaseline(1) ?? 0,
+      fromFirstLine:
+          _choice('page_baseline_grid_anchor', const ['page', 'first_line']) ==
+          'first_line',
+    );
   }
 
   /// What [content] makes set in [count] columns [gap] apart.

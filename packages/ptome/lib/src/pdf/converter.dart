@@ -599,8 +599,10 @@ final class PdfConverter extends BuiltInConverter
   int _lineCount = 0;
 
   /// Where the count starts again: each first-level section's page and
-  /// height (`line_numbers_restart: section`).
-  List<(int, double)> _lineRestarts = const [];
+  /// height (`line_numbers_restart: section`), and each unit's of a level
+  /// (`line_numbers_restart_units`) with the label set beside its first
+  /// line.
+  List<(int, double, String?)> _lineRestarts = const [];
 
   /// The background images of the running content, by periphery
   /// (`header`, `footer`).

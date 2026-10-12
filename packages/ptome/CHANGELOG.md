@@ -68,6 +68,11 @@ Asciidoctor project.
   where a piece goes on, or came from: "Continued on page 7" in a PDF
   (the page known once laid out), "Continued in The Science" on the web
   (`jump-template`).
+- Line numbers restart at units (`line_numbers_restart_units`), their
+  labels in the margin (Stephanus sections, Bekker columns); a baseline
+  grid may start at each page's first line
+  (`page_baseline_grid_anchor: first_line`), as a US bill's page that
+  opens with a heading holds a line more.
 - A page frame in the PDF (`page_frame_*`): rules around the text area,
   an Oxford rule's thick and thin; the 1970s magazine look has one in
   print as on the web.

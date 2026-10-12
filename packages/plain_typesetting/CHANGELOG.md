@@ -2,6 +2,7 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BaselineGrid.fromFirstLine`: each region's grid from its first line.
 - Table cells are laid out once: the content a row measured is placed as
   it is where it fits whole.
 - `KnuthPlassLineBreaker.expansion` (font expansion, counted as stretch

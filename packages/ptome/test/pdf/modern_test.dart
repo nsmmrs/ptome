@@ -2773,6 +2773,66 @@ templates:
       expect(grid.take(3), ['2', '4', '6']);
     });
 
+    test("a bill's page that opens with a heading has a line more", () {
+      // A bill: 14 pt text on a 26 pt grid from each page's first line,
+      // section headings in 10 pt (so their baseline is higher), every
+      // line numbered. A page opening with a heading holds a line more.
+      final lines = [for (var i = 0; i < 60; i++) 'Line $i of the bill.'];
+      String theme(String anchor) =>
+          'page:\n  size: [612, 690]\n  margin: [40, 72, 40, 72]\n'
+          'base:\n  font_size: 14\n  line_height: 1.857\n'
+          'prose:\n  margin_bottom: 0\n'
+          'heading:\n  h2_font_size: 10\n  margin_top: 0\n'
+          '  margin_bottom: 0\n'
+          'page_baseline_grid: true\npage_baseline_grid_anchor: $anchor\n';
+      int numbers(String pdf) => RegExp(r'xMax="([\d.]+)"[^>]*>\d+<')
+          .allMatches(
+            Process.runSync('pdftotext', [
+                  '-f',
+                  '1',
+                  '-l',
+                  '1',
+                  '-bbox',
+                  pdf,
+                  '-',
+                ]).stdout
+                as String,
+          )
+          .where((m) => double.parse(m[1]!) < 70)
+          .length;
+      final plain = ':line-numbers:\n\n${lines.join('\n\n')}\n';
+      final headed =
+          ':line-numbers:\n\n== SEC. 2. DEFINITIONS.\n\n'
+          '${lines.join('\n\n')}\n';
+      final usual = numbers(_pdf(plain, theme: theme('first_line')));
+      expect(numbers(_pdf(headed, theme: theme('first_line'))), usual + 1);
+      // (On the page's own grid, no more.)
+      expect(numbers(_pdf(headed, theme: theme('page'))), usual);
+    });
+
+    test('line numbers from each Stephanus section, its label beside it', () {
+      final schemes = Directory('${_dir.path}/schemes')..createSync();
+      for (final f in Directory('test/units/corpus/schemes').listSync()) {
+        if (f is File) {
+          f.copySync('${schemes.path}/${f.uri.pathSegments.last}');
+        }
+      }
+      final words = 'Words of the dialogue go on here. ' * 30;
+      final pdf = _pdf(
+        '= Dialogue\n:units: stephanus\n:line-numbers:\n\n'
+        '@2a $words @ $words @ $words\n',
+        theme: 'line_numbers:\n  interval: 5\n  restart_units: section\n',
+      );
+      final margin = [
+        for (final m in RegExp(r'xMax="([\d.]+)"[^>]*>([^<]+)<').allMatches(
+          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+        ))
+          if (double.parse(m[1]!) < 45) m[2]!,
+      ];
+      // Each section's label where it starts, then every fifth line of it.
+      expect(margin, containsAllInOrder(['2a', '5', '2b', '5', '2c']));
+    });
+
     test('a baseline grid: body lines a whole number of lines apart', () {
       final words = 'Body words run on across the column here. ' * 6;
       final source = [

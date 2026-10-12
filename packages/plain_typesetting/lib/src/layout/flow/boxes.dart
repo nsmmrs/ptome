@@ -729,8 +729,15 @@ final class NoteStream {
 /// each other (line matching).
 @immutable
 final class BaselineGrid {
-  /// Lines [step] apart, the first [offset] down.
-  const new(this.step, {this.offset = 0});
+  /// Lines [step] apart, the first [offset] down (or, [fromFirstLine],
+  /// where each region's first line is).
+  const new(this.step, {this.offset = 0, this.fromFirstLine = false});
+
+  /// Whether each region's grid starts at its first line's baseline,
+  /// wherever that is, rather than at [offset]: a US bill's page that
+  /// opens with a section heading, set higher than text, has its grid
+  /// higher too, and one line more.
+  final bool fromFirstLine;
 
   /// The space between two lines of the grid (the text's line height).
   final double step;
@@ -740,11 +747,13 @@ final class BaselineGrid {
 
   /// How far [baseline], down from the region's top, is above the next
   /// line of the grid (zero on one).
-  double shift(double baseline) {
+  double shift(double baseline) => _shift(baseline, offset);
+
+  double _shift(double baseline, double origin) {
     if (step <= 0) return 0;
-    final above = baseline - offset;
+    final above = baseline - origin;
     final lines = above <= 1e-6 ? 0 : ((above - 1e-6) / step).ceil();
-    return math.max(0, offset + lines * step - baseline);
+    return math.max(0, origin + lines * step - baseline);
   }
 }
 
