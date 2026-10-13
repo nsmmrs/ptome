@@ -86,7 +86,10 @@ final class JpegFile extends ImageFile
   ImageFormat format
   JpegFile.read(Uint8List bytes)
   Raster decode()
+  Uint8List? iccProfile
   bool adobe
+  bool arithmetic
+  bool lossless
   bool progressive
   int bitDepth
   int components

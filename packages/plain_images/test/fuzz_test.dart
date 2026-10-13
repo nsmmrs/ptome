@@ -1,12 +1,14 @@
 // Damaged input: every test image with bytes flipped, cut short, inserted
 // or zeroed is decoded or rejected with an ImageFormatException, and
 // never fails otherwise (a RangeError, a TypeError, a hang). The damage
-// is random but seeded, so a failure is reproducible.
+// is random but seeded (FUZZ_SEED to choose another), so a failure is
+// reproducible.
 
 @Tags(['nightly'])
 @TestOn('vm')
 library;
 
+import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
@@ -48,20 +50,21 @@ void main() {
   for (final (folder, extension, limit) in [
     ('pngsuite', '.png', 40),
     ('jpeg', '.jpg', 10),
+    ('jpeg-suite', '.jpg', 30),
     ('gif', '.gif', 20),
     ('bmp', '.bmp', 20),
     ('webp', '.webp', 20),
   ]) {
     test('$folder: damaged files are decoded or rejected', () {
-      final random = Random(20261013);
+      final random = Random(
+        int.tryParse(Platform.environment['FUZZ_SEED'] ?? '') ?? 20261013,
+      );
       for (final file in testImages(folder, extension).take(limit)) {
         final bytes = file.readAsBytesSync();
         var i = 0;
         for (final input in damaged(bytes, random, 300)) {
           try {
-            final image = ImageFile.read(input);
-            // (JPEG isn't decoded yet.)
-            if (image is! JpegFile) image.decode().toRgba8();
+            ImageFile.read(input).decode().toRgba8();
           } on ImageFormatException {
             // Rejected, as it may be.
           } on Object catch (error, stack) {

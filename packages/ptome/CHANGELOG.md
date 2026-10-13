@@ -22,7 +22,9 @@ Asciidoctor project.
   x.avif; AVIF images are not supported"). Text runs around the opaque
   pixels of any image with transparency (a GIF's transparent color, a
   PNG's or WebP's alpha), not only a PNG with alpha. JPEG and PNG images
-  are written byte for byte as before.
+  are written byte for byte as before, but for 12-bit, arithmetic-coded
+  and lossless JPEG files, which PDF readers can't show as JPEG data:
+  they are decoded (FEAT-gzlt7l) and written as other images are.
 - PDF: SVG images are drawn by plain_svg, the workspace's own SVG
   package with its own XML reader (FEAT-dqv18q), instead of plain_pdf's
   reader on package:xml: the same PDFs (checked on 1,110 SVG files and

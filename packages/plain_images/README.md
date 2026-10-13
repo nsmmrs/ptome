@@ -36,12 +36,13 @@ final rgba = raster.toRgba8();
   it has no pixels. BMP: every Windows and OS/2 header, 1 to 32 bits a
   pixel, bit fields, RLE4 and RLE8. WebP: lossless and lossy (with alpha),
   decoded to the byte as libwebp decodes them; an animation's first frame.
-  JPEG: the header (size, components, precision, progressive, Adobe and
-  EXIF segments).
+  JPEG: baseline, 12-bit, progressive and lossless, Huffman or arithmetic
+  coded, decoded to the byte as libjpeg-turbo decodes them.
 
 Tested against ImageMagick (PngSuite, bmpsuite, a GIF conformance suite
 and generated files), bmpsuite's reference images, libwebp (its test
-data and the VP8 conformance vectors, and random cwebp files), against
+data and the VP8 conformance vectors, and random cwebp files),
+libjpeg-turbo (cjpeg's files of every kind, random ones too), against
 package:image on seeded random files, and with damaged files;
 the same results compiled to JavaScript as on the Dart VM.
 

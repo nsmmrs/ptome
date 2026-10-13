@@ -2,7 +2,8 @@
 // once by package:image's encoders, each decoded by both libraries (the
 // best of several runs), to each one's own image (plain_images: a Raster
 // of the samples as they are; package:image: its Image) and to 8-bit
-// RGBA. WebP files are made by cwebp, when it is installed.
+// RGBA. WebP and progressive JPEG files are made by cwebp and cjpeg, when
+// they are installed.
 //
 //   dart run benchmark/decode.dart
 // ignore_for_file: avoid_print
@@ -61,6 +62,36 @@ Map<String, Uint8List> webp(img.Image rgb, img.Image rgba) {
   }
 }
 
+/// The picture as a progressive JPEG, by cjpeg (package:image doesn't
+/// write one), when it is installed.
+Map<String, Uint8List> progressiveJpeg(img.Image rgb) {
+  final dir = Directory.systemTemp.createTempSync('jpeg-bench.');
+  try {
+    final ppm = File('${dir.path}/in.ppm')
+      ..writeAsBytesSync([
+        ...'P6\n${rgb.width} ${rgb.height}\n255\n'.codeUnits,
+        ...rgb.toUint8List(),
+      ]);
+    final result = Process.runSync('cjpeg', [
+      '-quality',
+      '85',
+      '-progressive',
+      '-outfile',
+      '${dir.path}/out.jpg',
+      ppm.path,
+    ]);
+    if (result.exitCode != 0) return const {};
+    return {
+      'JPEG progressive 1600x1000': File('${dir.path}/out.jpg')
+          .readAsBytesSync(),
+    };
+  } on ProcessException {
+    return const {};
+  } finally {
+    dir.deleteSync(recursive: true);
+  }
+}
+
 /// The best of [runs] timings of [action], in milliseconds.
 double best(void Function() action, {int runs = 7}) {
   var best = double.infinity;
@@ -85,7 +116,14 @@ void main() {
     'GIF 1600x1000': img.encodeGif(rgb, dither: img.DitherKernel.none),
     'BMP 24-bit 1600x1000': img.encodeBmp(rgb),
     'BMP 32-bit 1600x1000': img.encodeBmp(rgba),
+    'JPEG 4:2:0 1600x1000': img.encodeJpg(
+      rgb,
+      quality: 85,
+      chroma: img.JpegChroma.yuv420,
+    ),
+    'JPEG 4:4:4 1600x1000': img.encodeJpg(rgb, quality: 85),
     ...webp(rgb, rgba),
+    ...progressiveJpeg(rgb),
   };
   print(
     '| image | plain_images decode | package:image decode | '

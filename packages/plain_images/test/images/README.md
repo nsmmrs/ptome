@@ -33,3 +33,10 @@
   an animation whose first frame is off the canvas's corner;
   `expected.md5` holds dwebp's decoding of each (an animation's first
   frame's).
+- `jpeg-suite/`: made by `tool/make_test_images.sh` with libjpeg-turbo's
+  cjpeg from the same generated pictures: each sampling layout (1x1 to
+  4x2, 3x1, 1x3, 3x2), restart intervals in rows and blocks, progressive,
+  optimized tables, arithmetic coding (sequential, progressive, with
+  restarts), 12-bit (sequential and progressive), lossless (predictors 1,
+  4 to 7, point transforms, 4 to 16 bits), RGB and gray; `expected.md5`
+  holds djpeg's decoding of each.

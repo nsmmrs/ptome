@@ -1,10 +1,11 @@
 /// Raster images as PDF image XObjects (ISO 32000-2, 8.9.5), from the
 /// image files plain_images reads: JPEG files pass through as DCTDecode
-/// streams; PNG files pass through as FlateDecode streams with a PNG
-/// predictor when PDF can show them as they are; anything else is
-/// decoded, its samples written with a PNG predictor (alpha as a soft
-/// mask, a transparent color as a color-key mask, a palette as an indexed
-/// color space).
+/// streams (but 12-bit, arithmetic-coded and lossless ones, which
+/// DCTDecode doesn't read, are decoded); PNG files pass through as
+/// FlateDecode streams with a PNG predictor when PDF can show them as
+/// they are; anything else is decoded, its samples written with a PNG
+/// predictor (alpha as a soft mask, a transparent color as a color-key
+/// mask, a palette as an indexed color space).
 library;
 
 import 'dart:typed_data';
@@ -87,7 +88,7 @@ final class PdfImage implements Graphic {
 
   /// The bits per color component the XObject has.
   int get bitsPerComponent => switch (file) {
-    JpegFile(:final precision) => precision,
+    JpegFile(:final precision) when _passThrough => precision,
     final other => other.bitDepth,
   };
 
@@ -108,10 +109,21 @@ final class PdfImage implements Graphic {
 
   final Expando<PdfRef> _references = Expando<PdfRef>();
 
-  /// Whether PDF shows the file's data as it is: a JPEG file, or a PNG
-  /// file that isn't interlaced and has no alpha to split out.
+  /// Whether PDF shows the file's data as it is: a JPEG file that
+  /// DCTDecode reads (8-bit, Huffman-coded, DCT-based; of 1, 3 or 4
+  /// components), or a PNG file that isn't interlaced and has no alpha to
+  /// split out.
   bool get _passThrough => switch (file) {
-    JpegFile() => true,
+    JpegFile(
+      :final precision,
+      :final lossless,
+      :final arithmetic,
+      :final components,
+    ) =>
+      precision == 8 &&
+          !lossless &&
+          !arithmetic &&
+          (components == 1 || components == 3 || components == 4),
     PngFile(:final interlaced, :final colorType, :final transparency) =>
       !interlaced &&
           !colorType.hasAlpha &&
@@ -179,7 +191,7 @@ final class PdfImage implements Graphic {
   /// Writes the image's objects to [writer].
   void writeTo(PdfWriter writer) {
     switch (file) {
-      case final JpegFile jpeg:
+      case final JpegFile jpeg when _passThrough:
         _writeJpeg(writer, jpeg);
         return;
       case final PngFile png when _passThrough:

@@ -293,6 +293,29 @@ void main() {
     }
   });
 
+  test('JPEG that DCTDecode reads passes through; other JPEG is decoded', () {
+    String pdfOf(String name) => latin1.decode(
+      imagePdf(
+        PdfImage.parse(
+          File('../plain_images/test/images/jpeg-suite/$name')
+              .readAsBytesSync(),
+        ),
+      ),
+    );
+    expect(pdfOf('sample-2x2.jpg'), contains('/DCTDecode'));
+    expect(pdfOf('progressive.jpg'), contains('/DCTDecode'));
+    for (final name in [
+      'precision-12.jpg',
+      'arithmetic.jpg',
+      'lossless-1.jpg',
+    ]) {
+      final pdf = pdfOf(name);
+      expect(pdf, isNot(contains('/DCTDecode')), reason: name);
+      expect(pdf, contains('/FlateDecode'), reason: name);
+    }
+    expect(pdfOf('precision-12.jpg'), contains('/BitsPerComponent 16'));
+  });
+
   test('an opaque PNG passes through without decoding', () {
     final bytes = File('../plain_images/test/images/pngsuite/basn2c08.png')
         .readAsBytesSync();

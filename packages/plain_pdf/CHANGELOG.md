@@ -6,7 +6,10 @@
   there with its history): `PdfImage.parse` takes any file it reads
   (JPEG, PNG, GIF, BMP), and `PdfImage(ImageFile)` one already read.
   JPEG and PNG are written as before, byte for byte (checked on PngSuite
-  and the JPEG test images, compressed and not); other images are
+  and the JPEG test images, compressed and not), but for JPEG files
+  DCTDecode doesn't read (12-bit, arithmetic-coded, lossless), which are
+  now decoded instead of written as invalid DCTDecode streams; other
+  images are
   decoded, a palette kept as an indexed color space, a transparent color
   as a color-key mask, alpha as a soft mask. `JpegImage`, `PngImage`,
   `PngColorType` and `ImageFormatException` are plain_images' now

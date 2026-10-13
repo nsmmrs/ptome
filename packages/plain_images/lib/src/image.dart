@@ -12,6 +12,7 @@ import 'package:plain_images/src/bmp_decode.dart';
 import 'package:plain_images/src/exception.dart';
 import 'package:plain_images/src/exif.dart';
 import 'package:plain_images/src/gif_decode.dart';
+import 'package:plain_images/src/jpeg_decode.dart';
 import 'package:plain_images/src/png_unfilter.dart';
 import 'package:plain_images/src/vp8_decode.dart';
 import 'package:plain_images/src/webp_lossless.dart';

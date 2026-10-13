@@ -32,9 +32,19 @@
   files of libwebp's test data (the VP8 conformance vectors among them;
   `tool/fetch_webp_tests.sh`), and seeded random images through cwebp
   with random settings.
+- JPEG decoding (ITU-T T.81): baseline, extended 12-bit, progressive
+  and lossless, Huffman or arithmetic coded, restart intervals, any
+  sampling factors, gray, YCbCr, RGB, CMYK and YCCK (an Adobe file's
+  inverted CMYK turned back), multi-segment ICC profiles. The samples are
+  libjpeg-turbo's default decoding to the byte (its accurate integer
+  inverse DCT, "fancy" upsampling and YCbCr to RGB tables): test images
+  of each layout, coding and precision made by cjpeg, and seeded random
+  images through cjpeg with random settings, against djpeg. 12-bit and
+  lossless samples fill 16 bits. A BMP holding a JPEG decodes as it.
 - Checked against ImageMagick on the test images, against package:image
   (a dev dependency only) on 650 seeded random PNG, GIF and BMP files,
   and with damaged copies of every test image (nightly). Decoding is
   1.3 to 3.8 times as fast as package:image's on page-sized images, WebP
-  1.35 (lossless) to 2 (lossy with alpha) times (`benchmark/decode.dart`).
+  1.35 (lossless) to 2 (lossy with alpha) times, JPEG 1.3 to 1.5 times
+  (`benchmark/decode.dart`).
 - The same samples compiled to JavaScript as on the Dart VM.
