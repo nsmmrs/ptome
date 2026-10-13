@@ -5,7 +5,7 @@ library;
 
 import 'dart:typed_data';
 
-import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_images/plain_images.dart';
 
 /// The outline of an image [width] by [height] pixels: across each band
 /// of [bandRows] rows from the top, the first and last columns of its
@@ -27,31 +27,48 @@ final class ImageOutline {
   final List<(int, int)?> bands;
 }
 
-/// The outline of the PNG image in [bytes], its pixels opaque where their
-/// alpha is above [threshold] (0 to 1), in at most [maxBands] bands;
-/// null when it isn't a PNG with alpha (its outline is its box).
+/// The outline of the image file in [bytes], its pixels opaque where
+/// their alpha is above [threshold] (0 to 1), in at most [maxBands] bands;
+/// null when it can't be read or has nothing transparent (its outline is
+/// its box).
 ImageOutline? alphaOutline(
   List<int> bytes, {
   double threshold = 0.5,
   int maxBands = 200,
 }) {
-  final PdfImage image;
+  final Raster raster;
   try {
-    image = PdfImage.parse(Uint8List.fromList(bytes));
-  } on Exception {
+    final file = ImageFile.read(Uint8List.fromList(bytes));
+    // (JPEG has no transparency.)
+    if (file is JpegFile) return null;
+    raster = file.decode();
+  } on FormatException {
     return null;
   }
-  if (image is! PngImage) return null;
-  final payload = image.encode(const PdfWriterOptions(compress: false));
-  final alpha = payload.alpha;
-  if (alpha == null) return null;
-  final (width, height) = (image.width, image.height);
+  final (width, height) = (raster.width, raster.height);
   final bandRows = (height / maxBands).ceil().clamp(1, height);
-  final wide = payload.alphaDepth == 16;
-  final cut = threshold * (wide ? 65535 : 255);
-  int sample(int x, int y) {
-    final at = (y * width + x) * (wide ? 2 : 1);
-    return wide ? alpha[at] << 8 | alpha[at + 1] : alpha[at];
+  final int Function(int x, int y) sample;
+  final double cut;
+  switch (raster.transparency) {
+    case null:
+      return null;
+    case AlphaChannel(samples: final alpha, :final bitDepth):
+      final wide = bitDepth == 16;
+      cut = threshold * (wide ? 65535 : 255);
+      sample = (x, y) {
+        final at = (y * width + x) * (wide ? 2 : 1);
+        return wide ? alpha[at] << 8 | alpha[at + 1] : alpha[at];
+      };
+    case ColorKey(:final values):
+      // Transparent or opaque: the key's pixels 0, the others 1.
+      cut = threshold;
+      final channels = raster.colorModel.channels;
+      sample = (x, y) {
+        for (var c = 0; c < channels; c++) {
+          if (raster.sample(x, y, c) != values[c]) return 1;
+        }
+        return 0;
+      };
   }
 
   final bands = <(int, int)?>[];

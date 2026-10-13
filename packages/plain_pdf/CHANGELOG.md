@@ -2,6 +2,17 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Images are read by the new plain_images package (PNG decoding moved
+  there with its history): `PdfImage.parse` takes any file it reads
+  (JPEG, PNG, GIF, BMP), and `PdfImage(ImageFile)` one already read.
+  JPEG and PNG are written as before, byte for byte (checked on PngSuite
+  and the JPEG test images, compressed and not); other images are
+  decoded, a palette kept as an indexed color space, a transparent color
+  as a color-key mask, alpha as a soft mask. `JpegImage`, `PngImage`,
+  `PngColorType` and `ImageFormatException` are plain_images' now
+  (`JpegFile`, `PngFile`, ...); `PngPayload` is `ImagePayload`, made by
+  `encode` for any image that `reencodes`; `bitsPerComponent` is the
+  XObject's. `readSvgRaster` reads any of them.
 - SVG moved to the plain_svg package with its history (`SvgImage`,
   `SvgPath` and the path segments), which draws on any canvas; plain_pdf
   no longer depends on `xml`. `PdfCanvas` implements plain_svg's

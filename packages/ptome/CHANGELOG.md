@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: GIF and BMP images are embedded (FEAT-c16d1m), read by
+  plain_images, the workspace's own image package, in the modern engine
+  and with `compat` alike: Asciidoctor PDF warns that GIF is not
+  supported (unless the prawn-gmagick gem is installed) and leaves the
+  alt text, and ptome no longer imitates that. A GIF is its first frame on
+  its logical screen, transparent where it has no pixels. Images
+  plain_images recognizes but doesn't read (AVIF, HEIC, WebP and TIFF for
+  now) are reported by name ("could not embed image: x.avif; AVIF images
+  are not supported"). Text runs around the opaque pixels of any image
+  with transparency (a GIF's transparent color, a PNG's), not only a PNG
+  with alpha. JPEG and PNG images are written byte for byte as before.
 - PDF: SVG images are drawn by plain_svg, the workspace's own SVG
   package with its own XML reader (FEAT-dqv18q), instead of plain_pdf's
   reader on package:xml: the same PDFs (checked on 1,110 SVG files and

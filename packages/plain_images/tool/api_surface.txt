@@ -1,0 +1,139 @@
+enum BmpCompression
+  int code
+  static BmpCompression alphaBitfields
+  static BmpCompression bitfields
+  static BmpCompression huffman
+  static BmpCompression jpeg
+  static BmpCompression none
+  static BmpCompression png
+  static BmpCompression rle24
+  static BmpCompression rle4
+  static BmpCompression rle8
+  static List<BmpCompression> values
+enum ColorModel
+  int channels
+  static ColorModel cmyk
+  static ColorModel gray
+  static ColorModel indexed
+  static ColorModel rgb
+  static List<ColorModel> values
+enum ImageFormat
+  ImageFormat? of(Uint8List bytes)
+  String label
+  static ImageFormat bmp
+  static ImageFormat gif
+  static ImageFormat jpeg
+  static ImageFormat png
+  static List<ImageFormat> values
+enum PngColorType
+  List<int> bitDepths
+  bool hasAlpha
+  int channels
+  int code
+  static List<PngColorType> values
+  static PngColorType gray
+  static PngColorType grayAlpha
+  static PngColorType palette
+  static PngColorType rgb
+  static PngColorType rgba
+final class AlphaChannel extends Transparency
+  AlphaChannel(Uint8List samples, int bitDepth)
+  Uint8List samples
+  int bitDepth
+final class BmpFile extends ImageFile
+  BmpCompression compression
+  BmpFile.read(Uint8List bytes)
+  ColorModel colorModel
+  ImageFormat format
+  List<int>? masks
+  Raster decode()
+  Uint8List? iccProfile
+  Uint8List? palette
+  bool topDown
+  int bitDepth
+  int bitsPerPixel
+  int dataOffset
+  int height
+  int width
+final class ColorKey extends Transparency
+  ColorKey(List<int> values)
+  List<int> values
+final class GifFile extends ImageFile
+  ColorModel colorModel
+  GifFile.read(Uint8List bytes)
+  ImageFormat format
+  Raster decode()
+  Uint8List? colorTable
+  bool interlaced
+  int bitDepth
+  int dataStart
+  int frameHeight
+  int frameLeft
+  int frameTop
+  int frameWidth
+  int frames
+  int height
+  int minCodeSize
+  int width
+  int? transparentIndex
+final class ImageFormatException extends FormatException
+  ImageFormatException(String message, {String? unsupportedFormat, int? offset})
+  String toString()
+  String? unsupportedFormat
+final class JpegFile extends ImageFile
+  ColorModel colorModel
+  ImageFormat format
+  JpegFile.read(Uint8List bytes)
+  Raster decode()
+  bool adobe
+  bool progressive
+  int bitDepth
+  int components
+  int height
+  int orientation
+  int precision
+  int width
+final class PngFile extends ImageFile
+  ColorKey? colorKey
+  ColorModel colorModel
+  ImageFormat format
+  PngColorType colorType
+  PngFile.read(Uint8List bytes)
+  Raster decode({Uint8List Function(Uint8List)? inflate})
+  Uint8List data
+  Uint8List? iccProfile
+  Uint8List? palette
+  Uint8List? transparency
+  bool interlaced
+  int bitDepth
+  int height
+  int orientation
+  int width
+final class Raster
+  ColorModel colorModel
+  Raster({required int width, required int height, required ColorModel colorModel, required int bitDepth, required Uint8List samples, Uint8List? palette, Transparency? transparency, Uint8List? iccProfile, int orientation = 1})
+  Transparency? transparency
+  Uint8List samples
+  Uint8List toRgba8()
+  Uint8List? iccProfile
+  Uint8List? palette
+  int bitDepth
+  int height
+  int orientation
+  int rowBytes
+  int sample(int x, int y, [int channel = 0])
+  int width
+sealed class ImageFile
+  ColorModel colorModel
+  ImageFile.read(Uint8List bytes)
+  ImageFormat format
+  Raster decode()
+  Uint8List bytes
+  Uint8List? iccProfile
+  int bitDepth
+  int height
+  int orientation
+  int width
+  static int maxPixels
+sealed class Transparency
+  Transparency()

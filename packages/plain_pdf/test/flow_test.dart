@@ -1221,7 +1221,8 @@ void main() {
 
     test('images shrink to fit a region; drawings are placed', () {
       final png = PdfImage.parse(
-        File('test/images/pngsuite/basn2c08.png').readAsBytesSync(),
+        File('../plain_images/test/images/pngsuite/basn2c08.png')
+            .readAsBytesSync(),
       );
       var drawn = const Rect(0, 0, 0, 0);
       final (pdf, result) = render([

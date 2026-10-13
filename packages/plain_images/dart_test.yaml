@@ -1,0 +1,8 @@
+tags:
+  # Comparisons with frozen copies of the code a rewrite replaced, and
+  # fuzzing with damaged input: the nightly workflow runs them, the gate
+  # and CI leave them out (`dart test -x nightly`).
+  nightly:
+  # Comparisons with ImageMagick and other outside tools, skipped when
+  # they aren't installed.
+  tools:

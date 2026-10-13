@@ -14,12 +14,12 @@ A package is released after the siblings it depends on:
 
 1. plain_compression, plain_unicode, plain_math, plain_mustache
 2. plain_fonts (on plain_compression), plain_hyphenation (on
-   plain_compression)
+   plain_compression), plain_images (on plain_compression)
 3. plain_typesetting (on plain_fonts, plain_math, plain_unicode),
    plain_highlighting (on plain_unicode)
 4. plain_svg (on plain_typesetting)
-5. plain_pdf (on plain_compression, plain_fonts, plain_math, plain_svg,
-   plain_typesetting, plain_unicode)
+5. plain_pdf (on plain_compression, plain_fonts, plain_images, plain_math,
+   plain_svg, plain_typesetting, plain_unicode)
 6. ptome (on all of them)
 
 ## Once: the publisher and the first versions

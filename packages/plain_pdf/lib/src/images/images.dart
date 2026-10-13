@@ -1,54 +1,95 @@
-/// Raster images as PDF image XObjects (ISO 32000-2, 8.9.5): JPEG files
-/// pass through as DCTDecode streams; PNG files pass through as
-/// FlateDecode streams with a PNG predictor when PDF can show them as
-/// they are, and are decoded otherwise (alpha becomes a soft mask,
-/// interlaced images are de-interlaced).
+/// Raster images as PDF image XObjects (ISO 32000-2, 8.9.5), from the
+/// image files plain_images reads: JPEG files pass through as DCTDecode
+/// streams; PNG files pass through as FlateDecode streams with a PNG
+/// predictor when PDF can show them as they are; anything else is
+/// decoded, its samples written with a PNG predictor (alpha as a soft
+/// mask, a transparent color as a color-key mask, a palette as an indexed
+/// color space).
 library;
 
 import 'dart:typed_data';
 
-import 'package:plain_compression/plain_compression.dart';
+import 'package:meta/meta.dart';
+import 'package:plain_images/plain_images.dart';
 import 'package:plain_pdf/src/drawing/canvas.dart';
-import 'package:plain_pdf/src/images/exif.dart';
-import 'package:plain_pdf/src/images/png_decode.dart';
+import 'package:plain_pdf/src/images/png_filter.dart';
 import 'package:plain_pdf/src/objects.dart';
 import 'package:plain_pdf/src/writer.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 
-/// An image file plain_pdf can't read.
-final class ImageFormatException implements Exception {
-  /// An exception with [message].
-  const new(this.message);
+/// An image's samples encoded for writing (see [PdfImage.encode]): the
+/// compression they were encoded with, how the color samples are laid
+/// out, and the stream data of the color and of the alpha.
+@immutable
+final class ImagePayload {
+  /// A payload of the given parts.
+  const new({
+    required this.compress,
+    required this.level,
+    required this.colorModel,
+    required this.bitDepth,
+    required this.color,
+    this.palette,
+    this.colorKey,
+    this.alpha,
+    this.alphaDepth = 8,
+  });
 
-  /// What is wrong with the image.
-  final String message;
+  /// Whether the streams are compressed.
+  final bool compress;
 
-  @override
-  String toString() => 'ImageFormatException: $message';
+  /// The compression level they were compressed at.
+  final int level;
+
+  /// How the color samples give a color.
+  final ColorModel colorModel;
+
+  /// The bits per color sample.
+  final int bitDepth;
+
+  /// The color's stream data.
+  final Uint8List color;
+
+  /// The palette of indexed samples: RGB triples.
+  final Uint8List? palette;
+
+  /// The transparent color's samples, if any.
+  final List<int>? colorKey;
+
+  /// The alpha's stream data, or null when the image is opaque.
+  final Uint8List? alpha;
+
+  /// The bits per alpha sample.
+  final int alphaDepth;
 }
 
 /// A raster image, drawn as an image XObject.
-sealed class PdfImage implements Graphic {
-  new _();
+final class PdfImage implements Graphic {
+  /// The image of [file].
+  new(this.file);
 
-  /// The JPEG or PNG image in [bytes], told apart by their signatures.
-  factory parse(Uint8List bytes) {
-    if (bytes.length >= 3 && bytes[0] == 0xff && bytes[1] == 0xd8) {
-      return JpegImage.parse(bytes);
-    }
-    if (_startsWith(bytes, _pngSignature)) return PngImage.parse(bytes);
-    throw const ImageFormatException('not a JPEG or PNG image');
-  }
+  /// The image file in [bytes] (any format plain_images reads); throws an
+  /// [ImageFormatException] when it isn't one.
+  factory parse(Uint8List bytes) => PdfImage(ImageFile.read(bytes));
+
+  /// The image file.
+  final ImageFile file;
 
   /// The width, in pixels.
-  int get width;
+  int get width => file.width;
 
   /// The height, in pixels.
-  int get height;
+  int get height => file.height;
 
   /// The EXIF orientation (1–8; 1 is upright). It is reported, not
   /// applied: placing the image is up to the caller.
-  int get orientation;
+  int get orientation => file.orientation;
+
+  /// The bits per color component the XObject has.
+  int get bitsPerComponent => switch (file) {
+    JpegFile(:final precision) => precision,
+    final other => other.bitDepth,
+  };
 
   /// A pixel to a point.
   @override
@@ -67,390 +108,65 @@ sealed class PdfImage implements Graphic {
 
   final Expando<PdfRef> _references = Expando<PdfRef>();
 
-  /// Writes the image's objects to [writer].
-  void writeTo(PdfWriter writer);
-}
-
-/// A JPEG image, embedded as it is (DCTDecode).
-final class JpegImage extends PdfImage {
-  new _(
-    this.bytes, {
-    required this.width,
-    required this.height,
-    required this.components,
-    required this.bitsPerComponent,
-    required this.progressive,
-    required this.adobe,
-    required this.orientation,
-  }) : super._();
-
-  /// The JPEG image in [bytes].
-  factory parse(Uint8List bytes) {
-    if (bytes.length < 4 || bytes[0] != 0xff || bytes[1] != 0xd8) {
-      throw const ImageFormatException('not a JPEG image');
-    }
-    final view = ByteData.sublistView(bytes);
-    var adobe = false;
-    var orientation = 1;
-    var at = 2;
-    while (at + 4 <= bytes.length) {
-      if (bytes[at] != 0xff) {
-        throw ImageFormatException('JPEG marker expected at byte $at');
-      }
-      final marker = bytes[at + 1];
-      if (marker == 0xff) {
-        at += 1; // fill byte
-        continue;
-      }
-      at += 2;
-      if (marker == 0x01 || (marker >= 0xd0 && marker <= 0xd8)) continue;
-      if (marker == 0xd9 || marker == 0xda) break;
-      final length = view.getUint16(at);
-      final end = at + length;
-      if (length < 2 || end > bytes.length) break;
-      final segment = Uint8List.sublistView(bytes, at + 2, end);
-      if (_isStartOfFrame(marker)) {
-        if (segment.length < 6) break;
-        final height = view.getUint16(at + 3);
-        if (height == 0) {
-          throw const ImageFormatException(
-            'JPEG images whose height is set by a DNL marker are not '
-            'supported',
-          );
-        }
-        return JpegImage._(
-          bytes,
-          width: view.getUint16(at + 5),
-          height: height,
-          components: segment[5],
-          bitsPerComponent: segment[0],
-          progressive: marker & 0x03 == 0x02,
-          adobe: adobe,
-          orientation: orientation,
-        );
-      }
-      if (marker == 0xee && _startsWith(segment, _adobe)) adobe = true;
-      if (marker == 0xe1 && _startsWith(segment, _exif)) {
-        orientation = exifOrientation(Uint8List.sublistView(segment, 6));
-      }
-      at = end;
-    }
-    throw const ImageFormatException('JPEG image has no frame header');
-  }
-
-  /// The file.
-  final Uint8List bytes;
-
-  @override
-  final int width;
-
-  @override
-  final int height;
-
-  /// The color components: 1 (gray), 3 (RGB) or 4 (CMYK).
-  final int components;
-
-  /// The bits per component (8, or 12 in extended JPEG).
-  final int bitsPerComponent;
-
-  /// Whether the image is progressive.
-  final bool progressive;
-
-  /// Whether the file has an Adobe (APP14) segment, whose CMYK data is
-  /// stored inverted.
-  final bool adobe;
-
-  @override
-  final int orientation;
-
-  @override
-  void writeTo(PdfWriter writer) {
-    writer.write(
-      PdfStream(
-        bytes,
-        dict: PdfDict({
-          'Type': const PdfName('XObject'),
-          'Subtype': const PdfName('Image'),
-          'Width': PdfInt(width),
-          'Height': PdfInt(height),
-          'ColorSpace': switch (components) {
-            1 => const PdfName('DeviceGray'),
-            3 => const PdfName('DeviceRGB'),
-            4 => const PdfName('DeviceCMYK'),
-            _ => throw ImageFormatException(
-              'JPEG images with $components components are not supported',
-            ),
-          },
-          'BitsPerComponent': PdfInt(bitsPerComponent),
-          'Filter': const PdfName('DCTDecode'),
-          if (components == 4 && adobe)
-            'Decode': PdfArray([
-              for (var i = 0; i < 4; i++) ...[const PdfInt(1), const PdfInt(0)],
-            ]),
-        }),
-        compress: false,
-      ),
-      reference(writer),
-    );
-  }
-
-  static bool _isStartOfFrame(int marker) =>
-      marker >= 0xc0 &&
-      marker <= 0xcf &&
-      marker != 0xc4 &&
-      marker != 0xc8 &&
-      marker != 0xcc;
-
-  static final List<int> _adobe = 'Adobe'.codeUnits;
-  static final List<int> _exif = [0x45, 0x78, 0x69, 0x66, 0, 0];
-}
-
-/// The color type of a PNG image (ISO/IEC 15948, 11.2.2).
-enum PngColorType {
-  /// Gray samples.
-  gray(0, 1),
-
-  /// Red, green and blue samples.
-  rgb(2, 3),
-
-  /// Palette indices.
-  palette(3, 1),
-
-  /// Gray and alpha samples.
-  grayAlpha(4, 2),
-
-  /// Red, green, blue and alpha samples.
-  rgba(6, 4);
-
-  new(this.code, this.channels);
-
-  /// The color type's code in the file.
-  final int code;
-
-  /// The samples per pixel.
-  final int channels;
-
-  /// Whether pixels carry an alpha sample.
-  bool get hasAlpha => this == grayAlpha || this == rgba;
-
-  /// The bit depths the color type allows.
-  List<int> get bitDepths => switch (this) {
-    gray => const [1, 2, 4, 8, 16],
-    palette => const [1, 2, 4, 8],
-    rgb || grayAlpha || rgba => const [8, 16],
-  };
-}
-
-/// A PNG image's samples encoded for writing (see [PngImage.encode]): the
-/// compression they were encoded with, the color's stream data and the
-/// alpha's (null for an opaque image), and the alpha's depth.
-typedef PngPayload = ({
-  bool compress,
-  int level,
-  Uint8List color,
-  Uint8List? alpha,
-  int alphaDepth,
-});
-
-/// A PNG image.
-final class PngImage extends PdfImage {
-  new _({
-    required this.width,
-    required this.height,
-    required this.bitDepth,
-    required this.colorType,
-    required this.interlaced,
-    required this.data,
-    required this.palette,
-    required this.transparency,
-    required this.iccProfile,
-    required this.orientation,
-  }) : super._();
-
-  /// The PNG image in [bytes].
-  factory parse(Uint8List bytes) {
-    if (!_startsWith(bytes, _pngSignature)) {
-      throw const ImageFormatException('not a PNG image');
-    }
-    final view = ByteData.sublistView(bytes);
-    ByteData? header;
-    Uint8List? palette;
-    Uint8List? transparency;
-    Uint8List? iccProfile;
-    var orientation = 1;
-    final data = BytesBuilder(copy: false);
-    var at = 8;
-    while (at + 12 <= bytes.length) {
-      final length = view.getUint32(at);
-      final type = String.fromCharCodes(bytes, at + 4, at + 8);
-      final start = at + 8;
-      final end = start + length;
-      if (end + 4 > bytes.length) {
-        throw ImageFormatException('PNG chunk $type is truncated');
-      }
-      final chunk = Uint8List.sublistView(bytes, start, end);
-      // A critical chunk must be intact; ancillary ones are only hints.
-      if (_critical.contains(type) &&
-          crc32(bytes, start: at + 4, end: end) != view.getUint32(end)) {
-        throw ImageFormatException('PNG chunk $type is damaged (CRC mismatch)');
-      }
-      switch (type) {
-        case 'IHDR' when length >= 13:
-          header = ByteData.sublistView(chunk);
-        case 'PLTE':
-          palette = chunk;
-        case 'tRNS':
-          transparency = chunk;
-        case 'iCCP':
-          final nameEnd = chunk.indexOf(0);
-          if (nameEnd > 0 && nameEnd + 2 <= chunk.length) {
-            try {
-              iccProfile = zlibDecode(chunk.sublist(nameEnd + 2));
-            } on FormatException {
-              // A damaged profile: fall back to the device color space.
-            }
-          }
-        case 'eXIf':
-          orientation = exifOrientation(chunk);
-        case 'IDAT':
-          data.add(chunk);
-        case 'IEND':
-          at = bytes.length;
-          continue;
-      }
-      at = end + 4;
-    }
-    if (header == null) {
-      throw const ImageFormatException('PNG image has no IHDR chunk');
-    }
-    if (data.isEmpty) {
-      throw const ImageFormatException('PNG image has no IDAT chunk');
-    }
-    final width = header.getUint32(0);
-    final height = header.getUint32(4);
-    final bitDepth = header.getUint8(8);
-    final code = header.getUint8(9);
-    final colorType = PngColorType.values
-        .where((t) => t.code == code)
-        .firstOrNull;
-    if (colorType == null) {
-      throw ImageFormatException('PNG color type $code is not defined');
-    }
-    if (!colorType.bitDepths.contains(bitDepth)) {
-      throw ImageFormatException(
-        'PNG bit depth $bitDepth is not allowed for color type $code',
-      );
-    }
-    if (width == 0 || height == 0) {
-      throw const ImageFormatException('PNG image is empty');
-    }
-    if (colorType == PngColorType.palette && palette == null) {
-      throw const ImageFormatException('PNG palette image has no palette');
-    }
-    final interlace = header.getUint8(12);
-    if (interlace > 1) {
-      throw ImageFormatException(
-        'PNG interlace method $interlace is not '
-        'defined',
-      );
-    }
-    return PngImage._(
-      width: width,
-      height: height,
-      bitDepth: bitDepth,
-      colorType: colorType,
-      interlaced: interlace == 1,
-      data: data.takeBytes(),
-      palette: colorType == PngColorType.palette ? palette : null,
-      transparency: colorType.hasAlpha ? null : transparency,
-      iccProfile: iccProfile,
-      orientation: orientation,
-    );
-  }
-
-  @override
-  final int width;
-
-  @override
-  final int height;
-
-  /// The bits per sample.
-  final int bitDepth;
-
-  /// The color type.
-  final PngColorType colorType;
-
-  /// Whether the image is interlaced (Adam7).
-  final bool interlaced;
-
-  /// The image data (the IDAT chunks, a zlib stream).
-  final Uint8List data;
-
-  /// The palette (`PLTE`) of a palette image: RGB triples.
-  final Uint8List? palette;
-
-  /// The `tRNS` chunk: palette alpha, or the transparent color.
-  final Uint8List? transparency;
-
-  /// The embedded ICC profile (`iCCP`), decompressed.
-  final Uint8List? iccProfile;
-
-  @override
-  final int orientation;
-
-  /// Whether PDF can show the image data as it is: not interlaced, and no
-  /// alpha to split out.
-  bool get _passThrough =>
+  /// Whether PDF shows the file's data as it is: a JPEG file, or a PNG
+  /// file that isn't interlaced and has no alpha to split out.
+  bool get _passThrough => switch (file) {
+    JpegFile() => true,
+    PngFile(:final interlaced, :final colorType, :final transparency) =>
       !interlaced &&
-      !colorType.hasAlpha &&
-      !(colorType == PngColorType.palette && transparency != null);
+          !colorType.hasAlpha &&
+          !(colorType == PngColorType.palette && transparency != null),
+    _ => false,
+  };
 
-  /// Whether writing the image encodes its samples again (it is
-  /// interlaced, or has alpha to split out): the work [encode] does.
+  /// Whether writing the image decodes and encodes its samples: the work
+  /// [encode] does.
   bool get reencodes => !_passThrough;
 
   /// The samples as writing the image with [options] encodes them, when
-  /// it [reencodes]: the color's stream data, and the alpha's (null when
-  /// the image is opaque). Plain data, computed anywhere (another isolate,
-  /// say) and handed back as [payload].
-  PngPayload encode(PdfWriterOptions options) {
-    final colorChannels = colorType.hasAlpha
-        ? colorType.channels - 1
-        : colorType.channels;
-    final layout = PngLayout(width, height, colorType.channels, bitDepth);
-    final pixels = unfilterImage(
-      options.decodeZlib(data),
-      layout,
-      interlaced: interlaced,
-    );
-    final Uint8List color;
-    // Null when every pixel is opaque.
-    final Uint8List? alpha;
-    final int alphaDepth;
-    if (colorType.hasAlpha) {
-      final (samples, alphaSamples, opaque) = _splitAlpha(
-        pixels,
-        colorChannels,
+  /// it [reencodes]. Plain data, computed anywhere (another isolate, say)
+  /// and handed back as [payload]; throws an [ImageFormatException] when
+  /// the image data is damaged.
+  ImagePayload encode(PdfWriterOptions options) {
+    final raster = switch (file) {
+      final PngFile png => png.decode(inflate: options.decodeZlib),
+      final other => other.decode(),
+    };
+    final (alpha, alphaDepth) = switch (raster.transparency) {
+      AlphaChannel(:final samples, :final bitDepth) => (samples, bitDepth),
+      _ => (null, 8),
+    };
+    final rows = raster.height;
+    Uint8List encoded(Uint8List samples, int depth, int channels) {
+      if (!options.compress) return samples;
+      final stride = (raster.width * channels * depth + 7) >> 3;
+      return options.encodeZlib(
+        filterImage(
+          samples.length == stride * rows
+              ? samples
+              : Uint8List.sublistView(samples, 0, stride * rows),
+          stride,
+          (channels * depth + 7) >> 3,
+        ),
       );
-      color = samples;
-      alpha = opaque ? null : alphaSamples;
-      alphaDepth = bitDepth;
-    } else if (colorType == PngColorType.palette && transparency != null) {
-      color = pixels;
-      alpha = _paletteAlpha(pixels, layout.rowBytes(width));
-      alphaDepth = 8;
-    } else {
-      color = pixels;
-      alpha = null;
-      alphaDepth = 8;
     }
-    return (
+
+    return ImagePayload(
       compress: options.compress,
       level: options.compressionLevel,
-      color: _encodedSamples(options, color, bitDepth, colorChannels),
-      alpha: alpha == null
-          ? null
-          : _encodedSamples(options, alpha, alphaDepth, 1),
+      colorModel: raster.colorModel,
+      bitDepth: raster.bitDepth,
+      color: encoded(
+        raster.samples,
+        raster.bitDepth,
+        raster.colorModel.channels,
+      ),
+      palette: raster.palette,
+      colorKey: switch (raster.transparency) {
+        ColorKey(:final values) => values,
+        _ => null,
+      },
+      alpha: alpha == null ? null : encoded(alpha, alphaDepth, 1),
       alphaDepth: alphaDepth,
     );
   }
@@ -458,27 +174,33 @@ final class PngImage extends PdfImage {
   /// The samples encoded elsewhere (see [encode]), used when the image is
   /// written with the same compression (and the same zlib codec, which
   /// the caller sees to).
-  PngPayload? payload;
+  ImagePayload? payload;
 
-  @override
+  /// Writes the image's objects to [writer].
   void writeTo(PdfWriter writer) {
-    final colorChannels = colorType.hasAlpha
-        ? colorType.channels - 1
-        : colorType.channels;
-    final colorSpace = _colorSpace(writer, colorChannels);
-    final mask = _colorKey;
-    if (_passThrough) {
-      writer.write(
-        _image(
-          data,
-          colorSpace,
-          bitDepth,
-          predictor: (colorChannels, bitDepth),
-          mask: mask,
-        ),
-        reference(writer),
-      );
-      return;
+    switch (file) {
+      case final JpegFile jpeg:
+        _writeJpeg(writer, jpeg);
+        return;
+      case final PngFile png when _passThrough:
+        final colorSpace = _colorSpace(
+          writer,
+          png.colorModel,
+          png.palette,
+          png.iccProfile,
+        );
+        writer.write(
+          _image(
+            png.data,
+            colorSpace,
+            png.bitDepth,
+            predictor: (png.colorType.channels, png.bitDepth),
+            mask: _mask(png.colorKey?.values),
+          ),
+          reference(writer),
+        );
+        return;
+      default:
     }
     final options = writer.options;
     final encoded = switch (payload) {
@@ -488,6 +210,13 @@ final class PngImage extends PdfImage {
         payload,
       _ => encode(options),
     };
+    final channels = encoded.colorModel.channels;
+    final colorSpace = _colorSpace(
+      writer,
+      encoded.colorModel,
+      encoded.palette,
+      file.iccProfile,
+    );
     final softMask = switch (encoded.alpha) {
       final alpha? => writer.write(
         _image(
@@ -504,9 +233,9 @@ final class PngImage extends PdfImage {
       _image(
         encoded.color,
         colorSpace,
-        bitDepth,
-        predictor: options.compress ? (colorChannels, bitDepth) : null,
-        mask: mask,
+        encoded.bitDepth,
+        predictor: options.compress ? (channels, encoded.bitDepth) : null,
+        mask: _mask(encoded.colorKey),
         softMask: softMask,
         compress: options.compress,
       ),
@@ -514,14 +243,50 @@ final class PngImage extends PdfImage {
     );
   }
 
-  /// The image's color space: device gray or RGB (ICC-based with an
-  /// embedded profile), or indexed over RGB for a palette image.
-  PdfObject _colorSpace(PdfWriter writer, int channels) {
-    final device = PdfName(
-      colorType == PngColorType.gray || colorType == PngColorType.grayAlpha
-          ? 'DeviceGray'
-          : 'DeviceRGB',
+  void _writeJpeg(PdfWriter writer, JpegFile jpeg) {
+    writer.write(
+      PdfStream(
+        jpeg.bytes,
+        dict: PdfDict({
+          'Type': const PdfName('XObject'),
+          'Subtype': const PdfName('Image'),
+          'Width': PdfInt(width),
+          'Height': PdfInt(height),
+          'ColorSpace': switch (jpeg.components) {
+            1 => const PdfName('DeviceGray'),
+            3 => const PdfName('DeviceRGB'),
+            4 => const PdfName('DeviceCMYK'),
+            _ => throw ImageFormatException(
+              'JPEG images with ${jpeg.components} components are not '
+              'supported',
+            ),
+          },
+          'BitsPerComponent': PdfInt(jpeg.precision),
+          'Filter': const PdfName('DCTDecode'),
+          if (jpeg.components == 4 && jpeg.adobe)
+            'Decode': PdfArray([
+              for (var i = 0; i < 4; i++) ...[const PdfInt(1), const PdfInt(0)],
+            ]),
+        }),
+        compress: false,
+      ),
+      reference(writer),
     );
+  }
+
+  /// The color space of samples of [model]: a device space (ICC-based
+  /// with an embedded profile), or indexed over RGB with [palette].
+  PdfObject _colorSpace(
+    PdfWriter writer,
+    ColorModel model,
+    Uint8List? palette,
+    Uint8List? iccProfile,
+  ) {
+    final device = PdfName(switch (model) {
+      ColorModel.gray => 'DeviceGray',
+      ColorModel.cmyk => 'DeviceCMYK',
+      ColorModel.rgb || ColorModel.indexed => 'DeviceRGB',
+    });
     final base = switch (iccProfile) {
       final profile? => PdfArray([
         const PdfName('ICCBased'),
@@ -529,7 +294,11 @@ final class PngImage extends PdfImage {
           PdfStream(
             profile,
             dict: PdfDict({
-              'N': PdfInt(device.value == 'DeviceGray' ? 1 : 3),
+              'N': PdfInt(switch (model) {
+                ColorModel.gray => 1,
+                ColorModel.cmyk => 4,
+                _ => 3,
+              }),
               'Alternate': device,
             }),
           ),
@@ -537,8 +306,7 @@ final class PngImage extends PdfImage {
       ]),
       null => device,
     };
-    final palette = this.palette;
-    if (palette == null) return base;
+    if (model != ColorModel.indexed || palette == null) return base;
     final entries = palette.length ~/ 3;
     return PdfArray([
       const PdfName('Indexed'),
@@ -548,100 +316,12 @@ final class PngImage extends PdfImage {
     ]);
   }
 
-  /// The color-key mask of a gray or RGB image with a transparent color.
-  PdfArray? get _colorKey {
-    final transparency = this.transparency;
-    if (transparency == null || colorType == PngColorType.palette) {
-      return null;
-    }
-    final view = ByteData.sublistView(transparency);
-    final samples = colorType.channels;
-    if (transparency.length < 2 * samples) return null;
-    final limit = (1 << bitDepth) - 1;
-    return PdfArray([
-      for (var i = 0; i < samples; i++) ...[
-        PdfInt(view.getUint16(2 * i) & limit),
-        PdfInt(view.getUint16(2 * i) & limit),
-      ],
-    ]);
-  }
-
-  /// [pixels] split into color samples and alpha samples, and whether
-  /// every alpha byte is 0xff.
-  (Uint8List, Uint8List, bool) _splitAlpha(
-    Uint8List pixels,
-    int colorChannels,
-  ) {
-    final sample = bitDepth >> 3;
-    final count = width * height;
-    final colorBytes = colorChannels * sample;
-    final color = Uint8List(count * colorBytes);
-    final alpha = Uint8List(count * sample);
-    var from = 0;
-    var c = 0;
-    // The AND of every alpha byte: 0xff when all are.
-    var all = 0xff;
-    if (sample == 1 && colorChannels == 3) {
-      // (8-bit RGBA, the usual.)
-      for (var p = 0; p < count; p++, from += 4, c += 3) {
-        color[c] = pixels[from];
-        color[c + 1] = pixels[from + 1];
-        color[c + 2] = pixels[from + 2];
-        final value = pixels[from + 3];
-        alpha[p] = value;
-        all &= value;
-      }
-      return (color, alpha, all == 0xff);
-    }
-    var a = 0;
-    for (var p = 0; p < count; p++) {
-      for (var k = 0; k < colorBytes; k++) {
-        color[c++] = pixels[from++];
-      }
-      for (var k = 0; k < sample; k++) {
-        final value = pixels[from++];
-        alpha[a++] = value;
-        all &= value;
-      }
-    }
-    return (color, alpha, all == 0xff);
-  }
-
-  /// The alpha of each pixel of a palette image, from the palette's alpha
-  /// in `tRNS` (opaque past its end); null when every pixel is opaque.
-  Uint8List? _paletteAlpha(Uint8List pixels, int stride) {
-    final table = transparency!;
-    final alpha = Uint8List(width * height);
-    final mask = (1 << bitDepth) - 1;
-    var all = 0xff;
-    for (var y = 0; y < height; y++) {
-      for (var x = 0; x < width; x++) {
-        final bit = x * bitDepth;
-        final index =
-            (pixels[y * stride + (bit >> 3)] >> (8 - bitDepth - (bit & 7))) &
-            mask;
-        final value = index < table.length ? table[index] : 0xff;
-        alpha[y * width + x] = value;
-        all &= value;
-      }
-    }
-    return all == 0xff ? null : alpha;
-  }
-
-  /// Decoded [samples] as image stream data: filtered and compressed (for
-  /// a PNG predictor) when [options] compress.
-  Uint8List _encodedSamples(
-    PdfWriterOptions options,
-    Uint8List samples,
-    int depth,
-    int channels,
-  ) {
-    if (!options.compress) return samples;
-    final layout = PngLayout(width, height, channels, depth);
-    return options.encodeZlib(
-      filterImage(samples, layout.rowBytes(width), layout.pixelBytes),
-    );
-  }
+  /// The color-key mask of transparent [samples].
+  PdfArray? _mask(List<int>? samples) => samples == null
+      ? null
+      : PdfArray([
+          for (final sample in samples) ...[PdfInt(sample), PdfInt(sample)],
+        ]);
 
   /// An image XObject of [data] (Flate-compressed with a PNG predictor
   /// for samples of [predictor]'s channels and depth, if given).
@@ -676,25 +356,4 @@ final class PngImage extends PdfImage {
     }),
     compress: compress && predictor == null,
   );
-}
-
-final List<int> _pngSignature = [
-  0x89,
-  0x50,
-  0x4e,
-  0x47,
-  0x0d,
-  0x0a,
-  0x1a,
-  0x0a,
-];
-
-const Set<String> _critical = {'IHDR', 'PLTE', 'IDAT', 'IEND'};
-
-bool _startsWith(List<int> bytes, List<int> prefix) {
-  if (bytes.length < prefix.length) return false;
-  for (var i = 0; i < prefix.length; i++) {
-    if (bytes[i] != prefix[i]) return false;
-  }
-  return true;
 }

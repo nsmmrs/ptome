@@ -19,8 +19,9 @@ const sentence =
 
 final Uint8List serif = File('../../test/fonts/notoserif-regular-latin.ttf')
     .readAsBytesSync();
-final Uint8List jpeg = File('../../test/images/jpeg/rgb-baseline.jpg')
-    .readAsBytesSync();
+final Uint8List jpeg = File(
+  '../../../plain_images/test/images/jpeg/rgb-baseline.jpg',
+).readAsBytesSync();
 
 Uint8List plainPdfText({required bool embedded}) {
   final document = lib.PdfDocument();

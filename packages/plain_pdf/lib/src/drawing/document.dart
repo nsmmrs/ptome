@@ -528,7 +528,7 @@ final class PdfDocument implements LayoutDocument<PdfPage> {
     bool deep(PdfCanvas canvas) => canvasResources(canvas).values.any(
       (entries) => entries.values.any(
         (resource) => switch (resource) {
-          ImageResource(image: PngImage(bitDepth: 16)) => true,
+          ImageResource(image: PdfImage(bitsPerComponent: 16)) => true,
           FormResource(:final form) => seen.add(form) && deep(formCanvas(form)),
           _ => false,
         },

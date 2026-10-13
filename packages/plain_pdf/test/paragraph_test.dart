@@ -241,7 +241,8 @@ void main() {
     );
 
     final png = PdfImage.parse(
-      File('test/images/pngsuite/basn2c08.png').readAsBytesSync(),
+      File('../plain_images/test/images/pngsuite/basn2c08.png')
+          .readAsBytesSync(),
     );
     final withImage = const FirstFitLineBreaker().breakLines(
       Paragraph([

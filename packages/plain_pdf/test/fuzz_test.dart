@@ -11,6 +11,7 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:plain_fonts/plain_fonts.dart' show FontFormatException;
+import 'package:plain_images/plain_images.dart' show ImageFormatException;
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
@@ -101,14 +102,14 @@ SvgImage parseSvg(
 void main() {
   fuzz(
     'JPEG',
-    files('test/images/jpeg', '.jpg'),
-    PdfImage.parse,
+    files('../plain_images/test/images/jpeg', '.jpg'),
+    _imagePdf,
     (error) => error is ImageFormatException,
   );
   fuzz(
     'PNG',
-    files('test/images/pngsuite', '.png', limit: 24),
-    PdfImage.parse,
+    files('../plain_images/test/images/pngsuite', '.png', limit: 24),
+    _imagePdf,
     (error) => error is ImageFormatException,
   );
   fuzz('SVG', files('test/svg', '.svg'), (bytes) {
@@ -160,3 +161,7 @@ void main() {
     count: 600,
   );
 }
+
+/// The image file [bytes] written as an image XObject.
+void _imagePdf(Uint8List bytes) =>
+    PdfImage.parse(bytes).writeTo(PdfWriter((_) {}));

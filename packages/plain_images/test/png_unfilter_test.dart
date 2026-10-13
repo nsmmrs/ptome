@@ -1,13 +1,14 @@
 // PNG unfiltering: the per-filter loops give what the specification's
 // reconstruction, written plainly, gives; and every PngSuite image decodes
-// to the samples (color and alpha) it decoded to at commit 17001e86.
+// to the samples (color and alpha) it decoded to at commit 17001e86 (in
+// plain_pdf then).
 import 'dart:io';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
-import 'package:plain_pdf/plain_pdf.dart';
-import 'package:plain_pdf/src/images/png_decode.dart';
+import 'package:plain_images/plain_images.dart';
+import 'package:plain_images/src/png_unfilter.dart';
 import 'package:test/test.dart';
 
 /// Reconstruction as the specification puts it (9.2), one byte at a time.
@@ -105,14 +106,25 @@ void main() {
             .toList()
           ..sort((a, b) => a.path.compareTo(b.path));
     for (final file in files) {
-      final image = PdfImage.parse(file.readAsBytesSync());
-      if (image is! PngImage || !image.reencodes) continue;
-      final payload = image.encode(const PdfWriterOptions(compress: false));
+      final png = PngFile.read(file.readAsBytesSync());
+      // (The images whose samples were decoded then: interlaced, or with
+      // alpha to split out.)
+      if (!png.interlaced &&
+          !png.colorType.hasAlpha &&
+          !(png.colorType == PngColorType.palette &&
+              png.transparency != null)) {
+        continue;
+      }
+      final raster = png.decode();
+      final (alpha, depth) = switch (raster.transparency) {
+        AlphaChannel(:final samples, :final bitDepth) => (samples, bitDepth),
+        _ => (null, 8),
+      };
       out
         ..add(file.uri.pathSegments.last.codeUnits)
-        ..add(payload.color)
-        ..add(payload.alpha ?? const [0])
-        ..addByte(payload.alphaDepth);
+        ..add(raster.samples)
+        ..add(alpha ?? const [0])
+        ..addByte(depth);
     }
     expect(
       md5.convert(out.takeBytes()).toString(),

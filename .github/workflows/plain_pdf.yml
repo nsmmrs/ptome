@@ -10,6 +10,7 @@ on:
     - 'packages/plain_math/**'
     - 'packages/plain_typesetting/**'
     - 'packages/plain_svg/**'
+    - 'packages/plain_images/**'
     - '.github/workflows/plain_pdf.yml'
   pull_request:
     paths:
@@ -20,6 +21,7 @@ on:
     - 'packages/plain_math/**'
     - 'packages/plain_typesetting/**'
     - 'packages/plain_svg/**'
+    - 'packages/plain_images/**'
     - '.github/workflows/plain_pdf.yml'
   workflow_dispatch:
 concurrency:

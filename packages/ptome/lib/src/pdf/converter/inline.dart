@@ -261,9 +261,7 @@ extension _InlineElements on PdfConverter {
             }
           : node.attr('format') ?? PdfConverter._imageFormat(target);
       List<int>? bytes;
-      if (format == 'gif') {
-        logger.warn('GIF image format not supported; convert $target to PNG');
-      } else if (data != null) {
+      if (data != null) {
         try {
           bytes = base64.decode(data[2]!);
         } on FormatException {

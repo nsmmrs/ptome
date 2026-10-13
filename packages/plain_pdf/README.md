@@ -29,8 +29,10 @@ fonts (TrueType and CFF outlines, or the WOFF and WOFF2 web fonts that wrap
 them) embedded as subsets, with kerning, `liga` ligatures and a ToUnicode
 map so text stays extractable. Reading and subsetting fonts is the
 [plain_fonts](https://github.com/nsmmrs/ptome/tree/master/packages/plain_fonts) package's work, and compression
-the [plain_compression](https://github.com/nsmmrs/ptome/tree/master/packages/plain_compression) package's. Images: JPEG,
-PNG of every kind; SVG images are the
+the [plain_compression](https://github.com/nsmmrs/ptome/tree/master/packages/plain_compression) package's. Images: any
+file the [plain_images](https://github.com/nsmmrs/ptome/tree/master/packages/plain_images) package reads (JPEG and
+PNG passing through where PDF shows them as they are; GIF, BMP and the
+rest decoded, palettes kept, alpha as a soft mask); SVG images are the
 [plain_svg](https://github.com/nsmmrs/ptome/tree/master/packages/plain_svg) package's, drawn on a PDF canvas as
 vector graphics (`PdfCanvas` is its `SvgCanvas`: groups, gradients and
 masks as forms, shadings and soft masks), with `standardSvgFont` and

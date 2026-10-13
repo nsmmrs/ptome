@@ -801,17 +801,17 @@ final class _Absolute implements CustomContent {
 }
 
 /// The platform's zlib (the Dart VM's), faster than plain_pdf's own.
-/// A PNG image's samples encoded as the PDF is saved with
-/// ([PngImage.encode]), from the file's [bytes].
-final class _PngEncoding extends Job<PngPayload> {
+/// An image's samples encoded as the PDF is saved with
+/// ([PdfImage.encode]), from the file's [bytes].
+final class _ImageEncoding extends Job<ImagePayload> {
   const new(this.bytes, {required this.nativeZlib});
 
   final Uint8List bytes;
   final bool nativeZlib;
 
   @override
-  PngPayload run() =>
-      PngImage.parse(bytes)
+  ImagePayload run() =>
+      PdfImage.parse(bytes)
           .encode(PdfConverter._writerOptions(nativeZlib: nativeZlib));
 }
 

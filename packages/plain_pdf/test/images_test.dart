@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
+import 'package:plain_images/plain_images.dart';
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:test/test.dart';
 
@@ -141,12 +142,14 @@ Raster render(Directory dir, Uint8List pdf) {
   return (w ~/ 4, h ~/ 4, out);
 }
 
-/// [path] as ImageMagick decodes it, composited on white.
-Raster reference(String path) {
+/// [path] as ImageMagick decodes it, composited on white (with
+/// [flatten], on its canvas: a GIF frame's offset).
+Raster reference(String path, {bool flatten = false}) {
   final result = Process.runSync(_magick!, [
     path,
     '-background',
     'white',
+    if (flatten) '-flatten',
     '-alpha',
     'remove',
     '-alpha',
@@ -173,7 +176,7 @@ Raster reference(String path) {
 }
 
 final List<File> _pngSuite =
-    Directory('test/images/pngsuite')
+    Directory('../plain_images/test/images/pngsuite')
         .listSync()
         .whereType<File>()
         .where((f) => f.path.endsWith('.png'))
@@ -217,6 +220,42 @@ void main() {
     }
   });
 
+  group('GIF and BMP', () {
+    late Directory dir;
+    setUpAll(() => dir = Directory.systemTemp.createTempSync('libpdf.'));
+    tearDownAll(() => dir.deleteSync(recursive: true));
+
+    for (final (folder, extension) in [('gif', '.gif'), ('bmp', '.bmp')]) {
+      final files =
+          Directory('../plain_images/test/images/$folder')
+              .listSync()
+              .whereType<File>()
+              .where((f) => f.path.endsWith(extension))
+              .toList()
+            ..sort((a, b) => a.path.compareTo(b.path));
+      for (final file in files) {
+        final name = _name(file);
+        // (ImageMagick expands 1- and 4-bit alpha wrongly; plain_images
+        // checks those bitmaps itself.)
+        if (name.startsWith('argb')) continue;
+        test(
+          '$name renders as decoded',
+          () {
+            final image = PdfImage.parse(file.readAsBytesSync());
+            final (mean, max) = difference(
+              render(dir, imagePdf(image)),
+              reference('${file.path}[0]', flatten: true),
+            );
+            expect(mean, lessThan(1), reason: 'mean difference');
+            expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
+          },
+          skip: _tools ? false : 'needs qpdf, pdftoppm and ImageMagick',
+          tags: ['pdf-tools'],
+        );
+      }
+    }
+  });
+
   group('JPEG', () {
     late Directory dir;
     setUpAll(() => dir = Directory.systemTemp.createTempSync('libpdf.'));
@@ -233,9 +272,9 @@ void main() {
       test(
         '$name passes through and renders as decoded',
         () {
-          final path = 'test/images/jpeg/$name.jpg';
+          final path = '../plain_images/test/images/jpeg/$name.jpg';
           final bytes = File(path).readAsBytesSync();
-          final image = PdfImage.parse(bytes) as JpegImage;
+          final image = PdfImage.parse(bytes);
           final pdf = imagePdf(image);
           expect(_contains(pdf, bytes), isTrue, reason: 'embedded as it is');
           // CMYK is compared with poppler's own rendering of the samples
@@ -252,52 +291,30 @@ void main() {
         tags: ['pdf-tools'],
       );
     }
-
-    test('frame header, Adobe segment and orientation are read', () {
-      JpegImage jpeg(String name) =>
-          JpegImage.parse(File('test/images/jpeg/$name.jpg').readAsBytesSync());
-      final gray = jpeg('gray');
-      expect((gray.width, gray.height, gray.components), (48, 32, 1));
-      expect(jpeg('rgb-baseline').progressive, isFalse);
-      expect(jpeg('rgb-progressive').progressive, isTrue);
-      expect(jpeg('cmyk').components, 4);
-      expect(jpeg('cmyk').adobe, isTrue);
-      expect(jpeg('rgb-baseline').orientation, 1);
-      expect(jpeg('exif-orientation-6').orientation, 6);
-    });
-  });
-
-  test('PNG chunks are read', () {
-    PngImage png(String name) => PngImage.parse(
-      File('test/images/pngsuite/$name.png').readAsBytesSync(),
-    );
-    final palette = png('basn3p04');
-    expect(palette.colorType, PngColorType.palette);
-    expect(palette.bitDepth, 4);
-    expect(png('basi6a16').interlaced, isTrue);
-    expect(png('tbrn2c08').transparency, isNotNull);
-    expect(png('exif2c08').orientation, 1);
   });
 
   test('an opaque PNG passes through without decoding', () {
-    final bytes = File('test/images/pngsuite/basn2c08.png').readAsBytesSync();
-    final image = PngImage.parse(bytes);
+    final bytes = File('../plain_images/test/images/pngsuite/basn2c08.png')
+        .readAsBytesSync();
+    final image = PdfImage.parse(bytes);
     final pdf = latin1.decode(imagePdf(image));
     expect(pdf, contains('/Predictor 15'));
     expect(pdf, isNot(contains('/SMask')));
-    expect(_contains(imagePdf(image), image.data), isTrue);
+    expect(_contains(imagePdf(image), (image.file as PngFile).data), isTrue);
   });
 
   test('alpha becomes a soft mask', () {
-    final image = PngImage.parse(
-      File('test/images/pngsuite/basn6a08.png').readAsBytesSync(),
+    final image = PdfImage.parse(
+      File('../plain_images/test/images/pngsuite/basn6a08.png')
+          .readAsBytesSync(),
     );
     expect(latin1.decode(imagePdf(image)), contains('/SMask'));
   });
 
   test('uncompressed output carries the samples as they are', () {
-    final image = PngImage.parse(
-      File('test/images/pngsuite/basi0g08.png').readAsBytesSync(),
+    final image = PdfImage.parse(
+      File('../plain_images/test/images/pngsuite/basi0g08.png')
+          .readAsBytesSync(),
     );
     final pdf = latin1.decode(
       imagePdf(
@@ -316,23 +333,25 @@ void main() {
   test('a payload encoded elsewhere writes the same bytes', () {
     for (final name in ['basn6a08', 'basi0g08', 'tbbn3p08']) {
       List<int> bytes() =>
-          File('test/images/pngsuite/$name.png').readAsBytesSync();
-      final image = PngImage.parse(Uint8List.fromList(bytes()));
+          File('../plain_images/test/images/pngsuite/$name.png')
+              .readAsBytesSync();
+      final image = PdfImage.parse(Uint8List.fromList(bytes()));
       expect(image.reencodes, isTrue, reason: name);
       const options = PdfWriterOptions(deterministic: true);
       final reference = imagePdf(image, options: options);
-      final other = PngImage.parse(Uint8List.fromList(bytes()))
-        ..payload = PngImage.parse(Uint8List.fromList(bytes())).encode(options);
+      final other = PdfImage.parse(Uint8List.fromList(bytes()))
+        ..payload = PdfImage.parse(Uint8List.fromList(bytes())).encode(options);
       expect(imagePdf(other, options: options), reference, reason: name);
       // A payload for other compression isn't used.
-      final stale = PngImage.parse(Uint8List.fromList(bytes()))
-        ..payload = PngImage.parse(Uint8List.fromList(bytes()))
+      final stale = PdfImage.parse(Uint8List.fromList(bytes()))
+        ..payload = PdfImage.parse(Uint8List.fromList(bytes()))
             .encode(const PdfWriterOptions(compress: false));
       expect(imagePdf(stale, options: options), reference, reason: name);
     }
     expect(
-      PngImage.parse(
-        File('test/images/pngsuite/basn2c08.png').readAsBytesSync(),
+      PdfImage.parse(
+        File('../plain_images/test/images/pngsuite/basn2c08.png')
+            .readAsBytesSync(),
       ).reencodes,
       isFalse,
     );
@@ -341,6 +360,10 @@ void main() {
   test('anything else is not an image', () {
     expect(
       () => PdfImage.parse(Uint8List.fromList(ascii.encode('GIF89a'))),
+      throwsA(isA<ImageFormatException>()),
+    );
+    expect(
+      () => PdfImage.parse(Uint8List.fromList(ascii.encode('not an image'))),
       throwsA(isA<ImageFormatException>()),
     );
   });

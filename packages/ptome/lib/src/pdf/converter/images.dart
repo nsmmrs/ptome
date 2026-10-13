@@ -103,25 +103,22 @@ extension _Images on PdfConverter {
         null,
       );
     } on FormatException catch (error) {
-      return (null, error.message);
-    } on ImageFormatException catch (error) {
+      // (An image file plain_images can't read is one too.)
       return (null, error.message);
     }
   }
 
   /// The image in [bytes], its samples encoded on another core when the
   /// conversion is awaited and writing it encodes them (a PNG with alpha,
-  /// say): the worker gets the file's bytes and gives back the streams
-  /// the save would make (or nothing, and the save makes them).
+  /// a GIF, say): the worker gets the file's bytes and gives back the
+  /// streams the save would make (or nothing, and the save makes them).
   PdfImage _encodingElsewhere(Uint8List bytes) {
     final image = PdfImage.parse(bytes);
     final parallel = _parallel;
-    if (parallel == null || image is! PngImage || !image.reencodes) {
-      return image;
-    }
+    if (parallel == null || !image.reencodes) return image;
     _awaiting.add(
       parallel
-          .submit(_PngEncoding(bytes, nativeZlib: io.hasNativeZlib))
+          .submit(_ImageEncoding(bytes, nativeZlib: io.hasNativeZlib))
           .then<void>(
             (payload) => image.payload = payload,
             onError: (Object _) {},
@@ -238,9 +235,7 @@ extension _Images on PdfConverter {
       }
     }
     List<int>? bytes;
-    if (format == 'gif') {
-      logger.warn('GIF image format not supported; convert $target to PNG');
-    } else if (format == 'pdf' && data == null) {
+    if (format == 'pdf' && data == null) {
       // (A PDF file that isn't there: its alt text, as a missing image's.)
       if (_insertPdf(node, target)) return;
     } else if (data != null) {

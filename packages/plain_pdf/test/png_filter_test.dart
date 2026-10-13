@@ -3,7 +3,7 @@
 import 'dart:math' as math;
 import 'dart:typed_data';
 
-import 'package:plain_pdf/src/images/png_decode.dart';
+import 'package:plain_pdf/src/images/png_filter.dart';
 import 'package:test/test.dart';
 
 /// The heuristic as the specification puts it (12.8): each filter's

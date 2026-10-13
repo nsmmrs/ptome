@@ -3,7 +3,8 @@
 /// The object layer: the PDF object model (`PdfObject` and its kinds) and a
 /// `PdfWriter` that writes a file with cross-reference tables or streams
 /// (compressed by the plain_compression package). Fonts (`PdfFont`, read by the
-/// plain_fonts package) and images (`PdfImage`). The drawing layer: a
+/// plain_fonts package) and images (`PdfImage`, from any image file the
+/// plain_images package reads). The drawing layer: a
 /// `PdfDocument` of pages drawn on `PdfCanvas`es, with links, destinations,
 /// outlines and page labels. The canvas, pages and fonts implement
 /// plain_typesetting's interfaces, so its layouts make PDF pages.
@@ -31,14 +32,7 @@ export 'src/drawing/document.dart'
 export 'src/drawing/shading.dart'
     show AxialShading, GradientStop, PdfShading, RadialShading;
 export 'src/fonts/fonts.dart' show EmbeddedFont, PdfFont, StandardFont;
-export 'src/images/images.dart'
-    show
-        ImageFormatException,
-        JpegImage,
-        PdfImage,
-        PngColorType,
-        PngImage,
-        PngPayload;
+export 'src/images/images.dart' show ImagePayload, PdfImage;
 export 'src/objects.dart'
     show
         PdfArray,

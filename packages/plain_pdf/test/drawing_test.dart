@@ -607,7 +607,8 @@ void main() {
 
   test('images are placed into a rectangle', () {
     final png = PdfImage.parse(
-      File('test/images/pngsuite/basn2c08.png').readAsBytesSync(),
+      File('../plain_images/test/images/pngsuite/basn2c08.png')
+          .readAsBytesSync(),
     );
     final pdf = saved(page((c) => c.image(png, const Rect(10, 10, 64, 64))));
     final image = render(pdf);

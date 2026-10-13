@@ -26,17 +26,6 @@ enum PageNumberStyle
   static PageNumberStyle none
   static PageNumberStyle upperLetters
   static PageNumberStyle upperRoman
-enum PngColorType
-  List<int> bitDepths
-  bool hasAlpha
-  int channels
-  int code
-  static List<PngColorType> values
-  static PngColorType gray
-  static PngColorType grayAlpha
-  static PngColorType palette
-  static PngColorType rgb
-  static PngColorType rgba
 enum SoftMaskKind
   String pdfName
   static List<SoftMaskKind> values
@@ -90,10 +79,17 @@ final class GradientStop
   Color color
   GradientStop(double offset, Color color)
   double offset
-final class ImageFormatException implements Exception
-  ImageFormatException(String message)
-  String message
-  String toString()
+final class ImagePayload
+  ColorModel colorModel
+  ImagePayload({required bool compress, required int level, required ColorModel colorModel, required int bitDepth, required Uint8List color, Uint8List? palette, List<int>? colorKey, Uint8List? alpha, int alphaDepth = 8})
+  List<int>? colorKey
+  Uint8List color
+  Uint8List? alpha
+  Uint8List? palette
+  bool compress
+  int alphaDepth
+  int bitDepth
+  int level
 final class ImportedPage implements Graphic
   Matrix placement(Rect rect)
   PdfFile file
@@ -105,17 +101,6 @@ final class ImportedPage implements Graphic
   double intrinsicWidth
   int rotation
   void paint(Canvas canvas, Rect rect)
-final class JpegImage extends PdfImage
-  JpegImage.parse(Uint8List bytes)
-  Uint8List bytes
-  bool adobe
-  bool progressive
-  int bitsPerComponent
-  int components
-  int height
-  int orientation
-  int width
-  void writeTo(PdfWriter writer)
 final class PageLabel
   PageLabel({PageNumberStyle style = PageNumberStyle.decimal, String? prefix, int start = 1})
   PageNumberStyle style
@@ -220,6 +205,22 @@ final class PdfFormatException implements Exception
   PdfFormatException(String message)
   String message
   String toString()
+final class PdfImage implements Graphic
+  ImageFile file
+  ImagePayload encode(PdfWriterOptions options)
+  ImagePayload? payload (settable)
+  PdfImage(ImageFile file)
+  PdfImage.parse(Uint8List bytes)
+  PdfRef reference(PdfWriter writer)
+  bool reencodes
+  double intrinsicHeight
+  double intrinsicWidth
+  int bitsPerComponent
+  int height
+  int orientation
+  int width
+  void paint(Canvas canvas, Rect rect)
+  void writeTo(PdfWriter writer)
 final class PdfInfo
   List<String> contributors
   PdfInfo({String? title, String? author, String? subject, String? keywords, String? creator, String? producer, bool? trapped, String? pdfxVersion, String? identifier, List<String> contributors = const [], String? rights, int? pdfuaPart})
@@ -327,22 +328,6 @@ final class PdfWriterOptions
   bool compress
   bool deterministic
   int compressionLevel
-final class PngImage extends PdfImage
-  ({Uint8List? alpha, int alphaDepth, Uint8List color, bool compress, int level}) encode(PdfWriterOptions options)
-  ({Uint8List? alpha, int alphaDepth, Uint8List color, bool compress, int level})? payload (settable)
-  PngColorType colorType
-  PngImage.parse(Uint8List bytes)
-  Uint8List data
-  Uint8List? iccProfile
-  Uint8List? palette
-  Uint8List? transparency
-  bool interlaced
-  bool reencodes
-  int bitDepth
-  int height
-  int orientation
-  int width
-  void writeTo(PdfWriter writer)
 final class RadialShading extends PdfShading
   RadialShading(double fx, double fy, double fr, double cx, double cy, double r, List<GradientStop> stops, {bool extendStart = true, bool extendEnd = true})
   double cx
@@ -389,16 +374,6 @@ sealed class PdfFont implements Font
   PdfRef reference(PdfWriter writer)
   double widthOf(String text, double size, {bool kerning = true})
   void writeTo(PdfWriter writer)
-sealed class PdfImage implements Graphic
-  PdfImage.parse(Uint8List bytes)
-  PdfRef reference(PdfWriter writer)
-  double intrinsicHeight
-  double intrinsicWidth
-  int height
-  int orientation
-  int width
-  void paint(Canvas canvas, Rect rect)
-  void writeTo(PdfWriter writer)
 sealed class PdfObject
   PdfObject()
   String toString()
@@ -408,5 +383,4 @@ sealed class PdfShading
   List<GradientStop> stops
   bool extendEnd
   bool extendStart
-typedef PngPayload = ({Uint8List? alpha, int alphaDepth, Uint8List color, bool compress, int level})
 typedef StreamPayload = ({bool compress, Uint8List? data, int length, int level})

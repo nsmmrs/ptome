@@ -41,12 +41,7 @@ PdfFont? standardSvgFont(
   return StandardFont.named(name);
 }
 
-/// The JPEG or PNG image in [bytes] for an SVG's `<image>` (a plain_svg
-/// `SvgRasterReader`); throws a [FormatException] when it isn't one.
-PdfImage readSvgRaster(Uint8List bytes) {
-  try {
-    return PdfImage.parse(bytes);
-  } on ImageFormatException catch (error) {
-    throw FormatException(error.message);
-  }
-}
+/// The raster image in [bytes] for an SVG's `<image>` (a plain_svg
+/// `SvgRasterReader`); throws a [FormatException] when it isn't one
+/// plain_images reads.
+PdfImage readSvgRaster(Uint8List bytes) => PdfImage.parse(bytes);
