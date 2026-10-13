@@ -49,7 +49,7 @@ Uint8List subsetTrueType(OpenTypeFont font, Set<int> glyphs) {
   loca.setUint32(4 * font.numGlyphs, glyf.length);
 
   final head = Uint8List.fromList(font.table('head')!);
-  final headView = ByteData.sublistView(head)
+  ByteData.sublistView(head)
     ..setUint32(8, 0) // checkSumAdjustment, set below
     ..setInt16(50, 1); // long loca offsets
 
@@ -60,8 +60,14 @@ Uint8List subsetTrueType(OpenTypeFont font, Set<int> glyphs) {
     'head': head,
   };
   final file = assembleFont(tables);
-  headView.setUint32(8, (0xb1b0afba - _checksum(file)) & 0xffffffff);
-  return assembleFont(tables);
+  // (The deliberate fix of BUG-l0xsy5, 36d2dbc4, ported: the head
+  // table's checksum is taken with the adjustment 0, and only the
+  // adjustment goes into the file.)
+  final adjustment = (0xb1b0afba - _checksum(file)) & 0xffffffff;
+  final view = ByteData.sublistView(file);
+  final record = 12 + 16 * (tables.keys.toList()..sort()).indexOf('head');
+  view.setUint32(view.getUint32(record + 8) + 8, adjustment);
+  return file;
 }
 
 /// A font file with [tables] (sorted by tag) and a table directory, of
