@@ -10,6 +10,18 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: the last text the modern engine left to the text box is the
+  engine's too (FEAT-1kwk5y): an abstract's first line in its own style
+  (broken by the engine, then transformed and shrunk to fit as before),
+  drops and first lines on paragraphs with notes numbered by page, table
+  cells with lines from their cap heights, and spans of a fixed width.
+  Checked against the previous build on 1,079 documents and 12 fixtures:
+  all the same but two, where the text box was wrong. A span of a fixed
+  width holding several words is one slot of that width, its text
+  centered as its markup says (the box overprinted its words and lost
+  some), and a note referred to in a transformed first line is set and
+  numbered (the box left it out). A justified first line that a hard
+  break ends is no longer stretched.
 - PDF: a right-to-left document's contents and running content as before
   the engine set them: each entry's dots from the title to its page number
   at the left, and the running heads and feet on the page's own sides

@@ -240,8 +240,9 @@ final class Paragraph {
   /// The alignment.
   final TextAlign align;
 
-  /// The alignment of a justified paragraph's lines that aren't stretched:
-  /// its last, and those ending in a hard break (CSS's `text-align-last`).
+  /// The alignment of a justified paragraph's last line and those ending
+  /// in a hard break (CSS's `text-align-last`): [TextAlign.justify]
+  /// stretches them too.
   final TextAlign alignLast;
 
   /// How far a line's end characters hang into the margin, as a share of
@@ -1376,6 +1377,14 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     }
   }
   flush();
+  // (A paragraph that ends in a soft hyphen, a line set apart from the
+  // rest of its last word: the hyphen shown, as a line hyphenated there
+  // shows it.)
+  if (softHyphen && lastRun != null) {
+    final run = lastRun;
+    final mark = run.style.font.covers(0xad) ? '\u00ad' : '-';
+    items.add(BoxItem(run, mark, run.style.measure('-')));
+  }
   if (items.isEmpty) return items;
   _measureWithinWords(items);
   items
@@ -1837,7 +1846,11 @@ List<Line> buildLines(
         math.min(widths(number), widest) - indent,
         // (A right-to-left paragraph's indents at its right.)
         (paragraph.rightToLeft ? 0 : indent) + (offsets?.call(number) ?? 0),
-        justify: paragraph.align == TextAlign.justify && !last,
+        // (The last line, and those before a hard break, justified too
+        // where alignLast says so, as CSS's `text-align-last: justify`.)
+        justify:
+            paragraph.align == TextAlign.justify &&
+            (!last || paragraph.alignLast == TextAlign.justify),
         emptyRun: emptyRun,
         expansion: expansion,
         end: number == breaks.length - 1,

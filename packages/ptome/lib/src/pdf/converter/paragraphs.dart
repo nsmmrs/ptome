@@ -51,7 +51,8 @@ extension _Paragraphs on PdfConverter {
                 .abs() >
             1e-9 ||
         (layout.paddingBottom - layout.leading / 2).abs() > 1e-9 ||
-        layout.trailingLineGap;
+        layout.trailingLineGap ||
+        layout.finalGap;
     return Paragraph(
       runs,
       hangIndent: hangIndent,
@@ -69,14 +70,23 @@ extension _Paragraphs on PdfConverter {
               endDepth: ownEnd
                   ? face.descenderAt(size) +
                         layout.paddingBottom +
-                        (layout.trailingLineGap ? face.lineGapAt(size) : 0)
+                        (layout.trailingLineGap ? face.lineGapAt(size) : 0) +
+                        // (The space a line with more after it keeps under
+                        // it: its line gap and the leading.)
+                        (layout.finalGap
+                            ? face.lineGapAt(size) + layout.leading
+                            : 0)
                   : null,
             ),
       firstLineIndent: layout.indentFirstLine,
       strut: layout.normalizeLineHeight ? TextStyle(engineFont, size) : null,
       // (`base_text_align_last`: a justified paragraph's last line, and
       // those before a hard break.)
-      alignLast: _aligned(layout.alignLast, mirrored: layout.mirrored),
+      // (A line forced to justify, a first line set apart with more after
+      // it, justified as the lines before the last are.)
+      alignLast: layout.forceJustify && layout.align == 'justify'
+          ? TextAlign.justify
+          : _aligned(layout.alignLast, mirrored: layout.mirrored),
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
       justifyToWidest: layout.justifyWidest,
@@ -147,21 +157,25 @@ extension _Paragraphs on PdfConverter {
             layout.lineInsets.isEmpty) {
       return _engineCodeOf(box, wrapIndent);
     }
-    if (layout.finalGap ||
-        layout.forceJustify ||
-        layout.wrapIndent != null ||
-        layout.dropLines > 0 ||
-        layout.lineInsets.isNotEmpty ||
-        (layout.capLines && layout.trailingLineGap)) {
+    if (layout.wrapIndent != null || layout.lineInsets.isNotEmpty) {
       return null;
     }
+    // (A drop beside its first lines, where the text starts: those lines
+    // set in by its width, as the box sets them.)
+    final dropped = box.first && layout.dropLines > 0;
+    Paragraph paragraphOf(List<InlineContent> runs) => _engineParagraphOf(
+      box,
+      runs,
+      hangIndent: dropped ? layout.dropIndent : 0,
+      hangLines: dropped ? layout.dropLines : 0,
+    );
     // (With an image a share of the width: the paragraph at each width.)
     if (box.hasRelativeImages) {
       ParagraphContent? at(double width) {
         final runs = box.engineContent(width: width);
         if (runs == null || runs.isEmpty) return null;
         return ParagraphContent(
-          _engineParagraphOf(box, runs),
+          paragraphOf(runs),
           lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
           orphans: layout.orphans,
           widows: layout.widows,
@@ -174,7 +188,7 @@ extension _Paragraphs on PdfConverter {
     final runs = box.engineContent();
     if (runs == null || runs.isEmpty) return null;
     return ParagraphContent(
-      _engineParagraphOf(box, runs),
+      paragraphOf(runs),
       lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
       orphans: layout.orphans,
       widows: layout.widows,
@@ -640,7 +654,7 @@ extension _Paragraphs on PdfConverter {
           align: align,
           indent: indent,
           singleLine: true,
-        ).boxOnly,
+        ),
         box.state,
         box.layout,
         transform: firstLineTransform,

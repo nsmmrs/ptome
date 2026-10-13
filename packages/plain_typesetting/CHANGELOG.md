@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `ParagraphContent.textTaken`: how much of a paragraph's text its first
+  lines take (in its runs' text), whether a hard break ends them and
+  whether a hyphen does, for setting a first line apart.
+  `Paragraph.alignLast: TextAlign.justify` stretches the last line (and
+  those before a hard break) as CSS's `text-align-last: justify` does; a
+  paragraph that ends in a soft hyphen shows it, as a line hyphenated
+  there does.
 - A line with right-to-left text keeps the runs that carry only an
   anchor (a footnote's reference), which reordering lost, and reports
   its anchors in reading order (`Line.readingOrder`,

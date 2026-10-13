@@ -538,7 +538,7 @@ extension _Framed on PdfConverter {
                           indent: indent,
                           singleLine: true,
                           hyphenate: true,
-                        ).boxOnly,
+                        ),
                         box.state,
                         box.layout,
                         transform: transform,

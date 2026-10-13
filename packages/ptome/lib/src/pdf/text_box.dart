@@ -100,19 +100,30 @@ final class TextLayout {
   final List<(double, double)> lineInsets;
 
   /// This layout with [insets] taken from its lines' widths.
-  TextLayout withLineInsets(List<(double, double)> insets) => TextLayout(
+  TextLayout withLineInsets(List<(double, double)> insets) =>
+      copyWith(lineInsets: insets);
+
+  /// This layout with the values given instead of its own.
+  TextLayout copyWith({
+    double? paddingBottom,
+    bool? finalGap,
+    bool? singleLine,
+    bool? shrinkToFit,
+    bool? forceJustify,
+    List<(double, double)>? lineInsets,
+  }) => TextLayout(
     align: align,
     mirrored: mirrored,
     leading: leading,
     initialGap: initialGap,
-    paddingBottom: paddingBottom,
-    finalGap: finalGap,
+    paddingBottom: paddingBottom ?? this.paddingBottom,
+    finalGap: finalGap ?? this.finalGap,
     trailingLineGap: trailingLineGap,
-    singleLine: singleLine,
-    shrinkToFit: shrinkToFit,
+    singleLine: singleLine ?? this.singleLine,
+    shrinkToFit: shrinkToFit ?? this.shrinkToFit,
     indentFirstLine: indentFirstLine,
     normalizeLineHeight: normalizeLineHeight,
-    forceJustify: forceJustify,
+    forceJustify: forceJustify ?? this.forceJustify,
     orphans: orphans,
     widows: widows,
     wrapIndent: wrapIndent,
@@ -125,7 +136,7 @@ final class TextLayout {
     alignLast: alignLast,
     dropLines: dropLines,
     dropIndent: dropIndent,
-    lineInsets: insets,
+    lineInsets: lineInsets ?? this.lineInsets,
   );
 
   /// How many lines at the start of the text are set [dropIndent] in, to
@@ -620,8 +631,21 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     double available, {
     required bool atTop,
   }) {
+    // (A single line: the first alone, what doesn't fit on it left out, as
+    // the box lays out only one; shrunk until nothing is, where it
+    // shrinks.)
     CustomPlacement? once(CustomContent content) {
-      final placed = content.place(width, available, atTop: atTop);
+      if (_layout.singleLine && content is LinedContent) {
+        if (content.lineCount(width) == 0) {
+          return content.place(width, available, atTop: atTop);
+        }
+        if (!atTop && content.linesThatFit(width, available) < 1) return null;
+        return content.placeLines(width, 1);
+      }
+      return content.place(width, available, atTop: atTop);
+    }
+
+    CustomPlacement? single(CustomPlacement? placed) {
       if (placed == null || !_layout.singleLine || placed.rest == null) {
         return placed;
       }
@@ -633,13 +657,15 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       );
     }
 
-    if (!_layout.shrinkToFit) return once(engine);
+    if (!_layout.shrinkToFit) return single(once(engine));
     var box = this;
     var content = engine;
     var size = _state.size;
     while (true) {
       final placed = once(content);
-      if (size <= 5 || (placed != null && placed.rest == null)) return placed;
+      if (size <= 5 || (placed != null && placed.rest == null)) {
+        return single(placed);
+      }
       size = math.max(size - 0.5, 5);
       box = box.resized(size);
       final next = box._engine;
@@ -700,11 +726,19 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// raised or lowered as this box sets it. Null when the text has what
   /// a run can't carry yet (an inline image or formula, a background or
   /// border, small capitals the font lacks), for the box to set it.
-  List<InlineContent>? engineContent({double width = double.infinity}) {
+  List<InlineContent>? engineContent({double width = double.infinity}) =>
+      _engineRuns(width: width)?.runs;
+
+  /// [engineContent], and where each character of each run comes from: its
+  /// item and the offset in the item's text.
+  ({List<InlineContent> runs, List<List<(int, int)>> sources})? _engineRuns({
+    double width = double.infinity,
+  }) {
     final runs = <InlineContent>[];
+    final sources = <List<(int, int)>>[];
     final images = _context.images;
     int? lastImage;
-    for (final item in _items) {
+    for (final (index, item) in _items.indexed) {
       var format = item.format;
       final fragment = format.fragment;
       // (An inline image or formula, which the box arranges as it lays out
@@ -747,12 +781,13 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           (decorated && (fragment.borderOffset ?? 0) != 0);
       // (A padded span of words and spaces: each word padded in a slot of
       // its own, the spaces between as they are, as the box pads its
-      // words; a fixed width of words and spaces stays the box's.)
+      // words. A fixed width is the whole span's: one slot, its words and
+      // spaces in it.)
       final spaced =
           slotted &&
+          fragment.width == null &&
           item.text.trim().isNotEmpty &&
           item.text.contains(_boxSpaces);
-      if (spaced && fragment.width != null) return null;
       final font = format.font;
       final rise = format.typographic
           ? 0.0
@@ -775,71 +810,88 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       };
       if (format.image case final image?) {
         runs.add(_engineImage(image, format, link));
+        sources.add(const []);
         continue;
       }
-      TextRun run(String text, {required bool slot}) => TextRun(
-        // (A destination marker's placeholder isn't drawn, as the box
-        // doesn't draw it: its anchor alone; nor is one a template left
-        // in the text, a NUL.)
-        // (A slot is never broken: no soft hyphens in it.)
-        fragment.isMarker
-            ? ''
-            : slot
-            ? text.replaceAll(RegExp('[\u0000\u00ad]'), '')
-            : text.replaceAll('\u0000', ''),
-        TextStyle(
-          font.pdf,
-          format.size,
-          characterSpacing: _state.characterSpacing + format.tracking,
-          wordSpacing: _context.wordSpace == 1
-              ? 0
-              : (_context.wordSpace - 1) *
-                    TextStyle(font.pdf, format.size).measure(' '),
-          rise: rise,
-          kerning: _state.kerning,
-          ligatures: font.ligates,
-          features: format.features,
-          skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
-          embolden: font.emboldened ? format.size / 40 : 0,
-        ),
-        color: _pdfColor(fragment.color),
-        artifact: fragment.artifact,
-        slotWidth: slot ? _slotWidth(text, format) : null,
-        slotAlign:
-            (fragment.callbacks?.contains(FragmentCallback.inlineTextAligner) ??
-                false)
-            ? switch (fragment.align) {
-                'center' => TextAlign.center,
-                'right' => TextAlign.right,
-                _ => TextAlign.left,
-              }
-            : TextAlign.left,
-        underline: styles.contains(FragmentStyle.underline),
-        strikethrough: styles.contains(FragmentStyle.strikethrough),
-        link: link,
-        anchor: fragment.isMarker ? fragment.name : null,
-        // (A marker's anchor at the baseline, as the box reports it, but
-        // a side note's, at the top of its text where the note goes.)
-        anchorOnBaseline:
-            fragment.isMarker &&
-            !(fragment.name?.startsWith(sideNoteAnchorPrefix) ?? false),
-        decoration: decorated
-            ? InlineDecoration(
-                background: _pdfColor(fragment.backgroundColor),
-                borderColor: _pdfColor(fragment.borderColor),
-                borderWidth: (fragment.borderWidth ?? 0).toDouble(),
-                radius: (fragment.borderRadius ?? 0).toDouble(),
-                outset: (fragment.borderOffset ?? 0).toDouble(),
-              )
-            : null,
-      );
+      // (A destination marker's placeholder isn't drawn, as the box
+      // doesn't draw it: its anchor alone; nor is one a template left in
+      // the text, a NUL. A slot is never broken: no soft hyphens in it.)
+      TextRun textRun(String text, {required bool slot, required String raw}) =>
+          TextRun(
+            text,
+            TextStyle(
+              font.pdf,
+              format.size,
+              characterSpacing: _state.characterSpacing + format.tracking,
+              wordSpacing: _context.wordSpace == 1
+                  ? 0
+                  : (_context.wordSpace - 1) *
+                        TextStyle(font.pdf, format.size).measure(' '),
+              rise: rise,
+              kerning: _state.kerning,
+              ligatures: font.ligates,
+              features: format.features,
+              skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
+              embolden: font.emboldened ? format.size / 40 : 0,
+            ),
+            color: _pdfColor(fragment.color),
+            artifact: fragment.artifact,
+            slotWidth: slot ? _slotWidth(raw, format) : null,
+            // (Aligned in its slot as it asks: a fixed width's text
+            // centered, as its markup says.)
+            slotAlign:
+                (fragment.callbacks?.contains(
+                          FragmentCallback.inlineTextAligner,
+                        ) ??
+                        false) ||
+                    fragment.width != null
+                ? switch (fragment.align) {
+                    'center' => TextAlign.center,
+                    'right' => TextAlign.right,
+                    _ => TextAlign.left,
+                  }
+                : TextAlign.left,
+            underline: styles.contains(FragmentStyle.underline),
+            strikethrough: styles.contains(FragmentStyle.strikethrough),
+            link: link,
+            anchor: fragment.isMarker ? fragment.name : null,
+            // (A marker's anchor at the baseline, as the box reports it, but
+            // a side note's, at the top of its text where the note goes.)
+            anchorOnBaseline:
+                fragment.isMarker &&
+                !(fragment.name?.startsWith(sideNoteAnchorPrefix) ?? false),
+            decoration: decorated
+                ? InlineDecoration(
+                    background: _pdfColor(fragment.backgroundColor),
+                    borderColor: _pdfColor(fragment.borderColor),
+                    borderWidth: (fragment.borderWidth ?? 0).toDouble(),
+                    radius: (fragment.borderRadius ?? 0).toDouble(),
+                    outset: (fragment.borderOffset ?? 0).toDouble(),
+                  )
+                : null,
+          );
+      TextRun run(String raw, int start, {required bool slot}) {
+        final kept = StringBuffer();
+        final from = <(int, int)>[];
+        if (!fragment.isMarker) {
+          for (var i = 0; i < raw.length; i++) {
+            final unit = raw.codeUnitAt(i);
+            if (unit == 0 || (slot && unit == 0xad)) continue;
+            kept.writeCharCode(unit);
+            from.add((index, start + i));
+          }
+        }
+        sources.add(from);
+        return textRun(kept.toString(), slot: slot, raw: raw);
+      }
+
       if (spaced) {
         for (final piece in _boxTokens.allMatches(item.text)) {
           final text = piece[0]!;
-          runs.add(run(text, slot: !_boxSpaces.hasMatch(text)));
+          runs.add(run(text, piece.start, slot: !_boxSpaces.hasMatch(text)));
         }
       } else {
-        runs.add(run(item.text, slot: slotted));
+        runs.add(run(item.text, 0, slot: slotted));
       }
     }
     // (The paragraph starts at its first character: spaces before it,
@@ -851,6 +903,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       if (run.anchor != null) continue;
       // (ASCII spaces: a no-break space, a listing's indentation, stays.)
       final trimmed = run.text.replaceFirst(RegExp('^[ \t\r\f\v]+'), '');
+      sources[i] = sources[i].sublist(run.text.length - trimmed.length);
       if (trimmed.isEmpty) {
         runs[i] = run.withText('');
         continue;
@@ -858,7 +911,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       runs[i] = run.withText(trimmed);
       break;
     }
-    return runs;
+    return (runs: runs, sources: sources);
   }
 
   /// This (left over) text in [state] and laid out by [layout] (the rest
@@ -1739,6 +1792,75 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               first: false,
               continuedIndent: wrap.continuedIndent,
             ),
+    );
+  }
+
+  /// [splitFirstLine] as the engine breaks the text, where it sets it: the
+  /// first line's fragments, what follows (null when nothing does), and
+  /// whether the line ends at a hard break. Null where the engine doesn't
+  /// set the text as one paragraph.
+  (List<Fragment>, TextBox?, bool)? engineSplitFirstLine(double width) {
+    final engine = _engine;
+    if (engine is! ParagraphContent) return null;
+    final built = _engineRuns();
+    if (built == null) return null;
+    final lines = engine.linesAt(width);
+    final taken = lines.length < 2 ? null : engine.textTaken(width, 1);
+    if (lines.length >= 2 && taken == null) return null;
+    // (Where the first line ends in the items: the item and the offset in
+    // its text.)
+    var cutItem = _items.length;
+    var cutAt = 0;
+    if (taken != null) {
+      var remaining = taken.length;
+      for (final (r, run) in built.runs.indexed) {
+        final length = run is TextRun ? run.text.length : 0;
+        if (remaining < length) {
+          (cutItem, cutAt) = built.sources[r][remaining];
+          break;
+        }
+        remaining -= length;
+      }
+    }
+    final head = <Fragment>[
+      for (final (i, item) in _items.indexed)
+        if (i < cutItem)
+          item.format.fragment.copy(text: item.text)
+        else if (i == cutItem && cutAt > 0)
+          item.format.fragment.copy(text: item.text.substring(0, cutAt)),
+    ];
+    // (The spaces it breaks at are neither its nor the rest's.)
+    while (head.isNotEmpty) {
+      final text = _rstrip(head.last.text);
+      if (text.isNotEmpty || head.last.isMarker) {
+        head.last = head.last.copy(text: text);
+        break;
+      }
+      head.removeLast();
+    }
+    if (cutItem >= _items.length) return (head, null, false);
+    final rest = [
+      _items[cutItem].copy(text: _items[cutItem].text.substring(cutAt)),
+      for (final item in _items.skip(cutItem + 1)) item.copy(),
+    ];
+    // (A hard break ending the line: the rest after it.)
+    final forced = taken?.forced ?? false;
+    while (rest.isNotEmpty) {
+      final text = forced
+          ? rest.first.text.replaceFirst(RegExp(r'^[ \t]*\n?'), '')
+          : _lstrip(rest.first.text);
+      if (text.isNotEmpty || rest.first.format.fragment.isMarker) {
+        rest.first.text = text;
+        break;
+      }
+      rest.removeAt(0);
+    }
+    return (
+      head,
+      rest.isEmpty
+          ? null
+          : TextBox._(rest, _state, _layout, _context, first: false),
+      forced,
     );
   }
 
@@ -2950,7 +3072,7 @@ final class FirstLineTextBox implements BaselineContent {
   /// [first] (laid out with a single line) followed by its rest in
   /// [state], laid out by [layout] (without the initial gap right after
   /// the first line, with it on later pages).
-  const new(this.first, this.state, this.layout, {this.transform});
+  new(this.first, this.state, this.layout, {this.transform});
 
   /// The text in the first line's style, laid out a single line.
   final TextBox first;
@@ -2965,15 +3087,73 @@ final class FirstLineTextBox implements BaselineContent {
   /// The layout of the lines after the first.
   final TextLayout layout;
 
+  /// [first] set by this converter's text box alone.
+  late final TextBox _box = first.boxOnly;
+
+  /// The first line as the engine breaks the text, where it sets it: the
+  /// line (transformed, shrunk to fit, as the box sets it), and what
+  /// follows it in the first line's style.
+  (TextBox, TextBox?)? _engineHead(double width) {
+    if (first._context.engine == null) return null;
+    first._relabel();
+    final key = (width, first._labelState());
+    final heads = _heads;
+    if (heads.containsKey(key)) return heads[key];
+    final split = first.engineSplitFirstLine(width);
+    if (split == null) return heads[key] = null;
+    final (fragments, rest, forced) = split;
+    final line = first.layout;
+    final more = rest != null;
+    final head = TextBox(
+      [
+        for (final fragment in fragments)
+          if (transform case final transform?)
+            fragment.copy(text: transformText(fragment.text, transform))
+          else
+            fragment,
+      ],
+      first.state,
+      line.copyWith(
+        paddingBottom: more ? 0 : line.paddingBottom,
+        finalGap: more || line.finalGap,
+        singleLine: true,
+        shrinkToFit: transform != null,
+        // (A line with more after it is justified as the text is, where
+        // the text justifies and no hard break ends it.)
+        forceJustify: more && line.align == 'justify' && !forced,
+      ),
+      first._context,
+    );
+    return heads[key] = (head, rest);
+  }
+
+  final Map<(double, String), (TextBox, TextBox?)?> _heads = {};
+
   @override
   CustomPlacement? place(
     double width,
     double available, {
     required bool atTop,
   }) {
-    final head = transform == null
-        ? first.place(width, available, atTop: atTop)
-        : _transformedFirstLine(width, available, atTop: atTop);
+    final engine = _engineHead(width);
+    final CustomPlacement? placedHead;
+    if (engine case (final line, final more)) {
+      final placed = line.place(width, available, atTop: atTop);
+      placedHead = placed == null || more == null
+          ? placed
+          : CustomPlacement(
+              height: placed.height,
+              anchors: placed.anchors,
+              lines: placed.lines,
+              rest: more,
+              paint: placed.paint,
+            );
+    } else {
+      placedHead = transform == null
+          ? _box.place(width, available, atTop: atTop)
+          : _transformedFirstLine(width, available, atTop: atTop);
+    }
+    final head = placedHead;
     if (head == null) return null;
     final rest = head.rest;
     if (rest is! TextBox) return head;
@@ -3020,7 +3200,7 @@ final class FirstLineTextBox implements BaselineContent {
     double available, {
     required bool atTop,
   }) {
-    final (fragments, rest) = first.splitFirstLine(width);
+    final (fragments, rest) = _box.splitFirstLine(width);
     final line = first.layout;
     final more = rest != null;
     final box = TextBox(
@@ -3045,7 +3225,7 @@ final class FirstLineTextBox implements BaselineContent {
             line.align == 'justify' &&
             fragments.lastOrNull?.text != '\n',
       ),
-      first._context,
+      _box._context,
     );
     final placed = box.place(width, available, atTop: atTop);
     if (placed == null || !more) return placed;
@@ -3059,10 +3239,16 @@ final class FirstLineTextBox implements BaselineContent {
   }
 
   @override
-  double minHeight(double width) => first.minHeight(width);
+  double minHeight(double width) => switch (_engineHead(width)) {
+    (final line, _) => line.minHeight(width),
+    null => _box.minHeight(width),
+  };
 
   @override
-  double? firstBaseline(double width) => first.firstBaseline(width);
+  double? firstBaseline(double width) => switch (_engineHead(width)) {
+    (final line, _) => line.firstBaseline(width),
+    null => _box.firstBaseline(width),
+  };
 
   @override
   (double, double) intrinsicWidths() => first.intrinsicWidths();

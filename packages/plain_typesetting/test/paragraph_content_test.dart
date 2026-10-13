@@ -356,4 +356,59 @@ void main() {
       expect(paragraph.lineHeight, isA<MultipleLineHeight>());
     });
   });
+
+  group('a first line set apart', () {
+    test("textTaken: the runs' text its first line takes", () {
+      // (Soft hyphens, zero-width spaces and line breaks are in the runs'
+      // text, not in the line items'.)
+      const text = 'one two\u200b three four five';
+      final content = _content(text);
+      final width = _body.widthOf(_body.shape('one two three'));
+      final taken = content.textTaken(width, 1)!;
+      expect(
+        text.substring(0, taken.length).trimRight(),
+        'one two\u200b three',
+      );
+      expect(taken.forced, isFalse);
+      expect(content.textTaken(width, 99), isNull);
+      final hard = _content('first line\nsecond line').textTaken(1000, 1)!;
+      expect(hard.forced, isTrue);
+      expect(hard.length, 'first line'.length);
+    });
+
+    test('textTaken: through the soft hyphen a hyphenated line ends at', () {
+      const text = 'aaa bbbb\u00adcccc dddd';
+      final content = _content(text);
+      final width = _body.widthOf(_body.shape('aaa bbbb-'));
+      final taken = content.textTaken(width, 1)!;
+      expect(taken.hyphenated, isTrue);
+      expect(text.substring(0, taken.length), 'aaa bbbb\u00ad');
+    });
+
+    test('a paragraph ending in a soft hyphen shows it', () {
+      final [line] = const FirstFitLineBreaker().breakLines(
+        Paragraph([TextRun('abc\u00ad', _body)]),
+        (_) => 200,
+      );
+      expect(_text(line), 'abc\u00ad');
+      expect(
+        line.width,
+        closeTo(_body.widthOf(_body.shape('abc')) + _body.measure('-'), 1e-6),
+      );
+    });
+
+    test('alignLast justify stretches the last line too', () {
+      List<Line> lines(TextAlign last) =>
+          const FirstFitLineBreaker().breakLines(
+            Paragraph(
+              [TextRun('a few words here', _body)],
+              align: TextAlign.justify,
+              alignLast: last,
+            ),
+            (_) => 200,
+          );
+      expect(lines(TextAlign.left).single.width, lessThan(150));
+      expect(lines(TextAlign.justify).single.width, closeTo(200, 1e-6));
+    });
+  });
 }

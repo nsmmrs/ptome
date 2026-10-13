@@ -466,6 +466,75 @@ void main() {
     _same('$_words40\n\n[%autofit]\n----\n$wide\n----\n');
   });
 
+  test("an abstract's first line in its own style, transformed or not", () {
+    final long = List.filled(2, _words40).join(' ');
+    for (final transform in ['none', 'uppercase', 'smallcaps']) {
+      for (final align in ['justify', 'left']) {
+        _same(
+          '= Doc\n:doctype: article\n\n[abstract]\n$long\n\n'
+          '[abstract]\n.Titled\n--\n$long\n\n$long\n--\n\n$long\n',
+          theme:
+              'abstract:\n  first_line_font_style: bold\n'
+              '  first_line_text_transform: $transform\n'
+              '  text_align: $align\n',
+        );
+      }
+    }
+    // (A first line ending at a hard break, and one hyphenated. Ragged:
+    // justified, the box would stretch a line a hard break ends, which the
+    // engine doesn't, as it doesn't in any paragraph.)
+    _same(
+      '= Doc\n:hyphens:\n\n[abstract]\nFirst line of the abstract. +\n'
+      '$long\n\n$long\n',
+      theme:
+          'abstract:\n  first_line_font_style: bold\n'
+          '  first_line_text_transform: uppercase\n  text_align: left\n',
+    );
+  });
+
+  test('table cells with lines from their cap heights', () {
+    _same(
+      '$_words40\n\n[cols="1,2,3",options=header]\n|===\n'
+      '|Head one |Head two |Three\n'
+      '|$_words40 |short |$_words40\n\nsecond paragraph\n'
+      '|a +\nb +\nc |{empty} |$_words40\n|===\n\n$_words40\n',
+      theme: 'base:\n  leading: 5\n',
+    );
+  });
+
+  test('drops and first lines beside notes numbered by page', () {
+    final long = List.filled(2, _words40).join(' ');
+    _same(
+      '= Doc\n\n[abstract]\nAbstract with a note.footnote:[An abstract '
+      'note.] $long\n\n[.dropcap]\nThe first paragraph with a '
+      'note.footnote:[A note in a dropped paragraph.] $long\n\n'
+      '$long footnote:[A plain one.]\n',
+      theme:
+          'footnotes_numbering: page\n'
+          'abstract:\n  first_line_font_style: bold\n'
+          'role:\n  dropcap:\n    drop_lines: 3\n',
+    );
+  });
+
+  test('a fixed width of several words: one slot, its text centered', () {
+    if (!_poppler) {
+      markTestSkipped('needs poppler');
+      return;
+    }
+    final (_, pdf) = _pdf(
+      '[.text-left]\naa +++<font width="80">two words</font>+++ bb\n',
+      '',
+      'paragraph',
+    );
+    final all = _words(pdf);
+    List<double> at(String word) => all.firstWhere((w) => w.$2 == word).$3;
+    final (aa, two, words, bb) = (at('aa'), at('two'), at('words'), at('bb'));
+    // (The words a space apart, the slot's room shared on either side.)
+    expect(words[0] - two[2], lessThan(5));
+    expect(two[0] - aa[2], closeTo(bb[0] - words[2], 0.05));
+    expect(two[0] - aa[2], greaterThan(10));
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

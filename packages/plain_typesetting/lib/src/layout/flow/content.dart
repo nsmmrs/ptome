@@ -119,6 +119,63 @@ final class ParagraphContent
 
   final Map<double, List<Line>> _empty = {};
 
+  /// How much of the paragraph's text its first [count] lines at [width]
+  /// take: UTF-16 code units of its runs' text, one after another, through
+  /// the space each line ends at (and the soft hyphen a hyphenated one
+  /// does); whether the last of them ends at a hard break, and whether at
+  /// a hyphen. Null for a rest, where the breaker gives no items, or where
+  /// the paragraph has fewer lines. For setting a paragraph's first line
+  /// apart from the rest (a first line in its own style).
+  ({int length, bool forced, bool hyphenated})? textTaken(
+    double width,
+    int count,
+  ) {
+    if (_items != null) return null;
+    final (:lines, :breaks, :items) = _at(width);
+    if (breaks == null || items == null || count < 1) return null;
+    if (count > breaks.length) return null;
+    // (The items' text, the runs' less what the items leave out: soft
+    // hyphens, zero-width spaces and line breaks.)
+    var counted = 0;
+    for (var i = 0; i <= breaks[count - 1] && i < items.length; i++) {
+      counted += switch (items[i]) {
+        BoxItem(:final text) || GlueItem(:final text) => text.length,
+        _ => 0,
+      };
+    }
+    final text = [
+      for (final run in paragraph.content)
+        if (run is TextRun) run.text,
+    ].join();
+    final hyphenated = lines[count - 1].hyphenated;
+    var at = 0;
+    while (at < text.length && counted > 0) {
+      if (!_leftOut(text.codeUnitAt(at))) counted--;
+      at++;
+    }
+    if (hyphenated && at < text.length && text.codeUnitAt(at) == 0xad) at++;
+    final last = breaks[count - 1];
+    return (
+      length: at,
+      forced: last < items.length && _forced(items[last]),
+      hyphenated: hyphenated,
+    );
+  }
+
+  /// Whether [unit] is text a paragraph's line items leave out.
+  static bool _leftOut(int unit) =>
+      unit == 0xad ||
+      unit == 0x200b ||
+      unit == 0x2060 ||
+      unit == 0xfeff ||
+      unit == 0x0a ||
+      unit == 0x0b ||
+      unit == 0x0c ||
+      unit == 0x0d ||
+      unit == 0x85 ||
+      unit == 0x2028 ||
+      unit == 0x2029;
+
   @override
   int lineCount(double width) => linesAt(width).length;
 
