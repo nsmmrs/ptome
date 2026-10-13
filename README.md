@@ -21,7 +21,7 @@ holding Ptome and the pure-Dart libraries it is built on
 | [plain_highlighting](packages/plain_highlighting) | Syntax highlighting for 190+ languages, a port of highlight.js 11.12.0 |
 | [plain_mustache](packages/plain_mustache) | Mustache templates with typed values, the whole specification |
 | [plain_svg](packages/plain_svg) | SVG images drawn on any canvas, with its own XML reader |
-| [plain_images](packages/plain_images) | Raster image files read: PNG, JPEG, GIF and BMP, decoded to typed samples |
+| [plain_images](packages/plain_images) | Raster image files read: PNG, JPEG, GIF, BMP and WebP, decoded to typed samples |
 
 The `plain_*` libraries share one philosophy: pure Dart, written from the
 specification, the same bytes on every platform, statically typed, and

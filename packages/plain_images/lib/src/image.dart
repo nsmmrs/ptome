@@ -13,11 +13,15 @@ import 'package:plain_images/src/exception.dart';
 import 'package:plain_images/src/exif.dart';
 import 'package:plain_images/src/gif_decode.dart';
 import 'package:plain_images/src/png_unfilter.dart';
+import 'package:plain_images/src/vp8_decode.dart';
+import 'package:plain_images/src/webp_lossless.dart';
+import 'package:plain_images/src/yuv.dart';
 
 part 'bmp.dart';
 part 'gif.dart';
 part 'jpeg.dart';
 part 'png.dart';
+part 'webp.dart';
 
 /// An image file format.
 enum ImageFormat {
@@ -31,7 +35,10 @@ enum ImageFormat {
   gif('GIF'),
 
   /// Windows and OS/2 bitmaps.
-  bmp('BMP');
+  bmp('BMP'),
+
+  /// WebP (RFC 9649), lossy and lossless.
+  webp('WebP');
 
   new(this.label);
 
@@ -50,6 +57,11 @@ enum ImageFormat {
     if (_startsWith(bytes, _gif87) || _startsWith(bytes, _gif89)) return gif;
     if (bytes.length >= 14 && bytes[0] == 0x42 && bytes[1] == 0x4d) {
       return bmp;
+    }
+    if (bytes.length >= 12 &&
+        String.fromCharCodes(bytes, 0, 4) == 'RIFF' &&
+        String.fromCharCodes(bytes, 8, 12) == 'WEBP') {
+      return webp;
     }
     return null;
   }
@@ -82,7 +94,6 @@ String? unsupportedFormatOf(Uint8List bytes) {
   if (at(0, 'ÿ\u000a') || at(4, 'JXL ')) return 'JPEG XL';
   if (at(4, 'jP  ') || at(0, 'ÿOÿQ')) return 'JPEG 2000';
   if (at(0, 'II*\u0000') || at(0, 'MM\u0000*')) return 'TIFF';
-  if (at(0, 'RIFF') && at(8, 'WEBP')) return 'WebP';
   if (at(0, '\u0000\u0000\u0001\u0000')) return 'ICO';
   if (at(0, '8BPS')) return 'PSD';
   if (at(0, '<svg') || at(0, '<?xml')) return 'SVG';
@@ -103,6 +114,7 @@ sealed class ImageFile {
     ImageFormat.jpeg => JpegFile.read(bytes),
     ImageFormat.gif => GifFile.read(bytes),
     ImageFormat.bmp => BmpFile.read(bytes),
+    ImageFormat.webp => WebPFile.read(bytes),
     null => throw ImageFormatException(switch (unsupportedFormatOf(bytes)) {
       final name? => '$name images are not supported',
       null => 'not an image file plain_images reads',

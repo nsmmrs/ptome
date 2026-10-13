@@ -24,6 +24,7 @@ enum ImageFormat
   static ImageFormat gif
   static ImageFormat jpeg
   static ImageFormat png
+  static ImageFormat webp
   static List<ImageFormat> values
 enum PngColorType
   List<int> bitDepths
@@ -122,6 +123,25 @@ final class Raster
   int orientation
   int rowBytes
   int sample(int x, int y, [int channel = 0])
+  int width
+final class WebPFile extends ImageFile
+  ColorModel colorModel
+  ImageFormat format
+  Raster decode()
+  Uint8List image
+  Uint8List? alphaChunk
+  Uint8List? iccProfile
+  WebPFile.read(Uint8List bytes)
+  bool alpha
+  bool lossless
+  int bitDepth
+  int frameHeight
+  int frameLeft
+  int frameTop
+  int frameWidth
+  int frames
+  int height
+  int orientation
   int width
 sealed class ImageFile
   ColorModel colorModel

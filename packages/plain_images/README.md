@@ -1,13 +1,13 @@
 # plain_images
 
-Raster image files read in pure Dart: PNG, JPEG, GIF and BMP, decoded to
-typed samples with their palette, transparency, ICC profile and
-orientation.
+Raster image files read in pure Dart: PNG, JPEG, GIF, BMP and WebP,
+decoded to typed samples with their palette, transparency, ICC profile
+and orientation.
 
 ```dart
 import 'package:plain_images/plain_images.dart';
 
-final file = ImageFile.read(bytes); // PngFile, JpegFile, GifFile, BmpFile
+final file = ImageFile.read(bytes); // PngFile, JpegFile, GifFile, ...
 print('${file.format.label} ${file.width} x ${file.height}');
 final raster = file.decode();
 switch (raster.transparency) {
@@ -34,11 +34,15 @@ final rgba = raster.toRgba8();
 - PNG: every color type and bit depth, interlacing, `tRNS`, `iCCP` and
   `eXIf`. GIF: the first frame on the logical screen, transparent where
   it has no pixels. BMP: every Windows and OS/2 header, 1 to 32 bits a
-  pixel, bit fields, RLE4 and RLE8. JPEG: the header (size, components,
-  precision, progressive, Adobe and EXIF segments).
+  pixel, bit fields, RLE4 and RLE8. WebP: lossless and lossy (with alpha),
+  decoded to the byte as libwebp decodes them; an animation's first frame.
+  JPEG: the header (size, components, precision, progressive, Adobe and
+  EXIF segments).
 
-Tested against ImageMagick (PngSuite and generated GIF and BMP files),
-against package:image on seeded random files, and with damaged files;
+Tested against ImageMagick (PngSuite, bmpsuite, a GIF conformance suite
+and generated files), bmpsuite's reference images, libwebp (its test
+data and the VP8 conformance vectors, and random cwebp files), against
+package:image on seeded random files, and with damaged files;
 the same results compiled to JavaScript as on the Dart VM.
 
 [plain_pdf](https://github.com/nsmmrs/ptome/tree/master/packages/plain_pdf)

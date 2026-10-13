@@ -2,10 +2,11 @@
 // once by package:image's encoders, each decoded by both libraries (the
 // best of several runs), to each one's own image (plain_images: a Raster
 // of the samples as they are; package:image: its Image) and to 8-bit
-// RGBA.
+// RGBA. WebP files are made by cwebp, when it is installed.
 //
 //   dart run benchmark/decode.dart
 // ignore_for_file: avoid_print
+import 'dart:io';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
@@ -27,6 +28,37 @@ img.Image picture(int width, int height, {int channels = 3}) {
     }
   }
   return image;
+}
+
+/// The pictures as WebP, by cwebp (package:image doesn't write WebP),
+/// when it is installed.
+Map<String, Uint8List> webp(img.Image rgb, img.Image rgba) {
+  final dir = Directory.systemTemp.createTempSync('webp-bench.');
+  try {
+    final out = <String, Uint8List>{};
+    for (final (name, image, options) in [
+      ('WebP lossless 1600x1000', rgb, ['-lossless']),
+      ('WebP lossy 1600x1000', rgb, ['-q', '80']),
+      ('WebP lossy alpha 1600x1000', rgba, ['-q', '80']),
+    ]) {
+      final png = File('${dir.path}/in.png')
+        ..writeAsBytesSync(img.encodePng(image));
+      final result = Process.runSync('cwebp', [
+        '-quiet',
+        ...options,
+        png.path,
+        '-o',
+        '${dir.path}/out.webp',
+      ]);
+      if (result.exitCode != 0) return out;
+      out[name] = File('${dir.path}/out.webp').readAsBytesSync();
+    }
+    return out;
+  } on ProcessException {
+    return const {};
+  } finally {
+    dir.deleteSync(recursive: true);
+  }
 }
 
 /// The best of [runs] timings of [action], in milliseconds.
@@ -53,6 +85,7 @@ void main() {
     'GIF 1600x1000': img.encodeGif(rgb, dither: img.DitherKernel.none),
     'BMP 24-bit 1600x1000': img.encodeBmp(rgb),
     'BMP 32-bit 1600x1000': img.encodeBmp(rgba),
+    ...webp(rgb, rgba),
   };
   print(
     '| image | plain_images decode | package:image decode | '

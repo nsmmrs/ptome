@@ -26,3 +26,10 @@
   (https://github.com/imazen/codec-corpus, `gif-conformance/` at
   ac980c29), generated test data its README puts in the public domain
   (CC0): valid files, edge cases and invalid files.
+- `webp/`: made by `tool/make_test_images.sh` with libwebp's tools from
+  the same generated pictures: lossless (with and without alpha), lossy
+  (with segments and the filter, with alpha raw and compressed, one
+  pixel), an extended file with an ICC profile and EXIF orientation, and
+  an animation whose first frame is off the canvas's corner;
+  `expected.md5` holds dwebp's decoding of each (an animation's first
+  frame's).

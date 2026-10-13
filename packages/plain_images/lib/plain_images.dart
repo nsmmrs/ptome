@@ -1,7 +1,8 @@
 /// plain_images: raster image files read in pure Dart.
 ///
 /// - `ImageFile.read` tells a file's format by its signature and reads
-///   its header: `PngFile`, `JpegFile`, `GifFile`, `BmpFile`. Formats it
+///   its header: `PngFile`, `JpegFile`, `GifFile`, `BmpFile`,
+///   `WebPFile`. Formats it
 ///   recognizes but doesn't read (AVIF, HEIC, ...) are named in the
 ///   `ImageFormatException` it throws.
 /// - `ImageFile.decode` gives a `Raster`: packed samples (gray, RGB, CMYK
@@ -25,4 +26,5 @@ export 'src/image.dart'
         PngColorType,
         PngFile,
         Raster,
-        Transparency;
+        Transparency,
+        WebPFile;

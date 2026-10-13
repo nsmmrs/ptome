@@ -50,6 +50,7 @@ void main() {
     ('jpeg', '.jpg', 10),
     ('gif', '.gif', 20),
     ('bmp', '.bmp', 20),
+    ('webp', '.webp', 20),
   ]) {
     test('$folder: damaged files are decoded or rejected', () {
       final random = Random(20261013);

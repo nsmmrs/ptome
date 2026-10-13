@@ -25,7 +25,6 @@ void main() {
       ('\u0000\u0000\u0000\u0018ftypheic', 'HEIC'),
       ('ÿ\u000a', 'JPEG XL'),
       ('II*\u0000\u0008\u0000\u0000\u0000', 'TIFF'),
-      ('RIFF\u0000\u0000\u0000\u0000WEBPVP8 ', 'WebP'),
     ]) {
       expect(
         () => ImageFile.read(bytes(signature)),

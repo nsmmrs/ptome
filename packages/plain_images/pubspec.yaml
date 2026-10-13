@@ -1,8 +1,8 @@
 name: plain_images
 description: >-
-  Raster image files read in pure Dart: PNG, JPEG, GIF and BMP, decoded to
-  typed samples with their palette, transparency, ICC profile and
-  orientation.
+  Raster image files read in pure Dart: PNG, JPEG, GIF, BMP and WebP,
+  decoded to typed samples with their palette, transparency, ICC profile
+  and orientation.
 version: 0.1.0-dev
 repository: https://github.com/nsmmrs/ptome/tree/master/packages/plain_images
 issue_tracker: https://github.com/nsmmrs/ptome/issues
@@ -12,6 +12,7 @@ topics:
   - gif
   - bmp
   - jpeg
+  - webp
 
 environment:
   sdk: ^3.13.0

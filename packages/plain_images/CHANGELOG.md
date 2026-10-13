@@ -2,10 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
-- `ImageFile.read` tells PNG, JPEG, GIF and BMP files by their
+- `ImageFile.read` tells PNG, JPEG, GIF, BMP and WebP files by their
   signatures and reads their headers (`PngFile`, `JpegFile`, `GifFile`,
-  `BmpFile`); a format it recognizes but doesn't read (AVIF, HEIC, JPEG
-  XL, WebP, TIFF, ...) is named in the `ImageFormatException`.
+  `BmpFile`, `WebPFile`); a format it recognizes but doesn't read (AVIF,
+  HEIC, JPEG XL, TIFF, ...) is named in the `ImageFormatException`.
 - `decode` gives a `Raster`: packed samples (gray, RGB, CMYK or palette
   indices, 1 to 16 bits), transparency apart (an `AlphaChannel` or a
   `ColorKey`), the ICC profile and the EXIF orientation; `toRgba8` for
@@ -22,9 +22,19 @@
   expanded by repeating them as browsers do); RLE8 and RLE4 (pixels
   they skip transparent); top-down rows; embedded ICC profiles and PNG
   images.
+- WebP (RFC 9649): lossless (VP8L: every transform, color caches, meta
+  prefix codes) and lossy (VP8 key frames, RFC 6386: segments, both loop
+  filters, every intra mode; its tables generated from the RFC's text),
+  lossy alpha (raw or lossless-compressed, each filter), the extended
+  format's ICC profile and EXIF orientation, and an animation's first
+  frame on its canvas. Decoded to the byte as libwebp's dwebp decodes
+  (its YUV to RGB conversion and "fancy" chroma upsampling): all 131
+  files of libwebp's test data (the VP8 conformance vectors among them;
+  `tool/fetch_webp_tests.sh`), and seeded random images through cwebp
+  with random settings.
 - Checked against ImageMagick on the test images, against package:image
   (a dev dependency only) on 650 seeded random PNG, GIF and BMP files,
   and with damaged copies of every test image (nightly). Decoding is
-  1.3 to 3.8 times as fast as package:image's on page-sized images
-  (`benchmark/decode.dart`).
+  1.3 to 3.8 times as fast as package:image's on page-sized images, WebP
+  1.35 (lossless) to 2 (lossy with alpha) times (`benchmark/decode.dart`).
 - The same samples compiled to JavaScript as on the Dart VM.
