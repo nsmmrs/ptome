@@ -10,6 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: an image file drawn many times (a logo in the running content, an
+  SVG's raster image on each page) is embedded once (BUG-h9yc30): the
+  chronicles example drops from 296 to 187 KB.
 - PDF, `asciidoctor-compat`: every PDF case of the corpus now matches
   Asciidoctor PDF pixel for pixel (the red list is empty). New engine
   key `page_layer_clip: page` (set by compat) clips the page's foreground

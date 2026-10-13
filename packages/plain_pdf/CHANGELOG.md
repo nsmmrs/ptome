@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Images of the same file share one XObject, however many `PdfImage`s of
+  it the pages draw (each file hashed once): a logo on every page was an
+  XObject a page.
 - Images are read by the new plain_images package (PNG decoding moved
   there with its history): `PdfImage.parse` takes any file it reads
   (JPEG, PNG, GIF, BMP), and `PdfImage(ImageFile)` one already read.

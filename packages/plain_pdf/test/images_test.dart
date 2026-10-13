@@ -4,6 +4,7 @@ import 'dart:typed_data';
 
 import 'package:plain_images/plain_images.dart';
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
 /// A one-page PDF showing [image] at one point per pixel, filling the
@@ -378,6 +379,27 @@ void main() {
       ).reencodes,
       isFalse,
     );
+  });
+
+  test('images of the same file share one XObject', () {
+    final bytes = File('../plain_images/test/images/pngsuite/basn2c08.png')
+        .readAsBytesSync();
+    final document = PdfDocument();
+    for (var i = 0; i < 3; i++) {
+      document
+          .addPage(const Rect(0, 0, 100, 100))
+          .canvas
+          .image(
+            PdfImage.parse(Uint8List.fromList(bytes)),
+            const Rect(0, 0, 32, 32),
+          );
+    }
+    final pdf = latin1.decode(
+      document.save(
+        options: const PdfWriterOptions(deterministic: true, compact: false),
+      ),
+    );
+    expect(RegExp('/Subtype /Image').allMatches(pdf).length, 1);
   });
 
   test('anything else is not an image', () {

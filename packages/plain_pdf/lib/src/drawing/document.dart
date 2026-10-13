@@ -6,6 +6,7 @@ library;
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:crypto/crypto.dart';
 import 'package:meta/meta.dart';
 import 'package:plain_pdf/src/drawing/canvas.dart';
 import 'package:plain_pdf/src/drawing/pdf_values.dart';
@@ -551,6 +552,20 @@ final class _Saver {
   final List<PdfForm> _formQueue = [];
   final Set<PdfFont> _fonts = {};
   final Set<PdfImage> _images = {};
+
+  /// The images drawn, by their file's content.
+  final Map<String, PdfImage> _imagesByContent = {};
+
+  /// The image each image drawn shares its XObject with.
+  final Map<PdfImage, PdfImage> _sharedImages = Map.identity();
+
+  /// The first image drawn of the same file as [image] (each file hashed
+  /// once).
+  PdfImage _imageOf(PdfImage image) => _sharedImages.putIfAbsent(image, () {
+    final bytes = image.file.bytes;
+    final key = '${bytes.length}:${sha256.convert(bytes)}';
+    return _imagesByContent.putIfAbsent(key, () => image);
+  });
   final Map<(String, CmykColor), PdfArray> _separations = {};
   final Map<PdfShading, PdfRef> _shadings = Map.identity();
   final Map<ImportedPage, PdfRef> _importedPages = Map.identity();
@@ -874,8 +889,11 @@ final class _Saver {
           _ => font.reference(writer),
         };
       case ImageResource(:final image):
-        _images.add(image);
-        return image.reference(writer);
+        // One XObject for each image file, however many images of it the
+        // pages draw.
+        final shared = _imageOf(image);
+        _images.add(shared);
+        return shared.reference(writer);
       case FormResource(:final form):
         return _formRef(form);
       case ImportedPageResource(:final page):
