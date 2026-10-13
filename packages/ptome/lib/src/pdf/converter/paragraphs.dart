@@ -114,7 +114,10 @@ extension _Paragraphs on PdfConverter {
         layout.wrapIndent != null ||
         layout.dropLines > 0 ||
         layout.lineInsets.isNotEmpty ||
-        (layout.capLines && layout.trailingLineGap)) {
+        (layout.capLines && layout.trailingLineGap) ||
+        // (Labelled as the pages are laid out: the box places it, its
+        // lines the engine's.)
+        box.hasLabels) {
       return CustomBox(box, style: style);
     }
     final runs = box.engineContent();
@@ -127,6 +130,115 @@ extension _Paragraphs on PdfConverter {
       widows: whole ? _wholeLines : layout.widows,
       lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
     );
+  }
+
+  /// [box] as the engine's paragraph, as content that the box places and
+  /// measures by (`TextContext.engine`), where the engine sets it as the
+  /// box does; null for the box to set its own lines.
+  CustomContent? _engineTextOf(TextBox box) {
+    final layout = box.layout;
+    if (layout.wrapIndent case final wrapIndent?
+        when !layout.finalGap &&
+            !layout.forceJustify &&
+            layout.dropLines == 0 &&
+            layout.lineInsets.isEmpty) {
+      return _engineCodeOf(box, wrapIndent);
+    }
+    if (layout.finalGap ||
+        layout.forceJustify ||
+        layout.wrapIndent != null ||
+        layout.dropLines > 0 ||
+        layout.lineInsets.isNotEmpty ||
+        (layout.capLines && layout.trailingLineGap)) {
+      return null;
+    }
+    // (With an image a share of the width: the paragraph at each width.)
+    if (box.hasRelativeImages) {
+      ParagraphContent? at(double width) {
+        final runs = box.engineContent(width: width);
+        if (runs == null || runs.isEmpty) return null;
+        return ParagraphContent(
+          _engineParagraphOf(box, runs),
+          lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
+          orphans: layout.orphans,
+          widows: layout.widows,
+          slant: layout.skew ?? 0,
+        );
+      }
+
+      return at(1000) == null ? null : _EngineAtWidth(at);
+    }
+    final runs = box.engineContent();
+    if (runs == null || runs.isEmpty) return null;
+    return ParagraphContent(
+      _engineParagraphOf(box, runs),
+      lineBreaker: textLineBreaker(_text, layout.align, box.state.size),
+      orphans: layout.orphans,
+      widows: layout.widows,
+      slant: layout.skew ?? 0,
+    );
+  }
+
+  /// [box], a listing that wraps with a hanging indent (`code_wrap_indent`)
+  /// or a marker, as the engine's lines: each of its lines a paragraph of
+  /// its own, broken as the box breaks code.
+  CustomContent? _engineCodeOf(TextBox box, double wrapIndent) {
+    final runs = box.engineContent();
+    if (runs == null || runs.isEmpty) return null;
+    final layout = box.layout;
+    // (Its lines: the runs split at their line feeds.)
+    final lines = <List<InlineContent>>[[]];
+    for (final run in runs) {
+      if (run case TextRun(:final text) when text.contains('\n')) {
+        for (final (i, part) in text.split('\n').indexed) {
+          if (i > 0) lines.add([]);
+          lines.last.add(run.withText(part));
+        }
+      } else {
+        lines.last.add(run);
+      }
+    }
+    final base = _engineParagraphOf(
+      box,
+      runs,
+    ).copyWith(breakOpportunities: BreakOpportunities.spacesAndHyphens);
+    // (Each line but the last spaced as a line of the listing: the space
+    // under the listing's last line is its own.)
+    final within = switch (base.lineHeight) {
+      FontLineHeight(:final leading, :final above) => LineHeight.font(
+        leading: leading,
+        above: above,
+      ),
+      final height => height,
+    };
+    return _EngineCode(
+      [
+        for (final (i, content) in lines.indexed)
+          (
+            base.copyWith(
+              content: content,
+              lineHeight: i < lines.length - 1 ? within : base.lineHeight,
+            ),
+            _leadingWidth(content),
+          ),
+      ],
+      wrapIndent: wrapIndent,
+      marker: layout.wrapMarker,
+      orphans: layout.orphans,
+      widows: layout.widows,
+    );
+  }
+
+  /// The width of the spaces (no-break or not) [content] starts with.
+  static double _leadingWidth(List<InlineContent> content) {
+    var width = 0.0;
+    for (final run in content) {
+      if (run is! TextRun) break;
+      final leading = RegExp('^[\u00a0 ]*').stringMatch(run.text) ?? '';
+      width += run.style.measure(leading);
+      if (leading.length < run.text.length) break;
+    }
+    return width;
   }
 
   /// The roles of paragraphs a heading for the margin passes
@@ -450,7 +562,9 @@ extension _Paragraphs on PdfConverter {
             indent: indent,
             singleLine: true,
           ).engineContent();
-    if (_engineParagraphs && (firstLine == null || firstRuns != null)) {
+    if (_engineParagraphs &&
+        (firstLine == null || firstRuns != null) &&
+        !box.hasLabels) {
       if (box.engineContent() case final runs? when runs.isNotEmpty) {
         _engineParagraphCount++;
         // (A drop: the first lines set in beside it, as the text box sets
@@ -523,7 +637,7 @@ extension _Paragraphs on PdfConverter {
           align: align,
           indent: indent,
           singleLine: true,
-        ),
+        ).boxOnly,
         box.state,
         box.layout,
         transform: firstLineTransform,

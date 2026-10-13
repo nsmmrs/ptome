@@ -891,7 +891,8 @@ final class _TocEntry implements CustomContent {
     this.rightToLeft = false,
   });
 
-  final TextBox title;
+  /// The title: a text box, or what is left of one the engine sets.
+  final CustomContent title;
   final double placeholder;
   final CustomContent Function(double width, double startDots) leader;
 
@@ -916,7 +917,7 @@ final class _TocEntry implements CustomContent {
     if (placed == null) return null;
     // (The title's offset: mirrored, past the page number's room.)
     final offset = rightToLeft ? placeholder : hanging;
-    if (placed.rest case final TextBox rest) {
+    if (placed.rest case final rest?) {
       return CustomPlacement(
         height: placed.height,
         anchors: placed.anchors,
@@ -930,7 +931,14 @@ final class _TocEntry implements CustomContent {
         paint: (page, x, top) => placed.paint(page, x + offset, top),
       );
     }
-    final last = title.lastFragment(room);
+    final last = switch (title) {
+      final TextBox box => box.lastFragment(room),
+      final ParagraphContent paragraph => paragraphLastFragment(
+        paragraph,
+        room,
+      ),
+      _ => null,
+    };
     return CustomPlacement(
       height: placed.height,
       anchors: placed.anchors,
@@ -1467,4 +1475,284 @@ final class _CanvasPage implements LayoutPage {
 
   @override
   void link(Rect rect, LinkTarget target) {}
+}
+
+/// A line of a listing as the engine sets it: the line, how far in it is
+/// drawn, and whether its text goes on in the next (it wrapped).
+typedef _CodeLine = ({Line line, double x, bool wrapped, bool continues});
+
+/// A listing set by the engine's paragraphs (modern engine): each of its
+/// lines a paragraph of its own (its text and the width of its leading
+/// spaces), broken greedily at spaces and hyphens (between characters
+/// where a word is wider than the line), a line that wraps going on
+/// [wrapIndent] in from its own indentation, at most half the width,
+/// with an arrow after it where [marker] asks, as the text box sets code.
+final class _EngineCode implements LinedContent, BaselineContent {
+  new(
+    this.paragraphs, {
+    required this.wrapIndent,
+    required this.marker,
+    required this.orphans,
+    required this.widows,
+  }) : _fixed = null;
+
+  new _rest(_EngineCode source, List<_CodeLine> this._fixed)
+    : paragraphs = const [],
+      wrapIndent = source.wrapIndent,
+      marker = source.marker,
+      orphans = source.orphans,
+      widows = source.widows;
+
+  /// Each line of the listing: its paragraph and the width of its leading
+  /// spaces.
+  final List<(Paragraph, double)> paragraphs;
+
+  final double wrapIndent;
+  final bool marker;
+
+  @override
+  final int orphans;
+
+  @override
+  final int widows;
+
+  /// The lines left after a break, set at the width they were broken at.
+  final List<_CodeLine>? _fixed;
+
+  final Map<double, List<_CodeLine>> _lines = {};
+
+  List<_CodeLine> _linesAt(double width) =>
+      _fixed ??
+      (_lines[width] ??= [
+        for (final (paragraph, own) in paragraphs)
+          ...() {
+            // (Its lines after the first in by its own indent and the
+            // hanging indent: the first one that far out.)
+            final x = math.min(own + wrapIndent, width / 2);
+            final set = ParagraphContent(
+              paragraph.copyWith(firstLineIndent: -x),
+              lineBreaker: const FirstFitLineBreaker(),
+            ).linesAt(width - x);
+            return [
+              for (final (i, line) in set.indexed)
+                (
+                  line: line,
+                  x: x,
+                  wrapped: marker && i < set.length - 1,
+                  continues: i > 0,
+                ),
+            ];
+          }(),
+      ]);
+
+  @override
+  int lineCount(double width) => _linesAt(width).length;
+
+  @override
+  int linesThatFit(double width, double available) {
+    var top = 0.0;
+    var count = 0;
+    for (final (:line, x: _, wrapped: _, continues: _) in _linesAt(width)) {
+      if (top + line.baseline - line.descent > available + 1e-6) break;
+      top += line.height;
+      count++;
+    }
+    return count;
+  }
+
+  @override
+  CustomPlacement placeLines(double width, int count) {
+    final all = _linesAt(width);
+    final placed = all.sublist(0, count);
+    final anchors = <(String, double, double)>[];
+    final lines = <PieceLine>[];
+    var y = 0.0;
+    for (final (:line, :x, wrapped: _, :continues) in placed) {
+      for (final fragment in line.fragments) {
+        if (fragment case TextFragment(:final run, :final style)
+            when run.anchor != null) {
+          anchors.add((
+            run.anchor!,
+            x + fragment.x,
+            y +
+                line.baseline -
+                (run.anchorOnBaseline
+                    ? 0
+                    : style.font.ascender * style.size / 1000),
+          ));
+        }
+      }
+      final start = x + (line.fragments.firstOrNull?.x ?? 0);
+      lines.add(
+        PieceLine(
+          y + line.baseline,
+          left: start,
+          right: start + line.width,
+          continues: continues,
+        ),
+      );
+      y += line.height;
+    }
+    // (A piece the region ends after: down to its last line's text, the
+    // space under it going at the break.)
+    if (count < all.length) {
+      final last = placed.last.line;
+      y -= math.max(0, last.height - last.baseline + last.descent);
+    }
+    return CustomPlacement(
+      height: y,
+      rest: count < all.length
+          ? _EngineCode._rest(this, all.sublist(count))
+          : null,
+      anchors: anchors,
+      lines: lines,
+      paint: (page, left, top) {
+        var at = top;
+        for (final (:line, :x, :wrapped, continues: _) in placed) {
+          line.paint(page.canvas, left + x, at, link: page.link);
+          if (wrapped) _arrow(page.canvas, line, left + width, at);
+          at -= line.height;
+        }
+      },
+    );
+  }
+
+  /// The arrow after a line that wraps, at [right], the line's top at
+  /// [top] (as the text box draws it).
+  static void _arrow(Canvas canvas, Line line, double right, double top) {
+    final last = line.fragments.whereType<TextFragment>().lastOrNull;
+    if (last == null) return;
+    final size = last.style.size;
+    final baseline = top - line.baseline;
+    final left = right + size * 0.2;
+    final bend = baseline + size * 0.2;
+    canvas
+      ..save()
+      ..setStrokeColor(last.run.color ?? const Color.gray(0))
+      ..setLineWidth(size * 0.06)
+      ..setLineCap(LineCap.round)
+      ..setLineJoin(LineJoin.round)
+      ..moveTo(left + size * 0.55, baseline + size * 0.6)
+      ..lineTo(left + size * 0.55, bend)
+      ..lineTo(left + size * 0.05, bend)
+      ..moveTo(left + size * 0.25, bend + size * 0.2)
+      ..lineTo(left + size * 0.05, bend)
+      ..lineTo(left + size * 0.25, bend - size * 0.2)
+      ..stroke()
+      ..restore();
+  }
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final all = _linesAt(width);
+    if (all.isEmpty) {
+      return CustomPlacement(height: 0, paint: (page, x, top) {});
+    }
+    var count = linesThatFit(width, available);
+    if (count < all.length && count > 0) {
+      if (count < orphans) count = 0;
+      if (all.length - count < widows) {
+        count = math.max(0, all.length - widows);
+        if (count < orphans) count = 0;
+      }
+    }
+    if (count == 0) {
+      if (!atTop) return null;
+      count = 1;
+    }
+    return placeLines(width, count);
+  }
+
+  /// The room it needs where it starts: its first [orphans] lines, or all
+  /// of it when it's too short to split (as the text box reserves).
+  @override
+  double minHeight(double width) {
+    final lines = _linesAt(width);
+    if (lines.isEmpty) return 0;
+    final least = math.max(1, orphans);
+    final unsplit = math.max(least, least + widows - 1);
+    final count = lines.length <= unsplit ? lines.length : least;
+    // (Down to the last line's text: the space under it goes at a break.)
+    final last = lines[count - 1].line;
+    final below = math.max(0, last.height - last.baseline + last.descent);
+    return lines.take(count).fold<double>(0, (sum, l) => sum + l.line.height) -
+        below;
+  }
+
+  @override
+  double? firstBaseline(double width) =>
+      _linesAt(width).firstOrNull?.line.baseline;
+
+  @override
+  (double, double) intrinsicWidths() {
+    // (Each line's right end: its last fragment's, a first line's from
+    // as far out as its indent.)
+    var widest = 0.0;
+    for (final (:line, :x, wrapped: _, continues: _) in _linesAt(1000000)) {
+      for (final fragment in line.fragments) {
+        widest = math.max(widest, x + fragment.x + fragment.width);
+      }
+    }
+    return (widest, widest);
+  }
+}
+
+/// A paragraph the engine sets that depends on the width it's set in (an
+/// inline image a share of it): made at each width, by [at].
+final class _EngineAtWidth
+    implements LinedContent, BaselineContent, ShapedContent {
+  new(this.at);
+
+  final ParagraphContent? Function(double width) at;
+  final Map<double, ParagraphContent?> _made = {};
+
+  ParagraphContent? _of(double width) => _made[width] ??= at(width);
+
+  @override
+  int get orphans =>
+      _made.values.whereType<ParagraphContent>().firstOrNull?.orphans ?? 2;
+
+  @override
+  int get widows =>
+      _made.values.whereType<ParagraphContent>().firstOrNull?.widows ?? 2;
+
+  @override
+  int lineCount(double width) => _of(width)?.lineCount(width) ?? 0;
+
+  @override
+  int linesThatFit(double width, double available) =>
+      _of(width)?.linesThatFit(width, available) ?? 0;
+
+  @override
+  CustomPlacement placeLines(double width, int count) =>
+      _of(width)!.placeLines(width, count);
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) => _of(width)?.place(width, available, atTop: atTop);
+
+  @override
+  CustomPlacement? placeAround(
+    double width,
+    double available, {
+    required bool atTop,
+    required (double, double) Function(double top, double bottom) insets,
+  }) => _of(width)?.placeAround(width, available, atTop: atTop, insets: insets);
+
+  @override
+  double minHeight(double width) => _of(width)?.minHeight(width) ?? 0;
+
+  @override
+  double? firstBaseline(double width) => _of(width)?.firstBaseline(width);
+
+  @override
+  (double, double) intrinsicWidths() =>
+      _of(1000000)?.intrinsicWidths() ?? (0, 0);
 }

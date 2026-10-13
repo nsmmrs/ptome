@@ -139,6 +139,10 @@ enum BreakKind
   static BreakKind column
   static BreakKind page
   static List<BreakKind> values
+enum BreakOpportunities
+  static BreakOpportunities spacesAndHyphens
+  static BreakOpportunities unicode
+  static List<BreakOpportunities> values
 enum FloatPlacement
   static FloatPlacement auto
   static FloatPlacement bottom
@@ -405,8 +409,9 @@ final class ImageFragment extends LineFragment
 final class InlineDecoration
   Color? background
   Color? borderColor
-  InlineDecoration({Color? background, Color? borderColor, double borderWidth = 0, double radius = 0, double padding = 0})
+  InlineDecoration({Color? background, Color? borderColor, double borderWidth = 0, double radius = 0, double padding = 0, double outset = 0})
   double borderWidth
+  double outset
   double padding
   double radius
 final class InlineImage extends InlineContent
@@ -545,13 +550,14 @@ final class PageTemplate
   void Function(Canvas, PageInfo)? background
   void Function(Canvas, PageInfo)? foreground
 final class Paragraph
+  BreakOpportunities breakOpportunities
   HyphenRepetition hyphenRepetition
   Hyphenator? hyphenator
   LineHeight lineHeight
   List<InlineContent> content
   List<InlineContent>? firstLineContent
-  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest, int? hangLines})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false})
+  Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
@@ -567,6 +573,22 @@ final class ParagraphBox extends LayoutBox
   LineBreaker? lineBreaker
   Paragraph paragraph
   ParagraphBox(Paragraph paragraph, {BoxStyle style = const BoxStyle(), int orphans = 2, int widows = 2, LineBreaker? lineBreaker})
+  int orphans
+  int widows
+final class ParagraphContent implements LinedContent, BaselineContent, ShapedContent
+  (double, double) intrinsicWidths()
+  CustomPlacement placeLines(double width, int count)
+  CustomPlacement? place(double width, double available, {required bool atTop})
+  CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
+  LineBreaker lineBreaker
+  List<Line> linesAt(double width)
+  Paragraph paragraph
+  ParagraphContent(Paragraph paragraph, {LineBreaker lineBreaker = const KnuthPlassLineBreaker(), int orphans = 2, int widows = 2, double slant = 0})
+  double minHeight(double width)
+  double slant
+  double? firstBaseline(double width)
+  int lineCount(double width)
+  int linesThatFit(double width, double available)
   int orphans
   int widows
 final class PenaltyItem extends LineItem
@@ -675,13 +697,16 @@ final class TextRun extends InlineContent
   List<Font> fallbackFonts
   String text
   String? anchor
+  TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const []})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left})
   TextStyle style
   bool anchorOnBaseline
+  bool artifact
   bool strikethrough
   bool underline
+  double? slotWidth
 final class TextStyle
   Font font
   List<ShapedGlyph> shape(String text, {bool rightToLeft = false})

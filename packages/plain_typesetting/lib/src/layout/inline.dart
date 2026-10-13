@@ -6,6 +6,7 @@ import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/graphic.dart';
+import 'package:plain_typesetting/src/layout/paragraph.dart' show TextAlign;
 import 'package:plain_typesetting/src/link.dart';
 
 /// A piece of a paragraph's content.
@@ -29,10 +30,26 @@ final class TextRun extends InlineContent {
     this.anchorOnBaseline = false,
     this.decoration,
     this.fallbackFonts = const [],
+    this.artifact = false,
+    this.slotWidth,
+    this.slotAlign = TextAlign.left,
   }) : super._();
+
+  /// Where given, the width the text takes on its line, whatever its own
+  /// (a heading's number hung in a column, a key's label with room on
+  /// either side): set whole, never broken, aligned in it by [slotAlign].
+  final double? slotWidth;
+
+  /// How the text sits in its [slotWidth].
+  final TextAlign slotAlign;
 
   /// The text.
   final String text;
+
+  /// Whether the text is decoration, not content (a listing's callout
+  /// numbers): drawn as marked content that reads as nothing, so that
+  /// text taken from the page, copied or read aloud, leaves it out.
+  final bool artifact;
 
   /// The font, size and text state.
   final TextStyle style;
@@ -77,6 +94,9 @@ final class TextRun extends InlineContent {
     anchorOnBaseline: anchorOnBaseline,
     decoration: decoration,
     fallbackFonts: fallbackFonts,
+    artifact: artifact,
+    slotWidth: slotWidth,
+    slotAlign: slotAlign,
   );
 
   /// This run in [style].
@@ -90,6 +110,9 @@ final class TextRun extends InlineContent {
     anchor: anchor,
     anchorOnBaseline: anchorOnBaseline,
     decoration: decoration,
+    artifact: artifact,
+    slotWidth: slotWidth,
+    slotAlign: slotAlign,
   );
 }
 
@@ -104,6 +127,7 @@ final class InlineDecoration {
     this.borderWidth = 0,
     this.radius = 0,
     this.padding = 0,
+    this.outset = 0,
   });
 
   /// The fill.
@@ -120,6 +144,9 @@ final class InlineDecoration {
 
   /// The extra width on the left and right, in points.
   final double padding;
+
+  /// The extra height above the ascent and below the descent, in points.
+  final double outset;
 }
 
 /// How an inline image sits on the line.

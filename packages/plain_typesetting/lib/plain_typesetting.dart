@@ -64,6 +64,7 @@ export 'src/layout/flow.dart'
         PageTemplate,
         Pagination,
         ParagraphBox,
+        ParagraphContent,
         PieceLine,
         ShapedContent,
         SideNoteStream,
@@ -85,6 +86,7 @@ export 'src/layout/inline.dart'
 export 'src/layout/paragraph.dart'
     show
         BoxItem,
+        BreakOpportunities,
         CapLineHeight,
         ExactLineHeight,
         FirstFitLineBreaker,

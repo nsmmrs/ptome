@@ -251,14 +251,43 @@ final class TextContext {
     this.capsTracking = 0,
     this.expansion = 0,
     this.wordSpace = 1,
+    this.engine,
     this.maxHyphenRun,
     this.lastLineMin = 0,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
+  /// This context without its [engine]: texts set in the box's own lines.
+  late final TextContext withoutEngine = engine == null
+      ? this
+      : TextContext(
+          fonts: fonts,
+          rootSize: rootSize,
+          fallbacks: fallbacks,
+          images: images,
+          boundsHeight: boundsHeight,
+          decorationWidth: decorationWidth,
+          lineBreaking: lineBreaking,
+          hyphenRepetition: hyphenRepetition,
+          typographicScripts: typographicScripts,
+          labels: labels,
+          capsTracking: capsTracking,
+          expansion: expansion,
+          wordSpace: wordSpace,
+          maxHyphenRun: maxHyphenRun,
+          lastLineMin: lastLineMin,
+          logger: logger,
+        );
+
   /// How much wider or narrower the letters of a justified line may be set
   /// (font expansion: `base_font_expansion`, modern engine).
   final double expansion;
+
+  /// What sets a text in the modern engine (plain_typesetting's paragraph
+  /// as content, which [TextBox] places and measures by): null for a text
+  /// the engine doesn't set as this box does, or in the compatibility
+  /// mode, where the box sets its own lines.
+  final CustomContent? Function(TextBox text)? engine;
 
   /// The width of the spaces between words in the engine's paragraphs, as
   /// a share of the face's own (`base_word_spacing`: a dictionary's 72%).
@@ -546,6 +575,116 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// Whether there is no text.
   bool get isEmpty => _items.isEmpty;
 
+  /// Whether the text has labels the layout gives as the pages are laid
+  /// out (a footnote's number on its page): a text the box places, which
+  /// labels it as it's placed, not one the engine's paragraph box sets.
+  bool get hasLabels =>
+      _context.labels != null &&
+      _items.any((item) => item.format.fragment.label != null);
+
+  /// Whether the text has an inline image as wide as a share of the
+  /// width it's set in (its `engineContent` then at a given width).
+  bool get hasRelativeImages => _items.any(
+    (item) =>
+        item.format.fragment.imagePath != null &&
+        item.format.image == null &&
+        (item.format.fragment.imageWidth ?? '100%').contains('%'),
+  );
+
+  /// This text set in the box's own lines, never the engine's (for what
+  /// builds on the box's line breaking: a first line of its own style).
+  TextBox get boxOnly => TextBox._(
+    _items,
+    _state,
+    _layout,
+    _context.withoutEngine,
+    first: first,
+    continuedIndent: continuedIndent,
+    startsLine: startsLine,
+  );
+
+  /// [engine]'s text placed as the box places its own: shrunk half a
+  /// point at a time (to 5) until it all fits, with [TextLayout.shrinkToFit];
+  /// its first line alone, with [TextLayout.singleLine].
+  CustomPlacement? _enginePlace(
+    CustomContent engine,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    CustomPlacement? once(CustomContent content) {
+      final placed = content.place(width, available, atTop: atTop);
+      if (placed == null || !_layout.singleLine || placed.rest == null) {
+        return placed;
+      }
+      return CustomPlacement(
+        height: placed.height,
+        paint: placed.paint,
+        anchors: placed.anchors,
+        lines: placed.lines,
+      );
+    }
+
+    if (!_layout.shrinkToFit) return once(engine);
+    var box = this;
+    var content = engine;
+    var size = _state.size;
+    while (true) {
+      final placed = once(content);
+      if (size <= 5 || (placed != null && placed.rest == null)) return placed;
+      size = math.max(size - 0.5, 5);
+      box = box.resized(size);
+      final next = box._engine;
+      if (next == null) {
+        return box._placeShrinking(width, available, atTop: atTop);
+      }
+      content = next;
+    }
+  }
+
+  /// The width [text] in [format] takes as the box sets it in a slot: the
+  /// fragment's own width, or the text's and its border offset on either
+  /// side (the wrap's widths, for the engine).
+  double _slotWidth(String text, _Format format) {
+    final fragment = format.fragment;
+    var width = switch (fragment.width) {
+      final String fixed when fixed.endsWith('em') =>
+        _Wrap._toF(fixed) * format.size,
+      final String fixed => strToPoints(fixed),
+      null => () {
+        final bare = text.replaceAll(RegExp('[\u0000\u00ad]'), '');
+        final tracked =
+            format.font.widthOf(
+              bare,
+              format.size,
+              kerning: _state.kerning,
+              features: format.features,
+            ) +
+            format.tracking * bare.runes.length;
+        final count = bare.runes.length;
+        final spacing = _state.characterSpacing;
+        return spacing == 0 || count < 2
+            ? tracked
+            : tracked + spacing * (count - 1);
+      }(),
+    };
+    if (fragment.borderOffset case final offset?) width += offset * 2;
+    return width;
+  }
+
+  /// The text as the engine sets it ([TextContext.engine]), which places
+  /// and measures it, or null for this box's own lines.
+  CustomContent? get _engine {
+    final factory = _context.engine;
+    if (_items.isEmpty || factory == null) return null;
+    // (Labelled as the layout labels it now: a footnote's number on its
+    // page.)
+    _relabel();
+    return (_engines[_labelState()] ??= (factory(this),)).$1;
+  }
+
+  final Map<String, (CustomContent?,)> _engines = {};
+
   /// The text as the engine's inline content (FEAT-n1bkgf: text set by
   /// plain_typesetting's paragraphs rather than this box's own lines):
   /// each item a text run in its resolved font, size, tracking, features,
@@ -553,7 +692,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// raised or lowered as this box sets it. Null when the text has what
   /// a run can't carry yet (an inline image or formula, a background or
   /// border, small capitals the font lacks), for the box to set it.
-  List<InlineContent>? engineContent() {
+  List<InlineContent>? engineContent({double width = double.infinity}) {
     final runs = <InlineContent>[];
     final images = _context.images;
     int? lastImage;
@@ -570,11 +709,13 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         lastImage = id;
         final (graphic, _) = images(path, fragment.imageFormat);
         if (graphic == null) return null;
+        // (One a share of the width: arranged at the width it's set in.)
         if (graphic is! InlineMath &&
-            (fragment.imageWidth ?? '100%').contains('%')) {
+            (fragment.imageWidth ?? '100%').contains('%') &&
+            width.isInfinite) {
           return null;
         }
-        format = _arrangeImage(item, graphic, double.infinity).format;
+        format = _arrangeImage(item, graphic, width).format;
       }
       // (A background or border drawn around the text, with no room of
       // its own around it: the engine's decoration.)
@@ -582,17 +723,28 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           fragment.backgroundColor != null || fragment.borderWidth != null;
       // (Text the layout labels, a footnote's number on its page: the box
       // relabels it as the pages are laid out.)
-      if ((fragment.label != null && _context.labels != null) ||
-          (fragment.callbacks?.any(
-                (callback) =>
-                    callback == FragmentCallback.inlineTextAligner ||
-                    (callback == FragmentCallback.inlineImage &&
-                        format.image == null),
-              ) ??
-              false) ||
-          (decorated && (fragment.borderOffset ?? 0) != 0)) {
+      if (fragment.callbacks?.any(
+            (callback) =>
+                callback == FragmentCallback.inlineImage &&
+                format.image == null,
+          ) ??
+          false) {
         return null;
       }
+      // (Text the box sets in a slot, aligned there: a fixed width, or its
+      // own and its border offset on either side, as a key's label is. A
+      // slot of words and spaces, each as wide, stays the box's.)
+      final slotted =
+          fragment.width != null ||
+          (decorated && (fragment.borderOffset ?? 0) != 0);
+      // (A padded span of words and spaces: each word padded in a slot of
+      // its own, the spaces between as they are, as the box pads its
+      // words; a fixed width of words and spaces stays the box's.)
+      final spaced =
+          slotted &&
+          item.text.trim().isNotEmpty &&
+          item.text.contains(_boxSpaces);
+      if (spaced && fragment.width != null) return null;
       final font = format.font;
       final rise = format.typographic
           ? 0.0
@@ -617,46 +769,70 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         runs.add(_engineImage(image, format, link));
         continue;
       }
-      runs.add(
-        TextRun(
-          // (A destination marker's placeholder isn't drawn, as the box
-          // doesn't draw it: its anchor alone.)
-          fragment.isMarker ? '' : item.text,
-          TextStyle(
-            font.pdf,
-            format.size,
-            characterSpacing: _state.characterSpacing + format.tracking,
-            wordSpacing: _context.wordSpace == 1
-                ? 0
-                : (_context.wordSpace - 1) *
-                      TextStyle(font.pdf, format.size).measure(' '),
-            rise: rise,
-            kerning: _state.kerning,
-            ligatures: font.ligates,
-            features: format.features,
-            skew: font.slanted ? 0.2 : 0,
-            embolden: font.emboldened ? format.size / 40 : 0,
-          ),
-          color: _pdfColor(fragment.color),
-          underline: styles.contains(FragmentStyle.underline),
-          strikethrough: styles.contains(FragmentStyle.strikethrough),
-          link: link,
-          anchor: fragment.isMarker ? fragment.name : null,
-          // (A hung label's anchor at the baseline, as the box reports
-          // it.)
-          anchorOnBaseline:
-              fragment.isMarker &&
-              (fragment.name?.startsWith(hangAnchorPrefix) ?? false),
-          decoration: decorated
-              ? InlineDecoration(
-                  background: _pdfColor(fragment.backgroundColor),
-                  borderColor: _pdfColor(fragment.borderColor),
-                  borderWidth: (fragment.borderWidth ?? 0).toDouble(),
-                  radius: (fragment.borderRadius ?? 0).toDouble(),
-                )
-              : null,
+      TextRun run(String text, {required bool slot}) => TextRun(
+        // (A destination marker's placeholder isn't drawn, as the box
+        // doesn't draw it: its anchor alone; nor is one a template left
+        // in the text, a NUL.)
+        // (A slot is never broken: no soft hyphens in it.)
+        fragment.isMarker
+            ? ''
+            : slot
+            ? text.replaceAll(RegExp('[\u0000\u00ad]'), '')
+            : text.replaceAll('\u0000', ''),
+        TextStyle(
+          font.pdf,
+          format.size,
+          characterSpacing: _state.characterSpacing + format.tracking,
+          wordSpacing: _context.wordSpace == 1
+              ? 0
+              : (_context.wordSpace - 1) *
+                    TextStyle(font.pdf, format.size).measure(' '),
+          rise: rise,
+          kerning: _state.kerning,
+          ligatures: font.ligates,
+          features: format.features,
+          skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
+          embolden: font.emboldened ? format.size / 40 : 0,
         ),
+        color: _pdfColor(fragment.color),
+        artifact: fragment.artifact,
+        slotWidth: slot ? _slotWidth(text, format) : null,
+        slotAlign:
+            (fragment.callbacks?.contains(FragmentCallback.inlineTextAligner) ??
+                false)
+            ? switch (fragment.align) {
+                'center' => TextAlign.center,
+                'right' => TextAlign.right,
+                _ => TextAlign.left,
+              }
+            : TextAlign.left,
+        underline: styles.contains(FragmentStyle.underline),
+        strikethrough: styles.contains(FragmentStyle.strikethrough),
+        link: link,
+        anchor: fragment.isMarker ? fragment.name : null,
+        // (A marker's anchor at the baseline, as the box reports it, but
+        // a side note's, at the top of its text where the note goes.)
+        anchorOnBaseline:
+            fragment.isMarker &&
+            !(fragment.name?.startsWith(sideNoteAnchorPrefix) ?? false),
+        decoration: decorated
+            ? InlineDecoration(
+                background: _pdfColor(fragment.backgroundColor),
+                borderColor: _pdfColor(fragment.borderColor),
+                borderWidth: (fragment.borderWidth ?? 0).toDouble(),
+                radius: (fragment.borderRadius ?? 0).toDouble(),
+                outset: (fragment.borderOffset ?? 0).toDouble(),
+              )
+            : null,
       );
+      if (spaced) {
+        for (final piece in _boxTokens.allMatches(item.text)) {
+          final text = piece[0]!;
+          runs.add(run(text, slot: !_boxSpaces.hasMatch(text)));
+        }
+      } else {
+        runs.add(run(item.text, slot: slotted));
+      }
     }
     // (The paragraph starts at its first character: spaces before it,
     // after the anchors of index terms say, take no room, as the box's
@@ -665,7 +841,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       if (run is! TextRun) break;
       // (An anchor's marker, of no width, passed over.)
       if (run.anchor != null) continue;
-      final trimmed = run.text.trimLeft();
+      // (ASCII spaces: a no-break space, a listing's indentation, stays.)
+      final trimmed = run.text.replaceFirst(RegExp('^[ \t\r\f\v]+'), '');
       if (trimmed.isEmpty) {
         runs[i] = run.withText('');
         continue;
@@ -941,6 +1118,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
 
   @override
   double minHeight(double width) {
+    if (_engine case final engine?) return engine.minHeight(width);
     // The modern engine needs room for the lines the text may leave at
     // the bottom of a region (its orphans), not for all of it; all of a
     // text too short to split (fewer lines than its orphans and widows).
@@ -1007,6 +1185,9 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   @override
   double? firstBaseline(double width) {
     if (_items.isEmpty) return null;
+    if (_engine case final BaselineContent engine) {
+      return engine.firstBaseline(width);
+    }
     _relabel();
     return _firstBaselines[(width, _labelState())] ??= () {
       final wrap = _wrapOf(
@@ -1067,6 +1248,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
 
   @override
   (double, double) intrinsicWidths() {
+    if (_engine case final engine?) return engine.intrinsicWidths();
     _relabel();
     // The widest unbreakable segment, and the widest line unwrapped (the
     // spaces at its ends not counted: they go at a line's ends).
@@ -1321,6 +1503,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// text.
   ({double right, double left, double top, double firstTop, double baseline})?
   lastFragment(double width) {
+    // (Set by the engine: its lines' geometry.)
+    if (_engine case final ParagraphContent engine) {
+      return paragraphLastFragment(engine, width);
+    }
     if (_items.isEmpty) return null;
     _arrangeImages(width);
     final gap = _layout.initialGap;
@@ -1367,6 +1553,9 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     // footnote numbers and page references): kept, unless the placement
     // reported that the text cannot fit, which a later call reports
     // again.
+    if (_engine case final engine?) {
+      return _enginePlace(engine, width, available, atTop: atTop);
+    }
     _relabel();
     final key = (width, available, atTop, _labelState());
     if (_placements[key] case final placed?) return placed.$1;
@@ -1389,6 +1578,9 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     required (double, double) Function(double top, double bottom) insets,
   }) {
     if (_items.isEmpty) return place(width, available, atTop: atTop);
+    if (_engine case final ShapedContent engine) {
+      return engine.placeAround(width, available, atTop: atTop, insets: insets);
+    }
     _relabel();
     _arrangeImages(width);
     final pitch = _pitch(width);
@@ -1929,6 +2121,12 @@ Color? pdfColorOf(ThemeColor? color) => _pdfColor(color);
 const String _breakChars = ' \t$_zwsp$_shy-';
 
 final RegExp _wordDivision = RegExp('[\t\n\v\r $_zwsp$_shy-]');
+
+/// The spaces the box breaks words at (spaces, tabs, zero width spaces).
+final RegExp _boxSpaces = RegExp('[ \t$_zwsp]');
+
+/// A run of [_boxSpaces], or of what isn't.
+final RegExp _boxTokens = RegExp('[ \t$_zwsp]+|[^ \t$_zwsp]+');
 
 /// [text]'s tokens (scanned by hand: line breaking tokenizes every piece
 /// of text, often): a word (a run without [_breakChars]) with the soft
@@ -2897,6 +3095,35 @@ final class AutofitTextBox implements BaselineContent {
 
   @override
   (double, double) intrinsicWidths() => text.intrinsicWidths();
+}
+
+/// [paragraph]'s last fragment as [TextBox.lastFragment] gives the box's,
+/// its lines set [width] wide: its right edge, its line's left edge and
+/// top, the top of the first line and the last line's baseline.
+({double right, double left, double top, double firstTop, double baseline})?
+paragraphLastFragment(ParagraphContent paragraph, double width) {
+  final lines = paragraph.linesAt(width);
+  final printed = [
+    for (final line in lines)
+      if (line.fragments.isNotEmpty) line,
+  ];
+  if (printed.isEmpty) return null;
+  var y = 0.0;
+  var lastY = 0.0;
+  for (final line in lines) {
+    if (identical(line, printed.last)) lastY = y;
+    y += line.height;
+  }
+  final last = printed.last;
+  final head = printed.first;
+  final fragments = last.fragments;
+  return (
+    right: fragments.map((f) => f.x + f.width).reduce(math.max),
+    left: fragments.map((f) => f.x).reduce(math.min),
+    top: lastY + last.baseline - last.ascent,
+    firstTop: head.baseline - head.ascent,
+    baseline: lastY + last.baseline,
+  );
 }
 
 /// The name of the PDF destination of [anchor]: the anchor itself when

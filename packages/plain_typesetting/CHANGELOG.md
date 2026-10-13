@@ -2,6 +2,29 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `ParagraphContent`: a paragraph as `CustomContent` (lined, with a
+  baseline and intrinsic widths), for content a caller composes around a
+  paragraph (a list item's marker, a table of contents entry's leader)
+  and still has the layout place, split and run around floats. Its lines
+  are broken once per width; what goes on after a break is its line items
+  broken again where it goes on, its first line marked as going on with
+  the line before unless the break was forced (logical line numbers);
+  orphans and widows are kept; it needs its first `orphans` lines to
+  start, or all of it when too short to split; a placement that breaks
+  ends at its last line's text; `slant` shifts each line as a block.
+- `TextRun.slotWidth` and `slotAlign`: text set whole in a fixed width,
+  aligned there by its glyphs' advances (a hung heading number, a key's
+  label padded on both sides); a slot of spaces is fixed space.
+  `TextRun.artifact` draws a run as marked content whose actual text is
+  empty (a listing's callouts, left out of copied text).
+  `InlineDecoration.outset` extends a decoration above and below.
+- `Paragraph.breakOpportunities`: `spacesAndHyphens` breaks only at
+  spaces, hyphens and hard breaks (source code, which UAX #14 would break
+  after a slash). `Paragraph.copyWith` takes `lineHeight` and
+  `breakOpportunities`.
+- A line's width leaves out the tracking after its last character (an
+  ordered list's right-aligned numbers sat half a point off), and a word
+  as wide as the line within rounding is no longer split.
 - `BaselineGrid.raiseFirst`: content at a region's top whose first
   baseline falls below the grid's first line, but above the next, goes
   up to the first, its ascent reaching above the region's top: a fixed

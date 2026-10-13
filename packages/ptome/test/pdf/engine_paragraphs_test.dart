@@ -423,6 +423,49 @@ void main() {
     );
   });
 
+  test('list items, admonitions, a table of contents', () {
+    final long = List.filled(2, _words40).join(' ');
+    _same(
+      '= Doc\n:toc:\n\n== One, a section whose title runs on long enough to '
+      'wrap in the table of contents\n\n$long\n\n'
+      '* $_words40\n* short\n** $_words40\n\n'
+      '. $_words40\n. two\n\n'
+      'term:: $_words40\n\n'
+      'NOTE: $long\n\n== Two\n\n$long\n',
+    );
+  });
+
+  test('buttons and callouts', () {
+    // (Not kbd chips: a line with monospace text sits apart, BUG-kd9h5p.)
+    _same(
+      '= Doc\n:experimental:\n\n$_words40 btn:[Save] and '
+      'btn:[Open File] $_words40\n\n'
+      '----\nputs "hello" # <1>\nexit # <2>\n----\n'
+      '<1> $_words40\n<2> Exits.\n',
+    );
+  });
+
+  test('source listings wrapped, with their indent kept', () {
+    const words =
+        'call one two three four five six seven eight nine ten eleven '
+        'twelve thirteen fourteen fifteen sixteen';
+    final code = [for (var i = 0; i < 40; i++) '${'  ' * (i % 4)}$words $i']
+        .join('\n');
+    _same('$_words40\n\n----\n$code\n----\n\n$_words40\n');
+    _same(
+      '$_words40\n\n.Titled\n----\n$code\n----\n',
+      theme: 'code:\n  font_size: 12\n',
+    );
+  });
+
+  test('a listing shrunk to fit (%autofit)', () {
+    const words = 'a line of code much too long for the column at its own size';
+    final wide = [
+      for (var i = 0; i < 6; i++) '$words $i and then some more of it',
+    ].join('\n');
+    _same('$_words40\n\n[%autofit]\n----\n$wide\n----\n');
+  });
+
   test('base_text_align_last: the unstretched lines aligned apart', () {
     for (final last in ['center', 'right']) {
       _same(

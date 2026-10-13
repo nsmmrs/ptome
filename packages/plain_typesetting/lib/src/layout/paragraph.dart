@@ -114,6 +114,17 @@ enum TextAlign {
   justify,
 }
 
+/// Where a paragraph's lines may break, besides spaces.
+enum BreakOpportunities {
+  /// Where UAX #14's default rules allow (after a hyphen or a slash,
+  /// before an opening bracket, between ideographs...).
+  unicode,
+
+  /// After a hyphen alone (and a word wider than the line between its
+  /// characters): code wrapped as typewriters and Prawn wrap it.
+  spacesAndHyphens,
+}
+
 /// Finds where words may be hyphenated.
 abstract interface class Hyphenator {
   /// The offsets in [word] (letters only) a hyphen may go before.
@@ -170,20 +181,24 @@ final class Paragraph {
     this.firstLineContent,
     this.strut,
     this.rightToLeft = false,
+    this.breakOpportunities = BreakOpportunities.unicode,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
-  /// [justifyToWidest] or [hangLines] instead of its own.
+  /// [justifyToWidest], [hangLines], [breakOpportunities] or [lineHeight]
+  /// instead of its own.
   Paragraph copyWith({
     List<InlineContent>? content,
     TextAlign? align,
+    LineHeight? lineHeight,
     double? firstLineIndent,
     bool? justifyToWidest,
     int? hangLines,
+    BreakOpportunities? breakOpportunities,
   }) => Paragraph(
     content ?? this.content,
     align: align ?? this.align,
-    lineHeight: lineHeight,
+    lineHeight: lineHeight ?? this.lineHeight,
     firstLineIndent: firstLineIndent ?? this.firstLineIndent,
     hyphenator: hyphenator,
     breakLongWords: breakLongWords,
@@ -197,10 +212,14 @@ final class Paragraph {
     firstLineContent: firstLineContent,
     strut: strut,
     rightToLeft: rightToLeft,
+    breakOpportunities: breakOpportunities ?? this.breakOpportunities,
   );
 
   /// The inline content.
   final List<InlineContent> content;
+
+  /// Where the lines may break besides at spaces.
+  final BreakOpportunities breakOpportunities;
 
   /// Whether the paragraph's base direction is right to left (Arabic,
   /// Hebrew): its lines start at the right, where its indents go, and
@@ -1232,12 +1251,22 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     while (nextBreak < breaks.length && breaks.offsetAt(nextBreak) < at) {
       nextBreak++;
     }
-    final opportunity =
+    final segments =
+        paragraph.breakOpportunities == BreakOpportunities.spacesAndHyphens;
+    var opportunity =
         nextBreak < breaks.length && breaks.offsetAt(nextBreak) == at;
+    // (Breaking at spaces and after hyphens alone, but where a line must
+    // end: no rule keeps a space from breaking either.)
+    if (segments &&
+        opportunity &&
+        !breaks.isMandatoryAt(nextBreak) &&
+        whole.codeUnitAt(at - 1) != 0x2d) {
+      opportunity = false;
+    }
     // (Spaces before what no line may start with, a closing bracket or a
     // slash, or after an opening one: no break at them, UAX #14's LB13 and
     // LB14.)
-    final afterSpaces = spaced && !space;
+    final afterSpaces = spaced && !space && !segments;
     if (!space) spaced = false;
     if (afterSpaces && !opportunity && items.lastOrNull is GlueItem) {
       var first = items.length;
@@ -1290,6 +1319,24 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         flush();
         items.add(BoxItem(content, '', width));
         offset += 1;
+      // A run of spaces in a slot of its own width: a space that neither
+      // stretches nor shrinks (a term's gap before its description).
+      case TextRun(:final text, :final slotWidth?)
+          when text.isNotEmpty &&
+              text.runes.every((r) => r == 0x20 || r == 0x09):
+        breakBefore(offset, space: true);
+        flush();
+        items.add(GlueItem(content, text, slotWidth, 0, 0));
+        spaced = true;
+        lastRun = content;
+        offset += text.length;
+      // A run in a slot of its own width: one box, as an image is.
+      case TextRun(:final text, :final slotWidth?):
+        breakBefore(offset);
+        flush();
+        items.add(BoxItem(content, text, slotWidth));
+        lastRun = content;
+        offset += text.length;
       // An anchor with no text of its own (a destination where it is):
       // a box of no width, for the line to place it.
       case TextRun(:final text, anchor: _?) when text.isEmpty:
@@ -1469,7 +1516,7 @@ List<LineItem> _splitWide(List<LineItem> items, double maxWidth) {
   var start = 0;
   var width = 0.0;
   void close(int end) {
-    if (width > maxWidth) {
+    if (width > maxWidth + _epsilon) {
       for (var i = start; i < end; i++) {
         wide.add(i);
       }
@@ -1490,7 +1537,7 @@ List<LineItem> _splitWide(List<LineItem> items, double maxWidth) {
   return [
     for (final (index, item) in items.indexed)
       if (item case BoxItem(content: final TextRun run, :final text)
-          when wide.contains(index)) ...[
+          when wide.contains(index) && run.slotWidth == null) ...[
         // (Between the word's boxes too.)
         if (index > 0 && wide.contains(index - 1) && text.isNotEmpty)
           PenaltyItem(0, 1000, run: run),
@@ -1607,15 +1654,27 @@ final class Line {
               decoration,
               Rect(
                 left - decoration.padding,
-                y + font.descender * size / 1000,
+                y + font.descender * size / 1000 - decoration.outset,
                 fragment.width + 2 * decoration.padding,
-                (font.ascender - font.descender) * size / 1000,
+                (font.ascender - font.descender) * size / 1000 +
+                    2 * decoration.outset,
               ),
             );
           }
           canvas.save();
           if (run.color case final color?) canvas.setFillColor(color);
-          canvas.glyphs(glyphs, left, y, style);
+          if (run.artifact) canvas.beginMarkedContent('Span', actualText: '');
+          // (In its slot, as aligned there: by its glyphs' advances, the
+          // tracking after them aside.)
+          final advances =
+              style.widthOf(glyphs) - style.characterSpacing * glyphs.length;
+          final inSlot = switch ((run.slotWidth, run.slotAlign)) {
+            (null, _) || (_, TextAlign.left || TextAlign.justify) => 0.0,
+            (_, TextAlign.center) => (fragment.width - advances) / 2,
+            (_, TextAlign.right) => fragment.width - advances,
+          };
+          canvas.glyphs(glyphs, left + inSlot, y, style);
+          if (run.artifact) canvas.endMarkedContent();
           final thickness = font.underlineThickness * size / 1000;
           if (run.underline) {
             canvas
@@ -1826,18 +1885,25 @@ Line _line(
   final shaped = <(InlineContent, String, List<ShapedGlyph>, double)>[];
   for (final (content, text, rightToLeft) in _visual(paragraph, pieces)) {
     switch (content) {
-      case TextRun(:final style):
+      case TextRun(:final style, :final slotWidth):
         final glyphs = style.shape(text, rightToLeft: rightToLeft);
-        final width = style.widthOf(glyphs);
+        final width = slotWidth ?? style.widthOf(glyphs);
         shaped.add((content, text, glyphs, width));
         natural += width;
-        spaces += ' '.allMatches(text).length;
+        // (A slot's spaces don't stretch.)
+        if (slotWidth == null) spaces += ' '.allMatches(text).length;
       case InlineImage(:final width):
         shaped.add((content, text, const [], width));
         natural += width;
       case PageReference():
         throw StateError('page references are resolved before breaking');
     }
+  }
+  // (The tracking after the line's last character is no part of it: the
+  // line ends where its last letter does, aligned so.)
+  if (shaped.lastOrNull case (final TextRun run, _, final glyphs, _)
+      when glyphs.isNotEmpty) {
+    natural -= run.style.characterSpacing;
   }
   // (A justified paragraph's last line, or one before a hard break, the
   // breaker set wider than its measure, its spaces shrunk: justified too,
@@ -1967,8 +2033,8 @@ Line _line(
   final fragments = <LineFragment>[];
   for (final (content, string, glyphs, natural) in shaped) {
     switch (content) {
-      case TextRun(:final style):
-        final count = ' '.allMatches(string).length;
+      case TextRun(:final style, :final slotWidth):
+        final count = slotWidth != null ? 0 : ' '.allMatches(string).length;
         final adjusted = extra == 0 && scale == 1
             ? style
             : style.copyWith(

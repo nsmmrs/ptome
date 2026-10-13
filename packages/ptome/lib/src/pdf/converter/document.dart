@@ -59,6 +59,8 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (Every text the engine can set, set by it: modern engine.)
+      engine: _engineParagraphs ? _engineTextOf : null,
       // (`base_word_spacing`: the spaces between words in the engine's
       // paragraphs as a fraction or a percentage of the face's, a
       // dictionary's 72%.)
@@ -1254,7 +1256,9 @@ extension _DocumentParts on PdfConverter {
             _textBox(
               title,
               font,
-              align: _rightToLeft ? 'right' : 'left',
+              // (The theme's start: the right, mirrored in a right-to-left
+              // document.)
+              align: 'left',
               indent: -hanging,
               inherit: (_decoration('toc', entryLevel) ?? Fragment(''))
                 ..anchor = anchor
@@ -1300,12 +1304,7 @@ extension _DocumentParts on PdfConverter {
               } else {
                 markup = number;
               }
-              return _textBox(
-                markup,
-                font,
-                align: _rightToLeft ? 'left' : 'right',
-                normalize: false,
-              );
+              return _textBox(markup, font, align: 'right', normalize: false);
             },
           ),
           style: BoxStyle(

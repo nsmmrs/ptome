@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: all the text the modern engine sets is set by plain_typesetting's
+  paragraphs (FEAT-3jvkxk): list items, admonitions, table cells, the
+  table of contents, headings, title pages, captions, footnotes, kbd
+  chips, callouts, and source listings, wrapped with their indent and
+  continuation arrows and their logical line numbers. The Prawn-shaped
+  text box is left only to compat mode. Checked page by page against the
+  previous build on 1,079 documents: 1,053 render the same; the 26 that
+  differ break where UAX #14 does rather than at Prawn's characters (a
+  thin space after "[", a URL after "/"), set overlong code tokens by
+  the paragraph's emergency rule rather than Prawn's, or choose other
+  Knuth-Plass breaks around floats.
 - PDF: a look's line spacing is exact. `leading: 1.2` sets 10.5 point
   text on 12.6 whatever the face (a look's `leading` now compiles to
   `base_line_pitch` and `<category>_line_pitch` as well as the line
