@@ -23,7 +23,7 @@ test('a document in units renders its units', async () => {
     const html = readFileSync(join(dir, 'sample.html'), 'utf8')
     assert.match(
       html,
-      /<span id="v-exo-34-6" class="unit" data-scheme="bible" data-level="verse" data-unit="Exod 34:6"><sup>6<\/sup><\/span>/,
+      /<span id="v-exo-34-6" class="unit" data-scheme="bible" data-level="verse" data-unit="Exod 34:6"><sup>6<\/sup>\u00a0<\/span>/,
     )
     assert.match(html, /<span class="nd">Lord<\/span>/)
     assert.match(html, /<span class="wj">Blessed <em>are<\/em>/)
