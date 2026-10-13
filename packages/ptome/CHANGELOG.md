@@ -17,6 +17,12 @@ Asciidoctor project.
   Visible change: the house look's body text was 10.5 on 18.5 (176%),
   against doc/style.md's 120-145%; it is now 10.5 on 14.7 (1.4), as the
   look says, and its headings and listings follow theirs.
+- Oracle comparisons (TASK-s6bbsz, `doc/oracles.md`,
+  `tool/oracle_compare.dart`): one fixture set in Ptome, WeasyPrint 70,
+  Typst main and ConTeXt LMTX, measured for leaders, running heads,
+  footnotes and column balancing. All four agree on leaders, heads and
+  footnotes. Typst doesn't balance columns. Ptome's columns end two
+  lines apart where its widow and orphan rules allow no closer split.
 - Look studies (TASK-66c2mr, `test/look/studies_test.dart`): the
   publisher recipes the looks follow, re-measured from the publishers'
   PDFs (baselines from the glyphs' origins), rendered and checked within
