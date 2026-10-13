@@ -1,6 +1,7 @@
 // The magazine looks on the web, as browsers draw them: the sample piece
 // (test/look/magazine/feature.adoc) in each look, screenshot in headless
-// Chromium (initial-letter, shape-outside) and Firefox (the fallbacks),
+// Chromium (initial-letter, shape-outside) and Firefox (the fallbacks;
+// driven through Marionette, so the shot waits for its fonts and images),
 // compared with the reference screenshots in test/look/magazine/shots.
 // A change on purpose is a change to those files:
 //
@@ -21,6 +22,8 @@ import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/look/loader.dart';
 import 'package:test/test.dart';
+
+import '../support/marionette.dart';
 
 const String _sample = 'test/look/magazine';
 
@@ -99,7 +102,10 @@ void main() {
       File('$_sample/$image').copySync('${_dir.path}/$image');
     }
   });
-  tearDownAll(() => _dir.deleteSync(recursive: true));
+  tearDownAll(() async {
+    await _marionette?.close();
+    _dir.deleteSync(recursive: true);
+  });
 
   for (final look in _looks) {
     for (final (name, browser) in [
@@ -108,14 +114,14 @@ void main() {
     ]) {
       test(
         '$look in $name',
-        () {
+        () async {
           final page = _page(look, faces!);
           final shot = '${_dir.path}/$look-$name.png';
           final golden = File('$_sample/shots/$look-$name.png');
-          void take() {
+          Future<void> take() async {
             name == 'chromium'
                 ? _chromiumShot(browser!, page, shot)
-                : _firefoxShot(browser!, page, shot);
+                : await _firefoxShot(browser!, page, shot);
             // (In 64 colors: the references stay small.)
             Process.runSync('magick', [
               shot,
@@ -126,7 +132,7 @@ void main() {
             ]);
           }
 
-          take();
+          await take();
           if (_update) {
             golden.parent.createSync(recursive: true);
             File(shot).copySync(golden.path);
@@ -137,15 +143,15 @@ void main() {
             isTrue,
             reason: 'no reference: run with MAGAZINE_SHOTS_UPDATE=1',
           );
-          // (Taken again when it differs: a browser under load may take it
-          // before the faces are loaded.)
+          // (Taken again when it differs: Chromium under load may take it
+          // before the faces are loaded; Firefox waits for them.)
           var (differing, total) = _difference(golden.path, shot);
           for (
             var retry = 0;
             retry < 2 && differing / total >= 0.002;
             retry++
           ) {
-            take();
+            await take();
             (differing, total) = _difference(golden.path, shot);
           }
           expect(
@@ -238,23 +244,18 @@ void _chromiumShot(String chromium, String page, String shot) {
   ]);
 }
 
-/// Screenshots [page] in Firefox (the whole page) at [_width] into [shot].
-void _firefoxShot(String firefox, String page, String shot) {
-  final profile = Directory('${_dir.path}/firefox-profile')
-    ..createSync(recursive: true);
-  final result = Process.runSync(firefox, [
-    '--headless',
-    '--no-remote',
-    '--profile',
-    profile.path,
-    '--screenshot',
-    shot,
-    '--window-size=$_width',
-    'file://$page',
-  ]);
-  if (!File(shot).existsSync()) {
-    fail('Firefox made no screenshot: ${result.stderr}');
-  }
+/// The Firefox the shots are taken in, started for the first one.
+Marionette? _marionette;
+
+/// Screenshots [page] in Firefox (the whole page) at [_width] into [shot],
+/// once its fonts have loaded.
+Future<void> _firefoxShot(String firefox, String page, String shot) async {
+  final marionette = _marionette ??= await Marionette.start(
+    firefox,
+    Directory('${_dir.path}/firefox-profile'),
+    width: _width,
+  );
+  File(shot).writeAsBytesSync(await marionette.screenshot('file://$page'));
 }
 
 /// How many pixels of [a] and [b] differ (beyond a little anti-aliasing),
