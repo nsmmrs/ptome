@@ -4,8 +4,7 @@
 /// `strict-raw-types`, which catch implicit `dynamic`. These checks catch
 /// what the analyzer allows: the explicit `dynamic` type anywhere in the
 /// sources, and `Object?` in the library outside the few places where an
-/// untyped value is the contract (the Mustache template context, `Map` and
-/// `StringSink` overrides).
+/// untyped value is the contract (`Map` and `StringSink` overrides, JSON).
 @TestOn('vm')
 library;
 
@@ -15,10 +14,6 @@ import 'package:test/test.dart';
 
 /// Library files allowed to mention `Object?`, with the reason.
 const Map<String, String> objectBoundaries = {
-  // Mustache renders untyped maps; the context builder is the one place
-  // where typed nodes become template values.
-  'lib/src/template_context.dart': 'Mustache template context',
-  'lib/src/template.dart': 'Mustache render input',
   // `Map.operator []` and `Map.remove` take `Object?` keys.
   'lib/src/parser.dart': 'Map overrides on BlockAttributes',
   // JSON is untyped; the page map is the one JSON file the library reads.

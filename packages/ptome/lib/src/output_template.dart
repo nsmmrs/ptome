@@ -3,24 +3,25 @@
 /// default (a footnote's marker, a caption's number).
 library;
 
-import 'package:mustache_template/mustache_template.dart' show Template;
+import 'package:plain_mustache/plain_mustache.dart';
 import 'package:ptome/src/lru.dart';
 
 /// (At most 256 kept: templates come from documents.)
-final LruCache<String, Template> _parsed = LruCache(256);
+final LruCache<String, MustacheTemplate> _parsed = LruCache(256);
 
 /// [template] rendered with [values] (an empty or missing value leaves a
 /// `{{#name}}...{{/name}}` part out). Values are written as they are: the
 /// caller escapes them for its output.
 String renderTemplate(String template, Map<String, String?> values) => _parsed
-    .putIfAbsent(
-      template,
-      () => Template(template, lenient: true, htmlEscapeValues: false),
-    )
-    .renderString({
-      for (final MapEntry(:key, :value) in values.entries)
-        if (value != null && value.isNotEmpty) key: value,
-    });
+    .putIfAbsent(template, () => MustacheTemplate(template, escape: _raw))
+    .render(
+      MustacheMap({
+        for (final MapEntry(:key, :value) in values.entries)
+          if (value != null && value.isNotEmpty) key: MustacheText(value),
+      }),
+    );
+
+String _raw(String text) => text;
 
 /// [template] rendered for [number] (`{{number}}`), the number written by
 /// [link] (a link to what it numbers): `[{{number}}]` gives `[`, the link,

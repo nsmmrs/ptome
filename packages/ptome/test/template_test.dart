@@ -11,6 +11,7 @@
 /// so content/title/attr values exercise the real parser and substitutors.
 library;
 
+import 'package:plain_mustache/plain_mustache.dart' show MustacheText;
 import 'package:ptome/src/internal.dart';
 import 'package:test/test.dart';
 
@@ -74,7 +75,10 @@ void main() {
     test('registers functions and helpers', () {
       final registry = (TemplateRegistry())
         ..registerFunction('paragraph', (node, [opts]) => 'fn')
-        ..registerHelper('up', (node) => node.nodeName.toUpperCase());
+        ..registerHelper(
+          'up',
+          (node) => MustacheText(node.nodeName.toUpperCase()),
+        );
       expect(registry.handles('paragraph'), isTrue);
       expect(registry.functions.keys, contains('paragraph'));
       expect(registry.helpers.keys, contains('up'));
@@ -254,7 +258,10 @@ void main() {
       final paragraph = parseDoc('hi').blocks[0];
       final converter = TemplateConverter('html5')
         ..register('paragraph', '{{up}}')
-        ..registerHelper('up', (node) => node.nodeName.toUpperCase());
+        ..registerHelper(
+          'up',
+          (node) => MustacheText(node.nodeName.toUpperCase()),
+        );
       expect(converter.convert(paragraph), 'PARAGRAPH');
     });
   });

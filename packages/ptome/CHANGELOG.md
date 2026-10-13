@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Templates (`-T` converter templates, the website's navigation and
+  contents, and the text templates documents and themes set) render with
+  plain_mustache, the workspace's own Mustache engine, instead of
+  `mustache_template` (FEAT-dj39h0): its context is typed (a helper
+  returns a `MustacheValue`), and the template code no longer needs
+  `Object?`. Output is the same, checked on 200,000 random templates,
+  but for `{{.}}` inside an inverted section, which wrote the section's
+  name and now writes the enclosing value, as the Mustache specification
+  has it.
 - PDF: a right-to-left document's pages are mirrored (FEAT-49lks5), the
   theme's left read as the start: page margins, running content (its
   margins and columns: a recto's folio at its outer edge, the left), a

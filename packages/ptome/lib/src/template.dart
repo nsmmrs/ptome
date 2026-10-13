@@ -31,7 +31,7 @@ library;
 
 import 'dart:async' show FutureOr;
 
-import 'package:mustache_template/mustache_template.dart' show Template;
+import 'package:plain_mustache/plain_mustache.dart' as mustache;
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/composite.dart';
 import 'package:ptome/src/converter.dart';
@@ -52,21 +52,14 @@ abstract interface class TemplateLoader {
 /// Compiled once at registration with [htmlEscapeValues] defaulting to
 /// `false` (raw by default per ADR-0002 T3: converter output is already-safe
 /// HTML, and Mustache-default escaping would double-escape every
-/// `{{content}}`) and [lenient] defaulting to `true` (missing keys render as
-/// empty output instead of throwing).
+/// `{{content}}`). Missing keys render as empty output.
 class MustacheTemplate {
   /// Compiles [source] for transform [name].
-  new(
-    this.name,
-    this.source, {
-    this.lenient = true,
-    this.htmlEscapeValues = false,
-  }) : _template = Template(
-         source,
-         name: name,
-         lenient: lenient,
-         htmlEscapeValues: htmlEscapeValues,
-       );
+  new(this.name, this.source, {this.htmlEscapeValues = false})
+    : _template = mustache.MustacheTemplate(
+        source,
+        escape: htmlEscapeValues ? escapeValue : _raw,
+      );
 
   /// The transform name this template is registered under.
   final String name;
@@ -74,17 +67,31 @@ class MustacheTemplate {
   /// The Mustache source this template was compiled from.
   final String source;
 
-  /// Whether missing keys render as empty output instead of throwing.
-  final bool lenient;
-
   /// Whether `{{var}}` interpolations are HTML-escaped.
   final bool htmlEscapeValues;
 
   /// The compiled template.
-  final Template _template;
+  final mustache.MustacheTemplate _template;
 
   /// Renders this template against [values] (see [buildTemplateContext]).
-  String render(Map<String, Object?> values) => _template.renderString(values);
+  String render(mustache.MustacheMap values) => _template.render(values);
+
+  /// [text] escaped for HTML: `&`, `<`, `>`, `"`, `'` and `/`.
+  static String escapeValue(String text) => text.replaceAllMapped(
+    _special,
+    (m) => switch (m[0]) {
+      '&' => '&amp;',
+      '<' => '&lt;',
+      '>' => '&gt;',
+      '"' => '&quot;',
+      "'" => '&#x27;',
+      _ => '&#x2F;',
+    },
+  );
+
+  static final RegExp _special = RegExp('[&<>"\'/]');
+
+  static String _raw(String text) => text;
 }
 
 /// Registry of per-transform template overrides.
@@ -107,7 +114,6 @@ class TemplateRegistry {
     Map<String, String> templates = const <String, String>{},
     Map<String, ConvertHandler> functions = const <String, ConvertHandler>{},
     Map<String, TemplateHelper> helpers = const <String, TemplateHelper>{},
-    this.lenient = true,
     this.htmlEscapeValues = false,
   }) {
     templates.forEach(registerTemplate);
@@ -152,9 +158,6 @@ class TemplateRegistry {
     global._helpers.clear();
   }
 
-  /// Default `lenient` flag for templates registered on this registry.
-  final bool lenient;
-
   /// Default `htmlEscapeValues` flag for templates registered here.
   final bool htmlEscapeValues;
 
@@ -165,7 +168,6 @@ class TemplateRegistry {
     _templates[name] = MustacheTemplate(
       name,
       source,
-      lenient: lenient,
       htmlEscapeValues: htmlEscapeValues,
     );
   }

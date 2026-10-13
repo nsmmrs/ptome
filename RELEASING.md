@@ -12,7 +12,7 @@ checks that the tag's version is the package's.
 
 A package is released after the siblings it depends on:
 
-1. plain_compression, plain_unicode, plain_math
+1. plain_compression, plain_unicode, plain_math, plain_mustache
 2. plain_fonts (on plain_compression), plain_hyphenation (on
    plain_compression)
 3. plain_typesetting (on plain_fonts, plain_math, plain_unicode),

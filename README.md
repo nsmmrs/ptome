@@ -19,6 +19,7 @@ holding Ptome and the pure-Dart libraries it is built on
 | [plain_fonts](packages/plain_fonts) | TrueType, OpenType, WOFF and WOFF2: reading, subsetting, installed fonts |
 | [plain_compression](packages/plain_compression) | DEFLATE, zlib and Brotli, the same bytes on every platform |
 | [plain_highlighting](packages/plain_highlighting) | Syntax highlighting for 190+ languages, a port of highlight.js 11.12.0 |
+| [plain_mustache](packages/plain_mustache) | Mustache templates with typed values, the whole specification |
 
 The `plain_*` libraries share one philosophy: pure Dart, written from the
 specification, the same bytes on every platform, statically typed, and

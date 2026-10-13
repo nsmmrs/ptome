@@ -26,7 +26,7 @@ way").
 
 1. **One template syntax: Mustache.** Every new template is a Mustache
    template, rendered with `package:mustache_template` (the engine of the
-   `-T` templates, ADR-0002): `{{name}}` for a value (names may have
+   `-T` templates, ADR-0002; plain_mustache since 2026-10-13): `{{name}}` for a value (names may have
    hyphens: `{{chapter-numeral}}`), `{{#name}}...{{/name}}` for a part that
    appears only when the value is set (and not empty), `{{^name}}...{{/name}}`
    for one that appears only when it isn't. Values aren't HTML-escaped by

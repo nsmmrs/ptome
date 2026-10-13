@@ -28,7 +28,8 @@ is expected of any port. (Early spike report, recorded on TASK-9mfkvk.)
   files under `template_dirs` (CLI `-T` parity), single extension, no backend
   infix (Asciidoctor.js naming precedent), last-wins resolution, fallback to
   the built-in converter. Engine: `package:mustache_template` (verified
-  2.0.6 in pub cache).
+  2.0.6 in pub cache); since 2026-10-13 the workspace's own plain_mustache,
+  whose context is a typed value tree (FEAT-dj39h0).
 
 Effort estimate (from spike): (a) days, (b) 1–2 weeks. Tilt users get an
 honest rewrite with a node-name/context cookbook; logic-heavy templates take

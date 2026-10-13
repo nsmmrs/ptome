@@ -1,0 +1,52 @@
+String escapeHtml(String text)
+final class MustacheBoolean extends MustacheValue
+  MustacheBoolean(bool value)
+  String display
+  String toString()
+  bool ==(Object other)
+  bool value
+  int hashCode
+final class MustacheException implements Exception
+  MustacheException(String message, String source, int offset)
+  String message
+  String source
+  String toString()
+  int column
+  int line
+  int offset
+final class MustacheLambda extends MustacheValue
+  MustacheLambda(String? Function(MustacheLambdaContext) function)
+  String display
+  String toString()
+  String? Function(MustacheLambdaContext) function
+final class MustacheLambdaContext
+  MustacheValue? lookup(String name)
+  String render([MustacheValue? value])
+  String renderSource(String source, [MustacheValue? value])
+  String source
+final class MustacheList extends MustacheValue
+  List<MustacheValue?> items
+  MustacheList(List<MustacheValue?> items)
+  String display
+  String toString()
+final class MustacheMap extends MustacheValue
+  Map<String, MustacheValue?> entries
+  MustacheMap(Map<String, MustacheValue?> entries)
+  String display
+  String toString()
+final class MustacheTemplate
+  MustacheTemplate(String source, {String? Function(String)? partials, String Function(String) escape = escapeHtml})
+  String Function(String) escape
+  String render(MustacheValue? context)
+  String source
+  String? Function(String)? partials
+final class MustacheText extends MustacheValue
+  MustacheText(String text)
+  String display
+  String text
+  String toString()
+  bool ==(Object other)
+  int hashCode
+sealed class MustacheValue
+  MustacheValue()
+  String display

@@ -4,14 +4,14 @@
 /// `lib/asciidoctor/converter/template.rb` (ADR-0002, T2). Asciidoctor's
 /// Tilt templates execute with the node as `self`, so they call arbitrary
 /// node methods.
-/// `package:mustache_template` resolves Map keys and dotted paths only — Dart
-/// object members are invisible to it (probe recorded in ADR-0002 T2) — so
-/// [buildTemplateContext] pre-flattens each node to a Map before rendering.
+/// A Mustache context is a typed `MustacheValue` tree (plain_mustache),
+/// so [buildTemplateContext] flattens each node to a [MustacheMap] before
+/// rendering.
 ///
 /// ## Context vocabulary
 ///
 /// Every render receives these keys (`null` when the node has no value, which
-/// renders as empty output in the lenient adapter, see `template.dart`):
+/// renders as empty output, see `template.dart`):
 ///
 /// - `content`: Converted content: `AbstractBlock.content()`, the text of an
 ///   [Inline], else `null`.
@@ -45,12 +45,10 @@
 /// (path-(a) lambdas per ADR-0002 T4) are merged in as top-level keys; on
 /// collision the explicit call-site values win over the node-derived ones.
 ///
-/// The render context is the boundary with `package:mustache_template`,
-/// which reads untyped maps, lists, strings, booleans and lambdas; it is
-/// the one place where values are `Object?`.
+/// Numbers (`toclevels`, `sectnumlevels`) are given as their text.
 library;
 
-import 'package:mustache_template/mustache_template.dart' show LambdaContext;
+import 'package:plain_mustache/plain_mustache.dart';
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/converter.dart' show ConvertOptions;
@@ -63,28 +61,28 @@ import 'package:ptome/src/list.dart';
 /// per-directory `helpers.rb` (arbitrary loadable code), this port
 /// receives helper code through registration, and the context builder injects
 /// each computed value into the render context under its registered name.
-typedef TemplateHelper = Object? Function(AbstractNode node);
+typedef TemplateHelper = MustacheValue? Function(AbstractNode node);
 
 /// Flattens [node] to the Mustache render context described above.
 ///
 /// [helpers] are evaluated against [node] and injected by name; [opts] are
 /// merged in as top-level keys (winning on collision).
-Map<String, Object?> buildTemplateContext(
+MustacheMap buildTemplateContext(
   AbstractNode node, {
   Map<String, TemplateHelper> helpers = const <String, TemplateHelper>{},
   ConvertOptions? opts,
 }) {
-  final context = <String, Object?>{
-    'content': _contentOf(node),
-    'text': _textOf(node),
-    'id': node.id,
-    'role': node.role,
-    'roles': node.roles,
-    'title': node is AbstractBlock ? node.title : null,
-    'caption': node is AbstractBlock ? node.caption : null,
-    'context': node.contextName,
-    'node_name': node.nodeName,
-    'attributes': Map<String, Object?>.of(node.attributes),
+  final context = <String, MustacheValue?>{
+    'content': _text(_contentOf(node)),
+    'text': _text(_textOf(node)),
+    'id': _text(node.id),
+    'role': _text(node.role),
+    'roles': MustacheList([for (final role in node.roles) MustacheText(role)]),
+    'title': _text(node is AbstractBlock ? node.title : null),
+    'caption': _text(node is AbstractBlock ? node.caption : null),
+    'context': MustacheText(node.contextName),
+    'node_name': MustacheText(node.nodeName),
+    'attributes': _attributes(node.attributes),
     'attr': _attrLambda(node),
     'document': _documentOf(node),
     'items': _itemsOf(node),
@@ -93,12 +91,23 @@ Map<String, Object?> buildTemplateContext(
   for (final entry in helpers.entries) {
     context[entry.key] = entry.value(node);
   }
-  if (opts?.toclevels case final toclevels?) context['toclevels'] = toclevels;
-  if (opts?.sectnumlevels case final levels?) {
-    context['sectnumlevels'] = levels;
+  if (opts?.toclevels case final toclevels?) {
+    context['toclevels'] = MustacheText('$toclevels');
   }
-  return context;
+  if (opts?.sectnumlevels case final levels?) {
+    context['sectnumlevels'] = MustacheText('$levels');
+  }
+  return MustacheMap(context);
 }
+
+/// [text] as a value (`null` stays `null`).
+MustacheText? _text(String? text) => text == null ? null : MustacheText(text);
+
+/// A copy of [attributes] as a value.
+MustacheMap _attributes(Map<String, String> attributes) => MustacheMap({
+  for (final MapEntry(:key, :value) in attributes.entries)
+    key: MustacheText(value),
+});
 
 /// The converted content of [node].
 String? _contentOf(AbstractNode node) {
@@ -118,43 +127,41 @@ String? _textOf(AbstractNode node) {
 ///
 /// The section body is rendered first (so it may itself contain tags), then
 /// looked up with document fallback, as `attr` does.
-Object Function(LambdaContext) _attrLambda(AbstractNode node) {
-  return (LambdaContext ctx) {
-    final spec = ctx.renderString().trim();
-    final equals = spec.indexOf('=');
-    if (equals == -1) return node.attr(spec, null, spec) ?? '';
-    final name = spec.substring(0, equals);
-    return node.attr(name, spec.substring(equals + 1), name) ?? '';
-  };
-}
+MustacheLambda _attrLambda(AbstractNode node) => MustacheLambda((context) {
+  final spec = context.render().trim();
+  final equals = spec.indexOf('=');
+  if (equals == -1) return node.attr(spec, null, spec) ?? '';
+  final name = spec.substring(0, equals);
+  return node.attr(name, spec.substring(equals + 1), name) ?? '';
+});
 
 /// Shallow document map for [node]'s document (`null` while detached).
 ///
 /// Deliberately shallow (title + attributes only): the full document tree is
 /// never nested into its own render context.
-Map<String, Object?>? _documentOf(AbstractNode node) {
+MustacheMap? _documentOf(AbstractNode node) {
   final doc = node.document;
   if (doc == null) return null;
-  return <String, Object?>{
-    'title': doc.attr('doctitle'),
-    'attributes': Map<String, Object?>.of(doc.attributes),
-  };
+  return MustacheMap({
+    'title': _text(doc.attr('doctitle')),
+    'attributes': _attributes(doc.attributes),
+  });
 }
 
 /// Pre-flattened list items, or `null` when [node] is not a list.
 ///
 /// Outline-list items flatten to their own render contexts.
 /// Description-list pairs flatten to `{'terms': [...], 'description': ...}`.
-List<Map<String, Object?>>? _itemsOf(AbstractNode node) {
+MustacheList? _itemsOf(AbstractNode node) {
   if (node is! ListBlock) return null;
   if (node.context == BlockContext.dlist) {
-    return <Map<String, Object?>>[
+    return MustacheList([
       for (final entry in node.entries) _flattenDlistEntry(entry),
-    ];
+    ]);
   }
-  return <Map<String, Object?>>[
+  return MustacheList([
     for (final item in node.items) buildTemplateContext(item),
-  ];
+  ]);
 }
 
 /// Pre-flattened child sections, or `null` on non-sectioned nodes.
@@ -164,23 +171,23 @@ List<Map<String, Object?>>? _itemsOf(AbstractNode node) {
 /// custom `outline` template iterates them with `{{#sections}}`. The
 /// recursion always terminates: section nesting is finite and the
 /// flattened children never re-enter their own ancestors.
-List<Map<String, Object?>>? _sectionsOf(AbstractNode node) {
+MustacheList? _sectionsOf(AbstractNode node) {
   if (node is! AbstractBlock) return null;
   if (node.context != .document && node.context != .section) return null;
-  return <Map<String, Object?>>[
+  return MustacheList([
     for (final section in node.sections) buildTemplateContext(section),
-  ];
+  ]);
 }
 
 /// Flattens one description-list entry.
-Map<String, Object?> _flattenDlistEntry(DlistEntry entry) {
+MustacheMap _flattenDlistEntry(DlistEntry entry) {
   final description = entry.description;
-  return <String, Object?>{
-    'terms': <Map<String, Object?>>[
+  return MustacheMap({
+    'terms': MustacheList([
       for (final term in entry.terms) buildTemplateContext(term),
-    ],
+    ]),
     'description': description == null
         ? null
         : buildTemplateContext(description),
-  };
+  });
 }

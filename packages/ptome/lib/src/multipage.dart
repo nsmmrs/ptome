@@ -5,7 +5,7 @@ library;
 
 import 'dart:typed_data';
 
-import 'package:mustache_template/mustache_template.dart' show Template;
+import 'package:plain_mustache/plain_mustache.dart';
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/block.dart';
 import 'package:ptome/src/context.dart';
@@ -418,16 +418,19 @@ class MultipageHtml5Converter extends Html5Converter
     final previousLink = link('previous', '&#8592; {{title}}', previous);
     final upLink = link('up', '&#8593; {{title}}', up);
     final nextLink = link('next', '{{title}} &#8594;', next);
-    final context = {
-      'previous': ?previousLink,
-      'up': ?upLink,
-      'next': ?nextLink,
-      'folio': ?folio,
-      'page': '${page.$1}',
-      'pages': '${page.$2}',
-    };
     if (_navTemplate case final template?) {
-      return template.renderString(context).trimRight();
+      return template
+          .render(
+            MustacheMap({
+              if (previousLink != null) 'previous': _values(previousLink),
+              if (upLink != null) 'up': _values(upLink),
+              if (nextLink != null) 'next': _values(nextLink),
+              if (folio != null) 'folio': MustacheText(folio),
+              'page': MustacheText('${page.$1}'),
+              'pages': MustacheText('${page.$2}'),
+            }),
+          )
+          .trimRight();
     }
     String a(String rel, Map<String, String> page) =>
         '<a class="$rel" rel="$rel" href="${page['href']}">${page['label']}</a>';
@@ -457,10 +460,9 @@ class MultipageHtml5Converter extends Html5Converter
     if (entries == null) return null;
     final title = document.attr('toc-title') ?? 'Table of Contents';
     if (_templates['multipage_toc'] case final template?) {
-      return template.renderString({
-        'title': title,
-        'entries': entries,
-      }).trimRight();
+      return template
+          .render(_values({'title': title, 'entries': entries}))
+          .trimRight();
     }
     return '<div id="toc" class="toc">\n<div id="toctitle">$title</div>\n'
         '$entries\n</div>';
@@ -470,18 +472,24 @@ class MultipageHtml5Converter extends Html5Converter
   Document? _document;
 
   /// The `multipage_nav.mustache` template of the `-T` directories.
-  Template? get _navTemplate => _templates['multipage_nav'];
+  MustacheTemplate? get _navTemplate => _templates['multipage_nav'];
 
   /// The website's templates (`multipage_nav`, `multipage_toc`) in the
   /// `-T` directories.
-  late final Map<String, Template> _templates = {
+  late final Map<String, MustacheTemplate> _templates = {
     if (opts.templateDirs.isNotEmpty)
       for (final MapEntry(:key, :value) in FileTemplateLoader(
         templateDirs: opts.templateDirs,
       ).load().entries)
         if (key.startsWith('multipage_'))
-          key: Template(value, lenient: true, htmlEscapeValues: false),
+          key: MustacheTemplate(value, escape: (text) => text),
   };
+
+  /// [texts] as a template's values.
+  static MustacheMap _values(Map<String, String> texts) => MustacheMap({
+    for (final MapEntry(:key, :value) in texts.entries)
+      key: MustacheText(value),
+  });
 
   /// [pages] with each link to an id on another page (`href="#id"`)
   /// pointing to that page (by its path in [hrefs]).
