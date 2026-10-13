@@ -411,4 +411,27 @@ void main() {
       expect(lines(TextAlign.justify).single.width, closeTo(200, 1e-6));
     });
   });
+
+  test('a long paragraph of wide words: lines as wide are one class', () {
+    // (Words a fifth of the line wide, justified: no first-pass breaks,
+    // and with every line number kept apart, every break of the looser
+    // passes reachable in many: minutes. TeX's easy_line, §848.)
+    // (Letters the font lacks, each its .notdef, an em wide.)
+    final words = [for (var i = 0; i < 3000; i++) 'بِ' * (2 + (i * 7) % 8)];
+    final paragraph = Paragraph([
+      TextRun(words.join(' '), TextStyle(_serif, 10.5)),
+    ], align: TextAlign.justify);
+    final watch = Stopwatch()..start();
+    const breaker = KnuthPlassLineBreaker(emergencyStretch: 21);
+    final lines = breaker.breakLines(paragraph, (_) => 498);
+    expect(watch.elapsed, lessThan(const Duration(seconds: 5)));
+    expect(lines.map(_text).join(' '), words.join(' '));
+    // (The same breaks where only the first line is narrower: its number
+    // still kept apart.)
+    final indented = breaker.breakLines(
+      paragraph,
+      (line) => line == 0 ? 450 : 498,
+    );
+    expect(indented.map(_text).join(' '), words.join(' '));
+  });
 }

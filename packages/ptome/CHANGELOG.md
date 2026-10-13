@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: text in a script no font of the theme has (Arabic in the default
+  theme) converts as fast as with a font for it, and one warning lists
+  the characters drawn as empty boxes, where no fallbacks were tried
+  (BUG-z0xjdy): the units corpus's Arabic Qur'an in 5.8 s, where it ran
+  for minutes.
 - PDF: Arabic and Hebrew taken from the page (copied, searched, read
   aloud, extracted by pdftotext) read as written: letters drawn from
   shared dotless bases and their dots, and vowels and points moved onto

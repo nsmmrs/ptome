@@ -449,6 +449,13 @@ final class FontCatalog {
   final Map<(String, String), FontFace> _fonts = {};
   static final Map<String, List<int>> _files = {};
 
+  /// The characters the text used that its fonts have no glyph for (each
+  /// shown as the font's `.notdef`), as code points.
+  Set<int> get missingCharacters => {
+    for (final face in _fonts.values)
+      if (face.pdf case final EmbeddedFont font) ...font.missingCharacters,
+  };
+
   /// Whether [family] is known (in the catalog, built in, an icon set or
   /// installed).
   bool hasFamily(String family) =>

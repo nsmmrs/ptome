@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `EmbeddedFont.missingCharacters`: the characters text used that the
+  font has no glyph for.
 - Shaped text taken from the page reads as written. `PdfCanvas.glyphs`
   takes the glyphs' `text` as drawn, and marks with it as their actual
   text (ISO 32000-2, 14.9.4) the glyphs a font's ToUnicode map can't read

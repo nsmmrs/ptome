@@ -4737,6 +4737,22 @@ heading:
       expect(double.parse(number[1]!), lessThan(100));
     });
 
+    test('characters no font has: one warning for them all', () {
+      final logger = MemoryLogger();
+      _pdf(
+        '= Doc\n\nبِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ\n\nאבג\n',
+        logger: logger,
+      );
+      final warnings = [
+        for (final m in logger.messages)
+          if (m.severity == Severity.warn) '${m.message}',
+      ];
+      expect(warnings, hasLength(1));
+      expect(warnings.single, contains('no glyph for'));
+      expect(warnings.single, contains('U+0628'));
+      expect(warnings.single, contains('U+05D0'));
+    });
+
     test('Arabic taken from the page as written (no U+FFFD)', () {
       const arabic = '''
 font:

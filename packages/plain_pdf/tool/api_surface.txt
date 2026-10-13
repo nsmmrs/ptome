@@ -67,6 +67,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
   List<int> encode(List<ShapedGlyph> glyphs)
   OpenTypeFont font
   PdfRef subsetReference(PdfWriter writer, int subset)
+  Set<int> missingCharacters
   String name
   bool covers(int codePoint)
   bool missedGlyphs

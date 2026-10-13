@@ -607,6 +607,31 @@ extension _DocumentParts on PdfConverter {
     logger.info(
       'laid out ${pages.length} ${pages.length == 1 ? 'page' : 'pages'}',
     );
+    // (Characters no font had, where no fallbacks were tried: one warning
+    // for them all, which the per-character warnings of fallbacks give
+    // otherwise.)
+    if (!asciidoctorCompat(_document, CompatFormat.pdf) &&
+        _theme.fontFallbacks.isEmpty) {
+      final missing =
+          _fonts.missingCharacters
+              .where((c) => c > 0x20 && c != 0xa0 && c != 0xad)
+              .toList()
+            ..sort();
+      if (missing.isNotEmpty) {
+        String show(int c) {
+          final hex = c.toRadixString(16).toUpperCase().padLeft(4, '0');
+          return '${String.fromCharCode(c)} (U+$hex)';
+        }
+
+        logger.warn(
+          'the fonts have no glyph for ${missing.length} '
+          '${missing.length == 1 ? 'character' : 'characters'}, drawn as '
+          'empty boxes: ${missing.take(8).map(show).join(', ')}'
+          '${missing.length > 8 ? ', ...' : ''}; give a font that has them '
+          '(font_catalog) or fallbacks (font_fallbacks)',
+        );
+      }
+    }
     if (_engineParagraphs) {
       logger.debug('paragraphs set by the engine: $_engineParagraphCount');
     }

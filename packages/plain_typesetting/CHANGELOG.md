@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `KnuthPlassLineBreaker` keeps breaks apart by their line numbers only
+  up to TeX's easy line (§848), from which every line is as wide: a long
+  justified paragraph of wide words (Arabic set in a font without it,
+  each letter an em-wide `.notdef`) is broken in a fraction of a second
+  rather than minutes, its breaks the same.
 - `Canvas.glyphs` takes `text`: what the glyphs stand for as drawn, a
   right-to-left run's characters reversed, for a backend that maps glyphs
   back to text. A line's `TextFragment`s say whether they are a

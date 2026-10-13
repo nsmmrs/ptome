@@ -798,6 +798,15 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
       return lineWidths[line];
     }
 
+    // (TeX's easy_line, §848: the first line from which every line is as
+    // wide as the one before, after which a break's line number makes no
+    // difference to what can follow it, so breaks are no longer kept apart
+    // by it. No paragraph has more lines than boxes.)
+    var easy = 0;
+    final boxes = items.whereType<BoxItem>().length;
+    for (var line = 1; line <= boxes; line++) {
+      if (widthOf(line) != widthOf(line - 1)) easy = line;
+    }
     final passes = [
       (tolerance, 0.0),
       if (emergencyStretch > 0) (tolerance, emergencyStretch),
@@ -810,7 +819,15 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     for (final (i, (ratio, extra)) in passes.indexed) {
       final last = i == passes.length - 1;
       if (last && runt != null) return runt;
-      final breaks = _total(items, sums, widthOf, ratio, extra, protrusion);
+      final breaks = _total(
+        items,
+        sums,
+        widthOf,
+        ratio,
+        extra,
+        protrusion,
+        easy: easy,
+      );
       if (breaks == null) continue;
       if (last || !_endsInRunt(items, sums, widthOf, breaks)) return breaks;
       runt ??= breaks;
@@ -1030,9 +1047,10 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
     (Float64List, Float64List, Float64List, Int32List, Int32List) sums,
     LineWidths widths,
     double limit,
-    double extraStretch, [
-    double Function(int start, int at)? protrusion,
-  ]) {
+    double extraStretch,
+    double Function(int start, int at)? protrusion, {
+    int? easy,
+  }) {
     final (totalWidth, totalStretch, totalShrink, totalFills, next) = sums;
     final n = items.length;
     var active = <_Node>[
@@ -1089,10 +1107,12 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
         final run = hyphenLimit == null ? 0 : hyphens;
         final total = node.demerits + demerits;
         final line = node.line + 1;
+        // (Past the easy line, one class for all the lines' numbers.)
+        final lineClass = easy != null && line > easy ? easy + 1 : line;
         var at = 0;
         while (at < best.length &&
             (bestFitness[at] != fitness ||
-                bestLine[at] != line ||
+                bestLine[at] != lineClass ||
                 bestHyphens[at] != run)) {
           at++;
         }
@@ -1109,7 +1129,7 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker {
           );
           if (at == best.length) {
             bestFitness.add(fitness);
-            bestLine.add(line);
+            bestLine.add(lineClass);
             bestHyphens.add(run);
             best.add(found);
           } else {

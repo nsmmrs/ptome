@@ -372,6 +372,11 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
   /// `.notdef`).
   bool get missedGlyphs => _usedNotdef;
 
+  /// The characters text used that the font has no glyph for (shown as
+  /// `.notdef`), as code points.
+  Set<int> get missingCharacters => Set.unmodifiable(_missing);
+  final Set<int> _missing = {};
+
   double _scale(num units) => _shaper.scale(units);
 
   @override
@@ -426,6 +431,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
       // map reads it as U+FFFD (and it still goes into the subset).
       if (id == 0) {
         _usedNotdef = true;
+        _missing.addAll(glyph.text.runes);
       } else {
         _used[id] ??= glyph.text; // the first text stays
       }
@@ -462,7 +468,10 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
 
     for (final (i, glyph) in glyphs.indexed) {
       final id = glyph.id;
-      if (id == 0) _usedNotdef = true;
+      if (id == 0) {
+        _usedNotdef = true;
+        _missing.addAll(glyph.text.runes);
+      }
       // The subset showing it: the current one, else the first that has
       // it, else the last with room, else a new one. (Every subset has
       // the space.)
