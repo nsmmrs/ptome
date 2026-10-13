@@ -97,11 +97,7 @@ final class BmpFile extends ImageFile {
             .where((c) => c.code == code)
             .firstOrNull,
     };
-    if (compression == BmpCompression.huffman) {
-      throw const ImageFormatException(
-        'BMP Huffman compression (OS/2) is not supported',
-      );
-    }
+
     if (compression == null) {
       throw ImageFormatException('BMP compression $code is not defined');
     }
@@ -241,6 +237,7 @@ final class BmpFile extends ImageFile {
     BmpCompression.png || BmpCompression.jpeg => _embedded.bitDepth,
     BmpCompression.rle4 || BmpCompression.rle8 => 8,
     _ when bitsPerPixel == 64 => 16,
+    BmpCompression.huffman => 1,
     _ => _indexed ? bitsPerPixel : 8,
   };
 
@@ -264,9 +261,7 @@ final class BmpFile extends ImageFile {
       case BmpCompression.rle24:
         return _decodeRle24();
       case BmpCompression.huffman:
-        throw const ImageFormatException(
-          'BMP Huffman compression (OS/2) is not supported',
-        );
+        return _decodeHuffman();
       case BmpCompression.none when bitsPerPixel == 64:
         return _decode64();
       case BmpCompression.none:
@@ -337,6 +332,33 @@ final class BmpFile extends ImageFile {
       samples: indices,
       palette: palette,
       transparency: transparency,
+      iccProfile: iccProfile,
+    );
+  }
+
+  /// 1-bit pixels in T.4's one-dimensional code (OS/2 2.x): rows of
+  /// Modified Huffman runs after EOL codes, bottom to top unless
+  /// [topDown]; a run's bits are palette indices, 1 for black runs.
+  Raster _decodeHuffman() {
+    final rows = faxDecode(
+      Uint8List.sublistView(bytes, dataOffset),
+      width,
+      height,
+      coding: FaxCoding.group3,
+    );
+    final stride = (width + 7) >> 3;
+    final samples = Uint8List(stride * height);
+    for (var y = 0; y < height; y++) {
+      final from = (topDown ? y : height - 1 - y) * stride;
+      samples.setRange(y * stride, (y + 1) * stride, rows, from);
+    }
+    return Raster(
+      width: width,
+      height: height,
+      colorModel: ColorModel.indexed,
+      bitDepth: 1,
+      samples: samples,
+      palette: palette,
       iccProfile: iccProfile,
     );
   }

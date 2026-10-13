@@ -54,6 +54,7 @@ void main() {
     ('gif', '.gif', 20),
     ('bmp', '.bmp', 20),
     ('webp', '.webp', 20),
+    ('tiff', '.tif', 70),
   ]) {
     test('$folder: damaged files are decoded or rejected', () {
       final random = Random(

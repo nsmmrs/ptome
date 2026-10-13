@@ -1,7 +1,8 @@
-// GIF, BMP and WebP images in PDF, in the modern engine and the compatibility
-// mode alike (asciidoctor-pdf warns that GIF isn't supported; ptome
-// doesn't imitate that): embedded with their transparency, on other cores
-// too, and a format plain_images doesn't read reported by name.
+// GIF, BMP, WebP and TIFF images in PDF, in the modern engine and the
+// compatibility mode alike (asciidoctor-pdf warns that GIF isn't
+// supported; ptome doesn't imitate that): embedded with their
+// transparency, on other cores too, and a format plain_images doesn't
+// read reported by name.
 @TestOn('vm')
 library;
 
@@ -31,6 +32,7 @@ void main() {
       'bmp/rle8.bmp',
       'bmp/rgba32-v5.bmp',
       'webp/lossy-alpha.webp',
+      'tiff/bw-g4.tif',
     ]) {
       File('$_images/$name').copySync('${dir.path}/${name.split('/').last}');
     }
@@ -50,6 +52,8 @@ image::rle8.bmp[Run-length]
 image::rgba32-v5.bmp[Alpha]
 
 image::lossy-alpha.webp[Lossy with alpha]
+
+image::bw-g4.tif[Fax]
 
 image::photo.avif[Photo]
 ''');
@@ -90,9 +94,10 @@ image::photo.avif[Photo]
         'could not embed image: photo.avif; AVIF images are not supported',
       ]);
       if (!_has('pdfimages')) return;
-      // Five images: the GIF with a color key (no soft mask), the inline
+      // Six images: the GIF with a color key (no soft mask), the inline
       // GIF, the RLE8 bitmap (indexed), the bitmap with alpha and the WebP
-      // with alpha (each with its soft mask).
+      // with alpha (each with its soft mask), the Group 4 fax (1-bit
+      // gray).
       final list =
           (Process.runSync('pdfimages', ['-list', pdf]).stdout as String)
               .split('\n')
@@ -102,11 +107,20 @@ image::photo.avif[Photo]
               .toList();
       expect(
         [for (final row in list) row[2]],
-        ['image', 'image', 'image', 'image', 'smask', 'image', 'smask'],
+        [
+          'image',
+          'image',
+          'image',
+          'image',
+          'smask',
+          'image',
+          'smask',
+          'image',
+        ],
       );
       expect(
         [for (final row in list) row[5]],
-        ['index', 'index', 'index', 'rgb', 'gray', 'rgb', 'gray'],
+        ['index', 'index', 'index', 'rgb', 'gray', 'rgb', 'gray', 'gray'],
       );
     });
   }

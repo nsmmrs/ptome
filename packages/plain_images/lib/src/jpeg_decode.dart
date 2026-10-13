@@ -37,9 +37,10 @@ const List<int> _natural = [
 
 /// The JPEG image in [data]; [tables], if given, is a stream of tables
 /// (quantization, Huffman, restart interval) read first (TIFF's
-/// JPEGTables).
-JpegPixels decodeJpeg(Uint8List data, {Uint8List? tables}) {
-  final decoder = _Decoder();
+/// JPEGTables); [ycc], if given, whether three components are YCbCr to
+/// convert to RGB (else as the file's markers tell, as libjpeg tells it).
+JpegPixels decodeJpeg(Uint8List data, {Uint8List? tables, bool? ycc}) {
+  final decoder = _Decoder().._ycc = ycc;
   if (tables != null) decoder.read(tables, tablesOnly: true);
   decoder.read(data);
   return decoder.output();
@@ -168,6 +169,7 @@ final class _Decoder {
   var _mcuRows = 0;
 
   var _jfif = false;
+  bool? _ycc;
   bool adobe = false;
   int adobeTransform = -1;
 
@@ -1082,13 +1084,14 @@ final class _Decoder {
     // The color space, as libjpeg tells it.
     final ycc =
         channels == 3 &&
-        (_jfif ||
-            (adobe
-                ? adobeTransform != 0
-                : !_lossless &&
-                      !(_components[0].id == 82 &&
-                          _components[1].id == 71 &&
-                          _components[2].id == 66)));
+        (_ycc ??
+            (_jfif ||
+                (adobe
+                    ? adobeTransform != 0
+                    : !_lossless &&
+                          !(_components[0].id == 82 &&
+                              _components[1].id == 71 &&
+                              _components[2].id == 66))));
     final ycck = channels == 4 && adobe && adobeTransform != 0;
     if (channels == 1) {
       out.setAll(0, full[0].sublist(0, count));

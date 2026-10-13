@@ -15,10 +15,8 @@ import 'support.dart';
 
 const String _suite = 'test/images/bmpsuite';
 
-/// What isn't read yet: OS/2's Huffman code (with TIFF's fax codes).
-const Map<String, String> _unsupported = {
-  'q/pal1huffmsb.bmp': 'BMP Huffman compression (OS/2) is not supported',
-};
+/// What isn't read (none now).
+const Map<String, String> _unsupported = {};
 
 (int, int, Uint8List) _rgb(Raster raster) =>
     onWhite(raster.width, raster.height, raster.toRgba8());

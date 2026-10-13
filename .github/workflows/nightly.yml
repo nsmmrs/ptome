@@ -50,11 +50,12 @@ jobs:
       uses: dart-lang/setup-dart@v1
     - name: Install Dart dependencies (the whole workspace)
       run: dart pub get
-    - name: Install poppler, ImageMagick and libwebp's tools, and fetch resvg's reference renders and libwebp's test data
+    - name: Install poppler, ImageMagick and the image libraries' tools, and fetch resvg's reference renders and the libraries' test data
       run: |
-        sudo apt-get update -q && sudo apt-get install -yq poppler-utils imagemagick webp
+        sudo apt-get update -q && sudo apt-get install -yq poppler-utils imagemagick webp libjpeg-turbo-progs libtiff-tools
         echo "RESVG_TESTS=$(packages/plain_pdf/tool/fetch_resvg_tests.sh "$RUNNER_TEMP/resvg" | tail -1)" >> "$GITHUB_ENV"
         echo "WEBP_TESTS=$(packages/plain_images/tool/fetch_webp_tests.sh "$RUNNER_TEMP/libwebp-test-data" | tail -1)" >> "$GITHUB_ENV"
+        echo "TIFF_TESTS=$(packages/plain_images/tool/fetch_tiff_tests.sh "$RUNNER_TEMP/libtiff" | tail -1)" >> "$GITHUB_ENV"
     - name: Run the libraries' nightly tests
       run: |
         status=0
@@ -64,8 +65,9 @@ jobs:
           (cd "$pkg" && dart test -t nightly) || status=1
           echo "::endgroup::"
         done
-        # plain_images against ImageMagick and libwebp (the tests tagged
-        # tools, which CI's other jobs skip without the tools).
+        # plain_images against ImageMagick, libwebp, libjpeg-turbo and
+        # libtiff (the tests tagged tools, which CI's other jobs skip
+        # without the tools).
         echo "::group::plain_images with the tools"
         (cd packages/plain_images && dart test -t tools) || status=1
         echo "::endgroup::"

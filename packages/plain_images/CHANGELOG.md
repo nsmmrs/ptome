@@ -2,10 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
-- `ImageFile.read` tells PNG, JPEG, GIF, BMP and WebP files by their
-  signatures and reads their headers (`PngFile`, `JpegFile`, `GifFile`,
-  `BmpFile`, `WebPFile`); a format it recognizes but doesn't read (AVIF,
-  HEIC, JPEG XL, TIFF, ...) is named in the `ImageFormatException`.
+- `ImageFile.read` tells PNG, JPEG, GIF, BMP, WebP and TIFF files by
+  their signatures and reads their headers (`PngFile`, `JpegFile`,
+  `GifFile`, `BmpFile`, `WebPFile`, `TiffFile`); a format it recognizes
+  but doesn't read (AVIF, HEIC, JPEG XL, JPEG 2000, ...) is named in the
+  `ImageFormatException`.
 - `decode` gives a `Raster`: packed samples (gray, RGB, CMYK or palette
   indices, 1 to 16 bits), transparency apart (an `AlphaChannel` or a
   `ColorKey`), the ICC profile and the EXIF orientation; `toRgba8` for
@@ -41,6 +42,22 @@
   of each layout, coding and precision made by cjpeg, and seeded random
   images through cjpeg with random settings, against djpeg. 12-bit and
   lossless samples fill 16 bits. A BMP holding a JPEG decodes as it.
+- TIFF 6.0 and BigTIFF, the first page: strips and tiles, chunky and
+  planar samples, either byte order, fill order; bilevel, gray, palette,
+  RGB, CMYK, YCbCr (subsampled, through libtiff's conversion) and CIE
+  L*a*b* images of 1 to 16 bits a sample, 32-bit integer and 16-, 24-,
+  32- and 64-bit floating-point samples (scaled to 16 bits), alpha
+  (associated alpha divided out); PackBits, LZW (and old-style LZW),
+  Deflate, CCITT RLE, Group 3 (1-D and 2-D) and Group 4 (decoded as
+  libtiff decodes them, zero-length runs and all), JPEG (with JPEGTables)
+  and WebP compression; the horizontal and floating-point predictors.
+  LZMA, Zstandard, old-style JPEG, JPEG 2000, JBIG and LogLuv are named,
+  not read. Checked: tiffcp's compressions and layouts of images of each
+  kind decode as the uncompressed images, those as ImageMagick decodes
+  them, JPEG- and WebP-compressed ones and libtiff's test images as
+  tiff2rgba does.
+- The OS/2 bitmaps' Huffman compression (T.4's one-dimensional code)
+  decodes, with the TIFF fax decoder.
 - Checked against ImageMagick on the test images, against package:image
   (a dev dependency only) on 650 seeded random PNG, GIF and BMP files,
   and with damaged copies of every test image (nightly). Decoding is

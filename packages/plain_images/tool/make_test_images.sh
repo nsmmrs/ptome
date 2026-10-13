@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
-# Makes the GIF, BMP, WebP and JPEG test images in test/images/ with
+# Makes the GIF, BMP, WebP, JPEG and TIFF test images in test/images/ with
 # ImageMagick 7 (`magick`), libwebp's tools (cwebp, img2webp, webpmux,
-# dwebp) and libjpeg-turbo's (cjpeg, djpeg), from generated pictures only
-# (what they don't write, such as RLE4, local color tables and top-down
-# rows, the tests make by hand). The WebP and JPEG files' expected
-# decoding is dwebp's and djpeg's, recorded as the MD5 of their PAM or PNM
-# output in expected.md5 beside them (of an animation, its first frame's). Run from the package folder;
+# dwebp), libjpeg-turbo's (cjpeg, djpeg) and libtiff's (tiffcp,
+# tiff2rgba), from generated pictures only (what they don't write, such as
+# RLE4, local color tables and top-down rows, the tests make by hand). The
+# WebP and JPEG files' expected decoding is dwebp's and djpeg's, recorded
+# as the MD5 of their PAM or PNM output in expected.md5 beside them (of an
+# animation, its first frame's); a TIFF file compressed without loss
+# decodes as the uncompressed one it was made from, a JPEG- or
+# WebP-compressed one as tiff2rgba decodes it (the MD5 of its RGBA). Run from the package folder;
 # the files are committed, so this is needed only to change them.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -13,8 +16,9 @@ g=test/images/gif
 b=test/images/bmp
 w=test/images/webp
 j=test/images/jpeg-suite
-rm -rf "$g" "$b" "$w" "$j"
-mkdir -p "$g" "$b" "$w" "$j"
+t=test/images/tiff
+rm -rf "$g" "$b" "$w" "$j" "$t"
+mkdir -p "$g" "$b" "$w" "$j" "$t"
 src=$(mktemp -d)
 trap 'rm -rf "$src"' EXIT
 # A picture with many colors, one with few, one with alpha.
@@ -124,4 +128,71 @@ cjpeg -quality 75 -grayscale -outfile "$j/gray.jpg" "$src/gray.pgm"
     echo "$(djpeg -pnm "$f" | md5sum | cut -c1-32)  $f"
   done
 ) > "$j/expected.md5"
-ls -l "$g" "$b" "$w" "$j"
+
+# TIFF: uncompressed images of each kind (ImageMagick), then tiffcp's
+# compressions and layouts of them.
+magick "$src/many.png" -colorspace gray -depth 8 -compress none "$t/gray8.tif"
+magick "$src/many.png" -colorspace gray -depth 16 -compress none "$t/gray16.tif"
+magick "$src/many.png" -depth 8 -compress none "$t/rgb8.tif"
+magick "$src/many.png" -depth 16 -compress none "$t/rgb16.tif"
+magick "$src/many.png" -colors 16 -type palette -depth 4 -compress none "$t/pal4.tif"
+magick "$src/many.png" -colors 200 -type palette -compress none "$t/pal8.tif"
+magick -seed 3 -size 300x41 xc: +noise Random -threshold 50% -type bilevel -depth 1 \
+  -compress none "$t/bw.tif"
+magick "$src/alpha.png" -depth 8 -compress none "$t/rgba8.tif"
+magick "$src/many.png" -colorspace cmyk -depth 8 -compress none "$t/cmyk8.tif"
+magick "$src/many.png" -depth 32 -define quantum:format=floating-point \
+  -compress none "$t/float32.tif"
+magick "$src/many.png" -colorspace gray -alpha set -channel A -fx 'i/w' \
+  +channel -depth 8 -compress none "$t/graya8.tif"
+variant() { # base name options...
+  local base=$1 name=$2
+  shift 2
+  tiffcp "$@" "$t/$base.tif" "$t/$base-$name.tif"
+}
+for base in rgb8 gray16 rgba8; do
+  variant $base packbits -c packbits
+  variant $base lzw -c lzw
+  variant $base lzw-predictor -c lzw:2
+  variant $base zip-predictor -c zip:2
+  variant $base tiles -c lzw -t -w 16 -l 16
+  variant $base strips -c zip -s -r 5
+  variant $base big-endian -c lzw:2 -B
+  variant $base bigtiff -c zip -8
+done
+variant rgb8 planar -c lzw -p separate
+variant rgb8 planar-tiles -c zip -p separate -t -w 16 -l 32
+variant rgba8 planar -c lzw:2 -p separate
+variant rgb16 zip -c zip:2
+variant cmyk8 lzw -c lzw:2
+variant pal4 lzw -c lzw
+variant pal8 zip -c zip
+variant graya8 packbits -c packbits
+variant float32 float-predictor -c zip:3
+variant float32 float-predictor-lzw -c lzw:3
+variant bw packbits -c packbits
+variant bw g3 -c g3
+variant bw g3-2d -c g3:2d
+variant bw g3-fill -c g3:fill
+variant bw g3-2d-fill -c g3:2d:fill
+variant bw g4 -c g4
+variant bw g4-lsb -c g4 -f lsb2msb
+variant bw g4-tiles -c g4 -t -w 32 -l 16
+variant bw g3-2d-strips -c g3:2d -s -r 7
+# Lossy: decoded as tiff2rgba decodes them.
+variant rgb8 jpeg -c jpeg:75
+variant rgb8 jpeg-tiles -c jpeg:90 -t -w 16 -l 16
+variant rgb8 jpeg-rgb -c jpeg:r:75
+variant gray8 jpeg -c jpeg
+variant rgb8 webp -c webp
+# Not read: named.
+variant rgb8 lzma -c lzma
+variant rgb8 zstd -c zstd
+(
+  cd "$t"
+  for f in *-jpeg*.tif *-webp.tif; do
+    tiff2rgba -c none "$f" "$src/rgba.tif"
+    echo "$(magick "$src/rgba.tif" -depth 8 rgba:- | md5sum | cut -c1-32)  $f"
+  done
+) > "$t/expected.md5"
+ls -l "$g" "$b" "$w" "$j" "$t"

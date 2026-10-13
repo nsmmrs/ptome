@@ -10,16 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
-- PDF: GIF, BMP and WebP images are embedded (FEAT-c16d1m,
-  FEAT-z1rgx9, FEAT-3rvh14), read by plain_images, the workspace's own
+- PDF: GIF, BMP, WebP and TIFF images are embedded (FEAT-c16d1m,
+  FEAT-z1rgx9, FEAT-3rvh14, FEAT-9fcj76), read by plain_images, the workspace's own
   image package, in the modern engine and with `compat` alike:
   Asciidoctor PDF warns that GIF is not supported (unless the
   prawn-gmagick gem is installed) and leaves the alt text, and ptome no
   longer imitates that. A GIF or animated WebP is its first frame on its
   canvas, transparent where it has no pixels; a WebP decodes as libwebp
-  decodes it. Images plain_images recognizes but doesn't read (AVIF,
-  HEIC, TIFF for now) are reported by name ("could not embed image:
-  x.avif; AVIF images are not supported"). Text runs around the opaque
+  decodes it, a TIFF (its first page) as libtiff does. Images
+  plain_images recognizes but doesn't read (AVIF, HEIC, JPEG XL) are
+  reported by name ("could not embed image: x.avif; AVIF images are not
+  supported"). Text runs around the opaque
   pixels of any image with transparency (a GIF's transparent color, a
   PNG's or WebP's alpha), not only a PNG with alpha. JPEG and PNG images
   are written byte for byte as before, but for 12-bit, arithmetic-coded

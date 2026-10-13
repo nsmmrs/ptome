@@ -40,3 +40,8 @@
   restarts), 12-bit (sequential and progressive), lossless (predictors 1,
   4 to 7, point transforms, 4 to 16 bits), RGB and gray; `expected.md5`
   holds djpeg's decoding of each.
+- `tiff/`: made by `tool/make_test_images.sh`: uncompressed TIFF images of
+  each kind by ImageMagick (gray 8 and 16 bits, RGB 8 and 16, palette 4
+  and 8, bilevel, RGBA, CMYK, 32-bit float, gray with alpha), then
+  libtiff's tiffcp's compressions and layouts of them; `expected.md5`
+  holds tiff2rgba's RGBA of the JPEG- and WebP-compressed ones.

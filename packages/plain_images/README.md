@@ -1,8 +1,8 @@
 # plain_images
 
-Raster image files read in pure Dart: PNG, JPEG, GIF, BMP and WebP,
-decoded to typed samples with their palette, transparency, ICC profile
-and orientation.
+Raster image files read in pure Dart: PNG, JPEG, GIF, BMP, WebP and
+TIFF, decoded to typed samples with their palette, transparency, ICC
+profile and orientation.
 
 ```dart
 import 'package:plain_images/plain_images.dart';
@@ -37,12 +37,15 @@ final rgba = raster.toRgba8();
   pixel, bit fields, RLE4 and RLE8. WebP: lossless and lossy (with alpha),
   decoded to the byte as libwebp decodes them; an animation's first frame.
   JPEG: baseline, 12-bit, progressive and lossless, Huffman or arithmetic
-  coded, decoded to the byte as libjpeg-turbo decodes them.
+  coded, decoded to the byte as libjpeg-turbo decodes them. TIFF: strips
+  and tiles, every common photometric interpretation, PackBits, LZW,
+  Deflate, CCITT fax, JPEG and WebP compression, the predictors, BigTIFF.
 
 Tested against ImageMagick (PngSuite, bmpsuite, a GIF conformance suite
 and generated files), bmpsuite's reference images, libwebp (its test
 data and the VP8 conformance vectors, and random cwebp files),
-libjpeg-turbo (cjpeg's files of every kind, random ones too), against
+libjpeg-turbo (cjpeg's files of every kind, random ones too), libtiff
+(tiffcp's compressions and layouts, its test images), against
 package:image on seeded random files, and with damaged files;
 the same results compiled to JavaScript as on the Dart VM.
 

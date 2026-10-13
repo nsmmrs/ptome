@@ -2,7 +2,7 @@
 ///
 /// - `ImageFile.read` tells a file's format by its signature and reads
 ///   its header: `PngFile`, `JpegFile`, `GifFile`, `BmpFile`,
-///   `WebPFile`. Formats it
+///   `WebPFile`, `TiffFile`. Formats it
 ///   recognizes but doesn't read (AVIF, HEIC, ...) are named in the
 ///   `ImageFormatException` it throws.
 /// - `ImageFile.decode` gives a `Raster`: packed samples (gray, RGB, CMYK
@@ -26,5 +26,7 @@ export 'src/image.dart'
         PngColorType,
         PngFile,
         Raster,
+        TiffCompression,
+        TiffFile,
         Transparency,
         WebPFile;

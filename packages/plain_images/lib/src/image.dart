@@ -9,11 +9,13 @@ import 'dart:typed_data';
 import 'package:meta/meta.dart';
 import 'package:plain_compression/plain_compression.dart';
 import 'package:plain_images/src/bmp_decode.dart';
+import 'package:plain_images/src/ccitt.dart';
 import 'package:plain_images/src/exception.dart';
 import 'package:plain_images/src/exif.dart';
 import 'package:plain_images/src/gif_decode.dart';
 import 'package:plain_images/src/jpeg_decode.dart';
 import 'package:plain_images/src/png_unfilter.dart';
+import 'package:plain_images/src/tiff_decode.dart';
 import 'package:plain_images/src/vp8_decode.dart';
 import 'package:plain_images/src/webp_lossless.dart';
 import 'package:plain_images/src/yuv.dart';
@@ -22,6 +24,7 @@ part 'bmp.dart';
 part 'gif.dart';
 part 'jpeg.dart';
 part 'png.dart';
+part 'tiff.dart';
 part 'webp.dart';
 
 /// An image file format.
@@ -39,7 +42,10 @@ enum ImageFormat {
   bmp('BMP'),
 
   /// WebP (RFC 9649), lossy and lossless.
-  webp('WebP');
+  webp('WebP'),
+
+  /// TIFF 6.0 and BigTIFF.
+  tiff('TIFF');
 
   new(this.label);
 
@@ -63,6 +69,17 @@ enum ImageFormat {
         String.fromCharCodes(bytes, 0, 4) == 'RIFF' &&
         String.fromCharCodes(bytes, 8, 12) == 'WEBP') {
       return webp;
+    }
+    if (bytes.length >= 8 &&
+        ((bytes[0] == 0x49 &&
+                bytes[1] == 0x49 &&
+                (bytes[2] == 42 || bytes[2] == 43) &&
+                bytes[3] == 0) ||
+            (bytes[0] == 0x4d &&
+                bytes[1] == 0x4d &&
+                bytes[2] == 0 &&
+                (bytes[3] == 42 || bytes[3] == 43)))) {
+      return tiff;
     }
     return null;
   }
@@ -94,7 +111,6 @@ String? unsupportedFormatOf(Uint8List bytes) {
   }
   if (at(0, 'ÿ\u000a') || at(4, 'JXL ')) return 'JPEG XL';
   if (at(4, 'jP  ') || at(0, 'ÿOÿQ')) return 'JPEG 2000';
-  if (at(0, 'II*\u0000') || at(0, 'MM\u0000*')) return 'TIFF';
   if (at(0, '\u0000\u0000\u0001\u0000')) return 'ICO';
   if (at(0, '8BPS')) return 'PSD';
   if (at(0, '<svg') || at(0, '<?xml')) return 'SVG';
@@ -116,15 +132,17 @@ sealed class ImageFile {
     ImageFormat.gif => GifFile.read(bytes),
     ImageFormat.bmp => BmpFile.read(bytes),
     ImageFormat.webp => WebPFile.read(bytes),
+    ImageFormat.tiff => TiffFile.read(bytes),
     null => throw ImageFormatException(switch (unsupportedFormatOf(bytes)) {
       final name? => '$name images are not supported',
       null => 'not an image file plain_images reads',
     }, unsupportedFormat: unsupportedFormatOf(bytes)),
   };
 
-  /// The most pixels [decode] decodes (16384 by 16384): a larger image,
-  /// most likely a damaged header, is an [ImageFormatException].
-  static const int maxPixels = 1 << 28;
+  /// The most pixels [decode] decodes (8192 by 8192, more than a letter
+  /// page scanned at 600 dpi): a larger image, most likely a damaged or
+  /// hostile header, is an [ImageFormatException].
+  static const int maxPixels = 1 << 26;
 
   /// The file.
   final Uint8List bytes;

@@ -24,6 +24,7 @@ enum ImageFormat
   static ImageFormat gif
   static ImageFormat jpeg
   static ImageFormat png
+  static ImageFormat tiff
   static ImageFormat webp
   static List<ImageFormat> values
 enum PngColorType
@@ -37,6 +38,25 @@ enum PngColorType
   static PngColorType palette
   static PngColorType rgb
   static PngColorType rgba
+enum TiffCompression
+  String label
+  int code
+  static List<TiffCompression> values
+  static TiffCompression adobeDeflate
+  static TiffCompression ccittGroup3
+  static TiffCompression ccittGroup4
+  static TiffCompression ccittRle
+  static TiffCompression deflate
+  static TiffCompression jbig
+  static TiffCompression jpeg
+  static TiffCompression jpeg2000
+  static TiffCompression lzma
+  static TiffCompression lzw
+  static TiffCompression none
+  static TiffCompression oldJpeg
+  static TiffCompression packBits
+  static TiffCompression webp
+  static TiffCompression zstd
 final class AlphaChannel extends Transparency
   AlphaChannel(Uint8List samples, int bitDepth)
   Uint8List samples
@@ -126,6 +146,38 @@ final class Raster
   int orientation
   int rowBytes
   int sample(int x, int y, [int channel = 0])
+  int width
+final class TiffFile extends ImageFile
+  (int, int) ycbcrSubsampling
+  ColorModel colorModel
+  ImageFormat format
+  List<double>? referenceBlackWhite
+  List<double>? ycbcrCoefficients
+  List<int> byteCounts
+  List<int> extraSamples
+  List<int> offsets
+  Raster decode()
+  TiffCompression compression
+  TiffFile.read(Uint8List bytes)
+  Uint8List? colorMap
+  Uint8List? iccProfile
+  Uint8List? jpegTables
+  bool littleEndian
+  bool lsbFirst
+  bool planar
+  bool tiled
+  int bitDepth
+  int bitsPerSample
+  int height
+  int orientation
+  int pages
+  int photometric
+  int predictor
+  int sampleFormat
+  int samplesPerPixel
+  int t4Options
+  int tileHeight
+  int tileWidth
   int width
 final class WebPFile extends ImageFile
   ColorModel colorModel

@@ -15,6 +15,8 @@ void main() {
     expect(ImageFormat.of(_file('jpeg/gray.jpg')), ImageFormat.jpeg);
     expect(ImageFormat.of(_file('gif/few.gif')), ImageFormat.gif);
     expect(ImageFormat.of(_file('bmp/rgb24.bmp')), ImageFormat.bmp);
+    expect(ImageFormat.of(_file('webp/lossy.webp')), ImageFormat.webp);
+    expect(ImageFormat.of(_file('tiff/rgb8.tif')), ImageFormat.tiff);
     expect(ImageFormat.of(Uint8List.fromList('hello'.codeUnits)), isNull);
   });
 
@@ -24,7 +26,6 @@ void main() {
       ('\u0000\u0000\u0000\u001cftypavif', 'AVIF'),
       ('\u0000\u0000\u0000\u0018ftypheic', 'HEIC'),
       ('ÿ\u000a', 'JPEG XL'),
-      ('II*\u0000\u0008\u0000\u0000\u0000', 'TIFF'),
     ]) {
       expect(
         () => ImageFile.read(bytes(signature)),
