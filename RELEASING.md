@@ -17,9 +17,10 @@ A package is released after the siblings it depends on:
    plain_compression)
 3. plain_typesetting (on plain_fonts, plain_math, plain_unicode),
    plain_highlighting (on plain_unicode)
-4. plain_pdf (on plain_compression, plain_fonts, plain_math,
+4. plain_svg (on plain_typesetting)
+5. plain_pdf (on plain_compression, plain_fonts, plain_math, plain_svg,
    plain_typesetting, plain_unicode)
-5. ptome (on all of them)
+6. ptome (on all of them)
 
 ## Once: the publisher and the first versions
 

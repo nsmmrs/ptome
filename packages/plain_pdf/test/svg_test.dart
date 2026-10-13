@@ -3,6 +3,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
@@ -14,7 +15,7 @@ final bool _tools = ['rsvg-convert', 'pdftoppm', 'qpdf'].every(_has);
 Uint8List svgPdf(SvgImage svg) {
   final document = PdfDocument();
   final page = document.addPage(Rect(0, 0, svg.width, svg.height));
-  svg.draw(page.canvas, Rect(0, 0, svg.width, svg.height));
+  svg.paint(page.canvas, Rect(0, 0, svg.width, svg.height));
   return document.save();
 }
 
@@ -40,6 +41,20 @@ Uint8List svgPdf(SvgImage svg) {
   );
 }
 
+/// [text] as an SVG image with the standard fonts and PDF raster images.
+SvgImage parseSvg(
+  String text, {
+  SvgFontResolver fonts = standardSvgFont,
+  String defaultFontFamily = 'serif',
+  String? fallbackFontFamily,
+}) => SvgImage.parse(
+  text,
+  fonts: fonts,
+  defaultFontFamily: defaultFontFamily,
+  fallbackFontFamily: fallbackFontFamily,
+  rasters: readSvgRaster,
+);
+
 void main() {
   test('fonts: the default family, then the fallback family', () {
     final asked = <String>[];
@@ -48,7 +63,7 @@ void main() {
       return family == 'Fallback' ? StandardFont.courier : null;
     }
 
-    final svg = SvgImage.parse(
+    final svg = parseSvg(
       '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"> '
       '<text x="0" y="20">a</text> '
       '<text x="0" y="40" font-family="Nope, \'Other One\'">b</text></svg>',
@@ -82,7 +97,7 @@ void main() {
       for (final file in fixtures) {
         final name = file.uri.pathSegments.last;
         test(name, () {
-          final svg = SvgImage.parse(file.readAsStringSync());
+          final svg = parseSvg(file.readAsStringSync());
           final ours = File('${dir.path}/$name.ours.pdf')
             ..writeAsBytesSync(svgPdf(svg));
           final check = Process.runSync('qpdf', ['--check', ours.path]);
@@ -120,7 +135,7 @@ void main() {
   );
 
   test('text: fonts, anchors and baselines', () {
-    final svg = SvgImage.parse('''
+    final svg = parseSvg('''
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="100">
   <text x="10" y="30" font-family="Helvetica" font-size="20">Start</text>
   <text x="150" y="30" font-family="Arial, sans-serif" font-size="20"
@@ -161,7 +176,7 @@ void main() {
   });
 
   test('unsupported features are reported, not fatal', () {
-    final svg = SvgImage.parse('''
+    final svg = parseSvg('''
 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
   <defs><mask id="m"/><filter id="f"/><marker id="k"/></defs>
   <rect width="5" height="5" mask="url(#m)" filter="url(#f)"/>
@@ -180,20 +195,20 @@ void main() {
   });
 
   test('sizes, units and parse errors', () {
-    final svg = SvgImage.parse(
+    final svg = parseSvg(
       '<svg xmlns="http://www.w3.org/2000/svg" width="2in" height="10mm"/>',
     );
     expect(svg.width, closeTo(144, 1e-9));
     expect(svg.height, closeTo(10 / 25.4 * 72, 1e-9));
-    final boxed = SvgImage.parse(
+    final boxed = parseSvg(
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 20"/>',
     );
     expect((boxed.width, boxed.height), (30, 15));
     expect(svg.rootAttribute('width'), '2in');
     expect(boxed.rootAttribute('viewBox'), '0 0 40 20');
     expect(boxed.rootAttribute('width'), isNull);
-    expect(() => SvgImage.parse('<html/>'), throwsFormatException);
-    expect(() => SvgImage.parse('<svg'), throwsFormatException);
+    expect(() => parseSvg('<html/>'), throwsFormatException);
+    expect(() => parseSvg('<svg'), throwsFormatException);
   });
 
   test('path data: every command, implicit separators, arcs', () {
@@ -210,7 +225,7 @@ void main() {
   });
 
   test('an SVG is placed by the layout like any image', () {
-    final svg = SvgImage.parse(File('test/svg/shapes.svg').readAsStringSync());
+    final svg = parseSvg(File('test/svg/shapes.svg').readAsStringSync());
     final result = FlowLayout(
       template: const PageTemplate(Rect(0, 0, 300, 300)),
     ).layout([ImageBox(svg, svg.width, svg.height, align: BoxAlign.center)]);

@@ -11,6 +11,7 @@ import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:plain_unicode/plain_unicode.dart' show hasRightToLeft;
 import 'package:ptome/src/cursor.dart';

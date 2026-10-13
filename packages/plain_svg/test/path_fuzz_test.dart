@@ -9,7 +9,7 @@ library;
 
 import 'dart:math' as math;
 
-import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:test/test.dart';
 
 import 'frozen/svg_path.dart' as frozen;

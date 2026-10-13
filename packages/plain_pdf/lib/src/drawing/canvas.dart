@@ -15,6 +15,8 @@ import 'package:plain_pdf/src/fonts/fonts.dart';
 import 'package:plain_pdf/src/images/images.dart';
 import 'package:plain_pdf/src/objects.dart';
 import 'package:plain_pdf/src/reader/reader.dart';
+import 'package:plain_svg/plain_svg.dart'
+    show Gradient, LinearGradient, RadialGradient, SvgCanvas;
 import 'package:plain_typesetting/plain_typesetting.dart';
 
 /// What a soft mask takes from its form (ISO 32000-2, 11.6.5.2).
@@ -251,7 +253,7 @@ final class GraphicsStateResource extends Resource {
 }
 
 /// A page's or form's content: operators appended in order.
-final class PdfCanvas implements StructureCanvas {
+final class PdfCanvas implements StructureCanvas, SvgCanvas {
   new _();
 
   /// Where the structure painted is recorded (a tagged page's).
@@ -699,6 +701,38 @@ final class PdfCanvas implements StructureCanvas {
   /// Ends the path without painting it (`n`).
   @override
   void endPath() => _paint('n');
+
+  /// Paints what [draw] paints as a form with a transparency group.
+  @override
+  void group(Rect bounds, void Function(SvgCanvas canvas) draw) =>
+      form(PdfForm(bounds, draw, group: const TransparencyGroup()));
+
+  /// Paints [gradient] as an axial or radial shading.
+  @override
+  void gradient(Gradient gradient) {
+    final stops = [
+      for (final stop in gradient.stops) GradientStop(stop.offset, stop.color),
+    ];
+    shade(switch (gradient) {
+      LinearGradient(:final x1, :final y1, :final x2, :final y2) =>
+        AxialShading(x1, y1, x2, y2, stops),
+      RadialGradient(
+        :final fx,
+        :final fy,
+        :final fr,
+        :final cx,
+        :final cy,
+        :final r,
+      ) =>
+        RadialShading(fx, fy, fr, cx, cy, r, stops),
+    });
+  }
+
+  /// Masks what is painted next by the luminosity of a form with a
+  /// transparency group, which [draw] paints.
+  @override
+  void luminosityMask(Rect bounds, void Function(SvgCanvas canvas) draw) =>
+      softMask(PdfForm(bounds, draw, group: const TransparencyGroup()));
 
   /// Paints [shading] over the clipping region (`sh`): clip to a path
   /// first to fill it with a gradient.

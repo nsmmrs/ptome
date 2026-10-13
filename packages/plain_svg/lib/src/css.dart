@@ -4,7 +4,7 @@
 /// (`@media`, `@font-face`...) are skipped.
 library;
 
-import 'package:xml/xml.dart';
+import 'package:plain_svg/src/xml.dart';
 
 /// A style rule: its selector and declarations.
 final class CssRule {
@@ -62,13 +62,13 @@ final class CssSelector {
   bool _matchFrom(XmlElement element, int index) {
     if (!_parts[index].matches(element)) return false;
     if (index == 0) return true;
-    var parent = element.parentElement;
+    var parent = element.parent;
     if (_child[index - 1]) {
       return parent != null && _matchFrom(parent, index - 1);
     }
     while (parent != null) {
       if (_matchFrom(parent, index - 1)) return true;
-      parent = parent.parentElement;
+      parent = parent.parent;
     }
     return false;
   }

@@ -17,6 +17,7 @@ import 'dart:typed_data';
 import 'package:meta/meta.dart';
 import 'package:plain_math/plain_math.dart';
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';

@@ -1,0 +1,71 @@
+abstract interface class SvgCanvas implements Canvas
+  SvgCanvas()
+  void gradient(Gradient gradient)
+  void group(Rect bounds, void Function(SvgCanvas) draw)
+  void luminosityMask(Rect bounds, void Function(SvgCanvas) draw)
+final class CloseSegment extends PathSegment
+  CloseSegment()
+final class ColorStop
+  Color color
+  ColorStop(double offset, Color color)
+  double offset
+final class CubicSegment extends PathSegment
+  CubicSegment(double x1, double y1, double x2, double y2, double x, double y)
+  double x
+  double x1
+  double x2
+  double y
+  double y1
+  double y2
+final class LineSegment extends PathSegment
+  LineSegment(double x, double y)
+  double x
+  double y
+final class LinearGradient extends Gradient
+  LinearGradient(double x1, double y1, double x2, double y2, List<ColorStop> stops)
+  double x1
+  double x2
+  double y1
+  double y2
+final class MoveSegment extends PathSegment
+  MoveSegment(double x, double y)
+  double x
+  double y
+final class RadialGradient extends Gradient
+  RadialGradient(double fx, double fy, double fr, double cx, double cy, double r, List<ColorStop> stops)
+  double cx
+  double cy
+  double fr
+  double fx
+  double fy
+  double r
+final class SvgImage implements Graphic
+  List<String> warnings
+  String? rootAttribute(String name)
+  SvgImage.parse(String text, {Font? Function(String, {required bool bold, required bool italic})? fonts, String defaultFontFamily = 'serif', String? fallbackFontFamily, Uint8List? Function(String)? images, Graphic Function(Uint8List)? rasters, double pixelSize = 0.75, bool scalesAboutPageOrigin = false})
+  bool scalesAboutPageOrigin
+  double height
+  double intrinsicHeight
+  double intrinsicWidth
+  double pixelSize
+  double width
+  void paint(Canvas canvas, Rect rect)
+final class SvgPath
+  List<PathSegment> segments
+  Rect? bounds
+  SvgPath transform(Matrix matrix)
+  SvgPath(List<PathSegment> segments)
+  SvgPath.ellipse(double cx, double cy, double rx, double ry)
+  SvgPath.parse(String data)
+  SvgPath.polyline(List<double> points, {required bool closed})
+  SvgPath.rect(double x, double y, double w, double h, [double rx = 0, double ry = 0])
+  bool isEmpty
+  void addTo(Canvas canvas)
+sealed class Gradient
+  Gradient(List<ColorStop> stops)
+  List<ColorStop> stops
+sealed class PathSegment
+  PathSegment()
+typedef SvgFontResolver = Font? Function(String, {required bool bold, required bool italic})
+typedef SvgImageResolver = Uint8List? Function(String)
+typedef SvgRasterReader = Graphic Function(Uint8List)

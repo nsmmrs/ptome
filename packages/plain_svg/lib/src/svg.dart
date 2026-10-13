@@ -1,27 +1,24 @@
-/// SVG images drawn as PDF vector graphics through the drawing API:
-/// shapes and paths, transforms, nested viewports, `use` and `symbol`,
-/// fill and stroke, gradients, clip paths, group opacity, text in PDF
-/// fonts, and raster or SVG images. What isn't supported (masks, filters,
-/// markers, patterns...) is reported in [SvgImage.warnings].
+/// SVG images drawn as vector graphics on a canvas: shapes and paths,
+/// transforms, nested viewports, `use` and `symbol`, fill and stroke,
+/// gradients, clip paths, group opacity, text, and raster or SVG images.
+/// What isn't supported (masks, filters, markers, patterns...) is
+/// reported in [SvgImage.warnings].
 library;
 
 import 'dart:convert';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
-import 'package:plain_pdf/src/drawing/canvas.dart';
-import 'package:plain_pdf/src/drawing/shading.dart';
-import 'package:plain_pdf/src/fonts/fonts.dart';
-import 'package:plain_pdf/src/images/images.dart';
-import 'package:plain_pdf/src/svg/css.dart';
-import 'package:plain_pdf/src/svg/path.dart';
+import 'package:plain_svg/src/canvas.dart';
+import 'package:plain_svg/src/css.dart';
+import 'package:plain_svg/src/path.dart';
+import 'package:plain_svg/src/xml.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
-import 'package:xml/xml.dart';
 
 /// The font for a font [family] as an SVG names it, in [bold] and
 /// [italic] variants; null when there is none (the next family is
 /// tried).
-typedef SvgFontResolver = PdfFont? Function(
+typedef SvgFontResolver = Font? Function(
   String family, {
   required bool bold,
   required bool italic,
@@ -30,6 +27,11 @@ typedef SvgFontResolver = PdfFont? Function(
 /// The bytes of the image an SVG refers to by [href] (anything but a
 /// `data:` URI), or null when it can't be had.
 typedef SvgImageResolver = Uint8List? Function(String href);
+
+/// The raster image (a PNG or JPEG, say) in [bytes], as a graphic whose
+/// intrinsic size is its size in pixels; throws a [FormatException] when
+/// it can't be read.
+typedef SvgRasterReader = Graphic Function(Uint8List bytes);
 
 /// An SVG image.
 final class SvgImage implements Graphic {
@@ -43,6 +45,7 @@ final class SvgImage implements Graphic {
     this._aspect,
     this._fonts,
     this._images,
+    this._rasters,
     this.pixelSize,
     Iterable<String> warnings,
     this._defaultFontFamily,
@@ -52,11 +55,12 @@ final class SvgImage implements Graphic {
     _warnings.addAll(warnings);
   }
 
-  /// The SVG document [text]. [fonts] chooses PDF fonts for text (the
-  /// standard fonts by default): for the families of an element's
-  /// `font-family` ([defaultFontFamily] when it has none), then for
-  /// [fallbackFontFamily]; [images] reads referenced images; [pixelSize]
-  /// is the size of a CSS pixel (a user unit) in points. With
+  /// The SVG document [text]. [fonts] chooses fonts for text: for the
+  /// families of an element's `font-family` ([defaultFontFamily] when it
+  /// has none), then for [fallbackFontFamily], then for `sans-serif`
+  /// (without fonts, text isn't drawn); [images] reads referenced images
+  /// and [rasters] the raster ones (without it, they aren't drawn);
+  /// [pixelSize] is the size of a CSS pixel (a user unit) in points. With
   /// [scalesAboutPageOrigin], an image drawn uniformly scaled is placed as
   /// one drawn at its own size and scaled about the page's origin is,
   /// the scale and the translation each written to five decimals (as
@@ -67,16 +71,16 @@ final class SvgImage implements Graphic {
     String defaultFontFamily = 'serif',
     String? fallbackFontFamily,
     SvgImageResolver? images,
+    SvgRasterReader? rasters,
     double pixelSize = 0.75,
     bool scalesAboutPageOrigin = false,
   }) {
-    final XmlDocument document;
+    final XmlElement root;
     try {
-      document = XmlDocument.parse(text);
-    } on XmlException catch (error) {
+      root = parseXml(text);
+    } on FormatException catch (error) {
       throw FormatException('not an SVG document: ${error.message}');
     }
-    final root = document.rootElement;
     if (root.localName != 'svg') {
       throw const FormatException(
         'not an SVG document: the root element is not <svg>',
@@ -122,8 +126,9 @@ final class SvgImage implements Graphic {
       heightPx * pixelSize,
       viewBox ?? (0, 0, widthPx, heightPx),
       _AspectRatio.parse(root.getAttribute('preserveAspectRatio')),
-      fonts ?? _standardFonts,
+      fonts ?? _noFonts,
       images,
+      rasters,
       pixelSize,
       warnings,
       defaultFontFamily,
@@ -143,6 +148,7 @@ final class SvgImage implements Graphic {
   final _AspectRatio _aspect;
   final SvgFontResolver _fonts;
   final SvgImageResolver? _images;
+  final SvgRasterReader? _rasters;
   final String _defaultFontFamily;
   final String? _fallbackFontFamily;
 
@@ -157,6 +163,9 @@ final class SvgImage implements Graphic {
 
   final Set<String> _warnings = {};
 
+  /// The images (by href) this one is drawn inside of, outermost first.
+  final List<String> _imageChain = [];
+
   /// The value of the root `<svg>` element's attribute [name] as written
   /// (`width`, `height`, `viewBox`, say), for sizing the image another way.
   String? rootAttribute(String name) => _root.getAttribute(name);
@@ -167,51 +176,22 @@ final class SvgImage implements Graphic {
 
   final Expando<Map<String, String>> _specified = Expando();
 
-  /// Draws the image into [rect] (by its `preserveAspectRatio`).
-  void draw(PdfCanvas canvas, Rect rect) =>
-      _Renderer(this, canvas).render(rect);
-
   @override
   double get intrinsicWidth => width;
 
   @override
   double get intrinsicHeight => height;
 
+  /// Draws the image into [rect] (by its `preserveAspectRatio`): all of it
+  /// on an [SvgCanvas], without groups, gradients and masks on another
+  /// canvas.
   @override
-  void paint(Canvas canvas, Rect rect) =>
-      draw(pdfCanvasOf(canvas, 'an SVG image'), rect);
+  void paint(Canvas canvas, Rect rect) => _Renderer(this, canvas).render(rect);
 }
 
-/// The standard fonts for the generic families and common names.
-PdfFont? _standardFonts(
-  String family, {
-  required bool bold,
-  required bool italic,
-}) {
-  final base = switch (family.toLowerCase()) {
-    'serif' || 'times' || 'times new roman' || 'times-roman' => 'Times',
-    'sans-serif' ||
-    'helvetica' ||
-    'arial' ||
-    'liberation sans' ||
-    'dejavu sans' ||
-    'verdana' => 'Helvetica',
-    'monospace' || 'courier' || 'courier new' => 'Courier',
-    _ => null,
-  };
-  if (base == null) return null;
-  final name = switch ((base, bold, italic)) {
-    ('Times', false, false) => 'Times-Roman',
-    ('Times', true, false) => 'Times-Bold',
-    ('Times', false, true) => 'Times-Italic',
-    ('Times', true, true) => 'Times-BoldItalic',
-    (_, false, false) => base,
-    (_, true, false) => '$base-Bold',
-    (_, false, true) => '$base-Oblique',
-    (_, true, true) => '$base-BoldOblique',
-  };
-  return StandardFont.named(name);
-}
+/// No font for any family.
+Font? _noFonts(String family, {required bool bold, required bool italic}) =>
+    null;
 
 (double, double, double, double)? _parseViewBox(String? text) {
   if (text == null) return null;
@@ -394,7 +374,11 @@ final class _Renderer {
   new(this.svg, this.canvas, [List<XmlElement>? uses]) : _uses = uses ?? [];
 
   final SvgImage svg;
-  final PdfCanvas canvas;
+  final Canvas canvas;
+
+  /// The opacity of the groups being drawn element by element, on a
+  /// canvas without groups.
+  double _fade = 1;
 
   /// The `use` elements being drawn (to stop cycles).
   final List<XmlElement> _uses;
@@ -462,7 +446,7 @@ final class _Renderer {
       svg._specified[element] ??= () {
         final out = <String, String>{};
         for (final attribute in element.attributes) {
-          final name = attribute.name.local;
+          final name = attribute.localName;
           if (_presentation.contains(name)) out[name] = attribute.value.trim();
         }
         final matched =
@@ -647,10 +631,7 @@ final class _Renderer {
     final opacity = _opacity(style['opacity']);
     if (opacity < 1 && container) {
       // Group opacity: the children drawn as one transparency group.
-      final form = PdfForm(_anywhere, (formCanvas) {
-        final inner = _Renderer(svg, formCanvas, _uses)
-          .._viewports.addAll(_viewports);
-        // The state above is applied to the form as it is painted.
+      _group(opacity, (inner) {
         switch (element.localName) {
           case 'switch':
             final first = element.childElements.firstOrNull;
@@ -658,14 +639,36 @@ final class _Renderer {
           default:
             inner._children(element, style);
         }
-      }, group: const TransparencyGroup());
-      canvas
-        ..opacity(fill: opacity, stroke: opacity)
-        ..form(form);
+      });
     } else if (opacity > 0) {
       draw();
     }
     canvas.restore();
+  }
+
+  /// What [draw] draws (with a renderer of its own) as a group at
+  /// [opacity]; element by element, each fainter, on a canvas without
+  /// groups.
+  void _group(double opacity, void Function(_Renderer inner) draw) {
+    if (canvas case final SvgCanvas canvas) {
+      canvas
+        ..opacity(fill: opacity, stroke: opacity)
+        // The state above is applied to the group as it is painted.
+        ..group(_anywhere, (groupCanvas) {
+          draw(
+            _Renderer(svg, groupCanvas, _uses).._viewports.addAll(_viewports),
+          );
+        });
+      return;
+    }
+    _warn('group opacity is applied to each element');
+    final fade = _fade;
+    _fade *= opacity;
+    try {
+      draw(this);
+    } finally {
+      _fade = fade;
+    }
   }
 
   double _opacity(String? value) {
@@ -741,10 +744,7 @@ final class _Renderer {
     final href =
         element.getAttribute('href') ??
         element.getAttribute('xlink:href') ??
-        element.getAttribute(
-          'href',
-          namespaceUri: 'http://www.w3.org/1999/xlink',
-        );
+        element.getAttributeNS('http://www.w3.org/1999/xlink', 'href');
     if (href == null || !href.startsWith('#')) return null;
     return svg._ids[href.substring(1)];
   }
@@ -776,13 +776,10 @@ final class _Renderer {
       ..remove('clip-path');
     if (clip != null && clip != 'none') _clip(clip, null);
     if (opacity < 1) {
-      final form = PdfForm(_anywhere, (formCanvas) {
-        (_Renderer(svg, formCanvas, _uses).._viewports.addAll(_viewports))
-            ._useContent(element, target, style, groupStyle);
-      }, group: const TransparencyGroup());
-      canvas
-        ..opacity(fill: opacity, stroke: opacity)
-        ..form(form);
+      _group(
+        opacity,
+        (inner) => inner._useContent(element, target, style, groupStyle),
+      );
     } else if (opacity > 0) {
       _useContent(element, target, style, groupStyle);
     }
@@ -889,7 +886,7 @@ final class _Renderer {
   // Painting.
 
   void _paint(XmlElement element, Map<String, String> style, SvgPath path) {
-    final opacity = _opacity(style['opacity']);
+    final opacity = _opacity(style['opacity']) * _fade;
     if (style['visibility'] case 'hidden' || 'collapse') return;
     if (element.localName != 'line') {
       _fill(
@@ -1094,8 +1091,15 @@ final class _Renderer {
   }) {
     final stops = _stops(gradient);
     if (stops.isEmpty) return;
-    if (stops.length == 1) {
-      final (_, color, alpha) = stops.single;
+    final shadingCanvas = switch (canvas) {
+      final SvgCanvas canvas => canvas,
+      _ => null,
+    };
+    if (stops.length > 1 && shadingCanvas == null) {
+      _warn('gradients are drawn in their first color on this canvas');
+    }
+    if (stops.length == 1 || shadingCanvas == null) {
+      final (_, color, alpha) = stops.first;
       final a = opacity * alpha;
       if (a <= 0) return;
       canvas.save();
@@ -1135,12 +1139,12 @@ final class _Renderer {
       );
     }
 
-    PdfShading shading(Color Function((double, CssColor, double)) color) {
+    Gradient shading(Color Function((double, CssColor, double)) color) {
       final gradientStops = [
-        for (final stop in stops) GradientStop(stop.$1, color(stop)),
+        for (final stop in stops) ColorStop(stop.$1, color(stop)),
       ];
       if (gradient.localName == 'linearGradient') {
-        return AxialShading(
+        return LinearGradient(
           coordinate('x1', '0%', vertical: false),
           coordinate('y1', '0%', vertical: true),
           coordinate('x2', '100%', vertical: false),
@@ -1150,7 +1154,7 @@ final class _Renderer {
       }
       final cx = coordinate('cx', '50%', vertical: false);
       final cy = coordinate('cy', '50%', vertical: true);
-      return RadialShading(
+      return RadialGradient(
         _gradientAttribute(gradient, 'fx') == null
             ? cx
             : coordinate('fx', '50%', vertical: false),
@@ -1165,7 +1169,7 @@ final class _Renderer {
       );
     }
 
-    void space(PdfCanvas c) {
+    void space(Canvas c) {
       if (!userSpace) {
         c.transform(
           Matrix(
@@ -1184,21 +1188,20 @@ final class _Renderer {
       }
     }
 
-    canvas.save();
-    path.addTo(canvas);
-    canvas.clip(evenOdd: evenOdd);
-    if (opacity < 1) canvas.opacity(fill: opacity);
+    shadingCanvas.save();
+    path.addTo(shadingCanvas);
+    shadingCanvas.clip(evenOdd: evenOdd);
+    if (opacity < 1) shadingCanvas.opacity(fill: opacity);
     if (stops.any((s) => s.$3 < 1)) {
       // Stop opacity: a soft mask of the opacities, shaded alike.
-      final mask = PdfForm(_anywhere, (c) {
+      shadingCanvas.luminosityMask(_anywhere, (c) {
         space(c);
-        c.shade(shading((s) => GrayColor(s.$3)));
-      }, group: const TransparencyGroup());
-      canvas.softMask(mask);
+        c.gradient(shading((s) => GrayColor(s.$3)));
+      });
     }
-    space(canvas);
-    canvas
-      ..shade(shading((s) => _rgb(s.$2)))
+    space(shadingCanvas);
+    shadingCanvas
+      ..gradient(shading((s) => _rgb(s.$2)))
       ..restore();
   }
 
@@ -1211,6 +1214,26 @@ final class _Renderer {
       _warn('clip-path $value not found');
       return;
     }
+    // A clip path that refers to itself is in error: nothing is shown
+    // (CSS Masking 1, 6.2).
+    if (!_clipping.add(clip)) {
+      _warn('clip-path $value refers to itself');
+      canvas
+        ..rect(const Rect(0, 0, 0, 0))
+        ..clip();
+      return;
+    }
+    try {
+      _clipBy(clip, targetPath);
+    } finally {
+      _clipping.remove(clip);
+    }
+  }
+
+  /// The clip paths being applied (to stop cycles).
+  final Set<XmlElement> _clipping = {};
+
+  void _clipBy(XmlElement clip, SvgPath? targetPath) {
     final clipStyle = _compute(clip, _initialStyle);
     // A clip path's own clip path intersects it.
     if (clipStyle['clip-path'] case final nested? when nested != 'none') {
@@ -1296,7 +1319,7 @@ final class _Renderer {
       );
       for (final child in node.children) {
         switch (child) {
-          case XmlText(:final value) || XmlCDATA(:final value):
+          case XmlText(text: final value):
             var text = value.replaceAll(_lineBreaks, '').replaceAll('\t', ' ');
             text = text.replaceAll(_spaceRuns, ' ');
             if (text.isEmpty) continue;
@@ -1342,10 +1365,10 @@ final class _Renderer {
     }
     for (final chunk in chunks) {
       final anchor = chunk.first.style['text-anchor'] ?? 'start';
-      final styles = [for (final p in chunk) _pdfStyle(p.style)];
+      final styles = [for (final p in chunk) _textStyle(p.style)];
       var width = 0.0;
       for (final (i, piece) in chunk.indexed) {
-        width += styles[i].measure(piece.text) + piece.relative.$1;
+        width += (styles[i]?.measure(piece.text) ?? 0) + piece.relative.$1;
       }
       final head = chunk.first;
       x = head.absolute.$1 ?? x;
@@ -1358,10 +1381,11 @@ final class _Renderer {
       for (final (i, piece) in chunk.indexed) {
         x += piece.relative.$1;
         y += piece.relative.$2;
-        final textStyle = styles[i];
-        final advance = textStyle.measure(piece.text);
-        _drawText(piece, textStyle, x, y);
-        x += advance;
+        if (styles[i] case final textStyle?) {
+          final advance = textStyle.measure(piece.text);
+          _drawText(piece, textStyle, x, y);
+          x += advance;
+        }
       }
     }
   }
@@ -1389,7 +1413,7 @@ final class _Renderer {
     ];
   }
 
-  TextStyle _pdfStyle(Map<String, String> style) {
+  TextStyle? _textStyle(Map<String, String> style) {
     final size = _fontSize(style);
     final weight = style['font-weight'] ?? 'normal';
     final bold =
@@ -1398,7 +1422,7 @@ final class _Renderer {
         (int.tryParse(weight) ?? 400) >= 600;
     final fontStyle = style['font-style'] ?? 'normal';
     final italic = fontStyle == 'italic' || fontStyle == 'oblique';
-    PdfFont? font;
+    Font? font;
     final families = [
       ...(style['font-family'] ?? svg._defaultFontFamily)
           .split(',')
@@ -1410,8 +1434,12 @@ final class _Renderer {
       if (font != null) break;
     }
     if (font == null) {
-      _warn('no font for ${style['font-family']}; using Helvetica');
-      font = _standardFonts('sans-serif', bold: bold, italic: italic)!;
+      font = svg._fonts('sans-serif', bold: bold, italic: italic);
+      if (font == null) {
+        _warn('no font for ${style['font-family']}; the text is not drawn');
+        return null;
+      }
+      _warn('no font for ${style['font-family']}; using sans-serif');
     }
     double spacing(String? value) =>
         value == null || value == 'normal' ? 0 : _length(value, fontSize: size);
@@ -1427,7 +1455,7 @@ final class _Renderer {
     final style = piece.style;
     final fill = _paintOf(style['fill'] ?? 'black', style);
     final stroke = _paintOf(style['stroke'] ?? 'none', style);
-    final opacity = _opacity(style['opacity']);
+    final opacity = _opacity(style['opacity']) * _fade;
     CssColor? colorOf(_Paint? paint) => switch (paint) {
       _ColorPaint(:final color) => color,
       _GradientPaint(:final element) => () {
@@ -1496,10 +1524,7 @@ final class _Renderer {
     final href =
         element.getAttribute('href') ??
         element.getAttribute('xlink:href') ??
-        element.getAttribute(
-          'href',
-          namespaceUri: 'http://www.w3.org/1999/xlink',
-        );
+        element.getAttributeNS('http://www.w3.org/1999/xlink', 'href');
     if (href == null) return;
     Uint8List? bytes;
     String? svgText;
@@ -1537,23 +1562,35 @@ final class _Renderer {
     try {
       final double intrinsicWidth;
       final double intrinsicHeight;
-      PdfImage? raster;
+      Graphic? raster;
       SvgImage? vector;
       if (svgText != null) {
+        // An image that shows itself, directly or not, isn't drawn.
+        if (svg._imageChain.contains(href) || svg._imageChain.length > 16) {
+          _warn('image $href refers to itself');
+          return;
+        }
         vector = SvgImage.parse(
           svgText,
           fonts: svg._fonts,
           defaultFontFamily: svg._defaultFontFamily,
           fallbackFontFamily: svg._fallbackFontFamily,
           images: svg._images,
+          rasters: svg._rasters,
           pixelSize: svg.pixelSize,
         );
+        vector._imageChain.addAll([...svg._imageChain, href]);
         intrinsicWidth = vector.width / svg.pixelSize;
         intrinsicHeight = vector.height / svg.pixelSize;
       } else {
-        raster = PdfImage.parse(bytes!);
-        intrinsicWidth = raster.width.toDouble();
-        intrinsicHeight = raster.height.toDouble();
+        final rasters = svg._rasters;
+        if (rasters == null) {
+          _warn('raster image $href is not drawn: no reader for it');
+          return;
+        }
+        raster = rasters(bytes!);
+        intrinsicWidth = raster.intrinsicWidth;
+        intrinsicHeight = raster.intrinsicHeight;
       }
       final width =
           _optional(element, 'width', style, ref: _viewportWidth) ??
@@ -1574,15 +1611,13 @@ final class _Renderer {
         // Images are upright: flip back into a y-up space.
         ..transform(Matrix(1, 0, 0, -1, x + tx, y + ty + drawHeight));
       if (raster != null) {
-        canvas.image(raster, Rect(0, 0, drawWidth, drawHeight));
+        raster.paint(canvas, Rect(0, 0, drawWidth, drawHeight));
       } else {
-        vector!.draw(canvas, Rect(0, 0, drawWidth, drawHeight));
+        vector!.paint(canvas, Rect(0, 0, drawWidth, drawHeight));
         svg._warnings.addAll(vector.warnings);
       }
       canvas.restore();
     } on FormatException catch (error) {
-      _warn('image $href could not be read: ${error.message}');
-    } on ImageFormatException catch (error) {
       _warn('image $href could not be read: ${error.message}');
     }
   }

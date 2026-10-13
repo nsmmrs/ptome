@@ -55,15 +55,7 @@ export 'src/objects.dart'
         formatNumber,
         pdfDocEncode;
 export 'src/reader/reader.dart' show ImportedPage, PdfFile, PdfFormatException;
-export 'src/svg/path.dart'
-    show
-        CloseSegment,
-        CubicSegment,
-        LineSegment,
-        MoveSegment,
-        PathSegment,
-        SvgPath;
-export 'src/svg/svg.dart' show SvgFontResolver, SvgImage, SvgImageResolver;
+export 'src/svg.dart' show readSvgRaster, standardSvgFont;
 export 'src/writer.dart'
     show PdfInfo, PdfWriter, PdfWriterOptions, ZlibCodec, pdfDate;
 

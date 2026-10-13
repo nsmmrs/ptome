@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: SVG images are drawn by plain_svg, the workspace's own SVG
+  package with its own XML reader (FEAT-dqv18q), instead of plain_pdf's
+  reader on package:xml: the same PDFs (checked on 1,110 SVG files and
+  the 133 documents of the corpus and Hypermedia Systems that use them),
+  but that entities an SVG declares are expanded (Illustrator's
+  `style="&st0;"` is drawn, as browsers draw it), an SVG that isn't well
+  formed is reported in other words (with its line and column), and
+  path data with numbers after a close path, a clip path that clips
+  itself and an image that shows itself no longer hang or crash the
+  conversion.
 - Templates (`-T` converter templates, the website's navigation and
   contents, and the text templates documents and themes set) render with
   plain_mustache, the workspace's own Mustache engine, instead of

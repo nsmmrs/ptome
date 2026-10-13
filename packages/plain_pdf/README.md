@@ -30,7 +30,11 @@ them) embedded as subsets, with kerning, `liga` ligatures and a ToUnicode
 map so text stays extractable. Reading and subsetting fonts is the
 [plain_fonts](https://github.com/nsmmrs/ptome/tree/master/packages/plain_fonts) package's work, and compression
 the [plain_compression](https://github.com/nsmmrs/ptome/tree/master/packages/plain_compression) package's. Images: JPEG,
-PNG of every kind, and SVG (drawn as vector graphics).
+PNG of every kind; SVG images are the
+[plain_svg](https://github.com/nsmmrs/ptome/tree/master/packages/plain_svg) package's, drawn on a PDF canvas as
+vector graphics (`PdfCanvas` is its `SvgCanvas`: groups, gradients and
+masks as forms, shadings and soft masks), with `standardSvgFont` and
+`readSvgRaster` for their text and raster images.
 
 The examples in [`example/`](example) make a one-page hello world, a
 styled report, an SVG chart and a two-column booklet.

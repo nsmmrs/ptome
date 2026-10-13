@@ -2,6 +2,17 @@
 
 ## 0.1.0-dev (unreleased)
 
+- SVG moved to the plain_svg package with its history (`SvgImage`,
+  `SvgPath` and the path segments), which draws on any canvas; plain_pdf
+  no longer depends on `xml`. `PdfCanvas` implements plain_svg's
+  `SvgCanvas`: a transparency group as a form, a gradient as an axial or
+  radial shading, a luminosity mask as a soft mask. `standardSvgFont`
+  (the standard fonts for an SVG's families, as the SVG reader chose
+  them by default) and `readSvgRaster` (a JPEG or PNG for an SVG's
+  `<image>`). `SvgImage.draw(PdfCanvas, ...)` is `paint(Canvas, ...)`.
+  SVG drawn in a PDF is checked against resvg's 1,742 reference renders
+  (`test/resvg_test.dart`, nightly, after `tool/fetch_resvg_tests.sh`):
+  735 drawn alike, recorded in `test/resvg_baseline.txt`.
 - Glyphs are drawn at the advances shaping gave them: where it changed
   one (right-to-left positioning folded into advances), the pen moves by
   that, not by the font's width (`EmbeddedFont.glyphAdvance`); a Hebrew

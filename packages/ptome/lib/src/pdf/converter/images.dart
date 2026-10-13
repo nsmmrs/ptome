@@ -92,6 +92,7 @@ extension _Images on PdfConverter {
                 images: path == null
                     ? null
                     : (href) => _svgResource(href, path),
+                rasters: readSvgRaster,
                 // (`svg_placement: page_origin`: placed as scaled about the
                 // page's origin, to five decimals.)
                 scalesAboutPageOrigin:

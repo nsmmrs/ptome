@@ -11,7 +11,7 @@ holding Ptome and the pure-Dart libraries it is built on
 | Package | What it is |
 |---|---|
 | [ptome](packages/ptome) | The AsciiDoc processor: library, command line, npm package |
-| [plain_pdf](packages/plain_pdf) | PDF from ISO 32000: writer, reader, drawing, fonts, images, SVG; a backend for plain_typesetting |
+| [plain_pdf](packages/plain_pdf) | PDF from ISO 32000: writer, reader, drawing, fonts, images; a backend for plain_typesetting and plain_svg |
 | [plain_typesetting](packages/plain_typesetting) | Shaping, paragraphs, page layout and math layout, drawn on any canvas |
 | [plain_unicode](packages/plain_unicode) | Line breaking (UAX #14) and full case mapping, from the Unicode Character Database |
 | [plain_hyphenation](packages/plain_hyphenation) | Hyphenation as TeX does it, with the hyph-utf8 patterns of 72 languages |
@@ -20,6 +20,7 @@ holding Ptome and the pure-Dart libraries it is built on
 | [plain_compression](packages/plain_compression) | DEFLATE, zlib and Brotli, the same bytes on every platform |
 | [plain_highlighting](packages/plain_highlighting) | Syntax highlighting for 190+ languages, a port of highlight.js 11.12.0 |
 | [plain_mustache](packages/plain_mustache) | Mustache templates with typed values, the whole specification |
+| [plain_svg](packages/plain_svg) | SVG images drawn on any canvas, with its own XML reader |
 
 The `plain_*` libraries share one philosophy: pure Dart, written from the
 specification, the same bytes on every platform, statically typed, and

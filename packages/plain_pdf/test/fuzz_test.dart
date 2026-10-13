@@ -12,6 +12,7 @@ import 'dart:typed_data';
 
 import 'package:plain_fonts/plain_fonts.dart' show FontFormatException;
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
@@ -83,6 +84,20 @@ List<File> files(String dir, String suffix, {int limit = 12}) =>
         .take(limit)
         .toList();
 
+/// [text] as an SVG image with the standard fonts and PDF raster images.
+SvgImage parseSvg(
+  String text, {
+  SvgFontResolver fonts = standardSvgFont,
+  String defaultFontFamily = 'serif',
+  String? fallbackFontFamily,
+}) => SvgImage.parse(
+  text,
+  fonts: fonts,
+  defaultFontFamily: defaultFontFamily,
+  fallbackFontFamily: fallbackFontFamily,
+  rasters: readSvgRaster,
+);
+
 void main() {
   fuzz(
     'JPEG',
@@ -97,7 +112,7 @@ void main() {
     (error) => error is ImageFormatException,
   );
   fuzz('SVG', files('test/svg', '.svg'), (bytes) {
-    final svg = SvgImage.parse(String.fromCharCodes(bytes));
+    final svg = parseSvg(String.fromCharCodes(bytes));
     final document = PdfDocument();
     svg.paint(
       document.addPage(const Rect(0, 0, 200, 200)).canvas,

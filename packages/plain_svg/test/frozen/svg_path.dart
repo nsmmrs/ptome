@@ -1,5 +1,5 @@
 // The SVG path parser as it was at 17001e86, the oracle of
-// test/svg_path_fuzz_test.dart: the parser now may not parse differently.
+// test/path_fuzz_test.dart: the parser now may not parse differently.
 // ignore_for_file: type=lint
 /// SVG path geometry: the path data grammar (SVG 2, 9.3), shapes as
 /// paths, elliptical arcs as Bézier curves (SVG 2, appendix B.2), and
@@ -8,7 +8,6 @@ library;
 
 import 'dart:math' as math;
 
-import 'package:plain_pdf/src/drawing/canvas.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 
 /// A segment of a path, in absolute coordinates.
@@ -218,7 +217,7 @@ final class SvgPath {
   }
 
   /// Adds the path to [canvas]'s current path.
-  void addTo(PdfCanvas canvas) {
+  void addTo(Canvas canvas) {
     var open = false;
     for (final segment in segments) {
       switch (segment) {

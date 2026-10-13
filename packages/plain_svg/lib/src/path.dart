@@ -5,7 +5,6 @@ library;
 
 import 'dart:math' as math;
 
-import 'package:plain_pdf/src/drawing/canvas.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 
 /// A segment of a path, in absolute coordinates.
@@ -145,8 +144,11 @@ final class SvgPath {
   /// The segments.
   final List<PathSegment> segments;
 
-  /// Whether the path draws nothing.
-  bool get isEmpty => !segments.any((s) => s is! MoveSegment);
+  /// Whether the path draws nothing: nothing but moves after its first
+  /// (what comes before isn't drawn, see [addTo]).
+  bool get isEmpty => !segments
+      .skipWhile((s) => s is! MoveSegment)
+      .any((s) => s is! MoveSegment);
 
   /// The path transformed by [matrix].
   SvgPath transform(Matrix matrix) => SvgPath([
@@ -214,10 +216,11 @@ final class SvgPath {
     return Rect(minX, minY, maxX - minX, maxY - minY);
   }
 
-  /// Adds the path to [canvas]'s current path.
-  void addTo(PdfCanvas canvas) {
+  /// Adds the path to [canvas]'s current path: from its first move (path
+  /// data must begin with one, SVG 2, 9.5.1).
+  void addTo(Canvas canvas) {
     var open = false;
-    for (final segment in segments) {
+    for (final segment in segments.skipWhile((s) => s is! MoveSegment)) {
       switch (segment) {
         case MoveSegment(:final x, :final y):
           canvas.moveTo(x, y);
@@ -372,7 +375,8 @@ final class _PathParser {
       if (_isCommand(c)) {
         command = c;
         _at++;
-      } else if (command == 0 || !_startsNumber()) {
+      } else if (command == 0 || command | 0x20 == 0x7a || !_startsNumber()) {
+        // (A close path takes no numbers: what follows is in error.)
         break;
       } else if (command == 0x4d) {
         command = 0x4c; // numbers after a move are lines: M to L

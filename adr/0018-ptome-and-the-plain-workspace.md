@@ -82,7 +82,8 @@ which order).
      (as plain_fonts' `platform/none.dart`, `vm.dart`, `js.dart`);
    - dependencies stay minimal: Dart-team packages, plus `xml` in
      plain_pdf (its SVG reader), until plain_math gives it a typed MathML
-     tree; any further outside dependency needs an ADR.
+     tree; any further outside dependency needs an ADR. (Since 2026-10-13
+     there is none: SVG is plain_svg's, with its own XML reader.)
 9. **The libraries move to their own repository later**, for example
    `nsmmrs/plain_dart`, once they gain outside users or their own release
    pace, or once library issues crowd ptome's tracker. ptome reaching 1.0

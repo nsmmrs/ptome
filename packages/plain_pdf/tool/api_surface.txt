@@ -1,6 +1,8 @@
 ({bool compress, Uint8List? data, int length, int level}) encodeStream(Uint8List data, PdfWriterOptions options)
 List<int>? pdfDocEncode(String text)
 PdfCanvas pdfCanvasOf(Canvas canvas, String what)
+PdfFont? standardSvgFont(String family, {required bool bold, required bool italic})
+PdfImage readSvgRaster(Uint8List bytes)
 String formatNumber(num value, {int precision = 5})
 String get plainPdfVersion
 String pdfDate(DateTime date)
@@ -46,16 +48,6 @@ final class AxialShading extends PdfShading
   double x1
   double y0
   double y1
-final class CloseSegment extends PathSegment
-  CloseSegment()
-final class CubicSegment extends PathSegment
-  CubicSegment(double x1, double y1, double x2, double y2, double x, double y)
-  double x
-  double x1
-  double x2
-  double y
-  double y1
-  double y2
 final class DestinationTarget extends LinkTarget
   DestinationTarget(PdfDestination destination)
   PdfDestination destination
@@ -124,14 +116,6 @@ final class JpegImage extends PdfImage
   int orientation
   int width
   void writeTo(PdfWriter writer)
-final class LineSegment extends PathSegment
-  LineSegment(double x, double y)
-  double x
-  double y
-final class MoveSegment extends PathSegment
-  MoveSegment(double x, double y)
-  double x
-  double y
 final class PageLabel
   PageLabel({PageNumberStyle style = PageNumberStyle.decimal, String? prefix, int start = 1})
   PageNumberStyle style
@@ -148,7 +132,7 @@ final class PdfBool extends PdfObject
   bool value
   int hashCode
   void writeTo(BytesBuilder out)
-final class PdfCanvas implements StructureCanvas
+final class PdfCanvas implements StructureCanvas, SvgCanvas
   double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style, {String? text})
   double text(String text, double x, double y, TextStyle style)
   void beginArtifact()
@@ -168,8 +152,11 @@ final class PdfCanvas implements StructureCanvas
   void fill({bool evenOdd = false})
   void fillAndStroke({bool evenOdd = false})
   void form(PdfForm form)
+  void gradient(Gradient gradient)
+  void group(Rect bounds, void Function(SvgCanvas) draw)
   void image(PdfImage image, Rect rect)
   void lineTo(double x, double y)
+  void luminosityMask(Rect bounds, void Function(SvgCanvas) draw)
   void moveTo(double x, double y)
   void opacity({double? fill, double? stroke})
   void page(ImportedPage page, Rect rect)
@@ -382,29 +369,6 @@ final class StandardFont extends PdfFont
   static StandardFont helvetica
   static StandardFont timesRoman
   void writeTo(PdfWriter writer)
-final class SvgImage implements Graphic
-  List<String> warnings
-  String? rootAttribute(String name)
-  SvgImage.parse(String text, {PdfFont? Function(String, {required bool bold, required bool italic})? fonts, String defaultFontFamily = 'serif', String? fallbackFontFamily, Uint8List? Function(String)? images, double pixelSize = 0.75, bool scalesAboutPageOrigin = false})
-  bool scalesAboutPageOrigin
-  double height
-  double intrinsicHeight
-  double intrinsicWidth
-  double pixelSize
-  double width
-  void draw(PdfCanvas canvas, Rect rect)
-  void paint(Canvas canvas, Rect rect)
-final class SvgPath
-  List<PathSegment> segments
-  Rect? bounds
-  SvgPath transform(Matrix matrix)
-  SvgPath(List<PathSegment> segments)
-  SvgPath.ellipse(double cx, double cy, double rx, double ry)
-  SvgPath.parse(String data)
-  SvgPath.polyline(List<double> points, {required bool closed})
-  SvgPath.rect(double x, double y, double w, double h, [double rx = 0, double ry = 0])
-  bool isEmpty
-  void addTo(PdfCanvas canvas)
 final class TransparencyGroup
   TransparencyGroup({bool isolated = false, bool knockout = false})
   bool isolated
@@ -414,8 +378,6 @@ final class XyzDestination extends PdfDestination
   double? left
   double? top
   double? zoom
-sealed class PathSegment
-  PathSegment()
 sealed class PdfDestination
   PdfDestination.fit(PdfPage page)
   PdfDestination.fitHeight(PdfPage page, {double? left})
@@ -448,5 +410,3 @@ sealed class PdfShading
   bool extendStart
 typedef PngPayload = ({Uint8List? alpha, int alphaDepth, Uint8List color, bool compress, int level})
 typedef StreamPayload = ({bool compress, Uint8List? data, int length, int level})
-typedef SvgFontResolver = PdfFont? Function(String, {required bool bold, required bool italic})
-typedef SvgImageResolver = Uint8List? Function(String)

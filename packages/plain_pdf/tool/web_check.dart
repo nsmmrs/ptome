@@ -8,7 +8,22 @@ import 'dart:convert';
 
 import 'package:crypto/crypto.dart';
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
+
+/// [text] as an SVG image with the standard fonts and PDF raster images.
+SvgImage parseSvg(
+  String text, {
+  SvgFontResolver fonts = standardSvgFont,
+  String defaultFontFamily = 'serif',
+  String? fallbackFontFamily,
+}) => SvgImage.parse(
+  text,
+  fonts: fonts,
+  defaultFontFamily: defaultFontFamily,
+  fallbackFontFamily: fallbackFontFamily,
+  rasters: readSvgRaster,
+);
 
 void main() {
   final document = PdfDocument(info: const PdfInfo(title: 'web'));
@@ -32,7 +47,7 @@ void main() {
       Rect(72 + 48.0 * i, 600, 32, 32),
     );
   }
-  SvgImage.parse(_svg).draw(page.canvas, const Rect(300, 600, 150, 120));
+  parseSvg(_svg).paint(page.canvas, const Rect(300, 600, 150, 120));
   page.canvas.text(
     'web fonts',
     72,

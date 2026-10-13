@@ -1,0 +1,27 @@
+name: plain_svg
+description: >-
+  SVG images drawn on any canvas in pure Dart: paths, shapes, transforms,
+  CSS, gradients, clip paths, group opacity, text and images, read with
+  its own XML reader.
+version: 0.1.0-dev
+repository: https://github.com/nsmmrs/ptome/tree/master/packages/plain_svg
+issue_tracker: https://github.com/nsmmrs/ptome/issues
+topics:
+  - svg
+  - vector-graphics
+  - xml
+
+environment:
+  sdk: ^3.13.0
+
+resolution: workspace
+
+dependencies:
+  meta: ^1.16.0
+  plain_typesetting: ^0.1.0-dev
+
+dev_dependencies:
+  analyzer: ^14.4.0
+  test: ^1.32.0
+  very_good_analysis: ^11.0.0
+  xml: ^7.1.0

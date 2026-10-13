@@ -4,6 +4,7 @@
 import 'dart:io';
 
 import 'package:plain_pdf/plain_pdf.dart';
+import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 
 void main(List<String> args) {
@@ -31,10 +32,10 @@ void main(List<String> args) {
   <line x1="30" y1="220" x2="350" y2="220" stroke="#333"/>
   $bars
   <text x="180" y="20" text-anchor="middle" font-size="14" font-weight="bold">Sales</text>
-</svg>''');
+</svg>''', fonts: standardSvgFont);
   final document = PdfDocument();
   final page = document.addPage(const Rect(0, 0, 595, 842));
-  svg.draw(page.canvas, Rect(117, 500, svg.width * 1.5, svg.height * 1.5));
+  svg.paint(page.canvas, Rect(117, 500, svg.width * 1.5, svg.height * 1.5));
   File(args.isEmpty ? 'chart.pdf' : args.first)
       .writeAsBytesSync(document.save());
 }
