@@ -1291,14 +1291,21 @@ extension _DocumentParts on PdfConverter {
                   0,
                 );
                 final dotColor = dotFont.color?.rubyString;
+                // (Read right to left, the pattern reversed: each dot where
+                // the text box draws it, the space after it on its left.)
+                final pattern = _rightToLeft && _engineParagraphs
+                    ? String.fromCharCodes(dotText.runes.toList().reversed)
+                    : dotText;
                 final leader =
                     '<font name="${dotFont.family}" size="$dotSize"'
                     '${dotColor == null ? '' : ' color="$dotColor"'}>'
-                    '${PdfConverter._styled(dotText * dots, dotStyle)}</font>';
+                    '${PdfConverter._styled(pattern * dots, dotStyle)}</font>';
                 final spacer = '<font size="$spacerSize"> </font>';
                 final styled = PdfConverter._styled(number, font.style);
-                // (Mirrored: the number at the left, the dots after it.)
-                markup = _rightToLeft
+                // (Mirrored by the text box, which draws text as written:
+                // the number at the left, the dots after it. The engine's
+                // paragraphs put a line in visual order themselves.)
+                markup = _rightToLeft && !_engineParagraphs
                     ? '$styled$spacer$leader'
                     : '$leader$spacer$styled';
               } else {

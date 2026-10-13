@@ -57,8 +57,8 @@ extension _Paragraphs on PdfConverter {
       hangIndent: hangIndent,
       hangLines: hangLines,
       firstLineContent: firstLineContent,
-      rightToLeft: _rightToLeft,
-      align: _aligned(layout.align),
+      rightToLeft: _rightToLeft && layout.mirrored,
+      align: _aligned(layout.align, mirrored: layout.mirrored),
       // (The space above each line as the text box sets it; with
       // `base_leading`, the lines from their cap heights.)
       lineHeight: layout.capLines
@@ -76,7 +76,7 @@ extension _Paragraphs on PdfConverter {
       strut: layout.normalizeLineHeight ? TextStyle(engineFont, size) : null,
       // (`base_text_align_last`: a justified paragraph's last line, and
       // those before a hard break.)
-      alignLast: _aligned(layout.alignLast),
+      alignLast: _aligned(layout.alignLast, mirrored: layout.mirrored),
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
       justifyToWidest: layout.justifyWidest,
@@ -87,14 +87,17 @@ extension _Paragraphs on PdfConverter {
   }
 
   /// The theme's alignment [value] (`left`, `center`, `right`,
-  /// `justify`); in a right-to-left document, mirrored (the theme's
-  /// `left`, the start, is the right).
-  TextAlign _aligned(String? value) => switch (value) {
-    'justify' => TextAlign.justify,
-    'center' => TextAlign.center,
-    'right' => _rightToLeft ? TextAlign.left : TextAlign.right,
-    _ => _rightToLeft ? TextAlign.right : TextAlign.left,
-  };
+  /// `justify`); in a right-to-left document, [mirrored] (the theme's
+  /// `left`, the start, is the right) unless it names the page's sides.
+  TextAlign _aligned(String? value, {bool mirrored = true}) {
+    final flip = _rightToLeft && mirrored;
+    return switch (value) {
+      'justify' => TextAlign.justify,
+      'center' => TextAlign.center,
+      'right' => flip ? TextAlign.left : TextAlign.right,
+      _ => flip ? TextAlign.right : TextAlign.left,
+    };
+  }
 
   /// [box] in [style] as the engine's paragraph, where the engine sets it
   /// as the box does (FEAT-5w237r), else the box itself.

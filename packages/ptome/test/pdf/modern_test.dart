@@ -4675,6 +4675,68 @@ heading:
       );
     });
 
+    test('its contents entry: the dots between, the number at the left', () {
+      final pdf = _pdf(source, theme: theme);
+      final boxes = [
+        for (final m
+            in RegExp(
+              r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
+              r'yMax="[\d.]+">([^<]*)</word>',
+            ).allMatches(
+              Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout
+                  as String,
+            ))
+          (
+            m[4]!,
+            double.parse(m[1]!),
+            double.parse(m[2]!),
+            double.parse(m[3]!),
+          ),
+      ];
+      final (_, titleLeft, y, _) = boxes.firstWhere(
+        (w) => w.$1 == 'בראשית' || w.$1 == 'תישארב',
+      );
+      final line = [
+        for (final w in boxes)
+          if ((w.$3 - y).abs() < 2) w,
+      ];
+      // (The number on the entry's line at the left margin, not beside the
+      // title, and the dots from it to the title.)
+      final (_, numberLeft, _, numberRight) = line.firstWhere(
+        (w) => w.$1 == '1',
+      );
+      expect(numberLeft, lessThan(100));
+      final dots = [
+        for (final w in line)
+          if (w.$1 == '.') w,
+      ];
+      expect(dots, isNotEmpty);
+      expect(dots.first.$2, greaterThan(numberRight));
+      expect(dots.last.$4, lessThan(titleLeft));
+    });
+
+    test("its running content on the page's own sides, not mirrored", () {
+      final pdf = _pdf('$source\n<<<\n\nעוד\n', theme: theme);
+      final page2 =
+          Process.runSync('pdftotext', [
+                '-bbox',
+                '-f',
+                '2',
+                '-l',
+                '2',
+                pdf,
+                '-',
+              ]).stdout
+              as String;
+      // (Page 2, a verso: its number at the left, as the theme puts it.)
+      final number = RegExp(
+        r'<word xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>2</word>',
+      ).firstMatch(page2);
+      expect(number, isNotNull);
+      expect(double.parse(number![2]!), greaterThan(700));
+      expect(double.parse(number[1]!), lessThan(100));
+    });
+
     test('is left to right in the compatibility mode', () {
       final all = words(_pdf(source, theme: theme, compat: true));
       final (_, right) = edges(all, 'שלום');

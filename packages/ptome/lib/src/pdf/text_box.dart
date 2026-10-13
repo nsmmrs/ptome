@@ -69,6 +69,7 @@ final class TextLayout {
   /// [initialGap] below the top, [paddingBottom] below the last line.
   const new({
     this.align = 'left',
+    this.mirrored = true,
     this.leading = 0,
     this.initialGap = 0,
     this.paddingBottom = 0,
@@ -101,6 +102,7 @@ final class TextLayout {
   /// This layout with [insets] taken from its lines' widths.
   TextLayout withLineInsets(List<(double, double)> insets) => TextLayout(
     align: align,
+    mirrored: mirrored,
     leading: leading,
     initialGap: initialGap,
     paddingBottom: paddingBottom,
@@ -180,6 +182,11 @@ final class TextLayout {
   /// measures a cell's text).
   final bool trailingLineGap;
 
+  /// Whether [align] is the theme's, mirrored in a right-to-left document
+  /// (`left` the start), rather than the page's own sides (running content,
+  /// whose columns the page layout places).
+  final bool mirrored;
+
   /// Whether only the first line is laid out (the rest is left over, the
   /// line gap and the leading following the line).
   final bool singleLine;
@@ -194,6 +201,7 @@ final class TextLayout {
   /// This layout with no gap above the first line.
   TextLayout get withoutInitialGap => TextLayout(
     align: align,
+    mirrored: mirrored,
     leading: leading,
     paddingBottom: paddingBottom,
     finalGap: finalGap,
@@ -3023,6 +3031,7 @@ final class FirstLineTextBox implements BaselineContent {
       first.state,
       TextLayout(
         align: line.align,
+        mirrored: line.mirrored,
         leading: line.leading,
         initialGap: line.initialGap,
         paddingBottom: more ? 0 : line.paddingBottom,

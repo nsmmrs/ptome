@@ -20,6 +20,7 @@ extension _Text on PdfConverter {
     bool gaps = true,
     bool singleLine = false,
     bool shrinkToFit = false,
+    bool mirrored = true,
     int orphans = 1,
     int widows = 1,
     double? wrapIndent,
@@ -105,6 +106,7 @@ extension _Text on PdfConverter {
       ),
       TextLayout(
         align: align,
+        mirrored: mirrored,
         leading: metrics.leading,
         initialGap: cell || !gaps ? 0 : metrics.paddingTop,
         paddingBottom: cell || !gaps ? 0 : metrics.paddingBottom,

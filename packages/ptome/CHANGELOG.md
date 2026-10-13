@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a right-to-left document's contents and running content as before
+  the engine set them: each entry's dots from the title to its page number
+  at the left, and the running heads and feet on the page's own sides
+  (`TextLayout.mirrored`), not mirrored. The units corpus's Arabic Qur'an
+  (108 pages) is word for word what it was.
 - PDF: a footnote whose reference follows Hebrew or Arabic text is set
   (it was lost), and the notes of a right-to-left line come in reading
   order. Checked on the Aramaic Talmud (Berakhot 2a-4a with Rashi's 114
