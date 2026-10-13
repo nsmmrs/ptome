@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Glyphs are drawn at the advances shaping gave them: where it changed
+  one (right-to-left positioning folded into advances), the pen moves by
+  that, not by the font's width (`EmbeddedFont.glyphAdvance`); a Hebrew
+  line no longer ran up to 0.6 em past its measure.
 - `EmbeddedFont.parse(typoMetrics:)` / `.shaped(typoMetrics:)`: the
   ascender, descender and line gap from `OS/2`'s typographic metrics
   where the font has them (as Prawn measures fonts), not `hhea`'s.

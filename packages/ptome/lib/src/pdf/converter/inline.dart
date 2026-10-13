@@ -1067,11 +1067,15 @@ extension _InlineElements on PdfConverter {
     final m = template.margins;
     final size = template.size;
     final recto = !sided || number.isOdd;
+    // (A right-to-left document's pages mirrored: the theme's left, its
+    // start, at the right, and a recto's outside, away from its binding,
+    // at its left.)
+    final mirror = _rightToLeft;
     final right = switch (keys.string('column')) {
-      'right' => true,
-      'outside' => recto,
-      'inside' => !recto,
-      _ => false,
+      'right' => !mirror,
+      'outside' => recto != mirror,
+      'inside' => recto == mirror,
+      _ => mirror,
     };
     final offset =
         keys.length('column_offset', _rootFontSize) ?? _rootFontSize / 2;

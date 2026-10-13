@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a right-to-left document's pages are mirrored (FEAT-49lks5), the
+  theme's left read as the start: page margins, running content (its
+  margins and columns: a recto's folio at its outer edge, the left), a
+  book for print bound at the right (a recto's inner margin and gutter
+  at its right), note stream columns and line numbers, lists marked at
+  the right, tables from the right. And a right-to-left line no longer
+  runs past its measure: shaped advances are the ones drawn. Left-to-
+  right documents are unchanged.
 - PDF, modern engine: lines are their text's font height and the
   leading apart whatever fonts they mix (TeX's interline glue,
   BUG-kd9h5p), in the engine's paragraphs and the text box alike, and

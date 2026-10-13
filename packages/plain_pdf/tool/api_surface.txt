@@ -79,6 +79,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
   double ascender
   double capHeight
   double descender
+  double glyphAdvance(int glyph)
   double lineGap
   double underlinePosition
   double underlineThickness

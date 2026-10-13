@@ -4715,26 +4715,94 @@ heading:
       expect(dots.last.$4, lessThan(titleLeft));
     });
 
-    test("its running content on the page's own sides, not mirrored", () {
-      final pdf = _pdf('$source\n<<<\n\nעוד\n', theme: theme);
-      final page2 =
-          Process.runSync('pdftotext', [
-                '-bbox',
-                '-f',
-                '2',
-                '-l',
-                '2',
-                pdf,
-                '-',
-              ]).stdout
-              as String;
-      // (Page 2, a verso: its number at the left, as the theme puts it.)
-      final number = RegExp(
-        r'<word xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>2</word>',
-      ).firstMatch(page2);
-      expect(number, isNotNull);
-      expect(double.parse(number![2]!), greaterThan(700));
-      expect(double.parse(number[1]!), lessThan(100));
+    /// The words of page [page] of [pdf], with their left and right edges
+    /// and their top.
+    List<(String, double, double, double)> wordsOf(String pdf, int page) => [
+      for (final m
+          in RegExp(
+            r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
+            r'yMax="[\d.]+">([^<]*)</word>',
+          ).allMatches(
+            Process.runSync('pdftotext', [
+                  '-bbox',
+                  '-f',
+                  '$page',
+                  '-l',
+                  '$page',
+                  pdf,
+                  '-',
+                ], stdoutEncoding: utf8).stdout
+                as String,
+          ))
+        (m[4]!, double.parse(m[1]!), double.parse(m[3]!), double.parse(m[2]!)),
+    ];
+
+    test("its pages mirrored: the running content, a verso's folio at its "
+        'right', () {
+      final pdf = _pdf('$source\n\n<<<\n\nעוד\n\n<<<\n\nעוד\n', theme: theme);
+      // (Page 2, a verso, bound at its left in a right-to-left book: its
+      // outer edge, where its number goes, at its right; page 3, a recto,
+      // at its left.)
+      final verso = wordsOf(pdf, 2).firstWhere((w) => w.$1 == '2');
+      expect(verso.$4, greaterThan(700));
+      expect(verso.$2, greaterThan(400));
+      final recto = wordsOf(pdf, 3).firstWhere((w) => w.$1 == '3');
+      expect(recto.$2, lessThan(100));
+    });
+
+    test('a book for print bound at its right: the inner margins', () {
+      final words = List.filled(80, 'שלום עולם').join(' ');
+      final pdf = _pdf(
+        '= ספר\n:doctype: book\n:dir: rtl\n:media: prepress\n\n'
+        '== פרק\n\n$words\n\n$words\n\n$words\n\n$words\n\n$words\n\n'
+        '$words\n\n$words\n\n$words\n',
+        theme:
+            '$theme'
+            'page:\n  margin: [54, 36, 54, 36]\n  margin_inner: 72\n'
+            '  margin_outer: 36\n',
+      );
+      (double, double) block(int page) {
+        final body = [
+          for (final w in wordsOf(pdf, page))
+            if (w.$4 > 60 && w.$4 < 780) w,
+        ];
+        return (
+          body.map((w) => w.$2).reduce(math.min),
+          body.map((w) => w.$3).reduce(math.max),
+        );
+      }
+
+      // (A recto's binding at its right, a verso's at its left.)
+      final (rectoLeft, rectoRight) = block(3);
+      expect(rectoLeft, closeTo(36, 1));
+      expect(595.28 - rectoRight, closeTo(72, 4));
+      final (versoLeft, versoRight) = block(4);
+      expect(versoLeft, closeTo(72, 1));
+      expect(595.28 - versoRight, closeTo(36, 4));
+    });
+
+    test('its lists marked at the right, its tables from the right', () {
+      final pdf = _pdf(
+        '= ספר\n:dir: rtl\n\n* אחד\n* שתיים\n\n'
+        '[cols="1,1,1"]\n|===\n|א |ב |ג\n|===\n',
+        theme: theme,
+      );
+      final all = wordsOf(pdf, 1);
+      (String, double, double, double) find(String word) => all.firstWhere(
+        (w) =>
+            w.$1 == word ||
+            w.$1 == String.fromCharCodes(word.runes.toList().reversed),
+      );
+      // (The bullet right of its item's text: whatever the fonts draw it
+      // as, on the item's line past its text.)
+      final item = find('אחד');
+      expect(
+        all.where((w) => (w.$4 - item.$4).abs() < 4 && w.$2 > item.$3),
+        isNotEmpty,
+      );
+      // (The table's first column at the right.)
+      expect(find('א').$2, greaterThan(find('ב').$2));
+      expect(find('ב').$2, greaterThan(find('ג').$2));
     });
 
     test('characters no font has: one warning for them all', () {

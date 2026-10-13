@@ -176,9 +176,11 @@ extension _Lists on PdfConverter {
       BlockBox(
         items,
         style: BoxStyle(
-          margin: EdgeInsets(
-            left: indent,
-            bottom: nested ? 0 : _marginBelow(node, fallback: 'prose'),
+          margin: _mirrorInsets(
+            EdgeInsets(
+              left: indent,
+              bottom: nested ? 0 : _marginBelow(node, fallback: 'prose'),
+            ),
           ),
           anchor: node.id,
           structure: _struct('L'),
@@ -331,9 +333,11 @@ extension _Lists on PdfConverter {
         CustomBox(
           content,
           style: BoxStyle(
-            margin: EdgeInsets(
-              bottom:
-                  marginBottom ?? (_n('prose_margin_bottom') ?? 0).toDouble(),
+            margin: _mirrorInsets(
+              EdgeInsets(
+                bottom:
+                    marginBottom ?? (_n('prose_margin_bottom') ?? 0).toDouble(),
+              ),
             ),
           ),
         ),
@@ -429,7 +433,9 @@ extension _Lists on PdfConverter {
             normalizeLineHeight: true,
             hyphenate: true,
           ),
-          style: BoxStyle(margin: EdgeInsets(bottom: marginBottom)),
+          style: BoxStyle(
+            margin: _mirrorInsets(EdgeInsets(bottom: marginBottom)),
+          ),
         ),
       );
     }
@@ -477,7 +483,9 @@ extension _Lists on PdfConverter {
           _out.add(
             CustomBox(
               i == 0 ? _MinRoom(box, need) : box,
-              style: BoxStyle(margin: EdgeInsets(top: i > 0 ? termSpacing : 0)),
+              style: BoxStyle(
+                margin: _mirrorInsets(EdgeInsets(top: i > 0 ? termSpacing : 0)),
+              ),
             ),
           );
         }
@@ -489,7 +497,7 @@ extension _Lists on PdfConverter {
         _out.add(
           BlockBox(
             children,
-            style: BoxStyle(margin: EdgeInsets(left: indent)),
+            style: BoxStyle(margin: _mirrorInsets(EdgeInsets(left: indent))),
           ),
         );
       }
@@ -498,10 +506,12 @@ extension _Lists on PdfConverter {
       BlockBox(
         boxes,
         style: BoxStyle(
-          margin: EdgeInsets(
-            bottom: node.parent is ListItem
-                ? 0
-                : _marginBelow(node, fallback: 'prose'),
+          margin: _mirrorInsets(
+            EdgeInsets(
+              bottom: node.parent is ListItem
+                  ? 0
+                  : _marginBelow(node, fallback: 'prose'),
+            ),
           ),
           anchor: node.id,
         ),
@@ -554,11 +564,13 @@ extension _Lists on PdfConverter {
           widows: (_n('prose_widows') ?? 2).toInt(),
         ),
         style: BoxStyle(
-          margin: EdgeInsets(
-            left: hang,
-            bottom: blocks.isEmpty
-                ? 0
-                : (_n('prose_margin_bottom') ?? 0).toDouble(),
+          margin: _mirrorInsets(
+            EdgeInsets(
+              left: hang,
+              bottom: blocks.isEmpty
+                  ? 0
+                  : (_n('prose_margin_bottom') ?? 0).toDouble(),
+            ),
           ),
         ),
       ),
@@ -567,7 +579,7 @@ extension _Lists on PdfConverter {
       _out.add(
         BlockBox(
           blocks,
-          style: BoxStyle(margin: EdgeInsets(left: hang)),
+          style: BoxStyle(margin: _mirrorInsets(EdgeInsets(left: hang))),
         ),
       );
     }
@@ -616,7 +628,9 @@ extension _Lists on PdfConverter {
               i == 0
                   ? _MinRoom(_term(term, termFont), need)
                   : _term(term, termFont),
-              style: BoxStyle(margin: EdgeInsets(top: i > 0 ? termSpacing : 0)),
+              style: BoxStyle(
+                margin: _mirrorInsets(EdgeInsets(top: i > 0 ? termSpacing : 0)),
+              ),
             ),
         ];
         rows.add(
@@ -647,10 +661,12 @@ extension _Lists on PdfConverter {
       BlockBox(
         boxes,
         style: BoxStyle(
-          margin: EdgeInsets(
-            bottom: node.parent is ListItem
-                ? 0
-                : _marginBelow(node, fallback: 'prose'),
+          margin: _mirrorInsets(
+            EdgeInsets(
+              bottom: node.parent is ListItem
+                  ? 0
+                  : _marginBelow(node, fallback: 'prose'),
+            ),
           ),
           anchor: node.id,
         ),
@@ -779,7 +795,13 @@ extension _Lists on PdfConverter {
               _out.add(
                 CustomBox(
                   _MinRoom(
-                    _Marked(box, marker, markerWidth, -markerWidth),
+                    _Marked(
+                      box,
+                      marker,
+                      markerWidth,
+                      -markerWidth,
+                      mirrored: _rightToLeft,
+                    ),
                     // (With lines set from their cap heights, a line is as
                     // tall as its cap height.)
                     _capLeading(_font) != null
@@ -789,7 +811,9 @@ extension _Lists on PdfConverter {
                         : minRoom,
                   ),
                   style: BoxStyle(
-                    margin: EdgeInsets(bottom: last ? 0 : spacing),
+                    margin: _mirrorInsets(
+                      EdgeInsets(bottom: last ? 0 : spacing),
+                    ),
                   ),
                 ),
               );
@@ -800,7 +824,7 @@ extension _Lists on PdfConverter {
             BlockBox(
               children,
               style: BoxStyle(
-                margin: EdgeInsets(left: markerWidth),
+                margin: _mirrorInsets(EdgeInsets(left: markerWidth)),
                 anchor:
                     item.id ??
                     (primary == null && coids.isNotEmpty
@@ -816,11 +840,13 @@ extension _Lists on PdfConverter {
       BlockBox(
         items,
         style: BoxStyle(
-          margin: EdgeInsets(
-            top: marginTop,
-            bottom: _marginBelow(node, fallback: 'prose'),
-            // (`callout_list_indent`, modern engine.)
-            left: _length('callout_list_indent', _font.size) ?? 0,
+          margin: _mirrorInsets(
+            EdgeInsets(
+              top: marginTop,
+              bottom: _marginBelow(node, fallback: 'prose'),
+              // (`callout_list_indent`, modern engine.)
+              left: _length('callout_list_indent', _font.size) ?? 0,
+            ),
           ),
           anchor: node.id,
         ),
@@ -861,9 +887,21 @@ extension _Lists on PdfConverter {
     );
     if (_listBodyIndent case final bodyIndent?) {
       _listMarkerWidth = math.max(_listMarkerWidth, width);
-      return _Marked(content, markerBox, width, -width - bodyIndent);
+      return _Marked(
+        content,
+        markerBox,
+        width,
+        -width - bodyIndent,
+        mirrored: _rightToLeft,
+      );
     }
-    return _Marked(content, markerBox, width, -width - gap + 0.5);
+    return _Marked(
+      content,
+      markerBox,
+      width,
+      -width - gap + 0.5,
+      mirrored: _rightToLeft,
+    );
   }
 
   /// Converts the question and answer list [node].
@@ -905,7 +943,9 @@ extension _Lists on PdfConverter {
             _out.add(
               CustomBox(
                 box,
-                style: BoxStyle(margin: EdgeInsets(bottom: termSpacing)),
+                style: BoxStyle(
+                  margin: _mirrorInsets(EdgeInsets(bottom: termSpacing)),
+                ),
               ),
             );
           }
@@ -921,10 +961,12 @@ extension _Lists on PdfConverter {
                   hyphenate: true,
                 ),
                 style: BoxStyle(
-                  margin: EdgeInsets(
-                    bottom:
-                        descMargin ??
-                        (_n('prose_margin_bottom') ?? 0).toDouble(),
+                  margin: _mirrorInsets(
+                    EdgeInsets(
+                      bottom:
+                          descMargin ??
+                          (_n('prose_margin_bottom') ?? 0).toDouble(),
+                    ),
                   ),
                 ),
               ),
@@ -939,11 +981,13 @@ extension _Lists on PdfConverter {
       BlockBox(
         boxes,
         style: BoxStyle(
-          margin: EdgeInsets(
-            left: _length('list_indent', _font.size) ?? 0,
-            bottom: node.parent is ListItem
-                ? 0
-                : _marginBelow(node, fallback: 'prose'),
+          margin: _mirrorInsets(
+            EdgeInsets(
+              left: _length('list_indent', _font.size) ?? 0,
+              bottom: node.parent is ListItem
+                  ? 0
+                  : _marginBelow(node, fallback: 'prose'),
+            ),
           ),
           anchor: node.id,
         ),

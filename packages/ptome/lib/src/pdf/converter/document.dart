@@ -360,9 +360,19 @@ extension _DocumentParts on PdfConverter {
 
     PageTemplate templateFor(String layout) {
       final (width, height) = _layoutSize(document, layout);
+      final margins = _marginsFor(document, layout);
       return PageTemplate(
         Rect(0, 0, width, height),
-        margins: _marginsFor(document, layout),
+        // (A right-to-left document's pages mirrored: the theme's left
+        // margin, its start's, at the right.)
+        margins: _rightToLeft
+            ? EdgeInsets(
+                top: margins.top,
+                right: margins.left,
+                bottom: margins.bottom,
+                left: margins.right,
+              )
+            : margins,
         columns: _pageColumns?.$1 ?? 1,
         columnGap: _pageColumns?.$2 ?? 12,
         header: _header,
@@ -1974,11 +1984,13 @@ extension _DocumentParts on PdfConverter {
       _ => page.lines,
     };
     final recto = page.number.isOdd;
+    // (Mirrored in a right-to-left document, as its pages are.)
+    final mirror = _rightToLeft;
     final right = switch (numbering.side) {
-      'right' => true,
-      'outer' => recto,
-      'inner' => !recto,
-      _ => false,
+      'right' => !mirror,
+      'outer' => recto != mirror,
+      'inner' => recto == mirror,
+      _ => mirror,
     };
     // The rules midway between the numbers and the text, two of them
     // their width apart about that line.
@@ -2086,8 +2098,9 @@ extension _DocumentParts on PdfConverter {
     }
     if (outer == null && inner == null) return template;
     final m = template.margins;
-    // (An inverted folio placement swaps the sides, margins too.)
-    final recto = number.isOdd != _folio.inverted;
+    // (An inverted folio placement swaps the sides, margins too; so does a
+    // right-to-left book, bound at the right.)
+    final recto = (number.isOdd != _folio.inverted) != _rightToLeft;
     return PageTemplate(
       template.size,
       margins: EdgeInsets(

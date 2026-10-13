@@ -642,6 +642,17 @@ final class PdfConverter extends BuiltInConverter
       _document.attr('dir')?.toLowerCase() == 'rtl' &&
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
+  /// [insets] as a block's in this document: in a right-to-left one, its
+  /// left (its start) at the right and its right at the left.
+  EdgeInsets _mirrorInsets(EdgeInsets insets) => _rightToLeft
+      ? EdgeInsets(
+          top: insets.top,
+          right: insets.left,
+          bottom: insets.bottom,
+          left: insets.right,
+        )
+      : insets;
+
   /// Whether plain paragraphs are set by the engine's paragraphs (the
   /// modern engine's, FEAT-n1bkgf; `base_text_engine: box` keeps them in
   /// this converter's text box).

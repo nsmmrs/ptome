@@ -393,6 +393,10 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
   @override
   String get name => font.postScriptName;
 
+  /// The advance of [glyph] in the font, in 1000ths of the em: what a
+  /// viewer moves by after showing it (shaping may give the glyph another).
+  double glyphAdvance(int glyph) => _scale(font.advance(glyph));
+
   @override
   double get ascender => typoMetrics
       ? _scale(_typo(font.typoAscender, font.ascender))

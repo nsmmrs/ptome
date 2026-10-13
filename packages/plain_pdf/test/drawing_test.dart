@@ -348,6 +348,30 @@ void main() {
     expect(words(pdf).map((w) => w.text), ['code();', 'Seen']);
   });
 
+  test('a glyph advanced as shaped, not as the font has it', () {
+    // (Right-to-left shaping gives a glyph its positioning in its
+    // advance: the pen moves by that.)
+    final font = EmbeddedFont.parse(
+      File('test/fonts/notoserif-regular-latin.ttf').readAsBytesSync(),
+    );
+    final [a, b] = font.shape('ab');
+    final natural = font.glyphAdvance(a.id);
+    expect(a.advance, closeTo(natural, 1e-9));
+    final shorter = ShapedGlyph(a.id, a.text, natural - 100);
+    final pdf = saved(
+      page((c) => c.glyphs([shorter, b], 10, 50, TextStyle(font, 10))),
+    );
+    final qdf =
+        Process.runSync('qpdf', [
+              '--qdf',
+              '--object-streams=disable',
+              pdf.path,
+              '-',
+            ], stdoutEncoding: latin1).stdout
+            as String;
+    expect(qdf, matches(RegExp(r'\[<[0-9A-F]{4}> 100 <[0-9A-F]{4}>\] TJ')));
+  });
+
   test('typographic metrics: the OS/2 ascender, descender and gap', () {
     final bytes = File('test/fonts/mplus1p-regular-multilingual.ttf')
         .readAsBytesSync();

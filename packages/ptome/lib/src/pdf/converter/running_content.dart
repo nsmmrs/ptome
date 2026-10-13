@@ -184,15 +184,25 @@ extension _RunningContent on PdfConverter {
       margins.bottom,
       margins.left,
     ];
-    final trimMargin = _trimValues(
-      _keys(periphery).value('${side}_margin') ??
-          _keys(periphery).value('margin'),
-      pageMargin,
-    );
-    final contentMargin = _trimValues(
-      _keys(periphery).value('${side}_content_margin') ??
-          _keys(periphery).value('content_margin'),
-      [for (var i = 0; i < 4; i++) pageMargin[i] - trimMargin[i]],
+    // (A right-to-left document's pages mirrored: the theme's left, its
+    // start, at the right; the page's own margins are already.)
+    final mirror = _rightToLeft;
+    List<double> mirrored(ThemeValue? given, List<double> values) =>
+        mirror && given != null
+        ? [values[0], values[3], values[2], values[1]]
+        : values;
+    final trimGiven =
+        _keys(periphery).value('${side}_margin') ??
+        _keys(periphery).value('margin');
+    final trimMargin = mirrored(trimGiven, _trimValues(trimGiven, pageMargin));
+    final contentGiven =
+        _keys(periphery).value('${side}_content_margin') ??
+        _keys(periphery).value('content_margin');
+    final contentMargin = mirrored(
+      contentGiven,
+      _trimValues(contentGiven, [
+        for (var i = 0; i < 4; i++) pageMargin[i] - trimMargin[i],
+      ]),
     );
     final paddingValue =
         _keys(periphery).value('${side}_padding') ??
@@ -200,7 +210,10 @@ extension _RunningContent on PdfConverter {
     final padding = paddingValue == null
         ? contentMargin
         : [
-            for (final (i, v) in _edgeValues(paddingValue).indexed)
+            for (final (i, v) in mirrored(
+              paddingValue,
+              _edgeValues(paddingValue),
+            ).indexed)
               v + contentMargin[i],
           ];
     final baseFont = _themeFont(periphery, _font);
@@ -269,6 +282,22 @@ extension _RunningContent on PdfConverter {
     } else {
       for (final position in const ['left', 'center', 'right']) {
         columns[position] = (position, contentWidth, 0);
+      }
+    }
+    // (Its columns too: the theme's left column at the right, aligned
+    // there; a recto's outer edge, where its folio goes, at its left.)
+    if (mirror) {
+      for (final MapEntry(key: position, value: (align, w, x))
+          in columns.entries.toList()) {
+        columns[position] = (
+          switch (align) {
+            'left' => 'right',
+            'right' => 'left',
+            final other => other,
+          },
+          w,
+          contentWidth - x - w,
+        );
       }
     }
 
@@ -340,7 +369,8 @@ extension _RunningContent on PdfConverter {
       if (columnWidth <= 0) continue;
       if (ruleColor != null && columnWidth < contentWidth) {
         if (previous != null) {
-          final ruleX = contentLeft + x;
+          // (Between it and the column before, at its start.)
+          final ruleX = contentLeft + x + (mirror ? columnWidth : 0);
           final ruleTop = top - padding[0] - contentOffset;
           pieces.add(
             (pdfPage) => PdfConverter._verticalRule(
@@ -353,7 +383,7 @@ extension _RunningContent on PdfConverter {
               ruleStyle,
             ),
           );
-          x += ruleSpacing * 0.5;
+          if (!mirror) x += ruleSpacing * 0.5;
           columnWidth -= ruleSpacing;
         } else {
           columnWidth -= ruleSpacing * 0.5;

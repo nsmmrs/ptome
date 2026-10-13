@@ -204,9 +204,14 @@ and table cells are set from the right, their indents there, and the
 theme's alignments are mirrored (`left`, the start, is the right; a
 justified paragraph's last line ends at the right). The table of
 contents is mirrored too: each title at the right, its page number at
-the left. The page layout itself (running content, recto and verso) is
-not mirrored. The theme picks a font that has the script
-(`base_font_family`, or `font_fallbacks` for a few words).
+the left. So are its pages, the theme's left read as the start: the
+page margins and the running content's margins and columns (a recto's
+folio at its outer edge, its left), a book for print bound at the right
+(`media=prepress`: a recto's inner margin and gutter at its right, a
+verso's at its left), a note stream's column and line numbers, lists
+marked at the right and tables with their first column at the right.
+The theme picks a font that has the script (`base_font_family`, or
+`font_fallbacks` for a few words).
 
 ### Fonts
 

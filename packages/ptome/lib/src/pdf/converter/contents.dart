@@ -171,7 +171,17 @@ final class _MinRoom implements BaselineContent {
 /// Content with a marker drawn beside its first piece: [marker] laid out
 /// [markerWidth] wide, [offset] points from the content's left edge.
 final class _Marked implements BaselineContent {
-  const new(this.content, this.marker, this.markerWidth, this.offset);
+  const new(
+    this.content,
+    this.marker,
+    this.markerWidth,
+    this.offset, {
+    this.mirrored = false,
+  });
+
+  /// Whether the marker is at the content's right, [offset] from its end
+  /// (a right-to-left document's list).
+  final bool mirrored;
 
   final CustomContent content;
   final CustomContent marker;
@@ -193,7 +203,11 @@ final class _Marked implements BaselineContent {
       anchors: placed.anchors,
       lines: placed.lines,
       paint: (page, x, top) {
-        mark?.paint(page, x + offset, top);
+        mark?.paint(
+          page,
+          mirrored ? x + width - offset - markerWidth : x + offset,
+          top,
+        );
         placed.paint(page, x, top);
       },
     );

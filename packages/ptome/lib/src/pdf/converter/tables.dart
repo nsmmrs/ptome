@@ -589,8 +589,13 @@ extension _Tables on PdfConverter {
     _tableAlign = align;
     _out.add(
       TableBox(
-        [for (final cells in tableRows) TableRow(cells)],
-        columns: columns,
+        // (A right-to-left document's table mirrored: its first column at
+        // the right.)
+        [
+          for (final cells in tableRows)
+            TableRow(_rightToLeft ? cells.reversed.toList() : cells),
+        ],
+        columns: _rightToLeft ? columns.reversed.toList() : columns,
         headerRows: headerSize,
         borders:
             _choice('table_borders', const ['above', 'with-cells']) ==
@@ -602,8 +607,8 @@ extension _Tables on PdfConverter {
             _choice('table_cell_margin_top', const ['drop', 'keep']) == 'keep',
         align: switch (align) {
           'center' => BoxAlign.center,
-          'right' => BoxAlign.right,
-          _ => BoxAlign.left,
+          'right' => _rightToLeft ? BoxAlign.left : BoxAlign.right,
+          _ => _rightToLeft ? BoxAlign.right : BoxAlign.left,
         },
         style: BoxStyle(structure: _struct('Table')),
       ),
@@ -617,11 +622,15 @@ extension _Tables on PdfConverter {
     ThemeColor? background,
     List<_Side> sides,
   ) {
-    final padding = EdgeInsets(
-      top: data.padding[0],
-      right: data.padding[1],
-      bottom: data.padding[2],
-      left: data.padding[3],
+    // (A right-to-left document's table mirrored: each cell's start, its
+    // left, at its right.)
+    final padding = _mirrorInsets(
+      EdgeInsets(
+        top: data.padding[0],
+        right: data.padding[1],
+        bottom: data.padding[2],
+        left: data.padding[3],
+      ),
     );
     final List<LayoutBox> content;
     double Function(double, double)? offset;
@@ -646,7 +655,7 @@ extension _Tables on PdfConverter {
       content = [
         switch (_engineOr(
           box,
-          style: const BoxStyle(margin: EdgeInsets(right: -1)),
+          style: BoxStyle(margin: _mirrorInsets(const EdgeInsets(right: -1))),
         )) {
           final ParagraphBox paragraph => paragraph,
           _ => CustomBox(_Widened(box, 1)),
@@ -690,7 +699,8 @@ extension _Tables on PdfConverter {
             ..restore();
         }
 
-        final [top, right, bottom, left] = sides;
+        final [top, end, bottom, start] = sides;
+        final (right, left) = _rightToLeft ? (start, end) : (end, start);
         final t = rect.top;
         final b = rect.bottom;
         side(top, rect.left, t, rect.right, t);

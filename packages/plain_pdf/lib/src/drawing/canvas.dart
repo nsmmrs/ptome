@@ -936,7 +936,10 @@ final class PdfCanvas implements StructureCanvas {
       final out = _content..byte(0x5b); // [
       var start = 0;
       for (var i = run.start; i < run.end; i++) {
-        final adjustment = i < last ? -glyphs[i].kerning : 0.0;
+        final drift = font.glyphAdvance(glyphs[i].id) - glyphs[i].advance;
+        final adjustment = i < last
+            ? -glyphs[i].kerning + (drift.abs() > 1e-9 ? drift : 0)
+            : 0.0;
         if (adjustment != 0) {
           final end = i - run.start + 1;
           if (end != start) out.string(run.codes, start, end, hex: false);
@@ -1001,7 +1004,15 @@ final class PdfCanvas implements StructureCanvas {
         if (glyph.xOffset != 0) adjust(-glyph.xOffset, i * width);
       }
       var adjustment = 0.0;
-      if (i < last) adjustment -= glyph.kerning;
+      if (i < last) {
+        adjustment -= glyph.kerning;
+        // (An advance shaping changed, a right-to-left run's positioning:
+        // the pen moved by it, not by the font's.)
+        if (font case final EmbeddedFont embedded) {
+          final drift = embedded.glyphAdvance(glyph.id) - glyph.advance;
+          if (drift.abs() > 1e-9) adjustment += drift;
+        }
+      }
       if (wordSpacing != 0 && glyph.text == ' ') adjustment -= wordSpacing;
       if (positioned) adjustment += glyph.xOffset;
       if (adjustment != 0) adjust(adjustment, (i + 1) * width);
