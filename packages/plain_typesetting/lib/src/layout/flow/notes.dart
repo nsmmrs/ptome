@@ -236,6 +236,7 @@ extension _Notes on _Pass {
     List<LayoutBox> bottom = const [],
     List<LayoutBox> above = const [],
     Map<LayoutBox, List<LayoutBox>> pinnedBottom = const {},
+    List<_Placed> beside = const [],
   }) {
     final width = region.width;
     // (The floating boxes for the bottom kept here.)
@@ -243,6 +244,9 @@ extension _Notes on _Pass {
     // The anchors in the floating boxes set at the top and the bottom of
     // the region: the notes they refer to are the region's too.
     List<String> floatAnchors() => [
+      // (And the pieces of blocks floating to a side carried here from the
+      // region before, set at its top: their notes too.)
+      for (final piece in beside) ..._Pass._anchorsOf(piece),
       for (final boxes in [above, atBottom])
         if (boxes.isNotEmpty)
           ..._Pass._anchorsOf(
@@ -429,6 +433,7 @@ extension _Notes on _Pass {
         pinnedBottom: Map.identity()
           ..addAll(pinnedBottom)
           ..removeWhere((box, _) => unreached.contains(box)),
+        beside: beside,
       );
     }
     final number = _noteRegions++;

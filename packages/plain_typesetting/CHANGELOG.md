@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A note referred to in a block floating to a side is set where the
+  block goes on in the next region (it was left out: the notes of the
+  float's piece set at a region's top weren't counted). In the random
+  flow documents, 34 notes in 14 of them.
 - `LineHeight.font(skip:, lineSkip:)` and `FontLineHeight.apart`: lines
   a baselineskip apart (TeX's interline glue, The TeXbook ch. 12),
   whatever fonts they mix: a line's baseline [skip]'s height and the

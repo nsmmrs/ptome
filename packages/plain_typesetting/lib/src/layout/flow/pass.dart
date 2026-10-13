@@ -210,6 +210,8 @@ final class _Pass {
         _seedExclusions = [];
         final carriedHere = carriedFloats;
         carriedFloats = [];
+        // (Their pieces set here: the notes they refer to are the region's.)
+        final beside = <_Placed>[];
         for (final float in carriedHere) {
           final side = float.style.side!;
           final width = math.min(float.style.sideWidth, region.width);
@@ -232,6 +234,7 @@ final class _Pass {
                   ),
                 );
           if (floatFit?.placed case final piece?) {
+            beside.add(piece);
             final x = side == FloatSide.right ? region.width - width : 0.0;
             page.placed.add((
               Rect(
@@ -330,6 +333,7 @@ final class _Pass {
             bottom: bottom,
             above: top,
             pinnedBottom: pinnedBottom,
+            beside: beside,
           );
           fit = withNotes;
           page.placed.add((area, fit.placed));

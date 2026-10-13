@@ -23,7 +23,9 @@
 # before what no line starts with stopped being breaks (UAX #14), and a
 # word's pieces were measured within it, and a paragraph's margin below
 # took no more than the room left (2026-10-12), and a line's width left
-# out the tracking after its last character (2026-10-13): seed, digest,
+# out the tracking after its last character, and a note referred to in a
+# block floating to a side and carried to the next region was set
+# (2026-10-13): seed, digest,
 # lines recorded; 'skip': too slow for a test there (or too deep for the
 # stack).
 0 596ff52d 567
@@ -31,7 +33,7 @@
 2 ef16e638 632
 3 7ff55066 1788
 4 1f3a5d5f 2006
-5 7e5dd7b6 5528
+5 f3fbbca2 5534
 6 55802bf8 1858
 7 7df0ccbf 338
 8 2a2150a4 5980
@@ -43,10 +45,10 @@
 14 9af9df77 4761
 15 5e1c7eeb 92
 16 f50264c3 1284
-17 b9c29c99 3477
+17 68c4fe94 3497
 18 787e4b1e 305
 19 e89647d9 1688
-20 7e5b02e1 33071
+20 c414075a 33121
 21 4323e439 730
 22 f12aab00 293
 23 skip
@@ -55,9 +57,9 @@
 26 ba54a619 1156
 27 be79b940 4508
 28 e8b76e55 5786
-29 372170ca 91859
+29 16203fc4 91890
 30 708551f1 965
-31 34c31e3f 3728
+31 05fa6924 3758
 32 skip
 33 b4260ae6 1535
 34 6aa40158 973
@@ -70,16 +72,16 @@
 41 f881bfea 3140
 42 a18d187d 33818
 43 74162bdc 2989
-44 ff8a102f 2440
-45 001c1eb0 9309
+44 9a33357b 2459
+45 f6566c9f 9315
 46 d1db6abe 2096
 47 ca263598 405
 48 e4fcd9b2 493
-49 e288fa9d 11156
+49 9d298e8b 11180
 50 486f6546 1456
 51 5833915f 449
 52 e5e1a26b 4705
-53 1aea1114 4133
+53 274959c6 4145
 54 5c5cbc5f 2196
 55 21b4a8aa 4163
 56 skip
@@ -108,19 +110,19 @@
 79 a99abf09 6679
 80 f3d90681 3969
 81 eac1a646 3819
-82 1f185b39 2397
+82 90521270 2403
 83 1650c3c6 1251
 84 d76eeaaa 2661
 85 1f2428d7 407
 86 2458c590 1943
 87 156066ea 2566
-88 e0bcfbe3 2495
+88 76b1e24e 2504
 89 b1aece5b 740
-90 52dec053 1238
+90 d8dd6995 1248
 91 cf10bb9e 1191
 92 721b8455 990
-93 6f94c9ef 7467
-94 89057c00 744
+93 e19084bf 7536
+94 e11581d5 758
 95 bf3d26bc 729
 96 653524ca 2178
 97 6e5e8a08 2057

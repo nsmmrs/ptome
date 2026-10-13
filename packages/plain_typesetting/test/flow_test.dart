@@ -1175,6 +1175,30 @@ void main() {
     expect(second['c1']!.$1, 20);
   });
 
+  test('a note referred to where a side float goes on is set', () {
+    // (The float taller than the page: what goes on of it, at the next
+    // page's top, refers to the note; its notes are that page's.)
+    final document = RecordingDocument();
+    final pages = FlowLayout(template: _rows(4), notes: {'n': _para('thenote')})
+        .layout([
+          BlockBox([
+            _para('s1\ns2\ns3\ns4\ns5'),
+            ParagraphBox(
+              Paragraph([TextRun('ref', _body, anchor: 'n')]),
+              orphans: 1,
+              widows: 1,
+            ),
+          ], style: const BoxStyle(side: FloatSide.left, sideWidth: 120)),
+          _para('alpha beta gamma'),
+        ])
+        .render(document);
+    final texts = [
+      for (final page in pages) ...page.texts.map((t) => t.trim()),
+    ];
+    expect(texts, contains('ref'));
+    expect(texts, contains('thenote'));
+  });
+
   test('a block narrowed beside a side float wraps in its width', () {
     final document = RecordingDocument();
     FlowLayout(template: _rows(8))
