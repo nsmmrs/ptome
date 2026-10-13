@@ -63,7 +63,13 @@ final class _Page implements LayoutPage, Canvas {
   @override
   void link(Rect rect, LinkTarget target) => out.add('link ${_n(rect.left)}');
   @override
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle s) {
+  double glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle s, {
+    String? text,
+  }) {
     out.add('${glyphs.map((g) => g.text).join()}@${_n(x)},${_n(y)}');
     return s.widthOf(glyphs);
   }

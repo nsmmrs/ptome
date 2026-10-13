@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Arabic and Hebrew taken from the page (copied, searched, read
+  aloud, extracted by pdftotext) read as written: letters drawn from
+  shared dotless bases and their dots, and vowels and points moved onto
+  their letters, no longer come out as U+FFFD or apart from their words
+  (BUG-z5sf9v). The units corpus's Arabic Qur'an extracts verse for verse
+  and passes veraPDF's PDF/UA-1 with `-a pdf-ua`.
 - PDF: the last text the modern engine left to the text box is the
   engine's too (FEAT-1kwk5y): an abstract's first line in its own style
   (broken by the engine, then transformed and shrunk to fit as before),

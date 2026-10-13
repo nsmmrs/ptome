@@ -467,8 +467,8 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
       // it, else the last with room, else a new one. (Every subset has
       // the space.)
       var subset = current;
-      if (current < 0 || !_subsets[current].has(id)) {
-        subset = _subsets.indexWhere((s) => s.has(id));
+      if (current < 0 || !_subsets[current].has(id, glyph.text)) {
+        subset = _subsets.indexWhere((s) => s.has(id, glyph.text));
         if (subset < 0) {
           if (_subsets.isEmpty || _subsets.last.full) {
             _subsets.add(_ByteSubset(_space));
@@ -486,6 +486,26 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     if (current < 0) current = 0;
     close(glyphs.length);
     return runs;
+  }
+
+  /// Whether the font's ToUnicode map reads each of [glyphs] as its own
+  /// text, as it will once [encode] records them: none standing for no
+  /// text (an Arabic letter's dots, drawn apart from it), none the map
+  /// reads as another (a glyph shared by several letters: the first text
+  /// it showed stays the map's; a single-byte font gives each its own
+  /// code). Asked before the glyphs are encoded.
+  bool readsAsShown(List<ShapedGlyph> glyphs) {
+    final seen = <int, String>{};
+    for (final glyph in glyphs) {
+      final id = glyph.id;
+      if (id == 0) continue;
+      if (glyph.text.isEmpty) return false;
+      if (singleByte) continue;
+      final known = _used[id] ?? seen[id];
+      if (known != null && known != glyph.text) return false;
+      seen[id] ??= glyph.text;
+    }
+    return true;
   }
 
   /// The reference simple font [subset] of a [singleByte] font is written
@@ -772,7 +792,7 @@ final class _ByteSubset {
   new(int space) {
     glyphs[0x20] = space;
     texts[0x20] = ' ';
-    _codes[space] = 0x20;
+    _codes[(space, ' ')] = 0x20;
   }
 
   /// The glyph each code shows.
@@ -781,14 +801,15 @@ final class _ByteSubset {
   /// The text each code stands for (`.notdef` none).
   final Map<int, String> texts = {};
 
-  final Map<int, int> _codes = {};
+  final Map<(int, String), int> _codes = {};
   var _next = 0x21;
 
   /// Whether no code is left.
   bool get full => _next > 0xff;
 
-  /// Whether [glyph] has a code here.
-  bool has(int glyph) => _codes.containsKey(glyph) || glyph == 0;
+  /// Whether [glyph] standing for [text] has a code here.
+  bool has(int glyph, String text) =>
+      _codes.containsKey((glyph, text)) || glyph == 0;
 
   /// The code of [glyph] (standing for [text]), given it if it has none.
   int code(int glyph, String text) {
@@ -796,7 +817,9 @@ final class _ByteSubset {
       glyphs[0] = 0;
       return 0;
     }
-    return _codes[glyph] ??= () {
+    // (A glyph standing for several texts, a code for each: the map reads
+    // each as its own.)
+    return _codes[(glyph, text)] ??= () {
       final code = _next++;
       glyphs[code] = glyph;
       texts[code] = text;

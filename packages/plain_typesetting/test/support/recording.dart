@@ -20,6 +20,9 @@ final class RecordingCanvas implements Canvas {
   /// What was drawn, a call a line.
   final List<String> calls = [];
 
+  /// What each glyphs call said its glyphs stand for, as drawn.
+  final List<String?> drawnTexts = [];
+
   void _add(String call) => calls.add(call);
 
   @override
@@ -142,7 +145,14 @@ final class RecordingCanvas implements Canvas {
       glyphs(style.shape(text), x, y, style);
 
   @override
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style) {
+  double glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle style, {
+    String? text,
+  }) {
+    drawnTexts.add(text);
     _add(
       'glyphs "${glyphs.map((g) => g.text).join()}" at ${_n(x)} ${_n(y)} '
       '${style.font.name} ${_n(style.size)}',

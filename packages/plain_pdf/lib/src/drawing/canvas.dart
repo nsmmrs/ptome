@@ -779,8 +779,91 @@ final class PdfCanvas implements StructureCanvas {
 
   /// Draws shaped [glyphs] of [style]'s font with the baseline starting
   /// at ([x], [y]); returns their width.
+  ///
+  /// Glyphs that text taken from the page can't read as their own text
+  /// (one standing for no text, one the font's map reads as another, a
+  /// mark moved onto its base, which extraction sets apart from it) are
+  /// marked as reading as [text] (ISO 32000-2, 14.9.4): what they stand
+  /// for in the order they are drawn, as the content around them reads,
+  /// else their texts one after another.
   @override
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style) {
+  double glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle style, {
+    String? text,
+  }) {
+    final font = _pdfFont(style);
+    // (A glyph moved off the baseline, or a mark onto its base: text taken
+    // from the page sets it apart. A letter moved along the line is read
+    // where it is.)
+    final moved = glyphs.any(
+      (glyph) =>
+          glyph.yOffset != 0 || (glyph.advance == 0 && glyph.xOffset != 0),
+    );
+    final readable =
+        !moved && (font is! EmbeddedFont || font.readsAsShown(glyphs));
+    if (readable) return _glyphs(glyphs, x, y, style);
+    beginMarkedContent(
+      'Span',
+      actualText: text ?? glyphs.map((glyph) => glyph.text).join(),
+    );
+    // (A single-byte font's runs place glyphs by their advances alone.)
+    final singleByte = font is EmbeddedFont && font.singleByte;
+    _glyphs(singleByte ? glyphs : _baseFirst(glyphs, style), x, y, style);
+    endMarkedContent();
+    return style.widthOf(glyphs);
+  }
+
+  /// [glyphs] with the marks they start with (a right-to-left cluster's,
+  /// drawn before their base) drawn after its base instead, at the same
+  /// places: text taken from the page places a marked sequence where its
+  /// first glyph is, which is then the base, on the line.
+  static List<ShapedGlyph> _baseFirst(
+    List<ShapedGlyph> glyphs,
+    TextStyle style,
+  ) {
+    final base = glyphs.indexWhere((glyph) => glyph.advance != 0);
+    if (base <= 0) return glyphs;
+    final b = glyphs[base];
+    // (The character spacing after each glyph, in thousandths of the em.)
+    final spacing = style.characterSpacing * 1000 / style.size;
+    final marks = glyphs.sublist(0, base);
+    final last = marks.last;
+    // (How far the marks move the pen before the base: their kerning and
+    // the spacing after each.)
+    final before = marks.fold<double>(0, (sum, m) => sum + m.kerning + spacing);
+    return [
+      // (The base where it was, then back to where the marks start...)
+      ShapedGlyph.positioned(
+        b.id,
+        b.text,
+        b.advance,
+        kerning: -(b.advance + spacing),
+        xOffset: b.xOffset + before,
+        yOffset: b.yOffset,
+      ),
+      ...marks.take(marks.length - 1),
+      // (... and past it again after its marks.)
+      ShapedGlyph.positioned(
+        last.id,
+        last.text,
+        last.advance,
+        kerning: last.kerning + b.advance + spacing + b.kerning,
+        xOffset: last.xOffset,
+        yOffset: last.yOffset,
+      ),
+      ...glyphs.sublist(base + 1),
+    ];
+  }
+
+  double _glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle style,
+  ) {
     _noPath('text');
     _mark();
     final font = _pdfFont(style);

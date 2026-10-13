@@ -70,6 +70,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
   String name
   bool covers(int codePoint)
   bool missedGlyphs
+  bool readsAsShown(List<ShapedGlyph> glyphs)
   bool singleByte
   bool subset
   bool truncateWidths
@@ -145,7 +146,7 @@ final class PdfBool extends PdfObject
   int hashCode
   void writeTo(BytesBuilder out)
 final class PdfCanvas implements StructureCanvas
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style)
+  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style, {String? text})
   double text(String text, double x, double y, TextStyle style)
   void beginArtifact()
   void beginMarkedContent(String tag, {String? actualText})

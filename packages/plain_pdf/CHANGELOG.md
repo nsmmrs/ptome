@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Shaped text taken from the page reads as written. `PdfCanvas.glyphs`
+  takes the glyphs' `text` as drawn, and marks with it as their actual
+  text (ISO 32000-2, 14.9.4) the glyphs a font's ToUnicode map can't read
+  so: a glyph standing for no text (an Arabic letter's dots, drawn apart
+  from their dotless base), one the map reads as another (a base shared
+  by several letters), marks moved onto their base (which extraction
+  sets apart). A run that starts with marks is drawn base first, at the
+  same places, so it is read on its line. `EmbeddedFont.readsAsShown`
+  says whether the map reads glyphs as their own text; a single-byte font
+  gives a glyph a code for each text it stands for. The Qur'an in Noto
+  Naskh Arabic: pdftotext gives every verse as written (none did, with
+  143,435 U+FFFD); a pointed Talmud page, 2,040 of 2,045 words (112).
 - `ImportedPage.content`, a page's content read back (its streams
   decoded and joined), is public: what a test reads to check where text
   was set.

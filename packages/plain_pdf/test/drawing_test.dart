@@ -348,6 +348,120 @@ void main() {
     expect(words(pdf).map((w) => w.text), ['code();', 'Seen']);
   });
 
+  group('Arabic glyphs read as their text', () {
+    final arabic = File(
+      '../plain_typesetting/test/fonts/notonaskharabic-subset.ttf',
+    ).readAsBytesSync();
+    // (Letters drawn as dotless bases shared by several letters and their
+    // dots apart, vowels moved onto their letters.)
+    const words = ['بِسْمِ ٱللَّهِ', 'البينة', 'نبي'];
+
+    String reversed(String text) =>
+        String.fromCharCodes(text.runes.toList().reversed);
+
+    test('the font map reads shared and textless glyphs as others', () {
+      final font = EmbeddedFont.parse(arabic);
+      final noon = font.shape('ن', rightToLeft: true);
+      expect(noon.any((g) => g.text.isEmpty), isTrue);
+      expect(font.readsAsShown(noon), isFalse);
+      final alef = font.shape('ا', rightToLeft: true);
+      expect(font.readsAsShown(alef), isTrue);
+    });
+
+    test('text taken from the page is the words', () {
+      if (!_has('pdftotext')) {
+        markTestSkipped('needs poppler');
+        return;
+      }
+      final font = EmbeddedFont.parse(arabic);
+      final style = TextStyle(font, 20);
+      final pdf = saved(
+        page(width: 300, height: 200, (c) {
+          for (final (i, word) in words.indexed) {
+            c.glyphs(
+              font.shape(word, rightToLeft: true),
+              20,
+              150 - i * 50.0,
+              style,
+              text: reversed(word),
+            );
+          }
+        }),
+      );
+      final text =
+          Process.runSync('pdftotext', [
+                '-enc',
+                'UTF-8',
+                pdf.path,
+                '-',
+              ], stdoutEncoding: utf8).stdout
+              as String;
+      expect(text, isNot(contains('\ufffd')));
+      String bare(String t) => t.replaceAll(RegExp('[\\s\u202a-\u202e]'), '');
+      for (final word in words) {
+        expect(bare(text), contains(bare(word)));
+      }
+      // (Only the glyphs that need it marked: an alef in a font that has
+      // shown no other letter with its glyph, as it shows alef wasla.)
+      final fresh = EmbeddedFont.parse(arabic);
+      final plain = saved(
+        page(
+          (c) => c.glyphs(
+            fresh.shape('ا', rightToLeft: true),
+            10,
+            50,
+            TextStyle(fresh, 20),
+            text: 'ا',
+          ),
+        ),
+      );
+      final qdf =
+          Process.runSync('qpdf', [
+                '--qdf',
+                '--object-streams=disable',
+                plain.path,
+                '-',
+              ], stdoutEncoding: latin1).stdout
+              as String;
+      expect(qdf, isNot(contains('/ActualText')));
+    });
+
+    test('a single-byte font gives a shared glyph a code for each text', () {
+      if (!_has('pdftotext')) {
+        markTestSkipped('needs poppler');
+        return;
+      }
+      final font = EmbeddedFont.parse(arabic, singleByte: true);
+      final style = TextStyle(font, 20);
+      final pdf = saved(
+        page(width: 300, height: 200, (c) {
+          for (final (i, word) in words.indexed) {
+            c.glyphs(
+              font.shape(word, rightToLeft: true),
+              20,
+              150 - i * 50.0,
+              style,
+              text: reversed(word),
+            );
+          }
+        }),
+      );
+      final text =
+          Process.runSync('pdftotext', [
+                '-enc',
+                'UTF-8',
+                pdf.path,
+                '-',
+              ], stdoutEncoding: utf8).stdout
+              as String;
+      expect(text, isNot(contains('\ufffd')));
+      expect(
+        text.replaceAll(RegExp('[\\s\u202a-\u202e]'), ''),
+        contains('البينة'),
+      );
+    });
+  });
+
   test('dashes, caps and joins', () {
     final pdf = saved(
       page((c) {

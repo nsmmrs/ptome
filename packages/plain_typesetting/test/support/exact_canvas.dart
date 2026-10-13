@@ -32,7 +32,9 @@ final class ExactCanvas implements Canvas {
 
   @override
   Object? noSuchMethod(Invocation invocation) {
+    // (Not a glyphs call's text: what its glyphs, recorded, stand for.)
     final named = invocation.namedArguments.entries
+        .where((e) => !(invocation.memberName == #glyphs && e.key == #text))
         .map((e) => '${e.key}: ${exact(e.value)}')
         .join(', ');
     calls.add(

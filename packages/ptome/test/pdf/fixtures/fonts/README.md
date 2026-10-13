@@ -32,3 +32,8 @@ pyftsubset LibertinusSerif-Regular.otf --unicodes=U+0020-007E \
 Project Authors, SIL Open Font License 1.1), subset to the Hebrew block
 with its layout tables (as in plain_typesetting's test fonts), for
 right-to-left documents.
+
+`notonaskharabic-subset.ttf` is Noto Naskh Arabic 2.021 (© 2022 The Noto
+Project Authors, SIL Open Font License 1.1), subset to the Arabic blocks
+with its layout tables (as in plain_typesetting's test fonts), for text
+taken from shaped Arabic.

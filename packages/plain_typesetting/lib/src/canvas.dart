@@ -393,5 +393,18 @@ abstract interface class Canvas {
 
   /// Draws shaped [glyphs] of [style]'s font with the baseline starting
   /// at ([x], [y]); returns their width.
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style);
+  ///
+  /// [text], where given, is what the glyphs stand for in the order they
+  /// are drawn (a right-to-left run's characters reversed, as text drawn
+  /// in visual order is): a backend mapping glyphs back to text (a PDF's
+  /// ToUnicode) gives it to glyphs its map can't read as it (a glyph
+  /// shared by several letters, one standing for no text, marks moved
+  /// onto their base).
+  double glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle style, {
+    String? text,
+  });
 }

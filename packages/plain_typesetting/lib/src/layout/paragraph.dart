@@ -1575,9 +1575,20 @@ sealed class LineFragment {
 
 /// Text of one run on a line.
 final class TextFragment extends LineFragment {
-  /// [glyphs] of [run] set in [style] at [x].
-  const new(super.x, super.width, this.run, this.text, this.glyphs, this.style)
-    : super._();
+  /// [glyphs] of [run] set in [style] at [x], [rightToLeft] where they
+  /// are a right-to-left run's, drawn in visual order.
+  const new(
+    super.x,
+    super.width,
+    this.run,
+    this.text,
+    this.glyphs,
+    this.style, {
+    this.rightToLeft = false,
+  }) : super._();
+
+  /// Whether the glyphs are a right-to-left run's, in visual order.
+  final bool rightToLeft;
 
   /// The run the text comes from.
   final TextRun run;
@@ -1667,7 +1678,13 @@ final class Line {
     for (final fragment in fragments) {
       final left = x + fragment.x;
       switch (fragment) {
-        case TextFragment(:final run, :final glyphs, :final style):
+        case TextFragment(
+          :final run,
+          :final glyphs,
+          :final style,
+          :final text,
+          :final rightToLeft,
+        ):
           final font = style.font;
           final size = style.size;
           if (run.decoration case final decoration?) {
@@ -1695,7 +1712,19 @@ final class Line {
             (_, TextAlign.center) => (fragment.width - advances) / 2,
             (_, TextAlign.right) => fragment.width - advances,
           };
-          canvas.glyphs(glyphs, left + inSlot, y, style);
+          canvas.glyphs(
+            glyphs,
+            left + inSlot,
+            y,
+            style,
+            // (What they stand for, as drawn: a backend's map from glyphs
+            // to text may not give it back. None for decoration.)
+            text: run.artifact
+                ? null
+                : rightToLeft
+                ? String.fromCharCodes(text.runes.toList().reversed)
+                : text,
+          );
           if (run.artifact) canvas.endMarkedContent();
           final thickness = font.underlineThickness * size / 1000;
           if (run.underline) {
@@ -1910,8 +1939,10 @@ Line _line(
   var spaces = 0;
   final shaped = <(InlineContent, String, List<ShapedGlyph>, double)>[];
   final ranks = <int>[];
+  final directions = <bool>[];
   for (final (content, text, rightToLeft, rank) in _visual(paragraph, pieces)) {
     ranks.add(rank);
+    directions.add(rightToLeft);
     switch (content) {
       case TextRun(:final style, :final slotWidth):
         final glyphs = style.shape(text, rightToLeft: rightToLeft);
@@ -2059,7 +2090,7 @@ Line _line(
   }
   if (shaped.isEmpty && emptyRun != null) blankCap = capOf(emptyRun.style);
   final fragments = <LineFragment>[];
-  for (final (content, string, glyphs, natural) in shaped) {
+  for (final (i, (content, string, glyphs, natural)) in shaped.indexed) {
     switch (content) {
       case TextRun(:final style, :final slotWidth):
         final count = slotWidth != null ? 0 : ' '.allMatches(string).length;
@@ -2070,7 +2101,17 @@ Line _line(
                 horizontalScaling: style.horizontalScaling * scale,
               );
         final w = (natural + extra * count) * scale;
-        fragments.add(TextFragment(x, w, content, string, glyphs, adjusted));
+        fragments.add(
+          TextFragment(
+            x,
+            w,
+            content,
+            string,
+            glyphs,
+            adjusted,
+            rightToLeft: directions[i],
+          ),
+        );
         x += w;
       case InlineImage(:final height, :final alignment):
         final bottom =

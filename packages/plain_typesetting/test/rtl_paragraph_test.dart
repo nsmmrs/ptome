@@ -7,6 +7,8 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/recording.dart';
+
 final OpenTypeShaper _hebrew = OpenTypeShaper(
   OpenTypeFont.parse(
     File('test/fonts/notoserifhebrew-subset.ttf').readAsBytesSync(),
@@ -171,5 +173,20 @@ void main() {
     expect(placed.anchors.map((a) => a.$1), ['first', 'second']);
     final [plain] = _lines([TextRun('abc', latin)], rightToLeft: false);
     expect(plain.readingOrder, isNull);
+  });
+
+  test('each run tells the canvas its text as drawn', () {
+    final [line] = _lines([
+      TextRun('שלום ', hebrew),
+      TextRun('abc', latin),
+      TextRun('(1)', latin, artifact: true),
+    ]);
+    final canvas = RecordingCanvas();
+    line.paint(canvas, 0, 100);
+    // (A right-to-left run's characters reversed, as its glyphs are drawn;
+    // decoration none.)
+    expect(canvas.drawnTexts, contains(' םולש'));
+    expect(canvas.drawnTexts, contains('abc'));
+    expect(canvas.drawnTexts, contains(null));
   });
 }

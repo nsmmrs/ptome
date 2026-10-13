@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `Canvas.glyphs` takes `text`: what the glyphs stand for as drawn, a
+  right-to-left run's characters reversed, for a backend that maps glyphs
+  back to text. A line's `TextFragment`s say whether they are a
+  right-to-left run's (`rightToLeft`), and are painted with their text.
 - `ParagraphContent.textTaken`: how much of a paragraph's text its first
   lines take (in its runs' text), whether a hard break ends them and
   whether a hyphen does, for setting a first line apart.

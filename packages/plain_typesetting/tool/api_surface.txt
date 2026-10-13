@@ -17,7 +17,7 @@ abstract interface class BaselineContent implements CustomContent
   double? firstBaseline(double width)
 abstract interface class Canvas
   Canvas()
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style)
+  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle style, {String? text})
   double text(String text, double x, double y, TextStyle style)
   void beginMarkedContent(String tag, {String? actualText})
   void circle(double cx, double cy, double radius)
@@ -690,9 +690,10 @@ final class TableRow
 final class TextFragment extends LineFragment
   List<ShapedGlyph> glyphs
   String text
-  TextFragment(double x, double width, TextRun run, String text, List<ShapedGlyph> glyphs, TextStyle style)
+  TextFragment(double x, double width, TextRun run, String text, List<ShapedGlyph> glyphs, TextStyle style, {bool rightToLeft = false})
   TextRun run
   TextStyle style
+  bool rightToLeft
 final class TextRun extends InlineContent
   Color? color
   InlineDecoration? decoration

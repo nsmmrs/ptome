@@ -33,7 +33,13 @@ final class _Structured implements StructureCanvas {
   void endArtifact() => calls.add('</artifact>');
 
   @override
-  double glyphs(List<ShapedGlyph> glyphs, double x, double y, TextStyle s) {
+  double glyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle s, {
+    String? text,
+  }) {
     calls.add(glyphs.map((g) => g.text).join());
     return 0;
   }

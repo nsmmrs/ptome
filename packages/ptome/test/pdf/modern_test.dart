@@ -4737,6 +4737,39 @@ heading:
       expect(double.parse(number[1]!), lessThan(100));
     });
 
+    test('Arabic taken from the page as written (no U+FFFD)', () {
+      const arabic = '''
+font:
+  catalog:
+    merge: true
+    Naskh:
+      normal: notonaskharabic-subset.ttf
+      italic: notonaskharabic-subset.ttf
+      bold: notonaskharabic-subset.ttf
+      bold_italic: notonaskharabic-subset.ttf
+  fallbacks: [Yrsa]
+base:
+  font_family: Naskh
+heading:
+  font_family: Naskh
+''';
+      const verse = 'بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ';
+      const title = 'البينة';
+      final pdf = _pdf('= $title\n:dir: rtl\n\n$verse\n', theme: arabic);
+      final text =
+          Process.runSync('pdftotext', [
+                '-enc',
+                'UTF-8',
+                pdf,
+                '-',
+              ], stdoutEncoding: utf8).stdout
+              as String;
+      expect(text, isNot(contains('\ufffd')));
+      String bare(String t) => t.replaceAll(RegExp(r'[\s\u202a-\u202e]'), '');
+      expect(bare(text), contains(bare(verse)));
+      expect(bare(text), contains(title));
+    });
+
     test('is left to right in the compatibility mode', () {
       final all = words(_pdf(source, theme: theme, compat: true));
       final (_, right) = edges(all, 'שלום');
