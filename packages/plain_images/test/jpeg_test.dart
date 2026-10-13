@@ -194,7 +194,9 @@ void main() {
         );
         checked++;
       }
-      expect(checked, greaterThan(80));
+      // (cjpeg before libjpeg-turbo 3 writes neither lossless nor 12-bit
+      // files: those trials are skipped.)
+      expect(checked, greaterThan(30));
     },
     skip: tools ? false : 'needs cjpeg and djpeg',
     tags: ['tools'],
