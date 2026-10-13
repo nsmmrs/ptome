@@ -1608,10 +1608,23 @@ final class Line {
     required this.ascent,
     required this.descent,
     required this.hyphenated,
+    this.readingOrder,
   });
 
   /// The fragments, left to right, positioned for the alignment.
   final List<LineFragment> fragments;
+
+  /// Where the line's text was put in visual order (right-to-left text),
+  /// the indices of its [fragments] in reading order; null where the two
+  /// orders are the same.
+  final List<int>? readingOrder;
+
+  /// The [fragments] in reading order: the order the text is read in, and
+  /// its anchors (a footnote's reference) come in.
+  Iterable<LineFragment> get fragmentsInReadingOrder => switch (readingOrder) {
+    null => fragments,
+    final order => order.map((i) => fragments[i]),
+  };
 
   /// The width of the content, in points.
   final double width;
@@ -1883,7 +1896,9 @@ Line _line(
   var natural = 0.0;
   var spaces = 0;
   final shaped = <(InlineContent, String, List<ShapedGlyph>, double)>[];
-  for (final (content, text, rightToLeft) in _visual(paragraph, pieces)) {
+  final ranks = <int>[];
+  for (final (content, text, rightToLeft, rank) in _visual(paragraph, pieces)) {
+    ranks.add(rank);
     switch (content) {
       case TextRun(:final style, :final slotWidth):
         final glyphs = style.shape(text, rightToLeft: rightToLeft);
@@ -2083,6 +2098,9 @@ Line _line(
     ),
   };
   final capLines = paragraph.lineHeight is CapLineHeight;
+  final reordered = [
+    for (var i = 1; i < ranks.length; i++) ranks[i] < ranks[i - 1],
+  ].any((b) => b);
   return Line(
     fragments,
     width: width,
@@ -2093,15 +2111,20 @@ Line _line(
     ascent: capLines ? baseline : ascent,
     descent: capLines ? 0 : descent,
     hyphenated: hyphen != null,
+    readingOrder: reordered
+        ? ([for (var i = 0; i < ranks.length; i++) i]
+            ..sort((a, b) => ranks[a] - ranks[b]))
+        : null,
   );
 }
 
 /// A line's [pieces] (each its content and text, in logical order) in
 /// visual order, left to right, each with whether it is a right-to-left
 /// run: split where their embedding levels change and reordered (UAX #9,
-/// rules L1 and L2), the line resolved in [paragraph]'s base direction.
-/// A left-to-right line without right-to-left text keeps its pieces.
-List<(InlineContent, String, bool)> _visual(
+/// rules L1 and L2), the line resolved in [paragraph]'s base direction,
+/// and its rank in reading order. A left-to-right line without
+/// right-to-left text keeps its pieces.
+List<(InlineContent, String, bool, int)> _visual(
   Paragraph paragraph,
   List<(InlineContent, StringBuffer)> pieces,
 ) {
@@ -2113,7 +2136,7 @@ List<(InlineContent, String, bool)> _visual(
   if (!paragraph.rightToLeft && !texts.any(hasRightToLeft)) {
     return [
       for (final (i, (content, _)) in pieces.indexed)
-        (content, content is TextRun ? texts[i] : '', false),
+        (content, content is TextRun ? texts[i] : '', false, i),
     ];
   }
   final line = texts.join();
@@ -2122,25 +2145,43 @@ List<(InlineContent, String, bool)> _visual(
     direction: paragraph.rightToLeft ? TextDirection.rtl : TextDirection.ltr,
   );
   final levels = bidi.lineLevels(0, line.length);
+  final base = paragraph.rightToLeft ? 1 : 0;
   // The runs of one piece and one level each, in logical order: their
-  // start and end in the line, their level, and the piece of each.
-  final runs = <(int, int, int)>[];
-  final pieceOf = <int, int>{};
+  // start and end in the line, and the piece of each. A piece with no
+  // text (an anchor alone, a footnote reference's) is a run of its own at
+  // the level of what follows it, so that it goes where that goes.
+  final spans = <(int, int, int)>[];
+  final levelOf = <int>[];
   var at = 0;
   for (final (i, text) in texts.indexed) {
+    if (text.isEmpty) {
+      spans.add((at, at, i));
+      levelOf.add(
+        at < line.length
+            ? levels[at]
+            : at > 0
+            ? levels[at - 1]
+            : base,
+      );
+      continue;
+    }
     var from = at;
     for (var k = at + 1; k <= at + text.length; k++) {
       if (k == at + text.length || levels[k] != levels[from]) {
-        pieceOf[from] = i;
-        runs.add((from, k, levels[from]));
+        spans.add((from, k, i));
+        levelOf.add(levels[from]);
         from = k;
       }
     }
     at += text.length;
   }
+  // (Reordered by index, each run's start not unique once empty.)
   return [
-    for (final (from, to, level) in reorderRuns(runs))
-      (pieces[pieceOf[from]!].$1, line.substring(from, to), level.isOdd),
+    for (final (index, _, level) in reorderRuns([
+      for (var r = 0; r < spans.length; r++) (r, r + 1, levelOf[r]),
+    ]))
+      if (spans[index] case (final from, final to, final piece))
+        (pieces[piece].$1, line.substring(from, to), level.isOdd, index),
   ];
 }
 

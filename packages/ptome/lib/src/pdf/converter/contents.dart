@@ -1568,7 +1568,7 @@ final class _EngineCode implements LinedContent, BaselineContent {
     final lines = <PieceLine>[];
     var y = 0.0;
     for (final (:line, :x, wrapped: _, :continues) in placed) {
-      for (final fragment in line.fragments) {
+      for (final fragment in line.fragmentsInReadingOrder) {
         if (fragment case TextFragment(:final run, :final style)
             when run.anchor != null) {
           anchors.add((

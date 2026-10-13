@@ -400,7 +400,7 @@ final class _PlacedLines extends _Placed {
     marks.entries.map((e) => (e.key, e.value)).forEach(mark);
     var y = top - this.top;
     for (final line in lines) {
-      for (final fragment in line.fragments) {
+      for (final fragment in line.fragmentsInReadingOrder) {
         if (fragment case TextFragment(:final run, :final style)
             when run.anchor != null) {
           anchor(

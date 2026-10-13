@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a footnote whose reference follows Hebrew or Arabic text is set
+  (it was lost), and the notes of a right-to-left line come in reading
+  order. Checked on the Aramaic Talmud (Berakhot 2a-4a with Rashi's 114
+  notes, a CC BY-NC text kept out of the repository).
 - PDF: all the text the modern engine sets is set by plain_typesetting's
   paragraphs (FEAT-3jvkxk): list items, admonitions, table cells, the
   table of contents, headings, title pages, captions, footnotes, kbd

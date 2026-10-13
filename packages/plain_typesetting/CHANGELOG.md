@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A line with right-to-left text keeps the runs that carry only an
+  anchor (a footnote's reference), which reordering lost, and reports
+  its anchors in reading order (`Line.readingOrder`,
+  `Line.fragmentsInReadingOrder`), so that notes come in the order their
+  references are read.
 - `ParagraphContent`: a paragraph as `CustomContent` (lined, with a
   baseline and intrinsic widths), for content a caller composes around a
   paragraph (a list item's marker, a table of contents entry's leader)

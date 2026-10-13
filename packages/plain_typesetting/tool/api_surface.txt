@@ -450,8 +450,10 @@ final class LayoutResult
   int pageCount
   int? pageOf(String anchor)
 final class Line
-  Line(List<LineFragment> fragments, {required double width, required double height, required double baseline, required double ascent, required double descent, required bool hyphenated})
+  Iterable<LineFragment> fragmentsInReadingOrder
+  Line(List<LineFragment> fragments, {required double width, required double height, required double baseline, required double ascent, required double descent, required bool hyphenated, List<int>? readingOrder})
   List<LineFragment> fragments
+  List<int>? readingOrder
   bool hyphenated
   double ascent
   double baseline

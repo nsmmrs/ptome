@@ -117,4 +117,59 @@ void main() {
     );
     expect(_texts(line), ['plain text']);
   });
+
+  test('a run with no text but an anchor keeps its place', () {
+    // (A footnote reference's anchor after a right-to-left word: lost, its
+    // note never set, while the line was reordered.)
+    for (final rightToLeft in [true, false]) {
+      final [line] = _lines([
+        TextRun('שלום', hebrew),
+        TextRun('', hebrew, anchor: 'ref'),
+        TextRun('[1]', latin),
+        TextRun(' עולם', hebrew),
+      ], rightToLeft: rightToLeft);
+      final anchored = [
+        for (final fragment in line.fragments)
+          if (fragment case TextFragment(:final run) when run.anchor != null)
+            fragment,
+      ];
+      expect(anchored, hasLength(1), reason: 'rightToLeft: $rightToLeft');
+      // (Where the reference starts, its opening bracket: beside it.)
+      final digit = line.fragments.cast<TextFragment>().firstWhere(
+        (f) => f.text.contains('['),
+      );
+      expect(
+        [
+          digit.x,
+          digit.x + digit.width,
+        ].any((edge) => (edge - anchored.single.x).abs() < 1e-9),
+        isTrue,
+      );
+    }
+  });
+
+  test('its anchors in reading order, the fragments in visual order', () {
+    final [line] = _lines([
+      TextRun('אחד', hebrew, anchor: 'first'),
+      TextRun(' שתיים', hebrew, anchor: 'second'),
+      TextRun(' שלוש', hebrew, anchor: 'third'),
+    ]);
+    String? anchorOf(LineFragment f) => (f as TextFragment).run.anchor;
+    expect(line.fragments.map(anchorOf), ['third', 'second', 'first']);
+    expect(line.fragmentsInReadingOrder.map(anchorOf), [
+      'first',
+      'second',
+      'third',
+    ]);
+    // (Placed, they're reported as read: a footnote's notes in order.)
+    final placed = ParagraphContent(
+      Paragraph([
+        TextRun('אחד', hebrew, anchor: 'first'),
+        TextRun(' שתיים', hebrew, anchor: 'second'),
+      ], rightToLeft: true),
+    ).placeLines(300, 1);
+    expect(placed.anchors.map((a) => a.$1), ['first', 'second']);
+    final [plain] = _lines([TextRun('abc', latin)], rightToLeft: false);
+    expect(plain.readingOrder, isNull);
+  });
 }
