@@ -60,7 +60,7 @@ void main() {
     );
   });
 
-  test('EPUB: the notes popups, the entries styled', () {
+  test('EPUB: the notes popups, the entries styled', testOn: 'vm', () {
     registerEpub3();
     final dir = Directory.systemTemp.createTempSync('units_epub.');
     addTearDown(() => dir.deleteSync(recursive: true));
