@@ -1236,11 +1236,13 @@ extension _DocumentParts on PdfConverter {
         final entryBox = CustomBox(
           _TocEntry(
             hanging: hanging,
-            // Prawn's alignment (the gem passes none).
+            rightToLeft: _rightToLeft,
+            // Prawn's alignment (the gem passes none; a right-to-left
+            // document's from the right).
             _textBox(
               title,
               font,
-              align: 'left',
+              align: _rightToLeft ? 'right' : 'left',
               indent: -hanging,
               inherit: (_decoration('toc', entryLevel) ?? Fragment(''))
                 ..anchor = anchor
@@ -1273,16 +1275,25 @@ extension _DocumentParts on PdfConverter {
                   0,
                 );
                 final dotColor = dotFont.color?.rubyString;
-                markup =
+                final leader =
                     '<font name="${dotFont.family}" size="$dotSize"'
                     '${dotColor == null ? '' : ' color="$dotColor"'}>'
-                    '${PdfConverter._styled(dotText * dots, dotStyle)}</font>'
-                    '<font size="$spacerSize"> </font>'
-                    '${PdfConverter._styled(number, font.style)}';
+                    '${PdfConverter._styled(dotText * dots, dotStyle)}</font>';
+                final spacer = '<font size="$spacerSize"> </font>';
+                final styled = PdfConverter._styled(number, font.style);
+                // (Mirrored: the number at the left, the dots after it.)
+                markup = _rightToLeft
+                    ? '$styled$spacer$leader'
+                    : '$leader$spacer$styled';
               } else {
                 markup = number;
               }
-              return _textBox(markup, font, align: 'right', normalize: false);
+              return _textBox(
+                markup,
+                font,
+                align: _rightToLeft ? 'left' : 'right',
+                normalize: false,
+              );
             },
           ),
           style: BoxStyle(

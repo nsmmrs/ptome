@@ -150,6 +150,22 @@ int _property(int codePoint) =>
         ? 0x10ffff
         : codePoint];
 
+/// Whether [text] has a right-to-left character (Bidi_Class R or AL) or
+/// an Arabic number (AN): whether its order on a line takes the
+/// Bidirectional Algorithm.
+bool hasRightToLeft(String text) {
+  for (final rune in text.runes) {
+    // (Below the Hebrew block, nothing is.)
+    if (rune < 0x590) continue;
+    switch (bidiClass(rune)) {
+      case BidiClass.r || BidiClass.al || BidiClass.an:
+        return true;
+      case _:
+    }
+  }
+  return false;
+}
+
 /// The Bidi_Class of [codePoint].
 BidiClass bidiClass(int codePoint) =>
     BidiClass.values[_property(codePoint) & 0x1f];

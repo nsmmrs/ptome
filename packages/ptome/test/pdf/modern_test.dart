@@ -4594,4 +4594,91 @@ templates:
       );
     });
   }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+
+  group('a right-to-left document (dir: rtl)', () {
+    const theme = '''
+font:
+  catalog:
+    merge: true
+    Hebrew:
+      normal: notoserifhebrew-subset.ttf
+      italic: notoserifhebrew-subset.ttf
+      bold: notoserifhebrew-subset.ttf
+      bold_italic: notoserifhebrew-subset.ttf
+    Yrsa:
+      normal: yrsa-regular-latin.ttf
+      italic: yrsa-italic-latin.ttf
+      bold: yrsa-regular-latin.ttf
+      bold_italic: yrsa-italic-latin.ttf
+  fallbacks: [Yrsa]
+base:
+  font_family: Hebrew
+heading:
+  font_family: Hebrew
+''';
+    const source = '''
+= ספר
+:dir: rtl
+:toc:
+:toc-title: תוכן
+
+== בראשית
+
+שלום עולם
+''';
+
+    /// Each word on the first two pages of [pdf] (in logical order, as
+    /// written: poppler gives a right-to-left word as it is drawn, or as
+    /// it is read) with its left and right edges.
+    List<(String, double, double)> words(String pdf) => [
+      for (final m
+          in RegExp(
+            r'<word xMin="([\d.]+)" yMin="[\d.]+" xMax="([\d.]+)" '
+            r'yMax="[\d.]+">([^<]*)</word>',
+          ).allMatches(
+            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+          ))
+        (m[3]!, double.parse(m[1]!), double.parse(m[2]!)),
+    ];
+
+    (double, double) edges(List<(String, double, double)> all, String word) {
+      final reversed = String.fromCharCodes(word.runes.toList().reversed);
+      final (_, left, right) = all.lastWhere(
+        (w) => w.$1 == word || w.$1 == reversed,
+      );
+      return (left, right);
+    }
+
+    test('sets its paragraphs and headings from the right', () {
+      final all = words(_pdf(source, theme: theme));
+      final (shalomLeft, shalomRight) = edges(all, 'שלום');
+      final (olamLeft, _) = edges(all, 'עולם');
+      final (_, headingRight) = edges(all, 'בראשית');
+      // The first word at the right margin, the second to its left.
+      expect(shalomRight, closeTo(headingRight, 0.5));
+      expect(olamLeft, lessThan(shalomLeft));
+      expect(shalomRight, greaterThan(500));
+    });
+
+    test('mirrors its contents: the title right, the page number left', () {
+      final all = words(_pdf(source, theme: theme));
+      // (The contents' entry is the first of the heading's words.)
+      final (_, _, entryRight) = all.firstWhere(
+        (w) => w.$1 == 'בראשית' || w.$1 == 'תישארב',
+      );
+      expect(entryRight, greaterThan(500), reason: 'the entry at the right');
+      // (Beside the footer's page number at the right.)
+      expect(
+        all.where((w) => w.$1 == '1' && w.$2 < 100),
+        isNotEmpty,
+        reason: 'its page number at the left',
+      );
+    });
+
+    test('is left to right in the compatibility mode', () {
+      final all = words(_pdf(source, theme: theme, compat: true));
+      final (_, right) = edges(all, 'שלום');
+      expect(right, lessThan(300));
+    });
+  }, skip: _tools ? false : 'needs poppler');
 }

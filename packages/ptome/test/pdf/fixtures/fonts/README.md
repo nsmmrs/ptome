@@ -27,3 +27,8 @@ pyftsubset LibertinusSerif-Regular.otf --unicodes=U+0020-007E \
   --layout-features=sups,subs --name-IDs='*' \
   --output-file=libertinus-scripts.otf
 ```
+
+`notoserifhebrew-subset.ttf` is Noto Serif Hebrew 2.004 (© 2022 The Noto
+Project Authors, SIL Open Font License 1.1), subset to the Hebrew block
+with its layout tables (as in plain_typesetting's test fonts), for
+right-to-left documents.

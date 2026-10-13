@@ -12,6 +12,7 @@ import 'dart:math' as math;
 
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
+import 'package:plain_unicode/plain_unicode.dart' show hasRightToLeft;
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/pdf/fonts.dart';
@@ -1307,10 +1308,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
 
   /// The right edge and the top of the last fragment of the text laid
   /// out [width] wide, relative to the box's left and top, with the top
-  /// of its first line; null for no text.
-  ({double right, double top, double firstTop, double baseline})? lastFragment(
-    double width,
-  ) {
+  /// of its first line and the left edge of its last line; null for no
+  /// text.
+  ({double right, double left, double top, double firstTop, double baseline})?
+  lastFragment(double width) {
     if (_items.isEmpty) return null;
     _arrangeImages(width);
     final gap = _layout.initialGap;
@@ -1333,8 +1334,13 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     if (printed.isEmpty) return null;
     final last = printed.last;
     final head = printed.first;
+    final lastLine = [
+      for (final f in lines.last.fragments)
+        if (!f.format.fragment.isMarker) f.left,
+    ];
     return (
       right: last.left + last.width,
+      left: lastLine.isEmpty ? last.left : lastLine.reduce(math.min),
       top: gap + last.baseline - last.ascender,
       firstTop: gap + head.baseline - head.ascender,
       baseline: gap + last.baseline,
@@ -1759,25 +1765,27 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           if (fragment.artifact) {
             canvas.beginMarkedContent('Span', actualText: '');
           }
-          canvas
-            ..text(
-              f.text,
-              textX + f.format.tracking / 2,
-              y,
-              TextStyle(
-                f.format.font.pdf,
-                f.format.size,
-                wordSpacing: f.wordSpacing,
-                characterSpacing: _state.characterSpacing + f.format.tracking,
-                horizontalScaling: f.scale * 100,
-                kerning: _state.kerning,
-                ligatures: f.format.font.ligates,
-                features: f.format.features,
-                skew: skew ?? (f.format.font.slanted ? 0.2 : 0),
-                embolden: f.format.font.emboldened ? f.format.size / 40 : 0,
-              ),
-            )
-            ..restore();
+          final style = TextStyle(
+            f.format.font.pdf,
+            f.format.size,
+            wordSpacing: f.wordSpacing,
+            characterSpacing: _state.characterSpacing + f.format.tracking,
+            horizontalScaling: f.scale * 100,
+            kerning: _state.kerning,
+            ligatures: f.format.font.ligates,
+            features: f.format.features,
+            skew: skew ?? (f.format.font.slanted ? 0.2 : 0),
+            embolden: f.format.font.emboldened ? f.format.size / 40 : 0,
+          );
+          // (Right-to-left text, Arabic or Hebrew, in visual order: the
+          // box sets its fragments left to right.)
+          final x = textX + f.format.tracking / 2;
+          if (hasRightToLeft(f.text)) {
+            canvas.glyphs(style.shapeBidi(f.text), x, y, style);
+          } else {
+            canvas.text(f.text, x, y, style);
+          }
+          canvas.restore();
           if (fragment.artifact) canvas.endMarkedContent();
         }
         final styles = fragment.styles ?? const {};

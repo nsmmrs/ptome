@@ -635,6 +635,13 @@ final class PdfConverter extends BuiltInConverter
   StructureElement? _struct(String role, {String? alt}) =>
       _pdfUa ? StructureElement(role, alt: alt) : null;
 
+  /// Whether the document is written right to left (`:dir: rtl`, as
+  /// HTML's `dir`): its paragraphs set from the right, their text in
+  /// visual order (UAX #9), the theme's alignments mirrored.
+  bool get _rightToLeft =>
+      _document.attr('dir')?.toLowerCase() == 'rtl' &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
   /// Whether plain paragraphs are set by the engine's paragraphs (the
   /// modern engine's, FEAT-n1bkgf; `base_text_engine: box` keeps them in
   /// this converter's text box).

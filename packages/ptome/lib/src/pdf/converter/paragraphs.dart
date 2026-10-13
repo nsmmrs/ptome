@@ -57,12 +57,8 @@ extension _Paragraphs on PdfConverter {
       hangIndent: hangIndent,
       hangLines: hangLines,
       firstLineContent: firstLineContent,
-      align: switch (layout.align) {
-        'justify' => TextAlign.justify,
-        'center' => TextAlign.center,
-        'right' => TextAlign.right,
-        _ => TextAlign.left,
-      },
+      rightToLeft: _rightToLeft,
+      align: _aligned(layout.align),
       // (The space above each line as the text box sets it; with
       // `base_leading`, the lines from their cap heights.)
       lineHeight: layout.capLines
@@ -80,11 +76,7 @@ extension _Paragraphs on PdfConverter {
       strut: layout.normalizeLineHeight ? TextStyle(engineFont, size) : null,
       // (`base_text_align_last`: a justified paragraph's last line, and
       // those before a hard break.)
-      alignLast: switch (layout.alignLast) {
-        'center' => TextAlign.center,
-        'right' => TextAlign.right,
-        _ => TextAlign.left,
-      },
+      alignLast: _aligned(layout.alignLast),
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
       justifyToWidest: layout.justifyWidest,
@@ -93,6 +85,16 @@ extension _Paragraphs on PdfConverter {
       riseInLineHeight: false,
     );
   }
+
+  /// The theme's alignment [value] (`left`, `center`, `right`,
+  /// `justify`); in a right-to-left document, mirrored (the theme's
+  /// `left`, the start, is the right).
+  TextAlign _aligned(String? value) => switch (value) {
+    'justify' => TextAlign.justify,
+    'center' => TextAlign.center,
+    'right' => _rightToLeft ? TextAlign.left : TextAlign.right,
+    _ => _rightToLeft ? TextAlign.right : TextAlign.left,
+  };
 
   /// [box] in [style] as the engine's paragraph, where the engine sets it
   /// as the box does (FEAT-5w237r), else the box itself.

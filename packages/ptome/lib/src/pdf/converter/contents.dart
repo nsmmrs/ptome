@@ -883,7 +883,13 @@ final class _DisplayMath implements CustomContent {
 /// page number on its last line, made by [leader] for the width and where
 /// the dots start.
 final class _TocEntry implements CustomContent {
-  const new(this.title, this.placeholder, this.leader, {this.hanging = 0});
+  const new(
+    this.title,
+    this.placeholder,
+    this.leader, {
+    this.hanging = 0,
+    this.rightToLeft = false,
+  });
 
   final TextBox title;
   final double placeholder;
@@ -892,6 +898,12 @@ final class _TocEntry implements CustomContent {
   /// How much the lines after the first are indented (the title is set
   /// that much in, its first line as much out).
   final double hanging;
+
+  /// Whether the entry is mirrored (a right-to-left document's): its
+  /// title at the right, the hanging indent there, the leader and the
+  /// page number at the left; [leader] is then given the width from the
+  /// right edge to the title's last line's start.
+  final bool rightToLeft;
 
   @override
   CustomPlacement? place(
@@ -902,12 +914,20 @@ final class _TocEntry implements CustomContent {
     final room = width - placeholder - hanging;
     final placed = title.place(room, available, atTop: atTop);
     if (placed == null) return null;
+    // (The title's offset: mirrored, past the page number's room.)
+    final offset = rightToLeft ? placeholder : hanging;
     if (placed.rest case final TextBox rest) {
       return CustomPlacement(
         height: placed.height,
         anchors: placed.anchors,
-        rest: _TocEntry(rest, placeholder, leader, hanging: hanging),
-        paint: (page, x, top) => placed.paint(page, x + hanging, top),
+        rest: _TocEntry(
+          rest,
+          placeholder,
+          leader,
+          hanging: hanging,
+          rightToLeft: rightToLeft,
+        ),
+        paint: (page, x, top) => placed.paint(page, x + offset, top),
       );
     }
     final last = title.lastFragment(room);
@@ -915,9 +935,12 @@ final class _TocEntry implements CustomContent {
       height: placed.height,
       anchors: placed.anchors,
       paint: (page, x, top) {
-        placed.paint(page, x + hanging, top);
+        placed.paint(page, x + offset, top);
         if (last == null) return;
-        final dots = leader(width, last.right + hanging);
+        final dots = leader(
+          width,
+          rightToLeft ? width - (offset + last.left) : last.right + offset,
+        );
         final line = dots.place(width, double.infinity, atTop: true);
         if (line == null) return;
         // On the title's last line, on its baseline (else at the top of

@@ -192,6 +192,21 @@ US English), with the hyph-utf8 patterns for 72 languages
 | `:hyphens:` (or theme `base_hyphens: true`) | Hyphenates all text, not only justified text, in the document's language. |
 | `:hyphens: de` (or `base_hyphens: de`) | Hyphenates all text in that language. A language without patterns is reported. |
 
+### Right-to-left text
+
+Arabic and Hebrew are shaped by the font's OpenType tables (joining
+forms, ligatures, vowels and points placed on their letters), and a
+line's text is put in reading order by the Unicode Bidirectional
+Algorithm, in any document. A document written right to left says so
+with `:dir: rtl` (as HTML's `dir`): its paragraphs, headings, captions
+and table cells are set from the right, their indents there, and the
+theme's alignments are mirrored (`left`, the start, is the right; a
+justified paragraph's last line ends at the right). The table of
+contents is mirrored too: each title at the right, its page number at
+the left. The page layout itself (running content, recto and verso) is
+not mirrored. The theme picks a font that has the script
+(`base_font_family`, or `font_fallbacks` for a few words).
+
 ### Fonts
 
 Ptome compiles no fonts in: a theme names the fonts it wants, and they

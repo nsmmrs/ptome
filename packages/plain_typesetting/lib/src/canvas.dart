@@ -8,6 +8,8 @@ import 'package:meta/meta.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
+import 'package:plain_unicode/plain_unicode.dart'
+    show BidiText, TextDirection, hasRightToLeft;
 
 /// The shape at the ends of stroked open lines.
 enum LineCap {
@@ -246,6 +248,23 @@ final class TextStyle {
         features: features,
         rightToLeft: rightToLeft,
       );
+
+  /// [text], a line's, as glyphs in visual order: its runs of one
+  /// direction ordered by the Unicode Bidirectional Algorithm (UAX #9) in
+  /// a line whose base direction is [rightToLeft] or not, each shaped in
+  /// its direction. Text without right-to-left characters is shaped as
+  /// [shape] shapes it.
+  List<ShapedGlyph> shapeBidi(String text, {bool rightToLeft = false}) {
+    if (!rightToLeft && !hasRightToLeft(text)) return shape(text);
+    final bidi = BidiText(
+      text,
+      direction: rightToLeft ? TextDirection.rtl : TextDirection.ltr,
+    );
+    return [
+      for (final (from, to, level) in bidi.visualRuns(0, text.length))
+        ...shape(text.substring(from, to), rightToLeft: level.isOdd),
+    ];
+  }
 }
 
 /// Something to draw on: paths, painted or clipping, text, and the

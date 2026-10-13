@@ -15,7 +15,14 @@ import 'package:plain_typesetting/src/geometry.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
 import 'package:plain_typesetting/src/link.dart';
 import 'package:plain_unicode/plain_unicode.dart'
-    show LineBreakClass, lineBreakClass, lineBreakOffsets;
+    show
+        BidiText,
+        LineBreakClass,
+        TextDirection,
+        hasRightToLeft,
+        lineBreakClass,
+        lineBreakOffsets,
+        reorderRuns;
 
 /// How the lines of a paragraph are spaced.
 @immutable
@@ -162,6 +169,7 @@ final class Paragraph {
     this.hangLines = 0,
     this.firstLineContent,
     this.strut,
+    this.rightToLeft = false,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -188,10 +196,21 @@ final class Paragraph {
     hangLines: hangLines ?? this.hangLines,
     firstLineContent: firstLineContent,
     strut: strut,
+    rightToLeft: rightToLeft,
   );
 
   /// The inline content.
   final List<InlineContent> content;
+
+  /// Whether the paragraph's base direction is right to left (Arabic,
+  /// Hebrew): its lines start at the right, where its indents go, and
+  /// its text is put in visual order by the Unicode Bidirectional
+  /// Algorithm (UAX #9, each line resolved on its own), right-to-left
+  /// runs shaped as such. Text in a right-to-left script is reordered in
+  /// a left-to-right paragraph too. [align] stays absolute: a
+  /// right-to-left paragraph set from its start is aligned right (and
+  /// its [alignLast] too). [protrusion] is not applied.
+  final bool rightToLeft;
 
   /// Whether text raised or lowered ([TextStyle.rise], a superscript or a
   /// subscript) makes its line taller (as CSS's line boxes grow); false
@@ -1744,7 +1763,8 @@ List<Line> buildLines(
         hyphen,
         leading,
         math.min(widths(number), widest) - indent,
-        indent + (offsets?.call(number) ?? 0),
+        // (A right-to-left paragraph's indents at its right.)
+        (paragraph.rightToLeft ? 0 : indent) + (offsets?.call(number) ?? 0),
         justify: paragraph.align == TextAlign.justify && !last,
         emptyRun: emptyRun,
         expansion: expansion,
@@ -1804,11 +1824,10 @@ Line _line(
   var natural = 0.0;
   var spaces = 0;
   final shaped = <(InlineContent, String, List<ShapedGlyph>, double)>[];
-  for (final (content, buffer) in pieces) {
-    final text = buffer.toString();
+  for (final (content, text, rightToLeft) in _visual(paragraph, pieces)) {
     switch (content) {
       case TextRun(:final style):
-        final glyphs = style.shape(text);
+        final glyphs = style.shape(text, rightToLeft: rightToLeft);
         final width = style.widthOf(glyphs);
         shaped.add((content, text, glyphs, width));
         natural += width;
@@ -1833,7 +1852,7 @@ Line _line(
   // is justified, its first before its start, the line that much wider
   // (as the breaker counted them).
   var leftHang = 0.0;
-  if (paragraph.protrusion > 0) {
+  if (paragraph.protrusion > 0 && !paragraph.rightToLeft) {
     var hang = 0.0;
     for (final (content, text, _, _) in shaped.reversed) {
       final trimmed = text.trimRight();
@@ -2009,6 +2028,54 @@ Line _line(
     descent: capLines ? 0 : descent,
     hyphenated: hyphen != null,
   );
+}
+
+/// A line's [pieces] (each its content and text, in logical order) in
+/// visual order, left to right, each with whether it is a right-to-left
+/// run: split where their embedding levels change and reordered (UAX #9,
+/// rules L1 and L2), the line resolved in [paragraph]'s base direction.
+/// A left-to-right line without right-to-left text keeps its pieces.
+List<(InlineContent, String, bool)> _visual(
+  Paragraph paragraph,
+  List<(InlineContent, StringBuffer)> pieces,
+) {
+  // (An image a neutral character: U+FFFC, the object replacement.)
+  final texts = [
+    for (final (content, buffer) in pieces)
+      if (content is TextRun) buffer.toString() else '\ufffc',
+  ];
+  if (!paragraph.rightToLeft && !texts.any(hasRightToLeft)) {
+    return [
+      for (final (i, (content, _)) in pieces.indexed)
+        (content, content is TextRun ? texts[i] : '', false),
+    ];
+  }
+  final line = texts.join();
+  final bidi = BidiText(
+    line,
+    direction: paragraph.rightToLeft ? TextDirection.rtl : TextDirection.ltr,
+  );
+  final levels = bidi.lineLevels(0, line.length);
+  // The runs of one piece and one level each, in logical order: their
+  // start and end in the line, their level, and the piece of each.
+  final runs = <(int, int, int)>[];
+  final pieceOf = <int, int>{};
+  var at = 0;
+  for (final (i, text) in texts.indexed) {
+    var from = at;
+    for (var k = at + 1; k <= at + text.length; k++) {
+      if (k == at + text.length || levels[k] != levels[from]) {
+        pieceOf[from] = i;
+        runs.add((from, k, levels[from]));
+        from = k;
+      }
+    }
+    at += text.length;
+  }
+  return [
+    for (final (from, to, level) in reorderRuns(runs))
+      (pieces[pieceOf[from]!].$1, line.substring(from, to), level.isOdd),
+  ];
 }
 
 /// A line [height] tall with its content centered (the extra split above

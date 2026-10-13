@@ -159,5 +159,10 @@ void main() {
     expect(canonicalCombiningClass(0x650), 32); // kasra
     expect(canonicalCombiningClass(0x5bc), 21); // dagesh
     expect(canonicalCombiningClass(0x301), 230);
+    expect(hasRightToLeft('plain text'), isFalse);
+    expect(hasRightToLeft('see שלום'), isTrue);
+    expect(hasRightToLeft('رقم'), isTrue);
+    expect(hasRightToLeft('\u0661'), isTrue); // an Arabic-Indic digit (AN)
+    expect(hasRightToLeft('Ελληνικά'), isFalse);
   });
 }

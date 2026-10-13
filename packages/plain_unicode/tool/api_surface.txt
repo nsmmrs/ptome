@@ -9,6 +9,7 @@ String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
 String lowerCase(String text, {bool finalSigma = false})
 String upperCase(String text)
+bool hasRightToLeft(String text)
 bool isCaseIgnorable(int rune)
 bool isCased(int rune)
 enum BidiClass

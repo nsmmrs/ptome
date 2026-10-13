@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Right-to-left paragraphs: `Paragraph.rightToLeft` sets a paragraph's
+  lines from the right, its indents there; each line's text is put in
+  visual order by the Unicode Bidirectional Algorithm, its runs split
+  where their levels change and right-to-left runs shaped as such (in a
+  left-to-right paragraph too, where it has right-to-left text).
+  `TextStyle.shapeBidi` shapes a line's text in visual order.
 - Right-to-left text and complex shaping: `Font.shape` (and
   `TextStyle.shape`) take `rightToLeft`, and `OpenTypeShaper` shapes a
   right-to-left run, or Arabic or Hebrew text, with the font's layout

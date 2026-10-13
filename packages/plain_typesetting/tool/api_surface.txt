@@ -550,12 +550,13 @@ final class Paragraph
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, double? firstLineIndent, bool? justifyToWidest, int? hangLines})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
   bool breakLongWords
   bool justifyToWidest
+  bool rightToLeft
   bool riseInLineHeight
   double firstLineIndent
   double hangIndent
@@ -683,6 +684,7 @@ final class TextRun extends InlineContent
 final class TextStyle
   Font font
   List<ShapedGlyph> shape(String text, {bool rightToLeft = false})
+  List<ShapedGlyph> shapeBidi(String text, {bool rightToLeft = false})
   Set<String> features
   TextRenderMode renderMode
   TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden})

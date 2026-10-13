@@ -687,12 +687,16 @@ extension _Sections on PdfConverter {
     // beside it).
     final rule = modern ? _headingRule(category) : null;
     if (padding == null && border == null && verticalAlign == null) {
+      // (In a right-to-left document, a heading asking for room after it
+      // set by the engine too, kept with what follows it: the text box
+      // sets text left to right only.)
+      final roomKept = _rightToLeft && content is _NeedsRoom;
       final style = BoxStyle(
         margin: margin,
         anchor: anchor,
         marks: marks,
         floatBarrier: barrier,
-        keepWithNext: sticky || rule != null,
+        keepWithNext: sticky || rule != null || roomKept,
         structure: _struct('H${level.clamp(1, 6)}'),
       );
       // (Set by the engine's paragraphs where it can: a heading of text
@@ -700,6 +704,11 @@ extension _Sections on PdfConverter {
       _out.add(switch (content) {
         _NeedsRoom(content: final TextBox text, room: 0) ||
         final TextBox text => _engineOr(text, style: style, whole: true),
+        _NeedsRoom(content: final TextBox text) when roomKept => _engineOr(
+          text,
+          style: style,
+          whole: true,
+        ),
         _ => CustomBox(content, style: style),
       });
     } else {
