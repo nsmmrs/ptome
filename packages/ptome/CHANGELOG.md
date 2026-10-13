@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `base_text_align_last: justify` stretches a justified paragraph's
+  last line, and each line before a hard break, to the measure. With it,
+  `tool/mushaf.dart` sets the Medina mushaf line for line (FEAT-ytfd13):
+  604 pages of 15 lines, each ending where the mushaf's does, in the
+  KFGQPC Hafs font (see `doc/mushaf.md`).
 - HTML and EPUB: a units document's notes beside its text
   (FEAT-bzmqzc). `:note-asides: sn` sets a note stream's footnotes at
   their calls: in a column on the right of the text on a wide screen, the

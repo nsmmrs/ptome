@@ -537,11 +537,29 @@ void main() {
   });
 
   test('base_text_align_last: the unstretched lines aligned apart', () {
-    for (final last in ['center', 'right']) {
+    for (final last in ['center', 'right', 'justify']) {
       _same(
         '$_words40 +\n$_words40\n\n$_words40\n',
         theme: 'base:\n  text_align: justify\n  text_align_last: $last\n',
       );
     }
+  });
+
+  test('base_text_align_last: justify, every line to the measure', () {
+    if (!_poppler) {
+      markTestSkipped('needs poppler');
+      return;
+    }
+    final (_, pdf) = _pdf(
+      'one two three +\nfour five\n',
+      'base:\n  text_align: justify\n  text_align_last: justify\n',
+      'paragraph',
+    );
+    final all = _words(pdf);
+    List<double> at(String word) => all.firstWhere((w) => w.$2 == word).$3;
+    // (Each line from margin to margin: before a hard break and the last.)
+    expect(at('one')[0], closeTo(at('four')[0], 0.05));
+    expect(at('three')[2], closeTo(at('five')[2], 0.05));
+    expect(at('five')[2] - at('four')[0], greaterThan(400));
   });
 }

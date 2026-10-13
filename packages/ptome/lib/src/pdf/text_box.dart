@@ -2950,13 +2950,15 @@ base class _Wrap {
   void _printLine(double indent, [double right = 0]) {
     // (A line beside a float's outline ends [right] short of the width.)
     final room = _width - right;
-    // Justified, but not the last line of a paragraph, unless it is
-    // wider than the room (the optimal wrap shrinks spaces to fit a line;
-    // Prawn's wrap never fills a line past the room).
+    // Justified, but not the last line of a paragraph (unless
+    // `base_text_align_last: justify`), unless it is wider than the room
+    // (the optimal wrap shrinks spaces to fit a line; Prawn's wrap never
+    // fills a line past the room).
     final justify =
         _layout.align == 'justify' &&
         _spaceCount > 0 &&
         (_layout.forceJustify ||
+            _layout.alignLast == 'justify' ||
             !_paragraphFinished ||
             _accumulatedWidth > room - indent + 0.0001);
     final hang = _layout.overhang > 0 ? _layout.overhang * _overhang() : 0.0;
@@ -2993,6 +2995,7 @@ base class _Wrap {
     // hangs past the room it may fit as it is).
     if (justify &&
         !_layout.forceJustify &&
+        _layout.alignLast != 'justify' &&
         _paragraphFinished &&
         wordSpacing > 0) {
       wordSpacing = 0;

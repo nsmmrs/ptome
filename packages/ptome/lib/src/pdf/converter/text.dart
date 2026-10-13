@@ -131,6 +131,7 @@ extension _Text on PdfConverter {
           'left',
           'center',
           'right',
+          'justify',
         ]),
       ),
       _text,
