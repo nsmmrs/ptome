@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- An `<image>` is clipped to its viewport only when it reaches past it
+  (`slice`): a clip on an edge the image ends on anyway changed how
+  renderers smooth that edge. With `scalesAboutPageOrigin`, the viewport
+  is clipped by a path, as prawn-svg clips it.
 - SVG images (`SvgImage`) and path data (`SvgPath` and its segments),
   moved from plain_pdf with their history, now drawn on any
   plain_typesetting `Canvas`. `SvgCanvas`: what a canvas offers beyond

@@ -589,6 +589,12 @@ final class PdfConverter extends BuiltInConverter
 
   /// The image over every page but the front cover and the pages of PDF
   /// files (the theme's `page_foreground_image`).
+  /// Whether what asciidoctor-pdf draws as stamps (the page's foreground
+  /// image, the running content's background and border) is clipped to the
+  /// page, as the stamps' bounding boxes clip it (`page_layer_clip`).
+  late final bool _pageLayerClip =
+      _choice('page_layer_clip', const ['none', 'page']) == 'page';
+
   late final _PageImage? _foregroundImage = _resolveBackgroundImage(
     'page-foreground-image',
   )?.image;
@@ -746,6 +752,7 @@ final class PdfConverter extends BuiltInConverter
     'running_content_on_openers': ThemeBool(true),
     'running_content_on_blank_pages': ThemeBool(true),
     'running_content_layer': ThemeString('over'),
+    'page_layer_clip': ThemeString('page'),
     'base_emphasis_inversion': ThemeBool(false),
     'base_glyph_widths': ThemeString('thousandths'),
     'base_kerning_source': ThemeString('kern_table'),

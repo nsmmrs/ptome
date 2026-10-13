@@ -33,6 +33,7 @@ same (`benchmark/PARITY.md`).
 | `toc_macro_in_section` | `false` | `true` |
 | `running_content_on_openers` | `true` | `false` |
 | `running_content_layer` | `over` | `under` |
+| `page_layer_clip` | `page` | `none` |
 | `base_glyph_widths` | `thousandths` | `exact` |
 | `base_kerning_source` | `kern_table` | `font` |
 | `base_font_embedding` | `simple` | `composite` |
@@ -401,6 +402,7 @@ each use, which is asciidoctor-pdf's default). With `media` other than
 | `running_content_on_blank_pages` | `false` | A blank page (the verso before a chapter that starts on a recto page) has no header or footer unless this is `true`. |
 | `:folio-start:` (document) | `1` | The number of the first page after the front matter, the pages after it numbered on from it: a journal's article or a Federal Register document numbered within its volume (`47855`). Recto and verso stay the sheet's own sides. Not under `asciidoctor-compat`. |
 | `running_content_layer` | `under` | Whether the header is painted `under` the page's content (content reaching into the top margin, a large title's ascenders, covers its rule) or `over` it, as the footer always is. |
+| `page_layer_clip` | `none` | `page` clips the page's foreground image and the running content's background and border to the page, as asciidoctor-pdf's stamps are clipped by their bounding box (what reaches the page's edge ends a hair differently). |
 | `running_content_on_openers` | `false` | A page that opens a part or chapter has no header or footer unless this is `true`. |
 | `section_role_<role>_running_content_on_openers` | | `true` keeps the running content on the first page of a part or chapter with that role (a foreword set as an ordinary heading). |
 | `header_title_style`, `footer_title_style` | `document` | As in asciidoctor-pdf (`document`, `toc`, `basic`). |

@@ -64,7 +64,9 @@ final class SvgImage implements Graphic {
   /// [scalesAboutPageOrigin], an image drawn uniformly scaled is placed as
   /// one drawn at its own size and scaled about the page's origin is,
   /// the scale and the translation each written to five decimals (as
-  /// prawn-svg places it: a hundred-thousandth of a point or so off).
+  /// prawn-svg places it: a hundred-thousandth of a point or so off), and
+  /// its viewport clipped by a path rather than a rectangle (renderers
+  /// smooth the two's edges differently).
   factory parse(
     String text, {
     SvgFontResolver? fonts,
@@ -430,9 +432,20 @@ final class _Renderer {
       return;
     }
     _viewports.add((box.$3, box.$4));
+    canvas.save();
+    if (svg.scalesAboutPageOrigin) {
+      // The viewport as a path, as prawn-svg clips it: renderers smooth a
+      // rectangle's edges otherwise.
+      canvas
+        ..moveTo(rect.left, rect.bottom)
+        ..lineTo(rect.right, rect.bottom)
+        ..lineTo(rect.right, rect.top)
+        ..lineTo(rect.left, rect.top)
+        ..closePath();
+    } else {
+      canvas.rect(rect);
+    }
     canvas
-      ..save()
-      ..rect(rect)
       ..clip()
       ..transform(matrix);
     final style = _compute(svg._root, _initialStyle);
@@ -1604,12 +1617,21 @@ final class _Renderer {
       ).fit((0, 0, intrinsicWidth, intrinsicHeight), width, height);
       final drawWidth = intrinsicWidth * sx;
       final drawHeight = intrinsicHeight * sy;
-      canvas
-        ..save()
-        ..rect(Rect(x, y, width, height))
-        ..clip()
-        // Images are upright: flip back into a y-up space.
-        ..transform(Matrix(1, 0, 0, -1, x + tx, y + ty + drawHeight));
+      canvas.save();
+      // Clipped to its viewport only where it reaches past it (`slice`):
+      // a clip on an edge the image ends on anyway changes how renderers
+      // smooth that edge.
+      const slack = 1e-9;
+      if (tx < -slack ||
+          ty < -slack ||
+          tx + drawWidth > width + slack ||
+          ty + drawHeight > height + slack) {
+        canvas
+          ..rect(Rect(x, y, width, height))
+          ..clip();
+      }
+      // Images are upright: flip back into a y-up space.
+      canvas.transform(Matrix(1, 0, 0, -1, x + tx, y + ty + drawHeight));
       if (raster != null) {
         raster.paint(canvas, Rect(0, 0, drawWidth, drawHeight));
       } else {

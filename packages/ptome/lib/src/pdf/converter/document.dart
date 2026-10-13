@@ -1822,11 +1822,21 @@ extension _DocumentParts on PdfConverter {
       _drawLineNumbers(canvas, page, numbering);
     }
     if (_foregroundImage case final image?) {
-      _drawPageImage(
-        canvas,
-        image,
-        size: (page.template.size.width, page.template.size.height),
+      final (width, height) = (
+        page.template.size.width,
+        page.template.size.height,
       );
+      // (`page_layer_clip: page`: clipped to the page, as the gem's stamp
+      // is by its bounding box.)
+      final clip = _pageLayerClip;
+      if (clip) {
+        canvas
+          ..save()
+          ..rect(Rect(0, 0, width, height))
+          ..clip();
+      }
+      _drawPageImage(canvas, image, size: (width, height));
+      if (clip) canvas.restore();
     }
   }
 

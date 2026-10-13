@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF, `asciidoctor-compat`: every PDF case of the corpus now matches
+  Asciidoctor PDF pixel for pixel (the red list is empty). New engine
+  key `page_layer_clip: page` (set by compat) clips the page's foreground
+  image and the running content's background and border to the page, as
+  asciidoctor-pdf's stamps are clipped by their bounding box; an SVG's
+  viewport is clipped by a path under `svg_placement: page_origin`, as
+  prawn-svg clips it; and an image inside an SVG is clipped to its
+  viewport only when it reaches past it.
 - PDF: GIF, BMP, WebP and TIFF images are embedded (FEAT-c16d1m,
   FEAT-z1rgx9, FEAT-3rvh14, FEAT-9fcj76), read by plain_images, the workspace's own
   image package, in the modern engine and with `compat` alike:

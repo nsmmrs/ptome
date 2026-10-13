@@ -312,9 +312,18 @@ extension _RunningContent on PdfConverter {
             _keys(periphery).color('border_color') ?? _c('base_border_color'),
           )
         : null;
+    // (`page_layer_clip: page`: the background and border clipped to the
+    // page, as asciidoctor-pdf's stamps are by their bounding box.)
+    final clipToPage = _pageLayerClip;
     if (background != null || (borderWidth > 0 && borderColor != null)) {
       pieces.add((pdfPage) {
         final canvas = pdfPage.canvas;
+        if (clipToPage) {
+          canvas
+            ..save()
+            ..rect(Rect(0, 0, pageWidth, pageHeight))
+            ..clip();
+        }
         if (background != null) {
           canvas
             ..save()
@@ -334,6 +343,7 @@ extension _RunningContent on PdfConverter {
             _keys(periphery).string('border_style'),
           );
         }
+        if (clipToPage) canvas.restore();
       });
     }
     // The background image, in the middle of the running content's area.
