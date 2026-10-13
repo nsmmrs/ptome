@@ -638,6 +638,8 @@ final class FontCatalog {
         truncateWidths: thousandthWidths,
         kernTableSubtable: kern,
         singleByte: singleByteFonts,
+        // (Measured as the text box measures fonts.)
+        typoMetrics: true,
       );
     }
     final shaper = _shapers[(path, index, kern)] ??= OpenTypeShaper(
@@ -648,6 +650,8 @@ final class FontCatalog {
       shaper,
       truncateWidths: thousandthWidths,
       singleByte: singleByteFonts,
+      // (Measured as the text box measures fonts.)
+      typoMetrics: true,
     );
   }
 

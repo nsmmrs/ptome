@@ -287,6 +287,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     required this.subset,
     required this.truncateWidths,
     required bool singleByte,
+    this.typoMetrics = false,
   }) : font = _shaper.font,
        kernTableSubtable = _shaper.kernTableSubtable,
        singleByte = singleByte && _shaper.font.isTrueType,
@@ -300,11 +301,13 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     bool subset = true,
     bool truncateWidths = false,
     bool singleByte = false,
+    bool typoMetrics = false,
   }) => EmbeddedFont._(
     shaper,
     subset: subset,
     truncateWidths: truncateWidths,
     singleByte: singleByte,
+    typoMetrics: typoMetrics,
   );
 
   /// The font in [bytes] (the font at [index] of a collection); with
@@ -315,7 +318,8 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
   /// else its `kern` table, or by the `kern` table's subtable
   /// [kernTableSubtable] alone (Prawn kerns with the first). With
   /// [singleByte], a font with TrueType outlines is written as simple
-  /// fonts, see [singleByte].
+  /// fonts, see [singleByte]. With [typoMetrics], its ascender, descender
+  /// and line gap are its `OS/2` typographic ones where it has them.
   factory parse(
     List<int> bytes, {
     int index = 0,
@@ -323,6 +327,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     bool truncateWidths = false,
     bool singleByte = false,
     int? kernTableSubtable,
+    bool typoMetrics = false,
   }) => EmbeddedFont._(
     OpenTypeShaper(
       OpenTypeFont.parse(bytes, index: index),
@@ -331,7 +336,13 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
     subset: subset,
     truncateWidths: truncateWidths,
     singleByte: singleByte,
+    typoMetrics: typoMetrics,
   );
+
+  /// Whether the ascender, descender and line gap are the font's `OS/2`
+  /// typographic ones where it has them (as Prawn measures fonts), rather
+  /// than its `hhea` table's.
+  final bool typoMetrics;
 
   @override
   final OpenTypeFont font;
@@ -383,13 +394,19 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
   String get name => font.postScriptName;
 
   @override
-  double get ascender => _shaper.ascender;
+  double get ascender => typoMetrics
+      ? _scale(_typo(font.typoAscender, font.ascender))
+      : _shaper.ascender;
 
   @override
-  double get descender => _shaper.descender;
+  double get descender => typoMetrics
+      ? _scale(_typo(font.typoDescender, font.descender))
+      : _shaper.descender;
 
   @override
-  double get lineGap => _shaper.lineGap;
+  double get lineGap => typoMetrics
+      ? _scale(_typo(font.typoLineGap, font.lineGap))
+      : _shaper.lineGap;
 
   @override
   double get capHeight => _shaper.capHeight;

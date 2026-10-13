@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF, modern engine: lines are their text's font height and the
+  leading apart whatever fonts they mix (TeX's interline glue,
+  BUG-kd9h5p), in the engine's paragraphs and the text box alike, and
+  both measure fonts the same way (their `OS/2` typographic metrics): a
+  line with inline code or a kbd chip stays on its paragraph's pitch, a
+  line of smaller text (a heading's subtitle) doesn't rise into the one
+  above, and only text taller than the paragraph's own moves a line,
+  by as much. Checked against the previous build: 30 of 1,079 documents
+  move, each for one of these (fallback and icon fonts measured as the
+  text box measures them, smaller second lines of headings, listings and
+  cells mixing fonts) or a page break they move.
 - PDF: text in a script no font of the theme has (Arabic in the default
   theme) converts as fast as with a font for it, and one warning lists
   the characters drawn as empty boxes, where no fallbacks were tried

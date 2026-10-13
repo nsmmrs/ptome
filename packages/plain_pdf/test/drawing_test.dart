@@ -348,6 +348,20 @@ void main() {
     expect(words(pdf).map((w) => w.text), ['code();', 'Seen']);
   });
 
+  test('typographic metrics: the OS/2 ascender, descender and gap', () {
+    final bytes = File('test/fonts/mplus1p-regular-multilingual.ttf')
+        .readAsBytesSync();
+    final hhea = EmbeddedFont.parse(bytes);
+    final typo = EmbeddedFont.parse(bytes, typoMetrics: true);
+    final font = typo.font;
+    final scale = 1000 / font.unitsPerEm;
+    expect(typo.ascender, closeTo(font.typoAscender! * scale, 1e-9));
+    expect(typo.descender, closeTo(font.typoDescender! * scale, 1e-9));
+    expect(typo.lineGap, closeTo(font.typoLineGap! * scale, 1e-9));
+    expect(hhea.ascender, closeTo(font.ascender * scale, 1e-9));
+    expect(hhea.ascender, isNot(closeTo(typo.ascender, 1)));
+  });
+
   group('Arabic glyphs read as their text', () {
     final arabic = File(
       '../plain_typesetting/test/fonts/notonaskharabic-subset.ttf',

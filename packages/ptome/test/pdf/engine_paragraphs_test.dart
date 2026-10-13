@@ -435,11 +435,12 @@ void main() {
     );
   });
 
-  test('buttons and callouts', () {
-    // (Not kbd chips: a line with monospace text sits apart, BUG-kd9h5p.)
+  test('kbd chips, buttons, inline code and callouts', () {
+    // (Lines mixing fonts the text's own font height apart: TeX's
+    // interline glue, BUG-kd9h5p.)
     _same(
-      '= Doc\n:experimental:\n\n$_words40 btn:[Save] and '
-      'btn:[Open File] $_words40\n\n'
+      '= Doc\n:experimental:\n\n$_words40 kbd:[Ctrl+Alt+Del] and '
+      'kbd:[F11] btn:[Save] and btn:[Open File] `code` $_words40\n\n'
       '----\nputs "hello" # <1>\nexit # <2>\n----\n'
       '<1> $_words40\n<2> Exits.\n',
     );

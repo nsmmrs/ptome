@@ -61,6 +61,9 @@ extension _DocumentParts on PdfConverter {
             },
       // (Every text the engine can set, set by it: modern engine.)
       engine: _engineParagraphs ? _engineTextOf : null,
+      // (Lines their text's font height apart whatever fonts they mix:
+      // TeX's interline glue, modern engine.)
+      interlineGlue: !asciidoctorCompat(document, CompatFormat.pdf),
       // (`base_word_spacing`: the spaces between words in the engine's
       // paragraphs as a fraction or a percentage of the face's, a
       // dictionary's 72%.)

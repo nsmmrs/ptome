@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `LineHeight.font(skip:, lineSkip:)` and `FontLineHeight.apart`: lines
+  a baselineskip apart (TeX's interline glue, The TeXbook ch. 12),
+  whatever fonts they mix: a line's baseline [skip]'s height and the
+  leading below the one above's, moved down only by as much as its text
+  and the depth of the line above are taller than the skip's (its
+  `\lineskiplimit` and `\lineskip` the skip's own gap and leading), so
+  a theme's leading, a negative one too, holds.
 - `KnuthPlassLineBreaker` keeps breaks apart by their line numbers only
   up to TeX's easy line (§848), from which every line is as wide: a long
   justified paragraph of wide words (Arabic set in a font without it,

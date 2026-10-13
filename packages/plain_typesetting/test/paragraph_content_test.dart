@@ -434,4 +434,74 @@ void main() {
     );
     expect(indented.map(_text).join(' '), words.join(' '));
   });
+
+  group('lines a baselineskip apart (TeX)', () {
+    // (Text 0.6 of the body's size, and twice it.)
+    final small = TextStyle(_serif, 6);
+    final big = TextStyle(_serif, 20);
+    final extent = (_serif.ascender - _serif.descender) / 100;
+    final pitch = (_serif.ascender - _serif.descender + _serif.lineGap) / 100;
+
+    List<double> baselines(List<Line> lines) {
+      final out = <double>[];
+      var top = 0.0;
+      for (final line in lines) {
+        out.add(top + line.baseline);
+        top += line.height;
+      }
+      return out;
+    }
+
+    List<Line> set(List<InlineContent> content, {double leading = 2}) =>
+        const FirstFitLineBreaker().breakLines(
+          Paragraph(
+            content,
+            lineHeight: LineHeight.font(leading: leading, skip: _body),
+          ),
+          (_) => 1000,
+        );
+
+    test('a line of smaller text keeps the pitch', () {
+      final lines = set([
+        TextRun('one\n', _body),
+        TextRun('two\n', small),
+        TextRun('three', _body),
+      ]);
+      final at = baselines(lines);
+      expect(at[1] - at[0], closeTo(pitch + 2, 1e-9));
+      expect(at[2] - at[1], closeTo(pitch + 2, 1e-9));
+    });
+
+    test('a line of taller text moves down by as much as it is taller', () {
+      final lines = set([
+        TextRun('one\n', _body),
+        TextRun('two', big),
+        TextRun('\nthree', _body),
+      ]);
+      final at = baselines(lines);
+      final taller = (_serif.ascender * 20 / 1000) - _serif.ascender / 100;
+      expect(at[1] - at[0], closeTo(pitch + 2 + taller, 1e-9));
+      final deeper = (-_serif.descender * 20 / 1000) + _serif.descender / 100;
+      expect(at[2] - at[1], closeTo(pitch + 2 + deeper, 1e-9));
+    });
+
+    test('a negative leading holds for lines of the text', () {
+      final lines = set([TextRun('one\ntwo', _body)], leading: -3);
+      final at = baselines(lines);
+      expect(at[1] - at[0], closeTo(pitch - 3, 1e-9));
+      expect(extent, greaterThan(pitch - 3 - _serif.lineGap / 100));
+    });
+
+    test('without a skip, each line as tall as its fonts', () {
+      final lines = const FirstFitLineBreaker().breakLines(
+        Paragraph([
+          TextRun('one\n', _body),
+          TextRun('two', small),
+        ], lineHeight: const LineHeight.font(leading: 2)),
+        (_) => 1000,
+      );
+      final at = baselines(lines);
+      expect(at[1] - at[0], lessThan(pitch + 2));
+    });
+  });
 }

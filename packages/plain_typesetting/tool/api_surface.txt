@@ -374,10 +374,13 @@ final class FlowLayout
   int maxPasses
   int? notesLag
 final class FontLineHeight extends LineHeight
-  FontLineHeight({double leading = 0, double above = 0, double? endDepth})
+  FontLineHeight({double leading = 0, double above = 0, double? endDepth, TextStyle? skip, double? lineSkip})
+  List<Line> apart(List<Line> lines)
+  TextStyle? skip
   double above
   double leading
   double? endDepth
+  double? lineSkip
 final class FractionColumnWidth extends ColumnWidth
   FractionColumnWidth(double weight)
   double weight
@@ -761,7 +764,7 @@ sealed class LineFragment
 sealed class LineHeight
   LineHeight.cap({double leading})
   LineHeight.exact(double points)
-  LineHeight.font({double leading, double above, double? endDepth})
+  LineHeight.font({double leading, double above, double? endDepth, TextStyle? skip, double? lineSkip})
   LineHeight.multiple(double factor)
 sealed class LineItem
   double width

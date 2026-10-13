@@ -1522,28 +1522,47 @@ final class _EngineCode implements LinedContent, BaselineContent {
   final Map<double, List<_CodeLine>> _lines = {};
 
   List<_CodeLine> _linesAt(double width) =>
-      _fixed ??
-      (_lines[width] ??= [
-        for (final (paragraph, own) in paragraphs)
-          ...() {
-            // (Its lines after the first in by its own indent and the
-            // hanging indent: the first one that far out.)
-            final x = math.min(own + wrapIndent, width / 2);
-            final set = ParagraphContent(
-              paragraph.copyWith(firstLineIndent: -x),
-              lineBreaker: const FirstFitLineBreaker(),
-            ).linesAt(width - x);
-            return [
-              for (final (i, line) in set.indexed)
-                (
-                  line: line,
-                  x: x,
-                  wrapped: marker && i < set.length - 1,
-                  continues: i > 0,
-                ),
-            ];
-          }(),
-      ]);
+      _fixed ?? (_lines[width] ??= _apart(_set(width)));
+
+  /// [lines] apart as the listing's lines are, one after another (its
+  /// logical lines each a paragraph of its own).
+  List<_CodeLine> _apart(List<_CodeLine> lines) {
+    if (paragraphs.firstOrNull?.$1.lineHeight case final FontLineHeight h) {
+      final set = h.apart([for (final code in lines) code.line]);
+      return [
+        for (final (i, code) in lines.indexed)
+          (
+            line: set[i],
+            x: code.x,
+            wrapped: code.wrapped,
+            continues: code.continues,
+          ),
+      ];
+    }
+    return lines;
+  }
+
+  List<_CodeLine> _set(double width) => [
+    for (final (paragraph, own) in paragraphs)
+      ...() {
+        // (Its lines after the first in by its own indent and the
+        // hanging indent: the first one that far out.)
+        final x = math.min(own + wrapIndent, width / 2);
+        final set = ParagraphContent(
+          paragraph.copyWith(firstLineIndent: -x),
+          lineBreaker: const FirstFitLineBreaker(),
+        ).linesAt(width - x);
+        return [
+          for (final (i, line) in set.indexed)
+            (
+              line: line,
+              x: x,
+              wrapped: marker && i < set.length - 1,
+              continues: i > 0,
+            ),
+        ];
+      }(),
+  ];
 
   @override
   int lineCount(double width) => _linesAt(width).length;

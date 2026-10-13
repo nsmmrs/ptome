@@ -67,6 +67,10 @@ extension _Paragraphs on PdfConverter {
           : LineHeight.font(
               leading: layout.leading + heightShift,
               above: layout.initialGap + ascentShift,
+              // (Lines the text's own font height apart whatever fonts
+              // they mix, as the text box sets them: TeX's interline glue.)
+              skip: _text.interlineGlue ? TextStyle(engineFont, size) : null,
+
               endDepth: ownEnd
                   ? face.descenderAt(size) +
                         layout.paddingBottom +
@@ -222,10 +226,18 @@ extension _Paragraphs on PdfConverter {
     // (Each line but the last spaced as a line of the listing: the space
     // under the listing's last line is its own.)
     final within = switch (base.lineHeight) {
-      FontLineHeight(:final leading, :final above) => LineHeight.font(
-        leading: leading,
-        above: above,
-      ),
+      FontLineHeight(
+        :final leading,
+        :final above,
+        :final skip,
+        :final lineSkip,
+      ) =>
+        LineHeight.font(
+          leading: leading,
+          above: above,
+          skip: skip,
+          lineSkip: lineSkip,
+        ),
       final height => height,
     };
     return _EngineCode(

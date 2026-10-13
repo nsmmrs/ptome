@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `EmbeddedFont.parse(typoMetrics:)` / `.shaped(typoMetrics:)`: the
+  ascender, descender and line gap from `OS/2`'s typographic metrics
+  where the font has them (as Prawn measures fonts), not `hhea`'s.
 - `EmbeddedFont.missingCharacters`: the characters text used that the
   font has no glyph for.
 - Shaped text taken from the page reads as written. `PdfCanvas.glyphs`

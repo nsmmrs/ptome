@@ -273,6 +273,7 @@ final class TextContext {
     this.engine,
     this.maxHyphenRun,
     this.lastLineMin = 0,
+    this.interlineGlue = false,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -295,6 +296,7 @@ final class TextContext {
           wordSpace: wordSpace,
           maxHyphenRun: maxHyphenRun,
           lastLineMin: lastLineMin,
+          interlineGlue: interlineGlue,
           logger: logger,
         );
 
@@ -307,6 +309,13 @@ final class TextContext {
   /// the engine doesn't set as this box does, or in the compatibility
   /// mode, where the box sets its own lines.
   final CustomContent? Function(TextBox text)? engine;
+
+  /// Whether lines are the text's own font height and the leading apart,
+  /// whatever fonts they mix, unless a line's text and the depth of the
+  /// line above don't fit that (TeX's interline glue: modern engine),
+  /// rather than each line its tallest font's height down from the one
+  /// above (Prawn's).
+  final bool interlineGlue;
 
   /// The width of the spaces between words in the engine's paragraphs, as
   /// a share of the face's own (`base_word_spacing`: a dictionary's 72%).
@@ -2857,7 +2866,7 @@ base class _Wrap {
     _ascender = _maxAscender;
     final diff = _baseline == 0
         ? _ascender + _descender
-        : _descender + _lineHeight + _layout.leading;
+        : _descender + _advance;
     if (_baseline.abs() + diff > _height + 0.0001) {
       // Repack the fragments of this line.
       final repacked = <_Item>[
@@ -2874,8 +2883,29 @@ base class _Wrap {
     if (_baseline == 0) {
       _baseline = -_ascender;
     } else {
-      _baseline -= _lineHeight + _layout.leading;
+      _baseline -= _advance;
     }
+    _aboveDescender = _descender;
+  }
+
+  /// The descender of the line above, once one is placed.
+  double _aboveDescender = 0;
+
+  /// How far the line's baseline is below the one above's: its tallest
+  /// font's height and the leading (Prawn's); with interline glue, the
+  /// text's own font height and the leading, or where the line's text and
+  /// the depth of the line above are taller than its font's, by as much
+  /// more (TeX's `\baselineskip`, its `\lineskiplimit` and `\lineskip`
+  /// the font's own line gap and leading).
+  double get _advance {
+    if (!_context.interlineGlue || _layout.capLines) {
+      return _lineHeight + _layout.leading;
+    }
+    final font = TextBox._font(_state.family, _state.style, _context);
+    final size = _state.size;
+    final extent = font.ascenderAt(size) + font.descenderAt(size);
+    final pitch = font.heightAt(size) + _layout.leading;
+    return math.max(pitch, _aboveDescender + _ascender + pitch - extent);
   }
 
   /// The width justified lines are set to, when not the room

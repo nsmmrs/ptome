@@ -31,9 +31,18 @@ sealed class LineHeight {
 
   /// The fonts' height (ascender to descender, plus their line gap) and
   /// [leading] more; [above] of that space between lines set above the
-  /// text, the rest under it.
-  const factory font({double leading, double above, double? endDepth}) =
-      FontLineHeight;
+  /// text, the rest under it. With [skip], lines are [skip]'s height and
+  /// [leading] apart, TeX's `\baselineskip`, whatever their fonts, unless
+  /// a line's text and the depth of the line above are taller than
+  /// [skip]'s, when they are [lineSkip] apart instead (TeX's interline
+  /// glue, its `\lineskiplimit` its `\lineskip`).
+  const factory font({
+    double leading,
+    double above,
+    double? endDepth,
+    TextStyle? skip,
+    double? lineSkip,
+  }) = FontLineHeight;
 
   /// [factor] times the largest font size on the line, the extra split
   /// above and below the text (as CSS does).
@@ -53,7 +62,63 @@ sealed class LineHeight {
 final class FontLineHeight extends LineHeight {
   /// The fonts' height plus [leading], [above] of the space between lines
   /// (the leading and the fonts' line gap) over the text.
-  const new({this.leading = 0, this.above = 0, this.endDepth}) : super._();
+  const new({
+    this.leading = 0,
+    this.above = 0,
+    this.endDepth,
+    this.skip,
+    this.lineSkip,
+  }) : super._();
+
+  /// Where given, the text whose height (ascender to descender and line
+  /// gap) and [leading] the lines' baselines are apart (TeX's
+  /// `\baselineskip`, The TeXbook ch. 12): a line with taller or deeper
+  /// text than it doesn't move the lines around it while the two fit.
+  final TextStyle? skip;
+
+  /// With [skip], the space between a line's text and the line above's
+  /// where they are taller than [skip]'s (TeX's `\lineskip`): unless
+  /// given, [skip]'s own, its line gap and [leading], so that a theme's
+  /// leading, even a negative one, holds for lines of its text.
+  final double? lineSkip;
+
+  /// [lines] (one after another, of one paragraph or several set as one)
+  /// apart by [skip], where given (TeX's interline glue, The TeXbook
+  /// ch. 12): each line's baseline the skip's pitch below the one above's,
+  /// or where the line's text and the depth of the one above don't fit
+  /// that, their sum and the line skip; the first where it is.
+  List<Line> apart(List<Line> lines) {
+    final skip = this.skip;
+    if (skip == null || lines.length < 2) return lines;
+    final font = skip.font;
+    final scale = skip.size / 1000;
+    final extent = (font.ascender - font.descender) * scale;
+    final pitch = extent + font.lineGap * scale + leading;
+    final between = lineSkip ?? pitch - extent;
+    final out = <Line>[lines.first];
+    for (final line in lines.skip(1)) {
+      final above = out.last;
+      final below = above.height - above.baseline;
+      final apart = math.max(pitch, -above.descent + line.ascent + between);
+      final shift = apart - below - line.baseline;
+      // (Within rounding, where it is.)
+      out.add(
+        shift.abs() < 1e-9
+            ? line
+            : Line(
+                line.fragments,
+                width: line.width,
+                height: line.height + shift,
+                baseline: line.baseline + shift,
+                ascent: line.ascent,
+                descent: line.descent,
+                hyphenated: line.hyphenated,
+                readingOrder: line.readingOrder,
+              ),
+      );
+    }
+    return out;
+  }
 
   /// Where given, how far below its baseline a paragraph's last line ends
   /// (the space under it the paragraph's own, not a line's after it: a
@@ -539,7 +604,7 @@ abstract base class ItemLineBreaker implements LineBreaker {
       items.sublist(at),
       (line) => widths(line + 1),
     ).lines;
-    return [lines.first, ...rest];
+    return _interline(paragraph, [lines.first, ...rest]);
   }
 
   /// The lines of [paragraph] made of [items] (its [paragraphItems], or
@@ -1907,8 +1972,16 @@ List<Line> buildLines(
     );
     start = end + 1;
   }
-  return lines;
+  return _interline(paragraph, lines);
 }
+
+/// [lines] apart by their paragraph's [FontLineHeight.skip], where it has
+/// one.
+List<Line> _interline(Paragraph paragraph, List<Line> lines) =>
+    switch (paragraph.lineHeight) {
+      final FontLineHeight height => height.apart(lines),
+      _ => lines,
+    };
 
 Line _line(
   Paragraph paragraph,

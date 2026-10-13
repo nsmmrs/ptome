@@ -60,8 +60,8 @@ final class DestinationTarget extends LinkTarget
   DestinationTarget(PdfDestination destination)
   PdfDestination destination
 final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
-  EmbeddedFont.parse(List<int> bytes, {int index = 0, bool subset = true, bool truncateWidths = false, bool singleByte = false, int? kernTableSubtable})
-  EmbeddedFont.shaped(OpenTypeShaper shaper, {bool subset = true, bool truncateWidths = false, bool singleByte = false})
+  EmbeddedFont.parse(List<int> bytes, {int index = 0, bool subset = true, bool truncateWidths = false, bool singleByte = false, int? kernTableSubtable, bool typoMetrics = false})
+  EmbeddedFont.shaped(OpenTypeShaper shaper, {bool subset = true, bool truncateWidths = false, bool singleByte = false, bool typoMetrics = false})
   List<({Uint8List codes, int end, int start, int subset})> encodeRuns(List<ShapedGlyph> glyphs)
   List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   List<int> encode(List<ShapedGlyph> glyphs)
@@ -75,6 +75,7 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont
   bool singleByte
   bool subset
   bool truncateWidths
+  bool typoMetrics
   double ascender
   double capHeight
   double descender
