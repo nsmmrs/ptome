@@ -14,7 +14,8 @@
 // metadata, then each mode's keys and values (unsigned LEB128 numbers,
 // strings by their index in the table; see grammar.dart for the layout).
 // The grammars of all languages are one Brotli stream (they share much),
-// in base64 in all.g.dart, decoded the first time a language is used; each
+// in base64 in all.g.dart, the most used languages first ([popular]): it
+// is expanded only as far as the grammar a document needs ends, and each
 // language is read from where its grammar starts.
 //
 // Usage: node tool/generate/generate.mjs   (from the repository root)
@@ -427,14 +428,27 @@ function packed(file, name, bytes) {
 const outDir = join(root, 'lib/src/languages');
 const allFile = join(outDir, 'all.g.dart');
 const symbolsFile = join(outDir, 'mathematica_symbols.g.dart');
-const registry = [];
+// The languages documents use most, first in the stream (those HTML
+// embeds right after it), the others after them in registration order.
+const popular = [
+  'xml', 'css', 'javascript', 'typescript', 'json', 'python', 'bash', 'shell',
+  'plaintext', 'java', 'c', 'cpp', 'csharp', 'go', 'rust', 'ruby', 'php',
+  'sql', 'yaml', 'markdown', 'http', 'diff', 'dockerfile', 'kotlin', 'swift',
+  'ini', 'makefile', 'powershell', 'scss', 'less', 'lua', 'perl', 'r', 'scala',
+  'haskell', 'objectivec', 'dart', 'asciidoc', 'latex', 'elixir', 'erlang',
+  'clojure', 'groovy', 'nginx', 'apache', 'properties', 'graphql', 'protobuf',
+];
+const registry = order.map(({ name, file }) => ({ name, ...grammar(name, file) }));
+const streamOrder = [
+  ...popular.map((name) => registry.find((r) => r.name === name)).filter((r) => r),
+  ...registry.filter((r) => !popular.includes(r.name)),
+];
 let raw = 0;
-for (const { name, file } of order) {
-  const { aliases, bytes } = grammar(name, file);
-  registry.push({ name, aliases, at: raw, bytes });
-  raw += bytes.length;
+for (const r of streamOrder) {
+  r.at = raw;
+  raw += r.bytes.length;
 }
-const grammars = packed(allFile, 'grammars', Buffer.concat(registry.map((r) => r.bytes)));
+const grammars = packed(allFile, 'grammars', Buffer.concat(streamOrder.map((r) => r.bytes)));
 const symbols = (() => {
   const text = readFileSync(join(root, 'vendor/highlight.js/src/languages/lib/mathematica.js'), 'utf8');
   const body = text.slice(text.indexOf('['), text.lastIndexOf(']') + 1);
@@ -450,13 +464,13 @@ writeFileSync(allFile, [
   '',
   '/// Every language, in the order highlight.js registers them (which',
   '/// decides auto-detection ties): name, aliases and where its grammar',
-  '/// starts in [grammars] (see `readGrammar`).',
+  '/// starts in [grammars] (see `readGrammar`; the most used first there).',
   'const List<(String, List<String>, int)> allLanguages = [',
   ...registry.map((r) => `  (${dartString(r.name)}, [${r.aliases.map(dartString).join(', ')}], ${r.at}),`),
   '];',
   '',
   '/// The grammars of [allLanguages], one after another, Brotli-compressed,',
-  '/// in base64.',
+  `/// in base64 (${raw} bytes expanded).`,
   `const String grammars = '${grammars}';`,
   '',
 ].join('\n'));

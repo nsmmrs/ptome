@@ -10,6 +10,7 @@ import 'package:plain_highlighting/src/compile_keywords.dart';
 import 'package:plain_highlighting/src/compiler_extensions.dart' as ext;
 import 'package:plain_highlighting/src/first_chars.dart';
 import 'package:plain_highlighting/src/mode.dart';
+import 'package:plain_highlighting/src/precomputed.dart';
 import 'package:plain_highlighting/src/regex.dart' as regex;
 
 /// What a rule of a [MultiRegex] stands for.
@@ -186,6 +187,10 @@ final class MultiRegex {
   /// The [FirstChars] of each rule source seen, by its flags.
   static final Map<(String, bool, bool), FirstChars?> _firstCharsOf = {};
 
+  /// Where the precomputed table has the [FirstChars] of a rule source
+  /// of a language compiled, by its flags (see `precomputed.dart`).
+  static final Map<(String, bool, bool), int> _precomputedAt = {};
+
   void _build() {
     if (_rules.isEmpty) return;
     for (final rule in _rules) {
@@ -205,11 +210,14 @@ final class MultiRegex {
       dispatched.add(rule);
       final source = rule.source;
       if (matchesEmptyEverywhere(source)) break;
-      final first = _firstCharsOf.putIfAbsent((
-        source,
-        ignoreCase,
-        unicode,
-      ), () => firstChars(source, ignoreCase: ignoreCase, unicode: unicode));
+      final key = (source, ignoreCase, unicode);
+      final first = _firstCharsOf.putIfAbsent(
+        key,
+        () => switch (_precomputedAt[key]) {
+          final at? => precomputedFirstChars(at),
+          null => firstChars(source, ignoreCase: ignoreCase, unicode: unicode),
+        },
+      );
       if (first == null) return;
       rule.first = first;
     }
@@ -553,7 +561,31 @@ Mode compileLanguage(Language language) {
     );
   }
   language.classNameAliases = {...language.classNameAliases};
-  return compileMode(language, null);
+  final root = compileMode(language, null);
+  _seed(language, root);
+  return root;
+}
+
+/// The group counts and [FirstChars] of [language]'s rules (compiled
+/// from [root]) taken from the precomputed table, where it has them for
+/// these rules, rather than worked out from their sources when its
+/// matchers are first built.
+void _seed(Language language, Mode root) {
+  final rules = precomputedRules(language.name);
+  if (rules == null) return;
+  final sources = ruleSources(root);
+  // (A table made for other grammars: none of it.)
+  if (sources.length != rules.length) return;
+  for (final (k, source) in sources.indexed) {
+    final (groups, at) = rules[k];
+    MultiRegex._groupCountOf[source] ??= groups;
+    MultiRegex._precomputedAt[(
+          source,
+          language.caseInsensitive,
+          language.unicodeRegex,
+        )] ??=
+        at;
+  }
 }
 
 bool _dependencyOnParent(Mode? mode) {

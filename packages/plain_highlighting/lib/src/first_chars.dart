@@ -4,6 +4,7 @@
 /// (the Dart VM's engine is several times slower than V8's at searching).
 library;
 
+import 'dart:convert';
 import 'dart:typed_data';
 
 /// The characters a match can start with (at least): each ASCII character
@@ -1035,4 +1036,201 @@ final class _Parser {
     if ((e >= 0x31 && e <= 0x39) || e == 0x6b) throw const _Unread();
     return (_charEscape(e), null);
   }
+}
+
+// Precomputed first characters (`tool/generate_first_chars.dart`): a
+// [FirstChars] as bytes, so that a language's are read rather than
+// worked out from its expressions the first time it is used.
+//
+// A [FirstChars] is a flags byte pair (see [_Flag]), the ASCII set (16
+// bytes, a bit each), then what the flags say it has: the run's set, the
+// [RunFollow] (its two sets and a flags byte), the prefix (a length and
+// UTF-8 bytes), the [Anchor] (its literal so, then its bounds) and the
+// [Stop] (its two sets and a flags byte). Lengths and bounds are
+// unsigned LEB128; null is a lone 0 byte.
+
+/// The flags of an encoded [FirstChars].
+abstract final class _Flag {
+  static const int present = 1;
+  static const int nonAscii = 2;
+  static const int atEnd = 4;
+  static const int wordStart = 8;
+  static const int lineStart = 16;
+  static const int literal = 32;
+  static const int ignoreCase = 64;
+  static const int run = 128;
+  // (The second byte.)
+  static const int follow = 1;
+  static const int prefix = 2;
+  static const int anchor = 4;
+  static const int stop = 8;
+}
+
+/// [first] (or null) as bytes, added to [out].
+void encodeFirstChars(FirstChars? first, BytesBuilder out) {
+  if (first == null) {
+    out.addByte(0);
+    return;
+  }
+  void set(Uint8List ascii) {
+    for (var b = 0; b < 16; b++) {
+      var byte = 0;
+      for (var k = 0; k < 8; k++) {
+        if (ascii[b * 8 + k] != 0) byte |= 1 << k;
+      }
+      out.addByte(byte);
+    }
+  }
+
+  void uint(int value) {
+    var v = value;
+    while (v >= 0x80) {
+      out.addByte((v & 0x7f) | 0x80);
+      v >>= 7;
+    }
+    out.addByte(v);
+  }
+
+  void string(String s) {
+    final bytes = utf8.encode(s);
+    uint(bytes.length);
+    out.add(bytes);
+  }
+
+  int bits(List<bool> flags) {
+    var byte = 0;
+    for (final (k, flag) in flags.indexed) {
+      if (flag) byte |= 1 << k;
+    }
+    return byte;
+  }
+
+  out
+    ..addByte(
+      _Flag.present |
+          (first.nonAscii ? _Flag.nonAscii : 0) |
+          (first.atEnd ? _Flag.atEnd : 0) |
+          (first.wordStart ? _Flag.wordStart : 0) |
+          (first.lineStart ? _Flag.lineStart : 0) |
+          (first.literal ? _Flag.literal : 0) |
+          (first._ignoreCase ? _Flag.ignoreCase : 0) |
+          (first.run != null ? _Flag.run : 0),
+    )
+    ..addByte(
+      (first.follow != null ? _Flag.follow : 0) |
+          (first.prefix != null ? _Flag.prefix : 0) |
+          (first.anchor != null ? _Flag.anchor : 0) |
+          (first.stop != null ? _Flag.stop : 0),
+    );
+  set(first._ascii);
+  if (first.run case final run?) set(run);
+  if (first.follow case final follow?) {
+    set(follow._run);
+    set(follow._follow);
+    out.addByte(
+      bits([follow.runNonAscii, follow.followNonAscii, follow.followAtEnd]),
+    );
+  }
+  if (first.prefix case final prefix?) string(prefix);
+  if (first.anchor case final anchor?) {
+    string(anchor.literal);
+    uint(anchor.min);
+    uint(anchor.max);
+  }
+  if (first.stop case final stop?) {
+    set(stop._span);
+    set(stop._stop);
+    out.addByte(bits([stop.spanNonAscii, stop.stopNonAscii, stop.stopAtEnd]));
+  }
+}
+
+/// The [FirstChars] (or null) encoded at [at] in [bytes], and where the
+/// bytes after it start.
+(FirstChars?, int) decodeFirstChars(Uint8List bytes, int at) {
+  var i = at;
+  final flags = bytes[i++];
+  if (flags == 0) return (null, i);
+  final more = bytes[i++];
+  Uint8List set() {
+    final ascii = Uint8List(128);
+    for (var b = 0; b < 16; b++) {
+      final byte = bytes[i++];
+      if (byte == 0) continue;
+      for (var k = 0; k < 8; k++) {
+        if (byte & (1 << k) != 0) ascii[b * 8 + k] = 1;
+      }
+    }
+    return ascii;
+  }
+
+  int uint() {
+    var value = 0;
+    var shift = 0;
+    while (true) {
+      final b = bytes[i++];
+      value |= (b & 0x7f) << shift;
+      if (b < 0x80) return value;
+      shift += 7;
+    }
+  }
+
+  String string() {
+    final length = uint();
+    final s = utf8.decode(Uint8List.sublistView(bytes, i, i + length));
+    i += length;
+    return s;
+  }
+
+  final ascii = set();
+  final run = flags & _Flag.run != 0 ? set() : null;
+  RunFollow? follow;
+  if (more & _Flag.follow != 0) {
+    final runSet = set();
+    final followSet = set();
+    final b = bytes[i++];
+    follow = RunFollow._(
+      runSet,
+      runNonAscii: b & 1 != 0,
+      follow: followSet,
+      followNonAscii: b & 2 != 0,
+      followAtEnd: b & 4 != 0,
+    );
+  }
+  final prefix = more & _Flag.prefix != 0 ? string() : null;
+  Anchor? anchor;
+  if (more & _Flag.anchor != 0) {
+    final literal = string();
+    final min = uint();
+    anchor = (literal: literal, min: min, max: uint());
+  }
+  Stop? stop;
+  if (more & _Flag.stop != 0) {
+    final span = set();
+    final stopSet = set();
+    final b = bytes[i++];
+    stop = Stop._(
+      span,
+      spanNonAscii: b & 1 != 0,
+      stop: stopSet,
+      stopNonAscii: b & 2 != 0,
+      stopAtEnd: b & 4 != 0,
+    );
+  }
+  return (
+    FirstChars._(
+      ascii,
+      ignoreCase: flags & _Flag.ignoreCase != 0,
+      nonAscii: flags & _Flag.nonAscii != 0,
+      atEnd: flags & _Flag.atEnd != 0,
+      wordStart: flags & _Flag.wordStart != 0,
+      run: run,
+      follow: follow,
+      lineStart: flags & _Flag.lineStart != 0,
+      prefix: prefix,
+      literal: flags & _Flag.literal != 0,
+      anchor: anchor,
+      stop: stop,
+    ),
+    i,
+  );
 }

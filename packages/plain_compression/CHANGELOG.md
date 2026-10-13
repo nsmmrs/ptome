@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BrotliReader`: a Brotli stream expanded only as far as asked
+  (`readTo`), down to the command within a meta-block, then on from
+  there; `brotliDecode` expands it whole.
 - Faster checksums, same values: CRC-32 slices by 8 and Adler-32 reads
   typed bytes eight at a time.
 - A table-driven inflater (two-level tables, output written in place,

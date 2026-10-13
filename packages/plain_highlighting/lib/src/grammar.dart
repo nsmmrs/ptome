@@ -4,7 +4,8 @@
 /// builds every language, 1.6 MB of the executable).
 ///
 /// The grammars of all languages are one Brotli stream ([grammars], in
-/// base64), decoded the first time a language is used. A grammar is:
+/// base64, the most used languages first), expanded as far as the
+/// grammar of a language used ends. A grammar is:
 ///
 /// * the strings it uses: their count, then each one's UTF-8 length and
 ///   bytes; further on, a string is its index in this table (an optional
@@ -35,10 +36,28 @@ import 'package:plain_highlighting/src/languages/all.g.dart';
 import 'package:plain_highlighting/src/mode.dart';
 
 /// The language whose grammar starts at [at] in [grammars].
-Language readGrammar(int at) => _Reader(_grammars, at).language();
+Language readGrammar(int at) {
+  // (Expanded up to where the next grammar starts.)
+  final starts = _starts;
+  var low = 0;
+  var high = starts.length;
+  while (low < high) {
+    final mid = (low + high) >> 1;
+    if (starts[mid] <= at) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+  _stream.readTo(low < starts.length ? starts[low] : 1 << 40);
+  return _Reader(_stream.output, at).language();
+}
 
-/// [grammars], decoded.
-final Uint8List _grammars = brotliDecode(base64Decode(grammars));
+/// [grammars], expanded as far as asked.
+final BrotliReader _stream = BrotliReader(base64Decode(grammars));
+
+/// Where each grammar starts in the stream, in order.
+final List<int> _starts = [for (final (_, _, at) in allLanguages) at]..sort();
 
 /// The callbacks a grammar names, by index (the generator's order).
 const List<ModeCallback> _callbacks = [

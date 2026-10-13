@@ -5,7 +5,7 @@
 /// runs on the Dart VM and compiled to JavaScript alike.
 library;
 
-export 'src/brotli.dart' show brotliDecode;
+export 'src/brotli.dart' show BrotliReader, brotliDecode;
 export 'src/crc32.dart' show crc32;
 export 'src/flate.dart' show adler32, deflate, inflate, zlibDecode, zlibEncode;
 export 'src/gzip.dart' show gzipDecode, gzipEncode;

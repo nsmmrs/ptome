@@ -10,7 +10,33 @@ import 'package:plain_compression/src/flate.dart';
 /// Expands the Brotli stream [data]; throws a [FormatException] when it is
 /// malformed.
 Uint8List brotliDecode(List<int> data) =>
-    _Decoder(data is Uint8List ? data : Uint8List.fromList(data)).decode();
+    (BrotliReader(data)..readTo(_unbounded)).output;
+
+const int _unbounded = 0x7fffffffffff;
+
+/// A Brotli stream expanded as far as asked ([readTo]): what a reader of
+/// its start needs, without expanding the rest.
+final class BrotliReader {
+  /// A reader of the Brotli stream [data], nothing of it expanded yet.
+  new(List<int> data)
+    : _decoder = _Decoder(data is Uint8List ? data : Uint8List.fromList(data));
+
+  final _Decoder _decoder;
+
+  /// The bytes expanded so far (a view: [readTo] may replace it).
+  Uint8List get output =>
+      Uint8List.sublistView(_decoder._out, 0, _decoder._length);
+
+  /// How many bytes are expanded so far.
+  int get length => _decoder._length;
+
+  /// Whether the whole stream is expanded.
+  bool get done => _decoder._done;
+
+  /// Expands the stream until at least [length] bytes are out, or to its
+  /// end; throws a [FormatException] when it is malformed.
+  void readTo(int length) => _decoder.readTo(length);
+}
 
 /// The static dictionary, expanded the first time it is needed.
 final Uint8List _dictionary = zlibDecode(base64Decode(brotliDictionaryZlib));
@@ -331,6 +357,38 @@ final class _Blocks {
   int left = 1 << 24;
 }
 
+/// A meta-block being expanded: its header, and how many of its bytes
+/// are left.
+final class _MetaBlock {
+  new({
+    required this.left,
+    required this.literals,
+    required this.commands,
+    required this.distances,
+    required this.direct,
+    required this.postfixBits,
+    required this.modes,
+    required this.literalMap,
+    required this.distanceMap,
+    required this.literalCodes,
+    required this.commandCodes,
+    required this.distanceCodes,
+  });
+
+  int left;
+  final _Blocks literals;
+  final _Blocks commands;
+  final _Blocks distances;
+  final int direct;
+  final int postfixBits;
+  final Uint8List modes;
+  final Uint8List literalMap;
+  final Uint8List distanceMap;
+  final List<_Code> literalCodes;
+  final List<_Code> commandCodes;
+  final List<_Code> distanceCodes;
+}
+
 final class _Decoder {
   new(Uint8List data) : _bits = _Bits(data);
 
@@ -342,16 +400,37 @@ final class _Decoder {
   final Int32List _distances = Int32List.fromList([16, 15, 11, 4]);
   int _distanceAt = 3;
 
-  Uint8List decode() {
-    final windowBits = _windowBits();
-    final maxBackward = (1 << windowBits) - 16;
-    for (;;) {
+  /// The window's size less 16 (read with the stream's header), or -1
+  /// before it is read.
+  int _maxBackward = -1;
+
+  /// The meta-block being expanded, if any, and whether it is the last.
+  _MetaBlock? _meta;
+  bool _lastMeta = false;
+
+  /// Whether the whole stream is expanded.
+  bool _done = false;
+
+  /// Expands the stream until [target] bytes are out, or to its end.
+  void readTo(int target) {
+    if (_maxBackward < 0) _maxBackward = (1 << _windowBits()) - 16;
+    while (!_done && _length < target) {
+      if (_meta case final meta?) {
+        _commands(meta, target);
+        if (meta.left > 0) return;
+        _meta = null;
+        if (_lastMeta) _done = true;
+        continue;
+      }
       final last = _bits.read(1) == 1;
-      if (last && _bits.read(1) == 1) break;
+      if (last && _bits.read(1) == 1) {
+        _done = true;
+        break;
+      }
       final nibbles = _bits.read(2);
       if (nibbles == 3) {
         _skipMetadata();
-        if (last) break;
+        if (last) _done = true;
         continue;
       }
       final mlen = _readMetaLength(nibbles + 4);
@@ -367,10 +446,9 @@ final class _Decoder {
         _bits.byteOffset = at + mlen;
         continue;
       }
-      _metaBlock(mlen, maxBackward);
-      if (last) break;
+      _meta = _metaBlock(mlen);
+      _lastMeta = last;
     }
-    return Uint8List.sublistView(_out, 0, _length);
   }
 
   int _windowBits() {
@@ -581,13 +659,14 @@ final class _Decoder {
     return map;
   }
 
-  void _metaBlock(int mlen, int maxBackward) {
+  /// The header of a meta-block of [mlen] bytes: its blocks, context maps
+  /// and prefix codes.
+  _MetaBlock _metaBlock(int mlen) {
     final literals = _readBlocks();
     final commands = _readBlocks();
     final distances = _readBlocks();
     final postfixBits = _bits.read(2);
     final direct = _bits.read(4) << postfixBits;
-    final postfixMask = (1 << postfixBits) - 1;
     final modes = Uint8List(literals.types);
     for (var i = 0; i < modes.length; i++) {
       modes[i] = _bits.read(2);
@@ -606,11 +685,43 @@ final class _Decoder {
       for (var i = 0; i < distanceTrees; i++)
         _readCode(16 + direct + (48 << postfixBits)),
     ];
-
-    var left = mlen;
     _reserve(mlen);
+    return _MetaBlock(
+      left: mlen,
+      literals: literals,
+      commands: commands,
+      distances: distances,
+      direct: direct,
+      postfixBits: postfixBits,
+      modes: modes,
+      literalMap: literalMap,
+      distanceMap: distanceMap,
+      literalCodes: literalCodes,
+      commandCodes: commandCodes,
+      distanceCodes: distanceCodes,
+    );
+  }
+
+  /// Runs the commands of [meta] until it ends or [target] bytes are out.
+  void _commands(_MetaBlock meta, int target) {
+    final _MetaBlock(
+      :literals,
+      :commands,
+      :distances,
+      :direct,
+      :postfixBits,
+      :modes,
+      :literalMap,
+      :distanceMap,
+      :literalCodes,
+      :commandCodes,
+      :distanceCodes,
+    ) = meta;
+    final postfixMask = (1 << postfixBits) - 1;
+    final maxBackward = _maxBackward;
+    var left = meta.left;
     final out = _out;
-    while (left > 0) {
+    while (left > 0 && _length < target) {
       if (commands.left == 0) _switchBlock(commands);
       commands.left--;
       final command = commandCodes[commands.type].decode(_bits);
@@ -689,6 +800,7 @@ final class _Decoder {
       _length = end;
       left -= copy;
     }
+    meta.left = left;
   }
 
   int _distance(int code, int direct, int postfixBits, int postfixMask) {

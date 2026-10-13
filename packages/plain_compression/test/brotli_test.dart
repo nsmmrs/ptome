@@ -31,6 +31,27 @@ void main() {
       expect(brotliDecode(_read('test/brotli/words-x40-q1.br')), repeated);
     });
 
+    test('expanded as far as asked, then on from there', () {
+      final reader = BrotliReader(_read('test/brotli/words.txt.br'));
+      expect(reader.length, 0);
+      reader.readTo(100);
+      // (Whole commands: at least as far, not to the end.)
+      expect(reader.length, greaterThanOrEqualTo(100));
+      expect(reader.length, lessThan(words.length));
+      expect(reader.done, isFalse);
+      expect(reader.output, words.sublist(0, reader.length));
+      for (var target = 200; !reader.done; target += 97) {
+        reader.readTo(target);
+        expect(
+          reader.length,
+          reader.done ? words.length : greaterThanOrEqualTo(target),
+        );
+      }
+      expect(reader.output, words);
+      reader.readTo(1 << 40);
+      expect(reader.length, words.length);
+    });
+
     test('empty and one-byte streams', () {
       expect(brotliDecode([0x3f]), isEmpty);
       expect(brotliDecode([0x0f, 0x00, 0x80, 0x78, 0x03]), [0x78]);

@@ -11,6 +11,12 @@ enum ZipMethod
   static List<ZipMethod> values
   static ZipMethod deflated
   static ZipMethod stored
+final class BrotliReader
+  BrotliReader(List<int> data)
+  Uint8List output
+  bool done
+  int length
+  void readTo(int length)
 final class ZipEntry
   String name
   Uint8List bytes

@@ -58,6 +58,8 @@ tool/vendor.sh --check             # vendor/ matches the pinned release
 tool/vendor_styles.sh              # re-vendor and embed the themes
 cd tool/generate && npm ci && cd ../..
 node tool/generate/generate.mjs    # regenerate lib/src/languages
+dart format lib/src/languages
+dart run tool/generate_first_chars.dart  # then the rules' first characters
 node tool/generate/reference.mjs   # regenerate test/reference/detect.json
 ```
 

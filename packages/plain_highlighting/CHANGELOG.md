@@ -2,6 +2,16 @@
 
 ## 0.1.0 (unreleased)
 
+- A faster cold start, with the same output. The first characters and
+  group counts of every language's rules are worked out when the
+  package is generated (`tool/generate_first_chars.dart`), not the first
+  time a language is used. Keywords compile without allocating per word.
+  The grammar stream holds the most used languages first and is expanded
+  only as far as the grammar needed ends. The first highlighted HTML
+  block costs 6 ms instead of 11, highlighting Hypermedia Systems'
+  listings in a new process 72 ms instead of 110 (its HTTP responses
+  auto-detect their language among all of them), and the whole book's
+  HTML conversion 191 ms instead of 221.
 - Renamed from `hilite` to `plain_highlighting`, and moved with its history
   into the ptome pub workspace (github.com/nsmmrs/ptome,
   `packages/plain_highlighting`; ptome's ADR-0018). The API is
