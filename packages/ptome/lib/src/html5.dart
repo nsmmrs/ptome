@@ -457,6 +457,11 @@ class Html5Converter extends BuiltInConverter {
       );
     }
 
+    // A units document: its note entries and asides beside the text.
+    if (node.hasAttr('units')) {
+      result.add(htmlUnitsStyle(asides: htmlNoteAsides(node).isNotEmpty));
+    }
+
     final docinfoContent = node.docinfo();
     if (docinfoContent.isNotEmpty) {
       result.add(docinfoContent);
@@ -598,11 +603,13 @@ class Html5Converter extends BuiltInConverter {
       '<div id="content"$maxWidthAttr>\n${_s(node.content())}\n</div>',
     );
 
-    if (node.hasFootnotes && !node.hasAttr('nofootnotes')) {
+    final footnotes = _listedFootnotes(node);
+    if (footnotes.isNotEmpty && !node.hasAttr('nofootnotes')) {
       result.add('<div id="footnotes"$maxWidthAttr>\n<hr$slash>');
-      for (final footnote in node.footnotes) {
+      for (final footnote in footnotes) {
         result.add(
-          '<div class="footnote" id="_footnotedef_${_s(footnote.index)}">\n'
+          '<div class="footnote" id="_footnotedef_${_s(footnote.index)}"'
+          '${_streamAttr(footnote)}>\n'
           '${_footnoteLabel(node, footnote)}${_s(footnote.text)}\n'
           '</div>',
         );
@@ -741,11 +748,13 @@ class Html5Converter extends BuiltInConverter {
 
     result.add(_s(node.content()));
 
-    if (node.hasFootnotes && !node.hasAttr('nofootnotes')) {
+    final footnotes = _listedFootnotes(node);
+    if (footnotes.isNotEmpty && !node.hasAttr('nofootnotes')) {
       result.add('<div id="footnotes">\n<hr$_voidElementSlash>');
-      for (final footnote in node.footnotes) {
+      for (final footnote in footnotes) {
         result.add(
-          '<div class="footnote" id="_footnotedef_${_s(footnote.index)}">\n'
+          '<div class="footnote" id="_footnotedef_${_s(footnote.index)}"'
+          '${_streamAttr(footnote)}>\n'
           '${_footnoteLabel(node, footnote)}${_s(footnote.text)}\n'
           '</div>',
         );
@@ -2270,6 +2279,19 @@ class Html5Converter extends BuiltInConverter {
     return '${_s(node.attributes['guard'])}$marker';
   }
 
+  /// [document]'s footnotes listed at its end: those of a note stream set
+  /// beside the text (`:note-asides:`) are set at their calls.
+  static List<Footnote> _listedFootnotes(Document document) => [
+    for (final footnote in document.footnotes)
+      if (htmlAsideStream(document, footnote) == null) footnote,
+  ];
+
+  /// A units footnote's stream, as a `data-stream` attribute.
+  static String _streamAttr(Footnote footnote) => switch (footnote.stream) {
+    final stream? => ' data-stream="${_s(stream)}"',
+    null => '',
+  };
+
   /// The label before footnote [footnote] in the list of [document]'s
   /// footnotes: `footnote-label-template` (ADR-0010), `1. ` by default, the
   /// number a link back to the reference.
@@ -2304,7 +2326,17 @@ class Html5Converter extends BuiltInConverter {
         (n) =>
             '<a id="_footnoteref_${_s(index)}" class="footnote" href="#_footnotedef_${_s(index)}" title="View footnote.">$n</a>',
       );
-      return '<sup class="footnote"$idAttr>$marker</sup>';
+      final call = '<sup class="footnote"$idAttr>$marker</sup>';
+      // A note of a stream set beside the text: here, after its call.
+      if (node.document case final Document document) {
+        for (final footnote in document.footnotes) {
+          if (footnote.index == index &&
+              htmlAsideStream(document, footnote) != null) {
+            return '$call${htmlNoteAside(footnote, _s(footnote.text))}';
+          }
+        }
+      }
+      return call;
     }
     if (node.type == 'xref') {
       return '<sup class="footnoteref red" title="Unresolved footnote reference.">[${_s(node.text)}]</sup>';

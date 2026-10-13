@@ -66,8 +66,7 @@ void main() {
         out,
         contains(
           '<span id="v-exo-34-6" class="unit" data-scheme="bible" '
-          'data-level="verse" data-unit="Exod 34:6"><sup>6</sup></span>'
-          '\u00a0',
+          'data-level="verse" data-unit="Exod 34:6"><sup>6</sup>\u00a0</span>',
         ),
       );
       // The first verse of a chapter has its anchor but no number.
@@ -201,8 +200,8 @@ void main() {
         out,
         contains(
           '<span id="v-mat-5-4" class="unit" data-scheme="bible" '
-          'data-level="verse" data-unit="Matt 5:4"><sup>4</sup></span>'
-          '\u00a0<span class="wj">',
+          'data-level="verse" data-unit="Matt 5:4"><sup>4</sup>\u00a0</span>'
+          '<span class="wj">',
         ),
       );
     });

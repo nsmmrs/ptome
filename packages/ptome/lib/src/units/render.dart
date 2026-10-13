@@ -607,6 +607,10 @@ final class _Renderer {
         );
       }
     }
+    // (What follows the label is the mark's: in HTML, inside its span.)
+    if (parts.isNotEmpty && keepAfter && look.labelAfter.isNotEmpty) {
+      parts.add(PartAtom(look.labelAfter, kind: PartKind.label, unit: u));
+    }
     final anchor = !hidden && !anchored && look.anchor;
     if (anchor) _register(node, u.id, u.reftext);
     if (anchor || parts.isNotEmpty) {
@@ -618,9 +622,6 @@ final class _Renderer {
           parts: parts,
         ),
       );
-    }
-    if (parts.isNotEmpty && keepAfter && look.labelAfter.isNotEmpty) {
-      out.add(PartAtom(look.labelAfter, kind: PartKind.label, unit: u));
     }
     if (look.indent case final indent?) {
       final text = render(indent, ctx);

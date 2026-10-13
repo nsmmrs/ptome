@@ -1,0 +1,11 @@
+= Asides
+:units: bible, kjv
+:excerpt:
+:doctype: book
+:note-asides: tn
+
+== @EXO
+
+=== @34
+
+@6 And the LORD passed by before him,note:x[<<Joel 2:13>>] and proclaimed,note:tn[Or, _cried_.] The LORD God, merciful.footnote:[A footnote of the document.]

@@ -82,3 +82,27 @@ it needs for a whole Bible:
 7. **Time**: 2.3 s for four chapters; a whole Bible of 1,189 chapters, at
    that rate, about 11 minutes, so the layout of the books in parallel
    (each book from a page boundary) is worth having.
+
+## In HTML and EPUB
+
+The same source, reflowed (FEAT-bzmqzc): the study edition sets
+`:note-asides: sn`.
+
+```sh
+ptome study.adoc                # HTML
+ptome -b epub3 study.adoc       # EPUB
+```
+
+- **HTML, wide screen:** the text in its column; the study notes in a
+  column on its right, each at the line of its call; the cross-references
+  in a narrow column on its left, under "Chapter n"; the translators'
+  notes as footnotes at the end. A reference to a passage the excerpt
+  holds (`Gen 1:18`) is a link to it; the rest are text.
+- **HTML, phone:** each verse's cross-references a small line above it;
+  a study note opens under its line when its call is followed.
+- **EPUB:** the study and translators' notes are footnote popups; the
+  cross-references as on a phone.
+
+No pagination problem here, so the contrast with the PDF is the floats:
+the notes column runs as long as the notes do, and where they are longer
+than their verses they lag, and the cross-references column with them.

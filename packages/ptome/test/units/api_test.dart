@@ -109,11 +109,20 @@ void main() {
     expect(order.code, DiagnosticCode.unitLabel);
     expect(order.severity, Severity.warning);
     expect((order.location?.line, order.location?.column), (15, 1));
-    expect(
-      doc.diagnostics
-          .where((d) => d.code == DiagnosticCode.unitReference)
-          .map((d) => d.message),
-      contains('reference "Joel 2:13" not found'),
-    );
   });
+
+  test(
+    'an excerpt: an address it lacks is text, a typo still a problem',
+    () async {
+      final doc = await ptome.parseFile(
+        '$_fixtures/bible/excerpt-references.adoc',
+      );
+      expect(
+        doc.diagnostics
+            .where((d) => d.code == DiagnosticCode.unitReference)
+            .map((d) => d.message),
+        ['reference "Jeol 2:13" not found'],
+      );
+    },
+  );
 }

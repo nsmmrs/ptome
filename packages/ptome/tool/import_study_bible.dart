@@ -126,6 +126,8 @@ void main(List<String> args) {
     ..writeln(':doctype: book')
     ..writeln(':sectids!:')
     ..writeln(':hyphens: en')
+    // (In HTML, the study notes beside the text.)
+    ..writeln(':note-asides: sn')
     ..writeln(':reproducible:')
     ..writeln()
     ..writeln(
@@ -369,7 +371,7 @@ void _book(
   // notes on passages it starts.
   String endOf(_Verse at) {
     final parts = <String>[];
-    if (xrefs[at] case final refs?) parts.add('note:x[${refs.join('; ')}]');
+    if (xrefs[at] case final refs?) parts.add('note:x[<<${refs.join('; ')}>>]');
     for (final note in notes) {
       if (_start(note.refs) == at) parts.add(_studyNote(note));
     }

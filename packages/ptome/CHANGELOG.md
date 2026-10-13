@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- HTML and EPUB: a units document's notes beside its text
+  (FEAT-bzmqzc). `:note-asides: sn` sets a note stream's footnotes at
+  their calls: in a column on the right of the text on a wide screen, the
+  entries (cross-references) in one on the left; on a phone, a note opens
+  under its line when its call is followed, and the entries are a small
+  line above their verse. In EPUB every stream's notes are footnote
+  popups, with their `data-stream`. The study edition's cross-references
+  are links (to the passages the excerpt holds), and an `:excerpt:` no
+  longer warns about the addresses it leaves out. A unit's `label-after`
+  is now inside its mark (`<sup>6</sup>&#160;</span>`).
 - PDF: an image file drawn many times (a logo in the running content, an
   SVG's raster image on each page) is embedded once (BUG-h9yc30): the
   chronicles example drops from 296 to 187 KB.

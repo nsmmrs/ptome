@@ -159,8 +159,12 @@ sealed class RefPart {
 
 /// A piece that links nowhere: a separator, or a passage not found.
 final class RefText extends RefPart {
-  /// A piece of [text] alone.
-  const new(super.text);
+  /// A piece of [text] alone; [address] when it is an address of a scheme
+  /// that no passage has.
+  const new(super.text, {this.address = false});
+
+  /// Whether the text is an address of a scheme, not found.
+  final bool address;
 }
 
 /// A cited passage and what it links to.
@@ -1143,12 +1147,16 @@ final class Engine {
             _ => const <Xref>[],
           },
     ];
+    // (An excerpt holds a few passages of its work: an address of the
+    // rest is text, not a mistake.)
+    final excerpt = doc.attributes.containsKey('excerpt');
     for (final x in xrefs) {
       final parts = resolveRef(x.content, a.contextOf[x]);
       if (parts == null) continue; // an ordinary xref
       a.refs[x] = RefUse(x, parts);
       for (final part in parts) {
         if (part is RefText &&
+            !(excerpt && part.address) &&
             part.text.trim().isNotEmpty &&
             !RegExp(r'^[\s;,]+$').hasMatch(part.text)) {
           a.warn(
@@ -1229,6 +1237,7 @@ final class Engine {
       Unit? found;
       List<Label?>? labels;
       Scheme? scheme;
+      var address = false;
       // This document first; then, unnamed, the works it cites (a
       // catechism's proof texts in the Bible).
       final targets = work != null ? [work] : [a, ...works.values.toSet()];
@@ -1242,6 +1251,7 @@ final class Engine {
           }
           // After a comma, prefer the level the last item ended at; after a
           // semicolon, the outermost; for the first, any that resolves.
+          if (parsed.isNotEmpty) address = true;
           final ordered = [...parsed]
             ..sort((x, y) {
               if (separator.contains(',') && previous != null) {
@@ -1282,7 +1292,7 @@ final class Engine {
         if (found != null) break;
       }
       if (found == null) {
-        out.add(RefText(raw));
+        out.add(RefText(raw, address: address));
         continue;
       }
       previous = labels;

@@ -1,0 +1,9 @@
+= Excerpt
+:units: bible
+:excerpt:
+
+== @EXO
+
+=== @34
+
+@6 Merciful.note:x[<<Joel 2:13; Jeol 2:13>>]

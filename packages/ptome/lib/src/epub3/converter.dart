@@ -717,7 +717,8 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<title>$chapterTitle</title>\n'
         '$_stylesheetLinks\n'
         '$iconCssHead${_codeOverflowCss(document)}'
-        '${_hyphensCss(document)}$_readingSystemScript';
+        '${_hyphensCss(document)}${_unitsCss(document)}'
+        '$_readingSystemScript';
     final lines = <String>[head];
 
     final syntaxHl = document.syntaxHighlighter;
@@ -764,8 +765,12 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       _footnotes.addAll(footnotes);
       lines.add('<footer class="chapter-footer">\n<div class="footnotes">');
       for (final footnote in footnotes) {
+        final stream = switch (footnote.stream) {
+          final name? => ' data-stream="$name"',
+          null => '',
+        };
         lines.add(
-          '<aside id="note-${footnote.index}" epub:type="footnote">\n'
+          '<aside id="note-${footnote.index}" epub:type="footnote"$stream>\n'
           '<p>${_noteLabel(document, footnote)}${footnote.text}</p>\n'
           '</aside>',
         );
@@ -1584,6 +1589,12 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       ? '<style>\nbody p, li, dd { -webkit-hyphens: auto; hyphens: auto; }\n'
             '</style>\n'
       : '';
+
+  /// A units document: its note entries (the cross-references) each in a
+  /// small line of its own above its unit's text; its footnotes, in every
+  /// stream, are the reading system's popups.
+  static String _unitsCss(Document document) =>
+      document.hasAttr('units') ? '<style>\n$epubUnitsStyle</style>\n' : '';
 
   /// With `ebook-code-overflow=scroll` (Ptome's), code lines keep
   /// their length and scroll sideways rather than wrap (the stylesheet's

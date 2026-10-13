@@ -95,6 +95,10 @@ line).
   - ranges;
   - other works (`:works: kjv=../bible/kjv/kjv.adoc`).
 
+  In an `:excerpt:` (a few passages of a work), an address the document
+  doesn't hold is text without a warning; text that is no address still
+  warns.
+
   `<<address,text>>` shows other text. `<<"term">>` cites a defined term.
 - **Note streams.** `note:STREAM[…]` uses a stream the schemes declare,
   with its callers, when they restart, and where its notes go:
@@ -158,7 +162,21 @@ renders them in its own way:
   (`<span class="note-call" data-stream="x">…</span>`) and the entry its
   unit's notes are gathered in (`<span class="note-entry xref"
   data-stream="x">…</span>`). Footnotes of a stream say which
-  (`stream`, `caller`).
+  (`stream`, `caller`; in HTML, `data-stream` on the footnote).
+- **Notes beside the text** (HTML): `:note-asides: sn` sets the footnotes
+  of the streams it names at their calls, not at the end, each a
+  `<span class="note-aside" id="_footnotedef_3" data-stream="sn"
+  role="note">` after its call. A units document's own style puts them
+  in a column on the right of the text on a wide screen (75em and up), the
+  entries in one on the left; on a narrow one, a note opens under its line
+  when its call is followed (`:target`), and each unit's entries are a
+  small line of their own above its text, the unit's number theirs. (Both
+  columns are floats: an entry starts no higher than the last note that
+  started before it, so where the notes run long the entries move down
+  with them.)
+- **EPUB**: every footnote, of any stream, is an `<aside
+  epub:type="footnote">` with its `data-stream`, which reading systems show
+  as a popup; the entries are styled as on a narrow screen.
 - **Units of blocks** (block `unit`): a provision, a question or a stanza
   holds its blocks, nested as the units are; text after `@^` goes back to
   the unit around the ones it closes.
