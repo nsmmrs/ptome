@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BaselineGrid.raiseFirst`: content at a region's top whose first
+  baseline falls below the grid's first line, but above the next, goes
+  up to the first, its ascent reaching above the region's top: a fixed
+  first-baseline offset, whatever the face.
 - Right-to-left paragraphs: `Paragraph.rightToLeft` sets a paragraph's
   lines from the right, its indents there; each line's text is put in
   visual order by the Unicode Bidirectional Algorithm, its runs split

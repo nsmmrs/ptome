@@ -1,6 +1,8 @@
 # EU legislation as the Official Journal's L series has set it since
-# 1 April 2014, measured (TASK-d0359h): one column, the text 9.6 on
-# 10.5; an article's number centred and italic on a line of its own,
+# 1 April 2014, measured (TASK-d0359h; its baselines and edges again
+# from Reg. 326/2014, TASK-66c2mr): one column from 67.4 to 529.8 pt,
+# the text 9.6 on 10.55, the running head's baseline 57.5 pt down; an
+# article's number centred and italic on a line of its own,
 # its title bold under it (the `[.number]` part of a unit's title:
 # `title: "[.number]#Article {{article}}# {{title}}"` in the scheme);
 # recitals and paragraphs numbered. A4. The running head names the act (the document's title),
@@ -15,14 +17,15 @@ tokens:
   size:
     text: { print: 9.6pt, screen: 18px }
     headings: { print: [14pt, 11pt, 9.6pt, 9.6pt, 9.6pt, 9.6pt] }
-  leading: { print: 1.09, screen: 1.5 }
+  leading: { print: 1.099, screen: 1.5 }
   measure: { screen: 38em }
   paragraph: { signal: space, space: { print: 5pt } }
   align: { print: justify }
   hyphenate: { print: true }
   color: { ink: '#000000', link: '#000000' }
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
-  page: { size: A4, margin: [22mm, 24mm, 20mm, 24mm] }
+  # (The column from 67.4 to 529.8 pt across, as measured.)
+  page: { size: A4, margin: [22mm, 65.5pt, 20mm, 67.4pt] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 9pt }, space-after: { print: 5pt }, keep-with-next: true }
   # Articles: the number centred and italic over the title in bold.
@@ -41,10 +44,12 @@ pdf:
     text_align: center
     title: { font_color: '000000', font_size: 14 }
   running_content_units: article
+  # (The running head 9.6 point, its baseline 57.5 pt down the page.)
   header:
-    height: 16mm
+    height: 60pt
     vertical_align: bottom
-    font_size: 8
+    padding: 0
+    font_size: 9.6
     recto:
       left: { content: '{document-title}' }
       right: { content: '{page-number}' }

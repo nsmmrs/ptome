@@ -262,6 +262,10 @@ final class _Compiler {
     _item = 'tokens.leading';
     if (tokens.leading?.of(Medium.print) case final leading?) {
       _set('base_line_height', _number(_num(leading)));
+      // (The lines that far apart whatever the face's height: a line
+      // height alone can't set them closer than the face is tall, as 10.5
+      // on 12.6 in a face 1.3 em tall.)
+      _set('base_line_pitch', _string('${_trim(leading)}em'));
     }
     _item = 'tokens.paragraph';
     if (tokens.paragraph case final paragraph?) {
@@ -422,6 +426,7 @@ final class _Compiler {
     if (style.leading case final leading?) {
       from('leading');
       key('line_height', _number(leading));
+      key('line_pitch', _string('${_trim(leading.toDouble())}em'));
     }
     from('space-before');
     key('margin_top', style.spaceBefore?.let(_length));

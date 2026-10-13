@@ -3,7 +3,7 @@
 # BILLS-118hr2ih) and the research in doc/typography.md: Letter paper,
 # the text 14 point on a 26 point grid, every line numbered at the left
 # from 1 on each page (25 a page), the numbers set flush right 10 pt
-# from the text; a 28 pc measure from 150 pt in; each paragraph's first
+# from the text; the text from 150 to 489.7 pt across; each paragraph's first
 # line indented 2 em, a subsection's paragraphs (the units `paragraph`,
 # `subparagraph`, `clause`, `subclause`) 2 em further each, their lines
 # after the first back one step; sections headed in New Century
@@ -32,14 +32,17 @@ tokens:
   color: { ink: '#000000', link: '#000000' }
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
   # The first baseline 85 pt down, 25 lines 26 pt apart; the text from
-  # 150 to 486 pt across.
-  page: { size: Letter, margin: [72pt, 126pt, 74pt, 150pt] }
+  # 150 to 489.7 pt across (S. 4's baselines and edges, measured).
+  page: { size: Letter, margin: [72pt, 122.3pt, 74pt, 150pt] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 0pt }, space-after: { print: 0pt }, keep-with-next: true }
   title: { font: display, color: ink }
   link: { color: ink }
 pdf:
   page_baseline_grid: 26
+  # (The first baseline 85 pt down the page, 13 below the text's top,
+  # whatever the face: 25 lines, the last 83 pt above the foot.)
+  page_baseline_grid_offset: 13
   # (Lines 26 pt apart whatever the face: the grid's step.)
   base_line_pitch: 26
   heading:
@@ -62,10 +65,13 @@ pdf:
     subparagraph: { margin_left: 28 }
     clause: { margin_left: 28 }
     subclause: { margin_left: 28 }
+  # (The page number 14 point, its baseline 61 pt down the page, centred
+  # on 308 pt across.)
   header:
     height: 72pt
-    vertical_align: middle
-    font_size: 10
+    vertical_align: bottom
+    padding: [0, 24, 8.8, 0]
+    font_size: 14
     recto: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
   role:

@@ -79,9 +79,12 @@ pdf:
   header:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  # (Its baseline 42.75 pt above the page's foot, 9 point.)
   footer:
-    height: 0.6in
-    font_size: 8.5
+    height: 0.875in
+    vertical_align: bottom
+    padding: [0, 0, 40.4, 0]
+    font_size: 9
     font_family: Fira Sans Condensed
     recto:
       left: { content: '' }

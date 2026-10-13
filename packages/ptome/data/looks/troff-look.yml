@@ -59,7 +59,7 @@ pdf:
   header:
     height: 0.76in
     vertical_align: bottom
-    padding: [0, 0, 0, 0]
+    padding: [0, 0, 1.1, 0]
     font_size: 9
     text_transform: uppercase
     recto:

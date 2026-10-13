@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `ImportedPage.content`, a page's content read back (its streams
+  decoded and joined), is public: what a test reads to check where text
+  was set.
 - A glyph's x and y offsets are drawn (an Arabic or Hebrew mark on its
   base): the pen moved in the `TJ` array and a run of raised glyphs given
   its own rise. A single-byte font's runs still draw glyphs at their pen

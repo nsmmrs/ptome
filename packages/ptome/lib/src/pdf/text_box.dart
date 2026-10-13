@@ -250,6 +250,7 @@ final class TextContext {
     this.labels,
     this.capsTracking = 0,
     this.expansion = 0,
+    this.wordSpace = 1,
     this.maxHyphenRun,
     this.lastLineMin = 0,
     LoggerBase? logger,
@@ -258,6 +259,10 @@ final class TextContext {
   /// How much wider or narrower the letters of a justified line may be set
   /// (font expansion: `base_font_expansion`, modern engine).
   final double expansion;
+
+  /// The width of the spaces between words in the engine's paragraphs, as
+  /// a share of the face's own (`base_word_spacing`: a dictionary's 72%).
+  final double wordSpace;
 
   /// The most hyphenated lines in a row (`base_hyphenate_limit_lines`).
   final int? maxHyphenRun;
@@ -621,6 +626,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             font.pdf,
             format.size,
             characterSpacing: _state.characterSpacing + format.tracking,
+            wordSpacing: _context.wordSpace == 1
+                ? 0
+                : (_context.wordSpace - 1) *
+                      TextStyle(font.pdf, format.size).measure(' '),
             rise: rise,
             kerning: _state.kerning,
             ligatures: font.ligates,

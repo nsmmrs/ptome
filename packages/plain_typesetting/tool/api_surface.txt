@@ -213,8 +213,9 @@ final class AnchorPosition
 final class AutoColumnWidth extends ColumnWidth
   AutoColumnWidth()
 final class BaselineGrid
-  BaselineGrid(double step, {double offset = 0, bool fromFirstLine = false})
+  BaselineGrid(double step, {double offset = 0, bool fromFirstLine = false, bool raiseFirst = false})
   bool fromFirstLine
+  bool raiseFirst
   double offset
   double shift(double baseline)
   double step

@@ -10,6 +10,33 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a look's line spacing is exact. `leading: 1.2` sets 10.5 point
+  text on 12.6 whatever the face (a look's `leading` now compiles to
+  `base_line_pitch` and `<category>_line_pitch` as well as the line
+  height, which couldn't set lines closer than the face is tall).
+  Visible change: the house look's body text was 10.5 on 18.5 (176%),
+  against doc/style.md's 120-145%; it is now 10.5 on 14.7 (1.4), as the
+  look says, and its headings and listings follow theirs.
+- Look studies (TASK-66c2mr, `test/look/studies_test.dart`): the
+  publisher recipes the looks follow, re-measured from the publishers'
+  PDFs (baselines from the glyphs' origins), rendered and checked within
+  stated tolerances: the US bill, the EU Official Journal, the O'Reilly
+  animal book, the Bell Labs troff books, the Supreme Court's booklet, a
+  B-format paperback, a UK Act and a dictionary. The looks corrected to
+  fit:
+  - us-bill: GPO's grid, the first baseline 85 pt down and 25 lines to
+    83 pt above the foot (pages held 22-24 lines); the text to 489.7 pt;
+    the page number in 14 point, its baseline at 731.
+  - eu-journal: the column from 67.4 to 529.8 pt, 9.6 on 10.55, the
+    running head in 9.6 point at 784.4.
+  - tech-book: the running foot in 9 point at 42.75.
+  - troff: the running head 32 pt above the first line.
+  - scotus-booklet: 12 on 14 exactly.
+- PDF theme keys: `page_baseline_grid_offset` puts the baseline grid's
+  first line that far below the top of the page's text, whatever the
+  face (a fixed first-baseline offset). `base_word_spacing` sets the
+  spaces between words in the engine's paragraphs as a share of the
+  face's (a dictionary's 72%).
 - PDF: right-to-left documents (`:dir: rtl`): paragraphs, headings,
   captions and cells set from the right, the theme's alignments
   mirrored, the table of contents mirrored; Arabic and Hebrew shaped by

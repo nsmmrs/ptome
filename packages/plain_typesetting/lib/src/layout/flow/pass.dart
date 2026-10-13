@@ -1717,6 +1717,15 @@ final class _Pass {
     final at = _yShift + top + baseline;
     // (The region's first line starts its grid, when it does.)
     final origin = grid.fromFirstLine ? _gridOrigin ??= at : grid.offset;
+    // (Content at the region's top, below the grid's first line but above
+    // the next, up to the first.)
+    if (grid.raiseFirst &&
+        line == null &&
+        _yShift + top <= 1e-6 &&
+        at > origin &&
+        at - origin < grid.step) {
+      return origin - at;
+    }
     final shift = grid._shift(at, origin);
     // (A box that goes on a line of the grid, down to it.)
     if (line != null && line > 0) {

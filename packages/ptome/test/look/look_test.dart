@@ -38,13 +38,24 @@ void main() {
       'test/look/ptome-theme-before-looks.yml',
     );
     expect(warnings, isEmpty);
-    final keys = {...compiled.keys, ...before.keys};
+    // (Besides the line spacings as exact pitches, which the theme only
+    // reached in faces shorter than them.)
+    bool pitch(String key) => key.endsWith('_line_pitch');
+    final keys = {...compiled.keys, ...before.keys}.where((k) => !pitch(k));
     final differences = [
       for (final key in keys)
         if ('${compiled[key]}' != '${before[key]}')
           '$key: ${compiled[key]}, was ${before[key]}',
     ];
     expect(differences, isEmpty, reason: differences.join('\n'));
+    expect(
+      {for (final key in compiled.keys.where(pitch)) key: '${compiled[key]}'},
+      {
+        'base_line_pitch': 'ThemeString(1.4em)',
+        'heading_line_pitch': 'ThemeString(1.2em)',
+        'code_line_pitch': 'ThemeString(1.35em)',
+      },
+    );
   });
 
   test('a look extends another: later values win, null removes one', () {

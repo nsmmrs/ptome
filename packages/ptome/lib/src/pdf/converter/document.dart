@@ -59,6 +59,18 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (`base_word_spacing`: the spaces between words in the engine's
+      // paragraphs as a fraction or a percentage of the face's, a
+      // dictionary's 72%.)
+      wordSpace: asciidoctorCompat(document, CompatFormat.pdf)
+          ? 1
+          : switch (_theme.value('base_word_spacing')) {
+              ThemeNumber(:final value) when value > 0 => value.toDouble(),
+              ThemeString(:final value) when value.trim().endsWith('%') =>
+                (double.tryParse(value.trim().replaceFirst('%', '')) ?? 100) /
+                    100,
+              _ => 1,
+            },
       // (`base_last_line_min_width`: a fraction or a percentage of the
       // measure a paragraph's last line fills at least.)
       lastLineMin: asciidoctorCompat(document, CompatFormat.pdf)

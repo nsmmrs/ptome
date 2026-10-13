@@ -912,7 +912,20 @@ final class NoteStream {
 final class BaselineGrid {
   /// Lines [step] apart, the first [offset] down (or, [fromFirstLine],
   /// where each region's first line is).
-  const new(this.step, {this.offset = 0, this.fromFirstLine = false});
+  const new(
+    this.step, {
+    this.offset = 0,
+    this.fromFirstLine = false,
+    this.raiseFirst = false,
+  });
+
+  /// Whether content at a region's top whose first baseline falls between
+  /// the grid's first line and the next goes up to the first, its ascent
+  /// reaching above the region's top: the first baseline at [offset]
+  /// whatever the face (a fixed first-baseline offset, as a US bill's
+  /// first line is 88 pt down the page). Otherwise content only ever
+  /// goes down to the grid.
+  final bool raiseFirst;
 
   /// Whether each region's grid starts at its first line's baseline,
   /// wherever that is, rather than at [offset]: a US bill's page that

@@ -21,7 +21,7 @@ tokens:
   size:
     text: { print: 12pt, screen: 18px }
     headings: { print: [14pt, 12pt, 12pt, 12pt, 12pt, 12pt] }
-  leading: { print: 1.17, screen: 1.5 }
+  leading: { print: 1.1667, screen: 1.5 }
   measure: { screen: 34em }
   paragraph: { signal: indent, indent: { print: 2em } }
   align: { print: justify }

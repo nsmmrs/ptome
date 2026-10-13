@@ -292,8 +292,10 @@ css: |
 ''',
   'eu-journal':
       r'''# EU legislation as the Official Journal's L series has set it since
-# 1 April 2014, measured (TASK-d0359h): one column, the text 9.6 on
-# 10.5; an article's number centred and italic on a line of its own,
+# 1 April 2014, measured (TASK-d0359h; its baselines and edges again
+# from Reg. 326/2014, TASK-66c2mr): one column from 67.4 to 529.8 pt,
+# the text 9.6 on 10.55, the running head's baseline 57.5 pt down; an
+# article's number centred and italic on a line of its own,
 # its title bold under it (the `[.number]` part of a unit's title:
 # `title: "[.number]#Article {{article}}# {{title}}"` in the scheme);
 # recitals and paragraphs numbered. A4. The running head names the act (the document's title),
@@ -308,14 +310,15 @@ tokens:
   size:
     text: { print: 9.6pt, screen: 18px }
     headings: { print: [14pt, 11pt, 9.6pt, 9.6pt, 9.6pt, 9.6pt] }
-  leading: { print: 1.09, screen: 1.5 }
+  leading: { print: 1.099, screen: 1.5 }
   measure: { screen: 38em }
   paragraph: { signal: space, space: { print: 5pt } }
   align: { print: justify }
   hyphenate: { print: true }
   color: { ink: '#000000', link: '#000000' }
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
-  page: { size: A4, margin: [22mm, 24mm, 20mm, 24mm] }
+  # (The column from 67.4 to 529.8 pt across, as measured.)
+  page: { size: A4, margin: [22mm, 65.5pt, 20mm, 67.4pt] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 9pt }, space-after: { print: 5pt }, keep-with-next: true }
   # Articles: the number centred and italic over the title in bold.
@@ -334,10 +337,12 @@ pdf:
     text_align: center
     title: { font_color: '000000', font_size: 14 }
   running_content_units: article
+  # (The running head 9.6 point, its baseline 57.5 pt down the page.)
   header:
-    height: 16mm
+    height: 60pt
     vertical_align: bottom
-    font_size: 8
+    padding: 0
+    font_size: 9.6
     recto:
       left: { content: '{document-title}' }
       right: { content: '{page-number}' }
@@ -1226,7 +1231,7 @@ tokens:
   size:
     text: { print: 12pt, screen: 18px }
     headings: { print: [14pt, 12pt, 12pt, 12pt, 12pt, 12pt] }
-  leading: { print: 1.17, screen: 1.5 }
+  leading: { print: 1.1667, screen: 1.5 }
   measure: { screen: 34em }
   paragraph: { signal: indent, indent: { print: 2em } }
   align: { print: justify }
@@ -1338,9 +1343,12 @@ pdf:
   header:
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  # (Its baseline 42.75 pt above the page's foot, 9 point.)
   footer:
-    height: 0.6in
-    font_size: 8.5
+    height: 0.875in
+    vertical_align: bottom
+    padding: [0, 0, 40.4, 0]
+    font_size: 9
     font_family: Fira Sans Condensed
     recto:
       left: { content: '' }
@@ -1521,7 +1529,7 @@ pdf:
   header:
     height: 0.76in
     vertical_align: bottom
-    padding: [0, 0, 0, 0]
+    padding: [0, 0, 1.1, 0]
     font_size: 9
     text_transform: uppercase
     recto:
@@ -1668,7 +1676,7 @@ css: |
 # BILLS-118hr2ih) and the research in doc/typography.md: Letter paper,
 # the text 14 point on a 26 point grid, every line numbered at the left
 # from 1 on each page (25 a page), the numbers set flush right 10 pt
-# from the text; a 28 pc measure from 150 pt in; each paragraph's first
+# from the text; the text from 150 to 489.7 pt across; each paragraph's first
 # line indented 2 em, a subsection's paragraphs (the units `paragraph`,
 # `subparagraph`, `clause`, `subclause`) 2 em further each, their lines
 # after the first back one step; sections headed in New Century
@@ -1697,14 +1705,17 @@ tokens:
   color: { ink: '#000000', link: '#000000' }
   rule: { hairline: { print: 0.5pt, screen: 1px, ebook: 1px } }
   # The first baseline 85 pt down, 25 lines 26 pt apart; the text from
-  # 150 to 486 pt across.
-  page: { size: Letter, margin: [72pt, 126pt, 74pt, 150pt] }
+  # 150 to 489.7 pt across (S. 4's baselines and edges, measured).
+  page: { size: Letter, margin: [72pt, 122.3pt, 74pt, 150pt] }
 styles:
   heading: { font: display, color: ink, space-before: { print: 0pt }, space-after: { print: 0pt }, keep-with-next: true }
   title: { font: display, color: ink }
   link: { color: ink }
 pdf:
   page_baseline_grid: 26
+  # (The first baseline 85 pt down the page, 13 below the text's top,
+  # whatever the face: 25 lines, the last 83 pt above the foot.)
+  page_baseline_grid_offset: 13
   # (Lines 26 pt apart whatever the face: the grid's step.)
   base_line_pitch: 26
   heading:
@@ -1727,10 +1738,13 @@ pdf:
     subparagraph: { margin_left: 28 }
     clause: { margin_left: 28 }
     subclause: { margin_left: 28 }
+  # (The page number 14 point, its baseline 61 pt down the page, centred
+  # on 308 pt across.)
   header:
     height: 72pt
-    vertical_align: middle
-    font_size: 10
+    vertical_align: bottom
+    padding: [0, 24, 8.8, 0]
+    font_size: 14
     recto: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '{page-number}' }, right: { content: '' } }
   role:

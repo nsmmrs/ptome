@@ -362,7 +362,9 @@ extension _Framed on PdfConverter {
   /// The grid the body text's baselines keep to (`page_baseline_grid`,
   /// modern engine): `true` for the body text's line pitch, or a length;
   /// the first line where a body line at the top of the page has its
-  /// baseline. For thin paper, whose show-through then falls between the
+  /// baseline, or `page_baseline_grid_offset` below the top of the
+  /// page's text (a bill's first line 88 pt down the page, whatever the
+  /// face). For thin paper, whose show-through then falls between the
   /// lines (a line-matched Bible), and columns whose lines align.
   BaselineGrid? _baselineGrid() {
     if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
@@ -376,9 +378,14 @@ extension _Framed on PdfConverter {
     if (step == null) return null;
     // (`page_baseline_grid_anchor: first_line`: each page's grid from its
     // first line, a bill's page opening with a heading set higher.)
+    final fixed = switch (_theme.value('page_baseline_grid_offset')) {
+      ThemeNumber(:final value) when value >= 0 => value.toDouble(),
+      _ => null,
+    };
     return BaselineGrid(
       step,
-      offset: body.firstBaseline(1) ?? 0,
+      offset: fixed ?? body.firstBaseline(1) ?? 0,
+      raiseFirst: fixed != null,
       fromFirstLine:
           _choice('page_baseline_grid_anchor', const ['page', 'first_line']) ==
           'first_line',

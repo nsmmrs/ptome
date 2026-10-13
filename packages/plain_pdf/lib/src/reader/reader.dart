@@ -414,7 +414,6 @@ final class ImportedPage implements Graphic {
   }
 
   /// The page's content, decoded and joined.
-  @internal
   Uint8List get content {
     final out = BytesBuilder(copy: false);
     final contents = switch (file.resolve(_dict['Contents'])) {
