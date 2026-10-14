@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `PdfWriterOptions.dates`: false leaves the creation and modification
+  dates out of the document information and the XMP metadata (a
+  reproducible file); `xmpPacket` takes a null date for none
+  (BUG-d2dtqb).
+
 - Vertical text: an upright glyph is drawn turned back a quarter turn
   about its vertical origin, centered on the line; flipped text
   (`TextStyle.flipped`) mirrored about its em box's middle

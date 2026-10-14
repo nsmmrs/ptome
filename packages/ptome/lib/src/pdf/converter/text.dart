@@ -109,7 +109,8 @@ extension _Text on PdfConverter {
         align: align,
         mirrored: mirrored,
         // (Vertical where the page is, but for running content.)
-        vertical: vertical && _verticalWriting,
+        vertical: vertical && _verticalText,
+        flipped: _blockMode == WritingMode.verticalLeftToRight,
         language: _language,
         leading: metrics.leading,
         initialGap: cell || !gaps ? 0 : metrics.paddingTop,

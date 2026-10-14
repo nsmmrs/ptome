@@ -697,15 +697,18 @@ extension _DocumentParts on PdfConverter {
     }
     // The same document makes the same bytes: the file identifier comes
     // from the content, the dates from the document's local date and time
-    // (SOURCE_DATE_EPOCH, when set), as the gem dates it.
+    // (SOURCE_DATE_EPOCH, when set), as the gem dates it; with
+    // `reproducible`, no dates, as the gem leaves them out.
     _phase(null);
     final creationDate = PdfConverter._dateTime(document.attr('localdatetime'));
+    final dates = !document.hasAttr('reproducible');
     _save = () {
       _phase('pdf save');
       final bytes = pdf.save(
         options: PdfConverter._writerOptions(
           nativeZlib: io.hasNativeZlib,
           creationDate: creationDate,
+          dates: dates,
         ),
       );
       _phase(null);

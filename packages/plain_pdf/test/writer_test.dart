@@ -126,6 +126,16 @@ void main() {
     expect(() => writer.close(root: root), throwsStateError);
   });
 
+  test('dates: false leaves the dates out of Info and XMP', () {
+    final xmp = xmpPacket(const PdfInfo(title: 'Book'), null);
+    expect(xmp, isNot(contains('CreateDate')));
+    expect(xmp, isNot(contains('ModifyDate')));
+    expect(
+      xmpPacket(const PdfInfo(title: 'Book'), DateTime.utc(2026)),
+      contains('<xmp:CreateDate>2026-01-01T00:00:00Z</xmp:CreateDate>'),
+    );
+  });
+
   test('XMP metadata: an identifier, contributors and rights', () {
     final xmp = xmpPacket(
       const PdfInfo(

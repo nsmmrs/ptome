@@ -10,6 +10,19 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: with `reproducible`, no creation or modification date in the
+  document information or the XMP metadata, as asciidoctor-pdf leaves
+  them out (BUG-d2dtqb); they had been the conversion's time, so two
+  runs differed.
+- PDF: a block's own writing mode (TASK-kj6r6q): `[.vertical-rl]` and
+  `[.vertical-lr]` set a block in vertical lines on a horizontal page,
+  `[.horizontal-tb]` any block across on a vertical one; text the box
+  sets itself is measured by its vertical advances in vertical lines.
+- PDF: on vertical pages, tables, listings and literal blocks stand
+  upright, set across (JLREQ 4.4.2), as wide as their content needs;
+  lying on their side, top to the page's right, only when too long for
+  the page upright (FEAT-tc0ts6); `[.vertical]` or
+  `table_writing_mode: vertical` sets a table down the columns.
 - PDF: tate-chu-yoko (FEAT-zhqwr3): on vertical pages, numbers of up
   to two digits stand upright across the column, an em long (JLREQ
   3.2.5), a lone digit in its full-width form;

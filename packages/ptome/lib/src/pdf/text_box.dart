@@ -74,6 +74,7 @@ final class TextLayout {
     this.align = 'left',
     this.mirrored = true,
     this.vertical = false,
+    this.flipped = false,
     this.language,
     this.leading = 0,
     this.initialGap = 0,
@@ -120,6 +121,7 @@ final class TextLayout {
     align: align,
     mirrored: mirrored,
     vertical: vertical,
+    flipped: flipped,
     language: language,
     leading: leading,
     initialGap: initialGap,
@@ -210,6 +212,11 @@ final class TextLayout {
   /// side, in the page's turned frame.
   final bool vertical;
 
+  /// Whether the vertical text is laid out in a mirrored frame (a
+  /// vertical-lr block's on a horizontal page; a vertical-lr page's text is
+  /// [TextContext.mirroredFrame]): drawn mirrored back.
+  final bool flipped;
+
   /// The text's language (BCP 47), unless a fragment says otherwise: the
   /// block's or the document's.
   final String? language;
@@ -230,6 +237,7 @@ final class TextLayout {
     align: align,
     mirrored: mirrored,
     vertical: vertical,
+    flipped: flipped,
     language: language,
     leading: leading,
     paddingBottom: paddingBottom,
@@ -753,6 +761,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               format.size,
               kerning: _state.kerning,
               features: format.features,
+              vertical: _layout.vertical,
+              combineDigits: _layout.vertical ? _context.combineDigits : 0,
             ) +
             format.tracking * bare.runes.length;
         final count = bare.runes.length;
@@ -877,67 +887,69 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       // (A destination marker's placeholder isn't drawn, as the box
       // doesn't draw it: its anchor alone; nor is one a template left in
       // the text, a NUL. A slot is never broken: no soft hyphens in it.)
-      TextRun textRun(String text, {required bool slot, required String raw}) =>
-          TextRun(
-            text,
-            TextStyle(
-              font.pdf,
-              format.size,
-              characterSpacing: _state.characterSpacing + format.tracking,
-              wordSpacing: _context.wordSpace == 1
-                  ? 0
-                  : (_context.wordSpace - 1) *
-                        TextStyle(font.pdf, format.size).measure(' '),
-              rise: rise,
-              kerning: _state.kerning,
-              ligatures: font.ligates,
-              features: format.features,
-              skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
-              embolden: font.emboldened ? format.size / 40 : 0,
-              vertical: _layout.vertical,
-              flipped: _layout.vertical && _context.mirroredFrame,
-              language: fragment.language ?? _layout.language,
-              combineDigits: _layout.vertical ? _context.combineDigits : 0,
-              combineUpright: _layout.vertical && fragment.combineUpright,
-            ),
-            color: _pdfColor(fragment.color),
-            artifact: fragment.artifact,
-            slotWidth: slot ? _slotWidth(raw, format) : null,
-            // (Aligned in its slot as it asks: a fixed width's text
-            // centered, as its markup says.)
-            slotAlign:
-                (fragment.callbacks?.contains(
-                          FragmentCallback.inlineTextAligner,
-                        ) ??
-                        false) ||
-                    fragment.width != null
-                ? switch (fragment.align) {
-                    'center' => TextAlign.center,
-                    'right' => TextAlign.right,
-                    _ => TextAlign.left,
-                  }
-                : TextAlign.left,
-            underline: styles.contains(FragmentStyle.underline),
-            strikethrough: styles.contains(FragmentStyle.strikethrough),
-            emphasisMark: fragment.textEmphasis,
-            emphasisUnder: fragment.textEmphasisUnder,
-            link: link,
-            anchor: fragment.isMarker ? fragment.name : null,
-            // (A marker's anchor at the baseline, as the box reports it, but
-            // a side note's, at the top of its text where the note goes.)
-            anchorOnBaseline:
-                fragment.isMarker &&
-                !(fragment.name?.startsWith(sideNoteAnchorPrefix) ?? false),
-            decoration: decorated
-                ? InlineDecoration(
-                    background: _pdfColor(fragment.backgroundColor),
-                    borderColor: _pdfColor(fragment.borderColor),
-                    borderWidth: (fragment.borderWidth ?? 0).toDouble(),
-                    radius: (fragment.borderRadius ?? 0).toDouble(),
-                    outset: (fragment.borderOffset ?? 0).toDouble(),
-                  )
-                : null,
-          );
+      TextRun textRun(
+        String text, {
+        required bool slot,
+        required String raw,
+      }) => TextRun(
+        text,
+        TextStyle(
+          font.pdf,
+          format.size,
+          characterSpacing: _state.characterSpacing + format.tracking,
+          wordSpacing: _context.wordSpace == 1
+              ? 0
+              : (_context.wordSpace - 1) *
+                    TextStyle(font.pdf, format.size).measure(' '),
+          rise: rise,
+          kerning: _state.kerning,
+          ligatures: font.ligates,
+          features: format.features,
+          skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
+          embolden: font.emboldened ? format.size / 40 : 0,
+          vertical: _layout.vertical,
+          flipped:
+              _layout.vertical && (_layout.flipped || _context.mirroredFrame),
+          language: fragment.language ?? _layout.language,
+          combineDigits: _layout.vertical ? _context.combineDigits : 0,
+          combineUpright: _layout.vertical && fragment.combineUpright,
+        ),
+        color: _pdfColor(fragment.color),
+        artifact: fragment.artifact,
+        slotWidth: slot ? _slotWidth(raw, format) : null,
+        // (Aligned in its slot as it asks: a fixed width's text
+        // centered, as its markup says.)
+        slotAlign:
+            (fragment.callbacks?.contains(FragmentCallback.inlineTextAligner) ??
+                    false) ||
+                fragment.width != null
+            ? switch (fragment.align) {
+                'center' => TextAlign.center,
+                'right' => TextAlign.right,
+                _ => TextAlign.left,
+              }
+            : TextAlign.left,
+        underline: styles.contains(FragmentStyle.underline),
+        strikethrough: styles.contains(FragmentStyle.strikethrough),
+        emphasisMark: fragment.textEmphasis,
+        emphasisUnder: fragment.textEmphasisUnder,
+        link: link,
+        anchor: fragment.isMarker ? fragment.name : null,
+        // (A marker's anchor at the baseline, as the box reports it, but
+        // a side note's, at the top of its text where the note goes.)
+        anchorOnBaseline:
+            fragment.isMarker &&
+            !(fragment.name?.startsWith(sideNoteAnchorPrefix) ?? false),
+        decoration: decorated
+            ? InlineDecoration(
+                background: _pdfColor(fragment.backgroundColor),
+                borderColor: _pdfColor(fragment.borderColor),
+                borderWidth: (fragment.borderWidth ?? 0).toDouble(),
+                radius: (fragment.borderRadius ?? 0).toDouble(),
+                outset: (fragment.borderOffset ?? 0).toDouble(),
+              )
+            : null,
+      );
       TextRun run(String raw, int start, {required bool slot}) {
         final kept = StringBuffer();
         final from = <(int, int)>[];
@@ -1452,6 +1464,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           size,
           kerning: _state.kerning,
           features: item.format.features,
+          vertical: _layout.vertical,
+          combineDigits: _layout.vertical ? _context.combineDigits : 0,
         );
         if (_strip(segment).isEmpty) {
           if (line > 0) spaces += width;
@@ -2209,6 +2223,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               f.format.size,
               kerning: _state.kerning,
               features: f.format.features,
+              vertical: _layout.vertical,
+              combineDigits: _layout.vertical ? _context.combineDigits : 0,
             );
             final gapWidth = fragment.width != null
                 ? f.width - natural
@@ -2291,7 +2307,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             skew: skew ?? (f.format.font.slanted ? 0.2 : 0),
             embolden: f.format.font.emboldened ? f.format.size / 40 : 0,
             vertical: _layout.vertical,
-            flipped: _layout.vertical && _context.mirroredFrame,
+            flipped:
+                _layout.vertical && (_layout.flipped || _context.mirroredFrame),
             language: fragment.language ?? _layout.language,
             combineDigits: _layout.vertical ? _context.combineDigits : 0,
             combineUpright: _layout.vertical && fragment.combineUpright,
@@ -2336,7 +2353,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
                 f.format.font.pdf,
                 f.format.size,
                 vertical: true,
-                flipped: _context.mirroredFrame,
+                flipped: _layout.flipped || _context.mirroredFrame,
                 language: fragment.language ?? _layout.language,
               ),
               y,
@@ -2683,6 +2700,8 @@ base class _Wrap {
       size,
       kerning: _state.kerning,
       features: format?.features ?? _state.features,
+      vertical: _layout.vertical,
+      combineDigits: _layout.vertical ? _context.combineDigits : 0,
     );
     // (Tracking after each character.)
     final tracked = width + (format?.tracking ?? 0) * text.runes.length;
@@ -2866,6 +2885,7 @@ base class _Wrap {
           char,
           format.size,
           kerning: false,
+          vertical: _layout.vertical,
         );
         if (_accumulated + charWidth <= width) {
           _accumulated += charWidth;
@@ -2878,7 +2898,12 @@ base class _Wrap {
       // the line; the modern engine sets one anyway, past the edge.
       if (_output.isEmpty && _lineEmptyNow && segment.isNotEmpty) {
         final char = String.fromCharCode(segment.runes.first);
-        _accumulated += format.font.widthOf(char, format.size, kerning: false);
+        _accumulated += format.font.widthOf(
+          char,
+          format.size,
+          kerning: false,
+          vertical: _layout.vertical,
+        );
         _output = char;
       }
     }

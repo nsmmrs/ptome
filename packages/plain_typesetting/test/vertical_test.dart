@@ -166,6 +166,96 @@ void main() {
       // (The image in its own upright space, 60 by 40.)
       expect(calls, contains('rect 0.00 0.00 60.00 40.00'));
     });
+
+    List<String> painted(List<LayoutBox> boxes) {
+      final layout = FlowLayout(
+        template: const PageTemplate(
+          size,
+          margins: margins,
+          writingMode: WritingMode.verticalRightToLeft,
+        ),
+      );
+      final document = RecordingDocument();
+      layout.layout(boxes).render(document);
+      return document.pages.first.canvas.calls;
+    }
+
+    test('an upright box is laid out across the page and stands upright '
+        '(JLREQ 4.4.2)', () {
+      final calls = painted([
+        UprightBox(
+          DrawingBox(50, (canvas, rect) => canvas.rect(rect), width: 100),
+        ),
+      ]);
+      // (Turned back as an image is, then drawn in its own space: 100
+      // across the page, 50 down it, at the content area's top right.)
+      expect(calls, contains('transform 0.00 1.00 -1.00 0.00 50.00 60.00'));
+      expect(calls, contains('rect 0.00 0.00 100.00 50.00'));
+    });
+
+    test('longer than the column, it lies in the flow (JLREQ 2.3.2)', () {
+      final calls = painted([
+        UprightBox(
+          DrawingBox(400, (canvas, rect) => canvas.rect(rect), width: 100),
+        ),
+      ]);
+      expect(
+        calls.where((c) => c.startsWith('transform 0.00 1.00 -1.00')),
+        isEmpty,
+      );
+    });
+
+    test('a vertical box on a horizontal page: its frame turned, its '
+        'columns as long as its longest line', () {
+      final layout = FlowLayout(
+        template: const PageTemplate(size, margins: margins),
+      );
+      final document = RecordingDocument();
+      layout
+          .layout([
+            VerticalBox(
+              DrawingBox(30, (canvas, rect) => canvas.rect(rect), width: 80),
+            ),
+          ])
+          .render(document);
+      final calls = document.pages.single.canvas.calls;
+      // (80 down the page from the content area's top, 30 across it.)
+      expect(calls, contains('transform 0.00 -1.00 1.00 0.00 20.00 280.00'));
+      expect(calls, contains('rect 0.00 0.00 80.00 30.00'));
+      final lr =
+          FlowLayout(
+            template: const PageTemplate(size, margins: margins),
+          ).layout([
+            VerticalBox(
+              DrawingBox(30, (canvas, rect) => canvas.rect(rect), width: 80),
+              writingMode: WritingMode.verticalLeftToRight,
+            ),
+          ]);
+      final mirrored = RecordingDocument();
+      lr.render(mirrored);
+      expect(
+        mirrored.pages.single.canvas.calls,
+        contains('transform 0.00 -1.00 -1.00 0.00 50.00 280.00'),
+      );
+    });
+
+    test('on a horizontal page it is its child', () {
+      final layout = FlowLayout(
+        template: const PageTemplate(size, margins: margins),
+      );
+      final document = RecordingDocument();
+      layout
+          .layout([
+            UprightBox(
+              DrawingBox(50, (canvas, rect) => canvas.rect(rect), width: 100),
+            ),
+          ])
+          .render(document);
+      expect(
+        document.pages.single.canvas.calls,
+        contains('rect 20.00 230.00 100.00 50.00'),
+      );
+    });
   });
 }
 

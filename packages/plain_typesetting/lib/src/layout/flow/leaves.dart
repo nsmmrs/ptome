@@ -196,12 +196,122 @@ extension _Leaves on _Pass {
       case CustomBox(:final content):
         final (a, b) = content.intrinsicWidths();
         return (a + margin, b + margin);
+      case UprightBox(:final child):
+        return _intrinsic(child);
+      // (Its columns' extent is its width: as narrow as one column, as
+      // wide as its lines at its length.)
+      case VerticalBox():
+        return (0, 0);
       case TableBox():
         final grid = box._grid ?? _gridOf(box);
         final (mins, maxs) = _columnRanges(box, grid);
         double sum(List<double> values) => values.fold(0, (a, b) => a + b);
         return (sum(mins) + margin, sum(maxs) + margin);
     }
+  }
+
+  /// [box] on a vertical page: laid out across the page, as wide as its
+  /// content (at most the content area's width), and placed upright,
+  /// unless it is then longer than the column, where it lies in the flow.
+  _Fit _upright(
+    UprightBox box,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final mode = writingMode;
+    if (mode == WritingMode.horizontal) {
+      return _place(box.child, width, available, atTop: atTop);
+    }
+    final margin = box.style.margin;
+    final top = atTop ? 0.0 : margin.top;
+    final across = math.min(box.maxWidth ?? _regionHeight, _regionHeight);
+    late _Fit fit;
+    var w = across;
+    writingMode = WritingMode.horizontal;
+    try {
+      _Fit at(double width) => _withoutExclusions(
+        () => _place(box.child, width, double.infinity, atTop: true),
+      );
+      // (As narrow as it can be without being longer than at the whole
+      // width: its content's widest, widened while that wraps more.)
+      final (_, most) = _intrinsic(box.child);
+      final whole = at(across);
+      w = math.min(across, most);
+      fit = at(w);
+      if (fit.height > whole.height + 1e-6) {
+        var low = w;
+        var high = across;
+        fit = whole;
+        for (var i = 0; i < 12 && high - low > 1; i++) {
+          final middle = (low + high) / 2;
+          final tried = at(middle);
+          if (tried.height > whole.height + 1e-6) {
+            low = middle;
+          } else {
+            high = middle;
+            fit = tried;
+          }
+        }
+        w = high;
+      }
+    } finally {
+      writingMode = mode;
+    }
+    final placed = fit.placed;
+    // (Longer than the column: lying in the flow, its top to the page's
+    // right.)
+    if (placed == null || fit.height > width + 1e-6) {
+      return _place(box.child, width, available, atTop: atTop);
+    }
+    final height = top + w + margin.bottom;
+    if (height > available + 1e-6 && !atTop) return _Fit.moved(box);
+    return _Fit(
+      _PlacedUpright(placed, top, fit.height, w, height, mode),
+      height,
+      null,
+    );
+  }
+
+  /// [box] on a horizontal page: laid out in a turned frame, its columns
+  /// running down the page as long as its longest line (at most the
+  /// region's height, or its own [VerticalBox.length]), placed turned.
+  /// Wider than the region, it is laid out across as the page is.
+  _Fit _turned(
+    VerticalBox box,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final mode = writingMode;
+    if (mode != WritingMode.horizontal) {
+      return _place(box.child, width, available, atTop: atTop);
+    }
+    final margin = box.style.margin;
+    final top = atTop ? 0.0 : margin.top;
+    final (_, most) = _intrinsic(box.child);
+    final length = box.length ?? math.min(most, _regionHeight - top);
+    if (top + length > available + 1e-6 && !atTop) return _Fit.moved(box);
+    late _Fit fit;
+    writingMode = box.writingMode;
+    try {
+      fit = _withoutExclusions(
+        () => _place(box.child, length, double.infinity, atTop: true),
+      );
+    } finally {
+      writingMode = mode;
+    }
+    final placed = fit.placed;
+    final across = fit.height;
+    if (placed == null || across > width - margin.horizontal + 1e-6) {
+      return _place(box.child, width, available, atTop: atTop);
+    }
+    final height = top + length + margin.bottom;
+    return _Fit(
+      _PlacedTurned(placed, top, length, across, height, box.writingMode),
+      height,
+      null,
+    );
   }
 
   _Fit _custom(

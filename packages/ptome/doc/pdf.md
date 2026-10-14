@@ -311,8 +311,25 @@ middle of the characters; an underline goes on the right of the column
 in Japanese and Korean (their side lines, CSS's
 `text-underline-position: right`), on the left in Chinese, and on the
 right in Mongolian (mlreq's right line). The running heads and page numbers
-stay across. Tables and listings are set in the columns' direction (on
-their side).
+stay across.
+
+Tables, code listings and literal blocks stand upright in the text, set
+across as on a horizontal page (JLREQ 4.4.2), at the head of the column,
+as wide across the page as their content needs (at most the content
+area's width) and no narrower than keeps them from wrapping more; the
+text goes on after them. One too long for the page's height upright lies
+on its side instead, its top to the page's right, and goes on over the
+pages (JLREQ 2.3.2). A chronology set down the columns, as the text is
+(JLREQ Fig. 285), takes the `vertical` role (`[.vertical]`), or every
+table does with `table_writing_mode: vertical`.
+
+A block can have its own writing mode, Ptome's roles: on a horizontal
+page, `[.vertical-rl]` or `[.vertical-lr]` sets a block in vertical lines
+(a poem, `[verse.vertical-rl]`; a sidebar in Japanese), its columns as
+long as its longest line (at most the page's height), following to the
+left or the right, the block as wide across the page as its columns
+are; on a vertical page, `[.horizontal-tb]` sets any block across, as a
+table is. Not under `asciidoctor-compat`.
 
 A number of one or two digits standing alone stands upright in the
 column (tate-chu-yoko, JLREQ 3.2.5): two digits side by side across the

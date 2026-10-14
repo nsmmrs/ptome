@@ -8,7 +8,7 @@ library;
 import 'package:plain_fonts/plain_fonts.dart' show OpenTypeFont;
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart'
-    show OpenTypeShaper, ShapingScope;
+    show OpenTypeShaper, ShapingScope, TextStyle;
 import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/path_resolver.dart';
@@ -56,12 +56,16 @@ sealed class FontFace {
       (ascender - descender + lineGap) / 1000 * size;
 
   /// The width of [text] at [size] points, with the OpenType [features]
-  /// (an embedded font's that it has).
+  /// (an embedded font's that it has); [vertical], its length in a vertical
+  /// line (upright characters by their vertical advances, numbers of up to
+  /// [combineDigits] digits an em: an embedded font's).
   double widthOf(
     String text,
     double size, {
     bool kerning = true,
     Set<String> features = const {},
+    bool vertical = false,
+    int combineDigits = 0,
   });
 
   /// Whether the font has a glyph for [codePoint].
@@ -180,7 +184,22 @@ final class TrueTypeFont extends FontFace {
     double size, {
     bool kerning = true,
     Set<String> features = const {},
+    bool vertical = false,
+    int combineDigits = 0,
   }) {
+    // (In a vertical line: as the engine sets it there.)
+    if (vertical) {
+      final style = TextStyle(
+        pdf,
+        size,
+        kerning: kerning,
+        ligatures: ligates,
+        features: features,
+        vertical: true,
+        combineDigits: combineDigits,
+      );
+      return style.widthOf(style.shape(text));
+    }
     // Shaped once per text (line breaking measures the same words again
     // and again), in 1000ths of the em; by the text alone for the usual
     // kerning without features.
@@ -255,6 +274,8 @@ final class AfmFont extends FontFace {
     double size, {
     bool kerning = true,
     Set<String> features = const {},
+    bool vertical = false,
+    int combineDigits = 0,
   }) => pdf.widthOf(text, size, kerning: kerning);
 
   @override

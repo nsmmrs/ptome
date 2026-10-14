@@ -19,6 +19,7 @@ final class PdfWriterOptions {
     this.compact = true,
     this.deterministic = false,
     this.creationDate,
+    this.dates = true,
     this.compressionLevel = 6,
     this.zlib,
   });
@@ -38,6 +39,11 @@ final class PdfWriterOptions {
 
   /// The date written as the creation and modification date.
   final DateTime? creationDate;
+
+  /// Whether the document information and the XMP metadata carry the
+  /// creation and modification dates (none for a reproducible file, as
+  /// asciidoctor-pdf leaves them out with `reproducible`).
+  final bool dates;
 
   /// The Flate level (1–9).
   final int compressionLevel;
@@ -281,15 +287,17 @@ final class PdfWriter {
       if (info.creator case final creator?) 'Creator': PdfString.text(creator),
       if (info.producer case final producer?)
         'Producer': PdfString.text(producer),
-      'CreationDate': PdfString(ascii.encode(pdfDate(date))),
-      'ModDate': PdfString(ascii.encode(pdfDate(date))),
+      if (options.dates) ...{
+        'CreationDate': PdfString(ascii.encode(pdfDate(date))),
+        'ModDate': PdfString(ascii.encode(pdfDate(date))),
+      },
       if (info.trapped case final trapped?)
         'Trapped': PdfName(trapped ? 'True' : 'False'),
       if (info.pdfxVersion case final version?)
         'GTS_PDFXVersion': PdfString.text(version),
     });
     final metadata = PdfStream(
-      utf8.encode(xmpPacket(info, date)),
+      utf8.encode(xmpPacket(info, options.dates ? date : null)),
       dict: PdfDict({
         'Type': const PdfName('Metadata'),
         'Subtype': const PdfName('XML'),
@@ -432,9 +440,12 @@ String pdfDate(DateTime date) {
       "${two(d.hour)}${two(d.minute)}${two(d.second)}+00'00'";
 }
 
-/// An XMP metadata packet (ISO 32000-2, 14.3.2) with [info] and [date].
-String xmpPacket(PdfInfo info, DateTime date) {
-  final iso = '${date.toUtc().toIso8601String().split('.').first}Z';
+/// An XMP metadata packet (ISO 32000-2, 14.3.2) with [info] and [date]
+/// (none: no dates).
+String xmpPacket(PdfInfo info, DateTime? date) {
+  final iso = date == null
+      ? null
+      : '${date.toUtc().toIso8601String().split('.').first}Z';
   String escape(String text) => text
       .replaceAll('&', '&amp;')
       .replaceAll('<', '&lt;')
@@ -513,9 +524,12 @@ String xmpPacket(PdfInfo info, DateTime date) {
   if (info.creator case final creator?) {
     out.write('<xmp:CreatorTool>${escape(creator)}</xmp:CreatorTool>\n');
   }
+  if (iso != null) {
+    out
+      ..write('<xmp:CreateDate>$iso</xmp:CreateDate>\n')
+      ..write('<xmp:ModifyDate>$iso</xmp:ModifyDate>\n');
+  }
   out
-    ..write('<xmp:CreateDate>$iso</xmp:CreateDate>\n')
-    ..write('<xmp:ModifyDate>$iso</xmp:ModifyDate>\n')
     ..write('</rdf:Description>\n</rdf:RDF>\n</x:xmpmeta>\n')
     ..write('<?xpacket end="w"?>');
   return out.toString();

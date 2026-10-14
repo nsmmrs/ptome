@@ -320,12 +320,13 @@ final class PdfWriter
   void close({required PdfRef root, PdfRef? info})
 final class PdfWriterOptions
   DateTime? creationDate
-  PdfWriterOptions({bool compress = true, bool compact = true, bool deterministic = false, DateTime? creationDate, int compressionLevel = 6, ZlibCodec? zlib})
+  PdfWriterOptions({bool compress = true, bool compact = true, bool deterministic = false, DateTime? creationDate, bool dates = true, int compressionLevel = 6, ZlibCodec? zlib})
   Uint8List decodeZlib(List<int> data)
   Uint8List encodeZlib(List<int> data)
   ZlibCodec? zlib
   bool compact
   bool compress
+  bool dates
   bool deterministic
   int compressionLevel
 final class RadialShading extends PdfShading

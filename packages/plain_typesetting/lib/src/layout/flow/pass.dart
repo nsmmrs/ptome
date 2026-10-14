@@ -684,7 +684,11 @@ final class _Pass {
           ),
           width,
         );
-      case ImageBox() || DrawingBox() || TableBox():
+      case ImageBox() ||
+          DrawingBox() ||
+          TableBox() ||
+          UprightBox() ||
+          VerticalBox():
         return _measure(box, width);
       case CustomBox(:final content):
         return margin.top + content.minHeight(width - margin.horizontal);
@@ -770,6 +774,8 @@ final class _Pass {
         () => _table(box, width, available, atTop: atTop),
       ),
       CustomBox() => _custom(box, width, available, atTop: atTop),
+      UprightBox() => _upright(box, width, available, atTop: atTop),
+      VerticalBox() => _turned(box, width, available, atTop: atTop),
     };
   }
 

@@ -780,9 +780,18 @@ final class TypesetLine
   double baseline
   double left
   double right
+final class UprightBox extends LayoutBox
+  LayoutBox child
+  UprightBox(LayoutBox child, {double? maxWidth, BoxStyle style = const BoxStyle()})
+  double? maxWidth
 final class UriTarget extends LinkTarget
   String uri
   UriTarget(String uri)
+final class VerticalBox extends LayoutBox
+  LayoutBox child
+  VerticalBox(LayoutBox child, {WritingMode writingMode = WritingMode.verticalRightToLeft, double? length, BoxStyle style = const BoxStyle()})
+  WritingMode writingMode
+  double? length
 sealed class Color
   Color.cmyk(double cyan, double magenta, double yellow, double black)
   Color.gray(double level)

@@ -432,6 +432,53 @@ final class BlockBox extends LayoutBox {
   final bool _containsMargins;
 }
 
+/// A box set upright on a vertical page: [child] laid out across the page,
+/// as on a horizontal one, and placed in the column's flow turned to stand
+/// upright (a table or a code listing in a vertical book: JLREQ 4.4.2), as
+/// wide across the page as it is. Where it is too long for the page's
+/// height upright, it is laid out in the flow as the text around it is,
+/// lying on its side, its top to the page's right (JLREQ 2.3.2). On a
+/// horizontal page it is [child].
+final class UprightBox extends LayoutBox {
+  /// [child], upright on vertical pages, at most [maxWidth] wide across
+  /// the page (by default the content area's width).
+  const new(this.child, {this.maxWidth, BoxStyle style = const BoxStyle()})
+    : super._(style);
+
+  /// The box set upright.
+  final LayoutBox child;
+
+  /// The most it may be wide across the page, or null for the content
+  /// area's width.
+  final double? maxWidth;
+}
+
+/// A box set in vertical lines on a horizontal page (a poem, a sidebar in
+/// Japanese): [child] laid out in a turned frame, its lines columns
+/// running down the page, following to the left ([WritingMode.
+/// verticalRightToLeft]) or to the right ([WritingMode.
+/// verticalLeftToRight]); its columns [length] long (by default as long
+/// as its longest line, at most the region's height). On a vertical page
+/// it is [child].
+final class VerticalBox extends LayoutBox {
+  /// [child] in vertical lines [writingMode]'s way.
+  const new(
+    this.child, {
+    this.writingMode = WritingMode.verticalRightToLeft,
+    this.length,
+    BoxStyle style = const BoxStyle(),
+  }) : super._(style);
+
+  /// The box set in vertical lines.
+  final LayoutBox child;
+
+  /// Which way the columns follow one another.
+  final WritingMode writingMode;
+
+  /// How long its columns are, or null for its longest line's length.
+  final double? length;
+}
+
 /// A paragraph: lines broken from inline content. Its style's margins
 /// apply; for padding, borders or a background, put it in a [BlockBox].
 final class ParagraphBox extends LayoutBox {

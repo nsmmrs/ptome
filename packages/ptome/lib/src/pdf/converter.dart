@@ -307,11 +307,84 @@ final class PdfConverter extends BuiltInConverter
       }
     }
     try {
+      // (On a vertical page, a table or a listing set upright, across the
+      // page, as JLREQ 4.4.2 has them.)
+      // (A block's own writing mode, Ptome's `vertical-rl` and
+      // `vertical-lr` roles: in vertical lines on a horizontal page.)
+      if (_blockWritingMode(node) case final mode?
+          when !_verticalWriting && _blockMode == null) {
+        final out = _out;
+        _out = [];
+        _blockMode = mode;
+        try {
+          return _convertBlock(node, opts);
+        } finally {
+          final boxes = _out;
+          _out = out;
+          _blockMode = null;
+          if (boxes.isNotEmpty) {
+            _out.add(
+              VerticalBox(
+                boxes.length == 1 ? boxes.single : BlockBox(boxes),
+                writingMode: mode,
+              ),
+            );
+          }
+        }
+      }
+      if (_setsUpright(node) && !_upright && _verticalWriting) {
+        final out = _out;
+        _out = [];
+        _upright = true;
+        try {
+          return _convertBlock(node, opts);
+        } finally {
+          final boxes = _out;
+          _out = out;
+          _upright = false;
+          if (boxes.isNotEmpty) {
+            _out.add(
+              UprightBox(boxes.length == 1 ? boxes.single : BlockBox(boxes)),
+            );
+          }
+        }
+      }
       return _convertBlock(node, opts);
     } finally {
       _language = language;
     }
   }
+
+  /// The writing mode of the vertical block being converted on a
+  /// horizontal page (Ptome's `vertical-rl` and `vertical-lr` roles), or
+  /// null.
+  WritingMode? _blockMode;
+
+  /// The vertical writing mode [node]'s role gives it (not under
+  /// `asciidoctor-compat`), or null.
+  WritingMode? _blockWritingMode(AbstractBlock node) {
+    if (node is Document || node.role == null) return null;
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    if (node.hasRole('vertical-rl')) return WritingMode.verticalRightToLeft;
+    if (node.hasRole('vertical-lr')) return WritingMode.verticalLeftToRight;
+    return null;
+  }
+
+  /// Whether a table or a listing is being converted on a vertical page:
+  /// set across the page, its text horizontal.
+  bool _upright = false;
+
+  /// Whether [node] is set upright on a vertical page: a table, a listing
+  /// or a literal block, unless the theme's `table_writing_mode` (or the
+  /// table's `vertical` role) sets a table in the columns' direction.
+  bool _setsUpright(AbstractBlock node) => switch (node) {
+    final Table table =>
+      !table.hasRole('vertical') && _s('table_writing_mode') != 'vertical',
+    Block(context: BlockContext.listing || BlockContext.literal) => true,
+    // (Ptome's `horizontal-tb` role: any block set across.)
+    _ when node is! Document && node.hasRole('horizontal-tb') => true,
+    _ => false,
+  };
 
   /// The language of the text being converted (BCP 47), choosing the
   /// fonts' language systems: the document's `lang`, a block's own
@@ -392,9 +465,11 @@ final class PdfConverter extends BuiltInConverter
   static PdfWriterOptions _writerOptions({
     required bool nativeZlib,
     DateTime? creationDate,
+    bool dates = true,
   }) => PdfWriterOptions(
     deterministic: true,
     creationDate: creationDate,
+    dates: dates,
     zlib: nativeZlib ? const _NativeZlib() : null,
   );
 
@@ -705,6 +780,11 @@ final class PdfConverter extends BuiltInConverter
 
   /// Whether the body's lines run down the page.
   bool get _verticalWriting => _writingMode != WritingMode.horizontal;
+
+  /// Whether text is set in vertical lines: on a vertical page, but not in
+  /// a block set upright ([_upright]).
+  bool get _verticalText =>
+      (_verticalWriting && !_upright) || _blockMode != null;
 
   /// Whether the pages follow one another to the left, the book bound at
   /// the right: a right-to-left document's, or a vertical-rl one's.

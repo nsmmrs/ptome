@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Vertical boxes on horizontal pages (TASK-kj6r6q): `VerticalBox` lays
+  its child out in a turned frame (vertical-rl or vertical-lr), its
+  columns as long as its longest line or its `length`, and places it on
+  the page.
+
+- Upright boxes on vertical pages (FEAT-tc0ts6): `UprightBox` lays its
+  child out across the page and places it upright in the turned frame, as
+  wide as its content needs without wrapping more (at most `maxWidth` or
+  the content area's width); one longer than the column upright lies in
+  the flow instead (JLREQ 2.3.2, 4.4.2). On a horizontal page it is its
+  child.
+
 - Tate-chu-yoko (FEAT-zhqwr3): `TextStyle.combineDigits` sets numbers of
   up to that many digits across a vertical line, upright as one
   character an em long (two in the font's `hwid` forms, three in its

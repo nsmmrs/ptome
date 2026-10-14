@@ -512,6 +512,129 @@ final class _PlacedImage extends _Placed {
   }
 }
 
+/// A box laid out across the page, placed upright in a vertical page's
+/// turned frame: [length] along the line (its height down the page),
+/// [across] in the flow (its width across the page).
+final class _PlacedUpright extends _Placed {
+  const new(
+    this.placed,
+    this.top,
+    this.length,
+    this.across,
+    this.height,
+    this.writingMode,
+  );
+
+  final _Placed placed;
+  final double top;
+  final double length;
+  final double across;
+  @override
+  final double height;
+  final WritingMode writingMode;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) {
+    // (Its anchors where it starts.)
+    placed.visit(
+      0,
+      length,
+      (name, _, _) => anchor(name, x, top - this.top),
+      mark,
+      tag,
+    );
+  }
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    final rect = Rect(x, top - this.top - across, length, across);
+    // (In its own upright space, its width across the page, turned (and,
+    // where the frame is mirrored, mirrored) into the frame, as an image.)
+    final matrix = switch (writingMode) {
+      WritingMode.verticalLeftToRight => Matrix(
+        0,
+        -1,
+        -1,
+        0,
+        rect.left + rect.width,
+        rect.bottom + rect.height,
+      ),
+      _ => Matrix(0, 1, -1, 0, rect.left + rect.width, rect.bottom),
+    };
+    painter.canvas.saved(() {
+      painter.canvas.transform(matrix);
+      placed.paint(painter, 0, length);
+    });
+  }
+}
+
+/// A box laid out in a turned frame, placed on a horizontal page in
+/// vertical lines: [length] down the page (its columns' length), [across]
+/// the page (its columns' extent).
+final class _PlacedTurned extends _Placed {
+  const new(
+    this.placed,
+    this.top,
+    this.length,
+    this.across,
+    this.height,
+    this.writingMode,
+  );
+
+  final _Placed placed;
+  final double top;
+  final double length;
+  final double across;
+  @override
+  final double height;
+  final WritingMode writingMode;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) {
+    placed.visit(
+      0,
+      across,
+      (name, _, _) => anchor(name, x, top - this.top),
+      mark,
+      tag,
+    );
+  }
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    final bottom = top - this.top - length;
+    // (Its frame turned onto the page as a vertical page's: its first line
+    // at the right (vertical-rl) or the left (vertical-lr), running down.)
+    final matrix = switch (writingMode) {
+      WritingMode.verticalLeftToRight => Matrix(
+        0,
+        -1,
+        -1,
+        0,
+        x + across,
+        bottom + length,
+      ),
+      _ => Matrix(0, -1, 1, 0, x, bottom + length),
+    };
+    painter.canvas.saved(() {
+      painter.canvas.transform(matrix);
+      placed.paint(painter, 0, across);
+    });
+  }
+}
+
 final class _PlacedDrawing extends _Placed {
   const new(
     this.draw,
