@@ -34,8 +34,10 @@ committed; `test/pdf/mushaf_test.dart` sets the whole mushaf when they are
 there (604 pages, no warning: a line too wide for the measure would wrap,
 and its page run onto another) and is skipped when they aren't.
 
-What the print has that this hasn't: the lines are justified by their
-spaces alone, where the calligraphy lengthens letters (kashida) and picks
-wider or narrower forms, so a line of few words shows wide gaps; the
-surah titles are plain text, not framed cartouches; and the opening pages
-have no ornamental frame.
+The lines are justified as the print's are, by kashida (`base_kashida`):
+each word lengthened at its best place, up to half an em, before the
+spaces widen. What the print has that this hasn't: the calligraphy also
+picks wider or narrower letterforms, and lengthens further where a line
+has few words, so such a line still shows wider gaps; the surah titles
+are plain text, not framed cartouches; and the opening pages have no
+ornamental frame.

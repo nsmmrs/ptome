@@ -86,6 +86,7 @@ its title.
 | `base_overhang` | `0` | How far a justified line's last character hangs into the margin, so the edge looks straight (margin kerning, Hàn Thế Thành's character protrusion): the line stretches into a part of the character's width, as LaTeX's microtype package's default protrusion has it (0.7 of a period; 0.5 of a comma, colon or hyphen; 0.3 of a semicolon; 0.2 of an en dash, 0.15 of an em dash; a little of some letters), times this amount. `1` (or `true`) hangs them that far, `0.5` half as far, `0` (or `false`) not at all. |
 | `base_typographic_scripts` | `false` | Superscripts and subscripts (footnote references) in the font's own glyphs for them (its `sups` and `subs` features) at the text's size, when it has them for every character (true superior and inferior figures); else smaller and raised as usual. |
 | `base_justify_width` | room | `widest`: justified lines are set to the width of the paragraph's widest line (an overfull line shrunk to the room), as a paragraph in a block sized to its content is (CSS's `width: fit-content`); in a quote or a section role: `quote_base_justify_width`, `section_role_<role>_base_justify_width`. |
+| `base_kashida` | `0.5em` | Justified Arabic is lengthened inside its words before its spaces widen: tatweel drawn between two joined letters, each word at its best place by Microsoft's ranking for Arabic justification (after a Seen or Sad; before a final Teh Marbuta, Heh or Dal; before a final Alef, Tah, Lam, Kaf or Gaf; before a medial Beh ending in Reh or Yeh; before a final Waw, Ain, Qaf or Feh; before any final letter), never inside Lam-Alef or a Nastaliq word's cascade. The value is how far each word may be lengthened (`1em`, or a number of em); the spaces take what is left; `false` for none. The text read from the page has no tatweel. Modern engine; not under `asciidoctor-compat`. |
 | `base_text_align_last` | `left` | Where a justified paragraph's last line, and each line before a hard break, goes (`center`, `right`), as CSS's `text-align-last` (`table_base_text_align_last: center`: table cells justified, their last lines centered); `justify` stretches them to the measure too, so text broken line for line by hand fills each line (a mushaf, see `doc/mushaf.md`). |
 | `prose_orphans` | `2` | The fewest lines of a paragraph left at the bottom of a page. |
 | `prose_widows` | `2` | The fewest lines of a paragraph carried to the top of the next page. |
@@ -216,9 +217,17 @@ wide as it is set.
 | Syriac | Classical Syriac (the Peshitta) in Estrangela, Eastern and Western | Joining forms with Alaph's and Dalath-Rish's own, vowel points, right to left. |
 | Devanagari, Bengali, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada, Malayalam | Sanskrit (Vedic accents too), Pali, Hindi, Marathi, Nepali, Bengali, Punjabi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam | HarfBuzz's Indic shaper: syllables, the base consonant, pre-base matras, reph, conjuncts and half forms; fonts of the second specification (`dev2`) and of the first (`deva`); a dotted circle where a syllable is broken or a vowel sequence is prohibited. |
 | Sinhala, Tibetan, Mongolian, N'Ko, Javanese, Balinese and the other scripts of the Universal Shaping Engine | Sinhala and Pali, Tibetan, Mongolian (set across, its letters on their sides, as horizontal Mongolian is), N'Ko, Javanese, Balinese | HarfBuzz's Universal Shaping Engine: its syllables and feature groups, repha and pre-base glyphs reordered, the joining scripts' forms. |
-| Khmer, Myanmar | Khmer, Burmese, Mon, Shan | Their own shapers: Coeng and Ro, kinzi, medial Ra and left vowels reordered. |
-| Thai, Lao | Thai, Lao | SARA AM decomposed, its nikhahit over the marks before it. Words are not broken apart without a space yet. |
+| Khmer, Myanmar | Khmer, Burmese, Mon, Shan | Their own shapers: Coeng and Ro, kinzi, medial Ra and left vowels reordered. Lines break between words (below). |
+| Thai, Lao | Thai, Lao | SARA AM decomposed, its nikhahit over the marks before it. Lines break between words (below). |
 | Hangul | Korean, Middle Korean | Jamo composed into the syllable the font has, or set as conjoining jamo; tone marks before their syllable. |
+
+Thai, Lao, Khmer and Burmese are written without spaces between words,
+so a line may break between any two of a run's words, found as ICU 78.3
+finds them: its word lists (plain_unicode's `dictionaryBreaks`, checked
+against ICU's line breaks), the reading that lets the most words follow
+chosen, a letter no word starts with joined to the word before, never a
+break before a combining mark. (`base_line_breaking: segments`, as
+asciidoctor-pdf, breaks only at spaces.)
 
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its

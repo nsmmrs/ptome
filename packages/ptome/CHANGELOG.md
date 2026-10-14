@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: justified Arabic is lengthened by kashida inside its words
+  before its spaces widen (`base_kashida`, half an em a word by
+  default; FEAT-01jjv7); the Medina mushaf (`tool/mushaf.dart`) is set
+  with it, its spaces even as the print's.
+- PDF: Thai, Lao, Khmer and Burmese lines break between words, found
+  as ICU finds them in its dictionaries (FEAT-hpr7b0); they broke only
+  where a word was too long for the line.
 - PDF: Sinhala, Tibetan, Mongolian, N'Ko, Javanese, Balinese and the
   Universal Shaping Engine's other scripts, Khmer, Myanmar, Thai, Lao and
   Hangul shape as HarfBuzz shapes them; Persian and Urdu (Naskh and

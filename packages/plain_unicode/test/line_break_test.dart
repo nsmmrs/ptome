@@ -39,7 +39,9 @@ void main() {
     final failures = <String>[];
     final cases = _cases();
     for (final (line, text, expected) in cases) {
-      final actual = [for (final b in lineBreaks(text)) b.offset];
+      final actual = [
+        for (final b in lineBreaks(text, dictionary: false)) b.offset,
+      ];
       if (actual.join(',') != expected.join(',')) {
         failures.add('$line\n  got breaks at $actual');
       }

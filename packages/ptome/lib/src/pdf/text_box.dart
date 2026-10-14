@@ -270,6 +270,7 @@ final class TextContext {
     this.labels,
     this.capsTracking = 0,
     this.expansion = 0,
+    this.kashida = 0,
     this.wordSpace = 1,
     this.engine,
     this.maxHyphenRun,
@@ -294,6 +295,7 @@ final class TextContext {
           labels: labels,
           capsTracking: capsTracking,
           expansion: expansion,
+          kashida: kashida,
           wordSpace: wordSpace,
           maxHyphenRun: maxHyphenRun,
           lastLineMin: lastLineMin,
@@ -304,6 +306,11 @@ final class TextContext {
   /// How much wider or narrower the letters of a justified line may be set
   /// (font expansion: `base_font_expansion`, modern engine).
   final double expansion;
+
+  /// How far each word of a justified line of Arabic may be lengthened by
+  /// kashida before the spaces widen, in em (`base_kashida`, modern
+  /// engine): 0 for none.
+  final double kashida;
 
   /// What sets a text in the modern engine (plain_typesetting's paragraph
   /// as content, which [TextBox] places and measures by): null for a text

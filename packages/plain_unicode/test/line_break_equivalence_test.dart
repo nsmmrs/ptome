@@ -32,8 +32,8 @@ List<String> _differences(Iterable<String> texts) {
   final failures = <String>[];
   for (final text in texts) {
     final expected = _oracle(text);
-    final actual = _signature(lineBreaks(text));
-    final offsets = lineBreakOffsets(text);
+    final actual = _signature(lineBreaks(text, dictionary: false));
+    final offsets = lineBreakOffsets(text, dictionary: false);
     final objectFree = [
       for (var i = 0; i < offsets.length; i++)
         '${offsets.offsetAt(i)}${offsets.isMandatoryAt(i) ? '!' : ''}',

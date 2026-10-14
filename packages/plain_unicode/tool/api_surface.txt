@@ -5,9 +5,9 @@ IndicPositionalCategory indicPositionalCategory(int codePoint)
 IndicSyllabicCategory indicSyllabicCategory(int codePoint)
 JoiningType joiningType(int codePoint)
 LineBreakClass lineBreakClass(int codePoint)
-LineBreakOffsets lineBreakOffsets(String text)
+LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true})
 List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
-List<LineBreak> lineBreaks(String text)
+List<LineBreak> lineBreaks(String text, {bool dictionary = true})
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion

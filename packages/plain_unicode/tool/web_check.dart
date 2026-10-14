@@ -7,7 +7,8 @@ import 'package:plain_unicode/plain_unicode.dart';
 
 const String _text =
     'Straße ΣΟΦΟΣ — "quoted", 日本語のテキスト, '
-    'עברית 123-456 http://example.org/path 👩‍👩‍👧 İstanbul ŉ';
+    'עברית 123-456 http://example.org/path 👩‍👩‍👧 İstanbul ŉ '
+    'ภาษาไทยสวัสดีครับ ພາສາລາວສະບາຍດີ';
 
 void main() {
   final parts = [

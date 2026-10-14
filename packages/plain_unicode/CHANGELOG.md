@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Word breaking without spaces (FEAT-hpr7b0): `lineBreaks` and
+  `lineBreakOffsets` break runs of Thai, Lao, Khmer and Myanmar between
+  their words, as ICU 78.3's dictionary break engines do (its word lists,
+  brotli-compressed, under the Unicode License in `vendor/icu/LICENSE`;
+  its lookahead, its joining of non-words and its Thai suffixes), unless
+  `dictionary: false`. Checked against ICU's line break iterator on
+  random text (`tool/dictionary_fuzz.dart`, the oracle in
+  `tool/oracles/icu`), every break the same in 270,000 lines; a golden
+  file keeps the check without ICU.
+
 - Shaping properties (Unicode 18.0.0): `generalCategory`, `scriptOf`,
   `indicSyllabicCategory`, `indicPositionalCategory`,
   `verticalOrientation`, `isDefaultIgnorable`, `isMark`, and canonical

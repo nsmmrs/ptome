@@ -60,6 +60,18 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (`base_kashida`: how far a justified Arabic line's words may be
+      // lengthened by tatweel, in em, before its spaces widen; `false`
+      // for none; modern engine.)
+      kashida: asciidoctorCompat(document, CompatFormat.pdf)
+          ? 0
+          : switch (_theme.value('base_kashida')) {
+              ThemeBool(value: false) => 0,
+              ThemeNumber(:final value) when value >= 0 => value.toDouble(),
+              ThemeString(:final value) when value.trim().endsWith('em') =>
+                double.tryParse(value.trim().replaceFirst('em', '')) ?? 0.5,
+              _ => 0.5,
+            },
       // (Every text the engine can set, set by it: modern engine.)
       engine: _engineParagraphs ? _engineTextOf : null,
       // (Lines their text's font height apart whatever fonts they mix:

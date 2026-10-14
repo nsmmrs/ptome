@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Kashida (FEAT-01jjv7): `Paragraph.kashida`, how far each word of a
+  justified line of Arabic may be lengthened by tatweel, in em, before
+  the spaces widen. Each word at its best-ranked place (Microsoft's
+  ranking for Arabic justification), never inside Lam-Alef or off the
+  baseline; the tatweel drawn as one glyph or several overlapping, exact
+  to the width, standing for no text.
+
 - The Universal Shaping Engine (Sinhala, Tibetan, Mongolian, N'Ko,
   Javanese, Balinese, ...; the joining scripts' forms by the Arabic
   joining), and the Khmer, Myanmar, Thai/Lao and Hangul shapers,

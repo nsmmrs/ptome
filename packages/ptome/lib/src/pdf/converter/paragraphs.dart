@@ -93,6 +93,7 @@ extension _Paragraphs on PdfConverter {
           : _aligned(layout.alignLast, mirrored: layout.mirrored),
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
+      kashida: _text.kashida,
       justifyToWidest: layout.justifyWidest,
       // (A superscript in the space between lines, as the text box sets
       // it.)

@@ -7,6 +7,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
+import 'package:plain_unicode/src/dictionary_break.dart';
 import 'package:plain_unicode/src/line_break_data.g.dart' as data;
 
 /// A Line_Break class (UAX #14, 5.1).
@@ -237,8 +238,13 @@ final class LineBreak {
 /// The break opportunities in [text], in order: every position the
 /// default rules of UAX #14 allow a break at, and the end of the text
 /// (mandatory). A break at offset 0 is never reported.
-List<LineBreak> lineBreaks(String text) => [
-  for (final code in _breakCodes(text))
+///
+/// With [dictionary] (the default), the runs of Thai, Lao, Khmer and
+/// Myanmar, written without spaces between words, also break between
+/// their words as ICU's dictionaries find them (UAX #14 leaves class SA
+/// to such a tailoring); without it, only the default rules apply.
+List<LineBreak> lineBreaks(String text, {bool dictionary = true}) => [
+  for (final code in _codes(text, dictionary))
     LineBreak(code >> 1, mandatory: code & 1 != 0),
 ];
 
@@ -259,8 +265,28 @@ extension type const LineBreakOffsets._(List<int> _codes) {
 
 /// The break opportunities in [text], in order, as [lineBreaks] finds
 /// them, without an object for each: for hot paths.
-LineBreakOffsets lineBreakOffsets(String text) =>
-    LineBreakOffsets._(_breakCodes(text));
+LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true}) =>
+    LineBreakOffsets._(_codes(text, dictionary));
+
+/// The break codes of [text] (offset << 1 | mandatory), with the
+/// dictionaries' word boundaries when [dictionary] asks for them.
+List<int> _codes(String text, bool dictionary) {
+  final codes = _breakCodes(text);
+  if (!dictionary) return codes;
+  final words = dictionaryBreaks(text, [for (final c in codes) c >> 1]);
+  if (words.isEmpty) return codes;
+  final merged = <int>[];
+  var w = 0;
+  for (final code in codes) {
+    final offset = code >> 1;
+    while (w < words.length && words[w] < offset) {
+      merged.add(words[w++] << 1);
+    }
+    if (w < words.length && words[w] == offset) w++;
+    merged.add(code);
+  }
+  return merged;
+}
 
 /// [lineBreaks] with every decision from the rules, none from the pair
 /// tables: what the tables are tested against.

@@ -18,6 +18,7 @@ resolution: workspace
 
 dependencies:
   meta: ^1.16.0
+  plain_compression: ^0.1.0-dev
 
 dev_dependencies:
   analyzer: ^14.4.0

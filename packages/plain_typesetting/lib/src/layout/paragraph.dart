@@ -13,6 +13,7 @@ import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
+import 'package:plain_typesetting/src/layout/kashida.dart';
 import 'package:plain_typesetting/src/link.dart';
 import 'package:plain_unicode/plain_unicode.dart'
     show
@@ -247,6 +248,7 @@ final class Paragraph {
     this.strut,
     this.rightToLeft = false,
     this.breakOpportunities = BreakOpportunities.unicode,
+    this.kashida = 0,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -278,10 +280,17 @@ final class Paragraph {
     strut: strut,
     rightToLeft: rightToLeft,
     breakOpportunities: breakOpportunities ?? this.breakOpportunities,
+    kashida: kashida,
   );
 
   /// The inline content.
   final List<InlineContent> content;
+
+  /// How far each word of a justified line of Arabic may be lengthened by
+  /// kashida (tatweel between its letters, at the place its letters rank
+  /// first: see `kashida.dart`), in em, before the line's spaces are
+  /// widened: 0 for none.
+  final double kashida;
 
   /// Where the lines may break besides at spaces.
   final BreakOpportunities breakOpportunities;
@@ -2091,6 +2100,35 @@ Line _line(
       }
     }
     available += hang + leftHang;
+  }
+  // Kashida: Arabic words lengthened before the spaces are widened.
+  if (justify && paragraph.kashida > 0 && available > natural) {
+    final runs = <KashidaRun?>[
+      for (final (i, (content, _, glyphs, _)) in shaped.indexed)
+        if (content case TextRun(:final style, slotWidth: null))
+          (glyphs: glyphs, style: style, rightToLeft: directions[i])
+        else
+          null,
+    ];
+    final (lengthened, taken) = kashida(
+      runs,
+      available - natural,
+      paragraph.kashida,
+    );
+    if (taken > 0) {
+      for (final (i, glyphs) in lengthened.indexed) {
+        if (glyphs == null) continue;
+        final (content, text, _, width) = shaped[i];
+        final style = (content as TextRun).style;
+        shaped[i] = (
+          content,
+          text,
+          glyphs,
+          width + style.widthOf(glyphs) - style.widthOf(shaped[i].$3),
+        );
+      }
+      natural += taken;
+    }
   }
   // Justified with expansion: the letters take their share of the
   // difference (as the breaker counted it: their width times [expansion]

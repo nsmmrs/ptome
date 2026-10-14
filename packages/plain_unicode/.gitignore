@@ -3,3 +3,4 @@ build/
 doc/api/
 pubspec.lock
 .DS_Store
+tool/oracles/icu/icubreak

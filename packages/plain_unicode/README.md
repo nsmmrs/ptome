@@ -7,7 +7,10 @@ JavaScript (whose own tables differ in age and in rules):
 - **Line breaking** (UAX #14, Unicode 18.0.0): `lineBreaks(text)` lists
   the break opportunities of a text, mandatory or not, and
   `lineBreakClass(codePoint)` gives a code point's class. It passes every
-  case of the conformance test, `LineBreakTest.txt`.
+  case of the conformance test, `LineBreakTest.txt`. Thai, Lao, Khmer
+  and Myanmar, written without spaces, break between their words as ICU
+  78.3 breaks them, from ICU's word lists (its dictionary engines'
+  heuristics included; `dictionary: false` for the default rules alone).
 - **Case mapping** (Unicode 17.0.0): `upperCase` and `lowerCase` map each
   code point fully, special mappings included (`ß` to `SS`, `İ` to `i̇`).
   `lowerCase(text, finalSigma: true)` applies the Final_Sigma rule, as

@@ -21,7 +21,7 @@ List<String> _differences(Iterable<String> texts) {
   final failures = <String>[];
   for (final text in texts) {
     final rules = _signature(lineBreaksByRules(text));
-    final tables = _signature(lineBreaks(text));
+    final tables = _signature(lineBreaks(text, dictionary: false));
     if (rules != tables && failures.length < 20) {
       failures.add(
         '${text.runes.map((r) => r.toRadixString(16)).join(' ')}\n'

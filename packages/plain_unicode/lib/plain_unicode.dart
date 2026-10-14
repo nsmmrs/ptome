@@ -2,7 +2,8 @@
 /// platform, generated from the Unicode Character Database.
 ///
 /// - Line breaking (UAX #14, Unicode 18.0.0): the break opportunities of a
-///   text and each code point's line break class.
+///   text and each code point's line break class; Thai, Lao, Khmer and
+///   Myanmar broken between their words as ICU 78.3 breaks them.
 /// - Bidirectional text (UAX #9, Unicode 18.0.0): each character's
 ///   embedding level in its paragraph, a line's visual order, and the
 ///   Bidi_Class, Bidi_Mirroring_Glyph and Joining_Type properties.
