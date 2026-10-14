@@ -304,8 +304,14 @@ spaces, as many as the base's characters, go each over its character
 (mono ruby: `ruby:東京[とう きょう]`), a line breaking between them;
 `,jukugo` after them makes them a compound's (`ruby:鬼門[き もん,jukugo]`),
 each over its character where none has more than two reading
-characters, else the whole reading over the whole compound (JLREQ
-3.3.7). The reading is half the text's size, resting on the base's em
+characters (JLREQ 3.3.7); else set as Appendix F's "principles part 2"
+have it: a longer reading hanging over the compound's next character
+(else the one before) by up to a reading character, then over the kana
+beside the compound, and only then the space around the characters with
+more than two reading characters opened, a quarter em each side for one
+reading character more (`ruby:居候[い そうろう,jukugo]` before a Han
+character). A line may break between a compound's characters, each part
+set as one of its own. The reading is half the text's size, resting on the base's em
 box, set as JLREQ 3.3 has it: a reading shorter than its base spread
 over it, its characters a gap apart and half a gap from each end but no
 more than a reading character from them (JIS X 4051); a longer one

@@ -909,14 +909,29 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         },
       };
       if (format.image case final image?) {
+        // (A jukugo compound's characters: what is beside the compound.)
+        var first = index;
+        var last = index;
+        if (image.graphic case InlineRuby(:final jukugo?)) {
+          bool ofIt(int i) => switch (_graphicOf(_items[i])) {
+            InlineRuby(jukugo: final other) => other == jukugo,
+            _ => false,
+          };
+          while (first > 0 && ofIt(first - 1)) {
+            first--;
+          }
+          while (last + 1 < _items.length && ofIt(last + 1)) {
+            last++;
+          }
+        }
         runs.add(
           _engineImage(
             image,
             format,
             link,
-            before: index > 0 ? _neighbourText(_items[index - 1]) : null,
-            after: index + 1 < _items.length
-                ? _neighbourText(_items[index + 1])
+            before: first > 0 ? _neighbourText(_items[first - 1]) : null,
+            after: last + 1 < _items.length
+                ? _neighbourText(_items[last + 1])
                 : null,
           ),
         );
@@ -1712,18 +1727,20 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// The text [item] stands for beside a ruby (whose reading may hang over
   /// it): a ruby's bases, else its text; an image's nothing.
   String? _neighbourText(_Item item) {
-    final fragment = item.format.fragment;
     String bases(InlineRuby ruby) => ruby.pairs.map((p) => p.$1).join();
-    if (item.format.image?.graphic case final InlineRuby ruby) {
-      return bases(ruby);
-    }
-    if (fragment.imagePath case final path?) {
-      return switch (_context.images?.call(path, fragment.imageFormat).$1) {
-        final InlineRuby ruby => bases(ruby),
-        _ => null,
-      };
-    }
+    if (_graphicOf(item) case final InlineRuby ruby) return bases(ruby);
+    if (item.format.fragment.imagePath != null) return null;
     return item.text;
+  }
+
+  /// The graphic [item] is, arranged or still to be.
+  Graphic? _graphicOf(_Item item) {
+    if (item.format.image?.graphic case final graphic?) return graphic;
+    final fragment = item.format.fragment;
+    if (fragment.imagePath case final path?) {
+      return _context.images?.call(path, fragment.imageFormat).$1;
+    }
+    return null;
   }
 
   /// The face [ruby] is set in: [face], the text's, where it has every
@@ -2479,19 +2496,55 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
                 color: _pdfColor(fragment.color),
               );
             case final InlineRuby ruby:
-              ruby
-                  .at(
-                    _rubyFace(ruby, f.format.font, fragment.language),
-                    f.format.size,
-                    zhuyin: !_layout.vertical,
-                    vertical: _layout.vertical,
-                  )
-                  .paintAt(
-                    canvas,
-                    rect.left,
-                    rect.bottom + image.mathDepth!,
-                    color: _pdfColor(fragment.color),
-                  );
+              final box = ruby.at(
+                _rubyFace(ruby, f.format.font, fragment.language),
+                f.format.size,
+                zhuyin: !_layout.vertical,
+                vertical: _layout.vertical,
+              );
+              final jukugo = ruby.jukugo;
+              if (jukugo == null) {
+                box.paintAt(
+                  canvas,
+                  rect.left,
+                  rect.bottom + image.mathDepth!,
+                  color: _pdfColor(fragment.color),
+                );
+                break;
+              }
+              // (A jukugo compound's characters beside one another on the
+              // line: drawn as one part, with the first.)
+              InlineRuby? pieceOf(_Printed g) => switch (g.format.image) {
+                _Image(graphic: final InlineRuby r) when r.jukugo == jukugo =>
+                  r,
+                _ => null,
+              };
+              if (index > 0 && pieceOf(line.fragments[index - 1]) != null) {
+                break;
+              }
+              final at = <(int, double)>[];
+              for (final g in line.fragments.skip(index)) {
+                final piece = pieceOf(g);
+                if (piece == null) break;
+                at.add((
+                  piece.index,
+                  x +
+                      g.left +
+                      (skew == null ? 0 : skew * (lastBaseline - g.baseline)),
+                ));
+              }
+              jukugo.paintPart(
+                canvas,
+                at,
+                box.face,
+                box.size,
+                rect.bottom + image.mathDepth!,
+                readingBaseline: box.readingBaseline,
+                before: box.before,
+                after: box.after,
+                vertical: box.vertical,
+                color: _pdfColor(fragment.color),
+              );
             case final InlineMath formula:
               // In the text's color; copied as its source.
               canvas

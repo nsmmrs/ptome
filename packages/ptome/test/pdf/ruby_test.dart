@@ -65,6 +65,30 @@ role:
       expect(text, isNot(contains('きょう')));
     }, skip: _poppler ? false : 'needs pdftotext');
 
+    test('jukugo ruby with long readings: a line breaks between its '
+        'characters, each part copied as its own', () {
+      // (The default page's line holds 47 characters of 10.5 points: the
+      // compound's first ends the first line, its second starts the
+      // next, at the text's left, 48.24 points.)
+      pdfText('${'の' * 46}ruby:日本[いらき の,jukugo]の文。');
+      if (!_poppler) return;
+      final bbox =
+          Process.runSync('pdftotext', [
+                '-bbox',
+                '${dir.path}/out.pdf',
+                '-',
+              ], stdoutEncoding: utf8).stdout
+              as String;
+      final words = {
+        for (final m in RegExp(
+          'xMin="([0-9.]+)"[^>]*xMax="([0-9.]+)"[^>]*>([^<]*)<',
+        ).allMatches(bbox))
+          m[3]!: (double.parse(m[1]!), double.parse(m[2]!)),
+      };
+      expect(words['日']!.$2, closeTo(547.04, 1));
+      expect(words['本']!.$1, closeTo(48.24, 1));
+    }, skip: _poppler ? false : 'needs pdftotext');
+
     test('emphasis marks read as nothing', () {
       final text = pdfText('日本語の[.bouten]##文章##は、書きます。');
       if (!_poppler) return;

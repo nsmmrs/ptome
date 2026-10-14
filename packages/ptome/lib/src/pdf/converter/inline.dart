@@ -1336,21 +1336,39 @@ extension _InlineElements on PdfConverter {
   /// (the compatibility mode never parses it). Mono ruby is one for each
   /// character, a line breaking between them (JLREQ 3.3.5), as is jukugo
   /// ruby whose characters have two reading characters or fewer each;
-  /// jukugo ruby with more is set as one, its readings the compound's
-  /// (3.3.7); group ruby is one.
+  /// jukugo ruby with more is set as the compound's (Appendix F), a line
+  /// still breaking between its characters; group ruby is one.
   String _inlineRuby(Inline node) {
     final pairs = [
       for (final (b, r) in rubyPairs(node))
         (PdfConverter._unescapeXml(b), PdfConverter._unescapeXml(r)),
     ];
-    final List<(String, String)> parts;
+    // (Jukugo ruby with three or more reading characters to a character:
+    // its characters set as the compound's, a line breaking between them,
+    // JLREQ Appendix F.)
     if (pairs.length > 1 &&
         rubyJukugo(node) &&
         pairs.any((pair) => pair.$2.runes.length > 2)) {
-      parts = [(pairs.map((p) => p.$1).join(), pairs.map((p) => p.$2).join())];
-    } else {
-      parts = pairs;
+      final jukugo = Jukugo(pairs);
+      return [
+        for (final (k, pair) in pairs.indexed)
+          () {
+            final src = 'ruby:${_rubyCount++}';
+            _inlineGraphics[src] = InlineRuby(
+              [pair],
+              base: pair.$1,
+              jukugo: jukugo,
+              index: k,
+            );
+            final alt = pair.$1
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('"', '&quot;');
+            return '<img src="$src" format="ruby" alt="$alt">';
+          }(),
+      ].join();
     }
+    final parts = pairs;
     // (Copied whole from its first part, the others copied as nothing:
     // the word reads as one where its parts stand apart.)
     final whole = PdfConverter._unescapeXml(node.text ?? '');

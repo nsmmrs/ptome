@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: jukugo ruby with three or more reading characters to a character
+  is set as JLREQ Appendix F has it (readings hanging over the compound's
+  next character, then the kana beside it, then space opened around the
+  long ones) and a line may break between its characters, each part set
+  as one of its own (FEAT-7gyqtj); it used to be one unbreakable group.
 - PDF: a warichu note longer than the rest of its line fills it and goes
   on at the next line's start, each part balanced in two lines spaced to
   the same length (JLREQ 3.4.2, FEAT-cjd1nv); it used to be cut into

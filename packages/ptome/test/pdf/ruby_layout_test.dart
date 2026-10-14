@@ -2,7 +2,8 @@
 // over its base (JIS X 4051's 1:2:1, no more than a reading character
 // from each end), a longer one hanging over the kana beside it but not
 // the Han characters, the rest made up between the base's characters;
-// Bopomofo in a column at its character's right.
+// Bopomofo in a column at its character's right; jukugo ruby with long
+// readings as JLREQ Appendix F sets it.
 @TestOn('vm')
 library;
 
@@ -126,5 +127,59 @@ void main() {
     // (Not in vertical text: set as a reading there.)
     final reading = InlineRuby([('字', 'ㄓㄨˋ')], base: '字').at(_face, size);
     expect(_at(reading, 'ㄓㄨˋ', 10), hasLength(1));
+  });
+
+  group('jukugo ruby (JLREQ Appendix F)', () {
+    // (Characters of 16 points, reading characters of 8.)
+    JukugoLayout layout(
+      List<int> counts, {
+      double before = 0,
+      double after = 0,
+    }) => JukugoLayout(
+      [for (final _ in counts) 16.0],
+      [for (final n in counts) n * 8.0],
+      counts,
+      8,
+      before: before,
+      after: after,
+    );
+
+    test('three, two and one reading characters: each hanging over the '
+        'next character, no space opened (Fig. 320)', () {
+      final l = layout([3, 2, 1]);
+      expect(l.readings, [0, 24, 40]);
+      expect(l.width, 48);
+    });
+
+    test('居候 (い そうろう): over the kana after it, no space opened '
+        '(Fig. 323)', () {
+      final l = layout([1, 4], after: 8);
+      expect(l.readings, [0, 8]);
+      expect(l.width, 32);
+    });
+
+    test('居候 with a Han character after it: a quarter em opened before '
+        'and after 候 (Fig. 329)', () {
+      final l = layout([1, 4]);
+      expect(l.spaceBefore, [0, 4]);
+      expect(l.spaceAfter, [0, 4]);
+      expect(l.readings, [0, 8]);
+      expect(l.width, 40);
+    });
+
+    test("a compound's characters each as wide as its part of the layout", () {
+      final jukugo = Jukugo([('居', 'い'), ('候', 'そうろう')]);
+      final widths = [
+        for (var i = 0; i < 2; i++)
+          InlineRuby(
+            [jukugo.pairs[i]],
+            base: jukugo.pairs[i].$1,
+            jukugo: jukugo,
+            index: i,
+          ).at(_face, size).width,
+      ];
+      // (Size 20: 候 with a quarter em, 5 points, each side.)
+      expect(widths, [20, 30]);
+    });
   });
 }

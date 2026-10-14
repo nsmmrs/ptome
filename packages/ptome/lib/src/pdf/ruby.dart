@@ -16,6 +16,17 @@
 /// of its character, three tenths of its size, the column half its width,
 /// centered on it, a tone mark at the right of the last symbol's top, the
 /// neutral tone above the symbols (CLREQ).
+///
+/// Jukugo ruby whose characters have three or more reading characters
+/// (JLREQ 3.3.7) is set as Appendix F's "principles part 2" have it: each
+/// reading over its own character where it fits, a longer one hanging
+/// over the next character of the compound (else the one before) by up to
+/// a reading character's width, then over the kana beside the compound,
+/// and only then the space around the characters with more than two
+/// reading characters opened, shared as their readings' lengths, half
+/// before and half after each (F.3). A line may break between the
+/// compound's characters, each part then set as one of its own, no
+/// further than the line (3.3.9).
 library;
 
 import 'dart:math' as math;
@@ -28,8 +39,15 @@ import 'package:ptome/src/pdf/fonts.dart';
 /// laid out in the text's face and size when the line is ([at]).
 final class InlineRuby implements Graphic {
   /// Ruby of [pairs] (one for group ruby, one a character for mono
-  /// ruby), copied as [base].
-  new(this.pairs, {required this.base});
+  /// ruby), copied as [base]; where it is a character of a jukugo
+  /// compound ([jukugo]), its [index] in it.
+  new(this.pairs, {required this.base, this.jukugo, this.index = 0});
+
+  /// The jukugo compound this is a character of, if any.
+  final Jukugo? jukugo;
+
+  /// Its index in [jukugo].
+  final int index;
 
   /// Each part of the base and its reading.
   final List<(String, String)> pairs;
@@ -59,6 +77,13 @@ final class InlineRuby implements Graphic {
     after: after,
     zhuyin: zhuyin,
     vertical: vertical,
+    layout: jukugo?.layout(
+      face,
+      size,
+      before: before,
+      after: after,
+      vertical: vertical,
+    ),
   );
 
   @override
@@ -151,13 +176,33 @@ final class RubyBox {
     this.ruby,
     this.face,
     this.size, {
-    required double before,
-    required double after,
+    required this.before,
+    required this.after,
     required bool zhuyin,
     required this.vertical,
+    JukugoLayout? layout,
   }) {
     final readingSize = size / 2;
     _readingBaseline = face.ascenderAt(size) + face.descenderAt(readingSize);
+    // (A character of a jukugo compound: as wide as the compound's layout
+    // makes it, its part drawn with the others beside it.)
+    if (layout != null) {
+      final i = ruby.index;
+      width = layout.spaceBefore[i] + layout.bases[i] + layout.spaceAfter[i];
+      if (i == 0) startOverhang = math.max(0, -layout.readings.first);
+      if (i == layout.bases.length - 1) {
+        endOverhang = math.max(
+          0,
+          layout.readings.last + layout.lengths.last - layout.width,
+        );
+      }
+      this.ascent = math.max(
+        face.ascenderAt(size),
+        _readingBaseline + face.ascenderAt(readingSize),
+      );
+      this.descent = face.descenderAt(size);
+      return;
+    }
     var ascent = face.ascenderAt(size);
     var descent = face.descenderAt(size);
     var x = 0.0;
@@ -238,6 +283,9 @@ final class RubyBox {
     this.descent = descent;
   }
 
+  /// How far above the baseline the readings' baseline is.
+  double get readingBaseline => _readingBaseline;
+
   /// The ruby.
   final InlineRuby ruby;
 
@@ -250,6 +298,12 @@ final class RubyBox {
   /// Whether it is set in a vertical line: its characters upright, by
   /// their vertical advances.
   final bool vertical;
+
+  /// How far its reading may hang over what is before it.
+  final double before;
+
+  /// How far its reading may hang over what is after it.
+  final double after;
 
   /// [text]'s length along the line at [size].
   double _widthOf(String text, double size) =>
@@ -361,8 +415,9 @@ final class RubyBox {
 }
 
 /// Ruby drawn by the engine as an inline image, laid out ([box]), in
-/// [color].
-final class EngineRuby implements Graphic {
+/// [color]: the characters of a jukugo compound beside one another on a
+/// line drawn as one part ([paintPieces]).
+final class EngineRuby implements SplitGraphic {
   /// [box] in [color].
   const new(this.box, this.color);
 
@@ -373,13 +428,326 @@ final class EngineRuby implements Graphic {
   final Color? color;
 
   @override
+  Object get group => box.ruby.jukugo ?? box.ruby;
+
+  @override
   double get intrinsicWidth => box.width;
 
   @override
   double get intrinsicHeight => box.ascent + box.descent;
 
   @override
-  void paint(Canvas canvas, Rect rect) {
-    box.paintAt(canvas, rect.left, rect.bottom + box.descent, color: color);
+  void paint(Canvas canvas, Rect rect) => paintPieces(canvas, [(this, rect)]);
+
+  @override
+  void paintPieces(Canvas canvas, List<(SplitGraphic, Rect)> pieces) {
+    final first = pieces.first.$2;
+    final baseline = first.bottom + box.descent;
+    final jukugo = box.ruby.jukugo;
+    if (jukugo == null) {
+      box.paintAt(canvas, first.left, baseline, color: color);
+      return;
+    }
+    jukugo.paintPart(
+      canvas,
+      [
+        for (final (piece, rect) in pieces)
+          if (piece case EngineRuby(:final box)) (box.ruby.index, rect.left),
+      ],
+      box.face,
+      box.size,
+      baseline,
+      readingBaseline: box.readingBaseline,
+      before: box.before,
+      after: box.after,
+      vertical: box.vertical,
+      color: color,
+    );
   }
+}
+
+/// A jukugo compound whose readings are set as the compound's ([layout]):
+/// [pairs] of each character and its reading.
+final class Jukugo {
+  /// The compound of [pairs].
+  new(this.pairs);
+
+  /// Each character and its reading.
+  final List<(String, String)> pairs;
+
+  final Map<(FontFace, double, double, double, bool), JukugoLayout> _layouts =
+      {};
+
+  /// The compound laid out in [face] at [size], its readings allowed to
+  /// hang [before] and [after] over the characters beside it.
+  JukugoLayout layout(
+    FontFace face,
+    double size, {
+    double before = 0,
+    double after = 0,
+    bool vertical = false,
+  }) => _layouts[(face, size, before, after, vertical)] ??= JukugoLayout(
+    [
+      for (final (base, _) in pairs)
+        face.widthOf(base, size, vertical: vertical),
+    ],
+    [
+      for (final (_, reading) in pairs)
+        face.widthOf(reading, size / 2, vertical: vertical),
+    ],
+    [for (final (_, reading) in pairs) reading.runes.length],
+    size / 2,
+    before: before,
+    after: after,
+  );
+
+  /// Draws the part of the compound made of the characters [at] (each its
+  /// index and where its room starts) in [face] at [size], on [baseline]:
+  /// the characters where the compound's layout spaces them, the readings
+  /// placed again for the part, no further than its ends where the line
+  /// breaks there; copied as the part's characters.
+  void paintPart(
+    Canvas canvas,
+    List<(int, double)> at,
+    FontFace face,
+    double size,
+    double baseline, {
+    required double readingBaseline,
+    required double before,
+    required double after,
+    required bool vertical,
+    Color? color,
+  }) {
+    final whole = layout(
+      face,
+      size,
+      before: before,
+      after: after,
+      vertical: vertical,
+    );
+    final indices = [for (final (i, _) in at) i];
+    final starts = [for (final (i, left) in at) left + whole.spaceBefore[i]];
+    final bases = [for (final i in indices) whole.bases[i]];
+    final lengths = [for (final i in indices) whole.lengths[i]];
+    // (Over what is beside the compound only at its own ends: a part cut
+    // by the line reaches no further than the line, 3.3.9.)
+    // (The part's room: from its first character's to its last's.)
+    final (first, firstLeft) = at.first;
+    final (last, lastLeft) = at.last;
+    final from = firstLeft;
+    final to =
+        lastLeft +
+        whole.spaceBefore[last] +
+        whole.bases[last] +
+        whole.spaceAfter[last];
+    final readings =
+        placeReadings(
+          starts,
+          bases,
+          lengths,
+          size / 2,
+          start: from,
+          end: to,
+          before: first == 0 ? before : 0,
+          after: last == pairs.length - 1 ? after : 0,
+        ) ??
+        placeReadings(
+          starts,
+          bases,
+          lengths,
+          size / 2,
+          start: from,
+          end: to,
+          before: double.infinity,
+          after: double.infinity,
+        )!;
+    final copied = [for (final i in indices) pairs[i].$1].join();
+    canvas
+      ..save()
+      ..beginMarkedContent('Span', actualText: copied);
+    if (color != null) canvas.setFillColor(color);
+    final baseStyle = TextStyle(face.pdf, size, vertical: vertical);
+    final readingStyle = TextStyle(face.pdf, size / 2, vertical: vertical);
+    for (final (k, i) in indices.indexed) {
+      canvas
+        ..glyphs(
+          baseStyle.shape(pairs[i].$1),
+          starts[k],
+          baseline,
+          baseStyle,
+          text: '',
+        )
+        ..glyphs(
+          readingStyle.shape(pairs[i].$2),
+          readings[k],
+          baseline + readingBaseline,
+          readingStyle,
+          text: '',
+        );
+    }
+    canvas
+      ..endMarkedContent()
+      ..restore();
+  }
+}
+
+/// A jukugo compound laid out (JLREQ Appendix F): each character's width
+/// ([bases]), the space opened before and after it, its reading's length
+/// and number of characters, and where each reading starts ([readings]),
+/// from the compound's start; its [width].
+final class JukugoLayout {
+  /// The compound of characters [bases] wide, their readings [lengths]
+  /// long of [counts] characters, a reading character [em] wide, its
+  /// readings allowed to hang [before] and [after] over what is beside it.
+  new(
+    this.bases,
+    this.lengths,
+    this.counts,
+    double em, {
+    double before = 0,
+    double after = 0,
+  }) {
+    final n = bases.length;
+    // (The space opened, shared by the characters with more than two
+    // reading characters as their readings' lengths, half before and
+    // half after each: the least that lets the readings be placed.)
+    final shares = [
+      for (var i = 0; i < n; i++)
+        if (counts[i] > 2) lengths[i] else 0.0,
+    ];
+    final sum = shares.fold<double>(0, (a, b) => a + b);
+    List<double> startsWith(double total) {
+      final starts = <double>[];
+      var x = 0.0;
+      for (var i = 0; i < n; i++) {
+        final space = sum == 0 ? 0.0 : total * shares[i] / sum;
+        x += space / 2;
+        starts.add(x);
+        x += bases[i] + space / 2;
+      }
+      return starts;
+    }
+
+    List<double>? place(double total) => placeReadings(
+      startsWith(total),
+      bases,
+      lengths,
+      em,
+      start: 0,
+      end: bases.fold<double>(0, (a, b) => a + b) + total,
+      before: before,
+      after: after,
+    );
+    var low = 0.0;
+    var high = lengths.fold<double>(0, (a, b) => a + b);
+    var placed = place(low);
+    if (placed == null) {
+      for (var k = 0; k < 40; k++) {
+        final middle = (low + high) / 2;
+        if (place(middle) == null) {
+          low = middle;
+        } else {
+          high = middle;
+        }
+      }
+      // (To a thousandth of a point, up: no less than it needs.)
+      high = (high * 1000).ceil() / 1000;
+      low = high;
+      placed =
+          place(high) ??
+          placeReadings(
+            startsWith(high),
+            bases,
+            lengths,
+            em,
+            start: 0,
+            end: bases.fold<double>(0, (a, b) => a + b) + high,
+            before: double.infinity,
+            after: double.infinity,
+          )!;
+    }
+    readings = placed;
+    spaceBefore = [
+      for (var i = 0; i < n; i++)
+        if (sum == 0) 0.0 else low * shares[i] / sum / 2,
+    ];
+    spaceAfter = spaceBefore;
+    width =
+        bases.fold<double>(0, (a, b) => a + b) +
+        spaceBefore.fold<double>(0, (a, b) => a + b) * 2;
+  }
+
+  /// Each character's width.
+  final List<double> bases;
+
+  /// Each reading's length.
+  final List<double> lengths;
+
+  /// Each reading's number of characters.
+  final List<int> counts;
+
+  /// Where each reading starts, from the compound's start.
+  late final List<double> readings;
+
+  /// The space opened before each character.
+  late final List<double> spaceBefore;
+
+  /// The space opened after each character.
+  late final List<double> spaceAfter;
+
+  /// The compound's width.
+  late final double width;
+}
+
+/// Where the readings [lengths] long over the
+/// characters at [starts], [bases] wide, start, a reading character [em]
+/// wide (JLREQ Appendix F.2): each where it would be over its own
+/// character (centered; a longer one from its start, hanging over the
+/// next character, or the one before as well where it is longer by more
+/// than [em]), then moved as little as keeps them in order. A reading may
+/// cover its character and the space around it, hang [em] over the
+/// compound's characters beside it, and [before] and [after] over what is
+/// beside the compound, which runs from [start] to [end]; null where they
+/// can't be so placed.
+@visibleForTesting
+List<double>? placeReadings(
+  List<double> starts,
+  List<double> bases,
+  List<double> lengths,
+  double em, {
+  required double start,
+  required double end,
+  required double before,
+  required double after,
+}) {
+  final n = starts.length;
+  const slack = 1e-6;
+  final low = [
+    for (var i = 0; i < n; i++)
+      if (i == 0) start - before else starts[i - 1] + bases[i - 1] - em,
+  ];
+  final high = [
+    for (var i = 0; i < n; i++)
+      (i == n - 1 ? end + after : starts[i + 1] + em) - lengths[i],
+  ];
+  final x = [
+    for (var i = 0; i < n; i++)
+      if (lengths[i] <= bases[i])
+        starts[i] + (bases[i] - lengths[i]) / 2
+      else
+        starts[i] - math.max(0, lengths[i] - bases[i] - em),
+  ];
+  for (var i = 0; i < n; i++) {
+    x[i] = x[i].clamp(low[i], math.max(low[i], high[i]));
+    if (i > 0) x[i] = math.max(x[i], x[i - 1] + lengths[i - 1]);
+  }
+  for (var i = n - 1; i >= 0; i--) {
+    if (x[i] > high[i]) x[i] = high[i];
+    if (i < n - 1) x[i] = math.min(x[i], x[i + 1] - lengths[i]);
+  }
+  for (var i = 0; i < n; i++) {
+    if (x[i] < low[i] - slack || x[i] > high[i] + slack) return null;
+    if (i > 0 && x[i] < x[i - 1] + lengths[i - 1] - slack) return null;
+  }
+  return x;
 }
