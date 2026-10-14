@@ -160,12 +160,11 @@ $theme''');
     bool line(String out, String text) =>
         RegExp('^\\s*$text\\s*\$', multiLine: true).hasMatch(out);
     final out = text({});
-    // (The list's markers, the footnote's, the second page's number.)
-    expect(out, contains('١.'));
-    expect(out, contains('٢.'));
-    // (pdftotext reads the bracketed number in a right-to-left line out
-    // of order: `][١`.)
-    expect(out, contains(RegExp(r'\[١\]|\]\[١')));
+    // (The list's markers, the footnote's reference and label, the
+    // second page's number: counted, as pdftotext versions order a
+    // right-to-left line's digits and marks differently.)
+    expect('١'.allMatches(out).length, greaterThanOrEqualTo(3), reason: out);
+    expect('٢'.allMatches(out).length, greaterThanOrEqualTo(2), reason: out);
     expect(line(out, '٢'), isTrue, reason: out);
     expect(out, isNot(contains(RegExp('[0-9]'))));
     expect(text({'asciidoctor-compat': ''}), isNot(contains('١')));
