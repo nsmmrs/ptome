@@ -18,7 +18,8 @@
 ///   (`CounterStyle`), and the numbering system a language writes its
 ///   numbers in by default (CLDR 48.2): `defaultNumberingSystem`.
 /// - Dates and times as a language writes them (CLDR 48.2), in its
-///   calendar (`CalendarSystem`): `formatDate`, `formatTime` and
+///   calendar (`CalendarSystem`: the Gregorian, Japanese, Hebrew, Persian,
+///   Islamic, Chinese...): `formatDate`, `formatTime` and
 ///   `formatDateTime`.
 /// - Emoji (UTS #51, Unicode 18.0.0): the emoji properties and where an
 ///   emoji presentation sequence (a flag, a ZWJ sequence...) starts and

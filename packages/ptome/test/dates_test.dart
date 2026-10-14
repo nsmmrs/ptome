@@ -121,4 +121,23 @@ void main() {
       contains('<span id="revdate">2026-10-14</span>'),
     );
   });
+
+  test('the calendars that convert: Hebrew, Persian, Chinese, Islamic', () {
+    expect(
+      html({'lang': 'he', 'calendar': 'hebrew'}),
+      contains('<span id="revdate">ג׳ בחשוון תשפ״ז</span>'),
+    );
+    expect(
+      html({'lang': 'fa-u-ca-persian'}),
+      contains('<span id="revdate">۲۲ مهر ۱۴۰۵</span>'),
+    );
+    expect(
+      html({'lang': 'zh', 'calendar': 'chinese'}),
+      contains('<span id="revdate">2026丙午年九月初五</span>'),
+    );
+    expect(
+      html({'calendar': 'islamic-umalqura'}),
+      contains('<span id="revdate">Jumada I 3, 1448 AH</span>'),
+    );
+  });
 }

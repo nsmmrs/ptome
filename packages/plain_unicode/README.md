@@ -30,8 +30,11 @@ JavaScript (whose own tables differ in age and in rules):
 - **Dates** (CLDR 48.2): `formatDate(moment, 'ja')` writes a date (and
   `formatTime`, `formatDateTime` a time) as the language does, in each
   length (`DateStyle.short` to `full`), as ICU 78.3's DateFormat does,
-  in the Gregorian calendar or, by `-u-ca-` or a `CalendarSystem`, the
-  Japanese (令和8年), Buddhist or ROC calendar.
+  in the Gregorian calendar or, by `-u-ca-` or a `CalendarSystem`, one of
+  the others CLDR names: the Japanese (令和8年), Buddhist, ROC, Hebrew
+  (ג׳ בחשוון תשפ״ז), Persian, Islamic (civil, tabular, Umm al-Qura and by
+  the new moons), Coptic, Ethiopic, Indian national, Chinese (2026丙午年
+  九月初五) and Korean calendars.
 - **Emoji** (UTS #51, Unicode 18.0.0): the emoji properties
   (`isEmojiPresentation`, `isExtendedPictographic`...) and
   `emojiSequenceLength`, where a flag, a ZWJ sequence or a keycap shown

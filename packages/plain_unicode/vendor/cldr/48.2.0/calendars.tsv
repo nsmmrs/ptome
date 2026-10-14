@@ -1052,6 +1052,7 @@ ast	chinese/months/stand-alone/wide/11	Mes 11
 ast	chinese/months/stand-alone/wide/12	Mes 12
 ast	chinese/monthPatterns/format/abbreviated/leap	{0}bis
 ast	chinese/monthPatterns/format/wide/leap	{0} bisiestu
+ast	chinese/monthPatterns/numeric/all/leap	{0} bis
 ast	chinese/cyclicNameSets/years/format/wide/1	ratu de madera yang
 ast	chinese/cyclicNameSets/years/format/wide/2	güe de madera yin
 ast	chinese/cyclicNameSets/years/format/wide/3	tigre de fueu yang
@@ -5076,6 +5077,7 @@ cv	chinese/months/stand-alone/wide/11	вун пӗрмӗш уйӑх
 cv	chinese/months/stand-alone/wide/12	вун иккӗмӗш уйӑх
 cv	chinese/monthPatterns/format/abbreviated/leap	йӗкӗр {0}
 cv	chinese/monthPatterns/format/wide/leap	йӗкӗр {0}
+cv	chinese/monthPatterns/numeric/all/leap	йӗкӗр {0}
 cv	chinese/monthPatterns/stand-alone/abbreviated/leap	йӗкӗр {0}
 cv	chinese/monthPatterns/stand-alone/wide/leap	йӗкӗр {0}
 cv	chinese/cyclicNameSets/years/format/abbreviated/1	цзя-цзы
@@ -5288,6 +5290,7 @@ cv	dangi/months/stand-alone/wide/11	вун пӗрмӗш уйӑх
 cv	dangi/months/stand-alone/wide/12	вун иккӗмӗш уйӑх
 cv	dangi/monthPatterns/format/abbreviated/leap	йӗкӗр {0}
 cv	dangi/monthPatterns/format/wide/leap	йӗкӗр {0}
+cv	dangi/monthPatterns/numeric/all/leap	йӗкӗр {0}
 cv	dangi/monthPatterns/stand-alone/abbreviated/leap	йӗкӗр {0}
 cv	dangi/monthPatterns/stand-alone/wide/leap	йӗкӗр {0}
 cv	dangi/cyclicNameSets/years/format/abbreviated/1	кап-ча
@@ -9954,6 +9957,7 @@ ff-Adlm	chinese/months/format/wide/10	𞤡𞤭𞥅𞤴𞤵𞤫𞥅
 ff-Adlm	chinese/months/format/wide/11	𞤡𞤭𞥅𞤴𞤭𞤴𞤵𞤫𞥅
 ff-Adlm	chinese/months/format/wide/12	𞤡𞤭𞥅𞤫𞤪𞤴𞤵𞤫𞥅
 ff-Adlm	chinese/monthPatterns/format/wide/leap	{0}𞤦𞤭𞤧
+ff-Adlm	chinese/monthPatterns/numeric/all/leap	{0}𞤦𞤭𞤧
 ff-Adlm	chinese/cyclicNameSets/years/format/abbreviated/1	𞤶𞤭𞤢-𞥁𞤭
 ff-Adlm	chinese/cyclicNameSets/years/format/abbreviated/2	𞤴𞤭-𞤧𞤵
 ff-Adlm	chinese/cyclicNameSets/years/format/abbreviated/3	𞤦𞤭𞤲𞤺-𞤴𞤭𞥅𞤲
@@ -15060,6 +15064,7 @@ ja	chinese/months/format/wide/10	十月
 ja	chinese/months/format/wide/11	十一月
 ja	chinese/months/format/wide/12	十二月
 ja	chinese/monthPatterns/format/wide/leap	閏{0}
+ja	chinese/monthPatterns/numeric/all/leap	閏{0}
 ja	chinese/cyclicNameSets/years/format/abbreviated/1	甲子
 ja	chinese/cyclicNameSets/years/format/abbreviated/2	乙丑
 ja	chinese/cyclicNameSets/years/format/abbreviated/3	丙寅
@@ -17351,6 +17356,7 @@ ko	chinese/months/format/wide/10	10월
 ko	chinese/months/format/wide/11	11월
 ko	chinese/months/format/wide/12	12월
 ko	chinese/monthPatterns/format/wide/leap	윤{0}
+ko	chinese/monthPatterns/numeric/all/leap	윤{0}
 ko	chinese/cyclicNameSets/years/format/abbreviated/1	갑자
 ko	chinese/cyclicNameSets/years/format/abbreviated/2	을축
 ko	chinese/cyclicNameSets/years/format/abbreviated/3	병인
@@ -25370,6 +25376,7 @@ root	chinese/months/format/wide/10	M10
 root	chinese/months/format/wide/11	M11
 root	chinese/months/format/wide/12	M12
 root	chinese/monthPatterns/format/wide/leap	{0}bis
+root	chinese/monthPatterns/numeric/all/leap	{0}bis
 root	chinese/cyclicNameSets/years/format/abbreviated/1	jia-zi
 root	chinese/cyclicNameSets/years/format/abbreviated/2	yi-chou
 root	chinese/cyclicNameSets/years/format/abbreviated/3	bing-yin
@@ -35088,6 +35095,7 @@ vi	chinese/months/format/wide/10	10
 vi	chinese/months/format/wide/11	11
 vi	chinese/months/format/wide/12	12
 vi	chinese/monthPatterns/format/wide/leap	{0} Nhuận
+vi	chinese/monthPatterns/numeric/all/leap	{0} Nhuận
 vi	chinese/cyclicNameSets/years/format/abbreviated/1	Giáp Tý
 vi	chinese/cyclicNameSets/years/format/abbreviated/2	Ất Sửu
 vi	chinese/cyclicNameSets/years/format/abbreviated/3	Bính Dần
@@ -36120,6 +36128,7 @@ yue	chinese/months/format/wide/10	十月
 yue	chinese/months/format/wide/11	冬月
 yue	chinese/months/format/wide/12	臘月
 yue	chinese/monthPatterns/format/wide/leap	閏{0}
+yue	chinese/monthPatterns/numeric/all/leap	閏{0}
 yue	chinese/cyclicNameSets/years/format/abbreviated/1	甲子
 yue	chinese/cyclicNameSets/years/format/abbreviated/2	乙丑
 yue	chinese/cyclicNameSets/years/format/abbreviated/3	丙寅
@@ -36674,6 +36683,7 @@ yue-Hans	chinese/months/format/wide/10	十月
 yue-Hans	chinese/months/format/wide/11	冬月
 yue-Hans	chinese/months/format/wide/12	腊月
 yue-Hans	chinese/monthPatterns/format/wide/leap	闰{0}
+yue-Hans	chinese/monthPatterns/numeric/all/leap	闰{0}
 yue-Hans	chinese/cyclicNameSets/years/format/abbreviated/1	甲子
 yue-Hans	chinese/cyclicNameSets/years/format/abbreviated/2	乙丑
 yue-Hans	chinese/cyclicNameSets/years/format/abbreviated/3	丙寅
@@ -37317,6 +37327,7 @@ zh	chinese/months/format/wide/10	十月
 zh	chinese/months/format/wide/11	十一月
 zh	chinese/months/format/wide/12	腊月
 zh	chinese/monthPatterns/format/wide/leap	闰{0}
+zh	chinese/monthPatterns/numeric/all/leap	闰{0}
 zh	chinese/cyclicNameSets/years/format/abbreviated/1	甲子
 zh	chinese/cyclicNameSets/years/format/abbreviated/2	乙丑
 zh	chinese/cyclicNameSets/years/format/abbreviated/3	丙寅
@@ -38117,6 +38128,7 @@ zh-Hant	chinese/months/format/wide/10	十月
 zh-Hant	chinese/months/format/wide/11	冬月
 zh-Hant	chinese/months/format/wide/12	臘月
 zh-Hant	chinese/monthPatterns/format/wide/leap	閏{0}
+zh-Hant	chinese/monthPatterns/numeric/all/leap	閏{0}
 zh-Hant	chinese/cyclicNameSets/years/format/abbreviated/1	甲子
 zh-Hant	chinese/cyclicNameSets/years/format/abbreviated/2	乙丑
 zh-Hant	chinese/cyclicNameSets/years/format/abbreviated/3	丙寅

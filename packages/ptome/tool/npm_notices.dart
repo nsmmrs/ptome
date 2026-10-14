@@ -75,14 +75,22 @@ const List<(String, String, String, String)> _vendored = [
   (
     'plain_unicode',
     'ICU',
-    'the Thai, Lao, Khmer and Burmese word lists and their word breaking',
+    'the Thai, Lao, Khmer and Burmese word lists and their word breaking, '
+        "and the Umm al-Qura calendar's month lengths",
     'plain_unicode/vendor/icu/LICENSE',
+  ),
+  (
+    'plain_unicode',
+    "ERFA (the IAU's SOFA)",
+    "the Sun's and the Moon's series and the nutation the calendars that "
+        'follow the sky use',
+    'plain_unicode/vendor/erfa/LICENSE',
   ),
   (
     'plain_unicode',
     'Unicode CLDR',
     'the quotation marks, collation tailorings, index characters, '
-        'numbering systems and date formats by language',
+        'numbering systems, number rules and calendars by language',
     'plain_unicode/vendor/cldr/48.2.0/LICENSE',
   ),
   (

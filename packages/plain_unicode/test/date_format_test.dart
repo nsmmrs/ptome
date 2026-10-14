@@ -9,153 +9,9 @@ library;
 import 'dart:io';
 
 import 'package:plain_unicode/plain_unicode.dart';
-import 'package:plain_unicode/src/quotation_marks.dart' show cldrParent;
 import 'package:test/test.dart';
 
-const String _oracle = 'tool/oracles/icu/icudate';
-
-/// The languages CLDR targets at basic coverage or more
-/// (common/properties/coverageLevels.txt, 48.2): ICU 78.3 packages the
-/// others' data trimmed (Afar's times, Rohingya's, Hawaiian's).
-const Set<String> _coverage = {
-  'af', 'ak', 'am', 'ar', 'as', 'ast', 'az', 'ba', 'bal-Latn', 'be', 'bg', //
-  'bgc', 'bho', 'blo', 'bn', 'br', 'brx', 'bs', 'bs-Cyrl', 'bua', 'ca',
-  'ceb', 'chr', 'cs', 'csw', 'cv', 'cy', 'da', 'de', 'doi', 'dsb', 'ee',
-  'el', 'en', 'eo', 'es', 'et', 'eu', 'fa', 'ff-Adlm', 'fi', 'fil', 'fo',
-  'fr', 'fy', 'ga', 'gaa', 'gd', 'gl', 'gu', 'ha', 'he', 'hi', 'hi-Latn',
-  'hr', 'hsb', 'hu', 'hy', 'ia', 'id', 'ie', 'ig', 'ii', 'is', 'it', 'ja',
-  'jv', 'ka', 'kea', 'kgp', 'kk', 'kk-Arab', 'km', 'kn', 'ko', 'kok',
-  'kok-Latn', 'ks', 'ks-Deva', 'ku', 'kxv', 'kxv-Deva', 'kxv-Orya',
-  'kxv-Telu', 'ky', 'lb', 'lij', 'lmo', 'lo', 'lt', 'lv', 'mai', 'mi', 'mk',
-  'ml', 'mn', 'mni', 'mr', 'ms', 'mt', 'my', 'nds', 'ne', 'nl', 'nn', 'no',
-  'nqo', 'nso', 'oc', 'om', 'or', 'pa', 'pcm', 'pl', 'pms', 'ps', 'pt', 'qu',
-  'raj', 'rm', 'ro', 'ru', 'rw', 'sa', 'sah', 'sat', 'sc', 'scn', 'sd',
-  'sd-Deva', 'shn', 'si', 'sk', 'sl', 'so', 'sq', 'sr', 'sr-Latn', 'st',
-  'su', 'sv', 'sw', 'syr', 'szl', 'ta', 'te', 'tg', 'th', 'ti', 'tk', 'tn',
-  'to', 'tr', 'tt', 'tyv', 'ug', 'uk', 'ur', 'uz', 'uz-Cyrl', 'vec', 'vi',
-  'vmw', 'wo', 'xh', 'xnr', 'yo', 'yrl', 'yue', 'yue-Hans', 'za', 'zh',
-  'zh-Hant', 'zu',
-};
-
-/// Whether [locale] is one of a covered language's (or script's).
-bool _covered(String locale) {
-  final parts = locale.split('-');
-  return _coverage.contains(parts.first) ||
-      (parts.length > 1 && _coverage.contains('${parts[0]}-${parts[1]}'));
-}
-
-/// The covered locales CLDR has calendar data for and ICU's data has
-/// (it falls back otherwise).
-List<String> _locales() {
-  final locales = {
-    for (final line in File(
-      'vendor/cldr/48.2.0/calendars.tsv',
-    ).readAsLinesSync())
-      if (line.isNotEmpty &&
-          !line.startsWith('#') &&
-          line.split('\t')[1].startsWith('gregorian/'))
-        line.split('\t').first,
-  }.where((l) => l != 'root' && _covered(l)).toList();
-  final has = Process.runSync('sh', [
-    '-c',
-    'printf "%s\\n" "\$@" | "$_oracle"',
-    'sh',
-    for (final l in locales) '?$l',
-  ]);
-  final present = '${has.stdout}'.split('\n');
-  final kept = {
-    for (final (i, l) in locales.indexed)
-      if (present[i] == '1') l,
-  };
-  return locales..retainWhere(kept.contains);
-}
-
-/// Whether [icu] is [moment]'s date in [calendar] as [locale] writes it
-/// in [date]'s style, and its time in [time]'s as [locale] or a parent
-/// writes it in the Gregorian calendar (in [locale]'s digits), joined by
-/// a date-time pattern of [date]'s length from [locale] or a parent (the
-/// calendar's own, the generic or the Gregorian).
-bool _joinedInChain(
-  String locale,
-  String icu,
-  DateTime moment,
-  Duration offset,
-  DateStyle date,
-  DateStyle time,
-  CalendarSystem calendar,
-) {
-  final chain = [for (String? l = locale; l != null; l = cldrParent(l)) l];
-  final datePart = formatDate(
-    moment,
-    locale,
-    style: date,
-    offset: offset,
-    calendar: calendar,
-  );
-  final times = {
-    for (final l in chain)
-      formatTime(
-        moment,
-        l,
-        style: time,
-        offset: offset,
-        // (In the locale's own digits.)
-        numberingSystem: defaultNumberingSystem(locale),
-      ),
-  };
-  final joiners = {'{1} {0}'};
-  for (final [l, path, value] in _calendarLines) {
-    if (!chain.contains(l)) continue;
-    for (final kind in ['gregorian', 'generic', calendar.cldrName]) {
-      for (final variant in const ['standard', 'atTime']) {
-        if (path == '$kind/dateTimeFormats/${date.name}/$variant') {
-          joiners.add(value);
-        }
-      }
-    }
-  }
-  for (final joiner in joiners) {
-    final pattern = joiner.replaceAll("''", '\u0001').replaceAll("'", '');
-    for (final t in times) {
-      final text = pattern
-          .replaceAll('{1}', '\u0000')
-          .replaceAll('{0}', t)
-          .replaceAll('\u0000', datePart)
-          .replaceAll('\u0001', "'");
-      if (text == icu) return true;
-    }
-  }
-  return false;
-}
-
-/// calendars.tsv's lines: a locale, a path, a value.
-final List<List<String>> _calendarLines = [
-  for (final line in File('vendor/cldr/48.2.0/calendars.tsv').readAsLinesSync())
-    if (line.isNotEmpty && !line.startsWith('#')) line.split('\t'),
-];
-
-/// What ICU writes for each of [cases] (a locale, a date and a time
-/// style, a moment, an offset in minutes, a calendar's BCP 47 name).
-List<String> _icu(
-  List<(String, DateStyle?, DateStyle?, DateTime, int, String)> cases,
-) {
-  final input = cases
-      .map(
-        (c) =>
-            '${c.$1}\t${c.$2?.name ?? 'none'}\t${c.$3?.name ?? 'none'}\t'
-            '${c.$4.millisecondsSinceEpoch}\t${c.$5}\t${c.$6}',
-      )
-      .join('\n');
-  final dir = Directory.systemTemp.createTempSync('dates.');
-  try {
-    final file = File('${dir.path}/in.tsv')..writeAsStringSync('$input\n');
-    final r = Process.runSync('sh', ['-c', '"$_oracle" < "${file.path}"']);
-    expect(r.exitCode, 0, reason: '${r.stderr}');
-    return '${r.stdout}'.split('\n');
-  } finally {
-    dir.deleteSync(recursive: true);
-  }
-}
+import 'support/icu_dates.dart';
 
 void main() {
   final moment = DateTime.utc(2026, 10, 14, 17, 46, 40);
@@ -236,7 +92,7 @@ void main() {
   test(
     "every locale as ICU 78.3's",
     () {
-      final locales = _locales();
+      final locales = icuDateLocales();
       expect(locales.length, greaterThan(300));
       // (Midnight, early morning, noon, afternoon and evening; zones from
       // UTC, ahead and behind, by whole and part hours.)
@@ -269,7 +125,7 @@ void main() {
           }
         }
       }
-      final theirs = _icu(cases);
+      final theirs = icuDates(cases);
       final differ = <String>[];
       for (final (i, (locale, date, time, m, minutes, _)) in cases.indexed) {
         final offset = Duration(minutes: minutes);
@@ -300,13 +156,15 @@ void main() {
       expect(differ, isEmpty, reason: differ.take(20).join('\n'));
     },
     tags: ['tools'],
-    skip: File(_oracle).existsSync() ? false : 'run tool/oracles/icu/setup.sh',
+    skip: File(icuDateOracle).existsSync()
+        ? false
+        : 'run tool/oracles/icu/setup.sh',
   );
 
   test(
     'the Japanese, Buddhist and ROC calendars as ICU 78.3 writes them',
     () {
-      final locales = _locales();
+      final locales = icuDateLocales();
       // (Each side of the Heisei, Reiwa, Showa and Minguo eras' starts, at
       // noon in Tokyo; and today.)
       final moments = [
@@ -331,13 +189,17 @@ void main() {
         (DateStyle.long, DateStyle.short),
       ];
       final cases = [
-        for (final calendar in CalendarSystem.values.skip(1))
+        for (final calendar in const [
+          CalendarSystem.japanese,
+          CalendarSystem.buddhist,
+          CalendarSystem.roc,
+        ])
           for (final locale in locales)
             for (final (date, time) in pairs)
               for (final m in moments)
                 (locale, date, time, m, 540, calendar.bcp47Name),
       ];
-      final theirs = _icu(cases);
+      final theirs = icuDates(cases);
       final differ = <String>[];
       for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
         final calendar = CalendarSystem.named(name)!;
@@ -367,15 +229,7 @@ void main() {
         // pattern of the chain's.)
         if (ours != theirs[i] &&
             time != null &&
-            _joinedInChain(
-              locale,
-              theirs[i],
-              m,
-              offset,
-              date,
-              time,
-              calendar,
-            )) {
+            joinedInChain(locale, theirs[i], m, offset, date, time, calendar)) {
           continue;
         }
         if (ours != theirs[i]) {
@@ -392,6 +246,8 @@ void main() {
       );
     },
     tags: ['tools'],
-    skip: File(_oracle).existsSync() ? false : 'run tool/oracles/icu/setup.sh',
+    skip: File(icuDateOracle).existsSync()
+        ? false
+        : 'run tool/oracles/icu/setup.sh',
   );
 }

@@ -5,10 +5,13 @@
 /// 1 (4.1.3) has them, the digits the language's numbering system's.
 library;
 
+import 'package:plain_unicode/src/calendars.dart';
 import 'package:plain_unicode/src/counter_styles.dart'
     show CounterStyle, defaultNumberingSystem, numberingSystemDigits;
 import 'package:plain_unicode/src/quotation_marks.dart'
     show cldrLocales, cldrNamesParent, cldrParent;
+
+import 'package:plain_unicode/src/rbnf.dart' show formatAlgorithmic;
 
 part 'date_format.g.dart';
 
@@ -45,7 +48,55 @@ enum CalendarSystem {
 
   /// The Republic of China's (Minguo): the Gregorian calendar's, its years
   /// counted from 1912 (民國115年 for 2026).
-  roc('roc', 'roc');
+  roc('roc', 'roc'),
+
+  /// The Islamic calendar in its tabular civil form: a 30-year cycle of
+  /// 354- and 355-day years, from 16 July 622 (Julian).
+  islamicCivil('islamic-civil', 'islamic-civil'),
+
+  /// The Islamic calendar in its tabular astronomical form (tbla): the
+  /// civil form's cycle, from a day earlier.
+  islamicTbla('islamic-tbla', 'islamic-tbla'),
+
+  /// Saudi Arabia's Islamic calendar (Umm al-Qura): its months as its
+  /// tables give them, 1300 to 1600 AH (the civil form outside).
+  islamicUmalqura('islamic-umalqura', 'islamic-umalqura'),
+
+  /// The Hebrew calendar: lunisolar, its years counted from the creation
+  /// (5787 AM for 2026–27), seven years in nineteen with Adar I.
+  hebrew('hebrew', 'hebrew'),
+
+  /// The Coptic calendar: twelve months of 30 days and five or six more,
+  /// its years counted from 284 (the Era of Martyrs).
+  coptic('coptic', 'coptic'),
+
+  /// The Ethiopian calendar: the Coptic calendar's months, its years
+  /// counted from 8 (the Year of Mercy).
+  ethiopic('ethiopic', 'ethiopic'),
+
+  /// The Ethiopian calendar, its years counted from the creation (Amete
+  /// Alem, 5500 years before the Year of Mercy).
+  ethiopicAmeteAlem('ethiopic-amete-alem', 'ethioaa'),
+
+  /// India's national calendar (Saka): its years counted from 78, starting
+  /// on 22 March.
+  indian('indian', 'indian'),
+
+  /// The Persian calendar (Solar Hijri): its year from the day of the March
+  /// equinox in Tehran, counted from the Hijra.
+  persian('persian', 'persian'),
+
+  /// The Islamic calendar by the new moons: each month from the first day
+  /// whose midnight (UT) follows its new moon.
+  islamic('islamic', 'islamic'),
+
+  /// The Chinese calendar: lunisolar, by the new moons and the solar terms
+  /// in China's time, its years in the 60-year cycle (丙午 for 2026–27).
+  chinese('chinese', 'chinese'),
+
+  /// The Korean calendar (Dangi): the Chinese calendar's rules in Korea's
+  /// time.
+  dangi('dangi', 'dangi');
 
   new(this.cldrName, this.bcp47Name);
 
@@ -184,8 +235,9 @@ List<(bool, String)> _segments(String pattern) {
 }
 
 /// A date in a calendar: its era, its year in the era, its month (from
-/// 1), whether that is a leap month, and its day; and its year as the
-/// Gregorian calendar counts it (`r`).
+/// 1), whether that is a leap month, and its day; its year as the
+/// Gregorian calendar counts it (`r`) and in the 60-year cycle (`U`, from
+/// 1).
 typedef _CalendarDate = ({
   int era,
   int year,
@@ -193,6 +245,7 @@ typedef _CalendarDate = ({
   bool leapMonth,
   int day,
   int relatedYear,
+  int cyclicYear,
 });
 
 /// A language's calendar fields, found through CLDR's parent locales and
@@ -250,24 +303,72 @@ final class _DateFormatter {
     return _likelyRegions['$lang-$script'] ?? _likelyRegions[lang] ?? '001';
   }
 
-  /// The year [wall]'s week belongs to (`Y`): week 1 the first that has
-  /// at least the region's fewest days of the year, weeks starting on its
-  /// first day (UTS #35, Part 4, 8.1). (In the Gregorian calendar's weeks,
-  /// whose years the calendars of eras share.)
-  int _weekYear(DateTime wall) {
+  /// The year [wall]'s week belongs to (`Y`), as [date]'s calendar
+  /// numbers its years: week 1 the first that has at least the region's
+  /// fewest days of the year, weeks starting on its first day (UTS #35,
+  /// Part 4, 8.1). (The calendars of eras count the Gregorian calendar's
+  /// years and weeks, as ICU does.)
+  int _weekYear(DateTime wall, _CalendarDate date) {
     final (first, fewest) = _week;
-    DateTime weekOne(int year) {
-      final january = DateTime.utc(year);
-      final into = (january.weekday - first + 7) % 7;
-      final start = january.subtract(Duration(days: into));
-      return 7 - into >= fewest ? start : start.add(const Duration(days: 7));
+    // (The day a week starting on [first] that [start] begins a year in
+    // starts, that week the year's first or the one after.)
+    int weekOne(int start) {
+      final weekday = gregorianDate(start).weekday;
+      final into = (weekday - first + 7) % 7;
+      return 7 - into >= fewest ? start - into : start - into + 7;
     }
 
-    final day = DateTime.utc(wall.year, wall.month, wall.day);
-    if (day.isBefore(weekOne(wall.year))) return wall.year - 1;
-    if (!day.isBefore(weekOne(wall.year + 1))) return wall.year + 1;
-    return wall.year;
+    final day = gregorianDay(wall.year, wall.month, wall.day);
+    final convert = _converter;
+    if (convert == null) {
+      if (day < weekOne(gregorianDay(wall.year, 1, 1))) return wall.year - 1;
+      if (day >= weekOne(gregorianDay(wall.year + 1, 1, 1))) {
+        return wall.year + 1;
+      }
+      return wall.year;
+    }
+    // (The first days of the date's year in the calendar and of the next:
+    // back a month at a time to its first, and from the next's longest
+    // possible distance back.)
+    int yearStart(int day) {
+      var at = day;
+      while (true) {
+        final d = convert(at);
+        at -= d.day - 1;
+        if (d.month == 1 && !d.leapMonth) return at;
+        at--;
+      }
+    }
+
+    final start = yearStart(day);
+    final next = yearStart(start + 390);
+    if (day < weekOne(start)) return date.year - 1;
+    if (day >= weekOne(next)) return date.year + 1;
+    return date.year;
   }
+
+  /// The calendar's conversion of a day (from 1970-01-01), or null for the
+  /// Gregorian calendar and those that count its years by eras.
+  CalendarDay Function(int day)? get _converter => switch (_calendar) {
+    CalendarSystem.gregorian ||
+    CalendarSystem.japanese ||
+    CalendarSystem.buddhist ||
+    CalendarSystem.roc => null,
+    CalendarSystem.islamicCivil => islamicTabular,
+    CalendarSystem.islamicTbla => (day) => islamicTabular(
+      day,
+      astronomical: true,
+    ),
+    CalendarSystem.islamicUmalqura => islamicUmmAlQura,
+    CalendarSystem.hebrew => hebrew,
+    CalendarSystem.indian => indian,
+    CalendarSystem.coptic => coptic,
+    CalendarSystem.ethiopic || CalendarSystem.ethiopicAmeteAlem => ethiopic,
+    CalendarSystem.persian => persian,
+    CalendarSystem.islamic => islamicAstronomical,
+    CalendarSystem.chinese => chinese,
+    CalendarSystem.dangi => dangi,
+  };
 
   /// The day periods' rules of [language]'s locale, else of its language
   /// (CLDR gives them by language: `zh` for `zh-Hant`).
@@ -345,14 +446,53 @@ final class _DateFormatter {
 
   /// The wall-clock date [wall] (a Gregorian date) in the calendar.
   _CalendarDate _date(DateTime wall) {
-    final (era, year) = _era(wall.year, wall.month, wall.day);
+    final convert = _converter;
+    if (convert == null) {
+      final (era, year) = _era(wall.year, wall.month, wall.day);
+      return (
+        era: era,
+        year: year,
+        month: wall.month,
+        leapMonth: false,
+        day: wall.day,
+        relatedYear: wall.year,
+        cyclicYear: (wall.year - 4) % 60 + 1,
+      );
+    }
+    final d = convert(gregorianDay(wall.year, wall.month, wall.day));
+    // (The Chinese and Korean calendars' years: R&D's elapsed years, in
+    // cycles of 60 from 2637 years before the Gregorian 1.)
+    if (_calendar == CalendarSystem.chinese ||
+        _calendar == CalendarSystem.dangi) {
+      final cyclic = (d.year - 1) % 60 + 1;
+      return (
+        era: ((d.year - 1) / 60).floor() + 1,
+        year: cyclic,
+        month: d.month,
+        leapMonth: d.leapMonth,
+        day: d.day,
+        relatedYear: d.year - 2637,
+        cyclicYear: cyclic,
+      );
+    }
+    final (era, year) = switch (_calendar) {
+      // (Before the epoch: the era before, counted backwards.)
+      CalendarSystem.coptic when d.year <= 0 => (0, 1 - d.year),
+      CalendarSystem.coptic => (1, d.year),
+      // (Before the Year of Mercy: the years of the creation.)
+      CalendarSystem.ethiopic when d.year <= 0 => (0, d.year + 5500),
+      CalendarSystem.ethiopic => (1, d.year),
+      CalendarSystem.ethiopicAmeteAlem => (0, d.year + 5500),
+      _ => (0, d.year),
+    };
     return (
       era: era,
       year: year,
-      month: wall.month,
-      leapMonth: false,
-      day: wall.day,
+      month: d.month,
+      leapMonth: d.leapMonth,
+      day: d.day,
       relatedYear: wall.year,
+      cyclicYear: (wall.year - 4) % 60 + 1,
     );
   }
 
@@ -440,6 +580,16 @@ final class _DateFormatter {
     return '$out';
   }
 
+  /// [date]'s month as a number: in the Hebrew calendar, counted as the
+  /// year's months are (Adar the sixth in a common year, Adar I the sixth
+  /// and Adar II the seventh in a leap year), as ICU numbers them.
+  int _monthNumber(_CalendarDate date) =>
+      _calendar == CalendarSystem.hebrew &&
+          date.month >= 7 &&
+          !hebrewLeapYear(date.year)
+      ? date.month - 1
+      : date.month;
+
   /// Whether [letter] repeated [count] times is a number.
   static bool _numeric(String letter, int count) => switch (letter) {
     'M' || 'L' => count <= 2,
@@ -459,10 +609,26 @@ final class _DateFormatter {
     final day = _days[wall.weekday - 1];
     String month(String context) {
       final width = count == 3 ? 'abbreviated' : 'wide';
-      final leap = date.leapMonth ? '-leap' : '';
-      return _text('months/$context/$width/${date.month}$leap') ??
-          _number(date.month);
+      // (Adar in a Hebrew leap year: Adar II, CLDR's 7-leap.)
+      final key =
+          _calendar == CalendarSystem.hebrew &&
+              date.month == 7 &&
+              hebrewLeapYear(date.year)
+          ? '7-leap'
+          : '${date.month}';
+      final name = _text('months/$context/$width/$key') ?? _number(date.month);
+      // (A leap month: its month's name in the leap pattern, 閏{0}.)
+      if (!date.leapMonth) return name;
+      return _text('monthPatterns/$context/$width/leap')
+              ?.replaceFirst('{0}', name) ??
+          name;
     }
+
+    /// A numeric month, a leap one in the numeric leap pattern.
+    String numeric(String text) => date.leapMonth
+        ? _text('monthPatterns/numeric/all/leap')?.replaceFirst('{0}', text) ??
+              text
+        : text;
 
     return switch (letter) {
       'G' =>
@@ -479,10 +645,25 @@ final class _DateFormatter {
       'r' => _number(date.relatedYear, count),
       'Y' =>
         count == 2
-            ? _number(_weekYear(wall) % 100, 2)
-            : _number(_weekYear(wall), count),
-      'M' => count <= 2 ? _number(date.month, count) : month('format'),
-      'L' => count <= 2 ? _number(date.month, count) : month('stand-alone'),
+            ? _number(_weekYear(wall, date) % 100, 2)
+            : _number(_weekYear(wall, date), count),
+      'M' =>
+        count <= 2
+            ? numeric(_number(_monthNumber(date), count))
+            : month('format'),
+      'L' =>
+        count <= 2
+            ? numeric(_number(_monthNumber(date), count))
+            : month('stand-alone'),
+      'U' =>
+        _text(
+              'cyclicNameSets/years/format/${switch (count) {
+                4 => 'wide',
+                5 => 'narrow',
+                _ => 'abbreviated',
+              }}/${date.cyclicYear}',
+            ) ??
+            _number(date.cyclicYear),
       'd' => _number(date.day, count),
       'E' => _text('days/format/${count == 4 ? 'wide' : 'abbreviated'}/$day')!,
       'c' => _text(
@@ -504,8 +685,8 @@ final class _DateFormatter {
   }
 
   /// Numeric field [letter] of [date] in the numbering system [system]
-  /// (CLDR's: `romanlow` in lower-case roman numerals, `jpanyear` the
-  /// first year of an era as 元).
+  /// (CLDR's: an algorithmic one by its rules, `jpanyear` the first year
+  /// of an era as 元, `hebr` Hebrew numerals; a numeric one's digits).
   String _numbered(
     String letter,
     int count,
@@ -514,17 +695,21 @@ final class _DateFormatter {
     String system,
   ) {
     final value = switch (letter) {
-      'M' || 'L' => date.month,
+      'M' || 'L' => _monthNumber(date),
       'd' => date.day,
       'y' => count == 2 ? date.year % 100 : date.year,
       'r' => date.relatedYear,
       _ => 0,
     };
-    if (system == 'jpanyear') return value == 1 ? '元' : _number(value);
-    final style = system == 'romanlow'
-        ? CounterStyle.named('lower-roman')
-        : CounterStyle.forNumberingSystem(system);
-    return style?.format(value) ?? _number(value);
+    // (A Hebrew year of this millennium in Hebrew numerals without its
+    // thousands, as Hebrew dates are written: תשפ״ז for 5787.)
+    final shown =
+        system == 'hebr' && letter == 'y' && value > 5000 && value < 6000
+        ? value - 5000
+        : value;
+    return formatAlgorithmic(shown, system, digits: _number) ??
+        CounterStyle.forNumberingSystem(system)?.format(shown) ??
+        _number(shown);
   }
 
   /// The flexible day period of [wall] (`B`): noon or midnight where the

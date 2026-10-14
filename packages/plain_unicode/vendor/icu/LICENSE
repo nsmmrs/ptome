@@ -1,6 +1,7 @@
 (ICU 78.3's LICENSE, the parts that apply to what plain_unicode takes from
-ICU: the Thai, Lao, Khmer and Burmese word-break dictionaries; the parts for
-other data and for ICU4C's and ICU4J's build files are left out.)
+ICU: the Thai, Lao, Khmer and Burmese word-break dictionaries and the Umm
+al-Qura calendar's month lengths (umalqura.tsv); the parts for other data
+and for ICU4C's and ICU4J's build files are left out.)
 
 UNICODE LICENSE V3
 

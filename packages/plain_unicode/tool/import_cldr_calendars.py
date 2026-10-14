@@ -30,7 +30,7 @@ KEEP = {None, 'contributed', 'approved'}
 SECTIONS = {'months', 'monthPatterns', 'days', 'dayPeriods', 'eras',
             'cyclicNameSets', 'dateFormats', 'timeFormats',
             'dateTimeFormats'}
-WIDTHS = {'wide', 'abbreviated'}
+WIDTHS = {'wide', 'abbreviated', 'all'}
 # (Within dateTimeFormats, the length patterns only.)
 SKIPPED = {'availableFormats', 'appendItems', 'intervalFormats',
            'dateTimeFormatLength@relative', 'default', 'alias',

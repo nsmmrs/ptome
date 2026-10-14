@@ -122,9 +122,12 @@ length: `short` (`14.10.26`), `medium`, `long` (the default in a
 document whose language isn't English), `full` (with the weekday), or
 `iso` (as written, the default in English). `:calendar:` (or `lang`'s
 `-u-ca-`, `ja-u-ca-japanese`) shows them in another calendar: `japanese`
-(`令和8年10月14日`, `October 14, 8 Reiwa`), `buddhist` (`14 ตุลาคม 2569`)
-or `roc` (`民國115年10月14日`), long by default in any language; else,
-or for a name it doesn't know, the Gregorian.
+(`令和8年10月14日`, `October 14, 8 Reiwa`), `buddhist` (`14 ตุลาคม 2569`),
+`roc` (`民國115年10月14日`), `hebrew` (`ג׳ בחשוון תשפ״ז`), `persian`
+(`۲۲ مهر ۱۴۰۵`), `islamic-umalqura`, `islamic-civil`, `islamic-tbla`,
+`islamic` (by the new moons), `coptic`, `ethiopic`, `ethioaa`, `indian`,
+`chinese` (`2026丙午年九月初五`) or `dangi`, long by default in any
+language; else, or for a name it doesn't know, the Gregorian.
 The attributes themselves (`docdate`, `docdatetime`, `localdate`...)
 stay ISO, as an EPUB's metadata and programs read them, and a `revdate`
 that isn't an ISO date is shown as written. Not under

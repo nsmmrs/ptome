@@ -66,8 +66,20 @@ enum CalendarSystem
   String bcp47Name
   String cldrName
   static CalendarSystem buddhist
+  static CalendarSystem chinese
+  static CalendarSystem coptic
+  static CalendarSystem dangi
+  static CalendarSystem ethiopic
+  static CalendarSystem ethiopicAmeteAlem
   static CalendarSystem gregorian
+  static CalendarSystem hebrew
+  static CalendarSystem indian
+  static CalendarSystem islamic
+  static CalendarSystem islamicCivil
+  static CalendarSystem islamicTbla
+  static CalendarSystem islamicUmalqura
   static CalendarSystem japanese
+  static CalendarSystem persian
   static CalendarSystem roc
   static List<CalendarSystem> values
 enum DateStyle

@@ -2,6 +2,32 @@
 
 ## 0.1.0-dev (unreleased)
 
+- The calendars that convert (FEAT-5639x7): `CalendarSystem` also has
+  the Islamic calendar's civil and tabular (tbla) forms, Umm al-Qura
+  (Saudi Arabia's month lengths, 1300 to 1600 AH, from ICU 78.3) and its
+  form by the new moons; the Hebrew calendar (Hillel II's molad and
+  postponements, Adar II in leap years, Hebrew numerals in Hebrew with
+  the year's thousands left out: תשפ״ז); the Coptic, Ethiopic (both eras)
+  and Indian national calendars; the Persian calendar, its year from the
+  day of the March equinox in Tehran (before noon); and the Chinese and
+  Korean calendars by GB/T 33661-2017's rules (months from the new moons
+  in China's time, Beijing mean time before 1929, Korea's UTC+9 from
+  1912; the leap month the first without a major solar term), with the
+  60-year cycle (`U`), the related Gregorian year (`r`) and leap months
+  (闰{0}). The astronomy from ERFA (BSD-3-Clause, `vendor/erfa`): the
+  Earth's series of eraEpv00, the Moon's of eraMoon98, the IAU 2000B
+  nutation, IAU 2006 precession and ΔT; equinoxes, solstices and new
+  moons within a minute of published times. CLDR's rule-based number
+  formats for its algorithmic numbering systems (`hebr`, `jpanyear`,
+  `hanidays` 初五...), interpreted from `vendor/cldr/48.2.0/rbnf.tsv`.
+  Checked against ICU 78.3 every eleventh day from 1880 to 2180 and in
+  every covered locale: the arithmetic calendars the same; those that
+  follow the sky differ only where a new moon or a solar term falls
+  within minutes of the midnight that decides the day (60 minutes after
+  2100, where ICU's astronomy drifts and ΔT is extrapolated), and the
+  Chinese months that differ from ICU's agree with the Hong Kong
+  Observatory's tables (1901 to 2100) but for one in 1906.
+
 - Calendars of eras (FEAT-gtxzgh): `formatDate`, `formatTime` and
   `formatDateTime` take a `CalendarSystem` (else the one the language's
   `-u-ca-` names): the Japanese (its eras since 645, the first year of
