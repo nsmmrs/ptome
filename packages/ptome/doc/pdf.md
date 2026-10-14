@@ -87,6 +87,7 @@ its title.
 | `base_typographic_scripts` | `false` | Superscripts and subscripts (footnote references) in the font's own glyphs for them (its `sups` and `subs` features) at the text's size, when it has them for every character (true superior and inferior figures); else smaller and raised as usual. |
 | `base_justify_width` | room | `widest`: justified lines are set to the width of the paragraph's widest line (an overfull line shrunk to the room), as a paragraph in a block sized to its content is (CSS's `width: fit-content`); in a quote or a section role: `quote_base_justify_width`, `section_role_<role>_base_justify_width`. |
 | `base_kashida` | `0.5em` | Justified Arabic is lengthened inside its words before its spaces widen: tatweel drawn between two joined letters, each word at its best place by Microsoft's ranking for Arabic justification (after a Seen or Sad; before a final Teh Marbuta, Heh or Dal; before a final Alef, Tah, Lam, Kaf or Gaf; before a medial Beh ending in Reh or Yeh; before a final Waw, Ain, Qaf or Feh; before any final letter), never inside Lam-Alef or a Nastaliq word's cascade. The value is how far each word may be lengthened (`1em`, or a number of em); the spaces take what is left; `false` for none. The text read from the page has no tatweel. Modern engine; not under `asciidoctor-compat`. |
+| `base_word_break` | `auto` | Whether a line breaks inside a word written without spaces between its letters, as CSS's `word-break`: `keep-all` breaks only at spaces and punctuation (a word wider than the line between its characters all the same), `normal` wherever UAX #14 allows (between any two Han characters, kana or Hangul syllables). `auto` keeps Korean words whole (text whose language is `ko`: KLREQ 7.1.1 leaves the choice to the author, by words the common one), the rest `normal`. Modern engine; not under `asciidoctor-compat`. |
 | `base_text_align_last` | `left` | Where a justified paragraph's last line, and each line before a hard break, goes (`center`, `right`), as CSS's `text-align-last` (`table_base_text_align_last: center`: table cells justified, their last lines centered); `justify` stretches them to the measure too, so text broken line for line by hand fills each line (a mushaf, see `doc/mushaf.md`). |
 | `prose_orphans` | `2` | The fewest lines of a paragraph left at the bottom of a page. |
 | `prose_widows` | `2` | The fewest lines of a paragraph carried to the top of the next page. |
@@ -259,6 +260,9 @@ kana or the prolonged sound mark, nor ends with an opening bracket
 (UAX #14). Thai, Lao, Khmer and Burmese lines stretch between their
 words. Modern engine.
 
+Korean wraps between words (eojeol), at its spaces, not between any two
+syllables as UAX #14 allows; `base_word_break` chooses (below).
+
 Chinese punctuation follows the document's (or block's, or span's)
 region, as CLREQ describes it: in mainland Chinese (`zh`, `zh-Hans`,
 `zh-CN`, `zh-SG`) marks sit in the character's corner, two in a row are
@@ -348,6 +352,19 @@ WOFF and WOFF2 fonts are found like TrueType and OpenType ones (and
 embedded as the fonts they wrap). Through the API, fonts can also be given
 as bytes, and in a browser the page's web fonts are used too (see
 `doc/api.md`).
+
+Chinese, Japanese and Korean text that neither the theme's fonts nor its
+`font_fallbacks` have is set in the installed Noto CJK face of the text's
+language's region: Noto Serif CJK beside a serif font, Noto Sans CJK
+beside the others, in its SC cut for `zh`, `zh-Hans` and `zh-CN`, TC for
+`zh-TW` and `zh-Hant`, HK for `zh-HK`, `zh-MO` and `yue`, KR for `ko`, JP
+for `ja` and any other language (another region's cut where that one
+isn't installed: each has every region's forms, chosen by the language).
+The text's language is the document's `lang`, a block's or a span's.
+Ptome bundles no CJK font: without one installed, the warning about
+missing characters says to install Noto CJK. Not under
+`asciidoctor-compat`, where only the theme's fonts are tried, as
+asciidoctor-pdf tries them.
 
 A font that isn't installed is replaced by a built-in PDF font (Courier
 for a monospace family, Times for a serif one, else Helvetica), with one

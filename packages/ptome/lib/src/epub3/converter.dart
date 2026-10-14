@@ -43,6 +43,7 @@ import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
+import 'package:ptome/src/quotation.dart';
 import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
@@ -1847,7 +1848,15 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
   /// Converts the [node] inline quoted.
   String convertInlineQuoted(Inline node) {
     final type = _s(node.type);
-    final (open, close, isTag) = _quoteTags[type] ?? ('', '', false);
+    var (open, close, isTag) = _quoteTags[type] ?? ('', '', false);
+    // (Typographic quotes in the text's language's marks.)
+    if (type == 'double' || type == 'single') {
+      if (languageQuotationMarks(node, CompatFormat.epub) case final marks?) {
+        (open, close) = type == 'double'
+            ? (marks.start, marks.end)
+            : (marks.alternateStart, marks.alternateEnd);
+      }
+    }
     final content = type == 'asciimath'
         ? asciimathToMathml(_s(node.text), prefix: 'mml:')
         : _s(node.text);

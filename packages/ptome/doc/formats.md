@@ -59,3 +59,19 @@ unless `-a epub-embed-fonts` is set: its stylesheet names Noto Serif, M+
 shown as text); with the attribute, the fonts it names are embedded from
 the installed ones. HTML and the website name their stylesheet's fonts,
 as Asciidoctor's do.
+
+## Languages
+
+AsciiDoc's typographic quotes (`"`text`"` and `'`text`'`) are set in the
+marks of the text's language, CLDR's (48.2): `„text“` and `‚text‘` in
+German, `«text»` in French, `「text」` and `『text』` in Japanese and in
+Traditional Chinese, `“text”` in English and Simplified Chinese. The
+double quotes take the language's outer pair, the single ones its inner
+pair. The language is a block's `lang` attribute, else the document's
+`lang`; a language CLDR doesn't have, or none, keeps Asciidoctor's
+English marks. HTML, the website, EPUB and the PDF write the marks
+themselves, a man page as roff's Unicode escapes (`\[u201E]`); DocBook
+keeps its `<quote>` element, which DocBook's own stylesheets localize. A
+span's `lang` (`[lang=ja]#...#`) doesn't change the quotes inside it. In
+the PDF the theme's `quotes` key, where it sets one, wins. Not under
+`asciidoctor-compat`.

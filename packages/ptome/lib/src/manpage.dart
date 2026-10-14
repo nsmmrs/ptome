@@ -26,6 +26,7 @@ import 'package:ptome/src/errors.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
+import 'package:ptome/src/quotation.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/rx.dart';
@@ -1099,6 +1100,18 @@ class ManpageConverter extends BuiltInConverter {
         return '<${_escBs}fB>${_s(node.text)}</${_escBs}fP>';
       case 'monospaced':
         return '<${_escBs}f(CR>${_s(node.text)}</${_escBs}fP>';
+      case 'single' || 'double'
+          when languageQuotationMarks(node, CompatFormat.manpage) != null:
+        // (The text's language's marks, as roff's Unicode escapes.)
+        final marks = languageQuotationMarks(node, CompatFormat.manpage)!;
+        final (open, close) = node.type == 'double'
+            ? (marks.start, marks.end)
+            : (marks.alternateStart, marks.alternateEnd);
+        String roff(String mark) => [
+          for (final r in mark.runes)
+            '$_escBs[u${r.toRadixString(16).toUpperCase().padLeft(4, '0')}]',
+        ].join();
+        return '<${roff(open)}>${_s(node.text)}</${roff(close)}>';
       case 'single':
         return '<$_escBs(oq>${_s(node.text)}</$_escBs(cq>';
       case 'double':

@@ -1330,9 +1330,18 @@ extension _InlineElements on PdfConverter {
     String close;
     var isTag = true;
     var quotes = false;
+    // (The theme's `quotes`, else the text's language's marks.)
     final quoteChars = switch (_theme.value('quotes')) {
       ThemeList(:final values) => [for (final v in values) v.rubyString],
-      _ => const ['&#8220;', '&#8221;', '&#8216;', '&#8217;'],
+      _ => switch (languageQuotationMarks(node, CompatFormat.pdf)) {
+        final marks? => [
+          marks.start,
+          marks.end,
+          marks.alternateStart,
+          marks.alternateEnd,
+        ],
+        null => const ['&#8220;', '&#8221;', '&#8216;', '&#8217;'],
+      },
     };
     if ((node.type == 'asciimath' || node.type == 'latexmath') &&
         _typesetMath) {

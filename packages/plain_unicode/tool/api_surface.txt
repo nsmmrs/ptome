@@ -8,6 +8,7 @@ LineBreakClass lineBreakClass(int codePoint)
 LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true})
 List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
 List<LineBreak> lineBreaks(String text, {bool dictionary = true})
+QuotationMarks quotationMarks(String language)
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
@@ -224,6 +225,14 @@ final class LineBreak
   bool mandatory
   int hashCode
   int offset
+final class QuotationMarks
+  String alternateEnd
+  String alternateStart
+  String end
+  String start
+  String toString()
+  bool ==(Object other)
+  int hashCode
 int bidiMirror(int codePoint)
 int canonicalCombiningClass(int codePoint)
 int? canonicalComposition(int first, int second)

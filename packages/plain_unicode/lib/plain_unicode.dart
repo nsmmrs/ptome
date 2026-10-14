@@ -9,7 +9,8 @@
 ///   Bidi_Class, Bidi_Mirroring_Glyph and Joining_Type properties.
 /// - Full case mapping (Unicode 17.0.0): `upperCase` and `lowerCase`, with
 ///   the special mappings (`ß` to `SS`) and, on request, the Final_Sigma
-///   rule.
+///   rule; Turkish, Azeri and Lithuanian tailorings by language.
+/// - Quotation marks by language (CLDR 48.2): `quotationMarks`.
 library;
 
 export 'src/bidi.dart'
@@ -52,3 +53,4 @@ export 'src/properties.dart'
         propertiesUnicodeVersion,
         scriptOf,
         verticalOrientation;
+export 'src/quotation_marks.dart' show QuotationMarks, quotationMarks;

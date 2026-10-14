@@ -16,7 +16,11 @@ JavaScript (whose own tables differ in age and in rules):
   `lowerCase(text, finalSigma: true)` applies the Final_Sigma rule, as
   JavaScript's `toLowerCase` does; without it every capital sigma becomes
   `σ`, as Ruby's `String#downcase` does. The tables match Ruby 4.0.7 and
-  Node.js 26 for every code point.
+  Node.js 26 for every code point. `language:` applies SpecialCasing's
+  Turkish, Azeri and Lithuanian tailorings, as ICU does.
+- **Quotation marks** (CLDR 48.2): `quotationMarks('de')` gives a
+  language's outer and inner marks (`„` `“`, `‚` `‘`), the locale found
+  as ICU 78.3 finds it.
 
 - **Shaping properties** (Unicode 18.0.0), for text shaping and vertical
   layout: `generalCategory`, `scriptOf` (an ISO 15924 code),
@@ -51,4 +55,6 @@ Status: in development; not published to pub.dev.
 
 MIT; see [LICENSE](LICENSE). The Unicode Character Database files in
 `vendor/ucd/` and the tables generated from them are under the Unicode
-License v3 (`vendor/ucd/*/license.txt`).
+License v3 (`vendor/ucd/*/license.txt`), as are CLDR's files in
+`vendor/cldr/` and the tables generated from them
+(`vendor/cldr/*/LICENSE`).

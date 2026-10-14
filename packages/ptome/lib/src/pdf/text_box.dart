@@ -293,6 +293,7 @@ final class TextContext {
     this.maxHyphenRun,
     this.lastLineMin = 0,
     this.interlineGlue = false,
+    this.languageFallback,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -318,6 +319,7 @@ final class TextContext {
           maxHyphenRun: maxHyphenRun,
           lastLineMin: lastLineMin,
           interlineGlue: interlineGlue,
+          languageFallback: languageFallback,
           logger: logger,
         );
 
@@ -398,6 +400,12 @@ final class TextContext {
 
   /// The fallback font families.
   final List<String> fallbacks;
+
+  /// The family a character none of the text's fonts and [fallbacks] has
+  /// is looked for in last, by the text's language (BCP 47) and its font's
+  /// family (the installed Noto CJK face of the language's region: modern
+  /// engine), or null.
+  final String? Function(String? language, String family)? languageFallback;
 
   /// Where warnings go.
   final LoggerBase logger;
@@ -577,7 +585,12 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     for (final fragment in fragments) {
       final defaultColor = fragment.color == null;
       final copy = fragment.copy()..color ??= state.color;
-      for (final run in _withFallbacks(copy, state, context)) {
+      for (final run in _withFallbacks(
+        copy,
+        state,
+        context,
+        language: layout.language,
+      )) {
         final format = _resolve(run, state, context);
         var text = format.font.normalize(run.text);
         if (format.smallCapitals) text = text.toUpperCase();
@@ -1176,15 +1189,35 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// mark (or a joiner, or a variation selector) stays in the font of the
   /// character it follows where that font has it, so the two are shaped
   /// together.
+  ///
+  /// Last, a character none of them has is looked for in the family of the
+  /// text's language ([TextContext.languageFallback]; the fragment's own,
+  /// else [language], the text's).
   static List<Fragment> _withFallbacks(
     Fragment fragment,
     TextState state,
-    TextContext context,
-  ) {
-    if (context.fallbacks.isEmpty || fragment.imagePath != null) {
+    TextContext context, {
+    String? language,
+  }) {
+    if ((context.fallbacks.isEmpty && context.languageFallback == null) ||
+        fragment.imagePath != null) {
       return [fragment];
     }
     final base = _resolve(fragment, state, context).font;
+    // (Looked up the first time a character needs it.)
+    String? languageFamily;
+    var lookedUp = false;
+    String? lastResort() {
+      if (!lookedUp) {
+        lookedUp = true;
+        languageFamily = context.languageFallback?.call(
+          fragment.language ?? language,
+          base.family,
+        );
+      }
+      return languageFamily;
+    }
+
     final runs = <Fragment>[];
     String? currentFamily;
     final text = StringBuffer();
@@ -1217,7 +1250,15 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             break;
           }
         }
-        if (family == null && context._warnedMissing[rune] == null) {
+        if (family == null) {
+          if (lastResort() case final last?
+              when _font(last, base.style, context).hasGlyph(rune)) {
+            family = last;
+          }
+        }
+        if (family == null &&
+            context.fallbacks.isNotEmpty &&
+            context._warnedMissing[rune] == null) {
           context._warnedMissing[rune] = true;
           context.logger.warn(
             "Could not locate the character `${String.fromCharCode(rune)}' "
@@ -1464,7 +1505,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// descender; another centered in its text, its line no taller.
   InlineImage _engineImage(_Image image, _Format format, LinkTarget? link) {
     if (image.graphic case final InlineRuby ruby) {
-      final face = _rubyFace(ruby, format.font);
+      final face = _rubyFace(ruby, format.font, format.fragment.language);
       final box = ruby.at(face, format.size);
       return InlineImage(
         EngineRuby(ruby, face, format.size, _pdfColor(format.fragment.color)),
@@ -1514,13 +1555,20 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
 
   /// The face [ruby] is set in: [face], the text's, where it has every
   /// character of the base and the readings, else the first fallback
-  /// font that has them.
-  FontFace _rubyFace(InlineRuby ruby, FontFace face) {
+  /// font that has them, else the family of the text's language
+  /// ([TextContext.languageFallback]).
+  FontFace _rubyFace(InlineRuby ruby, FontFace face, String? language) {
     bool covers(FontFace f) => ruby.pairs.every(
       (pair) => '${pair.$1}${pair.$2}'.runes.every(f.hasGlyph),
     );
     if (covers(face)) return face;
-    for (final family in _context.fallbacks) {
+    for (final family in [
+      ..._context.fallbacks,
+      ?_context.languageFallback?.call(
+        language ?? _layout.language,
+        face.family,
+      ),
+    ]) {
       final fallback = TextBox._font(family, face.style, _context);
       if (covers(fallback)) return fallback;
     }
@@ -1532,7 +1580,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     // Ruby: its base at the text's size, its readings above, the line as
     // tall as they need.
     if (graphic case final InlineRuby ruby) {
-      final box = ruby.at(_rubyFace(ruby, item.format.font), item.format.size);
+      final box = ruby.at(
+        _rubyFace(ruby, item.format.font, fragment.language),
+        item.format.size,
+      );
       final lineFont = TextBox._font(_state.family, _state.style, _context);
       return _Item(
         '\u2063',
@@ -2177,7 +2228,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               raster.paint(canvas, rect);
             case final InlineRuby ruby:
               ruby
-                  .at(_rubyFace(ruby, f.format.font), f.format.size)
+                  .at(
+                    _rubyFace(ruby, f.format.font, fragment.language),
+                    f.format.size,
+                  )
                   .paintAt(
                     canvas,
                     rect.left,

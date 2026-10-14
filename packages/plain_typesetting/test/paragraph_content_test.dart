@@ -357,6 +357,64 @@ void main() {
     });
   });
 
+  group('Korean words (KLREQ 7.1.1, CSS keep-all)', () {
+    final hangul = OpenTypeShaper(
+      OpenTypeFont.parse(
+        File('test/fonts/notosanscjk-hangul-subset.otf').readAsBytesSync(),
+      ),
+    );
+    List<String> broken(
+      String text,
+      String width, {
+      String? language,
+      WordBreak wordBreak = WordBreak.auto,
+    }) {
+      final style = TextStyle(hangul, 10, language: language);
+      return const FirstFitLineBreaker()
+          .breakLines(
+            Paragraph([TextRun(text, style)], wordBreak: wordBreak),
+            (_) => style.widthOf(style.shape(width)),
+          )
+          .map(_text)
+          .toList();
+    }
+
+    test('Korean wraps at spaces, not between syllables', () {
+      expect(broken('한국어 한글 훈민정음', '한국어 한', language: 'ko'), [
+        '한국어',
+        '한글',
+        '훈민정음',
+      ]);
+      expect(broken('한국어 한글 훈민정음', '한국어 한', language: 'ko-KR'), [
+        '한국어',
+        '한글',
+        '훈민정음',
+      ]);
+    });
+
+    test('other languages break between syllables, as UAX #14 has it', () {
+      expect(broken('한국어 한글 훈민정음', '한국어 한').first, '한국어 한');
+      expect(broken('한국어 한글 훈민정음', '한국어 한', language: 'ja').first, '한국어 한');
+      expect(
+        broken(
+          '한국어 한글 훈민정음',
+          '한국어 한',
+          language: 'ko',
+          wordBreak: WordBreak.normal,
+        ).first,
+        '한국어 한',
+      );
+      expect(broken('한국어 한글', '한국어 한', wordBreak: WordBreak.keepAll), [
+        '한국어',
+        '한글',
+      ]);
+    });
+
+    test('a word wider than the line breaks between its syllables', () {
+      expect(broken('훈민정음', '훈민', language: 'ko'), ['훈민', '정음']);
+    });
+  });
+
   group('a first line set apart', () {
     test("textTaken: the runs' text its first line takes", () {
       // (Soft hyphens, zero-width spaces and line breaks are in the runs'

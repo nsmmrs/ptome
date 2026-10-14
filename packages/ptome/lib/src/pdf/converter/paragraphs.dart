@@ -94,6 +94,14 @@ extension _Paragraphs on PdfConverter {
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
       kashida: _text.kashida,
+      // (`base_word_break`: `keep-all` breaks no word written without
+      // spaces, `normal` wherever UAX #14 allows; by default, Korean
+      // keeps its words.)
+      wordBreak: switch (_s('base_word_break')) {
+        'keep-all' => WordBreak.keepAll,
+        'normal' => WordBreak.normal,
+        _ => WordBreak.auto,
+      },
       justifyToWidest: layout.justifyWidest,
       // (A superscript in the space between lines, as the text box sets
       // it.)

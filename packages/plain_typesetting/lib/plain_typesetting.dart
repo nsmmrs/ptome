@@ -111,6 +111,7 @@ export 'src/layout/paragraph.dart'
         PenaltyItem,
         TextAlign,
         TextFragment,
+        WordBreak,
         buildLines,
         emphasisExtent,
         leftProtrusion,

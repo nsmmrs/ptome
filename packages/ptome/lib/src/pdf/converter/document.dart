@@ -49,6 +49,11 @@ extension _DocumentParts on PdfConverter {
       fonts: _fonts,
       rootSize: _rootFontSize,
       fallbacks: _theme.fontFallbacks,
+      // (Han, kana and Hangul no font of the theme has: the installed Noto
+      // CJK face of the text's language's region; modern engine.)
+      languageFallback: asciidoctorCompat(document, CompatFormat.pdf)
+          ? null
+          : _fonts.cjkFamily,
       images: (src, format) =>
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
@@ -650,6 +655,10 @@ extension _DocumentParts on PdfConverter {
               .toList()
             ..sort();
       if (missing.isNotEmpty) {
+        // (Han, kana or Hangul, and no Noto CJK to fall back on.)
+        final cjk = missing.any(_isCjk) && _fonts.cjkFamily(null, '') == null
+            ? ', or install Noto Sans CJK or Noto Serif CJK'
+            : '';
         String show(int c) {
           final hex = c.toRadixString(16).toUpperCase().padLeft(4, '0');
           return '${String.fromCharCode(c)} (U+$hex)';
@@ -660,7 +669,7 @@ extension _DocumentParts on PdfConverter {
           '${missing.length == 1 ? 'character' : 'characters'}, drawn as '
           'empty boxes: ${missing.take(8).map(show).join(', ')}'
           '${missing.length > 8 ? ', ...' : ''}; give a font that has them '
-          '(font_catalog) or fallbacks (font_fallbacks)',
+          '(font_catalog) or fallbacks (font_fallbacks)$cjk',
         );
       }
     }
@@ -2724,3 +2733,15 @@ extension _DocumentParts on PdfConverter {
     };
   }
 }
+
+/// Whether [c] is Han, kana, Hangul, Bopomofo or CJK punctuation (what a
+/// Noto CJK font has).
+bool _isCjk(int c) =>
+    (c >= 0x1100 && c <= 0x11ff) ||
+    (c >= 0x2e80 && c <= 0x9fff) ||
+    (c >= 0xa960 && c <= 0xa97f) ||
+    (c >= 0xac00 && c <= 0xd7ff) ||
+    (c >= 0xf900 && c <= 0xfaff) ||
+    (c >= 0xfe30 && c <= 0xfe4f) ||
+    (c >= 0xff00 && c <= 0xffef) ||
+    (c >= 0x20000 && c <= 0x3ffff);

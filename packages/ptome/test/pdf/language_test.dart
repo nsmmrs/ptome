@@ -143,4 +143,111 @@ heading_text_transform: uppercase
     expect(text('tr'), contains('İSTANBUL'));
     expect(text('en'), contains('ISTANBUL'));
   }, skip: _poppler ? false : 'needs pdftotext');
+
+  test('Korean wraps at spaces, by default and by base_word_break', () {
+    final hangul = File(
+      '../plain_typesetting/test/fonts/notosanscjk-hangul-subset.otf',
+    ).absolute.path;
+    List<String> lines(String lang, {String wordBreak = ''}) {
+      final theme = File('${dir.path}/ko.yml')
+        ..writeAsStringSync('''
+extends: default
+font:
+  catalog:
+    merge: true
+    KO:
+      normal: $hangul
+      bold: $hangul
+      italic: $hangul
+      bold_italic: $hangul
+base:
+  font_family: KO
+$wordBreak
+''');
+      final pdf = File('${dir.path}/ko.pdf')
+        ..writeAsBytesSync(
+          asciidoc.convertToBytes(
+            '한국어 한글 훈민정음 ' * 40,
+            backend: Backend.pdf,
+            attributes: {
+              'pdf-theme': theme.path,
+              'lang': lang,
+              'reproducible': '',
+              'nofooter': '',
+            },
+          ),
+        );
+      return [
+        for (final line
+            in (Process.runSync('pdftotext', [
+                      pdf.path,
+                      '-',
+                    ], stdoutEncoding: utf8).stdout
+                    as String)
+                .split('\n'))
+          if (line.trim().isNotEmpty) line.trim(),
+      ];
+    }
+
+    bool wordsWhole(List<String> lines) => lines.every(
+      (line) => line
+          .split(' ')
+          .every((word) => const {'한국어', '한글', '훈민정음'}.contains(word)),
+    );
+    expect(wordsWhole(lines('ko')), isTrue);
+    expect(wordsWhole(lines('en')), isFalse);
+    expect(
+      wordsWhole(lines('ko', wordBreak: 'base_word_break: normal')),
+      isFalse,
+    );
+    expect(
+      wordsWhole(lines('en', wordBreak: 'base_word_break: keep-all')),
+      isTrue,
+    );
+  }, skip: _poppler ? false : 'needs pdftotext');
+
+  test("typographic quotes in the text's language's marks", () {
+    final font = File(
+      'vendor/asciidoctor-epub3/fonts/mplus1p-regular-latin-ext.ttf',
+    ).absolute.path;
+    final theme = File('${dir.path}/quotes.yml')
+      ..writeAsStringSync('''
+extends: default
+font:
+  catalog:
+    merge: true
+    Latin:
+      normal: $font
+      bold: $font
+      italic: $font
+      bold_italic: $font
+base:
+  font_family: Latin
+''');
+    String text(Map<String, String> attributes) {
+      final pdf = File('${dir.path}/quotes.pdf')
+        ..writeAsBytesSync(
+          asciidoc.convertToBytes(
+            '"`Hallo`" und \'`Welt`\'.',
+            backend: Backend.pdf,
+            attributes: {
+              'pdf-theme': theme.path,
+              'reproducible': '',
+              ...attributes,
+            },
+          ),
+        );
+      return Process.runSync('pdftotext', [
+            pdf.path,
+            '-',
+          ], stdoutEncoding: utf8).stdout
+          as String;
+    }
+
+    expect(text({'lang': 'de'}), contains('„Hallo“ und ‚Welt‘.'));
+    expect(
+      text({'lang': 'de', 'asciidoctor-compat': ''}),
+      contains('“Hallo” und ‘Welt’.'),
+    );
+  }, skip: _poppler ? false : 'needs pdftotext');
 }

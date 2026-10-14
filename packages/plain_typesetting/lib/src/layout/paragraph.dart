@@ -196,6 +196,24 @@ enum BreakOpportunities {
   spacesAndHyphens,
 }
 
+/// Whether a line may break inside a word of letters written without
+/// spaces between them (CSS's `word-break`).
+enum WordBreak {
+  /// Wherever UAX #14 allows: between any two Han characters, kana or
+  /// Hangul syllables.
+  normal,
+
+  /// Not between letters, digits, Han or Hangul (CSS's `keep-all`): only
+  /// at spaces and punctuation, a word wider than the line between its
+  /// characters all the same.
+  keepAll,
+
+  /// `keepAll` in Korean text (its runs' language `ko`), else `normal`.
+  /// KLREQ (7.1.1) lets a Korean text break by syllables or by words
+  /// (eojeol), the author's choice; by words is the common one.
+  auto,
+}
+
 /// Finds where words may be hyphenated.
 abstract interface class Hyphenator {
   /// The offsets in [word] (letters only) a hyphen may go before.
@@ -255,6 +273,7 @@ final class Paragraph {
     this.breakOpportunities = BreakOpportunities.unicode,
     this.kashida = 0,
     this.eastAsian = true,
+    this.wordBreak = WordBreak.auto,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -288,6 +307,7 @@ final class Paragraph {
     breakOpportunities: breakOpportunities ?? this.breakOpportunities,
     kashida: kashida,
     eastAsian: eastAsian,
+    wordBreak: wordBreak,
   );
 
   /// The inline content.
@@ -307,6 +327,10 @@ final class Paragraph {
 
   /// Where the lines may break besides at spaces.
   final BreakOpportunities breakOpportunities;
+
+  /// Whether lines break inside words written without spaces between
+  /// their letters (by default, not in Korean).
+  final WordBreak wordBreak;
 
   /// Whether the paragraph's base direction is right to left (Arabic,
   /// Hebrew): its lines start at the right, where its indents go, and
@@ -1294,6 +1318,63 @@ int _skipDiscardable(List<LineItem> items, int start) {
   return i;
 }
 
+/// Whether [run]'s words are kept whole by [wordBreak].
+bool _keepsAll(WordBreak wordBreak, TextRun? run) => switch (wordBreak) {
+  WordBreak.normal => false,
+  WordBreak.keepAll => true,
+  WordBreak.auto => _isKorean(run?.style.language),
+};
+
+bool _isKorean(String? language) {
+  if (language == null) return false;
+  final primary = language.toLowerCase().split(RegExp('[-_]')).first;
+  return primary == 'ko' || primary == 'kor';
+}
+
+/// Whether the break at [at] in [text] is between two letters, digits,
+/// Han characters or Hangul syllables (the classes CSS's `keep-all` keeps
+/// together: AL, AI, NU, ID and Hangul's H2, H3, JL, JV, JT).
+bool _inWord(String text, int at) =>
+    at > 0 &&
+    at < text.length &&
+    _keptTogether(lineBreakClass(_runeBefore(text, at))) &&
+    _keptTogether(lineBreakClass(_runeAt(text, at)));
+
+int _runeBefore(String text, int at) {
+  final low = text.codeUnitAt(at - 1);
+  if (low >= 0xdc00 && low <= 0xdfff && at >= 2) {
+    final high = text.codeUnitAt(at - 2);
+    if (high >= 0xd800 && high <= 0xdbff) {
+      return 0x10000 + ((high - 0xd800) << 10) + (low - 0xdc00);
+    }
+  }
+  return low;
+}
+
+int _runeAt(String text, int at) {
+  final high = text.codeUnitAt(at);
+  if (high >= 0xd800 && high <= 0xdbff && at + 1 < text.length) {
+    final low = text.codeUnitAt(at + 1);
+    if (low >= 0xdc00 && low <= 0xdfff) {
+      return 0x10000 + ((high - 0xd800) << 10) + (low - 0xdc00);
+    }
+  }
+  return high;
+}
+
+bool _keptTogether(LineBreakClass c) => switch (c) {
+  LineBreakClass.al ||
+  LineBreakClass.ai ||
+  LineBreakClass.nu ||
+  LineBreakClass.id ||
+  LineBreakClass.h2 ||
+  LineBreakClass.h3 ||
+  LineBreakClass.jl ||
+  LineBreakClass.jv ||
+  LineBreakClass.jt => true,
+  _ => false,
+};
+
 /// The items of [paragraph]: its words as boxes, its spaces as glue, its
 /// other break opportunities (UAX #14) as penalties, its hard breaks as
 /// forced penalties. Soft hyphens, and the hyphenator's points, give
@@ -1382,6 +1463,13 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         opportunity &&
         !breaks.isMandatoryAt(nextBreak) &&
         whole.codeUnitAt(at - 1) != 0x2d) {
+      opportunity = false;
+    }
+    // (Korean, or `keepAll`: no break inside a word, CSS's `keep-all`.)
+    if (opportunity &&
+        !breaks.isMandatoryAt(nextBreak) &&
+        _keepsAll(paragraph.wordBreak, lastRun) &&
+        _inWord(whole, at)) {
       opportunity = false;
     }
     // (Spaces before what no line may start with, a closing bracket or a

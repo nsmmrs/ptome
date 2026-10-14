@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Typographic quotes in the text's language's marks, CLDR's, in HTML,
+  EPUB, PDF and man pages (FEAT-tlp95q): `„…“` in German, `«…»` in
+  French, `「…」` in Japanese; a block's `lang` or the document's; not
+  under `asciidoctor-compat`.
+- PDF: Korean wraps at spaces, its words whole (FEAT-87x2gw);
+  `base_word_break` (`auto`, `keep-all`, `normal`) chooses.
+- PDF: Chinese, Japanese and Korean text no theme font has is set in the
+  installed Noto CJK face of its language's region (FEAT-stxzq9): Serif
+  or Sans beside the text's font, SC, TC, HK, JP or KR by the document's,
+  block's or span's `lang`; the missing-glyph warning suggests installing
+  Noto CJK when none is.
 - PDF: Chinese punctuation by region (FEAT-mcmc8f): mainland Chinese
   sets a line-ending closing mark half wide (GB/T 15834), Hong Kong
   squeezes brackets only, Taiwan none. Two full-width marks in a row are

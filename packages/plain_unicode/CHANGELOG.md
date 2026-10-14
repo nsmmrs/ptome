@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Quotation marks by language (FEAT-tlp95q): `quotationMarks(language)`
+  gives a BCP 47 tag's `QuotationMarks` (outer and inner pairs) from
+  CLDR 48.2's delimiters, the locale found by its likely script, CLDR's
+  parent locales and the `nonlikelyScript` rule, as ICU 78.3 finds it
+  (every CLDR locale and its languages with 20 regions and 6 scripts
+  against `ulocdata_getDelimiter`). CLDR's data is vendored in
+  `vendor/cldr/48.2.0` under the Unicode License v3.
+
 - Case mapping by language (FEAT-8b8z4k): `upperCase` and `lowerCase`
   take a `language` (BCP 47) and apply SpecialCasing.txt's tailorings:
   Turkish and Azeri dotted and dotless i (`i` to `İ`, `I` to `ı`, a

@@ -463,6 +463,55 @@ final class FontCatalog {
       if (face.pdf case final EmbeddedFont font) ...font.missingCharacters,
   };
 
+  /// The installed Noto CJK family for text in [language] (BCP 47) beside
+  /// a text in [family]: the face of the language's region (Simplified,
+  /// Traditional or Hong Kong Chinese, Japanese, Korean; Japanese for any
+  /// other language; another region's where that isn't installed, its
+  /// forms chosen by the language all the same), serif beside a serif
+  /// family, else sans; null where none is installed.
+  String? cjkFamily(String? language, String family) {
+    final region = cjkRegion(language);
+    final lower = family.toLowerCase();
+    final serif =
+        _serifRx.hasMatch(lower) &&
+        !lower.contains('sans') &&
+        !_monospaceRx.hasMatch(lower);
+    return _cjkFamilies.putIfAbsent((region, serif), () {
+      // (Another region's face where the region's own isn't installed:
+      // each has every region's forms, chosen by the language.)
+      for (final r in [
+        region,
+        ...const ['JP', 'SC', 'TC', 'HK', 'KR'],
+      ]) {
+        for (final kind in serif ? ['Serif', 'Sans'] : ['Sans', 'Serif']) {
+          // (Noto CJK's names, then Google Fonts' for its regional cuts.)
+          for (final name in ['Noto $kind CJK $r', 'Noto $kind $r']) {
+            if (_installed.find(name) != null) return name;
+          }
+        }
+      }
+      return null;
+    });
+  }
+
+  final Map<(String, bool), String?> _cjkFamilies = {};
+
+  /// The Noto CJK region of [language] (BCP 47): `SC`, `TC`, `HK`, `JP`
+  /// or `KR`.
+  static String cjkRegion(String? language) {
+    final subtags = (language ?? '').toLowerCase().split(RegExp('[-_]'));
+    return switch (subtags.first) {
+      'ko' => 'KR',
+      'yue' => 'HK',
+      'zh' ||
+      'cmn' when subtags.contains('hk') || subtags.contains('mo') => 'HK',
+      'zh' ||
+      'cmn' when subtags.contains('tw') || subtags.contains('hant') => 'TC',
+      'zh' || 'cmn' => 'SC',
+      _ => 'JP',
+    };
+  }
+
   /// Whether [family] is known (in the catalog, built in, an icon set or
   /// installed).
   bool hasFamily(String family) =>

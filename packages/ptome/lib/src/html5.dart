@@ -35,6 +35,7 @@ import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
+import 'package:ptome/src/quotation.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/rx.dart';
@@ -2506,7 +2507,15 @@ class Html5Converter extends BuiltInConverter {
 
   /// Converts the [node] inline quoted text.
   String convertInlineQuoted(Inline node) {
-    final (open, close, tag) = quoteTags[node.type] ?? _defaultQuoteTags;
+    var (open, close, tag) = quoteTags[node.type] ?? _defaultQuoteTags;
+    // (Typographic quotes in the text's language's marks.)
+    if (node.type == 'double' || node.type == 'single') {
+      if (languageQuotationMarks(node, CompatFormat.html) case final marks?) {
+        (open, close) = node.type == 'double'
+            ? (marks.start, marks.end)
+            : (marks.alternateStart, marks.alternateEnd);
+      }
+    }
     if (node.id != null) {
       final classAttr = node.role != null ? ' class="${_s(node.role)}"' : '';
       if (tag) {

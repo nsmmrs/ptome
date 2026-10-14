@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Korean word wrapping (FEAT-87x2gw): `Paragraph.wordBreak`
+  (`WordBreak.normal`, `keepAll`, `auto`), CSS's `word-break`: `keepAll`
+  breaks no word of letters, digits, Han or Hangul (UAX #14's AL, AI, NU,
+  ID, H2, H3, JL, JV, JT), a word wider than the line all the same;
+  `auto`, the default, keeps Korean runs' words whole (KLREQ 7.1.1).
+
 - Chinese punctuation (FEAT-mcmc8f): `PunctuationStyle` (Japanese,
   mainland, Hong Kong, Taiwan) from `TextStyle.language`, CLREQ's
   conventions: mainland China squeezes marks in a row and sets a closing
