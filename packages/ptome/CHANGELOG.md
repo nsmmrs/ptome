@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: hyphenation in the newly shaped scripts (TASK-1wlzq5): Hindi,
+  Marathi, Sanskrit, Bengali, Assamese, Punjabi, Gujarati, Odia, Tamil,
+  Telugu, Kannada, Malayalam, Coptic, Georgian, Ethiopic, Thai and
+  polytonic Greek words are hyphenated at their syllables, the hyphen
+  drawn (it was hidden at the end of an Indic line; BUG-0rtx6p,
+  BUG-9t3kgj), decomposed text as its composed form (BUG-5srx49).
 - PDF: justified Arabic is lengthened by kashida inside its words
   before its spaces widen (`base_kashida`, half an em a word by
   default; FEAT-01jjv7); the Medina mushaf (`tool/mushaf.dart`) is set

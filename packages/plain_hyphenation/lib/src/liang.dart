@@ -6,8 +6,52 @@ library;
 import 'dart:typed_data';
 
 import 'package:plain_hyphenation/src/trie.dart';
+import 'package:plain_unicode/plain_unicode.dart'
+    show canonicalCombiningClass, canonicalComposition;
 
 final RegExp _whitespace = RegExp(r'\s+');
+
+/// The places [hyphenate] finds in [word] with its letters and the
+/// combining marks after them composed (as NFC composes them: each mark
+/// not blocked from its letter, no character decomposed), counted in
+/// [word] as it is, none before a combining mark: patterns are written
+/// for composed letters, so a decomposed word hyphenates as its composed
+/// form does.
+List<int> composedPlaces(String word, List<int> Function(String) hyphenate) {
+  final runes = word.runes.toList();
+  if (!runes.any((c) => canonicalCombiningClass(c) != 0)) {
+    return hyphenate(word);
+  }
+  final composed = <int>[];
+  final sources = <int>[];
+  var starter = -1;
+  var lastClass = 0;
+  for (final (i, c) in runes.indexed) {
+    final ccc = canonicalCombiningClass(c);
+    if (starter >= 0 &&
+        (lastClass < ccc ||
+            (lastClass == 0 && composed.length - 1 == starter))) {
+      if (canonicalComposition(composed[starter], c) case final composite?) {
+        composed[starter] = composite;
+        continue;
+      }
+    }
+    if (ccc == 0) {
+      starter = composed.length;
+      lastClass = 0;
+    } else {
+      lastClass = ccc;
+    }
+    composed.add(c);
+    sources.add(i);
+  }
+  return [
+    for (final place in hyphenate(String.fromCharCodes(composed)))
+      if (place < composed.length &&
+          canonicalCombiningClass(composed[place]) == 0)
+        sources[place],
+  ];
+}
 
 /// The hyphenator of the patterns [PatternTrie.encode] wrote to [trie],
 /// with [exceptions] (see [PatternHyphenator.new]): how the package loads
@@ -67,9 +111,13 @@ final class PatternHyphenator {
   /// Whether there are any patterns.
   bool get isEmpty => !_trie.hasPatterns && _exceptions.isEmpty;
 
-  /// The places [word] may be hyphenated: the number of letters before
-  /// each hyphen.
-  List<int> hyphenate(String word) => _cache[word] ??= _hyphenate(word);
+  /// The places [word] may be hyphenated: the number of letters (code
+  /// points) before each hyphen. A word with combining marks is
+  /// hyphenated as its canonical composition (NFC), which the patterns
+  /// are written for, the places then counted in the word as it is: never
+  /// before a mark, whether the word is composed or not.
+  List<int> hyphenate(String word) =>
+      _cache[word] ??= composedPlaces(word, _hyphenate);
 
   List<int> _hyphenate(String word) {
     final trie = _trie;

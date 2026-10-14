@@ -1604,11 +1604,29 @@ List<String> _clusters(String text) {
   return clusters;
 }
 
-bool _isWord(String text) => text.runes.every(
-  (c) =>
-      lineBreakClass(c) == LineBreakClass.al ||
-      lineBreakClass(c) == LineBreakClass.hl,
-);
+/// Whether [text] is a word to hyphenate: letters, and the marks and
+/// joiners on them (vowel signs, viramas, accents; the aksara classes of
+/// the Brahmic scripts), a letter first.
+bool _isWord(String text) {
+  var first = true;
+  for (final c in text.runes) {
+    final ok = switch (lineBreakClass(c)) {
+      LineBreakClass.al ||
+      LineBreakClass.hl ||
+      LineBreakClass.ak ||
+      LineBreakClass.as_ => true,
+      LineBreakClass.cm ||
+      LineBreakClass.zwj ||
+      LineBreakClass.ap ||
+      LineBreakClass.vi ||
+      LineBreakClass.vf => !first,
+      _ => false,
+    };
+    if (!ok) return false;
+    first = false;
+  }
+  return !first;
+}
 
 /// [items] with each box wider than [maxWidth] split into its grapheme
 /// clusters, with costly breaks between them.
@@ -2047,7 +2065,24 @@ Line _line(
     directions.add(rightToLeft);
     switch (content) {
       case TextRun(:final style, :final slotWidth):
-        final glyphs = style.shape(text, rightToLeft: rightToLeft);
+        var glyphs = style.shape(text, rightToLeft: rightToLeft);
+        // (The line's soft hyphen hidden by full shaping, a default
+        // ignorable: the font's hyphen drawn for it, still read as it.)
+        if (identical(content, hyphen) &&
+            text.endsWith('\u00ad') &&
+            glyphs.isNotEmpty) {
+          final at = rightToLeft ? 0 : glyphs.length - 1;
+          final dash = style.shape('-');
+          if (glyphs[at] case ShapedGlyph(text: '\u00ad', advance: 0)
+              when dash.length == 1 && dash.single.id != 0) {
+            glyphs = [...glyphs]
+              ..[at] = ShapedGlyph(
+                dash.single.id,
+                '\u00ad',
+                dash.single.advance,
+              );
+          }
+        }
         final width = slotWidth ?? style.widthOf(glyphs);
         shaped.add((content, text, glyphs, width));
         natural += width;

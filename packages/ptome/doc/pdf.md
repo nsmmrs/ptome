@@ -229,6 +229,14 @@ chosen, a letter no word starts with joined to the word before, never a
 break before a combining mark. (`base_line_breaking: segments`, as
 asciidoctor-pdf, breaks only at spaces.)
 
+Hyphenation (`:hyphens:`, the document's `lang`) works in every script
+hyph-utf8 has patterns for: Hindi, Marathi, Sanskrit, Bengali, Assamese,
+Punjabi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam, Coptic,
+Georgian, Ethiopic, Thai and polytonic Greek among the shaped ones. Each
+place leaves two halves that shape on their own (no conjunct divided,
+no vowel sign cut from its consonant), the hyphen drawn at the line's
+end; a decomposed word is hyphenated as its composed form.
+
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its
 overline even where the base font has one too.

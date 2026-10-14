@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A word with combining marks is hyphenated as its composed form (NFC
+  composition, nothing decomposed), the places counted in the word as
+  it is, none before a mark (BUG-5srx49): decomposed polytonic Greek
+  broke before its accents (λο-́γος). `composedPlaces` is the layer.
+
 - `PatternHyphenator` (Liang's algorithm) from plain_pdf, with its
   history, and the hyph-utf8 patterns of 72 languages, their aliases and
   `patternTag` from ptome, in one package.

@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Hyphenation in the shaped scripts (TASK-1wlzq5): a word with vowel
+  signs, viramas or combining accents is hyphenated (only words of class
+  AL and HL letters were, so no Indic word ever was; BUG-9t3kgj), and a
+  line's hyphen in a fully shaped script is drawn, the font's hyphen
+  standing for the soft hyphen (full shaping hid it as a default
+  ignorable; BUG-0rtx6p). Every language with patterns for a shaped
+  script (Indic, Coptic, Georgian, Ethiopic, Thai, polytonic Greek) is
+  checked: each place leaves two halves that shape without a dotted
+  circle, no conjunct divided.
+
 - Kashida (FEAT-01jjv7): `Paragraph.kashida`, how far each word of a
   justified line of Arabic may be lengthened by tatweel, in em, before
   the spaces widen. Each word at its best-ranked place (Microsoft's

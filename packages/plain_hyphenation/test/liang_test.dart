@@ -49,4 +49,14 @@ void main() {
     expect(german.hyphenate('Straße'), [4]);
     expect(german.hyphenate('Bär'), [2]);
   });
+
+  test('a decomposed word hyphenates as its composed form, never before '
+      'a mark (BUG-5srx49)', () {
+    final greek = hyphenatorFor('grc')!;
+    const composed = 'λόγος';
+    const decomposed = 'λο\u0301γος';
+    expect(greek.hyphenate(composed), [2]);
+    // (The same place, after the accent: λό-γος, not λο-́γος.)
+    expect(greek.hyphenate(decomposed), [3]);
+  });
 }

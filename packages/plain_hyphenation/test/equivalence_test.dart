@@ -16,6 +16,7 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:plain_hyphenation/plain_hyphenation.dart';
+import 'package:plain_hyphenation/src/liang.dart' show composedPlaces;
 import 'package:test/test.dart';
 
 import 'reference_liang.dart';
@@ -107,7 +108,7 @@ void main() {
 
       final differ = <String>[];
       for (final word in [...words, ...words.map(mixed)]) {
-        final expected = reference.hyphenate(word).toString();
+        final expected = composedPlaces(word, reference.hyphenate).toString();
         for (final (name, hyphenator) in [
           ('compiled', compiled),
           ('parsed', parsed),
