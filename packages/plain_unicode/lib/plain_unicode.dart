@@ -54,6 +54,7 @@ export 'src/line_break.dart'
         LineBreak,
         LineBreakClass,
         LineBreakOffsets,
+        LineBreakStrictness,
         lineBreakClass,
         lineBreakOffsets,
         lineBreaks;

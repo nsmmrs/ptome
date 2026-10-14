@@ -172,6 +172,12 @@ enum InlineAlignment
   static InlineAlignment middle
   static InlineAlignment top
   static List<InlineAlignment> values
+enum LineBreakStrictness
+  static LineBreakStrictness anywhere
+  static LineBreakStrictness loose
+  static LineBreakStrictness normal
+  static LineBreakStrictness strict
+  static List<LineBreakStrictness> values
 enum LineCap
   static LineCap butt
   static LineCap projectingSquare
@@ -596,12 +602,13 @@ final class Paragraph
   BreakOpportunities breakOpportunities
   HyphenRepetition hyphenRepetition
   Hyphenator? hyphenator
+  LineBreakStrictness lineBreak
   LineHeight lineHeight
   LineStartBrackets lineStartBrackets
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid, bool tshegPadding = false, bool justificationAlternates = true})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid, bool tshegPadding = false, bool justificationAlternates = true, LineBreakStrictness lineBreak = LineBreakStrictness.strict})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut

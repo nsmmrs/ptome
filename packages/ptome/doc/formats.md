@@ -105,6 +105,12 @@ browsers don't predefine (checked with epubcheck). `:sectnums-style:`
 numbers the sections in one (`upper-roman`: `II.I`). Not under
 `asciidoctor-compat`.
 
+`:line-break:` (`strict`, `normal`, `loose`, `anywhere`) sets how
+strictly lines break around East Asian punctuation and small kana, as
+CSS Text 3's `line-break`: HTML and EPUB write the property, the PDF
+breaks so itself (its theme's `base_line_break` winning; `doc/pdf.md`).
+Not under `asciidoctor-compat`.
+
 Dates are shown as the language writes them: the footer's "Last
 updated" date and time and an ISO `revdate` (`v1.0, 2026-10-14`) in the
 header, on the title page and the PDF's, in CLDR's (48.2) patterns and

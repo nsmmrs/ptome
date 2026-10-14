@@ -5,9 +5,9 @@ IndicPositionalCategory indicPositionalCategory(int codePoint)
 IndicSyllabicCategory indicSyllabicCategory(int codePoint)
 JoiningType joiningType(int codePoint)
 LineBreakClass lineBreakClass(int codePoint)
-LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true})
+LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true, LineBreakStrictness strictness = LineBreakStrictness.strict, bool chineseOrJapanese = false})
 List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
-List<LineBreak> lineBreaks(String text, {bool dictionary = true})
+List<LineBreak> lineBreaks(String text, {bool dictionary = true, LineBreakStrictness strictness = LineBreakStrictness.strict, bool chineseOrJapanese = false})
 QuotationMarks quotationMarks(String language)
 String defaultNumberingSystem(String language)
 String formatDate(DateTime moment, String language, {DateStyle style = DateStyle.long, Duration? offset, String? numberingSystem})
@@ -212,6 +212,12 @@ enum LineBreakClass
   static LineBreakClass zw
   static LineBreakClass zwj
   static List<LineBreakClass> values
+enum LineBreakStrictness
+  static LineBreakStrictness anywhere
+  static LineBreakStrictness loose
+  static LineBreakStrictness normal
+  static LineBreakStrictness strict
+  static List<LineBreakStrictness> values
 enum TextDirection
   static List<TextDirection> values
   static TextDirection ltr

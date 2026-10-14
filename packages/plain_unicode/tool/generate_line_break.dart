@@ -58,13 +58,29 @@ void main() {
       values[c] = index;
     }
   });
+  // (And CSS Text 3's wide prefixes and suffixes, for line-break: loose:
+  // PR and PO of East_Asian_Width A, F or W.)
+  final wide = <int>{};
   each('EastAsianWidth.txt', (start, end, value) {
     if (value == 'F' || value == 'W' || value == 'H') {
       for (var c = start; c <= end; c++) {
         values[c] |= eastAsian;
       }
     }
+    if (value == 'A' || value == 'F' || value == 'W') {
+      for (var c = start; c <= end; c++) {
+        wide.add(c);
+      }
+    }
   });
+  final widePrefixes = [
+    for (final c in wide.toList()..sort())
+      if (classes[values[c] & 0x3f] == 'PR') c,
+  ];
+  final wideSuffixes = [
+    for (final c in wide.toList()..sort())
+      if (classes[values[c] & 0x3f] == 'PO') c,
+  ];
   final unassigned = List<bool>.filled(0x110000, false);
   each('DerivedGeneralCategory.txt', (start, end, value) {
     final flag = switch (value) {
@@ -178,7 +194,17 @@ void main() {
     ..writeln()
     ..writeln('/// Stage 3: ${stage3.length} palette indices, a byte each')
     ..writeln('/// (base64).')
-    ..writeln("const String stage3 = '${base64.encode(stage3)}';");
+    ..writeln("const String stage3 = '${base64.encode(stage3)}';")
+    ..writeln()
+    ..writeln(
+      '/// The prefixes (PR) of East_Asian_Width A, F or W (CSS Text 3,',
+    )
+    ..writeln('/// `line-break: loose`: a break after them).')
+    ..writeln('const Set<int> widePrefixes = {${_hex(widePrefixes)}};')
+    ..writeln()
+    ..writeln('/// The suffixes (PO) of East_Asian_Width A, F or W (a break')
+    ..writeln('/// before them).')
+    ..writeln('const Set<int> wideSuffixes = {${_hex(wideSuffixes)}};');
   final path = '$root/lib/src/line_break_data.g.dart';
   File(path).writeAsStringSync(out.toString());
   Process.runSync(Platform.resolvedExecutable, ['format', path]);
@@ -233,3 +259,8 @@ String _wrap(List<int> values) {
   lines.add(line.toString().trimRight());
   return lines.join('\n');
 }
+
+/// [codes] as hexadecimal literals.
+String _hex(List<int> codes) => codes
+    .map((c) => '0x${c.toRadixString(16).toUpperCase().padLeft(4, '0')}')
+    .join(', ');

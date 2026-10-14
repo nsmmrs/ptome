@@ -23,6 +23,7 @@ import 'package:plain_unicode/plain_unicode.dart'
         BidiText,
         GeneralCategory,
         LineBreakClass,
+        LineBreakStrictness,
         TextDirection,
         emojiSequenceLength,
         generalCategory,
@@ -297,6 +298,7 @@ final class Paragraph {
     this.lineStartBrackets = LineStartBrackets.solid,
     this.tshegPadding = false,
     this.justificationAlternates = true,
+    this.lineBreak = LineBreakStrictness.strict,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -335,7 +337,13 @@ final class Paragraph {
     lineStartBrackets: lineStartBrackets,
     tshegPadding: tshegPadding,
     justificationAlternates: justificationAlternates,
+    lineBreak: lineBreak,
   );
+
+  /// How strictly the lines break around East Asian punctuation and small
+  /// kana (CSS's `line-break`: [LineBreakStrictness]), its Chinese and
+  /// Japanese rules where the text's language is either.
+  final LineBreakStrictness lineBreak;
 
   /// The inline content.
   final List<InlineContent> content;
@@ -660,6 +668,7 @@ abstract base class ItemLineBreaker implements LineBreaker {
       wordBreak: paragraph.wordBreak,
       hangingPunctuation: paragraph.hangingPunctuation,
       lineStartBrackets: paragraph.lineStartBrackets,
+      lineBreak: paragraph.lineBreak,
     );
     final firstItems = paragraphItems(
       styled,
@@ -1501,7 +1510,18 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     });
   }
   final whole = text.toString();
-  final breaks = lineBreakOffsets(whole);
+  final breaks = lineBreakOffsets(
+    whole,
+    strictness: paragraph.lineBreak,
+    chineseOrJapanese: paragraph.content.any(
+      (c) =>
+          c is TextRun &&
+          RegExp(
+            r'^(zh|ja|yue|cmn|wuu|hak|nan|gan|hsn|cjy|lzh)([-_]|$)',
+            caseSensitive: false,
+          ).hasMatch(c.style.language ?? ''),
+    ),
+  );
   // The first break opportunity not before the offset last asked about
   // (breakBefore is asked about offsets in order).
   var nextBreak = 0;

@@ -112,6 +112,7 @@ extension _Paragraphs on PdfConverter {
         _ => false,
       },
       lineStartBrackets: _lineStartBrackets,
+      lineBreak: _lineBreak,
       // (`base_tsheg_padding`: Tibetan lines ending with a tsheg filled
       // out with tshegs; `base_justify_alternates: false`: no `jalt`
       // forms, Nastaliq's wider letters, in justified lines.)
@@ -134,6 +135,23 @@ extension _Paragraphs on PdfConverter {
       // (A superscript in the space between lines, as the text box sets
       // it.)
       riseInLineHeight: false,
+    );
+  }
+
+  /// How strictly lines break around East Asian punctuation and small
+  /// kana (CSS's `line-break`): the theme's `base_line_break`, else the
+  /// document's `line-break` (`strict`, the default, `normal`, `loose`,
+  /// `anywhere`); UAX #14's rules under `asciidoctor-compat`.
+  LineBreakStrictness get _lineBreak {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) {
+      return LineBreakStrictness.strict;
+    }
+    final value = (_s('base_line_break') ?? _document.attr('line-break'))
+        ?.trim()
+        .toLowerCase();
+    return LineBreakStrictness.values.firstWhere(
+      (s) => s.name == value,
+      orElse: () => LineBreakStrictness.strict,
     );
   }
 

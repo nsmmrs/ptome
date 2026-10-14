@@ -16,6 +16,8 @@
 /// interfaces a backend implements (plain_pdf for PDF).
 library;
 
+export 'package:plain_unicode/plain_unicode.dart' show LineBreakStrictness;
+
 export 'src/canvas.dart'
     show BlendMode, Canvas, LineCap, LineJoin, TextRenderMode, TextStyle;
 export 'src/color.dart' show CmykColor, Color, GrayColor, RgbColor, SpotColor;

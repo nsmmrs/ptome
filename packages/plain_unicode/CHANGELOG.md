@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Line-breaking strictness (FEAT-cr864h): `lineBreaks` and
+  `lineBreakOffsets` take a `LineBreakStrictness` (CSS Text 3's
+  `line-break`: `strict`, UAX #14's rules; `normal`; `loose`; `anywhere`)
+  and whether the text is Chinese or Japanese; checked against ICU
+  78.3's `lb` keyword. The wide prefixes and suffixes (PR and PO of
+  East_Asian_Width A, F or W) come from the UCD with the other tables.
+
 - Dates (FEAT-f7cn49): `formatDate`, `formatTime` and `formatDateTime`
   write a moment as a language does, in CLDR 48.2's Gregorian patterns
   of each `DateStyle` (month and day names, day periods with their

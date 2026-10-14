@@ -26,6 +26,7 @@ List<Line> _lines(
   TextStyle? style,
   LineStartBrackets lineStartBrackets = LineStartBrackets.solid,
   bool hangingPunctuation = false,
+  LineBreakStrictness lineBreak = LineBreakStrictness.strict,
 }) => const FirstFitLineBreaker().breakLines(
   Paragraph(
     [TextRun(text, style ?? _style)],
@@ -34,6 +35,7 @@ List<Line> _lines(
     eastAsian: eastAsian,
     lineStartBrackets: lineStartBrackets,
     hangingPunctuation: hangingPunctuation,
+    lineBreak: lineBreak,
   ),
   (_) => width,
 );
@@ -47,6 +49,23 @@ String _text(Line line) => [
 ].join();
 
 void main() {
+  test('line-break: loose lets a line start with small kana, strict not '
+      '(CSS Text 3)', () {
+    final ja = TextStyle(_jp, 10, language: 'ja');
+    // (Four characters a line: the fifth is small.)
+    final strict = _lines('あいかきっくのは', 40, style: ja);
+    expect(_text(strict[1]).startsWith('っ'), isFalse);
+    expect(_text(strict[0]), 'あいか');
+    final loose = _lines(
+      'あいかきっくのは',
+      40,
+      style: ja,
+      lineBreak: LineBreakStrictness.loose,
+    );
+    expect(_text(loose[0]), 'あいかき');
+    expect(_text(loose[1]).startsWith('っ'), isTrue);
+  });
+
   test('a closing mark before an opening one is set half wide', () {
     // 括 弧 」 （ 丸: four ems and the closing bracket's half.
     final [line] = _lines('括弧」（丸', 200);

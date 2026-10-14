@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Line-breaking strictness (FEAT-cr864h): `line-break` (`strict`,
+  `normal`, `loose`, `anywhere`), CSS Text 3's, in every format (HTML and
+  EPUB as CSS's `line-break`, the PDF's theme key `base_line_break`); not
+  under `asciidoctor-compat`.
 - PDF: ruby as JLREQ 3.3 and CLREQ set it (FEAT-8xyny8): a shorter
   reading spread 1:2:1 over its base (JIS X 4051), a longer one hanging
   over the kana and punctuation blanks beside it but never a Han

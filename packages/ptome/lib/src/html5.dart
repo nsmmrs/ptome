@@ -468,6 +468,11 @@ class Html5Converter extends BuiltInConverter {
       );
     }
 
+    // `:line-break:` (Ptome's, as the PDF reads it): CSS's line-break.
+    if (_lineBreakValue(node) case final value?) {
+      result.add('<style>body{line-break:$value}</style>');
+    }
+
     // (Its writing modes, Ptome's: `:writing-mode:`, the blocks'
     // `vertical-rl` and `horizontal-tb` roles, the `tcy` role.)
     final writingModes = writingModeCss(node, CompatFormat.html);
@@ -1551,6 +1556,24 @@ class Html5Converter extends BuiltInConverter {
         '$equation\n'
         '</div>\n'
         '</div>';
+  }
+
+  /// The document's `line-break` (`strict`, `normal`, `loose`, `anywhere`)
+  /// as CSS's `line-break` reads it, or null (unset, unknown or under
+  /// `asciidoctor-compat`).
+  static String? _lineBreakValue(Document node) {
+    if (asciidoctorCompat(node, CompatFormat.html)) return null;
+    return switch (node.attr('line-break')?.trim().toLowerCase()) {
+      final value?
+          when const {
+            'strict',
+            'normal',
+            'loose',
+            'anywhere',
+          }.contains(value) =>
+        value,
+      _ => null,
+    };
   }
 
   /// Converts the [node] ordered list.

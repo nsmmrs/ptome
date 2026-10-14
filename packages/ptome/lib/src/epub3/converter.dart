@@ -731,7 +731,8 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<title>$chapterTitle</title>\n'
         '$_stylesheetLinks\n'
         '$iconCssHead${_codeOverflowCss(document)}'
-        '${_hyphensCss(document)}${_unitsCss(document)}'
+        '${_hyphensCss(document)}${_lineBreakCss(document)}'
+        '${_unitsCss(document)}'
         '${_writingModeCss(document)}'
         '${_counterCss(document)}'
         '$_readingSystemScript';
@@ -1612,6 +1613,22 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       ? '<style>\nbody p, li, dd { -webkit-hyphens: auto; hyphens: auto; }\n'
             '</style>\n'
       : '';
+
+  /// With `:line-break:` (as the PDF reads it), CSS's `line-break`.
+  static String _lineBreakCss(Document document) {
+    if (asciidoctorCompat(document, CompatFormat.epub)) return '';
+    return switch (document.attr('line-break')?.trim().toLowerCase()) {
+      final value?
+          when const {
+            'strict',
+            'normal',
+            'loose',
+            'anywhere',
+          }.contains(value) =>
+        '<style>\nbody { line-break: $value; }\n</style>\n',
+      _ => '',
+    };
+  }
 
   /// ` dir="rtl"` for a document written right to left (`:dir: rtl`,
   /// Ptome's), else nothing.

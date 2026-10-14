@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `Paragraph.lineBreak`: how strictly lines break around East Asian
+  punctuation and small kana (`LineBreakStrictness`, re-exported), the
+  Chinese and Japanese rules where a run's language is either
+  (FEAT-cr864h).
+
 - `InlineImage.startOverhang` and `endOverhang`: how far an image reaches
   over what is beside it (ruby's reading over kana); starting or ending a
   line, it is set that much further in (JLREQ 3.3.9) (FEAT-8xyny8).

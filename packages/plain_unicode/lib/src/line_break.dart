@@ -235,6 +235,31 @@ final class LineBreak {
   String toString() => 'LineBreak($offset${mandatory ? ', mandatory' : ''})';
 }
 
+/// How strictly lines break around East Asian punctuation and small kana:
+/// CSS Text Level 3's `line-break` (5.3), which tailors UAX #14.
+enum LineBreakStrictness {
+  /// UAX #14's default rules: no line starts with small kana, the
+  /// prolonged sound mark, an iteration mark or a CJK hyphen-like mark.
+  strict,
+
+  /// As [strict], but in Chinese and Japanese a line may start with
+  /// 〜 (U+301C) or ゠ (U+30A0).
+  normal,
+
+  /// As [normal], and a line may start with small kana and the prolonged
+  /// sound mark (class CJ) or an iteration mark (々 ゝ ヽ...), break
+  /// between inseparable characters (… ‥) and before a hyphen (‐ –)
+  /// after an ideograph; in Chinese and Japanese also before the centered
+  /// marks (・ ： ； ！ ？ ‼...), before a wide suffix (% ‰ ° ℃...) and
+  /// after a wide prefix (¥ € ±...).
+  loose,
+
+  /// Between any two characters (grapheme clusters, as far as marks,
+  /// joiners, variation selectors and emoji modifiers keep them), all
+  /// prohibitions disregarded.
+  anywhere,
+}
+
 /// The break opportunities in [text], in order: every position the
 /// default rules of UAX #14 allow a break at, and the end of the text
 /// (mandatory). A break at offset 0 is never reported.
@@ -243,8 +268,20 @@ final class LineBreak {
 /// Myanmar, written without spaces between words, also break between
 /// their words as ICU's dictionaries find them (UAX #14 leaves class SA
 /// to such a tailoring); without it, only the default rules apply.
-List<LineBreak> lineBreaks(String text, {bool dictionary = true}) => [
-  for (final code in _codes(text, dictionary))
+/// [strictness] tailors the rules as CSS's `line-break` does, its
+/// Chinese and Japanese rules where [chineseOrJapanese].
+List<LineBreak> lineBreaks(
+  String text, {
+  bool dictionary = true,
+  LineBreakStrictness strictness = LineBreakStrictness.strict,
+  bool chineseOrJapanese = false,
+}) => [
+  for (final code in _tailored(
+    text,
+    _codes(text, dictionary),
+    strictness,
+    chineseOrJapanese,
+  ))
     LineBreak(code >> 1, mandatory: code & 1 != 0),
 ];
 
@@ -265,8 +302,89 @@ extension type const LineBreakOffsets._(List<int> _codes) {
 
 /// The break opportunities in [text], in order, as [lineBreaks] finds
 /// them, without an object for each: for hot paths.
-LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true}) =>
-    LineBreakOffsets._(_codes(text, dictionary));
+LineBreakOffsets lineBreakOffsets(
+  String text, {
+  bool dictionary = true,
+  LineBreakStrictness strictness = LineBreakStrictness.strict,
+  bool chineseOrJapanese = false,
+}) => LineBreakOffsets._(
+  _tailored(text, _codes(text, dictionary), strictness, chineseOrJapanese),
+);
+
+/// [codes] with the opportunities [strictness] adds (CSS Text 3, 5.3).
+List<int> _tailored(
+  String text,
+  List<int> codes,
+  LineBreakStrictness strictness,
+  bool cj,
+) {
+  if (strictness == LineBreakStrictness.strict ||
+      (strictness == LineBreakStrictness.normal && !cj)) {
+    return codes;
+  }
+  final have = {for (final c in codes) c >> 1};
+  final added = <int>[];
+  int? before;
+  var offset = 0;
+  for (final c in text.runes) {
+    final at = offset;
+    offset += c > 0xFFFF ? 2 : 1;
+    final a = before;
+    before = c;
+    if (a == null || have.contains(at)) continue;
+    if (_tailoredBreak(a, c, strictness, cj)) added.add(at << 1);
+  }
+  if (added.isEmpty) return codes;
+  return [...codes, ...added]..sort();
+}
+
+/// Whether [strictness] allows a break between [a] and [b] that the
+/// default rules don't.
+bool _tailoredBreak(int a, int b, LineBreakStrictness strictness, bool cj) {
+  final ca = lineBreakClass(a);
+  final cb = lineBreakClass(b);
+  // (Never inside a cluster: before a mark, a joiner, a variation
+  // selector or an emoji modifier; after a joiner; within a flag.)
+  if (cb == LineBreakClass.cm ||
+      cb == LineBreakClass.zwj ||
+      cb == LineBreakClass.em ||
+      ca == LineBreakClass.zwj ||
+      (b >= 0xFE00 && b <= 0xFE0F) ||
+      (b >= 0xE0100 && b <= 0xE01EF) ||
+      (ca == LineBreakClass.ri && cb == LineBreakClass.ri)) {
+    return false;
+  }
+  if (strictness == LineBreakStrictness.anywhere) return true;
+  // (The prohibitions CSS doesn't lift: before or after a no-break
+  // character, around spaces and hard breaks, which break as they do.)
+  const kept = {
+    LineBreakClass.wj,
+    LineBreakClass.gl,
+    LineBreakClass.sp,
+    LineBreakClass.bk,
+    LineBreakClass.cr,
+    LineBreakClass.lf,
+    LineBreakClass.nl,
+    LineBreakClass.zw,
+  };
+  if (kept.contains(ca) || kept.contains(cb)) return false;
+  if (cj && (b == 0x301C || b == 0x30A0)) return true;
+  if (strictness != LineBreakStrictness.loose) return false;
+  if (cb == LineBreakClass.cj) return true;
+  if (const {0x3005, 0x303B, 0x309D, 0x309E, 0x30FD, 0x30FE}.contains(b)) {
+    return true;
+  }
+  if (ca == LineBreakClass.in_ && cb == LineBreakClass.in_) return true;
+  if (ca == LineBreakClass.id && (b == 0x2010 || b == 0x2013)) return true;
+  if (!cj) return false;
+  const centered = {
+    0x30FB, 0xFF1A, 0xFF1B, 0xFF65, 0x203C, 0x2047, 0x2048, 0x2049, //
+    0xFF01, 0xFF1F,
+  };
+  return centered.contains(b) ||
+      data.wideSuffixes.contains(b) ||
+      data.widePrefixes.contains(a);
+}
 
 /// The break codes of [text] (offset << 1 | mandatory), with the
 /// dictionaries' word boundaries when [dictionary] asks for them.
