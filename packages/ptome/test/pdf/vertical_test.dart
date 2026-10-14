@@ -167,7 +167,7 @@ $theme
 
   test('tables and listings stand upright, their text across', () {
     const source =
-        '本文です。\n\n|===\n|中央区 |二五\n|===\n\n'
+        '日本語の文章。\n\n|===\n|具体的 |字形\n|===\n\n'
         '----\ncode here\n----\n';
     (String, double, double, double, double) word(
       String text, {
@@ -176,32 +176,34 @@ $theme
         lines(pdf(source, 'vertical-rl', theme: theme))
             .firstWhere((w) => w.$1.contains(text));
     // (Read across: wider than tall.)
-    final cell = word('中央区');
+    final cell = word('具体的');
     expect(cell.$4, greaterThan(cell.$5 * 2));
     final code = word('code');
     expect(code.$4, greaterThan(code.$5));
     // (`table_writing_mode: vertical`: down the columns, a character a
     // word.)
-    final down = word('中', theme: 'table_writing_mode: vertical');
-    expect(down.$1, '中');
+    final down = word('具', theme: 'table_writing_mode: vertical');
+    expect(down.$1, '具');
   }, skip: _poppler ? false : 'needs pdftotext');
 
   test("a block's own writing mode: vertical-rl in a horizontal page, "
       'horizontal-tb in a vertical one', () {
     final across = lines(
       pdf(
-        '横書き。\n\n[verse.vertical-rl]\n____\n古池や\n蛙飛び込む\n____\n\n'
-            '終わり。',
+        '日本語の文章。\n\n[verse.vertical-rl]\n____\n直骨今\n具体的\n____\n\n'
+            '文章。',
         'horizontal-tb',
       ),
     );
     // (The poem's characters each a word, its first column at the right.)
-    final ko = across.firstWhere((w) => w.$1 == '古');
-    final kawazu = across.firstWhere((w) => w.$1 == '蛙');
+    final ko = across.firstWhere((w) => w.$1 == '直');
+    final kawazu = across.firstWhere((w) => w.$1 == '具');
     expect(ko.$2, greaterThan(kawazu.$2));
-    expect(across.any((w) => w.$1.startsWith('横書き')), isTrue);
-    final down = lines(pdf('縦書き。\n\n[.horizontal-tb]\n横の段落です。', 'vertical-rl'));
-    expect(down.any((w) => w.$1.contains('横の段落')), isTrue);
+    expect(across.any((w) => w.$1.startsWith('日本語の')), isTrue);
+    final down = lines(
+      pdf('日本語の文章。\n\n[.horizontal-tb]\n具体的な違い。', 'vertical-rl'),
+    );
+    expect(down.any((w) => w.$1.contains('具体的な')), isTrue);
   }, skip: _poppler ? false : 'needs pdftotext');
 
   test('under asciidoctor-compat the lines run across', () {
