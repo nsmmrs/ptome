@@ -100,10 +100,27 @@ base:
 
   test("text_transform upper-cases in the text's language", () {
     String text(String lang) {
+      // (A font with `İ`: without the default theme's, a built-in PDF
+      // font has none.)
+      final font = File(
+        'vendor/asciidoctor-epub3/fonts/mplus1p-regular-latin-ext.ttf',
+      ).absolute.path;
       final theme = File('${dir.path}/upper.yml')
-        ..writeAsStringSync(
-          'extends: default\nheading_text_transform: uppercase\n',
-        );
+        ..writeAsStringSync('''
+extends: default
+font:
+  catalog:
+    merge: true
+    Latin:
+      normal: $font
+      bold: $font
+      italic: $font
+      bold_italic: $font
+base:
+  font_family: Latin
+heading_font_family: Latin
+heading_text_transform: uppercase
+''');
       final pdf = File('${dir.path}/upper.pdf')
         ..writeAsBytesSync(
           asciidoc.convertToBytes(
