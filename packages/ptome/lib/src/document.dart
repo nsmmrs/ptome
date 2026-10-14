@@ -38,6 +38,7 @@ import 'package:ptome/src/html5.dart';
 import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/locale_labels.dart';
 import 'package:ptome/src/manpage.dart';
 import 'package:ptome/src/options.dart';
 import 'package:ptome/src/parser.dart';
@@ -1225,6 +1226,7 @@ class Document extends AbstractBlock implements NodeDocument {
   /// Saves the header attributes.
   @internal
   void finalizeHeader() {
+    applyLocaleLabels(this);
     _saveAttributes();
   }
 

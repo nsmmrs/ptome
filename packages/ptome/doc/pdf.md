@@ -241,6 +241,10 @@ Marathi and Nepali Devanagari (`mr`, `ne`); Urdu and Sindhi digits
 (`ur`, `sd`). Not under `asciidoctor-compat`, where Asciidoctor's text is
 set as Prawn sets it.
 
+The captions, the table of contents' title and the admonitions' labels
+are in the document's language (Asciidoctor's locale files, read from
+`lang`; `doc/formats.md`, Languages).
+
 The theme's `text_transform` (`uppercase`, `lowercase`) follows the
 text's language where Unicode tailors case mapping: Turkish and Azeri
 (`tr`, `az`) upper-case `i` to `İ` and lower-case `I` to `ı`; Lithuanian

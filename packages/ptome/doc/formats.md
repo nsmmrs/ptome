@@ -62,6 +62,25 @@ as Asciidoctor's do.
 
 ## Languages
 
+The generated text follows the document's `lang`: the table of contents'
+title, the captions (`Figure`, `Table`, `Example`, `Listing` where turned
+on), the admonitions' labels, `Appendix`, `Chapter` where the language
+has a word for it, the last-update and version labels, in every format.
+They are Asciidoctor's own translations, its 35 locale files
+(`data/locale/attributes-<lang>.adoc`), which Asciidoctor leaves the
+author to include: Ptome reads the language's file once the header is
+parsed. A region or script picks its file (`zh-TW`, `zh-Hant` and `zh-HK`
+Traditional Chinese, other `zh` Simplified; `sr-Latn`; `pt-BR`; `no` as
+`nb`); a language without one keeps the English labels. A label the
+author sets in the header, or from the API or the command line, is kept;
+one the file sets only when turned on (`:listing-caption:`) is
+translated when it is turned on, empty or in English. An index's
+cross-references use the language's words too (`siehe`, `siehe auch`;
+`voir`, `voir aussi`; `见`, `参见`...), or the document's
+`index-see-label` and `index-see-also-label`. `:locale-labels: false`
+keeps the English; nothing changes under `asciidoctor-compat` (any
+format), unless `:locale-labels: true`.
+
 AsciiDoc's typographic quotes (`"`text`"` and `'`text`'`) are set in the
 marks of the text's language, CLDR's (48.2): `„text“` and `‚text‘` in
 German, `«text»` in French, `「text」` and `『text』` in Japanese and in

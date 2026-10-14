@@ -545,7 +545,7 @@ extension _InlineElements on PdfConverter {
     if (!term.isContainer) {
       if (term.see case (final target, final name)) {
         markup
-          ..write(' (see ')
+          ..write(' (${_document.attr('index-see-label') ?? 'see'} ')
           ..write(
             target == null ? name.markup : link(target.anchor, name.markup),
           )
@@ -597,7 +597,9 @@ extension _InlineElements on PdfConverter {
           final also = target == null
               ? name.markup
               : link(target.anchor, name.markup);
-          seeAlso.add('(see also $also)');
+          seeAlso.add(
+            '(${_document.attr('index-see-also-label') ?? 'see also'} $also)',
+          );
         }
       }
     }

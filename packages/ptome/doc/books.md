@@ -114,6 +114,9 @@ by commas; any language's term can sort as another text this way).
 root order), `:index-sort: asciidoctor` keeps Asciidoctor's order in
 any language, and `asciidoctor-compat` leaves the language's order out.
 `Document.index` gives the same entries to programs (`doc/api.md`).
+A cross-reference reads in the document's language (`siehe`, `voir
+aussi`, `参见`), or as `:index-see-label:` and `:index-see-also-label:`
+say (`doc/formats.md`, Languages).
 
 ## Print pages in the EPUB
 

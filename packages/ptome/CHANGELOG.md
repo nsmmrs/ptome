@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Generated text in the document's language (FEAT-rss0h8): Asciidoctor's
+  locale file for `lang` (table of contents, captions, admonitions,
+  appendix and chapter labels) read without an include, the author's
+  labels kept, in every format; the index's "see" and "see also" in the
+  language (`index-see-label`, `index-see-also-label`). `:locale-labels:
+  false` keeps the English; not under `asciidoctor-compat`.
 - PDF: on a vertical page, a table too wide for the page is turned to lie
   along the column, as the official gazette turns them, instead of
   squeezed with its cells wrapping (BUG-38zmwk).

@@ -231,7 +231,8 @@ List<IndexEntry> _sorted(
 /// references. With [epub], marked up with the EPUB Indexes vocabulary
 /// (`epub:type="index-entry"`...), as an EPUB's reading systems read it.
 /// Without [headings], one list, no letter above each group
-/// (`index-category-headings`).
+/// (`index-category-headings`). [see] and [seeAlso] are the words that
+/// refer to another term (`index-see-label`, `index-see-also-label`).
 String indexHtml(
   IndexCatalog catalog, {
   required int level,
@@ -239,6 +240,8 @@ String indexHtml(
   String Function(IndexUse use)? href,
   bool epub = false,
   bool headings = true,
+  String see = 'see',
+  String seeAlso = 'see also',
 }) {
   final hrefOf = href ?? (use) => '#${use.anchor}';
   String type(String value) => epub ? ' epub:type="$value"' : '';
@@ -265,7 +268,7 @@ String indexHtml(
           '<a${type('index-xref-$kind')} href="#${ids[entry]}">$term</a>',
         null => term,
       };
-  String seeAlso(String term) => epub ? xref(term, 'related') : reference(term);
+  String related(String term) => epub ? xref(term, 'related') : reference(term);
   final heading = 'h${(level + 2).clamp(2, 6)}';
   final out = StringBuffer('<div class="index"${type('index')}>\n');
   void write(List<IndexEntry> entries) {
@@ -285,16 +288,16 @@ String indexHtml(
         for (final use in entry.uses)
           if (sections.add(use.section)) locator(use),
       ];
-      if (entry.see case final see?) {
+      if (entry.see case final target?) {
         out.write(
-          ', <em>see</em> ${epub ? xref(see, 'preferred') : reference(see)}',
+          ', <em>$see</em> ${epub ? xref(target, 'preferred') : reference(target)}',
         );
       } else {
         if (links.isNotEmpty) out.write(': ${links.join(', ')}');
         if (entry.seeAlso.isNotEmpty) {
           out.write(
-            '; <em>see also</em> '
-            '${[for (final term in entry.seeAlso) seeAlso(term)].join(', ')}',
+            '; <em>$seeAlso</em> '
+            '${[for (final term in entry.seeAlso) related(term)].join(', ')}',
           );
         }
       }

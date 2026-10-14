@@ -1667,6 +1667,8 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       level: node.level ?? 1,
       epub: true,
       headings: indexHasCategoryHeadings(document),
+      see: document.attr('index-see-label') ?? 'see',
+      seeAlso: document.attr('index-see-also-label') ?? 'see also',
       label: (section) => indexUseLabel(section, document),
       href: (use) {
         final file = switch (_enclosingChapter(use.node)) {

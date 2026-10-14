@@ -2491,6 +2491,8 @@ class Html5Converter extends BuiltInConverter {
       level: node.level!,
       label: (section) => indexUseLabel(section, document),
       headings: indexHasCategoryHeadings(document),
+      see: document.attr('index-see-label') ?? 'see',
+      seeAlso: document.attr('index-see-also-label') ?? 'see also',
     );
   }
 
