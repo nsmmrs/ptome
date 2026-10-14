@@ -747,7 +747,10 @@ their level), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
 alternate text (an image's `alt`), and links (`Link`, each annotation
 described). Running heads, page numbers, backgrounds and borders are
 artifacts, and the document's language (`:lang:`, `en` by default) and
-title are given. veraPDF finds the Hypermedia Systems book conforming.
+title are given. A block with its own `lang` gives its elements that
+language, and a span's (`[lang=fr]#...#`) marks its text with its own
+(PDF/UA-1 7.2), so a screen reader reads each in its language's voice.
+veraPDF finds the Hypermedia Systems book conforming.
 
 A character the font lacks reads as U+FFFD, the replacement character;
 give a fallback font that has it. Tagging adds about a sixth to a

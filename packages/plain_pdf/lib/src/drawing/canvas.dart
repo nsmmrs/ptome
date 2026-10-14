@@ -111,10 +111,17 @@ abstract interface class StructureRecorder {
 
 /// Has [canvas] record the structure painted on it in [recorder]: its
 /// content marked as its elements' (`BDC` with an `MCID`) or as
-/// artifacts (ISO 32000-2, 14.7.2 and 14.8.2.2).
+/// artifacts (ISO 32000-2, 14.7.2 and 14.8.2.2); text in another language
+/// than its element's (or than [language], the document's) marked with
+/// its own (14.9.2.2).
 @internal
-void tagCanvas(PdfCanvas canvas, StructureRecorder recorder) =>
-    canvas._recorder = recorder;
+void tagCanvas(
+  PdfCanvas canvas,
+  StructureRecorder recorder, {
+  String? language,
+}) => canvas
+  .._recorder = recorder
+  .._language = language;
 
 /// The element whose content [canvas] is painting now, if any (a link's).
 @internal
@@ -290,6 +297,26 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
 
   /// The elements begun and not ended, innermost last.
   final List<StructureElement> _elements = [];
+
+  /// The document's natural language, on a tagged page.
+  String? _language;
+
+  /// The language of the text being drawn in a marked-content sequence of
+  /// its own, if it is.
+  String? _spanLanguage;
+
+  /// [style]'s language where it isn't the language of the content around
+  /// it (the open language span's, else the innermost element's that has
+  /// one, else the document's), on a tagged page.
+  String? _otherLanguage(TextStyle style) {
+    final language = style.language;
+    if (_recorder == null || language == null || _artifacts > 0) return null;
+    final around =
+        _spanLanguage ??
+        _elements.reversed.map((e) => e.language).nonNulls.firstOrNull ??
+        _language;
+    return around?.toLowerCase() == language.toLowerCase() ? null : language;
+  }
 
   /// How many artifacts are begun and not ended.
   int _artifacts = 0;
@@ -873,6 +900,23 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
     TextStyle style, {
     String? text,
   }) {
+    // (Text in another language than its element's: a span of its own
+    // with its Lang, as a screen reader switches voices.)
+    if (_otherLanguage(style) case final language?) {
+      _mark();
+      _content
+        ..name('Span')
+        ..byte(0x20)
+        ..bytes(PdfDict({'Lang': PdfString.text(language)}).toBytes())
+        ..operator(' BDC');
+      _spanLanguage = language;
+      try {
+        return this.glyphs(glyphs, x, y, style, text: text);
+      } finally {
+        _spanLanguage = null;
+        endMarkedContent();
+      }
+    }
     // (Text in a mirrored frame, mirrored back about its em box's middle.)
     if (style.flipped) {
       final middle =

@@ -6,6 +6,7 @@
 @Tags(['slow'])
 library;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:ptome/src/internal.dart';
@@ -61,7 +62,10 @@ image::IMAGE[A red square,width=50]
 
 === A Subsection
 
-Last words.
+Last words, and [lang=fr]#quelques mots# in French.
+
+[lang=de]
+Ein Absatz auf Deutsch.
 ''';
 
 String _convert() {
@@ -128,6 +132,27 @@ void main() {
       expect(tree, contains('"A paragraph in the section."'));
     },
   );
+
+  test("a block's and a span's own language marked (PDF/UA-1 7.2)", () {
+    final qpdf = _tool(['qpdf']);
+    if (qpdf == null) {
+      markTestSkipped('needs qpdf');
+      return;
+    }
+    final out = '${_dir.path}/lang.pdf';
+    Process.runSync(qpdf, [
+      '--qdf',
+      '--object-streams=disable',
+      _convert(),
+      out,
+    ]);
+    final pdf = latin1.decode(File(out).readAsBytesSync());
+    expect(pdf, contains('/Span << /Lang (fr) >> BDC'));
+    expect(
+      RegExp(r'/Lang \(de\)[^>]*/S /P|/S /P[^>]*/Lang \(de\)').hasMatch(pdf),
+      isTrue,
+    );
+  });
 
   test('PDF/UA-1, as veraPDF checks it', () {
     final verapdf = _verapdf;

@@ -460,7 +460,13 @@ final class PdfDocument implements LayoutDocument<PdfPage> {
       artBox: artBox,
       rotation: rotation,
     );
-    if (tagged) tagCanvas(page.canvas, _structure.page(_pages.length));
+    if (tagged) {
+      tagCanvas(
+        page.canvas,
+        _structure.page(_pages.length),
+        language: language,
+      );
+    }
     _pages.add(page);
     return page;
   }

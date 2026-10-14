@@ -10,6 +10,8 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF/UA: a block's own `lang` reaches its structure elements and a
+  span's marks its text, as PDF/UA-1 7.2 asks (FEAT-r90rkz).
 - Generated text in the document's language (FEAT-rss0h8): Asciidoctor's
   locale file for `lang` (table of contents, captions, admonitions,
   appendix and chapter labels) read without an include, the author's

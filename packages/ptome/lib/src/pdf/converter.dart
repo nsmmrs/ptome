@@ -739,9 +739,21 @@ final class PdfConverter extends BuiltInConverter
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
   /// An element of the logical structure of [role] (with [alt], a
-  /// figure's description) for a box, when the PDF is tagged ([_pdfUa]).
-  StructureElement? _struct(String role, {String? alt}) =>
-      _pdfUa ? StructureElement(role, alt: alt) : null;
+  /// figure's description) for a box, when the PDF is tagged ([_pdfUa]):
+  /// in a block with its own language, that language (PDF/UA-1 7.2).
+  StructureElement? _struct(String role, {String? alt}) => _pdfUa
+      ? StructureElement(
+          role,
+          alt: alt,
+          language: switch (_language) {
+            final language?
+                when language.toLowerCase() !=
+                    _document.attr('lang')?.toLowerCase() =>
+              language,
+            _ => null,
+          },
+        )
+      : null;
 
   /// Whether the document is written right to left (`:dir: rtl`, as
   /// HTML's `dir`): its paragraphs set from the right, their text in

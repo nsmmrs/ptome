@@ -89,6 +89,34 @@ void main() {
     expect(pdf, contains('/Lang (en)'));
   });
 
+  test('text in another language marked with its own (14.9.2.2)', () {
+    final document = PdfDocument(tagged: true, language: 'en');
+    final german = StructureElement('P', language: 'de');
+    document.addPage(const Rect(0, 0, 200, 200)).canvas
+      ..beginStructure(StructureElement('P'))
+      ..text('English ', 10, 170, _body.copyWith(language: 'en'))
+      ..text('français', 50, 170, _body.copyWith(language: 'fr'))
+      ..text(' again', 90, 170, _body)
+      ..endStructure()
+      ..beginStructure(german)
+      ..text('Deutsch', 10, 150, _body.copyWith(language: 'de'))
+      ..text('English', 50, 150, _body.copyWith(language: 'EN'))
+      ..endStructure()
+      ..beginArtifact()
+      ..text('page 1', 10, 10, _body.copyWith(language: 'fr'))
+      ..endArtifact();
+    final pdf = _save(document);
+    // (French in the English paragraph, English in the German one; the
+    // German element's own Lang; nothing in an artifact.)
+    expect(
+      RegExp(r'/Span << /Lang \((\w+)\) >> BDC')
+          .allMatches(pdf)
+          .map((m) => m[1]),
+      ['fr', 'EN'],
+    );
+    expect(pdf, contains('/Lang (de)'));
+  });
+
   test('an untagged document marks nothing', () {
     final document = PdfDocument();
     document.addPage(const Rect(0, 0, 200, 200)).canvas
