@@ -6,3 +6,5 @@ pubspec.lock
 tool/oracles/icu/icubreak
 tool/oracles/icu/icucase
 tool/oracles/icu/icudelim
+tool/oracles/icu/icucoll
+tool/oracles/icu/icuindex

@@ -2473,7 +2473,10 @@ class Html5Converter extends BuiltInConverter {
   /// Starts cataloging the index terms of [document] (a top-level one).
   void beginIndex(Document document) {
     if (document.parentDocument == null) {
-      document.catalog.index.begin(document);
+      document.catalog.index.begin(
+        document,
+        compat: asciidoctorCompat(document, CompatFormat.html),
+      );
     }
   }
 

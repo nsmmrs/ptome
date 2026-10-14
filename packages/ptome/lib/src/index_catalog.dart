@@ -17,9 +17,10 @@ typedef IndexUse = ({String anchor, AbstractNode node, Section? section});
 
 /// A term of the index, with its subterms.
 final class IndexEntry {
-  /// The term [markup] (converted inline markup), read as [text], in the
-  /// index of [_catalog].
-  new(this.text, this.markup, [this._catalog]);
+  /// The term [markup] (converted inline markup), read as [text] and
+  /// sorted by [reading], in the index of [_catalog].
+  new(this.text, this.markup, [this._catalog, String? reading])
+    : reading = reading ?? text;
 
   final IndexCatalog? _catalog;
 
@@ -28,6 +29,10 @@ final class IndexEntry {
 
   /// The term as converted inline markup.
   final String markup;
+
+  /// What the term sorts by in the orders that read it: its ruby's
+  /// reading or its `sort-as`, else its text.
+  String reading;
 
   /// Where it is used, in document order.
   final List<IndexUse> uses = [];
@@ -72,10 +77,11 @@ final class IndexCatalog {
   bool _active = false;
 
   /// Starts a conversion of [document]: terms are cataloged from now on
-  /// when it has an `[index]` section and doesn't unset `index-html`.
-  void begin(Document document) {
+  /// when it has an `[index]` section and doesn't unset `index-html`;
+  /// [compat] (`asciidoctor-compat`) leaves the language's order out.
+  void begin(Document document, {bool compat = false}) {
     _occurrences.clear();
-    order = IndexOrder.of(document);
+    order = IndexOrder.of(document, compat: compat);
     final unset =
         !document.attributeUnspecified('index-html') &&
         !document.hasAttr('index-html');
@@ -132,11 +138,15 @@ final class IndexCatalog {
     if (existing != null) return existing;
     final anchor = '_indexterm_${++_sequence}';
     _anchors[(parent, key, nth)] = anchor;
+    final sortAs = node.attr('sort-as')?.split(',');
     var entries = _entries;
     IndexEntry? entry;
-    for (final level in markup.take(3)) {
+    for (final (i, level) in markup.take(3).indexed) {
       final text = _plain(level);
-      entry = entries[text] ??= IndexEntry(text, level, this);
+      final given = sortAs != null && i < sortAs.length ? sortAs[i].trim() : '';
+      final reading = given.isNotEmpty ? given : _reading(level);
+      entry = entries[text] ??= IndexEntry(text, level, this, reading);
+      if (given.isNotEmpty) entry.reading = given;
       entries = entry._subentries;
     }
     entry!.uses.add((anchor: anchor, node: parent, section: _sectionOf(node)));
@@ -169,15 +179,27 @@ final class IndexCatalog {
   List<IndexLetter> get letters {
     final byLetter = <String, List<IndexEntry>>{};
     for (final entry in _entries.values) {
-      (byLetter[order.letterOf(entry.text)] ??= []).add(entry);
+      final letter = order.letterOf(order.sortText(entry.text, entry.reading));
+      (byLetter[letter] ??= []).add(entry);
     }
-    final keys = byLetter.keys.toList()..sort(order.compare);
+    final keys = byLetter.keys.toList()..sort(order.compareLetters);
     return [
       for (final key in keys)
         (letter: key, entries: _sorted(byLetter[key]!, order)),
     ];
   }
 }
+
+/// What [markup] reads as: its ruby by the readings (`<rt>`), as plain
+/// text.
+String _reading(String markup) => _plain(
+  markup.replaceAllMapped(
+    RegExp('<ruby>(.*?)</ruby>'),
+    (m) =>
+        [for (final rt in RegExp('<rt>(.*?)</rt>').allMatches(m[1]!)) rt[1]!]
+            .join(),
+  ),
+);
 
 /// [markup] without its tags and with its character references resolved.
 String _plain(String markup) => markup
@@ -193,9 +215,15 @@ List<IndexEntry> _sorted(
   Iterable<IndexEntry> entries,
   IndexOrder order, {
   bool subentry = false,
-}) =>
-    entries.toList()
-      ..sort((a, b) => order.compare(a.text, b.text, subentry: subentry));
+}) => entries.toList()
+  ..sort((a, b) {
+    final c = order.compare(
+      order.sortText(a.text, a.reading),
+      order.sortText(b.text, b.reading),
+      subentry: subentry,
+    );
+    return c != 0 ? c : a.text.compareTo(b.text);
+  });
 
 /// The index of [catalog] as HTML, for an `[index]` section at [level]:
 /// a heading per letter, then the terms, each with a link to every

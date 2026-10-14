@@ -349,8 +349,30 @@ extension _InlineElements on PdfConverter {
     return graphic.intrinsicWidth * 0.75;
   }
 
-  IndexName _indexName(String markup) =>
-      IndexName(PdfConverter._plain(markup), markup);
+  /// The index name of [markup], sorted by [sortAs] where given, else
+  /// by its ruby's readings.
+  IndexName _indexName(String markup, [String? sortAs]) {
+    // (Ruby is an inline graphic here: its base for the text, its
+    // readings for the order.)
+    String rubyBy(String Function(InlineRuby ruby) part) =>
+        markup.replaceAllMapped(_rubyImage, (m) {
+          final ruby = _inlineGraphics[m[1]];
+          return ruby is InlineRuby
+              ? PdfConverter._escapeXml(part(ruby))
+              : m[0]!;
+        });
+    final text = PdfConverter._plain(rubyBy((ruby) => ruby.base));
+    final reading = sortAs != null && sortAs.isNotEmpty
+        ? sortAs
+        : PdfConverter._plain(
+            rubyBy((ruby) => [for (final (_, r) in ruby.pairs) r].join()),
+          );
+    return IndexName(text, markup, reading);
+  }
+
+  static final RegExp _rubyImage = RegExp(
+    r'<img src="(ruby:\d+)" format="ruby"[^>]*>',
+  );
 
   /// The index term [node]: an anchor where it's used (and its text, if
   /// visible), the term stored in the index (the gem's
@@ -368,9 +390,17 @@ extension _InlineElements on PdfConverter {
     final seeAlso = [
       for (final term in node.seeAlso ?? const <String>[]) _indexName(term),
     ];
+    final sortAs = [
+      for (final part in node.attr('sort-as')?.split(',') ?? const <String>[])
+        part.trim(),
+    ];
+    String? sortAt(int i) => i < sortAs.length ? sortAs[i] : null;
     final names = visible
-        ? [_indexName(node.text ?? '')]
-        : [for (final term in node.terms ?? const <String>[]) _indexName(term)];
+        ? [_indexName(node.text ?? '', sortAt(0))]
+        : [
+            for (final (i, term) in (node.terms ?? const <String>[]).indexed)
+              _indexName(term, sortAt(i)),
+          ];
     _index.store(names, name, see: see, seeAlso: seeAlso);
     return visible ? '$anchor${node.text ?? ''}' : anchor;
   }

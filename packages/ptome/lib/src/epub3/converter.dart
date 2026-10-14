@@ -363,7 +363,12 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
 
   /// Converts the document: builds the book.
   String convertDocument(Document node) {
-    if (node.parentDocument == null) node.catalog.index.begin(node);
+    if (node.parentDocument == null) {
+      node.catalog.index.begin(
+        node,
+        compat: asciidoctorCompat(node, CompatFormat.epub),
+      );
+    }
     _loadPageMap(node);
     _validate = node.hasAttr('ebook-validate');
     _extract = node.hasAttr('ebook-extract');

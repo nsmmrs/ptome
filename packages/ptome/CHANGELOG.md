@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Index order by language (FEAT-5ttjh1): a document whose `lang` isn't
+  English has its index (HTML, EPUB, PDF) in the language's collation,
+  UCA with CLDR 48.2's tailoring (plain_unicode's `Collator`), headed by
+  its index characters: Chinese by pinyin or stroke count, Japanese by
+  kana row and by reading (a term's ruby, or `sort-as`). `index-sort:
+  collation` or `asciidoctor` chooses either way; nothing changes under
+  `asciidoctor-compat`.
 - PDF: script-specific justification (FEAT-z8hxn0): Nastaliq (and any
   font with `jalt`) takes wider letterforms before its spaces widen (W3C
   alreq 7.2.3; `base_justify_alternates`); Tibetan spreads the room

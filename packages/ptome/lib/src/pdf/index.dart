@@ -12,11 +12,16 @@ import 'package:ptome/src/index_order.dart';
 /// A name in the index: its text (for sorting) and its inline markup.
 @immutable
 final class IndexName implements Comparable<IndexName> {
-  /// The name of [markup], read as [text].
-  const new(this.text, this.markup);
+  /// The name of [markup], read as [text] and sorted by [reading] (its
+  /// ruby's, its `sort-as`) in the orders that read it.
+  const new(this.text, this.markup, [String? reading])
+    : reading = reading ?? text;
 
   /// The plain text.
   final String text;
+
+  /// What it sorts by in the orders that read it.
+  final String reading;
 
   /// The inline markup.
   final String markup;
@@ -88,10 +93,14 @@ base class IndexGroup implements Comparable<IndexGroup> {
 
   /// The terms, in order.
   List<IndexTerm> get terms => _terms.values.toList()
-    ..sort(
-      (a, b) =>
-          order.compare(a.name.text, b.name.text, subentry: this is IndexTerm),
-    );
+    ..sort((a, b) {
+      final c = order.compare(
+        order.sortText(a.name.text, a.name.reading),
+        order.sortText(b.name.text, b.name.reading),
+        subentry: this is IndexTerm,
+      );
+      return c != 0 ? c : a.name.text.compareTo(b.name.text);
+    });
 
   @override
   int compareTo(IndexGroup other) => name.compareTo(other.name);
@@ -154,7 +163,9 @@ final class IndexCatalog {
   bool get isEmpty => _categories.isEmpty;
 
   /// The categories, in order.
-  List<IndexCategory> get categories => _categories.values.toList()..sort();
+  List<IndexCategory> get categories =>
+      _categories.values.toList()
+        ..sort((a, b) => order.compareLetters(a.name.text, b.name.text));
 
   /// Stores the term of [names] (one to three levels) used at [anchor],
   /// referring to [see] or [seeAlso].
@@ -179,7 +190,7 @@ final class IndexCatalog {
   }
 
   IndexCategory _category(IndexName name) {
-    final letter = order.letterOf(name.text);
+    final letter = order.letterOf(order.sortText(name.text, name.reading));
     return _categories[letter] ??= IndexCategory(
       IndexName(letter, letter),
       order,

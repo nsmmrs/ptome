@@ -10,6 +10,8 @@
 /// - Full case mapping (Unicode 17.0.0): `upperCase` and `lowerCase`, with
 ///   the special mappings (`ß` to `SS`) and, on request, the Final_Sigma
 ///   rule; Turkish, Azeri and Lithuanian tailorings by language.
+/// - Collation (UTS #10, CLDR 48.2): `Collator`, strings ordered as a
+///   language orders them, and an index's headings.
 /// - Quotation marks by language (CLDR 48.2): `quotationMarks`.
 library;
 
@@ -28,6 +30,7 @@ export 'src/bidi.dart'
 export 'src/bidi_data.g.dart' show bidiUnicodeVersion;
 export 'src/case.dart' show isCaseIgnorable, isCased, lowerCase, upperCase;
 export 'src/case_data.g.dart' show caseMappingUnicodeVersion;
+export 'src/collation.dart' show CollationKey, Collator;
 export 'src/line_break.dart'
     show
         LineBreak,

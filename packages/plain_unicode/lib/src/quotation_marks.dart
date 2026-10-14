@@ -48,6 +48,22 @@ final class QuotationMarks {
 /// `zh-TW`, `sr-Latn`), CLDR's; the root locale's (English's `“ ” ‘ ’`)
 /// for a language CLDR doesn't have.
 QuotationMarks quotationMarks(String language) {
+  for (final candidate in cldrLocales(language)) {
+    // (A locale CLDR has, or one it names a parent for: `pt-FR`, `pt-PT`.)
+    for (String? l = candidate; l != null; l = _parents[l]) {
+      if (_locales[l] case final i?) return _marks[i];
+      if (_parents[l] == 'root') return _marks[_locales['root']!];
+    }
+  }
+  return _marks[_locales['root']!];
+}
+
+/// The CLDR locales [language] (a BCP 47 tag) matches, most specific
+/// first, with hyphens (`zh-Hant-TW`, `zh-TW`, `zh-Hant`, `zh`): its
+/// script, where it names none, the likely one (`likelySubtags`); a
+/// language in another script than its likely one not matching the
+/// language alone (CLDR's `nonlikelyScript` rule).
+List<String> cldrLocales(String language) {
   final subtags = language.trim().replaceAll('_', '-').split('-');
   final lang = subtags.first.toLowerCase();
   String? script;
@@ -63,23 +79,14 @@ QuotationMarks quotationMarks(String language) {
       region = subtag.toUpperCase();
     }
   }
-  // (Its script, where it names none, the likely one.)
   final likely =
       (region == null ? null : _scripts['$lang-$region']) ?? _scripts[lang];
   script ??= likely;
   final usual = script == likely;
-  final candidates = [
+  return [
     if (script != null && region != null) '$lang-$script-$region',
     if (region != null && usual) '$lang-$region',
     if (script != null) '$lang-$script',
     if (usual) lang,
   ];
-  for (final candidate in candidates) {
-    // (A locale CLDR has, or one it names a parent for: `pt-FR`, `pt-PT`.)
-    for (String? l = candidate; l != null; l = _parents[l]) {
-      if (_locales[l] case final i?) return _marks[i];
-      if (_parents[l] == 'root') return _marks[_locales['root']!];
-    }
-  }
-  return _marks[_locales['root']!];
 }

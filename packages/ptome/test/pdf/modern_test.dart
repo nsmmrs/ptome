@@ -70,7 +70,12 @@ String _pdf(
 /// left out).
 List<List<String>> _pages(String pdf) => [
   for (final page
-      in (Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String)
+      in (Process.runSync('pdftotext', [
+                '-layout',
+                pdf,
+                '-',
+              ], stdoutEncoding: utf8).stdout
+              as String)
           .split('\f'))
     [
       for (final line in page.split('\n'))
@@ -1060,6 +1065,48 @@ base:
       ];
       expect(order('letter-by-letter'), ['Newark', 'news', 'New York']);
       expect(order('word-by-word'), ['New York', 'Newark', 'news']);
+    });
+
+    test("a document's language orders its index: Swedish, its letters "
+        'after z, a sort-as reading; not under asciidoctor-compat', () {
+      const source =
+          '= Bok\n:lang: sv\n:doctype: book\n\n== Ett\n\n'
+          '((Zebra)) ((ål)) ((alla)) ((äpple)) ((öl)) '
+          'indexterm:[Ödla,sort-as=Bödla]\n\n[index]\n== Register\n';
+      List<String> lines(Map<String, String> attributes) => [
+        for (final line in _pages(
+          _pdf(source, attributes: attributes),
+        ).lastWhere((page) => page.isNotEmpty))
+          if (line != 'Register' && RegExp(r'^\S+(, \d+)?$').hasMatch(line))
+            line.split(',').first,
+      ];
+      expect(lines({}), [
+        'A',
+        'alla',
+        'B',
+        'Ödla',
+        'Z',
+        'Zebra',
+        'Å',
+        'ål',
+        'Ä',
+        'äpple',
+        'Ö',
+        'öl',
+      ]);
+      expect(lines({'asciidoctor-compat': ''}), [
+        'A',
+        'alla',
+        'Z',
+        'Zebra',
+        'Ä',
+        'äpple',
+        'Å',
+        'ål',
+        'Ö',
+        'Ödla',
+        'öl',
+      ]);
     });
 
     const book =

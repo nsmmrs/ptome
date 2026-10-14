@@ -33,7 +33,123 @@ String _html(String source, {Map<String, String> attributes = const {}}) =>
       AsciidoctorOptions(safe: SafeMode.safe, attributes: attributes),
     );
 
+/// The headings and terms of [lang]'s index of [terms], in order (a
+/// heading as `# X`).
+List<String> _collated(
+  String lang,
+  String terms, {
+  Map<String, String> attributes = const {},
+}) => [
+  for (final m
+      in RegExp('<h3>([^<]+)</h3>|<span class="index-term">(.*?)</span>')
+          .allMatches(
+            _html(
+              '= Doc\n:lang: $lang\n:doctype: book\n\n== One\n\n$terms\n\n'
+              '[index]\n== Index\n',
+              attributes: attributes,
+            ),
+          ))
+    if (m[1] != null)
+      '# ${m[1]}'
+    else
+      m[2]!.replaceAll(RegExp('<rp>.*?</rp>|<rt>.*?</rt>|<[^>]+>'), ''),
+];
+
 void main() {
+  group("a document's language orders its index", () {
+    test('Swedish: å, ä, ö after z', () {
+      expect(_collated('sv', '((Zebra)) ((ål)) ((alla)) ((äpple)) ((öl))'), [
+        '# A',
+        'alla',
+        '# Z',
+        'Zebra',
+        '# Å',
+        'ål',
+        '# Ä',
+        'äpple',
+        '# Ö',
+        'öl',
+      ]);
+    });
+
+    test('German: ä with a', () {
+      expect(_collated('de', '((Zebra)) ((Äpfel)) ((Apfel)) ((Bär))'), [
+        '# A',
+        'Apfel',
+        'Äpfel',
+        '# B',
+        'Bär',
+        '# Z',
+        'Zebra',
+      ]);
+    });
+
+    test('Chinese by pinyin, Latin terms among them', () {
+      expect(_collated('zh', '((中国)) ((北京)) ((上海)) ((爱)) ((apple))'), [
+        '# A',
+        '爱',
+        'apple',
+        '# B',
+        '北京',
+        '# S',
+        '上海',
+        '# Z',
+        '中国',
+      ]);
+    });
+
+    test('Traditional Chinese by stroke count', () {
+      expect(_collated('zh-TW', '((中國)) ((人)) ((一))'), [
+        '# 1劃',
+        '一',
+        '# 2劃',
+        '人',
+        '# 4劃',
+        '中國',
+      ]);
+    });
+
+    test("Japanese by reading: a term's ruby, its sort-as", () {
+      expect(
+        _collated(
+          'ja',
+          '((ruby:漢字[かんじ])) ((ruby:山[やま])) ((ruby:川[かわ])) '
+              'indexterm:[東京,sort-as=とうきょう] ((さくら)) ((アメ))',
+        ),
+        ['# あ', 'アメ', '# か', '川', '漢字', '# さ', 'さくら', '# た', '東京', '# や', '山'],
+      );
+    });
+
+    test('index-sort: asciidoctor, English and asciidoctor-compat keep '
+        "Asciidoctor's order", () {
+      const terms = '((Zebra)) ((ål)) ((alla))';
+      const asciidoctor = ['# A', 'alla', '# Z', 'Zebra', '# Å', 'ål'];
+      expect(
+        _collated('sv', terms, attributes: {'index-sort': 'asciidoctor'}),
+        asciidoctor,
+      );
+      expect(
+        _collated('sv', terms, attributes: {'asciidoctor-compat': ''}),
+        asciidoctor,
+      );
+      expect(_collated('en-GB', '((Ölmez)) ((Zoe))'), [
+        '# Z',
+        'Zoe',
+        '# Ö',
+        'Ölmez',
+      ]);
+      // (index-sort: collation without a language: the root order.)
+      expect(
+        _collated(
+          'en',
+          '((Ölmez)) ((Zoe))',
+          attributes: {'index-sort': 'collation'},
+        ),
+        ['# O', 'Ölmez', '# Z', 'Zoe'],
+      );
+    });
+  });
+
   test("index-sort: Chicago's letter-by-letter or word-by-word order", () {
     const source =
         '= Book\n:doctype: book\n\n== One\n\n'

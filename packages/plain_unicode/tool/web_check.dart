@@ -1,5 +1,6 @@
 // Compiled to JavaScript in CI: finds the line breaks of a multilingual
-// text and maps its case, printing a digest; the CI job compares it with
+// text, maps its case and sorts its words in several languages' orders
+// (with their index headings), printing a digest; the CI job compares it with
 // the Dart VM's, as the results must be the same on both.
 import 'dart:convert';
 
@@ -10,6 +11,21 @@ const String _text =
     'עברית 123-456 http://example.org/path 👩‍👩‍👧 İstanbul ŉ '
     'ภาษาไทยสวัสดีครับ ພາສາລາວສະບາຍດີ';
 
+/// The text's words in [collator]'s order, each with its sort key's
+/// first levels and its index heading.
+String _collated(Collator collator) {
+  final words = _text.split(RegExp(r'[\s,]+')).toList()..sort(collator.compare);
+  final first = collator.sortKey(words.first);
+  return [
+    for (final word in words)
+      [
+        word,
+        collator.indexLabel(word),
+        collator.sortKey(word).compareTo(first),
+      ].join(':'),
+  ].join(' ');
+}
+
 void main() {
   final parts = [
     [for (final b in lineBreaks(_text)) '${b.offset}${b.mandatory ? '!' : ''}']
@@ -17,6 +33,8 @@ void main() {
     upperCase(_text),
     lowerCase(_text),
     lowerCase(_text, finalSigma: true),
+    for (final language in ['und', 'sv', 'zh', 'zh-TW', 'ja', 'th', 'ar'])
+      _collated(Collator(language)),
   ];
   // An Adler-32 style checksum: its sums stay small enough for
   // JavaScript's numbers.

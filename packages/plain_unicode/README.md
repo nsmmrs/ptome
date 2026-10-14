@@ -21,6 +21,12 @@ JavaScript (whose own tables differ in age and in rules):
 - **Quotation marks** (CLDR 48.2): `quotationMarks('de')` gives a
   language's outer and inner marks (`„` `“`, `‚` `‘`), the locale found
   as ICU 78.3 finds it.
+- **Collation** (UTS #10 with CLDR 48.2): `Collator('sv').compare(a, b)`
+  and `sortKey` order text as the language does (113 tailorings and
+  `-u-co-` types: `zh-u-co-stroke`, `de-u-co-phonebk`), and
+  `indexLabel` gives the heading an index puts a term under (pinyin
+  letters, stroke counts, kana rows), as ICU 78.3's collator and
+  AlphabeticIndex do.
 
 - **Shaping properties** (Unicode 18.0.0), for text shaping and vertical
   layout: `generalCategory`, `scriptOf` (an ISO 15924 code),
@@ -37,6 +43,7 @@ import 'package:plain_unicode/plain_unicode.dart';
 upperCase('straße'); // 'STRASSE'
 lowerCase('ΣΟΦΟΣ', finalSigma: true); // 'σοφος'
 lineBreaks('Hello, world').map((b) => b.offset); // (7, 12)
+Collator('sv').compare('ö', 'z'); // 1
 ```
 
 Each table pins its Unicode version (`lineBreakUnicodeVersion`,

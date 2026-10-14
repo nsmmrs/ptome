@@ -271,7 +271,7 @@ extension _DocumentParts on PdfConverter {
     _notes.clear();
     _sideNotes.clear();
     // (`index-sort`, modern engine: Chicago's letter-by-letter or
-    // word-by-word order.)
+    // word-by-word order, or the language's collation.)
     _index.order = asciidoctorCompat(document, CompatFormat.pdf)
         ? IndexOrder.asciidoctor
         : IndexOrder.of(document);

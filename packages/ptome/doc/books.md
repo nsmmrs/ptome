@@ -95,6 +95,24 @@ Smith, John; Smith Barney); punctuation and diacritics don't count
 (Élan under E); symbols come first, then numerals by their values, then
 letters; and a subentry's opening article or preposition is passed over
 (in poetry with poetry). In every format.
+
+A document in another language than English (`:lang: sv`, `de`, `zh`,
+`ja`...) has its index in that language's order: the Unicode Collation
+Algorithm with CLDR 48.2's tailoring for the language (Swedish's å, ä, ö
+after z; German's ä with a; Spanish's ñ after n), checked against ICU.
+The headings are the language's index characters, as ICU's
+`AlphabeticIndex` gives them: Chinese by pinyin under A to Z (Latin
+terms among them), Traditional Chinese (`zh-TW`, `zh-Hant`,
+`zh-u-co-stroke`) by stroke count under `1劃`, `2劃`...; Japanese under
+its kana rows (あ, か, さ...), Korean under its initial consonants.
+Terms in another script than the headings', symbols and numerals go
+under `@`, first. Japanese kanji sort by their readings, which the term
+gives as ruby (`((ruby:漢字[かんじ]))`) or with `sort-as`
+(`indexterm:[東京,sort-as=とうきょう]`, one reading per level separated
+by commas; any language's term can sort as another text this way).
+`:index-sort: collation` asks for the collation in English too (the
+root order), `:index-sort: asciidoctor` keeps Asciidoctor's order in
+any language, and `asciidoctor-compat` leaves the language's order out.
 `Document.index` gives the same entries to programs (`doc/api.md`).
 
 ## Print pages in the EPUB

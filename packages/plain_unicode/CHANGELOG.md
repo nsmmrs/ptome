@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Collation (FEAT-5ttjh1): `Collator(language)` orders text by the
+  Unicode Collation Algorithm (UTS #10, Unicode 17) with CLDR 48.2's root
+  order and each locale's tailoring (113, `-u-co-` types such as
+  `zh-u-co-stroke`), compiled from CLDR's rules: `compare`, `sortKey`
+  (`CollationKey`), and an index's headings (`indexLabels`,
+  `indexLabel`) as ICU's AlphabeticIndex has them (pinyin letters,
+  stroke counts, kana rows). Checked against CLDR's conformance test
+  (every line) and ICU 78.3's collator on every tailoring it has
+  (`tool/oracles/icu/icucoll`, `icuindex`). The rules are vendored in
+  `vendor/cldr/48.2.0/collation` (Unicode License v3);
+  `tool/generate_collation.dart` compiles them.
+
 - Syllable breaks (FEAT-d2xh7l): Tai Tham, New Tai Lue, Tai Viet and
   Ahom (SA, no ICU dictionary, no word list under a permissive licence)
   break between orthographic syllables, from their Indic syllabic and

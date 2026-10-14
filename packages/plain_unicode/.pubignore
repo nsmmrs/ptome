@@ -7,5 +7,7 @@ build/
 pubspec.lock
 /vendor/ucd/*/*
 !/vendor/ucd/*/license.txt
+/vendor/cldr/*/*
+!/vendor/cldr/*/LICENSE
 /tool/
 /test/

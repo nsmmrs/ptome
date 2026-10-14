@@ -218,6 +218,19 @@ final class BidiText
   Uint8List levels
   Uint8List lineLevels(int start, int end)
   int paragraphLevel(int offset)
+final class CollationKey implements Comparable<CollationKey>
+  String toString()
+  int comparePrimary(CollationKey other)
+  int compareTo(CollationKey other)
+final class Collator
+  CollationKey sortKey(String text)
+  Collator(String language)
+  Iterable<String> tailoredStrings
+  List<String> indexLabels
+  String locale
+  String? indexLabel(String text)
+  int compare(String a, String b)
+  static Iterable<String> tailoredLocales
 final class LineBreak
   LineBreak(int offset, {required bool mandatory})
   String toString()
