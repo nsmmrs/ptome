@@ -10,19 +10,29 @@
 /// then searched for by its first code unit.
 library;
 
-/// The text the mask describes (compared by identity: a pass that
-/// changes nothing returns the same string).
-String? _maskedText;
+/// Which ASCII characters a text holds: a bit per code unit, 32 to a
+/// word (words that fit in JavaScript's 32-bit operations too), worked out
+/// once per text and kept until a different text is asked about. A
+/// substitution run has its own (`SubstitutionRun.mask`), active while it
+/// runs; the rest of the processor shares one.
+final class Mask {
+  /// The text the mask describes (compared by identity: a pass that
+  /// changes nothing returns the same string).
+  String? _text;
+  int _m0 = 0;
+  int _m1 = 0;
+  int _m2 = 0;
+  int _m3 = 0;
+}
 
-// The ASCII characters [_maskedText] holds: a bit per code unit, 32 to a
-// word (words that fit in JavaScript's 32-bit operations too).
-int _m0 = 0;
-int _m1 = 0;
-int _m2 = 0;
-int _m3 = 0;
+/// The mask the presence functions use: the active substitution run's,
+/// else the processor's.
+Mask activeMask = _shared;
+final Mask _shared = Mask();
 
 void _mask(String text) {
-  if (identical(text, _maskedText)) return;
+  final mask = activeMask;
+  if (identical(text, mask._text)) return;
   var m0 = 0;
   var m1 = 0;
   var m2 = 0;
@@ -42,22 +52,24 @@ void _mask(String text) {
         m3 |= bit;
     }
   }
-  _m0 = m0;
-  _m1 = m1;
-  _m2 = m2;
-  _m3 = m3;
-  _maskedText = text;
+  mask
+    .._m0 = m0
+    .._m1 = m1
+    .._m2 = m2
+    .._m3 = m3
+    .._text = text;
 }
 
 /// Whether the text last masked could hold [c]: it holds it, or [c] is
 /// not ASCII (which the mask does not record).
 bool _has(int c) {
   if (c >= 0x80) return true;
+  final mask = activeMask;
   final word = switch (c >> 5) {
-    0 => _m0,
-    1 => _m1,
-    2 => _m2,
-    _ => _m3,
+    0 => mask._m0,
+    1 => mask._m1,
+    2 => mask._m2,
+    _ => mask._m3,
   };
   return word & (1 << (c & 31)) != 0;
 }

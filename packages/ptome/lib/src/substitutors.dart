@@ -25,8 +25,8 @@
 ///   [NodeDocument] does not expose `register`, `resolveId`, `footnotes`,
 ///   `outfilesuffix`, attribute locking, extensions or the syntax
 ///   highlighter.
-/// * The passthrough lock is kept in a private [Expando] rather than on
-///   [AbstractNode].
+/// * The passthroughs and their lock are kept by the substitution run
+///   ([SubstitutionRun]) rather than on [AbstractNode].
 /// * `{set:...}` attribute assignments go through [_storeAttribute], which
 ///   reproduces the parser's attribute storing.
 /// * Missed references are always passed to the logger at info level
@@ -51,6 +51,7 @@ import 'package:ptome/src/inline_tree.dart';
 import 'package:ptome/src/presence.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/rx.dart';
+import 'package:ptome/src/substitution_run.dart';
 import 'package:ptome/src/text_case.dart';
 import 'package:ptome/src/units/engine.dart' show RefLink, RefText;
 import 'package:ptome/src/units/presentation.dart';
@@ -213,24 +214,25 @@ final class Passthrough {
   final Map<String, String>? attributes;
 }
 
-/// The passthroughs stashed per node while substitutions run.
-final Expando<List<Passthrough>> _passthroughs = Expando<List<Passthrough>>(
-  'passthroughs',
-);
+/// The passthroughs stashed for [node]: those of the substitution run
+/// on it (the innermost; a run's stash is shared by the runs on the same
+/// node within it), or, outside one, none kept.
+List<Passthrough> _passthroughsOf(AbstractNode node) {
+  for (var run = SubstitutionRun.current; run != null; run = run.outer) {
+    if (identical(run.node, node)) return run.stash.passthroughs;
+  }
+  return <Passthrough>[];
+}
 
-/// The passthroughs stashed for [node].
-List<Passthrough> _passthroughsOf(AbstractNode node) =>
-    _passthroughs[node] ??= <Passthrough>[];
-
-/// The passthroughs stashed for [node], exposed for tests.
+/// The passthroughs stashed for [node], exposed for tests (within a
+/// [substitutionRunOn] run on it).
 @visibleForTesting
 List<Passthrough> passthroughsOf(AbstractNode node) => _passthroughsOf(node);
 
-/// Tracks the passthrough lock per node.
-///
-/// [AbstractNode] has no field for it, so the lock lives here. Placeholders
-/// can move around, so only the outermost substitution call clears them.
-final Expando<bool> _passthroughsLocked = Expando<bool>('passthroughsLocked');
+/// [body] run within a substitution run on [node], for tests.
+@visibleForTesting
+T substitutionRunOn<T>(AbstractNode node, T Function() body) =>
+    SubstitutionRun.run(node, (_) => body());
 
 /// Returns the [Document] behind [node].
 ///
@@ -342,20 +344,29 @@ List<InlineContent> applySubsTree(
   return InlineRun.track(text, () => _applySubsInRun(node, text, subs)).$2;
 }
 
-String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
+String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) =>
+    SubstitutionRun.run(node, (run) => _applySubsWithin(run, node, text, subs));
+
+String _applySubsWithin(
+  SubstitutionRun run,
+  AbstractNode node,
+  String text,
+  List<Sub> subs,
+) {
   final units = _unitsOf(node);
   var subject = units == null ? text : units.prepare(node, text);
 
   List<Passthrough>? passthrus;
   var clearPassthrus = false;
+  final stash = run.stash;
   if (subs.contains(Sub.macros)) {
     subject = extractPassthroughs(node, subject);
-    if (_passthroughsOf(node).isNotEmpty) {
-      passthrus = _passthroughsOf(node);
+    if (stash.passthroughs.isNotEmpty) {
+      passthrus = stash.passthroughs;
       // NOTE placeholders can move around, so we can only clear in the
       // outermost substitution call
-      if (_passthroughsLocked[node] != true) {
-        _passthroughsLocked[node] = true;
+      if (!stash.locked) {
+        stash.locked = true;
         clearPassthrus = true;
       }
     }
@@ -363,46 +374,10 @@ String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
 
   for (final sub in subs) {
     InlineRun.advance(subject);
-    switch (sub) {
-      case Sub.specialcharacters:
-        subject = subSpecialchars(subject);
-      case Sub.quotes:
-        subject = _subQuotesKeepingIndexterms(
-          node,
-          subject,
-          protectTargets: subs.contains(Sub.macros),
-        );
-      case Sub.attributes:
-        if (hasLiteral(subject, attrRefHead)) {
-          subject = subAttributes(node, subject);
-        }
-      case Sub.replacements:
-        subject = subReplacements(subject);
-        // (French text's no-break spaces: Ptome.)
-        if (frenchSpacingOf(node) case final spacing?) {
-          subject = spacing.apply(subject);
-        }
-        // (A vertical document's short numbers across its lines, in HTML
-        // and EPUB: Ptome.)
-        if (node.document case final Document document?
-            when combinesDigits(document)) {
-          subject = combineDigitsIn(subject);
-        }
-      case Sub.macros:
-        subject = subMacros(node, subject);
-      case Sub.highlight:
-        subject = highlightSource(
-          node,
-          subject,
-          processCallouts: subs.contains(Sub.callouts),
-        );
-      case Sub.callouts:
-        if (!subs.contains(Sub.highlight)) {
-          subject = subCallouts(node, subject);
-        }
-      case Sub.postReplacements:
-        subject = subPostReplacements(node, subject);
-    }
+    // (Each pass skipped, in this one place, where its guard says it
+    // would leave the text as it is.)
+    if (!sub.admits(node, subject)) continue;
+    subject = sub.run(node, subject, subs);
   }
 
   if (passthrus != null) {
@@ -411,7 +386,7 @@ String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
     subject = restorePassthroughs(node, subject);
     if (clearPassthrus) {
       passthrus.clear();
-      _passthroughsLocked[node] = false;
+      stash.locked = false;
     }
   }
 
@@ -421,6 +396,81 @@ String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
   }
   return subject;
 }
+
+/// A substitution pass as the pipeline runs it: what it needs in the text
+/// to change anything ([admits], the checks each pass made of its own,
+/// declared here) and the pass ([run]).
+extension SubPass on Sub {
+  /// Whether this pass could change [subject] on [node]: false only where
+  /// it would leave it as it is.
+  bool admits(AbstractNode node, String subject) => switch (this) {
+    Sub.specialcharacters => hasAnyChar(subject, '>&<'),
+    // (quotedTextSniffRx: a class of ASCII characters.)
+    Sub.quotes => hasAnyChar(
+      subject,
+      _documentOf(node).compatMode ? "*'_+#^~" : '*_`#^~',
+    ),
+    Sub.attributes => hasLiteral(subject, attrRefHead),
+    // (Also French text's spacing and a vertical document's numbers.)
+    Sub.replacements =>
+      hasReplaceableText(subject) ||
+          frenchSpacingOf(node) != null ||
+          _combinesDigits(node),
+    // (Too many macros to tell from the text; the source as a whole.)
+    Sub.macros || Sub.highlight => true,
+    // (The callout patterns, after special characters: `&lt;1&gt;`.)
+    Sub.callouts => hasLiteral(subject, '&lt;'),
+    Sub.postReplacements =>
+      _hardbreaks(node) ||
+          (hasLiteral(subject, plus) && hasLiteral(subject, hardLineBreak)),
+  };
+
+  /// [subject] with this pass applied on [node], one of [subs].
+  String run(AbstractNode node, String subject, List<Sub> subs) =>
+      switch (this) {
+        Sub.specialcharacters => subSpecialchars(subject),
+        Sub.quotes => _subQuotesKeepingIndexterms(
+          node,
+          subject,
+          protectTargets: subs.contains(Sub.macros),
+        ),
+        Sub.attributes => subAttributes(node, subject),
+        Sub.replacements => _replacements(node, subject),
+        Sub.macros => subMacros(node, subject),
+        Sub.highlight => highlightSource(
+          node,
+          subject,
+          processCallouts: subs.contains(Sub.callouts),
+        ),
+        Sub.callouts =>
+          subs.contains(Sub.highlight) ? subject : subCallouts(node, subject),
+        Sub.postReplacements => subPostReplacements(node, subject),
+      };
+}
+
+/// [subject]'s replacements, French text's no-break spaces (Ptome) and a
+/// vertical document's short numbers across its lines, in HTML and EPUB
+/// (Ptome).
+String _replacements(AbstractNode node, String subject) {
+  var result = subReplacements(subject);
+  if (frenchSpacingOf(node) case final spacing?) {
+    result = spacing.apply(result);
+  }
+  if (_combinesDigits(node)) result = combineDigitsIn(result);
+  return result;
+}
+
+/// Whether [node]'s document is vertical and sets its short numbers across
+/// its lines.
+bool _combinesDigits(AbstractNode node) => switch (node.document) {
+  final Document document => combinesDigits(document),
+  _ => false,
+};
+
+/// Whether [node] (or its document) breaks lines where its text does.
+bool _hardbreaks(AbstractNode node) =>
+    node.attributes.containsKey('hardbreaks-option') ||
+    _documentOf(node).attributes.containsKey('hardbreaks-option');
 
 /// Applies the specified substitutions to [lines] as one text, returning
 /// the result split back into lines (a new list).
@@ -698,60 +748,64 @@ String convertQuotedText(
   var resolvedType = type;
   String? unescapedAttrs;
   if (full.startsWith(rs)) {
-    if (scope == QuoteScope.constrained && match.group(2) != null) {
-      unescapedAttrs = '[${match.group(2)}]';
-    } else {
-      return full.substring(1);
+    // (An escaped constrained quote with an attribute list keeps the list
+    // as text; any other escaped quote is its text.)
+    switch (scope) {
+      case QuoteScope.constrained when match.group(2) != null:
+        unescapedAttrs = '[${match.group(2)}]';
+      case QuoteScope.constrained || QuoteScope.unconstrained:
+        return full.substring(1);
     }
   }
 
   final block = _blockOf(node);
-  if (scope == QuoteScope.constrained) {
-    if (unescapedAttrs != null) {
+  switch (scope) {
+    case QuoteScope.constrained:
+      if (unescapedAttrs != null) {
+        final quoted = Inline(
+          block,
+          InlineContext.quoted,
+          text: match.group(3),
+          type: resolvedType,
+        );
+        return '$unescapedAttrs${InlineRun.emit(quoted)}';
+      }
+      final attrlist = match.group(2);
+      String? id;
+      Map<String, String>? attributes;
+      if (attrlist != null) {
+        attributes = parseQuotedTextAttributes(node, attrlist);
+        id = attributes['id'];
+        if (resolvedType == 'mark') resolvedType = 'unquoted';
+      }
       final quoted = Inline(
         block,
         InlineContext.quoted,
         text: match.group(3),
         type: resolvedType,
-      );
-      return '$unescapedAttrs${InlineRun.emit(quoted)}';
-    }
-    final attrlist = match.group(2);
-    String? id;
-    Map<String, String>? attributes;
-    if (attrlist != null) {
-      attributes = parseQuotedTextAttributes(node, attrlist);
-      id = attributes['id'];
-      if (resolvedType == 'mark') resolvedType = 'unquoted';
-    }
-    final quoted = Inline(
-      block,
-      InlineContext.quoted,
-      text: match.group(3),
-      type: resolvedType,
-      id: id,
-      attributes: attributes,
-    );
-    return '${match.group(1)}${InlineRun.emit(quoted)}';
-  } else {
-    final attrlist = match.group(1);
-    String? id;
-    Map<String, String>? attributes;
-    if (attrlist != null) {
-      attributes = parseQuotedTextAttributes(node, attrlist);
-      id = attributes['id'];
-      if (resolvedType == 'mark') resolvedType = 'unquoted';
-    }
-    return InlineRun.emit(
-      Inline(
-        block,
-        InlineContext.quoted,
-        text: match.group(2),
-        type: resolvedType,
         id: id,
         attributes: attributes,
-      ),
-    );
+      );
+      return '${match.group(1)}${InlineRun.emit(quoted)}';
+    case QuoteScope.unconstrained:
+      final attrlist = match.group(1);
+      String? id;
+      Map<String, String>? attributes;
+      if (attrlist != null) {
+        attributes = parseQuotedTextAttributes(node, attrlist);
+        id = attributes['id'];
+        if (resolvedType == 'mark') resolvedType = 'unquoted';
+      }
+      return InlineRun.emit(
+        Inline(
+          block,
+          InlineContext.quoted,
+          text: match.group(2),
+          type: resolvedType,
+          id: id,
+          attributes: attributes,
+        ),
+      );
   }
 }
 

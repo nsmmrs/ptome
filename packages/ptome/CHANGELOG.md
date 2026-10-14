@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- The substitutions restructured (CHORE-fthx89), output the same: each
+  pass declares what it needs in the text and the pipeline skips it in
+  one place; a substitution run holds the passthroughs and their lock, the
+  mask of the characters a text holds and the inline elements' tracking,
+  in place of two `Expando`s and statics. A little faster on the
+  throughput corpus (html5 −7%).
 - Faster units documents (TASK-frytn1): the inline scanner looks for each
   token's literal (`@`, `note:`, `<<`, `[.dfn]#`, the range brackets)
   before running its regex, markers tried only at the first `@` of a run:

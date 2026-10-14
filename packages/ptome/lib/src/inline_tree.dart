@@ -19,6 +19,7 @@ library;
 
 import 'package:ptome/src/converter.dart' show BuiltInConverter;
 import 'package:ptome/src/inline.dart';
+import 'package:ptome/src/substitution_run.dart';
 
 /// A piece of inline content: text, or an element.
 sealed class InlineContent {
@@ -105,7 +106,9 @@ final class _Edit {
 final class InlineRun {
   new _(this._subject);
 
-  static InlineRun? _current;
+  /// The tracking under way: the substitution run's (see
+  /// [SubstitutionRun.inline]).
+  static InlineRun? get _current => SubstitutionRun.current?.inline;
 
   String _subject;
   final List<_Span> _spans = [];
@@ -117,16 +120,16 @@ final class InlineRun {
   static (String, List<InlineContent>) track(
     String text,
     String Function() body,
-  ) {
-    final outer = _current;
-    final run = _current = InlineRun._(text);
+  ) => SubstitutionRun.within((substitution) {
+    final outer = substitution.inline;
+    final run = substitution.inline = InlineRun._(text);
     try {
       final result = body();
       return (result, run._tree(result));
     } finally {
-      _current = outer;
+      substitution.inline = outer;
     }
-  }
+  });
 
   /// Runs [body] (substitutions applied to [text], within a replacement
   /// being computed: the label of a unit, the text of a note) as a run of

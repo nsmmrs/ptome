@@ -3822,62 +3822,70 @@ void main() {
     group('Passthroughs', () {
       test('collect inline triple plus passthroughs', () {
         final para = blockFromString('+++<code>inline code</code>+++');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>inline code</code>');
-        expect(passthroughs[0].subs, isEmpty);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>inline code</code>');
+          expect(passthroughs[0].subs, isEmpty);
+        });
       });
 
       test('collect multi-line inline triple plus passthroughs', () {
         final para = blockFromString('+++<code>inline\ncode</code>+++');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>inline\ncode</code>');
-        expect(passthroughs[0].subs, isEmpty);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>inline\ncode</code>');
+          expect(passthroughs[0].subs, isEmpty);
+        });
       });
 
       test('collect inline double dollar passthroughs', () {
         final para = blockFromString(r'$$<code>{code}</code>$$');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>{code}</code>');
-        expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>{code}</code>');
+          expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        });
       });
 
       test('collect inline double plus passthroughs', () {
         final para = blockFromString('++<code>{code}</code>++');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>{code}</code>');
-        expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>{code}</code>');
+          expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        });
       });
 
       test('should not crash if role on passthrough is enclosed in quotes', () {
@@ -3909,66 +3917,74 @@ void main() {
 
       test('collect multi-line inline double dollar passthroughs', () {
         final para = blockFromString('\$\$<code>\n{code}\n</code>\$\$');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>\n{code}\n</code>');
-        expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>\n{code}\n</code>');
+          expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        });
       });
 
       test('collect multi-line inline double plus passthroughs', () {
         final para = blockFromString('++<code>\n{code}\n</code>++');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, '<code>\n{code}\n</code>');
-        expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, '<code>\n{code}\n</code>');
+          expect(passthroughs[0].subs, [Sub.specialcharacters]);
+        });
       });
 
       test('collect passthroughs from inline pass macro', () {
         final para = blockFromString(
           "pass:specialcharacters,quotes[<code>['code'$bs]</code>]",
         );
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, "<code>['code']</code>");
-        expect(passthroughs[0].subs, [Sub.specialcharacters, Sub.quotes]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, "<code>['code']</code>");
+          expect(passthroughs[0].subs, [Sub.specialcharacters, Sub.quotes]);
+        });
       });
 
       test('collect multi-line passthroughs from inline pass macro', () {
         final para = blockFromString(
           "pass:specialcharacters,quotes[<code>['more\ncode'$bs]</code>]",
         );
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(
-          result,
-          '$passStart'
-          '0'
-          '$passEnd',
-        );
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, "<code>['more\ncode']</code>");
-        expect(passthroughs[0].subs, [Sub.specialcharacters, Sub.quotes]);
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(
+            result,
+            '$passStart'
+            '0'
+            '$passEnd',
+          );
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, "<code>['more\ncode']</code>");
+          expect(passthroughs[0].subs, [Sub.specialcharacters, Sub.quotes]);
+        });
       });
 
       test('should find and replace placeholder duplicated by '
@@ -3986,18 +4002,22 @@ void main() {
 
       test('resolves sub shorthands on inline pass macro', () {
         final para = blockFromString('pass:q,a[*<{backend}>*]');
-        final result = extractPassthroughs(para, para.source());
-        final passthroughs = passthroughsOf(para);
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].subs, [Sub.quotes, Sub.attributes]);
-        expect(restorePassthroughs(para, result), '<strong><html5></strong>');
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].subs, [Sub.quotes, Sub.attributes]);
+          expect(restorePassthroughs(para, result), '<strong><html5></strong>');
+        });
       });
 
       test('inline pass macro supports incremental subs', () {
         final para = blockFromString('pass:n,-a[<{backend}>]');
-        final result = extractPassthroughs(para, para.source());
-        expect(passthroughsOf(para).length, 1);
-        expect(restorePassthroughs(para, result), '&lt;{backend}&gt;');
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          expect(passthroughsOf(para).length, 1);
+          expect(restorePassthroughs(para, result), '&lt;{backend}&gt;');
+        });
       });
 
       test(
@@ -4030,20 +4050,25 @@ void main() {
 
       test('should allow content of inline pass macro to be empty', () {
         final para = blockFromString('pass:[]');
-        final result = extractPassthroughs(para, para.source());
-        expect(passthroughsOf(para).length, 1);
-        expect(restorePassthroughs(para, result), '');
+        substitutionRunOn(para, () {
+          final result = extractPassthroughs(para, para.source());
+          expect(passthroughsOf(para).length, 1);
+          expect(restorePassthroughs(para, result), '');
+        });
       });
 
       test('restore inline passthroughs without subs', () {
         final para = blockFromString('some ${passStart}0$passEnd to study');
-        extractPassthroughs(para, '');
-        passthroughsOf(para)
-            .add(const Passthrough('<code>inline code</code>', subs: <Sub>[]));
-        expect(
-          restorePassthroughs(para, para.source()),
-          'some <code>inline code</code> to study',
-        );
+        substitutionRunOn(para, () {
+          extractPassthroughs(para, '');
+          passthroughsOf(
+            para,
+          ).add(const Passthrough('<code>inline code</code>', subs: <Sub>[]));
+          expect(
+            restorePassthroughs(para, para.source()),
+            'some <code>inline code</code> to study',
+          );
+        });
       });
 
       test('restore inline passthroughs with subs', () {
@@ -4051,20 +4076,22 @@ void main() {
           'some ${passStart}0$passEnd to study in the '
           '${passStart}1$passEnd programming language',
         );
-        extractPassthroughs(para, '');
-        passthroughsOf(para).add(
-          const Passthrough(
-            '<code>{code}</code>',
-            subs: [Sub.specialcharacters],
-          ),
-        );
-        passthroughsOf(
-          para,
-        ).add(const Passthrough('{language}', subs: [Sub.specialcharacters]));
-        expect(
-          restorePassthroughs(para, para.source()),
-          'some &lt;code&gt;{code}&lt;/code&gt; to study in the {language} programming language',
-        );
+        substitutionRunOn(para, () {
+          extractPassthroughs(para, '');
+          passthroughsOf(para).add(
+            const Passthrough(
+              '<code>{code}</code>',
+              subs: [Sub.specialcharacters],
+            ),
+          );
+          passthroughsOf(
+            para,
+          ).add(const Passthrough('{language}', subs: [Sub.specialcharacters]));
+          expect(
+            restorePassthroughs(para, para.source()),
+            'some &lt;code&gt;{code}&lt;/code&gt; to study in the {language} programming language',
+          );
+        });
       });
 
       test('should restore nested passthroughs', () {
@@ -4102,19 +4129,23 @@ void main() {
       test('complex inline passthrough macro', () {
         const textToEscape =
             "[(] <'basic form'> <'logical operator'> <'basic form'> [)]";
-        var para = blockFromString('\$\$$textToEscape\$\$');
-        extractPassthroughs(para, para.source());
-        var passthroughs = passthroughsOf(para);
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, textToEscape);
+        final para = blockFromString('\$\$$textToEscape\$\$');
+        substitutionRunOn(para, () {
+          extractPassthroughs(para, para.source());
+          final passthroughs = passthroughsOf(para);
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, textToEscape);
+        });
 
         const escaped =
             r"[(\] <'basic form'> <'logical operator'> <'basic form'> [)\]";
-        para = blockFromString('pass:specialcharacters[$escaped]');
-        extractPassthroughs(para, para.source());
-        passthroughs = passthroughsOf(para);
-        expect(passthroughs.length, 1);
-        expect(passthroughs[0].text, textToEscape);
+        final pass = blockFromString('pass:specialcharacters[$escaped]');
+        substitutionRunOn(pass, () {
+          extractPassthroughs(pass, pass.source());
+          final passthroughs = passthroughsOf(pass);
+          expect(passthroughs.length, 1);
+          expect(passthroughs[0].text, textToEscape);
+        });
       });
 
       test('inline pass macro with a composite sub', () {

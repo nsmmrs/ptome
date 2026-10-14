@@ -280,6 +280,11 @@ patterns built on the word and alphanumeric classes held little.
 | Base (`15b1b96e`) | 4,392 ms | 87.2 ms | 110.5 ms |
 | Units scanner: literal before regex (TASK-frytn1) | 3,678 ms | 58.0 ms | 109.5 ms |
 | Word classes made ASCII (wrong; the most any faster class check gains, TASK-skgmr6) | 0.36% of the run | 0% | 1.6 ms (1.3%) |
+| Substitutions as data (CHORE-fthx89), against the line above | 3,666 → 3,669 ms | 57.7 → 55.9 ms | 108.6 → 106.4 ms |
 
 The word-class scanners of TASK-skgmr6 were not written: under 3% on all
-three.
+three. The substitutions' restructuring (each pass's guard declared, a run
+holding the passthroughs, the mask and the inline tracking) was to cost
+nothing; on the throughput corpus it runs html5 34.6 → 32.2 ms, docbook5
+37.7 → 35.5 ms, manpage 44.7 → 43.9 ms (median of 21), the KJV the same
+within noise.
