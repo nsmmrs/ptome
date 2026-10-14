@@ -16,6 +16,12 @@ import 'package:test/test.dart';
 
 bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
 
+/// Poppler's pdftotext (Git for Windows ships xpdf's, whose text
+/// extraction differs).
+final bool _poppler =
+    _has('pdftotext') &&
+    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+
 const String _fonts = '../plain_typesetting/test/fonts';
 const String _render = 'tool/oracles/harfbuzz-cairo/hb-render';
 
@@ -101,9 +107,9 @@ void main() {
     },
     skip: !ready
         ? 'needs the color test fonts'
-        : _has('pdftotext')
+        : _poppler
         ? false
-        : 'needs pdftotext',
+        : "needs Poppler's pdftotext",
   );
 
   for (final name in [
