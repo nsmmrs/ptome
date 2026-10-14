@@ -1626,18 +1626,18 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     String? after,
   }) {
     if (image.graphic case final InlineWarichu warichu) {
-      final box = warichu.at(
+      final cell = warichu.at(
         _warichuFace(warichu, format.font, format.fragment.language),
         format.size,
         vertical: _layout.vertical,
       );
       return InlineImage(
-        EngineWarichu(box, _pdfColor(format.fragment.color)),
-        box.width,
-        box.ascent + box.descent,
-        bottom: -box.descent,
-        lineAscent: box.ascent,
-        lineDescent: box.descent,
+        EngineWarichu(cell, _pdfColor(format.fragment.color)),
+        cell.width,
+        cell.ascent + cell.descent,
+        bottom: -cell.descent,
+        lineAscent: cell.ascent,
+        lineDescent: cell.descent,
         link: link,
       );
     }
@@ -2395,7 +2395,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               .fold<double>(0, (most, f) => math.max(most, f.baseline));
     for (final line in lines) {
       if (line.wrapped) _wrapArrow(canvas, line, x + width, top);
-      for (final f in line.fragments) {
+      for (final (index, f) in line.fragments.indexed) {
         final fragment = f.format.fragment;
         if (fragment.isMarker) continue;
         final left =
@@ -2447,18 +2447,37 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             case final PdfImage raster:
               raster.paint(canvas, rect);
             case final InlineWarichu warichu:
-              warichu
-                  .at(
-                    _warichuFace(warichu, f.format.font, fragment.language),
-                    f.format.size,
-                    vertical: _layout.vertical,
-                  )
-                  .paintAt(
-                    canvas,
-                    rect.left,
-                    rect.bottom + image.mathDepth!,
-                    color: _pdfColor(fragment.color),
-                  );
+              // (The part of the note on this line: its cells beside one
+              // another, drawn with the first.)
+              InlineWarichu? warichuOf(_Printed g) => switch (g.format.image) {
+                _Image(graphic: final InlineWarichu w)
+                    when w.id == warichu.id =>
+                  w,
+                _ => null,
+              };
+              if (index > 0 && warichuOf(line.fragments[index - 1]) != null) {
+                break;
+              }
+              final cells = <InlineWarichu>[];
+              var right = rect.right;
+              for (final g in line.fragments.skip(index)) {
+                final cell = warichuOf(g);
+                if (cell == null) break;
+                cells.add(cell);
+                right = x + g.left + g.width;
+              }
+              WarichuPart(
+                cells,
+                _warichuFace(warichu, f.format.font, fragment.language),
+                f.format.size,
+                vertical: _layout.vertical,
+              ).paintAt(
+                canvas,
+                rect.left,
+                right,
+                rect.bottom + image.mathDepth!,
+                color: _pdfColor(fragment.color),
+              );
             case final InlineRuby ruby:
               ruby
                   .at(

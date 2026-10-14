@@ -13,6 +13,7 @@ import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
+import 'package:plain_typesetting/src/graphic.dart' show SplitGraphic;
 import 'package:plain_typesetting/src/layout/alternates.dart';
 import 'package:plain_typesetting/src/layout/east_asian.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
@@ -2076,8 +2077,40 @@ final class Line {
     void Function(String name, double x, double y)? anchor,
   }) {
     final y = top - baseline;
-    for (final fragment in fragments) {
+    for (var i = 0; i < fragments.length; i++) {
+      final fragment = fragments[i];
       final left = x + fragment.x;
+      // (The pieces of a split graphic beside one another on the line:
+      // drawn as one.)
+      if (fragment case ImageFragment(
+        image: InlineImage(image: final SplitGraphic split),
+      )) {
+        final pieces = <(SplitGraphic, Rect)>[];
+        var j = i;
+        while (j < fragments.length) {
+          final next = fragments[j];
+          if (next case ImageFragment(:final image, :final bottom)
+              when image.image is SplitGraphic &&
+                  (image.image as SplitGraphic).group == split.group) {
+            pieces.add((
+              image.image as SplitGraphic,
+              Rect(x + next.x, y + bottom, image.width, image.height),
+            ));
+            if (image.link case final target? when link != null) {
+              link(
+                Rect(x + next.x, y + bottom, image.width, image.height),
+                target,
+              );
+            }
+            j++;
+          } else {
+            break;
+          }
+        }
+        split.paintPieces(canvas, pieces);
+        i = j - 1;
+        continue;
+      }
       switch (fragment) {
         case TextFragment(
           :final run,

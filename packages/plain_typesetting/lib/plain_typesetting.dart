@@ -25,7 +25,7 @@ export 'src/css_color.dart' show CssColor, parseCssColor;
 export 'src/font.dart'
     show Font, OpenTypeShaper, OpenTypeTextFont, ShapedGlyph, ShapingScope;
 export 'src/geometry.dart' show Matrix, Rect;
-export 'src/graphic.dart' show Graphic;
+export 'src/graphic.dart' show Graphic, SplitGraphic;
 export 'src/layout/alternates.dart' show justificationAlternates;
 export 'src/layout/east_asian.dart' show PunctuationStyle;
 export 'src/layout/flow.dart'

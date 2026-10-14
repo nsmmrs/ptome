@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a warichu note longer than the rest of its line fills it and goes
+  on at the next line's start, each part balanced in two lines spaced to
+  the same length (JLREQ 3.4.2, FEAT-cjd1nv); it used to be cut into
+  line-sized pieces, the first moved to the next line whole.
 - Dates in other calendars (FEAT-gtxzgh, FEAT-5639x7): `:calendar:`
   (`japanese`, `buddhist`, `roc`, `hebrew`, `persian`, the Islamic
   calendar's forms, `coptic`, `ethiopic`, `indian`, `chinese`, `dangi`),

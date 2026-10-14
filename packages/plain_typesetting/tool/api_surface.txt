@@ -110,6 +110,10 @@ abstract interface class PageBreaker
 abstract interface class ShapedContent implements CustomContent
   CustomPlacement? placeAround(double width, double available, {required bool atTop, required (double, double) Function(double, double) insets})
   ShapedContent()
+abstract interface class SplitGraphic implements Graphic
+  Object group
+  SplitGraphic()
+  void paintPieces(Canvas canvas, List<(SplitGraphic, Rect)> pieces)
 abstract interface class StructureCanvas implements Canvas
   StructureCanvas()
   void beginArtifact()

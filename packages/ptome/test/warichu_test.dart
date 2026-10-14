@@ -55,21 +55,82 @@ void main() {
     );
   });
 
-  test('two lines as near the same length as can be, the second no longer', () {
-    // (Five characters: three and two.)
-    final box = InlineWarichu('あいうえお').at(_face, 20);
-    // (Each line half the size: the longer 30 points, and a parenthesis's
-    // ink half on each side.)
-    expect(box.width, 10 + 30 + 10);
-    final pieces = InlineWarichu.pieces('あ' * 40, _face, 20, 200);
-    // (A line 200 points long holds two lines of 18 half-size characters
-    // between the parentheses: 40 characters in three pieces.)
-    expect(pieces, hasLength(greaterThan(1)));
-    expect(pieces.first.opens, isTrue);
-    expect(pieces.first.closes, isFalse);
-    expect(pieces.last.closes, isTrue);
-    expect(pieces.map((p) => p.text).join(), 'あ' * 40);
+  test('cut into cells of two characters, the parentheses on the ends', () {
+    final cells = InlineWarichu.cells('いのいのい');
+    expect([for (final c in cells) c.text], ['いの', 'いの', 'い']);
+    expect([for (final c in cells) c.opens], [true, false, false]);
+    expect([for (final c in cells) c.closes], [false, false, true]);
+    // (Each half the size along the line, the parentheses' ink halves on
+    // the ends: the note's two lines, three and two characters, take
+    // 10 + 30 + 10 points.)
+    expect(
+      cells.map((c) => c.at(_face, 20).width).reduce((a, b) => a + b),
+      10 + 30 + 10,
+    );
+    // (No break inside a cell's segment: before the full stop.)
+    expect(
+      [for (final c in InlineWarichu.cells('いの。いの')) c.text],
+      ['いの。', 'いの'],
+    );
   });
+
+  test('PDF: a note longer than the rest of its line fills it and goes on at '
+      "the next line's start", () {
+    final dir = Directory.systemTemp.createTempSync('warichu.');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final theme = File('${dir.path}/theme.yml')
+      ..writeAsStringSync('''
+extends: default
+page:
+  size: [200, 200]
+  margin: [10, 20, 10, 20]
+base:
+  font_family: JP
+  font_size: 10
+  text_align: left
+font:
+  catalog:
+    merge: true
+    JP:
+      normal: $_cjkPath
+      bold: $_cjkPath
+      italic: $_cjkPath
+      bold_italic: $_cjkPath
+''');
+    final path = '${dir.path}/out.pdf';
+    File(path).writeAsBytesSync(
+      asciidoc.convertToBytes(
+        'のののwarichu:[${'い' * 80}]のの。\n',
+        backend: Backend.pdf,
+        attributes: {
+          'pdf-theme': theme.path,
+          'reproducible': '',
+          'nofooter': '',
+        },
+      ),
+    );
+    final bbox =
+        Process.runSync('pdftotext', [
+              '-bbox',
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
+            as String;
+    final words = [
+      for (final m in RegExp(
+        'xMin="([0-9.]+)" yMin="([0-9.]+)" xMax="([0-9.]+)"[^>]*>([^<]*)<',
+      ).allMatches(bbox))
+        (double.parse(m[1]!), double.parse(m[2]!), double.parse(m[3]!), m[4]!),
+    ];
+    // (The note's first part, copied in its opening parenthesis, ends at
+    // the line's end, 180 points; the rest starts the next line at 20.)
+    final first = words.firstWhere((w) => w.$4.contains('（'));
+    final rest = words.firstWhere((w) => w.$4.contains('）'));
+    expect(first.$3, closeTo(180, 1));
+    expect(rest.$1, closeTo(20, 1));
+    expect(rest.$2, greaterThan(first.$2));
+    expect('${first.$4}${rest.$4}'.replaceAll(RegExp('[^い]'), ''), 'い' * 80);
+  }, skip: _poppler ? false : 'needs Poppler');
 
   test('PDF: copied as the note in parentheses', () {
     final dir = Directory.systemTemp.createTempSync('warichu.');

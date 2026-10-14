@@ -333,10 +333,11 @@ as tall as the line's characters, the note broken where a line may
 break and its lines as near the same length as that allows, the second
 never the longer; between full-size parentheses with no space between
 them and the text around. In vertical text the two lines are columns,
-the first on the right. A note longer than two lines' room at the
-point where it falls is set in line-sized pieces, each a warichu of its
-own, the parentheses opening the first and closing the last (where JLREQ
-Fig. 148 fills the rest of the line first). HTML and EPUB write it as
+the first on the right. A note longer than the rest of its line fills
+it and goes on at the next line's start (JLREQ 3.4.2, Fig. 148), each
+part in two lines of its own, balanced and spaced to the same length,
+the opening parenthesis before the first part and the closing one
+after the last. HTML and EPUB write it as
 `<span class="warichu">` with its parentheses, DocBook and man pages in
 parentheses. Not under `asciidoctor-compat`; `\warichu:` escapes it.
 

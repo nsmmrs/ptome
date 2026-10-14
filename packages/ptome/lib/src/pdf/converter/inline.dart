@@ -1369,23 +1369,18 @@ extension _InlineElements on PdfConverter {
   }
 
   /// Warichu: inline graphics of the note in two small lines within the
-  /// line (warichu.dart), a note longer than its line in pieces that go on
-  /// in the next ones; the compatibility mode never parses it.
+  /// line (warichu.dart), its cells, which a line may break between; the
+  /// compatibility mode never parses it.
   String _inlineWarichu(Inline node) {
     final note = PdfConverter._unescapeXml(
       (node.text ?? '').replaceAll(RegExp('<[^>]*>'), ''),
     );
-    final face = _fonts.font(_font.family, _font.style);
-    // (The line's length: down the page in vertical text.)
-    final room = _verticalText
-        ? _pageSize(_document).$2 - _pageMargins(_document).vertical
-        : _floatRoom;
     return [
-      for (final piece in InlineWarichu.pieces(note, face, _font.size, room))
+      for (final cell in InlineWarichu.cells(note))
         () {
           final src = 'warichu:${_rubyCount++}';
-          _inlineGraphics[src] = piece;
-          final alt = piece.text
+          _inlineGraphics[src] = cell;
+          final alt = cell.text
               .replaceAll('&', '&amp;')
               .replaceAll('<', '&lt;')
               .replaceAll('"', '&quot;');

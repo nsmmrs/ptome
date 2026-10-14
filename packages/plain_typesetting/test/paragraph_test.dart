@@ -297,6 +297,25 @@ void main() {
     );
   });
 
+  test("a split graphic's pieces beside one another on a line drawn as "
+      'one, the line breaking between them', () {
+    final painted = <int>[];
+    final note = Object();
+    InlineImage piece(Object group) =>
+        InlineImage(_Piece(group, painted), 10, 10);
+    // (Five pieces of one group, then one of another: the first line
+    // holds four, 40 points wide.)
+    final lines = _lines([
+      for (var i = 0; i < 5; i++) piece(note),
+      piece(Object()),
+    ], width: 40);
+    expect(lines, hasLength(2));
+    for (final line in lines) {
+      line.paint(RecordingCanvas(), 0, 100);
+    }
+    expect(painted, [4, 1, 1]);
+  });
+
   test("an image reaching over what is beside it is set in at a line's "
       'start and end (ruby, JLREQ 3.3.9)', () {
     const image = InlineImage(
@@ -324,6 +343,29 @@ void main() {
 }
 
 /// An image that draws nothing.
+/// A piece of a split graphic: its paints, the pieces each drew.
+final class _Piece implements SplitGraphic {
+  new(this.group, this.painted);
+
+  @override
+  final Object group;
+
+  final List<int> painted;
+
+  @override
+  double get intrinsicWidth => 10;
+
+  @override
+  double get intrinsicHeight => 10;
+
+  @override
+  void paint(Canvas canvas, Rect rect) => painted.add(1);
+
+  @override
+  void paintPieces(Canvas canvas, List<(SplitGraphic, Rect)> pieces) =>
+      painted.add(pieces.length);
+}
+
 final class _Blank implements Graphic {
   const new();
 

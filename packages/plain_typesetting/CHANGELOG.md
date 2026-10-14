@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `SplitGraphic`: an inline image that is a piece of something drawn as
+  one with the pieces of its `group` beside it on a line
+  (`paintPieces`), which the line may break between: a warichu note's
+  parts (FEAT-cjd1nv).
+
 - `Paragraph.lineBreak`: how strictly lines break around East Asian
   punctuation and small kana (`LineBreakStrictness`, re-exported), the
   Chinese and Japanese rules where a run's language is either
