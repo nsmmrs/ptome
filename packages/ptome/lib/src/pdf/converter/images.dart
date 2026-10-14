@@ -279,6 +279,7 @@ extension _Images on PdfConverter {
     if (caption != null && captionMaxWidth != null && !floated) {
       final sizing = _ImageContent(
         graphic,
+        writingMode: _writingMode,
         width: _imageWidth(node),
         align: align,
         pageWidth: _pageSize(_document).$1,
@@ -333,6 +334,7 @@ extension _Images on PdfConverter {
       final group = _FloatGroup(
         _ImageContent(
           graphic,
+          writingMode: _writingMode,
           width: _imageWidth(node),
           align: side,
           pageWidth: _pageSize(_document).$1,
@@ -388,6 +390,7 @@ extension _Images on PdfConverter {
         CustomBox(
           _ImageContent(
             shown,
+            writingMode: _writingMode,
             width: width,
             align: align,
             pageWidth: _pageSize(_document).$1,

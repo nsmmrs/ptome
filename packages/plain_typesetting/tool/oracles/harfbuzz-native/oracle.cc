@@ -4,7 +4,8 @@
 // the direction and script guessed from the text as hb-shape guesses
 // them, characters their own clusters. Each line's glyphs are written as
 // a JSON array of [glyph id, cluster, x advance, x offset, y offset] in
-// visual order, one line each.
+// visual order, one line each. With --ttb, the lines are shaped top to
+// bottom and the advance is the y advance.
 #include <hb.h>
 #include <hb-ot.h>
 #include <cstdio>
@@ -23,7 +24,9 @@ int main (int argc, char **argv) {
   hb_face_t *face = hb_face_create (blob, 0);
   hb_font_t *font = hb_font_create (face);
   std::vector<hb_feature_t> features;
+  bool ttb = false;
   for (int i = 2; i < argc; i++) {
+    if (strcmp (argv[i], "--ttb") == 0) { ttb = true; continue; }
     hb_feature_t f;
     if (hb_feature_from_string (argv[i], -1, &f)) features.push_back (f);
   }
@@ -31,6 +34,7 @@ int main (int argc, char **argv) {
   while (std::getline (std::cin, line)) {
     hb_buffer_t *buffer = hb_buffer_create ();
     hb_buffer_add_utf8 (buffer, line.c_str (), (int) line.size (), 0, -1);
+    if (ttb) hb_buffer_set_direction (buffer, HB_DIRECTION_TTB);
     hb_buffer_guess_segment_properties (buffer);
     hb_buffer_set_cluster_level (buffer, HB_BUFFER_CLUSTER_LEVEL_CHARACTERS);
     hb_shape (font, buffer, features.data (), (unsigned) features.size ());
@@ -40,7 +44,8 @@ int main (int argc, char **argv) {
     printf ("[");
     for (unsigned i = 0; i < count; i++)
       printf ("%s[%u,%u,%d,%d,%d]", i ? "," : "", info[i].codepoint,
-              info[i].cluster, pos[i].x_advance, pos[i].x_offset,
+              info[i].cluster, ttb ? pos[i].y_advance : pos[i].x_advance,
+              pos[i].x_offset,
               pos[i].y_offset);
     printf ("]\n");
     hb_buffer_destroy (buffer);

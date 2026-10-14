@@ -75,9 +75,15 @@ _Plan _planFor(
   required bool kerning,
   required bool ligatures,
   required Set<String> features,
+  bool vertical = false,
 }) {
   final key =
-      '$script ${rightToLeft ? 'r' : 'l'} ${kerning ? 'k' : ''}'
+      '$script ${vertical
+          ? 'v'
+          : rightToLeft
+          ? 'r'
+          : 'l'} '
+      '${kerning ? 'k' : ''}'
       '${ligatures ? 'l' : ''} ${(features.toList()..sort()).join(',')}';
   final plans = _plans[font] ??= {};
   return plans[key] ??= () {
@@ -90,7 +96,10 @@ _Plan _planFor(
     final builder = PlanBuilder(layout, gsub?.$1, gpos?.$1)
       ..enableFeature('rvrn')
       ..addGsubPause();
-    if (rightToLeft) {
+    // (Top to bottom, neither direction's features.)
+    if (vertical) {
+      // None.
+    } else if (rightToLeft) {
       builder
         ..enableFeature('rtla')
         ..addFeature('rtlm');
@@ -121,15 +130,24 @@ _Plan _planFor(
       ('mark', FeatureFlags.globalManualJoiners),
       ('mkmk', FeatureFlags.globalManualJoiners),
       ('rlig', FeatureFlags.global),
-      ('calt', FeatureFlags.global),
-      ('clig', FeatureFlags.global),
-      ('curs', FeatureFlags.global),
-      ('dist', FeatureFlags.global),
-      ('kern', FeatureFlags.globalHasFallback),
-      ('liga', FeatureFlags.global),
-      ('rclt', FeatureFlags.global),
     ]) {
       builder.addFeature(tag, flags: flags);
+    }
+    if (vertical) {
+      // (Top to bottom, `vert` alone, found under any script.)
+      builder.enableFeature('vert', flags: FeatureFlags.globalSearch);
+    } else {
+      for (final (tag, flags) in const [
+        ('calt', FeatureFlags.global),
+        ('clig', FeatureFlags.global),
+        ('curs', FeatureFlags.global),
+        ('dist', FeatureFlags.global),
+        ('kern', FeatureFlags.globalHasFallback),
+        ('liga', FeatureFlags.global),
+        ('rclt', FeatureFlags.global),
+      ]) {
+        builder.addFeature(tag, flags: flags);
+      }
     }
     // The caller's features: ligatures and kerning off, others on.
     final user = <(String, int)>[
@@ -152,7 +170,11 @@ _Plan _planFor(
 
 /// [text] in [font] as HarfBuzz shapes it, in visual order: [rightToLeft]
 /// the run's direction, [kerning] and [ligatures] on or off, [features]
-/// more features on.
+/// more features on. With [vertical], top to bottom: the `vert` forms
+/// (else the vertical presentation forms the font has), each glyph's
+/// advance its vertical advance, its offsets from its vertical origin
+/// (half its width across, its `VORG` or top down), GPOS's marks and
+/// vertical values applied.
 List<ShapedUnits> shapeText(
   OpenTypeFont font,
   String text, {
@@ -160,14 +182,17 @@ List<ShapedUnits> shapeText(
   bool kerning = true,
   bool ligatures = true,
   Set<String> features = const {},
+  bool vertical = false,
 }) {
   final runes = text.runes.toList();
   if (runes.isEmpty) return const [];
   final script = runScript(runes);
+  if (vertical) assert(!rightToLeft, 'top to bottom has no right to left');
   // A right-to-left script shaped in its own direction (HarfBuzz's
   // `hb_ensure_native_direction`; a run of digits alone keeps its own),
   // given back in logical order: measured, it is as wide as it is set.
   if (!rightToLeft &&
+      !vertical &&
       rightToLeftScripts.contains(script) &&
       runes.any((r) => _isLetter(generalCategory(r)))) {
     return shapeText(
@@ -186,6 +211,7 @@ List<ShapedUnits> shapeText(
     kerning: kerning,
     ligatures: ligatures,
     features: features,
+    vertical: vertical,
   );
   final plan = entry.plan;
   final shaper = entry.shaper;
@@ -224,6 +250,13 @@ List<ShapedUnits> shapeText(
       }
     }
   }
+  // Top to bottom without `vert`: the vertical presentation forms.
+  if (vertical && plan.oneMaskOf('vert') == 0) {
+    for (final g in glyphs) {
+      final form = _verticalForm(g.char);
+      if (form != g.char && font.glyphFor(form) != 0) g.char = form;
+    }
+  }
   final normalized = normalize(context.glyphs, shaper, font.glyphFor);
   context.glyphs
     ..clear()
@@ -255,10 +288,26 @@ List<ShapedUnits> shapeText(
       ..attachChain = 0
       ..attachType = 0;
   }
+  if (vertical) {
+    // Top to bottom: each glyph's vertical advance (negative, as
+    // HarfBuzz's grow downward), drawn from its vertical origin: half its
+    // width across, its origin's height down.
+    for (final g in run) {
+      g
+        ..xOffset = -(g.xAdvance >> 1)
+        ..yOffset = -font.verticalOriginY(g.glyph)
+        ..yAdvance = -font.verticalAdvance(g.glyph)
+        ..xAdvance = 0;
+    }
+  }
   final zero = shaper.zeroWidthMarks;
   if (zero == ZeroWidthMarks.byGdefEarly) {
     for (final g in run) {
-      if (g.isMark) g.xAdvance = 0;
+      if (g.isMark) {
+        g
+          ..xAdvance = 0
+          ..yAdvance = 0;
+      }
     }
   }
   layout.position(
@@ -266,6 +315,7 @@ List<ShapedUnits> shapeText(
     entry.applyGpos ? plan.lookups[1] : const [],
     rightToLeft: rightToLeft,
     zeroMarks: zero == ZeroWidthMarks.byGdefLate,
+    vertical: vertical,
   );
   // Default ignorables take no room, and show as the space glyph.
   final space = font.glyphFor(0x20);
@@ -273,7 +323,13 @@ List<ShapedUnits> shapeText(
     if (g.flags & UnicodeFlags.ignorable != 0 && !g.isSubstituted) {
       g
         ..xAdvance = 0
-        ..xOffset = 0;
+        ..yAdvance = 0;
+      // (The offset along the line: across it, top to bottom, it stays.)
+      if (vertical) {
+        g.yOffset = 0;
+      } else {
+        g.xOffset = 0;
+      }
       if (space != 0) g.glyph = space;
     }
   }
@@ -294,7 +350,7 @@ List<ShapedUnits> shapeText(
       (
         glyph: g.glyph,
         text: seen.add(g.cluster) ? textOf(g.cluster) : '',
-        advance: g.xAdvance,
+        advance: vertical ? -g.yAdvance : g.xAdvance,
         xOffset: g.xOffset,
         yOffset: g.yOffset,
       ),
@@ -351,3 +407,42 @@ void _setupFractionMasks(
 extension on LayoutGlyph {
   void apply(void Function(LayoutGlyph) f) => f(this);
 }
+
+/// The vertical presentation form of [u] (HarfBuzz's
+/// `vertical_char_for`), or [u].
+int _verticalForm(int u) => switch (u) {
+  0x2013 => 0xfe32,
+  0x2014 => 0xfe31,
+  0x2025 => 0xfe30,
+  0x2026 => 0xfe19,
+  0x3001 => 0xfe11,
+  0x3002 => 0xfe12,
+  0x3008 => 0xfe3f,
+  0x3009 => 0xfe40,
+  0x300a => 0xfe3d,
+  0x300b => 0xfe3e,
+  0x300c => 0xfe41,
+  0x300d => 0xfe42,
+  0x300e => 0xfe43,
+  0x300f => 0xfe44,
+  0x3010 => 0xfe3b,
+  0x3011 => 0xfe3c,
+  0x3014 => 0xfe39,
+  0x3015 => 0xfe3a,
+  0x3016 => 0xfe17,
+  0x3017 => 0xfe18,
+  0xfe4f => 0xfe34,
+  0xff01 => 0xfe15,
+  0xff08 => 0xfe35,
+  0xff09 => 0xfe36,
+  0xff0c => 0xfe10,
+  0xff1a => 0xfe13,
+  0xff1b => 0xfe14,
+  0xff1f => 0xfe16,
+  0xff3b => 0xfe47,
+  0xff3d => 0xfe48,
+  0xff3f => 0xfe33,
+  0xff5b => 0xfe37,
+  0xff5d => 0xfe38,
+  _ => u,
+};

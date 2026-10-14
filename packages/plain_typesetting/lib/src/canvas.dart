@@ -8,8 +8,15 @@ import 'package:meta/meta.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
+import 'package:plain_typesetting/src/shaping.dart' show shapeUpright;
 import 'package:plain_unicode/plain_unicode.dart'
-    show BidiText, TextDirection, hasRightToLeft;
+    show
+        BidiText,
+        TextDirection,
+        VerticalOrientation,
+        hasRightToLeft,
+        isMark,
+        verticalOrientation;
 
 /// The shape at the ends of stroked open lines.
 enum LineCap {
@@ -118,7 +125,22 @@ final class TextStyle {
     this.features = const {},
     this.skew = 0,
     this.embolden = 0,
+    this.vertical = false,
+    this.flipped = false,
   });
+
+  /// Whether the text is drawn mirrored top to bottom about the middle of
+  /// its em box: text in the mirrored frame of a vertical-lr page
+  /// (Mongolian, columns following to the right), where the mirroring
+  /// undoes the frame's and leaves the glyphs as they are.
+  final bool flipped;
+
+  /// Whether the text is set in vertical lines (Japanese, Chinese read
+  /// top to bottom): its characters that stand upright there (UAX #50's
+  /// Vertical_Orientation U, Tu and Tr: Han, kana, full-width punctuation)
+  /// shaped top to bottom and [ShapedGlyph.upright], the others (Latin,
+  /// digits) on their side, as the line is laid out across and turned.
+  final bool vertical;
 
   /// The font.
   final Font font;
@@ -175,6 +197,8 @@ final class TextStyle {
     Set<String>? features,
     double? skew,
     double? embolden,
+    bool? vertical,
+    bool? flipped,
   }) => TextStyle(
     font ?? this.font,
     size ?? this.size,
@@ -188,6 +212,8 @@ final class TextStyle {
     features: features ?? this.features,
     skew: skew ?? this.skew,
     embolden: embolden ?? this.embolden,
+    vertical: vertical ?? this.vertical,
+    flipped: flipped ?? this.flipped,
   );
 
   @override
@@ -204,6 +230,8 @@ final class TextStyle {
       other.ligatures == ligatures &&
       other.skew == skew &&
       other.embolden == embolden &&
+      other.vertical == vertical &&
+      other.flipped == flipped &&
       other.features.length == features.length &&
       other.features.containsAll(features);
 
@@ -221,6 +249,8 @@ final class TextStyle {
     Object.hashAllUnordered(features),
     skew,
     embolden,
+    vertical,
+    flipped,
   );
 
   /// The width of [glyphs] set in this style, in points.
@@ -240,14 +270,65 @@ final class TextStyle {
 
   /// [text] as glyphs of this style's font (a right-to-left run with
   /// [rightToLeft]: in visual order).
-  List<ShapedGlyph> shape(String text, {bool rightToLeft = false}) =>
-      font.shape(
-        text,
-        kerning: kerning,
-        ligatures: ligatures,
-        features: features,
-        rightToLeft: rightToLeft,
+  List<ShapedGlyph> shape(String text, {bool rightToLeft = false}) {
+    if (vertical && !rightToLeft) {
+      if (font case final OpenTypeTextFont font) {
+        return _shapeVertical(font, text);
+      }
+    }
+    return font.shape(
+      text,
+      kerning: kerning,
+      ligatures: ligatures,
+      features: features,
+      rightToLeft: rightToLeft,
+    );
+  }
+
+  /// [text] for a vertical line: its runs of upright characters shaped
+  /// top to bottom, the others across (to lie on their side).
+  List<ShapedGlyph> _shapeVertical(OpenTypeTextFont font, String text) {
+    final out = <ShapedGlyph>[];
+    final run = StringBuffer();
+    bool? upright;
+    void flush() {
+      if (run.isEmpty) return;
+      final part = run.toString();
+      run.clear();
+      out.addAll(
+        upright!
+            ? shapeUpright(
+                font.font,
+                part,
+                kerning: kerning,
+                features: features,
+              )
+            : font.shape(
+                part,
+                kerning: kerning,
+                ligatures: ligatures,
+                features: features,
+              ),
       );
+    }
+
+    for (final c in text.runes) {
+      // (A mark or joiner goes with the character before it.)
+      final stands = run.isNotEmpty && (isMark(c) || c == 0x200d)
+          ? upright!
+          : switch (verticalOrientation(c)) {
+              VerticalOrientation.rotated => false,
+              _ => true,
+            };
+      if (stands != upright) {
+        flush();
+        upright = stands;
+      }
+      run.writeCharCode(c);
+    }
+    flush();
+    return out;
+  }
 
   /// [text], a line's, as glyphs in visual order: its runs of one
   /// direction ordered by the Unicode Bidirectional Algorithm (UAX #9) in

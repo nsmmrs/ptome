@@ -467,8 +467,10 @@ extension _RunningContent on PdfConverter {
         font.copyWith(lineHeight: baseFont.lineHeight),
         align: align,
         gaps: false,
-        // (The page's sides: a running head's columns aren't mirrored.)
+        // (The page's sides: a running head's columns aren't mirrored,
+        // and run across on a vertical page.)
         mirrored: false,
+        vertical: false,
       );
       var y = top - padding[0] - contentOffset;
       if (valign == 'center') y -= prawnFont.descenderAt(font.size) * 0.5;

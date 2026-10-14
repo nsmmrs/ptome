@@ -75,7 +75,8 @@ export 'src/layout/flow.dart'
         TableCell,
         TableRow,
         TypesetLine,
-        VerticalAlign;
+        VerticalAlign,
+        WritingMode;
 export 'src/layout/inline.dart'
     show
         InlineAlignment,

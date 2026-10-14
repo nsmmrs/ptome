@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: vertical writing, `page_writing_mode: vertical-rl` (Japanese,
+  Chinese) or `vertical-lr` (Mongolian) (FEAT-pwq40f): the body's lines
+  run down the page, columns following to the left (or right), Han,
+  kana and full-width punctuation upright in their vertical forms, Latin
+  and digits on their side, ruby at the right, images upright; a
+  vertical-rl book is bound at the right; running heads stay across.
 - Ruby: `ruby:漢字[かんじ]` (group) and `ruby:東京[とう きょう]` (mono), Ptome's
   syntax (FEAT-2q4rln): `<ruby>` in HTML and EPUB, the reading in
   parentheses in DocBook and man pages, set above its base in the PDF

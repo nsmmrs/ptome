@@ -464,7 +464,13 @@ final class _ImageContent implements CustomContent {
     this.border,
     this.link,
     this.whole = false,
+    this.writingMode = WritingMode.horizontal,
   });
+
+  /// The page's writing mode: on a vertical page the image is laid out
+  /// turned (as wide across the page as it takes of the frame's height,
+  /// fit to the column) and painted turned back upright.
+  final WritingMode writingMode;
 
   final Graphic graphic;
   final _ImageWidth width;
@@ -510,12 +516,72 @@ final class _ImageContent implements CustomContent {
     }
   }
 
+  /// The image on a vertical page, in the frame [width] wide (a column's
+  /// length) with [available] of it left (across the page): its width
+  /// across the page what it takes of the frame, its height fit to the
+  /// column, painted turned back upright.
+  CustomPlacement? _placeTurned(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final across = available.isFinite ? available : pageWidth;
+    var (w, h) = _size(math.min(across, pageWidth), width);
+    if (h > width) {
+      w *= width / h;
+      h = width;
+    }
+    if (w > available + 1e-6 && !atTop) return null;
+    final along = switch (align) {
+      'center' => (width - h) * 0.5,
+      'right' => width - h,
+      _ => 0.0,
+    };
+    return CustomPlacement(
+      height: w,
+      paint: (page, x, top) {
+        // (The frame's rectangle; the image in its own upright space.)
+        final rect = Rect(x + along, top - w, h, w);
+        final matrix = writingMode == WritingMode.verticalLeftToRight
+            ? Matrix(0, -1, -1, 0, rect.right, rect.top)
+            : Matrix(0, 1, -1, 0, rect.right, rect.bottom);
+        final canvas = page.canvas
+          ..save()
+          ..transform(matrix);
+        graphic.paint(canvas, Rect(0, 0, w, h));
+        canvas.restore();
+        if (border case final border?) {
+          PdfConverter._strokeBounds(
+            canvas,
+            rect,
+            border.color,
+            width: border.width,
+            widths: border.widths,
+            style: border.style,
+            radius: border.radius,
+          );
+        }
+        if (link case final link?) {
+          page.link(
+            rect,
+            link.startsWith('#')
+                ? LinkTarget.named(destinationName(link.substring(1)))
+                : LinkTarget.uri(link),
+          );
+        }
+      },
+    );
+  }
+
   @override
   CustomPlacement? place(
     double width,
     double available, {
     required bool atTop,
   }) {
+    if (writingMode != WritingMode.horizontal) {
+      return _placeTurned(width, available, atTop: atTop);
+    }
     final captionHeight = switch (caption) {
       final CustomBox box? =>
         (box.content.place(width, double.infinity, atTop: true)?.height ?? 0) +

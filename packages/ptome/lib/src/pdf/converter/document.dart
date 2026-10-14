@@ -60,6 +60,8 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (`page_writing_mode: vertical-lr`: the body's frame mirrored.)
+      mirroredFrame: _writingMode == WritingMode.verticalLeftToRight,
       // (`base_kashida`: how far a justified Arabic line's words may be
       // lengthened by tatweel, in em, before its spaces widen; `false`
       // for none; modern engine.)
@@ -377,8 +379,8 @@ extension _DocumentParts on PdfConverter {
       return PageTemplate(
         Rect(0, 0, width, height),
         // (A right-to-left document's pages mirrored: the theme's left
-        // margin, its start's, at the right.)
-        margins: _rightToLeft
+        // margin, its start's, at the right; a vertical-rl one's too.)
+        margins: _pagesRightToLeft
             ? EdgeInsets(
                 top: margins.top,
                 right: margins.left,
@@ -397,6 +399,7 @@ extension _DocumentParts on PdfConverter {
         background: _pageBackground,
         foreground: _pageForeground,
         bleed: _bleed,
+        writingMode: _writingMode,
       );
     }
 
@@ -2122,8 +2125,8 @@ extension _DocumentParts on PdfConverter {
     if (outer == null && inner == null) return template;
     final m = template.margins;
     // (An inverted folio placement swaps the sides, margins too; so does a
-    // right-to-left book, bound at the right.)
-    final recto = (number.isOdd != _folio.inverted) != _rightToLeft;
+    // right-to-left book, bound at the right, and a vertical-rl one.)
+    final recto = (number.isOdd != _folio.inverted) != _pagesRightToLeft;
     return PageTemplate(
       template.size,
       margins: EdgeInsets(

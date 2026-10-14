@@ -214,6 +214,11 @@ enum VerticalAlign
   static VerticalAlign bottom
   static VerticalAlign middle
   static VerticalAlign top
+enum WritingMode
+  static List<WritingMode> values
+  static WritingMode horizontal
+  static WritingMode verticalLeftToRight
+  static WritingMode verticalRightToLeft
 final class AnchorPosition
   AnchorPosition(int page, double x, double y)
   double x
@@ -552,8 +557,10 @@ final class PageTemplate
   List<LayoutBox> Function(PageInfo)? footer
   List<LayoutBox> Function(PageInfo)? header
   List<Rect> regions
-  PageTemplate(Rect size, {EdgeInsets margins = const EdgeInsets.all(72), int columns = 1, double columnGap = 12, List<LayoutBox> Function(PageInfo)? header, List<LayoutBox> Function(PageInfo)? footer, bool runningOver = false, void Function(Canvas, PageInfo)? background, void Function(Canvas, PageInfo)? foreground, double? bleed})
+  Matrix frameToPage
+  PageTemplate(Rect size, {EdgeInsets margins = const EdgeInsets.all(72), int columns = 1, double columnGap = 12, List<LayoutBox> Function(PageInfo)? header, List<LayoutBox> Function(PageInfo)? footer, bool runningOver = false, void Function(Canvas, PageInfo)? background, void Function(Canvas, PageInfo)? foreground, double? bleed, WritingMode writingMode = WritingMode.horizontal})
   Rect size
+  WritingMode writingMode
   bool runningOver
   double columnGap
   double? bleed
@@ -642,9 +649,11 @@ final class RgbColor extends Color
   double red
   int hashCode
 final class ShapedGlyph
+  ShapedGlyph copyWith({double? advance, double? kerning, double? xOffset, double? yOffset})
   ShapedGlyph(int id, String text, double advance, [double kerning = 0])
-  ShapedGlyph.positioned(int id, String text, double advance, {double kerning = 0, double xOffset = 0, double yOffset = 0})
+  ShapedGlyph.positioned(int id, String text, double advance, {double kerning = 0, double xOffset = 0, double yOffset = 0, bool upright = false})
   String text
+  bool upright
   double advance
   double kerning
   double xOffset
@@ -730,11 +739,13 @@ final class TextStyle
   List<ShapedGlyph> shapeBidi(String text, {bool rightToLeft = false})
   Set<String> features
   TextRenderMode renderMode
-  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden})
-  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0})
+  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden, bool? vertical, bool? flipped})
+  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0, bool vertical = false, bool flipped = false})
   bool ==(Object other)
+  bool flipped
   bool kerning
   bool ligatures
+  bool vertical
   double characterSpacing
   double embolden
   double horizontalScaling

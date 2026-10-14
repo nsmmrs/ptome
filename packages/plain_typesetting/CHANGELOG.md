@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Vertical writing (FEAT-pwq40f): `TextStyle.vertical` shapes the
+  characters that stand upright in vertical text (UAX #50: Han, kana,
+  full-width punctuation) top to bottom, as HarfBuzz's TTB direction does
+  (`vert` forms, vertical advances and origins, glyph for glyph against it
+  in every left-to-right script), the rest on their side;
+  `ShapedGlyph.upright` and `copyWith`. `PageTemplate.writingMode`
+  (`WritingMode.verticalRightToLeft` for Japanese and Chinese,
+  `verticalLeftToRight` for Mongolian): the content laid out in the
+  content area turned a quarter turn, painted turned back (anchors and
+  links where they are drawn), images standing upright;
+  `TextStyle.flipped` mirrors text back in vertical-lr's mirrored frame.
+
 - Emphasis marks (FEAT-2q4rln): `TextRun.emphasisMark` and
   `emphasisUnder`, CSS's `text-emphasis`: a mark over (or under) each
   character but spaces and punctuation, CSS's own marks drawn as shapes

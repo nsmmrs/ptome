@@ -192,6 +192,7 @@ final class OpenTypeFont
   bool hasFeature(String feature)
   bool hasKernTable
   bool hasTable(String tag)
+  bool hasVerticalMetrics
   bool isFixedPitch (settable)
   bool isTrueType
   double italicAngle (settable)
@@ -206,6 +207,8 @@ final class OpenTypeFont
   int lineGap (settable)
   int numGlyphs (settable)
   int unitsPerEm (settable)
+  int verticalAdvance(int glyph)
+  int verticalOriginY(int glyph)
   int weightClass (settable)
   int? capHeight (settable)
   int? kernTablePair(int left, int right, {int? subtable})
@@ -231,7 +234,7 @@ final class OpenTypeLayout
   int glyphProps(int glyph)
   int lookupCount({bool positioning = false})
   void classify(List<LayoutGlyph> run)
-  void position(List<LayoutGlyph> run, List<LayoutLookup> lookups, {required bool rightToLeft, bool zeroMarks = false})
+  void position(List<LayoutGlyph> run, List<LayoutLookup> lookups, {required bool rightToLeft, bool zeroMarks = false, bool vertical = false})
   void substitute(List<LayoutGlyph> run, List<LayoutLookup> lookups)
 final class OpenTypeMathTable
   GlyphConstruction? horizontal(int glyph)

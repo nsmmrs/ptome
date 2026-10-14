@@ -828,6 +828,25 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
     TextStyle style, {
     String? text,
   }) {
+    // (Text in a mirrored frame, mirrored back about its em box's middle.)
+    if (style.flipped) {
+      final middle =
+          y + (style.font.ascender + style.font.descender) / 2000 * style.size;
+      var width = 0.0;
+      saved(() {
+        transform(Matrix(1, 0, 0, -1, 0, 2 * middle));
+        width = this.glyphs(
+          glyphs,
+          x,
+          y,
+          style.copyWith(flipped: false),
+          text: text,
+        );
+      });
+      return width;
+    }
+    // (A vertical line's upright glyphs, each turned back a quarter turn.)
+    if (glyphs.any((g) => g.upright)) return _vertical(glyphs, x, y, style);
     final font = _pdfFont(style);
     // (A glyph moved off the baseline, or a mark onto its base: text taken
     // from the page sets it apart. A letter moved along the line is read
@@ -848,6 +867,53 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
     _glyphs(singleByte ? glyphs : _baseFirst(glyphs, style), x, y, style);
     endMarkedContent();
     return style.widthOf(glyphs);
+  }
+
+  /// [run], a vertical line's glyphs, laid out across from ([x], [y]): its
+  /// glyphs on their side drawn as they are, each upright one turned a
+  /// quarter turn back (left) about its place, its vertical origin's
+  /// offsets from the line's center (half the font's ascender and
+  /// descender above the baseline), so that the line turned to run down
+  /// the page shows it upright; returns their width.
+  double _vertical(List<ShapedGlyph> run, double x, double y, TextStyle style) {
+    final size = style.size;
+    final scale = size / 1000;
+    final centre = y + (style.font.ascender + style.font.descender) / 2 * scale;
+    var pen = x;
+    var i = 0;
+    while (i < run.length) {
+      final upright = run[i].upright;
+      var j = i;
+      while (j < run.length && run[j].upright == upright) {
+        j++;
+      }
+      final part = run.sublist(i, j);
+      if (!upright) {
+        glyphs(part, pen, y, style);
+      } else {
+        var at = pen;
+        for (final g in part) {
+          saved(() {
+            transform(
+              Matrix(
+                0,
+                1,
+                -1,
+                0,
+                at - g.yOffset * scale,
+                centre + g.xOffset * scale,
+              ),
+            );
+            glyphs([ShapedGlyph(g.id, g.text, g.advance)], 0, 0, style);
+          });
+          at += (g.advance + g.kerning) * scale + style.characterSpacing;
+        }
+      }
+      pen += style.widthOf(part);
+      if (j < run.length) pen += part.last.kerning * scale;
+      i = j;
+    }
+    return pen - x;
   }
 
   /// [glyphs] with the marks they start with (a right-to-left cluster's,

@@ -356,6 +356,79 @@ final class OpenTypeFont {
     return safe.isEmpty ? 'Font' : safe;
   }
 
+  /// Whether the font has vertical metrics (`vhea` and `vmtx`).
+  bool get hasVerticalMetrics => _verticalMetrics != null;
+
+  /// Each glyph's advance height and top side bearing (`vmtx`), or null
+  /// for a font without them.
+  late final (Uint16List, Int16List)? _verticalMetrics = _guard(() {
+    final vhea = _tables[_Tag.of('vhea')];
+    final vmtx = _tables[_Tag.of('vmtx')];
+    if (vhea == null || vmtx == null) return null;
+    final count = _data.u16(vhea.offset + 34);
+    if (count == 0) return null;
+    final advances = Uint16List(numGlyphs);
+    final bearings = Int16List(numGlyphs);
+    var last = 0;
+    final at = vmtx.offset;
+    for (var g = 0; g < numGlyphs; g++) {
+      if (g < count) {
+        last = _data.u16(at + 4 * g);
+        bearings[g] = _data.i16(at + 4 * g + 2);
+      } else {
+        final i = at + 4 * count + 2 * (g - count);
+        bearings[g] = i + 2 <= vmtx.offset + vmtx.length ? _data.i16(i) : 0;
+      }
+      advances[g] = last;
+    }
+    return (advances, bearings);
+  });
+
+  /// The `VORG` table's default origin and its glyphs' own, or null.
+  late final (int, Map<int, int>)? _verticalOrigins = _guard(() {
+    final t = _tables[_Tag.of('VORG')];
+    if (t == null) return null;
+    final at = t.offset;
+    final count = _data.u16(at + 6);
+    return (
+      _data.i16(at + 4),
+      {
+        for (var i = 0; i < count; i++)
+          _data.u16(at + 8 + 4 * i): _data.i16(at + 10 + 4 * i),
+      },
+    );
+  });
+
+  /// The advance height of [glyph] set vertically, in font units: its
+  /// `vmtx` advance, else the font's ascender less its descender (as
+  /// HarfBuzz has it).
+  int verticalAdvance(int glyph) => switch (_verticalMetrics) {
+    (final advances, _) when glyph >= 0 && glyph < numGlyphs => advances[glyph],
+    _ => ascender - descender,
+  };
+
+  /// How far above the baseline [glyph]'s vertical origin is (where the
+  /// top of its em box goes in vertical text), in font units, as HarfBuzz
+  /// finds it: from `VORG`; else, with `vmtx` and TrueType outlines, the
+  /// top phantom point (the outline's top and the top side bearing); else
+  /// the glyph centered in the font's height by its outline, or the
+  /// ascender.
+  int verticalOriginY(int glyph) {
+    if (_verticalOrigins case (final fallback, final origins)) {
+      return origins[glyph] ?? fallback;
+    }
+    final (_, _, _, yMax) = glyphBounds(glyph);
+    if (_verticalMetrics case (_, final bearings)
+        when isTrueType && glyph >= 0 && glyph < numGlyphs) {
+      return yMax + bearings[glyph];
+    }
+    if (isTrueType) {
+      final (_, yMin, _, _) = glyphBounds(glyph);
+      return yMax + (((ascender - descender) + (yMin - yMax)) >> 1);
+    }
+    return ascender;
+  }
+
   /// The advance width of glyph [glyph], in font units.
   int advance(int glyph) =>
       glyph >= 0 && glyph < numGlyphs ? _advances[glyph] : 0;

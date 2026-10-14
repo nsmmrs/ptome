@@ -6,6 +6,7 @@
 /// kerning).
 library;
 
+import 'package:plain_fonts/plain_fonts.dart' show OpenTypeFont;
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart';
 import 'package:plain_unicode/plain_unicode.dart';
@@ -64,3 +65,33 @@ List<ShapedGlyph> shapeComplex(
       yOffset: shaper.scale(g.yOffset),
     ),
 ];
+
+/// [text] in [font] set top to bottom as HarfBuzz shapes it (its `vert`
+/// forms, its vertical advances and origins), each glyph [ShapedGlyph.
+/// upright], in 1000ths of the em.
+List<ShapedGlyph> shapeUpright(
+  OpenTypeFont font,
+  String text, {
+  bool kerning = true,
+  Set<String> features = const {},
+}) {
+  double scale(int units) => units * 1000 / font.unitsPerEm;
+  return [
+    for (final g in shapeText(
+      font,
+      text,
+      rightToLeft: false,
+      vertical: true,
+      kerning: kerning,
+      features: features,
+    ))
+      ShapedGlyph.positioned(
+        g.glyph,
+        g.text,
+        scale(g.advance),
+        xOffset: scale(g.xOffset),
+        yOffset: scale(g.yOffset),
+        upright: true,
+      ),
+  ];
+}

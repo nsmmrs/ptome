@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Vertical metrics (FEAT-pwq40f): `verticalAdvance` and
+  `verticalOriginY`, as HarfBuzz reads them (`vmtx`, `VORG`, the top
+  phantom point of TrueType outlines, the glyph centered without them).
+  `position(vertical: true)`: GPOS top to bottom (y advances growing
+  downward, value records' y advances, marks attached across).
+
 - A multiple substitution's glyphs keep their source's character and
   categories (a split vowel's pieces stay vowels for the shaper).
 - `OpenTypeLayout.wouldSubstitute`: whether a GSUB lookup would

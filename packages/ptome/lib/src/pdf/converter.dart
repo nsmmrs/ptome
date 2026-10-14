@@ -665,6 +665,29 @@ final class PdfConverter extends BuiltInConverter
   /// Whether plain paragraphs are set by the engine's paragraphs (the
   /// modern engine's, FEAT-n1bkgf; `base_text_engine: box` keeps them in
   /// this converter's text box).
+  /// How the body's lines run (`page_writing_mode`: `horizontal-tb`,
+  /// `vertical-rl` for Japanese and Chinese, `vertical-lr` for
+  /// Mongolian; across under `asciidoctor-compat`).
+  WritingMode get _writingMode => asciidoctorCompat(_document, CompatFormat.pdf)
+      ? WritingMode.horizontal
+      : switch (_choice('page_writing_mode', const [
+          'horizontal-tb',
+          'vertical-rl',
+          'vertical-lr',
+        ])) {
+          'vertical-rl' => WritingMode.verticalRightToLeft,
+          'vertical-lr' => WritingMode.verticalLeftToRight,
+          _ => WritingMode.horizontal,
+        };
+
+  /// Whether the body's lines run down the page.
+  bool get _verticalWriting => _writingMode != WritingMode.horizontal;
+
+  /// Whether the pages follow one another to the left, the book bound at
+  /// the right: a right-to-left document's, or a vertical-rl one's.
+  bool get _pagesRightToLeft =>
+      _rightToLeft || _writingMode == WritingMode.verticalRightToLeft;
+
   bool get _engineParagraphs =>
       _s('base_text_engine') != 'box' &&
       !asciidoctorCompat(_document, CompatFormat.pdf);

@@ -986,4 +986,42 @@ void main() {
 
     expect(make(), make());
   });
+
+  test('a vertical line: each upright glyph turned back a quarter turn', () {
+    final font = EmbeddedFont.parse(
+      File('../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf')
+          .readAsBytesSync(),
+    );
+    final style = TextStyle(font, 10, vertical: true);
+    final document = PdfDocument();
+    final page = document.addPage(const Rect(0, 0, 100, 100));
+    final width = page.canvas.glyphs(style.shape('日本PDF'), 10, 50, style);
+    final content = latin1.decode(page.content);
+    // (Two upright glyphs, each under a quarter turn about its place: the
+    // line's centre half the font's ascender and descender up.)
+    expect(
+      RegExp(r'^0 1 -1 0 \S+ \S+ cm$', multiLine: true).allMatches(content),
+      hasLength(2),
+    );
+    expect(width, closeTo(style.widthOf(style.shape('日本PDF')), 1e-9));
+  });
+
+  test("flipped text is mirrored about its em box's middle", () {
+    final font = EmbeddedFont.parse(
+      File('../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf')
+          .readAsBytesSync(),
+    );
+    final document = PdfDocument();
+    final page = document.addPage(const Rect(0, 0, 100, 100));
+    page.canvas.glyphs(
+      TextStyle(font, 10).shape('PDF'),
+      10,
+      50,
+      TextStyle(font, 10, flipped: true),
+    );
+    expect(
+      latin1.decode(page.content),
+      matches(RegExp(r'^1 0 0 -1 0 \S+ cm$', multiLine: true)),
+    );
+  });
 }

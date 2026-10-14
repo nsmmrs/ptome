@@ -162,7 +162,15 @@ final class PageTemplate {
     this.background,
     this.foreground,
     this.bleed,
+    this.writingMode = WritingMode.horizontal,
   });
+
+  /// How the content area's lines run: across, or down in columns.
+  /// Vertical, the content is laid out in a frame the content area turned
+  /// a quarter turn (its lines across the frame, its blocks down it) and
+  /// painted turned back ([frameToPage]); the header and footer stay
+  /// across.
+  final WritingMode writingMode;
 
   /// The page size.
   final Rect size;
@@ -200,20 +208,70 @@ final class PageTemplate {
   /// Paints over a page's content and its header and footer.
   final void Function(Canvas canvas, PageInfo page)? foreground;
 
-  /// The regions content flows through, in order.
+  /// The regions content flows through, in order: in the frame (its
+  /// width the content area's height) when the [writingMode] is vertical.
   List<Rect> get regions {
-    final width = size.width - margins.horizontal;
+    final vertical = writingMode != WritingMode.horizontal;
+    final width = vertical
+        ? size.height - margins.vertical
+        : size.width - margins.horizontal;
+    final height = vertical
+        ? size.width - margins.horizontal
+        : size.height - margins.vertical;
+    final left = vertical ? 0.0 : size.left + margins.left;
+    final bottom = vertical ? 0.0 : size.bottom + margins.bottom;
     final columnWidth = (width - columnGap * (columns - 1)) / columns;
     return [
       for (var i = 0; i < columns; i++)
-        Rect(
-          size.left + margins.left + i * (columnWidth + columnGap),
-          size.bottom + margins.bottom,
-          columnWidth,
-          size.height - margins.vertical,
-        ),
+        Rect(left + i * (columnWidth + columnGap), bottom, columnWidth, height),
     ];
   }
+
+  /// Where a point of the frame vertical content is laid out in goes on
+  /// the page: the frame turned a quarter turn clockwise, its top-left the
+  /// content area's top-right, so that its lines run down the page and
+  /// follow one another to the left ([WritingMode.verticalRightToLeft]);
+  /// or, turned the same and mirrored across its lines, to the right
+  /// ([WritingMode.verticalLeftToRight], each line mirrored back about
+  /// its own middle as it is painted). The identity across.
+  Matrix get frameToPage {
+    final left = size.left + margins.left;
+    final bottom = size.bottom + margins.bottom;
+    final across = size.width - margins.horizontal;
+    final down = size.height - margins.vertical;
+    return switch (writingMode) {
+      WritingMode.horizontal => const Matrix.identity(),
+      WritingMode.verticalRightToLeft => Matrix(
+        0,
+        -1,
+        1,
+        0,
+        left,
+        bottom + down,
+      ),
+      WritingMode.verticalLeftToRight => Matrix(
+        0,
+        -1,
+        -1,
+        0,
+        left + across,
+        bottom + down,
+      ),
+    };
+  }
+}
+
+/// How lines run on a page.
+enum WritingMode {
+  /// Across, left to right (or right to left), lines following down.
+  horizontal,
+
+  /// Down, lines following to the left: Japanese, Chinese
+  /// (`vertical-rl`).
+  verticalRightToLeft,
+
+  /// Down, lines following to the right: Mongolian (`vertical-lr`).
+  verticalLeftToRight,
 }
 
 /// Where an anchor ended up.

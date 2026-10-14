@@ -446,8 +446,13 @@ final class _PlacedImage extends _Placed {
     this.width,
     this.imageHeight,
     this.height,
-    this.anchor,
-  );
+    this.anchor, {
+    this.writingMode = WritingMode.horizontal,
+  });
+
+  /// The page's writing mode: on a vertical page the image is laid out
+  /// turned ([width] its height) and painted turned back upright.
+  final WritingMode writingMode;
 
   final Graphic image;
   final double left;
@@ -471,10 +476,39 @@ final class _PlacedImage extends _Placed {
 
   @override
   void paint(_Painter painter, double x, double top) {
-    image.paint(
-      painter.canvas,
-      Rect(x + left, top - this.top - imageHeight, width, imageHeight),
+    final rect = Rect(
+      x + left,
+      top - this.top - imageHeight,
+      width,
+      imageHeight,
     );
+    // (Vertical: in the image's own upright space, its width across the
+    // page the frame's height, turned (and, where the frame is mirrored,
+    // mirrored) into the frame.)
+    final matrix = switch (writingMode) {
+      WritingMode.horizontal => null,
+      WritingMode.verticalRightToLeft => Matrix(
+        0,
+        1,
+        -1,
+        0,
+        rect.left + rect.width,
+        rect.bottom,
+      ),
+      WritingMode.verticalLeftToRight => Matrix(
+        0,
+        -1,
+        -1,
+        0,
+        rect.left + rect.width,
+        rect.bottom + rect.height,
+      ),
+    };
+    if (matrix == null) return image.paint(painter.canvas, rect);
+    painter.canvas.saved(() {
+      painter.canvas.transform(matrix);
+      image.paint(painter.canvas, Rect(0, 0, rect.height, rect.width));
+    });
   }
 }
 

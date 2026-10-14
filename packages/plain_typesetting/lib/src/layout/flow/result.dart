@@ -124,8 +124,22 @@ final class LayoutResult {
       if (!template.runningOver) {
         artifact(() => _running(header, template, painter, header: true));
       }
-      for (final (region, placed) in [...page.placed, ...page.side]) {
-        placed?.paint(painter, region.left, region.top);
+      if (template.writingMode == WritingMode.horizontal) {
+        for (final (region, placed) in [...page.placed, ...page.side]) {
+          placed?.paint(painter, region.left, region.top);
+        }
+      } else {
+        // (Vertical: laid out in the frame, painted turned onto the page,
+        // its links where they are drawn.)
+        final matrix = template.frameToPage;
+        final turned = _Painter(target.canvas, _TurnedPage(target, matrix))
+          ..numbering = painter.numbering;
+        target.canvas.saved(() {
+          target.canvas.transform(matrix);
+          for (final (region, placed) in [...page.placed, ...page.side]) {
+            placed?.paint(turned, region.left, region.top);
+          }
+        });
       }
       if (template.runningOver) {
         artifact(() => _running(header, template, painter, header: true));
@@ -142,11 +156,16 @@ final class LayoutResult {
       rendered.add(target);
     }
     for (final MapEntry(key: name, value: position) in anchors.entries) {
+      // (On a vertical page, where the frame's point is drawn.)
+      final (x, y) = _pages[position.page].template.frameToPage.apply(
+        position.x,
+        position.y,
+      );
       document.addAnchor(
         destinationName?.call(name) ?? name,
         rendered[position.page],
-        position.x,
-        position.y,
+        x,
+        y,
       );
     }
     return rendered;
@@ -169,5 +188,32 @@ final class LayoutResult {
     final fit = pass._place(BlockBox(boxes), width, height, atTop: false);
     final top = header ? size.top : size.bottom + margins.bottom;
     fit.placed?.paint(painter, size.left + margins.left, top);
+  }
+}
+
+/// A page whose content is painted turned by [matrix] (vertical text):
+/// its links' rectangles turned as the content is.
+final class _TurnedPage implements LayoutPage {
+  const new(this.page, this.matrix);
+
+  final LayoutPage page;
+  final Matrix matrix;
+
+  @override
+  Canvas get canvas => page.canvas;
+
+  @override
+  void link(Rect rect, LinkTarget target) {
+    final (x0, y0) = matrix.apply(rect.left, rect.bottom);
+    final (x1, y1) = matrix.apply(rect.right, rect.top);
+    page.link(
+      Rect(
+        math.min(x0, x1),
+        math.min(y0, y1),
+        (x1 - x0).abs(),
+        (y1 - y0).abs(),
+      ),
+      target,
+    );
   }
 }

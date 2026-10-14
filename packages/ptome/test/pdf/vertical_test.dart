@@ -1,0 +1,174 @@
+// Vertical writing (`page_writing_mode`): the body's lines run down the
+// page, Han and kana upright, columns following to the left.
+@TestOn('vm')
+library;
+
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:ptome/ptome.dart';
+import 'package:test/test.dart';
+
+/// Poppler's pdftotext (another one, Windows CI's, reads the text
+/// otherwise).
+final bool _poppler =
+    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
+    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+
+/// qpdf, which writes a PDF's objects uncompressed.
+final bool _qpdf = Process.runSync('which', ['qpdf']).exitCode == 0;
+
+final String _cjkFont = File(
+  '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
+).absolute.path;
+
+void main() {
+  late Directory dir;
+  setUp(() => dir = Directory.systemTemp.createTempSync('vertical_test.'));
+  tearDown(() => dir.deleteSync(recursive: true));
+
+  /// [source] converted with the CJK font and [mode]; the PDF's path.
+  String pdf(
+    String source,
+    String mode, {
+    Map<String, String>? attributes,
+    String theme = '',
+  }) {
+    final themeFile = File('${dir.path}/theme.yml')
+      ..writeAsStringSync('''
+extends: default
+font:
+  catalog:
+    merge: true
+    JP:
+      normal: $_cjkFont
+      bold: $_cjkFont
+      italic: $_cjkFont
+      bold_italic: $_cjkFont
+  fallbacks: [JP]
+base:
+  font_family: JP
+page:
+  size: A6
+  writing_mode: $mode
+$theme
+''');
+    final out = File('${dir.path}/out.pdf')
+      ..writeAsBytesSync(
+        asciidoc.convertToBytes(
+          source,
+          backend: Backend.pdf,
+          attributes: {
+            'pdf-theme': themeFile.path,
+            'imagesdir': dir.path,
+            'reproducible': '',
+            ...?attributes,
+          },
+        ),
+      );
+    return out.path;
+  }
+
+  /// The words of [path]'s first page, each with its box: left, top,
+  /// width, height.
+  List<(String, double, double, double, double)> lines(String path) {
+    final xml =
+        Process.runSync('pdftotext', [
+              '-bbox',
+              '-f',
+              '1',
+              '-l',
+              '1',
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
+            as String;
+    return [
+      for (final m in RegExp(
+        r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
+        r'yMax="([\d.]+)">([^<]*)</word>',
+      ).allMatches(xml))
+        (
+          m[5]!,
+          double.parse(m[1]!),
+          double.parse(m[2]!),
+          double.parse(m[3]!) - double.parse(m[1]!),
+          double.parse(m[4]!) - double.parse(m[2]!),
+        ),
+    ];
+  }
+
+  final text = '日本語の文章は、単語の間に空白を入れずに書きます。' * 4;
+
+  test('vertical-rl: down a column, the next column to the left', () {
+    // (Each upright character its own word to pdftotext, read across.)
+    final words = [
+      for (final w in lines(pdf(text, 'vertical-rl')))
+        if (RegExp('[\u3040-\u30ff\u4e00-\u9fff]').hasMatch(w.$1)) w,
+    ];
+    final right = words.map((w) => w.$2).reduce((a, b) => a > b ? a : b);
+    final column = [
+      for (final w in words)
+        if ((w.$2 - right).abs() < 1) w,
+    ]..sort((a, b) => a.$3.compareTo(b.$3));
+    // (The first column the rightmost, read down.)
+    expect(column.take(4).map((w) => w.$1).join(), '日本語の');
+    final columns = {for (final w in words) w.$2.round()};
+    expect(columns.length, greaterThan(3));
+  }, skip: _poppler ? false : 'needs pdftotext');
+
+  test('under asciidoctor-compat the lines run across', () {
+    final words = lines(
+      pdf(text, 'vertical-rl', attributes: {'asciidoctor-compat': 'pdf'}),
+    );
+    // (A line a word, wider than tall.)
+    expect(words.first.$1, startsWith('日本語の'));
+    expect(words.first.$4, greaterThan(words.first.$5 * 5));
+  }, skip: _poppler ? false : 'needs pdftotext');
+
+  test('vertical-lr: the first column at the left, the next to its right', () {
+    final words = [
+      for (final w in lines(pdf(text, 'vertical-lr')))
+        if (RegExp('[\u3040-\u30ff\u4e00-\u9fff]').hasMatch(w.$1)) w,
+    ];
+    final left = words.map((w) => w.$2).reduce((a, b) => a < b ? a : b);
+    final column = [
+      for (final w in words)
+        if ((w.$2 - left).abs() < 1) w,
+    ]..sort((a, b) => a.$3.compareTo(b.$3));
+    expect(column.take(4).map((w) => w.$1).join(), '日本語の');
+  }, skip: _poppler ? false : 'needs pdftotext');
+
+  test('an image stands upright on a vertical page, its link around it', () {
+    // (A red image four times as wide as tall, framed and linked.)
+    File('${dir.path}/wide.png').writeAsBytesSync(
+      base64.decode(
+        'iVBORw0KGgoAAAANSUhEUgAAACgAAAAKCAIAAABJ+IsHAAAAHUlEQVR42mM8'
+        'ISfHMBCAiWGAwKjFoxaPWjz0LQYA/8QBGFYg0fUAAAAASUVORK5CYII=',
+      ),
+    );
+    for (final mode in const ['vertical-rl', 'vertical-lr']) {
+      final path = pdf(
+        '日本語\n\nimage::wide.png[wide,120,link=https://example.org]\n',
+        mode,
+        theme: 'image:\n  border_width: 1\n  border_color: 000000',
+      );
+      final qdf = Process.runSync('qpdf', [
+        '--qdf',
+        '--object-streams=disable',
+        path,
+        '-',
+      ], stdoutEncoding: latin1);
+      final rect = RegExp(
+        r'/Rect \[\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+\]',
+      ).firstMatch('${qdf.stdout}')!;
+      final [x0, y0, x1, y1] = [
+        for (var i = 1; i <= 4; i++) double.parse(rect[i]!),
+      ];
+      // (Upright: as wide as asked across the page, 120 px of 0.75 pt, a
+      // quarter as tall.)
+      expect(x1 - x0, closeTo(90, 0.5), reason: mode);
+      expect(y1 - y0, closeTo(22.5, 0.5), reason: mode);
+    }
+  }, skip: _qpdf ? false : 'needs qpdf');
+}

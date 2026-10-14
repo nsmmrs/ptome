@@ -13,6 +13,10 @@ final class _Pass {
 
   final List<_Page> pages = [];
 
+  /// How the lines of the page being filled run: an image on a vertical
+  /// page is laid out turned, to stand upright on it.
+  WritingMode writingMode = WritingMode.horizontal;
+
   final Map<String, AnchorPosition> anchors = {};
 
   /// The first and last page (1-based) of each tagged box.
@@ -117,6 +121,7 @@ final class _Pass {
         floats.isNotEmpty ||
         carriedFloats.isNotEmpty) {
       final page = _newPage(template);
+      writingMode = page.template.writingMode;
       if (!layout.keepTemplate) template = null;
       var discard = false;
       PageSide? side;

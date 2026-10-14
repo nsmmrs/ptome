@@ -72,6 +72,7 @@ final class TextLayout {
   const new({
     this.align = 'left',
     this.mirrored = true,
+    this.vertical = false,
     this.leading = 0,
     this.initialGap = 0,
     this.paddingBottom = 0,
@@ -116,6 +117,7 @@ final class TextLayout {
   }) => TextLayout(
     align: align,
     mirrored: mirrored,
+    vertical: vertical,
     leading: leading,
     initialGap: initialGap,
     paddingBottom: paddingBottom ?? this.paddingBottom,
@@ -200,6 +202,11 @@ final class TextLayout {
   /// whose columns the page layout places).
   final bool mirrored;
 
+  /// Whether the text is set in vertical lines (`page_writing_mode`):
+  /// its Han, kana and full-width punctuation upright, the rest on its
+  /// side, in the page's turned frame.
+  final bool vertical;
+
   /// Whether only the first line is laid out (the rest is left over, the
   /// line gap and the leading following the line).
   final bool singleLine;
@@ -215,6 +222,7 @@ final class TextLayout {
   TextLayout get withoutInitialGap => TextLayout(
     align: align,
     mirrored: mirrored,
+    vertical: vertical,
     leading: leading,
     paddingBottom: paddingBottom,
     finalGap: finalGap,
@@ -272,6 +280,7 @@ final class TextContext {
     this.capsTracking = 0,
     this.expansion = 0,
     this.kashida = 0,
+    this.mirroredFrame = false,
     this.wordSpace = 1,
     this.engine,
     this.maxHyphenRun,
@@ -297,6 +306,7 @@ final class TextContext {
           capsTracking: capsTracking,
           expansion: expansion,
           kashida: kashida,
+          mirroredFrame: mirroredFrame,
           wordSpace: wordSpace,
           maxHyphenRun: maxHyphenRun,
           lastLineMin: lastLineMin,
@@ -312,6 +322,10 @@ final class TextContext {
   /// kashida before the spaces widen, in em (`base_kashida`, modern
   /// engine): 0 for none.
   final double kashida;
+
+  /// Whether vertical text is laid out in a mirrored frame (vertical-lr
+  /// pages): drawn mirrored back ([TextStyle.flipped]).
+  final bool mirroredFrame;
 
   /// What sets a text in the modern engine (plain_typesetting's paragraph
   /// as content, which [TextBox] places and measures by): null for a text
@@ -852,6 +866,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               features: format.features,
               skew: _layout.skew ?? (font.slanted ? 0.2 : 0),
               embolden: font.emboldened ? format.size / 40 : 0,
+              vertical: _layout.vertical,
+              flipped: _layout.vertical && _context.mirroredFrame,
             ),
             color: _pdfColor(fragment.color),
             artifact: fragment.artifact,
@@ -2202,6 +2218,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             features: f.format.features,
             skew: skew ?? (f.format.font.slanted ? 0.2 : 0),
             embolden: f.format.font.emboldened ? f.format.size / 40 : 0,
+            vertical: _layout.vertical,
+            flipped: _layout.vertical && _context.mirroredFrame,
           );
           // (Right-to-left text, Arabic or Hebrew, in visual order: the
           // box sets its fragments left to right.)

@@ -13,7 +13,8 @@ final class ShapedGlyph {
   /// (in 1000ths of the em).
   const new(this.id, this.text, this.advance, [this.kerning = 0])
     : xOffset = 0,
-      yOffset = 0;
+      yOffset = 0,
+      upright = false;
 
   /// A glyph drawn [xOffset] across and [yOffset] up from its pen
   /// position (a mark on its base), in 1000ths of the em.
@@ -24,6 +25,7 @@ final class ShapedGlyph {
     this.kerning = 0,
     this.xOffset = 0,
     this.yOffset = 0,
+    this.upright = false,
   });
 
   /// The glyph: its id in an embedded font, its code in a standard font.
@@ -46,6 +48,31 @@ final class ShapedGlyph {
   /// How far up from its pen position the glyph is drawn, in 1000ths of
   /// the em.
   final double yOffset;
+
+  /// Whether the glyph stands upright in a line of vertical text (a Han
+  /// character, kana, full-width punctuation, UAX #50): its [advance] is
+  /// its vertical advance, and its offsets, from the line's center, are
+  /// its vertical origin's (as HarfBuzz gives them top to bottom); it is
+  /// drawn turned a quarter turn back against the line, so that the line,
+  /// turned to run down the page, shows it upright.
+  final bool upright;
+
+  /// This glyph with [advance], [kerning] or offsets in place of its own,
+  /// otherwise the same.
+  ShapedGlyph copyWith({
+    double? advance,
+    double? kerning,
+    double? xOffset,
+    double? yOffset,
+  }) => ShapedGlyph.positioned(
+    id,
+    text,
+    advance ?? this.advance,
+    kerning: kerning ?? this.kerning,
+    xOffset: xOffset ?? this.xOffset,
+    yOffset: yOffset ?? this.yOffset,
+    upright: upright,
+  );
 }
 
 /// A font text can be set in.

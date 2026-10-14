@@ -21,6 +21,7 @@ extension _Text on PdfConverter {
     bool singleLine = false,
     bool shrinkToFit = false,
     bool mirrored = true,
+    bool vertical = true,
     int orphans = 1,
     int widows = 1,
     double? wrapIndent,
@@ -107,6 +108,8 @@ extension _Text on PdfConverter {
       TextLayout(
         align: align,
         mirrored: mirrored,
+        // (Vertical where the page is, but for running content.)
+        vertical: vertical && _verticalWriting,
         leading: metrics.leading,
         initialGap: cell || !gaps ? 0 : metrics.paddingTop,
         paddingBottom: cell || !gaps ? 0 : metrics.paddingBottom,

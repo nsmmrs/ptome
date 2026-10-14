@@ -732,17 +732,28 @@ final class OpenTypeLayout {
   /// (GDEF's mark glyphs, HarfBuzz's late zeroing); then each attached
   /// glyph's offset is made its pen position's, [rightToLeft] the run's
   /// logical order going right to left.
+  ///
+  /// With [vertical], the run is set top to bottom (HarfBuzz's TTB): its
+  /// advances are [LayoutGlyph.yAdvance]s, negative as HarfBuzz's grow
+  /// downward, value records' y advances taken off them and their x
+  /// advances left out, marks attached with the y advances between taken
+  /// off.
   void position(
     List<LayoutGlyph> run,
     List<LayoutLookup> lookups, {
     required bool rightToLeft,
     bool zeroMarks = false,
+    bool vertical = false,
   }) {
     final t = _gpos;
     if (t == null) {
       if (zeroMarks) {
         for (final g in run) {
-          if (g.isMark) g.xAdvance = 0;
+          if (g.isMark) {
+            g
+              ..xAdvance = 0
+              ..yAdvance = 0;
+          }
         }
       }
       return;
@@ -757,6 +768,7 @@ final class OpenTypeLayout {
         l,
         positioning: true,
         rightToLeft: rightToLeft,
+        vertical: vertical,
       );
       var i = 0;
       while (i < run.length) {
@@ -772,7 +784,11 @@ final class OpenTypeLayout {
     }
     if (zeroMarks) {
       for (final g in run) {
-        if (g.isMark) g.xAdvance = 0;
+        if (g.isMark) {
+          g
+            ..xAdvance = 0
+            ..yAdvance = 0;
+        }
       }
     }
     _propagate(run, rightToLeft: rightToLeft);
@@ -802,11 +818,15 @@ final class OpenTypeLayout {
         ..yOffset += parent.yOffset;
       if (!rightToLeft) {
         for (var k = j; k < i; k++) {
-          g.xOffset -= run[k].xAdvance;
+          g
+            ..xOffset -= run[k].xAdvance
+            ..yOffset -= run[k].yAdvance;
         }
       } else {
         for (var k = j + 1; k <= i; k++) {
-          g.xOffset += run[k].xAdvance;
+          g
+            ..xOffset += run[k].xAdvance
+            ..yOffset += run[k].yAdvance;
         }
       }
     }
@@ -827,6 +847,7 @@ final class _Context {
     this.applied, {
     required this.positioning,
     this.rightToLeft = false,
+    this.vertical = false,
   });
 
   final OpenTypeLayout layout;
@@ -836,6 +857,9 @@ final class _Context {
   final LayoutLookup applied;
   final bool positioning;
   final bool rightToLeft;
+
+  /// Whether the run is set top to bottom.
+  final bool vertical;
 
   int get mask => applied.mask;
 
@@ -1389,12 +1413,14 @@ final class _Context {
       g.yOffset += t.i16(p);
       p += 2;
     }
+    // (An x advance horizontally, a y advance vertically, taken off: y
+    // advances grow downward, the font's values upward.)
     if (format & 4 != 0) {
-      g.xAdvance += t.i16(p);
+      if (!vertical) g.xAdvance += t.i16(p);
       p += 2;
     }
     if (format & 8 != 0) {
-      g.yAdvance += t.i16(p);
+      if (vertical) g.yAdvance -= t.i16(p);
     }
   }
 

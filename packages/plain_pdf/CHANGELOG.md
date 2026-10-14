@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Vertical text: an upright glyph is drawn turned back a quarter turn
+  about its vertical origin, centered on the line; flipped text
+  (`TextStyle.flipped`) mirrored about its em box's middle
+  (FEAT-pwq40f).
+
 - A glyph shown for several characters (a space's glyph standing for a
   no-break space the font lacks) reads in the ToUnicode map as the
   character the font's cmap gives it, not as the first it showed.

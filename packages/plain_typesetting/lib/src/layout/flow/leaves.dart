@@ -85,8 +85,11 @@ extension _Leaves on _Pass {
   }) {
     final margin = box.style.margin;
     final top = atTop ? 0.0 : margin.top;
-    var w = box.width;
-    var h = box.height;
+    // (On a vertical page, laid out turned: its height across the frame,
+    // so that, painted turned back, it stands upright as wide as it is.)
+    final turned = writingMode != WritingMode.horizontal;
+    var w = turned ? box.height : box.width;
+    var h = turned ? box.width : box.height;
     final room = width - margin.horizontal;
     if (w > room) {
       h *= room / w;
@@ -108,7 +111,16 @@ extension _Leaves on _Pass {
         };
     final height = top + h + margin.bottom;
     return _Fit(
-      _PlacedImage(box.image, x, top, w, h, height, box.style.anchor),
+      _PlacedImage(
+        box.image,
+        x,
+        top,
+        w,
+        h,
+        height,
+        box.style.anchor,
+        writingMode: writingMode,
+      ),
       height,
       null,
     );

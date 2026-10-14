@@ -113,13 +113,9 @@ ShapedGlyph? _half(TextStyle style, ShapedGlyph glyph, int c) {
     return halt.single;
   });
   if (half == null || half.id != glyph.id) return null;
-  return ShapedGlyph.positioned(
-    glyph.id,
-    glyph.text,
-    half.advance,
-    kerning: glyph.kerning,
+  return glyph.copyWith(
+    advance: half.advance,
     xOffset: glyph.xOffset + half.xOffset,
-    yOffset: glyph.yOffset,
   );
 }
 
@@ -148,14 +144,7 @@ List<ShapedGlyph> eastAsianSpacing(List<ShapedGlyph> glyphs, TextStyle style) {
     // before (their last, a mark's base's or the mark's).
     if (cjkWesternBoundary(a, b)) {
       final g = out[i - 1];
-      out[i - 1] = ShapedGlyph.positioned(
-        g.id,
-        g.text,
-        g.advance,
-        kerning: g.kerning + quarter,
-        xOffset: g.xOffset,
-        yOffset: g.yOffset,
-      );
+      out[i - 1] = g.copyWith(kerning: g.kerning + quarter);
     }
   }
   return out;
@@ -206,14 +195,7 @@ List<ShapedGlyph> widenGaps(
   final out = [...glyphs];
   for (final i in gaps) {
     final g = out[i];
-    out[i] = ShapedGlyph.positioned(
-      g.id,
-      g.text,
-      g.advance,
-      kerning: g.kerning + extra,
-      xOffset: g.xOffset,
-      yOffset: g.yOffset,
-    );
+    out[i] = g.copyWith(kerning: g.kerning + extra);
   }
   return out;
 }

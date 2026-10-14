@@ -15,6 +15,7 @@ import 'dart:io';
 
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
+import 'package:plain_typesetting/src/shaping/shape.dart' show shapeText;
 import 'package:test/test.dart';
 
 const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
@@ -50,6 +51,48 @@ void main() {
       }, skip: ready ? false : 'run tool/oracles/setup.sh to install HarfBuzz');
     }
   }
+  // Top to bottom (HarfBuzz's TTB direction): the vertical forms, the
+  // vertical advances and origins (VORG; vmtx and TrueType outlines; the
+  // glyph centered without them), the marks attached across.
+  for (final entry in File('$_fixtures/fonts.txt').readAsLinesSync()) {
+    if (entry.startsWith('#') || entry.trim().isEmpty) continue;
+    final [font, _, files, direction] = [
+      for (final f in entry.split('|')) f.trim(),
+    ].sublist(0, 4);
+    if (direction != 'ltr') continue;
+    test('${files.replaceAll(' ', ', ')} in $font top to bottom', () {
+      final path = 'test/fonts/$font';
+      final parsed = OpenTypeFont.parse(File(path).readAsBytesSync());
+      final lines = [
+        for (final file in files.split(' '))
+          ...File('$_fixtures/$file')
+              .readAsLinesSync()
+              .where((l) => l.isNotEmpty && !l.startsWith('#')),
+      ];
+      final theirs = harfbuzz(path, lines, features: {'--ttb'});
+      final differ = <String>[];
+      for (final (i, line) in lines.indexed) {
+        final ours = [
+          for (final g in shapeText(
+            parsed,
+            line,
+            rightToLeft: false,
+            vertical: true,
+          ))
+            [g.glyph, -g.advance, g.xOffset, g.yOffset],
+        ];
+        final expected = [
+          for (final g in theirs[i].cast<List<Object?>>())
+            [g[0], g[2], g[3], g[4]],
+        ];
+        if (jsonEncode(ours) != jsonEncode(expected)) {
+          differ.add('$line\n    ours:     $ours\n    HarfBuzz: $expected');
+        }
+      }
+      expect(differ, isEmpty, reason: differ.take(2).join('\n'));
+    }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+  }
+
   // East Asian features a typesetter turns on: punctuation set half wide
   // between others (chws) or always (halt), proportional (palt), and
   // the vertical forms (vert, vrt2).

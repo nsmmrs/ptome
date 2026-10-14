@@ -15,6 +15,7 @@ import 'package:plain_typesetting/src/geometry.dart';
 import 'package:plain_typesetting/src/graphic.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
 import 'package:plain_typesetting/src/layout/paragraph.dart';
+import 'package:plain_typesetting/src/link.dart';
 import 'package:plain_typesetting/src/page.dart';
 import 'package:plain_typesetting/src/structure.dart';
 
