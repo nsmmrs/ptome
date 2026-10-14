@@ -58,8 +58,12 @@ extension _Paragraphs on PdfConverter {
       hangIndent: hangIndent,
       hangLines: hangLines,
       firstLineContent: firstLineContent,
-      rightToLeft: _rightToLeft && layout.mirrored,
-      align: _aligned(layout.align, mirrored: layout.mirrored),
+      rightToLeft: layout.rightToLeft && layout.mirrored,
+      align: _aligned(
+        layout.align,
+        mirrored: layout.mirrored,
+        rightToLeft: layout.rightToLeft,
+      ),
       // (The space above each line as the text box sets it; with
       // `base_leading`, the lines from their cap heights.)
       lineHeight: layout.capLines
@@ -97,7 +101,11 @@ extension _Paragraphs on PdfConverter {
       // it, justified as the lines before the last are.)
       alignLast: layout.forceJustify && layout.align == 'justify'
           ? TextAlign.justify
-          : _aligned(layout.alignLast, mirrored: layout.mirrored),
+          : _aligned(
+              layout.alignLast,
+              mirrored: layout.mirrored,
+              rightToLeft: layout.rightToLeft,
+            ),
       // (`base_overhang`: protrusion.)
       protrusion: layout.overhang,
       kashida: _text.kashida,
@@ -181,8 +189,8 @@ extension _Paragraphs on PdfConverter {
   /// The theme's alignment [value] (`left`, `center`, `right`,
   /// `justify`); in a right-to-left document, [mirrored] (the theme's
   /// `left`, the start, is the right) unless it names the page's sides.
-  TextAlign _aligned(String? value, {bool mirrored = true}) {
-    final flip = _rightToLeft && mirrored;
+  TextAlign _aligned(String? value, {bool mirrored = true, bool? rightToLeft}) {
+    final flip = (rightToLeft ?? _rightToLeft) && mirrored;
     return switch (value) {
       'justify' => TextAlign.justify,
       'center' => TextAlign.center,

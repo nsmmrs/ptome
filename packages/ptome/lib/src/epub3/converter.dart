@@ -161,7 +161,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
 
   @override
   String? convertBlock(AbstractBlock node, ConvertOptions? opts) {
-    final out = _convertBlock(node, opts);
+    final converted = _convertBlock(node, opts);
+    // (Its own language and direction, Ptome's.)
+    final out = converted == null
+        ? null
+        : withBlockLanguage(node, converted, CompatFormat.epub);
     // `%unbreakable` (ADR-0012).
     final marked =
         out != null &&
@@ -1934,7 +1938,10 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       node.addRole('literal');
     }
     final role = node.role;
-    final classAttr = role != null ? ' class="$role"' : '';
+    // (Its own language and direction, Ptome's.)
+    final classAttr =
+        '${role != null ? ' class="$role"' : ''}'
+        '${spanLanguageAttributes(node)}';
     if (node.id != null) {
       if (isTag) {
         return '${open.substring(0, open.length - 1)} id="${node.id}"'
@@ -1942,7 +1949,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       }
       return '<span id="${node.id}"$classAttr>$open$content$close</span>';
     }
-    if (role != null) {
+    if (classAttr.isNotEmpty) {
       if (isTag) {
         return '${open.substring(0, open.length - 1)}$classAttr>$content$close';
       }

@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Direction per block and per span (FEAT-nyf5rz): a block's `dir`, or a
+  `lang` written the other way from the document, sets it from its own
+  side in the PDF (alignments, list markers, table columns; the pages keep
+  the document's direction) and writes `lang` and `dir` on its HTML and
+  EPUB element; a span's `dir` (`[dir=rtl]#…#`) is a bidirectional isolate
+  in the PDF and an attribute in HTML, as is a span's `lang`. An isolate,
+  a joiner or another invisible control no font has is set unwarned of.
+  None of it under `asciidoctor-compat`, which warns as Asciidoctor PDF
+  does.
 - Line-breaking strictness (FEAT-cr864h): `line-break` (`strict`,
   `normal`, `loose`, `anywhere`), CSS Text 3's, in every format (HTML and
   EPUB as CSS's `line-break`, the PDF's theme key `base_line_break`); not

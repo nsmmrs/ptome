@@ -151,6 +151,12 @@ Only punctuation ending a word is spaced (`10:30`, `std::vector` and
 `?x=1` in a URL are not), and verbatim text never is. A man page writes
 them as roff's `\~`. Not under `asciidoctor-compat`.
 
+A block's own `lang` and direction reach HTML and EPUB too: a block with
+`[lang=ar]` or `[dir=rtl]` above it writes `lang` and `dir` on its
+element (`dir` where it runs the other way from the document, its `lang`
+written right to left or left to right), and a span's (`[lang=fr]#…#`,
+`[dir=rtl]#…#`) on a `<span>`. Not under `asciidoctor-compat`.
+
 A document's direction and writing mode reach HTML and EPUB too.
 `:dir: rtl` writes `dir="rtl"` on each page's root, and an EPUB's pages
 turn to the left (its spine's `page-progression-direction="rtl"`).

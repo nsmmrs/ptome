@@ -21,6 +21,7 @@ String get propertiesUnicodeVersion
 String lowerCase(String text, {bool finalSigma = false, String? language})
 String scriptOf(int codePoint)
 String upperCase(String text, {String? language})
+String? languageScript(String language)
 String? numberingSystemDigits(String id)
 VerticalOrientation verticalOrientation(int codePoint)
 bool hasRightToLeft(String text)
@@ -33,6 +34,7 @@ bool isEmojiModifierBase(int codePoint)
 bool isEmojiPresentation(int codePoint)
 bool isExtendedPictographic(int codePoint)
 bool isMark(int codePoint)
+bool isRightToLeftLanguage(String language)
 enum BidiClass
   static BidiClass al
   static BidiClass an

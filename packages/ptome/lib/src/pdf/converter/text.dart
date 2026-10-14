@@ -122,6 +122,7 @@ extension _Text on PdfConverter {
       TextLayout(
         align: align,
         mirrored: mirrored,
+        rightToLeft: _rightToLeft,
         // (Vertical where the page is, but for running content.)
         vertical: vertical && _verticalText,
         flipped: _blockMode == WritingMode.verticalLeftToRight,

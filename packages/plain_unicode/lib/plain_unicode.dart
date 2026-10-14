@@ -80,4 +80,5 @@ export 'src/properties.dart'
         propertiesUnicodeVersion,
         scriptOf,
         verticalOrientation;
-export 'src/quotation_marks.dart' show QuotationMarks, quotationMarks;
+export 'src/quotation_marks.dart'
+    show QuotationMarks, isRightToLeftLanguage, languageScript, quotationMarks;

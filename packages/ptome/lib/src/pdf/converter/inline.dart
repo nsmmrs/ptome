@@ -1114,7 +1114,7 @@ extension _InlineElements on PdfConverter {
     // (A right-to-left document's pages mirrored: the theme's left, its
     // start, at the right, and a recto's outside, away from its binding,
     // at its left.)
-    final mirror = _rightToLeft;
+    final mirror = _documentRightToLeft;
     final right = switch (keys.string('column')) {
       'right' => !mirror,
       'outside' => recto != mirror,
@@ -1444,6 +1444,17 @@ extension _InlineElements on PdfConverter {
         inner.endsWith('...') &&
         !inner.substring(0, inner.length - 3).endsWith(r'\')) {
       inner = '${inner.substring(0, inner.length - 3)}&#8230;';
+    }
+    // (Ptome's inline `dir`: its text a bidirectional isolate in that
+    // direction, UAX #9's RLI, LRI or FSI to PDI.)
+    if (switch (node.attributes['dir']) {
+          'rtl' => '\u2067',
+          'ltr' => '\u2066',
+          'auto' => '\u2068',
+          _ => null,
+        }
+        case final isolate?) {
+      inner = '$isolate$inner\u2069';
     }
     // (Ptome's inline `lang`: a span in that language.)
     final lang = switch (node.attributes['lang']) {

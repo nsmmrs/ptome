@@ -4,9 +4,11 @@
 /// stylesheet that sets them.
 library;
 
+import 'package:plain_unicode/plain_unicode.dart' show isRightToLeftLanguage;
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/document.dart';
+import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/inline_tree.dart';
 
 /// `rtl` where [document] is written right to left, else null.
@@ -123,3 +125,61 @@ final RegExp _digits = RegExp(
   '(<[^>]*>|&#?[A-Za-z0-9]+;)|(?<![0-9A-Za-z.,#&])[0-9]{1,2}'
   '(?![0-9A-Za-z]|[.,][0-9])',
 );
+
+/// The ` lang="…"` and ` dir="…"` of a formatted text's own `lang` and
+/// `dir` (Ptome's `[lang=ar,dir=rtl]#…#`, parsed only outside
+/// `asciidoctor-compat`), as HTML attributes; empty without them.
+String spanLanguageAttributes(Inline node) {
+  final out = StringBuffer();
+  if (node.attributes['lang'] case final lang?
+      when RegExp(r'^[A-Za-z0-9_-]+$').hasMatch(lang)) {
+    out.write(' lang="$lang"');
+  }
+  if (node.attributes['dir'] case final dir?
+      when const {'rtl', 'ltr', 'auto'}.contains(dir)) {
+    out.write(' dir="$dir"');
+  }
+  return '$out';
+}
+
+/// The direction of block [node]'s own text (Ptome's; not under
+/// `asciidoctor-compat`): its `dir` (`rtl`, `ltr`), else, where it has
+/// its own `lang` in a script of the other direction than the document's,
+/// that script's (an Arabic block in an English document); null where it
+/// runs as the text around it.
+String? blockDirection(AbstractBlock node, CompatFormat format) {
+  final document = node.document;
+  if (node is Document || document is! Document) return null;
+  if (asciidoctorCompat(document, format)) return null;
+  if (node.attributes['dir']?.trim().toLowerCase() case final dir?
+      when dir == 'rtl' || dir == 'ltr') {
+    return dir;
+  }
+  if (node.attributes['lang']?.trim() case final lang? when lang.isNotEmpty) {
+    final rtl = isRightToLeftLanguage(lang);
+    final documentRtl = documentDirection(document, format) == 'rtl';
+    if (rtl != documentRtl) return rtl ? 'rtl' : 'ltr';
+  }
+  return null;
+}
+
+/// [html], block [node]'s, with its own `lang` and direction
+/// ([blockDirection]) on its first element (Ptome's; not under
+/// `asciidoctor-compat`).
+String withBlockLanguage(AbstractBlock node, String html, CompatFormat format) {
+  final document = node.document;
+  if (node is Document || document is! Document) return html;
+  if (asciidoctorCompat(document, format)) return html;
+  final attributes = StringBuffer();
+  if (node.attributes['lang']?.trim() case final lang?
+      when RegExp(r'^[A-Za-z0-9_-]+$').hasMatch(lang)) {
+    attributes.write(' lang="$lang"');
+  }
+  if (blockDirection(node, format) case final dir?) {
+    attributes.write(' dir="$dir"');
+  }
+  if (attributes.isEmpty) return html;
+  final tag = RegExp(r'<[A-Za-z][\w:-]*').firstMatch(html);
+  if (tag == null) return html;
+  return html.replaceRange(tag.end, tag.end, '$attributes');
+}

@@ -79,6 +79,7 @@ final class TextLayout {
   const new({
     this.align = 'left',
     this.mirrored = true,
+    this.rightToLeft = false,
     this.vertical = false,
     this.flipped = false,
     this.language,
@@ -126,6 +127,7 @@ final class TextLayout {
   }) => TextLayout(
     align: align,
     mirrored: mirrored,
+    rightToLeft: rightToLeft,
     vertical: vertical,
     flipped: flipped,
     language: language,
@@ -213,6 +215,10 @@ final class TextLayout {
   /// whose columns the page layout places).
   final bool mirrored;
 
+  /// Whether the text is written right to left (its block's direction, or
+  /// the document's, when the box was made).
+  final bool rightToLeft;
+
   /// Whether the text is set in vertical lines (`page_writing_mode`):
   /// its Han, kana and full-width punctuation upright, the rest on its
   /// side, in the page's turned frame.
@@ -242,6 +248,7 @@ final class TextLayout {
   TextLayout get withoutInitialGap => TextLayout(
     align: align,
     mirrored: mirrored,
+    rightToLeft: rightToLeft,
     vertical: vertical,
     flipped: flipped,
     language: language,
@@ -311,6 +318,7 @@ final class TextContext {
     this.languageFallback,
     this.emojiFallback,
     this.combineDigits = 0,
+    this.invisibleIgnorables = false,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -339,6 +347,7 @@ final class TextContext {
           languageFallback: languageFallback,
           emojiFallback: emojiFallback,
           combineDigits: combineDigits,
+          invisibleIgnorables: invisibleIgnorables,
           logger: logger,
         );
 
@@ -434,6 +443,12 @@ final class TextContext {
   /// The family an emoji sequence no font of the text's has in color is
   /// set in (the installed Noto Color Emoji: modern engine), or null.
   final String? Function()? emojiFallback;
+
+  /// Whether a default-ignorable character no font has (a bidirectional
+  /// isolate, a joiner) stays in its run, invisible as it is, unwarned of
+  /// (modern engine), rather than looked for in the fallback fonts and
+  /// warned of, as Asciidoctor PDF does.
+  final bool invisibleIgnorables;
 
   /// Where warnings go.
   final LoggerBase logger;
@@ -1322,7 +1337,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           (rune == 0x200d ||
               (rune >= 0xfe00 && rune <= 0xfe0f) ||
               (rune >= 0x0300 && isMark(rune)));
-      if (continues &&
+      if (context.invisibleIgnorables &&
+          isDefaultIgnorable(rune) &&
+          !base.hasGlyph(rune)) {
+        family = currentFamily;
+      } else if (continues &&
           (currentFamily == null
               ? base.hasGlyph(rune)
               : _font(currentFamily, base.style, context).hasGlyph(rune))) {
@@ -3595,6 +3614,7 @@ final class FirstLineTextBox implements BaselineContent {
       TextLayout(
         align: line.align,
         mirrored: line.mirrored,
+        rightToLeft: line.rightToLeft,
         leading: line.leading,
         initialGap: line.initialGap,
         paddingBottom: more ? 0 : line.paddingBottom,

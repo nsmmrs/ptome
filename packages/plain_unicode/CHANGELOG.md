@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `languageScript` (a language's script, its subtag or CLDR's likely one)
+  and `isRightToLeftLanguage` (FEAT-nyf5rz).
+
 - Line-breaking strictness (FEAT-cr864h): `lineBreaks` and
   `lineBreakOffsets` take a `LineBreakStrictness` (CSS Text 3's
   `line-break`: `strict`, UAX #14's rules; `normal`; `loose`; `anywhere`)

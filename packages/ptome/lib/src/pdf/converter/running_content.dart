@@ -204,7 +204,7 @@ extension _RunningContent on PdfConverter {
     ];
     // (A right-to-left document's pages mirrored: the theme's left, its
     // start, at the right; the page's own margins are already.)
-    final mirror = _rightToLeft;
+    final mirror = _documentRightToLeft;
     List<double> mirrored(ThemeValue? given, List<double> values) =>
         mirror && given != null
         ? [values[0], values[3], values[2], values[1]]

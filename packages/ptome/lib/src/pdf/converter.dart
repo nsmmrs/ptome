@@ -28,6 +28,7 @@ import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/converter.dart';
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/dates.dart';
+import 'package:ptome/src/direction.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/image_shape.dart';
@@ -301,13 +302,17 @@ final class PdfConverter extends BuiltInConverter
 
   @override
   String? convertBlock(AbstractBlock node, ConvertOptions? opts) {
-    // (A block's own `lang` for its text, Ptome's: not under
-    // asciidoctor-compat.)
+    // (A block's own `lang` for its text, and its own direction, Ptome's:
+    // not under asciidoctor-compat.)
     final language = _language;
+    final direction = _blockRightToLeft;
     if (node is! Document) {
       if (node.attributes['lang'] case final String lang
           when !asciidoctorCompat(_document, CompatFormat.pdf)) {
         _language = lang;
+      }
+      if (blockDirection(node, CompatFormat.pdf) case final dir?) {
+        _blockRightToLeft = dir == 'rtl';
       }
     }
     try {
@@ -356,6 +361,7 @@ final class PdfConverter extends BuiltInConverter
       return _convertBlock(node, opts);
     } finally {
       _language = language;
+      _blockRightToLeft = direction;
     }
   }
 
@@ -758,10 +764,19 @@ final class PdfConverter extends BuiltInConverter
         )
       : null;
 
+  /// Whether the text being converted is written right to left: the
+  /// block's own direction where it has one ([blockDirection]: its `dir`,
+  /// or a `lang` written the other way), else the document's
+  /// ([_documentRightToLeft]); its paragraphs set from the right, their
+  /// text in visual order (UAX #9), the theme's alignments mirrored.
+  bool get _rightToLeft => _blockRightToLeft ?? _documentRightToLeft;
+
+  /// The direction of the block being converted, where it has its own.
+  bool? _blockRightToLeft;
+
   /// Whether the document is written right to left (`:dir: rtl`, as
-  /// HTML's `dir`): its paragraphs set from the right, their text in
-  /// visual order (UAX #9), the theme's alignments mirrored.
-  bool get _rightToLeft =>
+  /// HTML's `dir`): its pages mirrored too.
+  bool get _documentRightToLeft =>
       _document.attr('dir')?.toLowerCase() == 'rtl' &&
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
@@ -808,7 +823,7 @@ final class PdfConverter extends BuiltInConverter
   /// Whether the pages follow one another to the left, the book bound at
   /// the right: a right-to-left document's, or a vertical-rl one's.
   bool get _pagesRightToLeft =>
-      _rightToLeft || _writingMode == WritingMode.verticalRightToLeft;
+      _documentRightToLeft || _writingMode == WritingMode.verticalRightToLeft;
 
   bool get _engineParagraphs =>
       _s('base_text_engine') != 'box' &&

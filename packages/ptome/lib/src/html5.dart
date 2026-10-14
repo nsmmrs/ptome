@@ -168,7 +168,11 @@ class Html5Converter extends BuiltInConverter {
 
   @override
   String? convertBlock(AbstractBlock node, ConvertOptions? opts) {
-    final out = _convertBlock(node, opts);
+    final converted = _convertBlock(node, opts);
+    // (Its own language and direction, Ptome's.)
+    final out = converted == null
+        ? null
+        : withBlockLanguage(node, converted, CompatFormat.html);
     // `%unbreakable` (ADR-0012).
     return out != null &&
             node.hasOption('unbreakable') &&
@@ -2580,20 +2584,31 @@ class Html5Converter extends BuiltInConverter {
             : (marks.alternateStart, marks.alternateEnd);
       }
     }
+    // (Its own language and direction, Ptome's.)
+    final own = spanLanguageAttributes(node);
     if (node.id != null) {
       final classAttr = node.role != null ? ' class="${_s(node.role)}"' : '';
       if (tag) {
         return '${open.substring(0, open.length - 1)} '
-            'id="${node.id}"$classAttr>${_s(node.text)}$close';
+            'id="${node.id}"$classAttr$own>${_s(node.text)}$close';
       }
-      return '<span id="${node.id}"$classAttr>$open${_s(node.text)}$close</span>';
+      return '<span id="${node.id}"$classAttr$own>'
+          '$open${_s(node.text)}$close</span>';
     }
     if (node.role != null) {
       if (tag) {
         return '${open.substring(0, open.length - 1)} '
-            'class="${_s(node.role)}">${_s(node.text)}$close';
+            'class="${_s(node.role)}"$own>${_s(node.text)}$close';
       }
-      return '<span class="${_s(node.role)}">$open${_s(node.text)}$close</span>';
+      return '<span class="${_s(node.role)}"$own>'
+          '$open${_s(node.text)}$close</span>';
+    }
+    if (own.isNotEmpty) {
+      if (tag) {
+        return '${open.substring(0, open.length - 1)}$own>'
+            '${_s(node.text)}$close';
+      }
+      return '<span$own>$open${_s(node.text)}$close</span>';
     }
     return '$open${_s(node.text)}$close';
   }

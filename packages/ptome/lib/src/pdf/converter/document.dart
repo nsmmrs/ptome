@@ -64,6 +64,8 @@ extension _DocumentParts on PdfConverter {
           asciidoctorCompat(document, CompatFormat.pdf) || !colorEmoji
           ? null
           : _fonts.emojiFamily,
+      // (A bidirectional isolate, a joiner no font has: invisible anyway.)
+      invisibleIgnorables: !asciidoctorCompat(document, CompatFormat.pdf),
       images: (src, format) =>
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
@@ -2045,7 +2047,7 @@ extension _DocumentParts on PdfConverter {
     };
     final recto = page.number.isOdd;
     // (Mirrored in a right-to-left document, as its pages are.)
-    final mirror = _rightToLeft;
+    final mirror = _documentRightToLeft;
     final right = switch (numbering.side) {
       'right' => !mirror,
       'outer' => recto != mirror,

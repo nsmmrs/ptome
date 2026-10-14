@@ -74,6 +74,34 @@ String? cldrParent(String locale) {
 @internal
 bool cldrNamesParent(String locale) => _parents.containsKey(locale);
 
+/// The script [language] (a BCP 47 tag) is written in (ISO 15924: `Arab`,
+/// `Hebr`, `Latn`, `Jpan`...): its script subtag, else the one CLDR's
+/// `likelySubtags` gives the language (and region); null for a language
+/// CLDR doesn't know.
+String? languageScript(String language) {
+  for (final locale in cldrLocales(language)) {
+    for (final subtag in locale.split('-').skip(1)) {
+      if (subtag.length == 4) return subtag;
+    }
+  }
+  return null;
+}
+
+/// The scripts written right to left (Unicode's Bidi_Class R or AL
+/// letters: ISO 15924 codes).
+const Set<String> _rightToLeftScripts = {
+  'Adlm', 'Arab', 'Aran', 'Armi', 'Avst', 'Chrs', 'Cprt', 'Elym', 'Hatr', //
+  'Hebr', 'Hung', 'Khar', 'Lydi', 'Mand', 'Mani', 'Mend', 'Merc', 'Mero',
+  'Narb', 'Nbat', 'Nkoo', 'Orkh', 'Ougr', 'Palm', 'Phli', 'Phlp',
+  'Phnx', 'Prti', 'Rohg', 'Samr', 'Sarb', 'Sogd', 'Sogo', 'Syrc', 'Thaa',
+  'Yezi',
+};
+
+/// Whether [language] (a BCP 47 tag) is written right to left: its script
+/// ([languageScript]) is.
+bool isRightToLeftLanguage(String language) =>
+    _rightToLeftScripts.contains(languageScript(language));
+
 /// The CLDR locales [language] (a BCP 47 tag) matches, most specific
 /// first, with hyphens (`zh-Hant-TW`, `zh-TW`, `zh-Hant`, `zh`): its
 /// script, where it names none, the likely one (`likelySubtags`); a

@@ -408,6 +408,16 @@ marked at the right and tables with their first column at the right.
 The theme picks a font that has the script (`base_font_family`, or
 `font_fallbacks` for a few words).
 
+A block can run the other way from its document: `[dir=rtl]` (or
+`[dir=ltr]` in a right-to-left document) above it, or a `lang` written
+the other way (`[lang=ar]` above a paragraph in an English document, an
+English one with `[lang=en]` in an Arabic document) sets it from its own
+side: its paragraphs, its alignments mirrored, a list's markers at its
+right, a table's first column at its right; the pages keep the
+document's direction. A span's `dir` (`[dir=rtl]#…#`) is a bidirectional
+isolate (UAX #9's RLI, LRI or, for `auto`, FSI): its text ordered on its
+own, whatever is around it. Not under `asciidoctor-compat`.
+
 ### Fonts
 
 Ptome compiles no fonts in: a theme names the fonts it wants, and they

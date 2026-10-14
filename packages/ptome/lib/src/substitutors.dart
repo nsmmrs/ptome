@@ -3095,8 +3095,10 @@ String subPlaceholder(String format, String value) {
   return substituted.replaceAll(token, '%');
 }
 
-/// Ptome's `lang=` in a formatted text's attribute list.
-final RegExp _langAttribute = RegExp('^lang=["\']?([A-Za-z0-9_-]+)["\']?\$');
+/// Ptome's `lang=` and `dir=` in a formatted text's attribute list.
+final RegExp _langAttribute = RegExp(
+  '^(lang|dir)=["\']?([A-Za-z0-9_-]+)["\']?\$',
+);
 
 /// Parses the attributes defined on quoted (formatted) text.
 ///
@@ -3108,19 +3110,26 @@ Map<String, String> parseQuotedTextAttributes(AbstractNode node, String str) {
   // NOTE attributes are typically resolved after quoted text, so
   // substitute eagerly
   var text = str.contains(attrRefHead) ? subAttributes(node, str) : str;
-  // Ptome's `lang=` among them (not under asciidoctor-compat): the text's
-  // language.
-  String? lang;
-  if (text.contains('lang=') && !anyAsciidoctorCompat(_documentOf(node))) {
+  // Ptome's `lang=` and `dir=` among them (not under asciidoctor-compat):
+  // the text's language and direction (`rtl`, `ltr`, `auto`).
+  if ((text.contains('lang=') || text.contains('dir=')) &&
+      !anyAsciidoctorCompat(_documentOf(node))) {
+    final own = <String, String>{};
     final parts = text.split(',').map((p) => p.trimAscii()).toList();
     for (final part in parts) {
       if (_langAttribute.firstMatch(part) case final m?) {
-        lang = m[1];
+        final value = m[2]!;
+        if (m[1] == 'lang' ||
+            const {'rtl', 'ltr', 'auto'}.contains(value.toLowerCase())) {
+          own[m[1]!] = m[1] == 'dir' ? value.toLowerCase() : value;
+        }
       }
     }
-    text = parts.where((p) => !p.startsWith('lang=')).join(',');
-    if (lang != null) {
-      return {...parseQuotedTextAttributes(node, text), 'lang': lang};
+    text = parts
+        .where((p) => !p.startsWith('lang=') && !p.startsWith('dir='))
+        .join(',');
+    if (own.isNotEmpty) {
+      return {...parseQuotedTextAttributes(node, text), ...own};
     }
   }
   // for compliance, only consider first positional attribute (very
