@@ -5,6 +5,7 @@
 /// `FormattedText::Transform` does.
 library;
 
+import 'package:plain_unicode/plain_unicode.dart' show lowerCase, upperCase;
 import 'package:ptome/src/pdf/theme.dart';
 
 /// A parsed markup node.
@@ -1104,8 +1105,20 @@ final class MarkupTransform {
 }
 
 /// [text] transformed by a theme `text_transform` (`uppercase`,
-/// `lowercase`, `capitalize`, `smallcaps`, `none`).
-String transformText(String text, String transform) {
+/// `lowercase`, `capitalize`, `smallcaps`, `none`); in [language] (BCP
+/// 47), upper and lower case as it has them (Turkish and Azeri dotted
+/// and dotless i, Lithuanian's dot above).
+String transformText(String text, String transform, {String? language}) {
+  // (Only the languages Unicode tailors take its mappings: others keep
+  // the platform's.)
+  final tailored = RegExp(
+    r'^(tr|az|lt)([-_]|$)',
+    caseSensitive: false,
+  ).hasMatch(language ?? '');
+  String upper(String t) =>
+      tailored ? upperCase(t, language: language) : t.toUpperCase();
+  String lower(String t) =>
+      tailored ? lowerCase(t, language: language) : t.toLowerCase();
   // Only the text between tags and character references changes.
   String pcdata(RegExp filter, String Function(String) change) =>
       text.replaceAllMapped(
@@ -1115,13 +1128,9 @@ String transformText(String text, String transform) {
   final markup = _xmlMarkup.hasMatch(text);
   switch (transform) {
     case 'uppercase':
-      return markup
-          ? pcdata(_pcdataFilter, (t) => t.toUpperCase())
-          : text.toUpperCase();
+      return markup ? pcdata(_pcdataFilter, upper) : upper(text);
     case 'lowercase':
-      return text.contains('<')
-          ? pcdata(_tagFilter, (t) => t.toLowerCase())
-          : text.toLowerCase();
+      return text.contains('<') ? pcdata(_tagFilter, lower) : lower(text);
     case 'capitalize':
       return markup
           ? pcdata(_pcdataFilter, _capitalizeWords)

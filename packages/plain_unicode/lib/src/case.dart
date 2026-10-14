@@ -3,19 +3,149 @@
 /// special mappings, and JavaScript's apply the Final_Sigma rule.
 library;
 
+import 'package:plain_unicode/src/bidi.dart' show canonicalCombiningClass;
 import 'package:plain_unicode/src/case_data.g.dart';
 
 /// [text] in upper case: each code point's full mapping, such as `ß` to
 /// `SS` (as Ruby's `String#upcase` and JavaScript's `toUpperCase` do).
-String upperCase(String text) =>
-    _isAscii(text) ? text.toUpperCase() : _map(text, _upper, upper: true);
+///
+/// With [language] (BCP 47), its tailoring in SpecialCasing.txt applies:
+/// Turkish and Azeri `i` to `İ`; Lithuanian removes a combining dot
+/// above after a soft-dotted letter (`i̇` to `I`).
+String upperCase(String text, {String? language}) {
+  switch (_tailoring(language)) {
+    case _Tailoring.turkic:
+      return _map(text.replaceAll('i', '\u0130'), _upper, upper: true);
+    case _Tailoring.lithuanian when text.contains('\u0307'):
+      final runes = text.runes.toList();
+      final out = StringBuffer();
+      for (var i = 0; i < runes.length; i++) {
+        if (runes[i] == 0x307 && _afterSoftDotted(runes, i)) continue;
+        _write(out, runes[i], _upper, upper: true);
+      }
+      return out.toString();
+    case _:
+      return _isAscii(text)
+          ? text.toUpperCase()
+          : _map(text, _upper, upper: true);
+  }
+}
+
+/// The languages SpecialCasing.txt tailors.
+enum _Tailoring { none, turkic, lithuanian }
+
+_Tailoring _tailoring(String? language) {
+  final primary = (language ?? '').toLowerCase().split(RegExp('[-_]')).first;
+  return switch (primary) {
+    'tr' || 'az' => _Tailoring.turkic,
+    'lt' => _Tailoring.lithuanian,
+    _ => _Tailoring.none,
+  };
+}
+
+/// The index of the first code point of combining class 0 or 230 (above)
+/// from `runes[from]` walking [step] (1 or -1), or null: what case
+/// contexts look past (the classes between are neither).
+int? _neighbour(List<int> runes, int from, int step) {
+  for (var i = from + step; i >= 0 && i < runes.length; i += step) {
+    final ccc = canonicalCombiningClass(runes[i]);
+    if (ccc == 0 || ccc == 230) return i;
+  }
+  return null;
+}
+
+/// After_Soft_Dotted: a Soft_Dotted letter before, no character of class
+/// 0 or 230 between.
+bool _afterSoftDotted(List<int> runes, int index) {
+  final i = _neighbour(runes, index, -1);
+  return i != null && _in(_softDotted, runes[i]);
+}
+
+/// More_Above: a character of class 230 after, none of class 0 between.
+bool _moreAbove(List<int> runes, int index) {
+  for (var i = index + 1; i < runes.length; i++) {
+    final ccc = canonicalCombiningClass(runes[i]);
+    if (ccc == 230) return true;
+    if (ccc == 0) return false;
+  }
+  return false;
+}
+
+/// After_I: a capital I before, no character of class 0 or 230 between.
+bool _afterI(List<int> runes, int index) {
+  final i = _neighbour(runes, index, -1);
+  return i != null && runes[i] == 0x49;
+}
+
+/// Before_Dot: a combining dot above after, no character of class 0 or
+/// 230 between.
+bool _beforeDot(List<int> runes, int index) {
+  final i = _neighbour(runes, index, 1);
+  return i != null && runes[i] == 0x307;
+}
+
+/// [runes] in lower case as [tailoring] has it, the Final_Sigma rule
+/// applied with [finalSigma].
+String _lowerTailored(
+  List<int> runes,
+  _Tailoring tailoring, {
+  required bool finalSigma,
+}) {
+  final out = StringBuffer();
+  for (var i = 0; i < runes.length; i++) {
+    final rune = runes[i];
+    if (tailoring == _Tailoring.turkic) {
+      if (rune == 0x130) {
+        out.write('i');
+        continue;
+      }
+      if (rune == 0x307 && _afterI(runes, i)) continue;
+      if (rune == 0x49) {
+        out.write(_beforeDot(runes, i) ? 'i' : '\u0131');
+        continue;
+      }
+    } else if (tailoring == _Tailoring.lithuanian) {
+      final dotted = switch (rune) {
+        0x49 when _moreAbove(runes, i) => 'i\u0307',
+        0x4a when _moreAbove(runes, i) => 'j\u0307',
+        0x12e when _moreAbove(runes, i) => '\u012f\u0307',
+        0xcc => 'i\u0307\u0300',
+        0xcd => 'i\u0307\u0301',
+        0x128 => 'i\u0307\u0303',
+        _ => null,
+      };
+      if (dotted != null) {
+        out.write(dotted);
+        continue;
+      }
+    }
+    if (rune == 0x3a3 && finalSigma) {
+      out.write(_isFinalSigma(runes, i) ? 'ς' : 'σ');
+    } else {
+      _write(out, rune, _lower, upper: false);
+    }
+  }
+  return out.toString();
+}
 
 /// [text] in lower case: each code point's full mapping, such as `İ` to
 /// `i̇`. With [finalSigma], a capital sigma that ends a word becomes `ς`
 /// (Unicode's Final_Sigma context, as JavaScript's `toLowerCase` does);
 /// without it, every capital sigma becomes `σ` (as Ruby's
 /// `String#downcase` does).
-String lowerCase(String text, {bool finalSigma = false}) {
+///
+/// With [language] (BCP 47), its tailoring in SpecialCasing.txt applies:
+/// Turkish and Azeri `I` to `ı` and `İ` to `i`; Lithuanian keeps the dot
+/// of `i` and `j` under an accent (`Ì` to `i̇̀`).
+String lowerCase(String text, {bool finalSigma = false, String? language}) {
+  final tailoring = _tailoring(language);
+  if (tailoring != _Tailoring.none) {
+    return _lowerTailored(
+      text.runes.toList(),
+      tailoring,
+      finalSigma: finalSigma,
+    );
+  }
   if (_isAscii(text)) return text.toLowerCase();
   if (!finalSigma || !text.contains('Σ')) {
     return _map(text, _lower, upper: false);
@@ -45,6 +175,7 @@ final Map<int, String> _upper = _parse(upperTable);
 final Map<int, String> _lower = _parse(lowerTable);
 final List<int> _cased = _parseRanges(casedRanges);
 final List<int> _caseIgnorable = _parseRanges(caseIgnorableRanges);
+final List<int> _softDotted = _parseRanges(softDottedRanges);
 
 bool _isAscii(String text) {
   for (var i = 0; i < text.length; i++) {

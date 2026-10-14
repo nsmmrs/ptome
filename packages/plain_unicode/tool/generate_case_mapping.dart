@@ -2,7 +2,8 @@
 /// files in `vendor/ucd/17.0.0`: each code point's full upper and lower
 /// case mapping (UnicodeData.txt, overridden by the unconditional entries
 /// of SpecialCasing.txt), and the Cased and Case_Ignorable properties
-/// (DerivedCoreProperties.txt) that the Final_Sigma rule needs.
+/// (DerivedCoreProperties.txt) that the Final_Sigma rule needs, and the
+/// Soft_Dotted property (PropList.txt) Lithuanian's mappings need.
 ///
 /// ```sh
 /// dart run tool/generate_case_mapping.dart
@@ -53,6 +54,20 @@ Future<void> main() async {
     final end = int.parse(ends.last, radix: 16);
     if (property == 'Cased') cased.add((start, end));
     if (property == 'Case_Ignorable') ignorable.add((start, end));
+  }
+  // Soft_Dotted (PropList.txt): the letters whose dot a combining dot
+  // above repeats (Lithuanian's case mapping removes it).
+  final softDotted = <(int, int)>[];
+  for (final raw in File('$ucd/PropList.txt').readAsLinesSync()) {
+    final line = raw.split('#').first.trim();
+    if (line.isEmpty) continue;
+    final fields = [for (final f in line.split(';')) f.trim()];
+    if (fields[1] != 'Soft_Dotted') continue;
+    final ends = fields[0].split('..');
+    softDotted.add((
+      int.parse(ends.first, radix: 16),
+      int.parse(ends.last, radix: 16),
+    ));
   }
 
   // Single code point mappings come in runs: consecutive or alternating
@@ -136,7 +151,10 @@ Future<void> main() async {
     ..writeln("const String casedRanges = '${ranges(cased)}';")
     ..writeln()
     ..writeln('/// Ranges of Case_Ignorable code points.')
-    ..writeln("const String caseIgnorableRanges = '${ranges(ignorable)}';");
+    ..writeln("const String caseIgnorableRanges = '${ranges(ignorable)}';")
+    ..writeln()
+    ..writeln('/// Ranges of Soft_Dotted code points (PropList.txt).')
+    ..writeln("const String softDottedRanges = '${ranges(softDotted)}';");
   const path = 'lib/src/case_data.g.dart';
   File('$root/$path').writeAsStringSync('$out');
   await Process.run(Platform.resolvedExecutable, ['format', '$root/$path']);

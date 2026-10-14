@@ -688,7 +688,7 @@ extension _Framed on PdfConverter {
                 .toDouble();
         var text = title;
         if (font.transform case final transform? when transform != 'none') {
-          text = transformText(text, transform);
+          text = transformText(text, transform, language: _language);
         }
         _out.add(
           CustomBox(

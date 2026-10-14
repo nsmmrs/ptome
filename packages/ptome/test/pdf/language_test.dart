@@ -10,6 +10,11 @@ import 'dart:io';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
+/// Poppler's pdftotext.
+final bool _poppler =
+    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
+    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+
 /// qpdf, which writes a PDF's streams uncompressed.
 final bool _qpdf = Process.runSync('which', ['qpdf']).exitCode == 0;
 
@@ -92,4 +97,33 @@ base:
     );
     expect(zh, ja);
   }, skip: _qpdf ? false : 'needs qpdf');
+
+  test("text_transform upper-cases in the text's language", () {
+    String text(String lang) {
+      final theme = File('${dir.path}/upper.yml')
+        ..writeAsStringSync(
+          'extends: default\nheading_text_transform: uppercase\n',
+        );
+      final pdf = File('${dir.path}/upper.pdf')
+        ..writeAsBytesSync(
+          asciidoc.convertToBytes(
+            '== istanbul\n\nmetin',
+            backend: Backend.pdf,
+            attributes: {
+              'pdf-theme': theme.path,
+              'lang': lang,
+              'reproducible': '',
+            },
+          ),
+        );
+      return Process.runSync('pdftotext', [
+            pdf.path,
+            '-',
+          ], stdoutEncoding: utf8).stdout
+          as String;
+    }
+
+    expect(text('tr'), contains('İSTANBUL'));
+    expect(text('en'), contains('ISTANBUL'));
+  }, skip: _poppler ? false : 'needs pdftotext');
 }

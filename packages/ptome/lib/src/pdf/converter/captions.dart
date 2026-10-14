@@ -67,7 +67,7 @@ extension _Captions on PdfConverter {
     if (category != null) font = _themeFont(captionKey, font);
     var text = title;
     if (font.transform case final transform? when transform != 'none') {
-      text = transformText(text, transform);
+      text = transformText(text, transform, language: _language);
     }
     // The modern engine's `<category>_caption_indent`: set in from the
     // left (a code block's caption over its padded code).

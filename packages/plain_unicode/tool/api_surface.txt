@@ -12,9 +12,9 @@ String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
 String get propertiesUnicodeVersion
-String lowerCase(String text, {bool finalSigma = false})
+String lowerCase(String text, {bool finalSigma = false, String? language})
 String scriptOf(int codePoint)
-String upperCase(String text)
+String upperCase(String text, {String? language})
 VerticalOrientation verticalOrientation(int codePoint)
 bool hasRightToLeft(String text)
 bool isCaseIgnorable(int rune)

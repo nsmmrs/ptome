@@ -185,6 +185,13 @@ enum Pagination
   static List<Pagination> values
   static Pagination firstFit
   static Pagination optimal
+enum PunctuationStyle
+  PunctuationStyle of(String? language)
+  static List<PunctuationStyle> values
+  static PunctuationStyle hongKong
+  static PunctuationStyle japanese
+  static PunctuationStyle mainland
+  static PunctuationStyle taiwan
 enum ShapingScope
   static List<ShapingScope> values
   static ShapingScope all

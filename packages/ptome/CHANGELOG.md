@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Chinese punctuation by region (FEAT-mcmc8f): mainland Chinese
+  sets a line-ending closing mark half wide (GB/T 15834), Hong Kong
+  squeezes brackets only, Taiwan none. Two full-width marks in a row are
+  squeezed again in embedded fonts (the squeeze had only reached the
+  engine's own fonts).
+- PDF: `text_transform: uppercase` and `lowercase` follow the text's
+  language: a Turkish or Azeri document's headings upper-case `i` to `İ`,
+  Lithuanian keeps its dot above (FEAT-8b8z4k).
 - PDF: the text's language chooses its fonts' forms (FEAT-7zjk4y): the
   document's `lang`, a block's own `lang` attribute (`[lang=zh-Hant]`)
   and, Ptome's syntax, a span's (`[lang=ja]#直#`, roles beside it) pick

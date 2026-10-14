@@ -568,7 +568,7 @@ extension _Sections on PdfConverter {
     font ??= _headingFont(level);
     var text = title;
     if (font.transform case final transform? when transform != 'none') {
-      text = transformText(text, transform);
+      text = transformText(text, transform, language: _language);
     }
     final styles = <String>{
       if (font.style == 'bold' || font.style == 'bold_italic') 'bold',

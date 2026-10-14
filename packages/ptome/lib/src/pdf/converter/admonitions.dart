@@ -12,7 +12,7 @@ extension _Admonitions on PdfConverter {
     labelFont = _themeFont('admonition_label_$type', labelFont);
     var label = PdfConverter._plain(node.caption ?? '');
     if (labelFont.transform case final transform? when transform != 'none') {
-      label = transformText(label, transform);
+      label = transformText(label, transform, language: _language);
     }
     // A font icon in place of the text label.
     final icon = _document.attr('icons') == 'font' && !node.hasAttr('icon')

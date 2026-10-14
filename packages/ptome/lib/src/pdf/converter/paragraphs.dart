@@ -455,7 +455,7 @@ extension _Paragraphs on PdfConverter {
       }
     }
     if (font.transform case final transform? when transform != 'none') {
-      content = transformText(content, transform);
+      content = transformText(content, transform, language: _language);
     }
     // A jump line (`[.jump]`, a cross reference alone; modern engine):
     // worded by `jump-template` with the target's page, known once the

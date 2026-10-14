@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Chinese punctuation (FEAT-mcmc8f): `PunctuationStyle` (Japanese,
+  mainland, Hong Kong, Taiwan) from `TextStyle.language`, CLREQ's
+  conventions: mainland China squeezes marks in a row and sets a closing
+  mark ending a line half wide (GB/T 15834-2011 5.1.10, `halt` in the
+  text's language); Hong Kong squeezes brackets only; Taiwan none. The
+  half-width forms are found in any OpenType font (they had been in
+  `OpenTypeShaper` fonts alone).
+
 - Language systems (FEAT-7zjk4y): `TextStyle.language` (BCP 47) maps to
   OpenType language system tags as HarfBuzz 14.6 maps them (its
   registry tables and multi-subtag rules, generated from

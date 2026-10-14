@@ -930,7 +930,7 @@ extension _DocumentParts on PdfConverter {
       if (role != null) font = _themeFont('role_$role', font);
       var content = text;
       if (font.transform case final transform? when transform != 'none') {
-        content = transformText(content, transform);
+        content = transformText(content, transform, language: _language);
       }
       final left = (_keys(category).number('margin_left') ?? 0).toDouble();
       final right = (_keys(category).number('margin_right') ?? 0).toDouble();
@@ -1295,7 +1295,7 @@ extension _DocumentParts on PdfConverter {
         final font = _themeFont('toc_h$entryLevel', toc);
         title = title.replaceAll(RegExp(r'<(?:a\b[^>]*|/a)>'), '');
         if (font.transform case final transform? when transform != 'none') {
-          title = transformText(title, transform);
+          title = transformText(title, transform, language: _language);
         }
         final anchor = _sectionAnchor(entry);
         final placeholder = _fonts

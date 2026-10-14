@@ -21,7 +21,7 @@ library;
 
 import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/font.dart';
-import 'package:plain_typesetting/src/shaping.dart';
+import 'package:plain_typesetting/src/shaping.dart' show shapeInLanguage;
 import 'package:plain_unicode/plain_unicode.dart'
     show GeneralCategory, generalCategory, isMark, lineBreakOffsets, scriptOf;
 
@@ -87,24 +87,25 @@ bool _starts(List<ShapedGlyph> glyphs, int i) {
   return c != null && !isMark(c) && glyphs[i].advance != 0;
 }
 
-final Expando<Map<int, ShapedGlyph?>> _halfWidths = Expando();
+final Expando<Map<(int, String?), ShapedGlyph?>> _halfWidths = Expando();
 
-/// [glyph] (of punctuation [c]) set half wide by [style]'s font's `halt`,
-/// or null where the font has no half-width form for it.
+/// [glyph] (of punctuation [c]) set half wide by [style]'s font's `halt`
+/// (in the text's language, its own form's), or null where the font has
+/// no half-width form for it.
 ShapedGlyph? _half(TextStyle style, ShapedGlyph glyph, int c) {
-  final cache = _halfWidths[style.font] ??= {};
-  final half = cache.putIfAbsent(c, () {
-    final font = style.font;
+  final font = style.font;
+  if (font is! OpenTypeTextFont) return null;
+  final cache = _halfWidths[font] ??= {};
+  final half = cache.putIfAbsent((c, style.language), () {
     // (Shaped in full, as text with Han or kana is: punctuation alone
     // would take the simple path, without the positioning `halt` is.)
-    if (font is! OpenTypeShaper) return null;
-    List<ShapedGlyph> shape(Set<String> features) => shapeComplex(
-      font,
+    List<ShapedGlyph> shape(Set<String> features) => shapeInLanguage(
+      font.font,
       String.fromCharCode(c),
+      language: style.language ?? '',
       kerning: style.kerning,
       ligatures: style.ligatures,
       features: features,
-      rightToLeft: false,
     );
     final full = shape(style.features);
     final halt = shape({...style.features, 'halt'});
@@ -119,11 +120,48 @@ ShapedGlyph? _half(TextStyle style, ShapedGlyph glyph, int c) {
   );
 }
 
+/// How full-width punctuation is set, by region (JLREQ; CLREQ 2.1.2,
+/// 6.3.2): the conventions differ by region more than by script.
+enum PunctuationStyle {
+  /// Japanese (JLREQ): marks in the corner, two in a row squeezed to an
+  /// em and a half.
+  japanese,
+
+  /// Mainland China (`zh`, `zh-Hans`, `zh-CN`, `zh-SG`): marks in the
+  /// corner, two in a row squeezed to an em and a half, a mark ending a
+  /// line set half wide (GB/T 15834-2011 5.1.10).
+  mainland,
+
+  /// Hong Kong (`zh-HK`, `zh-MO`, `yue`): pause and stop marks centered
+  /// and whole; brackets squeezed.
+  hongKong,
+
+  /// Taiwan (`zh-TW`, `zh-Hant`): marks centered, none squeezed.
+  taiwan;
+
+  /// The style of [language] (BCP 47): Japanese's but for Chinese.
+  static PunctuationStyle of(String? language) {
+    final subtags = (language ?? '').toLowerCase().split(RegExp('[-_]'));
+    final primary = subtags.first;
+    if (primary == 'yue') return hongKong;
+    if (primary != 'zh' && primary != 'cmn') return japanese;
+    if (subtags.contains('hk') || subtags.contains('mo')) return hongKong;
+    if (subtags.contains('tw')) return taiwan;
+    if (subtags.contains('hant')) return taiwan;
+    return mainland;
+  }
+}
+
+/// Whether [c] is a bracket or a quotation mark (not a pause or stop).
+bool _isBracket(int c) =>
+    _isPunctuation(c) && !const {0x3001, 0x3002, 0xff0c, 0xff0e}.contains(c);
+
 /// [glyphs] (a left-to-right run's, in [style]) with their punctuation
-/// squeezed and a quarter em between Han or kana and Latin letters or
-/// digits.
+/// squeezed as the text's region has it ([PunctuationStyle]) and a
+/// quarter em between Han or kana and Latin letters or digits.
 List<ShapedGlyph> eastAsianSpacing(List<ShapedGlyph> glyphs, TextStyle style) {
   if (!glyphs.any((g) => g.text.runes.any(isSpaceless))) return glyphs;
+  final punctuation = PunctuationStyle.of(style.language);
   final out = [...glyphs];
   const quarter = 250.0;
   int? previousStart;
@@ -134,10 +172,15 @@ List<ShapedGlyph> eastAsianSpacing(List<ShapedGlyph> glyphs, TextStyle style) {
     if (p == null) continue;
     final a = _last(out[p])!;
     final b = _first(out[i])!;
-    // Punctuation squeezed.
-    if (_isClosing(a) && _isPunctuation(b)) {
+    // Punctuation squeezed (Hong Kong's brackets alone, none in Taiwan).
+    final squeezes = switch (punctuation) {
+      PunctuationStyle.taiwan => false,
+      PunctuationStyle.hongKong => _isBracket(a) && _isBracket(b),
+      _ => true,
+    };
+    if (squeezes && _isClosing(a) && _isPunctuation(b)) {
       if (_half(style, out[p], a) case final half?) out[p] = half;
-    } else if (_isOpening(a) && _isOpening(b)) {
+    } else if (squeezes && _isOpening(a) && _isOpening(b)) {
       if (_half(style, out[i], b) case final half?) out[i] = half;
     }
     // A quarter em between Han or kana and Latin, after the glyphs
@@ -148,6 +191,24 @@ List<ShapedGlyph> eastAsianSpacing(List<ShapedGlyph> glyphs, TextStyle style) {
     }
   }
   return out;
+}
+
+/// [glyphs] (a line's last run, in [style]) with a full-width mark ending
+/// the line set half wide where the text's region does so (mainland
+/// China: GB/T 15834-2011 5.1.10, CLREQ 6.3.2.3).
+List<ShapedGlyph> eastAsianLineEnd(List<ShapedGlyph> glyphs, TextStyle style) {
+  if (PunctuationStyle.of(style.language) != PunctuationStyle.mainland) {
+    return glyphs;
+  }
+  for (var i = glyphs.length - 1; i >= 0; i--) {
+    if (!_starts(glyphs, i)) continue;
+    final c = _first(glyphs[i])!;
+    if (!_isClosing(c)) return glyphs;
+    final half = _half(style, glyphs[i], c);
+    if (half == null) return glyphs;
+    return [...glyphs]..[i] = half;
+  }
+  return glyphs;
 }
 
 /// The places in [glyphs] (a left-to-right run's) a justified line

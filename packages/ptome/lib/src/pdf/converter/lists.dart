@@ -402,7 +402,7 @@ extension _Lists on PdfConverter {
   TextBox _term(ListItem term, _FontState font) {
     var text = term.text ?? '';
     if (font.transform case final transform? when transform != 'none') {
-      text = transformText(text, transform);
+      text = transformText(text, transform, language: _language);
     }
     return _textBox(
       text,
@@ -533,7 +533,7 @@ extension _Lists on PdfConverter {
     // Federal Register caption, `AGENCY:`.)
     var text = '${term.text ?? ''}${_s('description_list_term_suffix') ?? ''}';
     if (termFont.transform case final transform? when transform != 'none') {
-      text = transformText(text, transform);
+      text = transformText(text, transform, language: _language);
     }
     final styles = PdfConverter._stylesOf(termFont);
     if (styles.contains('italic')) text = '<em>$text</em>';

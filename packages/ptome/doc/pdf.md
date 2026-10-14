@@ -236,6 +236,11 @@ Marathi and Nepali Devanagari (`mr`, `ne`); Urdu and Sindhi digits
 (`ur`, `sd`). Not under `asciidoctor-compat`, where Asciidoctor's text is
 set as Prawn sets it.
 
+The theme's `text_transform` (`uppercase`, `lowercase`) follows the
+text's language where Unicode tailors case mapping: Turkish and Azeri
+(`tr`, `az`) upper-case `i` to `İ` and lower-case `I` to `ı`; Lithuanian
+(`lt`) keeps the dot of `i` under an accent.
+
 Thai, Lao, Khmer and Burmese are written without spaces between words,
 so a line may break between any two of a run's words, found as ICU 78.3
 finds them: its word lists (plain_unicode's `dictionaryBreaks`, checked
@@ -253,6 +258,16 @@ characters; and no line starts with a closing mark, a full stop, small
 kana or the prolonged sound mark, nor ends with an opening bracket
 (UAX #14). Thai, Lao, Khmer and Burmese lines stretch between their
 words. Modern engine.
+
+Chinese punctuation follows the document's (or block's, or span's)
+region, as CLREQ describes it: in mainland Chinese (`zh`, `zh-Hans`,
+`zh-CN`, `zh-SG`) marks sit in the character's corner, two in a row are
+squeezed as in Japanese, and a closing mark or stop ending a line is set
+half wide (GB/T 15834-2011 5.1.10); in Hong Kong (`zh-HK`, `zh-MO`,
+`yue`) commas and stops sit centered and whole, only brackets squeezed;
+in Taiwan (`zh-TW`, `zh-Hant`) every mark stays centered and full width.
+A Noto CJK font gives each region its own forms of the marks by the
+language (above). Not under `asciidoctor-compat`.
 
 Ruby (furigana, zhuyin) is Ptome's `ruby:` macro: `ruby:漢字[かんじ]` sets
 the reading over the whole base (group ruby); readings separated by

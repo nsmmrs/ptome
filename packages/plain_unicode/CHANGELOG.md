@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Case mapping by language (FEAT-8b8z4k): `upperCase` and `lowerCase`
+  take a `language` (BCP 47) and apply SpecialCasing.txt's tailorings:
+  Turkish and Azeri dotted and dotless i (`i` to `İ`, `I` to `ı`, a
+  capital I with a dot above to `i`), Lithuanian's dot above kept under
+  accents and removed after a soft-dotted letter (Soft_Dotted from
+  PropList.txt, now vendored). Checked against ICU 78.3's
+  `u_strToUpper`/`u_strToLower` on random text (`tool/oracles/icu`).
+
 - Word breaking without spaces (FEAT-hpr7b0): `lineBreaks` and
   `lineBreakOffsets` break runs of Thai, Lao, Khmer and Myanmar between
   their words, as ICU 78.3's dictionary break engines do (its word lists,

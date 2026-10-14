@@ -457,7 +457,7 @@ extension _RunningContent on PdfConverter {
           dropLines: true,
         );
         if (font.transform case final transform? when transform != 'none') {
-          content = transformText(content, transform);
+          content = transformText(content, transform, language: _language);
         }
       }
       if (content == null || content.isEmpty) continue;

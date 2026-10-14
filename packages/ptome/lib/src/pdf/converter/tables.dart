@@ -191,7 +191,11 @@ extension _Tables on PdfConverter {
               text: _hyphenated(
                 transform == null || transform == 'none'
                     ? cell.text.trim()
-                    : transformText(cell.text.trim(), transform),
+                    : transformText(
+                        cell.text.trim(),
+                        transform,
+                        language: _language,
+                      ),
                 cell.attr('halign') ?? 'left',
               ),
               font: font,
@@ -302,7 +306,7 @@ extension _Tables on PdfConverter {
         if (content == null && blocks == null) {
           var text = cell.text.trim();
           if (transform != null && transform != 'none') {
-            text = transformText(text, transform);
+            text = transformText(text, transform, language: _language);
           }
           text = _hyphenated(text, cell.attr('halign') ?? 'left');
           if (_cjkLineBreaks) text = PdfConverter._breakCjk(text);

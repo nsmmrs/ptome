@@ -158,4 +158,43 @@ void main() {
       );
     });
   });
+
+  group('punctuation by region (CLREQ)', () {
+    double width(String text, String language) {
+      final [line] = const FirstFitLineBreaker().breakLines(
+        Paragraph([TextRun(text, TextStyle(_jp, 10, language: language))]),
+        (_) => 500,
+      );
+      return _width(line);
+    }
+
+    test('mainland and Japanese squeeze two marks in a row', () {
+      expect(width('括弧」（丸', 'zh-Hans'), closeTo(45, 1e-6));
+      expect(width('括弧」（丸', 'ja'), closeTo(45, 1e-6));
+    });
+
+    test('Taiwan squeezes none', () {
+      expect(width('括弧」（丸', 'zh-TW'), closeTo(50, 1e-6));
+      expect(width('括弧」（丸', 'zh-Hant'), closeTo(50, 1e-6));
+    });
+
+    test('Hong Kong squeezes brackets, not pauses and stops', () {
+      expect(width('括弧」（丸', 'zh-HK'), closeTo(45, 1e-6));
+      expect(width('括、（丸', 'zh-HK'), closeTo(40, 1e-6));
+      expect(width('括、（丸', 'zh-Hans'), closeTo(35, 1e-6));
+    });
+
+    test('a mark ending a mainland line is half wide', () {
+      expect(width('括弧。', 'zh-Hans'), closeTo(25, 1e-6));
+      expect(width('括弧。', 'ja'), closeTo(30, 1e-6));
+    });
+
+    test('the style of a language', () {
+      expect(PunctuationStyle.of('zh'), PunctuationStyle.mainland);
+      expect(PunctuationStyle.of('zh-Hant-HK'), PunctuationStyle.hongKong);
+      expect(PunctuationStyle.of('zh-Hant'), PunctuationStyle.taiwan);
+      expect(PunctuationStyle.of('yue'), PunctuationStyle.hongKong);
+      expect(PunctuationStyle.of('ko'), PunctuationStyle.japanese);
+    });
+  });
 }

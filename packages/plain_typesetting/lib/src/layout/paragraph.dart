@@ -2353,6 +2353,22 @@ Line _line(
         throw StateError('page references are resolved before breaking');
     }
   }
+  // (East Asian: a full-width mark ending the line set half wide where
+  // the text's region does so.)
+  if (paragraph.eastAsian && shaped.isNotEmpty && !directions.last) {
+    final (content, text, glyphs, width) = shaped.last;
+    if (content is TextRun && content.slotWidth == null) {
+      final trimmed = eastAsianLineEnd(glyphs, content.style);
+      if (!identical(trimmed, glyphs)) {
+        final narrower =
+            width -
+            content.style.widthOf(glyphs) +
+            content.style.widthOf(trimmed);
+        natural += narrower - width;
+        shaped.last = (content, text, trimmed, narrower);
+      }
+    }
+  }
   // (The tracking after the line's last character is no part of it: the
   // line ends where its last letter does, aligned so.)
   if (shaped.lastOrNull case (final TextRun run, _, final glyphs, _)
