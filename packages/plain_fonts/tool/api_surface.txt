@@ -226,6 +226,7 @@ final class OpenTypeLayout
   bool hasGlyphClasses
   bool hasLayout
   bool hasScript(String script)
+  bool wouldSubstitute(int index, List<int> glyphs, {bool zeroContext = false})
   int glyphClass(int glyph)
   int glyphProps(int glyph)
   int lookupCount({bool positioning = false})

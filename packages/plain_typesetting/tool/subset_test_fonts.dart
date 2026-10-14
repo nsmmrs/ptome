@@ -17,7 +17,10 @@ void main(List<String> args) {
   final fixtures = Directory('test/fixtures/scripts');
   for (final line in File('${fixtures.path}/fonts.txt').readAsLinesSync()) {
     if (line.startsWith('#') || line.trim().isEmpty) continue;
-    final [font, from, lines, _] = [for (final f in line.split('|')) f.trim()];
+    final fields = [for (final f in line.split('|')) f.trim()];
+    final [font, from, lines, _] = fields.sublist(0, 4);
+    // (An optional fifth field renames script tags: `dev2=deva`.)
+    final retag = fields.length > 4 ? fields[4] : null;
     final text = StringBuffer(' ◌');
     for (final name in lines.split(' ')) {
       text.write(File('${fixtures.path}/$name').readAsStringSync());
@@ -40,6 +43,36 @@ void main(List<String> args) {
     ]);
     if (result.exitCode != 0) {
       throw StateError('pyftsubset $from: ${result.stderr}');
+    }
+    if (retag != null) {
+      final [from, to] = retag.split('=');
+      final script = File('${Directory.systemTemp.path}/retag.py')
+        ..writeAsStringSync('''
+import sys
+from fontTools.ttLib import TTFont
+f = TTFont(sys.argv[1])
+for table in ('GSUB', 'GPOS'):
+    if table in f:
+        for record in f[table].table.ScriptList.ScriptRecord:
+            if record.ScriptTag == sys.argv[2]:
+                record.ScriptTag = sys.argv[3]
+        f[table].table.ScriptList.ScriptRecord.sort(key=lambda r: r.ScriptTag)
+f.save(sys.argv[1])
+''');
+      final renamed = Process.runSync('uv', [
+        'run',
+        '-q',
+        '--with',
+        'fonttools',
+        'python',
+        script.path,
+        'test/fonts/$font',
+        from.padRight(4),
+        to.padRight(4),
+      ]);
+      if (renamed.exitCode != 0) {
+        throw StateError('retag $font: ${renamed.stderr}');
+      }
     }
     stdout.writeln(
       'test/fonts/$font: ${File('test/fonts/$font').lengthSync()} bytes',

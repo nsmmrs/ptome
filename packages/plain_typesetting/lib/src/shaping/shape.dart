@@ -7,6 +7,7 @@ library;
 
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/src/shaping/arabic.dart';
+import 'package:plain_typesetting/src/shaping/indic.dart';
 import 'package:plain_typesetting/src/shaping/normalize.dart';
 import 'package:plain_typesetting/src/shaping/plan.dart';
 import 'package:plain_typesetting/src/shaping/scripts.dart';
@@ -54,6 +55,7 @@ OpenTypeLayout layoutOf(OpenTypeFont font) =>
 Shaper _shaperOf(ShaperKind kind) => switch (kind) {
   ShaperKind.arabic => ArabicShaper(),
   ShaperKind.hebrew => HebrewShaper(),
+  ShaperKind.indic => IndicShaper(),
   _ => StandardShaper(),
 };
 

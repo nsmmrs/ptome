@@ -212,6 +212,7 @@ fonts (plain_typesetting's `test/harfbuzz_scripts_test.dart`).
 | Armenian, Georgian, Coptic, Ge'ez (Ethiopic) | Classical and modern Armenian, Georgian, Coptic (overlined nomina sacra), Ge'ez and Amharic | Shaped in full (contextual numerals, ligatures). |
 | Arabic, Hebrew | Arabic, Persian, Urdu; Hebrew with points and cantillation | Joining forms, right to left (below). |
 | Syriac | Classical Syriac (the Peshitta) in Estrangela, Eastern and Western | Joining forms with Alaph's and Dalath-Rish's own, vowel points, right to left. |
+| Devanagari, Bengali, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada, Malayalam | Sanskrit (Vedic accents too), Pali, Hindi, Marathi, Nepali, Bengali, Punjabi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam | HarfBuzz's Indic shaper: syllables, the base consonant, pre-base matras, reph, conjuncts and half forms; fonts of the second specification (`dev2`) and of the first (`deva`); a dotted circle where a syllable is broken or a vowel sequence is prohibited. |
 
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its

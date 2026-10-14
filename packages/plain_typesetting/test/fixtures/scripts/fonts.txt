@@ -1,5 +1,6 @@
 # Each test font (in test/fonts), the font it is subset from (tool/subset_test_fonts.dart),
-# the sample lines it shapes, and their direction.
+# the sample lines it shapes, their direction, and optionally script tags renamed
+# (dev2=deva: the font as an old-specification one).
 notoserif-scripts.ttf | NotoSerif-Regular.ttf | cyrillic.txt greek.txt vietnamese.txt | ltr
 notosansarmenian-subset.ttf | NotoSansArmenian-Regular.ttf | armenian.txt | ltr
 notosansgeorgian-subset.ttf | NotoSansGeorgian-Regular.ttf | georgian.txt | ltr
@@ -8,3 +9,16 @@ notosansethiopic-subset.ttf | NotoSansEthiopic-Regular.ttf | ethiopic.txt | ltr
 notosanssyriac-subset.ttf | NotoSansSyriac-Regular.ttf | syriac.txt | rtl
 notosanssyriaceastern-subset.ttf | NotoSansSyriacEastern-Regular.ttf | syriac.txt | rtl
 notosanssyriacwestern-subset.ttf | NotoSansSyriacWestern-Regular.ttf | syriac.txt | rtl
+notosansdevanagari-subset.ttf | NotoSansDevanagari-Regular.ttf | devanagari.txt | ltr
+notoserifdevanagari-subset.ttf | NotoSerifDevanagari-Regular.ttf | devanagari.txt | ltr
+notosansdevanagari-oldspec.ttf | NotoSansDevanagari-Regular.ttf | devanagari.txt | ltr | dev2=deva
+notosansbengali-subset.ttf | NotoSansBengali-Regular.ttf | bengali.txt | ltr
+notosansbengali-oldspec.ttf | NotoSansBengali-Regular.ttf | bengali.txt | ltr | bng2=beng
+notosansgurmukhi-subset.ttf | NotoSansGurmukhi-Regular.ttf | gurmukhi.txt | ltr
+notosansgujarati-subset.ttf | NotoSansGujarati-Regular.ttf | gujarati.txt | ltr
+notosansoriya-subset.ttf | NotoSansOriya-Regular.ttf | oriya.txt | ltr
+notosanstamil-subset.ttf | NotoSansTamil-Regular.ttf | tamil.txt | ltr
+notosanstelugu-subset.ttf | NotoSansTelugu-Regular.ttf | telugu.txt | ltr
+notosanskannada-subset.ttf | NotoSansKannada-Regular.ttf | kannada.txt | ltr
+notosansmalayalam-subset.ttf | NotoSansMalayalam-Regular.ttf | malayalam.txt | ltr
+notosansmalayalam-oldspec.ttf | NotoSansMalayalam-Regular.ttf | malayalam.txt | ltr | mlm2=mlym

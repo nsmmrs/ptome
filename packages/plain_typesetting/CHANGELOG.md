@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- The Indic shaper (HarfBuzz 14.6's): Devanagari, Bengali, Gurmukhi,
+  Gujarati, Oriya, Tamil, Telugu, Kannada and Malayalam shape glyph for
+  glyph as HarfBuzz does, in fonts of the second and the first
+  specification; the syllable grammars scanned as Ragel scans them, dotted
+  circles in broken syllables and prohibited vowel sequences. Its tables
+  are generated from HarfBuzz's (`tool/harfbuzz_tables.dart`). The script
+  tests use a full HarfBuzz build as their oracle when it is built
+  (`tool/oracles/harfbuzz-native`).
 - Shaping is HarfBuzz 14.6's pipeline (`lib/src/shaping/`): the plan
   (the script's tags, the shaper, the features in their stages with
   pauses), normalization (decomposed and recomposed as the font has the

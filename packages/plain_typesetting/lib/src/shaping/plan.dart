@@ -138,6 +138,10 @@ final class PlanBuilder {
   void enableFeature(String tag, {int flags = 0, int value = 1}) =>
       addFeature(tag, flags: flags | FeatureFlags.global, value: value);
 
+  /// Turns [tag] off.
+  void disableFeature(String tag) =>
+      addFeature(tag, flags: FeatureFlags.global, value: 0);
+
   /// Ends a GSUB stage, [pause] to run after it.
   void addGsubPause([PauseFunction? pause]) => _addPause(0, pause);
 
@@ -260,6 +264,8 @@ final class PlanBuilder {
 
     final lookups = <List<LayoutLookup>>[[], []];
     final stages = <List<StageMap>>[[], []];
+    // Each GSUB stage's lookups, and each feature's GSUB stage.
+    final stageRanges = <int, (int, int)>{};
     for (var table = 0; table < 2; table++) {
       final out = lookups[table];
       final count = layout.lookupCount(positioning: table == 1);
@@ -326,6 +332,7 @@ final class PlanBuilder {
           }
           out.replaceRange(last, out.length, merged);
         }
+        if (table == 0) stageRanges[stage] = (last, out.length);
         last = out.length;
         if (stageIndex < _stages[table].length &&
             _stages[table][stageIndex].$1 == stage) {
@@ -335,6 +342,10 @@ final class PlanBuilder {
       }
     }
     return ShapePlan._(
+      featureStages: {
+        for (final (map, info, _) in features) map.tag: info.stage[0],
+      },
+      stageRanges: stageRanges,
       globalMask: mask,
       features: {for (final (map, _, _) in features) map.tag: map},
       lookups: lookups,
@@ -351,6 +362,8 @@ final class PlanBuilder {
 /// table's lookups by stage.
 final class ShapePlan {
   new _({
+    required this._featureStages,
+    required this._stageRanges,
     required this.globalMask,
     required this.features,
     required this.lookups,
@@ -358,6 +371,18 @@ final class ShapePlan {
     required this.gsubScript,
     required this.gposScript,
   });
+
+  final Map<String, int> _featureStages;
+  final Map<int, (int, int)> _stageRanges;
+
+  /// The GSUB lookups of the stage [tag] is applied in (HarfBuzz's
+  /// `get_stage_lookups` of `get_feature_stage`).
+  List<LayoutLookup> stageLookups(String tag) {
+    final stage = _featureStages[tag];
+    if (stage == null) return const [];
+    final (start, end) = _stageRanges[stage] ?? (0, 0);
+    return lookups[0].sublist(start, end);
+  }
 
   /// The mask every glyph starts with: the global bit and the global
   /// features' default values.

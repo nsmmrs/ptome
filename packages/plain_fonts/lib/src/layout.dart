@@ -518,6 +518,144 @@ final class OpenTypeLayout {
     return t.u16(t.u16(8));
   }
 
+  /// Whether GSUB lookup [index] would substitute [glyphs] as a whole
+  /// (HarfBuzz's `hb_ot_layout_lookup_would_substitute`): a single,
+  /// multiple or alternate substitution of one glyph, a ligature of them
+  /// all, a contextual rule whose input is them all (with [zeroContext],
+  /// a chained rule only without backtrack or lookahead).
+  bool wouldSubstitute(
+    int index,
+    List<int> glyphs, {
+    bool zeroContext = false,
+  }) {
+    final t = _gsub;
+    if (t == null || glyphs.isEmpty) return false;
+    final lookup = _lookup(t, index, positioning: false);
+    int cov(int at, int glyph) => _coverage(t, at, glyph);
+    int cls(int at, int glyph) => _classOf(t, at, glyph);
+    bool input(int count, bool Function(int k, int glyph) matches) {
+      if (count != glyphs.length) return false;
+      for (var k = 1; k < count; k++) {
+        if (!matches(k, glyphs[k])) return false;
+      }
+      return true;
+    }
+
+    for (final sub in lookup.subtables) {
+      final format = t.u16(sub);
+      final first = glyphs.first;
+      switch (lookup.type) {
+        case 1 || 2 || 3 || 8:
+          if (glyphs.length == 1 && cov(sub + t.u16(sub + 2), first) >= 0) {
+            return true;
+          }
+        case 4:
+          final index = cov(sub + t.u16(sub + 2), first);
+          if (index < 0) continue;
+          final set = sub + t.u16(sub + 6 + 2 * index);
+          for (var l = 0; l < t.u16(set); l++) {
+            final ligature = set + t.u16(set + 2 + 2 * l);
+            if (input(
+              t.u16(ligature + 2),
+              (k, g) => g == t.u16(ligature + 2 + 2 * k),
+            )) {
+              return true;
+            }
+          }
+        case 5 || 6:
+          final chained = lookup.type == 6;
+          if (format == 1) {
+            final index = cov(sub + t.u16(sub + 2), first);
+            if (index < 0) continue;
+            final set = sub + t.u16(sub + 6 + 2 * index);
+            for (var r = 0; r < t.u16(set); r++) {
+              final rule = set + t.u16(set + 2 + 2 * r);
+              if (!chained) {
+                if (input(
+                  t.u16(rule),
+                  (k, g) => g == t.u16(rule + 4 + 2 * (k - 1)),
+                )) {
+                  return true;
+                }
+              } else {
+                final backCount = t.u16(rule);
+                final inputAt = rule + 2 + 2 * backCount;
+                final inputCount = t.u16(inputAt);
+                final aheadCount = t.u16(inputAt + 2 + 2 * (inputCount - 1));
+                if ((!zeroContext || (backCount == 0 && aheadCount == 0)) &&
+                    input(
+                      inputCount,
+                      (k, g) => g == t.u16(inputAt + 2 + 2 * (k - 1)),
+                    )) {
+                  return true;
+                }
+              }
+            }
+          } else if (format == 2) {
+            if (cov(sub + t.u16(sub + 2), first) < 0) continue;
+            final classes = sub + t.u16(sub + (chained ? 6 : 4));
+            final c = cls(classes, first);
+            final setCount = t.u16(sub + (chained ? 10 : 6));
+            if (c >= setCount) continue;
+            final setOffset = t.u16(sub + (chained ? 12 : 8) + 2 * c);
+            if (setOffset == 0) continue;
+            final set = sub + setOffset;
+            for (var r = 0; r < t.u16(set); r++) {
+              final rule = set + t.u16(set + 2 + 2 * r);
+              if (!chained) {
+                if (input(
+                  t.u16(rule),
+                  (k, g) => cls(classes, g) == t.u16(rule + 4 + 2 * (k - 1)),
+                )) {
+                  return true;
+                }
+              } else {
+                final backCount = t.u16(rule);
+                final inputAt = rule + 2 + 2 * backCount;
+                final inputCount = t.u16(inputAt);
+                final aheadCount = t.u16(inputAt + 2 + 2 * (inputCount - 1));
+                if ((!zeroContext || (backCount == 0 && aheadCount == 0)) &&
+                    input(
+                      inputCount,
+                      (k, g) =>
+                          cls(classes, g) == t.u16(inputAt + 2 + 2 * (k - 1)),
+                    )) {
+                  return true;
+                }
+              }
+            }
+          } else if (format == 3) {
+            if (!chained) {
+              final count = t.u16(sub + 2);
+              if (count > 0 &&
+                  cov(sub + t.u16(sub + 6), first) >= 0 &&
+                  input(
+                    count,
+                    (k, g) => cov(sub + t.u16(sub + 6 + 2 * k), g) >= 0,
+                  )) {
+                return true;
+              }
+            } else {
+              final backCount = t.u16(sub + 2);
+              final inputAt = sub + 4 + 2 * backCount;
+              final inputCount = t.u16(inputAt);
+              final aheadCount = t.u16(inputAt + 2 + 2 * inputCount);
+              if ((!zeroContext || (backCount == 0 && aheadCount == 0)) &&
+                  inputCount > 0 &&
+                  cov(sub + t.u16(inputAt + 2), first) >= 0 &&
+                  input(
+                    inputCount,
+                    (k, g) => cov(sub + t.u16(inputAt + 2 + 2 * k), g) >= 0,
+                  )) {
+                return true;
+              }
+            }
+          }
+      }
+    }
+    return false;
+  }
+
   /// Whether [script] (an OpenType script tag) has a script table of its
   /// own in the GSUB or GPOS table.
   bool hasScript(String script) {

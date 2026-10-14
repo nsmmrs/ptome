@@ -37,6 +37,12 @@ const List<(String, String, String, String)> _vendored = [
     'plain_fonts/vendor/harfbuzz/COPYING',
   ),
   (
+    'plain_typesetting',
+    "Microsoft's Universal Shaping Engine data",
+    'the vowel sequences the syllabic shapers mark with a dotted circle',
+    'plain_typesetting/vendor/harfbuzz/ms-use/COPYING',
+  ),
+  (
     'plain_highlighting',
     'highlight.js styles',
     "the highlighting themes' colours",

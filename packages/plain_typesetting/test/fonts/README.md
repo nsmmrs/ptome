@@ -38,3 +38,13 @@ whose README says how each was made):
   `notosanssyriacwestern-subset.ttf`: Noto Sans Syriac (Estrangela),
   Syriac Eastern and Syriac Western, subset the same way (SIL Open Font
   License 1.1; © 2022 The Noto Project Authors).
+- `notosansdevanagari-subset.ttf`, `notoserifdevanagari-subset.ttf`,
+  `notosansbengali-subset.ttf`, `notosansgurmukhi-subset.ttf`,
+  `notosansgujarati-subset.ttf`, `notosansoriya-subset.ttf`,
+  `notosanstamil-subset.ttf`, `notosanstelugu-subset.ttf`,
+  `notosanskannada-subset.ttf`, `notosansmalayalam-subset.ttf`: the Noto
+  Sans (and Serif) fonts of the Indic scripts, subset the same way; the
+  `-oldspec` ones the same fonts with their script tag renamed to the old
+  specification's (`dev2` to `deva`, `bng2` to `beng`, `mlm2` to `mlym`),
+  for the shaper's old-specification rules (SIL Open Font License 1.1;
+  © 2022 The Noto Project Authors).

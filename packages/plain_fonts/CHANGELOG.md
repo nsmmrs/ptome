@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `OpenTypeLayout.wouldSubstitute`: whether a GSUB lookup would
+  substitute a glyph sequence as a whole (HarfBuzz's
+  `hb_ot_layout_lookup_would_substitute`), for the Indic shaper.
 - `OpenTypeLayout` matches as HarfBuzz does: each glyph has its
   properties (`GlyphProps`: its class from GDEF, or as its shaper guesses
   it, and what substitutions made it), its syllable and what its

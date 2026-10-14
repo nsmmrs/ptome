@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: the Indic scripts (Devanagari for Sanskrit, Pali, Hindi and
+  Marathi; Bengali, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada,
+  Malayalam) shape as HarfBuzz shapes them (FEAT-g4rmb9); Syriac too
+  (FEAT-3765z4).
 - PDF: text is shaped as HarfBuzz 14.6 shapes it, in plain_typesetting's
   port of its pipeline (EPIC-yz0yqt): Cyrillic, Greek (polytonic,
   decomposed accents composed or placed), Vietnamese, Armenian, Georgian,

@@ -46,7 +46,10 @@ final lines = const KnuthPlassLineBreaker().breakLines(
 Tests lay out paragraphs, pages and formulas on a recording canvas, and,
 with the `tools` tag, compare the shaper with HarfBuzz (`tool/oracles/`):
 every run of the test text, with ligatures and kerning on and off and the
-`onum` and `smcp` features, shapes as HarfBuzz shapes it in four fonts.
+`onum` and `smcp` features, shapes as HarfBuzz shapes it in four fonts;
+and each script's sample lines (`test/fixtures/scripts`) shape as HarfBuzz
+14.6.0 shapes them in subset Noto fonts, against a full HarfBuzz build
+(`tool/oracles/harfbuzz-native/setup.sh`) or harfbuzzjs.
 plain_pdf's tests set the same layouts in PDF, byte for byte against
 golden files.
 
@@ -60,3 +63,7 @@ Status: in development; not published to pub.dev.
 MIT; see [LICENSE](LICENSE). The shaper follows HarfBuzz's (its
 features, their order and its Arabic shaper's rules), under HarfBuzz's
 "Old MIT" licence: see [vendor/harfbuzz/COPYING](vendor/harfbuzz/COPYING).
+The shapers' category tables are generated from HarfBuzz 14.6.0's
+(`tool/harfbuzz_tables.dart`), the vowel constraints from Microsoft's
+Universal Shaping Engine data under its MIT licence
+([vendor/harfbuzz/ms-use/COPYING](vendor/harfbuzz/ms-use/COPYING)).

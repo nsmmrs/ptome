@@ -5,3 +5,4 @@ pubspec.lock
 .DS_Store
 node_modules/
 node_modules/
+tool/oracles/harfbuzz-native/hb-oracle
