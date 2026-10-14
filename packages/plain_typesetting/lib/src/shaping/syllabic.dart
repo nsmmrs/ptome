@@ -169,16 +169,25 @@ final class SyllableGrammar {
   /// [LayoutGlyph.syllable] its syllable's serial (1 to 15, again and
   /// again) times 16 plus its type; [categoryOf] gives each glyph's
   /// category. Whether a syllable of type [broken] was found.
+  ///
+  /// With [keep], the grammar sees only the glyphs it keeps (by index);
+  /// one it skips is of the syllable it falls in (HarfBuzz's USE machine
+  /// skips CGJ, and ZWNJ before a mark).
   bool findSyllables(
     List<LayoutGlyph> glyphs,
     int Function(LayoutGlyph) categoryOf, {
     int broken = -1,
+    bool Function(int index)? keep,
   }) {
-    final categories = [for (final g in glyphs) categoryOf(g)];
+    final indices = [
+      for (var i = 0; i < glyphs.length; i++)
+        if (keep == null || keep(i)) i,
+    ];
+    final categories = [for (final i in indices) categoryOf(glyphs[i])];
     var serial = 1;
     var foundBroken = false;
     var i = 0;
-    while (i < glyphs.length) {
+    while (i < indices.length) {
       var length = 0;
       var type = -1;
       for (final (machine, t) in _machines) {
@@ -193,7 +202,11 @@ final class SyllableGrammar {
         type = _machines.last.$2;
       }
       if (type == broken) foundBroken = true;
-      for (var k = i; k < i + length; k++) {
+      final from = indices[i];
+      final to = i + length < indices.length
+          ? indices[i + length]
+          : glyphs.length;
+      for (var k = from; k < to; k++) {
         glyphs[k].syllable = serial << 4 | type;
       }
       serial++;

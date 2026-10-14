@@ -48,3 +48,14 @@ whose README says how each was made):
   specification's (`dev2` to `deva`, `bng2` to `beng`, `mlm2` to `mlym`),
   for the shaper's old-specification rules (SIL Open Font License 1.1;
   © 2022 The Noto Project Authors).
+- `notosanssinhala-subset.ttf`, `notosansmongolian-subset.ttf`,
+  `notosansnko-subset.ttf`, `notosansjavanese-subset.ttf`,
+  `notosansbalinese-subset.ttf`, `notosanskhmer-subset.ttf`,
+  `notosansmyanmar-subset.ttf`, `notosansthai-subset.ttf`,
+  `notosanslao-subset.ttf`, `notosanscjk-hangul-subset.otf` (Noto Sans
+  CJK's first face), `notoseriftibetan-subset.ttf`,
+  `notonaskharabic-persian-urdu.ttf`, `notonastaliqurdu-subset.ttf`
+  (Noto Serif Tibetan, Naskh Arabic and Nastaliq Urdu from google/fonts'
+  `ofl/`, their variable fonts pinned at the default instance): subset
+  the same way (SIL Open Font License 1.1; © 2022 The Noto Project
+  Authors).

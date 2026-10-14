@@ -872,7 +872,8 @@ final class _Context {
   int _maySkip(LayoutGlyph g, {required bool context}) {
     if (ignored(g)) return 2;
     final f = g.flags;
-    if (f & UnicodeFlags.ignorable != 0) {
+    // (A default ignorable a substitution replaced is one no longer.)
+    if (f & UnicodeFlags.ignorable != 0 && !g.isSubstituted) {
       final ignoreZwnj = positioning || (context && applied.autoZwnj);
       final ignoreZwj = context || applied.autoZwj;
       if ((ignoreZwnj || f & UnicodeFlags.zwnj == 0) &&
@@ -1022,6 +1023,11 @@ final class _Context {
               ..props = source.props
               ..syllable = source.syllable
               ..flags = source.flags
+              ..char = source.char
+              ..generalCategory = source.generalCategory
+              ..combiningClass = source.combiningClass
+              ..category = source.category
+              ..position = source.position
               ..ligatureId = ligatureId
               // (A component's index, unless it is attached to a ligature.)
               ..ligatureComponent = ligatureId == 0

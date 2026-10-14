@@ -204,15 +204,21 @@ script's shaper, normalization to what the font has (a letter and its
 accents composed, or decomposed and the accents placed), then the
 substitutions and positions of the font's features in their stages.
 Each script below is checked glyph for glyph against HarfBuzz in Noto
-fonts (plain_typesetting's `test/harfbuzz_scripts_test.dart`).
+fonts (plain_typesetting's `test/harfbuzz_scripts_test.dart`). A script
+written right to left is always shaped right to left, so it measures as
+wide as it is set.
 
 | Script | Languages | Notes |
 | --- | --- | --- |
 | Latin, Greek, Cyrillic | European languages, polytonic Greek, Vietnamese, Church Slavonic | Text without marks keeps the simple path (its glyphs, ligatures and kerning, as asciidoctor-pdf sets it); with combining marks it is shaped in full. |
 | Armenian, Georgian, Coptic, Ge'ez (Ethiopic) | Classical and modern Armenian, Georgian, Coptic (overlined nomina sacra), Ge'ez and Amharic | Shaped in full (contextual numerals, ligatures). |
-| Arabic, Hebrew | Arabic, Persian, Urdu; Hebrew with points and cantillation | Joining forms, right to left (below). |
+| Arabic, Hebrew | Arabic, Persian, Urdu (in Naskh and in Nastaliq, its words' cascades set on their lines); Hebrew with points and cantillation | Joining forms, right to left (below). |
 | Syriac | Classical Syriac (the Peshitta) in Estrangela, Eastern and Western | Joining forms with Alaph's and Dalath-Rish's own, vowel points, right to left. |
 | Devanagari, Bengali, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada, Malayalam | Sanskrit (Vedic accents too), Pali, Hindi, Marathi, Nepali, Bengali, Punjabi, Gujarati, Odia, Tamil, Telugu, Kannada, Malayalam | HarfBuzz's Indic shaper: syllables, the base consonant, pre-base matras, reph, conjuncts and half forms; fonts of the second specification (`dev2`) and of the first (`deva`); a dotted circle where a syllable is broken or a vowel sequence is prohibited. |
+| Sinhala, Tibetan, Mongolian, N'Ko, Javanese, Balinese and the other scripts of the Universal Shaping Engine | Sinhala and Pali, Tibetan, Mongolian (set across, its letters on their sides, as horizontal Mongolian is), N'Ko, Javanese, Balinese | HarfBuzz's Universal Shaping Engine: its syllables and feature groups, repha and pre-base glyphs reordered, the joining scripts' forms. |
+| Khmer, Myanmar | Khmer, Burmese, Mon, Shan | Their own shapers: Coeng and Ro, kinzi, medial Ra and left vowels reordered. |
+| Thai, Lao | Thai, Lao | SARA AM decomposed, its nikhahit over the marks before it. Words are not broken apart without a space yet. |
+| Hangul | Korean, Middle Korean | Jamo composed into the syllable the font has, or set as conjoining jamo; tone marks before their syllable. |
 
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its

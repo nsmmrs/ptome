@@ -22,3 +22,16 @@ notosanstelugu-subset.ttf | NotoSansTelugu-Regular.ttf | telugu.txt | ltr
 notosanskannada-subset.ttf | NotoSansKannada-Regular.ttf | kannada.txt | ltr
 notosansmalayalam-subset.ttf | NotoSansMalayalam-Regular.ttf | malayalam.txt | ltr
 notosansmalayalam-oldspec.ttf | NotoSansMalayalam-Regular.ttf | malayalam.txt | ltr | mlm2=mlym
+notosanssinhala-subset.ttf | NotoSansSinhala-Regular.ttf | sinhala.txt | ltr
+notosansmongolian-subset.ttf | NotoSansMongolian-Regular.ttf | mongolian.txt | ltr
+notosansnko-subset.ttf | NotoSansNKo-Regular.ttf | nko.txt | rtl
+notosansjavanese-subset.ttf | NotoSansJavanese-Regular.ttf | javanese.txt | ltr
+notosansbalinese-subset.ttf | NotoSansBalinese-Regular.ttf | balinese.txt | ltr
+notoseriftibetan-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoSerifTibetan.ttf | tibetan.txt | ltr
+notosanskhmer-subset.ttf | NotoSansKhmer-Regular.ttf | khmer.txt | ltr
+notosansmyanmar-subset.ttf | NotoSansMyanmar-Regular.ttf | myanmar.txt | ltr
+notosansthai-subset.ttf | NotoSansThai-Regular.ttf | thai.txt | ltr
+notosanslao-subset.ttf | NotoSansLao-Regular.ttf | lao.txt | ltr
+notosanscjk-hangul-subset.otf | /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc#0 | hangul.txt | ltr
+notonaskharabic-persian-urdu.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoNaskhArabic.ttf | persian.txt urdu.txt | rtl
+notonastaliqurdu-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoNastaliqUrdu.ttf | persian.txt urdu.txt | rtl

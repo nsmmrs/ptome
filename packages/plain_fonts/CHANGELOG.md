@@ -2,6 +2,8 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A multiple substitution's glyphs keep their source's character and
+  categories (a split vowel's pieces stay vowels for the shaper).
 - `OpenTypeLayout.wouldSubstitute`: whether a GSUB lookup would
   substitute a glyph sequence as a whole (HarfBuzz's
   `hb_ot_layout_lookup_would_substitute`), for the Indic shaper.

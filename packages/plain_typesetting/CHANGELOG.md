@@ -2,6 +2,15 @@
 
 ## 0.1.0-dev (unreleased)
 
+- The Universal Shaping Engine (Sinhala, Tibetan, Mongolian, N'Ko,
+  Javanese, Balinese, ...; the joining scripts' forms by the Arabic
+  joining), and the Khmer, Myanmar, Thai/Lao and Hangul shapers,
+  HarfBuzz 14.6's, each glyph for glyph against it; Persian and Urdu in
+  Naskh and Nastaliq too. Text of a right-to-left script is shaped right
+  to left whatever the caller asks, given back in logical order, so it
+  measures as wide as it is set (Nastaliq measured left to right was a
+  quarter of its width). A default ignorable a substitution replaced is
+  no longer skipped or hidden, as in HarfBuzz.
 - The Indic shaper (HarfBuzz 14.6's): Devanagari, Bengali, Gurmukhi,
   Gujarati, Oriya, Tamil, Telugu, Kannada and Malayalam shape glyph for
   glyph as HarfBuzz does, in fonts of the second and the first

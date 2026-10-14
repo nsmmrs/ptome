@@ -8,10 +8,14 @@ library;
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/src/shaping/arabic.dart';
 import 'package:plain_typesetting/src/shaping/indic.dart';
+import 'package:plain_typesetting/src/shaping/khmer.dart';
+import 'package:plain_typesetting/src/shaping/myanmar.dart';
 import 'package:plain_typesetting/src/shaping/normalize.dart';
 import 'package:plain_typesetting/src/shaping/plan.dart';
 import 'package:plain_typesetting/src/shaping/scripts.dart';
 import 'package:plain_typesetting/src/shaping/shaper.dart';
+import 'package:plain_typesetting/src/shaping/thai_hangul.dart';
+import 'package:plain_typesetting/src/shaping/use.dart';
 import 'package:plain_unicode/plain_unicode.dart';
 
 /// A glyph of shaped text in font units: its id, the characters of its
@@ -56,7 +60,12 @@ Shaper _shaperOf(ShaperKind kind) => switch (kind) {
   ShaperKind.arabic => ArabicShaper(),
   ShaperKind.hebrew => HebrewShaper(),
   ShaperKind.indic => IndicShaper(),
-  _ => StandardShaper(),
+  ShaperKind.use => UseShaper(),
+  ShaperKind.khmer => KhmerShaper(),
+  ShaperKind.myanmar => MyanmarShaper(),
+  ShaperKind.thai => ThaiShaper(),
+  ShaperKind.hangul => HangulShaper(),
+  ShaperKind.standard => StandardShaper(),
 };
 
 _Plan _planFor(
@@ -155,6 +164,21 @@ List<ShapedUnits> shapeText(
   final runes = text.runes.toList();
   if (runes.isEmpty) return const [];
   final script = runScript(runes);
+  // A right-to-left script shaped in its own direction (HarfBuzz's
+  // `hb_ensure_native_direction`; a run of digits alone keeps its own),
+  // given back in logical order: measured, it is as wide as it is set.
+  if (!rightToLeft &&
+      rightToLeftScripts.contains(script) &&
+      runes.any((r) => _isLetter(generalCategory(r)))) {
+    return shapeText(
+      font,
+      text,
+      rightToLeft: true,
+      kerning: kerning,
+      ligatures: ligatures,
+      features: features,
+    ).reversed.toList();
+  }
   final entry = _planFor(
     font,
     script,
@@ -246,7 +270,7 @@ List<ShapedUnits> shapeText(
   // Default ignorables take no room, and show as the space glyph.
   final space = font.glyphFor(0x20);
   for (final g in run) {
-    if (g.flags & UnicodeFlags.ignorable != 0) {
+    if (g.flags & UnicodeFlags.ignorable != 0 && !g.isSubstituted) {
       g
         ..xAdvance = 0
         ..xOffset = 0;
@@ -277,6 +301,15 @@ List<ShapedUnits> shapeText(
   ];
   return rightToLeft ? out.reversed.toList() : out;
 }
+
+bool _isLetter(GeneralCategory gc) => switch (gc) {
+  GeneralCategory.uppercaseLetter ||
+  GeneralCategory.lowercaseLetter ||
+  GeneralCategory.titlecaseLetter ||
+  GeneralCategory.modifierLetter ||
+  GeneralCategory.otherLetter => true,
+  _ => false,
+};
 
 /// The `numr`, `frac` and `dnom` masks around each FRACTION SLASH between
 /// digits (HarfBuzz's automatic fractions).

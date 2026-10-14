@@ -33,6 +33,28 @@ void main() {
     expect(font.covers(0x3093), isFalse);
   });
 
+  test('text of a right-to-left script measures as wide as it is set', () {
+    // (Shaped in its own direction whatever the caller says, as HarfBuzz
+    // does: Nastaliq's cursive attachment needs it.)
+    final font = OpenTypeShaper(
+      OpenTypeFont.parse(
+        File('test/fonts/notonastaliqurdu-subset.ttf').readAsBytesSync(),
+      ),
+    );
+    const text = 'اردو زبان، نستعلیق خط';
+    double width(List<ShapedGlyph> glyphs) =>
+        glyphs.fold(0, (w, g) => w + g.advance + g.kerning);
+    final set = font.shape(text, rightToLeft: true);
+    final measured = font.shape(text);
+    expect(width(measured), closeTo(width(set), 1e-9));
+    expect(font.widthOf(text, 1000), closeTo(width(set), 1e-6));
+    // The same glyphs, in logical order.
+    expect(
+      [for (final g in measured) g.id],
+      [for (final g in set.reversed) g.id],
+    );
+  });
+
   test('widths: advances and kerning at a size', () {
     final font = _font('notoserif-regular-latin.ttf');
     final glyphs = font.shape('AV');

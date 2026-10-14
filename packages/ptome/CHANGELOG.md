@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Sinhala, Tibetan, Mongolian, N'Ko, Javanese, Balinese and the
+  Universal Shaping Engine's other scripts, Khmer, Myanmar, Thai, Lao and
+  Hangul shape as HarfBuzz shapes them; Persian and Urdu (Naskh and
+  Nastaliq) too (FEAT-d34wmb, FEAT-3765z4, TASK-68hs2g). A Nastaliq
+  paragraph was measured as if left to right and crammed onto one line.
 - PDF: the Indic scripts (Devanagari for Sanskrit, Pali, Hindi and
   Marathi; Bengali, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada,
   Malayalam) shape as HarfBuzz shapes them (FEAT-g4rmb9); Syriac too
