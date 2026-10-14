@@ -3083,6 +3083,9 @@ String subPlaceholder(String format, String value) {
   return substituted.replaceAll(token, '%');
 }
 
+/// Ptome's `lang=` in a formatted text's attribute list.
+final RegExp _langAttribute = RegExp('^lang=["\']?([A-Za-z0-9_-]+)["\']?\$');
+
 /// Parses the attributes defined on quoted (formatted) text.
 ///
 /// [str] is space-separated roles or the id/role shorthand syntax (e.g.,
@@ -3093,6 +3096,21 @@ Map<String, String> parseQuotedTextAttributes(AbstractNode node, String str) {
   // NOTE attributes are typically resolved after quoted text, so
   // substitute eagerly
   var text = str.contains(attrRefHead) ? subAttributes(node, str) : str;
+  // Ptome's `lang=` among them (not under asciidoctor-compat): the text's
+  // language.
+  String? lang;
+  if (text.contains('lang=') && !anyAsciidoctorCompat(_documentOf(node))) {
+    final parts = text.split(',').map((p) => p.trimAscii()).toList();
+    for (final part in parts) {
+      if (_langAttribute.firstMatch(part) case final m?) {
+        lang = m[1];
+      }
+    }
+    text = parts.where((p) => !p.startsWith('lang=')).join(',');
+    if (lang != null) {
+      return {...parseQuotedTextAttributes(node, text), 'lang': lang};
+    }
+  }
   // for compliance, only consider first positional attribute (very
   // unlikely)
   if (text.contains(',')) text = text.substring(0, text.indexOf(','));

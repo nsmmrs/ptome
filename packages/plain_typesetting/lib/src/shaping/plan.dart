@@ -105,8 +105,23 @@ final class StageMap {
 /// `hb_ot_map_builder_t`): their flags, values and stages, the pauses.
 final class PlanBuilder {
   /// A builder for [layout], the GSUB and GPOS script tags chosen
-  /// [gsubScript] and [gposScript].
-  new(this.layout, this.gsubScript, this.gposScript);
+  /// [gsubScript] and [gposScript], and their language systems
+  /// [gsubLanguage] and [gposLanguage] (null: the default).
+  new(
+    this.layout,
+    this.gsubScript,
+    this.gposScript, {
+    this.gsubLanguage,
+    this.gposLanguage,
+  });
+
+  /// The language system tag the GSUB table's features are taken from,
+  /// or null for the script's default.
+  final String? gsubLanguage;
+
+  /// The language system tag the GPOS table's features are taken from,
+  /// or null for the script's default.
+  final String? gposLanguage;
 
   /// The font's layout tables.
   final OpenTypeLayout layout;
@@ -155,9 +170,17 @@ final class PlanBuilder {
 
   /// Whether the font's chosen script has [tag] in either table.
   bool hasFeature(String tag) =>
-      (gsubScript != null && layout.featureLookups(tag, gsubScript!) != null) ||
+      (gsubScript != null &&
+          layout.featureLookups(tag, gsubScript!, language: gsubLanguage) !=
+              null) ||
       (gposScript != null &&
-          layout.featureLookups(tag, gposScript!, positioning: true) != null);
+          layout.featureLookups(
+                tag,
+                gposScript!,
+                language: gposLanguage,
+                positioning: true,
+              ) !=
+              null);
 
   /// The plan (HarfBuzz's `hb_ot_map_builder_t::compile`).
   ShapePlan compile() {
@@ -165,12 +188,17 @@ final class PlanBuilder {
     const globalMask = 1 << globalShift;
     var mask = globalMask;
     final scripts = [gsubScript, gposScript];
+    final languages = [gsubLanguage, gposLanguage];
     final required = [
       for (final (table, script) in scripts.indexed)
         if (script == null)
           null
         else
-          layout.requiredFeature(script, positioning: table == 1),
+          layout.requiredFeature(
+            script,
+            language: languages[table],
+            positioning: table == 1,
+          ),
     ];
     final requiredStage = [0, 0];
 
@@ -230,6 +258,7 @@ final class PlanBuilder {
           lookups[table] = layout.featureLookups(
             info.tag,
             script,
+            language: languages[table],
             positioning: table == 1,
           );
           if (lookups[table] != null) found = true;

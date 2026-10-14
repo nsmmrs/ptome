@@ -219,14 +219,16 @@ final class OpenTypeFont
   int? underlineThickness (settable)
   int? xHeight (settable)
 final class OpenTypeLayout
-  (String, List<int>)? requiredFeature(String script, {bool positioning = false})
+  (String, List<int>)? requiredFeature(String script, {String? language, bool positioning = false})
   (String, bool)? selectScript(List<String> tags, {bool positioning = false})
   List<int> lookupsFor(String feature, {required String script, String? language, bool positioning = false})
-  List<int>? featureLookups(String feature, String script, {bool positioning = false})
+  List<int>? featureLookups(String feature, String script, {String? language, bool positioning = false})
   List<int>? searchFeature(String feature, {bool positioning = false})
   OpenTypeFont font
   OpenTypeLayout(OpenTypeFont font)
+  String? selectLanguage(String script, List<String> languages, {bool positioning = false})
   bool hasGlyphClasses
+  bool hasLanguageSystem(List<String> languages, {bool positioning = false})
   bool hasLayout
   bool hasScript(String script)
   bool wouldSubstitute(int index, List<int> glyphs, {bool zeroContext = false})

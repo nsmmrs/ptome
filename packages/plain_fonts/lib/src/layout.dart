@@ -436,16 +436,71 @@ final class OpenTypeLayout {
     return null;
   }
 
-  /// The default language system of [script]'s table (exactly that
-  /// script's), or null.
-  int? _defaultLangSys(_Table t, String script) {
+  /// [script]'s script table (exactly that script's), or null.
+  int? _scriptTable(_Table t, String script) {
     final scriptList = t.u16(4);
     for (var i = 0; i < t.u16(scriptList); i++) {
       final record = scriptList + 2 + 6 * i;
-      if (t.tag(record) != script) continue;
-      final table = scriptList + t.u16(record + 4);
-      final offset = t.u16(table);
-      return offset == 0 ? null : table + offset;
+      if (t.tag(record) == script) return scriptList + t.u16(record + 4);
+    }
+    return null;
+  }
+
+  /// [table]'s language system tagged [language], or null.
+  int? _langSysTagged(_Table t, int table, String language) {
+    for (var i = 0; i < t.u16(table + 2); i++) {
+      final record = table + 4 + 6 * i;
+      if (t.tag(record) == language) return table + t.u16(record + 4);
+    }
+    return null;
+  }
+
+  /// [script]'s language system [language] (one [selectLanguage] chose),
+  /// or, with none, its `dflt` language system, else its default one
+  /// (HarfBuzz's `select_language2`); null when there is none.
+  int? _defaultLangSys(_Table t, String script, [String? language]) {
+    final table = _scriptTable(t, script);
+    if (table == null) return null;
+    if (language != null) {
+      if (_langSysTagged(t, table, language) case final langSys?) {
+        return langSys;
+      }
+    }
+    if (_langSysTagged(t, table, 'dflt') case final langSys?) return langSys;
+    final offset = t.u16(table);
+    return offset == 0 ? null : table + offset;
+  }
+
+  /// Whether any script of the GSUB table (or, with [positioning], the
+  /// GPOS table) has a language system tagged one of [languages].
+  bool hasLanguageSystem(List<String> languages, {bool positioning = false}) {
+    final t = positioning ? _gpos : _gsub;
+    if (t == null) return false;
+    final scriptList = t.u16(4);
+    for (var i = 0; i < t.u16(scriptList); i++) {
+      final table = scriptList + t.u16(scriptList + 2 + 6 * i + 4);
+      for (final language in languages) {
+        if (_langSysTagged(t, table, language) != null) return true;
+      }
+    }
+    return false;
+  }
+
+  /// The first of [languages] (OpenType language system tags, best first)
+  /// [script]'s table in the GSUB table (or, with [positioning], the GPOS
+  /// table) has a language system for, or null for none (HarfBuzz's
+  /// `hb_ot_layout_script_select_language2`).
+  String? selectLanguage(
+    String script,
+    List<String> languages, {
+    bool positioning = false,
+  }) {
+    final t = positioning ? _gpos : _gsub;
+    if (t == null) return null;
+    final table = _scriptTable(t, script);
+    if (table == null) return null;
+    for (final language in languages) {
+      if (_langSysTagged(t, table, language) != null) return language;
     }
     return null;
   }
@@ -459,17 +514,19 @@ final class OpenTypeLayout {
     ];
   }
 
-  /// The lookups of [feature] in [script]'s default language system (the
-  /// first feature of that tag there, as HarfBuzz finds it), or null when
-  /// it has none (with [positioning], in the GPOS table).
+  /// The lookups of [feature] in [script]'s language system [language]
+  /// (else its default one; the first feature of that tag there, as
+  /// HarfBuzz finds it), or null when it has none (with [positioning], in
+  /// the GPOS table).
   List<int>? featureLookups(
     String feature,
     String script, {
+    String? language,
     bool positioning = false,
   }) {
     final t = positioning ? _gpos : _gsub;
     if (t == null) return null;
-    final langSys = _defaultLangSys(t, script);
+    final langSys = _defaultLangSys(t, script, language);
     if (langSys == null) return null;
     final featureList = t.u16(6);
     for (var i = 0; i < t.u16(langSys + 4); i++) {
@@ -481,15 +538,16 @@ final class OpenTypeLayout {
     return null;
   }
 
-  /// The tag and lookups of [script]'s default language system's required
-  /// feature, if it has one.
+  /// The tag and lookups of the required feature of [script]'s language
+  /// system [language] (else its default one), if it has one.
   (String, List<int>)? requiredFeature(
     String script, {
+    String? language,
     bool positioning = false,
   }) {
     final t = positioning ? _gpos : _gsub;
     if (t == null) return null;
-    final langSys = _defaultLangSys(t, script);
+    final langSys = _defaultLangSys(t, script, language);
     if (langSys == null) return null;
     final index = t.u16(langSys + 2);
     if (index == 0xffff) return null;

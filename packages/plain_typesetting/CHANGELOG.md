@@ -2,6 +2,17 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Language systems (FEAT-7zjk4y): `TextStyle.language` (BCP 47) maps to
+  OpenType language system tags as HarfBuzz 14.6 maps them (its
+  registry tables and multi-subtag rules, generated from
+  `hb-ot-tag-table.hh`; every entry against `hb_ot_tags_from_script_and_
+  language`), and the font's system for it is chosen as HarfBuzz chooses
+  it: Japanese, Simplified, Traditional and Hong Kong Chinese glyphs in
+  one Noto CJK font, Serbian and Macedonian Cyrillic, Marathi and Nepali
+  Devanagari, Urdu and Sindhi digits, glyph for glyph against
+  `hb-shape --language`. Text in a language its font has a system for is
+  shaped in full; other text as before.
+
 - Vertical writing (FEAT-pwq40f): `TextStyle.vertical` shapes the
   characters that stand upright in vertical text (UAX #50: Han, kana,
   full-width punctuation) top to bottom, as HarfBuzz's TTB direction does

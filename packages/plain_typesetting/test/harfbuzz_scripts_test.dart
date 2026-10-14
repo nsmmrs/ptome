@@ -93,6 +93,69 @@ void main() {
     }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
   }
 
+  // The language's systems (its `locl` and other features): CJK glyphs
+  // by region, Serbian and Macedonian Cyrillic, Marathi and Nepali
+  // Devanagari, Urdu and Sindhi digits.
+  for (final (font, file, direction, languages) in const [
+    (
+      'notosanscjk-jp-subset.otf',
+      'japanese.txt',
+      'ltr',
+      ['ja', 'zh-Hans', 'zh-Hant', 'zh-HK', 'zh-TW', 'ko'],
+    ),
+    ('notoserif-scripts.ttf', 'cyrillic.txt', 'ltr', ['ru', 'sr', 'mk', 'bg']),
+    (
+      'notosansdevanagari-subset.ttf',
+      'devanagari.txt',
+      'ltr',
+      ['hi', 'mr', 'ne', 'sa'],
+    ),
+    (
+      'notonaskharabic-persian-urdu.ttf',
+      'urdu.txt',
+      'rtl',
+      ['ur', 'fa', 'sd', 'ar'],
+    ),
+  ]) {
+    test('$file in $font by language (${languages.join(', ')})', () {
+      final path = 'test/fonts/$font';
+      final parsed = OpenTypeFont.parse(File(path).readAsBytesSync());
+      final lines = File('$_fixtures/$file')
+          .readAsLinesSync()
+          .where((l) => l.isNotEmpty && !l.startsWith('#'))
+          .toList();
+      final differ = <String>[];
+      for (final language in languages) {
+        final theirs = harfbuzz(
+          path,
+          lines,
+          features: {'--language=$language'},
+        );
+        for (final (i, line) in lines.indexed) {
+          final ours = [
+            for (final g in shapeText(
+              parsed,
+              line,
+              rightToLeft: direction == 'rtl',
+              language: language,
+            ))
+              [g.glyph, g.advance, g.xOffset, g.yOffset],
+          ];
+          final expected = [
+            for (final g in theirs[i].cast<List<Object?>>())
+              [g[0], g[2], g[3], g[4]],
+          ];
+          if (jsonEncode(ours) != jsonEncode(expected)) {
+            differ.add(
+              '$language: $line\n  ours:     $ours\n  HarfBuzz: $expected',
+            );
+          }
+        }
+      }
+      expect(differ, isEmpty, reason: differ.take(2).join('\n'));
+    }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+  }
+
   // East Asian features a typesetter turns on: punctuation set half wide
   // between others (chws) or always (halt), proportional (palt), and
   // the vertical forms (vert, vrt2).

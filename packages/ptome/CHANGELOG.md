@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: the text's language chooses its fonts' forms (FEAT-7zjk4y): the
+  document's `lang`, a block's own `lang` attribute (`[lang=zh-Hant]`)
+  and, Ptome's syntax, a span's (`[lang=ja]#直#`, roles beside it) pick
+  the font's OpenType language system as HarfBuzz does, so one Noto CJK
+  font sets Japanese, Simplified or Traditional Chinese forms, Serbian
+  Cyrillic its own б, Marathi its ल and श, Urdu its digits. Not under
+  `asciidoctor-compat`.
 - PDF: vertical writing, `page_writing_mode: vertical-rl` (Japanese,
   Chinese) or `vertical-lr` (Mongolian) (FEAT-pwq40f): the body's lines
   run down the page, columns following to the left (or right), Han,

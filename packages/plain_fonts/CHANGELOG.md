@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `selectLanguage`, `hasLanguageSystem`, and `featureLookups` /
+  `requiredFeature` with a `language`: the language system HarfBuzz's
+  `select_language2` chooses (a requested one, else `dflt`, else the
+  script's default) (FEAT-7zjk4y).
+
 - Vertical metrics (FEAT-pwq40f): `verticalAdvance` and
   `verticalOriginY`, as HarfBuzz reads them (`vmtx`, `VORG`, the top
   phantom point of TrueType outlines, the glyph centered without them).

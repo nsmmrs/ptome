@@ -9,6 +9,7 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/src/shaping/arabic.dart';
 import 'package:plain_typesetting/src/shaping/indic.dart';
 import 'package:plain_typesetting/src/shaping/khmer.dart';
+import 'package:plain_typesetting/src/shaping/language_tags.dart';
 import 'package:plain_typesetting/src/shaping/myanmar.dart';
 import 'package:plain_typesetting/src/shaping/normalize.dart';
 import 'package:plain_typesetting/src/shaping/plan.dart';
@@ -76,15 +77,17 @@ _Plan _planFor(
   required bool ligatures,
   required Set<String> features,
   bool vertical = false,
+  String? language,
 }) {
+  final direction = vertical
+      ? 'v'
+      : rightToLeft
+      ? 'r'
+      : 'l';
   final key =
-      '$script ${vertical
-          ? 'v'
-          : rightToLeft
-          ? 'r'
-          : 'l'} '
-      '${kerning ? 'k' : ''}'
-      '${ligatures ? 'l' : ''} ${(features.toList()..sort()).join(',')}';
+      '$script $direction ${kerning ? 'k' : ''}'
+      '${ligatures ? 'l' : ''} ${(features.toList()..sort()).join(',')} '
+      '${language ?? ''}';
   final plans = _plans[font] ??= {};
   return plans[key] ??= () {
     final layout = layoutOf(font);
@@ -93,9 +96,28 @@ _Plan _planFor(
     final gpos = layout.selectScript(tags, positioning: true);
     final kind = shaperFor(script, gsub?.$1 ?? 'DFLT');
     final shaper = _shaperOf(kind);
-    final builder = PlanBuilder(layout, gsub?.$1, gpos?.$1)
-      ..enableFeature('rvrn')
-      ..addGsubPause();
+    // (The language's systems, the first each table has.)
+    final languageTags = language == null
+        ? const <String>[]
+        : openTypeLanguageTags(language);
+    final builder =
+        PlanBuilder(
+            layout,
+            gsub?.$1,
+            gpos?.$1,
+            gsubLanguage: gsub == null
+                ? null
+                : layout.selectLanguage(gsub.$1, languageTags),
+            gposLanguage: gpos == null
+                ? null
+                : layout.selectLanguage(
+                    gpos.$1,
+                    languageTags,
+                    positioning: true,
+                  ),
+          )
+          ..enableFeature('rvrn')
+          ..addGsubPause();
     // (Top to bottom, neither direction's features.)
     if (vertical) {
       // None.
@@ -170,8 +192,10 @@ _Plan _planFor(
 
 /// [text] in [font] as HarfBuzz shapes it, in visual order: [rightToLeft]
 /// the run's direction, [kerning] and [ligatures] on or off, [features]
-/// more features on. With [vertical], top to bottom: the `vert` forms
-/// (else the vertical presentation forms the font has), each glyph's
+/// more features on, [language] (BCP 47) choosing the fonts' language
+/// systems as HarfBuzz chooses them. With [vertical], top to bottom: the
+/// `vert` forms (else the vertical presentation forms the font has), each
+/// glyph's
 /// advance its vertical advance, its offsets from its vertical origin
 /// (half its width across, its `VORG` or top down), GPOS's marks and
 /// vertical values applied.
@@ -183,6 +207,7 @@ List<ShapedUnits> shapeText(
   bool ligatures = true,
   Set<String> features = const {},
   bool vertical = false,
+  String? language,
 }) {
   final runes = text.runes.toList();
   if (runes.isEmpty) return const [];
@@ -202,6 +227,7 @@ List<ShapedUnits> shapeText(
       kerning: kerning,
       ligatures: ligatures,
       features: features,
+      language: language,
     ).reversed.toList();
   }
   final entry = _planFor(
@@ -212,6 +238,7 @@ List<ShapedUnits> shapeText(
     ligatures: ligatures,
     features: features,
     vertical: vertical,
+    language: language,
   );
   final plan = entry.plan;
   final shaper = entry.shaper;

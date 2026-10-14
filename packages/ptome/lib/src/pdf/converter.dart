@@ -296,6 +296,28 @@ final class PdfConverter extends BuiltInConverter
 
   @override
   String? convertBlock(AbstractBlock node, ConvertOptions? opts) {
+    // (A block's own `lang` for its text, Ptome's: not under
+    // asciidoctor-compat.)
+    final language = _language;
+    if (node is! Document) {
+      if (node.attributes['lang'] case final String lang
+          when !asciidoctorCompat(_document, CompatFormat.pdf)) {
+        _language = lang;
+      }
+    }
+    try {
+      return _convertBlock(node, opts);
+    } finally {
+      _language = language;
+    }
+  }
+
+  /// The language of the text being converted (BCP 47), choosing the
+  /// fonts' language systems: the document's `lang`, a block's own
+  /// (modern engine); null under `asciidoctor-compat`.
+  String? _language;
+
+  String? _convertBlock(AbstractBlock node, ConvertOptions? opts) {
     if (node is! Document && node is! Section) {
       final above = _marginAbove(node);
       if (above > 0) _out.add(SpacerBox(above));

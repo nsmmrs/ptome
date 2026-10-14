@@ -8,6 +8,7 @@ library;
 
 import 'package:plain_fonts/plain_fonts.dart' show OpenTypeFont;
 import 'package:plain_typesetting/src/font.dart';
+import 'package:plain_typesetting/src/shaping/language_tags.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart';
 import 'package:plain_unicode/plain_unicode.dart';
 
@@ -66,6 +67,53 @@ List<ShapedGlyph> shapeComplex(
     ),
 ];
 
+/// Whether [font] has a language system for [language] (BCP 47) under
+/// any script, in its GSUB or GPOS table: then text in that language is
+/// shaped in full, its `locl` and the rest of the system's features
+/// applied.
+bool hasLanguageSystem(OpenTypeFont font, String language) =>
+    (_languageSystems[font] ??= {})[language] ??= () {
+      final tags = openTypeLanguageTags(language);
+      if (tags.isEmpty) return false;
+      final layout = layoutOf(font);
+      return layout.hasLanguageSystem(tags) ||
+          layout.hasLanguageSystem(tags, positioning: true);
+    }();
+
+final Expando<Map<String, bool>> _languageSystems = Expando();
+
+/// [text] in [font] in [language] (BCP 47), as HarfBuzz shapes it, in
+/// 1000ths of the em.
+List<ShapedGlyph> shapeInLanguage(
+  OpenTypeFont font,
+  String text, {
+  required String language,
+  bool kerning = true,
+  bool ligatures = true,
+  Set<String> features = const {},
+  bool rightToLeft = false,
+}) {
+  double scale(int units) => units * 1000 / font.unitsPerEm;
+  return [
+    for (final g in shapeText(
+      font,
+      text,
+      rightToLeft: rightToLeft,
+      kerning: kerning,
+      ligatures: ligatures,
+      features: features,
+      language: language,
+    ))
+      ShapedGlyph.positioned(
+        g.glyph,
+        g.text,
+        scale(g.advance),
+        xOffset: scale(g.xOffset),
+        yOffset: scale(g.yOffset),
+      ),
+  ];
+}
+
 /// [text] in [font] set top to bottom as HarfBuzz shapes it (its `vert`
 /// forms, its vertical advances and origins), each glyph [ShapedGlyph.
 /// upright], in 1000ths of the em.
@@ -74,6 +122,7 @@ List<ShapedGlyph> shapeUpright(
   String text, {
   bool kerning = true,
   Set<String> features = const {},
+  String? language,
 }) {
   double scale(int units) => units * 1000 / font.unitsPerEm;
   return [
@@ -84,6 +133,7 @@ List<ShapedGlyph> shapeUpright(
       vertical: true,
       kerning: kerning,
       features: features,
+      language: language,
     ))
       ShapedGlyph.positioned(
         g.glyph,

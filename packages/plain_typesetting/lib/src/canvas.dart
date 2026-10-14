@@ -8,7 +8,8 @@ import 'package:meta/meta.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
-import 'package:plain_typesetting/src/shaping.dart' show shapeUpright;
+import 'package:plain_typesetting/src/shaping.dart'
+    show hasLanguageSystem, shapeInLanguage, shapeUpright;
 import 'package:plain_unicode/plain_unicode.dart'
     show
         BidiText,
@@ -127,7 +128,13 @@ final class TextStyle {
     this.embolden = 0,
     this.vertical = false,
     this.flipped = false,
+    this.language,
   });
+
+  /// The text's language (BCP 47: `ja`, `zh-Hant`, `sr`), choosing the
+  /// font's language system (its `locl` forms) as HarfBuzz chooses it;
+  /// null for the font's default.
+  final String? language;
 
   /// Whether the text is drawn mirrored top to bottom about the middle of
   /// its em box: text in the mirrored frame of a vertical-lr page
@@ -199,6 +206,7 @@ final class TextStyle {
     double? embolden,
     bool? vertical,
     bool? flipped,
+    String? language,
   }) => TextStyle(
     font ?? this.font,
     size ?? this.size,
@@ -214,6 +222,7 @@ final class TextStyle {
     embolden: embolden ?? this.embolden,
     vertical: vertical ?? this.vertical,
     flipped: flipped ?? this.flipped,
+    language: language ?? this.language,
   );
 
   @override
@@ -232,6 +241,7 @@ final class TextStyle {
       other.embolden == embolden &&
       other.vertical == vertical &&
       other.flipped == flipped &&
+      other.language == language &&
       other.features.length == features.length &&
       other.features.containsAll(features);
 
@@ -251,6 +261,7 @@ final class TextStyle {
     embolden,
     vertical,
     flipped,
+    language,
   );
 
   /// The width of [glyphs] set in this style, in points.
@@ -271,9 +282,20 @@ final class TextStyle {
   /// [text] as glyphs of this style's font (a right-to-left run with
   /// [rightToLeft]: in visual order).
   List<ShapedGlyph> shape(String text, {bool rightToLeft = false}) {
-    if (vertical && !rightToLeft) {
-      if (font case final OpenTypeTextFont font) {
-        return _shapeVertical(font, text);
+    if (font case final OpenTypeTextFont font) {
+      if (vertical && !rightToLeft) return _shapeVertical(font, text);
+      // (In a language the font has a system for: shaped in full.)
+      if (language case final language?
+          when hasLanguageSystem(font.font, language)) {
+        return shapeInLanguage(
+          font.font,
+          text,
+          language: language,
+          kerning: kerning,
+          ligatures: ligatures,
+          features: features,
+          rightToLeft: rightToLeft,
+        );
       }
     }
     return font.shape(
@@ -301,6 +323,16 @@ final class TextStyle {
                 font.font,
                 part,
                 kerning: kerning,
+                features: features,
+                language: language,
+              )
+            : language != null && hasLanguageSystem(font.font, language!)
+            ? shapeInLanguage(
+                font.font,
+                part,
+                language: language!,
+                kerning: kerning,
+                ligatures: ligatures,
                 features: features,
               )
             : font.shape(

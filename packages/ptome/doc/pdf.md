@@ -224,6 +224,18 @@ wide as it is set.
 | Hangul | Korean, Middle Korean | Jamo composed into the syllable the font has, or set as conjoining jamo; tone marks before their syllable. |
 | Han, Hiragana, Katakana, Bopomofo | Japanese, Chinese | Shaped by the font's tables (its `halt`, `palt` and vertical forms checked against HarfBuzz); composed as JLREQ and CLREQ have it (below). |
 
+The text's language chooses its fonts' forms: many fonts carry several
+languages' letterforms (an OpenType language system and its `locl`
+substitutions), and the document's `lang`, a block's own `lang`
+attribute (`[lang=zh-Hant]` above a paragraph) or a span's
+(`[lang=ja]#直#`, Ptome's syntax; `[.role,lang=sr]#…#` with a role)
+selects them as HarfBuzz does from the BCP 47 tag: in one Noto CJK font,
+Japanese, Simplified, Traditional (`zh-Hant`, `zh-TW`) or Hong Kong
+(`zh-HK`) Chinese forms; Serbian and Macedonian Cyrillic (`sr`, `mk`);
+Marathi and Nepali Devanagari (`mr`, `ne`); Urdu and Sindhi digits
+(`ur`, `sd`). Not under `asciidoctor-compat`, where Asciidoctor's text is
+set as Prawn sets it.
+
 Thai, Lao, Khmer and Burmese are written without spaces between words,
 so a line may break between any two of a run's words, found as ICU 78.3
 finds them: its word lists (plain_unicode's `dictionaryBreaks`, checked

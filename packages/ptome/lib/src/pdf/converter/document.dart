@@ -8,6 +8,9 @@ extension _DocumentParts on PdfConverter {
     // The gem converts the title for the document information before its
     // PDF state exists (and the title keeps that conversion).
     _document = document;
+    _language = asciidoctorCompat(document, CompatFormat.pdf)
+        ? null
+        : document.attr('lang');
     document.doctitle();
     _converting = true;
     PdfConverter._promotePreface(document);

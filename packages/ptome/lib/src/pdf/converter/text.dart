@@ -110,6 +110,7 @@ extension _Text on PdfConverter {
         mirrored: mirrored,
         // (Vertical where the page is, but for running content.)
         vertical: vertical && _verticalWriting,
+        language: _language,
         leading: metrics.leading,
         initialGap: cell || !gaps ? 0 : metrics.paddingTop,
         paddingBottom: cell || !gaps ? 0 : metrics.paddingBottom,

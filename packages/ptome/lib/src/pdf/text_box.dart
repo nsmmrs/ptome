@@ -73,6 +73,7 @@ final class TextLayout {
     this.align = 'left',
     this.mirrored = true,
     this.vertical = false,
+    this.language,
     this.leading = 0,
     this.initialGap = 0,
     this.paddingBottom = 0,
@@ -118,6 +119,7 @@ final class TextLayout {
     align: align,
     mirrored: mirrored,
     vertical: vertical,
+    language: language,
     leading: leading,
     initialGap: initialGap,
     paddingBottom: paddingBottom ?? this.paddingBottom,
@@ -207,6 +209,10 @@ final class TextLayout {
   /// side, in the page's turned frame.
   final bool vertical;
 
+  /// The text's language (BCP 47), unless a fragment says otherwise: the
+  /// block's or the document's.
+  final String? language;
+
   /// Whether only the first line is laid out (the rest is left over, the
   /// line gap and the leading following the line).
   final bool singleLine;
@@ -223,6 +229,7 @@ final class TextLayout {
     align: align,
     mirrored: mirrored,
     vertical: vertical,
+    language: language,
     leading: leading,
     paddingBottom: paddingBottom,
     finalGap: finalGap,
@@ -868,6 +875,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               embolden: font.emboldened ? format.size / 40 : 0,
               vertical: _layout.vertical,
               flipped: _layout.vertical && _context.mirroredFrame,
+              language: fragment.language ?? _layout.language,
             ),
             color: _pdfColor(fragment.color),
             artifact: fragment.artifact,
@@ -2220,6 +2228,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             embolden: f.format.font.emboldened ? f.format.size / 40 : 0,
             vertical: _layout.vertical,
             flipped: _layout.vertical && _context.mirroredFrame,
+            language: fragment.language ?? _layout.language,
           );
           // (Right-to-left text, Arabic or Hebrew, in visual order: the
           // box sets its fragments left to right.)

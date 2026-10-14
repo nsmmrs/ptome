@@ -738,9 +738,10 @@ final class TextStyle
   List<ShapedGlyph> shape(String text, {bool rightToLeft = false})
   List<ShapedGlyph> shapeBidi(String text, {bool rightToLeft = false})
   Set<String> features
+  String? language
   TextRenderMode renderMode
-  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden, bool? vertical, bool? flipped})
-  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0, bool vertical = false, bool flipped = false})
+  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden, bool? vertical, bool? flipped, String? language})
+  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0, bool vertical = false, bool flipped = false, String? language})
   bool ==(Object other)
   bool flipped
   bool kerning

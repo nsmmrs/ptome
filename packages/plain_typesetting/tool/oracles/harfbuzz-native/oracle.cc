@@ -5,7 +5,8 @@
 // them, characters their own clusters. Each line's glyphs are written as
 // a JSON array of [glyph id, cluster, x advance, x offset, y offset] in
 // visual order, one line each. With --ttb, the lines are shaped top to
-// bottom and the advance is the y advance.
+// bottom and the advance is the y advance; with --language=TAG, in that
+// BCP 47 language.
 #include <hb.h>
 #include <hb-ot.h>
 #include <cstdio>
@@ -14,7 +15,30 @@
 #include <vector>
 #include <iostream>
 
+// With --language-tags, each line of standard input is a BCP 47 tag: its
+// OpenType language system tags (hb_ot_tags_from_script_and_language),
+// space-separated, one line each.
+static int language_tags () {
+  std::string line;
+  while (std::getline (std::cin, line)) {
+    hb_tag_t tags[HB_OT_MAX_TAGS_PER_LANGUAGE];
+    unsigned count = HB_OT_MAX_TAGS_PER_LANGUAGE;
+    hb_ot_tags_from_script_and_language (
+        HB_SCRIPT_UNKNOWN, hb_language_from_string (line.c_str (), -1),
+        nullptr, nullptr, &count, tags);
+    for (unsigned i = 0; i < count; i++) {
+      char buf[5] = {0};
+      hb_tag_to_string (tags[i], buf);
+      printf ("%s[%s]", i ? " " : "", buf);
+    }
+    printf ("\n");
+  }
+  return 0;
+}
+
 int main (int argc, char **argv) {
+  if (argc == 2 && strcmp (argv[1], "--language-tags") == 0)
+    return language_tags ();
   if (argc < 2) {
     fprintf (stderr, "usage: hb-oracle FONT [FEATURE...] < LINES\n");
     return 2;
@@ -25,8 +49,13 @@ int main (int argc, char **argv) {
   hb_font_t *font = hb_font_create (face);
   std::vector<hb_feature_t> features;
   bool ttb = false;
+  const char *language = nullptr;
   for (int i = 2; i < argc; i++) {
     if (strcmp (argv[i], "--ttb") == 0) { ttb = true; continue; }
+    if (strncmp (argv[i], "--language=", 11) == 0) {
+      language = argv[i] + 11;
+      continue;
+    }
     hb_feature_t f;
     if (hb_feature_from_string (argv[i], -1, &f)) features.push_back (f);
   }
@@ -35,6 +64,8 @@ int main (int argc, char **argv) {
     hb_buffer_t *buffer = hb_buffer_create ();
     hb_buffer_add_utf8 (buffer, line.c_str (), (int) line.size (), 0, -1);
     if (ttb) hb_buffer_set_direction (buffer, HB_DIRECTION_TTB);
+    if (language)
+      hb_buffer_set_language (buffer, hb_language_from_string (language, -1));
     hb_buffer_guess_segment_properties (buffer);
     hb_buffer_set_cluster_level (buffer, HB_BUFFER_CLUSTER_LEVEL_CHARACTERS);
     hb_shape (font, buffer, features.data (), (unsigned) features.size ());

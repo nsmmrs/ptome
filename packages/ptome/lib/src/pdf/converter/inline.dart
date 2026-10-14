@@ -1374,6 +1374,12 @@ extension _InlineElements on PdfConverter {
         !inner.substring(0, inner.length - 3).endsWith(r'\')) {
       inner = '${inner.substring(0, inner.length - 3)}&#8230;';
     }
+    // (Ptome's inline `lang`: a span in that language.)
+    final lang = switch (node.attributes['lang']) {
+      final String l when RegExp(r'^[A-Za-z0-9_-]+$').hasMatch(l) =>
+        ' lang="$l"',
+      _ => '',
+    };
     final String quoted;
     if (node.role case final roles?) {
       // Spaces kept: each but the last of a run gets a zero width space
@@ -1382,8 +1388,11 @@ extension _InlineElements on PdfConverter {
         inner = inner.replaceAll(RegExp(' (?= )'), ' \u200b');
       }
       quoted = isTag
-          ? '${open.substring(0, open.length - 1)} class="$roles">$inner$close'
-          : '<span class="$roles">$open$inner$close</span>';
+          ? '${open.substring(0, open.length - 1)} class="$roles"$lang>'
+                '$inner$close'
+          : '<span class="$roles"$lang>$open$inner$close</span>';
+    } else if (lang.isNotEmpty) {
+      quoted = '<span$lang>$open$inner$close</span>';
     } else {
       quoted = '$open$inner$close';
     }

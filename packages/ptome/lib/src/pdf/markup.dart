@@ -297,6 +297,10 @@ final class Fragment {
   /// Whether [textEmphasis] goes under the characters.
   bool textEmphasisUnder = false;
 
+  /// The text's language (BCP 47, from a `lang` attribute), or null for
+  /// the block's.
+  String? language;
+
   /// The text transform (`uppercase`...).
   String? textTransform;
 
@@ -363,6 +367,7 @@ final class Fragment {
     ..textDecorationWidth = textDecorationWidth
     ..textEmphasis = textEmphasis
     ..textEmphasisUnder = textEmphasisUnder
+    ..language = language
     ..textTransform = textTransform
     ..align = align
     ..width = width
@@ -1004,6 +1009,9 @@ final class MarkupTransform {
                 ..callbacks = [FragmentCallback.textBackgroundAndBorder];
           }
         }
+    }
+    if (attrs['lang'] case final language? when language.isNotEmpty) {
+      result.language = language;
     }
     for (final className in (attrs['class'] ?? '').split(' ')) {
       if (className.isEmpty) continue;
