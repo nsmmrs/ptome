@@ -1,5 +1,8 @@
 // `reproducible`: no dates in the PDF's document information or its XMP
 // metadata, as asciidoctor-pdf leaves them out (BUG-d2dtqb).
+@TestOn('vm')
+library;
+
 import 'dart:convert';
 
 import 'package:ptome/ptome.dart';
