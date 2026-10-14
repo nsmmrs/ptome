@@ -453,9 +453,11 @@ final class InlineDecoration
 final class InlineImage extends InlineContent
   Graphic image
   InlineAlignment alignment
-  InlineImage(Graphic image, double width, double height, {InlineAlignment alignment = InlineAlignment.baseline, LinkTarget? link, double? bottom, double? lineAscent, double? lineDescent})
+  InlineImage(Graphic image, double width, double height, {InlineAlignment alignment = InlineAlignment.baseline, LinkTarget? link, double? bottom, double? lineAscent, double? lineDescent, double startOverhang = 0, double endOverhang = 0})
   LinkTarget? link
+  double endOverhang
   double height
+  double startOverhang
   double width
   double? bottom
   double? lineAscent

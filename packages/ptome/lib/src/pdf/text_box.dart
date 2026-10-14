@@ -892,7 +892,17 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         },
       };
       if (format.image case final image?) {
-        runs.add(_engineImage(image, format, link));
+        runs.add(
+          _engineImage(
+            image,
+            format,
+            link,
+            before: index > 0 ? _neighbourText(_items[index - 1]) : null,
+            after: index + 1 < _items.length
+                ? _neighbourText(_items[index + 1])
+                : null,
+          ),
+        );
         sources.add(const []);
         continue;
       }
@@ -1587,18 +1597,42 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// and measured as the box draws it: a formula standing on its depth;
   /// an image taller than the line raising it, standing on the line's
   /// descender; another centered in its text, its line no taller.
-  InlineImage _engineImage(_Image image, _Format format, LinkTarget? link) {
+  InlineImage _engineImage(
+    _Image image,
+    _Format format,
+    LinkTarget? link, {
+    String? before,
+    String? after,
+  }) {
     if (image.graphic case final InlineRuby ruby) {
+      // (Its reading hanging over the kana beside it, JLREQ 3.3.8; the
+      // engine sets it in at a line's start or end, 3.3.9.)
       final face = _rubyFace(ruby, format.font, format.fragment.language);
-      final box = ruby.at(face, format.size);
+      final box = ruby.at(
+        face,
+        format.size,
+        before: rubyOverhang(
+          before == null || before.isEmpty ? null : before.runes.last,
+          before: true,
+          size: format.size,
+        ),
+        after: rubyOverhang(
+          after == null || after.isEmpty ? null : after.runes.first,
+          before: false,
+          size: format.size,
+        ),
+        zhuyin: !_layout.vertical,
+      );
       return InlineImage(
-        EngineRuby(ruby, face, format.size, _pdfColor(format.fragment.color)),
+        EngineRuby(box, _pdfColor(format.fragment.color)),
         box.width,
         box.ascent + box.descent,
         bottom: -box.descent,
         lineAscent: box.ascent,
         lineDescent: box.descent,
         link: link,
+        startOverhang: box.startOverhang,
+        endOverhang: box.endOverhang,
       );
     }
     if (image.graphic case final InlineMath formula) {
@@ -1637,6 +1671,23 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     );
   }
 
+  /// The text [item] stands for beside a ruby (whose reading may hang over
+  /// it): a ruby's bases, else its text; an image's nothing.
+  String? _neighbourText(_Item item) {
+    final fragment = item.format.fragment;
+    String bases(InlineRuby ruby) => ruby.pairs.map((p) => p.$1).join();
+    if (item.format.image?.graphic case final InlineRuby ruby) {
+      return bases(ruby);
+    }
+    if (fragment.imagePath case final path?) {
+      return switch (_context.images?.call(path, fragment.imageFormat).$1) {
+        final InlineRuby ruby => bases(ruby),
+        _ => null,
+      };
+    }
+    return item.text;
+  }
+
   /// The face [ruby] is set in: [face], the text's, where it has every
   /// character of the base and the readings, else the first fallback
   /// font that has them, else the family of the text's language
@@ -1667,6 +1718,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       final box = ruby.at(
         _rubyFace(ruby, item.format.font, fragment.language),
         item.format.size,
+        zhuyin: !_layout.vertical,
       );
       final lineFont = TextBox._font(_state.family, _state.style, _context);
       return _Item(
@@ -2317,6 +2369,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
                   .at(
                     _rubyFace(ruby, f.format.font, fragment.language),
                     f.format.size,
+                    zhuyin: !_layout.vertical,
                   )
                   .paintAt(
                     canvas,

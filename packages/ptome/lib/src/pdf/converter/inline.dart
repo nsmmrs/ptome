@@ -1330,17 +1330,41 @@ extension _InlineElements on PdfConverter {
     );
   }
 
-  /// Ruby: an inline graphic of its base with its reading above it,
-  /// laid out in the text's face (ruby.dart); the base where ruby isn't
-  /// set (the compatibility mode never parses it).
+  /// Ruby: inline graphics of its base with its reading above it, laid
+  /// out in the text's face (ruby.dart); the base where ruby isn't set
+  /// (the compatibility mode never parses it). Mono ruby is one for each
+  /// character, a line breaking between them (JLREQ 3.3.5), as is jukugo
+  /// ruby whose characters have two reading characters or fewer each;
+  /// jukugo ruby with more is set as one, its readings the compound's
+  /// (3.3.7); group ruby is one.
   String _inlineRuby(Inline node) {
-    final src = 'ruby:${_rubyCount++}';
-    final base = PdfConverter._unescapeXml(node.text ?? '');
-    _inlineGraphics[src] = InlineRuby([
+    final pairs = [
       for (final (b, r) in rubyPairs(node))
         (PdfConverter._unescapeXml(b), PdfConverter._unescapeXml(r)),
-    ], base: base);
-    return '<img src="$src" format="ruby" alt="${node.text ?? ''}">';
+    ];
+    final List<(String, String)> parts;
+    if (pairs.length > 1 &&
+        rubyJukugo(node) &&
+        pairs.any((pair) => pair.$2.runes.length > 2)) {
+      parts = [(pairs.map((p) => p.$1).join(), pairs.map((p) => p.$2).join())];
+    } else {
+      parts = pairs;
+    }
+    // (Copied whole from its first part, the others copied as nothing:
+    // the word reads as one where its parts stand apart.)
+    final whole = PdfConverter._unescapeXml(node.text ?? '');
+    return [
+      for (final (k, part) in parts.indexed)
+        () {
+          final src = 'ruby:${_rubyCount++}';
+          _inlineGraphics[src] = InlineRuby([part], base: k == 0 ? whole : '');
+          final alt = part.$1
+              .replaceAll('&', '&amp;')
+              .replaceAll('<', '&lt;')
+              .replaceAll('"', '&quot;');
+          return '<img src="$src" format="ruby" alt="$alt">';
+        }(),
+    ].join();
   }
 
   String _inlineKbd(Inline node) {

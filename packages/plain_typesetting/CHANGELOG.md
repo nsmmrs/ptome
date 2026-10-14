@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `InlineImage.startOverhang` and `endOverhang`: how far an image reaches
+  over what is beside it (ruby's reading over kana); starting or ending a
+  line, it is set that much further in (JLREQ 3.3.9) (FEAT-8xyny8).
+
 - Vertical pages (BUG-38zmwk): an upright box too wide for the page (its
   narrowest wider than the page, or its natural width wider than the page
   and within the column's length) is turned to lie along the column

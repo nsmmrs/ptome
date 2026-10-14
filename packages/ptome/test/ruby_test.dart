@@ -28,6 +28,35 @@ void main() {
     );
   });
 
+  test('jukugo ruby: the option after the readings, left out of the '
+      'output', () {
+    expect(
+      asciidoc.convert('ruby:鬼門[き もん,jukugo]'),
+      contains(
+        '<ruby>鬼<rp>(</rp><rt>き</rt><rp>)</rp>'
+        '門<rp>(</rp><rt>もん</rt><rp>)</rp></ruby>',
+      ),
+    );
+    expect(
+      asciidoc.convert('ruby:鬼門[き もん, jukugo]', backend: Backend.docbook5),
+      contains('鬼門(き もん)'),
+    );
+  });
+
+  test('zhuyin at the right of its characters (CSS inter-character)', () {
+    expect(
+      asciidoc.convert('ruby:注音[ㄓㄨˋ ㄧㄣ]'),
+      contains(
+        '<ruby style="ruby-position: inter-character">'
+        '注<rp>(</rp><rt>ㄓㄨˋ</rt><rp>)</rp>',
+      ),
+    );
+    expect(
+      asciidoc.convert('ruby:注音[zhù yīn]'),
+      isNot(contains('inter-character')),
+    );
+  });
+
   test('DocBook and man pages: the reading after the base', () {
     expect(
       asciidoc.convert('ruby:漢字[かんじ]', backend: Backend.docbook5),

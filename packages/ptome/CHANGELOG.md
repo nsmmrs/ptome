@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: ruby as JLREQ 3.3 and CLREQ set it (FEAT-8xyny8): a shorter
+  reading spread 1:2:1 over its base (JIS X 4051), a longer one hanging
+  over the kana and punctuation blanks beside it but never a Han
+  character, the rest made up between its base's characters, no further
+  than a line's start or end; mono ruby breakable between its
+  characters; jukugo ruby (`ruby:鬼門[き もん,jukugo]`); zhuyin in a column
+  at its character's right with its tone marks (HTML: `ruby-position:
+  inter-character`).
 - Dates in the language's format (FEAT-f7cn49): the "Last updated" date
   and time and an ISO `revdate` (HTML header, title pages, the PDF's) in
   CLDR's patterns for `lang` (`2026年10月14日`, `14. Oktober 2026`),

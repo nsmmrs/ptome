@@ -186,7 +186,11 @@ final class InlineImage extends InlineContent {
   /// (below it when negative) instead; [lineAscent] and [lineDescent], how
   /// far above and below the baseline it reaches for its line's height,
   /// where they aren't its own (a formula as deep as its depth, an icon
-  /// that takes no more room than the text around it).
+  /// that takes no more room than the text around it). [startOverhang] and
+  /// [endOverhang], how far it reaches over what is beside it (ruby's
+  /// reading over the kana around its base, JLREQ 3.3.8): starting or
+  /// ending a line, it is set that much further in, as it may reach no
+  /// further than the line (3.3.9).
   const new(
     this.image,
     this.width,
@@ -196,7 +200,15 @@ final class InlineImage extends InlineContent {
     this.bottom,
     this.lineAscent,
     this.lineDescent,
+    this.startOverhang = 0,
+    this.endOverhang = 0,
   }) : super._();
+
+  /// How far it reaches before its start over what is beside it.
+  final double startOverhang;
+
+  /// How far it reaches after its end over what is beside it.
+  final double endOverhang;
 
   /// Where its bottom is above the baseline, or null for [alignment]'s.
   final double? bottom;

@@ -2802,6 +2802,16 @@ Line _line(
       }
     }
   }
+  // (An image reaching over what is beside it, ruby over kana, starting
+  // or ending the line: as far in as it reaches, JLREQ 3.3.9.)
+  if (shaped.firstOrNull case (final InlineImage image, _, _, _)
+      when image.startOverhang > 0 && !directions.first) {
+    natural += image.startOverhang;
+  }
+  if (shaped.lastOrNull case (final InlineImage image, _, _, _)
+      when image.endOverhang > 0 && !directions.last) {
+    natural += image.endOverhang;
+  }
   // (The tracking after the line's last character is no part of it: the
   // line ends where its last letter does, aligned so.)
   if (shaped.lastOrNull case (final TextRun run, _, final glyphs, _)
@@ -3111,8 +3121,13 @@ Line _line(
         descent = math.min(descent, -(content.lineDescent ?? -bottom));
         cap = math.max(cap, top);
         if (size == 0) size = height;
+        // (Reaching over what is beside it, at the line's start or end: set
+        // in by as much.)
+        final edge = !directions[i];
+        if (i == 0 && edge) x += content.startOverhang;
         fragments.add(ImageFragment(x, content.width, content, bottom));
         x += content.width;
+        if (i == shaped.length - 1 && edge) x += content.endOverhang;
       case PageReference():
         throw StateError('page references are resolved before breaking');
     }

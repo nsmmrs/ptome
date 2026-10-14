@@ -296,4 +296,43 @@ void main() {
       ),
     );
   });
+
+  test("an image reaching over what is beside it is set in at a line's "
+      'start and end (ruby, JLREQ 3.3.9)', () {
+    const image = InlineImage(
+      _Blank(),
+      30,
+      10,
+      startOverhang: 5,
+      endOverhang: 4,
+    );
+    final ab = _body.widthOf(_body.shape('ab '));
+    final [start] = _lines([image, TextRun(' ab', _body)]);
+    expect((start.fragments.first as ImageFragment).x, 5);
+    final [middle] = _lines([
+      TextRun('ab ', _body),
+      image,
+      TextRun(' cd', _body),
+    ]);
+    expect(
+      middle.fragments.whereType<ImageFragment>().single.x,
+      closeTo(ab, 1e-9),
+    );
+    final [end] = _lines([TextRun('ab ', _body), image]);
+    expect(end.width, closeTo(ab + 30 + 4, 1e-6));
+  });
+}
+
+/// An image that draws nothing.
+final class _Blank implements Graphic {
+  const new();
+
+  @override
+  double get intrinsicWidth => 30;
+
+  @override
+  double get intrinsicHeight => 10;
+
+  @override
+  void paint(Canvas canvas, Rect rect) {}
 }

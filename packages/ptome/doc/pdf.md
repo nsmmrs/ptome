@@ -299,13 +299,30 @@ language (above). Not under `asciidoctor-compat`.
 Ruby (furigana, zhuyin) is Ptome's `ruby:` macro: `ruby:漢字[かんじ]` sets
 the reading over the whole base (group ruby); readings separated by
 spaces, as many as the base's characters, go each over its character
-(mono ruby: `ruby:東京[とう きょう]`). The reading is half the text's size,
-centered on its base and resting on its em box, the base spaced out where
-the reading is wider, the line as tall as it needs; the base alone is
-copied from the page. HTML and EPUB write `<ruby>` (with `<rp>`
-parentheses), DocBook and man pages the reading in parentheses after the
-base. Under `asciidoctor-compat` (any format) the macro is text, as
-Asciidoctor leaves it; `\ruby:` escapes it.
+(mono ruby: `ruby:東京[とう きょう]`), a line breaking between them;
+`,jukugo` after them makes them a compound's (`ruby:鬼門[き もん,jukugo]`),
+each over its character where none has more than two reading
+characters, else the whole reading over the whole compound (JLREQ
+3.3.7). The reading is half the text's size, resting on the base's em
+box, set as JLREQ 3.3 has it: a reading shorter than its base spread
+over it, its characters a gap apart and half a gap from each end but no
+more than a reading character from them (JIS X 4051); a longer one
+hanging over the kana, prolonged sound mark, dots and the blank half of
+a bracket, full stop or comma beside it, up to a reading character's
+width, never over a Han character, the rest of its length made up
+between its base's characters (3.3.6, 3.3.8); starting or ending a line,
+it reaches no further than the line (3.3.9). Bopomofo (zhuyin,
+`ruby:注音[ㄓㄨˋ ㄧㄣ]`) stands in a column at the right of each character,
+as CLREQ has Taiwan's textbooks set it: its symbols three tenths of the
+character's size, stacked and centered on it, the column half the
+character's width, a tone mark at the right of the last symbol's top,
+the neutral tone above the symbols (in vertical text, on the right of
+the column, as other readings). The line is as tall as it needs; the
+base alone is copied from the page. HTML and EPUB write `<ruby>` (with
+`<rp>` parentheses; zhuyin with CSS's `ruby-position:
+inter-character`), DocBook and man pages the reading in parentheses
+after the base. Under `asciidoctor-compat` (any format) the macro is
+text, as Asciidoctor leaves it; `\ruby:` escapes it.
 
 Hyphenation (`:hyphens:`, the document's `lang`) works in every script
 hyph-utf8 has patterns for: Hindi, Marathi, Sanskrit, Bengali, Assamese,
