@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- JLREQ line adjustment (FEAT-vfmrnj): a justified line with Japanese
+  or Chinese is adjusted in JLREQ 3.8's order, each kind of place to its
+  limit before the next (`eastAsianPlaces`, `adjustGaps`); the breaker's
+  glue has the same limits (a mark's blank half shrinking away).
+  `Paragraph.hangingPunctuation` (burasagari, JLREQ 2.5.1: a full stop or
+  comma hangs whole past the line's end, first-fit breaking counting what
+  hangs too) and `Paragraph.lineStartBrackets` (`LineStartBrackets.solid`,
+  `fullWidth`, `novel`: JLREQ 3.1.5). A Japanese line-end closing bracket
+  or comma is set solid (JIS X 4051), a full stop keeping its half em.
+
 - Vertical boxes on horizontal pages (TASK-kj6r6q): `VerticalBox` lays
   its child out in a turned frame (vertical-rl or vertical-lr), its
   columns as long as its longest line or its `length`, and places it on

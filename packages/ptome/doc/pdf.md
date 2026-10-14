@@ -88,6 +88,8 @@ its title.
 | `base_justify_width` | room | `widest`: justified lines are set to the width of the paragraph's widest line (an overfull line shrunk to the room), as a paragraph in a block sized to its content is (CSS's `width: fit-content`); in a quote or a section role: `quote_base_justify_width`, `section_role_<role>_base_justify_width`. |
 | `base_kashida` | `0.5em` | Justified Arabic is lengthened inside its words before its spaces widen: tatweel drawn between two joined letters, each word at its best place by Microsoft's ranking for Arabic justification (after a Seen or Sad; before a final Teh Marbuta, Heh or Dal; before a final Alef, Tah, Lam, Kaf or Gaf; before a medial Beh ending in Reh or Yeh; before a final Waw, Ain, Qaf or Feh; before any final letter), never inside Lam-Alef or a Nastaliq word's cascade. The value is how far each word may be lengthened (`1em`, or a number of em); the spaces take what is left; `false` for none. The text read from the page has no tatweel. Modern engine; not under `asciidoctor-compat`. |
 | `base_word_break` | `auto` | Whether a line breaks inside a word written without spaces between its letters, as CSS's `word-break`: `keep-all` breaks only at spaces and punctuation (a word wider than the line between its characters all the same), `normal` wherever UAX #14 allows (between any two Han characters, kana or Hangul syllables). `auto` keeps Korean words whole (text whose language is `ko`: KLREQ 7.1.1 leaves the choice to the author, by words the common one), the rest `normal`. Modern engine; not under `asciidoctor-compat`. |
+| `base_hanging_punctuation` | `false` | `true` lets a full-width full stop or comma ending a line hang past its end (burasagari, JLREQ 2.5.1), rather than the line being squeezed for it or the mark going to the next line with the character before it. Modern engine; not under `asciidoctor-compat`. |
+| `base_line_start_bracket` | `solid` | How an opening bracket starting a line is set (JLREQ 3.1.5): `solid`, its blank half dropped at every line's start (①, JIS X 4051); `full-width`, kept (②); `novel`, kept where a paragraph starts, which then isn't indented, and dropped where a line wraps (③, as novels set dialogue). Modern engine; not under `asciidoctor-compat`. |
 | `base_text_align_last` | `left` | Where a justified paragraph's last line, and each line before a hard break, goes (`center`, `right`), as CSS's `text-align-last` (`table_base_text_align_last: center`: table cells justified, their last lines centered); `justify` stretches them to the measure too, so text broken line for line by hand fills each line (a mushaf, see `doc/mushaf.md`). |
 | `prose_orphans` | `2` | The fewest lines of a paragraph left at the bottom of a page. |
 | `prose_widows` | `2` | The fewest lines of a paragraph carried to the top of the next page. |
@@ -257,8 +259,16 @@ full em's blank; a quarter em separates Han or kana from Latin letters
 and digits (`PDF の`, `2026 年`); a justified line stretches between its
 characters; and no line starts with a closing mark, a full stop, small
 kana or the prolonged sound mark, nor ends with an opening bracket
-(UAX #14). Thai, Lao, Khmer and Burmese lines stretch between their
-words. Modern engine.
+(UAX #14). A justified line is adjusted in JLREQ 3.8's order: stretched
+first at its spaces (to half an em), then at the quarter em beside Latin
+(to half an em), then between its characters (a quarter em more), then
+everywhere alike; shrunk first at its spaces (to a quarter em), then at
+a mark's blank half (after a closing bracket or a comma, before an
+opening bracket), then at the quarter em beside Latin (to an eighth).
+A closing bracket or a comma ending a line is set solid (JIS X 4051), a
+full stop keeping its half em; an opening bracket starting a line is
+set solid too (JLREQ 3.1.5 ①; `base_line_start_bracket`). Thai, Lao,
+Khmer and Burmese lines stretch between their words. Modern engine.
 
 Korean wraps between words (eojeol), at its spaces, not between any two
 syllables as UAX #14 allows; `base_word_break` chooses (below).

@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Japanese and Chinese lines adjusted in JLREQ 3.8's order
+  (FEAT-vfmrnj): spaces, then the quarter em beside Latin, then between
+  characters when stretching; spaces, then marks' blank halves, then the
+  quarter em when shrinking. A line-end closing bracket or comma and a
+  line-start opening bracket set solid (JIS X 4051, JLREQ 3.1.5);
+  `base_hanging_punctuation` (burasagari) and `base_line_start_bracket`
+  (`solid`, `full-width`, `novel`).
 - HTML and EPUB: the document's direction and writing mode
   (FEAT-5gt09c): `:dir: rtl` writes `dir="rtl"` and turns an EPUB's
   pages to the left (`page-progression-direction`); `:writing-mode:

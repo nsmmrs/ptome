@@ -206,6 +206,21 @@ $theme
     expect(down.any((w) => w.$1.contains('具体的な')), isTrue);
   }, skip: _poppler ? false : 'needs pdftotext');
 
+  test('base_hanging_punctuation: a comma or full stop hangs past the '
+      "line's end (JLREQ 2.5.1)", () {
+    double right(String theme) => lines(
+      pdf(
+        '日本語の文章は、' * 14,
+        'horizontal-tb',
+        theme: 'base_text_align: justify\n$theme',
+      ),
+    ).map((w) => w.$2 + w.$4).reduce((a, b) => a > b ? a : b);
+    expect(
+      right('base_hanging_punctuation: true'),
+      greaterThan(right('base_hanging_punctuation: false') + 1),
+    );
+  }, skip: _poppler ? false : 'needs pdftotext');
+
   test('under asciidoctor-compat the lines run across', () {
     final words = lines(
       pdf(text, 'vertical-rl', attributes: {'asciidoctor-compat': 'pdf'}),

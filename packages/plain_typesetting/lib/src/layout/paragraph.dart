@@ -214,6 +214,22 @@ enum WordBreak {
   auto,
 }
 
+/// How an opening bracket starting a line is set (JLREQ 3.1.5).
+enum LineStartBrackets {
+  /// Solid, its blank half dropped, at the start of every line (①, as
+  /// JIS X 4051 has it): after a paragraph's indent, and at a wrapped
+  /// line's start, touching the edge.
+  solid,
+
+  /// Full width, its blank half kept, at the start of every line (②).
+  fullWidth,
+
+  /// Full width at a paragraph's start (which is not indented further:
+  /// the caller sets no indent there), solid at a wrapped line's (③, as
+  /// novels set dialogue).
+  novel,
+}
+
 /// Finds where words may be hyphenated.
 abstract interface class Hyphenator {
   /// The offsets in [word] (letters only) a hyphen may go before.
@@ -274,6 +290,8 @@ final class Paragraph {
     this.kashida = 0,
     this.eastAsian = true,
     this.wordBreak = WordBreak.auto,
+    this.hangingPunctuation = false,
+    this.lineStartBrackets = LineStartBrackets.solid,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -308,6 +326,8 @@ final class Paragraph {
     kashida: kashida,
     eastAsian: eastAsian,
     wordBreak: wordBreak,
+    hangingPunctuation: hangingPunctuation,
+    lineStartBrackets: lineStartBrackets,
   );
 
   /// The inline content.
@@ -331,6 +351,14 @@ final class Paragraph {
   /// Whether lines break inside words written without spaces between
   /// their letters (by default, not in Korean).
   final WordBreak wordBreak;
+
+  /// Whether a full-width full stop or comma ending a line hangs past its
+  /// end (burasagari, JLREQ 2.5.1), rather than going to the next line or
+  /// the line being squeezed for it.
+  final bool hangingPunctuation;
+
+  /// How an opening bracket starting a line is set (JLREQ 3.1.5).
+  final LineStartBrackets lineStartBrackets;
 
   /// Whether the paragraph's base direction is right to left (Arabic,
   /// Hebrew): its lines start at the right, where its indents go, and
@@ -611,6 +639,9 @@ abstract base class ItemLineBreaker implements LineBreaker {
       protrusion: paragraph.protrusion,
       hangIndent: paragraph.hangIndent,
       hangLines: paragraph.hangLines,
+      wordBreak: paragraph.wordBreak,
+      hangingPunctuation: paragraph.hangingPunctuation,
+      lineStartBrackets: paragraph.lineStartBrackets,
     );
     final firstItems = paragraphItems(
       styled,
@@ -674,7 +705,10 @@ abstract base class ItemLineBreaker implements LineBreaker {
     // (Protrusion: what hangs at a line's ends counted as the line is
     // then drawn, at its end always, at its start when justified.)
     double Function(int)? protrude({required bool right}) {
-      if (paragraph.protrusion <= 0) return null;
+      if (paragraph.protrusion <= 0 &&
+          !(right && paragraph.hangingPunctuation)) {
+        return null;
+      }
       if (!right && paragraph.align != TextAlign.justify) return null;
       return (item) {
         final (run, text) = switch (items[item]) {
@@ -716,6 +750,12 @@ double _protrusionOf(
   required bool right,
 }) {
   final char = String.fromCharCode(right ? text.runes.last : text.runes.first);
+  // (A full stop or comma hung whole past the line's end: burasagari.)
+  if (right &&
+      paragraph.hangingPunctuation &&
+      hangsAtLineEnd(char.runes.single)) {
+    return run.style.font.widthOf(char, run.style.size);
+  }
   final factor = right ? rightProtrusion(char) : leftProtrusion(char);
   return factor == 0
       ? 0
@@ -752,18 +792,24 @@ final class FirstFitLineBreaker extends ItemLineBreaker {
       int? candidate;
       var lastResort = false;
       int? end;
+      // (What hangs past the end of a line breaking after the last box:
+      // its protrusion, a hanging full stop or comma.)
+      var lastBox = -1;
+      double hang() => lastBox < 0 ? 0 : (protrudeRight?.call(lastBox) ?? 0);
       for (var i = s; i < items.length; i++) {
         final item = items[i];
         switch (item) {
           case PenaltyItem(isForced: true):
-            end = width <= available || candidate == null ? i : candidate;
+            end = width <= available + hang() || candidate == null
+                ? i
+                : candidate;
           case PenaltyItem(:final penalty):
             // A costly break (between the characters of a word too long
             // for a line) only when the line has no other.
             final last = penalty >= _lastResort;
             if (penalty < PenaltyItem.never &&
                 (!last || candidate == null || lastResort)) {
-              if (width + item.width <= available) {
+              if (width + item.width <= available + hang()) {
                 candidate = i;
                 lastResort = last;
               } else if (candidate == null) {
@@ -772,7 +818,7 @@ final class FirstFitLineBreaker extends ItemLineBreaker {
             }
           case GlueItem(:final stretch):
             if (i > s && items[i - 1] is BoxItem && stretch.isFinite) {
-              if (width <= available) {
+              if (width <= available + hang()) {
                 candidate = i;
                 lastResort = false;
               } else {
@@ -782,7 +828,10 @@ final class FirstFitLineBreaker extends ItemLineBreaker {
             width += item.width;
           case BoxItem():
             width += item.width;
-            if (width > available && candidate != null) end = candidate;
+            lastBox = i;
+            if (width > available + hang() && candidate != null) {
+              end = candidate;
+            }
         }
         if (end != null) break;
       }
@@ -1775,14 +1824,23 @@ GlueItem? _eastAsianGlue(String text, int at, TextStyle style) {
   // (Digits set across a vertical line, upright, are set as an
   // ideograph: no quarter em.)
   final combined = style.combinesAt(text, at - 1) || style.combinesAt(text, at);
+  // (JLREQ 3.8: the quarter em beside Latin stretching to half an em and
+  // shrinking to an eighth; between characters a quarter em more, a
+  // mark's blank half shrinking to nothing.)
   if (cjkWesternBoundary(a, b) && !combined) {
-    return GlueItem(null, '', size / 4, size / 8, size / 8);
+    return GlueItem(null, '', size / 4, size / 4, size / 8);
   }
   if (combined && (isSpaceless(a) || isSpaceless(b))) {
     return GlueItem(null, '', 0, size / 4, 0);
   }
   if (isSpaceless(a) && isSpaceless(b)) {
-    return GlueItem(null, '', 0, size / 4, 0);
+    return GlueItem(
+      null,
+      '',
+      0,
+      size / 4,
+      size * markBlankBetween(a, b, style.language),
+    );
   }
   return null;
 }
@@ -2351,11 +2409,199 @@ List<Line> buildLines(
         emptyRun: emptyRun,
         expansion: expansion,
         end: number == breaks.length - 1,
+        first: number == 0,
       ),
     );
     start = end + 1;
   }
   return _interline(paragraph, lines);
+}
+
+/// How a justified line's runs are adjusted ([_eastAsianAdjustment]).
+typedef _Adjustment = ({
+  double total,
+  List<({double space, Map<int, double> gaps, double width})?> runs,
+});
+
+/// A place a line is adjusted at: run `run`'s spaces (a null `gap`) or
+/// the place after its glyph `gap`, its text's `size`, how far it may go
+/// at this stage (`limit`, points) and how many it stands for (`count`:
+/// a run's spaces together).
+typedef _Place = ({int run, int? gap, double size, double limit, int count});
+
+/// The line of [shaped] runs adjusted by [difference] (points: more for
+/// a line to stretch, less to shrink) in JLREQ 3.8's order, or null where
+/// it has nothing of Japanese or Chinese to adjust.
+///
+/// Stretching (3.8.4, JIS X 4051's order): the spaces between words to
+/// half an em; the quarter em between Han or kana and Latin to half an
+/// em; between the other characters by a quarter em; then all of them
+/// alike. Shrinking (3.8.3): the spaces between words to a quarter em;
+/// the blank half of a mark mid-line (after a closing bracket or a comma,
+/// before an opening bracket; each side of a middle dot) to nothing; the
+/// quarter em between Han or kana and Latin to an eighth. Within each,
+/// every place by as much, in proportion to its text's size.
+_Adjustment? _eastAsianAdjustment(
+  List<(InlineContent, String, List<ShapedGlyph>, double)> shaped,
+  List<bool> directions,
+  double difference,
+) {
+  final places = <EastAsianPlaces?>[];
+  final spaceCounts = <int>[];
+  var any = false;
+  for (final (i, (content, text, glyphs, _)) in shaped.indexed) {
+    if (content is! TextRun || content.slotWidth != null || directions[i]) {
+      places.add(null);
+      spaceCounts.add(0);
+      continue;
+    }
+    final found = eastAsianPlaces(glyphs, content.style);
+    places.add(found);
+    spaceCounts.add(' '.allMatches(text).length);
+    if (!found.isEmpty) any = true;
+  }
+  if (!any) return null;
+  TextStyle styleOf(int i) => (shaped[i].$1 as TextRun).style;
+  double spaceOf(int i) => styleOf(i).measure(' ') + styleOf(i).wordSpacing;
+  // The stages, each a list of places with their limits.
+  final stages = <List<_Place>>[];
+  if (difference >= 0) {
+    stages
+      ..add([
+        for (final (i, _) in places.indexed)
+          if (places[i] != null && spaceCounts[i] > 0)
+            (
+              run: i,
+              gap: null,
+              size: styleOf(i).size,
+              limit: math.max(0, styleOf(i).size / 2 - spaceOf(i)),
+              count: spaceCounts[i],
+            ),
+      ])
+      ..add([
+        for (final (i, p) in places.indexed)
+          if (p != null)
+            for (final gap in p.mixed)
+              (
+                run: i,
+                gap: gap,
+                size: styleOf(i).size,
+                limit: styleOf(i).size / 4,
+                count: 1,
+              ),
+      ])
+      ..add([
+        for (final (i, p) in places.indexed)
+          if (p != null)
+            for (final gap in p.ideographic)
+              (
+                run: i,
+                gap: gap,
+                size: styleOf(i).size,
+                limit: styleOf(i).size / 4,
+                count: 1,
+              ),
+      ])
+      // (Then all of them alike, without limit.)
+      ..add([
+        for (final stage in [...stages])
+          for (final place in stage)
+            (
+              run: place.run,
+              gap: place.gap,
+              size: place.size,
+              limit: double.infinity,
+              count: place.count,
+            ),
+      ]);
+  } else {
+    stages
+      ..add([
+        for (final (i, _) in places.indexed)
+          if (places[i] != null && spaceCounts[i] > 0)
+            (
+              run: i,
+              gap: null,
+              size: styleOf(i).size,
+              limit: math.max(0, spaceOf(i) - styleOf(i).size / 4),
+              count: spaceCounts[i],
+            ),
+      ])
+      ..add([
+        for (final (i, p) in places.indexed)
+          if (p != null)
+            for (final MapEntry(key: gap, value: em) in p.punctuation.entries)
+              (
+                run: i,
+                gap: gap,
+                size: styleOf(i).size,
+                limit: styleOf(i).size * em,
+                count: 1,
+              ),
+      ])
+      ..add([
+        for (final (i, p) in places.indexed)
+          if (p != null)
+            for (final gap in p.mixed)
+              (
+                run: i,
+                gap: gap,
+                size: styleOf(i).size,
+                limit: styleOf(i).size / 8,
+                count: 1,
+              ),
+      ]);
+  }
+  final sign = difference >= 0 ? 1.0 : -1.0;
+  var left = difference.abs();
+  final spaceAmounts = List<double>.filled(shaped.length, 0);
+  final gapAmounts = [for (final _ in shaped) <int, double>{}];
+  for (final stage in stages) {
+    if (left <= 1e-9) break;
+    if (stage.isEmpty) continue;
+    // Water filled: as much at each place, per point of its size, up to
+    // its limit.
+    final order = [...stage]
+      ..sort((a, b) => (a.limit / a.size).compareTo(b.limit / b.size));
+    var weight = stage.fold<double>(0, (sum, p) => sum + p.size * p.count);
+    var level = 0.0;
+    for (final (k, place) in order.indexed) {
+      final cap = place.limit / place.size;
+      final need = (cap - level) * weight;
+      if (need >= left) {
+        level += left / weight;
+        left = 0;
+        break;
+      }
+      left -= need;
+      level = cap;
+      weight -= place.size * place.count;
+      if (k == order.length - 1) break;
+    }
+    for (final place in stage) {
+      final amount =
+          sign * math.min(level, place.limit / place.size) * place.size;
+      if (place.gap case final gap?) {
+        gapAmounts[place.run][gap] = (gapAmounts[place.run][gap] ?? 0) + amount;
+      } else {
+        spaceAmounts[place.run] += amount;
+      }
+    }
+  }
+  final runs = <({double space, Map<int, double> gaps, double width})?>[];
+  var total = 0.0;
+  for (final (i, p) in places.indexed) {
+    if (p == null) {
+      runs.add(null);
+      continue;
+    }
+    final width =
+        spaceAmounts[i] * spaceCounts[i] +
+        gapAmounts[i].values.fold<double>(0, (sum, a) => sum + a);
+    total += width;
+    runs.add((space: spaceAmounts[i], gaps: gapAmounts[i], width: width));
+  }
+  return (total: total, runs: runs);
 }
 
 /// [lines] apart by their paragraph's [FontLineHeight.skip], where it has
@@ -2377,6 +2623,7 @@ Line _line(
   required TextRun? emptyRun,
   double expansion = 0,
   bool end = false,
+  bool first = false,
 }) {
   var available = room;
   // Runs of items of the same content, in order.
@@ -2501,6 +2748,30 @@ Line _line(
       }
     }
   }
+  // (And an opening bracket starting it set solid, as the paragraph has
+  // it: JLREQ 3.1.5.)
+  final solidStart = switch (paragraph.lineStartBrackets) {
+    LineStartBrackets.solid => true,
+    LineStartBrackets.fullWidth => false,
+    LineStartBrackets.novel => !first,
+  };
+  if (paragraph.eastAsian &&
+      solidStart &&
+      shaped.isNotEmpty &&
+      !directions.first) {
+    final (content, text, glyphs, width) = shaped.first;
+    if (content is TextRun && content.slotWidth == null) {
+      final trimmed = eastAsianLineStart(glyphs, content.style);
+      if (!identical(trimmed, glyphs)) {
+        final narrower =
+            width -
+            content.style.widthOf(glyphs) +
+            content.style.widthOf(trimmed);
+        natural += narrower - width;
+        shaped.first = (content, text, trimmed, narrower);
+      }
+    }
+  }
   // (The tracking after the line's last character is no part of it: the
   // line ends where its last letter does, aligned so.)
   if (shaped.lastOrNull case (final TextRun run, _, final glyphs, _)
@@ -2520,17 +2791,25 @@ Line _line(
   // is justified, its first before its start, the line that much wider
   // (as the breaker counted them).
   var leftHang = 0.0;
-  if (paragraph.protrusion > 0 && !paragraph.rightToLeft) {
+  if ((paragraph.protrusion > 0 || paragraph.hangingPunctuation) &&
+      !paragraph.rightToLeft) {
     var hang = 0.0;
-    for (final (content, text, _, _) in shaped.reversed) {
+    for (final (content, text, glyphs, _) in shaped.reversed) {
       final trimmed = text.trimRight();
       if (trimmed.isEmpty) continue;
       if (content is TextRun) {
-        hang = _protrusionOf(paragraph, content, trimmed, right: true);
+        // (A full stop or comma hung whole, as wide as it is set: half
+        // wide where the line's end set it solid.)
+        hang =
+            paragraph.hangingPunctuation &&
+                hangsAtLineEnd(trimmed.runes.last) &&
+                glyphs.isNotEmpty
+            ? content.style.widthOf([glyphs.last])
+            : _protrusionOf(paragraph, content, trimmed, right: true);
       }
       break;
     }
-    if (justified && spaces > 0) {
+    if (justified && spaces > 0 && paragraph.protrusion > 0) {
       for (final (content, text, _, _) in shaped) {
         final trimmed = text.replaceAll('\u200b', '').trimLeft();
         if (trimmed.isEmpty) continue;
@@ -2610,12 +2889,19 @@ Line _line(
         const <int>[],
   ];
   final gapCount = gaps.fold(0, (sum, g) => sum + g.length);
-  final extra = !justified || spaces + gapCount == 0
+  // (A justified line of Japanese or Chinese: adjusted in JLREQ 3.8's
+  // order, each kind of place to its limit before the next.)
+  final adjusted = justify && !overfull && scale == 1 && paragraph.eastAsian
+      ? _eastAsianAdjustment(shaped, directions, available - natural)
+      : null;
+  final extra = adjusted != null || !justified || spaces + gapCount == 0
       ? 0.0
       : overfull
       ? math.min<double>(0, (available / scale - natural) / spaces)
       : (available / scale - natural) / (spaces + gapCount);
-  final width = (natural + extra * (spaces + gapCount)) * scale;
+  final width = adjusted != null
+      ? natural + adjusted.total
+      : (natural + extra * (spaces + gapCount)) * scale;
   // (A justified paragraph's line that isn't stretched: by alignLast.)
   final align = paragraph.align == TextAlign.justify && !justify && !overfull
       ? paragraph.alignLast
@@ -2697,9 +2983,28 @@ Line _line(
   final fragments = <LineFragment>[];
   for (final (i, (content, string, glyphs, natural)) in shaped.indexed) {
     switch (content) {
+      case TextRun(:final style)
+          when adjusted != null && adjusted.runs[i] != null:
+        // (Adjusted as JLREQ has it: its spaces and its places each by
+        // their own amounts.)
+        final run = adjusted.runs[i]!;
+        fragments.add(
+          TextFragment(
+            x,
+            natural + run.width,
+            content,
+            string,
+            adjustGaps(glyphs, run.gaps, style),
+            run.space == 0
+                ? style
+                : style.copyWith(wordSpacing: style.wordSpacing + run.space),
+            rightToLeft: directions[i],
+          ),
+        );
+        x += natural + run.width;
       case TextRun(:final style, :final slotWidth):
         final count = slotWidth != null ? 0 : ' '.allMatches(string).length;
-        final adjusted = extra == 0 && scale == 1
+        final adjustedStyle = extra == 0 && scale == 1
             ? style
             : style.copyWith(
                 wordSpacing: style.wordSpacing + extra,
@@ -2713,7 +3018,7 @@ Line _line(
             content,
             string,
             widenGaps(glyphs, gaps[i], extra * 1000 / style.size),
-            adjusted,
+            adjustedStyle,
             rightToLeft: directions[i],
           ),
         );

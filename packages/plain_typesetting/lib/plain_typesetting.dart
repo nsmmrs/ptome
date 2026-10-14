@@ -107,6 +107,7 @@ export 'src/layout/paragraph.dart'
         LineFragment,
         LineHeight,
         LineItem,
+        LineStartBrackets,
         LineWidths,
         MultipleLineHeight,
         Paragraph,

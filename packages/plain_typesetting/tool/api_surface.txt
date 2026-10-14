@@ -177,6 +177,11 @@ enum LineJoin
   static LineJoin miter
   static LineJoin round
   static List<LineJoin> values
+enum LineStartBrackets
+  static LineStartBrackets fullWidth
+  static LineStartBrackets novel
+  static LineStartBrackets solid
+  static List<LineStartBrackets> values
 enum PageSide
   PageSide of(int number)
   static List<PageSide> values
@@ -585,16 +590,18 @@ final class Paragraph
   HyphenRepetition hyphenRepetition
   Hyphenator? hyphenator
   LineHeight lineHeight
+  LineStartBrackets lineStartBrackets
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
   WordBreak wordBreak
   bool breakLongWords
   bool eastAsian
+  bool hangingPunctuation
   bool justifyToWidest
   bool rightToLeft
   bool riseInLineHeight

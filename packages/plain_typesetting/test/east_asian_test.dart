@@ -23,12 +23,17 @@ List<Line> _lines(
   double width, {
   TextAlign align = TextAlign.left,
   bool eastAsian = true,
+  TextStyle? style,
+  LineStartBrackets lineStartBrackets = LineStartBrackets.solid,
+  bool hangingPunctuation = false,
 }) => const FirstFitLineBreaker().breakLines(
   Paragraph(
-    [TextRun(text, _style)],
+    [TextRun(text, style ?? _style)],
     align: align,
     alignLast: align,
     eastAsian: eastAsian,
+    lineStartBrackets: lineStartBrackets,
+    hangingPunctuation: hangingPunctuation,
   ),
   (_) => width,
 );
@@ -51,9 +56,108 @@ void main() {
   });
 
   test('the second of two opening marks is set half wide', () {
-    final [line] = _lines('（「括」', 200);
-    // （ whole, 「 half, 括, 」 whole at the end.
+    // （ whole, 「 half, 括, 」 whole: brackets at the line's ends kept
+    // full width.
+    final [line] = _lines(
+      '（「括」',
+      200,
+      lineStartBrackets: LineStartBrackets.fullWidth,
+      style: TextStyle(_jp, 10, language: 'zh-Hant-HK'),
+    );
     expect(_width(line), closeTo(35, 1e-6));
+  });
+
+  group("a line's ends (JIS X 4051, JLREQ 3.1.5 and 3.8.3)", () {
+    test('an opening bracket starting it, and a closing bracket or comma '
+        'ending it, set solid', () {
+      final [line] = _lines('（「括」', 200);
+      expect(_width(line), closeTo(25, 1e-6));
+      final [comma] = _lines('括弧、', 200);
+      expect(_width(comma), closeTo(25, 1e-6));
+    });
+
+    test('a full stop ending it keeps its half em', () {
+      final [line] = _lines('括弧。', 200);
+      expect(_width(line), closeTo(30, 1e-6));
+    });
+
+    test('novel style: full width where the paragraph starts, solid where '
+        'a line wraps', () {
+      final lines = _lines(
+        '「括弧括弧括弧」「括弧括弧括弧」',
+        80,
+        lineStartBrackets: LineStartBrackets.novel,
+      );
+      expect(lines.length, greaterThan(1));
+      final first = lines.first.fragments.whereType<TextFragment>().first;
+      final second = lines[1].fragments.whereType<TextFragment>().first;
+      expect(first.glyphs.first.advance, 1000);
+      if (second.text.startsWith('「')) {
+        expect(second.glyphs.first.advance, lessThan(1000));
+      }
+    });
+  });
+
+  group("line adjustment in JLREQ 3.8's order", () {
+    /// The kerning after each glyph of [text] justified [extra] points
+    /// wider than it is.
+    List<double> kerning(String text, double extra) {
+      final [natural] = _lines(text, 500);
+      final [line] = _lines(
+        text,
+        _width(natural) + extra,
+        align: TextAlign.justify,
+      );
+      return [
+        for (final f in line.fragments.whereType<TextFragment>())
+          for (final g in f.glyphs) g.kerning,
+      ];
+    }
+
+    test('stretching: the quarter em beside Latin first, to half an em', () {
+      // (や|P D F|や 括 弧: two mixed places, three between characters.)
+      final k = kerning('やPDFや括弧', 2);
+      expect(k.first, closeTo(250 + 100, 1e-6));
+      expect(k[3], closeTo(250 + 100, 1e-6));
+      // (Between the characters, nothing yet.)
+      expect(k[4], closeTo(0, 1e-6));
+      expect(k[5], closeTo(0, 1e-6));
+    });
+
+    test('then between the characters, once the mixed places are full', () {
+      final k = kerning('やPDFや括弧', 5 + 2 * 2);
+      expect(k.first, closeTo(500, 1e-6));
+      expect(k[4], closeTo(200, 1e-6));
+      expect(k[5], closeTo(200, 1e-6));
+    });
+
+    test("shrinking: a mark's blank half before the mixed places", () {
+      final [natural] = _lines('括弧、括弧括弧', 500);
+      final [line] = const KnuthPlassLineBreaker().breakLines(
+        Paragraph(
+          [TextRun('括弧、括弧括弧', _style)],
+          align: TextAlign.justify,
+          alignLast: TextAlign.justify,
+        ),
+        (_) => _width(natural) - 3,
+      );
+      final k = [
+        for (final f in line.fragments.whereType<TextFragment>())
+          for (final g in f.glyphs) g.kerning,
+      ];
+      // (After the comma, 3 points of its blank half.)
+      expect(k[2], closeTo(-300, 1e-6));
+    });
+  });
+
+  group('hanging punctuation (burasagari, JLREQ 2.5.1)', () {
+    test('a full stop or comma that would wrap hangs past the end', () {
+      // (Four characters fit; the fifth, a comma, hangs.)
+      final hung = _lines('括弧括弧、括弧', 40, hangingPunctuation: true);
+      expect(_text(hung.first), '括弧括弧、');
+      final wrapped = _lines('括弧括弧、括弧', 40);
+      expect(_text(wrapped.first), isNot('括弧括弧、'));
+    });
   });
 
   test('a quarter em between kana and Latin, either way', () {

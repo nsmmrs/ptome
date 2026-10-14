@@ -82,7 +82,14 @@ extension _Paragraphs on PdfConverter {
                             : 0)
                   : null,
             ),
-      firstLineIndent: layout.indentFirstLine,
+      // (JLREQ 3.1.5 ③, `base_line_start_bracket: novel`: a paragraph
+      // starting with an opening bracket not indented, the bracket's blank
+      // half its indent.)
+      firstLineIndent:
+          _lineStartBrackets == LineStartBrackets.novel &&
+              _startsWithOpeningBracket(runs)
+          ? 0
+          : layout.indentFirstLine,
       strut: layout.normalizeLineHeight ? TextStyle(engineFont, size) : null,
       // (`base_text_align_last`: a justified paragraph's last line, and
       // those before a hard break.)
@@ -97,6 +104,14 @@ extension _Paragraphs on PdfConverter {
       // (`base_word_break`: `keep-all` breaks no word written without
       // spaces, `normal` wherever UAX #14 allows; by default, Korean
       // keeps its words.)
+      // (`base_hanging_punctuation`: a full stop or comma ending a line
+      // hangs past it, burasagari; `base_line_start_bracket`: how an
+      // opening bracket starting a line is set, JLREQ 3.1.5.)
+      hangingPunctuation: switch (_theme.value('base_hanging_punctuation')) {
+        ThemeBool(value: true) => true,
+        _ => false,
+      },
+      lineStartBrackets: _lineStartBrackets,
       wordBreak: switch (_s('base_word_break')) {
         'keep-all' => WordBreak.keepAll,
         'normal' => WordBreak.normal,
@@ -107,6 +122,29 @@ extension _Paragraphs on PdfConverter {
       // it.)
       riseInLineHeight: false,
     );
+  }
+
+  /// How an opening bracket starting a line is set
+  /// (`base_line_start_bracket`: `solid`, `full-width`, `novel`).
+  LineStartBrackets get _lineStartBrackets =>
+      switch (_s('base_line_start_bracket')) {
+        'full-width' => LineStartBrackets.fullWidth,
+        'novel' => LineStartBrackets.novel,
+        _ => LineStartBrackets.solid,
+      };
+
+  /// Whether [runs] start with a full-width opening bracket.
+  static bool _startsWithOpeningBracket(List<InlineContent> runs) {
+    for (final run in runs) {
+      if (run case TextRun(:final text) when text.trim().isNotEmpty) {
+        return const {
+          0x3008, 0x300a, 0x300c, 0x300e, 0x3010, 0x3014, 0x3016, //
+          0x3018, 0x301a, 0x301d, 0xff08, 0xff3b, 0xff5b, 0xff5f,
+        }.contains(text.trimLeft().runes.first);
+      }
+      if (run is! TextRun) return false;
+    }
+    return false;
   }
 
   /// The theme's alignment [value] (`left`, `center`, `right`,
