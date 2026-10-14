@@ -56,11 +56,28 @@ void main(List<String> args) {
       'left': int.parse(hyphenmins?[1] ?? '2'),
       'right': int.parse(hyphenmins?[2] ?? '3'),
     };
+    // (A file offered under a copyleft licence or a permissive one is
+    // used under the permissive one: ptome takes no GPL code.)
+    final offered = [
+      for (final m in RegExp(r'name:\s*(\S+)').allMatches(licence ?? '')) m[1]!,
+    ];
+    final chosen = offered.length > 1 && offered.contains('GPL')
+        ? offered.firstWhere((n) => n != 'GPL' && n != 'LGPL', orElse: () => '')
+        : '';
     notices
       ..writeln('## $tag (${name ?? tag})')
       ..writeln()
       ..writeAll(copyright.map((c) => '$c\n'))
-      ..writeln()
+      ..writeln();
+    if (chosen.isNotEmpty) {
+      notices
+        ..writeln(
+          'Offered under any of the licences below; used here under the '
+          '$chosen licence.',
+        )
+        ..writeln();
+    }
+    notices
       ..writeln('```')
       ..writeln(licence?.trimRight() ?? '(see the file)')
       ..writeln('```')

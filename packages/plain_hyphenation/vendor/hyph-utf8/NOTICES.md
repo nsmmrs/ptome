@@ -428,6 +428,8 @@ Copyright (C) 2012 Claudio Beccari
 
 Copyright (C) 2004-2015 Kevin P. Scannell
 
+Offered under any of the licences below; used here under the MIT licence.
+
 ```
      - This file available under any of these licences:
      -

@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Vertical pages (BUG-38zmwk): an upright box too wide for the page (its
+  narrowest wider than the page, or its natural width wider than the page
+  and within the column's length) is turned to lie along the column
+  (JLREQ 2.3.2) instead of squeezed across the page.
+
 - Emoji (FEAT-rr13pg): emoji sequences (ZWJ sequences, skin tones,
   flags, keycaps, U+FE0F) shaped by the font's layout tables in full, a
   character and its variation selector as the font's glyph for the pair

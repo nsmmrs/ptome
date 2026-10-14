@@ -335,9 +335,10 @@ Tables, code listings and literal blocks stand upright in the text, set
 across as on a horizontal page (JLREQ 4.4.2), at the head of the column,
 as wide across the page as their content needs (at most the content
 area's width) and no narrower than keeps them from wrapping more; the
-text goes on after them. One too long for the page's height upright lies
-on its side instead, its top to the page's right, and goes on over the
-pages (JLREQ 2.3.2). A chronology set down the columns, as the text is
+text goes on after them. One too long for the page's height upright, or
+too wide for the page's width (a table of many columns, as the official
+gazette turns them), lies on its side instead, its top to the page's
+right, along the column, and goes on over the pages (JLREQ 2.3.2). A chronology set down the columns, as the text is
 (JLREQ Fig. 285), takes the `vertical` role (`[.vertical]`), or every
 table does with `table_writing_mode: vertical`.
 

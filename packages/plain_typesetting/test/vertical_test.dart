@@ -205,6 +205,23 @@ void main() {
       );
     });
 
+    test('wider than the page, it is turned to lie along the column '
+        '(JLREQ 2.3.2), as the official gazette turns a wide table', () {
+      // (220 wide: more than the page's 160 across, less than the
+      // column's 260 down it.)
+      final calls = painted([
+        UprightBox(
+          DrawingBox(50, (canvas, rect) => canvas.rect(rect), width: 220),
+        ),
+      ]);
+      expect(
+        calls.where((c) => c.startsWith('transform 0.00 1.00 -1.00')),
+        isEmpty,
+      );
+      // (In the column's frame, at its whole width: not squeezed.)
+      expect(calls, contains(endsWith(' 220.00 50.00')));
+    });
+
     test('a vertical box on a horizontal page: its frame turned, its '
         'columns as long as its longest line', () {
       final layout = FlowLayout(

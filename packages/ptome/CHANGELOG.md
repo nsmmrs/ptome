@@ -10,6 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: on a vertical page, a table too wide for the page is turned to lie
+  along the column, as the official gazette turns them, instead of
+  squeezed with its cells wrapping (BUG-38zmwk).
 - PDF: color emoji (FEAT-rr13pg): emoji sequences set whole in a font
   with color glyphs (the text's, a color fallback of the theme's, else the
   installed Noto Color Emoji; `base_color_emoji: false` leaves it out) and

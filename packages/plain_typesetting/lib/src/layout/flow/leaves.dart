@@ -226,6 +226,17 @@ extension _Leaves on _Pass {
     final margin = box.style.margin;
     final top = atTop ? 0.0 : margin.top;
     final across = math.min(box.maxWidth ?? _regionHeight, _regionHeight);
+    // (Too wide for the page: turned, lying in the flow along the
+    // column, where it fits (JLREQ 2.3.2): its narrowest is wider than
+    // the page, or it is wider at its natural width and fits the
+    // column's length so.)
+    writingMode = WritingMode.horizontal;
+    final (least, natural) = _intrinsic(box.child);
+    writingMode = mode;
+    if (least > across + 1e-6 ||
+        (natural > across + 1e-6 && natural <= width + 1e-6)) {
+      return _place(box.child, width, available, atTop: atTop);
+    }
     late _Fit fit;
     var w = across;
     writingMode = WritingMode.horizontal;
