@@ -81,13 +81,15 @@ const List<(String, String, String, String)> _vendored = [
   (
     'plain_unicode',
     'Unicode CLDR',
-    'the quotation marks by language',
+    'the quotation marks, collation tailorings and index characters by '
+        'language',
     'plain_unicode/vendor/cldr/48.2.0/LICENSE',
   ),
   (
     'plain_unicode',
     'Unicode Character Database',
-    'the line breaking, bidirectional and case mapping tables',
+    'the line breaking, bidirectional, case mapping, character property '
+        'and emoji tables',
     'plain_unicode/vendor/ucd/18.0.0/license.txt',
   ),
   (
