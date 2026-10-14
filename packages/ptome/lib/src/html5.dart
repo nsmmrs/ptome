@@ -230,6 +230,7 @@ class Html5Converter extends BuiltInConverter {
     .indexterm => convertInlineIndexterm(node),
     .kbd => convertInlineKbd(node),
     .ruby => rubyHtml(node),
+    .warichu => warichuHtml(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => htmlUnitMark(node),

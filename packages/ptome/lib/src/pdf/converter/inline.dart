@@ -64,6 +64,7 @@ extension _InlineElements on PdfConverter {
     InlineContext.kbd => _inlineKbd(node),
     InlineContext.menu => _inlineMenu(node),
     InlineContext.ruby => _inlineRuby(node),
+    InlineContext.warichu => _inlineWarichu(node),
     InlineContext.quoted => _inlineQuoted(node),
     // A unit's mark: its anchor, then its label (ADR-0020).
     InlineContext.unit => _inlineUnit(node),
@@ -1363,6 +1364,32 @@ extension _InlineElements on PdfConverter {
               .replaceAll('<', '&lt;')
               .replaceAll('"', '&quot;');
           return '<img src="$src" format="ruby" alt="$alt">';
+        }(),
+    ].join();
+  }
+
+  /// Warichu: inline graphics of the note in two small lines within the
+  /// line (warichu.dart), a note longer than its line in pieces that go on
+  /// in the next ones; the compatibility mode never parses it.
+  String _inlineWarichu(Inline node) {
+    final note = PdfConverter._unescapeXml(
+      (node.text ?? '').replaceAll(RegExp('<[^>]*>'), ''),
+    );
+    final face = _fonts.font(_font.family, _font.style);
+    // (The line's length: down the page in vertical text.)
+    final room = _verticalText
+        ? _pageSize(_document).$2 - _pageMargins(_document).vertical
+        : _floatRoom;
+    return [
+      for (final piece in InlineWarichu.pieces(note, face, _font.size, room))
+        () {
+          final src = 'warichu:${_rubyCount++}';
+          _inlineGraphics[src] = piece;
+          final alt = piece.text
+              .replaceAll('&', '&amp;')
+              .replaceAll('<', '&lt;')
+              .replaceAll('"', '&quot;');
+          return '<img src="$src" format="warichu" alt="$alt">';
         }(),
     ].join();
   }

@@ -373,7 +373,9 @@ extension _Framed on PdfConverter {
     final step = switch (_theme.value('page_baseline_grid')) {
       ThemeBool(value: true) => body.linePitch(1),
       ThemeNumber(:final value) when value > 0 => value.toDouble(),
-      _ => null,
+      // (A kihon-hanmen's lines keep to its grid.)
+      ThemeBool(value: false) => null,
+      _ => _hanmen(_document)?.$1,
     };
     if (step == null) return null;
     // (`page_baseline_grid_anchor: first_line`: each page's grid from its

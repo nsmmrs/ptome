@@ -664,6 +664,18 @@ final RegExp inlineRubyMacroRx = RegExp(
   r'*?[^\\])\]',
 );
 
+/// Matches an inline cutting note (Ptome's syntax: warichu), its text in
+/// the brackets.
+///
+/// Examples
+///
+///   warichu:[注の本文]
+final RegExp inlineWarichuMacroRx = RegExp(
+  r'(\\)?warichu:\[('
+  '$ccAll'
+  r'*?[^\\])\]',
+);
+
 /// Matches either the kbd or btn inline macro.
 final RegExp inlineKbdBtnMacroRx = RegExp(
   r'(\\)?(kbd|btn):\[('

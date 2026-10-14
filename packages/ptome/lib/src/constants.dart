@@ -303,6 +303,12 @@ final AnchoredScan inlineRubyMacroScan = AnchoredScan(inlineRubyMacroRx, [
   'ruby:',
 ], before: 1);
 
+/// [inlineWarichuMacroRx]'s matches: each starts at `warichu:`, or at the
+/// backslash escaping it.
+final AnchoredScan inlineWarichuMacroScan = AnchoredScan(inlineWarichuMacroRx, [
+  'warichu:',
+], before: 1);
+
 /// [inlineKbdBtnMacroRx]'s matches: each starts at `kbd:` or `btn:`, or at
 /// the backslash escaping it.
 final AnchoredScan inlineKbdBtnMacroScan = AnchoredScan(inlineKbdBtnMacroRx, [

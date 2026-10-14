@@ -1136,6 +1136,27 @@ String subMacros(AbstractNode node, String text) {
     });
   }
 
+  // Warichu (Ptome's syntax, not under asciidoctor-compat): an inline
+  // cutting note, its text the macro's.
+  if (foundMacroish &&
+      hasLiteral(result, 'warichu:') &&
+      !anyAsciidoctorCompat(doc)) {
+    result = InlineRun.replace(result, inlineWarichuMacroScan, (match) {
+      if (match.group(1) != null) return match.group(0)!.substring(1);
+      return InlineRun.emit(
+        Inline(
+          block,
+          InlineContext.warichu,
+          text: normalizeText(
+            match.group(2)!,
+            normalizeWhitespace: true,
+            unescapeClosingSquareBrackets: true,
+          ),
+        ),
+      );
+    });
+  }
+
   if (docAttrs.containsKey('experimental')) {
     if (foundMacroishShort &&
         (hasLiteral(result, 'kbd:') || hasLiteral(result, 'btn:'))) {

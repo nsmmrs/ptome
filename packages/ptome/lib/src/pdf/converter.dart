@@ -57,6 +57,7 @@ import 'package:ptome/src/pdf/ruby.dart';
 import 'package:ptome/src/pdf/svg_size.dart';
 import 'package:ptome/src/pdf/text_box.dart';
 import 'package:ptome/src/pdf/theme.dart';
+import 'package:ptome/src/pdf/warichu.dart';
 import 'package:ptome/src/quotation.dart';
 import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/section.dart';

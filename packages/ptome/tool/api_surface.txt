@@ -479,6 +479,8 @@ final class Verse extends Block with _Text
 final class Video extends Block
   String target (settable)
   String? service
+final class Warichu extends Inline
+  String plainText
 sealed class Block extends Node
   Iterable<T> descendants<T extends Node>()
   List<Block> blocks

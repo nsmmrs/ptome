@@ -1505,7 +1505,16 @@ export class Video extends Block {
   }
 }
 
-registerClasses({ Attributes, Author, BlockMacroContext, CustomBlockContext, DescriptionListEntry, Diagnostic, FileConversion, FontFile, HtmlDefaults, IncludeRequest, IndexEntry, IndexLetter, InlineMacroContext, InlineText, Passage, Ptome, SourceCode, SourceLocation, TableColumn, Unit, UnitNote, UnitReference, UnitReferenceLink, BlockMacro, CustomBlock, Docinfo, IncludeResolver, InlineMacro, Postprocessor, Preprocessor, TreeProcessor, Admonition, Audio, BibliographyAnchor, Button, Callout, CalloutList, CrossReference, DescriptionList, DiscreteHeading, Document, Example, Footnote, Formatted, Icon, Image, IndexTerm, InlineAnchor, InlineImage, InlineStem, Keyboard, LineBreak, Link, ListItem, Listing, Literal, Menu, NoteCall, NoteEntry, Open, OrderedList, OtherBlock, PageBreak, Paragraph, Passthrough, Preamble, Quote, Ruby, Section, Sidebar, Stem, Table, TableCell, TableOfContents, ThematicBreak, UnitBlock, UnitMark, UnorderedList, Verse, Video })
+export class Warichu extends Inline {
+  constructor() {
+    throw new TypeError('Warichu objects come from ptome; they cannot be created with new')
+  }
+  get plainText() {
+    return core.Warichu$get$plainText(this)
+  }
+}
+
+registerClasses({ Attributes, Author, BlockMacroContext, CustomBlockContext, DescriptionListEntry, Diagnostic, FileConversion, FontFile, HtmlDefaults, IncludeRequest, IndexEntry, IndexLetter, InlineMacroContext, InlineText, Passage, Ptome, SourceCode, SourceLocation, TableColumn, Unit, UnitNote, UnitReference, UnitReferenceLink, BlockMacro, CustomBlock, Docinfo, IncludeResolver, InlineMacro, Postprocessor, Preprocessor, TreeProcessor, Admonition, Audio, BibliographyAnchor, Button, Callout, CalloutList, CrossReference, DescriptionList, DiscreteHeading, Document, Example, Footnote, Formatted, Icon, Image, IndexTerm, InlineAnchor, InlineImage, InlineStem, Keyboard, LineBreak, Link, ListItem, Listing, Literal, Menu, NoteCall, NoteEntry, Open, OrderedList, OtherBlock, PageBreak, Paragraph, Passthrough, Preamble, Quote, Ruby, Section, Sidebar, Stem, Table, TableCell, TableOfContents, ThematicBreak, UnitBlock, UnitMark, UnorderedList, Verse, Video, Warichu })
 
 export const AdmonitionKind = Object.freeze({
   note: 'note',

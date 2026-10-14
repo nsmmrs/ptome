@@ -59,3 +59,12 @@ String rubyHtml(Inline node) {
 
 /// Ruby as text: the base, its reading after it in parentheses.
 String rubyText(Inline node) => '${node.text ?? ''}(${_reading(node)})';
+
+/// Warichu in HTML: its text in full-width parentheses, half the size, in
+/// a `<span class="warichu">` (two lines within the line is CSS's to do,
+/// which it can't yet).
+String warichuHtml(Inline node) =>
+    '<span class="warichu">（${node.text ?? ''}）</span>';
+
+/// Warichu as text: in full-width parentheses.
+String warichuText(Inline node) => '（${node.text ?? ''}）';

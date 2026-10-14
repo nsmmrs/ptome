@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Warichu (FEAT-csvpsb): `warichu:[...]`, an inline cutting note in two
+  half-size lines within its line in the PDF (JLREQ 3.4), balanced, in
+  columns in vertical text; a `<span class="warichu">` in HTML and EPUB,
+  parentheses elsewhere. And the kihon-hanmen (JLREQ 2.3): the theme's
+  `page_hanmen_characters` and `page_hanmen_lines` (`page_hanmen_line_gap`)
+  size the text area, center it on the page and keep the body's lines to
+  its grid. Not under `asciidoctor-compat`.
+- PDF: ruby in vertical text stands upright, shaped with the font's
+  vertical forms, rather than lying on its side (BUG-tt4d5k).
 - Direction per block and per span (FEAT-nyf5rz): a block's `dir`, or a
   `lang` written the other way from the document, sets it from its own
   side in the PDF (alignments, list markers, table columns; the pages keep

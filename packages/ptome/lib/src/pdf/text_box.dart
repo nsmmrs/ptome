@@ -29,6 +29,7 @@ import 'package:ptome/src/pdf/math.dart';
 import 'package:ptome/src/pdf/ruby.dart';
 import 'package:ptome/src/pdf/svg_size.dart';
 import 'package:ptome/src/pdf/theme.dart';
+import 'package:ptome/src/pdf/warichu.dart';
 
 const String _zwsp = '​';
 const String _shy = '­';
@@ -851,6 +852,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         // (One a share of the width: arranged at the width it's set in.)
         if (graphic is! InlineMath &&
             graphic is! InlineRuby &&
+            graphic is! InlineWarichu &&
             (fragment.imageWidth ?? '100%').contains('%') &&
             width.isInfinite) {
           return null;
@@ -1623,6 +1625,22 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     String? before,
     String? after,
   }) {
+    if (image.graphic case final InlineWarichu warichu) {
+      final box = warichu.at(
+        _warichuFace(warichu, format.font, format.fragment.language),
+        format.size,
+        vertical: _layout.vertical,
+      );
+      return InlineImage(
+        EngineWarichu(box, _pdfColor(format.fragment.color)),
+        box.width,
+        box.ascent + box.descent,
+        bottom: -box.descent,
+        lineAscent: box.ascent,
+        lineDescent: box.descent,
+        link: link,
+      );
+    }
     if (image.graphic case final InlineRuby ruby) {
       // (Its reading hanging over the kana beside it, JLREQ 3.3.8; the
       // engine sets it in at a line's start or end, 3.3.9.)
@@ -1641,6 +1659,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           size: format.size,
         ),
         zhuyin: !_layout.vertical,
+        vertical: _layout.vertical,
       );
       return InlineImage(
         EngineRuby(box, _pdfColor(format.fragment.color)),
@@ -1711,10 +1730,26 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// character of the base and the readings, else the first fallback
   /// font that has them, else the family of the text's language
   /// ([TextContext.languageFallback]).
-  FontFace _rubyFace(InlineRuby ruby, FontFace face, String? language) {
-    bool covers(FontFace f) => ruby.pairs.every(
-      (pair) => '${pair.$1}${pair.$2}'.runes.every(f.hasGlyph),
-    );
+  FontFace _rubyFace(InlineRuby ruby, FontFace face, String? language) =>
+      _faceCovering(
+        ruby.pairs.map((pair) => '${pair.$1}${pair.$2}').join(),
+        face,
+        language,
+      );
+
+  /// The face [warichu] is set in: as a ruby's ([_rubyFace]), one that
+  /// has its text and the parentheses.
+  FontFace _warichuFace(
+    InlineWarichu warichu,
+    FontFace face,
+    String? language,
+  ) => _faceCovering('（${warichu.text}）', face, language);
+
+  /// [face] where it has every character of [text], else the first
+  /// fallback font that has them, else the family of the text's language
+  /// ([TextContext.languageFallback]), else [face].
+  FontFace _faceCovering(String text, FontFace face, String? language) {
+    bool covers(FontFace f) => text.runes.every(f.hasGlyph);
     if (covers(face)) return face;
     for (final family in [
       ..._context.fallbacks,
@@ -1730,6 +1765,33 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   }
 
   _Item _arrangeImage(_Item item, Graphic graphic, double available) {
+    // Warichu: two lines of half the text's size within the line.
+    if (graphic case final InlineWarichu warichu) {
+      final fragment = item.format.fragment;
+      final box = warichu.at(
+        _warichuFace(warichu, item.format.font, fragment.language),
+        item.format.size,
+        vertical: _layout.vertical,
+      );
+      return _Item(
+        '\u2063',
+        _Format(
+          fragment,
+          item.format.font,
+          item.format.size,
+          image: _Image(
+            graphic,
+            width: box.width,
+            height: box.ascent + box.descent,
+            drawWidth: box.width,
+            drawHeight: box.ascent + box.descent,
+            ascender: box.ascent,
+            descender: box.descent,
+            mathDepth: box.descent,
+          ),
+        ),
+      );
+    }
     final fragment = item.format.fragment;
     // Ruby: its base at the text's size, its readings above, the line as
     // tall as they need.
@@ -1738,6 +1800,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         _rubyFace(ruby, item.format.font, fragment.language),
         item.format.size,
         zhuyin: !_layout.vertical,
+        vertical: _layout.vertical,
       );
       final lineFont = TextBox._font(_state.family, _state.style, _context);
       return _Item(
@@ -2383,12 +2446,26 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           switch (image.graphic) {
             case final PdfImage raster:
               raster.paint(canvas, rect);
+            case final InlineWarichu warichu:
+              warichu
+                  .at(
+                    _warichuFace(warichu, f.format.font, fragment.language),
+                    f.format.size,
+                    vertical: _layout.vertical,
+                  )
+                  .paintAt(
+                    canvas,
+                    rect.left,
+                    rect.bottom + image.mathDepth!,
+                    color: _pdfColor(fragment.color),
+                  );
             case final InlineRuby ruby:
               ruby
                   .at(
                     _rubyFace(ruby, f.format.font, fragment.language),
                     f.format.size,
                     zhuyin: !_layout.vertical,
+                    vertical: _layout.vertical,
                   )
                   .paintAt(
                     canvas,

@@ -295,6 +295,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     .indexterm => _indexterm(node),
     .kbd => convertInlineKbd(node),
     .ruby => rubyHtml(node),
+    .warichu => warichuHtml(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => htmlUnitMark(node),

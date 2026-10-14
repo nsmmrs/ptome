@@ -203,6 +203,11 @@ extension _DocumentParts on PdfConverter {
         when !asciidoctorCompat(document, CompatFormat.pdf)) {
       _font = _pitched(_font, pitch);
     }
+    // (A kihon-hanmen, JLREQ 2.3: the body's lines a character and a line
+    // gap apart.)
+    if (_hanmen(document) case (final pitch, _, _)) {
+      _font = _pitched(_font, pitch);
+    }
     _sections.clear();
     _hungLabels.clear();
     _quotationChecks.clear();
@@ -2577,8 +2582,40 @@ extension _DocumentParts on PdfConverter {
     return _pageMargins(document);
   }
 
+  /// The page's kihon-hanmen (JLREQ 2.3, 2.4: Ptome's; not under
+  /// `asciidoctor-compat`), where the theme gives `page_hanmen_characters`
+  /// (a line's) and `page_hanmen_lines` (a page's): the line pitch (the
+  /// body's size and `page_hanmen_line_gap`, three quarters of it by
+  /// default) and the text area's width and height; on a vertical page
+  /// its characters run down the column and its lines across.
+  (double, double, double)? _hanmen(Document document) {
+    if (asciidoctorCompat(document, CompatFormat.pdf)) return null;
+    final characters = _n('page_hanmen_characters');
+    final lines = _n('page_hanmen_lines');
+    if (characters == null || lines == null || characters <= 0 || lines <= 0) {
+      return null;
+    }
+    final size = (_n('base_font_size') ?? 12).toDouble();
+    final gap = _length('page_hanmen_line_gap', size) ?? size * 0.75;
+    final along = characters * size;
+    final across = lines * size + (lines - 1) * gap;
+    return _writingMode == WritingMode.horizontal
+        ? (size + gap, along, across)
+        : (size + gap, across, along);
+  }
+
   EdgeInsets _pageMargins(Document document) {
     final given = document.attr('pdf-page-margin');
+    // (A kihon-hanmen: its text area centered on the page, unless the
+    // document gives the margins.)
+    if (given == null) {
+      if (_hanmen(document) case (_, final width, final height)) {
+        final (pageWidth, pageHeight) = _pageSize(document);
+        final double side = math.max(0, (pageWidth - width) / 2);
+        final double top = math.max(0, (pageHeight - height) / 2);
+        return EdgeInsets(top: top, right: side, bottom: top, left: side);
+      }
+    }
     // (Margins from a rule, modern engine, unless the document gives
     // them: `page_margin_canon`, `page_margin_div`, a measured profile.)
     if (given == null && !asciidoctorCompat(document, CompatFormat.pdf)) {

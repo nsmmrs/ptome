@@ -269,6 +269,7 @@ class ManpageConverter extends BuiltInConverter {
     .indexterm => convertInlineIndexterm(node),
     .kbd => convertInlineKbd(node),
     .ruby => rubyText(node),
+    .warichu => warichuText(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit || .note => node.text ?? '',

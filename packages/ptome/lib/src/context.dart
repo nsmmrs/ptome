@@ -162,7 +162,11 @@ enum InlineContext {
   /// Ruby (`ruby:漢字[かんじ]`, Ptome's syntax): a base and its reading
   /// set above it (`reading`; one a character, separated by spaces, for
   /// mono ruby).
-  ruby;
+  ruby,
+
+  /// Warichu (`warichu:[注]`, Ptome's syntax): an inline cutting note,
+  /// set in two lines of small text within the line (JLREQ 3.4).
+  warichu;
 
   new([this._asciidoc]);
 

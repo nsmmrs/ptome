@@ -37,24 +37,28 @@ final class InlineRuby implements Graphic {
   /// The base, the text a reader copies.
   final String base;
 
-  final Map<(FontFace, double, double, double, bool), RubyBox> _boxes = {};
+  final Map<(FontFace, double, double, double, bool, bool), RubyBox> _boxes =
+      {};
 
   /// The ruby laid out in [face] at [size] points, its reading allowed to
   /// hang [before] and [after] points over the characters beside it
-  /// ([rubyOverhang]); Bopomofo in a column at its right where [zhuyin].
+  /// ([rubyOverhang]); Bopomofo in a column at its right where [zhuyin];
+  /// its characters upright in a [vertical] line.
   RubyBox at(
     FontFace face,
     double size, {
     double before = 0,
     double after = 0,
     bool zhuyin = false,
-  }) => _boxes[(face, size, before, after, zhuyin)] ??= RubyBox._(
+    bool vertical = false,
+  }) => _boxes[(face, size, before, after, zhuyin, vertical)] ??= RubyBox._(
     this,
     face,
     size,
     before: before,
     after: after,
     zhuyin: zhuyin,
+    vertical: vertical,
   );
 
   @override
@@ -150,6 +154,7 @@ final class RubyBox {
     required double before,
     required double after,
     required bool zhuyin,
+    required this.vertical,
   }) {
     final readingSize = size / 2;
     _readingBaseline = face.ascenderAt(size) + face.descenderAt(readingSize);
@@ -169,8 +174,8 @@ final class RubyBox {
         ascent,
         _readingBaseline + face.ascenderAt(readingSize),
       );
-      final baseWidth = face.widthOf(base, size);
-      final readingWidth = face.widthOf(reading, readingSize);
+      final baseWidth = _widthOf(base, size);
+      final readingWidth = _widthOf(reading, readingSize);
       final readingChars = [
         for (final c in reading.runes) String.fromCharCode(c),
       ];
@@ -189,7 +194,7 @@ final class RubyBox {
           var at = x + lead;
           for (final c in readingChars) {
             _text(c, readingSize, at, _readingBaseline);
-            at += face.widthOf(c, readingSize) + gap;
+            at += _widthOf(c, readingSize) + gap;
           }
         } else {
           _text(
@@ -222,7 +227,7 @@ final class RubyBox {
         var at = x + gap / 2;
         for (final c in baseChars) {
           _text(c, size, at, 0);
-          at += face.widthOf(c, size) + gap;
+          at += _widthOf(c, size) + gap;
         }
       }
       _text(reading, readingSize, x - hangBefore, _readingBaseline);
@@ -241,6 +246,14 @@ final class RubyBox {
 
   /// The base's size.
   final double size;
+
+  /// Whether it is set in a vertical line: its characters upright, by
+  /// their vertical advances.
+  final bool vertical;
+
+  /// [text]'s length along the line at [size].
+  double _widthOf(String text, double size) =>
+      face.widthOf(text, size, vertical: vertical);
 
   /// What is drawn: each piece of text, its size, where it starts and its
   /// baseline above the ruby's.
@@ -280,7 +293,7 @@ final class RubyBox {
   /// right of the last symbol, half of it above that symbol's top; the
   /// neutral tone above them, a tenth of the size high).
   (double, double, double) _zhuyin(String base, String reading, double x) {
-    final baseWidth = face.widthOf(base, size);
+    final baseWidth = _widthOf(base, size);
     _text(base, size, x, 0);
     final symbolSize = size * 0.3;
     final symbols = [
@@ -302,7 +315,7 @@ final class RubyBox {
     double baselineIn(double boxTop) =>
         boxTop - symbolSize + face.descenderAt(symbolSize);
     double centered(String c) =>
-        column + (symbolSize - face.widthOf(c, symbolSize)) / 2;
+        column + (symbolSize - _widthOf(c, symbolSize)) / 2;
     if (neutral) {
       final dot = String.fromCharCode(_neutralTone);
       _text(
@@ -338,7 +351,7 @@ final class RubyBox {
       ..beginMarkedContent('Span', actualText: ruby.base);
     if (color != null) canvas.setFillColor(color);
     for (final (text, size, x, y) in _pieces) {
-      final style = TextStyle(face.pdf, size);
+      final style = TextStyle(face.pdf, size, vertical: vertical);
       canvas.glyphs(style.shape(text), left + x, baseline + y, style, text: '');
     }
     canvas

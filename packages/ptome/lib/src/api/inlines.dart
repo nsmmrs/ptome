@@ -12,6 +12,7 @@ Inline _createInline(impl.Inline node) => switch ((node.context, node.type)) {
   (.image, _) => InlineImage._(node),
   (.kbd, _) => Keyboard._(node),
   (.ruby, _) => Ruby._(node),
+  (.warichu, _) => Warichu._(node),
   (.button, _) => Button._(node),
   (.menu, _) => Menu._(node),
   (.lineBreak, _) => LineBreak._(node),
@@ -291,6 +292,15 @@ final class Ruby extends Inline {
 
   @override
   String get plainText => base;
+}
+
+/// An inline cutting note (`warichu:[注]`, Ptome's syntax): text set in two
+/// small lines within the line.
+final class Warichu extends Inline {
+  new _(super._node) : super._();
+
+  @override
+  String get plainText => text ?? '';
 }
 
 /// A UI button (`btn:[Save]`).

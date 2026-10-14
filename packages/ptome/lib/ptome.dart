@@ -123,6 +123,7 @@ export 'src/api/api.dart'
         UnorderedList,
         Verse,
         Video,
+        Warichu,
         asciidoc,
         asciidoctorVersion,
         ptomeVersion;

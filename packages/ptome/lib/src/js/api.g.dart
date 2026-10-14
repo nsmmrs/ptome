@@ -15,6 +15,7 @@ import 'package:ptome/src/js/runtime.dart' as rt;
 
 /// The JavaScript object for the public Dart object [o].
 JSObject wrap(Object o) => switch (o) {
+  api.Warichu() => rt.handle(o, 'Warichu'),
   api.Video() => rt.handle(o, 'Video'),
   api.Verse() => rt.handle(o, 'Verse'),
   api.UnorderedList() => rt.handle(o, 'UnorderedList'),
@@ -3322,6 +3323,14 @@ final class Core {
       return ((rt.unwrap<api.Video>(self).service) == null
           ? null
           : (rt.unwrap<api.Video>(self).service)!.toJS);
+    } catch (e, s) {
+      rt.fail(e, s);
+    }
+  }
+
+  JSAny? Warichu$get$plainText(JSAny? self) {
+    try {
+      return rt.unwrap<api.Warichu>(self).plainText.toJS;
     } catch (e, s) {
       rt.fail(e, s);
     }

@@ -2090,6 +2090,15 @@ export declare class Video extends Block {
 }
 
 /**
+ * An inline cutting note (`warichu:[注]`, Ptome's syntax): text set in two
+ * small lines within the line.
+ */
+export declare class Warichu extends Inline {
+  protected constructor();
+  readonly plainText: string;
+}
+
+/**
  * The default configuration: `secure` safe mode, no attributes, no
  * extensions.
  */

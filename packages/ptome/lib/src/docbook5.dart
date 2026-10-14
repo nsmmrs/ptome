@@ -300,6 +300,7 @@ class Docbook5Converter extends BuiltInConverter {
     .kbd => convertInlineKbd(node),
     // (DocBook has no ruby: the reading after the base.)
     .ruby => rubyText(node),
+    .warichu => warichuText(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => convertInlineUnit(node),
