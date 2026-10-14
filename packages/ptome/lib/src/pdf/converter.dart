@@ -27,6 +27,7 @@ import 'package:ptome/src/block.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/converter.dart';
 import 'package:ptome/src/cursor.dart';
+import 'package:ptome/src/dates.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/image_shape.dart';

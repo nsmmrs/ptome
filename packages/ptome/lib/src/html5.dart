@@ -22,6 +22,7 @@ import 'package:ptome/src/block.dart';
 import 'package:ptome/src/callout_links.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/converter.dart';
+import 'package:ptome/src/dates.dart';
 import 'package:ptome/src/direction.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
@@ -575,7 +576,8 @@ class Html5Converter extends BuiltInConverter {
           }
           if (node.hasAttr('revdate')) {
             details.add(
-              '<span id="revdate">${_s(node.attr('revdate'))}</span>',
+              '<span id="revdate">'
+              '${_s(shownDate(node, node.attr('revdate')!))}</span>',
             );
           }
           if (node.hasAttr('revremark')) {
@@ -648,7 +650,7 @@ class Html5Converter extends BuiltInConverter {
       if (node.hasAttr('last-update-label') && !reproducible) {
         result.add(
           '${_s(node.attr('last-update-label'))} '
-          '${_s(node.attr('docdatetime'))}',
+          '${_s(shownDate(node, node.attr('docdatetime') ?? ''))}',
         );
       }
       result

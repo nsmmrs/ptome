@@ -8,3 +8,4 @@ tool/oracles/icu/icucase
 tool/oracles/icu/icudelim
 tool/oracles/icu/icucoll
 tool/oracles/icu/icuindex
+tool/oracles/icu/icudate

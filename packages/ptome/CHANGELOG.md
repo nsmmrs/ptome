@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Dates in the language's format (FEAT-f7cn49): the "Last updated" date
+  and time and an ISO `revdate` (HTML header, title pages, the PDF's) in
+  CLDR's patterns for `lang` (`2026年10月14日`, `14. Oktober 2026`),
+  `date-format` (`short`, `medium`, `long`, `full`, `iso`) choosing the
+  length, `long` by default outside English; the attributes stay ISO.
+  Not under `asciidoctor-compat`.
 - Numbers in the language's numerals (FEAT-ndn74f): section, caption,
   footnote and list numbers (and the PDF's page numbers) in the digits of
   the numbering system CLDR gives `lang` (Arabic-Indic in `ar-EG`,

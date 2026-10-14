@@ -58,6 +58,22 @@ QuotationMarks quotationMarks(String language) {
   return _marks[_locales['root']!];
 }
 
+/// The locale CLDR has [locale]'s data inherit from: the parent it names
+/// (`parentLocales`: `en-GB` from `en-001`, `zh-Hant` from the root), else
+/// [locale] less its last subtag, the root after a language; null for the
+/// root.
+@internal
+String? cldrParent(String locale) {
+  if (locale == 'root') return null;
+  if (_parents[locale] case final parent?) return parent;
+  final i = locale.lastIndexOf('-');
+  return i < 0 ? 'root' : locale.substring(0, i);
+}
+
+/// Whether CLDR names a parent for [locale] (`parentLocales`).
+@internal
+bool cldrNamesParent(String locale) => _parents.containsKey(locale);
+
 /// The CLDR locales [language] (a BCP 47 tag) matches, most specific
 /// first, with hyphens (`zh-Hant-TW`, `zh-TW`, `zh-Hant`, `zh`): its
 /// script, where it names none, the likely one (`likelySubtags`); a

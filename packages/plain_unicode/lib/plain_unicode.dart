@@ -17,6 +17,8 @@
 ///   Counter Styles): numbers written in a script's numerals or letters
 ///   (`CounterStyle`), and the numbering system a language writes its
 ///   numbers in by default (CLDR 48.2): `defaultNumberingSystem`.
+/// - Dates and times as a language writes them (CLDR 48.2, Gregorian):
+///   `formatDate`, `formatTime` and `formatDateTime`.
 /// - Emoji (UTS #51, Unicode 18.0.0): the emoji properties and where an
 ///   emoji presentation sequence (a flag, a ZWJ sequence...) starts and
 ///   ends: `emojiSequenceLength`.
@@ -44,6 +46,8 @@ export 'src/counter_styles.dart'
         defaultNumberingSystem,
         formatDigits,
         numberingSystemDigits;
+export 'src/date_format.dart'
+    show DateStyle, formatDate, formatDateTime, formatTime;
 export 'src/emoji.dart' show emojiSequenceLength;
 export 'src/line_break.dart'
     show

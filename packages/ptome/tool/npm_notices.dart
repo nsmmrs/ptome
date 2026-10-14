@@ -81,8 +81,8 @@ const List<(String, String, String, String)> _vendored = [
   (
     'plain_unicode',
     'Unicode CLDR',
-    'the quotation marks, collation tailorings, index characters and '
-        'numbering systems by language',
+    'the quotation marks, collation tailorings, index characters, '
+        'numbering systems and date formats by language',
     'plain_unicode/vendor/cldr/48.2.0/LICENSE',
   ),
   (

@@ -105,6 +105,21 @@ browsers don't predefine (checked with epubcheck). `:sectnums-style:`
 numbers the sections in one (`upper-roman`: `II.I`). Not under
 `asciidoctor-compat`.
 
+Dates are shown as the language writes them: the footer's "Last
+updated" date and time and an ISO `revdate` (`v1.0, 2026-10-14`) in the
+header, on the title page and the PDF's, in CLDR's (48.2) patterns and
+names for `lang` (`2026年10月14日`, `14. Oktober 2026`,
+`mercredi 14 octobre 2026`, `١٤ أكتوبر ٢٠٢٦`), the time in its long
+format with the zone's offset (`17:46:40 GMT+9`), the digits the
+document's numbering system's (above). `:date-format:` chooses the
+length: `short` (`14.10.26`), `medium`, `long` (the default in a
+document whose language isn't English), `full` (with the weekday), or
+`iso` (as written, the default in English). The dates are Gregorian.
+The attributes themselves (`docdate`, `docdatetime`, `localdate`...)
+stay ISO, as an EPUB's metadata and programs read them, and a `revdate`
+that isn't an ISO date is shown as written. Not under
+`asciidoctor-compat`.
+
 AsciiDoc's typographic quotes (`"`text`"` and `'`text`'`) are set in the
 marks of the text's language, CLDR's (48.2): `„text“` and `‚text‘` in
 German, `«text»` in French, `「text」` and `『text』` in Japanese and in

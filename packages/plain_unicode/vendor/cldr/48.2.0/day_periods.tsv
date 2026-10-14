@@ -1,0 +1,550 @@
+# From CLDR 48.2.0 (common/supplemental/dayPeriods.xml, the
+# format rules), under the Unicode License v3 (LICENSE);
+# written by tool/import_cldr_gregorian.py.
+# locale, period, from, before (or at, with before empty)
+root	am	00:00	12:00
+root	pm	12:00	24:00
+en	midnight	00:00	
+en	noon	12:00	
+en	morning1	00:00	12:00
+en	afternoon1	12:00	18:00
+en	evening1	18:00	21:00
+en	night1	21:00	24:00
+km	midnight	00:00	
+km	noon	12:00	
+km	morning1	00:00	12:00
+km	afternoon1	12:00	18:00
+km	evening1	18:00	21:00
+km	night1	21:00	24:00
+af	midnight	00:00	
+af	morning1	05:00	12:00
+af	afternoon1	12:00	18:00
+af	evening1	18:00	24:00
+af	night1	00:00	05:00
+nl	midnight	00:00	
+nl	morning1	06:00	12:00
+nl	afternoon1	12:00	18:00
+nl	evening1	18:00	24:00
+nl	night1	00:00	06:00
+gsw	midnight	00:00	
+gsw	morning1	05:00	12:00
+gsw	afternoon1	12:00	14:00
+gsw	afternoon2	14:00	18:00
+gsw	evening1	18:00	24:00
+gsw	night1	00:00	05:00
+de	midnight	00:00	
+de	morning1	05:00	10:00
+de	morning2	10:00	12:00
+de	afternoon1	12:00	13:00
+de	afternoon2	13:00	18:00
+de	evening1	18:00	24:00
+de	night1	00:00	05:00
+da	midnight	00:00	
+da	morning1	05:00	10:00
+da	morning2	10:00	12:00
+da	afternoon1	12:00	18:00
+da	evening1	18:00	24:00
+da	night1	00:00	05:00
+sv	midnight	00:00	
+sv	morning1	05:00	10:00
+sv	morning2	10:00	12:00
+sv	afternoon1	12:00	18:00
+sv	evening1	18:00	24:00
+sv	night1	00:00	05:00
+nb	midnight	00:00	
+nb	morning1	06:00	10:00
+nb	morning2	10:00	12:00
+nb	afternoon1	12:00	18:00
+nb	evening1	18:00	24:00
+nb	night1	00:00	06:00
+nn	midnight	00:00	
+nn	morning1	06:00	10:00
+nn	morning2	10:00	12:00
+nn	afternoon1	12:00	18:00
+nn	evening1	18:00	24:00
+nn	night1	00:00	06:00
+no	midnight	00:00	
+no	morning1	06:00	10:00
+no	morning2	10:00	12:00
+no	afternoon1	12:00	18:00
+no	evening1	18:00	24:00
+no	night1	00:00	06:00
+is	midnight	00:00	
+is	noon	12:00	
+is	morning1	06:00	12:00
+is	afternoon1	12:00	18:00
+is	evening1	18:00	24:00
+is	night1	00:00	06:00
+it	midnight	00:00	
+it	noon	12:00	
+it	morning1	06:00	12:00
+it	afternoon1	12:00	18:00
+it	evening1	18:00	24:00
+it	night1	00:00	06:00
+lt	midnight	00:00	
+lt	noon	12:00	
+lt	morning1	06:00	12:00
+lt	afternoon1	12:00	18:00
+lt	evening1	18:00	24:00
+lt	night1	00:00	06:00
+hy	midnight	00:00	
+hy	noon	12:00	
+hy	morning1	06:00	12:00
+hy	afternoon1	12:00	18:00
+hy	evening1	18:00	24:00
+hy	night1	00:00	06:00
+am	midnight	00:00	
+am	noon	12:00	
+am	morning1	06:00	12:00
+am	afternoon1	12:00	18:00
+am	evening1	18:00	24:00
+am	night1	00:00	06:00
+pt	midnight	00:00	
+pt	noon	12:00	
+pt	morning1	06:00	12:00
+pt	afternoon1	12:00	19:00
+pt	evening1	19:00	24:00
+pt	night1	00:00	06:00
+kgp	midnight	00:00	
+kgp	noon	12:00	
+kgp	morning1	06:00	12:00
+kgp	afternoon1	12:00	19:00
+kgp	evening1	19:00	24:00
+kgp	night1	00:00	06:00
+yrl	midnight	00:00	
+yrl	noon	12:00	
+yrl	morning1	06:00	12:00
+yrl	afternoon1	12:00	19:00
+yrl	evening1	19:00	24:00
+yrl	night1	00:00	06:00
+gl	midnight	00:00	
+gl	morning1	00:00	06:00
+gl	morning2	06:00	12:00
+gl	afternoon1	12:00	13:00
+gl	evening1	13:00	21:00
+gl	night1	21:00	24:00
+es	noon	12:00	
+es	morning1	00:00	06:00
+es	morning2	06:00	12:00
+es	evening1	12:00	20:00
+es	night1	20:00	24:00
+es-CO	noon	12:00	
+es-CO	morning2	00:00	12:00
+es-CO	evening1	12:00	20:00
+es-CO	night1	20:00	24:00
+ca	midnight	00:00	
+ca	morning1	00:00	06:00
+ca	morning2	06:00	12:00
+ca	afternoon1	12:00	13:00
+ca	afternoon2	13:00	19:00
+ca	evening1	19:00	21:00
+ca	night1	21:00	24:00
+lij	midnight	00:00	
+lij	noon	12:00	
+lij	morning1	06:00	12:00
+lij	afternoon1	12:00	18:00
+lij	evening1	18:00	22:00
+lij	night1	22:00	06:00
+ro	midnight	00:00	
+ro	noon	12:00	
+ro	morning1	05:00	12:00
+ro	afternoon1	12:00	18:00
+ro	evening1	18:00	22:00
+ro	night1	22:00	05:00
+fr	midnight	00:00	
+fr	noon	12:00	
+fr	morning1	04:00	12:00
+fr	afternoon1	12:00	18:00
+fr	evening1	18:00	24:00
+fr	night1	00:00	04:00
+scn	midnight	00:00	
+scn	noon	12:00	
+scn	morning1	04:00	12:00
+scn	afternoon1	12:00	18:00
+scn	evening1	18:00	24:00
+scn	night1	00:00	04:00
+uk	midnight	00:00	
+uk	noon	12:00	
+uk	morning1	04:00	12:00
+uk	afternoon1	12:00	18:00
+uk	evening1	18:00	24:00
+uk	night1	00:00	04:00
+ru	midnight	00:00	
+ru	noon	12:00	
+ru	morning1	04:00	12:00
+ru	afternoon1	12:00	18:00
+ru	evening1	18:00	22:00
+ru	night1	22:00	04:00
+bg	midnight	00:00	
+bg	morning1	04:00	11:00
+bg	morning2	11:00	14:00
+bg	afternoon1	14:00	18:00
+bg	evening1	18:00	22:00
+bg	night1	22:00	04:00
+mk	midnight	00:00	
+mk	noon	12:00	
+mk	morning1	04:00	10:00
+mk	morning2	10:00	12:00
+mk	afternoon1	12:00	18:00
+mk	evening1	18:00	24:00
+mk	night1	00:00	04:00
+sr	midnight	00:00	
+sr	noon	12:00	
+sr	morning1	06:00	12:00
+sr	afternoon1	12:00	18:00
+sr	evening1	18:00	21:00
+sr	night1	21:00	06:00
+kk	midnight	00:00	
+kk	noon	12:00	
+kk	morning1	06:00	12:00
+kk	afternoon1	12:00	18:00
+kk	evening1	18:00	21:00
+kk	night1	21:00	06:00
+ky	midnight	00:00	
+ky	noon	12:00	
+ky	morning1	06:00	12:00
+ky	afternoon1	12:00	18:00
+ky	evening1	18:00	21:00
+ky	night1	21:00	06:00
+mn	midnight	00:00	
+mn	noon	12:00	
+mn	morning1	06:00	12:00
+mn	afternoon1	12:00	18:00
+mn	evening1	18:00	21:00
+mn	night1	21:00	06:00
+hr	midnight	00:00	
+hr	noon	12:00	
+hr	morning1	04:00	12:00
+hr	afternoon1	12:00	18:00
+hr	evening1	18:00	21:00
+hr	night1	21:00	04:00
+bs	midnight	00:00	
+bs	noon	12:00	
+bs	morning1	04:00	12:00
+bs	afternoon1	12:00	18:00
+bs	evening1	18:00	21:00
+bs	night1	21:00	04:00
+vi	midnight	00:00	
+vi	noon	12:00	
+vi	morning1	04:00	12:00
+vi	afternoon1	12:00	18:00
+vi	evening1	18:00	21:00
+vi	night1	21:00	04:00
+sl	midnight	00:00	
+sl	noon	12:00	
+sl	morning1	06:00	10:00
+sl	morning2	10:00	12:00
+sl	afternoon1	12:00	18:00
+sl	evening1	18:00	22:00
+sl	night1	22:00	06:00
+cs	midnight	00:00	
+cs	noon	12:00	
+cs	morning1	04:00	09:00
+cs	morning2	09:00	12:00
+cs	afternoon1	12:00	18:00
+cs	evening1	18:00	22:00
+cs	night1	22:00	04:00
+sk	midnight	00:00	
+sk	noon	12:00	
+sk	morning1	04:00	09:00
+sk	morning2	09:00	12:00
+sk	afternoon1	12:00	18:00
+sk	evening1	18:00	22:00
+sk	night1	22:00	04:00
+pl	midnight	00:00	
+pl	noon	12:00	
+pl	morning1	06:00	10:00
+pl	morning2	10:00	12:00
+pl	afternoon1	12:00	18:00
+pl	evening1	18:00	21:00
+pl	night1	21:00	06:00
+lv	midnight	00:00	
+lv	noon	12:00	
+lv	morning1	06:00	12:00
+lv	afternoon1	12:00	18:00
+lv	evening1	18:00	23:00
+lv	night1	23:00	06:00
+ur	midnight	00:00	
+ur	morning1	04:00	12:00
+ur	afternoon1	12:00	16:00
+ur	afternoon2	16:00	18:00
+ur	evening1	18:00	20:00
+ur	night1	20:00	04:00
+bn	morning1	04:00	06:00
+bn	morning2	06:00	12:00
+bn	afternoon1	12:00	16:00
+bn	afternoon2	16:00	18:00
+bn	evening1	18:00	20:00
+bn	night1	20:00	04:00
+ccp	morning1	04:00	06:00
+ccp	morning2	06:00	12:00
+ccp	afternoon1	12:00	16:00
+ccp	afternoon2	16:00	18:00
+ccp	evening1	18:00	20:00
+ccp	night1	20:00	04:00
+gu	midnight	00:00	
+gu	morning1	04:00	12:00
+gu	afternoon1	12:00	16:00
+gu	evening1	16:00	20:00
+gu	night1	20:00	04:00
+hi	midnight	00:00	
+hi	morning1	04:00	12:00
+hi	afternoon1	12:00	16:00
+hi	evening1	16:00	20:00
+hi	night1	20:00	04:00
+kok	midnight	00:00	
+kok	morning1	04:00	12:00
+kok	afternoon1	12:00	16:00
+kok	evening1	16:00	20:00
+kok	night1	20:00	04:00
+kok-Latn	midnight	00:00	
+kok-Latn	morning1	04:00	12:00
+kok-Latn	afternoon1	12:00	16:00
+kok-Latn	evening1	16:00	20:00
+kok-Latn	night1	20:00	04:00
+hi-Latn	midnight	00:00	
+hi-Latn	noon	12:00	
+hi-Latn	morning1	04:00	12:00
+hi-Latn	afternoon1	12:00	16:00
+hi-Latn	evening1	16:00	20:00
+hi-Latn	night1	20:00	04:00
+mr	midnight	00:00	
+mr	noon	12:00	
+mr	morning1	04:00	06:00
+mr	morning2	06:00	12:00
+mr	afternoon1	12:00	16:00
+mr	evening1	16:00	21:00
+mr	night1	21:00	04:00
+ne	midnight	00:00	
+ne	noon	12:00	
+ne	morning1	04:00	12:00
+ne	afternoon1	12:00	16:00
+ne	afternoon2	16:00	19:00
+ne	evening1	19:00	22:00
+ne	night1	22:00	04:00
+pa	midnight	00:00	
+pa	morning1	04:00	12:00
+pa	afternoon1	12:00	16:00
+pa	evening1	16:00	21:00
+pa	night1	21:00	04:00
+si	midnight	00:00	
+si	noon	12:00	
+si	morning1	01:00	06:00
+si	morning2	06:00	12:00
+si	afternoon1	12:00	14:00
+si	evening1	14:00	18:00
+si	night1	18:00	24:00
+si	night2	00:00	01:00
+el	morning1	04:00	12:00
+el	afternoon1	12:00	17:00
+el	evening1	17:00	20:00
+el	night1	20:00	04:00
+sq	midnight	00:00	
+sq	noon	12:00	
+sq	morning1	04:00	09:00
+sq	morning2	09:00	12:00
+sq	afternoon1	12:00	18:00
+sq	evening1	18:00	24:00
+sq	night1	00:00	04:00
+fa	morning1	01:00	04:00
+fa	morning2	04:00	12:00
+fa	afternoon1	12:00	13:00
+fa	afternoon2	13:00	19:00
+fa	night1	19:00	24:00
+fa	night2	00:00	01:00
+ta	midnight	00:00	
+ta	noon	12:00	
+ta	morning1	03:00	05:00
+ta	morning2	05:00	12:00
+ta	afternoon1	12:00	14:00
+ta	afternoon2	14:00	16:00
+ta	evening1	16:00	18:00
+ta	evening2	18:00	21:00
+ta	night1	21:00	03:00
+kn	midnight	00:00	
+kn	morning1	06:00	12:00
+kn	afternoon1	12:00	18:00
+kn	evening1	18:00	21:00
+kn	night1	21:00	06:00
+te	midnight	00:00	
+te	morning1	06:00	12:00
+te	afternoon1	12:00	18:00
+te	evening1	18:00	21:00
+te	night1	21:00	06:00
+ml	midnight	00:00	
+ml	noon	12:00	
+ml	morning1	03:00	06:00
+ml	morning2	06:00	12:00
+ml	afternoon1	12:00	14:00
+ml	afternoon2	14:00	15:00
+ml	evening1	15:00	18:00
+ml	evening2	18:00	19:00
+ml	night1	19:00	03:00
+fi	midnight	00:00	
+fi	noon	12:00	
+fi	morning1	05:00	10:00
+fi	morning2	10:00	12:00
+fi	afternoon1	12:00	18:00
+fi	evening1	18:00	23:00
+fi	night1	23:00	05:00
+et	midnight	00:00	
+et	noon	12:00	
+et	morning1	05:00	12:00
+et	afternoon1	12:00	18:00
+et	evening1	18:00	23:00
+et	night1	23:00	05:00
+hu	midnight	00:00	
+hu	noon	12:00	
+hu	morning1	06:00	09:00
+hu	morning2	09:00	12:00
+hu	afternoon1	12:00	18:00
+hu	evening1	18:00	21:00
+hu	night1	21:00	04:00
+hu	night2	04:00	06:00
+zh	midnight	00:00	
+zh	morning1	05:00	08:00
+zh	morning2	08:00	12:00
+zh	afternoon1	12:00	13:00
+zh	afternoon2	13:00	19:00
+zh	evening1	19:00	24:00
+zh	night1	00:00	05:00
+yue	midnight	00:00	
+yue	morning1	05:00	08:00
+yue	morning2	08:00	12:00
+yue	afternoon1	12:00	13:00
+yue	afternoon2	13:00	19:00
+yue	evening1	19:00	24:00
+yue	night1	00:00	05:00
+ja	midnight	00:00	
+ja	noon	12:00	
+ja	morning1	04:00	12:00
+ja	afternoon1	12:00	16:00
+ja	evening1	16:00	19:00
+ja	night1	19:00	23:00
+ja	night2	23:00	04:00
+ko	midnight	00:00	
+ko	noon	12:00	
+ko	morning1	03:00	06:00
+ko	morning2	06:00	12:00
+ko	afternoon1	12:00	18:00
+ko	evening1	18:00	21:00
+ko	night1	21:00	03:00
+my	midnight	00:00	
+my	noon	12:00	
+my	morning1	00:00	12:00
+my	afternoon1	12:00	16:00
+my	evening1	16:00	19:00
+my	night1	19:00	24:00
+th	midnight	00:00	
+th	noon	12:00	
+th	morning1	06:00	12:00
+th	afternoon1	12:00	13:00
+th	afternoon2	13:00	16:00
+th	evening1	16:00	18:00
+th	evening2	18:00	21:00
+th	night1	21:00	06:00
+lo	midnight	00:00	
+lo	noon	12:00	
+lo	morning1	05:00	12:00
+lo	afternoon1	12:00	16:00
+lo	evening1	16:00	20:00
+lo	night1	20:00	05:00
+id	midnight	00:00	
+id	noon	12:00	
+id	morning1	00:00	10:00
+id	afternoon1	10:00	15:00
+id	evening1	15:00	18:00
+id	night1	18:00	24:00
+ms	morning1	00:00	01:00
+ms	morning2	01:00	12:00
+ms	afternoon1	12:00	14:00
+ms	evening1	14:00	19:00
+ms	night1	19:00	24:00
+fil	midnight	00:00	
+fil	noon	12:00	
+fil	morning1	00:00	06:00
+fil	morning2	06:00	12:00
+fil	afternoon1	12:00	16:00
+fil	evening1	16:00	18:00
+fil	night1	18:00	24:00
+tr	midnight	00:00	
+tr	noon	12:00	
+tr	morning1	06:00	11:00
+tr	morning2	11:00	12:00
+tr	afternoon1	12:00	18:00
+tr	afternoon2	18:00	19:00
+tr	evening1	19:00	21:00
+tr	night1	21:00	06:00
+az	midnight	00:00	
+az	noon	12:00	
+az	morning1	04:00	06:00
+az	morning2	06:00	12:00
+az	afternoon1	12:00	17:00
+az	evening1	17:00	19:00
+az	night1	19:00	24:00
+az	night2	00:00	04:00
+uz	midnight	00:00	
+uz	noon	12:00	
+uz	morning1	06:00	11:00
+uz	afternoon1	11:00	18:00
+uz	evening1	18:00	22:00
+uz	night1	22:00	06:00
+ar	morning1	03:00	06:00
+ar	morning2	06:00	12:00
+ar	afternoon1	12:00	13:00
+ar	afternoon2	13:00	18:00
+ar	evening1	18:00	24:00
+ar	night1	00:00	01:00
+ar	night2	01:00	03:00
+he	midnight	00:00	
+he	morning1	06:00	12:00
+he	afternoon1	12:00	16:00
+he	afternoon2	16:00	18:00
+he	evening1	18:00	22:00
+he	night1	22:00	03:00
+he	night2	03:00	06:00
+sw	midnight	00:00	
+sw	noon	12:00	
+sw	morning1	04:00	07:00
+sw	morning2	07:00	12:00
+sw	afternoon1	12:00	16:00
+sw	evening1	16:00	19:00
+sw	night1	19:00	04:00
+zu	morning1	00:00	06:00
+zu	morning2	06:00	10:00
+zu	afternoon1	10:00	13:00
+zu	evening1	13:00	19:00
+zu	night1	19:00	24:00
+ka	midnight	00:00	
+ka	noon	12:00	
+ka	morning1	05:00	12:00
+ka	afternoon1	12:00	18:00
+ka	evening1	18:00	21:00
+ka	night1	21:00	05:00
+eu	midnight	00:00	
+eu	morning1	00:00	06:00
+eu	morning2	06:00	12:00
+eu	afternoon1	12:00	14:00
+eu	afternoon2	14:00	19:00
+eu	evening1	19:00	21:00
+eu	night1	21:00	24:00
+chr	noon	12:00	
+chr	morning1	00:00	12:00
+chr	afternoon1	12:00	24:00
+ee	morning1	04:00	05:00
+ee	morning2	05:00	12:00
+ee	afternoon1	12:00	14:00
+ee	afternoon2	14:00	18:00
+ee	evening1	18:00	21:00
+ee	night1	21:00	04:00
+cy	midnight	00:00	
+cy	noon	12:00	
+cy	morning1	00:00	12:00
+cy	afternoon1	12:00	18:00
+cy	evening1	18:00	24:00
+blo	night1	00:00	04:00
+blo	morning1	04:00	07:00
+blo	morning2	07:00	12:00
+blo	afternoon1	12:00	16:00
+blo	afternoon2	16:00	20:00
+blo	evening1	20:00	24:00

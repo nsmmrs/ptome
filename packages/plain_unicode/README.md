@@ -27,6 +27,10 @@ JavaScript (whose own tables differ in age and in rules):
   `hebrew`, `cjk-ideographic`, `ethiopic-numeric`...), as WeasyPrint
   writes them; `defaultNumberingSystem('ar-EG')` the digits a language
   writes its numbers in (CLDR 48.2: `arab`), `formatDigits` in them.
+- **Dates** (CLDR 48.2): `formatDate(moment, 'ja')` writes a date (and
+  `formatTime`, `formatDateTime` a time) as the language does, in each
+  length (`DateStyle.short` to `full`), as ICU 78.3's DateFormat does in
+  the Gregorian calendar.
 - **Emoji** (UTS #51, Unicode 18.0.0): the emoji properties
   (`isEmojiPresentation`, `isExtendedPictographic`...) and
   `emojiSequenceLength`, where a flag, a ZWJ sequence or a keycap shown

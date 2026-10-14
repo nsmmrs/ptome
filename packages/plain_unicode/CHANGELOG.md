@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Dates (FEAT-f7cn49): `formatDate`, `formatTime` and `formatDateTime`
+  write a moment as a language does, in CLDR 48.2's Gregorian patterns
+  of each `DateStyle` (month and day names, day periods with their
+  rules, eras, localized GMT offsets, the "at" date-time patterns, a
+  pattern's own numbering), the language's digits or a numbering
+  system's (`vendor/cldr/48.2.0/gregorian.tsv` and `day_periods.tsv`,
+  written by `tool/import_cldr_gregorian.py`). Checked against ICU 78.3's
+  DateFormat for every locale ICU carries at CLDR's basic coverage or
+  more (`tool/oracles/icu/icudate`).
+
 - Counter styles (FEAT-ndn74f): `CounterStyle` writes numbers in the
   counter styles of CSS Counter Styles Level 3 (its predefined styles, the
   longhand Chinese, Japanese and Korean styles, Ethiopic numerals) and the

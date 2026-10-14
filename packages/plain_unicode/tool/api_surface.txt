@@ -10,7 +10,10 @@ List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
 List<LineBreak> lineBreaks(String text, {bool dictionary = true})
 QuotationMarks quotationMarks(String language)
 String defaultNumberingSystem(String language)
+String formatDate(DateTime moment, String language, {DateStyle style = DateStyle.long, Duration? offset, String? numberingSystem})
+String formatDateTime(DateTime moment, String language, {DateStyle date = DateStyle.long, DateStyle time = DateStyle.medium, Duration? offset, String? numberingSystem})
 String formatDigits(int value, String id)
+String formatTime(DateTime moment, String language, {DateStyle style = DateStyle.medium, Duration? offset, String? numberingSystem})
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
@@ -55,6 +58,12 @@ enum BidiClass
   static BidiClass s
   static BidiClass ws
   static List<BidiClass> values
+enum DateStyle
+  static DateStyle full
+  static DateStyle long
+  static DateStyle medium
+  static DateStyle short
+  static List<DateStyle> values
 enum GeneralCategory
   static GeneralCategory closePunctuation
   static GeneralCategory connectorPunctuation

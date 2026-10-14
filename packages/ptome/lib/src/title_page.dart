@@ -2,6 +2,7 @@
 /// title page's in an EPUB.
 library;
 
+import 'package:ptome/src/dates.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/text_case.dart';
@@ -79,7 +80,7 @@ List<String> titleSlotsHtml(
           if (node.attr('revnumber') case final number?)
             '<span id="revnumber">$label $number$comma</span>',
           if (node.attr('revdate') case final date?)
-            '<span id="revdate">$date</span>',
+            '<span id="revdate">${shownDate(node, date)}</span>',
         ];
         var text = revision.join(' ');
         if (node.attr('revremark') case final remark?) {

@@ -1047,7 +1047,7 @@ extension _DocumentParts on PdfConverter {
           final revision = [
             if (doc.attr('revnumber') case final number?)
               '${doc.attr('version-label') ?? ''} $number',
-            ?doc.attr('revdate'),
+            if (doc.attr('revdate') case final date?) shownDate(doc, date),
           ];
           if (revision.isEmpty) continue;
           var text = revision.join(
