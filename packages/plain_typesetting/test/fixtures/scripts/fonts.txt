@@ -5,3 +5,6 @@ notosansarmenian-subset.ttf | NotoSansArmenian-Regular.ttf | armenian.txt | ltr
 notosansgeorgian-subset.ttf | NotoSansGeorgian-Regular.ttf | georgian.txt | ltr
 notosanscoptic-subset.ttf | NotoSansCoptic-Regular.ttf | coptic.txt | ltr
 notosansethiopic-subset.ttf | NotoSansEthiopic-Regular.ttf | ethiopic.txt | ltr
+notosanssyriac-subset.ttf | NotoSansSyriac-Regular.ttf | syriac.txt | rtl
+notosanssyriaceastern-subset.ttf | NotoSansSyriacEastern-Regular.ttf | syriac.txt | rtl
+notosanssyriacwestern-subset.ttf | NotoSansSyriacWestern-Regular.ttf | syriac.txt | rtl

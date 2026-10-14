@@ -2,7 +2,9 @@
 // (commit 17001e86; since 2026-10-10 with `TJ` adjustments to five
 // decimals and word spacing to a hundred-thousandth of a point, since
 // 2026-10-12 with embedded subsets' head checksums as OpenType has them
-// and `.notdef` read as U+FFFD):
+// and `.notdef` read as U+FFFD, since 2026-10-13 with runs of other
+// scripts (the random text's 中) shaped in full, as HarfBuzz shapes
+// them):
 // digests of the shaped glyphs of the 14 standard fonts
 // and of the content streams drawing seeded random text in standard and
 // embedded fonts, with kerning, word and character spacing, rise, skew and
@@ -103,6 +105,6 @@ void main() {
         ..write(latin1.decode(pdf))
         ..write('\n');
     }
-    expect(digest(out), 'e56b88af6fedae218e04167a86395072');
+    expect(digest(out), 'cb0ccc12f1f9526a2047c11c488111b7');
   });
 }

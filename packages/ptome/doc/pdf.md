@@ -211,6 +211,7 @@ fonts (plain_typesetting's `test/harfbuzz_scripts_test.dart`).
 | Latin, Greek, Cyrillic | European languages, polytonic Greek, Vietnamese, Church Slavonic | Text without marks keeps the simple path (its glyphs, ligatures and kerning, as asciidoctor-pdf sets it); with combining marks it is shaped in full. |
 | Armenian, Georgian, Coptic, Ge'ez (Ethiopic) | Classical and modern Armenian, Georgian, Coptic (overlined nomina sacra), Ge'ez and Amharic | Shaped in full (contextual numerals, ligatures). |
 | Arabic, Hebrew | Arabic, Persian, Urdu; Hebrew with points and cantillation | Joining forms, right to left (below). |
+| Syriac | Classical Syriac (the Peshitta) in Estrangela, Eastern and Western | Joining forms with Alaph's and Dalath-Rish's own, vowel points, right to left. |
 
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its

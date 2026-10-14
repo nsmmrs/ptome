@@ -454,12 +454,30 @@ final class EmbeddedFont extends PdfFont implements OpenTypeTextFont {
         _usedNotdef = true;
         _missing.addAll(glyph.text.runes);
       } else {
-        _used[id] ??= glyph.text; // the first text stays
+        // The first text stays, unless a later one is the character the
+        // font's cmap gives this glyph (a space's glyph shown for a
+        // no-break space the font lacks reads as the space).
+        switch (_used[id]) {
+          case null:
+            _used[id] = glyph.text;
+          case final first
+              when first != glyph.text &&
+                  _nominal(first) != id &&
+                  _nominal(glyph.text) == id:
+            _used[id] = glyph.text;
+        }
       }
       bytes[at++] = id >> 8;
       bytes[at++] = id;
     }
     return bytes;
+  }
+
+  /// The glyph the font's cmap gives [text] when it is one character,
+  /// else -1.
+  int _nominal(String text) {
+    final runes = text.runes;
+    return runes.length == 1 ? font.glyphFor(runes.first) : -1;
   }
 
   /// [glyphs] as runs of codes of one simple font each (a [singleByte]

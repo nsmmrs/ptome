@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A glyph shown for several characters (a space's glyph standing for a
+  no-break space the font lacks) reads in the ToUnicode map as the
+  character the font's cmap gives it, not as the first it showed.
 - Images of the same file share one XObject, however many `PdfImage`s of
   it the pages draw (each file hashed once): a logo on every page was an
   XObject a page.

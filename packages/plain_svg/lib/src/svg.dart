@@ -1618,11 +1618,13 @@ final class _Renderer {
       final drawWidth = intrinsicWidth * sx;
       final drawHeight = intrinsicHeight * sy;
       canvas.save();
-      // Clipped to its viewport only where it reaches past it (`slice`):
-      // a clip on an edge the image ends on anyway changes how renderers
-      // smooth that edge.
+      // Clipped to its viewport; placed as prawn-svg places images
+      // (scalesAboutPageOrigin), only where it reaches past it (`slice`),
+      // as prawn-svg clips (a clip on an edge the image ends on anyway
+      // changes how renderers smooth that edge).
       const slack = 1e-9;
-      if (tx < -slack ||
+      if (!svg.scalesAboutPageOrigin ||
+          tx < -slack ||
           ty < -slack ||
           tx + drawWidth > width + slack ||
           ty + drawHeight > height + slack) {

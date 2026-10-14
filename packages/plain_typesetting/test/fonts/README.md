@@ -34,3 +34,7 @@ whose README says how each was made):
   (`tool/subset_test_fonts.dart`, from the installed fonts), for the
   script shaping tests (SIL Open Font License 1.1; © 2022 The Noto
   Project Authors).
+- `notosanssyriac-subset.ttf`, `notosanssyriaceastern-subset.ttf`,
+  `notosanssyriacwestern-subset.ttf`: Noto Sans Syriac (Estrangela),
+  Syriac Eastern and Syriac Western, subset the same way (SIL Open Font
+  License 1.1; © 2022 The Noto Project Authors).

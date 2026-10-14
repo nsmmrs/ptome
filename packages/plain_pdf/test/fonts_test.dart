@@ -163,6 +163,25 @@ void main() {
     expect(font.missedGlyphs, isTrue);
   });
 
+  test(
+    "a glyph shown for several characters reads as the font's own",
+    () {
+      // (A no-break space the font lacks shown as its space, as HarfBuzz
+      // shapes it, then a space: the map reads the glyph as the space.)
+      final font = EmbeddedFont.parse(serif());
+      final space = font.font.glyphFor(0x20);
+      final width = font.widthOf(' ', 1) * 1000;
+      font.encode([
+        ShapedGlyph(space, '\u00a0', width),
+        ShapedGlyph(space, ' ', width),
+      ]);
+      final (_, text) = inspect(textPdf([(font, 'two words')]));
+      expect(text.trim(), 'two words');
+    },
+    tags: ['pdf-tools'],
+    skip: _tools ? false : 'qpdf or poppler missing',
+  );
+
   test('subsets keep only the glyphs used', () {
     final dir = Directory.systemTemp.createTempSync('libpdf.');
     addTearDown(() => dir.deleteSync(recursive: true));

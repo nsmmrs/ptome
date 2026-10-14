@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- An image is clipped to its viewport again, as before, except where it
+  is placed as prawn-svg places it (`scalesAboutPageOrigin`): the resvg
+  cases `embedded-jpeg-luma` and `embedded-png-luma` are drawn alike
+  again (BUG-cttrlc).
 - An `<image>` is clipped to its viewport only when it reaches past it
   (`slice`): a clip on an edge the image ends on anyway changed how
   renderers smooth that edge. With `scalesAboutPageOrigin`, the viewport
