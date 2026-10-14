@@ -306,10 +306,24 @@ and Latin letters and digits lie on their side, as UAX #50 has each
 character; ruby goes at the right of its base, emphasis marks too. Block
 images stand upright, as wide across the page as they are, fit to the
 column. `vertical-lr` sets Mongolian: its letters on their side, the
-columns following from left to right. The running heads and page numbers
+columns following from left to right. A strike-through runs down the
+middle of the characters; an underline goes on the right of the column
+in Japanese and Korean (their side lines, CSS's
+`text-underline-position: right`), on the left in Chinese, and on the
+right in Mongolian (mlreq's right line). The running heads and page numbers
 stay across. Tables and listings are set in the columns' direction (on
-their side), and two digits standing upright together (tate-chu-yoko) are
-not done.
+their side).
+
+A number of one or two digits standing alone stands upright in the
+column (tate-chu-yoko, JLREQ 3.2.5): two digits side by side across the
+column in the font's half-width forms, an em long, set as an ideograph
+is (no quarter em beside it); a lone digit in its full-width form.
+Longer numbers, decimals (`2.5`), numbers with separators (`1,000`) and
+digits in words (`A4`) lie on their side. `base_text_combine_upright`
+says how many digits: `digits 2` (the default), `digits 3` (in the
+font's third-width forms, where it has them), or `none`. Ptome's `tcy`
+role sets any short text across the column (`[.tcy]#!?#`), in the
+narrowest forms the font has for its length.
 
 A combining mark stays in the font of the letter it is on: with
 `font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its

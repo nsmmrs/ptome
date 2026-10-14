@@ -113,6 +113,7 @@ export 'src/layout/paragraph.dart'
         TextFragment,
         WordBreak,
         buildLines,
+        decorationLines,
         emphasisExtent,
         leftProtrusion,
         paintEmphasisMarks,

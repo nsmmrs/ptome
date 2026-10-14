@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: tate-chu-yoko (FEAT-zhqwr3): on vertical pages, numbers of up
+  to two digits stand upright across the column, an em long (JLREQ
+  3.2.5), a lone digit in its full-width form;
+  `base_text_combine_upright` (`digits 2`, `digits 3`, `none`); the
+  `tcy` role (`[.tcy]#!?#`) for any short text.
+- PDF: decorations in vertical text on their languages' sides
+  (BUG-dfkx3f): strike-throughs down the middle of the characters (in
+  vertical-lr's Mongolian they had run beside the letters), underlines on
+  the right in Japanese and Korean, the left in Chinese, the right in
+  Mongolian (mlreq 6.2.1).
 - Captions numbered by chapter (FEAT-nnnwwv): `<kind>-numbering: chapter`
   numbers figures, tables, listings and examples from 1 in each chapter
   after its number (`表 2.1`, an appendix's `表 A.1`), `{{chapter}}` and

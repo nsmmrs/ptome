@@ -317,6 +317,10 @@ final class Fragment {
   /// Whether the fragment joins the next one without a break (`wj`).
   bool wj = false;
 
+  /// Whether the fragment's text is set across a vertical line, upright as
+  /// one character (Ptome's `tcy` role: tate-chu-yoko).
+  bool combineUpright = false;
+
   /// Whether the fragment is decoration that text extraction and copying
   /// leave out (a callout marker; class `artifact`).
   bool artifact = false;
@@ -374,6 +378,7 @@ final class Fragment {
     ..width = width
     ..callbacks = callbacks == null ? null : [...callbacks!]
     ..wj = wj
+    ..combineUpright = combineUpright
     ..artifact = artifact
     ..label = label
     ..features = features == null ? null : {...features!}
@@ -1017,6 +1022,7 @@ final class MarkupTransform {
     for (final className in (attrs['class'] ?? '').split(' ')) {
       if (className.isEmpty) continue;
       if (className == 'wj') result.wj = true;
+      if (className == 'tcy') result.combineUpright = true;
       if (className == 'artifact') result.artifact = true;
       final settings = _settings[className];
       if (settings == null) continue;

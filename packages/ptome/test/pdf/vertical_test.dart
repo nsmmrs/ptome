@@ -117,6 +117,21 @@ $theme
     expect(columns.length, greaterThan(3));
   }, skip: _poppler ? false : 'needs pdftotext');
 
+  test('two digits set across the column, an em long (tate-chu-yoko)', () {
+    /// How far down the column 日 starts after 月, in ems.
+    double gap(String theme) {
+      final words = lines(pdf('月10日', 'vertical-rl', theme: theme));
+      final month = words.firstWhere((w) => w.$1 == '月');
+      final day = words.firstWhere((w) => w.$1 == '日');
+      return (day.$3 - month.$3) / month.$5;
+    }
+
+    // (月, then 10 an em long, then 日; on its side, a quarter em each
+    // side of it and its own length.)
+    expect(gap(''), closeTo(2, 0.01));
+    expect(gap('base_text_combine_upright: none'), greaterThan(2.2));
+  }, skip: _poppler ? false : 'needs pdftotext');
+
   test('under asciidoctor-compat the lines run across', () {
     final words = lines(
       pdf(text, 'vertical-rl', attributes: {'asciidoctor-compat': 'pdf'}),

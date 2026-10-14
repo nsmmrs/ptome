@@ -2,6 +2,22 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Tate-chu-yoko (FEAT-zhqwr3): `TextStyle.combineDigits` sets numbers of
+  up to that many digits across a vertical line, upright as one
+  character an em long (two in the font's `hwid` forms, three in its
+  `twid`, a lone digit in its `fwid`), centred in the column;
+  `TextStyle.combineUpright` sets a whole run so (CSS's
+  `text-combine-upright`); `TextStyle.combinesAt`. East Asian spacing
+  leaves no quarter em beside them.
+
+- Decorations in vertical text (BUG-dfkx3f): `decorationLines(style, y,
+  upright:)` places underlines and strike-throughs: the strike-through
+  down the em box's middle of upright glyphs and with the letters of
+  sideways ones (mirrored in a flipped frame, where it had run beside
+  Mongolian's letters); the underline on the right in Japanese and Korean
+  (CSS `text-underline-position: right`), the left in Chinese, the right
+  in vertical-lr's Mongolian (mlreq 6.2.1).
+
 - Korean word wrapping (FEAT-87x2gw): `Paragraph.wordBreak`
   (`WordBreak.normal`, `keepAll`, `auto`), CSS's `word-break`: `keepAll`
   breaks no word of letters, digits, Han or Hangul (UAX #14's AL, AI, NU,

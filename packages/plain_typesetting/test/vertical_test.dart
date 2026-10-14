@@ -15,6 +15,78 @@ final OpenTypeShaper _jp = OpenTypeShaper(
 );
 
 void main() {
+  group('tate-chu-yoko (JLREQ 3.2.5)', () {
+    final style = TextStyle(_jp, 10, vertical: true, combineDigits: 2);
+    String kinds(List<ShapedGlyph> glyphs) => [
+      for (final g in glyphs)
+        if (g.upright) 'U' else 'R',
+    ].join();
+
+    test('two digits set across, upright, an em along the line', () {
+      final glyphs = style.shape('11月10日');
+      expect(kinds(glyphs), 'UUUUUU');
+      final [one, ten] = glyphs.sublist(0, 2);
+      // (Half-width forms, centred across the column.)
+      final half = TextStyle(_jp, 10).shape('11');
+      expect(half.length, 2);
+      expect(one.advance + ten.advance, 1000);
+      expect(one.advance, 0);
+      final width = TextStyle(
+        _jp,
+        10,
+        features: const {'hwid'},
+      ).shape('11').fold<double>(0, (sum, g) => sum + g.advance);
+      expect(width, lessThanOrEqualTo(1000));
+      expect(one.xOffset, closeTo(-width / 2, 1e-9));
+      expect(one.yOffset, -880);
+      expect(style.widthOf(glyphs.sublist(0, 2)), 10);
+    });
+
+    test('a lone digit upright in its full-width form', () {
+      final [digit] = style.shape('8');
+      expect(digit.upright, isTrue);
+      expect(digit.advance, 1000);
+      expect(digit.xOffset, closeTo(-500, 1));
+    });
+
+    test('longer numbers, decimals and words on their side', () {
+      expect(kinds(style.shape('151台')), 'RRRU');
+      expect(kinds(style.shape('2.5と')), 'RRRU');
+      expect(kinds(style.shape('1,000円')), 'RRRRRU');
+      expect(kinds(TextStyle(_jp, 10, vertical: true).shape('10日')), 'RRU');
+    });
+
+    test('combineDigits: 3 sets three across in third-width forms, where '
+        'the font has them', () {
+      final three = TextStyle(_jp, 10, vertical: true, combineDigits: 3);
+      final glyphs = three.shape('151台');
+      final widths = TextStyle(
+        _jp,
+        10,
+        features: const {'twid'},
+      ).shape('151').fold<double>(0, (sum, g) => sum + g.advance);
+      expect(kinds(glyphs), widths <= 1050 ? 'UUUU' : 'RRRU');
+    });
+
+    test('combineUpright: the whole run across (!?)', () {
+      final glyphs = TextStyle(
+        _jp,
+        10,
+        vertical: true,
+        combineUpright: true,
+      ).shape('!?');
+      expect(kinds(glyphs), 'UU');
+      expect(glyphs.fold<double>(0, (sum, g) => sum + g.advance), 1000);
+    });
+
+    test('combinesAt: no quarter em beside it', () {
+      expect(style.combinesAt('年10月', 1), isTrue);
+      expect(style.combinesAt('年151月', 1), isFalse);
+      expect(style.combinesAt('年10月', 0), isFalse);
+      expect(TextStyle(_jp, 10, combineDigits: 2).combinesAt('10', 0), isFalse);
+    });
+  });
+
   group('vertical text', () {
     final style = TextStyle(_jp, 10, vertical: true);
 

@@ -13,7 +13,8 @@ import 'dart:math' as math;
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
-import 'package:plain_unicode/plain_unicode.dart' show hasRightToLeft, isMark;
+import 'package:plain_unicode/plain_unicode.dart'
+    show VerticalOrientation, hasRightToLeft, isMark, verticalOrientation;
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/pdf/fonts.dart';
@@ -294,6 +295,7 @@ final class TextContext {
     this.lastLineMin = 0,
     this.interlineGlue = false,
     this.languageFallback,
+    this.combineDigits = 0,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -320,6 +322,7 @@ final class TextContext {
           lastLineMin: lastLineMin,
           interlineGlue: interlineGlue,
           languageFallback: languageFallback,
+          combineDigits: combineDigits,
           logger: logger,
         );
 
@@ -331,6 +334,11 @@ final class TextContext {
   /// kashida before the spaces widen, in em (`base_kashida`, modern
   /// engine): 0 for none.
   final double kashida;
+
+  /// In vertical text, the most digits a number may have to be set across
+  /// the line, upright (tate-chu-yoko, `base_text_combine_upright`); 0 for
+  /// none.
+  final int combineDigits;
 
   /// Whether vertical text is laid out in a mirrored frame (vertical-lr
   /// pages): drawn mirrored back ([TextStyle.flipped]).
@@ -889,6 +897,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               vertical: _layout.vertical,
               flipped: _layout.vertical && _context.mirroredFrame,
               language: fragment.language ?? _layout.language,
+              combineDigits: _layout.vertical ? _context.combineDigits : 0,
+              combineUpright: _layout.vertical && fragment.combineUpright,
             ),
             color: _pdfColor(fragment.color),
             artifact: fragment.artifact,
@@ -2283,6 +2293,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             vertical: _layout.vertical,
             flipped: _layout.vertical && _context.mirroredFrame,
             language: fragment.language ?? _layout.language,
+            combineDigits: _layout.vertical ? _context.combineDigits : 0,
+            combineUpright: _layout.vertical && fragment.combineUpright,
           );
           // (Right-to-left text, Arabic or Hebrew, in visual order: the
           // box sets its fragments left to right.)
@@ -2313,9 +2325,27 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         final styles = fragment.styles ?? const {};
         if (styles.contains(FragmentStyle.underline) ||
             styles.contains(FragmentStyle.strikethrough)) {
-          final lineY = styles.contains(FragmentStyle.underline)
-              ? y - 1.25
-              : y + f.ascender * 0.3;
+          final underline = styles.contains(FragmentStyle.underline);
+          var lineY = underline ? y - 1.25 : y + f.ascender * 0.3;
+          // (Vertical text: the strike-through down the em box's middle,
+          // a Japanese or Korean underline on the right, as the engine
+          // sets them.)
+          if (_layout.vertical) {
+            final (under, strike) = decorationLines(
+              TextStyle(
+                f.format.font.pdf,
+                f.format.size,
+                vertical: true,
+                flipped: _context.mirroredFrame,
+                language: fragment.language ?? _layout.language,
+              ),
+              y,
+              upright: f.text.runes.any(
+                (c) => verticalOrientation(c) != VerticalOrientation.rotated,
+              ),
+            );
+            lineY = underline ? under : strike;
+          }
           canvas
             ..save()
             ..setLineWidth(

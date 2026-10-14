@@ -185,12 +185,25 @@ List<ShapedGlyph> eastAsianSpacing(List<ShapedGlyph> glyphs, TextStyle style) {
     }
     // A quarter em between Han or kana and Latin, after the glyphs
     // before (their last, a mark's base's or the mark's).
-    if (cjkWesternBoundary(a, b)) {
+    // (Not beside digits set across the line, upright: tate-chu-yoko is
+    // set as an ideograph is.)
+    if (cjkWesternBoundary(a, b) &&
+        !_combinedAt(out, p) &&
+        !_combinedAt(out, i)) {
       final g = out[i - 1];
       out[i - 1] = g.copyWith(kerning: g.kerning + quarter);
     }
   }
   return out;
+}
+
+/// Whether the glyph at [i] is a Latin letter or digit standing upright
+/// (set across a vertical line: tate-chu-yoko).
+bool _combinedAt(List<ShapedGlyph> glyphs, int i) {
+  final g = glyphs[i];
+  if (!g.upright) return false;
+  final c = _first(g);
+  return c != null && c < 0x2e80;
 }
 
 /// [glyphs] (a line's last run, in [style]) with a full-width mark ending

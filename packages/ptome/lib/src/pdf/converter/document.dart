@@ -68,6 +68,15 @@ extension _DocumentParts on PdfConverter {
               ThemeNumber(:final value) when value > 0 => value.toDouble(),
               _ => 0,
             },
+      // (`base_text_combine_upright`: numbers of up to two digits set
+      // across a vertical line, upright, as JLREQ has them; `digits 3`,
+      // or `none`.)
+      combineDigits: switch (_s('base_text_combine_upright')?.trim()) {
+        'none' => 0,
+        final String v when v.startsWith('digits') =>
+          (int.tryParse(v.substring(6).trim()) ?? 2).clamp(1, 4),
+        _ => 2,
+      },
       // (`page_writing_mode: vertical-lr`: the body's frame mirrored.)
       mirroredFrame: _writingMode == WritingMode.verticalLeftToRight,
       // (`base_kashida`: how far a justified Arabic line's words may be

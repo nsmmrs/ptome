@@ -1,3 +1,4 @@
+(double, double) decorationLines(TextStyle style, double y, {bool upright = false})
 ({double alpha, double blue, double green, double red})? parseCssColor(String text)
 List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths, {double expansion = 0, double Function(int)? offsets})
 List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth})
@@ -753,9 +754,11 @@ final class TextStyle
   Set<String> features
   String? language
   TextRenderMode renderMode
-  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden, bool? vertical, bool? flipped, String? language})
-  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0, bool vertical = false, bool flipped = false, String? language})
+  TextStyle copyWith({Font? font, double? size, double? characterSpacing, double? wordSpacing, double? rise, double? horizontalScaling, TextRenderMode? renderMode, bool? kerning, bool? ligatures, Set<String>? features, double? skew, double? embolden, bool? vertical, bool? flipped, String? language, int? combineDigits, bool? combineUpright})
+  TextStyle(Font font, double size, {double characterSpacing = 0, double wordSpacing = 0, double rise = 0, double horizontalScaling = 100, TextRenderMode renderMode = TextRenderMode.fill, bool kerning = true, bool ligatures = false, Set<String> features = const {}, double skew = 0, double embolden = 0, bool vertical = false, bool flipped = false, String? language, int combineDigits = 0, bool combineUpright = false})
   bool ==(Object other)
+  bool combineUpright
+  bool combinesAt(String text, int index)
   bool flipped
   bool kerning
   bool ligatures
@@ -769,6 +772,7 @@ final class TextStyle
   double skew
   double widthOf(List<ShapedGlyph> glyphs)
   double wordSpacing
+  int combineDigits
   int hashCode
 final class TypesetLine
   TypesetLine(double baseline, {required double left, required double right, bool continues = false})

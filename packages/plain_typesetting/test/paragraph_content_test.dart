@@ -357,6 +357,54 @@ void main() {
     });
   });
 
+  group('decoration sides in vertical text', () {
+    TextStyle style({
+      bool vertical = true,
+      bool flipped = false,
+      String? language,
+    }) => TextStyle(
+      _serif,
+      10,
+      vertical: vertical,
+      flipped: flipped,
+      language: language,
+    );
+    final font = _serif;
+    final middle = (font.ascender + font.descender) / 200;
+    final under = font.underlinePosition / 100;
+    final letters = font.xHeight / 200;
+
+    test('horizontal: under the baseline, through the letters', () {
+      expect(decorationLines(style(vertical: false), 0), (under, letters));
+    });
+
+    test('Japanese and Korean underline on the right (the over side), '
+        'Chinese on the left', () {
+      for (final language in ['ja', 'ko-KR']) {
+        final (u, _) = decorationLines(style(language: language), 0);
+        expect(u, closeTo(2 * middle - under, 1e-9));
+        expect(u, greaterThan(middle));
+      }
+      expect(decorationLines(style(language: 'zh-Hans'), 0).$1, under);
+    });
+
+    test('the strike-through down the em box of upright glyphs, through '
+        'the letters of those on their side', () {
+      expect(decorationLines(style(), 0, upright: true).$2, middle);
+      expect(decorationLines(style(), 0).$2, letters);
+    });
+
+    test("vertical-lr's flipped text (Mongolian, mlreq 6.2.1): the right "
+        'line where it is, the strike-through with the letters', () {
+      final (u, strike) = decorationLines(
+        style(flipped: true, language: 'ja'),
+        0,
+      );
+      expect(u, under);
+      expect(strike, closeTo(2 * middle - letters, 1e-9));
+    });
+  });
+
   group('Korean words (KLREQ 7.1.1, CSS keep-all)', () {
     final hangul = OpenTypeShaper(
       OpenTypeFont.parse(

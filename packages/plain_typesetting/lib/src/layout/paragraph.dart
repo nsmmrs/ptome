@@ -1375,6 +1375,41 @@ bool _keptTogether(LineBreakClass c) => switch (c) {
   _ => false,
 };
 
+/// Where the middles of an underline and a strike-through go in text in
+/// [style] on the baseline [y] (up the page): under the baseline and
+/// across the middle of the lower-case letters. In vertical text the
+/// strike-through runs down the middle of the em box through [upright]
+/// glyphs (Han, kana), through the middle of the letters of those on
+/// their side (Latin, Mongolian; mirrored with them in a mirrored
+/// frame's flipped text), and Japanese and Korean put their
+/// underline on the right of the column, the line's over side (CSS Text
+/// Decoration 3, `text-underline-position: right`; JLREQ's side lines);
+/// Chinese keeps it on the left, and Mongolian, flipped in vertical-lr's
+/// mirrored frame, on the right (mlreq 6.2.1, its right line).
+(double, double) decorationLines(
+  TextStyle style,
+  double y, {
+  bool upright = false,
+}) {
+  final font = style.font;
+  final scale = style.size / 1000;
+  final under = y + font.underlinePosition * scale;
+  final letters = y + font.xHeight * scale / 2;
+  if (!style.vertical && !style.flipped) return (under, letters);
+  final middle = y + (font.ascender + font.descender) * scale / 2;
+  final strike = upright
+      ? middle
+      : style.flipped
+      ? 2 * middle - letters
+      : letters;
+  final primary = (style.language ?? '').toLowerCase().split(RegExp('[-_]'));
+  final over =
+      style.vertical &&
+      !style.flipped &&
+      const {'ja', 'jpn', 'ko', 'kor'}.contains(primary.first);
+  return (over ? 2 * middle - under : under, strike);
+}
+
 /// The items of [paragraph]: its words as boxes, its spaces as glue, its
 /// other break opportunities (UAX #14) as penalties, its hard breaks as
 /// forced penalties. Soft hyphens, and the hyphenator's points, give
@@ -1442,7 +1477,7 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         whole.codeUnitAt(at - 1) == 0x2d) {
       return null;
     }
-    return _eastAsianGlue(whole, at, run.style.size);
+    return _eastAsianGlue(whole, at, run.style);
   }
 
   var offset = 0;
@@ -1723,11 +1758,12 @@ List<String> _clusters(String text) {
 }
 
 /// The glue between the characters of [text] around [at] where a line
-/// may break there, for East Asian composition: a quarter em of [size]
+/// may break there, for East Asian composition: a quarter em of [style]'s size
 /// between Han or kana and Latin, stretching and shrinking by an eighth;
 /// none, stretching by a quarter, between characters written without
 /// spaces; else null.
-GlueItem? _eastAsianGlue(String text, int at, double size) {
+GlueItem? _eastAsianGlue(String text, int at, TextStyle style) {
+  final size = style.size;
   final before = text.codeUnitAt(at - 1);
   final after = text.codeUnitAt(at);
   final a = before & 0xfc00 == 0xdc00 && at >= 2
@@ -1736,8 +1772,14 @@ GlueItem? _eastAsianGlue(String text, int at, double size) {
   final b = after & 0xfc00 == 0xd800 && at + 1 < text.length
       ? 0x10000 + ((after & 0x3ff) << 10) + (text.codeUnitAt(at + 1) & 0x3ff)
       : after;
-  if (cjkWesternBoundary(a, b)) {
+  // (Digits set across a vertical line, upright, are set as an
+  // ideograph: no quarter em.)
+  final combined = style.combinesAt(text, at - 1) || style.combinesAt(text, at);
+  if (cjkWesternBoundary(a, b) && !combined) {
     return GlueItem(null, '', size / 4, size / 8, size / 8);
+  }
+  if (combined && (isSpaceless(a) || isSpaceless(b))) {
+    return GlueItem(null, '', 0, size / 4, 0);
   }
   if (isSpaceless(a) && isSpaceless(b)) {
     return GlueItem(null, '', 0, size / 4, 0);
@@ -1992,12 +2034,17 @@ final class Line {
             );
           }
           final thickness = font.underlineThickness * size / 1000;
+          final (underlineY, strikeY) = decorationLines(
+            style,
+            y,
+            upright: glyphs.any((g) => g.upright),
+          );
           if (run.underline) {
             canvas
               ..rect(
                 Rect(
                   left,
-                  y + font.underlinePosition * size / 1000 - thickness / 2,
+                  underlineY - thickness / 2,
                   fragment.width,
                   thickness,
                 ),
@@ -2007,12 +2054,7 @@ final class Line {
           if (run.strikethrough) {
             canvas
               ..rect(
-                Rect(
-                  left,
-                  y + font.xHeight * size / 2000 - thickness / 2,
-                  fragment.width,
-                  thickness,
-                ),
+                Rect(left, strikeY - thickness / 2, fragment.width, thickness),
               )
               ..fill();
           }
@@ -2419,7 +2461,9 @@ Line _line(
               )
               when beforeText.isNotEmpty &&
                   before.slotWidth == null &&
-                  cjkWesternBoundary(beforeText.runes.last, text.runes.first)) {
+                  cjkWesternBoundary(beforeText.runes.last, text.runes.first) &&
+                  !before.style.combinesAt(beforeText, beforeText.length - 1) &&
+                  !content.style.combinesAt(text, 0)) {
             final quarter = before.style.size / 4;
             shaped.last = (
               before,

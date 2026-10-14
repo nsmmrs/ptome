@@ -129,7 +129,21 @@ final class TextStyle {
     this.vertical = false,
     this.flipped = false,
     this.language,
+    this.combineDigits = 0,
+    this.combineUpright = false,
   });
+
+  /// In vertical text, the most digits a number may have to be set across
+  /// the line, upright as one character (tate-chu-yoko: JLREQ 3.2.5; CSS's
+  /// `text-combine-upright: digits`): two side by side in their half-width
+  /// forms, three in their third-width ones, a lone digit in its
+  /// full-width form; 0 for none, every digit on its side.
+  final int combineDigits;
+
+  /// In vertical text, whether the whole text is set across the line,
+  /// upright as one character (CSS's `text-combine-upright: all`: `!?`,
+  /// `2026`), in the narrowest forms the font has for its length.
+  final bool combineUpright;
 
   /// The text's language (BCP 47: `ja`, `zh-Hant`, `sr`), choosing the
   /// font's language system (its `locl` forms) as HarfBuzz chooses it;
@@ -207,6 +221,8 @@ final class TextStyle {
     bool? vertical,
     bool? flipped,
     String? language,
+    int? combineDigits,
+    bool? combineUpright,
   }) => TextStyle(
     font ?? this.font,
     size ?? this.size,
@@ -223,6 +239,8 @@ final class TextStyle {
     vertical: vertical ?? this.vertical,
     flipped: flipped ?? this.flipped,
     language: language ?? this.language,
+    combineDigits: combineDigits ?? this.combineDigits,
+    combineUpright: combineUpright ?? this.combineUpright,
   );
 
   @override
@@ -242,6 +260,8 @@ final class TextStyle {
       other.vertical == vertical &&
       other.flipped == flipped &&
       other.language == language &&
+      other.combineDigits == combineDigits &&
+      other.combineUpright == combineUpright &&
       other.features.length == features.length &&
       other.features.containsAll(features);
 
@@ -262,6 +282,8 @@ final class TextStyle {
     vertical,
     flipped,
     language,
+    combineDigits,
+    combineUpright,
   );
 
   /// The width of [glyphs] set in this style, in points.
@@ -308,8 +330,84 @@ final class TextStyle {
   }
 
   /// [text] for a vertical line: its runs of upright characters shaped
-  /// top to bottom, the others across (to lie on their side).
+  /// top to bottom, the others across (to lie on their side); numbers of
+  /// up to [combineDigits] digits, or all of it with [combineUpright], set
+  /// across as one upright character.
   List<ShapedGlyph> _shapeVertical(OpenTypeTextFont font, String text) {
+    if (combineUpright && text.isNotEmpty) {
+      return _combined(font, text) ?? _shapeSplit(font, text);
+    }
+    if (combineDigits <= 0 || !text.contains(_digit)) {
+      return _shapeSplit(font, text);
+    }
+    final out = <ShapedGlyph>[];
+    var from = 0;
+    for (final m in _number.allMatches(text)) {
+      final digits = m[0]!;
+      if (digits.length > combineDigits) continue;
+      final combined = _combined(font, digits);
+      if (combined == null) continue;
+      if (m.start > from) {
+        out.addAll(_shapeSplit(font, text.substring(from, m.start)));
+      }
+      out.addAll(combined);
+      from = m.end;
+    }
+    if (from < text.length) out.addAll(_shapeSplit(font, text.substring(from)));
+    return out;
+  }
+
+  /// [text] set across the line as one upright character, an em along
+  /// it, centred across the column: in the narrowest forms the font has
+  /// for its length (full-width alone, half-width two, third-width three,
+  /// quarter-width four); null where it is still wider than an em.
+  List<ShapedGlyph>? _combined(OpenTypeTextFont font, String text) {
+    final count = text.runes.length;
+    final form = switch (count) {
+      1 => 'fwid',
+      2 => 'hwid',
+      3 => 'twid',
+      _ => 'qwid',
+    };
+    final glyphs = shapeInLanguage(
+      font.font,
+      text,
+      language: language ?? '',
+      kerning: false,
+      ligatures: ligatures,
+      features: {...features, form},
+    );
+    final width = glyphs.fold<double>(0, (sum, g) => sum + g.advance);
+    if (glyphs.isEmpty || width > 1050) return null;
+    // (The baseline where an ideograph's em box puts it: the font's
+    // vertical origin, an ideographic space's.)
+    final origin =
+        shapeUpright(
+          font.font,
+          '\u3000',
+          kerning: false,
+        ).firstOrNull?.yOffset ??
+        -font.ascender;
+    final out = <ShapedGlyph>[];
+    var x = -width / 2;
+    for (final (i, g) in glyphs.indexed) {
+      out.add(
+        ShapedGlyph.positioned(
+          g.id,
+          g.text,
+          i == glyphs.length - 1 ? 1000 : 0,
+          xOffset: x + g.xOffset,
+          yOffset: origin + g.yOffset,
+          upright: true,
+        ),
+      );
+      x += g.advance;
+    }
+    return out;
+  }
+
+  /// [text] for a vertical line, split into its upright and sideways runs.
+  List<ShapedGlyph> _shapeSplit(OpenTypeTextFont font, String text) {
     final out = <ShapedGlyph>[];
     final run = StringBuffer();
     bool? upright;
@@ -361,6 +459,29 @@ final class TextStyle {
     flush();
     return out;
   }
+
+  /// Whether the character at [index] of [text] is set across the line,
+  /// upright, in this style: with [combineUpright], or a digit of a
+  /// number of up to [combineDigits] digits, in vertical text.
+  bool combinesAt(String text, int index) {
+    if (!vertical || index < 0 || index >= text.length) return false;
+    if (combineUpright) return true;
+    if (combineDigits <= 0 || !_digit.hasMatch(text[index])) return false;
+    for (final m in _number.allMatches(text)) {
+      if (m.start <= index && index < m.end) {
+        return m.end - m.start <= combineDigits;
+      }
+    }
+    return false;
+  }
+
+  static final RegExp _digit = RegExp('[0-9]');
+
+  /// A number standing alone: digits not inside a word or a longer
+  /// number (`1,000`, `3.14`, `A4`).
+  static final RegExp _number = RegExp(
+    '(?<![0-9A-Za-z.,])[0-9]+(?![0-9A-Za-z]|[.,][0-9])',
+  );
 
   /// [text], a line's, as glyphs in visual order: its runs of one
   /// direction ordered by the Unicode Bidirectional Algorithm (UAX #9) in
