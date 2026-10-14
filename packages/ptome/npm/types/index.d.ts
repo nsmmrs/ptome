@@ -1836,6 +1836,22 @@ export declare class Quote extends Block {
 }
 
 /**
+ * Ruby (`ruby:漢字[かんじ]`): a base and its reading, set above it.
+ */
+export declare class Ruby extends Inline {
+  protected constructor();
+  /**
+   * The base text.
+   */
+  readonly base: string;
+  /**
+   * The reading (for mono ruby, one a character, separated by spaces).
+   */
+  readonly reading: string;
+  readonly plainText: string;
+}
+
+/**
  * A section.
  */
 export declare class Section extends Block {

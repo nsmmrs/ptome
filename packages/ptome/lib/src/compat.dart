@@ -93,6 +93,12 @@ bool asciidoctorCompat(Document document, CompatFormat format) {
   return formats.contains(format);
 }
 
+/// Whether [document]'s `asciidoctor-compat` names any format: Ptome's
+/// own syntax (the `ruby:` macro) is then left as text, as Asciidoctor
+/// leaves it, the parse being one for every format.
+bool anyAsciidoctorCompat(Document document) =>
+    CompatFormat.values.any((format) => asciidoctorCompat(document, format));
+
 /// [document]'s `stylesheet` attribute as the HTML converters read it: the
 /// stylesheet of Asciidoctor's latest stable release
 /// ([Stylesheets.stableStylesheetKey]) in place of the default one when

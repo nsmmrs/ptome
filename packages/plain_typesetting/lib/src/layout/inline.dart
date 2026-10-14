@@ -33,7 +33,18 @@ final class TextRun extends InlineContent {
     this.artifact = false,
     this.slotWidth,
     this.slotAlign = TextAlign.left,
+    this.emphasisMark,
+    this.emphasisUnder = false,
   }) : super._();
+
+  /// Where given, a mark set over each of the text's characters (but its
+  /// spaces and punctuation) at half its size: emphasis marks, CSS's
+  /// `text-emphasis` (JLREQ's bouten, a sesame dot over each character;
+  /// CLREQ's dot under each), [emphasisUnder] under them.
+  final String? emphasisMark;
+
+  /// Whether [emphasisMark] goes under the characters.
+  final bool emphasisUnder;
 
   /// Where given, the width the text takes on its line, whatever its own
   /// (a heading's number hung in a column, a key's label with room on
@@ -97,6 +108,8 @@ final class TextRun extends InlineContent {
     artifact: artifact,
     slotWidth: slotWidth,
     slotAlign: slotAlign,
+    emphasisMark: emphasisMark,
+    emphasisUnder: emphasisUnder,
   );
 
   /// This run in [style].
@@ -113,6 +126,8 @@ final class TextRun extends InlineContent {
     artifact: artifact,
     slotWidth: slotWidth,
     slotAlign: slotAlign,
+    emphasisMark: emphasisMark,
+    emphasisUnder: emphasisUnder,
   );
 }
 

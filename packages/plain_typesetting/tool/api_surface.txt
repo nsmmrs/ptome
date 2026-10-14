@@ -114,6 +114,7 @@ abstract interface class StructureCanvas implements Canvas
   void beginStructure(StructureElement element)
   void endArtifact()
   void endStructure()
+double emphasisExtent(TextStyle style)
 double leftProtrusion(String char)
 double rightProtrusion(String char)
 enum BlendMode
@@ -711,13 +712,15 @@ final class TextRun extends InlineContent
   List<Font> fallbackFonts
   String text
   String? anchor
+  String? emphasisMark
   TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false})
   TextStyle style
   bool anchorOnBaseline
   bool artifact
+  bool emphasisUnder
   bool strikethrough
   bool underline
   double? slotWidth
@@ -778,3 +781,4 @@ sealed class LineItem
 typedef BoxDecoration = void Function(LayoutPage, Rect, {required bool first, required bool last})
 typedef CssColor = ({double alpha, double blue, double green, double red})
 typedef LineWidths = double Function(int)
+void paintEmphasisMarks(Canvas canvas, List<ShapedGlyph> glyphs, double x, double y, TextStyle style, String mark, {bool under = false, Color? color})

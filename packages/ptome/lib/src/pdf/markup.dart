@@ -290,6 +290,13 @@ final class Fragment {
   /// The width of underlines and strike-throughs.
   num? textDecorationWidth;
 
+  /// The emphasis mark set over (or under) each character (`text_emphasis`,
+  /// modern engine), or null.
+  String? textEmphasis;
+
+  /// Whether [textEmphasis] goes under the characters.
+  bool textEmphasisUnder = false;
+
   /// The text transform (`uppercase`...).
   String? textTransform;
 
@@ -354,6 +361,8 @@ final class Fragment {
     ..borderRadius = borderRadius
     ..textDecorationColor = textDecorationColor
     ..textDecorationWidth = textDecorationWidth
+    ..textEmphasis = textEmphasis
+    ..textEmphasisUnder = textEmphasisUnder
     ..textTransform = textTransform
     ..align = align
     ..width = width
@@ -399,6 +408,8 @@ final class FragmentSettings {
     this.borderRadius,
     this.textDecorationColor,
     this.textDecorationWidth,
+    this.textEmphasis,
+    this.textEmphasisUnder,
     this.textTransform,
     this.align,
     this.callbacks,
@@ -444,6 +455,12 @@ final class FragmentSettings {
   /// The width of decorations.
   num? textDecorationWidth;
 
+  /// The emphasis mark.
+  String? textEmphasis;
+
+  /// Whether the emphasis mark goes under the characters.
+  bool? textEmphasisUnder;
+
   /// The text transform.
   String? textTransform;
 
@@ -488,6 +505,10 @@ final class FragmentSettings {
     }
     if (textDecorationWidth != null) {
       fragment.textDecorationWidth = textDecorationWidth;
+    }
+    if (textEmphasis != null) fragment.textEmphasis = textEmphasis;
+    if (textEmphasisUnder != null) {
+      fragment.textEmphasisUnder = textEmphasisUnder!;
     }
     if (textTransform != null) fragment.textTransform = textTransform;
     if (letterSpacing != null) fragment.letterSpacing = letterSpacing;
@@ -667,6 +688,10 @@ final class MarkupTransform {
           target.textDecorationColor = themeColor(value);
         case 'text_decoration_width':
           target.textDecorationWidth = theme.number(key);
+        case 'text_emphasis':
+          target.textEmphasis = emphasisMark(theme.string(key));
+        case 'text_emphasis_position':
+          target.textEmphasisUnder = theme.string(key) == 'under';
         case 'text_transform':
           target.textTransform = theme.string(key);
         case 'letter_spacing':
@@ -1129,4 +1154,23 @@ String _smallCaps(String text) {
     );
   }
   return out.toString();
+}
+
+/// The emphasis mark CSS's `text-emphasis-style` [value] names (`sesame`,
+/// `dot`, `circle`, `double-circle`, `triangle`, each `filled`, the
+/// default, or `open`), or the one character it is; null for `none`.
+String? emphasisMark(String? value) {
+  final words = (value ?? '').trim().toLowerCase().split(RegExp(r'\s+'));
+  final open = words.contains('open');
+  final shape = words.where((w) => w != 'open' && w != 'filled').firstOrNull;
+  return switch (shape) {
+    'sesame' => open ? '\ufe46' : '\ufe45',
+    'dot' => open ? '\u25e6' : '\u2022',
+    'circle' => open ? '\u25cb' : '\u25cf',
+    'double-circle' => open ? '\u25ce' : '\u25c9',
+    'triangle' => open ? '\u25b3' : '\u25b2',
+    null || '' || 'none' => null,
+    _ when value!.trim().runes.length == 1 => value.trim(),
+    _ => null,
+  };
 }

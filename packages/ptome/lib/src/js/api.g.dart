@@ -27,6 +27,7 @@ JSObject wrap(Object o) => switch (o) {
   api.Stem() => rt.handle(o, 'Stem'),
   api.Sidebar() => rt.handle(o, 'Sidebar'),
   api.Section() => rt.handle(o, 'Section'),
+  api.Ruby() => rt.handle(o, 'Ruby'),
   api.Quote() => rt.handle(o, 'Quote'),
   api.Preamble() => rt.handle(o, 'Preamble'),
   api.Passthrough() => rt.handle(o, 'Passthrough'),
@@ -2926,6 +2927,30 @@ final class Core {
   JSAny? Quote$get$plainText(JSAny? self) {
     try {
       return rt.unwrap<api.Quote>(self).plainText.toJS;
+    } catch (e, s) {
+      rt.fail(e, s);
+    }
+  }
+
+  JSAny? Ruby$get$base(JSAny? self) {
+    try {
+      return rt.unwrap<api.Ruby>(self).base.toJS;
+    } catch (e, s) {
+      rt.fail(e, s);
+    }
+  }
+
+  JSAny? Ruby$get$reading(JSAny? self) {
+    try {
+      return rt.unwrap<api.Ruby>(self).reading.toJS;
+    } catch (e, s) {
+      rt.fail(e, s);
+    }
+  }
+
+  JSAny? Ruby$get$plainText(JSAny? self) {
+    try {
+      return rt.unwrap<api.Ruby>(self).plainText.toJS;
     } catch (e, s) {
       rt.fail(e, s);
     }

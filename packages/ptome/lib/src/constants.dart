@@ -297,6 +297,12 @@ final AnchoredScan inlineIndextermMacroScan = AnchoredScan(
   before: 1,
 );
 
+/// [inlineRubyMacroRx]'s matches: each starts at `ruby:`, or at the
+/// backslash escaping it.
+final AnchoredScan inlineRubyMacroScan = AnchoredScan(inlineRubyMacroRx, [
+  'ruby:',
+], before: 1);
+
 /// [inlineKbdBtnMacroRx]'s matches: each starts at `kbd:` or `btn:`, or at
 /// the backslash escaping it.
 final AnchoredScan inlineKbdBtnMacroScan = AnchoredScan(inlineKbdBtnMacroRx, [

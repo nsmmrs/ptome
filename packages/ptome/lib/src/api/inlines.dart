@@ -11,6 +11,7 @@ Inline _createInline(impl.Inline node) => switch ((node.context, node.type)) {
   (.image, 'icon') => Icon._(node),
   (.image, _) => InlineImage._(node),
   (.kbd, _) => Keyboard._(node),
+  (.ruby, _) => Ruby._(node),
   (.button, _) => Button._(node),
   (.menu, _) => Menu._(node),
   (.lineBreak, _) => LineBreak._(node),
@@ -276,6 +277,20 @@ final class Keyboard extends Inline {
 
   @override
   String get plainText => keys.join('+');
+}
+
+/// Ruby (`ruby:漢字[かんじ]`): a base and its reading, set above it.
+final class Ruby extends Inline {
+  new _(super._node) : super._();
+
+  /// The base text.
+  String get base => _inline.text ?? '';
+
+  /// The reading (for mono ruby, one a character, separated by spaces).
+  String get reading => _node.attributes['reading'] ?? '';
+
+  @override
+  String get plainText => base;
 }
 
 /// A UI button (`btn:[Save]`).

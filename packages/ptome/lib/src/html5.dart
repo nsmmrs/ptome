@@ -36,6 +36,7 @@ import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/ruby_semantics.dart';
+import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/rx.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/stylesheets.dart';
@@ -220,6 +221,7 @@ class Html5Converter extends BuiltInConverter {
     .image => convertInlineImage(node),
     .indexterm => convertInlineIndexterm(node),
     .kbd => convertInlineKbd(node),
+    .ruby => rubyHtml(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => htmlUnitMark(node),

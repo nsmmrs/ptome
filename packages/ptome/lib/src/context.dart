@@ -157,7 +157,12 @@ enum InlineContext {
   note,
 
   /// Formatted text (strong, emphasis, ...) or inline math.
-  quoted;
+  quoted,
+
+  /// Ruby (`ruby:漢字[かんじ]`, Ptome's syntax): a base and its reading
+  /// set above it (`reading`; one a character, separated by spaces, for
+  /// mono ruby).
+  ruby;
 
   new([this._asciidoc]);
 

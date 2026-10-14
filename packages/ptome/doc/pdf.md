@@ -94,6 +94,7 @@ its title.
 | `prose_text_indent_inner` | `0` | The indent of the first line of a paragraph that follows another paragraph only (not the first after a heading, a list or a block), as books set it. |
 | `prose_margin_inner` | none | The space between two paragraphs; `0` with `prose_text_indent_inner` for indented, unspaced paragraphs. |
 | `role_<role>_text_indent`, `role_<role>_margin_bottom` | the prose's | A paragraph with the role: its first line's indent (`0` for none) and the space below it (`[.dedication]` paragraphs, unindented and spaced). |
+| `role_<role>_text_emphasis`, `role_<role>_text_emphasis_position` | none, `over` | Emphasis marks on text with the role (`[.bouten]##強調##`), as CSS's `text-emphasis`: `sesame` (Japanese bouten), `dot` (Chinese), `circle`, `double-circle`, `triangle`, each `filled` (the default) or `open` (`open sesame`), or a character of the font; set over each character but spaces and punctuation, centered, just past the em box; `under` for under them (Chinese). The line makes room for them; they read as nothing when text is taken from the page. |
 | `role_<role>_hyphens` | the document's | `false`: a paragraph with the role isn't hyphenated (an agency's name in capitals). |
 | `role_<role>_margin_top`, `role_<role>_margin_bottom` | the block's | Any block with the role: the space above and below it, in place of its category's. |
 
@@ -239,6 +240,17 @@ characters; and no line starts with a closing mark, a full stop, small
 kana or the prolonged sound mark, nor ends with an opening bracket
 (UAX #14). Thai, Lao, Khmer and Burmese lines stretch between their
 words. Modern engine.
+
+Ruby (furigana, zhuyin) is Ptome's `ruby:` macro: `ruby:漢字[かんじ]` sets
+the reading over the whole base (group ruby); readings separated by
+spaces, as many as the base's characters, go each over its character
+(mono ruby: `ruby:東京[とう きょう]`). The reading is half the text's size,
+centered on its base and resting on its em box, the base spaced out where
+the reading is wider, the line as tall as it needs; the base alone is
+copied from the page. HTML and EPUB write `<ruby>` (with `<rp>`
+parentheses), DocBook and man pages the reading in parentheses after the
+base. Under `asciidoctor-compat` (any format) the macro is text, as
+Asciidoctor leaves it; `\ruby:` escapes it.
 
 Hyphenation (`:hyphens:`, the document's `lang`) works in every script
 hyph-utf8 has patterns for: Hindi, Marathi, Sanskrit, Bengali, Assamese,

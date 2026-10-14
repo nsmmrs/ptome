@@ -8,6 +8,8 @@ import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:plain_unicode/plain_unicode.dart' show lineBreaks;
 import 'package:test/test.dart';
 
+import 'support/recording.dart';
+
 final OpenTypeShaper _jp = OpenTypeShaper(
   OpenTypeFont.parse(
     File('test/fonts/notosanscjk-jp-subset.otf').readAsBytesSync(),
@@ -124,5 +126,36 @@ void main() {
     // (The space after the last glyph of each word but the line's last.)
     final words = lineBreaks(fragment.text).length - 1;
     expect(fragment.glyphs.where((g) => g.kerning > 0), hasLength(words));
+  });
+
+  group('emphasis marks', () {
+    Line line(String text, {String? mark, bool under = false}) =>
+        const FirstFitLineBreaker()
+            .breakLines(
+              Paragraph([
+                TextRun(text, _style, emphasisMark: mark, emphasisUnder: under),
+              ]),
+              (_) => 200,
+            )
+            .single;
+
+    test('one over each character but punctuation, reading as nothing', () {
+      final canvas = RecordingCanvas();
+      line('日本語、文章', mark: '\ufe45').paint(canvas, 0, 100);
+      expect(canvas.calls.where((c) => c.startsWith('ellipse')), hasLength(5));
+      expect(canvas.calls, contains('begin Span'));
+    });
+
+    test('the line taller by their band, or deeper under', () {
+      final plain = line('日本');
+      final over = line('日本', mark: '\u2022');
+      final under = line('日本', mark: '\u2022', under: true);
+      expect(over.ascent - plain.ascent, closeTo(emphasisExtent(_style), 1e-6));
+      expect(over.descent, plain.descent);
+      expect(
+        plain.descent - under.descent,
+        closeTo(emphasisExtent(_style), 1e-6),
+      );
+    });
   });
 }

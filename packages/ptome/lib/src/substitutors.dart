@@ -1098,6 +1098,32 @@ String subMacros(AbstractNode node, String text) {
     }
   }
 
+  // Ruby (Ptome's syntax, not under asciidoctor-compat): the base, its
+  // reading the macro's text, one reading a character where the
+  // readings, separated by spaces, are as many as the base's characters
+  // (mono ruby), else one for the whole (group ruby).
+  if (foundMacroish &&
+      hasLiteral(result, 'ruby:') &&
+      !anyAsciidoctorCompat(doc)) {
+    result = InlineRun.replace(result, inlineRubyMacroScan, (match) {
+      if (match.group(1) != null) return match.group(0)!.substring(1);
+      return InlineRun.emit(
+        Inline(
+          block,
+          InlineContext.ruby,
+          text: match.group(2),
+          attributes: {
+            'reading': normalizeText(
+              match.group(3)!,
+              normalizeWhitespace: true,
+              unescapeClosingSquareBrackets: true,
+            ),
+          },
+        ),
+      );
+    });
+  }
+
   if (docAttrs.containsKey('experimental')) {
     if (foundMacroishShort &&
         (hasLiteral(result, 'kbd:') || hasLiteral(result, 'btn:'))) {

@@ -27,6 +27,7 @@ import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/ruby_semantics.dart';
+import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/rx.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
@@ -266,6 +267,7 @@ class ManpageConverter extends BuiltInConverter {
     .image => convertInlineImage(node),
     .indexterm => convertInlineIndexterm(node),
     .kbd => convertInlineKbd(node),
+    .ruby => rubyText(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit || .note => node.text ?? '',

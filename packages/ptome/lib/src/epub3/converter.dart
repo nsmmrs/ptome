@@ -43,6 +43,7 @@ import 'package:ptome/src/look/model.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
+import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
 import 'package:ptome/src/title_page.dart';
@@ -286,6 +287,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     .image => convertInlineImage(node),
     .indexterm => _indexterm(node),
     .kbd => convertInlineKbd(node),
+    .ruby => rubyHtml(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => htmlUnitMark(node),

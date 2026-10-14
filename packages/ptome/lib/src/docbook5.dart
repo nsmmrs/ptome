@@ -31,6 +31,7 @@ import 'package:ptome/src/document.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/ruby_semantics.dart';
+import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/rx.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
@@ -297,6 +298,8 @@ class Docbook5Converter extends BuiltInConverter {
     .image => convertInlineImage(node),
     .indexterm => convertInlineIndexterm(node),
     .kbd => convertInlineKbd(node),
+    // (DocBook has no ruby: the reading after the base.)
+    .ruby => rubyText(node),
     .menu => convertInlineMenu(node),
     .quoted => convertInlineQuoted(node),
     .unit => convertInlineUnit(node),

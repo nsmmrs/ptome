@@ -48,9 +48,11 @@ import 'package:ptome/src/pdf/index.dart';
 import 'package:ptome/src/pdf/look_theme.dart';
 import 'package:ptome/src/pdf/markup.dart';
 import 'package:ptome/src/pdf/math.dart';
+import 'package:ptome/src/pdf/ruby.dart';
 import 'package:ptome/src/pdf/svg_size.dart';
 import 'package:ptome/src/pdf/text_box.dart';
 import 'package:ptome/src/pdf/theme.dart';
+import 'package:ptome/src/ruby_text.dart';
 import 'package:ptome/src/section.dart';
 import 'package:ptome/src/table.dart';
 import 'package:ptome/src/timings.dart';
@@ -1421,6 +1423,9 @@ final class PdfConverter extends BuiltInConverter
   }
 
   var _mathCount = 0;
+
+  /// The ruby annotations registered as inline graphics so far.
+  var _rubyCount = 0;
 
   static String _unescapeXml(String text) => text
       .replaceAll('&lt;', '<')

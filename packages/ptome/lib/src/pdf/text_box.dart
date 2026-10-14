@@ -19,6 +19,7 @@ import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/pdf/fonts.dart';
 import 'package:ptome/src/pdf/markup.dart';
 import 'package:ptome/src/pdf/math.dart';
+import 'package:ptome/src/pdf/ruby.dart';
 import 'package:ptome/src/pdf/svg_size.dart';
 import 'package:ptome/src/pdf/theme.dart';
 
@@ -770,6 +771,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         if (graphic == null) return null;
         // (One a share of the width: arranged at the width it's set in.)
         if (graphic is! InlineMath &&
+            graphic is! InlineRuby &&
             (fragment.imageWidth ?? '100%').contains('%') &&
             width.isInfinite) {
           return null;
@@ -870,6 +872,8 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
                 : TextAlign.left,
             underline: styles.contains(FragmentStyle.underline),
             strikethrough: styles.contains(FragmentStyle.strikethrough),
+            emphasisMark: fragment.textEmphasis,
+            emphasisUnder: fragment.textEmphasisUnder,
             link: link,
             anchor: fragment.isMarker ? fragment.name : null,
             // (A marker's anchor at the baseline, as the box reports it, but
@@ -1435,6 +1439,19 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// an image taller than the line raising it, standing on the line's
   /// descender; another centered in its text, its line no taller.
   InlineImage _engineImage(_Image image, _Format format, LinkTarget? link) {
+    if (image.graphic case final InlineRuby ruby) {
+      final face = _rubyFace(ruby, format.font);
+      final box = ruby.at(face, format.size);
+      return InlineImage(
+        EngineRuby(ruby, face, format.size, _pdfColor(format.fragment.color)),
+        box.width,
+        box.ascent + box.descent,
+        bottom: -box.descent,
+        lineAscent: box.ascent,
+        lineDescent: box.descent,
+        link: link,
+      );
+    }
     if (image.graphic case final InlineMath formula) {
       final depth = image.mathDepth ?? 0;
       return InlineImage(
@@ -1471,8 +1488,47 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     );
   }
 
+  /// The face [ruby] is set in: [face], the text's, where it has every
+  /// character of the base and the readings, else the first fallback
+  /// font that has them.
+  FontFace _rubyFace(InlineRuby ruby, FontFace face) {
+    bool covers(FontFace f) => ruby.pairs.every(
+      (pair) => '${pair.$1}${pair.$2}'.runes.every(f.hasGlyph),
+    );
+    if (covers(face)) return face;
+    for (final family in _context.fallbacks) {
+      final fallback = TextBox._font(family, face.style, _context);
+      if (covers(fallback)) return fallback;
+    }
+    return face;
+  }
+
   _Item _arrangeImage(_Item item, Graphic graphic, double available) {
     final fragment = item.format.fragment;
+    // Ruby: its base at the text's size, its readings above, the line as
+    // tall as they need.
+    if (graphic case final InlineRuby ruby) {
+      final box = ruby.at(_rubyFace(ruby, item.format.font), item.format.size);
+      final lineFont = TextBox._font(_state.family, _state.style, _context);
+      return _Item(
+        '\u2063',
+        _Format(
+          fragment,
+          item.format.font,
+          item.format.size,
+          image: _Image(
+            graphic,
+            width: box.width,
+            height: box.ascent + box.descent,
+            drawWidth: box.width,
+            drawHeight: box.ascent + box.descent,
+            ascender: math.max(box.ascent, lineFont.ascenderAt(_state.size)),
+            descender: math.max(box.descent, lineFont.descenderAt(_state.size)),
+            mathDepth: box.descent,
+          ),
+        ),
+      );
+    }
     // A formula: at the text's size, its depth below the baseline, the
     // line as tall as it needs.
     if (graphic case final InlineMath formula) {
@@ -2095,6 +2151,15 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           switch (image.graphic) {
             case final PdfImage raster:
               raster.paint(canvas, rect);
+            case final InlineRuby ruby:
+              ruby
+                  .at(_rubyFace(ruby, f.format.font), f.format.size)
+                  .paintAt(
+                    canvas,
+                    rect.left,
+                    rect.bottom + image.mathDepth!,
+                    color: _pdfColor(fragment.color),
+                  );
             case final InlineMath formula:
               // In the text's color; copied as its source.
               canvas
@@ -2145,6 +2210,21 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
             canvas.glyphs(style.shapeBidi(f.text), x, y, style);
           } else {
             canvas.text(f.text, x, y, style);
+          }
+          // (Emphasis marks over or under its characters, `text_emphasis`.)
+          if (fragment.textEmphasis case final mark?) {
+            paintEmphasisMarks(
+              canvas,
+              hasRightToLeft(f.text)
+                  ? style.shapeBidi(f.text)
+                  : style.shape(f.text),
+              x,
+              y,
+              style,
+              mark,
+              under: fragment.textEmphasisUnder,
+              color: _pdfColor(fragment.color),
+            );
           }
           canvas.restore();
           if (fragment.artifact) canvas.endMarkedContent();

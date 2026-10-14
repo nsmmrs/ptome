@@ -110,7 +110,9 @@ export 'src/layout/paragraph.dart'
         TextAlign,
         TextFragment,
         buildLines,
+        emphasisExtent,
         leftProtrusion,
+        paintEmphasisMarks,
         paragraphItems,
         rightProtrusion;
 export 'src/link.dart' show LinkTarget, NamedTarget, UriTarget;

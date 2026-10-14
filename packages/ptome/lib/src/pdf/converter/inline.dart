@@ -63,6 +63,7 @@ extension _InlineElements on PdfConverter {
     InlineContext.indexterm => _inlineIndexterm(node),
     InlineContext.kbd => _inlineKbd(node),
     InlineContext.menu => _inlineMenu(node),
+    InlineContext.ruby => _inlineRuby(node),
     InlineContext.quoted => _inlineQuoted(node),
     // A unit's mark: its anchor, then its label (ADR-0020).
     InlineContext.unit => _inlineUnit(node),
@@ -1289,6 +1290,19 @@ extension _InlineElements on PdfConverter {
         style: BoxStyle(margin: _outdented(EdgeInsets.zero)),
       ),
     );
+  }
+
+  /// Ruby: an inline graphic of its base with its reading above it,
+  /// laid out in the text's face (ruby.dart); the base where ruby isn't
+  /// set (the compatibility mode never parses it).
+  String _inlineRuby(Inline node) {
+    final src = 'ruby:${_rubyCount++}';
+    final base = PdfConverter._unescapeXml(node.text ?? '');
+    _inlineGraphics[src] = InlineRuby([
+      for (final (b, r) in rubyPairs(node))
+        (PdfConverter._unescapeXml(b), PdfConverter._unescapeXml(r)),
+    ], base: base);
+    return '<img src="$src" format="ruby" alt="${node.text ?? ''}">';
   }
 
   String _inlineKbd(Inline node) {

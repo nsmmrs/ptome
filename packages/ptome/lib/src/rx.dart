@@ -651,6 +651,19 @@ final RegExp inlineIndextermMacroRx = RegExp(
   r'+?)\)\)(?!\)))',
 );
 
+/// Matches a ruby annotation (Ptome's syntax: furigana, zhuyin), its base
+/// before the brackets, its reading in them.
+///
+/// Examples
+///
+///   ruby:漢字[かんじ]
+///   ruby:東京[とう きょう]
+final RegExp inlineRubyMacroRx = RegExp(
+  r'(\\)?ruby:([^\s\[\]]+)\[('
+  '$ccAll'
+  r'*?[^\\])\]',
+);
+
 /// Matches either the kbd or btn inline macro.
 final RegExp inlineKbdBtnMacroRx = RegExp(
   r'(\\)?(kbd|btn):\[('

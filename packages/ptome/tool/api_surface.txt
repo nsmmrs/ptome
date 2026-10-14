@@ -370,6 +370,10 @@ final class Quote extends Block
   String plainText
   String? attribution
   String? citation
+final class Ruby extends Inline
+  String base
+  String plainText
+  String reading
 final class Section extends Block
   String sectionName
   String title

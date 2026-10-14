@@ -99,6 +99,7 @@ export 'src/api/api.dart'
         Ptome,
         PtomeException,
         Quote,
+        Ruby,
         SafeMode,
         Section,
         Severity,

@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Emphasis marks (FEAT-2q4rln): `TextRun.emphasisMark` and
+  `emphasisUnder`, CSS's `text-emphasis`: a mark over (or under) each
+  character but spaces and punctuation, CSS's own marks drawn as shapes
+  (dot, circle, double circle, triangle, sesame; filled or open), the
+  line taller (or deeper) by `emphasisExtent`; `paintEmphasisMarks` for
+  other text.
+
 - East Asian composition (FEAT-x45qvj), from JLREQ and CLREQ, on by
   default (`Paragraph.eastAsian`): of two full-width punctuation marks in
   a row one is set half wide by the font's `halt` (as OpenType's `chws`

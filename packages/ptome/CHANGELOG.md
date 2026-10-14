@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Ruby: `ruby:漢字[かんじ]` (group) and `ruby:東京[とう きょう]` (mono), Ptome's
+  syntax (FEAT-2q4rln): `<ruby>` in HTML and EPUB, the reading in
+  parentheses in DocBook and man pages, set above its base in the PDF
+  (half size, centered, the base copied); text under `asciidoctor-compat`.
+  `Ruby` in the API. PDF: emphasis marks, a role's `text_emphasis`
+  (`sesame`, `dot`, `circle`... over or `under`), as CSS's.
 - PDF: Japanese and Chinese set as JLREQ and CLREQ have it
   (FEAT-x45qvj): full-width punctuation squeezed in pairs, a quarter em
   beside Latin letters and digits, justified lines stretched between

@@ -10,6 +10,7 @@ import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
 import 'package:plain_typesetting/src/canvas.dart';
+import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
 import 'package:plain_typesetting/src/layout/east_asian.dart';
@@ -19,9 +20,12 @@ import 'package:plain_typesetting/src/link.dart';
 import 'package:plain_unicode/plain_unicode.dart'
     show
         BidiText,
+        GeneralCategory,
         LineBreakClass,
         TextDirection,
+        generalCategory,
         hasRightToLeft,
+        isMark,
         lineBreakClass,
         lineBreakOffsets,
         reorderRuns;
@@ -1887,6 +1891,18 @@ final class Line {
                 : text,
           );
           if (run.artifact) canvas.endMarkedContent();
+          if (run.emphasisMark case final mark?) {
+            paintEmphasisMarks(
+              canvas,
+              glyphs,
+              left + inSlot,
+              y,
+              style,
+              mark,
+              under: run.emphasisUnder,
+              color: run.color,
+            );
+          }
           final thickness = font.underlineThickness * size / 1000;
           if (run.underline) {
             canvas
@@ -1943,6 +1959,167 @@ final class Line {
     }
   }
 }
+
+/// How far emphasis marks on text in [style] reach past the text's
+/// ascender (or descender): seven twentieths of its size.
+double emphasisExtent(TextStyle style) => style.size * 0.35;
+
+/// Draws emphasis [mark] over (or, [under], under) each of [glyphs] that
+/// starts a character, but spaces and punctuation, the glyphs drawn from
+/// [x] on baseline [y] in [style], in [color]: centered on the character,
+/// a fifth of the size past the text's ascender (or descender), in the
+/// band [emphasisExtent] reserves. CSS's marks (dot, circle, double
+/// circle, triangle, sesame; filled or open) are drawn as shapes, the same
+/// in every font; another character is the font's glyph at half the size.
+/// Marked as reading as nothing.
+void paintEmphasisMarks(
+  Canvas canvas,
+  List<ShapedGlyph> glyphs,
+  double x,
+  double y,
+  TextStyle style,
+  String mark, {
+  bool under = false,
+  Color? color,
+}) {
+  final size = style.size;
+  final font = style.font;
+  final centreY = under
+      ? y + font.descender * size / 1000 - size * 0.2
+      : y + font.ascender * size / 1000 + size * 0.2;
+  final markStyle = TextStyle(font, size / 2);
+  final markGlyphs = markStyle.shape(mark);
+  final markWidth = markStyle.widthOf(markGlyphs);
+  final scale = style.horizontalScaling / 100;
+  var pen = x;
+  canvas
+    ..save()
+    ..beginMarkedContent('Span', actualText: '')
+    ..setLineWidth(size * 0.03);
+  if (color != null) {
+    canvas
+      ..setFillColor(color)
+      ..setStrokeColor(color);
+  }
+  for (final (i, glyph) in glyphs.indexed) {
+    final advance =
+        (glyph.advance * size / 1000 +
+            style.characterSpacing +
+            (glyph.text == ' ' ? style.wordSpacing : 0)) *
+        scale;
+    final c = glyph.text.isEmpty ? null : glyph.text.runes.first;
+    if (c != null && glyph.advance != 0 && !isMark(c) && !_unemphasized(c)) {
+      final cx = pen + glyph.xOffset * size / 1000 * scale + advance / 2;
+      if (!_drawEmphasisShape(canvas, mark, cx, centreY, size)) {
+        canvas.glyphs(
+          markGlyphs,
+          cx - markWidth / 2,
+          centreY - (font.ascender + font.descender) * size / 4000,
+          markStyle,
+        );
+      }
+    }
+    pen += advance;
+    if (i < glyphs.length - 1) pen += glyph.kerning * size / 1000 * scale;
+  }
+  canvas
+    ..endMarkedContent()
+    ..restore();
+}
+
+/// Draws CSS's emphasis mark [mark] (its character: • ◦ ● ○ ◉ ◎ ▲ △ ﹅ ﹆)
+/// centered at ([cx], [cy]) for text of [size]; false for another mark.
+bool _drawEmphasisShape(
+  Canvas canvas,
+  String mark,
+  double cx,
+  double cy,
+  double size,
+) {
+  void triangle(double side) {
+    final h = side * 0.866;
+    canvas
+      ..moveTo(cx - side / 2, cy - h / 3)
+      ..lineTo(cx + side / 2, cy - h / 3)
+      ..lineTo(cx, cy + 2 * h / 3)
+      ..closePath();
+  }
+
+  void sesame() {
+    canvas
+      ..save()
+      ..translate(cx, cy)
+      ..rotate(-40)
+      ..ellipse(0, 0, size * 0.05, size * 0.11);
+  }
+
+  switch (mark) {
+    case '\u2022':
+      canvas
+        ..circle(cx, cy, size * 0.07)
+        ..fill();
+    case '\u25e6':
+      canvas
+        ..circle(cx, cy, size * 0.07)
+        ..stroke();
+    case '\u25cf':
+      canvas
+        ..circle(cx, cy, size * 0.12)
+        ..fill();
+    case '\u25cb':
+      canvas
+        ..circle(cx, cy, size * 0.12)
+        ..stroke();
+    case '\u25c9':
+      canvas
+        ..circle(cx, cy, size * 0.12)
+        ..stroke()
+        ..circle(cx, cy, size * 0.05)
+        ..fill();
+    case '\u25ce':
+      canvas
+        ..circle(cx, cy, size * 0.12)
+        ..stroke()
+        ..circle(cx, cy, size * 0.06)
+        ..stroke();
+    case '\u25b2':
+      triangle(size * 0.26);
+      canvas.fill();
+    case '\u25b3':
+      triangle(size * 0.26);
+      canvas.stroke();
+    case '\ufe45':
+      sesame();
+      canvas
+        ..fill()
+        ..restore();
+    case '\ufe46':
+      sesame();
+      canvas
+        ..stroke()
+        ..restore();
+    default:
+      return false;
+  }
+  return true;
+}
+
+/// Whether [c] takes no emphasis mark: a space or punctuation, as CSS's
+/// `text-emphasis` skips them.
+bool _unemphasized(int c) => switch (generalCategory(c)) {
+  GeneralCategory.spaceSeparator ||
+  GeneralCategory.lineSeparator ||
+  GeneralCategory.paragraphSeparator ||
+  GeneralCategory.control ||
+  GeneralCategory.connectorPunctuation ||
+  GeneralCategory.dashPunctuation ||
+  GeneralCategory.openPunctuation ||
+  GeneralCategory.closePunctuation ||
+  GeneralCategory.initialPunctuation ||
+  GeneralCategory.finalPunctuation ||
+  GeneralCategory.otherPunctuation => true,
+  _ => false,
+};
 
 void _decorate(Canvas canvas, InlineDecoration decoration, Rect rect) {
   void shape(Rect r) => decoration.radius > 0
@@ -2328,7 +2505,26 @@ Line _line(
   }
 
   for (final (content, _, _, _) in shaped) {
-    if (content is TextRun) text(content.style);
+    if (content is TextRun) {
+      text(content.style);
+      // (Emphasis marks over or under the text: the line that much taller
+      // or deeper.)
+      if (content.emphasisMark != null) {
+        final style = content.style;
+        final mark = emphasisExtent(style);
+        if (content.emphasisUnder) {
+          descent = math.min(
+            descent,
+            style.font.descender * style.size / 1000 - mark,
+          );
+        } else {
+          ascent = math.max(
+            ascent,
+            style.font.ascender * style.size / 1000 + mark,
+          );
+        }
+      }
+    }
   }
   if (shaped.isEmpty && emptyRun != null) text(emptyRun.style);
   if (paragraph.strut case final strut?) text(strut);
