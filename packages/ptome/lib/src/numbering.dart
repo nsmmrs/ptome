@@ -80,6 +80,14 @@ CounterStyle? listCounterStyle(ListBlock list) {
 /// empty where they use none.
 String counterStyleCss(Document document, CompatFormat format) {
   if (asciidoctorCompat(document, format)) return '';
+  // (Once a document: an EPUB asks for each chapter.)
+  return _counterCss[document] ??= _counterStyleRules(document);
+}
+
+/// [counterStyleCss] by document.
+final Expando<String> _counterCss = Expando();
+
+String _counterStyleRules(Document document) {
   final rules = <String, String>{};
   for (final block in document.findBy(
     context: BlockContext.olist,
