@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `benchmark/hyphenation.dart`: each language's startup and cache misses
+  (TASK-pfmyzk); the double-array trie and case table it was written to
+  judge were measured and not kept (`benchmark/BASELINE.md`).
+
 - NOTICES.md says which licence a pattern file offering several is used
   under, and reproduces only that one's terms: the Irish patterns (GPL 2
   or later, or MIT) under MIT; `tool/hyph_metadata.dart` writes it so.

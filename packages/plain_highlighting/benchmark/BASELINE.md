@@ -63,3 +63,15 @@ default `\w+`), the mode buffer is a slice of the code until it can't be,
 HTML is written as it is emitted (escaped in one pass) instead of from a
 token tree, and each rule's first characters and group count are read once
 for all the matchers that share it.
+
+## The rules left dense (2026-10-14)
+
+TASK-f7571x asked for a search-ahead cache for the rules tried at many
+places but matching at few. The literal ones (`.?html``, `.?css``,
+`.?gql``) already are tried only near their literal's next occurrence
+(7 and 1 calls a warm pass, 26k each before). What is left,
+`[^\\](?=\s*$)` and `[^\\]$`, takes about 1.8 ms of a warm pass by an
+instrumented count, an over-estimate. A prefilter trying them only where
+the whitespace after the character reaches a line's end (output the same)
+ran slower, interleaved five times each on this machine: warm 232.0 →
+236.2 ms, first pass 336 → 372 ms. Not done.
