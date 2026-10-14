@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Faster units documents (TASK-frytn1): the inline scanner looks for each
+  token's literal (`@`, `note:`, `<<`, `[.dfn]#`, the range brackets)
+  before running its regex, markers tried only at the first `@` of a run:
+  Ethics in Greek to HTML 87 → 58 ms, the KJV 4.4 → 3.7 s, output the
+  same byte for byte.
 - PDF: jukugo ruby with three or more reading characters to a character
   is set as JLREQ Appendix F has it (readings hanging over the compound's
   next character, then the kana beside it, then space opened around the

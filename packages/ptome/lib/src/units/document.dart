@@ -6,6 +6,7 @@
 /// through untouched.
 library;
 
+import 'package:meta/meta.dart';
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/units/files.dart' as p;
 
@@ -401,12 +402,39 @@ final class InlineScanner {
   static final _xref = RegExp('<<([^<>]+?)>>');
   static final _dfn = RegExp(r'\[\.dfn\]#([^#]+)#');
 
+  /// The markers in [text], as `_marker.allMatches` finds them: the
+  /// pattern tried only where one can start, at the first `@` of a run
+  /// (its lookbehind rules out one after another `@`).
+  @visibleForTesting
+  static Iterable<Match> markers(String text) sync* {
+    var from = 0;
+    while (true) {
+      final at = text.indexOf('@', from);
+      if (at < 0) return;
+      if (at > 0 && text.codeUnitAt(at - 1) == 0x40) {
+        from = at + 1;
+        continue;
+      }
+      final m = _marker.matchAsPrefix(text, at);
+      if (m == null) {
+        from = at + 1;
+        continue;
+      }
+      yield m;
+      from = m.end > at ? m.end : at + 1;
+    }
+  }
+
   /// The tokens in [text] (which starts at column [offset] of its line).
   List<Token> scan(String text, Loc Function(int col) loc, int offset) {
     final tokens = <Token>[];
     // Notes first: their bodies hold references but no other tokens.
     final bodies = <(int, int)>[];
-    for (final m in _noteStart.allMatches(text)) {
+    // (Each regex only where its literal is: most lines hold none.)
+    for (final m
+        in text.contains('note:')
+            ? _noteStart.allMatches(text)
+            : const <RegExpMatch>[]) {
       if (bodies.any((b) => m.start >= b.$1 && m.start < b.$2)) continue;
       final bodyStart = m.end;
       var depth = 1;
@@ -455,7 +483,7 @@ final class InlineScanner {
     }
     bool inBody(int i) => bodies.any((b) => i >= b.$1 && i < b.$2);
     if (active) {
-      for (final m in _marker.allMatches(text)) {
+      for (final m in markers(text)) {
         if (inBody(m.start)) continue;
         final g = m[2]!;
         final up = m[1]!.length - 1;
@@ -475,7 +503,7 @@ final class InlineScanner {
         );
       }
     }
-    if (_open != null) {
+    if (_open != null && text.contains('}')) {
       for (final m in _open.allMatches(text)) {
         if (inBody(m.start)) continue;
         final attrs = <String, String>{
@@ -494,18 +522,26 @@ final class InlineScanner {
           ),
         );
       }
-      for (final m in _close!.allMatches(text)) {
+    }
+    if (_close != null && text.contains('{')) {
+      for (final m in _close.allMatches(text)) {
         if (inBody(m.start)) continue;
         tokens.add(
           RangeClose(loc(m.start), m.end + offset, m[1]!, m[2]?.substring(1)),
         );
       }
     }
-    for (final m in _xref.allMatches(text)) {
+    for (final m
+        in text.contains('<<')
+            ? _xref.allMatches(text)
+            : const <RegExpMatch>[]) {
       if (inBody(m.start)) continue;
       tokens.add(Xref(loc(m.start), m.end + offset, m[1]!));
     }
-    for (final m in _dfn.allMatches(text)) {
+    for (final m
+        in text.contains('[.dfn]#')
+            ? _dfn.allMatches(text)
+            : const <RegExpMatch>[]) {
       if (inBody(m.start)) continue;
       tokens.add(Dfn(loc(m.start), m.end + offset, m[1]!));
     }

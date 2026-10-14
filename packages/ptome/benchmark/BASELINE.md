@@ -259,3 +259,27 @@ then in the loci repository). The corpora are written by
 
 To hold these documents to byte identity, pass them to
 `tool/differential.dart` as `--extra-file`s (see `tool/README.md`).
+
+## Performance leftovers (2026-10-14)
+
+In process (`benchmark/throughput.dart --file DOC --backend html5`,
+compiled with `dart compile exe`), median of 15 (KJV: 3) after warmups,
+nothing else running, base and change interleaved. The units documents are
+the units corpus's; Hypermedia Systems is the book in
+`~/Work/ports/hypermedia-systems-ptome`. (The units engine now reads the
+dialect natively, so these KJV and Ethics times aren't comparable with the
+table above.)
+
+Where the time went first (`tool/profile.dart --callers _ExecuteMatch`):
+the units dialect's `InlineScanner.scan`, six regexes over every line, held
+27.5% of Ethics (grc)'s samples and 18.6% of the KJV's; the substitution
+patterns built on the word and alphanumeric classes held little.
+
+| Change | KJV | Ethics (grc) | Hypermedia Systems |
+| --- | --: | --: | --: |
+| Base (`15b1b96e`) | 4,392 ms | 87.2 ms | 110.5 ms |
+| Units scanner: literal before regex (TASK-frytn1) | 3,678 ms | 58.0 ms | 109.5 ms |
+| Word classes made ASCII (wrong; the most any faster class check gains, TASK-skgmr6) | 0.36% of the run | 0% | 1.6 ms (1.3%) |
+
+The word-class scanners of TASK-skgmr6 were not written: under 3% on all
+three.
