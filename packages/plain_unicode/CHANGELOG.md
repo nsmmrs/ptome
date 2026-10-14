@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Emoji (FEAT-rr13pg): `isEmoji`, `isEmojiPresentation`,
+  `isEmojiModifier`, `isEmojiModifierBase` and `isExtendedPictographic`
+  (emoji-data.txt, Unicode 18.0.0), and `emojiSequenceLength`: where an
+  emoji presentation sequence (UTS #51 ED-17) starts and ends, checked
+  against every sequence of emoji-test.txt.
+
 - Collation (FEAT-5ttjh1): `Collator(language)` orders text by the
   Unicode Collation Algorithm (UTS #10, Unicode 17) with CLDR 48.2's root
   order and each locale's tailoring (113, `-u-co-` types such as

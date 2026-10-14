@@ -120,16 +120,20 @@ double emphasisExtent(TextStyle style)
 double leftProtrusion(String char)
 double rightProtrusion(String char)
 enum BlendMode
+  static BlendMode color
   static BlendMode colorBurn
   static BlendMode colorDodge
   static BlendMode darken
   static BlendMode difference
   static BlendMode exclusion
   static BlendMode hardLight
+  static BlendMode hue
   static BlendMode lighten
+  static BlendMode luminosity
   static BlendMode multiply
   static BlendMode normal
   static BlendMode overlay
+  static BlendMode saturation
   static BlendMode screen
   static BlendMode softLight
   static List<BlendMode> values

@@ -38,3 +38,5 @@ notonastaliqurdu-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoNa
 notosanscjk-jp-subset.otf | /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc#0 | japanese.txt chinese.txt | ltr
 notosansbuginese-subset.ttf | NotoSansBuginese-Regular.ttf | buginese.txt | ltr
 gulzar-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/Gulzar-Regular.ttf | urdu-gulzar.txt | rtl
+notocoloremoji-subset.ttf | NotoColorEmoji.ttf | emoji.txt | ltr | shaped
+notocolrv1-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/emoji/Noto-COLRv1.ttf | emoji.txt | ltr | shaped

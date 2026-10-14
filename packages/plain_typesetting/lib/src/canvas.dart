@@ -107,6 +107,18 @@ enum BlendMode {
 
   /// Like difference, lower in contrast.
   exclusion,
+
+  /// The source's hue.
+  hue,
+
+  /// The source's saturation.
+  saturation,
+
+  /// The source's hue and saturation.
+  color,
+
+  /// The source's luminosity.
+  luminosity,
 }
 
 /// How text is set: the font and size, and the text state parameters.

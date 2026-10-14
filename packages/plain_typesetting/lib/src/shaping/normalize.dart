@@ -123,12 +123,15 @@ bool _isVariationSelector(int code) =>
     (code >= 0xfe00 && code <= 0xfe0f) || (code >= 0xe0100 && code <= 0xe01ef);
 
 /// [glyphs] normalized for [hooks]'s shaper, each glyph its character's
-/// nominal glyph ([glyphFor]; 0: none) and properties.
+/// nominal glyph ([glyphFor]; 0: none) and properties; a character and a
+/// variation selector after it, the font's glyph for the pair where it
+/// has one ([variationGlyph]).
 List<LayoutGlyph> normalize(
   List<LayoutGlyph> glyphs,
   NormalizationHooks hooks,
-  int Function(int codePoint) glyphFor,
-) {
+  int Function(int codePoint) glyphFor, {
+  int? Function(int codePoint, int selector)? variationGlyph,
+}) {
   if (glyphs.isEmpty) return glyphs;
   var mode = hooks.normalization;
   if (mode == NormalizationMode.auto) {
@@ -242,10 +245,34 @@ List<LayoutGlyph> normalize(
     final hasVariationSelector = [for (var i = idx; i < end; i++) glyphs[i]]
         .any((g) => _isVariationSelector(g.char));
     if (hasVariationSelector) {
-      // (Given up on: each character passed on as it is.)
-      for (; idx < end; idx++) {
+      // (Not normalized: a character and the selector after it as the
+      // font's glyph for the pair, else each as it is, as HarfBuzz's
+      // `handle_variation_selector_cluster` has it.)
+      void pass(LayoutGlyph g) => out.add(g..glyph = glyphFor(g.char));
+      while (idx < end - 1) {
         final g = glyphs[idx];
-        out.add(g..glyph = glyphFor(g.char));
+        final selector = glyphs[idx + 1];
+        if (!_isVariationSelector(selector.char)) {
+          pass(g);
+          idx++;
+          continue;
+        }
+        if (variationGlyph?.call(g.char, selector.char) case final glyph?) {
+          if (selector.cluster < g.cluster) g.cluster = selector.cluster;
+          out.add(g..glyph = glyph);
+        } else {
+          pass(g);
+          pass(selector);
+        }
+        idx += 2;
+        while (idx < end && _isVariationSelector(glyphs[idx].char)) {
+          pass(glyphs[idx]);
+          idx++;
+        }
+      }
+      if (idx < end) {
+        pass(glyphs[idx]);
+        idx++;
       }
     } else {
       for (; idx < end; idx++) {

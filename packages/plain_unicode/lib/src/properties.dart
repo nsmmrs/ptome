@@ -77,6 +77,26 @@ VerticalOrientation verticalOrientation(int codePoint) =>
 /// nothing where a font has no glyph for it).
 bool isDefaultIgnorable(int codePoint) => _table[codePoint] >> 25 & 1 == 1;
 
+/// Whether [codePoint] is an emoji character (Emoji, UTS #51): one with
+/// an emoji presentation, by default or after U+FE0F.
+bool isEmoji(int codePoint) => _table[codePoint] >> 26 & 1 == 1;
+
+/// Whether [codePoint] is shown as an emoji by default
+/// (Emoji_Presentation): 😀, not ❤ (which needs U+FE0F).
+bool isEmojiPresentation(int codePoint) => _table[codePoint] >> 27 & 1 == 1;
+
+/// Whether [codePoint] is an emoji modifier (Emoji_Modifier): the five
+/// skin tones.
+bool isEmojiModifier(int codePoint) => _table[codePoint] >> 28 & 1 == 1;
+
+/// Whether an emoji modifier after [codePoint] changes it
+/// (Emoji_Modifier_Base): 👍, not 😀.
+bool isEmojiModifierBase(int codePoint) => _table[codePoint] >> 29 & 1 == 1;
+
+/// Whether [codePoint] is Extended_Pictographic: an emoji or a symbol of
+/// its kind, assigned or reserved for one.
+bool isExtendedPictographic(int codePoint) => _table[codePoint] >> 30 & 1 == 1;
+
 /// Whether [codePoint] is a mark (General_Category Mn, Mc or Me).
 bool isMark(int codePoint) => switch (generalCategory(codePoint)) {
   GeneralCategory.nonspacingMark ||

@@ -7,8 +7,10 @@
 ///   Script (Scripts.txt), Indic_Syllabic_Category and
 ///   Indic_Positional_Category (IndicSyllabicCategory.txt,
 ///   IndicPositionalCategory.txt), Vertical_Orientation
-///   (VerticalOrientation.txt, its `@missing` defaults first) and
-///   Default_Ignorable_Code_Point (DerivedCoreProperties.txt), packed into
+///   (VerticalOrientation.txt, its `@missing` defaults first),
+///   Default_Ignorable_Code_Point (DerivedCoreProperties.txt) and the
+///   emoji properties (Emoji, Emoji_Presentation, Emoji_Modifier,
+///   Emoji_Modifier_Base, Extended_Pictographic: emoji-data.txt), packed into
 ///   one value, as a three-stage table over a palette of the distinct
 ///   values (as `generate_bidi.dart` lays it out);
 /// - the canonical decompositions (UnicodeData.txt's decomposition
@@ -32,6 +34,16 @@ const int _syllabicShift = 13;
 const int _positionalShift = 19;
 const int _verticalShift = 23;
 const int _ignorableShift = 25;
+const int _emojiShift = 26;
+
+/// The emoji properties, from [_emojiShift] up.
+const List<String> _emojiProperties = [
+  'Emoji',
+  'Emoji_Presentation',
+  'Emoji_Modifier',
+  'Emoji_Modifier_Base',
+  'Extended_Pictographic',
+];
 
 void main() {
   final root = File(Platform.script.toFilePath()).parent.parent.path;
@@ -129,6 +141,13 @@ void main() {
     if (fields.first != 'Default_Ignorable_Code_Point') return;
     for (var c = start; c <= end; c++) {
       values[c] |= 1 << _ignorableShift;
+    }
+  });
+  each('emoji-data.txt', (start, end, fields) {
+    final bit = _emojiProperties.indexOf(fields.first);
+    if (bit < 0) return;
+    for (var c = start; c <= end; c++) {
+      values[c] |= 1 << (_emojiShift + bit);
     }
   });
   if (scripts.length > 256 ||

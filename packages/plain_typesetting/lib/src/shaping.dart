@@ -13,14 +13,21 @@ import 'package:plain_typesetting/src/shaping/shape.dart';
 import 'package:plain_unicode/plain_unicode.dart';
 
 /// Whether [text] needs the font's layout tables in full: it has a mark,
-/// a default ignorable (a joiner), or a character of a script other than
-/// Latin, Greek and Cyrillic (whose text the simple path sets, as
+/// a default ignorable (a joiner), an emoji, or a character of a script
+/// other than Latin, Greek and Cyrillic (whose text the simple path sets, as
 /// asciidoctor-pdf's Prawn does; the others take the features HarfBuzz
 /// applies, contextual ones included).
 bool needsComplexShaping(String text) {
   for (final rune in text.runes) {
     if (rune < 0x0300) continue;
     if (isMark(rune) || isDefaultIgnorable(rune)) return true;
+    // (Emoji: their sequences, flags and skin tones are the font's
+    // substitutions.)
+    if (isExtendedPictographic(rune) ||
+        isEmojiModifier(rune) ||
+        (rune >= 0x1f1e6 && rune <= 0x1f1ff)) {
+      return true;
+    }
     switch (scriptOf(rune)) {
       case 'Zyyy' || 'Zinh' || 'Zzzz' || 'Latn' || 'Grek' || 'Cyrl':
         continue;

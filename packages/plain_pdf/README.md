@@ -27,7 +27,9 @@ layout's `render` makes PDF pages.
 Fonts: the 14 standard fonts with their metrics and kerning, and OpenType
 fonts (TrueType and CFF outlines, or the WOFF and WOFF2 web fonts that wrap
 them) embedded as subsets, with kerning, `liga` ligatures and a ToUnicode
-map so text stays extractable. Reading and subsetting fonts is the
+map so text stays extractable; color glyphs (emoji: `COLR`/`CPAL`, `CBDT`,
+`sbix`) drawn as their font paints them, through Type 3 fonts that read
+as their text. Reading and subsetting fonts is the
 [plain_fonts](https://github.com/nsmmrs/ptome/tree/master/packages/plain_fonts) package's work, and compression
 the [plain_compression](https://github.com/nsmmrs/ptome/tree/master/packages/plain_compression) package's. Images: any
 file the [plain_images](https://github.com/nsmmrs/ptome/tree/master/packages/plain_images) package reads (JPEG and

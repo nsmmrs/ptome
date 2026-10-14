@@ -45,6 +45,10 @@ extension _DocumentParts on PdfConverter {
     final (_, pageHeight) = _pageSize(document);
     // The inline images (and why some can't be) are kept: titles are
     // converted while the document is parsed, before this.
+    final colorEmoji = switch (_theme.value('base_color_emoji')) {
+      ThemeBool(value: false) => false,
+      _ => true,
+    };
     _text = TextContext(
       fonts: _fonts,
       rootSize: _rootFontSize,
@@ -54,6 +58,12 @@ extension _DocumentParts on PdfConverter {
       languageFallback: asciidoctorCompat(document, CompatFormat.pdf)
           ? null
           : _fonts.cjkFamily,
+      // (Emoji no font of the theme has in color: the installed Noto
+      // Color Emoji, unless `base_color_emoji: false`; modern engine.)
+      emojiFallback:
+          asciidoctorCompat(document, CompatFormat.pdf) || !colorEmoji
+          ? null
+          : _fonts.emojiFamily,
       images: (src, format) =>
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,

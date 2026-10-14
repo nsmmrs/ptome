@@ -2,6 +2,17 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Color glyphs (FEAT-rr13pg): `OpenTypeFont.colorGlyphs` reads `COLR`
+  (version 0 layers, version 1 paints: solids, linear, radial and sweep
+  gradients and their extend modes, transforms, composites, clip boxes),
+  `CPAL` palettes, and `CBDT`/`CBLC` and `sbix` bitmaps (PNG; `dupe`
+  glyphs); `ColorGlyphs.paint` walks a glyph's paint for a
+  `ColorPainter` as HarfBuzz 14.6.0's `hb_font_paint_glyph` does (the
+  same operations, numbers and order for every glyph of the test fonts).
+  `variationGlyph` reads `cmap` format 14 variation sequences, and a font
+  of bitmaps alone centers its glyphs vertically by their bitmaps, as
+  HarfBuzz does.
+
 - `selectLanguage`, `hasLanguageSystem`, and `featureLookups` /
   `requiredFeature` with a `language`: the language system HarfBuzz's
   `select_language2` chooses (a requested one, else `dflt`, else the

@@ -6,6 +6,7 @@ library;
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:plain_fonts/src/color.dart';
 import 'package:plain_fonts/src/woff.dart';
 
 /// A font file that could not be read.
@@ -411,11 +412,16 @@ final class OpenTypeFont {
   /// top of its em box goes in vertical text), in font units, as HarfBuzz
   /// finds it: from `VORG`; else, with `vmtx` and TrueType outlines, the
   /// top phantom point (the outline's top and the top side bearing); else
-  /// the glyph centered in the font's height by its outline, or the
-  /// ascender.
+  /// the glyph centered in the font's height by its outline (or its
+  /// bitmap, in a font of bitmaps alone), or the ascender.
   int verticalOriginY(int glyph) {
     if (_verticalOrigins case (final fallback, final origins)) {
       return origins[glyph] ?? fallback;
+    }
+    if (!isTrueType) {
+      if (colorGlyphs?.bitmapExtents(glyph) case final bitmap?) {
+        return bitmap.top + ((ascender - descender - bitmap.height) >> 1);
+      }
     }
     final (_, _, _, yMax) = glyphBounds(glyph);
     if (_verticalMetrics case (_, final bearings)
@@ -428,6 +434,9 @@ final class OpenTypeFont {
     }
     return ascender;
   }
+
+  /// The font's color glyphs (`COLR`, `CBDT`, `sbix`), if it has any.
+  late final ColorGlyphs? colorGlyphs = ColorGlyphs.of(this);
 
   /// The advance width of glyph [glyph], in font units.
   int advance(int glyph) =>
@@ -443,6 +452,73 @@ final class OpenTypeFont {
 
   /// The glyph for [codePoint], or 0 (`.notdef`).
   int glyphFor(int codePoint) => _glyphs[codePoint];
+
+  /// The glyph for [codePoint] followed by the variation selector
+  /// [selector] (a `cmap` format 14 subtable's variation sequences): the
+  /// sequence's own glyph, the character's usual glyph where the sequence
+  /// is a default one, null where the font has no glyph for the sequence
+  /// (HarfBuzz's `get_variation_glyph`).
+  int? variationGlyph(int codePoint, int selector) {
+    final (defaults, glyphs) = _variations[selector] ?? (null, null);
+    if (glyphs?[codePoint] case final glyph?) return glyph;
+    if (defaults != null) {
+      for (final (start, count) in defaults) {
+        if (codePoint >= start && codePoint <= start + count) {
+          final glyph = glyphFor(codePoint);
+          return glyph == 0 ? null : glyph;
+        }
+      }
+    }
+    return null;
+  }
+
+  /// The variation sequences of the `cmap` format 14 subtable, by
+  /// selector: its default ranges (start, additional count) and its own
+  /// glyphs by character.
+  late final Map<int, (List<(int, int)>?, Map<int, int>?)> _variations = _guard(
+    () {
+      final out = <int, (List<(int, int)>?, Map<int, int>?)>{};
+      final t = _tables[_Tag.cmap];
+      if (t == null) return out;
+      final at = t.offset;
+      int u24(int i) => _data.u8(i) << 16 | _data.u16(i + 1);
+      for (var i = 0; i < _data.u16(at + 2); i++) {
+        final record = at + 4 + 8 * i;
+        final sub = at + _data.u32(record + 4);
+        if (_data.u16(record) != 0 ||
+            _data.u16(record + 2) != 5 ||
+            _data.u16(sub) != 14) {
+          continue;
+        }
+        for (var r = 0; r < _data.u32(sub + 6); r++) {
+          final entry = sub + 10 + 11 * r;
+          final defaultsAt = _data.u32(entry + 3);
+          final glyphsAt = _data.u32(entry + 7);
+          out[u24(entry)] = (
+            defaultsAt == 0
+                ? null
+                : [
+                    for (var k = 0; k < _data.u32(sub + defaultsAt); k++)
+                      (
+                        u24(sub + defaultsAt + 4 + 4 * k),
+                        _data.u8(sub + defaultsAt + 7 + 4 * k),
+                      ),
+                  ],
+            glyphsAt == 0
+                ? null
+                : {
+                    for (var k = 0; k < _data.u32(sub + glyphsAt); k++)
+                      u24(sub + glyphsAt + 4 + 5 * k): _data.u16(
+                        sub + glyphsAt + 7 + 5 * k,
+                      ),
+                  },
+          );
+        }
+        break;
+      }
+      return out;
+    },
+  );
 
   /// The [characterMap] in pages of glyph ids, built without the map.
   late final _GlyphPages _glyphs = _guard(() {

@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Emoji (FEAT-rr13pg): emoji sequences (ZWJ sequences, skin tones,
+  flags, keycaps, U+FE0F) shaped by the font's layout tables in full, a
+  character and its variation selector as the font's glyph for the pair
+  (`cmap` format 14), as HarfBuzz shapes them (Noto Color Emoji's CBDT and
+  COLRv1 builds, both directions); a paragraph's fallback fonts set an
+  emoji sequence in the first with color glyphs. `BlendMode` gains the
+  non-separable modes. The color test fonts and
+  `tool/make_color_test_fonts.py`; `subset_test_fonts.dart` takes font
+  names and a `shaped` option.
+
 - Script-specific justification (FEAT-z8hxn0): `Paragraph.
   justificationAlternates` (default on) takes the fonts' `jalt` forms at
   words chosen from the line's end, none side by side, each where it

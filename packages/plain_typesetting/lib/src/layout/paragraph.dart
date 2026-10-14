@@ -24,8 +24,10 @@ import 'package:plain_unicode/plain_unicode.dart'
         GeneralCategory,
         LineBreakClass,
         TextDirection,
+        emojiSequenceLength,
         generalCategory,
         hasRightToLeft,
+        isDefaultIgnorable,
         isMark,
         lineBreakClass,
         lineBreakOffsets,
@@ -1743,11 +1745,21 @@ void _measureWithinWords(List<LineItem> items) {
 /// [run] split where its font lacks characters a fallback font has, a
 /// grapheme cluster at a time: a base and its combining marks, an emoji
 /// sequence, set in one font (the first that has all of it, else the one
-/// that has its first character).
+/// that has its first character); an emoji sequence shown as an emoji
+/// (UTS #51), in the first of the fonts with color glyphs that has it.
 List<TextRun> _withFallbacks(TextRun run) {
   final primary = run.style.font;
   Font fontFor(String cluster) {
     final runes = cluster.runes.toList();
+    if (emojiSequenceLength(runes, 0) == runes.length) {
+      for (final font in [primary, ...run.fallbackFonts]) {
+        if (font case OpenTypeTextFont(font: final program)
+            when program.colorGlyphs != null &&
+                runes.every((r) => isDefaultIgnorable(r) || font.covers(r))) {
+          return font;
+        }
+      }
+    }
     if (runes.every((rune) => primary.covers(rune) || rune <= 0x20)) {
       return primary;
     }

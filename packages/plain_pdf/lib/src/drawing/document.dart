@@ -550,6 +550,8 @@ final class _Saver {
   final Map<PdfPage, PdfRef> _pageRefs = {};
   final Map<PdfForm, PdfRef> _formRefs = {};
   final List<PdfForm> _formQueue = [];
+  final Map<ColorFont, PdfRef> _colorFontRefs = {};
+  final List<ColorFont> _colorFontQueue = [];
   final Set<PdfFont> _fonts = {};
   final Set<PdfImage> _images = {};
 
@@ -580,10 +582,14 @@ final class _Saver {
     for (final page in document._pages) {
       _writePage(page, pages);
     }
-    // Forms can use forms: write until none is left.
-    while (_formQueue.isNotEmpty) {
-      final form = _formQueue.removeAt(0);
-      _writeForm(form);
+    // Forms can use forms, and color fonts forms: write until none is
+    // left.
+    while (_formQueue.isNotEmpty || _colorFontQueue.isNotEmpty) {
+      if (_formQueue.isNotEmpty) {
+        _writeForm(_formQueue.removeAt(0));
+      } else {
+        _writeColorFont(_colorFontQueue.removeAt(0));
+      }
     }
     _copier.flush();
     for (final font in _fonts) {
@@ -888,6 +894,11 @@ final class _Saver {
           ),
           _ => font.reference(writer),
         };
+      case ColorFontResource(:final font):
+        return _colorFontRefs[font] ??= () {
+          _colorFontQueue.add(font);
+          return writer.reserve();
+        }();
       case ImageResource(:final image):
         // One XObject for each image file, however many images of it the
         // pages draw.
@@ -932,6 +943,7 @@ final class _Saver {
         :final strokeOpacity,
         :final blendMode,
         :final softMask,
+        :final invertSoftMask,
         :final clearSoftMask,
       ):
         return PdfDict({
@@ -944,10 +956,81 @@ final class _Saver {
               'Type': const PdfName('Mask'),
               'S': PdfName(kind.pdfName),
               'G': _formRef(form),
+              if (invertSoftMask)
+                'TR': PdfDict({
+                  'FunctionType': const PdfInt(2),
+                  'Domain': PdfArray.numbers([0, 1]),
+                  'C0': PdfArray.numbers([1]),
+                  'C1': PdfArray.numbers([0]),
+                  'N': const PdfInt(1),
+                }),
             }),
           if (clearSoftMask) 'SMask': const PdfName('None'),
         });
     }
+  }
+
+  /// Writes [font]: a Type 3 font whose glyph procedures paint its
+  /// forms (in its font's units), in a glyph space of 1000 units to the
+  /// em, as simple fonts have it. After its codes, an empty glyph named
+  /// `m`, 600 units wide: Poppler's text extraction takes a Type 3 font's
+  /// scale from its `m`'s width (else from any glyph's, against half an
+  /// em), and wide emoji would make their words look taller than the
+  /// text around them, set apart on lines of their own.
+  void _writeColorFont(ColorFont font) {
+    final scale = 1000 / font.unitsPerEm;
+    String n(double v) => formatNumber(v, precision: 7);
+    final count = font.forms.length;
+    writer.write(
+      PdfDict({
+        'Type': const PdfName('Font'),
+        'Subtype': const PdfName('Type3'),
+        'FontBBox': PdfArray.numbers([for (final v in font.bbox) v * scale]),
+        'FontMatrix': PdfArray.numbers([0.001, 0, 0, 0.001, 0, 0]),
+        'CharProcs': PdfDict({
+          'm': writer.write(PdfStream(utf8.encode('600 0 d0\n'))),
+          for (var code = 0; code < count; code++)
+            'g$code': writer.write(
+              PdfStream(
+                utf8.encode(
+                  '${n(font.widths[code] * scale)} 0 d0\n'
+                  'q ${n(scale)} 0 0 ${n(scale)} 0 0 cm /X$code Do Q\n',
+                ),
+              ),
+            ),
+        }),
+        'Encoding': PdfDict({
+          'Type': const PdfName('Encoding'),
+          'Differences': PdfArray([
+            const PdfInt(0),
+            for (var code = 0; code < count; code++) PdfName('g$code'),
+            const PdfName('m'),
+          ]),
+        }),
+        'FirstChar': const PdfInt(0),
+        'LastChar': PdfInt(count),
+        'Widths': PdfArray.numbers([
+          for (final w in font.widths) w * scale,
+          600,
+        ]),
+        'Resources': PdfDict({
+          'XObject': PdfDict({
+            for (var code = 0; code < count; code++)
+              'X$code': _formRef(font.forms[code]),
+          }),
+        }),
+        'ToUnicode': writer.write(
+          PdfStream(
+            utf8.encode(
+              byteToUnicodeCMap({
+                for (var code = 0; code < count; code++) code: font.texts[code],
+              }),
+            ),
+          ),
+        ),
+      }),
+      _colorFontRefs[font],
+    );
   }
 
   PdfRef _formRef(PdfForm form) => _formRefs[form] ??= () {

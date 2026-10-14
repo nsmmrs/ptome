@@ -415,6 +415,20 @@ missing characters says to install Noto CJK. Not under
 `asciidoctor-compat`, where only the theme's fonts are tried, as
 asciidoctor-pdf tries them.
 
+Emoji are drawn in color, as the font paints them: its `COLR` layers
+and gradients (versions 0 and 1, in its `CPAL` colors) or its bitmaps
+(`CBDT`, `sbix`), as HarfBuzz paints them. An emoji sequence (a flag 🇯🇵,
+a family 👨‍👩‍👧, a skin tone 👍🏽, a keycap 1️⃣, a character with U+FE0F ❤️)
+stays whole and is set in a font with color glyphs that has it: the
+text's own, else the first of the `font_fallbacks` that is one, else the
+installed Noto Color Emoji (SIL Open Font License), and a symbol no other
+font has is looked for there too (a text-style ❤). `base_color_emoji:
+false` leaves Noto Color Emoji out (the built-in themes' monochrome Noto
+Emoji fallback then has the emoji). The PDF's text reads as the
+sequences written: copied, searched or extracted, 👨‍👩‍👧 is one family.
+Not under `asciidoctor-compat`, where variation selectors are left out
+and only the theme's fonts are tried.
+
 A font that isn't installed is replaced by a built-in PDF font (Courier
 for a monospace family, Times for a serif one, else Helvetica), with one
 warning; an icon set whose font is missing shows its icons as text, and
@@ -429,6 +443,7 @@ to only check).
 
 | Key | Default | What it does |
 | --- | --- | --- |
+| `base_color_emoji` | `true` | `false`: emoji the theme's fonts lack aren't set in the installed Noto Color Emoji. |
 | `base_font_ligatures` | `normal` | `none` sets text without the font's standard ligatures (fi, fl...). Fixed-pitch fonts are never ligated. |
 | `base_emphasis_inversion` | `true` | Emphasis inside italic text is upright (and emphasis inside that, italic again). `false` sets all emphasis in italic. |
 | `base_font_variant_numeric` | none | `oldstyle-nums` sets numbers in old-style figures (`onum`), when the font has them; also `lining-nums`, `tabular-nums`, `proportional-nums`. |

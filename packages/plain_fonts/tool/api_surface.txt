@@ -20,6 +20,18 @@ abstract final class UnicodeFlags
   static int ignorable
   static int zwj
   static int zwnj
+abstract interface class ColorPainter
+  ColorPainter()
+  void clipBox(({int xMax, int xMin, int yMax, int yMin}) box, void Function() paint)
+  void clipGlyph(int glyph, void Function() paint)
+  void composite(CompositeMode mode, void Function() backdrop, void Function() source)
+  void fillGlyph(int glyph, PaintColor color)
+  void image(BitmapGlyph bitmap)
+  void linearGradient(ColorLine line, double x0, double y0, double x1, double y1, double x2, double y2)
+  void radialGradient(ColorLine line, double x0, double y0, double r0, double x1, double y1, double r1)
+  void solid(PaintColor color)
+  void sweepGradient(ColorLine line, double x, double y, double startAngle, double endAngle)
+  void transform(({double dx, double dy, double xx, double xy, double yx, double yy}) transform, void Function() paint)
 abstract interface class FontFiles
   ({DateTime modified, int size}) stat(String path)
   FontFiles()
@@ -32,6 +44,41 @@ abstract interface class FontFiles
   static FontFiles platform
   void write(String path, String contents)
 bool isWebFont(List<int> bytes)
+enum ColorExtend
+  static ColorExtend pad
+  static ColorExtend reflect
+  static ColorExtend repeat
+  static List<ColorExtend> values
+enum CompositeMode
+  static CompositeMode clear
+  static CompositeMode color
+  static CompositeMode colorBurn
+  static CompositeMode colorDodge
+  static CompositeMode darken
+  static CompositeMode dest
+  static CompositeMode destAtop
+  static CompositeMode destIn
+  static CompositeMode destOut
+  static CompositeMode destOver
+  static CompositeMode difference
+  static CompositeMode exclusion
+  static CompositeMode hardLight
+  static CompositeMode hue
+  static CompositeMode lighten
+  static CompositeMode luminosity
+  static CompositeMode multiply
+  static CompositeMode overlay
+  static CompositeMode plus
+  static CompositeMode saturation
+  static CompositeMode screen
+  static CompositeMode softLight
+  static CompositeMode src
+  static CompositeMode srcAtop
+  static CompositeMode srcIn
+  static CompositeMode srcOut
+  static CompositeMode srcOver
+  static CompositeMode xor
+  static List<CompositeMode> values
 enum FontPlatform
   static FontPlatform linux
   static FontPlatform macos
@@ -95,6 +142,28 @@ enum MathConstant
   static MathConstant underbarVerticalGap
   static MathConstant upperLimitBaselineRiseMin
   static MathConstant upperLimitGapMin
+final class BitmapGlyph
+  BitmapGlyph(Uint8List png, {required int pixelWidth, required int pixelHeight, required int left, required int top, required int width, required int height})
+  Uint8List png
+  int height
+  int left
+  int pixelHeight
+  int pixelWidth
+  int top
+  int width
+final class ColorGlyphs
+  ({int xMax, int xMin, int yMax, int yMin})? clipBoxOf(int glyph)
+  BitmapGlyph? bitmap(int glyph, {int? ppem})
+  BitmapGlyph? bitmapExtents(int glyph)
+  ColorGlyphs? of(OpenTypeFont font)
+  List<List<PaletteColor>> palettes
+  OpenTypeFont font
+  bool hasGlyph(int glyph)
+  bool paint(int glyph, ColorPainter painter, {int palette = 0, PaletteColor foreground = PaletteColor.black})
+final class ColorLine
+  ColorExtend extend
+  ColorLine(ColorExtend extend, List<(double, PaintColor)> stops)
+  List<(double, PaintColor)> stops
 final class FontFilesException implements Exception
   FontFilesException(String message, String path)
   String message
@@ -176,6 +245,7 @@ final class LayoutLookup
   int mask
 final class OpenTypeFont
   (int, int, int, int) glyphBounds(int glyph)
+  ColorGlyphs? colorGlyphs
   Iterable<String> tableTags
   List<int> bbox (settable)
   List<int> components(int glyph)
@@ -217,6 +287,7 @@ final class OpenTypeFont
   int? typoLineGap (settable)
   int? underlinePosition (settable)
   int? underlineThickness (settable)
+  int? variationGlyph(int codePoint, int selector)
   int? xHeight (settable)
 final class OpenTypeLayout
   (String, List<int>)? requiredFeature(String script, {String? language, bool positioning = false})
@@ -247,6 +318,24 @@ final class OpenTypeMathTable
   Set<int> extendedShapes
   int [](MathConstant constant)
   int minConnectorOverlap
+final class PaintColor
+  PaintColor(PaletteColor color, {bool foreground = false})
+  PaletteColor color
+  bool ==(Object other)
+  bool foreground
+  int hashCode
+final class PaletteColor
+  PaletteColor(int red, int green, int blue, [int alpha = 255])
+  String toString()
+  bool ==(Object other)
+  int alpha
+  int blue
+  int green
+  int hashCode
+  int red
+  static PaletteColor black
+typedef ColorBox = ({int xMax, int xMin, int yMax, int yMin})
+typedef ColorTransform = ({double dx, double dy, double xx, double xy, double yx, double yy})
 typedef FontFolderEntry = ({bool isDirectory, bool isFile, String name, String path})
 typedef GlyphPart = ({int endConnector, bool extender, int fullAdvance, int glyph, int startConnector})
 typedef MathVariant = ({int advance, int glyph})

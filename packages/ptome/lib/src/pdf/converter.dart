@@ -19,6 +19,7 @@ import 'package:plain_math/plain_math.dart';
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
+import 'package:plain_unicode/plain_unicode.dart' show isEmoji;
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/attribute_list.dart';
@@ -2015,6 +2016,12 @@ final class PdfConverter extends BuiltInConverter
     }
     return [for (final range in ranges) range.join('-')];
   }
+
+  /// A variation selector, with the character before it.
+  static final RegExp _variationSelectorRx = RegExp(
+    '(.)?([\ufe00-\ufe0f])',
+    unicode: true,
+  );
 
   static final RegExp _spaceBeforeFootnoteRx = RegExp(
     '[ \t]+(?=<sup class="wj"><a (?:id="_footnoteref_|anchor="_footnotedef_))',

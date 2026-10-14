@@ -4,26 +4,34 @@
 /// dotted circle), its layout tables and every glyph they reach kept
 /// (fontTools' pyftsubset, run through uv).
 ///
-///     dart run tool/subset_test_fonts.dart [FONT_DIR]
+///     dart run tool/subset_test_fonts.dart [FONT_DIR [FONT...]]
 ///
 /// FONT_DIR is where the Noto fonts are (`/usr/share/fonts/noto` by
-/// default); a font fonts.txt names by an absolute path is read from
+/// default); with FONTs (test font names), only those are made; a font
+/// fonts.txt names by an absolute path is read from
 /// there (fonts not installed, kept in a cache: Noto Serif Tibetan from
 /// google/fonts' `ofl/notoseriftibetan`), and `#n` names a collection's
-/// face.
+/// face. The option `shaped` keeps only the glyphs HarfBuzz's shaping of
+/// the lines gives (and the characters' own), not every glyph the layout
+/// tables reach: an emoji font's sequences reach thousands (it needs the
+/// native oracle, tool/oracles/harfbuzz-native).
 library;
 
 import 'dart:io';
 
 void main(List<String> args) {
   final source = args.isNotEmpty ? args.first : '/usr/share/fonts/noto';
+  final only = args.skip(1).toSet();
   final fixtures = Directory('test/fixtures/scripts');
   for (final line in File('${fixtures.path}/fonts.txt').readAsLinesSync()) {
     if (line.startsWith('#') || line.trim().isEmpty) continue;
     final fields = [for (final f in line.split('|')) f.trim()];
     final [font, from, lines, _] = fields.sublist(0, 4);
-    // (An optional fifth field renames script tags: `dev2=deva`.)
-    final retag = fields.length > 4 ? fields[4] : null;
+    if (only.isNotEmpty && !only.contains(font)) continue;
+    // (Options after the fourth field: script tags renamed, `dev2=deva`;
+    // `shaped`.)
+    final options = fields.skip(4).toList();
+    final retag = options.where((o) => o.contains('=')).firstOrNull;
     final text = StringBuffer(' ◌');
     for (final name in lines.split(' ')) {
       text.write(File('${fixtures.path}/$name').readAsStringSync());
@@ -33,15 +41,23 @@ void main(List<String> args) {
     // (A path of its own, or a name in the font folder; `#n`: a
     // collection's face n.)
     final [file, ...face] = from.split('#');
+    final path = file.startsWith('/') ? file : '$source/$file';
+    final shaped = options.contains('shaped')
+        ? _shapedGlyphs(path, text.toString())
+        : null;
     final result = Process.runSync('uv', [
       'run',
       '-q',
       '--with',
       'fonttools',
       'pyftsubset',
-      if (file.startsWith('/')) file else '$source/$file',
+      path,
       if (face.isNotEmpty) '--font-number=${face.first}',
       '--text-file=${textFile.path}',
+      if (shaped != null) ...[
+        '--gids=${shaped.join(',')}',
+        '--no-layout-closure',
+      ],
       '--layout-features=*',
       '--layout-scripts=*',
       '--name-IDs=*',
@@ -91,4 +107,27 @@ f.save(sys.argv[1])
       'test/fonts/$font: ${File('test/fonts/$font').lengthSync()} bytes',
     );
   }
+}
+
+/// The glyphs HarfBuzz gives for the lines of [text] in the font at
+/// [path].
+List<int> _shapedGlyphs(String path, String text) {
+  final lines = [
+    for (final line in text.split('\n'))
+      if (line.trim().isNotEmpty) line,
+  ].join('\n');
+  final process = Process.runSync('sh', [
+    '-c',
+    r'printf "%s\n" "$1" | "$0" "$2"',
+    'tool/oracles/harfbuzz-native/hb-oracle',
+    lines,
+    path,
+  ]);
+  if (process.exitCode != 0) {
+    throw StateError('hb-oracle $path: ${process.stderr}');
+  }
+  return {
+    for (final m in RegExp(r'\[(\d+),').allMatches('${process.stdout}'))
+      int.parse(m[1]!),
+  }.toList()..sort();
 }

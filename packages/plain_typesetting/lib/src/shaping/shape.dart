@@ -284,7 +284,12 @@ List<ShapedUnits> shapeText(
       if (form != g.char && font.glyphFor(form) != 0) g.char = form;
     }
   }
-  final normalized = normalize(context.glyphs, shaper, font.glyphFor);
+  final normalized = normalize(
+    context.glyphs,
+    shaper,
+    font.glyphFor,
+    variationGlyph: font.variationGlyph,
+  );
   context.glyphs
     ..clear()
     ..addAll(normalized);

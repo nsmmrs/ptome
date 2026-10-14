@@ -13,6 +13,9 @@
 /// - Collation (UTS #10, CLDR 48.2): `Collator`, strings ordered as a
 ///   language orders them, and an index's headings.
 /// - Quotation marks by language (CLDR 48.2): `quotationMarks`.
+/// - Emoji (UTS #51, Unicode 18.0.0): the emoji properties and where an
+///   emoji presentation sequence (a flag, a ZWJ sequence...) starts and
+///   ends: `emojiSequenceLength`.
 library;
 
 export 'src/bidi.dart'
@@ -31,6 +34,7 @@ export 'src/bidi_data.g.dart' show bidiUnicodeVersion;
 export 'src/case.dart' show isCaseIgnorable, isCased, lowerCase, upperCase;
 export 'src/case_data.g.dart' show caseMappingUnicodeVersion;
 export 'src/collation.dart' show CollationKey, Collator;
+export 'src/emoji.dart' show emojiSequenceLength;
 export 'src/line_break.dart'
     show
         LineBreak,
@@ -52,6 +56,11 @@ export 'src/properties.dart'
         indicPositionalCategory,
         indicSyllabicCategory,
         isDefaultIgnorable,
+        isEmoji,
+        isEmojiModifier,
+        isEmojiModifierBase,
+        isEmojiPresentation,
+        isExtendedPictographic,
         isMark,
         propertiesUnicodeVersion,
         scriptOf,

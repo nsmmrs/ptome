@@ -8,6 +8,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
+import 'package:meta/meta.dart';
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_pdf/src/fonts/encoding.dart';
 import 'package:plain_pdf/src/fonts/standard_metrics.dart';
@@ -875,3 +876,12 @@ final class _ByteSubset {
     }();
   }
 }
+
+/// A ToUnicode CMap for one-byte codes, reading each code as its text in
+/// [texts] (codes without text left out).
+@internal
+String byteToUnicodeCMap(Map<int, String> texts) =>
+    EmbeddedFont._byteToUnicodeCMap({
+      for (final MapEntry(key: code, value: text) in texts.entries)
+        if (text.isNotEmpty) code: text,
+    });

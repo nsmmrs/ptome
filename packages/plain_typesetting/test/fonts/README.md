@@ -63,3 +63,14 @@ whose README says how each was made):
   alternates, `jalt`), from google/fonts' `ofl/gulzar`, subset the same
   way to `urdu-gulzar.txt`'s text, written for the tests (SIL Open Font
   License 1.1; © 2021 The Gulzar Project Authors).
+- `notocoloremoji-subset.ttf`, `notocolrv1-subset.ttf`: Noto Color Emoji
+  (its CBDT build, installed, and its COLRv1 build, `Noto-COLRv1.ttf` from
+  googlefonts/noto-emoji's `fonts/` at v2.051), subset to the glyphs
+  HarfBuzz gives for `emoji.txt`'s lines (`shaped`) (SIL Open Font
+  License 1.1; © 2013 Google LLC).
+- `colr-test.ttf`: written for the tests (`tool/make_color_test_fonts.py`):
+  a square, a circle and a triangle, and color glyphs over them in COLR
+  version 0 and every paint of version 1, two CPAL palettes.
+- `sbix-test.ttf`: `notocoloremoji-subset.ttf` with three of its images
+  as an sbix strike and a `dupe` glyph (`tool/make_color_test_fonts.py`;
+  SIL Open Font License 1.1; © 2013 Google LLC).

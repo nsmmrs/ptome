@@ -21,6 +21,11 @@ bool hasRightToLeft(String text)
 bool isCaseIgnorable(int rune)
 bool isCased(int rune)
 bool isDefaultIgnorable(int codePoint)
+bool isEmoji(int codePoint)
+bool isEmojiModifier(int codePoint)
+bool isEmojiModifierBase(int codePoint)
+bool isEmojiPresentation(int codePoint)
+bool isExtendedPictographic(int codePoint)
 bool isMark(int codePoint)
 enum BidiClass
   static BidiClass al
@@ -248,4 +253,5 @@ final class QuotationMarks
   int hashCode
 int bidiMirror(int codePoint)
 int canonicalCombiningClass(int codePoint)
+int emojiSequenceLength(List<int> runes, int at)
 int? canonicalComposition(int first, int second)

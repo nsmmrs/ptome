@@ -8,6 +8,18 @@
 library;
 
 export 'src/cff.dart' show subsetCff;
+export 'src/color.dart'
+    show
+        BitmapGlyph,
+        ColorBox,
+        ColorExtend,
+        ColorGlyphs,
+        ColorLine,
+        ColorPainter,
+        ColorTransform,
+        CompositeMode,
+        PaintColor,
+        PaletteColor;
 export 'src/font_files.dart'
     show
         FontFiles,

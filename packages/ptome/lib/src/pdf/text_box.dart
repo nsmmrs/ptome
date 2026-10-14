@@ -14,7 +14,13 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:plain_unicode/plain_unicode.dart'
-    show VerticalOrientation, hasRightToLeft, isMark, verticalOrientation;
+    show
+        VerticalOrientation,
+        emojiSequenceLength,
+        hasRightToLeft,
+        isDefaultIgnorable,
+        isMark,
+        verticalOrientation;
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/pdf/fonts.dart';
@@ -303,6 +309,7 @@ final class TextContext {
     this.lastLineMin = 0,
     this.interlineGlue = false,
     this.languageFallback,
+    this.emojiFallback,
     this.combineDigits = 0,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
@@ -330,6 +337,7 @@ final class TextContext {
           lastLineMin: lastLineMin,
           interlineGlue: interlineGlue,
           languageFallback: languageFallback,
+          emojiFallback: emojiFallback,
           combineDigits: combineDigits,
           logger: logger,
         );
@@ -422,6 +430,10 @@ final class TextContext {
   /// family (the installed Noto CJK face of the language's region: modern
   /// engine), or null.
   final String? Function(String? language, String family)? languageFallback;
+
+  /// The family an emoji sequence no font of the text's has in color is
+  /// set in (the installed Noto Color Emoji: modern engine), or null.
+  final String? Function()? emojiFallback;
 
   /// Where warnings go.
   final LoggerBase logger;
@@ -1215,13 +1227,20 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// Last, a character none of them has is looked for in the family of the
   /// text's language ([TextContext.languageFallback]; the fragment's own,
   /// else [language], the text's).
+  ///
+  /// An emoji sequence shown as an emoji (UTS #51: a flag, a keycap, a
+  /// ZWJ sequence, a skin tone, U+FE0F) stays whole in a font with color
+  /// glyphs that has it: the text's font, else the first fallback, else
+  /// [TextContext.emojiFallback]'s family.
   static List<Fragment> _withFallbacks(
     Fragment fragment,
     TextState state,
     TextContext context, {
     String? language,
   }) {
-    if ((context.fallbacks.isEmpty && context.languageFallback == null) ||
+    if ((context.fallbacks.isEmpty &&
+            context.languageFallback == null &&
+            context.emojiFallback == null) ||
         fragment.imagePath != null) {
       return [fragment];
     }
@@ -1253,7 +1272,40 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       text.clear();
     }
 
-    for (final rune in fragment.text.runes) {
+    // The family a color font that has [runes] is of (null: the text's
+    // own); false where none is.
+    (bool, String?) emojiFamily(List<int> runes) {
+      bool has(FontFace face) =>
+          face.hasColorGlyphs &&
+          runes.every(
+            (r) => r < 0x20 || face.hasGlyph(r) || isDefaultIgnorable(r),
+          );
+      if (has(base)) return (true, null);
+      for (final fallback in context.fallbacks) {
+        if (has(_font(fallback, base.style, context))) return (true, fallback);
+      }
+      if (context.emojiFallback?.call() case final family?
+          when has(_font(family, base.style, context))) {
+        return (true, family);
+      }
+      return (false, null);
+    }
+
+    final runes = fragment.text.runes.toList();
+    for (var i = 0; i < runes.length; i++) {
+      final rune = runes[i];
+      // (An emoji sequence, whole in a color font that has it.)
+      if (emojiSequenceLength(runes, i) case final length when length > 0) {
+        final sequence = runes.sublist(i, i + length);
+        if (emojiFamily(sequence) case (true, final family)) {
+          if (!first && family != currentFamily) flush();
+          first = false;
+          currentFamily = family;
+          text.write(String.fromCharCodes(sequence));
+          i += length - 1;
+          continue;
+        }
+      }
       String? family;
       final continues =
           !first &&
@@ -1276,6 +1328,14 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           if (lastResort() case final last?
               when _font(last, base.style, context).hasGlyph(rune)) {
             family = last;
+          }
+        }
+        // (A symbol none of them has, shown in the emoji font where it
+        // has it, rather than as nothing.)
+        if (family == null) {
+          if (context.emojiFallback?.call() case final emoji?
+              when _font(emoji, base.style, context).hasGlyph(rune)) {
+            family = emoji;
           }
         }
         if (family == null &&

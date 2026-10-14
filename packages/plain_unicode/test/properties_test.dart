@@ -129,6 +129,28 @@ void main() {
         ignorable.add(c);
       }
     }
+    // The emoji properties, from emoji-data.txt.
+    final emoji = <String, Set<int>>{};
+    for (final line in File('$_ucd/emoji-data.txt').readAsLinesSync()) {
+      final data = line.split('#').first.trim();
+      if (data.isEmpty) continue;
+      final [range, property] = [for (final f in data.split(';')) f.trim()];
+      final bounds = range.split('..');
+      for (
+        var c = int.parse(bounds.first, radix: 16);
+        c <= int.parse(bounds.last, radix: 16);
+        c++
+      ) {
+        (emoji[property] ??= {}).add(c);
+      }
+    }
+    final emojiChecks = <String, bool Function(int)>{
+      'Emoji': isEmoji,
+      'Emoji_Presentation': isEmojiPresentation,
+      'Emoji_Modifier': isEmojiModifier,
+      'Emoji_Modifier_Base': isEmojiModifierBase,
+      'Extended_Pictographic': isExtendedPictographic,
+    };
     // (Spot checks of the long names: Scripts.txt and the Indic files
     // give them, the enumerations camel-case them.)
     const shortCategories = {
@@ -151,6 +173,11 @@ void main() {
       }
       if (isDefaultIgnorable(c) != ignorable.contains(c)) {
         wrong.add('${c.toRadixString(16)} DI');
+      }
+      for (final MapEntry(key: property, value: has) in emojiChecks.entries) {
+        if (has(c) != (emoji[property]?.contains(c) ?? false)) {
+          wrong.add('${c.toRadixString(16)} $property');
+        }
       }
       if (wrong.length > 20) break;
     }

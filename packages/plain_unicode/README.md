@@ -21,6 +21,10 @@ JavaScript (whose own tables differ in age and in rules):
 - **Quotation marks** (CLDR 48.2): `quotationMarks('de')` gives a
   language's outer and inner marks (`„` `“`, `‚` `‘`), the locale found
   as ICU 78.3 finds it.
+- **Emoji** (UTS #51, Unicode 18.0.0): the emoji properties
+  (`isEmojiPresentation`, `isExtendedPictographic`...) and
+  `emojiSequenceLength`, where a flag, a ZWJ sequence or a keycap shown
+  as an emoji starts and ends.
 - **Collation** (UTS #10 with CLDR 48.2): `Collator('sv').compare(a, b)`
   and `sortKey` order text as the language does (113 tailorings and
   `-u-co-` types: `zh-u-co-stroke`, `de-u-co-phonebk`), and

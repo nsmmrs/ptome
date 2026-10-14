@@ -160,7 +160,7 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas
   void setMiterLimit(double limit)
   void setStrokeColor(Color color)
   void shade(PdfShading shading)
-  void softMask(PdfForm mask, {SoftMaskKind kind = SoftMaskKind.luminosity})
+  void softMask(PdfForm mask, {SoftMaskKind kind = SoftMaskKind.luminosity, bool invert = false})
   void stroke()
   void transform(Matrix matrix)
   void translate(double x, double y)

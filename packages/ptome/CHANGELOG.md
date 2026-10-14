@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: color emoji (FEAT-rr13pg): emoji sequences set whole in a font
+  with color glyphs (the text's, a color fallback of the theme's, else the
+  installed Noto Color Emoji; `base_color_emoji: false` leaves it out) and
+  drawn as the font paints them (COLR v0/v1 with CPAL, CBDT, sbix), their
+  text read back as written; U+FE0E and U+FE0F kept after an emoji. Not
+  under `asciidoctor-compat`.
 - Index order by language (FEAT-5ttjh1): a document whose `lang` isn't
   English has its index (HTML, EPUB, PDF) in the language's collation,
   UCA with CLDR 48.2's tailoring (plain_unicode's `Collator`), headed by

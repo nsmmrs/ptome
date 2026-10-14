@@ -2,6 +2,16 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Color glyphs (FEAT-rr13pg): text in a font with color glyphs (`COLR`,
+  `CBDT`, `sbix`) draws them as the font paints them, each once as a form
+  (shadings for gradients, transparency groups, soft masks and blend
+  modes for composites, images for bitmaps), shown as codes of a Type 3
+  font with a ToUnicode map: an emoji sequence reads back as written.
+  Checked against HarfBuzz's own painting through cairo
+  (`tool/oracles/harfbuzz-cairo`), rasterized by Poppler. `softMask`
+  takes `invert`; `BlendMode` has `hue`, `saturation`, `color` and
+  `luminosity`.
+
 - `PdfWriterOptions.dates`: false leaves the creation and modification
   dates out of the document information and the XMP metadata (a
   reproducible file); `xmpPacket` takes a null date for none

@@ -71,6 +71,10 @@ sealed class FontFace {
   /// Whether the font has a glyph for [codePoint].
   bool hasGlyph(int codePoint);
 
+  /// Whether the font has color glyphs (`COLR`, `CBDT`, `sbix`): an emoji
+  /// font.
+  bool get hasColorGlyphs => false;
+
   /// Whether the font's characters are all as wide (it isn't ligated).
   bool get fixedPitch;
 
@@ -239,6 +243,9 @@ final class TrueTypeFont extends FontFace {
 
   @override
   bool hasGlyph(int codePoint) => pdf.font.glyphFor(codePoint) > 0;
+
+  @override
+  bool get hasColorGlyphs => pdf.font.colorGlyphs != null;
 
   @override
   bool get fixedPitch => pdf.font.isFixedPitch;
@@ -516,6 +523,18 @@ final class FontCatalog {
   }
 
   final Map<(String, bool), String?> _cjkFamilies = {};
+
+  /// The installed Noto Color Emoji (OFL), for emoji no font of the
+  /// theme has in color; null where it isn't installed.
+  String? emojiFamily() {
+    final family = _emojiFamily ??= _installed.find('Noto Color Emoji') != null
+        ? 'Noto Color Emoji'
+        : '';
+    return family.isEmpty ? null : family;
+  }
+
+  /// The emoji family found ('' for none), once looked for.
+  String? _emojiFamily;
 
   /// The Noto CJK region of [language] (BCP 47): `SC`, `TC`, `HK`, `JP`
   /// or `KR`.

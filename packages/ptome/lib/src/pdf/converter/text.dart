@@ -53,9 +53,23 @@ extension _Text on PdfConverter {
     if (_footnoteSpaceCollapses && text.contains('<sup class="wj"><a ')) {
       text = text.replaceAll(PdfConverter._spaceBeforeFootnoteRx, '');
     }
-    // The modern engine: variation selectors take no room (they choose a
-    // glyph's form, which the fonts here don't vary).
-    text = text.replaceAll(RegExp('[\ufe00-\ufe0f]'), '');
+    // Variation selectors take no room (they choose a glyph's form, which
+    // the fonts here don't vary), but for an emoji's U+FE0E and U+FE0F,
+    // which choose its text or emoji form (UTS #51), outside the
+    // compatibility mode.
+    if (text.contains(PdfConverter._variationSelectorRx)) {
+      final emoji = !asciidoctorCompat(_document, CompatFormat.pdf);
+      text = text.replaceAllMapped(PdfConverter._variationSelectorRx, (m) {
+        final before = m[1] ?? '';
+        final selector = m[2]!;
+        return emoji &&
+                before.isNotEmpty &&
+                isEmoji(before.runes.last) &&
+                (selector == '\ufe0e' || selector == '\ufe0f')
+            ? m[0]!
+            : before;
+      });
+    }
 
     if (_cjkLineBreaks && !cell) text = PdfConverter._breakCjk(text);
     // Links broken at The Chicago Manual of Style's points (`www.` links

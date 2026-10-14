@@ -6,6 +6,9 @@ TrueType, OpenType, WOFF and WOFF2 fonts in pure Dart:
   glyph outlines and bounds, kerning (`kern` and GPOS pairs), OpenType
   substitutions (single, multiple, ligatures) and names, from a font
   file, a collection, or a WOFF or WOFF2 font.
+- **Color glyphs.** `OpenTypeFont.colorGlyphs` reads `COLR` (versions 0
+  and 1), `CPAL`, `CBDT`/`CBLC` and `sbix`; `ColorGlyphs.paint` tells a
+  `ColorPainter` what a glyph paints, as HarfBuzz paints it.
 - **Web fonts.** `decodeWebFont` gives the TrueType or OpenType font a
   WOFF or WOFF2 font wraps, its WOFF2 table transforms undone as the
   reference decoder does.

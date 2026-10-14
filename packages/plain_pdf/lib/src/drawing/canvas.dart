@@ -9,6 +9,18 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:meta/meta.dart';
+import 'package:plain_fonts/plain_fonts.dart'
+    show
+        BitmapGlyph,
+        ColorBox,
+        ColorExtend,
+        ColorGlyphs,
+        ColorLine,
+        ColorPainter,
+        ColorTransform,
+        CompositeMode,
+        PaintColor,
+        PaletteColor;
 import 'package:plain_pdf/src/byte_writer.dart';
 import 'package:plain_pdf/src/drawing/shading.dart';
 import 'package:plain_pdf/src/fonts/fonts.dart';
@@ -18,6 +30,8 @@ import 'package:plain_pdf/src/reader/reader.dart';
 import 'package:plain_svg/plain_svg.dart'
     show Gradient, LinearGradient, RadialGradient, SvgCanvas;
 import 'package:plain_typesetting/plain_typesetting.dart';
+
+part 'color_glyphs.dart';
 
 /// What a soft mask takes from its form (ISO 32000-2, 11.6.5.2).
 enum SoftMaskKind {
@@ -171,6 +185,16 @@ final class FontResource extends Resource {
   final int subset;
 }
 
+/// A Type 3 font of color glyphs ([ColorFont]).
+@internal
+final class ColorFontResource extends Resource {
+  /// The resource of [font].
+  const new(this.font);
+
+  /// The font.
+  final ColorFont font;
+}
+
 /// An image.
 @internal
 final class ImageResource extends Resource {
@@ -233,6 +257,7 @@ final class GraphicsStateResource extends Resource {
     this.strokeOpacity,
     this.blendMode,
     this.softMask,
+    this.invertSoftMask = false,
     this.clearSoftMask = false,
   });
 
@@ -247,6 +272,10 @@ final class GraphicsStateResource extends Resource {
 
   /// The soft mask (`SMask`): its form and kind.
   final (PdfForm, SoftMaskKind)? softMask;
+
+  /// Whether the soft mask is inverted (its transfer function, `TR`,
+  /// from 1 to 0).
+  final bool invertSoftMask;
 
   /// Whether the parameters remove the soft mask (`/SMask /None`).
   final bool clearSoftMask;
@@ -436,8 +465,14 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
   void save() {
     _noPath('save()');
     _depth += 1;
+    _fills.add(_fill);
     _op('q');
   }
+
+  /// The fill color set last (as PDF's graphics state keeps it; black
+  /// to start with), and those of the states saved.
+  Color _fill = const GrayColor(0);
+  final List<Color> _fills = [];
 
   /// Restores the graphics state saved last (`Q`).
   @override
@@ -448,6 +483,7 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
     // before it: the two nest.)
     if (_markedAt case final at? when at >= _depth) _unmark();
     _depth -= 1;
+    _fill = _fills.removeLast();
     _op('Q');
   }
 
@@ -511,7 +547,10 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
 
   /// The color of fills, text included.
   @override
-  void setFillColor(Color color) => _color(color, stroke: false);
+  void setFillColor(Color color) {
+    _fill = color;
+    _color(color, stroke: false);
+  }
 
   /// The color of strokes.
   @override
@@ -557,8 +596,13 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
       _graphicsState(('blend', mode), GraphicsStateResource(blendMode: mode));
 
   /// Masks what is painted next by [mask] (a form with a transparency
-  /// group), until the state is restored or [clearSoftMask] is called.
-  void softMask(PdfForm mask, {SoftMaskKind kind = SoftMaskKind.luminosity}) {
+  /// group), until the state is restored or [clearSoftMask] is called;
+  /// with [invert], by its inverse (a transfer function from 1 to 0).
+  void softMask(
+    PdfForm mask, {
+    SoftMaskKind kind = SoftMaskKind.luminosity,
+    bool invert = false,
+  }) {
     if (mask.group == null) {
       throw ArgumentError.value(
         mask,
@@ -570,7 +614,8 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
       'softMask',
       mask,
       kind,
-    ), GraphicsStateResource(softMask: (mask, kind)));
+      invert,
+    ), GraphicsStateResource(softMask: (mask, kind), invertSoftMask: invert));
   }
 
   /// Removes the soft mask.
@@ -847,6 +892,12 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
     }
     // (A vertical line's upright glyphs, each turned back a quarter turn.)
     if (glyphs.any((g) => g.upright)) return _vertical(glyphs, x, y, style);
+    // (Color glyphs, drawn as their font paints them.)
+    if (_colorGlyphsOf(style) case final colors?
+        when style.renderMode != TextRenderMode.invisible &&
+            glyphs.any((g) => _isColor(colors, g.id))) {
+      return _withColorGlyphs(glyphs, x, y, style, colors);
+    }
     final font = _pdfFont(style);
     // (A glyph moved off the baseline, or a mark onto its base: text taken
     // from the page sets it apart. A letter moved along the line is read
@@ -914,6 +965,116 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
       i = j;
     }
     return pen - x;
+  }
+
+  /// [glyphs] with color glyphs among them, from ([x], [y]): the color
+  /// glyphs each as its form ([_colorForm]) marked as reading as its text
+  /// (ISO 32000-2, 14.9.4), the rest as text (none in a font of bitmaps
+  /// alone, which has no outlines); returns their width.
+  double _withColorGlyphs(
+    List<ShapedGlyph> glyphs,
+    double x,
+    double y,
+    TextStyle style,
+    ColorGlyphs colors,
+  ) {
+    final font = colors.font;
+    final outlines = font.isTrueType || font.hasTable('CFF ');
+    final across = style.horizontalScaling / 100;
+    // (A thousandth of the em, in points along the line.)
+    final unit = style.size / 1000 * across;
+    var pen = x;
+    var i = 0;
+    while (i < glyphs.length) {
+      final color = _isColor(colors, glyphs[i].id);
+      var j = i + 1;
+      while (j < glyphs.length && _isColor(colors, glyphs[j].id) == color) {
+        j++;
+      }
+      final part = glyphs.sublist(i, j);
+      if (!color) {
+        if (outlines) this.glyphs(part, pen, y, style);
+      } else {
+        var at = pen;
+        for (final (k, g) in part.indexed) {
+          _colorGlyph(
+            colors,
+            g,
+            at + g.xOffset * unit,
+            y + style.rise + g.yOffset * style.size / 1000,
+            style,
+          );
+          at += style.widthOf([g]);
+          if (k < part.length - 1) at += g.kerning * unit;
+        }
+      }
+      pen += style.widthOf(part);
+      if (j < glyphs.length) pen += part.last.kerning * unit;
+      i = j;
+    }
+    return pen - x;
+  }
+
+  /// Draws color glyph [glyph] of [colors]'s font at ([x], [y]) as a code
+  /// of a Type 3 font of its color glyphs ([ColorFont]), which reads as
+  /// its text; where its code reads as another (a glyph standing for
+  /// different texts), marked as reading as its own.
+  void _colorGlyph(
+    ColorGlyphs colors,
+    ShapedGlyph glyph,
+    double x,
+    double y,
+    TextStyle style,
+  ) {
+    final fonts = _colorFonts[style.font] ??= {};
+    final key = _fill;
+    final list = fonts[key] ??= [];
+    var font = list.where((f) => f._codes.containsKey(glyph.id)).firstOrNull;
+    if (font == null) {
+      // (255 codes a font: the last is its `m`, see _writeColorFont.)
+      font = list.where((f) => f._forms.length < 255).firstOrNull;
+      if (font == null) {
+        font = ColorFont._(colors.font.unitsPerEm, colors.font.bbox);
+        list.add(font);
+      }
+      font._codes[glyph.id] = font._forms.length;
+      font._forms.add(_colorForm(colors, glyph.id, style));
+      font._widths.add(colors.font.advance(glyph.id));
+      font._texts.add(glyph.text);
+    }
+    final code = font._codes[glyph.id]!;
+    final actual = font._texts[code] != glyph.text;
+    if (actual) beginMarkedContent('Span', actualText: glyph.text);
+    _noPath('text');
+    _mark();
+    _op('BT');
+    _content
+      ..name(_use('Font', font, ColorFontResource(font), 'F'))
+      ..commit()
+      ..byte(0x20)
+      ..number(style.size, 5)
+      ..operator(' Tf');
+    _op6(style.horizontalScaling / 100, 0, style.skew, 1, x, y, 'Tm');
+    _content
+      ..string([code], 0, 1, hex: true)
+      ..operator(' Tj');
+    _op('ET');
+    if (actual) endMarkedContent();
+  }
+
+  /// The form of color glyph [glyph] of [colors]'s font in [style], in
+  /// font units, the text's color its foreground: drawn once for each
+  /// font and color.
+  PdfForm _colorForm(ColorGlyphs colors, int glyph, TextStyle style) {
+    final forms = _colorForms[style.font] ??= {};
+    return forms[(glyph, _fill)] ??= () {
+      final upem = colors.font.unitsPerEm;
+      final reach = _reach * upem;
+      final fill = _fill;
+      return PdfForm(Rect(-reach, -reach, 2 * reach, 2 * reach), (canvas) {
+        colors.paint(glyph, _PdfColorPainter(canvas, style, fill, upem));
+      });
+    }();
   }
 
   /// [glyphs] with the marks they start with (a right-to-left cluster's,
@@ -1128,3 +1289,35 @@ final class PdfCanvas implements StructureCanvas, SvgCanvas {
   static bool _positioned(List<ShapedGlyph> glyphs) =>
       glyphs.any((g) => g.xOffset != 0 || g.yOffset != 0);
 }
+
+/// A Type 3 font (ISO 32000-2, 9.6.4) of a font's color glyphs in one
+/// text color: each code's glyph procedure paints the glyph's form, and
+/// the code reads as the glyph's text (the first it stood for).
+@internal
+final class ColorFont {
+  new _(this.unitsPerEm, this.bbox);
+
+  /// The font's units per em: its glyph space's.
+  final int unitsPerEm;
+
+  /// The font's bounding box (xMin, yMin, xMax, yMax).
+  final List<int> bbox;
+
+  final Map<int, int> _codes = {};
+  final List<PdfForm> _forms = [];
+  final List<int> _widths = [];
+  final List<String> _texts = [];
+
+  /// Each code's form, in order.
+  List<PdfForm> get forms => _forms;
+
+  /// Each code's advance, in font units.
+  List<int> get widths => _widths;
+
+  /// Each code's text.
+  List<String> get texts => _texts;
+}
+
+/// The Type 3 fonts of each font's color glyphs drawn so far, by the
+/// text's color.
+final Expando<Map<Color, List<ColorFont>>> _colorFonts = Expando();
