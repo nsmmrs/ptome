@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- npm: the package has a `THIRD_PARTY_NOTICES.md` (made by
+  `tool/npm_notices.dart` in `tool/build-npm.sh`): the licences of the
+  Dart SDK and of every Dart package the bundle compiles in, and the
+  notices of the data and code those packages embed or follow (HarfBuzz,
+  Unicode, the hyphenation patterns, highlight.js's styles, Brotli,
+  RFC 6386, Adobe's font metrics and glyph list, asciidoctor-epub3's
+  assets, Font Awesome's icon names).
 - PDF: `base_text_align_last: justify` stretches a justified paragraph's
   last line, and each line before a hard break, to the measure. With it,
   `tool/mushaf.dart` sets the Medina mushaf line for line (FEAT-ytfd13):

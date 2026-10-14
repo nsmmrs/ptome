@@ -2,8 +2,9 @@
 # Build the npm package (ptome) into build/npm.
 #
 # Compiles the Dart core to one JavaScript bundle with dart2js and assembles
-# it with the checked-in package sources (npm/) and the license. Release
-# TOOLING only: it never publishes anything.
+# it with the checked-in package sources (npm/), the license and the
+# third-party notices (tool/npm_notices.dart). Release TOOLING only: it
+# never publishes anything.
 #
 # Usage: tool/build-npm.sh [--output-dir DIR]
 set -euo pipefail
@@ -76,6 +77,8 @@ loader="$tmp/loader.js"
 } > "$loader"
 cat "$root/npm/preamble.js" "$loader" "$tmp/core.js" > "$out/ptome.js"
 cp "$root/LICENSE" "$out/LICENSE"
+# What the bundle holds that is not ptome's own, with its licences.
+(cd "$root" && dart run tool/npm_notices.dart "$out/THIRD_PARTY_NOTICES.md" >/dev/null)
 # CommonJS copies of the type declarations, for require().
 for decl in "$out"/types/*.d.ts; do
   sed "s#'\./\([a-z]*\)\.js'#'./\1.cjs'#g" "$decl" > "${decl%.d.ts}.d.cts"

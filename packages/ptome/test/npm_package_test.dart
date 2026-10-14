@@ -25,7 +25,7 @@ void main() {
 
   test('every packaged file exists in the sources or the build', () {
     final files = (package['files']! as List<Object?>).cast<String>();
-    const built = {'ptome.js', 'parts/', 'types/'};
+    const built = {'ptome.js', 'parts/', 'types/', 'THIRD_PARTY_NOTICES.md'};
     for (final file in files) {
       if (built.contains(file)) continue;
       final path = 'npm/$file';

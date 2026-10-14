@@ -2,6 +2,8 @@
 
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { test } from 'node:test'
 
@@ -19,6 +21,7 @@ test('npm pack lists the expected files', () => {
   assert.deepEqual(files.filter((file) => !parts.includes(file)), [
     'LICENSE',
     'README.md',
+    'THIRD_PARTY_NOTICES.md',
     'bin/ptome.js',
     'browser.js',
     'node.cjs',
@@ -32,4 +35,11 @@ test('npm pack lists the expected files', () => {
     'types/index.d.cts',
     'types/index.d.ts',
   ])
+})
+
+test('the third-party notices name what the bundle holds', () => {
+  const notices = readFileSync(join(packageDir, 'THIRD_PARTY_NOTICES.md'), 'utf8')
+  for (const title of ['The Dart SDK', 'yaml (Dart package)', 'HarfBuzz', 'Unicode Character Database', 'Brotli']) {
+    assert.match(notices, new RegExp(`^## ${title.replace(/[()]/g, '\\$&')}$`, 'm'))
+  }
 })

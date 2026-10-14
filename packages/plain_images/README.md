@@ -57,5 +57,6 @@ Status: in development; not published to pub.dev.
 
 ## License
 
-MIT; see [LICENSE](LICENSE). The PngSuite test images are Willem van
+MIT; see [LICENSE](LICENSE). The VP8 tables are RFC 6386's, under the
+notices in [vendor/rfc6386/NOTICE](vendor/rfc6386/NOTICE). The PngSuite test images are Willem van
 Schaik's, under their own terms (`test/images/pngsuite/PngSuite.LICENSE`).
