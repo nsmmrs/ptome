@@ -57,4 +57,6 @@ Status: in development; not published to pub.dev.
 
 ## License
 
-MIT; see [LICENSE](LICENSE).
+MIT; see [LICENSE](LICENSE). The shaper follows HarfBuzz's (its
+features, their order and its Arabic shaper's rules), under HarfBuzz's
+"Old MIT" licence: see [vendor/harfbuzz/COPYING](vendor/harfbuzz/COPYING).

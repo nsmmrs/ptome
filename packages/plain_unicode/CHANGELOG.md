@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- The Unicode License (`vendor/ucd/*/license.txt`) is published with the
+  package, as the tables generated from the Unicode data are under it
+  (it was left out with the data).
 - The Unicode Bidirectional Algorithm (UAX #9, Unicode 18.0.0):
   `BidiText`, each code unit's embedding level in its paragraph (the
   base direction given, or the first strong character's), a line's

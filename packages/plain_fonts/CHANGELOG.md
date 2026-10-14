@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- HarfBuzz's licence (`vendor/harfbuzz/COPYING`), published with the
+  package: the OpenType layout follows HarfBuzz where the specification
+  leaves it open.
 - `OpenTypeLayout`: a font's GSUB and GPOS lookups applied in full, for
   the scripts that shape (Arabic, Hebrew): the lookups of a feature for
   a script and language, every substitution type (single, multiple,

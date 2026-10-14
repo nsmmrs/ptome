@@ -46,5 +46,8 @@ Status: in development; not published to pub.dev.
 
 ## License
 
-MIT; see [LICENSE](LICENSE). The test fonts are under their own licenses;
-see [test/fonts/README.md](test/fonts/README.md).
+MIT; see [LICENSE](LICENSE). The OpenType layout follows HarfBuzz's where
+the specification leaves it open (mark attachment, ligature components,
+cursive attachment), under HarfBuzz's "Old MIT" licence: see
+[vendor/harfbuzz/COPYING](vendor/harfbuzz/COPYING). The test fonts are
+under their own licenses; see [test/fonts/README.md](test/fonts/README.md).

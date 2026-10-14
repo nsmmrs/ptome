@@ -1,9 +1,11 @@
 # The files left out of the pub.dev package (this replaces .gitignore for
 # publishing, so its entries are repeated). The vendored Unicode data is
-# only for the generators; the tables are in lib/.
+# only for the generators; the tables are in lib/. Its licence is
+# published: the tables generated from the data are under it too.
 .dart_tool/
 build/
 pubspec.lock
-/vendor/
+/vendor/ucd/*/*
+!/vendor/ucd/*/license.txt
 /tool/
 /test/

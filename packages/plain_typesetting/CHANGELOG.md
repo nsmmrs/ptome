@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- HarfBuzz's licence (`vendor/harfbuzz/COPYING`), published with the
+  package: the shaper follows HarfBuzz's features, their order and its
+  Arabic shaper's rules.
 - A note referred to in a block floating to a side is set where the
   block goes on in the next region (it was left out: the notes of the
   float's piece set at a region's top weren't counted). In the random
