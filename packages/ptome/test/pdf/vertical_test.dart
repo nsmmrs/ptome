@@ -130,7 +130,40 @@ $theme
     // side of it and its own length.)
     expect(gap(''), closeTo(2, 0.01));
     expect(gap('base_text_combine_upright: none'), greaterThan(2.2));
+    // (Three digits only with `digits 3`; the tcy role any short text.)
+    double after(String source, String theme) {
+      final words = lines(pdf(source, 'vertical-rl', theme: theme));
+      final month = words.firstWhere((w) => w.$1 == '月');
+      final day = words.firstWhere((w) => w.$1 == '日');
+      return (day.$3 - month.$3) / month.$5;
+    }
+
+    expect(
+      after('月[.tcy]##10##日', 'base_text_combine_upright: none'),
+      closeTo(2, 0.01),
+    );
+    // (Across only where the font has third-width forms: else on its
+    // side, as with `none`.)
+    expect(
+      after('月151日', 'base_text_combine_upright: digits 3'),
+      lessThanOrEqualTo(after('月151日', 'base_text_combine_upright: none')),
+    );
   }, skip: _poppler ? false : 'needs pdftotext');
+
+  test("decorations on their languages' sides in the box's own lines", () {
+    String content(String lang) {
+      final path = pdf(
+        '[.underline]#語の# [.line-through]#文章#',
+        'vertical-rl',
+        attributes: {'lang': lang},
+        theme: 'base_text_engine: box',
+      );
+      return File(path).readAsStringSync(encoding: latin1);
+    }
+
+    // (Japanese underlines on the right, Chinese on the left.)
+    expect(content('ja'), isNot(content('zh')));
+  });
 
   test('under asciidoctor-compat the lines run across', () {
     final words = lines(

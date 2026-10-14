@@ -47,6 +47,19 @@ void main() {
     expect(out, contains('<strong>gras</strong>&#8239;!'));
   });
 
+  test('spaces already typed as no-break spaces stay single', () {
+    expect(
+      html('Oui\u202f! Note\u00a0: «\u00a0ici\u00a0» ‹ là › « ', {
+        'lang': 'fr',
+      }),
+      allOf(
+        contains('Oui\u202f! Note\u00a0: «\u00a0ici\u00a0»'),
+        contains('‹&#160;là&#160;›'),
+        isNot(contains('«&#160;\u00a0')),
+      ),
+    );
+  });
+
   test('verbatim text is left alone', () {
     expect(
       html(' code ? : ;', {'lang': 'fr'}),
