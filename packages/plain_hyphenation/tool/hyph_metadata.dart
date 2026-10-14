@@ -69,17 +69,22 @@ void main(List<String> args) {
       ..writeln()
       ..writeAll(copyright.map((c) => '$c\n'))
       ..writeln();
+    // (Of a choice, only the licence it is used under is reproduced.)
+    var terms = licence?.trimRight() ?? '(see the file)';
     if (chosen.isNotEmpty) {
       notices
         ..writeln(
-          'Offered under any of the licences below; used here under the '
-          '$chosen licence.',
+          'Offered under ${offered.join(' or ')}; used here under the '
+          '$chosen licence, whose terms follow.',
         )
         ..writeln();
+      terms = terms
+          .split(RegExp(r'\n\s*-\s*\n'))
+          .firstWhere((e) => e.contains('name: $chosen'));
     }
     notices
       ..writeln('```')
-      ..writeln(licence?.trimRight() ?? '(see the file)')
+      ..writeln(terms)
       ..writeln('```')
       ..writeln();
   }

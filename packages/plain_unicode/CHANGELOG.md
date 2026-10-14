@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `vendor/icu/LICENSE` keeps the parts of ICU's LICENSE that apply to the
+  word-break dictionaries taken (the Unicode License, ICU's older licence,
+  the Lao and Burmese dictionaries' notices), not those for ICU4C's and
+  ICU4J's build files and other data.
+
 - Emoji (FEAT-rr13pg): `isEmoji`, `isEmojiPresentation`,
   `isEmojiModifier`, `isEmojiModifierBase` and `isExtendedPictographic`
   (emoji-data.txt, Unicode 18.0.0), and `emojiSequenceLength`: where an

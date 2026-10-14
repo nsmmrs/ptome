@@ -428,26 +428,9 @@ Copyright (C) 2012 Claudio Beccari
 
 Copyright (C) 2004-2015 Kevin P. Scannell
 
-Offered under any of the licences below; used here under the MIT licence.
+Offered under the GPL (version 2 or later) or the MIT licence; used here under the MIT licence, whose terms follow.
 
 ```
-     - This file available under any of these licences:
-     -
-         name: GPL
-         version: 2
-         or_later: true
-         url: http://www.gnu.org/licenses/gpl-2.0.html
-         text: >
-             This program is free software; you can redistribute it and/or
-             modify it under the terms of the GNU General Public License
-             as published by the Free Software Foundation; either version 2
-             of the License, or (at your option) any later version.
-            
-             This program is distributed in the hope that it will be useful,
-             but WITHOUT ANY WARRANTY; without even the implied warranty of
-             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-             GNU General Public License for more details.
-     -
          name: MIT
          url: https://opensource.org/licenses/MIT
          text: >

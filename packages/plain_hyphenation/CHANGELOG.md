@@ -3,8 +3,8 @@
 ## 0.1.0-dev (unreleased)
 
 - NOTICES.md says which licence a pattern file offering several is used
-  under: the Irish patterns (GPL 2 or later, or MIT) under MIT;
-  `tool/hyph_metadata.dart` writes it so.
+  under, and reproduces only that one's terms: the Irish patterns (GPL 2
+  or later, or MIT) under MIT; `tool/hyph_metadata.dart` writes it so.
 
 - A word with combining marks is hyphenated as its composed form (NFC
   composition, nothing decomposed), the places counted in the word as
