@@ -42,6 +42,7 @@ import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/constants.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/extensions.dart' show MacroAttributes;
+import 'package:ptome/src/french_spacing.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/highlight/highlight.dart';
 import 'package:ptome/src/inline.dart';
@@ -376,6 +377,10 @@ String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
         }
       case Sub.replacements:
         subject = subReplacements(subject);
+        // (French text's no-break spaces: Ptome.)
+        if (frenchSpacingOf(node) case final spacing?) {
+          subject = spacing.apply(subject);
+        }
       case Sub.macros:
         subject = subMacros(node, subject);
       case Sub.highlight:

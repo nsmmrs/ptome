@@ -152,6 +152,38 @@ them are numbered past them. A block with the `unnumbered` option
 :listing-numbering: all
 ```
 
+Chinese and Japanese technical books number their figures and tables
+from 1 in each chapter, after the chapter's number (表 2.1, 图 2.1):
+`<kind>-numbering: chapter`. A numbered chapter's number is its own, an
+appendix's its letter (表 A.1); an unnumbered one is counted among the
+chapters. A cross reference says `表 2.1`; the template has `{{chapter}}`
+and `{{index}}` besides `{{number}}` (`2.1`), for `表 2-1`. Blocks outside
+a chapter (a preface) are numbered as before. Not under
+`asciidoctor-compat`.
+
+```asciidoc
+:table-caption: 表
+:figure-caption: 图
+:table-numbering: chapter
+:figure-numbering: chapter
+:table-caption-template: pass:[{{caption}} {{number}} ]
+```
+
+Their tables have three rules (booktabs): a heavy one above and below,
+a light one under the head, none between the rows or the columns. A look
+says so for every format (`doc/looks.md`):
+
+```yaml
+extends: ptome
+styles:
+  table:
+    frame: { print: { width: heavy }, screen: { width: heavy } }
+    frame-sides: { print: none, screen: none }
+    rows: { print: none, screen: none }
+    columns: { print: none, screen: none }
+    head-rule: { print: { width: hairline }, screen: { width: hairline } }
+```
+
 ## Callouts
 
 ```asciidoc

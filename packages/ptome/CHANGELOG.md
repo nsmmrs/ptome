@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Captions numbered by chapter (FEAT-nnnwwv): `<kind>-numbering: chapter`
+  numbers figures, tables, listings and examples from 1 in each chapter
+  after its number (`表 2.1`, an appendix's `表 A.1`), `{{chapter}}` and
+  `{{index}}` in `<kind>-caption-template`; not under
+  `asciidoctor-compat`. `doc/books.md` shows a three-rule (booktabs)
+  table look.
+- French spacing (FEAT-96hbqp): French text gets a narrow no-break space
+  before `;`, `!` and `?` and a no-break space before `:` and inside
+  guillemets (the Imprimerie nationale's *Lexique*); Canadian French
+  before `:` and inside guillemets only (OQLF); every format, not under
+  `asciidoctor-compat`.
 - Typographic quotes in the text's language's marks, CLDR's, in HTML,
   EPUB, PDF and man pages (FEAT-tlp95q): `„…“` in German, `«…»` in
   French, `「…」` in Japanese; a block's `lang` or the document's; not

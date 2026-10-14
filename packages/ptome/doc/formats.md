@@ -75,3 +75,14 @@ keeps its `<quote>` element, which DocBook's own stylesheets localize. A
 span's `lang` (`[lang=ja]#...#`) doesn't change the quotes inside it. In
 the PDF the theme's `quotes` key, where it sets one, wins. Not under
 `asciidoctor-compat`.
+
+French text (`lang` `fr`, `fr-FR`, `fr-BE`, `fr-CH`...) gets the
+no-break spaces of French typography, after the Imprimerie nationale's
+*Lexique des règles typographiques*: a narrow one (U+202F) before `;`, `!`
+and `?`, a full one (U+00A0) before `:` and inside guillemets
+(`« ici »`); a space typed there becomes the no-break one, and a line
+never breaks at it. Canadian French (`fr-CA`), after the OQLF's *Banque de
+dépannage linguistique*, has them before `:` and inside guillemets only.
+Only punctuation ending a word is spaced (`10:30`, `std::vector` and
+`?x=1` in a URL are not), and verbatim text never is. A man page writes
+them as roff's `\~`. Not under `asciidoctor-compat`.

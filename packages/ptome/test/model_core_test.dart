@@ -174,6 +174,9 @@ class FakeSection extends AbstractBlock implements NodeSection {
 
   @override
   String? sectname;
+
+  @override
+  bool special = false;
 }
 
 /// A block with canned URI responses for [AbstractNode.fetchUri].

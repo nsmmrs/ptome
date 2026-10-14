@@ -38,6 +38,45 @@ void main() {
   });
 
   group('caption numbers', () {
+    const chapters =
+        '= Book\n:doctype: book\n:table-caption: 表\n:figure-caption: 图\n'
+        ':table-numbering: chapter\n:figure-numbering: chapter\n\n'
+        '== One\n\n.A\n|===\n|a\n|===\n\n.B\n|===\n|b\n|===\n\n'
+        '== Two\n\n.C\nimage::c.png[]\n\n.D\n[#d]\n|===\n|d\n|===\n\n'
+        'See <<d>>.\n\n[appendix]\n== Extra\n\n.E\n|===\n|e\n|===\n';
+
+    test('by chapter: 表 2.1, with `<kind>-numbering: chapter`', () {
+      final html = asciidoc.convert(
+        chapters,
+        attributes: {'xrefstyle': 'short'},
+      );
+      for (final title in ['表 1.1. A', '表 1.2. B', '表 2.1. D', '表 A.1. E']) {
+        expect(html, contains('<caption class="title">$title</caption>'));
+      }
+      expect(html, contains('<div class="title">图 2.1. C</div>'));
+      expect(html, contains('<a href="#d">表 2.1</a>'));
+      // (Numbered chapters keep their own numbers.)
+      expect(
+        asciidoc.convert(chapters, attributes: {'sectnums': ''}),
+        contains('<caption class="title">表 2.1. D</caption>'),
+      );
+    });
+
+    test('by chapter: {{chapter}} and {{index}} in the template', () {
+      final html = asciidoc.convert(
+        ':table-caption-template: pass:[{{caption}} {{chapter}}-{{index}} ]\n'
+        '$chapters',
+      );
+      expect(html, contains('<caption class="title">表 2-1 D</caption>'));
+    });
+
+    test('by chapter: not under asciidoctor-compat', () {
+      expect(
+        asciidoc.convert(chapters, attributes: {'asciidoctor-compat': ''}),
+        contains('<caption class="title">表 3. D</caption>'),
+      );
+    });
+
     test('come from <kind>-caption-template', () {
       final html = asciidoc.convert(
         ':listing-caption: Listing\n'

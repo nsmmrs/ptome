@@ -17,7 +17,7 @@ void main() {
     );
     expect(
       asciidoc.convert(source, attributes: {'lang': 'fr-CA'}),
-      contains('«Hallo» und ”Welt“.'),
+      contains('«&#160;Hallo&#160;» und ”Welt“.'),
     );
   });
 

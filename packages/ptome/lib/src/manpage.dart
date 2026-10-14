@@ -304,6 +304,10 @@ class ManpageConverter extends BuiltInConverter {
   /// with their numbers apart from the text, and with anchors.
   bool _semantic = false;
 
+  /// Whether `asciidoctor-compat` leaves the man page Ptome's (French
+  /// text's narrow no-break spaces written as roff's `\~`).
+  bool _modern = false;
+
   static bool _semanticOf(Document node) =>
       node.hasAttr('man-semantic') &&
       !asciidoctorCompat(node, CompatFormat.manpage);
@@ -317,6 +321,7 @@ class ManpageConverter extends BuiltInConverter {
   /// Converts the [node] document to a standalone man page.
   String convertDocument(Document node) {
     _semantic = _semanticOf(node);
+    _modern = !asciidoctorCompat(node, CompatFormat.manpage);
     if (!node.hasAttr('mantitle')) {
       throw const AsciidoctorException(
         'doctype must be set to manpage when using manpage backend',
@@ -429,6 +434,7 @@ class ManpageConverter extends BuiltInConverter {
   /// NOTE embedded doesn't really make sense in the manpage backend.
   String convertEmbedded(Document node) {
     _semantic = _semanticOf(node);
+    _modern = !asciidoctorCompat(node, CompatFormat.manpage);
     final result = <String>[_s(node.content())];
 
     _appendFootnotes(result, node);
@@ -1268,6 +1274,7 @@ class ManpageConverter extends BuiltInConverter {
     result = result.replaceAll('-', r'\-');
     // character references (named, numeric and the literal ampersand)
     result = _replaceCharRefs(result);
+    if (_modern) result = result.replaceAll('&#8239;', r'\~');
     // apostrophe / neutral single quote
     result = result.replaceAll("'", r'\*(Aq');
     // mock boundary (NOTE Dart's replaceAll takes the replacement

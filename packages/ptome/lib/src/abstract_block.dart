@@ -10,8 +10,9 @@ library;
 
 import 'package:meta/meta.dart';
 import 'package:ptome/src/abstract_node.dart';
+import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/cursor.dart';
-import 'package:ptome/src/document.dart' show DocumentAttributeEntry;
+import 'package:ptome/src/document.dart' show Document, DocumentAttributeEntry;
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/inline_tree.dart';
 import 'package:ptome/src/output_template.dart';
@@ -89,6 +90,10 @@ abstract interface class NodeSection {
 
   /// The section name (`'appendix'`, `'chapter'`, `'part'`, `'section'`, ...).
   String? get sectname;
+
+  /// Whether this is a special section (a preface, an appendix, a
+  /// glossary...) or a child of one.
+  bool get special;
 }
 
 /// An abstract base class for block-level nodes of AsciiDoc content.
@@ -519,14 +524,34 @@ abstract class AbstractBlock extends AbstractNode {
     final prefix = attrName == null ? null : document!.attributes[attrName];
     if (attrName != null && prefix != null) {
       final kind = figure ? 'figure' : context.asciidoc;
-      numeral = document!.incrementAndStoreCounter('$kind-number', this);
+      // Ptome's `<kind>-numbering: chapter`: numbered from 1 in each
+      // chapter, after its number (`表 2.1`), as Chinese and Japanese
+      // technical books number them.
+      final chapter =
+          document!.attributes['$kind-numbering'] == 'chapter' &&
+              !_asciidoctorCompat()
+          ? _chapterNumeral()
+          : null;
+      String? index;
+      if (chapter != null) {
+        index = document!.incrementAndStoreCounter(
+          '$kind-number-$chapter',
+          this,
+        );
+        numeral = '$chapter.$index';
+      } else {
+        numeral = document!.incrementAndStoreCounter('$kind-number', this);
+      }
       // Ptome's `<kind>-caption-template` (ADR-0010): the caption from
-      // a template of `{{caption}}` and `{{number}}`.
+      // a template of `{{caption}}` and `{{number}}` (and, numbered by
+      // chapter, `{{chapter}}` and `{{index}}`, its number in it).
       switch (document!.attributes['$attrName-template']) {
         case final String template:
           _caption = renderTemplate(template, {
             'caption': prefix,
             'number': '$numeral',
+            'chapter': chapter ?? '',
+            'index': index ?? '$numeral',
           });
           // A cross reference names the block by its caption word and
           // number, whatever the template made of them.
@@ -535,6 +560,60 @@ abstract class AbstractBlock extends AbstractNode {
           _caption = '$prefix $numeral. ';
       }
     }
+  }
+
+  /// Whether `asciidoctor-compat` names the document's format.
+  bool _asciidoctorCompat() {
+    final doc = document;
+    if (doc is! Document) return false;
+    final format = CompatFormat.named(doc.attr('backend') ?? 'html5');
+    return format != null && asciidoctorCompat(doc, format);
+  }
+
+  /// The number of the chapter this block is in (its level 1 section):
+  /// a numbered chapter's own (`2`, an appendix's `A`), else its place
+  /// among the document's chapters (an appendix's among its appendixes,
+  /// as a letter); null outside a chapter or in a special section.
+  String? _chapterNumeral() {
+    AbstractBlock? found;
+    for (var p = parent; p != null; p = p.parent) {
+      if (p is NodeSection && p.level == 1) {
+        found = p;
+        break;
+      }
+    }
+    if (found == null) return null;
+    final chapter = found;
+    final section = chapter as NodeSection;
+    final appendix = section.sectname == 'appendix';
+    if (section.special && !appendix) return null;
+    if (chapter.numeral case final numeral? when numeral.isNotEmpty) {
+      return numeral;
+    }
+    // (Unnumbered: counted among the chapters, or the appendixes.)
+    var count = 0;
+    bool walk(AbstractBlock block) {
+      for (final child in block.blocks) {
+        if (child is! NodeSection) continue;
+        final childSection = child as NodeSection;
+        if (child.level == 0) {
+          if (walk(child)) return true;
+          continue;
+        }
+        if (child.level != 1) continue;
+        final isAppendix = childSection.sectname == 'appendix';
+        if (isAppendix == appendix && (!childSection.special || isAppendix)) {
+          count++;
+        }
+        if (identical(child, chapter)) return true;
+      }
+      return false;
+    }
+
+    // (While the document is parsed, the chapter isn't in it yet: the
+    // next one.)
+    if (!walk(document! as AbstractBlock)) count++;
+    return appendix ? String.fromCharCode(0x40 + count) : '$count';
   }
 
   /// Ptome's `<kind>-numbering: all` (`listing-numbering`,

@@ -45,6 +45,7 @@ class Section extends AbstractBlock implements NodeSection {
   String? sectname;
 
   /// Whether this is a special section or a child of one.
+  @override
   bool special = false;
 
   /// Whether this section is numbered.

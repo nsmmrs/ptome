@@ -92,6 +92,40 @@ styles:
     }, 1.25);
   });
 
+  test('a three-rule table (booktabs): ends heavy, a light head rule', () {
+    _look('three-rule', '''
+extends: ptome
+styles:
+  table:
+    frame: { print: { width: heavy }, screen: { width: heavy } }
+    frame-sides: { print: none, screen: none }
+    rows: { print: none, screen: none }
+    columns: { print: none, screen: none }
+    head-rule: { print: { width: hairline }, screen: { width: hairline } }
+''');
+    final look = _load('three-rule');
+    final theme = lookTheme(look, warn: (_) {});
+    expect(
+      '${theme['table_grid_width']}',
+      'ThemeList([ThemeNumber(0), ThemeNumber(0)])',
+    );
+    // (Ends 1 pt, no sides; the head's rule 0.5 pt.)
+    expect(
+      '${theme['table_border_width']}',
+      'ThemeList([ThemeNumber(1), ThemeNumber(0)])',
+    );
+    expect('${theme['table_head_border_bottom_width']}', 'ThemeNumber(0.5)');
+    final css = lookCss(look, CssTarget.html);
+    expect(css, contains('table.grid-all>*>tr>*{border-width:0 0}'));
+    expect(
+      css,
+      contains(
+        'table.tableblock>thead>tr>th{border-bottom:'
+        'var(--ptome-rule-hairline) solid',
+      ),
+    );
+  });
+
   test('a value by medium: each medium its own, or all', () {
     _look('media', '''
 tokens:
