@@ -41,6 +41,7 @@ import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/look/css.dart';
 import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart';
+import 'package:ptome/src/numbering.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/page_map.dart';
 import 'package:ptome/src/parallel.dart';
@@ -732,6 +733,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '$iconCssHead${_codeOverflowCss(document)}'
         '${_hyphensCss(document)}${_unitsCss(document)}'
         '${_writingModeCss(document)}'
+        '${_counterCss(document)}'
         '$_readingSystemScript';
     final lines = <String>[head];
 
@@ -1392,7 +1394,14 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     final reversedAttr = tag == 'ol' && node.hasOption('reversed')
         ? ' reversed="reversed"'
         : '';
-    lines.add('<$tag$listClassAttr$startAttr$reversedAttr>');
+    // (A counter style Asciidoctor doesn't know, or the language's
+    // numerals: Ptome's.)
+    final styleAttr = switch (tag == 'ol' ? listCounterStyle(node) : null) {
+      final counter? when !asciidoctorCompat(_doc(node), CompatFormat.epub) =>
+        ' style="list-style-type: ${counter.name}"',
+      _ => '',
+    };
+    lines.add('<$tag$listClassAttr$startAttr$reversedAttr$styleAttr>');
     for (final item in node.items) {
       final liClassAttr = item.role != null ? ' class="${item.role}"' : '';
       lines.add(
@@ -1620,6 +1629,14 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         final css => '<style>\n$css</style>\n',
       };
 
+  /// The counter styles the book's lists use that reading systems don't
+  /// know, Ptome's.
+  static String _counterCss(Document document) =>
+      switch (counterStyleCss(document, CompatFormat.epub)) {
+        '' => '',
+        final css => '<style>\n$css</style>\n',
+      };
+
   /// A units document: its note entries (the cross-references) each in a
   /// small line of its own above its unit's text; its footnotes, in every
   /// stream, are the reading system's popups.
@@ -1793,7 +1810,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
   /// (ADR-0010) when [document] sets it, none by default (as the gem).
   static String _noteLabel(Document document, Footnote footnote) =>
       switch (document.attr('footnote-label-template')) {
-        final template? => renderNumbered(template, footnote.index, (n) => n),
+        final template? => renderNumbered(
+          template,
+          localDigits(document, footnote.index),
+          (n) => n,
+        ),
         null => '',
       };
 
@@ -1805,7 +1826,10 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       // `footnote-reference-template` (ADR-0010), `[1]` by default.
       final marker = renderNumbered(
         node.document?.attr('footnote-reference-template') ?? '[{{number}}]',
-        index,
+        switch (node.document) {
+          final Document document => localDigits(document, index),
+          _ => index,
+        },
         (n) => '<a$idAttr href="#note-$index" epub:type="noteref">$n</a>',
       );
       return '<sup class="noteref">$marker</sup>';
@@ -2350,6 +2374,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<title>${_sanitizeDoctitle(doc, _Spec.cdata)}</title>\n'
         '$_stylesheetLinks\n'
         '${_writingModeCss(doc)}'
+        '${_counterCss(doc)}'
         '</head>\n'
         '<body>';
     final content = [
@@ -2491,6 +2516,7 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<title>${_sanitizeDoctitle(doc, _Spec.cdata)}</title>\n'
         '$_stylesheetLinks\n'
         '${_writingModeCss(doc)}'
+        '${_counterCss(doc)}'
         '</head>\n'
         '<body>\n'
         '<section class="chapter">\n'

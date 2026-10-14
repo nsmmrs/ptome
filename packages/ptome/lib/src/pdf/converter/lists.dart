@@ -62,7 +62,13 @@ extension _Lists on PdfConverter {
   }
 
   void _convertOlist(ListBlock node) {
+    // (A counter style Asciidoctor doesn't know, or the language's
+    // numerals: Ptome's.)
+    final counter = asciidoctorCompat(_document, CompatFormat.pdf)
+        ? null
+        : listCounterStyle(node);
     var numeral = switch (node.style) {
+      _ when counter != null => _Numeral.counter(counter, 1),
       'loweralpha' => const _Numeral.letters('a'),
       'upperalpha' => const _Numeral.letters('A'),
       'lowerroman' => const _Numeral.roman(1, upper: false),
@@ -222,13 +228,12 @@ extension _Lists on PdfConverter {
           marker = '';
           _listNumerals.add(index);
         } else {
-          final text = index.text;
           marker =
               list.style == 'decimal' &&
                   index.kind == _NumeralKind.decimal &&
                   index.value.abs() < 10
               ? '${index.value < 0 ? '-' : ''}0${index.value.abs()}.'
-              : '$text.';
+              : index.marker;
           _listNumerals.add(
             list.hasOption('reversed') ? index.previous : index.next,
           );
@@ -864,16 +869,6 @@ extension _Lists on PdfConverter {
   }) {
     final gap = _fonts.font(_font.family, _font.style).widthOf('x', _font.size);
     final fixed = _listMarkerBox;
-    final width =
-        fixed ??
-        _fonts
-            .font(markerFont.family, markerFont.style)
-            .widthOf(
-              marker,
-              markerFont.size,
-              kerning: _font.kerning,
-              features: {..._baseFeatures, ...features},
-            );
     final markerBox = _textBox(
       marker.replaceAll('&', '&amp;').replaceAll('<', '&lt;'),
       markerFont,
@@ -885,6 +880,22 @@ extension _Lists on PdfConverter {
       // (A marker set at the end of its box doesn't hang into the gap.)
       overhang: false,
     );
+    final fontWidth = _fonts
+        .font(markerFont.family, markerFont.style)
+        .widthOf(
+          marker,
+          markerFont.size,
+          kerning: _font.kerning,
+          features: {..._baseFeatures, ...features},
+        );
+    // (Outside the gem's look, as wide as its text set, in the fallback
+    // fonts where the marker's font lacks its characters: a CJK
+    // counter style's `あ、` in a Latin or Arabic text.)
+    final width =
+        fixed ??
+        (asciidoctorCompat(_document, CompatFormat.pdf)
+            ? fontWidth
+            : math.max(fontWidth, markerBox.intrinsicWidths().$2));
     if (_listBodyIndent case final bodyIndent?) {
       _listMarkerWidth = math.max(_listMarkerWidth, width);
       return _Marked(

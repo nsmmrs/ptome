@@ -457,7 +457,7 @@ extension _DocumentParts on PdfConverter {
       template: templates[_initialLayout(document)],
       templates: templates,
       keepTemplate: true,
-      pageLabel: _pageLabel,
+      pageLabel: (number) => _shownPage(_pageLabel(number)),
       notes: _notes,
       noteSeparator: _notes.isEmpty ? null : _footnoteSeparator(),
       noteStreams: _layoutNoteStreams(),
@@ -1442,7 +1442,7 @@ extension _DocumentParts on PdfConverter {
   /// The page label of [anchor]'s page, or `?`.
   String _anchorLabel(String anchor) {
     final page = _anchorPages[anchor];
-    return page == null ? '?' : _pageLabel(page);
+    return page == null ? '?' : _shownPage(_pageLabel(page));
   }
 
   /// The information of the PDF (the gem's `build_pdf_info`; the producer
@@ -2295,7 +2295,7 @@ extension _DocumentParts on PdfConverter {
       );
     }
     final map = PageMap(
-      labels: [for (var i = 1; i <= pageCount; i++) _pageLabel(i)],
+      labels: [for (var i = 1; i <= pageCount; i++) _shownPage(_pageLabel(i))],
       blocks: blocks,
     );
     final dir = document.attr('outdir') ?? document.attr('docdir') ?? '.';

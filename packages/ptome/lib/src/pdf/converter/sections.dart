@@ -385,9 +385,9 @@ extension _Sections on PdfConverter {
     final signifier = !isNumbered || _document.doctype != 'book'
         ? null
         : part
-        ? _document.attributes['part-signifier'] ?? 'Part'
+        ? _document.attributes['part-signifier'] ?? _english('Part')
         : section.level == 1
-        ? _document.attributes['chapter-signifier'] ?? 'Chapter'
+        ? _document.attributes['chapter-signifier'] ?? _english('Chapter')
         : null;
     return _render(template, {
       'title': section.title ?? '',
@@ -472,8 +472,8 @@ extension _Sections on PdfConverter {
             : '${section.sectnum()} $title';
         if (!formal) return numbered;
         final signifier = level == 0
-            ? doc.attributes['part-signifier'] ?? 'Part'
-            : doc.attributes['chapter-signifier'] ?? 'Chapter';
+            ? doc.attributes['part-signifier'] ?? _english('Part')
+            : doc.attributes['chapter-signifier'] ?? _english('Chapter');
         return signifier.isEmpty ? numbered : '$signifier $numbered';
       }
       return '${section.sectnum()} $title';
@@ -481,6 +481,11 @@ extension _Sections on PdfConverter {
     if (level == 0) return title;
     return section.captionedTitle();
   }
+
+  /// [word], the English signifier the gem gives a part or chapter
+  /// without one, unless the labels are in the document's language and
+  /// its locale file has no word for it (empty: none).
+  String _english(String word) => localeLabelsApply(_document) ? '' : word;
 
   /// The tracking theme key [key] gives text [size] points, in ems: a
   /// length (points) or ems (modern engine); null when it gives none.

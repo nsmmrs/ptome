@@ -21,6 +21,12 @@ JavaScript (whose own tables differ in age and in rules):
 - **Quotation marks** (CLDR 48.2): `quotationMarks('de')` gives a
   language's outer and inner marks (`„` `“`, `‚` `‘`), the locale found
   as ICU 78.3 finds it.
+- **Counter styles** (CSS Counter Styles Level 3, the W3C's Ready-made
+  Counter Styles): `CounterStyle.named('hiragana').format(3)` writes a
+  number in a script's numerals or letters (203 styles: `arabic-indic`,
+  `hebrew`, `cjk-ideographic`, `ethiopic-numeric`...), as WeasyPrint
+  writes them; `defaultNumberingSystem('ar-EG')` the digits a language
+  writes its numbers in (CLDR 48.2: `arab`), `formatDigits` in them.
 - **Emoji** (UTS #51, Unicode 18.0.0): the emoji properties
   (`isEmojiPresentation`, `isExtendedPictographic`...) and
   `emojiSequenceLength`, where a flag, a ZWJ sequence or a keycap shown
@@ -68,4 +74,6 @@ MIT; see [LICENSE](LICENSE). The Unicode Character Database files in
 `vendor/ucd/` and the tables generated from them are under the Unicode
 License v3 (`vendor/ucd/*/license.txt`), as are CLDR's files in
 `vendor/cldr/` and the tables generated from them
-(`vendor/cldr/*/LICENSE`).
+(`vendor/cldr/*/LICENSE`). The counter styles in `vendor/w3c/` and the
+table generated from them are the W3C's, under the W3C Software and
+Document License (`vendor/w3c/LICENSE`).

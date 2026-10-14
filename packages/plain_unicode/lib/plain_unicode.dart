@@ -13,6 +13,10 @@
 /// - Collation (UTS #10, CLDR 48.2): `Collator`, strings ordered as a
 ///   language orders them, and an index's headings.
 /// - Quotation marks by language (CLDR 48.2): `quotationMarks`.
+/// - Counter styles (CSS Counter Styles Level 3 and the W3C's Ready-made
+///   Counter Styles): numbers written in a script's numerals or letters
+///   (`CounterStyle`), and the numbering system a language writes its
+///   numbers in by default (CLDR 48.2): `defaultNumberingSystem`.
 /// - Emoji (UTS #51, Unicode 18.0.0): the emoji properties and where an
 ///   emoji presentation sequence (a flag, a ZWJ sequence...) starts and
 ///   ends: `emojiSequenceLength`.
@@ -34,6 +38,12 @@ export 'src/bidi_data.g.dart' show bidiUnicodeVersion;
 export 'src/case.dart' show isCaseIgnorable, isCased, lowerCase, upperCase;
 export 'src/case_data.g.dart' show caseMappingUnicodeVersion;
 export 'src/collation.dart' show CollationKey, Collator;
+export 'src/counter_styles.dart'
+    show
+        CounterStyle,
+        defaultNumberingSystem,
+        formatDigits,
+        numberingSystemDigits;
 export 'src/emoji.dart' show emojiSequenceLength;
 export 'src/line_break.dart'
     show

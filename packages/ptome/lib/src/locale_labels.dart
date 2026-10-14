@@ -78,6 +78,22 @@ bool _localized(Document document) =>
       _ => true,
     };
 
+/// Whether [document]'s labels are in its language: a locale file for its
+/// `lang`, read ([applyLocaleLabels]).
+bool localeLabelsApply(Document document) => switch (document.attr('lang')) {
+  final lang? => _localized(document) && localeFileFor(lang) != null,
+  null => false,
+};
+
+/// The signifiers and reference words whose English defaults a locale file
+/// that doesn't translate them takes away (a Japanese chapter's number
+/// stands without "Chapter").
+const List<String> _untranslated = [
+  'chapter-refsig',
+  'part-refsig',
+  'section-refsig',
+];
+
 /// Sets [document]'s labels from its language's locale file: each entry of
 /// the file (`:name: value`, or `ifdef::other[:name: value]` when `other`
 /// is set) whose attribute the author didn't set (or turned on, empty or
@@ -101,6 +117,7 @@ void applyLocaleLabels(Document document) {
   final entry = RegExp(
     r'^(?:ifdef::([\w-]+)\[:([\w-]+):\s*(.*)\]|:([\w-]+):\s*(.*))$',
   );
+  final set = <String>{};
   for (final line in EmbeddedData.files[path]!.split('\n')) {
     if (line.startsWith('//')) continue;
     final match = entry.firstMatch(line.trim());
@@ -115,10 +132,14 @@ void applyLocaleLabels(Document document) {
         condition == name &&
         (attributes[name]!.isEmpty || attributes[name] == _english[name]);
     if (!enabled && !free(name)) continue;
+    set.add(name);
     attributes[name] = value.trimRight().replaceAllMapped(
       RegExp(r'\{([\w-]+)\}'),
       (m) => attributes[m[1]!] ?? m[0]!,
     );
+  }
+  for (final name in _untranslated) {
+    if (!set.contains(name) && free(name)) attributes.remove(name);
   }
   final key = path.substring('locale/attributes-'.length, path.length - 5);
   if (_indexReferences[key] case (final see, final also)) {

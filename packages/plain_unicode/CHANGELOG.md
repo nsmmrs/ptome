@@ -2,6 +2,17 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Counter styles (FEAT-ndn74f): `CounterStyle` writes numbers in the
+  counter styles of CSS Counter Styles Level 3 (its predefined styles, the
+  longhand Chinese, Japanese and Korean styles, Ethiopic numerals) and the
+  W3C's Ready-made Counter Styles, 203 in all (`vendor/w3c`), with their
+  prefixes, suffixes, ranges and fallbacks; `cssRule` as a CSS rule,
+  `forNumberingSystem` the style of a CLDR numbering system.
+  `defaultNumberingSystem` (CLDR 48.2's `defaultNumberingSystem`, `-u-nu-`
+  honored), `numberingSystemDigits` and `formatDigits`. Checked against
+  the specification's tables and WeasyPrint 70's `counter()` and markers
+  (`tool/oracles/weasyprint`).
+
 - `vendor/icu/LICENSE` keeps the parts of ICU's LICENSE that apply to the
   word-break dictionaries taken (the Unicode License, ICU's older licence,
   the Lao and Burmese dictionaries' notices), not those for ICU4C's and

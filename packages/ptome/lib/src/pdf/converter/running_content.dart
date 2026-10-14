@@ -89,6 +89,24 @@ extension _RunningContent on PdfConverter {
     return '${virtual + _folioStart - 1}';
   }
 
+  /// Page label [label] (or a range of them, `12-15`) as the pages show
+  /// it (Ptome's; not under `asciidoctor-compat`): its numbers in the
+  /// counter style `page_numbering_style` names (`cjk-decimal`,
+  /// `arabic-indic`, `upper-roman`), else in the document's numbering
+  /// system's digits ([localDigits]).
+  String _shownPage(String label) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return label;
+    if (_s('page_numbering_style') case final name?) {
+      if (CounterStyle.named(name) case final style?) {
+        return label.replaceAllMapped(
+          RegExp('[0-9]+'),
+          (m) => style.format(int.parse(m[0]!)),
+        );
+      }
+    }
+    return localDigits(_document, label);
+  }
+
   /// The number of the first page after the front matter (`folio-start`;
   /// modern engine).
   int get _folioStart => _folioStartValue ??= () {
@@ -173,7 +191,7 @@ extension _RunningContent on PdfConverter {
     }
 
     final virtual = number - _skip.$2;
-    final label = _pageLabel(number);
+    final label = _shownPage(_pageLabel(number));
     final side = _sideOf(_folio.physical ? number : virtual);
     final pageWidth = page.template.size.width;
     final pageHeight = page.template.size.height;

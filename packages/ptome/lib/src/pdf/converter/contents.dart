@@ -38,40 +38,59 @@ final class _NeedsRoom implements BaselineContent {
   (double, double) intrinsicWidths() => content.intrinsicWidths();
 }
 
-enum _NumeralKind { decimal, letters, roman, none }
+enum _NumeralKind { decimal, letters, roman, counter, none }
 
 /// A list numeral (the gem's numbering: integers, letters by Ruby's
-/// `String#next`, roman numerals, or none).
+/// `String#next`, roman numerals, or none; Ptome's: a CSS counter style).
 final class _Numeral {
   const new decimal(this.value)
     : kind = _NumeralKind.decimal,
       letters = '',
-      upper = false;
+      upper = false,
+      style = null;
 
   const new letters(this.letters)
     : kind = _NumeralKind.letters,
       value = 0,
-      upper = false;
+      upper = false,
+      style = null;
 
   const new roman(this.value, {required this.upper})
     : kind = _NumeralKind.roman,
-      letters = '';
+      letters = '',
+      style = null;
+
+  /// [value] in the counter style [style].
+  const new counter(CounterStyle this.style, this.value)
+    : kind = _NumeralKind.counter,
+      letters = '',
+      upper = false;
 
   const new none()
     : kind = _NumeralKind.none,
       value = 0,
       letters = '',
-      upper = false;
+      upper = false,
+      style = null;
 
   final _NumeralKind kind;
   final int value;
   final String letters;
   final bool upper;
+  final CounterStyle? style;
+
+  /// The list item's marker: the numeral and a period, or the counter
+  /// style's prefix and suffix (its space left to the list's gap).
+  String get marker => switch (kind) {
+    _NumeralKind.counter => '${style!.prefix}$text${style!.suffix.trimRight()}',
+    _ => '$text.',
+  };
 
   String get text => switch (kind) {
     _NumeralKind.decimal => '$value',
     _NumeralKind.letters => letters,
     _NumeralKind.roman => value < 1 ? '$value' : _romanOf(value, upper: upper),
+    _NumeralKind.counter => style!.format(value),
     _NumeralKind.none => '',
   };
 
@@ -79,12 +98,14 @@ final class _Numeral {
     _NumeralKind.decimal => _Numeral.decimal(value + 1),
     _NumeralKind.letters => _Numeral.letters(_succ(letters)),
     _NumeralKind.roman => _Numeral.roman(value + 1, upper: upper),
+    _NumeralKind.counter => _Numeral.counter(style!, value + 1),
     _NumeralKind.none => this,
   };
 
   _Numeral get previous => switch (kind) {
     _NumeralKind.decimal => _Numeral.decimal(value - 1),
     _NumeralKind.roman => _Numeral.roman(value - 1, upper: upper),
+    _NumeralKind.counter => _Numeral.counter(style!, value - 1),
     _ => this,
   };
 

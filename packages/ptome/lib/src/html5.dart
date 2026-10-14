@@ -35,6 +35,7 @@ import 'package:ptome/src/jump.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/look/document_look.dart';
 import 'package:ptome/src/look/model.dart';
+import 'package:ptome/src/numbering.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/quotation.dart';
 import 'package:ptome/src/ruby_semantics.dart';
@@ -470,6 +471,10 @@ class Html5Converter extends BuiltInConverter {
     // `vertical-rl` and `horizontal-tb` roles, the `tcy` role.)
     final writingModes = writingModeCss(node, CompatFormat.html);
     if (writingModes.isNotEmpty) result.add('<style>\n$writingModes</style>');
+
+    // (The counter styles its lists use that browsers don't know.)
+    final counters = counterStyleCss(node, CompatFormat.html);
+    if (counters.isNotEmpty) result.add('<style>\n$counters</style>');
 
     // A units document: its note entries and asides beside the text.
     if (node.hasAttr('units')) {
@@ -1570,9 +1575,20 @@ class Html5Converter extends BuiltInConverter {
         ? ' start="${_s(node.attr('start'))}"'
         : '';
     final reversedAttribute = _optionAttribute(node, 'reversed');
+    // (A counter style Asciidoctor doesn't know, or the language's
+    // numerals: Ptome's.)
+    final styleAttribute = switch (listCounterStyle(node)) {
+      final counter?
+          when !asciidoctorCompat(
+            node.document! as Document,
+            CompatFormat.html,
+          ) =>
+        ' style="list-style-type: ${counter.name}"',
+      _ => '',
+    };
     result.add(
       '<ol class="${_s(node.style)}"'
-      '$typeAttribute$startAttribute$reversedAttribute>',
+      '$typeAttribute$startAttribute$reversedAttribute$styleAttribute>',
     );
 
     for (final item in node.items) {
@@ -2312,9 +2328,16 @@ class Html5Converter extends BuiltInConverter {
   static String _footnoteLabel(Document document, Footnote footnote) =>
       renderNumbered(
         document.attr('footnote-label-template') ?? '{{number}}. ',
-        _s(footnote.index),
+        localDigits(document, _s(footnote.index)),
         (n) => '<a href="#_footnoteref_${_s(footnote.index)}">$n</a>',
       );
+
+  /// Footnote number [index] as [node]'s document writes its numbers
+  /// ([localDigits]).
+  static String _number(Inline node, String index) => switch (node.document) {
+    final Document document => localDigits(document, _s(index)),
+    _ => _s(index),
+  };
 
   /// Converts the [node] inline footnote.
   String? convertInlineFootnote(Inline node) {
@@ -2327,7 +2350,7 @@ class Html5Converter extends BuiltInConverter {
       if (node.type == 'xref') {
         final marker = renderNumbered(
           template,
-          _s(index),
+          _number(node, index),
           (n) =>
               '<a class="footnote" href="#_footnotedef_${_s(index)}" title="View footnote.">$n</a>',
         );
@@ -2336,7 +2359,7 @@ class Html5Converter extends BuiltInConverter {
       final idAttr = node.id != null ? ' id="_footnote_${node.id}"' : '';
       final marker = renderNumbered(
         template,
-        _s(index),
+        _number(node, index),
         (n) =>
             '<a id="_footnoteref_${_s(index)}" class="footnote" href="#_footnotedef_${_s(index)}" title="View footnote.">$n</a>',
       );

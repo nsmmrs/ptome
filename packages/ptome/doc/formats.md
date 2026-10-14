@@ -81,6 +81,30 @@ cross-references use the language's words too (`siehe`, `siehe auch`;
 keeps the English; nothing changes under `asciidoctor-compat` (any
 format), unless `:locale-labels: true`.
 
+The numbers a document generates are written in its language's digits,
+the numbering system CLDR (48.2) gives the language: Arabic-Indic digits
+(`١٢٣`) in Egyptian, Saudi and most other regional Arabic (`ar-EG`;
+Arabic as such, `ar`, and Maghrebi Arabic keep 0 to 9, as CLDR has
+them), Persian digits (`۱۲۳`) in Persian and Pashto, Devanagari in
+Marathi and Nepali, Bengali in Bengali and Assamese, Burmese, Tibetan in
+Dzongkha. Section numbers, caption numbers (`جدول ١`), footnote numbers
+and numbered lists take them in every format, and the PDF's page
+numbers, table of contents and index too. `:numbering-system:` names
+another (CLDR's ids: `latn`, `arab`, `arabext`, `deva`, `hanidec`,
+`fullwide`...), as does a `-u-nu-` extension of `lang` (`ar-u-nu-arab`);
+the text's own digits are left as written. An ordered list can be
+numbered in any counter style CSS defines, its name as the list's style:
+`[hiragana]`, `[katakana-iroha]`, `[cjk-ideographic]`,
+`[simp-chinese-formal]`, `[japanese-informal]`, `[korean-hangul-formal]`,
+`[hebrew]`, `[armenian]`, `[georgian]`, `[lower-russian]`,
+`[arabic-abjad]`, `[devanagari]`, `[thai]`, `[ethiopic-numeric]`... (CSS
+Counter Styles Level 3's and the W3C's Ready-made Counter Styles, 203 in
+all), with the style's own suffix (`あ、`, `а)`); HTML and EPUB write
+CSS's `list-style-type`, with a `@counter-style` rule for a style
+browsers don't predefine (checked with epubcheck). `:sectnums-style:`
+numbers the sections in one (`upper-roman`: `II.I`). Not under
+`asciidoctor-compat`.
+
 AsciiDoc's typographic quotes (`"`text`"` and `'`text`'`) are set in the
 marks of the text's language, CLDR's (48.2): `„text“` and `‚text‘` in
 German, `«text»` in French, `「text」` and `『text』` in Japanese and in

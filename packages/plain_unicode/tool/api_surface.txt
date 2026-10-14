@@ -9,6 +9,8 @@ LineBreakOffsets lineBreakOffsets(String text, {bool dictionary = true})
 List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
 List<LineBreak> lineBreaks(String text, {bool dictionary = true})
 QuotationMarks quotationMarks(String language)
+String defaultNumberingSystem(String language)
+String formatDigits(int value, String id)
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
@@ -16,6 +18,7 @@ String get propertiesUnicodeVersion
 String lowerCase(String text, {bool finalSigma = false, String? language})
 String scriptOf(int codePoint)
 String upperCase(String text, {String? language})
+String? numberingSystemDigits(String id)
 VerticalOrientation verticalOrientation(int codePoint)
 bool hasRightToLeft(String text)
 bool isCaseIgnorable(int rune)
@@ -236,6 +239,18 @@ final class Collator
   String? indexLabel(String text)
   int compare(String a, String b)
   static Iterable<String> tailoredLocales
+final class CounterStyle
+  CounterStyle? forNumberingSystem(String id)
+  CounterStyle? named(String name)
+  String cssRule
+  String format(int value)
+  String marker(int value)
+  String name
+  String prefix
+  String suffix
+  String toString()
+  bool predefined
+  static List<String> names
 final class LineBreak
   LineBreak(int offset, {required bool mandatory})
   String toString()

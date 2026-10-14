@@ -536,7 +536,7 @@ extension _InlineElements on PdfConverter {
     // Linked only on screen (the gem's `media`).
     final screen = (_document.attr('media') ?? 'screen') == 'screen';
     String link(String anchor, String text) =>
-        screen ? '<a anchor="$anchor">$text</a>' : text;
+        screen ? '<a anchor="$anchor">${_shownPage(text)}</a>' : text;
     if (!term.isContainer && screen) {
       markup.write('<a id="${term.anchor}">$_dummyText</a>');
     }
@@ -586,10 +586,15 @@ extension _InlineElements on PdfConverter {
           default:
             numbers = [for (final d in destinations) link(d.anchor, d.page!)];
         }
+        // (In print, unlinked: shown as the pages show them.)
+        final shown = [
+          for (final number in numbers)
+            if (screen) number else _shownPage(number),
+        ];
         if (column) {
-          pagenums = numbers.join(', ');
+          pagenums = shown.join(', ');
         } else {
-          for (final number in numbers) {
+          for (final number in shown) {
             markup.write(', $number');
           }
         }
@@ -793,7 +798,7 @@ extension _InlineElements on PdfConverter {
         '[{{number}}]';
     final marker = renderNumbered(
       template,
-      label,
+      caller == null ? localDigits(_document, label) : label,
       (n) =>
           '<a anchor="_footnotedef_$index"${_footnoteLabelKey(index)}>$n</a>',
     );
@@ -808,7 +813,7 @@ extension _InlineElements on PdfConverter {
     (_s('footnotes_label_content') ??
             _document.attr('footnote-label-template')) ??
         '[{{number}}] ',
-    label,
+    localDigits(_document, label),
     (n) => '<a anchor="_footnoteref_$index"${_footnoteLabelKey(index)}>$n</a>',
   );
 
@@ -865,8 +870,9 @@ extension _InlineElements on PdfConverter {
       }
       number++;
       final key = 'fn$index';
-      if (_layoutLabels[key] != '$number') {
-        _layoutLabels[key] = '$number';
+      final label = localDigits(_document, '$number');
+      if (_layoutLabels[key] != label) {
+        _layoutLabels[key] = label;
         changed.add(index);
       }
     }

@@ -81,9 +81,16 @@ const List<(String, String, String, String)> _vendored = [
   (
     'plain_unicode',
     'Unicode CLDR',
-    'the quotation marks, collation tailorings and index characters by '
-        'language',
+    'the quotation marks, collation tailorings, index characters and '
+        'numbering systems by language',
     'plain_unicode/vendor/cldr/48.2.0/LICENSE',
+  ),
+  (
+    'plain_unicode',
+    'W3C counter styles',
+    'the counter styles of CSS Counter Styles Level 3 and Ready-made '
+        'Counter Styles',
+    'plain_unicode/vendor/w3c/LICENSE',
   ),
   (
     'plain_unicode',

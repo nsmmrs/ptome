@@ -9,12 +9,14 @@
 library;
 
 import 'package:meta/meta.dart';
+import 'package:plain_unicode/plain_unicode.dart' show CounterStyle;
 import 'package:ptome/src/abstract_node.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/document.dart' show Document, DocumentAttributeEntry;
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/inline_tree.dart';
+import 'package:ptome/src/numbering.dart';
 import 'package:ptome/src/output_template.dart';
 import 'package:ptome/src/ruby_semantics.dart';
 import 'package:ptome/src/rx.dart';
@@ -534,13 +536,14 @@ abstract class AbstractBlock extends AbstractNode {
           : null;
       String? index;
       if (chapter != null) {
-        index = document!.incrementAndStoreCounter(
-          '$kind-number-$chapter',
-          this,
+        index = _localDigits(
+          document!.incrementAndStoreCounter('$kind-number-$chapter', this),
         );
         numeral = '$chapter.$index';
       } else {
-        numeral = document!.incrementAndStoreCounter('$kind-number', this);
+        numeral = _localDigits(
+          document!.incrementAndStoreCounter('$kind-number', this),
+        );
       }
       // Ptome's `<kind>-caption-template` (ADR-0010): the caption from
       // a template of `{{caption}}` and `{{number}}` (and, numbered by
@@ -560,6 +563,31 @@ abstract class AbstractBlock extends AbstractNode {
           _caption = '$prefix $numeral. ';
       }
     }
+  }
+
+  /// [text]'s digits in the document's numbering system (Ptome's,
+  /// [localDigits]).
+  String _localDigits(String text) => switch (document) {
+    final Document doc => localDigits(doc, text),
+    _ => text,
+  };
+
+  /// [ordinal] as a section's number: in the counter style
+  /// `sectnums-style` names (Ptome's: `upper-roman`, `cjk-ideographic`),
+  /// else its digits in the document's numbering system.
+  String _sectionNumeral(String ordinal) {
+    final doc = document;
+    if (doc is Document && !anyAsciidoctorCompat(doc)) {
+      if (doc.attr('sectnums-style') case final name?) {
+        if ((CounterStyle.named(name), int.tryParse(ordinal)) case (
+          final style?,
+          final value?,
+        )) {
+          return style.format(value);
+        }
+      }
+    }
+    return _localDigits(ordinal);
   }
 
   /// Whether `asciidoctor-compat` names the document's format.
@@ -613,7 +641,9 @@ abstract class AbstractBlock extends AbstractNode {
     // (While the document is parsed, the chapter isn't in it yet: the
     // next one.)
     if (!walk(document! as AbstractBlock)) count++;
-    return appendix ? String.fromCharCode(0x40 + count) : '$count';
+    return appendix
+        ? String.fromCharCode(0x40 + count)
+        : _sectionNumeral('$count');
   }
 
   /// Ptome's `<kind>-numbering: all` (`listing-numbering`,
@@ -658,11 +688,13 @@ abstract class AbstractBlock extends AbstractNode {
                   : '$caption ${section.numeral}: ',
           };
     } else if (sectname == 'chapter' || target.chapterNumbering) {
-      section.numeral = document!.counter('chapter-number', '1');
+      section.numeral = _sectionNumeral(
+        document!.counter('chapter-number', '1'),
+      );
     } else {
       section.numeral = sectname == 'part'
           ? Helpers.intToRoman(_nextSectionOrdinal)
-          : _nextSectionOrdinal.toString();
+          : _sectionNumeral(_nextSectionOrdinal.toString());
       _nextSectionOrdinal += 1;
     }
   }

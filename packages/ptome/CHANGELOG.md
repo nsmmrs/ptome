@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Numbers in the language's numerals (FEAT-ndn74f): section, caption,
+  footnote and list numbers (and the PDF's page numbers) in the digits of
+  the numbering system CLDR gives `lang` (Arabic-Indic in `ar-EG`,
+  Persian in `fa`, Devanagari in `mr`), or `numbering-system`'s; ordered
+  lists in any of CSS's 203 counter styles (`[hiragana]`,
+  `[cjk-ideographic]`, `[hebrew]`, `[lower-russian]`), HTML and EPUB with
+  `list-style-type` and the `@counter-style` rules browsers lack;
+  `sectnums-style`; the PDF theme's `page_numbering_style`. A list marker
+  is as wide as its text in the fallback fonts. A language whose locale
+  file has no word for "Chapter" or "Part" drops the English one. Not
+  under `asciidoctor-compat`.
 - PDF/UA: a block's own `lang` reaches its structure elements and a
   span's marks its text, as PDF/UA-1 7.2 asks (FEAT-r90rkz).
 - Generated text in the document's language (FEAT-rss0h8): Asciidoctor's
