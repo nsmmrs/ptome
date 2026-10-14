@@ -567,11 +567,12 @@ final class Paragraph
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
   bool breakLongWords
+  bool eastAsian
   bool justifyToWidest
   bool rightToLeft
   bool riseInLineHeight

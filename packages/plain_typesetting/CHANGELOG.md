@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- East Asian composition (FEAT-x45qvj), from JLREQ and CLREQ, on by
+  default (`Paragraph.eastAsian`): of two full-width punctuation marks in
+  a row one is set half wide by the font's `halt` (as OpenType's `chws`
+  would, for fonts without it); a quarter em between Han or kana and a
+  Latin letter or digit, also between runs; a justified line written
+  without spaces stretched between its characters (Thai, Lao, Khmer and
+  Myanmar between their words), as much at each as at a space, and the
+  breaker given that stretch. Kinsoku is UAX #14's, checked. The CJK
+  features (`chws`, `halt`, `palt`, `vert`, `vrt2`) shape as HarfBuzz
+  does, and the HarfBuzz test now passes features to the native oracle
+  (it dropped them).
+
 - Hyphenation in the shaped scripts (TASK-1wlzq5): a word with vowel
   signs, viramas or combining accents is hyphenated (only words of class
   AL and HL letters were, so no Indic word ever was; BUG-9t3kgj), and a

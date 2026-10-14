@@ -12,6 +12,7 @@ import 'package:meta/meta.dart';
 import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
+import 'package:plain_typesetting/src/layout/east_asian.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
 import 'package:plain_typesetting/src/layout/kashida.dart';
 import 'package:plain_typesetting/src/link.dart';
@@ -249,6 +250,7 @@ final class Paragraph {
     this.rightToLeft = false,
     this.breakOpportunities = BreakOpportunities.unicode,
     this.kashida = 0,
+    this.eastAsian = true,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -281,10 +283,17 @@ final class Paragraph {
     rightToLeft: rightToLeft,
     breakOpportunities: breakOpportunities ?? this.breakOpportunities,
     kashida: kashida,
+    eastAsian: eastAsian,
   );
 
   /// The inline content.
   final List<InlineContent> content;
+
+  /// Whether Han, kana and the other text written without spaces is set
+  /// as JLREQ and CLREQ have it (see `east_asian.dart`): full-width
+  /// punctuation squeezed, a quarter em between Han or kana and Latin,
+  /// justified lines stretched between characters.
+  final bool eastAsian;
 
   /// How far each word of a justified line of Arabic may be lengthened by
   /// kashida (tatweel between its letters, at the place its letters rank
@@ -1338,6 +1347,19 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     items.add(BoxItem(run, rest, run.style.measure(rest)));
   }
 
+  // East Asian glue where the line may break at [at] (not after a
+  // hyphen, nor after glue).
+  GlueItem? eastAsianGlueAt(int at) {
+    final run = lastRun;
+    if (!paragraph.eastAsian ||
+        run == null ||
+        items.lastOrNull is GlueItem ||
+        whole.codeUnitAt(at - 1) == 0x2d) {
+      return null;
+    }
+    return _eastAsianGlue(whole, at, run.style.size);
+  }
+
   var offset = 0;
   // (Whether spaces were the last of the text.)
   var spaced = false;
@@ -1381,6 +1403,10 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         items.add(
           PenaltyItem(run.style.measure('-'), 50, flagged: true, run: run),
         );
+      } else if (eastAsianGlueAt(at) case final glue?) {
+        // (Where text written without spaces may break: its stretch; a
+        // quarter em between Han or kana and Latin.)
+        items.add(glue);
       } else if (items.lastOrNull is! GlueItem) {
         // After a compound's hyphen, a hyphenated break (TeX's explicit
         // hyphens, \exhyphenpenalty 50), the hyphen repeated on the next
@@ -1602,6 +1628,29 @@ List<String> _clusters(String text) {
   }
   if (cluster.isNotEmpty) clusters.add(cluster.toString());
   return clusters;
+}
+
+/// The glue between the characters of [text] around [at] where a line
+/// may break there, for East Asian composition: a quarter em of [size]
+/// between Han or kana and Latin, stretching and shrinking by an eighth;
+/// none, stretching by a quarter, between characters written without
+/// spaces; else null.
+GlueItem? _eastAsianGlue(String text, int at, double size) {
+  final before = text.codeUnitAt(at - 1);
+  final after = text.codeUnitAt(at);
+  final a = before & 0xfc00 == 0xdc00 && at >= 2
+      ? text.runes.elementAt(text.substring(0, at).runes.length - 1)
+      : before;
+  final b = after & 0xfc00 == 0xd800 && at + 1 < text.length
+      ? 0x10000 + ((after & 0x3ff) << 10) + (text.codeUnitAt(at + 1) & 0x3ff)
+      : after;
+  if (cjkWesternBoundary(a, b)) {
+    return GlueItem(null, '', size / 4, size / 8, size / 8);
+  }
+  if (isSpaceless(a) && isSpaceless(b)) {
+    return GlueItem(null, '', 0, size / 4, 0);
+  }
+  return null;
 }
 
 /// Whether [text] is a word to hyphenate: letters, and the marks and
@@ -2083,7 +2132,39 @@ Line _line(
               );
           }
         }
+        // (East Asian spacing: punctuation squeezed, a quarter em between
+        // Han or kana and Latin.)
+        if (paragraph.eastAsian && !rightToLeft && slotWidth == null) {
+          glyphs = eastAsianSpacing(glyphs, style);
+        }
         final width = slotWidth ?? style.widthOf(glyphs);
+        // (And between this run and the one before, where they meet.)
+        if (paragraph.eastAsian &&
+            !rightToLeft &&
+            slotWidth == null &&
+            text.isNotEmpty &&
+            shaped.isNotEmpty &&
+            !directions[shaped.length - 1]) {
+          if (shaped.last
+              case (
+                final TextRun before,
+                final beforeText,
+                final beforeGlyphs,
+                final beforeWidth,
+              )
+              when beforeText.isNotEmpty &&
+                  before.slotWidth == null &&
+                  cjkWesternBoundary(beforeText.runes.last, text.runes.first)) {
+            final quarter = before.style.size / 4;
+            shaped.last = (
+              before,
+              beforeText,
+              beforeGlyphs,
+              beforeWidth + quarter,
+            );
+            natural += quarter;
+          }
+        }
         shaped.add((content, text, glyphs, width));
         natural += width;
         // (A slot's spaces don't stretch.)
@@ -2190,12 +2271,26 @@ Line _line(
       scale = 1 + (share / letters).clamp(-expansion, expansion);
     }
   }
-  final extra = !justified || spaces == 0
+  // (Text written without spaces stretches between its characters too,
+  // as much as at each space.)
+  final gaps = [
+    for (final (content, _, glyphs, _) in shaped)
+      if (justify &&
+          !overfull &&
+          paragraph.eastAsian &&
+          content is TextRun &&
+          content.slotWidth == null)
+        interCharacterGaps(glyphs)
+      else
+        const <int>[],
+  ];
+  final gapCount = gaps.fold(0, (sum, g) => sum + g.length);
+  final extra = !justified || spaces + gapCount == 0
       ? 0.0
       : overfull
       ? math.min<double>(0, (available / scale - natural) / spaces)
-      : (available / scale - natural) / spaces;
-  final width = (natural + extra * spaces) * scale;
+      : (available / scale - natural) / (spaces + gapCount);
+  final width = (natural + extra * (spaces + gapCount)) * scale;
   // (A justified paragraph's line that isn't stretched: by alignLast.)
   final align = paragraph.align == TextAlign.justify && !justify && !overfull
       ? paragraph.alignLast
@@ -2266,14 +2361,14 @@ Line _line(
                 wordSpacing: style.wordSpacing + extra,
                 horizontalScaling: style.horizontalScaling * scale,
               );
-        final w = (natural + extra * count) * scale;
+        final w = (natural + extra * (count + gaps[i].length)) * scale;
         fragments.add(
           TextFragment(
             x,
             w,
             content,
             string,
-            glyphs,
+            widenGaps(glyphs, gaps[i], extra * 1000 / style.size),
             adjusted,
             rightToLeft: directions[i],
           ),

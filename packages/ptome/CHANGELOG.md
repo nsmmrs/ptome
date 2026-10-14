@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Japanese and Chinese set as JLREQ and CLREQ have it
+  (FEAT-x45qvj): full-width punctuation squeezed in pairs, a quarter em
+  beside Latin letters and digits, justified lines stretched between
+  characters (Thai, Lao, Khmer and Burmese between words), no line
+  starting with a closing mark or small kana. Justified Thai was ragged.
 - PDF: hyphenation in the newly shaped scripts (TASK-1wlzq5): Hindi,
   Marathi, Sanskrit, Bengali, Assamese, Punjabi, Gujarati, Odia, Tamil,
   Telugu, Kannada, Malayalam, Coptic, Georgian, Ethiopic, Thai and

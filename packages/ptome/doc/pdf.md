@@ -220,6 +220,7 @@ wide as it is set.
 | Khmer, Myanmar | Khmer, Burmese, Mon, Shan | Their own shapers: Coeng and Ro, kinzi, medial Ra and left vowels reordered. Lines break between words (below). |
 | Thai, Lao | Thai, Lao | SARA AM decomposed, its nikhahit over the marks before it. Lines break between words (below). |
 | Hangul | Korean, Middle Korean | Jamo composed into the syllable the font has, or set as conjoining jamo; tone marks before their syllable. |
+| Han, Hiragana, Katakana, Bopomofo | Japanese, Chinese | Shaped by the font's tables (its `halt`, `palt` and vertical forms checked against HarfBuzz); composed as JLREQ and CLREQ have it (below). |
 
 Thai, Lao, Khmer and Burmese are written without spaces between words,
 so a line may break between any two of a run's words, found as ICU 78.3
@@ -228,6 +229,16 @@ against ICU's line breaks), the reading that lets the most words follow
 chosen, a letter no word starts with joined to the word before, never a
 break before a combining mark. (`base_line_breaking: segments`, as
 asciidoctor-pdf, breaks only at spaces.)
+
+Japanese and Chinese are composed as the W3C's JLREQ and CLREQ describe:
+of two full-width punctuation marks in a row, one is set half wide (the
+font's own half-width metrics, `halt`), so `」「` and `。」` don't leave a
+full em's blank; a quarter em separates Han or kana from Latin letters
+and digits (`PDF の`, `2026 年`); a justified line stretches between its
+characters; and no line starts with a closing mark, a full stop, small
+kana or the prolonged sound mark, nor ends with an opening bracket
+(UAX #14). Thai, Lao, Khmer and Burmese lines stretch between their
+words. Modern engine.
 
 Hyphenation (`:hyphens:`, the document's `lang`) works in every script
 hyph-utf8 has patterns for: Hindi, Marathi, Sanskrit, Bengali, Assamese,

@@ -211,7 +211,10 @@ void main() {
     final narrow = body.measure('well-known') - 1;
     expect(lines('well-known', width: narrow).map(textOf), ['well-', 'known']);
     final items = paragraphItems(Paragraph([TextRun('漢字漢字', body)]));
-    expect(items.whereType<PenaltyItem>().length, 3 + 1);
+    // (Between ideographs, glue that stretches, East Asian justification;
+    // the forced break at the end.)
+    expect(items.where((i) => i is GlueItem && i.stretch.isFinite).length, 3);
+    expect(items.whereType<PenaltyItem>().length, 1);
   });
 
   test('line height: font, multiple, exact; inline images', () {

@@ -35,3 +35,4 @@ notosanslao-subset.ttf | NotoSansLao-Regular.ttf | lao.txt | ltr
 notosanscjk-hangul-subset.otf | /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc#0 | hangul.txt | ltr
 notonaskharabic-persian-urdu.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoNaskhArabic.ttf | persian.txt urdu.txt | rtl
 notonastaliqurdu-subset.ttf | /home/nes/.cache/asciidart-work/fonts-extra/NotoNastaliqUrdu.ttf | persian.txt urdu.txt | rtl
+notosanscjk-jp-subset.otf | /usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc#0 | japanese.txt chinese.txt | ltr
