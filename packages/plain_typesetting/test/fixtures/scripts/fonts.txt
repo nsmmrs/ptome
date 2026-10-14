@@ -1,0 +1,7 @@
+# Each test font (in test/fonts), the font it is subset from (tool/subset_test_fonts.dart),
+# the sample lines it shapes, and their direction.
+notoserif-scripts.ttf | NotoSerif-Regular.ttf | cyrillic.txt greek.txt vietnamese.txt | ltr
+notosansarmenian-subset.ttf | NotoSansArmenian-Regular.ttf | armenian.txt | ltr
+notosansgeorgian-subset.ttf | NotoSansGeorgian-Regular.ttf | georgian.txt | ltr
+notosanscoptic-subset.ttf | NotoSansCoptic-Regular.ttf | coptic.txt | ltr
+notosansethiopic-subset.ttf | NotoSansEthiopic-Regular.ttf | ethiopic.txt | ltr

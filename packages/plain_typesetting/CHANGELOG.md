@@ -2,6 +2,15 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Shaping is HarfBuzz 14.6's pipeline (`lib/src/shaping/`): the plan
+  (the script's tags, the shaper, the features in their stages with
+  pauses), normalization (decomposed and recomposed as the font has the
+  characters, marks in HarfBuzz's order), the shaper's masks, GSUB, then
+  GPOS and the marks' widths. Text with marks, or in any script but
+  Latin, Greek and Cyrillic, takes it; Cyrillic, polytonic Greek,
+  Vietnamese, Armenian, Georgian, Coptic and Ge'ez shape glyph for glyph
+  as HarfBuzz does (`test/harfbuzz_scripts_test.dart`), as Arabic and
+  Hebrew did.
 - HarfBuzz's licence (`vendor/harfbuzz/COPYING`), published with the
   package: the shaper follows HarfBuzz's features, their order and its
   Arabic shaper's rules.

@@ -13,7 +13,7 @@ import 'dart:math' as math;
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
-import 'package:plain_unicode/plain_unicode.dart' show hasRightToLeft;
+import 'package:plain_unicode/plain_unicode.dart' show hasRightToLeft, isMark;
 import 'package:ptome/src/cursor.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/pdf/fonts.dart';
@@ -1137,7 +1137,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   }
 
   /// [fragment] split where its font lacks glyphs a fallback font has
-  /// (the gem's `analyze_glyphs_for_fallback_font_support`).
+  /// (the gem's `analyze_glyphs_for_fallback_font_support`); a combining
+  /// mark (or a joiner, or a variation selector) stays in the font of the
+  /// character it follows where that font has it, so the two are shaped
+  /// together.
   static List<Fragment> _withFallbacks(
     Fragment fragment,
     TextState state,
@@ -1162,7 +1165,17 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
 
     for (final rune in fragment.text.runes) {
       String? family;
-      if (rune != 0 && !base.hasGlyph(rune) && rune != 10) {
+      final continues =
+          !first &&
+          (rune == 0x200d ||
+              (rune >= 0xfe00 && rune <= 0xfe0f) ||
+              (rune >= 0x0300 && isMark(rune)));
+      if (continues &&
+          (currentFamily == null
+              ? base.hasGlyph(rune)
+              : _font(currentFamily, base.style, context).hasGlyph(rune))) {
+        family = currentFamily;
+      } else if (rune != 0 && !base.hasGlyph(rune) && rune != 10) {
         for (final fallback in context.fallbacks) {
           if (_font(fallback, base.style, context).hasGlyph(rune)) {
             family = fallback;

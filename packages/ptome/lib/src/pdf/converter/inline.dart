@@ -40,6 +40,13 @@ extension _InlineElements on PdfConverter {
   bool get _singleByteFonts =>
       _choice('base_font_embedding', const ['composite', 'simple']) == 'simple';
 
+  /// Whether only right-to-left text is shaped in full
+  /// (`base_text_shaping: right_to_left`), as Prawn sets every other
+  /// script by its glyphs alone.
+  bool get _rightToLeftShapingOnly =>
+      _choice('base_text_shaping', const ['full', 'right_to_left']) ==
+      'right_to_left';
+
   /// Whether text is kerned by the font's `kern` table alone
   /// (`base_kerning_source: kern_table`) rather than by its GPOS pairs.
   bool get _kernTableOnly =>

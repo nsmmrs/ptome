@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `OpenTypeLayout` matches as HarfBuzz does: each glyph has its
+  properties (`GlyphProps`: its class from GDEF, or as its shaper guesses
+  it, and what substitutions made it), its syllable and what its
+  character is (`UnicodeFlags`); lookups (`LayoutLookup`) skip joiners or
+  not, and match within a syllable or not; a substitution updates the
+  glyph's class; `selectScript`, `featureLookups`, `requiredFeature` and
+  `searchFeature` choose the script and features as HarfBuzz's map does.
 - HarfBuzz's licence (`vendor/harfbuzz/COPYING`), published with the
   package: the OpenType layout follows HarfBuzz where the specification
   leaves it open.

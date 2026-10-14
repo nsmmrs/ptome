@@ -36,6 +36,7 @@ same (`benchmark/PARITY.md`).
 | `page_layer_clip` | `page` | `none` |
 | `base_glyph_widths` | `thousandths` | `exact` |
 | `base_kerning_source` | `kern_table` | `font` |
+| `base_text_shaping` | `right_to_left` | `full` |
 | `base_font_embedding` | `simple` | `composite` |
 | `url_breaks` | `delimiters` | `chicago` |
 | `base_slash_breaks` | `false` | `true` |
@@ -77,6 +78,7 @@ its title.
 | Key | Default | What it does |
 | --- | --- | --- |
 | `base_glyph_widths` | `exact` | How wide a glyph is: `exact`, its advance in the font; `thousandths`, its advance in whole 1000ths of the em, truncated, both where lines are measured and in the widths the PDF gives viewers. |
+| `base_text_shaping` | `full` | Which text is shaped by its font's layout tables in full, as HarfBuzz shapes it (see "Scripts"): `full`, text with marks and every script but Latin, Greek and Cyrillic; `right_to_left`, right-to-left text alone, every other script set by its glyphs, ligatures and kerning, as Prawn sets it. |
 | `base_kerning_source` | `font` | Which pairs kern text: `font`, the font's GPOS pair adjustments (its `kern` feature), else its `kern` table; `kern_table`, the first subtable of its `kern` table alone, as early font engines read it. |
 | `base_font_embedding` | `composite` | How fonts with TrueType outlines are embedded: `composite`, a Type0 font a face (two bytes a glyph, by glyph id); `simple`, simple TrueType fonts of up to 256 glyphs each (a byte a glyph, the space code 32 in each, so a justified line's word spacing is the `Tw` operator's rather than adjustments between the words). Either way the text extracts through a ToUnicode map. |
 | `base_line_breaking` | `auto` | How lines break: `auto` breaks justified and left-aligned text where the lines' demerits are least (Knuth and Plass's total fit with TeX's costs: even spacing, few hyphens, never two hyphens in a row if it can help it; ragged lines with even ends, as plain TeX's `\raggedright`) and centered or right-aligned text one line at a time; `optimal` optimizes any text; `greedy` fills one line at a time; `segments` fills one line at a time as Prawn's line wrap does (at every space, before and after a hyphen, a word that runs across a style change moved only from that change on, soft hyphens alone hyphenating). Otherwise a style change inside a word is never a break. |
@@ -193,6 +195,26 @@ US English), with the hyph-utf8 patterns for 72 languages
 | `:hyphens!:` (or theme `base_hyphens: false`) | Turns hyphenation off, of justified text too. |
 | `:hyphens:` (or theme `base_hyphens: true`) | Hyphenates all text, not only justified text, in the document's language. |
 | `:hyphens: de` (or `base_hyphens: de`) | Hyphenates all text in that language. A language without patterns is reported. |
+
+### Scripts
+
+Text is shaped as HarfBuzz 14.6 shapes it: the font's tables for the
+text's script (its OpenType script tags, as HarfBuzz picks them), the
+script's shaper, normalization to what the font has (a letter and its
+accents composed, or decomposed and the accents placed), then the
+substitutions and positions of the font's features in their stages.
+Each script below is checked glyph for glyph against HarfBuzz in Noto
+fonts (plain_typesetting's `test/harfbuzz_scripts_test.dart`).
+
+| Script | Languages | Notes |
+| --- | --- | --- |
+| Latin, Greek, Cyrillic | European languages, polytonic Greek, Vietnamese, Church Slavonic | Text without marks keeps the simple path (its glyphs, ligatures and kerning, as asciidoctor-pdf sets it); with combining marks it is shaped in full. |
+| Armenian, Georgian, Coptic, Ge'ez (Ethiopic) | Classical and modern Armenian, Georgian, Coptic (overlined nomina sacra), Ge'ez and Amharic | Shaped in full (contextual numerals, ligatures). |
+| Arabic, Hebrew | Arabic, Persian, Urdu; Hebrew with points and cantillation | Joining forms, right to left (below). |
+
+A combining mark stays in the font of the letter it is on: with
+`font_fallbacks`, a Coptic letter from Noto Sans Coptic keeps its
+overline even where the base font has one too.
 
 ### Right-to-left text
 

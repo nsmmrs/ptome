@@ -5,6 +5,21 @@ Uint8List assembleFont(Map<String, Uint8List> tables, {int sfntVersion = 0x00010
 Uint8List decodeWebFont(List<int> bytes)
 Uint8List subsetTrueType(OpenTypeFont font, Set<int> glyphs, {Map<int, int>? codes})
 Uint8List? subsetCff(Uint8List cff, Set<int>? glyphs)
+abstract final class GlyphProps
+  GlyphProps()
+  static int base
+  static int ligated
+  static int ligature
+  static int mark
+  static int multiplied
+  static int preserve
+  static int substituted
+abstract final class UnicodeFlags
+  UnicodeFlags()
+  static int hidden
+  static int ignorable
+  static int zwj
+  static int zwnj
 abstract interface class FontFiles
   ({DateTime modified, int size}) stat(String path)
   FontFiles()
@@ -127,18 +142,38 @@ final class InstalledFont
   int width
 final class LayoutGlyph
   LayoutGlyph(int glyph, int cluster, {int mask = -1})
+  bool isLigated
+  bool isLigature
+  bool isMark
+  bool isMultiplied
+  bool isSubstituted
   int attachChain (settable)
   int attachType (settable)
+  int category (settable)
+  int char (settable)
   int cluster (settable)
+  int combiningClass (settable)
   int components (settable)
+  int flags (settable)
+  int generalCategory (settable)
   int glyph (settable)
   int ligatureComponent (settable)
   int ligatureId (settable)
   int mask (settable)
+  int position (settable)
+  int props (settable)
+  int syllable (settable)
   int xAdvance (settable)
   int xOffset (settable)
   int yAdvance (settable)
   int yOffset (settable)
+final class LayoutLookup
+  LayoutLookup(int index, int mask, {bool autoZwnj = true, bool autoZwj = true, bool perSyllable = false})
+  bool autoZwj
+  bool autoZwnj
+  bool perSyllable
+  int index
+  int mask
 final class OpenTypeFont
   (int, int, int, int) glyphBounds(int glyph)
   Iterable<String> tableTags
@@ -181,14 +216,22 @@ final class OpenTypeFont
   int? underlineThickness (settable)
   int? xHeight (settable)
 final class OpenTypeLayout
+  (String, List<int>)? requiredFeature(String script, {bool positioning = false})
+  (String, bool)? selectScript(List<String> tags, {bool positioning = false})
   List<int> lookupsFor(String feature, {required String script, String? language, bool positioning = false})
+  List<int>? featureLookups(String feature, String script, {bool positioning = false})
+  List<int>? searchFeature(String feature, {bool positioning = false})
   OpenTypeFont font
   OpenTypeLayout(OpenTypeFont font)
+  bool hasGlyphClasses
   bool hasLayout
   bool hasScript(String script)
   int glyphClass(int glyph)
-  void position(List<LayoutGlyph> run, List<(int, int)> lookups, {required bool rightToLeft, bool zeroMarks = false})
-  void substitute(List<LayoutGlyph> run, List<(int, int)> lookups)
+  int glyphProps(int glyph)
+  int lookupCount({bool positioning = false})
+  void classify(List<LayoutGlyph> run)
+  void position(List<LayoutGlyph> run, List<LayoutLookup> lookups, {required bool rightToLeft, bool zeroMarks = false})
+  void substitute(List<LayoutGlyph> run, List<LayoutLookup> lookups)
 final class OpenTypeMathTable
   GlyphConstruction? horizontal(int glyph)
   GlyphConstruction? vertical(int glyph)

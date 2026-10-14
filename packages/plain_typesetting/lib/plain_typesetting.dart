@@ -20,7 +20,8 @@ export 'src/canvas.dart'
     show BlendMode, Canvas, LineCap, LineJoin, TextRenderMode, TextStyle;
 export 'src/color.dart' show CmykColor, Color, GrayColor, RgbColor, SpotColor;
 export 'src/css_color.dart' show CssColor, parseCssColor;
-export 'src/font.dart' show Font, OpenTypeShaper, OpenTypeTextFont, ShapedGlyph;
+export 'src/font.dart'
+    show Font, OpenTypeShaper, OpenTypeTextFont, ShapedGlyph, ShapingScope;
 export 'src/geometry.dart' show Matrix, Rect;
 export 'src/graphic.dart' show Graphic;
 export 'src/layout/flow.dart'

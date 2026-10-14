@@ -34,6 +34,7 @@ extension _DocumentParts on PdfConverter {
       synthesizeFaces: true,
       thousandthWidths: _thousandthWidths,
       kernTableOnly: _kernTableOnly,
+      rightToLeftShapingOnly: _rightToLeftShapingOnly,
       singleByteFonts: _singleByteFonts,
       warn: logger.warn,
     );

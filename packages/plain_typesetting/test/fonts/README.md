@@ -26,3 +26,11 @@ whose README says how each was made):
 - `notoserifhebrew-subset.ttf`: Noto Serif Hebrew 2.004, subset to the
   Hebrew block with its layout tables kept (SIL Open Font License 1.1;
   © 2022 The Noto Project Authors).
+- `notoserif-scripts.ttf`, `notosansarmenian-subset.ttf`,
+  `notosansgeorgian-subset.ttf`, `notosanscoptic-subset.ttf`,
+  `notosansethiopic-subset.ttf`: Noto Serif and Noto Sans Armenian,
+  Georgian, Coptic and Ethiopic, each subset to the characters of its
+  sample lines in `test/fixtures/scripts` with its layout tables kept
+  (`tool/subset_test_fonts.dart`, from the installed fonts), for the
+  script shaping tests (SIL Open Font License 1.1; © 2022 The Noto
+  Project Authors).

@@ -7,7 +7,8 @@ library;
 
 import 'package:plain_fonts/plain_fonts.dart' show OpenTypeFont;
 import 'package:plain_pdf/plain_pdf.dart';
-import 'package:plain_typesetting/plain_typesetting.dart' show OpenTypeShaper;
+import 'package:plain_typesetting/plain_typesetting.dart'
+    show OpenTypeShaper, ShapingScope;
 import 'package:ptome/src/font_index.dart';
 import 'package:ptome/src/io.dart' as io;
 import 'package:ptome/src/path_resolver.dart';
@@ -401,6 +402,7 @@ final class FontCatalog {
     this.synthesizeFaces = false,
     this.thousandthWidths = false,
     this.kernTableOnly = false,
+    this.rightToLeftShapingOnly = false,
     this.singleByteFonts = false,
     FontIndex? installed,
     void Function(String message)? warn,
@@ -434,6 +436,11 @@ final class FontCatalog {
   /// its GPOS pair adjustments, else that table (theme key
   /// `base_kerning_source`).
   final bool kernTableOnly;
+
+  /// Whether only right-to-left text is shaped by the fonts' layout
+  /// tables in full, the rest set by their glyphs, ligatures and kerning
+  /// alone, as Prawn sets every script (theme key `base_text_shaping`).
+  final bool rightToLeftShapingOnly;
 
   /// Whether fonts with TrueType outlines are embedded as simple fonts of
   /// up to 256 glyphs each (theme key `base_font_embedding`).
@@ -631,21 +638,17 @@ final class FontCatalog {
   /// is its conversion's.)
   EmbeddedFont _parse(String path, {int index = 0}) {
     final kern = kernTableOnly ? 0 : null;
-    if (_installed.isInMemory(path)) {
-      return EmbeddedFont.parse(
-        _bytes(path),
-        index: index,
-        truncateWidths: thousandthWidths,
-        kernTableSubtable: kern,
-        singleByte: singleByteFonts,
-        // (Measured as the text box measures fonts.)
-        typoMetrics: true,
-      );
-    }
-    final shaper = _shapers[(path, index, kern)] ??= OpenTypeShaper(
+    final scope = rightToLeftShapingOnly
+        ? ShapingScope.rightToLeft
+        : ShapingScope.all;
+    OpenTypeShaper parse() => OpenTypeShaper(
       OpenTypeFont.parse(_bytes(path), index: index),
       kernTableSubtable: kern,
+      scope: scope,
     );
+    final shaper = _installed.isInMemory(path)
+        ? parse()
+        : _shapers[(path, index, kern, scope)] ??= parse();
     return EmbeddedFont.shaped(
       shaper,
       truncateWidths: thousandthWidths,
@@ -656,7 +659,8 @@ final class FontCatalog {
   }
 
   /// The installed fonts parsed, by file, index and kerning.
-  static final Map<(String, int, int?), OpenTypeShaper> _shapers = {};
+  static final Map<(String, int, int?, ShapingScope), OpenTypeShaper> _shapers =
+      {};
 
   /// (Files are read once per process; fonts given as bytes belong to
   /// their conversion.)

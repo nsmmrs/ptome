@@ -756,6 +756,7 @@ final class PdfConverter extends BuiltInConverter
     'base_emphasis_inversion': ThemeBool(false),
     'base_glyph_widths': ThemeString('thousandths'),
     'base_kerning_source': ThemeString('kern_table'),
+    'base_text_shaping': ThemeString('right_to_left'),
     'base_font_embedding': ThemeString('simple'),
     'table_borders': ThemeString('with-cells'),
     'table_cell_margin_top': ThemeString('keep'),
@@ -1672,6 +1673,7 @@ final class PdfConverter extends BuiltInConverter
           shaping: _shaping,
           thousandthWidths: _thousandthWidths,
           kernTableOnly: _kernTableOnly,
+          rightToLeftShapingOnly: _rightToLeftShapingOnly,
           singleByteFonts: _singleByteFonts,
           warn: logger.warn,
         );

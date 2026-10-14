@@ -184,6 +184,10 @@ enum Pagination
   static List<Pagination> values
   static Pagination firstFit
   static Pagination optimal
+enum ShapingScope
+  static List<ShapingScope> values
+  static ShapingScope all
+  static ShapingScope rightToLeft
 enum TableBorders
   static List<TableBorders> values
   static TableBorders above
@@ -511,7 +515,8 @@ final class NoteStream
 final class OpenTypeShaper implements OpenTypeTextFont
   List<ShapedGlyph> shape(String text, {bool kerning = true, bool ligatures = false, Set<String> features = const {}, bool rightToLeft = false})
   OpenTypeFont font
-  OpenTypeShaper(OpenTypeFont font, {int? kernTableSubtable})
+  OpenTypeShaper(OpenTypeFont font, {int? kernTableSubtable, ShapingScope scope = ShapingScope.all})
+  ShapingScope scope
   String name
   bool covers(int codePoint)
   double ascender

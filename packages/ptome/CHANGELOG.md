@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: text is shaped as HarfBuzz 14.6 shapes it, in plain_typesetting's
+  port of its pipeline (EPIC-yz0yqt): Cyrillic, Greek (polytonic,
+  decomposed accents composed or placed), Vietnamese, Armenian, Georgian,
+  Coptic and Ge'ez shape glyph for glyph as HarfBuzz does (TASK-nqzrww;
+  `doc/pdf.md`, "Scripts"). With `font_fallbacks`, a combining mark stays
+  in its letter's font. New engine key `base_text_shaping` (`full`;
+  `asciidoctor-compat` sets `right_to_left`, shaping right-to-left text
+  alone, as before, since Prawn shapes no other script).
 - npm: the package has a `THIRD_PARTY_NOTICES.md` (made by
   `tool/npm_notices.dart` in `tool/build-npm.sh`): the licences of the
   Dart SDK and of every Dart package the bundle compiles in, and the

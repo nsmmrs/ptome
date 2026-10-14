@@ -103,6 +103,19 @@ abstract interface class OpenTypeTextFont implements Font {
   OpenTypeFont get font;
 }
 
+/// Which text an [OpenTypeShaper] shapes by the font's layout tables in
+/// full.
+enum ShapingScope {
+  /// Text with marks, or in any script but Latin, Greek and Cyrillic, as
+  /// HarfBuzz shapes it.
+  all,
+
+  /// Right-to-left text alone (Arabic, Hebrew and the others in their
+  /// blocks); the rest takes the simple path, as early engines (Prawn)
+  /// set every script.
+  rightToLeft,
+}
+
 /// An OpenType [font] as a [Font]: its metrics in 1000ths of the em, and
 /// text shaped with each character's glyph from the cmap, the single
 /// substitutions of the features asked for, the ligatures (`liga`), and
@@ -112,8 +125,11 @@ abstract interface class OpenTypeTextFont implements Font {
 /// A layout can set text in it as it is; a backend's fonts delegate to it
 /// (plain_pdf's embedded fonts, which also subset and embed the font).
 final class OpenTypeShaper implements OpenTypeTextFont {
-  /// A shaper for [font].
-  new(this.font, {this.kernTableSubtable});
+  /// A shaper for [font], shaping the text [scope] says in full.
+  new(this.font, {this.kernTableSubtable, this.scope = ShapingScope.all});
+
+  /// Which text is shaped in full (the rest takes the simple path).
+  final ShapingScope scope;
 
   @override
   final OpenTypeFont font;
@@ -200,7 +216,11 @@ final class OpenTypeShaper implements OpenTypeTextFont {
   }) {
     // (A right-to-left run, or text in a script that shapes, laid out by
     // the OpenType layout tables in full.)
-    if (rightToLeft || needsComplexShaping(text)) {
+    if (rightToLeft ||
+        switch (scope) {
+          ShapingScope.all => needsComplexShaping(text),
+          ShapingScope.rightToLeft => hasRightToLeftLetters(text),
+        }) {
       return shapeComplex(
         this,
         text,
