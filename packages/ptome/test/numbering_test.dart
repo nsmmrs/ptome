@@ -22,6 +22,11 @@ final String _naskh = File(
   '../plain_typesetting/test/fonts/notonaskharabic-subset.ttf',
 ).absolute.path;
 
+/// Noto Serif, its Latin letters (the roman page numbers).
+final String _latin = File(
+  '../plain_typesetting/test/fonts/notoserif-regular-latin.ttf',
+).absolute.path;
+
 const String _arabic = '''
 = كتاب
 :doctype: book
@@ -134,6 +139,12 @@ font:
       bold: $_naskh
       italic: $_naskh
       bold_italic: $_naskh
+    Latin:
+      normal: $_latin
+      bold: $_latin
+      italic: $_latin
+      bold_italic: $_latin
+  fallbacks: [Latin]
 $theme''');
       final path = '${dir.path}/out.pdf';
       File(path).writeAsBytesSync(

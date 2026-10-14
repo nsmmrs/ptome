@@ -16,7 +16,7 @@ final bool _poppler =
     Process.runSync('which', ['pdftotext']).exitCode == 0 &&
     '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
 
-/// Noto Sans CJK, subset (its kana).
+/// Noto Sans CJK, subset (its kana; not あ).
 final String _cjk = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
 ).absolute.path;
@@ -88,7 +88,7 @@ $extra''');
       final path = '${dir.path}/out.pdf';
       File(path).writeAsBytesSync(
         asciidoc.convertToBytes(
-          'あいかきっくのは',
+          'いのかきっくのは',
           backend: Backend.pdf,
           attributes: {
             'pdf-theme': theme.path,
@@ -112,8 +112,8 @@ $extra''');
       ];
     }
 
-    expect(lines('').first, 'あいか');
-    expect(lines('base_line_break: loose\n').first, 'あいかき');
-    expect(lines('', attributes: {'line-break': 'loose'}).first, 'あいかき');
+    expect(lines('').first, 'いのか');
+    expect(lines('base_line_break: loose\n').first, 'いのかき');
+    expect(lines('', attributes: {'line-break': 'loose'}).first, 'いのかき');
   }, skip: _poppler ? false : 'needs Poppler');
 }
