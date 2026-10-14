@@ -87,6 +87,8 @@ its title.
 | `base_typographic_scripts` | `false` | Superscripts and subscripts (footnote references) in the font's own glyphs for them (its `sups` and `subs` features) at the text's size, when it has them for every character (true superior and inferior figures); else smaller and raised as usual. |
 | `base_justify_width` | room | `widest`: justified lines are set to the width of the paragraph's widest line (an overfull line shrunk to the room), as a paragraph in a block sized to its content is (CSS's `width: fit-content`); in a quote or a section role: `quote_base_justify_width`, `section_role_<role>_base_justify_width`. |
 | `base_kashida` | `0.5em` | Justified Arabic is lengthened inside its words before its spaces widen: tatweel drawn between two joined letters, each word at its best place by Microsoft's ranking for Arabic justification (after a Seen or Sad; before a final Teh Marbuta, Heh or Dal; before a final Alef, Tah, Lam, Kaf or Gaf; before a medial Beh ending in Reh or Yeh; before a final Waw, Ain, Qaf or Feh; before any final letter), never inside Lam-Alef or a Nastaliq word's cascade. The value is how far each word may be lengthened (`1em`, or a number of em); the spaces take what is left; `false` for none. The text read from the page has no tatweel. Modern engine; not under `asciidoctor-compat`. |
+| `base_justify_alternates` | `true` | A justified line takes its fonts' justification alternates (OpenType `jalt`: a Nastaliq's wider final and isolated letters, as Gulzar has them) at some of its words, chosen from the line's end, never two side by side, each where it fits, before its spaces widen (W3C alreq 7.2.3); `false` for none. Modern engine. |
+| `base_tsheg_padding` | `false` | `true` fills a justified line of Tibetan that ends with a tsheg out with more tshegs, as pecha and many printed books do, the rest spread between its characters; without it the room is spread between all its characters alike. Modern engine. |
 | `base_word_break` | `auto` | Whether a line breaks inside a word written without spaces between its letters, as CSS's `word-break`: `keep-all` breaks only at spaces and punctuation (a word wider than the line between its characters all the same), `normal` wherever UAX #14 allows (between any two Han characters, kana or Hangul syllables). `auto` keeps Korean words whole (text whose language is `ko`: KLREQ 7.1.1 leaves the choice to the author, by words the common one), the rest `normal`. Modern engine; not under `asciidoctor-compat`. |
 | `base_hanging_punctuation` | `false` | `true` lets a full-width full stop or comma ending a line hang past its end (burasagari, JLREQ 2.5.1), rather than the line being squeezed for it or the mark going to the next line with the character before it. Modern engine; not under `asciidoctor-compat`. |
 | `base_line_start_bracket` | `solid` | How an opening bracket starting a line is set (JLREQ 3.1.5): `solid`, its blank half dropped at every line's start (①, JIS X 4051); `full-width`, kept (②); `novel`, kept where a paragraph starts, which then isn't indented, and dropped where a line wraps (③, as novels set dialogue). Modern engine; not under `asciidoctor-compat`. |
@@ -249,7 +251,13 @@ so a line may break between any two of a run's words, found as ICU 78.3
 finds them: its word lists (plain_unicode's `dictionaryBreaks`, checked
 against ICU's line breaks), the reading that lets the most words follow
 chosen, a letter no word starts with joined to the word before, never a
-break before a combining mark. (`base_line_breaking: segments`, as
+break before a combining mark. Tai Tham, New Tai Lue, Tai Viet and Ahom,
+for which ICU has no word lists and none under a permissive licence is
+to be had, break between their orthographic syllables instead: before
+each consonant or independent vowel (or a vowel written before its
+consonant, in New Tai Lue and Tai Viet), never after Tai Tham's stacker
+nor before a consonant a killer makes a syllable's final; a justified
+line stretches there. (`base_line_breaking: segments`, as
 asciidoctor-pdf, breaks only at spaces.)
 
 Japanese and Chinese are composed as the W3C's JLREQ and CLREQ describe:

@@ -1,5 +1,6 @@
 (double, double) decorationLines(TextStyle style, double y, {bool upright = false})
 ({double alpha, double blue, double green, double red})? parseCssColor(String text)
+({double gained, List<ShapedGlyph> glyphs}) justificationAlternates(String text, List<ShapedGlyph> glyphs, TextStyle style, double extra, {required bool rightToLeft})
 List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> breaks, double Function(int) widths, {double expansion = 0, double Function(int)? offsets})
 List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth})
 String get plainTypesettingVersion
@@ -594,7 +595,7 @@ final class Paragraph
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid, bool tshegPadding = false, bool justificationAlternates = true})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
@@ -602,9 +603,11 @@ final class Paragraph
   bool breakLongWords
   bool eastAsian
   bool hangingPunctuation
+  bool justificationAlternates
   bool justifyToWidest
   bool rightToLeft
   bool riseInLineHeight
+  bool tshegPadding
   double firstLineIndent
   double hangIndent
   double kashida

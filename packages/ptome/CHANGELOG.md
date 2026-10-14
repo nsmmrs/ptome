@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: script-specific justification (FEAT-z8hxn0): Nastaliq (and any
+  font with `jalt`) takes wider letterforms before its spaces widen (W3C
+  alreq 7.2.3; `base_justify_alternates`); Tibetan spreads the room
+  between all its characters, or with `base_tsheg_padding` fills a line
+  ending with a tsheg out with tshegs, as pecha do.
+- PDF: Tai Tham, New Tai Lue, Tai Viet and Ahom lines break between
+  their orthographic syllables (FEAT-d2xh7l): no dictionary exists for
+  them under a permissive licence.
 - PDF: Japanese and Chinese lines adjusted in JLREQ 3.8's order
   (FEAT-vfmrnj): spaces, then the quarter em beside Latin, then between
   characters when stretching; spaces, then marks' blank halves, then the

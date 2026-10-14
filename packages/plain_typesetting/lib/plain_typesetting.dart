@@ -24,6 +24,7 @@ export 'src/font.dart'
     show Font, OpenTypeShaper, OpenTypeTextFont, ShapedGlyph, ShapingScope;
 export 'src/geometry.dart' show Matrix, Rect;
 export 'src/graphic.dart' show Graphic;
+export 'src/layout/alternates.dart' show justificationAlternates;
 export 'src/layout/east_asian.dart' show PunctuationStyle;
 export 'src/layout/flow.dart'
     show

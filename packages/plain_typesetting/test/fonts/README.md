@@ -59,3 +59,7 @@ whose README says how each was made):
   `ofl/`, their variable fonts pinned at the default instance): subset
   the same way (SIL Open Font License 1.1; © 2022 The Noto Project
   Authors).
+- `gulzar-subset.ttf`: Gulzar 1.0 (a Nastaliq with justification
+  alternates, `jalt`), from google/fonts' `ofl/gulzar`, subset the same
+  way to `urdu-gulzar.txt`'s text, written for the tests (SIL Open Font
+  License 1.1; © 2021 The Gulzar Project Authors).

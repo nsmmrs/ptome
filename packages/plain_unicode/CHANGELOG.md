@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Syllable breaks (FEAT-d2xh7l): Tai Tham, New Tai Lue, Tai Viet and
+  Ahom (SA, no ICU dictionary, no word list under a permissive licence)
+  break between orthographic syllables, from their Indic syllabic and
+  positional categories: before a consonant, an independent vowel or a
+  vowel written before its consonant; not after a prevowel or Tai Tham's
+  stacker, nor before a killed consonant. With `dictionary: true`, as the
+  dictionaries' words.
+
 - Quotation marks by language (FEAT-tlp95q): `quotationMarks(language)`
   gives a BCP 47 tag's `QuotationMarks` (outer and inner pairs) from
   CLDR 48.2's delimiters, the locale found by its likely script, CLDR's

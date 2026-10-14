@@ -26,7 +26,17 @@ import 'package:plain_unicode/plain_unicode.dart'
     show GeneralCategory, generalCategory, isMark, lineBreakOffsets, scriptOf;
 
 const Set<String> _cjk = {'Hani', 'Hira', 'Kana', 'Bopo'};
-const Set<String> _spaceless = {..._cjk, 'Thai', 'Laoo', 'Khmr', 'Mymr'};
+const Set<String> _spaceless = {
+  ..._cjk,
+  'Thai',
+  'Laoo',
+  'Khmr',
+  'Mymr',
+  'Lana',
+  'Talu',
+  'Tavt',
+  'Ahom',
+};
 
 /// Full-width opening punctuation: brackets and quotation marks.
 bool _isOpening(int c) => switch (c) {
@@ -382,6 +392,12 @@ List<int> interCharacterGaps(List<ShapedGlyph> glyphs) {
     if (p == null) continue;
     final a = _last(glyphs[p])!;
     final b = _first(glyphs[i])!;
+    // (Tibetan: between all its characters alike, r12a's Tibetan notes'
+    // first way of justifying.)
+    if (_isTibetan(a) && _isTibetan(b)) {
+      gaps.add(i - 1);
+      continue;
+    }
     if (!isSpaceless(a) || !isSpaceless(b)) continue;
     final ideographic =
         (isCjk(a) || _isFullWidth(a)) && (isCjk(b) || _isFullWidth(b));
@@ -389,6 +405,13 @@ List<int> interCharacterGaps(List<ShapedGlyph> glyphs) {
   }
   return gaps;
 }
+
+bool _isTibetan(int c) => scriptOf(c) == 'Tibt';
+
+/// Whether [glyphs] have Tibetan in them (a line justified between its
+/// characters alike, not in JLREQ's order).
+bool hasTibetan(List<ShapedGlyph> glyphs) =>
+    glyphs.any((g) => g.text.runes.any(_isTibetan));
 
 bool _isFullWidth(int c) =>
     _isPunctuation(c) ||

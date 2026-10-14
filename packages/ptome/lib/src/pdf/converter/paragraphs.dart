@@ -112,6 +112,19 @@ extension _Paragraphs on PdfConverter {
         _ => false,
       },
       lineStartBrackets: _lineStartBrackets,
+      // (`base_tsheg_padding`: Tibetan lines ending with a tsheg filled
+      // out with tshegs; `base_justify_alternates: false`: no `jalt`
+      // forms, Nastaliq's wider letters, in justified lines.)
+      tshegPadding: switch (_theme.value('base_tsheg_padding')) {
+        ThemeBool(value: true) => true,
+        _ => false,
+      },
+      justificationAlternates: switch (_theme.value(
+        'base_justify_alternates',
+      )) {
+        ThemeBool(value: false) => false,
+        _ => true,
+      },
       wordBreak: switch (_s('base_word_break')) {
         'keep-all' => WordBreak.keepAll,
         'normal' => WordBreak.normal,

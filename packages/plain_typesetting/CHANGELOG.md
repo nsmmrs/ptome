@@ -2,6 +2,18 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Script-specific justification (FEAT-z8hxn0): `Paragraph.
+  justificationAlternates` (default on) takes the fonts' `jalt` forms at
+  words chosen from the line's end, none side by side, each where it
+  fits, before the spaces widen (W3C alreq 7.2.3; `justificationAlternates`;
+  Gulzar's forms checked against HarfBuzz); Tibetan lines justify between
+  all their characters alike, and `Paragraph.tshegPadding` fills a line
+  ending with a tsheg out with tshegs standing for no text (r12a's
+  Tibetan notes, which tlreq points to).
+
+- Tai Tham, New Tai Lue, Tai Viet and Ahom are written without spaces
+  (FEAT-d2xh7l): a justified line stretches between their syllables.
+
 - JLREQ line adjustment (FEAT-vfmrnj): a justified line with Japanese
   or Chinese is adjusted in JLREQ 3.8's order, each kind of place to its
   limit before the next (`eastAsianPlaces`, `adjustGaps`); the breaker's

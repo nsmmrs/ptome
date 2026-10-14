@@ -327,5 +327,74 @@ List<int> dictionaryBreaks(String text, List<int> ruleBreaks) {
     }
     i = end;
   }
+  final syllables = syllableBreaks(text, ruleBreaks);
+  if (syllables.isEmpty) return out;
+  return [...out, ...syllables]..sort();
+}
+
+/// The scripts written without spaces that no dictionary knows (ICU has
+/// none for them, and no word list under a permissive licence is to be
+/// had): Tai Tham, New Tai Lue, Tai Viet and Ahom, broken between their
+/// orthographic syllables instead.
+const Set<String> _syllableScripts = {'Lana', 'Talu', 'Tavt', 'Ahom'};
+
+/// The boundaries between the orthographic syllables of [text]'s runs of
+/// Tai Tham, New Tai Lue, Tai Viet and Ahom (of line breaking class SA),
+/// each strictly inside its run (which ends at the next of [ruleBreaks]):
+/// before each consonant or independent vowel, and before a vowel written
+/// before its consonant (New Tai Lue's and Tai Viet's, in visual order);
+/// not after such a vowel or Tai Tham's stacker (sakot: the consonant it
+/// stacks stays with the one before), nor before a consonant a killer
+/// makes the syllable's final.
+List<int> syllableBreaks(String text, List<int> ruleBreaks) {
+  final out = <int>[];
+  final runes = <(int, int)>[];
+  for (var i = 0; i < text.length;) {
+    final c = text.codeUnitAt(i);
+    var rune = c;
+    var length = 1;
+    if (c >= 0xd800 && c <= 0xdbff && i + 1 < text.length) {
+      final low = text.codeUnitAt(i + 1);
+      if (low >= 0xdc00 && low <= 0xdfff) {
+        rune = 0x10000 + ((c - 0xd800) << 10) + (low - 0xdc00);
+        length = 2;
+      }
+    }
+    runes.add((i, rune));
+    i += length;
+  }
+  bool inRun(int rune) =>
+      lineBreakClass(rune) == LineBreakClass.sa &&
+      _syllableScripts.contains(scriptOf(rune));
+  bool prevowel(int rune) =>
+      indicPositionalCategory(rune) == IndicPositionalCategory.visualOrderLeft;
+  bool begins(int rune) => switch (indicSyllabicCategory(rune)) {
+    IndicSyllabicCategory.consonant ||
+    IndicSyllabicCategory.vowelIndependent => true,
+    IndicSyllabicCategory.vowelDependent => prevowel(rune),
+    _ => false,
+  };
+  bool stacks(int rune) =>
+      indicSyllabicCategory(rune) == IndicSyllabicCategory.invisibleStacker;
+  var next = 0;
+  for (var k = 1; k < runes.length; k++) {
+    final (offset, rune) = runes[k];
+    final (_, before) = runes[k - 1];
+    if (!inRun(rune) || !inRun(before)) continue;
+    // (Not across a break of the rules', which ends the run.)
+    while (next < ruleBreaks.length && ruleBreaks[next] < offset) {
+      next++;
+    }
+    if (next < ruleBreaks.length && ruleBreaks[next] == offset) continue;
+    if (!begins(rune) || prevowel(before) || stacks(before)) continue;
+    // (A consonant killed closes the syllable before it.)
+    if (indicSyllabicCategory(rune) == IndicSyllabicCategory.consonant &&
+        k + 1 < runes.length &&
+        indicSyllabicCategory(runes[k + 1].$2) ==
+            IndicSyllabicCategory.pureKiller) {
+      continue;
+    }
+    out.add(offset);
+  }
   return out;
 }

@@ -13,6 +13,7 @@ import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/geometry.dart';
+import 'package:plain_typesetting/src/layout/alternates.dart';
 import 'package:plain_typesetting/src/layout/east_asian.dart';
 import 'package:plain_typesetting/src/layout/inline.dart';
 import 'package:plain_typesetting/src/layout/kashida.dart';
@@ -292,6 +293,8 @@ final class Paragraph {
     this.wordBreak = WordBreak.auto,
     this.hangingPunctuation = false,
     this.lineStartBrackets = LineStartBrackets.solid,
+    this.tshegPadding = false,
+    this.justificationAlternates = true,
   });
 
   /// This paragraph with [content], [align], [firstLineIndent],
@@ -328,6 +331,8 @@ final class Paragraph {
     wordBreak: wordBreak,
     hangingPunctuation: hangingPunctuation,
     lineStartBrackets: lineStartBrackets,
+    tshegPadding: tshegPadding,
+    justificationAlternates: justificationAlternates,
   );
 
   /// The inline content.
@@ -359,6 +364,17 @@ final class Paragraph {
 
   /// How an opening bracket starting a line is set (JLREQ 3.1.5).
   final LineStartBrackets lineStartBrackets;
+
+  /// Whether a justified line of Tibetan ending with a tsheg is filled out
+  /// with more tshegs, the rest of its room spread between its characters
+  /// (r12a's Tibetan notes' second way: pecha and many printed books),
+  /// rather than spread between its characters alone.
+  final bool tshegPadding;
+
+  /// Whether a justified line takes its fonts' justification alternates
+  /// (`jalt`: Nastaliq's wider letterforms, W3C alreq 7.2.3) before its
+  /// spaces widen.
+  final bool justificationAlternates;
 
   /// Whether the paragraph's base direction is right to left (Arabic,
   /// Hebrew): its lines start at the right, where its indents go, and
@@ -2455,6 +2471,8 @@ _Adjustment? _eastAsianAdjustment(
       spaceCounts.add(0);
       continue;
     }
+    // (Tibetan is justified between its characters alike.)
+    if (hasTibetan(glyphs)) return null;
     final found = eastAsianPlaces(glyphs, content.style);
     places.add(found);
     spaceCounts.add(' '.allMatches(text).length);
@@ -2820,6 +2838,51 @@ Line _line(
       }
     }
     available += hang + leftHang;
+  }
+  // Tibetan ending with a tsheg: filled out with tshegs, standing for no
+  // text (r12a's Tibetan notes).
+  if (justify && paragraph.tshegPadding && shaped.isNotEmpty) {
+    final (content, text, glyphs, width) = shaped.last;
+    if (content is TextRun &&
+        content.slotWidth == null &&
+        text.endsWith('\u0f0b')) {
+      final tsheg = content.style.shape('\u0f0b');
+      final w = tsheg.length == 1 ? content.style.widthOf(tsheg) : 0.0;
+      final count = w > 0 ? ((available - natural) / w).floor() : 0;
+      if (count > 0) {
+        shaped.last = (
+          content,
+          text,
+          [
+            ...glyphs,
+            for (var k = 0; k < count; k++)
+              ShapedGlyph(tsheg.single.id, '', tsheg.single.advance),
+          ],
+          width + count * w,
+        );
+        natural += count * w;
+      }
+    }
+  }
+  // Justification alternates (Nastaliq's wider letterforms): taken
+  // before the spaces widen, from the line's end.
+  if (justify && paragraph.justificationAlternates && available > natural) {
+    for (var i = shaped.length - 1; i >= 0; i--) {
+      if (available - natural <= 0) break;
+      final (content, text, glyphs, width) = shaped[i];
+      if (content is! TextRun || content.slotWidth != null) continue;
+      final (glyphs: wider, :gained) = justificationAlternates(
+        text,
+        glyphs,
+        content.style,
+        available - natural,
+        rightToLeft: directions[i],
+      );
+      if (gained > 0) {
+        shaped[i] = (content, text, wider, width + gained);
+        natural += gained;
+      }
+    }
   }
   // Kashida: Arabic words lengthened before the spaces are widened.
   if (justify && paragraph.kashida > 0 && available > natural) {
