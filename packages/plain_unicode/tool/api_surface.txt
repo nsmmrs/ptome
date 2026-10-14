@@ -1,4 +1,8 @@
+(int, int?)? canonicalDecomposition(int codePoint)
 BidiClass bidiClass(int codePoint)
+GeneralCategory generalCategory(int codePoint)
+IndicPositionalCategory indicPositionalCategory(int codePoint)
+IndicSyllabicCategory indicSyllabicCategory(int codePoint)
 JoiningType joiningType(int codePoint)
 LineBreakClass lineBreakClass(int codePoint)
 LineBreakOffsets lineBreakOffsets(String text)
@@ -7,11 +11,16 @@ List<LineBreak> lineBreaks(String text)
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
+String get propertiesUnicodeVersion
 String lowerCase(String text, {bool finalSigma = false})
+String scriptOf(int codePoint)
 String upperCase(String text)
+VerticalOrientation verticalOrientation(int codePoint)
 bool hasRightToLeft(String text)
 bool isCaseIgnorable(int rune)
 bool isCased(int rune)
+bool isDefaultIgnorable(int codePoint)
+bool isMark(int codePoint)
 enum BidiClass
   static BidiClass al
   static BidiClass an
@@ -37,6 +46,95 @@ enum BidiClass
   static BidiClass s
   static BidiClass ws
   static List<BidiClass> values
+enum GeneralCategory
+  static GeneralCategory closePunctuation
+  static GeneralCategory connectorPunctuation
+  static GeneralCategory control
+  static GeneralCategory currencySymbol
+  static GeneralCategory dashPunctuation
+  static GeneralCategory decimalNumber
+  static GeneralCategory enclosingMark
+  static GeneralCategory finalPunctuation
+  static GeneralCategory format
+  static GeneralCategory initialPunctuation
+  static GeneralCategory letterNumber
+  static GeneralCategory lineSeparator
+  static GeneralCategory lowercaseLetter
+  static GeneralCategory mathSymbol
+  static GeneralCategory modifierLetter
+  static GeneralCategory modifierSymbol
+  static GeneralCategory nonspacingMark
+  static GeneralCategory openPunctuation
+  static GeneralCategory otherLetter
+  static GeneralCategory otherNumber
+  static GeneralCategory otherPunctuation
+  static GeneralCategory otherSymbol
+  static GeneralCategory paragraphSeparator
+  static GeneralCategory privateUse
+  static GeneralCategory spaceSeparator
+  static GeneralCategory spacingMark
+  static GeneralCategory surrogate
+  static GeneralCategory titlecaseLetter
+  static GeneralCategory unassigned
+  static GeneralCategory uppercaseLetter
+  static List<GeneralCategory> values
+enum IndicPositionalCategory
+  static IndicPositionalCategory bottom
+  static IndicPositionalCategory bottomAndLeft
+  static IndicPositionalCategory bottomAndRight
+  static IndicPositionalCategory left
+  static IndicPositionalCategory leftAndRight
+  static IndicPositionalCategory notApplicable
+  static IndicPositionalCategory overstruck
+  static IndicPositionalCategory right
+  static IndicPositionalCategory top
+  static IndicPositionalCategory topAndBottom
+  static IndicPositionalCategory topAndBottomAndLeft
+  static IndicPositionalCategory topAndBottomAndRight
+  static IndicPositionalCategory topAndLeft
+  static IndicPositionalCategory topAndLeftAndRight
+  static IndicPositionalCategory topAndRight
+  static IndicPositionalCategory visualOrderLeft
+  static List<IndicPositionalCategory> values
+enum IndicSyllabicCategory
+  static IndicSyllabicCategory avagraha
+  static IndicSyllabicCategory bindu
+  static IndicSyllabicCategory brahmiJoiningNumber
+  static IndicSyllabicCategory cantillationMark
+  static IndicSyllabicCategory consonant
+  static IndicSyllabicCategory consonantDead
+  static IndicSyllabicCategory consonantFinal
+  static IndicSyllabicCategory consonantHeadLetter
+  static IndicSyllabicCategory consonantInitialPostfixed
+  static IndicSyllabicCategory consonantKiller
+  static IndicSyllabicCategory consonantMedial
+  static IndicSyllabicCategory consonantPlaceholder
+  static IndicSyllabicCategory consonantPrecedingRepha
+  static IndicSyllabicCategory consonantPrefixed
+  static IndicSyllabicCategory consonantSubjoined
+  static IndicSyllabicCategory consonantSucceedingRepha
+  static IndicSyllabicCategory consonantWithStacker
+  static IndicSyllabicCategory geminationMark
+  static IndicSyllabicCategory invisibleStacker
+  static IndicSyllabicCategory joiner
+  static IndicSyllabicCategory modifyingLetter
+  static IndicSyllabicCategory nonJoiner
+  static IndicSyllabicCategory nukta
+  static IndicSyllabicCategory number
+  static IndicSyllabicCategory numberJoiner
+  static IndicSyllabicCategory other
+  static IndicSyllabicCategory pureKiller
+  static IndicSyllabicCategory registerShifter
+  static IndicSyllabicCategory reorderingKiller
+  static IndicSyllabicCategory syllableModifier
+  static IndicSyllabicCategory toneLetter
+  static IndicSyllabicCategory toneMark
+  static IndicSyllabicCategory virama
+  static IndicSyllabicCategory visarga
+  static IndicSyllabicCategory vowel
+  static IndicSyllabicCategory vowelDependent
+  static IndicSyllabicCategory vowelIndependent
+  static List<IndicSyllabicCategory> values
 enum JoiningType
   static JoiningType dualJoining
   static JoiningType joinCausing
@@ -100,6 +198,12 @@ enum TextDirection
   static List<TextDirection> values
   static TextDirection ltr
   static TextDirection rtl
+enum VerticalOrientation
+  static List<VerticalOrientation> values
+  static VerticalOrientation rotated
+  static VerticalOrientation transformedRotated
+  static VerticalOrientation transformedUpright
+  static VerticalOrientation upright
 extension type LineBreakOffsets(List<int> _codes)
   bool isMandatoryAt(int index)
   int length
@@ -122,3 +226,4 @@ final class LineBreak
   int offset
 int bidiMirror(int codePoint)
 int canonicalCombiningClass(int codePoint)
+int? canonicalComposition(int first, int second)

@@ -15,6 +15,15 @@ JavaScript (whose own tables differ in age and in rules):
   `σ`, as Ruby's `String#downcase` does. The tables match Ruby 4.0.7 and
   Node.js 26 for every code point.
 
+- **Shaping properties** (Unicode 18.0.0), for text shaping and vertical
+  layout: `generalCategory`, `scriptOf` (an ISO 15924 code),
+  `indicSyllabicCategory`, `indicPositionalCategory`,
+  `verticalOrientation` (UAX #50), `isDefaultIgnorable`, `isMark`, and
+  canonical decomposition and composition (`canonicalDecomposition`,
+  `canonicalComposition`, Hangul by its algorithm). Normalized with them,
+  every case of `NormalizationTest.txt` comes out as its NFD and NFC
+  columns.
+
 ```dart
 import 'package:plain_unicode/plain_unicode.dart';
 
@@ -24,7 +33,7 @@ lineBreaks('Hello, world').map((b) => b.offset); // (7, 12)
 ```
 
 Each table pins its Unicode version (`lineBreakUnicodeVersion`,
-`caseMappingUnicodeVersion`); the generators in `tool/` rebuild them from
+`caseMappingUnicodeVersion`, `propertiesUnicodeVersion`); the generators in `tool/` rebuild them from
 the files in `vendor/ucd/`. Graphemes and normalization are left to the
 `characters` and `unorm_dart` packages.
 

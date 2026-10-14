@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Shaping properties (Unicode 18.0.0): `generalCategory`, `scriptOf`,
+  `indicSyllabicCategory`, `indicPositionalCategory`,
+  `verticalOrientation`, `isDefaultIgnorable`, `isMark`, and canonical
+  decomposition and composition (`canonicalDecomposition`,
+  `canonicalComposition`), checked against NormalizationTest.txt.
 - The Unicode License (`vendor/ucd/*/license.txt`) is published with the
   package, as the tables generated from the Unicode data are under it
   (it was left out with the data).

@@ -21,6 +21,22 @@ For `tool/generate_bidi.dart` (which writes `lib/src/bidi_data.g.dart`):
 - `BidiMirroring.txt`: Bidi_Mirroring_Glyph.
 - `ArabicShaping.txt`: the joining groups (for reference).
 
-The conformance tests, `auxiliary/LineBreakTest.txt`, `BidiTest.txt` and
-`BidiCharacterTest.txt`, are in `test/unicode/` (gzipped). Terms: `license.txt` (Unicode License
+For `tool/generate_properties.dart` (which writes
+`lib/src/properties_data.g.dart`):
+
+- `UnicodeData.txt`: the canonical decomposition mappings.
+- `DerivedNormalizationProps.txt`: Full_Composition_Exclusion.
+- `Scripts.txt`: Script.
+- `IndicSyllabicCategory.txt`, `IndicPositionalCategory.txt`: the Indic
+  categories the shapers read.
+- `VerticalOrientation.txt`: Vertical_Orientation (UAX #50), with its
+  `@missing` defaults.
+- `DerivedCoreProperties.txt`: Default_Ignorable_Code_Point.
+- `PropertyValueAliases.txt`: the values' short and long names, and their
+  order.
+- `DerivedGeneralCategory.txt` (above): General_Category.
+- `Blocks.txt`: the blocks (for the Universal Shaping Engine's table).
+
+The conformance tests, `auxiliary/LineBreakTest.txt`, `BidiTest.txt`,
+`BidiCharacterTest.txt` and `NormalizationTest.txt`, are in `test/unicode/` (gzipped). Terms: `license.txt` (Unicode License
 v3).

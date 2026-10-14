@@ -35,3 +35,19 @@ export 'src/line_break.dart'
         lineBreakOffsets,
         lineBreaks;
 export 'src/line_break_data.g.dart' show lineBreakUnicodeVersion;
+export 'src/properties.dart'
+    show
+        GeneralCategory,
+        IndicPositionalCategory,
+        IndicSyllabicCategory,
+        VerticalOrientation,
+        canonicalComposition,
+        canonicalDecomposition,
+        generalCategory,
+        indicPositionalCategory,
+        indicSyllabicCategory,
+        isDefaultIgnorable,
+        isMark,
+        propertiesUnicodeVersion,
+        scriptOf,
+        verticalOrientation;
