@@ -22,6 +22,7 @@ import 'package:ptome/src/block.dart';
 import 'package:ptome/src/callout_links.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/converter.dart';
+import 'package:ptome/src/direction.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/helpers.dart';
 import 'package:ptome/src/highlight/highlight.dart' show CssMode;
@@ -307,8 +308,13 @@ class Html5Converter extends BuiltInConverter {
     final xmlnsAttribute = _xmlMode
         ? ' xmlns="http://www.w3.org/1999/xhtml"'
         : '';
+    // (`:dir: rtl`, Ptome's: the page written right to left.)
+    final dirAttribute = switch (documentDirection(node, CompatFormat.html)) {
+      final dir? => ' dir="$dir"',
+      null => '',
+    };
     result
-      ..add('<html$xmlnsAttribute$langAttribute>')
+      ..add('<html$xmlnsAttribute$langAttribute$dirAttribute>')
       ..add(
         '<head>\n'
         '<meta charset="${_s(node.attr('encoding', 'UTF-8'))}"$slash>\n'
@@ -459,6 +465,11 @@ class Html5Converter extends BuiltInConverter {
         '{-webkit-hyphens:auto;hyphens:auto}</style>',
       );
     }
+
+    // (Its writing modes, Ptome's: `:writing-mode:`, the blocks'
+    // `vertical-rl` and `horizontal-tb` roles, the `tcy` role.)
+    final writingModes = writingModeCss(node, CompatFormat.html);
+    if (writingModes.isNotEmpty) result.add('<style>\n$writingModes</style>');
 
     // A units document: its note entries and asides beside the text.
     if (node.hasAttr('units')) {

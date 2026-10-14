@@ -768,11 +768,14 @@ final class PdfConverter extends BuiltInConverter
   /// Mongolian; across under `asciidoctor-compat`).
   WritingMode get _writingMode => asciidoctorCompat(_document, CompatFormat.pdf)
       ? WritingMode.horizontal
+      // (The theme's `page_writing_mode`, else the document's
+      // `:writing-mode:`, as HTML and EPUB read it.)
       : switch (_choice('page_writing_mode', const [
-          'horizontal-tb',
-          'vertical-rl',
-          'vertical-lr',
-        ])) {
+              'horizontal-tb',
+              'vertical-rl',
+              'vertical-lr',
+            ]) ??
+            _document.attr('writing-mode')?.trim().toLowerCase()) {
           'vertical-rl' => WritingMode.verticalRightToLeft,
           'vertical-lr' => WritingMode.verticalLeftToRight,
           _ => WritingMode.horizontal,

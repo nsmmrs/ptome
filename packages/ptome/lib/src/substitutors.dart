@@ -40,6 +40,7 @@ import 'package:ptome/src/attribute_list.dart';
 import 'package:ptome/src/block.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/constants.dart';
+import 'package:ptome/src/direction.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/extensions.dart' show MacroAttributes;
 import 'package:ptome/src/french_spacing.dart';
@@ -380,6 +381,12 @@ String _applySubsInRun(AbstractNode node, String text, List<Sub> subs) {
         // (French text's no-break spaces: Ptome.)
         if (frenchSpacingOf(node) case final spacing?) {
           subject = spacing.apply(subject);
+        }
+        // (A vertical document's short numbers across its lines, in HTML
+        // and EPUB: Ptome.)
+        if (node.document case final Document document?
+            when combinesDigits(document)) {
+          subject = combineDigitsIn(subject);
         }
       case Sub.macros:
         subject = subMacros(node, subject);

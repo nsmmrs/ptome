@@ -218,6 +218,11 @@ final class EpubBook {
   final List<String> _spine = [];
   final Map<String, String> _optionalFiles = {};
 
+  /// The spine's `page-progression-direction` (`rtl`: the pages turn to
+  /// the left, a right-to-left or vertical-rl book), or null for the
+  /// reading system's default.
+  String? pageProgressionDirection;
+
   /// Prefixes declared on the package (`calibre`...), in order.
   final Map<String, String> prefixes = {};
 
@@ -371,7 +376,10 @@ final class EpubBook {
     }
     xml
       ..close('manifest')
-      ..open('spine', {'toc': 'ncx'});
+      ..open('spine', {
+        'toc': 'ncx',
+        'page-progression-direction': ?pageProgressionDirection,
+      });
     for (final idref in _spine) {
       xml.element('itemref', {'idref': idref});
     }

@@ -23,6 +23,7 @@ import 'package:ptome/src/callout_links.dart';
 import 'package:ptome/src/compat.dart';
 import 'package:ptome/src/converter.dart';
 import 'package:ptome/src/data.g.dart';
+import 'package:ptome/src/direction.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/epub3/assets.g.dart';
 import 'package:ptome/src/epub3/book.dart';
@@ -385,7 +386,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         ? Parallel.forAttribute(node.attr('jobs'))
         : null;
     final book = _book = EpubBook()
-      ..language(_s(node.attr('lang', 'en')), id: 'pub-language');
+      ..language(_s(node.attr('lang', 'en')), id: 'pub-language')
+      // (Right to left, or vertical-rl: the pages turn to the left.)
+      ..pageProgressionDirection = pagesTurnLeft(node, CompatFormat.epub)
+          ? 'rtl'
+          : null;
     if (isbnUnique) {
       book.primaryIdentifier('urn:isbn:$isbn', 'pub-identifier', 'isbn');
     } else {
@@ -715,12 +720,13 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<html xmlns="http://www.w3.org/1999/xhtml" '
         'xmlns:epub="http://www.idpf.org/2007/ops" '
         'xmlns:mml="http://www.w3.org/1998/Math/MathML" '
-        'xml:lang="$lang" lang="$lang">\n'
+        'xml:lang="$lang" lang="$lang"${_dirAttribute(document)}>\n'
         '<head>\n'
         '<title>$chapterTitle</title>\n'
         '$_stylesheetLinks\n'
         '$iconCssHead${_codeOverflowCss(document)}'
         '${_hyphensCss(document)}${_unitsCss(document)}'
+        '${_writingModeCss(document)}'
         '$_readingSystemScript';
     final lines = <String>[head];
 
@@ -1593,6 +1599,22 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
             '</style>\n'
       : '';
 
+  /// ` dir="rtl"` for a document written right to left (`:dir: rtl`,
+  /// Ptome's), else nothing.
+  static String _dirAttribute(Document document) =>
+      switch (documentDirection(document, CompatFormat.epub)) {
+        final dir? => ' dir="$dir"',
+        null => '',
+      };
+
+  /// The rules that set the document's writing modes (`:writing-mode:`,
+  /// the blocks' roles, tate-chu-yoko), Ptome's.
+  static String _writingModeCss(Document document) =>
+      switch (writingModeCss(document, CompatFormat.epub)) {
+        '' => '',
+        final css => '<style>\n$css</style>\n',
+      };
+
   /// A units document: its note entries (the cross-references) each in a
   /// small line of its own above its unit's text; its footnotes, in every
   /// stream, are the reading system's popups.
@@ -2316,10 +2338,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<!DOCTYPE html>\n'
         '<html xmlns="http://www.w3.org/1999/xhtml" '
         'xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="$lang" '
-        'lang="$lang">\n'
+        'lang="$lang"${_dirAttribute(doc)}>\n'
         '<head>\n'
         '<title>${_sanitizeDoctitle(doc, _Spec.cdata)}</title>\n'
         '$_stylesheetLinks\n'
+        '${_writingModeCss(doc)}'
         '</head>\n'
         '<body>';
     final content = [
@@ -2456,10 +2479,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         '<!DOCTYPE html>\n'
         '<html xmlns="http://www.w3.org/1999/xhtml" '
         'xmlns:epub="http://www.idpf.org/2007/ops" xml:lang="$lang" '
-        'lang="$lang">\n'
+        'lang="$lang"${_dirAttribute(doc)}>\n'
         '<head>\n'
         '<title>${_sanitizeDoctitle(doc, _Spec.cdata)}</title>\n'
         '$_stylesheetLinks\n'
+        '${_writingModeCss(doc)}'
         '</head>\n'
         '<body>\n'
         '<section class="chapter">\n'

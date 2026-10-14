@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- HTML and EPUB: the document's direction and writing mode
+  (FEAT-5gt09c): `:dir: rtl` writes `dir="rtl"` and turns an EPUB's
+  pages to the left (`page-progression-direction`); `:writing-mode:
+  vertical-rl` (or `vertical-lr`) sets the text vertical with CSS's
+  `writing-mode`, tables and listings across, one- and two-digit numbers
+  combined (`tcy` spans); the `vertical-rl`, `vertical-lr`,
+  `horizontal-tb` and `tcy` roles; epubcheck-clean. The PDF reads
+  `:writing-mode:` too. Not under `asciidoctor-compat`.
 - PDF: with `reproducible`, no creation or modification date in the
   document information or the XMP metadata, as asciidoctor-pdf leaves
   them out (BUG-d2dtqb); they had been the conversion's time, so two

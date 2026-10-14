@@ -86,3 +86,18 @@ dépannage linguistique*, has them before `:` and inside guillemets only.
 Only punctuation ending a word is spaced (`10:30`, `std::vector` and
 `?x=1` in a URL are not), and verbatim text never is. A man page writes
 them as roff's `\~`. Not under `asciidoctor-compat`.
+
+A document's direction and writing mode reach HTML and EPUB too.
+`:dir: rtl` writes `dir="rtl"` on each page's root, and an EPUB's pages
+turn to the left (its spine's `page-progression-direction="rtl"`).
+`:writing-mode: vertical-rl` (or `vertical-lr`) sets the text in vertical
+lines with CSS's `writing-mode` (and the `-epub-` and `-webkit-` prefixes
+older reading systems read): tables, listings and literal blocks stay
+across, upright in the columns; numbers of one or two digits stand
+across their line (tate-chu-yoko, as `<span class="tcy">`, CSS's
+`text-combine-upright: all`); a vertical-rl EPUB's pages turn to the
+left. The roles `vertical-rl`, `vertical-lr` and `horizontal-tb` set a
+block's own writing mode, and `tcy` any short text across its line, in
+every format. The PDF reads `:writing-mode:` where its theme sets no
+`page_writing_mode`. Checked with epubcheck 5.4 and in Vivliostyle. Not
+under `asciidoctor-compat`.
