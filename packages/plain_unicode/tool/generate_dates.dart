@@ -1,8 +1,10 @@
 /// Generates `lib/src/date_format.g.dart` from `vendor/cldr/48.2.0`:
-/// each locale's Gregorian month and day names, day periods, eras and
-/// date, time and date-time patterns, and its localized GMT formats
-/// (`gregorian.tsv`), and the day periods' rules (`day_periods.tsv`),
-/// written by `tool/import_cldr_gregorian.py` from CLDR's XML.
+/// each locale's calendar fields by path (`calendars.tsv`: month and day
+/// names, day periods, eras, cyclic years, date, time and date-time
+/// patterns, localized GMT formats), root's aliases between paths
+/// (`calendar_aliases.tsv`), the eras' start dates (`eras.tsv`) and the
+/// day periods' rules (`day_periods.tsv`), written by
+/// `tool/import_cldr_calendars.py` from CLDR's XML.
 ///
 /// ```sh
 /// dart run tool/generate_dates.dart
@@ -14,18 +16,21 @@ import 'dart:io';
 void main() {
   final root = File(Platform.script.toFilePath()).parent.parent.path;
   final cldr = '$root/vendor/cldr/48.2.0';
+  Iterable<List<String>> rows(String name) sync* {
+    for (final line in File('$cldr/$name').readAsLinesSync()) {
+      if (line.isEmpty || line.startsWith('#')) continue;
+      yield line.split('\t');
+    }
+  }
+
   final fields = <String, Map<String, String>>{};
-  for (final line in File('$cldr/gregorian.tsv').readAsLinesSync()) {
-    if (line.isEmpty || line.startsWith('#')) continue;
-    final [locale, field, value] = line.split('\t');
-    (fields[locale] ??= {})[field] = value
+  for (final [locale, path, value] in rows('calendars.tsv')) {
+    (fields[locale] ??= {})[path] = value
         .replaceAll(r'\t', '\t')
         .replaceAll(r'\\', r'\');
   }
   final rules = <String, List<String>>{};
-  for (final line in File('$cldr/day_periods.tsv').readAsLinesSync()) {
-    if (line.isEmpty || line.startsWith('#')) continue;
-    final [locale, period, from, before] = line.split('\t');
+  for (final [locale, period, from, before] in rows('day_periods.tsv')) {
     int minutes(String time) {
       final [h, m] = time.split(':');
       return int.parse(h) * 60 + int.parse(m);
@@ -42,14 +47,89 @@ void main() {
     ..writeln()
     ..writeln("part of 'date_format.dart';")
     ..writeln()
-    ..writeln("/// Each locale's Gregorian calendar fields it defines itself.")
-    ..writeln('const Map<String, Map<String, String>> _gregorian = {');
+    ..writeln("/// Each locale's calendar fields it defines itself, by path.")
+    ..writeln('const Map<String, Map<String, String>> _calendars = {');
   for (final locale in fields.keys.toList()..sort()) {
     out.writeln('  ${_quote(locale)}: {');
     for (final MapEntry(:key, :value) in fields[locale]!.entries) {
       out.writeln('    ${_quote(key)}: ${_quote(value)},');
     }
     out.writeln('  },');
+  }
+  out
+    ..writeln('};')
+    ..writeln()
+    ..writeln(
+      "/// Root's aliases: a path a field not found under is looked for",
+    )
+    ..writeln('/// under instead (the rest of the path kept).')
+    ..writeln('const Map<String, String> _aliases = {');
+  for (final [from, to] in rows('calendar_aliases.tsv')) {
+    out.writeln('  ${_quote(from)}: ${_quote(to)},');
+  }
+  out
+    ..writeln('};')
+    ..writeln()
+    ..writeln(
+      "/// Each calendar's eras: the era, its first day's year, month and",
+    )
+    ..writeln("/// day, or (counted backwards) its last day's, and whether so.")
+    ..writeln('const Map<String, List<(int, int, int, int, bool)>> _eras = {');
+  final eras = <String, List<String>>{};
+  for (final [calendar, era, start, end] in rows('eras.tsv')) {
+    final backwards = start.isEmpty;
+    final date = backwards ? end : start;
+    // (A year below 1 written with a minus: -542-01-01.)
+    final negative = date.startsWith('-');
+    final [y, m, d] = (negative ? date.substring(1) : date).split('-');
+    (eras[calendar] ??= []).add(
+      '($era, ${negative ? '-' : ''}${int.parse(y)}, ${int.parse(m)}, '
+      '${int.parse(d)}, $backwards)',
+    );
+  }
+  for (final calendar in eras.keys) {
+    out.writeln('  ${_quote(calendar)}: [${eras[calendar]!.join(', ')}],');
+  }
+  // (Week data: each region's first day and first week's fewest days;
+  // the likely region of the languages CLDR has calendar data for.)
+  final firstDays = <String, String>{};
+  final minDays = <String, String>{};
+  final likely = <String, String>{};
+  final languages = {for (final l in fields.keys) l.split('-').first};
+  for (final [kind, key, value] in rows('weeks.tsv')) {
+    switch (kind) {
+      case 'firstDay':
+        firstDays[key] = value;
+      case 'minDays':
+        minDays[key] = value;
+      case 'likely' when languages.contains(key.split('-').first):
+        likely[key] = value;
+    }
+  }
+  const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+  out
+    ..writeln('};')
+    ..writeln()
+    ..writeln(
+      "/// Each region's first day of the week (1 Monday to 7 Sunday) and",
+    )
+    ..writeln(
+      "/// the fewest days of a year its first week has; `001` the world's.",
+    )
+    ..writeln('const Map<String, (int, int)> _weeks = {');
+  for (final region in {...firstDays.keys, ...minDays.keys}.toList()..sort()) {
+    final first = days.indexOf(firstDays[region] ?? firstDays['001']!) + 1;
+    out.writeln(
+      '  ${_quote(region)}: ($first, ${minDays[region] ?? minDays['001']}),',
+    );
+  }
+  out
+    ..writeln('};')
+    ..writeln()
+    ..writeln("/// Each language's (or language and script's) likely region.")
+    ..writeln('const Map<String, String> _likelyRegions = {');
+  for (final key in likely.keys.toList()..sort()) {
+    out.writeln('  ${_quote(key)}: ${_quote(likely[key]!)},');
   }
   out
     ..writeln('};')

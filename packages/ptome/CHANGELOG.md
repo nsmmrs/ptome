@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- Dates in other calendars (FEAT-gtxzgh): `:calendar:` (`japanese`,
+  `buddhist`, `roc`), or `lang`'s `-u-ca-`, shows the "Last updated" date
+  and an ISO `revdate` in it (`令和8年10月14日`), long by default. Not
+  under `asciidoctor-compat`.
 - Warichu (FEAT-csvpsb): `warichu:[...]`, an inline cutting note in two
   half-size lines within its line in the PDF (JLREQ 3.4), balanced, in
   columns in vertical text; a `<span class="warichu">` in HTML and EPUB,

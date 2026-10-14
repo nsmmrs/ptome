@@ -1,6 +1,6 @@
 # From CLDR 48.2.0 (common/supplemental/dayPeriods.xml, the
 # format rules), under the Unicode License v3 (LICENSE);
-# written by tool/import_cldr_gregorian.py.
+# written by tool/import_cldr_calendars.py.
 # locale, period, from, before (or at, with before empty)
 root	am	00:00	12:00
 root	pm	12:00	24:00

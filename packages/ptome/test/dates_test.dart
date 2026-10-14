@@ -91,4 +91,34 @@ void main() {
             as String;
     expect(text, contains('14. Oktober 2026'));
   }, skip: _poppler ? false : 'needs Poppler');
+
+  test("calendar, or lang's -u-ca-: the Japanese, Buddhist and ROC "
+      'calendars', () {
+    expect(
+      html({'lang': 'ja', 'calendar': 'japanese'}),
+      contains('<span id="revdate">令和8年10月14日</span>'),
+    );
+    expect(
+      html({'lang': 'ja-u-ca-japanese'}),
+      contains('最終更新 令和8年10月14日 17:46:40 GMT+9'),
+    );
+    expect(
+      html({'lang': 'th', 'calendar': 'buddhist'}),
+      contains('<span id="revdate">14 ตุลาคม 2569</span>'),
+    );
+    expect(
+      html({'lang': 'zh-Hant', 'calendar': 'roc'}),
+      contains('<span id="revdate">民國115年10月14日</span>'),
+    );
+    // (In English too: a calendar other than the Gregorian is long by
+    // default.)
+    expect(
+      html({'calendar': 'japanese'}),
+      contains('<span id="revdate">October 14, 8 Reiwa</span>'),
+    );
+    expect(
+      html({'lang': 'ja', 'calendar': 'japanese', 'asciidoctor-compat': ''}),
+      contains('<span id="revdate">2026-10-14</span>'),
+    );
+  });
 }

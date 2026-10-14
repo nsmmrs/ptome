@@ -10,10 +10,10 @@ List<(int, int, int)> reorderRuns(List<(int, int, int)> runs)
 List<LineBreak> lineBreaks(String text, {bool dictionary = true, LineBreakStrictness strictness = LineBreakStrictness.strict, bool chineseOrJapanese = false})
 QuotationMarks quotationMarks(String language)
 String defaultNumberingSystem(String language)
-String formatDate(DateTime moment, String language, {DateStyle style = DateStyle.long, Duration? offset, String? numberingSystem})
-String formatDateTime(DateTime moment, String language, {DateStyle date = DateStyle.long, DateStyle time = DateStyle.medium, Duration? offset, String? numberingSystem})
+String formatDate(DateTime moment, String language, {DateStyle style = DateStyle.long, Duration? offset, String? numberingSystem, CalendarSystem? calendar})
+String formatDateTime(DateTime moment, String language, {DateStyle date = DateStyle.long, DateStyle time = DateStyle.medium, Duration? offset, String? numberingSystem, CalendarSystem? calendar})
 String formatDigits(int value, String id)
-String formatTime(DateTime moment, String language, {DateStyle style = DateStyle.medium, Duration? offset, String? numberingSystem})
+String formatTime(DateTime moment, String language, {DateStyle style = DateStyle.medium, Duration? offset, String? numberingSystem, CalendarSystem? calendar})
 String get bidiUnicodeVersion
 String get caseMappingUnicodeVersion
 String get lineBreakUnicodeVersion
@@ -60,6 +60,16 @@ enum BidiClass
   static BidiClass s
   static BidiClass ws
   static List<BidiClass> values
+enum CalendarSystem
+  CalendarSystem? named(String name)
+  CalendarSystem? ofLanguage(String language)
+  String bcp47Name
+  String cldrName
+  static CalendarSystem buddhist
+  static CalendarSystem gregorian
+  static CalendarSystem japanese
+  static CalendarSystem roc
+  static List<CalendarSystem> values
 enum DateStyle
   static DateStyle full
   static DateStyle long

@@ -120,7 +120,11 @@ format with the zone's offset (`17:46:40 GMT+9`), the digits the
 document's numbering system's (above). `:date-format:` chooses the
 length: `short` (`14.10.26`), `medium`, `long` (the default in a
 document whose language isn't English), `full` (with the weekday), or
-`iso` (as written, the default in English). The dates are Gregorian.
+`iso` (as written, the default in English). `:calendar:` (or `lang`'s
+`-u-ca-`, `ja-u-ca-japanese`) shows them in another calendar: `japanese`
+(`令和8年10月14日`, `October 14, 8 Reiwa`), `buddhist` (`14 ตุลาคม 2569`)
+or `roc` (`民國115年10月14日`), long by default in any language; else,
+or for a name it doesn't know, the Gregorian.
 The attributes themselves (`docdate`, `docdatetime`, `localdate`...)
 stay ISO, as an EPUB's metadata and programs read them, and a `revdate`
 that isn't an ISO date is shown as written. Not under

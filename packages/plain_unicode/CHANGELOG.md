@@ -2,6 +2,22 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Calendars of eras (FEAT-gtxzgh): `formatDate`, `formatTime` and
+  `formatDateTime` take a `CalendarSystem` (else the one the language's
+  `-u-ca-` names): the Japanese (its eras since 645, the first year of
+  one 元年 in Japanese), Buddhist and ROC (Minguo) calendars, with
+  CLDR's eras and patterns. The data now holds every calendar's fields by
+  path, found through root's aliases as LDML resolves them
+  (`vendor/cldr/48.2.0/calendars.tsv`, `calendar_aliases.tsv`, `eras.tsv`
+  and `weeks.tsv`, written by `tool/import_cldr_calendars.py`, which
+  replaces `import_cldr_gregorian.py`); `Y`, the week-numbering year, by
+  CLDR's week data. Checked against ICU 78.3 in every covered locale on
+  each side of the last four eras' starts: dates the same; a date and
+  time joined differ only where ICU, which keeps a calendar's date and
+  time patterns in one array, takes the time or the joining pattern from
+  a parent locale (or the Gregorian "at" pattern) where LDML's aliases
+  take the locale's own.
+
 - `languageScript` (a language's script, its subtag or CLDR's likely one)
   and `isRightToLeftLanguage` (FEAT-nyf5rz).
 
@@ -17,8 +33,8 @@
   of each `DateStyle` (month and day names, day periods with their
   rules, eras, localized GMT offsets, the "at" date-time patterns, a
   pattern's own numbering), the language's digits or a numbering
-  system's (`vendor/cldr/48.2.0/gregorian.tsv` and `day_periods.tsv`,
-  written by `tool/import_cldr_gregorian.py`). Checked against ICU 78.3's
+  system's (`vendor/cldr/48.2.0`, written by
+  `tool/import_cldr_calendars.py`). Checked against ICU 78.3's
   DateFormat for every locale ICU carries at CLDR's basic coverage or
   more (`tool/oracles/icu/icudate`).
 

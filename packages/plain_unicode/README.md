@@ -29,8 +29,9 @@ JavaScript (whose own tables differ in age and in rules):
   writes its numbers in (CLDR 48.2: `arab`), `formatDigits` in them.
 - **Dates** (CLDR 48.2): `formatDate(moment, 'ja')` writes a date (and
   `formatTime`, `formatDateTime` a time) as the language does, in each
-  length (`DateStyle.short` to `full`), as ICU 78.3's DateFormat does in
-  the Gregorian calendar.
+  length (`DateStyle.short` to `full`), as ICU 78.3's DateFormat does,
+  in the Gregorian calendar or, by `-u-ca-` or a `CalendarSystem`, the
+  Japanese (令和8年), Buddhist or ROC calendar.
 - **Emoji** (UTS #51, Unicode 18.0.0): the emoji properties
   (`isEmojiPresentation`, `isExtendedPictographic`...) and
   `emojiSequenceLength`, where a flag, a ZWJ sequence or a keycap shown
