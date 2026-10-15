@@ -77,18 +77,20 @@ branching test config.
 
 - The gate takes about a minute here (55 s, the suites the long part),
   where the two tiers took over twenty.
-- CI runs about twice as long as the gate: green in 98 to 115 s, every
-  job under its two or three minutes. It doesn't reach a minute. Every
-  suite runs on three systems and on Node.js, the account runs twenty
-  jobs at once, and a Windows job spends 45 to 60 s before its first test
-  (the checkout, the SDK, the pub cache: its tar is slow). A minute would
-  take running the platform-sensitive suites only on macOS and Windows,
-  or larger runners.
+- CI runs about twice as long as the gate: green in 98 to 115 s, each
+  job held to two or three minutes. The goal was under a minute; it isn't
+  reached on free runners with every suite on three systems and on
+  Node.js (about 500 to 600 CPU-seconds of tests a system on a runner,
+  twenty jobs at once, a Windows job's 45 to 60 s before its first
+  test). Offered a platform-sensitive subset on macOS and Windows,
+  larger runners or Linux alone, the user kept every test on every
+  system at about 100 s (2026-10-15): that is CI's target now.
+- The corpus's cases where Asciidoctor's golden shows a defect ptome
+  doesn't reproduce are tested, not skipped: ptome's output must differ
+  from the golden and be its own, recorded in the case's `ptome.yml`.
+  Nothing in the suites is skipped.
 - Node.js's test runs waited ~40 ms a test on package:test's socket
   (Nagle's algorithm): `packages/ptome/tool/node_no_delay.cjs`, from
   `dart_test.yaml`, sets the socket's `noDelay`.
 - Port-era placeholder tests are gone: upstream's tests with no
   counterpart in ptome are listed in `benchmark/PARITY.md`.
-- The corpus's cases where Asciidoctor's own output has a defect ptome
-  doesn't reproduce stay listed skips (ADR-0022): they are the corpus's,
-  not a test missing.
