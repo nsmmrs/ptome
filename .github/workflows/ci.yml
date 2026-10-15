@@ -83,11 +83,10 @@ jobs:
     - name: Resolve and analyze each package alone
       run: tool/standalone.sh
   gate:
-    # The full gate's ptome part (tool/gate.sh ptome): every test with the
-    # coverage floor, the corpus held to its red list, the API and
-    # JavaScript projection, the CLI on the executable. The workspace job
-    # runs the plain_* packages and the npm job Node.js; live oracles run
-    # nightly (nightly.yml).
+    # The full gate's ptome part (tool/gate.sh ptome): every test, the
+    # corpus held to its red list, the API and JavaScript projection, the
+    # CLI on the executable. The workspace job runs the plain_* packages
+    # and the npm job Node.js; live oracles run nightly (nightly.yml).
     runs-on: ubuntu-latest
     defaults:
       run:

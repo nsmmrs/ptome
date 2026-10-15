@@ -24,7 +24,7 @@ default:
 # The fast gate: formatting, analysis, ptome's tests but the slow ones.
 fast: (_gate "fast")
 
-# The full gate: every test, coverage, APIs, the CLI, the plain_* packages.
+# The full gate: every test, APIs, the CLI, the plain_* packages.
 full: (_gate "full")
 
 _gate tier:
@@ -38,7 +38,7 @@ _gate tier:
       bash tool/gate.sh {{tier}} > "$log" 2>&1
     status=$?
     # (What failed, and the verdict; the whole run is in the log.)
-    grep -E 'NEW FAILURE|^tests:|^coverage:|Some tests failed' "$log" | head -40 || true
+    grep -E 'NEW FAILURE|^tests:|Some tests failed' "$log" | head -40 || true
     tail -1 "$log"
     if [ "$status" -ne 0 ] || ! tail -1 "$log" | grep -q "gate ({{tier}}): green"; then
       # (The gate says only that formatting or analysis failed: which files.)

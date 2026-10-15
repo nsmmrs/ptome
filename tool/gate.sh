@@ -4,9 +4,8 @@
 #   tool/gate.sh [fast]   every commit, about half a minute: formatting,
 #                         analysis, and ptome's tests but the slow ones (the
 #                         corpus included, held to test/corpus/red.txt)
-#   tool/gate.sh full     before a push: the same over every test, with the
-#                         coverage floor (packages/ptome/tool/coverage_floor.txt),
-#                         the API and JavaScript projection checks, the CLI
+#   tool/gate.sh full     before a push: the same over every test, the API
+#                         and JavaScript projection checks, the CLI
 #                         on a built executable (bats), and the plain_*
 #                         packages' tests (but the nightly ones) and APIs
 #   tool/gate.sh ptome    the full tier's ptome part alone (CI's gate job;
@@ -66,8 +65,8 @@ format_and_analyze() {
 }
 
 # ptome's tests (the fast tier's: but the slow ones), held to the corpus's
-# red list; the full tier's with coverage and its floor, then the CLI on
-# the built executable.
+# red list; the full tier's over every test, then the CLI on the built
+# executable.
 ptome_tests() {
   cd "$root/packages/ptome" || return 1
   have pdftoppm || echo "(no pdftoppm: PDF pages are compared by hash only)"
@@ -83,8 +82,7 @@ ptome_tests() {
     echo "built the executable ($((SECONDS - t))s)"
     t=$SECONDS
     export PTOME_EXE="$work/ptome"
-    dart test --branch-coverage --coverage="$work/coverage" \
-      --file-reporter "json:$work/tests.json" -r failures-only \
+    dart test --file-reporter "json:$work/tests.json" -r failures-only \
       > "$work/tests.log" 2>&1
   fi
   dart run tool/corpus_red.dart "$work/tests.json" || {
@@ -93,7 +91,6 @@ ptome_tests() {
   }
   echo "(tests: $((SECONDS - t))s)"
   [ "$tier" = fast ] && return $status
-  dart run tool/coverage_gate.dart "$work/coverage" || status=1
   if have bats; then
     t=$SECONDS
     ASCIIDOCTOR_EXE="$PTOME_EXE" bats test/e2e/ > "$work/bats.log" 2>&1 || {

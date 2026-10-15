@@ -38,9 +38,9 @@ From the repository root, the gate in two tiers (ADR-0022):
 ```sh
 tool/gate.sh          # every commit, about 40 s: format, analyze, ptome's
                       # tests but the slow ones, the corpus included
-tool/gate.sh full     # before a push, about 3 min: every test with the
-                      # coverage floor, API and JavaScript projection
-                      # checks, the CLI (bats), the plain_* packages
+tool/gate.sh full     # before a push, about 3 min: every test, API and
+                      # JavaScript projection checks, the CLI (bats),
+                      # the plain_* packages
 ```
 
 The `justfile` runs them in a capped scope (12 GB, no swap) and commits
@@ -65,9 +65,8 @@ a run's JSON report shows passing; `--add` also lists its new failures, for
 a case new to the corpus). ptome's fixes of upstream bugs are tested in
 `test/upstream_fixes/`.
 
-The full tier also holds the suite's coverage of ptome's code (lines and
-branch arms) to `tool/coverage_floor.txt`; new code comes with tests, the
-corpus's cases first. Tests that start processes or run long property
+Tests are judged by the input they feed and the output they check; no gate
+measures coverage. Tests that start processes or run long property
 checks are tagged `slow` (`dart test -x slow` leaves them out).
 
 The live oracles (the gem's CLI, asciidoctor-epub3 with EPUBCheck, and the

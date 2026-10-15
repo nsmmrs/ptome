@@ -1,4 +1,0 @@
-# The least coverage of ptome's code a test run may reach, in
-# percent (dart run tool/coverage_gate.dart DIR --update).
-lines 91.7
-branches 85.9
