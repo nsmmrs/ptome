@@ -52,6 +52,32 @@ capitals, italics, abbreviations and punctuation; it writes the round s
 for its long s, and each sign by its name (`{aries}`), the characters
 in `text/signs.adoc`.
 
+## The scans transcribed
+
+The pages of https://archive.org/details/poorrichardalman00fran the transcription was
+made from, each the Internet Archive's JPEG
+(`https://archive.org/download/poorrichardalman00fran/page/<page>.jpg`) with its
+SHA-256:
+
+```
+5a2d2c85aa65919c87068dfa1470eb1483564cac1c2dd35a8eaa517da5d1c1e5  n0.jpg
+14dc11aaa3ddd3bbf805fa63a1e400da9bf3e96d6f9034667bda1bbd3ad380e3  n3.jpg
+132d5bc43f76e9bc4e9c221766b7ba2a82be0423f61a1b62616e2fcb8c7529f3  n4.jpg
+ab5f01418b425db98616e222149044817a4adac340dd7e8b209456c526d6841b  n6.jpg
+80b339a1409b3f13a10ea0e0c9488f9f063722e0c095bf3f6b3ab35a7636d675  n8.jpg
+98e7c859a0fc4730350e9aabf9402ea3381d63b8b64baaa5d37ae7589e2d46a2  n9.jpg
+da4b5bd238b98e8ddd7ff6603ae624b3f6c5a0a8e8d7fa357f6411d24b36c934  n10.jpg
+6e10ccf3119bc2f53da9f43ac9036d9cc7af9819731e43f5f5ca17e13f954a45  n11.jpg
+e5f4b139c97bcc1435b2f258e87301f59a76c9546324c5fb1a42d27028b27f9e  n12.jpg
+67f832a027e74e32668511ea7541570b7d1d65157a4e796282a82cfedca92473  n13.jpg
+95d73c342f33b3d4380d8992d2b4398bfc9c9d38d6f51f1aea7bf2cca722db4b  n14.jpg
+7a5bf0b43c90afde6a1b3b140b3c1887537b0157180a2cfa8ce2df297ff51511  n15.jpg
+4064c69b5c34a2d2ed2bcf3375986537555a1c1c6c96a1cb907178d0439f8631  n16.jpg
+b5d49faaf5205b89bd896b479453433b14527719c591ab4a7dbd5fe5c5ecd6a3  n17.jpg
+3d4294d09557d9f77047bcc3591123b61e44dd790f10f9cfe3b7a024fb3967e7  n18.jpg
+485ed1fbc39e813cb31c9044a49af66e45a261818a0afee19fe5d49f7b4e7215  n19.jpg
+```
+
 ## Licence
 
 The almanac is in the public domain (published 1732 for 1733; Franklin

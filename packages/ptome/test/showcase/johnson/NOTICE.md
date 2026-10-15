@@ -42,6 +42,19 @@ for the edition's long s. LEWD begins at the foot of the page before
 from LE´WDLY to LIBERTINE. The Saxon of LEWD is written in Unicode, its
 wynn as ƿ, the yogh of LEY as ȝ.
 
+## The scans transcribed
+
+The pages of https://archive.org/details/b30451541_0002 the transcription was
+made from, each the Internet Archive's JPEG
+(`https://archive.org/download/b30451541_0002/page/<page>.jpg`) with its
+SHA-256:
+
+```
+eef884c7a9d96bb2a164b23de4d340322d2f03f31d5b994592de5e8e4dcbe3ff  n44.jpg
+a9e3a3015802b5160e72a9f01440a82a923a5f5011e8bed649a6a99bcff3356a  n45.jpg
+c2a9ed97f263cd79d02df7cce30b3d3d3c95d0d94d756004182d92690cd47047  n46.jpg
+```
+
 ## Licence
 
 The Dictionary is in the public domain (published 1755; Samuel Johnson

@@ -160,12 +160,14 @@ void main() {
     expect(catchword, next);
   });
 
-  test('small capitals a font lacks: the capitals kept at full size', () {
+  test('small capitals a font lacks, base_small_caps_synthesis: lowercase: '
+      'the capitals kept at full size', () {
     final content = qpdfQdf(
       _recorded,
       _pdf(
         ':nofooter:\n\n[.sc]#Lewdly#\n',
-        'role:\n  sc:\n    font_variant: small-caps\n',
+        'base:\n  small_caps_synthesis: lowercase\n'
+            'role:\n  sc:\n    font_variant: small-caps\n',
       ).readAsBytesSync(),
     );
     final sizes = {

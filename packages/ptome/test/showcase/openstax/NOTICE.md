@@ -81,3 +81,10 @@ repository).
 
 Noto Serif, Noto Sans and Noto Sans Math (SIL Open Font License 1.1),
 which `ptome doctor` installs. Not committed.
+
+## The look
+
+Designed for the work, after OpenStax's own printed and web books (a
+modern textbook's notes, examples and figures), not after a scan: the
+chapter is a modern work, so no page is set beside a reference scan
+(`compare` is empty), and nothing departs from a printing.

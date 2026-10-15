@@ -41,6 +41,28 @@ transcription keeps the edition's spelling, its capitals and its
 punctuation, and its u, v, i and j; it writes the round s for every s,
 the long s coming from the font.
 
+## The scans transcribed
+
+The pages of https://archive.org/details/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633 the transcription was
+made from, each the Internet Archive's JPEG
+(`https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/<page>.jpg`) with its
+SHA-256:
+
+```
+135abeeab775b085108d7565a76110f4388fcbdd9eae6c2a837a5cb254e69bb3  n6.jpg
+2c2d751a5c8e311c6555aab5df1f094d7516d15fa890c7dce2a5c9f692f577e8  n24.jpg
+1fba9e29b54955c5af65488b160b54aa92670d3196cb77a96a98fc1a81072336  n25.jpg
+f148738e4f13436efe8641a8f3b13cbfc14f12fd05883ec250203e7b571a0b95  n38.jpg
+bdf42a0bb36a5ccd2d450771d6b01a7b81421cbe96a5d43e7dc5a7c758df801b  n39.jpg
+7fd85f04a2ac8e05e3ab5982bbfeb648a02273094ec11912e619048591b5fc36  n40.jpg
+d37e12d229d0358d3579290791b67da4db0d5d5b6d0e1e33654be5e90fdfeca4  n41.jpg
+a8922e1de746be76bb274c96254eefb3f608b8fb1dc70b9ec6d7cf06ebc7aa17  n42.jpg
+81e9246e03cf0ca70fcf9ff86db40b97110e8d7b7580a7bf1b4644f1473fe8dd  n43.jpg
+cf65059bc3782639a56baeb237a0b3c9b42a17ddf58a2d955297c506efec385e  n50.jpg
+5ce415ab863a16bdc7656d28dc4a248e31b0c56be3c501a768da434f203b60c5  n59.jpg
+2e6fd299320a5e89d4a6ec6908beacf69cd0f826caad9d77c75cb07e65014c31  n60.jpg
+```
+
 ## Licence
 
 The Temple is in the public domain (published 1633; George Herbert died

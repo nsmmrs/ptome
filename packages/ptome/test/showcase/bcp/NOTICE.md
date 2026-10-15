@@ -33,6 +33,17 @@ ruled table (FEAT-v9bhk3).
 | The Calendar's January | `text/calendar.adoc`, transcribed for the work from the 1761 printing below |
 | `schemes/liturgy.yml` | a copy of the units corpus's scheme (the document reads the schemes beside it) |
 
+## The scans transcribed
+
+The pages of https://archive.org/details/10904662bsb the transcription was
+made from, each the Internet Archive's JPEG
+(`https://archive.org/download/10904662bsb/page/<page>.jpg`) with its
+SHA-256:
+
+```
+803c24fd960fb610bf773ccbc5955141ae4cc38ea10c112abce0558ee1517205  n23.jpg
+```
+
 ## Licence
 
 The Book of Common Prayer (1662) is in the public domain in the United

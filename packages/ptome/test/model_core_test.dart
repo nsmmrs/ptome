@@ -745,37 +745,6 @@ void main() {
     });
   });
 
-  group('findBy in tables', () {
-    // (As Asciidoctor's find_by_internal: a table's cells, and with
-    // traverseDocuments the documents of its AsciiDoc cells.)
-    const source = '''
-[cols=2]
-|===
-|Plain
-a|
-[#inner]
-An inner paragraph.
-|===
-''';
-
-    test("a table's cells", () {
-      final doc = load(source);
-      expect(doc.findBy().whereType<Cell>().map((c) => c.style), [
-        null,
-        'asciidoc',
-      ]);
-      expect(doc.findBy(id: 'inner'), isEmpty);
-    });
-
-    test("with traverseDocuments, its AsciiDoc cells' documents", () {
-      final doc = load(source);
-      expect(
-        doc.findBy(id: 'inner', traverseDocuments: true).map((b) => b.id),
-        ['inner'],
-      );
-    });
-  });
-
   group('nextAdjacentBlock', () {
     test('walks siblings then past the parent', () {
       final doc = makeDoc();

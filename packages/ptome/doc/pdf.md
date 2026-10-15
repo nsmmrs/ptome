@@ -546,7 +546,8 @@ to only check).
 | `base_font_variant_numeric` | none | `oldstyle-nums` sets numbers in old-style figures (`onum`), when the font has them; also `lining-nums`, `tabular-nums`, `proportional-nums`. |
 | `base_font_variant_alternates` | none | `historical-forms` sets text with the font's historical forms (`hist`): the long s of the Fell types where the font's own rules put it, before a letter but not at a word's end. Not under `asciidoctor-compat`. |
 | `base_font_variant_ligatures` | none | `discretionary-ligatures` (`dlig`: the ct of an early printed book) and `historical-ligatures` (`hlig`), separated by a space for both, by the font's own rules. Not under `asciidoctor-compat`. |
-| `role_<role>_font_variant` | none | `small-caps` sets text with the role (`[.sc]#Text#`) in small capitals (`smcp`), or, when the font has none, its lowercase letters in capitals 0.8 its size, its capitals as they are (as CSS makes them). `role_<role>_font_variant_numeric` takes the numeric values above. |
+| `role_<role>_font_variant` | none | `small-caps` sets text with the role (`[.sc]#Text#`) in small capitals (`smcp`), or in smaller capitals when the font has none. `role_<role>_font_variant_numeric` takes the numeric values above. |
+| `base_small_caps_synthesis` | `all` | `lowercase`: small capitals a font lacks are made from the text's lowercase letters alone, 0.8 its size, its capitals kept as they are (as CSS makes them; a dictionary's headwords); `all` sets the whole text in smaller capitals. Not under `asciidoctor-compat`. |
 
 Text is kerned by the font's OpenType (GPOS) pairs. A style the font
 catalog lacks for a family (a display face with no italic) is made from

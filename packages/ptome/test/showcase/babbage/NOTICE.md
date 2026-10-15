@@ -25,7 +25,9 @@ The values are computed, not copied: `tool/showcase_babbage.dart` writes
 `text/table.adoc` (and the excerpt's `text/excerpt-table.adoc`), the
 logarithms of the numbers from 10,000 to 19,999 to seven places
 (`log(n) / ln 10`, rounded), laid out as Babbage lays his out. The
-advertisement is written for the work.
+advertisement is written for the work. Nothing is copied from a
+source, so there is no source file and no SHA-256; the scan below is
+what the look follows, not a source of the text.
 
 ## Licence
 

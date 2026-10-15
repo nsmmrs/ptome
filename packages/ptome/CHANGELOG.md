@@ -10,10 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
-- `findBy` reaches into a table's cells, and with `traverseDocuments`
-  into its AsciiDoc cells' documents, as Asciidoctor's `find_by` does; a
-  jump line in a table cell knows whether its target comes before it
-  (the New-York Tribune's front page). EPUB: a cross reference to an
+- A jump line in a table cell knows whether its target comes before it,
+  searching the AsciiDoc cells' documents in their places (the
+  New-York Tribune's front page). EPUB: a cross reference to an
   anchor in a later AsciiDoc table cell links to its chapter, where
   asciidoctor-epub3 leaves it unknown (BUG-xmdjm0,
   `test/upstream_fixes/epub-output-6`); not under `asciidoctor-compat`.
@@ -29,8 +28,10 @@ Asciidoctor project.
   line it ends, or on a line of its own, as TeX sets a citation
   (FEAT-tc5vgk); running content takes each column's first and last
   mark, `{column-<n>-last-mark}` (FEAT-0ks2ly), and the next page's
-  first word, `{page-catchword}` (FEAT-mm205k); small capitals a font
-  lacks keep its capitals at full size (BUG-mpp8wr).
+  first word, `{page-catchword}` (FEAT-mm205k);
+  `base_small_caps_synthesis: lowercase` makes small capitals a font
+  lacks from its lowercase letters alone, its capitals kept at full size
+  (BUG-mpp8wr).
 - PDF: a paragraph's drop initial beside a floated image is drawn and
   its first lines set in beside it; the letter was taken from the text
   and never drawn (BUG-qqz54w). `tool/showcase_byrne.dart` draws the

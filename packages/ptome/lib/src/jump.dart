@@ -9,6 +9,7 @@ library;
 import 'package:ptome/src/abstract_block.dart';
 import 'package:ptome/src/document.dart';
 import 'package:ptome/src/output_template.dart';
+import 'package:ptome/src/table.dart';
 
 /// The default wording: with a page, "Continued on page 7" ("from" when
 /// the target comes before); without, "Continued in The Science".
@@ -33,18 +34,35 @@ String jumpText(
 /// Whether [block] is a jump line: a paragraph with the role `jump`.
 bool isJump(AbstractBlock block) => block.includesRole('jump');
 
-/// Whether the block [id] names comes before [block] in [doc] (the
-/// AsciiDoc table cells' documents in their places among its blocks, a
-/// newspaper's stories set in a table).
+/// Whether the block [id] names comes before [block] in [doc]: the
+/// blocks in document order, each AsciiDoc table cell's document in its
+/// cell's place (a newspaper's stories set in a table).
 bool jumpsBack(Document doc, AbstractBlock block, String id) {
   var root = doc;
   for (var parent = doc.parentDocument; parent != null;) {
     root = parent;
     parent = parent.parentDocument;
   }
-  for (final other in root.findBy(traverseDocuments: true)) {
-    if (identical(other, block)) return false;
-    if (other.id == id) return true;
+  bool? walk(Document document) {
+    for (final other in document.findBy()) {
+      if (identical(other, block)) return false;
+      if (other.id == id) return true;
+      if (other is Table) {
+        for (final row in [
+          ...other.rows.head,
+          ...other.rows.body,
+          ...other.rows.foot,
+        ]) {
+          for (final cell in row) {
+            if (cell.innerDocument case final inner?) {
+              if (walk(inner) case final found?) return found;
+            }
+          }
+        }
+      }
+    }
+    return null;
   }
-  return false;
+
+  return walk(root) ?? false;
 }

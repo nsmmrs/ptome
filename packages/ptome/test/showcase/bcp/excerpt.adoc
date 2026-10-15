@@ -10,4 +10,4 @@
 // initial passed on to its first prayer, its petitions each followed by
 // the response its units scheme prints.
 
-include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..36]
+include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..24]

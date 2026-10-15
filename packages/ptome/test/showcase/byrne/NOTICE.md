@@ -42,6 +42,21 @@ figure, the text has the figure: `text/symbols.adoc` names the lines
 (`{red}`, `{red-blue}`...), the equals sign and the sign for
 therefore, the rest are named where they are used.
 
+## The scans transcribed
+
+The pages of https://archive.org/details/firstsixbooksofe00byrn the transcription was
+made from, each the Internet Archive's JPEG
+(`https://archive.org/download/firstsixbooksofe00byrn/page/<page>.jpg`) with its
+SHA-256:
+
+```
+9371ffbef8705a990c2cb4f552b38d15baa615f776ec70bf943f54f8ccce45a5  n34.jpg
+c01d87d92d6bdb4eeb98a56729a09c6f4c243ba824e52112b8c520faac33ac11  n35.jpg
+a66b8f25fcf2e18f6b25bc31d0e2f6cf5103c8e854545174efda288b9274f577  n36.jpg
+5d74288f8a95815dad95d19b6558cf8deec47b3ff8814e9dd72a9b8c6e4aa247  n37.jpg
+210b1ffc38c865dd39b27a2a6acc555e8ccf78aa37b020044ea633499011e69c  n38.jpg
+```
+
 ## Licence
 
 The book is in the public domain (published 1847; Oliver Byrne died in

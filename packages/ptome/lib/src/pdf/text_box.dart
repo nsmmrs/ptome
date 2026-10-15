@@ -321,6 +321,7 @@ final class TextContext {
     this.combineDigits = 0,
     this.invisibleIgnorables = false,
     this.fallbackMetrics = true,
+    this.lowercaseSmallCaps = false,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -351,6 +352,7 @@ final class TextContext {
           combineDigits: combineDigits,
           invisibleIgnorables: invisibleIgnorables,
           fallbackMetrics: fallbackMetrics,
+          lowercaseSmallCaps: lowercaseSmallCaps,
           logger: logger,
         );
 
@@ -457,6 +459,12 @@ final class TextContext {
   /// toward its line's height (`font_fallback_metrics: own`, the
   /// default), or the text's own font's (`base`).
   final bool fallbackMetrics;
+
+  /// Whether small capitals a font lacks are made from the text's
+  /// lowercase letters alone, its capitals kept at full size
+  /// (`base_small_caps_synthesis: lowercase`), rather than the whole text
+  /// in smaller capitals (the default).
+  final bool lowercaseSmallCaps;
 
   /// Where warnings go.
   final LoggerBase logger;
@@ -662,10 +670,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       )) {
         final format = _resolve(run, state, context);
         final text = format.font.normalize(run.text);
-        // (Small capitals the font lacks: its lowercase letters set as
-        // smaller capitals, its capitals as they are, as CSS synthesizes
+        // (Small capitals the font lacks: the text in smaller capitals;
+        // with `base_small_caps_synthesis: lowercase`, its lowercase
+        // letters alone, its capitals as they are, as CSS synthesizes
         // them; BUG-mpp8wr.)
-        final parts = format.smallCapitals
+        final parts = format.smallCapitals && context.lowercaseSmallCaps
             ? [
                 for (final m in _caseRx.allMatches(text))
                   if (m[1] != null)
@@ -673,7 +682,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
                   else
                     (m[0]!, format._full),
               ]
-            : [(text, format)];
+            : [(format.smallCapitals ? text.toUpperCase() : text, format)];
         // One item per line of the fragment (Prawn's `format_array=`), its
         // words in capitals apart when they are tracked.
         for (final (part, partFormat) in parts) {

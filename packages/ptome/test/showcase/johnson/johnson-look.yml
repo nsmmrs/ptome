@@ -29,6 +29,8 @@ styles:
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
+  base:
+    small_caps_synthesis: lowercase
   font:
     fallbacks: [Noto Serif]
   page:

@@ -69,6 +69,9 @@ extension _DocumentParts on PdfConverter {
       fallbackMetrics:
           asciidoctorCompat(document, CompatFormat.pdf) ||
           _s('font_fallback_metrics') != 'base',
+      lowercaseSmallCaps:
+          !asciidoctorCompat(document, CompatFormat.pdf) &&
+          _s('base_small_caps_synthesis') == 'lowercase',
       images: (src, format) =>
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
