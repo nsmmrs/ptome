@@ -20,6 +20,10 @@ const listPath = 'test/corpus/red.txt';
 /// The corpus's test files (`test/corpus_<n>_test.dart`).
 final RegExp _corpusSuite = RegExp(r'corpus_\d+_test\.dart$');
 
+/// A test's name in a program of several files (`tool/shard.dart
+/// --programs`): its file's group, then its own name.
+final RegExp _inProgram = RegExp(r'^(test/\S+_test\.dart) (.*)$');
+
 void main(List<String> arguments) {
   final args = [...arguments];
   final update = args.remove('--update');
@@ -101,10 +105,13 @@ void main(List<String> arguments) {
           'suiteID': final int suite,
         },
       }:
-        names[id] = name;
-        if (_corpusSuite.hasMatch(suites[suite] ?? '')) {
-          corpus.add(id);
-        }
+        // (In a program, the file is the name's first word.)
+        final (path, own) = switch (_inProgram.firstMatch(name)) {
+          final m? => (m[1]!, m[2]!),
+          _ => (suites[suite] ?? '', name),
+        };
+        names[id] = own;
+        if (_corpusSuite.hasMatch(path)) corpus.add(id);
       case {
             'type': 'testDone',
             'testID': final int id,

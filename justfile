@@ -35,7 +35,7 @@ gate:
       bash tool/gate.sh > "$log" 2>&1
     status=$?
     # (What failed, and the verdict; the whole run is in the log.)
-    grep -E 'NEW FAILURE|OVER BUDGET|^tests:|^budget:|Some tests failed|differs|== done' "$log" | head -40 || true
+    grep -E 'NEW FAILURE|OVER BUDGET|: tests:|^budget:|Some tests failed|differs|== done' "$log" | head -40 || true
     tail -1 "$log"
     if [ "$status" -ne 0 ] || ! tail -1 "$log" | grep -q "gate: green"; then
       # (The gate says only that formatting or analysis failed: which files.)

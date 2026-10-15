@@ -31,21 +31,6 @@ unset PTOME_FONT_PATH
 work="${TMPDIR:-/tmp}/ptome-gate"
 cores="$(nproc 2>/dev/null || echo 4)"
 
-# (Internal: one package's suite into its JSON report, for the parallel
-# run; ptome's checked against the corpus's red list.)
-if [ "${1:-}" = _suite ]; then
-  cd "$root/packages/$2" || exit 1
-  dart test -j "$3" --file-reporter "json:$4/$2.json" -r failures-only \
-    > "$4/$2.log" 2>&1
-  status=$?
-  if [ "$2" = ptome ]; then
-    dart run tool/corpus_red.dart "$4/ptome.json" || status=1
-  else
-    tail -1 "$4/$2.log"
-  fi
-  exit $status
-fi
-
 rm -rf "$work" && mkdir -p "$work"
 
 # The jobs started, as `name|log`; each writes `<status> <seconds>` beside
@@ -75,27 +60,10 @@ format_and_analyze() {
   return $status
 }
 
-# Every package's suite: ptome's beside the others, two of those at a
-# time, the cores shared out.
+# Every package's suite, as one of CI's shards runs its part
+# (tool/test_shard.sh): the packages side by side, in a program a core.
 suites() {
-  local status=0 pkg
-  "$root/tool/gate.sh" _suite ptome "$((cores / 2))" "$work" \
-    > "$work/ptome.summary" 2>&1 &
-  local ptome=$!
-  for pkg in packages/*/; do
-    pkg="$(basename "$pkg")"
-    if [ "$pkg" != ptome ] && [ -d "packages/$pkg/test" ]; then echo "$pkg"; fi
-  done | xargs -P 2 -I{} bash -c \
-    '"$0" _suite "$1" "$2" "$3" > "$3/$1.summary" 2>&1 || touch "$3/$1.failed"' \
-    "$root/tool/gate.sh" {} "$(((cores / 2 + 1) / 2))" "$work"
-  wait "$ptome" || touch "$work/ptome.failed"
-  for pkg in packages/*/; do
-    pkg="$(basename "$pkg")"
-    [ -f "$work/$pkg.summary" ] || continue
-    echo "$pkg: $(tr '\n' ' ' < "$work/$pkg.summary")"
-    [ -e "$work/$pkg.failed" ] && status=1
-  done
-  return $status
+  tool/test_shard.sh 1 0 "$cores" "$work/tests"
 }
 
 apis_and_js() {

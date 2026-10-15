@@ -151,13 +151,18 @@ final class Case {
   }
 }
 
-/// The corpus, with every PDF and EPUB set in the vendored fonts only (never
-/// the machine's).
-Corpus loadCorpus() {
+/// Installs the fonts the corpus's PDFs and EPUBs are set in: the vendored
+/// ones only (never the machine's).
+void useCorpusFonts() {
   Fonts.installed = FontIndex([
     for (final dir in vendoredFontDirectories)
       p.posix.join(io.currentDirectory, dir),
   ]);
+}
+
+/// The corpus (its PDFs and EPUBs set in the fonts [useCorpusFonts]
+/// installs).
+Corpus loadCorpus() {
   final settings = _yaml(p.posix.join(corpusRoot, 'goldens.yml'));
   final release = settings['release']! as String;
   final cases = <Case>[];

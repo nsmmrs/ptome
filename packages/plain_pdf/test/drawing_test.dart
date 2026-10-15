@@ -144,7 +144,9 @@ String run(String tool, List<String> args, {Encoding encoding = latin1}) {
 }
 
 void main() {
-  recordedTools = Oracle('drawing', compressed: true);
+  // (Set as the file's tests start: files may share a program.)
+  final recorded = Oracle('drawing', compressed: true);
+  setUpAll(() => recordedTools = recorded);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
 

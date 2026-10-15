@@ -4,3 +4,10 @@
 tags:
   corpus:
     timeout: 2x
+
+# On Node.js, the test program's socket to the runner without Nagle's
+# delay (tool/node_no_delay.cjs): ~40 ms a test otherwise.
+override_platforms:
+  node:
+    settings:
+      arguments: --require ./tool/node_no_delay.cjs

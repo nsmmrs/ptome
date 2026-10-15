@@ -134,7 +134,7 @@ const modernParagraph =
 /// The tools' runs, recorded for the test file under way (each sets it:
 /// `test/oracles/pdf_modern_<n>.json.gz`, test/support/oracles.dart;
 /// ORACLES=record asks them again).
-late final Oracle modernRecorded;
+late Oracle modernRecorded;
 
 /// The folder the documents are converted in.
 late Directory modernDir;

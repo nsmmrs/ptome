@@ -56,6 +56,17 @@ VM, the npm package, the CLI's bats suite and the packages' publishing and
 standalone resolution. Each test job holds its files to the time budget
 (`tool/test_budget.txt`).
 
+The gate and CI's shards run the test files a few to a program
+(`tool/test_shard.sh`, `tool/shard.dart --programs`): a program loads once
+for all its files, where `dart test` alone starts, and compiles, each
+file. Each file is a group named for its path, and starts from the
+package's test world (`test/support/world.dart`, where a package has
+settings a file may change for the whole process: ptome's fonts, logger
+and parallel nesting). So a test file changes such a setting in a `setUp`
+or `setUpAll`, never while declaring its tests (the program fails to load
+naming it), and keeps per-file state to itself. `dart test` alone, or on
+one file, runs the same tests.
+
 The tests run the same everywhere: in one world (`PTOME_SYSTEM_FONTS=off`,
 a fixed `SOURCE_DATE_EPOCH`, `TZ=UTC`, `PTOME_FONT_PATH` unset; the gate
 and CI set it, `test/hermetic_test.dart` checks it), no test looking for a

@@ -18,7 +18,9 @@ import '../vendored_fonts.dart';
 import 'support/modern.dart';
 
 void main() {
-  modernRecorded = Oracle('pdf_modern_3', compressed: true);
+  // (Set as the file's tests start: files may share a program.)
+  final recorded = Oracle('pdf_modern_3', compressed: true);
+  setUpAll(() => modernRecorded = recorded);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();

@@ -36,7 +36,7 @@ jobs:
         node-version: lts/*
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - name: Analysis, the APIs, the JavaScript projection, the generated grammars
@@ -65,8 +65,9 @@ jobs:
         exit $status
   tests:
     # Every package's tests on each system, dealt into shards of about the
-    # same time (tool/shard.dart), each held to the tests' budget
-    # (tool/test_budget.dart) and ptome's corpus to its red list.
+    # same time, each shard's in four programs side by side
+    # (tool/test_shard.sh, as the gate runs them), held to the tests'
+    # budget (tool/test_budget.dart) and ptome's corpus to its red list.
     strategy:
       fail-fast: false
       matrix:
@@ -91,33 +92,11 @@ jobs:
     - uses: dart-lang/setup-dart@v1
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
-    # (The test runner's incremental kernels, the shard's last run's: only
-    # what changed since is compiled again.)
-    - uses: actions/cache@v4
-      with:
-        path: packages/*/.dart_tool/test
-        key: test-kernel-${{ runner.os }}-${{ matrix.shards }}-${{ matrix.shard }}-${{ github.sha }}
-        restore-keys: test-kernel-${{ runner.os }}-${{ matrix.shards }}-${{ matrix.shard }}-
     - name: The shard's tests
-      run: |
-        packages="$(cd packages && for p in */; do if [ -d "$p/test" ]; then echo "${p%/}"; fi; done)"
-        reports=()
-        status=0
-        while read -r package files; do
-          echo "::group::$package"
-          (cd "packages/$package" &&
-            dart test -j 4 --file-reporter "json:$RUNNER_TEMP/$package.json" $files) || status=1
-          echo "::endgroup::"
-          reports+=("$package=$RUNNER_TEMP/$package.json")
-        done < <(dart run tool/shard.dart ${{ matrix.shards }} ${{ matrix.shard }} $packages)
-        if [ -f "$RUNNER_TEMP/ptome.json" ]; then
-          (cd packages/ptome && dart run tool/corpus_red.dart "$RUNNER_TEMP/ptome.json") || status=1
-        fi
-        dart run tool/test_budget.dart "${reports[@]}" || status=1
-        exit $status
+      run: tool/test_shard.sh --budget ${{ matrix.shards }} ${{ matrix.shard }} 4 "$RUNNER_TEMP/tests"
   node:
     # ptome's suites on Node.js, in four programs (tool/node_tests.dart),
     # a job each (each is a whole dart2js compile).
@@ -138,7 +117,7 @@ jobs:
         node-version: lts/*
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - name: The programs' tests on Node.js
@@ -164,7 +143,7 @@ jobs:
         node-version: lts/*
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - name: JavaScript writes the same bytes as the VM
@@ -195,7 +174,7 @@ jobs:
         node-version: lts/*
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - run: ./tool/build-npm.sh
@@ -231,7 +210,7 @@ jobs:
     - uses: dart-lang/setup-dart@v1
     - uses: actions/cache@v4
       with:
-        path: ~/.pub-cache
+        path: ${{ env.PUB_CACHE }}
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - run: |

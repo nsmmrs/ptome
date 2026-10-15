@@ -25,6 +25,7 @@ void corpusTests({required int part, required int parts}) {
 
   // On JavaScript the PDF and EPUB backends are loaded on demand.
   setUpAll(() async {
+    useCorpusFonts();
     for (final format in [Format.pdf, Format.epub3]) {
       await const Ptome().loadBackend(format.backend);
     }

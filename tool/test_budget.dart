@@ -63,6 +63,10 @@ void main(List<String> arguments) {
   exit(over.isEmpty ? 0 : 1);
 }
 
+/// A test's name in a program of several files (`tool/shard.dart
+/// --programs`): its file's group, then its own name.
+final RegExp _inProgram = RegExp(r'^(test/\S+_test\.dart) ');
+
 String _s(double seconds) => '${seconds.toStringAsFixed(2)} s';
 
 /// The limits, in seconds: any one [test], any one test file ([suite],
@@ -111,8 +115,9 @@ final class Budget {
 }
 
 /// A run's times from its JSON report: each visible test's, each test
-/// file's (from its first test, loading, to its last), and the whole
-/// run's.
+/// file's (from its first test, loading, to its last; in a program of
+/// several files, `tool/shard.dart --programs`, the file's group's), and
+/// the whole run's.
 final class Run {
   Run(this.tests, this.suites, this.seconds);
 
@@ -121,6 +126,15 @@ final class Run {
     final started = <int, ({String name, int suite, int time, bool hidden})>{};
     final firstStart = <int, int>{};
     final lastDone = <int, int>{};
+    // (A program's files, keyed below the suites' ids.)
+    final fileKeys = <String, int>{};
+    final files = <int, String>{};
+    final fileOf = <int, int>{};
+    int key(String path) => fileKeys[path] ??= () {
+      final key = -1 - fileKeys.length;
+      files[key] = path;
+      return key;
+    }();
     final tests = <({String name, String path, double seconds})>[];
     var end = 0;
     for (final line in report.readAsLinesSync()) {
@@ -141,16 +155,25 @@ final class Run {
           },
           'time': final int time,
         }:
+          // (In a program, a test's file is its name's first word: the
+          // file's group.)
+          final file = switch (_inProgram.firstMatch(name)) {
+            final m? => key(m[1]!),
+            _ => null,
+          };
           started[id] = (
             name: name,
             suite: suite,
             time: time,
             hidden: name.startsWith('loading '),
           );
-          firstStart[suite] = switch (firstStart[suite]) {
-            final t? when t < time => t,
-            _ => time,
-          };
+          for (final key in [suite, ?file]) {
+            firstStart[key] = switch (firstStart[key]) {
+              final t? when t < time => t,
+              _ => time,
+            };
+          }
+          if (file != null) fileOf[id] = file;
         case {
           'type': 'testDone',
           'testID': final int id,
@@ -158,14 +181,16 @@ final class Run {
           'time': final int time,
         }:
           final start = started[id]!;
-          lastDone[start.suite] = switch (lastDone[start.suite]) {
-            final t? when t > time => t,
-            _ => time,
-          };
+          for (final key in [start.suite, ?fileOf[id]]) {
+            lastDone[key] = switch (lastDone[key]) {
+              final t? when t > time => t,
+              _ => time,
+            };
+          }
           if (!start.hidden && !skipped) {
             tests.add((
               name: start.name,
-              path: paths[start.suite]!,
+              path: files[fileOf[id]] ?? paths[start.suite]!,
               seconds: (time - start.time) / 1000,
             ));
           }
@@ -175,7 +200,10 @@ final class Run {
     }
     return Run(tests, {
       for (final MapEntry(key: suite, value: start) in firstStart.entries)
-        if (paths[suite] case final path?)
+        // (A program's files each, not the program: the run's limit
+        // holds it.)
+        if (paths[suite] ?? files[suite] case final path?
+            when !path.startsWith('.dart_tool/'))
           path: ((lastDone[suite] ?? start) - start) / 1000,
     }, end / 1000);
   }

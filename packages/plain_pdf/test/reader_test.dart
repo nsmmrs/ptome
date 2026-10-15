@@ -61,7 +61,9 @@ File _imported(ImportedPage page) {
 }
 
 void main() {
-  recordedTools = Oracle('reader', compressed: true);
+  // (Set as the file's tests start: files may share a program.)
+  final recorded = Oracle('reader', compressed: true);
+  setUpAll(() => recordedTools = recorded);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf-reader.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
 
