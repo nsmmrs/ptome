@@ -10,6 +10,7 @@ import 'package:plain_fonts/plain_fonts.dart'
     show FontPlatform, cacheDirectoryFor, fontDirectoriesFor;
 import 'package:ptome/src/errors.dart';
 import 'package:ptome/src/io/types.dart';
+import 'package:ptome/src/io/world.dart';
 import 'package:ptome/src/remote.dart';
 
 /// Runs [body], turning a `dart:io` file system failure into an
@@ -214,8 +215,9 @@ String get currentDirectory {
   return io.Platform.isWindows ? path.replaceAll(r'\', '/') : path;
 }
 
-/// The environment variables of the process.
-Map<String, String> get environment => io.Platform.environment;
+/// The environment variables of the process (or the zone's: world.dart).
+Map<String, String> get environment =>
+    environmentOfZone ?? io.Platform.environment;
 
 /// The path separator of the platform (`/` or `\`).
 String get pathSeparator => io.Platform.pathSeparator;

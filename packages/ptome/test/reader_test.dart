@@ -12,13 +12,13 @@
 library;
 
 import 'dart:convert' show utf8;
-import 'dart:io'
-    show Directory, File, FileSystemEntity, HttpException, Platform, Process;
+import 'dart:io' show Directory, File, FileSystemEntity, HttpException;
 
 import 'package:ptome/src/internal.dart';
 import 'package:test/test.dart';
 
 import 'support/paths.dart';
+import 'support/posix.dart';
 
 const List<String> sampleData = ['first line', 'second line', 'third line'];
 
@@ -187,19 +187,6 @@ class TestDocument extends Document {
     return (body: file.readAsBytesSync(), contentType: null);
   }
 }
-
-/// Whether the current user is root (via `id -u`); best effort, `false`
-/// when the check itself fails.
-bool _isRoot() {
-  try {
-    return Process.runSync('id', ['-u']).stdout.toString().trim() == '0';
-  } on Exception catch (_) {
-    return false;
-  }
-}
-
-/// Formats [mode] (as from [FileSystemEntity.statSync]) for `chmod`.
-String _modeString(int mode) => (mode & 0xfff).toRadixString(8);
 
 /// Builds a [PreprocessorReader] over [input] with a [TestDocument], mirroring
 /// `Document.new input, ...` at reader level (unparsed).
@@ -1502,25 +1489,26 @@ void main() {
       );
 
       test(
-        'should replace include directive that references unreadable '
-        'file with message',
+        'POSIX: should replace include directive that references '
+        'unreadable file with message',
         // READER-LEVEL: asserts expanded lines instead of parsed blocks.
+        // (Not as root, who reads any file: the tests never run as root.)
+        testOn: 'posix',
         () {
-          if (Platform.isWindows || _isRoot()) {
-            markTestSkipped('requires POSIX permissions and a non-root user');
-            return;
-          }
-          final includeFile = '$fixtureDir/chapter-a.adoc';
-          final oldMode = File(includeFile).statSync().mode;
-          Process.runSync('chmod', ['000', includeFile]);
+          // (A copy made unreadable: the fixture is other tests' too.)
+          final base = Directory.systemTemp.createTempSync('unreadable.');
+          final includeFile = '${base.path}/fixtures/chapter-a.adoc';
+          File(includeFile)
+            ..createSync(recursive: true)
+            ..writeAsStringSync(
+              File('$fixtureDir/chapter-a.adoc').readAsStringSync(),
+            );
+          chmod(includeFile, 0);
           const input =
               'include::fixtures/chapter-a.adoc[]\n\ntrailing content\n';
           try {
             usingMemoryLogger((logger) {
-              final doc = TestDocument(
-                safe: SafeMode.safe,
-                baseDir: repoTestDir,
-              );
+              final doc = TestDocument(safe: SafeMode.safe, baseDir: base.path);
               final reader = PreprocessorReader.fromString(
                 doc,
                 input,
@@ -1542,7 +1530,8 @@ void main() {
               );
             });
           } finally {
-            Process.runSync('chmod', [_modeString(oldMode), includeFile]);
+            chmod(includeFile, 0x1a4);
+            base.deleteSync(recursive: true);
           }
         },
       );

@@ -615,11 +615,19 @@ tokens:
   });
 
   test('the built-in looks are embedded as they are in data/looks', () {
-    final check = Process.runSync(Platform.resolvedExecutable, [
-      'run',
-      'tool/embed_looks.dart',
-      '--check',
-    ]);
-    expect(check.exitCode, 0, reason: '${check.stderr}');
+    // (What tool/embed_looks.dart embeds: each `<name>-look.yml`'s text.)
+    final files = {
+      for (final file in Directory('data/looks').listSync().whereType<File>())
+        if (file.path.endsWith('-look.yml'))
+          file.uri.pathSegments.last.replaceAll('-look.yml', ''): file
+              .readAsStringSync(),
+    };
+    expect(
+      builtInLooks,
+      equals(files),
+      reason:
+          'lib/src/look/looks.g.dart is out of date: '
+          'dart run tool/embed_looks.dart',
+    );
   });
 }

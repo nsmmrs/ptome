@@ -14,12 +14,14 @@
 library;
 
 import 'dart:io';
-import 'dart:isolate';
 
+import 'package:ptome/src/epub3/epub3.dart';
 import 'package:ptome/src/internal.dart';
+import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/multipage.dart';
+import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
-import '../support/cli.dart';
 import '../support/paths.dart';
 
 /// Finds the enclosing repository checkout directory.
@@ -102,32 +104,35 @@ Invoker invokeCliWithFilenames(List<String> argv, List<String> filenames) {
   ], null);
 }
 
-/// Writes `pipe content` to the fifo at `args[0]`, then signals `args[1]`.
-///
-/// Top-level entry point for the writer isolate in the named-pipe test.
-/// Opens [FileMode.writeOnly] (`O_WRONLY`): the default write mode opens
-/// `O_RDWR`, which succeeds instantly on a fifo without rendezvous, so a
-/// writer that wins the race would come and go before the reader opens and
-/// leave the reader blocked forever.
-void _writePipe(List<Object> args) {
-  (File(args[0] as String).openSync(mode: FileMode.writeOnly))
-    ..writeStringSync('pipe content')
-    ..closeSync();
-  (args[1] as SendPort).send(null);
-}
-
-/// Runs the real CLI binary in a subprocess, like Ruby's `run_command`:
-/// in [environment] alone when given (a copy of this process's with
-/// variables changed or removed).
-Future<ProcessResult> runCli(
+/// Runs the command line as `bin/ptome.dart` does (its backends), in this
+/// process, its output and diagnostics buffered: in [environment] alone
+/// when given (a copy of this process's with variables changed or
+/// removed), and with the local time zone [utcOffset] from UTC when given
+/// (`io.withWorld`: the process's own can't change from inside it). The
+/// compiled executable's own behavior is the bats suite's (test/e2e).
+Future<({int exitCode, String stdout, String stderr})> runCli(
   List<String> args, {
   Map<String, String>? environment,
-}) => runPtome(
-  args,
-  workingDirectory: repoRoot,
-  environment: environment,
-  includeParentEnvironment: environment == null,
-);
+  Duration? utcOffset,
+}) async {
+  final out = StringBuffer();
+  final err = StringBuffer();
+  final code = await io.withWorld(
+    () => runCliCode(
+      args,
+      out: out,
+      err: err,
+      setup: () {
+        registerEpub3();
+        registerPdf();
+        MultipageHtml5Converter.register();
+      },
+    ),
+    environment: environment,
+    utcOffset: utcOffset,
+  );
+  return (exitCode: code, stdout: '$out', stderr: '$err');
+}
 
 /// Copies the fixture [name] into [dir] and returns the copy's path.
 String copyFixtureTo(String name, Directory dir) {
@@ -137,8 +142,6 @@ String copyFixtureTo(String name, Directory dir) {
 }
 
 void main() {
-  tearDownAll(deletePtomeCommand);
-
   group('Invoker constructor', () {
     test('allows CliOptions to be passed as first argument of constructor', () {
       final opts = CliOptions(attributes: {'toc': ''}, doctype: 'book');
@@ -274,27 +277,24 @@ void main() {
     });
   });
 
-  group('command binary', () {
+  group('command line', () {
     test('--help exits 0 and prints usage to stdout', () async {
       final result = await runCli(['--help']);
       expect(result.exitCode, equals(0));
-      expect(result.stdout as String, contains('Usage: ptome'));
-      expect(result.stderr as String, isEmpty);
+      expect(result.stdout, contains('Usage: ptome'));
+      expect(result.stderr, isEmpty);
     });
 
     test('--version exits 0', () async {
       final result = await runCli(['--version']);
       expect(result.exitCode, equals(0));
-      expect(
-        result.stdout as String,
-        contains('Asciidoctor ${Asciidoctor.version}'),
-      );
+      expect(result.stdout, contains('Asciidoctor ${Asciidoctor.version}'));
     });
 
     test('missing input file exits 1', () async {
       final result = await runCli(['missing_file.adoc']);
       expect(result.exitCode, equals(1));
-      expect(result.stderr as String, contains('is missing'));
+      expect(result.stderr, contains('is missing'));
     });
 
     test('shows backtrace when --trace option is specified and program '
@@ -308,28 +308,13 @@ void main() {
         sampleFile,
       ]);
       expect(result.exitCode, equals(1));
-      final err = result.stderr as String;
+      final err = result.stderr;
       expect(err, contains("unknown template engine 'bogus'"));
       expect(err, contains('#0 '));
     });
 
-    test('stops quietly when the reader of stdout goes away', () async {
-      final dir = createTempDir('invoker_pipe_');
-      addTearDown(() => dir.deleteSync(recursive: true));
-      // Enough output to overflow the pipe buffer after `head` exits.
-      final input = File('${dir.path}/big.adoc')
-        ..writeAsStringSync('paragraph text\n\n' * 20000);
-      const pipeline =
-          r'set -o pipefail; "$@" -o - "$0" | head -c 1 >/dev/null';
-      final result = await Process.run('bash', [
-        '-c',
-        pipeline,
-        input.path,
-        ...await ptomeCommand(),
-      ], workingDirectory: repoRoot);
-      expect(result.exitCode, equals(0), reason: '${result.stderr}');
-      expect(result.stderr as String, isEmpty);
-    }, skip: Platform.isWindows ? 'needs a POSIX shell pipeline' : null);
+    // (Stopping quietly when the reader of stdout goes away is the
+    // executable's: test/e2e/cli_output_files.bats.)
   });
 
   group('conversion', () {
@@ -443,28 +428,8 @@ void main() {
       );
     });
 
-    test(
-      'accepts input from named pipe and outputs to stdout',
-      skip: Platform.isWindows ? 'named pipes need a POSIX system' : null,
-      () async {
-        final tempDir = createTempDir('asciidoctor-invoker-');
-        try {
-          final pipePath = '${tempDir.path}/sample-pipe.adoc';
-          final mkfifo = Process.runSync('mkfifo', [pipePath]);
-          expect(mkfifo.exitCode, equals(0));
-          // Ruby uses a writer thread; Dart uses a writer isolate (a
-          // top-level entry point: closures cannot cross isolates).
-          final writerDone = ReceivePort();
-          await Isolate.spawn(_writePipe, [pipePath, writerDone.sendPort]);
-          final invoker = invokeCliToBuffer(['-a', 'stylesheet!'], pipePath);
-          expect(invoker.readOutput(), contains('pipe content'));
-          await writerDone.first;
-          writerDone.close();
-        } finally {
-          tempDir.deleteSync(recursive: true);
-        }
-      },
-    );
+    // (Input from a named pipe is the executable's:
+    // test/e2e/cli_output_files.bats.)
 
     test('allows docdir to be specified when input is a string', () {
       // Ruby passes a root-relative `--base-dir`; the Dart suite runs
@@ -491,8 +456,8 @@ void main() {
 
     test('emits no unexpected warnings', () async {
       final result = await runCli(['-o', '/dev/null', sampleFile]);
-      expect(result.stdout as String, isEmpty);
-      expect(result.stderr as String, isEmpty);
+      expect(result.stdout, isEmpty);
+      expect(result.stderr, isEmpty);
     });
 
     test('silences warnings if -q flag is specified', () {
@@ -1105,18 +1070,21 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
 
     test('shows timezone as UTC if system TZ is set to UTC', () async {
       final environment = Map<String, String>.of(Platform.environment)
-        ..['TZ'] = 'UTC'
         ..remove('SOURCE_DATE_EPOCH')
         ..remove('IGNORE_SOURCE_DATE_EPOCH');
-      final result = await runCli([
-        '-d',
-        'inline',
-        '-o',
-        '-',
-        '-e',
-        fixturePath('doctime-localtime.adoc'),
-      ], environment: environment);
-      final lines = (result.stdout as String).split('\n');
+      final result = await runCli(
+        [
+          '-d',
+          'inline',
+          '-o',
+          '-',
+          '-e',
+          fixturePath('doctime-localtime.adoc'),
+        ],
+        environment: environment,
+        utcOffset: Duration.zero,
+      );
+      final lines = result.stdout.split('\n');
       final lastTwo = lines.sublist(lines.length - 3, lines.length - 1);
       for (final line in lastTwo) {
         expect(line, endsWith(' UTC'));
@@ -1125,18 +1093,21 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
 
     test('shows timezone as offset if system TZ is not set to UTC', () async {
       final environment = Map<String, String>.of(Platform.environment)
-        ..['TZ'] = 'EST+5'
         ..remove('SOURCE_DATE_EPOCH')
         ..remove('IGNORE_SOURCE_DATE_EPOCH');
-      final result = await runCli([
-        '-d',
-        'inline',
-        '-o',
-        '-',
-        '-e',
-        fixturePath('doctime-localtime.adoc'),
-      ], environment: environment);
-      final lines = (result.stdout as String).split('\n');
+      final result = await runCli(
+        [
+          '-d',
+          'inline',
+          '-o',
+          '-',
+          '-e',
+          fixturePath('doctime-localtime.adoc'),
+        ],
+        environment: environment,
+        utcOffset: const Duration(hours: -5),
+      );
+      final lines = result.stdout.split('\n');
       final lastTwo = lines.sublist(lines.length - 3, lines.length - 1);
       for (final line in lastTwo) {
         expect(line, endsWith(' -0500'));
@@ -1148,7 +1119,7 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
       () async {
         // Port of invoker_test.rb 'should use SOURCE_DATE_EPOCH as modified
         // time of input file and local time'. The process environment is
-        // read-only in-process, so the CLI runs in a subprocess (cf. the
+        // read-only, so the CLI runs in a zone that gives its own (cf. the
         // timezone tests above) and the datetime attributes are asserted
         // through attribute references in the converted output.
         final tempDir = createTempDir('asciidoctor-invoker-');
@@ -1166,7 +1137,7 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
             inputPath,
           ], environment: environment);
           expect(result.exitCode, equals(0));
-          final output = result.stdout as String;
+          final output = result.stdout;
           expect(output, contains('2009-02-08'));
           expect(output, contains('2009-02-08 20:03:32 UTC'));
         } finally {
@@ -1177,7 +1148,7 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
 
     test('ignores SOURCE_DATE_EPOCH if value is empty', () async {
       // Port of invoker_test.rb 'should ignore SOURCE_DATE_EPOCH is value
-      // is empty', via a subprocess (see the test above).
+      // is empty', in a zone's environment (see the test above).
       final tempDir = createTempDir('asciidoctor-invoker-');
       try {
         final inputPath = '${tempDir.path}/epoch.adoc';
@@ -1190,8 +1161,7 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
           inputPath,
         ], environment: environment);
         expect(result.exitCode, equals(0));
-        final match = RegExp(r'<p>(\d{4})</p>')
-            .firstMatch(result.stdout as String);
+        final match = RegExp(r'<p>(\d{4})</p>').firstMatch(result.stdout);
         expect(match, isNotNull);
         expect(
           int.parse(match![1]!),
@@ -1204,7 +1174,7 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
 
     test('fails if SOURCE_DATE_EPOCH is malformed', () async {
       // Port of invoker_test.rb 'should fail if SOURCE_DATE_EPOCH is
-      // malformed', via a subprocess (see the tests above).
+      // malformed', in a zone's environment (see the tests above).
       final environment = Map<String, String>.of(Platform.environment)
         ..['SOURCE_DATE_EPOCH'] = 'aaaaaaaa';
       final result = await runCli([

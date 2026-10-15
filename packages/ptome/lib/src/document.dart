@@ -1935,7 +1935,7 @@ class Document extends AbstractBlock implements NodeDocument {
       }
     } else {
       localdate = attrs['localdate'] = _formatDate(now);
-      attrs['localyear'] ??= now.year.toString();
+      attrs['localyear'] ??= io.wallClock(now).year.toString();
     }
     // %Z is OS dependent and may contain characters that aren't UTF-8
     // encoded, so the offset is formatted manually instead.
@@ -1953,22 +1953,25 @@ class Document extends AbstractBlock implements NodeDocument {
       }
     } else {
       docdate = attrs['docdate'] = _formatDate(mtime);
-      attrs['docyear'] ??= mtime.year.toString();
+      attrs['docyear'] ??= io.wallClock(mtime).year.toString();
     }
     final doctime = attrs['doctime'] ??= _formatTime(mtime);
     attrs['docdatetime'] ??= '$docdate $doctime';
   }
 
-  /// Formats [time] as `yyyy-MM-dd`.
-  static String _formatDate(DateTime time) =>
-      '${time.year.toString().padLeft(4, '0')}-'
-      '${time.month.toString().padLeft(2, '0')}-'
-      '${time.day.toString().padLeft(2, '0')}';
+  /// Formats [time] as `yyyy-MM-dd`, as its zone's clock shows it.
+  static String _formatDate(DateTime time) {
+    final wall = io.wallClock(time);
+    return '${wall.year.toString().padLeft(4, '0')}-'
+        '${wall.month.toString().padLeft(2, '0')}-'
+        '${wall.day.toString().padLeft(2, '0')}';
+  }
 
-  /// Formats [time] as `HH:mm:ss <zone>` with `UTC` for a zero offset,
-  /// else `+HHMM`/`-HHMM`.
-  static String _formatTime(DateTime time) {
-    final offset = time.timeZoneOffset;
+  /// Formats [moment] as `HH:mm:ss <zone>` with `UTC` for a zero offset,
+  /// else `+HHMM`/`-HHMM`, as its zone's clock shows it.
+  static String _formatTime(DateTime moment) {
+    final offset = io.utcOffsetOf(moment);
+    final time = io.wallClock(moment);
     final zone = offset == Duration.zero
         ? 'UTC'
         : '${offset.isNegative ? '-' : '+'}'

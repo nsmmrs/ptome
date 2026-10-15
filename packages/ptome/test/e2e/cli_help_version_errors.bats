@@ -1,5 +1,6 @@
 #!/usr/bin/env bats
-# Black-box CLI cases for help, version, stdin input, and CLI error paths.
+# Black-box CLI cases for help, version, stdin and pipe input, a reader of
+# stdout that goes away, and CLI error paths.
 # Mirrors test/options_test.rb and the error-path coverage in
 # test/invoker_test.rb.
 
@@ -134,4 +135,23 @@ setup() {
   [ "$status" -eq 0 ]
   [ -f from-stdin.html ]
   assert_contains from-stdin.html '<p>content</p>'
+}
+
+@test "accepts input from a named pipe and writes to stdout" {
+  mkfifo sample-pipe.adoc
+  printf 'pipe content\n' > sample-pipe.adoc &
+  run --separate-stderr -- "$EXE" -e -o - sample-pipe.adoc
+  wait
+  [ "$status" -eq 0 ]
+  [ "$stderr" = "" ]
+  assert_output_contains '<p>pipe content</p>'
+}
+
+@test "stops quietly when the reader of stdout goes away" {
+  # (Enough output to overflow the pipe's buffer after head exits.)
+  yes 'paragraph text
+' | head -n 40000 > big.adoc
+  run bash -c 'set -o pipefail; "$0" -o - big.adoc | head -c 1 > /dev/null' "$EXE"
+  [ "$status" -eq 0 ]
+  [ "$output" = "" ]
 }

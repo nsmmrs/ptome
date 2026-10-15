@@ -17,6 +17,7 @@ import 'package:ptome/src/internal.dart';
 import 'package:test/test.dart';
 
 import '../support/paths.dart';
+import '../support/posix.dart';
 
 /// Finds the enclosing repository checkout directory.
 String _findRepoRoot() {
@@ -942,27 +943,23 @@ void main() {
       );
     });
 
-    test(
-      'reports an unreadable input file',
-      skip: Platform.isWindows ? 'chmod-based readability needs POSIX.' : null,
-      () {
-        final tmp = createTempDir('unreadable');
-        try {
-          final path = '${tmp.path}/input.adoc';
-          File(path).writeAsStringSync('content\n');
-          Process.runSync('chmod', ['000', path]);
-          final result = parseCli([path]);
-          expect(result.exitCode, equals(1));
-          expect(
-            result.err.trim(),
-            equals('ptome: FAILED: input file $path is not readable'),
-          );
-        } finally {
-          Process.runSync('chmod', ['644', '${tmp.path}/input.adoc']);
-          tmp.deleteSync(recursive: true);
-        }
-      },
-    );
+    test('POSIX: reports an unreadable input file', testOn: 'posix', () {
+      final tmp = createTempDir('unreadable');
+      try {
+        final path = '${tmp.path}/input.adoc';
+        File(path).writeAsStringSync('content\n');
+        chmod(path, 0);
+        final result = parseCli([path]);
+        expect(result.exitCode, equals(1));
+        expect(
+          result.err.trim(),
+          equals('ptome: FAILED: input file $path is not readable'),
+        );
+      } finally {
+        chmod('${tmp.path}/input.adoc', 0x1a4);
+        tmp.deleteSync(recursive: true);
+      }
+    });
 
     test('accepts stdin as the sole input', () {
       final result = parseCli(['-o', '-', '-']);
@@ -1014,17 +1011,13 @@ void main() {
       );
     });
 
-    test(
-      'expands backslash globs on Windows',
-      skip: Platform.isWindows ? null : 'Backslash tilt only runs on Windows.',
-      () {
-        final pattern = '$repoRoot/vendor/asciidoctor/test/fixtures/ba*.adoc'
-            .replaceAll('/', r'\');
-        final result = parseCli([pattern]);
-        expect(result.exitCode, isNull);
-        expect(result.options.inputFiles, hasLength(1));
-      },
-    );
+    test('Windows: expands backslash globs', testOn: 'windows', () {
+      final pattern = '$repoRoot/vendor/asciidoctor/test/fixtures/ba*.adoc'
+          .replaceAll('/', r'\');
+      final result = parseCli([pattern]);
+      expect(result.exitCode, isNull);
+      expect(result.options.inputFiles, hasLength(1));
+    });
 
     test('glob skips dotfiles and supports classes and recursion', () {
       final tmp = createTempDir('glob');

@@ -7,7 +7,8 @@
 // files, made on purpose:
 //
 //   UNITS_MODEL_UPDATE=1 dart test test/units/corpus_model_0_test.dart \
-//     test/units/corpus_model_1_test.dart
+//     test/units/corpus_model_1_test.dart test/units/corpus_model_2_test.dart \
+//     test/units/corpus_model_3_test.dart
 //
 // and reviewed in the diff of the dumps (zcat).
 

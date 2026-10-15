@@ -30,15 +30,17 @@ jobs:
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
+    - uses: ./.github/actions/setup
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+    # (The analyzer's own cache, of what it found in each file's contents:
+    # a run reads what didn't change since the last from it.)
     - uses: actions/cache@v4
       with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
+        path: ~/.dartServer
+        key: analyzer-${{ github.sha }}
+        restore-keys: analyzer-
     - name: Analysis, the APIs, the JavaScript projection, the generated grammars
       run: |
         (cd packages/ptome && dart run tool/generate_js.dart --check) > "$RUNNER_TEMP/js.log" 2>&1 &
@@ -72,18 +74,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
-        - {os: ubuntu-latest, shards: 5, shard: 0}
-        - {os: ubuntu-latest, shards: 5, shard: 1}
-        - {os: ubuntu-latest, shards: 5, shard: 2}
-        - {os: ubuntu-latest, shards: 5, shard: 3}
-        - {os: ubuntu-latest, shards: 5, shard: 4}
+        - {os: ubuntu-latest, shards: 3, shard: 0}
+        - {os: ubuntu-latest, shards: 3, shard: 1}
+        - {os: ubuntu-latest, shards: 3, shard: 2}
         - {os: macos-latest, shards: 4, shard: 0}
         - {os: macos-latest, shards: 4, shard: 1}
         - {os: macos-latest, shards: 4, shard: 2}
         - {os: macos-latest, shards: 4, shard: 3}
-        - {os: windows-latest, shards: 3, shard: 0}
-        - {os: windows-latest, shards: 3, shard: 1}
-        - {os: windows-latest, shards: 3, shard: 2}
+        - {os: windows-latest, shards: 5, shard: 0}
+        - {os: windows-latest, shards: 5, shard: 1}
+        - {os: windows-latest, shards: 5, shard: 2}
+        - {os: windows-latest, shards: 5, shard: 3}
+        - {os: windows-latest, shards: 5, shard: 4}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 3
     name: tests (${{ matrix.os }}, ${{ matrix.shard }} of ${{ matrix.shards }})
@@ -95,12 +97,7 @@ jobs:
       shell: pwsh
       run: Set-MpPreference -DisableRealtimeMonitoring $true
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
-    - uses: actions/cache@v4
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
+    - uses: ./.github/actions/setup
     - name: The shard's tests
       # (A program a core the runner has.)
       run: |
@@ -120,15 +117,10 @@ jobs:
         working-directory: packages/ptome
     steps:
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
+    - uses: ./.github/actions/setup
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - uses: actions/cache@v4
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
     - name: The programs' tests on Node.js
       run: |
         dart run tool/node_tests.dart
@@ -140,15 +132,10 @@ jobs:
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
+    - uses: ./.github/actions/setup
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - uses: actions/cache@v4
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
     - name: JavaScript writes the same bytes as the VM
       run: |
         check() {
@@ -171,35 +158,43 @@ jobs:
         working-directory: packages/ptome
     steps:
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
+    - uses: ./.github/actions/setup
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - uses: actions/cache@v4
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
-    - run: ./tool/build-npm.sh
-    - working-directory: packages/ptome/test/npm
-      run: npm ci
-    - name: The package's tests, types and lint
-      working-directory: packages/ptome/test/npm
+    - name: The package built (its tests' dependencies and bats beside it)
+      run: |
+        (cd test/npm && npm ci --silent) > "$RUNNER_TEMP/deps.log" 2>&1 &
+        deps=$!
+        sudo npm i -g bats > "$RUNNER_TEMP/bats.log" 2>&1 &
+        bats=$!
+        ./tool/build-npm.sh
+        wait "$deps" || { cat "$RUNNER_TEMP/deps.log"; exit 1; }
+        wait "$bats" || { cat "$RUNNER_TEMP/bats.log"; exit 1; }
+    - name: Its tests, types, lint and publish dry run; the CLI's file handling on Node
       env:
         CHROMIUM_PATH: /usr/bin/google-chrome
-      run: |
-        node --test
-        npm run types
-        npm run lint
-    - name: Publish dry run
-      working-directory: packages/ptome/build/npm
-      run: npm publish --dry-run
-    - name: The CLI's file handling on Node
-      env:
         ASCIIDOCTOR_EXE: test/e2e/bin/ptome-node
       run: |
-        sudo npm i -g bats
-        bats test/e2e/cli_output_files.bats
+        # (Side by side, each into its log, printed when all are done.)
+        names=() pids=()
+        part() {
+          names+=("$1")
+          (cd "$2" && shift 2 && "$@") > "$RUNNER_TEMP/$1.log" 2>&1 &
+          pids+=($!)
+        }
+        part tests test/npm node --test
+        part types test/npm npm run types
+        part lint test/npm npm run lint
+        part publish build/npm npm publish --dry-run
+        part bats . bats test/e2e/cli_output_files.bats
+        status=0
+        for i in "${!names[@]}"; do
+          if wait "${pids[$i]}"; then echo "${names[$i]}: passed"; else
+            echo "${names[$i]}: FAILED"; cat "$RUNNER_TEMP/${names[$i]}.log"; status=1
+          fi
+        done
+        exit $status
   cli:
     # The CLI's end-to-end suite (bats) on the compiled executable; each
     # package would publish (a dry run: no errors or warnings, but
@@ -210,12 +205,7 @@ jobs:
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
-    - uses: actions/cache@v4
-      with:
-        path: ${{ env.PUB_CACHE }}
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
+    - uses: ./.github/actions/setup
     - run: |
         tool/publish_check.sh > "$RUNNER_TEMP/publish.log" 2>&1 &
         publish=$!

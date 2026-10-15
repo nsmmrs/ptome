@@ -22,6 +22,7 @@ import 'package:plain_fonts/plain_fonts.dart'
 import 'package:ptome/src/errors.dart';
 import 'package:ptome/src/io/page_files.dart';
 import 'package:ptome/src/io/types.dart';
+import 'package:ptome/src/io/world.dart';
 import 'package:ptome/src/remote.dart';
 
 @JS('globalThis.ptomeHost')
@@ -524,8 +525,9 @@ final class _ConsoleSink extends _TextSink {
 /// The current working directory.
 String get currentDirectory => _host?.process.cwd() ?? '/';
 
-/// The environment variables of the process.
+/// The environment variables of the process (or the zone's: world.dart).
 Map<String, String> get environment {
+  if (environmentOfZone case final zone?) return zone;
   final host = _host;
   if (host == null) return const {};
   final env = host.process.env;

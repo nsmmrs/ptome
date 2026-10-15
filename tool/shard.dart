@@ -24,8 +24,8 @@
 /// isolate, and compiles, for each file.
 ///
 /// With `--times`, writes the times file from test runs' JSON reports,
-/// each `PACKAGE=REPORT.json` (`dart test --file-reporter json:…`, one file
-/// at a time: `-j 1`).
+/// each `PACKAGE=REPORT.json` (`dart test --file-reporter json:…`; CI's
+/// Linux runners' are the file's).
 library;
 
 import 'dart:convert';
@@ -296,9 +296,14 @@ void _writeTimes(Iterable<String> reports) {
   }
   final keys = times.keys.toList()..sort();
   stdout
-    ..writeln('# Each test file\'s time, in seconds, run alone (dart test')
-    ..writeln('# -j 1): tool/shard.dart deals the files into shards by it.')
-    ..writeln('# Written by `dart run tool/shard.dart --times`.');
+    ..writeln("# Each test file's time, in seconds, on CI's Linux runners in a")
+    ..writeln(
+      "# shard's programs (tool/test_shard.sh): tool/shard.dart deals the files",
+    )
+    ..writeln(
+      '# into shards by it. Written by `dart run tool/shard.dart --times` from',
+    )
+    ..writeln('# a run\'s reports, or from the times a CI shard prints.');
   for (final key in keys) {
     stdout.writeln('$key ${times[key]!.toStringAsFixed(2)}');
   }

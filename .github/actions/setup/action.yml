@@ -1,0 +1,31 @@
+name: Dart and the packages
+description: >-
+  The Dart SDK CI runs, pinned (every job and every run the same: raise it
+  here), and the workspace's dependencies, each from the cache where it
+  has them.
+runs:
+  using: composite
+  steps:
+  # (On Linux and macOS the SDK and the pub cache come back together, and
+  # setup-dart finds the SDK in the tool cache where it would unzip its
+  # download, ~12 s. Windows' tar is slower than its unzip. pubspec.lock
+  # isn't committed: the pubspecs key the dependencies.)
+  - if: runner.os != 'Windows'
+    uses: actions/cache@v4
+    with:
+      path: |
+        ${{ runner.tool_cache }}/dart
+        ~/.pub-cache
+      key: dart-${{ runner.os }}-${{ runner.arch }}-3.13.5-${{ hashFiles('**/pubspec.yaml') }}
+      restore-keys: dart-${{ runner.os }}-${{ runner.arch }}-3.13.5-
+  - uses: dart-lang/setup-dart@v1
+    with:
+      sdk: 3.13.5
+  - if: runner.os == 'Windows'
+    uses: actions/cache@v4
+    with:
+      path: ${{ env.PUB_CACHE }}
+      key: pub-${{ runner.os }}-${{ hashFiles('**/pubspec.yaml') }}
+      restore-keys: pub-${{ runner.os }}-
+  - shell: bash
+    run: dart pub get
