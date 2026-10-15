@@ -1,0 +1,110 @@
+= The Book of Household Management
+Isabella Beeton
+:doctype: book
+:lang: en
+:look: beeton
+:looksdir: {docdir}
+:imagesdir: images
+:toc:
+:toclevels: 1
+:toc-title: General Contents
+:index-sort: letter-by-letter
+:description: Mrs Beeton’s Book of Household Management whole: its recipes in their parts, its numbered paragraphs, its analytical index made from the text, after the first edition (1861).
+
+[.frontispiece%notitle%noheader%nofooter]
+== Title Page
+
+image::title-page.jpg["The engraved title page of the first edition (1861), in colour",align=center,pdfwidth=100%]
+
+include::text/preface.adoc[]
+
+include::text/chapter-01.adoc[]
+
+include::text/chapter-02.adoc[]
+
+include::text/chapter-03.adoc[]
+
+include::text/chapter-04.adoc[]
+
+include::text/chapter-05.adoc[]
+
+include::text/chapter-06.adoc[]
+
+include::text/chapter-07.adoc[]
+
+include::text/chapter-08.adoc[]
+
+include::text/chapter-09.adoc[]
+
+include::text/chapter-10.adoc[]
+
+include::text/chapter-11.adoc[]
+
+include::text/chapter-12.adoc[]
+
+include::text/chapter-13.adoc[]
+
+include::text/chapter-14.adoc[]
+
+include::text/chapter-15.adoc[]
+
+include::text/chapter-16.adoc[]
+
+include::text/chapter-17.adoc[]
+
+include::text/chapter-18.adoc[]
+
+include::text/chapter-19.adoc[]
+
+include::text/chapter-20.adoc[]
+
+include::text/chapter-21.adoc[]
+
+include::text/chapter-22.adoc[]
+
+include::text/chapter-23.adoc[]
+
+include::text/chapter-24.adoc[]
+
+include::text/chapter-25.adoc[]
+
+include::text/chapter-26.adoc[]
+
+include::text/chapter-27.adoc[]
+
+include::text/chapter-28.adoc[]
+
+include::text/chapter-29.adoc[]
+
+include::text/chapter-30.adoc[]
+
+include::text/chapter-31.adoc[]
+
+include::text/chapter-32.adoc[]
+
+include::text/chapter-33.adoc[]
+
+include::text/chapter-34.adoc[]
+
+include::text/chapter-35.adoc[]
+
+include::text/chapter-36.adoc[]
+
+include::text/chapter-37.adoc[]
+
+include::text/chapter-38.adoc[]
+
+include::text/chapter-39.adoc[]
+
+include::text/chapter-40.adoc[]
+
+include::text/chapter-41.adoc[]
+
+include::text/chapter-42.adoc[]
+
+include::text/chapter-43.adoc[]
+
+include::text/chapter-44.adoc[]
+
+[index]
+== Analytical Index

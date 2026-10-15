@@ -1,0 +1,12 @@
+# The images the work uses, fetched by tool/showcase.dart into the work
+# cache and checked by their SHA-256: scans of the first edition (1861)
+# on Wikimedia Commons, in the public domain.
+- name: title-page.jpg
+  url: https://upload.wikimedia.org/wikipedia/commons/4/42/Mrs_Beeton_1861_title_page_full_colour.jpg
+  sha256: 6389ad9ba424aabb6191133ab622ec5eb21bec76e3f64adf6c8f67c58933ac68
+- name: bow-bill-ducks.jpg
+  url: https://upload.wikimedia.org/wikipedia/commons/9/9e/Bow-bill_ducks%2C_Beeton_1861%2C_page_453.jpg
+  sha256: 573668f0eaa11a7968cf7c0ef7f90908868c69ee1266a3f8978cc1bace7da50a
+- name: rouen-ducks.gif
+  url: https://upload.wikimedia.org/wikipedia/commons/7/71/Rouenduck_beeton.gif
+  sha256: db5610cd554415a950b63b1d5b81027320b1bfe4884dcdeced3d89ea5dff0624

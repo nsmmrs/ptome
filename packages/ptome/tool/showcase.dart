@@ -238,7 +238,9 @@ Future<Built> _build(
   _copy(Directory('$_corpus/$slug'), stage);
 
   // (The images too large to commit.)
-  final client = HttpClient();
+  // (Named, as Wikimedia Commons asks of the programs that fetch from it.)
+  final client = HttpClient()
+    ..userAgent = 'ptome-showcase/0.1 (tool/showcase.dart)';
   try {
     Directory('${stage.path}/images').createSync(recursive: true);
     for (final image in work.fetch) {

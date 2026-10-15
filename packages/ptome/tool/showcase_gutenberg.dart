@@ -13,6 +13,8 @@
 ///
 /// - `burton`: The Anatomy of Melancholy (eBook #10800), into
 ///   test/showcase/burton.
+/// - `beeton`: Mrs Beeton's Book of Household Management (eBook
+///   #10136), into test/showcase/beeton.
 library;
 
 import 'dart:io';
@@ -32,6 +34,8 @@ void main(List<String> arguments) {
   switch (work) {
     case 'burton':
       _Burton(body).write('test/showcase/burton');
+    case 'beeton':
+      _Beeton(body).write('test/showcase/beeton');
     default:
       stderr.writeln('unknown work: $work');
       exit(64);
@@ -41,7 +45,8 @@ void main(List<String> arguments) {
 /// The body of Project Gutenberg's HTML [html] as an XML tree: its void
 /// elements closed, so that the XML reader reads it.
 XmlElement readGutenberg(String html) {
-  final start = html.indexOf('<body');
+  // (After the head, whose stylesheet may name `<body>` in a comment.)
+  final start = html.indexOf('<body', html.indexOf('</head>'));
   final end = html.lastIndexOf('</body>');
   final body = html
       .substring(start, end + '</body>'.length)
@@ -853,5 +858,447 @@ final class _Burton extends GutenbergText {
       }
     }
     return '$out';
+  }
+}
+
+/// Mrs Beeton's Book of Household Management (1861): its preface and its
+/// forty-four chapters, each heading a section; each recipe a section
+/// with the `recipe` role, its paragraphs typed by their roles
+/// (`ingredients`, `mode`, `particulars`: the time, the average cost,
+/// how many it is sufficient for, when it is seasonable); the natural
+/// history between the recipes, small, with the `note` role; the
+/// numbered paragraphs anchored (`p-105`), and the analytical index,
+/// which refers to them, as index terms in the paragraphs it names, so
+/// that every format makes the index. The general contents and the
+/// lists of engravings and plates are left out; of the engravings,
+/// those the work has (`fetch.yml`) are set where the text has them.
+final class _Beeton extends GutenbergText {
+  new(this.body) : super(const {});
+
+  final XmlElement body;
+
+  /// The index terms for each numbered paragraph, by its number.
+  final Map<int, List<List<String>>> _terms = {};
+
+  /// The vulgar fractions, by how the transcription writes them.
+  static const Map<String, String> _fractions = {
+    '1/2': '½',
+    '1/4': '¼',
+    '3/4': '¾',
+    '1/3': '⅓',
+    '2/3': '⅔',
+    '1/8': '⅛',
+    '3/8': '⅜',
+    '5/8': '⅝',
+    '7/8': '⅞',
+  };
+
+  /// The engravings the work has, by their captions in the text.
+  static const Map<String, String> _engravings = {
+    'ROUEN DUCKS.': 'rouen-ducks.gif',
+    'BOW-BILL DUCKS.': 'bow-bill-ducks.jpg',
+  };
+
+  void write(String dir) {
+    final textDir = Directory('$dir/text')..createSync(recursive: true);
+    for (final old in textDir.listSync().whereType<File>()) {
+      old.deleteSync();
+    }
+    final nodes = body.childElements.toList();
+    // (The analytical index, between its heading and the next.)
+    final indexAt = nodes.indexWhere(
+      (e) => e.localName == 'h2' && inline(e).startsWith('ANALYTICAL INDEX'),
+    );
+    for (final node in nodes.skip(indexAt + 1)) {
+      if (node.localName == 'h2') break;
+      if (node.localName == 'p') _indexLines(node);
+    }
+    final files = <String>[];
+    void file(String name, StringBuffer out) {
+      final text = '$out'
+          .trim()
+          .replaceAll(RegExp(r'\n{3,}'), '\n\n')
+          // (The fractions as the edition prints them, "1½ pint", where
+          // the transcription writes "1-1/2 pint".)
+          .replaceAllMapped(RegExp(r'\b(?:(\d+)-)?([1-7])/([2348])\b'), (m) {
+            final fraction = _fractions['${m[2]}/${m[3]}'];
+            if (fraction == null) return m[0]!;
+            return '${m[1] ?? ''}$fraction';
+          });
+      File('$dir/text/$name.adoc').writeAsStringSync('$text\n');
+      files.add(name);
+    }
+
+    // The preface.
+    final prefaceAt = nodes.indexWhere(
+      (e) => e.localName == 'h2' && inline(e).startsWith('PREFACE'),
+    );
+    final preface = StringBuffer()
+      ..writeln('[preface]')
+      ..writeln('== Preface')
+      ..writeln();
+    for (final node in nodes.skip(prefaceAt + 1)) {
+      if (node.localName.startsWith('h') && node.localName != 'h5') break;
+      if (node.localName == 'h5') {
+        preface
+          ..writeln()
+          ..writeln('[.signature]')
+          ..writeln(_titleCase(inline(node).trim()))
+          ..writeln();
+        continue;
+      }
+      _paragraph(node, preface);
+    }
+    file('preface', preface);
+
+    // (The chapters' titles, from the general contents: "6.—RECIPES.")
+    final contentsAt = nodes.indexWhere(
+      (e) => e.localName == 'h2' && inline(e).startsWith('GENERAL CONTENTS'),
+    );
+    final titles = <String>[];
+    for (final node in nodes.skip(contentsAt + 1)) {
+      if (node.localName == 'h2') break;
+      final text = node.innerText.replaceAll(RegExp(r'\s+'), ' ').trim();
+      for (final m in RegExp(
+        r'(?:^|\s)(?:[IVX]+|\d+)\.?—(.*?)(?=\s(?:[IVX]+|\d+)\.?—|$)',
+      ).allMatches(text)) {
+        titles.add(m[1]!.trim());
+      }
+    }
+    String key(String text) =>
+        text.toUpperCase().replaceAll(RegExp('[^A-Z]'), '');
+
+    // The chapters.
+    final start = nodes.indexWhere((e) => e.localName == 'h1');
+    _number(nodes.skip(start + 1));
+    StringBuffer? out;
+    var chapter = 0;
+    var expectTitle = false;
+    for (final node in nodes.skip(start + 1)) {
+      if (node.getAttribute('id') == 'pg-end-separator') break;
+      final text = inline(node).trim();
+      final plain = node.innerText.replaceAll(RegExp(r'\s+'), ' ').trim();
+      // (A heading: an element's, a paragraph set apart by its margin, or
+      // one in capitals alone (a recipe's name and its kind).)
+      final heading =
+          node.localName.startsWith('h') ||
+          (node.localName == 'p' &&
+              !plain.startsWith('[Illustration') &&
+              // (Not a paragraph that opens a section of the text.)
+              !RegExp(r'^\d+\.').hasMatch(text) &&
+              plain.length < 120 &&
+              ((node.getAttribute('style') ?? '').contains('margin-top') ||
+                  RegExp(
+                    r"^[A-Z][A-Z\s,.&;’'-]*[A-Z]{3}[A-Z\s,.&;’'-]*"
+                    r'(\([^)]*\))?\.?$',
+                  ).hasMatch(plain)));
+      if (heading && RegExp(r'^CHAPTER [IVXLC]+\.$').hasMatch(text)) {
+        if (out != null) file('chapter-${'$chapter'.padLeft(2, '0')}', out);
+        chapter++;
+        out = StringBuffer();
+        expectTitle = true;
+        continue;
+      }
+      if (out == null) continue;
+      // ("RECIPES.", which heads the recipes of a chapter: left out.)
+      if (heading && text == 'RECIPES.') continue;
+      if (expectTitle) {
+        expectTitle = false;
+        final title = chapter <= titles.length ? titles[chapter - 1] : plain;
+        out
+          ..writeln('[#chapter-$chapter]')
+          ..writeln('== ${escapeText(_titleCase(title))}')
+          ..writeln();
+        // (The chapter's own heading, its title: not again.)
+        if (heading &&
+            key(plain).startsWith(key(title).split('GENERAL').first)) {
+          continue;
+        }
+      }
+      if (heading) {
+        // (A recipe: its first paragraph after the heading (and a
+        // subtitle in brackets) numbered and its ingredients.)
+        final rest = nodes.skip(nodes.indexOf(node) + 1).take(3);
+        final recipe = rest.any(
+          (n) => RegExp(r'^\d+\.[ —]INGREDIENTS').hasMatch(inline(n).trim()),
+        );
+        out
+          ..writeln()
+          ..writeln(recipe ? '[.recipe]' : '')
+          ..writeln('=== ${escapeText(_titleCase(plain))}')
+          ..writeln();
+        continue;
+      }
+      _paragraph(node, out);
+    }
+    if (out != null) file('chapter-${'$chapter'.padLeft(2, '0')}', out);
+    final unplaced = _terms.keys.where((n) => !_placed.contains(n)).toList();
+    stdout.writeln(
+      '${files.length} files; ${_placed.length} paragraphs indexed'
+      '${unplaced.isEmpty ? '' : '; not found: $unplaced'}',
+    );
+  }
+
+  /// The numbered paragraphs whose index terms are placed.
+  final Set<int> _placed = {};
+
+  /// The numbers of the book's numbered paragraphs, by their elements:
+  /// the book numbers its paragraphs in order, so a number out of order
+  /// is a list's, the text's own (not here), and a few are misprinted
+  /// (1510 as 510, 1526 as 1536, 2071 as 1071, 2548 as 4548): a number
+  /// that differs from the one after the last in one figure, or lacks its
+  /// first, where the next goes on from that, is taken as that.
+  final Map<XmlElement, int> _numbers = {};
+
+  void _number(Iterable<XmlElement> nodes) {
+    final numbered = [
+      for (final node in nodes)
+        if (node.localName == 'p')
+          if (RegExp(r'^(\d+)\.(?: |—)').firstMatch(node.innerText.trim())
+              case final m?)
+            (node, int.parse(m[1]!)),
+    ];
+    var last = 0;
+    for (final (i, (node, printed)) in numbered.indexed) {
+      final next = i + 1 < numbered.length ? numbered[i + 1].$2 : null;
+      final expected = last + 1;
+      final misprint =
+          last > 0 &&
+          printed != expected &&
+          (_oneFigureApart('$printed', '$expected') ||
+              ('$printed'.length == '$expected'.length - 1 &&
+                  '$expected'.endsWith('$printed'))) &&
+          (next == null || next == expected + 1);
+      final number = misprint
+          ? expected
+          : printed > last && printed <= last + 40
+          ? printed
+          : null;
+      if (number == null) continue;
+      _numbers[node] = number;
+      last = number;
+    }
+  }
+
+  static bool _oneFigureApart(String a, String b) =>
+      a.length == b.length &&
+      [
+            for (var i = 0; i < a.length; i++)
+              if (a[i] != b[i]) i,
+          ].length ==
+          1;
+
+  /// A paragraph of the text, by what it is.
+  void _paragraph(XmlElement node, StringBuffer out) {
+    if (node.localName != 'p') return;
+    var text = inline(node).trim();
+    if (text.isEmpty || text == '[Illustration]') return;
+    final plain = node.innerText.replaceAll(RegExp(r'\s+'), ' ').trim();
+    if (RegExp(r'^\[Illustration\]\.?$').hasMatch(plain)) return;
+    if (RegExp(r'^\[Illustration: (.*?)\]\.?$').firstMatch(plain)
+        case final m?) {
+      final image = _engravings[m[1]];
+      if (image != null) {
+        out
+          ..writeln()
+          ..writeln('.${_titleCase(m[1]!)}')
+          ..writeln(
+            'image::$image[${attributeValue(_titleCase(m[1]!))},'
+            'align=center]',
+          )
+          ..writeln();
+      }
+      return;
+    }
+    // (An engraving's place in the text, which the work hasn't: left
+    // out.)
+    text = text
+        .replaceAll(RegExp(r' ?&#91;Illustration(?::[^&]*)?&#93;\.?'), '')
+        .trim();
+    // (Lines broken with spaces before them: verse.)
+    if (text.contains(' +\n') &&
+        node.children.whereType<XmlText>().any(
+          (t) => t.text.startsWith('  ') || t.text.contains('\n  '),
+        )) {
+      final lines = [
+        for (final line in text.split(' +\n'))
+          if (line.trim().isNotEmpty) line.trim(),
+      ];
+      out
+        ..writeln()
+        ..writeln('[verse]')
+        ..writeln('____')
+        ..writeln(lines.join('\n'))
+        ..writeln('____')
+        ..writeln();
+      return;
+    }
+    final indented = (node.getAttribute('style') ?? '').contains('margin-left');
+    String? role;
+    String? anchor;
+    // (A numbered paragraph: its number an anchor, its index terms in it;
+    // a recipe's ingredients; the capitals it opens with small capitals.)
+    if (RegExp(r'^(\d+)\.(?: |—)(.*)$', dotAll: true).firstMatch(text)
+        case final m? when _numbers[node] != null) {
+      final number = _numbers[node]!;
+      anchor = 'p-$number';
+      var rest = m[2]!;
+      if (rest.startsWith('INGREDIENTS')) {
+        role = 'ingredients';
+        rest = rest.replaceFirst('INGREDIENTS', '[.label]#Ingredients#');
+      } else {
+        rest = _smallCaps(rest);
+      }
+      final terms = [
+        for (final term in _terms[number] ?? const <List<String>>[])
+          '(((${term.map(_indexText).join(', ')})))',
+      ].join();
+      if (terms.isNotEmpty) _placed.add(number);
+      final dash = text.startsWith('$number.—') ? '—' : ' ';
+      text = '[[$anchor]]$number.$dash$terms$rest';
+    } else if (indented) {
+      role = 'note';
+      text = _smallCaps(text);
+    } else if (RegExp('^_(Mode|Choosing and Trussing)_').hasMatch(text) ||
+        text.startsWith('__Mode__')) {
+      role = 'mode';
+    } else if (RegExp('^_{1,2}(Time|Average cost|Sufficient|Seasonable)')
+        .hasMatch(text)) {
+      role = 'particulars';
+    } else if (RegExp(r'^\(_{1,2}.*_{1,2}\.?\)$').hasMatch(text)) {
+      role = 'subtitle';
+    }
+    out.writeln();
+    if (role != null) out.writeln('[.$role]');
+    out
+      ..writeln(lineStart(text.replaceAll(RegExp(r' *\+\n *'), ' ')))
+      ..writeln();
+  }
+
+  /// [text] with the capitals it opens with ("THE BUENOS AYRES DUCK.—",
+  /// "IN NATURAL HISTORY, FISHES") in small capitals, as the edition sets
+  /// them.
+  String _smallCaps(String text) {
+    final m = RegExp(
+      r"^([A-Z][A-Z’'&;#0-9 -]*[A-Z](?:[,.][A-Z’' -]*[A-Z])*)(?=[.,—: ]|$)",
+    ).firstMatch(text);
+    if (m == null || !m[1]!.contains(RegExp('[A-Z]{2}'))) return text;
+    return '[.sc]#${_titleCase(m[1]!)}#${text.substring(m.end)}';
+  }
+
+  /// "THE BUENOS AYRES DUCK" as "The Buenos Ayres Duck".
+  static String _titleCase(String text) =>
+      text.replaceAllMapped(RegExp(r"(\p{L})([\p{L}’']*)", unicode: true), (m) {
+        final word = m[0]!;
+        const small = {
+          'OF',
+          'AND',
+          'THE',
+          'A',
+          'AN',
+          'IN',
+          'ON',
+          'TO',
+          'FOR',
+          'OR',
+          'AT',
+          'BY',
+          'WITH',
+          'FROM',
+        };
+        if (m.start > 0 && small.contains(word.toUpperCase())) {
+          return word.toLowerCase();
+        }
+        return '${m[1]!.toUpperCase()}${m[2]!.toLowerCase()}';
+      });
+
+  /// An index term's level as an index term's text: quoted when it holds
+  /// a comma, its closing brackets written as references.
+  static String _indexText(String text) {
+    final escaped = escapeText(text.trim()).replaceAll(')', '&#41;');
+    return escaped.contains(',')
+        ? '"${escaped.replaceAll('"', '&#34;')}"'
+        : escaped;
+  }
+
+  /// The lines of a paragraph of the analytical index: each a term (set
+  /// in under the one above for a subentry) and the paragraphs it is in
+  /// (`2705-7`, `933, 1022`; a page, `p. 955`, has no paragraph and is
+  /// left out).
+  void _indexLines(XmlElement p) {
+    // (Its lines broken by `<br>`, or, in a paragraph without them, where
+    // its source's lines break.)
+    final broken = p.childElements.any((e) => e.localName == 'br');
+    final lines = <String>[];
+    var line = StringBuffer();
+    for (final node in p.children) {
+      switch (node) {
+        case XmlElement(localName: 'br'):
+          lines.add('$line');
+          line = StringBuffer();
+        case XmlText(:final text) when broken:
+          line.write(text.replaceAll('\n', ''));
+        case XmlText(:final text):
+          final parts = text.split('\n');
+          line.write(parts.first);
+          for (final part in parts.skip(1)) {
+            lines.add('$line');
+            line = StringBuffer(part);
+          }
+        case final XmlElement e:
+          line.write(e.innerText);
+      }
+    }
+    lines.add('$line');
+    for (final raw in lines) {
+      if (raw.trim().isEmpty) continue;
+      final depth = (raw.length - raw.trimLeft().length) ~/ 2;
+      final m = RegExp(r'^(.*?)[ ,]*((?:pp?\.\s*)?\d[\d\s,\-p.]*)$')
+          .firstMatch(raw.trim());
+      final term = (m == null ? raw.trim() : m[1]!).trim();
+      final refs = m == null ? '' : m[2]!;
+      final level = depth.clamp(0, 2);
+      // (A subentry under the heading above it; one set in further than
+      // that, under it all the same.)
+      if (_path.length > level) _path.length = level;
+      _path.add(term);
+      if (refs.isEmpty) continue;
+      for (final number in _paragraphs(refs)) {
+        (_terms[number] ??= []).add([..._path]);
+      }
+    }
+  }
+
+  /// The heading and subheadings above the index's line being read.
+  final List<String> _path = [];
+
+  /// The paragraph numbers in [refs]: `2705-7` 2705 to 2707, `909-52`
+  /// 909 to 952; pages (`p. 955`, `pp. 909-52`) left out.
+  static List<int> _paragraphs(String refs) {
+    final numbers = <int>[];
+    for (final part in refs.split(',')) {
+      final ref = part.trim();
+      if (ref.isEmpty || ref.startsWith('p')) continue;
+      final range = RegExp(r'^(\d+)\s*-\s*(\d+)$').firstMatch(ref);
+      if (range == null) {
+        if (int.tryParse(ref) case final n?) numbers.add(n);
+        continue;
+      }
+      final from = int.parse(range[1]!);
+      final short = range[2]!;
+      // (The end's last figures: 2705-7 is 2705 to 2707.)
+      final keep = '$from'.length - short.length;
+      final to = int.parse(
+        keep <= 0 ? short : '${'$from'.substring(0, keep)}$short',
+      );
+      if (to < from || to - from > 60) {
+        numbers.add(from);
+        continue;
+      }
+      for (var n = from; n <= to; n++) {
+        numbers.add(n);
+      }
+    }
+    return numbers;
   }
 }

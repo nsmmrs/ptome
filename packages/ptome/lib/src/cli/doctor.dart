@@ -367,6 +367,20 @@ final List<NeededFont> lookFonts = [
     license: 'SIL Open Font License 1.1',
   ),
   const NeededFont(
+    name: 'Old Standard TT',
+    usedBy: "the showcase's Mrs Beeton look (a Victorian modern face)",
+    families: ['Old Standard TT'],
+    // (A roman, an italic and a bold: the family has no bold italic.)
+    styles: [FontStyle.normal, FontStyle.italic, FontStyle.bold],
+    fileNames: {},
+    source: GoogleFonts('Old Standard TT', {
+      FontStyle.normal: 'OldStandardTT-Regular.ttf',
+      FontStyle.italic: 'OldStandardTT-Italic.ttf',
+      FontStyle.bold: 'OldStandardTT-Bold.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
     name: 'Noto Sans Symbols',
     usedBy: "the showcase's Burton look (the planets and the zodiac)",
     families: ['Noto Sans Symbols'],

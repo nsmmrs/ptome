@@ -1,0 +1,69 @@
+= Mrs Beeton: two recipes for ducks
+:doctype: book
+:lang: en
+:look: beeton
+:looksdir: {docdir}
+:notitle:
+
+// Recipes in their parts and an index made from the text
+// (doc/showcase.md): two recipes, each paragraph by its role, the
+// natural history between them small, and the analytical index's terms
+// for their paragraphs, listed at the end.
+
+[#chapter-21]
+== Recipes.
+
+[.recipe]
+=== To Ragout a Duck Whole.
+
+[.ingredients]
+[[p-933]]933. ((("Bills of fare, for January", June)))((("Dinners, and dining", Bills of fare for plain family)))((("Duck, the", Buenos Ayres)))((("Duck, the", To ragoût a whole)))((("Duck, the", Varieties of the)))[.label]#Ingredients#.—1 large duck, pepper and salt to taste, good beef gravy, 2 onions sliced, 4 sage-leaves, a few leaves of lemon thyme, thickening of butter and flour.
+
+[.mode]
+__Mode__.—After having emptied and singed the duck, season it inside with pepper and salt, and truss it. Roast it before a clear fire for about 20 minutes, and let it acquire a nice brown colour. Put it into a stewpan with sufficient well-seasoned beef gravy to cover it; slice and fry the onions, and add these, with the sage-leaves and lemon thyme, both of which should be finely minced, to the stock. Simmer gently until the duck is tender; strain, skim, and thicken the gravy with a little butter and flour; boil it up, pour over the duck, and serve. When in season, about, 1½ pint of young green peas, boiled separately, and put in the ragoût, very much improve this dish.
+
+[.particulars]
+__Time__.—20 minutes to roast the duck; 20 minutes to stew it.
+
+[.particulars]
+__Average cost__, from 2s. 3d. to 2s. 6d. each.
+
+[.particulars]
+__Sufficient__ for 4 or 5 persons.
+
+[.particulars]
+__Seasonable__ from November to February; ducklings from April to August.
+
+[.note]
+[.sc]#The Buenos Ayres Duck#.—The Buenos Ayres duck is of East-Indian birth, and is chiefly valuable as an ornament; for we suppose one would as soon think of picking a Chinese teal for luncheon, or a gold fish for breakfast, as to consign the handsome Buenos Ayres to the spit. The prevailing colour of this bird is black, with a metallic lustre, and a gleaming of blue steel about its breast and wings.
+
+[.note]
+[.sc]#Varieties of Ducks#.—Naturalists count nearly a hundred different species of ducks; and there is no doubt that the intending keeper of these harmless and profitable birds may easily take his choice from amongst twenty different sorts. There is, however, so little difference in the various members of the family, either as regards hardiness, laying, or hatching, that the most incompetent fancier or breeder may indulge his taste without danger of making a bad bargain. In connection with their value for table, light-coloured ducks are always of milder flavour than those that are dark-coloured, the white Aylesbury's being general favourites. Ducks reared exclusively on vegetable diet will have a whiter and more delicate flesh than those allowed to feed on animal offal; while the flesh of birds fattened on the latter food, will be firmer than that of those which have only partaken of food of a vegetable nature.
+
+[.recipe]
+=== Roast Ducks.
+
+[.ingredients]
+[[p-934]]934. ((("Bills of fare, for January", July)))((("Duck, the", Eggs of the)))((("Duck, the", Roast)))((("Duck, the", Rouen)))((("Duck, the", "Wild, the")))[.label]#Ingredients#.—A couple of ducks; sage-and-onion stuffing No. 504; a little flour.
+
+__Choosing and Trussing__.—Choose ducks with plump bellies, and with thick and yellowish feet. They should be trussed with the feet on, which should be scalded, and the skin peeled off, and then turned up close to the legs. Run a skewer through the middle of each leg, after having drawn them as close as possible to the body, to plump up the breast, passing the same quite through the body. Cut off the heads and necks, and the pinions at the first joint; bring these close to the sides, twist the feet round, and truss them at the back of the bird. After the duck is stuffed, both ends should be secured with string, so as to keep in the seasoning.
+
+[.mode]
+__Mode__.—To insure ducks being tender, never dress them the same day they are killed; and if the weather permits, they should hang a day or two. Make a stuffing of sage and onion sufficient for one duck, and leave the other unseasoned, as the flavour is not liked by everybody. Put them down to a brisk clear fire, and keep them well basted the whole of the time they are cooking. A few minutes before serving, dredge them lightly with flour, to make them froth and look plump; and when the steam draws towards the fire, send them to table hot and quickly, with a good brown gravy poured __round__, but not __over__ the ducks, and a little of the same in a tureen. When in season, green peas should invariably accompany this dish.
+
+[.particulars]
+__Time__.—Full-grown ducks from ¾ to 1 hour; ducklings from 25 to 35 minutes.
+
+[.particulars]
+__Average cost__, from 2s. 3d. to 2s. 6d. each.
+
+[.particulars]
+__Sufficient__.—A. couple of ducks for 6 or 7 persons.
+
+[.particulars]
+__Seasonable__.—Ducklings from April to August; ducks from November to February.
+
+__Note__.—Ducklings are trussed and roasted in the same manner, and served with the same sauces and accompaniments. When in season, serve apple sauce.
+
+[index]
+== Analytical Index

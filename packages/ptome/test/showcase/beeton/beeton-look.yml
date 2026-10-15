@@ -1,0 +1,129 @@
+# Mrs Beeton's Book of Household Management after its first edition
+# (S. O. Beeton, 1861), a thick octavo of about 5 × 7½ in: a Victorian
+# modern face, small and close; each recipe headed in bold capitals,
+# centred, its paragraph numbered, "INGREDIENTS" in small capitals, the
+# mode and the particulars (time, average cost, sufficient for,
+# seasonable) each a paragraph opening in italic; the natural history
+# between the recipes in smaller type; the running head the chapter's
+# title in spaced capitals, the page number outside; the analytical
+# index in two columns, the numbers at the right.
+#
+# Old Standard TT, a revival of the moderns of the time (`ptome doctor
+# --look beeton --looksdir test/showcase/beeton`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
+    display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: bold }
+  size:
+    text: { print: 9.5pt, screen: 18px }
+    headings: { print: [20pt, 13pt, 9.5pt, 9.5pt, 9.5pt, 9.5pt] }
+  leading: { print: 1.22, screen: 1.55 }
+  measure: { screen: 36em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [5.1in, 7.7in], margin: [0.7in, 0.55in, 0.6in, 0.6in] }
+styles:
+  heading: { font: display, weight: bold, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    fallbacks: [Noto Serif]
+  heading:
+    chapter_break_before: always
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1
+      font_style: normal
+      margin_page_top: 12
+      margin_bottom: 10
+    h3:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 0.6
+      font_size: 9
+      margin_top: 12
+      margin_bottom: 4
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1em
+  role:
+    label: { font_variant: small-caps }
+    sc: { font_variant: small-caps }
+    ingredients: { text_indent: 1em }
+    mode: { text_indent: 1em }
+    particulars: { text_indent: 1em, text_align: left }
+    note:
+      font_size: 7.4
+      line_height: 1.12
+      text_indent: 1em
+      margin_top: 3
+      margin_bottom: 3
+    subtitle: { text_align: center, font_style: italic, margin_bottom: 3 }
+    signature: { text_align: right, text_transform: uppercase, character_spacing: 1 }
+  verse:
+    border_left_width: 0
+    padding: [0, 0, 0, 24]
+    font_size: 8.5
+  image:
+    align: center
+  caption:
+    text_align: center
+    font_size: 7
+    text_transform: uppercase
+    font_style: normal
+  index:
+    column_count: 2
+    column_gap: 12
+    font_size: 7.5
+    pagenum_text_align: right
+  toc:
+    font_size: 8.5
+  title_page:
+    text_align: center
+    title:
+      top: 30%
+      font_size: 22
+      text_transform: uppercase
+      character_spacing: 1.5
+    authors:
+      font_style: italic
+      font_size: 11
+  header:
+    height: 0.55in
+    vertical_align: bottom
+    font_size: 7.5
+    text_transform: uppercase
+    character_spacing: 1
+    recto:
+      left: { content: '' }
+      center: { content: '{chapter-title}' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: '{chapter-title}' }
+      right: { content: '' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Old Standard TT:400,400italic,700
+css: |
+  #content h2,#content h3{text-align:center;text-transform:uppercase;letter-spacing:.06em}
+  .label,.sc{font-variant:small-caps}
+  .paragraph.note{font-size:80%}
+  .paragraph.subtitle p{text-align:center;font-style:italic}
+  .paragraph.signature p{text-align:right;text-transform:uppercase;letter-spacing:.1em}
+  .sect2.recipe{border-top:1px solid #ccc;margin-top:1.5em}
+epub-css: |
+  h2,h3{text-align:center;text-transform:uppercase}
+  .label,.sc{font-variant:small-caps}
+  .paragraph.note{font-size:80%}
+  .paragraph.subtitle p{text-align:center;font-style:italic}
+  .paragraph.signature p{text-align:right}
