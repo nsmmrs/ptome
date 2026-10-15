@@ -5,7 +5,7 @@
 # package's run into OUT/<package>.json (its JSON report) and
 # OUT/<package>.log (its failures); ptome's corpus held to its red list
 # (tool/corpus_red.dart), and with --budget every package's run to the
-# tests' time budget (tool/test_budget.dart).
+# tests' time budget (tool/test_budget.dart), each file's time printed.
 #
 #   tool/test_shard.sh [--budget] SHARDS INDEX PROGRAMS OUT
 #
@@ -66,6 +66,11 @@ while read -r package _ _; do
 done < "$out/shard.txt"
 
 if $budget; then
-  dart run tool/test_budget.dart "${reports[@]}" || status=1
+  dart run tool/test_budget.dart --times "${reports[@]}" > "$out/budget.txt" ||
+    status=1
+  # (The verdict, then each file's time, the longest first.)
+  grep -v '^ ' "$out/budget.txt"
+  grep '^ ' "$out/budget.txt" | grep -v 'OVER BUDGET' | sort -rn
+  grep 'OVER BUDGET' "$out/budget.txt" || true
 fi
 exit $status

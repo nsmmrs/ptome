@@ -112,17 +112,13 @@ bool joinedInChain(
         numberingSystem: defaultNumberingSystem(locale),
       ),
   };
-  final joiners = {'{1} {0}'};
-  for (final [l, path, value] in _calendarLines) {
-    if (!chain.contains(l)) continue;
-    for (final kind in ['gregorian', 'generic', calendar.cldrName]) {
-      for (final variant in const ['standard', 'atTime']) {
-        if (path == '$kind/dateTimeFormats/${date.name}/$variant') {
-          joiners.add(value);
-        }
-      }
-    }
-  }
+  final joiners = {
+    '{1} {0}',
+    for (final l in chain)
+      for (final kind in ['gregorian', 'generic', calendar.cldrName])
+        for (final variant in const ['standard', 'atTime'])
+          ...?_joinerPatterns[l]?['$kind/dateTimeFormats/${date.name}/$variant'],
+  };
   for (final joiner in joiners) {
     final pattern = joiner.replaceAll("''", '\u0001').replaceAll("'", '');
     for (final t in times) {
@@ -137,11 +133,20 @@ bool joinedInChain(
   return false;
 }
 
-/// calendars.tsv's lines: a locale, a path, a value.
-final List<List<String>> _calendarLines = [
-  for (final line in File('vendor/cldr/48.2.0/calendars.tsv').readAsLinesSync())
-    if (line.isNotEmpty && !line.startsWith('#')) line.split('\t'),
-];
+/// calendars.tsv's date-time patterns: by locale, by path, the values.
+final Map<String, Map<String, List<String>>> _joinerPatterns = () {
+  final patterns = <String, Map<String, List<String>>>{};
+  for (final line in File(
+    'vendor/cldr/48.2.0/calendars.tsv',
+  ).readAsLinesSync()) {
+    if (line.isEmpty || line.startsWith('#')) continue;
+    if (line.split('\t') case [final l, final path, final value]
+        when path.contains('/dateTimeFormats/')) {
+      ((patterns[l] ??= {})[path] ??= []).add(value);
+    }
+  }
+  return patterns;
+}();
 
 /// What ICU writes for each of [cases] (a locale, a date and a time
 /// style, a moment, an offset in minutes, a calendar's BCP 47 name).

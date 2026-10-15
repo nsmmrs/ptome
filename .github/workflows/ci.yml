@@ -88,6 +88,12 @@ jobs:
     timeout-minutes: 3
     name: tests (${{ matrix.os }}, ${{ matrix.shard }} of ${{ matrix.shards }})
     steps:
+    # (Windows Defender scans each file the job writes as it is written:
+    # the checkout's, the pub cache's, the compilers'. Not on a runner
+    # thrown away after the job.)
+    - if: runner.os == 'Windows'
+      shell: pwsh
+      run: Set-MpPreference -DisableRealtimeMonitoring $true
     - uses: actions/checkout@v4
     - uses: dart-lang/setup-dart@v1
     - uses: actions/cache@v4
@@ -96,7 +102,10 @@ jobs:
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
     - name: The shard's tests
-      run: tool/test_shard.sh --budget ${{ matrix.shards }} ${{ matrix.shard }} 4 "$RUNNER_TEMP/tests"
+      # (A program a core the runner has.)
+      run: |
+        cores="$(nproc 2> /dev/null || sysctl -n hw.ncpu)"
+        tool/test_shard.sh --budget ${{ matrix.shards }} ${{ matrix.shard }} "$cores" "$RUNNER_TEMP/tests"
   node:
     # ptome's suites on Node.js, in four programs (tool/node_tests.dart),
     # a job each (each is a whole dart2js compile).
@@ -127,14 +136,8 @@ jobs:
   web:
     # Each library compiled to JavaScript writes the same bytes as on the
     # Dart VM (its tool/web_check.dart).
-    strategy:
-      fail-fast: false
-      matrix:
-        packages:
-        - plain_compression plain_fonts plain_highlighting plain_hyphenation plain_images plain_math
-        - plain_mustache plain_pdf plain_svg plain_typesetting plain_unicode
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 2
     steps:
     - uses: actions/checkout@v4
     - uses: dart-lang/setup-dart@v1
@@ -156,7 +159,7 @@ jobs:
           [ "$vm" = "$js" ] && echo "$1: the same" || { echo "$1: VM $vm, JS $js"; return 1; }
         }
         export -f check
-        echo ${{ matrix.packages }} | tr ' ' '\n' | xargs -P 4 -I{} bash -c 'check {}'
+        ls -d packages/plain_*/tool/web_check.dart | cut -d/ -f2 | xargs -P 4 -I{} bash -c 'check {}'
   npm:
     # The npm package: built, its own tests (API, exports, contents,
     # bundler, browser), types and lint, a publish dry run (nothing is
