@@ -17,6 +17,7 @@ EPIC-phf3n2 has the plan.
 | [McGuffey's Second Reader](../test/showcase/mcguffey/NOTICE.md) | A schoolbook: numbered lessons, each its new words in columns with their marks of pronunciation (macrons, breves, dots and bars above and below, combining marks among them), its woodcut and numbered paragraphs; the key to the marks; the script lessons in a copybook hand |
 | [Moby-Dick](../test/showcase/moby-dick/NOTICE.md) | Scale (the whole novel, 617 pages) and a novel's apparatus: a dedication page, the Extracts' sources, epigraphs, footnotes, the play-script chapters |
 | [Tristram Shandy](../test/showcase/tristram/NOTICE.md) | Typographic play: the black page and the marbled page, chapters that are only their heads, rows of asterisks, plot-line diagrams, dashes of many lengths |
+| [Punch](../test/showcase/punch/NOTICE.md) | Magazine pages: three 1841 issues in two ruled columns under the running title, cuts with captions in the columns and across the page, pictorial initials, verse, tables of cuts |
 | [The Tempest](../test/showcase/tempest/NOTICE.md) | One source in two looks, a modern reading edition's and the First Folio's: speeches as description lists, shared verse lines stepped, each scene's lines numbered; two ruled columns in a frame |
 
 ## A work's folder

@@ -20,6 +20,9 @@
 ///   test/showcase/mcguffey, with the word lists and the script lessons
 ///   transcribed from the facsimile (the work's `words.txt` and
 ///   `script.txt`).
+/// - `punch`: Punch, or the London Charivari, the issues of 17 July, 14
+///   and 21 August 1841 (eBooks #13639, #14923, #14924), into
+///   test/showcase/punch: HTML is then each issue's file, in order.
 library;
 
 import 'dart:io';
@@ -31,9 +34,19 @@ import 'package:plain_svg/src/xml.dart';
 import 'showcase_text.dart';
 
 void main(List<String> arguments) {
-  if (arguments.length != 2) {
-    stderr.writeln('usage: dart run tool/showcase_gutenberg.dart WORK HTML');
+  if (arguments.length < 2) {
+    stderr.writeln('usage: dart run tool/showcase_gutenberg.dart WORK HTML...');
     exit(64);
+  }
+  if (arguments.first == 'punch') {
+    _Punch([
+      for (final html in arguments.skip(1))
+        (
+          html.split('/').last.replaceAll(RegExp(r'\D'), ''),
+          readGutenberg(File(html).readAsStringSync()),
+        ),
+    ]).write('test/showcase/punch');
+    return;
   }
   final [work, html] = arguments;
   final source = File(html).readAsStringSync();
@@ -1609,5 +1622,338 @@ final class _McGuffey extends GutenbergText {
             if (heading.pattern != r'^[IVXL]+$' || line.isNotEmpty) line,
         ],
     };
+  }
+}
+
+/// Punch, or the London Charivari: three issues of its first volume
+/// (1841), each a chapter headed by its date (the look sets the masthead
+/// over it), in columns; its pieces sections, their subheads discrete
+/// headings; the pieces without heads between rules; the cuts where the
+/// text has them, as wide as Project Gutenberg sets them (a quarter of
+/// its page more than half the column, a half the column, the whole the
+/// page across, the `cut` role), their captions their titles; a
+/// pictorial initial floated at its piece's start, the letter it stands
+/// for hidden (`hide`); the verse with its indents; the tables
+/// (prescriptions, a thermometer, the Royal Alphabet with a cut to each
+/// letter); the side notes footnotes. Project Gutenberg's page numbers
+/// are left out.
+final class _Punch extends GutenbergText {
+  new(this.issues) : super(const {});
+
+  /// Each issue's eBook number and body.
+  final List<(String, XmlElement)> issues;
+
+  /// The images the work fetches: their names and their eBooks.
+  final List<(String, String)> images = [];
+
+  String _book = '';
+
+  void write(String dir) {
+    final textDir = Directory('$dir/text')..createSync(recursive: true);
+    for (final old in textDir.listSync().whereType<File>()) {
+      old.deleteSync();
+    }
+    for (final (n, (book, body)) in issues.indexed) {
+      _book = book;
+      final out = StringBuffer();
+      var started = false;
+      for (final node in body.childElements) {
+        if (node.getAttribute('id') == 'pg-end-separator') break;
+        final text = node.innerText.replaceAll(RegExp(r'\s+'), ' ').trim();
+        if (!started) {
+          // (The issue starts at its date, after the masthead.)
+          if (node.localName == 'h2' &&
+              RegExp(r'^[A-Z]+ \d+, 1841\.$').hasMatch(text)) {
+            started = true;
+            final date = text.replaceFirst('.', '');
+            out
+              ..writeln('[#issue-${n + 1}.issue.columns,column-count=2]')
+              ..writeln('== ${_capitalized(date)}')
+              ..writeln();
+          }
+          continue;
+        }
+        _block(node, out);
+      }
+      File('$dir/text/issue-${n + 1}.adoc').writeAsStringSync(
+        '${'$out'.trim().replaceAll(RegExp(r'\n{3,}'), '\n\n')}\n',
+      );
+    }
+    stdout.writeln('${issues.length} issues; ${images.length} images');
+  }
+
+  /// "JULY 17, 1841" as "July 17, 1841".
+  static String _capitalized(String text) => text.replaceAllMapped(
+    RegExp('([A-Z])([A-Z]+)'),
+    (m) => '${m[1]}${m[2]!.toLowerCase()}',
+  );
+
+  void _block(XmlElement node, StringBuffer out) {
+    final classes = classesOf(node);
+    switch (node.localName) {
+      case 'h2':
+        out
+          ..writeln()
+          ..writeln('=== ${_title(node)}')
+          ..writeln();
+      case 'h3' || 'h4' || 'h5':
+        out
+          ..writeln()
+          ..writeln('[discrete]')
+          ..writeln('==== ${_title(node)}')
+          ..writeln();
+      case 'hr':
+        // (A rule between pieces; not after a heading, nor twice.)
+        final last = '$out'.trimRight().split('\n').last;
+        if (last.startsWith('==') || last == "'''") return;
+        out
+          ..writeln()
+          ..writeln("'''")
+          ..writeln();
+      case 'p':
+        final align = node.getAttribute('style') ?? '';
+        out.writeln();
+        if (align.contains('right')) out.writeln('[.signature]');
+        if (align.contains('center')) out.writeln('[.text-center]');
+        out
+          ..writeln(lineStart(_paragraph(node)))
+          ..writeln();
+      case 'div' when classes.contains('poem'):
+        _poem(node, out);
+      case 'div'
+          when classes.contains('figcenter') ||
+              classes.contains('figleft') ||
+              classes.contains('dropcap'):
+        _figure(node, out, initial: classes.contains('dropcap'));
+      case 'table':
+        _table(node, out);
+      case 'ol' || 'ul':
+        out.writeln();
+        for (final li in node.childElements.where((e) => e.localName == 'li')) {
+          final text = [
+            for (final p in li.childElements.where((e) => e.localName == 'p'))
+              _paragraph(p),
+          ];
+          out.writeln(
+            '${node.localName == 'ol' ? '.' : '*'} '
+            '${text.isEmpty ? _paragraph(li) : text.join('\n+\n')}',
+          );
+        }
+        out.writeln();
+      case 'div' when classes.contains('pg_body_wrapper'):
+        break;
+      case 'div':
+        for (final child in node.childElements) {
+          _block(child, out);
+        }
+      default:
+        break;
+    }
+  }
+
+  String _title(XmlElement heading) =>
+      inline(heading).trim().replaceAll(RegExp(r'\s*\+\n\s*'), ' ');
+
+  /// A paragraph's text: its side notes (a raised number and the note
+  /// after it) footnotes.
+  String _paragraph(XmlElement p) {
+    final out = StringBuffer();
+    final children = p.children.toList();
+    for (var i = 0; i < children.length; i++) {
+      final next = i + 1 < children.length ? children[i + 1] : null;
+      switch (children[i]) {
+        case XmlElement(localName: 'sup') && final sup
+            when next is XmlElement && classesOf(next).contains('sidenote'):
+          final number = RegExp.escape(sup.innerText.trim());
+          final note = inline(next)
+              .trim()
+              .replaceFirst(RegExp('^$number\\.\\s*'), '');
+          out.write('footnote:[$note]');
+          i++;
+        case XmlText(:final text):
+          out.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
+        case final XmlElement e:
+          out.write(inlineNode(e));
+      }
+    }
+    return '$out'.trim().replaceAll(RegExp(r' *\+\n *'), ' +\n');
+  }
+
+  @override
+  List<String> spanRoles(XmlElement element) => [
+    for (final role in classesOf(element))
+      if (const {'sc', 'hide', 'emph'}.contains(role)) role,
+  ];
+
+  @override
+  String span(XmlElement element) {
+    if (classesOf(element).contains('pagenum')) return '';
+    return super.span(element);
+  }
+
+  /// A poem: its stanzas, its lines set in by their indent classes.
+  void _poem(XmlElement poem, StringBuffer out) {
+    final stanzas = <String>[];
+    for (final stanza in poem.childElements) {
+      final lines = <String>[];
+      for (final p in stanza.childElements.where((e) => e.localName == 'p')) {
+        final indent = classesOf(p)
+            .where((c) => RegExp(r'^i\d$').hasMatch(c))
+            .firstOrNull;
+        final ems = indent == null ? 0 : int.parse(indent.substring(1)) ~/ 2;
+        lines.add('${' ' * ems}${_paragraph(p)}');
+      }
+      if (lines.isNotEmpty) stanzas.add(lines.join('\n'));
+    }
+    if (stanzas.isEmpty) return;
+    out
+      ..writeln()
+      ..writeln('[verse]')
+      ..writeln('____')
+      ..writeln(stanzas.join('\n\n'))
+      ..writeln('____')
+      ..writeln();
+  }
+
+  /// An image's macro: as wide as Project Gutenberg sets it.
+  String _image(XmlElement img, {bool block = true, bool initial = false}) {
+    final src = img.getAttribute('src')!.split('/').last;
+    if (!images.any((i) => i.$1 == src)) images.add((src, _book));
+    final alt = attributeValue(img.getAttribute('alt') ?? '');
+    final width = RegExp(r'width:\s*(\d+)%')
+        .firstMatch(img.getAttribute('style') ?? '')
+        ?.group(1);
+    if (!block) {
+      final height = img.getAttribute('height');
+      return 'image:$src[$alt${height == null ? '' : ',height=$height'}]';
+    }
+    if (initial) {
+      return 'image::$src[$alt,float=left,pdfwidth=40%,role=initial]';
+    }
+    return switch (width) {
+      '100' => 'image::$src[$alt,role=cut,align=center]',
+      '25' => 'image::$src[$alt,pdfwidth=55%,align=center]',
+      _ => 'image::$src[$alt,align=center]',
+    };
+  }
+
+  @override
+  String inlineNode(XmlElement element) => element.localName == 'img'
+      ? _image(element, block: false)
+      : super.inlineNode(element);
+
+  /// A figure: its image, its caption (the paragraphs after it) its
+  /// title; a pictorial initial floated left.
+  void _figure(XmlElement figure, StringBuffer out, {required bool initial}) {
+    final img = figure.descendantElements.firstWhere(
+      (e) => e.localName == 'img',
+    );
+    final caption = [
+      for (final p in figure.childElements.where((e) => e.localName == 'p'))
+        _paragraph(p).replaceAll(' +\n', ' '),
+    ].join(' ');
+    out.writeln();
+    if (caption.isNotEmpty) out.writeln('.$caption');
+    out
+      ..writeln(_image(img, initial: initial))
+      ..writeln();
+  }
+
+  void _table(XmlElement table, StringBuffer out) {
+    final allRows = [
+      for (final tr in table.descendantElements.where(
+        (e) => e.localName == 'tr',
+      ))
+        [
+          for (final td in tr.childElements.where((e) => e.localName == 'td'))
+            td,
+        ],
+    ];
+    // (Each cell's row span, no further than the table (one says nine
+    // where eight are left), and without the rows that hold no cell of
+    // their own, which a table can't have.)
+    final rowspans = <XmlElement, int>{
+      for (final (r, row) in allRows.indexed)
+        for (final td in row)
+          td: math.min(
+            int.tryParse(td.getAttribute('rowspan') ?? '') ?? 1,
+            allRows.length - r,
+          ),
+    };
+    for (final (e, row) in allRows.indexed) {
+      if (row.isNotEmpty) continue;
+      for (final (r, above) in allRows.take(e).indexed) {
+        for (final td in above) {
+          if (r + rowspans[td]! > e) rowspans[td] = rowspans[td]! - 1;
+        }
+      }
+    }
+    final rows = [
+      for (final row in allRows)
+        if (row.isNotEmpty) row,
+    ];
+    final columns = rows.fold(0, (n, row) {
+      final width = row.fold(
+        0,
+        (w, td) => w + (int.tryParse(td.getAttribute('colspan') ?? '') ?? 1),
+      );
+      return math.max(n, width);
+    });
+    if (columns == 0) return;
+    out
+      ..writeln()
+      ..writeln('[%noheader,cols="$columns*",frame=none,grid=none]')
+      ..writeln('|===');
+    // (Each column's cells still spanning down from rows above.)
+    final spanning = List.filled(columns, 0);
+    for (final row in rows) {
+      var column = 0;
+      void skipSpanned() {
+        while (column < columns && spanning[column] > 0) {
+          spanning[column]--;
+          column++;
+        }
+      }
+
+      for (final td in row) {
+        skipSpanned();
+        final colspan = int.tryParse(td.getAttribute('colspan') ?? '') ?? 1;
+        final rowspan = rowspans[td]!;
+        final span = [
+          if (colspan > 1) '$colspan',
+          if (rowspan > 1) '.$rowspan',
+        ].join();
+        final spec = span.isEmpty ? '' : '$span+';
+        for (var c = column; c < math.min(column + colspan, columns); c++) {
+          spanning[c] = rowspan - 1;
+        }
+        column += colspan;
+        final img = td.descendantElements
+            .where((e) => e.localName == 'img')
+            .firstOrNull;
+        if (img != null) {
+          out.writeln('${spec}a|${_image(img)}');
+          continue;
+        }
+        final align = (td.getAttribute('style') ?? '').contains('right')
+            ? '>'
+            : '';
+        final text = _paragraph(td)
+            .replaceAll('|', '&#124;')
+            .replaceAll(' +\n', ' ');
+        out.writeln('$spec$align|$text');
+      }
+      // (A row of fewer cells than the table's columns: empty ones after.)
+      while (column < columns) {
+        skipSpanned();
+        if (column >= columns) break;
+        out.writeln('|');
+        column++;
+      }
+      out.writeln();
+    }
+    out
+      ..writeln('|===')
+      ..writeln();
   }
 }

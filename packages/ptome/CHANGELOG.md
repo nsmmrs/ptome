@@ -10,6 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF/UA: a table cell spanning rows (or any cell) that a page or
+  column break splits goes on in its row's structure element; it left an
+  empty row, which PDF/UA-1 7.2 rejects (BUG-l91thh).
 - PDF: the `braces` role sets an unordered list as a tree of curly
   braces (Burton's synopses; FEAT-6h74yn); `footnotes_column` sets the
   footnotes in a margin column, each level with its reference, and

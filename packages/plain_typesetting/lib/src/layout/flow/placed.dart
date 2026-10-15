@@ -940,6 +940,9 @@ final class _PlacedTable extends _Placed {
   static final Expando<StructureElement> _rows = Expando();
   static final Expando<StructureElement> _cells = Expando();
 
+  /// The `TR` each cell began in.
+  static final Expando<StructureElement> _cellRows = Expando();
+
   /// When the cells' borders are painted.
   final TableBorders borders;
 
@@ -1013,8 +1016,13 @@ final class _PlacedTable extends _Placed {
         return;
       }
       final cell = placed.cell._source ?? placed.cell;
+      // (A cell's later piece, carried past a break, goes on in the row
+      // its cell began in: a row of its own would be left empty.)
+      final row = _cellRows[cell] ??= _rows[placed.row] ??= StructureElement(
+        'TR',
+      );
       canvas
-        ..beginStructure(_rows[placed.row] ??= StructureElement('TR'))
+        ..beginStructure(row)
         ..beginStructure(
           _cells[cell] ??= StructureElement(
             placed.header ? 'TH' : 'TD',

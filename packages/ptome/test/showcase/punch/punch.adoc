@@ -1,0 +1,14 @@
+= Punch, or the London Charivari: Volume I
+:doctype: book
+:lang: en
+:look: punch
+:looksdir: {docdir}
+:imagesdir: images
+:figure-caption!:
+:description: Three issues of Punch’s first volume (17 July, 14 and 21 August 1841): its pieces in three ruled columns under the masthead, its cuts and their captions, its pictorial initials, its verse.
+
+include::text/issue-1.adoc[]
+
+include::text/issue-2.adoc[]
+
+include::text/issue-3.adoc[]

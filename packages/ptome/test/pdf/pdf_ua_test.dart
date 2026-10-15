@@ -172,6 +172,49 @@ void main() {
     expect(report.trim(), startsWith('PASS'));
   });
 
+  test('a row taller than a page, its cells split, goes on in its row '
+      '(BUG-l91thh)', () {
+    // (A row whose cells are taller than an A6 page, and one spanning it
+    // and the next: every piece carried to the next page.)
+    final long = 'Words to fill the page and more. ' * 120;
+    final input = File('${_dir.path}/split-row.adoc')
+      ..writeAsStringSync(
+        '= Split\n:pdf-ua:\n\n[%noheader,cols="1,1"]\n|===\n'
+        '|$long\n.2+|$long\n\n|The next row.\n|===\n',
+      );
+    final out = '${input.path}.pdf';
+    convertFile(
+      input.path,
+      AsciidoctorOptions(
+        safe: SafeMode.unsafe,
+        backend: 'pdf',
+        toFile: out,
+        attributes: const {
+          'reproducible': '',
+          'pdf-theme': 'default',
+          'pdf-page-size': 'A6',
+        },
+      ),
+    );
+    final pdf = File(out).readAsBytesSync();
+    final qdf = qpdfQdf(_recorded, pdf);
+    expect(RegExp(r'/S /TR\b').allMatches(qdf), hasLength(2));
+    final report = _recorded.answer(
+      'PDF/UA-1 split row',
+      inputs: [_veraPdfVersion, pdf],
+      oracle: () =>
+          Process.runSync(_verapdf, [
+                '--flavour',
+                'ua1',
+                '--format',
+                'text',
+                out,
+              ]).stdout
+              as String,
+    );
+    expect(report.trim(), startsWith('PASS'));
+  });
+
   test('PDF/UA-1, as veraPDF checks it', () {
     final pdf = File(_convert()).readAsBytesSync();
     final report = _recorded.answer(
