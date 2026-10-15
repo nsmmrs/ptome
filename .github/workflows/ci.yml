@@ -20,29 +20,11 @@ defaults:
   run:
     shell: bash
 jobs:
-  analyze:
-    # Formatting and analysis of the whole workspace; the packages' shared
-    # test helpers alike; no test depending on the machine.
-    runs-on: ubuntu-latest
-    timeout-minutes: 2
-    steps:
-    - uses: actions/checkout@v4
-    - uses: dart-lang/setup-dart@v1
-    - uses: actions/cache@v4
-      with:
-        path: ~/.pub-cache
-        key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-    - run: dart pub get
-    - name: Analyze every package
-      run: dart analyze --fatal-infos .
-    - name: Check formatting, the shared helpers and the tests' hermeticity
-      run: |
-        dart format --output=none --set-exit-if-changed packages
-        tool/oracles_check.sh
-        tool/hermetic_check.sh
-  apis:
-    # The public APIs against their snapshots, ptome's JavaScript projection
-    # against its generator, plain_highlighting's generated grammars and
+  checks:
+    # Formatting and analysis of the whole workspace (the packages' shared
+    # test helpers alike, no test depending on the machine); the public
+    # APIs against their snapshots, ptome's JavaScript projection against
+    # its generator, plain_highlighting's generated grammars and
     # references against the pinned highlight.js (vendor/ its release).
     runs-on: ubuntu-latest
     timeout-minutes: 2
@@ -57,7 +39,7 @@ jobs:
         path: ~/.pub-cache
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
-    - name: The APIs, the JavaScript projection, the generated grammars
+    - name: Analysis, the APIs, the JavaScript projection, the generated grammars
       run: |
         (cd packages/ptome && dart run tool/generate_js.dart --check) > "$RUNNER_TEMP/js.log" 2>&1 &
         js=$!
@@ -70,6 +52,10 @@ jobs:
           tool/vendor.sh --check) > "$RUNNER_TEMP/generated.log" 2>&1 &
         generated=$!
         status=0
+        dart analyze --fatal-infos . || status=1
+        dart format --output=none --set-exit-if-changed packages || status=1
+        tool/oracles_check.sh || status=1
+        tool/hermetic_check.sh || status=1
         dart run tool/api_check.dart || status=1
         wait "$js" || { cat "$RUNNER_TEMP/js.log"; status=1; }
         wait "$generated" || { cat "$RUNNER_TEMP/generated.log"; status=1; }
@@ -105,6 +91,13 @@ jobs:
         path: ~/.pub-cache
         key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
     - run: dart pub get
+    # (The test runner's incremental kernels, the shard's last run's: only
+    # what changed since is compiled again.)
+    - uses: actions/cache@v4
+      with:
+        path: packages/*/.dart_tool/test
+        key: test-kernel-${{ runner.os }}-${{ matrix.shards }}-${{ matrix.shard }}-${{ github.sha }}
+        restore-keys: test-kernel-${{ runner.os }}-${{ matrix.shards }}-${{ matrix.shard }}-
     - name: The shard's tests
       run: |
         packages="$(cd packages && for p in */; do if [ -d "$p/test" ]; then echo "${p%/}"; fi; done)"
@@ -124,11 +117,11 @@ jobs:
         exit $status
   node:
     # ptome's suites on Node.js, in four programs (tool/node_tests.dart),
-    # two a job.
+    # a job each (each is a whole dart2js compile).
     strategy:
       fail-fast: false
       matrix:
-        programs: ['0 1', '2 3']
+        programs: ['0', '1', '2', '3']
     runs-on: ubuntu-latest
     timeout-minutes: 3
     defaults:
