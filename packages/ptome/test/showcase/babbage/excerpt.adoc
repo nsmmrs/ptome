@@ -1,0 +1,14 @@
+= Logarithms: three groups of five rows
+:doctype: book
+:lang: en
+:look: babbage
+:looksdir: {docdir}
+:notitle:
+
+// A large numeric table (doc/showcase.md): the rows in fives with a
+// space between, the figures of one width in their columns, the heads
+// of the columns and the page's range of numbers on the tinted page.
+
+== Logarithms
+
+include::text/excerpt-table.adoc[]

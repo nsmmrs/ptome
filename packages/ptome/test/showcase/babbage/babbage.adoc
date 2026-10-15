@@ -1,0 +1,42 @@
+= Table of Logarithms of the Natural Numbers from 10,000 to 19,999
+After Charles Babbage
+:doctype: book
+:lang: en
+:look: babbage
+:looksdir: {docdir}
+:description: Seven-place logarithms computed for the showcase and set as Babbage set his table of 1827: rows in fives, figures in columns, the heads on every page, the paper tinted.
+
+[preface]
+== Advertisement
+
+The logarithms that follow were computed for this book, to seven
+places, and are set after Charles Babbage's _Table of Logarithms of the
+Natural Numbers, from 1 to 108000_ (London, 1827), which was printed to
+be read with the least fatigue to the eye and the fewest errors in
+copying.
+
+Each row holds the logarithms of ten numbers: the first four figures of
+the numbers stand in the column marked N., the fifth heads the column
+in which the logarithm stands. The first column gives the whole
+logarithm, its first three figures apart; the other columns give its
+last four figures, the first three being taken from the first column of
+the row; where those three change within a row, the figures after the
+change are marked, and the first three are those of the row below. The
+column marked D. gives the difference between the logarithms of two
+consecutive numbers in the row, in units of the seventh place, for
+taking proportional parts.
+
+The rows are set in fives, with a space between each five, so that the
+eye does not wander from one row to the next; the figures are of one
+width, so that they stand in their columns; the heads of the columns are
+repeated at the top of every page, and the numbers a page holds are
+given in its head. The paper is tinted, after Babbage's trials of
+printing the table on paper of many colours.
+
+Only the characteristic, which is 4 for every number here, is left to
+the reader.
+
+[.logarithms-section]
+== Logarithms
+
+include::text/table.adoc[]

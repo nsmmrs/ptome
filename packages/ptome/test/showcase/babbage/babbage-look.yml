@@ -1,0 +1,91 @@
+# A table of logarithms after Babbage's of 1827: an octavo of about
+# 6¼ × 10 in on tinted paper (Babbage printed trial copies of his table
+# on paper of 151 colours, to find the one that tired the eye least), the
+# table in a face with figures of one width and height, 9 on 12, its
+# rows in fives with a space between them, its columns ruled apart, the
+# first figures of the logarithm apart from its last four; the heads of
+# the columns at the top of every page; the head of the page giving the
+# first and last numbers it holds, the folio outside.
+#
+# Old Standard TT, its figures lining (`ptome doctor --look babbage
+# --looksdir test/showcase/babbage`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
+    display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
+  size:
+    text: { print: 10.5pt, screen: 18px }
+    headings: { print: [20pt, 13pt, 11pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.35, screen: 1.6 }
+  measure: { screen: 40em }
+  align: { print: justify }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [6.25in, 10in], margin: [0.85in, 0.6in, 0.7in, 0.6in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  page:
+    # (Buff: a tinted paper.)
+    background_color: 'F2E8CF'
+  base:
+    font_variant_numeric: tabular-nums
+  heading:
+    chapter_break_before: always
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 2
+  # (Each page's first and last numbers, from the rows' anchors.)
+  running_content:
+    marks: n
+  table:
+    font_size: 9
+    background_color: transparent
+    body_background_color: transparent
+    body_stripe_background_color: transparent
+    head_font_style: italic
+    head_background_color: transparent
+    cell_padding: [1.2, 2, 1.2, 2]
+    grid_color: '5A5145'
+    grid_width: [0, 0.4]
+    border_color: '1A1A1A'
+    border_width: [1, 0, 1, 0]
+    head_border_bottom_width: 0.6
+    text_align: center
+    role:
+      logarithms:
+        row_group_size: 5
+        row_group_gap: 5
+  table_cell_role_turn_font_style: italic
+  header:
+    height: 0.65in
+    vertical_align: bottom
+    font_size: 9
+    recto:
+      left: { content: '{page-first-mark}–{page-last-mark}' }
+      center: { content: 'LOGARITHMS.' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: 'LOGARITHMS.' }
+      right: { content: '{page-first-mark}–{page-last-mark}' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Old Standard TT:400,400italic,700
+css: |
+  body{background:#f2e8cf}
+  table.logarithms{font-variant-numeric:tabular-nums lining-nums;font-size:85%}
+  table.logarithms td,table.logarithms th{text-align:center;padding:.1em .3em}
+  table.logarithms tbody tr:nth-child(5n) td{padding-bottom:.6em}
+  .turn{font-style:italic}
+epub-css: |
+  table.logarithms{font-variant-numeric:tabular-nums lining-nums}
+  table.logarithms tbody tr:nth-child(5n) td{padding-bottom:.6em}
+  .turn{font-style:italic}

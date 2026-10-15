@@ -508,6 +508,37 @@ extension _Tables on PdfConverter {
       tableRows[r].add(_tableCell(data, font, background, sides));
     }
 
+    // (`table_row_group_size`: the body's rows in groups of that many,
+    // `table_row_group_gap` apart, as a table of logarithms sets them, the
+    // eye kept on its row; modern engine.)
+    final groupSize = (_n('table_row_group_size') ?? 0).toInt();
+    if (groupSize > 1 && !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      final gap =
+          _length('table_row_group_gap', _font.size) ?? _font.size * 0.6;
+      for (var r = headerSize; r < tableRows.length - 1; r++) {
+        if ((r - headerSize + 1) % groupSize != 0) continue;
+        tableRows[r] = [
+          for (final cell in tableRows[r])
+            TableCell(
+              cell.content,
+              colSpan: cell.colSpan,
+              rowSpan: cell.rowSpan,
+              padding: EdgeInsets(
+                top: cell.padding.top,
+                right: cell.padding.right,
+                bottom: cell.padding.bottom + gap,
+                left: cell.padding.left,
+              ),
+              background: cell.background,
+              border: cell.border,
+              verticalAlign: cell.verticalAlign,
+              verticalOffset: cell.verticalOffset,
+              decoration: cell.decoration,
+            ),
+        ];
+      }
+    }
+
     // A column with no width can't hold its text: prawn-table gives up
     // on the table (the gem reports it and leaves the table out).
     if (!node.hasOption('autowidth')) {

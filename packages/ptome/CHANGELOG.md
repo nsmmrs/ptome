@@ -10,6 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `table_row_group_size` and `_gap` set a table's body rows in
+  groups with space between them (Babbage's logarithms in fives;
+  FEAT-kskwtx).
 - PDF: `footnotes_columns` sets the footnotes in balanced columns at the
   foot of the page (Gibbon's notes; FEAT-6nsldy), and a page of notes in
   columns is laid out many times faster.
