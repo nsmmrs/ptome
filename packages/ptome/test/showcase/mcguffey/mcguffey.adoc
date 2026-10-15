@@ -1,0 +1,16 @@
+= McGuffey’s Second Eclectic Reader
+William Holmes McGuffey
+:doctype: book
+:lang: en
+:look: mcguffey
+:looksdir: {docdir}
+:imagesdir: images
+:figure-caption!:
+:description: The first twenty lessons of McGuffey’s Second Eclectic Reader (revised edition, 1879): its words with their marks of pronunciation, its woodcuts, its numbered paragraphs and its lessons in script.
+
+[.frontispiece%notitle]
+== Frontispiece
+
+image::image0002.jpg["A girl reclining in the grass, reading",align=center]
+
+include::text/reader.adoc[]

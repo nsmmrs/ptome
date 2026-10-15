@@ -1,0 +1,88 @@
+// The key to the marks of pronunciation, as the reader prints it before
+// its lessons ("Articulation"), transcribed from the facsimile
+// (NOTICE.md).
+
+// tag::vocals[]
+[discrete.key-title]
+== Table of Vocals
+
+[.key-heading]
+Long Sounds.
+
+[.key,cols="2,3,2,3",frame=none,grid=cols]
+|===
+|ā, as in |āte. |ẽ, as in |ẽrr.
+|â, “ |ȼâre. |ī, “ |īçe.
+|ä, “ |ärm. |ō, “ |ōde.
+|ȧ, “ |lȧst. |ū, “ |ūse.
+|a̤, “ |a̤ll. |û, “ |bûrn.
+|ē, “ |ēve. |o͞o, “ |fo͞ol.
+|===
+
+[.key-heading]
+Short Sounds.
+
+[.key,cols="2,3,2,3",frame=none,grid=cols]
+|===
+|ă, as in |ăm. |ŏ, as in |ŏdd.
+|ĕ, “ |ĕlm. |ŭ, “ |ŭp.
+|ĭ, “ |ĭn. |o͝o, “ |lo͝ok.
+|===
+
+[.key-heading]
+Diphthongs.
+
+[.key,cols="2,3,2,3",frame=none,grid=cols]
+|===
+|oi, as in |oil. |ou, as in |out.
+|===
+
+// end::vocals[]
+
+[discrete.key-title]
+== Table of Subvocals
+
+[.key,cols="2,3,2,3",frame=none,grid=cols]
+|===
+|b, as in |bĭb. |v, as in |vălve.
+|d, “ |dĭd. |t͟h, “ |t͟hĭs.
+|g, “ |ḡĭḡ. |z, “ |zĭn̲ȼ.
+|j, “ |jŭḡ. |z, “ |ăzure.
+|n, “ |nīne. |r, “ |râre.
+|m, “ |māim. |w, “ |wē.
+|ng, “ |hăng. |y, “ |yĕt.
+2+|l, as in lŭll. 2+|
+|===
+
+[discrete.key-title]
+== Table of Aspirates
+
+[.key,cols="2,3,2,3",frame=none,grid=cols]
+|===
+|f, as in |fīfe. |t, as in |tärt.
+|h, “ |hĭm. |sh, “ |shē.
+|k, “ |ȼāke. |ch, “ |chăt.
+|p, “ |pīpe. |th, “ |thĭck.
+|s, “ |sāme. |wh, “ |whȳ.
+|===
+
+[discrete.key-title]
+== Table of Substitutes
+
+[.key,cols="1,1,2,1,1,2",frame=none,grid=cols]
+|===
+|ạ, for |ŏ, as in |whạt. |y̆, for |ĭ, as in |my̆th.
+|ê, “ |â, “ |thêre. |ȼ, “ |k, “ |ȼăn.
+|e̱, “ |ā, “ |fe̱int. |ç, “ |s, “ |çīte.
+|ï, “ |ē, “ |polïçe. |çh, “ |sh, “ |çhāis̱e.
+|ĩ, “ |ẽ, “ |sĩr. |ȼh, “ |k, “ |ȼhāos.
+|ȯ, “ |ŭ, “ |sȯn. |ġ, “ |j, “ |ġĕm.
+|o̤, “ |o͞o, “ |to̤. |n̲, “ |ng, “ |ĭn̲k.
+|ọ, “ |o͝o, “ |wọlf. |s̱, “ |z, “ |ăs̱.
+|ô, “ |a̤, “ |fôrk. |s, “ |sh, “ |sure.
+|õ, “ |û, “ |wõrk. |x̱, “ |ḡz, “ |ĕx̱ăȼt.
+|ụ, “ |o͝o, “ |fụll. |gh, “ |f, “ |läugh.
+|ṳ, “ |o͞o, “ |rṳde. |ph, “ |f, “ |phlŏx.
+|ȳ, “ |ī, “ |flȳ. |qu, “ |k, “ |pïque.
+6+|qu, for kw, as in quĭt.
+|===

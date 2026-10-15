@@ -1,0 +1,69 @@
+# The woodcuts the work uses, fetched by tool/showcase.dart into the work
+# cache and checked by their SHA-256: the scans in Project Gutenberg's
+# edition (eBook #14668). Where a scan holds a lesson's words printed
+# beside its woodcut (which the work sets from words.txt), they are
+# painted out (blank) and the woodcut cut from the rest (crop), as a PNG.
+- name: image0002.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0002.jpg
+  sha256: 378d2d744793a2594f53bb20b8758ad856a9796e0240e96358f74c34225e2dc9
+- name: image0011.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0011.jpg
+  sha256: 729da5c8c597c82344974692d4905380c6e7be701972e9104213c8067fd1dcd2
+- name: image0012.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0012.jpg
+  sha256: d7b2633cc6c4c6548a2bd16e76df1e601da38b0d5e233b58efed46cfdb9544fb
+- name: image0014.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0014.jpg
+  sha256: ddd2d3b84de86f68698e75a4c30f2edfbb44954e33b0399dc7977193717c784d
+  blank: [[0, 0, 318, 163], [0, 163, 163, 157]]
+  crop: [0, 0, 737, 632]
+- name: image0018.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0018.jpg
+  sha256: 29d0547db1bbc1af909faacddedd71bc00a49e2b2393007392e7ac8e0b1fcd62
+  crop: [0, 285, 735, 518]
+- name: image0020.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0020.jpg
+  sha256: 809529cf132819c17ff23eef44779baaa4b7f8b40f105a682f1506d730d74581
+- name: image0022.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0022.jpg
+  sha256: b528312c37f9ffb0c82948f6534950b2b875cbd6837f6c469148d093aa0b4d84
+  blank: [[0, 0, 130, 330], [0, 330, 100, 100], [590, 0, 150, 300], [615, 300, 125, 130]]
+  crop: [0, 0, 740, 430]
+- name: image0023.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0023.jpg
+  sha256: 1bb6143a4eef1c228b18043d412662e537e2e8886f6ed9fb9aedf57e4f232807
+  blank: [[0, 0, 360, 133], [0, 133, 277, 93], [503, 228, 228, 485], [372, 553, 133, 160]]
+  crop: [0, 0, 505, 713]
+- name: image0024.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0024.jpg
+  sha256: cafe30a2a4e156457f01721503335f237785f72056b6e7de9b54cf6940605d17
+  blank: [[390, 0, 155, 225]]
+  crop: [0, 0, 545, 575]
+- name: image0026.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0026.jpg
+  sha256: b35d728bb7017a5239b893ddf8c6f49fdf7bbed966b900626276cebb89d9c79e
+  blank: [[25, 362, 205, 133], [25, 495, 280, 210]]
+- name: image0028.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0028.jpg
+  sha256: fb7257cf03ce57b311c5582b6805e6600a55efcd43a16f59208fb2ae0af5b4a5
+- name: image0030.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0030.jpg
+  sha256: 28333fdae420eba02ab7eff559cc9b2c2ba73f5edbae7948ce449eb41179d330
+- name: image0031.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0031.jpg
+  sha256: 0d025f7242a4a7910a93cb6fadc76a2b00c92a362f40f52016f6d7daced429ff
+  blank: [[0, 0, 495, 105]]
+  crop: [195, 0, 550, 545]
+- name: image0035.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0035.jpg
+  sha256: 9760b5c8399d447c6c54e22b085125bd87faa48baa7251710ebc6a69ce2d2e06
+- name: image0037.png
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0037.jpg
+  sha256: 0b6c4ed90f9974fd5a0ae37559fddff3a6d5b5b3efc9b1deaaeb0d5dfa977d29
+  crop: [128, 25, 450, 447]
+- name: image0038.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0038.jpg
+  sha256: e3df558a9b8a5072df9495108cd396e7dce9d00447f90f5798af3d79b915aff4
+- name: image0040.jpg
+  url: https://www.gutenberg.org/cache/epub/14668/images/image0040.jpg
+  sha256: c5a2d89cc24258162753d5a66a793a729896d74d1e43a61a6ea87a4e07cec07e

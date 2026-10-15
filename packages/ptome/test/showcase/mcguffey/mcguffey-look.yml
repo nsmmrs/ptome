@@ -1,0 +1,115 @@
+# McGuffey's Second Eclectic Reader after its revised edition (Van
+# Antwerp, Bragg & Co., 1879), a small schoolbook of about 4¾ × 7 in in
+# large type: each lesson headed "LESSON I." in heavy gothic capitals,
+# its new words in columns under it, each with its marks of
+# pronunciation, then its woodcut, its title in capitals and its
+# paragraphs or stanzas numbered; the lessons in script set in a
+# copybook hand; the running heads "ECLECTIC SERIES." and "SECOND
+# READER." in italic capitals, the page number outside.
+#
+# Charis SIL for the text, for its marks above and below the letters;
+# Noto Sans for the lesson heads; Petit Formal Script for the script
+# (`ptome doctor --look mcguffey --looksdir test/showcase/mcguffey`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Charis SIL, screen: [Charis SIL, serif] } }
+    display: { family: { print: Noto Sans, screen: [Noto Sans, sans-serif] }, weight: bold }
+  size:
+    text: { print: 11.5pt, screen: 20px }
+    headings: { print: [20pt, 10pt, 10pt, 10pt, 10pt, 10pt] }
+  leading: { print: 1.3, screen: 1.6 }
+  measure: { screen: 30em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [4.8in, 7.2in], margin: [0.7in, 0.5in, 0.6in, 0.55in] }
+styles:
+  heading: { font: display, weight: bold, color: ink }
+  title: { font: text, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    fallbacks: [Noto Serif]
+  heading:
+    chapter_break_before: auto
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1.5
+      font_size: 9
+      margin_top: 16
+      margin_bottom: 8
+  prose:
+    margin_bottom: 0
+  role:
+    lesson-title:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1
+      font_size: 9.5
+      margin_top: 8
+      margin_bottom: 6
+    example: { font_size: 9, text_indent: 2em }
+    signature: { text_align: right }
+    author: { text_align: right, font_style: italic, font_size: 9 }
+    right: { text_align: right }
+    key-heading: { text_align: center, font_size: 8, text_transform: uppercase, character_spacing: 1 }
+    script:
+      font_family: Petit Formal Script
+      font_size: 12.5
+      line_height: 1.5
+  example:
+    border_width: 0
+    background_color: transparent
+    padding: [0, 0, 0, 0]
+  table:
+    font_size: 10.5
+    border_width: 0
+    grid_width: 0
+    cell_padding: [1, 4, 1, 4]
+    head_background_color: transparent
+  list:
+    indent: 1.4em
+    item_spacing: 2
+  image:
+    align: center
+  heading_discrete:
+    text_align: center
+  header:
+    height: 0.55in
+    vertical_align: bottom
+    font_size: 7.5
+    font_style: italic
+    text_transform: uppercase
+    character_spacing: 1
+    recto:
+      left: { content: '' }
+      center: { content: 'Second Reader.' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: 'Eclectic Series.' }
+      right: { content: '' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Charis SIL:400,400italic,700
+  - Petit Formal Script:400
+css: |
+  #content h2{text-align:center;text-transform:uppercase;letter-spacing:.1em;font-family:sans-serif}
+  .lesson-title p{text-align:center;text-transform:uppercase;letter-spacing:.06em}
+  .words td{border:0;padding:.1em .6em}
+  .script{font-family:"Petit Formal Script",cursive;font-size:120%}
+  .script .exampleblock>.content,.exampleblock.script>.content{border:0;background:none;padding:0}
+  .right p,.author p{text-align:right}
+  .author p{font-style:italic}
+epub-css: |
+  h2{text-align:center;text-transform:uppercase}
+  .lesson-title p{text-align:center;text-transform:uppercase}
+  .script{font-family:"Petit Formal Script",cursive}
+  .right p,.author p{text-align:right}

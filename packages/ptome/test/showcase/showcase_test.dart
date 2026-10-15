@@ -30,6 +30,8 @@ const String _corpus = 'test/showcase';
 
 const String _noto = 'vendor/asciidoctor-pdf/data/fonts';
 
+const String _multilingual = 'vendor/asciidoctor-epub3/fonts';
+
 final bool _update = Platform.environment['SHOWCASE_UPDATE'] == '1';
 
 /// The works with an excerpt, by folder name.
@@ -43,6 +45,7 @@ List<String> get _works => [
 /// vendored Noto Serif.
 String _theme(String dir, String look) {
   final families = lookFamilies(LookLoader(looksDir: dir).load(look));
+  final multilingual = Directory(_multilingual).absolute.path;
   return [
     'extends: look',
     'font:',
@@ -55,6 +58,14 @@ String _theme(String dir, String look) {
       '      italic: notoserif-italic-subset.ttf',
       '      bold_italic: notoserif-bold_italic-subset.ttf',
     ],
+    // (The letters the subset lacks, a schoolbook's marked vowels and
+    // consonants, from the vendored multilingual Noto Serif.)
+    '    Showcase Fallback:',
+    '      normal: $multilingual/notoserif-regular-multilingual.ttf',
+    '      bold: $multilingual/notoserif-bold-multilingual.ttf',
+    '      italic: $multilingual/notoserif-italic-multilingual.ttf',
+    '      bold_italic: $multilingual/notoserif-bolditalic-multilingual.ttf',
+    '  fallbacks: [Showcase Fallback]',
     '',
   ].join('\n');
 }

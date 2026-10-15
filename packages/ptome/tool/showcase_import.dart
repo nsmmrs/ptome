@@ -44,8 +44,17 @@ const Set<String> _productionPages = {
 };
 
 /// A file the work fetches: its name in `images/`, where from, and its
-/// SHA-256.
-typedef Fetched = ({String name, String url, String sha256});
+/// SHA-256; an image's regions to paint white (`blank`, each `[x, y,
+/// width, height]` in its pixels) and the region to keep (`crop`), when
+/// it is edited (written as a PNG), as the McGuffey's woodcuts are freed
+/// of the words printed beside them.
+typedef Fetched = ({
+  String name,
+  String url,
+  String sha256,
+  List<List<int>> blank,
+  List<int>? crop,
+});
 
 Future<void> main(List<String> arguments) async {
   String? repo;
@@ -179,6 +188,8 @@ Future<void> main(List<String> arguments) async {
           'src/epub/images/$original',
       sha256:
           '${sha256.convert(File('$epub/images/$original').readAsBytesSync())}',
+      blank: const [],
+      crop: null,
     );
   }
   fetchFile.writeAsStringSync(
@@ -223,17 +234,35 @@ Future<void> main(List<String> arguments) async {
 }
 
 /// The entries of a `fetch.yml`.
-List<Fetched> readFetched(String yaml) => [
-  for (final entry in (loadYaml(yaml) as YamlList?) ?? YamlList())
-    if (entry case {
-      'name': final String name,
-      'url': final String url,
-      'sha256': final String sha256,
-    })
-      (name: name, url: url, sha256: sha256)
-    else
-      throw FormatException('fetch.yml: not a name, url and sha256: $entry'),
-];
+List<Fetched> readFetched(String yaml) {
+  List<int> rectangle(Object? value) => switch (value) {
+    YamlList(length: 4) && final list when list.every((n) => n is int) => [
+      for (final n in list) n as int,
+    ],
+    _ => throw FormatException('fetch.yml: not [x, y, width, height]: $value'),
+  };
+  return [
+    for (final entry in (loadYaml(yaml) as YamlList?) ?? YamlList())
+      if (entry case {
+        'name': final String name,
+        'url': final String url,
+        'sha256': final String sha256,
+      })
+        (
+          name: name,
+          url: url,
+          sha256: sha256,
+          blank: [
+            for (final region
+                in (entry as YamlMap)['blank'] as YamlList? ?? YamlList())
+              rectangle(region),
+          ],
+          crop: entry['crop'] == null ? null : rectangle(entry['crop']),
+        )
+      else
+        throw FormatException('fetch.yml: not a name, url and sha256: $entry'),
+  ];
+}
 
 /// What an element's `epub:type` says it is.
 Set<String> _types(XmlElement element) =>

@@ -72,7 +72,7 @@ pdf:
     foreign: { font_style: italic }
     title: { font_style: italic }
     blackletter: { font_family: UnifrakturMaguntia }
-    partition_subject:
+    partition-subject:
       text_align: center
       text_transform: uppercase
       character_spacing: 2

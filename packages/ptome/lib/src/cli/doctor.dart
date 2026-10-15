@@ -320,7 +320,7 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'Charis SIL',
-    usedBy: 'the federal-register look (Melior)',
+    usedBy: "the federal-register look (Melior), the showcase's McGuffey look",
     families: ['Charis SIL'],
     styles: _all,
     fileNames: {},
@@ -377,6 +377,17 @@ final List<NeededFont> lookFonts = [
       FontStyle.normal: 'OldStandardTT-Regular.ttf',
       FontStyle.italic: 'OldStandardTT-Italic.ttf',
       FontStyle.bold: 'OldStandardTT-Bold.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'Petit Formal Script',
+    usedBy: "the showcase's McGuffey look (the lessons in script)",
+    families: ['Petit Formal Script'],
+    styles: [FontStyle.normal],
+    fileNames: {},
+    source: GoogleFonts('Petit Formal Script', {
+      FontStyle.normal: 'PetitFormalScript-Regular.ttf',
     }),
     license: 'SIL Open Font License 1.1',
   ),

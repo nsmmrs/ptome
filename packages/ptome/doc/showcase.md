@@ -14,6 +14,7 @@ EPIC-phf3n2 has the plan.
 | [Mrs Beeton](../test/showcase/beeton/NOTICE.md) | Recipes as structured blocks (ingredients, mode, time, cost, sufficient for, seasonable), 2,700 numbered paragraphs, and a 3,400-line analytical index made from index terms in the text: two columns in the PDF, links in HTML and EPUB |
 | [The Book of Common Prayer](../test/showcase/bcp/NOTICE.md) | Red and black: rubrics, red-letter days and verse numbers in red; versicles and responses run in, the Litany's responses from its units scheme, the Psalter quoted whole, the calendar's January ruled |
 | [Gibbon](../test/showcase/gibbon/NOTICE.md) | Heavy footnotes (1,931) in two balanced columns at the foot, kept by their references, split across pages; dates in the outer margin |
+| [McGuffey's Second Reader](../test/showcase/mcguffey/NOTICE.md) | A schoolbook: numbered lessons, each its new words in columns with their marks of pronunciation (macrons, breves, dots and bars above and below, combining marks among them), its woodcut and numbered paragraphs; the key to the marks; the script lessons in a copybook hand |
 | [Moby-Dick](../test/showcase/moby-dick/NOTICE.md) | Scale (the whole novel, 617 pages) and a novel's apparatus: a dedication page, the Extracts' sources, epigraphs, footnotes, the play-script chapters |
 | [Tristram Shandy](../test/showcase/tristram/NOTICE.md) | Typographic play: the black page and the marbled page, chapters that are only their heads, rows of asterisks, plot-line diagrams, dashes of many lengths |
 | [The Tempest](../test/showcase/tempest/NOTICE.md) | One source in two looks, a modern reading edition's and the First Folio's: speeches as description lists, shared verse lines stepped, each scene's lines numbered; two ruled columns in a frame |
@@ -26,7 +27,10 @@ EPIC-phf3n2 has the plan.
   (`doc/looks.md`), with the fonts it names.
 - `images/`: the images small enough to commit (diagrams redrawn as SVG);
   `fetch.yml` lists the rest (scans, Standard Ebooks' traced
-  illustrations) by URL and SHA-256, fetched when the work is built.
+  illustrations) by URL and SHA-256, fetched when the work is built; an
+  image's `blank` regions (`[x, y, width, height]`) are painted white and
+  its `crop` kept, written as a PNG (a woodcut freed of the words printed
+  beside it).
 - `NOTICE.md`: the work's sources (URLs and SHA-256), the edition, its
   licence and why it is in the public domain, its fonts and their
   licences, the printing its look follows, where it departs from it, and

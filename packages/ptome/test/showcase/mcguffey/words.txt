@@ -1,0 +1,124 @@
+# The word lists at the head of each lesson of McGuffey's Second Eclectic
+# Reader (1879), transcribed from the facsimile with their marks (NOTICE.md):
+# a lesson's number on a line of its own, then its words, a row of the
+# printed table to a line, separated by tabs.
+I
+news̱′pā per	ȼōld	ôr′der	sēem	thro̤ugh
+stŏck′ings̱	chăt	stō′ry	līght	Hăr′ry
+brȧnch′es̱	kĭss	bûrns̱	Mrs.	e vĕnts′
+an ȯth′er	Mr.	sto͞ol	lămp	mĕnds̱
+II
+beaū′ti fụl	pōrch
+rāin′bōw	bûrst
+bŭb′bles̱	sāme
+bĭḡ′ḡest	snēeze
+ȼȯl′ors̱
+mīne	sōap	wạsh	rĕd	ma′ny (mĕn′y̆)
+III
+rŭb′ber	ḡŭn	pär′lor	strēet
+nŭm′ber	tĕn	o′ȼlŏck′	sho͞ot
+IV
+a bȯve′	wõrld	därk	ŏft
+nĕv′er	spärk	dew	tĭll
+dī′a mond	twĭn̲′kle	blāz′ing
+V
+be hīnd′	to ḡĕth′ er	nō′ble	Sȼŏtch
+Dŏdġ′ er	mĭn′utes	ȼrĭb	wăḡ′on
+tĕr′ri er	ȼoŭn′try	sȼōld	fĕl′low
+shăḡ′ḡy	frĭsk′i ly	fĭts	çĕl′lar
+ḡuärds̱	New′foŭnd land	yärd	här′ness
+VI
+be twēen′	bū′reau (-ro)	stâirs̱	nēe′dle
+a frāid′	shăd′ow	hĕld	stĩr
+VII
+spī′ders̱	tĭck′ling
+stāy	nĕck
+nōs̱e	sē′ȼret
+ȼra̤wls̱	lĕḡs̱
+bĕck	ōpe
+ḡōes̱	tōes̱
+spĕck	cho͞os̱e
+dŏt	nŏd
+sho̤es̱	sprĕad	be līeve′	sĭx
+VIII
+sẽrv′ant	sŭd′den ly
+lŏn̲′ḡer	re tûrned′
+lĭved	tīred
+sĭnçe	fīve
+ăn̲x′ioŭs
+troŭ′ble
+çẽr′tain
+nēar′ly
+dȯz′en
+sĕv′en
+ăt′tiȼ	strānġe
+ḡreāt	prŏp′er
+ȼōal	sēemed
+IX
+nīne	mous′ie
+frō	frŏl′iȼ
+bĭt	slĭpped
+spīed
+ȼrōw
+tēeth
+pẽarl
+ūs̱ed
+X
+wạshed	hours̱ (ours̱)	prĕ′cioŭs	ḡāme
+härm	a′ny (ĕn′y̆)	brŭshed	ĕnd
+XI
+twĭt-twēe
+bougḥ (bow)
+twĭt-twĭt
+tŏp′mōst	lŏck
+sprāy	māte
+ȼlōse′ly	rōs̱′y
+ăn′swer (ăn′ser)
+XII
+brīght′ness	plĕas̱′ant	lẽarned	drĕss
+plāy′mātes	ŭn kīnd′	răḡ′ḡed	wõrd
+quĕs′tions̱	smīl′ing	ȼrōwed	chīld
+Sŭn′bēam	chēered	Sū′s̱ie	ḡāve
+ḡlăd′ness	un lĕss′	nāme	ḡāte
+XIII
+wo͝od′lănds̱	dĭ vīne′	rāis̱ed	un tĭl′
+dro͞op′ing	blĕssed	who̤s̱e	sēek
+ŭp′ward	hŏv′els̱	ĭn′ner	stēal
+hĕav′en	heärts	lĭl′ies̱	dīe
+rōam′ing
+XIV
+sup pōrt′	a lŏng′	bo͞ots
+be lŏng′	dŏl′lar	yēars̱
+măn′aġe
+ta̤ught
+ȼôr′ner
+nō′tĭçe
+mȯn′ey
+blăck′ing
+ġĕn′tle men
+hŏn′est (ŏn′est)	quīte	buȳ	ẽarned
+XV
+trĕad	whĭs′per	sŏft′ly
+ta̤lk	chēer fụl	ȼâre′fụl
+XVI
+fụll	lōad	hĕav′y	mĭd′dle	hĕav′i er
+slĭp	wrŏng	hăn′dle	brȯth′er	de çēived′
+XVII
+bus̱′y (bĭz′zy)	mĭs′chĭef	lo͝oked	ŭn′to̤	ḡlēe
+ȼon trīv′ing	rĭng′lets	nŏd′dle	drew	nŭn
+prĕss′ing	fĭn̲′ḡers̱	ȼär′pet	wīs̱e	lĭps
+em brāçe′	pŏn′der	lăsh′es̱	ȼlīmb	trṳe
+XVIII
+bĕr′ries̱	strīkes
+rŏb′in	ēa′ḡle
+shôrt	kĭng
+rĭd	fōe
+därt	fāils̱
+shärp	ha̤wk
+wõrms̱	ăc′tĭve
+XIX
+wạtch′ing	ḡăth′ers̱	ān′ġels̱	be ḡĭn′
+därk′ness	a ȼrŏss′	lōne′ly	bēasts
+XX
+dĭ vīd′ed	quạr′rel	a ḡrēe′	thŭs	sĕt′tle
+sĕt′tling	kẽr′nel	ē′qual	ăpt	pärts

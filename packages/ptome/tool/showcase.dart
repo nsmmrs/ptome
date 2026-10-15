@@ -32,8 +32,10 @@ library;
 import 'dart:convert';
 import 'dart:io';
 import 'dart:isolate';
+import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
+import 'package:plain_images/plain_images.dart';
 import 'package:ptome/src/api/file_backends.dart';
 import 'package:ptome/src/cli/doctor.dart';
 import 'package:ptome/src/internal.dart';
@@ -250,7 +252,11 @@ Future<Built> _build(
         failures.add('${image.name}: SHA-256 $digest, not ${image.sha256}');
         continue;
       }
-      File('${stage.path}/images/${image.name}').writeAsBytesSync(bytes);
+      File('${stage.path}/images/${image.name}').writeAsBytesSync(
+        image.blank.isEmpty && image.crop == null
+            ? bytes
+            : _edited(bytes, image),
+      );
     }
 
     // (The fonts each look names.)
@@ -528,4 +534,73 @@ String _index(List<Work> works, List<Built> results) {
   }
   out.writeln('</body></html>');
   return '$out';
+}
+
+/// [bytes], the image [image] names, with its `blank` regions painted
+/// white and cut to its `crop`, as a PNG: an 8-bit grey or RGB image.
+List<int> _edited(List<int> bytes, Fetched image) {
+  final raster = ImageFile.read(Uint8List.fromList(bytes)).decode();
+  final channels = raster.colorModel.channels;
+  if (raster.bitDepth != 8 ||
+      (raster.colorModel != ColorModel.gray &&
+          raster.colorModel != ColorModel.rgb)) {
+    throw FormatException('${image.name}: not an 8-bit grey or RGB image');
+  }
+  final width = raster.width;
+  final height = raster.height;
+  final samples = Uint8List.fromList(raster.samples);
+  for (final [x, y, w, h] in image.blank) {
+    for (var row = y.clamp(0, height); row < (y + h).clamp(0, height); row++) {
+      final from = (row * width + x.clamp(0, width)) * channels;
+      final to = (row * width + (x + w).clamp(0, width)) * channels;
+      samples.fillRange(from, to, 255);
+    }
+  }
+  final [cx, cy, cw, ch] = image.crop ?? [0, 0, width, height];
+  final left = cx.clamp(0, width);
+  final top = cy.clamp(0, height);
+  final right = (cx + cw).clamp(left, width);
+  final bottom = (cy + ch).clamp(top, height);
+  final raw = BytesBuilder(copy: false);
+  for (var row = top; row < bottom; row++) {
+    raw
+      ..addByte(0)
+      ..add(
+        samples.sublist(
+          (row * width + left) * channels,
+          (row * width + right) * channels,
+        ),
+      );
+  }
+  final header = ByteData(13)
+    ..setUint32(0, right - left)
+    ..setUint32(4, bottom - top)
+    ..setUint8(8, 8)
+    ..setUint8(9, channels == 1 ? 0 : 2);
+  return [
+    0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, //
+    ..._chunk('IHDR', header.buffer.asUint8List()),
+    ..._chunk('IDAT', zlib.encode(raw.takeBytes())),
+    ..._chunk('IEND', const []),
+  ];
+}
+
+/// A PNG chunk of [type] holding [data], with its length and CRC-32.
+List<int> _chunk(String type, List<int> data) {
+  final body = [...ascii.encode(type), ...data];
+  var crc = 0xffffffff;
+  for (final byte in body) {
+    crc ^= byte;
+    for (var bit = 0; bit < 8; bit++) {
+      crc = crc & 1 == 1 ? (crc >> 1) ^ 0xedb88320 : crc >> 1;
+    }
+  }
+  crc ^= 0xffffffff;
+  final length = ByteData(4)..setUint32(0, data.length);
+  final check = ByteData(4)..setUint32(0, crc);
+  return [
+    ...length.buffer.asUint8List(),
+    ...body,
+    ...check.buffer.asUint8List(),
+  ];
 }
