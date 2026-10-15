@@ -51,12 +51,15 @@ jobs:
           git diff --exit-code &&
           tool/vendor.sh --check) > "$RUNNER_TEMP/generated.log" 2>&1 &
         generated=$!
+        dart run tool/api_check.dart > "$RUNNER_TEMP/api.log" 2>&1 &
+        api=$!
         status=0
         dart analyze --fatal-infos . || status=1
         dart format --output=none --set-exit-if-changed packages || status=1
         tool/oracles_check.sh || status=1
         tool/hermetic_check.sh || status=1
-        dart run tool/api_check.dart || status=1
+        wait "$api" || status=1
+        cat "$RUNNER_TEMP/api.log"
         wait "$js" || { cat "$RUNNER_TEMP/js.log"; status=1; }
         wait "$generated" || { cat "$RUNNER_TEMP/generated.log"; status=1; }
         exit $status
