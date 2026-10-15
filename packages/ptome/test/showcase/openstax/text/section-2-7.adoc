@@ -1,0 +1,299 @@
+[#m42102]
+=== 2.7 Falling Objects
+
+[.learning-objectives]
+.Learning Objectives
+****
+
+By the end of this section, you will be able to:
+
+* Describe the effects of gravity on objects in motion.
+* Describe the motion of objects that are in free fall.
+* Calculate the position and velocity of objects in free fall.
+
+****
+
+Falling objects form an interesting class of motion problems. For example, we can estimate the depth of a vertical mine shaft by dropping a rock into it and listening for the rock to hit the bottom. By applying the kinematics developed so far to falling objects, we can examine some interesting situations and learn much about gravity in the process.
+
+[#fs-id4178141]
+==== Gravity
+
+The most remarkable and unexpected fact about falling objects is that, if air resistance and friction are negligible, then in a given location all objects fall toward the center of Earth with the __same constant acceleration__, __independent of their mass__. This experimentally determined fact is unexpected, because we are so accustomed to the effects of air resistance and friction that we expect light objects to fall slower than heavy ones.
+
+[#import-auto-id4126662]
+.A hammer and a feather will fall with the same constant acceleration if air resistance is considered negligible. This is a general characteristic of gravity not unique to Earth, as astronaut David R. Scott demonstrated on the Moon in 1971, where the acceleration due to gravity is only stem:[1 "." {:"67 m/s":}^(2)].
+image::Figure_02_07_00a.jpg["Positions of a feather and hammer over time as they fall on the Moon. The feather and hammer are at the exact same position at each moment in time.",align=center]
+
+In the real world, air resistance can cause a lighter object to fall slower than a heavier object of the same size. A tennis ball will reach the ground after a hard baseball dropped at the same time. (It might be difficult to observe the difference if the height is not large.) Air resistance opposes the motion of an object through the air, while friction between objects—such as between clothes and a laundry chute or between a stone and a pool into which it is dropped—also opposes motion between them. For the ideal situations of these first few chapters, an object __falling without air resistance or friction__ is defined to be in **free-fall**.
+
+The force of gravity causes objects to fall toward the center of Earth. The acceleration of free-falling objects is therefore called the **acceleration due to gravity**. The acceleration due to gravity is __constant__, which means we can apply the kinematics equations to any falling object where air resistance and friction are negligible. This opens a broad class of interesting situations to us. The acceleration due to gravity is so important that its magnitude is given its own symbol, stem:[g]. It is constant at any given location on Earth and has the average value
+
+[stem#eip-636]
+++++
+g = 9 "." {:"80 m/s":}^(2) "."
+++++
+
+Although stem:[g] varies from stem:[9 "." {:"78 m/s":}^(2)] to stem:[9 "." {:"83 m/s":}^(2)], depending on latitude, altitude, underlying geological formations, and local topography, the average value of stem:[9 "." {:"80 m/s":}^(2)] will be used in this text unless otherwise specified. The direction of the acceleration due to gravity is __downward (towards the center of Earth)__. In fact, its direction __defines__ what we call vertical. Note that whether the acceleration stem:[a] in the kinematic equations has the value stem:[+ g] or stem:[- g] depends on how we define our coordinate system. If we define the upward direction as positive, then stem:[a = - g = - 9 "." {:"80 m/s":}^(2)], and if we define the downward direction as positive, then stem:[a = g = 9 "." {:"80 m/s":}^(2)].
+
+[#fs-id2854808]
+==== One-Dimensional Motion Involving Gravity
+
+The best way to see the basic features of motion involving gravity is to start with the simplest situations and then progress toward more complex ones. So we start by considering straight up and down motion with no air resistance or friction. These assumptions mean that the velocity (if there is any) is vertical. If the object is dropped, we know the initial velocity is zero. Once the object has left contact with whatever held or threw it, the object is in free-fall. Under these circumstances, the motion is one-dimensional and has constant acceleration of magnitude stem:[g]. We will also represent vertical displacement with the symbol stem:[y] and use stem:[x] for horizontal displacement.
+
+[#fs-id1931991.note]
+.Kinematic Equations for Objects in Free-Fall where Acceleration = -stem:["g"]
+****
+
+[stem#import-auto-id2222965]
+++++
+v = v_(0) - "gt"
+++++
+
+[stem#import-auto-id4048491]
+++++
+y = y_(0) + v_(0) t - (1)/(2) "gt"^(2)
+++++
+
+[stem#import-auto-id4019890]
+++++
+v^(2) = v_(0)^(2) - 2 g (y - y_(0))
+++++
+
+****
+
+[#fs-id4067058]
+.Calculating Position and Velocity of a Falling Object: A Rock Thrown Upward
+====
+
+A person standing on the edge of a high cliff throws a rock straight up with an initial velocity of 13.0 m/s__.__ The rock misses the edge of the cliff as it falls back to earth. Calculate the position and velocity of the rock 1.00 s, 2.00 s, and 3.00 s after it is thrown, neglecting the effects of air resistance.
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2188586]
+image::Figure_02_07_00b.jpg["Velocity vector arrow pointing up in the positive y direction, labeled v sub 0 equals thirteen point 0 meters per second. Acceleration vector arrow pointing down in the negative y direction, labeled a equals negative 9 point 8 meters per second squared.",align=center]
+
+We are asked to determine the position stem:[y] at various times. It is reasonable to take the initial position stem:[y_(0)] to be zero. This problem involves one-dimensional motion in the vertical direction. We use plus and minus signs to indicate direction, with up being positive and down negative. Since up is positive, and the rock is thrown upward, the initial velocity must be positive too. The acceleration due to gravity is downward, so stem:[a] is negative. It is crucial that the initial velocity and the acceleration due to gravity have opposite signs. Opposite signs indicate that the acceleration due to gravity opposes the initial motion and will slow and eventually reverse it.
+
+Since we are asked for values of position and velocity at three times, we will refer to these as stem:[y_(1)] and stem:[v_(1)]; __stem:[y_(2)]__ and stem:[v_(2)]; and stem:[y_(3)] and stem:[v_(3)].
+
+stem:[y_(1)]
+
+{empty}1. Identify the knowns. We know that stem:[y_(0) = 0]; stem:[v_(0) = "13" "." "0 m/s"]; stem:[a = - g = - 9 "." {:"80 m/s":}^(2)]; and stem:[t = 1 "." "00 s"].
+
+{empty}2. Identify the best equation to use. We will use stem:[y = y_(0) + v_(0) t + (1)/(2) "at"^(2)] because it includes only one unknown, stem:[y] (or stem:[y_(1)], here), which is the value we want to find.
+
+{empty}3. Plug in the known values and solve for stem:[y_(1)].
+
+[stem#import-auto-id2302522]
+++++
+y ""_(1){:" ":} = 0 + ("13" "." "0 m/s") (1 "." "00 s") + (1)/(2) (- 9 "." "80" " " "m/s"^(2)) {:(1 "." "00 s"):}^(2) = 8 "." "10" " " "m"
+++++
+
+[.step]
+Discussion
+
+The rock is 8.10 m above its starting point at stem:[t = 1 "." "00"] s, since stem:[y_(1) > y_(0)]. It could be __moving__ up or down; the only way to tell is to calculate stem:[v_(1)] and find out if it is positive or negative.
+
+stem:[v_(1)]
+
+{empty}1. Identify the knowns. We know that stem:[y_(0) = 0]; stem:[v_(0) = "13" "." "0 m/s"]; stem:[a = - g = - 9 "." {:"80 m/s":}^(2)]; and stem:[t = 1 "." "00 s"]. We also know from the solution above that stem:[y_(1) = 8 "." "10 m"].
+
+{empty}2. Identify the best equation to use. The most straightforward is stem:[v = v_(0) - "gt"] (from stem:[v = v_(0) + "at"], where stem:[a = "gravitational acceleration" = - g]).
+
+{empty}3. Plug in the knowns and solve.
+
+[stem#import-auto-id1688803]
+++++
+v_(1) = v_(0) - "gt" = "13" "." "0 m/s" - (9 "." {:"80 m/s":}^(2)) (1 "." "00 s") = 3 "." "20 m/s"
+++++
+
+[.step]
+Discussion
+
+The positive value for stem:[v_(1)] means that the rock is still heading upward at stem:[t = 1 "." "00" " " "s"]. However, it has slowed from its original 13.0 m/s, as expected.
+
+[.step]
+Solution for Remaining Times
+
+The procedures for calculating the position and velocity at stem:[t = 2 "." "00" " " "s"] and stem:[3 "." "00 s"] are the same as those above. The results are summarized in <<eip-304>> and illustrated in <<import-auto-id4064055>>.
+
+.Results
+[#eip-304%header,cols="4*"]
+|===
+|Time, __t__ |Position, __y__ |Velocity, __v__ |Acceleration, __a__
+|stem:[1 "." "00 s"] |stem:[8 "." "10 m"] |stem:[3 "." "20 m/s"] |stem:[- 9 "." {:"80 m/s":}^(2)]
+|stem:[2 "." "00 s"] |stem:[6 "." "40 m"] |stem:[- 6 "." "60 m/s"] |stem:[- 9 "." {:"80 m/s":}^(2)]
+|stem:[3 "." "00 s"] |stem:[- 5 "." "10 m"] |stem:[- "16" "." "4 m/s"] |stem:[- 9 "." {:"80 m/s":}^(2)]
+|===
+
+Graphing the data helps us understand it more clearly.
+
+[#import-auto-id4064055]
+.Vertical position, vertical velocity, and vertical acceleration vs. time for a rock thrown vertically up at the edge of a cliff. Notice that velocity changes linearly with time and that acceleration is constant. __Misconception Alert!__ Notice that the position vs. time graph shows vertical position only. It is easy to get the impression that the graph shows some horizontal motion—the shape of the graph looks like the path of a projectile. But this is not the case; the horizontal axis is __time__, not space. The actual path of the rock in space is straight up, and straight down.
+image::Figure_02_06_01.jpg["Three panels showing three graphs. The top panel shows a graph of vertical position in meters versus time in seconds. The line begins at the origin and has a positive slope that decreases over time until it hits a turning point between seconds 1 and 2. After that it has a negative slope that increases over time. The middle panel shows a graph of velocity in meters per second versus time in seconds. The line is straight, with a negative slope, beginning at time zero velocity of thirteen meters per second and ending at time 3 seconds with a velocity just over negative sixteen meters per second. The bottom panel shows a graph of acceleration in meters per second squared versus time in seconds. The line is straight and flat at a y value of negative 9 point 80 meters per second squared from time 0 to time 3 seconds.",align=center]
+
+[.step]
+Discussion
+
+The interpretation of these results is important. At 1.00 s the rock is above its starting point and heading upward, since stem:[y_(1)] and stem:[v_(1)] are both positive. At 2.00 s, the rock is still above its starting point, but the negative velocity means it is moving downward. At 3.00 s, both stem:[y_(3)] and stem:[v_(3)] are negative, meaning the rock is below its starting point and continuing to move downward. Notice that when the rock is at its highest point (at 1.33 s), its velocity is zero, but its acceleration is still stem:[- 9 "." {:"80 m/s":}^(2)]. Its acceleration is stem:[- 9 "." {:"80 m/s":}^(2)]^^ for the whole trip—while it is moving up and while it is moving down. Note that the values for stem:[y] are the positions (or displacements) of the rock, not the total distances traveled. Finally, note that free-fall applies to upward motion as well as downward. Both have the same acceleration—the acceleration due to gravity, which remains constant the entire time. Astronauts training in the famous Vomit Comet, for example, experience free-fall while arcing up as well as down, as we will discuss in more detail later.
+
+====
+
+[#fs-id1773192.note]
+.Making Connections: Take-Home Experiment—Reaction Time
+****
+
+A simple experiment can be done to determine your reaction time. Have a friend hold a ruler between your thumb and index finger, separated by about 1 cm. Note the mark on the ruler that is right between your fingers. Have your friend drop the ruler unexpectedly, and try to catch it between your two fingers. Note the new reading on the ruler. Assuming acceleration is that due to gravity, calculate your reaction time. How far would you travel in a car (moving at 30 m/s) if the time it took your foot to go from the gas pedal to the brake was twice this reaction time?
+
+****
+
+[#fs-id2186600]
+.Calculating Velocity of a Falling Object: A Rock Thrown Down
+====
+
+What happens if the person on the cliff throws the rock straight down, instead of straight up? To explore this question, calculate the velocity of the rock when it is 5.10 m below the starting point, and has been thrown downward with an initial speed of 13.0 m/s.
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2150750]
+image::Figure_02_06_01a.jpg["Velocity vector arrow pointing down in the negative y direction and labeled v sub zero equals negative thirteen point 0 meters per second. Acceleration vector arrow also pointing down in the negative y direction, labeled a equals negative 9 point 80 meters per second squared.",align=center]
+
+Since up is positive, the final position of the rock will be negative because it finishes below the starting point at stem:[y_(0) = 0]. Similarly, the initial velocity is downward and therefore negative, as is the acceleration due to gravity. We expect the final velocity to be negative since the rock will continue to move downward.
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. stem:[y_(0) = 0]; stem:[y_(1) = - 5 "." "10 m"]; stem:[v_(0) = - "13" ".0 m/s"]; stem:[a = - g = - 9 "." "80 m" "/s"^(2)].
+
+{empty}2. Choose the kinematic equation that makes it easiest to solve the problem. The equation stem:[v^(2) = v_(0)^(2) + 2 a ( y - y_(0) )] works well because the only unknown in it is stem:[v]. (We will plug stem:[y_(1)] in for stem:[y].)
+
+{empty}3. Enter the known values
+
+[stem#import-auto-id2025017]
+++++
+v^(2) = {:(- "13" "." "0 m/s"):}^(2) + 2 (- 9 "." {:"80 m/s":}^(2)) (- 5 "." "10 m" - "0 m") = "268" "." {:"96 m":}^(2) "/s"^(2) ,
+++++
+
+where we have retained extra significant figures because this is an intermediate result.
+
+Taking the square root, and noting that a square root can be positive or negative, gives
+
+[stem#import-auto-id1763704]
+++++
+v = +- "16" ".4 m/s" .
+++++
+
+The negative root is chosen to indicate that the rock is still heading down. Thus,
+
+[stem#import-auto-id2563747]
+++++
+v = - "16" ".4 m/s" .
+++++
+
+[.step]
+Discussion
+
+Note that __this is exactly the same velocity the rock had at this position when it was thrown straight upward with the same initial speed__. (See <<fs-id4067058>> and <<import-auto-id4173440>>(a).) This is not a coincidental result. Because we only consider the acceleration due to gravity in this problem, the __speed__ of a falling object depends only on its initial speed and its vertical position relative to the starting point. For example, if the velocity of the rock is calculated at a height of 8.10 m above the starting point (using the method from <<fs-id4067058>>) when the initial velocity is 13.0 m/s straight up, a result of stem:[+ - 3 "." "20 m/s"] is obtained. Here both signs are meaningful; the positive value occurs when the rock is at 8.10 m and heading up, and the negative value occurs when the rock is at 8.10 m and heading back down. It has the same __speed__ but the opposite direction.
+
+[#import-auto-id4173440]
+.(a) A person throws a rock straight up, as explored in Example 2.14. The arrows are velocity vectors at 0, 1.00, 2.00, and 3.00 s. (b) A person throws a rock straight down from a cliff with the same initial speed as before, as in Example 2.15. Note that at the same distance below the point of release, the rock has the same velocity in both cases.
+image::Figure_02_06_00b.jpg["Two figures are shown. At left, a man standing on the edge of a cliff throws a rock straight up with an initial speed of thirteen meters per second. At right, the man throws the rock straight down with a speed of thirteen meters per second. In both figures, a line indicates the rock’s trajectory. When the rock is thrown straight up, it has a speed of minus sixteen point four meters per second at minus five point one zero meters below the point where the man released the rock. When the rock is thrown straight down, the velocity is the same at this position.",align=center]
+
+Another way to look at it is this: In <<fs-id4067058>>, the rock is thrown up with an initial velocity of stem:["13" ".0 m/s"]. It rises and then falls back down. When its position is stem:[y = 0] on its way back down, its velocity is stem:[- "13" ".0 m/s"]. That is, it has the same speed on its way down as on its way up. We would then expect its velocity at a position of stem:[y = - 5 "." "10 m"] to be the same whether we have thrown it upwards at stem:[+ "13" ".0 m/s"] or thrown it downwards at stem:[- "13" ".0 m/s"]. The velocity of the rock on its way down from stem:[y = 0] is the same whether we have thrown it up or down to start with, as long as the speed with which it was initially thrown is the same.
+
+====
+
+[#fs-id3526422]
+.Find __g__ from Data on a Falling Object
+====
+
+The acceleration due to gravity on Earth differs slightly from place to place, depending on topography (e.g., whether you are on a hill or in a valley) and subsurface geology (whether there is dense rock like iron ore as opposed to light rock like salt beneath you.) The precise acceleration due to gravity can be calculated from data taken in an introductory physics laboratory course. An object, usually a metal ball for which air resistance is negligible, is dropped and the time it takes to fall a known distance is measured. See, for example, <<import-auto-id4097254>>. Very precise results can be produced with this method if sufficient care is taken in measuring the distance fallen and the elapsed time.
+
+[#import-auto-id4097254]
+.Positions and velocities of a metal ball released from rest when air resistance is negligible. Velocity is seen to increase linearly with time while displacement increases with time squared. Acceleration is a constant and is equal to gravitational acceleration.
+image::Figure_02_06_02.jpg["Figure has four panels. The first panel (on the top) is an illustration of a ball falling toward the ground at intervals of one tenth of a second. The space between the vertical position of the ball at one time step and the next increases with each time step. At time equals 0, position and velocity are also 0. At time equals 0 point 1 seconds, y position equals negative 0 point 049 meters and velocity is negative 0 point 98 meters per second. At 0 point 5 seconds, y position is negative 1 point 225 meters and velocity is negative 4 point 90 meters per second. The second panel (in the middle) is a line graph of position in meters versus time in seconds. Line begins at the origin and slopes down with increasingly negative slope. The third panel (bottom left) is a line graph of velocity in meters per second versus time in seconds. Line is straight, beginning at the origin and with a constant negative slope. The fourth panel (bottom right) is a line graph of acceleration in meters per second squared versus time in seconds. Line is flat, at a constant y value of negative 9 point 80 meters per second squared.",align=center]
+
+Suppose the ball falls 1.0000 m in 0.45173 s. Assuming the ball is not affected by air resistance, what is the precise acceleration due to gravity at this location?
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id4051158]
+image::Figure_02_06_02b.jpg["The figure shows a green dot labeled v sub zero equals zero meters per second, a purple downward pointing arrow labeled a equals question mark, and an x y coordinate system with the y axis pointing vertically up and the x axis pointing horizontally to the right.",align=center]
+
+We need to solve for acceleration stem:[a]. Note that in this case, displacement is downward and therefore negative, as is acceleration.
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. stem:[y_(0) = 0]; stem:[y = - 1 ".0000 m"]; stem:[t = 0 ".45173"]; stem:[v_(0) = 0].
+
+{empty}2. Choose the equation that allows you to solve for stem:[a] using the known values.
+
+[stem#import-auto-id3578358]
+++++
+y = y_(0) + v_(0) t + (1)/(2) "at"^(2)
+++++
+
+{empty}3. Substitute 0 for stem:[v_(0)] and rearrange the equation to solve for stem:[a]. Substituting 0 for stem:[v_(0)] yields
+
+[stem#import-auto-id3538274]
+++++
+y = y_(0) + (1)/(2) "at"^(2) "."
+++++
+
+Solving for stem:[a] gives
+
+[stem#import-auto-id3504484]
+++++
+a = (2 (y - y_(0)))/(t^(2)) "."
+++++
+
+{empty}4. Substitute known values yields
+
+[stem#import-auto-id2571438]
+++++
+a = (2 ( - 1 "." "0000 m − 0" ))/(( 0 "." "45173 s" )^(2)) = - 9 "." {:"8010 m/s":}^(2) ,
+++++
+
+so, because stem:[a = - g] with the directions we have chosen,
+
+[stem#import-auto-id1706716]
+++++
+g = 9 "." {:"8010 m/s":}^(2) .
+++++
+
+[.step]
+Discussion
+
+The negative value for stem:[a] indicates that the gravitational acceleration is downward, as expected. We expect the value to be somewhere around the average value of stem:[9 "." {:"80 m/s":}^(2)], so stem:[9 "." {:"8010 m/s":}^(2)] makes sense. Since the data going into the calculation are relatively precise, this value for stem:[g] is more precise than the average value of stem:[9 "." {:"80 m/s":}^(2)]; it represents the local value for the acceleration due to gravity.
+
+====
+
+[#fs-id4172780.check]
+.Check Your Understanding
+****
+
+A chunk of ice breaks off a glacier and falls 30.0 meters before it hits the water. Assuming it falls freely (there is no air resistance), how long does it take to hit the water?
+
+[.step]
+Solution
+
+We know that initial position stem:[y_(0) = 0], final position stem:[y = "−30" "." "0 m"], and stem:[a = - g = - 9 "." {:"80 m/s":}^(2)]. We can then use the equation stem:[y = y_(0) + v_(0) t + (1)/(2) "at"^(2)] to solve for stem:[t]. Inserting stem:[a = - g], we obtain
+
+[stem#import-auto-id2358783]
+++++
+{:(y,=,0 + 0 - (1)/(2) "gt"^(2)),(t^(2),=,(2 y)/(- g)),(t,=,+- sqrt((2 y)/(- g)) = +- sqrt((2 ( - "30.0 m" ))/(- 9.80 " m" "/s"^(2))) = +- sqrt("6.12" " " s^(2)) = "2.47 s" ~~ "2.5 s"):}
+++++
+
+where we take the positive value as the physically relevant answer. Thus, it takes about 2.5 seconds for the piece of ice to hit the water.
+
+****

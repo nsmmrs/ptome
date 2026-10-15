@@ -215,6 +215,42 @@ void main() {
     expect(report.trim(), startsWith('PASS'));
   });
 
+  test("a character the math font lacks set from the theme's base font "
+      '(BUG-rvh0f1)', () {
+    // (The first formula in a chapter's title, laid out before the body's
+    // font is set; the degree sign the math font lacks in the text's.)
+    final input = File('${_dir.path}/math-fallback.adoc')
+      ..writeAsStringSync(
+        '= Math\n:pdf-ua:\n:doctype: book\n:stem: asciimath\n\n'
+        '== One stem:[x]\n\nA temperature stem:["20°C"].\n',
+      );
+    final out = '${input.path}.pdf';
+    convertFile(
+      input.path,
+      AsciidoctorOptions(
+        safe: SafeMode.unsafe,
+        backend: 'pdf',
+        toFile: out,
+        attributes: const {'reproducible': '', 'pdf-theme': 'default'},
+      ),
+    );
+    final pdf = File(out).readAsBytesSync();
+    final report = _recorded.answer(
+      'PDF/UA-1 math fallback',
+      inputs: [_veraPdfVersion, pdf],
+      oracle: () =>
+          Process.runSync(_verapdf, [
+                '--flavour',
+                'ua1',
+                '--format',
+                'text',
+                out,
+              ]).stdout
+              as String,
+    );
+    expect(report.trim(), startsWith('PASS'), reason: report);
+  });
+
   test('PDF/UA-1, as veraPDF checks it', () {
     final pdf = File(_convert()).readAsBytesSync();
     final report = _recorded.answer(

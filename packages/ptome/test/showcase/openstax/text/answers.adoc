@@ -1,0 +1,206 @@
+[appendix#answer-key]
+== Answer Key
+
+[discrete]
+=== Chapter 2
+
+[start=1]
+. <<fs-id1126076,Problem 1>>: (a) 7 m
++
+(b) 7 m
++
+(c) stem:[+ 7 " m"]
+
+[start=3]
+. <<fs-id4292134,Problem 3>>: {empty}a. stem:[8 " m" + 2 " m" + 3 " m" = ul(13 " m")]
++
+{empty}b. stem:[ul(9 " m")]
++
+{empty}c. stem:[Delta x = 11 " m" - 2 " m" = ul(9 " m")]
+
+[start=5]
+. <<fs-id4131776,Problem 5>>: (a) stem:[3 "." "0 " xx "10"^(4) " " " m/s"]
++
+(b) 0 m/s
+
+[start=7]
+. <<fs-id1438634,Problem 7>>: stem:[2 xx "10"^(7) " " " years"]
+
+[start=9]
+. <<fs-id1403452,Problem 9>>: stem:["34" "." "689 m/s " = " 124" "." "88 km/h"]
+
+[start=11]
+. <<fs-id1271475,Problem 11>>: (a) stem:["40" "." "0 km/h"]
++
+(b) 34.3 km/h, stem:["25°" " " " S of E" "."]
++
+(c) stem:["average speed" = "3.20 km/h," " " bar(v) = 0.]
+
+[start=13]
+. <<fs-id1638875,Problem 13>>: 384,000 km
+
+[start=15]
+. <<fs-id4047255,Problem 15>>: (a) stem:[6 "." "61" xx "10"^("15") " " "rev/s"]
++
+(b) 0 m/s
+
+[start=16]
+. <<fs-id4129901,Problem 16>>: stem:[4 "." "29" " " "m/s"^(2)]
+
+[start=18]
+. <<fs-id2299988,Problem 18>>: (a) stem:[1 "." "43 s"]
++
+(b) stem:[- 2 "." "50" " " "m/s"^(2)]
+
+[start=20]
+. <<fs-id1164906440403,Problem 20>>: (a) stem:["10" "." 8 " " "m/s"]
++
+(b)
+
+[start=21]
+. <<fs-id1164906478917,Problem 21>>: 38.9 m/s (about 87 miles per hour)
+
+[start=23]
+. <<fs-id1164906424347,Problem 23>>: (a) stem:["16" "." "5 s"]
++
+(b) stem:["13" "." "5 s"]
++
+(c) stem:[- 2 "." {:"68 m/s":}^(2)]
+
+[start=25]
+. <<fs-id1164906459799,Problem 25>>: (a) stem:["20" "." "0 m"]
++
+(b) stem:[- 1 "." "00 m/s"]
++
+(c) This result does not really make sense. If the runner starts at 9.00 m/s and decelerates at stem:[2 "." {:"00 m/s":}^(2)], then she will have stopped after 4.50 s. If she continues to decelerate, she will be running backwards.
+
+[start=27]
+. <<fs-id1164906467421,Problem 27>>: stem:[0 "." "799 m"]
+
+[start=29]
+. <<fs-id1164906451358,Problem 29>>: (a) stem:["28" "." "0 m/s"]
++
+(b) stem:["50" "." "9 s"]
++
+(c) 7.68 km to accelerate and 713 m to decelerate
+
+[start=31]
+. <<fs-id1164906453058,Problem 31>>: (a) stem:[51 "." 4 " " "m"]
++
+(b) stem:["17" "." "1 s"]
+
+[start=33]
+. <<fs-id1164906466373,Problem 33>>: (a) stem:[- "80" "." 4 " " "m/s"^(2)]
++
+(b) stem:[9 "." "33" xx "10"^(- 2) " " " s"]
+
+[start=35]
+. <<fs-id1164906495944,Problem 35>>: (a) stem:[7 "." "7 m/s"]
++
+(b) stem:[- "15" xx "10"^(2) " " "m/s"^(2)]. This is about 3 times the deceleration of the pilots, who were falling from thousands of meters high!
+
+[start=37]
+. <<fs-id1164906502756,Problem 37>>: (a) stem:["32" "." {:"6 m/s":}^(2)]
++
+(b) stem:["162 m/s"]
++
+(c) stem:[v > v_("max")], because the assumption of constant acceleration is not valid for a dragster. A dragster changes gears, and would have a greater acceleration in first gear than second gear than third gear, etc. The acceleration would be greatest at the beginning, so it would not be accelerating at stem:["32" "." {:"6 m/s":}^(2)] during the last few meters, but substantially less, and the final velocity would be less than 162 m/s.
+
+[start=39]
+. <<fs-id1164906433774,Problem 39>>: 104 s
+
+[start=40]
+. <<fs-id1164906508150,Problem 40>>: (a) stem:[v = "12" "." "2 m/s"]; stem:[a = 4 "." {:"07 m/s":}^(2)]
++
+(b) stem:[v = "11" "." "2 m/s"]
+
+[start=41]
+. <<fs-id1516821,Problem 41>>: (a) stem:[y_(1) = 6 "." "28 m"]; stem:[v_(1) = "10" "." "1 m/s"]
++
+(b) stem:[y_(2) = "10" "." "1 m"]; stem:[v_(2) = 5 "." "20 m/s"]
++
+(c) stem:[y_(3) = 11 "." 5 "  m"]; stem:[v_(3) = 0 ".300 m/s"]
++
+(d) stem:[y_(4) = 10 ".4 m"]; stem:[v_(4) = - 4 ".60 m/s"]
+
+[start=43]
+. <<fs-id1781525,Problem 43>>: stem:[v_(0) = 4 "." "95 m/s"]
+
+[start=45]
+. <<fs-id1788413,Problem 45>>: (a) stem:[a = - 9 "." {:"80 m/s":}^(2)]; stem:[v_(0) = "13" "." "0 m/s"]; stem:[y_(0) = "0 m"]
++
+(b) stem:[v = 0 "m/s"]. Unknown is distance stem:[y] to top of trajectory, where velocity is zero. Use equation stem:[v^(2) = v_(0)^(2) + 2 a (y - y_(0))] because it contains all known values except for stem:[y], so we can solve for stem:[y]. Solving for stem:[y] gives
++
+[stem#eip-id2418613]
+++++
+{:(v^(2) - v_(0)^(2),=,2 a (y - y_(0))),((v^(2) - v_(0)^(2))/(2 a),=,y - y_(0)),(y,=,y_(0) + (v^(2) - v_(0)^(2))/(2 a) = 0 " m" + ({:("0 m/s"):}^(2) - {:("13.0 m/s"):}^(2))/(2 (- "9.80 m" "/s"^(2))) = "8.62 m"):}
+++++
++
+Dolphins measure about 2 meters long and can jump several times their length out of the water, so this is a reasonable result.
++
+(c) stem:[2 "." "65 s"]
+
+[start=47]
+. <<fs-id4035152,Problem 47>>: (a) 8.26 m
++
+(b) 0.717 s
+
+[start=49]
+. <<fs-id3543404,Problem 49>>: 1.91 s
+
+[start=51]
+. <<fs-id4073110,Problem 51>>: (a) 94.0 m
++
+(b) 3.13 s
+
+[start=53]
+. <<fs-id1798285,Problem 53>>: (a) -70.0 m/s (downward)
++
+(b) 6.10 s
+
+[start=55]
+. <<fs-id4048528,Problem 55>>: (a) stem:["19" "." "6 m"]
++
+(b) stem:["18" "." "5 m"]
+
+[start=57]
+. <<fs-id2227967,Problem 57>>: (a) 305 m
++
+(b) 262 m, -29.2 m/s
++
+(c) 8.91 s
+
+[start=59]
+. <<fs-id4088406,Problem 59>>: (a) stem:["115 m/s"]
++
+(b) stem:[5 "." {:"0 m/s":}^(2)]
+
+[start=61]
+. <<fs-id1770908,Problem 61>>: {empty}
++
+[stem#eip-id2453534]
+++++
+t = 10 v = 0.208 " " "m/s" t = 30 v = 0.238 " " "m/s"
+++++
+
+[start=63]
+. <<fs-id1372323,Problem 63>>: 
+
+[start=65]
+. <<fs-id3520768,Problem 65>>: (a) 6 m/s
++
+(b) 12 m/s
++
+(c) stem:[{:"3 m/s":}^(2)]
++
+(d) 10 s
+
+[start=67]
+. <<exer-12587,Problem 67>>: (a) Car A is traveling faster at the checkpoint because it must go past the speed of car B to reach the same distance.
++
+(b) i. Yes, the equation is consistent with the answer because the speed of car A is only a constant away from the correct answer. ii. Yes, the equation makes sense because stem:[V = 2 V_(0)].
++
+(c)
++
+[#fig-00001]
+image::OSX_CP2e_Figure_02_08Sol_CTQ01c.jpg["The figure shows velocity v graphed as a function of position x. The plot of V sub A is linear, with a positive slope, starting at the origin and ending at a maximum velocity of 2 times v sub 0 at velocity v sub zero. The plot of V sub B is a constant at velocity v sub zero.",align=center]

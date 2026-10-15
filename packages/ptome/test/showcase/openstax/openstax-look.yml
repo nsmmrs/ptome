@@ -1,0 +1,101 @@
+# A modern textbook chapter, a design of the work's own (none of the
+# publisher's names, colours or marks): a letter page in two parts, the
+# text column and a wide outer margin; the section heads in a sans serif
+# with their numbers, the learning objectives and the notes in tinted
+# boxes, each worked example in a ruled box under its numbered head, the
+# checks of understanding in a box of their own; the equations displayed,
+# the figures with their numbered captions, the glossary in two columns.
+#
+# Noto Serif and Noto Sans, Noto Sans Math for the equations (`ptome
+# doctor --look openstax --looksdir test/showcase/openstax`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Noto Serif, screen: [Noto Serif, serif] } }
+    display: { family: { print: Noto Sans, screen: [Noto Sans, sans-serif] }, weight: bold }
+  size:
+    text: { print: 10pt, screen: 18px }
+    headings: { print: [24pt, 20pt, 14pt, 11.5pt, 10pt, 10pt] }
+  leading: { print: 1.35, screen: 1.6 }
+  measure: { screen: 38em }
+  paragraph: { signal: space }
+  align: { print: start }
+  hyphenate: { print: true }
+  color: { ink: '#1E1E1E', link: '#0F5A6B', accent: '#0F5A6B' }
+  page: { size: [8.5in, 11in], margin: [0.9in, 0.9in, 0.8in, 0.9in] }
+styles:
+  heading: { font: display, weight: bold, color: ink }
+  title: { font: display, weight: bold, color: ink }
+  link: { color: link }
+pdf:
+  font:
+    fallbacks: [Noto Sans Math]
+  heading:
+    chapter_break_before: always
+    h2:
+      font_size: 22
+      margin_bottom: 14
+    h3:
+      font_size: 15
+      font_color: 0F5A6B
+      margin_top: 18
+      margin_bottom: 8
+    h4:
+      font_size: 11.5
+      margin_top: 12
+      margin_bottom: 5
+  sidebar:
+    background_color: E8F1F3
+    border_width: 0
+    border_radius: 3
+    padding: [10, 12, 10, 12]
+    title:
+      font_family: Noto Sans
+      font_style: bold
+      font_color: 0F5A6B
+      text_align: left
+  example:
+    background_color: transparent
+    border_width: [1.5, 0, 1.5, 0]
+    border_style: solid
+    border_color: 0F5A6B
+    border_radius: 0
+    padding: [8, 0, 8, 0]
+  caption:
+    font_family: Noto Sans
+    font_size: 8.5
+    font_style: normal
+  role:
+    step: { font_family: Noto Sans, font_style: bold, font_size: 9.5, margin_top: 4 }
+  image:
+    align: center
+  description_list:
+    term_font_style: bold
+  stem:
+    font_size: 10
+  header:
+    height: 0.6in
+    vertical_align: bottom
+    font_family: Noto Sans
+    font_size: 8
+    recto:
+      left: { content: '' }
+      center: { content: '' }
+      right: { content: '{section-or-chapter-title}  {page-number}' }
+    verso:
+      left: { content: '{page-number}  {chapter-title}' }
+      center: { content: '' }
+      right: { content: '' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+css: |
+  .sidebarblock{background:#e8f1f3;border:0;border-radius:3px}
+  .sidebarblock>.content>.title{color:#0f5a6b;font-family:sans-serif}
+  .exampleblock>.content{border-width:2px 0;border-color:#0f5a6b;border-style:solid;border-radius:0;background:none}
+  .step p{font-family:sans-serif;font-weight:bold}
+epub-css: |
+  .sidebarblock{background:#e8f1f3;padding:.5em}
+  .step p{font-weight:bold}

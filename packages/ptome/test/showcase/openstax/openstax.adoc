@@ -1,0 +1,57 @@
+= College Physics 2e: Kinematics
+Paul Peter Urone; Roger Hinrichs
+:doctype: book
+:lang: en
+:look: openstax
+:looksdir: {docdir}
+:imagesdir: images
+:stem: asciimath
+:figure-numbering: chapter
+:table-numbering: chapter
+:example-numbering: chapter
+:example-caption: Example
+:xrefstyle: short
+:toc:
+:toclevels: 2
+:description: Chapter 2 of OpenStax’s College Physics 2e (CC BY 4.0): learning objectives, worked examples, notes, checks of understanding, equations, figures with their descriptions, the chapter’s problems with an answer key at the back, and its glossary.
+
+// (A chapter before the chapter, so that the book's chapter is the
+// second, its figures, tables and examples numbered 2.1, 2.2...)
+== About This Chapter
+
+This is Chapter 2, "Kinematics", of _College Physics 2e_, by Paul Peter
+Urone and Roger Hinrichs, published by OpenStax (Rice University), from
+https://openstax.org/details/books/college-physics-2e[openstax.org],
+licensed under the
+https://creativecommons.org/licenses/by/4.0/[Creative Commons Attribution
+4.0 International License] (CC BY 4.0).
+
+Changes: the chapter alone, converted to AsciiDoc and typeset afresh in
+a design of its own; its photographs by third parties, under licences
+of their own, and its online simulations left out; its problems'
+answers collected at the back.
+
+[#chapter-2]
+== 2 Kinematics
+
+include::text/introduction.adoc[]
+
+include::text/section-2-1.adoc[]
+
+include::text/section-2-2.adoc[]
+
+include::text/section-2-3.adoc[]
+
+include::text/section-2-4.adoc[]
+
+include::text/section-2-5.adoc[]
+
+include::text/section-2-6.adoc[]
+
+include::text/section-2-7.adoc[]
+
+include::text/section-2-8.adoc[]
+
+include::text/end.adoc[]
+
+include::text/answers.adoc[]

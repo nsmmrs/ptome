@@ -26,6 +26,8 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/look/loader.dart';
 import 'package:test/test.dart';
 
+import '../vendored_fonts.dart';
+
 const String _corpus = 'test/showcase';
 
 const String _noto = 'vendor/asciidoctor-pdf/data/fonts';
@@ -51,13 +53,15 @@ String _theme(String dir, String look) {
     'font:',
     '  catalog:',
     '    merge: true',
-    for (final family in families.toList()..sort()) ...[
-      '    ${jsonEncode(family)}:',
-      '      normal: notoserif-regular-subset.ttf',
-      '      bold: notoserif-bold-subset.ttf',
-      '      italic: notoserif-italic-subset.ttf',
-      '      bold_italic: notoserif-bold_italic-subset.ttf',
-    ],
+    // (Noto Sans Math, the formulas' face, vendored: its own.)
+    for (final family in families.toList()..sort())
+      if (family != 'Noto Sans Math') ...[
+        '    ${jsonEncode(family)}:',
+        '      normal: notoserif-regular-subset.ttf',
+        '      bold: notoserif-bold-subset.ttf',
+        '      italic: notoserif-italic-subset.ttf',
+        '      bold_italic: notoserif-bold_italic-subset.ttf',
+      ],
     // (The letters the subset lacks, a schoolbook's marked vowels and
     // consonants, from the vendored multilingual Noto Serif.)
     '    Showcase Fallback:',
@@ -79,6 +83,9 @@ String? _read(String path) {
 void main() {
   late Directory scratch;
   setUpAll(() {
+    // (The vendored fonts on the font path, Noto Sans Math among them, for
+    // a textbook's equations.)
+    useVendoredFonts();
     registerFileBackend('pdf');
     registerFileBackend('epub3');
     scratch = Directory.systemTemp.createTempSync('ptome-showcase.');

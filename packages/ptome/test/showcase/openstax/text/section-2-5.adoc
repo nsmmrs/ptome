@@ -1,0 +1,651 @@
+[#m42099]
+=== 2.5 Motion Equations for Constant Acceleration in One Dimension
+
+[.learning-objectives]
+.Learning Objectives
+****
+
+By the end of this section, you will be able to:
+
+* Calculate displacement of an object that is not accelerating, given initial position and velocity.
+* Calculate final velocity of an accelerating object, given initial velocity, acceleration, and time.
+* Calculate displacement and final position of an accelerating object, given initial position, initial velocity, time, and acceleration.
+
+****
+
+We might know that the greater the acceleration of, say, a car moving away from a stop sign, the greater the displacement in a given time. But we have not developed a specific equation that relates acceleration and displacement. In this section, we develop some convenient equations for kinematic relationships, starting from the definitions of displacement, velocity, and acceleration already covered.
+
+[#fs-id1164906436587]
+==== Notation: __t__, __x__, __v__, __a__
+
+First, let us make some simplifications in notation. Taking the initial time to be zero, as if time is measured with a stopwatch, is a great simplification. Since elapsed time is stem:[Delta t = t_(f) - t_(0)], taking stem:[t_(0) = 0] means that stem:[Delta t = t_(f)], the final time on the stopwatch. When initial time is taken to be zero, we use the subscript 0 to denote initial values of position and velocity. That is, stem:[x_(0)] __is the initial position__ and stem:[v_(0)] __is the initial velocity__. We put no subscripts on the final values. That is, stem:[t]  __is the final time__, stem:[x]  __is the final position__, and stem:[v] __is the final velocity__. This gives a simpler expression for elapsed time—now, stem:[Delta t = t]. It also simplifies the expression for displacement, which is now stem:[Delta x = x - x_(0)]. Also, it simplifies the expression for change in velocity, which is now stem:[Delta v = v - v_(0)]. To summarize, using the simplified notation, with the initial time taken to be zero,
+
+[stem#import-auto-id2563693]
+++++
+{:{:(Delta t,=,t),(Delta x,=,x - x_(0)),(Delta v,=,v - v_(0)):}}
+++++
+
+where __the subscript 0 denotes an initial value and the absence of a subscript denotes a final value__ in whatever motion is under consideration.
+
+We now make the important assumption that __acceleration is constant__. This assumption allows us to avoid using calculus to find instantaneous acceleration. Since acceleration is constant, the average and instantaneous accelerations are equal. That is,
+
+[stem#import-auto-id1819116]
+++++
+bar(a) = a = "constant" ,
+++++
+
+so we use the symbol stem:[a] for acceleration at all times. Assuming acceleration to be constant does not seriously limit the situations we can study nor degrade the accuracy of our treatment. For one thing, acceleration __is__ constant in a great number of situations. Furthermore, in many other situations we can accurately describe motion by assuming a constant acceleration equal to the average acceleration for that motion. Finally, in motions where acceleration changes drastically, such as a car accelerating to top speed and then braking to a stop, the motion can be considered in separate parts, each of which has its own constant acceleration.
+
+[#fs-id1164906424651.note]
+.Solving for Displacement (stem:[Delta x]) and Final Position (stem:[x]) from Average Velocity when Acceleration (stem:[a]) is Constant
+****
+
+To get our first two new equations, we start with the definition of average velocity:
+
+[stem#import-auto-id1782525]
+++++
+bar(v) = (Delta x)/(Delta t) "."
+++++
+
+Substituting the simplified notation for stem:[Delta x] and stem:[Delta t] yields
+
+[stem#import-auto-id4145482]
+++++
+bar(v) = (x - x_(0))/(t) "."
+++++
+
+Solving for stem:[x] yields
+
+[stem#import-auto-id2297251]
+++++
+x = x_(0) + bar(v) t ","
+++++
+
+where the average velocity is
+
+[stem#import-auto-id2086556]
+++++
+bar(v) = (v_(0) + v)/(2) " " ( "constant " " " a ) "."
+++++
+
+****
+
+The equation stem:[bar(v) = (v_(0) + v)/(2)] reflects the fact that, when acceleration is constant, stem:[v] is just the simple average of the initial and final velocities. For example, if you steadily increase your velocity (that is, with constant acceleration) from 30 to 60 km/h, then your average velocity during this steady increase is 45 km/h. Using the equation stem:[bar(v) = (v_(0) + v)/(2)] to check this, we see that
+
+[stem#import-auto-id4152098]
+++++
+bar(v) = (v_(0) + v)/(2) = ("30 km/h" + "60 km/h")/(2) = "45 km/h,"
+++++
+
+which seems logical.
+
+[#fs-id1164906442368]
+.Calculating Displacement: How Far does the Jogger Run?
+====
+
+A jogger runs down a straight stretch of road with an average velocity of 4.00 m/s for 2.00 min. What is his final position, taking his initial position to be zero?
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2297327]
+image::Figure_02_05_00a.jpg["Velocity vector arrow labeled v equals 4 point zero zero meters per second over an x axis displaying initial and final positions. Final position is labeled x equals question mark.",align=center]
+
+The final position stem:[x] is given by the equation
+
+[stem#import-auto-id2168543]
+++++
+x = x_(0) + bar(v) t .
+++++
+
+To find stem:[x], we identify the values of stem:[x_(0)], __stem:[bar(v)]__, and stem:[t] from the statement of the problem and substitute them into the equation.
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. stem:[bar(v) = 4 "." "00 m/s"], stem:[Delta t = 2.00 " " "min"], and stem:[x_(0) = "0 m"].
+
+{empty}2. Enter the known values into the equation.
+
+[stem#import-auto-id2300752]
+++++
+x = x_(0) + bar(v) t = 0 + (4 "." "00 m/s") ("120 s") = "480 m"
+++++
+
+[.step]
+Discussion
+
+Velocity and final displacement are both positive, which means they are in the same direction.
+
+====
+
+The equation stem:[x = x_(0) + bar(v) t] gives insight into the relationship between displacement, average velocity, and time. It shows, for example, that displacement is a linear function of average velocity. (By linear function, we mean that displacement depends on __stem:[bar(v)]__ rather than on __stem:[bar(v)]__ raised to some other power, such as __stem:[bar(v)^(2)]__. When graphed, linear functions look like straight lines with a constant slope.) On a car trip, for example, we will get twice as far in a given time if we average 90 km/h than if we average 45 km/h.
+
+[#import-auto-id1962019]
+.There is a linear relationship between displacement and average velocity. For a given time stem:[t], an object moving twice as fast as another object will move twice as far as the other object.
+image::Figure02_05_00b.jpg["Line graph showing displacement in meters versus average velocity in meters per second. The line is straight with a positive slope. Displacement x increases linearly with increase in average velocity v.",align=center]
+
+[#fs-id1164906431223.note]
+.Solving for Final Velocity
+****
+
+We can derive another useful equation by manipulating the definition of acceleration.
+
+[stem#import-auto-id2366011]
+++++
+a = (Delta v)/(Delta t)
+++++
+
+Substituting the simplified notation for stem:[Delta v] and stem:[Delta t] gives us
+
+[stem#import-auto-id1962571]
+++++
+a = (v - v_(0))/(t) " " " " ( "constant" " " a ) "."
+++++
+
+Solving for stem:[v] yields
+
+[stem#import-auto-id2168495]
+++++
+v = v_(0) + "at" " " " " ( "constant" " " a ) "."
+++++
+
+****
+
+[#fs-id1164906431414]
+.Calculating Final Velocity: An Airplane Slowing Down after Landing
+====
+
+An airplane lands with an initial velocity of 70.0 m/s and then decelerates at stem:[1 "." {:"50 m/s":}^(2)] for 40.0 s. What is its final velocity?
+
+[.step]
+Strategy
+
+Draw a sketch. We draw the acceleration vector in the direction opposite the velocity vector because the plane is decelerating.
+
+[#import-auto-id2300963]
+image::Figure_02_05_00c.jpg["Velocity vector arrow pointing toward the right in the positive x direction. Initial velocity equals seventy meters per second. Final velocity equals question mark. An acceleration vector arrow pointing toward the left labeled a equals negative 1 point 50 meters per second squared.",align=center]
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. stem:[v_(0) = "70" "." "0 m/s"], stem:[a = - 1 "." {:"50 m/s":}^(2)], stem:[t = "40" "." 0 " " "s"].
+
+{empty}2. Identify the unknown. In this case, it is final velocity, stem:[v_(f)]~.~
+
+{empty}3. Determine which equation to use. We can calculate the final velocity using the equation stem:[v = v_(0) + "at"].
+
+{empty}4. Plug in the known values and solve.
+
+[stem#import-auto-id2177855]
+++++
+v = v_(0) + "at" = "70" "." "0 m/s" + (- 1 "." {:"50 m/s":}^(2)) ("40" "." "0 s") = "10" "." "0 m/s"
+++++
+
+[.step]
+Discussion
+
+The final velocity is much less than the initial velocity, as desired when slowing down, but still positive. With jet engines, reverse thrust could be maintained long enough to stop the plane and start moving it backward. That would be indicated by a negative final velocity, which is not the case here.
+
+[#import-auto-id2173965]
+.The airplane lands with an initial velocity of 70.0 m/s and slows to a final velocity of 10.0 m/s before heading for the terminal. Note that the acceleration is negative because its direction is opposite to its velocity, which is positive.
+image::Figure_02_04_01.jpg["An airplane moving toward the right at two points in time. At time equals 0 the velocity vector arrow points toward the right and is labeled seventy meters per second. The acceleration vector arrow points toward the left and is labeled negative 1 point 5 meters per second squared. At time equals forty seconds, the velocity arrow is shorter, points toward the right, and is labeled ten meters per second. The acceleration vector arrow is still pointing toward the left and is labeled a equals negative 1 point 5 meters per second squared.",align=center]
+
+====
+
+In addition to being useful in problem solving, the equation stem:[v = v_(0) + "at"] gives us insight into the relationships among velocity, acceleration, and time. From it we can see, for example, that
+
+* final velocity depends on how large the acceleration is and how long it lasts
+* if the acceleration is zero, then the final velocity equals the initial velocity stem:[( v = v_(0) )], as expected (i.e., velocity is constant)
+* if __stem:[a]__ is negative, then the final velocity is less than the initial velocity
+
+(All of these observations fit our intuition, and it is always useful to examine basic equations in light of our intuition and experiences to check that they do indeed describe nature accurately.)
+
+[#fs-id1164906437247.note]
+.Making Connections: Real-World Connection
+****
+
+An intercontinental ballistic missile (ICBM) has a larger average acceleration than the Space Shuttle and achieves a greater velocity in the first minute or two of flight (actual ICBM burn times are classified—short-burn-time missiles are more difficult for an enemy to destroy). But the Space Shuttle obtains a greater final velocity, so that it can orbit the earth rather than come directly back down as an ICBM does. The Space Shuttle does this by accelerating for a longer time.
+
+****
+
+[#fs-id1164906444525.note]
+.Solving for Final Position When Velocity is Not Constant (stem:[a != 0])
+****
+
+We can combine the equations above to find a third equation that allows us to calculate the final position of an object experiencing constant acceleration. We start with
+
+[stem#import-auto-id2166975]
+++++
+v = v_(0) + "at" .
+++++
+
+Adding stem:[v_(0)] to each side of this equation and dividing by 2 gives
+
+[stem#import-auto-id1689620]
+++++
+(v_(0) + v)/(2) = v_(0) + (1)/(2) "at" "."
+++++
+
+Since stem:[(v_(0) + v)/(2) = bar(v)] for constant acceleration, then
+
+[stem#import-auto-id2301379]
+++++
+bar(v) = v_(0) + (1)/(2) "at" "."
+++++
+
+Now we substitute this expression for stem:[bar(v)] into the equation for displacement, stem:[x = x_(0) + bar(v) t], yielding
+
+[stem#import-auto-id1807031]
+++++
+x = x_(0) + v_(0) t + (1)/(2) "at"^(2) " " ( "constant " " " a ) "."
+++++
+
+****
+
+[#fs-id1164906457202]
+.Calculating Displacement of an Accelerating Object: Dragsters
+====
+
+Dragsters can achieve average accelerations of stem:["26" "." {:"0 m/s":}^(2)]. Suppose such a dragster accelerates from rest at this rate for 5.56 s. How far does it travel in this time?
+
+[#import-auto-id2356722]
+.U.S. Army Top Fuel pilot Tony “The Sarge” Schumacher begins a race with a controlled burnout. (credit: Lt. Col. William Thurmond. Photo Courtesy of U.S. Army.)
+image::Figure_02_04_02.jpg["Dragster accelerating down a race track.",align=center]
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2168040]
+image::Figure_02_04_02a.jpg["Acceleration vector arrow pointing toward the right in the positive x direction, labeled a equals twenty-six point 0 meters per second squared. x position graph with initial position at the left end of the graph. The right end of the graph is labeled x equals question mark.",align=center]
+
+We are asked to find displacement, which is stem:[x] if we take stem:[x_(0)] to be zero. (Think about it like the starting line of a race. It can be anywhere, but we call it 0 and measure all other positions relative to it.) We can use the equation stem:[x = x_(0) + v_(0) t + (1)/(2) "at"^(2)]once we identify stem:[v_(0)], stem:[a], and stem:[t] from the statement of the problem.
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. Starting from rest means that stem:[v_(0) = 0], stem:[a] is given as stem:["26" "." 0 " " "m/s"^(2)] and stem:[t] is given as 5.56 s.
+
+{empty}2. Plug the known values into the equation to solve for the unknown stem:[x]:
+
+[stem#import-auto-id2171407]
+++++
+x = x_(0) + v_(0) t + (1)/(2) "at"^(2) "."
+++++
+
+Since the initial position and velocity are both zero, this simplifies to
+
+[stem#import-auto-id2171445]
+++++
+x = (1)/(2) "at"^(2) "."
+++++
+
+Substituting the identified values of stem:[a] and stem:[t] gives
+
+[stem#import-auto-id2169820]
+++++
+x = (1)/(2) ("26" "." {:"0 m/s":}^(2)) {:(5 "." "56 s"):}^(2) ,
+++++
+
+yielding
+
+[stem#import-auto-id2171362]
+++++
+x = "402 m."
+++++
+
+[.step]
+Discussion
+
+If we convert 402 m to miles, we find that the distance covered is very close to one quarter of a mile, the standard distance for drag racing. So the answer is reasonable. This is an impressive displacement in only 5.56 s, but top-notch dragsters can do a quarter mile in even less time than this.
+
+====
+
+What else can we learn by examining the equation stem:[x = x_(0) + v_(0) t + (1)/(2) "at"^(2) ?] We see that:
+
+* displacement depends on the square of the elapsed time when acceleration is not zero. In <<fs-id1164906457202>>, the dragster covers only one fourth of the total distance in the first half of the elapsed time
+* if acceleration is zero, then the initial velocity equals average velocity (stem:[v_(0) = bar(v)]) and stem:[x = x_(0) + v_(0) t + (1)/(2) "at"^(2)] becomes stem:[x = x_(0) + v_(0) t]
+
+[#fs-id1164906460433.note]
+.Solving for Final Velocity when Velocity Is Not Constant (stem:[a != 0])
+****
+
+A fourth useful equation can be obtained from another algebraic manipulation of previous equations.
+
+If we solve stem:[v = v_(0) + "at"] for stem:[t], we get
+
+[stem#import-auto-id2365760]
+++++
+t = (v - v_(0))/(a) "."
+++++
+
+Substituting this and stem:[bar(v) = (v_(0) + v)/(2)] into stem:[x = x_(0) + bar(v) t], we get
+
+[stem#import-auto-id1659227]
+++++
+v^(2) = v_(0)^(2) + 2 a (x - x_(0)) " " " " ( "constant" " " a ) "."
+++++
+
+****
+
+[#fs-id1164906443776]
+.Calculating Final Velocity: Dragsters
+====
+
+Calculate the final velocity of the dragster in <<fs-id1164906457202>> without using information about time.
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id4179116]
+image::Figure_02_04_02b.jpg["Acceleration vector arrow pointing toward the right, labeled twenty-six point zero meters per second squared. Initial velocity equals 0. Final velocity equals question mark.",align=center]
+
+The equation stem:[v^(2) = v_(0)^(2) + 2 a ( x - x_(0) )] is ideally suited to this task because it relates velocities, acceleration, and displacement, and no time information is required.
+
+[.step]
+Solution
+
+{empty}1. Identify the known values. We know that stem:[v_(0) = 0], since the dragster starts from rest. Then we note that stem:[x - x_(0) = "402 m"] (this was the answer in <<fs-id1164906457202>>). Finally, the average acceleration was given to be stem:[a = "26" "." {:"0 m/s":}^(2)].
+
+{empty}2. Plug the knowns into the equation stem:[v^(2) = v_(0)^(2) + 2 a ( x - x_(0) )] and solve for stem:[v .]
+
+[stem#import-auto-id1680164]
+++++
+v^(2) = 0 + 2 ("26" "." {:"0 m/s":}^(2)) ("402 m") .
+++++
+
+Thus
+
+[stem#import-auto-id2177794]
+++++
+v^(2) = 2 "." "09" xx "10"^(4) " " "m"^(2) "/s"^(2) .
+++++
+
+To get stem:[v], we take the square root:
+
+[stem#import-auto-id2177812]
+++++
+v = sqrt(2 "." "09" xx "10"^(4) " " {:" m":}^(2) "/s"^(2)) = "145 m/s" .
+++++
+
+[.step]
+Discussion
+
+145 m/s is about 522 km/h or about 324 mi/h, but even this breakneck speed is short of the record for the quarter mile. Also, note that a square root has two values; we took the positive value to indicate a velocity in the same direction as the acceleration.
+
+====
+
+An examination of the equation stem:[v^(2) = v_(0)^(2) + 2 a ( x - x_(0) )] can produce further insights into the general relationships among physical quantities:
+
+* The final velocity depends on how large the acceleration is and the distance over which it acts
+* For a fixed deceleration, a car that is going twice as fast doesn’t simply stop in twice the distance—it takes much further to stop. (This is why we have reduced speed zones near schools.)
+
+[#fs-id1164906446591]
+==== Putting Equations Together
+
+In the following examples, we further explore one-dimensional motion, but in situations requiring slightly more algebraic manipulation. The examples also give insight into problem-solving techniques. The box below provides easy reference to the equations needed.
+
+[#fs-id1164906460309.note]
+.Summary of Kinematic Equations (constant stem:[a])
+****
+
+[stem#import-auto-id1771742]
+++++
+x = x_(0) + bar(v) t
+++++
+
+[stem#import-auto-id4178996]
+++++
+bar(v) = (v_(0) + v)/(2)
+++++
+
+[stem#import-auto-id1680040]
+++++
+v = v_(0) + "at"
+++++
+
+[stem#import-auto-id1680037]
+++++
+x = x_(0) + v_(0) t + (1)/(2) "at"^(2)
+++++
+
+[stem#import-auto-id2178979]
+++++
+v^(2) = v_(0)^(2) + 2 a (x - x_(0))
+++++
+
+****
+
+[#fs-id1164906424692]
+.Calculating Displacement: How Far Does a Car Go When Coming to a Halt?
+====
+
+On dry concrete, a car can decelerate at a rate of stem:[7 "." {:"00 m/s":}^(2)], whereas on wet concrete it can decelerate at only stem:[5 "." {:"00 m/s":}^(2)]. Find the distances necessary to stop a car moving at 30.0 m/s (about 110 km/h) (a) on dry concrete and (b) on wet concrete. (c) Repeat both calculations, finding the displacement from the point where the driver sees a traffic light turn red, taking into account his reaction time of 0.500 s to get his foot on the brake.
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2174020]
+image::Figure_02_04_02c.jpg["Initial velocity equals thirty meters per second. Final velocity equals 0. Acceleration dry equals negative 7 point zero zero meters per second squared. Acceleration wet equals negative 5 point zero zero meters per second squared.",align=center]
+
+In order to determine which equations are best to use, we need to list all of the known values and identify exactly what we need to solve for. We shall do this explicitly in the next several examples, using tables to set them off.
+
+[.step]
+Solution for (a)
+
+{empty}1. Identify the knowns and what we want to solve for. We know that stem:[v_(0) = "30" "." "0 m/s"]; stem:[v = "0 "]; stem:[a = - 7 "." "00" " " "m/s"^(2)] (stem:[a] is negative because it is in a direction opposite to velocity). We take stem:[x_(0)] to be 0. We are looking for displacement stem:[Delta x], or stem:[x - x_(0)].
+
+{empty}2. Identify the equation that will help up solve the problem. The best equation to use is
+
+[stem#import-auto-id2180580]
+++++
+v^(2) = v_(0)^(2) + 2 a (x - x_(0)) .
+++++
+
+This equation is best because it includes only one unknown, stem:[x]. We know the values of all the other variables in this equation. (There are other equations that would allow us to solve for stem:[x], but they require us to know the stopping time, stem:[t], which we do not know. We could use them but it would entail additional calculations.)
+
+{empty}3. Rearrange the equation to solve for stem:[x].
+
+[stem#import-auto-id4179294]
+++++
+x - x_(0) = (v^(2) - v_(0)^(2))/(2 a)
+++++
+
+{empty}4. Enter known values.
+
+[stem#import-auto-id2293184]
+++++
+x - 0 = (0^(2) - {:("30" "." "0 m/s"):}^(2))/(2 (- 7 "." {:"00 m/s":}^(2)))
+++++
+
+Thus,
+
+[stem#import-auto-id2293155]
+++++
+x = "64" "." "3 m on dry concrete" "."
+++++
+
+[.step]
+Solution for (b)
+
+This part can be solved in exactly the same manner as Part A. The only difference is that the deceleration is stem:[- 5 "." {:"00 m/s":}^(2)]. The result is
+
+[stem#import-auto-id2178635]
+++++
+x_("wet") = "90" "." "0 m on wet concrete" "."
+++++
+
+[.step]
+Solution for (c)
+
+Once the driver reacts, the stopping distance is the same as it is in Parts A and B for dry and wet concrete. So to answer this question, we need to calculate how far the car travels during the reaction time, and then add that to the stopping time. It is reasonable to assume that the velocity remains constant during the driver’s reaction time.
+
+{empty}1. Identify the knowns and what we want to solve for. We know that stem:[bar(v) = "30.0 m/s"]; stem:[t_("reaction") = 0.500 " " "s"]; stem:[a_("reaction") = 0]. We take stem:[x_(0 - "reaction")] to be 0. We are looking for stem:[x_("reaction")].
+
+{empty}2. Identify the best equation to use.
+
+stem:[x = x_(0) + bar(v) t] works well because the only unknown value is stem:[x], which is what we want to solve for.
+
+{empty}3. Plug in the knowns to solve the equation.
+
+[stem#import-auto-id2175306]
+++++
+x = 0 + ("30" "." "0 m/s") (0 "." "500 s") = "15" "." "0 m" .
+++++
+
+This means the car travels 15.0 m while the driver reacts, making the total displacements in the two cases of dry and wet concrete 15.0 m greater than if he reacted instantly.
+
+{empty}4. Add the displacement during the reaction time to the displacement when braking.
+
+[stem#import-auto-id1658817]
+++++
+x_("braking") + x_("reaction") = x_("total")
+++++
+
+[loweralpha]
+. 64.3 m &#43; 15.0 m = 79.3 m when dry
+. 90.0 m &#43; 15.0 m = 105 m when wet
+
+[#import-auto-id1658840]
+.The distance necessary to stop a car varies greatly, depending on road conditions and driver reaction time. Shown here are the braking distances for dry and wet pavement, as calculated in this example, for a car initially traveling at 30.0 m/s. Also shown are the total distances traveled from the point where the driver first sees a light turn red, assuming a 0.500 s reaction time.
+image::Figure_02_04_03.jpg["Diagram showing the various braking distances necessary for stopping a car. With no reaction time considered, braking distance is 64 point 3 meters on a dry surface and 90 meters on a wet surface. With reaction time of 0 point 500 seconds, braking distance is 79 point 3 meters on a dry surface and 105 meters on a wet surface.",align=center]
+
+[.step]
+Discussion
+
+The displacements found in this example seem reasonable for stopping a fast-moving car. It should take longer to stop a car on wet rather than dry pavement. It is interesting that reaction time adds significantly to the displacements. But more important is the general approach to solving problems. We identify the knowns and the quantities to be determined and then find an appropriate equation. There is often more than one way to solve a problem. The various parts of this example can in fact be solved by other methods, but the solutions presented above are the shortest.
+
+====
+
+[#fs-id1164906470852]
+.Calculating Time: A Car Merges into Traffic
+====
+
+Suppose a car merges into freeway traffic on a 200-m-long ramp. If its initial velocity is 10.0 m/s and it accelerates at stem:[2 "." {:"00 m/s":}^(2)], how long does it take to travel the 200 m up the ramp? (Such information might be useful to a traffic engineer.)
+
+[.step]
+Strategy
+
+Draw a sketch.
+
+[#import-auto-id2296882]
+image::Figure_02_04_03a.jpg["A line segment with ends labeled x subs zero equals zero and x = two hundred. Above the line segment, the equation t equals question mark indicates that time is unknown. Three vectors, all pointing in the direction of x equals 200, represent the other knowns and unknowns. They are labeled v sub zero equals ten point zero meters per second, v equals question mark, and a equals two point zero zero meters per second squared.",align=center]
+
+We are asked to solve for the time stem:[t]. As before, we identify the known quantities in order to choose a convenient physical relationship (that is, an equation with one unknown, stem:[t]).
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns and what we want to solve for. We know that stem:[v_(0) = "10 m/s"]; stem:[a = 2 "." {:"00 m/s":}^(2)]; and stem:[x = "200 m"].
+
+{empty}2. We need to solve for stem:[t]. Choose the best equation. stem:[x = x_(0) + v_(0) t + (1)/(2) "at"^(2)] works best because the only unknown in the equation is the variable stem:[t] for which we need to solve.
+
+{empty}3. We will need to rearrange the equation to solve for stem:[t]. In this case, it will be easier to plug in the knowns first.
+
+[stem#import-auto-id2179013]
+++++
+"200 m" = "0 m" + ("10" "." "0 m/s") t + (1)/(2) (2 "." {:"00 m/s":}^(2)) " " t^(2)
+++++
+
+{empty}4. Simplify the equation. The units of meters (m) cancel because they are in each term. We can get the units of seconds (s) to cancel by taking stem:[t = t " " "s"], where stem:[t] is the magnitude of time and s is the unit. Doing so leaves
+
+[stem#eip-635]
+++++
+"200" = "10" t + t^(2) "."
+++++
+
+{empty}5. Use the quadratic formula to solve for stem:[t]__.__
+
+(a) Rearrange the equation to get 0 on one side of the equation.
+
+[stem#import-auto-id1680208]
+++++
+t^(2) + "10" t - "200" = 0
+++++
+
+This is a quadratic equation of the form
+
+[stem#import-auto-id1680214]
+++++
+"at"^(2) + "bt" + c = 0 ,
+++++
+
+where the constants are stem:[a = 1 "." "00," " " b = "10" "." "0," " " "and" " " c = - "200"].
+
+(b) Its solutions are given by the quadratic formula:
+
+[stem#import-auto-id2367246]
+++++
+t = (- b +- sqrt(b^(2) - 4 "ac"))/(2 a) "."
+++++
+
+This yields two solutions for stem:[t], which are
+
+[stem#import-auto-id1772100]
+++++
+t = "10" "." 0 " " "and" - "20" "." 0 .
+++++
+
+In this case, then, the time is stem:[t = t] in seconds, or
+
+[stem#import-auto-id2175275]
+++++
+t = "10" "." 0 " " "s" " " "and" - "20" "." 0 " " "s" .
+++++
+
+A negative value for time is unreasonable, since it would mean that the event happened 20 s before the motion began. We can discard that solution. Thus,
+
+[stem#import-auto-id2177316]
+++++
+t = "10" "." 0 " " "s" .
+++++
+
+[.step]
+Discussion
+
+Whenever an equation contains an unknown squared, there will be two solutions. In some problems both solutions are meaningful, but in others, such as the above, only one solution is reasonable. The 10.0 s answer seems reasonable for a typical freeway on-ramp.
+
+====
+
+With the basics of kinematics established, we can go on to many other interesting examples and applications. In the process of developing kinematics, we have also glimpsed a general approach to problem solving that produces both correct answers and insights into physical relationships. <<m42125,Problem-Solving Basics>> discusses problem-solving basics and outlines an approach that will help you succeed in this invaluable task.
+
+[#fs-id1164906508057.note]
+.Making Connections: Take-Home Experiment—Breaking News
+****
+
+We have been using SI units of meters per second squared to describe some examples of acceleration or deceleration of cars, runners, and trains. To achieve a better feel for these numbers, one can measure the braking deceleration of a car doing a slow (and safe) stop. Recall that, for average acceleration, stem:[bar(a) = Delta v / Delta t]. While traveling in a car, slowly apply the brakes as you come up to a stop sign. Have a passenger note the initial speed in miles per hour and the time taken (in seconds) to stop. From this, calculate the deceleration in miles per hour per second. Convert this to meters per second squared and compare with other decelerations mentioned in this chapter. Calculate the distance traveled in braking.
+
+****
+
+[#fs-id1164906434690.check]
+.Check Your Understanding
+****
+
+A rocket accelerates at a rate of stem:[{:"20 m/s":}^(2)] during launch. How long does it take the rocket to reach a velocity of 400 m/s?
+
+[.step]
+Solution
+
+To answer this, choose an equation that allows you to solve for time __stem:[t]__, given only stem:[a], stem:[v_(0)], and stem:[v].
+
+[stem#import-auto-id2168910]
+++++
+v " " = " " v_(0) + "at"
+++++
+
+Rearrange to solve for stem:[t]__.__
+
+[stem#import-auto-id2168930]
+++++
+t = (v - v ""_(0){:" ":})/(a) = ("400 m/s" - "0 m/s")/({:"20 m/s":}^(2)) = "20 s"
+++++
+
+****

@@ -10,6 +10,11 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a character a formula's font lacks comes from the theme's base
+  font (and its fallbacks), not from whatever font the first formula is
+  laid out in, which could be a standard font, leaving the math font's
+  .notdef in its place (BUG-rvh0f1). `tool/showcase_openstax.dart`
+  reads an OpenStax chapter (CNXML, MathML to AsciiMath).
 - PDF/UA: a table cell spanning rows (or any cell) that a page or
   column break splits goes on in its row's structure element; it left an
   empty row, which PDF/UA-1 7.2 rejects (BUG-l91thh).

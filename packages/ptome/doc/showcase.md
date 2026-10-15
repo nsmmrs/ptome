@@ -17,6 +17,7 @@ EPIC-phf3n2 has the plan.
 | [McGuffey's Second Reader](../test/showcase/mcguffey/NOTICE.md) | A schoolbook: numbered lessons, each its new words in columns with their marks of pronunciation (macrons, breves, dots and bars above and below, combining marks among them), its woodcut and numbered paragraphs; the key to the marks; the script lessons in a copybook hand |
 | [Moby-Dick](../test/showcase/moby-dick/NOTICE.md) | Scale (the whole novel, 617 pages) and a novel's apparatus: a dedication page, the Extracts' sources, epigraphs, footnotes, the play-script chapters |
 | [Tristram Shandy](../test/showcase/tristram/NOTICE.md) | Typographic play: the black page and the marbled page, chapters that are only their heads, rows of asterisks, plot-line diagrams, dashes of many lengths |
+| [OpenStax College Physics 2e](../test/showcase/openstax/NOTICE.md) | A modern textbook chapter (CC BY): learning objectives, notes, worked examples in their steps, equations from MathML (AsciiMath; MathML in the EPUB), numbered figures with descriptions, problems with an answer key at the back, a glossary |
 | [Punch](../test/showcase/punch/NOTICE.md) | Magazine pages: three 1841 issues in two ruled columns under the running title, cuts with captions in the columns and across the page, pictorial initials, verse, tables of cuts |
 | [The Tempest](../test/showcase/tempest/NOTICE.md) | One source in two looks, a modern reading edition's and the First Folio's: speeches as description lists, shared verse lines stepped, each scene's lines numbered; two ruled columns in a frame |
 
@@ -76,7 +77,8 @@ change on purpose is a change to the expected files:
    (`tool/showcase_gutenberg.dart`, a reading of its own for each work), a
    transcription from a facsimile, or generated. US public domain
    (published in 1930 or earlier), preferably also life plus 70 years;
-   never CC BY-SA or NC.
+   never CC BY-SA or NC. A CC BY source at a commit (or release) still
+   under CC BY, as OpenStax's (`tool/showcase_openstax.dart`).
 2. Its look, its fonts in doctor's `lookFonts` where they aren't yet.
 3. Its NOTICE.md and the pages to compare.
 4. Its excerpt, and `SHOWCASE_UPDATE=1` for the expected files.

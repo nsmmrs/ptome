@@ -1,0 +1,103 @@
+= College Physics 2e: Displacement
+Paul Peter Urone; Roger Hinrichs
+:doctype: book
+:lang: en
+:look: openstax
+:looksdir: {docdir}
+:stem: asciimath
+:example-numbering: chapter
+:example-caption: Example
+:xrefstyle: short
+:notitle:
+
+// A textbook's parts (doc/showcase.md): a section's learning objectives,
+// a note holding an equation, a worked example in its steps, and a
+// problem with its answer in the answer key at the back. From OpenStax's
+// College Physics 2e, CC BY 4.0 (NOTICE.md).
+
+[#chapter-2]
+== 2 Kinematics
+
+[#m42033]
+=== 2.1 Displacement
+
+[.learning-objectives]
+.Learning Objectives
+****
+
+By the end of this section, you will be able to:
+
+* Define position, displacement, distance, and distance traveled.
+* Explain the relationship between position and displacement.
+* Distinguish between displacement and distance traveled.
+* Calculate displacement and distance given initial position, final position, and the path between the two.
+
+****
+
+[#fs-id3206000.note]
+.Displacement
+****
+
+Displacement is the __change in position__ of an object:
+
+[stem#eip-458]
+++++
+Delta x = x_("f") - x_(0) ,
+++++
+
+where stem:[Delta x] is displacement, stem:[x_("f")] is the final position, and stem:[x_(0)] is the initial position.
+
+****
+
+[#fs-id1744930]
+.Calculating Displacement: A Subway Train
+====
+
+What are the magnitude and sign of displacements for the motions of the subway train shown in parts (a) and (b) of the figure?
+
+[.step]
+Strategy
+
+A drawing with a coordinate system is already provided, so we don’t need to make a sketch, but we should analyze it to make sure we understand what it is showing. Pay particular attention to the coordinate system. To find displacement, we use the equation stem:[Delta x = x_(f) - x_(0)]. This is straightforward since the initial and final positions are given.
+
+[.step]
+Solution
+
+{empty}1. Identify the knowns. In the figure we see that stem:[x_(f) = "6.70 km"] and stem:[x_(0) = "4.70 km"] for part (a), and stem:[{:x ':}_(f) = 3 ".75 km"] and stem:[{:x ':}_(0) = 5 ".25 km"] for part (b).
+
+{empty}2. Solve for displacement in part (a).
+
+[stem#import-auto-id2400875]
+++++
+Delta x = x_(f) - x_(0) = 6 "." "70 km" - 4 "." "70 km" "=" " " "+" 2 "." "00 km"
+++++
+
+{empty}3. Solve for displacement in part (b).
+
+[stem#import-auto-id2589758]
+++++
+Delta x ' = {:x ':}_(f) - {:x ':}_(0) = "3.75 km" - "5.25 km" = - "1.50 km"
+++++
+
+[.step]
+Discussion
+
+The direction of the motion in (a) is to the right and therefore its displacement has a positive sign, whereas motion in (b) is to the left and thus has a negative sign.
+
+====
+
+[%unnumbered]
+=== Problems & Exercises
+
+[start=1]
+. [[fs-id1126076]]Find the following for path A in the figure: (a) The distance traveled. (b) The magnitude of the displacement from start to finish. (c) The displacement from start to finish.
+
+[appendix#answer-key]
+== Answer Key
+
+[start=1]
+. <<fs-id1126076,Problem 1>>: (a) 7 m
++
+(b) 7 m
++
+(c) stem:[+ 7 " m"]

@@ -1628,11 +1628,28 @@ final class PdfConverter extends BuiltInConverter
       }
       return null;
     }
+    // (A character the math font lacks from the theme's base font, then
+    // its fallbacks: not from whatever is set when the first formula is,
+    // which may be a standard font, not embedded.)
+    EmbeddedFont? textFont(String family) {
+      try {
+        if (_fonts.font(family).pdf case final EmbeddedFont font) return font;
+      } on FontException {
+        // Not installed: left out.
+      }
+      return null;
+    }
+
     final base = _fonts.font(_font.family, _font.style).pdf;
-    return MathLayout(
-      font,
-      fallbacks: [if (base case final EmbeddedFont text) text],
-    );
+    final baseFamily = _s('base_font_family');
+    final fallbacks = asciidoctorCompat(_document, CompatFormat.pdf)
+        ? [if (base case final EmbeddedFont text) text]
+        : [
+            ?(baseFamily == null ? null : textFont(baseFamily)),
+            for (final fallback in _theme.fontFallbacks) ?textFont(fallback),
+            if (base case final EmbeddedFont text) text,
+          ];
+    return MathLayout(font, fallbacks: fallbacks);
   }();
 
   /// The formulas converted so far, by source and language, with the
