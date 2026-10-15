@@ -2,3 +2,6 @@
 # or the files in them), by SHA-256; written by the corpus test.
 asciidoctor-2.0.26:
   epub3: 220dd8f2b922b7fb3941f65a250b5b6688d0b50696995cd26688c5e623a097c7
+# ptome's own, where the golden shows a defect (case.yml).
+ptome:
+  pdf: ef3caeb471162e9cc04e48c8c88f3ffcd5e357335be937eb2c1784440fbb0d40

@@ -13,7 +13,8 @@
 ///                         defect ptome doesn't reproduce, with what it is)
 ///     expected/<release>/<format>/<file>   what Asciidoctor wrote
 ///     ptome.yml           the last ptome PDFs and EPUBs found equal to the
-///                         goldens, by hash
+///                         goldens, by hash; and ptome's own output for a
+///                         defect's format ([ownHash])
 /// ```
 library;
 
@@ -78,6 +79,7 @@ final class Case {
     required this.goldens,
     required this.verified,
     required this.defects,
+    required this.own,
   });
 
   final String name;
@@ -95,8 +97,12 @@ final class Case {
   final Map<Format, String> verified;
 
   /// The formats whose golden shows a defect of Asciidoctor's that ptome
-  /// doesn't reproduce, with what it is: they aren't compared.
+  /// doesn't reproduce, with what it is: ptome's output must differ from
+  /// the golden, and be its own recorded one ([own]).
   final Map<Format, String> defects;
+
+  /// ptome's own output for each format in [defects], by [ownHash].
+  final Map<Format, String> own;
 
   String get input => p.posix.join(dir, 'input.adoc');
 
@@ -140,16 +146,51 @@ final class Case {
   /// golden of [release] (`ptome.yml`).
   void promote(String release, Format format, String hash) {
     verified[format] = hash;
+    _write(release);
+  }
+
+  /// Records [hash] as ptome's own output of [format], a defect's
+  /// ([ownHash], `ptome.yml`).
+  void recordOwn(String release, Format format, String hash) {
+    own[format] = hash;
+    _write(release);
+  }
+
+  void _write(String release) {
+    String section(Map<Format, String> hashes) => [
+      for (final f in Format.values)
+        if (hashes[f] case final h?) '  ${f.name}: $h\n',
+    ].join();
     io.writeString(
       p.posix.join(dir, 'ptome.yml'),
       '# The last ptome files found equal to the goldens (by their pages,\n'
       '# or the files in them), by SHA-256; written by the corpus test.\n'
-      '$release:\n'
-      '${[for (final f in Format.values)
-        if (verified[f] case final h?) '  ${f.name}: $h\n'].join()}',
+      '${verified.isEmpty ? '' : '$release:\n${section(verified)}'}'
+      '${own.isEmpty ? '' : "# ptome's own, where the golden shows a defect "
+                '(case.yml).\nptome:\n${section(own)}'}',
     );
   }
 }
+
+/// The hash a defect case's output is recorded by: of a text format's text
+/// (its generator stamp aside), of an EPUB's files (their names and
+/// contents, the same from every zip writer), of a PDF's bytes.
+String ownHash(Format format, List<int> bytes) => switch (format) {
+  Format.epub3 => sha256Of(
+    utf8.encode(
+      [
+        for (final MapEntry(:key, :value) in (_entries(
+          bytes,
+        ).entries.toList()..sort((a, b) => a.key.compareTo(b.key))))
+          '$key ${sha256Of(value)}',
+      ].join('\n'),
+    ),
+  ),
+  Format.pdf => sha256Of(bytes),
+  _ => sha256Of(
+    utf8.encode(withoutGenerator(utf8.decode(bytes, allowMalformed: true))),
+  ),
+};
 
 /// Installs the fonts the corpus's PDFs and EPUBs are set in: the vendored
 /// ones only (never the machine's).
@@ -206,6 +247,10 @@ Corpus loadCorpus() {
         },
         defects: {
           for (final MapEntry(:key, :value) in _map(meta['defects']).entries)
+            Format.values.byName(key): '$value',
+        },
+        own: {
+          for (final MapEntry(:key, :value) in _map(ptome['ptome']).entries)
             Format.values.byName(key): '$value',
         },
       ),

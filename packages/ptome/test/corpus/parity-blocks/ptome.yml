@@ -1,0 +1,7 @@
+# The last ptome files found equal to the goldens (by their pages,
+# or the files in them), by SHA-256; written by the corpus test.
+# ptome's own, where the golden shows a defect (case.yml).
+ptome:
+  html5: d4275934024f8fb9625592ea1dbf18ef658ddc3cfee617d06014903fe028bc37
+  docbook5: da9b5122e4e759583793a4181d1c55b174d6bc10edba5bb33ed445d49fc2cc4b
+  manpage: b755b39556c31fe56dad76af1915c95faa4353f0d07b3b5c3a9f27e772886561

@@ -5,7 +5,9 @@
 /// files in it; a PDF must be the one last found equal to its golden,
 /// kept by its hash (ptome.yml). A PDF that isn't fails until recording
 /// (ORACLES=record, or CORPUS_RECHECK) compares its pages, pixel for
-/// pixel, and its outline and page labels, with Poppler's.
+/// pixel, and its outline and page labels, with Poppler's. A format whose
+/// golden shows a defect of Asciidoctor's (case.yml) must differ from it
+/// and be ptome's own output as recorded (ptome.yml; recording writes it).
 library;
 
 import 'dart:convert';
@@ -40,51 +42,70 @@ void corpusTests({required int part, required int parts}) {
         // and its pages are compared on the VM only. Its books are
         // compared here as there, file by file.)
         if (format == Format.pdf && _onJs) continue;
-        test(
-          format.name,
-          skip: switch (c.defects[format]) {
-            final defect? => "Asciidoctor's defect, not reproduced: $defect",
-            _ => null,
-          },
-          () async {
+        // (Where the golden shows a defect of Asciidoctor's, case.yml says
+        // which.)
+        if (c.defects.containsKey(format)) {
+          test(format.name, () async {
             final want = io.readBytes(golden);
             final got = await c.convert(format, attributes);
-            if (!format.expensive) {
-              final (a, b) = (_text(want), _text(got));
-              if (sha256Of(utf8.encode(a)) == sha256Of(utf8.encode(b))) {
-                return;
+            final hash = ownHash(format, got);
+            expect(
+              hash,
+              isNot(ownHash(format, want)),
+              reason: 'the defect reproduced',
+            );
+            if (_recording || _recheck) {
+              if (c.own[format] != hash) {
+                c.recordOwn(corpus.release, format, hash);
               }
-              fail(
-                'differs from ${corpus.release} at ${firstDifference(a, b)}',
-              );
+              return;
             }
-            final hash = sha256Of(got);
-            if (c.verified[format] == hash && !_recheck) return;
-            // (A PDF other than the one found equal is compared again by
-            // its pages, Poppler's, only when recording: everywhere else it
-            // fails the same way. An EPUB's files are compared here.)
-            final String result;
-            if (format == Format.epub3) {
-              result = compareEntries(want, got);
-            } else if (_recheck || _recording) {
-              result =
-                  comparePages(want, got) ??
-                  (throw StateError('comparing pages needs pdftoppm'));
-            } else {
-              fail(
-                "not the PDF found equal to ${corpus.release}'s "
-                '(ptome.yml): compare its pages again, '
-                'ORACLES=record dart test -t corpus, with Poppler installed',
-              );
+            expect(
+              hash,
+              c.own[format],
+              reason:
+                  "not ptome's recorded output (ptome.yml): check the "
+                  'change, then ORACLES=record dart test -t corpus',
+            );
+          });
+          continue;
+        }
+        test(format.name, () async {
+          final want = io.readBytes(golden);
+          final got = await c.convert(format, attributes);
+          if (!format.expensive) {
+            final (a, b) = (_text(want), _text(got));
+            if (sha256Of(utf8.encode(a)) == sha256Of(utf8.encode(b))) {
+              return;
             }
-            if (result != 'identical') {
-              fail('differs from ${corpus.release}: $result');
-            }
-            // Equal: kept by its hash from now on, when recording (commit
-            // ptome.yml); a run doesn't write it.
-            if (_recording || _recheck) c.promote(corpus.release, format, hash);
-          },
-        );
+            fail('differs from ${corpus.release} at ${firstDifference(a, b)}');
+          }
+          final hash = sha256Of(got);
+          if (c.verified[format] == hash && !_recheck) return;
+          // (A PDF other than the one found equal is compared again by
+          // its pages, Poppler's, only when recording: everywhere else it
+          // fails the same way. An EPUB's files are compared here.)
+          final String result;
+          if (format == Format.epub3) {
+            result = compareEntries(want, got);
+          } else if (_recheck || _recording) {
+            result =
+                comparePages(want, got) ??
+                (throw StateError('comparing pages needs pdftoppm'));
+          } else {
+            fail(
+              "not the PDF found equal to ${corpus.release}'s "
+              '(ptome.yml): compare its pages again, '
+              'ORACLES=record dart test -t corpus, with Poppler installed',
+            );
+          }
+          if (result != 'identical') {
+            fail('differs from ${corpus.release}: $result');
+          }
+          // Equal: kept by its hash from now on, when recording (commit
+          // ptome.yml); a run doesn't write it.
+          if (_recording || _recheck) c.promote(corpus.release, format, hash);
+        });
       }
     });
   }

@@ -1,0 +1,5 @@
+# The last ptome files found equal to the goldens (by their pages,
+# or the files in them), by SHA-256; written by the corpus test.
+# ptome's own, where the golden shows a defect (case.yml).
+ptome:
+  manpage: 2c9bc7ad620fc89d20b728dd7a3fbf657a09ff54fd3c006615079e02b4856662
