@@ -18,9 +18,13 @@ runs:
         ~/.pub-cache
       key: dart-${{ runner.os }}-${{ runner.arch }}-3.13.5-${{ hashFiles('**/pubspec.yaml') }}
       restore-keys: dart-${{ runner.os }}-${{ runner.arch }}-3.13.5-
+  # (Its problem matcher, a file of its own, isn't found from a composite
+  # action: the analysis prints its findings anyway.)
   - uses: dart-lang/setup-dart@v1
     with:
       sdk: 3.13.5
+      problem-matcher: 'false'
+
   - if: runner.os == 'Windows'
     uses: actions/cache@v4
     with:
