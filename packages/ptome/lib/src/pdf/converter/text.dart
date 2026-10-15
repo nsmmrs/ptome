@@ -3,6 +3,24 @@ part of '../converter.dart';
 // Text.
 
 extension _Text on PdfConverter {
+  /// [text] with its two- and three-em dashes (U+2E3A, U+2E3B, which
+  /// many faces lack: Caslon's, Sterne's dashes in Tristram Shandy) as two
+  /// or three em dashes, run together as a compositor sets them, where
+  /// neither [font] nor its fallbacks has them (not under
+  /// `asciidoctor-compat`).
+  String _multiEmDashes(String text, _FontState font) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return text;
+    bool has(int rune) =>
+        _fonts.font(font.family, font.style).hasGlyph(rune) ||
+        _theme.fontFallbacks.any(
+          (family) => _fonts.font(family, font.style).hasGlyph(rune),
+        );
+    return text.replaceAllMapped(PdfConverter._multiEmDashRx, (m) {
+      final rune = m[0]!.runes.single;
+      return has(rune) ? m[0]! : '—' * (rune == 0x2e3a ? 2 : 3);
+    });
+  }
+
   /// A text box of [markup] in [font] (the gem's `typeset_text` with the
   /// line metrics of the font's line height).
   TextBox _textBox(
@@ -38,6 +56,9 @@ extension _Text on PdfConverter {
         : markup;
     var text = hyphenate ? _hyphenated(taken, align) : taken;
     if (normalize) text = text.replaceAll(RegExp('[ \t\n]+'), ' ');
+    if (text.contains(PdfConverter._multiEmDashRx)) {
+      text = _multiEmDashes(text, font);
+    }
     // A label left out of the text (`role_<role>_display: none`,
     // `units_<level>_label_display: none`) takes the space after it with
     // it.

@@ -1,0 +1,18 @@
+[#part-9]
+= Book IX
+
+[quote, 'Plin. Lib. v Epist. 6']
+[.epigraph]
+____
+
+Non enim excursus hic ejus, sed opus ipsum est.
+
+____
+
+[quote]
+[.epigraph]
+____
+
+Si quid urbaniusculè lusum a nobis, per Musas et Charitas et omnium poëtarum Numina, Oro te, ne me malè capias.
+
+____

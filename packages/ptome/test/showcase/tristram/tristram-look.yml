@@ -1,0 +1,108 @@
+# Tristram Shandy after its first edition (York and London, 1759–67, in
+# nine small volumes): a small octavo of about 4 × 6½ in in Caslon's
+# types, 10 on 12½, justified; no running heads, the page number in
+# brackets at the head, "( 9 )"; each volume a part, its chapters running
+# on under "CHAP. I.", the first opening with an initial two lines deep;
+# Yorick's epitaph in a frame of rules; the black page and the marbled
+# page each both sides of a leaf, filling the type area; the blank
+# chapters each a page of their own; Sterne's dashes of many lengths.
+#
+# Libre Caslon Text, Caslon revived (`ptome doctor --look tristram
+# --looksdir test/showcase/tristram`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
+    display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
+  size:
+    text: { print: 9.5pt, screen: 18px }
+    headings: { print: [18pt, 10pt, 10pt, 9.5pt, 9.5pt, 9.5pt] }
+  leading: { print: 1.3, screen: 1.6 }
+  measure: { screen: 32em }
+  paragraph: { signal: indent, indent: { print: 1.2em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [4.2in, 6.8in], margin: [0.75in, 0.55in, 0.65in, 0.6in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    # (The Greek of the epigraphs and Slawkenbergius, which Caslon's
+    # revival lacks.)
+    fallbacks: [Noto Serif]
+  heading:
+    chapter_break_before: auto
+    part_break_after: always
+    h1:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 2
+      vertical_align: middle
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1
+      margin_top: 18
+      margin_page_top: 6
+      margin_bottom: 8
+      initial_lines: 2
+      initial_lead_in: 1
+    h3:
+      text_align: center
+      font_style: italic
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1.2em
+  quote:
+    border_left_width: 0
+    padding: [0, 10, 0, 10]
+    font_size: 9
+    cite_font_color: '1A1A1A'
+    cite_text_align: right
+    cite_font_style: italic
+    role:
+      # (Yorick's epitaph, a tablet of rules.)
+      yorick:
+        border_width: 0.6
+        border_color: '1A1A1A'
+        padding: [4, 8, 4, 8]
+        text_align: center
+        font_size: 10
+  verse:
+    border_left_width: 0
+    padding: [0, 0, 0, 18]
+  role:
+    sc: { font_variant: small-caps }
+    lead-in: { font_variant: small-caps }
+  footnotes:
+    font_size: 7.5
+  header:
+    height: 0.6in
+    vertical_align: bottom
+    font_size: 8.5
+    recto:
+      left: { content: '' }
+      center: { content: '( {page-number} )' }
+      right: { content: '' }
+    verso:
+      left: { content: '' }
+      center: { content: '( {page-number} )' }
+      right: { content: '' }
+  footer:
+    height: 0.5in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Libre Caslon Text:400,400italic,700
+css: |
+  #content h2{text-align:center;text-transform:uppercase;letter-spacing:.05em}
+  .sc{font-variant:small-caps}
+  .quoteblock.yorick blockquote{border:1px solid #1a1a1a;text-align:center;padding:.3em 1em}
+  .imageblock.black-page img,.imageblock.marbled-page img{width:100%;max-height:90vh}
+epub-css: |
+  .sc{font-variant:small-caps}
+  .quoteblock.yorick blockquote{border:1px solid #1a1a1a;text-align:center}

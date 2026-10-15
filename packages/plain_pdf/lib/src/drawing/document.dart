@@ -817,9 +817,14 @@ final class _Saver {
                 _ => 'Layout',
               }),
               for (final MapEntry(:key, :value) in attributes.entries)
-                key: value.startsWith('/')
-                    ? PdfName(value.substring(1))
-                    : PdfString.text(value),
+                key: switch (value) {
+                  _ when value.startsWith('/') => PdfName(value.substring(1)),
+                  // (A number: a table cell's `RowSpan` and `ColSpan`.)
+                  _ when int.tryParse(value) != null => PdfInt(
+                    int.parse(value),
+                  ),
+                  _ => PdfString.text(value),
+                },
             }),
         }),
         refs[node],

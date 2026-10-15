@@ -1016,9 +1016,16 @@ final class _PlacedTable extends _Placed {
       canvas
         ..beginStructure(_rows[placed.row] ??= StructureElement('TR'))
         ..beginStructure(
-          _cells[cell] ??= placed.header
-              ? StructureElement('TH', attributes: const {'Scope': '/Column'})
-              : StructureElement('TD'),
+          _cells[cell] ??= StructureElement(
+            placed.header ? 'TH' : 'TD',
+            attributes: {
+              if (placed.header) 'Scope': '/Column',
+              // (A cell spanning rows or columns says so: PDF/UA-1 7.2
+              // counts each row's columns with them.)
+              if (cell.rowSpan > 1) 'RowSpan': '${cell.rowSpan}',
+              if (cell.colSpan > 1) 'ColSpan': '${cell.colSpan}',
+            },
+          ),
         );
       paint();
       canvas

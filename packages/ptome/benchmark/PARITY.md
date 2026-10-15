@@ -391,6 +391,14 @@ Documents that don't hit these cases convert as with the gem.
   title is written, in document order, not when the title is first used,
   which a cross reference converted before the block may be (#1333). A
   title with a passthrough is interpolated as before.
+- Discrete headings: a footnote in a discrete heading's title is numbered
+  where the heading is set, in reading order, once; Asciidoctor converts
+  the title while parsing (for its id, and to resolve its attributes in
+  scope), numbering the note then, and the count starts again when the
+  document is converted, so two footnotes share a number and an id, and
+  an EPUB sets the heading's note among the first chapter's
+  (`test/upstream_fixes/discrete-heading-footnote-*`; not under
+  `asciidoctor-compat`).
 - Preprocessor: the directives inside a delimited block (`ifdef`,
   `ifndef`, `ifeval`, `include`) run as its content is parsed, after the
   attribute entries before them in the block, so `ifdef` sees an attribute

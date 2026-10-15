@@ -443,6 +443,9 @@ final class PdfConverter extends BuiltInConverter
     return roles.any(node.includesRole);
   }
 
+  /// A two- or three-em dash.
+  static final RegExp _multiEmDashRx = RegExp('[\u2e3a\u2e3b]');
+
   /// Whether a block with the `mirror` role is being converted.
   bool _mirroring = false;
 

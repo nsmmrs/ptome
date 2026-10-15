@@ -78,7 +78,10 @@ void main() {
       ..writeAsStringSync(
         '= Warm\n:doctype: book\n:lang: en\n:hyphens:\n\n== One\n\n'
         '${'Typographical considerations notwithstanding, ' * 12}\n\n'
-        '[verse]\n____\n_Lines_ of *verse*\n____\n',
+        '[verse]\n____\n_Lines_ of *verse*\n____\n\n'
+        '[.sc]#Small capitals#, a note.footnote:[A note.]\n\n'
+        '[quote, Someone]\n____\nA quotation.\n____\n\n'
+        '|===\n|A |B\n|===\n\nTerm:: Its description.\n',
       );
     final theme = File('${scratch.path}/warm-theme.yml')
       ..writeAsStringSync(_theme(scratch.path, 'ptome'));

@@ -1,0 +1,6 @@
+description: "a footnote in a discrete heading goes with its chapter in an EPUB. Asciidoctor 2.0.26 numbers a discrete heading's footnote while parsing, so asciidoctor-epub3 2.3.0 sets it among the first chapter's notes, with the id of that chapter's own first note (note-1, twice: EPUBCheck reports the duplicate id, and the heading's reference points at the wrong note). ptome numbers it where the heading is set: it goes with its chapter. Found building Tristram Shandy for the showcase corpus. Fails on the gem.  The gem's EPUB converter is a separate command: set ASCIIDOCTOR_EPUB3_EXE to it when ASCIIDOCTOR_EXE is the Ruby CLI."
+format: epub3
+epub_contains:
+  - {files: "EPUB/_chapter_two.xhtml", pattern: "<aside id=\"note-3\" epub:type=\"footnote\">\n<p>[^<]*Heading note"}
+epub_excludes:
+  - {files: "EPUB/_introduction.xhtml", pattern: "Heading note"}

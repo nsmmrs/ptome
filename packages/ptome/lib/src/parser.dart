@@ -1270,6 +1270,26 @@ abstract final class Parser {
     return true;
   }
 
+  /// The text a discrete heading's id is made from: its title, converted
+  /// with its footnotes deferred, as a section's is (`_idSource`), so that
+  /// they are numbered where the heading is set, in reading order, and
+  /// not twice (Asciidoctor converts the title for its id and keeps it,
+  /// its footnotes numbered from 1 again when the document is
+  /// converted). Not under asciidoctor-compat.
+  static String _floatIdSource(AbstractBlock block) {
+    final source = block.sourceTitle ?? '';
+    final document = block.document! as Document;
+    if (!source.contains('footnote') || anyAsciidoctorCompat(document)) {
+      return block.title ?? '';
+    }
+    document.deferFootnotes = true;
+    try {
+      return block.applyTitleSubs(source);
+    } finally {
+      document.deferFootnotes = false;
+    }
+  }
+
   /// The converted title of [section] that its ID is generated from.
   ///
   /// A footnote in the title is left out: converting the title here, in
@@ -1934,7 +1954,7 @@ abstract final class Parser {
           block.id =
               floatTitle.id ??
               (docAttrs.containsKey('sectids')
-                  ? Section.generateId(block.title ?? '', document)
+                  ? Section.generateId(_floatIdSource(block), document)
                   : null);
           block.idGenerated = floatTitle.id == null && block.id != null;
           block.level = floatTitle.level;
@@ -2392,10 +2412,15 @@ abstract final class Parser {
     result.style = attrs['style'];
     final blockId = result.id ?? (result.id = attrs['id']);
     if (blockId != null) {
-      // Convert title to resolve attributes while in scope.
+      // Convert title to resolve attributes while in scope; but a title
+      // with a footnote (a discrete heading's) when it is set, the note
+      // numbered there, in reading order, not here and again from 1 when
+      // the document is converted (not under asciidoctor-compat).
       if (blockTitle != null
           ? blockTitle.contains(attrRefHead)
-          : result.hasTitle) {
+          : result.hasTitle &&
+                !((result.sourceTitle?.contains('footnote') ?? false) &&
+                    !anyAsciidoctorCompat(document))) {
         final _ = result.title;
       }
       if (!document.registerRef(blockId, result)) {

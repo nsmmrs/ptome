@@ -39,7 +39,7 @@ final class StructureElement {
 
   /// Attributes of the owner of [role]'s standard attributes (`Table` for
   /// `Scope`, `Layout` for `Placement`): names and values (a name's value
-  /// starting with `/`).
+  /// starting with `/`, a number's all digits).
   final Map<String, String> attributes;
 }
 

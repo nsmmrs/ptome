@@ -1,0 +1,19 @@
+= Book
+:doctype: book
+
+== Introduction
+
+Intro text.footnote:[Intro note.]
+
+= Part One
+
+== Chapter One
+
+One.footnote:[First chapter note.]
+
+== Chapter Two
+
+[discrete]
+=== A Heading footnote:[Heading note.]
+
+Two.footnote:[Second chapter note.]

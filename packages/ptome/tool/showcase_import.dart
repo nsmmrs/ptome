@@ -118,19 +118,7 @@ Future<void> main(List<String> arguments) async {
   final work = 'test/showcase/$slug';
   final textDir = part == null ? 'text' : 'text/$part';
   Directory('$work/$textDir').createSync(recursive: true);
-  final hasParts = texts.any(
-    (name) =>
-        File('$epub/text/$name.xhtml')
-            .readAsStringSync()
-            .contains('epub:type="part"'),
-  );
-  final converter = _Converter(
-    notes,
-    prefix: part == null ? '' : '$part-',
-    // (A part's chapters are level 1 whether or not the production has
-    // parts of its own: its parts become the work's.)
-    partsOffset: hasParts ? 1 : 0,
-  );
+  final converter = _Converter(notes, prefix: part == null ? '' : '$part-');
   for (final name in texts) {
     final doc = parseXml(File('$epub/text/$name.xhtml').readAsStringSync());
     final body = doc.descendantElements.firstWhere(
@@ -240,7 +228,7 @@ Set<String> _classes(XmlElement element) =>
 
 /// XHTML to AsciiDoc, file by file.
 final class _Converter {
-  new(this.notes, {required this.prefix, required this.partsOffset});
+  new(this.notes, {required this.prefix});
 
   /// The endnotes, by id.
   final Map<String, XmlElement> notes;
@@ -249,15 +237,31 @@ final class _Converter {
   /// chapters' ids apart from another part's).
   final String prefix;
 
-  /// 1 when the book has parts (a part's section is level 0).
-  final int partsOffset;
-
   /// The images the files use: their names in `images/`, and the
   /// production's.
   final Set<(String, String)> images = {};
 
   /// How many notes were set as footnotes.
   int notesUsed = 0;
+
+  /// How many italic elements the text being converted is in.
+  int _italic = 0;
+
+  /// The level of the section [element]: a part's 0; a chapter's 1, and
+  /// one more for each section around it that isn't a part (the files
+  /// of a production with parts wrap a chapter in its part's section, or
+  /// not).
+  int _level(XmlElement element) {
+    if (_types(element).contains('part')) return 0;
+    var level = 1;
+    for (var at = element.parent; at != null; at = at.parent) {
+      if ((at.localName == 'section' || at.localName == 'article') &&
+          !_types(at).contains('part')) {
+        level++;
+      }
+    }
+    return level.clamp(1, 5);
+  }
 
   /// [element]'s id, prefixed.
   String? _id(XmlElement element) => switch (element.getAttribute('id')) {
@@ -326,7 +330,7 @@ final class _Converter {
                 '${[for (final role in roles) '.$role'].join()}%notitle]',
               )
               ..writeln(
-                '${'=' * ((depth + 1 - partsOffset).clamp(0, 5) + 1)} '
+                '${'=' * (_level(element) + 1)} '
                 '${roles.isEmpty ? 'Untitled' : _capitalized(roles.first)}',
               );
             _blank(out);
@@ -334,7 +338,7 @@ final class _Converter {
           _blocks(element.childElements, out, depth: depth + 1);
           return;
         }
-        final level = (depth + 1 - partsOffset).clamp(0, 5);
+        final level = _level(element);
         final roles = [
           for (final type in types)
             if (type != 'chapter' && type != 'part') type.split(':').last,
@@ -628,7 +632,14 @@ final class _Converter {
               if (cell.localName == 'td' || cell.localName == 'th') cell,
           ],
     ];
-    final columns = rows.fold(0, (n, row) => row.length > n ? row.length : n);
+    final columns = rows.fold(0, (n, row) {
+      final width = row.fold(
+        0,
+        (w, cell) =>
+            w + (int.tryParse(cell.getAttribute('colspan') ?? '') ?? 1),
+      );
+      return width > n ? width : n;
+    });
     if (columns == 0) return;
     _blank(out);
     out
@@ -636,7 +647,17 @@ final class _Converter {
       ..writeln('|===');
     for (final row in rows) {
       for (final cell in row) {
-        out.writeln('|${_inline(cell).trim().replaceAll('|', r'\|')}');
+        // (A cell spanning columns or rows: `2+|`, `.2+|`.)
+        final columnSpan = int.tryParse(cell.getAttribute('colspan') ?? '');
+        final rowSpan = int.tryParse(cell.getAttribute('rowspan') ?? '');
+        final span = [
+          if (columnSpan != null && columnSpan > 1) '$columnSpan',
+          if (rowSpan != null && rowSpan > 1) '.$rowSpan',
+        ].join();
+        out.writeln(
+          '${span.isEmpty ? '' : '$span+'}'
+          '|${_inline(cell).trim().replaceAll('|', r'\|')}',
+        );
       }
       out.writeln();
     }
@@ -789,10 +810,22 @@ final class _Converter {
     final types = _types(element);
     final lang = element.getAttribute('xml:lang');
     String wrap(String text) =>
-        lang == null || text.isEmpty ? text : '[lang=$lang]#$text#';
+        lang == null || text.isEmpty ? text : '[lang=$lang]##$text##';
     switch (element.localName) {
       case 'em' || 'i':
-        return wrap(_mark('_', _inline(element)));
+        // (Italic in italic is set roman, as the production's stylesheet
+        // sets it.)
+        final attributes = lang == null ? '' : '[lang=$lang]';
+        if (_italic > 0) {
+          return '[.roman${lang == null ? '' : ',lang=$lang'}]'
+              '##${_inline(element)}##';
+        }
+        _italic++;
+        try {
+          return _mark('_', _inline(element), attributes: attributes);
+        } finally {
+          _italic--;
+        }
       case 'strong':
         return wrap(_mark('*', _inline(element)));
       case 'b':
@@ -876,18 +909,20 @@ final class _Converter {
       }
       parts.add('$clone'.trim());
     }
-    return parts.join(' ').replaceAll(']', r'\]');
+    // (Its text's brackets are character references already: the brackets
+    // left are its markup's.)
+    return parts.join(' ');
   }
 }
 
 /// [text] in an unconstrained mark pair (`__x__`), which holds wherever
 /// it stands, its spaces outside it.
-String _mark(String mark, String text) {
+String _mark(String mark, String text, {String attributes = ''}) {
   if (text.trim().isEmpty) return text;
   final lead = text.substring(0, text.length - text.trimLeft().length);
   final trail = text.substring(text.trimRight().length);
   final inner = text.trim();
-  return '$lead$mark$mark$inner$mark$mark$trail';
+  return '$lead$attributes$mark$mark$inner$mark$mark$trail';
 }
 
 /// [text] with what AsciiDoc would read as markup written as character

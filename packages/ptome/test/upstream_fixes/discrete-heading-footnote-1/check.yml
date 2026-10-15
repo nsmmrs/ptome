@@ -1,0 +1,6 @@
+description: "a footnote in a discrete heading is numbered where the heading is, once. Asciidoctor 2.0.26 converts a discrete heading's title while parsing (to make its id, and to resolve its attributes in scope), which numbers its footnote then; the count starts again when the document is converted, so the heading's note and the first note of the text are both 1 (two footnotes with the id _footnotedef_1). ptome converts the title where the heading is set, its note numbered in reading order. Found building Tristram Shandy for the showcase corpus (the Excommunication's heading). Fails on the gem."
+format: html5
+standalone: false
+contains:
+  - "id=\"_footnotedef_4\""
+  - "<div class=\"footnote\" id=\"_footnotedef_3\">\n<a href=\"#_footnoteref_3\">3</a>. Heading note."

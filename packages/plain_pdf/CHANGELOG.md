@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Tagged PDF: a structure element's attribute whose value is all digits is
+  written as a number (a table cell's `RowSpan`, `ColSpan`).
+
 - Tagged PDF: text in another language than its structure element's (or
   the document's) is marked with its own (`/Span << /Lang (fr) >> BDC`,
   ISO 32000-2 14.9.2.2), the language its `TextStyle` gives (FEAT-r90rkz).

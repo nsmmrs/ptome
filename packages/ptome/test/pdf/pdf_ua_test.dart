@@ -136,6 +136,42 @@ void main() {
     );
   });
 
+  test('a cell spanning rows or columns says so (PDF/UA-1 7.2)', () {
+    final input = File('${_dir.path}/spans.adoc')
+      ..writeAsStringSync(
+        '= Spans\n:pdf-ua:\n\n[cols="1,1,1"]\n|===\n|A\n.2+|brace\n|B\n\n'
+        '|C\n|D\n\n3+|across\n|===\n',
+      );
+    final out = '${input.path}.pdf';
+    convertFile(
+      input.path,
+      AsciidoctorOptions(
+        safe: SafeMode.unsafe,
+        backend: 'pdf',
+        toFile: out,
+        attributes: const {'reproducible': '', 'pdf-theme': 'default'},
+      ),
+    );
+    final pdf = File(out).readAsBytesSync();
+    final qdf = qpdfQdf(_recorded, pdf);
+    expect(qdf, contains('/RowSpan 2'));
+    expect(qdf, contains('/ColSpan 3'));
+    final report = _recorded.answer(
+      'PDF/UA-1 spans',
+      inputs: [_veraPdfVersion, pdf],
+      oracle: () =>
+          Process.runSync(_verapdf, [
+                '--flavour',
+                'ua1',
+                '--format',
+                'text',
+                out,
+              ]).stdout
+              as String,
+    );
+    expect(report.trim(), startsWith('PASS'));
+  });
+
   test('PDF/UA-1, as veraPDF checks it', () {
     final pdf = File(_convert()).readAsBytesSync();
     final report = _recorded.answer(

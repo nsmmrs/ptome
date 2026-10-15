@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a two- or three-em dash that the text's faces lack is set as two
+  or three em dashes run together (Tristram Shandy in Caslon); a tagged
+  table's cell that spans rows or columns carries its `RowSpan` or
+  `ColSpan` (PDF/UA-1 7.2; BUG-85ldy8).
+- A footnote in a discrete heading's title is numbered where the heading
+  is set, once and in reading order; Asciidoctor numbers it while
+  parsing, so it shares number 1 with the text's first note, and an EPUB
+  sets it among the first chapter's notes
+  (`test/upstream_fixes/discrete-heading-footnote-*`); not under
+  `asciidoctor-compat`.
 - EPUB: a chapter's title element holds the title's text alone; with
   emphasis in a chapter's title (`== The _Albatross_`) asciidoctor-epub3
   writes the tags there too, which EPUBCheck rejects

@@ -119,6 +119,7 @@ No, not so much perdition as an hair +
 Betid to any creature in the vessel +
 Which thou heard’st cry, which thou saw’st sink. Sit down; +
 For thou must now know farther.
+// end::scene-2[]
 Miranda:: [.shared]##You have often## +
 Begun to tell me what I am, but stopp’d +
 And left me to a bootless inquisition, +
@@ -278,7 +279,6 @@ From mine own library with volumes that +
 I prize above my dukedom.
 Miranda:: [.shared]##Would I might## +
 But ever see that man!
-// end::scene-2[]
 Prospero:: [.shared]##Now I arise:## [.sd]##Resumes his mantle.## +
 Sit still, and hear the last of our sea-sorrow. +
 Here in this island we arrived; and here +

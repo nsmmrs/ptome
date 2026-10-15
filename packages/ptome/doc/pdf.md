@@ -521,6 +521,11 @@ catalog lacks for a family (a display face with no italic) is made from
 one it has: an italic slanted, a bold stroked (asciidoctor-pdf stops with
 an error).
 
+A two- or three-em dash (U+2E3A, U+2E3B: Sterne's long dashes) that
+neither the text's face nor its `font_fallbacks` has is set as two or
+three em dashes run together, as a compositor sets one, rather than as
+an empty box. Not under `asciidoctor-compat`.
+
 ### Footnotes
 
 Footnotes are at the bottom of the page their reference is on, under a

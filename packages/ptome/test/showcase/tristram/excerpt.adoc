@@ -1,0 +1,26 @@
+= Tristram Shandy: the black page, the blank chapters, the dashes
+:doctype: book
+:lang: en
+:look: tristram
+:looksdir: {docdir}
+:imagesdir: images
+:figure-caption!:
+:notitle:
+
+// Sterne's typographic play (doc/showcase.md): Yorick's epitaph in its
+// frame and the black page after it, both sides of the leaf; two
+// chapters that are only their heads, each a page; and his dashes, the
+// two- and three-em ones set as em dashes run together where the face
+// lacks them.
+
+== Chap. I.
+
+include::text/chapter-1-1.adoc[tag=dashes]
+
+== Chap. XII.
+
+include::text/chapter-1-12.adoc[tag=black-page]
+
+include::text/chapter-9-18a.adoc[]
+
+include::text/chapter-9-19a.adoc[]

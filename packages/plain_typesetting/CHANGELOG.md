@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A tagged table's cells spanning rows or columns carry `RowSpan` and
+  `ColSpan` in their structure elements' attributes (PDF/UA-1 7.2).
+
 - `BoxStyle.unnumbered`: a box's lines left out of the line numbering
   of the box it is in (a play's stage directions); `ParagraphContent`'s
   `goesOn`: its first line goes on from the line before it, counted once

@@ -1,0 +1,10 @@
+[#part-3]
+= Book III
+
+[quote, 'Joan. Saresberiensis, [lang=la]__Episcopus Lugdun__']
+[.epigraph]
+____
+
+Multitudinis imperitæ non formido judicia; meis tamen, rogo, parcant opusculis⁠⸻in quibus fuit propositi semper, a jocis ad seria, a seriis vicissim ad jocos transire.
+
+____
