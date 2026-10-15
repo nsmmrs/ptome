@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: Ptome's `mirror` role sets a block mirrored, left to right
+  (`[verse.mirror]`, Jabberwocky as Through the Looking-Glass prints it;
+  FEAT-yq6kff), kept whole on a page; not under `asciidoctor-compat`.
+- The showcase corpus (`doc/showcase.md`, EPIC-phf3n2): public-domain
+  works that show what Ptome's output can do, built whole by
+  `tool/showcase.dart` (HTML, EPUB and PDF, EPUBCheck and veraPDF, pages
+  beside scans of the printing their looks follow), each with an
+  excerpt test; Standard Ebooks productions imported by
+  `tool/showcase_import.dart`.
 - `PTOME_SYSTEM_FONTS=off` keeps fonts to `PTOME_FONT_PATH` and the
   folders a theme or document names: no font installed on the machine is
   found, so the output depends on none (a reproducible build; the tests

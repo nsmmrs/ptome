@@ -62,6 +62,7 @@ export 'src/layout/flow.dart'
         LayoutBox,
         LayoutResult,
         LinedContent,
+        MirroredBox,
         NoteStream,
         PageBreaker,
         PageInfo,

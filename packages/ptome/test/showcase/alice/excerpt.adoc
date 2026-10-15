@@ -1,0 +1,18 @@
+= Alice: the Mouse’s Tale and Jabberwocky
+:doctype: book
+:lang: en
+:look: alice
+:looksdir: {docdir}
+:notitle:
+
+// The two pages of the books' own type (doc/showcase.md): the tale in
+// type that shrinks down its tail, kept on one page, and Jabberwocky's
+// first stanza in mirror type.
+
+== A Caucus-Race and a Long Tale
+
+include::text/wonderland/chapter-3.adoc[tag=tale]
+
+== Looking-Glass House
+
+include::text/looking-glass/chapter-1.adoc[tag=mirror]

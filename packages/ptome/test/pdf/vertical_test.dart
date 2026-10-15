@@ -205,6 +205,18 @@ $theme
       pdf('日本語の文章。\n\n[.horizontal-tb]\n具体的な違い。', 'vertical-rl'),
     );
     expect(down.any((w) => w.$1.contains('具体的な')), isTrue);
+    // (Beside another role too (BUG-ldy580): the poem still in columns.)
+    final named = lines(
+      pdf(
+        '日本語の文章。\n\n[verse.vertical-rl.poem]\n____\n直骨今\n具体的\n'
+            '____\n\n文章。',
+        'horizontal-tb',
+      ),
+    );
+    expect(
+      named.firstWhere((w) => w.$1 == '直').$2,
+      greaterThan(named.firstWhere((w) => w.$1 == '具').$2),
+    );
   });
 
   test('base_hanging_punctuation: a comma or full stop hangs past the '

@@ -84,7 +84,7 @@ extension _Traversal on PdfConverter {
       }
     }
     for (final role in block.roles) {
-      final key = 'role_${role.replaceAll('-', '_')}_float';
+      final key = 'role_${_roleName(role)}_float';
       // (`top`, `bottom`, `auto`, `next`: the block floats to the top or
       // the bottom of its region, above the notes; `_float_scope: page`
       // across the page's columns, as a study Bible's feature article
@@ -142,6 +142,15 @@ extension _Traversal on PdfConverter {
       return;
     }
   }
+
+  /// [role] as the theme's `role_<role>_` keys name it: as written, as
+  /// the theme keeps a role's name under `role:`, else with its hyphens as
+  /// underscores, as the float keys were looked up before (BUG-x7zh01).
+  String _roleName(String role) =>
+      !role.contains('-') ||
+          _theme.keys.any((key) => key.startsWith('role_${role}_'))
+      ? role
+      : role.replaceAll('-', '_');
 
   /// The outline of the image [block] floats (its `shape` attribute, else
   /// the theme's `<key>_shape`: `alpha`, its opaque pixels' outline, the

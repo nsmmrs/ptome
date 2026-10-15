@@ -735,6 +735,30 @@ void main() {
       expect(aside, lessThan(291));
     });
 
+    test('a role with a hyphen floats as its theme keys name it '
+        '(BUG-x7zh01)', () {
+      final words = 'Words of the piece run on across the page. ' * 12;
+      const theme =
+          'role:\n  side-note:\n    float: right\n    float_width: 40%\n';
+      final pdf = modernPdf(
+        '= Doc\n\n[.side-note]\n****\nAside\n****\n\n$words\n',
+        theme: theme,
+      );
+      final bbox =
+          recordedRunSync(modernRecorded, 'pdftotext', [
+                '-bbox',
+                pdf,
+                '-',
+              ]).stdout
+              as String;
+      final aside = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Aside<').firstMatch(bbox)![1]!,
+      );
+      // (In the right 40% of the A4 page's text, which starts at about
+      // 48: beside the words, not above them.)
+      expect(aside, greaterThan(340));
+    });
+
     test('jump lines: continued on the page the piece goes on, and from', () {
       const source =
           '= Issue\n\n[#a]\n== A Piece\n\nIt starts.\n\n'

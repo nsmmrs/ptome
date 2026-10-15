@@ -479,6 +479,19 @@ final class VerticalBox extends LayoutBox {
   final double? length;
 }
 
+/// A box set mirrored, left to right (Jabberwocky as Through the
+/// Looking-Glass prints it, to be read in a looking-glass): [child] laid
+/// out as anywhere else, kept whole on one page, and painted turned over
+/// about its vertical middle. Its text reads, from the page, as it was
+/// written.
+final class MirroredBox extends LayoutBox {
+  /// [child], mirrored.
+  const new(this.child, {BoxStyle style = const BoxStyle()}) : super._(style);
+
+  /// The box set mirrored.
+  final LayoutBox child;
+}
+
 /// A paragraph: lines broken from inline content. Its style's margins
 /// apply; for padding, borders or a background, put it in a [BlockBox].
 final class ParagraphBox extends LayoutBox {

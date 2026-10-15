@@ -1,0 +1,45 @@
+[#looking-glass-preamble.preamble]
+== The Chess Game
+
+:sectnums:
+
+.White Pawn (Alice) to play, and win in eleven moves.
+image::looking-glass-illustration-1.svg["A chess problem. Red has pieces as follows: Ng8, Ke4, Qe2. White has pieces as follows: Kc6, Nf5, Pd2, Qc1, Rf1.",id=looking-glass-illustration-1,role=half-page]
+
+[.moves,cols="1,1",frame=none,grid=none,options=header]
+|===
+|White. |Red.
+
+|1. Alice meets R. Q.
+|1. R. Q. to K. R.’s 4th
+
+|2. Alice Through Q.’s 3rd (__by railway__) to Q.’s 4th (__Tweedledum And Tweedledee__)
+|2. W. Q. to Q. B.’s 4th (__after shawl__)
+
+|3. Alice meets W. Q. (__with shawl__)
+|3. W. Q. to Q. B.’s 5th (__becomes sheep__)
+
+|4. Alice to Q.’s 5th (__shop, river, shop__)
+|4. W. Q. to K. B.’s 8th (__leaves egg on shelf__)
+
+|5. Alice to Q.’s 6th (__Humpty Dumpty__)
+|5. W. Q. to Q. B.’s 8th (__flying from R. Kt.__)
+
+|6. Alice to Q.’s 7th (__forest__)
+|6. R. Kt. to K.’s 2nd ([.sc]#check#)
+
+|7. W. Kt. takes R. Kt.
+|7. W. Kt. to K. B.’s 5th
+
+|8. Alice to Q.’s 8th (__Coronation__)
+|8. R. Q. to K.’s Sq. (__Examination__)
+
+|9. Alice becomes Queen
+|9. Queens castle
+
+|10. Alice Castles (__feast__)
+|10. W. to Q. R.’s 6th (__soup__)
+
+|11. Alice takes R. Q. and wins
+|
+|===

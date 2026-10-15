@@ -196,7 +196,7 @@ extension _Leaves on _Pass {
       case CustomBox(:final content):
         final (a, b) = content.intrinsicWidths();
         return (a + margin, b + margin);
-      case UprightBox(:final child):
+      case UprightBox(:final child) || MirroredBox(:final child):
         return _intrinsic(child);
       // (Its columns' extent is its width: as narrow as one column, as
       // wide as its lines at its length.)
@@ -279,6 +279,31 @@ extension _Leaves on _Pass {
     if (height > available + 1e-6 && !atTop) return _Fit.moved(box);
     return _Fit(
       _PlacedUpright(placed, top, fit.height, w, height, mode),
+      height,
+      null,
+    );
+  }
+
+  /// [box]: its child laid out whole (where it doesn't fit in the rest
+  /// of the region, at the top of the next), placed mirrored.
+  _Fit _mirrored(
+    MirroredBox box,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final margin = box.style.margin;
+    final top = atTop ? 0.0 : margin.top;
+    final inner = width - margin.horizontal;
+    final fit = _withoutExclusions(
+      () => _place(box.child, inner, double.infinity, atTop: true),
+    );
+    final placed = fit.placed;
+    if (placed == null) return fit;
+    final height = top + fit.height + margin.bottom;
+    if (height > available + 1e-6 && !atTop) return _Fit.moved(box);
+    return _Fit(
+      _PlacedMirrored(placed, top, margin.left, inner, height),
       height,
       null,
     );

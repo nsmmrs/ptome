@@ -539,6 +539,9 @@ final class Matrix
   double e
   double f
   int hashCode
+final class MirroredBox extends LayoutBox
+  LayoutBox child
+  MirroredBox(LayoutBox child, {BoxStyle style = const BoxStyle()})
 final class MultipleLineHeight extends LineHeight
   MultipleLineHeight(double factor)
   double factor

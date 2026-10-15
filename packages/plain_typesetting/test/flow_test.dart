@@ -1449,6 +1449,37 @@ void main() {
     // The block is split: a piece on each page, decorated there.
     expect(decorated, document.pages);
   });
+
+  group('a mirrored box', () {
+    test('painted turned over about its middle, where it would be', () {
+      final document = RecordingDocument();
+      FlowLayout(template: _rows(10))
+          .layout([
+            MirroredBox(
+              DrawingBox(30, (canvas, rect) => canvas.rect(rect), width: 80),
+              style: const BoxStyle(margin: EdgeInsets(left: 10, right: 50)),
+            ),
+          ])
+          .render(document);
+      final calls = document.pages.single.canvas.calls;
+      // (The content area from 20 to 280; the box's from 30 to 230, 200
+      // wide: x' = 2·30 + 200 − x, its left edge at its right.)
+      expect(calls, contains('transform -1.00 0.00 0.00 1.00 260.00 0.00'));
+      expect(calls, contains(startsWith('rect 30.00 ')));
+    });
+
+    test("kept whole: what doesn't fit goes to the next page", () {
+      final document = RecordingDocument();
+      final pages = FlowLayout(template: _rows(4))
+          .layout([_para('one\ntwo\nthree'), MirroredBox(_para('four\nfive'))])
+          .render(document);
+      expect(pages, hasLength(2));
+      expect(
+        [for (final page in pages) page.texts.map((t) => t.trim()).join(' ')],
+        ['one two three', 'four five'],
+      );
+    });
+  });
 }
 
 /// Content [height] tall that is placed whole in [slack] less room.

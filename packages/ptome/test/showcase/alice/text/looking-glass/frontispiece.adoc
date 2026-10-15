@@ -1,0 +1,1 @@
+image::looking-glass-illustration-2.svg["The scene is within a forest; Alice is standing with her arms folded looking up at the White Knight, who is mounted on his white horse, which is festooned with a variety of weapons.",id=looking-glass-illustration-2,role=full-page,fit=contain]

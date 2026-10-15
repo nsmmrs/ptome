@@ -688,7 +688,8 @@ final class _Pass {
           DrawingBox() ||
           TableBox() ||
           UprightBox() ||
-          VerticalBox():
+          VerticalBox() ||
+          MirroredBox():
         return _measure(box, width);
       case CustomBox(:final content):
         return margin.top + content.minHeight(width - margin.horizontal);
@@ -776,6 +777,7 @@ final class _Pass {
       CustomBox() => _custom(box, width, available, atTop: atTop),
       UprightBox() => _upright(box, width, available, atTop: atTop),
       VerticalBox() => _turned(box, width, available, atTop: atTop),
+      MirroredBox() => _mirrored(box, width, available, atTop: atTop),
     };
   }
 

@@ -1,0 +1,123 @@
+# Alice after Macmillan's first editions (Wonderland 1865, Looking-Glass
+# 1871, printed by Richard Clay): a small crown octavo of about
+# 4¾ × 7⅛ in, a Victorian modern face, 10½ on 13, justified; the
+# chapters running on, each under "CHAPTER I." and its title in smaller
+# capitals below; the running heads in capitals, the book on the
+# verso and the chapter on the recto, the folio outside them; Tenniel's
+# cuts set into the text, the narrower ones with the text running beside
+# them. Two pages of the books' own: the Mouse's Tale in type that
+# shrinks down its tail, and Jabberwocky's first stanza in mirror type.
+#
+# Old Standard TT stands in for the Clay modern (`ptome doctor --look
+# alice --looksdir test/showcase/alice`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
+    display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
+  size:
+    text: { print: 10.5pt, screen: 19px }
+    headings: { print: [20pt, 11pt, 10.5pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.24, screen: 1.55 }
+  measure: { screen: 32em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [121mm, 181mm], margin: [17mm, 15mm, 17mm, 17mm] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  heading:
+    chapter_break_before: auto
+    part_break_after: always
+    h1:
+      text_align: center
+      text_transform: uppercase
+      vertical_align: middle
+    h2:
+      content: "{{#numeral}}CHAPTER {{numeral}}.\n{{/numeral}}<font size=\"8\">{{title}}</font>"
+      font_size: 12
+      text_align: center
+      text_transform: uppercase
+      margin_top: 30
+      margin_page_top: 20
+      margin_bottom: 14
+      line_height: 2
+  role:
+    sc: { font_variant: small-caps }
+    running-head: { text_transform: uppercase, font_size: 7.5 }
+    # (The Mouse's Tale: each step a size down to the tip of the tail.)
+    tale-1: { font_size: 10 }
+    tale-2: { font_size: 9 }
+    tale-3: { font_size: 8.2 }
+    tale-4: { font_size: 7.4 }
+    tale-5: { font_size: 6.6 }
+    tale-6: { font_size: 5.9 }
+    tale-7: { font_size: 5.2 }
+    tale-8: { font_size: 4.6 }
+    tale-9: { font_size: 4 }
+    tale-10: { font_size: 3.5 }
+    # (The narrower cuts beside the text.)
+    half-page:
+      float: right
+      float_width: 52%
+      float_gap: 10
+  verse:
+    role:
+      # (Jabberwocky in italic, mirrored or not, as the book sets it.)
+      jabberwocky:
+        font_style: italic
+      # (The block's own size the tip's, so that each line is as tall as
+      # its own type: the tale tightens as it shrinks.)
+      tale:
+        font_size: 3.5
+        line_height: 1.1
+        padding: [0, 0, 0, 80]
+    border_left_width: 0
+    padding: [0, 0, 0, 18]
+    font_size: 10
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1em
+  table:
+    border_width: 0
+    font_size: 8.5
+  caption:
+    text_align: center
+    font_style: italic
+  header:
+    height: 13mm
+    vertical_align: bottom
+    font_size: 7.5
+    recto:
+      left: { content: '' }
+      center: { content: '[.running-head]#{chapter-title}#' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: '[.running-head]#{part-title}#' }
+      right: { content: '' }
+  footer:
+    height: 10mm
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Old Standard TT:400,400italic,700
+css: |
+  #content h2{text-align:center;text-transform:uppercase}
+  .sc{font-variant:small-caps}
+  .imageblock.half-page{float:right;width:52%;margin:0 0 1em 1em}
+  .imageblock.half-page img,.imageblock.three-quarter-page img{width:100%}
+  .imageblock.three-quarter-page{width:75%;margin:1em auto}
+  .verseblock.mirror{transform:scaleX(-1)}
+  .verseblock.jabberwocky pre{font-style:italic}
+  .tale-1{font-size:100%}.tale-2{font-size:90%}.tale-3{font-size:82%}.tale-4{font-size:74%}.tale-5{font-size:66%}.tale-6{font-size:59%}.tale-7{font-size:52%}.tale-8{font-size:46%}.tale-9{font-size:40%}.tale-10{font-size:35%}
+epub-css: |
+  .sc{font-variant:small-caps}
+  .verseblock.mirror{transform:scaleX(-1)}
+  .verseblock.jabberwocky pre{font-style:italic}
+  .tale-1{font-size:100%}.tale-2{font-size:90%}.tale-3{font-size:82%}.tale-4{font-size:74%}.tale-5{font-size:66%}.tale-6{font-size:59%}.tale-7{font-size:52%}.tale-8{font-size:46%}.tale-9{font-size:40%}.tale-10{font-size:35%}

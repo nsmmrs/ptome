@@ -1,0 +1,8 @@
+[#looking-glass-chapter-10,number=X]
+== Shaking.
+
+She took her off the table as she spoke, and shook her backwards and forwards with all her might.
+
+image::looking-glass-illustration-50.svg["The Red Queen is held up and shaken in Alice’s hands.",id=looking-glass-illustration-50,role=half-page]
+
+The Red Queen made no resistance whatever; only her face grew very small, and her eyes got large and green: and still, as Alice went on shaking her, she kept on growing shorter⁠—and fatter⁠—and softer⁠—and rounder⁠—and⁠—

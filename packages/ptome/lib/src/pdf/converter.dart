@@ -342,6 +342,25 @@ final class PdfConverter extends BuiltInConverter
           }
         }
       }
+      // (Ptome's `mirror` role: the block set mirrored, left to right, as
+      // Through the Looking-Glass prints Jabberwocky.)
+      if (_mirrors(node)) {
+        final out = _out;
+        _out = [];
+        _mirroring = true;
+        try {
+          return _convertBlock(node, opts);
+        } finally {
+          final boxes = _out;
+          _out = out;
+          _mirroring = false;
+          if (boxes.isNotEmpty) {
+            _out.add(
+              MirroredBox(boxes.length == 1 ? boxes.single : BlockBox(boxes)),
+            );
+          }
+        }
+      }
       if (_setsUpright(node) && !_upright && _verticalWriting) {
         final out = _out;
         _out = [];
@@ -376,10 +395,25 @@ final class PdfConverter extends BuiltInConverter
   WritingMode? _blockWritingMode(AbstractBlock node) {
     if (node is Document || node.role == null) return null;
     if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
-    if (node.hasRole('vertical-rl')) return WritingMode.verticalRightToLeft;
-    if (node.hasRole('vertical-lr')) return WritingMode.verticalLeftToRight;
+    if (node.includesRole('vertical-rl')) {
+      return WritingMode.verticalRightToLeft;
+    }
+    if (node.includesRole('vertical-lr')) {
+      return WritingMode.verticalLeftToRight;
+    }
     return null;
   }
+
+  /// Whether a block with the `mirror` role is being converted.
+  bool _mirroring = false;
+
+  /// Whether [node] is set mirrored: Ptome's `mirror` role (not under
+  /// `asciidoctor-compat`), outside another mirrored block.
+  bool _mirrors(AbstractBlock node) =>
+      !_mirroring &&
+      node is! Document &&
+      node.includesRole('mirror') &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
 
   /// Whether a table or a listing is being converted on a vertical page:
   /// set across the page, its text horizontal.
@@ -390,10 +424,10 @@ final class PdfConverter extends BuiltInConverter
   /// table's `vertical` role) sets a table in the columns' direction.
   bool _setsUpright(AbstractBlock node) => switch (node) {
     final Table table =>
-      !table.hasRole('vertical') && _s('table_writing_mode') != 'vertical',
+      !table.includesRole('vertical') && _s('table_writing_mode') != 'vertical',
     Block(context: BlockContext.listing || BlockContext.literal) => true,
     // (Ptome's `horizontal-tb` role: any block set across.)
-    _ when node is! Document && node.hasRole('horizontal-tb') => true,
+    _ when node is! Document && node.includesRole('horizontal-tb') => true,
     _ => false,
   };
 

@@ -574,6 +574,40 @@ final class _PlacedUpright extends _Placed {
   }
 }
 
+/// A box placed mirrored: [placed] at [left], [width] wide, [top] down,
+/// turned over about its vertical middle.
+final class _PlacedMirrored extends _Placed {
+  const new(this.placed, this.top, this.left, this.width, this.height);
+
+  final _Placed placed;
+  final double top;
+  final double left;
+  final double width;
+  @override
+  final double height;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) {
+    placed.visit(x + left, top - this.top, anchor, mark, tag);
+  }
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    final from = x + left;
+    // (x' = 2·from + width − x: its left edge where its right was.)
+    painter.canvas.saved(() {
+      painter.canvas.transform(Matrix(-1, 0, 0, 1, 2 * from + width, 0));
+      placed.paint(painter, from, top - this.top);
+    });
+  }
+}
+
 /// A box laid out in a turned frame, placed on a horizontal page in
 /// vertical lines: [length] down the page (its columns' length), [across]
 /// the page (its columns' extent).

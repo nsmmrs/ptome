@@ -396,6 +396,14 @@ left or the right, the block as wide across the page as its columns
 are; on a vertical page, `[.horizontal-tb]` sets any block across, as a
 table is. Not under `asciidoctor-compat`.
 
+Ptome's `mirror` role sets a block mirrored, left to right, to be read
+in a looking-glass (`[verse.mirror]`: Jabberwocky's first stanza as
+Through the Looking-Glass prints it): laid out as it would be, kept whole
+on one page, and turned over about the middle of its width, its border
+and background with it; the text read from the page is the text. HTML
+and EPUB take it from the look's CSS (`.mirror{transform:scaleX(-1)}`).
+Not under `asciidoctor-compat`.
+
 A number of one or two digits standing alone stands upright in the
 column (tate-chu-yoko, JLREQ 3.2.5): two digits side by side across the
 column in the font's half-width forms, an em long, set as an ideograph

@@ -1,0 +1,26 @@
+= Alice’s Adventures in Wonderland and Through the Looking-Glass
+Lewis Carroll
+:doctype: book
+:lang: en
+:look: alice
+:looksdir: {docdir}
+:imagesdir: images
+:sectnums:
+:sectnums-style: upper-roman
+:chapter-signifier: Chapter
+:figure-caption!:
+:description: Lewis Carroll’s two Alice books with John Tenniel’s illustrations, after Macmillan’s first editions of 1865 and 1871.
+
+= Alice’s Adventures in Wonderland
+
+include::wonderland.adoc[]
+
+= Through the Looking-Glass, and What Alice Found There
+// (Its chapters numbered from I again: a chapter is numbered when it
+// ends, so the counter is reset after the last of Wonderland's; whether
+// it is numbered is decided where it starts, so the chess problem, not a
+// chapter, starts with the numbers off.)
+:chapter-number: 0
+:sectnums!:
+
+include::looking-glass.adoc[]

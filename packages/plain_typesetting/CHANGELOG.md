@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `MirroredBox`: a box laid out as anywhere else, kept whole, and
+  painted turned over about its vertical middle (mirror type;
+  FEAT-yq6kff).
+
 - `SplitGraphic`: an inline image that is a piece of something drawn as
   one with the pieces of its `group` beside it on a line
   (`paintPieces`), which the line may break between: a warichu note's

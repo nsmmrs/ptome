@@ -780,7 +780,7 @@ extension _Paragraphs on PdfConverter {
   int? _gridLineOf(AbstractBlock node) {
     if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
     for (final role in node.roles) {
-      if (_n('role_${role.replaceAll('-', '_')}_grid_line') case final line?) {
+      if (_n('role_${_roleName(role)}_grid_line') case final line?) {
         return line.toInt();
       }
     }
