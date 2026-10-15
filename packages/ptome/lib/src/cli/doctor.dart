@@ -472,7 +472,7 @@ final List<NeededFont> lookFonts = [
     name: 'Libre Caslon Text',
     usedBy:
         "the magazine look (Caslon); the showcase's Gibbon, Tristram "
-        "Shandy and Byrne's Euclid looks",
+        "Shandy, Byrne's Euclid and Johnson's Dictionary looks",
     families: ['Libre Caslon Text'],
     styles: [FontStyle.normal, FontStyle.italic, FontStyle.bold],
     fileNames: {},

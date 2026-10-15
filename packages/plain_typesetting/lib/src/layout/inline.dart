@@ -35,7 +35,14 @@ final class TextRun extends InlineContent {
     this.slotAlign = TextAlign.left,
     this.emphasisMark,
     this.emphasisUnder = false,
+    this.flushRight = false,
   }) : super._();
+
+  /// Whether the run goes flush right at the end of the line it ends, or
+  /// flush right on a line of its own when it doesn't fit there, as TeX
+  /// sets a citation after a quotation (The TeXbook, chapter 14): kept
+  /// whole, at least two spaces from the text before it.
+  final bool flushRight;
 
   /// Where given, a mark set over each of the text's characters (but its
   /// spaces and punctuation) at half its size: emphasis marks, CSS's
@@ -110,6 +117,7 @@ final class TextRun extends InlineContent {
     slotAlign: slotAlign,
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
+    flushRight: flushRight,
   );
 
   /// This run in [style].
@@ -128,6 +136,7 @@ final class TextRun extends InlineContent {
     slotAlign: slotAlign,
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
+    flushRight: flushRight,
   );
 }
 

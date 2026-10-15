@@ -1,0 +1,98 @@
+# Johnson's Dictionary after its first edition (W. Strahan for J. and
+# P. Knapton and others, 1755), a folio in two columns: Caslon, the
+# entries hung, each headword in capitals and small capitals with its
+# stress marked, its part of speech in italic and its etymology in
+# brackets; the senses numbered at the edge; the quotations set in, the
+# word in italic, their authors in italic flush right at the end of the
+# line (or on a line of their own); each column headed by the first
+# three letters of its last word, spaced; the next page's first word,
+# the catchword, at the foot.
+#
+# Libre Caslon Text, Noto Serif for the Greek and the Saxon letters
+# (`ptome doctor --look johnson --looksdir test/showcase/johnson`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
+    display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
+  size:
+    text: { print: 8.6pt, screen: 18px }
+    headings: { print: [22pt, 14pt, 11pt, 9pt, 9pt, 9pt] }
+  leading: { print: 1.22, screen: 1.5 }
+  measure: { screen: 34em }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1C1C1C', link: '#1C1C1C' }
+  page: { size: [8in, 12.4in], margin: [0.9in, 0.6in, 0.7in, 0.65in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    fallbacks: [Noto Serif]
+  page:
+    columns: 2
+    column_gap: 18
+  running_content:
+    marks: w-
+  prose:
+    margin_bottom: 0
+    text_indent: 0
+  role:
+    entry: { text_indent: -0.9em }
+    sense: { text_indent: -0.9em }
+    cite: { margin_left: 0.9em, text_indent: 0.8em }
+    verse: { text_indent: 1.6em }
+    author: { flush: right, font_style: italic }
+    hw: { font_variant: small-caps }
+  title_page:
+    text_align: center
+    title:
+      top: 22%
+      font_size: 20
+      text_transform: uppercase
+      line_height: 1.3
+    subtitle:
+      font_style: italic
+      font_size: 12
+      line_height: 1.5
+    authors:
+      font_size: 12
+      text_transform: uppercase
+      margin_top: 24
+  header:
+    height: 0.75in
+    vertical_align: bottom
+    font_size: 16
+    character_spacing: 6
+    columns: '=50% =0% =50%'
+    recto:
+      left: { content: '{column-1-last-mark}' }
+      center: { content: '' }
+      right: { content: '{column-2-last-mark}' }
+    verso:
+      left: { content: '{column-1-last-mark}' }
+      center: { content: '' }
+      right: { content: '{column-2-last-mark}' }
+  footer:
+    height: 0.5in
+    border_width: 0
+    font_size: 8.6
+    columns: '<50% =0% >50%'
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '{page-catchword}' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '{page-catchword}' } }
+webfonts:
+  - Libre Caslon Text:400,400italic
+css: |
+  .paragraph.entry p,.paragraph.sense p{padding-left:.9em;text-indent:-.9em;margin:0}
+  .paragraph.cite p{padding-left:.9em;text-indent:.8em;margin:0}
+  .paragraph.cite.verse p{text-indent:1.6em}
+  .author{display:block;text-align:right;font-style:italic}
+  .hw{font-variant:small-caps}
+  .paragraph{margin:0}
+epub-css: |
+  .paragraph.entry p,.paragraph.sense p{padding-left:.9em;text-indent:-.9em;margin:0}
+  .paragraph.cite p{padding-left:.9em;text-indent:.8em;margin:0}
+  .author{display:block;text-align:right;font-style:italic}
+  .hw{font-variant:small-caps}

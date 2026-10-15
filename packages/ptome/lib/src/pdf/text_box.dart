@@ -475,6 +475,12 @@ final class _Item {
         ..normalizedSoftHyphen = normalizedSoftHyphen;
 }
 
+/// The size of small capitals a font lacks, of the text's.
+const double _smallCapitalScale = 0.8;
+
+/// Runs of lowercase letters (group 1) and of everything else.
+final RegExp _caseRx = RegExp(r'(\p{Ll}+)|[^\p{Ll}]+', unicode: true);
+
 /// A fragment's formatting with its font resolved.
 final class _Format {
   new(
@@ -504,6 +510,18 @@ final class _Format {
     image: image,
     features: features,
     smallCapitals: smallCapitals,
+    typographic: typographic,
+    tracking: tracking,
+  );
+
+  /// This format's small capitals at full size: the capitals of text
+  /// set in [smallCapitals].
+  _Format get _full => _Format(
+    fragment,
+    font,
+    size / _smallCapitalScale,
+    image: image,
+    features: features,
     typographic: typographic,
     tracking: tracking,
   );
@@ -636,17 +654,30 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         language: layout.language,
       )) {
         final format = _resolve(run, state, context);
-        var text = format.font.normalize(run.text);
-        if (format.smallCapitals) text = text.toUpperCase();
+        final text = format.font.normalize(run.text);
+        // (Small capitals the font lacks: its lowercase letters set as
+        // smaller capitals, its capitals as they are, as CSS synthesizes
+        // them; BUG-mpp8wr.)
+        final parts = format.smallCapitals
+            ? [
+                for (final m in _caseRx.allMatches(text))
+                  if (m[1] != null)
+                    (m[0]!.toUpperCase(), format)
+                  else
+                    (m[0]!, format._full),
+              ]
+            : [(text, format)];
         // One item per line of the fragment (Prawn's `format_array=`), its
         // words in capitals apart when they are tracked.
-        for (final m in _linesRx.allMatches(text)) {
-          for (final (piece, pieceFormat) in _capitalWords(
-            m[0]!,
-            format,
-            context,
-          )) {
-            items.add(_Item(piece, pieceFormat, defaultColor: defaultColor));
+        for (final (part, partFormat) in parts) {
+          for (final m in _linesRx.allMatches(part)) {
+            for (final (piece, pieceFormat) in _capitalWords(
+              m[0]!,
+              partFormat,
+              context,
+            )) {
+              items.add(_Item(piece, pieceFormat, defaultColor: defaultColor));
+            }
           }
         }
       }
@@ -1000,6 +1031,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         strikethrough: styles.contains(FragmentStyle.strikethrough),
         emphasisMark: fragment.textEmphasis,
         emphasisUnder: fragment.textEmphasisUnder,
+        flushRight: fragment.flushRight,
         link: link,
         anchor: fragment.isMarker ? fragment.name : null,
         // (A marker's anchor at the baseline, as the box reports it, but
@@ -1176,7 +1208,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     return _Format(
       fragment,
       font,
-      fake ? format.size * 0.8 : format.size,
+      fake ? format.size * _smallCapitalScale : format.size,
       features: features,
       smallCapitals: fake,
     );
@@ -2388,6 +2420,12 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               left: line.fragments.first.left,
               right: line.fragments.last.left + line.fragments.last.width,
               continues: i == 0 ? !startsLine : !lines[i - 1].hard,
+              text: [
+                for (final f in line.fragments)
+                  if (!f.format.fragment.isMarker &&
+                      !f.format.fragment.artifact)
+                    f.text,
+              ].join(),
             ),
       ],
       rest: done

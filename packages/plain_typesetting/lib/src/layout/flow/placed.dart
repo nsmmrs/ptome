@@ -126,6 +126,10 @@ sealed class _Placed {
 
   /// Paints the piece at ([x], [top]).
   void paint(_Painter painter, double x, double top);
+
+  /// The text of its first line, in reading order (null for none): a
+  /// catchword's source.
+  String? get firstText => null;
 }
 
 final class _Painter {
@@ -145,6 +149,9 @@ final class _Painter {
 /// it holds left out of the numbering.
 final class _PlacedUnnumbered extends _Placed {
   const new(this.placed);
+
+  @override
+  String? get firstText => placed.firstText;
 
   final _Placed placed;
 
@@ -172,6 +179,9 @@ final class _PlacedUnnumbered extends _Placed {
 /// [placed] painted as [element]'s content (on a [StructureCanvas]).
 final class _PlacedTagged extends _Placed {
   const new(this.element, this.placed);
+
+  @override
+  String? get firstText => placed.firstText;
 
   final StructureElement element;
   final _Placed placed;
@@ -230,6 +240,14 @@ final class _PlacedBlock extends _Placed {
     required this.anchor,
     this.marginBottom,
   });
+
+  @override
+  String? get firstText {
+    for (final (_, child) in children) {
+      if (child.firstText case final text?) return text;
+    }
+    return null;
+  }
 
   final BoxStyle style;
   final double width;
@@ -399,6 +417,20 @@ final class _PlacedLines extends _Placed {
     this.tag, {
     required this.first,
   });
+
+  @override
+  String? get firstText {
+    for (final line in lines) {
+      final text = [
+        for (final fragment in line.fragmentsInReadingOrder)
+          if (fragment case TextFragment(:final run, :final text)
+              when !run.artifact)
+            text,
+      ].join().trim();
+      if (text.isNotEmpty) return text;
+    }
+    return null;
+  }
 
   final Map<String, String> marks;
 
@@ -792,6 +824,14 @@ final class _PlacedCustom extends _Placed {
     this.tag,
   });
 
+  @override
+  String? get firstText {
+    for (final line in placement.lines) {
+      if (line.text.trim() case final text when text.isNotEmpty) return text;
+    }
+    return null;
+  }
+
   final double width;
   final BoxDecoration? decoration;
 
@@ -855,6 +895,14 @@ final class _PlacedCustom extends _Placed {
 
 final class _PlacedColumns extends _Placed {
   const new(this.columns, this.top, this.height, this.gap, this.rule);
+
+  @override
+  String? get firstText {
+    for (final (_, column) in columns) {
+      if (column.firstText case final text?) return text;
+    }
+    return null;
+  }
 
   final List<(double, _Placed)> columns;
   final double top;

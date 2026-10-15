@@ -564,6 +564,11 @@ extension _DocumentParts on PdfConverter {
           if (_opensPages(section)) ?_anchorPages[anchor],
       };
       _pageMarks = _marksByPage(result, pageCount: result.pageCount);
+      _columnMarks = _marksByColumn(result);
+      _catchwords = [
+        for (var page = 0; page < result.pageCount; page++)
+          _catchwordOf(result.firstText(page + 1)),
+      ];
       _pageUnits = _unitsByPage(result, pageCount: result.pageCount);
     }
 

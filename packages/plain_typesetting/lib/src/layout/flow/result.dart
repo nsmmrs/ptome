@@ -58,6 +58,23 @@ final class LayoutResult {
   /// The number of pages.
   int get pageCount => _pages.length;
 
+  /// The text of the first line on [page] (0-based), in reading order,
+  /// or null: what a catchword at the foot of the page before takes.
+  String? firstText(int page) {
+    if (page < 0 || page >= _pages.length) return null;
+    for (final (_, placed) in _pages[page].placed) {
+      if (placed?.firstText case final text?) return text;
+    }
+    return null;
+  }
+
+  /// The regions of [page] (0-based) the flow filled, in order: its
+  /// columns, the room under a block across them.
+  List<Rect> regions(int page) => [
+    if (page >= 0 && page < _pages.length)
+      for (final (region, _) in _pages[page].placed) region,
+  ];
+
   /// The page number of [anchor] (1-based), if it is anchored.
   int? pageOf(String anchor) => switch (anchors[anchor]) {
     AnchorPosition(:final page) => page + 1,

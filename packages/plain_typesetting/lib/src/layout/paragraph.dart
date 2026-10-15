@@ -1682,11 +1682,36 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         final shrink = paragraph.align == TextAlign.justify
             ? style.measure(' ') / 3
             : 0.0;
+        // (A run set flush right, as TeX sets a citation: the space before
+        // it taken away; no break, a fill, a break, two spaces, an empty
+        // box, no break, a fill: at the end of the line when it fits there,
+        // else on a line of its own, flush right either way.)
+        final flushing = content.flushRight && !identical(lastRun, content);
+        if (flushing) {
+          flush();
+          while (items.isNotEmpty && items.last is GlueItem) {
+            items.removeLast();
+          }
+          items
+            ..add(PenaltyItem(0, PenaltyItem.never, run: content))
+            ..add(const GlueItem.fill())
+            ..add(PenaltyItem(0, 50, run: content))
+            ..add(GlueItem(null, '', style.measure('  '), 0, 0))
+            ..add(BoxItem(content, '', 0))
+            ..add(PenaltyItem(0, PenaltyItem.never, run: content))
+            ..add(const GlueItem.fill());
+        }
         if (wordRun != content) flush();
         wordRun = content;
         lastRun = content;
         for (final rune in text.runes) {
-          breakBefore(offset, space: rune == 0x20 || rune == 0x09);
+          // (A run set flush right kept whole.)
+          if (!content.flushRight) {
+            breakBefore(offset, space: rune == 0x20 || rune == 0x09);
+          } else if (rune == 0x20 || rune == 0x09) {
+            flush();
+            items.add(PenaltyItem(0, PenaltyItem.never, run: content));
+          }
           wordRun = content;
           final length = rune > 0xffff ? 2 : 1;
           switch (rune) {
@@ -1700,7 +1725,8 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
               items.add(GlueItem(content, ' ', space, space / 2, shrink));
               spaced = true;
             case 0xad:
-              softHyphen = true;
+              // (Where a run set flush right is kept whole, not shown.)
+              softHyphen = !content.flushRight;
             case 0x200b || 0x2060 || 0xfeff:
               break; // zero width, not drawn
             default:
@@ -1722,9 +1748,10 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   }
   if (items.isEmpty) return items;
   _measureWithinWords(items);
-  items
-    ..add(const GlueItem.fill())
-    ..add(PenaltyItem(0, PenaltyItem.forced, run: lastRun));
+  // (No fill after a run set flush right that ends the paragraph: TeX's
+  // `\parfillskip=0pt`.)
+  if (lastRun?.flushRight != true) items.add(const GlueItem.fill());
+  items.add(PenaltyItem(0, PenaltyItem.forced, run: lastRun));
   return maxWidth == null ? items : _splitWide(items, maxWidth);
 }
 
@@ -2451,8 +2478,11 @@ List<Line> buildLines(
   for (final (number, end) in breaks.indexed) {
     final s = _skipDiscardable(items, start);
     final content = s < end ? items.sublist(s, end) : <LineItem>[];
+    // (A line ending in a fill, before a run set flush right that goes on
+    // the next line, isn't stretched: the fill takes its room.)
+    var filled = false;
     while (content.isNotEmpty && content.last is GlueItem) {
-      content.removeLast();
+      filled |= (content.removeLast() as GlueItem).stretch.isInfinite;
     }
     final breakItem = items[end];
     // (A hyphen added where a word is hyphenated; a break after the
@@ -2486,6 +2516,7 @@ List<Line> buildLines(
         // where alignLast says so, as CSS's `text-align-last: justify`.)
         justify:
             paragraph.align == TextAlign.justify &&
+            !(filled && !(breakItem is PenaltyItem && breakItem.isForced)) &&
             (!last || paragraph.alignLast == TextAlign.justify),
         emptyRun: emptyRun,
         expansion: expansion,
@@ -2879,7 +2910,15 @@ Line _line(
       paragraph.align == TextAlign.justify &&
       spaces > 0 &&
       natural > room + 1e-4;
-  final justified = justify || overfull;
+  // (A line with a run set flush right isn't stretched: its fills take
+  // the room, the run and what follows it set against the line's end.)
+  final flushAt = paragraph.rightToLeft
+      ? -1
+      : shaped.indexWhere(
+          (s) => s.$1 is TextRun && (s.$1 as TextRun).flushRight,
+        );
+  final stretch = justify && flushAt < 0;
+  final justified = stretch || overfull;
   // Protrusion: the line's last character hangs past its end and, when it
   // is justified, its first before its start, the line that much wider
   // (as the breaker counted them).
@@ -2916,7 +2955,7 @@ Line _line(
   }
   // Tibetan ending with a tsheg: filled out with tshegs, standing for no
   // text (r12a's Tibetan notes).
-  if (justify && paragraph.tshegPadding && shaped.isNotEmpty) {
+  if (stretch && paragraph.tshegPadding && shaped.isNotEmpty) {
     final (content, text, glyphs, width) = shaped.last;
     if (content is TextRun &&
         content.slotWidth == null &&
@@ -2941,7 +2980,7 @@ Line _line(
   }
   // Justification alternates (Nastaliq's wider letterforms): taken
   // before the spaces widen, from the line's end.
-  if (justify && paragraph.justificationAlternates && available > natural) {
+  if (stretch && paragraph.justificationAlternates && available > natural) {
     for (var i = shaped.length - 1; i >= 0; i--) {
       if (available - natural <= 0) break;
       final (content, text, glyphs, width) = shaped[i];
@@ -2960,7 +2999,7 @@ Line _line(
     }
   }
   // Kashida: Arabic words lengthened before the spaces are widened.
-  if (justify && paragraph.kashida > 0 && available > natural) {
+  if (stretch && paragraph.kashida > 0 && available > natural) {
     final runs = <KashidaRun?>[
       for (final (i, (content, _, glyphs, _)) in shaped.indexed)
         if (content case TextRun(:final style, slotWidth: null))
@@ -3017,7 +3056,7 @@ Line _line(
   // as much as at each space.)
   final gaps = [
     for (final (content, _, glyphs, _) in shaped)
-      if (justify &&
+      if (stretch &&
           !overfull &&
           paragraph.eastAsian &&
           content is TextRun &&
@@ -3029,7 +3068,7 @@ Line _line(
   final gapCount = gaps.fold(0, (sum, g) => sum + g.length);
   // (A justified line of Japanese or Chinese: adjusted in JLREQ 3.8's
   // order, each kind of place to its limit before the next.)
-  final adjusted = justify && !overfull && scale == 1 && paragraph.eastAsian
+  final adjusted = stretch && !overfull && scale == 1 && paragraph.eastAsian
       ? _eastAsianAdjustment(shaped, directions, available - natural)
       : null;
   final extra = adjusted != null || !justified || spaces + gapCount == 0
@@ -3041,7 +3080,7 @@ Line _line(
       ? natural + adjusted.total
       : (natural + extra * (spaces + gapCount)) * scale;
   // (A justified paragraph's line that isn't stretched: by alignLast.)
-  final align = paragraph.align == TextAlign.justify && !justify && !overfull
+  final align = paragraph.align == TextAlign.justify && !stretch && !overfull
       ? paragraph.alignLast
       : paragraph.align;
   var x =
@@ -3120,6 +3159,17 @@ Line _line(
   if (shaped.isEmpty && emptyRun != null) blankCap = capOf(emptyRun.style);
   final fragments = <LineFragment>[];
   for (final (i, (content, string, glyphs, natural)) in shaped.indexed) {
+    if (i == flushAt) {
+      var tail = 0.0;
+      for (final (_, _, _, w) in shaped.skip(i)) {
+        tail += w;
+      }
+      // (Two spaces from the text before it at the least, as broken.)
+      final gap = i > 0 && content is TextRun
+          ? content.style.measure('  ')
+          : 0.0;
+      x = math.max(x + gap, indent - leftHang + available - tail);
+    }
     switch (content) {
       case TextRun(:final style)
           when adjusted != null && adjusted.runs[i] != null:

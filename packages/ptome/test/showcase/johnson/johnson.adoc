@@ -1,0 +1,12 @@
+= A Dictionary of the English Language: In Which the Words Are Deduced from Their Originals, and Illustrated in Their Different Significations by Examples from the Best Writers
+Samuel Johnson
+:doctype: book
+:lang: en
+:look: johnson
+:looksdir: {docdir}
+:description: A page of Samuel Johnson’s Dictionary (1755), LEWD to LIBERTINE, transcribed from the first edition: two columns of entries, each word’s senses and its quotations, their authors set flush right, the columns headed by guide letters and each page ending with its catchword.
+
+[#l%notitle]
+== L
+
+include::text/l.adoc[]

@@ -31,6 +31,48 @@ extension _RunningContent on PdfConverter {
     return marks;
   }
 
+  /// [result]'s mark anchors by the column each is in (see
+  /// [_columnMarks]): the page's text block divided into its
+  /// `page_columns`.
+  List<List<(String, String)?>> _marksByColumn(LayoutResult result) {
+    final prefix = _s('running_content_marks');
+    if (prefix == null || prefix.isEmpty) return const [];
+    final count = math.max(1, (_n('page_columns') ?? 1).toInt());
+    final byPage = <int, List<(int, String)>>{};
+    for (final MapEntry(:key, :value) in result.anchors.entries) {
+      if (!key.startsWith(prefix)) continue;
+      final regions = result.regions(value.page);
+      if (regions.isEmpty) continue;
+      final left = regions.map((r) => r.left).reduce(math.min);
+      final right = regions.map((r) => r.right).reduce(math.max);
+      final column = ((value.x - left) / ((right - left) / count))
+          .floor()
+          .clamp(0, count - 1);
+      (byPage[value.page] ??= []).add((column, key));
+    }
+    final out = <List<(String, String)?>>[];
+    String? before;
+    for (var page = 0; page < result.pageCount; page++) {
+      final columns = <(String, String)?>[];
+      final marks = byPage[page] ?? const [];
+      for (var column = 0; column < count; column++) {
+        final here = [
+          for (final (c, key) in marks)
+            if (c == column) key,
+        ];
+        if (here.isNotEmpty) {
+          columns.add((here.first, here.last));
+          before = here.last;
+        } else {
+          final carried = before;
+          columns.add(carried == null ? null : (carried, carried));
+        }
+      }
+      out.add(columns);
+    }
+    return out;
+  }
+
   /// [result]'s units (see [_pageUnits]).
   List<(Unit, Unit)?> _unitsByPage(
     LayoutResult result, {
@@ -654,6 +696,20 @@ extension _RunningContent on PdfConverter {
       attributes['page-first-mark'] = _markText(first);
       attributes['page-last-mark'] = _markText(last);
     }
+    // Each column's (`{column-1-last-mark}`): the guide words a dictionary
+    // heads each of its columns with.
+    if (_columnMarks.elementAtOrNull(page.number - 1) case final columns?) {
+      for (final (i, marks) in columns.indexed) {
+        if (marks case (final first, final last)) {
+          attributes['column-${i + 1}-first-mark'] = _markText(first);
+          attributes['column-${i + 1}-last-mark'] = _markText(last);
+        }
+      }
+    }
+    // The catchword (`{page-catchword}`), the next page's first word.
+    if (_catchwords.elementAtOrNull(page.number - 1) case final word?) {
+      attributes['page-catchword'] = word;
+    }
     // The page's units (`running_content_units`): `{page-units}` is the
     // range they make as their scheme cites it, what its ends share said
     // once (`Gen 2:20–3:7`; `{page-units-long}`: `Genesis 2:20–3:7`).
@@ -805,4 +861,21 @@ extension _RunningContent on PdfConverter {
     }
     return escaped ? text.replaceAll(r'\{', '{') : text;
   }
+}
+
+/// The catchword of a page whose next page starts with [text]: its first
+/// word, with the word after it when that is a number (a dictionary's
+/// sense, `2. One`), escaped for running content.
+String? _catchwordOf(String? text) {
+  if (text == null) return null;
+  final words = text.trim().split(RegExp(r'\s+'));
+  if (words.isEmpty || words.first.isEmpty) return null;
+  final first = words.first;
+  final numeral = RegExp(r'^(\d+|[ivxlcdm]+|[IVXLCDM]+)[.)]?$|^\W+$')
+      .hasMatch(first);
+  final word = numeral && words.length > 1 ? '$first ${words[1]}' : first;
+  return word
+      .replaceAll('\u00ad', '')
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;');
 }

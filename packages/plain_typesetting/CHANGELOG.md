@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `TextRun.flushRight`: a run set flush right at the end of the line it
+  ends, or on a line of its own, as TeX sets a citation; the line before
+  it, ending in its fill, isn't stretched. `LayoutResult.firstText` (a
+  page's first line, for a catchword), `LayoutResult.regions` and
+  `PieceLine.text`.
+
 - `UprightBox(sideways: true)`: a box turned a quarter to the left on a
   horizontal page, its region its own. Text set with `hist`, `dlig` or
   `hlig` is shaped by the font's layout tables in full, so a contextual

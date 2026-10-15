@@ -1076,7 +1076,11 @@ final class PieceLine {
     required this.left,
     required this.right,
     this.continues = false,
+    this.text = '',
   });
+
+  /// Its text, as read (a catchword's source).
+  final String text;
 
   /// The baseline, down from the piece's top.
   final double baseline;

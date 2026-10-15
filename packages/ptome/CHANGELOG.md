@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: what a dictionary's pages take (Johnson's Dictionary): a
+  negative `role_<role>_text_indent` hangs a paragraph and
+  `role_<role>_margin_left` sets one in (FEAT-43wrgt);
+  `role_<role>_flush: right` sets text flush right at the end of the
+  line it ends, or on a line of its own, as TeX sets a citation
+  (FEAT-tc5vgk); running content takes each column's first and last
+  mark, `{column-<n>-last-mark}` (FEAT-0ks2ly), and the next page's
+  first word, `{page-catchword}` (FEAT-mm205k); small capitals a font
+  lacks keep its capitals at full size (BUG-mpp8wr).
 - PDF: a paragraph's drop initial beside a floated image is drawn and
   its first lines set in beside it; the letter was taken from the text
   and never drawn (BUG-qqz54w). `tool/showcase_byrne.dart` draws the

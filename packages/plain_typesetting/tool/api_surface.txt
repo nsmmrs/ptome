@@ -490,11 +490,13 @@ final class KnuthPlassLineBreaker extends ItemLineBreaker
   int? maxHyphenRun
 final class LayoutResult
   List<P> render<P extends LayoutPage>(LayoutDocument<P> document, {String Function(String)? destinationName})
+  List<Rect> regions(int page)
   List<String> unsetSideNotes
   List<int> anchorPages(String anchor)
   List<int> boundaries
   Map<String, ({int first, int last})> tagPages
   Map<String, AnchorPosition> anchors
+  String? firstText(int page)
   int boundaryBefore(int page)
   int pageCount
   int? pageOf(String anchor)
@@ -668,7 +670,8 @@ final class PenaltyItem extends LineItem
   static double forced
   static double never
 final class PieceLine
-  PieceLine(double baseline, {required double left, required double right, bool continues = false})
+  PieceLine(double baseline, {required double left, required double right, bool continues = false, String text = ''})
+  String text
   bool continues
   double baseline
   double left
@@ -770,11 +773,12 @@ final class TextRun extends InlineContent
   TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false})
   TextStyle style
   bool anchorOnBaseline
   bool artifact
   bool emphasisUnder
+  bool flushRight
   bool strikethrough
   bool underline
   double? slotWidth

@@ -1,0 +1,362 @@
+// The page of the first edition from LEWD to LIBERTINE (volume II,
+// the Wellcome Collection's copy, its scans n44–n46), transcribed for
+// the showcase; each entry anchored by its word, its reference text
+// the first three letters the running heads take.
+
+
+[[w-lewd,LEW]]
+[.entry]
+[.hw]#LEWD.# _adj._ [læƿede, Saxon.]
+
+[.sense]
+{empty}1. Lay; not clerical. Obsolete.
+
+[.cite.verse%hardbreaks]
+For _lewyd_ men this book I writ. [.author]#Bishop Grosthead.#
+
+[.cite.verse%hardbreaks]
+So these great clerks their little wisdom shew
+To mock the _lewd,_ as learn’d in this as they. [.author]#Davies.#
+
+[.sense]
+{empty}2. Wicked; bad; naughty.
+
+[.cite]
+If some be admitted into the ministry, either void of learning, or _lewd_ in life, are all the rest to be condemned? [.author]#Whitgift.#
+
+[.cite]
+Before they did oppress the people, only by colour of a _lewd_ custom, they did afterwards use the same oppressions by warrant. [.author]#Davies on Ireland.#
+
+[.sense]
+{empty}3. Lustful; libidinous.
+
+[.cite.verse%hardbreaks]
+He is not lolling on a _lewd_ love bed,
+But on his knees at meditation. [.author]#Shakespeare’s Rich. III.#
+
+[.cite.verse%hardbreaks]
+Then _lewd_ Anchemolus he laid in dust,
+Who stain’d his stepdam’s bed with impious lust. [.author]#Dryden.#
+
+[[w-lewdly,LEW]]
+[.entry]
+[.hw]#Le´wdly.# _adj._ [from _lewd._]
+
+[.sense]
+{empty}1. Wickedly; naughtily.
+
+[.cite.verse%hardbreaks]
+A sort of naughty persons, _lewdly_ bent,
+Have practis’d dangerously against your state. [.author]#Shakesp.#
+
+[.sense]
+{empty}2. Libidinously; lustfully.
+
+[.cite.verse%hardbreaks]
+He lov’d fair lady Eltred, _lewdly_ lov’d,
+Whose wanton pleasures him too much did please,
+That quite his heart from Guendeline remov’d. [.author]#Spenser.#
+
+[.cite.verse%hardbreaks]
+So _lewdly_ dull his idle works appear,
+The wretched texts deserve no comments here. [.author]#Dryden.#
+
+[[w-lewdness,LEW]]
+[.entry]
+[.hw]#Le´wdness.# _n. s._ [from _lewd._] Lustful licentiousness.
+
+[.cite.verse%hardbreaks]
+Suffer no _lewdness,_ nor indecent speech,
+Th’ apartment of the tender youth to reach. [.author]#Dryd. Juv.#
+
+[.cite]
+Damianus’s letter to Nicholas is an authentick record of the _lewdnesses_ committed under the reign of celibacy. [.author]#Atterbury.#
+
+[[w-lewdster,LEW]]
+[.entry]
+[.hw]#Le´wdster.# _n. s._ [from _lewd._] A lecher; one given to criminal pleasures.
+
+[.cite.verse%hardbreaks]
+Against such _lewdsters,_ and their lechery,
+Those that betray them do no treachery. [.author]#Shakespeare.#
+
+[[w-lewis-dor,LEW]]
+[.entry]
+[.hw]#_LE´WIS D’OR._# _n. s._ [French.] A golden French coin, in value twelve livres, now settled at seventeen shillings. [.author]#Dict.#
+
+[[w-lexicographer,LEX]]
+[.entry]
+[.hw]#Lexico´grapher.# _n. s._ [λεξικὸν and γράφω; _lexicographe,_ French.] A writer of dictionaries; a harmless drudge, that busies himself in tracing the original, and detailing the signification of words.
+
+[.cite]
+Commentators and _lexicographers_ acquainted with the Syriac language, have given these hints in their writings on scripture. [.author]#Watts’s Improvement of the Mind.#
+
+[[w-lexicography,LEX]]
+[.entry]
+[.hw]#Lexico´graphy.# _n. s._ [λεξικὸν and γράφω.] The art or practice of writing dictionaries.
+
+[[w-lexicon,LEX]]
+[.entry]
+[.hw]#LE´XICON.# _n. s._ [λεξικόν.] A dictionary; a book teaching the signification of words.
+
+[.cite]
+Though a linguist should pride himself to have all the tongues that Babel cleft the world into, yet if he had not studied the solid things in them as well as the words and _lexicons,_ yet he were nothing so much to be esteemed a learned man as any yeoman competently wise in his mother dialect only. [.author]#Milton.#
+
+[[w-ley,LEY]]
+[.entry]
+[.hw]#Ley.# _n. s._
+
+[.cite]
+_Ley, lee, lay,_ are all from the Saxon leaȝ, a field or pasture, by the usual melting of the letter ȝ or g. [.author]#Gibson’s Cam.#
+
+[[w-liable,LIA]]
+[.entry]
+[.hw]#Li´able.# _n. s._ [_liable,_ from _lier,_ old French.] Obnoxious; not exempt; subject.
+
+[.cite.verse%hardbreaks]
+But what is strength without a double share
+Of wisdom? vast, unwieldy, burthensome,
+Proudly secure, yet _liable_ to fall
+By weakest subtleties. [.author]#Milton’s Agonistes.#
+
+[.cite]
+The English boast of Spenser and Milton, who neither of them wanted genius or learning; and yet both of them are _liable_ to many censures. [.author]#Dryden’s Juvenal.#
+
+[.cite]
+This, or any other scheme, coming from a private hand, might be _liable_ to many defects. [.author]#Swift.#
+
+[[w-liar,LIA]]
+[.entry]
+[.hw]#Li´ar.# _n. s._ [from _lie._ This word would analogically be _lier;_ but this orthography has prevailed, and the convenience of distinction from _lier,_ he who lies down, is sufficient to confirm it.] One who tells falshood; one who wants veracity.
+
+[.cite.verse%hardbreaks]
+She’s like a _liar,_ gone to burning hell!
+’Twas I that kill’d her. [.author]#Shakespeare’s Othello.#
+
+[.cite.verse%hardbreaks]
+He approves the common _liar,_ fame,
+Who speaks him thus at Rome. [.author]#Shakesp. Ant. and Cleop.#
+
+[.cite]
+I do not reject his observation as untrue, much less condemn the person himself as a _liar,_ whensoever it seems to be contradicted. [.author]#Boyle.#
+
+[.cite.verse%hardbreaks]
+Thy better soul abhors a __liar__’s part,
+Wise is thy voice, and noble is thy heart. [.author]#Pope’s Odyssey.#
+
+[[w-liard,LIA]]
+[.entry]
+[.hw]#Li´ard.# _adj._
+
+[.sense]
+{empty}1. Mingled roan. [.author]#Markham.#
+
+[.sense]
+{empty}2. _Liard_ in Scotland denotes gray-haired: as, he’s a _liard_ old man.
+
+[[w-libation,LIB]]
+[.entry]
+[.hw]#Liba´tion.# _n. s._ [_libatio,_ Latin.]
+
+[.sense]
+{empty}1. The act of pouring wine on the ground in honour of some deity.
+
+[.cite]
+In digging new earth pour in some wine, that the vapour of the earth and wine may comfort the spirits, provided it be not taken for a heathen sacrifice, or _libation_ to the earth. [.author]#Bacon’s Natural History.#
+
+[.sense]
+{empty}2. The wine so poured.
+
+[.cite]
+They had no other crime to object against the Christians, but that they did not offer up _libations,_ and the smoke of sacrifices, to dead men. [.author]#Stillingfleet on Rom. Idolatry.#
+
+[.cite.verse%hardbreaks]
+The goblet then she took, with nectar crown’d,
+Sprinkling the first _libations_ on the ground. [.author]#Dryden’s Æn.#
+
+[[w-libbard,LIB]]
+[.entry]
+[.hw]#Li´bbard.# _n. s._ [_liebard,_ German; _leopardus,_ Lat.] A leopard.
+
+[.cite.verse%hardbreaks]
+Make the _libbard_ stern,
+Leave roaring, when in rage he for revenge did yearn. [.author]#Spenser’s Fairy Queen, b. i.#
+
+[.cite.verse%hardbreaks]
+The _libbard,_ and the tiger, as the mole
+Rising, the crumbled earth above them threw. [.author]#Milton.#
+
+[.cite]
+The torrid parts of Africk are by Piso resembled to a __libbard__’s skin, the distance of whose spots represent the disperseness of habitations, or towns of Africk. [.author]#Brerewood.#
+
+[[w-libel,LIB]]
+[.entry]
+[.hw]#LI´BEL.# _n. s._ [_libellus,_ Latin; _libelle,_ French.]
+
+[.sense]
+{empty}1. A satire; defamatory writing; a lampoon.
+
+[.cite]
+Are we reproached for the name of Christ? that ignominy serves but to advance our future glory; every such _libel_ here becomes panegyrick there. [.author]#Decay of Piety.#
+
+[.cite.verse%hardbreaks]
+Good heav’n! that sots and knaves should be so vain,
+To wish their vile resemblance may remain!
+And stand recorded, at their own request,
+To future days, a _libel_ or a jest. [.author]#Dryden.#
+
+[.sense]
+{empty}2. [In the civil law.] A declaration or charge in writing against a person in court.
+
+[[w-libel-2,LIB]]
+[.entry]
+To [.hw]#Li´bel.# _v. n._ [from the noun.] To spread defamation; generally written or printed.
+
+[.cite.verse%hardbreaks]
+Sweet scrauls to fly about the streets of Rome:
+What’s this but _libelling_ against the senate? [.author]#Shakespeare.#
+
+[.cite.verse%hardbreaks]
+He, like a privileg’d spy, whom nothing can
+Discredit, _libels_ now ’gainst each great man. [.author]#Donne.#
+
+[[w-libel-3,LIB]]
+[.entry]
+To [.hw]#Li´bel.# _v. a._ To satirise; to lampoon.
+
+[.cite]
+Is then the peerage of England any thing dishonoured when a peer suffers for his treason? if he be _libelled,_ or any way defamed, he has his scandalum magnatum to punish the offender. [.author]#Dryden.#
+
+[.cite.verse%hardbreaks]
+But what so pure which envious tongues will spare?
+Some wicked wits have _libelled_ all the fair. [.author]#Pope.#
+
+[[w-libeller,LIB]]
+[.entry]
+[.hw]#Li´beller.# _n. s._ [from _libel._] A defamer by writing; a lampooner.
+
+[.cite]
+Our common _libellers_ are as free from the imputation of wit, as of morality. [.author]#Dryden’s Juvenal.#
+
+[.cite]
+The squibs are those who, in the common phrase, are called _libellers_ and lampooners. [.author]#Tatler.#
+
+[.cite]
+The common _libellers,_ in their invectives, tax the church with an insatiable desire of power and wealth, equally common to all bodies of men. [.author]#Swift.#
+
+[[w-libellous,LIB]]
+[.entry]
+[.hw]#Li´bellous.# _n. s._ [from _libel._] Defamatory.
+
+[.cite]
+It was the most malicious surmise that had ever been brewed, howsoever countenanced by a _libellous_ pamphlet. [.author]#Wotton.#
+
+[[w-liberal,LIB]]
+[.entry]
+[.hw]#Li´beral.# _adj._ [_liberalis,_ Latin; _liberal,_ French.]
+
+[.sense]
+{empty}1. Not mean; not low in birth; not low in mind.
+
+[.sense]
+{empty}2. Becoming a gentleman.
+
+[.sense]
+{empty}3. Munificent; generous; bountiful; not parcimonious.
+
+[.cite.verse%hardbreaks]
+Her name was Mercy, well known over all
+To be both gracious and eke _liberal._ [.author]#Spens. Fa. Queen.#
+
+[.cite.verse%hardbreaks]
+Sparing would shew a worse sin than ill doctrine.
+Men of his way should be most _liberal,_
+They’re set here for examples. [.author]#Shakesp. Henry VIII.#
+
+[.cite.verse%hardbreaks]
+Needs must the pow’r
+That made us, and for us this ample world,
+Be infinitely good, and of his good
+As _liberal_ and free, as infinite. [.author]#Milton.#
+
+[.cite]
+There is no art better than to be _liberal_ of praise and commendation to others, in that wherein a man’s self hath any perfection. [.author]#Bacon’s Essays.#
+
+[.cite.verse%hardbreaks]
+The _liberal_ are secure alone;
+For what we frankly give, for ever is our own. [.author]#Granville.#
+
+[.cite]
+Several clergymen, otherwise little fond of obscure terms, are, in their sermons, very _liberal_ of all those which they find in ecclesiastical writers, as if it were our duty to understand them. [.author]#Swift.#
+
+[[w-liberality,LIB]]
+[.entry]
+[.hw]#Libera´lity.# _n. s._ [_liberalitas,_ Latin; _liberalité,_ Fr.] Munificence; bounty; generosity; generous profusion.
+
+[.cite.verse%hardbreaks]
+Why should he despair, that knows to court
+With words, fair looks, and _liberality?_ [.author]#Shakespeare.#
+
+[.cite.verse%hardbreaks]
+Such moderation with thy bounty join,
+That thou may’st nothing give that is not thine;
+That _liberality_ is but cast away,
+Which makes us borrow what we cannot pay. [.author]#Denham.#
+
+[[w-liberally,LIB]]
+[.entry]
+[.hw]#Libera´lly.# _adv._ [from _liberal._] Bounteously; bountifully; largely.
+
+[.cite]
+If any of you lack wisdom, let him ask of God, that giveth to all men _liberally,_ and upbraideth not. [.author]#James i. 5.#
+
+[[w-libertine,LIB]]
+[.entry]
+[.hw]#Li´bertine.# _n. s._ [_libertin,_ French.]
+
+[.sense]
+{empty}1. One unconfined; one at liberty.
+
+[.cite.verse%hardbreaks]
+When he speaks,
+The air, a charter’d _libertine,_ is still;
+And the mute wonder lurketh in men’s ears,
+To steal his sweet and honied sentences. [.author]#Shakesp. Hen. V.#
+
+[.sense]
+{empty}2. One who lives without restraint or law.
+
+[.cite.verse%hardbreaks]
+Man, the lawless _libertine,_ may rove
+Free and unquestion’d. [.author]#Rowe’s Jane Shore.#
+
+[.cite]
+Want of power is the only bound that a _libertine_ puts to his views upon any of the sex. [.author]#Clarissa.#
+
+[.sense]
+{empty}2. One who pays no regard to the precepts of religion.
+
+[.cite.verse%hardbreaks]
+They say this town is full of couzenage,
+As nimble jugglers, that deceive the eye;
+Disguised cheaters, prating mountebanks,
+And many such like _libertines_ of sin. [.author]#Shakespeare.#
+
+[.cite]
+That word may be applied to some few _libertines_ in the audience. [.author]#Collier’s View of the Stage.#
+
+[.sense]
+{empty}3. [In law; _libertinus,_ Lat.] A freedman; or rather, the son of a freedman.
+
+[.cite]
+Some persons are forbidden to be accusers on the score of their sex, as women; others on the score of their age, as pupils and infants; others on the score of their conditions, as _libertines_ against their patrons. [.author]#Ayliffe’s Parergon.#
+
+[[w-libertine-2,LIB]]
+[.entry]
+[.hw]#Li´bertine.# _adj._ [_libertin,_ French.] Licentious; irreligious.
+
+[.cite]
+There are men that marry not, but chuse rather a _libertine_ and impure single life, than to be yoked in marriage. [.author]#Bacon.#
+
+[.cite]
+Might not the queen make diligent enquiry, if any person about her should happen to be of _libertine_ principles or morals. [.author]#Swift’s Project for Advancement of Religion.#

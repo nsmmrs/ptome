@@ -48,6 +48,61 @@ final class _AfterThree implements Hyphenator {
 }
 
 void main() {
+  group('a run set flush right, as TeX sets a citation', () {
+    final author = TextRun(
+      'Bacon’s Nat\u00adural His\u00adtory.',
+      _body,
+      flushRight: true,
+    );
+    double end(Line line) {
+      final last = line.fragments.whereType<TextFragment>().last;
+      return last.x + last.width;
+    }
+
+    for (final breaker in const [
+      FirstFitLineBreaker(),
+      KnuthPlassLineBreaker(),
+    ]) {
+      for (final align in [TextAlign.left, TextAlign.justify]) {
+        test('${breaker.runtimeType}, $align: at the end of the line it '
+            'ends', () {
+          final lines = _lines(
+            [TextRun('Not long. ', _body), author],
+            width: 200,
+            breaker: breaker,
+            align: align,
+          );
+          expect(lines, hasLength(1));
+          expect(end(lines.single), closeTo(200, 0.01));
+          expect(_text(lines.single), startsWith('Not long.'));
+        });
+
+        test('${breaker.runtimeType}, $align: on a line of its own when it '
+            "doesn't fit, kept whole", () {
+          final lines = _lines(
+            [TextRun('${_lorem.substring(0, 60)} ', _body), author],
+            width: 200,
+            breaker: breaker,
+            align: align,
+          );
+          expect(
+            _text(lines.last).replaceAll('\u00ad', '').trim(),
+            'Bacon’s Natural History.',
+          );
+          expect(_text(lines.last), isNot(endsWith('\u00ad')));
+          expect(end(lines.last), closeTo(200, 0.01));
+          for (final line in lines.take(lines.length - 1)) {
+            expect(_text(line), isNot(contains('Bacon')));
+          }
+          // (The line before it not stretched: its fill takes the room.)
+          final before = lines[lines.length - 2];
+          final words = before.fragments.whereType<TextFragment>();
+          expect(words.last.x + words.last.width, lessThan(195));
+        });
+      }
+    }
+  });
+
   test('first fit fills each line, and keeps the words in order', () {
     final lines = _lines([TextRun(_lorem, _body)]);
     expect(lines.length, greaterThan(2));

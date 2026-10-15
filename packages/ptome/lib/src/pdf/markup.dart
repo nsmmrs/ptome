@@ -298,6 +298,10 @@ final class Fragment {
   /// Whether [textEmphasis] goes under the characters.
   bool textEmphasisUnder = false;
 
+  /// Whether the text goes flush right at the end of its line, or on a
+  /// line of its own (`role_<role>_flush: right`, modern engine).
+  bool flushRight = false;
+
   /// The text's language (BCP 47, from a `lang` attribute), or null for
   /// the block's.
   String? language;
@@ -372,6 +376,7 @@ final class Fragment {
     ..textDecorationWidth = textDecorationWidth
     ..textEmphasis = textEmphasis
     ..textEmphasisUnder = textEmphasisUnder
+    ..flushRight = flushRight
     ..language = language
     ..textTransform = textTransform
     ..align = align
@@ -478,6 +483,9 @@ final class FragmentSettings {
   /// Whether the emphasis mark goes under the characters.
   bool? textEmphasisUnder;
 
+  /// Whether the text goes flush right at the end of its line.
+  bool? flushRight;
+
   /// The text transform.
   String? textTransform;
 
@@ -527,6 +535,7 @@ final class FragmentSettings {
     if (textEmphasisUnder != null) {
       fragment.textEmphasisUnder = textEmphasisUnder!;
     }
+    if (flushRight != null) fragment.flushRight = flushRight!;
     if (textTransform != null) fragment.textTransform = textTransform;
     if (letterSpacing != null) fragment.letterSpacing = letterSpacing;
     if (align != null) fragment.align = align;
@@ -709,6 +718,8 @@ final class MarkupTransform {
           target.textEmphasis = emphasisMark(theme.string(key));
         case 'text_emphasis_position':
           target.textEmphasisUnder = theme.string(key) == 'under';
+        case 'flush':
+          target.flushRight = theme.string(key) == 'right';
         case 'text_transform':
           target.textTransform = theme.string(key);
         case 'letter_spacing':

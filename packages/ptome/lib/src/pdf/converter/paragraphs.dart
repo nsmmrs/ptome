@@ -533,10 +533,15 @@ extension _Paragraphs on PdfConverter {
     // The modern engine: a role's indent, and space before the next block,
     // in place of the prose's (`role_<role>_text_indent`,
     // `role_<role>_margin_bottom`).
+    var setIn = 0.0;
     for (final role in roles) {
       if (_keys('role_$role').length('text_indent', font.size)
           case final value?) {
         indent = value;
+      }
+      if (_keys('role_$role').length('margin_left', font.size)
+          case final value?) {
+        setIn = value;
       }
       final parent = node.parent;
       final last =
@@ -547,6 +552,12 @@ extension _Paragraphs on PdfConverter {
       }
     }
 
+    // (A negative indent hangs, modern engine: the paragraph set in by
+    // it, its first line at the edge, as a dictionary's entries; and
+    // `role_<role>_margin_left` sets it in by that much more, as its
+    // quotations; FEAT-43wrgt.)
+    final modern = !asciidoctorCompat(_document, CompatFormat.pdf);
+    final hang = modern ? (indent < 0 ? -indent : 0.0) + setIn : 0.0;
     var content = node.content() ?? '';
     // The modern engine: a paragraph of concealed index terms alone takes
     // no room (their anchors where it is); `index_terms_paragraph: line`
@@ -751,7 +762,10 @@ extension _Paragraphs on PdfConverter {
         final paragraph = ParagraphBox(
           text,
           style: BoxStyle(
-            margin: EdgeInsets(bottom: dropped == null ? marginBottom : 0),
+            margin: EdgeInsets(
+              left: hang,
+              bottom: dropped == null ? marginBottom : 0,
+            ),
             anchor: node.id,
             runsAround: true,
             gridLine: _gridLineOf(node),
@@ -816,7 +830,7 @@ extension _Paragraphs on PdfConverter {
       CustomBox(
         text,
         style: BoxStyle(
-          margin: EdgeInsets(bottom: marginBottom),
+          margin: EdgeInsets(left: hang, bottom: marginBottom),
           anchor: node.id,
           // The modern engine: beside a block floating to a side (a pull
           // quote, a sidebar), the paragraph runs around it.

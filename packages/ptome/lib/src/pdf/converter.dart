@@ -1891,6 +1891,15 @@ final class PdfConverter extends BuiltInConverter
   /// one before it for both.
   List<(String, String)?> _pageMarks = const [];
 
+  /// Each page's columns' first and last marks (`running_content_marks`):
+  /// `{column-<n>-first-mark}`, `{column-<n>-last-mark}`, a column without
+  /// one taking the last before it.
+  List<List<(String, String)?>> _columnMarks = const [];
+
+  /// Each page's catchword (`{page-catchword}`): the first word of the
+  /// next page's text, with the word after it when it is a number.
+  List<String?> _catchwords = const [];
+
   /// The first and last unit of the level `running_content_units` names
   /// (`verse`, or `bible.verse`) on each page (by 0-based page), from the
   /// document's units (ADR-0020); a page without one has the last one
