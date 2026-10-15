@@ -1,0 +1,188 @@
+== @MAT
+
+[.book-title]
+The Gospel According to St. Matthew
+
+=== @3
+
+[discrete.pericope]
+==== The Mission of John the Baptist
+
+[.parallel]
+(<<Isaiah 40:1–5; Mark 1:1–8; Luke 3:1–20; John 1:19–28>>)
+
+@ In those days came ##John##note:x[<<Luke 1:13–17; John 1:6–8>>] the Baptist, ##preaching##note:x[<<Isa 40:3–6>>] in the wilderness of Judaea,
+@ And saying, ##Repent##note:x[<<Matt 4:17; Mark 1:15; Luke 24:47>>] ye: for the kingdom of heaven is at hand.
+@ For this is he that was spoken of ##by##note:x[<<Isa 40:3; John 1:23>>] the prophet Esaias, saying, The voice of one crying in the wilderness, ##Prepare##note:x[<<Mal 3:1>>] ye the way of the Lord, make his paths straight.
+@ And the same John had ##his raiment##note:x[<<2 Kgs 1:8; Zech 13:4; Matt 11:8>>] of camel’s hair, and a leathern girdle about his loins; and his meat was locusts and wild honey.
+@ ##Then went out to him Jerusalem, and all Judaea, and all the region round about Jordan,##note:x[<<Mark 1:5>>]
+@ And ##were##note:x[<<Matt 3:13–16; Acts 19:18>>] baptized of him in Jordan, ##confessing##note:x[<<Acts 19:18>>] their sins.
+
+@ ¶ But when he saw many of ##the Pharisees##note:x[<<Matt 22:23>>] and Sadducees come to his baptism, he said unto them, ##O generation##note:x[<<Matt 12:34; 23:33>>] of vipers, who hath warned you to flee from the wrath to come?
+@ Bring ##forth##note:x[<<Luke 3:8; Acts 26:20; 2 Pet 1:4–8>>] therefore fruits meet for repentance:
+@ And ##think##note:x[<<Luke 3:8>>] not to say within yourselves, ##We##note:x[<<Rom 9:7–8>>] have Abraham to __our__ father: for I say unto you, that ##God##note:x[<<Gal 3:27–29>>] is able of these stones to raise up children unto Abraham.
+@ And now also ##the axe##note:x[<<Luke 3:9>>] is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit ##is hewn##note:x[<<Matt 7:19; John 15:6>>] down, and cast into the fire.
+@ I indeed ##baptize##note:x[<<Luke 3:16>>] you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: ##he shall##note:x[<<Isa 4:4; Luke 3:16>>] baptize you with the Holy Ghost, and __with__ fire:
+@ Whose fan __is__ in his hand, and ##he will throughly##note:x[<<Mal 4:1>>] purge his floor, ##and gather##note:x[<<Matt 13:30>>] his wheat into the garner; ##but##note:x[<<Mal 4:1>>] he will burn up the chaff with unquenchable fire.
+
+[discrete.pericope]
+==== The Baptism of Jesus
+
+[.parallel]
+(<<Mark 1:9–11; Luke 3:21–22; John 1:29–34>>)
+
+@ ¶ Then cometh Jesus from Galilee to Jordan unto John, to be baptized of him.
+@ But ##John##note:x[<<John 13:6–8>>] forbad him, saying, ##I have##note:x[<<John 3:3–7; Acts 1:5–8>>] need to be baptized of thee, and comest thou to me?
+@ And Jesus answering said unto him, [wj}Suffer __it to be so__ now: ##for##note:x[<<Isa 42:21; John 4:34; 13:15>>] thus it becometh us to fulfil all righteousness.{wj] Then he suffered him.
+@ And ##Jesus##note:x[<<Mark 1:10>>], when he was baptized, went up straightway out of the water: and, ##lo##note:x[<<Luke 3:21>>], the heavens were opened unto him, ##and he##note:x[<<Isa 11:2>>] saw the Spirit of God descending like a dove, and lighting upon him:
+@ And lo a voice from heaven, saying, ##This##note:x[<<Ps 2:7; Isa 42:1; Matt 17:5>>] is my beloved Son, in whom I am well pleased.
+
+=== @5
+
+[discrete.pericope]
+==== The Sermon on the Mount
+
+@ And seeing the multitudes, ##he went##note:x[<<Matt 15:29; Mark 3:13; John 6:2–3>>] up into a mountain: and when he was set, his disciples came unto him:
+@ ##And he opened his mouth, and taught them, saying,##note:x[<<Luke 6:20–26; Acts 8:35; 10:34>>]
+
+[discrete.pericope]
+==== The Beatitudes
+
+[.parallel]
+(<<Psalms 1:1–6; Luke 6:20–23>>)
+
+@ [wj}Blessed __are__ ##the poor##note:x[<<Ps 34:18; Prov 29:23; Isa 66:2>>] in spirit: for theirs is the kingdom of heaven.
+@ ##Blessed __are__ they that mourn: for they shall be comforted.##note:x[<<Isa 61:2–3; 2 Cor 7:9–10; Rev 21:4>>]
+@ Blessed __are__ ##the meek##note:x[<<Isa 29:19; Jas 3:13>>]: for ##they##note:x[<<Ps 37:11>>] shall inherit the earth.
+@ Blessed ##__are__##note:x[<<Ps 107:9; John 6:27>>] they which do hunger and thirst after righteousness: ##for##note:x[<<John 4:14>>] they shall be filled.
+@ Blessed ##__are__##note:x[<<2 Sam 22:26; Matt 6:14–15; Eph 4:32>>] the merciful: for they shall obtain mercy.
+@ Blessed ##__are__##note:x[<<Ps 24:4; 51:10; Heb 10:22>>] the pure in heart: for they shall see God.
+@ Blessed ##__are__##note:x[<<Rom 12:18; Heb 12:14; Jas 3:16–18>>] the peacemakers: for they shall be called the children of God.
+@ Blessed ##__are__##note:x[<<2 Cor 4:17; 1 Pet 3:13–14>>] they which are persecuted ##for##note:x[<<Jas 1:12>>] righteousness’ sake: for theirs is the kingdom of heaven.
+@ Blessed are ye, when __men__ shall revile you, and persecute __you__, and shall say all manner of evil against you ##falsely##note:x[<<1 Pet 4:14>>], ##for##note:x[<<Mark 13:13; Luke 21:17>>] my sake.
+@ ##Rejoice##note:x[<<Luke 6:23>>], and be exceeding glad: ##for great##note:x[<<Luke 6:23>>] __is__ your reward in heaven: ##for so##note:x[<<Luke 6:23>>] persecuted they the prophets which were before you.
+
+[discrete.pericope]
+==== Salt and Light
+
+[.parallel]
+(<<Mark 9:49–50; Luke 14:34–35; Philippians 2:12–18>>)
+
+@ ¶ Ye are ##the salt##note:x[<<Col 4:6>>] of the earth: but ##if##note:x[<<Mark 9:49–50; Luke 14:34–35>>] the salt have lost his savour, wherewith shall it be salted? it is thenceforth good for nothing, but to be cast out, and to be trodden under foot of men.
+@ Ye are ##the light##note:x[<<Eph 5:8–14; Phil 2:15; 1 Thess 5:5>>] of the world. A city that is set on an hill cannot be hid.
+@ Neither ##do##note:x[<<Mark 4:21; Luke 8:16; 11:33>>] men light a candle, and put it under a bushel, but on a candlestick; and it giveth light unto all that are in the house.
+@ Let your light so shine before men, ##that##note:x[<<Titus 2:7; 1 Pet 2:12>>] they may see your good works, ##and##note:x[<<1 Pet 2:12>>] glorify your Father which is in heaven.
+
+[discrete.pericope]
+==== The Fulfillment of the Law
+
+@ ¶ Think not that I am come ##to destroy the law##note:x[<<Luke 16:17; Rom 10:4>>], or the prophets: I am not come to destroy, ##but##note:x[<<Gal 4:4–5>>] to fulfil.
+@ For verily I say unto you, ##Till##note:x[<<Luke 16:17>>] heaven and earth ##pass##note:x[<<Ps 119:89–90; Isa 40:8>>], one jot or one tittle shall in no wise pass from the law, till all be fulfilled.
+@ Whosoever therefore ##shall break##note:x[<<Jas 2:10–11>>] one of ##these##note:x[<<Deut 12:32>>] least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall ##do##note:x[<<Matt 28:20>>] and teach __them__, the same shall be called great in the kingdom of heaven.
+@ For I say unto you, That except your righteousness shall ##exceed##note:x[<<Rom 9:30–32; 10:2–3; Phil 3:9>>] __the righteousness__ of the scribes and Pharisees, ye shall in no case enter into the kingdom of heaven.
+
+[discrete.pericope]
+==== Anger and Reconciliation
+
+[.parallel]
+(<<Luke 12:57–59>>)
+
+@ ¶ Ye have heard that it was said by them of old time, ##Thou##note:x[<<Exod 20:13; Deut 5:17>>] shalt not kill; ##and##note:x[<<Num 35:30–34>>] whosoever shall kill shall be in danger of the judgment:
+@ But I say unto you, That whosoever is angry with ##his brother##note:x[<<1 John 2:9; 3:14–15; 4:20–21>>] without a cause shall be in danger of the judgment: and whosoever shall say to his brother, Raca, shall be in danger of the council: but whosoever shall say, Thou fool, shall be in danger of hell fire.
+@ Therefore if ##thou##note:x[<<Matt 8:4; 23:19>>] bring thy gift to the altar, and there ##rememberest##note:x[<<Lev 6:2–6>>] that thy brother hath ought against thee;
+@ Leave ##there##note:x[<<Matt 18:15–17; Rom 12:17–18; Jas 5:16>>] thy gift before the altar, and go thy way; first be reconciled to thy brother, and then come and offer thy gift.
+@ Agree ##with##note:x[<<Prov 25:8; Luke 12:58–59; 14:31–32>>] thine adversary quickly, whiles thou art in the way with him; lest at any time the adversary deliver thee to the judge, and the judge deliver thee to the officer, and thou be cast into prison.
+@ Verily I say unto thee, ##Thou##note:x[<<Matt 18:34; Luke 12:59>>] shalt by no means come out thence, till thou hast paid the uttermost farthing.
+
+[discrete.pericope]
+==== Adultery
+
+[.parallel]
+(<<Leviticus 18:1–30>>)
+
+@ ¶ Ye have heard that it was said by them of old time, ##Thou##note:x[<<Exod 20:14; Deut 5:18; Prov 6:32>>] shalt not commit adultery:
+@ But I say unto you, ##That##note:x[<<Prov 6:25; Jas 1:14–15; 1 John 2:16>>] whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart.
+@ And ##if##note:x[<<Mark 9:43–48>>] thy right eye offend thee, ##pluck##note:x[<<Rom 8:13; Col 3:5>>] it out, and cast __it__ from thee: for it is profitable for thee that one of thy members should perish, and not __that__ thy whole body should be cast into hell.
+@ And if thy right hand ##offend##note:x[<<Matt 18:6–7; Rom 14:20–21; 1 Pet 2:8>>] thee, cut it off, and cast __it__ from thee: for it is profitable for thee that one of thy members should perish, and not __that__ thy whole body should be cast into hell.
+
+[discrete.pericope]
+==== Divorce
+
+[.parallel]
+(<<Deuteronomy 24:1–5; Luke 16:18>>)
+
+@ It hath been said, ##Whosoever##note:x[<<Deut 24:1–4; Jer 3:1; Matt 19:7>>] shall put away his wife, let him give her a writing of divorcement:
+@ But I say unto you, That ##whosoever##note:x[<<Luke 16:18; Rom 7:3; 1 Cor 7:10–11>>] shall put away his wife, saving for the cause of fornication, causeth her to commit adultery: and whosoever shall marry her that is divorced committeth adultery.
+
+[discrete.pericope]
+==== Oaths and Vows
+
+[.parallel]
+(<<Numbers 30:1–16>>)
+
+@ ¶ Again, ye have heard that it hath been said by them of old time, ##Thou##note:x[<<Lev 19:12; Deut 23:23; Eccl 5:4–6>>] shalt not forswear thyself, but shalt perform unto the Lord thine oaths:
+@ But I say unto you, ##Swear##note:x[<<Deut 23:21–23; Jas 5:12>>] not at all; neither by ##heaven##note:x[<<Isa 66:1>>]; for it is God’s throne:
+@ Nor by the earth; for it is his footstool: neither by Jerusalem; for it is ##the city##note:x[<<2 Chr 6:6; Ps 48:2; Mal 1:14>>] of the great King.
+@ Neither ##shalt##note:x[<<Matt 23:16–21>>] thou swear by thy head, ##because##note:x[<<Matt 6:27; Luke 12:25>>] thou canst not make one hair white or black.
+@ But ##let##note:x[<<Col 4:6; Jas 5:12>>] your communication be, Yea, yea; Nay, nay: for whatsoever is more than these ##cometh##note:x[<<Jas 5:12>>] of evil.
+
+[discrete.pericope]
+==== Love Your Enemies
+
+[.parallel]
+(<<Leviticus 24:17–23; Luke 6:27–36>>)
+
+@ ¶ Ye have heard that it hath been said, ##An eye##note:x[<<Exod 21:22–27; Lev 24:19–20; Deut 19:19>>] for an eye, and a tooth for a tooth:
+@ But I say unto you, ##That##note:x[<<Rom 12:17–19; 1 Thess 5:15; 1 Pet 3:9>>] ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also.
+@ ##And if any man will sue thee at the law, and take away thy coat, let him have __thy__ cloke also.##note:x[<<Luke 6:29; 1 Cor 6:7>>]
+@ And whosoever shall compel thee to go a mile, go with him twain.
+@ ##Give to him that asketh thee, and from him that would borrow of thee turn not thou away.##note:x[<<Prov 19:17; Luke 6:30–36; Heb 13:16>>]
+
+@ ¶ Ye have heard that it hath been said, ##Thou##note:x[<<Lev 19:18; Gal 5:13–14>>] shalt love thy neighbour, ##and hate##note:x[<<Ps 139:21–22>>] thine enemy.
+@ ##But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you;##note:x[<<Luke 6:27–28; Rom 12:14; 1 Pet 3:9>>]
+@ That ##ye##note:x[<<Luke 6:35>>] may be the children of your Father which is in heaven: ##for##note:x[<<Ps 145:9; Acts 14:17>>] he maketh his sun to rise on the evil and on the good, and sendeth rain on the just and on the unjust.
+@ For ##if##note:x[<<Luke 6:32–35; 1 Pet 2:20–23>>] ye love them which love you, what reward have ye? do not even the ##publicans##note:x[<<Matt 9:10–11>>] the same?
+@ And if ye ##salute##note:x[<<Luke 6:32>>] your brethren only, ##what##note:x[<<Matt 5:20; 1 Pet 2:20>>] do ye more __than others__? do not even the publicans so?
+@ Be ##ye##note:x[<<Lev 19:2; Jas 1:4; 1 Pet 1:15–16>>] therefore perfect, even as your Father which is in heaven is perfect.{wj]
+
+=== @28
+
+[discrete.pericope]
+==== The Resurrection
+
+[.parallel]
+(<<Mark 16:1–8; Luke 24:1–12; John 20:1–9>>)
+
+@ In ##the end##note:x[<<Mark 16:1–2; Luke 23:56; John 20:1–10>>] of the sabbath, as it began to dawn toward the first __day__ of the week, came Mary Magdalene and the other Mary to see the sepulchre.
+@ And, behold, ##there##note:x[<<Acts 16:26>>] was a great earthquake: ##for##note:x[<<Mark 16:3–5; Luke 24:2–5>>] the angel of the Lord descended from heaven, and came and rolled back the stone from the door, and sat upon it.
+@ His countenance was like lightning, and ##his raiment##note:x[<<Mark 9:3; 16:5; Acts 1:10>>] white as snow:
+@ And for fear of him ##the##note:x[<<Matt 28:11>>] keepers did ##shake##note:x[<<Dan 10:7; Rev 1:17>>], and became as dead __men__.
+@ And the angel answered and said unto the women, ##Fear##note:x[<<Isa 41:10; Heb 1:14; Rev 1:17–18>>] not ye: for I know that ye seek Jesus, which was crucified.
+@ He is not here: for he is risen, ##as##note:x[<<Matt 12:40; Luke 24:6–8>>] he said. ##Come##note:x[<<Mark 16:6>>], see the place where the Lord lay.
+@ And ##go##note:x[<<Matt 28:10; Luke 24:22–24>>] quickly, and tell his disciples that he is risen from the dead; and, behold, ##he goeth##note:x[<<Matt 26:32>>] before you into Galilee; there shall ye see him: lo, I have told you.
+@ And they departed quickly from the sepulchre ##with##note:x[<<Ps 2:11; Mark 16:8; Luke 24:36–41>>] fear and great joy; and did run to bring his disciples word.
+
+@ ¶ And ##as##note:x[<<John 20:14–16>>] they went to tell his disciples, behold, Jesus met them, saying, [wj}All hail.{wj] And they came and held him by the feet, and ##worshipped##note:x[<<Matt 14:33; 28:17>>] him.
+@ Then said Jesus unto them, [wj}Be not afraid: ##go##note:x[<<Matt 28:7>>] tell ##my##note:x[<<John 20:17; Rom 8:29>>] brethren that they go into Galilee, and there shall they see me.
+
+[discrete.pericope]
+==== The Report of the Guards
+
+{wj]@ ¶ Now when they were going, behold, some of the watch came into the city, and shewed unto the chief priests all the things that were done.
+@ And when they were assembled with the elders, and had taken counsel, they gave large money unto the soldiers,
+@ Saying, Say ye, His disciples came by night, and ##stole##note:x[<<Matt 26:64>>] him __away__ while we slept.
+@ And if this come to the governor’s ears, we will persuade him, and secure you.
+@ So ##they took##note:x[<<Matt 26:15; 1 Tim 6:10>>] the money, and did as they were taught: and this saying is commonly reported among the Jews ##until##note:x[<<Matt 27:8>>] this day.
+
+[discrete.pericope]
+==== The Great Commission
+
+[.parallel]
+(<<Mark 16:14–18>>)
+
+@ ¶ Then the eleven disciples ##went##note:x[<<Matt 26:32; 28:7, 10>>] away into Galilee, into a mountain where Jesus had appointed them.
+@ And when they saw him, they ##worshipped##note:x[<<Ps 2:12; 45:11; Matt 28:9>>] him: but some doubted.
+@ And Jesus came and spake unto them, saying, [wj}##All##note:x[<<Matt 11:27; John 3:35; 1 Pet 3:22>>] power is given unto me in heaven and in earth.
+
+@ ¶ Go ##ye therefore##note:x[<<Mark 16:15–16; Acts 1:8>>], and teach all nations, ##baptizing##note:x[<<Acts 2:38–39>>] them in the name of the Father, and of the Son, and of the Holy Ghost:
+@ Teaching them to observe all things whatsoever I have commanded you: and, lo, ##I am##note:x[<<Josh 1:5; Isa 41:10; Acts 18:9–10>>] with you alway, __even__ unto the end of the world.{wj] Amen.

@@ -1,0 +1,347 @@
+== @ROM
+
+[.book-title]
+The Epistle of Paul the Apostle to the Romans
+
+=== @1
+
+[discrete.pericope]
+==== Paul Greets the Saints in Rome
+
+@ Paul, ##a servant##note:x[<<Rom 15:16>>] of Jesus Christ, ##called##note:x[<<Acts 9:15>>] __to be__ an apostle, separated unto ##the gospel##note:x[<<Rom 15:16>>] of God,
+@ ( ##Which##note:x[<<Acts 10:43; Titus 1:2>>] he had promised afore ##by##note:x[<<Rom 3:21>>] his prophets in the holy scriptures,)
+@ Concerning ##his Son##note:x[<<Gal 4:4>>] Jesus Christ our Lord, ##which##note:x[<<Matt 1:1>>] was made of the seed of David ##according##note:x[<<Gal 4:4>>] to the flesh;
+@ And declared __to be__ ##the Son##note:x[<<Eph 1:19–23; Heb 5:5–6>>] of God with power, ##according##note:x[<<Heb 9:14>>] to the spirit of holiness, by the resurrection from the dead:
+@ By whom we have received grace and apostleship, ##for obedience to the faith##note:x[<<Acts 6:7; Rom 16:26>>] among all nations, ##for his name##note:x[<<Mal 1:11>>]:
+@ Among whom are ye also ##the called##note:x[<<1 Pet 2:9; 2 Pet 1:10; Rev 17:14>>] of Jesus Christ:
+@ ##To all##note:x[<<Col 1:2; Jude 1:1>>] that be in Rome, beloved of God, called __to be__ saints: ##Grace##note:x[<<Col 1:2>>] to you and peace from God our Father, and the Lord Jesus Christ.
+
+[discrete.pericope]
+==== Unashamed of the Gospel
+
+@ First, ##I thank##note:x[<<Rom 6:17>>] my God through Jesus Christ for you all, ##that your##note:x[<<Rom 16:19; 1 Thess 1:8–9>>] faith is spoken of throughout the whole world.
+@ For ##God##note:x[<<Rom 9:1>>] is my witness, ##whom##note:x[<<2 Tim 1:3>>] I serve with my spirit in the gospel of his Son, ##that##note:x[<<Eph 6:18>>] without ceasing I make mention of you always in my prayers;
+@ Making ##request##note:x[<<Rom 15:30–32; Phlm 1:22>>], if by any means now at length I might have a prosperous journey ##by the will##note:x[<<Acts 18:21>>] of God to come unto you.
+@ For I long to see you, that I may impart unto you some spiritual gift, ##to the##note:x[<<Rom 16:25; 2 Thess 3:3; 2 Pet 1:12>>] end ye may be established;
+@ That is, ##that I may##note:x[<<1 Thess 3:7–10>>] be comforted together with you by the mutual faith both of you and me.
+@ Now I would not have you ignorant, brethren, ##that oftentimes##note:x[<<Acts 19:21>>] I purposed to come unto you, ( but was let hitherto,) ##that I##note:x[<<Phil 4:17>>] might have some fruit among you also, ##even##note:x[<<2 Tim 4:17>>] as among other Gentiles.
+@ I am ##debtor##note:x[<<Acts 9:15; 1 Cor 9:16–23>>] ##both to##note:x[<<1 Cor 9:16>>] the Greeks, and to the Barbarians; both to the wise, and to the unwise.
+@ So, as much as in me is, ##I am##note:x[<<Isa 6:8; 1 Cor 9:17; 2 Cor 10:15–16>>] ready to preach the gospel to you that are at Rome also.
+@ For ##I am##note:x[<<Mark 8:38; 2 Tim 1:8; 1 Pet 4:16>>] not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth; to the Jew first, and also to the Greek.
+@ For therein is the righteousness of God revealed from faith to faith: as it is written, ##The just##note:x[<<Hab 2:4; Gal 3:11; Heb 10:38>>] shall live by faith.
+
+[discrete.pericope]
+==== God’s Wrath against Sin
+
+@ For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men, ##who hold##note:x[<<Rom 1:32; 2 Thess 2:10; 1 Tim 4:1–2>>] the truth in unrighteousness;
+@ Because ##that which##note:x[<<Ps 19:1–6; Acts 14:16; Rom 1:20>>] may be known of God is manifest in them; for God hath shewed __it__ unto them.
+@ For the invisible things of him ##from the##note:x[<<Ps 8:3; Rom 1:19>>] creation of the world are clearly seen, being understood by the things that are made, ##__even__ his##note:x[<<Isa 40:26>>] eternal power and Godhead; so that they are without excuse:
+@ Because that, when they knew God, they glorified __him__ not as God, neither were thankful; ##but became##note:x[<<2 Kgs 17:15; Jer 2:5; Eph 4:17–18>>] vain in their imaginations, and their foolish heart was darkened.
+@ ##Professing themselves to be wise, they became fools,##note:x[<<Prov 26:12; Rom 11:25; 1 Cor 1:19–21>>]
+@ And ##changed##note:x[<<Ps 106:20; Jer 2:11>>] the glory of the uncorruptible God into ##an image##note:x[<<Acts 17:29>>] made like to corruptible man, and to birds, and fourfooted beasts, and creeping things.
+
+@ Wherefore ##God##note:x[<<Ps 81:11–12; Matt 15:14; Acts 7:42>>] also gave them up to uncleanness through the lusts of their own hearts, to dishonour their own bodies between themselves:
+@ Who changed the truth of God ##into a lie##note:x[<<Jer 13:25; Hab 2:18>>], and worshipped and served ##the creature##note:x[<<1 John 2:15–16>>] more than the Creator, who is blessed for ever. Amen.
+@ For this cause God gave them up unto ##vile##note:x[<<Lev 18:22–28; 1 Tim 1:10; Jude 1:7>>] affections: for even their women did change the natural use into that which is against nature:
+@ And likewise also the men, leaving the natural use of the woman, burned in their lust one toward another; men with men working that which is unseemly, and receiving in themselves ##that recompence##note:x[<<Rom 1:23–24>>] of their error which was meet.
+@ And even ##as they did##note:x[<<Rom 1:21; 2 Thess 2:10–12>>] not like to ##retain##note:x[<<Titus 1:16>>] God in __their__ knowledge, God gave them over to a reprobate mind, to do those things which are not convenient;
+@ Being filled with all unrighteousness, fornication, wickedness, covetousness, maliciousness; full of envy, murder, debate, deceit, malignity; ##whisperers##note:x[<<Ps 41:7; Prov 16:28; 2 Cor 12:20>>],
+@ Backbiters, haters of God, despiteful, proud, ##boasters##note:x[<<2 Pet 2:18; Jude 1:16>>], inventors of evil things, ##disobedient##note:x[<<2 Tim 3:2>>] to parents,
+@ note:x[<<2 Tim 3:3>>]##Without understanding##note:x[<<Prov 18:2; Rom 3:11>>], covenantbreakers, without natural affection, implacable, unmerciful:
+@ Who ##knowing##note:x[<<Rom 1:21; 2:1–5>>] the judgment of God, that they which commit such things are ##worthy##note:x[<<Rom 6:21>>] of death, not only do the same, but have pleasure in them that do them.
+
+=== @3
+
+[discrete.pericope]
+==== God Remains Faithful
+
+@ What ##advantage##note:x[<<Gen 25:32; Rom 2:25–29>>] then hath the Jew? or what profit __is there__ of circumcision?
+@ Much every way: chiefly, ##because##note:x[<<Neh 9:13–14; Rom 9:4>>] that unto them were committed ##the oracles##note:x[<<Acts 7:38>>] of God.
+@ For what ##if some##note:x[<<Rom 9:6; Heb 4:2>>] did not believe? ##shall##note:x[<<2 Tim 2:13>>] their unbelief make the faith of God without effect?
+@ ##God forbid##note:x[<<Gal 2:17>>]: yea, let God be true, ##but every##note:x[<<Ps 116:11>>] man a liar; as it is written, ##That thou##note:x[<<Ps 51:4>>] mightest be justified in thy sayings, and mightest overcome when thou art judged.
+@ But if our unrighteousness commend the righteousness of God, what shall we say? ##__Is__ God##note:x[<<Rom 2:5>>] unrighteous who taketh vengeance? (##I speak##note:x[<<Rom 6:19; Gal 3:15>>] as a man)
+@ God forbid: ##for then##note:x[<<Gen 18:25; Job 8:3; Acts 17:31>>] how shall God judge the world?
+@ For if the truth of God hath more abounded through my lie unto his glory; why yet am I also judged as a sinner?
+@ And not __rather__, ( as we be slanderously reported, and as some affirm that we say,) ##Let us##note:x[<<Rom 6:1, 15>>] do evil, that good may come? whose damnation is just.
+
+[discrete.pericope]
+==== There Is No One Righteous
+
+[.parallel]
+(<<Psalms 14:1–7; Psalms 53:1–6; Isaiah 59:1–17>>)
+
+@ ##What then##note:x[<<Rom 6:15>>]? ##are we##note:x[<<Isa 65:5>>] better __than they__? No, in no wise: for we have before proved both Jews and Gentiles, ##that they##note:x[<<Gal 3:22>>] are all under sin;
+@ As it is written, ##There##note:x[<<Ps 14:1–3; 53:1–3>>] is ##none##note:x[<<Rom 3:23>>] righteous, no, not one:
+@ There is ##none that understandeth##note:x[<<Ps 14:2–4; 53:2; Titus 3:3>>], there is none that seeketh after God.
+@ ##They are##note:x[<<Ps 14:3; Isa 59:8>>] all gone out of the way, they are together become unprofitable; ##there is none##note:x[<<Eccl 7:20>>] that doeth good, no, not one.
+@ Their ##throat##note:x[<<Ps 5:9>>] __is__ an open sepulchre; ##with their##note:x[<<Ps 5:9>>] tongues they have used deceit; ##the poison##note:x[<<Ps 140:3>>] of asps __is__ under their lips:
+@ ##Whose mouth __is__ full of cursing and bitterness:##note:x[<<Ps 10:7; 59:12; 109:17–18>>]
+@ ##Their feet __are__ swift to shed blood:##note:x[<<Prov 1:16; 6:18; Isa 59:7–8>>]
+@ Destruction and misery __are__ in their ways:
+@ ##And the way of peace have they not known:##note:x[<<Isa 59:8; Luke 1:79; Rom 5:1>>]
+@ ##There is no fear of God before their eyes.##note:x[<<Ps 36:1; Prov 16:6; 23:17>>]
+
+@ Now we know that ##what things##note:x[<<Rom 2:12–18>>] soever the law saith, it saith to them who are under the law: that every mouth may be stopped, ##and all the##note:x[<<Gal 3:10, 22>>] world may become guilty before God.
+@ ##Therefore##note:x[<<Acts 13:39; Rom 3:28; Gal 2:16>>] by the deeds of the law there shall no flesh be justified in his sight: for by the law __is__ the knowledge of sin.
+
+[discrete.pericope]
+==== Righteousness through Faith in Christ
+
+[.parallel]
+(<<Philippians 3:1–11>>)
+
+@ But now the ##righteousness##note:x[<<Jer 33:16; Phil 3:9>>] of God without the law is manifested, being witnessed by the law ##and the##note:x[<<Acts 10:43>>] prophets;
+@ Even the righteousness of God ##__which is__##note:x[<<Rom 8:1>>] by faith of Jesus Christ unto all and upon all them that believe: ##for there##note:x[<<Rom 10:12; Gal 3:28>>] is no difference:
+@ For ##all have##note:x[<<Eccl 7:20; Rom 3:9; 1 John 1:8–10>>] sinned, and come short of the glory of God;
+@ Being ##justified##note:x[<<Titus 3:5–7>>] freely by his grace ##through##note:x[<<Col 1:14; 1 Pet 1:18–19>>] the redemption that is in Christ Jesus:
+@ Whom God hath ##set forth##note:x[<<1 Pet 1:18–20>>] ##__to be__##note:x[<<1 John 4:10>>] a propitiation through faith in his blood, to declare his righteousness for the ##remission##note:x[<<Rom 3:23–24>>] of sins that are past, through the forbearance of God;
+@ To declare, __I say__, at this time his righteousness: ##that he##note:x[<<Deut 32:4; Acts 13:38–39>>] might be just, ##and##note:x[<<Rom 4:5>>] the justifier of him which believeth in Jesus.
+@ ##Where##note:x[<<Rom 2:23; 4:2; 1 Cor 1:29–31>>] __is__ boasting then? It is excluded. By what law? of works? Nay: but by the law of faith.
+@ Therefore we conclude that a man is ##justified by faith without the deeds of the law##note:x[<<Gal 2:16; 3:8; Titus 3:7>>].
+@ ##__Is he__ the God of the Jews only? __is he__ not also of the Gentiles?##note:x[<<Zech 2:11; Eph 3:6; Col 3:11>>] Yes, of the Gentiles also:
+@ Seeing __it is__ one God, which shall ##justify the circumcision by faith, and uncircumcision through faith.##note:x[<<Gal 3:8, 20; Phil 3:3>>]
+@ ##Do we##note:x[<<Matt 5:17; Gal 2:21>>] then make void the law through faith? God forbid: ##yea##note:x[<<Rom 10:4>>], we establish the law.
+
+=== @8
+
+[discrete.pericope]
+==== Walking by the Spirit
+
+[.parallel]
+(<<Ezekiel 36:16–38; Galatians 5:16–26>>)
+
+@ __There is__ therefore now ##no##note:x[<<John 3:18–19; Gal 3:13>>] condemnation to them which are ##in##note:x[<<2 Cor 5:17>>] Christ Jesus, who walk not after the flesh, but after the Spirit.
+@ For the law of the ##Spirit##note:x[<<2 Cor 3:6>>] of life in Christ Jesus ##hath##note:x[<<Rom 6:18; 2 Cor 3:17>>] made me free from the law of sin and death.
+@ ##For what##note:x[<<Acts 13:39; Heb 7:18–19>>] the law could not do, in that it was weak through the flesh, ##God##note:x[<<Gal 4:4–5>>] sending his own Son in the likeness of sinful flesh, and for sin, condemned sin in the flesh:
+@ ##That##note:x[<<Gal 5:22–24; Eph 5:26–27; Col 1:22>>] the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.
+@ ##For they##note:x[<<John 3:6>>] that are after the flesh do ##mind##note:x[<<1 Cor 2:14>>] the things of the flesh; but they that are after the Spirit the things ##of the Spirit##note:x[<<1 Cor 2:14>>].
+@ For ##to be carnally minded##note:x[<<Rom 8:7, 13; Gal 6:8>>] __is__ death; but to be spiritually minded __is__ life and peace.
+@ Because ##the carnal mind##note:x[<<Jas 4:4; 1 John 2:15–16>>] __is__ enmity against God: for it is not subject to the law of God, ##neither##note:x[<<1 Cor 2:14>>] indeed can be.
+@ So then ##they that##note:x[<<John 3:5–6; Rom 8:9>>] are in the flesh cannot ##please##note:x[<<Heb 11:5–6>>] God.
+@ But ye are not in the flesh, but in ##the Spirit##note:x[<<Gal 4:6>>], ##if so be##note:x[<<1 Cor 3:16; Gal 4:6>>] that the Spirit of God dwell in you. Now if any man have not the Spirit of Christ, he is none of his.
+@ And ##if Christ##note:x[<<John 17:23; Eph 3:17>>] __be__ in you, the body __is__ dead because of sin; but the Spirit __is__ ##life##note:x[<<2 Cor 5:21>>] because of righteousness.
+@ But if the Spirit of him that raised up Jesus from the dead dwell in you, ##he that raised##note:x[<<Rom 6:4–5; 2 Cor 4:14>>] up Christ from the dead shall also quicken your ##mortal##note:x[<<2 Cor 4:11>>] bodies by his Spirit that dwelleth in you.
+
+[discrete.pericope]
+==== Heirs with Christ
+
+@ Therefore, brethren, ##we are##note:x[<<Rom 6:2–15; 1 Cor 6:19–20; 1 Pet 4:2–3>>] debtors, not to the flesh, to live after the flesh.
+@ For if ##ye live##note:x[<<Gal 6:8; Col 3:5–6>>] after the flesh, ye shall die: ##but if##note:x[<<1 Pet 2:11>>] ye through the Spirit do mortify the deeds of the body, ye shall live.
+@ For as many as are ##led##note:x[<<Gal 5:16, 18>>] by the Spirit of God, ##they are##note:x[<<Gal 3:26>>] the sons of God.
+@ For ye have not received note:x[<<Gal 4:5–7>>]##the spirit##note:x[<<1 Cor 2:12; 2 Tim 1:7>>] of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father.
+@ The ##Spirit##note:x[<<2 Cor 1:22; 5:5; 1 John 4:13>>] itself beareth witness with our spirit, that we are the children of God:
+@ And ##if children##note:x[<<Gal 3:29; 4:7; Eph 3:6>>], then heirs; heirs of God, and joint-heirs with Christ; if so be that we suffer with __him__, that we may be also glorified together.
+
+[discrete.pericope]
+==== Future Glory
+
+[.parallel]
+(<<2 Corinthians 5:1–10>>)
+
+@ For ##I reckon##note:x[<<Matt 5:11–12; 2 Cor 4:17–18>>] that the sufferings of this present time __are__ not worthy __to be compared__ with ##the glory##note:x[<<1 Pet 4:13>>] which shall be revealed in us.
+@ For ##the earnest##note:x[<<Rom 8:23>>] expectation of the creature waiteth for ##the manifestation##note:x[<<Mal 3:17–18; 1 John 3:2>>] of the sons of God.
+@ For ##the creature##note:x[<<Gen 3:17–19; 5:29; Rom 8:22>>] was made subject to vanity, not willingly, but by reason of him who hath subjected __the same__ in hope,
+@ ##Because##note:x[<<2 Pet 3:13>>] the creature itself also shall be delivered from the bondage of corruption ##into the glorious##note:x[<<Rev 22:3–5>>] liberty of the children of God.
+@ For we know that ##the##note:x[<<Rom 8:20>>] whole creation ##groaneth##note:x[<<Jer 12:11; John 16:21>>] and travaileth in pain together until now.
+@ And not only __they__, but ourselves also, which have the firstfruits of the Spirit, ##even we##note:x[<<2 Cor 5:2–4>>] ourselves groan within ourselves, ##waiting##note:x[<<Phil 3:20–21; Heb 9:28>>] for the adoption, __to wit__, the redemption of our body.
+@ For we are saved by hope: ##but hope##note:x[<<2 Cor 4:18; 5:7; Heb 11:1>>] that is seen is not hope: for what a man seeth, why doth he yet hope for?
+@ But if we hope for that we see not, __then__ do we ##with patience##note:x[<<Ps 27:14; Rom 12:12; Heb 10:36>>] wait for __it__.
+@ Likewise the Spirit also helpeth our infirmities: for we know not what we should pray for as we ought: ##but##note:x[<<Matt 10:20; Gal 4:6; Eph 6:18>>] the Spirit itself maketh intercession for us with groanings which cannot be uttered.
+@ ##And he##note:x[<<Jer 17:10>>] that searcheth the hearts knoweth what __is__ the mind of the Spirit, because ##he maketh##note:x[<<Eph 2:18>>] intercession for the saints ##according##note:x[<<1 John 5:14–15>>] to __the will of__ God.
+
+[discrete.pericope]
+==== God Works in All Things
+
+[.parallel]
+(<<Ephesians 1:3–14>>)
+
+@ And ##we know##note:x[<<Gen 50:20>>] that all things work together for good to ##them##note:x[<<Jas 1:12>>] that love God, to them who are ##the called##note:x[<<1 Pet 5:10>>] according to __his__ purpose.
+@ For ##whom##note:x[<<Jer 1:5>>] he did foreknow, ##he also##note:x[<<Eph 1:11>>] did predestinate ##__to be__##note:x[<<Eph 1:4>>] conformed to the image of his Son, that he might be the firstborn among many brethren.
+@ ##Moreover##note:x[<<Rom 8:28; 9:23–24; Rev 17:14>>] whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified.
+@ What shall we then say to these things? ##If##note:x[<<Ps 56:11; 118:6; Jer 1:19>>] God __be__ for us, who __can be__ against us?
+@ He ##that##note:x[<<John 3:16>>] spared not his own Son, but delivered him up for us all, ##how##note:x[<<Ps 84:11; Rom 8:28>>] shall he not with him also freely give us all things?
+@ ##Who##note:x[<<Rev 12:10–11>>] shall lay any thing to the charge of God’s elect? ##__It is__##note:x[<<Isa 50:8–9; Rev 12:10–11>>] God that justifieth.
+@ Who __is__ he that condemneth? __It is__ Christ that died, yea rather, that is risen again, who is even at the right hand of God, ##who also##note:x[<<Rom 8:27; Heb 7:25; 9:24>>] maketh intercession for us.
+
+[discrete.pericope]
+==== More than Conquerors
+
+[.parallel]
+(<<Psalms 44:1–26>>)
+
+@ Who ##shall separate##note:x[<<Ps 103:17; John 10:28>>] us from the love of Christ? ##__shall__ tribulation##note:x[<<John 16:33>>], or distress, or persecution, or famine, or nakedness, or peril, or sword?
+@ As it is written, ##For thy##note:x[<<Ps 44:22; 1 Cor 15:30>>] sake we are killed all the day long; we are accounted ##as sheep##note:x[<<Isa 53:7>>] for the slaughter.
+@ ##Nay##note:x[<<1 Cor 15:57; 2 Cor 2:14; 1 John 4:4>>], in all these things we are more than conquerors through him that loved us.
+@ ##For I##note:x[<<2 Tim 1:12>>] am persuaded, ##that##note:x[<<John 10:28; Rom 14:8>>] neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,
+@ Nor height, nor depth, nor any other creature, ##shall be##note:x[<<John 10:28–30>>] able to separate us from the ##love##note:x[<<Rom 5:8; 8:35>>] of God, which is in Christ Jesus our Lord.
+
+=== @11
+
+[discrete.pericope]
+==== A Remnant Chosen by Grace
+
+@ I say then, ##Hath God##note:x[<<1 Sam 12:22; Jer 33:24–26>>] cast away his people? God forbid. ##For I also##note:x[<<2 Cor 11:22>>] am an Israelite, of the seed of Abraham, __of__ the tribe of Benjamin.
+@ God hath not cast away his people ##which he foreknew##note:x[<<Rom 8:29–30>>]. Wot ye not what the scripture saith of Elias? how he maketh intercession to God against Israel, saying,
+@ ##Lord##note:x[<<1 Kgs 18:13; 19:10–18; Neh 9:26>>], they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life.
+@ But what saith the answer of God unto him? ##I have reserved##note:x[<<1 Kgs 19:18>>] to myself seven thousand men, who have not bowed the knee to __the image of__ ##Baal##note:x[<<Num 25:3; 2 Kgs 10:19–20>>].
+@ Even so then ##at this present##note:x[<<Rom 9:27>>] time also there is a remnant according to the ##election of grace##note:x[<<Rom 9:11; Eph 1:5–6>>].
+@ ##And if##note:x[<<Rom 3:27–28; Gal 2:21; 2 Tim 1:9>>] by grace, then __is it__ no more of works: otherwise grace is no more grace. But if __it be__ of works, then is it no more grace: otherwise work is no more work.
+
+@ What then? Israel hath not obtained that which he seeketh for; ##but the election##note:x[<<Rom 11:5>>] hath obtained it, ##and the rest##note:x[<<2 Cor 4:4>>] were ##blinded##note:x[<<Rom 9:18>>]
+@ (According as it is written, ##God##note:x[<<Isa 29:10>>] hath given them the spirit of slumber, ##eyes##note:x[<<Deut 29:4; Ezek 12:2>>] that they should not see, and ears that they should not hear;) unto this day.
+@ And ##David saith##note:x[<<Ps 69:22–23>>], Let their table be made a snare, and a trap, and a stumblingblock, and ##a recompence##note:x[<<Ps 28:4>>] unto them:
+@ Let ##their eyes##note:x[<<Ps 69:23>>] be darkened, that they may not see, ##and bow##note:x[<<Deut 28:64–68>>] down their back alway.
+
+[discrete.pericope]
+==== The Ingrafting of the Gentiles
+
+@ I say then, Have they stumbled that they should fall? God forbid: ##but __rather__##note:x[<<Acts 13:46–48; Rom 11:31>>] through their fall salvation __is come__ unto the Gentiles, ##for##note:x[<<Rom 10:19>>] to provoke them to jealousy.
+@ Now if the fall of them __be__ the riches of ##the world##note:x[<<Rom 11:15; Col 1:27>>], and the diminishing of them the riches of the Gentiles; how much more ##their##note:x[<<Rom 11:25>>] fulness?
+
+@ For I speak to you Gentiles, inasmuch as I am ##the apostle##note:x[<<Acts 9:15; Rom 15:16–19; 2 Tim 1:11–12>>] of the Gentiles, I magnify mine office:
+@ If ##by##note:x[<<1 Cor 7:16>>] any means I may provoke to emulation __them which are__ ##my##note:x[<<Rom 9:3>>] flesh, and ##might##note:x[<<1 Cor 7:16>>] save some of them.
+@ For if ##the casting##note:x[<<Rom 11:11–12>>] away of them __be__ ##the reconciling##note:x[<<Rom 5:10; Eph 1:10>>] of the world, what __shall__ the receiving __of them be__, but life from the dead?
+@ note:x[<<Lev 23:10; Prov 3:9; Ezek 44:30>>]For if the firstfruit __be__ holy, the lump __is__ also __holy__: and if the root __be__ holy, so __are__ the branches.
+@ And if ##some##note:x[<<Jer 11:16>>] of the branches be broken off, and thou, ##being##note:x[<<Eph 2:11–13; 3:6>>] a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree;
+@ ##Boast not##note:x[<<Rom 3:27; 11:20; 1 Cor 10:12>>] against the branches. But if thou boast, thou bearest not the root, but the root thee.
+@ Thou wilt say then, The branches were broken off, ##that##note:x[<<Rom 11:23–24>>] I might be graffed in.
+@ Well; because of unbelief they were broken off, ##and##note:x[<<2 Cor 1:24>>] thou standest by faith. ##Be##note:x[<<Rom 12:16>>] not highminded, ##but##note:x[<<1 Cor 10:12>>] fear:
+@ For ##if God##note:x[<<Jer 25:29; 49:12; 2 Pet 2:4–9>>] spared not the natural branches, __take heed__ lest he also spare not thee.
+@ Behold therefore the goodness and severity of God: on them which fell, severity; but toward thee, goodness, ##if thou##note:x[<<1 Cor 15:2; Heb 3:6, 14>>] continue in __his__ goodness: otherwise thou also shalt be cut off.
+@ ##And they also, if they abide not still in unbelief, shall be graffed in: for God is able to graff them in again.##note:x[<<Zech 12:10; 2 Cor 3:16>>]
+@ ##For if thou wert cut out of the olive tree which is wild by nature, and wert graffed contrary to nature into a good olive tree: how much more shall these, which be the natural __branches__, be graffed into their own olive tree?##note:x[<<Rom 11:17–18>>]
+
+[discrete.pericope]
+==== All Israel Will Be Saved
+
+@ For I would not, brethren, that ye should be ignorant of ##this##note:x[<<Rom 16:25>>] mystery, lest ye should be wise in your own conceits; that ##blindness##note:x[<<2 Cor 3:14–16>>] in part is happened to Israel, ##until##note:x[<<Luke 21:24>>] the fulness of the Gentiles be come in.
+@ And so ##all##note:x[<<Jer 31:31–37>>] Israel shall be saved: as it is written, ##There##note:x[<<Ps 14:7; Isa 59:20>>] shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob:
+@ For ##this##note:x[<<Isa 59:21; Jer 31:31–34; 32:38–40>>] __is__ my covenant unto them, when I shall take away their sins.
+@ As concerning the gospel, __they__ ##__are__ enemies##note:x[<<Matt 21:43>>] for your sakes: but as touching the election, __they__ ##__are__ beloved##note:x[<<Deut 7:7–8; 10:15>>] for the fathers’ sakes.
+@ ##For the gifts and calling of God __are__ without repentance.##note:x[<<Num 23:19; Hos 13:14; Mal 3:6>>]
+@ For ##as ye##note:x[<<Eph 2:1–2; Col 3:7>>] in times past have not believed God, yet have now ##obtained##note:x[<<1 Cor 7:25>>] mercy through their unbelief:
+@ Even so have these also now not ##believed##note:x[<<Rom 10:16; 11:15, 25>>], that through your mercy they also may obtain mercy.
+@ For ##God##note:x[<<Rom 3:9; Gal 3:22>>] hath ##concluded them all##note:x[<<1 Tim 2:4–6>>] in unbelief, that he might have mercy upon all.
+
+[discrete.pericope]
+==== A Hymn of Praise
+
+[.parallel]
+(<<Isaiah 40:9–31>>)
+
+@ O the depth of the riches both of the wisdom and knowledge of God! ##how##note:x[<<Job 5:9; 11:7–9; Ps 92:5>>] unsearchable __are__ his judgments, and his ways past finding out!
+@ ##For who hath known the mind of the Lord? or who hath been his counsellor?##note:x[<<Job 15:8; Isa 40:13; 1 Cor 2:16>>]
+@ ##Or who hath first given to him, and it shall be recompensed unto him again?##note:x[<<Job 35:7; 41:11>>]
+@ For ##of him##note:x[<<1 Cor 8:6; Col 1:15–17>>], and through him, and to him, __are__ all things: ##to whom##note:x[<<1 Tim 1:17>>] __be__ glory for ever. Amen.
+
+=== @15
+
+[discrete.pericope]
+==== Accept One Another
+
+@ We then that are strong ##ought##note:x[<<Rom 14:1; 1 Cor 9:22; 1 Thess 5:14>>] to bear the infirmities of the weak, and not to please ourselves.
+@ ##Let every one of us please __his__ neighbour for __his__ good to edification.##note:x[<<Rom 14:19; 1 Cor 10:24; Phil 2:4–5>>]
+@ For even ##Christ##note:x[<<John 4:34; Phil 2:8>>] pleased not himself; but, as it is written, ##The##note:x[<<Ps 69:9>>] reproaches of them that reproached thee fell on me.
+@ For ##whatsoever##note:x[<<Rom 4:23–24; 1 Cor 10:11; 2 Tim 3:16–17>>] things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope.
+@ Now ##the God##note:x[<<Rom 15:13>>] of patience and consolation ##grant##note:x[<<1 Pet 3:8>>] you to be likeminded one toward another ##according to##note:x[<<Phil 2:4–5>>] Christ Jesus:
+@ That ye may ##with##note:x[<<Acts 4:24>>] one mind __and__ one mouth glorify God, even ##the##note:x[<<John 10:29–30; Eph 1:3>>] Father of our Lord Jesus Christ.
+
+[discrete.pericope]
+==== Christ the Servant of Jews and Gentiles
+
+@ Wherefore ##receive##note:x[<<Matt 10:40; Rom 14:1–3>>] ye one another, ##as##note:x[<<John 13:34>>] Christ also received us to the glory of God.
+@ Now I say that ##Jesus##note:x[<<Matt 15:24; John 1:11; Gal 4:4–5>>] Christ was a minister of the circumcision for the truth of God, to confirm the promises __made__ unto the fathers:
+@ And that the Gentiles might glorify God ##for##note:x[<<2 Sam 22:50; Ps 18:49>>] __his__ mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name.
+@ ##And again he saith, Rejoice, ye Gentiles, with his people.##note:x[<<Deut 32:43; Ps 67:3–4; Isa 42:10–12>>]
+@ ##And again, Praise the Lord, all ye Gentiles; and laud him, all ye people.##note:x[<<Ps 117:1>>]
+@ And again, Esaias saith, ##There##note:x[<<Isa 11:1, 10; Rev 22:16>>] shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust.
+@ Now the God of hope ##fill##note:x[<<2 Thess 2:16–17>>] you with all joy and peace in believing, that ye may ##abound##note:x[<<Rom 12:12; 2 Cor 9:8>>] in hope, through the power of the Holy Ghost.
+
+[discrete.pericope]
+==== Paul the Minister to the Gentiles
+
+@ And ##I##note:x[<<2 Pet 1:12; 1 John 2:21>>] myself also am persuaded of you, my brethren, that ye also are full of goodness, filled with all knowledge, ##able##note:x[<<Col 3:16>>] also to admonish one another.
+@ Nevertheless, brethren, I have written the more boldly unto you in some sort, as putting you in mind, ##because##note:x[<<Rom 1:5; 12:3; 1 Cor 15:10>>] of the grace that is given to me of God,
+@ That ##I should##note:x[<<Acts 9:15; Rom 11:13>>] be the minister of Jesus Christ to the Gentiles, ##ministering##note:x[<<Rom 1:1>>] the gospel of God, that the offering up of the Gentiles might be acceptable, being sanctified by the Holy Ghost.
+@ I have therefore ##whereof##note:x[<<2 Cor 2:14–16; 7:4; 12:11–21>>] I may glory through Jesus Christ in those things which pertain to God.
+@ For I will not dare to speak of any of those things ##which##note:x[<<Acts 15:12; 21:19>>] Christ hath not wrought by me, ##to make##note:x[<<Rom 1:5>>] the Gentiles obedient, by word and deed,
+@ Through ##mighty##note:x[<<Acts 19:11–12; 2 Cor 12:12; Heb 2:4>>] signs and wonders, by the power of the Spirit of God; so that from Jerusalem, and round about unto Illyricum, I have fully preached the gospel of Christ.
+@ Yea, so have I strived to preach the gospel, not where Christ was named, lest I should ##build##note:x[<<1 Cor 3:9–15; 2 Cor 10:13–16; Eph 2:20–22>>] upon another man’s foundation:
+@ ##But as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand.##note:x[<<Isa 52:15; 65:1>>]
+@ For which cause also ##I have##note:x[<<Rom 1:13; 1 Thess 2:17–18>>] been much hindered from coming to you.
+
+[discrete.pericope]
+==== Paul’s Travel Plans
+
+[.parallel]
+(<<1 Corinthians 16:5–9>>)
+
+@ But now having no more place in these parts, ##and##note:x[<<Rom 1:10–12; 15:32; 1 Thess 3:10>>] having a great desire these many years to come unto you;
+@ Whensoever ##I take##note:x[<<Rom 15:28>>] my journey into Spain, I will come to you: for I trust to see you in my journey, ##and to##note:x[<<Acts 15:3>>] be brought on my way thitherward by you, ##if##note:x[<<Rom 1:12>>] first I be somewhat filled with your __company__.
+@ ##But now I go unto Jerusalem to minister unto the saints.##note:x[<<Acts 19:21; 20:22; 24:17>>]
+@ For ##it##note:x[<<2 Cor 8:1–9>>] hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem.
+@ It hath pleased them verily; ##and##note:x[<<1 Cor 9:11; Gal 6:6; Phlm 1:19>>] their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto them in carnal things.
+@ When therefore I have performed this, ##and##note:x[<<Phil 4:17; Col 1:6>>] have sealed to them this fruit, ##I will##note:x[<<Rom 15:24>>] come by you into Spain.
+@ ##And I am sure that, when I come unto you, I shall come in the fulness of the blessing of the gospel of Christ.##note:x[<<Ps 16:11; Eph 1:3; 4:13>>]
+
+@ Now I beseech you, brethren, ##for the##note:x[<<2 Cor 4:11>>] Lord Jesus Christ’s sake, and for the love of the Spirit, ##that##note:x[<<2 Cor 1:11; Col 4:12>>] ye strive together with me in __your__ prayers to God for me;
+@ That ##I may##note:x[<<2 Thess 3:2>>] be delivered from them that do not believe in Judaea; ##and that##note:x[<<Rom 15:25; 2 Cor 8:4>>] my service which __I have__ for Jerusalem may be accepted of the saints;
+@ note:x[<<1 Cor 16:18; 2 Cor 7:13>>]That I may come unto you with joy ##by the##note:x[<<Acts 18:21>>] will of God, and may with you be refreshed.
+@ Now ##the God##note:x[<<2 Cor 13:11; Phil 4:9; 1 Thess 5:23>>] of peace __be__ with you all. Amen.
+
+=== @16
+
+[discrete.pericope]
+==== Personal Greetings and Love
+
+@ I commend unto you Phebe ##our##note:x[<<1 Pet 1:22–23>>] sister, which is ##a servant##note:x[<<1 Tim 5:9–10>>] of the church which is at ##Cenchrea##note:x[<<Acts 18:18>>]:
+@ That ##ye receive##note:x[<<Phil 2:29>>] her in the Lord, ##as##note:x[<<Phil 1:27>>] becometh saints, and that ye assist her in whatsoever business she hath need of you: for she hath been a succourer of many, and of myself also.
+@ Greet ##Priscilla##note:x[<<Acts 18:26; 1 Cor 16:19; 2 Tim 4:19>>] and Aquila my helpers in Christ Jesus:
+@ Who ##have##note:x[<<1 John 3:16>>] for my life laid down their own necks: unto whom not only I give thanks, but also all the churches of the Gentiles.
+@ Likewise __greet__ ##the church##note:x[<<1 Cor 16:19; Col 4:15; Phlm 1:2>>] that is in their house. Salute my wellbeloved Epaenetus, who is the firstfruits of Achaia unto Christ.
+@ Greet Mary, who bestowed much labour on us.
+@ note:x[<<Col 4:10>>]Salute Andronicus and Junia, my ##kinsmen##note:x[<<Rom 16:11, 21>>], and my fellowprisoners, who are of note among the apostles, who also were in Christ before me.
+@ Greet Amplias my beloved in the Lord.
+@ Salute Urbane, our helper in Christ, and Stachys my beloved.
+@ Salute Apelles ##approved##note:x[<<Deut 8:2; Rom 14:18; 1 Pet 1:7>>] in Christ. Salute them which are of Aristobulus’ __household__.
+@ Salute Herodion my kinsman. Greet them that be of the __household__ of Narcissus, which are in the Lord.
+@ Salute Tryphena and Tryphosa, who ##labour##note:x[<<1 Cor 15:58; 16:16; 1 Thess 5:12–13>>] in the Lord. Salute the beloved Persis, which laboured much in the Lord.
+@ Salute ##Rufus##note:x[<<Mark 15:21>>] ##chosen##note:x[<<2 John 1:1>>] in the Lord, and ##his##note:x[<<1 Tim 5:2>>] mother and mine.
+@ Salute Asyncritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.
+@ Salute Philologus, and Julia, Nereus, and his sister, and Olympas, ##and all##note:x[<<Rom 16:2>>] the saints which are with them.
+@ Salute one another ##with##note:x[<<1 Cor 16:20; 2 Cor 13:12; 1 Thess 5:26>>] an holy kiss. The churches of Christ salute you.
+
+[discrete.pericope]
+==== Avoid Divisions
+
+[.parallel]
+(<<Titus 3:9–11>>)
+
+@ Now I beseech you, brethren, mark them which ##cause##note:x[<<Jude 1:19>>] divisions ##and##note:x[<<2 Thess 3:6; 1 Tim 6:3–5>>] offences contrary to the doctrine which ye have learned; and avoid them.
+@ For they that are such serve not our Lord Jesus Christ, ##but##note:x[<<Mic 3:5>>] their own belly; and ##by##note:x[<<Matt 7:15; Col 2:4>>] good words and fair speeches deceive the hearts of the simple.
+@ For your obedience is come abroad unto all __men__. I am glad therefore on your behalf: but ##yet##note:x[<<Matt 10:16; 1 Cor 14:20; Jas 3:13–18>>] I would have you wise unto that which is good, and simple concerning evil.
+@ And the God of peace ##shall##note:x[<<Gen 3:15; 1 John 3:8>>] ##bruise##note:x[<<Luke 10:19>>] Satan under your feet shortly. The grace of our Lord Jesus Christ __be__ with you. Amen.
+
+[discrete.pericope]
+==== Greetings from Paul’s Fellow Workers
+
+[.parallel]
+(<<Colossians 4:7–14>>)
+
+@ ##Timotheus##note:x[<<Acts 20:4>>] my workfellow, and ##Lucius##note:x[<<Acts 13:1>>], and Jason, and ##Sosipater##note:x[<<Acts 20:4>>], my kinsmen, salute you.
+@ I Tertius, who wrote __this__ epistle, salute you in the Lord.
+@ ##Gaius##note:x[<<1 Cor 1:14>>] mine host, and of the whole church, saluteth you. ##Erastus##note:x[<<Acts 19:22>>] the chamberlain of the city saluteth you, and Quartus a brother.
+@ The grace of our Lord Jesus Christ __be__ with you all. Amen.
+
+[discrete.pericope]
+==== Doxology
+
+[.parallel]
+(<<Jude 1:24–25>>)
+
+@ Now to him that is of power to stablish you according to ##my gospel##note:x[<<Rom 2:16>>], and the preaching of Jesus Christ, according ##to the##note:x[<<1 Cor 2:7; Col 1:26–27>>] revelation of the mystery, which was kept secret since the world began,
+@ But now is made manifest, ##and by##note:x[<<Gal 3:8>>] the scriptures of the prophets, according to the commandment of the everlasting God, made known to all nations ##for the##note:x[<<Rom 1:5; 15:18>>] obedience of faith:
+@ To ##God##note:x[<<Rom 11:36; 1 Tim 1:17; Rev 7:10–12>>] only wise, __be__ glory through Jesus Christ for ever. Amen.
+
+[.colophon]
+Written to the Romans from Corinthus, __and sent__ by Phebe servant of the church at Cenchrea.

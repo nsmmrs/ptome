@@ -1,0 +1,91 @@
+== @GAL
+
+[.book-title]
+The Epistle of Paul the Apostle to the Galatians
+
+=== @1
+
+[discrete.pericope]
+==== Paul’s Greeting to the Galatians
+
+@ Paul, ##an##note:x[<<Rom 1:1; 1 Cor 1:1>>] apostle, ( ##not##note:x[<<Gal 1:11–12>>] of men, neither by man, but by Jesus Christ, and God the Father, who raised him from the dead;)
+@ And ##all##note:x[<<Phil 4:21>>] the brethren which are with me, unto the ##churches##note:x[<<Acts 16:5–6; 1 Cor 16:1>>] of Galatia:
+@ ##Grace __be__ to you and peace from God the Father, and __from__ our Lord Jesus Christ,##note:x[<<Rom 1:7–15; 2 Cor 13:14; 2 John 1:3>>]
+@ Who ##gave##note:x[<<Matt 20:28; Rom 4:25; Gal 2:20>>] himself for our sins, that he might deliver us from this present evil world, according to the will of God and our Father:
+@ To ##whom##note:x[<<Rom 11:36; Jude 1:25>>] __be__ glory for ever and ever. Amen.
+
+[discrete.pericope]
+==== No Other Gospel
+
+@ I marvel that ye are ##so##note:x[<<Isa 29:13; Gal 5:7>>] soon removed from him that called you into the grace of Christ ##unto##note:x[<<2 Cor 11:4>>] another gospel:
+@ Which is not another; ##but##note:x[<<Acts 15:24; Rom 16:17–18>>] there be some that trouble you, and would ##pervert##note:x[<<Acts 15:24>>] the gospel of Christ.
+@ But ##though##note:x[<<2 Cor 11:13–14; Gal 1:9; Rev 22:18–19>>] we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed.
+@ As we said before, so say I now again, If any __man__ preach any other gospel unto you ##than##note:x[<<Deut 4:2; Prov 30:6; Rev 22:18–19>>] that ye have received, let him be accursed.
+
+[discrete.pericope]
+==== Paul Preaches the Gospel
+
+@ For ##do I now##note:x[<<Acts 5:29; 1 Thess 2:4>>] persuade men, or God? or ##do I seek##note:x[<<1 Thess 2:4>>] to please men? for if I yet pleased men, I should not be the servant of Christ.
+@ But I certify you, brethren, ##that##note:x[<<1 Cor 2:9–10; Gal 1:1; Eph 3:3–8>>] the gospel which was preached of me is not after man.
+@ For I neither received it of man, neither was I taught __it__, but by the revelation of Jesus Christ.
+@ For ##ye##note:x[<<Acts 22:3–5>>] have heard of my conversation in time past in the Jews’ religion, ##how##note:x[<<Acts 8:3; 1 Cor 15:9>>] that beyond measure I persecuted the church of God, and wasted it:
+@ And profited in the Jews’ religion above many my equals in mine own nation, ##being##note:x[<<Acts 22:3; 26:5>>] more exceedingly zealous of the ##traditions##note:x[<<Col 2:8>>] of my fathers.
+@ But when it pleased God, ##who##note:x[<<Isa 49:1, 5; Jer 1:5>>] separated me from my mother’s womb, and called __me__ by his grace,
+@ To ##reveal##note:x[<<Matt 16:17; Eph 3:5–10>>] his Son in me, that I might preach him among the heathen; immediately I conferred not with ##flesh##note:x[<<Matt 16:17>>] and blood:
+@ Neither ##went##note:x[<<Acts 9:20–25>>] I up to Jerusalem to them which were apostles before me; but I went into Arabia, and returned again unto Damascus.
+@ Then after three years I went up to Jerusalem to see Peter, and abode with him fifteen days.
+@ note:x[<<Matt 13:55; Mark 6:3>>]But other of the apostles saw I none, save James the Lord’s brother.
+@ Now the things which I write unto you, ##behold##note:x[<<Rom 9:1; 2 Cor 11:31>>], before God, I lie not.
+@ Afterwards ##I came##note:x[<<Acts 9:30; 15:41>>] into the regions of Syria and ##Cilicia##note:x[<<Acts 6:9>>];
+@ And was unknown by face unto ##the churches##note:x[<<1 Thess 2:14>>] of Judaea which were in Christ:
+@ But they had heard only, That ##he which##note:x[<<Acts 9:13; 1 Cor 15:8–10; 1 Tim 1:13–16>>] persecuted us in times past now preacheth the faith which once he destroyed.
+@ ##And they glorified God in me.##note:x[<<Luke 15:10; Acts 11:18>>]
+
+=== @4
+
+[discrete.pericope]
+==== Sons and Heirs
+
+@ Now I say, __That__ the heir, as long as he is a child, differeth nothing from a servant, though he be lord of all;
+@ But is under tutors and governors until the time appointed of the father.
+@ Even so we, when we were children, were ##in##note:x[<<Gal 4:9>>] bondage under the ##elements##note:x[<<Col 2:8, 20>>] of the world:
+@ But when ##the fulness##note:x[<<Mark 1:15>>] of the time was come, God sent forth his Son, ##made##note:x[<<John 1:14>>] ##of a##note:x[<<Isa 7:14>>] woman, made under the law,
+@ To ##redeem##note:x[<<Heb 9:15; 1 Pet 1:18–20>>] them that were under the law, ##that we##note:x[<<Eph 1:5>>] might receive the adoption of sons.
+@ And because ye are sons, ##God##note:x[<<Rom 5:5; 8:15–17>>] hath sent forth ##the Spirit##note:x[<<Rom 8:15>>] of his Son into your hearts, crying, Abba, Father.
+@ Wherefore thou art no more a servant, ##but##note:x[<<Gal 3:26>>] a son; and ##if##note:x[<<Rom 8:16–17; Gal 3:29>>] a son, then an heir of God through Christ.
+
+[discrete.pericope]
+==== Paul’s Concern for the Galatians
+
+@ Howbeit then, ##when##note:x[<<Eph 2:11–12; 1 Thess 4:5>>] ye knew not God, ##ye did##note:x[<<1 Cor 8:4>>] service unto them which by nature are no gods.
+@ But now, after that ye have known God, or rather ##are known##note:x[<<1 Cor 8:3>>] of God, ##how##note:x[<<Rom 8:3; Gal 3:3>>] turn ye again to the weak and beggarly elements, whereunto ye desire again to be in bondage?
+@ ##Ye observe days, and months, and times, and years.##note:x[<<Rom 14:5; Col 2:16–17>>]
+@ I am afraid of you, ##lest##note:x[<<1 Thess 3:5>>] I have bestowed upon you labour in vain.
+
+@ Brethren, I beseech you, ##be##note:x[<<1 Kgs 22:4>>] as I __am__; for I __am__ as ##ye##note:x[<<2 Cor 2:5>>] __are__: ye have not injured me at all.
+@ Ye know how ##through##note:x[<<1 Cor 2:3; 2 Cor 10:10; 12:7–10>>] infirmity of the flesh I preached the gospel unto you at the first.
+@ And my temptation which was in my flesh ye despised not, nor rejected; but received me as ##an angel##note:x[<<Heb 13:2>>] of God, __even__ ##as Christ##note:x[<<Matt 10:40; 1 Thess 2:13>>] Jesus.
+@ Where is then ##the blessedness##note:x[<<Rom 5:2>>] ye spake of? for I bear you record, that, if __it had been__ possible, ye would have plucked out your own eyes, and have given them to me.
+@ Am I therefore ##become##note:x[<<Prov 9:8; John 8:45>>] your enemy, ##because##note:x[<<Gal 5:7>>] I tell you the truth?
+@ They ##zealously##note:x[<<Rom 16:18; 2 Cor 11:13–15; 2 Pet 2:3>>] affect you, __but__ not well; yea, they would exclude you, that ye might affect them.
+@ But ##__it is__##note:x[<<Rev 3:19>>] good to be zealously affected always in __a__ good __thing__, and not only when ##I am##note:x[<<Phil 1:27; 2:12>>] present with you.
+@ My little children, of whom I travail in birth again until ##Christ##note:x[<<Rom 8:29; 13:14; Eph 4:24>>] be formed in you,
+@ I desire to be present with you now, and to change my voice; for I stand in doubt of you.
+
+[discrete.pericope]
+==== Hagar and Sarah
+
+[.parallel]
+(<<Genesis 21:9–21>>)
+
+@ Tell me, ##ye that##note:x[<<Gal 3:10; 4:9>>] desire to be under ##the law##note:x[<<Rom 3:19>>], do ye not hear the law?
+@ For it is written, ##that##note:x[<<Gen 16:15>>] Abraham had two sons, the one by a bondmaid, the other by a freewoman.
+@ ##But##note:x[<<Gen 21:1–2; Heb 11:11>>] he __who was__ of the bondwoman was ##born##note:x[<<Rom 9:7–8>>] after the flesh; but he of the freewoman __was__ by promise.
+@ Which things are ##an allegory##note:x[<<Hos 11:10; Matt 13:35>>]: for these are the two covenants; the one from the mount Sinai, which gendereth to bondage, which is ##Agar##note:x[<<Gen 21:9–13>>].
+@ For this Agar is mount ##Sinai##note:x[<<Ps 68:17>>] in ##Arabia##note:x[<<Gal 1:17>>], and answereth to Jerusalem which now is, and is in bondage with ##her##note:x[<<Matt 23:37>>] children.
+@ But ##Jerusalem##note:x[<<Phil 3:20; Heb 12:22; Rev 21:2>>] which is above is free, which is the mother of us all.
+@ For it is written, ##Rejoice##note:x[<<Isa 54:1–5>>], __thou__ ##barren##note:x[<<Ps 113:9>>] that bearest not; break forth and cry, thou that travailest not: for the ##desolate##note:x[<<Ruth 4:14–16>>] hath many more children than she which hath an husband.
+@ ##Now we, brethren, as Isaac was, are the children of promise.##note:x[<<Rom 9:8–9; Gal 3:29; 4:23>>]
+@ But as then ##he that##note:x[<<Gen 21:9>>] was born after the flesh persecuted him __that was born__ ##after the Spirit##note:x[<<Rom 8:13>>], ##even##note:x[<<Gal 5:11>>] so __it is__ now.
+@ Nevertheless what saith the scripture? ##Cast##note:x[<<Gen 21:10–12>>] out the bondwoman and her son: ##for##note:x[<<John 8:35; Rom 8:15–17>>] the son of the bondwoman shall not be heir with the son of the freewoman.
+@ So then, brethren, ##we##note:x[<<John 8:36; Gal 5:1, 13>>] are not children of the bondwoman, but of the free.

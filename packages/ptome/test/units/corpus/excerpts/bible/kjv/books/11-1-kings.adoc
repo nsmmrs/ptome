@@ -1,0 +1,110 @@
+== @1KI
+
+[.book-title]
+The First Book of the Kings +
+Commonly Called the Third Book of the Kings
+
+=== @8
+
+[discrete.pericope]
+==== The Ark Enters the Temple
+
+[.parallel]
+(<<2 Chronicles 5:1–14>>)
+
+@ Then ##Solomon##note:x[<<2 Chr 5:2–10>>] assembled the elders of Israel, and all the heads of the tribes, the ##chief##note:tn[Heb. princes] of the fathers of the children of Israel, unto king Solomon in Jerusalem, ##that they might bring##note:x[<<1 Chr 15:25>>] up the ark of the covenant of the LORD out of the city of David, which __is__ Zion.
+@ And all the men of Israel assembled themselves unto king Solomon ##at the feast##note:x[<<Lev 23:34; 2 Chr 7:8–10>>] in the month Ethanim, which __is__ the seventh month.
+@ And all the elders of Israel came, and ##the priests took up##note:x[<<Deut 31:9; Josh 3:6>>] the ark.
+@ And they brought up the ark of the LORD, ##and the##note:x[<<1 Kgs 3:4; 2 Chr 1:3>>] tabernacle of the congregation, and all the holy vessels that __were__ in the tabernacle, even those did the priests and the Levites bring up.
+@ And king Solomon, and all the congregation of Israel, that were assembled unto him, __were__ with him before the ark, ##sacrificing sheep##note:x[<<2 Sam 6:13>>] and oxen, that could not be told nor numbered for multitude.
+@ ##And the priests##note:x[<<2 Sam 6:17>>] brought in the ark of the covenant of the LORD unto ##his place##note:x[<<1 Kgs 6:19>>], into the oracle of the house, to the most holy __place, even__ ##under the wings##note:x[<<1 Kgs 6:27>>] of the cherubims.
+@ For the cherubims spread forth __their__ two wings over the place of the ark, and the cherubims covered the ark and the staves thereof above.
+@ And they drew out the staves, that the ##ends##note:tn[Heb. heads] of the staves were seen out in the holy __place__ before the oracle, and they were not seen without: and there they are unto this day.note:tn[__holy…__: or, ark]
+@ __There was__ ##nothing##note:x[<<Exod 25:21>>] ##in the ark##note:x[<<Heb 9:4>>] save the two tables of stone, which Moses ##put there at Horeb##note:x[<<Exod 25:21>>], ##when the##note:tn[or, where the] LORD made __a covenant__ with the children of Israel, when they came out of the land of Egypt.
+@ And it came to pass, when the priests were come out of the holy __place__, that the cloud filled the house of the LORD,
+@ So that the priests could not stand to minister because of the cloud: ##for the glory##note:x[<<Lev 9:23; Ezek 43:4–5; 44:4>>] of the LORD had filled the house of the LORD.
+
+[discrete.pericope]
+==== Solomon Blesses the LORD
+
+[.parallel]
+(<<2 Chronicles 6:1–11>>)
+
+@ ¶ Then spake Solomon, ##The LORD##note:x[<<2 Chr 6:1–11; Ps 97:2>>] said that he would dwell in ##the thick##note:x[<<Lev 16:2>>] darkness.
+@ I have ##surely built##note:x[<<2 Sam 7:13>>] thee an house to dwell in, a settled place for thee to abide in for ever.
+@ And the king turned his face about, and ##blessed all##note:x[<<2 Sam 6:18>>] the congregation of Israel: (and all the congregation of Israel stood;)
+@ And he said, ##Blessed##note:x[<<1 Chr 29:10, 20; Luke 1:68>>] __be__ the LORD God of Israel, which spake with his mouth unto David my father, and hath with his hand fulfilled __it__, saying,
+@ Since the day that I brought forth my people Israel out of Egypt, I chose no city out of all the tribes of Israel to build an house, that ##my name##note:x[<<Deut 12:11; 1 Kgs 8:29>>] might be therein; but ##I chose David##note:x[<<1 Sam 16:1>>] to be over my people Israel.
+@ ##And it was in the heart of David my father to build an house for the name of the LORD God of Israel.##note:x[<<2 Sam 7:2–3>>]
+@ And the LORD said unto David my father, ##Whereas##note:x[<<2 Chr 6:7–9>>] it was in thine heart to build an house unto my name, thou didst well that it was in thine heart.
+@ ##Nevertheless thou shalt not build the house; but thy son that shall come forth out of thy loins, he shall build the house unto my name.##note:x[<<2 Sam 7:5, 12–13; 1 Chr 22:8–10>>]
+@ And the LORD hath performed his word that he spake, and I am risen up in the room of David my father, and sit on the throne of Israel, ##as the LORD##note:x[<<1 Chr 28:5–6>>] promised, and have built an house for the name of the LORD God of Israel.
+@ And I have set there a place for the ark, wherein __is__ ##the covenant##note:x[<<Deut 31:26; 1 Kgs 8:9>>] of the LORD, which he made with our fathers, when he brought them out of the land of Egypt.
+
+[discrete.pericope]
+==== Solomon’s Prayer of Dedication
+
+[.parallel]
+(<<2 Chronicles 6:12–42>>)
+
+@ ¶ And Solomon ##stood before the altar##note:x[<<1 Kgs 8:54>>] of the LORD in the presence of all the congregation of Israel, and ##spread forth##note:x[<<Exod 9:33; Ezra 9:5>>] his hands toward heaven:
+@ And he said, LORD God of Israel, __there is__ ##no God##note:x[<<2 Sam 7:22>>] like thee, in heaven above, or on earth beneath, ##who keepest##note:x[<<Deut 7:9; Dan 9:4>>] covenant and mercy with thy servants that walk before thee with all their heart:
+@ Who hast kept with thy servant David my father that thou promisedst him: ##thou spakest##note:x[<<2 Sam 7:16>>] also with thy mouth, and hast fulfilled __it__ with thine hand, as __it is__ this day.
+@ Therefore now, LORD God of Israel, ##keep with thy##note:x[<<1 Kgs 2:4>>] servant David my father that thou promisedst him, saying, There shall not fail thee a man in my sight to sit on the throne of Israel; ##so that##note:tn[Heb. only if] ##thy children##note:x[<<1 Kgs 2:4; 2 Chr 6:16–17>>] take heed to their way, that they walk before me as thou hast walked before me.note:tn[__fail…__: Heb. be cut off unto thee a man from my sight]
+@ ##And now##note:x[<<1 Kgs 8:23; Ps 41:13>>], O God of Israel, ##let thy word##note:x[<<2 Sam 7:25–29>>], I pray thee, be verified, which thou spakest unto thy servant David my father.
+@ ##But will##note:x[<<Isa 66:1>>] God indeed dwell on the earth? behold, ##the heaven##note:x[<<2 Chr 2:6; Jer 23:24>>] and heaven of heavens cannot contain thee; how much less this house that I have builded?
+@ Yet have thou respect unto the prayer of thy servant, and to his supplication, O LORD my God, to hearken unto the cry and to the prayer, which thy servant prayeth before thee to day:
+@ ##That thine##note:x[<<2 Chr 6:20; 7:15>>] eyes may be open toward this house night and day, __even__ toward the place of which thou hast said, ##My name##note:x[<<2 Chr 6:20>>] shall be there: that thou mayest hearken unto the prayer which thy servant shall make toward this place.note:tn[__toward this place__: or, in this place]
+@ And hearken thou to the supplication of thy servant, and of thy people Israel, when they shall pray toward this place: ##and hear##note:x[<<1 Kgs 8:34, 36, 39>>] thou in heaven thy dwelling place: and when thou hearest, forgive.note:tn[__toward this place__: or, in this place]
+
+@ ¶ If any man trespass against his neighbour, and an oath be laid upon him to cause him to swear, and the oath come before thine altar in this house&#58;note:tn[__and an oath…__: Heb. and he require an oath of him]
+@ Then hear thou in heaven, and do, and judge thy servants, ##condemning##note:x[<<Deut 25:1>>] the wicked, to bring his way upon his head; and justifying the righteous, to give him according to his righteousness.
+
+@ ¶ When thy people Israel be ##smitten down##note:x[<<Lev 26:17, 25; Deut 28:25>>] before the enemy, because they have sinned against thee, and shall turn again to thee, and confess thy name, and pray, and make supplication unto thee ##in##note:tn[or, toward] this house:
+@ Then hear thou in heaven, and forgive the sin of thy people Israel, and bring them again unto the land which thou gavest unto their fathers.
+
+@ ¶ When ##heaven##note:x[<<Lev 26:19; Deut 11:17>>] is shut up, and there is no rain, because they have sinned against thee; ##if they pray##note:x[<<1 Kgs 8:33>>] toward this place, and confess thy name, and turn from their sin, when thou afflictest them:
+@ Then hear thou in heaven, and forgive the sin of thy servants, and of thy people Israel, that ##thou teach##note:x[<<Ps 27:11>>] them ##the good way##note:x[<<1 Sam 12:23; Jer 6:16>>] wherein they should walk, and give rain upon thy land, which thou hast given to thy people for an inheritance.
+
+@ ¶ If there be ##in the land famine##note:x[<<Lev 26:16; Deut 28:21–22>>], if there be pestilence, blasting, mildew, locust, __or__ if there be caterpiller; if their enemy besiege them in the land of their ##cities##note:tn[or, jurisdiction]; whatsoever plague, whatsoever sickness __there be;__
+@ What ##prayer##note:x[<<Amos 7:1–6>>] and supplication soever be __made__ by any man, __or__ by all thy people Israel, which shall know every man ##the plague##note:x[<<Ps 73:21–22; Phil 4:6>>] of his own heart, and spread forth his hands toward this house:
+@ Then hear thou in heaven thy dwelling place, and forgive, and do, and ##give to every man##note:x[<<Jer 17:10>>] according to his ways, whose heart thou knowest; (##for thou##note:x[<<1 Sam 16:7; 1 Chr 28:9>>], __even__ thou only, knowest the hearts of all the children of men;)
+@ That they may ##fear thee##note:x[<<Ps 130:4; Rev 19:5>>] all the days that they live in the land which thou gavest unto our fathers.
+@ Moreover concerning ##a stranger##note:x[<<1 Kgs 10:1–2>>], that __is__ not of thy people Israel, but ##cometh out##note:x[<<1 Kgs 10:1–2>>] of a far country for thy name’s sake;
+@ (For they shall hear of thy great name, and of ##thy strong hand##note:x[<<Deut 3:24>>], and of thy stretched out arm;) when he shall come and pray toward this house;
+@ note:x[<<1 Sam 17:46; Ps 86:9>>]Hear thou in heaven thy dwelling place, and do according to all that the stranger calleth to thee for: that all people of the earth may know thy name, to ##fear thee##note:x[<<Ps 102:15>>], as __do__ thy people Israel; and that they may know that this house, which I have builded, is called by thy name.note:tn[__this…__: Heb. thy name is called upon this house]
+
+@ ¶ If thy people ##go out to battle##note:x[<<2 Chr 6:34>>] against their enemy, whithersoever thou shalt send them, and shall pray unto the LORD ##toward the city##note:x[<<Ps 78:67–69>>] which thou hast chosen, and __toward__ the house that I have built for thy name&#58;note:tn[__toward the city__: Heb. the way of the city]
+@ Then hear thou in heaven their prayer and their supplication, and maintain their ##cause##note:tn[or, right].
+@ If they sin against thee, (for ##__there is__ no man##note:x[<<Prov 20:9; Eccl 7:20; 1 John 1:8–10>>] that sinneth not,) and thou be angry with them, and deliver them to the enemy, so that they carry them away captives unto the land of the enemy, far or near;
+@ __Yet__ if they shall bethink themselves in the land whither they were carried captives, and repent, and make supplication unto thee in the land of them that carried them captives, ##saying##note:x[<<Ps 106:6>>], We have sinned, and have done perversely, we have committed wickedness;note:tn[__bethink…__: Heb. bring back to their heart]
+@ ##And __so__ return##note:x[<<Deut 4:29; Jer 29:12–14>>] unto thee with all their heart, and with all their soul, in the land of their enemies, which led them away captive, and ##pray unto##note:x[<<Dan 6:10>>] thee toward their land, which thou gavest unto their fathers, the city which thou hast chosen, and the house which I have built for thy name:
+@ Then hear thou their prayer and their supplication in heaven thy dwelling place, and maintain their ##cause##note:tn[or, right],
+@ And forgive thy people that have sinned against thee, and all their transgressions wherein they have transgressed against thee, ##and give them##note:x[<<2 Chr 30:9; Ps 106:46>>] compassion before them who carried them captive, that they may have compassion on them:
+@ For they __be__ ##thy people##note:x[<<Neh 1:10>>], and thine inheritance, which thou broughtest forth out of Egypt, from the midst of ##the furnace##note:x[<<Deut 4:20; Jer 11:4>>] of iron:
+@ ##That thine##note:x[<<1 Kgs 8:29>>] eyes may be open unto the supplication of thy servant, and unto the supplication of thy people Israel, to hearken unto them ##in all that##note:x[<<Ps 145:18>>] they call for unto thee.
+@ For thou didst ##separate##note:x[<<Exod 19:5–6; Deut 14:2; 32:9>>] them from among all the people of the earth, __to be__ thine inheritance, as thou spakest by the hand of Moses thy servant, when thou broughtest our fathers out of Egypt, O Lord GOD.
+
+[discrete.pericope]
+==== Solomon’s Benediction
+
+@ And it was __so__, that ##when Solomon##note:x[<<Luke 22:45>>] had made an end of praying all this prayer and supplication unto the LORD, he arose from before the altar of the LORD, from ##kneeling##note:x[<<Luke 22:45>>] on his knees ##with his hands##note:x[<<2 Chr 6:12>>] spread up to heaven.
+@ And he stood, and ##blessed##note:x[<<2 Sam 6:18; 1 Kgs 8:14>>] all the congregation of Israel with a loud voice, saying,
+@ Blessed __be__ the LORD, that ##hath given rest##note:x[<<Josh 21:44>>] unto his people Israel, according to all that he promised: ##there##note:x[<<Josh 23:14–15; Luke 21:33>>] hath not ##failed##note:tn[Heb. fallen] one word of all his good promise, which he promised by the hand of Moses his servant.
+@ ##The LORD our God be with us, as he was with our fathers: let him not leave us, nor forsake us:##note:x[<<Deut 31:6, 8; Josh 1:5>>]
+@ That he may ##incline##note:x[<<Ps 119:36; Jer 31:33; Ezek 36:26–27>>] our hearts unto him, to walk in all his ways, and to keep his commandments, and his statutes, and his judgments, which he commanded our fathers.
+@ And let these my words, wherewith I have made supplication before the LORD, be nigh unto the LORD our God day and night, that he maintain the cause of his servant, and the cause of his people Israel at all times, as the matter shall require&#58;note:tn[__at all…__: Heb. the thing of a day in his day]
+@ ##That all##note:x[<<2 Kgs 19:19>>] the people of the earth may know that ##the LORD##note:x[<<Deut 4:35; 1 Kgs 18:39>>] __is__ God, __and that there is__ none else.
+@ Let your heart therefore be ##perfect##note:x[<<1 Kgs 11:4; 15:14; 2 Kgs 20:3>>] with the LORD our God, to walk in his statutes, and to keep his commandments, as at this day.
+
+[discrete.pericope]
+==== Sacrifices of Dedication
+
+[.parallel]
+(<<2 Chronicles 7:4–10>>)
+
+@ ¶ ##And the king, and all Israel with him, offered sacrifice before the LORD.##note:x[<<2 Sam 6:17–19>>]
+@ And Solomon offered ##a sacrifice##note:x[<<Ezra 6:16–17>>] of peace offerings, which he offered unto the LORD, two and twenty thousand oxen, and an hundred and twenty thousand sheep. So the king and all the children of Israel ##dedicated##note:x[<<Ezra 6:16–17>>] the house of the LORD.
+@ The same day did the king hallow the middle of the court that __was__ before the house of the LORD: for there he offered burnt offerings, and meat offerings, and the fat of the peace offerings: because ##the brasen##note:x[<<2 Chr 4:1>>] altar that __was__ before the LORD __was__ too little to receive the burnt offerings, and meat offerings, and the fat of the peace offerings.
+@ And at that time Solomon ##held##note:x[<<1 Kgs 8:2>>] a feast, and all Israel with him, a great congregation, ##from the entering##note:x[<<Num 34:5>>] in of Hamath unto ##the river##note:x[<<Num 34:5>>] of Egypt, before the LORD our God, seven days and seven days, __even__ fourteen days.
+@ On the eighth day he sent the people away: and they ##blessed##note:tn[or, thanked] the king, and went unto their tents joyful and glad of heart for all the goodness that the LORD had done for David his servant, and for Israel his people.

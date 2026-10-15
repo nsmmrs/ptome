@@ -1,9 +1,9 @@
 // The substitutions skip a pass when a cheap check says its pattern cannot
 // match. Each check must be a necessary condition: these tests hold it to
 // the pattern on random text made of the characters the pattern cares
-// about, two-byte letters included.
-@Tags(['slow'])
-library;
+// about, two-byte letters included, from fixed seeds. A deeper run, many
+// times the cases, is tool/deep_checks.dart's; a failure it finds becomes
+// a case here.
 
 import 'dart:math';
 
@@ -48,11 +48,19 @@ String _text(Random random, List<String> pieces, [int max = 24]) => [
     pieces[random.nextInt(pieces.length)],
 ].join();
 
-void main() {
+/// A seed from [text] that is the same on every platform and SDK (a
+/// string's hashCode isn't).
+int _seed(String text) =>
+    text.codeUnits.fold(17, (h, c) => (h * 31 + c) & 0x7fffffff);
+
+void main() => properties();
+
+/// The properties, each over a number of random cases times [scale].
+void properties({int scale = 1}) {
   test('mayHoldEmail: false only where inlineEmailRx cannot match', () {
     final random = Random(549);
     var held = 0;
-    for (var i = 0; i < 200000; i++) {
+    for (var i = 0; i < 20000 * scale; i++) {
       final text = _text(random, _emailPieces);
       if (inlineEmailRx.hasMatch(text)) {
         held++;
@@ -64,7 +72,7 @@ void main() {
       }
     }
     // The alphabet has to produce addresses for the test to mean anything.
-    expect(held, greaterThan(1000));
+    expect(held, greaterThan(100 * scale));
   });
 
   test('mayHoldEmail: verse lines starting with "@ " are skipped', () {
@@ -81,7 +89,7 @@ void main() {
   test('hasLiteral, literalIndexOf and hasAnyChar: as String.contains', () {
     final random = Random(96);
     final texts = [for (var i = 0; i < 300; i++) _text(random, _literalPieces)];
-    for (var i = 0; i < 100000; i++) {
+    for (var i = 0; i < 10000 * scale; i++) {
       // Texts asked about in turn and again (the mask is kept for the
       // last one).
       final text = texts[random.nextInt(texts.length)];
@@ -113,7 +121,7 @@ void main() {
       '&', "'", ' ', 'é', '’',
     ];
     final random = Random(909);
-    for (var i = 0; i < 50000; i++) {
+    for (var i = 0; i < 5000 * scale; i++) {
       final text = _text(random, pieces, 8);
       expect(
         hasReplaceableText(text),
@@ -132,7 +140,7 @@ void main() {
         r'\&amp;#123;',
       ];
       final random = Random(n);
-      for (var i = 0; i < 20000; i++) {
+      for (var i = 0; i < 2000 * scale; i++) {
         final text = i < edges.length
             ? edges[i]
             : _text(random, _replacementPieces, 16);
@@ -149,7 +157,7 @@ void main() {
   test('subSpecialchars: as specialCharsRx and specialCharsTr', () {
     const pieces = ['a', '<', '&', '>', '&amp;', ';', ' ', 'é', '😀', '\n'];
     final random = Random(450);
-    for (var i = 0; i < 20000; i++) {
+    for (var i = 0; i < 2000 * scale; i++) {
       final text = _text(random, pieces, 12);
       expect(
         subSpecialchars(text),
@@ -180,8 +188,8 @@ void main() {
   ]) {
     test('$name: its scan finds the same matches', () {
       const edges = [r'[x]\\++a++', r'\[x]\++a++', r'[a]$$b$$', r'\pass:[x]'];
-      final random = Random(name.hashCode);
-      for (var i = 0; i < 20000; i++) {
+      final random = Random(_seed(name));
+      for (var i = 0; i < 2000 * scale; i++) {
         final text = i < edges.length ? edges[i] : _text(random, macroPieces);
         final start = i < edges.length ? 0 : random.nextInt(text.length + 1);
         final pattern = switch (scan) {
@@ -205,7 +213,7 @@ void main() {
     ];
     final random = Random(1384);
     var matched = 0;
-    for (var i = 0; i < 100000; i++) {
+    for (var i = 0; i < 10000 * scale; i++) {
       final line = _text(random, pieces, 8);
       for (final context in listRxMap.keys) {
         final match = listRxMap[context]!.firstMatch(line);
@@ -217,6 +225,6 @@ void main() {
         );
       }
     }
-    expect(matched, greaterThan(10000));
+    expect(matched, greaterThan(1000 * scale));
   });
 }

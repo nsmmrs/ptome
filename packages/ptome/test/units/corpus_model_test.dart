@@ -1,6 +1,8 @@
 // The units corpus (test/units/corpus, NOTICE.md): real documents written
-// in numbered units, each read as conversion reads it and its units model
-// (test/units/model_dump.dart) compared with the model frozen in
+// in numbered units (the KJV, the catechism and the commonplace book as
+// excerpts, test/units/corpus/excerpts by tool/units_excerpts.dart: the
+// wholes are the benchmarks'), each read as conversion reads it and its
+// units model (test/units/model_dump.dart) compared with the model frozen in
 // test/units/corpus/model. A change to the model is a change to those
 // files, made on purpose:
 //
@@ -25,8 +27,8 @@ const String _corpus = 'test/units/corpus';
 const List<String> _documents = [
   'bible/bsb-study/study.adoc',
   'bible/kjv/genesis.adoc',
-  'bible/kjv/kjv.adoc',
-  'catechism/westminster-larger.adoc',
+  'excerpts/bible/kjv/kjv.adoc',
+  'excerpts/catechism/westminster-larger.adoc',
   'classics/ethics/ethics-en.adoc',
   'classics/ethics/ethics-grc.adoc',
   'classics/euthyphro/euthyphro-en.adoc',
@@ -38,7 +40,7 @@ const List<String> _documents = [
   'liturgy/bcp-1662/litany.adoc',
   'liturgy/bcp-1662/morning-prayer.adoc',
   'liturgy/bcp-1662/psalter.adoc',
-  'quotations/commonplace.adoc',
+  'excerpts/quotations/commonplace.adoc',
   'quran/ar/quran-ar.adoc',
   'quran/en/quran-en.adoc',
   'specs/cpp-basic.adoc',

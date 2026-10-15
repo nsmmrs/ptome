@@ -9,6 +9,12 @@ ptome's code, not these texts: each is under its source's terms below, and
 the folder is left out of the published package. `quotations/` quotes
 the others by address.
 
+`excerpts/` holds parts of three of them, made by `tool/units_excerpts.dart`,
+which the model test reads in place of the wholes (the benchmarks read
+those): the Westminster Larger Catechism's first ten questions, the KJV's
+chapters their proof texts and the commonplace book's quotations cite,
+and the commonplace book citing the two. Each is under its whole's terms.
+
 One change from the sources: legislation.gov.uk's commentary IDs in the
 Computer Misuse Act (`key-` and 32 hex digits) are written `cmt-…`, a
 form no secret scanner mistakes for an API key.

@@ -1,0 +1,98 @@
+== @EXO
+
+[.book-title]
+The Second Book of Moses, called Exodus
+
+=== @3
+
+[discrete.pericope]
+==== Moses at the Burning Bush
+
+[.parallel]
+(<<Acts 7:30–38>>)
+
+@ Now Moses ##kept##note:x[<<Ps 78:70–72>>] the flock of Jethro his father in law, the priest of Midian: and he led the flock to the backside of the desert, and came to ##the mountain##note:x[<<1 Kgs 19:8>>] of God, __even__ to ##Horeb##note:x[<<Exod 17:6>>].
+@ And the ##angel##note:x[<<Deut 33:16; Acts 7:30–35>>] of the LORD appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the ##bush burned##note:x[<<Isa 43:2>>] with fire, and the bush __was__ not consumed.
+@ ##And Moses said, I will now turn aside, and see this great sight, why the bush is not burnt.##note:x[<<Ps 107:8; Acts 7:31>>]
+@ And when the LORD saw that he turned aside to see, God called ##unto him##note:x[<<Deut 33:16>>] out of the midst of the bush, and said, ##Moses##note:x[<<Gen 22:1, 11>>], Moses. And he said, Here __am__ I.
+@ And he said, ##Draw not##note:x[<<Exod 19:12>>] nigh hither: ##put off##note:x[<<Josh 5:15; Acts 7:33>>] thy shoes from off thy feet, for the place whereon thou standest __is__ holy ground.
+@ Moreover he said, ##I __am__##note:x[<<Exod 4:5; Matt 22:32; Luke 20:37>>] the God of thy father, the God of Abraham, the God of Isaac, and the God of Jacob. And Moses hid his face; for he was afraid to look upon God.
+
+@ ¶ And the LORD said, ##I have##note:x[<<Exod 2:23–25; Ps 106:44; 145:19>>] surely seen the affliction of my people which __are__ in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows;
+@ And ##I am##note:x[<<Gen 50:24>>] come down to ##deliver##note:x[<<Gen 50:24>>] them out of the hand of the Egyptians, and to bring them up out of that land ##unto a good##note:x[<<Exod 3:17>>] land and a large, unto a land flowing with milk and honey; unto the place of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites.
+@ Now therefore, behold, ##the cry##note:x[<<Exod 2:23>>] of the children of Israel is come unto me: ##and I have##note:x[<<Exod 1:11; Prov 22:22–23>>] also seen the oppression wherewith the Egyptians oppress them.
+@ ##Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Israel out of Egypt.##note:x[<<1 Sam 12:6; Ps 105:26; Mic 6:4>>]
+
+@ ¶ ##And Moses said unto God, Who __am__ I, that I should go unto Pharaoh, and that I should bring forth the children of Israel out of Egypt?##note:x[<<Exod 6:12; 1 Sam 18:18; 2 Cor 3:5>>]
+@ And he said, ##Certainly##note:x[<<Deut 31:23; Josh 1:5; Rom 8:31>>] I will be with thee; and this __shall be__ a token unto thee, that I have sent thee: When thou hast brought forth the people out of Egypt, ye shall serve God upon this mountain.
+@ And Moses said unto God, Behold, __when__ I come unto the children of Israel, and shall say unto them, The God of your fathers hath sent me unto you; and they shall say to me, ##What __is__ his name##note:x[<<Prov 30:4; Isa 9:6>>]? what shall I say unto them?
+@ And God said unto Moses, I AM THAT I AM: and he said, Thus shalt thou say unto the children of Israel, ##I AM hath##note:x[<<John 8:58; Heb 13:8; Rev 1:8>>] sent me unto you.
+@ And God said moreover unto Moses, Thus shalt thou say unto the children of Israel, ##The LORD##note:x[<<Gen 17:7–8>>] God of your fathers, the God of Abraham, the God of Isaac, and the God of Jacob, hath sent me unto you: this __is__ my name for ever, and this __is__ ##my memorial##note:x[<<Hos 12:5; Heb 13:8>>] unto all generations.
+
+@ Go, and gather the ##elders##note:x[<<Exod 4:29>>] of Israel together, and say unto them, The LORD God of your fathers, the God of Abraham, of Isaac, and of Jacob, appeared unto me, saying, I have surely ##visited##note:x[<<Exod 4:31; Ps 8:4>>] you, and __seen__ that which is done to you in Egypt:
+@ And I have said, ##I will bring##note:x[<<Gen 15:13–21; 50:24>>] you up out of the affliction of Egypt ##unto the land##note:x[<<Exod 3:8>>] of the Canaanites, and the Hittites, and the Amorites, and the Perizzites, and the Hivites, and the Jebusites, unto a land flowing with milk and honey.
+@ And they shall hearken to thy voice: and thou shalt come, thou and the elders of Israel, unto the king of Egypt, and ye shall say unto him, ##The LORD##note:x[<<Exod 7:16; 9:1>>] God of the Hebrews hath met with us: and now let us go, we beseech thee, three days’ journey into the wilderness, ##that we may##note:x[<<Exod 9:1>>] sacrifice to the LORD our God.
+
+@ ¶ And I am sure that the king of Egypt ##will not##note:x[<<Exod 5:2>>] let you go, ##no, not by a mighty hand##note:x[<<Exod 6:1>>].note:tn[__no…__: or, but by strong hand]
+@ And I will ##stretch##note:x[<<Exod 9:15>>] out my hand, and ##smite##note:x[<<Deut 6:22; Acts 7:36>>] Egypt with all my wonders which I will do in the midst thereof: and after that he will let you go.
+@ ##And I will give this people favour in the sight of the Egyptians: and it shall come to pass, that, when ye go, ye shall not go empty:##note:x[<<Exod 11:3; 12:36; Prov 16:7>>]
+@ ##But##note:x[<<Exod 11:2; 12:35–36>>] every woman shall borrow of her neighbour, and of her that sojourneth in her house, jewels of silver, and jewels of gold, and raiment: and ye shall put __them__ upon your sons, and upon your daughters; and ye shall ##spoil##note:x[<<Ezek 39:10>>] the Egyptians.note:tn[__the Egyptians__: or, Egypt]
+
+=== @34
+
+[discrete.pericope]
+==== New Stone Tablets
+
+[.parallel]
+(<<Deuteronomy 10:1–11>>)
+
+@ And the LORD said unto Moses, ##Hew##note:x[<<Exod 31:18; 32:19>>] thee two tables of stone like unto the first: and I will write upon __these__ tables the words that were in the first tables, ##which##note:x[<<Exod 32:19>>] thou brakest.
+@ And be ready in the morning, and come up in the morning unto mount Sinai, and present thyself there to me ##in the top##note:x[<<Exod 19:20>>] of the mount.
+@ ##And no man shall come up with thee, neither let any man be seen throughout all the mount; neither let the flocks nor herds feed before that mount.##note:x[<<Exod 19:12–13, 21>>]
+
+@ ¶ And he hewed two tables of stone like unto the first; and Moses rose up early in the morning, and went up unto mount Sinai, as the LORD had commanded him, and took in his hand the two tables of stone.
+
+@ And the LORD ##descended##note:x[<<Exod 33:9; Num 11:25>>] in the cloud, and stood with him there, and proclaimed ##the name##note:x[<<Exod 33:19>>] of the LORD.
+@ And the LORD passed by before him, and proclaimed, The LORD, The LORD God, ##merciful##note:x[<<Ps 86:15; 103:8–13; Joel 2:13>>] and gracious, longsuffering, and abundant in goodness and truth,
+@ Keeping mercy for thousands, ##forgiving##note:x[<<Ps 103:3; Eph 1:7>>] iniquity and transgression and sin, and that will by no means clear __the guilty;__ ##visiting##note:x[<<Exod 20:5–6>>] the iniquity of the fathers upon the children, and upon the children’s children, unto the third and to the fourth __generation__.
+@ ##And Moses made haste, and bowed his head toward the earth, and worshipped.##note:x[<<Exod 4:31; 2 Chr 20:18>>]
+@ And he said, If now I have found grace in thy sight, O Lord, let my Lord, I pray thee, go among us; for it __is__ a stiffnecked people; and pardon our iniquity and our sin, and ##take us##note:x[<<Deut 32:9; Ps 33:12; 94:14>>] for thine inheritance.
+
+[discrete.pericope]
+==== The LORD Renews the Covenant
+
+[.parallel]
+(<<2 Corinthians 3:7–18>>)
+
+@ ¶ And he said, Behold, I make a covenant: before all thy people ##I will do marvels##note:x[<<Ps 77:14>>], such as have not been done in all the earth, nor in any nation: and all the people among which thou __art__ shall see the work of the LORD: for it __is__ ##a terrible##note:x[<<Deut 10:21; Ps 66:5>>] thing that I will do with thee.
+@ ##Observe##note:x[<<Deut 6:25>>] thou that which I command thee this day: behold, ##I drive##note:x[<<Exod 3:17; 33:2>>] out before thee the Amorite, and the Canaanite, and the Hittite, and the Perizzite, and the Hivite, and the Jebusite.
+@ ##Take heed##note:x[<<Exod 23:32–33; Deut 7:2>>] to thyself, ##lest##note:x[<<Josh 23:12–13>>] thou make a covenant with the inhabitants of the land whither thou goest, lest it be for a snare in the midst of thee:
+@ But ##ye shall##note:x[<<Exod 23:24; Deut 7:5; 2 Kgs 18:4>>] destroy their altars, break their ##images##note:tn[Heb. statues], and cut down their groves:
+@ For thou shalt ##worship##note:x[<<Exod 20:3–5>>] no other god: for the LORD, whose name __is__ Jealous, __is__ a ##jealous God##note:x[<<Deut 32:21; 1 Cor 10:22>>]:
+@ Lest thou make a covenant with the inhabitants of the land, and they go a ##whoring##note:x[<<Deut 31:16; Judg 2:17>>] after their gods, and do sacrifice unto their gods, and __one__ ##call thee##note:x[<<Num 25:2>>], and thou eat of his sacrifice;
+@ ##And thou take of their daughters unto thy sons, and their daughters go a whoring after their gods, and make thy sons go a whoring after their gods.##note:x[<<Deut 7:3–4; 1 Kgs 11:2–4; Ezra 9:2>>]
+@ ##Thou shalt make thee no molten gods.##note:x[<<Exod 32:8; Lev 19:4>>]
+
+@ ¶ ##The feast of unleavened bread shalt thou keep. Seven days thou shalt eat unleavened bread, as I commanded thee, in the time of the month Abib: for in the month Abib thou camest out from Egypt.##note:x[<<Exod 13:4; Lev 23:6>>]
+@ All that ##openeth##note:x[<<Exod 13:2, 12; 22:29>>] the matrix __is__ mine; and every firstling among thy cattle, __whether__ ox or ##sheep##note:tn[or, kid], __that is male__.
+@ But the ##firstling##note:x[<<Num 18:15>>] of an ass thou shalt redeem with a ##lamb##note:tn[or, kid]: and if thou redeem __him__ not, then shalt thou break his neck. All the firstborn of thy sons thou shalt redeem. And ##none##note:x[<<Exod 23:15; Deut 16:16>>] shall appear before me empty.
+
+@ ¶ ##Six##note:x[<<Exod 23:12; 35:2; Luke 13:14>>] days thou shalt work, but on the seventh day thou shalt rest: in earing time and in harvest thou shalt rest.
+
+@ ¶ And thou shalt observe the ##feast of weeks##note:x[<<Exod 23:16; Deut 16:10–15>>], of the firstfruits of wheat harvest, and the feast of ingathering at the year’s end.note:tn[__year’s end__: Heb. revolution of the year]
+
+@ ¶ ##Thrice##note:x[<<Exod 23:14, 17; Deut 16:16>>] in the year shall all your men children appear before the Lord GOD, the God of Israel.
+@ For ##I will##note:x[<<Exod 33:2; Ps 78:55>>] cast out the nations before thee, and ##enlarge##note:x[<<Deut 12:20>>] thy borders: neither shall any man desire thy land, when thou shalt go up to appear before the LORD thy God thrice in the year.
+@ Thou shalt not offer the blood of my sacrifice with ##leaven##note:x[<<Exod 23:18>>]; neither shall the sacrifice of the feast of the passover ##be left##note:x[<<Exod 12:10; 23:18>>] unto the morning.
+@ The ##first##note:x[<<Exod 23:19>>] of the firstfruits of thy land thou shalt bring unto the house of the LORD thy God. Thou shalt not ##seethe##note:x[<<Exod 23:19; Deut 14:21>>] a kid in his mother’s milk.
+@ And the LORD said unto Moses, ##Write##note:x[<<Exod 24:4; Deut 31:9>>] thou these words: for after the tenor of these words ##I have##note:x[<<Deut 31:9>>] made a covenant with thee and with Israel.
+
+@ And he was there with the LORD ##forty days##note:x[<<Exod 24:18; Deut 9:18>>] and forty nights; he did neither eat bread, nor drink water. And ##he wrote##note:x[<<Exod 34:1>>] upon the tables the words of the covenant, the ten ##commandments##note:tn[Heb. words].
+
+@ ¶ And it came to pass, when Moses came down from mount Sinai with the ##two tables##note:x[<<Exod 32:15>>] of testimony in Moses’ hand, when he came down from the mount, that Moses wist not that ##the skin##note:x[<<Matt 17:2; Luke 9:29>>] of his face shone while he talked with him.
+@ And when Aaron and all the children of Israel saw Moses, behold, the skin of his face shone; and they were ##afraid##note:x[<<Mark 9:3>>] to come nigh him.
+@ And Moses called unto them; and Aaron and all the rulers of the congregation returned unto him: and Moses talked with them.
+@ And afterward all the children of Israel came nigh: and he gave them in commandment all that the LORD had spoken with him in mount Sinai.
+@ And __till__ Moses had done speaking with them, he put ##a vail##note:x[<<2 Cor 3:13–18; 4:4–6>>] on his face.
+@ But when Moses went in before the LORD to speak with him, ##he took##note:x[<<2 Cor 3:16>>] the vail off, until he came out. And he came out, and spake unto the children of Israel __that__ which he was commanded.
+@ And the children of Israel saw the face of Moses, that the skin of Moses’ face shone: and Moses put the vail upon his face again, until he went in to speak with him.

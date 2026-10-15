@@ -4,20 +4,21 @@
 /// misuse diagnostics, constraint freshness vs. this package's pubspec)
 /// and `lib/src/cli/run.dart` (the `init-config` dispatch; the
 /// conversion path is owned by `invoker_test.dart` and the bats e2e
-/// suite). Two subprocess tests prove the scaffold story end to end: the
-/// stock binary serves `init-config`, and the generated project analyzes
-/// cleanly offline with a path override to this checkout.
+/// suite). The scaffold end to end, in-process: its configuration is
+/// test/cli/fixtures/scaffold_config.dart, which the workspace's analysis
+/// holds clean, and it applies to every conversion, on worker isolates
+/// too.
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:io';
 
+import 'package:ptome/src/api/api.dart' show configureCli;
 import 'package:ptome/src/cli/init_config.dart';
 import 'package:ptome/src/cli/run.dart';
 import 'package:test/test.dart';
 
-import '../support/cli.dart';
+import 'fixtures/scaffold_config.dart' as scaffold;
 
 /// Finds this package's root (the directory holding its pubspec).
 String findPackageRoot() {
@@ -57,8 +58,6 @@ Directory generateScaffold([List<String> extraArgs = const <String>[]]) {
 }
 
 void main() {
-  tearDownAll(deletePtomeCommand);
-
   group('runInitConfig', () {
     test('generates a pubspec, configuration, main and README', () {
       final dir = generateScaffold();
@@ -218,83 +217,56 @@ void main() {
     });
   });
 
-  group('scaffold end to end (subprocess)', () {
+  group('the scaffold end to end', () {
+    test('serves the current directory without a target', () {
+      final parent = makeTempDir('init-config-test');
+      final current = Directory('${parent.path}/here')..createSync();
+      final code = runInitConfig(
+        [],
+        out: StringBuffer(),
+        err: StringBuffer(),
+        current: current.path,
+      );
+      expect(code, equals(0));
+      expect(File('${current.path}/pubspec.yaml').existsSync(), isTrue);
+      expect(File('${current.path}/lib/config.dart').existsSync(), isTrue);
+      expect(
+        File('${current.path}/bin/main.dart').readAsStringSync(),
+        contains("import 'package:here/config.dart';"),
+      );
+    });
+
+    test('its configuration is the fixture the workspace analyzes', () {
+      final dir = generateScaffold();
+      expect(
+        File('${dir.path}/lib/config.dart').readAsStringSync(),
+        File('test/cli/fixtures/scaffold_config.dart').readAsStringSync(),
+      );
+    });
+
     test(
-      'the stock binary serves init-config into the current directory',
+      'the configuration applies to every conversion, on workers too',
       () async {
         final dir = makeTempDir('init-config-test');
-        final result = await runPtome([
-          'init-config',
-        ], workingDirectory: dir.path);
-        expect(
-          result.exitCode,
-          equals(0),
-          reason: 'stdout: ${result.stdout}\nstderr: ${result.stderr}',
+        final a = File('${dir.path}/a.adoc')
+          ..writeAsStringSync('See issue:7[].');
+        final b = File('${dir.path}/b.adoc')..writeAsStringSync('Plain.');
+        final err = StringBuffer();
+        final code = await runCliCode(
+          ['-j', '2', a.path, b.path],
+          out: StringBuffer(),
+          err: err,
+          configure: (options) => configureCli(scaffold.ptome, options),
         );
-        expect(File('${dir.path}/pubspec.yaml').existsSync(), isTrue);
-        expect(File('${dir.path}/lib/config.dart').existsSync(), isTrue);
-        expect(File('${dir.path}/bin/main.dart').existsSync(), isTrue);
-      },
-      timeout: const Timeout(Duration(minutes: 3)),
-    );
-
-    test(
-      'the scaffold analyzes cleanly offline with a path override',
-      () async {
-        final dir = generateScaffold();
-        final pubspec = File('${dir.path}/pubspec.yaml');
-        // ptome and its workspace siblings (the plain_* libraries), from
-        // this checkout.
-        final packages = Directory(findPackageRoot()).parent;
-        final overrides = StringBuffer('dependency_overrides:\n');
-        for (final package in packages.listSync().whereType<Directory>()) {
-          if (!File('${package.path}/pubspec.yaml').existsSync()) continue;
-          final name = package.uri.pathSegments.lastWhere((s) => s.isNotEmpty);
-          overrides.write('  $name:\n    path: ${package.path}\n');
-        }
-        pubspec.writeAsStringSync('${pubspec.readAsStringSync()}\n$overrides');
-        final pubGet = await Process.run('dart', [
-          'pub',
-          'get',
-          '--offline',
-        ], workingDirectory: dir.path);
-        expect(
-          pubGet.exitCode,
-          equals(0),
-          reason: 'pub get failed:\n${pubGet.stdout}\n${pubGet.stderr}',
-        );
-        final analyze = await Process.run('dart', [
-          'analyze',
-        ], workingDirectory: dir.path);
-        expect(
-          analyze.exitCode,
-          equals(0),
-          reason: 'analyze failed:\n${analyze.stdout}\n${analyze.stderr}',
-        );
-        expect(analyze.stdout as String, contains('No issues found!'));
-
-        // The configuration applies to every conversion, on worker isolates
-        // (-j) too.
-        File('${dir.path}/a.adoc').writeAsStringSync('See issue:7[].');
-        File('${dir.path}/b.adoc').writeAsStringSync('Plain.');
-        final run = await Process.run('dart', [
-          'run',
-          'bin/main.dart',
-          '-j',
-          '2',
-          'a.adoc',
-          'b.adoc',
-        ], workingDirectory: dir.path);
-        expect(run.exitCode, equals(0), reason: '${run.stderr}');
-        final a = File('${dir.path}/a.html').readAsStringSync();
-        expect(a, contains('<a href="https://example.org/issues/7">#7</a>'));
-        expect(a, contains('<div class="paragraph custom">'));
+        expect(code, equals(0), reason: '$err');
+        final html = File('${dir.path}/a.html').readAsStringSync();
+        expect(html, contains('<a href="https://example.org/issues/7">#7</a>'));
+        expect(html, contains('<div class="paragraph custom">'));
         expect(
           File('${dir.path}/b.html').readAsStringSync(),
           contains('<div class="paragraph custom">'),
         );
       },
-      timeout: const Timeout(Duration(minutes: 3)),
     );
   });
 }

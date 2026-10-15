@@ -1,0 +1,55 @@
+== @JAS
+
+[.book-title]
+The General Epistle of James
+
+=== @1
+
+[discrete.pericope]
+==== A Greeting from James
+
+[.parallel]
+(<<Jude 1:1–2>>)
+
+@ James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are ##scattered##note:x[<<Ezek 12:15; John 7:35; 1 Pet 1:1>>] abroad, greeting.
+
+[discrete.pericope]
+==== Rejoicing in Trials
+
+[.parallel]
+(<<Philippians 1:12–20>>)
+
+@ My brethren, ##count##note:x[<<2 Cor 12:9; Jas 1:12>>] it all joy when ye fall into ##divers##note:x[<<1 Pet 1:6–8>>] temptations;
+@ Knowing __this__, ##that##note:x[<<Rom 5:3–4>>] the trying of your faith worketh ##patience##note:x[<<Col 1:11; Heb 10:36>>].
+@ But ##let##note:x[<<Luke 21:19>>] patience have __her__ perfect work, that ye may be ##perfect and##note:x[<<Matt 5:48; 1 Pet 5:10>>] entire, wanting nothing.
+@ If any of you lack wisdom, ##let##note:x[<<Prov 2:3–6; Jer 29:12; John 15:7>>] him ask of God, that giveth to all __men__ liberally, and upbraideth not; and it shall be given him.
+@ But ##let##note:x[<<Mark 11:22–24; Heb 11:6>>] him ask in faith, nothing wavering. For ##he##note:x[<<Eph 4:14>>] that wavereth is like a wave of the sea driven with the wind and tossed.
+@ ##For let not that man think that he shall receive any thing of the Lord.##note:x[<<Prov 15:8; Isa 1:15; Jas 4:3>>]
+@ ##A double minded man __is__ unstable in all his ways.##note:x[<<1 Kgs 18:21; Matt 6:24; Jas 4:8>>]
+@ Let ##the brother##note:x[<<Prov 19:1; Jas 2:5–6>>] of low degree ##rejoice##note:x[<<Jer 9:23–24>>] in that he is exalted:
+@ But the rich, in that he is made low: ##because##note:x[<<Job 14:2; 1 Pet 1:24; 1 John 2:17>>] as the flower of the grass he shall pass away.
+@ For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: ##so##note:x[<<Ps 37:35–36; Isa 40:7–8; Luke 16:19–25>>] also shall the rich man fade away in his ways.
+@ Blessed __is__ the man that endureth temptation: for ##when##note:x[<<1 Pet 1:6–7; 5:10>>] he is tried, he shall receive ##the crown##note:x[<<Rev 2:10>>] of life, which the Lord hath promised to them that love him.
+
+[discrete.pericope]
+==== Good and Perfect Gifts
+
+@ Let ##no man##note:x[<<Hab 2:12–13; Rom 9:19–20; Jas 1:12>>] say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:
+@ But every man is tempted, ##when##note:x[<<Matt 15:18; Mark 7:21; Eph 4:22>>] he is drawn away of his own lust, and enticed.
+@ Then ##when##note:x[<<Job 15:35; Ps 7:14>>] lust hath conceived, it bringeth forth sin: and ##sin, when##note:x[<<Rom 5:12–21>>] it is finished, bringeth forth death.
+@ ##Do##note:x[<<Gal 6:7; Col 2:8>>] not err, ##my##note:x[<<Jas 1:19>>] beloved brethren.
+@ Every ##good##note:x[<<Matt 7:11; John 3:27>>] gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is ##no variableness##note:x[<<Heb 13:8>>], neither shadow of turning.
+@ Of ##his own##note:x[<<Rom 8:29–31; 1 Pet 1:23>>] will begat he us ##with##note:x[<<1 Pet 1:23>>] the word of truth, that we should be a kind of firstfruits of his creatures.
+
+[discrete.pericope]
+==== Hearing and Doing
+
+@ Wherefore, my beloved brethren, let every man be swift to hear, ##slow to speak##note:x[<<Prov 17:27; 21:23>>], ##slow to wrath##note:x[<<Prov 14:29>>]:
+@ ##For the wrath of man worketh not the righteousness of God.##note:x[<<Num 20:11–12; 2 Tim 2:24–25; Jas 3:17–18>>]
+@ Wherefore ##lay##note:x[<<Eph 4:22; 1 Pet 2:11>>] apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, ##which##note:x[<<Eph 1:13>>] is able to save your souls.
+@ But ##be##note:x[<<Luke 6:46–48; John 13:17; Rom 2:13>>] ye doers of the word, and not hearers only, deceiving your own selves.
+@ ##For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:##note:x[<<Ezek 33:31–32; Matt 7:26–27; Jas 2:14–26>>]
+@ For he beholdeth himself, and goeth his way, and straightway forgetteth ##what##note:x[<<Luke 1:66; 7:39; 2 Pet 3:11>>] manner of man he was.
+@ But whoso looketh into the perfect law of ##liberty##note:x[<<2 Cor 3:17–18>>], and continueth __therein__, he being not a forgetful hearer, but a doer of the work, ##this##note:x[<<Luke 11:28; John 13:17>>] man shall be blessed in his deed.
+@ If any man among you seem to be religious, and ##bridleth##note:x[<<Ps 141:3; Eph 4:29; 1 Pet 3:10>>] not his tongue, but deceiveth his own heart, this man’s religion __is__ vain.
+@ Pure religion and undefiled before God and the Father is this, ##To visit##note:x[<<Isa 1:16–17; Gal 6:9–10; 1 John 3:17–19>>] the fatherless and widows in their affliction, __and__ to keep himself unspotted from the world.

@@ -1,0 +1,46 @@
+== @2PE
+
+[.book-title]
+The Second Epistle General of Peter
+
+=== @1
+
+[discrete.pericope]
+==== A Greeting from Peter
+
+[.parallel]
+(<<1 Peter 1:1–2>>)
+
+@ Simon Peter, ##a servant##note:x[<<John 12:26>>] and an apostle of Jesus Christ, to them that have obtained like precious faith with us ##through##note:x[<<Rom 3:21–26>>] the righteousness ##of God and our Saviour##note:x[<<Titus 2:13>>] Jesus Christ:
+@ ##Grace##note:x[<<1 Pet 1:2>>] and peace be multiplied unto you through ##the knowledge##note:x[<<John 17:3; 2 Pet 3:18>>] of God, and of Jesus our Lord,
+
+[discrete.pericope]
+==== Partakers of the Divine Nature
+
+@ According as his divine power hath given unto us all things that __pertain__ unto life and godliness, through the knowledge of him that hath ##called##note:x[<<Rom 8:28–30; 2 Tim 1:9; 1 Pet 5:10>>] us to glory and virtue:
+@ Whereby ##are given##note:x[<<Ezek 36:25–27>>] unto us exceeding great and precious promises: that by these ##ye might##note:x[<<2 Cor 3:18; Eph 4:23–24>>] be partakers of the divine nature, having escaped the corruption that is in the world through lust.
+@ And beside this, ##giving##note:x[<<Prov 4:23; 2 Pet 3:18>>] all diligence, add to your faith ##virtue##note:x[<<Phil 4:8>>]; and to virtue knowledge;
+@ And to knowledge temperance; and to temperance ##patience##note:x[<<Luke 21:19; Rom 5:3–4; Heb 10:36>>]; and to patience godliness;
+@ And to godliness ##brotherly##note:x[<<Rom 12:10; 1 Thess 3:12; Heb 13:1>>] kindness; and to brotherly kindness charity.
+@ For if these things be ##in you##note:x[<<Col 3:16>>], and abound, they make __you that ye shall__ neither __be__ barren nor ##unfruitful##note:x[<<John 15:2; Titus 3:14>>] in the knowledge of our Lord Jesus Christ.
+@ But he that ##lacketh##note:x[<<Jas 2:14–26>>] these things is ##blind##note:x[<<1 John 2:9–11>>], and cannot see afar off, and hath forgotten ##that he##note:x[<<2 Pet 2:18–20>>] was purged from his old sins.
+@ Wherefore the rather, brethren, ##give##note:x[<<2 Pet 3:17>>] diligence to make your calling and election sure: for ##if##note:x[<<Luke 6:47–49>>] ye do these things, ye shall ##never##note:x[<<2 Pet 3:17>>] fall:
+@ For so ##an entrance##note:x[<<Matt 25:34; Rev 3:21>>] shall be ministered unto you abundantly into the ##everlasting##note:x[<<Rev 5:10>>] kingdom of our Lord and Saviour Jesus Christ.
+
+@ Wherefore ##I will not##note:x[<<Rom 15:14–15; Phil 3:1>>] be negligent to put you always in remembrance of these things, ##though##note:x[<<1 John 2:21>>] ye know __them__, and be established in the present truth.
+@ Yea, I think it meet, ##as long##note:x[<<Heb 13:3; 2 Pet 1:14>>] as I am in this tabernacle, ##to stir##note:x[<<2 Pet 3:1>>] you up by putting __you__ in remembrance;
+@ Knowing that ##shortly##note:x[<<Deut 4:21–22; 2 Tim 4:6>>] I must put off __this__ my tabernacle, ##even##note:x[<<John 21:18–19>>] as our Lord Jesus Christ hath shewed me.
+@ Moreover ##I will##note:x[<<Deut 31:19–29; Ps 71:18>>] endeavour that ye may be able after my decease to have these things always in remembrance.
+
+[discrete.pericope]
+==== Eyewitnesses of His Majesty
+
+[.parallel]
+(<<Matthew 17:1–13; Mark 9:1–13; Luke 9:28–36>>)
+
+@ For ##we have##note:x[<<1 Tim 1:4>>] not followed cunningly devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but ##were##note:x[<<John 1:14; 1 John 4:14>>] eyewitnesses of his majesty.
+@ For he received from God the Father honour and glory, when ##there came##note:x[<<Mark 9:7>>] such a voice to him from the excellent glory, ##This##note:x[<<Matt 17:5; Mark 9:7>>] is my beloved Son, in whom I am well pleased.
+@ And ##this##note:x[<<Matt 17:6>>] voice which came from heaven we heard, when we were with him in ##the holy##note:x[<<Matt 17:6>>] mount.
+@ We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto ##a light##note:x[<<Ps 119:105; Isa 9:2>>] that shineth in a dark place, until ##the day##note:x[<<Rev 22:16>>] dawn, and the day star arise in your hearts:
+@ Knowing this first, that no prophecy of the scripture is of any private interpretation.
+@ For ##the prophecy##note:x[<<1 Pet 1:11>>] came not in old time by the will of man: but holy men of God ##spake##note:x[<<2 Sam 23:2; 2 Tim 3:15–17>>] __as they were__ moved by the Holy Ghost.

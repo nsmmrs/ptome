@@ -1,0 +1,406 @@
+== @JHN
+
+[.book-title]
+The Gospel According to St. John
+
+=== @1
+
+[discrete.pericope]
+==== The Beginning
+
+[.parallel]
+(<<Genesis 1:1–2; Hebrews 11:1–3>>)
+
+@ In ##the beginning##note:x[<<Gen 1:1>>] was ##the Word##note:x[<<Rev 19:13>>], and the Word was ##with##note:x[<<John 17:5>>] God, and the Word was God.
+@ The same was in the beginning with God.
+@ ##All things were made by him; and without him was not any thing made that was made.##note:x[<<Ps 33:6; Col 1:16–17; Rev 4:11>>]
+@ In ##him##note:x[<<John 5:26>>] was life; and ##the life##note:x[<<John 8:12; 12:46>>] was the light of men.
+@ ##And the light shineth in darkness; and the darkness comprehended it not.##note:x[<<John 3:19–20; 12:36–40; 1 Cor 2:14>>]
+
+[discrete.pericope]
+==== The Witness of John
+
+@ ¶ There was ##a man##note:x[<<Isa 40:3–5; Mal 3:1; John 3:28>>] sent from God, whose name __was__ John.
+@ The same came for ##a witness##note:x[<<John 1:32–34, 36; Acts 19:4>>], to bear witness of the Light, that all __men__ through him might believe.
+@ He was not ##that Light##note:x[<<John 1:20; 3:28; Acts 19:4>>], but __was sent__ to bear witness of that Light.
+@ __That__ was ##the true##note:x[<<John 1:4; 1 John 2:8>>] Light, which lighteth ##every##note:x[<<John 12:46>>] man that cometh into the world.
+@ He was in the world, and the world was made by him, and the world ##knew##note:x[<<John 17:25; 1 Cor 2:8; 1 John 3:1>>] him not.
+@ He came unto his own, ##and##note:x[<<Isa 53:2–3; Luke 19:14; John 3:32>>] his own received him not.
+@ But as many as received him, ##to them##note:x[<<Rom 8:14; Gal 3:26; 1 John 3:1>>] gave he power to become the sons of God, __even__ to them that believe on his name:
+@ Which ##were##note:x[<<Jas 1:18; 1 John 3:9>>] born, not of blood, nor of the will of the flesh, ##nor of the will of man##note:x[<<Jas 1:18>>], but of God.
+
+[discrete.pericope]
+==== The Word Became Flesh
+
+[.parallel]
+(<<Psalms 84:1–12>>)
+
+@ And ##the Word##note:x[<<Gal 4:4; 1 Tim 3:16>>] was made flesh, and dwelt among us, ( and we beheld his glory, the glory as of ##the only##note:x[<<1 John 4:9>>] begotten of the Father,) full of grace and truth.
+
+@ ¶ John ##bare##note:x[<<Matt 3:11; John 1:29–34>>] witness of him, and cried, saying, This was he of whom I spake, He that cometh after me is preferred before me: for ##he was##note:x[<<Col 1:17>>] before me.
+@ And ##of his##note:x[<<Col 1:19>>] fulness have all we received, ##and grace##note:x[<<Rom 5:2; Eph 2:5–10>>] for grace.
+@ For ##the law##note:x[<<Rom 3:19–20>>] was given by Moses, __but__ ##grace##note:x[<<John 14:6; Rom 6:14>>] and truth came by Jesus Christ.
+@ No man hath ##seen##note:x[<<Matt 11:27; John 6:46; Col 1:15>>] God at any time; the only begotten Son, which is in the bosom of the Father, he hath declared __him.__
+
+[discrete.pericope]
+==== The Mission of John the Baptist
+
+[.parallel]
+(<<Isaiah 40:1–5; Matthew 3:1–12; Mark 1:1–8; Luke 3:1–20>>)
+
+@ ¶ And this is the record of John, ##when##note:x[<<Luke 3:15–18>>] the Jews sent priests and Levites from Jerusalem to ask him, ##Who##note:x[<<John 10:24; Acts 19:4>>] art thou?
+@ ##And he confessed, and denied not; but confessed, I am not the Christ.##note:x[<<Matt 3:11–12; Mark 1:7–8; John 3:28–36>>]
+@ And they asked him, What then? ##Art thou Elias##note:x[<<Mal 4:5; Matt 11:14>>]? And he saith, I am not. ##Art thou that##note:x[<<Deut 18:15–18>>] prophet? And he answered, No.
+@ Then said they unto him, Who art thou? that we may give an answer to them that sent us. What sayest thou of thyself?
+@ He said, ##I __am__##note:x[<<Matt 3:3; Mark 1:3>>] the voice of one crying in the wilderness, Make straight the way of the Lord, ##as said##note:x[<<Isa 40:3–5>>] the prophet Esaias.
+@ And they which were sent ##were of##note:x[<<Matt 23:13–15; Luke 11:39–44, 53>>] the Pharisees.
+@ And they asked him, and said unto him, ##Why##note:x[<<Matt 21:23; Acts 5:28>>] baptizest thou then, if thou be not ##that Christ##note:x[<<John 1:20–22>>], nor Elias, neither that prophet?
+@ John answered them, saying, ##I##note:x[<<Luke 3:16; Acts 1:5>>] baptize with water: but there standeth one among you, ##whom##note:x[<<John 1:10–11>>] ye know not;
+@ He it is, ##who##note:x[<<John 1:30>>] coming after me is preferred before me, ##whose##note:x[<<Matt 3:11; Luke 3:16>>] shoe’s latchet I am not worthy to unloose.
+@ These things were done in ##Bethabara##note:x[<<Judg 7:24; John 10:40>>] beyond Jordan, ##where##note:x[<<John 3:23>>] John was baptizing.
+
+[discrete.pericope]
+==== Jesus the Lamb of God
+
+[.parallel]
+(<<Matthew 3:13–17; Mark 1:9–11; Luke 3:21–22>>)
+
+@ ¶ The next day John seeth Jesus coming unto him, and saith, ##Behold##note:x[<<Isa 53:7; 1 Pet 1:19>>] the Lamb of God, ##which##note:x[<<1 John 2:2>>] taketh away the sin of the world.
+@ ##This is he of whom I said, After me cometh a man which is preferred before me: for he was before me.##note:x[<<Luke 3:16; John 1:15, 27>>]
+@ And ##I knew##note:x[<<John 1:33>>] him not: ##but##note:x[<<Mal 3:1; John 1:7>>] that he should be made manifest to Israel, therefore am I come baptizing with water.
+@ And John bare record, saying, ##I saw##note:x[<<Matt 3:16; Mark 1:10; Luke 3:22>>] the Spirit descending from heaven like a dove, and it abode upon him.
+@ And I knew him not: but he that sent me to baptize with water, ##the same##note:x[<<Matt 3:11; Luke 3:16; Acts 1:5>>] said unto me, Upon whom thou shalt see the Spirit descending, and remaining on him, the same is he which baptizeth with the Holy Ghost.
+@ And I saw, and bare record that ##this##note:x[<<Ps 2:7; Matt 4:3; John 1:49>>] is the Son of God.
+
+[discrete.pericope]
+==== The First Disciples
+
+[.parallel]
+(<<Matthew 4:18–22; Mark 1:16–20; Luke 5:1–11>>)
+
+@ ¶ Again the next day after John stood, ##and two##note:x[<<Mal 3:16>>] of his disciples;
+@ And looking upon Jesus as he walked, he saith, ##Behold##note:x[<<Isa 65:1–2; John 1:29; 1 Pet 1:19–20>>] the Lamb of God!
+@ And the two disciples heard him speak, ##and they##note:x[<<John 1:43; Rom 10:17; Rev 22:17>>] followed Jesus.
+@ Then Jesus turned, and saw them following, and saith unto them, [wj}##What##note:x[<<John 18:7>>] seek ye?{wj] They said unto him, ##Rabbi##note:x[<<John 1:49; 3:2>>], ( which is to say, being interpreted, Master,) where dwellest thou?
+@ He saith unto them, [wj}##Come##note:x[<<Matt 11:28–30; John 6:37>>] and see.{wj] They came and saw where he dwelt, and abode with him that day: for it was ##about##note:x[<<Luke 24:29>>] the tenth hour.
+@ One of the two which heard John __speak__, and followed him, was ##Andrew##note:x[<<Matt 4:18>>], Simon Peter’s brother.
+@ He ##first##note:x[<<Isa 2:3–5; John 1:45>>] findeth his own brother Simon, and saith unto him, We have found ##the Messias##note:x[<<John 4:25>>], which is, being interpreted, the Christ.
+@ note:x[<<1 Cor 3:22; 15:5>>]And he brought him to Jesus. And when Jesus beheld him, he said, [wj}Thou art Simon ##the son##note:x[<<John 21:15–17>>] of Jona: thou shalt be called Cephas,{wj] which is by interpretation, A stone.
+
+[discrete.pericope]
+==== Jesus Calls Philip and Nathanael
+
+@ ¶ The day following Jesus would go forth into Galilee, ##and findeth##note:x[<<Isa 65:1; Matt 4:18–21; 9:9>>] Philip, and saith unto him, [wj}Follow me.{wj]
+@ Now ##Philip##note:x[<<John 12:21>>] was of ##Bethsaida##note:x[<<Matt 11:21>>], the city of Andrew and Peter.
+@ Philip findeth Nathanael, and saith unto him, We have found him, ##of whom##note:x[<<Deut 18:18–22; Luke 24:27>>] Moses in the law, ##and the##note:x[<<Mic 5:2>>] prophets, did write, Jesus of Nazareth, the son of Joseph.
+@ And Nathanael said unto him, ##Can##note:x[<<John 7:41–42, 52>>] there any good thing ##come##note:x[<<John 4:29>>] out of Nazareth? Philip saith unto him, Come and see.
+@ Jesus saw Nathanael coming to him, and saith of him, [wj}Behold an Israelite indeed, ##in##note:x[<<Ps 32:2; 73:1; Rev 14:5>>] whom is no guile!{wj]
+@ Nathanael saith unto him, Whence knowest thou me? Jesus answered and said unto him, [wj}Before that Philip called thee, ##when##note:x[<<Ps 139:1–2; Isa 65:24; John 2:25>>] thou wast under the fig tree, I saw thee.{wj]
+@ Nathanael answered and saith unto him, Rabbi, thou art the Son of God; thou art ##the King##note:x[<<Zeph 3:15; Zech 9:9; Matt 27:42>>] of Israel.
+@ Jesus answered and said unto him, [wj}##Because##note:x[<<John 20:29>>] I said unto thee, I saw thee under the fig tree, believest thou? ##thou shalt##note:x[<<John 11:40>>] see greater things than these.{wj]
+@ And he saith unto him, [wj}Verily, verily, I say unto you, ##Hereafter##note:x[<<Acts 7:56>>] ye shall see heaven open, ##and the##note:x[<<Gen 28:12; Luke 22:43>>] angels of God ascending and descending upon the Son of man.{wj]
+
+=== @4
+
+[discrete.pericope]
+==== Jesus and the Samaritan Woman
+
+@ When therefore ##the Lord##note:x[<<2 Cor 4:5>>] knew how the Pharisees had heard ##that Jesus##note:x[<<John 3:22, 26>>] made and baptized more disciples than John,
+@ ( note:x[<<Acts 10:48; 1 Cor 1:13–17>>]Though Jesus himself baptized not, but his disciples,)
+@ He ##left##note:x[<<Matt 10:23>>] Judæa, and departed again into Galilee.
+@ ##And he must needs go through Samaria.##note:x[<<Luke 17:11>>]
+@ Then cometh he to a city of Samaria, which is called Sychar, near to ##the parcel##note:x[<<Gen 33:19; 48:22; Josh 24:32>>] of ground that Jacob gave to his son Joseph.
+@ Now Jacob’s well was there. Jesus therefore, ##being##note:x[<<Matt 8:24; Heb 2:17; 4:15>>] wearied with __his__ journey, sat thus on the well: __and__ it was about the sixth hour.
+@ There cometh a woman of Samaria to draw water: Jesus saith unto her, [wj}##Give##note:x[<<1 Kgs 17:10; Matt 10:42>>] me to drink.{wj]
+@ ( For his disciples were gone away unto the city to buy meat.)
+@ Then saith the woman of Samaria unto him, How is it that thou, being a Jew, ##askest##note:x[<<John 8:48>>] drink of me, which am a woman of Samaria? ##for##note:x[<<2 Kgs 17:24–41; Acts 10:28>>] the Jews have no dealings with the Samaritans.
+@ Jesus answered and said unto her, [wj}If thou knewest the gift of God, and who it is that saith to thee, Give me to drink; thou wouldest have asked of him, and he would have given thee ##living##note:x[<<John 4:14; 7:37–39; Rev 7:17>>] water.{wj]
+@ The woman saith unto him, Sir, ##thou hast##note:x[<<John 3:4; 1 Cor 2:14>>] nothing to draw with, and the well is deep: from whence then hast thou that living water?
+@ ##Art thou greater than our father Jacob, which gave us the well, and drank thereof himself, and his children, and his cattle?##note:x[<<Matt 12:42; John 8:53; Heb 3:3>>]
+@ Jesus answered and said unto her, [wj}##Whosoever##note:x[<<John 6:27>>] drinketh of this water shall thirst again:
+@ But whosoever drinketh of the water that I shall give him ##shall never##note:x[<<Isa 49:10; John 6:35>>] thirst; but the water that I shall give him ##shall be##note:x[<<John 7:38–39>>] in him a well of water springing up into everlasting life.{wj]
+@ The woman saith unto him, Sir, ##give##note:x[<<Ps 4:6; John 6:34; Rom 8:5>>] me this water, that I thirst not, neither come hither to draw.
+@ Jesus saith unto her, [wj}##Go##note:x[<<John 21:17; Heb 4:13; Rev 2:23>>], call thy husband, and come hither.{wj]
+@ The woman answered and said, I have no husband. Jesus said unto her, [wj}Thou hast well said, I have no husband:
+@ For thou hast had five husbands; and he whom thou now hast ##is not##note:x[<<Jer 3:20; Rom 7:3; 1 Cor 7:10–11>>] thy husband: in that saidst thou truly.{wj]
+@ The woman saith unto him, Sir, ##I perceive##note:x[<<Luke 7:39>>] that thou art ##a prophet##note:x[<<John 6:14; 9:17>>].
+@ Our ##fathers##note:x[<<Gen 12:6–7; 33:18–20>>] worshipped in this mountain; ##and ye##note:x[<<Deut 12:5–11>>] say, that in Jerusalem is the place where men ought to worship.
+@ Jesus saith unto her, [wj}Woman, believe me, the hour cometh, ##when##note:x[<<Mal 1:11; 1 Tim 2:8>>] ye shall neither in this mountain, nor yet at Jerusalem, ##worship##note:x[<<Eph 2:18>>] the Father.
+@ Ye worship ##ye know##note:x[<<Acts 17:23>>] not what: we know what we worship: ##for##note:x[<<Isa 2:3; Rom 9:4–5>>] salvation is of the Jews.
+@ But ##the hour##note:x[<<John 5:25>>] cometh, and now is, when the ##true##note:x[<<Matt 15:7–9>>] worshippers shall worship the Father ##in spirit##note:x[<<Phil 3:3>>] and in truth: for the Father seeketh such to worship him.
+@ God __is__ ##a Spirit##note:x[<<2 Cor 3:17>>]: and they that worship him ##must##note:x[<<Ps 51:17; Matt 15:8–9>>] worship __him__ in spirit and in truth.{wj]
+@ The woman saith unto him, I know that ##Messias##note:x[<<Dan 9:24–26; John 1:49; 4:42>>] cometh, which is called Christ: when he is come, he will tell us all things.
+@ ##Jesus saith unto her, [wj}I that speak unto thee am __he.__##note:x[<<Mark 14:61–62; Rom 10:20–21>>]
+
+[discrete.pericope]
+==== The Disciples Return and Marvel
+
+{wj]@ ¶ And upon this came his disciples, and ##marvelled##note:x[<<Luke 7:39>>] that he talked with the woman: yet no man said, What seekest thou? or, Why talkest thou with her?
+@ ##The woman then left her waterpot, and went her way into the city, and saith to the men,##note:x[<<John 4:7>>]
+@ ##Come, see a man, which told me all things that ever I did: is not this the Christ?##note:x[<<John 4:25; 1 Cor 14:24–25; Rev 22:17>>]
+@ Then they went out of the city, and came unto him.
+
+@ ¶ In the mean while his disciples prayed him, saying, Master, eat.
+@ But he said unto them, [wj}##I have##note:x[<<Job 23:12; Ps 119:103; John 4:34>>] meat to eat that ye know not of.{wj]
+@ Therefore said the disciples one to another, Hath any man brought him __ought__ to eat?
+@ Jesus saith unto them, [wj}##My meat##note:x[<<Job 23:12; John 6:38>>] is to do the will of him that sent me, ##and##note:x[<<John 17:4>>] to finish his work.
+@ Say not ye, There are yet four months, and __then__ cometh harvest? behold, I say unto you, Lift up your eyes, and look on the fields; ##for##note:x[<<Matt 9:37–38>>] they are white already to harvest.
+@ And ##he that reapeth receiveth##note:x[<<Rom 1:13; Jas 5:19–20>>] wages, and gathereth fruit unto life eternal: that ##both he that##note:x[<<1 Cor 3:5–9>>] soweth and he that reapeth may rejoice together.
+@ And herein is that saying true, ##One##note:x[<<Mic 6:15>>] soweth, and another reapeth.
+@ I sent you to reap that whereon ye bestowed no labour: ##other##note:x[<<2 Chr 36:15; John 1:7; Acts 10:42–43>>] men laboured, and ye are entered into their labours.
+
+[discrete.pericope]
+==== Many Samaritans Believe
+
+{wj]@ ¶ And ##many##note:x[<<John 10:41–42>>] of the Samaritans of that city believed on him ##for##note:x[<<John 4:29>>] the saying of the woman, which testified, He told me all that ever I did.
+@ So when the Samaritans were come unto him, ##they##note:x[<<Luke 24:29>>] besought him that he would tarry with them: and ##he abode##note:x[<<Rev 3:20>>] there two days.
+@ And ##many##note:x[<<Acts 1:8; 8:12>>] more believed ##because##note:x[<<1 Cor 2:4–5>>] of his own word;
+@ And said unto the woman, Now we believe, not because of thy saying: for we have heard __him__ ourselves, ##and know##note:x[<<John 1:29; Acts 4:12; 1 John 4:14>>] that this is indeed the Christ, the Saviour of the world.
+
+[discrete.pericope]
+==== Jesus Heals the Official’s Son
+
+[.parallel]
+(<<Matthew 8:5–13; Luke 7:1–10>>)
+
+@ ¶ Now after two days he departed thence, and went into Galilee.
+@ For Jesus himself testified, ##that##note:x[<<Matt 13:57; Mark 6:4; Luke 4:24>>] a prophet hath no honour in his own country.
+@ Then when he was come into Galilee, the Galilæans received him, ##having##note:x[<<John 2:13–16, 23>>] seen all the things that he did at Jerusalem at the feast: for they also went unto the feast.
+@ So Jesus came again into ##Cana##note:x[<<John 2:1–11>>] of Galilee, where he made the water wine. And there was a certain nobleman, whose son was sick at Capernaum.
+@ When he heard that Jesus was come out of Judæa into Galilee, he went unto him, and besought him that he would come down, and heal his son: for he was at the point of death.
+@ Then said Jesus unto him, [wj}##Except##note:x[<<John 12:37; 20:29; 1 Cor 1:22>>] ye see signs and wonders, ye will not believe.{wj]
+@ The nobleman saith unto him, Sir, ##come##note:x[<<Mark 5:23>>] down ere my child die.
+@ Jesus saith unto him, [wj}##Go##note:x[<<Matt 8:13; Mark 7:29–30; Rom 4:20–21>>] thy way; thy son liveth.{wj] And the man believed the word that Jesus had spoken unto him, and he went his way.
+@ And as he was now going down, his servants met him, and told __him__, saying, Thy son liveth.
+@ Then enquired he of them the hour when he began to amend. And they said unto him, Yesterday at the seventh hour the fever left him.
+@ So the father knew that __it was__ ##at the##note:x[<<Ps 107:20>>] same hour, in the which Jesus said unto him, Thy son liveth: ##and himself##note:x[<<Luke 19:9>>] believed, and his whole house.
+@ This __is__ again the second miracle __that__ Jesus did, when he was come out of Judæa into Galilee.
+
+=== @10
+
+[discrete.pericope]
+==== Jesus the Good Shepherd
+
+[.parallel]
+(<<Psalms 23:1–6; Ezekiel 34:11–24>>)
+
+@ [wj}Verily, verily, I say unto you, ##He##note:x[<<Matt 7:15; 1 John 4:1>>] that entereth not by the door into the sheepfold, but climbeth up some other way, ##the same##note:x[<<John 10:8>>] is a thief and a robber.
+@ But ##he that##note:x[<<Acts 20:28>>] entereth in by the door is ##the shepherd##note:x[<<Ps 23:1; John 10:14>>] of the sheep.
+@ To him the porter openeth; and ##the sheep##note:x[<<John 10:4>>] hear his voice: ##and he##note:x[<<2 Tim 2:19>>] calleth his own sheep by name, ##and leadeth##note:x[<<Ezek 34:11–16>>] them out.
+@ And when he putteth forth his own sheep, ##he goeth##note:x[<<Deut 1:30; John 12:26>>] before them, and the sheep follow him: ##for##note:x[<<John 10:16>>] they know his voice.
+@ ##And a stranger will they not follow, but will flee from him: for they know not the voice of strangers.##note:x[<<Col 2:6–10; 1 John 4:5–6>>]{wj]
+@ This parable spake Jesus unto them: but ##they understood not##note:x[<<Isa 56:11>>] what things they were which he spake unto them.
+@ Then said Jesus unto them again, [wj}Verily, verily, I say unto you, ##I am##note:x[<<John 10:1; 14:6; Eph 2:18>>] the door of the sheep.
+@ All that ever ##came##note:x[<<Ezek 34:2; John 10:1>>] before me are thieves and robbers: but the sheep did not hear them.
+@ I am ##the door##note:x[<<John 10:7; 14:6; Eph 2:18>>]: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture.
+@ The thief cometh not, but for to steal, and to kill, and to destroy: ##I am##note:x[<<Luke 19:10; John 6:51; 12:47>>] come that they might have life, and that they might have __it__ more abundantly.
+@ I am ##the good##note:x[<<Ps 23:1; Isa 40:11; John 10:14>>] shepherd: the good shepherd giveth his life for the sheep.
+@ But ##he that##note:x[<<Ezek 34:2–6; 2 Pet 2:3>>] is an hireling, and not the shepherd, whose own the sheep are not, seeth ##the wolf coming##note:x[<<Acts 20:29>>], and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep.
+@ The hireling fleeth, because he is an hireling, and ##careth not##note:x[<<Phil 2:20>>] for the sheep.
+@ I ##am##note:x[<<Eph 1:17>>] the good shepherd, and ##know##note:x[<<John 10:27; 2 Tim 2:19>>] my __sheep__, and am known of mine.
+@ ##As##note:x[<<Matt 11:27>>] the Father knoweth me, even so know I the Father: ##and I##note:x[<<John 10:11; Gal 1:4>>] lay down my life for the sheep.
+@ And ##other##note:x[<<Isa 56:8; John 11:52>>] sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, __and__ ##one shepherd##note:x[<<1 Pet 2:25>>].
+@ ##Therefore doth my Father love me, because I lay down my life, that I might take it again.##note:x[<<John 15:9–10; 17:4–5; Heb 2:9>>]
+@ No man taketh it from me, ##but##note:x[<<John 2:19–21; Titus 2:14; Heb 2:9>>] I lay it down of myself. I have power to lay it down, and I have power to take it again. This commandment have I received of my Father.
+
+{wj]
+@ ¶ ##There was a division therefore again among the Jews for these sayings.##note:x[<<John 7:40–43; 9:16; 1 Cor 3:3>>]
+@ And many of them said, ##He hath##note:x[<<Mark 3:21; John 7:20; 8:52>>] a devil, and is mad; why hear ye him?
+@ Others said, These are not the words of him that hath a devil. ##Can##note:x[<<Exod 4:11; Ps 94:9; Isa 35:5–6>>] a devil open the eyes of the blind?
+
+[discrete.pericope]
+==== Jesus at the Feast of Dedication
+
+@ ¶ And it was at Jerusalem the feast of the dedication, and it was winter.
+@ note:x[<<Acts 3:11; 5:12>>]And Jesus walked in the temple in Solomon’s porch.
+@ Then came the Jews round about him, and said unto him, How long dost thou make us to doubt? ##If##note:x[<<Luke 22:67–70; John 1:19>>] thou be the Christ, tell us plainly.
+@ Jesus answered them, [wj}##I told##note:x[<<John 8:58>>] you, and ye believed not: ##the works##note:x[<<John 10:38>>] that I do in my Father’s name, they bear witness of me.
+@ But ye believe not, ##because##note:x[<<John 8:47; 10:27; 2 Cor 4:3–4>>] ye are not of my sheep, as I said unto you.
+@ My ##sheep##note:x[<<John 10:16; Rev 3:20>>] hear my voice, ##and I##note:x[<<John 10:14>>] know them, and they follow me:
+@ And I give unto them eternal life; and ##they##note:x[<<John 3:15; 6:37, 39–40>>] shall never perish, neither shall any __man__ pluck them out of my hand.
+@ My Father, ##which##note:x[<<John 6:37; 17:2, 9>>] gave __them__ me, is greater than all; and no __man__ is able to pluck __them__ out of my Father’s hand.
+@ ##I and __my__ Father are one.##note:x[<<John 1:1–2; 14:9; 17:21>>]{wj]
+@ ##Then the Jews took up stones again to stone him.##note:x[<<John 5:18; 8:59; 11:8>>]
+@ Jesus answered them, [wj}Many good works have I shewed you from my Father; for which of those works do ye stone me?{wj]
+@ The Jews answered him, saying, For a good work we stone thee not; but for blasphemy; and because that thou, being a man, ##makest##note:x[<<John 5:18; 10:30>>] thyself God.
+@ Jesus answered them, [wj}Is it not written in your law, ##I said##note:x[<<Ps 82:1, 6–7>>], Ye are ##gods##note:x[<<Exod 7:1>>]?
+@ If he called them gods, ##unto##note:x[<<Rom 13:1>>] whom the word of God came, and ##the scripture##note:x[<<Matt 24:35>>] can not be broken;
+@ Say ye of him, ##whom##note:x[<<Jer 1:5>>] the Father hath sanctified, and ##sent##note:x[<<John 3:17>>] into the world, Thou blasphemest; because I said, ##I am##note:x[<<John 5:17–18>>] the Son of God?
+@ ##If I do not the works of my Father, believe me not.##note:x[<<John 10:25; 15:24>>]
+@ But if I do, though ye believe not me, believe the works: ##that ye##note:x[<<John 10:30; 14:9–11, 20>>] may know, and believe, that the Father __is__ in me, and I in him.{wj]
+@ ##Therefore they sought again to take him: but he escaped out of their hand,##note:x[<<John 7:30, 44; 8:59>>]
+
+[discrete.pericope]
+==== John’s Testimony Confirmed
+
+@ And went away again beyond Jordan into ##the place##note:x[<<John 1:28>>] where John at first baptized; and there he abode.
+@ And many resorted unto him, and said, John did no miracle: ##but##note:x[<<John 1:33–34>>] all things that John spake of this man were true.
+@ ##And many believed on him there.##note:x[<<John 2:23; 4:41; 12:42>>]
+
+=== @15
+
+[discrete.pericope]
+==== Jesus the True Vine
+
+[.parallel]
+(<<Isaiah 27:1–13>>)
+
+@ [wj}I am the true ##vine##note:x[<<Jer 2:21>>], and my Father is the ##husbandman##note:x[<<Isa 27:2–3; 1 Cor 3:9>>].
+@ Every ##branch##note:x[<<Matt 3:10; 15:13>>] in me that beareth not fruit he taketh away: ##and##note:x[<<Heb 12:10–11>>] every __branch__ that beareth fruit, he purgeth it, that it may bring forth more fruit.
+@ ##Now ye are clean through the word which I have spoken unto you.##note:x[<<John 17:17; Eph 5:26; 1 Pet 1:22>>]
+@ ##Abide##note:x[<<Gal 2:20; 1 John 2:6>>] in me, and I in you. ##As##note:x[<<Gal 2:20>>] the branch cannot bear fruit of itself, except it abide in the vine; no more can ye, except ye abide in me.
+@ I am the vine, ye __are__ the branches: He that abideth in me, and I in him, the ##same##note:x[<<Phil 4:13; Col 1:10>>] bringeth forth much fruit: for without me ye ##can##note:x[<<Phil 4:13>>] do nothing.
+@ If a man abide not in me, ##he##note:x[<<Matt 7:19; 13:41; Heb 6:7–8>>] is cast forth as a branch, and is withered; and men gather them, and cast __them__ into the fire, and they are burned.
+@ If ye abide in me, and my words abide in you, ##ye shall##note:x[<<Ps 37:4; John 14:13; 1 John 5:14>>] ask what ye will, and it shall be done unto you.
+@ Herein ##is##note:x[<<Matt 5:16; Phil 1:11>>] my Father glorified, that ye bear much fruit; ##so##note:x[<<John 8:31>>] shall ye be my disciples.
+
+[discrete.pericope]
+==== No Greater Love
+
+@ As ##the Father##note:x[<<John 17:23, 26>>] hath loved me, so have I loved you: ##continue##note:x[<<1 John 2:28>>] ye in my love.
+@ If ##ye keep##note:x[<<John 14:15; 1 John 3:21–24; 5:3>>] my commandments, ye shall abide in my love; even as I have kept my Father’s commandments, and abide in his love.
+@ These things have I spoken unto you, that my joy might remain in you, and __that__ ##your##note:x[<<John 16:24; 17:13; Rom 15:13>>] joy might be full.
+@ ##This is my commandment, That ye love one another, as I have loved you.##note:x[<<John 13:34; 1 Pet 4:8; 1 John 4:21>>]
+@ ##Greater love hath no man than this, that a man lay down his life for his friends.##note:x[<<John 10:11; Rom 5:6–8; Eph 5:2>>]
+@ Ye are ##my##note:x[<<Matt 12:50; Jas 2:23>>] friends, ##if##note:x[<<1 John 5:3>>] ye do whatsoever I command you.
+@ Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends; for ##all##note:x[<<Ps 25:14; Matt 13:11; 1 Cor 2:9–12>>] things that I have heard of my Father I have made known unto you.
+@ Ye ##have not##note:x[<<John 15:19>>] chosen me, but I have chosen you, and ##ordained##note:x[<<Jer 1:5–7; Eph 2:10>>] you, that ye should go and bring forth fruit, and __that__ your fruit should remain: that whatsoever ye shall ask of the Father in my name, he may give it you.
+@ ##These things I command you, that ye love one another.##note:x[<<John 15:12; 1 Pet 2:17; 1 John 3:14–17>>]
+
+[discrete.pericope]
+==== The Hatred of the World
+
+@ ##If the world hate you, ye know that it hated me before __it hated__ you.##note:x[<<Luke 6:22; John 7:7; 1 John 3:13>>]
+@ If ye ##were of the world##note:x[<<1 John 4:4–5>>], the world would love his own: but ##because##note:x[<<John 17:14–16; Eph 1:4–11>>] ye are not of the world, but I have chosen you out of the world, therefore the world hateth you.
+@ Remember the ##word##note:x[<<Matt 10:24; John 13:16>>] that I said unto you, The servant is not greater than his lord. If they have persecuted me, they will also persecute you; ##if they have kept##note:x[<<Ezek 3:7>>] my saying, they will keep yours also.
+@ But ##all##note:x[<<Matt 10:18, 22; John 16:3>>] these things will they do unto you for my name’s sake, because they know not him that sent me.
+@ If I had not come and spoken unto them, ##they##note:x[<<John 9:41; Acts 17:30; Jas 4:17>>] had not had sin: but now they have no cloke for their sin.
+@ He that hateth me hateth my Father also.
+@ ##If##note:x[<<John 5:36; 7:31>>] I had not done among them the works which none other man did, they had not had sin: ##but##note:x[<<John 14:9>>] now have they both seen and hated both me and my Father.
+@ But __this cometh to pass__, that the word might be fulfilled that is written in their law, ##They##note:x[<<Ps 35:19; 69:4; 109:3>>] hated me without a cause.
+@ But ##when##note:x[<<John 14:16–17, 26; 16:13–14>>] the Comforter is come, whom I will send unto you from the Father, __even__ the Spirit of truth, which proceedeth from the Father, he shall testify of me:
+@ And ##ye also##note:x[<<Luke 24:48; John 21:24; Acts 10:39–42>>] shall bear witness, because ye have been with me from the beginning.{wj]
+
+=== @16
+
+[discrete.pericope]
+==== Persecution Foretold
+
+[.parallel]
+(<<Acts 23:12–22>>)
+
+@ [wj}##These things have I spoken unto you, that ye should not be offended.##note:x[<<Matt 13:21; 26:31–33; 1 Pet 2:8>>]
+@ They ##shall##note:x[<<John 9:22>>] put you out of the synagogues: yea, ##the time##note:x[<<Acts 26:9–11; Rom 10:2–3>>] cometh, that whosoever killeth you will think that he doeth God service.
+@ And these things will they do unto you, ##because##note:x[<<John 8:19; 15:21; 17:25>>] they have not known the Father, nor me.
+@ But these things have I told you, ##that when##note:x[<<Mark 13:23; John 13:19; 14:29>>] the time shall come, ye may remember that I told you of them. And these things I said not unto you at the beginning, because I was with you.
+
+[discrete.pericope]
+==== The Promise of the Holy Spirit
+
+[.parallel]
+(<<John 14:15–26>>)
+
+@ But now ##I##note:x[<<John 7:33; 16:28>>] go my way to him that sent me; and none of you asketh me, ##Whither##note:x[<<John 13:36>>] goest thou?
+@ ##But because I have said these things unto you, sorrow hath filled your heart.##note:x[<<Luke 22:45; John 16:20–22; 20:11–15>>]
+@ Nevertheless I tell you the truth; It is expedient for you that I go away: for if I go not away, ##the Comforter##note:x[<<John 14:16–17, 26; 15:26>>] will not come unto you; but if I depart, I will send him unto you.
+@ And when he is come, ##he will##note:x[<<Zech 12:10; Acts 2:37>>] ##reprove##note:x[<<Jude 1:15>>] the world of sin, and of righteousness, and of judgment:
+@ ##Of sin, because they believe not on me;##note:x[<<John 8:23–24; 12:47–48; 15:22–25>>]
+@ Of ##righteousness##note:x[<<Jer 23:5–6; Rom 10:3–4; 2 Cor 5:21>>], because I go to my Father, and ye see me no more;
+@ Of judgment, because ##the##note:x[<<John 12:31; Col 2:15; 1 John 3:8>>] prince of this world is judged.
+@ I have ##yet##note:x[<<John 15:15>>] many things to say unto you, but ##ye##note:x[<<Mark 4:33; 1 Cor 3:1–2>>] cannot bear them now.
+@ Howbeit when he, the ##Spirit##note:x[<<John 14:17>>] of truth, is come, he ##will guide##note:x[<<John 14:26; 1 Cor 2:10–13>>] you into all truth: for he shall not speak of himself; but whatsoever he shall hear, __that__ shall he speak: and he will shew you things to come.
+@ He shall ##glorify##note:x[<<1 John 4:13–14>>] me: ##for##note:x[<<2 Cor 3:14–18; 1 John 4:13–14>>] he shall receive of mine, and shall shew __it__ unto you.
+@ ##All things that the Father hath are mine: therefore said I, that he shall take of mine, and shall shew __it__ unto you.##note:x[<<Matt 11:27; John 3:35; 17:10>>]
+@ ##A little while##note:x[<<Acts 1:3; 10:40–41>>], and ye shall not see me: and again, a little while, and ye shall see me, ##because##note:x[<<John 16:28>>] I go to the Father.
+
+[discrete.pericope]
+==== Grief Will Turn to Joy
+
+{wj]@ Then ##said##note:x[<<Mark 9:32; John 16:5, 19>>] __some__ of his disciples among themselves, What is this that he saith unto us, A little while, and ye shall not see me: and again, a little while, and ye shall see me: and, Because I go to the Father?
+@ They said therefore, What is this that he saith, A little while? ##we##note:x[<<Luke 24:25>>] cannot tell what he saith.
+@ Now ##Jesus##note:x[<<John 16:30>>] knew that they were desirous to ask him, and said unto them, [wj}Do ye enquire among yourselves of that I said, ##A little##note:x[<<John 14:19; 16:16>>] while, and ye shall not see me: and again, a little while, and ye shall see me?
+@ Verily, verily, I say unto you, That ye shall weep and lament, but the world shall rejoice: and ye shall be sorrowful, but ##your##note:x[<<Ps 126:5–6; Matt 5:4; Jas 1:2>>] sorrow shall be turned into joy.
+@ A ##woman##note:x[<<Isa 26:16–18; Jer 30:6–7>>] when she is in travail hath sorrow, because her hour is come: but as soon as she is delivered of the child, she remembereth no more the anguish, ##for##note:x[<<Ps 113:9>>] joy that a man is born into the world.
+@ And ye now therefore have sorrow: ##but##note:x[<<Acts 13:52; 1 Pet 1:8>>] I will see you again, ##and your##note:x[<<1 Pet 1:8>>] heart shall rejoice, and your joy no man taketh from you.
+
+[discrete.pericope]
+==== Ask in My Name
+
+[.parallel]
+(<<Matthew 18:19–20>>)
+
+@ And in that day ye shall ask me nothing. Verily, verily, I say unto you, ##Whatsoever##note:x[<<Matt 21:22; John 14:13–14; 15:7>>] ye shall ask the Father in my name, he will give __it__ you.
+@ Hitherto have ye asked nothing in my name: ##ask##note:x[<<Matt 7:7–8; Jas 4:2–3>>], and ye shall receive, ##that##note:x[<<John 15:11>>] your joy may be full.
+@ These things have I spoken unto you in ##proverbs##note:x[<<Matt 13:34–35; Mark 4:13; John 16:12>>]: but the time cometh, when I shall no more speak unto you in proverbs, but I shall shew you plainly of the Father.
+@ At ##that##note:x[<<Rom 8:34>>] day ye shall ask in my name: and I say not unto you, that I will pray the Father for you:
+@ For ##the Father##note:x[<<John 14:21, 23; 17:23>>] himself loveth you, because ye have loved me, and have believed that I came out from God.
+@ I ##came##note:x[<<John 8:14; 13:1, 3>>] forth from the Father, and am come into the world: again, I leave the world, and go to the Father.{wj]
+@ His disciples said unto him, Lo, now speakest thou plainly, and speakest no proverb.
+@ Now ##are##note:x[<<John 21:17>>] we sure that thou knowest all things, and needest not that any man should ask thee: ##by##note:x[<<John 17:8>>] this we believe that thou camest forth from God.
+@ Jesus answered them, [wj}Do ye now believe?
+@ Behold, the hour cometh, yea, is now come, ##that##note:x[<<Zech 13:7; Matt 26:31; Mark 14:27>>] ye shall be scattered, every man to his own, and shall leave me alone: and yet I am not alone, because the Father is with me.
+@ These things ##I##note:x[<<1 John 5:4>>] have spoken unto you, that ##in me##note:x[<<John 14:27; 2 Thess 3:16>>] ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.{wj]
+
+=== @20
+
+[discrete.pericope]
+==== The Resurrection
+
+[.parallel]
+(<<Matthew 28:1–10; Mark 16:1–8; Luke 24:1–12>>)
+
+@ The ##first##note:x[<<Rev 1:10>>] __day__ of the week ##cometh##note:x[<<Mark 16:9>>] Mary Magdalene early, when it was yet dark, unto the sepulchre, and seeth ##the stone##note:x[<<Matt 27:60>>] taken away from the sepulchre.
+@ Then she runneth, and cometh to Simon Peter, and ##to the##note:x[<<John 13:23>>] other disciple, whom Jesus loved, and saith unto them, ##They have taken##note:x[<<John 20:13>>] away the Lord out of the sepulchre, and we know not where they have laid him.
+@ ##Peter therefore went forth, and that other disciple, and came to the sepulchre.##note:x[<<Luke 24:12>>]
+@ So they ran both together: and the other disciple did outrun Peter, and came first to the sepulchre.
+@ And he stooping down, __and looking in__, ##saw##note:x[<<John 19:40>>] the linen clothes lying; yet went he not in.
+@ Then cometh Simon Peter following him, and went into the sepulchre, and seeth the linen clothes lie,
+@ ##And the napkin, that was about his head, not lying with the linen clothes, but wrapped together in a place by itself.##note:x[<<John 11:44>>]
+@ Then went in also that other disciple, which came first to the sepulchre, ##and he##note:x[<<John 20:25>>] saw, and believed.
+@ For as yet they knew not the scripture, ##that##note:x[<<Ps 16:10; Isa 25:8; 53:10–12>>] he must rise again from the dead.
+
+[discrete.pericope]
+==== Jesus Appears to Mary Magdalene
+
+[.parallel]
+(<<Mark 16:9–11>>)
+
+@ Then the disciples went away again unto their own home.
+
+@ ¶ But Mary stood without at the sepulchre weeping: and as she wept, she stooped down, __and looked__ into the sepulchre,
+@ And ##seeth##note:x[<<Luke 24:3–7>>] two angels ##in##note:x[<<Rev 3:4>>] white sitting, the one at the head, and the other at the feet, where the body of Jesus had lain.
+@ And they say unto her, Woman, ##why##note:x[<<John 16:20–22; 20:15>>] weepest thou? She saith unto them, Because they have taken away my Lord, and I know not where they have laid him.
+@ And when she had thus said, she turned herself back, ##and saw##note:x[<<Song 3:3–4; Matt 28:9>>] Jesus standing, ##and knew##note:x[<<Luke 24:16>>] not that it was Jesus.
+@ Jesus saith unto her, [wj}Woman, why weepest thou? ##whom##note:x[<<Song 3:2; John 1:38; 18:7>>] seekest thou?{wj] She, supposing him to be the gardener, saith unto him, Sir, if thou have borne him hence, tell me where thou hast laid him, and I will take him away.
+@ Jesus saith unto her, [wj}##Mary##note:x[<<John 10:3>>].{wj] She turned herself, and saith unto him, Rabboni; which is to say, Master.
+@ Jesus saith unto her, [wj}Touch me not; for I am not yet ascended to my Father: but go to my brethren, and say unto them, ##I ascend##note:x[<<John 16:28; Eph 4:8–10; 1 Pet 1:3>>] unto my Father, and your Father; and __to__ my God, and your God.{wj]
+@ Mary Magdalene ##came##note:x[<<Matt 28:10; Mark 16:10–13; Luke 24:10>>] and told the disciples that she had seen the Lord, and __that__ he had spoken these things unto her.
+
+[discrete.pericope]
+==== Jesus Appears to the Disciples
+
+[.parallel]
+(<<Luke 24:36–49; 1 John 1:1–4>>)
+
+@ ¶ Then ##the same##note:x[<<Luke 24:36–49>>] day at evening, being the first __day__ of the week, ##when##note:x[<<John 20:26>>] the doors were shut where the disciples were assembled for fear of the Jews, came Jesus and stood in the midst, and saith unto them, [wj}##Peace##note:x[<<John 14:27>>] __be__ unto you.{wj]
+@ And when he had so said, ##he shewed##note:x[<<Luke 24:39–40; John 20:27>>] unto them __his__ hands and his side. ##Then##note:x[<<John 16:22>>] were the disciples glad, when they saw the Lord.
+@ Then said Jesus to them again, [wj}Peace __be__ unto you: ##as##note:x[<<Matt 28:18–20; John 13:20; 17:18–19>>] __my__ Father hath sent me, even so send I you.{wj]
+@ And when he had said this, ##he breathed##note:x[<<Gen 2:7; Job 33:4>>] on __them__, and saith unto them, [wj}##Receive##note:x[<<Acts 2:38>>] ye the Holy Ghost:
+@ ##Whose soever sins ye remit, they are remitted unto them; __and__ whose soever __sins__ ye retain, they are retained.##note:x[<<Matt 16:19; 18:18; Mark 2:5–10>>]
+
+[discrete.pericope]
+==== Jesus Appears to Thomas
+
+{wj]@ ¶ But ##Thomas##note:x[<<John 11:16>>], one of the twelve, called Didymus, ##was##note:x[<<Heb 10:25>>] not with them when Jesus came.
+@ The other disciples therefore said unto him, ##We##note:x[<<Mark 16:11>>] have seen the Lord. But he said unto them, ##Except##note:x[<<John 6:30; Heb 3:18–19>>] I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe.
+
+@ ¶ And after ##eight##note:x[<<John 20:19>>] days again his disciples were within, and Thomas with them: __then__ came Jesus, the doors being shut, and stood in the midst, and said, [wj}##Peace##note:x[<<Isa 54:10; John 20:19>>] __be__ unto you.{wj]
+@ Then saith he to Thomas, [wj}##Reach hither thy finger##note:x[<<Ps 103:13–14; John 20:25; 1 John 1:1–2>>], and behold my hands; and reach hither thy hand, and thrust __it__ into my side: and be not faithless, but believing.{wj]
+@ And Thomas answered and said unto him, ##My Lord##note:x[<<Isa 7:14; 9:6; 1 Tim 3:16>>] and my God.
+@ Jesus saith unto him, [wj}Thomas, because thou hast seen me, thou hast believed: ##blessed##note:x[<<2 Cor 5:7; Heb 11:1; 1 Pet 1:8>>] __are__ they that have not seen, and __yet__ have believed.
+
+[discrete.pericope]
+==== The Purpose of John’s Book
+
+{wj]@ ¶ ##And many other signs truly did Jesus in the presence of his disciples, which are not written in this book:##note:x[<<John 21:25; Rom 15:4; 2 Tim 3:15–17>>]
+@ But ##these##note:x[<<1 John 5:1>>] are written, that ye might believe that Jesus is the Christ, the Son of God; and that ##believing##note:x[<<John 3:15–16>>] ye might have life ##through##note:x[<<Acts 10:43>>] his name.

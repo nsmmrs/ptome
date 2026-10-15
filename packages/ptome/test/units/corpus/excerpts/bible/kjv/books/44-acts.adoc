@@ -1,0 +1,557 @@
+== @ACT
+
+[.book-title]
+The Acts of the Apostles
+
+=== @4
+
+[discrete.pericope]
+==== Peter and John before the Sanhedrin
+
+@ And as they spake unto the people, ##the priests##note:x[<<Acts 6:12>>], and ##the captain##note:x[<<Luke 22:4>>] of the temple, and ##the Sadducees##note:x[<<Acts 23:6–9>>], came upon them,
+@ Being grieved that they taught the people, and ##preached##note:x[<<Acts 17:18; 24:14–15; 1 Thess 4:13–14>>] through Jesus the resurrection from the dead.
+@ And they ##laid##note:x[<<Acts 5:18>>] hands on them, and put __them__ in hold unto the next day: for it was now eventide.
+@ Howbeit ##many##note:x[<<2 Cor 2:14–17; 2 Tim 2:9–10>>] of them which heard the word believed; and ##the number##note:x[<<Acts 2:41>>] of the men was about five thousand.
+
+@ ¶ And it came to pass on the morrow, that their rulers, and elders, and scribes,
+@ And ##Annas##note:x[<<Luke 3:2>>] the high priest, and Caiaphas, and John, and Alexander, and as many as were of the kindred of the high priest, were gathered together at Jerusalem.
+@ And when they had set them in the midst, they asked, ##By what power##note:x[<<Matt 21:23; Mark 11:28>>], or ##by what name##note:x[<<Acts 5:40>>], have ye done this?
+@ Then Peter, ##filled##note:x[<<Matt 10:19–20; Luke 12:11–12; Acts 2:4>>] with the Holy Ghost, said unto them, Ye rulers of the people, and elders of Israel,
+@ If we this day be examined of ##the good##note:x[<<Acts 3:7; 1 Pet 3:15–17>>] deed done to the impotent man, by what means he is made whole;
+@ Be it known unto you all, and to all the people of Israel, ##that by##note:x[<<Acts 2:36; 3:6; 5:29–32>>] the name of Jesus Christ of Nazareth, whom ye crucified, whom God raised from the dead, __even__ by him doth this man stand here before you whole.
+@ This is ##the stone##note:x[<<Ps 118:22–23; Isa 28:16; Mark 12:10–12>>] which was set at nought of you builders, which is become the head of the corner.
+@ Neither ##is there##note:x[<<John 3:36; 14:6; 1 Cor 3:11>>] salvation in any other: for there is none other name under heaven given among men, whereby we must be saved.
+
+[discrete.pericope]
+==== The Name Forbidden
+
+@ ¶ Now when they saw the boldness of Peter and John, and perceived that they ##were##note:x[<<Matt 11:25; John 7:15; 1 Cor 1:27>>] unlearned and ignorant men, they marvelled; and they took knowledge of them, that they had been with Jesus.
+@ And beholding the man which was healed standing with them, they could say nothing against it.
+@ But when they had commanded them to go aside out of the council, they conferred among themselves,
+@ Saying, ##What##note:x[<<John 12:18>>] shall we do to these men? for that indeed a notable miracle hath been done by them __is__ manifest to all them that dwell in Jerusalem; ##and we##note:x[<<Luke 21:15; Acts 6:10>>] can not deny __it__.
+@ But ##that it##note:x[<<Rom 15:18–22>>] spread no further among the people, ##let##note:x[<<Acts 5:28; 1 Thess 2:15–16>>] us straitly threaten them, that they speak henceforth to no man in this name.
+@ ##And they##note:x[<<Acts 5:40>>] called them, and commanded them ##not to speak##note:x[<<Luke 24:46–48>>] at all nor teach in the name of Jesus.
+@ But Peter and John answered and said unto them, Whether it be right in the sight of God ##to hearken##note:x[<<Exod 1:17; Acts 5:29>>] unto you more than unto God, ##judge##note:x[<<1 Cor 10:15>>] ye.
+@ note:x[<<Jer 20:9; 1 Cor 9:16–17>>]For we can not but speak ##the things##note:x[<<Acts 22:15>>] which we have seen and heard.
+@ So when they had further threatened them, they let them go, finding nothing ##how##note:x[<<Matt 21:46; Luke 20:6; Acts 5:26>>] they might punish them, because of the people: for all __men__ glorified God for that which was done.
+@ For the man was above ##forty##note:x[<<John 5:5; Acts 3:2; 9:33>>] years old, on whom this miracle of healing was shewed.
+
+[discrete.pericope]
+==== The Believers’ Prayer
+
+[.parallel]
+(<<Psalms 2:1–12>>)
+
+@ ¶ And being let go, ##they##note:x[<<Ps 42:4; 119:63; 2 Cor 6:14–17>>] went to their own company, and reported all that the chief priests and elders had said unto them.
+@ And when they heard that, they lifted up their voice to God with one accord, and said, ##Lord##note:x[<<2 Kgs 19:15; Neh 9:6; Jer 32:17>>], thou __art__ God, which hast made heaven, and earth, and the sea, and all that in them is:
+@ Who ##by##note:x[<<Acts 1:16>>] the mouth of thy servant David hast said, ##Why##note:x[<<Ps 2:1–6>>] did the heathen rage, and the people imagine vain things?
+@ The ##kings##note:x[<<Ps 83:2–8; Rev 17:12–14>>] of the earth stood up, and the rulers were gathered together against the Lord, and against his Christ.
+@ For of a truth against ##thy##note:x[<<Acts 4:30>>] holy child Jesus, whom thou hast anointed, both Herod, and ##Pontius Pilate##note:x[<<Matt 27:2>>], with the Gentiles, and ##the people##note:x[<<Luke 9:22>>] of Israel, were gathered together,
+@ For ##to do##note:x[<<Gen 50:20; Acts 2:23>>] whatsoever thy hand ##and##note:x[<<Isa 46:10>>] thy counsel determined before to be done.
+@ And now, Lord, behold their threatenings: and grant unto thy servants, ##that##note:x[<<Acts 4:13; 14:3; Phil 1:14>>] with all boldness they may speak thy word,
+@ By stretching forth thine hand to heal; ##and that##note:x[<<Acts 2:22>>] signs and wonders may be done by ##the name##note:x[<<Acts 3:6; 4:27>>] of thy holy child Jesus.
+
+@ ¶ And when they had prayed, ##the place##note:x[<<Acts 2:2>>] was shaken where they were assembled together; and ##they were all##note:x[<<Acts 2:4>>] filled with the Holy Ghost, and they ##spake##note:x[<<Matt 21:22>>] the word of God with boldness.
+
+[discrete.pericope]
+==== Sharing among Believers
+
+[.parallel]
+(<<Acts 2:42–47>>)
+
+@ And ##the multitude##note:x[<<1 Cor 1:10; Eph 4:2–6; 1 Pet 3:8>>] of them that believed were of one heart and of one soul: neither said any __of them__ that ought of the things which he possessed was his own; but they had all things common.
+@ And ##with##note:x[<<Acts 1:8, 22>>] great power gave the apostles witness of the resurrection of the Lord Jesus: and great ##grace##note:x[<<John 1:16>>] was upon them all.
+@ Neither was there any among them that lacked: ##for##note:x[<<Luke 12:33; 16:9; Acts 2:45>>] as many as were possessors of lands or houses sold them, and brought the prices of the things that were sold,
+@ And laid __them__ down ##at##note:x[<<Acts 5:2; 2 Cor 8:20–21>>] the apostles’ feet: and ##distribution##note:x[<<Acts 2:45>>] was made unto every man according as he had need.
+@ And Joses, who by the apostles was surnamed ##Barnabas##note:x[<<Gal 2:1, 9, 13>>], ( which is, being interpreted, The son of consolation,) a Levite, __and__ of the country of Cyprus,
+@ Having land, sold __it__, and brought the money, and laid __it__ at the apostles’ feet.
+
+=== @7
+
+[discrete.pericope]
+==== Stephen’s Address: The Call of Abraham
+
+[.parallel]
+(<<Genesis 12:1–9>>)
+
+@ Then said the high priest, Are these things so?
+@ And he said, ##Men##note:x[<<Acts 22:1>>], brethren, and fathers, hearken; ##The God##note:x[<<Ps 29:3>>] of glory appeared unto our father Abraham, when he was in Mesopotamia, before he dwelt in ##Charran##note:x[<<Gen 11:31>>],
+@ And said unto him, ##Get##note:x[<<Gen 12:1; Heb 11:8>>] thee out of thy country, and from thy kindred, and come into the land which I shall shew thee.
+@ Then ##came##note:x[<<Gen 12:4–5>>] he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell.
+@ And he gave him none inheritance in it, no, not __so much as__ to set his foot on: ##yet##note:x[<<Gen 12:7; 13:15; 17:8>>] he promised that he would give it to him for a possession, and to his seed after him, when __as yet__ he had no child.
+@ And God spake on this wise, ##That##note:x[<<Gen 15:13>>] his seed should sojourn in a strange land; and that they should bring them into bondage, and entreat __them__ evil ##four##note:x[<<Exod 12:40–41; Gal 3:17>>] hundred years.
+@ And the nation to whom they shall be in bondage will I judge, said God: and after that shall they come forth, ##and serve##note:x[<<Exod 3:12>>] me in this place.
+@ And he gave him ##the covenant##note:x[<<Gen 17:9–14>>] of circumcision: and so __Abraham__ begat Isaac, and circumcised him the eighth day; and Isaac __begat__ Jacob; ##and Jacob##note:x[<<Gen 35:23–26>>] __begat__ the twelve patriarchs.
+
+[discrete.pericope]
+==== Joseph Sold into Egypt
+
+[.parallel]
+(<<Genesis 37:12–30>>)
+
+@ And the patriarchs, moved with envy, ##sold##note:x[<<Ps 105:17>>] Joseph into Egypt: ##but##note:x[<<Gen 39:2; Isa 43:2>>] God was with him,
+@ And ##delivered##note:x[<<Gen 48:16; 2 Tim 4:18>>] him out of all his afflictions, and ##gave##note:x[<<Prov 3:4>>] him favour and wisdom in the sight of Pharaoh king of Egypt; and he made him governor over Egypt and all his house.
+@ ##Now there came a dearth over all the land of Egypt and Chanaan, and great affliction: and our fathers found no sustenance.##note:x[<<Gen 41:54–57>>]
+@ But when Jacob heard that there was corn in Egypt, he sent out our fathers first.
+@ And at the second __time__ Joseph was made known to his brethren; and Joseph’s kindred was made known unto Pharaoh.
+@ Then sent Joseph, and called his father Jacob to __him__, and all his kindred, ##threescore##note:x[<<Gen 46:26–27; Deut 10:22>>] and fifteen souls.
+
+[discrete.pericope]
+==== Israel Oppressed in Egypt
+
+[.parallel]
+(<<Exodus 1:8–22>>)
+
+@ So ##Jacob##note:x[<<Gen 46:3–7>>] went down into Egypt, and ##died##note:x[<<Gen 49:33; Exod 1:6>>], he, and our fathers,
+@ And ##were##note:x[<<Exod 13:19; Josh 24:32>>] carried over into Sychem, and laid in the sepulchre that Abraham bought for a sum of money of the sons of Emmor __the father__ of Sychem.
+@ But when the time of the promise drew nigh, which God had sworn to Abraham, ##the people##note:x[<<Exod 1:7–12>>] grew and multiplied in Egypt,
+@ ##Till another king arose, which knew not Joseph.##note:x[<<Exod 1:8>>]
+@ ##The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.##note:x[<<Ps 105:25>>]
+
+[discrete.pericope]
+==== The Birth and Adoption of Moses
+
+[.parallel]
+(<<Exodus 2:1–10; Hebrews 11:23–29>>)
+
+@ In which time Moses was born, ##and was##note:x[<<Heb 11:23>>] exceeding fair, and nourished up in his father’s house three months:
+@ And when he was cast out, Pharaoh’s daughter took him up, and nourished him for her own son.
+@ And Moses ##was learned##note:x[<<Isa 19:11>>] in all the wisdom of the Egyptians, and was mighty in words and in deeds.
+
+[discrete.pericope]
+==== The Rejection and Flight of Moses
+
+[.parallel]
+(<<Exodus 2:11–22>>)
+
+@ And ##when##note:x[<<Exod 2:11–12>>] he was full forty years old, it came into his heart to visit his brethren the children of Israel.
+@ ##And seeing one __of them__ suffer wrong, he defended __him__, and avenged him that was oppressed, and smote the Egyptian:##note:x[<<John 18:10–11>>]
+@ For he supposed his brethren would have understood how that God by his hand would deliver them: but they understood not.
+@ And ##the next##note:x[<<Exod 2:13–15>>] day he shewed himself unto them as they strove, and would have set them at one again, saying, Sirs, ye are brethren; why do ye wrong one to another?
+@ But he that did his neighbour wrong thrust him away, saying, ##Who##note:x[<<Luke 12:14>>] made thee a ruler and a judge over us?
+@ Wilt thou kill me, as thou diddest the Egyptian yesterday?
+@ Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons.
+
+[discrete.pericope]
+==== The Call of Moses
+
+[.parallel]
+(<<Exodus 3:1–22>>)
+
+@ And when forty years were expired, ##there##note:x[<<Exod 3:1>>] appeared to him in the wilderness of mount Sina ##an##note:x[<<Acts 7:35>>] angel of the Lord ##in a flame##note:x[<<Isa 43:2>>] of fire in a bush.
+@ When Moses saw __it__, he wondered at the sight: and as he drew near to behold __it__, the voice of the Lord came unto him,
+@ __Saying__, ##I __am__##note:x[<<Exod 3:6>>] the God of thy fathers, the God of Abraham, and the God of Isaac, and the God of Jacob. Then Moses trembled, and durst not behold.
+@ Then said the Lord to him, ##Put##note:x[<<Exod 3:5; Josh 5:15; Eccl 5:1>>] off thy shoes from thy feet: for the place where thou standest is holy ground.
+@ ##I have seen##note:x[<<Exod 3:7; 4:31; Neh 9:9>>], I have seen the affliction of my people which is in Egypt, and I have heard their groaning, and am come down to deliver them. And now come, I will send thee into Egypt.
+@ This ##Moses##note:x[<<Luke 19:14>>] whom they refused, saying, Who made thee a ruler and a judge? ##the same##note:x[<<Ps 75:7; 118:22–23>>] did God send __to be__ a ruler and a deliverer by the hand of the angel which appeared to him in the bush.
+@ He ##brought##note:x[<<Exod 12:41; 33:1>>] them out, after that he had shewed wonders and signs in the land of Egypt, and ##in the Red##note:x[<<Exod 14:21>>] sea, and in the wilderness forty years.
+
+@ ¶ This is that Moses, which said unto the children of Israel, ##A prophet##note:x[<<Deut 18:15–19; Acts 3:22>>] shall the Lord your God raise up unto you of your brethren, like unto me; ##him##note:x[<<John 18:37>>] shall ye hear.
+@ This is he, that was in the church in the wilderness ##with the##note:x[<<Acts 7:53>>] angel which spake to him in the mount Sina, and __with__ our fathers: who received the ##lively##note:x[<<Rom 3:2; Heb 5:12>>] oracles to give unto us:
+
+[discrete.pericope]
+==== The Rebellion of Israel
+
+[.parallel]
+(<<Exodus 32:1–35; Deuteronomy 9:7–29; Amos 5:16–27>>)
+
+@ To ##whom##note:x[<<Neh 9:16>>] our fathers would not obey, but thrust __him__ from them, ##and in##note:x[<<Num 11:5; 14:3–4>>] their hearts turned back again into Egypt,
+@ Saying ##unto##note:x[<<Exod 32:1>>] Aaron, Make us gods to go before us: for __as for__ this Moses, which brought us out of the land of Egypt, we wot not what is become of him.
+@ And ##they##note:x[<<Neh 9:18; Ps 106:19–21>>] made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands.
+@ Then God turned, ##and gave##note:x[<<Ezek 20:39>>] them up to worship ##the host##note:x[<<Jer 19:13>>] of heaven; as it is written in the book of the prophets, ##O ye##note:x[<<Amos 5:25–26>>] house of Israel, have ye offered to me slain beasts and sacrifices __by the space of__ forty years in the wilderness?
+@ Yea, ##ye took##note:x[<<Lev 20:2–5>>] up the tabernacle of Moloch, and the star of your god Remphan, ##figures##note:x[<<Exod 20:4–5; Deut 5:8–9>>] which ye made to worship them: and I will carry you away beyond Babylon.
+
+[discrete.pericope]
+==== The Tabernacle of the Testimony
+
+[.parallel]
+(<<Exodus 40:1–33; Hebrews 9:1–10>>)
+
+@ Our fathers had ##the tabernacle##note:x[<<Exod 38:21>>] of witness in the wilderness, as he had appointed, speaking unto Moses, ##that he##note:x[<<Exod 25:40; Heb 8:5>>] should make it according to the fashion that he had seen.
+@ Which also our fathers that came after brought in with Jesus into the possession of the Gentiles, ##whom##note:x[<<Ps 44:2>>] God drave out before the face of our fathers, unto the days of David;
+@ Who ##found##note:x[<<2 Sam 7:1; Acts 13:22>>] favour before God, ##and desired##note:x[<<Ps 132:1–5>>] to find a tabernacle for the God of Jacob.
+@ ##But Solomon built him an house.##note:x[<<1 Kgs 8:20>>]
+@ Howbeit the most High ##dwelleth##note:x[<<1 Kgs 8:27; Acts 17:24–25>>] not in temples made with hands; ##as##note:x[<<Isa 66:1–2>>] saith the prophet,
+@ ##Heaven##note:x[<<Ps 11:4; Jer 23:24>>] __is__ my throne, and earth __is__ my foot stool: ##what house##note:x[<<John 4:21>>] will ye build me? saith the Lord: or what __is__ the place of my rest?
+@ ##Hath not my hand made all these things?##note:x[<<Jer 32:17>>]
+
+@ ¶ Ye stiffnecked and ##uncircumcised##note:x[<<Deut 10:16; Jer 4:4>>] in heart and ears, ye do always ##resist##note:x[<<Isa 63:10>>] the Holy Ghost: as your fathers __did__, so __do__ ye.
+@ ##Which of##note:x[<<1 Kgs 19:10; 2 Chr 36:16; Matt 5:12>>] the prophets have not your fathers persecuted? and they have slain them which shewed before of the coming of the Just One; of whom ye have been now the betrayers and murderers:
+@ Who ##have received##note:x[<<Deut 33:2; Gal 3:19; Heb 2:2>>] the law by the disposition of angels, and have not kept __it.__
+
+[discrete.pericope]
+==== The Stoning of Stephen
+
+@ ¶ When they heard these things, ##they were##note:x[<<Acts 5:33>>] cut to the heart, and ##they gnashed##note:x[<<Ps 35:16>>] on him with __their__ teeth.
+@ But he, being ##full##note:x[<<Acts 6:5>>] of the Holy Ghost, looked up stedfastly into heaven, ##and saw##note:x[<<2 Cor 4:6>>] the glory of God, and Jesus ##standing##note:x[<<Heb 1:3>>] on the right hand of God,
+@ And said, Behold, ##I see##note:x[<<Acts 10:11; Rev 11:19>>] the heavens opened, and ##the Son##note:x[<<Matt 26:64–65>>] of man standing on the right hand of God.
+@ Then they cried out with a loud voice, and ##stopped##note:x[<<Zech 7:11>>] their ears, and ran upon him with one accord,
+@ And cast __him__ out of the city, and ##stoned##note:x[<<Lev 24:14–16>>] __him__: and the witnesses laid down ##their##note:x[<<Acts 8:1; 22:20>>] clothes at a young man’s feet, whose name was Saul.
+@ And they stoned Stephen, ##calling##note:x[<<Acts 22:16>>] upon __God__, and saying, ##Lord##note:x[<<Ps 31:5; Luke 23:46>>] Jesus, receive my spirit.
+@ And he kneeled down, and cried with a loud voice, ##Lord##note:x[<<Matt 5:44; Luke 23:34>>], lay not this sin to their charge. And when he had said this, ##he fell##note:x[<<1 Cor 15:20>>] asleep.
+
+=== @10
+
+[discrete.pericope]
+==== Cornelius Sends for Peter
+
+@ There was a certain man ##in##note:x[<<Acts 8:40>>] Cæsarea called Cornelius, ##a centurion##note:x[<<Acts 27:1>>] of the band called the ##Italian##note:x[<<Acts 27:1>>] __band__,
+@ __A__ ##devout##note:x[<<Acts 10:22>>] __man__, and one that feared God with all his house, ##which##note:x[<<Acts 10:4>>] gave much alms to the people, ##and prayed##note:x[<<Matt 7:7–8>>] to God alway.
+@ He ##saw##note:x[<<Dan 9:20–21>>] in a vision evidently ##about##note:x[<<Acts 3:1>>] the ninth hour of the day ##an##note:x[<<Acts 5:19>>] angel of God coming in to him, and saying unto him, Cornelius.
+@ And when he looked on him, he was afraid, and said, What is it, Lord? And he said unto him, ##Thy##note:x[<<Acts 10:31; Phil 4:6>>] prayers and ##thine##note:x[<<Heb 6:10>>] alms are come up for a memorial before God.
+@ And now send men to Joppa, and call for __one__ Simon, whose surname is Peter:
+@ He lodgeth with ##one##note:x[<<Acts 9:43>>] Simon a tanner, whose house is by the sea side: he shall tell thee what thou oughtest to do.
+@ And when the angel which spake unto Cornelius was departed, he called two of his household servants, and a devout soldier of them that waited on him continually;
+@ And when he had declared all __these__ things unto them, he sent them to Joppa.
+
+[discrete.pericope]
+==== Peter’s Vision
+
+[.parallel]
+(<<Leviticus 11:1–47; Deuteronomy 14:1–21>>)
+
+@ ¶ On the morrow, as they went on their journey, and drew nigh unto the city, ##Peter##note:x[<<Zeph 1:5>>] went up upon the housetop to pray about the sixth hour:
+@ And he became very hungry, and would have eaten: but while they made ready, ##he fell##note:x[<<Acts 22:17>>] into a trance,
+@ And ##saw##note:x[<<John 1:51>>] heaven opened, ##and a##note:x[<<Rom 16:25–26; Eph 3:6>>] certain vessel descending unto him, as it had been a great sheet knit at the four corners, and let down to the earth:
+@ Wherein were all manner of fourfooted beasts of the earth, and wild beasts, and creeping things, and fowls of the air.
+@ And there came a voice to him, ##Rise##note:x[<<John 4:31–34>>], Peter; kill, and eat.
+@ But Peter said, Not so, Lord; ##for##note:x[<<Lev 20:25; Ezek 4:14>>] I have never eaten any thing that is common or unclean.
+@ And the voice __spake__ unto him again the second time, ##What##note:x[<<Matt 15:11; 1 Cor 10:25; Titus 1:15>>] God hath cleansed, __that__ call not thou common.
+@ This was done thrice: and the vessel was received up again into heaven.
+
+[discrete.pericope]
+==== Peter Called to Caesarea
+
+@ Now while Peter doubted in himself what this vision which he had seen should mean, behold, the men which were sent from Cornelius had made enquiry for Simon’s house, and stood before the gate,
+@ And called, and asked whether Simon, which was surnamed Peter, were lodged there.
+
+@ ¶ While Peter thought on the vision, ##the Spirit##note:x[<<Acts 8:29; 11:12; 13:2>>] said unto him, Behold, three men seek thee.
+@ Arise therefore, ##and get##note:x[<<Acts 15:7>>] thee down, and go with them, doubting nothing: for I have sent them.
+@ Then Peter went down to the men which were sent unto him from Cornelius; and said, Behold, I am he whom ye seek: what __is__ the cause wherefore ye are come?
+@ And they said, Cornelius the centurion, a just man, and one that feareth God, and of good report among all the nation of the Jews, was warned from God by an holy angel to send for thee into his house, ##and to##note:x[<<Acts 11:14>>] hear words of thee.
+@ Then called he them in, and lodged __them__. And on the morrow Peter went away with them, ##and certain##note:x[<<Acts 10:45; 11:12>>] brethren from Joppa accompanied him.
+
+[discrete.pericope]
+==== Peter Visits Cornelius
+
+@ And the morrow after they entered into Cæsarea. And Cornelius waited for them, and had called together his kinsmen and near friends.
+@ And as Peter was coming in, Cornelius met him, ##and fell##note:x[<<Matt 8:2; Rev 19:10; 22:8–9>>] down at his feet, and worshipped __him__.
+@ But Peter took him up, saying, ##Stand##note:x[<<Matt 4:10; Acts 14:14–15; Rev 19:10>>] up; I myself also am a man.
+@ And as he talked with him, he went in, and found many that were come together.
+@ And he said unto them, Ye know how ##that it##note:x[<<John 4:9; Gal 2:12–14>>] is an unlawful thing for a man that is a Jew to keep company, or come unto one of another nation; ##but##note:x[<<Eph 3:6–7>>] God hath shewed me that I should not call any man common or unclean.
+@ Therefore came I __unto you__ without gainsaying, as soon as I was sent for: I ask therefore for what intent ye have sent for me?
+@ And Cornelius said, Four days ago ##I was##note:x[<<Neh 9:1–3; Dan 9:20–21; Acts 10:3>>] fasting until this hour; and at the ninth hour I prayed in my house, and, behold, a man stood before me in bright clothing,
+@ And said, Cornelius, ##thy##note:x[<<Dan 9:23; Luke 1:13>>] prayer is heard, and thine alms ##are##note:x[<<Acts 10:4>>] had in remembrance in the sight of God.
+@ Send therefore to Joppa, and call hither Simon, whose surname is Peter; he is lodged in the house of __one__ Simon a tanner by the sea side: who, when he cometh, shall speak unto thee.
+@ Immediately therefore I sent to thee; and thou hast well done that thou art come. Now therefore ##are we##note:x[<<Gal 4:14; Jas 1:19>>] all here present before God, to hear all things that are commanded thee of God.
+
+[discrete.pericope]
+==== Good News for the Gentiles
+
+@ ¶ Then Peter opened __his__ mouth, and said, ##Of a##note:x[<<Deut 10:17; 2 Chr 19:7; Rom 2:11>>] truth I perceive that God is no respecter of persons:
+@ But ##in##note:x[<<Rom 10:12–13>>] every nation he that ##feareth##note:x[<<Acts 10:2; 1 John 2:29>>] him, and worketh righteousness, is accepted with him.
+@ The word which __God__ sent unto the children of Israel, preaching peace by Jesus Christ: ( ##he is##note:x[<<Matt 28:18; Acts 2:36; Rev 17:14>>] Lord of all:)
+@ That word, __I say__, ye know, ##which##note:x[<<Luke 4:14>>] was published throughout all Judæa, and began from Galilee, after the baptism which John preached;
+@ How ##God##note:x[<<Isa 61:1–3; Luke 4:18; Acts 2:22>>] anointed Jesus of Nazareth with the Holy Ghost and with power: who went about doing good, and healing all that were oppressed of the devil; for God was with him.
+@ And ##we are##note:x[<<Luke 24:48; Acts 1:8; 10:41>>] witnesses of all things which he did both in the land of the Jews, and in Jerusalem; whom they slew and hanged on a tree:
+@ ##Him God raised up the third day, and shewed him openly;##note:x[<<Acts 13:30–31; 1 Pet 1:21>>]
+@ ##Not##note:x[<<John 14:22; Acts 1:2–3; 10:39>>] to all the people, but unto witnesses chosen before of God, __even__ to us, who did eat and drink with him after he rose from the dead.
+@ And he commanded us to preach unto the people, and to testify ##that it##note:x[<<2 Cor 5:10; 2 Tim 4:1; 1 Pet 4:5>>] is he which was ordained of God __to be__ the Judge of quick and dead.
+@ To ##him##note:x[<<Isa 53:11; Jer 31:34; Zech 13:1>>] give all the prophets witness, that through his name whosoever believeth in him shall receive remission of sins.
+
+[discrete.pericope]
+==== The Gentiles Receive the Holy Spirit
+
+[.parallel]
+(<<Acts 19:1–7>>)
+
+@ ¶ While Peter yet spake these words, ##the Holy Ghost##note:x[<<Acts 4:31; 11:15; 19:6>>] fell on all them which heard the word.
+@ And ##they##note:x[<<Acts 10:23; Gal 3:13–14>>] of the circumcision which believed were astonished, as many as came with Peter, because that on ##the Gentiles##note:x[<<Col 2:13–14>>] also was poured out the gift of the Holy Ghost.
+@ For they heard them ##speak##note:x[<<Acts 2:4, 11; 19:6>>] with tongues, and magnify God. Then answered Peter,
+@ ##Can any man forbid water, that these should not be baptized, which have received the Holy Ghost as well as we?##note:x[<<Acts 8:36; 11:15–17; Rom 10:12>>]
+@ And he ##commanded##note:x[<<Gal 3:27>>] them to be baptized in ##the name##note:x[<<Acts 2:38; 8:16>>] of the Lord. Then prayed they him to tarry certain days.
+
+=== @15
+
+[discrete.pericope]
+==== The Dispute over Circumcision
+
+@ And certain men which came down from Judæa taught the brethren, __and said__, ##Except##note:x[<<Acts 15:5; Col 2:8>>] ##ye##note:x[<<Gal 5:6>>] be circumcised after the manner of Moses, ye cannot be saved.
+@ When therefore Paul and Barnabas had no small dissension and disputation with them, ##they determined##note:x[<<Gal 2:1–2>>] that Paul and Barnabas, and ##certain##note:x[<<Acts 15:22>>] other of them, ##should##note:x[<<Acts 15:22–23>>] go up to Jerusalem unto the apostles and elders about this question.
+@ And being ##brought##note:x[<<Acts 21:5>>] on their way by the church, they passed through Phenice and Samaria, ##declaring##note:x[<<Acts 14:27>>] the conversion of the Gentiles: and they caused great joy unto all the brethren.
+@ And when they were come to Jerusalem, they were received of the church, and __of__ the apostles and elders, and they declared ##all##note:x[<<Acts 14:27; 15:3, 12>>] things that God had done with them.
+
+[discrete.pericope]
+==== The Council at Jerusalem
+
+[.parallel]
+(<<Amos 9:11–15; Galatians 2:1–10>>)
+
+@ But there rose up certain of ##the sect##note:x[<<Phil 3:5–8>>] of the Pharisees which believed, saying, ##That it##note:x[<<Acts 15:1; Gal 5:1–3>>] was needful to circumcise them, and to command __them__ to keep the law of Moses.
+
+@ ¶ ##And the apostles and elders came together for to consider of this matter.##note:x[<<Prov 15:22>>]
+@ And when there had been much disputing, Peter rose up, and said unto them, Men __and__ brethren, ye know how that a good while ago ##God##note:x[<<1 Chr 28:4–5; Gal 2:7–9>>] made choice among us, that the Gentiles ##by my##note:x[<<Rom 10:17–18>>] mouth should hear the word of the gospel, and believe.
+@ And God, ##which##note:x[<<Acts 1:24>>] knoweth the hearts, bare them witness, giving them the Holy Ghost, even as __he did__ unto us;
+@ And ##put##note:x[<<Rom 3:22; Gal 5:6; Eph 3:6>>] no difference between us and them, purifying their hearts by faith.
+@ Now therefore why tempt ye God, to ##put##note:x[<<Matt 23:4; Gal 5:1>>] a yoke upon the neck of the disciples, ##which##note:x[<<Gal 4:9>>] neither our fathers nor we were able to bear?
+@ But we believe ##that##note:x[<<Rom 3:24; Titus 2:11; 3:4–7>>] through the grace of the Lord Jesus Christ we shall be saved, even as they.
+
+@ ¶ Then all the multitude kept silence, and gave audience to Barnabas and Paul, ##declaring##note:x[<<Acts 14:27; 15:4>>] what miracles and wonders God had wrought among the Gentiles by them.
+
+@ ¶ And after they had held their peace, ##James##note:x[<<Acts 12:17>>] answered, saying, Men __and__ brethren, hearken unto me:
+@ ##Simeon##note:x[<<2 Pet 1:1>>] hath ##declared##note:x[<<Luke 2:31–32; Acts 15:7–9>>] how God at the first did visit the Gentiles, to take out of them a people for his name.
+@ ##And to this agree the words of the prophets; as it is written,##note:x[<<Acts 13:47; Rom 15:8–12>>]
+@ After ##this##note:x[<<Amos 9:11–12>>] I will return, and will ##build again the tabernacle##note:x[<<Ps 89:35–49; Luke 1:31–33>>] of David, which is fallen down; and I will build again the ruins thereof, and I will set it up:
+@ That ##the residue##note:x[<<Hos 2:23; Zech 2:11; 8:20–23>>] of men might seek after the Lord, and all the Gentiles, upon whom my name is called, saith the Lord, who doeth all these things.
+@ ##Known unto God are all his works from the beginning of the world.##note:x[<<Isa 46:9–10; Eph 1:4; 3:9>>]
+@ Wherefore my sentence is, ##that##note:x[<<Acts 15:28; Gal 1:7–10>>] we trouble not them, which from among the Gentiles are turned to God:
+@ But that we write unto them, that they abstain ##from pollutions##note:x[<<Acts 15:29; Rev 2:14, 20>>] of idols, and __from__ fornication, and __from__ things strangled, and __from__ blood.
+@ For Moses of old time hath in every city them that preach him, being read in the synagogues every ##sabbath##note:x[<<Acts 13:15, 27>>] day.
+
+[discrete.pericope]
+==== The Letter to the Gentile Believers
+
+@ Then pleased it the apostles and elders, with the whole church, ##to send##note:x[<<Acts 15:27>>] chosen men of their own company to Antioch with Paul and Barnabas; __namely__, Judas surnamed Barsabas, and ##Silas##note:x[<<Acts 15:27, 40>>], chief men among the brethren:
+@ And they wrote __letters__ by them after this manner; The apostles and elders and brethren __send__ ##greeting##note:x[<<Acts 23:26; Jas 1:1>>] unto the brethren which are of the Gentiles in Antioch and ##Syria##note:x[<<Gal 1:21>>] and Cilicia:
+@ Forasmuch as we have heard, ##that certain##note:x[<<Gal 5:12; Titus 1:10–11>>] which went out from us have troubled you with words, subverting your souls, saying, ##__Ye must__##note:x[<<Acts 15:1>>] be circumcised, and keep the law: to whom we gave no __such__ commandment:
+@ It seemed good unto us, being assembled with one accord, to send chosen men unto you with our beloved Barnabas and Paul,
+@ Men that have ##hazarded##note:x[<<Acts 14:19; 1 Cor 15:30; Phil 2:29–30>>] their lives for the name of our Lord Jesus Christ.
+@ We have sent therefore Judas and Silas, who shall also tell __you__ the same things by mouth.
+@ For ##it##note:x[<<John 16:13>>] seemed good to the Holy Ghost, and to us, to lay upon you no ##greater##note:x[<<Matt 11:30; Rev 2:24>>] burden than these necessary things;
+@ That ##ye abstain##note:x[<<Acts 15:20; 21:25; Rev 2:14>>] from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.
+
+[discrete.pericope]
+==== The Believers at Antioch Rejoice
+
+@ So when they were dismissed, they came to Antioch: and when they had gathered the multitude together, they delivered the epistle:
+@ __Which__ when they had read, ##they rejoiced##note:x[<<Gal 2:4–5>>] for the consolation.
+@ And Judas and Silas, ##being##note:x[<<Acts 11:23; 13:1>>] prophets also themselves, ##exhorted##note:x[<<Acts 11:23>>] the brethren with many words, and confirmed __them__.
+@ And after they had tarried __there__ a space, ##they were##note:x[<<Acts 16:36; 1 Cor 16:11; Heb 11:31>>] let go in peace from the brethren unto the apostles.
+@ Notwithstanding it pleased Silas to abide there still.
+@ Paul also and Barnabas continued in Antioch, ##teaching##note:x[<<Col 1:28; 2 Tim 4:2>>] and preaching the word of the Lord, with many others also.
+
+[discrete.pericope]
+==== Paul’s Second Missionary Journey Begins
+
+[.parallel]
+(<<Acts 13:1–3; Acts 18:23–28>>)
+
+@ ¶ And some days after Paul said unto Barnabas, Let us go again and visit our brethren ##in every##note:x[<<Acts 13:4, 13–14; 14:6>>] city where we have preached the word of the Lord, __and see__ how they do.
+@ And Barnabas determined to take with them ##John##note:x[<<Acts 12:12>>], whose surname was Mark.
+@ But Paul thought not good to take him with them, ##who##note:x[<<Acts 13:13>>] departed from them from Pamphylia, and went not with them to the work.
+@ And the contention was so sharp between them, that they departed asunder one from the other: and so Barnabas took Mark, and sailed unto Cyprus;
+@ And Paul ##chose##note:x[<<Acts 15:22>>] Silas, and departed, ##being##note:x[<<Acts 14:26>>] recommended by the brethren unto the grace of God.
+@ And he went ##through##note:x[<<Acts 15:23; Gal 1:21>>] Syria and Cilicia, ##confirming##note:x[<<Acts 15:32>>] the churches.
+
+=== @17
+
+[discrete.pericope]
+==== The Uproar in Thessalonica
+
+@ Now when they had passed through Amphipolis and Apollonia, they came to ##Thessalonica##note:x[<<Acts 20:4; Phil 4:16; 1 Thess 1:1>>], where was a synagogue of the Jews:
+@ And Paul, ##as##note:x[<<Luke 4:16>>] his manner was, ##went##note:x[<<Acts 9:20; 18:4>>] in unto them, and three sabbath days reasoned with them out of the scriptures,
+@ Opening and alleging, that ##Christ##note:x[<<Luke 24:32>>] must needs have suffered, and risen again from the dead; and that ##this##note:x[<<Acts 9:22; 18:28>>] Jesus, whom I preach unto you, is Christ.
+@ And ##some##note:x[<<Acts 14:4>>] of them believed, and consorted with Paul and Silas; and of ##the devout##note:x[<<Acts 13:43>>] Greeks a great multitude, ##and of the chief##note:x[<<Acts 17:12>>] women not a few.
+
+@ ¶ But the Jews which believed not, ##moved##note:x[<<Acts 14:2; 17:13; Gal 5:26>>] with envy, took unto them certain lewd fellows of the baser sort, and gathered a company, and set all the city on an uproar, and assaulted the house of Jason, and sought to bring them out to the people.
+@ And when they found them not, ##they drew##note:x[<<Acts 16:19–20>>] Jason and certain brethren unto the rulers of the city, crying, ##These##note:x[<<Acts 24:5; 28:22>>] that have turned the world upside down are come hither also;
+@ Whom Jason hath received: ##and these##note:x[<<Luke 23:2; John 19:12; Acts 16:21>>] all do contrary to the decrees of Cæsar, saying that there is another king, __one__ Jesus.
+@ And they troubled the people and the rulers of the city, when they heard these things.
+@ And when they had taken security of Jason, and of the other, they let them go.
+
+[discrete.pericope]
+==== The Character of the Bereans
+
+@ ¶ And the brethren immediately sent away Paul and Silas by night unto ##Berea##note:x[<<Acts 17:13>>]: who coming __thither__ ##went##note:x[<<Acts 17:2; 1 Thess 2:2>>] into the synagogue of the Jews.
+@ These were more noble than those in Thessalonica, in that ##they received##note:x[<<Prov 2:1–5>>] the word with all readiness of mind, ##and searched##note:x[<<Isa 34:16; John 5:39>>] the scriptures daily, whether those things were so.
+@ Therefore ##many##note:x[<<Acts 14:1; Eph 5:14>>] of them believed; also of ##honourable##note:x[<<Acts 13:50>>] women which were Greeks, and of men, not a few.
+@ But when ##the Jews##note:x[<<1 Thess 2:14–16>>] of Thessalonica had knowledge that the word of God was preached of Paul at Berea, they came thither also, and stirred up the people.
+@ And ##then##note:x[<<Matt 10:23; Acts 17:10>>] immediately the brethren sent away Paul to go as it were to the sea: but Silas and Timotheus abode there still.
+@ And they that conducted Paul brought him unto ##Athens##note:x[<<Acts 18:1; 1 Thess 3:1>>]: and ##receiving##note:x[<<Acts 18:5>>] a commandment unto Silas and Timotheus for to come to him with all speed, they departed.
+
+[discrete.pericope]
+==== Paul in Athens
+
+@ ¶ Now while Paul waited for them at Athens, ##his spirit##note:x[<<Exod 32:19–20; Ps 119:136, 158>>] was stirred in him, when he saw the city wholly given to idolatry.
+@ Therefore disputed he in the synagogue with the Jews, and with the devout persons, and in the market daily with them that met with him.
+@ Then certain ##philosophers##note:x[<<1 Cor 1:20–21; Col 2:8>>] of the Epicureans, and of the Stoicks, ##encountered##note:x[<<Luke 11:53>>] him. And some said, What will this babbler say? other some, He seemeth to be a setter forth of strange gods: because he preached unto them Jesus, and the resurrection.
+@ And they took him, and brought him unto ##Areopagus##note:x[<<Acts 17:22>>], saying, May we know what this ##new##note:x[<<Mark 1:27>>] doctrine, whereof thou speakest, __is__?
+@ For thou bringest certain ##strange##note:x[<<Hos 8:12; 1 Cor 1:23; 2:14>>] things to our ears: we would know therefore what these things mean.
+@ ( For all the Athenians and strangers which were there ##spent##note:x[<<2 Tim 2:16–17>>] their time in nothing else, but either to tell, or to hear some new thing.)
+
+[discrete.pericope]
+==== Paul’s Address in the Areopagus
+
+@ ¶ Then Paul stood in the midst of Mars’ hill, and said, __Ye__ men of Athens, ##I perceive##note:x[<<Acts 25:19>>] that in all things ye are too superstitious.
+@ For as I passed by, and beheld your devotions, I found an altar with this inscription, ##TO##note:x[<<John 17:3; Gal 4:8–9>>] THE UNKNOWN GOD. Whom therefore ye ##ignorantly##note:x[<<John 4:22>>] worship, him declare I unto you.
+@ God that made the world and all things therein, seeing that he is Lord of heaven and earth, ##dwelleth##note:x[<<1 Kgs 8:27; Isa 66:1; Acts 7:48>>] not in temples made with hands;
+@ Neither ##is##note:x[<<Ps 50:8–13>>] worshipped with men’s hands, as though he needed any thing, ##seeing##note:x[<<Gen 2:7; Isa 42:5>>] he giveth to all life, and breath, and all things;
+@ And ##hath made##note:x[<<Gen 3:20; Mal 2:10>>] of one blood all nations of men for to dwell on all the face of the earth, and ##hath determined##note:x[<<Deut 32:7–8>>] the times before appointed, and the bounds of their habitation;
+@ That ##they##note:x[<<Rom 1:20>>] should seek the Lord, if haply they might feel after him, and find him, though ##he be##note:x[<<Jer 23:23–24; Acts 14:17>>] not far from every one of us:
+@ For ##in him##note:x[<<Job 12:10; Col 1:17; Heb 1:3>>] we live, and move, and have our being; as certain also of your own poets have said, For we are also his offspring.
+@ Forasmuch then as we are the offspring of God, ##we ought##note:x[<<Ps 115:4–8>>] not to think that the Godhead is like unto gold, or silver, or stone, ##graven##note:x[<<Exod 20:4; Isa 46:5–6>>] by art and man’s device.
+@ And ##the times##note:x[<<Acts 14:16>>] of this ignorance God winked at; ##but##note:x[<<Luke 24:47; Titus 2:11–12>>] now commandeth all men every where to repent:
+@ Because ##he hath appointed##note:x[<<Matt 25:31–46; Rom 2:16; 2 Pet 3:7>>] a day, in the which he will judge the world in righteousness by __that__ man whom he hath ordained; __whereof__ he hath given assurance unto all __men__, in that he hath raised him from the dead.
+
+@ ¶ And when they heard of the resurrection of the dead, ##some##note:x[<<Acts 2:13; 17:18; 26:8>>] mocked: and others said, We will hear thee again of this __matter__.
+@ So Paul departed from among them.
+@ Howbeit ##certain##note:x[<<Rom 11:5–6>>] men clave unto him, and believed: among the which __was__ Dionysius ##the Areopagite##note:x[<<Acts 17:19>>], and a woman named Damaris, and others with them.
+
+=== @20
+
+[discrete.pericope]
+==== Paul in Macedonia and Greece
+
+@ And after the uproar was ceased, Paul called unto __him__ the disciples, and embraced __them__, and departed for ##to go##note:x[<<Acts 19:21; 2 Cor 7:5; 1 Tim 1:3>>] into Macedonia.
+@ And when he had gone over those parts, and had ##given##note:x[<<Col 1:28; 1 Thess 2:3; 4:1>>] them much exhortation, he came into Greece,
+@ And __there__ abode three months. And when ##the Jews##note:x[<<Acts 9:23–24; 20:19; 2 Cor 11:26>>] laid wait for him, as he was about to sail into Syria, he purposed to return through Macedonia.
+@ And there accompanied him into Asia Sopater of Berea; and of the Thessalonians, ##Aristarchus##note:x[<<Acts 19:29>>] and Secundus; and Gaius of Derbe, and Timotheus; and of Asia, ##Tychicus##note:x[<<Eph 6:21>>] and ##Trophimus##note:x[<<2 Tim 4:20>>].
+@ These going before tarried for us at ##Troas##note:x[<<Acts 16:8>>].
+@ And we sailed away from ##Philippi##note:x[<<Acts 16:12>>] after ##the days##note:x[<<Exod 12:14–15; Acts 12:3>>] of unleavened bread, and came unto them to Troas in five days; where we abode seven days.
+
+[discrete.pericope]
+==== Eutychus Revived at Troas
+
+[.parallel]
+(<<2 Kings 4:18–37>>)
+
+@ And upon ##the first##note:x[<<John 20:19; 1 Cor 16:2>>] __day__ of the week, when the disciples came together ##to break##note:x[<<Acts 2:42>>] bread, Paul preached unto them, ready to depart on the morrow; and continued his speech until midnight.
+@ And there were many lights ##in##note:x[<<Luke 22:12; Acts 1:13>>] the upper chamber, where they were gathered together.
+@ And there sat in a window a certain young man named Eutychus, ##being##note:x[<<Matt 26:40–41; Mark 13:36>>] fallen into a deep sleep: and as Paul was long preaching, he sunk down with sleep, and fell down from the third loft, and was taken up dead.
+@ And Paul went down, and fell on him, and embracing __him__ said, ##Trouble##note:x[<<Mark 5:39; John 11:40>>] not yourselves; for his life is in him.
+@ When he therefore was come up again, and had broken bread, and eaten, and talked a long while, ##even##note:x[<<Acts 20:7>>] till break of day, so he departed.
+@ And they brought the young man alive, and ##were##note:x[<<2 Thess 2:16>>] not a little comforted.
+
+[discrete.pericope]
+==== From Troas to Miletus
+
+@ ¶ And we went before to ship, and sailed unto Assos, there intending to take in Paul: for so had he appointed, minding himself to go afoot.
+@ And when he met with us at Assos, we took him in, and came to Mitylene.
+@ And we sailed thence, and came the next __day__ over against Chios; and the next __day__ we arrived at Samos, and tarried at Trogyllium; and the next __day__ we came to ##Miletus##note:x[<<Acts 20:17; 2 Tim 4:20>>].
+@ For Paul ##had##note:x[<<Acts 19:21>>] determined to sail by Ephesus, because he would not spend the time in Asia: for he hasted, if it were possible for him, to be at Jerusalem ##the day##note:x[<<Acts 2:1; 1 Cor 16:8>>] of Pentecost.
+
+[discrete.pericope]
+==== Paul’s Farewell to the Ephesians
+
+@ ¶ And from Miletus he sent to Ephesus, and called ##the elders##note:x[<<Acts 11:30; 1 Tim 5:17; Titus 1:5>>] of the church.
+@ And when they were come to him, he said unto them, Ye know, ##from##note:x[<<Acts 18:19; 19:1>>] the first day that I came into Asia, ##after##note:x[<<1 Thess 1:5–6>>] what manner I have been with you at all seasons,
+@ ##Serving##note:x[<<Rom 12:11; Col 3:24>>] the Lord with all humility of mind, and with ##many##note:x[<<2 Cor 2:4>>] tears, and temptations, which befell me by the lying in wait of the Jews:
+@ __And__ how ##I kept##note:x[<<Acts 20:27>>] back nothing that was profitable __unto you__, but have shewed you, ##and have##note:x[<<Acts 5:42; 2 Tim 4:2>>] taught you publickly, and from house to house,
+@ ##Testifying##note:x[<<1 John 5:11–13>>] both to the Jews, and also to the Greeks, ##repentance##note:x[<<Acts 2:38; 11:18>>] toward God, and faith toward our Lord Jesus Christ.
+@ And now, behold, ##I go##note:x[<<2 Cor 5:14>>] bound in the spirit unto Jerusalem, ##not##note:x[<<Jas 4:14>>] knowing the things that shall befall me there:
+@ Save that ##the Holy Ghost##note:x[<<Acts 9:16; 21:4; 1 Thess 3:3>>] witnesseth in every city, saying that bonds and afflictions abide me.
+@ But ##none##note:x[<<2 Cor 4:1; 12:10>>] of these things move me, neither count I my life dear unto myself, so that ##I might##note:x[<<2 Tim 4:6–8>>] finish my course with joy, and the ministry, which I have received of the Lord Jesus, to testify the gospel of the grace of God.
+@ And now, behold, I know that ye all, among whom I have gone ##preaching##note:x[<<Acts 28:31>>] the kingdom of God, shall see my face no more.
+@ Wherefore ##I take##note:x[<<John 12:17>>] you to record this day, ##that##note:x[<<Ezek 3:18–21; Acts 18:6>>] I __am__ pure from the blood of all __men__.
+@ For ##I have##note:x[<<Acts 20:20; 2 Cor 4:2; 1 Thess 2:4>>] not shunned to declare unto you all the counsel of God.
+
+@ ¶ note:x[<<1 Pet 5:2–3>>]##Take##note:x[<<1 Tim 4:16>>] heed therefore unto yourselves, and to ##all##note:x[<<1 Pet 5:2–3>>] the flock, over the which the Holy Ghost hath made you overseers, to feed the church of God, which he hath purchased with his own blood.
+@ For I know this, that after my departing shall grievous ##wolves##note:x[<<Matt 7:15; Luke 10:3; 2 Pet 2:1>>] enter in among you, not sparing the flock.
+@ Also ##of your##note:x[<<1 Tim 1:19–20; 2 Tim 4:3–4; 1 John 2:19>>] own selves shall men arise, speaking perverse things, to draw away disciples after them.
+@ Therefore ##watch##note:x[<<Heb 13:17>>], and remember, that ##by##note:x[<<Acts 19:8, 10>>] the space of three years I ceased not to warn every one night and day with tears.
+@ And now, brethren, I commend you to God, and to the word of his grace, which is able to build you up, ##and to give##note:x[<<Acts 26:18; Col 1:12; 3:24>>] you an inheritance among all them which are sanctified.
+@ note:x[<<1 Cor 9:12, 18; 2 Cor 11:9>>]I have coveted no man’s silver, or gold, or apparel.
+@ Yea, ye yourselves know, ##that these##note:x[<<Acts 18:3; 1 Cor 4:12; 2 Thess 3:8–9>>] hands have ministered unto my necessities, and to them that were with me.
+@ I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Jesus, how he said, [wj}##It is##note:x[<<Prov 19:17; 2 Cor 9:6–12; Heb 13:16>>] more blessed to give than to receive.
+
+{wj]
+@ ¶ And when he had thus spoken, ##he kneeled##note:x[<<Luke 22:41; Acts 21:5>>] down, and prayed with them all.
+@ And they all ##wept##note:x[<<2 Tim 1:4>>] sore, and fell on Paul’s neck, and kissed him,
+@ Sorrowing most of all for the words which he spake, that they should see his face no more. ##And##note:x[<<Acts 15:3>>] they accompanied him unto the ship.
+
+=== @23
+
+[discrete.pericope]
+==== Paul before the Sanhedrin
+
+@ And Paul, earnestly beholding the council, said, Men __and__ brethren, ##I have##note:x[<<Acts 24:16; 2 Cor 1:12; 2 Tim 1:3>>] lived in all good conscience before God until this day.
+@ And the high priest ##Ananias##note:x[<<Acts 24:1>>] commanded them that stood by him ##to smite##note:x[<<John 18:22>>] him on the mouth.
+@ Then said Paul unto him, God shall smite thee, __thou__ whited wall: for sittest thou to judge me after the law, and commandest me to be ##smitten##note:x[<<Deut 25:1–2; John 7:51>>] contrary to the law?
+@ And they that stood by said, Revilest thou God’s high priest?
+@ Then said Paul, I wist not, brethren, that he was the high priest: for it is written, ##Thou##note:x[<<Exod 22:28; Eccl 10:20; Jude 1:8–9>>] shalt not speak evil of the ruler of thy people.
+@ But when Paul perceived that the one part were Sadducees, and the other Pharisees, he cried out in the council, Men __and__ brethren, ##I am##note:x[<<Acts 26:5>>] a Pharisee, the son of a Pharisee: ##of the hope##note:x[<<Acts 24:15, 21>>] and resurrection of the dead I am called in question.
+@ And when he had so said, there arose a dissension between the Pharisees and the Sadducees: and the multitude was divided.
+@ ##For the Sadducees say that there is no resurrection, neither angel, nor spirit: but the Pharisees confess both.##note:x[<<Matt 22:23; Mark 12:18; Luke 20:27>>]
+@ And there arose a great cry: and the scribes __that were__ of the Pharisees’ part arose, and strove, saying, We find no evil in this man: but ##if##note:x[<<John 12:29; Acts 22:7, 17–18>>] a spirit or an angel hath spoken to him, let us not fight against God.
+@ And when there arose a great dissension, the chief captain, fearing lest Paul should have been pulled in pieces of them, commanded the soldiers to go down, and to take him by force from among them, and to bring __him__ into the castle.
+@ And the night following ##the Lord##note:x[<<Acts 18:9>>] stood by him, and said, [wj}##Be##note:x[<<Matt 14:27>>] of good cheer, Paul: ##for##note:x[<<2 Tim 4:17>>] as thou hast testified of me in Jerusalem, so must thou bear witness also at Rome.
+
+[discrete.pericope]
+==== The Plot to Kill Paul
+
+[.parallel]
+(<<John 16:1–4>>)
+
+{wj]@ And when it was day, ##certain##note:x[<<Isa 8:9–10; Acts 23:21, 30>>] of the Jews banded together, and bound themselves under a curse, saying that they would neither eat nor drink till they had killed Paul.
+@ And they were more than forty ##which##note:x[<<John 16:2>>] had made this conspiracy.
+@ And they came to the chief priests and elders, and said, We have bound ourselves under a great curse, that we will eat nothing until we have slain Paul.
+@ Now therefore ye with the council signify to the chief captain ##that he##note:x[<<Ps 37:32–33; Prov 1:11–12; Isa 59:7>>] bring him down unto you to morrow, as though ye would enquire something more perfectly concerning him: and we, or ever he come near, are ready to kill him.
+@ And ##when##note:x[<<1 Cor 3:19>>] Paul’s sister’s son heard of their lying in wait, he went and entered into the castle, and told Paul.
+@ Then Paul called one of the centurions unto __him__, and said, Bring this young man unto the chief captain: for he hath a certain thing to tell him.
+@ So he took him, and brought __him__ to the chief captain, and said, ##Paul##note:x[<<Eph 3:1>>] the prisoner called me unto __him__, and prayed me to bring this young man unto thee, who hath something to say unto thee.
+@ Then the chief captain took him by the hand, and went __with him__ aside privately, and asked __him__, What is that thou hast to tell me?
+@ And he said, The Jews have agreed to desire thee that thou wouldest bring down Paul to morrow into the council, as though they would enquire somewhat of him more perfectly.
+@ But do not thou yield unto them: ##for##note:x[<<Acts 23:12–14>>] there lie in wait for him of them more than forty men, which have bound themselves with an oath, that they will neither eat nor drink till they have killed him: and now are they ready, looking for a promise from thee.
+@ So the chief captain __then__ let the young man depart, and charged __him, See thou__ tell no man that thou hast shewed these things to me.
+
+[discrete.pericope]
+==== Paul Sent to Felix
+
+@ And he called unto __him__ two centurions, saying, Make ready two hundred soldiers to go to Cæsarea, and horsemen threescore and ten, and spearmen two hundred, at the third hour of the night;
+@ And provide __them__ beasts, that they may set Paul on, and bring __him__ safe unto ##Felix##note:x[<<Acts 23:26; 24:10; 25:14>>] the governor.
+@ And he wrote a letter after this manner:
+@ Claudius Lysias unto ##the most##note:x[<<Acts 24:3; 26:25>>] excellent governor Felix __sendeth__ ##greeting##note:x[<<Acts 15:23>>].
+@ This man was taken of the Jews, and should have been killed of them: then came I with an army, and rescued him, ##having##note:x[<<Acts 22:25–29>>] understood that he was a Roman.
+@ ##And when I would have known the cause wherefore they accused him, I brought him forth into their council:##note:x[<<Acts 22:30>>]
+@ Whom I perceived to be accused of ##questions##note:x[<<Acts 18:15>>] of their law, ##but##note:x[<<Acts 25:25; 26:31>>] to have nothing laid to his charge worthy of death or of bonds.
+@ And when it was told me how that the Jews laid wait for the man, I sent straightway to thee, and gave commandment to his accusers also to say before thee what __they had__ against him. Farewell.
+@ Then the soldiers, as it was commanded them, took Paul, and brought __him__ by night to Antipatris.
+@ On the morrow they left the horsemen to go with him, and returned to the castle:
+@ Who, when they came to Cæsarea, and delivered the epistle to the governor, presented Paul also before him.
+@ And when the governor had read __the letter__, ##he asked##note:x[<<Acts 25:1>>] of what province he was. And when he understood that __he was__ of ##Cilicia##note:x[<<Acts 21:39>>];
+@ I will hear thee, said he, ##when##note:x[<<Acts 23:30; 25:16>>] thine accusers are also come. And he commanded him to be kept in Herod’s ##judgment##note:x[<<Matt 27:27>>] hall.
+
+=== @26
+
+[discrete.pericope]
+==== Paul’s Testimony to Agrippa
+
+[.parallel]
+(<<Acts 9:1–19; Acts 22:1–21>>)
+
+@ Then Agrippa said unto Paul, Thou art permitted to speak for thyself. Then Paul stretched forth the hand, and answered for himself:
+@ I think myself happy, king Agrippa, because I shall answer for myself this day before thee touching all the things whereof I am accused of the Jews:
+@ Especially ##__because__##note:x[<<Acts 6:14; 26:26>>] __I know__ thee to be expert in all customs and questions which are among the Jews: wherefore I beseech thee to hear me patiently.
+@ My manner of life from my youth, which was at the first among mine own nation at Jerusalem, know all the Jews;
+@ Which knew me from the beginning, if they would testify, ##that##note:x[<<Acts 23:6>>] after the most straitest sect of our religion I lived a Pharisee.
+@ And now I stand and ##am##note:x[<<Acts 24:15; 28:20>>] judged for the hope of ##the promise##note:x[<<Titus 2:13>>] made of God unto our fathers:
+@ Unto which __promise__ ##our##note:x[<<Jas 1:1>>] twelve tribes, ##instantly##note:x[<<1 Tim 5:5>>] serving __God__ day and night, ##hope##note:x[<<Phil 3:11>>] to come. For which hope’s sake, king Agrippa, I am accused of the Jews.
+@ ##Why should it be thought a thing incredible with you, that God should raise the dead?##note:x[<<Acts 4:2; 17:31–32; 1 Cor 15:12–20>>]
+@ I verily thought with myself, ##that##note:x[<<1 Tim 1:13>>] I ought to do many things contrary to ##the name##note:x[<<Acts 22:8>>] of Jesus of Nazareth.
+@ Which thing ##I also##note:x[<<Acts 8:3; 9:13>>] did in Jerusalem: and many of the saints did I shut up in prison, ##having##note:x[<<Acts 9:21>>] received authority from the chief priests; and when they were put to death, I gave my voice against __them__.
+@ And ##I punished##note:x[<<Matt 10:17; Acts 22:19>>] them oft in every synagogue, and ##compelled##note:x[<<Acts 13:45>>] __them__ to blaspheme; and being exceedingly mad against them, I persecuted __them__ even unto strange cities.
+@ Whereupon as I went to Damascus with authority and commission from the chief priests,
+@ At midday, O king, I saw in the way a light from heaven, ##above##note:x[<<Rev 1:16; 21:23>>] the brightness of the sun, shining round about me and them which journeyed with me.
+@ And when we were all fallen to the earth, I heard a voice speaking unto me, and saying ##in##note:x[<<Acts 21:40; 22:2>>] the Hebrew tongue, [wj}Saul, Saul, why persecutest thou me? __it is__ hard for thee to kick against the pricks.{wj]
+@ And I said, Who art thou, Lord? And he said, [wj}##I am##note:x[<<John 15:20–21>>] Jesus whom thou persecutest.
+@ But rise, and stand upon thy feet: for I have appeared unto thee for this purpose, ##to make##note:x[<<Acts 22:14–15>>] thee ##a minister##note:x[<<Rom 15:16; 1 Tim 1:12>>] and a witness both of these things which thou hast seen, and of those things in the which I will appear unto thee;
+@ Delivering thee from the people, and __from__ ##the Gentiles##note:x[<<Acts 9:15; Rom 11:13; 1 Tim 2:7>>], unto whom now I send thee,
+@ To ##open##note:x[<<Eph 1:18>>] their eyes, ##__and__ to##note:x[<<1 Pet 2:9>>] turn __them__ from darkness to light, ##and __from__##note:x[<<1 Pet 2:9>>] the power of Satan unto God, that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me.{wj]
+@ Whereupon, O king Agrippa, ##I was not##note:x[<<Isa 50:5; Ezek 2:7–8; Gal 1:16>>] disobedient unto the heavenly vision:
+@ But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judæa, and __then__ to the Gentiles, that they should ##repent##note:x[<<Acts 2:38; 3:19>>] and turn to God, ##and do##note:x[<<Matt 3:8>>] works meet for repentance.
+@ For these causes ##the Jews##note:x[<<Acts 21:30–31>>] caught me in the temple, and went about to kill __me__.
+@ Having therefore obtained help of God, I continue unto this day, witnessing both to small and great, saying ##none##note:x[<<Luke 24:27>>] other things than those which ##the prophets##note:x[<<John 5:46; Acts 24:14>>] and Moses did say should come:
+@ That ##Christ##note:x[<<Isa 53:1–12; Luke 24:26>>] should suffer, __and__ that he should be ##the first##note:x[<<Col 1:18>>] that should rise from the dead, and should shew light unto the people, and to the Gentiles.
+
+[discrete.pericope]
+==== Festus Interrupts Paul’s Defense
+
+@ And as he thus spake for himself, Festus said with a loud voice, ##Paul##note:x[<<1 Cor 1:23; 2:13–14; 4:10>>], thou art beside thyself; much learning doth make thee mad.
+@ But he said, I am not mad, ##most##note:x[<<Acts 23:26>>] noble Festus; but speak forth the ##words##note:x[<<Titus 1:9; 2:7–8>>] of truth and soberness.
+@ For ##the king##note:x[<<Acts 26:2–3>>] knoweth of these things, before whom also I speak freely: for I am persuaded that none of these things are hidden from him; for this thing was not done in a corner.
+@ King Agrippa, believest thou the prophets? I know that thou believest.
+@ Then Agrippa said unto Paul, ##Almost##note:x[<<Matt 10:18>>] thou persuadest me to be a Christian.
+@ And Paul said, I would to God, that not only thou, but also all that hear me this day, were both almost, and altogether such as I am, ##except##note:x[<<Eph 6:20>>] these bonds.
+@ And when he had thus spoken, the king rose up, and the governor, and Bernice, and they that sat with them:
+@ And when they were gone aside, they talked between themselves, saying, ##This man##note:x[<<Acts 23:9, 29>>] doeth nothing worthy of death or of bonds.
+@ Then said Agrippa unto Festus, This man might have been set at liberty, if he had not ##appealed##note:x[<<Acts 28:18>>] unto Cæsar.

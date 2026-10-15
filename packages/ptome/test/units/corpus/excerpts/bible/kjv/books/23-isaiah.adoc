@@ -1,0 +1,108 @@
+== @ISA
+
+[.book-title]
+The Book of the Prophet Isaiah
+
+=== @6
+
+[discrete.pericope]
+==== Isaiah’s Commission
+
+[.parallel]
+(<<Matthew 13:10–17; Mark 4:10–12; Acts 28:16–31>>)
+
+@ In the year that king Uzziah died ##I saw also##note:x[<<John 12:41>>] the Lord ##sitting##note:x[<<Dan 7:9>>] upon a throne, high and lifted up, and his train ##filled##note:x[<<Rev 15:8>>] the temple.note:tn[__his…__: or, the skirts thereof]
+@ Above it stood the ##seraphims##note:x[<<Ps 104:4>>]: each one had six ##wings##note:x[<<Rev 4:8>>]; with twain he covered his face, and with twain he covered ##his feet##note:x[<<Ezek 1:11>>], and with twain he did fly.
+@ And one cried unto another, and said, ##Holy##note:x[<<Rev 4:8–9>>], holy, holy, __is__ the LORD of hosts: ##the whole earth##note:x[<<Num 14:21; Ps 72:19>>] __is__ full of his glory.note:tn[__one…__: Heb. this cried to this]note:tn[__the whole…__: Heb. his glory is the fulness of the whole earth]
+@ And the posts of the ##door##note:tn[Heb. thresholds] moved at the voice of him that cried, and ##the house##note:x[<<Exod 40:34; 1 Kgs 8:10–12; Rev 15:8>>] was filled with smoke.
+
+@ ¶ Then ##said I##note:x[<<Luke 5:8–9>>], Woe __is__ me! for I am ##undone##note:tn[Heb. cut off]; because I __am__ ##a man##note:x[<<Jer 1:6>>] of unclean lips, and ##I dwell##note:x[<<Jas 3:6–10>>] in the midst of a people of unclean lips: for mine eyes have seen the King, the LORD of hosts.
+@ Then flew one of the seraphims unto me, ##having##note:x[<<Rev 8:3–5>>] a live coal in his hand, ##__which__##note:x[<<Heb 9:22–26; Rev 8:3–5>>] he had taken with the tongs from off the altar&#58;note:tn[__having…__: Heb. and in his hand a live coal]
+@ And ##he laid __it__ upon##note:x[<<Jer 1:9>>] my mouth, and said, Lo, this hath touched thy lips; and ##thine iniquity##note:x[<<Isa 43:25; 1 John 1:7>>] is taken away, and thy sin purged.note:tn[__laid…__: Heb. caused it to touch]
+@ Also I heard the voice of the Lord, saying, ##Whom##note:x[<<Exod 4:10–13; Acts 26:16–17>>] shall I send, and who will go for us? ##Then##note:x[<<Eph 3:8>>] said I, Here __am__ I; send me.note:tn[__Here…__: Heb. behold me]
+
+@ ¶ And he said, Go, and tell this people, ##Hear ye##note:x[<<Matt 13:14–15; Mark 4:12; Luke 8:10>>] indeed, but understand not; and see ye indeed, but perceive not.note:tn[__indeed, but understand__: or, without ceasing, etc: Heb. in hearing, etc]
+@ Make the heart of this people fat, and make their ears heavy, and shut their eyes; ##lest##note:x[<<Jer 5:21; Acts 28:27>>] they see with their eyes, and hear with their ears, and understand with their heart, and ##convert##note:x[<<Matt 13:15>>], and be healed.
+@ Then said I, Lord, how long? And he answered, Until the cities be wasted without inhabitant, and the houses without man, and the land be utterly desolate,note:tn[__utterly…__: Heb. desolate with desolation]
+@ And the LORD have removed men far away, and __there be__ ##a great##note:x[<<Jer 4:29>>] forsaking in the midst of the land.
+
+@ ¶ ##But yet##note:x[<<Rom 11:5–6>>] in it __shall be__ a tenth, and __it__ shall return, and shall be eaten: as a teil tree, and as an oak, whose note:x[<<Job 14:7–9>>]##substance##note:tn[or, stock, or, stem] __is__ in them, when they cast __their leaves:__ ##__so__ the holy##note:x[<<Rom 11:5>>] seed __shall be__ the substance thereof.note:tn[__and it…__: or, when it is returned, and hath been broused]
+
+=== @8
+
+[discrete.pericope]
+==== Assyrian Invasion Prophesied
+
+@ Moreover the LORD said unto me, Take thee a great roll, and ##write##note:x[<<Job 19:23–24; Isa 30:8; Hab 2:2–3>>] in it with a man’s pen concerning ##Maher-shalal-hash-baz##note:tn[Heb. In making speed to the spoil he hasteneth the prey, or, Make speed, etc].
+@ And I took unto me faithful witnesses to record, ##Uria##note:x[<<2 Kgs 16:10–11>>]h the priest, and Zechariah the son of Jeberechiah.
+@ And I ##went##note:tn[Heb. approached] unto the prophetess; and she conceived, and bare a son. Then said the LORD to me, Call his name Maher-shalal-hash-baz.
+@ For ##before##note:x[<<Rom 9:11>>] the child shall have knowledge to cry, My father, and my mother, the riches of Damascus and the spoil of Samaria shall be taken away before the king of Assyria.note:tn[__the riches…__: or, he that is before the king of Assyria shall take away the riches, etc]
+
+@ ¶ The LORD spake also unto me again, saying,
+@ Forasmuch as this people refuseth ##the waters of Shiloah##note:x[<<John 9:7>>] that go softly, and rejoice in Rezin and Remaliah’s son;
+@ Now therefore, behold, ##the Lord bringeth##note:x[<<Isa 17:12–13>>] up upon them the waters of the river, strong and many, __even__ the king of Assyria, and all his glory: and he shall come up over all his channels, and go over all his banks:
+@ And he shall pass through Judah; he shall overflow and go over, he shall ##reach##note:x[<<Isa 30:28>>] __even__ to the neck; and the stretching out of his wings shall fill the breadth of thy land, ##O Immanuel##note:x[<<Isa 7:14; Matt 1:23>>].note:tn[__stretching…__: Heb. fulness of the breadth of thy land shall be the stretchings out of his wings]
+
+@ ¶ Associate yourselves, O ye ##people, note:x[<<Ps 37:14–15; Prov 11:21; Isa 14:5–6>>]and##note:tn[or, people, yet] ye shall be broken in pieces; and give ear, all ye of far countries: gird yourselves, and ye shall be broken in pieces; gird yourselves, and ye shall be broken in pieces.
+@ Take ##counsel##note:x[<<Job 5:12; Lam 3:37>>] together, and it shall come to nought; speak the word, and it shall not stand: ##for God##note:x[<<Rom 8:31>>] __is__ with us.
+
+[discrete.pericope]
+==== A Call to Fear God
+
+[.parallel]
+(<<Ecclesiastes 8:10–13>>)
+
+@ ¶ For the LORD spake thus to me ##with a strong hand##note:x[<<Ezek 3:14>>], and instructed me that I should not walk in the way of this people, saying,note:tn[__with…__: Heb. in strength of hand]
+@ Say ye ##not, A confederacy##note:x[<<Isa 51:12–13>>], to all __them to__ whom this people shall say, A confederacy; neither ##fear ye##note:x[<<Luke 21:9; 1 Pet 3:14–15>>] their fear, nor be afraid.
+@ ##Sanctify##note:x[<<Isa 26:3–4>>] the LORD of hosts himself; ##and __let__ him##note:x[<<Luke 12:5; Rev 15:4>>] __be__ your fear, and __let__ him __be__ your dread.
+@ And he shall be for a sanctuary; but for ##a stone##note:x[<<Isa 28:16; Rom 9:32–33; 1 Pet 2:8>>] of stumbling and for a rock of offence to both the houses of Israel, for a gin and for a snare to the inhabitants of Jerusalem.
+@ And many among them shall ##stumble##note:x[<<Matt 21:44>>], and fall, and be broken, and be snared, and be taken.
+
+@ ##Bind up##note:x[<<Dan 12:4>>] ##the testimony##note:x[<<Heb 3:5>>], seal the law among my disciples.
+@ And ##I will##note:x[<<Lam 3:25–26; Hab 2:3; Heb 10:36–39>>] wait upon the LORD, that hideth his face from the house of Jacob, and I will look for him.
+@ Behold, ##I and the##note:x[<<Heb 2:13–14>>] children whom the LORD hath given me __are__ ##for signs##note:x[<<Luke 2:34>>] and for wonders in Israel from the LORD of hosts, ##which##note:x[<<Zech 8:3>>] dwelleth in mount Zion.
+
+[discrete.pericope]
+==== Darkness and Light
+
+@ ¶ And when they shall say unto you, ##Seek##note:x[<<Lev 20:6; 1 Chr 10:13; 2 Chr 33:6>>] unto them that have familiar spirits, and unto wizards that peep, and that mutter: should not a people seek unto their God? for the living to the dead?
+@ To ##the law##note:x[<<2 Tim 3:15–17; 2 Pet 1:19>>] and to the testimony: if they speak not according to this word, __it is__ because __there is__ no ##light##note:x[<<2 Pet 1:19>>] in them.note:tn[__no…__: Heb. no morning]
+@ And they shall pass through it, hardly bestead and hungry: and it shall come to pass, that when they shall be hungry, they shall fret themselves, and curse their king and their God, and look upward.
+@ And they shall ##look##note:x[<<Isa 5:30; Jer 13:16; Matt 8:12>>] unto the earth; and behold trouble and darkness, dimness of anguish; and __they shall be__ driven to darkness.
+
+=== @59
+
+[discrete.pericope]
+==== Sin Separates Us from God
+
+[.parallel]
+(<<Psalms 14:1–7; Psalms 53:1–6; Romans 3:9–20>>)
+
+@ note:x[<<Num 11:23; Isa 50:2; Jer 32:17>>]Behold, the LORD’s hand is not shortened, that it cannot save; neither his ear heavy, that it cannot hear:
+@ But ##your iniquities##note:x[<<Prov 15:29; Jer 5:25>>] have separated between you and your God, and your sins have ##hid##note:x[<<Mic 3:4>>] __his__ face from you, that he will not hear.note:tn[__have hid__: or, have made him hide]
+@ For ##your hands##note:x[<<Isa 1:15; Jer 2:34>>] are defiled with blood, and your fingers with iniquity; ##your lips##note:x[<<Ezek 13:8>>] have spoken lies, your tongue hath muttered perverseness.
+@ None ##calleth##note:x[<<Mic 7:2–5>>] for justice, nor __any__ pleadeth for truth: they trust in vanity, and speak lies; ##they conceive##note:x[<<Job 15:35; Jas 1:15>>] mischief, and bring forth iniquity.
+@ They hatch note:x[<<Prov 23:32; Isa 14:29>>]##cockatrice’##note:tn[or, adder’s] eggs, and weave the spider’s web: he that eateth of their eggs dieth, and that which is ##crushed breaketh out into a viper##note:x[<<Matt 3:7>>].note:tn[__crushed…__: or, sprinkled is as if there brake out a viper]
+@ Their webs shall not become garments, neither shall they cover themselves with their works: their works __are__ works of iniquity, and the act of violence __is__ in their hands.
+@ Their ##feet##note:x[<<Prov 1:16; 6:17; Rom 3:15>>] run to evil, and they make haste to shed innocent blood: their thoughts __are__ thoughts of iniquity; wasting and ##destruction##note:tn[Heb. breaking] __are__ in their paths.
+@ The ##way##note:x[<<Luke 1:79; Rom 3:17>>] of peace they know not; and __there is__ no ##judgment##note:tn[or, right] in their goings: they have made them crooked paths: ##whosoever##note:x[<<Isa 57:20–21>>] goeth therein shall not know peace.
+
+@ ¶ Therefore is judgment far from us, neither doth justice overtake us: ##we wait##note:x[<<Isa 5:30>>] for light, but behold obscurity; for brightness, __but__ we walk in darkness.
+@ We ##grope##note:x[<<Deut 28:29; Job 5:14>>] for the wall like the blind, and we grope as if __we had__ no eyes: we stumble at noonday as in the night; __we are__ in desolate places as dead __men__.
+@ We roar all like bears, and ##mourn##note:x[<<Isa 38:14; Ezek 7:16>>] sore like doves: we look for judgment, but __there is__ none; for salvation, __but__ it is far off from us.
+@ For ##our transgressions##note:x[<<Ezra 9:6>>] are multiplied before thee, and ##our sins##note:x[<<Jer 14:7; Hos 5:5>>] testify against us: for our transgressions __are__ with us; and __as for__ our iniquities, we know them;
+@ In transgressing and lying against the LORD, and departing away from our God, ##speaking##note:x[<<Mark 7:21–22>>] oppression and revolt, conceiving and uttering from the heart words of falsehood.
+@ ##And judgment is turned away backward, and justice standeth afar off: for truth is fallen in the street, and equity cannot enter.##note:x[<<Eccl 3:16; Isa 5:23; Hab 1:4>>]
+@ Yea, ##truth##note:x[<<Jer 7:28; Mic 7:2>>] faileth; and ##he __that__##note:x[<<Heb 11:36–38>>] departeth from evil maketh himself a prey: and the LORD saw __it__, and it displeased him that __there was__ no judgment.note:tn[__maketh…__: or, is accounted mad]note:tn[__it displeased…__: Heb. it was evil in his eyes]
+
+@ ¶ And ##he saw##note:x[<<Ps 106:23; Isa 64:7; Ezek 22:30>>] that __there was__ no man, and wondered that __there was__ no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him.
+@ For ##he put on righteousness##note:x[<<Eph 6:14, 17; 1 Thess 5:8>>] as a breastplate, and an helmet of salvation upon his head; and he put on the garments of vengeance __for__ clothing, and was clad with zeal as a cloke.
+
+[discrete.pericope]
+==== The Covenant of the Redeemer
+
+@ ##According##note:x[<<Isa 63:6; Jer 17:10>>] to __their__ ##deeds##note:tn[Heb. recompences], accordingly he will repay, ##fury##note:x[<<Isa 63:6>>] to his adversaries, recompence to his enemies; to the islands he will repay recompence.
+@ So ##shall they##note:x[<<Ps 113:3; Dan 7:27>>] fear the name of the LORD from the west, and his glory from the rising of the sun. When the enemy shall come in like a flood, ##the Spirit##note:x[<<Zech 4:6>>] of the LORD shall lift up a standard against him.note:tn[__lift…__: or, put him to flight]
+
+@ ¶ And ##the Redeemer##note:x[<<Rom 11:26–27>>] shall come to Zion, and ##unto##note:x[<<Ezek 18:30–31; Titus 2:11–14>>] them that turn from transgression in Jacob, saith the LORD.
+@ As for me, ##this##note:x[<<Jer 31:31–34; Ezek 36:25–27; Heb 10:16>>] __is__ my covenant with them, saith the LORD; My spirit that __is__ upon thee, and my words which I have put in thy mouth, shall not depart out of thy mouth, nor out of the mouth of thy seed, nor out of the mouth of thy seed’s seed, saith the LORD, from henceforth and for ever.

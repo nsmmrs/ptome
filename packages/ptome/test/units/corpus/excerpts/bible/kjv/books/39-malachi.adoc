@@ -1,0 +1,42 @@
+== @MAL
+
+[.book-title]
+Malachi
+
+=== @3
+
+[discrete.pericope]
+==== I Will Send My Messenger
+
+[.parallel]
+(<<Matthew 11:7–19; Luke 7:24–35>>)
+
+@ Behold, ##I will##note:x[<<Mal 4:5; Mark 1:2–3; Luke 1:76>>] send my messenger, and he shall prepare the way before me: and the Lord, whom ye seek, shall suddenly come to his temple, even the messenger of the covenant, whom ye delight in: behold, he shall come, saith the LORD of hosts.
+@ But who may abide the day of his coming? and who shall stand when he appeareth? ##for##note:x[<<Isa 4:4; Zech 13:9; 1 Cor 3:13–15>>] he __is__ like a refiner’s fire, and like fullers’ soap:
+@ And he shall ##sit##note:x[<<Prov 17:3; Isa 1:25; Zech 13:9>>] __as__ a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto the LORD an offering in righteousness.
+@ Then shall ##the offering##note:x[<<Isa 56:7; Zech 8:3>>] of Judah and Jerusalem be pleasant unto the LORD, ##as##note:x[<<2 Chr 7:1–3>>] in the days of old, and as in ##former##note:tn[or, ancient] years.
+@ And ##I will come##note:x[<<Jas 5:8–9>>] near to you to judgment; and I will be a swift witness against ##the sorcerers##note:x[<<Deut 5:11; Heb 13:4>>], and against the adulterers, and against false swearers, and against those that ##oppress##note:tn[or, defraud] the hireling in __his__ wages, the widow, and the fatherless, and that turn aside the stranger __from his right__, and fear not me, saith the LORD of hosts.
+
+[discrete.pericope]
+==== Robbing God
+
+@ For I __am__ the LORD, ##I change not##note:x[<<Num 23:19; Heb 13:8; Jas 1:17>>]; therefore ye sons of Jacob are not consumed.
+
+@ ¶ Even from the days of your fathers ye are gone away from mine ordinances, and have not kept __them__. ##Return unto me##note:x[<<Zech 1:3; Jas 4:8>>], and I will return unto you, saith the LORD of hosts. But ye said, ##Wherein##note:x[<<Rom 10:21>>] shall we return?
+
+@ ¶ Will ##a man##note:x[<<Prov 3:9–10; Matt 22:21; Mark 12:17>>] rob God? Yet ye have robbed me. But ye say, Wherein have we robbed thee? In tithes and offerings.
+@ ##Ye __are__ cursed with a curse: for ye have robbed me, __even__ this whole nation.##note:x[<<Deut 28:15–19; Hag 1:6–11; Mal 2:2>>]
+@ Bring ye ##all##note:x[<<Prov 3:9–10>>] the tithes into the storehouse, that there may be meat in mine house, ##and prove##note:x[<<Matt 6:33; 2 Cor 9:6–8>>] me now herewith, saith the LORD of hosts, if I will not open you the windows of heaven, and pour you out a blessing, that __there shall__ not __be room__ enough __to receive it__.note:tn[__pour…__: Heb. empty out]
+@ And I will rebuke the devourer for your sakes, and he shall not ##destroy##note:tn[Heb. corrupt] the fruits of your ground; ##neither##note:x[<<Deut 11:14; Joel 2:22; Zech 8:12>>] shall your vine cast her fruit before the time in the field, saith the LORD of hosts.
+@ And ##all##note:x[<<Isa 61:9; Zech 8:23; Luke 1:48>>] nations shall call you blessed: for ye shall be a delightsome land, saith the LORD of hosts.
+
+[discrete.pericope]
+==== The Book of Remembrance
+
+@ ¶ ##Your##note:x[<<Isa 37:23; Mal 2:17>>] words have been stout against me, saith the LORD. Yet ye say, ##What##note:x[<<Mal 2:17>>] have we spoken __so much__ against thee?
+@ Ye have said, ##It __is__##note:x[<<Ps 73:8–13; Isa 58:3>>] vain to serve God: and what profit __is it__ that we have kept his ##ordinance##note:tn[Heb. observation], ##and that##note:x[<<Isa 58:3>>] we have walked ##mournfully##note:tn[Heb. in black] before the LORD of hosts?
+@ And now ##we call##note:x[<<Mal 4:1>>] the proud happy; ##yea##note:x[<<Jer 12:1–2; Mal 2:17>>], they that work wickedness are set up; yea, __they that__ tempt God are even delivered.note:tn[__are set up__: Heb. are built]
+
+@ ¶ Then they ##that feared##note:x[<<Mal 4:2>>] the LORD spake often one to another: and the LORD hearkened, and heard __it__, and ##a book##note:x[<<Ps 56:8; Rev 20:12>>] of remembrance was written before him for them that feared the LORD, and that thought upon his name.
+@ And they shall be mine, saith the LORD of hosts, in that day when I make up my note:x[<<Exod 19:5; Deut 7:6>>]##jewels##note:tn[or, special treasure]; ##and I##note:x[<<2 Cor 6:18>>] will spare them, as a man spareth his own son that serveth him.
+@ Then shall ye return, and ##discern##note:x[<<Gen 18:25; Ps 58:10–11; Matt 25:46>>] between the righteous and the wicked, between him that serveth God and him that serveth him not.

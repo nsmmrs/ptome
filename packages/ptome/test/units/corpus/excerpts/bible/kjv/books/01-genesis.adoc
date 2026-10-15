@@ -1,0 +1,45 @@
+== @GEN
+
+[.book-title]
+The First Book of Moses, called Genesis
+
+=== @17
+
+[discrete.pericope]
+==== Abraham to Father Many Nations
+
+@ And when Abram was ninety years old and nine, the LORD appeared to Abram, and said unto him, I __am__ the ##Almighty##note:x[<<Eph 3:20; Phil 4:13>>] God; ##walk##note:x[<<Luke 1:6>>] before me, and be thou ##perfect##note:tn[or, upright, or, sincere].
+@ ##And I##note:x[<<Gen 15:18; 17:4–6>>] will make my covenant between me and thee, and will ##multiply##note:x[<<Gen 12:2>>] thee exceedingly.
+@ ##And Abram fell on his face: and God talked with him, saying,##note:x[<<Gen 17:17; Judg 13:20>>]
+
+@ As for me, behold, my covenant __is__ with thee, and thou shalt be ##a father##note:x[<<Gen 12:2; 35:11; Rom 4:11–18>>] of many nations.note:tn[__many…__: Heb. multitude of nations]
+@ Neither shall thy name any more be called Abram, ##but thy name##note:x[<<Gen 17:15; Neh 9:7; Matt 1:21–23>>] shall be ##Abraham##note:tn[that is, Father of a great multitude]; for a father of many nations have I made thee.
+@ And I will make thee exceeding fruitful, and I will make ##nations##note:x[<<Gen 17:4; 35:11>>] of thee, and ##kings##note:x[<<Matt 1:6–17>>] shall come out of thee.
+
+@ ##And I##note:x[<<Gen 26:24>>] will establish my covenant between me and thee and thy seed after thee in their generations for an everlasting covenant, to be a ##God##note:x[<<Gen 26:24>>] unto thee, ##and to##note:x[<<Rom 9:7–9>>] thy seed after thee.
+@ ##And I##note:x[<<Gen 12:7; Ps 105:11>>] will give unto thee, and to thy seed after thee, the land wherein thou art a stranger, all the land of Canaan, for an everlasting possession; and I will be ##their##note:x[<<Lev 26:12>>] God.note:tn[__wherein…__: Heb. of thy sojournings]
+
+[discrete.pericope]
+==== The Covenant of Circumcision
+
+@ ¶ And God said unto Abraham, Thou shalt keep my covenant therefore, thou, and thy seed after thee in their generations.
+@ This __is__ my covenant, which ye shall keep, between me and you and thy seed after thee; ##Every##note:x[<<Acts 7:8; Rom 4:9–11; Col 2:11–12>>] man child among you shall be circumcised.
+@ And ye shall circumcise the flesh of your foreskin; and it shall be ##a token##note:x[<<Acts 7:8; Rom 4:11>>] of the covenant betwixt me and you.
+@ And ##he that is eight days old##note:x[<<Lev 12:3; Luke 1:59; 2:21>>] shall be circumcised among you, every man child in your generations, he that is born in the house, or bought with money of any stranger, which __is__ not of thy seed.note:tn[__he that is eight…__: Heb. a son of eight days]
+@ He that is ##born##note:x[<<Exod 12:44>>] in thy house, and he that is bought with thy money, must needs be circumcised: and my covenant shall be in your flesh for an everlasting covenant.
+@ And the uncircumcised man child whose flesh of his foreskin is not circumcised, that soul shall be ##cut##note:x[<<Exod 4:24–26>>] off from his people; he hath broken my covenant.
+
+@ ¶ And God said unto Abraham, As for Sarai thy wife, thou shalt not call her name Sarai, but ##Sarah##note:tn[that is Princess] __shall__ her name __be__.
+@ And I will bless her, and give thee a son also of her: yea, I will bless her, and she shall ##be __a mother__ of nations##note:x[<<Gen 35:11>>]; kings of people shall be of her.note:tn[__she…__: Heb. she shall become nations]
+@ Then Abraham ##fell##note:x[<<Gen 17:3>>] upon his face, and ##laughed##note:x[<<Gen 18:12; 21:6>>], and said in his heart, Shall __a child__ be born unto him that is an hundred years old? and shall Sarah, that is ninety years old, bear?
+@ And Abraham said unto God, ##O that##note:x[<<Acts 2:39>>] Ishmael might live before thee!
+@ And God said, ##Sarah##note:x[<<Gen 18:10–14; 21:2–3; Luke 1:13–20>>] thy wife shall bear thee a son indeed; and thou shalt call his name Isaac: and I will establish my covenant with him for an everlasting covenant, __and__ with his seed after him.
+@ And as for Ishmael, I have heard thee: Behold, I have blessed him, and will make him fruitful, and will multiply him exceedingly; ##twelve##note:x[<<Gen 25:12–18>>] princes shall he beget, ##and I##note:x[<<Gen 21:13, 18>>] will make him a great nation.
+@ But ##my##note:x[<<Gen 26:2–5; Rom 9:5–6>>] covenant will I establish with Isaac, which Sarah shall bear unto thee ##at##note:x[<<Gen 21:2–3>>] this set time in the next year.
+@ And he left off talking with him, and God went up from Abraham.
+
+@ ¶ And Abraham took Ishmael his son, and all that were born in his house, and all that were bought with his money, every male among the men of Abraham’s house; and circumcised the flesh of their foreskin in the selfsame day, as God had said unto him.
+@ ##And Abraham __was__ ninety years old and nine, when he was circumcised in the flesh of his foreskin.##note:x[<<Rom 4:11>>]
+@ And Ishmael his son __was__ thirteen years old, when he was circumcised in the flesh of his foreskin.
+@ In the selfsame day was Abraham circumcised, and Ishmael his son.
+@ And all the men of his house, born in the house, and bought with money of the stranger, were circumcised with him.

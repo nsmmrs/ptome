@@ -17,6 +17,9 @@ import 'dart:io';
 
 const listPath = 'test/corpus/red.txt';
 
+/// The corpus's test files (`test/corpus_<n>_test.dart`).
+final RegExp _corpusSuite = RegExp(r'corpus_\d+_test\.dart$');
+
 void main(List<String> arguments) {
   final args = [...arguments];
   final update = args.remove('--update');
@@ -99,7 +102,7 @@ void main(List<String> arguments) {
         },
       }:
         names[id] = name;
-        if (suites[suite]?.endsWith('corpus_test.dart') ?? false) {
+        if (_corpusSuite.hasMatch(suites[suite] ?? '')) {
           corpus.add(id);
         }
       case {

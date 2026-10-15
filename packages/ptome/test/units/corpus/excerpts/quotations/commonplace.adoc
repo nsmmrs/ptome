@@ -1,0 +1,51 @@
+= A Commonplace Book
+:works: kjv=../bible/kjv/kjv.adoc; psalter=../../liturgy/bcp-1662/psalter.adoc; usc=../../law-us/title-5-chapter-5.adoc; gdpr=../../law-eu/gdpr.adoc; cma=../../law-uk/computer-misuse-act-1990.adoc; quran=../../quran/en/quran-en.adoc; quran-ar=../../quran/ar/quran-ar.adoc; mn10=../../suttas/mn10/mn10-en.adoc; euthyphro=../../classics/euthyphro/euthyphro-en.adoc; ethics=../../classics/ethics/ethics-en.adoc; wlc=../catechism/westminster-larger.adoc; hymnal=../../hymns/otterbein-hymnal.adoc; cpp=../../specs/cpp-basic.adoc
+:sectids!:
+
+Passages copied out of the other texts in this repository, each included by its address alone.
+The text comes from the work itself, so it cannot drift from it, and so does the citation under it: the work's title and attributes, its levels' citation forms, its canon's book names, and the citation style its schemes declare.
+Nothing under a quotation was typed here but the address.
+
+== Of the good
+
+include::ethics[unit="1094a1-1094a20"]
+
+include::wlc[unit=1]
+
+include::euthyphro[unit="2a-b"]
+
+== Of the shepherd
+
+include::kjv[unit="Ps 23:1-3"]
+
+The Prayer Book's psalter numbers the same psalm's verses its own way, and cites a psalm in Roman numerals:
+
+include::psalter[unit="95:1-2",cite=bcp]
+
+include::hymnal[unit="100:2"]
+
+== Of what cannot be parted
+
+include::kjv[unit="Rom 8:38-39"]
+
+include::quran[unit="2:255"]
+
+include::quran-ar[unit="1:1-7"]
+
+== Of attention
+
+include::mn10[unit="1.2"]
+
+== Of rules
+
+include::usc[unit="552(a)(1)"]
+
+include::gdpr[unit="Article 6(1)(a)-(b)"]
+
+include::cma[unit="s. 1(1)"]
+
+include::cpp[unit="[basic.pre]/3"]
+
+A whole provision, cited in the plural:
+
+include::cma[unit="s. 1-2"]

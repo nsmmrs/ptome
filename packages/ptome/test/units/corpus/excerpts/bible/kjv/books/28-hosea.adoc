@@ -1,0 +1,26 @@
+== @HOS
+
+[.book-title]
+Hosea
+
+=== @8
+
+[discrete.pericope]
+==== Israel Will Reap the Whirlwind
+
+@ __Set__ the trumpet to ##thy##note:tn[Heb. the roof of thy] mouth. __He shall come__ ##as##note:x[<<Deut 28:49; Jer 4:13>>] an eagle against the house of the LORD, because they have ##transgressed##note:x[<<Hos 6:7>>] my covenant, and trespassed against my law.
+@ ##Israel shall cry unto me, My God, we know thee.##note:x[<<Matt 7:21>>]
+@ Israel hath ##cast##note:x[<<Ps 81:10–11>>] off __the thing that is__ good: ##the enemy##note:x[<<Lam 3:66>>] shall pursue him.
+@ They have ##set##note:x[<<2 Kgs 15:10–30>>] up kings, but not by me: they have made princes, and I knew __it__ not: of their silver and their gold have they made them idols, ##that they##note:x[<<Hos 13:9>>] may be cut off.
+
+@ ¶ Thy ##calf##note:x[<<Hos 10:5>>], O Samaria, hath cast __thee__ off; mine anger is kindled against them: ##how##note:x[<<Jer 13:27>>] long __will it be__ ere they attain to innocency?
+@ For from Israel __was__ it also: ##the workman##note:x[<<Hab 2:18>>] made it; therefore it __is__ not God: but the calf of Samaria shall be broken in pieces.
+@ For they have ##sown##note:x[<<Job 4:8; Prov 22:8; Gal 6:7>>] the wind, and they shall reap the whirlwind: it hath no ##stalk##note:tn[or, standing corn]: the bud shall yield no meal: if so be it yield, the strangers shall swallow it up.
+
+@ Israel is ##swallowed##note:x[<<Jer 51:34>>] up: now shall they be among the Gentiles as ##a vessel##note:x[<<Jer 22:28>>] wherein __is__ no pleasure.
+@ For ##they##note:x[<<Hos 5:13; 7:11>>] are gone up to Assyria, ##a wild##note:x[<<Jer 2:24>>] ass alone by himself: Ephraim hath hired ##lovers##note:tn[Heb. loves].
+@ Yea, though they have hired among the nations, ##now##note:x[<<Ezek 16:37>>] will I gather them, and they shall ##sorrow##note:tn[or, begin] a little for the burden of ##the king##note:x[<<Ezek 26:7>>] of princes.note:tn[__a…__: or, in a little while]
+@ Because Ephraim hath made ##many##note:x[<<Hos 12:11>>] altars to sin, altars shall be unto him to sin.
+@ I have written to him the great things of my law, __but__ they were counted as a strange thing.
+@ They sacrifice flesh __for__ the sacrifices of mine offerings, and eat __it;__ ##__but__##note:x[<<Amos 5:22>>] the LORD accepteth them not; ##now##note:x[<<Hos 9:9>>] will he remember their iniquity, and visit their sins: ##they shall##note:x[<<Hos 9:6>>] return to Egypt.note:tn[__They sacrifice…__: or, In the sacrifices of mine offerings they, etc]
+@ For Israel hath ##forgotten##note:x[<<Deut 32:18; Hos 13:6>>] his Maker, and buildeth temples; and Judah hath multiplied fenced cities: but ##I will send##note:x[<<Jer 17:27>>] a fire upon his cities, and it shall devour the palaces thereof.

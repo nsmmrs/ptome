@@ -1,0 +1,32 @@
+== @2CO
+
+[.book-title]
+The Second Epistle of Paul the Apostle to the Corinthians
+
+=== @13
+
+[discrete.pericope]
+==== Examine Yourselves
+
+@ This __is__ the third __time__ I am coming to you. ##In##note:x[<<Deut 17:6; 19:15; Matt 18:16>>] the mouth of two or three witnesses shall every word be established.
+@ I ##told##note:x[<<2 Cor 1:23; 10:1–2, 8–11>>] you before, and foretell you, as if I were present, the second time; and being absent now I write to them which heretofore have sinned, and to all other, that, if I come again, I will not spare:
+@ Since ##ye seek##note:x[<<2 Cor 10:8–10>>] a proof of ##Christ##note:x[<<Matt 10:20; Luke 21:15>>] speaking in me, which to you-ward is not weak, but is mighty in you.
+@ For though ##he was##note:x[<<1 Pet 3:18>>] crucified through weakness, ##yet##note:x[<<Rom 6:4; 1 Pet 3:18>>] he liveth by the power of God. For we also are weak in him, but we shall live with him by the power of God toward you.
+@ ##Examine##note:x[<<Ps 139:23–24; Lam 3:40; 1 Cor 11:28>>] yourselves, whether ye be in the faith; prove your own selves. Know ye not your own selves, how that Jesus Christ is in you, except ye be reprobates?
+@ But I trust that ye shall know that we are not reprobates.
+@ Now I pray to God that ye do no evil; not that we should appear ##approved##note:x[<<Jas 1:12>>], but that ye should do that which is honest, though we be as reprobates.
+@ ##For we can do nothing against the truth, but for the truth.##note:x[<<Prov 21:30; Mark 9:39; Acts 4:28–30>>]
+@ For we are glad, ##when##note:x[<<1 Cor 4:10>>] we are weak, and ye are strong: and this also we wish, ##__even__##note:x[<<2 Cor 13:11; 1 Thess 3:10>>] your perfection.
+@ Therefore ##I write##note:x[<<2 Cor 2:3>>] these things being absent, ##lest##note:x[<<Titus 1:13>>] being present I should use sharpness, ##according##note:x[<<2 Cor 10:8>>] to the power which the Lord hath given me to edification, and not to destruction.
+
+[discrete.pericope]
+==== Benediction and Farewell
+
+@ Finally, brethren, farewell. Be perfect, be of good comfort, ##be of one##note:x[<<Rom 12:16; 1 Cor 1:10>>] mind, ##live##note:x[<<Heb 12:14>>] in peace; and the God of love and peace shall be with you.
+@ ##Greet one another with an holy kiss.##note:x[<<Rom 16:16; 1 Thess 5:26; 1 Pet 5:14>>]
+
+@ All the saints salute you.
+@ ##The grace##note:x[<<1 Cor 16:23>>] of the Lord Jesus Christ, and ##the love##note:x[<<Rom 5:5>>] of God, and ##the communion##note:x[<<Eph 2:22>>] of the Holy Ghost, __be__ with you all. Amen.
+
+[.colophon]
+The second __epistle__ to the Corinthians was written from Philippi, __a city__ of Macedonia, by Titus and Lucas.

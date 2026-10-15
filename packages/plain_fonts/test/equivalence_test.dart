@@ -3,7 +3,9 @@
 // the same values, the same bytes, the same rejections, on the fixtures,
 // on damaged copies of them and on a CJK CFF font (plain_typesetting's
 // subset of Noto Sans CJK JP): committed fonts only, the same on every
-// machine.
+// machine. The damaged copies come from fixed seeds; a deeper run, many
+// times as many, is tool/deep_checks.dart's, a failure it finds a case
+// here.
 @TestOn('vm')
 @Tags(['nightly'])
 library;
@@ -181,7 +183,8 @@ void _expectSameFont(
   );
   if (font.isTrueType) {
     for (var i = 0; i < 300; i++) {
-      final g = i < 100 ? i : r.nextInt(font.numGlyphs);
+      // (A damaged copy may say it has no glyphs: then out of range ones.)
+      final g = i < 100 || font.numGlyphs < 1 ? i : r.nextInt(font.numGlyphs);
       expect(
         _outcome(() => font.glyphBounds(g)),
         _outcome(() => old.glyphBounds(g)),
@@ -197,7 +200,8 @@ void _expectSameFont(
 /// Glyph sets to subset to: a few glyphs, some hundreds, every one.
 List<Set<int>> _glyphSets(int numGlyphs, Random r) => [
   {0},
-  {for (var i = 0; i < 12; i++) r.nextInt(numGlyphs)},
+  // (A damaged copy may say it has no glyphs.)
+  if (numGlyphs > 0) {for (var i = 0; i < 12; i++) r.nextInt(numGlyphs)},
   {for (var i = 0; i < min(numGlyphs, 400); i++) r.nextInt(numGlyphs)},
   {for (var g = 0; g < numGlyphs; g++) g},
 ];
@@ -315,7 +319,10 @@ Uint8List _woff2Of(Uint8List directory, Uint8List stream) {
   return font;
 }
 
-void main() {
+void main() => equivalence();
+
+/// The equivalence tests, the damaged copies [scale] times as many.
+void equivalence({int scale = 1}) {
   final files = _fontFiles();
   for (final path in files) {
     test('$path: the same reading, subsets and decoding', () {
@@ -351,7 +358,7 @@ void main() {
       'notoserif-features.woff',
     ]) {
       final bytes = File('test/fonts/$name').readAsBytesSync();
-      for (var i = 0; i < 120; i++) {
+      for (var i = 0; i < 12 * scale; i++) {
         final copy = Uint8List.fromList(bytes);
         for (var k = 0; k < 1 + random.nextInt(8); k++) {
           copy[random.nextInt(copy.length)] = random.nextInt(256);
@@ -409,7 +416,7 @@ void main() {
           length = view.getUint32(record + 12);
         }
       }
-      for (var i = 0; i < 120; i++) {
+      for (var i = 0; i < 12 * scale; i++) {
         final copy = Uint8List.fromList(bytes);
         for (var k = 0; k < 1 + random.nextInt(4); k++) {
           // Mostly the headers, lookup lists, coverage and class tables.
@@ -457,7 +464,7 @@ void main() {
           length = view.getUint32(record + 12);
         }
       }
-      for (var i = 0; i < 150; i++) {
+      for (var i = 0; i < 15 * scale; i++) {
         final copy = Uint8List.fromList(bytes);
         for (var k = 0; k < 1 + random.nextInt(3); k++) {
           final at = random.nextInt(2) == 0
@@ -505,7 +512,7 @@ void main() {
         for (final (tag, offset, length) in tables)
           if (tag == 'glyf' || tag == 'hmtx' || tag == 'loca') (offset, length),
       ];
-      for (var i = 0; i < 400; i++) {
+      for (var i = 0; i < 40 * scale; i++) {
         final copy = Uint8List.fromList(stream);
         for (var k = 0; k < 1 + random.nextInt(3); k++) {
           final (offset, length) = targets.isEmpty || random.nextInt(5) == 0
@@ -542,7 +549,7 @@ void main() {
     for (final name in ['notoserif-cff.otf', 'notoserif-cid.otf']) {
       final cff = OpenTypeFont.parse(File('test/fonts/$name').readAsBytesSync())
           .table('CFF ')!;
-      for (var i = 0; i < 1500; i++) {
+      for (var i = 0; i < 150 * scale; i++) {
         final copy = Uint8List.fromList(cff);
         for (var k = 0; k < 1 + random.nextInt(4); k++) {
           // Mostly the header, INDEXes and DICTs at the start.

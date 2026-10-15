@@ -1,0 +1,49 @@
+== @EPH
+
+[.book-title]
+The Epistle of Paul the Apostle to the Ephesians
+
+=== @2
+
+[discrete.pericope]
+==== Alive with Christ
+
+[.parallel]
+(<<Colossians 2:6–23>>)
+
+@ And ##you##note:x[<<Eph 2:5–6; Col 2:13>>] __hath he quickened__, who were ##dead##note:x[<<Eph 2:5>>] in trespasses and sins;
+@ Wherein ##in time##note:x[<<1 John 5:19>>] past ye walked according to the course of this world, according to ##the prince##note:x[<<Eph 6:12; 1 John 5:19>>] of the power of the air, the spirit that now worketh in the children of disobedience:
+@ Among whom also ##we##note:x[<<Titus 3:3>>] all had our conversation in times past ##in the##note:x[<<Gal 5:16–24; Eph 4:22>>] lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.
+@ But God, ##who##note:x[<<Eph 1:7; 1 Pet 1:3>>] is rich in mercy, for ##his##note:x[<<Titus 3:4–7>>] great love wherewith he loved us,
+@ Even when we were ##dead##note:x[<<Rom 5:8>>] in sins, hath quickened us together with Christ, (by ##grace ye##note:x[<<Rom 3:24; Eph 2:8>>] are saved;)
+@ And ##hath##note:x[<<Col 2:12–13; 3:1–3>>] raised __us__ up together, and made __us__ sit together ##in##note:x[<<Eph 1:3>>] heavenly __places__ in Christ Jesus:
+@ That in the ages to come he might ##shew##note:x[<<2 Thess 1:12; 1 Tim 1:16>>] the exceeding riches of his grace ##in __his__##note:x[<<Titus 3:4>>] kindness toward us through Christ Jesus.
+@ For ##by##note:x[<<Eph 2:5>>] grace are ye saved ##through##note:x[<<Rom 3:22–26; 4:16>>] faith; and that not of yourselves: __it is__ the gift of God:
+@ ##Not of works, lest any man should boast.##note:x[<<Rom 11:6; 2 Tim 1:9; Titus 3:3–5>>]
+@ For ##we are##note:x[<<Phil 2:13; Heb 13:21>>] his workmanship, created in Christ Jesus unto ##good##note:x[<<Col 1:10>>] works, which God hath before ordained that we should walk in them.
+
+[discrete.pericope]
+==== One in Christ
+
+[.parallel]
+(<<Philippians 2:1–4>>)
+
+@ Wherefore remember, that ye __being__ in time past ##Gentiles##note:x[<<Col 2:13>>] in the flesh, who are called ##Uncircumcision##note:x[<<Col 3:11>>] by that which is called the Circumcision in the flesh ##made##note:x[<<Col 2:11>>] by hands;
+@ That at that time ye were ##without##note:x[<<Gal 4:8; Col 1:21>>] Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, ##having##note:x[<<1 Pet 1:3>>] no hope, and without God in the world:
+@ But now in Christ Jesus ye who sometimes ##were##note:x[<<Acts 2:39; Eph 2:19–22>>] far off ##are##note:x[<<Col 1:13–14>>] made nigh by the blood of Christ.
+@ For he is our peace, who hath made ##both##note:x[<<Gal 3:28; Eph 2:15; Col 3:11>>] one, and hath broken down the middle wall of partition __between us__;
+@ Having abolished in his flesh the enmity, __even__ ##the law##note:x[<<Gal 3:10; Col 2:14; Heb 8:13>>] of commandments __contained__ in ordinances; for to make in himself of twain one new man, __so__ making peace;
+@ And that he might ##reconcile##note:x[<<Rom 5:10; 2 Cor 5:18–21>>] both unto God in one body by the cross, ##having##note:x[<<Col 2:14>>] slain the enmity thereby:
+@ And came ##and preached##note:x[<<Isa 57:19–21; Acts 10:36; Rom 5:1>>] peace to you which were afar off, and to them that were nigh.
+@ For ##through##note:x[<<Rom 5:2; Eph 3:12>>] him we both have access ##by##note:x[<<1 Cor 12:13>>] one Spirit unto the Father.
+
+[discrete.pericope]
+==== Christ Our Cornerstone
+
+[.parallel]
+(<<Isaiah 28:14–22; 1 Corinthians 3:10–15; 1 Peter 2:1–8>>)
+
+@ Now therefore ye are no more strangers and foreigners, ##but##note:x[<<Gal 3:26–28; Phil 3:20>>] fellowcitizens with the saints, and of the ##household##note:x[<<1 John 3:1>>] of God;
+@ And are ##built##note:x[<<1 Pet 2:4–5>>] upon ##the foundation##note:x[<<Isa 28:16>>] of the apostles and prophets, ##Jesus##note:x[<<Isa 28:16>>] Christ himself being the chief corner __stone__;
+@ In whom ##all##note:x[<<1 Cor 3:9; Eph 4:13–16>>] the building fitly framed together groweth unto ##an##note:x[<<2 Cor 6:16>>] holy temple in the Lord:
+@ In whom ye also are builded together for ##an##note:x[<<John 17:21–23; 1 Cor 3:16; 1 Pet 2:4–5>>] habitation of God through the Spirit.

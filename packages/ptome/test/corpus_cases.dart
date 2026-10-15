@@ -1,11 +1,11 @@
-/// The corpus (test/corpus): every case converts with ptome, with
-/// `asciidoctor-compat`, to the files the Asciidoctor command line writes
-/// for it. Text formats match the golden file's bytes (its generator
-/// stamp aside); a PDF matches its pages, pixel for pixel, an EPUB the
-/// files in it (and a PDF its outline and page labels), and the last
-/// ptome file found equal is kept by its hash (ptome.yml), so an unchanged
-/// one isn't compared again (unless `CORPUS_RECHECK` is set).
-@Tags(['corpus'])
+/// The corpus (test/corpus), split across the `test/corpus_<n>_test.dart`
+/// files: every case converts with ptome, with `asciidoctor-compat`, to
+/// the files the Asciidoctor command line writes for it. Text formats
+/// match the golden file's bytes (its generator stamp aside); an EPUB the
+/// files in it; a PDF must be the one last found equal to its golden,
+/// kept by its hash (ptome.yml). A PDF that isn't fails until recording
+/// (ORACLES=record, or CORPUS_RECHECK) compares its pages, pixel for
+/// pixel, and its outline and page labels, with Poppler's.
 library;
 
 import 'dart:convert';
@@ -16,7 +16,10 @@ import 'package:test/test.dart';
 
 import 'support/corpus.dart';
 
-void main() {
+/// The corpus's tests: those of every [parts]th case, from the
+/// [part]th (the corpus is split across test files, which run side by
+/// side).
+void corpusTests({required int part, required int parts}) {
   final corpus = loadCorpus();
   final attributes = {...corpus.attributes, 'asciidoctor-compat': 'true'};
 
@@ -27,7 +30,8 @@ void main() {
     }
   });
 
-  for (final c in corpus.cases) {
+  for (final (i, c) in corpus.cases.indexed) {
+    if (i % parts != part) continue;
     group(c.name, () {
       for (final MapEntry(key: format, value: golden) in c.goldens.entries) {
         // (A PDF on JavaScript is compressed by Dart's own deflate, where

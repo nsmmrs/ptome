@@ -1,0 +1,41 @@
+== @JER
+
+[.book-title]
+The Book of the Prophet Jeremiah
+
+=== @10
+
+[discrete.pericope]
+==== The Sovereignty of God
+
+@ Hear ye the word which the LORD speaketh unto you, O house of Israel:
+@ Thus saith the LORD, ##Learn##note:x[<<Lev 18:3; 20:23; Ezek 20:32>>] not the way of the heathen, and be not dismayed at the signs of heaven; for the heathen are dismayed at them.
+@ For the ##customs##note:x[<<Lev 18:30; 1 Pet 1:18>>] of the people __are__ vain: for ##__one__##note:x[<<Isa 44:9–20>>] cutteth a tree out of the forest, the work of the hands of the workman, with the axe.note:tn[__customs…__: Heb. statutes, or, ordinances are vanity]
+@ They ##deck##note:x[<<Isa 40:19–20>>] it with silver and with gold; they ##fasten##note:x[<<Isa 46:7>>] it with nails and with hammers, that it move not.
+@ They __are__ upright as the palm tree, but ##speak##note:x[<<Ps 115:5–8; 1 Cor 12:2>>] not: they must needs ##be borne##note:x[<<Isa 46:7>>], because they cannot go. Be not afraid of them; for they cannot do evil, neither also __is it__ in them to do good.
+@ Forasmuch as ##__there__##note:x[<<Exod 15:11>>] __is__ none like unto thee, O LORD; ##thou##note:x[<<Ps 48:1; 96:4>>] __art__ great, and thy name __is__ great in might.
+@ Who ##would##note:x[<<Rev 15:4>>] not fear thee, ##O King##note:x[<<Ps 22:28>>] of nations? for to thee doth it appertain: forasmuch as among all the wise __men__ of the nations, and in all their kingdoms, __there is__ none like unto thee.note:tn[__to…__: or, it liketh thee]
+@ But they are ##altogether##note:tn[Heb. in one, or, at once] ##brutish##note:x[<<Jer 10:14; Zech 10:2>>] and foolish: the stock __is__ a doctrine of vanities.
+@ Silver spread into plates is brought from Tarshish, and gold from ##Uphaz##note:x[<<Dan 10:5>>], the work of the workman, and of the hands of the founder: blue and purple __is__ their clothing: they ##__are__ all##note:x[<<Ps 115:4>>] the work of cunning __men__.
+@ But the LORD __is__ the ##true God##note:x[<<Deut 32:4>>], he __is__ the living God, and an ##everlasting king##note:x[<<Isa 57:15>>]: ##at##note:x[<<Nah 1:6>>] his wrath the earth shall tremble, and the nations shall not be able to abide his indignation.note:tn[__true…__: Heb. God of truth]note:tn[__living God__: Heb. living Gods]note:tn[__everlasting…__: Heb. king of eternity]
+@ Thus shall ye say unto them, ##The gods##note:x[<<Ps 96:5>>] that have not made the heavens and the earth, __even__ ##they##note:x[<<Isa 2:18; Jer 10:15>>] shall perish from the earth, and from under these heavens.
+@ He ##hath made##note:x[<<Gen 1:1>>] the earth by his power, he hath ##established##note:x[<<Prov 3:19>>] the world by his wisdom, and hath ##stretched##note:x[<<Job 9:8>>] out the heavens by his discretion.
+@ When he uttereth his voice, __there is__ a ##multitude##note:tn[or, noise] of waters in the heavens, and ##he causeth##note:x[<<Ps 135:7>>] the vapours to ascend from the ends of the earth; he maketh lightnings ##with##note:tn[or, for] rain, and ##bringeth##note:x[<<Job 38:22>>] forth the wind out of his treasures.
+@ Every ##man##note:x[<<Isa 46:7–8>>] is brutish in __his__ knowledge: every founder is confounded by the graven image: for his molten image __is__ falsehood, ##and##note:x[<<Ps 115:4–8; 135:16–18>>] __there is__ no breath in them.note:tn[__brutish in his knowledge__: or, more brutish than to know]
+@ They __are__ ##vanity##note:x[<<Isa 41:24; Jer 14:22; 51:18>>], __and__ the work of errors: in the time of their visitation they shall perish.
+@ The portion of Jacob __is__ not like them: for he __is__ the former of all __things;__ and ##Israel##note:x[<<Deut 32:9>>] __is__ the rod of his inheritance: ##The LORD##note:x[<<Jer 31:35; 32:18>>] of hosts __is__ his name.
+
+[discrete.pericope]
+==== The Coming Captivity of Judah
+
+@ ¶ Gather up ##thy wares##note:x[<<Jer 6:1; Ezek 12:3–12; Mic 2:10>>] out of the land, O ##inhabitant##note:tn[Heb. inhabitress] of the fortress.
+@ For thus saith the LORD, Behold, ##I will##note:x[<<1 Sam 25:29>>] sling out the inhabitants of the land at this once, and will distress them, that they may find __it so__.
+
+@ ¶ Woe is me for my hurt! my wound is grievous: but I said, ##Truly##note:x[<<Mic 7:9>>] this __is__ a grief, and I must bear it.
+@ My ##tabernacle##note:x[<<Jer 4:20>>] is spoiled, and all my cords are broken: ##my children##note:x[<<Jer 31:15>>] are gone forth of me, and they __are__ not: ##__there__##note:x[<<Jer 4:20>>] __is__ none to stretch forth my tent any more, and to set up my curtains.
+@ For ##the pastors##note:x[<<Jer 12:10; Ezek 34:2–10>>] are become brutish, and have not sought the LORD: therefore they shall not prosper, and all ##their##note:x[<<Jer 23:1>>] flocks shall be scattered.
+@ Behold, the noise of the bruit is come, and a great commotion out of the north country, to make the cities of Judah desolate, __and__ ##a den##note:x[<<Jer 9:11>>] of dragons.
+
+@ ¶ ##O LORD, I know that the way of man __is__ not in himself: __it is__ not in man that walketh to direct his steps.##note:x[<<Ps 37:23; Prov 16:1; 20:24>>]
+@ O LORD, ##correct##note:x[<<Ps 6:1; 38:1; Jer 30:11>>] me, but with judgment; not in thine anger, lest thou bring me to nothing.note:tn[__bring…__: Heb. diminish me]
+@ ##Pour##note:x[<<Ps 79:6–7>>] out thy fury upon the heathen ##that know##note:x[<<Job 18:21>>] thee not, and upon the families that call not on thy name: for they have ##eaten##note:x[<<Jer 8:16>>] up Jacob, and devoured him, and consumed him, and have made his habitation desolate.

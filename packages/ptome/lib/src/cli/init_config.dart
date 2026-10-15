@@ -46,10 +46,16 @@ const String scaffoldSdkConstraint = '^3.13.0';
 /// Generates a custom-binary project from the `init-config` arguments.
 ///
 /// [args] are the arguments after `init-config` (an optional target
-/// directory plus `-f/--force` / `-h/--help`); progress goes to [out]
-/// (defaulting to stdout) and diagnostics to [err] (defaulting to
-/// stderr). Returns the process exit code (0 on success).
-int runInitConfig(List<String> args, {StringSink? out, StringSink? err}) {
+/// directory plus `-f/--force` / `-h/--help`, the [current] directory
+/// without one); progress goes to [out] (defaulting to stdout) and
+/// diagnostics to [err] (defaulting to stderr). Returns the process exit
+/// code (0 on success).
+int runInitConfig(
+  List<String> args, {
+  StringSink? out,
+  StringSink? err,
+  String current = '.',
+}) {
   final stdoutSink = out ?? io.standardOutput;
   final stderrSink = err ?? io.standardError;
   var force = false;
@@ -77,7 +83,7 @@ int runInitConfig(List<String> args, {StringSink? out, StringSink? err}) {
       return 1;
     }
   }
-  final target = dir ?? '.';
+  final target = dir ?? current;
   if (io.exists(target) && !io.isDirectory(target)) {
     stderrSink.writeln(
       'ptome init-config: $target exists and is not a directory',

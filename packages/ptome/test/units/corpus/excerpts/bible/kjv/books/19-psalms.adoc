@@ -1,0 +1,632 @@
+== @PSA
+
+[.book-title]
+The Book of Psalms
+
+=== @12
+
+[.psalm-title]
+To the chief Musician upon Sheminith, A Psalm of David.
+
+[discrete.pericope]
+==== The Godly Are No More
+
+[.poetry%hardbreaks]
+@ ##Help##note:tn[or, Save], LORD; for the ##godly##note:x[<<Isa 57:1; Jer 5:1; Matt 24:12>>] man ceaseth; for the faithful fail from among the children of men.note:tn[__upon…__: or, upon the eighth]
+@ ##They##note:x[<<Ps 41:6; Jer 9:8>>] speak vanity every one with his neighbour: __with__ ##flattering##note:x[<<Rom 16:18>>] lips __and__ with a double heart do they speak.note:tn[__a double…__: Heb. an heart and an heart]
+@ The LORD shall cut off all flattering lips, __and__ the ##tongue##note:x[<<Dan 7:8; Rev 13:5>>] that speaketh note:x[<<Prov 18:21>>]##proud##note:tn[Heb. great] things:
+@ ##Who##note:x[<<Exod 5:2; Job 21:14–15>>] have said, ##With##note:x[<<Jas 3:5–6>>] our tongue will we prevail; our lips __are__ our own: who __is__ lord over us?note:tn[__are…__: Heb. are with us]
+@ For the ##oppression##note:x[<<Ps 146:7–8; Prov 14:31; Jas 5:4>>] of the poor, for the sighing of the needy, now will I arise, saith the LORD; I will set __him__ in safety __from him that__ puffeth at him.note:tn[__puffeth…__: or, would ensnare him]
+@ The ##words##note:x[<<2 Sam 22:31; Ps 18:30; Prov 30:5>>] of the LORD __are__ pure words: __as__ silver tried in a furnace of earth, purified seven times.
+@ ##Thou shalt##note:x[<<1 Sam 2:9; Ps 121:8>>] keep them, O LORD, thou shalt preserve ##them from##note:tn[Heb. him, etc: that is, every one of them, etc] this generation for ever.
+@ The ##wicked##note:x[<<Prov 29:12>>] walk on every side, ##when##note:x[<<Mark 14:63–65>>] the vilest ##men##note:tn[Heb. of the sons of the men] are exalted.
+
+=== @19
+
+[.psalm-title]
+To the chief Musician, A Psalm of David.
+
+[discrete.pericope]
+==== The Heavens Declare the Glory of God
+
+[.poetry%hardbreaks]
+@ ##The heavens##note:x[<<Ps 8:3; 148:3–4; Rom 1:19–20>>] declare the glory of God; and the firmament sheweth his handywork.
+@ note:x[<<Ps 74:16>>]##Day unto##note:x[<<Ps 24:7–10; 134:1–3>>] day uttereth speech, and night unto night sheweth knowledge.
+@ ##__There__##note:x[<<Deut 4:19>>] __is__ no speech nor language, __where__ their voice is not heard.note:tn[__where…__: or, without these their voice is heard: Heb. without their voice heard]
+@ ##Their##note:x[<<Ps 98:3; Rom 10:18>>] ##line##note:tn[or, rule, or, direction] is gone out through all the earth, and their words to the end of the world. ##In them##note:x[<<Gen 1:14–18>>] hath he set a tabernacle for the sun,
+@ Which __is__ as a ##bridegroom##note:x[<<Isa 61:10; 62:5>>] coming out of his chamber, __and__ ##rejoiceth##note:x[<<Phil 3:13–14>>] as a strong man to run a race.
+@ ##His going##note:x[<<Eccl 1:5>>] forth __is__ from the end of the heaven, and his ##circuit##note:x[<<Job 22:14>>] unto the ends of it: and there is nothing hid from the heat thereof.
+
+[.poetry%hardbreaks]
+@ The ##law##note:tn[or, doctrine] of the LORD __is__ ##perfect##note:x[<<Ps 111:7>>], ##converting##note:tn[or, restoring] the soul: the testimony of the LORD __is__ ##sure##note:x[<<Ps 111:7>>], ##making##note:x[<<Ps 119:130>>] wise the simple.
+@ The statutes of the LORD __are__ right, ##rejoicing##note:x[<<Jer 15:16>>] the heart: the commandment of the LORD ##__is__ pure##note:x[<<Ps 12:6>>], ##enlightening##note:x[<<Ps 119:105>>] the eyes.
+@ ##The fear##note:x[<<1 Sam 12:24>>] of the LORD __is__ clean, enduring for ever: the ##judgments##note:x[<<Ps 119:137–138, 142>>] of the LORD __are__ ##true##note:tn[Heb. truth] __and__ righteous altogether.
+@ More to be desired __are they__ ##than gold##note:x[<<Ps 119:72, 127>>], yea, than much fine gold: ##sweeter##note:x[<<Ps 119:103>>] also than honey and the honeycomb.note:tn[__the honeycomb__: Heb. the dropping of honeycombs]
+@ ##Moreover##note:x[<<Ps 119:11>>] by them is thy servant warned: __and__ in ##keeping##note:x[<<Jas 1:25; 2 John 1:8>>] of them __there is__ great reward.
+@ Who ##can##note:x[<<Job 6:24>>] understand __his__ errors? cleanse thou me from ##secret##note:x[<<Ps 90:8; 139:23–24>>] __faults__.
+@ Keep back thy servant also from presumptuous __sins;__ ##let##note:x[<<Ps 119:133; Rom 6:12–14>>] them not have dominion over me: then shall I be ##upright##note:x[<<Ps 7:10>>], and I shall be innocent from the great transgression.note:tn[__the great__: or, much]
+@ ##Let##note:x[<<Ps 51:15; 119:108; 1 Pet 2:5>>] the words of my mouth, and the meditation of my heart, be acceptable in thy sight, O LORD, my ##strength##note:tn[Heb. rock], and my redeemer.
+
+=== @23
+
+[.psalm-title]
+A Psalm of David.
+
+[discrete.pericope]
+==== The LORD Is My Shepherd
+
+[.parallel]
+(<<Ezekiel 34:11–24; John 10:1–21>>)
+
+[.poetry%hardbreaks]
+@ The LORD __is__ ##my shepherd##note:x[<<Isa 40:11; John 10:11>>]; ##I shall not want##note:x[<<Phil 4:19>>].
+@ He maketh me to lie down in ##green pastures##note:x[<<Ezek 34:13–14>>]: he ##leadeth me##note:x[<<Rev 7:17; 22:1>>] beside the still waters.note:tn[__green…__: Heb. pastures of tender grass]note:tn[__still…__: Heb. waters of quietness]
+@ He ##restoreth my soul##note:x[<<Ps 19:7; 51:10>>]: he ##leadeth##note:x[<<Isa 42:16>>] me in the paths of righteousness for his name’s sake.
+@ Yea, though I walk through the valley of the shadow of death, ##I will##note:x[<<Ps 118:6; 138:7; Isa 41:10>>] fear no evil: for thou __art__ with me; thy rod and thy staff they comfort me.
+@ Thou preparest a table before me in the presence of mine enemies: note:x[<<Ps 45:7; 92:10>>]thou ##anointest##note:tn[Heb. makest fat] my head with oil; ##my cup##note:x[<<Eph 3:20>>] runneth over.
+@ Surely ##goodness##note:x[<<Ps 36:7–10; 2 Tim 4:18>>] and mercy shall follow me all the days of my life: ##and I##note:x[<<2 Cor 5:1>>] will dwell in the house of the LORD for ever.note:tn[__for ever__: Heb. to length of days]
+
+=== @73
+
+[.psalm-title]
+A Psalm of Asaph.
+
+[discrete.major]
+==== BOOK III
+
+[.parallel]
+(<<Psalms 73—89>>)
+
+[discrete.pericope]
+==== Surely God Is Good to Israel
+
+[.poetry%hardbreaks]
+@ ##Truly##note:tn[or, Yet] ##God##note:x[<<Ps 84:11>>] __is__ good to Israel, __even__ to such as are note:x[<<Ps 51:10; Matt 5:8>>]##of##note:tn[or, for] a clean heart.note:tn[__of…__: Heb. clean of heart]
+@ But as for me, my ##feet##note:x[<<1 Sam 2:9; Ps 116:8>>] were almost gone; my ##steps##note:x[<<Ps 94:18>>] had well nigh slipped.
+@ For ##I was##note:x[<<Ps 37:7>>] envious at the foolish, __when__ I saw ##the prosperity##note:x[<<Job 21:7–15; Jer 12:1–2>>] of the wicked.
+@ For __there are__ ##no##note:x[<<Job 21:23–25; Ps 17:14>>] bands in their death: but their strength __is__ ##firm##note:tn[Heb. fat].
+@ ##They __are__##note:x[<<Job 21:9>>] not in trouble __as other__ men; neither are they plagued ##like##note:tn[Heb. with] __other__ men.note:tn[__in…__: Heb. in the trouble of other men]
+@ Therefore pride compasseth them about as a chain; violence ##covereth##note:x[<<Ps 109:18; 1 Pet 5:5>>] them __as__ a garment.
+@ Their ##eyes##note:x[<<Job 15:27; Ps 17:10; Jer 5:28>>] stand out with fatness: they have more than heart could wish.note:tn[__have…__: Heb. pass the thoughts of the heart]
+@ They are corrupt, and ##speak wickedly##note:x[<<Ps 10:2>>] __concerning__ oppression: they ##speak loftily##note:x[<<Jude 1:16>>].
+@ They ##set##note:x[<<Exod 5:2; Rev 13:6>>] their mouth against the heavens, and their ##tongue##note:x[<<Jas 3:6>>] walketh through the earth.
+@ Therefore his people return hither: and waters of a full __cup__ are wrung out to them.
+@ And they say, ##How##note:x[<<Ps 94:7; Zeph 1:12>>] doth God know? and ##is there##note:x[<<Hos 7:2>>] knowledge in the most High?
+@ Behold, ##these##note:x[<<Ps 52:7>>] __are__ the ungodly, who prosper in the world; they increase __in__ riches.
+@ ##Verily##note:x[<<Job 21:15; 34:9>>] I have cleansed my heart __in__ vain, and ##washed##note:x[<<Ps 26:6>>] my hands in innocency.
+@ ##For all##note:x[<<Ps 94:12; Heb 12:5>>] the day long have I been plagued, and ##chastened##note:tn[Heb. my chastisement was] every morning.
+
+[.poetry%hardbreaks]
+@ If I say, I will speak thus; behold, I should ##offend##note:x[<<Mal 2:8; Matt 18:6–7; Rom 14:15>>] __against__ the generation of thy children.
+@ ##When##note:x[<<Eccl 8:17>>] I thought to know this, it __was__ too painful for me;note:tn[__too…__: Heb. labour in mine eyes]
+@ ##Until##note:x[<<Ps 27:4; 77:13>>] I went into the sanctuary of God; ##__then__##note:x[<<Luke 12:20>>] understood I their end.
+@ ##Surely##note:x[<<Deut 32:35; Ps 35:6; Jer 23:12>>] thou didst set them in slippery places: thou castedst them down into destruction.
+@ How are they __brought__ into desolation, as in a moment! ##they are##note:x[<<Prov 28:1; Dan 5:6>>] utterly consumed with terrors.
+@ ##As a##note:x[<<Job 20:8>>] dream ##when##note:x[<<Ps 78:65>>] __one__ awaketh; __so__, O Lord, when thou awakest, thou shalt despise their image.
+
+[.poetry%hardbreaks]
+@ Thus ##my heart##note:x[<<Ps 37:7; 73:3>>] was grieved, and I was pricked ##in my##note:x[<<Lam 3:13>>] reins.
+@ ##So##note:x[<<Ps 92:6; Eccl 3:18>>] foolish __was__ I, and ##ignorant##note:tn[Heb. I knew not]: I was ##__as__ a##note:x[<<Isa 1:3>>] beast ##before##note:tn[Heb. with] thee.
+@ ##Nevertheless##note:x[<<Matt 28:20>>] I __am__ continually with thee: ##thou hast##note:x[<<Ps 63:8; Isa 41:13>>] holden __me__ by my right hand.
+@ ##Thou##note:x[<<Ps 32:8; Prov 3:5–6; Isa 58:11>>] shalt guide me with thy counsel, and afterward receive me __to__ glory.
+@ ##Whom##note:x[<<Ps 63:3; Phil 3:8>>] have I in heaven __but thee__? and __there is__ ##none upon##note:x[<<Phil 3:8>>] earth __that__ I desire beside thee.
+@ My flesh and my heart faileth: ##__but__##note:x[<<Ps 138:3; Isa 40:29–31; 2 Cor 12:9–10>>] God __is__ the ##strength##note:tn[Heb. rock] of my heart, and my portion for ever.
+@ For, ##lo##note:x[<<Ps 119:155>>], they that are far from thee shall perish: thou hast destroyed all them ##that go##note:x[<<Exod 34:15; Jas 4:4>>] a whoring from thee.
+@ ##But##note:x[<<Lam 3:25–26; Heb 10:19–22; Jas 4:8>>] __it is__ good for me to draw near to God: I have put my trust in the Lord GOD, that I may declare all thy works.
+
+=== @90
+
+[.psalm-title]
+A Prayer of Moses the man of God.
+
+[discrete.major]
+==== BOOK IV
+
+[.parallel]
+(<<Psalms 90—106>>)
+
+[discrete.pericope]
+==== From Everlasting to Everlasting
+
+[.poetry%hardbreaks]
+@ ##Lord##note:x[<<Deut 33:27; Ps 71:3; 1 John 4:16>>], thou hast been our dwelling place in all generations.note:tn[__A Prayer…__: or, A Prayer, being a Psalm of Moses]note:tn[__in…__: Heb. in generation and generation]
+@ Before the mountains were brought forth, ##or ever##note:x[<<Gen 1:1>>] thou hadst formed the earth and the world, ##even from##note:x[<<Ps 102:24–27; Heb 13:8>>] everlasting to everlasting, thou __art__ God.
+@ ##Thou##note:x[<<Gen 3:19; Ps 104:29; Eccl 12:7>>] turnest man to destruction; and sayest, Return, ye children of men.
+@ ##For##note:x[<<2 Pet 3:8>>] a thousand years in thy sight __are but__ as yesterday when it is past, ##and __as__##note:x[<<Matt 24:43; Luke 12:38>>] a watch in the night.note:tn[__when…__: or, when he hath passed them]
+@ ##Thou##note:x[<<Job 22:16>>] carriest them away as with a flood; they are ##__as__ a sleep##note:x[<<Ps 73:20>>]: in the ##morning##note:x[<<Isa 40:6>>] __they are__ like grass __which__ groweth up.note:tn[__groweth…__: or, is changed]
+@ ##In the morning it flourisheth, and groweth up; in the evening it is cut down, and withereth.##note:x[<<Job 14:2; Ps 92:7>>]
+
+[.poetry%hardbreaks]
+@ ##For we##note:x[<<Ps 39:11>>] are consumed by thine anger, and by thy wrath are we troubled.
+@ ##Thou##note:x[<<Jer 16:17; 23:24>>] hast set ##our##note:x[<<Eccl 12:14>>] iniquities before thee, our secret __sins__ in the light of thy countenance.
+@ ##For##note:x[<<Ps 78:33>>] all our days are passed away in thy wrath: we spend our years as ##a tale##note:x[<<Ps 39:5>>] __that is told__.note:tn[__passed…__: Heb. turned away]note:tn[__as a…__: or, as a meditation]
+@ The days of our years __are__ threescore years and ten; and if by reason of strength __they be__ fourscore years, ##yet##note:x[<<2 Sam 19:35>>] __is__ their strength labour and sorrow; ##for##note:x[<<Ps 78:39; Jas 4:14>>] it is soon cut off, and we fly away.note:tn[__The days…__: Heb. As for the days of our years, in them are seventy years]
+@ Who knoweth the power of thine anger? even according to thy fear, __so is__ thy wrath.
+
+[.poetry%hardbreaks]
+@ ##So##note:x[<<Ps 39:4; John 9:4; Eph 5:16–17>>] teach __us__ to number our days, that we may ##apply##note:tn[Heb. cause to come] __our__ hearts unto wisdom.
+@ Return, O LORD, how long? and ##let it##note:x[<<Deut 32:36; Ps 106:45; 135:14>>] repent thee concerning thy servants.
+@ O satisfy us early with thy mercy; ##that we##note:x[<<Ps 23:6; 85:6; 86:4>>] may rejoice and be glad all our days.
+@ ##Make##note:x[<<Ps 30:5; 126:5–6; Isa 40:1–2>>] us glad according to the days __wherein__ thou hast afflicted us, __and__ the years __wherein__ we have seen evil.
+@ ##Let##note:x[<<Ps 44:1; Hab 3:2>>] thy work appear unto thy servants, and thy glory unto their children.
+@ And let the beauty of the LORD our God be upon us: and ##establish##note:x[<<Prov 16:3; 1 Cor 3:7; 2 Thess 2:16–17>>] thou the work of our hands upon us; yea, the work of our hands establish thou it.
+
+=== @119
+
+[discrete.acrostic]
+==== __א ALEPH.__
+
+[discrete.pericope]
+==== Your Word Is a Lamp to My Feet
+
+[discrete.subsection]
+===== ALEPH
+
+[.poetry%hardbreaks]
+@ ##Blessed##note:x[<<Luke 11:28; Jas 1:25>>] __are__ the ##undefiled##note:tn[or, perfect, or, sincere] in the way, who ##walk##note:x[<<Ezek 11:20>>] in the law of the LORD.
+@ Blessed __are__ they that keep his testimonies, __and that__ ##seek##note:x[<<Deut 4:29; Ps 119:10; Jer 29:13>>] him with the whole heart.
+@ ##They also do no iniquity: they walk in his ways.##note:x[<<1 John 3:9; 5:18>>]
+
+[.poetry%hardbreaks]
+@ ##Thou hast commanded __us__ to keep thy precepts diligently.##note:x[<<Matt 28:20; John 14:21; 1 John 5:3>>]
+@ ##O that my ways were directed to keep thy statutes!##note:x[<<Ps 51:10; 2 Thess 3:5; Heb 13:21>>]
+@ Then ##shall I##note:x[<<Job 22:26; Ps 119:80; 1 John 2:28>>] not be ashamed, when I have respect unto all thy commandments.
+
+[.poetry%hardbreaks]
+@ ##I will##note:x[<<Ps 119:171>>] praise thee with uprightness of heart, ##when##note:x[<<Ps 119:12; John 6:45>>] I shall have learned thy righteous judgments.note:tn[__thy…__: Heb. judgments of thy righteousness]
+@ I will keep thy statutes: ##O forsake##note:x[<<Ps 38:21–22; 51:11; Phil 4:13>>] me not utterly.
+
+[discrete.acrostic]
+==== __ב BETH.__
+
+[discrete.subsection]
+===== BETH
+
+[.poetry%hardbreaks]
+@ Wherewithal ##shall##note:x[<<2 Tim 2:22>>] a young man cleanse his way? ##by taking##note:x[<<2 Tim 3:15–17; Jas 1:21–25>>] heed __thereto__ according to thy word.
+@ With ##my whole##note:x[<<2 Chr 15:15; Ps 119:2, 34>>] heart have I sought thee: O let me not wander from thy commandments.
+@ ##Thy word##note:x[<<Ps 37:31; 40:8; Col 3:16>>] have I hid in mine heart, that I might not sin against thee.
+@ Blessed __art__ thou, O LORD: ##teach##note:x[<<Ps 119:64; Luke 24:45; 1 John 2:27>>] me thy statutes.
+
+[.poetry%hardbreaks]
+@ With my lips have ##I declared##note:x[<<Ps 37:30; 40:9–10; 71:15–18>>] all the judgments of thy mouth.
+@ I have ##rejoiced##note:x[<<Ps 119:162; Jer 15:16; Matt 13:44>>] in the way of thy testimonies, as __much as__ in all riches.
+@ I will ##meditate##note:x[<<Ps 1:2; 119:148; Jas 1:25>>] in thy precepts, and have respect unto thy ways.
+@ I will ##delight##note:x[<<Ps 119:24, 47>>] myself in thy statutes: I will ##not forget##note:x[<<Prov 3:1>>] thy word.
+
+[discrete.acrostic]
+==== __ג GIMEL.__
+
+[discrete.subsection]
+===== GIMEL
+
+[.poetry%hardbreaks]
+@ ##Deal##note:x[<<Ps 13:6>>] bountifully with thy servant, __that__ ##I may live##note:x[<<Eph 2:4–5; Titus 2:11–12>>], and keep thy word.
+@ note:x[<<Isa 32:3; Acts 26:18; Eph 1:17–18>>]##Open##note:tn[Heb. Reveal] thou mine eyes, that I may behold wondrous things out of thy law.
+@ I __am__ ##a stranger##note:x[<<1 Chr 29:15; Ps 39:12; Heb 11:13–16>>] in the earth: hide not thy commandments from me.
+@ My ##soul##note:x[<<Ps 42:1; 63:1; 84:2>>] breaketh for the longing __that it hath__ unto thy judgments at all times.
+@ Thou hast ##rebuked##note:x[<<1 Pet 5:5>>] the proud __that are__ ##cursed##note:x[<<Ps 119:10, 118>>], which do err from thy commandments.
+@ ##Remove##note:x[<<Ps 39:8; 119:39>>] from me reproach and contempt; ##for I have##note:x[<<1 Pet 2:20>>] kept thy testimonies.
+@ ##Princes##note:x[<<Ps 2:1–2>>] also did sit __and__ speak against me: __but__ thy servant did meditate in thy statutes.
+@ Thy ##testimonies##note:x[<<Ps 119:92>>] also __are__ my delight __and__ ##my counsellors##note:x[<<Col 3:16; 2 Tim 3:15–17>>].note:tn[__my counsellors__: Heb. men of my counsel]
+
+[discrete.acrostic]
+==== __ד DALETH.__
+
+[discrete.subsection]
+===== DALETH
+
+[.poetry%hardbreaks]
+@ My ##soul##note:x[<<Col 3:2>>] cleaveth unto the dust: ##quicken##note:x[<<Ps 119:159>>] thou me ##according##note:x[<<Deut 30:6>>] to thy word.
+
+[.poetry%hardbreaks]
+@ I have declared my ways, and thou heardest me: ##teach##note:x[<<Ps 25:4; 27:11; 86:11>>] me thy statutes.
+@ Make me to understand the way of thy precepts: ##so shall I talk##note:x[<<Ps 71:17; 105:2; 145:5–6>>] of thy wondrous works.
+
+[.poetry%hardbreaks]
+@ My ##soul##note:x[<<Ps 22:14>>] ##melteth##note:tn[Heb. droppeth] for heaviness: ##strengthen##note:x[<<Ps 27:14; Phil 4:13>>] thou me according unto thy word.
+@ ##Remove##note:x[<<Prov 30:8; 1 John 1:8; 2:4>>] from me the way of lying: and grant me thy law graciously.
+
+[.poetry%hardbreaks]
+@ I have ##chosen##note:x[<<Ps 119:29; Prov 1:29; John 3:19–21>>] the way of truth: thy judgments have I laid __before me__.
+@ I have ##stuck##note:x[<<Prov 23:23; John 8:31>>] unto thy testimonies: O LORD, ##put me##note:x[<<Rom 5:5>>] not to shame.
+@ I will ##run##note:x[<<Heb 12:1>>] the way of thy commandments, when thou shalt ##enlarge##note:x[<<1 Kgs 4:29; 2 Cor 3:17>>] my heart.
+
+[discrete.acrostic]
+==== __ה HE.__
+
+[discrete.subsection]
+===== HE
+
+[.poetry%hardbreaks]
+@ ##Teach##note:x[<<Ps 119:26–27; Isa 54:13>>] me, O LORD, the way of thy statutes; and ##I shall keep##note:x[<<1 John 2:27>>] it __unto__ the end.
+@ ##Give me##note:x[<<Prov 2:5–6; Jas 1:5>>] understanding, and ##I shall##note:x[<<Matt 7:24>>] keep thy law; yea, I shall observe it with __my__ whole heart.
+
+[.poetry%hardbreaks]
+@ ##Make me##note:x[<<Ezek 36:26–27>>] to go in ##the path##note:x[<<Ps 23:3; Prov 4:11>>] of thy commandments; for therein do I delight.
+@ Incline my heart unto thy testimonies, ##and not to##note:x[<<Mark 7:21–22; Luke 12:15; Heb 13:5>>] covetousness.
+@ ##Turn##note:x[<<Prov 4:25; Isa 33:15; 1 John 2:16>>] away mine eyes from beholding vanity; __and__ quicken thou me in thy way.note:tn[__Turn…__: Heb. Make to pass]
+@ ##Stablish##note:x[<<2 Cor 1:20>>] thy word unto thy servant, ##who __is devoted__##note:x[<<Ps 147:11; Jer 32:39–41>>] to thy fear.
+@ ##Turn##note:x[<<Ps 119:22; 1 Tim 3:7; Titus 2:8>>] away my reproach which I fear: for thy judgments __are__ good.
+@ Behold, ##I have##note:x[<<Ps 119:20; 2 Cor 7:1>>] longed after thy precepts: ##quicken##note:x[<<John 10:10>>] me in thy righteousness.
+
+[discrete.acrostic]
+==== __ו VAU.__
+
+[discrete.subsection]
+===== WAW
+
+[.poetry%hardbreaks]
+@ note:x[<<Ps 69:16; 119:58, 76–77>>]Let thy mercies come also unto me, O LORD, __even__ thy salvation, according to thy word.
+@ ##So shall##note:x[<<Matt 27:63>>] I ##have wherewith##note:x[<<2 Sam 16:7–8>>] to answer him that reproacheth me: ##for I trust##note:x[<<Acts 27:25>>] in thy word.note:tn[__So…__: or, So shall I answer him that reproveth me in a thing]
+
+[.poetry%hardbreaks]
+@ And ##take not##note:x[<<Eph 1:13>>] the word of truth utterly out of my mouth; ##for I have##note:x[<<Ps 9:4; 1 Pet 2:23>>] hoped in thy judgments.
+@ So shall I ##keep##note:x[<<Ps 119:33–34; Rev 7:15; 22:11>>] thy law continually for ever and ever.
+
+[.poetry%hardbreaks]
+@ ##And I will##note:x[<<Ps 119:133; Jas 1:25>>] walk at liberty: ##for I seek##note:x[<<Ps 119:94>>] thy precepts.note:tn[__at liberty__: Heb. at large]
+@ I will ##speak##note:x[<<Matt 10:18–19; Acts 26:1–2>>] of thy testimonies also before kings, and ##will not##note:x[<<Rom 1:16>>] be ashamed.
+@ And I will delight myself in thy commandments, ##which##note:x[<<Ps 119:48, 97, 127>>] I have loved.
+@ My hands also will I lift up ##unto thy##note:x[<<Matt 7:21>>] commandments, which I have loved; ##and I will##note:x[<<Ps 1:2; 119:15>>] meditate in thy statutes.
+
+[discrete.acrostic]
+==== __ז ZAIN.__
+
+[discrete.subsection]
+===== ZAYIN
+
+[.poetry%hardbreaks]
+@ ##Remember##note:x[<<Ps 106:4, 45>>] the word unto thy servant, ##upon which##note:x[<<2 Sam 7:25>>] thou hast caused me to hope.
+@ ##This##note:x[<<Ps 94:19; Rom 15:4>>] __is__ my comfort in my affliction: ##for thy##note:x[<<John 6:63>>] word hath quickened me.
+@ The ##proud##note:x[<<Jer 20:7>>] have had me greatly in derision: ##__yet__ have##note:x[<<Job 23:11; Ps 119:157>>] I not declined from thy law.
+@ I ##remembered##note:x[<<Ps 77:11–12; 105:5>>] thy judgments of old, O LORD; and have comforted myself.
+@ ##Horror##note:x[<<Ezra 9:3; 10:6; Ps 119:158>>] hath taken hold upon me because of the wicked that forsake thy law.
+@ ##Thy statutes have been my songs in the house of my pilgrimage.##note:x[<<Gen 47:9; Heb 11:13–16>>]
+
+[.poetry%hardbreaks]
+@ I have remembered thy name, O LORD, in the ##night##note:x[<<Ps 42:8; 63:6; Isa 26:9>>], and have kept thy law.
+@ This I had, ##because##note:x[<<Ps 119:165; 1 John 3:19–24>>] I kept thy precepts.
+
+[discrete.acrostic]
+==== __ח CHETH.__
+
+[discrete.subsection]
+===== HETH
+
+[.poetry%hardbreaks]
+@ __Thou art__ ##my portion##note:x[<<Ps 16:5; 142:5; Lam 3:24>>], O LORD: I have said that I would keep thy words.
+@ ##I intreated##note:x[<<Ps 119:10; Heb 10:22>>] thy ##favour##note:tn[Heb. face] with __my__ whole heart: ##be merciful##note:x[<<Ps 119:41>>] unto me according to thy word.
+
+[.poetry%hardbreaks]
+@ I ##thought##note:x[<<Lam 3:40; Ezek 18:28; 2 Cor 13:5>>] on my ways, and turned my feet unto thy testimonies.
+@ I ##made##note:x[<<Ps 95:7–8; Eccl 9:10; Gal 1:16>>] haste, and delayed not to keep thy commandments.
+@ note:x[<<Hos 6:9>>]The ##bands##note:tn[or, companies] of the wicked have robbed me: ##__but__ I##note:x[<<Ps 119:176; Rom 12:17–21>>] have not forgotten thy law.
+@ At ##midnight##note:x[<<Ps 42:8; Mark 1:35; Acts 16:25>>] I will rise to give thanks unto thee because of thy righteous judgments.
+@ I __am__ ##a companion##note:x[<<Ps 101:6; Prov 13:20; Mal 3:16–18>>] of all __them__ that fear thee, and of them that keep thy precepts.
+@ The ##earth##note:x[<<Ps 33:5>>], O LORD, is full of thy mercy: ##teach##note:x[<<Ps 119:12; Matt 11:29>>] me thy statutes.
+
+[discrete.acrostic]
+==== __ט TETH.__
+
+[discrete.subsection]
+===== TETH
+
+[.poetry%hardbreaks]
+@ Thou hast ##dealt well##note:x[<<Ps 13:6; 30:11; 119:17>>] with thy servant, O LORD, according unto thy word.
+@ ##Teach me##note:x[<<1 Kgs 3:9; Prov 2:1–9; Phil 1:9>>] good judgment and knowledge: for I have believed thy commandments.
+@ Before I was afflicted I went astray: ##but now##note:x[<<Ps 119:71; Jer 31:18–19; Hos 5:15>>] have I kept thy word.
+@ Thou __art__ ##good##note:x[<<Ps 86:5; 106:1>>], and doest good; ##teach##note:x[<<Ps 119:12>>] me thy statutes.
+
+[.poetry%hardbreaks]
+@ The ##proud##note:x[<<Job 13:4; Ps 109:2–3; Matt 5:11–12>>] have forged a lie against me: __but__ I will keep thy precepts with __my__ whole heart.
+@ Their ##heart is as fat##note:x[<<Ps 17:10; 73:7; Acts 28:27>>] as grease; __but__ I delight in thy law.
+@ __It is__ ##good##note:x[<<Ps 119:67; 1 Cor 11:32; Heb 12:10–11>>] for me that I have been afflicted; that I might learn thy statutes.
+@ The law of thy mouth __is__ ##better##note:x[<<Ps 19:10; 119:127; Prov 8:10–11>>] unto me than thousands of gold and silver.
+
+[discrete.acrostic]
+==== __י JOD.__
+
+[discrete.subsection]
+===== YODH
+
+[.poetry%hardbreaks]
+@ ##Thy hands##note:x[<<Ps 111:10; 138:8; 139:14–16>>] have made me and fashioned me: give me understanding, that I may learn thy commandments.
+@ They that ##fear thee##note:x[<<Ps 34:2–6; 66:16; 119:79>>] will be glad when they see me; because I have hoped in thy word.
+@ I know, O LORD, that thy judgments __are__ note:x[<<Rom 3:4–5>>]##right##note:tn[Heb. righteousness], and __that__ ##thou in##note:x[<<Heb 12:10–11; Rev 3:19>>] faithfulness hast afflicted me.
+
+[.poetry%hardbreaks]
+@ Let, I pray thee, thy ##merciful##note:x[<<Ps 86:5; 106:4–5; 2 Cor 1:3–5>>] kindness be for my comfort, according to thy word unto thy servant.note:tn[__for…__: Heb. to comfort me]
+@ Let ##thy tender##note:x[<<Ps 119:41; Lam 3:22–23>>] mercies come unto me, that I may live: ##for thy##note:x[<<Ps 119:174>>] law __is__ my delight.
+
+[.poetry%hardbreaks]
+@ Let ##the proud##note:x[<<Ps 119:51>>] be ashamed; for they dealt perversely with me ##without##note:x[<<Ps 25:3; John 15:25>>] a cause: __but__ I will meditate in thy precepts.
+@ ##Let those##note:x[<<Ps 119:74; 142:7>>] that fear thee turn unto me, and those that have known thy testimonies.
+@ Let my heart be ##sound##note:x[<<Deut 26:16; 2 Chr 12:14>>] in thy statutes; ##that I be##note:x[<<1 John 2:28>>] not ashamed.
+
+[discrete.acrostic]
+==== __כ CAPH.__
+
+[discrete.subsection]
+===== KAPH
+
+[.poetry%hardbreaks]
+@ My soul ##fainteth##note:x[<<Ps 73:26; 84:2; 119:40>>] for thy salvation: __but__ I hope in thy word.
+@ Mine ##eyes##note:x[<<Ps 69:3; 119:123; Prov 13:12>>] fail for thy word, saying, When wilt thou comfort me?
+@ For I am become ##like a bottle in the smoke##note:x[<<Job 30:30>>]; ##__yet__ do I##note:x[<<Ps 119:176>>] not forget thy statutes.
+@ ##How##note:x[<<Ps 90:12>>] many __are__ the days of thy servant? ##when##note:x[<<Rev 6:10–11>>] wilt thou execute judgment on them that persecute me?
+
+[.poetry%hardbreaks]
+@ ##The proud##note:x[<<Ps 35:7; Prov 16:27; Jer 18:20>>] have digged pits for me, which __are__ not after thy law.
+@ All thy commandments __are__ ##faithful##note:tn[Heb. faithfulness]: ##they##note:x[<<Ps 35:19; 119:78>>] persecute me wrongfully; ##help##note:x[<<Ps 70:5>>] thou me.
+@ They had ##almost##note:x[<<Matt 10:28>>] consumed me upon earth; ##but I forsook##note:x[<<Ps 119:61>>] not thy precepts.
+@ ##Quicken##note:x[<<Ps 119:25, 40>>] me after thy lovingkindness; ##so shall I##note:x[<<Ps 25:10>>] keep the testimony of thy mouth.
+
+[discrete.acrostic]
+==== __ל LAMED.__
+
+[discrete.subsection]
+===== LAMEDH
+
+[.poetry%hardbreaks]
+@ ##For ever##note:x[<<Matt 5:18; 24:34–35; 1 Pet 1:25>>], O LORD, thy word is settled in heaven.
+@ Thy ##faithfulness##note:x[<<Mic 7:20>>] __is__ ##unto all generations##note:x[<<Ps 89:1–2; 100:5>>]: thou hast established the earth, and it ##abideth##note:tn[Heb. standeth].note:tn[__unto…__: Heb. to generation and generation]
+@ ##They continue this##note:x[<<Ps 148:5–6; Isa 48:13; Jer 33:25>>] day according to thine ordinances: for all __are__ thy servants.
+@ Unless ##thy law##note:x[<<Ps 119:143; Rom 15:4>>] __had been__ my delights, ##I should##note:x[<<Prov 6:22–23>>] then have perished in mine affliction.
+@ I ##will never##note:x[<<Ps 119:16, 50; John 6:63>>] forget thy precepts: for with them thou hast quickened me.
+@ ##I __am__ thine##note:x[<<Ps 86:2; Isa 44:2; Zeph 3:17>>], save me; for I have sought thy precepts.
+@ The ##wicked##note:x[<<Ps 119:69>>] have waited for me to destroy me: ##__but__ I##note:x[<<Ps 119:31, 167>>] will consider thy testimonies.
+@ ##I have seen##note:x[<<Eccl 2:11; Matt 24:35>>] an end of all perfection: __but__ thy commandment __is__ exceeding broad.
+
+[discrete.acrostic]
+==== __מ MEM.__
+
+[discrete.subsection]
+===== MEM
+
+[.poetry%hardbreaks]
+@ ##O how##note:x[<<Ps 1:2; 119:159; Prov 2:10>>] love I thy law! it __is__ my meditation all the day.
+
+[.poetry%hardbreaks]
+@ Thou ##through##note:x[<<Ps 119:104; Prov 2:6; Col 3:16>>] thy commandments hast made me wiser than mine enemies: for they __are__ ever with me.note:tn[__they…__: Heb. it is ever with me]
+@ I have more understanding ##than all##note:x[<<Matt 11:25; 13:11>>] my teachers: ##for thy##note:x[<<Ps 119:24>>] testimonies __are__ my meditation.
+@ I ##understand##note:x[<<Job 12:12>>] more than the ancients, ##because##note:x[<<Ps 111:10; Jas 3:13>>] I keep thy precepts.
+@ I have ##refrained##note:x[<<Ps 119:104; Prov 1:15; 1 Pet 3:10–11>>] my feet from every evil way, that I might keep thy word.
+@ I have not ##departed##note:x[<<Ps 18:21; Prov 5:7>>] from thy judgments: ##for thou##note:x[<<1 John 2:27>>] hast taught me.
+
+[.poetry%hardbreaks]
+@ How ##sweet##note:x[<<Ps 19:10; Prov 8:11; 24:13–14>>] are thy words unto my ##taste##note:tn[Heb. palate]! __yea, sweeter__ than honey to my mouth!
+@ Through thy precepts I get understanding: ##therefore##note:x[<<Ps 119:128; Prov 8:13>>] I hate every ##false way##note:x[<<Prov 14:12>>].
+
+[discrete.acrostic]
+==== __נ NUN.__
+
+[discrete.subsection]
+===== NUN
+
+[.poetry%hardbreaks]
+@ Thy ##word##note:x[<<Ps 43:3; Prov 6:23>>] __is__ a note:x[<<Ps 18:28>>]##lamp##note:tn[or, candle] unto my feet, and a light unto my path.
+@ I have ##sworn##note:x[<<Neh 10:29; Ps 56:12; 66:13–14>>], and I will perform __it__, that I will keep thy righteous judgments.
+@ I am ##afflicted##note:x[<<Ps 34:19>>] very much: ##quicken##note:x[<<Ps 119:25; 143:11>>] me, O LORD, according unto thy word.
+@ ##Accept##note:x[<<Num 29:39; Hos 14:2; Heb 13:15>>], I beseech thee, the freewill offerings of my mouth, O LORD, and teach me thy judgments.
+
+[.poetry%hardbreaks]
+@ ##My soul##note:x[<<Judg 12:3>>] __is__ continually in my hand: yet do I not forget thy law.
+@ The ##wicked##note:x[<<Ps 140:5; 141:9>>] have laid a snare for me: ##yet I erred##note:x[<<Ps 119:95>>] not from thy precepts.
+
+[.poetry%hardbreaks]
+@ ##Thy testimonies##note:x[<<Ps 16:5; 1 Pet 1:4>>] have I taken as an heritage for ever: ##for they##note:x[<<Jer 15:16>>] __are__ the rejoicing of my heart.
+@ I have ##inclined##note:x[<<Ps 119:36; 141:4>>] mine heart to perform thy statutes alway, __even unto__ ##the end##note:x[<<Ps 119:33>>].note:tn[__to perform__: Heb. to do]
+
+[discrete.acrostic]
+==== __ס SAMECH.__
+
+[discrete.subsection]
+===== SAMEKH
+
+[.poetry%hardbreaks]
+@ I ##hate##note:x[<<Isa 55:7; Jer 4:14>>] __vain__ thoughts: but thy law do I love.
+@ Thou __art__ ##my hiding##note:x[<<Ps 32:7; 91:1–2; Isa 32:2>>] place and my shield: I hope in thy word.
+@ ##Depart##note:x[<<Ps 6:8; Matt 7:23; 1 Cor 15:33>>] from me, ye evildoers: for I will keep the commandments of my God.
+
+[.poetry%hardbreaks]
+@ Uphold me according unto thy word, that I may live: ##and let me##note:x[<<Ps 25:2; Rom 5:5; 1 Pet 2:6>>] not be ashamed of my hope.
+@ ##Hold##note:x[<<Ps 71:6; Jude 1:24>>] thou me up, and I shall be safe: ##and I will##note:x[<<Ps 119:6>>] have respect unto thy statutes continually.
+
+[.poetry%hardbreaks]
+@ Thou hast trodden down all them that ##err##note:x[<<Ps 119:10, 21>>] from thy statutes: for their deceit __is__ falsehood.
+@ Thou puttest away all the wicked of the earth __like__ dross: therefore I love thy testimonies.note:tn[__puttest…__: Heb. causest to cease]
+@ ##My flesh##note:x[<<Isa 66:2; Dan 10:8–11; Hab 3:16>>] trembleth for fear of thee; and I am afraid of thy judgments.
+
+[discrete.acrostic]
+==== __ע AIN.__
+
+[discrete.subsection]
+===== AYIN
+
+[.poetry%hardbreaks]
+@ ##I have##note:x[<<2 Sam 8:15; Ps 18:20–24>>] done judgment and justice: leave me not to mine oppressors.
+@ Be ##surety##note:x[<<Heb 7:22>>] for thy servant for good: ##let not##note:x[<<Ps 119:21>>] the proud oppress me.
+@ ##Mine eyes fail for thy salvation, and for the word of thy righteousness.##note:x[<<Ps 130:6>>]
+
+[.poetry%hardbreaks]
+@ ##Deal##note:x[<<Ps 119:76–77; Dan 9:18>>] with thy servant according unto thy mercy, and ##teach##note:x[<<Ps 119:12>>] me thy statutes.
+@ ##I __am__ thy##note:x[<<Ps 116:16>>] servant; ##give##note:x[<<Ps 119:34; Jas 3:13–17>>] me understanding, that I may know thy testimonies.
+@ __It is__ time for __thee__, LORD, to work: __for__ ##they##note:x[<<Jer 8:8; Hab 1:4; Mal 2:8>>] have made void thy law.
+
+[.poetry%hardbreaks]
+@ Therefore ##I love##note:x[<<Ps 19:10; Prov 3:13–18; Matt 13:45–46>>] thy commandments above gold; yea, above fine gold.
+@ Therefore ##I esteem##note:x[<<Ps 19:7–8; Rom 7:22>>] all __thy__ precepts __concerning__ all __things to be__ right; ##__and__ I##note:x[<<Ps 119:104>>] hate every false way.
+
+[discrete.acrostic]
+==== __פ PE.__
+
+[discrete.subsection]
+===== PE
+
+[.poetry%hardbreaks]
+@ Thy ##testimonies##note:x[<<Ps 119:18; 139:6>>] __are__ wonderful: therefore ##doth##note:x[<<Ps 25:10>>] my soul keep them.
+@ The ##entrance##note:x[<<Ps 119:105; Prov 6:23; 2 Cor 4:6>>] of thy words giveth light; it giveth understanding unto the simple.
+@ I ##opened##note:x[<<Ps 42:1; 119:20; 1 Pet 2:2>>] my mouth, and panted: for I longed for thy commandments.
+@ ##Look##note:x[<<Ps 25:18; 119:124>>] thou upon me, and be merciful unto me, ##as thou usest to do unto those##note:x[<<Ps 106:4>>] that love thy name.note:tn[__as thou…__: Heb. according to the custom toward those, etc]
+@ ##Order##note:x[<<Ps 17:5; 119:116>>] my steps in thy word: and ##let not##note:x[<<Ps 19:13>>] any iniquity have dominion over me.
+@ ##Deliver me from the oppression of man: so will I keep thy precepts.##note:x[<<Ps 56:1–2; 119:122>>]
+@ ##Make##note:x[<<Num 6:25–26; Ps 4:6; 80:7>>] thy face to shine upon thy servant; and teach me thy statutes.
+@ ##Rivers of waters run down mine eyes, because they keep not thy law.##note:x[<<Ps 119:53; Jer 9:1; Ezek 9:4>>]
+
+[discrete.acrostic]
+==== __צ TZADDI.__
+
+[discrete.subsection]
+===== TZADE
+
+[.poetry%hardbreaks]
+@ note:x[<<Ezra 9:15; Ps 145:17; Jer 12:1>>]Righteous __art__ thou, O LORD, and upright __are__ thy judgments.
+@ Thy ##testimonies##note:x[<<Ps 19:7–9; 119:86, 144>>] __that__ thou hast commanded __are__ ##righteous##note:tn[Heb. righteousness] and very ##faithful##note:tn[Heb. faithfulness].
+@ My ##zeal##note:x[<<Ps 69:9; John 2:17>>] hath consumed me, because mine enemies have forgotten thy words.note:tn[__consumed…__: Heb. cut me off]
+@ Thy word __is__ very note:x[<<Ps 12:6; 19:8; Prov 30:5>>]##pure##note:tn[Heb. tried, or, refined]: therefore thy servant loveth it.
+@ I __am__ ##small##note:x[<<Ps 22:6; 2 Cor 8:9; Jas 2:5>>] and despised: __yet__ do not I forget thy precepts.
+@ Thy righteousness __is__ an everlasting righteousness, ##and thy##note:x[<<Ps 19:9; 119:151; John 17:17>>] law __is__ the truth.
+
+[.poetry%hardbreaks]
+@ ##Trouble##note:x[<<Ps 119:107>>] and anguish have taken hold on me: ##__yet__ thy##note:x[<<Job 23:12>>] commandments __are__ my delights.note:tn[__taken…__: Heb. found me]
+@ The ##righteousness##note:x[<<1 Pet 1:23–25>>] of thy testimonies __is__ everlasting: ##give me##note:x[<<Ps 119:169; 2 Cor 4:6>>] understanding, and I shall live.
+
+[discrete.acrostic]
+==== __ק KOPH.__
+
+[discrete.subsection]
+===== KOPH
+
+[.poetry%hardbreaks]
+@ I ##cried##note:x[<<Ps 102:1; 119:10; Jer 29:13>>] with __my__ whole heart; hear me, O LORD: I will keep thy statutes.
+@ I cried unto thee; save me, and I shall keep thy testimonies.note:tn[__and I…__: or, that I may keep]
+
+[.poetry%hardbreaks]
+@ ##I prevented##note:x[<<Ps 5:3; Mark 1:35>>] the dawning of the morning, and cried: I ##hoped##note:x[<<Ps 130:5>>] in thy word.
+@ Mine ##eyes##note:x[<<Ps 63:6; Lam 2:19; Luke 6:12>>] prevent the __night__ watches, that I might meditate in thy word.
+@ ##Hear##note:x[<<Ps 5:2–3; 55:2>>] my voice ##according unto##note:x[<<Isa 63:7>>] thy lovingkindness: O LORD, quicken me according to thy judgment.
+
+[.poetry%hardbreaks]
+@ They ##draw nigh##note:x[<<Ps 27:2>>] that follow after mischief: they are far from thy law.
+@ Thou __art__ ##near##note:x[<<Ps 139:2; 145:18>>], O LORD; and ##all##note:x[<<Ps 119:142>>] thy commandments __are__ truth.
+@ Concerning ##thy testimonies##note:x[<<Ps 111:7–8; Eccl 3:14; Luke 21:33>>], I have known of old that thou hast founded them for ever.
+
+[discrete.acrostic]
+==== __ר RESH.__
+
+[discrete.subsection]
+===== RESH
+
+[.poetry%hardbreaks]
+@ ##Consider##note:x[<<Ps 9:13; Lam 5:1>>] mine affliction, and deliver me: ##for I##note:x[<<Ps 119:176>>] do not forget thy law.
+@ ##Plead##note:x[<<1 Sam 24:15; Ps 35:1; Jer 50:34>>] my cause, and deliver me: quicken me according to thy word.
+@ ##Salvation##note:x[<<Job 5:4; Eph 2:17–18>>] __is__ far from the wicked: ##for they##note:x[<<Rom 3:11>>] seek not thy statutes.
+@ ##Great##note:tn[or, Many] ##__are__ thy##note:x[<<Ps 86:13, 15>>] tender mercies, O LORD: quicken me according to thy judgments.
+@ Many __are__ my persecutors and mine enemies; ##__yet__ do I##note:x[<<Ps 119:51; 1 Cor 15:58>>] not decline from thy testimonies.
+@ ##I beheld the transgressors, and was grieved; because they kept not thy word.##note:x[<<Ps 119:53>>]
+@ ##Consider##note:x[<<Ps 119:97, 153>>] how I love thy precepts: quicken me, O LORD, according to thy lovingkindness.
+@ ##Thy word __is__ true __from__ the beginning##note:x[<<Prov 30:5; 2 Tim 3:16>>]: ##and every one##note:x[<<Ps 119:144>>] of thy righteous judgments __endureth__ for ever.note:tn[__Thy word…__: Heb. The beginning of thy word is true]
+
+[discrete.acrostic]
+==== __ש SCHIN.__
+
+[discrete.subsection]
+===== SIN and SHIN
+
+[.poetry%hardbreaks]
+@ ##Princes##note:x[<<1 Sam 24:9–15; 26:18; Ps 119:157>>] have persecuted me without a cause: but my heart standeth in awe of thy word.
+@ I ##rejoice##note:x[<<Ps 119:72, 111; Jer 15:16>>] at thy word, as one that findeth great spoil.
+@ I ##hate##note:x[<<Ps 119:128; Prov 6:16–19; Rom 12:9>>] and abhor lying: __but__ thy law do I love.
+@ ##Seven times##note:x[<<Ps 55:17; 119:62>>] a day do I praise thee ##because##note:x[<<Ps 97:8>>] of thy righteous judgments.
+@ ##Great##note:x[<<Prov 3:1–2; Isa 32:17; John 14:27>>] peace have they which love thy law: and nothing shall offend them.note:tn[__nothing…__: Heb. they shall have no stumblingblock]
+@ ##LORD##note:x[<<Gen 49:18; Ps 119:81, 174>>], I have hoped for thy salvation, and done thy commandments.
+
+[.poetry%hardbreaks]
+@ My ##soul##note:x[<<Heb 10:16>>] hath kept thy testimonies; ##and I love##note:x[<<Ps 40:8; Rom 7:22>>] them exceedingly.
+@ I have kept thy precepts and thy testimonies: ##for all my##note:x[<<Ps 44:20–21; 139:3; Prov 5:21>>] ways __are__ before thee.
+
+[discrete.acrostic]
+==== __ת TAU.__
+
+[discrete.subsection]
+===== TAW
+
+[.poetry%hardbreaks]
+@ ##Let my cry##note:x[<<Ps 18:6>>] come near before thee, O LORD: ##give me##note:x[<<Ps 119:144; Jas 1:5>>] understanding according to thy word.
+@ Let my supplication come before thee: ##deliver me##note:x[<<Ps 119:41>>] according to thy word.
+@ ##My lips##note:x[<<Ps 71:17, 23–24; 119:7>>] shall utter praise, when thou hast taught me thy statutes.
+@ My ##tongue##note:x[<<Ps 37:30; Eph 4:29>>] shall speak of thy word: ##for all thy##note:x[<<Rom 7:14>>] commandments __are__ righteousness.
+
+[.poetry%hardbreaks]
+@ ##Let##note:x[<<Isa 41:10–14>>] thine hand help me; for I have chosen thy precepts.
+@ I have ##longed##note:x[<<Ps 119:166>>] for thy salvation, O LORD; ##and thy law##note:x[<<Ps 119:16, 47>>] __is__ my delight.
+@ ##Let my##note:x[<<Ps 51:14–15; 118:18–19; Isa 38:19>>] soul live, and it shall praise thee; and let thy judgments help me.
+@ I have ##gone astray##note:x[<<Isa 53:6; Luke 15:4–7>>] like a lost sheep; ##seek##note:x[<<Luke 19:10>>] thy servant; for I do not forget thy commandments.
+
+=== @139
+
+[.psalm-title]
+To the chief Musician, A Psalm of David.
+
+[discrete.pericope]
+==== You Have Searched Me and Known Me
+
+[.poetry%hardbreaks]
+@ O LORD, ##thou hast##note:x[<<Jer 12:3; 17:9–10; Heb 4:13>>] searched me, and known __me__.
+@ Thou ##knowest##note:x[<<2 Kgs 19:27; Isa 37:28>>] my downsitting and mine uprising, thou ##understandest##note:x[<<Matt 9:4>>] my thought afar off.
+@ Thou note:x[<<Job 31:4>>]##compassest##note:tn[or, winnowest] ##my path##note:x[<<Gen 28:10–17>>] and my lying down, ##and art acquainted##note:x[<<Jer 23:24>>] __with__ all my ways.
+@ For ##__there is__ not##note:x[<<Ps 19:14>>] a word in my tongue, __but__, lo, O LORD, ##thou knowest##note:x[<<Ps 50:19–21; Heb 4:12–13>>] it altogether.
+@ Thou hast ##beset me##note:x[<<Deut 33:27; Job 23:8–9>>] behind and before, ##and laid##note:x[<<Rev 1:17>>] thine hand upon me.
+@ __Such__ ##knowledge##note:x[<<Job 42:3; Ps 40:5; Rom 11:33>>] __is__ too wonderful for me; it is high, I cannot __attain__ unto it.
+
+[.poetry%hardbreaks]
+@ ##Whither shall I go from thy spirit? or whither shall I flee from thy presence?##note:x[<<Jer 23:23–24; Jonah 1:3, 10>>]
+@ If ##I ascend##note:x[<<Amos 9:2–4>>] up into heaven, thou __art__ there: if I make my bed ##in hell##note:x[<<Job 34:21–22; Jonah 2:2>>], behold, thou __art there__.
+@ __If__ I take ##the wings##note:x[<<Ps 19:6>>] of the morning, __and__ dwell in the uttermost parts of the sea;
+@ ##Even there shall thy hand lead me, and thy right hand shall hold me.##note:x[<<Ps 63:8; 73:23; Isa 41:13>>]
+@ If I say, ##Surely##note:x[<<Ps 94:7; Jer 23:24>>] the darkness shall cover me; ##even the night##note:x[<<Job 12:22>>] shall be light about me.
+@ Yea, ##the darkness##note:x[<<Exod 20:21; Job 34:22; Dan 2:22>>] hideth not from thee; but the night shineth as the day: the darkness and the light __are__ both alike __to thee__.note:tn[__hideth…__: Heb. darkeneth not]note:tn[__the darkness and…__: Heb. as is the darkness, so is the light]
+@ For thou hast possessed my reins: thou hast ##covered me##note:x[<<Job 31:15; Isa 44:2; Jer 1:5>>] in my mother’s womb.
+@ I will praise thee; ##for I am fearfully##note:x[<<Gen 1:26–27>>] __and__ wonderfully made: ##marvellous##note:x[<<Ps 104:24; 111:2>>] __are__ thy works; and __that__ my soul knoweth right well.note:tn[__right…__: Heb. greatly]
+@ My ##substance##note:tn[or, strength, or, body] was not hid from thee, ##when I##note:x[<<Ps 139:13>>] was made in secret, __and__ curiously wrought ##in the lowest##note:x[<<Ps 63:9>>] parts of the earth.
+@ Thine eyes did see my substance, yet being unperfect; and ##in thy book##note:x[<<Ps 56:8; Mal 3:16; Rev 20:12>>] all __my members__ were written, __which__ in continuance were fashioned, when __as yet there was__ none of them.note:tn[__all…__: Heb. all of them]note:tn[__which…__: or, what days they should be fashioned]
+
+[.poetry%hardbreaks]
+@ How ##precious##note:x[<<Ps 40:5; Isa 55:8–9; Jer 29:11>>] also are thy thoughts unto me, O God! how great is the sum of them!
+@ __If__ I should count them, they are more in number than the sand: ##when I awake##note:x[<<Ps 3:5; 139:3; 1 Thess 5:10>>], I am still with thee.
+@ ##Surely##note:x[<<Ps 5:6; Isa 11:4>>] thou wilt slay the wicked, O God: ##depart from##note:x[<<Ps 119:115>>] me therefore, ye bloody men.
+@ ##For they speak##note:x[<<Ps 74:18; Jude 1:15>>] against thee wickedly, __and__ ##thine##note:x[<<Exod 20:7>>] enemies take __thy name__ in vain.
+@ ##Do not I##note:x[<<Ps 31:6; Rev 2:2>>] hate them, O LORD, that hate thee? ##and am not##note:x[<<Ps 119:158>>] I grieved with those that rise up against thee?
+@ I hate them with perfect hatred: I count them mine enemies.
+@ ##Search me##note:x[<<Ps 26:2>>], O God, and ##know##note:x[<<Job 31:6; 1 Pet 1:7>>] my heart: try me, and know my thoughts:
+@ ##And see##note:x[<<Jer 17:9–10>>] if __there be any__ wicked way in me, ##and lead##note:x[<<Ps 25:8–9; 143:10>>] me in the way everlasting.note:tn[__wicked…__: Heb. way of pain, or, grief]
+
+=== @147
+
+[discrete.pericope]
+==== It Is Good to Sing Praises
+
+[.poetry%hardbreaks]
+@ Praise ye the LORD: ##for __it is__ good##note:x[<<Ps 135:3>>] to sing praises unto our God; for __it is__ pleasant; __and__ praise is comely.
+@ The LORD doth ##build##note:x[<<Ps 51:18>>] up Jerusalem: ##he##note:x[<<Deut 30:3; Isa 56:8>>] gathereth together the outcasts of Israel.
+@ He ##healeth##note:x[<<Job 5:18; Isa 61:1; Jer 33:6>>] the broken in heart, and bindeth up their ##wounds##note:tn[Heb. griefs].
+@ ##He##note:x[<<Ps 8:3; 148:3; Isa 40:26>>] telleth the number of the stars; he calleth them all by __their__ names.
+@ ##Great##note:x[<<Ps 96:4>>] __is__ our Lord, and of great power: ##his understanding __is__ infinite##note:x[<<Ps 139:17–18; Isa 40:28>>].note:tn[__his…__: Heb. of his understanding there is no number]
+@ The LORD ##lifteth up##note:x[<<Ps 25:9; 146:8–9; 1 Pet 5:6>>] the meek: he casteth the wicked down to the ground.
+@ ##Sing unto the LORD with thanksgiving; sing praise upon the harp unto our God:##note:x[<<Ps 47:6–7; 68:32; 95:1–2>>]
+@ Who covereth the heaven with clouds, who ##prepareth##note:x[<<Job 5:10; Ps 65:9–13>>] rain for the earth, who maketh grass to grow upon the mountains.
+@ ##He giveth to the beast his food, __and__ to the young ravens which cry.##note:x[<<Job 38:41; Ps 104:27–28; Matt 6:26>>]
+@ He ##delighteth##note:x[<<Ps 20:7; 33:16–18>>] not in the strength of the horse: ##he taketh##note:x[<<1 Sam 16:7>>] not pleasure in the legs of a man.
+@ The LORD ##taketh##note:x[<<Zeph 3:17; Mal 3:16–17>>] pleasure in them that ##fear##note:x[<<Ps 33:18>>] him, in those that hope in his mercy.
+
+[.poetry%hardbreaks]
+@ Praise the LORD, O Jerusalem; ##praise thy God##note:x[<<Ps 135:19–21; Isa 12:6; Joel 2:23>>], O Zion.
+@ For he hath strengthened the bars of thy gates; he hath ##blessed##note:x[<<Ps 115:14–15; 128:3–6; Isa 44:3–5>>] thy children within thee.
+@ ##He maketh peace##note:x[<<Ps 29:11; Isa 60:17–18>>] __in__ thy borders, __and__ filleth thee with the ##finest of the wheat##note:x[<<Ps 81:16>>].note:tn[__He…__: Heb. Who maketh thy border peace]note:tn[__finest…__: Heb. fat of wheat]
+@ He ##sendeth##note:x[<<Job 37:12; Ps 33:9; 107:20>>] forth his commandment __upon__ earth: his word runneth very swiftly.
+@ He ##giveth##note:x[<<Job 37:6; Ps 148:8>>] snow like wool: he ##scattereth##note:x[<<Job 38:29>>] the hoarfrost like ashes.
+@ He ##casteth##note:x[<<Job 38:22–23; Ps 78:47–48>>] forth his ice like morsels: ##who can stand##note:x[<<Job 38:29–30>>] before his cold?
+@ ##He sendeth out his word, and melteth them: he causeth his wind to blow, __and__ the waters flow.##note:x[<<Job 6:16–17; 37:10; Ps 147:15>>]
+@ He ##sheweth##note:x[<<Ps 78:5; Mal 4:4>>] his word unto Jacob, ##his statutes##note:x[<<Mal 4:4>>] and his judgments unto Israel.note:tn[__his word__: Heb. his words]
+@ He hath ##not dealt so##note:x[<<Deut 4:32–34; Rom 3:1–2; Eph 2:12>>] with any nation: and __as for his__ judgments, they have not known them. Praise ye the LORD.
