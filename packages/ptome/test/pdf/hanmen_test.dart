@@ -12,16 +12,19 @@ import 'dart:io';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
 final String _cjk = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
 ).absolute.path;
 
+/// The tools' runs, recorded (test/oracles/pdf_hanmen.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_hanmen', compressed: true);
   late Directory dir;
   setUp(() => dir = Directory.systemTemp.createTempSync('hanmen.'));
   tearDown(() => dir.deleteSync(recursive: true));
@@ -62,7 +65,7 @@ font:
       ),
     );
     final bbox =
-        Process.runSync('pdftotext', [
+        recordedRunSync(_recorded, 'pdftotext', [
               '-bbox',
               path,
               '-',
@@ -95,7 +98,7 @@ font:
       final steps = (y - bottoms.first) / 17.5;
       expect(steps, closeTo(steps.roundToDouble(), 0.01), reason: '$y');
     }
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
   test('vertical: 300 points tall, centered, columns 17.5 points apart', () {
     final words = boxes(vertical: true);
@@ -110,5 +113,5 @@ font:
       final steps = (columns.last - x) / 17.5;
       expect(steps, closeTo(steps.roundToDouble(), 0.01), reason: '$x');
     }
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 }

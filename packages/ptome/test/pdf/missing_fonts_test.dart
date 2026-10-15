@@ -10,7 +10,15 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
+
+/// The tools' runs, recorded (test/oracles/pdf_missing_fonts.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_missing_fonts', compressed: true);
   setUpAll(registerPdf);
   late Directory dir;
   setUp(() {
@@ -64,25 +72,22 @@ void main() {
     expect(messages, everyElement(contains('ptome doctor')));
   });
 
-  test(
-    'icons are shown as their text when their font is missing',
-    () {
-      final messages = convert(
-        '= Doc\n:icons: font\n\nicon:heart[2x] and icon:heart[] again\n\n'
-        'NOTE: A note.\n',
-      );
-      expect(
-        messages.where((m) => m.contains('the fas icon font is not installed')),
-        hasLength(1),
-      );
-      final text =
-          Process.runSync('pdftotext', ['${dir.path}/doc.pdf', '-']).stdout
-              as String;
-      expect(text, contains('[heart] and [heart] again'));
-      expect(text, contains('NOTE'));
-    },
-    skip: Process.runSync('which', ['pdftotext']).exitCode == 0
-        ? false
-        : 'needs pdftotext',
-  );
+  test('icons are shown as their text when their font is missing', () {
+    final messages = convert(
+      '= Doc\n:icons: font\n\nicon:heart[2x] and icon:heart[] again\n\n'
+      'NOTE: A note.\n',
+    );
+    expect(
+      messages.where((m) => m.contains('the fas icon font is not installed')),
+      hasLength(1),
+    );
+    final text =
+        recordedRunSync(_recorded, 'pdftotext', [
+              '${dir.path}/doc.pdf',
+              '-',
+            ]).stdout
+            as String;
+    expect(text, contains('[heart] and [heart] again'));
+    expect(text, contains('NOTE'));
+  });
 }

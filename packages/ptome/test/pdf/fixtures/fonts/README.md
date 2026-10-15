@@ -37,3 +37,29 @@ right-to-left documents.
 Project Authors, SIL Open Font License 1.1), subset to the Arabic blocks
 with its layout tables (as in plain_typesetting's test fonts), for text
 taken from shaped Arabic.
+
+`notonaskharabic-mushaf.ttf` is Noto Naskh Arabic Regular 2.021 (© 2022
+The Noto Project Authors, SIL Open Font License 1.1), subset to the
+characters of the pages test/pdf/mushaf_test.dart sets (al-Fatiha and the
+last three surahs of the units corpus's Tanzil text, the surahs' titles
+and the page numbers) with every layout feature:
+
+```sh
+pyftsubset NotoNaskhArabic-Regular.ttf --text-file=CHARS \
+  --layout-features='*' --name-IDs='*' \
+  --output-file=notonaskharabic-mushaf.ttf
+```
+
+`cjk/` holds Noto Serif CJK Regular's five regional faces (SC, TC, JP,
+KR, HK) and Noto Sans CJK SC Bold (© 2017 Adobe, SIL Open Font License
+1.1), each subset to the characters of test/pdf/cjk_fonts_test.dart's
+regions document, the fonts it installs:
+
+```sh
+pyftsubset NotoSerifCJK-Regular.ttc --font-number=2 --text='直骨今한국어字体' \
+  --layout-features='*' --name-IDs='*' \
+  --output-file=cjk/notoserifcjksc-regular-subset.otf
+```
+
+(faces 0 to 4: jp, kr, sc, tc, hk; NotoSansCJK-Bold.ttc's face 2 for
+`notosanscjksc-bold-subset.otf`).

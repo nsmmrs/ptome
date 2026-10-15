@@ -11,14 +11,17 @@ import 'dart:io';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 const String _source = '= Book\nTaro\nv1.0, 2026-10-14\n\nText.\n';
 
+/// The tools' runs, recorded (test/oracles/dates.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('dates', compressed: true);
   String html(Map<String, String> attributes) => asciidoc.convert(
     _source,
     standalone: true,
@@ -87,10 +90,13 @@ void main() {
       ),
     );
     final text =
-        Process.runSync('pdftotext', [path, '-'], stdoutEncoding: utf8).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
             as String;
     expect(text, contains('14. Oktober 2026'));
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
   test("calendar, or lang's -u-ca-: the Japanese, Buddhist and ROC "
       'calendars', () {

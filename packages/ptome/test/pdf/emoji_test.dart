@@ -14,10 +14,8 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
 /// Noto Color Emoji's COLRv1 build, subset (plain_typesetting's).
 final String _emojiFont = File(
@@ -27,7 +25,12 @@ final String _emojiFont = File(
 const String _source =
     '= Emoji\n\nHello 😀 👍🏽 👨‍👩‍👧 🇯🇵 🏳️‍🌈 1️⃣ ❤️ world.\n';
 
+/// The tools' runs, recorded (test/oracles/pdf_emoji.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_emoji', compressed: true);
   late Directory dir;
   setUp(() => dir = Directory.systemTemp.createTempSync('emoji_test.'));
   tearDown(() => dir.deleteSync(recursive: true));
@@ -85,18 +88,24 @@ font:
     final path = '${dir.path}/out.pdf';
     File(path).writeAsBytesSync(pdf(_source));
     final text =
-        Process.runSync('pdftotext', [path, '-'], stdoutEncoding: utf8).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
             as String;
     expect(text, contains('Hello 😀 👍🏽 👨‍👩‍👧 🇯🇵 🏳️‍🌈 1️⃣ ❤️ world.'));
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
   test('asciidoctor-compat leaves the variation selectors out', () {
     final path = '${dir.path}/out.pdf';
     File(path)
         .writeAsBytesSync(pdf(_source, attributes: {'asciidoctor-compat': ''}));
     final text =
-        Process.runSync('pdftotext', [path, '-'], stdoutEncoding: utf8).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
             as String;
     expect(text, isNot(contains('\u{fe0f}')));
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 }

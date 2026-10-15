@@ -13,13 +13,19 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
-import '../vendored_fonts.dart';
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
+import '../vendored_fonts.dart';
 
 const String _images = '../plain_images/test/images';
 
+/// The tools' runs, recorded (test/oracles/pdf_raster_images.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_raster_images', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(registerPdf);
 
@@ -93,13 +99,13 @@ image::photo.avif[Photo]
       expect(warnings, [
         'could not embed image: photo.avif; AVIF images are not supported',
       ]);
-      if (!_has('pdfimages')) return;
       // Six images: the GIF with a color key (no soft mask), the inline
       // GIF, the RLE8 bitmap (indexed), the bitmap with alpha and the WebP
       // with alpha (each with its soft mask), the Group 4 fax (1-bit
       // gray).
       final list =
-          (Process.runSync('pdfimages', ['-list', pdf]).stdout as String)
+          (recordedRunSync(_recorded, 'pdfimages', ['-list', pdf]).stdout
+                  as String)
               .split('\n')
               .skip(2)
               .where((l) => l.trim().isNotEmpty)

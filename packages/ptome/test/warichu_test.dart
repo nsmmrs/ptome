@@ -16,10 +16,8 @@ import 'package:ptome/src/pdf/fonts.dart';
 import 'package:ptome/src/pdf/warichu.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 final String _cjkPath = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
@@ -32,7 +30,12 @@ final TrueTypeFont _face = TrueTypeFont(
   EmbeddedFont.parse(File(_cjkPath).readAsBytesSync()),
 );
 
+/// The tools' runs, recorded (test/oracles/warichu.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('warichu', compressed: true);
   test('HTML, EPUB, DocBook and man pages', () {
     expect(
       asciidoc.convert('本文warichu:[注の文]です。'),
@@ -110,7 +113,7 @@ font:
       ),
     );
     final bbox =
-        Process.runSync('pdftotext', [
+        recordedRunSync(_recorded, 'pdftotext', [
               '-bbox',
               path,
               '-',
@@ -130,7 +133,7 @@ font:
     expect(rest.$1, closeTo(20, 1));
     expect(rest.$2, greaterThan(first.$2));
     expect('${first.$4}${rest.$4}'.replaceAll(RegExp('[^い]'), ''), 'い' * 80);
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
   test('PDF: copied as the note in parentheses', () {
     final dir = Directory.systemTemp.createTempSync('warichu.');
@@ -158,12 +161,14 @@ font:
       ),
     );
     final text =
-        Process.runSync('pdftotext', [path, '-'], stdoutEncoding: utf8).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              path,
+              '-',
+            ], stdoutEncoding: utf8).stdout
             as String;
     expect(text.replaceAll('\n', ''), contains('（注の文）'));
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
-  final qpdf = Process.runSync('which', ['qpdf']).exitCode == 0;
   test('on a vertical page, ruby and warichu stand upright', () {
     final dir = Directory.systemTemp.createTempSync('warichu.');
     addTearDown(() => dir.deleteSync(recursive: true));
@@ -196,7 +201,7 @@ font:
           },
         ),
       );
-      Process.runSync('qpdf', [
+      recordedRunSync(_recorded, 'qpdf', [
         '--qdf',
         '--object-streams=disable',
         path,
@@ -212,5 +217,5 @@ font:
     // (The base and its reading; the note and its parentheses.)
     expect(quarterTurns('ruby:字[じ]'), greaterThanOrEqualTo(2));
     expect(quarterTurns('warichu:[あい]'), greaterThanOrEqualTo(2));
-  }, skip: qpdf ? false : 'needs qpdf');
+  });
 }

@@ -9,20 +9,21 @@ import 'dart:io';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext (another one, Windows CI's, reads the text
-/// otherwise).
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
 /// qpdf, which writes a PDF's objects uncompressed.
-final bool _qpdf = Process.runSync('which', ['qpdf']).exitCode == 0;
 
 final String _cjkFont = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
 ).absolute.path;
 
+/// The tools' runs, recorded (test/oracles/pdf_vertical.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_vertical', compressed: true);
   late Directory dir;
   setUp(() => dir = Directory.systemTemp.createTempSync('vertical_test.'));
   tearDown(() => dir.deleteSync(recursive: true));
@@ -73,7 +74,7 @@ $theme
   /// width, height.
   List<(String, double, double, double, double)> lines(String path) {
     final xml =
-        Process.runSync('pdftotext', [
+        recordedRunSync(_recorded, 'pdftotext', [
               '-bbox',
               '-f',
               '1',
@@ -115,7 +116,7 @@ $theme
     expect(column.take(4).map((w) => w.$1).join(), '日本語の');
     final columns = {for (final w in words) w.$2.round()};
     expect(columns.length, greaterThan(3));
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('two digits set across the column, an em long (tate-chu-yoko)', () {
     /// How far down the column 日 starts after 月, in ems.
@@ -148,7 +149,7 @@ $theme
       after('月151日', 'base_text_combine_upright: digits 3'),
       lessThanOrEqualTo(after('月151日', 'base_text_combine_upright: none')),
     );
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test("decorations on their languages' sides in the box's own lines", () {
     String content(String lang) {
@@ -184,7 +185,7 @@ $theme
     // word.)
     final down = word('具', theme: 'table_writing_mode: vertical');
     expect(down.$1, '具');
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test("a block's own writing mode: vertical-rl in a horizontal page, "
       'horizontal-tb in a vertical one', () {
@@ -204,7 +205,7 @@ $theme
       pdf('日本語の文章。\n\n[.horizontal-tb]\n具体的な違い。', 'vertical-rl'),
     );
     expect(down.any((w) => w.$1.contains('具体的な')), isTrue);
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('base_hanging_punctuation: a comma or full stop hangs past the '
       "line's end (JLREQ 2.5.1)", () {
@@ -219,7 +220,7 @@ $theme
       right('base_hanging_punctuation: true'),
       greaterThan(right('base_hanging_punctuation: false') + 1),
     );
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('under asciidoctor-compat the lines run across', () {
     final words = lines(
@@ -228,7 +229,7 @@ $theme
     // (A line a word, wider than tall.)
     expect(words.first.$1, startsWith('日本語の'));
     expect(words.first.$4, greaterThan(words.first.$5 * 5));
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('vertical-lr: the first column at the left, the next to its right', () {
     final words = [
@@ -241,7 +242,7 @@ $theme
         if ((w.$2 - left).abs() < 1) w,
     ]..sort((a, b) => a.$3.compareTo(b.$3));
     expect(column.take(4).map((w) => w.$1).join(), '日本語の');
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('an image stands upright on a vertical page, its link around it', () {
     // (A red image four times as wide as tall, framed and linked.)
@@ -257,7 +258,7 @@ $theme
         mode,
         theme: 'image:\n  border_width: 1\n  border_color: 000000',
       );
-      final qdf = Process.runSync('qpdf', [
+      final qdf = recordedRunSync(_recorded, 'qpdf', [
         '--qdf',
         '--object-streams=disable',
         path,
@@ -274,5 +275,5 @@ $theme
       expect(x1 - x0, closeTo(90, 0.5), reason: mode);
       expect(y1 - y0, closeTo(22.5, 0.5), reason: mode);
     }
-  }, skip: _qpdf ? false : 'needs qpdf');
+  });
 }

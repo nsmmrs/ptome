@@ -10,19 +10,21 @@ import 'dart:io';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
 /// qpdf, which writes a PDF's streams uncompressed.
-final bool _qpdf = Process.runSync('which', ['qpdf']).exitCode == 0;
 
 final String _cjkFont = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
 ).absolute.path;
 
+/// The tools' runs, recorded (test/oracles/pdf_language.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_language', compressed: true);
   late Directory dir;
   setUp(() => dir = Directory.systemTemp.createTempSync('language_test.'));
   tearDown(() => dir.deleteSync(recursive: true));
@@ -57,7 +59,7 @@ base:
           },
         ),
       );
-    final qdf = Process.runSync('qpdf', [
+    final qdf = recordedRunSync(_recorded, 'qpdf', [
       '--qdf',
       '--object-streams=disable',
       pdf.path,
@@ -76,7 +78,7 @@ base:
     final zh = glyphs('直骨今', attributes: {'lang': 'zh-Hans'});
     expect(ja, isNotEmpty);
     expect(zh, isNot(ja));
-  }, skip: _qpdf ? false : 'needs qpdf');
+  });
 
   test("a block's and a span's language", () {
     final ja = glyphs('直骨今', attributes: {'lang': 'ja'});
@@ -84,7 +86,7 @@ base:
     expect(glyphs('[lang=zh-Hans]\n直骨今', attributes: {'lang': 'ja'}), zh);
     expect(glyphs('[lang=zh-Hans]#直骨今#', attributes: {'lang': 'ja'}), zh);
     expect(glyphs('[lang=ja]#直骨今#', attributes: {'lang': 'zh-Hans'}), ja);
-  }, skip: _qpdf ? false : 'needs qpdf');
+  });
 
   test('under asciidoctor-compat the language is not applied', () {
     final ja = glyphs(
@@ -96,7 +98,7 @@ base:
       attributes: {'lang': 'zh-Hans', 'asciidoctor-compat': ''},
     );
     expect(zh, ja);
-  }, skip: _qpdf ? false : 'needs qpdf');
+  });
 
   test("text_transform upper-cases in the text's language", () {
     String text(String lang) {
@@ -133,7 +135,7 @@ heading_text_transform: uppercase
             },
           ),
         );
-      return Process.runSync('pdftotext', [
+      return recordedRunSync(_recorded, 'pdftotext', [
             pdf.path,
             '-',
           ], stdoutEncoding: utf8).stdout
@@ -142,7 +144,7 @@ heading_text_transform: uppercase
 
     expect(text('tr'), contains('İSTANBUL'));
     expect(text('en'), contains('ISTANBUL'));
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test('Korean wraps at spaces, by default and by base_word_break', () {
     final hangul = File(
@@ -179,7 +181,7 @@ $wordBreak
         );
       return [
         for (final line
-            in (Process.runSync('pdftotext', [
+            in (recordedRunSync(_recorded, 'pdftotext', [
                       pdf.path,
                       '-',
                     ], stdoutEncoding: utf8).stdout
@@ -204,7 +206,7 @@ $wordBreak
       wordsWhole(lines('en', wordBreak: 'base_word_break: keep-all')),
       isTrue,
     );
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 
   test("typographic quotes in the text's language's marks", () {
     final font = File(
@@ -237,7 +239,7 @@ base:
             },
           ),
         );
-      return Process.runSync('pdftotext', [
+      return recordedRunSync(_recorded, 'pdftotext', [
             pdf.path,
             '-',
           ], stdoutEncoding: utf8).stdout
@@ -249,5 +251,5 @@ base:
       text({'lang': 'de', 'asciidoctor-compat': ''}),
       contains('“Hallo” und ‘Welt’.'),
     );
-  }, skip: _poppler ? false : 'needs pdftotext');
+  });
 }

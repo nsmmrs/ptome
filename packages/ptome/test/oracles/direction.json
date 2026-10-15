@@ -1,0 +1,10 @@
+{
+  "rtl": {
+    "inputs": "0e29a40cdb02c9c42b6a185dd1e3106a40ddc860274d9fda6adf6368d234d5bb",
+    "answer": "[0,\"Validating using EPUB version 3.4 rules.\\nNo errors or warnings detected.\\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\\n\\nEPUBCheck completed\\n\"]"
+  },
+  "vertical": {
+    "inputs": "5541acb2ad7754525e6dfda4ad0ae7cbca2d79de447e3fcd7c28d52ed7c55b09",
+    "answer": "[0,\"Validating using EPUB version 3.4 rules.\\nNo errors or warnings detected.\\nMessages: 0 fatals / 0 errors / 0 warnings / 0 infos\\n\\nEPUBCheck completed\\n\"]"
+  }
+}

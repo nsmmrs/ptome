@@ -13,15 +13,10 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
+
 import '../vendored_fonts.dart';
-
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-/// Poppler's pdftotext (Git for Windows ships xpdf's, whose text and
-/// `-bbox` output differ).
-final bool _tools =
-    _has('pdftotext') &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
 
 late Directory _dir;
 var _count = 0;
@@ -70,7 +65,7 @@ String _pdf(
 /// left out).
 List<List<String>> _pages(String pdf) => [
   for (final page
-      in (Process.runSync('pdftotext', [
+      in (recordedRunSync(_recorded, 'pdftotext', [
                 '-layout',
                 pdf,
                 '-',
@@ -88,7 +83,7 @@ List<List<String>> _pages(String pdf) => [
 /// word.
 Map<String, double> _baselines(String pdf) {
   final xml =
-      Process.runSync('pdftotext', [
+      recordedRunSync(_recorded, 'pdftotext', [
             '-bbox-layout',
             '-f',
             '1',
@@ -109,19 +104,25 @@ Map<String, double> _baselines(String pdf) {
 /// The content of [pdf], uncompressed (its drawing operators readable).
 String _content(String pdf) {
   final out = '$pdf.qdf';
-  Process.runSync('qpdf', ['--qdf', '--object-streams=disable', pdf, out]);
+  recordedRunSync(_recorded, 'qpdf', [
+    '--qdf',
+    '--object-streams=disable',
+    pdf,
+    out,
+  ]);
   return latin1.decode(File(out).readAsBytesSync());
 }
 
 /// The top (points from the page's top) of the first word [word] in
 /// [pdf], or null.
-double? _top(String pdf, String word) =>
-    switch (RegExp('yMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<').firstMatch(
-      Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
-    )) {
-      final match? => double.parse(match[1]!),
-      null => null,
-    };
+double? _top(String pdf, String word) => switch (RegExp(
+  'yMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<',
+).firstMatch(
+  recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout as String,
+)) {
+  final match? => double.parse(match[1]!),
+  null => null,
+};
 
 /// The words of [lines], those hyphenated at a line end joined.
 List<String> _words(List<String> lines) => lines
@@ -137,7 +138,12 @@ const _paragraph =
     'described at length by Roy Fielding in his dissertation, which '
     'introduced the term representational state transfer, or REST.';
 
+/// The tools' runs, recorded (test/oracles/pdf_modern.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_modern', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();
@@ -174,7 +180,8 @@ void main() {
         'Plain.\n\n[index]\n== Index\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       double left(String word) => double.parse(
         RegExp('xMin="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
       );
@@ -191,7 +198,8 @@ void main() {
             '    break-before: auto\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final words = [
         for (final m in RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>(\w+)<',
@@ -297,7 +305,7 @@ void main() {
       );
       final first = _pages(structured).firstWhere((p) => p.isNotEmpty);
       expect(first.first, matches(RegExp(r'^1\.1 to \d\.\d+$')));
-    }, skip: _tools ? false : 'needs pdftotext');
+    });
 
     test('a heading set as a drop beside the first lines', () {
       final pdf = _pdf(
@@ -309,7 +317,8 @@ void main() {
             '  h2-drop-skip-roles: [note]\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final words = [
         for (final m in RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)">([^<]+)<',
@@ -364,7 +373,8 @@ void main() {
           if (m.severity.index >= Severity.warn.index) '${m.message}',
       ], isEmpty);
       final pages =
-          (Process.runSync('pdftotext', ['-bbox', out, '-']).stdout as String)
+          (recordedRunSync(_recorded, 'pdftotext', ['-bbox', out, '-']).stdout
+                  as String)
               .split('<page ')
               .skip(1)
               .toList();
@@ -406,7 +416,8 @@ void main() {
             'role:\n  xref:\n    display: side\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final words = [
         for (final m in RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]+)<',
@@ -450,7 +461,8 @@ void main() {
       // the page, 297.64), the figure under all of it (at the bottom, the
       // nearer edge to where it is in the text).
       final args = ['-bbox', '-f', '1', '-l', '1', pdf, '-'];
-      final first = Process.runSync('pdftotext', args).stdout as String;
+      final first =
+          recordedRunSync(_recorded, 'pdftotext', args).stdout as String;
       final caption = double.parse(
         RegExp(r'yMin="([\d.]+)"[^>]*>Figure<').firstMatch(first)![1]!,
       );
@@ -467,14 +479,15 @@ void main() {
     test('lines stay within the column', () {
       final pdf = _pdf('$_paragraph\n\n$_paragraph $_paragraph');
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       // A4 with the default theme's margins (0.67in on each side).
       const right = 595.28 - 48.24;
       for (final m in RegExp(r'xMax="([\d.]+)"').allMatches(bbox)) {
         expect(double.parse(m[1]!), lessThanOrEqualTo(right + 0.5));
       }
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   test('a paragraph leaves neither a widow nor an orphan', () {
     // A filler paragraph of hard-broken lines pushes an eight-line
@@ -503,7 +516,7 @@ void main() {
         reason: 'filler $filler: $after line(s) at the top',
       );
     }
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('hyphenation', () {
     // Long words in a narrow column (a quarter-width table cell),
@@ -613,13 +626,11 @@ void main() {
         isNotEmpty,
       );
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
-  group(
-    'typography',
-    () {
-      // Yrsa, which has standard ligatures (fi) and GPOS kerning.
-      const yrsa = '''
+  group('typography', () {
+    // Yrsa, which has standard ligatures (fi) and GPOS kerning.
+    const yrsa = '''
 font:
   catalog:
     Yrsa:
@@ -631,113 +642,112 @@ base:
   font-family: Yrsa
 ''';
 
-      /// The glyphs the pages of [pdf] show (2 bytes each in a CID font).
-      int glyphs(String pdf) {
-        final qdf =
-            Process.runSync('qpdf', [
-                  '--qdf',
-                  '--object-streams=disable',
-                  pdf,
-                  '-',
-                ], stdoutEncoding: latin1).stdout
-                as String;
-        var count = 0;
-        for (final array in RegExp(r'\[([^\]]*)\]\s*TJ').allMatches(qdf)) {
-          for (final hex in RegExp('<([0-9a-fA-F]*)>').allMatches(array[1]!)) {
-            count += hex[1]!.length ~/ 4;
-          }
+    /// The glyphs the pages of [pdf] show (2 bytes each in a CID font).
+    int glyphs(String pdf) {
+      final qdf =
+          recordedRunSync(_recorded, 'qpdf', [
+                '--qdf',
+                '--object-streams=disable',
+                pdf,
+                '-',
+              ], stdoutEncoding: latin1).stdout
+              as String;
+      var count = 0;
+      for (final array in RegExp(r'\[([^\]]*)\]\s*TJ').allMatches(qdf)) {
+        for (final hex in RegExp('<([0-9a-fA-F]*)>').allMatches(array[1]!)) {
+          count += hex[1]!.length ~/ 4;
         }
-        return count;
       }
+      return count;
+    }
 
-      test('standard ligatures, unless the theme turns them off', () {
-        const text = 'The official office files.';
-        final ligated = glyphs(_pdf(text, theme: yrsa));
-        final plain = glyphs(
-          _pdf(text, theme: '${yrsa}base_font_ligatures: none\n'),
-        );
-        expect(ligated, lessThan(plain));
-        // The same text either way.
-        expect(
-          _pages(_pdf(text, theme: yrsa)).first,
-          _pages(_pdf(text, theme: '${yrsa}base_font_ligatures: none\n')).first,
-        );
+    test('standard ligatures, unless the theme turns them off', () {
+      const text = 'The official office files.';
+      final ligated = glyphs(_pdf(text, theme: yrsa));
+      final plain = glyphs(
+        _pdf(text, theme: '${yrsa}base_font_ligatures: none\n'),
+      );
+      expect(ligated, lessThan(plain));
+      // The same text either way.
+      expect(
+        _pages(_pdf(text, theme: yrsa)).first,
+        _pages(_pdf(text, theme: '${yrsa}base_font_ligatures: none\n')).first,
+      );
+    });
+
+    /// The fonts [pdf] uses, by PostScript name (without the subset tag).
+    Set<String> fonts(String pdf) => {
+      for (final line
+          in (recordedRunSync(_recorded, 'pdffonts', [pdf]).stdout as String)
+              .split('\n')
+              .skip(2))
+        if (line.trim().isNotEmpty) line.split(' ').first.split('+').last,
+    };
+
+    test('emphasis inside italic text is upright', () {
+      const source =
+          ':nofooter:\n\npass:[<em>Outer <em>inner</em> outer.</em>]';
+      expect(fonts(_pdf(source)), {'NotoSerif-Italic', 'NotoSerif'});
+      // The compatibility mode sets it all in italic, as the gem does.
+      expect(fonts(_pdf(source, compat: true)), {'NotoSerif-Italic'});
+      expect(fonts(_pdf(source, theme: 'base_emphasis_inversion: false\n')), {
+        'NotoSerif-Italic',
       });
+    });
 
-      /// The fonts [pdf] uses, by PostScript name (without the subset tag).
-      Set<String> fonts(String pdf) => {
-        for (final line
-            in (Process.runSync('pdffonts', [pdf]).stdout as String)
-                .split('\n')
-                .skip(2))
-          if (line.trim().isNotEmpty) line.split(' ').first.split('+').last,
-      };
-
-      test('emphasis inside italic text is upright', () {
-        const source =
-            ':nofooter:\n\npass:[<em>Outer <em>inner</em> outer.</em>]';
-        expect(fonts(_pdf(source)), {'NotoSerif-Italic', 'NotoSerif'});
-        // The compatibility mode sets it all in italic, as the gem does.
-        expect(fonts(_pdf(source, compat: true)), {'NotoSerif-Italic'});
-        expect(fonts(_pdf(source, theme: 'base_emphasis_inversion: false\n')), {
-          'NotoSerif-Italic',
-        });
+    test('emphasis in an italic block is upright', () {
+      const source =
+          ':nofooter:\n\n[verse]\n____\nAn _emphasized_ word.\n____\n';
+      const theme = 'verse_font_style: italic\n';
+      expect(fonts(_pdf(source, theme: theme)), {
+        'NotoSerif-Italic',
+        'NotoSerif',
       });
+    });
 
-      test('emphasis in an italic block is upright', () {
-        const source =
-            ':nofooter:\n\n[verse]\n____\nAn _emphasized_ word.\n____\n';
-        const theme = 'verse_font_style: italic\n';
-        expect(fonts(_pdf(source, theme: theme)), {
-          'NotoSerif-Italic',
-          'NotoSerif',
-        });
-      });
+    test('first-line indents skip the first paragraph after a heading or '
+        'a block', () {
+      const theme = 'prose_text_indent_inner: 24\nprose_margin_inner: 0\n';
+      final pdf = _pdf(
+        '== Heading\n\nFirst paragraph.\n\nSecond paragraph.\n\n'
+        '* item\n\nAfter the list.\n\nAnd another.\n',
+        theme: theme,
+      );
+      final bbox =
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
+      double x(String word) => double.parse(
+        RegExp('xMin="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
+      );
+      const margin = 48.24;
+      expect(x('First'), closeTo(margin, 0.01));
+      expect(x('Second'), closeTo(margin + 24, 0.01));
+      expect(x('After'), closeTo(margin, 0.01));
+      expect(x('And'), closeTo(margin + 24, 0.01));
+    });
 
-      test('first-line indents skip the first paragraph after a heading or '
-          'a block', () {
-        const theme = 'prose_text_indent_inner: 24\nprose_margin_inner: 0\n';
-        final pdf = _pdf(
-          '== Heading\n\nFirst paragraph.\n\nSecond paragraph.\n\n'
-          '* item\n\nAfter the list.\n\nAnd another.\n',
-          theme: theme,
-        );
-        final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
-        double x(String word) => double.parse(
-          RegExp('xMin="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
-        );
-        const margin = 48.24;
-        expect(x('First'), closeTo(margin, 0.01));
-        expect(x('Second'), closeTo(margin + 24, 0.01));
-        expect(x('After'), closeTo(margin, 0.01));
-        expect(x('And'), closeTo(margin + 24, 0.01));
-      });
-
-      test('an indent may be given in ems', () {
-        // The default theme's base font size is 10.5.
-        final pdf = _pdf(
-          'First paragraph.\n\nSecond paragraph.\n',
-          theme: 'prose_text_indent_inner: 2em\n',
-        );
-        final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
-        final x = double.parse(
-          RegExp(r'xMin="([\d.]+)"[^>]*>Second<').firstMatch(bbox)![1]!,
-        );
-        expect(x, closeTo(48.24 + 21, 0.01));
-      });
-    },
-    skip: _tools && _has('qpdf') && _has('pdffonts')
-        ? false
-        : 'needs poppler and qpdf',
-  );
+    test('an indent may be given in ems', () {
+      // The default theme's base font size is 10.5.
+      final pdf = _pdf(
+        'First paragraph.\n\nSecond paragraph.\n',
+        theme: 'prose_text_indent_inner: 2em\n',
+      );
+      final bbox =
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
+      final x = double.parse(
+        RegExp(r'xMin="([\d.]+)"[^>]*>Second<').firstMatch(bbox)![1]!,
+      );
+      expect(x, closeTo(48.24 + 21, 0.01));
+    });
+  });
 
   group('fragmentation', () {
     /// The text of [pdf], every page in order, without whitespace (in
     /// layout mode, which keeps hyphens at line ends).
     String compact(String pdf) =>
-        (Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String)
+        (recordedRunSync(_recorded, 'pdftotext', ['-layout', pdf, '-']).stdout
+                as String)
             .replaceAll(RegExp(r'\s+'), '');
 
     /// A listing of [lines] lines of distinct text, some indented, one
@@ -770,7 +780,8 @@ base:
         expect(whole.allMatches(text).length, 1, reason: 'listing $n');
       }
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       const right = 595.28 - 48.24;
       for (final m in RegExp(r'xMax="([\d.]+)"').allMatches(bbox)) {
         expect(double.parse(m[1]!), lessThanOrEqualTo(right + 0.5));
@@ -850,7 +861,8 @@ base:
         ':nofooter:\n\n----\n    start ${'word ' * 40}end\nnext\n----\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final words = [
         for (final m in RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]*)<',
@@ -874,7 +886,7 @@ base:
       }
       expect(next.$1, lessThan(start.$1));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('callouts', () {
     const source =
@@ -882,7 +894,7 @@ base:
         'const c = 3; // <1>\n----\n<1> First.\n<2> Second.\n';
 
     String qdf(String pdf) =>
-        Process.runSync('qpdf', [
+        recordedRunSync(_recorded, 'qpdf', [
               '--qdf',
               '--object-streams=disable',
               pdf,
@@ -915,7 +927,7 @@ base:
         'CO1-1', 'CO1-1-item', 'CO1-2', 'CO1-2-item', 'CO1-3-item', //
       ]);
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('running content numerals', () {
     // Parts and chapters numbered, a preface and the contents not.
@@ -935,7 +947,11 @@ base:
     /// The footer of each page that has one.
     List<String> footers(String pdf) => [
       for (final page
-          in (Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout
+          in (recordedRunSync(_recorded, 'pdftotext', [
+                    '-layout',
+                    pdf,
+                    '-',
+                  ]).stdout
                   as String)
               .split('\f'))
         if (RegExp(r'P\[.*$').firstMatch(page.trim()) case final m?) m[0]!,
@@ -1049,7 +1065,7 @@ base:
         ]);
       });
     }
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('index', () {
     test("index-sort: Chicago's orders in the PDF's index too", () {
@@ -1144,7 +1160,8 @@ base:
     test('is set in the index font', () {
       double height(String pdf) {
         final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String;
         final m = RegExp(
           r'yMin="([\d.]+)" xMax="[\d.]+" yMax="([\d.]+)">hypermedia,<',
         ).firstMatch(bbox)!;
@@ -1170,7 +1187,8 @@ base:
         isTrue,
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       // The words of each line (by its top), and where the line ends.
       final lineWords = <String, List<String>>{};
       final lineEnds = <String, double>{};
@@ -1187,7 +1205,7 @@ base:
       // Both entries' numbers end at the column's right edge.
       expect(end('alpha'), closeTo(end('hypermedia'), 0.01));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('openers', () {
     const book =
@@ -1200,7 +1218,8 @@ base:
 
     /// The text of each page.
     List<String> pages(String pdf) =>
-        (Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String)
+        (recordedRunSync(_recorded, 'pdftotext', ['-layout', pdf, '-']).stdout
+                as String)
             .split('\f')
             .map((page) => page.trim())
             .where((page) => page.isNotEmpty)
@@ -1242,7 +1261,7 @@ base:
       expect(text[3], startsWith('Chapter 1\nChapter One'));
       expect(pages(_pdf(book))[3], startsWith('Chapter 1. Chapter One'));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('footnotes', () {
     const book =
@@ -1343,7 +1362,7 @@ base:
       final compat = _pages(_pdf(source, compat: true)).first.join('\n');
       expect(compat, contains('htmx [https://htmx.org]'));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('syntax highlighting', () {
     const source =
@@ -1369,7 +1388,7 @@ base:
       // Monokai's keyword color, #f92672.
       expect(monokai, contains('0.97647 0.14902 0.44706 rg'));
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('a section with a styled role', () {
     const source =
@@ -1385,7 +1404,8 @@ base:
 
     double height(String pdf, String word) {
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final m = RegExp(
         'yMin="([\\d.]+)" xMax="[\\d.]+" yMax="([\\d.]+)">$word<',
       ).firstMatch(bbox)!;
@@ -1404,7 +1424,8 @@ base:
         RegExp(
           'yMin="([\\d.]+)" xMax="[\\d.]+" yMax="[\\d.]+">$word<',
         ).firstMatch(
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String,
         )![1]!,
       );
       const dedication =
@@ -1420,14 +1441,15 @@ base:
       final plain = _pdf(dedication.replaceFirst('.middle', ''));
       expect(top(plain, 'To'), lessThan(100));
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   test("a paragraph role's indent and space below", () {
     double left(String pdf, String word) => double.parse(
       RegExp(
         'xMin="([\\d.]+)" yMin="[\\d.]+" xMax="[\\d.]+" yMax="[\\d.]+">$word<',
       ).firstMatch(
-        Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+        recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+            as String,
       )![1]!,
     );
     const source = '= Doc\n\nFirst.\n\n[.flat]\nSecond.\n\nThird.\n';
@@ -1443,20 +1465,22 @@ base:
     double top(String pdf, String word) => double.parse(
       RegExp('yMin="([\\d.]+)" xMax="[\\d.]+" yMax="[\\d.]+">$word<')
           .firstMatch(
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String,
           )![1]!,
     );
     expect(
       top(flat, 'Third.') - top(flat, 'Second.'),
       closeTo(top(plain, 'Third.') - top(plain, 'Second.') + 30, 1),
     );
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test("a sidebar title's own space below", () {
     double top(String pdf, String word) => double.parse(
       RegExp('yMin="([\\d.]+)" xMax="[\\d.]+" yMax="[\\d.]+">$word<')
           .firstMatch(
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String,
           )![1]!,
     );
     const source = '= Doc\n\n.Aside\n****\nInside.\n****\n';
@@ -1466,12 +1490,16 @@ base:
       top(spaced, 'Inside.') - top(spaced, 'Aside'),
       greaterThan(top(plain, 'Inside.') - top(plain, 'Aside') + 15),
     );
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('base_leading: lines from cap height, leading apart', () {
     List<double> tops(String pdf) => [
       for (final m in RegExp(r'<line xMin="[\d.]+" yMin="([\d.]+)"').allMatches(
-        Process.runSync('pdftotext', ['-bbox-layout', pdf, '-']).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              '-bbox-layout',
+              pdf,
+              '-',
+            ]).stdout
             as String,
       ))
         double.parse(m[1]!),
@@ -1482,7 +1510,7 @@ base:
     // Six points more leading: six points more between lines.
     expect((b[1] - b[0]) - (a[1] - a[0]), closeTo(6, 0.01));
     expect((b[2] - b[1]) - (a[2] - a[1]), closeTo(6, 0.01));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('title_page_title_skew: the title slanted as one block', () {
     final pdf = _pdf(
@@ -1496,7 +1524,7 @@ base:
       for (final m
           in RegExp(r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>(Several|Words)<')
               .allMatches(
-                Process.runSync('pdftotext', [
+                recordedRunSync(_recorded, 'pdftotext', [
                       '-f',
                       '1',
                       '-l',
@@ -1515,7 +1543,7 @@ base:
     final (x2, y2) = words['Words']!;
     expect(y2, greaterThan(y1));
     expect(x1 - x2, closeTo(0.17633 * (y2 - y1), 0.5));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('text keys', () {
     List<(double, double, double, String)> words(String pdf) => [
@@ -1523,7 +1551,8 @@ base:
           in RegExp(
             r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" yMax="[\d.]+">([^<]*)<',
           ).allMatches(
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String,
           ))
         (double.parse(m[1]!), double.parse(m[2]!), double.parse(m[3]!), m[4]!),
     ];
@@ -1591,7 +1620,7 @@ base:
       final airy = top('Four.') - top('Three.');
       expect(airy - plain, closeTo(30, 0.5));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('floating images', () {
     final svg = base64.encode(
@@ -1669,7 +1698,7 @@ base:
       final text = pages(_pdf(book));
       expect(text[2], contains('After the image.'));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('a family without an italic or bold face', () {
     const theme =
@@ -1688,7 +1717,7 @@ base:
         contains('Plain, slanted and stroked.'),
       );
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('space around blocks', () {
     const source =
@@ -1698,7 +1727,8 @@ base:
     /// The top of [word] on the first page with text.
     double top(String pdf, String word) {
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       return double.parse(
         RegExp('yMin="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
       );
@@ -1737,7 +1767,8 @@ base:
       const quote = '[quote, Ted Nelson]\n____\nQuoted.\n____\n';
       double left(String pdf, String word) {
         final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String;
         return double.parse(
           RegExp('xMin="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
         );
@@ -1762,13 +1793,13 @@ base:
       );
       expect(top(spaced, 'After.'), closeTo(top(plain, 'After.'), 0.01));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test("the title page's author delimiter keeps its spaces", () {
     const book = '= Book\nAda One; Bob Two\n:doctype: book\n\n== C\n\nText.\n';
     double gap(String pdf) {
       final bbox =
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 '-f',
                 '1',
                 '-l',
@@ -1788,7 +1819,7 @@ base:
     final four = gap(_pdf(book, theme: theme));
     final one = gap(_pdf(book, theme: "title_page_authors_delimiter: ' '\n"));
     expect(four, greaterThan(one * 3));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('a section with notoc is left out of the contents', () {
     const book =
@@ -1797,7 +1828,7 @@ base:
     final contents = _pages(_pdf(book))[1].join('\n');
     expect(contents, contains('Chapter'));
     expect(contents, isNot(contains('Copyright')));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('the contents may list titles without numbers', () {
     const book =
@@ -1809,7 +1840,7 @@ base:
     );
     expect(plain, contains('One'));
     expect(plain, isNot(contains('1. One')));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('a definition term may run in before its description', () {
     const source =
@@ -1826,10 +1857,15 @@ base:
     final lines = _pages(pdf).first;
     expect(lines.first, startsWith('Hypermedia Control A hypermedia control'));
     final bbox =
-        Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+        recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+            as String;
     final lefts = [
       for (final m in RegExp(r'<line xMin="([\d.]+)"').allMatches(
-        Process.runSync('pdftotext', ['-bbox-layout', pdf, '-']).stdout
+        recordedRunSync(_recorded, 'pdftotext', [
+              '-bbox-layout',
+              pdf,
+              '-',
+            ]).stdout
             as String,
       ))
         double.parse(m[1]!),
@@ -1837,7 +1873,7 @@ base:
     // The lines after the first hang 20 points in.
     expect(lefts[1] - lefts[0], closeTo(20, 0.5));
     expect(bbox, contains('>Control<'));
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   test('callout markers may be text', () {
     const source =
@@ -1864,7 +1900,7 @@ base:
       glyphs(_pdf(source, theme: theme)) - glyphs(_pdf(source)),
       2 * 2 + 2 * 1,
     );
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('blank pages', () {
     // A prepress book: each chapter starts on a recto page, so a
@@ -1875,7 +1911,8 @@ base:
 
     /// The text of each page of [pdf], the page number included.
     List<String> pages(String pdf) =>
-        (Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String)
+        (recordedRunSync(_recorded, 'pdftotext', ['-layout', pdf, '-']).stdout
+                as String)
             .split('\f')
             .map((page) => page.trim())
             .toList();
@@ -1894,13 +1931,14 @@ base:
       );
       expect(themed[3], '2');
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('table styles', () {
     /// The box of [word] in [pdf] (y down from the top).
     ({double xMin, double xMax, double height}) box(String pdf, String word) {
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final m = RegExp(
         r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
         'yMax="([\\d.]+)">$word<',
@@ -1931,7 +1969,7 @@ base:
       // start; the second starts at its left.
       expect(open.xMin - paid.xMax, lessThan(20));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('print', () {
     /// An ICC header: an output (printer) profile for [space].
@@ -1942,7 +1980,7 @@ base:
     }
 
     String qdf(String pdf) =>
-        Process.runSync('qpdf', [
+        recordedRunSync(_recorded, 'qpdf', [
               '--qdf',
               '--object-streams=disable',
               pdf,
@@ -1996,7 +2034,8 @@ base:
 
     test('a bleed grows the sheet past the trimmed page', () {
       final pdf = _pdf(book, theme: 'page_bleed: 9\n');
-      final boxes = Process.runSync('pdfinfo', ['-box', pdf]).stdout as String;
+      final boxes =
+          recordedRunSync(_recorded, 'pdfinfo', ['-box', pdf]).stdout as String;
       expect(boxes, matches(RegExp(r'MediaBox:\s+-9\.00\s+-9\.00')));
       expect(boxes, matches(RegExp(r'TrimBox:\s+0\.00\s+0\.00')));
     });
@@ -2018,7 +2057,7 @@ base:
         ),
       );
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('numerals and small capitals', () {
     const noto = '''
@@ -2036,7 +2075,7 @@ base:
     /// The glyph codes the pages of [pdf] show, in order.
     List<String> codes(String pdf) {
       final qdf =
-          Process.runSync('qpdf', [
+          recordedRunSync(_recorded, 'qpdf', [
                 '--qdf',
                 '--object-streams=disable',
                 pdf,
@@ -2106,13 +2145,14 @@ base:
       );
       expect(_pages(pdf).first, ['Some SMALL CAPS here.']);
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('layout keys', () {
     /// Each word of [pdf] with its box: (page, left, top, right, bottom).
     List<(String, int, double, double, double, double)> words(String pdf) {
       final xml =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final out = <(String, int, double, double, double, double)>[];
       var page = -1;
       for (final m in RegExp(
@@ -2332,7 +2372,8 @@ base:
       // 30em of 10pt is 300pt: centered on A4's 595.28pt.
       final x = double.parse(
         RegExp(r'xMin="([\d.]+)"[^>]*>Words').firstMatch(
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String,
         )![1]!,
       );
       expect(x, closeTo((595.28 - 300) / 2, 0.5));
@@ -2430,7 +2471,8 @@ templates:
     test("a heading's number hung in the margin, or on a line of its own", () {
       double x(String pdf, String word) => double.parse(
         RegExp('xMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<').firstMatch(
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String,
         )![1]!,
       );
       const source =
@@ -2464,7 +2506,7 @@ templates:
           '== After\n\nAcross.\n\n[.columns,column-count=2]\n--\n$body\n--\n';
       List<int> counts(String pdf, String from, String to, int columns) {
         final out =
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-bbox',
                   '-f',
                   '1',
@@ -2504,7 +2546,7 @@ templates:
       // asciidoctor-pdf's: one column (no gutter in its lines).
       double widestGap(String pdf) {
         final out =
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-bbox',
                   '-f',
                   '1',
@@ -2550,7 +2592,8 @@ templates:
         theme: theme,
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       ({double x, double top, double bottom}) box(String word) {
         final m = RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)" xMax="[\d.]+" '
@@ -2577,7 +2620,7 @@ templates:
       expect(box('After.').top, greaterThan(box('“I').bottom));
       // asciidoctor-pdf's: no initial.
       final plain =
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 _pdf('[.dropcap]\nThe snow.\n', compat: true, theme: theme),
                 '-',
               ]).stdout
@@ -2598,7 +2641,8 @@ templates:
             '    float_gap: 12\n',
       );
       final out =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       // Each line's right end, top to bottom.
       final ends = <double, double>{};
       final quote = <double>{};
@@ -2648,7 +2692,7 @@ templates:
       expect(pages[2].first, 'Letters');
       // Its margins: the text 144 pt in; its tint; no running content.
       final bbox =
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 '-bbox',
                 '-f',
                 '2',
@@ -2666,7 +2710,8 @@ templates:
         closeTo(144, 0.5),
       );
       final footers =
-          Process.runSync('pdftotext', ['-layout', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-layout', pdf, '-']).stdout
+              as String;
       expect(
         footers.split('\f')[1],
         isNot(contains(RegExp(r'^\s*2\s*$', multiLine: true))),
@@ -2679,7 +2724,11 @@ templates:
       );
       final starts = RegExp(r'<line xMin="([\d.]+)"')
           .allMatches(
-            Process.runSync('pdftotext', ['-bbox-layout', columned, '-']).stdout
+            recordedRunSync(_recorded, 'pdftotext', [
+                  '-bbox-layout',
+                  columned,
+                  '-',
+                ]).stdout
                 as String,
           )
           .map((m) => double.parse(m[1]!).round())
@@ -2784,7 +2833,8 @@ templates:
       expect(set.every((s) => s >= 98 - 1e-6 && s <= 102 + 1e-6), isTrue);
       // The opening quote hangs left of the text's edge.
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', plain, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', plain, '-']).stdout
+              as String;
       final quote = double.parse(
         RegExp(r'xMin="([\d.]+)"[^>]*>\u201cA<').firstMatch(bbox)![1]!,
       );
@@ -2818,7 +2868,7 @@ templates:
       (double, double) extent(String pdf, String word) {
         final m = RegExp('xMin="([\\d.]+)"[^>]*xMax="([\\d.]+)"[^>]*>$word<')
             .firstMatch(
-              Process.runSync('pdftotext', [
+              recordedRunSync(_recorded, 'pdftotext', [
                     '-f',
                     '1',
                     '-l',
@@ -2897,7 +2947,8 @@ templates:
             '  sn:\n    columns: 3\n    column_gap: 8\n    font_size: 7\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       // Each word: its page, x and y.
       final words = <(int, String, double, double)>[];
       var page = -1;
@@ -3026,7 +3077,8 @@ templates:
       expect(text, contains('2a dicit] dixit B'));
       expect(text, isNot(contains('[1]')));
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final label = RegExp(r'xMin="([\d.]+)"[^>]*>2b<').firstMatch(bbox);
       final body = RegExp(r'xMax="([\d.]+)"[^>]*>Secundum<').firstMatch(bbox);
       expect(label, isNotNull);
@@ -3093,7 +3145,8 @@ templates:
         },
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       double left(String word) => double.parse(
         RegExp('xMin="([\\d.]+)"[^>]*>${RegExp.escape(word)}<')
             .firstMatch(bbox)![1]!,
@@ -3137,7 +3190,8 @@ templates:
       /// The left edge of each word in [pdf], by its text (the first).
       Map<String, double> lefts(String pdf) {
         final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String;
         final lefts = <String, double>{};
         for (final m in RegExp(
           r'xMin="([\d.]+)"[^>]*>([^<]*)<',
@@ -3210,7 +3264,8 @@ templates:
         expect(text, isNot(contains(RegExp(r'\s4$', multiLine: true))));
         // (Flush right: 5 and 10 end at the same place.)
         final bbox =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String;
         final rights = {
           for (final m in RegExp(
             r'xMax="([\d.]+)"[^>]*>(5|10)<',
@@ -3244,7 +3299,7 @@ templates:
               r'xMin="([\d.]+)" yMin="[\d.]+" xMax="[\d.]+" yMax="([\d.]+)">'
               '([^<]*)<',
             ).allMatches(
-              Process.runSync('pdftotext', [
+              recordedRunSync(_recorded, 'pdftotext', [
                     '-f',
                     '$page',
                     '-l',
@@ -3367,7 +3422,7 @@ templates:
         },
       );
       final bbox =
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 '-f',
                 '1',
                 '-l',
@@ -3431,7 +3486,11 @@ templates:
         final pdf = _pdf(source, attributes: {'pdf-theme': themeFile.path});
         // (Without spaces: pdftotext joins words a narrow face's spaces
         // set close, as Crimson Pro's are at 6 pt.)
-        return (Process.runSync('pdftotext', ['-raw', pdf, '-']).stdout
+        return (recordedRunSync(_recorded, 'pdftotext', [
+                  '-raw',
+                  pdf,
+                  '-',
+                ]).stdout
                 as String)
             .replaceAll(RegExp(r'\s'), '');
       }
@@ -3466,7 +3525,8 @@ templates:
             'sidebar:\n  role:\n    feature:\n      columns: 2\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final words = [
         for (final m in RegExp(
           r'xMin="([\d.]+)" yMin="([\d.]+)"[^>]*>([^<]*)<',
@@ -3509,7 +3569,8 @@ templates:
             '    label_hang: [poetry]\n',
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       double x(String word, {String edge = 'xMin'}) => double.parse(
         RegExp('$edge="([\\d.]+)"[^>]*>$word<').firstMatch(bbox)![1]!,
       );
@@ -3536,7 +3597,8 @@ templates:
             "    margin_content: '{{attr-number}}'\n",
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       (double, double) at(String word, {String edge = 'xMin'}) {
         final m = RegExp('$edge="([\\d.]+)"[^>]*yMax="([\\d.]+)">$word<')
             .firstMatch(bbox)!;
@@ -3589,7 +3651,8 @@ templates:
       final source = '= Doc\n\n$body\n\n$body\n';
       String text(String theme) {
         final pdf = _pdf(source, theme: theme);
-        return Process.runSync('pdftotext', [pdf, '-']).stdout as String;
+        return recordedRunSync(_recorded, 'pdftotext', [pdf, '-']).stdout
+            as String;
       }
 
       List<String> words(String text) => text
@@ -3607,7 +3670,7 @@ templates:
       );
       List<(double, double)> placesOf(String theme) {
         final bbox =
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-bbox',
                   _pdf(source, theme: theme),
                   '-',
@@ -3651,7 +3714,7 @@ templates:
       final words = [for (var k = 0; k < 40; k++) 'Words $k go on.'].join(' ');
       double firstLeft(String pdf, {int page = 1}) {
         final bbox =
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-f',
                   '$page',
                   '-l',
@@ -3794,7 +3857,8 @@ templates:
       // In the left margin, each beside its verse.
       final side = pdf('    column: left\n    font_size: 7\n');
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', side, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', side, '-']).stdout
+              as String;
       final notes = RegExp(r'xMax="([\d.]+)"[^>]*>Heb\.<')
           .allMatches(bbox)
           .map((m) => double.parse(m[1]!))
@@ -3852,7 +3916,7 @@ templates:
         );
         return [
           for (final m in RegExp(r'xMax="([\d.]+)"[^>]*>(\d+)<').allMatches(
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-f',
                   '1',
                   '-l',
@@ -3893,7 +3957,7 @@ templates:
           'page_baseline_grid: true\npage_baseline_grid_anchor: $anchor\n';
       int numbers(String pdf) => RegExp(r'xMax="([\d.]+)"[^>]*>\d+<')
           .allMatches(
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-f',
                   '1',
                   '-l',
@@ -3931,7 +3995,8 @@ templates:
       );
       final margin = [
         for (final m in RegExp(r'xMax="([\d.]+)"[^>]*>([^<]+)<').allMatches(
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String,
         ))
           if (double.parse(m[1]!) < 45) m[2]!,
       ];
@@ -3960,7 +4025,7 @@ templates:
             in RegExp(
               r'<line xMin="[\d.]+" yMin="([\d.]+)"[^>]*>\s*<word[^>]*>([^<]+)<',
             ).allMatches(
-              Process.runSync('pdftotext', [
+              recordedRunSync(_recorded, 'pdftotext', [
                     '-f',
                     '1',
                     '-l',
@@ -4040,7 +4105,11 @@ templates:
       // A short text: in all three columns, not the first alone.
       final starts = RegExp(r'<line xMin="([\d.]+)"')
           .allMatches(
-            Process.runSync('pdftotext', ['-bbox-layout', pdf, '-']).stdout
+            recordedRunSync(_recorded, 'pdftotext', [
+                  '-bbox-layout',
+                  pdf,
+                  '-',
+                ]).stdout
                 as String,
           )
           .map((m) => double.parse(m[1]!).round())
@@ -4061,7 +4130,8 @@ templates:
         theme: theme,
       );
       final bbox =
-          Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+          recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+              as String;
       final aside = double.parse(
         RegExp(r'xMin="([\d.]+)"[^>]*>Aside<').firstMatch(bbox)![1]!,
       );
@@ -4110,7 +4180,8 @@ templates:
       // Each line's right end, top to bottom, beside the image.
       List<double> ends(String pdf) {
         final out =
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String;
         final byLine = <double, double>{};
         for (final m in RegExp(
           r'yMin="([\d.]+)" xMax="([\d.]+)"[^>]*>(?:[^<]*)<',
@@ -4150,7 +4221,7 @@ templates:
         theme: '${theme}base_font_embedding: simple\n',
       );
       String fonts(String pdf) =>
-          '${Process.runSync('pdffonts', [pdf]).stdout}';
+          '${recordedRunSync(_recorded, 'pdffonts', [pdf]).stdout}';
       expect(fonts(composite), contains('CID TrueType'));
       expect(fonts(simple), isNot(contains('CID')));
       expect(fonts(simple), contains('TrueType'));
@@ -4406,7 +4477,7 @@ templates:
       }
 
       String fonts(String pdf) =>
-          Process.runSync('pdffonts', [pdf]).stdout as String;
+          recordedRunSync(_recorded, 'pdffonts', [pdf]).stdout as String;
       final house = convert(const {});
       // Headings in the sans (doc/style.md).
       expect(fonts(house), contains('NotoSans'));
@@ -4441,7 +4512,8 @@ templates:
         isEmpty,
       );
       // Set in the math font, copied as their source.
-      final fonts = Process.runSync('pdffonts', [pdf]).stdout as String;
+      final fonts =
+          recordedRunSync(_recorded, 'pdffonts', [pdf]).stdout as String;
       expect(fonts, contains('NotoSansMath'));
       final text = _pages(pdf).first.join(' ');
       expect(text, contains('x^2'));
@@ -4472,7 +4544,8 @@ templates:
       double? bottom(String pdf, String word) => switch (RegExp(
         'yMax="([\\d.]+)"[^>]*>${RegExp.escape(word)}<',
       ).firstMatch(
-        Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+        recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+            as String,
       )) {
         final m? => double.parse(m[1]!),
         null => null,
@@ -4489,7 +4562,8 @@ templates:
       final content = _content(pdf);
       // The display sum (a larger variant than the text's) is drawn.
       expect(content, contains('Tf'));
-      final info = Process.runSync('pdfinfo', [pdf]).stdout as String;
+      final info =
+          recordedRunSync(_recorded, 'pdfinfo', [pdf]).stdout as String;
       final width = double.parse(
         RegExp(r'Page size:\s+([\d.]+)').firstMatch(info)![1]!,
       );
@@ -4514,7 +4588,7 @@ templates:
         contains(contains('is not a font with a MATH table')),
       );
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group("asciidoctor-pdf's look (asciidoctor-compat, ADR-0015)", () {
     const images = 'test/pdf/fixtures/images';
@@ -4640,7 +4714,7 @@ templates:
         contains(contains('could not embed page background image')),
       );
     });
-  }, skip: _tools && _has('qpdf') ? false : 'needs poppler and qpdf');
+  });
 
   group('a right-to-left document (dir: rtl)', () {
     const theme = '''
@@ -4683,7 +4757,8 @@ heading:
             r'<word xMin="([\d.]+)" yMin="[\d.]+" xMax="([\d.]+)" '
             r'yMax="[\d.]+">([^<]*)</word>',
           ).allMatches(
-            Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String,
+            recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+                as String,
           ))
         (m[3]!, double.parse(m[1]!), double.parse(m[2]!)),
     ];
@@ -4730,7 +4805,11 @@ heading:
               r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
               r'yMax="[\d.]+">([^<]*)</word>',
             ).allMatches(
-              Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout
+              recordedRunSync(_recorded, 'pdftotext', [
+                    '-bbox',
+                    pdf,
+                    '-',
+                  ]).stdout
                   as String,
             ))
           (
@@ -4770,7 +4849,7 @@ heading:
             r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" '
             r'yMax="[\d.]+">([^<]*)</word>',
           ).allMatches(
-            Process.runSync('pdftotext', [
+            recordedRunSync(_recorded, 'pdftotext', [
                   '-bbox',
                   '-f',
                   '$page',
@@ -4888,7 +4967,7 @@ heading:
       const title = 'البينة';
       final pdf = _pdf('= $title\n:dir: rtl\n\n$verse\n', theme: arabic);
       final text =
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 '-enc',
                 'UTF-8',
                 pdf,
@@ -4906,5 +4985,5 @@ heading:
       final (_, right) = edges(all, 'שלום');
       expect(right, lessThan(300));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 }

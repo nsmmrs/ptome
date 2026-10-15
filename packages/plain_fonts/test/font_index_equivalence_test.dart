@@ -1,7 +1,7 @@
 // The font index against a frozen copy of its code from before the
 // performance work (test/frozen/font_index.dart): the same files, fonts,
-// cache files and answers, on the test fonts and, when the machine has
-// them, the fonts in /usr/share/fonts.
+// cache files and answers, on the test fonts and plain_typesetting's
+// (committed fonts only, the same on every machine).
 @TestOn('vm')
 @Tags(['nightly'])
 library;
@@ -93,10 +93,7 @@ void _expectSameIndex(FontIndex index, frozen.FontIndex old) {
 }
 
 void main() {
-  final roots = [
-    'test/fonts',
-    if (Directory('/usr/share/fonts').existsSync()) '/usr/share/fonts',
-  ];
+  const roots = ['test/fonts', '../plain_typesetting/test/fonts'];
   for (final root in roots) {
     test('$root: the same index, cached or not', () {
       final temp = Directory.systemTemp.createTempSync('font-index-');

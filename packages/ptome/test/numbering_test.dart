@@ -12,10 +12,8 @@ import 'package:plain_compression/plain_compression.dart';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 /// Noto Naskh Arabic, subset: its letters and both sets of digits.
 final String _naskh = File(
@@ -45,7 +43,12 @@ const String _arabic = '''
 . ب
 ''';
 
+/// The tools' runs, recorded (test/oracles/numbering.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('numbering', compressed: true);
   String html(String source, Map<String, String> attributes) =>
       asciidoc.convert(source, standalone: true, attributes: attributes);
 
@@ -163,7 +166,10 @@ $theme''');
       // (Its bidi controls out: pdftotext writes right-to-left lines in
       // embeddings.)
       final out =
-          Process.runSync('pdftotext', [path, '-'], stdoutEncoding: utf8).stdout
+          recordedRunSync(_recorded, 'pdftotext', [
+                path,
+                '-',
+              ], stdoutEncoding: utf8).stdout
               as String;
       return out.replaceAll(RegExp('[\u202a-\u202e\u2066-\u2069]'), '');
     }
@@ -181,5 +187,5 @@ $theme''');
     expect(text({'asciidoctor-compat': ''}), isNot(contains('١')));
     final roman = text({}, theme: 'page:\n  numbering_style: upper-roman\n');
     expect(line(roman, 'II'), isTrue, reason: roman);
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 }

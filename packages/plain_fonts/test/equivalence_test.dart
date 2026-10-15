@@ -1,9 +1,9 @@
 // The reader, the subsetters and the web font decoder against frozen
 // copies of their code from before the performance work (test/frozen):
 // the same values, the same bytes, the same rejections, on the fixtures,
-// on damaged copies of them and, when the machine has it, on a CJK CFF
-// font. More fonts (files or folders) can be named in
-// PLAIN_FONTS_EQUIVALENCE_FONTS, separated by colons.
+// on damaged copies of them and on a CJK CFF font (plain_typesetting's
+// subset of Noto Sans CJK JP): committed fonts only, the same on every
+// machine.
 @TestOn('vm')
 @Tags(['nightly'])
 library;
@@ -21,15 +21,10 @@ import 'frozen/opentype.dart' as frozen;
 import 'frozen/subset.dart' as frozen;
 import 'frozen/woff.dart' as frozen;
 
-const _cjk = '/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc';
+const _cjk = '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf';
 
 List<String> _fontFiles() {
-  final extra = Platform.environment['PLAIN_FONTS_EQUIVALENCE_FONTS'];
-  final roots = [
-    'test/fonts',
-    if (File(_cjk).existsSync()) _cjk,
-    ...?extra?.split(':').where((path) => path.isNotEmpty),
-  ];
+  const roots = ['test/fonts', _cjk];
   final files = <String>[];
   for (final root in roots) {
     if (FileSystemEntity.isDirectorySync(root)) {

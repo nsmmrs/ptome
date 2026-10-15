@@ -11,17 +11,20 @@ import 'package:plain_compression/plain_compression.dart';
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 /// Noto Sans CJK, subset (its kana; not あ).
 final String _cjk = File(
   '../plain_typesetting/test/fonts/notosanscjk-jp-subset.otf',
 ).absolute.path;
 
+/// The tools' runs, recorded (test/oracles/line_break.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('line_break', compressed: true);
   test('HTML: CSS line-break', () {
     expect(
       asciidoc.convert(
@@ -101,7 +104,7 @@ $extra''');
       );
       return [
         for (final line in const LineSplitter().convert(
-          Process.runSync('pdftotext', [
+          recordedRunSync(_recorded, 'pdftotext', [
                 '-layout',
                 path,
                 '-',
@@ -115,5 +118,5 @@ $extra''');
     expect(lines('').first, 'いのか');
     expect(lines('base_line_break: loose\n').first, 'いのかき');
     expect(lines('', attributes: {'line-break': 'loose'}).first, 'いのかき');
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 }

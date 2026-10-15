@@ -1,0 +1,58 @@
+{
+  "broadsheet in chromium": {
+    "inputs": "4d676de383667aae1b040ff39d15f906c91f2e76fa6da05678c9167cb8d0f130",
+    "answer": "[0,3400960]"
+  },
+  "broadsheet in firefox": {
+    "inputs": "5e224c667d532072025e5519d33d0b6da49210e906d1683fc64f4b0c6a443d6c",
+    "answer": "[0,3418880]"
+  },
+  "compact in chromium": {
+    "inputs": "94f4a56f727534a59abe08b25d63c327823dc10056b60bdc2e7c6375220f8c5b",
+    "answer": "[0,3503360]"
+  },
+  "compact in firefox": {
+    "inputs": "28140113c6ad06fc893931e2b736e07facb522969f8f90568f67d71535132cf5",
+    "answer": "[0,3507200]"
+  },
+  "magazine in chromium": {
+    "inputs": "50b0b9c61eb222ec886bb3a9f8b106f1c5cf5d972252a56b52312e77221af0dd",
+    "answer": "[0,3645440]"
+  },
+  "magazine in firefox": {
+    "inputs": "70daa28c194444f365ce63e56caf7f0ade29d7ed9b5289b8293e897a8a8575a6",
+    "answer": "[0,3649280]"
+  },
+  "magazine-1950s in chromium": {
+    "inputs": "880f5165fcbc19520f2fe3d5fd3f3375eb87ba45a5320f1b4e7d038172c512f8",
+    "answer": "[0,4392960]"
+  },
+  "magazine-1950s in firefox": {
+    "inputs": "c74140d6b30edb307e7bd316a93fa3c99d1cc907d5847a1311c3d7445a664974",
+    "answer": "[0,4364800]"
+  },
+  "magazine-1960s in chromium": {
+    "inputs": "8c22ea6a72fd63bb711863df3362d0ee216a653cb7922da6d32cdf514e7e77b9",
+    "answer": "[0,3522560]"
+  },
+  "magazine-1960s in firefox": {
+    "inputs": "845adae723c96282363d65b179e8c19cea3116343d70bcb3e3f7906014121db7",
+    "answer": "[0,3525120]"
+  },
+  "magazine-1970s in chromium": {
+    "inputs": "4d7b794a283eb5d9abe52ad8e12628c0f7bb18a4de3b0d5341a9e0a7f1362b21",
+    "answer": "[0,3827200]"
+  },
+  "magazine-1970s in firefox": {
+    "inputs": "b9155064c86d9c02493ce452a403ef9b691f4c4c35e7c634a21739a6421ba2f6",
+    "answer": "[0,3708160]"
+  },
+  "magazine-1980s in chromium": {
+    "inputs": "f07ec4f2455d056554c8c92b3bbd2f16b4dd39d6e52db6dd2aceae93fc505a9f",
+    "answer": "[0,3482880]"
+  },
+  "magazine-1980s in firefox": {
+    "inputs": "bbfd5d1dd18d7757c24cc2bf41e14c6a727b0346e27ed446bfd78b4f1ea10935",
+    "answer": "[0,3488000]"
+  }
+}

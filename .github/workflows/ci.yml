@@ -8,10 +8,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 permissions: read-all
-# The tests see no font installed on the runner, only the ones they name
-# (as in tool/gate.sh).
+# The tests' world, as tool/gate.sh sets it: no font installed on the
+# runner, one date and time zone.
 env:
   PTOME_SYSTEM_FONTS: 'off'
+  SOURCE_DATE_EPOCH: '1767225600'
+  TZ: UTC
 # ptome's jobs run in its package folder (the repository is a pub
 # workspace, ADR-0018).
 defaults:

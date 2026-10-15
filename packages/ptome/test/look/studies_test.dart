@@ -29,14 +29,10 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
+
 import '../vendored_fonts.dart';
-
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-/// Poppler's pdftotext, for the words' left and right edges.
-final bool _tools =
-    _has('pdftotext') &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
 
 late Directory _dir;
 var _count = 0;
@@ -154,7 +150,8 @@ List<_Text> _texts(String content) => [
 /// The words of each page of [pdf], from pdftotext.
 List<List<_Word>> _words(String pdf) {
   final xml =
-      Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+          as String;
   return [
     for (final page in xml.split('<page ').skip(1))
       [
@@ -201,7 +198,12 @@ double _rightEdge(List<_Page> pages, {double above = double.infinity}) => [
       if (word.xMax < above) word.xMax,
 ].reduce(math.max);
 
+/// The tools' runs, recorded (test/oracles/look_studies.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('look_studies', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();
@@ -268,7 +270,7 @@ void main() {
         expect(folio.single.y, closeTo(731, 4.5));
       }
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('EU legislation (OJ L, Reg. 326/2014)', () {
     late List<_Page> pages;
@@ -293,7 +295,7 @@ void main() {
         expect(head, closeTo(784.4, 2.5));
       }
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group("O'Reilly's animal books (Designing Distributed Systems, 2018)", () {
     late List<_Page> pages;
@@ -334,7 +336,7 @@ void main() {
         }
       }
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('the Bell Labs troff books (K&R, UPE, AWK)', () {
     late List<_Page> pages;
@@ -375,7 +377,7 @@ void main() {
       }
       expect(checked, greaterThan(0));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group("a brief in the Supreme Court's booklet format (Rule 33.1)", () {
     late List<_Page> pages;
@@ -391,7 +393,7 @@ void main() {
       expect(_rightEdge(pages) - left, closeTo(4.125 * 72, 0.5));
       expect(_pitch(pages, 12), closeTo(14, 0.02));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('a trade paperback, B format (Penguin)', () {
     test('129 × 198 mm, the text 10.25 on 12.25 on a grid', () {
@@ -408,7 +410,7 @@ void main() {
         }
       }
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('a UK Act (since 2001)', () {
     test('A4, the text 11 on 12', () {
@@ -416,7 +418,7 @@ void main() {
       expect(pages.first.width, closeTo(595.28, 0.01));
       expect(_pitch(pages, 11), closeTo(12, 0.02));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 
   group('a dictionary (Collins)', () {
     test('three columns, the spaces between words 72% of the face’s', () {
@@ -463,5 +465,5 @@ base:
 
       expect(gap(close) / gap(open), closeTo(0.72, 0.02));
     });
-  }, skip: _tools ? false : 'needs poppler');
+  });
 }

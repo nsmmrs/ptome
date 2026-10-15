@@ -7,8 +7,12 @@
 /// The data and the font are the King Fahd Complex's, free to use but not
 /// ours to redistribute: they are fetched into a cache, never committed.
 ///
-///     dart run tool/mushaf.dart [OUT]
+///     dart run tool/mushaf.dart [--check] [OUT]
 ///     ptome -b pdf OUT/mushaf.adoc
+///
+/// With `--check`, it also converts the mushaf and checks every page is
+/// as the mushaf has it: 604, no line wrapped or moved on, no warning
+/// (test/pdf/mushaf_test.dart sets two pages so on every run).
 ///
 /// OUT is `~/.cache/asciidart-work/mushaf` by default; what is already
 /// there is not fetched again. It ends with `mushaf.adoc`, its theme and
@@ -21,6 +25,9 @@ library;
 
 import 'dart:convert';
 import 'dart:io';
+
+import 'package:ptome/src/internal.dart';
+import 'package:ptome/src/pdf/pdf.dart';
 
 const _api = 'https://api.quran.com/api/v4';
 const _fontUrl =
@@ -54,7 +61,9 @@ final class _Basmala extends _Line {
 /// A word on the page: its line, text and verse.
 typedef _Word = ({int line, String text, int surah, int ayah});
 
-Future<void> main(List<String> args) async {
+Future<void> main(List<String> arguments) async {
+  final args = [...arguments];
+  final check = args.remove('--check');
   final out = Directory(
     args.isNotEmpty
         ? args.first
@@ -77,6 +86,47 @@ Future<void> main(List<String> args) async {
       .writeAsStringSync(_document(layout, names, basmala));
   File('${out.path}/mushaf-theme.yml').writeAsStringSync(_theme);
   stdout.writeln('wrote ${out.path}/mushaf.adoc');
+  if (check) exit(_check(out) ? 0 : 1);
+}
+
+/// Converts the mushaf in [out] and checks it: no warning, 604 pages (a
+/// line too wide for the measure would wrap, a page of 15 lines then run
+/// onto another), the Fatiha on the first and an-Nas on the last.
+bool _check(Directory out) {
+  registerPdf();
+  final logger = MemoryLogger();
+  LoggerManager.logger = logger;
+  convertFile(
+    '${out.path}/mushaf.adoc',
+    AsciidoctorOptions(safe: SafeMode.unsafe, backend: 'pdf', toDir: out.path),
+  );
+  final problems = [
+    for (final m in logger.messages)
+      if (m.severity.index >= Severity.warn.index) 'warning: ${m.message}',
+  ];
+  final pdf = '${out.path}/mushaf.pdf';
+  final info = '${Process.runSync('pdfinfo', [pdf]).stdout}';
+  if (!RegExp('Pages:\\s+$_pages\n').hasMatch(info)) {
+    problems.add('not $_pages pages: $info');
+  }
+  String page(int number) {
+    final range = ['-f', '$number', '-l', '$number'];
+    final text = Process.runSync('pdftotext', [
+      ...range,
+      pdf,
+      '-',
+    ], stdoutEncoding: utf8);
+    return '${text.stdout}';
+  }
+
+  if (!page(1).contains('سورة الفاتحة')) problems.add('no Fatiha on page 1');
+  if (!page(_pages).contains('سورة الناس')) {
+    problems.add('no an-Nas on page $_pages');
+  }
+  stdout.writeln(
+    problems.isEmpty ? 'every page as the mushaf has it' : problems.join('\n'),
+  );
+  return problems.isEmpty;
 }
 
 /// Fetches what [out] doesn't have yet: the font, the surahs' names and

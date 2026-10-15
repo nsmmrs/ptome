@@ -117,11 +117,18 @@ void _writePipe(List<Object> args) {
   (args[1] as SendPort).send(null);
 }
 
-/// Runs the real CLI binary in a subprocess, like Ruby's `run_command`.
+/// Runs the real CLI binary in a subprocess, like Ruby's `run_command`:
+/// in [environment] alone when given (a copy of this process's with
+/// variables changed or removed).
 Future<ProcessResult> runCli(
   List<String> args, {
   Map<String, String>? environment,
-}) => runPtome(args, workingDirectory: repoRoot, environment: environment);
+}) => runPtome(
+  args,
+  workingDirectory: repoRoot,
+  environment: environment,
+  includeParentEnvironment: environment == null,
+);
 
 /// Copies the fixture [name] into [dir] and returns the copy's path.
 String copyFixtureTo(String name, Directory dir) {

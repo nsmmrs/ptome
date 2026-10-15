@@ -16,10 +16,8 @@ import 'package:ptome/src/internal.dart' as impl;
 import 'package:ptome/src/pdf/pdf.dart' show registerPdf;
 import 'package:test/test.dart';
 
-/// Poppler's pdftotext.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 /// Noto Serif, its Latin letters (no bidirectional controls).
 final String _latin = File(
@@ -46,7 +44,12 @@ A paragraph in English.
 English with [dir=rtl]#نص# and [lang=fr]#français#.
 ''';
 
+/// The tools' runs, recorded (test/oracles/block_direction.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('block_direction', compressed: true);
   String html(String source, [Map<String, String> attributes = const {}]) =>
       asciidoc.convert(source, standalone: true, attributes: attributes);
 
@@ -113,7 +116,7 @@ font:
       ),
     );
     final bbox =
-        Process.runSync('pdftotext', [
+        recordedRunSync(_recorded, 'pdftotext', [
               '-bbox',
               path,
               '-',
@@ -153,7 +156,7 @@ font:
     expect(first.$2, closeTo(547.04, 10));
     expect(second.$2, closeTo(547.04, 10));
     expect(mixed.$1, closeTo(48.24, 1));
-  }, skip: _poppler ? false : 'needs Poppler');
+  });
 
   test("a span's isolate, which no font has, is set unwarned of; warned of "
       'under asciidoctor-compat, as Asciidoctor PDF does', () {

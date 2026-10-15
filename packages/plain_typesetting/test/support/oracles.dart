@@ -84,6 +84,21 @@ final class Oracle {
     return recorded.answer;
   }
 
+  /// [answer] for an oracle that answers later ([oracle]'s future).
+  Future<String> answerLater(
+    String key, {
+    required List<Object> inputs,
+    required Future<String> Function() oracle,
+  }) async {
+    if (!recording) {
+      return answer(key, inputs: inputs, oracle: () => throw StateError(''));
+    }
+    final digest = _digest(inputs);
+    final later = await oracle();
+    _asked[key] = (inputs: digest, answer: later);
+    return later;
+  }
+
   /// [answer] for an oracle whose answer is JSON: [oracle]'s value,
   /// encoded when recorded and decoded when read.
   T json<T>(

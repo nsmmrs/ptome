@@ -12,12 +12,10 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
-import '../vendored_fonts.dart';
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
-/// Poppler's pdftotext, which reads the words' boxes.
-final bool _poppler =
-    Process.runSync('which', ['pdftotext']).exitCode == 0 &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+import '../vendored_fonts.dart';
 
 late Directory _dir;
 var _count = 0;
@@ -60,7 +58,8 @@ var _count = 0;
 /// Each word of [pdf] with its page and box.
 List<(int, String, List<double>)> _words(String pdf) {
   final xml =
-      Process.runSync('pdftotext', ['-bbox', pdf, '-']).stdout as String;
+      recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf, '-']).stdout
+          as String;
   final out = <(int, String, List<double>)>[];
   var page = 0;
   for (final line in xml.split('\n')) {
@@ -77,10 +76,6 @@ List<(int, String, List<double>)> _words(String pdf) {
 
 /// Expects [source] under [theme] set by the engine as the box sets it.
 void _same(String source, {String theme = ''}) {
-  if (!_poppler) {
-    markTestSkipped('needs poppler');
-    return;
-  }
   final (boxSet, box) = _pdf(source, theme, 'box');
   final (set, engine) = _pdf(source, theme, 'paragraph');
   expect(boxSet, 0, reason: "the engine set some of the box's");
@@ -108,7 +103,12 @@ final String _words40 = [
   for (var k = 0; k < 40; k++) ['quick', 'brown', 'fox', 'jumps'][k % 4],
 ].join(' ');
 
+/// The tools' runs, recorded (test/oracles/pdf_engine_paragraphs.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('pdf_engine_paragraphs', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();
@@ -518,10 +518,6 @@ void main() {
   });
 
   test('a fixed width of several words: one slot, its text centered', () {
-    if (!_poppler) {
-      markTestSkipped('needs poppler');
-      return;
-    }
     final (_, pdf) = _pdf(
       '[.text-left]\naa +++<font width="80">two words</font>+++ bb\n',
       '',
@@ -546,10 +542,6 @@ void main() {
   });
 
   test('base_text_align_last: justify, every line to the measure', () {
-    if (!_poppler) {
-      markTestSkipped('needs poppler');
-      return;
-    }
     final (_, pdf) = _pdf(
       'one two three +\nfour five\n',
       'base:\n  text_align: justify\n  text_align_last: justify\n',

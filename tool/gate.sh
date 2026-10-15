@@ -19,8 +19,12 @@
 # unzip, bats) skip that step with a note; CI has them. Scratch files go
 # to $TMPDIR (default /tmp).
 set -uo pipefail
-# The tests see no font installed on the machine, only the ones they name.
-export PTOME_SYSTEM_FONTS=off
+# The tests' world, the same on every machine (CI's workflow sets it too):
+# no font installed on the machine, only the ones they name; one date and
+# time zone, so the files they write are the same bytes every run (the
+# tools' answers are recorded for those bytes).
+export PTOME_SYSTEM_FONTS=off SOURCE_DATE_EPOCH=1767225600 TZ=UTC
+unset PTOME_FONT_PATH
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 have() { command -v "$1" >/dev/null 2>&1; }
 
@@ -64,6 +68,7 @@ format_and_analyze() {
   }
   dart analyze --fatal-infos . | tail -1 || status=1
   tool/oracles_check.sh || status=1
+  tool/hermetic_check.sh || status=1
   return $status
 }
 
@@ -84,7 +89,6 @@ ptome_tests() {
     }
     echo "built the executable ($((SECONDS - t))s)"
     t=$SECONDS
-    export PTOME_EXE="$work/ptome"
     dart test --file-reporter "json:$work/tests.json" -r failures-only \
       > "$work/tests.log" 2>&1
   fi
@@ -96,7 +100,7 @@ ptome_tests() {
   [ "$tier" = fast ] && return $status
   if have bats; then
     t=$SECONDS
-    ASCIIDOCTOR_EXE="$PTOME_EXE" bats test/e2e/ > "$work/bats.log" 2>&1 || {
+    ASCIIDOCTOR_EXE="$work/ptome" bats test/e2e/ > "$work/bats.log" 2>&1 || {
       grep '^not ok' "$work/bats.log"
       status=1
     }

@@ -243,6 +243,7 @@ void main() {
 /// script runs.
 List<Object?> _weasyprintCounters(String input) {
   final script =
+      // hermetic: recording only (the oracle's closure)
       Process.runSync('sh', ['-c', 'command -v weasyprint']).stdout as String;
   final python = File(script.trim())
       .readAsLinesSync()

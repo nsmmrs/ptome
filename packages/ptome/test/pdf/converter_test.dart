@@ -13,14 +13,15 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
 
-/// The tools, with Poppler's pdftotext (Git for Windows ships xpdf's).
-final bool _tools =
-    ['pdftotext', 'pdftohtml', 'pdfinfo', 'pdftoppm', 'qpdf'].every(_has) &&
-    '${Process.runSync('pdftotext', ['-v']).stderr}'.contains('Poppler');
+/// The tools' runs, recorded (test/oracles/pdf_converter.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
 
 void main() {
+  _recorded = Oracle('pdf_converter', compressed: true);
   setUpAll(registerPdf);
 
   test('sections without ids have the same destinations on every run', () {
@@ -55,9 +56,9 @@ void main() {
     final first = convert();
     expect(convert(), first);
     // Numbered in order (read where qpdf can decompress the names).
-    if (_has('qpdf')) {
+    {
       final qdf =
-          Process.runSync('qpdf', [
+          recordedRunSync(_recorded, 'qpdf', [
                 '--qdf',
                 '--object-streams=disable',
                 out,
@@ -78,7 +79,7 @@ void main() {
       AsciidoctorOptions(safe: SafeMode.unsafe, backend: 'pdf', toFile: out),
     );
     final qdf =
-        Process.runSync('qpdf', [
+        recordedRunSync(_recorded, 'qpdf', [
               '--qdf',
               '--object-streams=disable',
               out,
@@ -95,5 +96,5 @@ void main() {
       ),
     );
     expect(qdf, matches(RegExp(r'/OpenAction \[\s*\d+ 0 R\s*/FitH\s+841.89')));
-  }, skip: _tools ? false : 'needs poppler and qpdf');
+  });
 }

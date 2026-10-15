@@ -202,11 +202,11 @@ void main() {
     expect(fontDirectoriesFor(FontPlatform.linux, env), [
       '/home/me/.local/share/fonts',
       '/home/me/.fonts',
-      '/usr/share/fonts',
+      '/usr/share/fonts', // hermetic: an expected value, not looked at
     ]);
     expect(
       fontDirectoriesFor(FontPlatform.macos, env).first,
-      '/home/me/Library/Fonts',
+      '/home/me/Library/Fonts', // hermetic: an expected value
     );
     expect(
       fontDirectoriesFor(FontPlatform.windows, const {
@@ -219,6 +219,5 @@ void main() {
       ],
     );
     expect(cacheDirectoryFor(FontPlatform.linux, env), '/home/me/.cache');
-    expect(FontFiles.platform.fontDirectories, isNotEmpty);
   });
 }

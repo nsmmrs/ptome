@@ -4246,10 +4246,12 @@ void main() {
         expect(doc.attr('docdatetime'), startsWith('2015-01-01 '));
       });
 
+      // (The tests run with SOURCE_DATE_EPOCH at 2026-01-01 00:00:00 UTC,
+      // test/hermetic_test.dart, which a process can't unset: it, not the
+      // input's modification time, is the document's date, as when the
+      // Ruby test sets it. The modification time alone is in
+      // test/cli/invoker_test.dart, which runs the CLI without it.)
       test('should allow doctime to be overridden', () {
-        // NOTE Dart cannot unset SOURCE_DATE_EPOCH (Platform.environment is
-        // read-only); this test assumes it is not set, as in the Ruby test
-        // which deletes it first.
         final doc = Document(
           null,
           AsciidoctorOptions(
@@ -4257,44 +4259,23 @@ void main() {
             attributes: {'doctime': '10:00:00-0700'},
           ),
         );
-        expect(doc.attr('docdate'), equals('2019-01-02'));
-        expect(doc.attr('docyear'), equals('2019'));
+        expect(doc.attr('docdate'), equals('2026-01-01'));
+        expect(doc.attr('docyear'), equals('2026'));
         expect(doc.attr('doctime'), equals('10:00:00-0700'));
-        expect(doc.attr('docdatetime'), equals('2019-01-02 10:00:00-0700'));
+        expect(doc.attr('docdatetime'), equals('2026-01-01 10:00:00-0700'));
       });
 
       test('should allow docdate to be overridden', () {
-        // NOTE Dart cannot unset SOURCE_DATE_EPOCH (Platform.environment is
-        // read-only); this test assumes it is not set, as in the Ruby test
-        // which deletes it first. Dart also has no fixed-offset DateTime,
-        // so the expected offset is derived from the input value; a UTC
-        // input additionally locks the exact 'UTC' rendering.
-        final input = DateTime(2019, 1, 2, 3, 4, 5);
         final doc = Document(
           null,
           AsciidoctorOptions(
-            inputMtime: input,
+            inputMtime: DateTime(2019, 1, 2, 3, 4, 5),
             attributes: {'docdate': '2015-01-01'},
           ),
         );
         expect(doc.attr('docdate'), equals('2015-01-01'));
         expect(doc.attr('docyear'), equals('2015'));
-        final offset = input.timeZoneOffset;
-        final zone = offset == Duration.zero
-            ? 'UTC'
-            : '${offset.isNegative ? '-' : '+'}'
-                  '${offset.inHours.abs().toString().padLeft(2, '0')}'
-                  '${(offset.inMinutes.abs() % 60).toString().padLeft(2, '0')}';
-        expect(doc.attr('docdatetime'), equals('2015-01-01 03:04:05 $zone'));
-
-        final utcDoc = Document(
-          null,
-          AsciidoctorOptions(
-            inputMtime: DateTime.utc(2019, 1, 2, 3, 4, 5),
-            attributes: {'docdate': '2015-01-01'},
-          ),
-        );
-        expect(utcDoc.attr('docdatetime'), equals('2015-01-01 03:04:05 UTC'));
+        expect(doc.attr('docdatetime'), equals('2015-01-01 00:00:00 UTC'));
       });
     });
   });

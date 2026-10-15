@@ -12,7 +12,11 @@ import 'package:ptome/ptome.dart';
 import 'package:ptome/src/epub3/epub3.dart';
 import 'package:test/test.dart';
 
-/// epubcheck's jar (`EPUBCHECK_JAR`, else where the work cache keeps it).
+import 'support/oracles.dart';
+
+/// epubcheck's jar (`EPUBCHECK_JAR`, else where the work cache keeps it),
+/// its answers recorded in test/oracles/direction.json
+/// (test/support/oracles.dart; ORACLES=record asks it again).
 final String _epubcheck =
     Platform.environment['EPUBCHECK_JAR'] ??
     '${Platform.environment['HOME']}/.cache/asciidart-work/tools/'
@@ -26,7 +30,11 @@ const String _vertical =
 const String _rtl =
     '= كتاب\n:lang: ar\n:dir: rtl\n:doctype: book\n\n== الفصل\n\nنص.\n';
 
+/// EPUBCheck, which its answers depend on.
+const String _epubcheckVersion = 'EPUBCheck 5.4.0';
+
 void main() {
+  final recorded = Oracle('direction');
   setUpAll(registerEpub3);
 
   group('HTML', () {
@@ -135,10 +143,29 @@ void main() {
     });
 
     test('epubcheck passes them', () {
-      for (final source in [_rtl, _vertical]) {
-        final r = Process.runSync('java', ['-jar', _epubcheck, book(source)]);
-        expect(r.exitCode, 0, reason: '${r.stdout}${r.stderr}');
+      for (final (name, source) in [('rtl', _rtl), ('vertical', _vertical)]) {
+        final epub = File(book(source)).readAsBytesSync();
+        final [exitCode, output] = recorded.json<List<Object?>>(
+          name,
+          inputs: [_epubcheckVersion, epub],
+          oracle: () {
+            final dir = Directory.systemTemp.createTempSync('epubcheck.');
+            try {
+              final file = File('${dir.path}/book.epub')
+                ..writeAsBytesSync(epub);
+              final r = Process.runSync('java', [
+                '-jar',
+                _epubcheck,
+                file.path,
+              ]);
+              return [r.exitCode, '${r.stdout}${r.stderr}'];
+            } finally {
+              dir.deleteSync(recursive: true);
+            }
+          },
+        );
+        expect(exitCode, 0, reason: '$output');
       }
-    }, skip: File(_epubcheck).existsSync() ? false : 'needs epubcheck');
+    });
   });
 }

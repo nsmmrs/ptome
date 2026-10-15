@@ -1,7 +1,8 @@
 // `:pdf-ua:`: a tagged PDF (FEAT-cs3j22), its structure tree read back
-// with Poppler's pdfinfo and checked against PDF/UA-1 by veraPDF where
-// they are installed (VERAPDF, else veraPDF in the work folder or on the
-// path).
+// with Poppler's pdfinfo and checked against PDF/UA-1 by veraPDF, their
+// answers recorded in test/oracles/pdf_pdf_ua.json.gz
+// (test/support/oracles.dart; ORACLES=record asks them again, veraPDF
+// from VERAPDF, else the work folder, else the path).
 @TestOn('vm')
 @Tags(['slow'])
 library;
@@ -13,30 +14,23 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
+
 import '../vendored_fonts.dart';
 
 late Directory _dir;
 
-/// The first of the commands named that runs (asked its version with
-/// [flag]), or null.
-String? _tool(List<String> candidates, {String flag = '--version'}) {
-  for (final command in candidates) {
-    try {
-      if (Process.runSync(command, [flag]).exitCode == 0) return command;
-    } on ProcessException {
-      continue;
-    }
-  }
-  return null;
-}
+late final Oracle _recorded;
 
-final String? _pdfinfo = _tool(['pdfinfo'], flag: '-v');
+/// veraPDF, which its answers depend on.
+const String _veraPdfVersion = 'veraPDF 1.30.3';
 
-final String? _verapdf = _tool([
-  ?Platform.environment['VERAPDF'],
-  '${Platform.environment['HOME']}/.cache/asciidart-work/verapdf/verapdf',
-  'verapdf',
-]);
+/// veraPDF's command: VERAPDF, else the work folder's, else the path's.
+String get _verapdf =>
+    Platform.environment['VERAPDF'] ??
+    ['${Platform.environment['HOME']}/.cache/asciidart-work/verapdf/verapdf']
+        .firstWhere((path) => File(path).existsSync(), orElse: () => 'verapdf');
 
 const String _source = '''
 = A Tagged Document
@@ -92,6 +86,7 @@ String _convert() {
 }
 
 void main() {
+  _recorded = Oracle('pdf_pdf_ua', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();
@@ -102,19 +97,12 @@ void main() {
   test(
     'the structure tree: headings, paragraphs, lists, a table, a figure',
     () {
-      final pdfinfo = _pdfinfo;
-      if (pdfinfo == null) {
-        markTestSkipped('needs pdfinfo');
-        return;
-      }
       final tree =
-          Process.runSync(pdfinfo, ['-struct-text', _convert()]).stdout
+          recordedRunSync(_recorded, 'pdfinfo', [
+                '-struct-text',
+                _convert(),
+              ]).stdout
               as String;
-      // (An older Poppler's pdfinfo prints no structure tree.)
-      if (!tree.trimLeft().startsWith('Document')) {
-        markTestSkipped("needs a pdfinfo that prints a PDF's structure tree");
-        return;
-      }
       final roles = [
         for (final line in tree.split('\n'))
           if (RegExp(r'^\s*([A-Z][A-Za-z0-9]*)').firstMatch(line) case final m?)
@@ -134,13 +122,8 @@ void main() {
   );
 
   test("a block's and a span's own language marked (PDF/UA-1 7.2)", () {
-    final qpdf = _tool(['qpdf']);
-    if (qpdf == null) {
-      markTestSkipped('needs qpdf');
-      return;
-    }
     final out = '${_dir.path}/lang.pdf';
-    Process.runSync(qpdf, [
+    recordedRunSync(_recorded, 'qpdf', [
       '--qdf',
       '--object-streams=disable',
       _convert(),
@@ -155,20 +138,28 @@ void main() {
   });
 
   test('PDF/UA-1, as veraPDF checks it', () {
-    final verapdf = _verapdf;
-    if (verapdf == null) {
-      markTestSkipped('needs veraPDF');
-      return;
-    }
-    final report =
-        Process.runSync(verapdf, [
-              '--flavour',
-              'ua1',
-              '--format',
-              'text',
-              _convert(),
-            ]).stdout
-            as String;
+    final pdf = File(_convert()).readAsBytesSync();
+    final report = _recorded.answer(
+      'PDF/UA-1',
+      inputs: [_veraPdfVersion, pdf],
+      oracle: () {
+        final dir = Directory.systemTemp.createTempSync('verapdf.');
+        try {
+          final file = File('${dir.path}/ua.pdf')..writeAsBytesSync(pdf);
+          return Process.runSync(_verapdf, [
+                '--flavour',
+                'ua1',
+                '--format',
+                'text',
+                file.path,
+              ]).stdout
+              as String;
+        } finally {
+          dir.deleteSync(recursive: true);
+        }
+      },
+    );
+    // (veraPDF names the file it checked: the verdict comes first.)
     expect(report.trim(), startsWith('PASS'));
   });
 }

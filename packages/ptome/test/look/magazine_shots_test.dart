@@ -10,11 +10,16 @@
 // The faces are the ones `ptome doctor --look <look>` installs, given to
 // the browsers by @font-face (no network); a fresh Chromium profile gets
 // the hyphenation dictionaries of this user's (it has none of its own).
-// Skipped without the browsers (CHROMIUM_PATH, FIREFOX_PATH) or the faces.
+//
+// The comparisons are recorded in test/oracles/magazine_shots.json, each
+// keyed by the page ptome writes, the reference and the images, so the
+// test needs no browser: ORACLES=record takes the shots again (with the
+// browsers, CHROMIUM_PATH and FIREFOX_PATH, ImageMagick and the faces
+// installed, and the machine's fonts seen: PTOME_SYSTEM_FONTS unset).
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:ptome/src/cli/doctor.dart';
@@ -24,6 +29,7 @@ import 'package:ptome/src/look/loader.dart';
 import 'package:test/test.dart';
 
 import '../support/marionette.dart';
+import '../support/oracles.dart';
 
 const String _sample = 'test/look/magazine';
 
@@ -42,6 +48,12 @@ const int _width = 1280;
 
 final bool _update = Platform.environment['MAGAZINE_SHOTS_UPDATE'] == '1';
 
+/// The browsers, which their answers depend on.
+const Map<String, String> _versions = {
+  'chromium': 'Chromium 152.0.7977.82, ImageMagick 7.1.2-31',
+  'firefox': 'Firefox 157.0.1, ImageMagick 7.1.2-31',
+};
+
 /// A browser's executable: [variable]'s value, else [fallbacks]'
 /// first that exists.
 String? _browser(String variable, List<String> fallbacks) {
@@ -53,13 +65,13 @@ String? _browser(String variable, List<String> fallbacks) {
   return null;
 }
 
-final String? _chromium = _browser('CHROMIUM_PATH', ['/usr/bin/chromium']);
-final String? _firefox = _browser('FIREFOX_PATH', [
-  '/usr/bin/firefox',
-  '${Platform.environment['HOME']}/.cache/asciidart-work/firefox/firefox',
-]);
-
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
+/// The browser [name]'s executable, looked for when recording only.
+String? _browserFor(String name) => name == 'chromium'
+    ? _browser('CHROMIUM_PATH', ['/usr/bin/chromium'])
+    : _browser('FIREFOX_PATH', [
+        '/usr/bin/firefox',
+        '${Platform.environment['HOME']}/.cache/asciidart-work/firefox/firefox',
+      ]);
 
 /// The @font-face rules giving the browsers the looks' faces from their
 /// installed files (a family set in an optical size, `Bodoni Moda 28pt`,
@@ -89,13 +101,7 @@ String? _fontFaces() {
 late Directory _dir;
 
 void main() {
-  final faces = _fontFaces();
-  final missing = [
-    if (faces == null) "the looks' faces (ptome doctor --look …)",
-    if (_chromium == null && _firefox == null) 'Chromium or Firefox',
-    if (!_has('magick')) 'ImageMagick',
-  ];
-
+  final recorded = Oracle('magazine_shots');
   setUpAll(() {
     _dir = Directory.systemTemp.createTempSync('magazine-shots');
     for (final image in ['coast.jpg', 'lighthouse.png']) {
@@ -108,73 +114,43 @@ void main() {
   });
 
   for (final look in _looks) {
-    for (final (name, browser) in [
-      ('chromium', _chromium),
-      ('firefox', _firefox),
-    ]) {
-      test(
-        '$look in $name',
-        () async {
-          final page = _page(look, faces!);
-          final shot = '${_dir.path}/$look-$name.png';
-          final golden = File('$_sample/shots/$look-$name.png');
-          Future<void> take() async {
-            name == 'chromium'
-                ? _chromiumShot(browser!, page, shot)
-                : await _firefoxShot(browser!, page, shot);
-            // (In 64 colors: the references stay small.)
-            Process.runSync('magick', [
-              shot,
-              '+dither',
-              '-colors',
-              '64',
-              'PNG8:$shot',
-            ]);
-          }
-
-          await take();
-          if (_update) {
-            golden.parent.createSync(recursive: true);
-            File(shot).copySync(golden.path);
-            return;
-          }
-          expect(
-            golden.existsSync(),
-            isTrue,
-            reason: 'no reference: run with MAGAZINE_SHOTS_UPDATE=1',
-          );
-          // (Taken again when it differs: Chromium under load may take it
-          // before the faces are loaded; Firefox waits for them.)
-          var (differing, total) = _difference(golden.path, shot);
-          for (
-            var retry = 0;
-            retry < 2 && differing / total >= 0.002;
-            retry++
-          ) {
-            await take();
-            (differing, total) = _difference(golden.path, shot);
-          }
-          expect(
-            differing / total,
-            lessThan(0.002),
-            reason:
-                '$differing of $total pixels differ from ${golden.path} '
-                '(now $shot); a change on purpose: MAGAZINE_SHOTS_UPDATE=1',
-          );
-        },
-        skip: missing.isNotEmpty
-            ? 'needs ${missing.join(', ')}'
-            : browser == null
-            ? 'needs $name'
-            : false,
-      );
+    for (final name in const ['chromium', 'firefox']) {
+      test('$look in $name', () async {
+        final html = _converted(look);
+        final golden = File('$_sample/shots/$look-$name.png');
+        expect(
+          golden.existsSync(),
+          isTrue,
+          reason: 'no reference: run with MAGAZINE_SHOTS_UPDATE=1',
+        );
+        final verdict = await recorded.answerLater(
+          '$look in $name',
+          inputs: [
+            _versions[name]!,
+            html,
+            golden.readAsBytesSync(),
+            for (final image in ['coast.jpg', 'lighthouse.png'])
+              File('$_sample/$image').readAsBytesSync(),
+          ],
+          oracle: () async =>
+              jsonEncode(await _compared(look, name, html, golden)),
+        );
+        final [differing, total] = (jsonDecode(verdict) as List<Object?>)
+            .cast<int>();
+        expect(
+          differing / total,
+          lessThan(0.002),
+          reason:
+              '$differing of $total pixels differ from ${golden.path}; '
+              'a change on purpose: MAGAZINE_SHOTS_UPDATE=1 ORACLES=record',
+        );
+      });
     }
   }
 }
 
-/// The sample in [look] as a page in the temporary folder, its faces
-/// given by [faces]; its path.
-String _page(String look, String faces) {
+/// The sample in [look] as ptome writes it (reproducible: no dates).
+String _converted(String look) {
   final out = '${_dir.path}/$look.html';
   convertFile(
     '$_sample/feature.adoc',
@@ -184,7 +160,54 @@ String _page(String look, String faces) {
       attributes: {'look': look, 'webfonts!': '', 'reproducible': ''},
     ),
   );
-  final html = File(out).readAsStringSync();
+  return File(out).readAsStringSync();
+}
+
+/// [html] in [look] screenshot in the browser [name] and
+/// compared with [golden] (replaced by the shot when updating): how many
+/// pixels differ, and how many there are.
+Future<List<int>> _compared(
+  String look,
+  String name,
+  String html,
+  File golden,
+) async {
+  final faces = _fontFaces();
+  if (faces == null) {
+    throw StateError("the looks' faces: ptome doctor --look …");
+  }
+  final browser = _browserFor(name);
+  if (browser == null) throw StateError('no $name');
+  final page = _page(look, html, faces);
+  final shot = '${_dir.path}/$look-$name.png';
+  Future<void> take() async {
+    name == 'chromium'
+        ? _chromiumShot(browser, page, shot)
+        : await _firefoxShot(browser, page, shot);
+    // (In 64 colors: the references stay small.)
+    Process.runSync('magick', [shot, '+dither', '-colors', '64', 'PNG8:$shot']);
+  }
+
+  await take();
+  if (_update) {
+    golden.parent.createSync(recursive: true);
+    File(shot).copySync(golden.path);
+    return [0, 1];
+  }
+  // (Taken again when it differs: Chromium under load may take it before
+  // the faces are loaded; Firefox waits for them. Only when recording.)
+  var (differing, total) = _difference(golden.path, shot);
+  for (var retry = 0; retry < 2 && differing / total >= 0.002; retry++) {
+    await take();
+    (differing, total) = _difference(golden.path, shot);
+  }
+  return [differing, total];
+}
+
+/// [html], the sample in [look], as a page in the temporary folder, its
+/// faces given by [faces]; its path.
+String _page(String look, String html, String faces) {
+  final out = '${_dir.path}/$look.html';
   File(out).writeAsStringSync(
     // (Chromium's window is taller than the page: the page's own height,
     // not the window's, for a frame around the body.)

@@ -1,5 +1,7 @@
 // Han, kana and Hangul no font of the theme has: the installed Noto CJK
-// face of the text's language's region (FEAT-stxzq9).
+// face of the text's language's region (FEAT-stxzq9). The faces installed
+// are the test's own: subsets in test/pdf/fixtures/fonts/cjk (its
+// README), never the machine's.
 @TestOn('vm')
 library;
 
@@ -10,14 +12,17 @@ import 'package:ptome/src/internal.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import '../support/oracles.dart';
+import '../support/pdf_tools.dart';
+
 const String _fonts = '../plain_typesetting/test/fonts';
 
-/// Poppler's pdffonts.
-final bool _poppler =
-    Process.runSync('which', ['pdffonts']).exitCode == 0 &&
-    '${Process.runSync('pdffonts', ['-v']).stderr}'.contains('Poppler');
+/// The tools' runs, recorded (test/oracles/pdf_cjk_fonts.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
 
 void main() {
+  _recorded = Oracle('pdf_cjk_fonts', compressed: true);
   setUpAll(registerPdf);
   late Directory dir;
   setUp(() => dir = Directory.systemTemp.createTempSync('cjk_fonts_test.'));
@@ -117,10 +122,13 @@ base:
     });
   });
 
-  test(
-    "each text in its language's region's face, serif beside serif",
-    () {
-      convert('''
+  test("each text in its language's region's face, serif beside serif", () {
+    // (Noto Serif CJK's five regions and Noto Sans CJK SC Bold, installed.)
+    Fonts.installed = FontIndex([
+      Directory('test/pdf/fixtures/fonts/cjk').absolute.path,
+    ], cacheFile: '${dir.path}/cache.tsv');
+    addTearDown(() => Fonts.installed = null);
+    convert('''
 = 字体
 :lang: zh-Hans
 
@@ -137,24 +145,19 @@ base:
 
 Inline [lang=zh-HK]#直骨今#.
 ''');
-      final fonts =
-          Process.runSync('pdffonts', ['${dir.path}/doc.pdf']).stdout as String;
-      for (final face in [
-        'NotoSerifCJKsc-Regular',
-        'NotoSerifCJKtc-Regular',
-        'NotoSerifCJKjp-Regular',
-        'NotoSerifCJKkr-Regular',
-        'NotoSerifCJKhk-Regular',
-        // (The title, in the theme's sans.)
-        'NotoSansCJKsc-Bold',
-      ]) {
-        expect(fonts, contains(face));
-      }
-    },
-    skip: !_poppler
-        ? 'needs pdffonts'
-        : Fonts.installed.find('Noto Serif CJK SC') == null
-        ? 'needs Noto Serif CJK'
-        : false,
-  );
+    final fonts =
+        recordedRunSync(_recorded, 'pdffonts', ['${dir.path}/doc.pdf']).stdout
+            as String;
+    for (final face in [
+      'NotoSerifCJKsc-Regular',
+      'NotoSerifCJKtc-Regular',
+      'NotoSerifCJKjp-Regular',
+      'NotoSerifCJKkr-Regular',
+      'NotoSerifCJKhk-Regular',
+      // (The title, in the theme's sans.)
+      'NotoSansCJKsc-Bold',
+    ]) {
+      expect(fonts, contains(face));
+    }
+  });
 }

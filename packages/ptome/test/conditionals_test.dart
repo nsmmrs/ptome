@@ -13,6 +13,9 @@ import 'package:ptome/src/multipage.dart';
 import 'package:ptome/src/pdf/pdf.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 import 'vendored_fonts.dart';
 
 const _source = '''
@@ -31,8 +34,6 @@ ifdef::basebackend-docbook[BASE-DOCBOOK]
 ifndef::backend-pdf[NOT-PDF]
 ''';
 
-final bool _pdftotext = Process.runSync('which', ['pdftotext']).exitCode == 0;
-
 /// The markers [backend] keeps, from its output's text.
 Set<String> _markers(String backend) {
   final dir = Directory.systemTemp.createTempSync('conditionals_test.');
@@ -50,7 +51,8 @@ Set<String> _markers(String backend) {
     AsciidoctorOptions(safe: SafeMode.unsafe, backend: backend, toFile: out),
   );
   final text = switch (backend) {
-    'pdf' => Process.runSync('pdftotext', [out, '-']).stdout as String,
+    'pdf' =>
+      recordedRunSync(_recorded, 'pdftotext', [out, '-']).stdout as String,
     'epub3' => [
       for (final entry in readZip(File(out).readAsBytesSync()))
         if (entry.name.endsWith('.xhtml')) String.fromCharCodes(entry.bytes),
@@ -66,7 +68,12 @@ Set<String> _markers(String backend) {
   };
 }
 
+/// The tools' runs, recorded (test/oracles/conditionals.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('conditionals', compressed: true);
   setUpAll(useVendoredFonts);
   setUpAll(() {
     registerPdf();
@@ -97,5 +104,5 @@ void main() {
   // As asciidoctor-pdf sets it, the PDF's base backend is html.
   test('pdf', () {
     expect(_markers('pdf'), {'PDF-ONLY', 'BASE-HTML'});
-  }, skip: _pdftotext ? false : 'needs pdftotext');
+  });
 }
