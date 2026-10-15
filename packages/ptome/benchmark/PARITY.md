@@ -119,7 +119,9 @@ reproducers of each.
   number of pixels or a percentage (another value is left out), an empty
   `toc-title` gives the navigation Asciidoctor's default title, and a
   link to a path from a website's root goes to its id in the book, or is
-  text. With `source-highlighter=highlight.js`, an EPUB's code is
+  text; a chapter's title element holds the title's text alone, where the
+  gem writes its emphasis there too (not under `asciidoctor-compat`, which
+  the corpus holds to the gem's). With `source-highlighter=highlight.js`, an EPUB's code is
   highlighted at conversion and the theme's stylesheet is in the EPUB
   (`styles/highlightjs.css`), where the gem links highlight.js's
   stylesheet and scripts outside it (`test/upstream_fixes/epub-output-*`).

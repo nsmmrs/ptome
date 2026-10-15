@@ -1,0 +1,6 @@
+= Book
+:doctype: book
+
+== The _Albatross_
+
+Text.

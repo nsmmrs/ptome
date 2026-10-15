@@ -23,7 +23,8 @@
 ///
 /// Ptome repairs XHTML the gem writes invalid (benchmark/PARITY.md):
 /// the gem's chapters are compared with those repairs made (tags
-/// balanced, an image width that isn't a number of pixels left out).
+/// balanced, an image width that isn't a number of pixels left out, no
+/// markup in a chapter's title element).
 ///
 /// Exits 1 when any pair differs; the differences are written to stdout.
 library;
@@ -236,10 +237,15 @@ final RegExp _landmarks = RegExp(r'<nav epub:type="landmarks"[\s\S]*?</nav>');
 
 /// [xhtml] (a chapter of the gem's) with Ptome's repairs.
 String _repaired(String xhtml) => balanceXml(
-  xhtml.replaceAllMapped(
-    RegExp('(<img [^>]*?) width="([^"]*)"'),
-    (m) => RegExp(r'^\d+$').hasMatch(m[2]!) ? m[0]! : m[1]!,
-  ),
+  xhtml
+      .replaceAllMapped(
+        RegExp('(<img [^>]*?) width="([^"]*)"'),
+        (m) => RegExp(r'^\d+$').hasMatch(m[2]!) ? m[0]! : m[1]!,
+      )
+      .replaceAllMapped(
+        RegExp('<title>(.*?)</title>'),
+        (m) => '<title>${m[1]!.replaceAll(RegExp('<[^>]+>'), '')}</title>',
+      ),
 );
 
 bool _same(List<int> a, List<int> b) {

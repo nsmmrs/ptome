@@ -1,0 +1,7 @@
+description: "a chapter's title element holds its text alone. The XHTML title element allows no markup, but asciidoctor-epub3 2.3.0 writes a chapter title's emphasis into it (<title>The <em>Albatross</em></title>), which EPUBCheck rejects (RSC-005); ptome writes the title's text there and keeps the emphasis in the heading. Found building Moby-Dick for the showcase corpus (chapter LII, The Albatross). Fails on the gem.  The gem's EPUB converter is a separate command: set ASCIIDOCTOR_EPUB3_EXE to it when ASCIIDOCTOR_EXE is the Ruby CLI."
+format: epub3
+epub_excludes:
+  - {files: "EPUB/_the_albatross.xhtml", pattern: "<title>[^<]*<em>"}
+epub_contains:
+  - {files: "EPUB/_the_albatross.xhtml", pattern: "<title>The Albatross</title>"}
+  - {files: "EPUB/_the_albatross.xhtml", pattern: "The <em>Albatross</em>"}

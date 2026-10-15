@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- EPUB: a chapter's title element holds the title's text alone; with
+  emphasis in a chapter's title (`== The _Albatross_`) asciidoctor-epub3
+  writes the tags there too, which EPUBCheck rejects
+  (`test/upstream_fixes/epub-output-3`); not under `asciidoctor-compat`.
 - PDF, for plays (FEAT-d1sdfw): `role_<role>_text_indent: continue`
   steps a verse line shared between speakers to where the line before it
   ended, counted once by logical line numbers;
@@ -18,7 +22,9 @@ Asciidoctor project.
   heads, speakers' names and stage directions out of the count;
   `description_list_term_indent` sets a run-in term in from the lines
   after it (the First Folio's speech prefixes). `ptome doctor` installs
-  IM Fell DW Pica for a look that names it.
+  IM Fell DW Pica, UnifrakturMaguntia and Noto Serif Hebrew for a look
+  that names them, and the fonts a look falls back to (`font:
+  fallbacks:`).
 - PDF: Ptome's `mirror` role sets a block mirrored, left to right
   (`[verse.mirror]`, Jabberwocky as Through the Looking-Glass prints it;
   FEAT-yq6kff), kept whole on a page; not under `asciidoctor-compat`.

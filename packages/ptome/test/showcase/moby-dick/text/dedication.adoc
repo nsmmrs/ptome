@@ -1,0 +1,11 @@
+[#dedication.dedication%notitle%noheader%nofooter]
+== Dedication
+
+[.text-center]
+[.dedication-line]#In token# +
+[.dedication-line]#of my admiration for his genius,# +
+[.inscribed]#This Book is Inscribed# +
+[.dedication-line]#to# +
+[.dedication-line.hawthorne]#Nathaniel Hawthorne.#
+
+<<<

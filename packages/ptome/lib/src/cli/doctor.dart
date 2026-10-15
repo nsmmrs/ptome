@@ -355,6 +355,29 @@ final List<NeededFont> lookFonts = [
     license: 'SIL Open Font License 1.1',
   ),
   const NeededFont(
+    name: 'Noto Serif Hebrew',
+    usedBy: "the showcase's Moby-Dick look (the Etymology's Hebrew)",
+    families: ['Noto Serif Hebrew'],
+    styles: [FontStyle.normal, FontStyle.bold],
+    fileNames: {},
+    source: GoogleFonts('Noto Serif Hebrew', {
+      FontStyle.normal: 'static/NotoSerifHebrew-Regular.ttf',
+      FontStyle.bold: 'static/NotoSerifHebrew-Bold.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'UnifrakturMaguntia',
+    usedBy: "the showcase's Moby-Dick look (the dedication's blackletter)",
+    families: ['UnifrakturMaguntia'],
+    styles: [FontStyle.normal],
+    fileNames: {},
+    source: GoogleFonts('UnifrakturMaguntia', {
+      FontStyle.normal: 'UnifrakturMaguntia-Regular.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
     name: 'Fira Sans Condensed',
     usedBy: 'the tech-book look (Myriad Condensed)',
     families: ['Fira Sans Condensed'],
@@ -598,6 +621,13 @@ Set<String> lookFamilies(Look look) {
       case YamlScalar(value: final String family)
           when key == 'family' || key.endsWith('font_family'):
         families.add(family);
+      // (The fonts a look falls back to for characters its faces lack.)
+      case YamlList(:final nodes) when key == 'fallbacks':
+        for (final node in nodes) {
+          if (node case YamlScalar(value: final String family)) {
+            families.add(family);
+          }
+        }
       case _:
     }
   }

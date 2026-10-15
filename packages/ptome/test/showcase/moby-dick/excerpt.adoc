@@ -1,0 +1,16 @@
+= Moby-Dick: the Extracts and Midnight, Forecastle
+:doctype: book
+:lang: en
+:look: moby-dick
+:looksdir: {docdir}
+:notitle:
+
+// A novel's apparatus (doc/showcase.md): the Extracts' quotations with
+// their sources at the right, and the play-script chapter's speakers and
+// stage directions.
+
+include::text/extracts.adoc[tag=extracts]
+
+== Midnight, Forecastle
+
+include::text/chapter-40.adoc[tag=forecastle]

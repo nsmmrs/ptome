@@ -294,22 +294,43 @@ final class _Converter {
     switch (element.localName) {
       case 'section' || 'article':
         final id = _id(element);
+        // (Its heading: a heading element, or a header of a paragraph
+        // alone, as Standard Ebooks heads a subchapter.)
         final heading = element.childElements
             .where(
-              (e) => const {
-                'h1',
-                'h2',
-                'h3',
-                'h4',
-                'h5',
-                'h6',
-                'hgroup',
-              }.contains(e.localName),
+              (e) =>
+                  const {
+                    'h1',
+                    'h2',
+                    'h3',
+                    'h4',
+                    'h5',
+                    'h6',
+                    'hgroup',
+                  }.contains(e.localName) ||
+                  (e.localName == 'header' &&
+                      e.childElements.length == 1 &&
+                      e.childElements.single.localName == 'p'),
             )
             .firstOrNull;
         if (heading == null) {
           // (A part's wrapper in a chapter's file: its heading is in the
-          // part's own file.)
+          // part's own file. Another section without a heading, a
+          // dedication, an untitled section of its own.)
+          if (!types.contains('part') && !types.contains('chapter')) {
+            final roles = [for (final type in types) type.split(':').last];
+            _blank(out);
+            out
+              ..writeln(
+                '[${id == null ? '' : '#$id'}'
+                '${[for (final role in roles) '.$role'].join()}%notitle]',
+              )
+              ..writeln(
+                '${'=' * ((depth + 1 - partsOffset).clamp(0, 5) + 1)} '
+                '${roles.isEmpty ? 'Untitled' : _capitalized(roles.first)}',
+              );
+            _blank(out);
+          }
           _blocks(element.childElements, out, depth: depth + 1);
           return;
         }
@@ -444,7 +465,7 @@ final class _Converter {
     final roles = [for (final type in types) type.split(':').last];
     _blank(out);
     out.writeln(
-      '[quote${cite == null ? '' : ', ${_attribute(_inline(cite).trim())}'}]',
+      '[quote${cite == null ? '' : ', ${_citation(_inline(cite).trim())}'}]',
     );
     if (roles.isNotEmpty) {
       out.writeln('[${[for (final role in roles) '.$role'].join()}]');
@@ -500,7 +521,7 @@ final class _Converter {
     collect(poem);
     _blank(out);
     final attribution = switch (cite) {
-      final XmlElement c => ', ${_attribute(_inline(c).trim())}',
+      final XmlElement c => ', ${_citation(_inline(c).trim())}',
       null => '',
     };
     out.writeln('[verse$attribution]');
@@ -901,6 +922,15 @@ String _escape(String text) {
       .replaceAll('(R)', '(&#82;)')
       .replaceAll('(TM)', '(&#84;M)');
 }
+
+/// [text] with its first letter a capital.
+String _capitalized(String text) =>
+    text.isEmpty ? text : '${text[0].toUpperCase()}${text.substring(1)}';
+
+/// [text] as a quotation's attribution: single-quoted, so that its
+/// markup (a title's italics) is converted, as a double-quoted value's
+/// isn't.
+String _citation(String text) => "'${text.replaceAll("'", r"\'")}'";
 
 /// [text] as an attribute value: quoted.
 String _attribute(String text) => '"${text.replaceAll('"', r'\"')}"';

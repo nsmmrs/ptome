@@ -1,0 +1,5 @@
+# The images the work uses that are too large to commit, fetched by
+# tool/showcase.dart into the work cache and checked by their SHA-256.
+- name: queequegs-mark.svg
+  url: https://raw.githubusercontent.com/standardebooks/herman-melville_moby-dick/013b51e2d9d6bb28b1d054bfc30beeeff4b85480/src/epub/images/queequegs-mark.svg
+  sha256: 9a707f3232dece2b00f8d1b8f39851a0a31831b9fa2d7f6901c86969b635640f

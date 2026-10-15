@@ -722,8 +722,14 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         : '';
 
     // The index's anchors in the title belong to the heading alone (the
-    // title element allows no markup; an id must be unique).
+    // title element allows no markup; an id must be unique). Nor does the
+    // rest of its markup: the title's text alone, where the gem writes
+    // its emphasis and links there too, which EPUBCheck rejects (not
+    // under asciidoctor-compat).
     chapterTitle = chapterTitle.replaceAll(_indexAnchorRx, '');
+    if (!asciidoctorCompat(document, CompatFormat.epub)) {
+      chapterTitle = chapterTitle.replaceAll(_tagRx, '');
+    }
     final lang = _s(document.attr('lang', 'en'));
     final head =
         "<?xml version='1.0' encoding='utf-8'?>\n"
@@ -2781,6 +2787,9 @@ String _fromHtmlSpecialChars(String value) =>
 
 /// An anchor the index links to, in converted text.
 final RegExp _indexAnchorRx = RegExp(r'<a id="_indexterm_\d+"></a>');
+
+/// A tag, for text that allows none.
+final RegExp _tagRx = RegExp('<[^>]+>');
 
 /// [value] as a quoted XML attribute value (Ruby's `encode xml: :attr`).
 String _xmlAttr(String value) {

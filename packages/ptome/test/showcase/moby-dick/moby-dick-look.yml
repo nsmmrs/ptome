@@ -1,0 +1,113 @@
+# Moby-Dick after Harper & Brothers' first American edition (New York,
+# 1851): a duodecimo of about 5 × 7¾ in, a Scotch modern face, 10½ on
+# 12½, justified; the chapters running on, each under "CHAPTER I." with
+# its title in smaller capitals below; the chapter's title in capitals
+# in the running head on both pages, the folio outside it; the extracts'
+# sources in italic at the right; the play-script chapters' speakers in
+# small capitals, their directions in italic.
+#
+# Old Standard TT stands in for the Scotch modern the book was set in,
+# UnifrakturMaguntia for the dedication's blackletter, Noto Serif Hebrew
+# for the Etymology's Hebrew (`ptome doctor --look moby-dick --looksdir
+# test/showcase/moby-dick`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
+    display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
+  size:
+    text: { print: 10.5pt, screen: 19px }
+    headings: { print: [20pt, 11pt, 10.5pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.2, screen: 1.55 }
+  measure: { screen: 33em }
+  paragraph: { signal: indent, indent: { print: 1em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [5in, 7.75in], margin: [0.7in, 0.55in, 0.6in, 0.65in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    # (The Etymology's Hebrew.)
+    fallbacks: [Noto Serif Hebrew]
+  heading:
+    chapter_break_before: auto
+    h2:
+      content: "{{#numeral}}CHAPTER {{numeral}}.\n{{/numeral}}<font size=\"8\">{{title}}.</font>"
+      font_size: 11
+      text_align: center
+      text_transform: uppercase
+      margin_top: 26
+      margin_page_top: 12
+      margin_bottom: 12
+      line_height: 1.9
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1em
+  section:
+    role:
+      dedication:
+        vertical_align: middle
+        line_height: 2.6
+  quote:
+    border_left_width: 0
+    cite_font_color: '1A1A1A'
+
+    padding: [0, 12, 0, 12]
+    font_size: 9.5
+    cite_text_align: right
+    cite_font_style: italic
+  verse:
+    border_left_width: 0
+    padding: [0, 0, 0, 24]
+    font_size: 9.5
+  table:
+    border_width: 0
+    grid_width: 0
+  role:
+    sc: { font_variant: small-caps }
+    # (The dedication's lines: letterspaced capitals, the inscription in
+    # blackletter, as the book sets them.)
+    dedication-line: { text_transform: uppercase, font_size: 7, character_spacing: 1.2 }
+    hawthorne: { font_size: 10 }
+    inscribed: { font_family: UnifrakturMaguntia, font_size: 15 }
+    persona: { text_align: center, margin_bottom: 2 }
+    stage-direction: { font_style: italic, text_align: center, margin_bottom: 4 }
+    running-head: { text_transform: uppercase, font_size: 7.5, character_spacing: 0.6 }
+  footnotes:
+    font_size: 8
+  header:
+    height: 0.5in
+    vertical_align: bottom
+    font_size: 8
+    recto:
+      left: { content: '' }
+      center: { content: '[.running-head]#{chapter-title}#' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: '[.running-head]#{chapter-title}#' }
+      right: { content: '' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Old Standard TT:400,400italic,700
+  - UnifrakturMaguntia
+css: |
+  #content h2{text-align:center;text-transform:uppercase}
+  .sc{font-variant:small-caps}
+  .dedication-line{text-transform:uppercase;letter-spacing:.15em;font-size:70%}
+  .inscribed{font-family:UnifrakturMaguntia,serif;font-size:140%}
+  .paragraph.persona p{text-align:center}
+  .paragraph.stage-direction p{text-align:center;font-style:italic}
+  .quoteblock .attribution{text-align:right;font-style:italic}
+epub-css: |
+  .sc{font-variant:small-caps}
+  .paragraph.persona p{text-align:center}
+  .paragraph.stage-direction p{text-align:center;font-style:italic}
