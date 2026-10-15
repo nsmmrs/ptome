@@ -22,6 +22,7 @@ import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
 import 'package:path/path.dart' as p;
+import 'package:plain_compression/plain_compression.dart' show readZip;
 import 'package:ptome/io.dart';
 import 'package:ptome/ptome.dart';
 import 'package:ptome/src/font_index.dart';
@@ -366,11 +367,10 @@ List<List<int>>? _pages(List<int> pdf) {
 
 /// How the files in [epub] compare with those in [golden]: `identical` (the
 /// same names and bytes, generator stamps aside), or the first that
-/// differs; null without `unzip`.
-String? compareEntries(List<int> golden, List<int> epub) {
+/// differs.
+String compareEntries(List<int> golden, List<int> epub) {
   final a = _entries(golden);
   final b = _entries(epub);
-  if (a == null || b == null) return null;
   final names = {...a.keys, ...b.keys}.toList()..sort();
   for (final name in names) {
     final (x, y) = (a[name], b[name]);
@@ -396,30 +396,8 @@ String _entryText(String name, List<int> bytes) => _isText(name)
     ? withoutGenerator(utf8.decode(bytes, allowMalformed: true))
     : base64.encode(bytes);
 
-/// The files in [epub], by their paths, unpacked once (`unzip`).
-Map<String, List<int>>? _entries(List<int> epub) {
-  final hash = sha256Of(epub);
-  final dir = p.posix.join(_scratch, 'epubs', hash);
-  if (!io.isFile(p.posix.join(dir, '.done'))) {
-    io.createDirectories(dir);
-    final file = p.posix.join(_scratch, 'epubs', '$hash.epub');
-    io.writeBytes(file, epub);
-    final unpacked = io.commandOutput('unzip', ['-q', '-o', file, '-d', dir]);
-    if (unpacked == null) return null;
-    io.writeString(p.posix.join(dir, '.done'), '');
-  }
-  final entries = <String, List<int>>{};
-  void walk(String path, String prefix) {
-    for (final entry in io.listDirectory(path)) {
-      final name = prefix.isEmpty ? entry.name : '$prefix/${entry.name}';
-      if (entry.isDirectory) {
-        walk(entry.path, name);
-      } else if (name != '.done') {
-        entries[name] = io.readBytes(entry.path);
-      }
-    }
-  }
-
-  walk(dir, '');
-  return entries;
-}
+/// The files in [epub], by their paths.
+Map<String, List<int>> _entries(List<int> epub) => {
+  for (final entry in readZip(epub))
+    if (!entry.name.endsWith('/')) entry.name: entry.bytes,
+};

@@ -161,11 +161,13 @@ jobs:
     - name: Check the package for npm (dry run, nothing is published)
       working-directory: packages/ptome/build/npm
       run: npm publish --dry-run
-    - name: Run the Dart tests on Node.js
-      run: dart test -p node -x corpus
+    - name: Run the Dart tests on Node.js (in a few programs, tool/node_tests.dart)
+      run: |
+        dart run tool/node_tests.dart
+        dart test -p node build/node_tests
     - name: Install bats
       run: sudo npm i -g bats
-    - name: Run e2e CLI tests (Node CLI)
+    - name: Run the CLI's file handling on Node (the rest is the VM's)
       env:
         ASCIIDOCTOR_EXE: test/e2e/bin/ptome-node
-      run: bats test/e2e/
+      run: bats test/e2e/cli_output_files.bats

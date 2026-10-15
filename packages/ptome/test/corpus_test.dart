@@ -30,12 +30,15 @@ void main() {
   for (final c in corpus.cases) {
     group(c.name, () {
       for (final MapEntry(key: format, value: golden) in c.goldens.entries) {
+        // (A PDF on JavaScript is compressed by Dart's own deflate, where
+        // the VM's is zlib: the hash found equal on the VM can't be its,
+        // and its pages are compared on the VM only. Its books are
+        // compared here as there, file by file.)
+        if (format == Format.pdf && _onJs) continue;
         test(
           format.name,
           skip: switch (c.defects[format]) {
             final defect? => "Asciidoctor's defect, not reproduced: $defect",
-            _ when format.expensive && _onJs =>
-              'compared by its pages or files on the Dart VM',
             _ => null,
           },
           () async {
@@ -52,20 +55,29 @@ void main() {
             }
             final hash = sha256Of(got);
             if (c.verified[format] == hash && !_recheck) return;
-            final result = format == Format.pdf
-                ? comparePages(want, got)
-                : compareEntries(want, got);
-            if (result == null) {
-              markTestSkipped(
-                format == Format.pdf ? 'needs pdftoppm' : 'needs unzip',
+            // (A PDF other than the one found equal is compared again by
+            // its pages, Poppler's, only when recording: everywhere else it
+            // fails the same way. An EPUB's files are compared here.)
+            final String result;
+            if (format == Format.epub3) {
+              result = compareEntries(want, got);
+            } else if (_recheck || _recording) {
+              result =
+                  comparePages(want, got) ??
+                  (throw StateError('comparing pages needs pdftoppm'));
+            } else {
+              fail(
+                "not the PDF found equal to ${corpus.release}'s "
+                '(ptome.yml): compare its pages again, '
+                'ORACLES=record dart test -t corpus, with Poppler installed',
               );
-              return;
             }
             if (result != 'identical') {
               fail('differs from ${corpus.release}: $result');
             }
-            // Equal: kept by its hash from now on (commit ptome.yml).
-            c.promote(corpus.release, format, hash);
+            // Equal: kept by its hash from now on, when recording (commit
+            // ptome.yml); a run doesn't write it.
+            if (_recording || _recheck) c.promote(corpus.release, format, hash);
           },
         );
       }
@@ -81,3 +93,7 @@ const _onJs = bool.fromEnvironment('dart.library.js_interop');
 /// Whether every PDF and EPUB is compared again, its hash recorded or not
 /// (`CORPUS_RECHECK=1`): after the comparison itself changes.
 final bool _recheck = io.environment['CORPUS_RECHECK'] != null;
+
+/// Whether the outside tools are asked again (ORACLES=record, as
+/// test/support/oracles.dart has it).
+final bool _recording = io.environment['ORACLES'] == 'record';
