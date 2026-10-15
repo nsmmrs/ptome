@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- Faster pages of notes in balanced columns: a column set measured with
+  no limit (a region's notes, measured for each room its text is tried
+  in) is placed once for the same children and width, and a paragraph
+  hands out the same rest for the same lines, its line breaks kept;
+  output unchanged.
+
 - A tagged table's cells spanning rows or columns carry `RowSpan` and
   `ColSpan` in their structure elements' attributes (PDF/UA-1 7.2).
 

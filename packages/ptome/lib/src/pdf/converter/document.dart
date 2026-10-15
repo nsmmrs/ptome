@@ -467,8 +467,28 @@ extension _DocumentParts on PdfConverter {
       pageLabel: (number) => _shownPage(_pageLabel(number)),
       notes: _notes,
       noteSeparator: _notes.isEmpty ? null : _footnoteSeparator(),
-      noteStreams: _layoutNoteStreams(),
-      noteStreamOf: _noteStreamOf,
+      // (`footnotes_columns`: the footnotes in that many balanced columns
+      // at the foot, as Gibbon's quarto sets them: the main series laid
+      // out as a stream of its own, which takes columns.)
+      noteStreams: [
+        if (_footnoteColumns case final columns?)
+          NoteStream(
+            PdfConverter._footnoteColumnsStream,
+            separator: _footnoteSeparator(),
+            columns: columns,
+            columnGap:
+                _length('footnotes_column_gap', _rootFontSize) ?? _rootFontSize,
+          ),
+        ..._layoutNoteStreams(),
+      ],
+      noteStreamOf: _footnoteColumns == null
+          ? _noteStreamOf
+          : {
+              for (final anchor in _notes.keys)
+                if (!_noteStreamOf.containsKey(anchor))
+                  anchor: PdfConverter._footnoteColumnsStream,
+              ..._noteStreamOf,
+            },
       // (Notes in step with their text, modern engine: the least lines of
       // text a page with notes keeps, `footnotes_text_min_lines`, and how
       // many pages after its reference's a note may start,

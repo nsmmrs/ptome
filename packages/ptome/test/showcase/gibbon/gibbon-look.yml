@@ -1,0 +1,105 @@
+# Gibbon's first volume after the early editions Strahan and Cadell
+# printed: an octavo page of about 5½ × 8¾ in in Caslon's types, 10½ on
+# 13, justified; the running head across the spread, "THE DECLINE AND
+# FALL" on the verso and "OF THE ROMAN EMPIRE." on the recto, letterspaced
+# capitals with the page number outside; each chapter on a new page under
+# "CHAP. I." and its summary in italic; the dates in the outer margin, as
+# the octavo sets its glosses; the notes at the foot in two columns, as
+# the quarto of 1776 sets them, smaller, each on its reference's page, a
+# long one going on at the foot of the next.
+#
+# Libre Caslon Text, Noto Serif for the notes' Greek, Noto Sans Math for
+# their vertical ellipsis (`ptome doctor --look gibbon --looksdir
+# test/showcase/gibbon`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
+    display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
+  size:
+    text: { print: 10pt, screen: 18px }
+    headings: { print: [18pt, 11pt, 10pt, 10pt, 10pt, 10pt] }
+  leading: { print: 1.28, screen: 1.6 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: { print: 1.2em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [5.6in, 8.8in], margin: [0.8in, 1in, 0.7in, 0.6in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    fallbacks: [Noto Serif, Noto Sans Math]
+  heading:
+    chapter_break_before: always
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1.5
+      margin_page_top: 10
+      margin_bottom: 6
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1.2em
+  role:
+    bridgehead:
+      text_align: center
+      font_style: italic
+      margin_bottom: 14
+    # (The dates in the outer margin.)
+    timeline:
+      display: side
+      font_size: 7
+  page:
+    margin_inner: 0.6in
+    margin_outer: 1in
+  side_notes:
+    column: outside
+  footnotes:
+    # (The notes kept in step with their text, as the editions keep them:
+    # a page holds as little as three lines of text when its notes are
+    # long, and a note starts on its reference's page.)
+    text_min_lines: 3
+    lag: 0
+    columns: 2
+    column_gap: 12
+    font_size: 7.5
+    line_height: 1.2
+    item_spacing: 1
+  quote:
+    border_left_width: 0
+    padding: [0, 12, 0, 12]
+    font_size: 9
+  verse:
+    border_left_width: 0
+    padding: [0, 0, 0, 18]
+    font_size: 9
+  header:
+    height: 0.65in
+    vertical_align: bottom
+    font_size: 8.5
+    recto:
+      left: { content: '' }
+      center: { content: 'OF THE ROMAN EMPIRE.' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: 'THE DECLINE AND FALL' }
+      right: { content: '' }
+  footer:
+    height: 0.4in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - Libre Caslon Text:400,400italic,700
+css: |
+  #content h2{text-align:center;text-transform:uppercase;letter-spacing:.08em}
+  .paragraph.bridgehead p{text-align:center;font-style:italic}
+  .timeline{float:right;clear:right;margin-right:-8em;width:7em;font-size:70%;text-align:left}
+epub-css: |
+  .paragraph.bridgehead p{text-align:center;font-style:italic}
+  .timeline{font-size:80%}

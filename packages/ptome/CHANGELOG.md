@@ -10,6 +10,9 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `footnotes_columns` sets the footnotes in balanced columns at the
+  foot of the page (Gibbon's notes; FEAT-6nsldy), and a page of notes in
+  columns is laid out many times faster.
 - PDF: a two- or three-em dash that the text's faces lack is set as two
   or three em dashes run together (Tristram Shandy in Caslon); a tagged
   table's cell that spans rows or columns carries its `RowSpan` or

@@ -443,6 +443,19 @@ final class PdfConverter extends BuiltInConverter
     return roles.any(node.includesRole);
   }
 
+  /// How many columns the footnotes are set in (`footnotes_columns`, more
+  /// than one; not under `asciidoctor-compat`), or null for the usual one.
+  late final int? _footnoteColumns = switch (_n('footnotes_columns')) {
+    final columns?
+        when columns > 1 && !asciidoctorCompat(_document, CompatFormat.pdf) =>
+      columns.toInt(),
+    _ => null,
+  };
+
+  /// The name the main series of footnotes is laid out under when it is
+  /// set in columns.
+  static const String _footnoteColumnsStream = '_footnotes';
+
   /// A two- or three-em dash.
   static final RegExp _multiEmDashRx = RegExp('[\u2e3a\u2e3b]');
 

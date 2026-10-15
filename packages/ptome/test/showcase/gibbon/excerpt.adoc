@@ -1,0 +1,18 @@
+= Gibbon: the opening of Chapter I
+:doctype: book
+:lang: en
+:look: gibbon
+:looksdir: {docdir}
+:media: prepress
+:notitle:
+
+// Heavy notes (doc/showcase.md): the chapter's first paragraphs, their
+// notes and the editors' at the foot in two balanced columns, each on
+// its reference's page, a long one going on at the foot of the next.
+
+== Chap. I.
+
+[.bridgehead]
+Introduction—The extent and military force of the empire in the age of the Antonines.
+
+include::text/chapter-1.adoc[tag=notes]

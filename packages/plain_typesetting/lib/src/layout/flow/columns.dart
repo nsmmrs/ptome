@@ -82,6 +82,21 @@ extension _Columns on _Pass {
       );
     }
 
+    // (Measured with no limit (a region's notes, measured for every room
+    // the text is tried in): the same children at the same width placed
+    // once, where nothing floats out of them.)
+    final key =
+        !available.isFinite &&
+            box.balance &&
+            !box._continued &&
+            _exclusions.isEmpty &&
+            layout.baselineGrid == null &&
+            !_inColumn
+        ? _ColumnsKey(box.children, width, box.count, box.gap, top)
+        : null;
+    if (key != null) {
+      if (_balancedColumns[key] case final known?) return known;
+    }
     var filled = fill(available - top);
     if (filled == null) return _Fit.moved(box);
     // The set ends here: its columns as short as they can be with all of
@@ -120,6 +135,17 @@ extension _Columns on _Pass {
     final (:columns, :height, :rest, :hit, :floated, :pinned) = filled;
     final done = rest == null;
     final total = top + height + (done ? style.margin.bottom : 0);
+    if (key != null &&
+        done &&
+        hit == null &&
+        floated.isEmpty &&
+        pinned.isEmpty) {
+      return _balancedColumns[key] = _Fit(
+        _PlacedColumns(columns, top, total, box.gap, box.rule),
+        total,
+        null,
+      );
+    }
     return _Fit(
       _PlacedColumns(columns, top, total, box.gap, box.rule),
       total,
@@ -141,6 +167,44 @@ extension _Columns on _Pass {
       pinned: pinned,
     );
   }
+}
+
+/// A column set by what its placement depends on: its children (by
+/// identity), width, columns, gap and top.
+@immutable
+final class _ColumnsKey {
+  const new(this.children, this.width, this.count, this.gap, this.top);
+
+  final List<LayoutBox> children;
+  final double width;
+  final int count;
+  final double gap;
+  final double top;
+
+  @override
+  bool operator ==(Object other) {
+    if (other is! _ColumnsKey ||
+        other.width != width ||
+        other.count != count ||
+        other.gap != gap ||
+        other.top != top ||
+        other.children.length != children.length) {
+      return false;
+    }
+    for (var i = 0; i < children.length; i++) {
+      if (!identical(other.children[i], children[i])) return false;
+    }
+    return true;
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    width,
+    count,
+    gap,
+    top,
+    Object.hashAll(children.map(identityHashCode)),
+  );
 }
 
 /// A column set's columns placed in some room (see `_Pass._columns`).

@@ -33,8 +33,7 @@ lacks, set as two and three em dashes run together (FEAT-4lj836).
 | The marbled page (JPEG) and the plot lines and flourish (SVG), Standard Ebooks | the same repository, in `fetch.yml` with their SHA-256 | in `fetch.yml` |
 | `images/black-page.svg` | drawn for the work | |
 
-Imported by `tool/showcase_import.dart`, then edited by a script kept
-with the work's notes (the edits, in short):
+Imported by `tool/showcase_import.dart`, then edited by hand:
 
 - The chapters headed as the first edition heads them, "Chap. I.".
 - The black page: Standard Ebooks' tombstone drawing replaced by two

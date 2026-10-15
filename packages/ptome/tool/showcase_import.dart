@@ -121,6 +121,20 @@ Future<void> main(List<String> arguments) async {
   final converter = _Converter(notes, prefix: part == null ? '' : '$part-');
   for (final name in texts) {
     final doc = parseXml(File('$epub/text/$name.xhtml').readAsStringSync());
+    converter.knownIds.addAll([
+      for (final e in doc.descendantElements)
+        if (const {
+          'section',
+          'article',
+          'figure',
+          'p',
+          'blockquote',
+        }.contains(e.localName))
+          ?e.getAttribute('id'),
+    ]);
+  }
+  for (final name in texts) {
+    final doc = parseXml(File('$epub/text/$name.xhtml').readAsStringSync());
     final body = doc.descendantElements.firstWhere(
       (e) => e.localName == 'body',
     );
@@ -244,6 +258,10 @@ final class _Converter {
   /// How many notes were set as footnotes.
   int notesUsed = 0;
 
+  /// The ids of the elements imported (sections, figures, paragraphs),
+  /// which links may point at.
+  final Set<String> knownIds = {};
+
   /// How many italic elements the text being converted is in.
   int _italic = 0;
 
@@ -317,7 +335,39 @@ final class _Converter {
                       e.childElements.single.localName == 'p'),
             )
             .firstOrNull;
-        if (heading == null) {
+        // (Or a header holding the heading and more: a chapter's number
+        // and its summary, as Gibbon's chapters have them.)
+        final header = heading == null
+            ? element.childElements
+                  .where(
+                    (e) =>
+                        e.localName == 'header' &&
+                        e.childElements.any(
+                          (c) => const {
+                            'h1',
+                            'h2',
+                            'h3',
+                            'h4',
+                            'h5',
+                            'h6',
+                            'hgroup',
+                          }.contains(c.localName),
+                        ),
+                  )
+                  .firstOrNull
+            : null;
+        final inHeader = header?.childElements.firstWhere(
+          (c) => const {
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'h5',
+            'h6',
+            'hgroup',
+          }.contains(c.localName),
+        );
+        if (heading == null && inHeader == null) {
           // (A part's wrapper in a chapter's file: its heading is in the
           // part's own file. Another section without a heading, a
           // dedication, an untitled section of its own.)
@@ -343,7 +393,7 @@ final class _Converter {
           for (final type in types)
             if (type != 'chapter' && type != 'part') type.split(':').last,
         ];
-        final (:number, :title) = _numberedHeading(heading);
+        final (:number, :title) = _numberedHeading(heading ?? inHeader!);
         _blank(out);
         out
           ..writeln(
@@ -353,8 +403,15 @@ final class _Converter {
           )
           ..writeln('${'=' * (level + 1)} $title');
         _blank(out);
+        if (header != null) {
+          _blocks(
+            header.childElements.where((e) => e != inHeader),
+            out,
+            depth: depth + 1,
+          );
+        }
         _blocks(
-          element.childElements.where((e) => e != heading),
+          element.childElements.where((e) => e != heading && e != header),
           out,
           depth: depth + 1,
         );
@@ -442,8 +499,13 @@ final class _Converter {
     final text = _inline(p).trim();
     if (text.isEmpty) return;
     _blank(out);
-    if (roles.isNotEmpty) {
-      out.writeln('[${[for (final role in roles) '.$role'].join()}]');
+    // (Its id where it has one: links point at paragraphs.)
+    final id = _id(p);
+    if (roles.isNotEmpty || id != null) {
+      out.writeln(
+        '[${id == null ? '' : '#$id'}'
+        '${[for (final role in roles) '.$role'].join()}]',
+      );
     }
     out.writeln(_lineStart(text));
     _blank(out);
@@ -857,6 +919,9 @@ final class _Converter {
         final target = hash >= 0
             ? href.substring(hash + 1)
             : href.replaceAll('.xhtml', '');
+        // (A link to what isn't imported, a chapter left out or a note,
+        // which is a footnote here, is its text.)
+        if (!knownIds.contains(target)) return text;
         return '<<$prefix$target,$text>>';
       case 'ruby':
         final base = StringBuffer();
@@ -876,8 +941,16 @@ final class _Converter {
         return '$base ($annotation)';
       case 'span' || 'abbr' || 'time' || 'cite' || 'dfn' || 'var' || 'code':
         final text = _inline(element);
-        if (_classes(element).contains('blackletter')) {
-          return '[.blackletter]#$text#';
+        // (A span's classes its roles: a marginal date's `timeline`, a
+        // blackletter word; not a poem line's indent or an abbreviation's
+        // end of clause.)
+        final roles = [
+          for (final role in _classes(element))
+            if (!RegExp(r'^i\d+$').hasMatch(role) && role != 'eoc') role,
+        ];
+        if (roles.isNotEmpty && text.trim().isNotEmpty) {
+          return '[${[for (final role in roles) '.$role'].join()}'
+              '${lang == null ? '' : ',lang=$lang'}]##$text##';
         }
         return wrap(text);
       default:

@@ -26,6 +26,12 @@ final class _Pass {
   /// (resolved for this pass).
   final Map<(ParagraphBox, double), List<Line>> _lines = {};
 
+  /// A balanced column set measured with no limit to its room, as a
+  /// region's notes in columns are measured again and again while the
+  /// room for its text is found: placed once for its children (the same
+  /// boxes) at a width.
+  final Map<_ColumnsKey, _Fit> _balancedColumns = {};
+
   bool hasReferences = false;
 
   final List<_Boundary> boundaries = [];

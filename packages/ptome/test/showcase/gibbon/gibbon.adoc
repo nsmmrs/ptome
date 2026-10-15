@@ -1,0 +1,49 @@
+= The History of the Decline and Fall of the Roman Empire: Volume I
+Edward Gibbon
+:doctype: book
+:lang: en
+:look: gibbon
+:looksdir: {docdir}
+:imagesdir: images
+:media: prepress
+:description: The first volume of Gibbon’s Decline and Fall, its notes and its editors’ in two columns at the foot of the page, the dates in the margin.
+
+include::text/preface-1.adoc[]
+
+include::text/preface-2.adoc[]
+
+include::text/preface-3.adoc[]
+
+include::text/introduction.adoc[]
+
+include::text/chapter-1.adoc[]
+
+include::text/chapter-2.adoc[]
+
+include::text/chapter-3.adoc[]
+
+include::text/chapter-4.adoc[]
+
+include::text/chapter-5.adoc[]
+
+include::text/chapter-6.adoc[]
+
+include::text/chapter-7.adoc[]
+
+include::text/chapter-8.adoc[]
+
+include::text/chapter-9.adoc[]
+
+include::text/chapter-10.adoc[]
+
+include::text/chapter-11.adoc[]
+
+include::text/chapter-12.adoc[]
+
+include::text/chapter-13.adoc[]
+
+include::text/chapter-14.adoc[]
+
+include::text/chapter-15.adoc[]
+
+include::text/chapter-16.adoc[]

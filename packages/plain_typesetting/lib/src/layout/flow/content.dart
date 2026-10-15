@@ -315,7 +315,16 @@ final class ParagraphContent
 
   /// What follows the first [count] lines at [width]: its items after
   /// them, to be broken again where it goes on.
-  CustomContent _restAfter(double width, int count) {
+  CustomContent _restAfter(double width, int count) =>
+      _rests[(width, count)] ??= _newRestAfter(width, count);
+
+  /// The rests [_restAfter] made, by width and lines: the same rest for
+  /// the same lines (with the lines it breaks kept), as the layout tries
+  /// a paragraph in one room after another (a page's notes in balanced
+  /// columns).
+  final Map<(double, int), CustomContent> _rests = {};
+
+  CustomContent _newRestAfter(double width, int count) {
     final (:lines, :breaks, :items) = _at(width);
     if (breaks == null || items == null) return _Lines(lines.sublist(count));
     return ParagraphContent._rest(
