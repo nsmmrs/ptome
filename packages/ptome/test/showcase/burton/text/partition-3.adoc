@@ -1,0 +1,121 @@
+[#partition-3]
+= [[id_3.1.1.1]]The Third Partition
+
+[.synopsis]
+== [[rh-synopsis-3,Synopsis.]]The Synopsis of the Third Partition
+
+[.braces]
+* Love and love melancholy, <<id_3.1.1.1,Memb. 1 Sect. 1.>>
+** Preface or Introduction. <<id_3.1.1.1,Subsect. 1.>>
+** Love's definition, pedigree, object, fair, amiable, gracious, and pleasant, from which comes beauty, grace, which all desire and love, parts affected.
+** Division or kinds, <<id_3.1.1.2,Subs. 2.>>
+*** Natural, in things without life, as love and hatred of elements; and with life, as vegetable, vine and elm, sympathy, antipathy, &amp;c.
+*** Sensible, as of beasts, for pleasure, preservation of kind, mutual agreement, custom, bringing up together, &amp;c.
+*** or Rational
+**** Simple, which hath three objects as <<id_3.1.2,M. 2.>>
+***** Profitable, <<id_3.1.2.1,Subs. 1.>>
+- Health, wealth, honour, we love our benefactors: nothing so amiable as profit, or that which hath a show of commodity.
+***** Pleasant, <<id_3.1.2.2,Subs. 2.>>
+- Things without life, made by art, pictures, sports, games, sensible objects, as hawks, hounds, horses; Or men themselves for similitude of manners, natural affection, as to friends, children, kinsmen, &amp;c., for glory such as commend us.
+- Of women, as
+• Before marriage, as Heroical Mel. <<aries.3,Sect. 2. vide ♈︎>>
+• Or after marriage, as Jealousy, <<taurus.3,Sect. 3. vide ♉︎>>
+***** Honest, <<id_3.1.2.3,Subs. 3.>>
+- Fucate in show, by some error or hypocrisy; some seem and are not; or truly for virtue, honesty, good parts, learning, eloquence, &amp;c.
+**** or Mixed of all three, which extends to <<id_3.1.3,M. 3.>>
+***** Common good, our neighbour, country, friends, which is charity; the defect of which is cause of much discontent and melancholy.
+***** or God, __Sect. 4.__
+- In excess, <<gemini.3,vide ♊︎>>
+- In defect, vide ♋︎
+
+[.braces]
+* [[aries.3]]♈︎ Heroical or Love-Melancholy, in which consider,
+** <<id_3.2.1.1,Memb. 1.>> His pedigree, power, extent to vegetables and sensible creatures, as well as men, to spirits, devils, &amp;c.
+** His name, definition, object, part affected, tyranny. &#91;<<id_3.2.1.2,Subs. 2.>>&#93;
+** Causes, <<id_3.2.2,Memb. 2.>>
+*** Stars, temperature, full diet, place, country, clime, condition, idleness, <<id_3.2.2.1,S. 1.>>
+*** Natural allurements, and causes of love, as beauty, its praise, how it allureth.
+*** Comeliness, grace, resulting from the whole or some parts, as face, eyes, hair, hands, &amp;c. <<id_3.2.2.2,Subs. 2.>>
+*** Artificial allurements, and provocations of lust and love, gestures, apparel, dowry, money, &amp;c.
+*** __Quest__. Whether beauty owe more to Art or Nature? <<id_3.2.2.3,Subs. 3.>>
+*** Opportunity of time and place, conference, discourse, music, singing, dancing, amorous tales, lascivious objects, familiarity, gifts, promises, &amp;c. <<id_3.2.2.4,Subs. 4.>>
+*** Bawds and Philters, <<id_3.2.2.5,Subs. 5.>>
+** Symptoms or signs, <<id_3.2.3,Memb. 3.>>
+*** Of body
+**** Dryness, paleness, leanness, waking, sighing, &amp;c.
+**** Quest. [.foreign,lang=la]##An delur pulsus amatorius##?
+*** or Of mind.
+**** Bad, as
+***** Fear, sorrow, suspicion, anxiety, &amp;c.
+***** A hell, torment, fire, blindness, &amp;c.
+***** Dotage, slavery, neglect of business.
+**** or Good, as
+***** Spruceness, neatness, courage, aptness to learn music, singing, dancing, poetry, &amp;c.
+** Prognostics; despair, madness, frenzy, death, <<id_3.2.4,Memb. 4.>>
+** Cures, <<id_3.2.5,Memb. 5.>>
+*** By labour, diet, physic, abstinence, <<id_3.2.5.1,Subs. 1.>>
+*** To withstand the beginnings, avoid occasions, fair and foul means, change of place, contrary passion, witty inventions, discommend the former, bring in another, <<id_3.2.5.2,Subs. 2.>>
+*** By good counsel, persuasion, from future miseries, inconveniences, &amp;c. <<id_3.2.5.3,S. 3.>>
+*** By philters, magical, and poetical cures, <<id_3.2.5.4,Subs. 4.>>
+*** To let them have their desire disputed pro and con. Impediments removed, reasons for it. <<id_3.2.5.5,Subs. 5.>>
+
+[.braces]
+* [[taurus.3]]♉︎ Jealousy, <<id_3.3.1,Sect. 3.>>
+** His name, definition, extent, power, tyranny, <<id_3.3.1,Memb. 1.>>
+** Division, Equivocations, kinds, <<id_3.3.1.1,Subs. 1.>>
+*** Improper
+**** To many beasts; as swans, cocks, bulls.
+**** To kings and princes, of their subjects, successors.
+**** To friends, parents, tutors over their children, or otherwise.
+*** or Proper
+**** Before marriage, corrivals, &amp;c.
+**** After, as in this place our present subject.
+** Causes, <<id_3.3.1.2,Subs. 2.>>
+*** In the parties themselves,
+**** Idleness, impotency in one party, melancholy, long absence.
+**** They have been naught themselves. Hard usage, unkindness, wantonness, inequality of years, persons, fortunes, &amp;c.
+*** or from others.
+**** Outward enticements and provocations of others.
+** Symptoms, <<id_3.3.2,Memb. 2.>>
+*** Fear, sorrow, suspicion, anguish of mind, strange actions, gestures, looks, speeches, locking up, outrages, severe laws, prodigious trials, &amp;c.
+** Prognostics, <<id_3.3.3,Memb. 3.>>
+*** Despair, madness, to make away themselves, and others.
+** Cures, <<id_3.3.4,Memb. 4.>>
+*** By avoiding occasions, always busy, never to be idle.
+*** By good counsel, advice of friends, to contemn or dissemble it. <<id_3.3.4.1,Subs. 1.>>
+*** By prevention before marriage. Plato's communion.
+*** To marry such as are equal in years, birth, fortunes, beauty, of like conditions, &amp;c.
+*** Of a good family, good education. To use them well. &#91;<<id_3.3.4.2,Subs. 2.>>&#93;
+
+[.braces]
+* [[gemini.3]]♊︎ Religious Melancholy, <<id_3.4.1,Sect. 4.>>
+** In excess of such as do that which is not required. <<id_3.4.1,Memb. 1.>>
+*** A proof that there is such a species of melancholy, name, object God, what his beauty is, how it allureth, part and parties affected, superstitious, idolaters, prophets, heretics, &amp;c. <<id_3.4.1.1,Subs. 1.>>
+*** Causes, <<id_3.4.1.2,Subs. 2.>>
+**** From others
+***** The devil's allurements, false miracles, priests for their gain. Politicians to keep men in obedience, bad instructors, blind guides.
+**** or from themselves.
+***** Simplicity, fear, ignorance, solitariness, melancholy, curiosity, pride, vainglory, decayed image of God.
+*** Symptoms, <<id_3.4.1.3,Subs. 3.>>
+**** General
+***** Zeal without knowledge, obstinacy, superstition, strange devotion, stupidity, confidence, stiff defence of their tenets, mutual love and hate of other sects, belief of incredibilities, impossibilities.
+**** or Particular.
+***** Of heretics, pride, contumacy, contempt of others, wilfulness, vainglory, singularity, prodigious paradoxes.
+***** In superstitious blind zeal, obedience, strange works, fasting, sacrifices, oblations, prayers, vows, pseudomartyrdom, mad and ridiculous customs, ceremonies, observations.
+***** In pseudoprophets, visions, revelations, dreams, prophecies, new doctrines, &amp;c., of Jews, Gentiles, Mahometans, &amp;c.
+*** Prognostics, <<id_3.4.1.4,Subs. 4.>>
+**** New doctrines, paradoxes, blasphemies, madness, stupidity, despair, damnation.
+*** Cures, <<id_3.4.1.5,Subs. 5.>>
+**** By physic, if need be, conference, good counsel, persuasion, compulsion, correction, punishment. [.foreign,lang=la]##Quaeritur an cogi debent? Affir.##
+** In defect, as <<id_3.4.2,Memb. 2.>>
+*** Secure, void of grace and fears.
+**** Epicures, atheists, magicians, hypocrites, such as have cauterised consciences, or else are in a reprobate sense, worldly-secure, some philosophers, impenitent sinners, <<id_3.4.2.1,Subs. 1.>>
+*** or Distrustful, or too timorous, as desperate. In despair consider,
+**** Causes, <<id_3.4.2.2,Subs. 2.>>
+***** The devil and his allurements, rigid preachers, that wound their consciences, melancholy, contemplation, solitariness.
+***** How melancholy and despair differ. Distrust, weakness of faith. Guilty conscience for offence committed, misunderstanding, &amp;c.
+**** Symptoms, <<id_3.4.2.3,Subs. 3.>>
+***** Fear, sorrow, anguish of mind, extreme tortures and horror of conscience, fearful dreams, conceits, visions, &amp;c.
+**** Prognostics; Blasphemy, violent death, <<id_3.4.2.4,Subs. 4.>>
+**** Cures, <<id_3.4.2.5,Subs. 5.>>
+***** Physic, as occasion serves, conference, not to be idle or alone. Good counsel, good company, all comforts and contents, &amp;c. &#91;<<id_3.4.2.6,Subs. 6.>>&#93;

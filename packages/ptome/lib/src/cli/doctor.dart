@@ -343,7 +343,7 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'IM Fell DW Pica',
-    usedBy: "the showcase's First Folio look (the Fell types)",
+    usedBy: "the showcase's First Folio and Burton looks (the Fell types)",
     families: ['IM Fell DW Pica'],
     // (A roman and an italic: the Fell types have no bold.)
     styles: [FontStyle.normal, FontStyle.italic],
@@ -363,6 +363,17 @@ final List<NeededFont> lookFonts = [
     source: GoogleFonts('Noto Serif Hebrew', {
       FontStyle.normal: 'static/NotoSerifHebrew-Regular.ttf',
       FontStyle.bold: 'static/NotoSerifHebrew-Bold.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'Noto Sans Symbols',
+    usedBy: "the showcase's Burton look (the planets and the zodiac)",
+    families: ['Noto Sans Symbols'],
+    styles: [FontStyle.normal],
+    fileNames: {},
+    source: GoogleFonts('Noto Sans Symbols', {
+      FontStyle.normal: 'static/NotoSansSymbols-Regular.ttf',
     }),
     license: 'SIL Open Font License 1.1',
   ),

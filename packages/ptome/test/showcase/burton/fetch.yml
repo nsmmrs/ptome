@@ -1,0 +1,9 @@
+# The images the work uses, fetched by tool/showcase.dart into the work
+# cache and checked by their SHA-256: the scans in Project Gutenberg's
+# edition (eBook #10800).
+- name: frontispiece.png
+  url: https://www.gutenberg.org/cache/epub/10800/images/cover.png
+  sha256: d4e7f96419747085d610ba56af78e363ea67b00b6b91abd51b51f8277d11fc80
+- name: horoscope.png
+  url: https://www.gutenberg.org/cache/epub/10800/images/horoscope.png
+  sha256: 52e36d719855e68423f009101ec29807c6a3c1d2d4140a553296d2444603ec66

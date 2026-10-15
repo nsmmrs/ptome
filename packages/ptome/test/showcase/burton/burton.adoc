@@ -1,0 +1,62 @@
+= The Anatomy of Melancholy
+Robert Burton
+:doctype: book
+:lang: en
+:look: burton
+:looksdir: {docdir}
+:imagesdir: images
+:figure-caption!:
+:notitle:
+:description: Burton’s Anatomy of Melancholy whole: its synopses in braces, its six thousand marginal citations, its Partitions, Sections, Members and Subsections, after the edition of 1638.
+
+include::text/frontispiece.adoc[]
+
+include::text/title-page.adoc[]
+
+include::text/dedication.adoc[]
+
+include::text/front-1.adoc[]
+
+include::text/front-2.adoc[]
+
+include::text/front-3.adoc[]
+
+include::text/front-4.adoc[]
+
+include::text/front-5.adoc[]
+
+include::text/front-6.adoc[]
+
+include::text/to-the-reader.adoc[]
+
+include::text/partition-1.adoc[]
+
+include::text/partition-1-section-1.adoc[]
+
+include::text/partition-1-section-2.adoc[]
+
+include::text/partition-1-section-3.adoc[]
+
+include::text/partition-1-section-4.adoc[]
+
+include::text/partition-2.adoc[]
+
+include::text/partition-2-section-1.adoc[]
+
+include::text/partition-2-section-2.adoc[]
+
+include::text/partition-2-section-3.adoc[]
+
+include::text/partition-2-section-4.adoc[]
+
+include::text/partition-2-section-5.adoc[]
+
+include::text/partition-3.adoc[]
+
+include::text/partition-3-section-1.adoc[]
+
+include::text/partition-3-section-2.adoc[]
+
+include::text/partition-3-section-3.adoc[]
+
+include::text/partition-3-section-4.adoc[]

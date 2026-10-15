@@ -185,6 +185,8 @@ a page of its own after the heading, with its title.
 | `page_writing_mode` | the document's `writing-mode`, else `horizontal-tb` | `vertical-rl`: the body's lines run down the page, each following to the left of the one before (Japanese, Chinese); `vertical-lr`: to the right (Mongolian). See "Vertical writing". Not under `asciidoctor-compat`. |
 | `page_frame_width`, `_gap`, `_color`, `_offset` | none, the thickest rule, the text's color, the font size | Rules framing the text area of every page (not a cover): a width, or widths from the outside in (`[4, 1]`, the Oxford rule's thick and thin), the gap between them, the outermost that far outside the text area. Not under `asciidoctor-compat`. |
 | `footnotes_columns`, `footnotes_column_gap` | `1`, the root font size | The footnotes at the foot of the page in that many balanced columns, as Gibbon's quarto sets them: filled in order down each column, a note that doesn't fit going on in the next column or at the foot of the next page. Not under `asciidoctor-compat`. |
+| `footnotes_column`, `_column_offset`, `_column_width` | none, half an em, the margin less twice the offset | The footnotes in a margin column instead of at the foot (`left`, `right`, `outside`, `inside`), each note level with its reference's line, pushed down under the one before where they crowd, carried to the top of the next page's column when there's no room: the citations of an early printed book, Burton's Anatomy of Melancholy in the outer margin. Not under `asciidoctor-compat`. |
+| `footnotes_number_style` | `decimal` | How the references and the notes' labels write their numbers: `lower-alpha` (a, b, … z, then aa, bb…, as early printers letter their marginal notes; with `footnotes_numbering: page`, from a on each page), `upper-alpha`, `lower-roman`, `upper-roman`, or `symbols` (*, †, ‡, §, ‖, #, then doubled, the Chicago Manual of Style's sequence). Not under `asciidoctor-compat`. |
 | `footnotes_text_min_lines`; `footnotes_lag` | none | Notes in step with their text, as a study Bible's are, far longer than its verses. A page with notes keeps at least `footnotes_text_min_lines` lines of body text (by default a quarter of the page, and when even that much text's notes don't fit, the text fills the page and its notes go on after it), its notes under it as far as they go and the rest at the foot of the next pages. `footnotes_lag` (pages) is how far after its reference's page a note may start: the text of a page stops where the notes it refers to would start later than that (0: every note on its reference's page, as far as the least lines allow). They apply to the footnotes and the note streams together. Not under `asciidoctor-compat`. |
 | `pagination` | `first_fit` | `optimal`: the pages' breaks chosen together over the whole document, after Plass's optimal pagination (1981): of every way to break the pages that keeps the widow, orphan and keep-together rules, the one that leaves the least room unused (the square of each page's, the last page's free), so a block kept whole that doesn't fit leaves a little room on several pages rather than one nearly empty page. A document with footnotes, blocks floating, page columns, tables taller than a page or a change of page layout is laid out first-fit. Not under `asciidoctor-compat`. |
 | `base_text_engine` | `paragraph` | Who sets the modern engine's text: `paragraph`, plain_typesetting's paragraphs, for every text it sets (body paragraphs, list items, table cells, headings, captions, the table of contents, title pages, footnotes, wrapped source listings); a plain paragraph is a paragraph box the layout breaks and places itself where nothing it doesn't do yet is in play (protrusion, font expansion, `base_text_align_last`, a baseline grid, a float to run around, labels, side notes), and paragraph content the converter places otherwise. Every text it sets is the engine's: an abstract's first line in its own style (transformed, shrunk to fit), drops, cells with lines from their cap heights, fixed-width spans and notes numbered by page included. `box`, this converter's text box for all of it. Not under `asciidoctor-compat` (the text box). |
@@ -398,6 +400,22 @@ long as its longest line (at most the page's height), following to the
 left or the right, the block as wide across the page as its columns
 are; on a vertical page, `[.horizontal-tb]` sets any block across, as a
 table is. Not under `asciidoctor-compat`.
+
+Ptome's `braces` role sets an unordered list as a tree of braces, as
+the synopses of Burton's Anatomy of Melancholy are printed: each item's
+text, then a curly brace to its right spanning its sublist, whose items
+stand one under another beyond it, the text level with the brace's
+point. The texts with branches are set in a column for each level, as
+wide as their widest text up to `list_braces_text_max_width` (`35%`) of
+the room, narrowed in proportion toward their longest words where the
+leaves would have less than a third of it. `list_braces_font_*` (the
+list's), `list_braces_width` (half an em) and `list_braces_gap` (a
+quarter em, each side of the brace), `list_braces_item_spacing` (none),
+`list_braces_line_width` (0.5) and `list_braces_color` (the text's).
+An item's blocks other than its sublists are left out. A tree is kept
+whole on a page; one taller than a page is split between its branches,
+its text set again beside the rest. HTML and EPUB take it from the
+look's CSS. Not under `asciidoctor-compat`.
 
 Ptome's `mirror` role sets a block mirrored, left to right, to be read
 in a looking-glass (`[verse.mirror]`: Jabberwocky's first stanza as

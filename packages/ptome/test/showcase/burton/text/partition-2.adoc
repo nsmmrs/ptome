@@ -1,0 +1,218 @@
+[#partition-2]
+= [[id_2.1.1]]The Second Partition
+
+[.synopsis]
+== [[rh-synopsis-2,Synopsis.]]The Synopsis of the Second Partition
+
+[.braces]
+* Cure of melancholy is either
+** <<id_2.1.1,Sect 1.>> General to all, which contains
+*** Unlawful means forbidden,
+**** <<id_2.1.1,Memb. 1.>> From the devil, magicians, witches, &amp;c., by charms, spells, incantations, &amp;c.
+***** __Quest. 1.__ Whether they can cure this, or other such like diseases?
+***** __Quest. 2.__ Whether, if they can so cure, it be lawful to seek to them for help?
+*** or Lawful means, which are
+**** <<id_2.1.2,Memb. 2.>> Immediately from God, [.foreign,lang=la]##a Jove principium## by prayer &amp;c.
+***** <<id_2.1.3,Memb. 3.>> __Quest. 1.__ Whether saints and their relics can help this infirmity?
+***** __Quest. 2.__ Whether it be lawful to sue to them for aid.
+**** or <<id_2.1.4,Memb. 4.>> Mediately by Nature which concerns and works by
+***** <<id_2.1.4.1,Subsect. 1.>> Physician, in whom is required science, confidence, honesty, &amp;c.
+***** <<id_2.1.4.2,Subsect. 2.>> Patient, in whom is required obedience, constancy, willingness, patience, confidence, bounty, &amp;c., not to practise on himself.
+***** <<id_2.1.4.3,Subsect. 3.>> Physic, which consists of
+- Dietetical <<aries.2,♈︎>>
+- Pharmaceutical <<taurus.2,♉︎>>
+- Chirurgical <<gemini.2,♊︎>>
+** or Particular to the three distinct species, <<cancer.2,♋︎>> <<leo.2,♌︎>> <<virgo.2,♍︎>>
+
+[.braces]
+* [[aries.2]]♈︎ <<id_2.2.1,Sect. 2.>> Dietetical, which consists in reforming those six non-natural things, as in
+** Diet rectified <<id_2.2.1,1. Memb.>>
+*** Matter and quality <<id_2.2.1.1,1 Subs.>>
+**** Such meats as are easy of digestion, well-dressed, hot, sod, &amp;c., young, moist, of good nourishment, &amp;c.
+**** Bread of pure wheat, well-baked.
+**** Water clear from the fountain.
+**** Wine and drink not too strong, &amp;c.
+**** Flesh
+***** Mountain birds, partridge, pheasant, quails, &amp;c. Hen, capon, mutton, veal, kid, rabbit, &amp;c.
+**** Fish
+***** That live in gravelly waters, as pike, perch, trout, sea-fish, solid, white, &amp;c.
+**** Herbs
+***** Borage, bugloss, balm, succory, endive, violets, in broth, not raw, &amp;c.
+**** Fruits and roots.
+***** Raisins of the sun, apples corrected for wind, oranges, &amp;c., parsnips, potatoes, &amp;c.
+*** or <<id_2.2.1.2,Subs. 2.>> Quantity.
+**** At seasonable and unusual times of repast, in good order, not before the first be concocted, sparing, not overmuch of one dish.
+** <<id_2.2.2,Memb. 2.>> Rectification of retention and evacuation, as costiveness, venery, bleeding at nose, months stopped, baths, &amp;c.
+** <<id_2.2.3,Memb. 3.>> Air rectified, with a digression of the air
+*** Naturally in the choice and site of our country, dwelling-place, to be hot and moist, light, wholesome, pleasant &amp;c.
+*** Artificially, by often change of air, avoiding winds, fogs, tempests, opening windows, perfumes, &amp;c.
+** <<id_2.2.4,Memb. 4.>> Exercise
+*** Of body and mind, but moderate, as hawking, hunting, riding, shooting, bowling, fishing, fowling, walking in fair fields, galleries, tennis, bar.
+*** Of mind, as chess, cards, tables &amp;c., to see plays, masks, &amp;c., serious studies, business, all honest recreations.
+** <<id_2.2.5,Memb. 5.>> Rectification of waking and terrible dreams, &amp;c.
+** <<id_2.2.6,Memb. 6.>> Rectification of passions and perturbations of the mind. ♎︎
+
+[.braces]
+* <<id_2.2.6,Memb. 6.>> Passions and perturbations of the mind rectified.
+** From himself
+*** <<id_2.2.6.1,Subsect. 1.>> By using all good means of help, confessing to a friend, &amp;c.
+*** Avoiding all occasions of his infirmity.
+*** Not giving way to passions, but resisting to his utmost.
+** or from his friends.
+*** <<id_2.2.6.2,Subsect. 2.>> By fair and foul means, counsel, comfort, good persuasion, witty devices, fictions, and, if it be possible, to satisfy his mind.
+*** <<id_2.2.6.3,Subsect. 3.>> Music of all sorts aptly applied.
+*** <<id_2.2.6.4,Subsect. 4.>> Mirth and merry company.
+*** <<id_2.3.1,Sect. 3.>> A consolatory digression, containing remedies to all discontents and passions of the mind.
+**** <<id_2.3.1,Memb. 1.>> General discontents and grievances satisfied.
+**** <<id_2.3.2,Memb. 2.>> Particular discontents, as deformity of body, sickness, baseness of birth, &amp;c.
+**** <<id_2.3.3,Memb. 3.>> Poverty and want, such calamites and adversities.
+**** <<id_2.3.4,Memb. 4.>> Against servitude, loss of liberty, imprisonment, banishment, &amp;c.
+**** <<id_2.3.5,Memb. 5.>> Against vain fears, sorrows for death of friends, or otherwise.
+**** <<id_2.3.6,Memb. 6.>> Against envy, livor, hatred, malice, emulation, ambition, and self-love, &amp;c.
+**** <<id_2.3.7,Memb. 7.>> Against repulses, abuses, injuries, contempts, disgraces, contumelies, slanders, and scoffs, &amp;c.
+**** <<id_2.3.8,Memb. 8.>> Against all other grievous and ordinary symptoms of this disease of melancholy.
+
+[.braces]
+* [[taurus.2]]♉︎ <<id_2.4.1,Sect. 4.>> Pharmaceutics, or Physic which cureth with medicines, with a digression of this kind of physic, is either <<id_2.4.1.1,Memb. 1. Subsect. 1.>>
+** General to all
+*** Alterative
+**** Simples altering melancholy, with a digression of exotic simples <<id_2.4.1.2,2. Subs.>>
+***** Herbs. <<id_2.4.1.3,3. Subs.>>
+- To the heart; borage, bugloss, scorzonera, &amp;c.
+- To the head; balm, hops, nenuphar, &amp;c.
+- Liver; eupatory, artemisia, &amp;c.
+- Stomach; wormwood, centaury, pennyroyal.
+- Spleen; ceterache, ash, tamarisk.
+- To Purify the blood; endive, succory, &amp;c.
+- Against wind; origan, fennel, aniseed, &amp;c.
+***** <<id_2.4.1.4,4. Subs>> Precious stones; as smaragdes, chelidonies, &amp;c. Minerals;
+**** or compounds altering melancholy, with a digression of compounds. <<id_2.4.1.5,5. Subs.>>
+***** Inwardly taken
+- Liquid
+• fluid
+•• Wines; as of hellebore, bugloss, tamarisk, &amp;c.
+•• Syrups of borage, bugloss, hops, epithyme, endive, succory, &amp;c.
+• or consisting.
+•• Conserves of violets, maidenhair, borage, bugloss, roses, &amp;c.
+•• Confections; treacle, mithridate, eclegms or linctures.
+- or solid, as those aromatical confections.
+• hot
+•• Diambra, dianthos.
+•• Diamargaritum calidum.
+•• Diamoscum dulce.
+•• Electuarium de gemmis.
+•• Laetificans Galeni et Rhasis.
+• or cold
+•• Diamargaritum frigidum.
+•• Diarrhodon abbatis.
+•• Diacorolli, diacodium with their tables.
+•• Condites of all sorts, &amp;c.
+***** or Outwardly used, as
+- Oils of camomile, violets, roses, &amp;c.
+- Ointments, alablastritum, populeum, &amp;c.
+- Liniments, plasters, cerotes, cataplasms, frontals, fomentations, epithymes, sacks, bags, odoraments, posies, &amp;c.
+*** or Purging ☾
+** or Particular to three distinct species, <<cancer.2,♋︎>> <<leo.2,♌︎>> <<virgo.2,♍︎>>.
+
+[.braces]
+* Medicines purging melancholy are either <<id_2.4.2,Memb. 2.>>
+** Simples purging melancholy
+*** <<id_2.4.2.1,1. Subs.>> Upward, as vomits
+**** Asrabecca, laurel, white hellebore, scilla, or sea-onion, antimony, tobacco
+*** or Downward. <<id_2.4.2.2,2. Subs.>>
+**** More gentle; as senna, epithyme, polypody, mirobalanes, fumitory, &amp;c.
+**** Stronger; aloes, lapis Armenus, lapis lazuli, black hellebore.
+** or <<id_2.4.2.3,3. Subs.>> Compounds purging melancholy
+*** Superior parts
+**** Mouth
+***** swallowed
+- Liquid, as potions, juleps, syrups, wine of hellebore, bugloss, &amp;c.
+- Solid, as lapis Armenus, and lazuli, pills of Indie, pills of fumitory, &amp;c.
+- Electuaries, diasena, confection of hamech, hierologladium, &amp;c.
+***** or Not swallowed, as gargarisms, masticatories, &amp;c.
+**** or Nostrils, sneezing powders, odoraments, perfumes, &amp;c.
+*** or Inferior parts, as clysters strong and weak, and suppositories of Castilian soap, honey boiled, &amp;c.
+
+[.braces]
+* [[gemini.2]]♊︎ Chirurgical physic, which consists of <<id_2.4.3,Memb. 3.>>
+** Phlebotomy, to all parts almost, and all the distinct species.
+** With knife, horseleeches.
+** Cupping-glasses.
+** Cauteries, and searing with hot irons, boring.
+** Dropax and sinapismus.
+** Issues to several parts, and upon several occasions.
+
+[.braces]
+* [[cancer.2]]♋︎ <<id_2.5.1,Sect. 5.>> Cure of head-melancholy. <<id_2.5.1,Memb. 1.>>
+** <<id_2.5.1.1,1. Subsect.>> Moderate diet, meat of good juice, moistening, easy of digestion.
+** Good air.
+** Sleep more than ordinary.
+** Excrements daily to be voided by art or nature.
+** Exercise of body and mind not too violent, or too remiss, passions of the mind, and perturbations to be avoided.
+** <<id_2.5.1.2,Subsect. 2.>> Bloodletting, if there be need, or that the blood be corrupt, in the arm, forehead, &amp;c., or with cupping-glasses.
+** <<id_2.5.1.3,Subsect. 3.>> Preparatives and purgers.
+*** Preparatives; as syrup of borage, bugloss, epithyme, hops, with their distilled waters, &amp;c.
+*** Purgers; as Montanus, and Matthiolus __helleborismus, Quercetanus__, syrup of hellebore, extract of hellebore, pulvis Hali, antimony prepared, __Rulandi aqua mirabilis__; which are used, if gentler medicines will not take place, with Arnoldus, __vinum buglossatum__, senna, cassia, mirobalanes, __aurum potabile__, or before Hamech, Pil. Indae, Hiera, Pil. de lap. Armeno, lazuli.
+** <<id_2.5.1.4,Subsect. 4.>> Averters.
+*** Cardan's nettles, frictions, clysters, suppositories, sneezings, masticatories, nasals, cupping-glasses.
+*** To open the haemorrhoids with horseleeches, to apply horseleeches to the forehead without scarification, to the shoulders, thighs.
+*** Issues, boring, cauteries, hot irons in the suture of the crown.
+** <<id_2.5.1.5,Subsect. 5.>> Cordials, resolvers, hinderers.
+*** A cup of wine or strong drink.
+*** Bezars stone, amber, spice.
+*** Conserves of borage, bugloss, roses, fumitory.
+*** Confection of Alchermes.
+*** __Electuarium laetificans Galeni et Rhasis__, &amp;c.
+*** __Diamargaritum frig. diaboraginatum__, &amp;c.
+** <<id_2.5.1.6,Subsect. 6.>> Correctors of accidents, as,
+*** Odoraments of roses, violets.
+*** Irrigations of the head, with the decoctions of nymphea, lettuce, mallows, &amp;c.
+*** Epithymes, ointments, bags to the heart.
+*** Fomentations of oil for the belly.
+*** Baths of sweet water, in which were sod mallows, violets, roses, water-lilies, borage flowers, ramsheads, &amp;c.
+*** To procure sleep, and are
+**** Inwardly taken,
+***** Simples
+- Poppy, nymphea, lettuce, roses, purslane, henbane, mandrake, nightshade, opium, &amp;c.
+***** or Compounds.
+- Liquid, as syrups of poppy, verbasco, violets, roses.
+- Solid, as __requies Nicholai, Philonium, Romanum, Laudanum Paracelsi__.
+**** or Outwardly used, as
+***** Oil of nymphea, poppy, violets, roses, mandrake, nutmegs.
+***** Odoraments of vinegar, rosewater, opium.
+***** Frontals of rose-cake, rose-vinegar, nutmeg.
+***** Ointments, alablastritum, unguentum populeum, simple or mixed with opium.
+***** Irrigations of the head, feet, sponges, music, murmur and noise of waters.
+***** Frictions of the head and outward parts, sacculi of henbane, wormwood at his pillow, &amp;c.
+*** Against terrible dreams; not to sup late, or eat peas, cabbage, venison, meats heavy of digestion, use balm, hart's-tongue, &amp;c.
+*** Against ruddiness and blushing, inward and outward remedies.
+
+[.braces]
+* [[leo.2]]♌︎ <<id_2.5.2,2. Memb.>> Cure of melancholy over the body.
+** Diet, preparatives, purges, averters, cordials, correctors, as before.
+** Phlebotomy in this kind more necessary, and more frequent.
+** To correct and cleanse the blood with fumitory, senna, succory, dandelion, endive, &amp;c.
+
+[.braces]
+* [[virgo.2]]♍︎ Cure of hypochondriacal or windy melancholy. <<id_2.5.3,3. Memb.>>
+** <<id_2.5.3.1,Subsect. 1>> Phlebotomy, if need require.
+** Diet, preparatives, averters, cordials, purgers, as before, saving that they must not be so vehement.
+** Use of pennyroyal, wormwood, centaury sod, which alone hath cured many.
+** To provoke urine with aniseed, daucus, asarum, &amp;c., and stools, if need be, by clysters and suppositories.
+** To respect the spleen, stomach, liver, hypochondries.
+** To use treacle now and then in winter.
+** To vomit after meals sometimes, if it be inveterate.
+** <<id_2.5.3.2,Subsect. 2.>> To expel wind.
+*** Inwardly Taken,
+**** Simples,
+***** Roots,
+- Galanga, gentian, enula, angelica, calamus aromaticus, zedoary, china, condite ginger, &amp;c.
+***** Herbs,
+- Pennyroyal, rue, calamint, bay leaves, and berries, scordium, bethany, lavender, camomile, centaury, wormwood, cumin, broom, orange pills.
+***** Spices,
+- Saffron, cinnamon, mace, nutmeg, pepper, musk, zedoary with wine, &amp;c.
+***** Seeds,
+- Aniseed, fennel-seed, ammi, cary, cumin, nettle, bays, parsley, grana paradisi.
+**** or Compounds, as
+***** Dianisum, diagalanga, diaciminum, diacalaminthes, electuarium de baccis lauri, benedicta laxativa, &amp;c. pulvia carminativus, and pulvis descrip. Antidotario Florentine, aromaticum, rosatum, Mithridate.
+*** or Outwardly used, as cupping-glasses to the hypochonries without scarification, oil of camomile, rue, aniseed, their decoctions, &amp;c.

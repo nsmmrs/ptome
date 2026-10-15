@@ -456,6 +456,10 @@ final class PdfConverter extends BuiltInConverter
   /// set in columns.
   static const String _footnoteColumnsStream = '_footnotes';
 
+  /// The name the main series of footnotes is set under in a margin
+  /// column (`footnotes_column`).
+  static const String _footnoteSideStream = '_footnotes_side';
+
   /// A two- or three-em dash.
   static final RegExp _multiEmDashRx = RegExp('[\u2e3a\u2e3b]');
 

@@ -84,7 +84,7 @@ pdf:
     caption_font_style: normal
     caption_text_transform: uppercase
     caption_font_size: 12
-    caption_font_color: '1A1A1A' 
+    caption_font_color: '1A1A1A'
     border_width: 0.8
     border_color: '1A1A1A'
     grid_width: 0.4

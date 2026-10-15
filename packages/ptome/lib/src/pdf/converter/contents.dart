@@ -1876,3 +1876,329 @@ final class _EngineAtWidth
   (double, double) intrinsicWidths() =>
       _of(1000000)?.intrinsicWidths() ?? (0, 0);
 }
+
+/// An item of a list set as a tree of braces: its [text], if any, and its
+/// [branches].
+final class _BraceNode {
+  const new(this.text, this.branches);
+
+  final TextBox? text;
+  final List<_BraceNode> branches;
+}
+
+/// A node of a tree of braces laid out at a width: its height, how to
+/// paint it with its top left at (x, top), and its anchors (right and
+/// down from that corner).
+typedef _LaidBraces = ({
+  double height,
+  void Function(LayoutPage page, double x, double top) paint,
+  List<(String, double, double)> anchors,
+});
+
+/// Lists set as trees of braces (see `_bracesList`): the [roots] one under
+/// another, [spacing] apart; each node's text at the left, at most
+/// [textShare] of the room when it has branches, then [gap], a brace
+/// [braceWidth] wide stroked [lineWidth] thick in [color] spanning its
+/// branches, [gap], and its branches, the text level with the brace's
+/// point. A root is kept whole on a page; one taller than the region is
+/// split between its branches (its text set again beside the rest).
+final class _BraceTree implements CustomContent {
+  const new(
+    this.roots, {
+    required this.braceWidth,
+    required this.gap,
+    required this.spacing,
+    required this.textShare,
+    required this.lineWidth,
+    this.color,
+  });
+
+  final List<_BraceNode> roots;
+  final double braceWidth;
+  final double gap;
+  final double spacing;
+  final double textShare;
+  final double lineWidth;
+  final Color? color;
+
+  @override
+  CustomPlacement? place(
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    final placed = <(_LaidBraces, double)>[];
+    var height = 0.0;
+    List<_BraceNode>? rest;
+    for (final (i, root) in roots.indexed) {
+      final top = placed.isEmpty ? 0.0 : height + spacing;
+      final laid = _lay(root, width);
+      if (top + laid.height <= available + 1e-6) {
+        placed.add((laid, top));
+        height = top + laid.height;
+        continue;
+      }
+      // (Taller than the room: split between its branches at the top of
+      // a region, else moved on whole.)
+      if (placed.isEmpty && atTop) {
+        final (first, second) = _split(root, width, available);
+        final laidFirst = _lay(first, width);
+        placed.add((laidFirst, 0));
+        height = laidFirst.height;
+        rest = [?second, ...roots.skip(i + 1)];
+      } else {
+        rest = roots.sublist(i);
+      }
+      break;
+    }
+    if (placed.isEmpty) return null;
+    return CustomPlacement(
+      height: height,
+      anchors: [
+        for (final (laid, top) in placed)
+          for (final (name, ax, ay) in laid.anchors) (name, ax, ay + top),
+      ],
+      paint: (page, x, top) {
+        for (final (laid, offset) in placed) {
+          laid.paint(page, x, top - offset);
+        }
+      },
+      rest: rest == null || rest.isEmpty
+          ? null
+          : _BraceTree(
+              rest,
+              braceWidth: braceWidth,
+              gap: gap,
+              spacing: spacing,
+              textShare: textShare,
+              lineWidth: lineWidth,
+              color: color,
+            ),
+    );
+  }
+
+  /// [node] split where its first part is as tall as [available] allows
+  /// (at least its first branch, itself split when that is too tall), and
+  /// the rest, the same text over its other branches.
+  (_BraceNode, _BraceNode?) _split(
+    _BraceNode node,
+    double width,
+    double available,
+  ) {
+    final branches = node.branches;
+    if (branches.isEmpty) return (node, null);
+    var count = 1;
+    while (count < branches.length &&
+        _lay(
+              _BraceNode(node.text, branches.sublist(0, count + 1)),
+              width,
+            ).height <=
+            available + 1e-6) {
+      count++;
+    }
+    if (count == 1 &&
+        branches.length > 1 &&
+        _lay(_BraceNode(node.text, branches.sublist(0, 1)), width).height >
+            available + 1e-6) {
+      // (Its first branch too tall: that split in turn.)
+      final (first, second) = _split(
+        branches.first,
+        width - _textWidth(node, width) - 2 * gap - braceWidth,
+        available,
+      );
+      return (
+        _BraceNode(node.text, [first]),
+        _BraceNode(node.text, [?second, ...branches.skip(1)]),
+      );
+    }
+    return (
+      _BraceNode(node.text, branches.sublist(0, count)),
+      count == branches.length
+          ? null
+          : _BraceNode(node.text, branches.sublist(count)),
+    );
+  }
+
+  /// The width of [node]'s text at [width], when it is a root: all of it
+  /// without branches, else its level's column (see [_columns]).
+  double _textWidth(_BraceNode node, double width) =>
+      _textWidthIn(node, _columns(node, width), 0, width);
+
+  /// The width of [node]'s text at depth [depth] in [columns]: all of
+  /// [width] without branches, else as wide as its widest line up to its
+  /// level's column (never narrower than its longest word).
+  double _textWidthIn(
+    _BraceNode node,
+    List<double> columns,
+    int depth,
+    double width,
+  ) {
+    final text = node.text;
+    if (text == null) return 0;
+    if (node.branches.isEmpty) return width;
+    final (least, most) = text.intrinsicWidths();
+    return math.min(math.max(math.min(most, columns[depth]), least), width);
+  }
+
+  /// The widths of the columns the texts with branches of the tree at
+  /// [root] are set in, level by level, at [width]: each as wide as its
+  /// widest text up to [textShare] of the room, the leaves keeping a
+  /// third of it (or their longest word); when they don't fit, each
+  /// narrowed toward its longest word in proportion, as a table's
+  /// automatic columns are.
+  List<double> _columns(_BraceNode root, double width) {
+    final most = <double>[];
+    final least = <double>[];
+    var leafLeast = 0.0;
+    var leafMost = 0.0;
+    void visit(_BraceNode node, int depth) {
+      final (l, m) = node.text?.intrinsicWidths() ?? (0.0, 0.0);
+      if (node.branches.isEmpty) {
+        leafLeast = math.max(leafLeast, l);
+        leafMost = math.max(leafMost, m);
+        return;
+      }
+      while (most.length <= depth) {
+        most.add(0);
+        least.add(0);
+      }
+      most[depth] = math.max(most[depth], math.min(m, width * textShare));
+      least[depth] = math.max(least[depth], l);
+      for (final branch in node.branches) {
+        visit(branch, depth + 1);
+      }
+    }
+
+    visit(root, 0);
+    final leaves = math.max(leafLeast, math.min(leafMost, width / 3));
+    final room = math.max<double>(
+      width - most.length * (braceWidth + 2 * gap) - leaves,
+      0,
+    );
+    final natural = [for (final (i, m) in most.indexed) math.max(m, least[i])];
+    final total = natural.fold<double>(0, (a, b) => a + b);
+    if (total <= room) return natural;
+    final floor = least.fold<double>(0, (a, b) => a + b);
+    if (floor >= room || total <= floor) return least;
+    final scale = (room - floor) / (total - floor);
+    return [
+      for (final (i, n) in natural.indexed) least[i] + (n - least[i]) * scale,
+    ];
+  }
+
+  _LaidBraces _lay(_BraceNode node, double width) =>
+      _layIn(node, _columns(node, width), 0, width);
+
+  _LaidBraces _layIn(
+    _BraceNode node,
+    List<double> columns,
+    int depth,
+    double width,
+  ) {
+    final textWidth = _textWidthIn(node, columns, depth, width);
+    final text = node.text?.place(textWidth, double.infinity, atTop: true);
+    final textHeight = text?.height ?? 0;
+    if (node.branches.isEmpty) {
+      return (
+        height: textHeight,
+        anchors: text?.anchors ?? const [],
+        paint: text == null ? (_, _, _) {} : text.paint,
+      );
+    }
+    final left = (text == null ? 0.0 : textWidth + gap) + braceWidth + gap;
+    final branches = <(_LaidBraces, double)>[];
+    var branchesHeight = 0.0;
+    for (final branch in node.branches) {
+      final top = branches.isEmpty ? 0.0 : branchesHeight + spacing;
+      final laid = _layIn(
+        branch,
+        columns,
+        depth + 1,
+        math.max(width - left, 0),
+      );
+      branches.add((laid, top));
+      branchesHeight = top + laid.height;
+    }
+    final height = math.max(textHeight, branchesHeight);
+    final textTop = (height - textHeight) / 2;
+    final branchesTop = (height - branchesHeight) / 2;
+    final braceLeft = text == null ? 0.0 : textWidth + gap;
+    return (
+      height: height,
+      anchors: [
+        for (final (name, ax, ay)
+            in text?.anchors ?? const <(String, double, double)>[])
+          (name, ax, ay + textTop),
+        for (final (laid, top) in branches)
+          for (final (name, ax, ay) in laid.anchors)
+            (name, ax + left, ay + branchesTop + top),
+      ],
+      paint: (page, x, top) {
+        text?.paint(page, x, top - textTop);
+        for (final (laid, offset) in branches) {
+          laid.paint(page, x + left, top - branchesTop - offset);
+        }
+        _brace(
+          page.canvas,
+          x + braceLeft,
+          top - branchesTop,
+          top - branchesTop - branchesHeight,
+        );
+      },
+    );
+  }
+
+  /// A brace from [upper] down to [lower], its point at [x], its arms
+  /// [braceWidth] to the right.
+  void _brace(Canvas canvas, double x, double upper, double lower) {
+    final right = x + braceWidth;
+    final middle = x + braceWidth / 2;
+    final centre = (upper + lower) / 2;
+    final curl = math.min(braceWidth / 2, (upper - lower) / 4);
+    canvas
+      ..save()
+      ..setLineWidth(lineWidth)
+      ..setLineCap(LineCap.round);
+    if (color case final color?) canvas.setStrokeColor(color);
+    canvas
+      ..moveTo(right, upper)
+      ..curveTo(middle, upper, middle, upper, middle, upper - curl)
+      ..lineTo(middle, centre + curl)
+      ..curveTo(middle, centre, middle, centre, x, centre)
+      ..curveTo(middle, centre, middle, centre, middle, centre - curl)
+      ..lineTo(middle, lower + curl)
+      ..curveTo(middle, lower, middle, lower, right, lower)
+      ..stroke()
+      ..restore();
+  }
+
+  @override
+  double minHeight(double width) =>
+      roots.isEmpty ? 0 : _lay(roots.first, width).height;
+
+  @override
+  (double, double) intrinsicWidths() {
+    (double, double) of(_BraceNode node) {
+      final (least, most) = node.text?.intrinsicWidths() ?? (0.0, 0.0);
+      if (node.branches.isEmpty) return (least, most);
+      var branchesLeast = 0.0;
+      var branchesMost = 0.0;
+      for (final branch in node.branches) {
+        final (l, m) = of(branch);
+        branchesLeast = math.max(branchesLeast, l);
+        branchesMost = math.max(branchesMost, m);
+      }
+      final between = 2 * gap + braceWidth;
+      return (least + between + branchesLeast, most + between + branchesMost);
+    }
+
+    var least = 0.0;
+    var most = 0.0;
+    for (final root in roots) {
+      final (l, m) = of(root);
+      least = math.max(least, l);
+      most = math.max(most, m);
+    }
+    return (least, most);
+  }
+}

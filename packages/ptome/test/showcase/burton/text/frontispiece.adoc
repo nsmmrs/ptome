@@ -1,0 +1,4 @@
+[.frontispiece%notitle%noheader%nofooter]
+== Frontispiece
+
+image::frontispiece.png["The engraved title page of the sixth edition (1652), its ten panels: 1. Democritus Abderites 2. Zelotypia 3. Solitudo 4. Inamorato 5. Hypocondriacus 6. Superstitiosus 7. Maniacus 8. Borage 9. Hellebor 10. Democritus Junior THE ANATOMY OF MELANCHOLY What it is, with all the kinds, causes, symptoms, prognostics, and several cures of it. In three Partitions, with their several Sections, numbers, and subsections. Philosophically, medicinally, Historically, opened and cut up. By Democritus Junior With a Satyrical Preface conducing to the following Discourse. The Sixth Edition, corrected and augmented by the Author. Omne tulit punctum, qui miscit utile dulce. London Printed & to be sold by Hen. Crips & Lodo Lloyd at their shop in Popes-head Alley. 1652",align=center,pdfwidth=100%]

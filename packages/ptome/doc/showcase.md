@@ -10,6 +10,7 @@ EPIC-phf3n2 has the plan.
 | --- | --- |
 | [Alice](../test/showcase/alice/NOTICE.md) | Illustrations the text runs beside, the Mouse's Tale in type that shrinks down its tail, Jabberwocky in mirror type, the chess problem's moves in two columns |
 | [Babbage's logarithms](../test/showcase/babbage/NOTICE.md) | A large numeric table, generated: rows in fives, figures in columns, heads on every page, the page's range in its head, a tinted page |
+| [Burton's Anatomy of Melancholy](../test/showcase/burton/NOTICE.md) | Brace diagrams: the synopses as trees of braces; Burton's 6,816 citations in the outer margin, lettered on each page; Partitions, Sections, Members and Subsections in the running heads |
 | [The Book of Common Prayer](../test/showcase/bcp/NOTICE.md) | Red and black: rubrics, red-letter days and verse numbers in red; versicles and responses run in, the Litany's responses from its units scheme, the Psalter quoted whole, the calendar's January ruled |
 | [Gibbon](../test/showcase/gibbon/NOTICE.md) | Heavy footnotes (1,931) in two balanced columns at the foot, kept by their references, split across pages; dates in the outer margin |
 | [Moby-Dick](../test/showcase/moby-dick/NOTICE.md) | Scale (the whole novel, 617 pages) and a novel's apparatus: a dedication page, the Extracts' sources, epigraphs, footnotes, the play-script chapters |
@@ -65,7 +66,8 @@ change on purpose is a change to the expected files:
 
 1. Its text: a Standard Ebooks production imported by
    `tool/showcase_import.dart` (`--part` for one of several books in a
-   work), Project Gutenberg's text without its header and footer, a
+   work), Project Gutenberg's text without its header and footer
+   (`tool/showcase_gutenberg.dart`, a reading of its own for each work), a
    transcription from a facsimile, or generated. US public domain
    (published in 1930 or earlier), preferably also life plus 70 years;
    never CC BY-SA or NC.

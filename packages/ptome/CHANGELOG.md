@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: the `braces` role sets an unordered list as a tree of curly
+  braces (Burton's synopses; FEAT-6h74yn); `footnotes_column` sets the
+  footnotes in a margin column, each level with its reference, and
+  `footnotes_number_style` letters them (`lower-alpha`), numbers them
+  in roman numerals or marks them *, †, ‡ (Burton's citations;
+  FEAT-5qz4y9). `tool/showcase_gutenberg.dart` reads Project
+  Gutenberg's texts into the showcase.
 - PDF: `heading_h<n>_initial_skip_roles`: a paragraph with one of the
   roles passes a section's initial on to the next (a prayer book's
   rubric before the prayer; FEAT-v9bhk3). `tool/showcase.dart` converts

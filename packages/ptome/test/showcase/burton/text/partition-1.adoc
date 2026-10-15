@@ -1,0 +1,224 @@
+[#partition-1]
+= The First Partition
+
+[.synopsis]
+== [[rh-synopsis-1,Synopsis.]]The Synopsis of the First Partition
+
+[.braces]
+* In diseases, consider <<id_1.1.1.1,Sect. 1. Memb. 1.>>
+** Their Causes. <<id_1.1.1.1,Subs. 1.>>
+*** Impulsive;
+**** Sin, concupiscence, &amp;c.
+*** Instrumental;
+**** Intemperance, all second causes, &amp;c.
+** Or Definition, Member, Division. <<id_1.1.1.2,Subs. 2.>>
+*** Of the body 300, which are
+**** Epidemical, as Plague, Plica, &amp;c.
+**** Or Particular as Gout, Dropsy, &amp;c.
+*** Or Of the head or mind. <<id_1.1.1.3,Subs. 3.>>
+**** In disposition; as all perturbations, evil affection, &amp;c.
+**** Or Habits, as <<id_1.1.1.4,Subs. 4.>>
+***** Dotage
+***** Frenzy.
+***** Madness.
+***** Ecstasy.
+***** Lycanthropia.
+***** Chorus sancti Viti.
+***** Hydrophobia.
+***** Possession or obsession of Devils.
+***** Melancholy. <<aries.1,See ♈︎>>.
+
+[.braces]
+* [[aries.1]]♈︎ Melancholy: in which consider
+** Its Equivocations, in Disposition, Improper, &amp;c. <<id_1.1.1.5,Subsect. 5.>>
+** <<id_1.1.2,Memb. 2.>>
+** To its explication, a digression of anatomy, in which observe parts of <<id_1.1.2.1,Subs. 1.>>
+*** Body hath parts <<id_1.1.2.2,Subs. 2.>>
+**** contained as
+***** Humours, 4. Blood, Phlegm, &amp;c.
+***** Spirits; vital, natural, animal.
+**** or containing
+***** Similar; spermatical, or flesh, bones, nerves, &amp;c. <<id_1.1.2.3,Subs. 3.>>
+***** Dissimilar; brain, heart, liver, &amp;c. <<id_1.1.2.4,Subs. 4>>
+*** Soul and its faculties, as
+**** Vegetal. <<id_1.1.2.5,Subs. 5.>>
+**** Sensible. <<id_1.1.2.6,Subs. 6, 7, 8.>>
+**** Rational. <<id_1.1.2.9,Subsect. 9, 10, 11.>>
+** <<id_1.1.3,Memb. 3.>>
+** Its definition, name, difference, <<id_1.1.3.1,Subs. 1.>>
+** The part and parties affected, affection, &amp;c. <<id_1.1.3.2,Subs. 2.>>
+** The matter of melancholy, natural, &amp;c. <<id_1.1.3.3,Subs. 3.>>
+** Species, or kinds &#91;<<id_1.1.3.4,Subs. 4.>>&#93;, which are
+*** Proper to parts, as
+**** Of the head alone, hypochondriacal, or windy melancholy. Of the whole body.
+***** with their several causes, symptoms, prognostics, cures
+*** Or Indefinite; as Love-melancholy, the subject of the third Partition.
+** Its Causes in general. <<s1.A,Sect. 2.>> A.
+** Its Symptoms or signs. <<s1.B,Sect. 3.>> B.
+** Its Prognostics or indications. <<s1.C,Sect. 4.>> C.
+** Its Cures; the subject of the second Partition.
+
+[.braces]
+* [[s1.A]]A. <<id_1.2.1,Sect. 2.>> Causes of Melancholy are either
+** General, as <<id_1.2.1,Memb. 1.>>
+*** Supernatural
+**** As from God immediately, or by second causes. <<id_1.2.1.1,Subs. 1.>>
+**** Or from the devil immediately, with a digression of the nature of spirits and devils. <<id_1.2.1.2,Subs. 2.>>
+**** Or mediately, by magicians, witches. <<id_1.2.1.3,Subs. 3.>>
+*** Or Natural
+**** Primary, as stars, proved by aphorisms, signs from physiognomy, metoposcopy, chiromancy. <<id_1.2.1.4,Subs. 4.>>
+**** Or Secondary, as
+***** Congenite, inward from
+- Old age, temperament, <<id_1.2.1.5,Subs. 5.>>
+- Parents, it being an hereditary disease, <<id_1.2.1.6,Subs. 6.>>
+***** Or Outward or adventitious, which are
+- Evident, outward, remote, adventitious, as,
+• Necessary, <<taurus,see ♉︎>>.
+• Not necessary, as <<id_1.2.4,M. 4. S. 2.>>
+•• Nurses, <<id_1.2.4.1,Subs. 1.>>
+•• Education, <<id_1.2.4.2,Subs. 2.>>
+•• Terrors, affrights, <<id_1.2.4.3,Subs. 3.>>
+•• Scoffs, calumnies, bitter jests, <<id_1.2.4.4,Subs. 4.>>
+•• Loss of liberty, servitude, imprisonment, <<id_1.2.4.5,Subs. 5.>>
+•• Poverty and want, <<id_1.2.4.6,Subs. 6.>>
+•• A heap of other accidents, death of friends, loss, &amp;c. <<id_1.2.4.7,Subs. 7.>>
+- Or Contingent, inward, antecedent, nearest. <<id_1.2.5,Memb. 5. Sect. 2.>>
+• In which the body works on the mind, and this malady is caused by precedent diseases; as agues, pox, &amp;c., or temperature, innate <<id_1.2.5.1,Subs. 1.>>
+• Or by particular parts distempered, as brain, heart, spleen, liver, mesentery, pylorus, stomach &amp;c. <<id_1.2.5.2,Subs. 2.>>
+** Particular to the three species. See ♊︎.
+
+[.braces]
+* ♊︎ Particular causes. <<id_1.2.5,Sect. 2. Memb. 5.>>
+** Of head Melancholy are <<id_1.2.5.3,Subs. 3.>>
+*** Inward
+**** Innate humour, or from temperature adjust.
+**** A hot brain, corrupted blood in the brain
+**** Excess of venery, or defect
+**** Agues, or some precedent disease
+**** Fumes arising from the stomach, &amp;c.
+*** Or Outward
+**** Heat of the sun, immoderate
+**** A blow on the head
+**** Overmuch use of hot wines, spices, garlic, onions, hot baths, overmuch waking, &amp;c.
+**** Idleness, solitariness, or overmuch study, vehement labour, &amp;c.
+**** Passions, perturbations, &amp;c.
+** Of hypochondriacal or windy melancholy are, &#91;<<id_1.2.5.4,Subs. 4.>>&#93;
+*** Inward
+**** Default of spleen, belly, bowels, stomach, mesentery, miseraic veins, liver, &amp;c.
+**** Months or hemorrhoids stopped, or any other ordinary evacuation
+*** or Outward
+**** Those six non-natural things abused.
+** Over all the body are, <<id_1.2.5.5,Subs. 5.>>
+*** Inward
+**** Liver distempered, stopped, over-hot, apt to engender melancholy, temperature innate.
+*** or Outward
+**** Bad diet, suppression of hemorrhoids &amp;c. and such evacuations, passions, cares, &amp;c. those six non-natural things abused.
+
+[.braces]
+* [[taurus]]♉︎ Necessary causes, as those six non-natural things, which are, <<id_1.2.2,Sect. 2 Memb. 2.>>
+** Diet offending in <<id_1.2.2.1,Subs. 1.>>
+*** Substance
+**** Bread; course and black, &amp;c.
+**** Drink; thick, thin, sour, &amp;c.
+**** Water unclean, milk, oil, vinegar, wine, spices &amp;c.
+**** Flesh
+***** Parts: heads, feet, entrails, fat, bacon, blood, &amp;c.
+***** Kinds:
+- Beef, pork, venison, hares, goats, pigeons, peacocks, fen-fowl, &amp;c.
+**** Herbs, Fish, &amp;c.
+***** Of fish; all shellfish, hard and slimy fish, &amp;c.
+***** Of herbs; pulse, cabbage, melons, garlic, onions, &amp;c.
+***** All roots, raw fruits, hard and windy meats
+*** Quality, as in
+**** Preparing, dressing, sharp sauces, salt meats, indurate, soused, fried, broiled or made-dishes, &amp;c.
+*** Quantity
+**** Disorder in eating, immoderate eating, or at unseasonable times, &amp;c. <<id_1.2.2.2,Subs. 2>>
+**** Custom; delight, appetite, altered, &amp;c. <<id_1.2.2.3,Subs. 3>>
+** Retention and evacuation, <<id_1.2.2.4,Subs. 4.>>
+*** Costiveness, hot baths, sweating, issues stopped, Venus in excess, or in defect, phlebotomy, purging, &amp;c.
+** Air; hot, cold, tempestuous, dark, thick, foggy, moorish, &amp;c. <<id_1.2.2.5,Subs. 5.>>
+** Exercise, <<id_1.2.2.6,Subs. 6.>>
+*** Unseasonable, excessive, or defective, of body or mind, solitariness, idleness, a life out of action, &amp;c.
+** Sleep and waking, unseasonable, inordinate, overmuch, overlittle, &amp;c. <<id_1.2.2.7,Subs. 7.>>
+** <<id_1.2.3,Memb. 3. Sect. 2.>>
+** Passions and perturbations of the mind, <<id_1.2.3.1,Subs. 1.>> With a digression of the force of imagination. <<id_1.2.3.2,Subs. 2.>> and division of passions into <<id_1.2.3.3,Subs. 3.>>
+*** Irascible,
+**** Sorrow, cause and symptom, <<id_1.2.3.4,Subs. 4.>>
+**** Fear, cause and symptom, <<id_1.2.3.5,Subs. 5.>>
+**** Shame, repulse, disgrace, &amp;c. <<id_1.2.3.6,Subs. 6.>>
+**** Envy and malice, <<id_1.2.3.7,Subs. 7.>>
+**** Emulation, hatred, faction, desire of revenge, <<id_1.2.3.8,Subs. 8.>>
+**** Anger a cause, <<id_1.2.3.9,Subs. 9.>>
+**** Discontents, cares, miseries, &amp;c. <<id_1.2.3.10,Subs. 10.>>
+*** or concupiscible.
+**** Vehement desires, ambition, <<id_1.2.3.11,Subs. 11.>>
+**** Covetousness, [.foreign,lang=el]##φιλαργυρίαν##, <<id_1.2.3.12,Subs. 12.>>
+**** Love of pleasures, gaming in excess, &amp;c. <<id_1.2.3.13,Subs. 13.>>
+**** Desire of praise, pride, vainglory, &amp;c. <<id_1.2.3.14,Subs. 14.>>
+**** Love of learning, study in excess, with a digression, of the misery of scholars, and why the Muses are melancholy, <<id_1.2.3.15,Subs. 15.>>
+
+[.braces]
+* [[s1.B]]B. Symptoms of melancholy are either <<id_1.3.1,Sect. 3.>>
+** General, as of <<id_1.3.1,Memb. 1.>>
+*** Body, as ill digestion, crudity, wind, dry brains, hard belly, thick blood, much waking, heaviness, and palpitation of heart, leaping in many places, &amp;c., <<id_1.3.1.1,Subs. 1.>>
+*** or Mind
+**** Common to all or most.
+***** Fear and sorrow without a just cause, suspicion, jealousy, discontent, solitariness, irksomeness, continual cogitations, restless thoughts, vain imaginations, &amp;c. <<id_1.3.1.2,Subs. 2.>>
+**** Or Particular to private persons, according to <<id_1.3.1.3,Subs. 3. 4.>>
+***** Celestial influences, as ♄ ♃ ♂, &amp;c. parts of the body, heart, brain, liver, spleen, stomach, &amp;c.
+***** Humours
+- Sanguine are merry still, laughing, pleasant, meditating on plays, women, music, &amp;c.
+- Phlegmatic, slothful, dull, heavy, &amp;c.
+- Choleric, furious, impatient, subject to hear and see strange apparitions, &amp;c.
+- Black, solitary, sad; they think they are bewitched, dead, &amp;c.
+***** Or mixed of these four humours adust, or not adust, infinitely varied.
+***** Their several customs, conditions, inclinations, discipline, &amp;c.
+- Ambitious, thinks himself a king, a lord; covetous, runs on his money; lascivious on his mistress; religious, hath revelations, visions, is a prophet, or troubled in mind; a scholar on his book, &amp;c.
+***** Continuance of time as the humour is intended or remitted, &amp;c.
+- Pleasant at first, hardly discerned; afterwards harsh and intolerable, if inveterate.
+- Hence some make three degrees,
+• 1. [.foreign,lang=la]##Falsa cogitatio.##
+• 2. [.foreign,lang=la]##Cogitata loqui.##
+• 3. [.foreign,lang=la]##Exequi loquutum.##
+- By fits, or continuate, as the object varies, pleasing, or displeasing.
+** Simple, or as it is mixed with other diseases, apoplexies, gout, [.foreign,lang=la]##caninus appetitus##, &amp;c. so the symptoms are various.
+
+[.braces]
+* ♋︎ Particular symptoms to the three distinct species. <<id_1.3.2,Sect. 3. Memb. 2.>>
+** Head melancholy. <<id_1.3.2.1,Subs. 1.>>
+*** In body
+**** Headache, binding and heaviness, vertigo, lightness, singing of the ears, much waking, fixed eyes, high colour, red eyes, hard belly, dry body; no great sign of melancholy in the other parts.
+*** Or In mind.
+**** Continual fear, sorrow, suspicion, discontent, superfluous cares, solicitude, anxiety, perpetual cogitation of such toys they are possessed with, thoughts like dreams, &amp;c.
+** Hypochondriacal, or windy melancholy. <<id_1.3.2.2,Subs. 2.>>
+*** In body
+**** Wind, rumbling in the guts, bellyache, heat in the bowels, convulsions, crudities, short wind, sour and sharp belchings, cold sweat, pain in the left side, suffocation, palpitation, heaviness of the heart, singing in the ears, much spittle, and moist, &amp;c.
+*** Or In mind.
+**** Fearful, sad, suspicious, discontent, anxiety, &amp;c. Lascivious by reason of much wind, troublesome dreams, affected by fits, &amp;c.
+** Over all the body. <<id_1.3.2.3,Subs. 3.>>
+*** In body
+**** Black, most part lean, broad veins, gross, thick blood, their hemorrhoids commonly stopped, &amp;c.
+*** Or In mind.
+**** Fearful, sad, solitary, hate light, averse from company, fearful dreams, &amp;c.
+** Symptoms of nuns, maids, and widows melancholy, in body and mind, &amp;c. &#91;<<id_1.3.2.4,Subs. 4>>&#93;
+** A reason of these symptoms. <<id_1.3.3,Memb. 3.>>
+*** Why they are so fearful, sad, suspicious without a cause, why solitary, why melancholy men are witty, why they suppose they hear and see strange voices, visions, apparitions.
+*** Why they prophesy, and speak strange languages; whence comes their crudity, rumbling, convulsions, cold sweat, heaviness of heart, palpitation, cardiaca, fearful dreams, much waking, prodigious fantasies.
+
+[.braces]
+* [[s1.C]]C. Prognostics of melancholy. <<id_1.4.1,Sect. 4.>>
+** Tending to good, as
+*** Morphew, scabs, itch, breaking out, &amp;c.
+*** Black jaundice.
+*** If the hemorrhoids voluntarily open.
+*** If varices appear.
+** Tending to evil, as
+*** Leanness, dryness, hollow-eyed, &amp;c.
+*** Inveterate melancholy is incurable.
+*** If cold, it degenerates often into epilepsy, apoplexy, dotage, or into blindness.
+*** If hot, into madness, despair, and violent death.
+** Corollaries and questions.
+*** The grievousness of this above all other diseases.
+*** The diseases of the mind are more grievous than those of the body.
+*** Whether it be lawful, in this case of melancholy, for a man to offer violence to himself. __Neg.__
+*** How a melancholy or mad man offering violence to himself, is to be censured.

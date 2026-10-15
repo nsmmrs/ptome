@@ -11,4 +11,3 @@
 // the response its units scheme prints.
 
 include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..36]
-

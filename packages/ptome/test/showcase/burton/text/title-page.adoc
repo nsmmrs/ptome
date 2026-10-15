@@ -1,0 +1,61 @@
+[.title-page%notitle%noheader%nofooter]
+== Title Page
+
+[.h5]
+THE
+
+[discrete.title-line]
+= ANATOMY OF MELANCHOLY,
+
+[.h3]
+WHAT IT IS,
+
+[.h6]
+WITH
+
+[.h5]
+ALL THE KINDS, CAUSES, SYMPTOMS, PROGNOSTICS, AND SEVERAL CURES OF IT.
+
+[.h3]
+IN THREE PARTITIONS.
+
+[.h6]
+WITH THEIR SEVERAL
+
+[.h6]
+SECTIONS, MEMBERS, AND SUBSECTIONS, PHILOSOPHICALLY, MEDICALLY,
+
+[.h6]
+HISTORICALLY OPENED AND CUT UP.
+
+[.h3]
+BY DEMOCRITUS JUNIOR.
+
+[.h6]
+WITH
+
+[.h5]
+A SATIRICAL PREFACE, CONDUCING TO THE FOLLOWING DISCOURSE.
+
+[.h4]
+A NEW EDITION,
+
+[.h6]
+CORRECTED, AND ENRICHED BY TRANSLATIONS OF THE NUMEROUS CLASSICAL EXTRACTS.
+
+[.h4]
+BY DEMOCRITUS MINOR.
+
+[.h6]
+TO WHICH IS PREFIXED AN ACCOUNT OF THE AUTHOR.
+
+[verse]
+____
+Omne tulit punctum, qui miscuit utile dulci.
+____
+
+[verse]
+____
+He that joins instruction with delight,
+Profit with pleasure, carries all the votes.
+____

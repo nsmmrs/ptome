@@ -28,6 +28,8 @@ import 'package:crypto/crypto.dart';
 import 'package:plain_svg/src/xml.dart';
 import 'package:yaml/yaml.dart';
 
+import 'showcase_text.dart';
+
 const String _github = 'https://github.com/standardebooks';
 
 const Set<String> _productionPages = {
@@ -381,7 +383,7 @@ final class _Converter {
               )
               ..writeln(
                 '${'=' * (_level(element) + 1)} '
-                '${roles.isEmpty ? 'Untitled' : _capitalized(roles.first)}',
+                '${roles.isEmpty ? 'Untitled' : capitalized(roles.first)}',
               );
             _blank(out);
           }
@@ -507,7 +509,7 @@ final class _Converter {
         '${[for (final role in roles) '.$role'].join()}]',
       );
     }
-    out.writeln(_lineStart(text));
+    out.writeln(lineStart(text));
     _blank(out);
   }
 
@@ -531,7 +533,7 @@ final class _Converter {
     final roles = [for (final type in types) type.split(':').last];
     _blank(out);
     out.writeln(
-      '[quote${cite == null ? '' : ', ${_citation(_inline(cite).trim())}'}]',
+      '[quote${cite == null ? '' : ', ${citation(_inline(cite).trim())}'}]',
     );
     if (roles.isNotEmpty) {
       out.writeln('[${[for (final role in roles) '.$role'].join()}]');
@@ -569,7 +571,7 @@ final class _Converter {
                 case final XmlElement other:
                   line.write(_inlineNode(other));
                 case XmlText(:final text):
-                  if (text.trim().isNotEmpty) line.write(_escape(text));
+                  if (text.trim().isNotEmpty) line.write(escapeText(text));
               }
             }
             if ('$line'.trim().isNotEmpty) lines.add('$line');
@@ -587,7 +589,7 @@ final class _Converter {
     collect(poem);
     _blank(out);
     final attribution = switch (cite) {
-      final XmlElement c => ', ${_citation(_inline(c).trim())}',
+      final XmlElement c => ', ${citation(_inline(c).trim())}',
       null => '',
     };
     out.writeln('[verse$attribution]');
@@ -636,7 +638,7 @@ final class _Converter {
     images.add((name, original));
     final alt = img.getAttribute('alt') ?? '';
     final attrs = [
-      _attribute(alt),
+      attributeValue(alt),
       if (id != null) 'id=$id',
       if (roles.isNotEmpty) 'role=${roles.join(' ')}',
     ];
@@ -664,7 +666,7 @@ final class _Converter {
           case 'p':
             out
               ..writeln('+')
-              ..writeln(_lineStart(_inline(block).trim()));
+              ..writeln(lineStart(_inline(block).trim()));
           case 'ol' || 'ul':
             _list(block, out, level + 1);
           default:
@@ -767,7 +769,7 @@ final class _Converter {
           _blank(out);
           out
             ..writeln('[.continued]')
-            ..writeln(_lineStart(part));
+            ..writeln(lineStart(part));
           _blank(out);
         }
         inList = false;
@@ -780,7 +782,7 @@ final class _Converter {
         _blank(out);
         out
           ..writeln('[.direction]')
-          ..writeln(_lineStart(text));
+          ..writeln(lineStart(text));
         _blank(out);
         inList = false;
         continue;
@@ -806,7 +808,7 @@ final class _Converter {
           lines.add('$line'.trim());
           line = StringBuffer();
         case XmlText(:final text):
-          line.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+          line.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
         case final XmlElement child:
           line.write(_speechInline(child));
       }
@@ -814,7 +816,7 @@ final class _Converter {
     if ('$line'.trim().isNotEmpty) lines.add('$line'.trim());
     return [
       ...lines.take(1),
-      for (final line in lines.skip(1)) _lineStart(line),
+      for (final line in lines.skip(1)) lineStart(line),
     ].join(' +\n');
   }
 
@@ -827,7 +829,7 @@ final class _Converter {
       for (final node in element.children) {
         switch (node) {
           case XmlText(:final text):
-            out.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+            out.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
           case final XmlElement child:
             out.write(_speechInline(child));
         }
@@ -844,7 +846,7 @@ final class _Converter {
     for (final node in element.children) {
       switch (node) {
         case XmlText(:final text):
-          out.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+          out.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
         case XmlElement(localName: 'i' || 'em' || 'span' || 'td') && final e:
           out.write(_direction(e));
         case final XmlElement child:
@@ -860,7 +862,7 @@ final class _Converter {
     for (final node in element.children) {
       switch (node) {
         case XmlText(:final text):
-          out.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+          out.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
         case final XmlElement child:
           out.write(_inlineNode(child));
       }
@@ -884,12 +886,12 @@ final class _Converter {
         }
         _italic++;
         try {
-          return _mark('_', _inline(element), attributes: attributes);
+          return markPair('_', _inline(element), attributes: attributes);
         } finally {
           _italic--;
         }
       case 'strong':
-        return wrap(_mark('*', _inline(element)));
+        return wrap(markPair('*', _inline(element)));
       case 'b':
         // (Standard Ebooks sets <b> in small capitals.)
         return '[.sc]#${_inline(element)}#';
@@ -929,7 +931,7 @@ final class _Converter {
         for (final node in element.children) {
           switch (node) {
             case XmlText(:final text):
-              base.write(_escape(text));
+              base.write(escapeText(text));
             case XmlElement(localName: 'rt') && final rt:
               annotation.write(_inline(rt));
             case XmlElement(localName: 'rp'):
@@ -975,7 +977,7 @@ final class _Converter {
             final inner = notes[href.substring(href.indexOf('#') + 1)];
             if (inner != null) clone.write(' [${_noteText(inner)}]');
           case XmlText(:final text):
-            clone.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+            clone.write(escapeText(text.replaceAll(RegExp(r'\s+'), ' ')));
           case final XmlElement child:
             clone.write(_inlineNode(child));
         }
@@ -987,66 +989,3 @@ final class _Converter {
     return parts.join(' ');
   }
 }
-
-/// [text] in an unconstrained mark pair (`__x__`), which holds wherever
-/// it stands, its spaces outside it.
-String _mark(String mark, String text, {String attributes = ''}) {
-  if (text.trim().isEmpty) return text;
-  final lead = text.substring(0, text.length - text.trimLeft().length);
-  final trail = text.substring(text.trimRight().length);
-  final inner = text.trim();
-  return '$lead$attributes$mark$mark$inner$mark$mark$trail';
-}
-
-/// [text] with what AsciiDoc would read as markup written as character
-/// references.
-String _escape(String text) {
-  final out = StringBuffer();
-  for (final rune in text.runes) {
-    out.write(switch (rune) {
-      0x26 => '&amp;',
-      0x3C => '&lt;',
-      0x3E => '&gt;',
-      0x2A => '&#42;',
-      0x5F => '&#95;',
-      0x23 => '&#35;',
-      0x60 => '&#96;',
-      0x5E => '&#94;',
-      0x7E => '&#126;',
-      0x2B => '&#43;',
-      0x7B => '&#123;',
-      0x5B => '&#91;',
-      0x5D => '&#93;',
-      0x7C => '&#124;',
-      _ => String.fromCharCode(rune),
-    });
-  }
-  return '$out'
-      .replaceAll('--', '-&#45;')
-      .replaceAll('...', '..&#46;')
-      .replaceAll('::', ':&#58;')
-      .replaceAll(';;', ';&#59;')
-      .replaceAll('(C)', '(&#67;)')
-      .replaceAll('(R)', '(&#82;)')
-      .replaceAll('(TM)', '(&#84;M)');
-}
-
-/// [text] with its first letter a capital.
-String _capitalized(String text) =>
-    text.isEmpty ? text : '${text[0].toUpperCase()}${text.substring(1)}';
-
-/// [text] as a quotation's attribution: single-quoted, so that its
-/// markup (a title's italics) is converted, as a double-quoted value's
-/// isn't.
-String _citation(String text) => "'${text.replaceAll("'", r"\'")}'";
-
-/// [text] as an attribute value: quoted.
-String _attribute(String text) => '"${text.replaceAll('"', r'\"')}"';
-
-/// [line] safe to start a paragraph: `{empty}` before what would start a
-/// list, a heading, a block title or an attribute entry.
-String _lineStart(String line) =>
-    RegExp(r'^(\*+ |-+ |\.+\S|\.+ |\d+\. |[a-zA-Z]\. |=+ |:\w[\w-]*:|/{2})')
-        .hasMatch(line)
-    ? '{empty}$line'
-    : line;

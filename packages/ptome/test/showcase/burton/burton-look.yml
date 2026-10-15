@@ -1,0 +1,161 @@
+# The Anatomy of Melancholy after its fifth edition (Oxford, 1638,
+# printed for Henry Cripps), a small folio of about 7½ × 11¾ in: a
+# single column of roman, the Latin in italic, with Burton's citations
+# in the wide outer margin in small italic, each lettered as its
+# reference is, a, b, c down the page; the running head over a rule,
+# "Part. 1. Sect. 1." at the left and "Memb. 1. Subs. 4." at the right,
+# the page number outside; each Partition opened by its synopsis, set
+# as trees of braces in small type, then by its title in large
+# letterspaced capitals; the headings of members and subsections
+# centred, the subjects in italic.
+#
+# IM Fell DW Pica stands in for the 1638 roman and italic (the Fell
+# types, cut later in the century for Oxford, are the nearest free faces
+# to the English printing of the time); Noto Serif for the Greek, Noto
+# Sans Symbols for the planets and the signs of the zodiac (`ptome doctor
+# --look burton --looksdir test/showcase/burton`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] } }
+    display: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] }, weight: normal }
+  size:
+    text: { print: 11pt, screen: 19px }
+    headings: { print: [26pt, 13pt, 11pt, 11pt, 11pt, 11pt] }
+  leading: { print: 1.18, screen: 1.55 }
+  measure: { screen: 34em }
+  paragraph: { signal: indent, indent: { print: 1.2em } }
+  align: { print: justify }
+  hyphenate: { print: true }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [7.6in, 11.8in], margin: [0.95in, 2in, 0.85in, 0.75in] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  font:
+    fallbacks: [Noto Serif, Noto Sans Symbols, Noto Sans Math]
+  page:
+    margin_inner: 0.75in
+    margin_outer: 2in
+  heading:
+    chapter_break_before: always
+    part_break_after: auto
+    h1:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 3
+      margin_page_top: 40
+      margin_bottom: 18
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 1.5
+      margin_page_top: 12
+      margin_top: 18
+      margin_bottom: 10
+    h3:
+      text_align: center
+      font_size: 12
+      character_spacing: 1
+      margin_top: 14
+      margin_bottom: 4
+    h4:
+      text_align: center
+      margin_top: 10
+      margin_bottom: 6
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 1.2em
+  role:
+    foreign: { font_style: italic }
+    title: { font_style: italic }
+    blackletter: { font_family: UnifrakturMaguntia }
+    partition_subject:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 2
+      font_size: 15
+      margin_bottom: 12
+
+    h3: { text_align: center, font_size: 17, text_transform: uppercase, character_spacing: 2 }
+    h4: { text_align: center, font_size: 13, text_transform: uppercase, character_spacing: 1 }
+    h5: { text_align: center, font_size: 11, text_transform: uppercase, character_spacing: 1 }
+    h6: { text_align: center, font_size: 9, text_transform: uppercase, character_spacing: 1 }
+  # (Burton's citations in the outer margin, each level with its
+  # reference, lettered from a on each page.)
+  footnotes:
+    column: outside
+    column_offset: 9
+    numbering: page
+    number_style: lower-alpha
+    reference_content: '{{number}}'
+    label_content: '{{number}} '
+    font_size: 7
+    font_style: italic
+    line_height: 1.1
+    item_spacing: 1
+    text_align: left
+  side_notes:
+    item_spacing: 1
+  list_braces:
+    font_size: 8
+    line_height: 1.1
+    width: 5
+    gap: 2
+    item_spacing: 0.5
+    line_width: 0.6
+  quote:
+    border_left_width: 0
+    padding: [0, 14, 0, 14]
+    font_size: 10
+  verse:
+    border_left_width: 0
+    padding: [0, 0, 0, 30]
+    font_size: 10
+    font_style: italic
+  image:
+    align: center
+  header:
+    height: 0.75in
+    vertical_align: bottom
+    font_size: 10
+    border_width: 0.5
+    border_color: '1A1A1A'
+    recto:
+      left: { content: '{chapter-title}' }
+      center: { content: '' }
+      right: { content: '{page-last-mark}{nbsp}{nbsp}{nbsp}{nbsp}{page-number}' }
+    verso:
+      left: { content: '{page-number}{nbsp}{nbsp}{nbsp}{nbsp}{chapter-title}' }
+      center: { content: '' }
+      right: { content: '{page-last-mark}' }
+  footer:
+    height: 0.5in
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  running_content_marks: rh-
+webfonts:
+  - IM Fell DW Pica:400,400italic
+css: |
+  #content h1,#content h2{text-align:center;text-transform:uppercase;letter-spacing:.1em}
+  #content h3,#content h4{text-align:center}
+  .foreign,.title,.verseblock pre{font-style:italic}
+  .h1 p,.h3 p,.h4 p,.h5 p,.h6 p,.partition-subject p{text-align:center;text-transform:uppercase;letter-spacing:.08em}
+  .h1 p{font-size:2em}.h3 p{font-size:1.4em}.h5 p,.h6 p{font-size:.85em}
+  .blackletter{font-family:UnifrakturMaguntia,serif}
+  .ulist.braces ul{list-style:none;margin:0;padding:0}
+  .ulist.braces li{display:flex;align-items:center;margin:.1em 0}
+  .ulist.braces li>p{flex:0 1 auto;max-width:12em;margin:0 .6em 0 0;font-size:.85em}
+  .ulist.braces li>.ulist{border-left:1.5px solid;border-radius:.8em 0 0 .8em;padding-left:.6em}
+epub-css: |
+  h1,h2{text-align:center;text-transform:uppercase}
+  h3,h4{text-align:center}
+  .foreign,.title,.verseblock pre{font-style:italic}
+  .h1 p,.h3 p,.h4 p,.h5 p,.h6 p,.partition-subject p{text-align:center;text-transform:uppercase}
+  .ulist.braces ul{list-style:none;margin:0;padding:0}
+  .ulist.braces li{display:flex;align-items:center}
+  .ulist.braces li>p{max-width:12em;margin:0 .6em 0 0;font-size:.85em}
+  .ulist.braces li>.ulist{border-left:1.5px solid;border-radius:.8em 0 0 .8em;padding-left:.6em}

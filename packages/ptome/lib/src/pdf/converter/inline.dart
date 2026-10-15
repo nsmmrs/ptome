@@ -779,8 +779,13 @@ extension _InlineElements on PdfConverter {
     bool rendered = false,
     String? caller,
   }) {
+    // (A note of the main series set beside the text: another anchor,
+    // at the top of the line, where the note goes.)
+    final beside = caller == null && _footnotesBeside
+        ? '<a id="${_footnoteSideId(index)}">$_dummyText</a>'
+        : '';
     final anchor = anchored
-        ? '<a id="_footnoteref_$index">$_dummyText</a>'
+        ? '<a id="_footnoteref_$index">$_dummyText</a>$beside'
         : '';
     if (!anchored) _unanchoredFootnotes.add(index);
     final label =
@@ -799,7 +804,7 @@ extension _InlineElements on PdfConverter {
         '[{{number}}]';
     final marker = renderNumbered(
       template,
-      caller == null ? localDigits(_document, label) : label,
+      caller == null ? _footnoteNumeral(label) : label,
       (n) =>
           '<a anchor="_footnotedef_$index"${_footnoteLabelKey(index)}>$n</a>',
     );
@@ -814,9 +819,57 @@ extension _InlineElements on PdfConverter {
     (_s('footnotes_label_content') ??
             _document.attr('footnote-label-template')) ??
         '[{{number}}] ',
-    localDigits(_document, label),
+    _footnoteNumeral(label),
     (n) => '<a anchor="_footnoteref_$index"${_footnoteLabelKey(index)}>$n</a>',
   );
+
+  /// A footnote's number [label] as its reference and note show it: in
+  /// the writing system's digits ([localDigits]), or as the theme's
+  /// `footnotes_number_style` writes it (modern engine): `lower-alpha`
+  /// (a, b, … z, then aa, bb…, as early printers letter their marginal
+  /// notes), `upper-alpha`, `lower-roman`, `upper-roman`, or `symbols`
+  /// (*, †, ‡, §, ‖, #, then doubled: the Chicago Manual of Style's
+  /// sequence, 13.27).
+  String _footnoteNumeral(String label) {
+    final number = int.tryParse(label);
+    final style = asciidoctorCompat(_document, CompatFormat.pdf)
+        ? null
+        : _choice('footnotes_number_style', const [
+            'decimal',
+            'lower-alpha',
+            'upper-alpha',
+            'lower-roman',
+            'upper-roman',
+            'symbols',
+          ]);
+    if (number == null || number < 1 || style == null || style == 'decimal') {
+      return localDigits(_document, label);
+    }
+    String repeated(List<String> marks) =>
+        marks[(number - 1) % marks.length] * ((number - 1) ~/ marks.length + 1);
+    return switch (style) {
+      'lower-alpha' => repeated(_letters),
+      'upper-alpha' => repeated(_letters).toUpperCase(),
+      'lower-roman' => PdfConverter._roman(number),
+      'upper-roman' => PdfConverter._roman(number).toUpperCase(),
+      _ => repeated(const ['*', '\u2020', '\u2021', '\u00a7', '\u2016', '#']),
+    };
+  }
+
+  static const List<String> _letters = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', //
+    'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+  ];
+
+  /// Whether the main series of footnotes is set in a margin column
+  /// beside the text (`footnotes_column`, modern engine), each note level
+  /// with its reference's line.
+  bool get _footnotesBeside =>
+      _s('footnotes_column') != null &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
+  /// The anchor footnote [index] is set level with beside the text.
+  String _footnoteSideId(String index) => '${sideNoteAnchorPrefix}fn_$index';
 
   /// How footnotes are numbered: from 1 in each `chapter` (the gem's),
   /// on each `page` (modern engine, footnotes at the bottom of the page)
@@ -871,7 +924,7 @@ extension _InlineElements on PdfConverter {
       }
       number++;
       final key = 'fn$index';
-      final label = localDigits(_document, '$number');
+      final label = _footnoteNumeral('$number');
       if (_layoutLabels[key] != label) {
         _layoutLabels[key] = label;
         changed.add(index);
@@ -1089,7 +1142,7 @@ extension _InlineElements on PdfConverter {
   /// each note level with its reference: a Talmud page's commentaries, a
   /// marginal apparatus.
   List<SideNoteStream> _layoutSideNoteStreams({required bool sided}) => [
-    for (final stream in _noteStreams)
+    for (final stream in [..._noteStreams, PdfConverter._footnoteSideStream])
       if (_sideNoteStreamOf.containsValue(stream))
         SideNoteStream(
           stream,
@@ -1108,7 +1161,12 @@ extension _InlineElements on PdfConverter {
     PageTemplate template, {
     required bool sided,
   }) {
-    final keys = _Keys(this, ['note_stream_${stream.replaceAll('-', '_')}']);
+    final keys = _Keys(this, [
+      if (stream == PdfConverter._footnoteSideStream)
+        'footnotes'
+      else
+        'note_stream_${stream.replaceAll('-', '_')}',
+    ]);
     final m = template.margins;
     final size = template.size;
     final recto = !sided || number.isOdd;
@@ -1222,10 +1280,15 @@ extension _InlineElements on PdfConverter {
               _footnoteLabels[index] = '$label - $sectionText';
             }
             final id = '_footnoteref_$index';
-            // (A stream in a margin column: beside its anchor.)
-            final side = stream != null && _s('footnotes_column') != null;
+            // (A stream in a margin column: beside its anchor; so is the
+            // main series with `footnotes_column`, modern engine.)
+            final side = stream == null
+                ? _footnotesBeside
+                : _s('footnotes_column') != null;
+            final noteId = side && stream == null ? _footnoteSideId(index) : id;
             if (side) {
-              _sideNoteStreamOf[id] = stream;
+              _sideNoteStreamOf[noteId] =
+                  stream ?? PdfConverter._footnoteSideStream;
             } else if (stream != null) {
               _noteStreamOf[id] = stream;
             }
@@ -1247,7 +1310,7 @@ extension _InlineElements on PdfConverter {
               ),
               style: BoxStyle(margin: EdgeInsets(top: spacing)),
             );
-            (side ? _sideNotes : _notes)[id] = opening == null
+            (side ? _sideNotes : _notes)[noteId] = opening == null
                 ? note
                 : BlockBox([_noteHeading(opening[1]!, spacing), note]);
           }),

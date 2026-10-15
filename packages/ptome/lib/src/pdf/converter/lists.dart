@@ -5,6 +5,11 @@ part of '../converter.dart';
 extension _Lists on PdfConverter {
   /// Converts the unordered list [node].
   void convertUlist(ListBlock node) {
+    if (node.includesRole('braces') &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      _bracesList(node);
+      return;
+    }
     String? bullet;
     if (node.hasOption('checklist')) {
       bullet = 'checkbox';
@@ -35,6 +40,73 @@ extension _Lists on PdfConverter {
     _listBullets.add(bullet);
     _list(node);
     _listBullets.removeLast();
+  }
+
+  /// Adds the list [node] set as a tree of braces (Ptome's `braces` role,
+  /// modern engine), as the synopses of Burton's Anatomy of Melancholy
+  /// are printed: each item's text, then a brace to its right spanning
+  /// its sublist, whose items stand one under another beyond it, the text
+  /// level with the brace's point. In the `list_braces` font (the list's
+  /// by default); `list_braces_width` (half an em) the brace's width,
+  /// `list_braces_gap` (a quarter em) the space on each side of it,
+  /// `list_braces_item_spacing` (none) the space between items,
+  /// `list_braces_text_max_width` (`35%`) the most of the room an item's
+  /// text with branches takes, `list_braces_line_width` (0.5) and
+  /// `list_braces_color` (the text's) the brace's stroke. The items'
+  /// other blocks are left out. Each tree is kept whole on a page; one
+  /// taller than a page is split between its branches.
+  void _bracesList(ListBlock node) {
+    if (node.hasTitle) _caption(node, category: 'list', labeled: false);
+    final font = _themeFont('list_braces', _font);
+    _BraceNode branch(ListItem item) {
+      final text = item.text;
+      return _BraceNode(
+        text == null || text.isEmpty
+            ? null
+            : _textBox(
+                text,
+                font,
+                align: 'left',
+                normalizeLineHeight: true,
+                hyphenate: true,
+              ),
+        [
+          for (final block in item.blocks)
+            if (block case final ListBlock list
+                when list.context == BlockContext.ulist ||
+                    list.context == BlockContext.olist)
+              for (final child in list.items) branch(child),
+        ],
+      );
+    }
+
+    final maxWidth = _s('list_braces_text_max_width') ?? '35%';
+    _out.add(
+      CustomBox(
+        _BraceTree(
+          [for (final item in node.items) branch(item)],
+          braceWidth: _length('list_braces_width', font.size) ?? font.size / 2,
+          gap: _length('list_braces_gap', font.size) ?? font.size / 4,
+          spacing: _length('list_braces_item_spacing', font.size) ?? 0,
+          textShare: maxWidth.endsWith('%')
+              ? (double.tryParse(maxWidth.replaceAll('%', '')) ?? 35) / 100
+              : (double.tryParse(maxWidth) ?? 0.35),
+          lineWidth: (_n('list_braces_line_width') ?? 0.5).toDouble(),
+          color: pdfColorOf(_c('list_braces_color') ?? font.color),
+        ),
+        style: BoxStyle(
+          margin: _mirrorInsets(
+            EdgeInsets(
+              bottom: node.parent is ListItem
+                  ? 0
+                  : _marginBelow(node, fallback: 'prose'),
+            ),
+          ),
+          anchor: node.id,
+          structure: _struct('Div'),
+        ),
+      ),
+    );
   }
 
   /// Converts the ordered list [node].
