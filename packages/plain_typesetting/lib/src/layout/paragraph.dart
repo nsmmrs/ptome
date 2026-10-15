@@ -3117,7 +3117,10 @@ Line _line(
 
   for (final (content, _, _, _) in shaped) {
     if (content is TextRun) {
-      text(content.style);
+      text(switch (content.metricsFont) {
+        final font? => content.style.copyWith(font: font),
+        null => content.style,
+      });
       // (Emphasis marks over or under the text: the line that much taller
       // or deeper.)
       if (content.emphasisMark != null) {

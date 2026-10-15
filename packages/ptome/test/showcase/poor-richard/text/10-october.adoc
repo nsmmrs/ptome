@@ -1,0 +1,53 @@
+<<<
+
+[#october.month]
+== [.mon]#VIII Mon.# October hath xxxi days.
+
+[verse.epigram]
+____
+  Time was my spouse and I could not agree,
+Striving about superiority:
+The text which saith that man and wife are one,
+Was the chief argument we stood upon:
+She held, they both one woman should become;
+I held they should be man, and both but one.
+Thus we contended daily, but the strife
+Could not be ended, till both were one Wife.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |2 |Romegius B. |6h |12 |6 24 5 |_The old Man has_
+|2 |3 |_Windy with_ |7 |24 |6 26 6 |_given all to his_
+|3 |4 |{sextile} {mars} {venus} _Clouds,_ |8 |{capricorn} |6 27 6 |_Son: O Fool! to_
+|4 |5 |7 {asterisk} rise 6 38 |9 |18 |6 28 6 |First Quarter.
+|5 |6 |_Rainy now._ |10 |{aquarius} |6 30 6 |{moon} sets 12 16
+|6 |7 |_He has lost his Boots_ |10 |13 |6 31 6 |_undress thy self_
+|7 |G |20 Sund. p. Trin. |11 |26 |6 32 6 |_before thou art_
+|8 |2 |_but sav’d his spurs,_ |12 |{pisces} |6 33 6 |_going to bed._
+|9 |3 |{opposition} {saturn} {sun} |1 |23 |6 35 6 |
+|10 |4 |7 {asterisk} sou. 1 48 morn |2 |{aries} |6 36 6 |{moon} sets 4 42
+|11 |5 |K. Geo. II. crown. |2h |23 |6 37 6 |Full {full} at 9 Afte.
+|12 |6 |{sun} enters {scorpio} {conjunction} {saturn} {mercury} |3 |{taurus} |6 38 6 |Days 10 h. 44
+|13 |7 |_A white Frost._ |4 |23 |6 39 6 |_Cheese and salt_
+|14 |G |21 Sund. p. Trin. |5 |{gemini} |6 40 6 |_meat, should be_
+|15 |2 |Edward K. Con. |6 |23 |6 42 6 |_sparingly eat._
+|16 |3 |_Wind, and its_ |6h |{cancer} |6 43 6 |{moon} ris. 9 42 aft.
+|17 |4 |_likely for_ {conjunction} {sun} {mercury} |7 |22 |6 44 6 |_Doors and walls_
+|18 |5 |St. Luke _Rain._ |8 |{leo} |6 45 6 |_are fools paper._
+|19 |6 |Days 10 h. 24 |9 |19 |6 46 6 |Last Quarter.
+|20 |7 |7 {asterisk} south 1 6 |10 |{virgo} |6 48 6 |
+|21 |G |22 Sund. p. Trin. |10 |14 |6 49 6 |{moon} rise 1 53 mo.
+|22 |2 |Cordula V. |11 |27 |6 50 6 |_Anoint a villain_
+|23 |3 |_Cloudy, with high_ |12 |{libra} |6 51 6 |_and he’l stab you,_
+|24 |4 |_winds._ |1 |1 |6 52 6 |_stab him & he’ll_
+|25 |5 |Crispin |2 |{scorpio} |6 53 6 |_anoint you._
+|26 |6 |Days short 4 h. 22 |2h |14 |6 54 6 |New {moon} at noon
+|27 |7 |7 {asterisk} sou. 12 40 |3 |27 |6 55 6 |
+|28 |G |23 Sund. p. Trin. |4 |{sagittarius} |6 56 6 |{moon} sets 6 31 aft.
+|29 |2 |_cold rain if not snow_ |5 |20 |6 57 6 |_Keep your mouth_
+|30 |3 |K. Geo. II. Nat. |6 |{capricorn} |6 58 6 |_wet, feet dry._
+|31 |4 |1683. |6h |14 |6 59 6 |Days 10 h. 4 m.
+|===

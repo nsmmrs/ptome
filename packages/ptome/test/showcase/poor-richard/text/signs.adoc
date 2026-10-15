@@ -1,0 +1,29 @@
+// The signs of the zodiac, the planets and the aspects the almanac sets,
+// each by its name: the text writes {aries}, the attribute its character.
+:aries: ♈
+:taurus: ♉
+:gemini: ♊
+:cancer: ♋
+:leo: ♌
+:virgo: ♍
+:libra: ♎
+:scorpio: ♏
+:sagittarius: ♐
+:capricorn: ♑
+:aquarius: ♒
+:pisces: ♓
+:sun: ☉
+:moon: ☽
+:mercury: ☿
+:venus: ♀
+:mars: ♂
+:jupiter: ♃
+:saturn: ♄
+:head: ☊
+:tail: ☋
+:conjunction: ☌
+:opposition: ☍
+:sextile: ⚹
+:quartile: □
+:trine: △
+:full: ●

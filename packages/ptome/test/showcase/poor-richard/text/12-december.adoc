@@ -1,0 +1,51 @@
+<<<
+
+[#december.month]
+== [.mon]#X Mon.# December hath xxxi days.
+
+[verse.epigram]
+____
+  She that will eat her breakfast in her bed,
+  And spend the morn in dressing of her head,
+  And sit at dinner like a maiden bride,
+  And talk of nothing all day but of pride;
+  God in his mercy may do much to save her,
+  But what a case is he in that shall have her.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |7 |_Unsettled weather_ |7 |{pisces} |7 21 5 |{moon} sets 11 after.
+|2 |G |Advent Sunday |8 |14 |7 21 5 |First Quarter.
+|3 |2 |_now,_ |9 |28 |7 22 5 |_God works won-_
+|4 |3 |{trine} {sun} {saturn} _Either rain_ |10 |{aries} |7 22 5 |_ders now & then;_
+|5 |4 |_or snow, and then a_ |10 |26 |7 22 5 |_Behold! a Law-_
+|6 |5 |7 {asterisk} set 5 10 |11 |{taurus} |7 23 5 |{moon} sets 3 15 m.
+|7 |6 |_frost comes on_ |12 |26 |7 23 5 |_yer, an honest_
+|8 |7 |_I know._ |1 |{gemini} |7 23 5 |_Man!_
+|9 |G |1 Sund. in Adv. |2 |26 |7 23 5 |Full {full} 9 at nig.
+|10 |2 |{sun} enters {capricorn} then |2h |{cancer} |7 23 5 |_He that lives_
+|11 |3 |Wint. Qu. begins |3 |24 |7 23 5 |_carnally, won’t_
+|12 |4 |& makes shortest |4 |{leo} |7 23 5 |{moon} ris. 8 8 aft.
+|13 |5 |day 9 h. 14 m. |5 |23 |7 23 5 |_live eternally._
+|14 |6 |_Windy and clouds,_ |6 |{virgo} |7 22 5 |
+|15 |7 |{sextile} {saturn} {mercury} |6h |20 |7 22 5 |_Innocence is its_
+|16 |G |2 Sund. in Adv. |7 |{libra} |7 22 5 |_own Defence._
+|17 |2 |7 {asterisk} south 8 58 |8 |14 |7 22 5 |Last Quarter.
+|18 |3 |_like for snow._ |9 |27 |7 22 5 |{moon} rise 1 15 m.
+|19 |4 |{sextile} {saturn} {venus} |10 |{scorpio} |7 21 5 |_Time_ eateth _all_
+|20 |5 |Days incr. 4 mi. |10 |20 |7 21 5 |_things, could old_
+|21 |6 |St. Thomas |11 |{sagittarius} |7 21 5 |_Poets say; The_
+|22 |7 |_High winds and_ |12 |14 |7 21 5 |_Times are_
+|23 |G |3 Sund. in Adv. |1 |26 |7 20 5 |{moon} rise 5 43 mo.
+|24 |2 |{sextile} {mercury} {venus} {quartile} {jupiter} {venus} |2 |{capricorn} |7 20 5 |_chang’d, our_
+|25 |3 |CHRIST Nativ. |2h |20 |7 19 5 |New {moon} at 2 mo.
+|26 |4 |S. Stephen {sextile} {sun} {mars} |3 |{aquarius} |7 19 5 |_times_ drink _all_
+|27 |5 |St. John _cloudy_ |4 |14 |7 18 5 |_away._
+|28 |6 |Innocents _weather._ |5 |28 |7 18 5 |{moon} sets 8 29 aft.
+|29 |7 |_Snow or Rain will_ |6 |{pisces} |7 17 5 |_Never mind it,_
+|30 |G |_now appear, and a_ |6h |24 |7 17 5 |_she’l be sober after_
+|31 |2 |_Frost end the Year._ |7 |{aries} |7 16 5 |_the Holidays._
+|===

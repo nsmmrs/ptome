@@ -1,0 +1,51 @@
+<<<
+
+[#february.month]
+== [.mon]#XII Mon.# February hath xxviii days.
+
+[.text-center]
+_N. N._ of B----s County, pray don’t be angry with poor Richard.
+
+[verse.epigram]
+____
+_Each Age of Men new Fashions doth invent;_
+    _Things which are old, young Men do not esteem:_
+  _What pleas’d our Fathers, doth not us content;_
+      _What flourish’d then, we out of fashion deem:_
+        _And that’s the reason, as I understand,_
+          _Why_ Prodigus _did sell his Father’s Land._
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |5 |_Cloudy and some_ |1 |29 |6 46 6 |{moon} ris. 5 2 mor.
+|2 |6 |Purification V. M. |2 |{aquarius} |6 45 6 |
+|3 |7 |Spring Tides. |2h |28 |6 42 6 |New {moon} 9 morn.
+|4 |G |_falling weather_ |3 |{pisces} |6 41 6 |_Light purse,_
+|5 |2 |{conjunction} {saturn} {mars} _this week._ |4 |27 |6 40 6 |_heavy heart._
+|6 |3 |Shrove Tuesday |5 |{aries} |6 38 6 |{moon} sets 9 26 aft.
+|7 |4 |Ash Wednesday |6 |26 |6 37 6 |_He’s a Fool that_
+|8 |5 |{sun} enters {pisces} |6h |{taurus} |6 36 6 |_makes his Doctor_
+|9 |6 |{quartile} {jupiter} {mercury} _Snow or_ |7 |25 |6 35 6 |_his Heir._
+|10 |7 |Days incr. 1 36 |8 |{gemini} |6 33 6 |First Quarter.
+|11 |G |1 Sund. Lent |9 |22 |6 32 6 |{moon} sets 1 58 mo.
+|12 |2 |_Rain._ |10 |{cancer} |6 31 6 |_Ne’er take a wife_
+|13 |3 |7 {asterisk} south 5 9 |10 |19 |6 30 6 |_till thou hast a_
+|14 |4 |Valentine {sextile} {saturn} {mercury} |11 |{leo} |6 28 6 |_house (& a fire)_
+|15 |5 |{quartile} {jupiter} {venus} _windy &_ |12 |15 |6 27 6 |_to put her in._
+|16 |6 |_rain perhaps._ |1 |28 |6 26 6 |{moon} sets 5 27 mo.
+|17 |7 |{trine} {sun} {jupiter} _clouds and_ |2 |{virgo} |6 24 6 |7 {asterisk} set at midn.
+|18 |G |_Falling weather,_ |2h |23 |6 23 6 |Full {full} 17 day,
+|19 |2 |{sextile} {saturn} {venus} {sextile} {mars} {mercury} |3 |{libra} |6 21 6 |at 2 Aftern.
+|20 |3 |_Clear but windy,_ |4 |16 |6 20 6 |_He’s gone, and_
+|21 |4 |_in spight of Aspects._ |5 |28 |6 18 6 |_forgot nothing but_
+|22 |5 |Days 11 h. 26 m. |6 |{scorpio} |6 17 6 |_to say_ Farewel—
+|23 |6 | |6h |22 |6 16 6 |{moon} ris. 11 43 aft.
+|24 |7 |St. Matthias |7 |{sagittarius} |6 15 6 |_to his creditors._
+|25 |G |3 Sund. in Lent |8 |16 |6 14 6 |Last Quarter.
+|26 |2 |7 {asterisk} set 11 31 |9 |28 |6 13 6 |_Love well, whip_
+|27 |3 |_rain or snow,_ |10 |{capricorn} |6 12 6 |_well._
+|28 |4 |{trine} {jupiter} {mercury} _and wind._ |10 |24 |6 11 6 |{moon} ris. 3 morn.
+|===

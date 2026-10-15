@@ -66,6 +66,9 @@ extension _DocumentParts on PdfConverter {
           : _fonts.emojiFamily,
       // (A bidirectional isolate, a joiner no font has: invisible anyway.)
       invisibleIgnorables: !asciidoctorCompat(document, CompatFormat.pdf),
+      fallbackMetrics:
+          asciidoctorCompat(document, CompatFormat.pdf) ||
+          _s('font_fallback_metrics') != 'base',
       images: (src, format) =>
           (_inlineGraphics[src], _imageProblems[src] ?? 'not an image'),
       boundsHeight: pageHeight - _pageMargins(document).vertical,
@@ -1059,6 +1062,7 @@ extension _DocumentParts on PdfConverter {
         case _TitleSlot(part: TitlePart.title)
             when _s('title_page_title_display') != 'none' && title != null:
           // (The book's title its first heading.)
+          _titleTagged = true;
           place(
             slot,
             subtitled ? title.main : title.combined,

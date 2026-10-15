@@ -703,7 +703,7 @@ extension _Sections on PdfConverter {
         floatBarrier: barrier,
         keepWithNext: sticky || rule != null || roomKept,
         unnumbered: _headingsUnnumbered,
-        structure: _struct('H${level.clamp(1, 6)}'),
+        structure: _headingStruct(level),
       );
       // (Set by the engine's paragraphs where it can: a heading of text
       // alone, kept whole, asking for no room after it.)
@@ -731,7 +731,7 @@ extension _Sections on PdfConverter {
             verticalAlign: verticalAlign,
             keepWithNext: sticky || rule != null,
             unnumbered: _headingsUnnumbered,
-            structure: _struct('H${level.clamp(1, 6)}'),
+            structure: _headingStruct(level),
           ),
         ),
       );
@@ -829,5 +829,14 @@ extension _Sections on PdfConverter {
         radius: radius,
       );
     };
+  }
+
+  /// A heading's element of the logical structure at [level]: the levels
+  /// shifted so that the document's first heading is H1 when no title
+  /// before it is (a book without a title page, `:notitle:`), as PDF/UA-1
+  /// 7.4.2 asks (BUG-ljj0fk).
+  StructureElement? _headingStruct(int level) {
+    final shift = _headingShift ??= _titleTagged ? 0 : math.max(0, level - 1);
+    return _struct('H${(level - shift).clamp(1, 6)}');
   }
 }

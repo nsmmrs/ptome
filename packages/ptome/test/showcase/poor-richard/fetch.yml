@@ -1,0 +1,7 @@
+# The anatomy's woodcut, fetched by tool/showcase.dart into the work cache
+# and checked by its SHA-256: page 3 of the facsimile (the Internet
+# Archive's scan n4), the woodcut cut from the type around it, as a PNG.
+- name: anatomy.png
+  url: https://archive.org/download/poorrichardalman00fran/page/n4.jpg
+  sha256: 132d5bc43f76e9bc4e9c221766b7ba2a82be0423f61a1b62616e2fcb8c7529f3
+  crop: [455, 890, 960, 1170]

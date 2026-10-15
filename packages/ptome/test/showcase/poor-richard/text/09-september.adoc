@@ -1,0 +1,52 @@
+<<<
+
+[#september.month]
+== [.mon]#VII Mon.# September hath xxx days.
+
+[verse.epigram]
+____
+Death is a Fisherman, the world we see
+His Fish-pond is, and we the Fishes be:
+His Net some general Sickness; howe’er he
+Is not so kind as other Fishers be;
+For if they take one of the smaller Fry,
+They throw him in again, he shall not die:
+But Death is sure to kill all he can get,
+And all is Fish with him that comes to Net.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |7 |Giles Abbot |6 |10 |5 48 7 |_Men & Melons_
+|2 |G |{conjunction} {sun} {mercury} _rain & win_ |6h |28 |5 49 7 |London burnt.
+|3 |2 |7 {asterisk} rise 8 46 |7 |{sagittarius} |5 50 7 |_are hard to know._
+|4 |3 |_The heart of a fool is_ |8 |14 |5 51 7 |{moon} set 10 29 aft.
+|5 |4 |_in his mouth, but the_ |9 |27 |5 52 7 |First Quarter.
+|6 |5 |_mouth of a wise man_ |10 |{capricorn} |5 54 7 |_He’s the best phy-_
+|7 |6 |_is in his heart._ |11 |22 |5 55 7 |_sician that knows_
+|8 |7 |7 {asterisk} rise 8 24 |12 |{aquarius} |5 56 7 |_the worthlessness_
+|9 |G |16 Sund. p. Trin. |1 |18 |5 57 7 |{moon} sets 2 22 mo
+|10 |2 |{sun} ent. {libra} 11th day |2 |{pisces} |5 58 7 |_of the most medi-_
+|11 |3 |& makes equ. day |2h |14 |5 59 7 |_cines._
+|12 |4 |{sextile} {jupiter} {mars} & night |3 |{aries} |6 0 6 |Full {full} 1 aftern.
+|13 |5 |{opposition} {saturn} {venus} _Thunder,_ |4 |14 |6 1 6 |_Beware of meat_
+|14 |6 |_Cloudy with warm_ |5 |29 |6 2 6 |_twice boil’d, and_
+|15 |7 |7 {asterisk} rise 8 0 _rains_ |6 |{taurus} |6 3 6 |{moon} rise 8 morn.
+|16 |G |17 Sund. p. Trin. |6h |29 |6 4 6 |_an old Foe recon-_
+|17 |2 |Days short, 2 56 |7 |{gemini} |6 6 6 |_cil’d._
+|18 |3 |_Windy, and like to_ |8 |28 |6 8 6 |
+|19 |4 |_be wet weather._ |9 |{cancer} |6 9 6 |Last Quarter.
+|20 |5 | |10 |26 |6 10 6 |{moon} ris. 12 49 _nig_
+|21 |6 |St. Matthew |10 |{leo} |6 11 6 |_A fine genius in_
+|22 |7 |Maurice B. |11 |21 |6 13 6 |_his own country,_
+|23 |G |18 Sund. p. Trin. |12 |{virgo} |6 14 6 |_is like gold in_
+|24 |2 |7 {asterisk} rise 7 34 |1 |17 |6 15 6 |_the mine._
+|25 |3 |Cleophas {conjunction} {jupiter} {venus} |2 |29 |6 16 6 |{moon} rise 5 morn.
+|26 |4 |Days 11 h. 24 m. |2h |{libra} |6 18 6 |New {moon} 6 aft.
+|27 |5 |_More clear & plea-_ |3 |24 |6 19 6 |_There is no little_
+|28 |6 |7 {asterisk} south 2 29 |4 |{scorpio} |6 20 6 |_enemy._
+|29 |7 |St. Michael _sant._ |5 |18 |6 21 6 |_Flying Clouds._
+|30 |G |19 Sund. p. Trin. |6 |{sagittarius} |6 22 6 |{moon} sets 7 46 aft.
+|===

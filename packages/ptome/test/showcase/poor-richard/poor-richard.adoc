@@ -1,0 +1,37 @@
+= Poor Richard, 1733: An Almanack for the Year of Christ 1733
+Richard Saunders
+:doctype: book
+:lang: en
+:look: poor-richard
+:looksdir: {docdir}
+:imagesdir: images
+:notitle:
+:description: The first Poor Richard’s Almanack, for 1733, transcribed from its facsimile: the title page, Richard Saunders’s address to the reader, the anatomy and the characters of the planets and aspects, and the twelve months, each its verse and its calendar of the days, the Church’s days, the aspects and the weather in their signs, high water, the Moon’s place, the Sun’s rising and setting and the lunations, the proverbs running down the last column.
+include::text/signs.adoc[]
+
+include::text/front.adoc[]
+
+include::text/01-january.adoc[]
+
+include::text/02-february.adoc[]
+
+include::text/03-march.adoc[]
+
+include::text/04-april.adoc[]
+
+include::text/05-may.adoc[]
+
+include::text/06-june.adoc[]
+
+include::text/07-july.adoc[]
+
+include::text/08-august.adoc[]
+
+include::text/09-september.adoc[]
+
+include::text/10-october.adoc[]
+
+include::text/11-november.adoc[]
+
+include::text/12-december.adoc[]
+

@@ -1,0 +1,52 @@
+<<<
+
+[#november.month]
+== [.mon]#IX Mon.# November hath xxx days.
+
+[verse.epigram]
+____
+My neighbour _H----y_ by his pleasing tongue,
+Hath won a Girl that’s rich, wise, fair and young;
+The Match (he saith) is half concluded, he
+Indeed is wondrous willing; but not she.
+And reason good, for he has run thro’ all
+Almost the story of the Prodigal;
+Yet swears he never with the hogs did dine;
+That’s true, for none would trust him with their swine.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |5 |All Saints |7 |26 |7 00 5 |{moon} sets 10 7 aft.
+|2 |6 |All Souls {conjunction} {sun} {jupiter} |8 |{aquarius} |7 1 5 |
+|3 |7 |Winifred |9 |21 |7 2 5 |First Quarter.
+|4 |G |24 Sund. p. Trin. |10 |{pisces} |7 3 5 |_Where bread is_
+|5 |2 |Powder Plot. 1605 |10 |18 |7 4 5 |_wanting, all’s to_
+|6 |3 |7 {asterisk} south 12 0 |11 |{aries} |7 5 5 |_be sold._
+|7 |4 |7 {asterisk} rise achronical. |12 |16 |7 6 5 |{moon} sets 3 28 m.
+|8 |5 |_Cloudy with Rain,_ |1 |{taurus} |7 7 5 |_There is neither_
+|9 |6 |_or Hail._ |2 |16 |7 8 5 |_honour nor gain,_
+|10 |7 |Luther Nat 1483. |2h |{gemini} |7 9 5 |Full {full} at 6 mo.
+|11 |G |25 Sund. p. Trin. |3 |16 |7 10 5 |_got in dealing_
+|12 |2 |{sun} enters {sagittarius} |4 |{cancer} |7 10 5 |_with a vil-lain._
+|13 |3 |_High winds & cold._ |5 |16 |7 11 5 |{moon} rise 8 30 aft.
+|14 |4 |Machutus B. |6 |{leo} |7 12 5 |_The fool hath_
+|15 |5 |{sextile} {mars} {mercury} |6h |14 |7 12 5 |_made a vow, I_
+|16 |6 |7 {asterisk} south 11 11 |7 |28 |7 13 5 |_guess, Never to_
+|17 |7 |Hugh Bish. |8 |{virgo} |7 14 5 |{moon} ris. 12 42 m.
+|18 |G |26 Sund. p. Trin. |9 |23 |7 15 5 |Last Quarter.
+|19 |2 |{opposition} {saturn} {mars} _windy &_ |10 |{libra} |7 15 5 |_let the Fire have_
+|20 |3 |Edmund K. |10 |18 |7 16 5 |_peace._
+|21 |4 |_Falling weather,_ |11 |{scorpio} |7 16 5 |
+|22 |5 |7 {asterisk} south 10 50 |12 |12 |7 17 5 |{moon} rise 4 33 mo
+|23 |6 |Clement {quartile} {jupiter} {venus} |1 |23 |7 17 5 |_Snowy winter, a_
+|24 |7 |Day 9 h. 24 {sextile} {jupiter} {venus} |2 |{sagittarius} |7 18 5 |_plentiful harvest._
+|25 |G |27 Sund. p. Trin. |2h |17 |7 18 5 |New {moon} at 7 mo.
+|26 |2 |7 {asterisk} south 10 33 |3 |29 |7 19 5 |_Nothing more_
+|27 |3 |_either rain or snow._ |4 |{capricorn} |7 19 5 |{moon} sets 7 aftern.
+|28 |4 |{quartile} {mars} {venus} _pleasant but_ |5 |23 |7 20 5 |_like a Fool, than_
+|29 |5 |_cloudy at the End._ |6 |{aquarius} |7 20 5 |_a drunken Man._
+|30 |6 |St. Andrew |6h |18 |7 21 5 |
+|===

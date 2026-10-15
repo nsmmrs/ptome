@@ -882,6 +882,13 @@ final class PdfConverter extends BuiltInConverter
       _document.hasAttr('pdf-ua') &&
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
+  /// Whether the document's title was tagged H1 (on its title page).
+  bool _titleTagged = false;
+
+  /// How many levels the headings' tags are shifted up (see
+  /// `_headingStruct`), fixed at the first heading.
+  int? _headingShift;
+
   /// An element of the logical structure of [role] (with [alt], a
   /// figure's description) for a box, when the PDF is tagged ([_pdfUa]):
   /// in a block with its own language, that language (PDF/UA-1 7.2).

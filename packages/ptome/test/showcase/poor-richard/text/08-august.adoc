@@ -1,0 +1,53 @@
+<<<
+
+[#august.month]
+== [.mon]#VI Mon.# August hath xxxi days.
+
+[verse.epigram]
+____
+‘For us thro’ 12 bright signs Apollo guides
+‘The year, and earth in sev’ral climes divides.
+‘Five girdles bind the skies, the torrid zone
+‘Glows with the passing and repassing sun.
+‘Far on the right and left, th’ extreams of heav’n,
+‘To frosts and snows and bitter blasts are giv’n.
+‘Betwixt the midst and these, the Gods assign’d
+‘Two habitable seats for humane kind.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |4 |Lammas Day |5 |26 |5 9 7 |{moon} sets 8 aftern.
+|2 |5 |{sextile} {jupiter} {venus} |6 |{libra} |5 10 7 |_Take counsel in_
+|3 |6 |Day 13 h. 36 m. |6h |20 |5 12 7 |_wine, but resolve_
+|4 |7 |7 {asterisk} rise 10 31 |7 |{scorpio} |5 13 7 |_afterwards in_
+|5 |G |11 Sund. p. Trin. |8 |13 |5 14 7 |_water._
+|6 |2 |_Sultry hot,_ |9 |26 |5 15 7 |First Quarter.
+|7 |3 |_perhaps_ |10 |{sagittarius} |5 16 7 |{moon} set 11 27 aft.
+|8 |4 |_Thunder, rain &_ |10 |19 |5 17 7 |_He that drinks_
+|9 |5 |_wind._ |11 |{capricorn} |5 18 7 |_fast, pays slow._
+|10 |6 |{trine} {sun} {saturn} |12 |14 |5 19 7 |_Great famine_
+|11 |7 |Days short 1 h. 24 |1 |26 |5 20 7 |_when wolves eat_
+|12 |G |12 Sund. p. Trin. |2 |{aquarius} |5 21 7 |{sun} enters {virgo}
+|13 |2 | |2h |23 |5 22 7 |{moon} set 4 31 mor.
+|14 |3 |Eusebius |3 |{pisces} |5 24 7 |Full {full} 3 morn.
+|15 |4 |7 {asterisk} south 5 morn. |4 |21 |5 26 7 |_wolves._
+|16 |5 | |5 |{aries} |5 27 7 |
+|17 |6 |{sextile} {jupiter} {sun} |6 |20 |5 28 7 |_A good Wife lost_
+|18 |7 |_Windy if not wet._ |6h |{taurus} |5 29 7 |_is God’s gift lost._
+|19 |G |13 Sund. p. Trin. |7 |19 |5 31 7 |{moon} rise 9 aftern.
+|20 |2 |{conjunction} {venus} {mercury} |8 |{gemini} |5 32 7 |_A taught horse,_
+|21 |3 |Dog Days end. |9 |17 |5 33 7 |Last Quarter
+|22 |4 |Days 12 h. 52 m. |10 |{cancer} |5 34 7 |_and a woman to_
+|23 |5 |_Pleasant weather._ |10 |14 |5 35 7 |_teach, and teach-_
+|24 |6 |Bartholomew |11 |28 |5 36 7 |{moon} ris. 1 41 mor.
+|25 |7 |{trine} {saturn} {mars} |12 |{leo} |5 37 7 |_ers practising_
+|26 |G |14 Sund. p. Trin. |1 |24 |5 38 7 |_what they preach_
+|27 |2 |_Thunder & Lightn._ |2 |{virgo} |5 40 7 |_He is ill cloth’d,_
+|28 |3 |_with wind & rain,_ |2h |21 |5 42 7 |New {moon} 3 morn.
+|29 |4 |7 {asterisk} rise 9 0 |3 |{libra} |5 43 7 |_who is bare of_
+|30 |5 |Rosa Virg. |4 |16 |5 45 7 |_Virtue._
+|31 |6 |_towards the end._ |5 |28 |5 46 7 |{moon} sets 7 46 aft.
+|===

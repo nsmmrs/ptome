@@ -1,0 +1,53 @@
+<<<
+
+[#july.month]
+== [.mon]#V Mon.# July hath xxxi days.
+
+[verse.epigram]
+____
+‘Ev’n while the reaper fills his greedy hands,
+‘And binds the golden sheafs in brittle bands:
+‘Oft have I seen a sudden storm arise
+‘From all the warring winds that sweep the skies;
+‘And oft whole sheets descend of slucy rain,
+‘Suck’d by the spungy clouds from off the main;
+‘The lofty skies at once come pouring down,
+‘The promis’d crop and golden labours drown.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |G |6 Sund. p. Trin. |3 |{leo} |4 43 8 |_Many estates are_
+|2 |2 |_More windy and_ |4 |21 |4 43 8 |{moon} sets 8 39 aft.
+|3 |3 |{quartile} {jupiter} {mercury} {jupiter} {venus} {saturn} {mercury} |5 |{virgo} |4 44 8 |_spent in the get-_
+|4 |4 |{conjunction} {venus} {mercury} {conjunction} {mars} {mercury} |6 |17 |4 45 8 |_ting, Since wom-_
+|5 |5 |_like for rain._ |6h |{libra} |4 46 8 |_en for tea forsook_
+|6 |6 |Cornelius |7 |12 |4 46 8 |{moon} sets 10 6 aft.
+|7 |7 |7 {asterisk} set 12 21 |8 |24 |4 47 8 |First Quarter.
+|8 |G |7 Sund. p. Trin. |9 |{scorpio} |4 47 8 |_spinning & knit-_
+|9 |2 |Wind or Thund. |10 |17 |4 48 8 |_ting._
+|10 |3 |{quartile} {saturn} {mars} |11 |29 |4 49 8 |
+|11 |4 |{quartile} {saturn} {sun} |12 |{sagittarius} |4 50 8 |_He that lies down_
+|12 |5 |{sun} enters {leo} |1 |23 |4 50 8 |{moon} sets 1 morn
+|13 |6 |{quartile} {sun} {jupiter} |2 |{capricorn} |4 51 8 |_with Dogs, shall_
+|14 |7 |{conjunction} {sun} {mars} {quartile} {jupiter} {mars} |2h |18 |4 52 8 |_rise up with fleas_
+|15 |G |8 Sund. p. Trin. |3 |{aquarius} |4 53 8 |Full {full} 5 After.
+|16 |2 |7 {asterisk} rise 11 45 |4 |15 |4 54 8 |
+|17 |3 |_Neither Shame nor_ |5 |28 |4 55 8 |{moon} ris. 8 aftern.
+|18 |4 |_Grace yet_ Bob. |6 |{pisces} |4 56 8 |
+|19 |5 |Dog Days begin. |6h |16 |4 57 8 |_A fat kitchin, a_
+|20 |6 |{trine} {saturn} {venus} |7 |{aries} |4 57 8 |_lean Will._
+|21 |7 |{sextile} {jupiter} {mercury} |8 |24 |4 58 8 |
+|22 |G |9 Sund. p. Trin. |9 |{taurus} |4 58 8 |Last Quarter.
+|23 |2 |_Thunder with wind_ |10 |22 |4 59 8 |{moon} ri. 11 38 mo.
+|24 |3 |_or falling weather._ |10 |{gemini} |5 00 7 |_Distrust & cau-_
+|25 |4 |St. James |11 |20 |5 1 7 |_tion are the pa-_
+|26 |5 | |12 |{cancer} |5 2 7 |_rents of security._
+|27 |6 |{trine} {saturn} {venus} _more rain_ |1 |18 |5 3 7 |
+|28 |7 |7 {asterisk} rise 10 54 |2 |{leo} |5 4 7 |{moon} rise 4 morn.
+|29 |G |10 Sund. p. Trin. |2h |17 |5 5 7 |New {moon} 2 aft.
+|30 |2 |_and warm, and_ |3 |29 |5 6 7 |_Tongue double,_
+|31 |3 |_cloudy._ |4 |{virgo} |5 7 7 |_brings trouble._
+|===

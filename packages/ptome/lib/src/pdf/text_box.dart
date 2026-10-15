@@ -320,6 +320,7 @@ final class TextContext {
     this.emojiFallback,
     this.combineDigits = 0,
     this.invisibleIgnorables = false,
+    this.fallbackMetrics = true,
     LoggerBase? logger,
   }) : logger = logger ?? LoggerManager.logger;
 
@@ -349,6 +350,7 @@ final class TextContext {
           emojiFallback: emojiFallback,
           combineDigits: combineDigits,
           invisibleIgnorables: invisibleIgnorables,
+          fallbackMetrics: fallbackMetrics,
           logger: logger,
         );
 
@@ -450,6 +452,11 @@ final class TextContext {
   /// (modern engine), rather than looked for in the fallback fonts and
   /// warned of, as Asciidoctor PDF does.
   final bool invisibleIgnorables;
+
+  /// Whether text set in a fallback font counts that font's metrics
+  /// toward its line's height (`font_fallback_metrics: own`, the
+  /// default), or the text's own font's (`base`).
+  final bool fallbackMetrics;
 
   /// Where warnings go.
   final LoggerBase logger;
@@ -1032,6 +1039,13 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         emphasisMark: fragment.textEmphasis,
         emphasisUnder: fragment.textEmphasisUnder,
         flushRight: fragment.flushRight,
+        metricsFont: switch (fragment.metricsFont) {
+          final family? => switch (_font(family, font.style, _context)) {
+            final TrueTypeFont face => face.pdf,
+            _ => null,
+          },
+          null => null,
+        },
         link: link,
         anchor: fragment.isMarker ? fragment.name : null,
         // (A marker's anchor at the baseline, as the box reports it, but
@@ -1354,7 +1368,10 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
       if (text.isEmpty && !first) return;
       runs.add(
         fragment.copy(text: text.toString())
-          ..font = currentFamily ?? fragment.font,
+          ..font = currentFamily ?? fragment.font
+          ..metricsFont = currentFamily != null && !context.fallbackMetrics
+              ? base.family
+              : null,
       );
       text.clear();
     }
@@ -3366,7 +3383,12 @@ base class _Wrap {
         format.fragment.width != null ? 0 : ' '.allMatches(text).length,
       );
       _fragments.add(printed);
-      final font = format.font;
+      // (A fallback font's text counted as the text's own font, where the
+      // theme asks: `font_fallback_metrics: base`.)
+      final font = switch (format.fragment.metricsFont) {
+        final family? => TextBox._font(family, format.font.style, _context),
+        null => format.font,
+      };
       final image = format.image;
       if (isMarker) {
         markerAscender = math.max(

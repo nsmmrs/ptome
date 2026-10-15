@@ -302,6 +302,11 @@ final class Fragment {
   /// line of its own (`role_<role>_flush: right`, modern engine).
   bool flushRight = false;
 
+  /// Where set, the family whose metrics the text counts toward its
+  /// line's height (a fallback font's text, counted as the text's font:
+  /// `font_fallback_metrics: base`).
+  String? metricsFont;
+
   /// The text's language (BCP 47, from a `lang` attribute), or null for
   /// the block's.
   String? language;
@@ -377,6 +382,7 @@ final class Fragment {
     ..textEmphasis = textEmphasis
     ..textEmphasisUnder = textEmphasisUnder
     ..flushRight = flushRight
+    ..metricsFont = metricsFont
     ..language = language
     ..textTransform = textTransform
     ..align = align

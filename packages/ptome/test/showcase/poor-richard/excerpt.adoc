@@ -1,0 +1,42 @@
+= Poor Richard: January's calendar
+:doctype: book
+:lang: en
+:look: poor-richard
+:looksdir: {docdir}
+:notitle:
+// The signs written as their names: the fonts the tests commit have
+// none of them (the whole work, built in its faces, sets their
+// characters from text/signs.adoc).
+:aries: Ari.
+:taurus: Tau.
+:gemini: Gem.
+:cancer: Can.
+:leo: Leo
+:virgo: Vir.
+:libra: Lib.
+:scorpio: Sco.
+:sagittarius: Sag.
+:capricorn: Cap.
+:aquarius: Aqu.
+:pisces: Pis.
+:sun: Sun
+:moon: Moon
+:mercury: Mer.
+:venus: Ven.
+:mars: Mars
+:jupiter: Jup.
+:saturn: Sat.
+:head: Head
+:tail: Tail
+:conjunction: Conj.
+:opposition: Opp.
+:sextile: Sext.
+:quartile: □
+:trine: Trine
+:full: ●
+
+// An almanac's month (doc/showcase.md): January, its verse and its
+// calendar in seven columns ruled apart, a line to each day, the
+// proverbs running down the last column.
+
+include::text/01-january.adoc[]

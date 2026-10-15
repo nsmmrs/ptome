@@ -1,0 +1,52 @@
+<<<
+
+[#january.month]
+== [.mon]#XI Mon.# January hath xxxi days.
+
+.More nice than wise.
+[verse.epigram]
+____
+    Old Batchelor would have a Wife that’s wise,
+    Fair, rich, and young, a Maiden for his Bed;
+    Not proud, nor churlish, but of faultless size;
+    A Country Houswife in the City bred.
+He’s a nice Fool, and long in vain hath staid;
+He should bespeak her, there’s none ready made.
+____
+
+[.calendar,cols="2,2,11,2,2,5,9",options=header,frame=ends,grid=cols]
+|===
+|M. D. |W. D. |_Remarkable Days, Aspects, Weather._ |H. w. |{moon} Pl. |{sun} _rises and sets_ |_Lunations, {moon} rises & sets._
+
+|1 |2 |Circumcision |12 |{sagittarius} |R. {sun} S. |Sun rise 7 15
+|2 |3 |7 {asterisk} sou. 7 51 Ev. |1 |24 |7 14 5 |{moon} rise 4 5 _morn_
+|3 |4 |{conjunction} {sun} {mercury} _Windy &_ |1h |{capricorn} |7 14 5 |New {moon} 4 day
+|4 |5 |Day 9 h. 34 m. |2h |20 |7 13 5 |at 8 Aftern.
+|5 |6 |{sextile} {mars} {mercury} _falling wea._ |3 |{aquarius} |7 12 5 |_Never spare the_
+|6 |7 |Epiphany {quartile} {mars} {venus} |4 |19 |7 12 5 |_Parson’s wine,_
+|7 |G |_snow if not too warm_ |5 |{pisces} |7 11 5 |{moon} sets 8 13 aft.
+|8 |2 |_about this time._ |6 |17 |7 10 5 |_nor the Baker’s_
+|9 |3 |{sun} ent {aquarius} |6h |{aries} |7 9 5 |_pudding._
+|10 |4 |Days incr. 30 m. |7 |16 |7 8 5 |First Quarter.
+|11 |5 |_Windy and_ |8 |{taurus} |7 8 5 |_Visits should be_
+|12 |6 |7 {asterisk} south 7 13 |9 |14 |7 7 5 |_short, like a win-_
+|13 |7 |_cloudy._ |10 |28 |7 6 5 |{moon} sets at 2 morn
+|14 |G |2 Sund. aft. Ep. |10 |{gemini} |7 5 5 |_ters day, Lest_
+|15 |2 |7 {asterisk} so. 6 56 |11 |25 |7 4 5 |_you’re too trouble-_
+|16 |3 |_Falling wea. windy_ |12 |{cancer} |7 3 5 |_som hasten away._
+|17 |4 |{quartile} {sun} {jupiter} _moderate_ |1 |22 |7 2 5 |{moon} sets 5 54 mo.
+|18 |5 |_snow or rain._ |2 |{leo} |7 1 5 |Full {full} 18 day
+|19 |6 |Days 10 hours. |2h |19 |7 0 5 |9 at night.
+|20 |7 |{sextile} {sun} {saturn} |3 |{virgo} |6 59 6 |
+|21 |G |Septuagesima |4 |13 |6 58 6 |_A house without_
+|22 |2 |7 {asterisk} south 6 32 |5 |26 |6 57 6 |_woman & Fire-_
+|23 |3 |_There will be more_ |6 |{libra} |6 56 6 |{moon} rises 10 aft.
+|24 |4 |{quartile} {saturn} {venus} _cold rain,_ |6h |20 |6 55 6 |_light, is like a_
+|25 |5 |Days 10 h. 12 m. |7 |{scorpio} |6 54 6 |_body without soul_
+|26 |6 |_or snow._ |8 |14 |6 53 6 |_or sprite._
+|27 |7 | |9 |26 |6 52 6 |Last Q. 26 day.
+|28 |G |Sexages. _Clear but_ |10 |{sagittarius} |6 51 6 |{moon} ris. 1 50 mor.
+|29 |2 |_sharp and cold,_ |10 |20 |6 50 6 |_Kings & Bears_
+|30 |3 |K. Cha. I. decol. |11 |{capricorn} |6 48 6 |_often worry their_
+|31 |4 |_Frosts._ |12 |16 |6 47 6 |_keepers._
+|===

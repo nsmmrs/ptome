@@ -393,12 +393,25 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'Noto Sans Symbols',
-    usedBy: "the showcase's Burton look (the planets and the zodiac)",
+    usedBy:
+        "the showcase's Burton and Poor Richard looks (the planets and "
+        'the zodiac)',
     families: ['Noto Sans Symbols'],
     styles: [FontStyle.normal],
     fileNames: {},
     source: GoogleFonts('Noto Sans Symbols', {
       FontStyle.normal: 'static/NotoSansSymbols-Regular.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
+    name: 'Noto Sans Symbols 2',
+    usedBy: "the showcase's Poor Richard look (the Sun's sign, the aspects)",
+    families: ['Noto Sans Symbols 2'],
+    styles: [FontStyle.normal],
+    fileNames: {},
+    source: GoogleFonts('Noto Sans Symbols 2', {
+      FontStyle.normal: 'NotoSansSymbols2-Regular.ttf',
     }),
     license: 'SIL Open Font License 1.1',
   ),
@@ -472,7 +485,8 @@ final List<NeededFont> lookFonts = [
     name: 'Libre Caslon Text',
     usedBy:
         "the magazine look (Caslon); the showcase's Gibbon, Tristram "
-        "Shandy, Byrne's Euclid and Johnson's Dictionary looks",
+        "Shandy, Byrne's Euclid, Johnson's Dictionary and Poor Richard "
+        'looks',
     families: ['Libre Caslon Text'],
     styles: [FontStyle.normal, FontStyle.italic, FontStyle.bold],
     fileNames: {},

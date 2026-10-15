@@ -657,7 +657,11 @@ final class ThemeLoader {
     if (key == 'font') {
       if (value case YMap(:final entries)) {
         for (final MapEntry(key: sub, value: v) in entries.entries) {
-          if (sub == 'catalog' || sub == 'fallbacks') {
+          // (`font_fallback_metrics`, modern engine: how a fallback
+          // font's text counts toward its line's height.)
+          if (sub == 'catalog' ||
+              sub == 'fallbacks' ||
+              sub == 'fallback_metrics') {
             _process('font_$sub', v, data);
           }
         }

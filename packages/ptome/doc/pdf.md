@@ -539,6 +539,7 @@ to only check).
 
 | Key | Default | What it does |
 | --- | --- | --- |
+| `font_fallback_metrics` | `own` | `base`: text set in a fallback font (`font_fallbacks`) counts the text's own font's ascent and descent toward its line's height, so that a symbol from a symbol font doesn't make its line, or its table row, taller than the rest (an almanac's signs among its figures). Not under `asciidoctor-compat`. |
 | `base_color_emoji` | `true` | `false`: emoji the theme's fonts lack aren't set in the installed Noto Color Emoji. |
 | `base_font_ligatures` | `normal` | `none` sets text without the font's standard ligatures (fi, fl...). Fixed-pitch fonts are never ligated. |
 | `base_emphasis_inversion` | `true` | Emphasis inside italic text is upright (and emphasis inside that, italic again). `false` sets all emphasis in italic. |
@@ -842,7 +843,9 @@ convert the PDF to the printer's CMYK).
 `-a pdf-ua` makes a tagged PDF that conforms to PDF/UA-1 (ISO 14289-1),
 for screen readers and reflow. Its structure tree records what the
 content is: headings (`H1` for the title, `H2`… for the sections, by
-their level), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
+their level; without a title tagged before them, a book with `:notitle:`,
+the levels shift so that the first heading is `H1`, as PDF/UA-1 7.4.2
+asks), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
 `TR`, header cells `TH` with their scope, `TD`), figures with their
 alternate text (an image's `alt`), and links (`Link`, each annotation
 described). Running heads, page numbers, backgrounds and borders are

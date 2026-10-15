@@ -764,6 +764,7 @@ final class TextFragment extends LineFragment
   bool rightToLeft
 final class TextRun extends InlineContent
   Color? color
+  Font? metricsFont
   InlineDecoration? decoration
   LinkTarget? link
   List<Font> fallbackFonts
@@ -773,7 +774,7 @@ final class TextRun extends InlineContent
   TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false, Font? metricsFont})
   TextStyle style
   bool anchorOnBaseline
   bool artifact

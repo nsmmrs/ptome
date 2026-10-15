@@ -36,7 +36,14 @@ final class TextRun extends InlineContent {
     this.emphasisMark,
     this.emphasisUnder = false,
     this.flushRight = false,
+    this.metricsFont,
   }) : super._();
+
+  /// Where given, the font whose ascent, descent and line gap the run
+  /// counts toward its line's height instead of its own (a symbol from a
+  /// fallback font, counted as the text's font, so that its line is no
+  /// taller than the others).
+  final Font? metricsFont;
 
   /// Whether the run goes flush right at the end of the line it ends, or
   /// flush right on a line of its own when it doesn't fit there, as TeX
@@ -118,6 +125,7 @@ final class TextRun extends InlineContent {
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
     flushRight: flushRight,
+    metricsFont: metricsFont,
   );
 
   /// This run in [style].
@@ -137,6 +145,7 @@ final class TextRun extends InlineContent {
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
     flushRight: flushRight,
+    metricsFont: metricsFont,
   );
 }
 
