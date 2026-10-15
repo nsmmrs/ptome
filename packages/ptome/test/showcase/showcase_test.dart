@@ -125,6 +125,42 @@ void main() {
     } finally {
       LoggerManager.logger = previous;
     }
+    // (And each work's look once, a line in it, so that its test times
+    // the excerpt rather than the look's first compiling and loading.)
+    try {
+      LoggerManager.logger = logger;
+      for (final slug in _works) {
+        final dir = '$_corpus/$slug';
+        final look = RegExp(
+          r'^:look: (\S+)$',
+          multiLine: true,
+        ).firstMatch(File('$dir/excerpt.adoc').readAsStringSync())?[1];
+        if (look == null) continue;
+        final lookTheme = File('${scratch.path}/warm-$slug-theme.yml')
+          ..writeAsStringSync(_theme(dir, look));
+        final doc = File('${scratch.path}/warm-$slug.adoc')
+          ..writeAsStringSync(
+            '= Warm\n:doctype: book\n:lang: en\n:look: $look\n'
+            ':looksdir: ${Directory(dir).absolute.path}\n\n== One\n\nA line.\n',
+          );
+        convertFile(
+          doc.path,
+          AsciidoctorOptions(
+            safe: SafeMode.unsafe,
+            backend: 'pdf',
+            toFile: '${doc.path}.pdf',
+            attributes: {
+              'reproducible': '',
+              'pdf-theme': lookTheme.absolute.path,
+              'pdf-themesdir': Directory(dir).absolute.path,
+              'pdf-fontsdir': Directory(_noto).absolute.path,
+            },
+          ),
+        );
+      }
+    } finally {
+      LoggerManager.logger = previous;
+    }
     // (And the reading of what they wrote.)
     for (final entry in readZip(File('${warm.path}.epub3').readAsBytesSync())) {
       sha256.convert(entry.bytes);
