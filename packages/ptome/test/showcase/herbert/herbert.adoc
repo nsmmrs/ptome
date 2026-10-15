@@ -1,0 +1,11 @@
+= The Temple: Sacred Poems and Private Ejaculations
+George Herbert
+:doctype: book
+:lang: en
+:look: herbert
+:looksdir: {docdir}
+:description: George Herbert’s The Temple (1633), its Dedication and eight poems of The Church transcribed from the first edition: The Altar’s shape, Easter-wings sideways on two pages, the stanzas’ indents, the long s and the ligatures of the Fell types.
+
+include::text/dedication.adoc[]
+
+include::text/church.adoc[]

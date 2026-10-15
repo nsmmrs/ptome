@@ -397,6 +397,12 @@ const Map<String, String> _features = {
   'lining-nums': 'lnum',
   'tabular-nums': 'tnum',
   'proportional-nums': 'pnum',
+  // (`font-variant-ligatures` and `font-variant-alternates`, modern
+  // engine: the font's own rules for an early printed book's long s and
+  // its ligatures.)
+  'discretionary-ligatures': 'dlig',
+  'historical-ligatures': 'hlig',
+  'historical-forms': 'hist',
 };
 
 /// The OpenType feature of [value], a CSS `font-variant` or

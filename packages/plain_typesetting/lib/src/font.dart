@@ -231,6 +231,9 @@ final class OpenTypeShaper implements OpenTypeTextFont {
   @override
   bool covers(int codePoint) => font.glyphFor(codePoint) != 0;
 
+  /// The features whose lookups the simple path below can't apply.
+  static const Set<String> _contextual = {'hist', 'dlig', 'hlig'};
+
   /// [text] as glyphs: the features' single substitutions, then the
   /// ligatures (with [ligatures]), then kerning (with [kerning]).
   @override
@@ -241,9 +244,12 @@ final class OpenTypeShaper implements OpenTypeTextFont {
     Set<String> features = const {},
     bool rightToLeft = false,
   }) {
-    // (A right-to-left run, or text in a script that shapes, laid out by
-    // the OpenType layout tables in full.)
+    // (A right-to-left run, text in a script that shapes, or a feature
+    // that is more than single substitutions (the long s of `hist`, the
+    // ligatures of `dlig` and `hlig`), laid out by the OpenType layout
+    // tables in full.)
     if (rightToLeft ||
+        features.any(_contextual.contains) ||
         switch (scope) {
           ShapingScope.all => needsComplexShaping(text),
           ShapingScope.rightToLeft => hasRightToLeftLetters(text),

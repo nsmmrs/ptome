@@ -220,6 +220,9 @@ extension _Leaves on _Pass {
     required bool atTop,
   }) {
     final mode = writingMode;
+    if (box.sideways && mode == WritingMode.horizontal) {
+      return _sideways(box, width, available, atTop: atTop);
+    }
     if (mode == WritingMode.horizontal) {
       return _place(box.child, width, available, atTop: atTop);
     }
@@ -280,6 +283,30 @@ extension _Leaves on _Pass {
     return _Fit(
       _PlacedUpright(placed, top, fit.height, w, height, mode),
       height,
+      null,
+    );
+  }
+
+  /// [box] turned on a horizontal page: at the top of a region (moved to
+  /// the next one's top otherwise), its child laid out as wide as the
+  /// region is high, placed turned a quarter to the left in the middle of
+  /// the region across, the whole region its own.
+  _Fit _sideways(
+    UprightBox box,
+    double width,
+    double available, {
+    required bool atTop,
+  }) {
+    if (!atTop) return _Fit.moved(box);
+    final length = available;
+    final fit = _withoutExclusions(
+      () => _place(box.child, length, double.infinity, atTop: true),
+    );
+    final placed = fit.placed;
+    if (placed == null) return fit;
+    return _Fit(
+      _PlacedSideways(placed, length, fit.height, width, available),
+      available,
       null,
     );
   }

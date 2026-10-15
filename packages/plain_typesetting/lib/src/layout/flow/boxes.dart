@@ -446,11 +446,23 @@ final class BlockBox extends LayoutBox {
 /// height upright, it is laid out in the flow as the text around it is,
 /// lying on its side, its top to the page's right (JLREQ 2.3.2). On a
 /// horizontal page it is [child].
+///
+/// With [sideways], on a horizontal page too: [child] laid out as wide as
+/// the content area is high, on a page of its own (at the top of the
+/// next region when it isn't at the top of one), and turned a quarter
+/// to the left, its lines running up the page, in the middle of the page
+/// across: a poem printed sideways (Herbert's Easter-wings, 1633), a
+/// table set landscape.
 final class UprightBox extends LayoutBox {
   /// [child], upright on vertical pages, at most [maxWidth] wide across
-  /// the page (by default the content area's width).
-  const new(this.child, {this.maxWidth, BoxStyle style = const BoxStyle()})
-    : super._(style);
+  /// the page (by default the content area's width); with [sideways],
+  /// turned on a page of its own on any page.
+  const new(
+    this.child, {
+    this.maxWidth,
+    this.sideways = false,
+    BoxStyle style = const BoxStyle(),
+  }) : super._(style);
 
   /// The box set upright.
   final LayoutBox child;
@@ -458,6 +470,9 @@ final class UprightBox extends LayoutBox {
   /// The most it may be wide across the page, or null for the content
   /// area's width.
   final double? maxWidth;
+
+  /// Whether it is turned on a page of its own on a horizontal page too.
+  final bool sideways;
 }
 
 /// A box set in vertical lines on a horizontal page (a poem, a sidebar in

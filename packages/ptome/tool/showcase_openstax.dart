@@ -441,7 +441,9 @@ final class _Chapter {
         if (solution != null) {
           final answer = StringBuffer();
           _blocks(solution, answer, level: 6);
-          answers.add((anchor, _problem, _listItem('$answer')));
+          // (A solution that is only a photograph left out: none.)
+          final text = _listItem('$answer').trim();
+          if (text.isNotEmpty) answers.add((anchor, _problem, text));
         }
       }
       text = '[[$anchor]]$text';

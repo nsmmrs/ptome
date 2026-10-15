@@ -71,6 +71,10 @@ whose README says how each was made):
 - `colr-test.ttf`: written for the tests (`tool/make_color_test_fonts.py`):
   a square, a circle and a triangle, and color glyphs over them in COLR
   version 0 and every paint of version 1, two CPAL palettes.
+- `historical-test.ttf`: written for the tests
+  (`tool/make_historical_test_font.py`): bars for a, c, s, t, the long s
+  and c_t, a contextual `hist` (s as the long s before a letter) and a
+  `dlig` ligature (c t).
 - `sbix-test.ttf`: `notocoloremoji-subset.ttf` with three of its images
   as an sbix strike and a `dupe` glyph (`tool/make_color_test_fonts.py`;
   SIL Open Font License 1.1; © 2013 Google LLC).

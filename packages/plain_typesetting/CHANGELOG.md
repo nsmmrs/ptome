@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `UprightBox(sideways: true)`: a box turned a quarter to the left on a
+  horizontal page, its region its own. Text set with `hist`, `dlig` or
+  `hlig` is shaped by the font's layout tables in full, so a contextual
+  long s and the discretionary ligatures apply.
+
 - Faster pages of notes in balanced columns: a column set measured with
   no limit (a region's notes, measured for each room its text is tried
   in) is placed once for the same children and width, and a paragraph

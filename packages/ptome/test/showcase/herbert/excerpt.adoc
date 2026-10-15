@@ -1,0 +1,56 @@
+= Herbert: the Altar's shape and Easter-wings sideways
+:doctype: book
+:lang: en
+:look: herbert
+:looksdir: {docdir}
+:notitle:
+
+// A poem's shape (doc/showcase.md): The Altar, its lines set in to make
+// an altar, and Easter-wings' first stanza turned sideways on a page of
+// its own, its lines centred as wings. (The long s and the ligatures the
+// look asks for are in IM Fell, not in the fonts the tests commit: the
+// whole work, built in its faces, has them.)
+
+[#the-church]
+== The Church
+
+[.headpiece]
+=== The Altar.
+
+[verse.altar]
+____
+A broken [.spaced]#ALTAR#, Lord, thy servant reares,
+Made of a heart, and cemented with teares:
+   Whose parts are as thy hand did frame;
+   No workmans tool hath touch'd the same.
+       A [.spaced]#HEART# alone
+       Is such a stone,
+       As nothing but
+       Thy power doth cut.
+       Wherefore each part
+       Of my hard heart
+       Meets in this frame,
+       To praise thy name:
+   That if I chance to hold my peace,
+   These stones to praise thee may not cease.
+O let thy blessed [.spaced]#SACRIFICE# be mine,
+And sanctifie this [.spaced]#ALTAR# to be thine.
+____
+
+[#easter-wings%notitle]
+=== Easter-wings
+
+[verse.sideways.text-center]
+.¶ Easter-wings.
+____
+Lord, who createdst man in wealth and store,
+Though foolishly he lost the same,
+Decaying more and more,
+Till he became
+Most poore:
+With thee
+O let me rise
+As larks, harmoniously,
+And sing this day thy victories:
+Then shall the fall further the flight in me.
+____

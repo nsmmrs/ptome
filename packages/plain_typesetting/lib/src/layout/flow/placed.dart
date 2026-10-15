@@ -602,6 +602,44 @@ final class _PlacedUpright extends _Placed {
   }
 }
 
+/// A box placed sideways: [placed], laid out [length] wide and [depth]
+/// high, turned a quarter to the left in a region [width] wide and
+/// [height] high, its lines running up the region, in its middle across.
+final class _PlacedSideways extends _Placed {
+  const new(this.placed, this.length, this.depth, this.width, this.height);
+
+  final _Placed placed;
+  final double length;
+  final double depth;
+  final double width;
+  @override
+  final double height;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) {
+    // (Its anchors where it starts, at the top of its region.)
+    placed.visit(0, depth, (name, _, _) => anchor(name, x, top), mark, tag);
+  }
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    // (Turned a quarter to the left: its top to the region's left, its
+    // left to the region's bottom.)
+    final left = x + (width - depth) / 2;
+    final bottom = top - length;
+    painter.canvas.saved(() {
+      painter.canvas.transform(Matrix(0, 1, -1, 0, left + depth, bottom));
+      placed.paint(painter, 0, depth);
+    });
+  }
+}
+
 /// A box placed mirrored: [placed] at [left], [width] wide, [top] down,
 /// turned over about its vertical middle.
 final class _PlacedMirrored extends _Placed {

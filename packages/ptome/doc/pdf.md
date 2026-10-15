@@ -425,6 +425,14 @@ and background with it; the text read from the page is the text. HTML
 and EPUB take it from the look's CSS (`.mirror{transform:scaleX(-1)}`).
 Not under `asciidoctor-compat`.
 
+Ptome's `sideways` role sets a block turned a quarter to the left on a
+page of its own, its lines running up the page (`[verse.sideways]`:
+each stanza of Herbert's Easter-wings as The Temple prints it): laid out
+as wide as the page's text block is high, in the middle of it across,
+the text after it going on on the next page; with `text-center`, its
+lines centred along the page. HTML and EPUB set it upright (a look can
+turn it with CSS `writing-mode`). Not under `asciidoctor-compat`.
+
 A number of one or two digits standing alone stands upright in the
 column (tate-chu-yoko, JLREQ 3.2.5): two digits side by side across the
 column in the font's half-width forms, an em long, set as an ideograph
@@ -533,6 +541,8 @@ to only check).
 | `base_font_ligatures` | `normal` | `none` sets text without the font's standard ligatures (fi, fl...). Fixed-pitch fonts are never ligated. |
 | `base_emphasis_inversion` | `true` | Emphasis inside italic text is upright (and emphasis inside that, italic again). `false` sets all emphasis in italic. |
 | `base_font_variant_numeric` | none | `oldstyle-nums` sets numbers in old-style figures (`onum`), when the font has them; also `lining-nums`, `tabular-nums`, `proportional-nums`. |
+| `base_font_variant_alternates` | none | `historical-forms` sets text with the font's historical forms (`hist`): the long s of the Fell types where the font's own rules put it, before a letter but not at a word's end. Not under `asciidoctor-compat`. |
+| `base_font_variant_ligatures` | none | `discretionary-ligatures` (`dlig`: the ct of an early printed book) and `historical-ligatures` (`hlig`), separated by a space for both, by the font's own rules. Not under `asciidoctor-compat`. |
 | `role_<role>_font_variant` | none | `small-caps` sets text with the role (`[.sc]#Text#`) in small capitals (`smcp`), or in smaller capitals when the font has none. `role_<role>_font_variant_numeric` takes the numeric values above. |
 
 Text is kerned by the font's OpenType (GPOS) pairs. A style the font

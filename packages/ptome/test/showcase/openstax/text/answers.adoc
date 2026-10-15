@@ -183,9 +183,6 @@ Dolphins measure about 2 meters long and can jump several times their length out
 t = 10 v = 0.208 " " "m/s" t = 30 v = 0.238 " " "m/s"
 ++++
 
-[start=63]
-. <<fs-id1372323,Problem 63>>: 
-
 [start=65]
 . <<fs-id3520768,Problem 65>>: (a) 6 m/s
 +

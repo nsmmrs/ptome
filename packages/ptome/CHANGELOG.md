@@ -10,6 +10,12 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: the `sideways` role sets a block turned a quarter to the left on
+  a page of its own (Herbert's Easter-wings; FEAT-wlw5wq), and
+  `base_font_variant_alternates: historical-forms` and
+  `base_font_variant_ligatures: discretionary-ligatures` set the long s
+  and the ligatures of an early printed book by the font's own rules
+  (FEAT-h9smyr).
 - PDF: a character a formula's font lacks comes from the theme's base
   font (and its fallbacks), not from whatever font the first formula is
   laid out in, which could be a standard font, leaving the math font's

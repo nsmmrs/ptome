@@ -374,6 +374,28 @@ final class PdfConverter extends BuiltInConverter
           }
         }
       }
+      // (Ptome's `sideways` role: the block turned a quarter to the left
+      // on a page of its own, as Herbert's Easter-wings is printed.)
+      if (_turnsSideways(node)) {
+        final out = _out;
+        _out = [];
+        _sideways = true;
+        try {
+          return _convertBlock(node, opts);
+        } finally {
+          final boxes = _out;
+          _out = out;
+          _sideways = false;
+          if (boxes.isNotEmpty) {
+            _out.add(
+              UprightBox(
+                boxes.length == 1 ? boxes.single : BlockBox(boxes),
+                sideways: true,
+              ),
+            );
+          }
+        }
+      }
       if (_setsUpright(node) && !_upright && _verticalWriting) {
         final out = _out;
         _out = [];
@@ -472,6 +494,20 @@ final class PdfConverter extends BuiltInConverter
       !_mirroring &&
       node is! Document &&
       node.includesRole('mirror') &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
+  /// Whether a block with the `sideways` role is being converted.
+  bool _sideways = false;
+
+  /// Whether [node] is set sideways: Ptome's `sideways` role (not under
+  /// `asciidoctor-compat`), outside another such block, on a horizontal
+  /// page.
+  bool _turnsSideways(AbstractBlock node) =>
+      !_sideways &&
+      node is! Document &&
+      node is! Section &&
+      node.includesRole('sideways') &&
+      !_verticalWriting &&
       !asciidoctorCompat(_document, CompatFormat.pdf);
 
   /// Whether a table or a listing is being converted on a vertical page:
@@ -978,9 +1014,19 @@ final class PdfConverter extends BuiltInConverter
   Map<String, (AbstractBlock, Cursor?)>? _reportTags;
 
   /// The OpenType features all text is set with in the modern engine:
-  /// the theme's `base_font_variant_numeric` (`oldstyle-nums`...).
+  /// the theme's `base_font_variant_numeric` (`oldstyle-nums`...),
+  /// `base_font_variant_ligatures` (`discretionary-ligatures`,
+  /// `historical-ligatures`) and `base_font_variant_alternates`
+  /// (`historical-forms`: the long s where the font's rules put it), each
+  /// a value or several separated by spaces.
   late final Set<String> _baseFeatures = {
     ?fontFeature(_s('base_font_variant_numeric')),
+    if (!asciidoctorCompat(_document, CompatFormat.pdf))
+      for (final key in const [
+        'base_font_variant_ligatures',
+        'base_font_variant_alternates',
+      ])
+        for (final value in (_s(key) ?? '').split(' ')) ?fontFeature(value),
   };
 
   static const _bodyAnchor = '__ptome-body';

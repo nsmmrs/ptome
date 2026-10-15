@@ -1506,6 +1506,25 @@ void main() {
       );
     });
   });
+
+  test('a sideways box: a page of its own, turned a quarter to the left', () {
+    final document = RecordingDocument();
+    final pages = FlowLayout(template: _rows(10))
+        .layout([
+          _para('one'),
+          UprightBox(_para('two\nthree'), sideways: true),
+          _para('four'),
+        ])
+        .render(document);
+    expect(
+      [for (final page in pages) page.texts.map((t) => t.trim()).join(' ')],
+      ['one', 'two three', 'four'],
+    );
+    expect(
+      pages[1].canvas.calls,
+      contains(startsWith('transform 0.00 1.00 -1.00 0.00 ')),
+    );
+  });
 }
 
 /// Content [height] tall that is placed whole in [slack] less room.

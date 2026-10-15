@@ -114,6 +114,33 @@ void main() {
     expect(small.sublist(1), isNot(ids('bc')));
   });
 
+  test('historical forms and discretionary ligatures, contextual, by '
+      'the layout tables', () {
+    // (hist sets s as the long s before a letter, dlig joins c and t: a
+    // chain substitution and a ligature the simple path doesn't apply.)
+    final font = _font('historical-test.ttf');
+    // (The font's glyphs in order: .notdef, space, a, c, s, t, the long
+    // s, c_t.)
+    const space = 1;
+    const a = 2;
+    const c = 3;
+    const s = 4;
+    const t = 5;
+    const longS = 6;
+    const cT = 7;
+    List<int> ids(String text, [Set<String> features = const {}]) => [
+      for (final glyph in font.shape(text, features: features)) glyph.id,
+    ];
+    expect(ids('cast'), [c, a, s, t]);
+    expect(ids('cast', {'hist'}), [c, a, longS, t]);
+    expect(ids('cast as', {'hist'}), [c, a, longS, t, space, a, s]);
+    expect(ids('act', {'dlig'}), [a, cT]);
+    expect(
+      font.shape('act', features: {'dlig'}).map((g) => g.text).join(),
+      'act',
+    );
+  });
+
   test('ligatures replace their sequence, and stand for its text', () {
     final font = _font('notoserif-features.ttf');
     final shaped = font.shape('office', ligatures: true);

@@ -813,7 +813,8 @@ final class TypesetLine
   double right
 final class UprightBox extends LayoutBox
   LayoutBox child
-  UprightBox(LayoutBox child, {double? maxWidth, BoxStyle style = const BoxStyle()})
+  UprightBox(LayoutBox child, {double? maxWidth, bool sideways = false, BoxStyle style = const BoxStyle()})
+  bool sideways
   double? maxWidth
 final class UriTarget extends LinkTarget
   String uri
