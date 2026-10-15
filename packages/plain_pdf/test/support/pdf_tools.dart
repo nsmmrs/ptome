@@ -1,3 +1,6 @@
+// (The same file in every package that uses it: tool/oracles_check.sh
+// holds the copies alike.)
+
 /// The tools the tests check their PDF files with (qpdf, Poppler,
 /// librsvg, ImageMagick), their runs recorded (oracles.dart): each a
 /// function of the file's bytes and the tool's options, so a file that
@@ -145,8 +148,15 @@ ProcessResult recordedRunSync(
       File('$asked${written.substring(name.length)}').writeAsBytesSync(bytes);
     }
   }
-  return ProcessResult(0, run.exitCode, switch (stdoutEncoding) {
+  final stdout = switch (stdoutEncoding) {
     null => run.stdoutBytes,
+    // (The recording machine's system encoding: UTF-8, whatever this
+    // one's is.)
+    final encoding when identical(encoding, systemEncoding) => utf8.decode(
+      run.stdoutBytes,
+      allowMalformed: true,
+    ),
     final encoding => encoding.decode(run.stdoutBytes),
-  }, run.stderr);
+  };
+  return ProcessResult(0, run.exitCode, stdout, run.stderr);
 }
