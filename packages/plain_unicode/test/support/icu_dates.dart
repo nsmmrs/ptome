@@ -1,15 +1,20 @@
 /// The ICU 78.3 date oracle (tool/oracles/icu/icudate) and what the date
-/// tests share: the locales to compare, ICU's text for a batch of cases,
-/// and the one way ICU's resolution may differ from LDML's.
+/// tests share: the locales to compare, ICU's text for a batch of cases
+/// (its answers frozen, frozen.dart), and the one way ICU's resolution may
+/// differ from LDML's.
 library;
 
 import 'dart:io';
 
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:plain_unicode/src/quotation_marks.dart' show cldrParent;
-import 'package:test/test.dart';
+
+import 'frozen.dart';
 
 const String icuDateOracle = 'tool/oracles/icu/icudate';
+
+/// The oracle, which its answers depend on.
+const String _version = 'ICU 78.3';
 
 /// The languages CLDR targets at basic coverage or more
 /// (common/properties/coverageLevels.txt, 48.2): ICU 78.3 packages the
@@ -43,7 +48,7 @@ bool _covered(String locale) {
 
 /// The covered locales CLDR has calendar data for and ICU's data has
 /// (it falls back otherwise).
-List<String> icuDateLocales() {
+List<String> icuDateLocales(Frozen frozen) {
   final locales = {
     for (final line in File(
       'vendor/cldr/48.2.0/calendars.tsv',
@@ -53,13 +58,20 @@ List<String> icuDateLocales() {
           line.split('\t')[1].startsWith('gregorian/'))
         line.split('\t').first,
   }.where((l) => l != 'root' && _covered(l)).toList();
-  final has = Process.runSync('sh', [
-    '-c',
-    'printf "%s\\n" "\$@" | "$icuDateOracle"',
-    'sh',
-    for (final l in locales) '?$l',
-  ]);
-  final present = '${has.stdout}'.split('\n');
+  final present = frozen
+      .answer(
+        'the locales ICU has',
+        inputs: [_version, ...locales],
+        oracle: () =>
+            Process.runSync('sh', [
+                  '-c',
+                  'printf "%s\\n" "\$@" | "$icuDateOracle"',
+                  'sh',
+                  for (final l in locales) '?$l',
+                ]).stdout
+                as String,
+      )
+      .split('\n');
   final kept = {
     for (final (i, l) in locales.indexed)
       if (present[i] == '1') l,
@@ -134,6 +146,8 @@ final List<List<String>> _calendarLines = [
 /// What ICU writes for each of [cases] (a locale, a date and a time
 /// style, a moment, an offset in minutes, a calendar's BCP 47 name).
 List<String> icuDates(
+  Frozen frozen,
+  String key,
   List<(String, DateStyle?, DateStyle?, DateTime, int, String)> cases,
 ) {
   final input = cases
@@ -143,18 +157,27 @@ List<String> icuDates(
             '${c.$4.millisecondsSinceEpoch}\t${c.$5}\t${c.$6}',
       )
       .join('\n');
-  final dir = Directory.systemTemp.createTempSync('dates.');
-  try {
-    final file = File('${dir.path}/in.tsv')..writeAsStringSync('$input\n');
-    final r = Process.runSync('sh', [
-      '-c',
-      '"$icuDateOracle" < "${file.path}"',
-    ]);
-    expect(r.exitCode, 0, reason: '${r.stderr}');
-    return '${r.stdout}'.split('\n');
-  } finally {
-    dir.deleteSync(recursive: true);
-  }
+  return frozen
+      .answer(
+        key,
+        inputs: [_version, input],
+        oracle: () {
+          final dir = Directory.systemTemp.createTempSync('dates.');
+          try {
+            final file = File('${dir.path}/in.tsv')
+              ..writeAsStringSync('$input\n');
+            final r = Process.runSync('sh', [
+              '-c',
+              '"$icuDateOracle" < "${file.path}"',
+            ]);
+            if (r.exitCode != 0) throw StateError('${r.stderr}');
+            return r.stdout as String;
+          } finally {
+            dir.deleteSync(recursive: true);
+          }
+        },
+      )
+      .split('\n');
 }
 
 /// Whether [icu] is [moment]'s date in [calendar] in [date]'s style as a

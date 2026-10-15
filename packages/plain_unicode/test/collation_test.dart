@@ -1,6 +1,8 @@
 // Collation (UTS #10 with CLDR 48.2): the root order against CLDR's
 // conformance test, every tailoring against ICU 78.3's collator, and an
-// index's headings against ICU's AlphabeticIndex.
+// index's headings against ICU's AlphabeticIndex. ICU's answers are frozen
+// in test/frozen/collation.json (test/support/frozen.dart; FROZEN=record
+// asks it again).
 @TestOn('vm')
 library;
 
@@ -11,8 +13,38 @@ import 'dart:math';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _coll = 'tool/oracles/icu/icucoll';
 const String _index = 'tool/oracles/icu/icuindex';
+
+/// The oracle, which its answers depend on.
+const String _version = 'ICU 78.3';
+
+late final Frozen _frozen;
+
+/// The [oracle]'s lines for [arguments], as recorded for [key].
+List<String> _icu(String key, String oracle, List<String> arguments) =>
+    _frozen
+        .answer(
+          key,
+          inputs: [_version, oracle, ...arguments],
+          oracle: () =>
+              Process.runSync('sh', [
+                    '-c',
+                    r'printf "%s\n" "$@" | "$0"',
+                    oracle,
+                    ...arguments,
+                  ], stdoutEncoding: utf8).stdout
+                  as String,
+        )
+        .split('\n')
+      ..removeLast();
+
+/// A seed from [text] that is the same on every platform and SDK (a
+/// string's hashCode isn't).
+int _seed(String text) =>
+    text.codeUnits.fold(17, (h, c) => (h * 31 + c) & 0x7fffffff);
 
 /// [words] sorted by [collator], ties kept in their order.
 List<String> _sorted(Collator collator, List<String> words) {
@@ -49,6 +81,7 @@ bool _comparable(String text, {required bool shifted}) {
 }
 
 void main() {
+  _frozen = Frozen('collation');
   test("the root order: every line of CLDR's conformance test", () {
     final lines = const LineSplitter().convert(
       utf8.decode(
@@ -112,57 +145,45 @@ void main() {
     expect(Collator('xx').locale, 'root');
   });
 
-  test(
-    'every tailoring as ICU orders it',
-    () {
-      final differ = <String>[];
-      var compared = 0;
-      for (final locale in Collator.tailoredLocales) {
-        final tag = locale.replaceAll('_', '-').replaceFirst('@', '-u-co-');
-        final collator = Collator(tag);
-        final random = Random(locale.hashCode);
-        final tailored = collator.tailoredStrings.toList()..shuffle(random);
-        final pick = tailored.take(150).toList();
-        if (pick.isEmpty) continue;
-        const extra = ['a', 'A', 'z', 'Z', '1', '9', ' ', '-', '.', 'é', 'Ab'];
-        String any(List<String> from) => from[random.nextInt(from.length)];
-        final shifted = locale == 'th';
-        final words =
-            <String>{
-                ...pick,
-                ...extra,
-                for (var i = 0; i < 150; i++) any(pick) + any(extra),
-                for (var i = 0; i < 100; i++) any(extra) + any(pick),
-                for (var i = 0; i < 100; i++) any(pick) + any(pick),
-              }.where((w) => _comparable(w, shifted: shifted)).toList()
-              ..shuffle(random);
-        final r = Process.runSync('sh', [
-          '-c',
-          r'printf "%s\n" "$@" | "$0"',
-          _coll,
-          tag,
-          ...words,
-        ], stdoutEncoding: utf8);
-        final lines = (r.stdout as String).split('\n')..removeLast();
-        // (ICU's data leaves out some locales' tailorings: those aren't
-        // compared.)
-        final actual = lines.removeAt(0);
-        if (actual.isEmpty || actual == 'root') continue;
-        final ours = _sorted(collator, words);
-        compared++;
-        for (var i = 0; i < ours.length; i++) {
-          if (ours[i] != lines[i]) {
-            differ.add('$locale: ${ours[i]} where ICU has ${lines[i]}');
-            break;
-          }
+  test('every tailoring as ICU orders it', () {
+    final differ = <String>[];
+    var compared = 0;
+    for (final locale in Collator.tailoredLocales) {
+      final tag = locale.replaceAll('_', '-').replaceFirst('@', '-u-co-');
+      final collator = Collator(tag);
+      final random = Random(_seed(locale));
+      final tailored = collator.tailoredStrings.toList()..shuffle(random);
+      final pick = tailored.take(150).toList();
+      if (pick.isEmpty) continue;
+      const extra = ['a', 'A', 'z', 'Z', '1', '9', ' ', '-', '.', 'é', 'Ab'];
+      String any(List<String> from) => from[random.nextInt(from.length)];
+      final shifted = locale == 'th';
+      final words =
+          <String>{
+              ...pick,
+              ...extra,
+              for (var i = 0; i < 150; i++) any(pick) + any(extra),
+              for (var i = 0; i < 100; i++) any(extra) + any(pick),
+              for (var i = 0; i < 100; i++) any(pick) + any(pick),
+            }.where((w) => _comparable(w, shifted: shifted)).toList()
+            ..shuffle(random);
+      final lines = _icu('collate $tag', _coll, [tag, ...words]);
+      // (ICU's data leaves out some locales' tailorings: those aren't
+      // compared.)
+      final actual = lines.removeAt(0);
+      if (actual.isEmpty || actual == 'root') continue;
+      final ours = _sorted(collator, words);
+      compared++;
+      for (var i = 0; i < ours.length; i++) {
+        if (ours[i] != lines[i]) {
+          differ.add('$locale: ${ours[i]} where ICU has ${lines[i]}');
+          break;
         }
       }
-      expect(compared, greaterThan(90));
-      expect(differ, isEmpty, reason: differ.take(10).join('\n'));
-    },
-    skip: File(_coll).existsSync() ? false : 'needs the ICU oracle',
-    timeout: const Timeout(Duration(minutes: 5)),
-  );
+    }
+    expect(compared, greaterThan(90));
+    expect(differ, isEmpty, reason: differ.take(10).join('\n'));
+  }, timeout: const Timeout(Duration(minutes: 5)));
 
   test('index headings', () {
     expect(Collator('sv').indexLabels.last, 'Ö');
@@ -252,14 +273,7 @@ void main() {
       'fi',
     ]) {
       final collator = Collator(tag);
-      final r = Process.runSync('sh', [
-        '-c',
-        r'printf "%s\n" "$@" | "$0"',
-        _index,
-        tag,
-        ...words,
-      ], stdoutEncoding: utf8);
-      final lines = (r.stdout as String).split('\n')..removeLast();
+      final lines = _icu('index $tag', _index, [tag, ...words]);
       final labels = lines.removeAt(0);
       if (collator.indexLabels.join(' ') != labels) {
         differ.add('$tag: ${collator.indexLabels.join(' ')} for $labels');
@@ -270,5 +284,5 @@ void main() {
       }
     }
     expect(differ, isEmpty, reason: differ.take(10).join('\n'));
-  }, skip: File(_index).existsSync() ? false : 'needs the ICU oracle');
+  });
 }

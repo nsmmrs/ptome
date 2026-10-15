@@ -19,6 +19,8 @@
 # unzip, bats) skip that step with a note; CI has them. Scratch files go
 # to $TMPDIR (default /tmp).
 set -uo pipefail
+# The tests see no font installed on the machine, only the ones they name.
+export PTOME_SYSTEM_FONTS=off
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 have() { command -v "$1" >/dev/null 2>&1; }
 
@@ -61,6 +63,7 @@ format_and_analyze() {
     status=1
   }
   dart analyze --fatal-infos . | tail -1 || status=1
+  tool/frozen_check.sh || status=1
   return $status
 }
 

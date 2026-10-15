@@ -1,12 +1,12 @@
 // Right-to-left text (Arabic with its vowels, joining forms and lam-alef
 // ligatures; Hebrew with its points) shaped by the OpenType layout tables
 // in full, against HarfBuzz (harfbuzzjs, in tool/oracles/harfbuzz,
-// installed by tool/oracles/setup.sh; skipped where it isn't): the same
-// glyphs in the same visual order, the same advances and the same mark
-// offsets, for each line of test/fixtures/shaping-rtl.txt in the subset
-// Noto fonts of test/fonts.
+// installed by tool/oracles/setup.sh): the same glyphs in the same visual
+// order, the same advances and the same mark offsets, for each line of
+// test/fixtures/shaping-rtl.txt in the subset Noto fonts of test/fonts.
+// HarfBuzz's answers are frozen in test/frozen/harfbuzz_rtl.json
+// (test/support/frozen.dart; FROZEN=record asks it again).
 @TestOn('vm')
-@Tags(['tools'])
 library;
 
 import 'dart:convert';
@@ -16,10 +16,15 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
 
+/// The oracle's version, which its answers depend on.
+const String _harfbuzzjs = 'harfbuzzjs 1.6.3';
+
 void main() {
-  final ready = Directory('tool/oracles/harfbuzz/node_modules').existsSync();
+  final frozen = Frozen('harfbuzz_rtl');
   final lines = File('test/fixtures/shaping-rtl.txt')
       .readAsLinesSync()
       .where((l) => l.isNotEmpty)
@@ -30,15 +35,20 @@ void main() {
   ]) {
     test('$name shapes right-to-left text as HarfBuzz does', () {
       final path = 'test/fonts/$name';
-      final font = OpenTypeShaper(
-        OpenTypeFont.parse(File(path).readAsBytesSync()),
-      );
+      final bytes = File(path).readAsBytesSync();
+      final font = OpenTypeShaper(OpenTypeFont.parse(bytes));
       final upem = font.font.unitsPerEm;
       final mine = [
         for (final line in lines)
           if (script.hasMatch(line)) line,
       ];
-      final theirs = _harfbuzz(path, mine);
+      final theirs = frozen
+          .json<List<Object?>>(
+            name,
+            inputs: [_harfbuzzjs, bytes, ...mine],
+            oracle: () => _harfbuzz(path, mine),
+          )
+          .cast<List<Object?>>();
       final differ = <String>[];
       for (final (i, line) in mine.indexed) {
         int units(double v) => (v * upem / 1000).round();
@@ -55,7 +65,7 @@ void main() {
         }
       }
       expect(differ, isEmpty, reason: differ.take(3).join('\n'));
-    }, skip: ready ? false : 'run tool/oracles/setup.sh to install HarfBuzz');
+    });
   }
 }
 

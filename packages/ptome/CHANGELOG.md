@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- `PTOME_SYSTEM_FONTS=off` keeps fonts to `PTOME_FONT_PATH` and the
+  folders a theme or document names: no font installed on the machine is
+  found, so the output depends on none (a reproducible build; the tests
+  run so).
 - The substitutions restructured (CHORE-fthx89), output the same: each
   pass declares what it needs in the text and the pipeline skips it in
   one place; a substitution run holds the passthroughs and their lock, the

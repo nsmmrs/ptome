@@ -1,5 +1,6 @@
-// OpenTypeShaper against a frozen copy of it (test/support/frozen): every
-// glyph, advance and kerning, and every width, must be what it was.
+// OpenTypeShaper's simple path against a frozen copy of it
+// (test/support/frozen): every glyph, advance and kerning, and every
+// width, must be what it was.
 @Tags(['nightly'])
 library;
 
@@ -8,6 +9,7 @@ import 'dart:math' as math;
 
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
+import 'package:plain_typesetting/src/shaping.dart' show needsComplexShaping;
 import 'package:test/test.dart';
 
 import 'support/exact_canvas.dart';
@@ -44,7 +46,12 @@ void main() {
       for (var i = 0, n = random.nextInt(12); i < n; i++)
         runes[random.nextInt(runes.length)],
     ]);
-    final texts = [for (var i = 0; i < 400; i++) text()];
+    // (Only text the simple path sets: the frozen copy is of it. Text
+    // with an emoji takes the font's layout tables in full, held to
+    // HarfBuzz by harfbuzz_color_test.)
+    final texts = [for (var i = 0; i < 400; i++) text()]
+        .where((t) => !needsComplexShaping(t))
+        .toList();
     for (final otf in fonts) {
       for (final subtable in [null, 0]) {
         final shaper = OpenTypeShaper(otf, kernTableSubtable: subtable);

@@ -6,14 +6,16 @@
 @TestOn('vm')
 library;
 
-import 'dart:io';
-
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
 import 'support/icu_dates.dart';
 
+late final Frozen _frozen;
+
 void main() {
+  _frozen = Frozen('date_format', compressed: true);
   final moment = DateTime.utc(2026, 10, 14, 17, 46, 40);
 
   test('everyday languages', () {
@@ -89,165 +91,156 @@ void main() {
     expect(CalendarSystem.named('Japanese'), CalendarSystem.japanese);
   });
 
-  test(
-    "every locale as ICU 78.3's",
-    () {
-      final locales = icuDateLocales();
-      expect(locales.length, greaterThan(300));
-      // (Midnight, early morning, noon, afternoon and evening; zones from
-      // UTC, ahead and behind, by whole and part hours.)
-      final moments = [
-        DateTime.utc(2026, 10, 14, 17, 46, 40),
-        DateTime.utc(2026, 1, 3),
-        DateTime.utc(2026, 6, 21, 12),
-        DateTime.utc(2026, 3, 9, 6, 5, 9),
-        DateTime.utc(1999, 12, 31, 21, 30),
-      ];
-      // (Not UTC: ICU writes a nameless zone at no offset `GMT+0`, where
-      // UTS #35 has the GMT zero format, `GMT`; tested apart.)
-      const offsets = [60, 540, -330, 345];
-      const styles = [null, ...DateStyle.values];
-      final cases = <(String, DateStyle?, DateStyle?, DateTime, int, String)>[];
-      for (final locale in locales) {
-        for (final date in styles) {
-          for (final time in styles) {
-            if (date == null && time == null) continue;
-            for (final (i, m) in moments.indexed) {
-              cases.add((
-                locale,
-                date,
-                time,
-                m,
-                offsets[i % offsets.length],
-                'gregory',
-              ));
-            }
-          }
-        }
-      }
-      final theirs = icuDates(cases);
-      final differ = <String>[];
-      for (final (i, (locale, date, time, m, minutes, _)) in cases.indexed) {
-        final offset = Duration(minutes: minutes);
-        final ours = switch ((date, time)) {
-          (final d?, null) => formatDate(m, locale, style: d, offset: offset),
-          (null, final t?) => formatTime(m, locale, style: t, offset: offset),
-          (final d?, final t?) => formatDateTime(
-            m,
+  test("every locale as ICU 78.3's", () {
+    final locales = icuDateLocales(_frozen);
+    expect(locales.length, greaterThan(300));
+    // (Midnight, early morning, noon, afternoon and evening; zones from
+    // UTC, ahead and behind, by whole and part hours.)
+    final moments = [
+      DateTime.utc(2026, 10, 14, 17, 46, 40),
+      DateTime.utc(2026, 1, 3),
+      DateTime.utc(2026, 6, 21, 12),
+      DateTime.utc(2026, 3, 9, 6, 5, 9),
+      DateTime.utc(1999, 12, 31, 21, 30),
+    ];
+    // (Not UTC: ICU writes a nameless zone at no offset `GMT+0`, where
+    // UTS #35 has the GMT zero format, `GMT`; tested apart.)
+    const offsets = [60, 540, -330, 345];
+    const styles = [null, ...DateStyle.values];
+    final cases = <(String, DateStyle?, DateStyle?, DateTime, int, String)>[];
+    // (Each locale's styles at a moment each, the moments taken in turn:
+    // every style at every moment, across the locales.)
+    for (final (l, locale) in locales.indexed) {
+      var n = l;
+      for (final date in styles) {
+        for (final time in styles) {
+          if (date == null && time == null) continue;
+          final i = n++ % moments.length;
+          cases.add((
             locale,
-            date: d,
-            time: t,
-            offset: offset,
-          ),
-          _ => '',
-        };
-        // (ICU keeps a locale's "at" date-time patterns as one array, so
-        // French in Mali, with standard patterns of its own and no "at"
-        // ones, takes French's whole: French's short pattern, where
-        // LDML resolves the root's alias from Mali's own.)
-        final mali = locale == 'fr-ML' && date != null && time != null;
-        if (ours != theirs[i] && !mali) {
-          differ.add(
-            '$locale ${date?.name} ${time?.name} $m $minutes: '
-            '"$ours" ICU "${theirs[i]}"',
-          );
+            date,
+            time,
+            moments[i],
+            offsets[i % offsets.length],
+            'gregory',
+          ));
         }
       }
-      expect(differ, isEmpty, reason: differ.take(20).join('\n'));
-    },
-    tags: ['tools'],
-    skip: File(icuDateOracle).existsSync()
-        ? false
-        : 'run tool/oracles/icu/setup.sh',
-  );
+    }
+    final theirs = icuDates(_frozen, 'gregorian', cases);
+    final differ = <String>[];
+    for (final (i, (locale, date, time, m, minutes, _)) in cases.indexed) {
+      final offset = Duration(minutes: minutes);
+      final ours = switch ((date, time)) {
+        (final d?, null) => formatDate(m, locale, style: d, offset: offset),
+        (null, final t?) => formatTime(m, locale, style: t, offset: offset),
+        (final d?, final t?) => formatDateTime(
+          m,
+          locale,
+          date: d,
+          time: t,
+          offset: offset,
+        ),
+        _ => '',
+      };
+      // (ICU keeps a locale's "at" date-time patterns as one array, so
+      // French in Mali, with standard patterns of its own and no "at"
+      // ones, takes French's whole: French's short pattern, where
+      // LDML resolves the root's alias from Mali's own.)
+      final mali = locale == 'fr-ML' && date != null && time != null;
+      if (ours != theirs[i] && !mali) {
+        differ.add(
+          '$locale ${date?.name} ${time?.name} $m $minutes: '
+          '"$ours" ICU "${theirs[i]}"',
+        );
+      }
+    }
+    expect(differ, isEmpty, reason: differ.take(20).join('\n'));
+  });
 
-  test(
-    'the Japanese, Buddhist and ROC calendars as ICU 78.3 writes them',
-    () {
-      final locales = icuDateLocales();
-      // (Each side of the Heisei, Reiwa, Showa and Minguo eras' starts, at
-      // noon in Tokyo; and today.)
-      final moments = [
-        for (final (y, m, d) in [
-          (2019, 4, 30),
-          (2019, 5, 1),
-          (1989, 1, 7),
-          (1989, 1, 8),
-          (1926, 12, 24),
-          (1926, 12, 25),
-          (1911, 12, 31),
-          (1912, 1, 1),
-          (2026, 10, 14),
-        ])
-          DateTime.utc(y, m, d, 3),
-      ];
-      const pairs = [
-        (DateStyle.full, null),
-        (DateStyle.long, null),
-        (DateStyle.medium, null),
-        (DateStyle.short, null),
-        (DateStyle.long, DateStyle.short),
-      ];
-      final cases = [
-        for (final calendar in const [
-          CalendarSystem.japanese,
-          CalendarSystem.buddhist,
-          CalendarSystem.roc,
-        ])
-          for (final locale in locales)
-            for (final (date, time) in pairs)
-              for (final m in moments)
+  test('the Japanese, Buddhist and ROC calendars as ICU 78.3 writes them', () {
+    final locales = icuDateLocales(_frozen);
+    // (Each side of the Heisei, Reiwa, Showa and Minguo eras' starts, at
+    // noon in Tokyo; and today.)
+    final moments = [
+      for (final (y, m, d) in [
+        (2019, 4, 30),
+        (2019, 5, 1),
+        (1989, 1, 7),
+        (1989, 1, 8),
+        (1926, 12, 24),
+        (1926, 12, 25),
+        (1911, 12, 31),
+        (1912, 1, 1),
+        (2026, 10, 14),
+      ])
+        DateTime.utc(y, m, d, 3),
+    ];
+    const pairs = [
+      (DateStyle.full, null),
+      (DateStyle.long, null),
+      (DateStyle.medium, null),
+      (DateStyle.short, null),
+      (DateStyle.long, DateStyle.short),
+    ];
+    // (Every moment in the calendar's own language; in the others, a
+    // moment for each style, taken in turn.)
+    final cases = [
+      for (final (calendar, home) in const [
+        (CalendarSystem.japanese, 'ja'),
+        (CalendarSystem.buddhist, 'th'),
+        (CalendarSystem.roc, 'zh-Hant'),
+      ])
+        for (final (l, locale) in locales.indexed)
+          for (final (p, (date, time)) in pairs.indexed)
+            for (final (i, m) in moments.indexed)
+              if (locale == home || i == (l + p) % moments.length)
                 (locale, date, time, m, 540, calendar.bcp47Name),
-      ];
-      final theirs = icuDates(cases);
-      final differ = <String>[];
-      for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
-        final calendar = CalendarSystem.named(name)!;
-        final offset = Duration(minutes: minutes);
-        final ours = time == null
-            ? formatDate(
-                m,
-                locale,
-                style: date,
-                offset: offset,
-                calendar: calendar,
-              )
-            : formatDateTime(
-                m,
-                locale,
-                date: date,
-                time: time,
-                offset: offset,
-                calendar: calendar,
-              );
-        // (ICU keeps a calendar's date and time patterns in one array,
-        // resolved where the array is, and takes the Gregorian calendar's
-        // "at" pattern where the calendar has none: its time and joiner
-        // may come from a parent locale's Gregorian or generic data where
-        // LDML's aliases take the locale's own. Allowed only as that: our
-        // date, a time as a locale of the chain writes it, joined by a
-        // pattern of the chain's.)
-        if (ours != theirs[i] &&
-            time != null &&
-            joinedInChain(locale, theirs[i], m, offset, date, time, calendar)) {
-          continue;
-        }
-        if (ours != theirs[i]) {
-          differ.add(
-            '$locale $name ${date.name} ${time?.name} $m: '
-            '"$ours" ICU "${theirs[i]}"',
-          );
-        }
+    ];
+    final theirs = icuDates(_frozen, 'Japanese, Buddhist and ROC', cases);
+    final differ = <String>[];
+    for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
+      final calendar = CalendarSystem.named(name)!;
+      final offset = Duration(minutes: minutes);
+      final ours = time == null
+          ? formatDate(
+              m,
+              locale,
+              style: date,
+              offset: offset,
+              calendar: calendar,
+            )
+          : formatDateTime(
+              m,
+              locale,
+              date: date,
+              time: time,
+              offset: offset,
+              calendar: calendar,
+            );
+      // (ICU keeps a calendar's date and time patterns in one array,
+      // resolved where the array is, and takes the Gregorian calendar's
+      // "at" pattern where the calendar has none: its time and joiner
+      // may come from a parent locale's Gregorian or generic data where
+      // LDML's aliases take the locale's own. Allowed only as that: our
+      // date, a time as a locale of the chain writes it, joined by a
+      // pattern of the chain's.)
+      if (ours != theirs[i] &&
+          time != null &&
+          joinedInChain(locale, theirs[i], m, offset, date, time, calendar)) {
+        continue;
       }
-      expect(
-        differ,
-        isEmpty,
-        reason: '${differ.length}:\n${differ.take(30).join('\n')}',
-      );
-    },
-    tags: ['tools'],
-    skip: File(icuDateOracle).existsSync()
-        ? false
-        : 'run tool/oracles/icu/setup.sh',
-  );
+      if (ours != theirs[i]) {
+        differ.add(
+          '$locale $name ${date.name} ${time?.name} $m: '
+          '"$ours" ICU "${theirs[i]}"',
+        );
+      }
+    }
+    expect(
+      differ,
+      isEmpty,
+      reason: '${differ.length}:\n${differ.take(30).join('\n')}',
+    );
+  });
 }

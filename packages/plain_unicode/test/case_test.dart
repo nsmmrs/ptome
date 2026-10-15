@@ -1,8 +1,9 @@
 // Case mapping against two oracles: Ruby 4.0.7's String#upcase and
 // #downcase for every code point (test/fixtures/ruby_case_mapping.txt,
-// written by tool/ruby_case_mapping.rb), and, where Node.js is installed,
-// JavaScript's toUpperCase and toLowerCase (Unicode 17.0 in Node.js 26),
-// Final_Sigma included.
+// written by tool/ruby_case_mapping.rb), and JavaScript's toUpperCase and
+// toLowerCase (Unicode 17.0 in Node.js 26), Final_Sigma included, whose
+// answers are frozen in test/frozen/case.json (test/support/frozen.dart;
+// FROZEN=record asks Node.js again).
 @TestOn('vm')
 library;
 
@@ -12,9 +13,21 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) =>
-    Process.runSync('which', [tool]).exitCode == 0 ||
-    Process.runSync('where', [tool], runInShell: true).exitCode == 0;
+import 'support/frozen.dart';
+
+/// The oracle, which its answers depend on.
+const String _node = 'Node.js 26.8.1';
+
+/// Node.js's output for [script] with [arguments].
+String _runNode(String script, [List<String> arguments = const []]) {
+  final node = Process.runSync('node', [
+    '-e',
+    script,
+    ...arguments,
+  ], stdoutEncoding: utf8);
+  if (node.exitCode != 0) throw StateError('${node.stderr}');
+  return node.stdout as String;
+}
 
 /// Ruby's mappings by method (`upcase`, `downcase`): code point to text.
 Map<String, Map<int, String>> _ruby() {
@@ -60,6 +73,7 @@ process.stdout.write(JSON.stringify(samples.map((s) => s.toLowerCase())));
 bool _isScalar(int cp) => cp < 0xd800 || cp > 0xdfff;
 
 void main() {
+  final frozen = Frozen('case');
   test('the Unicode versions', () {
     expect(caseMappingUnicodeVersion, '17.0.0');
     expect(lineBreakUnicodeVersion, '18.0.0');
@@ -107,16 +121,16 @@ void main() {
   test(
     "JavaScript's toUpperCase and toLowerCase (Node.js), every code point",
     () {
-      final node = Process.runSync('node', [
-        '-e',
-        _nodeMappings,
-      ], stdoutEncoding: utf8);
-      expect(node.exitCode, 0, reason: '${node.stderr}');
+      final mappings = frozen.answer(
+        'every code point',
+        inputs: [_node, _nodeMappings],
+        oracle: () => _runNode(_nodeMappings),
+      );
       final js = <int, (String, String)>{};
       String text(String hex) => String.fromCharCodes([
         for (final c in hex.split('.')) int.parse(c, radix: 16),
       ]);
-      for (final line in const LineSplitter().convert('${node.stdout}')) {
+      for (final line in const LineSplitter().convert(mappings)) {
         final [cp, upper, lower] = line.split(' ');
         js[int.parse(cp, radix: 16)] = (text(upper), text(lower));
       }
@@ -135,16 +149,14 @@ void main() {
       expect(problems, isEmpty);
       // Final_Sigma in context, against JavaScript.
       const samples = ['ΣΟΦΟΣ ΣΟΦΟΣ.', 'AΣ́ b', 'ÁΣ', "AΣ'B", 'ΑΣ.Σ', '·Σ'];
-      final context = Process.runSync('node', [
-        '-e',
-        _nodeLowerCase,
-        jsonEncode(samples),
-      ], stdoutEncoding: utf8);
+      final context = frozen.answer(
+        'Final_Sigma in context',
+        inputs: [_node, _nodeLowerCase, jsonEncode(samples)],
+        oracle: () => _runNode(_nodeLowerCase, [jsonEncode(samples)]),
+      );
       expect([
         for (final s in samples) lowerCase(s, finalSigma: true),
-      ], jsonDecode('${context.stdout}'));
+      ], jsonDecode(context));
     },
-    skip: _has('node') ? false : 'Node.js is not installed',
-    tags: ['tools'],
   );
 }

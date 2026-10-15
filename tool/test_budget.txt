@@ -1,0 +1,4 @@
+# Time budgets for the tests (tool/test_budget.dart), in seconds.
+test 0.25
+suite 2
+run 30

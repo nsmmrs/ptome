@@ -196,6 +196,9 @@ Compile it with *dart compile exe* to get a custom *ptome* with those conversion
 *PTOME_MANPAGE_PATH*::
   The file *-h manpage* prints instead of the built-in manual page (plain or gzip-compressed).
 
+*PTOME_SYSTEM_FONTS*::
+  When *off*, fonts are looked for only in *PTOME_FONT_PATH* and the folders a theme or document names, never in this user's or the system's font folders: the output then depends on no font installed on the machine.
+
 == Exit Status
 
 *0*::

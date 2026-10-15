@@ -4,7 +4,7 @@
 ///
 /// The folders searched are those of `PTOME_FONT_PATH` (separated as
 /// `PATH` is), then [Fonts.extraDirectories], then the user's and the
-/// system's font folders, read through Ptome's I/O seam and cached in
+/// system's font folders (unless `PTOME_SYSTEM_FONTS` is `off`), read through Ptome's I/O seam and cached in
 /// Ptome's cache folder. A conversion's own fonts ([Fonts.withFonts])
 /// come first.
 library;
@@ -51,12 +51,24 @@ abstract final class Fonts {
   static set installed(FontIndex? index) => _installed = index;
 
   /// The machine's fonts: `PTOME_FONT_PATH`'s folders, then
-  /// [extraDirectories], then the user's and the system's font folders.
-  static FontIndex machine() => FontIndex.system(
-    before: [...fontPath, ...extraDirectories],
-    cacheFile: _cacheFile(),
-    fileSystem: _files,
-  );
+  /// [extraDirectories], then the user's and the system's font folders
+  /// (unless [systemFonts] is off).
+  static FontIndex machine() => systemFonts
+      ? FontIndex.system(
+          before: [...fontPath, ...extraDirectories],
+          cacheFile: _cacheFile(),
+          fileSystem: _files,
+        )
+      : FontIndex(
+          [...fontPath, ...extraDirectories],
+          cacheFile: _cacheFile(),
+          fileSystem: _files,
+        );
+
+  /// Whether the user's and the system's font folders are searched: not
+  /// when `PTOME_SYSTEM_FONTS` is `off`, so that output depends only on
+  /// the fonts named (the tests run so, and a reproducible build can).
+  static bool get systemFonts => io.environment['PTOME_SYSTEM_FONTS'] != 'off';
 
   /// Folders searched before the user's and the system's (the tests and
   /// tools point it at the fonts vendored with asciidoctor-pdf).

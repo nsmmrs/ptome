@@ -1,9 +1,10 @@
 // Counter styles: the examples CSS Counter Styles Level 3 gives (its
 // longhand table, the first 120 simplified Chinese numbers, the Ethiopic
 // examples), every style against WeasyPrint's counter() and list markers
-// where WeasyPrint is installed (tool/oracles/weasyprint: its own
-// definitions for CSS's predefined styles, the vendored rules for the
-// Ready-made ones, read from its laid-out boxes), and the
+// (tool/oracles/weasyprint: its own definitions for CSS's predefined
+// styles, the vendored rules for the Ready-made ones, read from its
+// laid-out boxes; its answers frozen in test/frozen/counter_styles.json.gz,
+// test/support/frozen.dart, FROZEN=record asking it again), and the
 // default numbering systems CLDR gives languages.
 @TestOn('vm')
 library;
@@ -13,6 +14,15 @@ import 'dart:io';
 
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
+
+import 'support/frozen.dart';
+
+/// The oracle, which its answers depend on.
+const String _weasyprint = 'WeasyPrint 70.0';
+
+/// The longest representation compared (WeasyPrint caps a
+/// representation's length, as CSS lets it).
+const int _compared = 60;
 
 String _format(String style, int value) =>
     CounterStyle.named(style)!.format(value);
@@ -134,112 +144,132 @@ void main() {
     expect(numberingSystemDigits('hanidec'), '〇一二三四五六七八九');
   });
 
-  // (WeasyPrint's interpreter: the one its `weasyprint` script runs.)
-  final python = switch (Process.runSync('sh', [
-    '-c',
-    'command -v weasyprint',
-  ]).stdout) {
-    final String path when path.trim().isNotEmpty => File(
-      path.trim(),
-    ).readAsLinesSync().first.replaceFirst('#!', '').trim(),
-    _ => null,
-  };
-  test(
-    "every style as WeasyPrint's counter() and markers write it",
-    () {
-      const values = [
-        -3, 0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, //
-        25, 26, 27, 28, 47, 48, 49, 50, 60, 61, 99, 100, 101, 110, 111, 499,
-        999, 1000, 1001, 1234, 3999, 4000, 4999, 6001, 9999, 10000, 10999,
-        11000, 19999, 20000, 78010092,
-      ];
-      // Section 7's algorithms, which WeasyPrint doesn't have; and the
-      // CJK cycles, fixed in CSS Counter Styles 3 (6.4), alphabetic in
-      // WeasyPrint as in CSS 2.1's era.
-      const unlike = {
-        'simp-chinese-informal',
-        'simp-chinese-formal',
-        'trad-chinese-informal',
-        'trad-chinese-formal',
-        'cjk-ideographic',
-        'ethiopic-numeric',
-        'cjk-earthly-branch',
-        'cjk-heavenly-stem',
-      };
-      // CSS's own styles from WeasyPrint's definitions, the Ready-made
-      // ones from the vendored rules.
-      final css3 = File('vendor/w3c/css-counter-styles-3.css')
-          .readAsStringSync();
-      final predefined = {
-        for (final m in RegExp(r'@counter-style\s+([\w-]+)').allMatches(css3))
-          m[1]!,
-      };
-      final readyMade = File('vendor/w3c/predefined-counter-styles.css')
-          .readAsStringSync()
-          .replaceAll(RegExp(r'/\*.*?\*/', dotAll: true), '');
-      final css = StringBuffer();
-      for (final m in RegExp(
-        r'@counter-style\s+([\w-]+)\s*\{[^}]*\}',
-      ).allMatches(readyMade)) {
-        if (!predefined.contains(m[1])) css.write(m[0]);
-      }
-      final styles = [
-        for (final name in CounterStyle.names)
-          if (!unlike.contains(name)) name,
-      ];
-      // (And each style's own rule, as cssRule writes it, under another
-      // name: the same numbers from it.)
-      for (final name in styles.toList()) {
-        css.write(
-          CounterStyle.named(name)!.cssRule
-              .replaceFirst('@counter-style $name ', '@counter-style x-$name '),
-        );
-        styles.add('x-$name');
-      }
-      final process = Process.runSync('sh', [
-        '-c',
-        r'"$0" -I tool/oracles/weasyprint/counters.py < "$1"',
-        python!,
-        (File(
-              '${Directory.systemTemp.createTempSync('counters.').path}/in.json',
-            )..writeAsStringSync(
-              jsonEncode({'css': '$css', 'styles': styles, 'values': values}),
-            ))
-            .path,
-      ], stdoutEncoding: utf8);
-      expect(process.exitCode, 0, reason: '${process.stderr}');
-      final theirs = jsonDecode(process.stdout as String) as List<Object?>;
-      final differ = <String>[];
-      for (final (i, style) in styles.indexed) {
-        final counter = CounterStyle.named(
-          style.startsWith('x-') ? style.substring(2) : style,
-        )!;
-        final row = theirs[i]! as List<Object?>;
-        for (final (j, v) in values.indexed) {
-          final [their, theirMarker] = (row[j]! as List<Object?>)
-              .cast<String>();
-          final ours = counter.format(v);
-          final marker = counter.marker(v);
-          // (WeasyPrint caps a representation's length, as CSS lets it.)
-          if (ours.runes.length > 60) continue;
-          // (WeasyPrint's Korean markers keep a second space after the
-          // negative sign, its counter() one: the escape in `"\C2A4  "`
-          // takes one, as CSS's syntax has it.)
-          final korean = style.startsWith('korean-') && v < 0;
-          if (ours != their ||
-              (marker != theirMarker &&
-                  !(korean && theirMarker == marker.replaceFirst(' ', '  ')))) {
-            differ.add(
-              '$style $v: ours "$ours" "$marker", '
-              'WeasyPrint "$their" "$theirMarker"',
-            );
-          }
+  final frozen = Frozen('counter_styles', compressed: true);
+  test("every style as WeasyPrint's counter() and markers write it", () {
+    const values = [
+      -3, 0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, //
+      25, 26, 27, 28, 47, 48, 49, 50, 60, 61, 99, 100, 101, 110, 111, 499,
+      999, 1000, 1001, 1234, 3999, 4000, 4999, 6001, 9999, 10000, 10999,
+      11000, 19999, 20000, 78010092,
+    ];
+    // Section 7's algorithms, which WeasyPrint doesn't have; and the
+    // CJK cycles, fixed in CSS Counter Styles 3 (6.4), alphabetic in
+    // WeasyPrint as in CSS 2.1's era.
+    const unlike = {
+      'simp-chinese-informal',
+      'simp-chinese-formal',
+      'trad-chinese-informal',
+      'trad-chinese-formal',
+      'cjk-ideographic',
+      'ethiopic-numeric',
+      'cjk-earthly-branch',
+      'cjk-heavenly-stem',
+    };
+    // CSS's own styles from WeasyPrint's definitions, the Ready-made
+    // ones from the vendored rules.
+    final css3 = File('vendor/w3c/css-counter-styles-3.css').readAsStringSync();
+    final predefined = {
+      for (final m in RegExp(r'@counter-style\s+([\w-]+)').allMatches(css3))
+        m[1]!,
+    };
+    final readyMade = File('vendor/w3c/predefined-counter-styles.css')
+        .readAsStringSync()
+        .replaceAll(RegExp(r'/\*.*?\*/', dotAll: true), '');
+    final css = StringBuffer();
+    for (final m in RegExp(
+      r'@counter-style\s+([\w-]+)\s*\{[^}]*\}',
+    ).allMatches(readyMade)) {
+      if (!predefined.contains(m[1])) css.write(m[0]);
+    }
+    final styles = [
+      for (final name in CounterStyle.names)
+        if (!unlike.contains(name)) name,
+    ];
+    // (And each style's own rule, as cssRule writes it, under another
+    // name: the same numbers from it.)
+    for (final name in styles.toList()) {
+      css.write(
+        CounterStyle.named(name)!.cssRule
+            .replaceFirst('@counter-style $name ', '@counter-style x-$name '),
+      );
+      styles.add('x-$name');
+    }
+    final input = jsonEncode({
+      'css': '$css',
+      'styles': styles,
+      'values': values,
+    });
+    final theirs = frozen.json<List<Object?>>(
+      'every style',
+      inputs: [
+        _weasyprint,
+        File('tool/oracles/weasyprint/counters.py').readAsStringSync(),
+        input,
+      ],
+      oracle: () => _weasyprintCounters(input),
+    );
+    final differ = <String>[];
+    for (final (i, style) in styles.indexed) {
+      final counter = CounterStyle.named(
+        style.startsWith('x-') ? style.substring(2) : style,
+      )!;
+      final row = theirs[i]! as List<Object?>;
+      for (final (j, v) in values.indexed) {
+        final [their, theirMarker] = (row[j]! as List<Object?>).cast<String>();
+        final ours = counter.format(v);
+        final marker = counter.marker(v);
+        // (WeasyPrint caps a representation's length, as CSS lets it.)
+        if (ours.runes.length > _compared) continue;
+        // (WeasyPrint's Korean markers keep a second space after the
+        // negative sign, its counter() one: the escape in `"\C2A4  "`
+        // takes one, as CSS's syntax has it.)
+        final korean = style.startsWith('korean-') && v < 0;
+        if (ours != their ||
+            (marker != theirMarker &&
+                !(korean && theirMarker == marker.replaceFirst(' ', '  ')))) {
+          differ.add(
+            '$style $v: ours "$ours" "$marker", '
+            'WeasyPrint "$their" "$theirMarker"',
+          );
         }
       }
-      expect(differ, isEmpty, reason: differ.take(20).join('\n'));
-    },
-    tags: ['tools'],
-    timeout: const Timeout(Duration(minutes: 5)),
-    skip: python == null ? 'needs WeasyPrint' : false,
-  );
+    }
+    expect(differ, isEmpty, reason: differ.take(20).join('\n'));
+  });
+}
+
+/// WeasyPrint's counter() and marker for each style and value of [input]
+/// (`{css, styles, values}`), with the interpreter its `weasyprint`
+/// script runs.
+List<Object?> _weasyprintCounters(String input) {
+  final script =
+      Process.runSync('sh', ['-c', 'command -v weasyprint']).stdout as String;
+  final python = File(script.trim())
+      .readAsLinesSync()
+      .first
+      .replaceFirst('#!', '')
+      .trim();
+  final dir = Directory.systemTemp.createTempSync('counters.');
+  try {
+    final file = File('${dir.path}/in.json')..writeAsStringSync(input);
+    final process = Process.runSync('sh', [
+      '-c',
+      r'"$0" -I tool/oracles/weasyprint/counters.py < "$1"',
+      python,
+      file.path,
+    ], stdoutEncoding: utf8);
+    if (process.exitCode != 0) throw StateError('${process.stderr}');
+    // (A representation longer than the test compares, cut short.)
+    String cut(Object? text) =>
+        String.fromCharCodes((text! as String).runes.take(_compared + 1));
+    return [
+      for (final row in jsonDecode(process.stdout as String) as List<Object?>)
+        [
+          for (final cell in row! as List<Object?>)
+            [for (final text in cell! as List<Object?>) cut(text)],
+        ],
+    ];
+  } finally {
+    dir.deleteSync(recursive: true);
+  }
 }

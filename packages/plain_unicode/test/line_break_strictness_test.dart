@@ -1,6 +1,8 @@
 // Line-breaking strictness (CSS Text 3's line-break, 5.3): the rules it
 // tailors UAX #14 with, against ICU 78.3's line break iterator with the
-// `lb` keyword (`ja@lb=strict`, `normal`, `loose`) where ICU is built.
+// `lb` keyword (`ja@lb=strict`, `normal`, `loose`), whose answers are
+// frozen in test/frozen/line_break_strictness.json
+// (test/support/frozen.dart; FROZEN=record asks it again).
 @TestOn('vm')
 library;
 
@@ -9,7 +11,37 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _oracle = 'tool/oracles/icu/icubreak';
+
+/// The oracle, which its answers depend on.
+const String _version = 'ICU 78.3';
+
+late final Frozen _frozen;
+
+/// ICU's breaks of each of [texts] in [locale]: a line of offsets each.
+List<String> _icu(String locale, List<String> texts) => _frozen
+    .answer(
+      '$locale: ${texts.length} texts',
+      inputs: [_version, locale, ...texts],
+      oracle: () {
+        final dir = Directory.systemTemp.createTempSync('lb.');
+        try {
+          final input = File('${dir.path}/in.txt')
+            ..writeAsStringSync('${texts.join('\n')}\n');
+          return Process.runSync('sh', [
+                '-c',
+                '"$_oracle" "$locale" < "${input.path}"',
+              ]).stdout
+              as String;
+        } finally {
+          dir.deleteSync(recursive: true);
+        }
+      },
+    )
+    .trim()
+    .split('\n');
 
 /// Every rule's case, in Japanese text.
 const List<String> _texts = [
@@ -34,6 +66,7 @@ List<int> _breaks(
 }
 
 void main() {
+  _frozen = Frozen('line_break_strictness');
   test('strict is UAX #14: no line starts with small kana', () {
     expect(_breaks('ニャーン', LineBreakStrictness.strict), [3, 4]);
     expect(_breaks('ニャーン', LineBreakStrictness.strict), [
@@ -76,62 +109,42 @@ void main() {
       expect(ours, containsAll([2, 6]));
       expect(ours, isNot(contains(3)));
       expect(ours, isNot(contains(5)));
-      if (File(_oracle).existsSync()) {
-        final r = Process.runSync('sh', [
-          '-c',
-          r'printf "%s\n" "$1" | "$0" zh',
-          _oracle,
-          text,
-        ]);
-        expect(
-          ours,
-          '${r.stdout}'.trim().split(' ').map(int.parse).skip(1).toList(),
-        );
-      }
+      expect(
+        ours,
+        _icu('zh', [text]).single.split(' ').map(int.parse).skip(1).toList(),
+      );
     },
   );
 
-  test(
-    'as ICU 78.3 breaks Japanese, strict, normal and loose',
-    () {
-      for (final (strictness, keyword) in [
-        (LineBreakStrictness.strict, 'strict'),
-        (LineBreakStrictness.normal, 'normal'),
-        (LineBreakStrictness.loose, 'loose'),
-      ]) {
-        final dir = Directory.systemTemp.createTempSync('lb.');
-        addTearDown(() => dir.deleteSync(recursive: true));
-        final input = File('${dir.path}/in.txt')
-          ..writeAsStringSync('${_texts.join('\n')}\n');
-        final r = Process.runSync('sh', [
-          '-c',
-          '"$_oracle" "ja@lb=$keyword" < "${input.path}"',
-        ]);
-        final theirs = [
-          for (final line in '${r.stdout}'.trim().split('\n'))
-            {for (final n in line.split(' ')) int.parse(n)}..remove(0),
-        ];
-        for (final (i, text) in _texts.indexed) {
-          final ours = _breaks(text, strictness).toSet();
-          if (strictness == LineBreakStrictness.normal) {
-            // (ICU's normal also breaks before small kana and the prolonged
-            // sound mark, class CJ, which CSS Text 3 keeps for loose.)
-            final runes = text.codeUnits;
-            final onlyIcu = theirs[i].difference(ours);
-            expect(
-              onlyIcu.every(
-                (at) => lineBreakClass(runes[at]) == LineBreakClass.cj,
-              ),
-              isTrue,
-              reason: '$keyword "$text": $onlyIcu',
-            );
-            expect(ours.difference(theirs[i]), isEmpty, reason: text);
-          } else {
-            expect(ours, theirs[i], reason: '$keyword "$text"');
-          }
+  test('as ICU 78.3 breaks Japanese, strict, normal and loose', () {
+    for (final (strictness, keyword) in [
+      (LineBreakStrictness.strict, 'strict'),
+      (LineBreakStrictness.normal, 'normal'),
+      (LineBreakStrictness.loose, 'loose'),
+    ]) {
+      final theirs = [
+        for (final line in _icu('ja@lb=$keyword', _texts))
+          {for (final n in line.split(' ')) int.parse(n)}..remove(0),
+      ];
+      for (final (i, text) in _texts.indexed) {
+        final ours = _breaks(text, strictness).toSet();
+        if (strictness == LineBreakStrictness.normal) {
+          // (ICU's normal also breaks before small kana and the prolonged
+          // sound mark, class CJ, which CSS Text 3 keeps for loose.)
+          final runes = text.codeUnits;
+          final onlyIcu = theirs[i].difference(ours);
+          expect(
+            onlyIcu.every(
+              (at) => lineBreakClass(runes[at]) == LineBreakClass.cj,
+            ),
+            isTrue,
+            reason: '$keyword "$text": $onlyIcu',
+          );
+          expect(ours.difference(theirs[i]), isEmpty, reason: text);
+        } else {
+          expect(ours, theirs[i], reason: '$keyword "$text"');
         }
       }
-    },
-    skip: File(_oracle).existsSync() ? false : 'run tool/oracles/icu/setup.sh',
-  );
+    }
+  });
 }

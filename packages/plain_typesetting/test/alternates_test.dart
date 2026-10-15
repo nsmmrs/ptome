@@ -1,6 +1,8 @@
 // Justification by alternative letterforms (W3C alreq 7.2.3): a justified
 // line of Nastaliq takes its font's `jalt` forms at some words, none side
-// by side, before its spaces widen; Gulzar's, against HarfBuzz.
+// by side, before its spaces widen; Gulzar's, against HarfBuzz (its
+// answers frozen in test/frozen/alternates.json, test/support/frozen.dart;
+// FROZEN=record asks it again).
 @TestOn('vm')
 library;
 
@@ -11,8 +13,13 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 const String _font = 'test/fonts/gulzar-subset.ttf';
+
+/// The oracle, which its answers depend on.
+const String _oracle = 'HarfBuzz 14.6.0';
 
 final OpenTypeShaper _gulzar = OpenTypeShaper(
   OpenTypeFont.parse(File(_font).readAsBytesSync()),
@@ -40,6 +47,7 @@ Line _line(String text, double width, {bool alternates = true}) =>
         .single;
 
 void main() {
+  final frozen = Frozen('alternates');
   const text = 'سگ سنگ رنگ بن تن کس';
 
   double natural() => _style.widthOf(_style.shape(text, rightToLeft: true));
@@ -113,22 +121,30 @@ void main() {
   test('the alternates are the forms HarfBuzz gives with jalt', () {
     final jalt = _style.copyWith(features: {'jalt'});
     for (final word in ['سگ', 'بن', 'کس', 'سنگ']) {
-      final r = Process.runSync('sh', [
-        '-c',
-        r'printf "%s\n" "$1" | "$0" "$2" jalt',
-        _native,
-        word,
-        _font,
-      ], stdoutEncoding: utf8);
-      final theirs = [
-        for (final g in jsonDecode((r.stdout as String).trim()) as List)
-          (g as List).first as int,
-      ];
+      final theirs = frozen
+          .json<List<Object?>>(
+            word,
+            inputs: [_oracle, File(_font).readAsBytesSync(), word, 'jalt'],
+            oracle: () {
+              final r = Process.runSync('sh', [
+                '-c',
+                r'printf "%s\n" "$1" | "$0" "$2" jalt',
+                _native,
+                word,
+                _font,
+              ], stdoutEncoding: utf8);
+              return [
+                for (final g in jsonDecode((r.stdout as String).trim()) as List)
+                  (g as List).first as int,
+              ];
+            },
+          )
+          .cast<int>();
       expect(
         [for (final g in jalt.shape(word, rightToLeft: true)) g.id],
         theirs,
         reason: word,
       );
     }
-  }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+  });
 }

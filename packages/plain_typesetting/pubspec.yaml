@@ -26,6 +26,7 @@ dependencies:
 
 dev_dependencies:
   analyzer: ^14.4.0
+  crypto: ^3.0.6
   plain_hyphenation: ^0.1.0-dev
   test: ^1.32.0
   very_good_analysis: ^11.0.0

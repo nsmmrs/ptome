@@ -1,6 +1,8 @@
 @TestOn('vm')
 library;
 
+import 'dart:async';
+import 'dart:io';
 import 'dart:isolate';
 
 import 'package:ptome/src/parallel.dart';
@@ -22,19 +24,44 @@ final class _Squares extends Job<int> {
   }
 }
 
-/// Waits [millis] (busy), then gives its [name].
-final class _Busy extends Job<String> {
-  const new(this.name, this.millis);
+/// Waits until the file [latch] exists (busy, or on a timer when
+/// [async]), then gives its [name]: a job that ends when the test says so,
+/// whatever the machine's speed. (It gives up after a minute, for the test
+/// to fail rather than hang.)
+final class _Waits extends Job<String> {
+  const new(this.name, this.latch, {this.async = false});
 
   final String name;
-  final int millis;
+  final String latch;
+  final bool async;
 
   @override
-  String run() {
+  FutureOr<String> run() => async ? _later() : _busy();
+
+  String _busy() {
     final watch = Stopwatch()..start();
-    while (watch.elapsedMilliseconds < millis) {}
+    while (!File(latch).existsSync() && watch.elapsed < _patience) {
+      sleep(const Duration(milliseconds: 1));
+    }
     return name;
   }
+
+  Future<String> _later() async {
+    final watch = Stopwatch()..start();
+    while (!File(latch).existsSync() && watch.elapsed < _patience) {
+      await Future<void>.delayed(const Duration(milliseconds: 1));
+    }
+    return name;
+  }
+
+  static const Duration _patience = Duration(minutes: 1);
+}
+
+/// A file for a [_Waits] job to wait on, in a folder of its own.
+String _latch() {
+  final dir = Directory.systemTemp.createTempSync('parallel_test.');
+  addTearDown(() => dir.deleteSync(recursive: true));
+  return '${dir.path}/go';
 }
 
 final class _Throws extends Job<int> {
@@ -83,18 +110,18 @@ void main() {
 
   test('idle workers pull the next job', () async {
     final pool = Parallel.ofSize(2);
+    final latch = _latch();
     final finished = <String>[];
+    final long = pool.submit(_Waits('long', latch)).then(finished.add);
+    // The short ones on the other worker, one after another, while the
+    // long one holds the first (dealt in turn, the third would wait for
+    // it, and the long one ends only once the short ones have).
     await Future.wait([
-      for (final job in const [
-        _Busy('long', 400),
-        _Busy('a', 20),
-        _Busy('b', 20),
-        _Busy('c', 20),
-      ])
-        pool.submit(job).then(finished.add),
+      for (final name in const ['a', 'b', 'c'])
+        pool.submit(_Later(name, 0)).then(finished.add),
     ]);
-    // The short ones on the other worker, one after another, before the
-    // long one ends (dealt in turn, the third would wait for it).
+    File(latch).createSync();
+    await long;
     expect(finished, ['a', 'b', 'c', 'long']);
   });
 
@@ -117,15 +144,17 @@ void main() {
 
   test('a job that waits holds its worker until it ends', () async {
     final pool = Parallel.ofSize(2);
+    final latch = _latch();
     final finished = <String>[];
+    final long = pool
+        .submit(_Waits('long', latch, async: true))
+        .then(finished.add);
     await Future.wait([
-      for (final job in const [
-        _Later('long', 300),
-        _Later('a', 10),
-        _Later('b', 10),
-      ])
-        pool.submit(job).then(finished.add),
+      for (final name in const ['a', 'b'])
+        pool.submit(_Later(name, 0)).then(finished.add),
     ]);
+    File(latch).createSync();
+    await long;
     expect(finished, ['a', 'b', 'long']);
     await expectLater(
       pool.submit(const _Later('x', 1, fails: true)),

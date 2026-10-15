@@ -1,12 +1,13 @@
 // The OpenType shaper against HarfBuzz (harfbuzzjs 1.6.3, in
-// tool/oracles/harfbuzz, installed by tool/oracles/setup.sh; skipped where
-// it isn't): the same glyphs and advances, kerning included, for each line
-// of test/fixtures/shaping.txt, with ligatures and kerning on and off and
-// the onum and smcp features, in fonts kerned by GPOS and by a kern table
-// (Libertinus's smcp is a multiple substitution). Measured on 2026-10-08:
-// every run of every font shapes as HarfBuzz shapes it.
+// tool/oracles/harfbuzz, installed by tool/oracles/setup.sh): the same
+// glyphs and advances, kerning included, for each line of
+// test/fixtures/shaping.txt, with ligatures and kerning on and off and the
+// onum and smcp features, in fonts kerned by GPOS and by a kern table
+// (Libertinus's smcp is a multiple substitution). HarfBuzz's answers are
+// frozen in test/frozen/harfbuzz.json (test/support/frozen.dart):
+// FROZEN=record asks it again. Measured on 2026-10-08: every run of every
+// font shapes as HarfBuzz shapes it.
 @TestOn('vm')
-@Tags(['tools'])
 library;
 
 import 'dart:convert';
@@ -16,7 +17,12 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
+
+/// The oracle's version, which its answers depend on.
+const String _harfbuzzjs = 'harfbuzzjs 1.6.3';
 
 /// A setting: the shaper's options, and HarfBuzz's features for them.
 typedef _Setting = ({
@@ -75,7 +81,7 @@ const Map<String, int> _fonts = {
 };
 
 void main() {
-  final ready = Directory('tool/oracles/harfbuzz/node_modules').existsSync();
+  final frozen = Frozen('harfbuzz');
   final lines = File('test/fixtures/shaping.txt')
       .readAsLinesSync()
       .where((l) => l.isNotEmpty)
@@ -83,16 +89,21 @@ void main() {
   for (final MapEntry(key: name, value: minimum) in _fonts.entries) {
     test('$name shapes as HarfBuzz does', () {
       final path = 'test/fonts/$name';
-      final font = OpenTypeShaper(
-        OpenTypeFont.parse(File(path).readAsBytesSync()),
-      );
+      final bytes = File(path).readAsBytesSync();
+      final font = OpenTypeShaper(OpenTypeFont.parse(bytes));
       final upem = font.font.unitsPerEm;
       final runs = [
         for (final setting in _settings)
           for (final line in lines)
             {'text': line, 'features': setting.harfbuzz},
       ];
-      final theirs = _harfbuzz(path, runs);
+      final theirs = frozen
+          .json<List<Object?>>(
+            name,
+            inputs: [_harfbuzzjs, bytes, jsonEncode(runs)],
+            oracle: () => _harfbuzz(path, runs),
+          )
+          .cast<List<Object?>>();
       var same = 0;
       final differ = <String>[];
       var i = 0;
@@ -125,7 +136,7 @@ void main() {
         '${differ.take(6).map((d) => '  $d\n').join()}',
       );
       expect(same, greaterThanOrEqualTo(minimum));
-    }, skip: ready ? false : 'run tool/oracles/setup.sh to install HarfBuzz');
+    });
   }
 }
 

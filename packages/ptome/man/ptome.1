@@ -2,12 +2,12 @@
 .\"     Title: ptome
 .\"    Author: Noah Summers
 .\" Generator: Ptome 0.1.0
-.\"      Date: 2026-10-11
+.\"      Date: 2026-10-15
 .\"    Manual: Ptome Manual
 .\"    Source: Ptome 0.1.0
 .\"  Language: English
 .\"
-.TH "PTOME" "1" "2026-10-11" "Ptome 0.1.0" "Ptome Manual"
+.TH "PTOME" "1" "2026-10-15" "Ptome 0.1.0" "Ptome Manual"
 .ie \n(.g .ds Aq \(aq
 .el       .ds Aq '
 .ss \n[.ss] 0
@@ -259,6 +259,11 @@ When \fB1\fP, work done on other cores is handed back in a random order (for che
 \fBPTOME_MANPAGE_PATH\fP
 .RS 4
 The file \fB\-h manpage\fP prints instead of the built\-in manual page (plain or gzip\-compressed).
+.RE
+.sp
+\fBPTOME_SYSTEM_FONTS\fP
+.RS 4
+When \fBoff\fP, fonts are looked for only in \fBPTOME_FONT_PATH\fP and the folders a theme or document names, never in this user\(cqs or the system\(cqs font folders: the output then depends on no font installed on the machine.
 .RE
 .SH "EXIT STATUS"
 .sp

@@ -1,6 +1,8 @@
 // BCP 47 language tags to OpenType language system tags, as HarfBuzz maps
 // them: every language and rule of its tables, with scripts, regions,
-// extended languages, variants and private use, against the native oracle.
+// extended languages, variants and private use, against the native oracle
+// (its answers frozen in test/frozen/language_tags.json.gz,
+// test/support/frozen.dart; FROZEN=record asks it again).
 @TestOn('vm')
 library;
 
@@ -11,7 +13,12 @@ import 'package:plain_typesetting/src/shaping/language_tags.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart' show shapeText;
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
+
+/// The oracle, which its answers depend on.
+const String _oracle = 'HarfBuzz 14.6.0';
 
 /// Tags to try: the generated tables' languages and rules, alone and with
 /// scripts, regions and variants.
@@ -69,6 +76,7 @@ List<String> _corpus() {
 }
 
 void main() {
+  final frozen = Frozen('language_tags', compressed: true);
   test('everyday tags', () {
     expect(openTypeLanguageTags('ja'), ['JAN ']);
     expect(openTypeLanguageTags('zh-Hans'), ['ZHS ']);
@@ -102,13 +110,21 @@ void main() {
 
   test('every table entry and rule maps as HarfBuzz maps it', () {
     final corpus = _corpus();
-    final r = Process.runSync('sh', [
-      '-c',
-      r'printf "%s\n" "$@" | "$0" --language-tags',
-      _native,
-      ...corpus,
-    ]);
-    final theirs = (r.stdout as String).split('\n');
+    final theirs = frozen
+        .json<List<Object?>>(
+          'language tags',
+          inputs: [_oracle, ...corpus],
+          oracle: () {
+            final r = Process.runSync('sh', [
+              '-c',
+              r'printf "%s\n" "$@" | "$0" --language-tags',
+              _native,
+              ...corpus,
+            ]);
+            return (r.stdout as String).split('\n');
+          },
+        )
+        .cast<String>();
     final differ = <String>[];
     for (final (i, tag) in corpus.indexed) {
       final ours = [for (final t in openTypeLanguageTags(tag)) '[$t]']
@@ -119,5 +135,5 @@ void main() {
     }
     expect(corpus.length, greaterThan(5000));
     expect(differ, isEmpty, reason: differ.take(10).join('\n'));
-  }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+  });
 }

@@ -1,5 +1,7 @@
 // Case mapping tailored by language (SpecialCasing.txt): Turkish and Azeri
-// dotted and dotless i, Lithuanian's dot above, against ICU's.
+// dotted and dotless i, Lithuanian's dot above, against ICU's (its
+// answers frozen in test/frozen/case_language.json, test/support/frozen.dart;
+// FROZEN=record asks it again).
 @TestOn('vm')
 library;
 
@@ -10,9 +12,15 @@ import 'dart:math';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _icu = 'tool/oracles/icu/icucase';
 
+/// The oracle, which its answers depend on.
+const String _version = 'ICU 78.3';
+
 void main() {
+  final frozen = Frozen('case_language');
   test('Turkish and Azeri i', () {
     expect(upperCase('istanbul', language: 'tr'), 'İSTANBUL');
     expect(lowerCase('ISTANBUL', language: 'tr'), 'ıstanbul');
@@ -71,13 +79,21 @@ void main() {
         }
       }
     }
-    final r = Process.runSync('sh', [
-      '-c',
-      r'printf "%s\n" "$@" | "$0"',
-      _icu,
-      for (final (l, m, t) in lines) '$l\t$m\t$t',
-    ], stdoutEncoding: utf8);
-    final theirs = (r.stdout as String).split('\n');
+    final input = [for (final (l, m, t) in lines) '$l\t$m\t$t'];
+    final theirs = frozen
+        .answer(
+          'languages',
+          inputs: [_version, ...input],
+          oracle: () =>
+              Process.runSync('sh', [
+                    '-c',
+                    r'printf "%s\n" "$@" | "$0"',
+                    _icu,
+                    ...input,
+                  ], stdoutEncoding: utf8).stdout
+                  as String,
+        )
+        .split('\n');
     final differ = <String>[];
     for (final (i, (language, mode, text)) in lines.indexed) {
       final ours = mode == 'upper'
@@ -93,5 +109,5 @@ void main() {
       }
     }
     expect(differ, isEmpty, reason: differ.take(10).join('\n'));
-  }, skip: File(_icu).existsSync() ? false : 'needs the ICU oracle');
+  });
 }

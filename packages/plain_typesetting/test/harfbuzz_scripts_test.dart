@@ -2,12 +2,10 @@
 // 14.6.0 shapes them: the same glyphs in the same visual order, the same
 // advances and the same mark offsets, in the subset Noto fonts fonts.txt
 // lists (tool/subset_test_fonts.dart makes them). The oracle is a full
-// HarfBuzz build (tool/oracles/harfbuzz-native/setup.sh), else harfbuzzjs
-// (tool/oracles/setup.sh; built without the vowel constraints, so the
-// lines that test them are left to the native oracle); the tests are
-// skipped where neither is installed.
+// HarfBuzz build (tool/oracles/harfbuzz-native/setup.sh); its answers are
+// frozen in test/frozen/harfbuzz_scripts.json (test/support/frozen.dart;
+// FROZEN=record asks it again).
 @TestOn('vm')
-@Tags(['tools'])
 library;
 
 import 'dart:convert';
@@ -18,14 +16,18 @@ import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart' show shapeText;
 import 'package:test/test.dart';
 
-const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
+import 'support/frozen.dart';
+
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
+
+/// The oracle, which its answers depend on.
+const String _oracle = 'HarfBuzz 14.6.0';
+
+late final Frozen _frozen;
 const String _fixtures = 'test/fixtures/scripts';
 
 void main() {
-  final ready =
-      File(_native).existsSync() ||
-      Directory('tool/oracles/harfbuzz/node_modules').existsSync();
+  _frozen = Frozen('harfbuzz_scripts');
   for (final entry in File('$_fixtures/fonts.txt').readAsLinesSync()) {
     if (entry.startsWith('#') || entry.trim().isEmpty) continue;
     final [font, _, files, direction] = [
@@ -37,18 +39,18 @@ void main() {
         final lines = File('$_fixtures/$file')
             .readAsLinesSync()
             .where((l) => l.isNotEmpty)
-            // (Lines of vowel sequences a script prohibits, marked `#!`,
-            // need the native oracle.)
-            .where((l) => !l.startsWith('#!') || File(_native).existsSync())
+            // (Lines of vowel sequences a script prohibits are marked
+            // `#!`.)
             .map((l) => l.startsWith('#!') ? l.substring(2) : l)
             .toList();
         final differ = shapeDifferences(
+          '$file in $font',
           path,
           lines,
           rightToLeft: direction == 'rtl',
         );
         expect(differ, isEmpty, reason: differ.take(3).join('\n'));
-      }, skip: ready ? false : 'run tool/oracles/setup.sh to install HarfBuzz');
+      });
     }
   }
   // Top to bottom (HarfBuzz's TTB direction): the vertical forms, the
@@ -69,7 +71,12 @@ void main() {
               .readAsLinesSync()
               .where((l) => l.isNotEmpty && !l.startsWith('#')),
       ];
-      final theirs = harfbuzz(path, lines, features: {'--ttb'});
+      final theirs = harfbuzz(
+        '$files in $font top to bottom',
+        path,
+        lines,
+        features: {'--ttb'},
+      );
       final differ = <String>[];
       for (final (i, line) in lines.indexed) {
         final ours = [
@@ -90,7 +97,7 @@ void main() {
         }
       }
       expect(differ, isEmpty, reason: differ.take(2).join('\n'));
-    }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+    });
   }
 
   // The language's systems (its `locl` and other features): CJK glyphs
@@ -127,6 +134,7 @@ void main() {
       final differ = <String>[];
       for (final language in languages) {
         final theirs = harfbuzz(
+          '$file in $font in $language',
           path,
           lines,
           features: {'--language=$language'},
@@ -153,7 +161,7 @@ void main() {
         }
       }
       expect(differ, isEmpty, reason: differ.take(2).join('\n'));
-    }, skip: File(_native).existsSync() ? false : 'needs the native oracle');
+    });
   }
 
   // East Asian features a typesetter turns on: punctuation set half wide
@@ -168,19 +176,21 @@ void main() {
               .where((l) => l.isNotEmpty),
       ];
       final differ = shapeDifferences(
+        'japanese.txt and chinese.txt with $feature',
         'test/fonts/notosanscjk-jp-subset.otf',
         lines,
         rightToLeft: false,
         features: {feature},
       );
       expect(differ, isEmpty, reason: differ.take(3).join('\n'));
-    }, skip: ready ? false : 'run tool/oracles/setup.sh to install HarfBuzz');
+    });
   }
 }
 
 /// The lines of [lines] the font at [path] doesn't shape as HarfBuzz
 /// does, each with both glyph lists.
 List<String> shapeDifferences(
+  String key,
   String path,
   List<String> lines, {
   required bool rightToLeft,
@@ -188,7 +198,7 @@ List<String> shapeDifferences(
 }) {
   final font = OpenTypeShaper(OpenTypeFont.parse(File(path).readAsBytesSync()));
   final upem = font.font.unitsPerEm;
-  final theirs = harfbuzz(path, lines, features: features);
+  final theirs = harfbuzz(key, path, lines, features: features);
   final differ = <String>[];
   for (final (i, line) in lines.indexed) {
     int units(double v) => (v * upem / 1000).round();
@@ -227,53 +237,46 @@ List<String> shapeDifferences(
 }
 
 /// HarfBuzz's [glyph, cluster, advance, x offset, y offset] glyphs of each
-/// of [lines] in [font], in visual order.
+/// of [lines] in [font], in visual order, as recorded for [key].
 List<List<Object?>> harfbuzz(
+  String key,
   String font,
   List<String> lines, {
   Set<String> features = const {},
-}) {
-  if (File(_native).existsSync()) {
-    final dir = Directory.systemTemp.createTempSync('harfbuzz_oracle.');
-    try {
-      final input = File('${dir.path}/lines')
-        ..writeAsStringSync('${lines.join('\n')}\n');
-      final r = Process.runSync('sh', [
-        '-c',
-        '"\$0" "\$@" < "${input.path}"',
-        _native,
-        font,
-        ...features,
-      ]);
-      if (r.exitCode != 0) throw StateError('HarfBuzz: ${r.stderr}');
-      return [
-        for (final line in (r.stdout as String).trim().split('\n'))
-          (jsonDecode(line) as List).cast<Object?>(),
-      ];
-    } finally {
-      dir.deleteSync(recursive: true);
-    }
-  }
+}) => _frozen
+    .json<List<Object?>>(
+      key,
+      inputs: [
+        _oracle,
+        File(font).readAsBytesSync(),
+        jsonEncode([features.toList(), lines]),
+      ],
+      oracle: () => _harfbuzz(font, lines, features),
+    )
+    .cast<List<Object?>>();
+
+/// [harfbuzz]'s answer from the native oracle.
+List<List<Object?>> _harfbuzz(
+  String font,
+  List<String> lines,
+  Set<String> features,
+) {
   final dir = Directory.systemTemp.createTempSync('harfbuzz_oracle.');
   try {
-    final file = File('${dir.path}/input')
-      ..writeAsStringSync(
-        jsonEncode({
-          'font': font,
-          'detail': true,
-          'runs': [
-            for (final line in lines)
-              {'text': line, 'features': features.toList()},
-          ],
-        }),
-      );
+    final input = File('${dir.path}/lines')
+      ..writeAsStringSync('${lines.join('\n')}\n');
     final r = Process.runSync('sh', [
       '-c',
-      'node "\$0" < "${file.path}"',
-      _shape,
+      '"\$0" "\$@" < "${input.path}"',
+      _native,
+      font,
+      ...features,
     ]);
     if (r.exitCode != 0) throw StateError('HarfBuzz: ${r.stderr}');
-    return (jsonDecode(r.stdout as String) as List).cast<List<Object?>>();
+    return [
+      for (final line in (r.stdout as String).trim().split('\n'))
+        (jsonDecode(line) as List).cast<Object?>(),
+    ];
   } finally {
     dir.deleteSync(recursive: true);
   }

@@ -43,13 +43,15 @@ final lines = const KnuthPlassLineBreaker().breakLines(
 // Draw each line on any Canvas: line.paint(canvas, x, top).
 ```
 
-Tests lay out paragraphs, pages and formulas on a recording canvas, and,
-with the `tools` tag, compare the shaper with HarfBuzz (`tool/oracles/`):
-every run of the test text, with ligatures and kerning on and off and the
-`onum` and `smcp` features, shapes as HarfBuzz shapes it in four fonts;
-and each script's sample lines (`test/fixtures/scripts`) shape as HarfBuzz
-14.6.0 shapes them in subset Noto fonts, against a full HarfBuzz build
-(`tool/oracles/harfbuzz-native/setup.sh`) or harfbuzzjs.
+Tests lay out paragraphs, pages and formulas on a recording canvas, and
+compare the shaper with HarfBuzz: every run of the test text, with
+ligatures and kerning on and off and the `onum` and `smcp` features,
+shapes as HarfBuzz shapes it in four fonts; and each script's sample lines
+(`test/fixtures/scripts`) shape as HarfBuzz 14.6.0 shapes them in subset
+Noto fonts. HarfBuzz's answers are frozen in `test/frozen`, so the tests
+need no oracle installed; `FROZEN=record dart test` asks it again, with
+harfbuzzjs (`tool/oracles/setup.sh`) and a full HarfBuzz build
+(`tool/oracles/harfbuzz-native/setup.sh`) installed.
 plain_pdf's tests set the same layouts in PDF, byte for byte against
 golden files.
 

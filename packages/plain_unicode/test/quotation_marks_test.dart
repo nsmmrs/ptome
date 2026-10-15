@@ -1,6 +1,8 @@
 // Quotation marks by language from CLDR, against ICU's
 // ulocdata_getDelimiter for every CLDR locale and their languages with
-// other regions and scripts.
+// other regions and scripts (its answers frozen in
+// test/frozen/quotation_marks.json, test/support/frozen.dart;
+// FROZEN=record asks it again).
 @TestOn('vm')
 library;
 
@@ -9,12 +11,18 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
+
 const String _oracle = 'tool/oracles/icu/icudelim';
+
+/// The oracle, which its answers depend on.
+const String _version = 'ICU 78.3';
 
 String _marks(QuotationMarks m) =>
     [m.start, m.end, m.alternateStart, m.alternateEnd].join('\t');
 
 void main() {
+  final frozen = Frozen('quotation_marks');
   test('everyday languages', () {
     expect(_marks(quotationMarks('en')), '“\t”\t‘\t’');
     expect(_marks(quotationMarks('fr')), '«\t»\t«\t»');
@@ -75,13 +83,20 @@ void main() {
       'xyz',
       'und',
     }.toList();
-    final r = Process.runSync('sh', [
-      '-c',
-      r'printf "%s\n" "$@" | "$0"',
-      _oracle,
-      ...corpus,
-    ]);
-    final lines = (r.stdout as String).split('\n');
+    final lines = frozen
+        .answer(
+          'every locale',
+          inputs: [_version, ...corpus],
+          oracle: () =>
+              Process.runSync('sh', [
+                    '-c',
+                    r'printf "%s\n" "$@" | "$0"',
+                    _oracle,
+                    ...corpus,
+                  ]).stdout
+                  as String,
+        )
+        .split('\n');
     // (ICU's data leaves out some of CLDR's locales, those below its
     // coverage level: what is said in them is not compared.)
     final missing = {
@@ -100,5 +115,5 @@ void main() {
     expect(missing.length, lessThan(200));
     expect(corpus.length, greaterThan(9000));
     expect(differ, isEmpty, reason: differ.take(400).join('\n'));
-  }, skip: File(_oracle).existsSync() ? false : 'needs the ICU oracle');
+  });
 }

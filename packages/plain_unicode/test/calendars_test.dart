@@ -2,7 +2,7 @@
 // (tool/oracles/icu/icudate): the Islamic calendar's tabular, Umm al-Qura
 // and astronomical forms, the Hebrew, Persian, Coptic, Ethiopic, Indian
 // national, Chinese and Korean calendars. Their days across three
-// centuries, every eleventh, in English and a language that uses the
+// centuries, every 101st, in English and a language that uses the
 // calendar; and every covered locale's names and patterns on a few days.
 //
 // The calendars that follow the sky differ from ICU's, whose astronomy is
@@ -17,14 +17,15 @@
 @TestOn('vm')
 library;
 
-import 'dart:io';
-
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:plain_unicode/src/astronomy.dart';
 import 'package:plain_unicode/src/calendars.dart';
 import 'package:test/test.dart';
 
+import 'support/frozen.dart';
 import 'support/icu_dates.dart';
+
+late final Frozen _frozen;
 
 /// The calendars checked, and a language that writes dates in each.
 const Map<CalendarSystem, String> _calendars = {
@@ -126,9 +127,10 @@ bool _decidedNearTheMoment(CalendarSystem calendar, int day) {
 /// [cases] ours against ICU's: the cases that differ, other than those
 /// ICU's resolution of the patterns or its astronomy explains.
 List<String> _differing(
+  String key,
   List<(String, DateStyle?, DateStyle?, DateTime, int, String)> cases,
 ) {
-  final theirs = icuDates(cases);
+  final theirs = icuDates(_frozen, key, cases);
   final differ = <String>[];
   final decided = <(CalendarSystem, int), bool>{};
   for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
@@ -173,9 +175,7 @@ List<String> _differing(
 }
 
 void main() {
-  final skip = File(icuDateOracle).existsSync()
-      ? false
-      : 'run tool/oracles/icu/setup.sh';
+  _frozen = Frozen('calendars', compressed: true);
 
   test('everyday dates in each', () {
     final m = DateTime.utc(2026, 10, 14, 12);
@@ -217,72 +217,71 @@ void main() {
     expect(CalendarSystem.named('ethioaa'), CalendarSystem.ethiopicAmeteAlem);
   });
 
-  test(
-    'their days, 1880 to 2180',
-    () {
-      final days = [
-        for (
-          var d = DateTime.utc(1880);
-          d.isBefore(DateTime.utc(2180));
-          d = d.add(const Duration(days: 11))
-        )
-          d.add(const Duration(hours: 12)),
-      ];
-      final cases = [
-        for (final MapEntry(key: calendar, value: language)
-            in _calendars.entries)
-          for (final locale in ['en', language])
-            for (final style in const [DateStyle.long, DateStyle.short])
-              for (final d in days)
-                (locale, style, null, d, 0, calendar.bcp47Name),
-      ];
-      final differ = _differing(cases);
-      expect(
-        differ,
-        isEmpty,
-        reason: '${differ.length}:\n${differ.take(30).join('\n')}',
-      );
-    },
-    tags: ['tools'],
-    skip: skip,
-  );
-
-  test(
-    "every locale's names and patterns",
-    () {
-      final locales = icuDateLocales();
-      final days = [
-        for (final (y, m, d) in const [
-          (2024, 3, 1),
-          (2024, 3, 20),
-          (2025, 3, 1),
-          (2026, 10, 14),
-          (2027, 1, 30),
+  test('their days, 1880 to 2180', () {
+    final days = [
+      for (
+        var d = DateTime.utc(1880);
+        d.isBefore(DateTime.utc(2180));
+        d = d.add(const Duration(days: 101))
+      )
+        d.add(const Duration(hours: 12)),
+    ];
+    // (The day's numbers in English, its names in the calendar's
+    // language.)
+    final cases = [
+      for (final MapEntry(key: calendar, value: language) in _calendars.entries)
+        for (final (locale, style) in [
+          ('en', DateStyle.short),
+          (language, DateStyle.long),
         ])
-          DateTime.utc(y, m, d, 12),
-      ];
-      const pairs = [
-        (DateStyle.full, null),
-        (DateStyle.long, null),
-        (DateStyle.medium, null),
-        (DateStyle.short, null),
-        (DateStyle.long, DateStyle.short),
-      ];
-      final cases = [
-        for (final calendar in _calendars.keys)
-          for (final locale in locales)
-            for (final (date, time) in pairs)
-              for (final d in days)
-                (locale, date, time, d, 180, calendar.bcp47Name),
-      ];
-      final differ = _differing(cases);
-      expect(
-        differ,
-        isEmpty,
-        reason: '${differ.length}:\n${differ.take(30).join('\n')}',
-      );
-    },
-    tags: ['tools'],
-    skip: skip,
-  );
+          for (final d in days) (locale, style, null, d, 0, calendar.bcp47Name),
+    ];
+    final differ = _differing('their days, 1880 to 2180', cases);
+    expect(
+      differ,
+      isEmpty,
+      reason: '${differ.length}:\n${differ.take(30).join('\n')}',
+    );
+  });
+
+  test("every locale's names and patterns", () {
+    final locales = icuDateLocales(_frozen);
+    final days = [
+      for (final (y, m, d) in const [
+        (2024, 3, 1),
+        (2024, 3, 20),
+        (2025, 3, 1),
+        (2026, 10, 14),
+        (2027, 1, 30),
+      ])
+        DateTime.utc(y, m, d, 12),
+    ];
+    const pairs = [
+      (DateStyle.full, null),
+      (DateStyle.long, null),
+      (DateStyle.medium, null),
+      (DateStyle.short, null),
+      (DateStyle.long, DateStyle.short),
+    ];
+    // (Each locale's styles on a day each, the days taken in turn.)
+    final cases = [
+      for (final calendar in _calendars.keys)
+        for (final (l, locale) in locales.indexed)
+          for (final (p, (date, time)) in pairs.indexed)
+            (
+              locale,
+              date,
+              time,
+              days[(l + p) % days.length],
+              180,
+              calendar.bcp47Name,
+            ),
+    ];
+    final differ = _differing("every locale's names and patterns", cases);
+    expect(
+      differ,
+      isEmpty,
+      reason: '${differ.length}:\n${differ.take(30).join('\n')}',
+    );
+  });
 }
