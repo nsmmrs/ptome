@@ -2,6 +2,8 @@
 
 **Status:** Accepted on 2026-10-09, and simplified the same day (this
 text). Amends [ADR-0017](0017-follow-main-fix-bugs.md) decision 3.
+Decision 7 superseded by [ADR-0025](0025-every-test-on-every-push.md)
+(2026-10-15): one gate, every test on every push to master.
 
 ## Context
 
@@ -56,7 +58,7 @@ page comparisons: more bookkeeping than the question it answers.
    two directories, and a result that differs between them is refused; a
    conversion that fails has no golden; a release's goldens are not
    rewritten without `--replace`.
-7. **The gate has two tiers and a nightly run** (`tool/gate.sh`). The fast
+7. *(Superseded by ADR-0025.)* **The gate has two tiers and a nightly run** (`tool/gate.sh`). The fast
    tier (every commit, about 40 s) is formatting, analysis and ptome's
    tests but those tagged `slow` (processes, long property checks), the
    corpus included. The full tier (before a push, and CI's `gate` job) runs

@@ -7,9 +7,8 @@
 /// allows it, and Ruby's `invoke_cli` / `invoke_cli_to_buffer` / global
 /// `$stdout` swapping collapses into [invokeCli], which always buffers and
 /// installs a temporary logger on the error buffer (cf. Ruby's
-/// `redirect_streams`). Tests with no Dart analog are `skip()`ped with a
-/// `PERMANENT:` reason; tests awaiting a later wave keep a `WAVE-GATED:`
-/// reason with their ported bodies intact.
+/// `redirect_streams`). Upstream's tests with no Dart analog are listed in
+/// benchmark/PARITY.md, not kept here.
 @TestOn('vm')
 library;
 
@@ -1032,23 +1031,6 @@ eve, islifeform - analyzes an image to determine if it's a picture of a life for
         expect(invoker.document!.safe, equals(level));
       });
     });
-
-    test(
-      'forces default external encoding to UTF-8',
-      skip:
-          'PERMANENT: No Dart analog: Dart strings are Unicode and the invoker '
-          'forces UTF-8 stdio; Ruby`s Encoding.default_external does '
-          'not exist.',
-      () {},
-    );
-
-    test(
-      'forces stdio encoding to UTF-8',
-      skip:
-          'PERMANENT: No Dart analog: Dart strings are Unicode and the invoker '
-          'forces UTF-8 stdio; Ruby IO encodings do not exist.',
-      () {},
-    );
 
     test('does not fail to load if call to Dir.home fails', () {
       // Ruby injects a Dir.home failure via `-r undef-dir-home.rb`; Dart

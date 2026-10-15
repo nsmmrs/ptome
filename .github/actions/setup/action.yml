@@ -24,7 +24,17 @@ runs:
     with:
       sdk: 3.13.5
       problem-matcher: 'false'
-
+  # (On Windows the pub cache and the temporary files on the runner's D:
+  # drive, beside the checkout, where C: is slower to write many small
+  # files to.)
+  - if: runner.os == 'Windows'
+    shell: bash
+    run: |
+      cache="$(cd "$RUNNER_TEMP/.." && pwd)/pub-cache"
+      mkdir -p "$cache"
+      echo "PUB_CACHE=$(cygpath -w "$cache")" >> "$GITHUB_ENV"
+      echo "TEMP=$(cygpath -w "$RUNNER_TEMP")" >> "$GITHUB_ENV"
+      echo "TMP=$(cygpath -w "$RUNNER_TEMP")" >> "$GITHUB_ENV"
   - if: runner.os == 'Windows'
     uses: actions/cache@v4
     with:

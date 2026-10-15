@@ -232,6 +232,53 @@ reproducers of each.
   class (`ManpageConverter`) instead of the Ruby one
   (`Asciidoctor::Converter::ManPageConverter`).
 
+## Upstream tests with no counterpart
+
+Asciidoctor's own tests are ported to the Dart suite (`test/`), each
+citing the test it ports. These have no counterpart in Ptome, and so no
+test: they test Ruby (its string encodings, metaprogramming, standard
+library), JRuby's classloader, Tilt's template engines (Ptome's file
+templates are Mustache only, ADR-0002), or a tool a unit test can't hold
+still.
+
+* `test/converter_test.rb`: should set Haml format to html5 for html5
+  backend; should set Haml format to xhtml for docbook backend; should
+  configure Slim to resolve includes in specified template dirs; should
+  set Slim format to html for html5 backend; should set Slim format to
+  nil for docbook backend; should set safe mode of Slim AsciiDoc engine
+  to match document safe mode when Slim >= 3; should support custom
+  template engine options for known engine; should support custom
+  template engine options; should load ERB templates using ERBTemplate
+  if eruby is not set; should load ERB templates using ErubiTemplate if
+  eruby is set to erubi; resolves templates from classloader when using
+  JRuby; should not expose included method on Converter class; should
+  delegate to method on HTML 5 converter with convert_ prefix if called
+  without prefix; should not delegate unprefixed method on HTML 5
+  converter if converter does not handle transform.
+* `test/invoker_test.rb`: should force default external encoding to
+  UTF-8; should force stdio encoding to UTF-8.
+* `test/options_test.rb`: should gracefully force encoding to UTF-8 if
+  encoding on string is mislabeled. (And three paths of `options.rb`
+  that upstream doesn't test either: a template directory needing a
+  Tilt engine that isn't installed, the `man -w` fallback for the man
+  page, which reads the machine's man database, and a missing syntax
+  page, which always ships.)
+* `test/paths_test.rb`: File.dirname preserves UNC path root on Windows;
+  File.dirname preserves posix-style UNC path root on Windows (Ruby's
+  File.dirname; UNC paths are the PathResolver tests'); resolves
+  classloader path if start is classloader path and target is relative;
+  resolves classloader path if start is root-relative classloader path
+  and target is relative; preserves classloader path if start is absolute
+  path and target is classloader path.
+* `test/reader_test.rb`: should encode UTF-16LE string to UTF-8 when BOM
+  is found; should encode UTF-16LE string array to UTF-8 when BOM is
+  found; should encode UTF-16BE string to UTF-8 when BOM is found; should
+  encode UTF-16BE string array to UTF-8 when BOM is found; should include
+  content from a file on the classloader.
+* `test/substitutions_test.rb`: should resolve specialcharacters sub as
+  highlight for source block when source highlighter is pygments (no
+  Pygments in Ptome: `source-highlighter=pygments` is unavailable).
+
 ## EPUB3 (`-b epub3`)
 
 The native executable converts to EPUB 3 as the asciidoctor-epub3 2.3.0

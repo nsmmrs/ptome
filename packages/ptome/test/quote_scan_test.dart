@@ -61,13 +61,18 @@ Iterable<Match> _reference(
   }
 }
 
+/// A seed from [text], the same on every platform (where a string's
+/// hashCode isn't: the VM's and JavaScript's differ).
+int _seed(String text) =>
+    text.codeUnits.fold(17, (h, c) => (h * 31 + c) & 0x7fffffff);
+
 void main() {
   final rules = {...quoteSubs[false]!, ...quoteSubs[true]!};
   for (final rule in rules) {
     test(
       '${rule.type} ${rule.scope.name} (${rule.guard}): the same matches',
       () {
-        final random = Random(rule.guard.hashCode);
+        final random = Random(_seed(rule.guard));
         for (var i = 0; i < 4000; i++) {
           final text = _text(random);
           final start = text.isEmpty ? 0 : random.nextInt(text.length + 1);
@@ -99,7 +104,7 @@ void main() {
     ('inlinePassRx (compat)', inlinePassScan[true]!, _macroPieces),
   ]) {
     test('$name: the same matches', () {
-      final random = Random(name.hashCode);
+      final random = Random(_seed(name));
       for (var i = 0; i < 4000; i++) {
         final text = _text(random, pieces);
         final start = text.isEmpty ? 0 : random.nextInt(text.length + 1);

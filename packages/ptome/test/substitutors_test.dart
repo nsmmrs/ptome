@@ -19,6 +19,8 @@ import 'dart:io' show Directory, File;
 import 'package:ptome/src/internal.dart';
 import 'package:test/test.dart';
 
+import 'support/doc_helpers.dart' show convertStringToEmbedded;
+
 /// A single backslash, mirroring the `BACKSLASH` constant in the Ruby suite.
 const String bs = r'\';
 
@@ -2907,10 +2909,26 @@ void main() {
 
       test('inline footnote macro can be used to define and reference '
           'a footnote reference', () {
-        // PORT: needs multi-paragraph parsing and footnote-list rendering.
-        markTestSkipped(
-          'parser wave (document structure) and converter wave (footnote list)',
+        const input =
+            'You can download the software from the product page.'
+            'footnote:sub[Option only available if you have an active '
+            'subscription.]\n'
+            '\n'
+            'You can also file a support request.footnote:sub[]\n'
+            '\n'
+            'If all else fails, you can give us a call.footnoteref:[sub]\n';
+        final logger = FakeLogger();
+        final output = withFakeLogger(
+          logger,
+          () => convertStringToEmbedded(
+            input,
+            const AsciidoctorOptions(attributes: {'compat-mode': ''}),
+          ),
         );
+        expect('id="_footnotedef_1"'.allMatches(output), hasLength(1));
+        expect('href="#_footnotedef_1"'.allMatches(output), hasLength(3));
+        expect('<div class="footnote"'.allMatches(output), hasLength(1));
+        expect([...logger.infos, ...logger.warns, ...logger.errors], isEmpty);
       });
 
       test('should parse multiple footnote references in a single line', () {
@@ -3021,20 +3039,61 @@ void main() {
       test(
         'should be able to reference a bibliography entry in a footnote',
         () {
-          // PORT: needs bibliography list parsing and footnote-list rendering.
-          markTestSkipped(
-            'parser wave (lists, sections) and converter wave (footnote list)',
+          const input =
+              'Choose a design pattern.footnote:[See <<gof>> to find a '
+              'collection of design patterns.]\n'
+              '\n'
+              '[bibliography]\n'
+              '== Bibliography\n'
+              '\n'
+              '* [[[gof]]] Erich Gamma, et al. _Design Patterns: Elements of '
+              'Reusable Object-Oriented Software._ Addison-Wesley. 1994.\n';
+          expect(
+            convertStringToEmbedded(input),
+            contains(
+              '<a href="#_footnoteref_1">1</a>. See <a href="#gof">[gof]</a> '
+              'to find a collection of design patterns.',
+            ),
           );
         },
       );
 
       test(
-        'footnotes in headings are expected to be numbered out of sequence',
+        // Upstream numbers them out of sequence (its test is "footnotes in
+        // headings are expected to be numbered out of sequence"): the title
+        // converted for the section's ID before the blocks above it, two
+        // footnotes number 1. Ptome fixes it (asciidoctor#2903,
+        // test/upstream_fixes/asciidoctor-2903-1).
+        'footnotes in headings are numbered in document order',
         () {
-          // PORT: needs section parsing and footnote-list rendering.
-          markTestSkipped(
-            'parser wave (sections) and converter wave (footnote list)',
-          );
+          const input =
+              '== Section 1\n'
+              '\n'
+              'para.footnote:[first footnote]\n'
+              '\n'
+              '== Section 2footnote:[second footnote]\n'
+              '\n'
+              'para.footnote:[third footnote]\n';
+          final result = convertStringToEmbedded(input);
+          final refs = [
+            for (final m in RegExp(
+              '<a [^>]*class="footnote"[^>]*>([^<]*)</a>',
+            ).allMatches(result))
+              m[1],
+          ];
+          final defs = [
+            for (final m in RegExp(
+              '<div class="footnote"[^>]*>(.*?)</div>',
+              dotAll: true,
+            ).allMatches(result))
+              m[1]!.replaceAll(RegExp('<[^>]*>'), '').trim(),
+          ];
+          expect(refs, ['1', '2', '3']);
+          expect(defs, [
+            '1. first footnote',
+            '2. second footnote',
+            '3. third footnote',
+          ]);
         },
       );
 
@@ -4266,11 +4325,25 @@ void main() {
       });
 
       test('should convert contents of asciimath macro to MathML in '
-          'DocBook output if asciimath gem is available', () {
-        markTestSkipped(
-          'requires the asciimath Ruby gem, which has no Dart '
-          'equivalent in this wave',
+          'DocBook output', () {
+        // (Ptome's port of the asciimath gem, ADR-0014: always there.)
+        final logger = FakeLogger();
+        final output = withFakeLogger(
+          logger,
+          () => convertStringToEmbedded(
+            'asciimath:[a < b]',
+            const AsciidoctorOptions(backend: 'docbook'),
+          ),
         );
+        expect(
+          output,
+          contains(
+            '<inlineequation><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">'
+            '<mml:mi>a</mml:mi><mml:mo>&lt;</mml:mo><mml:mi>b</mml:mi>'
+            '</mml:math></inlineequation>',
+          ),
+        );
+        expect([...logger.infos, ...logger.warns, ...logger.errors], isEmpty);
       });
 
       test('should not perform specialcharacters subs on asciimath macro '
@@ -4696,15 +4769,6 @@ void main() {
         block.attributes['language'] = 'ruby';
         commitSubs(block);
         expect(block.subs, [Sub.highlight]);
-      });
-
-      test('should resolve specialcharacters sub as highlight for '
-          'source block when source highlighter is pygments', () {
-        markTestSkipped(
-          'requires a pygments backend (mirrors the Ruby test gate `if: '
-          "ENV['PYGMENTS_VERSION']`); with no backend canHighlight "
-          'is false',
-        );
       });
 
       test('should not replace specialcharacters sub with highlight '

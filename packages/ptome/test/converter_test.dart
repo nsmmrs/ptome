@@ -7,10 +7,8 @@
 /// `test/converter_test.rb`. Most ported tests use fake converters and
 /// directly-constructed fake nodes (no parsing); the `converter` /
 /// `converter_factory` / `read_svg_contents` tests parse and convert for
-/// real. Tilt-engine-specific template tests with no Dart counterpart stay
-/// skipped as empty placeholders with [noTiltCounterpart];
-/// Ruby-metaprogramming tests with no Dart counterpart stay skipped with
-/// [noDartCounterpart].
+/// real. Upstream's tests with no Dart counterpart (Tilt engines, Ruby
+/// metaprogramming) are listed in benchmark/PARITY.md, not kept here.
 ///
 /// Global-registry tests clean up with `addTearDown(Converter.unregisterAll)`
 /// and use unique backend names per test: `provided` registrations survive
@@ -18,9 +16,7 @@
 /// names would leak between tests.
 ///
 /// Template tests (template wave C) build real `*.mustache` directories
-/// with [makeTemplateDir] and convert through the real registry + loader;
-/// Tilt-engine-specific tests (Haml/Slim/ERB formats, engine options, JRuby
-/// classloader) stay skipped with [noTiltCounterpart].
+/// with [makeTemplateDir] and convert through the real registry + loader.
 library;
 
 import 'dart:io';
@@ -30,25 +26,6 @@ import 'package:test/test.dart';
 
 import 'document_test.dart' show assertXpath;
 import 'support/doc_helpers.dart';
-
-/// Reason for permanently-skipped Tilt-engine-specific tests.
-///
-/// Haml/Slim/ERB formats, per-engine options and the JRuby classloader
-/// have no Dart counterpart by design: file templates are Mustache-only
-/// (ADR-0002 rules Tilt parity out of scope) and logic-heavy templates
-/// take path (a) instead.
-const String noTiltCounterpart =
-    'permanent skip: Tilt-engine-specific behavior (Haml/Slim/ERB/JRuby) '
-    'with no Dart counterpart (ADR-0002: Mustache-only file templates)';
-
-/// Reason for permanently-skipped tests with no Dart counterpart.
-///
-/// Ruby's converter tests lean on metaprogramming (`Module#included`
-/// hooks, `method_missing` delegation with `respond_to?` probes) that
-/// Dart cannot express; the behaviors themselves (handler dispatch,
-/// missing-handler warnings) are covered by the ported tests around them.
-const String noDartCounterpart =
-    'permanent skip: Ruby metaprogramming with no Dart counterpart';
 
 /// A minimal [Converter] returning [result] for every node.
 class FakeConverter extends Converter {
@@ -263,25 +240,6 @@ void main() {
   group('Converter', () {
     group('View options', () {
       test(
-        'should set Haml format to html5 for html5 backend',
-        // Permanent: Haml engine options have no Mustache counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should set Haml format to xhtml for docbook backend',
-        // Permanent: Haml engine options have no Mustache counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should configure Slim to resolve includes in specified template dirs',
-        // Permanent: Slim includes have no Mustache counterpart (the Dart
-        // adapter exposes no partials).
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
         testOn: 'vm',
         'should load templates from a single template dir',
         () {
@@ -302,39 +260,6 @@ void main() {
             equals('<p>{{content}}</p>'),
           );
         },
-      );
-      test(
-        'should set Slim format to html for html5 backend',
-        // Permanent: Slim engine options have no Mustache counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should set Slim format to nil for docbook backend',
-        // Permanent: Slim engine options have no Mustache counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should set safe mode of Slim AsciiDoc engine to match document safe '
-        'mode when Slim >= 3',
-        // Permanent: Slim engine options have no Mustache counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should support custom template engine options for known engine',
-        // Permanent: the Dart port defines no `template_engine_options`
-        // vocabulary (Mustache leniency/escaping are registry-level, not
-        // per-render options).
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should support custom template engine options',
-        // Permanent: see the test above.
-        skip: noTiltCounterpart,
-        () {},
       );
     });
 
@@ -627,19 +552,6 @@ void main() {
         expect(TemplateCache.shared.scans, isEmpty);
       });
       test(
-        'should load ERB templates using ERBTemplate if eruby is not set',
-        // Permanent: ERB/eRuby evaluation has no Dart counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
-        'should load ERB templates using ErubiTemplate if eruby is set to '
-        'erubi',
-        // Permanent: ERB/eRuby evaluation has no Dart counterpart.
-        skip: noTiltCounterpart,
-        () {},
-      );
-      test(
         testOn: 'vm',
         'should load several Mustache templates for default backend',
         () {
@@ -752,23 +664,9 @@ void main() {
           );
         },
       );
-      test(
-        'resolves templates from classloader when using JRuby',
-        // Permanent: JRuby-only (classloader URIs have no Dart analog).
-        skip: noTiltCounterpart,
-        () {},
-      );
     });
 
     group('Custom converters', () {
-      test(
-        'should not expose included method on Converter class',
-        // Permanent: Ruby `Module#included` hook privacy has no Dart
-        // counterpart.
-        skip: noDartCounterpart,
-        () {},
-      );
-
       test('should derive backend traits for the given backend', () {
         // Port of test/converter_test.rb: 'should derive backend traits for
         // the given backend'. Extra cases verified via `ruby -Ilib -e`.
@@ -1202,22 +1100,6 @@ void main() {
         expect(factory.forBackend('factory-mine'), equals(FakeConverter.new));
       });
 
-      test(
-        'should delegate to method on HTML 5 converter with convert_ prefix '
-        'if called without prefix',
-        // Permanent: Ruby's `method_missing`/`respond_to?` delegation has
-        // no Dart counterpart; handler dispatch is covered by the
-        // ConverterBase tests in this file.
-        skip: noDartCounterpart,
-        () {},
-      );
-      test(
-        'should not delegate unprefixed method on HTML 5 converter if '
-        'converter does not handle transform',
-        // Permanent: see the test above.
-        skip: noDartCounterpart,
-        () {},
-      );
       test('can call read_svg_contents on built-in HTML5 converter; should '
           'remove markup prior the root svg element', () {
         // Port of test/converter_test.rb: 'can call read_svg_contents on

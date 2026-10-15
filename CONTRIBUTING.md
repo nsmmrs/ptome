@@ -76,6 +76,10 @@ recorded with the inputs it answered for (`test/support/oracles.dart`, the
 answers in each package's `test/oracles`); `ORACLES=record dart test`
 asks the tools again, installed. Random checks run from fixed seeds; each
 package's `tool/deep_checks.dart` runs many times their cases, by hand.
+A test that fails now and then is a bug, fixed at its cause, never
+retried: `tool/flake_hunt.sh [RUNS]` runs every package's tests that many
+times, each in an order of its own. The rules are
+[ADR-0025](adr/0025-every-test-on-every-push.md)'s.
 The checks against Asciidoctor itself (the gem's CLI, the differential
 harness, EPUB parity with asciidoctor-epub3, the goldens made again) are
 `packages/ptome/tool/ruby_oracles.sh`, also by hand.

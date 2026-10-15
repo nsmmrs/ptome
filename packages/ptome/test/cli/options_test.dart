@@ -702,18 +702,6 @@ void main() {
         expect(result.options.attributes, equals(expected), reason: argument);
       });
     });
-
-    test(
-      'force-encodes mislabeled attribute strings to '
-      'UTF-8',
-      skip:
-          'PERMANENT: Ruby string encodings do not exist '
-          'in Dart; strings are Unicode.',
-      () {
-        // Port of options_test 'should gracefully force encoding to UTF-8 if
-        // encoding on string is mislabeled'.
-      },
-    );
   });
 
   group('backend, doctype and safe mode', () {
@@ -1212,27 +1200,4 @@ void main() {
   // compat files' placeholder was deleted outright: no compat-file
   // handling exists in `options.rb` or `invoker.rb`, so there is nothing
   // to port or cover.
-  group('deferred to later phases', () {
-    test(
-      'fails when template directories need a missing engine',
-      skip:
-          'WAVE-GATED: deferred to the template-converter phase '
-          "(Ruby requires the 'tilt' gem).",
-      () {},
-    );
-
-    test(
-      'falls back to man -w for the man page',
-      skip:
-          'PERMANENT: The man database cannot be controlled '
-          'hermetically in a unit test.',
-      () {},
-    );
-
-    test(
-      'reports a missing syntax page',
-      skip: 'PERMANENT: vendor/asciidoctor/data/reference/syntax.adoc always ships in the checkout; Ruby offers no override to simulate absence.',
-      () {},
-    );
-  });
 }

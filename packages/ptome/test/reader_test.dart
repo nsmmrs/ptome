@@ -3,8 +3,8 @@
 /// Tests that assert through `Document#parse`/`Document#convert` in Ruby are
 /// rewritten to equivalent reader-level assertions (the parser and converter
 /// waves own those paths); each such rewrite is marked `READER-LEVEL`.
-/// Tests that cannot run at reader level are skipped with a reason instead
-/// of being dropped.
+/// Upstream's tests with no Dart counterpart are listed in
+/// benchmark/PARITY.md.
 ///
 /// Readers run against a [TestDocument], a real document whose URI
 /// fetches are served from the repository `test/` directory.
@@ -290,38 +290,6 @@ void main() {
         expect(reader.lines[0][0], equals('f'));
         expect(reader.lines, equals(sampleData));
       });
-
-      test(
-        'should encode UTF-16LE string to UTF-8 when BOM is found',
-        skip:
-            'PERMANENT: Ruby encoding coercion has no Dart equivalent '
-            '(strings are always Unicode)',
-        () {},
-      );
-
-      test(
-        'should encode UTF-16LE string array to UTF-8 when BOM is found',
-        skip:
-            'PERMANENT: Ruby encoding coercion has no Dart equivalent '
-            '(strings are always Unicode)',
-        () {},
-      );
-
-      test(
-        'should encode UTF-16BE string to UTF-8 when BOM is found',
-        skip:
-            'PERMANENT: Ruby encoding coercion has no Dart equivalent '
-            '(strings are always Unicode)',
-        () {},
-      );
-
-      test(
-        'should encode UTF-16BE string array to UTF-8 when BOM is found',
-        skip:
-            'PERMANENT: Ruby encoding coercion has no Dart equivalent '
-            '(strings are always Unicode)',
-        () {},
-      );
     });
 
     group('With empty data', () {
@@ -1098,12 +1066,6 @@ void main() {
           );
           expect(reader.readLines(), equals([':showtitle:', '= 人']));
         },
-      );
-
-      test(
-        'should include content from a file on the classloader',
-        skip: 'PERMANENT: JRuby-only (classloader: URI)',
-        () {},
       );
 
       test(

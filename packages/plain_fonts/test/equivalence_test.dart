@@ -320,13 +320,20 @@ Uint8List _woff2Of(Uint8List directory, Uint8List stream) {
 
 void main() => equivalence();
 
+/// A seed from [path], the same on every platform (where a string's
+/// hashCode isn't, nor a path's separators).
+int _seed(String path) => path
+    .replaceAll(r'\', '/')
+    .codeUnits
+    .fold(17, (h, c) => (h * 31 + c) & 0x7fffffff);
+
 /// The equivalence tests, the damaged copies [scale] times as many.
 void equivalence({int scale = 1}) {
   final files = _fontFiles();
   for (final path in files) {
     test('$path: the same reading, subsets and decoding', () {
       final bytes = File(path).readAsBytesSync();
-      final r = Random(path.hashCode);
+      final r = Random(_seed(path));
       if (isWebFont(bytes)) {
         _expectSame(
           _outcome(() => decodeWebFont(bytes)),

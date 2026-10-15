@@ -502,26 +502,6 @@ void main() {
       },
     );
 
-    test(
-      'File.dirname preserves UNC path root on Windows',
-      skip:
-          'PERMANENT: asserts Ruby-stdlib File.dirname behavior, which '
-          'has no Dart '
-          'equivalent; UNC resolution is covered by the PathResolver tests '
-          'below',
-      () {},
-    );
-
-    test(
-      'File.dirname preserves posix-style UNC path root on Windows',
-      skip:
-          'PERMANENT: asserts Ruby-stdlib File.dirname behavior, which '
-          'has no Dart '
-          'equivalent; UNC resolution is covered by the PathResolver tests '
-          'below',
-      () {},
-    );
-
     test('resolves UNC path if start is absolute and target is relative', () {
       expect(
         resolver.systemPath(
@@ -546,36 +526,6 @@ void main() {
         equals('//server/docs/output.html'),
       );
     });
-
-    test(
-      'resolves classloader path if start is classloader path and '
-      'target is relative',
-      skip:
-          'PERMANENT: JRuby-only; isRoot mirrors MRI Ruby, where a '
-          'classloader URI '
-          'is not a root',
-      () {},
-    );
-
-    test(
-      'resolves classloader path if start is root-relative classloader '
-      'path and target is relative',
-      skip:
-          'PERMANENT: JRuby-only; isRoot mirrors MRI Ruby, where a '
-          'classloader URI '
-          'is not a root',
-      () {},
-    );
-
-    test(
-      'preserves classloader path if start is absolute path and target '
-      'is classloader path',
-      skip:
-          'PERMANENT: JRuby-only; isRoot mirrors MRI Ruby, where a '
-          'classloader URI '
-          'is not a root',
-      () {},
-    );
 
     test(
       testOn: 'vm',
