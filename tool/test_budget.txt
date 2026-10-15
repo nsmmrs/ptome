@@ -2,6 +2,6 @@
 # any one test file (its loading included) and any one package's run, in
 # each CI job (a runner's times: this machine's depend on what else it
 # runs). Provisional: to be set from CI's runners' times (TASK-s0645s).
-test 8
-suite 25
-run 90
+test 15
+suite 40
+run 120
