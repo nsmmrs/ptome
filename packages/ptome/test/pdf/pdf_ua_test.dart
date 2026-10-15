@@ -4,7 +4,6 @@
 // (test/support/oracles.dart; ORACLES=record asks them again, veraPDF
 // from VERAPDF, else the work folder, else the path).
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:convert';

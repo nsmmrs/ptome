@@ -6,6 +6,10 @@ publish_to: none
 environment:
   sdk: ^3.13.0
 
+# The workspace's own tools (tool/api_check.dart).
+dev_dependencies:
+  analyzer: ^14.4.0
+
 workspace:
   - packages/*
   # plain_pdf's comparison with package:pdf (a benchmark, not published).

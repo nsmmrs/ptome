@@ -1,7 +1,7 @@
 # The units corpus: sources and licenses
 
 Real documents written in numbered units (`doc/units.md`), the units
-feature's large test: `test/units/corpus_model_test.dart` reads each and
+feature's large test: `test/units/corpus_model_cases.dart` reads each and
 compares its units model with `model/`. They came from the loci
 experiment (retired 2026-10-11), each imported from a pinned source and
 checked against the source's own numbering. The ptome license (MIT) covers

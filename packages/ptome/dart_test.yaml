@@ -1,9 +1,6 @@
-# The corpus (test/corpus_test.dart) compares ptome with Asciidoctor's own
-# files; it is red until compatibility settings close every difference, so
-# it runs on its own (`dart test -t corpus`) and the rest without it.
+# The corpus (test/corpus_<n>_test.dart) compares ptome with Asciidoctor's
+# own files, held to its red list (test/corpus/red.txt); `dart test -t
+# corpus` runs it alone.
 tags:
   corpus:
     timeout: 2x
-  # Tests that start processes or run long property checks: the full gate
-  # runs them, the fast one (`dart test -x slow`) doesn't.
-  slow:

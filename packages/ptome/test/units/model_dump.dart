@@ -1,5 +1,5 @@
 // The canonical units model of an analysis: what
-// test/units/corpus_model_test.dart compares with the frozen models of the
+// test/units/corpus_model_cases.dart compares with the frozen models of the
 // units corpus (ADR-0020).
 import 'dart:convert';
 

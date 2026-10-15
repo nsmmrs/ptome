@@ -5,7 +5,6 @@
 /// end-to-end parity between `jobs=1` and `jobs=4` (identical converted
 /// output, diagnostics and exit codes).
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:io';

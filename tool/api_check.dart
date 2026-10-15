@@ -1,17 +1,19 @@
-/// Checks the public API.
+/// Checks the public API of every package with a snapshot
+/// (`packages/<package>/tool/api_surface.txt`), its public libraries the
+/// package's top-level `lib/*.dart`, all in one analysis:
 ///
-/// 1. It is closed: every `package:plain_typesetting` type that appears in an
-///    exported signature (supertypes, constructor and method parameters,
-///    return types, fields, typedefs) is itself exported by one of the
-///    public libraries.
-/// 2. It matches the snapshot in `tool/api_surface.txt` (every exported
-///    name and public member with its signature), so the public API changes
-///    only on purpose. `--update` rewrites the snapshot.
+/// 1. It is closed: every type of the package that appears in an exported
+///    signature (supertypes, constructor and method parameters, return
+///    types, fields, typedefs) is itself exported by one of the public
+///    libraries.
+/// 2. It matches the snapshot (every exported name and public member with
+///    its signature), so the public API changes only on purpose.
+///    `--update` rewrites the snapshots.
 ///
 /// Exits nonzero and lists the problems otherwise.
 ///
 /// ```sh
-/// dart run tool/api_check.dart [--update]
+/// dart run tool/api_check.dart [PACKAGE...] [--update]
 /// ```
 library;
 
@@ -22,34 +24,70 @@ import 'package:analyzer/dart/analysis/results.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:analyzer/dart/element/type.dart';
 
-// Resolved relative to this file: tool/ -> repository root.
-final String repo = File.fromUri(Platform.script).parent.parent.path;
-const publicLibs = ['plain_typesetting.dart'];
-
-/// The absolute, normalized path of the public library [name], which the
-/// analyzer requires (native separators on Windows).
-String libraryPath(String name) =>
-    File.fromUri(Directory(repo).uri.resolve('lib/$name')).path;
-
 Future<void> main(List<String> args) async {
+  final update = args.contains('--update');
+  final only = {
+    for (final a in args)
+      if (!a.startsWith('-')) a,
+  };
+  final packages = [
+    for (final entity in Directory(
+      'packages',
+    ).listSync()..sort((a, b) => a.path.compareTo(b.path)))
+      if (entity is Directory &&
+          File('${entity.path}/tool/api_surface.txt').existsSync() &&
+          (only.isEmpty ||
+              only.contains(
+                entity.uri.pathSegments.lastWhere((s) => s.isNotEmpty),
+              )))
+        entity.absolute,
+  ];
+  // (Absolute, normalized paths, which the analyzer requires: native
+  // separators on Windows.)
+  final libs = {
+    for (final dir in packages)
+      dir: [
+        for (final file in Directory('${dir.path}/lib').listSync())
+          if (file is File && file.path.endsWith('.dart'))
+            File.fromUri(file.absolute.uri).path,
+      ]..sort(),
+  };
   final collection = AnalysisContextCollection(
-    includedPaths: [for (final l in publicLibs) libraryPath(l)],
+    includedPaths: [for (final l in libs.values) ...l],
   );
+  var passes = true;
+  for (final dir in packages) {
+    if (!await checkPackage(collection, dir, libs[dir]!, update: update)) {
+      passes = false;
+    }
+  }
+  exitCode = passes ? 0 : 1;
+}
+
+/// Checks the package at [dir] (its public libraries [libs], resolved in
+/// [collection]); whether it passes. With [update], writes its snapshot.
+Future<bool> checkPackage(
+  AnalysisContextCollection collection,
+  Directory dir,
+  List<String> libs, {
+  required bool update,
+}) async {
+  final package = dir.uri.pathSegments.lastWhere((s) => s.isNotEmpty);
+  var passes = true;
   final exported = <Element>{};
-  for (final l in publicLibs) {
-    final path = libraryPath(l);
+  for (final path in libs) {
     final session = collection.contextFor(path).currentSession;
     final result = await session.getResolvedLibrary(path);
     if (result is! ResolvedLibraryResult) {
-      stderr.writeln('cannot resolve $path');
-      exit(2);
+      stdout.writeln('$package: cannot resolve $path');
+      return false;
     }
     exported.addAll(result.element.exportNamespace.definedNames2.values);
   }
   final missing = <String, Set<String>>{};
   void checkElement(Element e, String where) {
     final uri = e.library?.uri.toString() ?? '';
-    if (!uri.startsWith('package:plain_typesetting/')) return;
+    if (!uri.startsWith('package:$package/')) return;
     if (e.name == null || e.name!.startsWith('_')) return;
     if (exported.contains(e)) return;
     missing
@@ -121,27 +159,28 @@ Future<void> main(List<String> args) async {
   for (final k in keys) {
     final w = missing[k]!.toList()..sort();
     final more = w.length > 4 ? ' (+${w.length - 4})' : '';
-    stdout.writeln('$k  <- ${w.take(4).join('; ')}$more');
+    stdout.writeln('$package: $k  <- ${w.take(4).join('; ')}$more');
   }
-  stdout.writeln('${keys.length} unexported types referenced');
-  if (keys.isNotEmpty) exitCode = 1;
+  if (keys.isNotEmpty) {
+    stdout.writeln('$package: ${keys.length} unexported types referenced');
+    passes = false;
+  }
 
   final surface = (exported.map(describe).toList()..sort()).join();
-  final snapshot = File.fromUri(
-    Directory(repo).uri.resolve('tool/api_surface.txt'),
-  );
-  if (args.contains('--update')) {
+  final snapshot = File('${dir.path}/tool/api_surface.txt');
+  if (update) {
     snapshot.writeAsStringSync(surface);
-    stdout.writeln('wrote ${snapshot.path}');
+    stdout.writeln('$package: wrote ${snapshot.path}');
   } else if (!snapshot.existsSync() || snapshot.readAsStringSync() != surface) {
     stdout.writeln(
-      'the public API differs from tool/api_surface.txt; review the change '
-      'and run: dart run tool/api_check.dart --update',
+      '$package: the public API differs from tool/api_surface.txt; review '
+      'the change and run: dart run tool/api_check.dart $package --update',
     );
-    exitCode = 1;
+    passes = false;
   } else {
-    stdout.writeln('public API matches tool/api_surface.txt');
+    stdout.writeln('$package: public API matches tool/api_surface.txt');
   }
+  return passes;
 }
 
 /// The snapshot lines for the exported element [e]: its declaration, then

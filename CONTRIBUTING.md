@@ -33,27 +33,41 @@ dart pub get
 
 ## Checks
 
-From the repository root, the gate in two tiers (ADR-0022):
+From the repository root, the gate, one for every commit and every push:
 
 ```sh
-tool/gate.sh          # every commit, about 40 s: format, analyze, ptome's
-                      # tests but the slow ones, the corpus included
-tool/gate.sh full     # before a push, about 3 min: every test, API and
-                      # JavaScript projection checks, the CLI (bats),
-                      # the plain_* packages
+tool/gate.sh   # about a minute here: format, analyze, every package's
+               # whole suite, the public APIs, the JavaScript projection
 ```
 
-The `justfile` runs them in a capped scope (12 GB, no swap) and commits
-and pushes through them: `just commit MESSAGE_FILE` (the fast gate, then a
-commit of every change), `just amend`, `just push` (the full gate, a push
-to master, then CI's runs watched to the end); `just fast` and `just full`
-alone. A gate that isn't green stops the commit or the push, and says
-which files failed formatting or analysis.
+The `justfile` runs it in a capped scope (12 GB, no swap) and commits and
+pushes through it: `just commit MESSAGE_FILE` (the gate, then a commit of
+every change), `just amend`, `just push` (a push to master, the gate run
+again only if the commit isn't the tree it last passed, then CI's run
+watched to its end); `just gate` alone. A gate that isn't green stops the
+commit or the push, and says which files failed formatting or analysis.
 
-Their parts run at the same time, each printed with the time it took. CI
-runs the Node.js and npm suites (its `npm` job), and the nightly workflow
-the libraries' tests tagged `nightly` (`dart test -t nightly` in a
-package): comparisons with frozen copies of rewritten code, and fuzzing.
+CI (`.github/workflows/ci.yml`) runs only on a push to master, and runs
+every test and check there: the same as the gate, the tests dealt into
+shards of about the same time (`tool/shard.dart`, by `tool/test_times.txt`)
+on Linux, macOS and Windows, ptome's suites on Node.js (four programs,
+`tool/node_tests.dart`), each library compiled to JavaScript against the
+VM, the npm package, the CLI's bats suite and the packages' publishing and
+standalone resolution. Each test job holds its files to the time budget
+(`tool/test_budget.txt`).
+
+The tests run the same everywhere: in one world (`PTOME_SYSTEM_FONTS=off`,
+a fixed `SOURCE_DATE_EPOCH`, `TZ=UTC`, `PTOME_FONT_PATH` unset; the gate
+and CI set it, `test/hermetic_test.dart` checks it), no test looking for a
+tool, a font or a file of the machine (`tool/hermetic_check.sh`). What an
+outside tool (HarfBuzz, ICU, Poppler, veraPDF, a browser...) answers is
+recorded with the inputs it answered for (`test/support/oracles.dart`, the
+answers in each package's `test/oracles`); `ORACLES=record dart test`
+asks the tools again, installed. Random checks run from fixed seeds; each
+package's `tool/deep_checks.dart` runs many times their cases, by hand.
+The checks against Asciidoctor itself (the gem's CLI, the differential
+harness, EPUB parity with asciidoctor-epub3, the goldens made again) are
+`packages/ptome/tool/ruby_oracles.sh`, also by hand.
 
 The corpus (`test/corpus`, `dart test -t corpus`) checks ptome against the
 files the Asciidoctor command line writes for about 1,700 documents. It is
@@ -66,12 +80,7 @@ a case new to the corpus). ptome's fixes of upstream bugs are tested in
 `test/upstream_fixes/`.
 
 Tests are judged by the input they feed and the output they check; no gate
-measures coverage. Tests that start processes or run long property
-checks are tagged `slow` (`dart test -x slow` leaves them out).
-
-The live oracles (the gem's CLI, asciidoctor-epub3 with EPUBCheck, and the
-goldens made again from their pinned bundle) and the slow tests on macOS
-and Windows run nightly in CI (`.github/workflows/nightly.yml`).
+measures coverage.
 
 The command line, on a built executable:
 
@@ -115,18 +124,18 @@ cd test/npm && npm ci
 node --test                  # API, exports, contents, bundler, browser
 npm run types                # tsc over typical usage
 npm run lint                 # publint and are-the-types-wrong
-cd ../.. && dart test -p node
+cd ../.. && dart run tool/node_tests.dart && dart test -p node build/node_tests
 ASCIIDOCTOR_EXE=test/e2e/bin/ptome-node bats test/e2e/
 ```
 
 The browser test looks for Chromium at `/usr/bin/chromium`; set
 `CHROMIUM_PATH` to use another build.
 
-The magazine looks' screenshots (`test/look/magazine_shots_test.dart`,
-in the full gate) need Chromium, Firefox (`FIREFOX_PATH`, else
-`/usr/bin/firefox` or `~/.cache/asciidart-work/firefox/firefox`),
-ImageMagick and the looks' faces (`ptome doctor --look magazine-1960s`
-and so on); without them they are skipped.
+The magazine looks' screenshots (`test/look/magazine_shots_test.dart`)
+are recorded comparisons: taking them again (`ORACLES=record`) needs
+Chromium, Firefox (`FIREFOX_PATH`, else `/usr/bin/firefox` or
+`~/.cache/asciidart-work/firefox/firefox`), ImageMagick and the looks'
+faces (`ptome doctor --look magazine-1960s` and so on).
 
 ## Layout
 

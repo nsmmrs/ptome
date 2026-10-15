@@ -17,7 +17,6 @@
 // The Madina mushaf's page rule (each page ends on an ayah's end, none
 // across a page) waits for its layout, FEAT-ytfd13.
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:convert';

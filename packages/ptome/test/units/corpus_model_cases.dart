@@ -6,12 +6,10 @@
 // test/units/corpus/model. A change to the model is a change to those
 // files, made on purpose:
 //
-//   UNITS_MODEL_UPDATE=1 dart test test/units/corpus_model_test.dart
+//   UNITS_MODEL_UPDATE=1 dart test test/units/corpus_model_0_test.dart \
+//     test/units/corpus_model_1_test.dart
 //
 // and reviewed in the diff of the dumps (zcat).
-@TestOn('vm')
-@Tags(['slow'])
-library;
 
 import 'dart:convert';
 import 'dart:io';
@@ -54,9 +52,12 @@ const List<String> _documents = [
 
 final bool _update = Platform.environment['UNITS_MODEL_UPDATE'] == '1';
 
-void main() {
+/// The model tests: those of every [parts]th document, from the [part]th
+/// (split across `corpus_model_<n>_test.dart`, which run side by side).
+void corpusModelTests({required int part, required int parts}) {
   final root = Directory(_corpus).absolute.path;
-  for (final doc in _documents) {
+  for (final (i, doc) in _documents.indexed) {
+    if (i % parts != part) continue;
     test(doc, () {
       final document = loadFile(
         '$_corpus/$doc',

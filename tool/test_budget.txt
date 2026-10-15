@@ -1,4 +1,7 @@
-# Time budgets for the tests (tool/test_budget.dart), in seconds.
-test 0.25
-suite 2
-run 30
+# The tests' time budget (tool/test_budget.dart), in seconds: any one test,
+# any one test file (its loading included) and any one package's run, in
+# each CI job (a runner's times: this machine's depend on what else it
+# runs). Provisional: to be set from CI's runners' times (TASK-s0645s).
+test 8
+suite 25
+run 90

@@ -1,5 +1,5 @@
 /// The units corpus's excerpts (test/units/corpus/excerpts), which
-/// test/units/corpus_model_test.dart reads in place of the whole works
+/// test/units/corpus_model_cases.dart reads in place of the whole works
 /// they come from, a few chapters where the whole is many:
 ///
 /// - the Westminster Larger Catechism's first [_questions] questions;

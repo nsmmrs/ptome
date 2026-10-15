@@ -3,7 +3,6 @@
 // against asciidoctor-pdf's is the corpus's: test/corpus, the ptome-pdf-*
 // cases among them.)
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:convert';

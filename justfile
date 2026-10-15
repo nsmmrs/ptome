@@ -1,16 +1,19 @@
-# The gates, and committing and pushing through them (ADR-0022): run these
-# rather than gate pipelines by hand. Every recipe stops at the first
-# failure; a gate that isn't green stops the commit or the push.
+# The gate, and committing and pushing through it: run these rather than
+# gate pipelines by hand. Every recipe stops at the first failure; a gate
+# that isn't green stops the commit or the push.
 #
-#   just fast                the fast gate (about half a minute)
-#   just full                the full gate (a few minutes)
-#   just commit MESSAGE_FILE the fast gate, then a commit of every change
-#   just amend               the fast gate, then the changes into the last commit
-#   just push                the full gate, then a push to master, then CI
+#   just gate                the gate (tool/gate.sh): every check, every test
+#   just commit MESSAGE_FILE the gate, then a commit of every change
+#   just amend               the gate, then the changes into the last commit
+#   just push                a push to master (the gate again only if the
+#                            commit isn't what the gate last passed), then
+#                            CI's run watched to its end
 #
-# The gates run in a capped user scope (12 GB, no swap: the heavy suites
-# once took the terminal down), with scratch files under the work folder
-# (/tmp is small), each run's output kept in its log.
+# The gate runs in a capped user scope (12 GB, no swap: heavy suites once
+# took the terminal down), with scratch files under the work folder (/tmp
+# is small), each run's output kept in its log. A green gate records the
+# tree it passed (gate/green-tree), so pushing what was committed through
+# it doesn't run it again.
 
 set shell := ["bash", "-euo", "pipefail", "-c"]
 
@@ -21,55 +24,52 @@ logs := work / "gate"
 default:
     @just --list
 
-# The fast gate: formatting, analysis, ptome's tests but the slow ones.
-fast: (_gate "fast")
-
-# The full gate: every test, APIs, the CLI, the plain_* packages.
-full: (_gate "full")
-
-_gate tier:
+# The gate: formatting, analysis, every package's tests, the APIs.
+gate:
     #!/usr/bin/env bash
     set -uo pipefail
     mkdir -p "{{work}}/tmp" "{{logs}}"
-    log="{{logs}}/{{tier}}.log"
+    log="{{logs}}/gate.log"
     export TMPDIR="{{work}}/tmp"
-    export CHROMIUM_PATH="${CHROMIUM_PATH:-/usr/bin/chromium}"
     systemd-run --user --scope -q -p MemoryMax=12G -p MemorySwapMax=0 \
-      bash tool/gate.sh {{tier}} > "$log" 2>&1
+      bash tool/gate.sh > "$log" 2>&1
     status=$?
     # (What failed, and the verdict; the whole run is in the log.)
-    grep -E 'NEW FAILURE|^tests:|Some tests failed' "$log" | head -40 || true
+    grep -E 'NEW FAILURE|OVER BUDGET|^tests:|^budget:|Some tests failed|differs|== done' "$log" | head -40 || true
     tail -1 "$log"
-    if [ "$status" -ne 0 ] || ! tail -1 "$log" | grep -q "gate ({{tier}}): green"; then
+    if [ "$status" -ne 0 ] || ! tail -1 "$log" | grep -q "gate: green"; then
       # (The gate says only that formatting or analysis failed: which files.)
       if tail -1 "$log" | grep -q 'format and analysis'; then
         dart format --output=none packages 2>&1 | grep '^Changed' || true
         dart analyze packages 2>&1 | grep -E '^ *(error|warning|info) -' | head -20 || true
       fi
-      echo "just: the {{tier}} gate is not green (log: $log)" >&2
+      echo "just: the gate is not green (log: $log)" >&2
       exit 1
     fi
 
-# The fast gate, then a commit of every change (MESSAGE_FILE with its trailers).
+# The gate, then a commit of every change (MESSAGE_FILE with its trailers).
 commit message_file: _changes _on_master
     #!/usr/bin/env bash
     set -euo pipefail
     [ -s "{{message_file}}" ] || { echo "just: no message in {{message_file}}" >&2; exit 1; }
     grep -q '^Co-Authored-By: ' "{{message_file}}" \
       || { echo "just: the message has no Co-Authored-By trailer" >&2; exit 1; }
-    just fast
+    just gate
     git add -A
+    git write-tree > "{{logs}}/green-tree"
     git commit -q -F "{{message_file}}"
     git log --oneline -1
 
-# The fast gate, then the changes into the last commit (not yet pushed).
+# The gate, then the changes into the last commit (not yet pushed).
 amend: _changes _on_master _unpushed
-    just fast
+    just gate
     git add -A
+    git write-tree > "{{logs}}/green-tree"
     git commit -q --amend --no-edit
     git log --oneline -1
 
-# The full gate on what is committed, then a push to master, then CI watched.
+# A push to master (the gate first unless the gate passed this very tree),
+# then CI's run watched.
 push: _clean _on_master
     #!/usr/bin/env bash
     set -euo pipefail
@@ -82,30 +82,36 @@ push: _clean _on_master
       echo "just: nothing to push"
       exit 0
     fi
-    just full
+    if [ "$(cat "{{logs}}/green-tree" 2>/dev/null)" != "$(git rev-parse 'HEAD^{tree}')" ]; then
+      just gate
+      git rev-parse 'HEAD^{tree}' > "{{logs}}/green-tree"
+    else
+      echo "just: the gate passed this tree"
+    fi
     git push -q origin master
     git log --oneline -1
     just ci
 
-# CI's runs of HEAD, waited for (up to 40 minutes); fails if one failed.
+# CI's run of HEAD, watched to its end; fails if it failed.
 ci:
     #!/usr/bin/env bash
     set -euo pipefail
     sha="$(git rev-parse HEAD)"
-    runs=""
-    for _ in $(seq 1 80); do
-      sleep 30
-      # (A failed query, the network say, is tried again.)
-      runs="$(gh run list --commit "$sha" --json name,status,conclusion 2>/dev/null)" || continue
-      [ "$(jq length <<< "$runs")" -gt 0 ] || continue
-      [ "$(jq '[.[] | select(.status != "completed")] | length' <<< "$runs")" -eq 0 ] && break
+    id=""
+    for _ in $(seq 1 60); do
+      # (The run appears a few seconds after the push; a failed query, the
+      # network say, is tried again.)
+      id="$(gh run list --commit "$sha" --workflow CI --json databaseId -q '.[0].databaseId' 2>/dev/null)" || true
+      [ -n "$id" ] && break
+      sleep 2
     done
-    [ -n "${runs:-}" ] || { echo "just: CI's runs could not be read" >&2; exit 1; }
-    jq -r '.[] | "\(.conclusion // .status)  \(.name)"' <<< "$runs"
-    if jq -e '[.[] | select(.status != "completed" or (.conclusion != "success" and .conclusion != "skipped"))] | length > 0' <<< "$runs" > /dev/null; then
-      echo "just: CI is not green for $sha" >&2
+    [ -n "$id" ] || { echo "just: CI's run of $sha could not be found" >&2; exit 1; }
+    if ! gh run watch "$id" --exit-status --interval 5 > "{{logs}}/ci.log" 2>&1; then
+      gh run view "$id" --json jobs -q '.jobs[] | select(.conclusion != "success") | "\(.conclusion)  \(.name)"' || true
+      echo "just: CI is not green for $sha (gh run view $id --log-failed)" >&2
       exit 1
     fi
+    gh run view "$id" --json createdAt,updatedAt -q '"success  CI in \(((.updatedAt|fromdate)-(.createdAt|fromdate)))s"'
 
 _changes:
     @[ -n "$(git status --porcelain)" ] || { echo "just: nothing to commit" >&2; exit 1; }

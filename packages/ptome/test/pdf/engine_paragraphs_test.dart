@@ -3,7 +3,6 @@
 // text box (`base_text_engine: box`): every word where the box puts it,
 // within 0.01 pt, and the engine setting them (not the box again).
 @TestOn('vm')
-@Tags(['slow'])
 library;
 
 import 'dart:io';
