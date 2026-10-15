@@ -35,17 +35,20 @@ dart run tool/shard.dart --programs "$programs" "$shards" "$index" \
 
 pids=()
 while read -r package dir count; do
-  (cd "packages/$package" &&
+  (start=$SECONDS
+    cd "packages/$package" &&
     dart test -j "$count" -r failures-only \
-      --file-reporter "json:$out/$package.json" "$dir") \
-    > "$out/$package.log" 2>&1 &
+      --file-reporter "json:$out/$package.json" "$dir"
+    status=$?
+    echo "$((SECONDS - start))" > "$out/$package.seconds"
+    exit $status) > "$out/$package.log" 2>&1 &
   pids+=($!)
 done < "$out/shard.txt"
 
 status=0
 reports=()
 i=0
-while read -r package _ _; do
+while read -r package _ count; do
   wait "${pids[$i]}"
   tests=$?
   i=$((i + 1))
@@ -58,7 +61,7 @@ while read -r package _ _; do
   else
     verdict="$(tail -1 "$out/$package.log")"
   fi
-  echo "$package: $verdict"
+  echo "$package ($count programs, $(cat "$out/$package.seconds" 2> /dev/null)s): $verdict"
   if [ "$tests" -ne 0 ]; then
     status=1
     sed 's/^/  /' "$out/$package.log"
