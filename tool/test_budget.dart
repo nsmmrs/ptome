@@ -2,7 +2,9 @@
 /// and fails when one test, one test file (its loading included) or a
 /// whole run took longer than `tool/test_budget.txt` allows. A file over
 /// the suite limit can be given a limit of its own there, with the card
-/// that brings it back under; `--times` prints every file's time instead.
+/// that brings it back under; `--times` prints every file's time instead,
+/// and `--running` the tests a report has started and not finished (a run
+/// that seems to hang).
 ///
 /// ```sh
 /// dart test --file-reporter json:ptome.json        # in packages/ptome
@@ -18,6 +20,15 @@ const budgetPath = 'tool/test_budget.txt';
 void main(List<String> arguments) {
   final args = [...arguments];
   final times = args.remove('--times');
+  if (args.remove('--running')) {
+    for (final arg in args) {
+      final at = arg.indexOf('=');
+      for (final name in Run.unfinished(File(arg.substring(at + 1)))) {
+        stdout.writeln('  ${arg.substring(0, at)}: running: $name');
+      }
+    }
+    return;
+  }
   if (args.isEmpty || args.any((a) => !a.contains('='))) {
     stderr.writeln(
       'usage: dart run tool/test_budget.dart [--times] PACKAGE=REPORT.json...',
@@ -206,6 +217,25 @@ final class Run {
             when !path.startsWith('.dart_tool/'))
           path: ((lastDone[suite] ?? start) - start) / 1000,
     }, end / 1000);
+  }
+
+  /// The tests [report] has started and not finished, by name.
+  static List<String> unfinished(File report) {
+    final running = <int, String>{};
+    for (final line in report.readAsLinesSync()) {
+      if (!line.startsWith('{')) continue;
+      final event = jsonDecode(line) as Map<String, Object?>;
+      switch (event) {
+        case {
+          'type': 'testStart',
+          'test': {'id': final int id, 'name': final String name},
+        }:
+          running[id] = name;
+        case {'type': 'testDone', 'testID': final int id}:
+          running.remove(id);
+      }
+    }
+    return running.values.toList();
   }
 
   final List<({String name, String path, double seconds})> tests;

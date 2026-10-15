@@ -1,7 +1,11 @@
 # The tests' time budget (tool/test_budget.dart), in seconds: any one test,
-# any one test file (its loading included) and any one package's run, in
-# each CI job (a runner's times: this machine's depend on what else it
-# runs). Provisional: to be set from CI's runners' times (TASK-s0645s).
-test 15
-suite 40
-run 120
+# any one test file (in a shard's programs, its group's time) and any one
+# package's run in a shard, on CI's runners (where this machine's times
+# depend on what else it runs). Set from the runners' worst (2026-10-15:
+# a test 18.6 s, plain_unicode's calendars on macOS; a file 16.3 s,
+# line_break_equivalence on macOS; a package's run 72 s, ptome's on
+# macOS) at about twice and more: a runner's off day passes, a test grown
+# several times slower doesn't.
+test 40
+suite 45
+run 150

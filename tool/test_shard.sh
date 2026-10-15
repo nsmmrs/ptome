@@ -43,6 +43,15 @@ while read -r package dir count; do
     echo "$((SECONDS - start))" > "$out/$package.seconds"
     exit $status) > "$out/$package.log" 2>&1 &
   pids+=($!)
+  # (A package still running after 100 s: which of its tests are, said
+  # once, so a run that hangs names its test before the job's time ends.)
+  (pid=$!
+    for _ in $(seq 100); do
+      sleep 1
+      kill -0 "$pid" 2> /dev/null || exit 0
+    done
+    echo "$package: still running after 100 s"
+    dart run tool/test_budget.dart --running "$package=$out/$package.json") &
 done < "$out/shard.txt"
 
 status=0

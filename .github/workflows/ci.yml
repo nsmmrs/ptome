@@ -45,12 +45,17 @@ jobs:
       run: |
         (cd packages/ptome && dart run tool/generate_js.dart --check) > "$RUNNER_TEMP/js.log" 2>&1 &
         js=$!
-        (cd packages/plain_highlighting &&
+        # (The grammars generated in a copy of the package: the generator
+        # rewrites them, where the analysis and the format check read.)
+        here="$PWD/packages/plain_highlighting"
+        cp -a "$here" "$RUNNER_TEMP/highlighting"
+        (cd "$RUNNER_TEMP/highlighting" &&
           (cd tool/generate && npm ci --silent) &&
           node tool/generate/generate.mjs &&
           node tool/generate/reference.mjs &&
-          dart format lib/src/languages > /dev/null &&
-          git diff --exit-code &&
+          dart format --language-version=3.13 lib/src/languages > /dev/null &&
+          diff -r lib/src/languages "$here/lib/src/languages" &&
+          diff test/reference/detect.json "$here/test/reference/detect.json" &&
           tool/vendor.sh --check) > "$RUNNER_TEMP/generated.log" 2>&1 &
         generated=$!
         dart run tool/api_check.dart > "$RUNNER_TEMP/api.log" 2>&1 &
