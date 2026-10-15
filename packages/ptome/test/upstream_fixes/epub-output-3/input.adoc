@@ -1,5 +1,6 @@
 = Book
 :doctype: book
+:epub-strict:
 
 == The _Albatross_
 

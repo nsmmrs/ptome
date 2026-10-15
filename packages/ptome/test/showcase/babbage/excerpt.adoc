@@ -1,4 +1,5 @@
 = Logarithms: three groups of five rows
+:epub-strict:
 :doctype: book
 :lang: en
 :look: babbage

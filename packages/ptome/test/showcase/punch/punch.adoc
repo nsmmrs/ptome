@@ -1,4 +1,5 @@
 = Punch, or the London Charivari: Volume I
+:epub-strict:
 :doctype: book
 :lang: en
 :look: punch

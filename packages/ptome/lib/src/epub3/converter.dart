@@ -327,11 +327,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     if (!_isChapter(node)) return null;
     // A chapter without an id (`sectids!`, a document's sections left
     // unnamed) is named as a section is when they are named, from its
-    // title: the gem gives it no file, and the EPUB no spine (not under
-    // asciidoctor-compat).
+    // title: the gem gives it no file, and the EPUB no spine (with
+    // `epub-strict`).
     if (node is Section && node.id == null) {
       final document = _doc(node);
-      if (!asciidoctorCompat(document, CompatFormat.epub)) {
+      if (_strict(document)) {
         final id = Section.generateId(node.title ?? 'chapter', document);
         node.id = id;
         document.registerRef(id, node);
@@ -757,10 +757,10 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     // The index's anchors in the title belong to the heading alone (the
     // title element allows no markup; an id must be unique). Nor does the
     // rest of its markup: the title's text alone, where the gem writes
-    // its emphasis and links there too, which EPUBCheck rejects (not
-    // under asciidoctor-compat).
+    // its emphasis and links there too, which EPUBCheck rejects (with
+    // `epub-strict`).
     chapterTitle = chapterTitle.replaceAll(_indexAnchorRx, '');
-    if (!asciidoctorCompat(document, CompatFormat.epub)) {
+    if (_strict(document)) {
       chapterTitle = chapterTitle.replaceAll(_tagRx, '');
     }
     final lang = _s(document.attr('lang', 'en'));
@@ -1785,10 +1785,13 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         final path = node.attributes['path'];
         if (path != null) {
           text = node.text ?? path;
-          // (Another document's, which isn't in the book: its text, where
-          // the gem's link to `other.epub` leaves the container; not under
+          // (Another document's, which isn't in the book: with
+          // `epub-strict`, its text, where the gem's link to
+          // `other.epub` leaves the container; not under
           // asciidoctor-compat.)
-          if (!asciidoctorCompat(doc, CompatFormat.epub)) return text;
+          if (_strict(doc)) {
+            return text;
+          }
         } else if (refid == '#') {
           logger.warn(
             '${_basename(_s(doc.attr('docfile')))}: <<chapter#>> xref syntax '
@@ -2824,6 +2827,14 @@ String _fromHtmlSpecialChars(String value) =>
 
 /// An anchor the index links to, in converted text.
 final RegExp _indexAnchorRx = RegExp(r'<a id="_indexterm_\d+"></a>');
+
+/// Whether [document] asks for what EPUBCheck accepts where the gem
+/// writes what it rejects (`epub-strict`: a chapter's title element its
+/// text alone, chapters for sections without ids, another document's
+/// cross reference its text), not under asciidoctor-compat.
+bool _strict(Document document) =>
+    document.hasAttr('epub-strict') &&
+    !asciidoctorCompat(document, CompatFormat.epub);
 
 /// A tag, for text that allows none.
 final RegExp _tagRx = RegExp('<[^>]+>');

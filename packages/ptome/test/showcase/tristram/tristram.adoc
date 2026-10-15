@@ -1,5 +1,6 @@
 = The Life and Opinions of Tristram Shandy, Gentleman
 Laurence Sterne
+:epub-strict:
 :doctype: book
 :lang: en
 :look: tristram

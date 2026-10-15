@@ -1,5 +1,6 @@
 = A Dictionary of the English Language: In Which the Words Are Deduced from Their Originals, and Illustrated in Their Different Significations by Examples from the Best Writers
 Samuel Johnson
+:epub-strict:
 :doctype: book
 :lang: en
 :look: johnson

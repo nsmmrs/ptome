@@ -1,4 +1,5 @@
 = The Tempest: Act I, Scene II
+:epub-strict:
 :doctype: book
 :lang: en
 :look: tempest

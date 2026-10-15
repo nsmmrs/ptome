@@ -78,18 +78,16 @@ Asciidoctor project.
   sets it among the first chapter's notes
   (`test/upstream_fixes/discrete-heading-footnote-*`); not under
   `asciidoctor-compat`.
-- EPUB: a cross reference to another document (a units work's
-  citation of the Bible) is its text; asciidoctor-epub3 links to the
-  other document's EPUB, outside the container
-  (`test/upstream_fixes/epub-output-5`); not under `asciidoctor-compat`.
-- EPUB: a book whose sections have no ids (`:sectids!:`) still has its
-  chapters, each named from its title; asciidoctor-epub3 writes none and
-  an empty spine (`test/upstream_fixes/epub-output-4`); not under
-  `asciidoctor-compat`.
-- EPUB: a chapter's title element holds the title's text alone; with
-  emphasis in a chapter's title (`== The _Albatross_`) asciidoctor-epub3
-  writes the tags there too, which EPUBCheck rejects
-  (`test/upstream_fixes/epub-output-3`); not under `asciidoctor-compat`.
+- EPUB: `:epub-strict:` writes what EPUBCheck accepts where
+  asciidoctor-epub3 writes what it rejects: a cross reference to another
+  document (a units work's citation of the Bible) is its text, where the
+  gem links outside the container (`test/upstream_fixes/epub-output-5`);
+  a book whose sections have no ids (`:sectids!:`) still has its
+  chapters, each named from its title, where the gem writes none and an
+  empty spine (`epub-output-4`); a chapter's title element holds the
+  title's text alone, where the gem writes its emphasis tags there
+  (`epub-output-3`). Not under `asciidoctor-compat`; without the
+  attribute, as the gem.
 - PDF, for plays (FEAT-d1sdfw): `role_<role>_text_indent: continue`
   steps a verse line shared between speakers to where the line before it
   ended, counted once by logical line numbers;

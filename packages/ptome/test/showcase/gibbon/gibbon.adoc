@@ -1,5 +1,6 @@
 = The History of the Decline and Fall of the Roman Empire: Volume I
 Edward Gibbon
+:epub-strict:
 :doctype: book
 :lang: en
 :look: gibbon

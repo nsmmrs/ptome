@@ -1,4 +1,5 @@
 = Poor Richard: January's calendar
+:epub-strict:
 :doctype: book
 :lang: en
 :look: poor-richard

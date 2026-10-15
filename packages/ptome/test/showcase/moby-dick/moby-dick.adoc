@@ -1,5 +1,6 @@
 = Moby-Dick; or, The Whale
 Herman Melville
+:epub-strict:
 :doctype: book
 :lang: en
 :look: moby-dick

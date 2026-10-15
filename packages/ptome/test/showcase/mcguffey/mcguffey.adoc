@@ -1,5 +1,6 @@
 = McGuffey’s Second Eclectic Reader
 William Holmes McGuffey
+:epub-strict:
 :doctype: book
 :lang: en
 :look: mcguffey

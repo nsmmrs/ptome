@@ -1,4 +1,5 @@
 = New-York Tribune, Tuesday, April 16, 1912
+:epub-strict:
 :doctype: article
 :lang: en
 :look: tribune

@@ -1,5 +1,6 @@
 = Table of Logarithms of the Natural Numbers from 10,000 to 19,999
 After Charles Babbage
+:epub-strict:
 :doctype: book
 :lang: en
 :look: babbage

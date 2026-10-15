@@ -1,4 +1,5 @@
 = The Anatomy of Melancholy: the opening of the First Partition
+:epub-strict:
 :doctype: book
 :lang: en
 :look: burton

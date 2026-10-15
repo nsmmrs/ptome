@@ -1,5 +1,6 @@
 = The Book of Common Prayer
 The Church of England
+:epub-strict:
 :doctype: book
 :lang: en
 :look: bcp

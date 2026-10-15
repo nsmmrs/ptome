@@ -1,5 +1,6 @@
 = The Anatomy of Melancholy
 Robert Burton
+:epub-strict:
 :doctype: book
 :lang: en
 :look: burton

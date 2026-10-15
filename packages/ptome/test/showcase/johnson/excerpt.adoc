@@ -1,4 +1,5 @@
 = Johnson: two columns, their guide words and the catchword
+:epub-strict:
 :doctype: book
 :lang: en
 :look: johnson

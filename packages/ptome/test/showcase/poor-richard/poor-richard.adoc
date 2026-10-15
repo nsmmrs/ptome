@@ -1,5 +1,6 @@
 = Poor Richard, 1733: An Almanack for the Year of Christ 1733
 Richard Saunders
+:epub-strict:
 :doctype: book
 :lang: en
 :look: poor-richard

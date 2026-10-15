@@ -154,6 +154,10 @@ String _epubcheck(String jar, String epub) {
       // installed fonts only when asked, here the vendored ones.)
       '-a',
       'epub-embed-fonts',
+      // (Ptome's repairs of what EPUBCheck rejects, which the gem's
+      // chapters are compared with made; the gem ignores the attribute.)
+      '-a',
+      'epub-strict',
       '-o',
       out,
       doc,

@@ -1,5 +1,6 @@
 = College Physics 2e: Displacement
 Paul Peter Urone; Roger Hinrichs
+:epub-strict:
 :doctype: book
 :lang: en
 :look: openstax

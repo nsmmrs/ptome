@@ -1,5 +1,6 @@
 = The First Six Books of the Elements of Euclid: In Which Coloured Diagrams and Symbols Are Used Instead of Letters for the Greater Ease of Learners
 Oliver Byrne
+:epub-strict:
 :doctype: book
 :lang: en
 :look: byrne

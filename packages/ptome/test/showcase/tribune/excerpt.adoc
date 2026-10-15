@@ -1,4 +1,5 @@
 = Tribune: the banner, the ruled columns and a jump
+:epub-strict:
 :doctype: article
 :lang: en
 :look: tribune
