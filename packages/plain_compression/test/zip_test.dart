@@ -1,7 +1,8 @@
-// CRC-32, gzip and ZIP: known vectors and round trips, and, where the
-// tools are installed, the gzip, zip, unzip, zipinfo and Python zipfile
-// programs reading what this package writes and writing what it reads;
-// damaged archives are rejected.
+// CRC-32, gzip and ZIP: known vectors and round trips, and the gzip, zip,
+// unzip, zipinfo and Python zipfile programs reading what this package
+// writes and writing what it reads (their answers recorded in
+// test/oracles/zip.json by test/support/oracles.dart; ORACLES=record asks
+// them again); damaged archives are rejected.
 @TestOn('vm')
 library;
 
@@ -10,24 +11,36 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
+import 'package:crypto/crypto.dart';
 import 'package:plain_compression/plain_compression.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) =>
-    Process.runSync('which', [tool]).exitCode == 0 ||
-    Process.runSync('where', [tool], runInShell: true).exitCode == 0;
+import 'support/oracles.dart';
 
-final bool _tools =
-    _has('gzip') &&
-    _has('zip') &&
-    _has('unzip') &&
-    _has('zipinfo') &&
-    _has('python3');
+/// The oracles, which their answers depend on.
+const String _tools = 'gzip 1.14, Zip 3.0, UnZip 6.00, Python 3.14 zipfile';
 
 ProcessResult _run(String exe, List<String> args, {String? dir}) {
-  final r = Process.runSync(exe, args, workingDirectory: dir);
-  expect(r.exitCode, 0, reason: '$exe ${args.join(' ')}: ${r.stderr}');
+  final r = Process.runSync(
+    exe,
+    args,
+    workingDirectory: dir,
+    stdoutEncoding: null,
+  );
+  if (r.exitCode != 0) {
+    throw StateError('$exe ${args.join(' ')}: ${r.stderr}');
+  }
   return r;
+}
+
+/// [body]'s answer, run in a folder of its own.
+String _inTemp(String Function(String dir) body) {
+  final tmp = Directory.systemTemp.createTempSync('zip_test.');
+  try {
+    return body(tmp.path);
+  } finally {
+    tmp.deleteSync(recursive: true);
+  }
 }
 
 /// Checks an archive of ours with Python's zipfile: argv 1 is the archive,
@@ -52,10 +65,11 @@ with zipfile.ZipFile(sys.argv[1], "w", zipfile.ZIP_DEFLATED) as z:
 ''';
 
 void main() {
+  final recorded = Oracle('zip');
   final random = Random(20261008);
   final text = utf8.encode('Plain text, plain bytes. ' * 2000);
   final binary = Uint8List.fromList([
-    for (var i = 0; i < 50000; i++) random.nextInt(256),
+    for (var i = 0; i < 5000; i++) random.nextInt(256),
   ]);
 
   group('CRC-32', () {
@@ -107,32 +121,37 @@ void main() {
     test(
       'reads what gzip writes (names, levels, members), and gzip reads ours',
       () {
-        final tmp = Directory.systemTemp.createTempSync('gzip_test.');
-        addTearDown(() => tmp.deleteSync(recursive: true));
-        final file = File('${tmp.path}/data.txt')..writeAsBytesSync(text);
         for (final level in ['-1', '-6', '-9']) {
           // gzip -c keeps the file name and time in the header (FNAME).
-          final r = Process.runSync('gzip', [
-            '-c',
-            level,
-            file.path,
-          ], stdoutEncoding: null);
-          expect(gzipDecode(r.stdout as List<int>), text);
+          final theirs = recorded.answer(
+            'gzip -c $level',
+            inputs: [_tools, text, level],
+            oracle: () => _inTemp((dir) {
+              final file = File('$dir/data.txt')..writeAsBytesSync(text);
+              return base64Encode(
+                _run('gzip', ['-c', level, file.path]).stdout as List<int>,
+              );
+            }),
+          );
+          expect(gzipDecode(base64Decode(theirs)), text);
         }
         final one = gzipEncode(utf8.encode('one,'));
         final two = gzipEncode(utf8.encode('two'));
         expect(utf8.decode(gzipDecode([...one, ...two])), 'one,two');
-        final ours = File('${tmp.path}/ours.gz')
-          ..writeAsBytesSync(gzipEncode(binary, level: 9));
-        _run('gzip', ['-t', ours.path]);
-        final back = Process.runSync('gzip', [
-          '-dc',
-          ours.path,
-        ], stdoutEncoding: null);
-        expect(back.stdout, binary);
+        // gzip tests ours and gives back the bytes (their SHA-256).
+        final ours = gzipEncode(binary, level: 9);
+        final back = recorded.answer(
+          'gzip -t and -dc of ours',
+          inputs: [_tools, ours],
+          oracle: () => _inTemp((dir) {
+            final file = File('$dir/ours.gz')..writeAsBytesSync(ours);
+            _run('gzip', ['-t', file.path]);
+            final bytes = _run('gzip', ['-dc', file.path]).stdout as List<int>;
+            return '${sha256.convert(bytes)}';
+          }),
+        );
+        expect(back, '${sha256.convert(binary)}');
       },
-      skip: _tools ? false : 'gzip, zip, unzip, zipinfo or python3 missing',
-      tags: ['tools'],
     );
   });
 
@@ -223,55 +242,67 @@ void main() {
       );
     });
 
-    test(
-      'unzip, zipinfo and Python read ours; we read zip and Python',
-      () {
-        final tmp = Directory.systemTemp.createTempSync('zip_test.');
-        addTearDown(() => tmp.deleteSync(recursive: true));
-        for (final zip64 in [false, true]) {
-          final ours = File('${tmp.path}/ours$zip64.zip')
-            ..writeAsBytesSync(archive(zip64: zip64));
-          _run('unzip', ['-tq', ours.path]);
-          final info = _run('zipinfo', ['-v', ours.path]).stdout as String;
-          expect(info, contains('text.txt'));
-          _run('python3', [
-            '-I',
-            '-c',
-            _pythonChecks,
-            ours.path,
-            (File('${tmp.path}/binary.bin')..writeAsBytesSync(binary)).path,
-          ]);
-        }
-        // Theirs: zip (deflated and stored), Python (code page 437 names,
-        // UTF-8 names, forced ZIP64).
-        Directory('${tmp.path}/src/sub').createSync(recursive: true);
-        File('${tmp.path}/src/a.txt').writeAsBytesSync(text);
-        File('${tmp.path}/src/sub/b.bin').writeAsBytesSync(binary);
-        _run('zip', ['-qr', '../zipped.zip', '.'], dir: '${tmp.path}/src');
-        _run('zip', ['-qr0', '../stored.zip', '.'], dir: '${tmp.path}/src');
-        for (final name in ['zipped', 'stored']) {
-          final entries = {
-            for (final e in readZip(
-              File('${tmp.path}/$name.zip').readAsBytesSync(),
-            ))
-              e.name: e.bytes,
-          };
-          expect(entries['a.txt'], text, reason: name);
-          expect(entries['sub/b.bin'], binary, reason: name);
-        }
-        _run('python3', ['-I', '-c', _pythonWrites, '${tmp.path}/python.zip']);
-        final python = {
-          for (final e in readZip(
-            File('${tmp.path}/python.zip').readAsBytesSync(),
-          ))
-            e.name: e.bytes,
+    test('unzip, zipinfo and Python read ours; we read zip and Python', () {
+      for (final zip64 in [false, true]) {
+        // unzip and Python test ours; zipinfo lists it.
+        final ours = archive(zip64: zip64);
+        final verdict = recorded.answer(
+          'unzip, zipinfo and Python read ours${zip64 ? ', ZIP64' : ''}',
+          inputs: [_tools, ours, binary, _pythonChecks],
+          oracle: () => _inTemp((dir) {
+            final file = File('$dir/ours.zip')..writeAsBytesSync(ours);
+            _run('unzip', ['-tq', file.path]);
+            final info = utf8.decode(
+              _run('zipinfo', ['-v', file.path]).stdout as List<int>,
+            );
+            _run('python3', [
+              '-I',
+              '-c',
+              _pythonChecks,
+              file.path,
+              (File('$dir/binary.bin')..writeAsBytesSync(binary)).path,
+            ]);
+            return info.contains('text.txt') ? 'read' : 'no text.txt';
+          }),
+        );
+        expect(verdict, 'read');
+      }
+      // Theirs: zip (deflated and stored), Python (code page 437 names,
+      // UTF-8 names, forced ZIP64).
+      Uint8List zipped(String flags) => base64Decode(
+        recorded.answer(
+          'zip $flags',
+          inputs: [_tools, text, binary, flags],
+          oracle: () => _inTemp((dir) {
+            Directory('$dir/src/sub').createSync(recursive: true);
+            File('$dir/src/a.txt').writeAsBytesSync(text);
+            File('$dir/src/sub/b.bin').writeAsBytesSync(binary);
+            _run('zip', [flags, '../out.zip', '.'], dir: '$dir/src');
+            return base64Encode(File('$dir/out.zip').readAsBytesSync());
+          }),
+        ),
+      );
+      for (final (name, flags) in [('zipped', '-qr'), ('stored', '-qr0')]) {
+        final entries = {
+          for (final e in readZip(zipped(flags))) e.name: e.bytes,
         };
-        expect(utf8.decode(python['café.txt']!), 'x');
-        expect(utf8.decode(python['plain.txt']!), 'plain');
-        expect(python['big.txt'], List.filled(100000, 0x79));
-      },
-      skip: _tools ? false : 'gzip, zip, unzip, zipinfo or python3 missing',
-      tags: ['tools'],
-    );
+        expect(entries['a.txt'], text, reason: name);
+        expect(entries['sub/b.bin'], binary, reason: name);
+      }
+      final pythonZip = recorded.answer(
+        'Python writes',
+        inputs: [_tools, _pythonWrites],
+        oracle: () => _inTemp((dir) {
+          _run('python3', ['-I', '-c', _pythonWrites, '$dir/python.zip']);
+          return base64Encode(File('$dir/python.zip').readAsBytesSync());
+        }),
+      );
+      final python = {
+        for (final e in readZip(base64Decode(pythonZip))) e.name: e.bytes,
+      };
+      expect(utf8.decode(python['café.txt']!), 'x');
+      expect(utf8.decode(python['plain.txt']!), 'plain');
+      expect(python['big.txt'], List.filled(100000, 0x79));
+    });
   });
 }

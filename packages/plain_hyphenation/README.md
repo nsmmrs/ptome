@@ -26,8 +26,9 @@ the result.
 
 Tests check every language's patterns against the vendored files, and
 hyphenate the words of the Universal Declaration of Human Rights in 19
-languages against Hyphenopoly (`tool/oracles/`, the `tools` tag): they
-agree on almost every word, the rest where its patterns are newer. Given
+languages against Hyphenopoly (`tool/oracles/`; its answers recorded in
+`test/oracles`, `ORACLES=record dart test` asking it again): they agree on
+almost every word, the rest where its patterns are newer. Given
 the same patterns, pub.dev's `hyphenation` package breaks every word as
 this one does.
 

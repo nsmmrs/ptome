@@ -1,8 +1,8 @@
 // Quotation marks by language from CLDR, against ICU's
 // ulocdata_getDelimiter for every CLDR locale and their languages with
-// other regions and scripts (its answers frozen in
-// test/frozen/quotation_marks.json, test/support/frozen.dart;
-// FROZEN=record asks it again).
+// other regions and scripts (its answers recorded in
+// test/oracles/quotation_marks.json, test/support/oracles.dart;
+// ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -11,7 +11,7 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _oracle = 'tool/oracles/icu/icudelim';
 
@@ -22,7 +22,7 @@ String _marks(QuotationMarks m) =>
     [m.start, m.end, m.alternateStart, m.alternateEnd].join('\t');
 
 void main() {
-  final frozen = Frozen('quotation_marks');
+  final recorded = Oracle('quotation_marks');
   test('everyday languages', () {
     expect(_marks(quotationMarks('en')), '“\t”\t‘\t’');
     expect(_marks(quotationMarks('fr')), '«\t»\t«\t»');
@@ -83,7 +83,7 @@ void main() {
       'xyz',
       'und',
     }.toList();
-    final lines = frozen
+    final lines = recorded
         .answer(
           'every locale',
           inputs: [_version, ...corpus],

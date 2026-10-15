@@ -4,8 +4,8 @@
 // test/fixtures/shaping.txt, with ligatures and kerning on and off and the
 // onum and smcp features, in fonts kerned by GPOS and by a kern table
 // (Libertinus's smcp is a multiple substitution). HarfBuzz's answers are
-// frozen in test/frozen/harfbuzz.json (test/support/frozen.dart):
-// FROZEN=record asks it again. Measured on 2026-10-08: every run of every
+// recorded in test/oracles/harfbuzz.json (test/support/oracles.dart):
+// ORACLES=record asks it again. Measured on 2026-10-08: every run of every
 // font shapes as HarfBuzz shapes it.
 @TestOn('vm')
 library;
@@ -17,7 +17,7 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
 
@@ -81,7 +81,7 @@ const Map<String, int> _fonts = {
 };
 
 void main() {
-  final frozen = Frozen('harfbuzz');
+  final recorded = Oracle('harfbuzz');
   final lines = File('test/fixtures/shaping.txt')
       .readAsLinesSync()
       .where((l) => l.isNotEmpty)
@@ -97,7 +97,7 @@ void main() {
           for (final line in lines)
             {'text': line, 'features': setting.harfbuzz},
       ];
-      final theirs = frozen
+      final theirs = recorded
           .json<List<Object?>>(
             name,
             inputs: [_harfbuzzjs, bytes, jsonEncode(runs)],

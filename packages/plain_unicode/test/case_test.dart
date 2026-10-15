@@ -2,8 +2,8 @@
 // #downcase for every code point (test/fixtures/ruby_case_mapping.txt,
 // written by tool/ruby_case_mapping.rb), and JavaScript's toUpperCase and
 // toLowerCase (Unicode 17.0 in Node.js 26), Final_Sigma included, whose
-// answers are frozen in test/frozen/case.json (test/support/frozen.dart;
-// FROZEN=record asks Node.js again).
+// answers are recorded in test/oracles/case.json (test/support/oracles.dart;
+// ORACLES=record asks Node.js again).
 @TestOn('vm')
 library;
 
@@ -13,7 +13,7 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 /// The oracle, which its answers depend on.
 const String _node = 'Node.js 26.8.1';
@@ -73,7 +73,7 @@ process.stdout.write(JSON.stringify(samples.map((s) => s.toLowerCase())));
 bool _isScalar(int cp) => cp < 0xd800 || cp > 0xdfff;
 
 void main() {
-  final frozen = Frozen('case');
+  final recorded = Oracle('case');
   test('the Unicode versions', () {
     expect(caseMappingUnicodeVersion, '17.0.0');
     expect(lineBreakUnicodeVersion, '18.0.0');
@@ -121,7 +121,7 @@ void main() {
   test(
     "JavaScript's toUpperCase and toLowerCase (Node.js), every code point",
     () {
-      final mappings = frozen.answer(
+      final mappings = recorded.answer(
         'every code point',
         inputs: [_node, _nodeMappings],
         oracle: () => _runNode(_nodeMappings),
@@ -149,7 +149,7 @@ void main() {
       expect(problems, isEmpty);
       // Final_Sigma in context, against JavaScript.
       const samples = ['ΣΟΦΟΣ ΣΟΦΟΣ.', 'AΣ́ b', 'ÁΣ', "AΣ'B", 'ΑΣ.Σ', '·Σ'];
-      final context = frozen.answer(
+      final context = recorded.answer(
         'Final_Sigma in context',
         inputs: [_node, _nodeLowerCase, jsonEncode(samples)],
         oracle: () => _runNode(_nodeLowerCase, [jsonEncode(samples)]),

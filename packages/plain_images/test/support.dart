@@ -1,4 +1,5 @@
-/// What the tests share: the test images, and ImageMagick as an oracle.
+/// What the tests share: the test images, and ImageMagick as an oracle
+/// (its answers recorded, support/oracles.dart).
 library;
 
 import 'dart:convert';
@@ -6,6 +7,8 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:test/test.dart';
+
+import 'support/oracles.dart';
 
 /// The files of `test/images/<folder>` ending in [extension], by name.
 List<File> testImages(String folder, String extension) =>
@@ -16,22 +19,39 @@ List<File> testImages(String folder, String extension) =>
         .toList()
       ..sort((a, b) => a.path.compareTo(b.path));
 
-/// ImageMagick's command: `magick` (version 7), else `convert` (6), else
-/// null.
-String? magickCommand() {
-  bool has(String tool) =>
-      Process.runSync('sh', ['-c', 'command -v $tool']).exitCode == 0;
-  return has('magick')
-      ? 'magick'
-      : has('convert')
-      ? 'convert'
-      : null;
+/// ImageMagick, which its answers depend on.
+const String magickVersion = 'ImageMagick 7.1.2-31';
+
+/// The mean and the largest difference between [ours] and the first
+/// frame of the image [bytes] as ImageMagick decodes it, both on white,
+/// as recorded for [key].
+(double, int) magickDifference(
+  Oracle recorded,
+  String key,
+  Uint8List bytes,
+  (int, int, Uint8List) ours,
+) {
+  final [mean, max] = recorded.json<List<Object?>>(
+    key,
+    inputs: [magickVersion, bytes, '${ours.$1}x${ours.$2}', ours.$3],
+    oracle: () {
+      final dir = Directory.systemTemp.createTempSync('magick.');
+      try {
+        final file = File('${dir.path}/image')..writeAsBytesSync(bytes);
+        final (mean, max) = difference(ours, magickOnWhite(file.path));
+        return [mean, max];
+      } finally {
+        dir.deleteSync(recursive: true);
+      }
+    },
+  );
+  return ((mean! as num).toDouble(), max! as int);
 }
 
 /// The first frame of the image file at [path] as ImageMagick decodes
 /// it, on its canvas, composited on white: width, height, RGB samples.
-(int, int, Uint8List) magickOnWhite(String magick, String path) {
-  final result = Process.runSync(magick, [
+(int, int, Uint8List) magickOnWhite(String path) {
+  final result = Process.runSync('magick', [
     '$path[0]',
     '-background',
     'white',

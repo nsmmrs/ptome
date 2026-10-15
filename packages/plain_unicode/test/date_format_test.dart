@@ -9,13 +9,13 @@ library;
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
 import 'support/icu_dates.dart';
+import 'support/oracles.dart';
 
-late final Frozen _frozen;
+late final Oracle _recorded;
 
 void main() {
-  _frozen = Frozen('date_format', compressed: true);
+  _recorded = Oracle('date_format', compressed: true);
   final moment = DateTime.utc(2026, 10, 14, 17, 46, 40);
 
   test('everyday languages', () {
@@ -92,7 +92,7 @@ void main() {
   });
 
   test("every locale as ICU 78.3's", () {
-    final locales = icuDateLocales(_frozen);
+    final locales = icuDateLocales(_recorded);
     expect(locales.length, greaterThan(300));
     // (Midnight, early morning, noon, afternoon and evening; zones from
     // UTC, ahead and behind, by whole and part hours.)
@@ -127,7 +127,7 @@ void main() {
         }
       }
     }
-    final theirs = icuDates(_frozen, 'gregorian', cases);
+    final theirs = icuDates(_recorded, 'gregorian', cases);
     final differ = <String>[];
     for (final (i, (locale, date, time, m, minutes, _)) in cases.indexed) {
       final offset = Duration(minutes: minutes);
@@ -159,7 +159,7 @@ void main() {
   });
 
   test('the Japanese, Buddhist and ROC calendars as ICU 78.3 writes them', () {
-    final locales = icuDateLocales(_frozen);
+    final locales = icuDateLocales(_recorded);
     // (Each side of the Heisei, Reiwa, Showa and Minguo eras' starts, at
     // noon in Tokyo; and today.)
     final moments = [
@@ -197,7 +197,7 @@ void main() {
               if (locale == home || i == (l + p) % moments.length)
                 (locale, date, time, m, 540, calendar.bcp47Name),
     ];
-    final theirs = icuDates(_frozen, 'Japanese, Buddhist and ROC', cases);
+    final theirs = icuDates(_recorded, 'Japanese, Buddhist and ROC', cases);
     final differ = <String>[];
     for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
       final calendar = CalendarSystem.named(name)!;

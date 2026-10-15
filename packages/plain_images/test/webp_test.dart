@@ -1,8 +1,10 @@
 /// WebP decoded as libwebp's dwebp decodes it, to the byte: the test
 /// images (`tool/make_test_images.sh`; dwebp's output recorded as MD5s),
-/// libwebp's own test data with the MD5s it records
-/// (`tool/fetch_webp_tests.sh`), and seeded random images through cwebp
-/// with random settings (when cwebp and dwebp are installed).
+/// and seeded random images through cwebp with random settings (cwebp's
+/// files and dwebp's MD5s recorded in test/oracles/webp.json.gz by
+/// test/support/oracles.dart; ORACLES=record asks them again). libwebp's
+/// own test data, which has no licence to redistribute it, is checked by
+/// hand: `dart run tool/webp_suite.dart` (tool/fetch_webp_tests.sh).
 @TestOn('vm')
 library;
 
@@ -15,6 +17,8 @@ import 'package:crypto/crypto.dart';
 import 'package:image/image.dart' as img;
 import 'package:plain_images/plain_images.dart';
 import 'package:test/test.dart';
+
+import 'support/oracles.dart';
 
 /// [rgba] (a [width] by [height] image) as dwebp writes a PAM file.
 Uint8List pam(int width, int height, Uint8List rgba) => Uint8List.fromList([
@@ -33,8 +37,32 @@ Map<String, String> md5s(File file) => {
     if (line.split(RegExp(r'\s+')) case [final sum, final name]) name: sum,
 };
 
-bool _has(String tool) =>
-    Process.runSync('sh', ['-c', 'command -v $tool']).exitCode == 0;
+/// libwebp, which its answers depend on.
+const String _libwebp = 'libwebp 1.6.0';
+
+/// What cwebp makes of the PNG [png] with [options], and the MD5 of
+/// dwebp's RGBA decoding of it.
+Map<String, Object?> _cwebpDwebp(Uint8List png, List<String> options) {
+  final dir = Directory.systemTemp.createTempSync('webp.');
+  try {
+    final input = File('${dir.path}/in.png')..writeAsBytesSync(png);
+    final webp = '${dir.path}/out.webp';
+    final result = Process.runSync('cwebp', [
+      '-quiet',
+      ...options,
+      input.path,
+      '-o',
+      webp,
+    ]);
+    if (result.exitCode != 0) throw StateError('${result.stderr}');
+    return {
+      'webp': base64Encode(File(webp).readAsBytesSync()),
+      'md5': md5Of(dwebp(webp)),
+    };
+  } finally {
+    dir.deleteSync(recursive: true);
+  }
+}
 
 /// dwebp's RGBA decoding of the WebP file at [path].
 Uint8List dwebp(String path) {
@@ -52,6 +80,7 @@ Uint8List dwebp(String path) {
 }
 
 void main() {
+  final recorded = Oracle('webp', compressed: true);
   group('test images', () {
     final expected = md5s(File('test/images/webp/expected.md5'));
     for (final MapEntry(key: name, value: sum) in expected.entries) {
@@ -110,121 +139,64 @@ void main() {
     });
   });
 
-  final suite =
-      Platform.environment['WEBP_TESTS'] ??
-      '${Platform.environment['HOME']}/.cache/asciidart-work/libwebp-test-data';
-  final available = Directory(suite).existsSync();
-  test(
-    "libwebp's test data decodes as its MD5s say (or as dwebp does)",
-    () {
-      final sums = md5s(File('$suite/libwebp_tests.md5'));
-      final files =
-          Directory(suite)
-              .listSync()
-              .whereType<File>()
-              .where((f) => f.path.endsWith('.webp'))
-              .toList()
-            ..sort((a, b) => a.path.compareTo(b.path));
-      final withDwebp = _has('dwebp');
-      var checked = 0;
-      for (final file in files) {
-        final name = file.uri.pathSegments.last;
-        final raster = ImageFile.read(file.readAsBytesSync()).decode();
-        final rgba = raster.toRgba8();
-        if (sums['$name.pam'] case final sum?) {
-          expect(
-            md5Of(pam(raster.width, raster.height, rgba)),
-            sum,
-            reason: name,
-          );
-          checked++;
-        } else if (withDwebp) {
-          expect(rgba, dwebp(file.path), reason: name);
-          checked++;
+  test('random images through cwebp, with random settings, as dwebp decodes '
+      'them', () {
+    final random = math.Random(9649);
+    for (var trial = 0; trial < 60; trial++) {
+      final w = 1 + random.nextInt(70);
+      final h = 1 + random.nextInt(50);
+      final alpha = random.nextBool();
+      final image = img.Image(width: w, height: h, numChannels: alpha ? 4 : 3);
+      // Smooth areas and noise, so both prediction and residuals count.
+      for (var y = 0; y < h; y++) {
+        for (var x = 0; x < w; x++) {
+          final noise = random.nextInt(4) == 0;
+          final p = image.getPixel(x, y)
+            ..r = noise ? random.nextInt(256) : (x * 255 ~/ w)
+            ..g = noise ? random.nextInt(256) : (y * 255 ~/ h)
+            ..b = (x ^ y) * 7 & 0xff;
+          if (alpha) p.a = (x * y) % 3 == 0 ? 0 : random.nextInt(256);
         }
       }
-      expect(checked, greaterThanOrEqualTo(96));
-    },
-    skip: available ? false : 'no libwebp test data (tool/fetch_webp_tests.sh)',
-    tags: ['tools'],
-  );
-
-  final tools = _has('cwebp') && _has('dwebp');
-  test(
-    'random images through cwebp, with random settings, as dwebp decodes '
-    'them',
-    () {
-      final random = math.Random(9649);
-      final dir = Directory.systemTemp.createTempSync('webp.');
-      addTearDown(() => dir.deleteSync(recursive: true));
-      for (var trial = 0; trial < 60; trial++) {
-        final w = 1 + random.nextInt(70);
-        final h = 1 + random.nextInt(50);
-        final alpha = random.nextBool();
-        final image = img.Image(
-          width: w,
-          height: h,
-          numChannels: alpha ? 4 : 3,
-        );
-        // Smooth areas and noise, so both prediction and residuals count.
-        for (var y = 0; y < h; y++) {
-          for (var x = 0; x < w; x++) {
-            final noise = random.nextInt(4) == 0;
-            final p = image.getPixel(x, y)
-              ..r = noise ? random.nextInt(256) : (x * 255 ~/ w)
-              ..g = noise ? random.nextInt(256) : (y * 255 ~/ h)
-              ..b = (x ^ y) * 7 & 0xff;
-            if (alpha) p.a = (x * y) % 3 == 0 ? 0 : random.nextInt(256);
-          }
-        }
-        final png = File('${dir.path}/$trial.png')
-          ..writeAsBytesSync(img.encodePng(image));
-        final options = random.nextInt(3) == 0
-            ? ['-lossless', '-z', '${random.nextInt(10)}', '-exact']
-            : [
-                '-q',
+      final png = img.encodePng(image);
+      final options = random.nextInt(3) == 0
+          ? ['-lossless', '-z', '${random.nextInt(10)}', '-exact']
+          : [
+              '-q',
+              '${random.nextInt(101)}',
+              '-sns',
+              '${random.nextInt(101)}',
+              '-f',
+              '${random.nextInt(101)}',
+              '-sharpness',
+              '${random.nextInt(8)}',
+              '-segments',
+              '${1 + random.nextInt(4)}',
+              '-partition_limit',
+              '${random.nextInt(101)}',
+              if (random.nextBool()) '-sharp_yuv',
+              if (random.nextBool()) ...['-af'],
+              if (alpha) ...[
+                '-alpha_q',
                 '${random.nextInt(101)}',
-                '-sns',
-                '${random.nextInt(101)}',
-                '-f',
-                '${random.nextInt(101)}',
-                '-sharpness',
-                '${random.nextInt(8)}',
-                '-segments',
-                '${1 + random.nextInt(4)}',
-                '-partition_limit',
-                '${random.nextInt(101)}',
-                if (random.nextBool()) '-sharp_yuv',
-                if (random.nextBool()) ...['-af'],
-                if (alpha) ...[
-                  '-alpha_q',
-                  '${random.nextInt(101)}',
-                  '-alpha_filter',
-                  ['none', 'fast', 'best'][random.nextInt(3)],
-                  '-alpha_method',
-                  '${random.nextInt(2)}',
-                ],
-              ];
-        final webp = '${dir.path}/$trial.webp';
-        final result = Process.runSync('cwebp', [
-          '-quiet',
-          ...options,
-          png.path,
-          '-o',
-          webp,
-        ]);
-        expect(result.exitCode, 0, reason: '${result.stderr}');
-        final ours = ImageFile.read(File(webp).readAsBytesSync())
-            .decode()
-            .toRgba8();
-        expect(
-          ours,
-          dwebp(webp),
-          reason: 'trial $trial: ${w}x$h ${options.join(' ')}',
-        );
-      }
-    },
-    skip: tools ? false : 'needs cwebp and dwebp',
-    tags: ['tools'],
-  );
+                '-alpha_filter',
+                ['none', 'fast', 'best'][random.nextInt(3)],
+                '-alpha_method',
+                '${random.nextInt(2)}',
+              ],
+            ];
+      final theirs = recorded.json<Map<String, Object?>>(
+        'trial $trial',
+        inputs: [_libwebp, png, ...options],
+        oracle: () => _cwebpDwebp(png, options),
+      );
+      final webp = base64Decode(theirs['webp']! as String);
+      final ours = ImageFile.read(webp).decode().toRgba8();
+      expect(
+        md5Of(ours),
+        theirs['md5'],
+        reason: 'trial $trial: ${w}x$h ${options.join(' ')}',
+      );
+    }
+  });
 }

@@ -1,9 +1,9 @@
 /// Every test image decoded and compared with ImageMagick's decoding of
 /// it, both composited on white: PngSuite, the GIF and BMP images
 /// `tool/make_test_images.sh` makes, bmpsuite's good BMP files, and the
-/// valid GIF files of imazen's GIF conformance suite.
-/// Skipped without ImageMagick.
-@Tags(['tools'])
+/// valid GIF files of imazen's GIF conformance suite. ImageMagick's
+/// answers are recorded in test/oracles/decode.json.gz
+/// (test/support/oracles.dart; ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -14,9 +14,10 @@ import 'package:plain_images/plain_images.dart';
 import 'package:test/test.dart';
 
 import 'support.dart';
+import 'support/oracles.dart';
 
 void main() {
-  final magick = magickCommand();
+  final recorded = Oracle('decode', compressed: true);
   for (final (folder, extension) in [
     ('pngsuite', '.png'),
     ('gif', '.gif'),
@@ -36,13 +37,15 @@ void main() {
         if (name.startsWith('argb')) continue;
         test('$name decodes as ImageMagick decodes it', () {
           final raster = ImageFile.read(file.readAsBytesSync()).decode();
-          final (mean, max) = difference(
+          final (mean, max) = magickDifference(
+            recorded,
+            '$folder/$name',
+            file.readAsBytesSync(),
             onWhite(raster.width, raster.height, raster.toRgba8()),
-            magickOnWhite(magick!, file.path),
           );
           expect(mean, lessThan(0.5), reason: 'mean difference');
           expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
-        }, skip: magick == null ? 'needs ImageMagick' : false);
+        });
       }
     });
   }

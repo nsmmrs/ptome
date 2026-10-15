@@ -3,8 +3,8 @@
 // advances and the same mark offsets, in the subset Noto fonts fonts.txt
 // lists (tool/subset_test_fonts.dart makes them). The oracle is a full
 // HarfBuzz build (tool/oracles/harfbuzz-native/setup.sh); its answers are
-// frozen in test/frozen/harfbuzz_scripts.json (test/support/frozen.dart;
-// FROZEN=record asks it again).
+// recorded in test/oracles/harfbuzz_scripts.json (test/support/oracles.dart;
+// ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -16,18 +16,18 @@ import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart' show shapeText;
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 
 /// The oracle, which its answers depend on.
 const String _oracle = 'HarfBuzz 14.6.0';
 
-late final Frozen _frozen;
+late final Oracle _recorded;
 const String _fixtures = 'test/fixtures/scripts';
 
 void main() {
-  _frozen = Frozen('harfbuzz_scripts');
+  _recorded = Oracle('harfbuzz_scripts');
   for (final entry in File('$_fixtures/fonts.txt').readAsLinesSync()) {
     if (entry.startsWith('#') || entry.trim().isEmpty) continue;
     final [font, _, files, direction] = [
@@ -243,7 +243,7 @@ List<List<Object?>> harfbuzz(
   String font,
   List<String> lines, {
   Set<String> features = const {},
-}) => _frozen
+}) => _recorded
     .json<List<Object?>>(
       key,
       inputs: [

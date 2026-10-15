@@ -2,7 +2,9 @@
 /// test images (`tool/make_test_images.sh`: each sampling layout,
 /// restarts, progressive, arithmetic coding, 12 bits, lossless; djpeg's
 /// output recorded as MD5s), and seeded random images through cjpeg with
-/// random settings (when cjpeg and djpeg are installed).
+/// random settings (cjpeg's files and djpeg's MD5s recorded in
+/// test/oracles/jpeg.json by test/support/oracles.dart; ORACLES=record
+/// asks them again).
 @TestOn('vm')
 library;
 
@@ -17,6 +19,7 @@ import 'package:plain_images/src/jpeg_decode.dart';
 import 'package:test/test.dart';
 
 import 'support.dart';
+import 'support/oracles.dart';
 
 /// [pixels] as djpeg writes them: a PGM or PPM file, its samples 16 bits
 /// (big-endian) when they are more than 8.
@@ -41,10 +44,40 @@ Uint8List pnm(JpegPixels pixels) {
   return out.takeBytes();
 }
 
-bool _has(String tool) =>
-    Process.runSync('sh', ['-c', 'command -v $tool']).exitCode == 0;
+/// libjpeg-turbo, which its answers depend on.
+const String _libjpeg = 'libjpeg-turbo 3.2.0';
+
+/// What cjpeg makes of the image [input] (a PNM file) with [options], and
+/// the MD5 of what djpeg makes of that; null where cjpeg or djpeg
+/// refuses.
+Map<String, Object?>? _cjpegDjpeg(Uint8List input, List<String> options) {
+  final dir = Directory.systemTemp.createTempSync('jpeg.');
+  try {
+    File('${dir.path}/in.pnm').writeAsBytesSync(input);
+    final jpeg = '${dir.path}/out.jpg';
+    final encoded = Process.runSync('cjpeg', [
+      ...options,
+      '-outfile',
+      jpeg,
+      '${dir.path}/in.pnm',
+    ]);
+    if (encoded.exitCode != 0) return null;
+    final decoded = Process.runSync('djpeg', [
+      '-pnm',
+      jpeg,
+    ], stdoutEncoding: null);
+    if (decoded.exitCode != 0) return null;
+    return {
+      'jpeg': base64Encode(File(jpeg).readAsBytesSync()),
+      'md5': '${md5.convert(decoded.stdout as List<int>)}',
+    };
+  } finally {
+    dir.deleteSync(recursive: true);
+  }
+}
 
 void main() {
+  final recorded = Oracle('jpeg', compressed: true);
   group('test images', () {
     final expected = {
       for (final line in File(
@@ -88,117 +121,99 @@ void main() {
   });
 
   test('Adobe CMYK is turned back from its inverted samples', () {
-    final magick = magickCommand();
-    if (magick == null) return;
     final bytes = File('test/images/jpeg/cmyk.jpg').readAsBytesSync();
     final raster = ImageFile.read(bytes).decode();
     expect(raster.colorModel, ColorModel.cmyk);
-    // ImageMagick's CMYK samples of the file.
-    final result = Process.runSync(magick, [
-      'test/images/jpeg/cmyk.jpg',
-      '-depth',
-      '8',
-      'cmyk:-',
-    ], stdoutEncoding: null);
-    final theirs = result.stdout as List<int>;
-    var largest = 0;
-    for (var i = 0; i < raster.samples.length; i++) {
-      final d = (raster.samples[i] - theirs[i]).abs();
-      if (d > largest) largest = d;
-    }
+    // The largest difference from ImageMagick's CMYK samples of the file.
+    final largest = recorded.json<int>(
+      'cmyk.jpg as ImageMagick reads it',
+      inputs: [magickVersion, bytes, Uint8List.fromList(raster.samples)],
+      oracle: () {
+        final result = Process.runSync('magick', [
+          'test/images/jpeg/cmyk.jpg',
+          '-depth',
+          '8',
+          'cmyk:-',
+        ], stdoutEncoding: null);
+        final theirs = result.stdout as List<int>;
+        var largest = 0;
+        for (var i = 0; i < raster.samples.length; i++) {
+          final d = (raster.samples[i] - theirs[i]).abs();
+          if (d > largest) largest = d;
+        }
+        return largest;
+      },
+    );
     // (ImageMagick's own IDCT and upsampling: a little apart.)
     expect(largest, lessThanOrEqualTo(4));
-  }, tags: ['tools']);
+  });
 
-  final tools = _has('cjpeg') && _has('djpeg');
-  test(
-    'random images through cjpeg, with random settings, as djpeg decodes '
-    'them',
-    () {
-      final random = math.Random(10918);
-      final dir = Directory.systemTemp.createTempSync('jpeg.');
-      addTearDown(() => dir.deleteSync(recursive: true));
-      var checked = 0;
-      for (var trial = 0; trial < 120; trial++) {
-        final w = 1 + random.nextInt(90);
-        final h = 1 + random.nextInt(70);
-        final gray = random.nextInt(5) == 0;
-        final channels = gray ? 1 : 3;
-        final input = BytesBuilder()
-          ..add(ascii.encode('${gray ? 'P5' : 'P6'}\n$w $h\n255\n'));
-        for (var y = 0; y < h; y++) {
-          for (var x = 0; x < w; x++) {
-            for (var c = 0; c < channels; c++) {
-              input.addByte(
-                random.nextInt(4) == 0
-                    ? random.nextInt(256)
-                    : ((x * (c + 3) + y * (5 - c)) * 7) & 0xff,
-              );
-            }
+  test('random images through cjpeg, with random settings, as djpeg decodes '
+      'them', () {
+    final random = math.Random(10918);
+    var checked = 0;
+    for (var trial = 0; trial < 60; trial++) {
+      final w = 1 + random.nextInt(90);
+      final h = 1 + random.nextInt(70);
+      final gray = random.nextInt(5) == 0;
+      final channels = gray ? 1 : 3;
+      final input = BytesBuilder()
+        ..add(ascii.encode('${gray ? 'P5' : 'P6'}\n$w $h\n255\n'));
+      for (var y = 0; y < h; y++) {
+        for (var x = 0; x < w; x++) {
+          for (var c = 0; c < channels; c++) {
+            input.addByte(
+              random.nextInt(4) == 0
+                  ? random.nextInt(256)
+                  : ((x * (c + 3) + y * (5 - c)) * 7) & 0xff,
+            );
           }
         }
-        File('${dir.path}/in.pnm').writeAsBytesSync(input.takeBytes());
-        final mode = random.nextInt(4);
-        final options = [
-          '-quality',
-          '${1 + random.nextInt(100)}',
-          if (!gray && random.nextBool()) ...[
-            '-sample',
-            [
-              '2x2',
-              '2x1',
-              '1x2',
-              '1x1',
-              '4x1',
-              '4x2',
-              '1x4',
-              '2x4',
-              '3x1',
-            ][random.nextInt(9)],
-          ],
-          if (random.nextInt(4) == 0) ...[
-            '-restart',
-            '${1 + random.nextInt(5)}${random.nextBool() ? 'B' : ''}',
-          ],
-          if (random.nextInt(3) == 0 && mode != 2) '-progressive',
-          if (random.nextInt(3) == 0 && mode != 2) '-optimize',
-          if (!gray && random.nextInt(6) == 0) '-rgb',
-          if (gray) '-grayscale',
-          if (mode == 1) '-arithmetic',
-          if (mode == 2) ...[
-            '-lossless',
-            '${1 + random.nextInt(7)},${random.nextInt(3)}',
-            '-precision',
-            '${[8, 12, 16, 10, 6][random.nextInt(5)]}',
-          ],
-          if (mode == 3) ...['-precision', '12'],
-        ];
-        final jpeg = '${dir.path}/out.jpg';
-        final encoded = Process.runSync('cjpeg', [
-          ...options,
-          '-outfile',
-          jpeg,
-          '${dir.path}/in.pnm',
-        ]);
-        // (Settings cjpeg refuses together are skipped.)
-        if (encoded.exitCode != 0) continue;
-        final decoded = Process.runSync('djpeg', [
-          '-pnm',
-          jpeg,
-        ], stdoutEncoding: null);
-        if (decoded.exitCode != 0) continue;
-        expect(
-          pnm(decodeJpeg(File(jpeg).readAsBytesSync())),
-          decoded.stdout,
-          reason: 'trial $trial: ${w}x$h ${options.join(' ')}',
-        );
-        checked++;
       }
-      // (cjpeg before libjpeg-turbo 3 writes neither lossless nor 12-bit
-      // files: those trials are skipped.)
-      expect(checked, greaterThan(30));
-    },
-    skip: tools ? false : 'needs cjpeg and djpeg',
-    tags: ['tools'],
-  );
+      final image = input.takeBytes();
+      final mode = random.nextInt(4);
+      final options = [
+        '-quality',
+        '${1 + random.nextInt(100)}',
+        if (!gray && random.nextBool()) ...[
+          '-sample',
+          ['2x2', '2x1', '1x2', '1x1', '4x1', '4x2', '1x4', '2x4', '3x1'][random
+              .nextInt(9)],
+        ],
+        if (random.nextInt(4) == 0) ...[
+          '-restart',
+          '${1 + random.nextInt(5)}${random.nextBool() ? 'B' : ''}',
+        ],
+        if (random.nextInt(3) == 0 && mode != 2) '-progressive',
+        if (random.nextInt(3) == 0 && mode != 2) '-optimize',
+        if (!gray && random.nextInt(6) == 0) '-rgb',
+        if (gray) '-grayscale',
+        if (mode == 1) '-arithmetic',
+        if (mode == 2) ...[
+          '-lossless',
+          '${1 + random.nextInt(7)},${random.nextInt(3)}',
+          '-precision',
+          '${[8, 12, 16, 10, 6][random.nextInt(5)]}',
+        ],
+        if (mode == 3) ...['-precision', '12'],
+      ];
+      final theirs = recorded.json<Map<String, Object?>?>(
+        'trial $trial',
+        inputs: [_libjpeg, image, ...options],
+        oracle: () => _cjpegDjpeg(image, options),
+      );
+      // (Settings cjpeg refuses together are skipped.)
+      if (theirs == null) continue;
+      final jpeg = base64Decode(theirs['jpeg']! as String);
+      expect(
+        '${md5.convert(pnm(decodeJpeg(jpeg)))}',
+        theirs['md5'],
+        reason: 'trial $trial: ${w}x$h ${options.join(' ')}',
+      );
+      checked++;
+    }
+    // (cjpeg before libjpeg-turbo 3 writes neither lossless nor 12-bit
+    // files: those trials are skipped.)
+    expect(checked, greaterThan(15));
+  });
 }

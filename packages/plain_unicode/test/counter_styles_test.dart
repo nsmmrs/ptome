@@ -3,8 +3,8 @@
 // examples), every style against WeasyPrint's counter() and list markers
 // (tool/oracles/weasyprint: its own definitions for CSS's predefined
 // styles, the vendored rules for the Ready-made ones, read from its
-// laid-out boxes; its answers frozen in test/frozen/counter_styles.json.gz,
-// test/support/frozen.dart, FROZEN=record asking it again), and the
+// laid-out boxes; its answers recorded in test/oracles/counter_styles.json.gz,
+// test/support/oracles.dart, ORACLES=record asking it again), and the
 // default numbering systems CLDR gives languages.
 @TestOn('vm')
 library;
@@ -15,7 +15,7 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 /// The oracle, which its answers depend on.
 const String _weasyprint = 'WeasyPrint 70.0';
@@ -144,7 +144,7 @@ void main() {
     expect(numberingSystemDigits('hanidec'), '〇一二三四五六七八九');
   });
 
-  final frozen = Frozen('counter_styles', compressed: true);
+  final recorded = Oracle('counter_styles', compressed: true);
   test("every style as WeasyPrint's counter() and markers write it", () {
     const values = [
       -3, 0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, //
@@ -199,7 +199,7 @@ void main() {
       'styles': styles,
       'values': values,
     });
-    final theirs = frozen.json<List<Object?>>(
+    final theirs = recorded.json<List<Object?>>(
       'every style',
       inputs: [
         _weasyprint,

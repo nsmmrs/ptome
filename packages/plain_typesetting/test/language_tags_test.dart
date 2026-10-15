@@ -1,8 +1,8 @@
 // BCP 47 language tags to OpenType language system tags, as HarfBuzz maps
 // them: every language and rule of its tables, with scripts, regions,
 // extended languages, variants and private use, against the native oracle
-// (its answers frozen in test/frozen/language_tags.json.gz,
-// test/support/frozen.dart; FROZEN=record asks it again).
+// (its answers recorded in test/oracles/language_tags.json.gz,
+// test/support/oracles.dart; ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -13,7 +13,7 @@ import 'package:plain_typesetting/src/shaping/language_tags.dart';
 import 'package:plain_typesetting/src/shaping/shape.dart' show shapeText;
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 
@@ -76,7 +76,7 @@ List<String> _corpus() {
 }
 
 void main() {
-  final frozen = Frozen('language_tags', compressed: true);
+  final recorded = Oracle('language_tags', compressed: true);
   test('everyday tags', () {
     expect(openTypeLanguageTags('ja'), ['JAN ']);
     expect(openTypeLanguageTags('zh-Hans'), ['ZHS ']);
@@ -110,7 +110,7 @@ void main() {
 
   test('every table entry and rule maps as HarfBuzz maps it', () {
     final corpus = _corpus();
-    final theirs = frozen
+    final theirs = recorded
         .json<List<Object?>>(
           'language tags',
           inputs: [_oracle, ...corpus],

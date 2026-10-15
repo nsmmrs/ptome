@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# The packages' copies of test/support/frozen.dart (the oracles' frozen
-# answers) are one file: each must be the same as the first.
+# The packages' copies of test/support/oracles.dart (the oracles'
+# recorded answers) are one file: each must be the same as the first.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-copies=(packages/*/test/support/frozen.dart)
+copies=(packages/*/test/support/oracles.dart)
 status=0
 for copy in "${copies[@]:1}"; do
   cmp -s "${copies[0]}" "$copy" || {

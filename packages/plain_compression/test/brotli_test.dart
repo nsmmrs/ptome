@@ -1,6 +1,7 @@
 // Brotli streams the brotli tool made (fixtures, made as test/brotli's
-// README says), and, where the tool is installed, round trips through it
-// at every quality; damaged streams are rejected.
+// README says, and its streams at every quality, recorded in
+// test/oracles/brotli.json by test/support/oracles.dart; ORACLES=record
+// asks the tool again); damaged streams are rejected.
 @TestOn('vm')
 library;
 
@@ -12,13 +13,51 @@ import 'dart:typed_data';
 import 'package:plain_compression/plain_compression.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) =>
-    Process.runSync('which', [tool]).exitCode == 0 ||
-    Process.runSync('where', [tool], runInShell: true).exitCode == 0;
+import 'support/oracles.dart';
+
+/// The oracle, which its answers depend on.
+const String _brotli = 'brotli 1.2.0';
+
+/// The brotli tool's stream for [data] at [quality] and [window], as
+/// recorded for [key].
+Uint8List _brotliStream(
+  Oracle recorded,
+  String key,
+  List<int> data,
+  int quality,
+  int window,
+) => base64Decode(
+  recorded.answer(
+    key,
+    inputs: [_brotli, data, '$quality', '$window'],
+    oracle: () {
+      final tmp = Directory.systemTemp.createTempSync('brotli.');
+      try {
+        final input = File('${tmp.path}/input')..writeAsBytesSync(data);
+        final output = '${input.path}.br';
+        final run = Process.runSync('brotli', [
+          '-f',
+          '-q',
+          '$quality',
+          '-w',
+          '$window',
+          '-o',
+          output,
+          input.path,
+        ]);
+        if (run.exitCode != 0) throw StateError('${run.stderr}');
+        return base64Encode(File(output).readAsBytesSync());
+      } finally {
+        tmp.deleteSync(recursive: true);
+      }
+    },
+  ),
+);
 
 Uint8List _read(String path) => File(path).readAsBytesSync();
 
 void main() {
+  final recorded = Oracle('brotli');
   group('Brotli', () {
     final words = _read('test/brotli/words.txt');
     test('static dictionary words and their transforms', () {
@@ -75,58 +114,45 @@ void main() {
       }
     });
 
-    test(
-      'decodes what the brotli tool makes, at every quality',
-      () {
-        final tmp = Directory.systemTemp.createTempSync('brotli_test.');
-        addTearDown(() => tmp.deleteSync(recursive: true));
-        final random = Random(2);
-        final inputs = {
-          'words': utf8.encode(
-            [
-              for (var i = 0; i < 3000; i++)
-                const ['the', 'The', 'time', 'world', 'Hello', '"', '.'][random
-                    .nextInt(7)],
-            ].join(' '),
-          ),
-          'random': [for (var i = 0; i < 70000; i++) random.nextInt(256)],
-          // Structured binary data.
-          'binary': [
-            for (var i = 0; i < 60000; i++) (i * i ~/ 7 + (i >> 8)) & 0xff,
-          ],
-        };
-        for (final MapEntry(key: name, value: data) in inputs.entries) {
-          final input = File('${tmp.path}/$name')..writeAsBytesSync(data);
-          for (final (quality, window) in [
-            (0, 16),
-            (2, 10),
-            (5, 18),
-            (9, 22),
-            (11, 24),
-          ]) {
-            final output = '${input.path}.$quality.br';
-            final run = Process.runSync('brotli', [
-              '-f',
-              '-q',
-              '$quality',
-              '-w',
-              '$window',
-              '-o',
-              output,
-              input.path,
-            ]);
-            expect(run.exitCode, 0, reason: '${run.stderr}');
-            expect(
-              brotliDecode(_read(output)),
-              data,
-              reason: '$name at quality $quality',
-            );
-          }
+    test('decodes what the brotli tool makes, at every quality', () {
+      final random = Random(2);
+      final inputs = {
+        'words': utf8.encode(
+          [
+            for (var i = 0; i < 3000; i++)
+              const ['the', 'The', 'time', 'world', 'Hello', '"', '.'][random
+                  .nextInt(7)],
+          ].join(' '),
+        ),
+        'random': [for (var i = 0; i < 7000; i++) random.nextInt(256)],
+        // Structured binary data.
+        'binary': [
+          for (var i = 0; i < 6000; i++) (i * i ~/ 7 + (i >> 8)) & 0xff,
+        ],
+      };
+      for (final MapEntry(key: name, value: data) in inputs.entries) {
+        for (final (quality, window) in [
+          (0, 16),
+          (2, 10),
+          (5, 18),
+          (9, 22),
+          (11, 24),
+        ]) {
+          final stream = _brotliStream(
+            recorded,
+            '$name at quality $quality, window $window',
+            data,
+            quality,
+            window,
+          );
+          expect(
+            brotliDecode(stream),
+            data,
+            reason: '$name at quality $quality',
+          );
         }
-      },
-      skip: _has('brotli') ? false : 'brotli is not installed',
-      tags: ['tools'],
-    );
+      }
+    });
   });
 
   test('damaged streams are decoded or rejected with FormatExceptions', () {

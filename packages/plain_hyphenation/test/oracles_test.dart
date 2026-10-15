@@ -1,9 +1,10 @@
 // plain_hyphenation against other hyphenators of the same hyph-utf8
 // patterns, over the words of the Universal Declaration of Human Rights in
 // 19 languages (test/fixtures/words): Hyphenopoly (JavaScript and
-// WebAssembly). The oracle is installed by tool/oracles/setup.sh; the test
-// is skipped where it isn't. (pub.dev's hyphenation package is another,
-// test/hyphenation_package_test.dart.)
+// WebAssembly), installed by tool/oracles/setup.sh, its answers recorded
+// in test/oracles/hyphenopoly.json (test/support/oracles.dart;
+// ORACLES=record asks it again). (pub.dev's hyphenation package is
+// another, test/hyphenation_package_test.dart.)
 //
 // The implementations ship patterns from different tex-hyphen revisions
 // and have quirks of their own, so a word may differ for reasons that
@@ -11,7 +12,6 @@
 // Hyphenopoly agrees with every word in 13 languages. The test holds each
 // language to that agreement and prints the words that differ.
 @TestOn('vm')
-@Tags(['tools'])
 library;
 
 import 'dart:convert';
@@ -21,7 +21,12 @@ import 'package:plain_hyphenation/plain_hyphenation.dart';
 import 'package:plain_hyphenation/src/patterns.g.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+
 const String _hyphenopoly = 'tool/oracles/hyphenopoly/hyphenate.mjs';
+
+/// The oracle, which its answers depend on.
+const String _version = 'Hyphenopoly 6.0.0';
 
 /// Each language's tag, its Hyphenopoly code, and the lowest agreement
 /// with it, as a fraction.
@@ -62,7 +67,7 @@ String _ours(PatternHyphenator h, String word) {
 }
 
 void main() {
-  final ready = Directory('tool/oracles/hyphenopoly/node_modules').existsSync();
+  final recorded = Oracle('hyphenopoly');
   for (final (tag, hyphenopolyCode, hyphenopolyMin) in _languages) {
     test('$tag agrees with Hyphenopoly', () {
       final words = File('test/fixtures/words/$tag.txt')
@@ -72,18 +77,21 @@ void main() {
       final (left, right, _, _, _, _, _) = hyphenationPatterns[tag]!;
       final ours = [for (final w in words) _ours(hyphenatorFor(tag)!, w)];
 
-      final hyphenopolyOut = (jsonDecode(
-        _withInput(
-          'node',
-          [_hyphenopoly],
-          jsonEncode({
-            'lang': hyphenopolyCode,
-            'left': left,
-            'right': right,
-            'words': words,
-          }),
-        ),
-      ) as List<Object?>).cast<String>();
+      final input = jsonEncode({
+        'lang': hyphenopolyCode,
+        'left': left,
+        'right': right,
+        'words': words,
+      });
+      final hyphenopolyOut = recorded
+          .json<List<Object?>>(
+            tag,
+            inputs: [_version, input],
+            oracle: () =>
+                jsonDecode(_withInput('node', [_hyphenopoly], input))
+                    as List<Object?>,
+          )
+          .cast<String>();
 
       double agreement(List<String> other, String name) {
         var same = 0;
@@ -110,7 +118,7 @@ void main() {
         agreement(hyphenopolyOut, 'Hyphenopoly'),
         greaterThanOrEqualTo(hyphenopolyMin),
       );
-    }, skip: ready ? false : 'run tool/oracles/setup.sh to install the oracle');
+    });
   }
 }
 

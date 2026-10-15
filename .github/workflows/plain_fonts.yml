@@ -45,16 +45,3 @@ jobs:
         grep -qx 'passed over web fonts before loading: true' <<<"$out"
         grep -qx 'notoserif-features.woff2: Noto Serif' <<<"$out"
         grep -qx 'libertinus-smcp.otf: Libertinus Serif' <<<"$out"
-  tools:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Set up Dart
-      uses: dart-lang/setup-dart@v1
-    - name: Install Dart dependencies
-      run: dart pub get
-    - name: Install woff2
-      run: sudo apt-get update -q && sudo apt-get install -yq woff2
-    - name: Run the tests that check against woff2_compress and woff2_decompress
-      run: dart test --tags tools

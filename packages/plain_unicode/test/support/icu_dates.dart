@@ -1,6 +1,6 @@
 /// The ICU 78.3 date oracle (tool/oracles/icu/icudate) and what the date
 /// tests share: the locales to compare, ICU's text for a batch of cases
-/// (its answers frozen, frozen.dart), and the one way ICU's resolution may
+/// (its answers recorded, oracles.dart), and the one way ICU's resolution may
 /// differ from LDML's.
 library;
 
@@ -9,7 +9,7 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:plain_unicode/src/quotation_marks.dart' show cldrParent;
 
-import 'frozen.dart';
+import 'oracles.dart';
 
 const String icuDateOracle = 'tool/oracles/icu/icudate';
 
@@ -48,7 +48,7 @@ bool _covered(String locale) {
 
 /// The covered locales CLDR has calendar data for and ICU's data has
 /// (it falls back otherwise).
-List<String> icuDateLocales(Frozen frozen) {
+List<String> icuDateLocales(Oracle recorded) {
   final locales = {
     for (final line in File(
       'vendor/cldr/48.2.0/calendars.tsv',
@@ -58,7 +58,7 @@ List<String> icuDateLocales(Frozen frozen) {
           line.split('\t')[1].startsWith('gregorian/'))
         line.split('\t').first,
   }.where((l) => l != 'root' && _covered(l)).toList();
-  final present = frozen
+  final present = recorded
       .answer(
         'the locales ICU has',
         inputs: [_version, ...locales],
@@ -146,7 +146,7 @@ final List<List<String>> _calendarLines = [
 /// What ICU writes for each of [cases] (a locale, a date and a time
 /// style, a moment, an offset in minutes, a calendar's BCP 47 name).
 List<String> icuDates(
-  Frozen frozen,
+  Oracle recorded,
   String key,
   List<(String, DateStyle?, DateStyle?, DateTime, int, String)> cases,
 ) {
@@ -157,7 +157,7 @@ List<String> icuDates(
             '${c.$4.millisecondsSinceEpoch}\t${c.$5}\t${c.$6}',
       )
       .join('\n');
-  return frozen
+  return recorded
       .answer(
         key,
         inputs: [_version, input],

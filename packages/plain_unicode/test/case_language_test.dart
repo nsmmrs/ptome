@@ -1,7 +1,7 @@
 // Case mapping tailored by language (SpecialCasing.txt): Turkish and Azeri
 // dotted and dotless i, Lithuanian's dot above, against ICU's (its
-// answers frozen in test/frozen/case_language.json, test/support/frozen.dart;
-// FROZEN=record asks it again).
+// answers recorded in test/oracles/case_language.json, test/support/oracles.dart;
+// ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -12,7 +12,7 @@ import 'dart:math';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _icu = 'tool/oracles/icu/icucase';
 
@@ -20,7 +20,7 @@ const String _icu = 'tool/oracles/icu/icucase';
 const String _version = 'ICU 78.3';
 
 void main() {
-  final frozen = Frozen('case_language');
+  final recorded = Oracle('case_language');
   test('Turkish and Azeri i', () {
     expect(upperCase('istanbul', language: 'tr'), 'İSTANBUL');
     expect(lowerCase('ISTANBUL', language: 'tr'), 'ıstanbul');
@@ -80,7 +80,7 @@ void main() {
       }
     }
     final input = [for (final (l, m, t) in lines) '$l\t$m\t$t'];
-    final theirs = frozen
+    final theirs = recorded
         .answer(
           'languages',
           inputs: [_version, ...input],

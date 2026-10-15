@@ -1,6 +1,7 @@
 // The LaTeX converter against Temml 0.14.0 and KaTeX 0.19.0
-// (tool/oracles/latex, installed by tool/oracles/setup.sh; the tests are
-// skipped where they aren't), over the LaTeX of Temml's screen tests
+// (tool/oracles/latex, installed by tool/oracles/setup.sh; their answers
+// recorded in test/oracles/latex.json.gz by test/support/oracles.dart,
+// ORACLES=record asking them again), over the LaTeX of Temml's screen tests
 // (test/fixtures/temml): the examples of KaTeX's screenshotter, the Mozilla
 // MathML torture test and LaTeXML's.
 //
@@ -15,7 +16,6 @@
 // (`Č` as `Cˇ`, `ö` as `o` and U+0308). The tests hold those counts and
 // print what differs, and the commands the converter doesn't know.
 @TestOn('vm')
-@Tags(['tools'])
 library;
 
 import 'dart:convert';
@@ -24,7 +24,12 @@ import 'dart:io';
 import 'package:plain_math/plain_math.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+
 const String _render = 'tool/oracles/latex/render.mjs';
+
+/// The oracles, which their answers depend on.
+const String _versions = 'Temml 0.14.0, KaTeX 0.19.0';
 
 /// Each engine, with the number of known expressions that must read the
 /// same.
@@ -117,15 +122,22 @@ String _normalized(MathNode node) {
 }
 
 void main() {
-  final ready = Directory('tool/oracles/latex/node_modules').existsSync();
+  final recorded = Oracle('latex', compressed: true);
   final expressions = (jsonDecode(
     File('test/fixtures/temml/expressions.json').readAsStringSync(),
   ) as List<Object?>).cast<Map<String, Object?>>();
   for (final MapEntry(key: engine, value: minimum) in _engines.entries) {
     test("$engine, over Temml's screen tests", () {
-      final theirs = _mathml(engine.toLowerCase(), [
+      final inputs = [
         for (final e in expressions) {'tex': e['tex'], 'display': e['display']},
-      ]);
+      ];
+      final theirs = recorded
+          .json<List<Object?>>(
+            engine,
+            inputs: [_versions, engine, jsonEncode(inputs)],
+            oracle: () => _mathml(engine.toLowerCase(), inputs),
+          )
+          .cast<Map<String, Object?>>();
       var known = 0;
       var same = 0;
       final unknownCommands = <String, int>{};
@@ -170,7 +182,7 @@ void main() {
       );
       expect(known, greaterThanOrEqualTo(137));
       expect(same, greaterThanOrEqualTo(minimum));
-    }, skip: ready ? false : 'run tool/oracles/setup.sh to install them');
+    });
   }
 }
 

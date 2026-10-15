@@ -47,7 +47,11 @@ data and the VP8 conformance vectors, and random cwebp files),
 libjpeg-turbo (cjpeg's files of every kind, random ones too), libtiff
 (tiffcp's compressions and layouts, its test images), against
 package:image on seeded random files, and with damaged files;
-the same results compiled to JavaScript as on the Dart VM.
+the same results compiled to JavaScript as on the Dart VM. The tools'
+answers are recorded in `test/oracles`, so the tests need none of them
+installed (`ORACLES=record dart test` asks them again); libwebp's test
+data, which may not be redistributed, is checked by hand
+(`tool/webp_suite.dart`).
 
 [plain_pdf](https://github.com/nsmmrs/ptome/tree/master/packages/plain_pdf)
 embeds any image plain_images reads. The library lives in the

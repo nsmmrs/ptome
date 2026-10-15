@@ -1,0 +1,266 @@
+{
+  "32bpp-None-jpeg.tiff": {
+    "inputs": "f75c5841b70c9161e9ecb3f3cce8f49e6b70b4c3217f08879b3d31edd265f215",
+    "answer": "0"
+  },
+  "32bpp-None.tiff": {
+    "inputs": "70e1345ee186a15ded2bddbd6c2c8a0a8b8b4b0b34dd98e993e9028cc82ee687",
+    "answer": "0"
+  },
+  "bw.tif": {
+    "inputs": "836fb0f79c00c76a63b019af9b46115e32de7d7936b221619bac015c544eda5a",
+    "answer": "[0.0,0]"
+  },
+  "cmyk8.tif": {
+    "inputs": "c637ff1e3b90e8202a1d800ae8431458ebfcf8dc25a4d094fd61413fd0986f22",
+    "answer": "[0.0,0]"
+  },
+  "custom_dir_EXIF_GPS.tiff": {
+    "inputs": "cd8ae1f7cbbda1955bdf43193fd134eb745ba0e85342552857ddc43a171bf718",
+    "answer": "0"
+  },
+  "deflate-last-strip-extra-data.tiff": {
+    "inputs": "35d17b75d21803ae5168676402ba526fceadbfa599d37554bbfc546fc02f912a",
+    "answer": "0"
+  },
+  "float32.tif": {
+    "inputs": "fbfa0d1508a402d2663311736ee26aca8d616fe458b72752fab6fbc9b1e514a8",
+    "answer": "[0.0,0]"
+  },
+  "gray16.tif": {
+    "inputs": "a556a531f96107511ce12269328b4be06a94c8b812ec14d9228ca9f198461566",
+    "answer": "[0.0,0]"
+  },
+  "gray8.tif": {
+    "inputs": "6cd4ba9aad4997f504062597d61064e9fb33a7be4a6adaec55dd685444d1ed03",
+    "answer": "[0.0,0]"
+  },
+  "graya8.tif": {
+    "inputs": "e8ee1a35beac5c0d71461800d984fada8941b673baa279a85d1f7f3552d8c815",
+    "answer": "[0.0,0]"
+  },
+  "libtiff converts 32bpp-None-jpeg.tiff": {
+    "inputs": "34384d83bc62025497cf36dc2d41105bc8c6b46f29233e12d3b16786951d3f8a",
+    "answer": "true"
+  },
+  "libtiff converts 32bpp-None.tiff": {
+    "inputs": "f40354189980a4700a0675bea238fbfc8a08940fce9243e5f9952fa8da532482",
+    "answer": "true"
+  },
+  "libtiff converts custom_dir_EXIF_GPS.tiff": {
+    "inputs": "a68fffe0242adbd441ccfa148d13855f79b97a16be770c48afa8eec72dac0083",
+    "answer": "true"
+  },
+  "libtiff converts deflate-last-strip-extra-data.tiff": {
+    "inputs": "276fae02ee16e4931117752f4c606460d4123ac66832c5702b4e55a38fc44a96",
+    "answer": "true"
+  },
+  "libtiff converts logluv-3c-16b.tiff": {
+    "inputs": "ef402eacc466ebe2ebf222518e4b672a5b1fea10a7d9c6dcbe8370ec8869f2e2",
+    "answer": "true"
+  },
+  "libtiff converts lzw-single-strip.tiff": {
+    "inputs": "f881360a47cdfc337b67657b108d39646e5d5b1f53cdc253e42bb1a565786cd7",
+    "answer": "true"
+  },
+  "libtiff converts minisblack-1c-16b.tiff": {
+    "inputs": "8f8242345638696579b028725c4616c2fba5f3a751850b1b426c05276c9506b7",
+    "answer": "true"
+  },
+  "libtiff converts minisblack-1c-8b.tiff": {
+    "inputs": "a05d9819881e630df627929f8acc3c987a1a26e95f2bafeb6c1e10f405f29138",
+    "answer": "true"
+  },
+  "libtiff converts minisblack-2c-8b-alpha.tiff": {
+    "inputs": "dae96aa41020fd27cd510025f323a700a1200a4060fba955d993ed2f3668881c",
+    "answer": "true"
+  },
+  "libtiff converts miniswhite-1c-1b.tiff": {
+    "inputs": "f517c63abc73e00598acba09f4b39db98653a093fba32e4c3ba4b348c1406b92",
+    "answer": "true"
+  },
+  "libtiff converts ojpeg_chewey_subsamp21_multi_strip.tiff": {
+    "inputs": "a20f90689a48d607090794590e916de857fd3cee191692bac5b90b63db34e248",
+    "answer": "true"
+  },
+  "libtiff converts ojpeg_single_strip_no_rowsperstrip.tiff": {
+    "inputs": "ecf4ee04f7f94e84bd8456b377240b0c04f30094455bfe87a13e0a4d2cdb4539",
+    "answer": "true"
+  },
+  "libtiff converts ojpeg_zackthecat_subsamp22_single_strip.tiff": {
+    "inputs": "85749b4f7fef685f620b7e19cab8d918371400568ef98460be7d2e8f96122e84",
+    "answer": "true"
+  },
+  "libtiff converts palette-1c-1b.tiff": {
+    "inputs": "aef33a7a814a68b93b51da21248cd0d016e007c2e4a966d8bc8b6ee5644ffef1",
+    "answer": "true"
+  },
+  "libtiff converts palette-1c-4b.tiff": {
+    "inputs": "8eb552e45e944b34a372f58078f1382b093c84ee33602c8661e7b7d9e12f68db",
+    "answer": "true"
+  },
+  "libtiff converts palette-1c-8b.tiff": {
+    "inputs": "da0fa953d4808e29eb948cb5c5a4f49a7278888fe14985e92d7948d7c932430d",
+    "answer": "true"
+  },
+  "libtiff converts quad-lzw-compat.tiff": {
+    "inputs": "e5f7ebd9c45e8abf361054f0b3069ffc5938db0eb92cca7b3d01bcd44c6acf45",
+    "answer": "true"
+  },
+  "libtiff converts quad-tile.jpg.tiff": {
+    "inputs": "7cf7a93f84b2446237bdf5959d3c9c511b1a3d5c894bbd8f38064b91f24ab054",
+    "answer": "true"
+  },
+  "libtiff converts rgb-3c-16b.tiff": {
+    "inputs": "ba67cdf603c70566d6e069bcf130a3f80e9cdc36b03c883ffbf96333259bf092",
+    "answer": "true"
+  },
+  "libtiff converts rgb-3c-8b.tiff": {
+    "inputs": "9ad27cec38d47b221523171d54ddc5d84833b34b5c491f780a40f1458dbff03d",
+    "answer": "true"
+  },
+  "libtiff converts test_float64_predictor2_be_lzw.tif": {
+    "inputs": "29e2925d79a8603d9f26c38a28719e4b94ec03244febd98476c380d79d87d154",
+    "answer": "false"
+  },
+  "libtiff converts test_float64_predictor2_le_lzw.tif": {
+    "inputs": "3835600088be5f5a986688171db4847ff389740327395c4007cc24eae2ae2b6e",
+    "answer": "false"
+  },
+  "libtiff converts test_ifd_loop_subifd.tif": {
+    "inputs": "bf16cb6e76da74e7f298ac9be00fb3072a2371c46b884a3cc76a09ca2164e965",
+    "answer": "true"
+  },
+  "libtiff converts test_ifd_loop_to_first.tif": {
+    "inputs": "c4d61e2afd5f0eef3847ef74d1e30793ad76dcf96bc8fbe1bed12407236cd2e3",
+    "answer": "true"
+  },
+  "libtiff converts test_ifd_loop_to_self.tif": {
+    "inputs": "fa8d32ec9c28d1f8776b6afdc7c6e52cbb6a2412e5e86cf75e25d37d9c7f8c55",
+    "answer": "true"
+  },
+  "libtiff converts test_two_ifds.tif": {
+    "inputs": "82d83b379582afcf193e7d9535bd850dbee01435050810fd776b05bf819accc3",
+    "answer": "true"
+  },
+  "libtiff converts testfax3_bug_513.tiff": {
+    "inputs": "006e17d43f232a462d9f616a662902281f7092ef2336d025d4555812c92d4da1",
+    "answer": "true"
+  },
+  "libtiff converts testfax4.tiff": {
+    "inputs": "5b0b7ad55d8155139b66d2298fb6b4d1962a20508438756b613ccc3f97d76c82",
+    "answer": "true"
+  },
+  "libtiff converts tiff_with_subifd_chain.tif": {
+    "inputs": "8a725c9af5ad967538a8f5a6b0f663de2715b4181013cff4381224f8bb72891e",
+    "answer": "true"
+  },
+  "libtiff converts webp_lossless_rgba_alpha_fully_opaque.tif": {
+    "inputs": "3f63f11795e804461e16fabf0c5010f8a317f3470f27af675c40ecb3ac778c62",
+    "answer": "true"
+  },
+  "lzw-single-strip.tiff": {
+    "inputs": "1a513f481bad7782fbc85eb8e43876effe669e8fe059697717365f8b74e62162",
+    "answer": "0"
+  },
+  "minisblack-1c-16b.tiff": {
+    "inputs": "510c1428a815b278b8ae628782c89a44bd603cc1063334090444cb0022baa59d",
+    "answer": "1"
+  },
+  "minisblack-1c-8b.tiff": {
+    "inputs": "37ed3c31a10e8ffca5495dc4671eecf0ff1c03341b623c6e3a685ae9f09dea8e",
+    "answer": "0"
+  },
+  "minisblack-2c-8b-alpha.tiff": {
+    "inputs": "1a51305625b79be283afde05a7d09aa0877cf3d93f095ab2e2ff21009b177796",
+    "answer": "0"
+  },
+  "miniswhite-1c-1b.tiff": {
+    "inputs": "91226db19e915116277b09ac4da03ed47a99830c5cae709074051f1d21654aa0",
+    "answer": "0"
+  },
+  "pal4.tif": {
+    "inputs": "5790cd19227464aff08909a614764be0145ea0eef35b046eca0bb00d7174e491",
+    "answer": "[0.0,0]"
+  },
+  "pal8.tif": {
+    "inputs": "877c4fcd953d12bb39ae964f3f76f487171e8ea2fd306af4d4eba30f86673231",
+    "answer": "[0.25668291242061736,1]"
+  },
+  "palette-1c-1b.tiff": {
+    "inputs": "9f633aaf983baae5b608c923646e0a0ff039587cabf855368c87ce545ba28b35",
+    "answer": "0"
+  },
+  "palette-1c-4b.tiff": {
+    "inputs": "bcfbed13e144ef252f6bea7fa87f6dce1e25500e8c7d6897021b417464080b39",
+    "answer": "0"
+  },
+  "palette-1c-8b.tiff": {
+    "inputs": "be3436a39433340af0895a0e918621cb2c28c4884318c9d1f8e1528248500586",
+    "answer": "0"
+  },
+  "quad-lzw-compat.tiff": {
+    "inputs": "ed3eb1a9d0942132fe3bf99440a574a2dc4092d244744aa6a64111a807680718",
+    "answer": "0"
+  },
+  "quad-tile.jpg.tiff": {
+    "inputs": "6bc0b95bbdda94cf73c84eac473022d1c582d276398b361f68b87dd8df13f265",
+    "answer": "0"
+  },
+  "rgb-3c-16b.tiff": {
+    "inputs": "92b963dd20868e7521cee894f8da2252c2dc83ef298b30ff7802463bf24e6101",
+    "answer": "0"
+  },
+  "rgb-3c-8b.tiff": {
+    "inputs": "ca9de359c48dbbc01b44310c3f7ad8f31cb2f63306b44ec14a5f0f654c06e01e",
+    "answer": "0"
+  },
+  "rgb16.tif": {
+    "inputs": "84979ed7330517fa459a6d70b3f9b911de37f8464a3270bc67f193b147fb0b58",
+    "answer": "[0.0,0]"
+  },
+  "rgb8.tif": {
+    "inputs": "e6b7c3e7573b10ff1269dc576aeed61bb86131431f1be4c2b7ccb3bc7dc35239",
+    "answer": "[0.0,0]"
+  },
+  "rgba8.tif": {
+    "inputs": "95e7b9e34b7050fdac2cc1fb74385e324e8dc86e14199c119ec424d3e1b9cc0d",
+    "answer": "[0.0,0]"
+  },
+  "test_ifd_loop_subifd.tif": {
+    "inputs": "9330a61ec0755d17baac612dc093bb2338358b352f411285955210b23a97bc2a",
+    "answer": "0"
+  },
+  "test_ifd_loop_to_first.tif": {
+    "inputs": "eabe1860f59dbf698a4e692b330c83b7366ad9bd9c714f28c35fbd9119053aa1",
+    "answer": "0"
+  },
+  "test_ifd_loop_to_self.tif": {
+    "inputs": "2d93a2c2a41e05c7cf5133d22935024e0f78ad3721a48ed1f42c1666e3eb2419",
+    "answer": "0"
+  },
+  "test_two_ifds.tif": {
+    "inputs": "728827403309fb8734eadcfd009a3e06576654717c0a5122fd0c1ec606419d4d",
+    "answer": "0"
+  },
+  "testfax3_bug_513.tiff": {
+    "inputs": "7baaaff7aa270cbfd07090596075eac355579fdd565aed21f7a3d0936dcb1ab4",
+    "answer": "0"
+  },
+  "testfax4.tiff": {
+    "inputs": "268a101df4e3150f97f2958236d4539fcd9738318aef11c609f262ded6d41745",
+    "answer": "0"
+  },
+  "tiff_with_subifd_chain.tif": {
+    "inputs": "18b9f12fcf7bb59edbf7d03de54cbf2c84dd7e076f3e91dfe23d4cc95b7f9d1b",
+    "answer": "0"
+  },
+  "webp_lossless_rgba_alpha_fully_opaque.tif": {
+    "inputs": "57c651f5171b275c1098a4b3ac23bb57e061e6c67dfd389c83bf7b882dfa1873",
+    "answer": "0"
+  },
+  "ycbcr": {
+    "inputs": "b64448da01a9365359a867b1da7b6b6d972517aa4e04d971dcc4dff4dae857bf",
+    "answer": "0"
+  }
+}

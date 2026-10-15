@@ -29,8 +29,9 @@ The library lives in the [ptome](https://github.com/nsmmrs/ptome)
 workspace: plain_pdf compresses PDF streams with it, and ptome writes EPUB
 containers with it. Tests check it against zlib (the Dart VM's), the
 `brotli`, `gzip`, `zip`, `unzip` and `zipinfo` tools and Python's
-`zipfile` (the `tools` tag), at every level and quality, and fuzz the
-decoders with damaged input.
+`zipfile` at every level and quality (their answers recorded in
+`test/oracles`, so no tool need be installed; `ORACLES=record dart test`
+asks them again), and fuzz the decoders with damaged input.
 
 Status: in development; not published to pub.dev.
 

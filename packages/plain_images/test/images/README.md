@@ -45,3 +45,5 @@
   and 8, bilevel, RGBA, CMYK, 32-bit float, gray with alpha), then
   libtiff's tiffcp's compressions and layouts of them; `expected.md5`
   holds tiff2rgba's RGBA of the JPEG- and WebP-compressed ones.
+- `libtiff/`: libtiff's own test images, under its licence (its
+  README.md).

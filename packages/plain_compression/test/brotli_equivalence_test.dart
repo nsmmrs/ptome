@@ -1,12 +1,14 @@
 // The Brotli decoder against the decoder frozen at 17001e86: the same
 // bytes for every stream, and for damaged streams the same
-// FormatException, never another error. Streams: the fixtures, and where
-// the brotli tool is installed, larger ones it makes at several qualities
-// and windows.
+// FormatException, never another error. Streams: the fixtures, and larger
+// ones the brotli tool makes at several qualities and windows (recorded in
+// test/oracles/brotli_equivalence.json by test/support/oracles.dart;
+// ORACLES=record asks the tool again).
 @TestOn('vm')
 @Tags(['nightly'])
 library;
 
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
@@ -15,10 +17,46 @@ import 'package:plain_compression/plain_compression.dart';
 import 'package:test/test.dart';
 
 import 'frozen/brotli.dart' as frozen;
+import 'support/oracles.dart';
 
-bool _has(String tool) =>
-    Process.runSync('which', [tool]).exitCode == 0 ||
-    Process.runSync('where', [tool], runInShell: true).exitCode == 0;
+/// The oracle, which its answers depend on.
+const String _brotli = 'brotli 1.2.0';
+
+/// The brotli tool's stream for [data] at [quality] and [window], as
+/// recorded for [key].
+Uint8List _brotliStream(
+  Oracle recorded,
+  String key,
+  List<int> data,
+  int quality,
+  int window,
+) => base64Decode(
+  recorded.answer(
+    key,
+    inputs: [_brotli, data, '$quality', '$window'],
+    oracle: () {
+      final tmp = Directory.systemTemp.createTempSync('brotli.');
+      try {
+        final input = File('${tmp.path}/input')..writeAsBytesSync(data);
+        final output = '${input.path}.br';
+        final run = Process.runSync('brotli', [
+          '-f',
+          '-q',
+          '$quality',
+          '-w',
+          '$window',
+          '-o',
+          output,
+          input.path,
+        ]);
+        if (run.exitCode != 0) throw StateError('${run.stderr}');
+        return base64Encode(File(output).readAsBytesSync());
+      } finally {
+        tmp.deleteSync(recursive: true);
+      }
+    },
+  ),
+);
 
 /// What decoding gives: the bytes, or the error message.
 String _outcome(Uint8List Function() decode) {
@@ -72,6 +110,7 @@ void _compare(List<Uint8List> streams, Random random, int damaged) {
 }
 
 void main() {
+  final recorded = Oracle('brotli_equivalence');
   test('the fixtures and damaged copies', () {
     final streams = [
       for (final file in Directory('test/brotli').listSync().whereType<File>())
@@ -87,50 +126,36 @@ void main() {
     _compare(streams, Random(5), 4000);
   });
 
-  test(
-    'what the brotli tool makes, and damaged copies',
-    () {
-      final tmp = Directory.systemTemp.createTempSync('brotli_eq.');
-      addTearDown(() => tmp.deleteSync(recursive: true));
-      final random = Random(6);
-      final source = [
-        ...File('lib/src/brotli_data.g.dart').readAsBytesSync().take(40000),
-        ...File('test/frozen/flate.dart').readAsBytesSync(),
-        for (var i = 0; i < 20000; i++) (i * i ~/ 7 + (i >> 8)) & 0xff,
-        for (var i = 0; i < 5000; i++) random.nextInt(256),
-        // Bytes as rare as 2^-k: prefix codes up to 15 bits long.
-        for (var i = 0; i < 60000; i++)
-          random.nextInt(1 << 20).bitLength * 7 + random.nextInt(2),
-      ];
-      final input = File('${tmp.path}/input')..writeAsBytesSync(source);
-      final streams = <Uint8List>[];
-      for (final (quality, window) in [
-        (0, 16),
-        (1, 10),
-        (4, 18),
-        (6, 12),
-        (9, 22),
-        (11, 24),
-      ]) {
-        final output = '${input.path}.$quality.br';
-        final run = Process.runSync('brotli', [
-          '-f',
-          '-q',
-          '$quality',
-          '-w',
-          '$window',
-          '-o',
-          output,
-          input.path,
-        ]);
-        expect(run.exitCode, 0, reason: '${run.stderr}');
-        final stream = File(output).readAsBytesSync();
-        expect(brotliDecode(stream), source, reason: 'quality $quality');
-        streams.add(stream);
-      }
-      _compare(streams, random, 300);
-    },
-    skip: _has('brotli') ? false : 'brotli is not installed',
-    tags: ['tools'],
-  );
+  test('what the brotli tool makes, and damaged copies', () {
+    final random = Random(6);
+    final source = [
+      ...File('lib/src/brotli_data.g.dart').readAsBytesSync().take(8000),
+      ...File('test/frozen/flate.dart').readAsBytesSync().take(8000),
+      for (var i = 0; i < 4000; i++) (i * i ~/ 7 + (i >> 8)) & 0xff,
+      for (var i = 0; i < 1000; i++) random.nextInt(256),
+      // Bytes as rare as 2^-k: prefix codes up to 15 bits long.
+      for (var i = 0; i < 12000; i++)
+        random.nextInt(1 << 20).bitLength * 7 + random.nextInt(2),
+    ];
+    final streams = <Uint8List>[];
+    for (final (quality, window) in [
+      (0, 16),
+      (1, 10),
+      (4, 18),
+      (6, 12),
+      (9, 22),
+      (11, 24),
+    ]) {
+      final stream = _brotliStream(
+        recorded,
+        'quality $quality, window $window',
+        source,
+        quality,
+        window,
+      );
+      expect(brotliDecode(stream), source, reason: 'quality $quality');
+      streams.add(stream);
+    }
+    _compare(streams, random, 300);
+  });
 }

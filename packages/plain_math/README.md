@@ -27,10 +27,11 @@ final tree = latexToMath(r'\frac{a}{b} + \foo', unknown: unknown);
 
 Tests compare the AsciiMath converter with the gem's output for 1,250
 expressions (the gem spec's examples and every symbol of its table), the
-MathML reader with package:xml over every document they write, and, with
-the `tools` tag, the LaTeX converter with Temml and KaTeX over the
-examples of Temml's screen tests (KaTeX's, the Mozilla torture test and LaTeXML's;
-`tool/oracles/`).
+MathML reader with package:xml over every document they write, and the
+LaTeX converter with Temml and KaTeX over the examples of Temml's screen
+tests (KaTeX's, the Mozilla torture test and LaTeXML's; `tool/oracles/`,
+their answers recorded in `test/oracles`, `ORACLES=record dart test`
+asking them again).
 
 The library lives in the [ptome](https://github.com/nsmmrs/ptome)
 workspace, whose PDF backend lays out its trees and whose HTML, DocBook

@@ -1,5 +1,0 @@
-tags:
-  tools:
-    # Tests that run the Hyphenopoly oracle (tool/oracles/setup.sh
-    # installs it); skipped where it isn't.
-    skip: false

@@ -63,7 +63,7 @@ format_and_analyze() {
     status=1
   }
   dart analyze --fatal-infos . | tail -1 || status=1
-  tool/frozen_check.sh || status=1
+  tool/oracles_check.sh || status=1
   return $status
 }
 

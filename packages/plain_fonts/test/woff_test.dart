@@ -1,7 +1,8 @@
 // WOFF/WOFF2 fonts, checked against what the reference tools make of them:
-// fixtures (made as test/fonts/README.md says), and, where
-// woff2_compress/woff2_decompress are installed, round trips of every test
-// font through them.
+// fixtures (made as test/fonts/README.md says), and round trips of test
+// fonts of each kind through woff2_compress and woff2_decompress (their
+// answers recorded in test/oracles/woff.json by test/support/oracles.dart;
+// ORACLES=record asks them again).
 @TestOn('vm')
 library;
 
@@ -13,9 +14,10 @@ import 'package:crypto/crypto.dart';
 import 'package:plain_fonts/plain_fonts.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) =>
-    Process.runSync('which', [tool]).exitCode == 0 ||
-    Process.runSync('where', [tool], runInShell: true).exitCode == 0;
+import 'support/oracles.dart';
+
+/// The oracle, which its answers depend on.
+const String _woff2 = 'woff2 1.0.2';
 
 /// The tables of the font [bytes], by tag.
 Map<String, Uint8List> _tables(Uint8List bytes) {
@@ -71,7 +73,36 @@ void _expectChecksum(Uint8List font) {
 
 Uint8List _read(String path) => File(path).readAsBytesSync();
 
+/// The SHA-256 of each of [font]'s tables, by tag ([_head]'s for head).
+Map<String, String> _tableDigests(Uint8List font) => {
+  for (final MapEntry(:key, :value) in _tables(font).entries)
+    key: '${sha256.convert(key == 'head' ? _head(value) : value)}',
+};
+
+/// What woff2_compress makes of the font [source] (named [name]), and the
+/// digests of the tables woff2_decompress gives back from it.
+Map<String, Object?> _woff2RoundTrip(String name, Uint8List source) {
+  final tmp = Directory.systemTemp.createTempSync('woff_test.');
+  try {
+    final base = name.substring(0, name.length - 4);
+    File('${tmp.path}/$name').writeAsBytesSync(source);
+    final compress = Process.runSync('woff2_compress', ['${tmp.path}/$name']);
+    if (compress.exitCode != 0) throw StateError('${compress.stderr}');
+    final woff2 = File('${tmp.path}/$base.woff2');
+    final reference = woff2.copySync('${tmp.path}/ref-$base.woff2');
+    final decompress = Process.runSync('woff2_decompress', [reference.path]);
+    if (decompress.exitCode != 0) throw StateError('${decompress.stderr}');
+    return {
+      'woff2': base64Encode(woff2.readAsBytesSync()),
+      'tables': _tableDigests(_read('${tmp.path}/ref-$base.ttf')),
+    };
+  } finally {
+    tmp.deleteSync(recursive: true);
+  }
+}
+
 void main() {
+  final recorded = Oracle('woff');
   group('WOFF', () {
     final original = _read('test/fonts/notoserif-features.ttf');
 
@@ -147,35 +178,29 @@ void main() {
       );
     });
 
-    test(
-      'decodes what woff2_compress makes of each test font',
-      () {
-        final tmp = Directory.systemTemp.createTempSync('woff_test.');
-        addTearDown(() => tmp.deleteSync(recursive: true));
-        for (final file in Directory('test/fonts').listSync()) {
-          if (!RegExp(r'\.(ttf|otf)$').hasMatch(file.path)) continue;
-          final name = file.uri.pathSegments.last;
-          final base = name.substring(0, name.length - 4);
-          File(file.path).copySync('${tmp.path}/$name');
-          final compress = Process.runSync('woff2_compress', [
-            '${tmp.path}/$name',
-          ]);
-          expect(compress.exitCode, 0, reason: '${compress.stderr}');
-          final woff2 = File('${tmp.path}/$base.woff2');
-          final reference = woff2.copySync('${tmp.path}/ref-$base.woff2');
-          final decompress = Process.runSync('woff2_decompress', [
-            reference.path,
-          ]);
-          expect(decompress.exitCode, 0, reason: '${decompress.stderr}');
-          final font = decodeWebFont(woff2.readAsBytesSync());
-          _expectTables(font, _read('${tmp.path}/ref-$base.ttf'));
-          _expectChecksum(font);
-        }
-      },
-      skip: _has('woff2_compress') && _has('woff2_decompress')
-          ? false
-          : 'woff2_compress and woff2_decompress are not installed',
-      tags: ['tools'],
-    );
+    test('decodes what woff2_compress makes of each kind of test font', () {
+      // (TrueType outlines, kerned by GPOS and by a kern table; CFF, by
+      // name and CID-keyed.)
+      for (final name in const [
+        'notoserif-features.ttf',
+        'notoserif-kern-subtables.ttf',
+        'libertinus-smcp.otf',
+        'notoserif-cid.otf',
+      ]) {
+        final source = _read('test/fonts/$name');
+        final theirs = recorded.json<Map<String, Object?>>(
+          name,
+          inputs: [_woff2, source],
+          oracle: () => _woff2RoundTrip(name, source),
+        );
+        final font = decodeWebFont(base64Decode(theirs['woff2']! as String));
+        expect(
+          _tableDigests(font),
+          theirs['tables'],
+          reason: 'the tables woff2_decompress gives',
+        );
+        _expectChecksum(font);
+      }
+    });
   });
 }

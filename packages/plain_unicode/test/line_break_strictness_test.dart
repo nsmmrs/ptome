@@ -1,8 +1,8 @@
 // Line-breaking strictness (CSS Text 3's line-break, 5.3): the rules it
 // tailors UAX #14 with, against ICU 78.3's line break iterator with the
 // `lb` keyword (`ja@lb=strict`, `normal`, `loose`), whose answers are
-// frozen in test/frozen/line_break_strictness.json
-// (test/support/frozen.dart; FROZEN=record asks it again).
+// recorded in test/oracles/line_break_strictness.json
+// (test/support/oracles.dart; ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -11,17 +11,17 @@ import 'dart:io';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _oracle = 'tool/oracles/icu/icubreak';
 
 /// The oracle, which its answers depend on.
 const String _version = 'ICU 78.3';
 
-late final Frozen _frozen;
+late final Oracle _recorded;
 
 /// ICU's breaks of each of [texts] in [locale]: a line of offsets each.
-List<String> _icu(String locale, List<String> texts) => _frozen
+List<String> _icu(String locale, List<String> texts) => _recorded
     .answer(
       '$locale: ${texts.length} texts',
       inputs: [_version, locale, ...texts],
@@ -66,7 +66,7 @@ List<int> _breaks(
 }
 
 void main() {
-  _frozen = Frozen('line_break_strictness');
+  _recorded = Oracle('line_break_strictness');
   test('strict is UAX #14: no line starts with small kana', () {
     expect(_breaks('ニャーン', LineBreakStrictness.strict), [3, 4]);
     expect(_breaks('ニャーン', LineBreakStrictness.strict), [

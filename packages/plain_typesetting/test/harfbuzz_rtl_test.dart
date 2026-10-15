@@ -4,8 +4,8 @@
 // installed by tool/oracles/setup.sh): the same glyphs in the same visual
 // order, the same advances and the same mark offsets, for each line of
 // test/fixtures/shaping-rtl.txt in the subset Noto fonts of test/fonts.
-// HarfBuzz's answers are frozen in test/frozen/harfbuzz_rtl.json
-// (test/support/frozen.dart; FROZEN=record asks it again).
+// HarfBuzz's answers are recorded in test/oracles/harfbuzz_rtl.json
+// (test/support/oracles.dart; ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -16,7 +16,7 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
 
@@ -24,7 +24,7 @@ const String _shape = 'tool/oracles/harfbuzz/shape.mjs';
 const String _harfbuzzjs = 'harfbuzzjs 1.6.3';
 
 void main() {
-  final frozen = Frozen('harfbuzz_rtl');
+  final recorded = Oracle('harfbuzz_rtl');
   final lines = File('test/fixtures/shaping-rtl.txt')
       .readAsLinesSync()
       .where((l) => l.isNotEmpty)
@@ -42,7 +42,7 @@ void main() {
         for (final line in lines)
           if (script.hasMatch(line)) line,
       ];
-      final theirs = frozen
+      final theirs = recorded
           .json<List<Object?>>(
             name,
             inputs: [_harfbuzzjs, bytes, ...mine],

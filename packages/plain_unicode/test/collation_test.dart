@@ -1,7 +1,7 @@
 // Collation (UTS #10 with CLDR 48.2): the root order against CLDR's
 // conformance test, every tailoring against ICU 78.3's collator, and an
-// index's headings against ICU's AlphabeticIndex. ICU's answers are frozen
-// in test/frozen/collation.json (test/support/frozen.dart; FROZEN=record
+// index's headings against ICU's AlphabeticIndex. ICU's answers are recorded
+// in test/oracles/collation.json (test/support/oracles.dart; ORACLES=record
 // asks it again).
 @TestOn('vm')
 library;
@@ -13,7 +13,7 @@ import 'dart:math';
 import 'package:plain_unicode/plain_unicode.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _coll = 'tool/oracles/icu/icucoll';
 const String _index = 'tool/oracles/icu/icuindex';
@@ -21,11 +21,11 @@ const String _index = 'tool/oracles/icu/icuindex';
 /// The oracle, which its answers depend on.
 const String _version = 'ICU 78.3';
 
-late final Frozen _frozen;
+late final Oracle _recorded;
 
 /// The [oracle]'s lines for [arguments], as recorded for [key].
 List<String> _icu(String key, String oracle, List<String> arguments) =>
-    _frozen
+    _recorded
         .answer(
           key,
           inputs: [_version, oracle, ...arguments],
@@ -81,7 +81,7 @@ bool _comparable(String text, {required bool shifted}) {
 }
 
 void main() {
-  _frozen = Frozen('collation');
+  _recorded = Oracle('collation');
   test("the root order: every line of CLDR's conformance test", () {
     final lines = const LineSplitter().convert(
       utf8.decode(

@@ -4,7 +4,9 @@
 /// big-endian, BigTIFF, fill order); JPEG- and WebP-compressed ones as
 /// libtiff's tiff2rgba decodes them; the uncompressed ones as ImageMagick
 /// does; a YCbCr image made by hand as tiff2rgba does; and libtiff's test
-/// images as tiff2rgba does (`tool/fetch_tiff_tests.sh`).
+/// images (test/images/libtiff) as tiff2rgba does. ImageMagick's and
+/// tiff2rgba's answers are recorded in test/oracles/tiff.json
+/// (test/support/oracles.dart; ORACLES=record asks them again).
 @TestOn('vm')
 library;
 
@@ -17,24 +19,44 @@ import 'package:test/test.dart';
 
 import 'decode_test.dart' show onWhite;
 import 'support.dart';
+import 'support/oracles.dart';
 
 const String _dir = 'test/images/tiff';
 
 Raster _decode(String path) =>
     ImageFile.read(File(path).readAsBytesSync()).decode();
 
-bool _has(String tool) =>
-    Process.runSync('sh', ['-c', 'command -v $tool']).exitCode == 0;
+/// libtiff, which its answers depend on.
+const String _libtiff = 'libtiff 4.7.2';
 
-/// tiff2rgba's RGBA of the TIFF file at [path].
-Uint8List tiff2rgba(String path, Directory work) {
-  final out = '${work.path}/rgba.tif';
-  final result = Process.runSync('tiff2rgba', ['-c', 'none', path, out]);
-  expect(result.exitCode, 0, reason: '${result.stderr}');
-  return _decode(out).toRgba8();
+/// tiff2rgba's RGBA of the TIFF [bytes], or null where it can't make one.
+Uint8List? tiff2rgba(Uint8List bytes) {
+  final work = Directory.systemTemp.createTempSync('tiff.');
+  try {
+    final path = '${work.path}/in.tif';
+    File(path).writeAsBytesSync(bytes);
+    final out = '${work.path}/rgba.tif';
+    final result = Process.runSync('tiff2rgba', ['-c', 'none', path, out]);
+    if (result.exitCode != 0) return null;
+    return _decode(out).toRgba8();
+  } finally {
+    work.deleteSync(recursive: true);
+  }
+}
+
+/// The largest difference between the samples of [ours] and [theirs].
+int _largest(Uint8List ours, Uint8List theirs) {
+  expect(ours.length, theirs.length, reason: 'samples');
+  var largest = 0;
+  for (var i = 0; i < ours.length; i++) {
+    final d = (ours[i] - theirs[i]).abs();
+    if (d > largest) largest = d;
+  }
+  return largest;
 }
 
 void main() {
+  final recorded = Oracle('tiff');
   final files = [
     for (final f in Directory(_dir).listSync().whereType<File>())
       if (f.path.endsWith('.tif')) f.uri.pathSegments.last,
@@ -105,92 +127,80 @@ void main() {
     expect(read('rgb8.tif').pages, 1);
   });
 
-  final magick = magickCommand();
   group('uncompressed, as ImageMagick decodes them', () {
     for (final name in files.where((n) => !n.contains('-'))) {
-      test(
-        name,
-        () {
-          final raster = _decode('$_dir/$name');
-          final (mean, max) = difference(
-            onWhite(raster.width, raster.height, raster.toRgba8()),
-            magickOnWhite(magick!, '$_dir/$name'),
-          );
-          // (8-bit palettes: libtiff takes 16-bit entries' high byte,
-          // ImageMagick rounds them.)
-          expect(mean, lessThan(0.6), reason: 'mean difference');
-          expect(max, lessThanOrEqualTo(1), reason: 'largest difference');
-        },
-        skip: magick == null ? 'needs ImageMagick' : false,
-        tags: ['tools'],
-      );
+      test(name, () {
+        final bytes = File('$_dir/$name').readAsBytesSync();
+        final raster = ImageFile.read(bytes).decode();
+        final (mean, max) = magickDifference(
+          recorded,
+          name,
+          bytes,
+          onWhite(raster.width, raster.height, raster.toRgba8()),
+        );
+        // (8-bit palettes: libtiff takes 16-bit entries' high byte,
+        // ImageMagick rounds them.)
+        expect(mean, lessThan(0.6), reason: 'mean difference');
+        expect(max, lessThanOrEqualTo(1), reason: 'largest difference');
+      });
     }
   });
 
-  test(
-    'YCbCr samples (2 by 2 subsampling), as tiff2rgba converts them',
-    () {
-      final work = Directory.systemTemp.createTempSync('tiff.');
-      addTearDown(() => work.deleteSync(recursive: true));
-      final path = '${work.path}/ycbcr.tif';
-      File(path).writeAsBytesSync(_ycbcrTiff());
-      expect(_decode(path).toRgba8(), tiff2rgba(path, work));
-    },
-    skip: _has('tiff2rgba') ? false : 'needs tiff2rgba',
-    tags: ['tools'],
-  );
+  /// The largest difference between [ours] and tiff2rgba's RGBA of the
+  /// TIFF [bytes] (null where libtiff can't make one), as recorded for
+  /// [key].
+  int? largestFromLibtiff(String key, Uint8List bytes, Uint8List ours) =>
+      recorded.json<int?>(
+        key,
+        inputs: [_libtiff, bytes, ours],
+        oracle: () => switch (tiff2rgba(bytes)) {
+          final theirs? => _largest(ours, theirs),
+          null => null,
+        },
+      );
 
-  final suite =
-      Platform.environment['TIFF_TESTS'] ??
-      '${Platform.environment['HOME']}/.cache/asciidart-work/libtiff/test/images';
-  test(
-    "libtiff's test images, as tiff2rgba decodes them",
-    () {
-      final work = Directory.systemTemp.createTempSync('tiff.');
-      addTearDown(() => work.deleteSync(recursive: true));
-      var checked = 0;
-      for (final file in Directory(suite).listSync().whereType<File>()) {
-        final name = file.uri.pathSegments.last;
-        if (!name.endsWith('.tif') && !name.endsWith('.tiff')) continue;
-        final out = '${work.path}/rgba.tif';
-        // (What libtiff itself can't turn into RGBA is left out.)
-        if (Process.runSync('tiff2rgba', [
-              '-c',
-              'none',
-              file.path,
-              out,
-            ]).exitCode !=
-            0) {
-          continue;
-        }
-        final Raster raster;
-        try {
-          raster = ImageFile.read(file.readAsBytesSync()).decode();
-        } on ImageFormatException catch (error) {
-          // LogLuv and old-style JPEG: named, not read.
-          expect(error.message, contains('not supported'), reason: name);
-          continue;
-        }
-        final ours = raster.toRgba8();
-        final theirs = _decode(out).toRgba8();
-        expect(ours.length, theirs.length, reason: name);
-        var largest = 0;
-        for (var i = 0; i < ours.length; i++) {
-          final d = (ours[i] - theirs[i]).abs();
-          if (d > largest) largest = d;
-        }
-        // (16-bit gray: libtiff takes the high byte, toRgba8 rounds.)
-        expect(largest, lessThanOrEqualTo(1), reason: name);
-        checked++;
+  test('YCbCr samples (2 by 2 subsampling), as tiff2rgba converts them', () {
+    final bytes = _ycbcrTiff();
+    final ours = ImageFile.read(bytes).decode().toRgba8();
+    expect(largestFromLibtiff('ycbcr', bytes, ours), 0);
+  });
+
+  test("libtiff's test images, as tiff2rgba decodes them", () {
+    var checked = 0;
+    for (final file
+        in Directory('test/images/libtiff')
+            .listSync()
+            .whereType<File>()
+            .toList()
+          ..sort((a, b) => a.path.compareTo(b.path))) {
+      final name = file.uri.pathSegments.last;
+      if (!name.endsWith('.tif') && !name.endsWith('.tiff')) continue;
+      final bytes = file.readAsBytesSync();
+      // (What libtiff itself can't turn into RGBA is left out.)
+      final converts = recorded.json<bool>(
+        'libtiff converts $name',
+        inputs: [_libtiff, bytes],
+        oracle: () => tiff2rgba(bytes) != null,
+      );
+      if (!converts) continue;
+      final Raster raster;
+      try {
+        raster = ImageFile.read(bytes).decode();
+      } on ImageFormatException catch (error) {
+        // LogLuv and old-style JPEG: named, not read.
+        expect(error.message, contains('not supported'), reason: name);
+        continue;
       }
-      expect(checked, greaterThan(20));
-    },
-    skip: Directory(suite).existsSync() && _has('tiff2rgba')
-        ? false
-        : "needs libtiff's test images (tool/fetch_tiff_tests.sh) and "
-              'tiff2rgba',
-    tags: ['tools'],
-  );
+      // (16-bit gray: libtiff takes the high byte, toRgba8 rounds.)
+      expect(
+        largestFromLibtiff(name, bytes, raster.toRgba8()),
+        lessThanOrEqualTo(1),
+        reason: name,
+      );
+      checked++;
+    }
+    expect(checked, greaterThan(20));
+  });
 }
 
 /// A little-endian TIFF of 5 by 3 YCbCr pixels, 2 by 2 subsampled, in one

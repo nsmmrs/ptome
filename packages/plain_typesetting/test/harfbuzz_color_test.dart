@@ -4,8 +4,8 @@
 // with the same numbers. COLR version 1 (Noto Color Emoji's COLRv1 build,
 // and colr-test.ttf's every paint format), version 0 (colr-test.ttf's
 // layers), CBDT (Noto Color Emoji) and sbix (sbix-test.ttf). HarfBuzz's
-// answers are frozen in test/frozen/harfbuzz_color.json
-// (test/support/frozen.dart; FROZEN=record asks it again).
+// answers are recorded in test/oracles/harfbuzz_color.json
+// (test/support/oracles.dart; ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -15,7 +15,7 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:test/test.dart';
 
 import 'color_recorder.dart';
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 
@@ -23,7 +23,7 @@ const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 const String _oracle = 'HarfBuzz 14.6.0';
 
 void main() {
-  final frozen = Frozen('harfbuzz_color');
+  final recorded = Oracle('harfbuzz_color');
   for (final font in [
     'notocolrv1-subset.ttf',
     'colr-test.ttf',
@@ -36,7 +36,7 @@ void main() {
       final parsed = OpenTypeFont.parse(bytes);
       final colors = parsed.colorGlyphs!;
       final glyphs = [for (var g = 0; g < parsed.numGlyphs; g++) g];
-      final theirs = frozen
+      final theirs = recorded
           .json<List<Object?>>(
             font,
             inputs: [_oracle, bytes],

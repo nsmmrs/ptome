@@ -1,16 +1,16 @@
-// (The same file in every package that uses it: tool/frozen_check.sh
+// (The same file in every package that uses it: tool/oracles_check.sh
 // holds the copies alike.)
 
-/// Outside tools' answers, frozen: a test that checks the code against an
+/// Outside tools' answers, recorded: a test that checks the code against an
 /// oracle (HarfBuzz, ICU, a PDF validator...) asks for the oracle's answer
 /// by a key and the inputs it depends on, and gets the answer recorded in
-/// `test/frozen/<name>.json` (`.json.gz` for a large one), so that it runs
+/// `test/oracles/<name>.json` (`.json.gz` for a large one), so that it runs
 /// anywhere in a moment and the tool needn't be installed. An answer whose
 /// inputs have changed since it was recorded is stale, and the test fails
 /// until it is recorded again:
 ///
 /// ```sh
-/// FROZEN=record dart test test/harfbuzz_test.dart   # the tool installed
+/// ORACLES=record dart test test/harfbuzz_test.dart   # the tool installed
 /// ```
 ///
 /// which asks the oracle again for every answer the run asks for and
@@ -24,13 +24,13 @@ import 'dart:typed_data';
 import 'package:crypto/crypto.dart';
 import 'package:test/test.dart';
 
-/// The answers recorded for one test file, `test/frozen/<name>.json`.
-final class Frozen {
-  /// The answers of `test/frozen/[name].json`, or gzip-compressed in
+/// The answers recorded for one test file, `test/oracles/<name>.json`.
+final class Oracle {
+  /// The answers of `test/oracles/[name].json`, or gzip-compressed in
   /// `.json.gz` when [compressed], written back at the end of the file's
   /// tests when recording.
   new(this.name, {this.compressed = false})
-    : _file = File('test/frozen/$name.json${compressed ? '.gz' : ''}') {
+    : _file = File('test/oracles/$name.json${compressed ? '.gz' : ''}') {
     if (recording) tearDownAll(_write);
   }
 
@@ -38,8 +38,8 @@ final class Frozen {
   final bool compressed;
   final File _file;
 
-  /// Whether the oracles are asked again (`FROZEN=record`).
-  static final bool recording = Platform.environment['FROZEN'] == 'record';
+  /// Whether the oracles are asked again (`ORACLES=record`).
+  static final bool recording = Platform.environment['ORACLES'] == 'record';
 
   late final Map<String, ({String inputs, String answer})> _recorded = {
     if (_file.existsSync())
@@ -71,13 +71,13 @@ final class Frozen {
     if (recorded == null) {
       fail(
         'no answer recorded for "$key" in ${_file.path}: '
-        'FROZEN=record dart test, with the oracle installed',
+        'ORACLES=record dart test, with the oracle installed',
       );
     }
     if (recorded.inputs != digest) {
       fail(
         'the answer recorded for "$key" in ${_file.path} is for other '
-        'inputs: FROZEN=record dart test, with the oracle installed',
+        'inputs: ORACLES=record dart test, with the oracle installed',
       );
     }
     return recorded.answer;

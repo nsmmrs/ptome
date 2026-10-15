@@ -1,8 +1,8 @@
 // Justification by alternative letterforms (W3C alreq 7.2.3): a justified
 // line of Nastaliq takes its font's `jalt` forms at some words, none side
 // by side, before its spaces widen; Gulzar's, against HarfBuzz (its
-// answers frozen in test/frozen/alternates.json, test/support/frozen.dart;
-// FROZEN=record asks it again).
+// answers recorded in test/oracles/alternates.json, test/support/oracles.dart;
+// ORACLES=record asks it again).
 @TestOn('vm')
 library;
 
@@ -13,7 +13,7 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
+import 'support/oracles.dart';
 
 const String _native = 'tool/oracles/harfbuzz-native/hb-oracle';
 const String _font = 'test/fonts/gulzar-subset.ttf';
@@ -47,7 +47,7 @@ Line _line(String text, double width, {bool alternates = true}) =>
         .single;
 
 void main() {
-  final frozen = Frozen('alternates');
+  final recorded = Oracle('alternates');
   const text = 'سگ سنگ رنگ بن تن کس';
 
   double natural() => _style.widthOf(_style.shape(text, rightToLeft: true));
@@ -121,7 +121,7 @@ void main() {
   test('the alternates are the forms HarfBuzz gives with jalt', () {
     final jalt = _style.copyWith(features: {'jalt'});
     for (final word in ['سگ', 'بن', 'کس', 'سنگ']) {
-      final theirs = frozen
+      final theirs = recorded
           .json<List<Object?>>(
             word,
             inputs: [_oracle, File(_font).readAsBytesSync(), word, 'jalt'],

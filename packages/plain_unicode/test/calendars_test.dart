@@ -22,10 +22,10 @@ import 'package:plain_unicode/src/astronomy.dart';
 import 'package:plain_unicode/src/calendars.dart';
 import 'package:test/test.dart';
 
-import 'support/frozen.dart';
 import 'support/icu_dates.dart';
+import 'support/oracles.dart';
 
-late final Frozen _frozen;
+late final Oracle _recorded;
 
 /// The calendars checked, and a language that writes dates in each.
 const Map<CalendarSystem, String> _calendars = {
@@ -130,7 +130,7 @@ List<String> _differing(
   String key,
   List<(String, DateStyle?, DateStyle?, DateTime, int, String)> cases,
 ) {
-  final theirs = icuDates(_frozen, key, cases);
+  final theirs = icuDates(_recorded, key, cases);
   final differ = <String>[];
   final decided = <(CalendarSystem, int), bool>{};
   for (final (i, (locale, date, time, m, minutes, name)) in cases.indexed) {
@@ -175,7 +175,7 @@ List<String> _differing(
 }
 
 void main() {
-  _frozen = Frozen('calendars', compressed: true);
+  _recorded = Oracle('calendars', compressed: true);
 
   test('everyday dates in each', () {
     final m = DateTime.utc(2026, 10, 14, 12);
@@ -245,7 +245,7 @@ void main() {
   });
 
   test("every locale's names and patterns", () {
-    final locales = icuDateLocales(_frozen);
+    final locales = icuDateLocales(_recorded);
     final days = [
       for (final (y, m, d) in const [
         (2024, 3, 1),
