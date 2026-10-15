@@ -1,6 +1,7 @@
 # ADR-0018: ptome, and the plain_* Libraries in One Pub Workspace
 
-**Status:** Final. Decided by the user on 2026-10-08. Supersedes the naming
+**Status:** Final. Decided by the user on 2026-10-08; decision 9 amended
+on 2026-10-14. Supersedes the naming
 decision of [ADR-0006](0006-asciidart.md); its compatibility-ledger policy
 stays.
 
@@ -86,13 +87,11 @@ which order).
      there is none: SVG is plain_svg's, with its own XML reader. Outside
      packages appear only as dev dependencies, as test oracles: `xml` for
      plain_svg's reader, `image` for plain_images' decoders.)
-9. **The libraries move to their own repository later**, for example
-   `nsmmrs/plain_dart`, once they gain outside users or their own release
-   pace, or once library issues crowd ptome's tracker. ptome reaching 1.0
-   does not trigger the split on its own. The split extracts `packages/`
-   with history, re-points automated publishing and repository URLs, and
-   removes the folders from ptome in an ordinary commit, so the
-   repository links of published versions keep working.
+9. **The libraries stay in this repository.** Moving them to a
+   repository of their own is a non-goal (decided by the user on
+   2026-10-14, replacing the earlier plan to move them once they gained
+   outside users or a release pace of their own). They stay separately
+   published packages of this workspace.
 
 ## Consequences
 
