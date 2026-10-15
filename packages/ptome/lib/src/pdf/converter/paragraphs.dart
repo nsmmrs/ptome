@@ -440,6 +440,7 @@ extension _Paragraphs on PdfConverter {
     String content,
     _FontState font, {
     required String align,
+    bool gaps = true,
   }) {
     final (:box, :width, :shift, :dy) = _dropOf(drop, font);
     return _Dropped(
@@ -447,6 +448,7 @@ extension _Paragraphs on PdfConverter {
         content,
         font,
         align: align,
+        gaps: gaps,
         orphans: (_n('prose_orphans') ?? 2).toInt(),
         widows: (_n('prose_widows') ?? 2).toInt(),
         dropLines: drop.lines,
@@ -671,6 +673,8 @@ extension _Paragraphs on PdfConverter {
       widows: (_n('prose_widows') ?? 2).toInt(),
     );
     final box = shared == null ? set : set.continuing();
+    // (Its initial, a drop beside its first lines.)
+    final drop = firstLine == null ? initial ?? _takeDrop(node) : null;
     if (_floatGroup case final group? when _floatNext == node) {
       final metrics = _lineMetrics(font);
       final prawnFont = _fonts.font(font.family, font.style);
@@ -678,7 +682,20 @@ extension _Paragraphs on PdfConverter {
       group.paragraphs.add(
         _FloatParagraph(
           box,
-          _textBox(content, font, align: align, indent: indent, gaps: false),
+          // (One with an initial: the initial beside its first lines,
+          // there or below the image, BUG-qqz54w.)
+          drop == null
+              ? _textBox(
+                  content,
+                  font,
+                  align: align,
+                  indent: indent,
+                  gaps: false,
+                )
+              : _dropped(drop, content, font, align: align, gaps: false),
+          flowing: drop == null
+              ? null
+              : _dropped(drop, content, font, align: align),
           marginBottom: marginBottom,
           blockMargin: _themeMargin('block', 'bottom', following),
           paddingTop: metrics.paddingTop,
@@ -703,8 +720,6 @@ extension _Paragraphs on PdfConverter {
     // paragraphs rather than this converter's text box, FEAT-n1bkgf; one
     // with what they don't do yet is set by the box, as is everything
     // with `base_text_engine: box`.)
-    // (Its initial, a drop beside its first lines.)
-    final drop = firstLine == null ? initial ?? _takeDrop(node) : null;
     // (A first line of its own style, an abstract's: the same text in that
     // style for the engine; one transformed stays in the box.)
     final firstRuns = firstLine == null || firstLineTransform != null

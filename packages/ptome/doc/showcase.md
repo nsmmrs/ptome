@@ -10,6 +10,7 @@ EPIC-phf3n2 has the plan.
 | --- | --- |
 | [Alice](../test/showcase/alice/NOTICE.md) | Illustrations the text runs beside, the Mouse's Tale in type that shrinks down its tail, Jabberwocky in mirror type, the chess problem's moves in two columns |
 | [Babbage's logarithms](../test/showcase/babbage/NOTICE.md) | A large numeric table, generated: rows in fives, figures in columns, heads on every page, the page's range in its head, a tinted page |
+| [Byrne's Euclid](../test/showcase/byrne/NOTICE.md) | Colour in place of letters: each proposition's diagram redrawn as SVG in red, yellow, blue and black, the lines, circles, triangles and angles named in the text by coloured figures set inline; diagrams floated beside enunciations with large initials |
 | [Burton's Anatomy of Melancholy](../test/showcase/burton/NOTICE.md) | Brace diagrams: the synopses as trees of braces; Burton's 6,816 citations in the outer margin, lettered on each page; Partitions, Sections, Members and Subsections in the running heads |
 | [Mrs Beeton](../test/showcase/beeton/NOTICE.md) | Recipes as structured blocks (ingredients, mode, time, cost, sufficient for, seasonable), 2,700 numbered paragraphs, and a 3,400-line analytical index made from index terms in the text: two columns in the PDF, links in HTML and EPUB |
 | [The Book of Common Prayer](../test/showcase/bcp/NOTICE.md) | Red and black: rubrics, red-letter days and verse numbers in red; versicles and responses run in, the Litany's responses from its units scheme, the Psalter quoted whole, the calendar's January ruled |

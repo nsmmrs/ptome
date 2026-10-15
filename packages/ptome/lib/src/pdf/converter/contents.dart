@@ -1258,10 +1258,15 @@ final class _FloatParagraph {
     required this.lineLength,
     required this.descender,
     this.anchor,
+    this.flowing,
   });
 
   final TextBox text;
-  final TextBox boxText;
+  final CustomContent boxText;
+
+  /// What is set below the image when it doesn't start beside it, when
+  /// not [text] (a paragraph with its initial).
+  final CustomContent? flowing;
   final double marginBottom;
   final double blockMargin;
   final double paddingTop;
@@ -1291,7 +1296,7 @@ final class _FloatGroup implements CustomContent {
   final List<_FloatParagraph> paragraphs = [];
 
   CustomBox _flowing(_FloatParagraph paragraph) => CustomBox(
-    paragraph.text,
+    paragraph.flowing ?? paragraph.text,
     style: BoxStyle(
       margin: EdgeInsets(bottom: paragraph.marginBottom),
       anchor: paragraph.anchor,

@@ -1,0 +1,106 @@
+[#book-1]
+== Book I.
+
+[#prop-1]
+=== Proposition I. Problem.
+
+image::prop-1.svg["Two equal circles, blue and red, each through the other’s centre; the black line joins the centres, and the yellow and red lines join its ends to a point where the circles cross",float=right]
+
+[.enunciation.dropcap]
+On a given finite straight line ({black}) to describe an equilateral triangle.
+
+Describe image:prop-1-circle-blue.svg[the blue circle] and image:prop-1-circle-red.svg[the red circle] (postulate 3.); draw {yellow} and {red} (post. 1.).
+
+then will image:prop-1-triangle.svg[the triangle] be equilateral.
+
+[.steps%hardbreaks]
+For {black} {eq} {yellow} (def. 15.);
+and {black} {eq} {red} (def. 15.),
+{therefore} {yellow} {eq} {red} (axiom. 1.);
+and therefore image:prop-1-triangle.svg[the triangle] is the equilateral triangle required.
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.
+
+<<<
+
+[#prop-2]
+=== Proposition II. Problem.
+
+image::prop-2.svg["The red triangle on the dotted line between the given point and the black line’s end; the blue circle about that end through the black line’s other end, the yellow line produced to it; the red circle about the triangle’s apex, and the blue line from the given point to it",float=left]
+
+[.enunciation.dropcap]
+From a given point ({red-blue}), to draw a straight line equal to a given finite straight line ({black}).
+
+Draw {dotted} (post. 1.), describe image:prop-2-triangle.svg[the triangle] (pr. 1.), produce {red} (post. 2.), describe image:prop-2-circle-blue.svg[the blue circle] (post. 3.), and image:prop-2-circle-red.svg[the red circle] (post. 3.); produce {red} (post. 2.), then {blue} is the line required.
+
+[.steps%hardbreaks]
+For {yellow-red} {eq} {red-blue} (def. 15.),
+and {red} {eq} {red} (const.), {therefore} {yellow} {eq} {blue}
+(ax. 3.), but (def. 15.) {black} {eq} {yellow} {eq} {blue};
+{therefore} {blue} drawn from the given point ({red-blue}),
+is equal the given line {black}.
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.
+
+<<<
+
+[#prop-3]
+=== Proposition III. Problem.
+
+image::prop-3.svg["The blue circle about the black line’s end, its red radius; the black line reaching the circle, its dotted part beyond; the blue line, the less, beside it",float=right]
+
+[.enunciation.dropcap]
+From the greater ({greater}) of two given straight lines, to cut off a part equal to the less ({blue}).
+
+Draw {red} {eq} {blue} (pr. 2.); describe image:prop-3-circle.svg[the blue circle] (post. 3.), then {blue} {eq} {black}.
+
+[.steps%hardbreaks]
+For {red} {eq} {black} (def. 15.),
+and {blue} {eq} {red} (const.);
+{therefore} {blue} {eq} {black} (ax. 1.).
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.
+
+<<<
+
+[#prop-4]
+=== Proposition IV. Theorem.
+
+image::prop-4.svg["Two equal triangles side by side, each its sides red, blue and black and its angles yellow, blue and red",float=left]
+
+[.enunciation.dropcap]
+If two triangles have two sides of the one respectively equal to two sides of the other, ({red} to {red} and {blue} to {blue}) and the angles (image:prop-4-angle-yellow.svg[the yellow angle] and image:prop-4-angle-yellow.svg[the yellow angle]) contained by those equal sides also equal; then their bases or their sides ({black} and {black}) are also equal: and the remaining and their remaining angles opposite to equal sides are respectively equal (image:prop-4-angle-blue.svg[the blue angle] {eq} image:prop-4-angle-blue.svg[the blue angle] and image:prop-4-angle-red.svg[the red angle] {eq} image:prop-4-angle-red.svg[the red angle]): and the triangles are equal in every respect.
+
+Let the two triangles be conceived, to be so placed, that the vertex of the one of the equal angles, image:prop-4-angle-yellow.svg[the yellow angle] or image:prop-4-angle-yellow.svg[the yellow angle]; shall fall upon that of the other, and {red} to coincide with {red}, then will {blue} coincide with {blue} if applied: consequently {black} will coincide with {black}, or two straight lines will enclose a space, which is impossible (ax. 10), therefore {black} {eq} {black}, image:prop-4-angle-blue.svg[the blue angle] {eq} image:prop-4-angle-blue.svg[the blue angle] and image:prop-4-angle-red.svg[the red angle] {eq} image:prop-4-angle-red.svg[the red angle], and as the triangles image:prop-4-triangle.svg[the triangle] and image:prop-4-triangle.svg[the triangle] coincide, when applied, they are equal in every respect.
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.
+
+<<<
+
+[#prop-5]
+=== Proposition V. Theorem.
+
+image::prop-5.svg["The isosceles triangle, its equal sides red and its base black, the sides produced in yellow and blue lines crossed from each end of the base to the other side’s end; the angle at the apex black, the angles at the base blue above and yellow below, red at the ends",float=right]
+
+[.enunciation.dropcap]
+In any isosceles triangle image:prop-5-triangle.svg[the triangle] if the equal sides be produced, the external angles at the base are equal, and the internal angles at the base are also equal.
+
+Produce {red}, and {red}, (post. 2.), take {yellow} {eq} {yellow}, (pr. 3.); draw {blue} and {blue}.
+
+Then in image:prop-5-triangle-adc.svg[the triangle with the black angle, its sides red and yellow, red, and blue] and image:prop-5-triangle-aeb.svg[the triangle with the black angle, its sides red, red and yellow, and blue] we have,
+
+[.steps%hardbreaks]
+{red-yellow} {eq} {red-yellow} (const.), image:prop-5-angle-a.svg[the black angle] common to
+both, and {red} {eq} {red} (hyp.) {therefore} image:prop-5-angle-b.svg[the blue and yellow angle] {eq} image:prop-5-angle-c.svg[the blue and yellow angle],
+{blue} {eq} {blue} and image:prop-5-angle-d.svg[the red angle] {eq} image:prop-5-angle-e.svg[the red angle] (pr. 4.).
+Again in image:prop-5-triangle-bdc.svg[the triangle of the yellow, blue and black lines] and image:prop-5-triangle-ceb.svg[the triangle of the yellow, blue and black lines] we have {yellow} {eq} {yellow},
+image:prop-5-angle-d.svg[the red angle] {eq} image:prop-5-angle-e.svg[the red angle] and {blue} {eq} {blue}, {therefore}
+image:prop-5-angle-b-external.svg[the yellow angle and the angle beside it] {eq} image:prop-5-angle-c-external.svg[the yellow angle and the angle beside it] and image:prop-5-angle-b-yellow.svg[the yellow angle] {eq} image:prop-5-angle-c-yellow.svg[the yellow angle] (pr. 4.) but
+image:prop-5-angle-b.svg[the blue and yellow angle] {eq} image:prop-5-angle-c.svg[the blue and yellow angle], {therefore} image:prop-5-angle-b-blue.svg[the blue angle] {eq} image:prop-5-angle-c-blue.svg[the blue angle] (ax. 3.)
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.

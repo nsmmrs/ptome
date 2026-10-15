@@ -470,7 +470,9 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'Libre Caslon Text',
-    usedBy: 'the magazine look (Caslon)',
+    usedBy:
+        "the magazine look (Caslon); the showcase's Gibbon, Tristram "
+        "Shandy and Byrne's Euclid looks",
     families: ['Libre Caslon Text'],
     styles: [FontStyle.normal, FontStyle.italic, FontStyle.bold],
     fileNames: {},

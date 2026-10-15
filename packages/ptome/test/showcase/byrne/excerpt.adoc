@@ -1,0 +1,36 @@
+= Byrne: Proposition I in colours
+:doctype: book
+:lang: en
+:look: byrne
+:looksdir: {docdir}
+:imagesdir: images
+:notitle:
+include::text/symbols.adoc[]
+
+// Colour in place of letters (doc/showcase.md): Proposition I, its
+// diagram beside its enunciation and its initial, the lines, circles
+// and triangle it speaks of set in the text as coloured symbols.
+
+[#book-1]
+== Book I.
+
+[#prop-1]
+=== Proposition I. Problem.
+
+image::prop-1.svg["Two equal circles, blue and red, each through the other’s centre; the black line joins the centres, and the yellow and red lines join its ends to a point where the circles cross",float=right]
+
+[.enunciation.dropcap]
+On a given finite straight line ({black}) to describe an equilateral triangle.
+
+Describe image:prop-1-circle-blue.svg[the blue circle] and image:prop-1-circle-red.svg[the red circle] (postulate 3.); draw {yellow} and {red} (post. 1.).
+
+then will image:prop-1-triangle.svg[the triangle] be equilateral.
+
+[.steps%hardbreaks]
+For {black} {eq} {yellow} (def. 15.);
+and {black} {eq} {red} (def. 15.),
+{therefore} {yellow} {eq} {red} (axiom. 1.);
+and therefore image:prop-1-triangle.svg[the triangle] is the equilateral triangle required.
+
+[.qed]
+Q.{nbsp}E.{nbsp}D.

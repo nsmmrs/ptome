@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a paragraph's drop initial beside a floated image is drawn and
+  its first lines set in beside it; the letter was taken from the text
+  and never drawn (BUG-qqz54w). `tool/showcase_byrne.dart` draws the
+  showcase's Byrne's Euclid.
 - PDF: the `sideways` role sets a block turned a quarter to the left on
   a page of its own (Herbert's Easter-wings; FEAT-wlw5wq), and
   `base_font_variant_alternates: historical-forms` and
