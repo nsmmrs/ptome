@@ -1,7 +1,8 @@
 /// The test files of [packages] dealt into [shards] of about the same
 /// time, by each file's time in `tool/test_times.txt` (a second for one it
 /// doesn't list), the longest first, each to the shard with the least so
-/// far (a package lighter than half a shard whole). Prints shard
+/// far (a package lighter than a shard's share whole, and each package a
+/// shard runs costing it a start of its own). Prints shard
 /// [index]'s files, a line per package: the package and its files (paths
 /// in the package; none for the whole package), for `dart test` there.
 ///
@@ -77,9 +78,11 @@ void main(List<String> arguments) {
             ? byTime
             : '${a.$1}/${a.$2}'.compareTo('${b.$1}/${b.$2}');
       });
-  // (A package lighter than half a shard goes whole, so a shard runs few
-  // packages, `dart test` starting once for each; a heavier one by its
-  // files.)
+  // (A package lighter than a shard's share goes whole; a heavier one by
+  // its files. Each package a shard runs costs it [_start] once: its
+  // `dart test`, its programs compiled and warmed up. So a file goes to
+  // the shard least loaded with it, counting that for a package new to
+  // the shard: a shard runs few packages.)
   final total = files.fold(0.0, (t, f) => t + f.$3);
   final perPackage = <String, double>{};
   for (final (package, _, seconds) in files) {
@@ -88,10 +91,9 @@ void main(List<String> arguments) {
   final units =
       <(String, String?, double)>[
         for (final MapEntry(key: package, value: seconds) in perPackage.entries)
-          if (seconds <= total / shards / 2) (package, null, seconds),
+          if (seconds <= total / shards) (package, null, seconds),
         for (final (package, path, seconds) in files)
-          if (perPackage[package]! > total / shards / 2)
-            (package, path, seconds),
+          if (perPackage[package]! > total / shards) (package, path, seconds),
       ]..sort((a, b) {
         final byTime = b.$3.compareTo(a.$3);
         return byTime != 0
@@ -99,13 +101,17 @@ void main(List<String> arguments) {
             : '${a.$1}/${a.$2}'.compareTo('${b.$1}/${b.$2}');
       });
   final load = List.filled(shards, 0.0);
+  final has = List.generate(shards, (_) => <String>{});
   final dealt = List.generate(shards, (_) => <(String, String?)>[]);
   for (final (package, path, seconds) in units) {
+    double cost(int s) =>
+        load[s] + seconds + (has[s].contains(package) ? 0 : _start);
     var least = 0;
     for (var s = 1; s < shards; s++) {
-      if (load[s] < load[least]) least = s;
+      if (cost(s) < cost(least)) least = s;
     }
-    load[least] += seconds;
+    load[least] = cost(least);
+    has[least].add(package);
     dealt[least].add((package, path));
   }
   final byPackage = <String, List<String>>{};
@@ -154,19 +160,22 @@ void main(List<String> arguments) {
   }
 }
 
+/// What a package costs a shard that runs it, in the times file's seconds:
+/// its `dart test` started, its programs compiled and warmed up (~10 s on
+/// a runner, beside the shard's other packages).
+const double _start = 10;
+
 /// A test's name in a program of several files: its file's group, then
 /// its own name.
 final RegExp _inProgram = RegExp(r'^(test/\S+_test\.dart) ');
 
 /// [programs] shared out over packages by their [times]: each its share,
-/// rounded, but at least one.
+/// rounded up (one at least).
 Map<String, int> _share(int programs, Map<String, double> times) {
   final total = times.values.fold(0.0, (t, s) => t + s);
   return {
     for (final MapEntry(key: package, value: seconds) in times.entries)
-      package: total > 0
-          ? math.max(1, (programs * seconds / total).round())
-          : 1,
+      package: total > 0 ? math.max(1, (programs * seconds / total).ceil()) : 1,
   };
 }
 
