@@ -1,0 +1,6 @@
+= Book
+:doctype: book
+
+== One
+
+See xref:other.adoc#here[the other book].

@@ -624,7 +624,11 @@ extension _Paragraphs on PdfConverter {
       // with its own first letter as an initial, its lead-in words
       // `_initial_lead_in`, as a novel's chapter opens.)
       if (initial == null) {
-        if (_pendingInitial case (final category, final lines)) {
+        // (`heading_h<n>_initial_skip_roles`: a paragraph with one of
+        // them passes the initial on, as a rubric does to the prayer
+        // after it.)
+        if (_pendingInitial case (final category, final lines)
+            when !roles.any(_marginSkipRoles(category).contains)) {
           _pendingInitial = null;
           if (PdfConverter._initialOf(content) case (
             final letter,

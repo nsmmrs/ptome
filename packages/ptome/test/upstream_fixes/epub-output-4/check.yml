@@ -1,0 +1,5 @@
+description: "an EPUB whose sections have no ids still has its chapters. With sectids unset (:sectids!:), asciidoctor-epub3 2.3.0 names each chapter's file by an id the chapter doesn't have: no chapter is written, the spine is empty, and EPUBCheck rejects the book. ptome names such a chapter from its title, as a section is named when sectids is set. Found building the Book of Common Prayer for the showcase corpus (its texts set sectids!). Fails on the gem.  The gem's EPUB converter is a separate command: set ASCIIDOCTOR_EPUB3_EXE to it when ASCIIDOCTOR_EXE is the Ruby CLI."
+format: epub3
+epub_contains:
+  - {files: "EPUB/package.opf", pattern: "<itemref idref=\"item__one\""}
+  - {files: "EPUB/_two.xhtml", pattern: "More."}

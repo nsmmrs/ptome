@@ -1,0 +1,14 @@
+= The Litany
+:doctype: book
+:lang: en
+:look: bcp
+:looksdir: {docdir}
+:units: liturgy
+:notitle:
+
+// Red and black (doc/showcase.md): the Litany's rubric in red, the
+// initial passed on to its first prayer, its petitions each followed by
+// the response its units scheme prints.
+
+include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..36]
+

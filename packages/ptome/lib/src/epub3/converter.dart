@@ -323,8 +323,22 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
 
   /// The name of the XHTML file [node] is the chapter of (its id), or
   /// `null` when it isn't a chapter.
-  String? chapterFilename(AbstractNode node) =>
-      _isChapter(node) ? node.id : null;
+  String? chapterFilename(AbstractNode node) {
+    if (!_isChapter(node)) return null;
+    // A chapter without an id (`sectids!`, a document's sections left
+    // unnamed) is named as a section is when they are named, from its
+    // title: the gem gives it no file, and the EPUB no spine (not under
+    // asciidoctor-compat).
+    if (node is Section && node.id == null) {
+      final document = _doc(node);
+      if (!asciidoctorCompat(document, CompatFormat.epub)) {
+        final id = Section.generateId(node.title ?? 'chapter', document);
+        node.id = id;
+        document.registerRef(id, node);
+      }
+    }
+    return node.id;
+  }
 
   /// Whether [node] starts a chapter (a file of its own): the document,
   /// unless it is a book; in a book, the preamble and the sections up to
@@ -1752,6 +1766,10 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         final path = node.attributes['path'];
         if (path != null) {
           text = node.text ?? path;
+          // (Another document's, which isn't in the book: its text, where
+          // the gem's link to `other.epub` leaves the container; not under
+          // asciidoctor-compat.)
+          if (!asciidoctorCompat(doc, CompatFormat.epub)) return text;
         } else if (refid == '#') {
           logger.warn(
             '${_basename(_s(doc.attr('docfile')))}: <<chapter#>> xref syntax '

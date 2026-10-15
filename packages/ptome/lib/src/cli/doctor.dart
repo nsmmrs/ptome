@@ -377,6 +377,15 @@ final List<NeededFont> lookFonts = [
     }),
     license: 'SIL Open Font License 1.1',
   ),
+  NeededFont(
+    name: 'Libre Baskerville',
+    usedBy: "the showcase's Book of Common Prayer look (Baskerville)",
+    families: const ['Libre Baskerville'],
+    styles: _all,
+    fileNames: const {},
+    source: _google('Libre Baskerville', 'LibreBaskerville', _all),
+    license: 'SIL Open Font License 1.1',
+  ),
   const NeededFont(
     name: 'Fira Sans Condensed',
     usedBy: 'the tech-book look (Myriad Condensed)',

@@ -10,6 +10,10 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `heading_h<n>_initial_skip_roles`: a paragraph with one of the
+  roles passes a section's initial on to the next (a prayer book's
+  rubric before the prayer; FEAT-v9bhk3). `tool/showcase.dart` converts
+  each work where it is, so its includes reach the units corpus.
 - PDF: `table_row_group_size` and `_gap` set a table's body rows in
   groups with space between them (Babbage's logarithms in fives;
   FEAT-kskwtx).
@@ -25,6 +29,14 @@ Asciidoctor project.
   parsing, so it shares number 1 with the text's first note, and an EPUB
   sets it among the first chapter's notes
   (`test/upstream_fixes/discrete-heading-footnote-*`); not under
+  `asciidoctor-compat`.
+- EPUB: a cross reference to another document (a units work's
+  citation of the Bible) is its text; asciidoctor-epub3 links to the
+  other document's EPUB, outside the container
+  (`test/upstream_fixes/epub-output-5`); not under `asciidoctor-compat`.
+- EPUB: a book whose sections have no ids (`:sectids!:`) still has its
+  chapters, each named from its title; asciidoctor-epub3 writes none and
+  an empty spine (`test/upstream_fixes/epub-output-4`); not under
   `asciidoctor-compat`.
 - EPUB: a chapter's title element holds the title's text alone; with
   emphasis in a chapter's title (`== The _Albatross_`) asciidoctor-epub3

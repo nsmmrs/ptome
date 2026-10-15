@@ -173,6 +173,13 @@ Future<void> main(List<String> arguments) async {
   final verapdf = _verapdf();
   Directory(out).createSync(recursive: true);
   final absoluteOut = Directory(out).absolute.path;
+  // (What a work includes from the units corpus, `../../units/...` from
+  // its folder, reached from its copy in OUT/SLUG: OUT/../units, a link
+  // to test/units.)
+  final units = Link('${Directory(out).absolute.parent.path}/units');
+  if (!units.existsSync() && !Directory(units.path).existsSync()) {
+    units.createSync(Directory('test/units').absolute.path);
+  }
 
   final results = <Built>[];
   final queue = [...works];
@@ -223,6 +230,9 @@ Future<Built> _build(
   final times = <String>[];
   final outputs = <String>[];
   final pages = <({String page, String scan, String note})>[];
+  // (The work converted in a copy of its folder in OUT/SLUG, with the
+  // images it fetches beside those it commits; what it includes from the
+  // units corpus (`../../units/...`) reached through OUT/../units.)
   final stage = Directory('$out/$slug');
   if (stage.existsSync()) stage.deleteSync(recursive: true);
   _copy(Directory('$_corpus/$slug'), stage);

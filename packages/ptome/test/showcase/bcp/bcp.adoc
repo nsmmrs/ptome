@@ -1,0 +1,38 @@
+= The Book of Common Prayer
+The Church of England
+:doctype: book
+:lang: en
+:look: bcp
+:looksdir: {docdir}
+:units: liturgy
+:works: bible=../../units/corpus/bible/kjv/kjv.adoc; psalter=../../units/corpus/liturgy/bcp-1662/psalter.adoc
+:description: The Calendar, Morning Prayer, the Litany and the Psalter of the 1662 Book of Common Prayer, in red and black.
+
+// (Morning Prayer, the Litany and the Psalter are the units corpus's
+// (test/units/corpus/liturgy/bcp-1662), taken in without their headers;
+// the Psalter quoted whole as a work of its own, in its own scheme; the
+// Calendar transcribed for this book.)
+
+include::text/calendar.adoc[]
+
+[.office]
+= Morning Prayer
+
+include::../../units/corpus/liturgy/bcp-1662/morning-prayer.adoc[lines=6..]
+
+[.office]
+= The Litany
+
+// (Its Gloria without the id Morning Prayer's has too.)
+include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..120]
+
+[.verse]
+include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=122..]
+
+[.office]
+= The Psalter
+
+[.psalter]
+== The Psalms of David
+
+include::psalter[unit="1-150",cite=none]

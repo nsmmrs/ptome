@@ -10,6 +10,7 @@ EPIC-phf3n2 has the plan.
 | --- | --- |
 | [Alice](../test/showcase/alice/NOTICE.md) | Illustrations the text runs beside, the Mouse's Tale in type that shrinks down its tail, Jabberwocky in mirror type, the chess problem's moves in two columns |
 | [Babbage's logarithms](../test/showcase/babbage/NOTICE.md) | A large numeric table, generated: rows in fives, figures in columns, heads on every page, the page's range in its head, a tinted page |
+| [The Book of Common Prayer](../test/showcase/bcp/NOTICE.md) | Red and black: rubrics, red-letter days and verse numbers in red; versicles and responses run in, the Litany's responses from its units scheme, the Psalter quoted whole, the calendar's January ruled |
 | [Gibbon](../test/showcase/gibbon/NOTICE.md) | Heavy footnotes (1,931) in two balanced columns at the foot, kept by their references, split across pages; dates in the outer margin |
 | [Moby-Dick](../test/showcase/moby-dick/NOTICE.md) | Scale (the whole novel, 617 pages) and a novel's apparatus: a dedication page, the Extracts' sources, epigraphs, footnotes, the play-script chapters |
 | [Tristram Shandy](../test/showcase/tristram/NOTICE.md) | Typographic play: the black page and the marbled page, chapters that are only their heads, rows of asterisks, plot-line diagrams, dashes of many lengths |

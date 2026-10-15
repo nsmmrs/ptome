@@ -141,6 +141,8 @@ void main() {
             'reproducible': '',
             if (backend == 'pdf') ...{
               'pdf-theme': theme.absolute.path,
+              // (The look's images, a page's frame, found beside it.)
+              'pdf-themesdir': Directory(dir).absolute.path,
               'pdf-fontsdir': Directory(_noto).absolute.path,
             },
           },

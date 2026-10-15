@@ -1,0 +1,11 @@
+= Book
+:doctype: book
+:sectids!:
+
+== One
+
+Text.
+
+== Two
+
+More.
