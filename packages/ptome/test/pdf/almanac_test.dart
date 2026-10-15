@@ -92,7 +92,23 @@ void main() {
     expect(base[1], closeTo(base[2], 0.01));
   });
 
-  test('a tagged book without a title page: its first heading H1', () {
+  test('a tagged book without a title page, heading_tag_shift: its first '
+      'heading H1', () {
+    final content = qpdfQdf(
+      _recorded,
+      _pdf(
+        '= Doc\n:doctype: book\n:notitle:\n:pdf-ua:\n\n== One\n\nText.\n\n'
+            '=== One A\n\nText.\n\n== Two\n\nText.\n',
+        'heading:\n  tag_shift: true\n',
+      ).readAsBytesSync(),
+    );
+    final headings = [
+      for (final m in RegExp(r'/S /(H\d)\b').allMatches(content)) m[1]!,
+    ];
+    expect(headings, ['H1', 'H2', 'H1']);
+  });
+
+  test('without heading_tag_shift, the tags as before', () {
     final content = qpdfQdf(
       _recorded,
       _pdf(
@@ -101,9 +117,9 @@ void main() {
         '',
       ).readAsBytesSync(),
     );
-    final headings = [
-      for (final m in RegExp(r'/S /(H\d)\b').allMatches(content)) m[1]!,
-    ];
-    expect(headings, ['H1', 'H2', 'H1']);
+    expect(
+      [for (final m in RegExp(r'/S /(H\d)\b').allMatches(content)) m[1]!],
+      ['H2', 'H3', 'H2'],
+    );
   });
 }

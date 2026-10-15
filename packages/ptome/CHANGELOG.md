@@ -10,17 +10,18 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
-- A jump line in a table cell knows whether its target comes before it,
-  searching the AsciiDoc cells' documents in their places (the
-  New-York Tribune's front page). EPUB: a cross reference to an
+- With the `cell-references` attribute, a jump line knows whether a
+  target in an AsciiDoc table cell comes before it (the New-York
+  Tribune's front page), and in an EPUB a cross reference to an
   anchor in a later AsciiDoc table cell links to its chapter, where
   asciidoctor-epub3 leaves it unknown (BUG-xmdjm0,
   `test/upstream_fixes/epub-output-6`); not under `asciidoctor-compat`.
 - PDF: `font_fallback_metrics: base` counts a fallback font's text as
   the text's own font for its line's height, so a symbol doesn't make
   its line or table row taller (Poor Richard's Almanack; FEAT-ml7z96).
-  PDF/UA: a tagged book without a title page shifts its headings' tags
-  so that the first is H1, as PDF/UA-1 7.4.2 asks (BUG-ljj0fk).
+  PDF/UA: with `heading_tag_shift: true`, a tagged book without a title
+  page shifts its headings' tags so that the first is H1, as PDF/UA-1
+  7.4.2 asks (BUG-ljj0fk).
 - PDF: what a dictionary's pages take (Johnson's Dictionary): a
   negative `role_<role>_text_indent` hangs a paragraph and
   `role_<role>_margin_left` sets one in (FEAT-43wrgt);

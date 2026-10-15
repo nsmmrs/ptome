@@ -74,3 +74,11 @@ https://archive.org/details/10904662bsb
 - The texts are the corpus's transcriptions, their spelling modern; a
   few of the corpus's rubrics are headings there ("The people shall
   answer here…"), and are set as headings here.
+
+## In HTML and EPUB
+
+- In HTML and EPUB the rubrics, red-letter days, heads and verse numbers
+  are red and the Litany's responses printed from its scheme, as in the
+  PDF; the versicles run in after their speakers in HTML, while an EPUB
+  sets each speaker on a line of its own; the initials opening the
+  offices are the PDF's alone.

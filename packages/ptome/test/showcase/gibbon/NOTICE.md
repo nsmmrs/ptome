@@ -74,3 +74,11 @@ them. Not committed.
   the foot in two columns: here they are at the foot, in two columns.
 - The octavo's glosses in the margin summarize the text ("Encampment.");
   Standard Ebooks keeps only the dates, which are set there.
+
+## In HTML and EPUB
+
+- In HTML and EPUB the footnotes are numbered notes at the end of the
+  document (HTML) or of each chapter (EPUB), linked both ways: the two
+  balanced columns at the foot of each page are the PDF's alone, as
+  pages are. The dates float into the right margin in HTML and stand,
+  small, where they stand in the text in an EPUB.

@@ -832,11 +832,15 @@ extension _Sections on PdfConverter {
   }
 
   /// A heading's element of the logical structure at [level]: the levels
-  /// shifted so that the document's first heading is H1 when no title
-  /// before it is (a book without a title page, `:notitle:`), as PDF/UA-1
-  /// 7.4.2 asks (BUG-ljj0fk).
+  /// shifted, with the theme's `heading_tag_shift: true`, so that the
+  /// document's first heading is H1 when no title before it is (a book
+  /// without a title page, `:notitle:`), as PDF/UA-1 7.4.2 asks
+  /// (BUG-ljj0fk).
   StructureElement? _headingStruct(int level) {
-    final shift = _headingShift ??= _titleTagged ? 0 : math.max(0, level - 1);
+    final shift = _headingShift ??=
+        _titleTagged || _theme['heading_tag_shift'] != const ThemeBool(true)
+        ? 0
+        : math.max(0, level - 1);
     return _struct('H${(level - shift).clamp(1, 6)}');
   }
 }

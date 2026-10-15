@@ -53,7 +53,9 @@ ptome -b docbook5 -o book.xml book.adoc
   (`{{title}}`, the target's; `{{page}}`, its page in a PDF, none on the
   web; `{{back}}` when the target comes before): by default "Continued
   on page 7" or "Continued from page 1" in a PDF, "Continued in The
-  Science" on the web.
+  Science" on the web. With the `cell-references` attribute, a jump line also finds its
+  target in an AsciiDoc table cell (a newspaper's stories set in a
+  table), and says "from" for one that comes before it.
   `multipage-page-toclevels` puts a page's own sections at its top, as
   a table of contents (`toc-title`), or in a `multipage_toc.mustache`
   template (`title`, and `entries`: the list).

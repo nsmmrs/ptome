@@ -390,10 +390,11 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
       );
       // (Each AsciiDoc cell's document known by its cell before any is
       // converted: a reference to an anchor in a later cell finds its
-      // chapter, where the gem leaves it unknown; not under
-      // asciidoctor-compat.)
+      // chapter, where the gem leaves it unknown; with the document's
+      // `cell-references`, not under asciidoctor-compat.)
       for (final table
-          in asciidoctorCompat(node, CompatFormat.epub)
+          in asciidoctorCompat(node, CompatFormat.epub) ||
+                  !node.hasAttr('cell-references')
               ? const <AbstractBlock>[]
               : node.findBy(
                   context: BlockContext.table,

@@ -36,6 +36,7 @@ pdf:
     fallbacks: [Noto Sans Symbols, Noto Sans Symbols 2, Noto Serif]
     fallback_metrics: base
   heading:
+    tag_shift: true
     chapter_break_before: auto
     h2:
       text_align: left

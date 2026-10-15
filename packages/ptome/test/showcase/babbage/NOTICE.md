@@ -58,3 +58,11 @@ edition): https://archive.org/details/tablelogarithms00babbgoog
 - The head gives the numbers the page holds, where Babbage's gives the
   logarithm's first figures and the number ("Log. 000. N. 100.").
 - His face is a heavy modern; here Old Standard TT.
+
+## In HTML and EPUB
+
+- In HTML and EPUB the table is one table: its rows in fives (the
+  look's CSS spaces each fifth) and its figures in lining, tabular
+  numerals, but its heads once at the top and no page range over each
+  page (a web page or an EPUB has no pages of its own); the tint is the
+  HTML page's background, not the EPUB's.

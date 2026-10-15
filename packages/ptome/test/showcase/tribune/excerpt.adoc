@@ -4,6 +4,7 @@
 :look: tribune
 :looksdir: {docdir}
 :notitle:
+:cell-references:
 :jump-template: {{#page}}Continued {{#back}}from{{/back}}{{^back}}on{{/back}} page {{page}}.{{/page}}{{^page}}Continued {{#back}}from{{/back}}{{^back}}in{{/back}} {{title}}{{/page}}
 
 // A newspaper's front page (doc/showcase.md): the banner across the

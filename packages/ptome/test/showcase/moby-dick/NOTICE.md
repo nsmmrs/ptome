@@ -68,3 +68,10 @@ American edition): https://archive.org/details/mobydickorwhale01melv
   quotation's last words.
 - The Etymology's words in the languages are a two-column table without
   rules.
+
+## In HTML and EPUB
+
+- The apparatus, the epigraphs, the footnotes and the play-script
+  chapters are the same structures in HTML and EPUB, styled by the
+  look's CSS; the running heads, widows and orphans are the PDF's alone,
+  as pages are.

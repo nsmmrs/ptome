@@ -35,19 +35,23 @@ String jumpText(
 bool isJump(AbstractBlock block) => block.includesRole('jump');
 
 /// Whether the block [id] names comes before [block] in [doc]: the
-/// blocks in document order, each AsciiDoc table cell's document in its
-/// cell's place (a newspaper's stories set in a table).
+/// blocks in document order, and with the `cell-references` attribute
+/// each AsciiDoc table cell's document in its cell's place (a
+/// newspaper's stories set in a table).
 bool jumpsBack(Document doc, AbstractBlock block, String id) {
   var root = doc;
   for (var parent = doc.parentDocument; parent != null;) {
     root = parent;
     parent = parent.parentDocument;
   }
+  // (With the document's `cell-references`: the AsciiDoc table cells'
+  // documents searched too.)
+  final cells = root.hasAttr('cell-references');
   bool? walk(Document document) {
     for (final other in document.findBy()) {
       if (identical(other, block)) return false;
       if (other.id == id) return true;
-      if (other is Table) {
+      if (other is Table && cells) {
         for (final row in [
           ...other.rows.head,
           ...other.rows.body,
@@ -64,5 +68,5 @@ bool jumpsBack(Document doc, AbstractBlock block, String id) {
     return null;
   }
 
-  return walk(root) ?? false;
+  return walk(cells ? root : doc) ?? false;
 }

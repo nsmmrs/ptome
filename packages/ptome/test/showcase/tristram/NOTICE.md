@@ -72,3 +72,12 @@ Bayerische Staatsbibliothek's copy: https://archive.org/details/10931855bsb
   each have their own title page.
 - Yorick's epitaph's frame is the width of the text; the book's is
   narrower.
+
+## In HTML and EPUB
+
+- In HTML and EPUB the black and marbled pages are their images across
+  the page, the chapters of headings alone each a section of its own,
+  and Sterne's two- and three-em dashes the characters themselves
+  (U+2E3A, U+2E3B), which the reader's fonts draw where they have them;
+  the PDF alone sets them as em dashes run together in Caslon, which
+  lacks them.

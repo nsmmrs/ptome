@@ -844,9 +844,9 @@ convert the PDF to the printer's CMYK).
 `-a pdf-ua` makes a tagged PDF that conforms to PDF/UA-1 (ISO 14289-1),
 for screen readers and reflow. Its structure tree records what the
 content is: headings (`H1` for the title, `H2`… for the sections, by
-their level; without a title tagged before them, a book with `:notitle:`,
-the levels shift so that the first heading is `H1`, as PDF/UA-1 7.4.2
-asks), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
+their level; with the theme's `heading_tag_shift: true` and no title
+tagged before them, a book with `:notitle:`, the levels shift so that
+the first heading is `H1`, as PDF/UA-1 7.4.2 asks), paragraphs, lists (`L`, `LI`, `LBody`), tables (`Table`,
 `TR`, header cells `TH` with their scope, `TD`), figures with their
 alternate text (an image's `alt`), and links (`Link`, each annotation
 described). Running heads, page numbers, backgrounds and borders are

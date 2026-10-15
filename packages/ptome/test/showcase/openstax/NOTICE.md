@@ -88,3 +88,10 @@ Designed for the work, after OpenStax's own printed and web books (a
 modern textbook's notes, examples and figures), not after a scan: the
 chapter is a modern work, so no page is set beside a reference scan
 (`compare` is empty), and nothing departs from a printing.
+
+## In HTML and EPUB
+
+- In HTML and EPUB the notes, examples and steps are boxes and rules
+  from the look's CSS; the equations are MathML in the EPUB and typeset
+  by MathJax in HTML; the figures, their numbers and alternative text,
+  and the answer key's links work in all three.

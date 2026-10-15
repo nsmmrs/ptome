@@ -34,6 +34,7 @@ pdf:
     margin_bottom: 0
     text_indent: 0.8em
   heading:
+    tag_shift: true
     h2:
       text_align: center
       font_size: 14

@@ -1,5 +1,6 @@
 = Doc
 :doctype: book
+:cell-references:
 
 [#one]
 == One

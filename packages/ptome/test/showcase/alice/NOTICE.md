@@ -88,3 +88,11 @@ modern face Richard Clay printed the books in: `ptome doctor --look alice
   from the paragraph before.
 - The illustrations float to the right; the books set some at the left
   and some across, by hand.
+
+## In HTML and EPUB
+
+- The Mouse's Tale shrinks down its tail and Jabberwocky's stanza is
+  mirrored in all three formats (the look's CSS for HTML and EPUB), and
+  the chess problem's moves are in two columns in each. The illustrations
+  the text runs beside float to the right in HTML; an EPUB sets each in
+  its place across the text, as a reader's narrow page would anyway.

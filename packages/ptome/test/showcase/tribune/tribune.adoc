@@ -5,6 +5,7 @@
 :looksdir: {docdir}
 :imagesdir: images
 :notitle:
+:cell-references:
 :jump-template: {{#page}}Continued {{#back}}from{{/back}}{{^back}}on{{/back}} page {{page}}.{{/page}}{{^page}}Continued {{#back}}from{{/back}}{{^back}}in{{/back}} {{title}}{{/page}}
 :description: The front page of the New-York Tribune the morning after the Titanic sank, transcribed from the Library of Congress’s scan: the banner across seven columns, the stories in their columns under their headlines and decks, ruled apart, the map and the pictures, and the two stories that jump to the second page.
 

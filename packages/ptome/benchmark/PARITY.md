@@ -125,7 +125,7 @@ reproducers of each.
   for it and an empty spine, and a cross reference to another document is
   its text, where the gem links to that document's EPUB, outside the
   container, and a cross reference to an anchor in a later AsciiDoc
-  table cell is a link to its chapter, where the gem leaves it unknown
+  table cell is a link to its chapter with `:cell-references:`, where the gem leaves it unknown
   (none of them under `asciidoctor-compat`, which the corpus
   holds to the gem's). With `source-highlighter=highlight.js`, an EPUB's code is
   highlighted at conversion and the theme's stylesheet is in the EPUB
