@@ -95,12 +95,6 @@ jobs:
     timeout-minutes: 3
     name: tests (${{ matrix.os }}, ${{ matrix.shard }} of ${{ matrix.shards }})
     steps:
-    # (Windows Defender scans each file the job writes as it is written:
-    # the checkout's, the pub cache's, the compilers'. Not on a runner
-    # thrown away after the job.)
-    - if: runner.os == 'Windows'
-      shell: pwsh
-      run: Set-MpPreference -DisableRealtimeMonitoring $true
     - uses: actions/checkout@v4
     - uses: ./.github/actions/setup
     - name: The shard's tests
