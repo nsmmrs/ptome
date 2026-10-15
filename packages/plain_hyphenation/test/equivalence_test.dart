@@ -6,9 +6,9 @@
 // some characters that aren't, the exceptions, the UDHR's words where
 // there are some, all in mixed case too.
 //
-// The words are random but seeded, so a run is repeatable. Setting
-// PLAIN_HYPHENATION_EQUIVALENCE_SCALE to a number multiplies how many
-// there are of each kind (and changes the seed), for longer runs than CI's.
+// The words are random but seeded (from each language's tag), so a run is
+// repeatable; tool/deep_checks.dart makes many times as many of each kind,
+// for longer runs, a failure it finds becoming a case here.
 @TestOn('vm')
 library;
 
@@ -30,16 +30,18 @@ const List<String> _strangers = [
   '\u{1D400}', '\uD800', '\uDC00', '́', '‍', 'ı', 'K', 'Å',
 ];
 
-final int _scale =
-    int.tryParse(
-      Platform.environment['PLAIN_HYPHENATION_EQUIVALENCE_SCALE'] ?? '',
-    ) ??
-    1;
+/// A seed from [text] that is the same on every platform and SDK (a
+/// string's hashCode isn't).
+int _seed(String text) =>
+    text.codeUnits.fold(17, (h, c) => (h * 31 + c) & 0x7fffffff);
 
-void main() {
+void main() => equivalence();
+
+/// The equivalence tests over [scale] times the words of each kind.
+void equivalence({int scale = 1}) {
   for (final tag in hyphenationLanguages) {
     test('$tag: the same breaks as the reference', () {
-      final random = math.Random(tag.hashCode ^ _scale);
+      final random = math.Random(_seed(tag) ^ scale);
       final patterns = File('vendor/hyph-utf8/patterns/$tag.pat.txt')
           .readAsStringSync();
       final exceptionsFile = File('vendor/hyph-utf8/patterns/$tag.hyp.txt');
@@ -70,7 +72,7 @@ void main() {
           .map(String.fromCharCode)
           .toList();
       String any(List<String> list) => list[random.nextInt(list.length)];
-      final count = 300 * _scale;
+      final count = 300 * scale;
       final words = <String>[
         for (var i = 0; i < count; i++) any(pieces).replaceAll('.', ''),
         for (var i = 0; i < count; i++)

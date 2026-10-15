@@ -964,8 +964,19 @@ Registry createSantaListBlockMacro() {
 
 void main() {
   // Explicit global-state reset between tests (mirrors Ruby's
-  // `unregister_all` teardown, including groups).
+  // `unregister_all` teardown, including groups). The groups other suites
+  // registered (the backends', where suites share a program, on Node) are
+  // set aside for these tests, each of which starts with none, and put
+  // back after them.
+  final others = <String, void Function(Registry registry)>{};
+  setUpAll(() => others.addAll(Extensions.groups));
+  setUp(Extensions.unregisterAll);
   tearDown(Extensions.unregisterAll);
+  tearDownAll(() {
+    for (final MapEntry(key: name, value: build) in others.entries) {
+      Extensions.register(name: name, build: build);
+    }
+  });
 
   group('Register', () {
     test(

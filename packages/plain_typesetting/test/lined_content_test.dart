@@ -140,7 +140,11 @@ final class Plain implements CustomContent {
   (double, double) intrinsicWidths() => inner.intrinsicWidths();
 }
 
-void main() {
+void main() => linedContent();
+
+/// The lined content tests over every [every]th seed of the flow digests
+/// (tool/deep_checks.dart: every one).
+void linedContent({int every = 3}) {
   // (The random documents quick to lay out: those the flow test runs.)
   final seeds = [
     for (final line in File('test/fixtures/flow_digests.txt').readAsLinesSync())
@@ -209,7 +213,8 @@ void main() {
 
   test('random documents set as plain custom content would be', () {
     final calls = Calls();
-    for (final seed in seeds) {
+    for (final (i, seed) in seeds.indexed) {
+      if (i % every != 0) continue;
       final (content, layout) = RandomFlow(
         seed,
         custom: (name, heights) => Lined(name, heights, calls: calls),

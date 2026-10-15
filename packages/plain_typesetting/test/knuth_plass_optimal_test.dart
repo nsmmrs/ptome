@@ -11,7 +11,11 @@ import 'package:plain_fonts/plain_fonts.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-void main() {
+void main() => optimal();
+
+/// The optimality tests over [scale] times their random paragraphs
+/// (tool/deep_checks.dart runs many times as many).
+void optimal({int scale = 1}) {
   test('the least demerits of every way to break the paragraph', () {
     final font = OpenTypeShaper(
       OpenTypeFont.parse(
@@ -20,7 +24,7 @@ void main() {
     );
     final run = TextRun('', TextStyle(font, 10));
     var checked = 0;
-    for (var seed = 0; seed < 500; seed++) {
+    for (var seed = 0; seed < 100 * scale; seed++) {
       final random = math.Random(seed);
       final items = <LineItem>[];
       for (var i = 0, n = 4 + random.nextInt(11); i < n; i++) {
@@ -82,7 +86,7 @@ void main() {
         );
       }
     }
-    expect(checked, greaterThan(300));
+    expect(checked, greaterThan(60 * scale));
   });
 
   test('no more hyphenated lines in a row than the limit, the least else', () {
@@ -108,7 +112,7 @@ void main() {
     }
 
     var runs = 0;
-    for (var seed = 0; seed < 300; seed++) {
+    for (var seed = 0; seed < 60 * scale; seed++) {
       final random = math.Random(seed);
       final items = <LineItem>[];
       for (var i = 0, n = 4 + random.nextInt(8); i < n; i++) {

@@ -5,7 +5,6 @@
 // test/oracles/brotli_equivalence.json by test/support/oracles.dart;
 // ORACLES=record asks the tool again).
 @TestOn('vm')
-@Tags(['nightly'])
 library;
 
 import 'dart:convert';

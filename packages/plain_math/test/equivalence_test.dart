@@ -6,11 +6,10 @@
 /// work (faster, typed) without changing what they write.
 ///
 /// The fuzzed inputs come from a fixed seed, and a digest of the frozen
-/// copy's outputs over them guards the copy itself. To fuzz further, set
-/// `PLAIN_MATH_FUZZ_SEED` (and `PLAIN_MATH_FUZZ_COUNT`, 20,000 by
-/// default); the digest isn't checked then.
+/// copy's outputs over them guards the copy itself. To fuzz further, run
+/// tool/deep_checks.dart (many times the inputs; the digest isn't
+/// checked then): a failure it finds becomes a case here.
 @TestOn('vm')
-@Tags(['nightly'])
 library;
 
 import 'dart:convert';
@@ -21,14 +20,13 @@ import 'package:test/test.dart';
 
 import 'frozen/convert.dart';
 
-void main() {
-  final seedOverride = int.tryParse(
-    Platform.environment['PLAIN_MATH_FUZZ_SEED'] ?? '',
-  );
-  final count =
-      int.tryParse(Platform.environment['PLAIN_MATH_FUZZ_COUNT'] ?? '') ??
-      20000;
-  final fixed = seedOverride == null && count == 20000;
+void main() => equivalence();
+
+/// The equivalence tests over [scale] times the fuzzed inputs (the
+/// digests checked at the tests' own scale only).
+void equivalence({int scale = 1}) {
+  final count = 2000 * scale;
+  final fixed = scale == 1;
 
   /// That [output] (the frozen copy's when [frozen]) is the frozen copy's
   /// for every one of [inputs] (and, over the fixed inputs, that the
@@ -58,7 +56,7 @@ void main() {
           .readAsLinesSync()
           .where((l) => l.isNotEmpty),
       ..._asciimathEdges,
-      ..._fuzz(_asciimathPieces, seedOverride ?? 42, count),
+      ..._fuzz(_asciimathPieces, 42, count),
       ..._long,
     ];
 
@@ -96,7 +94,7 @@ void main() {
       ) as List<Object?>)
         (e! as Map<String, Object?>)['tex']! as String,
       ..._latexEdges,
-      ..._fuzz(_latexPieces, seedOverride ?? 7, count),
+      ..._fuzz(_latexPieces, 7, count),
       ..._latexLong,
     ];
 
@@ -129,11 +127,12 @@ void main() {
   });
 }
 
-// The digests of the frozen copy's outputs over the fixed inputs.
-const int _asciimathDigest = 1549736355;
-const int _asciimathTreeDigest = 1446294107;
-const int _latexDigest = 1809389773;
-const int _latexTreeDigest = 1018375130;
+// The digests of the frozen copy's outputs over the fixed inputs (2,000
+// fuzzed a kind).
+const int _asciimathDigest = 4090570278;
+const int _asciimathTreeDigest = 589698988;
+const int _latexDigest = 3050727990;
+const int _latexTreeDigest = 2140413730;
 
 /// [convert]'s tree as text, or the error it throws.
 String _outcome(MathNode Function() convert) {

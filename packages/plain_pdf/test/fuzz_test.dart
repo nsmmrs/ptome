@@ -3,9 +3,6 @@
 // TypeError, a hang). The damage is random but seeded, so a failure is
 // reproducible.
 
-@Tags(['nightly'])
-library;
-
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';

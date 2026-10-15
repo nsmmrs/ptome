@@ -1,14 +1,13 @@
 // Damaged input: every test image with bytes flipped, cut short, inserted
 // or zeroed is decoded or rejected with an ImageFormatException, and
 // never fails otherwise (a RangeError, a TypeError, a hang). The damage
-// is random but seeded (FUZZ_SEED to choose another), so a failure is
-// reproducible.
+// is random but seeded, so a failure is reproducible; tool/deep_checks.dart
+// damages many times as many copies, a failure it finds becoming a case
+// here.
 
-@Tags(['nightly'])
 @TestOn('vm')
 library;
 
-import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 
@@ -46,7 +45,10 @@ Iterable<Uint8List> damaged(Uint8List bytes, Random random, int count) sync* {
   }
 }
 
-void main() {
+void main() => fuzz();
+
+/// The fuzz tests over [scale] times the damaged copies.
+void fuzz({int scale = 1}) {
   for (final (folder, extension, limit) in [
     ('pngsuite', '.png', 40),
     ('jpeg', '.jpg', 10),
@@ -57,13 +59,11 @@ void main() {
     ('tiff', '.tif', 70),
   ]) {
     test('$folder: damaged files are decoded or rejected', () {
-      final random = Random(
-        int.tryParse(Platform.environment['FUZZ_SEED'] ?? '') ?? 20261013,
-      );
+      final random = Random(20261013);
       for (final file in testImages(folder, extension).take(limit)) {
         final bytes = file.readAsBytesSync();
         var i = 0;
-        for (final input in damaged(bytes, random, 300)) {
+        for (final input in damaged(bytes, random, 30 * scale)) {
           try {
             ImageFile.read(input).decode().toRgba8();
           } on ImageFormatException {

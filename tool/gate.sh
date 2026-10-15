@@ -32,7 +32,7 @@ have() { command -v "$1" >/dev/null 2>&1; }
 if [ "${1:-}" = _package ]; then
   cd "$root/$2" || exit 1
   status=0
-  dart test -x nightly -r failures-only | tail -1 || status=1
+  dart test -r failures-only | tail -1 || status=1
   if [ -f tool/api_check.dart ]; then
     dart run tool/api_check.dart | tail -1 || status=1
   fi

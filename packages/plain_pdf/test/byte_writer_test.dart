@@ -6,16 +6,12 @@
 // PLAIN_PDF_FUZZ_SCALE=N multiplies the number of values (the research
 // run checked 15.7 million, N = 50 or so).
 import 'dart:convert';
-import 'dart:io';
 import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_pdf/src/byte_writer.dart';
 import 'package:test/test.dart';
-
-final int scale =
-    int.tryParse(Platform.environment['PLAIN_PDF_FUZZ_SCALE'] ?? '') ?? 1;
 
 String written(void Function(ByteWriter out) write) {
   final out = ByteWriter();
@@ -97,18 +93,22 @@ Iterable<double> randomValues(int seed, int count) sync* {
   }
 }
 
-void main() {
+void main() => byteWriter();
+
+/// The byte writer's tests, the random numbers' ones over [scale] times
+/// the values (tool/deep_checks.dart runs many times as many).
+void byteWriter({int scale = 1}) {
   group('number', () {
     for (final precision in const [3, 5]) {
       test('decimal ties and their neighbours, precision $precision', () {
-        expect(mismatches(ties(precision, 100000 * scale), precision), isEmpty);
+        expect(mismatches(ties(precision, 10000 * scale), precision), isEmpty);
       });
       test('binary fractions, precision $precision', () {
         expect(mismatches(binaryFractions(), precision), isEmpty);
       });
       test('random values, precision $precision', () {
         expect(
-          mismatches(randomValues(precision, 60000 * scale), precision),
+          mismatches(randomValues(precision, 6000 * scale), precision),
           isEmpty,
         );
       });

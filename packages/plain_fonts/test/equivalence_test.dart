@@ -7,7 +7,6 @@
 // times as many, is tool/deep_checks.dart's, a failure it finds a case
 // here.
 @TestOn('vm')
-@Tags(['nightly'])
 library;
 
 import 'dart:io';

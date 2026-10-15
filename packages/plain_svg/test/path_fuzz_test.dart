@@ -4,8 +4,6 @@
 // (numbers like `5.`, `.5`, `1e`, `-`, `1e+`, `.e1`; stray letters, flags
 // and separators), and the numbers of single tokens checked against the
 // number grammar's RegExp.
-@Tags(['nightly'])
-library;
 
 import 'dart:math' as math;
 

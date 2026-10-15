@@ -1,6 +1,5 @@
 /// Damaged documents: the XML reader and the SVG drawing fail only with a
 /// FormatException, and draw with the canvas's saves and restores paired.
-@Tags(['nightly'])
 @TestOn('vm')
 // (SVG written in pieces.)
 // ignore_for_file: missing_whitespace_between_adjacent_strings

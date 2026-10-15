@@ -12,6 +12,9 @@ analyzer:
     - lib/src/epub3/assets.g.dart
     # The JavaScript projection, from tool/generate_js.dart.
     - lib/src/js/api.g.dart
+    # Build output (the Node test programs of tool/node_tests.dart, the
+    # npm package): never committed.
+    - build/**
   language:
     strict-casts: true
     strict-inference: true

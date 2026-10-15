@@ -3,7 +3,6 @@
 // cache files and answers, on the test fonts and plain_typesetting's
 // (committed fonts only, the same on every machine).
 @TestOn('vm')
-@Tags(['nightly'])
 library;
 
 import 'dart:io';

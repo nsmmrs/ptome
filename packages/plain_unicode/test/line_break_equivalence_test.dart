@@ -2,8 +2,6 @@
 // (test/oracle/line_break_v0.dart): the same class for every code point,
 // the same breaks for the conformance strings, real paragraphs and random
 // strings.
-@Tags(['nightly'])
-library;
 
 import 'dart:convert';
 import 'dart:io';
