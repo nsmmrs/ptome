@@ -17,6 +17,8 @@ void main(List<String> args) {
     const Rect(72, 700, 451, 60),
     const LinkTarget.uri('https://example.org/'),
   );
-  File(args.isEmpty ? 'hello.pdf' : args.first)
-      .writeAsBytesSync(document.save());
+  File(args.isEmpty ? 'hello.pdf' : args.first).writeAsBytesSync(
+    // (Deterministic: the same bytes on every run, dated the epoch.)
+    document.save(options: const PdfWriterOptions(deterministic: true)),
+  );
 }

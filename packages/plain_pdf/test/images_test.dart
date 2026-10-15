@@ -7,6 +7,9 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 /// A one-page PDF showing [image] at one point per pixel, filling the
 /// page.
 Uint8List imagePdf(PdfImage image, {PdfWriterOptions? options}) =>
@@ -66,17 +69,6 @@ Uint8List pagePdf(
   return out.takeBytes();
 }
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-/// ImageMagick: `magick` (version 7), or `convert` (version 6).
-final String? _magick = _has('magick')
-    ? 'magick'
-    : _has('convert')
-    ? 'convert'
-    : null;
-
-final bool _tools = _has('qpdf') && _has('pdftoppm') && _magick != null;
-
 /// An RGB raster: width, height and 8-bit samples.
 typedef Raster = (int, int, Uint8List);
 
@@ -115,9 +107,9 @@ bool _space(int b) => b == 0x20 || b == 0x0a || b == 0x0d || b == 0x09;
 /// one to one, poppler's image sampling lands a pixel off).
 Raster render(Directory dir, Uint8List pdf) {
   final file = File('${dir.path}/t.pdf')..writeAsBytesSync(pdf);
-  final check = Process.runSync('qpdf', ['--check', file.path]);
+  final check = recordedRunSync(_recorded, 'qpdf', ['--check', file.path]);
   expect(check.exitCode, 0, reason: '${check.stdout}${check.stderr}');
-  final result = Process.runSync('pdftoppm', [
+  final result = recordedRunSync(_recorded, 'pdftoppm', [
     '-r',
     '288',
     '-singlefile',
@@ -146,7 +138,7 @@ Raster render(Directory dir, Uint8List pdf) {
 /// [path] as ImageMagick decodes it, composited on white (with
 /// [flatten], on its canvas: a GIF frame's offset).
 Raster reference(String path, {bool flatten = false}) {
-  final result = Process.runSync(_magick!, [
+  final result = recordedRunSync(_recorded, 'magick', [
     path,
     '-background',
     'white',
@@ -186,7 +178,12 @@ final List<File> _pngSuite =
 
 String _name(File file) => file.uri.pathSegments.last;
 
+/// The tools' runs, recorded (test/oracles/images.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('images', compressed: true);
   group('PngSuite', () {
     late Directory dir;
     setUpAll(() => dir = Directory.systemTemp.createTempSync('libpdf.'));
@@ -204,20 +201,15 @@ void main() {
         });
         continue;
       }
-      test(
-        '$name renders as decoded',
-        () {
-          final image = PdfImage.parse(file.readAsBytesSync());
-          final (mean, max) = difference(
-            render(dir, imagePdf(image)),
-            reference(file.path),
-          );
-          expect(mean, lessThan(1), reason: 'mean difference');
-          expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
-        },
-        skip: _tools ? false : 'needs qpdf, pdftoppm and ImageMagick',
-        tags: ['pdf-tools'],
-      );
+      test('$name renders as decoded', () {
+        final image = PdfImage.parse(file.readAsBytesSync());
+        final (mean, max) = difference(
+          render(dir, imagePdf(image)),
+          reference(file.path),
+        );
+        expect(mean, lessThan(1), reason: 'mean difference');
+        expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
+      });
     }
   });
 
@@ -239,20 +231,15 @@ void main() {
         // (ImageMagick expands 1- and 4-bit alpha wrongly; plain_images
         // checks those bitmaps itself.)
         if (name.startsWith('argb')) continue;
-        test(
-          '$name renders as decoded',
-          () {
-            final image = PdfImage.parse(file.readAsBytesSync());
-            final (mean, max) = difference(
-              render(dir, imagePdf(image)),
-              reference('${file.path}[0]', flatten: true),
-            );
-            expect(mean, lessThan(1), reason: 'mean difference');
-            expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
-          },
-          skip: _tools ? false : 'needs qpdf, pdftoppm and ImageMagick',
-          tags: ['pdf-tools'],
-        );
+        test('$name renders as decoded', () {
+          final image = PdfImage.parse(file.readAsBytesSync());
+          final (mean, max) = difference(
+            render(dir, imagePdf(image)),
+            reference('${file.path}[0]', flatten: true),
+          );
+          expect(mean, lessThan(1), reason: 'mean difference');
+          expect(max, lessThanOrEqualTo(2), reason: 'largest difference');
+        });
       }
     }
   });
@@ -270,27 +257,22 @@ void main() {
       'cmyk',
       'exif-orientation-6',
     ]) {
-      test(
-        '$name passes through and renders as decoded',
-        () {
-          final path = '../plain_images/test/images/jpeg/$name.jpg';
-          final bytes = File(path).readAsBytesSync();
-          final image = PdfImage.parse(bytes);
-          final pdf = imagePdf(image);
-          expect(_contains(pdf, bytes), isTrue, reason: 'embedded as it is');
-          // CMYK is compared with poppler's own rendering of the samples
-          // ImageMagick decodes, so only the data (and its inversion) is
-          // compared, not two CMYK-to-RGB conversions.
-          final expected = name == 'cmyk'
-              ? render(dir, _rawCmykPdf(path, image.width, image.height))
-              : reference(path);
-          final (mean, max) = difference(render(dir, pdf), expected);
-          expect(mean, lessThan(2), reason: 'mean difference');
-          expect(max, lessThanOrEqualTo(8), reason: 'largest difference');
-        },
-        skip: _tools ? false : 'needs qpdf, pdftoppm and ImageMagick',
-        tags: ['pdf-tools'],
-      );
+      test('$name passes through and renders as decoded', () {
+        final path = '../plain_images/test/images/jpeg/$name.jpg';
+        final bytes = File(path).readAsBytesSync();
+        final image = PdfImage.parse(bytes);
+        final pdf = imagePdf(image);
+        expect(_contains(pdf, bytes), isTrue, reason: 'embedded as it is');
+        // CMYK is compared with poppler's own rendering of the samples
+        // ImageMagick decodes, so only the data (and its inversion) is
+        // compared, not two CMYK-to-RGB conversions.
+        final expected = name == 'cmyk'
+            ? render(dir, _rawCmykPdf(path, image.width, image.height))
+            : reference(path);
+        final (mean, max) = difference(render(dir, pdf), expected);
+        expect(mean, lessThan(2), reason: 'mean difference');
+        expect(max, lessThanOrEqualTo(8), reason: 'largest difference');
+      });
     }
   });
 
@@ -417,7 +399,7 @@ void main() {
 /// A page showing the CMYK samples ImageMagick decodes from [path], as an
 /// uncompressed DeviceCMYK image.
 Uint8List _rawCmykPdf(String path, int width, int height) {
-  final result = Process.runSync(_magick!, [
+  final result = recordedRunSync(_recorded, 'magick', [
     path,
     '-depth',
     '8',

@@ -3,7 +3,10 @@
 /// files, but where this one follows XML 1.0 and package:xml doesn't
 /// (line breaks and attribute white space normalized, attributes without
 /// a prefix in no namespace; documents with entity declarations, which
-/// package:xml doesn't expand, are left out).
+/// package:xml doesn't expand, are left out, and those with white space
+/// written as character references, which XML 1.0 keeps in an attribute
+/// value where it turns literal white space into spaces: package:xml
+/// decodes them before the two can be told apart).
 @TestOn('vm')
 library;
 
@@ -134,20 +137,25 @@ void main() {
   });
 
   final files = [
-    for (final root in ['..', '../../../hypermedia-systems-ptome'])
-      if (Directory(root).existsSync())
-        for (final entity in Directory(root).listSync(recursive: true))
-          if (entity is File &&
-              entity.path.endsWith('.svg') &&
-              !entity.path.contains('/build/') &&
-              !entity.path.contains('node_modules'))
-            entity,
-  ];
+    for (final entity in Directory('..').listSync(recursive: true))
+      if (entity is File &&
+          entity.path.endsWith('.svg') &&
+          !entity.path.contains('/build/') &&
+          !entity.path.contains('/.dart_tool/') &&
+          !entity.path.contains('node_modules'))
+        entity,
+  ]..sort((a, b) => a.path.compareTo(b.path));
+  final whiteSpaceReference = RegExp(
+    '&#(x0*(9|a|d)|0*(9|10|13));',
+    caseSensitive: false,
+  );
   test("the workspace's SVG files (${files.length})", () {
     var compared = 0;
     for (final file in files) {
       final text = utf8.decode(file.readAsBytesSync(), allowMalformed: true);
-      if (text.contains('<!ENTITY')) continue;
+      if (text.contains('<!ENTITY') || text.contains(whiteSpaceReference)) {
+        continue;
+      }
       String? expected;
       try {
         expected = dumpOracle(text);

@@ -1,6 +1,3 @@
-@Tags(['pdf-tools'])
-library;
-
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
@@ -8,6 +5,9 @@ import 'dart:typed_data';
 import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
+
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 final TextStyle body = TextStyle(StandardFont.helvetica, 10);
 final double lineHeight =
@@ -33,8 +33,6 @@ TableCell cell(
 
 TableRow row(List<TableCell> cells) => TableRow(cells);
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
 late Directory _dir;
 var _count = 0;
 
@@ -49,7 +47,9 @@ var _count = 0;
   final document = PdfDocument();
   result.render(document);
   final file = File('${_dir.path}/t${_count++}.pdf')
-    ..writeAsBytesSync(document.save());
+    ..writeAsBytesSync(
+      document.save(options: const PdfWriterOptions(deterministic: true)),
+    );
   return (file, result);
 }
 
@@ -58,7 +58,8 @@ typedef Word = ({String text, double x, double top, int page});
 /// The words of every page, with their left edge and top (y down).
 List<Word> words(File pdf) {
   final html =
-      Process.runSync('pdftotext', ['-bbox', pdf.path, '-']).stdout as String;
+      recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf.path, '-']).stdout
+          as String;
   final result = <Word>[];
   var page = 0;
   for (final line in html.split('\n')) {
@@ -80,13 +81,14 @@ List<Word> words(File pdf) {
 
 Word word(List<Word> all, String text) => all.firstWhere((w) => w.text == text);
 
+/// The tools' runs, recorded (test/oracles/table.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('table', compressed: true);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
-  if (!['pdftotext', 'pdftoppm'].every(_has)) {
-    test('tables', () {}, skip: 'needs poppler');
-    return;
-  }
 
   test('fixed and fraction columns', () {
     final (pdf, _) = render([
@@ -310,7 +312,7 @@ void main() {
       final first = rows.first;
       final second = rows.elementAt(1);
       final out = '${pdf.path}-p$page';
-      Process.runSync('pdftoppm', [
+      recordedRunSync(_recorded, 'pdftoppm', [
         '-r',
         '72',
         '-f',
@@ -367,7 +369,13 @@ void main() {
       closeTo((rowHeight - 8 - lineHeight) / 2, 1),
     );
     final out = '${pdf.path}-1';
-    Process.runSync('pdftoppm', ['-r', '72', '-singlefile', pdf.path, out]);
+    recordedRunSync(_recorded, 'pdftoppm', [
+      '-r',
+      '72',
+      '-singlefile',
+      pdf.path,
+      out,
+    ]);
     final bytes = File('$out.ppm').readAsBytesSync();
     final header = latin1.decode(bytes.sublist(0, 20)).split(RegExp(r'\s+'));
     final width = int.parse(header[1]);

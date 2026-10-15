@@ -1,6 +1,7 @@
 // Math drawn on a PDF page (plain_typesetting's math layout in an
-// embedded Noto Sans Math), read back by pdftotext.
-import 'dart:convert';
+// embedded Noto Sans Math), read back by pdftotext (its runs recorded in
+// test/oracles/math.json, test/support/oracles.dart; ORACLES=record asks
+// it again).
 import 'dart:io';
 
 import 'package:plain_math/plain_math.dart';
@@ -8,9 +9,11 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 void main() {
+  final recorded = Oracle('math');
   final font = EmbeddedFont.parse(
     File('test/fonts/notosansmath-subset.ttf').readAsBytesSync(),
   );
@@ -24,18 +27,10 @@ void main() {
     final doc = PdfDocument();
     final page = doc.addPage(const Rect(0, 0, 200, 100));
     box(math('<mi>x</mi><mo>+</mo><mn>1</mn>')).paintAt(page.canvas, 10, 50);
-    final file = File(
-      '${Directory.systemTemp.createTempSync('math').path}/x.pdf',
-    )..writeAsBytesSync(doc.save());
-    // (UTF-8 both ways: Windows decodes output in its code page.)
-    final text =
-        Process.runSync('pdftotext', [
-              '-enc',
-              'UTF-8',
-              file.path,
-              '-',
-            ], stdoutEncoding: utf8).stdout
-            as String;
+    final text = pdftotext(
+      recorded,
+      doc.save(options: const PdfWriterOptions(deterministic: true)),
+    );
     expect(text.trim(), '\u{1d465}+1');
-  }, skip: _has('pdftotext') ? false : 'needs pdftotext');
+  });
 }

@@ -36,6 +36,8 @@ void main(List<String> args) {
   final document = PdfDocument();
   final page = document.addPage(const Rect(0, 0, 595, 842));
   svg.paint(page.canvas, Rect(117, 500, svg.width * 1.5, svg.height * 1.5));
-  File(args.isEmpty ? 'chart.pdf' : args.first)
-      .writeAsBytesSync(document.save());
+  File(args.isEmpty ? 'chart.pdf' : args.first).writeAsBytesSync(
+    // (Deterministic: the same bytes on every run, dated the epoch.)
+    document.save(options: const PdfWriterOptions(deterministic: true)),
+  );
 }

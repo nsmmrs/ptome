@@ -1,5 +1,6 @@
-@Tags(['pdf-tools'])
-library;
+// Drawing on a page, checked by qpdf and Poppler, whose runs are
+// recorded in test/oracles/drawing.json.gz (test/support/oracles.dart;
+// ORACLES=record asks them again).
 
 import 'dart:convert';
 import 'dart:io';
@@ -9,17 +10,14 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-final bool _tools = [
-  'qpdf',
-  'pdftoppm',
-  'pdftotext',
-  'pdfinfo',
-  'pdftohtml',
-].every(_has);
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 late Directory _dir;
+
+/// The recorded runs of the tools, for the test file under way (each
+/// sets it: reader_test.dart uses these helpers too).
+late Oracle recordedTools;
 
 /// [document] saved and checked by qpdf; returns the file.
 File saved(PdfDocument document, {PdfWriterOptions? options}) {
@@ -29,9 +27,9 @@ File saved(PdfDocument document, {PdfWriterOptions? options}) {
         options: options ?? const PdfWriterOptions(deterministic: true),
       ),
     );
-  final check = Process.runSync('qpdf', ['--check', file.path]);
+  final check = qpdfCheck(recordedTools, file.readAsBytesSync());
   expect(check.exitCode, 0, reason: '${check.stdout}${check.stderr}');
-  expect('${check.stdout}', contains('No syntax or stream encoding errors'));
+  expect(check.stdout, contains('No syntax or stream encoding errors'));
   return file;
 }
 
@@ -55,20 +53,14 @@ final class Rendered {
 }
 
 Rendered render(File pdf, {int page = 1}) {
-  final out = '${pdf.path}-$page';
-  final result = Process.runSync('pdftoppm', [
+  final bytes = pdftoppm(recordedTools, pdf.readAsBytesSync(), [
     '-r',
     '72',
     '-f',
     '$page',
     '-l',
     '$page',
-    '-singlefile',
-    pdf.path,
-    out,
   ]);
-  expect(result.exitCode, 0, reason: '${result.stderr}');
-  final bytes = File('$out.ppm').readAsBytesSync();
   // P6\n<w> <h>\n255\n
   final header = latin1.decode(bytes.sublist(0, 20)).split(RegExp(r'\s+'));
   final width = int.parse(header[1]);
@@ -105,19 +97,17 @@ PdfDocument page(
 List<({String text, double xMin, double yMin, double xMax, double yMax})> words(
   File pdf,
 ) {
-  final result = Process.runSync('pdftotext', [
-    '-bbox',
-    '-enc',
-    'UTF-8',
-    pdf.path,
-    '-',
-  ]);
+  final text = pdftotext(
+    recordedTools,
+    pdf.readAsBytesSync(),
+    options: ['-bbox'],
+  );
   final word = RegExp(
     r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" yMax="([\d.]+)">'
     '([^<]*)</word>',
   );
   return [
-    for (final m in word.allMatches('${result.stdout}'))
+    for (final m in word.allMatches(text))
       (
         text: m[5]!,
         xMin: double.parse(m[1]!),
@@ -128,19 +118,35 @@ List<({String text, double xMin, double yMin, double xMax, double yMax})> words(
   ];
 }
 
+/// [tool]'s output for [args], recorded: the files they name are given
+/// to it as `in0.pdf`, `in1.pdf`... in their order.
 String run(String tool, List<String> args, {Encoding encoding = latin1}) {
-  final result = Process.runSync(tool, args, stdoutEncoding: encoding);
+  final files = <String, List<int>>{};
+  final staged = [
+    for (final arg in args)
+      if (File(arg).isAbsolute && File(arg).existsSync())
+        () {
+          final name = 'in${files.length}.pdf';
+          files[name] = File(arg).readAsBytesSync();
+          return name;
+        }()
+      else
+        arg,
+  ];
+  final result = recordedTools.run(
+    tool,
+    staged,
+    version: tool == 'qpdf' ? qpdfVersion : popplerVersion,
+    files: files,
+  );
   expect(result.exitCode, 0, reason: '$tool: ${result.stderr}');
-  return '${result.stdout}';
+  return encoding == utf8 ? result.stdout : result.stdoutLatin1;
 }
 
 void main() {
+  recordedTools = Oracle('drawing', compressed: true);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
-  if (!_tools) {
-    test('drawing', () {}, skip: 'needs qpdf and poppler');
-    return;
-  }
 
   test('a content stream encoded elsewhere writes the same bytes', () {
     const options = PdfWriterOptions(deterministic: true);
@@ -297,14 +303,12 @@ void main() {
     );
     document.addPage(const Rect(0, 0, 100, 100));
     final pdf = saved(document);
-    final qdf =
-        Process.runSync('qpdf', [
-              '--qdf',
-              '--object-streams=disable',
-              pdf.path,
-              '-',
-            ], stdoutEncoding: latin1).stdout
-            as String;
+    final qdf = run('qpdf', [
+      '--qdf',
+      '--object-streams=disable',
+      pdf.path,
+      '-',
+    ]);
     expect(qdf, startsWith('%PDF-1.6'));
     expect(qdf, contains('/OutputIntents ['));
     expect(qdf, contains('/S /GTS_PDFX'));
@@ -335,14 +339,12 @@ void main() {
           ..endMarkedContent();
       }),
     );
-    final qdf =
-        Process.runSync('qpdf', [
-              '--qdf',
-              '--object-streams=disable',
-              pdf.path,
-              '-',
-            ], stdoutEncoding: latin1).stdout
-            as String;
+    final qdf = run('qpdf', [
+      '--qdf',
+      '--object-streams=disable',
+      pdf.path,
+      '-',
+    ]);
     expect(qdf, matches(RegExp(r'/Span\s*<<\s*/ActualText\s*\(\)\s*>>\s*BDC')));
     expect(qdf, contains('/Artifact BMC'));
     expect(words(pdf).map((w) => w.text), ['code();', 'Seen']);
@@ -361,14 +363,12 @@ void main() {
     final pdf = saved(
       page((c) => c.glyphs([shorter, b], 10, 50, TextStyle(font, 10))),
     );
-    final qdf =
-        Process.runSync('qpdf', [
-              '--qdf',
-              '--object-streams=disable',
-              pdf.path,
-              '-',
-            ], stdoutEncoding: latin1).stdout
-            as String;
+    final qdf = run('qpdf', [
+      '--qdf',
+      '--object-streams=disable',
+      pdf.path,
+      '-',
+    ]);
     expect(qdf, matches(RegExp(r'\[<[0-9A-F]{4}> 100 <[0-9A-F]{4}>\] TJ')));
   });
 
@@ -407,10 +407,6 @@ void main() {
     });
 
     test('text taken from the page is the words', () {
-      if (!_has('pdftotext')) {
-        markTestSkipped('needs poppler');
-        return;
-      }
       final font = EmbeddedFont.parse(arabic);
       final style = TextStyle(font, 20);
       final pdf = saved(
@@ -426,14 +422,12 @@ void main() {
           }
         }),
       );
-      final text =
-          Process.runSync('pdftotext', [
-                '-enc',
-                'UTF-8',
-                pdf.path,
-                '-',
-              ], stdoutEncoding: utf8).stdout
-              as String;
+      final text = run('pdftotext', [
+        '-enc',
+        'UTF-8',
+        pdf.path,
+        '-',
+      ], encoding: utf8);
       expect(text, isNot(contains('\ufffd')));
       String bare(String t) => t.replaceAll(RegExp('[\\s\u202a-\u202e]'), '');
       for (final word in words) {
@@ -453,22 +447,16 @@ void main() {
           ),
         ),
       );
-      final qdf =
-          Process.runSync('qpdf', [
-                '--qdf',
-                '--object-streams=disable',
-                plain.path,
-                '-',
-              ], stdoutEncoding: latin1).stdout
-              as String;
+      final qdf = run('qpdf', [
+        '--qdf',
+        '--object-streams=disable',
+        plain.path,
+        '-',
+      ]);
       expect(qdf, isNot(contains('/ActualText')));
     });
 
     test('a single-byte font gives a shared glyph a code for each text', () {
-      if (!_has('pdftotext')) {
-        markTestSkipped('needs poppler');
-        return;
-      }
       final font = EmbeddedFont.parse(arabic, singleByte: true);
       final style = TextStyle(font, 20);
       final pdf = saved(
@@ -484,14 +472,12 @@ void main() {
           }
         }),
       );
-      final text =
-          Process.runSync('pdftotext', [
-                '-enc',
-                'UTF-8',
-                pdf.path,
-                '-',
-              ], stdoutEncoding: utf8).stdout
-              as String;
+      final text = run('pdftotext', [
+        '-enc',
+        'UTF-8',
+        pdf.path,
+        '-',
+      ], encoding: utf8);
       expect(text, isNot(contains('\ufffd')));
       expect(
         text.replaceAll(RegExp('[\\s\u202a-\u202e]'), ''),
@@ -684,16 +670,14 @@ void main() {
       words(b).map((w) => w.text).join(),
       allOf(contains('ϮAVAWave'), words(a).map((w) => w.text).join()),
     );
-    final fonts = '${Process.runSync('pdffonts', [b.path]).stdout}';
+    final fonts = run('pdffonts', [b.path]);
     expect(RegExp(r'\bTrueType\b').allMatches(fonts), hasLength(2));
-    final content = latin1.decode(
-      Process.runSync('qpdf', [
-        '--qdf',
-        '--object-streams=disable',
-        b.path,
-        '-',
-      ], stdoutEncoding: latin1).stdout.toString().codeUnits,
-    );
+    final content = run('qpdf', [
+      '--qdf',
+      '--object-streams=disable',
+      b.path,
+      '-',
+    ]);
     expect(content, contains('20 Tw'));
     expect(content, contains('0 Tw'));
   });

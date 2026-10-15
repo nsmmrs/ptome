@@ -7,22 +7,21 @@ import 'package:plain_svg/plain_svg.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-final bool _tools = ['rsvg-convert', 'pdftoppm', 'qpdf'].every(_has);
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 /// [svg] drawn on a page of its size.
 Uint8List svgPdf(SvgImage svg) {
   final document = PdfDocument();
   final page = document.addPage(Rect(0, 0, svg.width, svg.height));
   svg.paint(page.canvas, Rect(0, 0, svg.width, svg.height));
-  return document.save();
+  return document.save(options: const PdfWriterOptions(deterministic: true));
 }
 
 /// The gray samples of the first page of [pdf], at 72 dpi.
 (int, int, Uint8List) raster(String pdf) {
   final out = '$pdf-r';
-  final result = Process.runSync('pdftoppm', [
+  final result = recordedRunSync(_recorded, 'pdftoppm', [
     '-r',
     '72',
     '-singlefile',
@@ -55,7 +54,12 @@ SvgImage parseSvg(
   rasters: readSvgRaster,
 );
 
+/// The tools' runs, recorded (test/oracles/svg.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('svg', compressed: true);
   test('fonts: the default family, then the fallback family', () {
     final asked = <String>[];
     PdfFont? fonts(String family, {required bool bold, required bool italic}) {
@@ -83,56 +87,55 @@ void main() {
   setUpAll(() => dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => dir.deleteSync(recursive: true));
 
-  group(
-    'renders as librsvg does',
-    skip: _tools ? false : 'needs rsvg-convert, poppler and qpdf',
-    () {
-      final fixtures =
-          Directory('test/svg')
-              .listSync()
-              .whereType<File>()
-              .where((f) => f.path.endsWith('.svg'))
-              .toList()
-            ..sort((a, b) => a.path.compareTo(b.path));
-      for (final file in fixtures) {
-        final name = file.uri.pathSegments.last;
-        test(name, () {
-          final svg = parseSvg(file.readAsStringSync());
-          final ours = File('${dir.path}/$name.ours.pdf')
-            ..writeAsBytesSync(svgPdf(svg));
-          final check = Process.runSync('qpdf', ['--check', ours.path]);
-          expect(check.exitCode, 0, reason: '${check.stdout}');
-          final theirs = '${dir.path}/$name.rsvg.pdf';
-          final convert = Process.runSync('rsvg-convert', [
-            '-f',
-            'pdf',
-            '-o',
-            theirs,
-            file.path,
-          ]);
-          expect(convert.exitCode, 0, reason: '${convert.stderr}');
-          final (w, h, a) = raster(ours.path);
-          final (w2, h2, b) = raster(theirs);
-          expect((w, h), (w2, h2), reason: 'page size');
-          var sum = 0;
-          var far = 0;
-          for (var i = 0; i < a.length; i++) {
-            final d = (a[i] - b[i]).abs();
-            sum += d;
-            if (d > 64) far++;
-          }
-          final mean = sum / a.length;
-          final farShare = far / a.length;
-          expect(mean, lessThan(2.5), reason: 'mean difference');
-          expect(farShare, lessThan(0.01), reason: 'pixels far apart');
-          expect(svg.warnings, switch (name) {
-            'css.svg' => ['CSS rule not supported: @media'],
-            _ => isEmpty,
-          });
-        }, tags: ['pdf-tools']);
-      }
-    },
-  );
+  group('renders as librsvg does', () {
+    final fixtures =
+        Directory('test/svg')
+            .listSync()
+            .whereType<File>()
+            .where((f) => f.path.endsWith('.svg'))
+            .toList()
+          ..sort((a, b) => a.path.compareTo(b.path));
+    for (final file in fixtures) {
+      final name = file.uri.pathSegments.last;
+      test(name, () {
+        final svg = parseSvg(file.readAsStringSync());
+        final ours = File('${dir.path}/$name.ours.pdf')
+          ..writeAsBytesSync(svgPdf(svg));
+        final check = recordedRunSync(_recorded, 'qpdf', [
+          '--check',
+          ours.path,
+        ]);
+        expect(check.exitCode, 0, reason: '${check.stdout}');
+        final theirs = '${dir.path}/$name.rsvg.pdf';
+        final convert = recordedRunSync(_recorded, 'rsvg-convert', [
+          '-f',
+          'pdf',
+          '-o',
+          theirs,
+          file.path,
+        ]);
+        expect(convert.exitCode, 0, reason: '${convert.stderr}');
+        final (w, h, a) = raster(ours.path);
+        final (w2, h2, b) = raster(theirs);
+        expect((w, h), (w2, h2), reason: 'page size');
+        var sum = 0;
+        var far = 0;
+        for (var i = 0; i < a.length; i++) {
+          final d = (a[i] - b[i]).abs();
+          sum += d;
+          if (d > 64) far++;
+        }
+        final mean = sum / a.length;
+        final farShare = far / a.length;
+        expect(mean, lessThan(2.5), reason: 'mean difference');
+        expect(farShare, lessThan(0.01), reason: 'pixels far apart');
+        expect(svg.warnings, switch (name) {
+          'css.svg' => ['CSS rule not supported: @media'],
+          _ => isEmpty,
+        });
+      });
+    }
+  });
 
   test('text: fonts, anchors and baselines', () {
     final svg = parseSvg('''
@@ -145,10 +148,10 @@ void main() {
 </svg>''');
     expect(svg.warnings, isEmpty);
     final pdf = File('${dir.path}/text.pdf')..writeAsBytesSync(svgPdf(svg));
-    // Positions through poppler, where the pdf-tools job installs it.
-    if (!_tools || !_has('pdftotext')) return;
+    // Positions through poppler.
     final html =
-        Process.runSync('pdftotext', ['-bbox', pdf.path, '-']).stdout as String;
+        recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf.path, '-']).stdout
+            as String;
     final words = {
       for (final m in RegExp(
         r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="([\d.]+)" yMax="([\d.]+)">([^<]*)</word>',
@@ -231,7 +234,9 @@ void main() {
     ).layout([ImageBox(svg, svg.width, svg.height, align: BoxAlign.center)]);
     final document = PdfDocument();
     result.render(document);
-    final bytes = document.save();
+    final bytes = document.save(
+      options: const PdfWriterOptions(deterministic: true),
+    );
     expect(latin1.decode(bytes), isNot(contains('/Subtype /Image')));
     expect(result.pageCount, 1);
   });

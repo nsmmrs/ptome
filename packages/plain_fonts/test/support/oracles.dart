@@ -14,7 +14,8 @@
 /// ```
 ///
 /// which asks the oracle again for every answer the run asks for and
-/// writes them into the file (keeping those it didn't ask for).
+/// writes them to the file in place of what it held (so record a whole
+/// test file, not some of its tests).
 library;
 
 import 'dart:convert';
@@ -93,6 +94,72 @@ final class Oracle {
     answer(key, inputs: inputs, oracle: () => jsonEncode(oracle())),
   ) as T;
 
+  /// A run of [executable] with [arguments] in a folder of its own holding
+  /// [files] (by name: the arguments name them so), as recorded: its exit
+  /// code, its standard output and error, and the files it wrote there.
+  /// [version] names the tool, which its answers depend on; the answer is
+  /// keyed by its inputs, so another input is another answer, and a run
+  /// never asked for when recording has none.
+  ToolRun run(
+    String executable,
+    List<String> arguments, {
+    required String version,
+    Map<String, List<int>> files = const {},
+  }) {
+    final inputs = <Object>[
+      version,
+      executable,
+      ...arguments,
+      for (final MapEntry(:key, :value) in files.entries) ...[key, value],
+    ];
+    final key =
+        '$executable ${arguments.join(' ')} '
+        '#${_digest(inputs).substring(0, 16)}';
+    final answer = json<Map<String, Object?>>(
+      key,
+      inputs: inputs,
+      oracle: () {
+        final dir = Directory.systemTemp.createTempSync('oracle.');
+        try {
+          for (final MapEntry(:key, :value) in files.entries) {
+            File('${dir.path}/$key').writeAsBytesSync(value);
+          }
+          final result = Process.runSync(
+            executable,
+            arguments,
+            workingDirectory: dir.path,
+            stdoutEncoding: null,
+            stderrEncoding: utf8,
+          );
+          return {
+            'exitCode': result.exitCode,
+            'stdout': base64Encode(result.stdout as List<int>),
+            'stderr': result.stderr,
+            'outputs': {
+              for (final file in dir.listSync().whereType<File>())
+                if (!files.containsKey(file.uri.pathSegments.last))
+                  file.uri.pathSegments.last: base64Encode(
+                    file.readAsBytesSync(),
+                  ),
+            },
+          };
+        } finally {
+          dir.deleteSync(recursive: true);
+        }
+      },
+    );
+    return ToolRun(
+      exitCode: answer['exitCode']! as int,
+      stdoutBytes: base64Decode(answer['stdout']! as String),
+      stderr: answer['stderr']! as String,
+      outputs: {
+        for (final MapEntry(:key, :value)
+            in (answer['outputs']! as Map<String, Object?>).entries)
+          key: base64Decode(value! as String),
+      },
+    );
+  }
+
   /// The SHA-256 of [inputs], each a string or bytes, in order.
   static String _digest(List<Object> inputs) {
     final bytes = BytesBuilder(copy: false);
@@ -116,7 +183,7 @@ final class Oracle {
 
   void _write() {
     _file.parent.createSync(recursive: true);
-    final answers = {..._recorded, ..._asked};
+    final answers = _asked;
     final keys = answers.keys.toList()..sort();
     final json = const JsonEncoder.withIndent('  ').convert({
       for (final key in keys)
@@ -128,4 +195,27 @@ final class Oracle {
       _file.writeAsStringSync('$json\n');
     }
   }
+}
+
+/// A recorded run of a tool ([Oracle.run]).
+final class ToolRun {
+  const new({
+    required this.exitCode,
+    required this.stdoutBytes,
+    required this.stderr,
+    required this.outputs,
+  });
+
+  final int exitCode;
+  final Uint8List stdoutBytes;
+  final String stderr;
+
+  /// The files it wrote, by name.
+  final Map<String, Uint8List> outputs;
+
+  /// Its standard output as UTF-8 text.
+  String get stdout => utf8.decode(stdoutBytes, allowMalformed: true);
+
+  /// Its standard output as Latin-1 text (each byte a character).
+  String get stdoutLatin1 => latin1.decode(stdoutBytes);
 }

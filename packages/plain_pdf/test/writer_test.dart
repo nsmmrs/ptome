@@ -6,6 +6,9 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_pdf/src/writer.dart' show xmpPacket;
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 /// A one-page document with [text] in Helvetica, written with [options].
 Uint8List helloPdf(PdfWriterOptions options, {String text = 'Hello, PDF'}) {
   final out = BytesBuilder(copy: false);
@@ -58,42 +61,36 @@ Uint8List helloPdf(PdfWriterOptions options, {String text = 'Hello, PDF'}) {
   return out.takeBytes();
 }
 
-bool get _hasQpdf =>
-    Process.runSync('which', ['qpdf']).exitCode == 0 &&
-    Process.runSync('which', ['pdftotext']).exitCode == 0;
-
 void main() {
+  // (qpdf's and Poppler's runs recorded in test/oracles/writer.json.gz,
+  // test/support/oracles.dart; ORACLES=record asks them again.)
+  final recorded = Oracle('writer', compressed: true);
   final modes = {
     'xref table, uncompressed': const PdfWriterOptions(
       compact: false,
       compress: false,
+      deterministic: true,
     ),
-    'xref table, compressed': const PdfWriterOptions(compact: false),
-    'xref and object streams': const PdfWriterOptions(),
+    'xref table, compressed': const PdfWriterOptions(
+      compact: false,
+      deterministic: true,
+    ),
+    'xref and object streams': const PdfWriterOptions(deterministic: true),
   };
 
   for (final MapEntry(key: name, value: options) in modes.entries) {
-    test(
-      '$name: qpdf finds no errors and the text extracts',
-      () {
-        final dir = Directory.systemTemp.createTempSync('libpdf.');
-        addTearDown(() => dir.deleteSync(recursive: true));
-        final file = File('${dir.path}/hello.pdf')
-          ..writeAsBytesSync(helloPdf(options));
-        final check = Process.runSync('qpdf', ['--check', file.path]);
-        expect(check.exitCode, 0, reason: '${check.stdout}${check.stderr}');
-        expect(
-          '${check.stdout}',
-          contains('No syntax or stream encoding errors found'),
-        );
-        final text = Process.runSync('pdftotext', [file.path, '-']);
-        expect('${text.stdout}'.trim(), 'Hello, PDF');
-        final info = Process.runSync('pdfinfo', [file.path]);
-        expect('${info.stdout}', matches(RegExp(r'Title:\s+Hello')));
-      },
-      tags: ['pdf-tools'],
-      skip: _hasQpdf ? false : 'qpdf or poppler missing',
-    );
+    test('$name: qpdf finds no errors and the text extracts', () {
+      final pdf = helloPdf(options);
+      final check = qpdfCheck(recorded, pdf);
+      expect(check.exitCode, 0, reason: '${check.stdout}${check.stderr}');
+      expect(
+        check.stdout,
+        contains('No syntax or stream encoding errors found'),
+      );
+      expect(pdftotext(recorded, pdf).trim(), 'Hello, PDF');
+      final info = poppler(recorded, 'pdfinfo', pdf).stdout;
+      expect(info, matches(RegExp(r'Title:\s+Hello')));
+    });
   }
 
   test('deterministic output is stable and matches the golden file', () {

@@ -1,0 +1,6 @@
+{
+  "pdftotext -enc UTF-8 in.pdf - #bbdcf7a6b0578bab": {
+    "inputs": "bbdcf7a6b0578bab69f8ff1e3e0f69d8c560dc8179e3b2685fd35dcc2aa7c713",
+    "answer": "{\"exitCode\":0,\"stdout\":\"8J2RpSsxCgoM\",\"stderr\":\"\",\"outputs\":{}}"
+  }
+}

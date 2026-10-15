@@ -6,6 +6,9 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 final TextStyle body = TextStyle(StandardFont.helvetica, 10);
 final TextStyle heading = TextStyle(StandardFont.named('Helvetica-Bold'), 14);
 
@@ -38,10 +41,6 @@ PageTemplate rowsTemplate(
   footer: footer,
 );
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-final bool _tools = ['pdftotext', 'pdfinfo', 'pdftoppm'].every(_has);
-
 late Directory _dir;
 var _count = 0;
 
@@ -56,7 +55,7 @@ List<List<String>> pageTexts(File pdf, int pages) => [
   for (var p = 1; p <= pages; p++)
     [
       for (final line
-          in (Process.runSync('pdftotext', [
+          in (recordedRunSync(_recorded, 'pdftotext', [
                     '-f',
                     '$p',
                     '-l',
@@ -88,7 +87,12 @@ List<List<String>> pageTexts(File pdf, int pages) => [
   return (save(document), result);
 }
 
+/// The tools' runs, recorded (test/oracles/flow.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('flow', compressed: true);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
 
@@ -989,7 +993,7 @@ void main() {
     expect(pieces.map((p) => (p.$2, p.$3)), [(true, false), (false, true)]);
   });
 
-  group('rendered', skip: _tools ? false : 'needs poppler', () {
+  group('rendered', () {
     test('a paragraph splits across pages, keeping its lines in order', () {
       final (pdf, result) = render([para(lines(10))], rowsTemplate(4));
       expect(result.pageCount, 3);
@@ -1179,7 +1183,10 @@ void main() {
       ], rowsTemplate(4));
       expect(result.pageOf('target'), 3);
       expect(pageTexts(pdf, 1).single.first, 'See 3');
-      final dests = Process.runSync('pdfinfo', ['-dests', pdf.path]).stdout;
+      final dests = recordedRunSync(_recorded, 'pdfinfo', [
+        '-dests',
+        pdf.path,
+      ]).stdout;
       expect('$dests', contains('"target"'));
     });
 
@@ -1263,7 +1270,7 @@ final class _Raster {
 
 _Raster _raster(File pdf, int page) {
   final out = '${pdf.path}-$page';
-  Process.runSync('pdftoppm', [
+  recordedRunSync(_recorded, 'pdftoppm', [
     '-r',
     '72',
     '-f',

@@ -7,6 +7,9 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 /// A page with each of [lines] in its font, at 14 points.
 Uint8List textPdf(List<(PdfFont, String)> lines) {
   final out = BytesBuilder(copy: false);
@@ -68,10 +71,6 @@ Uint8List textPdf(List<(PdfFont, String)> lines) {
   return out.takeBytes();
 }
 
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-final bool _tools = _has('qpdf') && _has('pdftotext') && _has('pdftoppm');
-
 List<int> serif() =>
     File('test/fonts/notoserif-regular-latin.ttf').readAsBytesSync();
 List<int> cff() => File('test/fonts/notoserif-cff.otf').readAsBytesSync();
@@ -83,8 +82,8 @@ List<int> mplus() =>
   final dir = Directory.systemTemp.createTempSync('libpdf.');
   try {
     final file = File('${dir.path}/t.pdf')..writeAsBytesSync(pdf);
-    final check = Process.runSync('qpdf', ['--check', file.path]);
-    final text = Process.runSync('pdftotext', [
+    final check = recordedRunSync(_recorded, 'qpdf', ['--check', file.path]);
+    final text = recordedRunSync(_recorded, 'pdftotext', [
       '-enc',
       'UTF-8',
       file.path,
@@ -96,7 +95,12 @@ List<int> mplus() =>
   }
 }
 
+/// The tools' runs, recorded (test/oracles/fonts.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('fonts', compressed: true);
   test('OpenType tables are read', () {
     final font = EmbeddedFont.parse(serif()).font;
     expect(font.unitsPerEm, anyOf(1000, 2048));
@@ -163,24 +167,19 @@ void main() {
     expect(font.missedGlyphs, isTrue);
   });
 
-  test(
-    "a glyph shown for several characters reads as the font's own",
-    () {
-      // (A no-break space the font lacks shown as its space, as HarfBuzz
-      // shapes it, then a space: the map reads the glyph as the space.)
-      final font = EmbeddedFont.parse(serif());
-      final space = font.font.glyphFor(0x20);
-      final width = font.widthOf(' ', 1) * 1000;
-      font.encode([
-        ShapedGlyph(space, '\u00a0', width),
-        ShapedGlyph(space, ' ', width),
-      ]);
-      final (_, text) = inspect(textPdf([(font, 'two words')]));
-      expect(text.trim(), 'two words');
-    },
-    tags: ['pdf-tools'],
-    skip: _tools ? false : 'qpdf or poppler missing',
-  );
+  test("a glyph shown for several characters reads as the font's own", () {
+    // (A no-break space the font lacks shown as its space, as HarfBuzz
+    // shapes it, then a space: the map reads the glyph as the space.)
+    final font = EmbeddedFont.parse(serif());
+    final space = font.font.glyphFor(0x20);
+    final width = font.widthOf(' ', 1) * 1000;
+    font.encode([
+      ShapedGlyph(space, '\u00a0', width),
+      ShapedGlyph(space, ' ', width),
+    ]);
+    final (_, text) = inspect(textPdf([(font, 'two words')]));
+    expect(text.trim(), 'two words');
+  });
 
   test('subsets keep only the glyphs used', () {
     final dir = Directory.systemTemp.createTempSync('libpdf.');
@@ -189,110 +188,93 @@ void main() {
     expect(pdf.length, lessThan(serif().length ~/ 2));
   });
 
-  test(
-    'embedded and standard fonts: qpdf is clean and the text extracts',
-    () {
-      final pdf = textPdf([
-        (StandardFont.helvetica, 'AVAST, Water — “quotes” and €'),
-        (StandardFont.timesRoman, 'Times: office ffi'),
-        (EmbeddedFont.parse(serif()), 'Noto Serif: Ångström, office, “ok”'),
-        (EmbeddedFont.parse(mplus()), 'M+ 1p: Привет, Γειά'),
-      ]);
-      final (check, text) = inspect(pdf);
-      expect(check, contains('No syntax or stream encoding errors found'));
-      final lines = text
-          .trim()
-          .split(RegExp(r'\n+'))
-          .map((l) => l.trim())
-          .toList();
-      expect(lines, [
-        'AVAST, Water — “quotes” and €',
-        'Times: office ffi',
-        'Noto Serif: Ångström, office, “ok”',
-        'M+ 1p: Привет, Γειά',
-      ]);
-    },
-    tags: ['pdf-tools'],
-    skip: _tools ? false : 'qpdf or poppler missing',
-  );
+  test('embedded and standard fonts: qpdf is clean and the text extracts', () {
+    final pdf = textPdf([
+      (StandardFont.helvetica, 'AVAST, Water — “quotes” and €'),
+      (StandardFont.timesRoman, 'Times: office ffi'),
+      (EmbeddedFont.parse(serif()), 'Noto Serif: Ångström, office, “ok”'),
+      (EmbeddedFont.parse(mplus()), 'M+ 1p: Привет, Γειά'),
+    ]);
+    final (check, text) = inspect(pdf);
+    expect(check, contains('No syntax or stream encoding errors found'));
+    final lines = text
+        .trim()
+        .split(RegExp(r'\n+'))
+        .map((l) => l.trim())
+        .toList();
+    expect(lines, [
+      'AVAST, Water — “quotes” and €',
+      'Times: office ffi',
+      'Noto Serif: Ångström, office, “ok”',
+      'M+ 1p: Привет, Γειά',
+    ]);
+  });
 
-  test(
-    'a subset renders like the whole font',
-    () {
-      const text = 'The quick brown fox — Ångström 0123456789';
-      final subset = textPdf([(EmbeddedFont.parse(serif()), text)]);
-      final whole = textPdf([
-        (EmbeddedFont.parse(serif(), subset: false), text),
+  test('a subset renders like the whole font', () {
+    const text = 'The quick brown fox — Ångström 0123456789';
+    final subset = textPdf([(EmbeddedFont.parse(serif()), text)]);
+    final whole = textPdf([(EmbeddedFont.parse(serif(), subset: false), text)]);
+    final dir = Directory.systemTemp.createTempSync('libpdf.');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    List<int> render(Uint8List pdf, String name) {
+      File('${dir.path}/$name.pdf').writeAsBytesSync(pdf);
+      recordedRunSync(_recorded, 'pdftoppm', [
+        '-r',
+        '72',
+        '-gray',
+        '${dir.path}/$name.pdf',
+        '${dir.path}/$name',
       ]);
+      final image = dir.listSync().whereType<File>().firstWhere(
+        (f) => f.path.contains('$name-') || f.path.endsWith('$name-1.pgm'),
+      );
+      return image.readAsBytesSync();
+    }
+
+    expect(render(subset, 'subset'), render(whole, 'whole'));
+  });
+
+  for (final (name, bytes) in [('name-keyed', cff), ('CID-keyed', cid)]) {
+    test('a $name CFF font is subset and renders like the TrueType font', () {
+      const text = 'The quick brown fox — Ångström 0123456789 HHH';
+      final subset = textPdf([(EmbeddedFont.parse(bytes()), text)]);
+      final trueType = textPdf([(EmbeddedFont.parse(serif()), text)]);
+      final (check, extracted) = inspect(subset);
+      expect(check, contains('No syntax or stream encoding errors'));
+      expect(extracted, contains(text));
+      // Only the glyphs used, and the subroutines they call: far less
+      // than the whole font.
+      expect(subset.length, lessThan(bytes().length ~/ 4));
       final dir = Directory.systemTemp.createTempSync('libpdf.');
       addTearDown(() => dir.deleteSync(recursive: true));
-      List<int> render(Uint8List pdf, String name) {
+      Uint8List render(Uint8List pdf, String name) {
         File('${dir.path}/$name.pdf').writeAsBytesSync(pdf);
-        Process.runSync('pdftoppm', [
+        recordedRunSync(_recorded, 'pdftoppm', [
           '-r',
           '72',
           '-gray',
+          '-singlefile',
           '${dir.path}/$name.pdf',
           '${dir.path}/$name',
         ]);
-        final image = dir.listSync().whereType<File>().firstWhere(
-          (f) => f.path.contains('$name-') || f.path.endsWith('$name-1.pgm'),
-        );
-        return image.readAsBytesSync();
+        return File('${dir.path}/$name.pgm').readAsBytesSync();
       }
 
-      expect(render(subset, 'subset'), render(whole, 'whole'));
-    },
-    tags: ['pdf-tools'],
-    skip: _tools ? false : 'poppler missing',
-  );
-
-  for (final (name, bytes) in [('name-keyed', cff), ('CID-keyed', cid)]) {
-    test(
-      'a $name CFF font is subset and renders like the TrueType font',
-      () {
-        const text = 'The quick brown fox — Ångström 0123456789 HHH';
-        final subset = textPdf([(EmbeddedFont.parse(bytes()), text)]);
-        final trueType = textPdf([(EmbeddedFont.parse(serif()), text)]);
-        final (check, extracted) = inspect(subset);
-        expect(check, contains('No syntax or stream encoding errors'));
-        expect(extracted, contains(text));
-        // Only the glyphs used, and the subroutines they call: far less
-        // than the whole font.
-        expect(subset.length, lessThan(bytes().length ~/ 4));
-        final dir = Directory.systemTemp.createTempSync('libpdf.');
-        addTearDown(() => dir.deleteSync(recursive: true));
-        Uint8List render(Uint8List pdf, String name) {
-          File('${dir.path}/$name.pdf').writeAsBytesSync(pdf);
-          Process.runSync('pdftoppm', [
-            '-r',
-            '72',
-            '-gray',
-            '-singlefile',
-            '${dir.path}/$name.pdf',
-            '${dir.path}/$name',
-          ]);
-          return File('${dir.path}/$name.pgm').readAsBytesSync();
-        }
-
-        final a = render(subset, 'cff');
-        final b = render(trueType, 'ttf');
-        expect(a.length, b.length);
-        // The same outlines (cubic where TrueType's are quadratic):
-        // about the same ink, and in the same places.
-        int ink(Uint8List image) => image.where((v) => v < 128).length;
-        var apart = 0;
-        for (var i = 0; i < a.length; i++) {
-          if ((a[i] < 128) != (b[i] < 128)) apart++;
-        }
-        expect(ink(b), greaterThan(500));
-        expect(ink(a), closeTo(ink(b), ink(b) * 0.05));
-        // Rasterized a little differently (CFF and TrueType hinting).
-        expect(apart, lessThan(ink(b) * 0.5));
-      },
-      tags: ['pdf-tools'],
-      skip: _tools ? false : 'qpdf or poppler missing',
-    );
+      final a = render(subset, 'cff');
+      final b = render(trueType, 'ttf');
+      expect(a.length, b.length);
+      // The same outlines (cubic where TrueType's are quadratic):
+      // about the same ink, and in the same places.
+      int ink(Uint8List image) => image.where((v) => v < 128).length;
+      var apart = 0;
+      for (var i = 0; i < a.length; i++) {
+        if ((a[i] < 128) != (b[i] < 128)) apart++;
+      }
+      expect(ink(b), greaterThan(500));
+      expect(ink(a), closeTo(ink(b), ink(b) * 0.05));
+      // Rasterized a little differently (CFF and TrueType hinting).
+      expect(apart, lessThan(ink(b) * 0.5));
+    });
   }
 
   test('a parsed font shared by documents: each as if it parsed its own', () {

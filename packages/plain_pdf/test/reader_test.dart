@@ -1,5 +1,6 @@
-@Tags(['pdf-tools'])
-library;
+// Reading PDF files: ours and qpdf's, checked by qpdf and Poppler, whose
+// runs are recorded in test/oracles/reader.json.gz
+// (test/support/oracles.dart; ORACLES=record asks them again).
 
 import 'dart:convert';
 import 'dart:io';
@@ -11,11 +12,9 @@ import 'package:plain_pdf/src/reader/filters.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
-import 'drawing_test.dart' show near, render;
-
-bool _has(String tool) => Process.runSync('which', [tool]).exitCode == 0;
-
-final bool _tools = ['qpdf', 'pdftoppm', 'pdftotext'].every(_has);
+import 'drawing_test.dart' show near, recordedTools, render;
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 late Directory _dir;
 int _count = 0;
@@ -24,7 +23,7 @@ File _write(List<int> bytes) =>
     File('${_dir.path}/r${_count++}.pdf')..writeAsBytesSync(bytes);
 
 String _text(File pdf) =>
-    Process.runSync('pdftotext', ['-layout', pdf.path, '-']).stdout as String;
+    pdftotext(recordedTools, pdf.readAsBytesSync(), options: ['-layout']);
 
 /// A document of two pages: "first" on a red A4 page, "second" on a
 /// blue US Letter page rotated by [rotation].
@@ -56,12 +55,13 @@ File _imported(ImportedPage page) {
   final file = _write(
     document.save(options: const PdfWriterOptions(deterministic: true)),
   );
-  final check = Process.runSync('qpdf', ['--check', file.path]);
+  final check = qpdfCheck(recordedTools, file.readAsBytesSync());
   expect(check.exitCode, 0, reason: '${check.stdout}${check.stderr}');
   return file;
 }
 
 void main() {
+  recordedTools = Oracle('reader', compressed: true);
   setUpAll(() => _dir = Directory.systemTemp.createTempSync('libpdf-reader.'));
   tearDownAll(() => _dir.deleteSync(recursive: true));
 
@@ -78,16 +78,19 @@ void main() {
 
     test('reads the cross-reference streams and object streams qpdf '
         'writes', () {
-      final source = _write(_source());
-      final out = '${_dir.path}/qpdf.pdf';
-      final result = Process.runSync('qpdf', [
-        '--object-streams=generate',
-        '--compress-streams=y',
-        source.path,
-        out,
-      ]);
-      expect(result.exitCode, 0, reason: '${result.stderr}');
-      final file = PdfFile.parse(File(out).readAsBytesSync());
+      final result = recordedTools.run(
+        'qpdf',
+        [
+          '--object-streams=generate',
+          '--compress-streams=y',
+          'in.pdf',
+          'out.pdf',
+        ],
+        version: qpdfVersion,
+        files: {'in.pdf': _source()},
+      );
+      expect(result.exitCode, 0, reason: result.stderr);
+      final file = PdfFile.parse(result.outputs['out.pdf']!);
       expect(file.pages, hasLength(2));
       expect(_text(_imported(file.pages[0])), contains('first'));
     });
@@ -110,7 +113,7 @@ void main() {
         throwsA(isA<PdfFormatException>()),
       );
     });
-  }, skip: _tools ? false : 'needs qpdf and poppler');
+  });
 
   group('ImportedPage', () {
     test('paints the page with its text and its graphics', () {
@@ -137,7 +140,9 @@ void main() {
         document.addPage(const Rect(0, 0, 400, 400)).canvas,
         const Rect(100, 100, 153, 198),
       );
-      final pdf = _write(document.save());
+      final pdf = _write(
+        document.save(options: const PdfWriterOptions(deterministic: true)),
+      );
       final rendered = render(pdf);
       expect(rendered.at(120, 200), near((0, 0, 255)));
       expect(rendered.at(240, 200), near((255, 255, 255)));
@@ -158,7 +163,7 @@ void main() {
       expect(RegExp('/Subtype /Form').allMatches(bytes), hasLength(1));
       expect(RegExp('/BaseFont /Helvetica').allMatches(bytes), hasLength(1));
     });
-  }, skip: _tools ? false : 'needs qpdf and poppler');
+  });
 
   group('stream filters', () {
     Uint8List decode(String filter, List<int> data, [PdfDict? params]) =>

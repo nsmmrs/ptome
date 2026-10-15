@@ -48,16 +48,3 @@ jobs:
         js="$(node build/web_check.js)"
         echo "VM: $vm"; echo "JS: $js"
         test "$vm" = "$js"
-  pdf-tools:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Set up Dart
-      uses: dart-lang/setup-dart@v1
-    - name: Install Dart dependencies
-      run: dart pub get
-    - name: Install qpdf, poppler, ImageMagick and librsvg
-      run: sudo apt-get update -q && sudo apt-get install -yq qpdf poppler-utils imagemagick librsvg2-bin
-    - name: Run the tests that check output with qpdf, poppler, ImageMagick and librsvg
-      run: dart test --tags pdf-tools

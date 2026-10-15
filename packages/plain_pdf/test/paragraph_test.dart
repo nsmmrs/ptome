@@ -4,6 +4,9 @@ import 'package:plain_pdf/plain_pdf.dart';
 import 'package:plain_typesetting/plain_typesetting.dart';
 import 'package:test/test.dart';
 
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
+
 final TextStyle body = TextStyle(StandardFont.helvetica, 10);
 final TextStyle bold = TextStyle(StandardFont.named('Helvetica-Bold'), 10);
 
@@ -50,7 +53,12 @@ final class EveryThird implements Hyphenator {
   ];
 }
 
+/// The tools' runs, recorded (test/oracles/paragraph.json.gz,
+/// test/support/oracles.dart; ORACLES=record asks them again).
+late final Oracle _recorded;
+
 void main() {
+  _recorded = Oracle('paragraph', compressed: true);
   test('first fit fills each line as far as it goes', () {
     final result = lines(lorem);
     expect(result.length, greaterThan(3));
@@ -262,82 +270,78 @@ void main() {
     expect(textOf(line), 'see  here');
   });
 
-  test(
-    'a painted paragraph reads back with the same lines',
-    () {
-      final document = PdfDocument();
-      final page = document.addPage(const Rect(0, 0, 300, 400));
-      final result = lines(
-        lorem,
-        align: TextAlign.justify,
-        breaker: const KnuthPlassLineBreaker(),
+  test('a painted paragraph reads back with the same lines', () {
+    final document = PdfDocument();
+    final page = document.addPage(const Rect(0, 0, 300, 400));
+    final result = lines(
+      lorem,
+      align: TextAlign.justify,
+      breaker: const KnuthPlassLineBreaker(),
+    );
+    var top = 380.0;
+    final links = <Rect>[];
+    for (final line in result) {
+      line.paint(page.canvas, 50, top, link: (rect, _) => links.add(rect));
+      top -= line.height;
+    }
+    final dir = Directory.systemTemp.createTempSync('libpdf.');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/p.pdf')
+      ..writeAsBytesSync(
+        document.save(options: const PdfWriterOptions(deterministic: true)),
       );
-      var top = 380.0;
-      final links = <Rect>[];
-      for (final line in result) {
-        line.paint(page.canvas, 50, top, link: (rect, _) => links.add(rect));
-        top -= line.height;
-      }
-      final dir = Directory.systemTemp.createTempSync('libpdf.');
-      addTearDown(() => dir.deleteSync(recursive: true));
-      final file = File('${dir.path}/p.pdf')..writeAsBytesSync(document.save());
-      final text =
-          Process.runSync('pdftotext', ['-layout', file.path, '-']).stdout
-              as String;
-      final read = [
-        for (final l in text.split('\n'))
-          if (l.trim().isNotEmpty) l.trim().replaceAll(RegExp(' +'), ' '),
-      ];
-      expect(read, result.map(textOf).toList());
-    },
-    skip: Process.runSync('which', ['pdftotext']).exitCode == 0
-        ? false
-        : 'needs poppler',
-    tags: ['pdf-tools'],
-  );
+    final text =
+        recordedRunSync(_recorded, 'pdftotext', [
+              '-layout',
+              file.path,
+              '-',
+            ]).stdout
+            as String;
+    final read = [
+      for (final l in text.split('\n'))
+        if (l.trim().isNotEmpty) l.trim().replaceAll(RegExp(' +'), ' '),
+    ];
+    expect(read, result.map(textOf).toList());
+  });
 
-  test(
-    'inline decorations paint behind their text',
-    () {
-      final document = PdfDocument();
-      final page = document.addPage(const Rect(0, 0, 100, 40));
-      const FirstFitLineBreaker()
-          .breakLines(
-            Paragraph([
-              TextRun(
-                'MMMM',
-                body,
-                decoration: const InlineDecoration(
-                  background: Color.rgb(0, 1, 0),
-                  padding: 2,
-                ),
+  test('inline decorations paint behind their text', () {
+    final document = PdfDocument();
+    final page = document.addPage(const Rect(0, 0, 100, 40));
+    const FirstFitLineBreaker()
+        .breakLines(
+          Paragraph([
+            TextRun(
+              'MMMM',
+              body,
+              decoration: const InlineDecoration(
+                background: Color.rgb(0, 1, 0),
+                padding: 2,
               ),
-            ]),
-            (_) => 100,
-          )
-          .single
-          .paint(page.canvas, 10, 30);
-      final dir = Directory.systemTemp.createTempSync('libpdf.');
-      addTearDown(() => dir.deleteSync(recursive: true));
-      final file = File('${dir.path}/d.pdf')..writeAsBytesSync(document.save());
-      Process.runSync('pdftoppm', [
-        '-r',
-        '72',
-        '-singlefile',
-        file.path,
-        '${dir.path}/d',
-      ]);
-      final ppm = File('${dir.path}/d.ppm').readAsBytesSync();
-      final pixels = ppm.sublist(ppm.length - 100 * 40 * 3);
-      // Left of the text, inside the padding: green.
-      const i = ((40 - 1 - 25) * 100 + 9) * 3;
-      expect(pixels.sublist(i, i + 3), [0, 255, 0]);
-    },
-    skip: Process.runSync('which', ['pdftoppm']).exitCode == 0
-        ? false
-        : 'needs poppler',
-    tags: ['pdf-tools'],
-  );
+            ),
+          ]),
+          (_) => 100,
+        )
+        .single
+        .paint(page.canvas, 10, 30);
+    final dir = Directory.systemTemp.createTempSync('libpdf.');
+    addTearDown(() => dir.deleteSync(recursive: true));
+    final file = File('${dir.path}/d.pdf')
+      ..writeAsBytesSync(
+        document.save(options: const PdfWriterOptions(deterministic: true)),
+      );
+    recordedRunSync(_recorded, 'pdftoppm', [
+      '-r',
+      '72',
+      '-singlefile',
+      file.path,
+      '${dir.path}/d',
+    ]);
+    final ppm = File('${dir.path}/d.ppm').readAsBytesSync();
+    final pixels = ppm.sublist(ppm.length - 100 * 40 * 3);
+    // Left of the text, inside the padding: green.
+    const i = ((40 - 1 - 25) * 100 + 9) * 3;
+    expect(pixels.sublist(i, i + 3), [0, 255, 0]);
+  });
 
   test('characters a font lacks are set in a fallback font', () {
     final mplus = EmbeddedFont.parse(

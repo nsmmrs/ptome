@@ -1,0 +1,18 @@
+{
+  "qpdf --check in.pdf #ad366d0afcd1dae5": {
+    "inputs": "ad366d0afcd1dae5ec545910caa6df87848e76c8260b74766abddbb4c9c4c503",
+    "answer": "{\"exitCode\":0,\"stdout\":\"Y2hlY2tpbmcgaW4ucGRmClBERiBWZXJzaW9uOiAxLjUKRmlsZSBpcyBub3QgZW5jcnlwdGVkCkZpbGUgaXMgbm90IGxpbmVhcml6ZWQKTm8gc3ludGF4IG9yIHN0cmVhbSBlbmNvZGluZyBlcnJvcnMgZm91bmQ7IHRoZSBmaWxlIG1heSBzdGlsbCBjb250YWluCmVycm9ycyB0aGF0IHFwZGYgY2Fubm90IGRldGVjdAo=\",\"stderr\":\"\",\"outputs\":{}}"
+  },
+  "qpdf --check in.pdf #c58acf1fd97842f3": {
+    "inputs": "c58acf1fd97842f3a6941b7f3abdbc08d6f03fd941933f4e58974b54c1dd2453",
+    "answer": "{\"exitCode\":0,\"stdout\":\"Y2hlY2tpbmcgaW4ucGRmClBERiBWZXJzaW9uOiAxLjUKRmlsZSBpcyBub3QgZW5jcnlwdGVkCkZpbGUgaXMgbm90IGxpbmVhcml6ZWQKTm8gc3ludGF4IG9yIHN0cmVhbSBlbmNvZGluZyBlcnJvcnMgZm91bmQ7IHRoZSBmaWxlIG1heSBzdGlsbCBjb250YWluCmVycm9ycyB0aGF0IHFwZGYgY2Fubm90IGRldGVjdAo=\",\"stderr\":\"\",\"outputs\":{}}"
+  },
+  "qpdf --check in.pdf #c8d4b03e3af396ec": {
+    "inputs": "c8d4b03e3af396ec8a9ae690ac7b2966d9a1f2a321c3c5a205e5ff94c6086de3",
+    "answer": "{\"exitCode\":0,\"stdout\":\"Y2hlY2tpbmcgaW4ucGRmClBERiBWZXJzaW9uOiAxLjUKRmlsZSBpcyBub3QgZW5jcnlwdGVkCkZpbGUgaXMgbm90IGxpbmVhcml6ZWQKTm8gc3ludGF4IG9yIHN0cmVhbSBlbmNvZGluZyBlcnJvcnMgZm91bmQ7IHRoZSBmaWxlIG1heSBzdGlsbCBjb250YWluCmVycm9ycyB0aGF0IHFwZGYgY2Fubm90IGRldGVjdAo=\",\"stderr\":\"\",\"outputs\":{}}"
+  },
+  "qpdf --check in.pdf #e3150b9a0a60cbc3": {
+    "inputs": "e3150b9a0a60cbc33b73f8b1a965617c700a4b93f5fb9eea67d26168991c9146",
+    "answer": "{\"exitCode\":0,\"stdout\":\"Y2hlY2tpbmcgaW4ucGRmClBERiBWZXJzaW9uOiAxLjUKRmlsZSBpcyBub3QgZW5jcnlwdGVkCkZpbGUgaXMgbm90IGxpbmVhcml6ZWQKTm8gc3ludGF4IG9yIHN0cmVhbSBlbmNvZGluZyBlcnJvcnMgZm91bmQ7IHRoZSBmaWxlIG1heSBzdGlsbCBjb250YWluCmVycm9ycyB0aGF0IHFwZGYgY2Fubm90IGRldGVjdAo=\",\"stderr\":\"\",\"outputs\":{}}"
+  }
+}

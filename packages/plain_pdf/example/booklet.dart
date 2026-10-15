@@ -55,6 +55,8 @@ void main(List<String> args) {
   ]);
   final document = PdfDocument();
   result.render(document);
-  File(args.isEmpty ? 'booklet.pdf' : args.first)
-      .writeAsBytesSync(document.save());
+  File(args.isEmpty ? 'booklet.pdf' : args.first).writeAsBytesSync(
+    // (Deterministic: the same bytes on every run, dated the epoch.)
+    document.save(options: const PdfWriterOptions(deterministic: true)),
+  );
 }

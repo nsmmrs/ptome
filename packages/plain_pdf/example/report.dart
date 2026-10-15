@@ -111,8 +111,10 @@ void main(List<String> args) {
       );
     }
   }
-  File(args.isEmpty ? 'report.pdf' : args.first)
-      .writeAsBytesSync(document.save());
+  File(args.isEmpty ? 'report.pdf' : args.first).writeAsBytesSync(
+    // (Deterministic: the same bytes on every run, dated the epoch.)
+    document.save(options: const PdfWriterOptions(deterministic: true)),
+  );
 }
 
 TableCell _cell(String text, TextStyle style, {Color? background}) => TableCell(

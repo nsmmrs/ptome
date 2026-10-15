@@ -1,4 +1,6 @@
-// The examples run and write valid PDF files.
+// The examples run and write valid PDF files (qpdf's checks recorded in
+// test/oracles/examples.json, test/support/oracles.dart; ORACLES=record
+// asks it again).
 @TestOn('vm')
 library;
 
@@ -10,8 +12,11 @@ import '../example/booklet.dart' as booklet;
 import '../example/plain_pdf_example.dart' as hello;
 import '../example/report.dart' as report;
 import '../example/svg_chart.dart' as chart;
+import 'support/oracles.dart';
+import 'support/pdf_tools.dart';
 
 void main() {
+  final recorded = Oracle('examples');
   late Directory dir;
   setUpAll(() => dir = Directory.systemTemp.createTempSync('libpdf.'));
   tearDownAll(() => dir.deleteSync(recursive: true));
@@ -27,10 +32,8 @@ void main() {
       run([path]);
       final bytes = File(path).readAsBytesSync();
       expect(String.fromCharCodes(bytes.take(5)), '%PDF-');
-      if (Process.runSync('which', ['qpdf']).exitCode == 0) {
-        final check = Process.runSync('qpdf', ['--check', path]);
-        expect(check.exitCode, 0, reason: '${check.stdout}');
-      }
+      final check = qpdfCheck(recorded, bytes);
+      expect(check.exitCode, 0, reason: check.stdout);
     });
   }
 }
