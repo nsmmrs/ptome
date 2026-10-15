@@ -236,6 +236,41 @@ class Table extends AbstractBlock {
   /// The rows of this table (head, foot and body).
   TableRows rows = TableRows();
 
+  /// Recurses `findBy` into the table's cells, as Asciidoctor's
+  /// `find_by_internal` does: each cell, and with [traverseDocuments] the
+  /// document of each AsciiDoc cell of the body and the foot.
+  @override
+  void traverseChildren({
+    required List<AbstractBlock> result,
+    BlockContext? context,
+    String? style,
+    String? role,
+    String? id,
+    bool traverseDocuments = false,
+    FindByFilter? filter,
+  }) {
+    void visit(AbstractBlock block) => block.findByInternal(
+      context: context,
+      style: style,
+      role: role,
+      id: id,
+      traverseDocuments: traverseDocuments,
+      result: result,
+      filter: filter,
+    );
+    for (final row in rows.head) {
+      row.forEach(visit);
+    }
+    for (final row in [...rows.body, ...rows.foot]) {
+      for (final cell in row) {
+        visit(cell);
+        if (traverseDocuments && cell.style == 'asciidoc') {
+          if (cell.innerDocument case final inner?) visit(inner);
+        }
+      }
+    }
+  }
+
   /// How this table treats its first row.
   TableHeader header = TableHeader.none;
 

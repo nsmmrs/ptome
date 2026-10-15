@@ -23,6 +23,7 @@ EPIC-phf3n2 has the plan.
 | [OpenStax College Physics 2e](../test/showcase/openstax/NOTICE.md) | A modern textbook chapter (CC BY): learning objectives, notes, worked examples in their steps, equations from MathML (AsciiMath; MathML in the EPUB), numbered figures with descriptions, problems with an answer key at the back, a glossary |
 | [Poor Richard's Almanack](../test/showcase/poor-richard/NOTICE.md) | Dense tables in small type: the 1733 almanac's twelve months, each a page of its calendar in seven ruled columns, the signs of the zodiac, the planets and the aspects among the figures, the proverbs down the last column; its title page, its anatomy woodcut |
 | [Punch](../test/showcase/punch/NOTICE.md) | Magazine pages: three 1841 issues in two ruled columns under the running title, cuts with captions in the columns and across the page, pictorial initials, verse, tables of cuts |
+| [The New-York Tribune](../test/showcase/tribune/NOTICE.md) | A newspaper's front page, 16 April 1912: seven columns ruled apart, the banner across them, heads over one, two or four columns, the map and pictures, a tally, the survivors' list in its own columns, and stories that jump to the second page |
 | [The Tempest](../test/showcase/tempest/NOTICE.md) | One source in two looks, a modern reading edition's and the First Folio's: speeches as description lists, shared verse lines stepped, each scene's lines numbered; two ruled columns in a frame |
 
 ## A work's folder

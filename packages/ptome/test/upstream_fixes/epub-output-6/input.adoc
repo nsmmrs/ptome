@@ -1,0 +1,18 @@
+= Doc
+:doctype: book
+
+[#one]
+== One
+
+The story goes on in <<two>>.
+
+[#two-chapter]
+== Two
+
+|===
+a|
+[#two]
+=== Two, in a cell
+
+The rest of the story.
+|===

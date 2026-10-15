@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- `findBy` reaches into a table's cells, and with `traverseDocuments`
+  into its AsciiDoc cells' documents, as Asciidoctor's `find_by` does; a
+  jump line in a table cell knows whether its target comes before it
+  (the New-York Tribune's front page). EPUB: a cross reference to an
+  anchor in a later AsciiDoc table cell links to its chapter, where
+  asciidoctor-epub3 leaves it unknown (BUG-xmdjm0,
+  `test/upstream_fixes/epub-output-6`); not under `asciidoctor-compat`.
 - PDF: `font_fallback_metrics: base` counts a fallback font's text as
   the text's own font for its line's height, so a symbol doesn't make
   its line or table row taller (Poor Richard's Almanack; FEAT-ml7z96).

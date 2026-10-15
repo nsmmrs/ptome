@@ -33,9 +33,16 @@ String jumpText(
 /// Whether [block] is a jump line: a paragraph with the role `jump`.
 bool isJump(AbstractBlock block) => block.includesRole('jump');
 
-/// Whether the block [id] names comes before [block] in [doc].
+/// Whether the block [id] names comes before [block] in [doc] (the
+/// AsciiDoc table cells' documents in their places among its blocks, a
+/// newspaper's stories set in a table).
 bool jumpsBack(Document doc, AbstractBlock block, String id) {
-  for (final other in doc.findBy()) {
+  var root = doc;
+  for (var parent = doc.parentDocument; parent != null;) {
+    root = parent;
+    parent = parent.parentDocument;
+  }
+  for (final other in root.findBy(traverseDocuments: true)) {
     if (identical(other, block)) return false;
     if (other.id == id) return true;
   }

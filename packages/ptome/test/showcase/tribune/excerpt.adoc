@@ -1,0 +1,58 @@
+= Tribune: the banner, the ruled columns and a jump
+:doctype: article
+:lang: en
+:look: tribune
+:looksdir: {docdir}
+:notitle:
+:jump-template: {{#page}}Continued {{#back}}from{{/back}}{{^back}}on{{/back}} page {{page}}.{{/page}}{{^page}}Continued {{#back}}from{{/back}}{{^back}}in{{/back}} {{title}}{{/page}}
+
+// A newspaper's front page (doc/showcase.md): the banner across the
+// columns, stories under their heads in columns ruled apart, a head
+// across two of them, and a story that jumps to the second page and
+// says where it came from there.
+
+[.banner%hardbreaks]
+1,340 PERISH AS TITANIC SINKS; ONLY 886,
+MOSTLY WOMEN AND CHILDREN, RESCUED
+
+[.front,cols="1,1,1",frame=none,grid=all]
+|===
+a|
+[#olympic.story]
+== “LOSS 1,800 SOULS,” OLYMPIC’S MESSAGE
+
+[.deck]
+Belief Here That Estimated Number Is Too Large by 300—Rescuers Find Wreckage.
+
+The text of the message from the steamer Olympic reporting the sinking of the Titanic and the rescue of 675 survivors, which reached here late last night, also expressed the opinion that 1,800 lives were lost.
+
+2+a|
+[#lead.story]
+== SURVIVORS EIGHT HOURS IN BOATS
+
+The White Star liner Titanic sank at 2:20 a. m. yesterday about 1,150 miles east of Sandy Hook.
+
+The first statement given out at the White Star offices conceding the loss of the Titanic said:
+
+[.jumped]
+“Captain Haddock of the Olympic sends a wireless message to the White Star offices here that the steamer Titanic sank at 2:20 a. m., after all passengers and crew had been lowered to lifeboats and trans-
+
+[.jump]
+<<lead-continued>>
+|===
+
+<<<
+
+[.second,cols="2,1",frame=none,grid=cols]
+|===
+a|
+[#lead-continued.story.continued]
+== Wireless from Olympic’s Captain Gives News
+
+[.jump]
+<<lead>>
+
+[.jumped-in]
+ferred to the Virginian. The steamship Carpathia, with several hundred passengers of the Titanic, is now en route to New York.”
+a|
+|===

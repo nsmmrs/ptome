@@ -1,0 +1,8 @@
+# The front page's map and pictures, fetched by tool/showcase.dart into
+# the work cache and checked by their 9f3b893ec247de25d7e4349052ce9c8f9f415adf69cf69ceb626a2f551b2e6a4-256: the region of the Library
+# of Congress's scan of the page that holds them (its IIIF image service
+# cuts it out and halves it), the map's title and the captions left out,
+# which the work sets as text.
+- name: art.jpg
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0303/985,1720,3410,4190/pct:50/0/default.jpg
+  sha256: 9f3b893ec247de25d7e4349052ce9c8f9f415adf69cf69ceb626a2f551b2e6a4

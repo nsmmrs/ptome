@@ -388,6 +388,24 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
         node,
         compat: asciidoctorCompat(node, CompatFormat.epub),
       );
+      // (Each AsciiDoc cell's document known by its cell before any is
+      // converted: a reference to an anchor in a later cell finds its
+      // chapter, where the gem leaves it unknown; not under
+      // asciidoctor-compat.)
+      for (final table
+          in asciidoctorCompat(node, CompatFormat.epub)
+              ? const <AbstractBlock>[]
+              : node.findBy(
+                  context: BlockContext.table,
+                  traverseDocuments: true,
+                )) {
+        if (table is! Table) continue;
+        for (final row in table.rows.body) {
+          for (final cell in row) {
+            if (cell.innerDocument case final inner?) _parentCell[inner] = cell;
+          }
+        }
+      }
     }
     _loadPageMap(node);
     _validate = node.hasAttr('ebook-validate');
