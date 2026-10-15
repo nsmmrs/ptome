@@ -36,6 +36,7 @@ import 'package:ptome/src/highlight/syntax_highlighter.dart';
 import 'package:ptome/src/index_catalog.dart';
 import 'package:ptome/src/inline.dart';
 import 'package:ptome/src/io.dart' as io;
+import 'package:ptome/src/jump.dart';
 import 'package:ptome/src/list.dart';
 import 'package:ptome/src/logging.dart';
 import 'package:ptome/src/look/css.dart';
@@ -949,7 +950,27 @@ class Epub3Converter extends BuiltInConverter implements FinishingConverter {
     }
     if (role != null) {
       if (node.hasRole('signature')) node.setOption('hardbreaks');
-      return '<p$idAttr class="$role">$head${_s(node.content())}</p>';
+      var content = _s(node.content());
+      // (A jump line, a `[.jump]` paragraph that is a cross reference
+      // alone, worded by the document's own `jump-template`, as in HTML:
+      // "Continued in The Science".)
+      final doc = _doc(node);
+      if (isJump(node) &&
+          doc.hasAttr('jump-template') &&
+          !asciidoctorCompat(doc, CompatFormat.epub)) {
+        final target = _jumpTargetRx.firstMatch(node.source().trim())?[1];
+        if (target != null) {
+          content = content.replaceFirstMapped(_jumpXrefRx, (m) {
+            final text = jumpText(
+              doc,
+              title: m[2]!,
+              back: jumpsBack(doc, node, target),
+            );
+            return '${m[1]}$text</a>';
+          });
+        }
+      }
+      return '<p$idAttr class="$role">$head$content</p>';
     }
     return '<p$idAttr>$head${_s(node.content())}</p>';
   }
@@ -2835,6 +2856,12 @@ final RegExp _indexAnchorRx = RegExp(r'<a id="_indexterm_\d+"></a>');
 bool _strict(Document document) =>
     document.hasAttr('epub-strict') &&
     !asciidoctorCompat(document, CompatFormat.epub);
+
+/// A jump line's cross reference: its opening tag and its text.
+final RegExp _jumpXrefRx = RegExp(r'^(<a [^>]*class="xref">)(.*)</a>$');
+
+/// A jump line's source: its target's id.
+final RegExp _jumpTargetRx = RegExp(r'^<<([^,>]+)(?:,[^>]*)?>>$');
 
 /// A tag, for text that allows none.
 final RegExp _tagRx = RegExp('<[^>]+>');

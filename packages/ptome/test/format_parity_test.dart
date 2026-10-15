@@ -434,6 +434,28 @@ templates:
     expect(html, contains('<p><a href="#a">Continued from A Piece</a></p>'));
   });
 
+  test('EPUB jump lines: worded by a jump-template the document sets, '
+      'else the bare reference', () {
+    const pieces =
+        '[#a]\n== A Piece\n\n[.jump]\n<<a-more>>\n\n'
+        '[#a-more]\n== More\n\n[.jump]\n<<a>>\n';
+    String text(String source) =>
+        unzipText(File(convertWith('epub3', source)).readAsBytesSync()).entries
+            .where((e) => e.key.endsWith('.xhtml'))
+            .map((e) => e.value)
+            .join();
+    final worded = text(
+      '= Issue\n:doctype: book\n'
+      ':jump-template: {{#back}}From{{/back}}{{^back}}To{{/back}} {{title}}\n\n'
+      '$pieces',
+    );
+    expect(worded, contains('class="xref">To More</a>'));
+    expect(worded, contains('class="xref">From A Piece</a>'));
+    final bare = text('= Issue\n:doctype: book\n\n$pieces');
+    expect(bare, contains('class="xref">More</a>'));
+    expect(bare, contains('class="xref">A Piece</a>'));
+  });
+
   test("a look's webfonts after Asciidoctor's; none with its stylesheet", () {
     File('${dir.path}/web-look.yml').writeAsStringSync(
       "webfonts: ['Crimson Pro:400,700', 'Ubuntu Mono:400']\n",

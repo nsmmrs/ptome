@@ -77,6 +77,6 @@ Where the look departs from it:
 - In HTML and EPUB the stories are in the table's cells, which a
   narrow screen squeezes; the decks and heads are centred by the look's
   CSS.
-- In an EPUB each jump line is a link to where the story goes on,
-  titled by it, without the `jump-template`'s words, which HTML ("Continued
-  in …") and the PDF ("Continued on page 2.") use.
+- In HTML and EPUB the jump lines are worded by the story they go on
+  in ("Continued in …", "Continued from …"), an e-book having no pages
+  of its own; the PDF by the page ("Continued on page 2.").

@@ -10,6 +10,8 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- EPUB: a document that sets `jump-template` has its jump lines worded
+  by it, as in HTML ("Continued in …").
 - With the `cell-references` attribute, a jump line knows whether a
   target in an AsciiDoc table cell comes before it (the New-York
   Tribune's front page), and in an EPUB a cross reference to an
