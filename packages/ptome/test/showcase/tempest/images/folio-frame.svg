@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="215mm" height="330mm" viewBox="0 0 215 330">
+  <!-- The First Folio's page: the text and its running head in a frame
+       of rules, the head ruled off below. -->
+  <g fill="none" stroke="#1a1a1a" stroke-width="0.35">
+    <rect x="16" y="13" width="183" height="303"/>
+    <line x1="16" y1="23" x2="199" y2="23"/>
+  </g>
+</svg>

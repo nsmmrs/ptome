@@ -342,6 +342,19 @@ final List<NeededFont> lookFonts = [
     license: 'SIL Open Font License 1.1',
   ),
   const NeededFont(
+    name: 'IM Fell DW Pica',
+    usedBy: "the showcase's First Folio look (the Fell types)",
+    families: ['IM Fell DW Pica'],
+    // (A roman and an italic: the Fell types have no bold.)
+    styles: [FontStyle.normal, FontStyle.italic],
+    fileNames: {},
+    source: GoogleFonts('IM Fell DW Pica', {
+      FontStyle.normal: 'IMFellDWPica-Regular.ttf',
+      FontStyle.italic: 'IMFellDWPica-Italic.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
     name: 'Fira Sans Condensed',
     usedBy: 'the tech-book look (Myriad Condensed)',
     families: ['Fira Sans Condensed'],

@@ -1,0 +1,110 @@
+# The Tempest as the First Folio prints it (1623, the first play in the
+# book, set by Jaggard's compositors): a folio page of about 8½ × 13 in,
+# two columns ruled apart inside a frame of rules, the running head
+# "The Tempest." in italic over a rule, the page number outside it; each
+# speech its speaker's name run in, in italic, set in a little from the
+# lines after it, which go out to the column's edge; stage directions in
+# italic, centred; the acts and scenes headed in the column. The Folio
+# doesn't step a shared verse line, nor number the lines.
+#
+# IM Fell DW Pica stands in for the Folio's roman and italic: Fell's
+# types, cut in the Low Countries later in the century, are the nearest
+# free faces to the English printing of the time (`ptome doctor --look
+# folio --looksdir test/showcase/tempest`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] } }
+    display: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] }, weight: normal }
+  size:
+    text: { print: 10.5pt, screen: 19px }
+    headings: { print: [30pt, 13pt, 13pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.12, screen: 1.5 }
+  measure: { screen: 34em }
+  align: { print: start }
+  hyphenate: { print: false }
+  color: { ink: '#1A1A1A', link: '#1A1A1A' }
+  page: { size: [215mm, 330mm], margin: [25mm, 19mm, 17mm, 19mm] }
+styles:
+  heading: { font: display, weight: normal, color: ink }
+  title: { font: display, weight: normal, color: ink }
+  link: { color: ink }
+pdf:
+  page:
+    columns: 2
+    column_gap: 18
+    column_rule_width: 0.4
+    column_rule_color: '1A1A1A'
+    background_image: image:images/folio-frame.svg[fit=fill]
+  heading:
+    chapter_break_before: auto
+    h2:
+      text_align: center
+      font_style: italic
+      font_size: 12
+      margin_top: 6
+      margin_bottom: 4
+    h3:
+      text_align: center
+      font_size: 14
+      margin_top: 10
+      margin_bottom: 4
+  description_list:
+    term_display: inline
+    term_font_style: italic
+    term_suffix: '.'
+    term_gap: 0.35em
+    term_indent: 1em
+    description_indent: 0
+    item_spacing: 0
+  prose:
+    margin_bottom: 0
+  role:
+    direction: { text_align: center, font_style: italic }
+    sd: { font_style: italic }
+    sc: { font_style: normal }
+    scene: { }
+  title_page:
+    text_align: center
+    title:
+      font_size: 44
+      text_transform: uppercase
+      character_spacing: 6
+      top: 30%
+    authors:
+      font_style: italic
+      font_size: 13
+  list:
+    item_spacing: 0
+  header:
+    height: 11mm
+    vertical_align: middle
+    font_size: 15
+    font_style: italic
+    recto:
+      left: { content: '' }
+      center: { content: 'The Tempest.' }
+      right: { content: '{page-number}' }
+    verso:
+      left: { content: '{page-number}' }
+      center: { content: 'The Tempest.' }
+      right: { content: '' }
+  footer:
+    height: 10mm
+    border_width: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+webfonts:
+  - IM Fell DW Pica:400,400italic
+css: |
+  #content{column-count:2;column-rule:1px solid #1a1a1a;column-gap:2em}
+  .dlist dt{font-style:italic;display:inline;margin-left:1em}
+  .dlist dt::after{content:"."}
+  .dlist dd{display:inline;margin:0}
+  .dlist dd::after{content:"";display:block}
+  .paragraph.direction p{text-align:center;font-style:italic}
+  .sd{font-style:italic}
+epub-css: |
+  .dlist dt{font-style:italic}
+  .paragraph.direction p{text-align:center;font-style:italic}
+  .sd{font-style:italic}

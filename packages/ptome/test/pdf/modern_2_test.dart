@@ -524,6 +524,47 @@ void main() {
       expect(grid.take(3), ['2', '4', '6']);
     });
 
+    test("a play's lines: from each scene, its heads, names and directions "
+        'left out, a shared line stepped and counted once', () {
+      const source =
+          '= Play\n:doctype: book\n:line-numbers: logical\n\n'
+          '== Act I\n\n=== Scene I\n\n[.direction]\nEnter Miranda.\n\n'
+          'Miranda:: More to know +\nDid never meddle with my thoughts.\n'
+          'Prospero:: [.shared]#’Tis time# +\nI should inform thee farther.\n\n'
+          '=== Scene II\n\n'
+          'Ariel:: All hail, great master! +\nGrave sir, hail!\n';
+      const theme =
+          'line_numbers:\n  gap: 6\n  restart: section\n  restart_level: 2\n'
+          '  skip_headings: true\n  skip_terms: true\n'
+          '  skip_roles: [direction]\n'
+          'role:\n  shared:\n    text_indent: continue\n';
+      final bbox =
+          recordedRunSync(modernRecorded, 'pdftotext', [
+                '-bbox',
+                modernPdf(source, theme: theme),
+                '-',
+              ]).stdout
+              as String;
+      final words = [
+        for (final m in RegExp(
+          r'xMin="([\d.]+)"[^>]*>([^<]+)<',
+        ).allMatches(bbox))
+          (double.parse(m[1]!), m[2]!),
+      ];
+      expect(
+        [
+          for (final (x, word) in words)
+            if (x < 48 && RegExp(r'^\d+$').hasMatch(word)) word,
+        ],
+        ['1', '2', '3', '1', '2'],
+      );
+      // (’Tis time from where "thoughts." ends, "I should" back at the
+      // left.)
+      double at(String word) => words.firstWhere((w) => w.$2 == word).$1;
+      expect(at('’Tis'), greaterThan(at('thoughts.')));
+      expect(at('should'), lessThan(at('never')));
+    });
+
     test("a bill's page that opens with a heading has a line more", () {
       // A bill: 14 pt text on a 26 pt grid from each page's first line,
       // section headings in 10 pt (so their baseline is higher), every

@@ -593,6 +593,12 @@ final class _Converter {
   }
 
   void _table(XmlElement table, StringBuffer out) {
+    if (table.descendantElements.any(
+      (e) => _types(e).contains('z3998:persona') && e.localName == 'td',
+    )) {
+      _drama(table, out);
+      return;
+    }
     final rows = [
       for (final row in table.descendantElements)
         if (row.localName == 'tr')
@@ -615,6 +621,133 @@ final class _Converter {
     }
     out.writeln('|===');
     _blank(out);
+  }
+
+  /// A play's speeches (Standard Ebooks' table of a persona's cell and a
+  /// speech's): a description list of them, the speaker the term and the
+  /// speech the description (a verse speech's lines broken where they
+  /// are, its paragraphs joined by list continuations); a row with no
+  /// speaker a stage direction, a `[.direction]` paragraph between lists.
+  void _drama(XmlElement table, StringBuffer out) {
+    var inList = false;
+    for (final row in table.descendantElements) {
+      if (row.localName != 'tr') continue;
+      final cells = [
+        for (final cell in row.childElements)
+          if (cell.localName == 'td' || cell.localName == 'th') cell,
+      ];
+      if (cells.isEmpty) continue;
+      final persona = cells.length > 1 ? _inline(cells.first).trim() : '';
+      final speech = cells.last;
+      // (A row with no speaker whose text isn't all stage directions: the
+      // last speaker's speech going on after one, a paragraph of its own.)
+      final directionsOnly = speech.children.every(
+        (node) => switch (node) {
+          XmlText(:final text) => text.trim().isEmpty,
+          final XmlElement e =>
+            _types(e).contains('z3998:stage-direction') ||
+                (e.localName == 'p' &&
+                    e.childElements.every(
+                      (c) => _types(c).contains('z3998:stage-direction'),
+                    )),
+        },
+      );
+      final paragraphs = speech.childElements
+          .where((e) => e.localName == 'p')
+          .toList();
+      final parts = paragraphs.isEmpty
+          ? [_speechLines(speech)]
+          : [for (final p in paragraphs) _speechLines(p)];
+      if (persona.isEmpty && !directionsOnly) {
+        for (final part in parts) {
+          _blank(out);
+          out
+            ..writeln('[.continued]')
+            ..writeln(_lineStart(part));
+          _blank(out);
+        }
+        inList = false;
+        continue;
+      }
+      if (persona.isEmpty) {
+        // (A direction is italic by its role, not its markup.)
+        final text = _direction(speech);
+        if (text.isEmpty) continue;
+        _blank(out);
+        out
+          ..writeln('[.direction]')
+          ..writeln(_lineStart(text));
+        _blank(out);
+        inList = false;
+        continue;
+      }
+      if (!inList) _blank(out);
+      inList = true;
+      out.writeln(
+        '${persona.replaceAll(':', '&#58;')}:: '
+        '${parts.join('\n+\n')}',
+      );
+    }
+    _blank(out);
+  }
+
+  /// A speech's text: its lines (spans between line breaks) each on a line
+  /// of its own, hard-broken; its stage directions `[.sd]` spans.
+  String _speechLines(XmlElement element) {
+    final lines = <String>[];
+    var line = StringBuffer();
+    for (final node in element.children) {
+      switch (node) {
+        case XmlElement(localName: 'br'):
+          lines.add('$line'.trim());
+          line = StringBuffer();
+        case XmlText(:final text):
+          line.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+        case final XmlElement child:
+          line.write(_speechInline(child));
+      }
+    }
+    if ('$line'.trim().isNotEmpty) lines.add('$line'.trim());
+    return [
+      ...lines.take(1),
+      for (final line in lines.skip(1)) _lineStart(line),
+    ].join(' +\n');
+  }
+
+  String _speechInline(XmlElement element) {
+    if (_types(element).contains('z3998:stage-direction')) {
+      return '[.sd]##${_direction(element)}##';
+    }
+    if (element.localName == 'span') {
+      final out = StringBuffer();
+      for (final node in element.children) {
+        switch (node) {
+          case XmlText(:final text):
+            out.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+          case final XmlElement child:
+            out.write(_speechInline(child));
+        }
+      }
+      return '$out';
+    }
+    return _inlineNode(element);
+  }
+
+  /// A stage direction's text, its italics left to its role: the names in
+  /// it (Standard Ebooks' personas) kept as small capitals.
+  String _direction(XmlElement element) {
+    final out = StringBuffer();
+    for (final node in element.children) {
+      switch (node) {
+        case XmlText(:final text):
+          out.write(_escape(text.replaceAll(RegExp(r'\s+'), ' ')));
+        case XmlElement(localName: 'i' || 'em' || 'span' || 'td') && final e:
+          out.write(_direction(e));
+        case final XmlElement child:
+          out.write(_inlineNode(child));
+      }
+    }
+    return '$out'.trim();
   }
 
   /// [element]'s content as inline AsciiDoc.

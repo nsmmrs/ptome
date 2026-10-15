@@ -270,6 +270,7 @@ extension _Paragraphs on PdfConverter {
           orphans: layout.orphans,
           widows: layout.widows,
           slant: layout.skew ?? 0,
+          goesOn: !box.startsLine,
         );
       }
 
@@ -283,6 +284,7 @@ extension _Paragraphs on PdfConverter {
       orphans: layout.orphans,
       widows: layout.widows,
       slant: layout.skew ?? 0,
+      goesOn: !box.startsLine,
     );
   }
 
@@ -457,6 +459,37 @@ extension _Paragraphs on PdfConverter {
     );
   }
 
+  /// The first-line indent of text that opens with a phrase of a role
+  /// whose `role_<role>_text_indent` is `continue` (modern engine): as
+  /// far in as the last line of the text set before it reaches, and a
+  /// space, so that a verse line shared between two speakers reads as one
+  /// line (`[.shared]#’Tis time#`); null for other text. Records [content]'s
+  /// own last line for the next.
+  double? _continuedIndent(String content, _FontState font) {
+    double? indent;
+    final open = RegExp('^<span class="([^"]+)">').firstMatch(content);
+    if (open != null &&
+        !asciidoctorCompat(_document, CompatFormat.pdf) &&
+        open[1]!
+            .split(' ')
+            .any((role) => _s('role_${role}_text_indent') == 'continue')) {
+      if (_lastTextLine case (final line, final lineFont)) {
+        final (_, width) = _textBox(
+          '$line&#160;',
+          lineFont,
+          align: 'left',
+        ).intrinsicWidths();
+        indent = width;
+      }
+    }
+    final br = content.lastIndexOf('<br>');
+    _lastTextLine = (
+      (br < 0 ? content : content.substring(br + '<br>'.length)).trim(),
+      font,
+    );
+    return indent;
+  }
+
   /// Adds the paragraph [node], aligned to [textAlign] unless a role
   /// aligns it, its first line in [firstLine]'s font if given.
   void _paragraph(
@@ -621,17 +654,19 @@ extension _Paragraphs on PdfConverter {
       content = _hyphenated(content, align);
     }
     if (node.hasTitle) _caption(node, labeled: false);
+    final shared = _continuedIndent(content, font);
     // The modern engine keeps a paragraph's lines together at page
     // breaks: no fewer than prose_orphans at the bottom of a page and
     // prose_widows at the top of the next (2 each by default).
-    final box = _textBox(
+    final set = _textBox(
       content,
       font,
       align: align,
-      indent: indent,
+      indent: shared ?? indent,
       orphans: (_n('prose_orphans') ?? 2).toInt(),
       widows: (_n('prose_widows') ?? 2).toInt(),
     );
+    final box = shared == null ? set : set.continuing();
     if (_floatGroup case final group? when _floatNext == node) {
       final metrics = _lineMetrics(font);
       final prawnFont = _fonts.font(font.family, font.style);

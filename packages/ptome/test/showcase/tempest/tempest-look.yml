@@ -1,0 +1,82 @@
+# The Tempest in a modern reading edition's look, after the editions
+# that set a play for reading and study (the Folger, the Oxford, the
+# Arden): a 5½ × 8½ in page, the text 10½ on 13 in an old style face;
+# each speaker's name on a line of its own in letterspaced capitals,
+# the speech under it; a verse line shared between two speakers stepped
+# so that its parts read as one line; stage directions in italic, set
+# in; each scene's lines numbered every fifth in the outer margin, its
+# heads, names and directions not counted, a shared line counted once;
+# the act and scene in the running head.
+#
+# EB Garamond (`ptome doctor --look tempest --looksdir
+# test/showcase/tempest`).
+extends: trade-novel
+tokens:
+  page: { size: [5.5in, 8.5in], margin: [0.8in, 0.75in, 0.75in, 0.85in], grid: false }
+  size:
+    text: { print: 10.5pt, screen: 19px }
+    headings: { print: [24pt, 14pt, 11pt, 10.5pt, 10.5pt, 10.5pt] }
+  leading: { print: 1.24 }
+  align: { print: start }
+  hyphenate: { print: false }
+pdf:
+  base_line_pitch: ~
+  page:
+    margin_profile: ~
+    margin_whole_lines: false
+  heading:
+    chapter_break_before: always
+    h2:
+      text_align: center
+      text_transform: uppercase
+      character_spacing: 2
+      margin_page_top: 40
+      margin_bottom: 18
+      initial_lines: ~
+      initial_lead_in: ~
+    h3:
+      text_align: center
+      font_style: italic
+      margin_top: 22
+      margin_bottom: 8
+  description_list:
+    term_font_size: 8.5
+    term_text_transform: uppercase
+    term_character_spacing: 1
+    term_spacing: 0
+    description_indent: 0
+  prose:
+    margin_bottom: 0
+    text_indent_inner: 0
+  role:
+    shared: { text_indent: continue }
+    direction: { font_style: italic, margin_bottom: 4 }
+    sd: { font_style: italic }
+    scene: { }
+  line_numbers:
+    interval: 5
+    restart: section
+    restart_level: 2
+    side: outer
+    skip_headings: true
+    skip_terms: true
+    skip_roles: [direction, dramatis-personae]
+    font_size: 7.5
+  header:
+    recto:
+      center: { content: '[.running-head]#{section-title}#' }
+    verso:
+      center: { content: '[.running-head]#{chapter-title}#' }
+webfonts:
+  - EB Garamond:400,400italic,700,700italic
+css: |
+  .dlist dt{font-variant:small-caps;letter-spacing:.05em;margin-top:.6em}
+  .dlist dd{margin-left:0}
+  .shared{display:inline-block;padding-left:9em}
+  .paragraph.direction p{font-style:italic;margin-left:2em}
+  .sd{font-style:italic}
+epub-css: |
+  .dlist dt{font-variant:small-caps}
+  .shared{padding-left:6em}
+  .paragraph.direction p{font-style:italic;margin-left:2em}
+  .sd{font-style:italic}

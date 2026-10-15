@@ -708,9 +708,28 @@ final class _Pass {
     if (box.style.gridLine case final line? when !_isContinued(box)) {
       _gridLine = line;
     }
-    return _tagged(
-      box.style.structure,
-      _placeBox(box, width, available, atTop: atTop),
+    return _unnumbered(
+      box.style.unnumbered,
+      _tagged(
+        box.style.structure,
+        _placeBox(box, width, available, atTop: atTop),
+      ),
+    );
+  }
+
+  /// [fit] with what it placed left out of the line numbering, when
+  /// [unnumbered].
+  static _Fit _unnumbered(bool unnumbered, _Fit fit) {
+    final placed = fit.placed;
+    if (!unnumbered || placed == null) return fit;
+    return _Fit(
+      _PlacedUnnumbered(placed),
+      fit.height,
+      fit.rest,
+      hit: fit.hit,
+      floated: fit.floated,
+      pinned: fit.pinned,
+      carried: fit.carried,
     );
   }
 

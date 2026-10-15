@@ -1,0 +1,27 @@
+= The Tempest
+William Shakespeare
+:doctype: book
+:lang: en
+:look: tempest
+:looksdir: {docdir}
+:imagesdir: images
+:description: Shakespeare’s The Tempest in two looks: a modern reading edition and the First Folio’s.
+// (A modern edition numbers each scene's lines, every fifth, a verse
+// line shared between speakers counted once; the Folio numbers none.)
+ifeval::["{look}" == "tempest"]
+:line-numbers: logical
+endif::[]
+
+include::text/dramatis-personae.adoc[]
+
+include::text/act-1.adoc[]
+
+include::text/act-2.adoc[]
+
+include::text/act-3.adoc[]
+
+include::text/act-4.adoc[]
+
+include::text/act-5.adoc[]
+
+include::text/epilogue.adoc[]

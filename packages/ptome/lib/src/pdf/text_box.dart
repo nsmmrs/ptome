@@ -668,6 +668,19 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
   /// it, if any, ended with a line break): logical line numbers count it.
   final bool startsLine;
 
+  /// This text with its first line going on from the line before it: a
+  /// verse line shared between two speakers, counted once by logical line
+  /// numbers.
+  TextBox continuing() => TextBox._(
+    _items,
+    _state,
+    _layout,
+    _context,
+    first: first,
+    continuedIndent: continuedIndent,
+    startsLine: false,
+  );
+
   final List<_Item> _items;
   final TextState _state;
   final TextLayout _layout;

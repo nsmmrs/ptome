@@ -2,6 +2,11 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.unnumbered`: a box's lines left out of the line numbering
+  of the box it is in (a play's stage directions); `ParagraphContent`'s
+  `goesOn`: its first line goes on from the line before it, counted once
+  by logical line numbers (FEAT-d1sdfw).
+
 - `MirroredBox`: a box laid out as anywhere else, kept whole, and
   painted turned over about its vertical middle (mirror type;
   FEAT-yq6kff).

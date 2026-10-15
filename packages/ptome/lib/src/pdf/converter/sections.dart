@@ -702,6 +702,7 @@ extension _Sections on PdfConverter {
         marks: marks,
         floatBarrier: barrier,
         keepWithNext: sticky || rule != null || roomKept,
+        unnumbered: _headingsUnnumbered,
         structure: _struct('H${level.clamp(1, 6)}'),
       );
       // (Set by the engine's paragraphs where it can: a heading of text
@@ -729,6 +730,7 @@ extension _Sections on PdfConverter {
             floatBarrier: barrier,
             verticalAlign: verticalAlign,
             keepWithNext: sticky || rule != null,
+            unnumbered: _headingsUnnumbered,
             structure: _struct('H${level.clamp(1, 6)}'),
           ),
         ),

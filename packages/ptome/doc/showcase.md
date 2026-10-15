@@ -9,6 +9,7 @@ EPIC-phf3n2 has the plan.
 | Work | What it shows |
 | --- | --- |
 | [Alice](../test/showcase/alice/NOTICE.md) | Illustrations the text runs beside, the Mouse's Tale in type that shrinks down its tail, Jabberwocky in mirror type, the chess problem's moves in two columns |
+| [The Tempest](../test/showcase/tempest/NOTICE.md) | One source in two looks, a modern reading edition's and the First Folio's: speeches as description lists, shared verse lines stepped, each scene's lines numbered; two ruled columns in a frame |
 
 ## A work's folder
 

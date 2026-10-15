@@ -429,15 +429,18 @@ extension _Lists on PdfConverter {
         ? (desc.blocks.isEmpty ? _dummyText : null)
         : text;
     if (primary != null) {
+      final shared = _continuedIndent(primary, _font);
+      final text = _textBox(
+        primary,
+        _font,
+        align: _baseTextAlign,
+        indent: shared ?? 0,
+        normalizeLineHeight: true,
+        hyphenate: true,
+      );
       _out.add(
         CustomBox(
-          _textBox(
-            primary,
-            _font,
-            align: _baseTextAlign,
-            normalizeLineHeight: true,
-            hyphenate: true,
-          ),
+          shared == null ? text : text.continuing(),
           style: BoxStyle(
             margin: _mirrorInsets(EdgeInsets(bottom: marginBottom)),
           ),
@@ -490,6 +493,11 @@ extension _Lists on PdfConverter {
               i == 0 ? _MinRoom(box, need) : box,
               style: BoxStyle(
                 margin: _mirrorInsets(EdgeInsets(top: i > 0 ? termSpacing : 0)),
+                // (`line_numbers_skip_terms`: a play's speakers' names
+                // aren't counted.)
+                unnumbered:
+                    _theme.value('line_numbers_skip_terms') ==
+                    const ThemeBool(true),
               ),
             ),
           );
@@ -560,7 +568,11 @@ extension _Lists on PdfConverter {
           '$text$gap${desc.text}',
           _font,
           align: _baseTextAlign,
-          indent: -hang,
+          // (`description_list_term_indent`: the term set in from the
+          // lines after it, as the First Folio sets a speech's prefix.)
+          indent:
+              -hang +
+              (_length('description_list_term_indent', _font.size) ?? 0),
           normalizeLineHeight: true,
           hyphenate: true,
           // (Kept from leaving a lone line at a page break, as a

@@ -342,6 +342,19 @@ final class PdfConverter extends BuiltInConverter
           }
         }
       }
+      // (A block with a role of `line_numbers_skip_roles` is left out of
+      // the line numbering: a play's stage directions.)
+      if (_skipsNumbering(node)) {
+        String? result;
+        _unnumbering = true;
+        try {
+          final boxes = _collect(() => result = convertBlock(node, opts));
+          _out.add(BlockBox(boxes, style: const BoxStyle(unnumbered: true)));
+        } finally {
+          _unnumbering = false;
+        }
+        return result;
+      }
       // (Ptome's `mirror` role: the block set mirrored, left to right, as
       // Through the Looking-Glass prints Jabberwocky.)
       if (_mirrors(node)) {
@@ -402,6 +415,32 @@ final class PdfConverter extends BuiltInConverter
       return WritingMode.verticalLeftToRight;
     }
     return null;
+  }
+
+  /// Whether headings are left out of the line numbering
+  /// (`line_numbers_skip_headings`: a play's act and scene heads, where a
+  /// bill counts its headings' lines).
+  late final bool _headingsUnnumbered =
+      _theme.value('line_numbers_skip_headings') == const ThemeBool(true);
+
+  /// Whether a block left out of the line numbering is being converted.
+  bool _unnumbering = false;
+
+  /// Whether [node] is left out of the line numbering: the document's
+  /// lines are numbered and it has a role of `line_numbers_skip_roles`.
+  bool _skipsNumbering(AbstractBlock node) {
+    if (_unnumbering || _lineNumbering == null || node is Document) {
+      return false;
+    }
+    final roles = switch (_theme.value('line_numbers_skip_roles')) {
+      ThemeList(:final values) => [
+        for (final value in values)
+          if (value case ThemeString(:final value)) value,
+      ],
+      ThemeString(:final value) => [value],
+      _ => const <String>[],
+    };
+    return roles.any(node.includesRole);
   }
 
   /// Whether a block with the `mirror` role is being converted.
@@ -764,6 +803,11 @@ final class PdfConverter extends BuiltInConverter
   /// Where each hung label goes: its page (1-based), and the baseline and
   /// left end of its line.
   List<(int, double, double, String, _FontState)> _hungAt = const [];
+
+  /// The last line (after its last hard break) of the text the last
+  /// paragraph or description set, and its font: where a shared verse
+  /// line goes on from (`role_<role>_text_indent: continue`).
+  (String, _FontState)? _lastTextLine;
 
   /// How many thematic breaks are marks (for their anchors' names).
   int _thematicBreaks = 0;

@@ -9,15 +9,17 @@ part of '../flow.dart';
 /// on at.
 final class ParagraphContent
     implements LinedContent, BaselineContent, ShapedContent {
-  /// [paragraph], broken by [lineBreaker].
+  /// [paragraph], broken by [lineBreaker]; its first line going on with
+  /// the line before it when `goesOn` (a verse line shared between two
+  /// speakers, which logical line numbers count once).
   new(
     this.paragraph, {
     this.lineBreaker = const KnuthPlassLineBreaker(),
     this.orphans = 2,
     this.widows = 2,
     this.slant = 0,
-  }) : _items = null,
-       _goesOn = false;
+    this._goesOn = false,
+  }) : _items = null;
 
   new _rest(
     ParagraphContent source,

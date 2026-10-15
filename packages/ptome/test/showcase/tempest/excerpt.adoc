@@ -1,0 +1,16 @@
+= The Tempest: Act I, Scene II
+:doctype: book
+:lang: en
+:look: tempest
+:looksdir: {docdir}
+:notitle:
+:line-numbers: logical
+
+// The modern edition's look (doc/showcase.md): each speaker's name on a
+// line of its own, the verse lines the speakers share stepped and counted
+// once, the scene's lines numbered every fifth, its heads, names and
+// directions not counted.
+
+== Act I
+
+include::text/act-1.adoc[tag=scene-2]

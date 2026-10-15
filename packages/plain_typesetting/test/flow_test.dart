@@ -352,6 +352,32 @@ void main() {
     expect(seen[1]![0].right, greaterThan(20));
   });
 
+  test('an unnumbered box in a numbered one: its lines left out', () {
+    final seen = <TypesetLine>[];
+    final template = PageTemplate(
+      Rect(0, 0, 300, 40 + 10 * _lineHeight),
+      margins: const EdgeInsets.all(20),
+      foreground: (canvas, page) => seen.addAll(page.lines),
+    );
+    FlowLayout(template: template)
+        .layout([
+          BlockBox([
+            _para('a1\na2'),
+            BlockBox([
+              _para('direction'),
+            ], style: const BoxStyle(unnumbered: true)),
+            ParagraphBox(
+              _para('b1').paragraph,
+              style: const BoxStyle(unnumbered: true),
+            ),
+            _para('c1'),
+          ], style: const BoxStyle(numberLines: true)),
+        ])
+        .render(RecordingDocument());
+    // (a1, a2 and c1: neither the block's line nor the paragraph's.)
+    expect(seen, hasLength(3));
+  });
+
   test('on a baseline grid, text lines keep to it past other things', () {
     final document = RecordingDocument();
     final head = ParagraphBox(

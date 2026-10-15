@@ -285,7 +285,7 @@ final class BoxStyle
   Border border
   BoxStyle withStructure(StructureElement? structure)
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, int? gridLine, double minHeight = 0, StructureElement? structure})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, bool unnumbered = false, int? gridLine, double minHeight = 0, StructureElement? structure})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -306,6 +306,7 @@ final class BoxStyle
   bool numberLines
   bool runsAround
   bool splitToRegionEnd
+  bool unnumbered
   double floatClearance
   double minHeight
   double sideGap
@@ -648,7 +649,7 @@ final class ParagraphContent implements LinedContent, BaselineContent, ShapedCon
   LineBreaker lineBreaker
   List<Line> linesAt(double width)
   Paragraph paragraph
-  ParagraphContent(Paragraph paragraph, {LineBreaker lineBreaker = const KnuthPlassLineBreaker(), int orphans = 2, int widows = 2, double slant = 0})
+  ParagraphContent(Paragraph paragraph, {LineBreaker lineBreaker = const KnuthPlassLineBreaker(), int orphans = 2, int widows = 2, double slant = 0, bool goesOn = false})
   double minHeight(double width)
   double slant
   double? firstBaseline(double width)

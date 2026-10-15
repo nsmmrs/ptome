@@ -141,6 +141,34 @@ final class _Painter {
   final List<TypesetLine> lines = [];
 }
 
+/// What a box with [BoxStyle.unnumbered] placed: painted with the lines
+/// it holds left out of the numbering.
+final class _PlacedUnnumbered extends _Placed {
+  const new(this.placed);
+
+  final _Placed placed;
+
+  @override
+  double get height => placed.height;
+
+  @override
+  void visit(
+    double x,
+    double top,
+    void Function(String anchor, double x, double y) anchor,
+    void Function((String, String) mark) mark,
+    void Function(String tag) tag,
+  ) => placed.visit(x, top, anchor, mark, tag);
+
+  @override
+  void paint(_Painter painter, double x, double top) {
+    final numbering = painter.numbering;
+    painter.numbering = 0;
+    placed.paint(painter, x, top);
+    painter.numbering = numbering;
+  }
+}
+
 /// [placed] painted as [element]'s content (on a [StructureCanvas]).
 final class _PlacedTagged extends _Placed {
   const new(this.element, this.placed);

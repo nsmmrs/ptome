@@ -1969,7 +1969,9 @@ extension _DocumentParts on PdfConverter {
   }
 
   /// Where the line count starts again in [result]: each first-level
-  /// section (`line_numbers_restart: section`), and each unit of the level
+  /// section (`line_numbers_restart: section`; each section down to the
+  /// level `line_numbers_restart_level` names, as a play's lines are
+  /// counted from each scene), and each unit of the level
   /// `line_numbers_restart_units` names (`section`, `stephanus.section`:
   /// Burnet's Plato counts from each Stephanus section, a Bekker
   /// edition from each column), its label set beside its first line.
@@ -1977,7 +1979,8 @@ extension _DocumentParts on PdfConverter {
     final restarts = <(int, double, String?)>[
       if (_lineNumbering?.restart == 'section')
         for (final (section, anchor) in _sections)
-          if ((section.level ?? 0) <= 1)
+          if ((section.level ?? 0) <=
+              (_n('line_numbers_restart_level') ?? 1).toInt())
             if (result.anchors[anchor] case final at?)
               (at.page + 1, at.y, null),
     ];

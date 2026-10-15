@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF, for plays (FEAT-d1sdfw): `role_<role>_text_indent: continue`
+  steps a verse line shared between speakers to where the line before it
+  ended, counted once by logical line numbers;
+  `line_numbers_restart_level` counts a play's lines from each scene;
+  `line_numbers_skip_headings`, `_skip_terms` and `_skip_roles` leave its
+  heads, speakers' names and stage directions out of the count;
+  `description_list_term_indent` sets a run-in term in from the lines
+  after it (the First Folio's speech prefixes). `ptome doctor` installs
+  IM Fell DW Pica for a look that names it.
 - PDF: Ptome's `mirror` role sets a block mirrored, left to right
   (`[verse.mirror]`, Jabberwocky as Through the Looking-Glass prints it;
   FEAT-yq6kff), kept whole on a page; not under `asciidoctor-compat`.

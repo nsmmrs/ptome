@@ -118,6 +118,7 @@ final class BoxStyle {
     this.sideShape,
     this.runsAround = false,
     this.numberLines = false,
+    this.unnumbered = false,
     this.gridLine,
     this.minHeight = 0,
     this.structure,
@@ -252,6 +253,11 @@ final class BoxStyle {
   /// numbers beside them (line-numbered bills, critical editions).
   final bool numberLines;
 
+  /// Whether the lines of text in the box are left out of the numbering
+  /// of the box it is in ([numberLines]): a play's stage directions and
+  /// speakers' names, which an edition doesn't count.
+  final bool unnumbered;
+
   /// This style with [tag] ([BoxStyle.tag]).
   BoxStyle withTag(String? tag) => _copy(tag: (tag,));
 
@@ -315,6 +321,7 @@ final class BoxStyle {
     sideShape: sideShape == null ? this.sideShape : sideShape.$1,
     runsAround: runsAround,
     numberLines: numberLines,
+    unnumbered: unnumbered,
     gridLine: gridLine,
     minHeight: minHeight,
     structure: structure == null ? this.structure : structure.$1,
