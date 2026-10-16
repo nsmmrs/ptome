@@ -1,70 +1,151 @@
-# Alice after Macmillan's first editions (Wonderland 1865, Looking-Glass
-# 1871, printed by Richard Clay): a small crown octavo of about
-# 4¾ × 7⅛ in, a Victorian modern face, 10½ on 13, justified; the
-# chapters running on, each under "CHAPTER I." and its title in smaller
-# capitals below; the running heads in capitals, the book on the
-# verso and the chapter on the recto, the folio outside them; Tenniel's
-# cuts set into the text, the narrower ones with the text running beside
-# them. Two pages of the books' own: the Mouse's Tale in type that
-# shrinks down its tail, and Jabberwocky's first stanza in mirror type.
+# Alice as Macmillan printed Wonderland in 1867 (the sixth thousand,
+# printed by Richard Clay; the University of Toronto's copy, NOTICE.md),
+# measured from the scan: a 287 × 450 pt page (its 4 × 6¼ in), the text
+# 11.2 on 16.8 (the scan's x-height and its 151.9-pixel line pitch at 650
+# ppi), a 250 pt measure, 22 lines a page; each chapter on a new page,
+# sunk as far as the printing sinks it (the `opening<n>` roles), its cut
+# above or beside the heading; the running heads in capitals, a chapter's
+# title divided across the spread as the printing divides it (`|` in its
+# `running-title`), the folios outside them; each cut as wide and as tall
+# as the printing sets it, where it sets it (the image's own attributes,
+# from the scan); the verse in its stanzas' sizes; the printer's
+# signatures at the foot. Wonderland's text keeps the printing's lines and
+# pages (`:source-lines:`); Looking-Glass, not yet transcribed from its
+# printing, flows in the same look, as Macmillan's 1872 edition matches
+# the 1867 one's.
 #
-# Old Standard TT stands in for the Clay modern (`ptome doctor --look
-# alice --looksdir test/showcase/alice`).
+# Old Standard TT stands in for the Clay modern, UnifrakturMaguntia for
+# the title page's blackletter (`ptome doctor --look alice --looksdir
+# test/showcase/alice`).
 extends: ptome
 tokens:
   font:
     text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
     display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
   size:
-    text: { print: 10.5pt, screen: 19px }
-    headings: { print: [20pt, 11pt, 10.5pt, 10.5pt, 10.5pt, 10.5pt] }
-  leading: { print: 1.24, screen: 1.55 }
+    text: { print: 11.2pt, screen: 19px }
+    headings: { print: [20pt, 11.2pt, 11.2pt, 11.2pt, 11.2pt, 11.2pt] }
+  leading: { print: 1.50179, screen: 1.55 }
   measure: { screen: 32em }
-  paragraph: { signal: indent, indent: { print: 1em } }
+  paragraph: { signal: indent, indent: { print: 18.2pt } }
   align: { print: justify }
   hyphenate: { print: true }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [121mm, 181mm], margin: [17mm, 15mm, 17mm, 17mm] }
+  page: { size: [287.3pt, 449.7pt], margin: [48.8pt, 18.6pt, 27.4pt, 18.6pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
+  # (Small capitals made from the lowercase letters, the capitals kept:
+  # the chapters' first words, "CURIOUSER".)
+  base_small_caps_synthesis: lowercase
+  # (The pages numbered, and headed, from Wonderland's chapter I: its
+  # front matter, from the half-title, unnumbered: the part's page is
+  # the body's first, chapter I its thirteenth, numbered from the one
+  # after the twelfth.)
+  page_numbering_start_at: 12
+  running_content_start_at: 12
   heading:
-    chapter_break_before: auto
+    chapter_break_before: always
     part_break_after: always
     h1:
       text_align: center
       text_transform: uppercase
       vertical_align: middle
     h2:
-      content: "{{#numeral}}CHAPTER {{numeral}}.\n{{/numeral}}<font size=\"8\">{{title}}</font>"
-      font_size: 12
+      # ("CHAPTER I." in capitals of the text's size, the title under it
+      # in smaller capitals; sunk on its page as far as the printing sinks
+      # it, each chapter by its role `sink-<points>`.)
+      content: "{{#numeral}}CHAPTER {{numeral}}.\n{{/numeral}}<font size=\"8.55\">{{title}}</font>"
+      font_size: 11.7
       text_align: center
       text_transform: uppercase
-      margin_top: 30
-      margin_page_top: 20
-      margin_bottom: 14
-      line_height: 2
+      # (Looking-Glass's chapters as far down as Wonderland's sink the
+      # ones without a cut, about; Wonderland's each by its opening role.)
+      margin_top: 0
+      margin_page_top: 85
+      margin_bottom: 10
+      line_pitch: 32
+  # (Each chapter's opening as the printing sets it, from the scan: how
+  # far down its heading starts, the space between "CHAPTER" and its
+  # title, and the text below it as far down as the printing sets its
+  # last line.)
+  section:
+    role:
+      opening1: { heading_h2_margin_top: 3.4, heading_h2_line_pitch: 30.0, heading_h2_margin_bottom: 5.2 }
+      opening2: { heading_h2_margin_page_top: 24.6, heading_h2_line_pitch: 29.6, heading_h2_margin_bottom: 1.1 }
+      opening3: { heading_h2_margin_top: 13.0, heading_h2_line_pitch: 24.7, heading_h2_margin_bottom: 4.7 }
+      opening4: { heading_h2_margin_page_top: 85.7, heading_h2_line_pitch: 32.9, heading_h2_margin_bottom: 0.6 }
+      opening5: { heading_h2_margin_top: -6.8, heading_h2_line_pitch: 26.7, heading_h2_margin_bottom: 6.0 }
+      opening6: { heading_h2_margin_page_top: 61.7, heading_h2_line_pitch: 34.2, heading_h2_margin_bottom: 5.2 }
+      opening7: { heading_h2_margin_page_top: 84.5, heading_h2_line_pitch: 37.8, heading_h2_margin_bottom: 8.9 }
+      opening8: { heading_h2_margin_page_top: 93.3, heading_h2_line_pitch: 31.2, heading_h2_margin_bottom: 13.2 }
+      opening9: { heading_h2_margin_page_top: 71.1, heading_h2_line_pitch: 28.5, heading_h2_margin_bottom: 11.9 }
+      opening10: { heading_h2_margin_page_top: 98.5, heading_h2_line_pitch: 30.1, heading_h2_margin_bottom: 10.2 }
+      opening11: { heading_h2_margin_page_top: 99.7, heading_h2_line_pitch: 36.4, heading_h2_margin_bottom: 11.9 }
+      opening12: { heading_h2_margin_page_top: 86.5, heading_h2_line_pitch: 32.9, heading_h2_margin_bottom: 16.7 }
   role:
     sc: { font_variant: small-caps }
-    running-head: { text_transform: uppercase, font_size: 7.5 }
-    # (The Mouse's Tale: each step a size down to the tip of the tail.)
-    tale-1: { font_size: 10 }
-    tale-2: { font_size: 9 }
-    tale-3: { font_size: 8.2 }
-    tale-4: { font_size: 7.4 }
-    tale-5: { font_size: 6.6 }
-    tale-6: { font_size: 5.9 }
-    tale-7: { font_size: 5.2 }
-    tale-8: { font_size: 4.6 }
-    tale-9: { font_size: 4 }
-    tale-10: { font_size: 3.5 }
-    # (The narrower cuts beside the text.)
+    # (Chapter I's first word: a larger capital, the rest in capitals.)
+    initial: { font_size: 16 }
+    caps: { text_transform: uppercase }
+    # (A verse line Old Standard sets wider than the measure, where the
+    # printing's face fits it.)
+    tight: { letter_spacing: -0.06pt }
+    running-head: { text_transform: uppercase, font_size: 8.5 }
+    # (The Mouse's Tale: each step of its type a size down to the tip of
+    # the tail, as the printing sets it.)
+    tale-a: { font_size: 11.2 }
+    tale-b: { font_size: 9.5 }
+    tale-c: { font_size: 8.7 }
+    tale-d: { font_size: 8.1 }
+    tale-e: { font_size: 7.6 }
+    tale-f: { font_size: 6.4 }
+    tale-g: { font_size: 5.3 }
+    tale-h: { font_size: 4.4 }
+    # (The cuts, each as wide and as tall as the printing sets it, from
+    # the scan: `pdfwidth`, `pdfheight`; beside the text, `float-width`
+    # and `float-gap`; a chapter's cut before its heading.)
+    # (Looking-Glass's narrower cuts beside the text, from the production's
+    # classes.)
     half-page:
       float: right
       float_width: 52%
       float_gap: 10
+    cut: { margin_top: 0, margin_bottom: 0 }
+    cut-left: { float: left, margin_top: 0, margin_bottom: 0 }
+    cut-right: { float: right, margin_top: 0, margin_bottom: 0 }
+    opener: { before_heading: true, margin_top: 0, margin_bottom: 0 }
+    frontispiece: { margin_top: 0, margin_bottom: 0 }
+    indent: { text_indent: 18.2pt }
+    # (The book's end: "THE END." and the printer's imprint at the foot.)
+    the-end: { text_align: center, font_size: 8.5, text_transform: uppercase, letter_spacing: 0.1em, text_indent: 0 }
+    imprint: { text_align: center, font_size: 6.5, font_variant: small-caps, letter_spacing: 0.08em, line_height: 1, text_indent: 0 }
+    # (The title page, each line as the printing sets it: its size from
+    # its letters' height on the scan, its letter-spacing from its width;
+    # front.py.)
+    tp-title: { text_align: center, font_size: 16.99, letter_spacing: 0.82pt, text_indent: 0, line_height: 1 }
+    tp-by: { text_align: center, font_size: 4.32, letter_spacing: 2.08pt, text_indent: 0, line_height: 1 }
+    tp-author: { text_align: center, font_size: 10.22, letter_spacing: 0.62pt, text_indent: 0, line_height: 1 }
+    tp-italic: { text_align: center, font_size: 7.78, font_style: italic, letter_spacing: 0.57pt, text_indent: 0, line_height: 1 }
+    tp-edition: { text_align: center, font_size: 6.34, text_indent: 0, line_height: 1 }
+    tp-place: { text_align: center, font_family: UnifrakturMaguntia, font_size: 8.93, text_indent: 0, line_height: 1 }
+    tp-publisher: { text_align: center, font_size: 9.22, letter_spacing: 2.43pt, text_indent: 0, line_height: 1 }
+    tp-year: { text_align: center, font_size: 8.5, text_indent: 0, line_height: 1 }
+    tp-rights: { text_align: center, font_size: 7.49, text_indent: 0, line_height: 1 }
+    # (The contents: the chapters' numerals in a column, their titles in
+    # small capitals dotted to their pages, flush right.)
+    toc-title: { text_align: center, font_size: 12.45, letter_spacing: 0.5pt, text_indent: 0, line_height: 1 }
+    toc-labels: { font_size: 5.5, text_indent: 0, line_height: 1 }
+    toc-chapter: { font_variant: small-caps }
+    toc-page: { font_variant: small-caps, flush: right }
+    toc-entry: { font_size: 8, text_indent: 0, line_height: 1, text_align: left }
+    toc-pg: { flush: right }
+    # (A paragraph going on after a page the printing ends early.)
+    cont: { text_indent: 0 }
+    # (The printing's rows of asterisks: three of its lines.)
+    stars: { margin_top: 0, margin_bottom: 0 }
   verse:
     role:
       # (Jabberwocky in italic, mirrored or not, as the book sets it.)
@@ -74,14 +155,35 @@ pdf:
       # its own type: the tale tightens as it shrinks.)
       tale:
         font_size: 3.5
-        line_height: 1.1
-        padding: [0, 0, 0, 80]
+        line_height: 0.79
+        padding: 0
+      # (A poem the printing sets in italic.)
+      italic:
+        font_style: italic
+      # (Each stanza's size, from its line pitch on the scan: the poems'
+      # 10 pt, the address on Alice's foot's 8.5.)
+      v10: { font_size: 10, padding: 0 }
+      v85: { font_size: 8.5, padding: 0 }
+      # (The prefatory poem's lines a little further apart: 15.6 pt.)
+      loose: { line_height: 1.3153 }
+    # (Wonderland's stanzas, `v<size>`, each line set in from the text's
+    # edge by its own spaces, as far as the printing sets it in;
+    # Looking-Glass's set in 18 pt.)
     border_left_width: 0
     padding: [0, 0, 0, 18]
     font_size: 10
+    line_height: 1.284
+    # (Each stanza's spaces above and below its own, `margin-top` and
+    # `margin-bottom`, measured from the scan.)
+    margin_top: 0
+    margin_bottom: 0
   prose:
     margin_bottom: 0
-    text_indent_inner: 1em
+    text_indent_inner: 18.2pt
+    # (The printing's pages: a page holds as many lines as it has room
+    # for, an orphan or a widow where the printing has one.)
+    orphans: 1
+    widows: 1
   table:
     border_width: 0
     font_size: 8.5
@@ -94,17 +196,28 @@ pdf:
     font_size: 7.5
     recto:
       left: { content: '' }
-      center: { content: '[.running-head]#{chapter-title}#' }
+      center: { content: '[.running-head]#{chapter-title-spread}#' }
       right: { content: '{page-number}' }
     verso:
       left: { content: '{page-number}' }
-      center: { content: '[.running-head]#{part-title}#' }
+      center: { content: '[.running-head]#{chapter-title-spread}#' }
       right: { content: '' }
+  # (The printer's signatures at the foot of each gathering's first page,
+  # every eight pages from B: crown octavo in eights.)
+  running_content:
+    signature:
+      interval: 8
+      first: 1
+      start: B
   footer:
-    height: 10mm
+    height: 27.4pt
     border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    on_openers: true
+    vertical_align: top
+    padding: [2.1pt, 0, 0, 0]
+    font_size: 7.5
+    recto: { left: { content: '' }, center: { content: '{page-signature}' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '{page-signature}' }, right: { content: '' } }
 webfonts:
   - Old Standard TT:400,400italic,700
 css: |
@@ -115,9 +228,25 @@ css: |
   .imageblock.three-quarter-page{width:75%;margin:1em auto}
   .verseblock.mirror{transform:scaleX(-1)}
   .verseblock.jabberwocky pre{font-style:italic}
-  .tale-1{font-size:100%}.tale-2{font-size:90%}.tale-3{font-size:82%}.tale-4{font-size:74%}.tale-5{font-size:66%}.tale-6{font-size:59%}.tale-7{font-size:52%}.tale-8{font-size:46%}.tale-9{font-size:40%}.tale-10{font-size:35%}
+  .verseblock.tale pre{font-size:31.25%;line-height:0.8}
+  .tale-a{font-size:320%}.tale-b{font-size:271%}.tale-c{font-size:249%}.tale-d{font-size:231%}.tale-e{font-size:217%}.tale-f{font-size:183%}.tale-g{font-size:151%}.tale-h{font-size:126%}
+  .verseblock.italic pre{font-style:italic}
+  .imageblock.cut-left{float:left;width:50%;margin:0 1em 1em 0}
+  .imageblock.cut-right{float:right;width:50%;margin:0 0 1em 1em}
+  .imageblock.cut-left img,.imageblock.cut-right img{width:100%}
+  .initial{font-size:143%}.caps{text-transform:uppercase}
+  .verseblock.stars,.paragraph.the-end,.paragraph.imprint{text-align:center}
+  .paragraph.the-end{letter-spacing:0.1em}.paragraph.imprint{font-variant:small-caps;font-size:60%}
 epub-css: |
   .sc{font-variant:small-caps}
   .verseblock.mirror{transform:scaleX(-1)}
   .verseblock.jabberwocky pre{font-style:italic}
-  .tale-1{font-size:100%}.tale-2{font-size:90%}.tale-3{font-size:82%}.tale-4{font-size:74%}.tale-5{font-size:66%}.tale-6{font-size:59%}.tale-7{font-size:52%}.tale-8{font-size:46%}.tale-9{font-size:40%}.tale-10{font-size:35%}
+  .verseblock.tale pre{font-size:31.25%;line-height:0.8}
+  .tale-a{font-size:320%}.tale-b{font-size:271%}.tale-c{font-size:249%}.tale-d{font-size:231%}.tale-e{font-size:217%}.tale-f{font-size:183%}.tale-g{font-size:151%}.tale-h{font-size:126%}
+  .verseblock.italic pre{font-style:italic}
+  .imageblock.cut-left{float:left;width:50%;margin:0 1em 1em 0}
+  .imageblock.cut-right{float:right;width:50%;margin:0 0 1em 1em}
+  .imageblock.cut-left img,.imageblock.cut-right img{width:100%}
+  .initial{font-size:143%}.caps{text-transform:uppercase}
+  .verseblock.stars,.paragraph.the-end,.paragraph.imprint{text-align:center}
+  .paragraph.the-end{letter-spacing:0.1em}.paragraph.imprint{font-variant:small-caps;font-size:60%}

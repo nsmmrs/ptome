@@ -208,6 +208,13 @@ extension _Sections on PdfConverter {
           !hidden &&
           !asciidoctorCompat(_document, CompatFormat.pdf) &&
           _keys('heading_h$hlevel').value('repeat') == const ThemeBool(true);
+      // (A cut set before the heading, `role_<role>_before_heading`.)
+      if (!hidden) {
+        if (_blockBeforeHeading(section) case final block?) {
+          _convertFloating(block);
+          _beforeHeading.add(block);
+        }
+      }
       if (hidden) {
         // No heading, but the section still names its pages' running
         // content.

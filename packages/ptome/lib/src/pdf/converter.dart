@@ -760,6 +760,10 @@ final class PdfConverter extends BuiltInConverter
   /// in the modern engine, unless `running_content_on_openers` is true).
   Set<int> _openerPages = const {};
 
+  /// The blocks set before their sections' headings, which the sections'
+  /// traversal passes over (`role_<role>_before_heading`).
+  final Set<AbstractBlock> _beforeHeading = Set.identity();
+
   /// [markup] in [style] (as inline markup).
   static String _styled(String markup, String style) => switch (style) {
     'bold' => '<strong>$markup</strong>',
@@ -1240,6 +1244,65 @@ final class PdfConverter extends BuiltInConverter
       if (run.isNotEmpty) out.write('<span class="lead-in">$run</span>');
     }
     return '$out${markup.substring(i)}';
+  }
+
+  /// The marks in a source line's last word it breaks at
+  /// (`:source-lines:`): a soft hyphen, shown as the line's hyphen, and a
+  /// zero-width space, after a compound's own hyphen.
+  static final RegExp _lineEndMarkRx = RegExp(
+    '\u00ad|\u200b|&shy;|&#173;|&#[xX][aA][dD];|&#8203;|&#[xX]200[bB];',
+  );
+
+  /// The paragraph [markup] with each of its source lines ended by a line
+  /// separator (U+2028), the engine's only breaks (`:source-lines:`): at
+  /// the line's end, or, where its last word holds a soft hyphen or a
+  /// zero-width space, after the last of them, the rest of the word
+  /// going on at the start of the next line. A transcription keeps a word
+  /// whole on the line it starts on and marks where the printing divided
+  /// it: `oc{shy}curred`, `rabbit-{zwsp}hole`.
+  static String _sourceLinesOf(String markup) {
+    final lines = markup.split('\n');
+    final out = StringBuffer();
+    var line = lines.first;
+    // (The last line's too: a word divided there ends the paragraph on a
+    // line of its own.)
+    for (var n = 1; n <= lines.length; n++) {
+      // (The last word: after the last space outside a tag.)
+      var start = 0;
+      var inTag = false;
+      for (var i = 0; i < line.length; i++) {
+        switch (line[i]) {
+          case '<':
+            inTag = true;
+          case '>':
+            inTag = false;
+          case ' ' when !inTag:
+            start = i + 1;
+        }
+      }
+      final marks = _lineEndMarkRx.allMatches(line, start).toList();
+      var rest = '';
+      if (marks.isNotEmpty) {
+        final end = marks.last.end;
+        rest = line.substring(end);
+        line = line.substring(0, end);
+      }
+      if (n == lines.length) {
+        if (rest.isNotEmpty) {
+          out
+            ..write(line)
+            ..write('\u2028');
+          line = rest;
+        }
+        break;
+      }
+      out
+        ..write(line)
+        ..write('\u2028');
+      line = rest.isEmpty ? lines[n] : '$rest ${lines[n]}';
+    }
+    out.write(line);
+    return '$out';
   }
 
   /// The text alignment a `text-<align>` role among [roles] selects (the

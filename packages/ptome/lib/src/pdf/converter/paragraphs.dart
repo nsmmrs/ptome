@@ -172,6 +172,13 @@ extension _Paragraphs on PdfConverter {
         _ => LineStartBrackets.solid,
       };
 
+  /// Whether paragraphs keep their source's lines (the document's
+  /// `source-lines`, a transcription that follows its printing line for
+  /// line; modern engine).
+  bool get _sourceLines =>
+      _document.attributes.containsKey('source-lines') &&
+      !asciidoctorCompat(_document, CompatFormat.pdf);
+
   /// Whether [runs] start with a full-width opening bracket.
   static bool _startsWithOpeningBracket(List<InlineContent> runs) {
     for (final run in runs) {
@@ -526,8 +533,13 @@ extension _Paragraphs on PdfConverter {
     }
     final next = _flowNext(node);
     final innerMargin = _n('prose_margin_inner');
+    // (A block's own `margin-bottom` or the next's `margin-top` over the
+    // space between paragraphs.)
     var marginBottom =
-        innerMargin != null && next?.context == BlockContext.paragraph
+        innerMargin != null &&
+            next?.context == BlockContext.paragraph &&
+            !node.hasAttr('margin-bottom') &&
+            !(next?.hasAttr('margin-top') ?? false)
         ? innerMargin.toDouble()
         : _marginBelow(node, next: next, fallback: 'prose');
     // The modern engine: a role's indent, and space before the next block,
@@ -588,6 +600,11 @@ extension _Paragraphs on PdfConverter {
     if (font.transform case final transform? when transform != 'none') {
       content = transformText(content, transform, language: _language);
     }
+    // (`:source-lines:`, modern engine: the paragraph's lines as its source
+    // writes them, each ended by a line separator the engine breaks at
+    // alone.)
+    final sourceLines = _sourceLines;
+    if (sourceLines) content = PdfConverter._sourceLinesOf(content);
     // A jump line (`[.jump]`, a cross reference alone; modern engine):
     // worded by `jump-template` with the target's page, known once the
     // pages are laid out ("Continued on page 7").
@@ -664,9 +681,11 @@ extension _Paragraphs on PdfConverter {
     }
     // (The modern engine: `role_<role>_hyphens: false` keeps a role's
     // paragraphs whole, as an agency's name in capitals.)
-    if (!roles.any(
-      (role) => _theme.value('role_${role}_hyphens') == const ThemeBool(false),
-    )) {
+    if (!sourceLines &&
+        !roles.any(
+          (role) =>
+              _theme.value('role_${role}_hyphens') == const ThemeBool(false),
+        )) {
       if (_quotationLint) _lintRunIn(node, content);
       content = _hyphenated(content, align);
     }
@@ -759,6 +778,9 @@ extension _Paragraphs on PdfConverter {
           firstLineContent: firstRuns,
         );
         if (drop != null) text = text.copyWith(firstLineIndent: 0);
+        if (sourceLines) {
+          text = text.copyWith(breakOpportunities: BreakOpportunities.lines);
+        }
         final paragraph = ParagraphBox(
           text,
           style: BoxStyle(

@@ -1,0 +1,47 @@
+// The contents as the 1867 printing sets them (front.py): the
+// chapters' numerals in a column, their titles in small capitals,
+// dotted to the pages.
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=34.26pt]
+
+[.toc-title,margin-top=0,margin-bottom=0]
+CONTENTS.
+
+[.toc-labels,margin-top=26.72pt,margin-bottom=0]
+[.toc-chapter]#chapter# [.toc-page]#page#
+
+[.toc-entry,margin-top=6.74pt,margin-bottom=0]
+pass:[<font width="26.0pt">I.</font>][.sc]#down the rabbit-hole# . . . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#1#
+
+[.toc-entry,margin-top=11.16pt,margin-bottom=0]
+pass:[<font width="26.0pt">II.</font>][.sc]#the pool of tears# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#15#
+
+[.toc-entry,margin-top=11.82pt,margin-bottom=0]
+pass:[<font width="26.0pt">III.</font>][.sc]#a caucus-race and a long tale# . . . . . . . . . . . . . . . . . . . [.toc-pg]#29#
+
+[.toc-entry,margin-top=11.71pt,margin-bottom=0]
+pass:[<font width="26.0pt">IV.</font>][.sc]#the rabbit sends in a little bill# . . . . . . . . . . . . . . . . . . [.toc-pg]#41#
+
+[.toc-entry,margin-top=11.38pt,margin-bottom=0]
+pass:[<font width="26.0pt">V.</font>][.sc]#advice from a caterpillar# . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#59#
+
+[.toc-entry,margin-top=11.49pt,margin-bottom=0]
+pass:[<font width="26.0pt">VI.</font>][.sc]#pig and pepper# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#67#
+
+[.toc-entry,margin-top=11.93pt,margin-bottom=0]
+pass:[<font width="26.0pt">VII.</font>][.sc]#a mad tea-party# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#95#
+
+[.toc-entry,margin-top=11.71pt,margin-bottom=0]
+pass:[<font width="26.0pt">VIII.</font>][.sc]#the queen’s croquet-ground# . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#112#
+
+[.toc-entry,margin-top=11.93pt,margin-bottom=0]
+pass:[<font width="26.0pt">IX.</font>][.sc]#the mock turtle’s story# . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#130#
+
+[.toc-entry,margin-top=11.49pt,margin-bottom=0]
+pass:[<font width="26.0pt">X.</font>][.sc]#the lobster quadrille# . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#147#
+
+[.toc-entry,margin-top=11.60pt,margin-bottom=0]
+pass:[<font width="26.0pt">XI.</font>][.sc]#who stole the tarts?# . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#162#
+
+[.toc-entry,margin-top=11.49pt,margin-bottom=0]
+pass:[<font width="26.0pt">XII.</font>][.sc]#alice’s evidence# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . [.toc-pg]#176#

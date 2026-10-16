@@ -486,7 +486,25 @@ final class _ImageContent implements CustomContent {
     this.link,
     this.whole = false,
     this.writingMode = WritingMode.horizontal,
+    this.boxHeight,
+    this.overflow = false,
+    this.overflowTop,
   });
+
+  /// How far below the box's top the image is drawn (`fit-top`): an
+  /// [overflow] image's, or one fit in its box, there instead of centered.
+  final double? overflowTop;
+
+  /// Whether the image is drawn at its width's own height from the box's
+  /// top left, past the box where it is taller or wider (`fit=none` with
+  /// `pdfheight`): a cut the text runs beside in part, the rest of it
+  /// across the page below.
+  final bool overflow;
+
+  /// The height of the box the image is fit in, centered, where the block
+  /// gives one (`pdfheight`, modern engine): with `pdfwidth`, the room a
+  /// printing's cut takes on its page whatever the drawing's proportions.
+  final double? boxHeight;
 
   /// The page's writing mode: on a vertical page the image is laid out
   /// turned (as wide across the page as it takes of the frame's height,
@@ -611,6 +629,57 @@ final class _ImageContent implements CustomContent {
     };
     final regionHeight = available.isFinite ? available : 1000000000.0;
     var (w, h) = _size(width, regionHeight);
+    if (boxHeight case final box? when overflow) {
+      // (At its own size from the box's top left, past the box.)
+      final asked = this.width;
+      final drawnWidth = asked.kind == _ImageWidthKind.points ? asked.value : w;
+      final drawnHeight =
+          graphic.intrinsicHeight * drawnWidth / graphic.intrinsicWidth;
+      if (box > available + 1e-6 && !atTop) return null;
+      return CustomPlacement(
+        height: box,
+        paint: (page, x, top) {
+          final canvas = page.canvas..save();
+          graphic.paint(
+            canvas,
+            Rect(
+              // (Centered on the box where it is so aligned: a plate wider
+              // than the measure.)
+              x + (align == 'center' ? (width - drawnWidth) / 2 : 0),
+              top - (overflowTop ?? 0) - drawnHeight,
+              drawnWidth,
+              drawnHeight,
+            ),
+          );
+          canvas.restore();
+        },
+      );
+    }
+    if (boxHeight case final box?) {
+      // (Fit in the box, centered in it; the box the room it takes.)
+      final boxWidth = w;
+      if (h > box) {
+        w *= box / h;
+        h = box;
+      }
+      if (box > available + 1e-6 && !atTop) return null;
+      final left =
+          switch (align) {
+            'center' => (width - boxWidth) * 0.5,
+            'right' => width - boxWidth,
+            _ => 0.0,
+          } +
+          (boxWidth - w) / 2;
+      final down = overflowTop ?? (box - h) / 2;
+      return CustomPlacement(
+        height: box,
+        paint: (page, x, top) {
+          final canvas = page.canvas..save();
+          graphic.paint(canvas, Rect(x + left, top - down - h, w, h));
+          canvas.restore();
+        },
+      );
+    }
     final room = available - captionHeight;
     if (h > room + 1e-6) {
       if (!atTop) return null;
@@ -666,7 +735,8 @@ final class _ImageContent implements CustomContent {
   }
 
   @override
-  double minHeight(double width) => whole ? _size(width, 1000000000).$2 : 0;
+  double minHeight(double width) =>
+      whole ? boxHeight ?? _size(width, 1000000000).$2 : 0;
 
   @override
   (double, double) intrinsicWidths() => (0, graphic.intrinsicWidth);

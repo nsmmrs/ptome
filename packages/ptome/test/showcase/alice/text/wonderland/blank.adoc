@@ -1,0 +1,2 @@
+// A page the printing leaves blank (in the PDF; a spacer of a point).
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=1pt]

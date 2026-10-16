@@ -1,6 +1,54 @@
-include::text/wonderland/epigraph.adoc[]
+// Wonderland as the 1867 printing sets it (Macmillan, the sixth thousand,
+// the University of Toronto's copy; NOTICE.md): each paragraph's lines
+// its lines (`:source-lines:`), each page its page. In the PDF its front
+// matter too: the half-title (the part's page), two blank pages, the
+// frontispiece facing the title page, the title's blank verso, the poem,
+// a blank page, the contents, a blank page; chapter I on page 1, a recto.
+// (The half-title's blank verso and the frontispiece's blank recto, as
+// the printing has them.)
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
+
+ifdef::backend-pdf[]
+include::text/wonderland/blank.adoc[]
+
+<<<
+
+include::text/wonderland/blank.adoc[]
+
+<<<
+endif::[]
 
 include::text/wonderland/frontispiece.adoc[]
+
+ifdef::backend-pdf[]
+<<<
+
+include::text/wonderland/title-page.adoc[]
+
+<<<
+
+include::text/wonderland/blank.adoc[]
+
+<<<
+endif::[]
+
+include::text/wonderland/epigraph.adoc[]
+
+ifdef::backend-pdf[]
+<<<
+
+include::text/wonderland/blank.adoc[]
+
+<<<
+
+include::text/wonderland/contents.adoc[]
+
+<<<
+
+include::text/wonderland/blank.adoc[]
+endif::[]
 
 include::text/wonderland/chapter-1.adoc[]
 
@@ -25,3 +73,5 @@ include::text/wonderland/chapter-10.adoc[]
 include::text/wonderland/chapter-11.adoc[]
 
 include::text/wonderland/chapter-12.adoc[]
+
+:source-lines!:

@@ -1232,7 +1232,10 @@ final class _Pass {
             room - cursor,
             atTop: childAtTop,
           );
+          // (No room beside them at all, a block as wide as the region
+          // floating there: below them, whatever would overflow it.)
           final beside =
+              narrowRight - narrowLeft > 1e-6 &&
               tried.placed != null &&
               (until.isInfinite ||
                   (tried.rest == null &&
@@ -1242,7 +1245,9 @@ final class _Pass {
           if (beside) {
             fit = tried;
             placed = true;
-          } else if (_runaround(child, narrowRight - narrowLeft, until - y)
+          } else if (narrowRight - narrowLeft > 1e-6
+                  ? _runaround(child, narrowRight - narrowLeft, until - y)
+                  : null
               case (final piece, final height, final rest)) {
             // A paragraph that doesn't fit beside them whole: its first
             // lines beside them, the rest in its place, set again at the

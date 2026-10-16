@@ -347,6 +347,74 @@ void main() {
       );
     });
 
+    group("the text's own lines", () {
+      List<Line> lines(String text, double width, LineBreaker breaker) =>
+          breaker.breakLines(
+            Paragraph(
+              [TextRun(text, _body)],
+              align: TextAlign.justify,
+              breakOpportunities: BreakOpportunities.lines,
+            ),
+            (_) => width,
+          );
+      double right(Line line) =>
+          line.fragments.last.x + line.fragments.last.width;
+
+      for (final breaker in const <LineBreaker>[
+        FirstFitLineBreaker(),
+        KnuthPlassLineBreaker(),
+      ]) {
+        test(
+          'end at its line separators, justified (${breaker.runtimeType})',
+          () {
+            final set = lines('aa bb cc\u2028dd ee\u2028ff', 200, breaker);
+            expect(set.map(_text), ['aa bb cc', 'dd ee', 'ff']);
+            expect(right(set[0]), closeTo(200, 1e-6));
+            expect(right(set[1]), closeTo(200, 1e-6));
+            expect(right(set[2]), lessThan(100));
+          },
+        );
+
+        test('break nowhere else, however long (${breaker.runtimeType})', () {
+          final set = lines('$_words\u2028aa bb', 100, breaker);
+          expect(set.map(_text), [_words, 'aa bb']);
+        });
+
+        test("a soft hyphen before one is the line's hyphen "
+            '(${breaker.runtimeType})', () {
+          final set = lines('aa oc\u00ad\u2028curred bb', 200, breaker);
+          // (Its hyphen the font's soft hyphen where it has one.)
+          expect(set.map((line) => _text(line).replaceAll('\u00ad', '-')), [
+            'aa oc-',
+            'curred bb',
+          ]);
+          expect(set.first.hyphenated, isTrue);
+          expect(right(set.first), closeTo(200, 1e-6));
+        });
+      }
+
+      test('one ending the text justifies its last line', () {
+        final set = lines(
+          'aa bb\u2028cc dd\u2028',
+          200,
+          const KnuthPlassLineBreaker(),
+        );
+        expect(set.map(_text), ['aa bb', 'cc dd']);
+        expect(right(set[1]), closeTo(200, 1e-6));
+      });
+
+      test('a hard break among them ends its line ragged', () {
+        final set = lines(
+          'aa bb\ncc dd\u2028ee',
+          200,
+          const KnuthPlassLineBreaker(),
+        );
+        expect(set.map(_text), ['aa bb', 'cc dd', 'ee']);
+        expect(right(set[0]), lessThan(100));
+        expect(right(set[1]), closeTo(200, 1e-6));
+      });
+    });
+
     test('copyWith carries them and the line height', () {
       final paragraph = Paragraph([TextRun('x', _body)]).copyWith(
         breakOpportunities: BreakOpportunities.spacesAndHyphens,

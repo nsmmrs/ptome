@@ -1,52 +1,81 @@
-[verse]
-[.poem]
+ifdef::backend-pdf[]
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=116.7pt]
+endif::[]
+
+[verse.poem.v10.loose%unbreakable,margin-bottom=0]
 ____
-All in the golden afternoon
- Full leisurely we glide;
-For both our oars, with little skill,
- By little arms are plied;
-While little hands make vain pretence
- Our wanderings to guide.
+                All in the golden afternoon
+                    Full leisurely we glide;
+                For both our oars, with little skill,
+                    By little arms are plied,
+                While little hands make vain pretence
+                    Our wanderings to guide.
+____
 
-Ah, cruel Three! In such an hour,
- Beneath such dreamy weather,
-To beg a tale of breath too weak
- To stir the tiniest feather!
-Yet what can one poor voice avail
- Against three tongues together?
+[verse.poem.v10.loose%unbreakable,margin-top=35.8pt,margin-bottom=0]
+____
+                Ah, cruel Three! In such an hour,
+                    Beneath such dreamy weather,
+                To beg a tale of breath too weak
+                   To stir the tiniest feather!
+                Yet what can one poor voice avail
+                   Against three tongues together?
+____
 
-Imperious Prima flashes forth
- Her edict “to begin it”:
-In gentler tones Secunda hopes
- “There will be nonsense in it.”
-While Tertia interrupts the tale
- Not __more__ than once a minute.
+ifdef::backend-pdf[]
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=3.0pt]
+endif::[]
 
-Anon, to sudden silence won,
- In fancy they pursue
-The dream-child moving through a land
- Of wonders wild and new,
-In friendly chat with bird or beast⁠—
- And half believe it true.
+[verse.poem.v10.loose%unbreakable,margin-bottom=0]
+____
+              Imperious Prima flashes forth
+                  Her edict “to begin it”—
+              In gentler tone Secunda hopes
+                  “There will be nonsense in it!”—
+              While Tertia interrupts the tale
+                 Not __more__ than once a minute.
+____
 
-And ever, as the story drained
- The wells of fancy dry,
-And faintly strove that weary one
- To put the subject by,
-“The rest next time⁠—” “It __is__ next time!”
- The happy voices cry.
+[verse.poem.v10.loose%unbreakable,margin-top=34.6pt,margin-bottom=0]
+____
+              Anon, to sudden silence won,
+                 In fancy they pursue
+              The dream-child moving through a land
+                 Of wonders wild and new,
+              In friendly chat with bird or beast⁠—
+                 And half believe it true.
+____
 
-Thus grew the tale of Wonderland:
- Thus slowly, one by one,
-Its quaint events were hammered out⁠—
- And now the tale is done,
-And home we steer, a merry crew,
- Beneath the setting sun.
+[verse.poem.v10.loose%unbreakable,margin-top=35.5pt,margin-bottom=0]
+____
+              And ever, as the story drained
+                 The wells of fancy dry,
+              And faintly strove that weary one
+                 To put the subject by,
+              “The rest next time⁠—” “It __is__ next time!”
+                 The happy voices cry.
+____
 
-Alice! A childish story take,
- And with a gentle hand
-Lay it where Childhood’s dreams are twined
- In Memory’s mystic band,
-Like pilgrim’s withered wreath of flowers
- Pluck’d in a far-off land.
+ifdef::backend-pdf[]
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=2.5pt]
+endif::[]
+
+[verse.poem.v10.loose%unbreakable,margin-bottom=0]
+____
+                Thus grew the tale of Wonderland:
+                    Thus slowly, one by one,
+                 Its quaint events were hammered out⁠—
+                    And now the tale is done,
+                And home we steer, a merry crew,
+                    Beneath the setting sun.
+____
+
+[verse.poem.v10.loose%unbreakable,margin-top=32.8pt,margin-bottom=0]
+____
+                 Alice! A childish story take,
+                    And with a gentle hand
+                 Lay it where Childhood’s dreams are twined
+                     In Memory’s mystic band,
+                 Like pilgrim’s withered wreath of flowers
+                     Pluck’d in a far-off land.
 ____

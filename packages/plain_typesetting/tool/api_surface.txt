@@ -151,6 +151,7 @@ enum BreakKind
   static BreakKind page
   static List<BreakKind> values
 enum BreakOpportunities
+  static BreakOpportunities lines
   static BreakOpportunities spacesAndHyphens
   static BreakOpportunities unicode
   static List<BreakOpportunities> values
@@ -660,10 +661,11 @@ final class ParagraphContent implements LinedContent, BaselineContent, ShapedCon
   int orphans
   int widows
 final class PenaltyItem extends LineItem
-  PenaltyItem(double width, double penalty, {bool flagged = false, TextRun? run, double carry = 0})
+  PenaltyItem(double width, double penalty, {bool flagged = false, TextRun? run, double carry = 0, bool justified = false})
   TextRun? run
   bool flagged
   bool isForced
+  bool justified
   double carry
   double penalty
   double width

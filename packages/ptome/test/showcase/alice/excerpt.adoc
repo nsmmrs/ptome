@@ -5,15 +5,19 @@
 :look: alice
 :looksdir: {docdir}
 :notitle:
+:shy: &#173;
 
 // The two pages of the books' own type (doc/showcase.md): the tale in
-// type that shrinks down its tail, kept on one page, and Jabberwocky's
-// first stanza in mirror type.
+// type that shrinks down its tail, kept on one page, its lines and its
+// first line's place the 1867 printing's (`:source-lines:`), and
+// Jabberwocky's first stanza in mirror type.
 
 == A Caucus-Race and a Long Tale
+:source-lines:
 
 include::text/wonderland/chapter-3.adoc[tag=tale]
 
 == Looking-Glass House
+:source-lines!:
 
 include::text/looking-glass/chapter-1.adoc[tag=mirror]

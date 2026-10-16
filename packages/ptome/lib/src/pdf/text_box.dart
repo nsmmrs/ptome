@@ -1434,7 +1434,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               ? base.hasGlyph(rune)
               : _font(currentFamily, base.style, context).hasGlyph(rune))) {
         family = currentFamily;
-      } else if (rune != 0 && !base.hasGlyph(rune) && rune != 10) {
+      } else if (rune != 0 &&
+          !base.hasGlyph(rune) &&
+          rune != 10 &&
+          // (A line separator: a break, as a newline, not a glyph.)
+          rune != 0x2028) {
         for (final fallback in context.fallbacks) {
           if (_font(fallback, base.style, context).hasGlyph(rune)) {
             family = fallback;

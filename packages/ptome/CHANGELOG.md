@@ -10,6 +10,19 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: what following a printing page for page takes (the showcase's
+  Alice, Wonderland as Macmillan printed it in 1867; EPIC-1glhqj):
+  `:source-lines:` sets each paragraph on its source's lines, justified,
+  a soft hyphen at a line's end shown as its hyphen and a trailing line
+  separator justifying the last line; a block's own `margin-top` and
+  `margin-bottom` (negative, drawn up onto the line before); an image's
+  `pdfheight` (the room it takes), `fit-top` and `fit=none`; a float's own
+  `float-width` and `float-gap`, and a block after a float that leaves no
+  room beside it set below it; `role_<role>_before_heading` (a chapter's
+  cut above its heading); `{chapter-title-spread}` with a section's
+  `running-title` (`Down the|Rabbit-Hole.` divided across the spread);
+  `{page-signature}` (the printer's signatures, `running_content_signature_*`)
+  and `<periphery>_on_openers`. Not under `asciidoctor-compat`.
 - EPUB: a document that sets `jump-template` has its jump lines worded
   by it, as in HTML ("Continued in …").
 - With the `cell-references` attribute, a jump line knows whether a

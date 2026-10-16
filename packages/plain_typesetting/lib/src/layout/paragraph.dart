@@ -199,6 +199,13 @@ enum BreakOpportunities {
   /// After a hyphen alone (and a word wider than the line between its
   /// characters): code wrapped as typewriters and Prawn wrap it.
   spacesAndHyphens,
+
+  /// At the text's own breaks alone: each line separator (U+2028) ends a
+  /// line, justified when the paragraph is, as TeX's `\linebreak` does
+  /// (a soft hyphen just before it shown as the line's hyphen); a hard
+  /// break ends one ragged, as everywhere. No other break, no
+  /// hyphenation: the lines a transcription keeps from its printing.
+  lines,
 }
 
 /// Whether a line may break inside a word of letters written without
@@ -566,6 +573,7 @@ final class PenaltyItem extends LineItem {
     this.flagged = false,
     this.run,
     this.carry = 0,
+    this.justified = false,
   }) : super._();
 
   /// The cost of breaking that forces a break.
@@ -590,6 +598,11 @@ final class PenaltyItem extends LineItem {
   /// The run the break is in: the hyphen's style, and the metrics of an
   /// empty line ending here.
   final TextRun? run;
+
+  /// Whether a line ending at this forced break is justified as the
+  /// lines before a paragraph's last are (a line separator's, see
+  /// [BreakOpportunities.lines]).
+  final bool justified;
 
   /// Whether the line must break here.
   bool get isForced => penalty <= forced;
@@ -749,12 +762,18 @@ abstract base class ItemLineBreaker implements LineBreaker {
       };
     }
 
-    final breaks = breakItems(
-      items,
-      indented,
-      protrudeLeft: protrude(right: false),
-      protrudeRight: protrude(right: true),
-    );
+    // (The text's own lines: its forced breaks, and no others.)
+    final breaks = paragraph.breakOpportunities == BreakOpportunities.lines
+        ? [
+            for (final (i, item) in items.indexed)
+              if (item case PenaltyItem(isForced: true)) i,
+          ]
+        : breakItems(
+            items,
+            indented,
+            protrudeLeft: protrude(right: false),
+            protrudeRight: protrude(right: true),
+          );
     return (
       lines: buildLines(
         paragraph,
@@ -1538,7 +1557,10 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     final piece = word.toString();
     word.clear();
     final hyphenator = paragraph.hyphenator;
-    final points = hyphenator == null || !_isWord(piece)
+    final points =
+        hyphenator == null ||
+            !_isWord(piece) ||
+            paragraph.breakOpportunities == BreakOpportunities.lines
         ? const <int>[]
         : hyphenator.hyphenate(piece);
     var from = 0;
@@ -1578,8 +1600,13 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
     }
     final segments =
         paragraph.breakOpportunities == BreakOpportunities.spacesAndHyphens;
+    final linesOnly = paragraph.breakOpportunities == BreakOpportunities.lines;
     var opportunity =
         nextBreak < breaks.length && breaks.offsetAt(nextBreak) == at;
+    // (The text's own lines: no break but where a line must end.)
+    if (linesOnly && opportunity && !breaks.isMandatoryAt(nextBreak)) {
+      opportunity = false;
+    }
     // (Breaking at spaces and after hyphens alone, but where a line must
     // end: no rule keeps a space from breaking either.)
     if (segments &&
@@ -1607,7 +1634,28 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
       }
       items.insert(first, const PenaltyItem(0, PenaltyItem.never));
     }
-    if (opportunity && breaks.isMandatoryAt(nextBreak)) {
+    if (opportunity &&
+        breaks.isMandatoryAt(nextBreak) &&
+        linesOnly &&
+        whole.codeUnitAt(at - 1) == 0x2028) {
+      // (A line separator: the line justified as the paragraph is, a soft
+      // hyphen before it the line's hyphen.)
+      flush();
+      final run = lastRun;
+      final hyphen = at > 1 && whole.codeUnitAt(at - 2) == 0xad;
+      if (paragraph.align != TextAlign.justify) {
+        items.add(const GlueItem.fill());
+      }
+      items.add(
+        PenaltyItem(
+          hyphen && run != null ? run.style.measure('-') : 0,
+          PenaltyItem.forced,
+          flagged: hyphen,
+          run: run,
+          justified: paragraph.align == TextAlign.justify,
+        ),
+      );
+    } else if (opportunity && breaks.isMandatoryAt(nextBreak)) {
       flush();
       items
         ..add(const GlueItem.fill())
@@ -1749,9 +1797,18 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
   if (items.isEmpty) return items;
   _measureWithinWords(items);
   // (No fill after a run set flush right that ends the paragraph: TeX's
-  // `\parfillskip=0pt`.)
-  if (lastRun?.flushRight != true) items.add(const GlueItem.fill());
-  items.add(PenaltyItem(0, PenaltyItem.forced, run: lastRun));
+  // `\parfillskip=0pt`; nor after a line separator that ends it, the
+  // text's own lines, its last line justified as the others are.)
+  final justifiedEnd =
+      paragraph.breakOpportunities == BreakOpportunities.lines &&
+      paragraph.align == TextAlign.justify &&
+      whole.endsWith('\u2028');
+  if (lastRun?.flushRight != true && !justifiedEnd) {
+    items.add(const GlueItem.fill());
+  }
+  items.add(
+    PenaltyItem(0, PenaltyItem.forced, run: lastRun, justified: justifiedEnd),
+  );
   return maxWidth == null ? items : _splitWide(items, maxWidth);
 }
 
@@ -2491,9 +2548,10 @@ List<Line> buildLines(
         breakItem is PenaltyItem && breakItem.flagged && breakItem.width > 0
         ? breakItem.run
         : null;
+    final justified = breakItem is PenaltyItem && breakItem.justified;
     final last =
-        number == breaks.length - 1 ||
-        (breakItem is PenaltyItem && breakItem.isForced);
+        (number == breaks.length - 1 && !justified) ||
+        (breakItem is PenaltyItem && breakItem.isForced && !justified);
     final indent =
         (number == 0 ? paragraph.firstLineIndent : 0.0) +
         (number < paragraph.hangLines ? paragraph.hangIndent : 0.0);

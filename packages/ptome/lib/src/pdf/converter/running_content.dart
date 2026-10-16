@@ -225,7 +225,10 @@ extension _RunningContent on PdfConverter {
     // otherwise; the pages of a part or chapter with the `noheader` or
     // `nofooter` option (as the gem reads it on the toc macro).
     if (_openerPages.contains(number) &&
-        _theme.value('running_content_on_openers') != const ThemeBool(true)) {
+        _theme.value('running_content_on_openers') != const ThemeBool(true) &&
+        // (`<periphery>_on_openers: true`: this one only, a printing's
+        // signatures at the foot of a chapter's first page, no head.)
+        _keys(periphery).value('on_openers') != const ThemeBool(true)) {
       return const [];
     }
     if (_pageSection(page)?.hasOption('no$periphery') ?? false) {
@@ -706,6 +709,11 @@ extension _RunningContent on PdfConverter {
         }
       }
     }
+    // The printer's signature (`{page-signature}`), on the first page of
+    // each gathering.
+    if (_signatureOf(page.number - _skip.$2) case final signature?) {
+      attributes['page-signature'] = signature;
+    }
     // The catchword (`{page-catchword}`), the next page's first word.
     if (_catchwords.elementAtOrNull(page.number - 1) case final word?) {
       attributes['page-catchword'] = word;
@@ -782,6 +790,11 @@ extension _RunningContent on PdfConverter {
       attributes['part-numeral'] = numeral;
     }
     attributes['chapter-title'] = chapter;
+    attributes['chapter-title-spread'] = _spreadTitle(
+      chapterMark,
+      page,
+      chapter,
+    );
     if (chapterNumeral case final numeral?) {
       attributes['chapter-numeral'] = numeral;
     }
@@ -813,6 +826,62 @@ extension _RunningContent on PdfConverter {
       attributes['top-title'] = doc.doctitle() ?? '';
     }
     return attributes;
+  }
+
+  /// The printer's signature on page [number] (`{page-signature}`): the
+  /// letter that marks the first page of each gathering for the binder,
+  /// every `running_content_signature_interval` pages (16, an octavo in
+  /// sixteens) from page `_signature_first` (1), lettered from
+  /// `_signature_start` (`B`, the title's gathering being A) in the
+  /// printers' alphabet (`_signature_letters`, `ABCDEFGHIKLMNOPQRSTUXYZ`:
+  /// no J, V or W), doubled once it runs out (`AA`, `BB`); null on the
+  /// other pages.
+  String? _signatureOf(int number) {
+    final keys = _keys('running_content_signature');
+    final interval = (keys.number('interval') ?? 16).toInt();
+    final first = (keys.number('first') ?? 1).toInt();
+    if (interval < 1 || number < first || (number - first) % interval != 0) {
+      return null;
+    }
+    final letters = keys.string('letters') ?? 'ABCDEFGHIKLMNOPQRSTUXYZ';
+    final start = letters.indexOf(keys.string('start') ?? 'B');
+    final index = (start < 0 ? 0 : start) + (number - first) ~/ interval;
+    final letter = letters[index % letters.length];
+    return letter * (index ~/ letters.length + 1);
+  }
+
+  /// The running title of the chapter [mark] names on [page]
+  /// (`{chapter-title-spread}`): the chapter's `running-title`, else its
+  /// [title], divided across the spread where a `|` divides it, as
+  /// Victorian books divide a long title (`DOWN THE` on the verso,
+  /// `RABBIT-HOLE.` on the recto); whole on a page whose facing page has
+  /// no running head of the chapter (a verso before a chapter's opening
+  /// page or the end, a recto after one).
+  String _spreadTitle(String? mark, PageInfo page, String title) {
+    final index = int.tryParse(mark ?? '');
+    final section = index == null || index >= _sections.length
+        ? null
+        : _sections[index].$1;
+    final running = section?.attr('running-title');
+    if (running == null) return title;
+    final bar = running.indexOf('|');
+    if (bar < 0) return running;
+    final whole =
+        '${running.substring(0, bar).trimRight()} '
+        '${running.substring(bar + 1).trimLeft()}';
+    final number = page.number;
+    final virtual = number - _skip.$2;
+    final verso = _sideOf(_folio.physical ? number : virtual) == 'verso';
+    final facing = verso ? number + 1 : number - 1;
+    if (facing < 1 ||
+        facing > page.count ||
+        _openerPages.contains(facing) ||
+        _openerPages.contains(number)) {
+      return whole;
+    }
+    return verso
+        ? running.substring(0, bar).trim()
+        : running.substring(bar + 1).trim();
   }
 
   /// [value] with the document's normal substitutions (or [subs]), with

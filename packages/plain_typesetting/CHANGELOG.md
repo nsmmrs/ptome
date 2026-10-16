@@ -2,6 +2,14 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BreakOpportunities.lines`: a paragraph broken at its text's own line
+  separators (U+2028) alone, each line justified as the paragraph is (a
+  soft hyphen before one shown as its hyphen; one ending the text
+  justifies the last line), never elsewhere and not hyphenated: a
+  transcription that keeps its printing's lines. `PenaltyItem.justified`:
+  a forced break whose line is justified. A block after a float that
+  leaves no room beside it goes below it.
+
 - `TextRun.metricsFont`: the font whose metrics a run counts toward its
   line's height instead of its own.
 

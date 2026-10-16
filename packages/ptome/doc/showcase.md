@@ -8,7 +8,7 @@ EPIC-phf3n2 has the plan.
 
 | Work | What it shows |
 | --- | --- |
-| [Alice](../test/showcase/alice/NOTICE.md) | Illustrations the text runs beside, the Mouse's Tale in type that shrinks down its tail, Jabberwocky in mirror type, the chess problem's moves in two columns |
+| [Alice](../test/showcase/alice/NOTICE.md) | Wonderland as Macmillan printed it in 1867, page for page and line for line (`:source-lines:`, its text transcribed from the scan): every page's first and last words, its line breaks and hyphens the printing's, each cut as wide, as tall and where the printing sets it, the Mouse's Tale in type that shrinks down its tail placed line by line from the scan, the running titles divided across the spread, the printer's signatures; Looking-Glass in the same look, with Jabberwocky in mirror type and the chess problem's moves in two columns |
 | [Babbage's logarithms](../test/showcase/babbage/NOTICE.md) | A large numeric table, generated: rows in fives, figures in columns, heads on every page, the page's range in its head, a tinted page |
 | [Byrne's Euclid](../test/showcase/byrne/NOTICE.md) | Colour in place of letters: each proposition's diagram redrawn as SVG in red, yellow, blue and black, the lines, circles, triangles and angles named in the text by coloured figures set inline; diagrams floated beside enunciations with large initials |
 | [Burton's Anatomy of Melancholy](../test/showcase/burton/NOTICE.md) | Brace diagrams: the synopses as trees of braces; Burton's 6,816 citations in the outer margin, lettered on each page; Partitions, Sections, Members and Subsections in the running heads |

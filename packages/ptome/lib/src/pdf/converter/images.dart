@@ -398,6 +398,22 @@ extension _Images on PdfConverter {
             border: border,
             link: node.attr('link'),
             whole: !asciidoctorCompat(_document, CompatFormat.pdf),
+            boxHeight: asciidoctorCompat(_document, CompatFormat.pdf)
+                ? null
+                : switch (node.attr('pdfheight')) {
+                    final value? => strToPoints(value),
+                    null => null,
+                  },
+            overflow: node.attr('fit') == 'none',
+            // (Negative: above the box, a plate reaching past the text's
+            // top.)
+            overflowTop: switch (node.attr('fit-top')?.trim()) {
+              final value? when value.startsWith('-') => -strToPoints(
+                value.substring(1),
+              ),
+              final value? => strToPoints(value),
+              null => null,
+            },
           ),
           style: BoxStyle(
             anchor: node.id,
@@ -405,7 +421,11 @@ extension _Images on PdfConverter {
               bottom: caption != null && captionBottom ? 0 : margin,
             ),
             // (A figure, its alternate text what is read for it.)
-            structure: _struct('Figure', alt: node.attr('alt') ?? ''),
+            // (An empty alternate text, decorative: no figure, its
+            // drawing an artifact; PDF/UA-1 7.3.)
+            structure: node.attr('alt') == ''
+                ? null
+                : _struct('Figure', alt: node.attr('alt') ?? ''),
           ),
         ),
       );

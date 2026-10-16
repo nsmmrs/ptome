@@ -120,6 +120,31 @@ void main() {
     },
   );
 
+  test('an image with an empty alternate text is decorative: an artifact, '
+      "not a figure (PDF/UA-1 7.3; a printing's spacers)", () {
+    final input = File('${_dir.path}/decorative.adoc')
+      ..writeAsStringSync(
+        '= Decorative\n:pdf-ua:\n:lang: en\n\nA paragraph.\n\n'
+        'image::${Directory.current.path}/test/pdf/fixtures/images/red.png'
+        '[""]\n\nAnother.\n',
+      );
+    final out = '${input.path}.pdf';
+    convertFile(
+      input.path,
+      AsciidoctorOptions(
+        safe: SafeMode.unsafe,
+        backend: 'pdf',
+        toFile: out,
+        attributes: const {'reproducible': '', 'pdf-theme': 'default'},
+      ),
+    );
+    final tree =
+        recordedRunSync(_recorded, 'pdfinfo', ['-struct-text', out]).stdout
+            as String;
+    expect(tree, isNot(contains('Figure')), reason: tree);
+    expect(tree, contains('"Another."'));
+  });
+
   test("a block's and a span's own language marked (PDF/UA-1 7.2)", () {
     final out = '${_dir.path}/lang.pdf';
     recordedRunSync(_recorded, 'qpdf', [

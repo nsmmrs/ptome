@@ -1,0 +1,37 @@
+// The title page as the 1867 printing sets it (front.py, from the
+// scan): each line its size, its letter-spacing, its place.
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=2.74pt]
+
+[.tp-title,margin-top=0,margin-bottom=0]
+ALICE’S ADVENTURES
+
+[.tp-title,margin-top=17.20pt,margin-bottom=0]
+IN WONDERLAND.
+
+[.tp-by,margin-top=44.55pt,margin-bottom=0]
+BY
+
+[.tp-author,margin-top=3.94pt,margin-bottom=0]
+LEWIS CARROLL.
+
+[.tp-italic,margin-top=47.64pt,margin-bottom=0]
+WITH FORTY-TWO ILLUSTRATIONS
+
+[.tp-italic,margin-top=5.64pt,margin-bottom=0]
+BY JOHN TENNIEL.
+
+[.tp-edition,margin-top=44.00pt,margin-bottom=0]
+SIXTH THOUSAND.
+
+[.tp-place,margin-top=43.17pt,margin-bottom=0]
+London:
+
+[.tp-publisher,margin-top=1.40pt,margin-bottom=0]
+MACMILLAN AND CO.
+
+[.tp-year,margin-top=1.93pt,margin-bottom=0]
+1867.
+
+[.tp-rights,margin-top=32.35pt,margin-bottom=0]
+{startsb}__The Right of Translation and Reproduction is reserved.__{endsb}

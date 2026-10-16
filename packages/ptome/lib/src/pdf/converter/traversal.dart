@@ -8,21 +8,9 @@ extension _Traversal on PdfConverter {
   void _traverse(AbstractBlock node) {
     if (node.blocks.isNotEmpty) {
       for (final block in node.blocks) {
-        final saved = _at;
-        _at = block.sourceLocation ?? saved;
-        final before = _out.length;
-        try {
-          block.convert();
-        } finally {
-          _at = saved;
-        }
-        if (_reportTags != null && block is! Section) {
-          _tagLast(before, block);
-        }
-        if (block is! Section &&
-            (block.role != null || block.hasAttr('shape'))) {
-          _sideFloat(block, before);
-        }
+        // (Set before its section's heading already.)
+        if (_beforeHeading.remove(block)) continue;
+        _convertFloating(block);
       }
     } else if (node is Block && node.contentModel != ContentModel.compound) {
       if (node.content() case final text?) {
@@ -31,6 +19,41 @@ extension _Traversal on PdfConverter {
           CustomBox(_textBox(text, _font, align: align, hyphenate: true)),
         );
       }
+    }
+  }
+
+  /// [section]'s first block where one of its roles is set before the
+  /// heading (`role_<role>_before_heading: true`, modern engine): a
+  /// chapter's cut above its title, or beside it as a float; null when it
+  /// has none.
+  AbstractBlock? _blockBeforeHeading(Section section) {
+    if (asciidoctorCompat(_document, CompatFormat.pdf)) return null;
+    final first = section.blocks.firstOrNull;
+    if (first == null || first is Section) return null;
+    return first.roles.any(
+          (role) =>
+              _theme.value('role_${_roleName(role)}_before_heading') ==
+              const ThemeBool(true),
+        )
+        ? first
+        : null;
+  }
+
+  /// Converts [block], floating it to a side where its role says.
+  void _convertFloating(AbstractBlock block) {
+    final saved = _at;
+    _at = block.sourceLocation ?? saved;
+    final before = _out.length;
+    try {
+      block.convert();
+    } finally {
+      _at = saved;
+    }
+    if (_reportTags != null && block is! Section) {
+      _tagLast(before, block);
+    }
+    if (block is! Section && (block.role != null || block.hasAttr('shape'))) {
+      _sideFloat(block, before);
     }
   }
 
@@ -118,12 +141,21 @@ extension _Traversal on PdfConverter {
       };
       if (side == null) continue;
       final content = _floatRoom;
-      final width = switch (_keys(key).value('width')) {
-        ThemeString(:final value) when value.trim().endsWith('%') =>
-          content *
-              (double.tryParse(value.trim().replaceFirst('%', '')) ?? 50) /
-              100,
-        _ => _keys(key).length('width', _font.size) ?? content / 3,
+      // (The block's own `float-width` and `float-gap` first: each of a
+      // printing's cuts as wide as it is there.)
+      final width = switch (block.attr('float-width')) {
+        final value? => strToPoints(value),
+        null => switch (_keys(key).value('width')) {
+          ThemeString(:final value) when value.trim().endsWith('%') =>
+            content *
+                (double.tryParse(value.trim().replaceFirst('%', '')) ?? 50) /
+                100,
+          _ => _keys(key).length('width', _font.size) ?? content / 3,
+        },
+      };
+      final gap = switch (block.attr('float-gap')) {
+        final value? => strToPoints(value),
+        null => _keys(key).length('gap', _font.size) ?? _font.size,
       };
       final boxes = _out.sublist(from);
       _out
@@ -134,7 +166,7 @@ extension _Traversal on PdfConverter {
             style: BoxStyle(
               side: side,
               sideWidth: width,
-              sideGap: _keys(key).length('gap', _font.size) ?? _font.size,
+              sideGap: gap,
               sideShape: _floatShape(block, key, width),
             ),
           ),
@@ -291,7 +323,19 @@ extension _Traversal on PdfConverter {
       return null;
     }
 
+    // (The block's own `margin-bottom` and `margin-top` first: a
+    // printing's spaces, measured block by block.)
+    double? ownMargin(AbstractBlock block, String side) =>
+        switch (block.attr('margin-$side')?.trim()) {
+          // (Negative: a block pulled up onto the line before it.)
+          final value? when value.startsWith('-') => -strToPoints(
+            value.substring(1),
+          ),
+          final value? => strToPoints(value),
+          null => null,
+        };
     final own =
+        ownMargin(node, 'bottom') ??
         roleMargin(node, 'bottom') ??
         _keys(PdfConverter._spacingCategory(node))
             .number('margin_bottom')
@@ -303,10 +347,19 @@ extension _Traversal on PdfConverter {
       return math.max(0, own - _sectionMarginTop(following));
     }
     final above =
+        ownMargin(following, 'top') ??
         roleMargin(following, 'top') ??
         _keys(PdfConverter._spacingCategory(following)).number('margin_top') ??
         0;
-    return math.max(own, above.toDouble());
+    final top = above.toDouble();
+    // (A block's own negative margin pulls it up past the space above it,
+    // as CSS collapses margins: the larger positive one, less the most
+    // negative.)
+    if ((ownMargin(node, 'bottom') ?? 0) < 0 ||
+        (ownMargin(following, 'top') ?? 0) < 0) {
+      return math.max(0, math.max(own, top)) + math.min(0, math.min(own, top));
+    }
+    return math.max(own, top);
   }
 
   /// The block before [node] in the flow: its previous sibling, past
