@@ -478,6 +478,12 @@ CustomPlacement _placement(
         left: dx,
         right: dx + line.width,
         continues: continues?[i] ?? i > 0,
+        text: [
+          for (final fragment in line.fragmentsInReadingOrder)
+            if (fragment case TextFragment(:final run, :final text)
+                when !run.artifact)
+              text,
+        ].join(),
       ),
     );
     y += line.height;

@@ -1,0 +1,23 @@
+// The Dedication as the printing sets it: between two bands of ornament,
+// in italic, its first capital dropped two lines, its last two lines set
+// in.
+ifdef::backend-pdf[]
+[.band,top=1717]
+image::temple-band-dedication.png[pdfwidth=177.6pt]
+endif::[]
+
+[#dedication,running-title="The Dedication.",ocr=8,first="¶ The Dedication."]
+== ¶ The Dedication.
+
+[.v.dropcap.ded,ocr=9,first="Ord, my first fruits present themselves to thee;"]
+LOrd, my first fruits present themselves to thee;
+Yet not mine neither: for from thee they came,
+And must return. Accept of them and me,
+And make us strive, who shall sing best thy Name.
+[.i95]##{nbsp}##Turn their eyes hither, who shall make a gain:
+[.i95]##{nbsp}##Theirs, who shall hurt themselves or me, refrain.
+
+ifdef::backend-pdf[]
+[.band,top=3944]
+image::temple-band-dedication-foot.png[pdfwidth=179.9pt]
+endif::[]

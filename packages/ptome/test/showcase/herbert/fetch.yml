@@ -1,0 +1,136 @@
+# The ornaments the work prints, fetched by tool/showcase.dart into the
+# work cache and checked by their SHA-256: cut from the Internet Archive's
+# scan of the British Library's copy of the second edition (1633,
+# bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633),
+# each page's own scan, at its full size; each written as a grey PNG, its
+# film's grey paper white (`levels`), cut to the ornament (`crop`, found as
+# the ink across the text's width outside its lines:
+# tool/temple_1633/rules.py).
+- name: temple-band-porch.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n8.jpg
+  sha256: e560ca4cd2815ad2aa44e0e418fd56f7da508a025c3bf593b33beed40fe8019b
+  levels: [40, 200]
+  crop: [356, 713, 2616, 238]
+- name: temple-factotum-t.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n8.jpg
+  sha256: e560ca4cd2815ad2aa44e0e418fd56f7da508a025c3bf593b33beed40fe8019b
+  levels: [40, 200]
+  crop: [415, 1595, 455, 445]
+- name: temple-band-superliminare.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n24.jpg
+  sha256: 2c2d751a5c8e311c6555aab5df1f094d7516d15fa890c7dce2a5c9f692f577e8
+  levels: [40, 200]
+  crop: [471, 886, 2571, 462]
+- name: temple-band-superliminare-foot.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n24.jpg
+  sha256: 2c2d751a5c8e311c6555aab5df1f094d7516d15fa890c7dce2a5c9f692f577e8
+  levels: [40, 200]
+  crop: [496, 4226, 2607, 471]
+- name: temple-band-altar.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n25.jpg
+  sha256: 1fba9e29b54955c5af65488b160b54aa92670d3196cb77a96a98fc1a81072336
+  levels: [40, 200]
+  crop: [662, 747, 2504, 178]
+- name: temple-band-altar-foot.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n25.jpg
+  sha256: 1fba9e29b54955c5af65488b160b54aa92670d3196cb77a96a98fc1a81072336
+  levels: [40, 200]
+  crop: [628, 4892, 2542, 176]
+- name: temple-band-militant.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n191.jpg
+  sha256: 63141e8715c00d6f61c16841b1dd06e21b2c708f31943f46033a011dd805ac2e
+  levels: [40, 200]
+  crop: [654, 813, 2482, 189]
+- name: temple-factotum-a.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n191.jpg
+  sha256: 63141e8715c00d6f61c16841b1dd06e21b2c708f31943f46033a011dd805ac2e
+  levels: [40, 200]
+  crop: [587, 1435, 723, 683]
+- name: temple-band-envoy.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n199.jpg
+  sha256: 335ef67a735a65db7ce8db4bb0592be327a76e42bb0df865d58c4e22a14e76ab
+  levels: [40, 200]
+  crop: [587, 770, 2561, 458]
+- name: temple-flowers-porch.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n23.jpg
+  sha256: 0c30185b0747c46b9d6d59938742a1b6258dd2b0552f85be6a196ca6610385d3
+  levels: [40, 200]
+  crop: [1136, 3752, 1425, 958]
+- name: temple-title-frame.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n0.jpg
+  sha256: 55dcdf7da82b174d99afea78da939a847a7c0e14497e1de2446b852bfcf1eac8
+  levels: [40, 200]
+  blank: [[745, 1057, 1763, 135], [745, 1229, 1763, 256], [745, 1553, 1763, 176], [745, 1778, 1763, 123], [745, 1947, 1763, 173], [745, 2147, 1763, 116], [745, 2542, 1763, 139], [745, 2672, 1763, 120], [745, 2802, 1763, 150], [745, 3187, 1763, 158], [745, 3592, 1763, 129], [745, 3747, 1763, 337], [745, 4701, 1763, 251], [745, 4947, 1763, 172]]
+  crop: [340, 570, 2552, 5030]
+- name: temple-band-reader.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n2.jpg
+  sha256: b8a5b97d21045276c2b48407ab4a131e161b6259b39ee7e3d3c952a1d88a17fc
+  levels: [40, 200]
+  crop: [316, 815, 2610, 585]
+- name: temple-factotum-t2.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n2.jpg
+  sha256: b8a5b97d21045276c2b48407ab4a131e161b6259b39ee7e3d3c952a1d88a17fc
+  levels: [40, 200]
+  crop: [335, 1865, 612, 599]
+- name: temple-flower-reader.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n4.jpg
+  sha256: a7777143ba4b054dd72ca962de96c25d72fba223e04f7b0eb9b249be5e2c70b8
+  levels: [40, 200]
+  crop: [697, 3585, 1907, 418]
+- name: temple-band-dedication.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n6.jpg
+  sha256: 135abeeab775b085108d7565a76110f4388fcbdd9eae6c2a837a5cb254e69bb3
+  levels: [40, 200]
+  crop: [207, 1717, 2410, 474]
+- name: temple-band-dedication-foot.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n6.jpg
+  sha256: 135abeeab775b085108d7565a76110f4388fcbdd9eae6c2a837a5cb254e69bb3
+  levels: [40, 200]
+  crop: [202, 3944, 2435, 471]
+- name: temple-index-rule-200-1.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n200.jpg
+  sha256: 53d8c111e350010c209f4593c1171c5bbe1a1ada43ceacd4f71e88716468834f
+  levels: [40, 200]
+  blank: [[1527, 2190, 10, 3260], [1562, 2190, 9, 3260]]
+  crop: [1527, 2190, 44, 3260]
+- name: temple-index-rule-201-1.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n201.jpg
+  sha256: 5998e9526a2ca81e75f8add9fca5bf7ec63ad1a0b4b4da2a4596e2e8c34ce8bb
+  levels: [40, 200]
+  blank: [[1875, 760, 10, 968], [1911, 760, 8, 968]]
+  crop: [1875, 760, 44, 968]
+- name: temple-index-rule-201-2.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n201.jpg
+  sha256: 5998e9526a2ca81e75f8add9fca5bf7ec63ad1a0b4b4da2a4596e2e8c34ce8bb
+  levels: [40, 200]
+  blank: [[1860, 1728, 10, 968], [1894, 1728, 10, 968]]
+  crop: [1860, 1728, 44, 968]
+- name: temple-index-rule-201-3.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n201.jpg
+  sha256: 5998e9526a2ca81e75f8add9fca5bf7ec63ad1a0b4b4da2a4596e2e8c34ce8bb
+  levels: [40, 200]
+  blank: [[1836, 2696, 10, 968], [1872, 2696, 8, 968]]
+  crop: [1836, 2696, 44, 968]
+- name: temple-index-rule-201-4.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n201.jpg
+  sha256: 5998e9526a2ca81e75f8add9fca5bf7ec63ad1a0b4b4da2a4596e2e8c34ce8bb
+  levels: [40, 200]
+  blank: [[1821, 3664, 3, 968], [1856, 3664, 9, 968]]
+  crop: [1821, 3664, 44, 968]
+- name: temple-index-rule-201-5.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n201.jpg
+  sha256: 5998e9526a2ca81e75f8add9fca5bf7ec63ad1a0b4b4da2a4596e2e8c34ce8bb
+  levels: [40, 200]
+  blank: [[1798, 4632, 10, 968], [1834, 4632, 8, 968]]
+  crop: [1798, 4632, 44, 968]
+- name: temple-index-rule-202-1.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n202.jpg
+  sha256: d9baf928e217a8f0cefb98f1509b6e02a809ddcd552948314950429a0fca9f6d
+  levels: [40, 200]
+  blank: [[1528, 700, 10, 3990], [1566, 700, 6, 3990]]
+  crop: [1528, 700, 44, 3990]
+- name: temple-band-titles.png
+  url: https://archive.org/download/bim_early-english-books-1475-1640_the-temple-sacred-poems_herbert-george_1633/page/n200.jpg
+  sha256: 53d8c111e350010c209f4593c1171c5bbe1a1ada43ceacd4f71e88716468834f
+  levels: [40, 200]
+  crop: [356, 912, 2365, 272]

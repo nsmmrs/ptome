@@ -1,11 +1,16 @@
-# The Temple after its first edition (Cambridge, Thomas Buck and Roger
-# Daniel, 1633), a small duodecimo: a narrow page in a roman of the time
-# with its long s, its ligatures and its italic; the running head "The
-# Church." in italic, the page number outside; each poem's title with a
-# pilcrow, its stanzas' lines set in as the poem's form asks, the
-# Altar's lines shaping its altar between bands of ornament, and the
-# two stanzas of Easter-wings each printed sideways on a page of its own,
-# its lines a pair of wings.
+# The Temple as Thomas Buck and Roger Daniel printed its second edition
+# (Cambridge, 1633), measured from the scan of the microfilm (NOTICE.md):
+# a duodecimo's 241 × 422 pt page, the verse in a roman of the time,
+# 9.2 pt on 9.62; the running heads "The Church-porch.", "The Church."
+# and "The Church Militant." in italic, the folio outside them (on a
+# part's first page alone at its head, centred); the catchword and the
+# signature on the foot line, a line below the page's last, set with the
+# text (tool/temple_1633); each poem's title with its pilcrow, each line
+# set in as far as the printing sets it (its own `i<tenths>` span), each
+# block where the printing sets it (its own `margin-top`, fitted to the
+# scan: tool/temple_1633), the pages broken where the printing breaks
+# them; the Altar's lines shaping its altar, Easter-wings sideways on two
+# pages.
 #
 # IM Fell DW Pica, with its historical forms (the long s where its rules
 # put it) and its discretionary ligatures (`ptome doctor --look herbert
@@ -16,14 +21,14 @@ tokens:
     text: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] } }
     display: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] }, weight: normal }
   size:
-    text: { print: 9.5pt, screen: 19px }
-    headings: { print: [18pt, 13pt, 11pt, 10pt, 10pt, 10pt] }
-  leading: { print: 1.2, screen: 1.55 }
+    text: { print: 9.2pt, screen: 19px }
+    headings: { print: [12.6pt, 12.6pt, 12.6pt, 12.6pt, 10pt, 10pt] }
+  leading: { print: 1.0457, screen: 1.55 }
   measure: { screen: 30em }
   align: { print: start }
   hyphenate: { print: false }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [3.4in, 5.8in], margin: [0.6in, 0.35in, 0.5in, 0.4in] }
+  page: { size: [241pt, 422pt], margin: [32pt, 23pt, 0pt, 23pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
@@ -32,55 +37,375 @@ pdf:
   base:
     font_variant_alternates: historical-forms
     font_variant_ligatures: discretionary-ligatures
-  heading:
-    chapter_break_before: always
-    h2:
-      text_align: center
-      font_size: 13
-      margin_bottom: 8
-    h3:
-      text_align: center
-      font_size: 11
-      margin_top: 12
-      margin_bottom: 6
+  # (Each block's own space above it, measured from the scan, kept at the
+  # top of a page too.)
+  base_margin_break: keep
+  # (The pages numbered as the printing numbers them: from the Church-
+  # porch's first, the ninth page; headed from there.)
+  page_numbering_start_at: 9
+  running_content_start_at: 9
   section:
     role:
-      headpiece:
-        border_width: [3, 0, 0, 0]
+      # (The Church's first page an opening page: its folio at its head.)
+      opener: { opener: true }
+  heading:
+    tag_shift: true
+    chapter_break_before: auto
+    text_align: center
+    line_height: 1
+    margin_top: 0
+    margin_page_top: 0
+    margin_bottom: 0
+    h2: { font_size: 12.6 }
+    h3: { font_size: 12.6 }
+  prose:
+    margin_bottom: 0
+    margin_inner: 0
+    text_indent: 0
+    orphans: 1
+    widows: 1
+  role:
+    # (A stanza: its lines its source's, set from the left.)
+    v: { text_align: left, text_indent: 0 }
+    # (A poem's first letter a capital two lines high.)
+    dropcap: { drop_lines: 2 }
+    subhead: { text_align: center, font_style: italic, font_size: 10.5, text_indent: 0, line_height: 1 }
+    # (Words the printing turns up or down for want of room, after a
+    # bracket, flush right.)
+    turn: { flush: right }
+    # (A speaker inside a line; the brace before two words stacked.)
+    spk: { font_style: normal }
+    brace: { font_size: 14, line_height: 0.7 }
+    stage: { text_align: center, font_style: italic, font_size: 10.5, text_indent: 0, line_height: 1 }
+    finis: { text_align: center, letter_spacing: 3.5pt, text_indent: 0, line_height: 1 }
+    gloria: { text_align: center, font_style: italic, font_size: 11, text_indent: 0, line_pitch: 13.5pt }
+    italic: { font_style: italic }
+    # (The Printers to the Reader: justified, each paragraph's first line
+    # set in, but a paragraph going on from the page before.)
+    prose: { text_align: justify, text_indent: 0 }
+    indent: { text_indent: 9.2 }
+    goes-on: { text_indent: 0 }
+    motto: { text_align: center, text_indent: 0 }
+    # (The titles of the poems: in two columns, the titles italic, their
+    # pages flush right; a letter over each letter's titles, the first two
+    # beside a capital two lines high.)
+    ix: { text_align: left, text_indent: 0, font_style: italic }
+    ix-l: { margin_right: 103 }
+    ix-r: { margin_left: 100 }
+    ix-letter: { text_align: center, font_style: normal }
+    ix-drop: { drop_lines: 2, drop_font_style: normal }
+    rm: { font_style: normal }
+    ixn: { flush: right, font_style: normal }
+    ix-title: { text_align: center, text_indent: 0, font_size: 12.6, letter_spacing: 1.2, line_height: 1 }
+    # (The Dedication: in a larger italic, as close set as the text.)
+    ded: { font_style: italic, font_size: 11, line_pitch: 9.54pt }
+    # (The title page's lines: spaced capitals of their sizes, centred,
+    # measured from the scan.)
+    tp-the: { text_align: center, text_indent: 0, font_size: 11.8, line_height: 1 }
+    tp-temple: { text_align: center, text_indent: 0, font_size: 24.4, letter_spacing: 2.14, line_height: 1 }
+    tp-sacred: { text_align: center, text_indent: 0, font_size: 15.0, letter_spacing: 1.07, line_height: 1 }
+    tp-and: { text_align: center, text_indent: 0, font_size: 10.5, letter_spacing: 1.7, line_height: 1 }
+    tp-private: { text_align: center, text_indent: 0, font_size: 10.5, letter_spacing: 2.54, line_height: 1 }
+    tp-lations: { text_align: center, text_indent: 0, font_size: 10.5, letter_spacing: 1.25, line_height: 1 }
+    tp-by: { text_align: center, text_indent: 0, font_size: 9.6, line_pitch: 9.6pt }
+    tp-sc: { font_variant: small-caps, letter_spacing: 1.8 }
+    tp-sc2: { font_variant: small-caps, letter_spacing: 1.0 }
+    tp-ed: { text_align: center, text_indent: 0, font_size: 12.3, line_height: 1 }
+    tp-psal: { text_align: center, text_indent: 0, font_size: 10.5, letter_spacing: 0.2, line_height: 1 }
+    tp-motto: { text_align: center, text_indent: 0, font_size: 11.0, line_pitch: 11.7pt }
+    tp-imprint: { text_align: center, text_indent: 0, font_size: 9.2, line_pitch: 9.6pt }
+    # (A word in capitals, ALTAR: spaced, smaller, but its first letter.)
+    spaced: { character_spacing: 2.5, font_size: 7.4 }
+    spaced-cap: { character_spacing: 2.5 }
+    # (The Altar: each part of its shape a paragraph as wide as the
+    # printing's, its lines justified to fill it, as far apart as the
+    # printing's.)
+    altar: { text_align: justify, text_align_last: justify, text_indent: 0, line_pitch: 15.25pt }
+    altar-1: { margin_right: 4.3 }
+    altar-2: { margin_left: 19.1, margin_right: 22.8 }
+    altar-3: { margin_left: 55.0, margin_right: 67.4 }
+    altar-4: { margin_left: 19.6, margin_right: 28.7 }
+    altar-5: { margin_right: 3.9 }
+    folio: { font_style: normal }
+    # (The foot line, set with each page's text where the printing sets
+    # it, a line below its last: the catchword at the right, the
+    # signature on the same line.)
+    foot-cw: { text_align: right, text_indent: 0 }
+    foot-sig: { text_align: left, text_indent: 0 }
+    # (Each line set in as far as the printing sets it, each long stanza's
+    # lines as far apart as the printing's: generated.)
+    i15: { width: 1.5pt }
+    i25: { width: 2.5pt }
+    i30: { width: 3.0pt }
+    i35: { width: 3.5pt }
+    i40: { width: 4.0pt }
+    i45: { width: 4.5pt }
+    i50: { width: 5.0pt }
+    i55: { width: 5.5pt }
+    i60: { width: 6.0pt }
+    i65: { width: 6.5pt }
+    i70: { width: 7.0pt }
+    i75: { width: 7.5pt }
+    i80: { width: 8.0pt }
+    i85: { width: 8.5pt }
+    i90: { width: 9.0pt }
+    i95: { width: 9.5pt }
+    i100: { width: 10.0pt }
+    i105: { width: 10.5pt }
+    i110: { width: 11.0pt }
+    i115: { width: 11.5pt }
+    i120: { width: 12.0pt }
+    i125: { width: 12.5pt }
+    i130: { width: 13.0pt }
+    i135: { width: 13.5pt }
+    i140: { width: 14.0pt }
+    i145: { width: 14.5pt }
+    i150: { width: 15.0pt }
+    i155: { width: 15.5pt }
+    i160: { width: 16.0pt }
+    i165: { width: 16.5pt }
+    i170: { width: 17.0pt }
+    i175: { width: 17.5pt }
+    i180: { width: 18.0pt }
+    i185: { width: 18.5pt }
+    i190: { width: 19.0pt }
+    i195: { width: 19.5pt }
+    i200: { width: 20.0pt }
+    i205: { width: 20.5pt }
+    i210: { width: 21.0pt }
+    i215: { width: 21.5pt }
+    i220: { width: 22.0pt }
+    i225: { width: 22.5pt }
+    i230: { width: 23.0pt }
+    i235: { width: 23.5pt }
+    i240: { width: 24.0pt }
+    i245: { width: 24.5pt }
+    i250: { width: 25.0pt }
+    i255: { width: 25.5pt }
+    i260: { width: 26.0pt }
+    i265: { width: 26.5pt }
+    i270: { width: 27.0pt }
+    i275: { width: 27.5pt }
+    i280: { width: 28.0pt }
+    i285: { width: 28.5pt }
+    i290: { width: 29.0pt }
+    i295: { width: 29.5pt }
+    i300: { width: 30.0pt }
+    i305: { width: 30.5pt }
+    i310: { width: 31.0pt }
+    i315: { width: 31.5pt }
+    i320: { width: 32.0pt }
+    i325: { width: 32.5pt }
+    i330: { width: 33.0pt }
+    i335: { width: 33.5pt }
+    i338: { width: 33.8pt }
+    i340: { width: 34.0pt }
+    i345: { width: 34.5pt }
+    i350: { width: 35.0pt }
+    i355: { width: 35.5pt }
+    i360: { width: 36.0pt }
+    i365: { width: 36.5pt }
+    i370: { width: 37.0pt }
+    i374: { width: 37.4pt }
+    i375: { width: 37.5pt }
+    i380: { width: 38.0pt }
+    i385: { width: 38.5pt }
+    i390: { width: 39.0pt }
+    i395: { width: 39.5pt }
+    i400: { width: 40.0pt }
+    i405: { width: 40.5pt }
+    i410: { width: 41.0pt }
+    i415: { width: 41.5pt }
+    i420: { width: 42.0pt }
+    i430: { width: 43.0pt }
+    i435: { width: 43.5pt }
+    i438: { width: 43.8pt }
+    i440: { width: 44.0pt }
+    i445: { width: 44.5pt }
+    i450: { width: 45.0pt }
+    i455: { width: 45.5pt }
+    i460: { width: 46.0pt }
+    i465: { width: 46.5pt }
+    i470: { width: 47.0pt }
+    i475: { width: 47.5pt }
+    i480: { width: 48.0pt }
+    i485: { width: 48.5pt }
+    i490: { width: 49.0pt }
+    i495: { width: 49.5pt }
+    i500: { width: 50.0pt }
+    i510: { width: 51.0pt }
+    i515: { width: 51.5pt }
+    i520: { width: 52.0pt }
+    i525: { width: 52.5pt }
+    i530: { width: 53.0pt }
+    i535: { width: 53.5pt }
+    i540: { width: 54.0pt }
+    i545: { width: 54.5pt }
+    i550: { width: 55.0pt }
+    i555: { width: 55.5pt }
+    i560: { width: 56.0pt }
+    i565: { width: 56.5pt }
+    i570: { width: 57.0pt }
+    i580: { width: 58.0pt }
+    i585: { width: 58.5pt }
+    i595: { width: 59.5pt }
+    i600: { width: 60.0pt }
+    i605: { width: 60.5pt }
+    i610: { width: 61.0pt }
+    i615: { width: 61.5pt }
+    i620: { width: 62.0pt }
+    i625: { width: 62.5pt }
+    i630: { width: 63.0pt }
+    i645: { width: 64.5pt }
+    i650: { width: 65.0pt }
+    i665: { width: 66.5pt }
+    i670: { width: 67.0pt }
+    i675: { width: 67.5pt }
+    i680: { width: 68.0pt }
+    i685: { width: 68.5pt }
+    i690: { width: 69.0pt }
+    i695: { width: 69.5pt }
+    i700: { width: 70.0pt }
+    i705: { width: 70.5pt }
+    i710: { width: 71.0pt }
+    i715: { width: 71.5pt }
+    i720: { width: 72.0pt }
+    i725: { width: 72.5pt }
+    i730: { width: 73.0pt }
+    i735: { width: 73.5pt }
+    i740: { width: 74.0pt }
+    i745: { width: 74.5pt }
+    i750: { width: 75.0pt }
+    i755: { width: 75.5pt }
+    i760: { width: 76.0pt }
+    i765: { width: 76.5pt }
+    i770: { width: 77.0pt }
+    i775: { width: 77.5pt }
+    i780: { width: 78.0pt }
+    i785: { width: 78.5pt }
+    i795: { width: 79.5pt }
+    i800: { width: 80.0pt }
+    i805: { width: 80.5pt }
+    i810: { width: 81.0pt }
+    i815: { width: 81.5pt }
+    i825: { width: 82.5pt }
+    i830: { width: 83.0pt }
+    i835: { width: 83.5pt }
+    i840: { width: 84.0pt }
+    i850: { width: 85.0pt }
+    i860: { width: 86.0pt }
+    i865: { width: 86.5pt }
+    i870: { width: 87.0pt }
+    i875: { width: 87.5pt }
+    i880: { width: 88.0pt }
+    i885: { width: 88.5pt }
+    i890: { width: 89.0pt }
+    i895: { width: 89.5pt }
+    i900: { width: 90.0pt }
+    i910: { width: 91.0pt }
+    i915: { width: 91.5pt }
+    i920: { width: 92.0pt }
+    i925: { width: 92.5pt }
+    i930: { width: 93.0pt }
+    i935: { width: 93.5pt }
+    i940: { width: 94.0pt }
+    i945: { width: 94.5pt }
+    i950: { width: 95.0pt }
+    i955: { width: 95.5pt }
+    i960: { width: 96.0pt }
+    i965: { width: 96.5pt }
+    i970: { width: 97.0pt }
+    i980: { width: 98.0pt }
+    i995: { width: 99.5pt }
+    i1000: { width: 100.0pt }
+    i1015: { width: 101.5pt }
+    i1020: { width: 102.0pt }
+    i1030: { width: 103.0pt }
+    i1040: { width: 104.0pt }
+    i1045: { width: 104.5pt }
+    i1085: { width: 108.5pt }
+    i1100: { width: 110.0pt }
+    i1105: { width: 110.5pt }
+    i1110: { width: 111.0pt }
+    i1145: { width: 114.5pt }
+    i1150: { width: 115.0pt }
+    i1160: { width: 116.0pt }
+    i1205: { width: 120.5pt }
+    i1220: { width: 122.0pt }
+    i1265: { width: 126.5pt }
+    i1425: { width: 142.5pt }
+    i1715: { width: 171.5pt }
+    p944: { line_pitch: 9.44pt }
+    p947: { line_pitch: 9.47pt }
+    p950: { line_pitch: 9.5pt }
+    p952: { line_pitch: 9.52pt }
+    p953: { line_pitch: 9.53pt }
+    p954: { line_pitch: 9.54pt }
+    p955: { line_pitch: 9.55pt }
+    p956: { line_pitch: 9.56pt }
+    p957: { line_pitch: 9.57pt }
+    p959: { line_pitch: 9.59pt }
+    p964: { line_pitch: 9.64pt }
+    p966: { line_pitch: 9.66pt }
+    p968: { line_pitch: 9.68pt }
+    p969: { line_pitch: 9.69pt }
+    p970: { line_pitch: 9.7pt }
+    p972: { line_pitch: 9.72pt }
+    p974: { line_pitch: 9.74pt }
+    p975: { line_pitch: 9.75pt }
+    p976: { line_pitch: 9.76pt }
+    p977: { line_pitch: 9.77pt }
+    p978: { line_pitch: 9.78pt }
+    p979: { line_pitch: 9.79pt }
+    p980: { line_pitch: 9.8pt }
+    p986: { line_pitch: 9.86pt }
+    p1006: { line_pitch: 10.06pt }
+  # (Easter-wings: its lines, set in along a curve into wings and turned
+  # to the right, as far apart as the printing sets them.)
   verse:
     border_left_width: 0
-    padding: [0, 0, 0, 0]
-    font_size: 9.5
-  role:
-    italic: { font_style: italic }
-    spaced: { character_spacing: 2.5, font_size: 8 }
-  title_page:
-    text_align: center
-    title:
-      top: 25%
-      font_size: 16
-      text_transform: uppercase
-    subtitle:
-      font_style: italic
-      font_size: 11
-    authors:
-      font_size: 10
+    padding: 0
+    margin_top: 0
+    margin_bottom: 0
+    font_size: 9.2
+    role:
+      wings: { line_height: 1.45 }
+  thematic_break:
+    margin_top: 0
+    margin_bottom: 0
+    border_width: 1.0
+    border_color: '1A1A1A'
+    role:
+      poem-rule: { width: 190 }
+  image:
+    align: center
+    # (A factotum, a woodcut capital floating at the left: the lines beside
+    # it as near it as the printing sets them.)
+    float_gap: 0.4
+    margin_top: 0
+    margin_bottom: 0
   header:
-    height: 0.5in
-    vertical_align: bottom
-    font_size: 10
+    height: 32pt
+    vertical_align: top
+    padding: [17.5pt, 0, 0, 0]
+    font_size: 9.2
     font_style: italic
+    on_openers: true
     recto:
       left: { content: '' }
-      center: { content: 'The Church.' }
-      right: { content: '{page-number}' }
+      center: { content: '{chapter-title-spread}' }
+      right: { content: '[.folio]#{page-number}#' }
     verso:
-      left: { content: '{page-number}' }
-      center: { content: 'The Church.' }
+      left: { content: '[.folio]#{page-number}#' }
+      center: { content: '{chapter-title-spread}' }
       right: { content: '' }
+    opener: { center: { content: '[.folio]#{page-number}#' } }
+  running_content:
+    spread_whole: false
+  # (No running foot: the foot line is the text's, and may reach into the
+  # foot margin, as a long page's does.)
   footer:
-    height: 0.3in
-    border_width: 0
+    height: 0
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
 webfonts:
@@ -88,11 +413,11 @@ webfonts:
 css: |
   body{font-feature-settings:"hist" 1,"dlig" 1}
   #content h2,#content h3{text-align:center}
-  .verseblock.italic pre{font-style:italic}
+  .paragraph.v p{text-align:left}
   .spaced{letter-spacing:.25em;font-size:85%}
-  .verseblock.text-center pre{text-align:center}
+  .i15{display:inline-block;width:1.5pt}.i25{display:inline-block;width:2.5pt}.i30{display:inline-block;width:3.0pt}.i35{display:inline-block;width:3.5pt}.i40{display:inline-block;width:4.0pt}.i45{display:inline-block;width:4.5pt}.i50{display:inline-block;width:5.0pt}.i55{display:inline-block;width:5.5pt}.i60{display:inline-block;width:6.0pt}.i65{display:inline-block;width:6.5pt}.i70{display:inline-block;width:7.0pt}.i75{display:inline-block;width:7.5pt}.i80{display:inline-block;width:8.0pt}.i85{display:inline-block;width:8.5pt}.i90{display:inline-block;width:9.0pt}.i95{display:inline-block;width:9.5pt}.i100{display:inline-block;width:10.0pt}.i105{display:inline-block;width:10.5pt}.i110{display:inline-block;width:11.0pt}.i115{display:inline-block;width:11.5pt}.i120{display:inline-block;width:12.0pt}.i125{display:inline-block;width:12.5pt}.i130{display:inline-block;width:13.0pt}.i135{display:inline-block;width:13.5pt}.i140{display:inline-block;width:14.0pt}.i145{display:inline-block;width:14.5pt}.i150{display:inline-block;width:15.0pt}.i155{display:inline-block;width:15.5pt}.i160{display:inline-block;width:16.0pt}.i165{display:inline-block;width:16.5pt}.i170{display:inline-block;width:17.0pt}.i175{display:inline-block;width:17.5pt}.i180{display:inline-block;width:18.0pt}.i185{display:inline-block;width:18.5pt}.i190{display:inline-block;width:19.0pt}.i195{display:inline-block;width:19.5pt}.i200{display:inline-block;width:20.0pt}.i205{display:inline-block;width:20.5pt}.i210{display:inline-block;width:21.0pt}.i215{display:inline-block;width:21.5pt}.i220{display:inline-block;width:22.0pt}.i225{display:inline-block;width:22.5pt}.i230{display:inline-block;width:23.0pt}.i235{display:inline-block;width:23.5pt}.i240{display:inline-block;width:24.0pt}.i245{display:inline-block;width:24.5pt}.i250{display:inline-block;width:25.0pt}.i255{display:inline-block;width:25.5pt}.i260{display:inline-block;width:26.0pt}.i265{display:inline-block;width:26.5pt}.i270{display:inline-block;width:27.0pt}.i275{display:inline-block;width:27.5pt}.i280{display:inline-block;width:28.0pt}.i285{display:inline-block;width:28.5pt}.i290{display:inline-block;width:29.0pt}.i295{display:inline-block;width:29.5pt}.i300{display:inline-block;width:30.0pt}.i305{display:inline-block;width:30.5pt}.i310{display:inline-block;width:31.0pt}.i315{display:inline-block;width:31.5pt}.i320{display:inline-block;width:32.0pt}.i325{display:inline-block;width:32.5pt}.i330{display:inline-block;width:33.0pt}.i335{display:inline-block;width:33.5pt}.i338{display:inline-block;width:33.8pt}.i340{display:inline-block;width:34.0pt}.i345{display:inline-block;width:34.5pt}.i350{display:inline-block;width:35.0pt}.i355{display:inline-block;width:35.5pt}.i360{display:inline-block;width:36.0pt}.i365{display:inline-block;width:36.5pt}.i370{display:inline-block;width:37.0pt}.i374{display:inline-block;width:37.4pt}.i375{display:inline-block;width:37.5pt}.i380{display:inline-block;width:38.0pt}.i385{display:inline-block;width:38.5pt}.i390{display:inline-block;width:39.0pt}.i395{display:inline-block;width:39.5pt}.i400{display:inline-block;width:40.0pt}.i405{display:inline-block;width:40.5pt}.i410{display:inline-block;width:41.0pt}.i415{display:inline-block;width:41.5pt}.i420{display:inline-block;width:42.0pt}.i430{display:inline-block;width:43.0pt}.i435{display:inline-block;width:43.5pt}.i438{display:inline-block;width:43.8pt}.i440{display:inline-block;width:44.0pt}.i445{display:inline-block;width:44.5pt}.i450{display:inline-block;width:45.0pt}.i455{display:inline-block;width:45.5pt}.i460{display:inline-block;width:46.0pt}.i465{display:inline-block;width:46.5pt}.i470{display:inline-block;width:47.0pt}.i475{display:inline-block;width:47.5pt}.i480{display:inline-block;width:48.0pt}.i485{display:inline-block;width:48.5pt}.i490{display:inline-block;width:49.0pt}.i495{display:inline-block;width:49.5pt}.i500{display:inline-block;width:50.0pt}.i510{display:inline-block;width:51.0pt}.i515{display:inline-block;width:51.5pt}.i520{display:inline-block;width:52.0pt}.i525{display:inline-block;width:52.5pt}.i530{display:inline-block;width:53.0pt}.i535{display:inline-block;width:53.5pt}.i540{display:inline-block;width:54.0pt}.i545{display:inline-block;width:54.5pt}.i550{display:inline-block;width:55.0pt}.i555{display:inline-block;width:55.5pt}.i560{display:inline-block;width:56.0pt}.i565{display:inline-block;width:56.5pt}.i570{display:inline-block;width:57.0pt}.i580{display:inline-block;width:58.0pt}.i585{display:inline-block;width:58.5pt}.i595{display:inline-block;width:59.5pt}.i600{display:inline-block;width:60.0pt}.i605{display:inline-block;width:60.5pt}.i610{display:inline-block;width:61.0pt}.i615{display:inline-block;width:61.5pt}.i620{display:inline-block;width:62.0pt}.i625{display:inline-block;width:62.5pt}.i630{display:inline-block;width:63.0pt}.i645{display:inline-block;width:64.5pt}.i650{display:inline-block;width:65.0pt}.i665{display:inline-block;width:66.5pt}.i670{display:inline-block;width:67.0pt}.i675{display:inline-block;width:67.5pt}.i680{display:inline-block;width:68.0pt}.i685{display:inline-block;width:68.5pt}.i690{display:inline-block;width:69.0pt}.i695{display:inline-block;width:69.5pt}.i700{display:inline-block;width:70.0pt}.i705{display:inline-block;width:70.5pt}.i710{display:inline-block;width:71.0pt}.i715{display:inline-block;width:71.5pt}.i720{display:inline-block;width:72.0pt}.i725{display:inline-block;width:72.5pt}.i730{display:inline-block;width:73.0pt}.i735{display:inline-block;width:73.5pt}.i740{display:inline-block;width:74.0pt}.i745{display:inline-block;width:74.5pt}.i750{display:inline-block;width:75.0pt}.i755{display:inline-block;width:75.5pt}.i760{display:inline-block;width:76.0pt}.i765{display:inline-block;width:76.5pt}.i770{display:inline-block;width:77.0pt}.i775{display:inline-block;width:77.5pt}.i780{display:inline-block;width:78.0pt}.i785{display:inline-block;width:78.5pt}.i795{display:inline-block;width:79.5pt}.i800{display:inline-block;width:80.0pt}.i805{display:inline-block;width:80.5pt}.i810{display:inline-block;width:81.0pt}.i815{display:inline-block;width:81.5pt}.i825{display:inline-block;width:82.5pt}.i830{display:inline-block;width:83.0pt}.i835{display:inline-block;width:83.5pt}.i840{display:inline-block;width:84.0pt}.i850{display:inline-block;width:85.0pt}.i860{display:inline-block;width:86.0pt}.i865{display:inline-block;width:86.5pt}.i870{display:inline-block;width:87.0pt}.i875{display:inline-block;width:87.5pt}.i880{display:inline-block;width:88.0pt}.i885{display:inline-block;width:88.5pt}.i890{display:inline-block;width:89.0pt}.i895{display:inline-block;width:89.5pt}.i900{display:inline-block;width:90.0pt}.i910{display:inline-block;width:91.0pt}.i915{display:inline-block;width:91.5pt}.i920{display:inline-block;width:92.0pt}.i925{display:inline-block;width:92.5pt}.i930{display:inline-block;width:93.0pt}.i935{display:inline-block;width:93.5pt}.i940{display:inline-block;width:94.0pt}.i945{display:inline-block;width:94.5pt}.i950{display:inline-block;width:95.0pt}.i955{display:inline-block;width:95.5pt}.i960{display:inline-block;width:96.0pt}.i965{display:inline-block;width:96.5pt}.i970{display:inline-block;width:97.0pt}.i980{display:inline-block;width:98.0pt}.i995{display:inline-block;width:99.5pt}.i1000{display:inline-block;width:100.0pt}.i1015{display:inline-block;width:101.5pt}.i1020{display:inline-block;width:102.0pt}.i1030{display:inline-block;width:103.0pt}.i1040{display:inline-block;width:104.0pt}.i1045{display:inline-block;width:104.5pt}.i1085{display:inline-block;width:108.5pt}.i1100{display:inline-block;width:110.0pt}.i1105{display:inline-block;width:110.5pt}.i1110{display:inline-block;width:111.0pt}.i1145{display:inline-block;width:114.5pt}.i1150{display:inline-block;width:115.0pt}.i1160{display:inline-block;width:116.0pt}.i1205{display:inline-block;width:120.5pt}.i1220{display:inline-block;width:122.0pt}.i1265{display:inline-block;width:126.5pt}.i1425{display:inline-block;width:142.5pt}.i1715{display:inline-block;width:171.5pt}
 epub-css: |
   body{font-feature-settings:"hist" 1,"dlig" 1}
   h2,h3{text-align:center}
-  .verseblock.italic pre{font-style:italic}
-  .spaced{letter-spacing:.25em}
+  .spaced{letter-spacing:.25em;font-size:85%}
+  .i15{display:inline-block;width:1.5pt}.i25{display:inline-block;width:2.5pt}.i30{display:inline-block;width:3.0pt}.i35{display:inline-block;width:3.5pt}.i40{display:inline-block;width:4.0pt}.i45{display:inline-block;width:4.5pt}.i50{display:inline-block;width:5.0pt}.i55{display:inline-block;width:5.5pt}.i60{display:inline-block;width:6.0pt}.i65{display:inline-block;width:6.5pt}.i70{display:inline-block;width:7.0pt}.i75{display:inline-block;width:7.5pt}.i80{display:inline-block;width:8.0pt}.i85{display:inline-block;width:8.5pt}.i90{display:inline-block;width:9.0pt}.i95{display:inline-block;width:9.5pt}.i100{display:inline-block;width:10.0pt}.i105{display:inline-block;width:10.5pt}.i110{display:inline-block;width:11.0pt}.i115{display:inline-block;width:11.5pt}.i120{display:inline-block;width:12.0pt}.i125{display:inline-block;width:12.5pt}.i130{display:inline-block;width:13.0pt}.i135{display:inline-block;width:13.5pt}.i140{display:inline-block;width:14.0pt}.i145{display:inline-block;width:14.5pt}.i150{display:inline-block;width:15.0pt}.i155{display:inline-block;width:15.5pt}.i160{display:inline-block;width:16.0pt}.i165{display:inline-block;width:16.5pt}.i170{display:inline-block;width:17.0pt}.i175{display:inline-block;width:17.5pt}.i180{display:inline-block;width:18.0pt}.i185{display:inline-block;width:18.5pt}.i190{display:inline-block;width:19.0pt}.i195{display:inline-block;width:19.5pt}.i200{display:inline-block;width:20.0pt}.i205{display:inline-block;width:20.5pt}.i210{display:inline-block;width:21.0pt}.i215{display:inline-block;width:21.5pt}.i220{display:inline-block;width:22.0pt}.i225{display:inline-block;width:22.5pt}.i230{display:inline-block;width:23.0pt}.i235{display:inline-block;width:23.5pt}.i240{display:inline-block;width:24.0pt}.i245{display:inline-block;width:24.5pt}.i250{display:inline-block;width:25.0pt}.i255{display:inline-block;width:25.5pt}.i260{display:inline-block;width:26.0pt}.i265{display:inline-block;width:26.5pt}.i270{display:inline-block;width:27.0pt}.i275{display:inline-block;width:27.5pt}.i280{display:inline-block;width:28.0pt}.i285{display:inline-block;width:28.5pt}.i290{display:inline-block;width:29.0pt}.i295{display:inline-block;width:29.5pt}.i300{display:inline-block;width:30.0pt}.i305{display:inline-block;width:30.5pt}.i310{display:inline-block;width:31.0pt}.i315{display:inline-block;width:31.5pt}.i320{display:inline-block;width:32.0pt}.i325{display:inline-block;width:32.5pt}.i330{display:inline-block;width:33.0pt}.i335{display:inline-block;width:33.5pt}.i338{display:inline-block;width:33.8pt}.i340{display:inline-block;width:34.0pt}.i345{display:inline-block;width:34.5pt}.i350{display:inline-block;width:35.0pt}.i355{display:inline-block;width:35.5pt}.i360{display:inline-block;width:36.0pt}.i365{display:inline-block;width:36.5pt}.i370{display:inline-block;width:37.0pt}.i374{display:inline-block;width:37.4pt}.i375{display:inline-block;width:37.5pt}.i380{display:inline-block;width:38.0pt}.i385{display:inline-block;width:38.5pt}.i390{display:inline-block;width:39.0pt}.i395{display:inline-block;width:39.5pt}.i400{display:inline-block;width:40.0pt}.i405{display:inline-block;width:40.5pt}.i410{display:inline-block;width:41.0pt}.i415{display:inline-block;width:41.5pt}.i420{display:inline-block;width:42.0pt}.i430{display:inline-block;width:43.0pt}.i435{display:inline-block;width:43.5pt}.i438{display:inline-block;width:43.8pt}.i440{display:inline-block;width:44.0pt}.i445{display:inline-block;width:44.5pt}.i450{display:inline-block;width:45.0pt}.i455{display:inline-block;width:45.5pt}.i460{display:inline-block;width:46.0pt}.i465{display:inline-block;width:46.5pt}.i470{display:inline-block;width:47.0pt}.i475{display:inline-block;width:47.5pt}.i480{display:inline-block;width:48.0pt}.i485{display:inline-block;width:48.5pt}.i490{display:inline-block;width:49.0pt}.i495{display:inline-block;width:49.5pt}.i500{display:inline-block;width:50.0pt}.i510{display:inline-block;width:51.0pt}.i515{display:inline-block;width:51.5pt}.i520{display:inline-block;width:52.0pt}.i525{display:inline-block;width:52.5pt}.i530{display:inline-block;width:53.0pt}.i535{display:inline-block;width:53.5pt}.i540{display:inline-block;width:54.0pt}.i545{display:inline-block;width:54.5pt}.i550{display:inline-block;width:55.0pt}.i555{display:inline-block;width:55.5pt}.i560{display:inline-block;width:56.0pt}.i565{display:inline-block;width:56.5pt}.i570{display:inline-block;width:57.0pt}.i580{display:inline-block;width:58.0pt}.i585{display:inline-block;width:58.5pt}.i595{display:inline-block;width:59.5pt}.i600{display:inline-block;width:60.0pt}.i605{display:inline-block;width:60.5pt}.i610{display:inline-block;width:61.0pt}.i615{display:inline-block;width:61.5pt}.i620{display:inline-block;width:62.0pt}.i625{display:inline-block;width:62.5pt}.i630{display:inline-block;width:63.0pt}.i645{display:inline-block;width:64.5pt}.i650{display:inline-block;width:65.0pt}.i665{display:inline-block;width:66.5pt}.i670{display:inline-block;width:67.0pt}.i675{display:inline-block;width:67.5pt}.i680{display:inline-block;width:68.0pt}.i685{display:inline-block;width:68.5pt}.i690{display:inline-block;width:69.0pt}.i695{display:inline-block;width:69.5pt}.i700{display:inline-block;width:70.0pt}.i705{display:inline-block;width:70.5pt}.i710{display:inline-block;width:71.0pt}.i715{display:inline-block;width:71.5pt}.i720{display:inline-block;width:72.0pt}.i725{display:inline-block;width:72.5pt}.i730{display:inline-block;width:73.0pt}.i735{display:inline-block;width:73.5pt}.i740{display:inline-block;width:74.0pt}.i745{display:inline-block;width:74.5pt}.i750{display:inline-block;width:75.0pt}.i755{display:inline-block;width:75.5pt}.i760{display:inline-block;width:76.0pt}.i765{display:inline-block;width:76.5pt}.i770{display:inline-block;width:77.0pt}.i775{display:inline-block;width:77.5pt}.i780{display:inline-block;width:78.0pt}.i785{display:inline-block;width:78.5pt}.i795{display:inline-block;width:79.5pt}.i800{display:inline-block;width:80.0pt}.i805{display:inline-block;width:80.5pt}.i810{display:inline-block;width:81.0pt}.i815{display:inline-block;width:81.5pt}.i825{display:inline-block;width:82.5pt}.i830{display:inline-block;width:83.0pt}.i835{display:inline-block;width:83.5pt}.i840{display:inline-block;width:84.0pt}.i850{display:inline-block;width:85.0pt}.i860{display:inline-block;width:86.0pt}.i865{display:inline-block;width:86.5pt}.i870{display:inline-block;width:87.0pt}.i875{display:inline-block;width:87.5pt}.i880{display:inline-block;width:88.0pt}.i885{display:inline-block;width:88.5pt}.i890{display:inline-block;width:89.0pt}.i895{display:inline-block;width:89.5pt}.i900{display:inline-block;width:90.0pt}.i910{display:inline-block;width:91.0pt}.i915{display:inline-block;width:91.5pt}.i920{display:inline-block;width:92.0pt}.i925{display:inline-block;width:92.5pt}.i930{display:inline-block;width:93.0pt}.i935{display:inline-block;width:93.5pt}.i940{display:inline-block;width:94.0pt}.i945{display:inline-block;width:94.5pt}.i950{display:inline-block;width:95.0pt}.i955{display:inline-block;width:95.5pt}.i960{display:inline-block;width:96.0pt}.i965{display:inline-block;width:96.5pt}.i970{display:inline-block;width:97.0pt}.i980{display:inline-block;width:98.0pt}.i995{display:inline-block;width:99.5pt}.i1000{display:inline-block;width:100.0pt}.i1015{display:inline-block;width:101.5pt}.i1020{display:inline-block;width:102.0pt}.i1030{display:inline-block;width:103.0pt}.i1040{display:inline-block;width:104.0pt}.i1045{display:inline-block;width:104.5pt}.i1085{display:inline-block;width:108.5pt}.i1100{display:inline-block;width:110.0pt}.i1105{display:inline-block;width:110.5pt}.i1110{display:inline-block;width:111.0pt}.i1145{display:inline-block;width:114.5pt}.i1150{display:inline-block;width:115.0pt}.i1160{display:inline-block;width:116.0pt}.i1205{display:inline-block;width:120.5pt}.i1220{display:inline-block;width:122.0pt}.i1265{display:inline-block;width:126.5pt}.i1425{display:inline-block;width:142.5pt}.i1715{display:inline-block;width:171.5pt}

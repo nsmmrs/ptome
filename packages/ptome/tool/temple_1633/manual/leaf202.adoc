@@ -1,0 +1,109 @@
+// The titles of the poems, their last page; FINIS.
+ifdef::backend-pdf[]
+[.rule-v,top=700]
+image::temple-index-rule-202-1.png[pdfheight=294.07pt]
+
+[.ix.ix-r,base=830,first="Sepulchre",column]
+Sepulchre [.ixn]#32#
+Sighs and grones [.ixn]#75#
+Sinne [.ixn]#37. 55#
+Sinnes round [.ixn]#114#
+The Sinner [.ixn]#30#
+Sion [.ixn]#99#
+The Size [.ixn]#131#
+The Sonne [.ixn]#162#
+The Starre [.ixn]#65#
+The Storm [.ixn]#125#
+Submission [.ixn]#87#
+Sunday [.ixn]#66#
+[.rm]#Superliminare# [.ixn]#17#
+
+[.ix.ix-l.ix-letter,base=831,first="P",letter]
+P
+
+[.ix.ix-l.ix-drop,base=970,first="Aradise",column]
+PAradise [.ixn]#125#
+A Parodie [.ixn]#177#
+
+[.ix.ix-l,base=1217,first="Peace",column]
+Peace [.ixn]#117#
+The Pearl, Matth. 13. [.ixn]#81#
+[.rm]#Perirrhanterium# [.ixn]#1#
+The Pilgrimage [.ixn]#135#
+The Posie [.ixn]#177#
+Praise [.ixn]#53. 140. 151#
+Prayer [.ixn]#43. 95#
+The Priesthood [.ixn]#154#
+Providence [.ixn]#109#
+The 23 Psalme [.ixn]#167#
+The Pulley [.ixn]#153#
+
+[.ix.ix-r.ix-letter,base=2581,first="T",letter]
+T
+
+[.ix.ix-l.ix-letter,base=2696,first="Q",letter]
+Q
+
+[.ix.ix-r.ix-drop,base=2742,first="He Temper",column]
+THe Temper [.ixn]#46, 47#
+The Thanksgiving
+
+[.ix.ix-l.ix-drop,base=2845,first="He Quidditie",column]
+THe Quidditie [.ixn]#61#
+The Quip [.ixn]#103#
+
+[.ix.ix-r,base=3022,first="27",column]
+[.i80]##{nbsp}##[.rm]#27#
+Time [.ixn]#115#
+Trinitie-Sunday [.ixn]#59#
+
+[.ix.ix-l.ix-letter,base=3162,first="R",letter]
+R
+
+[.ix.ix-l.ix-drop,base=3319,first="Edemption",column]
+REdemption [.ixn]#31#
+Repentance [.ixn]#40#
+
+[.ix.ix-r.ix-letter,base=3432,first="V",letter]
+V
+
+[.ix.ix-l,base=3578,first="The Reprisall",column]
+The Reprisall [.ixn]#28#
+The Rose [.ixn]#172#
+
+[.ix.ix-r.ix-drop,base=3587,first="Anitie",column]
+VAnitie [.ixn]#77. 104#
+Vertue [.ixn]#18#
+
+[.ix.ix-l.ix-letter,base=3846,first="S",letter]
+S
+
+[.ix.ix-r,base=3849,first="Ungratefulnesse",column]
+Ungratefulnesse [.ixn]#74#
+Unkindnesse [.ixn]#86#
+
+[.ix.ix-l.ix-drop,base=3982,first="He Sacrifice",column]
+THe Sacrifice [.ixn]#19#
+Saints, [.rm]#vide# Angels
+
+[.ix.ix-r.ix-letter,base=4140,first="W",letter]
+W
+
+[.ix.ix-l,base=4254,first="Schismes, vide Church-",column]
+Schismes, [.rm]#vide# Church-
+[.i80]##{nbsp}##rents
+{empty}H. Scripture [.ixn]#50#
+The Search [.ixn]#156#
+
+[.ix.ix-r.ix-drop,base=4301,first="He Water-course",column]
+THe Water-course [.ixn]#164#
+Whitsunday [.ixn]#51#
+
+[.ix.ix-r,base=4533,first="The World",column]
+The World [.ixn]#76#
+A Wreath [.ixn]#179#
+
+[.finis,base=5117,first="FINIS."]
+FINIS.
+
+endif::[]

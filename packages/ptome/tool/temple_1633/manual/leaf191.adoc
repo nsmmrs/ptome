@@ -1,0 +1,81 @@
+// The Church Militant's first page as the printing sets it: a band of
+// ornament over its title; its first word's capital a factotum, a woodcut
+// six lines high, the lines beside it set in past it and broken where the
+// printing breaks them, their ends set in under them.
+ifdef::backend-pdf[]
+[.band,top=813]
+image::temple-band-militant.png[pdfwidth=182.9pt]
+endif::[]
+
+[#church-militant,running-title="The Church Militant.",ocr=3,first="The Church Militant."]
+== The Church Militant.
+
+ifdef::backend-pdf[]
+[.factotum,top=1435]
+image::temple-factotum-a.png[A,pdfwidth=53.29pt,align=left]
+
+[.v.p966,ocr=6,first="Lmightie Lord, who from thy glorious"]
+[.i545]##{nbsp}##Lmightie Lord, who from thy glorious
+[.i735]##{nbsp}##throne
+[.i545]##{nbsp}##Seest and rulest all things ev'n as one:
+[.i555]##{nbsp}##The smallest ant or atome knows thy
+[.i725]##{nbsp}##power,
+[.i535]##{nbsp}##Known also to each minute of an houre:
+Much more do Common-weals acknowledge thee,
+And wrap their policies in thy decree,
+Complying with thy counsels, doing nought
+Which doth not meet with an eternall thought.
+But above all, thy Church and Spouse doth prove
+Not the decrees of power, but bands of love.
+Early didst thou arise to plant this vine,
+Which might the more indeare it to be thine.
+Spices come from the East; so did thy Spouse,
+Trimme as the light, sweet as the laden boughs
+Of __Noahs__ shadie vine, chaste as the dove;
+Prepar'd and fitted to receive thy love,
+The course was westward, that the sunne might light
+As well our understanding as our sight.
+Where th' Ark did rest, there __Abraham__ began
+To bring the other Ark from __Canaan.__
+__Moses__ pursu'd this: but King __Solomon__
+Finish'd and fixt the old religion.
+When it grew loose, the Jews did hope in vain
+By nailing Christ to fasten it again.
+But to the Gentiles he bore crosse and all,
+Rending with earthquakes the partition-wall:
+Onely whereas the Ark in glorie shone,
+Now with the crosse, as with a staffe, alone,
+Religion, like a pilgrime, westward bent,
+endif::[]
+ifndef::backend-pdf[]
+[.v]
+ALmightie Lord, who from thy glorious throne
+Seest and rulest all things ev'n as one:
+The smallest ant or atome knows thy power,
+Known also to each minute of an houre:
+Much more do Common-weals acknowledge thee,
+And wrap their policies in thy decree,
+Complying with thy counsels, doing nought
+Which doth not meet with an eternall thought.
+But above all, thy Church and Spouse doth prove
+Not the decrees of power, but bands of love.
+Early didst thou arise to plant this vine,
+Which might the more indeare it to be thine.
+Spices come from the East; so did thy Spouse,
+Trimme as the light, sweet as the laden boughs
+Of __Noahs__ shadie vine, chaste as the dove;
+Prepar'd and fitted to receive thy love,
+The course was westward, that the sunne might light
+As well our understanding as our sight.
+Where th' Ark did rest, there __Abraham__ began
+To bring the other Ark from __Canaan.__
+__Moses__ pursu'd this: but King __Solomon__
+Finish'd and fixt the old religion.
+When it grew loose, the Jews did hope in vain
+By nailing Christ to fasten it again.
+But to the Gentiles he bore crosse and all,
+Rending with earthquakes the partition-wall:
+Onely whereas the Ark in glorie shone,
+Now with the crosse, as with a staffe, alone,
+Religion, like a pilgrime, westward bent,
+endif::[]

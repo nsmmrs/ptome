@@ -1,0 +1,52 @@
+// The Printers to the Reader's first page as the printing sets it: a band
+// of ornament over its title; its first word's capital a factotum five
+// lines high, the lines beside it set in past it; its lines justified,
+// broken where the printing breaks them.
+ifdef::backend-pdf[]
+[.band,top=819]
+image::temple-band-reader.png[pdfwidth=192.2pt]
+endif::[]
+
+[#printers,running-title="The Printers to the Reader.",ocr=2,first="The Printers to the Reader."]
+== The Printers to the Reader.
+
+ifdef::backend-pdf[]
+[.factotum,top=1865]
+image::temple-factotum-t2.png[T,pdfwidth=45.0pt,align=left]
+
+[.prose,ocr=3,first="He dedication of this work having been"]
+[.i460]##{nbsp}##He dedication of this work having been
+[.i475]##{nbsp}##made by the Authour to the __Divine Ma-__
+[.i475]##{nbsp}##__jestie__ onely, how should we now presume
+[.i475]##{nbsp}##to interest any mortall man in the patro-
+[.i475]##{nbsp}##nage of it? Much lesse think we it meet
+to seek the recommendation of the Muses, for that
+which himself was confident to have been inspired by
+a diviner breath then flows from __Helicon.__ The world
+therefore shall receive it in that naked simplicitie, with
+which he left it, without any addition either of support
+or ornament, more then is included in it self. We leave
+it free and unforestalled to every mans judgement, and
+to the benefit that he shall finde by perusall. Onely for
+the clearing of some passages, we have thought it not
+unfit to make the common-Reader privie to some few
+particularities of the condition and disposition of the
+Person;
+endif::[]
+ifndef::backend-pdf[]
+[.prose]
+THe dedication of this work having been made by the Authour to the __Divine Majestie__ onely, how should we now presume to interest any mortall man in the patronage of it? Much lesse think we it meet to seek the recommendation of the Muses, for that which himself was confident to have been inspired by a diviner breath then flows from __Helicon.__ The world therefore shall receive it in that naked simplicitie, with which he left it, without any addition either of support or ornament, more then is included in it self. We leave it free and unforestalled to every mans judgement, and to the benefit that he shall finde by perusall. Onely for the clearing of some passages, we have thought it not unfit to make the common-Reader privie to some few particularities of the condition and disposition of the Person;
+endif::[]
+
+[.prose.indent,ocr=21,first="Being nobly born, and as eminently endued with"]
+Being nobly born, and as eminently endued with
+gifts of the minde, and having by industrie and happy
+education perfected them to that great height of excel-
+lencie, whereof his fellowship of Trinitie Colledge in
+Cambridge, and his Orator-ship in the Universitie,
+together with that knowledge which the Kings Court
+had taken of him, could make relation farre above or-
+dinarie. Quitting both his deserts and all the opportu-
+nities that he had for worldly preferment, he betook
+himself to the Sanctuarie and Temple of God, choo-
+sing rather to serve at Gods Altar, then to seek the ho-

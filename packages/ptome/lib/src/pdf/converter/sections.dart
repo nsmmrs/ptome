@@ -655,7 +655,13 @@ extension _Sections on PdfConverter {
                       _n('heading_margin_page_top') ??
                       0)
             .toDouble();
-    if (pageTop > 0) content = _PageTopGap(content, pageTop);
+    // (Negative too, its own: a title drawn up above the region's top.)
+    if (pageTop > 0 ||
+        (pageTop < 0 &&
+            ownMarginTop != null &&
+            _s('base_margin_break') == 'keep')) {
+      content = _PageTopGap(content, pageTop);
+    }
     final category = 'heading_h$level';
     // (The modern engine: the level's side margins, negative to reach out
     // past the content's edges, as a banner.)

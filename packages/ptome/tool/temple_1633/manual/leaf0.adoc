@@ -1,0 +1,47 @@
+// The title page as the printing sets it: its frame of flowers, its rules
+// and its flower the scan's (cut out, the words painted out: fetch.yml),
+// its lines set over them where the printing sets them, in spaced
+// capitals of their sizes.
+// head-base: 660
+ifdef::backend-pdf[]
+[.frame,top=570]
+image::temple-title-frame.png[pdfwidth=188.1pt]
+
+[.tp-the,base=1182,first="THE"]
+THE
+
+[.tp-temple,base=1468,first="TEMPLE."]
+TEMPLE.
+
+[.tp-sacred,base=1709,first="SACRED POEMS"]
+SACRED POEMS
+
+[.tp-and,base=1892,first="AND"]
+AND
+
+[.tp-private,base=2074,first="PRIVATE EJACU-"]
+PRIVATE EJACU-
+
+[.tp-lations,base=2250,first="LATIONS."]
+LATIONS.
+
+[.tp-by,base=2646,first="By Mr. George Herbert,"]
+By M^r^. G[.tp-sc]##eorge## H[.tp-sc]##erbert##,
+late Oratour of the Universitie
+of __Cambridge.__
+
+[.tp-ed,base=3301,first="The second Edition."]
+__The second Edition.__
+
+[.tp-psal,base=3685,first="Psal. 29."]
+P[.tp-sc2]##sal##. 29.
+
+[.tp-motto,base=3868,first="In his Temple doth every man"]
+__In his Temple doth every man__
+__speak of his honour.__
+
+[.tp-imprint,base=4812,first="Printed by T.Buck, and R. Daniel,"]
+Printed by __T. Buck,__ and __R. Daniel,__
+printers to the Universitie
+of __Cambridge,__ 1633.
+endif::[]

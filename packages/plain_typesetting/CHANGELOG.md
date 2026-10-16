@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `UprightBox.clockwise` (a sideways box turned to the right) and
+  `UprightBox.inFlow` (set below what is before it in its region, as far
+  down it as its longest line); `BoxStyle.leadText` (text read before a
+  box's first line, a drop initial's, for `LayoutResult.firstText`); a
+  paragraph's placed lines carry their text (`PieceLine.text`).
+
 - `TextRun.leader`: the room before a run set flush right filled with
   copies of a text, each a whole number of its widths from the line's
   start (TeX's `\leaders`: a contents' dots, lined up from line to line).

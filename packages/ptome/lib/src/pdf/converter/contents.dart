@@ -257,7 +257,17 @@ final RegExp _openingPunctuation = RegExp('^[“‘"\'«‹(\\[¿¡„‚]+');
 /// Text with a drop beside its first lines: [drop] drawn [width] wide at
 /// the text's left, [dy] points down from its top.
 final class _Dropped implements BaselineContent {
-  const new(this.text, this.drop, this.width, this.dy, {this.shift = 0});
+  const new(
+    this.text,
+    this.drop,
+    this.width,
+    this.dy, {
+    this.shift = 0,
+    this.letter = '',
+  });
+
+  /// The initial's text, read before the first line's (a catchword's).
+  final String letter;
 
   final CustomContent text;
   final CustomContent drop;
@@ -286,7 +296,21 @@ final class _Dropped implements BaselineContent {
           : placed.height,
       rest: placed.rest,
       anchors: placed.anchors,
-      lines: placed.lines,
+      // (Its first line's text with the initial's letter: the word a
+      // catchword takes whole.)
+      lines: [
+        for (final (i, line) in placed.lines.indexed)
+          if (i == 0 && letter.isNotEmpty)
+            PieceLine(
+              line.baseline,
+              left: line.left,
+              right: line.right,
+              continues: line.continues,
+              text: '$letter${line.text}',
+            )
+          else
+            line,
+      ],
       paint: (page, x, top) {
         mark?.paint(page, x - shift, top - dy);
         placed.paint(page, x, top);
@@ -1584,6 +1608,7 @@ extension on List<PieceLine> {
         left: line.left + dx,
         right: line.right + dx,
         continues: line.continues,
+        text: line.text,
       ),
   ];
 }

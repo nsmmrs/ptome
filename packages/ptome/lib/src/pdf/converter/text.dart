@@ -168,12 +168,21 @@ extension _Text on PdfConverter {
         dropIndent: dropIndent,
         justifyWidest:
             _choice('base_justify_width', const ['room', 'widest']) == 'widest',
-        alignLast: _choice('base_text_align_last', const [
-          'left',
-          'center',
-          'right',
-          'justify',
-        ]),
+        alignLast:
+            _roleAlignLast != null &&
+                const [
+                  'left',
+                  'center',
+                  'right',
+                  'justify',
+                ].contains(_roleAlignLast)
+            ? _roleAlignLast
+            : _choice('base_text_align_last', const [
+                'left',
+                'center',
+                'right',
+                'justify',
+              ]),
       ),
       _text,
     );

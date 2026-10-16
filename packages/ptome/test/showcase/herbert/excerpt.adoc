@@ -5,53 +5,61 @@
 :look: herbert
 :looksdir: {docdir}
 :notitle:
+:source-lines:
+:nbsp: &#160;
 
-// A poem's shape (doc/showcase.md): The Altar, its lines set in to make
-// an altar, and Easter-wings' first stanza turned sideways on a page of
-// its own, its lines centred as wings. (The long s and the ligatures the
-// look asks for are in IM Fell, not in the fonts the tests commit: the
-// whole work, built in its faces, has them.)
+// A poem's shape (doc/showcase.md): The Altar, each part of its shape a
+// paragraph as wide as the 1633 printing's, its lines justified to fill
+// it; Easter-wings' first stanza under its title, turned to the right
+// on its page, its lines set in along a curve into wings. (The long s and
+// the ligatures the look asks for are in IM Fell, not in the fonts the
+// tests commit: the whole work, built in its faces, has them.)
 
 [#the-church]
 == The Church
 
-[.headpiece]
 === The Altar.
 
-[verse.altar]
-____
-A broken [.spaced]#ALTAR#, Lord, thy servant reares,
+[.altar.altar-1]
+A broken [.spaced-cap]##A##[.spaced]##LTAR##, Lord, thy servant reares;
 Made of a heart, and cemented with teares:
-   Whose parts are as thy hand did frame;
-   No workmans tool hath touch'd the same.
-       A [.spaced]#HEART# alone
-       Is such a stone,
-       As nothing but
-       Thy power doth cut.
-       Wherefore each part
-       Of my hard heart
-       Meets in this frame,
-       To praise thy name:
-   That if I chance to hold my peace,
-   These stones to praise thee may not cease.
-O let thy blessed [.spaced]#SACRIFICE# be mine,
-And sanctifie this [.spaced]#ALTAR# to be thine.
-____
 
-[#easter-wings%notitle]
-=== Easter-wings
+[.altar.altar-2]
+Whose parts are as thy hand did frame;
+No workmans tool hath touch'd the same.
 
-[verse.sideways.text-center]
-.¶ Easter-wings.
+[.altar.altar-3]
+A [.spaced-cap]##H##[.spaced]##EART## alone
+Is such a stone,
+As nothing but
+Thy power doth cut.
+Wherefore each part
+Of my hard heart
+Meets in this frame,
+To praise thy name:
+
+[.altar.altar-4]
+That if I chance to hold my peace,
+These stones to praise thee may not cease.
+
+[.altar.altar-5]
+O let thy blessed [.spaced-cap]##S##[.spaced]##ACRIFICE## be mine,
+And sanctifie this [.spaced-cap]##A##[.spaced]##LTAR## to be thine.
+
+<<<
+
+=== ¶ Easter-wings.
+
+[verse.sideways.clockwise.in-flow.wings]
 ____
 Lord, who createdst man in wealth and store,
-Though foolishly he lost the same,
-Decaying more and more,
-Till he became
-Most poore:
-With thee
-O let me rise
-As larks, harmoniously,
-And sing this day thy victories:
+[.i105]##{nbsp}##Though foolishly he lost the same,
+[.i195]##{nbsp}##Decaying more and more,
+[.i285]##{nbsp}##Till he became
+[.i360]##{nbsp}##Most poore:
+[.i370]##{nbsp}##With thee
+[.i280]##{nbsp}##O let me rise
+[.i195]##{nbsp}##As larks, harmoniously,
+[.i95]##{nbsp}##And sing this day thy victories:
 Then shall the fall further the flight in me.
 ____

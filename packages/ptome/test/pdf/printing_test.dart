@@ -8,7 +8,9 @@
 // before its chapter's heading, a block with no room beside a float set
 // below it; a schoolbook's numbered paragraphs (`olist_marker_position:
 // inside`) and its poems' own indents and type, a contents' columns and
-// dot leaders, a folio at the foot of the opening pages alone. The pages
+// dot leaders, a folio at the foot of the opening pages alone; a
+// duodecimo's signed leaves, its catchwords, its shaped and sideways
+// poems, an index's columns (The Temple, after its 1633 printing). The pages
 // read back by Poppler, recorded in test/oracles/pdf_printing.json.gz
 // (test/support/oracles.dart; ORACLES=record asks them again).
 @TestOn('vm')
@@ -407,5 +409,135 @@ void main() {
     ).first;
     final pitch = _line(page, 'Willie')[3] - _line(page, 'Your')[3];
     expect(pitch, lessThan(20));
+  });
+
+  test("{page-signature} with _signature_signed: a gathering's first leaves "
+      'signed on their rectos, the first by its letter, the others by '
+      "_signature_leaf_template's letter and number (A, A 2, A 3)", () {
+    final paras = List.filled(7, '<<<\n\nA page.').join('\n\n');
+    final pages = _lines(
+      _pdf(
+        '= Book\n:doctype: book\n:notitle:\n\n== One\n\nA page.\n\n$paras\n',
+        'running_content:\n  signature:\n'
+            '    interval: 8\n    first: 1\n    start: A\n    signed: 3\n'
+            'footer:\n  height: 0.5in\n  on_openers: true\n'
+            '  recto: { left: { content: "x{page-signature}" }, '
+            'right: { content: "" } }\n'
+            '  verso: { left: { content: "x{page-signature}" }, '
+            'right: { content: "" } }\n',
+      ),
+    );
+    final feet = [for (final p in pages) p.last.$1];
+    expect(feet.take(8), [
+      'xA',
+      'A page.',
+      'xA 2',
+      'A page.',
+      'xA 3',
+      'A page.',
+      'A page.',
+      'A page.',
+    ]);
+  });
+
+  test('section_role_<role>_opener: a section of any level whose first page '
+      "is an opener's, its running content the openers'", () {
+    final pages = _lines(
+      _pdf(
+        '= Book\n:doctype: book\n:notitle:\n\n== One\n\nA page.\n\n<<<\n\n'
+            '[.opener]\n=== Two\n\nText.\n',
+        'section:\n  role:\n    opener: { opener: true }\n'
+            'header:\n  height: 0.5in\n'
+            '  recto: { center: { content: "Head" } }\n'
+            '  verso: { center: { content: "Head" } }\n'
+            '  opener: { center: { content: "Opening" } }\n'
+            'running_content: { on_openers: true }\n',
+      ),
+    );
+    expect(pages[1].first.$1, 'Opening');
+  });
+
+  test("base_margin_break: keep: a heading's own negative margin-top in the "
+      'middle of a page draws it up past the space above it', () {
+    double gap(String margin) {
+      final page = _lines(
+        _pdf(
+          ':nofooter:\n\nFirst.\n\n[margin-top=${margin}pt]\n'
+              '== Line\n\nText.\n',
+          'base_margin_break: keep\nheading: { margin_top: 0 }\n',
+        ),
+      ).first;
+      return _line(page, 'Line')[1] - _line(page, 'First')[3];
+    }
+
+    expect(gap('-10') - gap('0'), closeTo(-10, 0.5));
+  });
+
+  test("catchwords: the next page's first word, a title's (its pilcrow and "
+      "its first word) and a drop's whole, in the word's own case", () {
+    final pages = _lines(
+      _pdf(
+        'One.\n\n<<<\n\n== ¶ Prayer.\n\nText.\n\n<<<\n\n'
+            '[.dropcap]\nLOrd, how I am all ague\nwhen I seek.\n',
+        'role:\n  dropcap: { drop_lines: 2 }\n'
+            'footer:\n  height: 0.5in\n'
+            '  recto: { left: { content: "" }, '
+            'right: { content: "{page-catchword}" } }\n'
+            '  verso: { left: { content: "" }, '
+            'right: { content: "{page-catchword}" } }\n',
+      ),
+    );
+    expect(pages[0].last.$1, '¶ Prayer.');
+    expect(pages[1].last.$1, 'Lord,');
+  });
+
+  test('role_<role>_text_align_last: justify fills each line broken by '
+      'hand; role_<role>_margin_right narrows the paragraph', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n:source-lines:\n\n'
+            '[.shape]\nA broken altar\nmade of a heart\n',
+        'role:\n  shape: { text_align: justify, text_align_last: justify, '
+            'margin_left: 40, margin_right: 60 }\n',
+      ),
+    ).first;
+    final a = _line(page, 'A broken');
+    final b = _line(page, 'made');
+    expect(b[2], closeTo(a[2], 0.5));
+    expect(b[0], closeTo(a[0], 0.5));
+    final full = _line(
+      _lines(_pdf(':nofooter:\n\nA broken altar made of a heart.\n', '')).first,
+      'A broken',
+    );
+    expect(a[0] - full[0], closeTo(40, 0.5));
+  });
+
+  test("a drop at its paragraph's own left, past role_<role>_margin_left", () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n\n[.col.dropcap]\nTHe Call\nCharms and knots\n',
+        'role:\n  dropcap: { drop_lines: 2 }\n  col: { margin_left: 100 }\n',
+      ),
+    ).first;
+    // (The drop past the paragraph's margin, the text past the drop.)
+    final drop = _line(page, 'T');
+    expect(drop[0], greaterThan(_line(page, 'He Call')[0] - 30));
+    expect(drop[0], greaterThan(140));
+  });
+
+  test('a sideways block in the flow (roles sideways clockwise in-flow): as '
+      'far down the page as its longest line, what follows it below', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n\nTitle.\n\n[verse.sideways.clockwise.in-flow]\n____\n'
+            'Lord, who createdst man\nMost poore\n____\n\nAfter.\n',
+        '',
+      ),
+    ).first;
+    final lord = _line(page, 'Lord');
+    final after = _line(page, 'After');
+    expect(lord[3] - lord[1], greaterThan(lord[2] - lord[0]));
+    expect(after[1], greaterThan(lord[3]));
+    expect(after[1] - lord[3], lessThan(30));
   });
 }

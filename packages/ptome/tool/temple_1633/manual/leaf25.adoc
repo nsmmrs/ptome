@@ -1,0 +1,42 @@
+// The Altar as the printing sets it: between two bands of ornament, its
+// lines as wide apart as the printing's, each part of the altar's shape a
+// paragraph as wide as the printing's, each of its lines justified to
+// fill it; its words in capitals spaced.
+ifdef::backend-pdf[]
+[.band,top=747]
+image::temple-band-altar.png[pdfwidth=184.5pt]
+endif::[]
+
+[#the-altar,base=1297,first="The Altar."]
+=== The Altar.
+
+[.altar.altar-1,base=1605,first="A broken ALTAR, Lord, thy servant reares;"]
+A broken [.spaced-cap]##A##[.spaced]##LTAR##, Lord, thy servant reares;
+Made of a heart, and cemented with teares:
+
+[.altar.altar-2,base=2015,first="Whose parts are as thy hand did frame;"]
+Whose parts are as thy hand did frame;
+No workmans tool hath touch'd the same.
+
+[.altar.altar-3,base=2433,first="A HEART alone"]
+A [.spaced-cap]##H##[.spaced]##EART## alone
+Is such a stone,
+As nothing but
+Thy power doth cut.
+Wherefore each part
+Of my hard heart
+Meets in this frame,
+To praise thy name:
+
+[.altar.altar-4,base=4079,first="That if I chance to hold my peace,"]
+That if I chance to hold my peace,
+These stones to praise thee may not cease.
+
+[.altar.altar-5,base=4495,first="O let thy blessed SACRIFICE be mine,"]
+O let thy blessed [.spaced-cap]##S##[.spaced]##ACRIFICE## be mine,
+And sanctifie this [.spaced-cap]##A##[.spaced]##LTAR## to be thine.
+
+ifdef::backend-pdf[]
+[.band,top=4892]
+image::temple-band-altar-foot.png[pdfwidth=187.4pt]
+endif::[]

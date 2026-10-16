@@ -1,0 +1,144 @@
+// The titles of the poems, their second page.
+ifdef::backend-pdf[]
+[.rule-v,top=760]
+image::temple-index-rule-201-1.png[pdfheight=71.34pt]
+
+[.ix.ix-l.ix-letter,base=860,first="D",letter]
+D
+
+[.ix.ix-r.ix-letter,base=873,first="H",letter]
+H
+
+[.ix.ix-l.ix-drop,base=992,first="He Dawning",column]
+THe Dawning [.ixn]#104#
+Death [.ixn]#180#
+
+[.ix.ix-r.ix-drop,base=1010,first="Eaven",column]
+HEaven [.ixn]#182#
+The Holdfast [.ixn]#137#
+
+[.ix.ix-l,base=1241,first="Decay",column]
+Decay [.ixn]#91#
+Deniall [.ixn]#71#
+Dialogue [.ixn]#107#
+The Discharge [.ixn]#138#
+Discipline [.ixn]#173#
+Divinitie [.ixn]#127#
+Dooms-day [.ixn]#181#
+Dotage [.ixn]#161#
+Dulnesse [.ixn]#108#
+
+[.ix.ix-r,base=1270,first="Home",column]
+Home [.ixn]#99#
+Hope [.ixn]#114#
+Humilitie [.ixn]#61#
+A true Hymne [.ixn]#162#
+
+[.rule-v,top=1728]
+image::temple-index-rule-201-2.png[pdfheight=71.34pt]
+
+[.ix.ix-r.ix-letter,base=1799,first="I",letter]
+I
+
+[.ix.ix-r.ix-drop,base=1943,first="Esu",column]
+JEsu [.ixn]#105#
+The Jews [.ixn]#146#
+
+[.ix.ix-r,base=2230,first="The Invitation",column]
+The Invitation [.ixn]#174#
+Jordan [.ixn]#48. 95#
+Josephs coat [.ixn]#153#
+Judgement [.ixn]#182#
+Justice [.ixn]#88. 135#
+
+[.ix.ix-l.ix-letter,base=2442,first="E",letter]
+E
+
+[.ix.ix-l.ix-drop,base=2576,first="Aster",column]
+EAster [.ixn]#33#
+Easter-wings [.ixn]#34, 35#
+
+[.rule-v,top=2696]
+image::temple-index-rule-201-3.png[pdfheight=71.34pt]
+
+[.ix.ix-l,base=2845,first="The Elixer",column]
+The Elixer [.ixn]#178#
+Employment [.ixn]#49. 70#
+L'Envoy [.ixn]#192#
+Ephes. 4. 30. Grieve not,
+[.i80]##{nbsp}##&c. [.ixn]#128#
+Evensong [.ixn]#55#
+
+[.ix.ix-r.ix-letter,base=2907,first="L",letter]
+L
+
+[.ix.ix-r.ix-drop,base=3036,first="Ent",column]
+LEnt [.ixn]#78#
+Life [.ixn]#87#
+
+[.ix.ix-r,base=3294,first="Longing",column]
+Longing [.ixn]#142#
+Love [.ixn]#45, 46. 183#
+Love-joy [.ixn]#109#
+Love unknown [.ixn]#121#
+
+[.ix.ix-l.ix-letter,base=3652,first="F",letter]
+F
+
+[.rule-v,top=3664]
+image::temple-index-rule-201-4.png[pdfheight=71.34pt]
+
+[.ix.ix-l.ix-drop,base=3768,first="Aith",column]
+FAith [.ixn]#41#
+The Familie [.ixn]#130#
+
+[.ix.ix-r.ix-letter,base=3843,first="M",letter]
+M
+
+[.ix.ix-r.ix-drop,base=3988,first="An",column]
+MAn [.ixn]#83#
+Mans medley [.ixn]#123#
+
+[.ix.ix-l,base=3993,first="The Flower",column]
+The Flower [.ixn]#160#
+The Foil [.ixn]#170#
+The Forerunners [.ixn]#ibid.#
+Frailtie [.ixn]#62#
+
+[.ix.ix-r,base=4261,first="S. Marie Magdalene",column]
+{empty}S. Marie Magdalene [.ixn]#168#
+Mattens [.ixn]#54#
+The Method [.ixn]#126#
+Miserie [.ixn]#92#
+Mortification [.ixn]#90#
+
+[.ix.ix-l.ix-letter,base=4540,first="G",letter]
+G
+
+[.rule-v,top=4632]
+image::temple-index-rule-201-5.png[pdfheight=71.34pt]
+
+[.ix.ix-l.ix-drop,base=4688,first="Iddinesse",column]
+GIddinesse [.ixn]#119#
+The Glance [.ixn]#166#
+
+[.ix.ix-r,base=4943,first="Nature",column]
+Nature [.ixn]#37#
+
+[.ix.ix-l,base=4960,first="The Glimpse",column]
+The Glimpse [.ixn]#148#
+Good Friday [.ixn]#30#
+Grace [.ixn]#52#
+Gratefulnesse [.ixn]#116#
+Grief [.ixn]#158#
+
+[.ix.ix-r.ix-letter,base=5099,first="O",letter]
+O
+
+[.ix.ix-r.ix-drop,base=5255,first="Bedience",column]
+OBedience [.ixn]#96#
+The Odour [.ixn]#169#
+
+[.ix.ix-r,base=5521,first="An Offering",column]
+An Offering [.ixn]#141#
+endif::[]

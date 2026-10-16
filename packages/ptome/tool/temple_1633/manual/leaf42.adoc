@@ -1,0 +1,17 @@
+// head-base: 660
+[#easter-wings-2,top=1060,first="¶ Easter-wings."]
+=== ¶ Easter-wings.
+
+[verse.sideways.clockwise.in-flow.wings,margin-top=56.5pt]
+____
+My tender age in sorrow did beginne:
+[.i100]##{nbsp}##And still with sicknesses and shame
+[.i195]##{nbsp}##Thou didst so punish sinne,
+[.i285]##{nbsp}##That I became
+[.i385]##{nbsp}##Most thinne.
+[.i400]##{nbsp}##With thee
+[.i285]##{nbsp}##Let me combine,
+[.i190]##{nbsp}##And feel this day thy victorie:
+[.i100]##{nbsp}##For, if I imp my wing on thine,
+Affliction shall advance the flight in me.
+____

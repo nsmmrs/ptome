@@ -1,0 +1,63 @@
+// The Church-porch's first page as the printing sets it: a band of
+// ornament over its title; its first word's capital a factotum, a woodcut
+// four lines high, the lines beside it set in past it and broken where the
+// printing breaks them, their ends set in under them.
+// head-base: 633
+ifdef::backend-pdf[]
+[.band,top=713]
+image::temple-band-porch.png[pdfwidth=192.8pt]
+endif::[]
+
+[#church-porch,running-title="The Church-porch.",top=1182,first="The Church-porch."]
+== The Church-porch.
+
+[.subhead,ocr=1,first="Perirrhanterium."]
+Perirrhanterium.
+
+ifdef::backend-pdf[]
+[.factotum,top=1595]
+image::temple-factotum-t.png[T,pdfwidth=33.53pt,align=left]
+
+[.v,ocr=2,first="Hou, whose sweet youth and early hopes in-"]
+[.i338]##{nbsp}##Hou, whose sweet youth and early hopes in-
+[.i438]##{nbsp}##hance
+[.i374]##{nbsp}##Thy rate and price, and mark thee for a
+[.i438]##{nbsp}##treasure;
+Hearken unto a Verser, who may chance
+Ryme thee to good, and make a bait of pleasure.
+[.i105]##{nbsp}##A verse may finde him, who a sermon flies,
+[.i105]##{nbsp}##And turn delight into a sacrifice.
+endif::[]
+ifndef::backend-pdf[]
+[.v]
+THou, whose sweet youth and early hopes inhance
+Thy rate and price, and mark thee for a treasure;
+Hearken unto a Verser, who may chance
+Ryme thee to good, and make a bait of pleasure.
+[.i105]##{nbsp}##A verse may finde him, who a sermon flies,
+[.i105]##{nbsp}##And turn delight into a sacrifice.
+endif::[]
+
+[.v,ocr=10,first="Beware of lust: it doth pollute and foul"]
+Beware of lust: it doth pollute and foul
+Whom God in Baptisme washt with his own blood.
+It blots thy lesson written in thy soul;
+The holy lines cannot be understood.
+[.i105]##{nbsp}##How dare those eyes upon a Bible look,
+[.i105]##{nbsp}##Much lesse towards God, whose lust is all their book?
+
+[.v,ocr=17,first="Wholly abstain, or wed. Thy bounteous Lord"]
+Wholly abstain, or wed. Thy bounteous Lord
+Allows thee choise of paths: take no by-wayes;
+But gladly welcome what he doth afford;
+Not grudging, that thy lust hath bounds and staies.
+[.i105]##{nbsp}##Continence hath his joy: weigh both; and so
+[.i105]##{nbsp}##If rottennesse have more, let Heaven go.
+
+[.v,ocr=23,first="If God had laid all common, certainly"]
+If God had laid all common, certainly
+Man would have been th'incloser: but since now
+God hath impal'd us, on the contrary
+Man breaks the fence, and every ground will plough.
+[.i105]##{nbsp}##O what were man, might he himself misplace!
+[.i105]##{nbsp}##Sure to be crosse he would shift feet and face.

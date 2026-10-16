@@ -1,0 +1,68 @@
+// A Dialogue-Antheme and The Water-course as the printing sets them: the
+// speakers in the margin; Christian's first word's capital set
+// without its drop (a departure); the braced words, each on its line.
+[ocr=1,first="¶ A Dialogue-Antheme."]
+=== ¶ A Dialogue-Antheme.
+
+[.stage,ocr=2,first="Christian. Death."]
+__Christian.__{nbsp}{nbsp}{nbsp}{nbsp} __Death.__
+
+[.v,ocr=3,first="Chr. ALas, poore Death! where is thy glorie?"]
+[.i215]##Chr.##ALas, poore Death! where is thy glorie?
+[.i215]##{nbsp}##Where is thy famous force, thy ancient sting?
+
+[.v,ocr=6,first="Dea. Alas poore mortall, void of storie!"]
+[.i215]##Dea.##__Alas poore mortall, void of storie!__
+[.i215]##{nbsp}##__Go spell and reade how I have kill'd thy King.__
+
+[.v,ocr=8,first="Chr. Poore death! and who was hurt thereby?"]
+[.i215]##Chr.##Poore death! and who was hurt thereby?
+[.i215]##{nbsp}##Thy curse being laid on him, makes thee accurst.
+
+[.v,ocr=10,first="Dea. Let losers talk: yet thou shalt die;"]
+ifdef::backend-pdf[]
+[.i215]##Dea.##__Let losers talk: yet thou shalt die;__ [.turn]#(__worst.__#
+[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy
+endif::[]
+ifndef::backend-pdf[]
+[.i215]##Dea.##__Let losers talk: yet thou shalt die;__
+[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy worst.
+endif::[]
+[.i215]##{nbsp}##I shall be one day better then before:
+[.i215]##{nbsp}##Thou so much worse, that thou shalt be no more.
+
+[.poem-rule,margin-top=8pt]
+'''
+
+[ocr=16,first="¶ The Water-course."]
+=== ¶ The Water-course.
+
+[.v.dropcap,ocr=17,first="Hou who dost dwell and linger here below,"]
+THou who dost dwell and linger here below,
+Since the condition of this world is frail,
+Where of all plants afflictions soonest grow;
+If troubles overtake thee, do not wail:
+
+[.v,ocr=21,first="Life?"]
+[.i1715]##{nbsp}##Life?
+
+[.v,margin-top=-5.1pt]
+[.i200]##{nbsp}##For who can look for lesse, that loveth [.brace]#{#
+
+[.v,margin-top=-4.4pt]
+[.i1715]##{nbsp}##Strife?
+
+[.v,ocr=25,first="But rather turn the pipe, and waters course"]
+But rather turn the pipe, and waters course
+To serve thy sinnes, and furnish thee with store
+Of sov'raigne tears, springing from true remorse:
+That so in purenesse thou mayst him adore,
+
+[.v,ocr=29,first="Salvation."]
+[.i1425]##{nbsp}##Salvation.
+
+[.v,margin-top=-4.2pt]
+[.i180]##{nbsp}##Who gives to man, as he sees fit, [.brace]#{#
+
+[.v,margin-top=-5.0pt]
+[.i1425]##{nbsp}##Damnation.

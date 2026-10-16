@@ -3821,6 +3821,7 @@ final class FirstLineTextBox implements BaselineContent {
             left: line.left,
             right: line.right,
             continues: line.continues,
+            text: line.text,
           ),
       ],
       rest: next is TextBox ? next.restyled(state, layout) : next,

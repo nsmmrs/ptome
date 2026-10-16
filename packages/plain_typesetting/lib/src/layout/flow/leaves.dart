@@ -290,23 +290,37 @@ extension _Leaves on _Pass {
   /// [box] turned on a horizontal page: at the top of a region (moved to
   /// the next one's top otherwise), its child laid out as wide as the
   /// region is high, placed turned a quarter to the left in the middle of
-  /// the region across, the whole region its own.
+  /// the region across, the whole region its own; in the flow
+  /// ([UprightBox.inFlow]), below what is before it, as much of the
+  /// region as its longest line.
   _Fit _sideways(
     UprightBox box,
     double width,
     double available, {
     required bool atTop,
   }) {
-    if (!atTop) return _Fit.moved(box);
-    final length = available;
+    if (!atTop && !box.inFlow) return _Fit.moved(box);
+    final top = atTop ? 0.0 : box.style.margin.top;
+    // (In the flow, as far down the region as its longest line runs: what
+    // follows it on the page, a catchword, below it.)
+    var length = available - top;
+    if (box.inFlow) length = math.min(length, _intrinsic(box.child).$2);
     final fit = _withoutExclusions(
       () => _place(box.child, length, double.infinity, atTop: true),
     );
     final placed = fit.placed;
     if (placed == null) return fit;
     return _Fit(
-      _PlacedSideways(placed, length, fit.height, width, available),
-      available,
+      _PlacedSideways(
+        placed,
+        length,
+        fit.height,
+        width,
+        available,
+        top: top,
+        clockwise: box.clockwise,
+      ),
+      box.inFlow ? top + length : available,
       null,
     );
   }

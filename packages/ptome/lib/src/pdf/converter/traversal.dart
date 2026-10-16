@@ -361,6 +361,11 @@ extension _Traversal on PdfConverter {
     // A section's heading: the larger of the two, the heading's margin
     // above taking its part.
     if (following is Section) {
+      // (Its own negative margin pulls the heading up past this space, as
+      // a block's does: not taken from it twice.)
+      if (_ownMarginTop(following) case final top? when top < 0) {
+        return math.max(0, own);
+      }
       return math.max(0, own - _sectionMarginTop(following));
     }
     final above =

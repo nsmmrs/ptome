@@ -1,0 +1,43 @@
+{
+ "200": [
+  {
+   "name": "temple-index-rule-200-1.png",
+   "top": 2190,
+   "height": 240.27
+  }
+ ],
+ "201": [
+  {
+   "name": "temple-index-rule-201-1.png",
+   "top": 760,
+   "height": 71.34
+  },
+  {
+   "name": "temple-index-rule-201-2.png",
+   "top": 1728,
+   "height": 71.34
+  },
+  {
+   "name": "temple-index-rule-201-3.png",
+   "top": 2696,
+   "height": 71.34
+  },
+  {
+   "name": "temple-index-rule-201-4.png",
+   "top": 3664,
+   "height": 71.34
+  },
+  {
+   "name": "temple-index-rule-201-5.png",
+   "top": 4632,
+   "height": 71.34
+  }
+ ],
+ "202": [
+  {
+   "name": "temple-index-rule-202-1.png",
+   "top": 700,
+   "height": 294.07
+  }
+ ]
+}

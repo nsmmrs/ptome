@@ -1,0 +1,29 @@
+// The Printers to the Reader, its last page: its close, Herbert's motto
+// in italic, centred, and a flower under it.
+[.prose.goes-on,ocr=0,first="having been uneffectually attempted by publick col-"]
+having been uneffectually attempted by publick col-
+lections, was in the end by his own and some few
+others private free-will-offerings succesfully effected.
+With the remembrance whereof, as of an especiall
+good work, when a friend went about to comfort him
+on his death-bed, he made answer, __It is a good work,__
+__if it be sprinkled with the bloud of Christ:__ otherwise
+then in this respect he could finde nothing to glorie or
+comfort himself with, neither in this, nor in any other
+thing.
+
+[.prose.indent,ocr=11,first="And these are but a few of many that might be said,"]
+And these are but a few of many that might be said,
+which we have chosen to premise as a glance to some
+parts of the ensuing book, and for an example to the
+Reader. We conclude all with his own Motto, with
+which he used to conclude all things that might seem
+to tend any way to his own honour;
+
+[.motto,ocr=18,first="Lesse then the least of Gods mercies."]
+__Lesse then the least of Gods mercies.__
+
+ifdef::backend-pdf[]
+[.flower,top=3585]
+image::temple-flower-reader.png[pdfwidth=140.4pt]
+endif::[]

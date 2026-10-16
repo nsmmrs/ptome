@@ -123,10 +123,16 @@ final class BoxStyle {
     this.minHeight = 0,
     this.structure,
     this.keepTopMargin = false,
+    this.leadText,
   });
 
   /// The space outside the border.
   final EdgeInsets margin;
+
+  /// Text read before the box's first line (a drop initial its
+  /// [decoration] paints beside it): a catchword takes it with the line's
+  /// first word ([LayoutResult.firstText]).
+  final String? leadText;
 
   /// Whether the top margin is kept at the top of a page or region, where
   /// it is otherwise dropped (CSS Fragmentation's `margin-break: keep`):
@@ -333,6 +339,7 @@ final class BoxStyle {
     minHeight: minHeight,
     structure: structure == null ? this.structure : structure.$1,
     keepTopMargin: keepTopMargin,
+    leadText: leadText,
   );
 
   /// This style with [structure] in place of its own.
@@ -469,11 +476,23 @@ final class UprightBox extends LayoutBox {
     this.child, {
     this.maxWidth,
     this.sideways = false,
+    this.clockwise = false,
+    this.inFlow = false,
     BoxStyle style = const BoxStyle(),
   }) : super._(style);
 
   /// The box set upright.
   final LayoutBox child;
+
+  /// With [sideways], whether it is turned a quarter to the right (its
+  /// lines running down the page), not to the left.
+  final bool clockwise;
+
+  /// With [sideways], whether it is set where it starts, below what is
+  /// set before it on the page (a title over a poem printed sideways),
+  /// as far down the region as its longest line runs, not on a region of
+  /// its own.
+  final bool inFlow;
 
   /// The most it may be wide across the page, or null for the content
   /// area's width.

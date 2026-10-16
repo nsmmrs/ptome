@@ -856,25 +856,40 @@ extension _RunningContent on PdfConverter {
     final keys = _keys('running_content_signature');
     final interval = (keys.number('interval') ?? 16).toInt();
     final first = (keys.number('first') ?? 1).toInt();
-    if (interval < 1 || number < first || (number - first) % interval != 0) {
-      return null;
-    }
+    if (interval < 1 || number < first) return null;
+    // (`_signature_signed`: the gathering's first leaves signed, each its
+    // recto, the first by its letter, the others by its letter and the
+    // leaf's number (`_signature_leaf_template`, `{{signature}} {{leaf}}`:
+    // a duodecimo's A, A 2 … A 6).)
+    final signed = (keys.number('signed') ?? 1).toInt();
+    final offset = (number - first) % interval;
+    if (offset.isOdd || offset ~/ 2 >= math.max(1, signed)) return null;
+    final leaf = offset ~/ 2 + 1;
+    final gathering = number - offset;
     // (Worded by `_signature_template`, `{{signature}}` the letter or the
     // number: the Second Reader's `2, {{signature}}.`.)
-    String worded(String signature) => switch (keys.string('template')) {
-      final template? => template.replaceAll('{{signature}}', signature),
-      null => signature,
-    };
+    String worded(String signature) {
+      final mark = leaf == 1
+          ? signature
+          : (keys.string('leaf_template') ?? '{{signature}} {{leaf}}')
+                .replaceAll('{{signature}}', signature)
+                .replaceAll('{{leaf}}', '$leaf');
+      return switch (keys.string('template')) {
+        final template? => template.replaceAll('{{signature}}', mark),
+        null => mark,
+      };
+    }
+
     if (keys.string('numbering') == 'decimal') {
       final start =
           keys.number('start')?.toInt() ??
           int.tryParse(keys.string('start') ?? '') ??
           1;
-      return worded('${start + (number - first) ~/ interval}');
+      return worded('${start + (gathering - first) ~/ interval}');
     }
     final letters = keys.string('letters') ?? 'ABCDEFGHIKLMNOPQRSTUXYZ';
     final start = letters.indexOf(keys.string('start') ?? 'B');
-    final index = (start < 0 ? 0 : start) + (number - first) ~/ interval;
+    final index = (start < 0 ? 0 : start) + (gathering - first) ~/ interval;
     final letter = letters[index % letters.length];
     return worded(letter * (index ~/ letters.length + 1));
   }
@@ -972,12 +987,17 @@ extension _RunningContent on PdfConverter {
 
 /// The catchword of a page whose next page starts with [text]: its first
 /// word, with the word after it when that is a number (a dictionary's
-/// sense, `2. One`), escaped for running content.
+/// sense, `2. One`), escaped for running content; a word opening with a
+/// drop initial and the capital printed after it (`LOrd,`) in its own
+/// case (`Lord,`).
 String? _catchwordOf(String? text) {
   if (text == null) return null;
   final words = text.trim().split(RegExp(r'\s+'));
   if (words.isEmpty || words.first.isEmpty) return null;
-  final first = words.first;
+  var first = words.first;
+  if (RegExp(r'^\p{Lu}\p{Lu}\p{Ll}', unicode: true).hasMatch(first)) {
+    first = '${first[0]}${first[1].toLowerCase()}${first.substring(2)}';
+  }
   final numeral = RegExp(r'^(\d+|[ivxlcdm]+|[IVXLCDM]+)[.)]?$|^\W+$')
       .hasMatch(first);
   final word = numeral && words.length > 1 ? '$first ${words[1]}' : first;

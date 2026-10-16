@@ -1247,6 +1247,18 @@ extension _DocumentParts on PdfConverter {
 
   /// Whether [section] is a part or chapter of a book whose title is set.
   bool _opensPages(Section section) {
+    // (`section_role_<role>_opener: true`, modern engine: a section of any
+    // level whose first page is a part's opening page, its running
+    // content the openers': The Church's first poem.)
+    if (!asciidoctorCompat(_document, CompatFormat.pdf) &&
+        section.roles.any(
+          (role) =>
+              _keys('section_role_${role.replaceAll('-', '_')}')
+                  .value('opener') ==
+              const ThemeBool(true),
+        )) {
+      return true;
+    }
     if (_document.doctype != 'book' ||
         !(section.sectname == 'part' || section.level == 1) ||
         section.hasOption('notitle')) {

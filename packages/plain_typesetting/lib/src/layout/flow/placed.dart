@@ -244,7 +244,12 @@ final class _PlacedBlock extends _Placed {
   @override
   String? get firstText {
     for (final (_, child) in children) {
-      if (child.firstText case final text?) return text;
+      if (child.firstText case final text?) {
+        return switch (style.leadText) {
+          final lead? when !openTop => '$lead$text',
+          _ => text,
+        };
+      }
     }
     return null;
   }
@@ -638,7 +643,15 @@ final class _PlacedUpright extends _Placed {
 /// high, turned a quarter to the left in a region [width] wide and
 /// [height] high, its lines running up the region, in its middle across.
 final class _PlacedSideways extends _Placed {
-  const new(this.placed, this.length, this.depth, this.width, this.height);
+  const new(
+    this.placed,
+    this.length,
+    this.depth,
+    this.width,
+    this.height, {
+    this.top = 0,
+    this.clockwise = false,
+  });
 
   final _Placed placed;
   final double length;
@@ -646,6 +659,12 @@ final class _PlacedSideways extends _Placed {
   final double width;
   @override
   final double height;
+
+  /// How far down the region it starts.
+  final double top;
+
+  /// Whether it is turned to the right.
+  final bool clockwise;
 
   @override
   void visit(
@@ -664,9 +683,16 @@ final class _PlacedSideways extends _Placed {
     // (Turned a quarter to the left: its top to the region's left, its
     // left to the region's bottom.)
     final left = x + (width - depth) / 2;
-    final bottom = top - length;
+    final start = top - this.top;
+    final bottom = start - length;
     painter.canvas.saved(() {
-      painter.canvas.transform(Matrix(0, 1, -1, 0, left + depth, bottom));
+      // (Turned to the right: its top to the region's right, its left to
+      // where it starts.)
+      painter.canvas.transform(
+        clockwise
+            ? Matrix(0, -1, 1, 0, left, start)
+            : Matrix(0, 1, -1, 0, left + depth, bottom),
+      );
       placed.paint(painter, 0, depth);
     });
   }

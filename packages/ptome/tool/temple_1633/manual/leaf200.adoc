@@ -1,0 +1,89 @@
+// The titles of the poems, their first page: a band of ornament, the
+// title in spaced capitals, the titles in two columns.
+ifdef::backend-pdf[]
+[.band,top=912]
+image::temple-band-titles.png[pdfwidth=174.3pt]
+
+[.tp-the,base=1500,first="THE"]
+THE
+
+[.ix-title,base=1688,first="TITLES OF THE SEVE-"]
+TITLES OF THE SEVE-
+
+[.ix-title,base=1887,first="RALL POEMS CONTAIN-"]
+RALL POEMS CONTAIN-
+
+[.ix-title,base=2058,first="ED IN THIS BOOK."]
+ED IN THIS BOOK.
+
+[.rule-v,top=2190]
+image::temple-index-rule-200-1.png[pdfheight=240.27pt]
+
+[.ix.ix-r.ix-letter,base=2271,first="C",letter]
+C
+
+[.ix.ix-l.ix-letter,base=2296,first="A",letter]
+A
+
+[.ix.ix-r.ix-drop,base=2402,first="He Call",column]
+THe Call [.ixn]#150#
+Charms and knots [.ixn]#88#
+
+[.ix.ix-l.ix-drop,base=2427,first="Aron",column]
+AAron [.ixn]#168#
+Affliction [.ixn]#38. 53.#
+
+[.ix.ix-r,base=2678,first="Christmas",column]
+Christmas [.ixn]#72#
+Church-floore [.ixn]#58#
+Church-lock and key [.ixn]#57#
+Church Militant [.ixn]#184#
+Church-monuments [.ixn]#56#
+Church-musick [.ixn]#57#
+Church-porch [.ixn]#1#
+Church-rents & schismes
+[.i80]##{nbsp}##[.rm]#134#
+Church-windows [.ixn]#59#
+Clasping of hands [.ixn]#151#
+The Collar [.ixn]#147#
+Coloss. 3. 3. Our life, &c.
+[.i80]##{nbsp}##[.rm]#77#
+{empty}H. Communion [.ixn]#43#
+Complaining [.ixn]#137#
+Self-condemnation [.ixn]#165#
+Confession [.ixn]#118#
+Conscience [.ixn]#98#
+Constancie [.ixn]#63#
+Content [.ixn]#60#
+The Crosse [.ixn]#158#
+
+[.ix.ix-l,base=2691,first="64. 82, 89.",column]
+[.i80]##{nbsp}##[.rm]#64. 82, 89.#
+The Agonie [.ixn]#29#
+The Altar [.ixn]#18#
+Anagram of the Virgin
+[.i80]##{nbsp}##Marie [.ixn]#69#
+To all Angels and Saints
+[.i80]##{nbsp}##[.rm]#ibid.#
+The Answer [.ixn]#163#
+A Dialogue-Antheme
+[.i80]##{nbsp}##[.rm]#164#
+Antiphon [.ixn]#45. 85#
+Artillerie [.ixn]#132#
+Assurance [.ixn]#149#
+Avarice [.ixn]#69#
+
+[.ix.ix-l.ix-letter,base=4507,first="B",letter]
+B
+
+[.ix.ix-l.ix-drop,base=4640,first="He Bag",column]
+THe Bag [.ixn]#145#
+The Banquet [.ixn]#175#
+
+[.ix.ix-l,base=4905,first="H. Baptisme",column]
+{empty}H. Baptisme [.ixn]#36#
+Bitter-sweet [.ixn]#165#
+The British Church [.ixn]#102#
+The Bunch of Grapes [.ixn]#120#
+Businesse [.ixn]#105#
+endif::[]

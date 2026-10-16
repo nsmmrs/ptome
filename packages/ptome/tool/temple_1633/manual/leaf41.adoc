@@ -1,0 +1,20 @@
+// head-base: 660
+// Easter-wings' first stanza as the printing sets it: the title upright,
+// the stanza turned to the right, its lines set in along a curve into
+// wings, as far as the printing sets each in.
+[#easter-wings,top=1050,first="¶ Easter-wings."]
+=== ¶ Easter-wings.
+
+[verse.sideways.clockwise.in-flow.wings,margin-top=52.5pt]
+____
+Lord, who createdst man in wealth and store,
+[.i105]##{nbsp}##Though foolishly he lost the same,
+[.i195]##{nbsp}##Decaying more and more,
+[.i285]##{nbsp}##Till he became
+[.i360]##{nbsp}##Most poore:
+[.i370]##{nbsp}##With thee
+[.i280]##{nbsp}##O let me rise
+[.i195]##{nbsp}##As larks, harmoniously,
+[.i95]##{nbsp}##And sing this day thy victories:
+Then shall the fall further the flight in me.
+____

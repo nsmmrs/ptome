@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: what setting a duodecimo of verse as its printing sets it takes
+  (the showcase's Temple, after its second edition, 1633; EPIC-b59npn):
+  signatures on a gathering's first leaves (`running_content_signature_signed`,
+  `_leaf_template`: A, A 2 … A 5); `section_role_<role>_opener` (a
+  section of any level opening its page as a chapter does); a heading's
+  own negative `margin-top` in the middle of a page; catchwords that take
+  a title's first words and a drop's word whole, in its own case;
+  `role_<role>_text_align_last` (a shaped poem's lines each justified)
+  and `role_<role>_margin_right`; a drop at its paragraph's own left;
+  sideways blocks `clockwise` and `in-flow` (under a title, as far down
+  the page as their longest line). Not under `asciidoctor-compat`.
 - PDF: what setting a schoolbook as its printing sets it takes (the
   showcase's Second Reader, after its 1920 printing; EPIC-b59npn):
   `olist_marker_position: inside` (numbered paragraphs, the number the

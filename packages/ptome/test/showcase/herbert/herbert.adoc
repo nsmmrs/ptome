@@ -5,8 +5,15 @@ George Herbert
 :lang: en
 :look: herbert
 :looksdir: {docdir}
-:description: George Herbert’s The Temple (1633), its Dedication and eight poems of The Church transcribed from the first edition: The Altar’s shape, Easter-wings sideways on two pages, the stanzas’ indents, the long s and the ligatures of the Fell types.
+:imagesdir: images
+:description: George Herbert’s The Temple as Thomas Buck and Roger Daniel printed its second edition (Cambridge, 1633), page for page and line for line: The Church-porch, The Church and The Church Militant, each line set in as the printing sets it, The Altar’s shape, Easter-wings sideways on two pages, the long s and the ligatures of the Fell types.
+// The text keeps the printing's lines and pages (`:source-lines:`,
+// NOTICE.md); in the PDF the pages are the printing's, numbered as it
+// numbers them.
+:source-lines:
+:nbsp: &#160;
+ifdef::backend-pdf[]
+:notitle:
+endif::[]
 
-include::text/dedication.adoc[]
-
-include::text/church.adoc[]
+include::text/temple.adoc[]

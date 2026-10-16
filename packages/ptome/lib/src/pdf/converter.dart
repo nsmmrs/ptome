@@ -387,10 +387,15 @@ final class PdfConverter extends BuiltInConverter
           _out = out;
           _sideways = false;
           if (boxes.isNotEmpty) {
+            // (`clockwise`: turned to the right, its lines running down the
+            // page; `in-flow`: set below what is before it, under a title,
+            // as far down the page as its longest line.)
             _out.add(
               UprightBox(
                 boxes.length == 1 ? boxes.single : BlockBox(boxes),
                 sideways: true,
+                clockwise: node.includesRole('clockwise'),
+                inFlow: node.includesRole('in-flow'),
               ),
             );
           }
@@ -736,6 +741,9 @@ final class PdfConverter extends BuiltInConverter
 
   /// The floated image the paragraphs after it wrap around, and the
   /// paragraph that goes in it next.
+  /// The paragraph being set's role's `text_align_last`, if any.
+  String? _roleAlignLast;
+
   _FloatGroup? _floatGroup;
   AbstractBlock? _floatNext;
 

@@ -465,6 +465,7 @@ extension _Paragraphs on PdfConverter {
       width + shift,
       dy,
       shift: shift,
+      letter: drop.text.replaceAll(RegExp('<[^>]*>'), ''),
     );
   }
 
@@ -502,6 +503,34 @@ extension _Paragraphs on PdfConverter {
   /// Adds the paragraph [node], aligned to [textAlign] unless a role
   /// aligns it, its first line in [firstLine]'s font if given.
   void _paragraph(
+    Block node, {
+    String? textAlign,
+    _FontState? firstLine,
+    String? firstLineTransform,
+  }) {
+    // (A role's `role_<role>_text_align_last`, for this paragraph's text:
+    // lines broken by hand each filling the measure, a shaped poem's.)
+    final saved = _roleAlignLast;
+    _roleAlignLast = null;
+    for (final role in node.roles.reversed) {
+      if (_keys('role_$role').string('text_align_last') case final last?) {
+        _roleAlignLast = last;
+        break;
+      }
+    }
+    try {
+      _paragraphOf(
+        node,
+        textAlign: textAlign,
+        firstLine: firstLine,
+        firstLineTransform: firstLineTransform,
+      );
+    } finally {
+      _roleAlignLast = saved;
+    }
+  }
+
+  void _paragraphOf(
     Block node, {
     String? textAlign,
     _FontState? firstLine,
@@ -546,7 +575,12 @@ extension _Paragraphs on PdfConverter {
     // in place of the prose's (`role_<role>_text_indent`,
     // `role_<role>_margin_bottom`).
     var setIn = 0.0;
+    var setInRight = 0.0;
     for (final role in roles) {
+      if (_keys('role_$role').length('margin_right', font.size)
+          case final value?) {
+        setInRight = value;
+      }
       if (_keys('role_$role').length('text_indent', font.size)
           case final value?) {
         indent = value;
@@ -567,7 +601,8 @@ extension _Paragraphs on PdfConverter {
     // (A negative indent hangs, modern engine: the paragraph set in by
     // it, its first line at the edge, as a dictionary's entries; and
     // `role_<role>_margin_left` sets it in by that much more, as its
-    // quotations; FEAT-43wrgt.)
+    // quotations; FEAT-43wrgt; `role_<role>_margin_right` takes as much
+    // from its right, a shaped poem's narrower lines.)
     final modern = !asciidoctorCompat(_document, CompatFormat.pdf);
     final hang = modern ? (indent < 0 ? -indent : 0.0) + setIn : 0.0;
     var content = node.content() ?? '';
@@ -786,6 +821,7 @@ extension _Paragraphs on PdfConverter {
           style: BoxStyle(
             margin: EdgeInsets(
               left: hang,
+              right: modern ? setInRight : 0,
               bottom: dropped == null ? marginBottom : 0,
             ),
             anchor: node.id,
@@ -816,11 +852,15 @@ extension _Paragraphs on PdfConverter {
                 margin: EdgeInsets(bottom: marginBottom),
                 structure: _struct('P'),
                 minHeight: mark == null ? 0 : dropped.dy + mark.height,
+                // (The drop's letter read first: a catchword's word whole.)
+                leadText: drop!.text.replaceAll(RegExp('<[^>]*>'), ''),
                 decoration: (page, rect, {required first, required last}) {
                   if (first) {
+                    // (At the paragraph's own left: past its margin, a
+                    // column of an index set in.)
                     mark?.paint(
                       page,
-                      rect.left - dropped.shift,
+                      rect.left + hang - dropped.shift,
                       rect.top - dropped.dy,
                     );
                   }
@@ -852,7 +892,11 @@ extension _Paragraphs on PdfConverter {
       CustomBox(
         text,
         style: BoxStyle(
-          margin: EdgeInsets(left: hang, bottom: marginBottom),
+          margin: EdgeInsets(
+            left: hang,
+            right: modern ? setInRight : 0,
+            bottom: marginBottom,
+          ),
           anchor: node.id,
           // The modern engine: beside a block floating to a side (a pull
           // quote, a sidebar), the paragraph runs around it.
