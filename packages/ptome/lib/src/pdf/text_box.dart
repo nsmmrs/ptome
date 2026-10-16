@@ -1048,6 +1048,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         emphasisMark: fragment.textEmphasis,
         emphasisUnder: fragment.textEmphasisUnder,
         flushRight: fragment.flushRight,
+        leader: fragment.leader,
         metricsFont: switch (fragment.metricsFont) {
           final family? => switch (_font(family, font.style, _context)) {
             final TrueTypeFont face => face.pdf,

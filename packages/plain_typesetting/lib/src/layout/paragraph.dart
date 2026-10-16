@@ -3229,7 +3229,31 @@ Line _line(
       final gap = i > 0 && content is TextRun
           ? content.style.measure('  ')
           : 0.0;
+      final before = x;
       x = math.max(x + gap, indent - leftHang + available - tail);
+      // (Its leaders in the room before it, each copy where a whole
+      // number of copies from the line's start puts it.)
+      if (content case TextRun(:final leader?, :final style)
+          when leader.isNotEmpty) {
+        final unit = style.measure(leader);
+        if (unit > 0) {
+          final from = ((before + unit) / unit).ceil() * unit;
+          final count = ((x - unit / 2 - from) / unit).floor();
+          if (count > 0) {
+            final dots = leader * count;
+            fragments.add(
+              TextFragment(
+                from,
+                unit * count,
+                TextRun(dots, style, color: content.color, artifact: true),
+                dots,
+                style.shape(dots),
+                style,
+              ),
+            );
+          }
+        }
+      }
     }
     switch (content) {
       case TextRun(:final style)

@@ -1,0 +1,165 @@
+// The introductory matter as the printing sets it (pages 7–10): the
+// suggestions to teachers, the key to the marks of pronunciation in its
+// tables, a rule between their halves, and the marks of punctuation.
+
+<<<
+
+// page 7
+[#articulation.intro,running-title="Eclectic Series.|Second Reader.",margin-top=43.57pt]
+== Articulation.
+
+[.intro-rule,margin-top=-2.9pt]
+'''
+
+[.intro-text.first,margin-top=23.98pt]
+[.sc]#Suggestions to Teachers#.—Thorough and
+frequent drills on the elementary sounds are
+useful in correcting vicious habits of pro{shy}nunciation
+and in strengthening the vocal
+organs.
+
+[.intro-text,margin-top=7.20pt]
+As a rule, only one or two sounds should
+be employed at one lesson. Care should be
+taken that the pupils observe and practice
+these sounds correctly in their reading.
+
+[.key-title,margin-top=29.57pt]
+TABLE OF VOCALS.
+
+[.key-head,margin-top=12.83pt]
+LONG SOUNDS.
+
+[.key,margin-top=6.56pt,cols="1250,1270",frame=none,grid=cols]
+|===
+|[.k-left]##{nbsp}##[.k-l]##ā,##[.k-as]##as in##āte. |[.k-right]##{nbsp}##[.k-l]##ẽ,##[.k-as]##as in##ẽrr.
+|[.k-left]##{nbsp}##[.k-l]##â,##[.k-as]##“##ȼâre. |[.k-right]##{nbsp}##[.k-l]##ī,##[.k-as]##“##īçe.
+|[.k-left]##{nbsp}##[.k-l]##ä,##[.k-as]##“##ärm. |[.k-right]##{nbsp}##[.k-l]##ō,##[.k-as]##“##ōde.
+|[.k-left]##{nbsp}##[.k-l]##ȧ,##[.k-as]##“##lȧst. |[.k-right]##{nbsp}##[.k-l]##ū,##[.k-as]##“##ūse.
+|[.k-left]##{nbsp}##[.k-l]##a̤,##[.k-as]##“##a̤ll. |[.k-right]##{nbsp}##[.k-l]##û,##[.k-as]##“##bûrn.
+|[.k-left]##{nbsp}##[.k-l]##ē,##[.k-as]##“##ēve. |[.k-right]##{nbsp}##[.k-l]##o͞o,##[.k-as]##“##fo͞ol.
+|===
+
+<<<
+
+// page 8
+[.key-head,margin-top=11.90pt]
+SHORT SOUNDS.
+
+[.key,margin-top=7.36pt,cols="1250,1270",frame=none,grid=cols]
+|===
+|[.k-left]##{nbsp}##[.k-l]##ă,##[.k-as]##as in##ăm. |[.k-right]##{nbsp}##[.k-l]##ŏ,##[.k-as]##as in##ŏdd.
+|[.k-left]##{nbsp}##[.k-l]##ĕ,##[.k-as]##“##ĕlm. |[.k-right]##{nbsp}##[.k-l]##ŭ,##[.k-as]##“##ŭp.
+|[.k-left]##{nbsp}##[.k-l]##ĭ,##[.k-as]##“##ĭn. |[.k-right]##{nbsp}##[.k-l]##o͝o,##[.k-as]##“##lo͝ok.
+|===
+
+[.key-head,margin-top=13.19pt]
+DIPHTHONGS.
+
+[.key,margin-top=6.96pt,cols="1250,1270",frame=none,grid=cols]
+|===
+|[.k-left]##{nbsp}##[.k-l]##oi,##[.k-as]##as in##oil. |[.k-right]##{nbsp}##[.k-l]##ou,##[.k-as]##as in##out.
+|===
+
+[.key-title,margin-top=14.92pt]
+TABLE OF SUBVOCALS.
+
+[.key,margin-top=5.66pt,cols="1250,1270",frame=none,grid=cols]
+|===
+|[.k-left]##{nbsp}##[.k-l]##b,##[.k-as]##as in##bĭb. |[.k-right]##{nbsp}##[.k-l]##v,##[.k-as]##as in##vălve.
+|[.k-left]##{nbsp}##[.k-l]##d,##[.k-as]##“##dĭd. |[.k-right]##{nbsp}##[.k-l]##t͟h,##[.k-as]##“##t͟hĭs.
+|[.k-left]##{nbsp}##[.k-l]##g,##[.k-as]##“##ḡĭḡ. |[.k-right]##{nbsp}##[.k-l]##z,##[.k-as]##“##zĭn̲ȼ.
+|[.k-left]##{nbsp}##[.k-l]##j,##[.k-as]##“##jŭḡ. |[.k-right]##{nbsp}##[.k-l]##z,##[.k-as]##“##ăzure.
+|[.k-left]##{nbsp}##[.k-l]##n,##[.k-as]##“##nīne. |[.k-right]##{nbsp}##[.k-l]##r,##[.k-as]##“##râre.
+|[.k-left]##{nbsp}##[.k-l]##m,##[.k-as]##“##māim. |[.k-right]##{nbsp}##[.k-l]##w,##[.k-as]##“##wē.
+|[.k-left]##{nbsp}##[.k-l]##ng,##[.k-as]##“##hăng. |[.k-right]##{nbsp}##[.k-l]##y,##[.k-as]##“##yĕt.
+2+^|l, as in lŭll.
+|===
+
+[.key-title,margin-top=13.58pt]
+TABLE OF ASPIRATES.
+
+[.key,margin-top=5.86pt,cols="1250,1270",frame=none,grid=cols]
+|===
+|[.k-left]##{nbsp}##[.k-l]##f,##[.k-as]##as in##fīfe. |[.k-right]##{nbsp}##[.k-l]##t,##[.k-as]##as in##tärt.
+|[.k-left]##{nbsp}##[.k-l]##h,##[.k-as]##“##hĭm. |[.k-right]##{nbsp}##[.k-l]##sh,##[.k-as]##“##shē.
+|[.k-left]##{nbsp}##[.k-l]##k,##[.k-as]##“##ȼāke. |[.k-right]##{nbsp}##[.k-l]##ch,##[.k-as]##“##chăt.
+|[.k-left]##{nbsp}##[.k-l]##p,##[.k-as]##“##pīpe. |[.k-right]##{nbsp}##[.k-l]##th,##[.k-as]##“##thĭck.
+|[.k-left]##{nbsp}##[.k-l]##s,##[.k-as]##“##sāme. |[.k-right]##{nbsp}##[.k-l]##wh,##[.k-as]##“##whȳ.
+|===
+
+<<<
+
+// page 9
+[.key-title,margin-top=9.85pt]
+TABLE OF SUBSTITUTES.
+
+[.key.subs,margin-top=2.86pt,cols="1281,1239",frame=none,grid=cols]
+|===
+|[.s-left]##{nbsp}##[.s-l]##ạ,##[.s-for]##for##[.s-snd]##ŏ,##[.s-as]##as in##whạt. |[.s-right]##{nbsp}##[.s-l]##y̆,##[.s-for]##for##[.s-snd]##ĭ,##[.s-as]##as in##my̆th.
+|[.s-left]##{nbsp}##[.s-l]##ê,##[.s-for]##“##[.s-snd]##â,##[.s-as]##“##thêre. |[.s-right]##{nbsp}##[.s-l]##ȼ,##[.s-for]##“##[.s-snd]##k,##[.s-as]##“##ȼăn.
+|[.s-left]##{nbsp}##[.s-l]##e̱,##[.s-for]##“##[.s-snd]##ā,##[.s-as]##“##fe̱int. |[.s-right]##{nbsp}##[.s-l]##ç,##[.s-for]##“##[.s-snd]##s,##[.s-as]##“##çīte.
+|[.s-left]##{nbsp}##[.s-l]##ï,##[.s-for]##“##[.s-snd]##ē,##[.s-as]##“##polïçe. |[.s-right]##{nbsp}##[.s-l]##çh,##[.s-for]##“##[.s-snd]##sh,##[.s-as]##“##çhāis̱e.
+|[.s-left]##{nbsp}##[.s-l]##ĩ,##[.s-for]##“##[.s-snd]##ẽ,##[.s-as]##“##sĩr. |[.s-right]##{nbsp}##[.s-l]##ȼh,##[.s-for]##“##[.s-snd]##k,##[.s-as]##“##ȼhāos.
+|[.s-left]##{nbsp}##[.s-l]##ȯ,##[.s-for]##“##[.s-snd]##ŭ,##[.s-as]##“##sȯn. |[.s-right]##{nbsp}##[.s-l]##ġ,##[.s-for]##“##[.s-snd]##j,##[.s-as]##“##ġĕm.
+|[.s-left]##{nbsp}##[.s-l]##o̤,##[.s-for]##“##[.s-snd]##o͞o,##[.s-as]##“##to̤. |[.s-right]##{nbsp}##[.s-l]##n̲,##[.s-for]##“##[.s-snd]##ng,##[.s-as]##“##ĭn̲k.
+|[.s-left]##{nbsp}##[.s-l]##ọ,##[.s-for]##“##[.s-snd]##o͝o,##[.s-as]##“##wọlf. |[.s-right]##{nbsp}##[.s-l]##s̱,##[.s-for]##“##[.s-snd]##z,##[.s-as]##“##ăs̱.
+|[.s-left]##{nbsp}##[.s-l]##ô,##[.s-for]##“##[.s-snd]##a̤,##[.s-as]##“##fôrk. |[.s-right]##{nbsp}##[.s-l]##s,##[.s-for]##“##[.s-snd]##sh,##[.s-as]##“##sure.
+|[.s-left]##{nbsp}##[.s-l]##õ,##[.s-for]##“##[.s-snd]##û,##[.s-as]##“##wõrk. |[.s-right]##{nbsp}##[.s-l]##x̱,##[.s-for]##“##[.s-snd]##ḡz,##[.s-as]##“##ĕx̱ăȼt.
+|[.s-left]##{nbsp}##[.s-l]##ụ,##[.s-for]##“##[.s-snd]##o͝o,##[.s-as]##“##fụll. |[.s-right]##{nbsp}##[.s-l]##gh,##[.s-for]##“##[.s-snd]##f,##[.s-as]##“##läugh.
+|[.s-left]##{nbsp}##[.s-l]##ṳ,##[.s-for]##“##[.s-snd]##o͞o,##[.s-as]##“##rṳde. |[.s-right]##{nbsp}##[.s-l]##ph,##[.s-for]##“##[.s-snd]##f,##[.s-as]##“##phlŏx.
+|[.s-left]##{nbsp}##[.s-l]##ȳ,##[.s-for]##“##[.s-snd]##ī,##[.s-as]##“##flȳ. |[.s-right]##{nbsp}##[.s-l]##qu,##[.s-for]##“##[.s-snd]##k,##[.s-as]##“##pïque.
+2+^|qu, for kw, as in quĭt.
+|===
+
+[.intro-break,margin-top=16.5pt]
+'''
+
+[#punctuation.intro-title,margin-top=10.88pt]
+PUNCTUATION.
+
+[.intro-rule,margin-top=-3.3pt]
+'''
+
+[.intro-text.first,margin-top=14.31pt]
+[.term]#Punctuation Marks# are used to make
+the sense more clear.
+
+[.intro-text,margin-top=3.43pt]
+A [.term]#Period# (.) is used at the end of a sen{shy}tence,
+and after an abbreviation; as,
+
+[.example,margin-top=0.29pt]
+James was quite sick. Dr. Jones was called to see him.
+
+<<<
+
+// page 10
+[.intro-text,margin-top=-0.01pt]
+An [.term]#Interrogation Mark# (?) is used at
+the end of a question; as,
+
+[.example,margin-top=-0.71pt]
+Where is John going?
+
+[.intro-text,margin-top=7.16pt]
+An [.term]#Exclamation Mark# (!) is used after
+words or sentences expressing some strong
+feeling; as,
+
+[.example,margin-top=-0.11pt]
+Alas, my noble boy! that thou shouldst die!
+
+[.intro-text,margin-top=6.96pt]
+The [.term]#Comma# (,), [.term]#Semicolon# (;), and
+[.term]#Colon# (:) are used to separate the parts
+of a sentence.
+
+[.intro-text,margin-top=5.87pt]
+The [.term]#Hyphen# (-) is used to join the parts
+of a compound word; as, __text-book__: it is also
+used at the end of a line in print or script,
+when a word is divided; as in the word
+“__sentence__,” near the bottom of page 9.
+
+image::image0011.png["Bird perched on tree branch.",pdfwidth=251.9pt,pdfheight=89.1pt,margin-top=18.71pt]

@@ -302,6 +302,10 @@ final class Fragment {
   /// line of its own (`role_<role>_flush: right`, modern engine).
   bool flushRight = false;
 
+  /// What fills the room before the text when it goes flush right
+  /// (`role_<role>_leader`, modern engine): a contents' dots.
+  String? leader;
+
   /// Where set, the family whose metrics the text counts toward its
   /// line's height (a fallback font's text, counted as the text's font:
   /// `font_fallback_metrics: base`).
@@ -382,6 +386,7 @@ final class Fragment {
     ..textEmphasis = textEmphasis
     ..textEmphasisUnder = textEmphasisUnder
     ..flushRight = flushRight
+    ..leader = leader
     ..metricsFont = metricsFont
     ..language = language
     ..textTransform = textTransform
@@ -492,11 +497,19 @@ final class FragmentSettings {
   /// Whether the text goes flush right at the end of its line.
   bool? flushRight;
 
+  /// What fills the room before text set flush right (`role_<role>_leader`,
+  /// a contents' dots).
+  String? leader;
+
   /// The text transform.
   String? textTransform;
 
   /// The alignment in a fixed width.
   String? align;
+
+  /// The fixed width the text is set in (`role_<role>_width`, modern
+  /// engine): a column of a table set as text, a contents' numerals.
+  String? width;
 
   /// What draws the fragment besides its text.
   List<FragmentCallback>? callbacks;
@@ -542,9 +555,11 @@ final class FragmentSettings {
       fragment.textEmphasisUnder = textEmphasisUnder!;
     }
     if (flushRight != null) fragment.flushRight = flushRight!;
+    if (leader != null) fragment.leader = leader;
     if (textTransform != null) fragment.textTransform = textTransform;
     if (letterSpacing != null) fragment.letterSpacing = letterSpacing;
     if (align != null) fragment.align = align;
+    if (width != null) fragment.width = width;
     if (callbacks != null) fragment.callbacks = [...callbacks!];
   }
 }
@@ -726,6 +741,18 @@ final class MarkupTransform {
           target.textEmphasisUnder = theme.string(key) == 'under';
         case 'flush':
           target.flushRight = theme.string(key) == 'right';
+        case 'leader':
+          target.leader = theme.string(key);
+        // (A phrase set in a width of its own, its text at its left, its
+        // centre or its right: `role_<role>_width`, `_width_align`.)
+        case 'width':
+          target
+            ..width = value?.rubyString
+            ..align ??= 'left';
+        // (`_width_align`, which the theme reads as `_width_text_align`,
+        // as it reads every `_align`.)
+        case 'width_text_align':
+          target.align = theme.string(key);
         case 'text_transform':
           target.textTransform = theme.string(key);
         case 'letter_spacing':

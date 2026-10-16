@@ -1,0 +1,63 @@
+## The preface (pages iii–iv).
+// The preface as the printing sets it (pages iii–iv), in its smaller
+// type.
+
+// page iii
+[preface#preface.preface,running-title="Preface.|Preface.",at=118.2]
+== Preface.
+
+[.preface-text]
+In this book, as well as in the others of the Revised
+Series, most of the favorite drill selections, which constituted
+one of the leading excellences of M[.mc]##c##[.sc]#Guffey’s Readers#,
+have been retained. New selections have been inserted
+only when they seemed manifest improvements on those
+formerly used.
+
+[.preface-text]
+The plan of this Reader is a continuation and extension
+of that pursued in the First Reader.
+
+[.preface-text]
+If the pupil is not familiar with the diacritical marks, he
+should be carefully drilled, as suggested on page 7, until
+the marked letter instantly suggests the correct sound. He
+is then prepared to study his reading lessons without any
+assistance from the teacher.
+
+[.preface-text]
+All new words are given at the head of each lesson.
+When these are mastered, the main difficulties left for the
+pupil are those of expression. In the latter portion of the
+book the simpler derivatives,—such as are formed by add{shy}ing
+one or two letters,—possessives, plurals, verbal forms,
+etc.,—are omitted if the primitive word has been given.
+In this way the pupil is gradually led to the mastery of
+words as ordinarily printed.
+
+[.preface-text]
+A few of the most usual abbreviations have been intro{shy}duced,—such
+as Mr., Mrs., etc. These should be carefully
+// page iv
+explained, not only as to their meaning and use, but as
+to the reason for their use.
+
+[.preface-text]
+Great care has been taken to have the illustrations
+worthy of the reputation M[.mc]##c##[.sc]#Guffey’s Readers# have at{shy}tained,
+and some of the foremost designers of this country
+have contributed to the embellishment of the book.
+
+[.preface-text]
+Many of these pictures will serve admirably for lessons
+in language, in extension and explanation of the text.
+The imagination of the artist has, in some cases, filled in
+details not found in the text.
+
+[.preface-text]
+The thanks of the publishers are due to very many ex{shy}perienced
+teachers, who have contributed their valuable
+suggestions.
+
+[.signature,at=234.2]
+_June, 1879._

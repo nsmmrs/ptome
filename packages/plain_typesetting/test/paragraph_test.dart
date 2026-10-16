@@ -103,6 +103,34 @@ void main() {
     }
   });
 
+  test('a run set flush right with leaders: the room before it filled, '
+      "each copy a whole number of its widths from the line's start", () {
+    List<TextFragment> dots(String before) => [
+      for (final fragment in _lines([
+        TextRun(before, _body),
+        TextRun('11', _body, flushRight: true, leader: '. '),
+      ], width: 200).single.fragments)
+        if (fragment is TextFragment && fragment.text.startsWith('.')) fragment,
+    ];
+    final unit = _body.measure('. ');
+    for (final before in ['Evening at Home ', 'Susie Sunbeam ']) {
+      final [leader] = dots(before);
+      expect(
+        leader.run,
+        isA<TextRun>().having((r) => r.artifact, 'artifact', true),
+      );
+      expect(leader.x / unit, closeTo((leader.x / unit).roundToDouble(), 1e-9));
+      expect(
+        leader.x,
+        greaterThanOrEqualTo(_body.measure(before) + unit - 1e-9),
+      );
+      expect(
+        leader.x + leader.width,
+        lessThanOrEqualTo(200 - _body.measure('11')),
+      );
+    }
+  });
+
   test('first fit fills each line, and keeps the words in order', () {
     final lines = _lines([TextRun(_lorem, _body)]);
     expect(lines.length, greaterThan(2));

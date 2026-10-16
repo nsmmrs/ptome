@@ -1,0 +1,1081 @@
+// The lessons as the printing sets them (pages 11–48): each paragraph's
+// lines its lines (`:source-lines:`), each page break where it breaks;
+// each lesson's new words in its columns, around its woodcut where it
+// sets them there (the woodcut first, the words drawn up over the room
+// it leaves them); its paragraphs numbered in their first lines, its
+// stanzas' numbers hung.
+
+<<<
+
+// page 11
+[.opening-title,margin-top=-13.48pt]
+M[.mc]##c##GUFFEY’S
+
+[.opening-title2,margin-top=-2.27pt]
+SECOND READER.
+
+[.opening,margin-top=-0.3pt]
+'''
+
+[#lesson-1.opening,margin-top=5.47pt]
+== Lesson I.
+
+image::image0012.png["Family at evening; father reading newspaper, mother sewing, boy and girl reading.",pdfwidth=256.4pt,pdfheight=181.8pt,margin-top=11.92pt]
+
+[.words,margin-top=7.78pt,cols="785,400,490,440,405",frame=none,grid=none]
+|===
+|news̱′pā per |ȼōld |ôr′der |sēem |thro̤ugh
+|stŏck′ings̱ |chăt |stō′ry |līght |Hăr′ry
+|brȧnch′es̱ |kĭss |bûrns̱ |Mrs. |e vĕnts′
+|an ȯth′er |Mr. |sto͞ol |lămp |mĕnds̱
+|===
+
+[.lesson-title,margin-top=12.56pt]
+EVENING AT HOME.
+
+[margin-top=6.33pt]
+. It is winter. The cold wind whis{shy}tles
+through the branches of the trees.
+// page 12
+. Mr. Brown has done his day’s
+work, and his children, Harry and
+Kate, have come home from school.
+They learned their lessons well to-day,
+and both feel happy.
+. Tea is over. Mrs. Brown has put
+the little sitting room in order. The fire
+burns brightly. One lamp gives light
+enough for all. On the stool is a bas{shy}ket
+of fine apples. They seem to say,
+“Won’t you have one?”
+. Harry and Kate read a story in a
+new book. The father reads his news{shy}paper,
+and the mother mends Harry’s
+stockings.
+. By and by, they will tell one an{shy}other
+what they have been reading about,
+and will have a chat over the events of
+the day.
+. Harry and Kate’s bedtime will come
+first. I think I see them kiss their
+dear father and mother a sweet good
+night.
+. Do you not wish that every boy and
+girl could have a home like this?
+
+<<<
+
+// page 13
+[#lesson-2.lesson,margin-top=13.46pt]
+== Lesson II.
+
+image::image0014.png["Three children playing with bubbles and cat.",pdfwidth=268.6pt,pdfheight=233.3pt,margin-top=11.97pt]
+
+[.words.over,margin-top=-235.97pt,cols="36,677,1807",frame=none,grid=none]
+|===
+| |beaū′ti fụl |pōrch
+| |rāin′bōw |bûrst
+| |bŭb′bles̱ |sāme
+| 2+|bĭḡ′ḡest
+| 2+|snēeze
+| 2+|ȼȯl′ors̱
+|===
+
+[.words,margin-top=120.65pt,cols="36,468,438,464,384,730",frame=none,grid=none]
+|===
+| |mīne |sōap |wạsh |rĕd |[.tight]#ma′ny (mĕn′y̆)#
+|===
+
+[.lesson-title,margin-top=13.34pt]
+BUBBLES.
+
+[margin-top=6.13pt]
+. The boys have come out on the
+porch to blow bubbles. The old cat is
+asleep on the mat by the door.
+. “Ha! ha!” laughs Robert, as a bub{shy}ble
+comes down softly on the old cat’s
+back, and does not burst.
+// page 14
+. Willie tries to make his bubble
+do the same. This time it comes down
+on the cat’s face, and makes her sneeze.
+. “She would rather wash her face
+without soap,” says Harry. “Now let
+us see who can make the biggest bub{shy}ble.”
+. “Mine is the biggest,” says Robert.
+“See how high it floats in the air! I
+can see—ah! it has burst.”
+. “I can see the house and the
+trees and the sky in mine,” says Willie;
+“and such beautiful colors.”
+. “How many, Willie?”
+. “Red, one; blue, two; there—they
+are all out. Let us try again.”
+. “I know how many colors there
+are,” says Harry. “Just as many as
+there are in the rainbow.”
+. “Do you know how many that
+is?”
+
+[#lesson-3.lesson,margin-top=10.68pt]
+== Lesson III.
+
+[.words,margin-top=12.50pt,cols="785,625,720,390",frame=none,grid=none]
+|===
+|rŭb′ber |ḡŭn |pär′lor |strēet
+|nŭm′ber |tĕn |o′ȼlŏck′ |sho͞ot
+|===
+
+<<<
+
+// page 15
+[.lesson-title,margin-top=14.05pt]
+WILLIE’S LETTER.
+
+[.script.right,margin-top=34.75pt]
+New York, Dec. 10, 1878.
+
+[.script.salute,margin-top=-0.20pt]
+Dear Santa Claus:
+
+[.script,margin-top=-0.20pt]
+Papa is going to give
+me a Christmas tree, and he
+says that you will put nice
+things on it if I ask you. I would
+like a gun that will shoot, and
+a rubber ball that I can throw
+hard, and that will not break
+Mamma’s windows or the big
+glass in the parlor.
+
+[.script,margin-top=-1.00pt]
+Now, please don’t forget to come.
+I live on Fourth St., number ten.
+I will go to bed at eight o’clock,
+and shut my eyes tight.
+I will not look indeed I won’t.
+
+[.script.close,margin-top=0.60pt]
+Your little boy +
+Willie.
+
+<<<
+
+// page 16
+[#lesson-4.lesson,margin-top=14.26pt]
+== Lesson IV.
+
+[.words,margin-top=9.30pt,cols="240,615,229,556,234,496,150",frame=none,grid=none]
+|===
+2+|a bȯve′ 2+|wõrld 2+|därk |ŏft
+2+|nĕv′er 2+|spärk 2+|dew |tĭll
+| 2+|dī′a mond 2+|twĭn̲′kle 2+|blāz′ing
+|===
+
+[.lesson-title,margin-top=10.75pt]
+THE LITTLE STAR.
+
+[.stanzas,margin-top=5.93pt]
+. Twinkle, twinkle, little star; +
+How I wonder what you are, +
+Up above the world so high, +
+Like a diamond in the sky!
+. When the blazing sun is set, +
+And the grass with dew is wet, +
+Then you show your little light; +
+Twinkle, twinkle, all the night.
+. Then, if I were in the dark, +
+I would thank you for your spark. +
+I could not see which way to go, +
+If you did not twinkle so.
+. And when I am sound asleep, +
+Oft you through my window peep; +
+For you never shut your eye, +
+Till the sun is in the sky.
+
+<<<
+
+// page 17
+[#lesson-5.lesson,margin-top=14.66pt]
+== Lesson V.
+
+[.words,margin-top=9.50pt,cols="618,972,516,414",frame=none,grid=none]
+|===
+|be hīnd′ |to ḡĕth′ er |nō′ble |Sȼŏtch
+|Dŏdġ′ er |mĭn′utes |ȼrĭb |wăḡ′on
+|tĕr′ri er |ȼoŭn′try |sȼōld |fĕl′low
+|shăḡ′ḡy |frĭsk′i ly |fĭts |çĕl′lar
+|ḡuärds̱ |New′foŭnd land |yärd |här′ness
+|===
+
+image::image0018.png["Two dogs, one large, the other a small puppy.",pdfwidth=265.7pt,pdfheight=187.3pt,margin-top=13.73pt]
+
+[.lesson-title,margin-top=0.14pt]
+TWO DOGS.
+
+[margin-top=5.93pt]
+. James White has two dogs. One
+is a Newfoundland dog, and the other
+is a Scotch terrier.
+. The Newfoundland is a large, noble
+// page 18
+fellow. He is black, with a white spot,
+and with long, shaggy hair. His name
+is Sport.
+. Sport is a good watchdog, and a
+kind playfellow. Every night he guards
+the house while James and his father
+are asleep.
+. In the daytime, James often uses
+Sport for his horse. He has a little
+wagon, and a set of small harness
+which just fits the dog.
+. He hitches Sport to this wagon,
+and drives over the country. In this
+way, he can go almost as fast as his
+father with the old family horse.
+. The name of James’s Scotch terrier
+is Dodger. He is called Dodger because
+he jumps about so friskily. He is up
+on a chair, under the table, behind
+the door, down cellar, and out in the
+yard,—all in a minute.
+. Dodger has very bright eyes, and
+he does many funny things. He likes
+to put his paws up on the crib, and
+watch the baby.
+// page 19
+. The other day he took baby’s red
+stocking, and had great fun with it;
+but he spoiled it in his play, and James
+had to scold him.
+. Every one likes to see James White
+with his two dogs. They always seem
+very happy together.
+
+[#lesson-6.lesson,margin-top=34.60pt]
+== Lesson VI.
+
+[.words,margin-top=13.90pt,cols="725,895,550,350",frame=none,grid=none]
+|===
+|be twēen′ |bū′reau (-ro) |stâirs̱ |[.tight]#nēe′dle#
+|a frāid′ |shăd′ow |hĕld |stĩr
+|===
+
+[.lesson-title,margin-top=13.74pt]
+AFRAID IN THE DARK.
+
+[margin-top=8.13pt]
+. “Willie, will you run upstairs, and
+get my needlebook from the bureau?”
+. But Willie did not stir. “Willie!”
+said mamma. She thought he had not
+heard.
+. “I’m afraid,” said Willie.
+. “Afraid of what?”
+. “It’s dark up there.”
+. “What is the dark?” asked mamma.
+“See! It is nothing but a shadow.”
+// page 20
+And she held her hand between the
+lamp and the workbasket on the table.
+
+image::image0020.png["Mother, seated in rocking chair, kerosene lamp on table, boy standing, examining his shadow on the wall.",pdfwidth=245.7pt,pdfheight=205.6pt,margin-top=12.17pt]
+
+[start=7,margin-top=9.67pt]
+. “Now it is dark in the basket; but
+as soon as I take my hand away, it is
+light.”
+. “Come and stand between the lamp
+and the wall, Willie. See! There is
+your shadow on the wall. Can your
+shadow hurt you?”
+. “Oh no, mamma! I am sure it can
+not hurt me.”
+// page 21
+. “Well, the dark is only a big
+shadow over everything.”
+. “What makes the big shadow,
+mamma?”
+. “I will tell you all about that,
+Willie, when you are a little older.
+But now, I wish you would find me
+a brave boy who is not afraid of
+shadows, to run upstairs and get my
+needlebook.”
+. “I am brave, mamma. I will go.
+—Here it is.”
+. “Thank you, my brave little man.
+You see the dark didn’t hurt you.”
+
+[.slate,margin-top=22.07pt]
+SLATE WORK.
+
+[.script.script-verse,margin-top=23.23pt]
+Beautiful faces are they that wear
+The light of a pleasant spirit there;
+Beautiful hands are they that do
+Deeds that are noble, good, and true;
+Beautiful feet are they that go
+Swiftly to lighten another’s woe.
+
+<<<
+
+// page 22
+[#lesson-7.lesson,margin-top=15.06pt]
+== Lesson VII.
+
+image::image0022.png["Mother and baby watching fly on the wall.",pdfwidth=271.6pt,pdfheight=177.6pt,margin-top=3.46pt]
+
+[.words.over.p19,margin-top=-171.16pt,cols="722,786,582,92,104,28,20,38,148",frame=none,grid=none]
+|===
+3+|spī′ders̱ 6+|tĭck′ling
+5+|stāy 4+|nĕck
+4+|nōs̱e 5+|sē′ȼret
+6+|ȼra̤wls̱ 3+|lĕḡs̱
+7+|bĕck 2+|ōpe
+6+|ḡōes̱ 3+|tōes̱
+4+|spĕck 5+|cho͞os̱e
+7+|dŏt 2+|nŏd
+|sho̤es̱ |sprĕad 6+|be līeve′ |sĭx
+|===
+
+[.lesson-title,margin-top=4.40pt]
+BABY BYE.
+
+[.stanzas,margin-top=6.53pt]
+. Baby Bye, +
+Here’s a fly; +
+We will watch him, you and I. +
+{em}How he crawls +
+{em}Up the walls, +
+{em}Yet he never falls! +
+I believe with six such legs +
+You and I could walk on eggs. +
+{em}There he goes +
+{em}On his toes, +
+{em}Tickling Baby’s nose.
+// page 23
+. Spots of red +
+Dot his head; +
+Rainbows on his back are spread; +
+{em}That small speck +
+{em}Is his neck; +
+{em}See him nod and beck! +
+I can show you, if you choose, +
+Where to look to find his shoes, +
+{em}Three small pairs, +
+{em}Made of hairs; +
+{em}These he always wears.
+. Flies can see +
+More than we; +
+So how bright their eyes must be! +
+{em}Little fly, +
+{em}Ope your eye; +
+{em}Spiders are near by. +
+For a secret I can tell, +
+Spiders never use flies well; +
+{em}Then away, +
+{em}Do not stay. +
+{em}Little fly, good day.
+
+<<<
+
+// page 24
+[#lesson-8.lesson,margin-top=14.06pt]
+== Lesson VIII.
+
+image::image0023.png["Cat carrying kitten up stairs by the scruff of the neck.",pdfwidth=264.6pt,pdfheight=258.1pt,margin-top=19.06pt]
+
+[.words.over,margin-top=-267.46pt,cols="16,544,1960",frame=none,grid=none]
+|===
+| |sẽrv′ant |sŭd′den ly
+| |lŏn̲′ḡer |re tûrned′
+| |lĭved |tīred
+| |sĭnçe |fīve
+|===
+
+[.words.over.p20,margin-top=11.03pt,cols="1896,624",frame=none,grid=none]
+|===
+| |ăn̲x′ioŭs
+| |troŭ′ble
+| |çẽr′tain
+| |nēar′ly
+| |dȯz′en
+| |sĕv′en
+|===
+
+[.words.over.p165,margin-top=-1.50pt,cols="1383,513,624",frame=none,grid=none]
+|===
+| |ăt′tiȼ |strānġe
+| |ḡreāt |prŏp′er
+| |ȼōal |sēemed
+|===
+
+[.lesson-title,margin-top=16.60pt]
+PUSS AND HER KITTENS.
+
+[margin-top=10.73pt]
+. Puss, with her three kittens, had
+lived in the coal cellar; but one day
+she thought she would carry them to
+the attic.
+. The servant thought that was
+// page 25
+not the proper place for them; so she
+carried them back to the cellar.
+. Puss was certain that she wanted
+them in the attic; so she carried them
+there again and again, five, six, seven,
+—yes, a dozen times; for each time the
+servant took them back to the cellar.
+. Poor puss was nearly tired out,
+and could carry them no longer.
+. Suddenly she went away. Where
+do you think she went?
+. She was gone a long time. When
+she returned, she had a strange cat
+with her that we had never seen be{shy}fore.
+. She seemed to tell him all about
+her great trouble, and he listened to
+her story.
+. Then the strange cat took the little
+kittens, one by one, and carried them
+to the attic. After this he went away,
+and we have never seen him since.
+. The servant then left the kittens
+in the attic, for she saw how anxious
+puss was to have them stay there.
+// page 26
+. Was not the strange cat kind to
+puss? This lesson should teach chil{shy}dren
+to be ever ready to help one
+another.
+
+[#lesson-9.lesson,margin-top=17.94pt]
+== Lesson IX.
+
+image::image0024.png["White cat sneaking up on a mouse.",pdfwidth=253.0pt,pdfheight=208.7pt,align=left,margin-top=14.77pt]
+
+[.words.over.p25,margin-top=-214.82pt,cols="1473,600,447",frame=none,grid=none]
+|===
+| |nīne |mous′ie
+| |frō |frŏl′iȼ
+| |bĭt |slĭpped
+2+| |spīed
+2+| |ȼrōw
+2+| |tēeth
+2+| |pẽarl
+2+| |ūs̱ed
+|===
+
+[.lesson-title,margin-top=15.24pt]
+KITTY AND MOUSIE.
+
+[.stanzas.s13,margin-top=11.73pt]
+. Once there was a little kitty, +
+{em}White as the snow; +
+In a barn he used to frolic, +
+{em}Long time ago.
+// page 27
+. In the barn a little mousie +
+{em}Ran to and fro; +
+For she heard the little kitty, +
+{em}Long time ago.
+. Two black eyes had little kitty, +
+{em}Black as a crow; +
+And they spied the little mousie, +
+{em}Long time ago.
+. Four soft paws had little kitty, +
+{em}Paws soft as snow; +
+And they caught the little mousie, +
+{em}Long time ago.
+. Nine pearl teeth had little kitty, +
+{em}All in a row; +
+And they bit the little mousie, +
+{em}Long time ago.
+. When the teeth bit little mousie, +
+{em}Mousie cried out “Oh!” +
+But she slipped away from kitty, +
+{em}Long time ago.
+
+<<<
+
+// page 28
+[#lesson-10.lesson,margin-top=14.06pt]
+== Lesson X.
+
+[.words,margin-top=8.70pt,cols="650,878,720,272",frame=none,grid=none]
+|===
+|wạshed |hours̱ (ours̱) |prĕ′cioŭs |ḡāme
+|härm |a′ny (ĕn′y̆) |brŭshed |ĕnd
+|===
+
+[.lesson-title,margin-top=7.74pt]
+AT WORK.
+
+[margin-top=5.53pt]
+. A little play does not harm any
+one, but does much good. After play,
+we should be glad to work.
+. I knew a boy who liked a good
+game very much. He could run, swim,
+jump, and play ball; and was always
+merry when out of school.
+. But he knew that time is not all
+for play; that our minutes, hours, and
+days are very precious.
+. At the end of his play, he would
+go home. After he had washed his
+face and hands, and brushed his hair,
+he would help his mother, or read in
+his book, or write upon his slate.
+. He used to say, “One thing at a
+time.” When he had done with work,
+he would play; but he did not try to
+play and to work at the same time.
+
+<<<
+
+// page 29
+[#lesson-11.lesson,margin-top=18.86pt]
+== Lesson XI.
+
+image::image0026.png["Bird perched on tree branch.",pdfwidth=255.6pt,pdfheight=255.6pt,margin-top=14.06pt]
+
+[.words.over,margin-top=-129.36pt,cols="105,77,613,1725",frame=none,grid=none]
+|===
+| 3+|twĭt-twēe
+| 3+|bougḥ (bow)
+| 3+|twĭt-twĭt
+| 2+|tŏp′mōst |lŏck
+| 2+|sprāy |māte
+| 2+|ȼlōse′ly |rōs̱′y
+2+| 2+|ăn′swer (ăn′ser)
+|===
+
+[.lesson-title,margin-top=21.38pt]
+WHAT A BIRD TAUGHT.
+
+[.stanzas.s0,margin-top=14.13pt]
+. Why do you come to my apple tree, +
+{em}Little bird so gray? +
+Twit-twit, twit-twit, twit-twit-twee! +
+{em}That was all he would say.
+// page 30
+. Why do you lock your rosy feet +
+{em}So closely round the spray? +
+Twit-twit, twit-twit, twit-tweet! +
+{em}That was all he would say.
+. Why on the topmost bough do you get, +
+{em}Little bird so gray? +
+Twit-twit-twee! twit-twit-twit! +
+{em}That was all he would say.
+. [.tight]#Where is your mate? come, answer me,# +
+{em}Little bird so gray. +
+Twit-twit-twit! twit-twit-twee! +
+{em}That was all he would say.
+
+[.author,margin-top=1.76pt]
+Alice Cary.
+
+[#lesson-12.lesson,margin-top=15.20pt]
+== Lesson XII.
+
+[.words,margin-top=10.90pt,cols="844,736,670,270",frame=none,grid=none]
+|===
+|brīght′ness |plĕas̱′ant |lẽarned |drĕss
+|plāy′mātes |ŭn kīnd′ |răḡ′ḡed |wõrd
+|quĕs′tions̱ |smīl′ing |ȼrōwed |chīld
+|Sŭn′bēam |chēered |Sū′s̱ie |ḡāve
+|ḡlăd′ness |un lĕss′ |nāme |ḡāte
+|===
+
+[.lesson-title,margin-top=1.77pt]
+SUSIE SUNBEAM.
+
+[margin-top=5.13pt]
+. Susie Sunbeam was not her real
+name; that was Susan Brown. But every
+// page 31
+one called her Susie Sunbeam, because
+she had such a sweet, smiling face,
+and always brought brightness with her
+when she came.
+
+image::image0028.png["Older girls playing with younger girl. Three children standing in background.",pdfwidth=252.9pt,pdfheight=185.3pt,margin-top=7.30pt]
+
+[start=2,margin-top=5.08pt]
+. Her grandfather first gave her this
+name, and it seemed to fit the little girl
+so nicely that soon it took the place of
+her own.
+. Even when a baby, Susie laughed
+and crowed from morning till night.
+No one ever heard her cry unless she
+was sick or hurt.
+. When she had learned to walk,
+// page 32
+she loved to go about the house and
+get things for her mother, and in this
+way save her as many steps as she
+could.
+. She would sit by her mother’s
+side for an hour at a time, and ask
+her ever so many questions, or she
+would take her new book and read.
+. Susie was always pleasant in her
+play with other children. She never
+used an unkind word, but tried to do
+whatever would please her playmates
+best.
+. One day, a poor little girl with a
+very ragged dress was going by, and
+Susie heard some children teasing her
+and making fun of her.
+. She at once ran out to the gate,
+and asked the poor little girl to come
+in. “What are you crying for?” Susie
+asked.
+. “Because they all laugh at me,”
+she said.
+. Then Susie took the little girl into
+the house. She cheered her up with
+// page 33
+kind words, and gave her a nice dress
+and a pair of shoes.
+. This brought real joy and glad{shy}ness
+to the poor child, and she, too,
+thought that Susie was rightly called
+Sunbeam.
+
+[#lesson-13.lesson,margin-top=18.78pt]
+== Lesson XIII.
+
+[.words,margin-top=10.10pt,cols="882,158,525,651,304",frame=none,grid=none]
+|===
+|wo͝od′lănds̱ 2+|dĭ vīne′ |rāis̱ed |un tĭl′
+|dro͞op′ing 2+|blĕssed |who̤s̱e |sēek
+|ŭp′ward 2+|hŏv′els̱ |ĭn′ner |stēal
+|hĕav′en 2+|heärts |lĭl′ies̱ |dīe
+2+| 3+|rōam′ing
+|===
+
+[.lesson-title,margin-top=13.77pt]
+IF I WERE A SUNBEAM.
+
+[.stanzas,margin-top=7.53pt]
+. “If I were a sunbeam, +
+{em}I know what I’d do; +
+I would seek white lilies, +
+{em}Roaming woodlands through. +
+I would steal among them, +
+{em}Softest light I’d shed, +
+Until every lily +
+{em}Raised its drooping head.
+// page 34
+. “If I were a sunbeam, +
+{em}I know where I’d go; +
+Into lowly hovels, +
+{em}Dark with want and woe: +
+Till sad hearts looked upward, +
+{em}I would shine and shine; +
+Then they’d think of heaven, +
+{em}Their sweet home and mine.”
+. Are you not a sunbeam, +
+{em}Child, whose life is glad +
+With an inner brightness +
+{em}Sunshine never had? +
+Oh, as God has blessed you, +
+{em}Scatter light divine! +
+For there is no sunbeam +
+{em}But must die or shine.
+
+image::image0030.png["Boy sitting on hillside.",pdfwidth=252.6pt,pdfheight=80.5pt,margin-top=52.09pt]
+
+<<<
+
+// page 35
+[#lesson-14.lesson,margin-top=13.86pt]
+== Lesson XIV.
+
+image::image0031.png["Boy offering to shine man's shoes.",pdfwidth=268.9pt,pdfheight=197.8pt,margin-top=19.55pt]
+
+[.words.over.p22,margin-top=-212.54pt,cols="28,750,630,1112",frame=none,grid=none]
+|===
+| |sup pōrt′ |a lŏng′ |bo͞ots
+| |be lŏng′ |dŏl′lar |yēars̱
+| 3+|măn′aġe
+| 3+|ta̤ught
+| 3+|ȼôr′ner
+| 3+|nō′tĭçe
+| 3+|mȯn′ey
+| 3+|blăck′ing
+| 3+|ġĕn′tle men
+|===
+
+[.words,margin-top=3.78pt,cols="8,1106,568,506,332",frame=none,grid=none]
+|===
+| |hŏn′est (ŏn′est) |quīte |buȳ |[.tight]#ẽarned#
+|===
+
+[.lesson-title,margin-top=24.14pt]
+HENRY, THE BOOTBLACK.
+
+[margin-top=11.53pt]
+. Henry was a kind, good boy. His
+father was dead, and his mother was
+very poor. He had a little sister about
+two years old.
+. He wanted to help his mother, for
+she could not always earn enough to
+buy food for her little family.
+// page 36
+. One day, a man gave him a dol{shy}lar
+for finding a pocketbook which he
+had lost.
+. Henry might have kept all the
+money, for no one saw him when he
+found it. But his mother had taught
+him to be honest, and never to keep
+what did not belong to him.
+. With the dollar he bought a box,
+three brushes, and some blacking. He
+then went to the corner of the street,
+and said to every one whose boots did
+not look nice, “Black your boots, sir,
+please?”
+. He was so polite that gentlemen
+soon began to notice him, and to let
+him black their boots. The first day
+he brought home fifty cents, which he
+gave to his mother to buy food with.
+. When he gave her the money, she
+said, as she dropped a tear of joy, “You
+are a dear, good boy, Henry. I did not
+know how I could earn enough to buy
+bread with, but now I think we can
+manage to get along quite well.”
+// page 37
+. Henry worked all the day, and went
+to school in the evening. He earned
+almost enough to support his mother
+and his little sister.
+
+[#lesson-15.lesson,margin-top=33.34pt]
+== Lesson XV.
+
+[.words,margin-top=9.50pt,cols="990,1155,375",frame=none,grid=none]
+|===
+|trĕad |whĭs′per |sŏft′ly
+|ta̤lk |chēer fụl |ȼâre′fụl
+|===
+
+[.lesson-title,margin-top=20.94pt]
+DON’T WAKE THE BABY.
+
+[.script.script-verse,margin-top=24.20pt]
+Baby sleeps, so we must tread
+Softly round her little bed,
+And be careful that our toys
+Do not fall and make a noise.
+
+[.script.script-verse,margin-top=22.60pt]
+We must not talk, but whisper low,
+Mother wants to work, we know,
+That, when father comes to tea,
+All may neat and cheerful be.
+
+<<<
+
+// page 38
+[#lesson-16.lesson,margin-top=11.06pt]
+== Lesson XVI.
+
+[.words.p165,margin-top=7.55pt,cols="32,353,495,585,592,463",frame=none,grid=none]
+|===
+| |fụll |lōad |hĕav′y |mĭd′dle |hĕav′i er
+| |slĭp |wrŏng |hăn′dle |brȯth′er |[.tight]#de çēived′#
+|===
+
+image::image0035.png["Brothers",pdfwidth=252.4pt,pdfheight=220.0pt,margin-top=-8.04pt]
+
+[.lesson-title,margin-top=6.04pt]
+A KIND BROTHER.
+
+[margin-top=4.13pt]
+. A boy was once sent from home
+to take a basket of things to his grand{shy}mother.
+. The basket was so full that it was
+very heavy. So his little brother went
+with him, to help carry the load.
+// page 39
+. They put a pole under the handle
+of the basket, and each then took
+hold of an end of the pole. In this
+way they could carry the basket very
+nicely.
+. Now the older boy thought, “My
+brother Tom does not know about this
+pole.
+. “If I slip the basket near him, his
+side will be heavy, and mine light; but
+if the basket is in the middle of the
+pole, it will be as heavy for me as it
+is for him.
+. “Tom does not know this as I do.
+But I will not do it. It would be
+wrong, and I will not do what is
+wrong.”
+. Then he slipped the basket quite
+near his own end of the pole. His
+load was now heavier than that of his
+little brother.
+. Yet he was happy; for he felt
+that he had done right. Had he de{shy}ceived
+his brother, he would not have
+felt at all happy.
+
+<<<
+
+// page 40
+[#lesson-17.lesson,margin-top=14.26pt]
+== Lesson XVII.
+
+[.words.p16,margin-top=13.60pt,cols="810,594,510,400,206",frame=none,grid=none]
+|===
+|bus̱′y (bĭz′zy) |mĭs′chĭef |lo͝oked |ŭn′to̤ |ḡlēe
+|ȼon trīv′ing |rĭng′lets |nŏd′dle |drew |nŭn
+|prĕss′ing |fĭn̲′ḡers̱ |ȼär′pet |wīs̱e |lĭps
+|em brāçe′ |pŏn′der |lăsh′es̱ |ȼlīmb |trṳe
+|===
+
+[.lesson-title,margin-top=15.06pt]
+MY GOOD-FOR-NOTHING.
+
+[.stanzas.small,margin-top=6.36pt]
+. “What are you good for, my brave little +
+{em}{em}man? +
+Answer that question for me, if you can,— +
+You, with your fingers as white as a nun,— +
+You, with your ringlets as bright as the sun. +
+All the day long, with your busy contriving, +
+Into all mischief and fun you are driving; +
+See if your wise little noddle can tell +
+What you are good for. Now ponder it well.”
+. Over the carpet the dear little feet +
+Came with a patter to climb on my seat; +
+Two merry eyes, full of frolic and glee, +
+Under their lashes looked up unto me; +
+Two little hands pressing soft on my face, +
+Drew me down close in a loving embrace; +
+Two rosy lips gave the answer so true, +
+“Good to love you, mamma, good to love you.”
+
+[.author,margin-top=0.89pt]
+Emily Huntington Miller.
+
+<<<
+
+// page 41
+[#lesson-18.lesson,margin-top=14.66pt]
+== Lesson XVIII.
+
+image::image0037.png["Bird perched on branch.",pdfwidth=260.3pt,pdfheight=177.1pt,margin-top=11.75pt]
+
+[.words.over.p235,margin-top=-178.40pt,cols="70,2070,380",frame=none,grid=none]
+|===
+| |bĕr′ries̱ |strīkes
+| |rŏb′in |ēa′ḡle
+| |shôrt |kĭng
+| |rĭd |fōe
+| |därt |fāils̱
+| |shärp |ha̤wk
+| |wõrms̱ |ăc′tĭve
+|===
+
+[.lesson-title,margin-top=6.53pt]
+THE KINGBIRD.
+
+[margin-top=8.93pt]
+. The kingbird is not bigger than
+a robin.
+. He eats flies, and worms, and
+bugs, and berries.
+. He builds his nest in a tree, near
+some house.
+. When there are young ones in
+the nest, he sits on the top of a tree
+near them.
+. He watches to see that no bird
+comes to hurt them or their mother.
+// page 42
+. If a hawk, a crow, or even an
+eagle comes near, he makes a dash
+at it.
+. Though he is so small, he is
+brave, and he is also very active.
+. He never fails to drive off other
+birds from his nest.
+. He flies around and around the
+eagle, and suddenly strikes him with
+his sharp bill.
+. He strikes at his eye, and then
+darts away before the eagle can catch
+him.
+. Or he strikes from behind, and
+is off again before the eagle can turn
+round.
+. In a short time, the great eagle
+is tired of such hard blows, and flies
+away. He is very glad to get rid of
+his foe.
+. Is not the little fellow a brave
+bird?
+. Because he can drive off all other
+birds, he is called the [.sc]#kingbird#.
+
+<<<
+
+// page 43
+[#lesson-19.lesson,margin-top=11.66pt]
+== Lesson XIX.
+
+image::image0038.png["Sunset; lake in foreground, town in background.",pdfwidth=268.7pt,pdfheight=254.3pt,margin-top=12.42pt]
+
+[.words.p156,margin-top=1.48pt,cols="825,720,653,322",frame=none,grid=none]
+|===
+|wạtch′ing |ḡăth′ers̱ |ān′ġels̱ |[.tighter]#be ḡĭn′#
+|därk′ness |a ȼrŏss′ |lōne′ly |bēasts
+|===
+
+[.lesson-title,margin-top=8.64pt]
+EVENING HYMN.
+
+[.stanzas.s25,margin-top=4.73pt]
+. Now the day is over, +
+{em}Night is drawing nigh, +
+Shadows of the evening +
+{em}Steal across the sky.
+// page 44
+. Now the darkness gathers, +
+{em}Stars begin to peep; +
+Birds, and beasts, and flowers +
+{em}Soon will be asleep.
+. Through the lonely darkness, +
+{em}May the angels spread +
+Their white wings above me, +
+{em}Watching round my bed.
+
+[#lesson-20.lesson,margin-top=29.82pt]
+== Lesson XX.
+
+[.words,margin-top=10.90pt,cols="640,614,533,429,304",frame=none,grid=none]
+|===
+|dĭ vīd′ed |quạr′rel |a ḡrēe′ |thŭs |sĕt′tle
+|sĕt′tling |kẽr′nel |ē′qual |ăpt |pärts
+|===
+
+[.lesson-title,margin-top=14.54pt]
+THE QUARREL.
+
+[margin-top=6.33pt]
+. Under a great tree in the woods,
+two boys saw a fine, large nut, and
+both ran to get it.
+. James got to it first, and picked
+it up.
+. “It is mine,” said John, “for I was
+the first to see it.”
+. “No, it is mine,” said James, “for
+I was the first to pick it up.”
+// page 45
+
+image::image0040.png["Three boys standing by a fence, one older than the others.",pdfwidth=266.1pt,pdfheight=254.2pt,margin-top=-1.00pt]
+
+[start=5,margin-top=7.20pt]
+. Thus, they at once began to quar{shy}rel
+about the nut.
+. As they could not agree whose it
+should be, they called an older boy,
+and asked him.
+. The older boy said, “I will settle
+this quarrel.”
+. He took the nut, and broke the
+shell. He then took out the kernel,
+// page 46
+and divided the shell into two parts,
+as nearly equal as he could.
+. “This half of the shell,” said he,
+“belongs to the boy who first saw the
+nut.
+. “And this half belongs to the
+boy who picked it up.
+. “The kernel of the nut, I shall
+keep as my pay for settling the quarrel.
+. “This is the way,” said he, laugh{shy}ing,
+“in which quarrels are very apt to
+end.”
+
+[#lesson-21.lesson,margin-top=14.10pt]
+== Lesson XXI.
+
+[.words.p165,margin-top=10.75pt,cols="737,561,560,446,216",frame=none,grid=none]
+|===
+|ȼrēa′tūres̱ |drōnes̱ |ĭn′sīde |hīve |ī′dle
+|de fĕnse′ |drĭv′en |kĭlled |çĕlls̱ |sīze
+|wõrk′ers̱ |quēen |stĭngs̱ |shāpe |wăx
+|===
+
+[.lesson-title,margin-top=10.00pt]
+THE BEE.
+
+[margin-top=6.33pt]
+. Bees live in a house that is called
+a hive. They are of three kinds,—work{shy}ers,
+drones, and queens.
+. Only one queen can live in each
+hive. If she is lost or dead, the other
+bees will stop their work.
+// page 47
+
+image::image0042.png["Three bee-hives; wooden boxes about two feet square and four feet high, with a sloped roof.",pdfwidth=257.6pt,pdfheight=229.6pt,margin-top=5.58pt]
+
+[start=3,margin-top=13.02pt]
+. They are very wise and busy little
+creatures. They all join together to build
+cells of wax for their honey.
+. Each bee takes its proper place, and
+does its own work. Some go out and
+gather honey from the flowers; others
+stay at home and work inside the hive.
+. The cells which they build, are all
+of one shape and size, and no room is
+left between them.
+// page 48
+. The cells are not round, but have
+six sides.
+. Did you ever look into a glass
+hive to see the bees while at work?
+It is pleasant to see how busy they
+always are.
+. But the drones do not work. Be{shy}fore
+winter comes, all the drones are
+driven from the hive or killed, that they
+may not eat the honey which they did
+not gather.
+. It is not quite safe for children to
+handle bees. They have sharp stings
+that they know well how to use in their
+defense.
+
+[.slate,margin-top=43.49pt]
+SLATE WORK.
+
+[.script.script-verse,margin-top=24.23pt]
+How doth the little busy bee
+{em}Improve each shining hour,
+And gather honey all the day
+{em}From every opening flower!

@@ -5,38 +5,46 @@
 :look: mcguffey
 :looksdir: {docdir}
 :notitle:
+:source-lines:
+:shy: &#173;
+:running-title: Eclectic Series.|Second Reader.
 
-// A schoolbook's marks and hand (doc/showcase.md): Lesson XVI, its new
-// words with their marks over and under the letters, then its numbered
-// paragraphs; and Lesson III's letter in script. (Lesson III's words, and
-// the key, take combining marks the fonts the tests commit lack: the
-// whole work, built in its faces, has them.)
+// A schoolbook's marks, hand and lines (doc/showcase.md): Lesson XVI as
+// the 1920 printing sets it, its new words with their marks over and
+// under the letters in the printing's columns, then its paragraphs
+// numbered in their first lines, each line the printing's; and Lesson
+// III's letter in script. (Lesson III's words take combining marks the
+// fonts the tests commit lack: the whole work, built in its faces, has
+// them.)
 
 [#lesson-16.lesson]
 == Lesson XVI.
 
-[.words%autowidth.stretch,cols="5*",frame=none,grid=none]
+[.words.p165,cols="32,353,495,585,592,463",frame=none,grid=none]
 |===
-|fụll |lōad |hĕav′y |mĭd′dle |hĕav′i er
-|slĭp |wrŏng |hăn′dle |brȯth′er |de çēived′
+| |fụll |lōad |hĕav′y |mĭd′dle |hĕav′i er
+| |slĭp |wrŏng |hăn′dle |brȯth′er |de çēived′
 |===
-
 
 [.lesson-title]
 A KIND BROTHER.
 
-. A boy was once sent from home to take a basket of things to his grandmother.
-. The basket was so full that it was very heavy. So his little brother went with him, to help carry the load.
-. They put a pole under the handle of the basket, and each then took hold of an end of the pole. In this way they could carry the basket very nicely.
-. Now the older boy thought, “My brother Tom does not know about this pole.
-. “If I slip the basket near him, his side will be heavy, and mine light; but if the basket is in the middle of the pole, it will be as heavy for me as it is for him.
-. “Tom does not know this as I do. But I will not do it. It would be wrong, and I will not do what is wrong.”
-. Then he slipped the basket quite near his own end of the pole. His load was now heavier than that of his little brother.
-. Yet he was happy; for he felt that he had done right. Had he deceived his brother, he would not have felt at all happy.
+. A boy was once sent from home
+to take a basket of things to his grand{shy}mother.
+. The basket was so full that it was
+very heavy. So his little brother went
+with him, to help carry the load.
+. They put a pole under the handle
+of the basket, and each then took
+hold of an end of the pole. In this
+way they could carry the basket very
+nicely.
+. Now the older boy thought, “My
+brother Tom does not know about this
+pole.
 
 [#lesson-3.lesson]
 == Lesson III.
-
 
 [.lesson-title]
 WILLIE’S LETTER.
@@ -44,15 +52,20 @@ WILLIE’S LETTER.
 [.script.right]
 New York, Dec. 10, 1878.
 
-[.script]
+[.script.salute]
 Dear Santa Claus:
 
 [.script]
-Papa is going to give me a Christmas tree, and he says that you will put nice things on it if I ask you. I would like a gun that will shoot, and a rubber ball that I can throw hard, and that will not break Mamma’s windows or the big glass in the parlor.
+Papa is going to give
+me a Christmas tree, and he
+says that you will put nice
+things on it if I ask you. I would
+like a gun that will shoot, and
+a rubber ball that I can throw
+hard, and that will not break
+Mamma’s windows or the big
+glass in the parlor.
 
-[.script]
-Now, please don’t forget to come. I live on Fourth St., number ten. I will go to bed at eight o’clock, and shut my eyes tight. I will not look indeed I won’t.
-
-[.script.right]
+[.script.close]
 Your little boy +
 Willie.

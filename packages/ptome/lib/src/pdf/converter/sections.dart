@@ -255,6 +255,7 @@ extension _Sections on PdfConverter {
           marks: _sectionMarks(section, part: part),
           outdent: true,
           collapse: collapse,
+          ownMarginTop: _ownMarginTop(section),
         );
         head = _out.length - start;
       }
@@ -576,6 +577,7 @@ extension _Sections on PdfConverter {
     _FontState? font,
     bool outdent = false,
     double collapse = 0,
+    double? ownMarginTop,
   }) {
     font ??= _headingFont(level);
     var text = title;
@@ -619,10 +621,12 @@ extension _Sections on PdfConverter {
     final keys = _headingKeys(level);
     // (Right after another heading, the larger of its space below and
     // this one's above: [collapse] is that space below.)
-    final marginTop = math.max<double>(
-      0,
-      (keys.number('margin_top') ?? 0).toDouble() - collapse,
-    );
+    final marginTop =
+        ownMarginTop ??
+        math.max<double>(
+          0,
+          (keys.number('margin_top') ?? 0).toDouble() - collapse,
+        );
     final marginBottom = (keys.number('margin_bottom') ?? 0).toDouble();
     var content = box;
     // The modern engine's `heading_min_height_after: auto`: the heading
@@ -642,10 +646,14 @@ extension _Sections on PdfConverter {
       if (below > 0) below += marginBottom;
       content = _NeedsRoom(box, below);
     }
+    // (Its own `margin-top` at the top of a page too, where the theme
+    // keeps a block's own margin there, `base_margin_break: keep`.)
     final pageTop =
-        (_keys('heading_h$level').number('margin_page_top') ??
-                _n('heading_margin_page_top') ??
-                0)
+        (ownMarginTop != null && _s('base_margin_break') == 'keep'
+                ? ownMarginTop
+                : _keys('heading_h$level').number('margin_page_top') ??
+                      _n('heading_margin_page_top') ??
+                      0)
             .toDouble();
     if (pageTop > 0) content = _PageTopGap(content, pageTop);
     final category = 'heading_h$level';

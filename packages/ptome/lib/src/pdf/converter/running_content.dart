@@ -435,8 +435,21 @@ extension _RunningContent on PdfConverter {
         .toDouble();
     final ruleStyle = _keys(periphery).string('column_rule_style');
     String? previous;
+    // (A page that opens a part or chapter, where its running content
+    // shows there, by the theme's `<periphery>_opener` columns when it
+    // has any, in place of the side's: a schoolbook's folio at the foot of
+    // its opening pages alone, in brackets.)
+    final columnsOf =
+        _openerPages.contains(number) &&
+            const ['left', 'center', 'right'].any(
+              (position) =>
+                  _keys(periphery).string('opener_${position}_content') != null,
+            )
+        ? 'opener'
+        : side;
     for (final position in const ['left', 'center', 'right']) {
-      var template = _keys(periphery).string('${side}_${position}_content');
+      var template = _keys(periphery)
+          .string('${columnsOf}_${position}_content');
       if (template == null || template.isEmpty) continue;
       var (align, columnWidth, x) = columns[position]!;
       if (columnWidth <= 0) continue;
@@ -834,8 +847,11 @@ extension _RunningContent on PdfConverter {
   /// sixteens) from page `_signature_first` (1), lettered from
   /// `_signature_start` (`B`, the title's gathering being A) in the
   /// printers' alphabet (`_signature_letters`, `ABCDEFGHIKLMNOPQRSTUXYZ`:
-  /// no J, V or W), doubled once it runs out (`AA`, `BB`); null on the
-  /// other pages.
+  /// no J, V or W), doubled once it runs out (`AA`, `BB`); numbered
+  /// instead with `_signature_numbering: decimal`, from `_signature_start`
+  /// (1), as a nineteenth-century American schoolbook numbers its
+  /// gatherings (the footer's `2, {page-signature}.`, the Second Reader's
+  /// second); null on the other pages.
   String? _signatureOf(int number) {
     final keys = _keys('running_content_signature');
     final interval = (keys.number('interval') ?? 16).toInt();
@@ -843,11 +859,24 @@ extension _RunningContent on PdfConverter {
     if (interval < 1 || number < first || (number - first) % interval != 0) {
       return null;
     }
+    // (Worded by `_signature_template`, `{{signature}}` the letter or the
+    // number: the Second Reader's `2, {{signature}}.`.)
+    String worded(String signature) => switch (keys.string('template')) {
+      final template? => template.replaceAll('{{signature}}', signature),
+      null => signature,
+    };
+    if (keys.string('numbering') == 'decimal') {
+      final start =
+          keys.number('start')?.toInt() ??
+          int.tryParse(keys.string('start') ?? '') ??
+          1;
+      return worded('${start + (number - first) ~/ interval}');
+    }
     final letters = keys.string('letters') ?? 'ABCDEFGHIKLMNOPQRSTUXYZ';
     final start = letters.indexOf(keys.string('start') ?? 'B');
     final index = (start < 0 ? 0 : start) + (number - first) ~/ interval;
     final letter = letters[index % letters.length];
-    return letter * (index ~/ letters.length + 1);
+    return worded(letter * (index ~/ letters.length + 1));
   }
 
   /// The running title of the chapter [mark] names on [page]
@@ -862,7 +891,11 @@ extension _RunningContent on PdfConverter {
     final section = index == null || index >= _sections.length
         ? null
         : _sections[index].$1;
-    final running = section?.attr('running-title');
+    // (The section's own, else the document's: one for every chapter, a
+    // schoolbook's series and title.)
+    final running =
+        section?.attr('running-title', null, 'running-title') ??
+        _document.attr('running-title');
     if (running == null) return title;
     final bar = running.indexOf('|');
     if (bar < 0) return running;
@@ -873,10 +906,15 @@ extension _RunningContent on PdfConverter {
     final virtual = number - _skip.$2;
     final verso = _sideOf(_folio.physical ? number : virtual) == 'verso';
     final facing = verso ? number + 1 : number - 1;
-    if (facing < 1 ||
-        facing > page.count ||
-        _openerPages.contains(facing) ||
-        _openerPages.contains(number)) {
+    // (`running_content_spread_whole: false`: divided on every page, as a
+    // schoolbook's series and title head its versos and rectos whatever
+    // faces them.)
+    if (_theme.value('running_content_spread_whole') !=
+            const ThemeBool(false) &&
+        (facing < 1 ||
+            facing > page.count ||
+            _openerPages.contains(facing) ||
+            _openerPages.contains(number))) {
       return whole;
     }
     return verso

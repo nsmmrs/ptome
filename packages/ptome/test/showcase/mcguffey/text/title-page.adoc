@@ -1,0 +1,62 @@
+// The title page and its verso as the printing sets them (pages i–ii):
+// each line its size and its place, from the scan.
+
+// page i
+
+[.tp-series,margin-top=-22.50pt]
+ECLECTIC EDUCATIONAL SERIES.
+
+[.short,margin-top=-4.1pt]
+'''
+
+[.tp-name,margin-top=28.24pt]
+M[.mc]##c##GUFFEY’S
+
+[.tp-second,margin-top=20.61pt]
+SECOND
+
+[.tp-reader,margin-top=15.82pt]
+ECLECTIC READER.
+
+[.edition,margin-top=15.9pt]
+'''
+
+[.tp-edition,margin-top=-5.77pt]
+REVISED EDITION.
+
+[.edition,margin-top=-0.8pt]
+'''
+
+image::image0002.png["A girl reclining in the grass, reading",pdfwidth=256.6pt,pdfheight=148.2pt,margin-top=14.74pt]
+
+[.tp-places,margin-top=23.13pt]
+NEW YORK [.fleuron]#✣# CINCINNATI [.fleuron]#✣# CHICAGO
+
+[.tp-publisher,margin-top=0.75pt]
+AMERICAN BOOK COMPANY
+
+<<<
+
+// page ii
+[.cr-rule,margin-top=152.1pt]
+'''
+
+[.cr,margin-top=-2.75pt]
+Copyright, 1879, by [.sc]#Van Antwerp, Bragg & Co.#
+
+[.cr,margin-top=1.50pt]
+Copyright, 1896, by [.sc]#American Book Company.#
+
+[.cr,margin-top=1.50pt]
+Copyright, 1907 and 1920, by [.sc]#H. H. Vail.#
+
+[.cr-rule,margin-top=1.4pt]
+'''
+
+[.cr-mark,margin-top=-3.39pt]
+M G REV 2D RDR
+
+[.cr-mark,margin-top=0.31pt]
+E-P 276
+
+<<<

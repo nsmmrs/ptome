@@ -55,7 +55,31 @@ extension _Traversal on PdfConverter {
     if (block is! Section && (block.role != null || block.hasAttr('shape'))) {
       _sideFloat(block, before);
     }
+    // (`base_margin_break: keep`: the block's own space above it carried
+    // by a box of its own, kept at the top of a page, as CSS's
+    // `margin-break: keep` keeps it.)
+    if (block is! Section && _out.length > before) {
+      if (_keptMarginTop(block) case final top?) {
+        final added = _out.sublist(before);
+        _out
+          ..removeRange(before, _out.length)
+          ..add(
+            BlockBox(
+              added,
+              style: BoxStyle(
+                margin: EdgeInsets(top: top),
+                keepTopMargin: true,
+              ),
+            ),
+          );
+      }
+    }
   }
+
+  /// [block]'s own `margin-top` where the theme keeps it at the top of a
+  /// page (`base_margin_break: keep`, modern engine), else null.
+  double? _keptMarginTop(AbstractBlock block) =>
+      _s('base_margin_break') == 'keep' ? _ownMargin(block, 'top') : null;
 
   /// The boxes [block] added from [from] on, floating to a side when the
   /// theme floats one of its roles (`role_<role>_float: left` or `right`,
@@ -326,14 +350,7 @@ extension _Traversal on PdfConverter {
     // (The block's own `margin-bottom` and `margin-top` first: a
     // printing's spaces, measured block by block.)
     double? ownMargin(AbstractBlock block, String side) =>
-        switch (block.attr('margin-$side')?.trim()) {
-          // (Negative: a block pulled up onto the line before it.)
-          final value? when value.startsWith('-') => -strToPoints(
-            value.substring(1),
-          ),
-          final value? => strToPoints(value),
-          null => null,
-        };
+        _ownMargin(block, side);
     final own =
         ownMargin(node, 'bottom') ??
         roleMargin(node, 'bottom') ??
@@ -355,11 +372,14 @@ extension _Traversal on PdfConverter {
     // (A block's own negative margin pulls it up past the space above it,
     // as CSS collapses margins: the larger positive one, less the most
     // negative.)
-    if ((ownMargin(node, 'bottom') ?? 0) < 0 ||
-        (ownMargin(following, 'top') ?? 0) < 0) {
-      return math.max(0, math.max(own, top)) + math.min(0, math.min(own, top));
-    }
-    return math.max(own, top);
+    final gap =
+        (ownMargin(node, 'bottom') ?? 0) < 0 ||
+            (ownMargin(following, 'top') ?? 0) < 0
+        ? math.max(0, math.max(own, top)) + math.min(0, math.min(own, top))
+        : math.max(own, top);
+    // (Less the following block's own space above it where its own box
+    // carries that, `base_margin_break: keep`.)
+    return gap - (_keptMarginTop(following) ?? 0);
   }
 
   /// The block before [node] in the flow: its previous sibling, past
@@ -402,10 +422,29 @@ extension _Traversal on PdfConverter {
         parent?.context == BlockContext.preamble;
   }
 
+  /// [block]'s own `margin-<side>` (modern engine), in points, or null:
+  /// a printing's space, measured block by block; negative, the block
+  /// drawn up onto what comes before it.
+  double? _ownMargin(AbstractBlock block, String side) =>
+      asciidoctorCompat(_document, CompatFormat.pdf)
+      ? null
+      : switch (block.attr('margin-$side')?.trim()) {
+          final value? when value.startsWith('-') => -strToPoints(
+            value.substring(1),
+          ),
+          final value? => strToPoints(value),
+          null => null,
+        };
+
+  /// A section's own `margin-top` (modern engine): the space above its
+  /// heading, measured from a printing, in place of the theme's.
+  double? _ownMarginTop(Section section) => _ownMargin(section, 'top');
+
   /// The space above [section]'s heading (its box's, for a section role
   /// the theme styles).
   double _sectionMarginTop(Section section) {
     if (section.hasOption('notitle')) return 0;
+    if (_ownMarginTop(section) case final own?) return own;
     final level = (section.level ?? 0) + 1;
     if (_boxedRole(section) case final role?) {
       final category = 'section_role_$role';

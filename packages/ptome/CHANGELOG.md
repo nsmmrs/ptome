@@ -10,6 +10,22 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: what setting a schoolbook as its printing sets it takes (the
+  showcase's Second Reader, after its 1920 printing; EPIC-b59npn):
+  `olist_marker_position: inside` (numbered paragraphs, the number the
+  first word, the lines the source's under `:source-lines:`); an ordered
+  list's own `olist_indent`, `olist_font_*` and `olist_line_pitch` (a
+  role's, `olist_role_<role>_*`); `role_<role>_width` and `_width_align`
+  (a phrase in a width of its own) and `role_<role>_leader` (dot leaders,
+  lined up from line to line); `<periphery>_opener_*_content` (a folio at
+  the foot of the opening pages alone); signatures numbered and worded
+  (`running_content_signature_numbering: decimal`, `_template`);
+  `running_content_spread_whole: false` and a document-wide
+  `running-title`; `thematic_break_width` and `thematic_break_role_*`;
+  `base_margin_break: keep` (a block's own `margin-top` kept at a page's
+  top, negative too) and a section's own `margin-top`. Under
+  `:source-lines:`, a line its own hard break ends is broken once. Not
+  under `asciidoctor-compat`.
 - PDF: what following a printing page for page takes (the showcase's
   Alice, Wonderland as Macmillan printed it in 1867; EPIC-1glhqj):
   `:source-lines:` sets each paragraph on its source's lines, justified,

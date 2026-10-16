@@ -169,9 +169,32 @@ extension _Lists on PdfConverter {
       numeral = current;
     }
     _listNumerals.add(numeral);
-    _list(node);
-    _listNumerals.removeLast();
+    // (Its own type, `olist_font_*` and `olist_line_pitch` (a role's,
+    // `olist_role_<role>_…`), modern engine: a poem a reader sets a size
+    // down.)
+    final savedFont = _font;
+    if (!asciidoctorCompat(_document, CompatFormat.pdf)) {
+      _font = _themeFont('olist', _font);
+    }
+    try {
+      _list(node);
+    } finally {
+      _font = savedFont;
+      _listNumerals.removeLast();
+    }
   }
+
+  /// Whether the list [node] sets each marker inside its item's text, as
+  /// its first word (`olist_marker_position: inside`, `ulist_…`; a role's
+  /// `olist_role_<role>_marker_position`; modern engine).
+  bool _markerInside(ListBlock node) =>
+      !asciidoctorCompat(_document, CompatFormat.pdf) &&
+      switch (node.context) {
+            BlockContext.olist => _s('olist_marker_position'),
+            BlockContext.ulist => _s('ulist_marker_position'),
+            _ => null,
+          } ==
+          'inside';
 
   /// [node]'s nesting among lists (among lists of context [only]).
   int _listLevel(ListBlock node, {BlockContext? only}) {
@@ -212,7 +235,15 @@ extension _Lists on PdfConverter {
     final unmarked =
         (node.context == BlockContext.ulist && _listBullets.last == null) ||
         (node.context == BlockContext.olist && _listNumerals.last == null);
-    var indent = _length('list_indent', _font.size) ?? 0;
+    // (An ordered list's own, `olist_indent` (a role's), modern engine:
+    // a poem's numbers hung at the margin, another's set in.)
+    var indent =
+        (node.context == BlockContext.olist &&
+                !asciidoctorCompat(_document, CompatFormat.pdf)
+            ? _length('olist_indent', _font.size)
+            : null) ??
+        _length('list_indent', _font.size) ??
+        0;
     if (unmarked) {
       if (node.style == 'unstyled') {
         indent = 0;
@@ -245,6 +276,8 @@ extension _Lists on PdfConverter {
     if (bodyIndent != null && !unmarked) {
       indent += _listMarkerWidth + bodyIndent;
     }
+    // (Its markers inside its text: its items at its left.)
+    if (_markerInside(node)) indent = 0;
     _listBodyIndent = savedBodyIndent;
     _listMarkerWidth = savedMarkerWidth;
     _listMarkerBox = savedMarkerBox;
@@ -361,6 +394,42 @@ extension _Lists on PdfConverter {
       lineHeight: markerLineHeight,
       kerning: _font.kerning,
     );
+    // (`<list>_marker_position: inside`, modern engine: the marker its
+    // text's first word, as CSS's `list-style-position: inside` sets it
+    // and a schoolbook numbers its paragraphs: the item a paragraph, its
+    // first line indented as a paragraph's, its lines its source's under
+    // `:source-lines:`.)
+    if (_markerInside(list) &&
+        primary != null &&
+        primary != _dummyText &&
+        marker != null &&
+        marker.isNotEmpty) {
+      _paragraph(
+        Block(
+          item,
+          BlockContext.paragraph,
+          source: '$marker ${item.sourceText}',
+          subs: const BlockSubs.spec('normal'),
+        ),
+        textAlign: align,
+      );
+      _traverse(item);
+      _out = saved;
+      _out.add(
+        BlockBox(
+          _pdfUa
+              ? [
+                  BlockBox(
+                    children,
+                    style: BoxStyle(structure: _struct('LBody')),
+                  ),
+                ]
+              : children,
+          style: BoxStyle(anchor: item.id, structure: _struct('LI')),
+        ),
+      );
+      return;
+    }
     if (primary == null && marker != null && marker.isNotEmpty) {
       // No text: the marker is where the first block starts (the gem
       // floats it at the cursor).

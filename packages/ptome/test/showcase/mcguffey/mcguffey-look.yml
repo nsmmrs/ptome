@@ -1,11 +1,17 @@
-# McGuffey's Second Eclectic Reader after its revised edition (Van
-# Antwerp, Bragg & Co., 1879), a small schoolbook of about 4¾ × 7 in in
-# large type: each lesson headed "LESSON I." in heavy gothic capitals,
-# its new words in columns under it, each with its marks of
-# pronunciation, then its woodcut, its title in capitals and its
-# paragraphs or stanzas numbered; the lessons in script set in a
-# copybook hand; the running heads "ECLECTIC SERIES." and "SECOND
-# READER." in italic capitals, the page number outside.
+# McGuffey's Second Eclectic Reader as the American Book Company printed
+# the revised edition (1879) in 1920 (the Nashville Public Library's copy,
+# NOTICE.md), measured from the scan: a 297 × 498 pt page (its 4⅛ × 6⅞
+# in), the lessons' text 12.9 pt on 16.6, a 252 pt measure, 25 lines a
+# page; the running heads "ECLECTIC SERIES." and "SECOND READER." in
+# italic capitals, the folio outside them, the pages that open a part of
+# the book unheaded, their folio at the foot in brackets; the gatherings'
+# numbers at the foot of their first pages ("2, 2."); each lesson headed
+# "LESSON I." in heavy gothic capitals, its new words in their columns,
+# around its woodcut where the printing sets them there, its title in
+# spaced capitals, its paragraphs numbered in their first lines and its
+# stanzas' numbers hung; the lessons in script in a copybook hand. Every
+# block where the printing sets it: its own `margin-top`, measured from
+# the scan (tool/mcguffey_1920).
 #
 # Charis SIL for the text, for its marks above and below the letters;
 # Noto Sans for the lesson heads; Petit Formal Script for the script
@@ -16,15 +22,15 @@ tokens:
     text: { family: { print: Charis SIL, screen: [Charis SIL, serif] } }
     display: { family: { print: Noto Sans, screen: [Noto Sans, sans-serif] }, weight: bold }
   size:
-    text: { print: 11.5pt, screen: 20px }
-    headings: { print: [20pt, 10pt, 10pt, 10pt, 10pt, 10pt] }
-  leading: { print: 1.3, screen: 1.6 }
+    text: { print: 12.9pt, screen: 20px }
+    headings: { print: [20pt, 7.8pt, 7.8pt, 7.8pt, 7.8pt, 7.8pt] }
+  leading: { print: 1.2853, screen: 1.6 }
   measure: { screen: 30em }
-  paragraph: { signal: indent, indent: { print: 1em } }
+  paragraph: { signal: indent, indent: { print: 13.6pt } }
   align: { print: justify }
   hyphenate: { print: true }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [4.8in, 7.2in], margin: [0.7in, 0.5in, 0.6in, 0.55in] }
+  page: { size: [297pt, 498.2pt], margin: [40.43pt, 22.6pt, 38pt, 22.6pt] }
 styles:
   heading: { font: display, weight: bold, color: ink }
   title: { font: text, weight: normal, color: ink }
@@ -32,71 +38,238 @@ styles:
 pdf:
   font:
     fallbacks: [Noto Serif]
+  # (Small capitals made from the lowercase letters, the capitals kept.)
+  base_small_caps_synthesis: lowercase
+  # (Each block's own space above it, measured from the scan, kept at
+  # the top of a page too: the title page's first line, above the
+  # text's.)
+  base_margin_break: keep
+  # (The pages numbered as the printing numbers them: the front matter's
+  # six in roman, the title page the first, then on from 7; headed from
+  # the preface.)
+  page_numbering_start_at: 7
+  running_content_start_at: 3
   heading:
+    # (No title page of the engine's: the printing's own, the contents'
+    # chapters tagged from H1, as PDF/UA asks.)
+    tag_shift: true
     chapter_break_before: auto
+    # ("LESSON I.": heavy gothic capitals, spaced; the space above each
+    # lesson's its own `margin-top`, from the scan.)
     h2:
       text_align: center
       text_transform: uppercase
-      character_spacing: 1.5
-      font_size: 9
-      margin_top: 16
-      margin_bottom: 8
+      character_spacing: 1.1
+      font_size: 7.8
+      line_height: 1
+      margin_top: 0
+      margin_page_top: 0
+      margin_bottom: 0
+  section:
+    role:
+      # (A lesson starting on a page keeps its running head.)
+      lesson: { running_content_on_openers: true }
+      preface:
+        heading_font_family: Charis SIL
+        heading_font_style: italic
+        heading_font_size: 19
+        heading_character_spacing: 0.5
+        heading_margin_bottom: 0
+      contents:
+        heading_font_family: Charis SIL
+        heading_font_style: bold
+        heading_font_size: 12
+        heading_character_spacing: 2
+        heading_margin_bottom: 0
+      intro:
+        heading_font_family: Charis SIL
+        heading_font_style: normal
+        heading_font_size: 12.2
+        heading_character_spacing: 0.4
+        heading_margin_bottom: 0
   prose:
     margin_bottom: 0
+    margin_inner: 0
+    text_indent: 13.6pt
+    text_indent_inner: 13.6pt
+    # (The printing's pages: as many lines as each has room for.)
+    orphans: 1
+    widows: 1
+  # (A lesson's paragraphs numbered in their first lines, as the printing
+  # numbers them; its stanzas' numbers hung, the lines after them in.)
+  olist:
+    marker_position: inside
+    role:
+      # (Each poem's lines as far in as the printing sets them, its
+      # numbers hung before them: `indent` the lines' edge.)
+      stanzas:
+        marker_position: outside
+        indent: 31.4
+      s0: { indent: 16.2 }
+      s13: { indent: 29.4 }
+      s25: { indent: 41.5 }
+      # (A poem the printing sets a size down: My Good-for-nothing.)
+      small: { font_size: 11.2, line_pitch: 15pt, indent: 16.8 }
+  list:
+    indent: 14.2
+    item_spacing: 9
   role:
+    mc: { font_size: 0.6em }
+    folio: { text_transform: none, font_style: normal, character_spacing: 0 }
+    sc: { font_variant: small-caps }
+    # (A line Charis sets wider than the measure, where the printing's
+    # face fits it.)
+    tight: { letter_spacing: -0.25pt }
+    tighter: { letter_spacing: -0.6pt }
     lesson-title:
       text_align: center
       text_transform: uppercase
-      character_spacing: 1
-      font_size: 9.5
-      margin_top: 8
-      margin_bottom: 6
-    example: { font_size: 9, text_indent: 2em }
-    signature: { text_align: right }
-    author: { text_align: right, font_style: italic, font_size: 9 }
-    right: { text_align: right }
-    key-heading: { text_align: center, font_size: 8, text_transform: uppercase, character_spacing: 1 }
+      character_spacing: 1.46
+      font_size: 9.8
+      text_indent: 0
+      line_height: 1
+    opening-title: { text_align: center, font_size: 16.1, character_spacing: 1.2, text_indent: 0, line_height: 1 }
+    opening-title2: { text_align: center, font_size: 19.4, character_spacing: 0.6, text_indent: 0, line_height: 1 }
+    author: { text_align: right, font_style: italic, font_size: 8.4, text_indent: 0, line_height: 1 }
+    right: { text_align: right, text_indent: 0 }
+    slate: { text_align: center, font_size: 7, font_style: bold, character_spacing: 1, text_transform: uppercase, text_indent: 0, line_height: 1 }
+    signature: { text_indent: 17.4pt, line_height: 1 }
     script:
       font_family: Petit Formal Script
-      font_size: 12.5
-      line_height: 1.5
-  example:
-    border_width: 0
-    background_color: transparent
-    padding: [0, 0, 0, 0]
+      font_size: 14
+      line_pitch: 19.2pt
+      text_align: left
+      text_indent: 0
+    script-verse: { line_pitch: 21.9pt }
+    salute: { text_indent: 0 }
+    close: { text_indent: 120pt }
+    # (The title page, each line as the printing sets it.)
+    tp-series: { text_align: center, font_style: italic, font_size: 7.75, character_spacing: 0.9, text_indent: 0, line_height: 1 }
+    tp-name: { text_align: center, font_size: 16.1, character_spacing: 1.6, text_indent: 0, line_height: 1 }
+    tp-second: { text_align: center, font_size: 20, character_spacing: 2.2, text_indent: 0, line_height: 1 }
+    tp-reader: { text_align: center, font_size: 20.9, character_spacing: 1.3, text_indent: 0, line_height: 1 }
+    tp-edition: { text_align: center, font_style: italic, font_size: 6.6, character_spacing: 1.2, text_indent: 0, line_height: 1 }
+    tp-places: { text_align: center, font_size: 7.75, character_spacing: 0.9, text_indent: 0, line_height: 1 }
+    tp-publisher: { text_align: center, font_size: 11.3, character_spacing: 0.5, text_indent: 0, line_height: 1 }
+    fleuron: { font_family: Noto Sans Symbols 2, font_size: 0.8em }
+    cr: { text_align: center, font_size: 5.2, text_indent: 0, line_height: 1 }
+    cr-mark: { text_align: center, font_size: 3.6, font_style: bold, character_spacing: 0.6, text_indent: 0, line_height: 1 }
+    # (The preface's smaller type.)
+    preface-text: { font_size: 9.1, line_pitch: 13.8pt, text_indent: 9.6pt }
+    # (The contents: the numerals in their column, the titles dotted to
+    # their pages.)
+    toc-head: { font_size: 7.6, line_height: 1, text_indent: 0 }
+    toc-sub: { font_size: 7.6, line_pitch: 9pt, text_indent: 14.2pt }
+    toc-selections: { text_align: center, font_size: 7.6, line_height: 1, text_indent: 0 }
+    toc-lesson-label: { font_size: 6.4, line_height: 1, text_indent: 31pt }
+    toc-entry: { font_size: 7.6, line_pitch: 9.4pt, text_indent: 0, text_align: left }
+    toc-n: { width: 16pt, width_align: right }
+    toc-pg: { flush: right, leader: '. ' }
+    toc-page-label: { flush: right, font_size: 6.4 }
+    # (The introductory matter: its type a size down from the lessons'.)
+    intro-text: { font_size: 10.8, line_pitch: 14.8pt, text_indent: 13pt }
+    term: { font_style: bold, font_size: 1.1em }
+    example: { font_size: 8.8, text_indent: 12pt, line_height: 1 }
+    key-title: { text_align: center, font_size: 9.8, character_spacing: 1, text_indent: 0, line_height: 1 }
+    key-head: { text_align: center, font_size: 7.75, character_spacing: 1, text_indent: 0, line_height: 1 }
+    # (The key's cells: each in its width, the halves' first cells set in
+    # from the rule as the printing sets them.)
+    k-left: { width: 24pt }
+    k-right: { width: 30pt }
+    k-l: { width: 14.5pt }
+    k-as: { width: 32.5pt, width_align: center }
+    s-left: { width: 1.8pt }
+    s-right: { width: 7.3pt }
+    s-l: { width: 15.6pt }
+    s-for: { width: 20pt, width_align: center }
+    s-snd: { width: 13pt }
+    s-as: { width: 32.6pt, width_align: center }
   table:
-    font_size: 10.5
+    font_size: 11.5
+    # (No ground of their own: the words drawn over their woodcut.)
+    background_color: transparent
     border_width: 0
-    grid_width: 0
-    cell_padding: [1, 4, 1, 4]
+    grid_width: 0.6
+    grid_color: '1A1A1A'
+    cell_padding: [0, 0, 0, 0]
+    # (Each row as tall as the printing's pitch: the font's height and a
+    # leading of `cell_line_height` − 1 of its size.)
+    cell_line_height: 0.9469
     head_background_color: transparent
-  list:
-    indent: 1.4em
-    item_spacing: 2
+    role:
+      # (Each table's rows as far apart as the printing sets them.)
+      p165: { cell_line_height: 0.7991 }
+      p156: { cell_line_height: 0.7208 }
+      p16: { cell_line_height: 0.7556 }
+      p19: { cell_line_height: 1.0165 }
+      p20: { cell_line_height: 1.1208 }
+      p22: { cell_line_height: 1.2773 }
+      p235: { cell_line_height: 1.4078 }
+      p25: { cell_line_height: 1.5469 }
+      key: { font_size: 12, cell_line_height: 0.7143 }
   image:
     align: center
-  heading_discrete:
-    text_align: center
+    margin_top: 0
+    margin_bottom: 0
+  block:
+    margin_bottom: 0
+  verse:
+    border_left_width: 0
+    padding: 0
+    margin_top: 0
+    margin_bottom: 0
+  # (The printing's short rules: on the title page, its verso, the opening
+  # pages.)
+  thematic_break:
+    margin_top: 0
+    margin_bottom: 0
+    border_width: 0.5
+    border_color: '1A1A1A'
+    role:
+      short: { width: 137 }
+      edition: { width: 80 }
+      cr-rule: { width: 96 }
+      opening: { width: 60 }
+      intro-rule: { width: 30 }
+      intro-break: { width: 33 }
   header:
-    height: 0.55in
-    vertical_align: bottom
-    font_size: 7.5
+    height: 40.43pt
+    vertical_align: top
+    padding: [18pt, 0, 0, 0]
+    font_size: 8.9
     font_style: italic
     text_transform: uppercase
-    character_spacing: 1
+    character_spacing: 1.28
     recto:
       left: { content: '' }
-      center: { content: 'Second Reader.' }
-      right: { content: '{page-number}' }
+      center: { content: '{chapter-title-spread}' }
+      right: { content: '[.folio]#{page-number}#' }
     verso:
-      left: { content: '{page-number}' }
-      center: { content: 'Eclectic Series.' }
+      left: { content: '[.folio]#{page-number}#' }
+      center: { content: '{chapter-title-spread}' }
       right: { content: '' }
+  running_content:
+    spread_whole: false
+    # (The gatherings numbered at their first pages' feet, every sixteen
+    # pages: "2, 2." the Second Reader's second.)
+    # (Numbered with the pages, the title page the first: "2, 2." on page
+    # 17, the eleventh from 7.)
+    signature:
+      interval: 16
+      first: 11
+      start: 2
+      numbering: decimal
+      template: '2, {{signature}}.'
   footer:
-    height: 0.4in
+    height: 38pt
     border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    on_openers: true
+    vertical_align: top
+    padding: [4pt, 30pt, 0, 30pt]
+    font_size: 6.4
+    recto: { left: { content: '{page-signature}' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '{page-signature}' }, center: { content: '' }, right: { content: '' } }
+    opener: { left: { content: '' }, center: { content: '' }, right: { content: '({page-number})' } }
 webfonts:
   - Charis SIL:400,400italic,700
   - Petit Formal Script:400
@@ -108,8 +281,22 @@ css: |
   .script .exampleblock>.content,.exampleblock.script>.content{border:0;background:none;padding:0}
   .right p,.author p{text-align:right}
   .author p{font-style:italic}
+  .sc{font-variant:small-caps}
+  .mc{font-size:60%;vertical-align:super}
+  .slate p{text-align:center;font-weight:bold;font-size:70%;letter-spacing:.1em}
+  .term{font-weight:bold}
+  .key td{border:0;padding:0 .4em}
+  .key td+td{border-left:1px solid #1A1A1A}
+  .k-l,.s-l{display:inline-block;width:1.4em}
+  .k-as,.s-as{display:inline-block;width:3em;text-align:center}
+  .s-for{display:inline-block;width:2em;text-align:center}
+  .s-snd{display:inline-block;width:1.4em}
 epub-css: |
   h2{text-align:center;text-transform:uppercase}
   .lesson-title p{text-align:center;text-transform:uppercase}
   .script{font-family:"Petit Formal Script",cursive}
   .right p,.author p{text-align:right}
+  .sc{font-variant:small-caps}
+  .mc{font-size:60%;vertical-align:super}
+  .slate p{text-align:center;font-weight:bold;font-size:70%}
+  .term{font-weight:bold}

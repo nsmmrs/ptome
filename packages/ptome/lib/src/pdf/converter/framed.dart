@@ -868,8 +868,30 @@ extension _Framed on PdfConverter {
     );
   }
 
-  /// Converts the thematic break [node].
+  /// Converts the thematic break [node]: with a role, by the theme's
+  /// `thematic_break_role_<role>_*` keys over its `thematic_break_*`
+  /// (modern engine).
   void convertThematicBreak(Block node) {
+    if (node.roles.isNotEmpty &&
+        !asciidoctorCompat(_document, CompatFormat.pdf)) {
+      final saved = _theme;
+      for (final role in node.roles) {
+        _theme = _theme.overlaid(
+          'thematic_break_role_${role.replaceAll('-', '_')}_',
+          'thematic_break_',
+        );
+      }
+      try {
+        _thematicBreak(node);
+      } finally {
+        _theme = saved;
+      }
+      return;
+    }
+    _thematicBreak(node);
+  }
+
+  void _thematicBreak(Block node) {
     if (_thematicMark(node)) return;
     final padding = _edgeValues(
       _theme.value('thematic_break_padding') ??
@@ -881,6 +903,11 @@ extension _Framed on PdfConverter {
     final color = pdfColorOf(_c('thematic_break_border_color'));
     final width = (_n('thematic_break_border_width') ?? 0.5).toDouble();
     final style = _s('thematic_break_border_style') ?? 'solid';
+    // (`thematic_break_width`, modern engine: a rule that long, centred,
+    // as a title page's short rules are.)
+    final length = asciidoctorCompat(_document, CompatFormat.pdf)
+        ? null
+        : _length('thematic_break_width', _font.size);
     _out.add(
       BlockBox(
         const [],
@@ -896,8 +923,13 @@ extension _Framed on PdfConverter {
               ? null
               : (page, rect, {required first, required last}) {
                   final y = rect.top - padding[0];
-                  final left = rect.left + padding[3];
-                  final right = rect.right - padding[1];
+                  var left = rect.left + padding[3];
+                  var right = rect.right - padding[1];
+                  if (length != null && length < right - left) {
+                    final middle = (left + right) / 2;
+                    left = middle - length / 2;
+                    right = middle + length / 2;
+                  }
                   final canvas = page.canvas
                     ..save()
                     ..setStrokeColor(color);

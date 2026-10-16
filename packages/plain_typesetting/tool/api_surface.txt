@@ -286,7 +286,7 @@ final class BoxStyle
   Border border
   BoxStyle withStructure(StructureElement? structure)
   BoxStyle withTag(String? tag)
-  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, bool unnumbered = false, int? gridLine, double minHeight = 0, StructureElement? structure})
+  BoxStyle({EdgeInsets margin = EdgeInsets.zero, EdgeInsets padding = EdgeInsets.zero, Border border = Border.none, Color? background, bool keepTogether = false, bool keepWithNext = false, String? anchor, Map<String, String> marks = const {}, void Function(LayoutPage, Rect, {required bool first, required bool last})? decoration, String? tag, FloatPlacement? float, bool floatBarrier = false, VerticalAlign? verticalAlign, bool cloneEdges = false, bool splitToRegionEnd = false, double floatClearance = 0, bool floatSpan = false, FloatSide? side, double sideWidth = 0, double sideGap = 0, FloatShape? sideShape, bool runsAround = false, bool numberLines = false, bool unnumbered = false, int? gridLine, double minHeight = 0, StructureElement? structure, bool keepTopMargin = false})
   Color? background
   EdgeInsets margin
   EdgeInsets padding
@@ -303,6 +303,7 @@ final class BoxStyle
   bool floatSpan
   bool floating
   bool keepTogether
+  bool keepTopMargin
   bool keepWithNext
   bool numberLines
   bool runsAround
@@ -773,10 +774,11 @@ final class TextRun extends InlineContent
   String text
   String? anchor
   String? emphasisMark
+  String? leader
   TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false, Font? metricsFont})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false, String? leader, Font? metricsFont})
   TextStyle style
   bool anchorOnBaseline
   bool artifact

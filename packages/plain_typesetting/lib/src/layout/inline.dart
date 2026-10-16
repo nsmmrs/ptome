@@ -36,6 +36,7 @@ final class TextRun extends InlineContent {
     this.emphasisMark,
     this.emphasisUnder = false,
     this.flushRight = false,
+    this.leader,
     this.metricsFont,
   }) : super._();
 
@@ -50,6 +51,14 @@ final class TextRun extends InlineContent {
   /// sets a citation after a quotation (The TeXbook, chapter 14): kept
   /// whole, at least two spaces from the text before it.
   final bool flushRight;
+
+  /// Where given, with [flushRight], the room before the run filled with
+  /// this text over and over, as TeX's `\leaders` fill a contents line
+  /// with dots: each copy at a whole number of its widths from the line's
+  /// start, so that the dots of the lines one under another line up, a
+  /// copy's width clear of the text before it and half one of the run.
+  /// Decoration: read as nothing, as an [artifact].
+  final String? leader;
 
   /// Where given, a mark set over each of the text's characters (but its
   /// spaces and punctuation) at half its size: emphasis marks, CSS's
@@ -125,6 +134,7 @@ final class TextRun extends InlineContent {
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
     flushRight: flushRight,
+    leader: leader,
     metricsFont: metricsFont,
   );
 
@@ -145,6 +155,7 @@ final class TextRun extends InlineContent {
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
     flushRight: flushRight,
+    leader: leader,
     metricsFont: metricsFont,
   );
 }

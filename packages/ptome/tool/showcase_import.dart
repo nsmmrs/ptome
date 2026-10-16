@@ -47,13 +47,16 @@ const Set<String> _productionPages = {
 /// SHA-256; an image's regions to paint white (`blank`, each `[x, y,
 /// width, height]` in its pixels) and the region to keep (`crop`), when
 /// it is edited (written as a PNG), as the McGuffey's woodcuts are freed
-/// of the words printed beside them.
+/// of the words printed beside them; `levels` (`[black, white]`), its
+/// grey from black to white stretched over them, the rest black or white:
+/// a scan's yellowed paper white, as the page it is set on.
 typedef Fetched = ({
   String name,
   String url,
   String sha256,
   List<List<int>> blank,
   List<int>? crop,
+  List<int>? levels,
 });
 
 Future<void> main(List<String> arguments) async {
@@ -189,6 +192,7 @@ Future<void> main(List<String> arguments) async {
       sha256:
           '${sha256.convert(File('$epub/images/$original').readAsBytesSync())}',
       blank: const [],
+      levels: null,
       crop: null,
     );
   }
@@ -258,6 +262,15 @@ List<Fetched> readFetched(String yaml) {
               rectangle(region),
           ],
           crop: entry['crop'] == null ? null : rectangle(entry['crop']),
+          levels: switch (entry['levels']) {
+            null => null,
+            YamlList(length: 2) && final list
+                when list.every((n) => n is int) =>
+              [for (final n in list) n as int],
+            final value => throw FormatException(
+              'fetch.yml: not [black, white]: $value',
+            ),
+          },
         )
       else
         throw FormatException('fetch.yml: not a name, url and sha256: $entry'),

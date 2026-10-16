@@ -1,11 +1,15 @@
 // What following a printing page for page takes (Alice in the showcase,
-// set after Macmillan's 1867 printing): paragraphs on their source's lines
-// (`:source-lines:`), a chapter's running title divided across the spread,
-// the printer's signatures, a cut's box and place from its own attributes
-// (`pdfheight`, `fit-top`, `fit=none`, `float-width`, `float-gap`), a
-// block's own margins, a cut set before its chapter's heading, and a block
-// with no room beside a float set below it. The pages read back by
-// Poppler, recorded in test/oracles/pdf_printing.json.gz
+// set after Macmillan's 1867 printing; the Second Reader, after its 1920
+// one): paragraphs on their source's lines (`:source-lines:`), a
+// chapter's running title divided across the spread, the printer's
+// signatures, a cut's box and place from its own attributes (`pdfheight`,
+// `fit-top`, `fit=none`, `float-width`, `float-gap`), a block's own
+// margins (kept at a page's top, `base_margin_break: keep`), a cut set
+// before its chapter's heading, a block with no room beside a float set
+// below it; a schoolbook's numbered paragraphs (`olist_marker_position:
+// inside`) and its poems' own indents and type, a contents' columns and
+// dot leaders, a folio at the foot of the opening pages alone. The pages
+// read back by Poppler, recorded in test/oracles/pdf_printing.json.gz
 // (test/support/oracles.dart; ORACLES=record asks them again).
 @TestOn('vm')
 library;
@@ -270,5 +274,138 @@ void main() {
     );
     final page = pages.firstWhere((p) => p.any((l) => l.$1 == 'Chapter'));
     expect(_line(page, 'Chapter')[1], greaterThan(200));
+  });
+
+  test('olist_marker_position: inside: each item a paragraph, its number '
+      "its first word, its lines its source's", () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n:source-lines:\n:shy: &#173;\n\n'
+            '. It is winter. The cold wind whis{shy}tles\n'
+            'through the branches of the trees.\n'
+            '. Mr. Brown has done his day’s\n'
+            'work.\n',
+        'prose: { text_indent: 18 }\nolist: { marker_position: inside }\n',
+      ),
+    ).first;
+    expect(page.map((l) => l.$1.replaceAll('­', '-')), [
+      '1. It is winter. The cold wind whis-',
+      'tles through the branches of the trees.',
+      '2. Mr. Brown has done his day’s',
+      'work.',
+    ]);
+    // (The number at the paragraph's indent, the lines after it at the
+    // margin.)
+    expect(_line(page, '1.')[0], closeTo(48.24 + 18, 0.5));
+    expect(_line(page, 'tles')[0], closeTo(48.24, 0.5));
+  });
+
+  test("a list's own indent, type and pitch (olist_role_<role>_indent, "
+      '_font_size, _line_pitch)', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n\n[.poem]\n. One line +\nanother line\n',
+        'olist:\n  role:\n    poem: { indent: 40, font_size: 9, '
+            'line_pitch: 20pt }\n',
+      ),
+    ).first;
+    final one = _line(page, '1.');
+    expect(_line(page, 'another')[0], closeTo(48.24 + 40, 0.5));
+    final another = _line(page, 'another');
+    expect(another[3] - one[3], closeTo(20, 0.1));
+    // (Its type 9 pt: a line Poppler measures 9 × the font's height.)
+    expect(one[3] - one[1], lessThan(14));
+  });
+
+  test('role_<role>_width, _width_align: a phrase in a width of its own; '
+      '_leader: the room before a run flush right filled with its dots', () {
+    final pdf = _pdf(
+      ':nofooter:\n\n[.n]#1.# Evening at Home [.pg]#11#\n\n'
+          '[.n]#12.# Susie Sunbeam [.pg]#30#\n',
+      'role:\n  n: { width: 20pt, width_align: right }\n'
+          '  pg: { flush: right, leader: ". " }\n',
+    );
+    final page = _lines(pdf).first;
+    // (The leaders decoration, read as nothing: the line's text its own.)
+    expect(page.first.$1, '1. Evening at Home 11');
+    // (The numerals' right edges, and so the titles' left, one above the
+    // other.)
+    final xml =
+        recordedRunSync(_recorded, 'pdftotext', ['-bbox', pdf.path, '-']).stdout
+            as String;
+    double word(String text, int side) => double.parse(
+      RegExp(
+        'xMin="([\\d.]+)"[^>]*xMax="([\\d.]+)"[^>]*>${RegExp.escape(text)}<',
+      ).firstMatch(xml)![side]!,
+    );
+    expect(word('1.', 2), closeTo(48.24 + 20, 0.5));
+    expect(word('12.', 2), closeTo(48.24 + 20, 0.5));
+    expect(word('Evening', 1), closeTo(word('Susie', 1), 0.1));
+  });
+
+  test('<periphery>_opener: a page that opens a chapter its own running '
+      'content (a folio at its foot); the signatures numbered, worded by '
+      "_signature_template; a running title the document's, divided on every "
+      'page (running_content_spread_whole: false)', () {
+    final paras = List.filled(6, '<<<\n\nA page.').join('\n\n');
+    final pages = _lines(
+      _pdf(
+        '= Book\n:doctype: book\n:notitle:\n'
+            ':running-title: Eclectic Series.|Second Reader.\n\n'
+            '== One\n\nA page.\n\n$paras\n',
+        'running_content:\n  spread_whole: false\n  signature:\n'
+            '    interval: 2\n    first: 2\n    start: 2\n'
+            '    numbering: decimal\n    template: "2, {{signature}}."\n'
+            'header:\n  height: 0.5in\n'
+            '  recto: { center: { content: "{chapter-title-spread}" } }\n'
+            '  verso: { center: { content: "{chapter-title-spread}" } }\n'
+            'footer:\n  height: 0.5in\n  on_openers: true\n'
+            '  recto: { left: { content: "{page-signature}" } }\n'
+            '  verso: { left: { content: "{page-signature}" } }\n'
+            '  opener: { right: { content: "({page-number})" } }\n',
+      ),
+    );
+    // (The opening page: no head, its folio in brackets at the foot.)
+    expect(pages.first.map((l) => l.$1), ['One', 'A page.', '(1)']);
+    expect(pages[1].first.$1, 'Eclectic Series.');
+    expect(pages[2].first.$1, 'Second Reader.');
+    expect(pages[1].last.$1, '2, 2.');
+    expect(pages[3].last.$1, '2, 3.');
+    expect(pages[2].last.$1, isNot(contains('2,')));
+  });
+
+  test("base_margin_break: keep: a block's own margin-top kept at the top "
+      "of a page, negative too, and a section's at its heading", () {
+    double topOf(String source) => _line(
+      _lines(_pdf(source, 'base_margin_break: keep\n')).last,
+      'Line',
+    )[1];
+    final plain = topOf(':nofooter:\n\nFirst.\n\n<<<\n\nLine.\n');
+    expect(
+      topOf(':nofooter:\n\nFirst.\n\n<<<\n\n[margin-top=30pt]\nLine.\n'),
+      closeTo(plain + 30, 0.1),
+    );
+    expect(
+      topOf(':nofooter:\n\nFirst.\n\n<<<\n\n[margin-top=-12pt]\nLine.\n'),
+      closeTo(plain - 12, 0.1),
+    );
+    final heading = _lines(
+      _pdf(
+        ':nofooter:\n\nFirst.\n\n[margin-top=50pt]\n== Line\n\nText.\n',
+        'base_margin_break: keep\nheading: { margin_top: 0 }\n',
+      ),
+    ).first;
+    expect(
+      _line(heading, 'Line')[1] - _line(heading, 'First')[3],
+      closeTo(50, 2),
+    );
+  });
+
+  test(':source-lines:, a line its own hard break ends broken there once', () {
+    final page = _lines(
+      _pdf(':nofooter:\n:source-lines:\n\nYour little boy +\nWillie.\n', ''),
+    ).first;
+    final pitch = _line(page, 'Willie')[3] - _line(page, 'Your')[3];
+    expect(pitch, lessThan(20));
   });
 }

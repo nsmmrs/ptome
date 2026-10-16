@@ -253,7 +253,7 @@ Future<Built> _build(
         continue;
       }
       File('${stage.path}/images/${image.name}').writeAsBytesSync(
-        image.blank.isEmpty && image.crop == null
+        image.blank.isEmpty && image.crop == null && image.levels == null
             ? bytes
             : _edited(bytes, image),
       );
@@ -537,7 +537,8 @@ String _index(List<Work> works, List<Built> results) {
 }
 
 /// [bytes], the image [image] names, with its `blank` regions painted
-/// white and cut to its `crop`, as a PNG: an 8-bit grey or RGB image.
+/// white, its `levels` stretched (grey) and cut to its `crop`, as a PNG:
+/// an 8-bit grey or RGB image.
 List<int> _edited(List<int> bytes, Fetched image) {
   final raster = ImageFile.read(Uint8List.fromList(bytes)).decode();
   final channels = raster.colorModel.channels;
@@ -556,6 +557,22 @@ List<int> _edited(List<int> bytes, Fetched image) {
       samples.fillRange(from, to, 255);
     }
   }
+  // (Its levels: grey, stretched from black to white.)
+  var kept = channels;
+  var edited = samples;
+  if (image.levels case [final black, final white] when white > black) {
+    final grey = Uint8List(width * height);
+    for (var i = 0; i < grey.length; i++) {
+      var v = 0;
+      for (var c = 0; c < channels; c++) {
+        v += samples[i * channels + c];
+      }
+      v ~/= channels;
+      grey[i] = ((v - black) * 255 ~/ (white - black)).clamp(0, 255);
+    }
+    edited = grey;
+    kept = 1;
+  }
   final [cx, cy, cw, ch] = image.crop ?? [0, 0, width, height];
   final left = cx.clamp(0, width);
   final top = cy.clamp(0, height);
@@ -566,9 +583,9 @@ List<int> _edited(List<int> bytes, Fetched image) {
     raw
       ..addByte(0)
       ..add(
-        samples.sublist(
-          (row * width + left) * channels,
-          (row * width + right) * channels,
+        edited.sublist(
+          (row * width + left) * kept,
+          (row * width + right) * kept,
         ),
       );
   }
@@ -576,7 +593,7 @@ List<int> _edited(List<int> bytes, Fetched image) {
     ..setUint32(0, right - left)
     ..setUint32(4, bottom - top)
     ..setUint8(8, 8)
-    ..setUint8(9, channels == 1 ? 0 : 2);
+    ..setUint8(9, kept == 1 ? 0 : 2);
   return [
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, //
     ..._chunk('IHDR', header.buffer.asUint8List()),

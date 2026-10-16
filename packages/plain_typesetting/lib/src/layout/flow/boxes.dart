@@ -122,10 +122,17 @@ final class BoxStyle {
     this.gridLine,
     this.minHeight = 0,
     this.structure,
+    this.keepTopMargin = false,
   });
 
   /// The space outside the border.
   final EdgeInsets margin;
+
+  /// Whether the top margin is kept at the top of a page or region, where
+  /// it is otherwise dropped (CSS Fragmentation's `margin-break: keep`):
+  /// a block set where a printing sets it, above or below the region's
+  /// top (a title page's first line, higher than the text's).
+  final bool keepTopMargin;
 
   /// The space between the border and the content.
   final EdgeInsets padding;
@@ -325,6 +332,7 @@ final class BoxStyle {
     gridLine: gridLine,
     minHeight: minHeight,
     structure: structure == null ? this.structure : structure.$1,
+    keepTopMargin: keepTopMargin,
   );
 
   /// This style with [structure] in place of its own.

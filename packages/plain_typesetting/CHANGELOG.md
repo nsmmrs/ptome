@@ -2,6 +2,12 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `TextRun.leader`: the room before a run set flush right filled with
+  copies of a text, each a whole number of its widths from the line's
+  start (TeX's `\leaders`: a contents' dots, lined up from line to line).
+  `BoxStyle.keepTopMargin`: a block's top margin kept at the top of a page
+  or region (CSS's `margin-break: keep`).
+
 - `BreakOpportunities.lines`: a paragraph broken at its text's own line
   separators (U+2028) alone, each line justified as the paragraph is (a
   soft hyphen before one shown as its hyphen; one ending the text

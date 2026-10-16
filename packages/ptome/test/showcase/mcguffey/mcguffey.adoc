@@ -7,11 +7,35 @@ William Holmes McGuffey
 :looksdir: {docdir}
 :imagesdir: images
 :figure-caption!:
-:description: The first twenty lessons of McGuffey’s Second Eclectic Reader (revised edition, 1879): its words with their marks of pronunciation, its woodcuts, its numbered paragraphs and its lessons in script.
+:description: McGuffey’s Second Eclectic Reader (revised edition, 1879) as its 1920 printing sets its first forty-eight pages, line for line: the preface, the key to the marks of pronunciation, and Lessons I–XXI, their words with their marks, their woodcuts, their numbered paragraphs and their lessons in script.
+// The text keeps the printing's lines and pages (`:source-lines:`,
+// NOTICE.md); the PDF's pages are the printing's, numbered as it numbers
+// them, its title page, its copyright page and its contents among them.
+:source-lines:
+:folio-start: 7
+:running-title: Eclectic Series.|Second Reader.
+:shy: &#173;
+:em: &#8195;
+ifdef::backend-pdf[]
+:notitle:
+endif::[]
 
+ifdef::backend-pdf[]
+include::text/title-page.adoc[]
+endif::[]
+ifndef::backend-pdf[]
 [.frontispiece%notitle]
 == Frontispiece
 
-image::image0002.jpg["A girl reclining in the grass, reading",align=center]
+image::image0002.png["A girl reclining in the grass, reading",align=center]
+endif::[]
 
-include::text/reader.adoc[]
+include::text/preface.adoc[]
+
+ifdef::backend-pdf[]
+include::text/contents.adoc[]
+endif::[]
+
+include::text/introduction.adoc[]
+
+include::text/lessons.adoc[]

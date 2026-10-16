@@ -1296,9 +1296,10 @@ final class PdfConverter extends BuiltInConverter
         }
         break;
       }
-      out
-        ..write(line)
-        ..write('\u2028');
+      out.write(line);
+      // (A line its own hard break ends, a verse line in a paragraph,
+      // broken there once.)
+      if (!line.trimRight().endsWith('<br>')) out.write('\u2028');
       line = rest.isEmpty ? lines[n] : '$rest ${lines[n]}';
     }
     out.write(line);

@@ -818,7 +818,9 @@ final class _Pass {
     final continued = box._continued;
     final clone = style.cloneEdges;
     final top =
-        (atTop || continued ? 0.0 : style.margin.top) +
+        ((atTop && !style.keepTopMargin) || continued
+            ? 0.0
+            : style.margin.top) +
         (continued && !clone ? 0 : style.border.widths.top + style.padding.top);
     final bottom = style.padding.bottom + style.border.widths.bottom;
     final inner =
@@ -1002,7 +1004,9 @@ final class _Pass {
                   (style.cloneEdges ? trailing : 0) +
                   (style.cloneEdges ? bottom : 0),
         children,
-        top: atTop || continued ? 0 : style.margin.top,
+        top: (atTop && !style.keepTopMargin) || continued
+            ? 0
+            : style.margin.top,
         openTop: continued,
         openBottom: true,
         marks: continued ? const {} : style.marks,
@@ -1402,7 +1406,7 @@ final class _Pass {
       width,
       cut ? top + room + bottom : top + cursor + bottom + marginBottom,
       children,
-      top: atTop || continued ? 0 : style.margin.top,
+      top: (atTop && !style.keepTopMargin) || continued ? 0 : style.margin.top,
       openTop: continued,
       openBottom: false,
       marks: continued ? const {} : style.marks,
