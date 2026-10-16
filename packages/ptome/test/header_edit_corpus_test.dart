@@ -10,6 +10,17 @@ import 'package:path/path.dart' as p;
 import 'package:ptome/ptome.dart';
 import 'package:test/test.dart';
 
+/// The `.adoc` files under [dir], hidden folders passed over (a test's
+/// `.ptome` cache, made and removed while another program walks the
+/// corpus).
+List<File> _adocs(Directory dir) => [
+  for (final entity in dir.listSync())
+    if (entity is Directory && !p.basename(entity.path).startsWith('.'))
+      ..._adocs(entity)
+    else if (entity is File && entity.path.endsWith('.adoc'))
+      entity,
+];
+
 void main() {
   final files = [
     for (final dir in [
@@ -18,10 +29,7 @@ void main() {
       for (final c in Directory('test/corpus').listSync())
         if (c is Directory && p.basename(c.path).startsWith('parity-')) c.path,
     ])
-      ...Directory(dir)
-          .listSync(recursive: true)
-          .whereType<File>()
-          .where((f) => f.path.endsWith('.adoc')),
+      ..._adocs(Directory(dir)),
   ];
 
   test('round trip over ${files.length} fixtures', () {

@@ -23,16 +23,29 @@ const Map<String, String> objectBoundaries = {
   'lib/src/io/js.dart': 'StringSink implementations',
 };
 
-/// The Dart sources under [roots], as paths relative to the package root.
-List<String> dartSources(List<String> roots) => [
-  for (final root in roots)
-    if (Directory(root).existsSync())
-      for (final entity in Directory(root).listSync(recursive: true))
-        if (entity is File &&
-            entity.path.endsWith('.dart') &&
-            !entity.path.endsWith('.g.dart'))
-          entity.path.replaceAll(r'\', '/'),
-]..sort();
+/// The Dart sources under [roots], as paths relative to the package root:
+/// hidden folders passed over (a test's `.ptome` cache, made and removed
+/// while the tree is walked by another test in the same program).
+List<String> dartSources(List<String> roots) {
+  final found = <String>[];
+  void walk(Directory dir) {
+    for (final entity in dir.listSync()) {
+      final name = entity.uri.pathSegments.where((s) => s.isNotEmpty).last;
+      if (entity is Directory) {
+        if (!name.startsWith('.')) walk(entity);
+      } else if (entity is File &&
+          name.endsWith('.dart') &&
+          !name.endsWith('.g.dart')) {
+        found.add(entity.path.replaceAll(r'\', '/'));
+      }
+    }
+  }
+
+  for (final root in roots) {
+    if (Directory(root).existsSync()) walk(Directory(root));
+  }
+  return found..sort();
+}
 
 /// [source] with comments and string literal contents blanked out, so
 /// that only code is searched.
