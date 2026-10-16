@@ -869,7 +869,7 @@ def generate_pass(out_dir, margins, catch):
                 if same:
                     raw[j] = statistics.median(same)
         # (A line set in otherwise than the same line of the poem's other
-        # stanzas of its shape, where four in five of them agree (the
+        # stanzas of its shape, where three in five of them agree (the
         # whole poem's, gathered on the first pass): the OCR's error, a
         # word read off its line; the stanzas' indent.)
         k2 = 0
@@ -887,7 +887,7 @@ def generate_pass(out_dir, margins, catch):
                         med = statistics.median(vs)
                         agree = sum(abs(v - med) <= 2.5 for v in vs) / len(vs)
                         v = raw[k2 + j]
-                        if agree >= 0.8 and (v is None or abs(v - med) > 5.0):
+                        if agree >= 0.6 and (v is None or abs(v - med) > 4.0):
                             raw[k2 + j] = med
             k2 += n
         vals = sorted(v for v in raw if v is not None)
@@ -944,7 +944,9 @@ def generate_pass(out_dir, margins, catch):
                 ind = snap(raw[k]); k += 1
                 # (An indent that would carry the line past the measure:
                 # the OCR's place for another line's; none.)
-                if ind + 4.1 * len(render.markup(words).replace('__', '')) > MEASURE + 20:
+                # (A turned line's own words, its turned ones aside.)
+                own_words = words[:len(words) - turns[li_][0]] if li_ in turns else words
+                if ind + 4.1 * len(render.markup(own_words).replace('__', '')) > MEASURE + 20:
                     ind = 0.0
                 # (Beside the drop: set in past it as far as the line is
                 # past the nearer of the two lines beside it, the drop's
@@ -960,10 +962,14 @@ def generate_pass(out_dir, margins, catch):
                     # (A dialogue's speaker in the margin the line's indent
                     # leaves.)
                     pre = f'[.{role}]##{SPEAKERS[ri]}##' if role else SPEAKERS[ri] + ' '
-                body.append(after_drop(pre, line_text(ri, words)) if drop and li_ == 0 else pre + line_text(ri, words))
+                text_ = line_text(ri, words)
                 if li_ in turns:
+                    # (Its last words turned up or down, as the printing
+                    # turns them (`[.turn-up]`, `[.turn-down]`): the line
+                    # whole in the source.)
                     kk, d = turns[li_]
                     head_words, tail_words = words[:len(words) - kk], words[len(words) - kk:]
+                    joint = ' '
                     # (A word divided, its end turned: `men-` on its line,
                     # `(tion,` turned, as the scan shows it.)
                     frag = TURN_TEXT.get((ri, d))
@@ -988,19 +994,16 @@ def generate_pass(out_dir, margins, catch):
                                     cut = ci
                                     break
                             it = tail_words[0][0][1]
-                            head_words = head_words + [[(whole[:cut] + '-', it)]]
+                            head_words = head_words + [[(whole[:cut], it)]]
                             tail_words = [[(whole[cut:], it)]]
-                    moved[li_ + d] = line_text(ri, tail_words)
-                    pdf_body.append([pre + line_text(ri, head_words), None])
-                else:
-                    pdf_body.append([after_drop(pre, line_text(ri, words)) if drop and li_ == 0
-                                     else pre + line_text(ri, words), None])
-            for idx, t in moved.items():
-                pdf_body[idx][1] = t
-            if turns:
-                n_turns[0] += len(turns)
-                pdf_lines = [a + (f' [.turn]#({t}#' if t else '') for a, t in pdf_body]
-                body = ['ifdef::backend-pdf[]'] + pdf_lines + ['endif::[]', 'ifndef::backend-pdf[]'] + body + ['endif::[]']
+                            joint = ''
+                    head_text = line_text(ri, head_words)
+                    tail_text = line_text(ri, tail_words)
+                    # (A divided word's first part italic: its markers
+                    # closed before the turned part.)
+                    text_ = f"{head_text}{joint}[.turn-{'up' if d < 0 else 'down'}]##{tail_text}##"
+                    n_turns[0] += 1
+                body.append(after_drop(pre, text_) if drop and li_ == 0 else pre + text_)
             tgt = target(leaf0, l0['base']) if l0 else None
             # (Its first line's place from all its lines where the OCR put
             # the first on another line: each line's baseline less as many

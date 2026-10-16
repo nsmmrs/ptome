@@ -577,13 +577,12 @@ final class _Pass {
           ? box
           : ParagraphBox._reflowed(box, items, first: true);
     }
-    final breaks = breaker
-        .breakItemLines(paragraph, items, (_) => width)
-        .breaks;
+    final broken = breaker.breakItemLines(paragraph, items, (_) => width);
+    final breaks = broken.breaks;
     if (box._from > breaks.length) return null;
     return ParagraphBox._reflowed(
       box,
-      items.sublist(breaks[box._from - 1] + 1),
+      broken.items.sublist(breaks[box._from - 1] + 1),
       after: box._from,
     );
   }
@@ -1645,10 +1644,9 @@ final class _Pass {
     final count = available.isFinite ? (available / pitch).ceil() + 1 : 0;
     final bands = [for (var i = 0; i < count; i++) insets(i)];
     final paragraph = _resolve(box.paragraph);
-    final items = box._items!;
-    final (:lines, :breaks) = breaker.breakItemLines(
+    final (:lines, :breaks, :items) = breaker.breakItemLines(
       paragraph,
-      items,
+      box._items!,
       (line) => line < count ? width - bands[line].$1 - bands[line].$2 : width,
       offsets: (line) => line < count ? bands[line].$1 : 0,
     );

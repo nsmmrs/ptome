@@ -2,6 +2,13 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `Paragraph.turnovers` (`Turnovers`: `Turnover.up`, `down` or `auto`,
+  its mark and gap) and `TextRun.turn`: in a paragraph broken at its own
+  lines, a line too long for its room (or a run that turns) has its last
+  words set flush right on the line above or below after an opening
+  bracket, as early printed verse turns them. `ItemLineBreaker
+  .breakItemLines` returns the items its breaks index (the turned ones).
+
 - `UprightBox.clockwise` (a sideways box turned to the right) and
   `UprightBox.inFlow` (set below what is before it in its region, as far
   down it as its longest line); `BoxStyle.leadText` (text read before a

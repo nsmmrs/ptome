@@ -18,7 +18,8 @@ for ln in t.split('\n'):
             or ln.startswith(('//', 'ifdef', 'image::', "'''", '<<<', '____')):
         continue
     x = re.sub(r'\[\.[^\]]*\]##\{nbsp\}##', '', ln)
-    x = re.sub(r'\[\.turn\]#\(([^#]*)#', r' \1', x)
+    # (A turned word: on the line beside; the line's own text without it.)
+    x = re.sub(r'\[\.turn-(up|down)\]##[^#]*##', '', x)
     x = re.sub(r'\[\.[^\]]*\]##([^#]*)##', r'\1 ', x)
     pages[cur].append(tfit.core(x.lstrip('=').strip()))
 bad = 0

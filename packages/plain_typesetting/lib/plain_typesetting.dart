@@ -118,6 +118,8 @@ export 'src/layout/paragraph.dart'
         PenaltyItem,
         TextAlign,
         TextFragment,
+        Turnover,
+        Turnovers,
         WordBreak,
         buildLines,
         decorationLines,

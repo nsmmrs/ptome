@@ -677,4 +677,98 @@ void main() {
       expect(at[1] - at[0], lessThan(pitch + 2));
     });
   });
+
+  group('turnovers (a verse line too long turned up or down)', () {
+    List<Line> lines(
+      List<InlineContent> content,
+      double width, {
+      Turnovers? turnovers = const Turnovers(),
+    }) => const FirstFitLineBreaker().breakLines(
+      Paragraph(
+        content,
+        breakOpportunities: BreakOpportunities.lines,
+        turnovers: turnovers,
+      ),
+      (_) => width,
+    );
+    double right(Line line) =>
+        line.fragments.last.x + line.fragments.last.width;
+    final long = _body.measure('aaaa bbbb cccc');
+
+    test('its last word on the line above, flush right, after a bracket', () {
+      final set = lines([TextRun('xx aaaa bbbb cccc', _body)], long - 5);
+      expect(set.map(_text), ['xx(cccc', 'aaaa bbbb']);
+      expect(right(set[0]), closeTo(long - 5, 1e-6));
+    });
+
+    test('below where the line above has no room, or it asks so', () {
+      final full = [TextRun('aaaa bbbb aaaa bbbb cccc yy', _body)];
+      expect(lines(full, long - 5).map(_text), [
+        'aaaa bbbb',
+        'aaaa bbbb',
+        'yy(cccc',
+      ]);
+      expect(
+        lines(
+          [TextRun('xx aaaa bbbb cccc yy', _body)],
+          long - 5,
+          turnovers: const Turnovers(direction: Turnover.down, mark: '['),
+        ).map(_text),
+        ['xx', 'aaaa bbbb', 'yy[cccc'],
+      );
+    });
+
+    test('left as it is where no line beside has room, or none is asked', () {
+      final alone = [TextRun('aaaa bbbb cccc', _body)];
+      expect(lines(alone, long - 5).map(_text), ['aaaa bbbb cccc']);
+      expect(
+        lines(
+          [TextRun('xx aaaa bbbb cccc', _body)],
+          long - 5,
+          turnovers: null,
+        ).map(_text),
+        ['xx', 'aaaa bbbb cccc'],
+      );
+    });
+
+    test('a turned word set once, the paragraph broken across a page', () {
+      final content = ParagraphContent(
+        Paragraph(
+          [TextRun('xx\u2028aaaa bbbb cccc\u2028yy', _body)],
+          breakOpportunities: BreakOpportunities.lines,
+          turnovers: const Turnovers(),
+        ),
+        lineBreaker: const FirstFitLineBreaker(),
+        orphans: 1,
+        widows: 1,
+      );
+      final width = long - 5;
+      final placed = content.placeLines(width, 1);
+      expect(placed.lines.map((l) => l.text.replaceAll(' ', '')), ['xx(cccc']);
+      final rest = placed.rest! as ParagraphContent;
+      expect(rest.linesAt(width).map(_text), ['aaaa bbbb', 'yy']);
+    });
+
+    test('a word divided where its turned part starts keeps its hyphen', () {
+      final set = lines(
+        [
+          TextRun('xx\u2028aa com', _body),
+          TextRun('mend', _body, turn: Turnover.up),
+        ],
+        200,
+        turnovers: null,
+      );
+      expect(set.map(_text), ['xx(mend', 'aa com-']);
+    });
+
+    test("a run that turns goes, its line's width whatever", () {
+      final set = lines(
+        [TextRun('xx aa ', _body), TextRun('bb', _body, turn: Turnover.up)],
+        200,
+        turnovers: null,
+      );
+      expect(set.map(_text), ['xx(bb', 'aa']);
+      expect(right(set[0]), closeTo(200, 1e-6));
+    });
+  });
 }

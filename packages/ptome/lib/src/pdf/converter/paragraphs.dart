@@ -55,6 +55,7 @@ extension _Paragraphs on PdfConverter {
         layout.finalGap;
     return Paragraph(
       runs,
+      turnovers: _roleTurnovers,
       hangIndent: hangIndent,
       hangLines: hangLines,
       firstLineContent: firstLineContent,
@@ -509,12 +510,34 @@ extension _Paragraphs on PdfConverter {
     String? firstLineTransform,
   }) {
     // (A role's `role_<role>_text_align_last`, for this paragraph's text:
-    // lines broken by hand each filling the measure, a shaped poem's.)
+    // lines broken by hand each filling the measure, a shaped poem's; its
+    // `_turnover`, `_turnover_mark` and `_turnover_gap`: a verse line too
+    // long turned up or down.)
     final saved = _roleAlignLast;
+    final savedTurnovers = _roleTurnovers;
     _roleAlignLast = null;
+    _roleTurnovers = null;
     for (final role in node.roles.reversed) {
       if (_keys('role_$role').string('text_align_last') case final last?) {
         _roleAlignLast = last;
+        break;
+      }
+    }
+    if (!asciidoctorCompat(_document, CompatFormat.pdf)) {
+      for (final role in node.roles.reversed) {
+        final keys = _keys('role_$role');
+        final direction = switch (keys.string('turnover')) {
+          'up' => Turnover.up,
+          'down' => Turnover.down,
+          'auto' => Turnover.auto,
+          _ => null,
+        };
+        if (direction == null) continue;
+        _roleTurnovers = Turnovers(
+          direction: direction,
+          mark: keys.string('turnover_mark') ?? '(',
+          gap: keys.length('turnover_gap', _font.size),
+        );
         break;
       }
     }
@@ -527,6 +550,7 @@ extension _Paragraphs on PdfConverter {
       );
     } finally {
       _roleAlignLast = saved;
+      _roleTurnovers = savedTurnovers;
     }
   }
 

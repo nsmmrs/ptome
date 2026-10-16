@@ -6,7 +6,8 @@ import 'package:plain_typesetting/src/canvas.dart';
 import 'package:plain_typesetting/src/color.dart';
 import 'package:plain_typesetting/src/font.dart';
 import 'package:plain_typesetting/src/graphic.dart';
-import 'package:plain_typesetting/src/layout/paragraph.dart' show TextAlign;
+import 'package:plain_typesetting/src/layout/paragraph.dart'
+    show BreakOpportunities, Paragraph, TextAlign, Turnover, Turnovers;
 import 'package:plain_typesetting/src/link.dart';
 
 /// A piece of a paragraph's content.
@@ -38,7 +39,15 @@ final class TextRun extends InlineContent {
     this.flushRight = false,
     this.leader,
     this.metricsFont,
+    this.turn,
   }) : super._();
+
+  /// Where given, in a paragraph broken at its own lines
+  /// ([BreakOpportunities.lines]), the run (with the rest of its line
+  /// after it) is turned: set flush right on the line above or below,
+  /// after [Turnovers.mark], whether its line fits or not (a printing's
+  /// own turn-up or turn-down). See [Paragraph.turnovers].
+  final Turnover? turn;
 
   /// Where given, the font whose ascent, descent and line gap the run
   /// counts toward its line's height instead of its own (a symbol from a
@@ -136,6 +145,7 @@ final class TextRun extends InlineContent {
     flushRight: flushRight,
     leader: leader,
     metricsFont: metricsFont,
+    turn: turn,
   );
 
   /// This run in [style].
@@ -157,6 +167,7 @@ final class TextRun extends InlineContent {
     flushRight: flushRight,
     leader: leader,
     metricsFont: metricsFont,
+    turn: turn,
   );
 }
 

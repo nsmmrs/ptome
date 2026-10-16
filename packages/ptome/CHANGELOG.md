@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: turn-ups and turn-downs (`role_<role>_turnover`: `auto`, `up`,
+  `down`, `_turnover_mark`, `_turnover_gap`): a verse line too long for
+  the measure, kept to its source's lines, finishes flush right on the
+  line beside it after an opening bracket, as early printed verse does; a
+  phrase whose role turns goes where it says (a printing's own
+  turnovers), its word divided with a hyphen where it starts mid-word.
+  HTML and EPUB keep the line whole. Not under `asciidoctor-compat`.
 - PDF: what setting a duodecimo of verse as its printing sets it takes
   (the showcase's Temple, after its second edition, 1633; EPIC-b59npn):
   signatures on a gathering's first leaves (`running_content_signature_signed`,

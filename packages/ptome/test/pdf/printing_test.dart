@@ -540,4 +540,32 @@ void main() {
     expect(after[1], greaterThan(lord[3]));
     expect(after[1] - lord[3], lessThan(30));
   });
+
+  test('role_<role>_turnover: a line too long for the measure finishes on '
+      'the line beside it, flush right after a bracket; a phrase whose role '
+      'turns goes where it says, its word divided if it starts mid-word', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n:source-lines:\n\n[.v]\nShort line.\n'
+            'A line a bit too long for the measure here today.\n'
+            '\n[.v]\nAgainst thee: for his light.\n'
+            'God gave thy soul wings; put not fea[.up]##thers##\n',
+        'page: { size: [260pt, 400pt], margin: [36pt, 36pt, 36pt, 36pt] }\n'
+            'base: { text_align: left }\n'
+            'role:\n  v: { turnover: auto }\n  up: { turnover: up }\n',
+      ),
+    ).first;
+    String text(String start) =>
+        page.firstWhere((l) => l.$1.startsWith(start)).$1;
+    // (The long line's last words at the end of the short line above it,
+    // after a bracket, against the measure's end.)
+    expect(
+      text('Short line.'),
+      matches(RegExp(r'^Short line\. +\(.*today\.$')),
+    );
+    expect(text('A line a bit'), isNot(endsWith('today.')));
+    expect(_line(page, 'Short')[2], closeTo(224, 1));
+    expect(text('Against'), 'Against thee: for his light. (thers');
+    expect(text('God gave'), endsWith('fea-'));
+  });
 }

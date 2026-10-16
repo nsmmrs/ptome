@@ -1,6 +1,7 @@
 // A Dialogue-Antheme and The Water-course as the printing sets them: the
-// speakers in the margin; Christian's first word's capital set
-// without its drop (a departure); the braced words, each on its line.
+// speakers in the margin, Christian's "worst." turned up; its first
+// word's capital set without its drop (a departure); the braced words,
+// each on its line.
 [ocr=1,first="¶ A Dialogue-Antheme."]
 === ¶ A Dialogue-Antheme.
 
@@ -20,14 +21,8 @@ __Christian.__{nbsp}{nbsp}{nbsp}{nbsp} __Death.__
 [.i215]##{nbsp}##Thy curse being laid on him, makes thee accurst.
 
 [.v,ocr=10,first="Dea. Let losers talk: yet thou shalt die;"]
-ifdef::backend-pdf[]
-[.i215]##Dea.##__Let losers talk: yet thou shalt die;__ [.turn]#(__worst.__#
-[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy
-endif::[]
-ifndef::backend-pdf[]
 [.i215]##Dea.##__Let losers talk: yet thou shalt die;__
-[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy worst.
-endif::[]
+[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy [.turn-up]##__worst.__##
 [.i215]##{nbsp}##I shall be one day better then before:
 [.i215]##{nbsp}##Thou so much worse, that thou shalt be no more.
 

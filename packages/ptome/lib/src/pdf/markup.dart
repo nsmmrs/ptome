@@ -306,6 +306,12 @@ final class Fragment {
   /// (`role_<role>_leader`, modern engine): a contents' dots.
   String? leader;
 
+  /// Where the text goes, with the rest of its line, in a paragraph kept
+  /// to its source's lines: `up` or `down`, set flush right on the line
+  /// beside after a bracket (`role_<role>_turnover`, modern engine: a
+  /// printing's turn-up), `auto` where that line has room.
+  String? turnover;
+
   /// Where set, the family whose metrics the text counts toward its
   /// line's height (a fallback font's text, counted as the text's font:
   /// `font_fallback_metrics: base`).
@@ -387,6 +393,7 @@ final class Fragment {
     ..textEmphasisUnder = textEmphasisUnder
     ..flushRight = flushRight
     ..leader = leader
+    ..turnover = turnover
     ..metricsFont = metricsFont
     ..language = language
     ..textTransform = textTransform
@@ -497,6 +504,9 @@ final class FragmentSettings {
   /// Whether the text goes flush right at the end of its line.
   bool? flushRight;
 
+  /// Where the text is turned (`role_<role>_turnover`).
+  String? turnover;
+
   /// What fills the room before text set flush right (`role_<role>_leader`,
   /// a contents' dots).
   String? leader;
@@ -556,6 +566,7 @@ final class FragmentSettings {
     }
     if (flushRight != null) fragment.flushRight = flushRight!;
     if (leader != null) fragment.leader = leader;
+    if (turnover != null) fragment.turnover = turnover;
     if (textTransform != null) fragment.textTransform = textTransform;
     if (letterSpacing != null) fragment.letterSpacing = letterSpacing;
     if (align != null) fragment.align = align;
@@ -743,6 +754,8 @@ final class MarkupTransform {
           target.flushRight = theme.string(key) == 'right';
         case 'leader':
           target.leader = theme.string(key);
+        case 'turnover':
+          target.turnover = theme.string(key);
         // (A phrase set in a width of its own, its text at its left, its
         // centre or its right: `role_<role>_width`, `_width_align`.)
         case 'width':

@@ -5,10 +5,10 @@
 // capitals of their sizes.
 // head-base: 660
 ifdef::backend-pdf[]
-[.frame,margin-top=-12.74pt]
+[.frame,margin-top=-12.80pt]
 image::temple-title-frame.png[pdfwidth=188.1pt]
 
-[.tp-the,margin-top=-336.96pt]
+[.tp-the,margin-top=-336.90pt]
 THE
 
 [.tp-temple,margin-top=-5.74pt]
@@ -65,18 +65,18 @@ endif::[]
 // lines high, the lines beside it set in past it; its lines justified,
 // broken where the printing breaks them.
 ifdef::backend-pdf[]
-[.band,margin-top=-16.50pt]
+[.band,margin-top=-16.26pt]
 image::temple-band-reader.png[pdfwidth=192.2pt]
 endif::[]
 
-[#printers,running-title="The Printers to the Reader.",margin-top=-1.57pt]
+[#printers,running-title="The Printers to the Reader.",margin-top=-1.81pt]
 == The Printers to the Reader.
 
 ifdef::backend-pdf[]
-[.factotum,margin-top=8.47pt]
+[.factotum,margin-top=8.62pt]
 image::temple-factotum-t2.png[T,pdfwidth=45.0pt,align=left]
 
-[.prose,margin-top=-45.65pt]
+[.prose,margin-top=-45.80pt]
 [.i460]##{nbsp}##He dedication of this work having been
 [.i475]##{nbsp}##made by the Authour to the __Divine Ma-__
 [.i475]##{nbsp}##__jestie__ onely, how should we now presume
@@ -209,7 +209,7 @@ to tend any way to his own honour;
 __Lesse then the least of Gods mercies.__
 
 ifdef::backend-pdf[]
-[.flower,margin-top=48.16pt]
+[.flower,margin-top=48.40pt]
 image::temple-flower-reader.png[pdfwidth=140.4pt]
 endif::[]
 
@@ -230,11 +230,11 @@ endif::[]
 // in italic, its first capital dropped two lines, its last two lines set
 // in.
 ifdef::backend-pdf[]
-[.band,margin-top=33.31pt]
+[.band,margin-top=33.16pt]
 image::temple-band-dedication.png[pdfwidth=177.6pt]
 endif::[]
 
-[#dedication,running-title="The Dedication.",margin-top=21.81pt]
+[#dedication,running-title="The Dedication.",margin-top=21.96pt]
 == ¶ The Dedication.
 
 [.v.dropcap.ded,margin-top=10.39pt]
@@ -246,7 +246,7 @@ And make us strive, who shall sing best thy Name.
 [.i95]##{nbsp}##Theirs, who shall hurt themselves or me, refrain.
 
 ifdef::backend-pdf[]
-[.band,margin-top=24.75pt]
+[.band,margin-top=24.63pt]
 image::temple-band-dedication-foot.png[pdfwidth=179.9pt]
 endif::[]
 
@@ -269,21 +269,21 @@ endif::[]
 // printing breaks them, their ends set in under them.
 // head-base: 633
 ifdef::backend-pdf[]
-[.band,margin-top=-0.34pt]
+[.band,margin-top=-0.10pt]
 image::temple-band-porch.png[pdfwidth=192.8pt]
 endif::[]
 
-[#church-porch,running-title="The Church-porch.",margin-top=5.37pt]
+[#church-porch,running-title="The Church-porch.",margin-top=5.12pt]
 == The Church-porch.
 
 [.subhead,margin-top=7.08pt]
 Perirrhanterium.
 
 ifdef::backend-pdf[]
-[.factotum,margin-top=6.84pt]
+[.factotum,margin-top=6.94pt]
 image::temple-factotum-t.png[T,pdfwidth=33.53pt,align=left]
 
-[.v,margin-top=-33.98pt]
+[.v,margin-top=-34.08pt]
 [.i338]##{nbsp}##Hou, whose sweet youth and early hopes in-
 [.i438]##{nbsp}##hance
 [.i374]##{nbsp}##Thy rate and price, and mark thee for a
@@ -376,7 +376,7 @@ Yet, if thou sinne in wine or wantonnesse,
 Boast not thereof; nor make thy shame thy glorie.
 Frailtie gets pardon by submissivenesse;
 But he that boasts, shuts that out of his storie.
-He makes flat warre with God, and doth defie
+[.i95]##{nbsp}##He makes flat warre with God, and doth defie
 [.i95]##{nbsp}##With his poore clod of earth the spacious skie.
 
 ifdef::backend-pdf[]
@@ -393,33 +393,23 @@ Take not his name, who made thy mouth, in vain:
 It gets thee nothing, and hath no excuse.
 Lust and wine plead a pleasure, avarice gain:
 But the cheap swearer through his open sluce
-Lets his soul runne for nought, as little fearing.
+[.i95]##{nbsp}##Lets his soul runne for nought, as little fearing.
 [.i95]##{nbsp}##Were I an __Epicure,__ I could bate swearing.
 
 [.v,margin-top=12.96pt]
-ifdef::backend-pdf[]
 When thou dost tell anothers jest, therein
 Omit the oathes, which true wit cannot need:
 Pick out of tales the mirth, but not the sinne.
 He pares his apple, that will cleanly feed.
-[.i160]##{nbsp}##Play not away the vertue of that name, [.turn]#(tame.#
-Which is thy best stake, when griefs make thee
-endif::[]
-ifndef::backend-pdf[]
-When thou dost tell anothers jest, therein
-Omit the oathes, which true wit cannot need:
-Pick out of tales the mirth, but not the sinne.
-He pares his apple, that will cleanly feed.
-[.i160]##{nbsp}##Play not away the vertue of that name,
-Which is thy best stake, when griefs make thee tame.
-endif::[]
+[.i95]##{nbsp}##Play not away the vertue of that name,
+[.i95]##{nbsp}##Which is thy best stake, when griefs make thee [.turn-up]##tame.##
 
 [.v,margin-top=13.04pt]
 The cheapest sinnes most dearely punisht are;
-[.i50]##{nbsp}##Because to shun them also is so cheap:
+Because to shun them also is so cheap:
 For we have wit to mark them, and to spare.
 O crumble not away thy souls fair heap.
-[.i160]##{nbsp}##If thou wilt die, the gates of hell are broad:
+[.i95]##{nbsp}##If thou wilt die, the gates of hell are broad:
 [.i95]##{nbsp}##Pride and full sinnes have made the way a road.
 
 [.v,margin-top=12.37pt]
@@ -427,26 +417,16 @@ Lie not; but let thy heart be true to God,
 Thy mouth to it, thy actions to them both:
 Cowards tell lies, and those that fear the rod;
 The stormie working soul spits lies and froth.
-[.i160]##{nbsp}##Dare to be true. Nothing can need a ly:
+[.i95]##{nbsp}##Dare to be true. Nothing can need a ly:
 [.i95]##{nbsp}##A fault, which needs it most, grows two thereby.
 
 [.v,margin-top=13.18pt]
-ifdef::backend-pdf[]
-Flie idlenesse, which yet thou canst not flie
-By dressing, mistressing, and complement.
-If those take up thy day, the sunne will crie
-Against thee: for his light was onely lent. [.turn]#(thers#
-God gave thy soul brave wings; put not those fea-
-[.i95]##{nbsp}##Into a bed, to sleep out all ill weathers.
-endif::[]
-ifndef::backend-pdf[]
 Flie idlenesse, which yet thou canst not flie
 By dressing, mistressing, and complement.
 If those take up thy day, the sunne will crie
 Against thee: for his light was onely lent.
-God gave thy soul brave wings; put not those feathers
+[.i95]##{nbsp}##God gave thy soul brave wings; put not those fea[.turn-up]##thers##
 [.i95]##{nbsp}##Into a bed, to sleep out all ill weathers.
-endif::[]
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=-0.46pt]
@@ -538,7 +518,7 @@ Slight those who say amidst their sickly healths,
 Thou liv'st by rule. What doth not so, but man?
 Houses are built by rule, and common-wealths.
 Entice the trusty sunne, if that you can,
-From his Ecliptick line: becken the skie.
+[.i95]##{nbsp}##From his Ecliptick line: becken the skie.
 [.i95]##{nbsp}##Who lives by rule then, keeps good companie.
 
 [.v,margin-top=13.07pt]
@@ -683,7 +663,7 @@ Catch not at quarrels. He that dares not speak
 Plainly and home, is coward of the two.
 Think not thy fame at ev'ry twitch will break:
 By great deeds shew, that thou canst little do;
-[.i170]##{nbsp}##And do them not: that shall thy wisdome be;
+[.i100]##{nbsp}##And do them not: that shall thy wisdome be;
 [.i100]##{nbsp}##And change thy temperance into braverie.
 
 [.v,margin-top=12.52pt]
@@ -768,7 +748,7 @@ When basenesse is exalted, do not bate
 The place its honour, for the persons sake.
 The shrine is that which thou dost venerate;
 And not the beast, that bears it on his back.
-[.i55]##{nbsp}##I care not though the cloth of state should be
+[.i100]##{nbsp}##I care not though the cloth of state should be
 [.i100]##{nbsp}##Not of rich arras, but mean tapestrie.
 
 [.v,margin-top=12.81pt]
@@ -817,7 +797,7 @@ Entice all neatly to what they know best;
 For so thou dost thy self and him a pleasure:
 (But a proud ignorance will lose his rest,
 Rather then shew his cards) steal from his treasure
-What to ask further. Doubts well rais'd do lock
+[.i95]##{nbsp}##What to ask further. Doubts well rais'd do lock
 [.i95]##{nbsp}##The speaker to thee, and preserve thy stock.
 
 [.v,margin-top=12.66pt]
@@ -898,7 +878,7 @@ Scorn no mans love, though of a mean degree;
 (Love is a present for a mightie king)
 Much lesse make any one thine enemie.
 As gunnes destroy, so may a little sling.
-The cunning workman never doth refuse
+[.i100]##{nbsp}##The cunning workman never doth refuse
 [.i100]##{nbsp}##The meanest tool, that he may chance to use.
 
 ifdef::backend-pdf[]
@@ -1062,7 +1042,7 @@ None shall in hell such bitter pangs endure,
 As those, who mock at Gods way of salvation.
 Whom oyl and balsames kill, what salve can cure?
 They drink with greedinesse a full damnation.
-The Jews refused thunder; and we, folly.
+[.i95]##{nbsp}##The Jews refused thunder; and we, folly.
 [.i95]##{nbsp}##Though God do hedge us in, yet who is holy?
 
 [.v,margin-top=12.81pt]
@@ -1070,7 +1050,7 @@ Summe up at night, what thou hast done by day;
 And in the morning, what thou hast to do.
 Dresse and undresse thy soul: mark the decay
 And growth of it: if with thy watch, that too
-Be down, then winde up both; since we shall be
+[.i95]##{nbsp}##Be down, then winde up both; since we shall be
 [.i95]##{nbsp}##Most surely judg'd, make thy accounts agree.
 
 [.v,margin-top=13.62pt]
@@ -1082,12 +1062,12 @@ Make not an ell, by trifling in thy wo.
 [.i95]##{nbsp}##If well; the pain doth fade, the joy remains.
 
 ifdef::backend-pdf[]
-[.band,margin-top=24.25pt]
+[.band,margin-top=24.37pt]
 image::temple-flowers-porch.png[pdfwidth=105.0pt]
 endif::[]
 
 ifdef::backend-pdf[]
-[.foot-cw,margin-top=-93.96pt]
+[.foot-cw,margin-top=-94.08pt]
 Super-[.i15]##{nbsp}##
 
 endif::[]
@@ -1099,11 +1079,11 @@ endif::[]
 == The Church
 
 ifdef::backend-pdf[]
-[.band,margin-top=8.89pt]
+[.band,margin-top=8.86pt]
 image::temple-band-superliminare.png[pdfwidth=189.4pt]
 endif::[]
 
-[.opener,margin-top=27.11pt]
+[.opener,margin-top=27.14pt]
 === Superliminare.
 
 [.v.dropcap,margin-top=27.94pt]
@@ -1112,22 +1092,22 @@ THou, whom the former precepts have
 Thy self in church; approach, and taste
 The churches mysticall repast.
 
-[.poem-rule,margin-top=8.78pt]
+[.poem-rule,margin-top=8.70pt]
 '''
 
-[.v.dropcap,margin-top=9.06pt]
+[.v.dropcap,margin-top=9.14pt]
 AVoid profanenesse; come not here:
 Nothing but holy, pure, and cleare,
 [.i105]##{nbsp}##Or that which groneth to be so,
 [.i320]##{nbsp}##May at his perill further go.
 
 ifdef::backend-pdf[]
-[.band,margin-top=35.14pt]
+[.band,margin-top=35.00pt]
 image::temple-band-superliminare-foot.png[pdfwidth=192.1pt]
 endif::[]
 
 ifdef::backend-pdf[]
-[.foot-cw,margin-top=25.47pt]
+[.foot-cw,margin-top=25.61pt]
 The[.i15]##{nbsp}##
 
 endif::[]
@@ -1174,12 +1154,12 @@ O let thy blessed [.spaced-cap]##S##[.spaced]##ACRIFICE## be mine,
 And sanctifie this [.spaced-cap]##A##[.spaced]##LTAR## to be thine.
 
 ifdef::backend-pdf[]
-[.band,margin-top=9.55pt]
+[.band,margin-top=9.49pt]
 image::temple-band-altar-foot.png[pdfwidth=187.4pt]
 endif::[]
 
 ifdef::backend-pdf[]
-[.foot-cw,margin-top=12.96pt]
+[.foot-cw,margin-top=13.02pt]
 The[.i15]##{nbsp}##
 
 endif::[]
@@ -1712,10 +1692,10 @@ O my deare Saviour, Victorie!
 Then for thy passion— I will do for that—
 [.i325]##{nbsp}##Alas, my God, I know not what.
 
-[.poem-rule,margin-top=5.85pt]
+[.poem-rule,margin-top=5.99pt]
 '''
 
-[margin-top=3.64pt]
+[margin-top=3.50pt]
 === ¶ The Reprisall.
 
 [.v.dropcap,margin-top=7.38pt]
@@ -1751,10 +1731,10 @@ Into the conquest. Though I can do nought
 Against thee, in thee I will overcome
 [.i360]##{nbsp}##The man, who once against thee fought.
 
-[.poem-rule,margin-top=15.43pt]
+[.poem-rule,margin-top=15.05pt]
 '''
 
-[margin-top=6.59pt]
+[margin-top=6.97pt]
 === ¶ The Agonie.
 
 [.v.dropcap,margin-top=14.12pt]
@@ -1797,23 +1777,6 @@ endif::[]
 === ¶ The Sinner.
 
 [.v.dropcap.p1006,margin-top=6.05pt]
-ifdef::backend-pdf[]
-LOrd, how I am all ague, when I seek
-What I have treasur'd in my memorie!
-[.i245]##{nbsp}##Since, if my soul make even with the week,
-Each seventh note by right is due to thee.
-I finde there quarries of pil'd vanities,
-[.i245]##{nbsp}##But shreds of holinesse, that dare not venture
-To shew their face, since crosse to thy decrees
-There the circumference earth is, heav'n the centre.
-In so much dregs the quintessence is small:
-[.i245]##{nbsp}##The spirit and good extract of my heart
-[.i245]##{nbsp}##Comes to about the many hundredth part.
-Yet Lord restore thine image, heare my call: [.turn]#(grone,#
-And though my hard heart scarce to thee can
-[.i245]##{nbsp}##Remember that thou once didst write in stone.
-endif::[]
-ifndef::backend-pdf[]
 LOrd, how I am all ague, when I seek
 What I have treasur'd in my memorie!
 [.i245]##{nbsp}##Since, if my soul make even with the week,
@@ -1826,14 +1789,13 @@ In so much dregs the quintessence is small:
 [.i245]##{nbsp}##The spirit and good extract of my heart
 [.i245]##{nbsp}##Comes to about the many hundredth part.
 Yet Lord restore thine image, heare my call:
-And though my hard heart scarce to thee can grone,
+[.i245]##{nbsp}##And though my hard heart scarce to thee can [.turn-up]##grone,##
 [.i245]##{nbsp}##Remember that thou once didst write in stone.
-endif::[]
 
-[.poem-rule,margin-top=8.67pt]
+[.poem-rule,margin-top=8.71pt]
 '''
 
-[margin-top=3.27pt]
+[margin-top=3.23pt]
 === ¶ Good Friday.
 
 [.v.dropcap,margin-top=4.65pt]
@@ -1893,10 +1855,10 @@ And keep possession with thy grace;
 Lest sinne take courage and return,
 And all the writings blot or burn.
 
-[.poem-rule,margin-top=6.08pt]
+[.poem-rule,margin-top=6.36pt]
 '''
 
-[margin-top=1.24pt]
+[margin-top=0.96pt]
 === ¶ Redemption.
 
 [.v.dropcap,margin-top=3.54pt]
@@ -1933,47 +1895,47 @@ At length I heard a ragged noise and mirth
 Of theeves and murderers: there I him espied,
 Who straight, __Your suit is granted,__ said, & died.
 
-[.poem-rule,margin-top=1.12pt]
+[.poem-rule,margin-top=1.30pt]
 '''
 
-[margin-top=-1.17pt]
+[margin-top=-1.35pt]
 === ¶ Sepulchre.
 
 [.v.dropcap,margin-top=-1.43pt]
 O Blessed bodie! Whither art thou thrown?
 No lodging for thee, but a cold hard stone?
 So many hearts on earth, and yet not one
-[.i965]##{nbsp}##Receive thee?
+[.i960]##{nbsp}##Receive thee?
 
 [.v,margin-top=7.14pt]
 Sure there is room within our hearts good store;
 For they can lodge transgressions by the score:
 Thousands of toyes dwell there, yet out of doore
-[.i965]##{nbsp}##They leave thee.
+[.i960]##{nbsp}##They leave thee.
 
 [.v,margin-top=6.99pt]
 But that which shews them large, shews them unfit.
 What ever sinne did this pure rock commit,
 Which holds thee now? Who hath indited it
-Of murder?
+[.i960]##{nbsp}##Of murder?
 
 [.v,margin-top=8.99pt]
 Where our hard hearts have took up stones to brain thee,
 And missing this, most falsly did arraigne thee;
 Onely these stones in quiet entertain thee,
-[.i965]##{nbsp}##And order.
+[.i960]##{nbsp}##And order.
 
 [.v,margin-top=7.76pt]
 And as of old, the law by heav'nly art
 Was writ in stone; so thou, which also art
 The letter of the word, find'st no fit heart
-[.i965]##{nbsp}##To hold thee.
+[.i960]##{nbsp}##To hold thee.
 
 [.v,margin-top=7.62pt]
 Yet do we still persist as we began,
 And so should perish, but that nothing can,
 Though it be cold, hard, foul, from loving man
-Withold thee.
+[.i960]##{nbsp}##Withold thee.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -2123,10 +2085,10 @@ You taught the book of life my name, that so
 [.i215]##{nbsp}##What ever future sinnes should me miscall,
 [.i215]##{nbsp}##Your first acquaintance might discredit all.
 
-[.poem-rule,margin-top=4.82pt]
+[.poem-rule,margin-top=4.88pt]
 '''
 
-[margin-top=-2.92pt]
+[margin-top=-2.98pt]
 === ¶ H. Baptisme.
 
 [.v.dropcap,margin-top=3.22pt]
@@ -2186,10 +2148,10 @@ Is saplesse grown,
 [.i755]##{nbsp}##And a much fitter stone
 To hide my dust, then thee to hold.
 
-[.poem-rule,margin-top=8.14pt]
+[.poem-rule,margin-top=8.42pt]
 '''
 
-[margin-top=3.45pt]
+[margin-top=3.17pt]
 === ¶ Sinne.
 
 [.v.dropcap,margin-top=6.23pt]
@@ -2223,41 +2185,41 @@ Angels and grace, eternall hopes and fears.
 [.i95]##{nbsp}##Yet all these fences and their whole aray
 [.i95]##{nbsp}##One cunning bosome-sinne blows quite away.
 
-[.poem-rule,margin-top=6.69pt]
+[.poem-rule,margin-top=6.91pt]
 '''
 
-[margin-top=1.83pt]
+[margin-top=1.61pt]
 === ¶ Affliction.
 
 [.v.dropcap,margin-top=2.63pt]
 WHen first thou didst entice to thee my heart,
-[.i540]##{nbsp}##I thought the service brave:
+[.i545]##{nbsp}##I thought the service brave:
 So many joyes I writ down for my part,
-[.i865]##{nbsp}##Besides what I might have
+[.i815]##{nbsp}##Besides what I might have
 Out of my stock of naturall delights,
 Augmented with thy gracious benefits.
 
 [.v,margin-top=5.26pt]
 I looked on thy furniture so fine,
-[.i810]##{nbsp}##And made it fine to me:
+[.i815]##{nbsp}##And made it fine to me:
 Thy glorious houshold-stuffe did me entwine,
-[.i810]##{nbsp}##And 'tice me unto thee.
+[.i815]##{nbsp}##And 'tice me unto thee.
 Such starres I counted mine: both heav'n and earth
 Payd me my wages in a world of mirth.
 
 [.v,margin-top=5.36pt]
 What pleasures could I want, whose King I served?
-[.i810]##{nbsp}##Where joyes my fellows were.
+[.i815]##{nbsp}##Where joyes my fellows were.
 Thus argu'd into hopes, my thoughts reserved
-[.i810]##{nbsp}##No place for grief or fear.
+[.i815]##{nbsp}##No place for grief or fear.
 Therefore my sudden soul caught at the place,
 And made her youth and fiercenesse seek thy face.
 
 [.v,margin-top=5.19pt]
 At first thou gav'st me milk and sweetnesses;
-[.i810]##{nbsp}##I had my wish and way:
+[.i815]##{nbsp}##I had my wish and way:
 My dayes were straw'd with flow'rs and happinesse;
-[.i810]##{nbsp}##There was no moneth but May.
+[.i815]##{nbsp}##There was no moneth but May.
 But with my yeares sorrow did twist and grow,
 And made a partie unawares for wo.
 
@@ -2335,10 +2297,10 @@ Well, I will change the service, and go seek
 Ah my deare God! though I am clean forgot,
 Let me not love thee, if I love thee not.
 
-[.poem-rule,margin-top=4.71pt]
+[.poem-rule,margin-top=4.55pt]
 '''
 
-[margin-top=1.26pt]
+[margin-top=1.42pt]
 === ¶ Repentance.
 
 [.v.dropcap,margin-top=5.14pt]
@@ -2398,29 +2360,29 @@ And tune together in a well-set song,
 [.i685]##{nbsp}##Who dead men raises.
 [.i90]##{nbsp}##Fractures well cur'd make us more strong.
 
-[.poem-rule,margin-top=6.44pt]
+[.poem-rule,margin-top=6.32pt]
 '''
 
-[margin-top=3.02pt]
+[margin-top=3.14pt]
 === ¶ Faith.
 
 [.v.dropcap,margin-top=3.06pt]
-LOrd, how couldst thou so much appease
+L[.i40]##{nbsp}##Ord, how couldst thou so much appease
 Thy wrath for sinne, as when mans sight was dimme,
 And could see little, to regard his ease,
-[.i195]##{nbsp}##And bring by Faith all things to him?
+[.i245]##{nbsp}##And bring by Faith all things to him?
 
 [.v,margin-top=5.38pt]
-[.i195]##{nbsp}##Hungrie I was, and had no meat:
+[.i205]##{nbsp}##Hungrie I was, and had no meat:
 I did conceit a most delicious feast;
 I had it straight, and did as truly eat,
-[.i195]##{nbsp}##As ever did a welcome guest.
+[.i245]##{nbsp}##As ever did a welcome guest.
 
 [.v,margin-top=6.47pt]
-[.i195]##{nbsp}##There is a rare outlandish root,
+[.i245]##{nbsp}##There is a rare outlandish root,
 Which when I could not get, I thought it here:
 That apprehension cur'd so well my foot,
-[.i195]##{nbsp}##That I can walk to heav'n well neare.
+[.i245]##{nbsp}##That I can walk to heav'n well neare.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -2513,10 +2475,10 @@ The milkie way, the bird of Paradise,
 Church-bels beyond the starres heard, the souls bloud,
 [.i265]##{nbsp}##The land of spices; something understood.
 
-[.poem-rule,margin-top=6.11pt]
+[.poem-rule,margin-top=5.73pt]
 '''
 
-[margin-top=1.58pt]
+[margin-top=1.96pt]
 === ¶ The H. Communion.
 
 [.v.dropcap,margin-top=3.81pt]
@@ -2620,10 +2582,10 @@ Must bear the longest part.
 __Cho.__ Let all the world in ev'ry corner sing,
 [.i895]##{nbsp}##My God and King.
 
-[.poem-rule,margin-top=10.48pt]
+[.poem-rule,margin-top=10.06pt]
 '''
 
-[margin-top=7.53pt]
+[margin-top=7.95pt]
 === ¶ Love I.
 
 [.v.dropcap]
@@ -2654,19 +2616,13 @@ Wit fancies beautie, beautie raiseth wit:
 Wrought our deliverance from th' infernall pit,
 
 [.v,margin-top=7.51pt]
-ifdef::backend-pdf[]
-[.i95]##{nbsp}##Who sings thy praise? onely a skarf or glove [.turn]#(love.#
-[.i95]##{nbsp}##Doth warm our hands, and make them write of
-endif::[]
-ifndef::backend-pdf[]
 [.i95]##{nbsp}##Who sings thy praise? onely a skarf or glove
-[.i95]##{nbsp}##Doth warm our hands, and make them write of love.
-endif::[]
+[.i95]##{nbsp}##Doth warm our hands, and make them write of [.turn-up]##love.##
 
-[.poem-rule,margin-top=7.03pt]
+[.poem-rule,margin-top=6.89pt]
 '''
 
-[margin-top=0.43pt]
+[margin-top=0.57pt]
 === II.
 
 [.v.dropcap,margin-top=5.20pt]
@@ -2691,25 +2647,17 @@ Who wert disseized by usurping lust:
 [.i95]##{nbsp}##All knees shall bow to thee; all wits shall rise,
 [.i95]##{nbsp}##And praise him who did make and mend our eies.
 
-[.poem-rule,margin-top=7.12pt]
+[.poem-rule,margin-top=7.18pt]
 '''
 
-[margin-top=-3.04pt]
+[margin-top=-3.10pt]
 === ¶ The Temper.
 
 [.v.dropcap,margin-top=10.73pt]
-ifdef::backend-pdf[]
-HOw should I praise thee, Lord! how should my
-Gladly engrave thy love in steel, [.turn]#(rymes#
-[.i215]##{nbsp}##If what my soul doth feel sometimes,
-My soul might ever feel!
-endif::[]
-ifndef::backend-pdf[]
-HOw should I praise thee, Lord! how should my rymes
+HOw should I praise thee, Lord! how should my [.turn-down]##rymes##
 Gladly engrave thy love in steel,
 [.i215]##{nbsp}##If what my soul doth feel sometimes,
 My soul might ever feel!
-endif::[]
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -2756,10 +2704,10 @@ Whether I flie with angels, fall with dust,
 [.i115]##{nbsp}##Thy power and love, my love and trust
 [.i270]##{nbsp}##Make one place ev'ry where.
 
-[.poem-rule,margin-top=4.75pt]
+[.poem-rule,margin-top=4.77pt]
 '''
 
-[margin-top=1.65pt]
+[margin-top=1.63pt]
 === ¶ The Temper.
 
 [.v.dropcap,margin-top=4.91pt]
@@ -2795,10 +2743,10 @@ Scatter, or binde them all to bend to thee:
 [.i195]##{nbsp}##Let not thy higher Court remove,
 But keep a standing Majestie in me.
 
-[.poem-rule,margin-top=8.18pt]
+[.poem-rule,margin-top=7.92pt]
 '''
 
-[margin-top=4.87pt]
+[margin-top=5.13pt]
 === ¶ Jordan.
 
 [.v.dropcap,margin-top=5.28pt]
@@ -2838,37 +2786,37 @@ endif::[]
 IF as a flowre doth spread and die,
 Thou wouldst extend me to some good,
 Before I were by frosts extremitie
-[.i860]##{nbsp}##Nipt in the bud;
+[.i930]##{nbsp}##Nipt in the bud;
 
 [.v,margin-top=11.49pt]
 [.i110]##{nbsp}##The sweetnesse and the praise were thine;
 [.i110]##{nbsp}##But the extension and the room,
 [.i110]##{nbsp}##Which in thy garland I should fill, were mine
-[.i935]##{nbsp}##At thy great doom.
+[.i930]##{nbsp}##At thy great doom.
 
 [.v,margin-top=11.93pt]
 [.i110]##{nbsp}##For as thou dost impart thy grace,
 [.i110]##{nbsp}##The greater shall our glorie be.
 [.i110]##{nbsp}##The measure of our joyes is in this place,
-[.i935]##{nbsp}##The stuffe with thee.
+[.i930]##{nbsp}##The stuffe with thee.
 
 [.v,margin-top=11.42pt]
 Let me not languish then, and spend
 [.i110]##{nbsp}##A life as barren to thy praise,
 [.i110]##{nbsp}##As is the dust, to which that life doth tend,
-[.i935]##{nbsp}##But with delaies.
+[.i930]##{nbsp}##But with delaies.
 
 [.v,margin-top=11.82pt]
 [.i110]##{nbsp}##All things are busie; onely I
 [.i110]##{nbsp}##Neither bring hony with the bees,
 [.i110]##{nbsp}##Nor flowres to make that, nor the husbandrie
-[.i935]##{nbsp}##To water these.
+[.i930]##{nbsp}##To water these.
 
 [.v,margin-top=11.38pt]
 [.i110]##{nbsp}##I am no link of thy great chain,
 [.i110]##{nbsp}##But all my companie is a weed.
 Lord place me in thy consort; give one strain
-[.i445]##{nbsp}##To my poore reed.
+[.i930]##{nbsp}##To my poore reed.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -2898,27 +2846,19 @@ Of strange delights, where we may wish & take,
 Ladies, look here; this is the thankfull glasse,
 
 [.v,margin-top=11.63pt]
-ifdef::backend-pdf[]
 That mends the lookers eyes: this is the well
 [.i270]##{nbsp}##That washes what it shows. Who can indeare
-Thy praise too much? thou art heav'ns Lieger
-Working against the states of death and hell. [.turn]#(here,#
-endif::[]
-ifndef::backend-pdf[]
-That mends the lookers eyes: this is the well
-[.i270]##{nbsp}##That washes what it shows. Who can indeare
-Thy praise too much? thou art heav'ns Lieger here,
+[.i270]##{nbsp}##Thy praise too much? thou art heav'ns Lieger [.turn-down]##here,##
 Working against the states of death and hell.
-endif::[]
 
 [.v,margin-top=11.35pt]
 Thou art joyes handsell: heav'n lies flat in thee
 [.i270]##{nbsp}##Subject to ev'ry mounters bended knee.
 
-[.poem-rule,margin-top=12.70pt]
+[.poem-rule,margin-top=12.60pt]
 '''
 
-[margin-top=3.61pt]
+[margin-top=3.71pt]
 === II.
 
 [.v.dropcap,margin-top=6.27pt]
@@ -2952,10 +2892,10 @@ And in another make me understood.
 [.i220]##{nbsp}##Starres are poore books, & oftentimes do misse:
 [.i220]##{nbsp}##This book of starres lights to eternall blisse.
 
-[.poem-rule,margin-top=6.41pt]
+[.poem-rule,margin-top=6.73pt]
 '''
 
-[margin-top=2.67pt]
+[margin-top=2.35pt]
 === ¶ Whitsunday.
 
 [.v.dropcap,margin-top=6.94pt]
@@ -3012,10 +2952,10 @@ Did not excite thee, we should wholly sink.
 [.i95]##{nbsp}##Restore this day, for thy great name,
 Unto his ancient and miraculous right.
 
-[.poem-rule,margin-top=10.81pt]
+[.poem-rule,margin-top=11.09pt]
 '''
 
-[margin-top=1.25pt]
+[margin-top=0.97pt]
 === ¶ Grace.
 
 [.v.dropcap,margin-top=6.90pt]
@@ -3058,15 +2998,15 @@ endif::[]
 
 // page 61 (leaf 60)
 [.v,margin-top=0.15pt]
-[.i105]##{nbsp}##O come! for thou dost know the way.
+O come! for thou dost know the way.
 Or if to me thou wilt not move,
 Remove me, where I need not say,
 [.i755]##{nbsp}##Drop from above.
 
-[.poem-rule,margin-top=3.98pt]
+[.poem-rule,margin-top=4.04pt]
 '''
 
-[margin-top=-4.33pt]
+[margin-top=-4.39pt]
 === ¶ Praise.
 
 [.v.dropcap,margin-top=-0.58pt]
@@ -3099,10 +3039,10 @@ O raise me then! poore bees, that work all day,
 [.i470]##{nbsp}##Who have a work, as well as they,
 [.i835]##{nbsp}##And much, much more.
 
-[.poem-rule,margin-top=0.22pt]
+[.poem-rule,margin-top=-0.14pt]
 '''
 
-[margin-top=-8.46pt]
+[margin-top=-8.10pt]
 === ¶ Affliction.
 
 [.v.dropcap,margin-top=5.87pt]
@@ -3138,10 +3078,10 @@ Thou Lord conceal it not: and as thou art
 [.i895]##{nbsp}##Thy crosse took up in one;
 By way of imprest, all my future mone.
 
-[.poem-rule,margin-top=1.60pt]
+[.poem-rule,margin-top=1.46pt]
 '''
 
-[margin-top=-5.72pt]
+[margin-top=-5.58pt]
 === ¶ Mattens.
 
 [.v.dropcap,margin-top=4.69pt]
@@ -3266,10 +3206,10 @@ The day or night: that is the gale, this th'harbour;
 [.i540]##{nbsp}##But brings a favour from above;
 And in this love, more then in bed, I rest.
 
-[.poem-rule,margin-top=3.45pt]
+[.poem-rule,margin-top=3.91pt]
 '''
 
-[margin-top=-2.36pt]
+[margin-top=-2.82pt]
 === ¶ Church-monuments.
 
 [.v.dropcap,margin-top=5.42pt]
@@ -3313,10 +3253,10 @@ Be crumbled into dust. Mark here below
 How tame these ashes are, how free from lust,
 That thou mayst fit thy self against thy fall.
 
-[.poem-rule,margin-top=5.19pt]
+[.poem-rule,margin-top=4.85pt]
 '''
 
-[margin-top=-1.65pt]
+[margin-top=-1.31pt]
 === ¶ Church-musick.
 
 [.v.dropcap,margin-top=-1.09pt]
@@ -3337,10 +3277,10 @@ Comfort, 'Ile die; for if you poste from me,
 But if I travell in your companie,
 [.i410]##{nbsp}##You know the way to heavens doore.
 
-[.poem-rule,margin-top=4.48pt]
+[.poem-rule,margin-top=4.32pt]
 '''
 
-[margin-top=-1.81pt]
+[margin-top=-1.65pt]
 === ¶ Church-lock and key.
 
 [.v.dropcap,margin-top=-0.62pt]
@@ -3373,10 +3313,10 @@ Yet heare, O God, onely for his blouds sake
 For though sinnes plead too, yet like stones they make
 His blouds sweet current much more loud to be.
 
-[.poem-rule,margin-top=6.40pt]
+[.poem-rule,margin-top=6.14pt]
 '''
 
-[margin-top=1.46pt]
+[margin-top=1.72pt]
 === ¶ The Church-floore.
 
 [.v.dropcap,margin-top=1.93pt]
@@ -3442,10 +3382,10 @@ A strong regard and aw: but speech alone
 [.i430]##{nbsp}##Doth vanish like a flaring thing,
 [.i430]##{nbsp}##And in the eare, not conscience ring.
 
-[.poem-rule,margin-top=13.52pt]
+[.poem-rule,margin-top=13.92pt]
 '''
 
-[margin-top=3.67pt]
+[margin-top=3.27pt]
 === ¶ Trinitie Sunday.
 
 [.v.dropcap,margin-top=6.31pt]
@@ -3479,43 +3419,43 @@ endif::[]
 PEace mutt'ring thoughts, and do not grudge to keep
 [.i305]##{nbsp}##Within the walls of your own breast:
 Who cannot on his own bed sweetly sleep,
-[.i495]##{nbsp}##Can on anothers hardly rest.
+[.i490]##{nbsp}##Can on anothers hardly rest.
 
 [.v,margin-top=7.36pt]
 Gad not abroad at ev'ry quest and call
-[.i495]##{nbsp}##Of an untrained hope or passion.
+[.i490]##{nbsp}##Of an untrained hope or passion.
 To court each place or fortune that doth fall,
-[.i495]##{nbsp}##Is wantonnesse in contemplation.
+[.i490]##{nbsp}##Is wantonnesse in contemplation.
 
 [.v,margin-top=7.69pt]
 Mark how the fire in flints doth quiet lie,
-[.i495]##{nbsp}##Content and warm t' it self alone:
+[.i490]##{nbsp}##Content and warm t' it self alone:
 But when it would appeare to others eye,
-[.i495]##{nbsp}##Without a knock it never shone.
+[.i490]##{nbsp}##Without a knock it never shone.
 
 [.v,margin-top=7.40pt]
 Give me the pliant minde, whose gentle measure
-[.i495]##{nbsp}##Complies and suits with all estates;
+[.i490]##{nbsp}##Complies and suits with all estates;
 Which can let loose to a crown, and yet with pleasure
-[.i495]##{nbsp}##Take up within a cloisters gates.
+[.i490]##{nbsp}##Take up within a cloisters gates.
 
 [.v,margin-top=7.88pt]
 This soul doth span the world, and hang content
-[.i495]##{nbsp}##From either pole unto the centre:
+[.i490]##{nbsp}##From either pole unto the centre:
 Where in each room of the well-furnisht tent
-[.i495]##{nbsp}##He lies warm, and without adventure.
+[.i490]##{nbsp}##He lies warm, and without adventure.
 
 [.v,margin-top=7.58pt]
 The brags of life are but a nine dayes wonder;
-[.i495]##{nbsp}##And after death the fumes that spring
+[.i490]##{nbsp}##And after death the fumes that spring
 From private bodies, make as big a thunder,
-[.i495]##{nbsp}##As those which rise from a huge King.
+[.i490]##{nbsp}##As those which rise from a huge King.
 
 [.v,margin-top=7.95pt]
 Onely thy Chronicle is lost; and yet
-[.i495]##{nbsp}##Better by worms be all once spent,
+[.i490]##{nbsp}##Better by worms be all once spent,
 Then to have hellish moths still gnaw and fret
-[.i445]##{nbsp}##Thy name in books, which may not rent:
+[.i490]##{nbsp}##Thy name in books, which may not rent:
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -3528,20 +3468,20 @@ endif::[]
 // page 69 (leaf 68)
 [.v,margin-top=-3.42pt]
 When all thy deeds, whose brunt thou feel'st alone,
-[.i410]##{nbsp}##Are chaw'd by others pens and tongue;
+[.i490]##{nbsp}##Are chaw'd by others pens and tongue;
 And as their wit is, their digestion,
-[.i410]##{nbsp}##Thy nourisht fame is weak or strong.
+[.i490]##{nbsp}##Thy nourisht fame is weak or strong.
 
 [.v,margin-top=5.88pt]
 Then cease discoursing soul, till thine own ground,
-[.i410]##{nbsp}##Do not thy self or friends importune.
+[.i490]##{nbsp}##Do not thy self or friends importune.
 He that by seeking hath himself once found,
-[.i410]##{nbsp}##Hath euer found a happie fortune.
+[.i490]##{nbsp}##Hath euer found a happie fortune.
 
-[.poem-rule,margin-top=3.89pt]
+[.poem-rule,margin-top=3.87pt]
 '''
 
-[margin-top=-1.26pt]
+[margin-top=-1.24pt]
 === ¶ The Quidditie.
 
 [.v.dropcap,margin-top=1.01pt]
@@ -3562,10 +3502,10 @@ Nor the Exchange, or busie Hall;
 But it is that which while I use
 I am with thee, and __Most take all.__
 
-[.poem-rule,margin-top=2.43pt]
+[.poem-rule,margin-top=2.05pt]
 '''
 
-[margin-top=-2.93pt]
+[margin-top=-2.55pt]
 === ¶ Humilitie.
 
 [.v.dropcap.p976,margin-top=2.41pt]
@@ -3617,10 +3557,10 @@ Against the beasts: so joyntly bandying,
 And then amerc'd them, double gifts to bring
 [.i890]##{nbsp}##At the next Session-day.
 
-[.poem-rule,margin-top=3.45pt]
+[.poem-rule,margin-top=3.57pt]
 '''
 
-[margin-top=-1.69pt]
+[margin-top=-1.81pt]
 === ¶ Frailtie.
 
 [.v.dropcap.p956,margin-top=2.47pt]
@@ -3662,10 +3602,10 @@ Affront those joyes, wherewith thou didst endow,
 Commodious to conquer heav'n and thee
 [.i780]##{nbsp}##Planted in me.
 
-[.poem-rule,margin-top=16.41pt]
+[.poem-rule,margin-top=16.75pt]
 '''
 
-[margin-top=9.50pt]
+[margin-top=9.16pt]
 === ¶ Constancie.
 
 [.v.dropcap,margin-top=7.34pt]
@@ -3726,10 +3666,10 @@ To writhe his limbes, and share, not mend the ill.
 [.i305]##{nbsp}##This is the Mark-man, safe and sure,
 Who still is right, and prayes to be so still.
 
-[.poem-rule,margin-top=2.67pt]
+[.poem-rule,margin-top=2.85pt]
 '''
 
-[margin-top=-3.09pt]
+[margin-top=-3.27pt]
 === ¶ Affliction.
 
 [.v.dropcap,margin-top=3.80pt]
@@ -3767,10 +3707,10 @@ A point of honour, now to grieve in me,
 [.i470]##{nbsp}##They who lament one crosse,
 Thou dying daily, praise thee to thy losse.
 
-[.poem-rule,margin-top=6.25pt]
+[.poem-rule,margin-top=6.27pt]
 '''
 
-[margin-top=3.12pt]
+[margin-top=3.10pt]
 === __¶__ The Starre.
 
 [.v.dropcap,margin-top=4.98pt]
@@ -3830,10 +3770,10 @@ Sure thou wilt joy, by gaining me
 [.i310]##{nbsp}##Unto that hive of beams
 [.i475]##{nbsp}##And garland-streams.
 
-[.poem-rule,margin-top=14.63pt]
+[.poem-rule,margin-top=14.57pt]
 '''
 
-[margin-top=7.06pt]
+[margin-top=7.12pt]
 === ¶ Sunday.
 
 [.v.dropcap,margin-top=13.53pt]
@@ -3855,39 +3795,39 @@ endif::[]
 
 // page 75 (leaf 74)
 [.v,margin-top=9.62pt]
-[.i370]##{nbsp}##The other dayes and thou
+[.i395]##{nbsp}##The other dayes and thou
 Make up one man; whose face thou art,
 Knocking at heaven with thy brow:
 The worky-daies are the back-part;
 The burden of the week lies there,
 Making the whole to stoup and bow,
-[.i370]##{nbsp}##Till thy release appeare.
+[.i345]##{nbsp}##Till thy release appeare.
 
 [.v,margin-top=16.31pt]
-[.i370]##{nbsp}##Man had straight forward gone
+[.i345]##{nbsp}##Man had straight forward gone
 To endlesse death: but thou dost pull
 And turn us round to look on one,
 Whom, if we were not very dull,
 We could not choose but look on still;
 Since there is no place so alone,
-[.i370]##{nbsp}##The which he doth not fill.
+[.i395]##{nbsp}##The which he doth not fill.
 
 [.v,margin-top=15.46pt]
-[.i370]##{nbsp}##Sundaies the pillars are,
+[.i395]##{nbsp}##Sundaies the pillars are,
 On which heav'ns palace arched lies:
-[.i480]##{nbsp}##The other dayes fill up the spare
-[.i130]##{nbsp}##And hollow room with vanities.
-[.i130]##{nbsp}##They are the fruitfull beds and borders
-[.i130]##{nbsp}##In Gods rich garden: that is bare,
+The other dayes fill up the spare
+And hollow room with vanities.
+They are the fruitfull beds and borders
+In Gods rich garden: that is bare,
 [.i535]##{nbsp}##Which parts their ranks and orders.
 
 [.v,margin-top=16.13pt]
 [.i600]##{nbsp}##The Sundaies of mans life,
 Thredded together on times string,
-[.i300]##{nbsp}##Make bracelets to adorn the wife
-[.i370]##{nbsp}##Of the eternall glorious King.
-[.i370]##{nbsp}##On Sunday heavens gate stands ope;
-[.i370]##{nbsp}##Blessings are plentifull and rife,
+Make bracelets to adorn the wife
+Of the eternall glorious King.
+On Sunday heavens gate stands ope;
+Blessings are plentifull and rife,
 [.i795]##{nbsp}##More plentifull then hope.
 
 ifdef::backend-pdf[]
@@ -3932,7 +3872,7 @@ And where the week-dayes trail on ground,
 Thy flight is higher, as thy birth.
 O let me take thee at the bound,
 Leaping with thee from sev'n to seven,
-[.i180]##{nbsp}##Till that we both, being toss'd from earth,
+Till that we both, being toss'd from earth,
 [.i310]##{nbsp}##Flie hand in hand to heaven!
 
 ifdef::backend-pdf[]
@@ -3948,18 +3888,10 @@ endif::[]
 === ¶ Avarice.
 
 [.v.dropcap,margin-top=3.36pt]
-ifdef::backend-pdf[]
-MOney, thou bane of blisse, & sourse of wo, [.turn]#(fine?#
-Whence com'st thou, that thou art so fresh and
-[.i285]##{nbsp}##I know thy parentage is base and low:
-Man found thee poore and dirtie in a mine.
-endif::[]
-ifndef::backend-pdf[]
 MOney, thou bane of blisse, & sourse of wo,
-Whence com'st thou, that thou art so fresh and fine?
+Whence com'st thou, that thou art so fresh and [.turn-up]##fine?##
 [.i285]##{nbsp}##I know thy parentage is base and low:
 Man found thee poore and dirtie in a mine.
-endif::[]
 
 [.v,margin-top=7.58pt]
 Surely thou didst so little contribute
@@ -3977,20 +3909,20 @@ Thou art the man, and man but drosse to thee.
 [.i95]##{nbsp}##Man calleth thee his wealth, who made thee rich;
 [.i95]##{nbsp}##And while he digs out thee, falls in the ditch.
 
-[.poem-rule,margin-top=10.51pt]
+[.poem-rule,margin-top=10.07pt]
 '''
 
-[margin-top=-2.23pt]
+[margin-top=-1.79pt]
 === Anagram. MARY ARMY
 
 [.v.dropcap,margin-top=13.72pt]
 HOw well her name an __Army__ doth present,
 In whom the __Lord of hosts__ did pitch his tent
 
-[.poem-rule,margin-top=4.12pt]
+[.poem-rule,margin-top=4.20pt]
 '''
 
-[margin-top=2.15pt]
+[margin-top=2.07pt]
 === ¶ To all Angels and Saints.
 
 [.v.dropcap,margin-top=6.61pt]
@@ -4044,10 +3976,10 @@ What's done on earth, we shall not fare the worse,
 Since we are ever ready to disburse,
 If any one our Masters hand can show.
 
-[.poem-rule,margin-top=4.78pt]
+[.poem-rule,margin-top=4.56pt]
 '''
 
-[margin-top=1.65pt]
+[margin-top=1.87pt]
 === ¶ Employment.
 
 [.v.dropcap,margin-top=2.33pt]
@@ -4101,10 +4033,10 @@ Before we do our wares unfold:
 [.i715]##{nbsp}##So we freez on,
 Untill the grave increase our cold.
 
-[.poem-rule,margin-top=6.54pt]
+[.poem-rule,margin-top=6.34pt]
 '''
 
-[margin-top=1.51pt]
+[margin-top=1.71pt]
 === ¶ Deniall.
 
 [.v.dropcap,margin-top=4.91pt]
@@ -4158,10 +4090,10 @@ My feeble spirit, unable to look right,
 [.i345]##{nbsp}##They and my minde may chime,
 [.i970]##{nbsp}##And mend my ryme.
 
-[.poem-rule,margin-top=10.64pt]
+[.poem-rule,margin-top=10.48pt]
 '''
 
-[margin-top=1.54pt]
+[margin-top=1.70pt]
 === ¶ Christmas.
 
 [.v.dropcap,margin-top=3.18pt]
@@ -4394,10 +4326,10 @@ Should aim and shoot at that which __Is__ on high:
 Quitting with daily labour all __MY__ pleasure,
 To gain at harvest an eternall __Treasure.__
 
-[.poem-rule,margin-top=10.14pt]
+[.poem-rule,margin-top=10.26pt]
 '''
 
-[margin-top=2.49pt]
+[margin-top=2.37pt]
 === ¶ Vanitie.
 
 [.v.dropcap,margin-top=8.12pt]
@@ -4448,27 +4380,27 @@ So that we need not say, Where's this command?
 [.i540]##{nbsp}##Poore man, thou searchest round
 To finde out __death,__ but missest __life__ at hand.
 
-[.poem-rule,margin-top=16.68pt]
+[.poem-rule,margin-top=16.54pt]
 '''
 
-[margin-top=4.11pt]
+[margin-top=4.25pt]
 === ¶ Lent.
 
 [.v.dropcap,margin-top=8.81pt]
 WElcome deare feast of Lent: who loves not thee,
 He loves not Temperance, or Authoritie,
-[.i715]##{nbsp}##But is compos'd of passion.
+[.i475]##{nbsp}##But is compos'd of passion.
 The Scriptures bid us __fast__; the Church sayes, __now:__
 Give to thy Mother, what thou wouldst allow
-[.i715]##{nbsp}##To ev'ry Corporation.
+[.i725]##{nbsp}##To ev'ry Corporation.
 
 [.v,margin-top=13.18pt]
 The humble soul compos'd of love and fear
 Begins at home, and layes the burden there,
-[.i715]##{nbsp}##When doctrines disagree.
+[.i475]##{nbsp}##When doctrines disagree.
 He sayes, in things which use hath justly got,
 I am a scandall to the Church, and not
-[.i715]##{nbsp}##The Church is so to me.
+[.i725]##{nbsp}##The Church is so to me.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -4534,15 +4466,15 @@ endif::[]
 [.v,margin-top=2.51pt]
 Yet Lord instruct us to improve our fast
 By starving sinne and taking such repast,
-[.i415]##{nbsp}##As may our faults controll:
+[.i475]##{nbsp}##As may our faults controll:
 That ev'ry man may revell at his doore,
 Not in his parlour; banquetting the poore,
-[.i415]##{nbsp}##And among those his soul.
+[.i410]##{nbsp}##And among those his soul.
 
-[.poem-rule,margin-top=15.97pt]
+[.poem-rule,margin-top=15.71pt]
 '''
 
-[margin-top=6.11pt]
+[margin-top=6.37pt]
 === ¶ Vertue.
 
 [.v.dropcap,margin-top=6.90pt]
@@ -4641,10 +4573,10 @@ But thy silk twist let down from heav'n to me,
 Did both conduct and teach me, how by it
 [.i765]##{nbsp}##To climbe to thee.
 
-[.poem-rule,margin-top=10.28pt]
+[.poem-rule,margin-top=10.42pt]
 '''
 
-[margin-top=3.06pt]
+[margin-top=2.92pt]
 === ¶ Affliction.
 
 [.v.dropcap,margin-top=7.08pt]
@@ -4652,24 +4584,24 @@ BRoken in pieces all asunder,
 [.i290]##{nbsp}##Lord, hunt me not,
 [.i495]##{nbsp}##A thing forgot,
 Once a poore creature, now a wonder,
-[.i275]##{nbsp}##A wonder tortur'd in the space
-[.i275]##{nbsp}##Betwixt this world and that of grace.
+[.i280]##{nbsp}##A wonder tortur'd in the space
+[.i280]##{nbsp}##Betwixt this world and that of grace.
 
 [.v,margin-top=11.78pt]
 My thoughts are all a case of knives,
 [.i495]##{nbsp}##Wounding my heart
 [.i495]##{nbsp}##With scatter'd smart,
 As watring pots give flowers their lives.
-[.i275]##{nbsp}##Nothing their furie can controll,
-[.i275]##{nbsp}##While they do wound and prick my soul.
+[.i280]##{nbsp}##Nothing their furie can controll,
+[.i280]##{nbsp}##While they do wound and prick my soul.
 
 [.v,margin-top=11.74pt]
 All my attendants are at strife,
 [.i460]##{nbsp}##Quitting their place
 [.i460]##{nbsp}##Unto my face:
 Nothing performs the task of life:
-[.i360]##{nbsp}##The elements are let loose to fight,
-[.i275]##{nbsp}##And while I live, trie out their right.
+[.i280]##{nbsp}##The elements are let loose to fight,
+[.i280]##{nbsp}##And while I live, trie out their right.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -4696,35 +4628,35 @@ Labour thy praise, and my relief;
 [.i300]##{nbsp}##With care and courage building me,
 [.i300]##{nbsp}##Till I reach heav'n, and much more thee.
 
-[.poem-rule,margin-top=8.12pt]
+[.poem-rule,margin-top=8.00pt]
 '''
 
-[margin-top=1.32pt]
+[margin-top=1.44pt]
 === ¶ Man.
 
 [.v,margin-top=4.25pt]
-[.i500]##{nbsp}##MY God, I heard this day,
+[.i505]##{nbsp}##MY God, I heard this day,
 That none doth build a stately habitation,
 [.i265]##{nbsp}##But he that means to dwell therein.
 [.i265]##{nbsp}##What house more stately hath there been,
 Or can be, then is Man? to whose creation
-[.i500]##{nbsp}##All things are in decay.
+[.i505]##{nbsp}##All things are in decay.
 
 [.v,margin-top=5.37pt]
-[.i500]##{nbsp}##For Man is ev'ry thing,
+[.i505]##{nbsp}##For Man is ev'ry thing,
 And more: He is a tree, yet bears no fruit;
 [.i265]##{nbsp}##A beast, yet is, or should be more:
 [.i265]##{nbsp}##Reason and speech we onely bring.
 Parrats may thank us, if they are not mute,
-[.i500]##{nbsp}##They go upon the score.
+[.i505]##{nbsp}##They go upon the score.
 
 [.v,margin-top=5.51pt]
-[.i500]##{nbsp}##Man is all symmetrie,
+[.i505]##{nbsp}##Man is all symmetrie,
 Full of proportions, one limbe to another,
 [.i265]##{nbsp}##And all to all the world besides:
 [.i265]##{nbsp}##Each part may call the farthest, brother:
 For head with foot hath private amitie,
-[.i500]##{nbsp}##And both with moons and tides.
+[.i505]##{nbsp}##And both with moons and tides.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -4737,10 +4669,10 @@ endif::[]
 // page 92 (leaf 91)
 [.v,margin-top=2.36pt]
 [.i525]##{nbsp}##Nothing hath got so farre,
-[.i30]##{nbsp}##But Man hath caught and kept it, as his prey.
+[.i25]##{nbsp}##But Man hath caught and kept it, as his prey.
 [.i315]##{nbsp}##His eyes dismount the highest starre:
 [.i315]##{nbsp}##He is in little all the sphere.
-[.i30]##{nbsp}##Herbs gladly cure our flesh; because that they
+[.i25]##{nbsp}##Herbs gladly cure our flesh; because that they
 [.i525]##{nbsp}##Finde their acquaintance there.
 
 [.v,margin-top=13.85pt]
@@ -4748,31 +4680,31 @@ endif::[]
 The earth doth rest, heav'n move, and fountains flow.
 [.i315]##{nbsp}##Nothing we see, but means our good,
 [.i315]##{nbsp}##As our __delight,__ or as our __treasure:__
-[.i120]##{nbsp}##The whole is, either our cupboard of __food,__
+[.i25]##{nbsp}##The whole is, either our cupboard of __food,__
 [.i525]##{nbsp}##Or cabinet of __pleasure.__
 
 [.v,margin-top=13.73pt]
 [.i525]##{nbsp}##The starres have us to bed;
-[.i30]##{nbsp}##Night draws the curtain, which the sunne withdraws;
+[.i25]##{nbsp}##Night draws the curtain, which the sunne withdraws;
 [.i315]##{nbsp}##Musick and light attend our head.
 [.i315]##{nbsp}##All things unto our __flesh__ are kinde
-[.i30]##{nbsp}##In their __descent__ and __being__; to our __minde__
+[.i25]##{nbsp}##In their __descent__ and __being__; to our __minde__
 [.i525]##{nbsp}##In their __ascent__ and __cause.__
 
 [.v,margin-top=13.25pt]
 [.i525]##{nbsp}##Each thing is full of dutie:
-[.i30]##{nbsp}##Waters united are our navigation;
+[.i25]##{nbsp}##Waters united are our navigation;
 [.i315]##{nbsp}##Distinguished, our habitation;
 [.i315]##{nbsp}##Below, our drink; above, our meat;
-[.i30]##{nbsp}##Both are our cleanlinesse. Hath one such beautie?
+[.i25]##{nbsp}##Both are our cleanlinesse. Hath one such beautie?
 [.i525]##{nbsp}##Then how are all things neat?
 
 [.v,margin-top=14.47pt]
 [.i525]##{nbsp}##More servants wait on Man,
-[.i30]##{nbsp}##Then he'l take notice of: in ev'ry path
+[.i25]##{nbsp}##Then he'l take notice of: in ev'ry path
 [.i315]##{nbsp}##He treads down that which doth befriend him,
 [.i255]##{nbsp}##When sicknesse makes him pale and wan.
-[.i30]##{nbsp}##Oh mightie love! Man is one world, and hath
+[.i25]##{nbsp}##Oh mightie love! Man is one world, and hath
 [.i525]##{nbsp}##Another to attend him.
 
 ifdef::backend-pdf[]
@@ -4785,17 +4717,17 @@ endif::[]
 
 // page 93 (leaf 92)
 [.v,margin-top=2.69pt]
-[.i775]##{nbsp}##Since then, my God, thou hast
+[.i525]##{nbsp}##Since then, my God, thou hast
 So brave a Palace built; O dwell in it,
 [.i370]##{nbsp}##That it may dwell with thee at last!
 [.i370]##{nbsp}##Till then, afford us so much wit;
 That, as the world serves us, we may serve thee,
-[.i775]##{nbsp}##And both thy servants be.
+[.i525]##{nbsp}##And both thy servants be.
 
-[.poem-rule,margin-top=12.66pt]
+[.poem-rule,margin-top=12.38pt]
 '''
 
-[margin-top=5.44pt]
+[margin-top=5.72pt]
 === ¶ Antiphon.
 
 [.v,margin-top=5.36pt]
@@ -4871,7 +4803,7 @@ Nor would I use a friend, as I use Thee.
 
 [.v,margin-top=11.41pt]
 Yet can a friend what thou hast done fulfill?
-[.i105]##{nbsp}##O write in brasse, __My God upon a tree__
+O write in brasse, __My God upon a tree__
 [.i890]##{nbsp}##His bloud did spill
 [.i405]##{nbsp}##Onely to purchase my good-will:
 Yet use I not my foes, as I use thee.
@@ -4946,7 +4878,7 @@ And pilfring what I once did give,
 [.i165]##{nbsp}##Disseize thee of thy right.
 
 [.v,margin-top=5.67pt]
-[.i85]##{nbsp}##How know I, if thou shouldst me raise,
+How know I, if thou shouldst me raise,
 [.i165]##{nbsp}##That I should then raise thee?
 Perhaps great places and thy praise
 [.i165]##{nbsp}##Do not so well agree.
@@ -4957,10 +4889,10 @@ Wherefore unto my gift I stand;
 Onely do thou lend me a hand,
 [.i165]##{nbsp}##Since thou hast both mine eyes.
 
-[.poem-rule,margin-top=6.72pt]
+[.poem-rule,margin-top=6.64pt]
 '''
 
-[margin-top=0.85pt]
+[margin-top=0.93pt]
 === ¶ Justice.
 
 [.v.dropcap,margin-top=5.46pt]
@@ -4979,10 +4911,10 @@ __I would do well, yet sinne the hand hath got:__
 __My soul doth love thee, yet it loves delay.__
 [.i255]##{nbsp}##I cannot skill of these my wayes.
 
-[.poem-rule,margin-top=7.51pt]
+[.poem-rule,margin-top=7.19pt]
 '''
 
-[margin-top=3.85pt]
+[margin-top=4.17pt]
 === ¶ Charms and Knots.
 
 [.v.dropcap,margin-top=3.25pt]
@@ -5030,10 +4962,10 @@ Ten still, if sermons go for gains.
 In shallow waters heav'n doth show;
 But who drinks on, to hell may go.
 
-[.poem-rule,margin-top=6.45pt]
+[.poem-rule,margin-top=6.37pt]
 '''
 
-[margin-top=1.75pt]
+[margin-top=1.83pt]
 === ¶ Affliction.
 
 [.v.dropcap,margin-top=4.77pt]
@@ -5077,10 +5009,10 @@ And ruffle all their curious knots and store.
 [.i280]##{nbsp}##My God, so temper joy and wo,
 [.i280]##{nbsp}##That thy bright beams may tame thy bow.
 
-[.poem-rule,margin-top=9.02pt]
+[.poem-rule,margin-top=9.14pt]
 '''
 
-[margin-top=0.35pt]
+[margin-top=0.23pt]
 === ¶ Mortification.
 
 [.v.dropcap,margin-top=1.85pt]
@@ -5140,27 +5072,18 @@ Hath put together a solemnitie,
 [.i190]##{nbsp}##Yet Lord, instruct us so to die,
 That all these dyings may be life in death.
 
-[.poem-rule,margin-top=12.16pt]
+[.poem-rule,margin-top=11.80pt]
 '''
 
-[margin-top=2.82pt]
+[margin-top=3.18pt]
 === ¶ Decay.
 
 [.v.dropcap,margin-top=5.02pt]
-ifdef::backend-pdf[]
-SWeet were the dayes, when thou didst lodge with
-Struggle with Jacob, fit with Gideon, [.turn]#(Lot,#
-Advise with Abraham, when thy power could not
-Encounter Moses strong complaints and mone:
-[.i300]##{nbsp}##Thy words were then, __Let me alone.__
-endif::[]
-ifndef::backend-pdf[]
-SWeet were the dayes, when thou didst lodge with Lot,
+SWeet were the dayes, when thou didst lodge with [.turn-down]##Lot,##
 Struggle with Jacob, fit with Gideon,
 Advise with Abraham, when thy power could not
 Encounter Moses strong complaints and mone:
 [.i300]##{nbsp}##Thy words were then, __Let me alone.__
-endif::[]
 
 [.v,margin-top=7.29pt]
 One might have sought and found thee presently
@@ -5192,10 +5115,10 @@ Doth closet up it self, and still retreat,
 Cold sinne still forcing it, till it return,
 [.i325]##{nbsp}##And calling Justice, all things burn.
 
-[.poem-rule,margin-top=12.48pt]
+[.poem-rule,margin-top=12.38pt]
 '''
 
-[margin-top=3.56pt]
+[margin-top=3.66pt]
 === ¶ Miserie.
 
 [.v.dropcap,margin-top=5.50pt]
@@ -5211,7 +5134,7 @@ His house still burns; and ye he still doth sing,
 Why he'l not lose a cup of drink for thee:
 [.i195]##{nbsp}##Bid him but temper his excesse;
 Not he: he knows, where he can better be,
-[.i625]##{nbsp}##As he will swear,
+[.i660]##{nbsp}##As he will swear,
 [.i440]##{nbsp}##Then to serve thee in fear.
 
 [.v,margin-top=7.50pt]
@@ -5232,41 +5155,41 @@ endif::[]
 
 // page 101 (leaf 100)
 [.v,margin-top=2.21pt]
-[.i245]##{nbsp}##The best of men, turn but thy hand
+[.i230]##{nbsp}##The best of men, turn but thy hand
 [.i35]##{nbsp}##For one poore minute, stumble at a pinne:
-[.i245]##{nbsp}##They would not have their actions scann'd,
+[.i230]##{nbsp}##They would not have their actions scann'd,
 [.i35]##{nbsp}##Nor any sorrow tell them that they sinne,
 [.i670]##{nbsp}##Though it be small,
 [.i515]##{nbsp}##And measure not their fall.
 
 [.v,margin-top=13.55pt]
-[.i245]##{nbsp}##They quarrell thee, and would give over
+[.i230]##{nbsp}##They quarrell thee, and would give over
 [.i35]##{nbsp}##The bargain made to serve thee: but thy love
-[.i245]##{nbsp}##Holds them unto it, and doth cover
+[.i230]##{nbsp}##Holds them unto it, and doth cover
 [.i35]##{nbsp}##Their follies with the wing of thy milde Dove,
 [.i670]##{nbsp}##Not suff'ring those
 [.i515]##{nbsp}##Who would, to be thy foes.
 
 [.v,margin-top=13.33pt]
-[.i245]##{nbsp}##My God, Man cannot praise thy name:
+[.i230]##{nbsp}##My God, Man cannot praise thy name:
 [.i35]##{nbsp}##Thou art all brightnesse, perfect puritie;
-[.i245]##{nbsp}##The sunne holds down his head for shame,
+[.i230]##{nbsp}##The sunne holds down his head for shame,
 [.i35]##{nbsp}##Dead with eclipses, when we speak of thee:
 [.i670]##{nbsp}##How shall infection
 [.i515]##{nbsp}##Presume on thy perfection?
 
 [.v,margin-top=14.80pt]
-[.i245]##{nbsp}##As dirtie hands foul all they touch,
+[.i230]##{nbsp}##As dirtie hands foul all they touch,
 And those things most, which are most pure and fine:
-[.i245]##{nbsp}##So our clay hearts, ev'n when we crouch
+[.i230]##{nbsp}##So our clay hearts, ev'n when we crouch
 [.i35]##{nbsp}##To sing thy praises, make them lesse divine.
 [.i670]##{nbsp}##Yet either this,
 [.i515]##{nbsp}##Or none thy portion is.
 
 [.v,margin-top=13.77pt]
-[.i245]##{nbsp}##Man cannot serve thee; let him go,
+[.i230]##{nbsp}##Man cannot serve thee; let him go,
 [.i35]##{nbsp}##And serve the swine: there, there is his delight:
-[.i245]##{nbsp}##He doth not like this vertue, no;
+[.i230]##{nbsp}##He doth not like this vertue, no;
 [.i35]##{nbsp}##Give him his dirt to wallow in all night:
 [.i670]##{nbsp}##These Preachers make
 [.i515]##{nbsp}##His head to shoot and ake.
@@ -5333,22 +5256,12 @@ endif::[]
 === ¶ Jordan.
 
 [.v.dropcap,margin-top=10.14pt]
-ifdef::backend-pdf[]
-WHen first my lines of heav'nly joyes made men-
-Such was their lustre, they did so excell, [.turn]#(tion,#
-That I sought out quaint words, and trim invention;
-My thoughts began to burnish, sprout, and swell,
-Purling with metaphors a plain intention,
-Decking the sense, as if it were to sell.
-endif::[]
-ifndef::backend-pdf[]
-WHen first my lines of heav'nly joyes made mention,
+WHen first my lines of heav'nly joyes made men[.turn-down]##tion,##
 Such was their lustre, they did so excell,
 That I sought out quaint words, and trim invention;
 My thoughts began to burnish, sprout, and swell,
 Purling with metaphors a plain intention,
 Decking the sense, as if it were to sell.
-endif::[]
 
 [.v,margin-top=17.86pt]
 Thousands of notions in my brain did runne,
@@ -5366,10 +5279,10 @@ Whisper, __How wide is all this long pretence!__
 __There is in love a sweetnesse ready penn'd:__
 __Copie out onely that, and save expense.__
 
-[.poem-rule,margin-top=10.51pt]
+[.poem-rule,margin-top=10.17pt]
 '''
 
-[margin-top=6.53pt]
+[margin-top=6.87pt]
 === ¶ Prayer.
 
 [.v.dropcap,margin-top=8.15pt]
@@ -5413,24 +5326,24 @@ Wealth, fame, endowments, vertues, all should go;
 I and deare prayer would together dwell,
 And quickly gain, for each inch lost, an ell.
 
-[.poem-rule,margin-top=10.61pt]
+[.poem-rule,margin-top=10.31pt]
 '''
 
-[margin-top=3.34pt]
+[margin-top=3.64pt]
 === ¶ Obedience.
 
 [.v.dropcap,margin-top=9.55pt]
-M[.i150]##{nbsp}##Y God, if writings may
+M[.i220]##{nbsp}##Y God, if writings may
 Convey a Lordship any way
 Whither the buyer and the seller please;
-[.i315]##{nbsp}##Let it not thee displease,
+[.i480]##{nbsp}##Let it not thee displease,
 If this poore paper do as much as they.
 
 [.v,margin-top=8.10pt]
-[.i410]##{nbsp}##On it my heart doth bleed
+[.i480]##{nbsp}##On it my heart doth bleed
 [.i195]##{nbsp}##As many lines, as there doth need
 To passe it self and all it hath to thee.
-[.i315]##{nbsp}##To which I do agree,
+[.i480]##{nbsp}##To which I do agree,
 And here present it as my speciall deed.
 
 ifdef::backend-pdf[]
@@ -5443,7 +5356,7 @@ endif::[]
 
 // page 105 (leaf 104)
 [.v,margin-top=4.20pt]
-[.i580]##{nbsp}##If that hereafter Pleasure
+[.i480]##{nbsp}##If that hereafter Pleasure
 [.i360]##{nbsp}##Cavill, and claim her part and measure,
 As if this passed with a reservation,
 [.i480]##{nbsp}##Or some such words in fashion;
@@ -5503,10 +5416,10 @@ Into these lines; till in heav'ns court of rolls
 [.i485]##{nbsp}##They were by winged souls
 Entred for both, farre above their desert!
 
-[.poem-rule,margin-top=9.96pt]
+[.poem-rule,margin-top=9.92pt]
 '''
 
-[margin-top=5.05pt]
+[margin-top=5.09pt]
 === ¶ Conscience.
 
 [.v.dropcap,margin-top=2.26pt]
@@ -5856,10 +5769,10 @@ And write for sweet, prove a most sowre displeasure.
 Then silly soul take heed; for earthly joy
 Is but a bubble, and makes thee a boy.
 
-[.poem-rule,margin-top=16.96pt]
+[.poem-rule,margin-top=17.06pt]
 '''
 
-[margin-top=8.17pt]
+[margin-top=8.07pt]
 === ¶ The Dawning.
 
 [.v.dropcap.p977,margin-top=10.66pt]
@@ -5882,26 +5795,14 @@ endif::[]
 
 // page 113 (leaf 112)
 [.v.p969,margin-top=0.33pt]
-ifdef::backend-pdf[]
-Arise sad heart; if thou dost not withstand,
-[.i150]##{nbsp}##Christs resurrection thine may be:
-Do not by hanging down break from the hand,
-[.i150]##{nbsp}##Which as it riseth, raiseth thee:
-[.i895]##{nbsp}##Arise, arise;
-And with his buriall-linen drie thine eyes: [.turn]#(grief#
-Christ left his grave-clothes, that we might, when
-[.i150]##{nbsp}##Draws tears, or bloud, not want an handkerchief.
-endif::[]
-ifndef::backend-pdf[]
 Arise sad heart; if thou dost not withstand,
 [.i150]##{nbsp}##Christs resurrection thine may be:
 Do not by hanging down break from the hand,
 [.i150]##{nbsp}##Which as it riseth, raiseth thee:
 [.i895]##{nbsp}##Arise, arise;
 And with his buriall-linen drie thine eyes:
-Christ left his grave-clothes, that we might, when grief
+Christ left his grave-clothes, that we might, when [.turn-up]##grief##
 [.i150]##{nbsp}##Draws tears, or bloud, not want an handkerchief.
-endif::[]
 
 [.poem-rule,margin-top=8.51pt]
 '''
@@ -5921,10 +5822,10 @@ I sat me down to spell them, and perceived
 That to my broken heart he was __I ease you,__
 [.i670]##{nbsp}##And to my whole is __IESV.__
 
-[.poem-rule,margin-top=10.74pt]
+[.poem-rule,margin-top=10.88pt]
 '''
 
-[margin-top=3.45pt]
+[margin-top=3.31pt]
 === ¶ Businesse.
 
 [.v.dropcap,margin-top=3.25pt]
@@ -6133,10 +6034,10 @@ To be the bodie and the letters both
 Of __Ioy__ and __Charitie.__ Sir, you have not miss'd,
 The man reply'd; It figures __IESVS CHRIST.__
 
-[.poem-rule,margin-top=7.43pt]
+[.poem-rule,margin-top=7.49pt]
 '''
 
-[margin-top=-0.40pt]
+[margin-top=-0.46pt]
 === ¶ Providence.
 
 [.v.dropcap,margin-top=2.92pt]
@@ -6179,27 +6080,27 @@ endif::[]
 
 // page 118 (leaf 117)
 [.v,margin-top=0.92pt]
-[.i40]##{nbsp}##The beasts say, Eat me: but, if beasts must teach,
-[.i40]##{nbsp}##The tongue is yours to eat, but mine to praise.
-[.i40]##{nbsp}##The trees say, Pull me: but the hand you stretch,
-[.i40]##{nbsp}##Is mine to write, as it is yours to raise.
+The beasts say, Eat me: but, if beasts must teach,
+The tongue is yours to eat, but mine to praise.
+The trees say, Pull me: but the hand you stretch,
+Is mine to write, as it is yours to raise.
 
 [.v,margin-top=6.15pt]
-[.i40]##{nbsp}##Wherefore, most sacred Spirit, I here present
-[.i40]##{nbsp}##For me and all my fellows praise to thee:
-[.i40]##{nbsp}##And just it is that I should pay the rent,
+Wherefore, most sacred Spirit, I here present
+For me and all my fellows praise to thee:
+And just it is that I should pay the rent,
 [.i40]##{nbsp}##Because the benefit accrues to me.
 
 [.v,margin-top=6.85pt]
 [.i40]##{nbsp}##We all acknowledge both thy power and love
-[.i40]##{nbsp}##To be exact; transcendent, and divine;
+To be exact; transcendent, and divine;
 [.i40]##{nbsp}##Who dost so strongly and so sweetly move,
 While all things have their will, yet none but thine.
 
 [.v,margin-top=5.52pt]
-[.i40]##{nbsp}##For either thy __command,__ or thy __permission__
+For either thy __command,__ or thy __permission__
 [.i40]##{nbsp}##Lay hands on all: they are thy __right__ and __left.__
-[.i40]##{nbsp}##The first puts on with speed and expedition;
+The first puts on with speed and expedition;
 [.i40]##{nbsp}##The other curbs sinnes stealing pace and theft.
 
 [.v,margin-top=5.81pt]
@@ -6210,20 +6111,20 @@ While all things have their will, yet none but thine.
 
 [.v,margin-top=6.48pt]
 [.i40]##{nbsp}##Thou art in small things great, not small in any:
-[.i40]##{nbsp}##Thy even praise can neither rise, nor fall.
-[.i40]##{nbsp}##Thou art in all things one, in each thing many:
-[.i40]##{nbsp}##For thou art infinite in one and all.
+Thy even praise can neither rise, nor fall.
+Thou art in all things one, in each thing many:
+For thou art infinite in one and all.
 
 [.v,margin-top=5.96pt]
-[.i40]##{nbsp}##Tempests are calm to thee; they know thy hand,
+Tempests are calm to thee; they know thy hand,
 [.i40]##{nbsp}##And hold it fast, as children do their fathers,
-[.i40]##{nbsp}##Which crie and follow. Thou hast made poore sand
+Which crie and follow. Thou hast made poore sand
 Check the proud sea, ev'n when it swells and gathers.
 
 [.v,margin-top=5.89pt]
-[.i40]##{nbsp}##Thy cupboard serves the world: the meat is set,
-[.i40]##{nbsp}##Where all may reach: no beast but knows his feed.
-[.i40]##{nbsp}##Birds teach us hawking; fishes have their net:
+Thy cupboard serves the world: the meat is set,
+Where all may reach: no beast but knows his feed.
+Birds teach us hawking; fishes have their net:
 [.i40]##{nbsp}##The great prey on the lesse, they on some weed.
 
 ifdef::backend-pdf[]
@@ -6335,18 +6236,10 @@ But Man alone, to show his heav'nly breed:
 And onely he hath fuell in desire.
 
 [.v,margin-top=6.73pt]
-ifdef::backend-pdf[]
 When th' earth was dry, thou mad'st a sea of wet:
-Whē that lay gather'd, thou didst broach the moū-
-When yet some places could no moisture get, [.turn]#(tains.#
-The windes grew gard'ners, and the clouds good foun-
-endif::[]
-ifndef::backend-pdf[]
-When th' earth was dry, thou mad'st a sea of wet:
-Whē that lay gather'd, thou didst broach the moūtains:
+Whē that lay gather'd, thou didst broach the moū[.turn-down]##tains:##
 When yet some places could no moisture get,
-The windes grew gard'ners, and the clouds good fountains.
-endif::[]
+The windes grew gard'ners, and the clouds good foun[.turn-up]##tains.##
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=-0.26pt]
@@ -6420,10 +6313,10 @@ It go for one, hath many wayes in store
 To honour thee; and so each hymne thy fame
 Extolleth many wayes, yet this one more.
 
-[.poem-rule,margin-top=3.82pt]
+[.poem-rule,margin-top=3.68pt]
 '''
 
-[margin-top=-1.81pt]
+[margin-top=-1.67pt]
 === ¶ Hope.
 
 [.v.dropcap,margin-top=1.89pt]
@@ -6436,10 +6329,10 @@ With that I gave a viall full of tears:
 Ah Loyterer! I'le no more, no more I'le bring:
 [.i620]##{nbsp}##I did expect a ring.
 
-[.poem-rule,margin-top=3.68pt]
+[.poem-rule,margin-top=3.86pt]
 '''
 
-[margin-top=-0.88pt]
+[margin-top=-1.06pt]
 === ¶ Sinnes round.
 
 [.v.dropcap,margin-top=-0.83pt]
@@ -6587,10 +6480,10 @@ endif::[]
 [.i30]##{nbsp}##But such a heart, whose pulse may be
 [.i195]##{nbsp}##Thy praise.
 
-[.poem-rule,margin-top=11.78pt]
+[.poem-rule,margin-top=11.64pt]
 '''
 
-[margin-top=6.89pt]
+[margin-top=7.03pt]
 === ¶ Peace.
 
 [.v.dropcap,margin-top=8.74pt]
@@ -6658,10 +6551,10 @@ Take of this grain, which in my garden grows,
 With so much earnestnesse you do pursue,
 [.i715]##{nbsp}##Is onely there.
 
-[.poem-rule,margin-top=6.99pt]
+[.poem-rule,margin-top=6.65pt]
 '''
 
-[margin-top=3.13pt]
+[margin-top=3.47pt]
 === ¶ Confession.
 
 [.v,margin-top=2.47pt]
@@ -6713,10 +6606,10 @@ Lord, I acknowledge; take thy plagues away:
 The clearest diamond: let them do their best,
 They shall be thick and cloudie to my breast.
 
-[.poem-rule,margin-top=19.38pt]
+[.poem-rule,margin-top=19.26pt]
 '''
 
-[margin-top=7.32pt]
+[margin-top=7.44pt]
 === ¶ Giddinesse.
 
 [.v,margin-top=7.16pt]
@@ -6828,26 +6721,14 @@ Ev'n God himself, being pressed for my sake.
 === ¶ Love unknown.
 
 [.v.dropcap.p972,margin-top=3.20pt]
-ifdef::backend-pdf[]
 DEare Friend, sit down, the tale is long and sad:
 And in my faintings I presume your loue
 Will more complie, then help. A Lord I had,
-And have, of whom some grounds which may im-
-I hold for two lives, and both lives in me. [.turn]#(prove,#
-To him I brought a dish of fruit one day,
-And in the middle plac'd my heart. But he
-[.i1160]##{nbsp}##(I sigh to say)
-endif::[]
-ifndef::backend-pdf[]
-DEare Friend, sit down, the tale is long and sad:
-And in my faintings I presume your loue
-Will more complie, then help. A Lord I had,
-And have, of whom some grounds which may improve,
+And have, of whom some grounds which may im[.turn-down]##prove,##
 I hold for two lives, and both lives in me.
 To him I brought a dish of fruit one day,
 And in the middle plac'd my heart. But he
 [.i1160]##{nbsp}##(I sigh to say)
-endif::[]
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=-0.39pt]
@@ -7038,10 +6919,10 @@ Glorie and honour are set by till it
 Poets have wrong'd poore storms: such dayes are best;
 They purge the aire without, within the breast.
 
-[.poem-rule,margin-top=12.73pt]
+[.poem-rule,margin-top=12.55pt]
 '''
 
-[margin-top=9.33pt]
+[margin-top=9.51pt]
 === § Paradise.
 
 [.v.dropcap,margin-top=4.87pt]
@@ -7081,10 +6962,10 @@ Such sharpnes shows the sweetest [.spaced-cap]##F##[.spaced]##REND##:
 Such cuttings rather heal then [.spaced-cap]##R##[.spaced]##END##:
 And such beginnings touch their [.spaced-cap]##E##[.spaced]##ND##.
 
-[.poem-rule,margin-top=12.10pt]
+[.poem-rule,margin-top=12.16pt]
 '''
 
-[margin-top=4.42pt]
+[margin-top=4.36pt]
 === ¶ The Method.
 
 [.v.dropcap,margin-top=7.16pt]
@@ -7144,10 +7025,10 @@ Down with thy knees, up with thy voice.
 Seek pardon first, and God will say,
 [.i560]##{nbsp}##__Glad heart rejoyce.__
 
-[.poem-rule,margin-top=10.64pt]
+[.poem-rule,margin-top=10.96pt]
 '''
 
-[margin-top=3.42pt]
+[margin-top=3.10pt]
 === ¶ Divinitie.
 
 [.v.dropcap,margin-top=2.84pt]
@@ -7204,10 +7085,10 @@ Then burn thy Epicycles, foolish man;
 Faith needs no staffe of flesh, but stoutly can
 [.i245]##{nbsp}##To heav'n alone both go, and leade.
 
-[.poem-rule,margin-top=21.90pt]
+[.poem-rule,margin-top=22.34pt]
 '''
 
-[margin-top=7.97pt]
+[margin-top=7.53pt]
 === Ephes. 4. 30.
 
 [.subhead,margin-top=5.42pt]
@@ -7216,7 +7097,7 @@ Grieve not the Holy Spirit, &c.
 [.v.dropcap,margin-top=8.97pt]
 ANd art thou grieved, sweet and sacred Dove,
 When I am sowre,
-[.i485]##{nbsp}##And crosse thy love?
+[.i475]##{nbsp}##And crosse thy love?
 Grieved for me? the God of strength and power
 [.i225]##{nbsp}##Griev'd for a worm, which when I tread,
 [.i225]##{nbsp}##I passe away and leave it dead?
@@ -7231,7 +7112,7 @@ endif::[]
 
 // page 137 (leaf 136)
 [.v,margin-top=0.89pt]
-[.i110]##{nbsp}##Then weep mine eyes, the God of love doth grieve:
+Then weep mine eyes, the God of love doth grieve:
 [.i470]##{nbsp}##Weep foolish heart,
 [.i470]##{nbsp}##And weeping live:
 For death is drie as dust. Yet if ye part,
@@ -7387,28 +7268,28 @@ A[.i125]##{nbsp}##Christians state and case
 Is not a corpulent, but a thinne and spare,
 Yet active strength: whose long and bonie face
 [.i700]##{nbsp}##Content and care
-[.i200]##{nbsp}##Do seem to equally divide,
-[.i200]##{nbsp}##Like a pretender, not a bride.
+[.i155]##{nbsp}##Do seem to equally divide,
+[.i155]##{nbsp}##Like a pretender, not a bride.
 
 [.v,margin-top=17.23pt]
 [.i315]##{nbsp}##Wherefore sit down, good heart;
 Grasp not at much, for fear thou losest all.
 If comforts fell according to desert,
-[.i200]##{nbsp}##They would great frosts and snows destroy:
-[.i200]##{nbsp}##For we should count, Since the last joy.
+[.i195]##{nbsp}##They would great frosts and snows destroy:
+[.i195]##{nbsp}##For we should count, Since the last joy.
 
 [.v,margin-top=16.98pt]
 [.i315]##{nbsp}##Then close again the seam,
 Which thou hast open'd: do not spread thy robe
 In hope of great things. Call to minde thy dream,
 [.i700]##{nbsp}##An earthly globe,
-[.i200]##{nbsp}##On whose meridian was engraven,
-[.i200]##{nbsp}##These seas are tears, and heav'n the haven.
+[.i195]##{nbsp}##On whose meridian was engraven,
+[.i195]##{nbsp}##These seas are tears, and heav'n the haven.
 
-[.poem-rule,margin-top=24.12pt]
+[.poem-rule,margin-top=24.32pt]
 '''
 
-[margin-top=6.52pt]
+[margin-top=6.32pt]
 === ¶ Artillerie.
 
 [.v.dropcap.p986,margin-top=8.74pt]
@@ -7552,17 +7433,17 @@ For where before thou still didst call on me,
 [.i460]##{nbsp}##Why should I justice now decline?
 Against me there is none, but for me much.
 
-[.poem-rule,margin-top=4.73pt]
+[.poem-rule,margin-top=5.03pt]
 '''
 
-[margin-top=1.92pt]
+[margin-top=1.62pt]
 === § The Pilgrimage.
 
 [.v.dropcap,margin-top=2.30pt]
 I Travell'd on, seeing the hill, where lay
 My expectation.
 [.i400]##{nbsp}##A long it was and weary way.
-[.i465]##{nbsp}##The gloomy cave of Desperation
+[.i400]##{nbsp}##The gloomy cave of Desperation
 I left on th' one, and on the other side
 [.i915]##{nbsp}##The rock of Pride,
 
@@ -7647,10 +7528,10 @@ That all things were more ours by being his.
 [.i180]##{nbsp}##What Adam had, and forfeited for all,
 [.i180]##{nbsp}##Christ keepeth now, who cannot fail or fall.
 
-[.poem-rule,margin-top=5.43pt]
+[.poem-rule,margin-top=5.37pt]
 '''
 
-[margin-top=-1.59pt]
+[margin-top=-1.53pt]
 === ¶ Complaining.
 
 [.v.dropcap,margin-top=-0.55pt]
@@ -7690,10 +7571,10 @@ My inch of life: or let thy gracious power
 [.i715]##{nbsp}##Contract my houre,
 [.i195]##{nbsp}##That I may climbe and finde relief.
 
-[.poem-rule,margin-top=6.17pt]
+[.poem-rule,margin-top=6.27pt]
 '''
 
-[margin-top=-1.12pt]
+[margin-top=-1.22pt]
 === ¶ The Discharge.
 
 [.v.dropcap,margin-top=2.19pt]
@@ -7701,35 +7582,35 @@ BUsie enquiring heart, what wouldst thou know?
 [.i530]##{nbsp}##Why dost thou prie,
 And turn, and leer, and with a licorous eye
 [.i720]##{nbsp}##Look high and low;
-[.i330]##{nbsp}##And in thy lookings stretch and grow?
+[.i325]##{nbsp}##And in thy lookings stretch and grow?
 
 [.v,margin-top=5.26pt]
 Hast thou not made thy counts, and summ'd up all?
 [.i720]##{nbsp}##Did not thy heart
 Give up the whole, and with the whole depart?
 [.i720]##{nbsp}##Let what will fall:
-[.i330]##{nbsp}##That which is past who can recall?
+[.i325]##{nbsp}##That which is past who can recall?
 
 [.v,margin-top=6.07pt]
 Thy life is Gods, thy time to come is gone,
 [.i720]##{nbsp}##And is his right.
 He is thy night at noon: he is at night
 [.i720]##{nbsp}##Thy noon alone.
-[.i330]##{nbsp}##The crop is his, for he hath sown.
+[.i325]##{nbsp}##The crop is his, for he hath sown.
 
 [.v,margin-top=5.33pt]
 And well it was for thee, when this befell,
 [.i720]##{nbsp}##That God did make
 Thy businesse his, and in thy life partake:
 [.i720]##{nbsp}##For thou canst tell,
-[.i330]##{nbsp}##If it be his once, all is well.
+[.i325]##{nbsp}##If it be his once, all is well.
 
 [.v,margin-top=6.37pt]
 Onely the present is thy part and fee.
 [.i720]##{nbsp}##And happy thou,
 If, though thou didst not beat thy future brow,
 [.i720]##{nbsp}##Thou couldst well see
-[.i330]##{nbsp}##What present things requir'd of thee.
+[.i325]##{nbsp}##What present things requir'd of thee.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -7873,22 +7754,12 @@ These parcell out thy heart: recover these,
 And thou mayst offer many gifts in one.
 
 [.v,margin-top=7.29pt]
-ifdef::backend-pdf[]
-There is a balsome, or indeed a bloud, [.turn]#(close#
-Dropping from heav'n, which doth both cleanse and
-All sorts of wounds; of such strange force it is.
-Seek out this All-heal, and seek no repose,
-Untill thou finde and use it to thy good:
-Then bring thy gift; and let thy hymne be this;
-endif::[]
-ifndef::backend-pdf[]
 There is a balsome, or indeed a bloud,
-Dropping from heav'n, which doth both cleanse and close
+Dropping from heav'n, which doth both cleanse and [.turn-up]##close##
 All sorts of wounds; of such strange force it is.
 Seek out this All-heal, and seek no repose,
 Untill thou finde and use it to thy good:
 Then bring thy gift; and let thy hymne be this;
-endif::[]
 
 [.v,margin-top=11.63pt]
 [.i520]##{nbsp}##Since my sadnesse
@@ -7923,10 +7794,10 @@ To this poore oblation;
 [.i525]##{nbsp}##To be thy praise,
 And be my salvation.
 
-[.poem-rule,margin-top=5.53pt]
+[.poem-rule,margin-top=5.51pt]
 '''
 
-[margin-top=1.19pt]
+[margin-top=1.21pt]
 === ¶ Longing.
 
 [.v.dropcap,margin-top=2.14pt]
@@ -8068,10 +7939,10 @@ By these thy feet, at which my heart
 And heal my troubled breast which cryes,
 [.i770]##{nbsp}##Which dyes.
 
-[.poem-rule,margin-top=11.68pt]
+[.poem-rule,margin-top=11.70pt]
 '''
 
-[margin-top=1.37pt]
+[margin-top=1.35pt]
 === ¶ The Bag.
 
 [.v.dropcap,margin-top=3.00pt]
@@ -8142,10 +8013,10 @@ Or if hereafter any of my friends
 [.i205]##{nbsp}##Not to his hurt. Sighs will convey
 Any thing to me. Heark despair, away.
 
-[.poem-rule,margin-top=8.69pt]
+[.poem-rule,margin-top=8.77pt]
 '''
 
-[margin-top=-0.97pt]
+[margin-top=-1.05pt]
 === ¶ The Jews.
 
 [.v.dropcap,margin-top=1.63pt]
@@ -8351,10 +8222,10 @@ Which bounds on thee, and will not down thy throat:
 [.i185]##{nbsp}##What for it self love once began,
 [.i185]##{nbsp}##Now love and truth will end in man.
 
-[.poem-rule,margin-top=12.93pt]
+[.poem-rule,margin-top=12.99pt]
 '''
 
-[margin-top=7.97pt]
+[margin-top=7.91pt]
 === § The Call.
 
 [.v.dropcap,margin-top=8.49pt]
@@ -8411,10 +8282,10 @@ Yet then as mine didst me restore.
 [.i165]##{nbsp}##O be mine still! still make me thine!
 [.i165]##{nbsp}##Or rather make no Thine and Mine!
 
-[.poem-rule,margin-top=14.13pt]
+[.poem-rule,margin-top=14.05pt]
 '''
 
-[margin-top=7.76pt]
+[margin-top=7.84pt]
 === ¶ Praise.
 
 [.v.dropcap,margin-top=6.75pt]
@@ -8438,42 +8309,42 @@ endif::[]
 
 // page 160 (leaf 159)
 [.v,margin-top=4.28pt]
-[.i190]##{nbsp}##When thou dost favour any action,
+[.i185]##{nbsp}##When thou dost favour any action,
 [.i800]##{nbsp}##It runnes, it flies:
 All things concurre to give it a perfection.
-[.i190]##{nbsp}##That which had but two legs before,
+[.i185]##{nbsp}##That which had but two legs before,
 When thou dost blesse, hath twelve: one wheel doth rife
 [.i485]##{nbsp}##To twentie then, or more.
 
 [.v,margin-top=12.15pt]
-[.i190]##{nbsp}##But when thou dost on businesse blow,
+[.i185]##{nbsp}##But when thou dost on businesse blow,
 [.i850]##{nbsp}##It hangs, it clogs:
 Not all the teams of Albion in a row
-[.i190]##{nbsp}##Can hale or draw it out of doore.
+[.i185]##{nbsp}##Can hale or draw it out of doore.
 Legs are but stumps, and Pharaohs wheels but logs,
 [.i485]##{nbsp}##And struggling hinders more.
 
 [.v,margin-top=12.29pt]
-[.i190]##{nbsp}##Thousands of things do thee employ
+[.i185]##{nbsp}##Thousands of things do thee employ
 [.i800]##{nbsp}##In ruling all
 This spacious globe: Angels must have their joy,
-[.i190]##{nbsp}##Devils their rod, the sea his shore,
+[.i185]##{nbsp}##Devils their rod, the sea his shore,
 The windes their stint: and yet when I did call,
 [.i485]##{nbsp}##Thou heardst my call, and more.
 
 [.v,margin-top=12.45pt]
-[.i190]##{nbsp}##I have not lost one single tear:
+[.i185]##{nbsp}##I have not lost one single tear:
 [.i800]##{nbsp}##But when mine eyes
 Did weep to heav'n, they found a bottle there
-[.i260]##{nbsp}##(As we have boxes for the poore)
+[.i185]##{nbsp}##(As we have boxes for the poore)
 Readie to take them in; yet of a size
 [.i485]##{nbsp}##That would contain much more.
 
 [.v,margin-top=12.59pt]
-[.i190]##{nbsp}##But after thou hadst slipt a drop
+[.i185]##{nbsp}##But after thou hadst slipt a drop
 [.i800]##{nbsp}##From thy right eye,
 (Which there did hang like streamers neare the top
-[.i190]##{nbsp}##Of some fair church to show the sore
+[.i185]##{nbsp}##Of some fair church to show the sore
 And bloudie battell which thou once didst trie)
 [.i485]##{nbsp}##The glasse was full and more.
 
@@ -8494,10 +8365,10 @@ O that I might some other hearts convert,
 That to thy chests there might be coming in
 [.i835]##{nbsp}##Both all my praise, and more!
 
-[.poem-rule,margin-top=11.26pt]
+[.poem-rule,margin-top=11.22pt]
 '''
 
-[margin-top=6.69pt]
+[margin-top=6.73pt]
 === § Josephs coat.
 
 [.v.dropcap.p966,margin-top=6.51pt]
@@ -8516,10 +8387,10 @@ To linger in me, and together languish.
 [.i155]##{nbsp}##I live to shew his power, who once did bring
 [.i155]##{nbsp}##My __joyes__ to __weep,__ and now my __griefs__ to __sing.__
 
-[.poem-rule,margin-top=10.46pt]
+[.poem-rule,margin-top=10.64pt]
 '''
 
-[margin-top=7.71pt]
+[margin-top=7.53pt]
 === ¶ The Pulley.
 
 [.v,margin-top=6.79pt]
@@ -8562,10 +8433,10 @@ Let him be rich and wearie, that at least,
 If goodnesse leade him not, yet wearinesse
 [.i475]##{nbsp}##May tosse him to my breast.
 
-[.poem-rule,margin-top=10.68pt]
+[.poem-rule,margin-top=10.50pt]
 '''
 
-[margin-top=9.75pt]
+[margin-top=9.93pt]
 === § The Priesthood.
 
 [.v.dropcap,margin-top=4.66pt]
@@ -8574,7 +8445,7 @@ That with th' one hand thou liftest to the sky,
 And with the other throwest down to hell
 In thy just censures; fain would I draw nigh,
 Fain put thee on, exchanging my lay-sword
-[.i685]##{nbsp}##For that of th' holy word.
+[.i585]##{nbsp}##For that of th' holy word.
 
 [.v,margin-top=11.30pt]
 But thou art fire, sacred and hallow'd fire;
@@ -8582,7 +8453,7 @@ And I but earth and clay: should I presume
 To wear thy habit, the severe attire
 My slender compositions might consume.
 I am both foul and brittle; much unfit
-[.i490]##{nbsp}##To deal in holy Writ.
+[.i585]##{nbsp}##To deal in holy Writ.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -8777,10 +8648,10 @@ Whose grief allows him musick and a ryme:
 For mine excludes both measure, tune, and time.
 Alas, my God!
 
-[.poem-rule,margin-top=23.86pt]
+[.poem-rule,margin-top=23.96pt]
 '''
 
-[margin-top=7.93pt]
+[margin-top=7.83pt]
 === ¶ The Crosse.
 
 [.v.dropcap,margin-top=6.64pt]
@@ -8924,10 +8795,10 @@ Thou hast a garden for us, where to bide.
 [.i825]##{nbsp}##Swelling through store,
 [.i200]##{nbsp}##Forfeit their Paradise by their pride.
 
-[.poem-rule,margin-top=3.32pt]
+[.poem-rule,margin-top=3.26pt]
 '''
 
-[margin-top=-0.40pt]
+[margin-top=-0.34pt]
 === ¶ Dotage.
 
 [.v.dropcap.p980,margin-top=-1.04pt]
@@ -8961,10 +8832,10 @@ Before a court, ev'n that above so cleare,
 Where are no sorrows, but delights more true,
 [.i720]##{nbsp}##Then miseries are here!
 
-[.poem-rule,margin-top=16.11pt]
+[.poem-rule,margin-top=15.87pt]
 '''
 
-[margin-top=4.09pt]
+[margin-top=4.33pt]
 === ¶ The Sonne.
 
 [.v.dropcap.p970,margin-top=4.95pt]
@@ -8983,10 +8854,10 @@ We turn upon him in a sense most true:
 [.i95]##{nbsp}##For what Christ once in humblenesse began,
 [.i95]##{nbsp}##We him in glorie call, __The Sonne of Man.__
 
-[.poem-rule,margin-top=14.41pt]
+[.poem-rule,margin-top=14.39pt]
 '''
 
-[margin-top=3.99pt]
+[margin-top=4.01pt]
 === ¶ A true Hymne.
 
 [.v.dropcap,margin-top=10.81pt]
@@ -9026,10 +8897,10 @@ To make his verse, or write a hymne in kinde.
 As when th' heart sayes (sighing to be approved)
 __O, could I__ __love__! and stops: God writeth, __Loved.__
 
-[.poem-rule,margin-top=10.58pt]
+[.poem-rule,margin-top=11.00pt]
 '''
 
-[margin-top=5.91pt]
+[margin-top=5.49pt]
 === ¶ The Answer.
 
 [.v.dropcap.p970,margin-top=4.57pt]
@@ -9058,8 +8929,9 @@ endif::[]
 
 // page 172 (leaf 171)
 // A Dialogue-Antheme and The Water-course as the printing sets them: the
-// speakers in the margin; Christian's first word's capital set
-// without its drop (a departure); the braced words, each on its line.
+// speakers in the margin, Christian's "worst." turned up; its first
+// word's capital set without its drop (a departure); the braced words,
+// each on its line.
 [margin-top=5.73pt]
 === ¶ A Dialogue-Antheme.
 
@@ -9079,14 +8951,8 @@ __Christian.__{nbsp}{nbsp}{nbsp}{nbsp} __Death.__
 [.i215]##{nbsp}##Thy curse being laid on him, makes thee accurst.
 
 [.v,margin-top=4.23pt]
-ifdef::backend-pdf[]
-[.i215]##Dea.##__Let losers talk: yet thou shalt die;__ [.turn]#(__worst.__#
-[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy
-endif::[]
-ifndef::backend-pdf[]
 [.i215]##Dea.##__Let losers talk: yet thou shalt die;__
-[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy worst.
-endif::[]
+[.i215]##{nbsp}##__These arms shall crush thee.__ [.spk]#Chr.# Spare not, do thy [.turn-up]##__worst.__##
 [.i215]##{nbsp}##I shall be one day better then before:
 [.i215]##{nbsp}##Thou so much worse, that thou shalt be no more.
 
@@ -9170,10 +9036,10 @@ And judge our selves. That light, which sin & passion
 Shines bright and cleare, ev'n unto condemnation,
 [.i400]##{nbsp}##Without excuse or cloke.
 
-[.poem-rule,margin-top=10.97pt]
+[.poem-rule,margin-top=10.83pt]
 '''
 
-[margin-top=3.93pt]
+[margin-top=4.07pt]
 === ¶ Bitter-sweet.
 
 [.v.dropcap,margin-top=2.85pt]
@@ -9197,10 +9063,10 @@ I will bewail, approve:
 And all my sowre-sweet dayes
 I will lament, and love.
 
-[.poem-rule,margin-top=12.24pt]
+[.poem-rule,margin-top=12.22pt]
 '''
 
-[margin-top=1.93pt]
+[margin-top=1.95pt]
 === § The Glance.
 
 [.v.dropcap,margin-top=6.61pt]
@@ -9317,25 +9183,25 @@ Ev'n God himself: wherefore she was not loth,
 [.i160]##{nbsp}##So to bring in wherewith to wash:
 And yet in washing one, she washed both.
 
-[.poem-rule,margin-top=8.57pt]
+[.poem-rule,margin-top=8.49pt]
 '''
 
-[margin-top=0.36pt]
+[margin-top=0.44pt]
 === ¶ Aaron.
 
 [.v.dropcap,margin-top=1.86pt]
-H[.i170]##{nbsp}##Olinesse on the head,
-Light and perfections on the breast,
+H[.i370]##{nbsp}##Olinesse on the head,
+[.i155]##{nbsp}##Light and perfections on the breast,
 Harmonious bells below, raising the dead
-[.i165]##{nbsp}##To leade them unto life and rest.
-[.i360]##{nbsp}##Thus are true Aarons drest.
+[.i345]##{nbsp}##To leade them unto life and rest.
+[.i560]##{nbsp}##Thus are true Aarons drest.
 
 [.v,margin-top=8.35pt]
-[.i360]##{nbsp}##Profanenesse in my head,
-[.i165]##{nbsp}##Defects and darknesse in my breast,
+[.i560]##{nbsp}##Profanenesse in my head,
+[.i345]##{nbsp}##Defects and darknesse in my breast,
 A noise of passions ringing me for dead
-[.i165]##{nbsp}##Unto a place where is no rest.
-[.i360]##{nbsp}##Poore priest thus am I drest.
+[.i345]##{nbsp}##Unto a place where is no rest.
+[.i560]##{nbsp}##Poore priest thus am I drest.
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -9367,10 +9233,10 @@ My doctrine tun'd by Christ, (who is not dead,
 [.i350]##{nbsp}##But lives in me while I do rest)
 [.i565]##{nbsp}##Come people; Aaron's drest.
 
-[.poem-rule,margin-top=4.75pt]
+[.poem-rule,margin-top=4.31pt]
 '''
 
-[margin-top=1.31pt]
+[margin-top=1.75pt]
 === ¶ The Odour, 2. __Cor.__ 2.
 
 [.v.dropcap,margin-top=-0.28pt]
@@ -9427,10 +9293,10 @@ This breathing would with gains by sweetning me
 [.i320]##{nbsp}##And so this new commerce and sweet
 Should all my life employ, and busie me.
 
-[.poem-rule,margin-top=4.26pt]
+[.poem-rule,margin-top=4.50pt]
 '''
 
-[margin-top=-4.16pt]
+[margin-top=-4.40pt]
 === ¶ The Foil.
 
 [.v.dropcap,margin-top=4.98pt]
@@ -9445,10 +9311,10 @@ To set off vertues; griefs to set off sinning:
 [.i325]##{nbsp}##Yet in this wretched world we toil,
 As if grief were not foul, nor vertue winning.
 
-[.poem-rule,margin-top=1.46pt]
+[.poem-rule,margin-top=1.64pt]
 '''
 
-[margin-top=-4.57pt]
+[margin-top=-4.75pt]
 === ¶ The Forerunners.
 
 [.v.dropcap,margin-top=-0.66pt]
@@ -9580,46 +9446,46 @@ But I health, not physick choose:
 Say that fairly I refuse,
 [.i260]##{nbsp}##For my answer is a rose.
 
-[.poem-rule,margin-top=9.50pt]
+[.poem-rule,margin-top=9.70pt]
 '''
 
-[margin-top=4.60pt]
+[margin-top=4.40pt]
 === ¶ Discipline.
 
 [.v.dropcap,margin-top=4.91pt]
 THrow away thy rod,
 Throw away thy wrath:
-[.i690]##{nbsp}##O my God,
+[.i685]##{nbsp}##O my God,
 Take the gentle path.
 
 [.v,margin-top=5.23pt]
 For my hearts desire
 Unto thine is bent:
-[.i690]##{nbsp}##I aspire
+[.i685]##{nbsp}##I aspire
 To a full consent.
 
 [.v,margin-top=5.30pt]
 Not a word or look
 I affect to own,
-[.i690]##{nbsp}##But by book,
+[.i685]##{nbsp}##But by book,
 And thy book alone.
 
 [.v,margin-top=5.22pt]
 Though I fail, I weep:
 Though I halt in pace,
-[.i690]##{nbsp}##Yet I creep
+[.i685]##{nbsp}##Yet I creep
 To the throne of grace.
 
 [.v,margin-top=5.89pt]
 Then let wrath remove;
 Love will do the deed:
-[.i690]##{nbsp}##For with love
+[.i685]##{nbsp}##For with love
 Stonie hearts will bleed.
 
 [.v,margin-top=5.59pt]
 Love is swift of foot;
 Love's a man of warre,
-[.i690]##{nbsp}##And can shoot;
+[.i685]##{nbsp}##And can shoot;
 And can hit from farre.
 
 ifdef::backend-pdf[]
@@ -9646,10 +9512,10 @@ endif::[]
 [.i705]##{nbsp}##Thou art God:
 [.i30]##{nbsp}##Throw away thy wrath.
 
-[.poem-rule,margin-top=5.08pt]
+[.poem-rule,margin-top=4.72pt]
 '''
 
-[margin-top=-0.65pt]
+[margin-top=-0.29pt]
 === ¶ The Invitation.
 
 [.v.dropcap,margin-top=1.08pt]
@@ -9695,7 +9561,7 @@ endif::[]
 // page 183 (leaf 182)
 [.v,margin-top=0.41pt]
 Come ye hither all, whose love
-[.i550]##{nbsp}##Is your dove,
+[.i795]##{nbsp}##Is your dove,
 And exalts you to the skie:
 Here is love, which having breath
 [.i550]##{nbsp}##Ev'n in death,
@@ -9703,16 +9569,16 @@ After death can never die.
 
 [.v,margin-top=6.99pt]
 Lord I have invited all,
-[.i550]##{nbsp}##And I shall
+[.i795]##{nbsp}##And I shall
 Still invite, still call to thee:
 For it seems but just and right
 [.i550]##{nbsp}##In my sight,
 Where is all, there all should be.
 
-[.poem-rule,margin-top=5.80pt]
+[.poem-rule,margin-top=6.02pt]
 '''
 
-[margin-top=1.43pt]
+[margin-top=1.21pt]
 === ¶ The Banquet.
 
 [.v.dropcap,margin-top=-0.91pt]
@@ -9808,10 +9674,10 @@ Hearken under pain of death,
 [.i670]##{nbsp}##Hands and breath;
 Strive in this, and love the strife.
 
-[.poem-rule,margin-top=4.56pt]
+[.poem-rule,margin-top=4.60pt]
 '''
 
-[margin-top=-1.42pt]
+[margin-top=-1.46pt]
 === ¶ The Posie.
 
 [.v.dropcap,margin-top=5.09pt]
@@ -9832,25 +9698,25 @@ Comparisons go play, wit use thy will:
 [.i580]##{nbsp}##Lesse then the least
 __Of all Gods mercies,__ is my posie still.
 
-[.poem-rule,margin-top=4.01pt]
+[.poem-rule,margin-top=4.19pt]
 '''
 
-[margin-top=-2.15pt]
+[margin-top=-2.33pt]
 === ¶ A Parodie.
 
 [.v.dropcap,margin-top=-0.02pt]
 SOuls joy, when thou art gone,
-[.i445]##{nbsp}##And I alone,
-[.i630]##{nbsp}##Which cannot be,
+[.i300]##{nbsp}##And I alone,
+[.i490]##{nbsp}##Which cannot be,
 Because thou dost abide with me,
-[.i210]##{nbsp}##And I depend on thee;
+[.i200]##{nbsp}##And I depend on thee;
 
 [.v,margin-top=5.77pt]
-Yet when thou dost suppresse
-[.i630]##{nbsp}##The cheerfulnesse
-[.i630]##{nbsp}##Of thy abode,
+[.i200]##{nbsp}##Yet when thou dost suppresse
+[.i490]##{nbsp}##The cheerfulnesse
+[.i490]##{nbsp}##Of thy abode,
 And in my powers not stirre abroad,
-[.i180]##{nbsp}##But leave me to my load:
+[.i200]##{nbsp}##But leave me to my load:
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.88pt]
@@ -9892,10 +9758,10 @@ That I may seek, but thou art lost;
 That Sinne sayes true: but while I grieve,
 [.i205]##{nbsp}##Thou com'st and dost relieve.
 
-[.poem-rule,margin-top=6.77pt]
+[.poem-rule,margin-top=7.07pt]
 '''
 
-[margin-top=1.94pt]
+[margin-top=1.64pt]
 === ¶ The Elixer.
 
 [.v.dropcap,margin-top=-0.98pt]
@@ -9943,10 +9809,10 @@ Who sweeps a room, as for thy laws,
 For that which God doth touch and own
 [.i205]##{nbsp}##Cannot for lesse be told.
 
-[.poem-rule,margin-top=3.25pt]
+[.poem-rule,margin-top=3.43pt]
 '''
 
-[margin-top=-1.02pt]
+[margin-top=-1.20pt]
 === ¶ A Wreath.
 
 [.v.dropcap,margin-top=5.72pt]
@@ -9982,31 +9848,31 @@ DEath, thou wast once an uncouth hideous thing,
 Thy mouth was open, but thou couldst not sing.
 
 [.v,margin-top=11.60pt]
-For we consider'd thee as at some six
+[.i40]##{nbsp}##For we consider'd thee as at some six
 [.i955]##{nbsp}##Or ten yeares hence,
 [.i355]##{nbsp}##After the losse of life and sense,
-[.i45]##{nbsp}##Flesh being turn'd to dust, and bones to sticks.
+[.i40]##{nbsp}##Flesh being turn'd to dust, and bones to sticks.
 
 [.v,margin-top=11.60pt]
-[.i45]##{nbsp}##We lookt on this side of thee, shooting short;
+[.i40]##{nbsp}##We lookt on this side of thee, shooting short;
 [.i1015]##{nbsp}##Where we did finde
 [.i355]##{nbsp}##The shells of fledge souls left behinde,
-[.i45]##{nbsp}##Dry dust, which sheds no tears, but may extort.
+[.i40]##{nbsp}##Dry dust, which sheds no tears, but may extort.
 
 [.v,margin-top=11.64pt]
-[.i45]##{nbsp}##But since our Saviours death did put some bloud
+[.i40]##{nbsp}##But since our Saviours death did put some bloud
 [.i1015]##{nbsp}##Into thy face;
 [.i355]##{nbsp}##Thou art grown fair and full of grace,
-[.i45]##{nbsp}##Much in request, much sought for, as a good.
+[.i40]##{nbsp}##Much in request, much sought for, as a good.
 
 [.v,margin-top=11.93pt]
-[.i45]##{nbsp}##For we do now behold thee gay and glad,
+[.i40]##{nbsp}##For we do now behold thee gay and glad,
 [.i850]##{nbsp}##As at dooms-day;
 [.i355]##{nbsp}##When souls shall wear their new aray,
-[.i45]##{nbsp}##And all thy bones with beautie shall be clad.
+[.i40]##{nbsp}##And all thy bones with beautie shall be clad.
 
 [.v,margin-top=12.15pt]
-[.i45]##{nbsp}##Therefore we can go die as sleep, and trust
+[.i40]##{nbsp}##Therefore we can go die as sleep, and trust
 [.i955]##{nbsp}##Half that we have
 [.i300]##{nbsp}##Unto an honest faithfull grave;
 Making our pillows either down, or dust.
@@ -10096,10 +9962,10 @@ And thrust a Testament into thy hand:
 [.i935]##{nbsp}##Let that be scann'd.
 [.i290]##{nbsp}##There thou shalt finde my faults are thine.
 
-[.poem-rule,margin-top=6.55pt]
+[.poem-rule,margin-top=6.53pt]
 '''
 
-[margin-top=3.31pt]
+[margin-top=3.33pt]
 === ¶ Heaven.
 
 [.v.dropcap.p964,margin-top=-1.07pt]
@@ -10135,10 +10001,10 @@ But are there eares and businesse with the pleasure?
 Light, joy, and leisure; but shall they persever?
 [.i875]##{nbsp}##__Echo. Ever.__
 
-[.poem-rule,margin-top=6.11pt]
+[.poem-rule,margin-top=6.13pt]
 '''
 
-[margin-top=1.04pt]
+[margin-top=1.02pt]
 === ¶ Love.
 
 [.v.dropcap,margin-top=5.76pt]
@@ -10186,18 +10052,18 @@ endif::[]
 // six lines high, the lines beside it set in past it and broken where the
 // printing breaks them, their ends set in under them.
 ifdef::backend-pdf[]
-[.band,margin-top=2.76pt]
+[.band,margin-top=2.91pt]
 image::temple-band-militant.png[pdfwidth=182.9pt]
 endif::[]
 
-[#church-militant,running-title="The Church Militant.",margin-top=8.61pt]
+[#church-militant,running-title="The Church Militant.",margin-top=8.46pt]
 == The Church Militant.
 
 ifdef::backend-pdf[]
-[.factotum,margin-top=8.30pt]
+[.factotum,margin-top=8.20pt]
 image::temple-factotum-a.png[A,pdfwidth=53.29pt,align=left]
 
-[.v.p966,margin-top=-51.76pt]
+[.v.p966,margin-top=-51.66pt]
 [.i545]##{nbsp}##Lmightie Lord, who from thy glorious
 [.i735]##{nbsp}##throne
 [.i545]##{nbsp}##Seest and rulest all things ev'n as one:
@@ -10323,7 +10189,7 @@ endif::[]
 [.v.p953,margin-top=-0.88pt]
 The great heart stoops, and taketh from the dust
 A sad repentance, not the spoils of lust:
-[.i115]##{nbsp}##Quitting his spear, lest it should pierce again
+Quitting his spear, lest it should pierce again
 Him in his members, who for him was slain.
 The Shepherds hook grew to a scepter here,
 Giving new names and numbers to the yeare.
@@ -10342,9 +10208,9 @@ That as before Empire and Arts made way,
 So they might still, and point us out the place
 Where first the Church should raise her down-cast face,
 Strength levels grounds, Arts makes a garden there;
-[.i80]##{nbsp}##Then showres Religion, and makes all to bear.
+Then showres Religion, and makes all to bear.
 __Spain__ in the Empire shar'd with __Germanie,__
-[.i80]##{nbsp}##But __England__ in the higher victorie:
+But __England__ in the higher victorie:
 Giving the Church a crown to keep her state,
 And not go lesse then she had done of late.
 __Constantines__ British line meant this of old,
@@ -10354,7 +10220,7 @@ From times great Chronicle, and hither sent.
 Thus both the Church and Sunne together ran
 Unto the farthest old meridian.
 __How deare to me, O God, thy counsels are!__
-[.i850]##{nbsp}##__Who may with thee compare?__
+__Who may with thee compare?__
 Much about one and the same time and place,
 Both where and when the Church began her race,
 
@@ -10432,7 +10298,7 @@ Are given over, for their curious arts,
 To such Mahometan stupidities,
 As the old heathen would deem prodigies.
 __How deare to me, O God, thy counsels are!__
-[.i485]##{nbsp}##__Who may with thee compare?__
+__Who may with thee compare?__
 Onely the West and __Rome__ do keep them free
 From this contagious infidelitie.
 And this is all the Rock, whereof they boast,
@@ -10497,7 +10363,7 @@ So both together are one Antichrist,
 Yet with two faces, as their __Ianus__ was;
 Being in this their old crackt looking-grasse.
 __How deare to me, O God, thy counsels are!__
-[.i680]##{nbsp}##__Who may with thee compare?__
+__Who may with thee compare?__
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.69pt]
@@ -10509,42 +10375,42 @@ endif::[]
 
 // page 198 (leaf 197)
 [.v.p957,margin-top=-0.86pt]
-[.i40]##{nbsp}##Thus Sinne triumphs in Western __Babylon__;
-[.i40]##{nbsp}##Yet not as Sinne, but as Religion.
-[.i40]##{nbsp}##Of his two thrones he made the latter best,
-[.i40]##{nbsp}##And to defray his journey from the east.
-[.i40]##{nbsp}##Old and new __Babylon__ are to hell and night,
-[.i40]##{nbsp}##As is the moon and sunne to heav'n and light.
-[.i40]##{nbsp}##When th' one did set, the other did take place,
-[.i40]##{nbsp}##Confronting equally the law and grace.
-[.i40]##{nbsp}##They are hells land-marks, Satans double crest:
-[.i40]##{nbsp}##They are Sinnes nipples, feeding th' east and west.
-[.i40]##{nbsp}##But as in vice the copie still exceeds
-[.i40]##{nbsp}##The pattern, but not so in vertuous deeds;
-[.i40]##{nbsp}##So though Sinne made his latter seat the better,
-[.i40]##{nbsp}##The latter Church is to the first a debter.
-[.i40]##{nbsp}##The second Temple could not reach the first:
-[.i40]##{nbsp}##And the late reformation never durst
-[.i40]##{nbsp}##Compare with ancient times and purer yeares;
-[.i40]##{nbsp}##But in the Jews and us deserveth tears.
-[.i40]##{nbsp}##Nay, it shall ev'ry yeare decrease and fade;
-[.i40]##{nbsp}##Till such a darknesse do the world invade
-[.i40]##{nbsp}##At Christs last coming, as his first did finde:
-[.i40]##{nbsp}##Yet must there such proportions be assign'd
-[.i40]##{nbsp}##To these diminishings, as is between
-[.i40]##{nbsp}##The spacious world and __Jurie__ to be seen.
-[.i40]##{nbsp}##Religion stands on tip-toe in our land,
-[.i40]##{nbsp}##Readie to passe to the __American__ strand.
-[.i40]##{nbsp}##When height of malice, and prodigious lusts,
-[.i40]##{nbsp}##Impudent sinning, witchcrafts, and distrusts
-[.i40]##{nbsp}##(The marks of future bane) shall fill our cup
-[.i40]##{nbsp}##Unto the brimme, and make our measure up:
-[.i40]##{nbsp}##When __Sein__ shall swallow __Tiber,__ and the __Thames__
-[.i40]##{nbsp}##By letting in them both, pollutes her streams:
-[.i40]##{nbsp}##When __Italie__ of us shall have her will,
-[.i40]##{nbsp}##And all her calender of sinnes fulfill;
-[.i40]##{nbsp}##Whereby one may foretell, what sinnes next yeare
-[.i40]##{nbsp}##Shall both in __France__ and __England__ domineer:
+[.i35]##{nbsp}##Thus Sinne triumphs in Western __Babylon__;
+[.i35]##{nbsp}##Yet not as Sinne, but as Religion.
+[.i35]##{nbsp}##Of his two thrones he made the latter best,
+[.i35]##{nbsp}##And to defray his journey from the east.
+[.i35]##{nbsp}##Old and new __Babylon__ are to hell and night,
+[.i35]##{nbsp}##As is the moon and sunne to heav'n and light.
+[.i35]##{nbsp}##When th' one did set, the other did take place,
+[.i35]##{nbsp}##Confronting equally the law and grace.
+[.i35]##{nbsp}##They are hells land-marks, Satans double crest:
+[.i35]##{nbsp}##They are Sinnes nipples, feeding th' east and west.
+[.i35]##{nbsp}##But as in vice the copie still exceeds
+[.i35]##{nbsp}##The pattern, but not so in vertuous deeds;
+[.i35]##{nbsp}##So though Sinne made his latter seat the better,
+[.i35]##{nbsp}##The latter Church is to the first a debter.
+[.i35]##{nbsp}##The second Temple could not reach the first:
+[.i35]##{nbsp}##And the late reformation never durst
+[.i35]##{nbsp}##Compare with ancient times and purer yeares;
+[.i35]##{nbsp}##But in the Jews and us deserveth tears.
+[.i35]##{nbsp}##Nay, it shall ev'ry yeare decrease and fade;
+[.i35]##{nbsp}##Till such a darknesse do the world invade
+[.i35]##{nbsp}##At Christs last coming, as his first did finde:
+[.i35]##{nbsp}##Yet must there such proportions be assign'd
+[.i35]##{nbsp}##To these diminishings, as is between
+[.i35]##{nbsp}##The spacious world and __Jurie__ to be seen.
+[.i35]##{nbsp}##Religion stands on tip-toe in our land,
+[.i35]##{nbsp}##Readie to passe to the __American__ strand.
+[.i35]##{nbsp}##When height of malice, and prodigious lusts,
+[.i35]##{nbsp}##Impudent sinning, witchcrafts, and distrusts
+[.i35]##{nbsp}##(The marks of future bane) shall fill our cup
+[.i35]##{nbsp}##Unto the brimme, and make our measure up:
+[.i35]##{nbsp}##When __Sein__ shall swallow __Tiber,__ and the __Thames__
+[.i35]##{nbsp}##By letting in them both, pollutes her streams:
+[.i35]##{nbsp}##When __Italie__ of us shall have her will,
+[.i35]##{nbsp}##And all her calender of sinnes fulfill;
+[.i35]##{nbsp}##Whereby one may foretell, what sinnes next yeare
+[.i35]##{nbsp}##Shall both in __France__ and __England__ domineer:
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.15pt]
@@ -10556,7 +10422,6 @@ endif::[]
 
 // page 199 (leaf 198)
 [.v.p957,margin-top=0.10pt]
-ifdef::backend-pdf[]
 Then shall Religion to __America__ flee:
 They have their times of Gospel, ev'n as we.
 My God, thou dost prepare for them a way
@@ -10576,42 +10441,7 @@ Both for their vertuous actions and their crimes.
 And where of old the Empire and the Arts
 Usher'd the Gospel ever in mens hearts,
 __Spain__ hath done one; when Arts perform the other,
-The Church shall come, & Sinne the Church shall smo-
-[.i75]##{nbsp}##That when they haue accomplished the round, [.turn]#(ther:#
-And met in th' east their first and ancient sound,
-Judgement may meet them both & search them round
-Thus do both lights, as well in Church as Sunne,
-Light one another, and together runne.
-Thus also Sinne and Darknesse follow still
-The Church and Sunne with all their power and skill.
-But as the Sunne still goes both west and east;
-So also did the Church by going west
-Still eastward go; because it drew more neare
-To time and place, where judgement shall appeare.
-__How deare to me, O God, thy counsels are!__
-[.i830]##{nbsp}##__Who may with thee compare?__
-endif::[]
-ifndef::backend-pdf[]
-Then shall Religion to __America__ flee:
-They have their times of Gospel, ev'n as we.
-My God, thou dost prepare for them a way
-By carrying first their gold from them away:
-For gold and grace did never yet agree:
-Religion alwaies sides with povertie.
-We think we rob them, but we think amisse:
-We are more poore, and they more rich by this.
-Thou wilt revenge their quarrell, making grace
-To pay our debts, and leave our ancient place
-To go to them, while that which now their nation
-But lends to us, shall be our desolation.
-Yet as the Church shall thither westward flie,
-So Sinne shall trace and dog her instantly:
-They have their period also and set times
-Both for their vertuous actions and their crimes.
-And where of old the Empire and the Arts
-Usher'd the Gospel ever in mens hearts,
-__Spain__ hath done one; when Arts perform the other,
-The Church shall come, & Sinne the Church shall smother:
+[.i75]##{nbsp}##The Church shall come, & Sinne the Church shall smo[.turn-down]##ther:##
 [.i75]##{nbsp}##That when they haue accomplished the round,
 And met in th' east their first and ancient sound,
 Judgement may meet them both & search them round
@@ -10625,7 +10455,6 @@ Still eastward go; because it drew more neare
 To time and place, where judgement shall appeare.
 __How deare to me, O God, thy counsels are!__
 [.i830]##{nbsp}##__Who may with thee compare?__
-endif::[]
 
 ifdef::backend-pdf[]
 [.foot-cw,margin-top=0.90pt]
@@ -10637,11 +10466,11 @@ endif::[]
 
 // page 200 (leaf 199)
 ifdef::backend-pdf[]
-[.band,margin-top=0.42pt]
+[.band,margin-top=0.18pt]
 image::temple-band-envoy.png[pdfwidth=188.7pt]
 endif::[]
 
-[margin-top=12.13pt]
+[margin-top=12.37pt]
 === ¶ L'Envoy.
 
 [.v.dropcap.p956,margin-top=11.28pt]
@@ -10699,10 +10528,10 @@ RALL POEMS CONTAIN-
 [.ix-title,margin-top=-3.12pt]
 ED IN THIS BOOK.
 
-[.rule-v,margin-top=6.00pt]
+[.rule-v,margin-top=6.09pt]
 image::temple-index-rule-200-1.png[pdfheight=240.27pt]
 
-[.ix.ix-r.ix-letter,margin-top=-242.10pt]
+[.ix.ix-r.ix-letter,margin-top=-242.19pt]
 C
 
 [.ix.ix-l.ix-letter,margin-top=-7.78pt]
@@ -10785,10 +10614,10 @@ endif::[]
 // page 202 (leaf 201)
 // The titles of the poems, their second page.
 ifdef::backend-pdf[]
-[.rule-v,margin-top=-9.26pt]
+[.rule-v,margin-top=-9.35pt]
 image::temple-index-rule-201-1.png[pdfheight=71.34pt]
 
-[.ix.ix-l.ix-letter,margin-top=-71.81pt]
+[.ix.ix-l.ix-letter,margin-top=-71.72pt]
 D
 
 [.ix.ix-r.ix-letter,margin-top=-8.66pt]
@@ -10819,10 +10648,10 @@ Hope [.ixn]#114#
 Humilitie [.ixn]#61#
 A true Hymne [.ixn]#162#
 
-[.rule-v,margin-top=3.04pt]
+[.rule-v,margin-top=3.18pt]
 image::temple-index-rule-201-2.png[pdfheight=71.34pt]
 
-[.ix.ix-r.ix-letter,margin-top=-73.88pt]
+[.ix.ix-r.ix-letter,margin-top=-74.01pt]
 I
 
 [.ix.ix-r.ix-drop,margin-top=0.99pt]
@@ -10843,10 +10672,10 @@ E
 EAster [.ixn]#33#
 Easter-wings [.ixn]#34, 35#
 
-[.rule-v,margin-top=-7.85pt]
+[.rule-v,margin-top=-7.62pt]
 image::temple-index-rule-201-3.png[pdfheight=71.34pt]
 
-[.ix.ix-l,margin-top=-68.13pt]
+[.ix.ix-l,margin-top=-68.35pt]
 The Elixer [.ixn]#178#
 Employment [.ixn]#49. 70#
 L'Envoy [.ixn]#192#
@@ -10870,10 +10699,10 @@ Love unknown [.ixn]#121#
 [.ix.ix-l.ix-letter,margin-top=-12.09pt]
 F
 
-[.rule-v,margin-top=-0.79pt]
+[.rule-v,margin-top=-0.78pt]
 image::temple-index-rule-201-4.png[pdfheight=71.34pt]
 
-[.ix.ix-l.ix-drop,margin-top=-71.62pt]
+[.ix.ix-l.ix-drop,margin-top=-71.63pt]
 FAith [.ixn]#41#
 The Familie [.ixn]#130#
 
@@ -10900,10 +10729,10 @@ Mortification [.ixn]#90#
 [.ix.ix-l.ix-letter,margin-top=-27.54pt]
 G
 
-[.rule-v,margin-top=5.12pt]
+[.rule-v,margin-top=5.13pt]
 image::temple-index-rule-201-5.png[pdfheight=71.34pt]
 
-[.ix.ix-l.ix-drop,margin-top=-75.17pt]
+[.ix.ix-l.ix-drop,margin-top=-75.18pt]
 GIddinesse [.ixn]#119#
 The Glance [.ixn]#166#
 
@@ -10939,10 +10768,10 @@ endif::[]
 // page 203 (leaf 202)
 // The titles of the poems, their last page; FINIS.
 ifdef::backend-pdf[]
-[.rule-v,margin-top=-13.35pt]
+[.rule-v,margin-top=-13.39pt]
 image::temple-index-rule-202-1.png[pdfheight=294.07pt]
 
-[.ix.ix-r,margin-top=-292.51pt]
+[.ix.ix-r,margin-top=-292.47pt]
 Sepulchre [.ixn]#32#
 Sighs and grones [.ixn]#75#
 Sinne [.ixn]#37. 55#
@@ -10957,10 +10786,10 @@ Submission [.ixn]#87#
 Sunday [.ixn]#66#
 [.rm]#Superliminare# [.ixn]#17#
 
-[.ix.ix-l.ix-letter,margin-top=-124.09pt]
+[.ix.ix-l.ix-letter,margin-top=-124.93pt]
 P
 
-[.ix.ix-l.ix-drop,margin-top=-0.28pt]
+[.ix.ix-l.ix-drop,margin-top=0.56pt]
 PAradise [.ixn]#125#
 A Parodie [.ixn]#177#
 
@@ -11014,10 +10843,10 @@ The Rose [.ixn]#172#
 VAnitie [.ixn]#77. 104#
 Vertue [.ixn]#18#
 
-[.ix.ix-l.ix-letter,margin-top=-6.47pt]
+[.ix.ix-l.ix-letter,margin-top=-6.03pt]
 S
 
-[.ix.ix-r,margin-top=-8.96pt]
+[.ix.ix-r,margin-top=-9.40pt]
 Ungratefulnesse [.ixn]#74#
 Unkindnesse [.ixn]#86#
 

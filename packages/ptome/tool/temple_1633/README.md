@@ -53,7 +53,9 @@ copy of this folder in the work folder.
    ink, its running head and foot; `ornaments.py`, `rules.py`
    (`rules.json`): the bands of ornament and the rules over the poems.
 3. `turns.py` (`turns.json`): the lines the printing turns up or down
-   after a bracket; `catchwords.json`: the catchwords it sets otherwise
+   after a bracket, their turned words written `[.turn-up]##…##` or
+   `[.turn-down]##…##` at the end of their own line (the look's roles,
+   `turnover: up` or `down`); `catchwords.json`: the catchwords it sets otherwise
    than the next page's first word (`¶ Un-`, `§ The`).
 4. `gen.py OUT margins.json`: the text, `test/showcase/herbert/text/
    temple.adoc`, and `fit.json`, each block's place on the scan; the

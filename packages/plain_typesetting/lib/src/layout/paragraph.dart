@@ -307,7 +307,18 @@ final class Paragraph {
     this.tshegPadding = false,
     this.justificationAlternates = true,
     this.lineBreak = LineBreakStrictness.strict,
+    this.turnovers,
   });
+
+  /// Where given, in a paragraph broken at its own lines
+  /// ([BreakOpportunities.lines]: verse, a transcription), a line wider
+  /// than its room has its last words turned: set flush right on the line
+  /// above (a turn-up) or below (a turn-down), after an opening bracket,
+  /// where that line leaves room for them, as early printed verse turns a
+  /// line too long for its narrow page. A line no line beside can take is
+  /// left as it is. Runs with their own [TextRun.turn] are turned whatever
+  /// their line's width.
+  final Turnovers? turnovers;
 
   /// This paragraph with [content], [align], [firstLineIndent],
   /// [justifyToWidest], [hangLines], [breakOpportunities] or [lineHeight]
@@ -346,6 +357,7 @@ final class Paragraph {
     tshegPadding: tshegPadding,
     justificationAlternates: justificationAlternates,
     lineBreak: lineBreak,
+    turnovers: turnovers,
   );
 
   /// How strictly the lines break around East Asian punctuation and small
@@ -466,6 +478,39 @@ final class Paragraph {
   /// Whether a line broken after a word's own hyphen (a compound's) starts
   /// with the hyphen again.
   final HyphenRepetition hyphenRepetition;
+}
+
+/// Where a turned line's last words go ([Paragraph.turnovers],
+/// [TextRun.turn]).
+enum Turnover {
+  /// On the line above, a turn-up.
+  up,
+
+  /// On the line below, a turn-down.
+  down,
+
+  /// On the line above where it has room, else on the line below.
+  auto,
+}
+
+/// How a paragraph broken at its own lines turns those too wide for their
+/// room ([Paragraph.turnovers]).
+@immutable
+final class Turnovers {
+  /// Turnovers [direction], after [mark], at least [gap] (by default an
+  /// em of the turned text) from the text they share their line with.
+  const new({this.direction = Turnover.auto, this.mark = '(', this.gap});
+
+  /// Where a line's turned words go.
+  final Turnover direction;
+
+  /// What stands before the turned words: an opening bracket, as the
+  /// printers of the sixteenth and seventeenth centuries set one.
+  final String mark;
+
+  /// The least space between the line's own text and the turned words
+  /// (their mark), or null for an em of the turned text.
+  final double? gap;
 }
 
 /// When a compound's hyphen is repeated at the start of the next line, as
@@ -683,12 +728,17 @@ abstract base class ItemLineBreaker implements LineBreaker {
       hangingPunctuation: paragraph.hangingPunctuation,
       lineStartBrackets: paragraph.lineStartBrackets,
       lineBreak: paragraph.lineBreak,
+      turnovers: paragraph.turnovers,
     );
     final firstItems = paragraphItems(
       styled,
       maxWidth: paragraph.breakLongWords ? firstWidth : null,
     );
-    final (:lines, :breaks) = breakItemLines(styled, firstItems, widths);
+    final (:lines, :breaks, items: _) = breakItemLines(
+      styled,
+      firstItems,
+      widths,
+    );
     if (lines.length < 2) return lines;
     // (How much of the text the first line takes, and where that ends in
     // the paragraph's own items.)
@@ -726,18 +776,23 @@ abstract base class ItemLineBreaker implements LineBreaker {
   }
 
   /// The lines of [paragraph] made of [items] (its [paragraphItems], or
-  /// those after one of its lines, to be broken again) in [widths], and
-  /// the item each line breaks at.
+  /// those after one of its lines, to be broken again) in [widths], the
+  /// item each line breaks at, and the items those index: [items], or,
+  /// with turnovers ([Paragraph.turnovers]), [items] with their turned
+  /// words moved (what follows a line, to be broken again, is that list's
+  /// rest).
   ///
   /// Each line is set [offsets] in from the start, where given (a line
   /// beside an outline, in the room it leaves).
-  ({List<Line> lines, List<int> breaks}) breakItemLines(
+  ({List<Line> lines, List<int> breaks, List<LineItem> items}) breakItemLines(
     Paragraph paragraph,
     List<LineItem> items,
     LineWidths widths, {
     LineWidths? offsets,
   }) {
-    if (items.isEmpty) return (lines: const [], breaks: const []);
+    if (items.isEmpty) {
+      return (lines: const [], breaks: const [], items: items);
+    }
     final indent = paragraph.firstLineIndent;
     double indented(int line) =>
         widths(line) -
@@ -762,14 +817,19 @@ abstract base class ItemLineBreaker implements LineBreaker {
       };
     }
 
+    // (The text's own lines, those too wide turned over onto the lines
+    // beside them.)
+    final turnedItems = paragraph.breakOpportunities == BreakOpportunities.lines
+        ? _turnedOver(paragraph, items, indented)
+        : items;
     // (The text's own lines: its forced breaks, and no others.)
     final breaks = paragraph.breakOpportunities == BreakOpportunities.lines
         ? [
-            for (final (i, item) in items.indexed)
+            for (final (i, item) in turnedItems.indexed)
               if (item case PenaltyItem(isForced: true)) i,
           ]
         : breakItems(
-            items,
+            turnedItems,
             indented,
             protrudeLeft: protrude(right: false),
             protrudeRight: protrude(right: true),
@@ -777,15 +837,197 @@ abstract base class ItemLineBreaker implements LineBreaker {
     return (
       lines: buildLines(
         paragraph,
-        items,
+        turnedItems,
         breaks,
         widths,
         expansion: expansion,
         offsets: offsets,
       ),
       breaks: breaks,
+      items: turnedItems,
     );
   }
+}
+
+/// The marks [_turnedOver] sets before turned words: a line with one
+/// has taken its turnover already (its items broken again, the rest of a
+/// paragraph on the next page), and takes or turns no more.
+final Expando<bool> _turnoverMarks = Expando('turnover mark');
+
+/// [items], a paragraph's broken at its own lines, with its turnovers
+/// ([Paragraph.turnovers], [TextRun.turn]): each line to be turned its
+/// last words taken off (from a run that turns, else as few words as
+/// leave the line within its [widths]) and set at the end of the line
+/// above or below, after a fill and the mark, where that line has the
+/// room (a line that turns its own words, or takes another's, takes no
+/// more); a run that turns goes whether there is room or not.
+List<LineItem> _turnedOver(
+  Paragraph paragraph,
+  List<LineItem> items,
+  LineWidths widths,
+) {
+  final setting = paragraph.turnovers;
+  Turnover? turnOf(LineItem item) => switch (item) {
+    BoxItem(:final TextRun content) => content.turn,
+    _ => null,
+  };
+  if (setting == null && !items.any((item) => turnOf(item) != null)) {
+    return items;
+  }
+  // (Each line: its items from its start to its forced break.)
+  final lines = <(int, int)>[];
+  var start = 0;
+  for (final (i, item) in items.indexed) {
+    if (item is PenaltyItem && item.isForced) {
+      lines.add((start, i));
+      start = i + 1;
+    }
+  }
+  double widthOf(int from, int to) {
+    var sum = 0.0;
+    for (var i = from; i < to; i++) {
+      switch (items[i]) {
+        case BoxItem(:final width) || GlueItem(:final width):
+          sum += width;
+        case PenaltyItem():
+          break;
+      }
+    }
+    return sum;
+  }
+
+  // (A line's text, the space and fill after it aside.)
+  int textEnd(int from, int to) {
+    var end = to;
+    while (end > from && items[end - 1] is! BoxItem) {
+      end--;
+    }
+    return end;
+  }
+
+  final turned = <int, ({int head, int from, int to, int target})>{};
+  final taking = <int, int>{};
+  // (Lines that have taken a turnover already.)
+  for (final (k, (a, b)) in lines.indexed) {
+    for (var i = a; i < b; i++) {
+      if (items[i] case BoxItem(:final TextRun content)
+          when _turnoverMarks[content] ?? false) {
+        taking[k] = -1;
+      }
+    }
+  }
+  for (final (k, (a, b)) in lines.indexed) {
+    if (taking.containsKey(k)) continue;
+    final end = textEnd(a, b);
+    var from = -1;
+    Turnover? direction;
+    var forced = false;
+    for (var i = a; i < end; i++) {
+      if (turnOf(items[i]) case final turn?) {
+        from = i;
+        direction = turn;
+        forced = true;
+        break;
+      }
+    }
+    if (from < 0 && setting != null && widthOf(a, end) > widths(k) + 1e-6) {
+      // (As few words as leave the line within its room: from the last
+      // space before which it fits.)
+      for (var i = end - 1; i > a; i--) {
+        if (items[i] case GlueItem(:final stretch)
+            when stretch.isFinite && widthOf(a, i) <= widths(k) + 1e-6) {
+          from = i + 1;
+          while (from < end && items[from] is! BoxItem) {
+            from++;
+          }
+          break;
+        }
+      }
+      direction = setting.direction;
+    }
+    if (from <= a || from >= end || direction == null) continue;
+    var head = from;
+    while (head > a && items[head - 1] is! BoxItem) {
+      head--;
+    }
+    final run = switch (items[from]) {
+      BoxItem(:final TextRun content) => content,
+      _ => null,
+    };
+    if (run == null) continue;
+    final mark = setting?.mark ?? '(';
+    final need =
+        (setting?.gap ?? run.style.size) +
+        run.style.measure(mark) +
+        widthOf(from, end);
+    bool room(int j) {
+      if (j < 0 || j >= lines.length) return false;
+      if (turned.containsKey(j) || taking.containsKey(j)) return false;
+      final (c, d) = lines[j];
+      return widthOf(c, textEnd(c, d)) + need <= widths(j) + 1e-6;
+    }
+
+    final order = switch (direction) {
+      Turnover.up => [k - 1],
+      Turnover.down => [k + 1],
+      Turnover.auto => [k - 1, k + 1],
+    };
+    var target = order.where(room).firstOrNull;
+    // (A run that turns goes where it says, room or not.)
+    if (target == null && forced) {
+      target = order
+          .where(
+            (j) =>
+                j >= 0 &&
+                j < lines.length &&
+                !turned.containsKey(j) &&
+                !taking.containsKey(j),
+          )
+          .firstOrNull;
+    }
+    if (target == null) continue;
+    turned[k] = (head: head, from: from, to: end, target: target);
+    taking[target] = k;
+  }
+  if (turned.isEmpty) return items;
+  final out = <LineItem>[];
+  for (final (k, (a, b)) in lines.indexed) {
+    final own = turned[k];
+    final end = own?.head ?? textEnd(a, b);
+    out.addAll(items.sublist(a, end));
+    // (A word divided where its turned part starts, no space between
+    // them: its first part's hyphen at the line's end, as printed.)
+    if (own != null && own.head == own.from) {
+      if (items[own.head - 1] case BoxItem(:final TextRun content, :final text)
+          when !text.endsWith('-')) {
+        out.add(BoxItem(content, '-', content.style.measure('-')));
+      }
+    }
+    if (taking[k] case final other?) {
+      final words = turned[other]!;
+      final run = (items[words.from] as BoxItem).content as TextRun;
+      final mark = setting?.mark ?? '(';
+      final markRun = TextRun(
+        mark,
+        run.style,
+        color: run.color,
+        flushRight: true,
+      );
+      _turnoverMarks[markRun] = true;
+      out
+        ..add(GlueItem(null, '', setting?.gap ?? run.style.size, 0, 0))
+        ..add(const GlueItem.fill())
+        // (The mark set flush right: it and the words after it against
+        // the line's end.)
+        ..add(BoxItem(markRun, mark, run.style.measure(mark)))
+        ..addAll(items.sublist(words.from, words.to));
+    } else {
+      out.addAll(items.sublist(own == null ? end : own.to, b));
+    }
+    out.add(items[b]);
+  }
+  out.addAll(items.sublist(lines.isEmpty ? 0 : lines.last.$2 + 1));
+  return out;
 }
 
 /// How far [text]'s last ([right]) or first character hangs into the

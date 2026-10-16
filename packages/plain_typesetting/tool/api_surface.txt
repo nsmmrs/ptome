@@ -5,7 +5,7 @@ List<Line> buildLines(Paragraph paragraph, List<LineItem> items, List<int> break
 List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth})
 String get plainTypesettingVersion
 abstract base class ItemLineBreaker implements LineBreaker
-  ({List<int> breaks, List<Line> lines}) breakItemLines(Paragraph paragraph, List<LineItem> items, double Function(int) widths, {double Function(int)? offsets})
+  ({List<int> breaks, List<LineItem> items, List<Line> lines}) breakItemLines(Paragraph paragraph, List<LineItem> items, double Function(int) widths, {double Function(int)? offsets})
   ItemLineBreaker()
   List<Line> breakLines(Paragraph paragraph, double Function(int) widths)
   List<int> breakItems(List<LineItem> items, double Function(int) widths, {double Function(int)? protrudeLeft, double Function(int)? protrudeRight})
@@ -238,6 +238,11 @@ enum TextRenderMode
   static TextRenderMode invisible
   static TextRenderMode stroke
   static TextRenderMode strokeClip
+enum Turnover
+  static List<Turnover> values
+  static Turnover auto
+  static Turnover down
+  static Turnover up
 enum VerticalAlign
   static List<VerticalAlign> values
   static VerticalAlign bottom
@@ -621,10 +626,11 @@ final class Paragraph
   List<InlineContent> content
   List<InlineContent>? firstLineContent
   Paragraph copyWith({List<InlineContent>? content, TextAlign? align, LineHeight? lineHeight, double? firstLineIndent, bool? justifyToWidest, int? hangLines, BreakOpportunities? breakOpportunities})
-  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid, bool tshegPadding = false, bool justificationAlternates = true, LineBreakStrictness lineBreak = LineBreakStrictness.strict})
+  Paragraph(List<InlineContent> content, {TextAlign align = TextAlign.left, LineHeight lineHeight = const LineHeight.font(), double firstLineIndent = 0, Hyphenator? hyphenator, bool breakLongWords = true, HyphenRepetition hyphenRepetition = HyphenRepetition.none, bool riseInLineHeight = true, TextAlign alignLast = TextAlign.left, double protrusion = 0, bool justifyToWidest = false, double hangIndent = 0, int hangLines = 0, List<InlineContent>? firstLineContent, TextStyle? strut, bool rightToLeft = false, BreakOpportunities breakOpportunities = BreakOpportunities.unicode, double kashida = 0, bool eastAsian = true, WordBreak wordBreak = WordBreak.auto, bool hangingPunctuation = false, LineStartBrackets lineStartBrackets = LineStartBrackets.solid, bool tshegPadding = false, bool justificationAlternates = true, LineBreakStrictness lineBreak = LineBreakStrictness.strict, Turnovers? turnovers})
   TextAlign align
   TextAlign alignLast
   TextStyle? strut
+  Turnovers? turnovers
   WordBreak wordBreak
   bool breakLongWords
   bool eastAsian
@@ -779,8 +785,9 @@ final class TextRun extends InlineContent
   TextAlign slotAlign
   TextRun withStyle(TextStyle style)
   TextRun withText(String text)
-  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false, String? leader, Font? metricsFont})
+  TextRun(String text, TextStyle style, {Color? color, bool underline = false, bool strikethrough = false, LinkTarget? link, String? anchor, bool anchorOnBaseline = false, InlineDecoration? decoration, List<Font> fallbackFonts = const [], bool artifact = false, double? slotWidth, TextAlign slotAlign = TextAlign.left, String? emphasisMark, bool emphasisUnder = false, bool flushRight = false, String? leader, Font? metricsFont, Turnover? turn})
   TextStyle style
+  Turnover? turn
   bool anchorOnBaseline
   bool artifact
   bool emphasisUnder
@@ -815,6 +822,11 @@ final class TextStyle
   double wordSpacing
   int combineDigits
   int hashCode
+final class Turnovers
+  String mark
+  Turnover direction
+  Turnovers({Turnover direction = Turnover.auto, String mark = '(', double? gap})
+  double? gap
 final class TypesetLine
   TypesetLine(double baseline, {required double left, required double right, bool continues = false})
   bool continues

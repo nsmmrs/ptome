@@ -1,4 +1,4 @@
-= Herbert: the Altar's shape and Easter-wings sideways
+= Herbert: the Altar's shape, Easter-wings sideways, a turn-up
 :epub-strict:
 :doctype: book
 :lang: en
@@ -11,7 +11,9 @@
 // A poem's shape (doc/showcase.md): The Altar, each part of its shape a
 // paragraph as wide as the 1633 printing's, its lines justified to fill
 // it; Easter-wings' first stanza under its title, turned to the right
-// on its page, its lines set in along a curve into wings. (The long s and
+// on its page, its lines set in along a curve into wings; a stanza of the
+// Church-porch, its lines too long for the page finished on the line
+// above after a bracket, as the printing turns them. (The long s and
 // the ligatures the look asks for are in IM Fell, not in the fonts the
 // tests commit: the whole work, built in its faces, has them.)
 
@@ -63,3 +65,23 @@ Lord, who createdst man in wealth and store,
 [.i95]##{nbsp}##And sing this day thy victories:
 Then shall the fall further the flight in me.
 ____
+
+<<<
+
+=== The Church-porch.
+
+[.v]
+When thou dost tell anothers jest, therein
+Omit the oathes, which true wit cannot need:
+Pick out of tales the mirth, but not the sinne.
+He pares his apple, that will cleanly feed.
+[.i95]##{nbsp}##Play not away the vertue of that name,
+[.i95]##{nbsp}##Which is thy best stake, when griefs make thee [.turn-up]##tame.##
+
+[.v]
+Flie idlenesse, which yet thou canst not flie
+By dressing, mistressing, and complement.
+If those take up thy day, the sunne will crie
+Against thee: for his light was onely lent.
+[.i95]##{nbsp}##God gave thy soul brave wings; put not those fea[.turn-up]##thers##
+[.i95]##{nbsp}##Into a bed, to sleep out all ill weathers.

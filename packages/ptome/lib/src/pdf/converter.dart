@@ -744,6 +744,10 @@ final class PdfConverter extends BuiltInConverter
   /// The paragraph being set's role's `text_align_last`, if any.
   String? _roleAlignLast;
 
+  /// The paragraph being set's role's turnovers (`role_<role>_turnover`),
+  /// if any.
+  Turnovers? _roleTurnovers;
+
   _FloatGroup? _floatGroup;
   AbstractBlock? _floatNext;
 

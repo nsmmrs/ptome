@@ -41,7 +41,7 @@ poems' titles with their pilcrows (a section sign where the printing ran
 out of them), its rules and bands of ornament between them, its drop
 capitals and woodcut capitals, its dialogue with its speakers in the
 margin, its words turned up or down after a bracket where a line is too
-long; the long s of the Fell types, with its ligatures (ſt, ſh, ſl, ſſ),
+long (roles `turn-up`, `turn-down`: `role_<role>_turnover`, FEAT-dfwxy9); the long s of the Fell types, with its ligatures (ſt, ſh, ſl, ſſ),
 and their ct, set by the font's own rules
 (`base_font_variant_alternates: historical-forms`,
 `base_font_variant_ligatures: discretionary-ligatures`); and an index of

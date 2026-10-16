@@ -90,12 +90,8 @@ final class ParagraphContent
                 ? width - paragraph.firstLineIndent
                 : null,
           );
-      final (:lines, :breaks) = breaker.breakItemLines(
-        paragraph,
-        items,
-        (_) => width,
-      );
-      return (lines: lines, breaks: breaks, items: items);
+      final broken = breaker.breakItemLines(paragraph, items, (_) => width);
+      return (lines: broken.lines, breaks: broken.breaks, items: broken.items);
     }(),
     final breaker => (
       lines: breaker.breakLines(paragraph, (_) => width),
@@ -257,10 +253,10 @@ final class ParagraphContent
       for (var i = 0; i < count; i++)
         insets(gap + i * pitch, gap + (i + 1) * pitch),
     ];
-    final items = _at(width).items ?? paragraphItems(paragraph);
-    final (:lines, :breaks) = breaker.breakItemLines(
+    final source = _at(width).items ?? paragraphItems(paragraph);
+    final (:lines, :breaks, :items) = breaker.breakItemLines(
       paragraph,
-      items,
+      source,
       (line) => line < count ? width - bands[line].$1 - bands[line].$2 : width,
       offsets: (line) => line < count ? bands[line].$1 : 0,
     );
