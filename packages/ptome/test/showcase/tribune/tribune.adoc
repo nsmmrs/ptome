@@ -1,23 +1,12 @@
 = New-York Tribune, Tuesday, April 16, 1912
 :epub-strict:
-:doctype: article
+:doctype: book
 :lang: en
 :look: tribune
 :looksdir: {docdir}
 :imagesdir: images
 :notitle:
-:cell-references:
-:jump-template: {{#page}}Continued {{#back}}from{{/back}}{{^back}}on{{/back}} page {{page}}.{{/page}}{{^page}}Continued {{#back}}from{{/back}}{{^back}}in{{/back}} {{title}}{{/page}}
-:description: The front page of the New-York Tribune the morning after the Titanic sank, transcribed from the Library of Congress’s scan: the banner across seven columns, the stories in their columns under their headlines and decks, ruled apart, the map and the pictures, and the two stories that jump to the second page.
+:source-lines:
+:description: The first two pages of the New-York Tribune the morning after the Titanic sank, as the paper prints them, page for page and line for line: the banner across seven columns, the stories in their columns under their heads, ruled apart, the map and the pictures, the ship's section, the lists of survivors.
 
-include::text/front-page.adoc[]
-
-<<<
-
-[.second,cols="2,1",frame=none,grid=cols]
-|===
-a|
-include::text/lead-continued.adoc[]
-a|
-include::text/names-continued.adoc[]
-|===
+include::text/pages.adoc[]

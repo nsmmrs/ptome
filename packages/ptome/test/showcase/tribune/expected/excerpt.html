@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tribune: the banner, the ruled columns and a jump</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CNoto+Sans+Mono:400,700%7COld+Standard+TT:400,400italic,700%7CFira+Sans+Condensed:700%7CUnifrakturMaguntia:400">
+<title>Tribune: the lead story&#8217;s column as the paper sets it</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CNoto+Sans+Mono:400,700%7COld+Standard+TT:400,400italic,700%7CFira+Sans+Condensed:400,600%7CLeague+Gothic:400%7CLibre+Franklin:400">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment the following line when using as a custom stylesheet */
@@ -413,11 +413,11 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0}
 table.tableblock>thead>tr>th{border-bottom:var(--ptome-rule-heavy) solid var(--ptome-color-ink-strong)}
 .small-caps{font-variant:small-caps;font-feature-settings:"smcp"}
 @media print{:root{--ptome-font-code:"M+ 1mn",monospace;--ptome-rule-hairline:0.5pt;--ptome-rule-heavy:1pt}
-body{font-family:var(--ptome-font-text);font-size:6.5pt;line-height:1.06;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;adobe-hyphenate:auto;hyphens:auto;color:var(--ptome-color-ink)}
-h1{font-size:30pt}
-h2{font-size:15pt}
-h3{font-size:10pt}
-h4{font-size:8pt}
+body{font-family:var(--ptome-font-text);font-size:7pt;line-height:1.0;text-align:justify;-webkit-hyphens:manual;-epub-hyphens:manual;adobe-hyphenate:none;hyphens:manual;color:var(--ptome-color-ink)}
+h1{font-size:7pt}
+h2{font-size:7pt}
+h3{font-size:7pt}
+h4{font-size:7pt}
 h5{font-size:7pt}
 h6{font-size:7pt}
 code,kbd,pre,samp{font-family:var(--ptome-font-code)}
@@ -435,7 +435,7 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0;border-color:var
 table.stripes-all>tbody>tr,table.stripes-odd>tbody>tr:nth-of-type(odd),table.stripes-even>tbody>tr:nth-of-type(even){background-color:transparent}
 table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:700;background-color:transparent}
 }
-@page{size:17.5in 26.5in;margin:0.45in 0.4in 0.5in 0.4in}
+@page{size:1126.08pt 1713.6pt;margin:0pt 0pt 0pt 0pt}
 @page :right{margin-left:1.75in;margin-right:1.25in}
 @page :left{margin-left:1.25in;margin-right:1.75in}
 /*! ptome's device rules for HTML (ADR-0023): what the look's values don't say, after Asciidoctor's stylesheet and the look's */
@@ -456,88 +456,199 @@ table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:7
 #content .paragraph>p,#content li>p,#content dd>p,#content .quoteblock blockquote p,#content .admonitionblock td.content>.paragraph>p{-webkit-hyphens:auto;hyphens:auto;text-wrap:pretty;font-variant-numeric:oldstyle-nums proportional-nums;hanging-punctuation:first allow-end last}
 h1,h2,h3,h4,h5,h6,#toctitle,.sidebarblock>.content>.title{text-wrap:balance}
 .nohyphens #content p,.nohyphens #content li,.nohyphens #content dd{-webkit-hyphens:manual;hyphens:manual}
-.masthead{font-family:UnifrakturMaguntia,serif;font-size:300%}
-.banner p{font-family:"Fira Sans Condensed",sans-serif;font-weight:700;font-size:200%;text-align:center;line-height:1.05}
-.deck p,.crossline p,.subhead p,.crosshead p,.art-head p,.caption-head p,.caption-text p,.advt p,.jump p{text-align:center}
-.deck p,.subhead p,.crosshead p{font-weight:700}
-.crossline p{font-family:"Fira Sans Condensed",sans-serif;font-weight:700}
-.dateline{font-weight:700}
-.jump p{font-style:italic;font-size:85%}
-.advt p{font-size:85%}
-h2{text-align:center}
-table.front>tbody>tr>td{vertical-align:top}
+.s-xc p,.s-xcr p,.s-xcl p{font-family:"League Gothic",sans-serif;text-align:center}
+.s-gc p,.s-gcc p,.s-gb p,.s-sb p,.s-ad p{font-family:"Fira Sans Condensed",sans-serif;font-weight:600;text-align:center}
+.s-rb p,.s-cb p,.s-cbn p,.s-cbc p,.s-ch p,.s-chc p,.s-chs p,.s-rd p,.s-cr p,.s-cap p,.s-capi p,.s-jump p{text-align:center}
+.s-rb p,.s-cb p,.s-cbn p,.s-cbc p,.s-jump p{font-weight:700}
+.s-capi p{font-style:italic}
+table.front>tbody>tr>td,table.inside>tbody>tr>td{vertical-align:top}
 </style>
 </head>
-<body class="article">
+<body class="book">
 <div id="header">
 </div>
 <div id="content">
-<div class="paragraph banner">
-<p>1,340 PERISH AS TITANIC SINKS; ONLY 886,<br>
-MOSTLY WOMEN AND CHILDREN, RESCUED</p>
-</div>
-<table class="tableblock frame-none grid-all stretch front">
-<colgroup>
-<col width="33.3333%">
-<col width="33.3333%">
-<col width="33.3334%">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="sect1 story">
-<h2 id="olympic">“LOSS 1,800 SOULS,” OLYMPIC’S MESSAGE</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph deck">
-<p>Belief Here That Estimated Number Is Too Large by 300—Rescuers Find Wreckage.</p>
+<div class="paragraph r-1-lead s-ch z1625">
+<p>Wireless from Olympic’s Captain Gives News</p>
 </div>
-<div class="paragraph">
-<p>The text of the message from the steamer Olympic reporting the sinking of the Titanic and the rescue of 675 survivors, which reached here late last night, also expressed the opinion that 1,800 lives were lost.</p>
+<div class="paragraph r-1-lead s-ch z1676">
+<p>and Weeping Women Gather at White</p>
+</div>
+<div class="paragraph r-1-lead s-ch z1485">
+<p>Star Offices to Learn Fate of Relatives</p>
+</div>
+<div class="paragraph r-1-lead s-ch z1677">
+<p>—1,323 Passengers on Ship</p>
+</div>
+<div class="paragraph r-1-lead s-ch z1933">
+<p>and Crew of 890.</p>
+</div>
+<div class="paragraph r-1-lead s-chc z1694">
+<p>SURVIVORS EIGHT HOURS IN BOATS</p>
+</div>
+<div class="paragraph r-1-lead s-chs z1208">
+<p>No Word from Virginian or Parisian, Which Vice-President</p>
+</div>
+<div class="paragraph r-1-lead s-chs z1229">
+<p>Franklin Hopes Saved Others—Disaster Greatest in</p>
+</div>
+<div class="paragraph r-1-lead s-chs z1445">
+<p>History, if Hope Is Unfounded—Captain</p>
+</div>
+<div class="paragraph r-1-lead s-chs z1477">
+<p>Believed to Have Gone Down</p>
+</div>
+<div class="paragraph r-1-lead s-chs z1582">
+<p>at His Post of Duty.</p>
+</div>
+<div class="paragraph r-1-lead tally z1069">
+<p>FIRST CLASS PASSENGERS ON TITANIC <span class="dots">318</span></p>
+</div>
+<div class="paragraph r-1-lead tally z1069">
+<p>SECOND CLASS PASSENGERS ON TITANIC <span class="dots">261</span></p>
+</div>
+<div class="paragraph r-1-lead tally z1069">
+<p>THIRD CLASS PASSENGERS ON TITANIC <span class="dots">740</span></p>
+</div>
+<div class="paragraph r-1-lead tally z1069">
+<p>CREW OF THE TITANIC <span class="dots">890</span></p>
+</div>
+<div class="paragraph r-1-lead tally-in z1069">
+<p>TOTAL <span class="dots">2,209</span></p>
+</div>
+<div class="paragraph r-1-lead tally z1069">
+<p>REPORTED SAVED ON THE CARPATHIA <span class="dots">866</span></p>
+</div>
+<div class="paragraph r-1-lead tally-in z1069">
+<p>MISSING <span class="dots">1,343</span></p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>The White Star liner Titanic sank at 2:20 a. m. yesterday about
+1,150 miles east of Sandy Hook.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1395">
+<p>First reports placed the number of survivors, passengers and crew,
+at 675. At 2:30 o’clock this morning a dispatch relayed by the Olympic
+said the number aboard the Carpathia was 866.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>A still later dispatch said that the Allan Line steamer Virginian had
+probably picked up some of the victims.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1406">
+<p>P. A. S. Franklin, vice-president of the International Mercantile
+Marine Company, admitted last night that probably only 675 out of
+more than 2,200 souls on the lost vessel were saved, which means that
+more than 1,500 persons went down with her.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>When the full text of the Olympic’s message was given out it was
+found that it estimated the loss at 1,800.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1388">
+<p>Shortly before 11 o’clock last night a slight ray of hope that more
+than the 675 on the Carpathia had been saved appeared in a message
+from the Marconi operator at Sable Island, near the scene of the dis-
+aster.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1400">
+<p>In answer to an inquiry regarding the delivery of wireless mes-
+sages to passengers on the Titanic, the operator at Sable Island replied
+that it was difficult to deliver them, “as the passengers are believed to
+be dispersed among several vessels.”</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>Those saved are coming to New York on the Cunard liner Car-
+pathia.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1395">
+<p>The Carpathia is expected to reach New York on Thursday night.
+Mr. Franklin sent a wireless message to her last night asking that the
+names of the survivors aboard be sent by wireless.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1395">
+<p>A report that John Jacob Astor was among those lost and that
+Mrs. Astor had been saved was current last night, but could not be
+confirmed.</p>
+</div>
+<div class="paragraph r-1-lead s-cbc z1111">
+<p>MOSTLY WOMEN AND CHILDREN SAVED.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>Both passengers and crew are among those saved. Of the passen-
+gers saved nearly all are women and children.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1395">
+<p>The only report received is from the Carpathia, via the Olympic.
+The Virginian and the Parisian, which were also racing to the founder-
+ing Titanic, have not yet been heard from.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>The Olympic, of the White Star Line, reported that the Carpathia
+was the first vessel to reach the position of the Titanic.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187">
+<p>She found only small boats and wreckage.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>All the boats of the Titanic were accounted for, according to the
+Olympic.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1381">
+<p>Vice-President Franklin said shortly after 11 o’clock last night
+that he had received a wireless message saying that the Carpathia had
+rescued the survivors of the Titanic she carried from a small fleet of
+lifeboats picked up at 10:30 o’clock yesterday morning, more than eight
+hours after the Titanic sank.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1440">
+<p>He said that he believed the Carpathia was making all possible
+speed for New York in order that the rescued passengers, who were
+suffering from exposure, might have medical attention at the earliest
+minute.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>The Leyland liner Californian remained in the vicinity of the
+disaster to search for survivors.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>Captain E. J. Smith, commodore of the White Star fleet, is believed
+to have gone down with his ship.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1402">
+<p>Among those aboard the ship were F. D. Millet, the artist and
+president of the Consolidated American Academy at Rome; Mr. and
+Mrs. John Jacob Astor, Major Archibald Butt, military aid to President
+Taft; C. M. Hays, president of the Grand Trunk Railway; J. Bruce
+Ismay, chairman and managing director of the White Star Line; W. T.
+Stead, Mrs. Isidor Straus, Mr. and Mrs. G. D. Widener, Mr. and Mrs.
+Harry Widener, Benjamin Guggenheim, Countess Rothes, Mr. and
+Mrs. D. W. Marvin, who were returning from their wedding trip, the
+latter a sister of Mrs. Wheelock, of No. 317 Riverside Drive; Norman
+Carlyle Craig, M. P. for the Isle of Thanet; Mr. and Mrs. Washington
+Dodge, Colonel Archibald Gracie and Mr. and Mrs. Henry S. Harper.</p>
+</div>
+<div class="paragraph r-1-lead s-cbc z1113">
+<p>WEEPING WOMEN GATHER AT WHITE STAR OFFICES.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1440">
+<p>Shortly after 9 o’clock last night weeping women began to gather
+at the White Star offices, at No. 9 Broadway, seeking news of relatives
+who had sailed on the Titanic.</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1404">
+<p>The first statement given out at the White Star offices conceding
+the loss of the Titanic said:</p>
+</div>
+<div class="paragraph r-1-lead f-roman z1018 in187 p1359">
+<p>“Captain Haddock of the Olympic sends a wireless message to
+the White Star offices here that the steamer Titanic sank at 2:20 a. m.,
+after all passengers and crew had been lowered to lifeboats and trans-</p>
 </div>
 </div>
-</div></div></td>
-<td class="tableblock halign-left valign-top" colspan="2"><div class="content"><div class="sect1 story">
-<h2 id="lead">SURVIVORS EIGHT HOURS IN BOATS</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The White Star liner Titanic sank at 2:20 a. m. yesterday about 1,150 miles east of Sandy Hook.</p>
 </div>
-<div class="paragraph">
-<p>The first statement given out at the White Star offices conceding the loss of the Titanic said:</p>
-</div>
-<div class="paragraph jumped">
-<p>“Captain Haddock of the Olympic sends a wireless message to the White Star offices here that the steamer Titanic sank at 2:20 a. m., after all passengers and crew had been lowered to lifeboats and trans-</p>
-</div>
-<div class="paragraph jump">
-<p><a href="#lead-continued">Continued in Wireless from Olympic’s Captain Gives News</a></p>
-</div>
-</div>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-<div class="page-break"></div>
-<table class="tableblock frame-none grid-cols stretch second">
-<colgroup>
-<col width="66.6666%">
-<col width="33.3334%">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="sect1 story continued">
-<h2 id="lead-continued">Wireless from Olympic’s Captain Gives News</h2>
-<div class="sectionbody">
-<div class="paragraph jump">
-<p><a href="#lead">Continued from SURVIVORS EIGHT HOURS IN BOATS</a></p>
-</div>
-<div class="paragraph jumped-in">
-<p>ferred to the Virginian. The steamship Carpathia, with several hundred passengers of the Titanic, is now en route to New York.”</p>
-</div>
-</div>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div id="footer">
 <div id="footer-text">

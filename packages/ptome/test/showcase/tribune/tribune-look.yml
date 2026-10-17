@@ -1,111 +1,389 @@
-# The New-York Tribune's front page of 16 April 1912 after the Library
-# of Congress's scan: a broadsheet of seven columns ruled apart, the
-# blackletter title between its ears, the folio line between rules,
-# the banner across the page in bold gothic capitals; each story under
-# its headline in condensed gothic capitals or a Cheltenham-like roman,
-# its decks between short rules; the text small and close, justified;
-# the stories that go on inside ending in a jump line.
+# The New-York Tribune of Tuesday, 16 April 1912, its first two pages as
+# the paper prints them, measured from the Library of Congress's scan
+# (Chronicling America; NOTICE.md, tool/tribune_1912): the page the
+# scan's size at its 400 pixels to the inch; seven columns ruled apart,
+# the stories in the cells of a table whose columns are the scan's; each
+# region's text inside its column where the scan's is, each line its
+# size from its width on the scan; the heads in an extra condensed
+# gothic, a condensed gothic, a bold roman or a light one, as the paper
+# sets them; the title, the map and the pictures, the ship's section and
+# the cut advertisements cut from the scan.
 #
-# UnifrakturMaguntia (the title), Fira Sans Condensed (the gothic
-# heads), Old Standard TT (the text and the roman heads)
-# (`ptome doctor --look tribune --looksdir test/showcase/tribune`).
+# Old Standard TT (the text and the roman heads), Fira Sans Condensed
+# (the gothic heads, the names), League Gothic (the extra condensed
+# heads) (`ptome doctor --look tribune --looksdir test/showcase/tribune`).
 extends: ptome
 tokens:
   font:
     text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
     display: { family: { print: Fira Sans Condensed, screen: [Fira Sans Condensed, sans-serif] }, weight: bold }
   size:
-    text: { print: 6.5pt, screen: 17px }
-    headings: { print: [30pt, 15pt, 10pt, 8pt, 7pt, 7pt] }
-  leading: { print: 1.06, screen: 1.45 }
+    text: { print: 7pt, screen: 17px }
+    headings: { print: [7pt, 7pt, 7pt, 7pt, 7pt, 7pt] }
+  leading: { print: 1, screen: 1.45 }
   measure: { screen: 40em }
   align: { print: justify }
-  hyphenate: { print: true }
+  hyphenate: { print: false }
   color: { ink: '#161616', link: '#161616' }
-  page: { size: [17.5in, 26.5in], margin: [0.45in, 0.4in, 0.5in, 0.4in] }
+  page: { size: [1126.08pt, 1713.6pt], margin: [0, 0, 0, 0] }
 styles:
   heading: { font: display, weight: bold, color: ink }
   title: { font: display, weight: bold, color: ink }
   link: { color: ink }
 pdf:
+  base:
+    margin_break: keep
+    font_expansion: 0.05
   running_content:
-    start_at: 2
+    start_at: 99
+  heading:
+    chapter_break_before: always
+  section:
+    role:
+      page1: { page_running_content: none }
+      page2: { page_running_content: none }
   prose:
     margin_bottom: 0
-    text_indent: 0.8em
-  heading:
-    tag_shift: true
-    h2:
-      text_align: center
-      font_size: 14
-      line_height: 1.0
-      margin_top: 0
-      margin_bottom: 3
-  role:
-    masthead: { font_family: UnifrakturMaguntia, font_size: 64, font_style: normal }
-    banner: { font_family: Fira Sans Condensed, font_style: bold, font_size: 50, text_align: center, text_indent: 0, line_height: 1.0, margin_bottom: 6, hyphens: false }
-    deck: { font_style: bold, font_size: 8.5, text_align: center, text_indent: 0, line_height: 1.1, margin_bottom: 4 }
-    crossline: { font_family: Fira Sans Condensed, font_style: bold, font_size: 11, text_align: center, text_indent: 0, margin_bottom: 4 }
-    subhead: { font_style: bold, text_align: center, text_indent: 0 }
-    crosshead: { font_style: bold, text_align: center, text_indent: 0, margin_top: 2 }
-    dateline: { font_style: bold }
-    names: { text_indent: 0, font_size: 6.2, line_height: 1.0 }
-    advt: { font_size: 6.4, text_align: center, text_indent: 0, margin_top: 4 }
-    jump: { font_size: 6.4, font_style: italic, text_align: center, text_indent: 0, margin_top: 3 }
-    jumped: { margin_bottom: 0 }
-    jumped-in: { text_indent: 0 }
-    art-head: { font_size: 8, text_align: center, text_indent: 0, character_spacing: 0.6, margin_bottom: 3 }
-    caption-head: { font_size: 6.4, text_align: center, text_indent: 0, character_spacing: 0.4 }
-    caption-text: { font_size: 6.4, font_style: italic, text_align: center, text_indent: 0 }
+    text_indent: 0
+    orphans: 1
+    widows: 1
+  image:
+    align: center
   table:
-    font_size: 6.5
-    cell_padding: [2, 4, 2, 4]
+    cell_padding: 0
     border_color: '161616'
     grid_color: '161616'
-    border_width: 0.6
+    border_width: 0
     grid_width: 0.5
+    background_color: transparent
+    margin_top: 0
+    margin_bottom: 0
     head:
       background_color: transparent
     body:
       stripe_background_color: transparent
-  columns:
-    rule_width: 0.4
-    gap: 8
-  header:
-    height: 0.45in
-    vertical_align: bottom
-    font_size: 8
-    border_width: 0.5
-    recto:
-      left: { content: '{page-number}' }
-      center: { content: 'NEW-YORK DAILY TRIBUNE, TUESDAY, APRIL 16, 1912.' }
-      right: { content: '' }
-    verso:
-      left: { content: '{page-number}' }
-      center: { content: 'NEW-YORK DAILY TRIBUNE, TUESDAY, APRIL 16, 1912.' }
-      right: { content: '' }
-  footer:
-    height: 0.3in
-    border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+  role:
+    cut: { margin_top: 0, margin_bottom: 0 }
+    spacer: { margin_top: 0, margin_bottom: 0 }
+    # (The faces of the text: the roman, the bold roman, the gothic of the
+    # names.)
+    f-roman: { text_align: justify }
+    f-bold: { text_align: justify, font_style: bold }
+    f-gothic: { text_align: justify, font_family: Fira Sans Condensed, font_style: bold }
+    f-gothicl: { text_align: justify, font_family: Libre Franklin, font_style: normal }
+    # (The heads: each style its face and its line's place.)
+    s-xc: { font_family: League Gothic, font_style: normal, text_align: center, text_indent: 0 }
+    s-xcr: { font_family: League Gothic, font_style: normal, text_align: right, text_indent: 0 }
+    s-xcl: { font_family: League Gothic, font_style: normal, text_align: left, text_indent: 0 }
+    s-gc: { font_family: Fira Sans Condensed, font_style: bold, text_align: center, text_indent: 0 }
+    s-gcc: { font_family: Fira Sans Condensed, font_style: bold, text_align: center, text_indent: 0 }
+    s-gb: { font_family: Fira Sans Condensed, font_style: bold, text_align: center, text_indent: 0 }
+    s-gbl: { font_family: Fira Sans Condensed, font_style: bold, text_align: left, text_indent: 0 }
+    s-gbr: { font_family: Fira Sans Condensed, font_style: bold, text_align: right, text_indent: 0 }
+    s-sb: { font_family: Fira Sans Condensed, font_style: bold, text_align: center, text_indent: 0 }
+    s-banl: { font_style: bold, text_align: left, text_indent: 0 }
+    s-banr: { font_style: bold, text_align: right, text_indent: 0 }
+    c-justify: { text_align: justify, text_indent: 0, text_align_last: justify }
+    c-center: { text_align: center, text_indent: 0 }
+    s-rb: { font_style: bold, text_align: center, text_indent: 0 }
+    s-cb: { font_style: bold, text_align: center, text_indent: 0 }
+    s-cbn: { font_style: bold, text_align: center, text_indent: 0 }
+    s-cbc: { font_style: bold, text_align: center, text_indent: 0 }
+    s-adb: { font_style: bold, text_align: center, text_indent: 0 }
+    s-ch: { text_align: center, text_indent: 0 }
+    s-chc: { text_align: center, text_indent: 0 }
+    s-chs: { text_align: center, text_indent: 0 }
+    s-rll: { text_align: left, text_indent: 0 }
+    s-rlr: { text_align: right, text_indent: 0 }
+    s-rd: { text_align: center, text_indent: 0 }
+    s-cr: { text_align: center, text_indent: 0 }
+    s-cap: { text_align: center, text_indent: 0, letter_spacing: 0.12em }
+    s-capt: { text_align: center, text_indent: 0 }
+    s-capi: { font_style: italic, text_align: center, text_indent: 0 }
+    s-adi: { font_style: italic, text_align: center, text_indent: 0 }
+    s-jump: { font_style: bold, text_align: center, text_indent: 0 }
+    s-ad: { font_family: Fira Sans Condensed, font_style: bold, text_align: center, text_indent: 0, letter_spacing: 0.1em }
+    s-tv0: { text_align: center, text_indent: 0, letter_spacing: 0.04em }
+    s-tv2: { text_align: center, text_indent: 0, letter_spacing: 0.04em }
+    s-tv3: { font_style: bold, text_align: center, text_indent: 0 }
+    s-tv4: { font_style: bold, text_align: center, text_indent: 0 }
+    s-tv5: { font_style: bold, text_align: center, text_indent: 0 }
+    s-hm0: { text_align: center, text_indent: 0 }
+    s-hm1: { text_align: center, text_indent: 0 }
+    s-hm2: { text_align: center, text_indent: 0 }
+    # (The tally of the lost: dots led to its figures; the totals set in.)
+    tally: { text_align: left, text_indent: 0 }
+    tally-in: { text_align: left, text_indent: 0, margin_left: 14 }
+    dots: { flush: right, leader: '. ' }
+    # (The folio line: its parts where the paper's are.)
+    folio2: { text_align: left, text_indent: 0 }
+    right: { flush: right }
+    # (A paragraph's lines set in two blocks: the first's last line full.)
+    jl: { text_align_last: justify }
+    # (gen.py's roles.)
+    z654: { font_size: 6.54 }
+    z696: { font_size: 6.96 }
+    z703: { font_size: 7.03 }
+    z729: { font_size: 7.29 }
+    z744: { font_size: 7.44 }
+    z749: { font_size: 7.49 }
+    z757: { font_size: 7.57 }
+    z761: { font_size: 7.61 }
+    z773: { font_size: 7.73 }
+    z782: { font_size: 7.82 }
+    z783: { font_size: 7.83 }
+    z811: { font_size: 8.11 }
+    z829: { font_size: 8.29 }
+    z844: { font_size: 8.44 }
+    z856: { font_size: 8.56 }
+    z865: { font_size: 8.65 }
+    z870: { font_size: 8.7 }
+    z875: { font_size: 8.75 }
+    z881: { font_size: 8.81 }
+    z894: { font_size: 8.94 }
+    z896: { font_size: 8.96 }
+    z903: { font_size: 9.03 }
+    z910: { font_size: 9.1 }
+    z918: { font_size: 9.18 }
+    z922: { font_size: 9.22 }
+    z937: { font_size: 9.37 }
+    z938: { font_size: 9.38 }
+    z962: { font_size: 9.62 }
+    z981: { font_size: 9.81 }
+    z992: { font_size: 9.92 }
+    z995: { font_size: 9.95 }
+    z999: { font_size: 9.99 }
+    z1001: { font_size: 10.01 }
+    z1003: { font_size: 10.03 }
+    z1018: { font_size: 10.18 }
+    z1022: { font_size: 10.22 }
+    z1029: { font_size: 10.29 }
+    z1039: { font_size: 10.39 }
+    z1051: { font_size: 10.51 }
+    z1069: { font_size: 10.69 }
+    z1073: { font_size: 10.73 }
+    z1081: { font_size: 10.81 }
+    z1083: { font_size: 10.83 }
+    z1088: { font_size: 10.88 }
+    z1092: { font_size: 10.92 }
+    z1093: { font_size: 10.93 }
+    z1094: { font_size: 10.94 }
+    z1097: { font_size: 10.97 }
+    z1103: { font_size: 11.03 }
+    z1110: { font_size: 11.1 }
+    z1111: { font_size: 11.11 }
+    z1113: { font_size: 11.13 }
+    z1118: { font_size: 11.18 }
+    z1144: { font_size: 11.44 }
+    z1152: { font_size: 11.52 }
+    z1167: { font_size: 11.67 }
+    z1172: { font_size: 11.72 }
+    z1188: { font_size: 11.88 }
+    z1193: { font_size: 11.93 }
+    z1208: { font_size: 12.08 }
+    z1212: { font_size: 12.12 }
+    z1216: { font_size: 12.16 }
+    z1220: { font_size: 12.2 }
+    z1229: { font_size: 12.29 }
+    z1234: { font_size: 12.34 }
+    z1239: { font_size: 12.39 }
+    z1245: { font_size: 12.45 }
+    z1265: { font_size: 12.65 }
+    z1267: { font_size: 12.67 }
+    z1309: { font_size: 13.09 }
+    z1312: { font_size: 13.12 }
+    z1315: { font_size: 13.15 }
+    z1335: { font_size: 13.35 }
+    z1369: { font_size: 13.69 }
+    z1378: { font_size: 13.78 }
+    z1426: { font_size: 14.26 }
+    z1445: { font_size: 14.45 }
+    z1449: { font_size: 14.49 }
+    z1463: { font_size: 14.63 }
+    z1477: { font_size: 14.77 }
+    z1482: { font_size: 14.82 }
+    z1485: { font_size: 14.85 }
+    z1487: { font_size: 14.87 }
+    z1545: { font_size: 15.45 }
+    z1546: { font_size: 15.46 }
+    z1582: { font_size: 15.82 }
+    z1615: { font_size: 16.15 }
+    z1625: { font_size: 16.25 }
+    z1676: { font_size: 16.76 }
+    z1677: { font_size: 16.77 }
+    z1684: { font_size: 16.84 }
+    z1694: { font_size: 16.94 }
+    z1765: { font_size: 17.65 }
+    z1828: { font_size: 18.28 }
+    z1869: { font_size: 18.69 }
+    z1877: { font_size: 18.77 }
+    z1913: { font_size: 19.13 }
+    z1933: { font_size: 19.33 }
+    z2054: { font_size: 20.54 }
+    z2078: { font_size: 20.78 }
+    z2168: { font_size: 21.68 }
+    z2284: { font_size: 22.84 }
+    z2324: { font_size: 23.24 }
+    z2330: { font_size: 23.3 }
+    z2363: { font_size: 23.63 }
+    z2429: { font_size: 24.29 }
+    z2520: { font_size: 25.2 }
+    z2565: { font_size: 25.65 }
+    z2623: { font_size: 26.23 }
+    z2949: { font_size: 29.49 }
+    z2968: { font_size: 29.68 }
+    z3121: { font_size: 31.21 }
+    z3413: { font_size: 34.13 }
+    z4386: { font_size: 43.86 }
+    z4530: { font_size: 45.3 }
+    p576: { line_pitch: 5.76pt }
+    p583: { line_pitch: 5.83pt }
+    p585: { line_pitch: 5.85pt }
+    p594: { line_pitch: 5.94pt }
+    p595: { line_pitch: 5.95pt }
+    p603: { line_pitch: 6.03pt }
+    p612: { line_pitch: 6.12pt }
+    p648: { line_pitch: 6.48pt }
+    p657: { line_pitch: 6.57pt }
+    p666: { line_pitch: 6.66pt }
+    p695: { line_pitch: 6.95pt }
+    p729: { line_pitch: 7.29pt }
+    p738: { line_pitch: 7.38pt }
+    p765: { line_pitch: 7.65pt }
+    p796: { line_pitch: 7.96pt }
+    p864: { line_pitch: 8.64pt }
+    p873: { line_pitch: 8.73pt }
+    p880: { line_pitch: 8.8pt }
+    p883: { line_pitch: 8.83pt }
+    p886: { line_pitch: 8.86pt }
+    p887: { line_pitch: 8.87pt }
+    p891: { line_pitch: 8.91pt }
+    p893: { line_pitch: 8.93pt }
+    p895: { line_pitch: 8.95pt }
+    p896: { line_pitch: 8.96pt }
+    p899: { line_pitch: 8.99pt }
+    p900: { line_pitch: 9.0pt }
+    p902: { line_pitch: 9.02pt }
+    p912: { line_pitch: 9.12pt }
+    p913: { line_pitch: 9.13pt }
+    p914: { line_pitch: 9.14pt }
+    p916: { line_pitch: 9.16pt }
+    p917: { line_pitch: 9.17pt }
+    p918: { line_pitch: 9.18pt }
+    p922: { line_pitch: 9.22pt }
+    p924: { line_pitch: 9.24pt }
+    p925: { line_pitch: 9.25pt }
+    p927: { line_pitch: 9.27pt }
+    p934: { line_pitch: 9.34pt }
+    p936: { line_pitch: 9.36pt }
+    p1034: { line_pitch: 10.34pt }
+    p1035: { line_pitch: 10.35pt }
+    p1060: { line_pitch: 10.6pt }
+    p1080: { line_pitch: 10.8pt }
+    p1085: { line_pitch: 10.85pt }
+    p1087: { line_pitch: 10.87pt }
+    p1089: { line_pitch: 10.89pt }
+    p1093: { line_pitch: 10.93pt }
+    p1094: { line_pitch: 10.94pt }
+    p1096: { line_pitch: 10.96pt }
+    p1098: { line_pitch: 10.98pt }
+    p1100: { line_pitch: 11.0pt }
+    p1103: { line_pitch: 11.03pt }
+    p1107: { line_pitch: 11.07pt }
+    p1110: { line_pitch: 11.1pt }
+    p1111: { line_pitch: 11.11pt }
+    p1114: { line_pitch: 11.14pt }
+    p1116: { line_pitch: 11.16pt }
+    p1118: { line_pitch: 11.18pt }
+    p1119: { line_pitch: 11.19pt }
+    p1120: { line_pitch: 11.2pt }
+    p1125: { line_pitch: 11.25pt }
+    p1129: { line_pitch: 11.29pt }
+    p1132: { line_pitch: 11.32pt }
+    p1134: { line_pitch: 11.34pt }
+    p1136: { line_pitch: 11.36pt }
+    p1139: { line_pitch: 11.39pt }
+    p1143: { line_pitch: 11.43pt }
+    p1152: { line_pitch: 11.52pt }
+    p1158: { line_pitch: 11.58pt }
+    p1161: { line_pitch: 11.61pt }
+    p1174: { line_pitch: 11.74pt }
+    p1179: { line_pitch: 11.79pt }
+    p1197: { line_pitch: 11.97pt }
+    p1199: { line_pitch: 11.99pt }
+    p1217: { line_pitch: 12.17pt }
+    p1251: { line_pitch: 12.51pt }
+    p1269: { line_pitch: 12.69pt }
+    p1296: { line_pitch: 12.96pt }
+    p1359: { line_pitch: 13.59pt }
+    p1377: { line_pitch: 13.77pt }
+    p1381: { line_pitch: 13.81pt }
+    p1384: { line_pitch: 13.84pt }
+    p1386: { line_pitch: 13.86pt }
+    p1388: { line_pitch: 13.88pt }
+    p1393: { line_pitch: 13.93pt }
+    p1395: { line_pitch: 13.95pt }
+    p1397: { line_pitch: 13.97pt }
+    p1399: { line_pitch: 13.99pt }
+    p1400: { line_pitch: 14.0pt }
+    p1401: { line_pitch: 14.01pt }
+    p1402: { line_pitch: 14.02pt }
+    p1404: { line_pitch: 14.04pt }
+    p1406: { line_pitch: 14.06pt }
+    p1413: { line_pitch: 14.13pt }
+    p1417: { line_pitch: 14.17pt }
+    p1420: { line_pitch: 14.2pt }
+    p1440: { line_pitch: 14.4pt }
+    p1790: { line_pitch: 17.9pt }
+    p1834: { line_pitch: 18.34pt }
+    in5: { text_indent: 0.5 }
+    in9: { text_indent: 0.9 }
+    in70: { text_indent: 7.0 }
+    in72: { text_indent: 7.2 }
+    in73: { text_indent: 7.3 }
+    in79: { text_indent: 7.9 }
+    in101: { text_indent: 10.1 }
+    in127: { text_indent: 12.7 }
+    in132: { text_indent: 13.2 }
+    in187: { text_indent: 18.7 }
+    in211: { text_indent: 21.1 }
+    in0: { text_indent: 0 }
+    tk20: { letter_spacing: 0.02em }
+    tk53: { letter_spacing: 0.053em }
+    r-1-art-head: { margin_left: 0, margin_right: 0 }
+    r-1-banner: { margin_left: 9.9, margin_right: 0 }
+    r-1-caption-l: { margin_left: 0, margin_right: 0 }
+    r-1-caption-r: { margin_left: 0, margin_right: 0 }
+    r-1-crowd: { margin_left: 12.96, margin_right: 0 }
+    r-1-deep: { margin_left: 1.26, margin_right: 0 }
+    r-1-folio: { margin_left: 10.98, margin_right: 33.66 }
+    r-1-lead: { margin_left: 0, margin_right: 6.66 }
+    r-1-loss: { margin_left: 0, margin_right: 0 }
+    r-1-names-a: { margin_left: 0, margin_right: 1.62 }
+    r-1-names-b: { margin_left: 0, margin_right: 0 }
+    r-1-names-head: { margin_left: 0, margin_right: 0 }
+    r-1-pearls: { margin_left: 2.16, margin_right: 0 }
+    r-2-c12: { margin_left: 13.68, margin_right: 0 }
+    r-2-c34: { margin_left: 0, margin_right: 0 }
+    r-2-c56: { margin_left: 1.8, margin_right: 1.26 }
+    r-2-folio: { margin_left: 0, margin_right: 0 }
+    r-2-hardman: { margin_left: 0, margin_right: 0 }
+    r-2-names-cont: { margin_left: 0, margin_right: 1.08 }
+    r-2-section-head: { margin_left: 0, margin_right: 0 }
+    r-2-sos: { margin_left: 0.9, margin_right: 8.28 }
+    r-2-travelers: { margin_left: 35.64, margin_right: 47.34 }
+    # (gen.py's roles end.)
 webfonts:
   - Old Standard TT:400,400italic,700
-  - Fira Sans Condensed:700
-  - UnifrakturMaguntia:400
+  - Fira Sans Condensed:400,600
+  - League Gothic:400
+  - Libre Franklin:400
 css: |
-  .masthead{font-family:UnifrakturMaguntia,serif;font-size:300%}
-  .banner p{font-family:"Fira Sans Condensed",sans-serif;font-weight:700;font-size:200%;text-align:center;line-height:1.05}
-  .deck p,.crossline p,.subhead p,.crosshead p,.art-head p,.caption-head p,.caption-text p,.advt p,.jump p{text-align:center}
-  .deck p,.subhead p,.crosshead p{font-weight:700}
-  .crossline p{font-family:"Fira Sans Condensed",sans-serif;font-weight:700}
-  .dateline{font-weight:700}
-  .jump p{font-style:italic;font-size:85%}
-  .advt p{font-size:85%}
-  h2{text-align:center}
-  table.front>tbody>tr>td{vertical-align:top}
+  .s-xc p,.s-xcr p,.s-xcl p{font-family:"League Gothic",sans-serif;text-align:center}
+  .s-gc p,.s-gcc p,.s-gb p,.s-sb p,.s-ad p{font-family:"Fira Sans Condensed",sans-serif;font-weight:600;text-align:center}
+  .s-rb p,.s-cb p,.s-cbn p,.s-cbc p,.s-ch p,.s-chc p,.s-chs p,.s-rd p,.s-cr p,.s-cap p,.s-capi p,.s-jump p{text-align:center}
+  .s-rb p,.s-cb p,.s-cbn p,.s-cbc p,.s-jump p{font-weight:700}
+  .s-capi p{font-style:italic}
+  table.front>tbody>tr>td,table.inside>tbody>tr>td{vertical-align:top}
 epub-css: |
-  .masthead{font-size:250%}
-  .banner p{font-weight:700;font-size:160%;text-align:center}
-  .deck p,.crossline p,.subhead p,.crosshead p,.jump p{text-align:center}
-  h2{text-align:center}
+  .s-xc p,.s-gc p,.s-rb p,.s-cb p,.s-ch p,.s-rd p,.s-cap p,.s-jump p{text-align:center}

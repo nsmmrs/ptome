@@ -1,8 +1,20 @@
-# The front page's map and pictures, fetched by tool/showcase.dart into
-# the work cache and checked by their 9f3b893ec247de25d7e4349052ce9c8f9f415adf69cf69ceb626a2f551b2e6a4-256: the region of the Library
-# of Congress's scan of the page that holds them (its IIIF image service
-# cuts it out and halves it), the map's title and the captions left out,
-# which the work sets as text.
+# The cuts the pages set (the title, the map and the pictures, the ship's
+# section, two advertisements), fetched by tool/showcase.dart into the
+# work cache and checked by their SHA-256: each the region of the Library
+# of Congress's scan of its page (its IIIF image service cuts it out and
+# halves it), as tool/tribune_1912/regions.txt has it.
+- name: masthead.jpg
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0303/0,140,6256,510/pct:50/0/default.jpg
+  sha256: de6c205e0667f2dc008ff9748e67ab4dd53a06047c2b19d3c6decabcdda34439
 - name: art.jpg
-  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0303/985,1720,3410,4190/pct:50/0/default.jpg
-  sha256: 9f3b893ec247de25d7e4349052ce9c8f9f415adf69cf69ceb626a2f551b2e6a4
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0303/975,1720,3467,4150/pct:50/0/default.jpg
+  sha256: ccc0d54a09bb977e29c2f62d01140a621c9aa7bfd43f8196f5c87d401f8f6e2d
+- name: section.jpg
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0304/0,520,6256,1120/pct:50/0/default.jpg
+  sha256: 0e5d1ed38355f1a51c72cc5ac75e0d70955c6e4153b58fa51a3816ebce63587a
+- name: hunyadi.jpg
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0304/10,8420,930,910/pct:50/0/default.jpg
+  sha256: 4f27d5e6d0ad1030b63daf0721e33a2504b4f8b3b94c7913b7d6107e127bbb2d
+- name: hudson.jpg
+  url: https://tile.loc.gov/image-services/iiif/service:ndnp:dlc:batch_dlc_keady_ver01:data:sn83030214:00206531526:1912041601:0304/4476,7540,1770,1790/pct:50/0/default.jpg
+  sha256: 7a48e60504cb59ab397e1c917f532d0f22d340351e8e28fd3265d290dc8a8f4c

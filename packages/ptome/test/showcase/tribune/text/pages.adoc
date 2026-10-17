@@ -1,0 +1,1836 @@
+// The New-York Tribune of 16 April 1912, its first two pages as the
+// paper prints them: generated from tool/tribune_1912/regions by gen.py.
+
+// page 1
+// tag::page-1[]
+[.page1%notitle]
+== Page 1
+
+image::blank.svg[role=spacer,pdfwidth=1pt,pdfheight=0.01pt]
+
+
+image::masthead.jpg[pdfwidth=1126.08pt,role=cut,margin-top=25.11pt]
+
+// tag::r-1-folio[]
+[.r-1-folio.in0,margin-top=14.34pt]
+[.folio,cols="1098,16488,2592,11088,612,64494,648,14670,918",grid=none,frame=none]
+!===
+a|
+a|[.z1378.c-justify]
+V^OL.^ LXXII....N^o^ 23,893.
+a|
+a|[.z773.c-center]
+To-day, unsettled. +
+To-morrow, fair; variable winds.
+a|
+a|[.z1487.c-justify]
+NEW-YORK, TUESDAY, APRIL 16, 1912.—FOURTEEN PAGES. {asterisk} {asterisk} {asterisk} {asterisk} PRICE ONE CENT
+a|
+a|[.z703.c-center]
+In City of New York, Jersey City and Hoboken. +
+ELSEWHERE TWO CENTS.
+a|
+!===
+
+// end::r-1-folio[]
+
+// tag::r-1-banner[]
+[.r-1-banner.s-banl.z4386,margin-top=12.97pt]
+1,340 PERISH AS TITANIC SINKS; ONLY 886,
+
+[.r-1-banner.s-banr.z4530,margin-top=7.13pt]
+MOSTLY WOMEN AND CHILDREN, RESCUED
+
+// end::r-1-banner[]
+
+[.front,cols="965,3487,1804",grid=cols,frame=none]
+|===
+a|
+// tag::r-1-crowd[]
+[.r-1-crowd.s-xc.z3413,margin-top=20.12pt]
+CROWD BESIEGES
+
+[.r-1-crowd.s-xc.z2968,margin-top=8.98pt]
+WHITE STAR OFFICE
+
+[.r-1-crowd.s-gc.z1245,margin-top=22.77pt]
+Line Officials Only Able to Tell
+
+[.r-1-crowd.s-gc.z1212,margin-top=2.12pt]
+Inquirers That but 675 of
+
+[.r-1-crowd.s-gc.z1265,margin-top=1.67pt]
+2,200 Were Saved.
+
+[.r-1-crowd.s-gcc.z1335,margin-top=16.03pt]
+VINCENT ASTOR SEEKS NEWS
+
+[.r-1-crowd.s-rb.z1051,margin-top=14.56pt]
+On Early Bulletins Two of Straus
+
+[.r-1-crowd.s-rb.z1094,margin-top=0.32pt]
+Family Started for Halifax to
+
+[.r-1-crowd.s-rb.z1315,margin-top=-0.62pt]
+Meet Mr. and Mrs.
+
+[.r-1-crowd.s-rb.z1097,margin-top=1.06pt]
+Isidor Straus.
+
+[.r-1-crowd.f-roman.z894.in73.p1096,margin-top=6.1pt]
+Hundreds of telephone calls and tele-
+graphic inquiries poured into the offices
+of the White Star Line in lower Broad-
+way last night, asking information as to
+the safety of friends and relatives who
+were on the Titanic.
+
+[.r-1-crowd.f-roman.z894.in73.p1080,margin-top=0.45pt]
+From about 7 o’clock in the evening
+on the answers given by the company
+were far from reassuring, and a little
+
+[.r-1-crowd.f-roman.z894.in73.p1107,margin-top=-0.38pt]
+later in the evening people began to
+come in person, seeking to get more defi-
+nite news.
+
+[.r-1-crowd.f-roman.z894.in73.jl.p1034,margin-top=0.57pt]
+Vice-President Franklin of the White
+Star Line could tell them only that his
+latest information from Captain Had-
+dock of the Olympic was to the effect
+that the Titanic sank at 2:20 a. m. yes-
+terday and that 675 passengers had been
+
+[.r-1-crowd.f-roman.z894.in0,margin-top=-1.25pt]
+saved.
+
+[.r-1-crowd.f-roman.z894.in73.p902,margin-top=0.36pt]
+Shortly after 9 o’clock Mrs. W. Addi-
+son Wheelock, of No. 317 Riverside
+Drive, with her daughter, came up to
+the desk and asked whether Mr. and
+Mrs. D. W. Marvin had been saved.
+They gave her the bare facts as related
+above—the gist of Captain Haddock’s
+message, and the women broke down
+sobbing.
+
+[.r-1-crowd.f-roman.z894.in73.p891,margin-top=0.35pt]
+From her broken sentences it was
+learned that Mrs. Marvin was her sister,
+returning from a honeymoon trip abroad.
+
+[.r-1-crowd.s-cb.z875,margin-top=1.51pt]
+Astor Party Arrives in Auto.
+
+[.r-1-crowd.f-roman.z894.in73.p913,margin-top=2.58pt]
+A few minutes later Vincent Astor ar-
+rived in an automobile, accompanied by
+{empty}A. J. Drexel and Walter A. Dobbyn,
+Colonel Astor’s secretary. The Astor
+party was shown up to Vice-President
+Franklin’s private office. What trans-
+pired there was not given out, but young
+Astor came out with tears in his eyes.
+
+[.r-1-crowd.f-roman.z894.in73.p900,margin-top=0.09pt]
+“Have you heard anything from your
+father?” he was asked.
+
+[.r-1-crowd.f-roman.z894.in73.p922,margin-top=0.98pt]
+“Nothing but what I have read in the
+newspapers,” he answered, and then the
+party got into their automobile and went
+back uptown.
+
+[.r-1-crowd.f-roman.z894.in73.p916,margin-top=-0.21pt]
+Sylvester Byrnes, secretary to Isidor
+Straus, came in a few minutes later. He
+said that Jesse Straus, a son of his
+employer, was on board the Amerika,
+eastbound, and that another son, Her-
+bert, was on his way to Halifax, ex-
+pecting to meet the Carpathia there and
+greet his father. Herbert started for
+Halifax as soon as the information, giv-
+en out by the White Star Line earlier
+in the day, indicated that the Carpathia
+would steam for Halifax, and that she
+would have on board practically all the
+passengers of the ill-fated Titanic.
+
+[.r-1-crowd.f-roman.z894.in73.p924,margin-top=-0.17pt]
+Byrnes endeavored to intercept Her-
+bert Straus with a message conveying
+the later information, but was unsuc-
+cessful. He said that both Mr. and Mrs.
+Isidor Straus had been aboard the
+Titanic.
+
+[.r-1-crowd.s-cb.z870,margin-top=1.58pt]
+First Thought All Saved.
+
+[.r-1-crowd.f-roman.z894.in73.p914,margin-top=2.09pt]
+The earlier information given out by
+the local officials of the line, it was be-
+lieved, was responsible for the compara-
+tively small number of inquiries made
+at the offices last night, because those
+who had friends or relatives aboard
+went to bed last night secure in their
+belief, based on the latest statements of
+the company yesterday afternoon, that
+the Titanic’s passengers were safe on
+the Carpathia.
+
+[.r-1-crowd.f-roman.z894.in73.p896,margin-top=-0.58pt]
+From another inquirer who appeared
+at the offices late last night came the
+story of Arthur Ryerson and his family
+coming over on the Titanic to attend the
+funeral of a son of the family who died a
+few days ago in Philadelphia.
+
+[.r-1-crowd.f-roman.z894.in73.p886,margin-top=0.28pt]
+George Madoff, the friend of the Ryer-
+sons who made the inquiry, said that
+with Mr. Ryerson were his wife, two
+daughters, a son and a maid. They had
+been touring Europe when cables
+reached them telling of the death of the
+other son of the family, who had re-
+mained at work in Philadelphia when the
+family party went abroad.
+
+[.r-1-crowd.f-roman.z894.in73.p895,margin-top=0.97pt]
+The Washington agency of the White
+Star Line called up the New York offices
+shortly before midnight at the request
+of President Taft, who sought news of
+Major Archibald Butt.
+
+[.r-1-crowd.f-roman.z894.in73.jl.p899,margin-top=-0.07pt]
+Early this morning Samuel and Robert
+Guggenheim, Lewis Rothschild and Ben-
+jamin Daniels appeared at the offices,
+asking for news from Benjamin Guggen-
+heim. In the party there were also
+three women, who declined to give their
+names. They learned nothing beyond
+the information given all others during
+the evening—that the Carpathia was on
+
+[.r-1-crowd.f-roman.z894.in0.p657,margin-top=-0.5pt]
+her way here, and that neither the Vir-
+ginian nor the Parisian had been heard
+from.
+
+[.r-1-crowd.f-roman.z894.in73.p666,margin-top=1.57pt]
+Vincent Astor reappeared in the offices
+of the steamship company shortly after
+1 o’clock this morning.
+
+[.r-1-crowd.f-roman.z894.in73.p900,margin-top=-0.98pt]
+“Have you received any additional in-
+formation?” he inquired of an official.
+
+[.r-1-crowd.f-roman.z894.in73,margin-top=-3.99pt]
+“Nothing,” was the reply.
+
+[.r-1-crowd.f-roman.z894.in73.p729,margin-top=-1.04pt]
+The young man, after vainly strug-
+gling to control himself, buried his face
+in his hands and sobbed.
+
+[.r-1-crowd.f-roman.z894.in73.p695,margin-top=-0.15pt]
+Mr. and Mrs. Walter Shaw Brewster,
+of Brooklyn, made inquiry in the steam-
+ship office early to-day relative to Karl
+{empty}H. Behr, international tennis player,
+who was a passenger on the Titanic.
+
+[.r-1-crowd.f-roman.z894.in73.p648,margin-top=-0.02pt]
+Frederick Tankwertha, of No. 278
+Dyckman street, inquired as to the safety
+of Miss Frita Werner, of Cologne,
+Germany, who was a second cabin pas-
+senger in the Titanic.
+
+[.r-1-crowd.s-ad.z894,margin-top=7.99pt]
+MAILLARD’S VANILLA CHOCOLATE
+
+[.r-1-crowd.f-roman.z894.in0.p900,margin-top=-1.76pt]
+has a delicious flavor distinctly its own.
+Discriminating housewives prefer it.—Advt.
+
+// end::r-1-crowd[]
+
+a|
+// tag::r-1-art-head[]
+[.r-1-art-head.s-cap.z1267,margin-top=20.44pt]
+DIAGRAMMATIC MAP SHOWING POSITION OF THE TITANIC WHEN SHE STRUCK
+
+[.r-1-art-head.s-cap.z1239,margin-top=3.67pt]
+THE ICEBERG AND LINERS RUSHING TO HER ASSISTANCE.
+
+// end::r-1-art-head[]
+
+
+image::art.jpg[pdfwidth=624.06pt,role=cut,margin-top=4.41pt]
+
+[.captions,cols="1,1",grid=none,frame=none]
+!===
+a!
+// tag::r-1-caption-l[]
+[.r-1-caption-l.s-cap.z811,margin-top=16.28pt]
+CAPTAIN E. J. SMITH ON THE BRIDGE OF THE TITANIC.
+
+[.r-1-caption-l.s-capi.z922,margin-top=0.12pt]
+Although wireless reports are silent, it is believed he went down with his ship.
+
+// end::r-1-caption-l[]
+
+a!
+// tag::r-1-caption-r[]
+[.r-1-caption-r.s-cap.z783,margin-top=10.71pt]
+THE TITANIC, THE GREATEST STEAMSHIP EVER BUILT, WHICH
+
+[.r-1-caption-r.s-cap.z757,margin-top=3.58pt]
+FOUNDERED ON HER FIRST TRANSATLANTIC VOYAGE.
+
+// end::r-1-caption-r[]
+
+!===
+
+[.lower,cols="875,868,870,874",grid=cols,frame=none]
+!===
+2+a!
+// tag::r-1-names-head[]
+[.r-1-names-head.s-rll.z2429,margin-top=6.86pt]
+NAMES OF SURVIVORS
+
+[.r-1-names-head.s-rlr.z2623,margin-top=10.2pt]
+ON THE CARPATHIA
+
+[.r-1-names-head.s-rd.z1765,margin-top=17.76pt]
+Wireless Brings Partial List of First Cabin
+
+[.r-1-names-head.s-rd.z1615,margin-top=6.15pt]
+Passengers Saved from Titanic.
+
+// end::r-1-names-head[]
+
+2.2+a!
+// tag::r-1-loss[]
+[.r-1-loss.s-rll.z2330,margin-top=9.64pt]
+“LOSS 1,800 SOULS,”
+
+[.r-1-loss.s-rlr.z2324,margin-top=5.63pt]
+OLYMPIC’S MESSAGE
+
+[.r-1-loss.s-rd.z1684,margin-top=20.66pt]
+Belief Here That Estimated Number Is Too
+
+[.r-1-loss.s-rd.z1546,margin-top=6.63pt]
+Large by 300---Rescuers Find Wreckage.
+
+[.r-1-loss.f-roman.z1029.in211.p1413,margin-top=2.47pt]
+The text of the message from the steamer Olympic reporting the
+sinking of the Titanic and the rescue of 675 survivors, which reached
+here late last night, also expressed the opinion that 1,800 lives were lost.
+
+[.r-1-loss.f-roman.z1029.in211.p1386,margin-top=-0.88pt]
+“Loss likely total 1,800 souls,” the dispatch said in its concluding
+sentence.
+
+[.r-1-loss.f-roman.z1029.in211.p1402,margin-top=-0.1pt]
+It is hoped and believed here that this is an error, unless the
+Titanic had more passengers on board than was reported. She carried
+about 2,200 persons, including passengers and crew. Deducting 675,
+the known saved, would indicate a loss of more than 1,500 persons.
+
+[.r-1-loss.f-roman.z1029.in211,margin-top=2.06pt]
+The Olympic’s dispatch follows:
+
+[.r-1-loss.f-roman.z1029.in211.p1401,margin-top=1.47pt]
+“Carpathia reached Titanic position at daybreak; found boats and
+wreckage only. Titanic sank about 2:20 a. m., in 41:16 N., 50:14 W.
+All her boats accounted for, containing about 675 souls saved, crew and
+passengers included. Nearly all saved women and children. Leyland
+liner Californian remained and searching exact position of disaster.
+Loss likely total 1,800 souls.”
+
+// end::r-1-loss[]
+
+.2+a!
+// tag::r-1-names-a[]
+[.r-1-names-a.f-gothicl.z829.tk53.in9.p873,margin-top=8.89pt]
+Cape Race, N. F., April 15.—Following
+is a partial list of the first cabin passen-
+gers who were rescued from the Titanic:
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=2.01pt]
+Mrs. Jacob P. —— (word missed).
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.26pt]
+Mrs. Edward W. Appleton.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.09pt]
+Mrs. Rose Abbott.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.08pt]
+Miss G. M. Burns.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.88pt]
+Miss D. D. Cassebere.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.92pt]
+Mrs. William M. Clarke.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.41pt]
+Mrs. B. Chibinaco.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.34pt]
+Miss E. G. Crossbie.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.61pt]
+Miss H. E. Crossbie.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.2pt]
+Miss Jean Hippach.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9.p738,margin-top=-0.43pt]
+Mrs. Henry B. Harris (wireless version
+Mrs. L. Y. B. Harris).
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.5pt]
+Mrs. Alexander Halverson.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.28pt]
+Miss Margaret Hays.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.25pt]
+Mr. and Mrs. J. Bruce Ismay.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9.p738,margin-top=0.84pt]
+Mr. and Mrs. Ed Kimberley (according
+to wireless).
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-2.83pt]
+{empty}F. A. Kenyman.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.57pt]
+Miss Emile Kenchen.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.92pt]
+Miss G. F. Longley.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.75pt]
+Miss A. F. Leader.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.89pt]
+Miss Bertha Lavory.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.22pt]
+Mrs. Ernest Lives.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.26pt]
+Mrs. Susan P. Rogerson.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.93pt]
+Miss Emily B. Rogerson.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.88pt]
+Mrs. Arthur Rogerson.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9.p738,margin-top=-0.73pt]
+Master Allison and nurse, Miss K. T.
+Andrews.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.89pt]
+Miss Ninette Panhart.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.9pt]
+Miss E. W. Allen.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.06pt]
+Mr. and Mrs. T. D. Bishop.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.59pt]
+{empty}H. Blank.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.36pt]
+Miss A. Bassina.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.95pt]
+Mrs. James Baxter.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.9pt]
+George A. Bayton.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.26pt]
+Miss C. Bonnell.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.15pt]
+Mrs. J. M. Brown.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.59pt]
+Miss G. C. Bowen.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.38pt]
+Mr. and Mrs. R. L. Beckwith.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.26pt]
+Mrs. F. M. Warner.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.46pt]
+Miss Helen A. Wilson.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.66pt]
+Miss Willard.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.27pt]
+Miss Mary Wicks.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.11pt]
+Mrs. George D. Widener and maid.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.1pt]
+Miss Mary Clines.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.09pt]
+Mrs. Singrid Lindstrom.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.92pt]
+Gustav J. Lesneur.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.23pt]
+Miss Georgietta Amadill.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.61pt]
+Mme. Melicard.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.02pt]
+Mrs. Tucker and maid.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.07pt]
+Mrs. J. B. Thayer.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.76pt]
+{empty}J. B. Thayer, jr.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.21pt]
+{empty}H. Woolmer.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.59pt]
+Miss Anna Ward.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.47pt]
+Richard M. William.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.11pt]
+Mrs. J. Steward White.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.25pt]
+Miss Marie Young.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.46pt]
+Mrs. Thomas Potter, jr.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-1.5pt]
+Mrs. Edna S. Roberts.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.94pt]
+Mr. and Mrs. L. Henry.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=-0.93pt]
+Mrs. W. A. Hooper.
+
+[.r-1-names-a.f-gothicl.z829.tk53.in9,margin-top=2.5pt]
+Mr. Mile.
+
+// end::r-1-names-a[]
+
+.2+a!
+// tag::r-1-names-b[]
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=4.36pt]
+{empty}J. Flynn.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.34pt]
+Miss Alice Fortune.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.44pt]
+Mrs. Robert Douglas.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.78pt]
+Miss Hilda Slayter.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.72pt]
+Mrs. P. Smith.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-2.81pt]
+Mrs. Braham.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.58pt]
+Miss Lucille Carter.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.62pt]
+William Carter.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.98pt]
+Miss Roberts.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.43pt]
+Miss Cummings.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.27pt]
+Countess of Rothes.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.09pt]
+{empty}C. Rolmane.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.42pt]
+Mrs. Florence Mare.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.11pt]
+Miss Alice Phillips.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.39pt]
+Mrs. Paula Munge.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.76pt]
+Miss Rosie —— (word missed).
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-2.76pt]
+Mrs. Jane —— (word missed).
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.93pt]
+Miss Phyllis O. —— (word missed).
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.45pt]
+Miss Bertha —— (word missed).
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.5pt]
+Mrs. Carl H. Behr.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.28pt]
+Miss Bessette.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.09pt]
+Mrs. William Bucknell.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.9pt]
+{empty}A. H. Barkworth.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.31pt]
+{empty}H. B. Steffason.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.27pt]
+Mrs. Elsie E. Bowerman.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.1pt]
+Mrs. D. W. Marvin.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.24pt]
+Philip Emock.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.57pt]
+James Googht.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.28pt]
+Miss Ruberta Maimy.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.29pt]
+Pierre Marechal.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.95pt]
+Mrs. W. E. Minahan.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.25pt]
+Miss Minahan.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.41pt]
+Miss Appie Ranelt.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.43pt]
+Major Arthur Peuchen.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.12pt]
+Miss Ruth Taussig.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.23pt]
+Miss Ella Thor.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.42pt]
+Mr. and Mrs. E. Z. Taylor.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.43pt]
+Gilbert M. Tucker.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.43pt]
+{empty}J. B. Thayer.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.98pt]
+John Rogerson (probably Ryerson).
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.09pt]
+Mrs. M. Rothschild.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.24pt]
+Miss Madeleine Newell.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.26pt]
+Mrs. Marjorie Newell.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.25pt]
+Mrs. Helen W. Newson.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.23pt]
+Fiennal Omond.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.09pt]
+{empty}E. C. Ostby.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.91pt]
+Miss Helen R. Ostby.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-1.65pt]
+Mrs. Maman J. Renago.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5,margin-top=-0.82pt]
+Middle Olivia.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5.jl.p1035,margin-top=3.81pt]
+The above list was received by wire-
+less at Cape Race station from the
+steamer Carpathia. In spelling and
+
+[.r-1-names-b.f-gothicl.z865.tk20.in0.p864,margin-top=-1.97pt]
+initials it does not correspond with the
+list as cabled from London to-day.
+
+[.r-1-names-b.f-gothicl.z865.tk20.in5.p893,margin-top=0.17pt]
+One of the most serious errors in the
+wireless list of survivors appears to be
+in giving four members of the “Roger-
+son” family. No such name appears in
+
+[.r-1-names-b.s-jump.z749,margin-top=11.57pt]
+Continued on second page, fifth column.
+
+[.r-1-names-b.f-roman.z865.tk20.in0.p864,margin-top=3.27pt]
+For that tired feeling in the Spring try
+Angostura Bitters, a famous tonic.—Advt.
+
+// end::r-1-names-b[]
+
+a!
+// tag::r-1-deep[]
+[.r-1-deep.s-gcc.z1545,margin-top=11.06pt]
+TITANIC TWO MILES DEEP
+
+[.r-1-deep.s-rb.z1110,margin-top=6.62pt]
+This the Depth of Ocean Where
+
+[.r-1-deep.s-rb.z1073,margin-top=0.51pt]
+the Liner Went Down.
+
+[.r-1-deep.f-roman.z896.in70.jl.p1060,margin-top=0.05pt]
+Halifax, April 15.—The deathbed of
+the $10,000,000 steamer Titanic, and of
+probably many who must have been
+dragged down with her, is two miles, at
+
+[.r-1-deep.f-roman.z896.in0,margin-top=-0.8pt]
+least, below the surface of the sea.
+
+[.r-1-deep.f-roman.z896.in70.p895,margin-top=-0.24pt]
+This calculation was made by an offi-
+cial of the government Marine Depart-
+ment, who finds that depth on the ma-
+rine chart at a point about five hundred
+miles from Halifax and about seventy
+miles south of the Grand Banks, where
+he believes the Titanic went down.
+
+[.r-1-deep.f-roman.z896.in70.jl.p887,margin-top=-0.17pt]
+This location is midway between Sable
+Island and Cape Race, and in line with
+those dangerous sands which, however,
+might have proved a place of safety had
+there been time to run the Titanic there
+
+[.r-1-deep.f-roman.z896.in0,margin-top=4.01pt]
+and beach her.
+
+[.r-1-deep.s-gb.z1092,margin-top=-0.28pt]
+DEWEY’S SUPERIOR PORT WINE
+
+[.r-1-deep.s-adi.z782,margin-top=-2.1pt]
+Invaluable for Invalids and Convalescents.
+
+[.r-1-deep.s-adb.z696,margin-top=-0.84pt]
+{empty}H. T. DEWEY & SONS CO., 138 Fulton St., N. Y.
+
+[.r-1-deep.f-roman.z896.in0,margin-top=-2.53pt]
+—Advt.
+
+// end::r-1-deep[]
+
+a!
+// tag::r-1-pearls[]
+[.r-1-pearls.s-gcc.z1309,margin-top=11.39pt]
+$600,000 IN PEARLS ABOARD
+
+[.r-1-pearls.s-rb.z1216,margin-top=4.71pt]
+Woman on the Titanic Had a
+
+[.r-1-pearls.s-rb.z1081,margin-top=0.96pt]
+Fortune in Jewels.
+
+[.r-1-pearls.f-roman.z856.in101.jl.p1103,margin-top=0.25pt]
+London, April 16 (Tuesday).—In addi-
+tion to a valuable shipment of diamonds
+aboard the Titanic, it is said that among
+almost priceless jewels carried by the
+passengers are pearls, belonging to an
+American woman, valued at $600,000. The
+steamer also carried a large amount in
+bonds and a very valuable registered
+
+[.r-1-pearls.f-roman.z856.in0,margin-top=3.9pt]
+mail.
+
+[.r-1-pearls.f-roman.z856.in101.jl.p916,margin-top=-2.04pt]
+It is stated that the owners were un-
+able to insure the Titanic to the full
+amount because the British and Euro-
+pean markets were not big enough to
+
+[.r-1-pearls.f-roman.z856.in0,margin-top=4.66pt]
+absorb the sum.
+
+[.r-1-pearls.s-gb.z1088,margin-top=2.25pt]
+RAILROAD PRESIDENT’S SON LOST.
+
+[.r-1-pearls.f-roman.z856.in101.p796,margin-top=0.88pt]
+Los Angeles, April 15.—Walter M. Clark,
+of the Titanic’s passenger list, is the son
+of J. Ross Clark, vice-president of the San
+Pedro, Los Angeles & Salt Lake Railroad.
+
+// end::r-1-pearls[]
+
+!===
+
+a|
+// tag::r-1-lead[]
+[.r-1-lead.s-ch.z1625,margin-top=16.56pt]
+Wireless from Olympic’s Captain Gives News
+
+[.r-1-lead.s-ch.z1676,margin-top=5.38pt]
+and Weeping Women Gather at White
+
+[.r-1-lead.s-ch.z1485,margin-top=5.26pt]
+Star Offices to Learn Fate of Relatives
+
+[.r-1-lead.s-ch.z1677,margin-top=6.01pt]
+—1,323 Passengers on Ship
+
+[.r-1-lead.s-ch.z1933,margin-top=1.89pt]
+and Crew of 890.
+
+[.r-1-lead.s-chc.z1694,margin-top=20.76pt]
+SURVIVORS EIGHT HOURS IN BOATS
+
+[.r-1-lead.s-chs.z1208,margin-top=20.93pt]
+No Word from Virginian or Parisian, Which Vice-President
+
+[.r-1-lead.s-chs.z1229,margin-top=5.98pt]
+Franklin Hopes Saved Others—Disaster Greatest in
+
+[.r-1-lead.s-chs.z1445,margin-top=3.47pt]
+History, if Hope Is Unfounded—Captain
+
+[.r-1-lead.s-chs.z1477,margin-top=2.45pt]
+Believed to Have Gone Down
+
+[.r-1-lead.s-chs.z1582,margin-top=2.86pt]
+at His Post of Duty.
+
+[.r-1-lead.tally.z1069,margin-top=20.04pt]
+FIRST CLASS PASSENGERS ON TITANIC [.dots]#318#
+
+[.r-1-lead.tally.z1069,margin-top=1.19pt]
+SECOND CLASS PASSENGERS ON TITANIC [.dots]#261#
+
+[.r-1-lead.tally.z1069,margin-top=1.58pt]
+THIRD CLASS PASSENGERS ON TITANIC [.dots]#740#
+
+[.r-1-lead.tally.z1069,margin-top=1.48pt]
+CREW OF THE TITANIC [.dots]#890#
+
+[.r-1-lead.tally-in.z1069,margin-top=9.19pt]
+TOTAL [.dots]#2,209#
+
+[.r-1-lead.tally.z1069,margin-top=0.9pt]
+REPORTED SAVED ON THE CARPATHIA [.dots]#866#
+
+[.r-1-lead.tally-in.z1069,margin-top=9.49pt]
+MISSING [.dots]#1,343#
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=10.5pt]
+The White Star liner Titanic sank at 2:20 a. m. yesterday about
+1,150 miles east of Sandy Hook.
+
+[.r-1-lead.f-roman.z1018.in187.p1395,margin-top=-0.57pt]
+First reports placed the number of survivors, passengers and crew,
+at 675. At 2:30 o’clock this morning a dispatch relayed by the Olympic
+said the number aboard the Carpathia was 866.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=-0.08pt]
+A still later dispatch said that the Allan Line steamer Virginian had
+probably picked up some of the victims.
+
+[.r-1-lead.f-roman.z1018.in187.p1406,margin-top=0.84pt]
+{empty}P. A. S. Franklin, vice-president of the International Mercantile
+Marine Company, admitted last night that probably only 675 out of
+more than 2,200 souls on the lost vessel were saved, which means that
+more than 1,500 persons went down with her.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=0.07pt]
+When the full text of the Olympic’s message was given out it was
+found that it estimated the loss at 1,800.
+
+[.r-1-lead.f-roman.z1018.in187.p1388,margin-top=-0.46pt]
+Shortly before 11 o’clock last night a slight ray of hope that more
+than the 675 on the Carpathia had been saved appeared in a message
+from the Marconi operator at Sable Island, near the scene of the dis-
+aster.
+
+[.r-1-lead.f-roman.z1018.in187.p1400,margin-top=0.44pt]
+In answer to an inquiry regarding the delivery of wireless mes-
+sages to passengers on the Titanic, the operator at Sable Island replied
+that it was difficult to deliver them, “as the passengers are believed to
+be dispersed among several vessels.”
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=-0.12pt]
+Those saved are coming to New York on the Cunard liner Car-
+pathia.
+
+[.r-1-lead.f-roman.z1018.in187.p1395,margin-top=-0.35pt]
+The Carpathia is expected to reach New York on Thursday night.
+Mr. Franklin sent a wireless message to her last night asking that the
+names of the survivors aboard be sent by wireless.
+
+[.r-1-lead.f-roman.z1018.in187.p1395,margin-top=0.28pt]
+A report that John Jacob Astor was among those lost and that
+Mrs. Astor had been saved was current last night, but could not be
+confirmed.
+
+[.r-1-lead.s-cbc.z1111,margin-top=3.43pt]
+MOSTLY WOMEN AND CHILDREN SAVED.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=3.9pt]
+Both passengers and crew are among those saved. Of the passen-
+gers saved nearly all are women and children.
+
+[.r-1-lead.f-roman.z1018.in187.p1395,margin-top=0.08pt]
+The only report received is from the Carpathia, via the Olympic.
+The Virginian and the Parisian, which were also racing to the founder-
+ing Titanic, have not yet been heard from.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=-0.29pt]
+The Olympic, of the White Star Line, reported that the Carpathia
+was the first vessel to reach the position of the Titanic.
+
+[.r-1-lead.f-roman.z1018.in187,margin-top=1.88pt]
+She found only small boats and wreckage.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=1.47pt]
+All the boats of the Titanic were accounted for, according to the
+Olympic.
+
+[.r-1-lead.f-roman.z1018.in187.p1381,margin-top=0.16pt]
+Vice-President Franklin said shortly after 11 o’clock last night
+that he had received a wireless message saying that the Carpathia had
+rescued the survivors of the Titanic she carried from a small fleet of
+lifeboats picked up at 10:30 o’clock yesterday morning, more than eight
+hours after the Titanic sank.
+
+[.r-1-lead.f-roman.z1018.in187.p1440,margin-top=-0.13pt]
+He said that he believed the Carpathia was making all possible
+speed for New York in order that the rescued passengers, who were
+suffering from exposure, might have medical attention at the earliest
+minute.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=-1.49pt]
+The Leyland liner Californian remained in the vicinity of the
+disaster to search for survivors.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=-0.48pt]
+Captain E. J. Smith, commodore of the White Star fleet, is believed
+to have gone down with his ship.
+
+[.r-1-lead.f-roman.z1018.in187.p1402,margin-top=-0.39pt]
+Among those aboard the ship were F. D. Millet, the artist and
+president of the Consolidated American Academy at Rome; Mr. and
+Mrs. John Jacob Astor, Major Archibald Butt, military aid to President
+Taft; C. M. Hays, president of the Grand Trunk Railway; J. Bruce
+Ismay, chairman and managing director of the White Star Line; W. T.
+Stead, Mrs. Isidor Straus, Mr. and Mrs. G. D. Widener, Mr. and Mrs.
+Harry Widener, Benjamin Guggenheim, Countess Rothes, Mr. and
+Mrs. D. W. Marvin, who were returning from their wedding trip, the
+latter a sister of Mrs. Wheelock, of No. 317 Riverside Drive; Norman
+Carlyle Craig, M. P. for the Isle of Thanet; Mr. and Mrs. Washington
+Dodge, Colonel Archibald Gracie and Mr. and Mrs. Henry S. Harper.
+
+[.r-1-lead.s-cbc.z1113,margin-top=4.84pt]
+WEEPING WOMEN GATHER AT WHITE STAR OFFICES.
+
+[.r-1-lead.f-roman.z1018.in187.p1440,margin-top=2.75pt]
+Shortly after 9 o’clock last night weeping women began to gather
+at the White Star offices, at No. 9 Broadway, seeking news of relatives
+who had sailed on the Titanic.
+
+[.r-1-lead.f-roman.z1018.in187.p1404,margin-top=0.44pt]
+The first statement given out at the White Star offices conceding
+the loss of the Titanic said:
+
+[.r-1-lead.f-roman.z1018.in187.p1359,margin-top=0.21pt]
+“Captain Haddock of the Olympic sends a wireless message to
+the White Star offices here that the steamer Titanic sank at 2:20 a. m.,
+after all passengers and crew had been lowered to lifeboats and trans-
+
+// end::r-1-lead[]
+
+|===
+
+// end::page-1[]
+
+// page 2
+// tag::page-2[]
+[.page2%notitle]
+== Page 2
+
+image::blank.svg[role=spacer,pdfwidth=1pt,pdfheight=0.01pt]
+
+// tag::r-2-folio[]
+[.r-2-folio.in0,margin-top=16.85pt]
+[.folio,cols="2880,7200,29880,36900,35748",grid=none,frame=none]
+!===
+a|
+a|[.z1913.c-justify]
+2 {asterisk} {asterisk} {asterisk} {asterisk}
+a|
+a|[.z1463.c-justify]
+NEW-YORK TRIBUNE, TUESDAY, APRIL 16, 1912.
+a|
+!===
+
+// end::r-2-folio[]
+
+// tag::r-2-section-head[]
+[.r-2-section-head.s-cap.z1193,margin-top=20.94pt]
+LONGITUDINAL SECTION OF THE TITANIC, SHOWING THE DISPOSITION OF COMPARTMENTS AND WATERTIGHT BULKHEADS.
+
+[.r-2-section-head.s-capt.z910,margin-top=2.71pt]
+The builders of the Titanic proclaimed her unsinkable, and utilized every modern improvement to make her so. The collision with the iceberg must have ripped her open far back of the bow, as far as the boiler and engine rooms, where the demands of space for machinery
+
+[.r-2-section-head.s-capt.z894,margin-top=-5.67pt]
+rendered it impossible to construct compartments of such size that they could be flooded with safety to the ship. It is believed that the Titanic’s bottom was ripped open so far back that the ingenuity of the best shipbuilders of the world went for naught.
+
+// end::r-2-section-head[]
+
+
+image::section.jpg[pdfwidth=1126.08pt,role=cut,margin-top=9.52pt]
+
+[.inside,cols="1836,1742,2678",grid=cols,frame=none]
+|===
+a|
+// tag::r-2-c12[]
+[.r-2-c12.f-roman.z1022.in0.p1404,margin-top=19.1pt]
+ferred to the Virginian. The steamship Carpathia, with several hun-
+dred passengers of the Titanic, is now en route to New York.”
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=0.6pt]
+The statement that all the passengers and crew were transferred
+was qualified later.
+
+[.r-2-c12.s-cbn.z1092,margin-top=3.61pt]
+“AT 2:20 THE TITANIC FOUNDERED.”
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=2.79pt]
+Shortly afterward the following was given out as the message
+from Captain Haddock:
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=2.56pt]
+“At 2:20 a. m. the Titanic foundered. Carpathia proceeding to New
+York with passengers. H. J. HADDOCK, S. S. Olympic.”
+
+[.r-2-c12.f-roman.z1022.in187,margin-top=1.69pt]
+After this message was handed to Vice-President Franklin he said:
+
+[.r-2-c12.f-roman.z1022.in187,margin-top=4.71pt]
+“It is horrible!
+
+[.r-2-c12.f-roman.z1022.in187.p1413,margin-top=0.97pt]
+“As far as we know, it has been rumored from Halifax that three
+steamers have passengers on board, namely, the Virginian, the Car-
+pathia and the Parisian.
+
+[.r-2-c12.f-roman.z1022.in187.p1296,margin-top=0.14pt]
+“Now we have heard from Captain Haddock that the Titanic sank
+at 2:20 this morning. We have also learned from him that the Car-
+pathia had 675 survivors on board.
+
+[.r-2-c12.f-roman.z1022.in187.jl.p1269,margin-top=1.15pt]
+“It is very difficult to learn if the Virginian and the Parisian have
+any survivors on board. We have asked Captain Haddock and our
+agent at Halifax to ascertain if there are any passengers aboard the
+
+[.r-2-c12.f-roman.z1022.in0,margin-top=3.3pt]
+two steamships.
+
+[.r-2-c12.f-roman.z1022.in187.p1384,margin-top=1.46pt]
+“We very much fear, however, that there has been a great loss of
+life, but it is impossible for us to give further particulars until we have
+heard from the Virginian and the Parisian. We have no information
+that there are any passengers aboard those two vessels.
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=-0.5pt]
+“We are very hopeful that the rumors reaching us that the Vir-
+ginian and the Parisian have survivors aboard are true.
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=0.42pt]
+“There was a sufficient number of lifeboats on the Titanic to carry
+all the passengers.
+
+[.r-2-c12.f-roman.z1022.in187.p1397,margin-top=-0.44pt]
+“I was confident to-day, when I made the statement that the Titanic
+was unsinkable, that the steamship was safe and that there would be
+no loss of life. The first definite news came in the message from Cap-
+tain Haddock.”
+
+[.r-2-c12.f-roman.z1022.in187.p1388]
+Mr. Franklin denied emphatically that the White Star Line had
+withheld the report of the sinking of the Titanic. He said that the
+wireless message from Captain Haddock was made public by the com-
+pany a few minutes after it was received in the offices.
+
+[.r-2-c12.f-roman.z1022.in187.p1377,margin-top=0.15pt]
+White Star officials said last night that the Titanic carried 1,323
+passengers, of whom 318 were first class, 262 second class and 743
+steerage.
+
+[.r-2-c12.f-roman.z1022.in187,margin-top=1.46pt]
+The crew numbered 890, including officers, men and stewardesses.
+
+[.r-2-c12.f-roman.z1022.in187.p1395,margin-top=1.91pt]
+After the message was received from Captain Haddock the White
+Star Line cancelled its orders for special trains to proceed to Halifax
+to bring to New York the rescued passengers of the Titanic.
+
+[.r-2-c12.f-roman.z1022.in187,margin-top=1.5pt]
+The disaster is the greatest known to shipping history.
+
+[.r-2-c12.f-roman.z1022.in187.p1395,margin-top=1.97pt]
+Those nearest approaching it were the loss of the steamer Atlan-
+tic, in 1873, with 574 lives, and the sinking of La Bourgogne, in 1898,
+with 571 lives.
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=-0.15pt]
+There still remains the hope that the Virginian and the Parisian
+will report having saved some of the passengers or crew of the Titanic.
+
+[.r-2-c12.f-roman.z1022.in187.p1393,margin-top=0.32pt]
+It was not until after 7 o’clock last night that it became known that
+the Titanic had foundered with a terrible loss of life. All day hopes
+had been buoyed up by messages telling of the rescue of all on board,
+and it was also reported that the vessel would be towed safely into
+harbor at Halifax.
+
+[.r-2-c12.s-cbn.z1144,margin-top=-0.14pt]
+THE EARLY MESSAGES HOPEFUL, BUT UNOFFICIAL.
+
+[.r-2-c12.f-roman.z1022.in187.p1399,margin-top=1.57pt]
+The early messages, however, were all unofficial, and there was
+always the fear of the bad news that came flashing over the wires from
+Cape Race soon after 7 o’clock that the Titanic had sunk south of the
+Newfoundland Banks three hours and fifty-five minutes after striking
+an iceberg.
+
+[.r-2-c12.f-roman.z1022.in187.p1406,margin-top=-0.49pt]
+The first official information, sent by Captain Haddock of the
+Titanic’s sister ship, the Olympic, told the awful extent of the disaster
+—that of the more than 2,200 persons on the Titanic only 675 had been
+saved. The significant line was added that nearly all of those saved
+were women and children.
+
+[.r-2-c12.f-roman.z1022.in187.p1417,margin-top=-0.18pt]
+There were 230 women and children in the first and second cabins.
+It is not known how many there were in the steerage, but the dispatch
+seems to spell the doom of nearly the entire crew as well as the men
+passengers.
+
+[.r-2-c12.s-cbn.z1083,margin-top=0.75pt]
+HELP FROM VIRGINIAN AND PARISIAN NOT PROBABLE.
+
+[.r-2-c12.f-roman.z1022.in187.p1420,margin-top=1.57pt]
+In the confusion reigning at the White Star offices Vice-President
+Franklin studied the situation as calmly as possible. In spite of hopes
+to the contrary, he did not believe the Virginian and the Parisian could
+have reached the scene of the disaster in time to be of assistance.
+
+[.r-2-c12.f-roman.z1022.in187.p1197,margin-top=0.17pt]
+When the Virginian first reported her receipt of the “S O S”
+signal on Sunday night she said she probably would not be able to
+reach the Titanic before 10 a. m. yesterday. This would have been
+nearly eight hours after the Titanic sank. It was equally doubtful if
+the Parisian could have reached the doomed vessel earlier.
+
+[.r-2-c12.f-roman.z1022.in187.p1134,margin-top=0.68pt]
+Mr. Franklin said that from his knowledge of Captain Smith’s
+gallantry and heroism on other occasions he believed the veteran officer
+stuck to the bridge and sank with his vessel.
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=-1.23pt]
+In discussing the line in the dispatches that nearly all of those
+saved were women and children Mr. Franklin said:
+
+[.r-2-c12.f-roman.z1022.in187.p1404,margin-top=-3.85pt]
+“There is no rule of the sea which requires the men to sacrifice
+themselves for the women and children, but it is a rule of courtesy
+
+// end::r-2-c12[]
+
+[.ads,cols="950,886",grid=cols,frame=none]
+!===
+a!
+
+image::hunyadi.jpg[pdfwidth=167.40pt,role=cut,margin-top=7.43pt]
+
+a!
+// tag::r-2-hardman[]
+[.r-2-hardman.s-hm0.z2078,margin-top=26.66pt]
+The Hard Man
+
+[.r-2-hardman.s-hm1.z981,margin-top=5.69pt]
+A rattling story of military life
+
+[.r-2-hardman.s-hm1.z1039,margin-top=4.44pt]
+and adventure and mystery.
+
+[.r-2-hardman.s-hm1.z1167,margin-top=-0.03pt]
+The scene is in Africa. By
+
+[.r-2-hardman.s-hm1.z992,margin-top=1.57pt]
+Campbell MacCulloch. In next
+
+[.r-2-hardman.s-hm1.z1003,margin-top=2.07pt]
+Sunday Magazine of the
+
+[.r-2-hardman.s-hm2.z1877,margin-top=7.83pt]
+New-York Tribune
+
+// end::r-2-hardman[]
+
+!===
+
+a|
+// tag::r-2-c34[]
+[.r-2-c34.f-roman.z903.in0.p1217,margin-top=15.58pt]
+both on land and sea that gallant men have often observed in time of
+disaster. It is generally true that men make this sacrifice at sea to
+women of the steerage as well as to those who travel in the first and
+second cabins.”
+
+[.r-2-c34.f-roman.z903.in127.p1199,margin-top=-0.09pt]
+The White Star Line officials figured from their data that the
+Olympic was forty miles from the place where the Titanic sank when
+she sent the news last night. They calculated that at 7 o’clock last
+night the Carpathia was 1,080 miles east of Sandy Hook. As the aver-
+age run of the Carpathia is fifteen knots an hour, she should reach New
+York early on Thursday evening.
+
+[.r-2-c34.s-gbl.z2520,margin-top=10.98pt]
+HOW TITANIC’S CAREER
+
+[.r-2-c34.s-gbr.z2565,margin-top=-3.78pt]
+WAS ENDED BY ICEBERG
+
+[.r-2-c34.f-roman.z903.in127.p1120,margin-top=12.27pt]
+While the new ten-million-dollar White Star liner Titanic, carrying to this
+port some of the richest and most prominent persons in the United States and
+England, was steaming along on her maiden trip she crashed into a fog
+hidden iceberg, to the eastward of Cape Race, at 10:25 o’clock on Sunday night,
+and four hours later she went to the bottom of the Atlantic.
+
+[.r-2-c34.f-roman.z903.in127.p1087,margin-top=0.42pt]
+Fresh from the builders’ yards, the biggest merchantman in the world left
+Southampton last Wednesday with a passenger complement of 1,470 souls and
+a crew of 890, and from the speed she had been making with her forced draft
+and picked coal it was certain she would have reached this port in record time.
+
+[.r-2-c34.f-roman.z903.in127.p1093,margin-top=0.36pt]
+Nothing thus far has been learned to indicate her speed at the time of the
+collision, but from the impact with the ice mountain that sent her to the bot-
+tom it is almost certain she was plunging along at close to 21 knots, the best
+velocity her triple screws could give.
+
+[.r-2-c34.s-sb.z938,margin-top=7.96pt]
+More Than 1,500 Persons Believed to Have Perished.
+
+[.r-2-c34.f-roman.z903.in127.p1134,margin-top=2.43pt]
+Only 675 souls of the 2,360 on board have thus far been accounted for, and
+it is believed more than 1,500 persons have perished with the biggest ship in
+the world, which was thought to be unsinkable.
+
+[.r-2-c34.f-roman.z903.in127.p1116,margin-top=-0.06pt]
+Misfortune and mishap had camped in the wake of the Titanic’s sister ship,
+the Olympic, and it was hoped by the White Star Line that the latest leviathan
+from the Harland & Wolff yards, at Belfast, would have better luck.
+
+[.r-2-c34.f-roman.z903.in127.p1103,margin-top=0.03pt]
+Fate, however, seemed to have set its seal on the big, unwieldy queens of
+the Atlantic, and the Titanic did not escape. Three times had the Olympic
+been in trouble, the mishaps costing her owners almost a million dollars for
+drydocking, loss of business and repairs.
+
+[.r-2-c34.f-roman.z903.in127.p1089,margin-top=-0.31pt]
+Only once did the Titanic get in trouble. That was off Cape Race on Sun-
+day night, when she went down in water so deep that no means known to man
+could bring her back to the ocean highway.
+
+[.r-2-c34.f-roman.z903.in127.p1152,margin-top=-0.73pt]
+Never in the history of shipping has a vessel of her great cost and tonnage
+crossed the seas, much less been wiped out of existence so quickly and so un-
+expectedly.
+
+[.r-2-c34.f-roman.z903.in127.p1114,margin-top=-1.04pt]
+She was looked upon by the shipping world as the unsinkable ship. Her
+builders have boasted that no seas could harm her nor could any vessel afloat
+damage her to the point of sinking. All these apparently substantial conten-
+tions were made with no reference to treacherous fogs or deadly icebergs, the
+dreaded traps of the Atlantic.
+
+[.r-2-c34.s-sb.z1001,margin-top=2.66pt]
+Other Ships Escaped Same Wall of Ice.
+
+[.r-2-c34.f-roman.z903.in127.p1119,margin-top=2.67pt]
+Probably ten or twenty feet of leeway or a half-inch turn of the steam
+gear wheel on the bridge would have saved the White Star beauty. The strange
+part of the loss of the Titanic is that other vessels of far less tonnage encoun-
+tered the same zone of ice and came through safely. It is a rule of the sea
+that captains shall inform one another ahead and astern of them that ice is in
+the tracks. It is thought that the wireless relayed from ship and shore must
+have informed Captain Smith of the dangerous ice zone ahead.
+
+[.r-2-c34.f-roman.z903.in127.p1139,margin-top=-0.01pt]
+Captain Dow, of the Cunarder Carmania, which got to port on Sunday,
+after a five-hour fight through ice, reported that he came into the ice sud-
+denly in a fog bank, and it is thought that the Titanic had a similar encounter,
+but hit the hidden iceberg before her master had time to change his course or
+stop her.
+
+[.r-2-c34.f-roman.z903.in127.p1094,margin-top=-0.17pt]
+While it is generally understood that all vessels shall reduce their speed to
+half when running through fog, this rule is not always put into force by the
+captains of steamships of great tonnage. Some of them run at high speed, on
+the theory that whatever they hit head-on must suffer the damage, while their
+own chances of getting off light are in the majority.
+
+[.r-2-c34.f-roman.z903.in127.p1107,margin-top=0.3pt]
+{empty}J. Bruce Ismay, president of the International Mercantile Marine Company,
+whose father left him the biggest bulk of the stock of the White Star Line, was
+one of the Titanic’s passengers. He was anxious to see how the big vessel be-
+haved on the westward run, and incidentally make personal observations for the
+improvement of the service on board.
+
+[.r-2-c34.s-sb.z937,margin-top=5.51pt]
+Fairly Good Weather Preceded Accident.
+
+[.r-2-c34.f-roman.z903.in127.p1174,margin-top=2.16pt]
+The lost liner had had fairly good weather up to the time of her encounter
+with the fog. The entire voyage had been one of merriment, and in various
+lounges, even at the time her sharp stem ploughed into the immovable ice wall,
+men and women in evening dress sat about sipping coffee and playing cards.
+
+[.r-2-c34.f-roman.z903.in127.p1132,margin-top=-0.45pt]
+Judging from the terrific jolt the ice gave the Anchor liner Columbia a
+year ago, running at about eight knots, the Titanic’s passengers must have been
+thrown violently about and many injured. No one aboard knew better than
+the venerable Captain Smith, commodore of the fleet, that the Titanic’s
+death knell had been sounded.
+
+[.r-2-c34.f-roman.z903.in127.p1116,margin-top=-0.19pt]
+He knew when the high sharp stem pierced the almost adamantine berg
+with all the force of the highest powered engines in the world behind it that
+there was no hope for his steel charge.
+
+[.r-2-c34.f-roman.z903.in127.p1143,margin-top=-0.34pt]
+Many of those who had retired were thrown out of their berths, and ran
+half clad to the decks, while those who had been lolling in the libraries, smok-
+ing rooms and lounges ran for safety.
+
+[.r-2-c34.f-roman.z903.in127.p1110,margin-top=0.45pt]
+The snapping of steel plates and the creaking of wooden fittings in such a
+crisis as this is enough to frighten the most courageous traveller. As the Ti-
+tanic’s bow buckled in its niche of green ice with a roar that reverberated no
+doubt in the frosted graveyard in which she was soon to lie, tons of the softer
+ice crashed upon the splintered deck forward and forced her to drink long
+and deep of the waters that were soon to pull her under.
+
+[.r-2-c34.s-sb.z999,margin-top=5.84pt]
+Calls for Help Immediately Follow Crash.
+
+[.r-2-c34.f-roman.z903.in127.p1111,margin-top=2.69pt]
+With his clean and careful sea record of forty years behind him the white
+skipper of the Titanic never flinched. He put aside the thought that his vessel
+was doomed and instantly ordered J. G. Phillips, his wireless operator, to send
+out calls for help. Captain Smith knew that soon the flood would get to his
+engines and cut off the power that fed his wireless. He knew, too, that the
+auxiliary storage batteries could not transmit to any effective distance, so he
+was urgent that help should be called for while his engines were working.
+
+[.r-2-c34.f-roman.z903.in127.jl.p1085,margin-top=0.27pt]
+When it became known that the skipper had called for instant help alarm
+spread throughout the entire ship, and it was then that the nerve of the skipper
+and the brave men under him asserted itself. The great bulk of steel that an
+hour before had defied the fog and ice settled by the head, and gradually, as
+the flood worked itself aft to her vitals, she settled slowly until the main deck
+
+[.r-2-c34.f-roman.z903.in0,margin-top=-1.27pt]
+was awash.
+
+[.r-2-c34.f-roman.z903.in127.p1080,margin-top=3.44pt]
+No reports concerning the discipline of the crew were received at the White
+Star office, but judging from information from the Olympic that women of the
+saloon were cared for first, followed in turn by the women of the second cabin
+and steerage, the behavior of the Titanic’s officers must have been unsurpassed.
+
+[.r-2-c34.f-roman.z903.in127.p1093,margin-top=-0.14pt]
+As the lifeboats were swung out the British fighting blood of the officers as-
+serted itself. Armed, no doubt, with revolvers to drive back the panic stricken
+male passengers, the women and children were packed away in the lifeboats
+and lowered over the side.
+
+[.r-2-c34.f-roman.z903.in127,margin-top=1.6pt]
+There was no occasion for delay alongside. The men at the oars were or-
+
+// end::r-2-c34[]
+
+a|
+[.right,cols="888,868,922",grid=cols,frame=none]
+!===
+2+a!
+// tag::r-2-c56[]
+[.r-2-c56.f-roman.z894.in0.p1134,margin-top=6.91pt]
+dered to row far away to be clear of the great suction that would surely draw
+them down when the Titanic dropped under.
+
+[.r-2-c56.s-sb.z995,margin-top=4.39pt]
+Officers Do Not Quail at Thought of Death.
+
+[.r-2-c56.f-roman.z894.in132.jl.p1179,margin-top=-2.27pt]
+Darkness and fog added to the difficulty. Total darkness undoubtedly pre-
+vailed when the lifeboats were launched, for the same lighting dynamos that fed
+the wireless had long before passed out of commission. By the dim light of oil
+
+[.r-2-c56.f-roman.z894.in0.p1251,margin-top=-3.94pt]
+lanterns the Titanic’s officers, knowing well that within a few hours they would
+rest on the bottom with their ship, kept back the cowards and helped the women
+and children to safety.
+
+[.r-2-c56.f-roman.z894.in132.p1125,margin-top=-2.98pt]
+The Titanic had, it is thought, twenty lifeboats, each capable of holding forty
+persons. At best these life craft could not care for more than eight hundred
+persons. There were several life rafts on board, but the use of these was not
+mentioned in the Olympic’s messages. There was plenty of help coming, but
+the sad part of it all was that willing hands were too far away.
+
+[.r-2-c56.f-roman.z894.in132.p1158,margin-top=0.64pt]
+Women of the saloon who had been making merry aboard the ship a few
+hours before were hustled, with their jewels and their purple and fine linen,
+into lifeboats with their modestly clad sisters of the steerage. For once in life
+they were on a common plane, huddled together in lifeboats, where each had a
+common thought that she was leaving behind a father, husband or son to perish
+in the steel palace that brought them to the parting of the ways.
+
+[.r-2-c56.s-sb.z918,margin-top=1.38pt]
+Rescued Only Witnesses of Titanic’s End.
+
+[.r-2-c56.f-roman.z894.in132.p1136,margin-top=1.09pt]
+The Titantic went down unseen by other eyes than those watery ones in
+the lifeboats, and it is doubtful if even they through the misty night
+were able to see her sink. The awful roar as she plunged under was perhaps
+the only sign the survivors had that she had disappeared.
+
+[.r-2-c56.f-roman.z894.in132.p1118,margin-top=-2.61pt]
+Apart from the men who manned the lifeboats, it is believed that no member
+of the crew was saved. According to those who know him, Captain Smith and
+his officers assembled on the bridge, and, in accordance with the rules of the sea,
+bravely went down with their ship.
+
+[.r-2-c56.f-roman.z894.in132.p1100,margin-top=-0.1pt]
+Several hours later, when those on the Titanic had passed to rest, the
+Cunard liner Carpathia, which could undoubtedly have saved all hands, came by
+at top speed, too late to be of assistance. Wreckage and crowded lifeboats were
+the only marks above the surface to show where the great Titanic had been.
+
+[.r-2-c56.f-roman.z894.in132.p1143,margin-top=-0.51pt]
+The Cunarder promptly took the survivors aboard and put about for New
+York. The Allan liners Virginian and Parisian came by later, but it is not
+known whether they gathered in any of those from the Titanic.
+
+[.r-2-c56.s-sb.z962,margin-top=2.57pt]
+Olympic Stops Over Younger Sister’s Grave.
+
+[.r-2-c56.f-roman.z894.in132.p1116,margin-top=1.22pt]
+At dusk yesterday the Olympic at high speed came over the grave of her
+younger sister and stopped. On her bridge stood Captain Haddock, the man
+whom the Titanic’s disaster had made commodore of the White Star fleet.
+
+[.r-2-c56.f-roman.z894.in132.p1129,margin-top=0.44pt]
+Late last night, as he was leaving his office, P. A. S. Franklin, vice-presi-
+dent of the International Mercantile Marine Company, was asked if there were
+enough lifeboats on the Titanic to take care of all on board, and he replied that
+he did not know.
+
+[.r-2-c56.f-roman.z894.in132,margin-top=0.4pt]
+After a moment’s hesitation he added:
+
+[.r-2-c56.f-roman.z894.in132.p1161,margin-top=0.38pt]
+“The capacity of the lifeboats is between thirty-five and forty each. I
+do not know the number of lifeboats carried by the Titanic. I think it prob-
+able, however, that the steamer was equipped with lifeboats enough to ac-
+commodate all.”
+
+[.r-2-c56.f-roman.z894.in132.p1134,margin-top=-1.45pt]
+Mr. Franklin was asked if it was probable that all the passengers rescued
+were women and children, it having been reported that the men on board
+were held back while the women and children entered the lifeboats.
+
+[.r-2-c56.f-roman.z894.in132,margin-top=0.32pt]
+“I assume that such would be the case,” he replied.
+
+[.r-2-c56.f-roman.z894.in132.p1098,margin-top=1.67pt]
+Mr. Franklin said that, in his opinion, if it were found that all passengers
+could not be taken from the liner the women in the steerage would have been
+taken from the Titanic before the men occupying first and second class cabins.
+
+// end::r-2-c56[]
+
+a!
+// tag::r-2-sos[]
+[.r-2-sos.s-xc.z2168,margin-top=9.82pt]
+“SAVE OUR SOULS,” WAS
+
+[.r-2-sos.s-xc.z2284,margin-top=11.87pt]
+TITANIC’S LAST APPEAL
+
+[.r-2-sos.s-gc.z1312,margin-top=18.85pt]
+Wireless Operators So Inter-
+
+[.r-2-sos.s-gc.z1369,margin-top=3.54pt]
+preted the “S O S” Signal
+
+[.r-2-sos.s-gc.z1234,margin-top=4.41pt]
+That Supplanted “C Q D.”
+
+[.r-2-sos.s-gcc.z1426,margin-top=19.58pt]
+OPERATOR OF EXPERIENCE
+
+[.r-2-sos.s-rb.z1152,margin-top=15.6pt]
+John George Phillips, Trusted
+
+[.r-2-sos.s-rb.z1172,margin-top=0.07pt]
+Employe of Marconi Com.
+
+[.r-2-sos.s-rb.z1220]
+pany, Had Best Appa.
+
+[.r-2-sos.s-rb.z1093,margin-top=1.12pt]
+ratus at Command.
+
+[.r-2-sos.s-cr.z744,margin-top=6.77pt]
+{empty}[By Cable to The Tribune.]
+
+[.r-2-sos.f-roman.z881.in79.p927,margin-top=1.78pt]
+London, April 16 (Tuesday).—The man
+who sent the fateful “S O S” wireless ap-
+peal for assistance, the Marconi operator
+aboard the Titanic, is John George Phil-
+lips, a resident of Godalming, Surrey.
+
+[.r-2-sos.f-roman.z881.in79.p925,margin-top=-0.62pt]
+An official of the Marconi Company
+told “The Daily Express” representative
+that Phillips is one of their most trusted
+and efficient men.
+
+[.r-2-sos.f-roman.z881.in79.p912,margin-top=-0.04pt]
+“He has been six years in our em-
+ployment,” that official said, “and he is
+twenty-six years old. He has operated
+the wireless all over the world and on
+many vessels. His installation on the
+Titanic possessed a range of about 500
+miles under all conditions. Usually,
+however, it would convey messages to a
+much greater distance.
+
+[.r-2-sos.f-roman.z881.in79.p934,margin-top=0.27pt]
+“Phillips took day and night turns
+with his assistant at the apparatus, so
+that it was never for a moment left un-
+watched.
+
+[.r-2-sos.f-roman.z881.in79.p936,margin-top=-0.78pt]
+“The equipment of the wireless cabin
+on the Titanic included all the latest
+improvements and was the best of its
+kind in existence.”
+
+[.r-2-sos.f-roman.z881.in79.p883,margin-top=-0.39pt]
+The official explained how the Titanic’s
+cry of distress would be dealt with when
+the first “S O S” signals came to thrill
+the night shift man in the operating
+room on dreary Cape Race. The old
+danger signal was “C Q D,” and the
+operators used to speak of it as “Come
+quickly; danger.” Now they have this
+phrase for the new “S O S” message.
+They speak of it as “Save our souls.”
+
+[.r-2-sos.f-roman.z881.in79.p880,margin-top=0.42pt]
+The “C Q D” signal was abandoned
+because it was possible to confuse it
+with others. Thus, the Postmaster Gen-
+eral decided to substitute “S O S,” which
+in the Morse code is three dots, two
+dashes and three dots. There is nothing
+else like that in all the Morse language.
+
+// end::r-2-sos[]
+
+a!
+// tag::r-2-names-cont[]
+[.r-2-names-cont.s-xc.z2949,margin-top=13.0pt]
+NAMES OF SURVIVORS
+
+[.r-2-names-cont.s-xcr.z2363,margin-top=7.94pt]
+ON THE CARPATHIA
+
+[.r-2-names-cont.s-jump.z729,margin-top=17.16pt]
+Continued from first page.
+
+[.r-2-names-cont.f-gothicl.z844.in0.p917,margin-top=11.47pt]
+the pasenger list. It is believed they are
+the Ryersons, of Chicago, who were
+bound home to attend the funeral of
+Arthur Ryerson, jr., who was killed in
+an automobile accident near Philadel-
+phia.
+
+[.r-2-names-cont.f-gothicl.z844.in72.p918,margin-top=-0.14pt]
+There was speculation here after the
+receipt of the incomplete list of the sur-
+vivors as to whether or not the first
+name which came through, “Mrs. Jacob
+P.,” with the next word missing, was
+not probably Mrs. John Jacob Astor.
+
+[.r-2-names-cont.f-gothicl.z844.in72.p891,margin-top=3.38pt]
+At 2 a. m. to-day the following addi-
+tional list of survivors was given out in
+the offices of the White Star Line:
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=0.16pt]
+Mrs. Harry Anderson.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.12pt]
+Miss Emile Kernochen.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-0.77pt]
+{empty}J. Turny.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.05pt]
+Miss Fortune.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.08pt]
+{empty}J. B. Fair.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.08pt]
+{empty}J. B. Fair, jr.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-0.62pt]
+Frederick Woolmer.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.37pt]
+Howard B. Case.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.27pt]
+Mrs. Cummings.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-0.79pt]
+Robert Douglass.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.07pt]
+Mrs. Harper.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-1.23pt]
+Mrs. Mark.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-0.89pt]
+Mr. Marl.
+
+[.r-2-names-cont.f-gothicl.z844.in72,margin-top=-0.27pt]
+Miss Lucille Fortune.
+
+[.r-2-names-cont.s-gcc.z1449,margin-top=4.18pt]
+REPORTS 868 RESCUED
+
+[.r-2-names-cont.s-rb.z1188,margin-top=4.61pt]
+Carpathia Message Expresses
+
+[.r-2-names-cont.s-rb.z1103,margin-top=-2.44pt]
+Grave Fear for Others.
+
+[.r-2-names-cont.f-roman.z844.in72.jl.p916,margin-top=5.48pt]
+Boston, April 15.—A wireless message
+picked up late to-night, relayed from the
+Olympic, says that the Carpathia is on
+her way to New York with 868 passen-
+gers from the steamer Titanic aboard.
+They are mostly women and children, the
+
+[.r-2-names-cont.f-roman.z844.in0,margin-top=-1.56pt]
+message said, and it ended:
+
+[.r-2-names-cont.f-roman.z844.in72.p765,margin-top=1.78pt]
+“Grave fears are felt for the safety
+of the balance of the passengers and the
+crew.”
+
+[.r-2-names-cont.s-gcc.z1482,margin-top=11.33pt]
+ANXIETY IN PHILADELPHIA
+
+[.r-2-names-cont.s-cr.z757,margin-top=5.54pt]
+{empty}[By Telegraph to The Tribune.]
+
+[.r-2-names-cont.f-roman.z844.in72.jl.p729,margin-top=-0.1pt]
+Philadelphia, April 15.—Relatives of Phila-
+delphia passengers on board the Titanic
+stormed the local newspaper and cable of-
+fices and the offices of the White Star Line
+
+[.r-2-names-cont.f-roman.z844.in0.p612,margin-top=-0.51pt]
+here this morning in an effort to get
+authentic news of the disaster.
+
+[.r-2-names-cont.f-roman.z844.in72.p583,margin-top=0.44pt]
+Most of the Philadelphia passengers of
+the Titanic are prominent financially and
+socially here and along the main line.
+They include:
+
+[.r-2-names-cont.f-roman.z844.in72.p594,margin-top=0.84pt]
+Mr. and Mrs. George D. Widener, of
+Lynnewood Hall, Elkins Park, and their
+son, Harry Elkins Widener.
+
+[.r-2-names-cont.f-roman.z844.in72.p612,margin-top=0.07pt]
+Mr. and Mrs. John B. Thayer and their
+son, John B. Thayer, Jr., of Haverford.
+
+[.r-2-names-cont.f-roman.z844.in72.p612]
+William C. Dulles, of No. 319 South
+Twelfth street.
+
+[.r-2-names-cont.f-roman.z844.in72.p594,margin-top=0.02pt]
+Mr. and Mrs. William E. Carter and their
+son and daughter, William, jr., and Miss
+Lucille Carter, of Bryn Mawr.
+
+[.r-2-names-cont.f-roman.z844.in72.p595]
+Mr. and Mrs. Arthur Ryerson, of Haver-
+ford, who are hurrying home to attend the
+funeral of their son, Arthur Larned Ryer-
+son, who was killed last Monday with J.
+Louis Hoffman, another Yale student, in an
+automobile accident.
+
+[.r-2-names-cont.f-roman.z844.in72.p585,margin-top=0.5pt]
+Mrs. J. W. M. Cardeza, of Washington
+Lane and Morton street, Germantown, and
+her son, T. D. M. Cardeza.
+
+[.r-2-names-cont.f-roman.z844.in72.p576,margin-top=0.7pt]
+Robert W. Daniel, of the banking firm
+of Shillard-Smith-Daniel Company, of No.
+328 Chestnut street.
+
+[.r-2-names-cont.f-roman.z844.in72.p603,margin-top=0.71pt]
+Mrs. Thomas Potter, widow of Colonel
+Thomas Potter, and her daughter, Mrs.
+Boulton Earnshaw, of Mt. Airy.
+
+// end::r-2-names-cont[]
+
+2+a!
+// tag::r-2-travelers[]
+[.r-2-travelers.s-tv0.z3121,margin-top=37.29pt]
+ON SEA AND LAND
+
+[.r-2-travelers.f-bold.z1869.in0.p1790,margin-top=12.47pt]
+At home and abroad—night
+and day—accidents are hap-
+pening. Sometimes there are
+narrow escapes from injury
+or death, which but empha-
+size the necessity for Acci-
+dent Insurance.
+
+[.r-2-travelers.f-bold.z1869.in0,margin-top=-0.16pt]
+Do you carry any?
+
+[.r-2-travelers.f-bold.z1869.in0,margin-top=-1.01pt]
+Do you carry enough?
+
+[.r-2-travelers.f-bold.z1869.in0.p1834,margin-top=-1.25pt]
+The TRAVELERS—the
+pioneer accident insurance
+company of America—issues
+the best accident policies
+you can buy.
+
+[.r-2-travelers.s-tv2.z2054,margin-top=4.08pt]
+Moral: Insure in the Travelers.
+
+[.r-2-travelers.s-tv3.z1828,margin-top=5.74pt]
+Travelers Insurance Company
+
+[.r-2-travelers.s-tv4.z1118,margin-top=1.71pt]
+{empty}N. Y. Office, 76 William St.
+
+[.r-2-travelers.folio2.f-bold.z654,margin-top=3.14pt]
+James G. Batterson, Resident Director [.right]#Earles F. Holmes, Manager#
+
+[.r-2-travelers.s-tv5.z761,margin-top=0.13pt]
+Telephone 5400 John
+
+// end::r-2-travelers[]
+
+
+image::hudson.jpg[pdfwidth=318.60pt,role=cut,margin-top=15.45pt]
+
+!===
+
+|===
+
+// end::page-2[]
+

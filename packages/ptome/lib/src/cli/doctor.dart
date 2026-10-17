@@ -442,6 +442,19 @@ final List<NeededFont> lookFonts = [
     license: 'SIL Open Font License 1.1',
   ),
   const NeededFont(
+    name: 'League Gothic',
+    usedBy:
+        "the showcase's New-York Tribune look (the heads' extra condensed "
+        'gothic, Alternate Gothic revived)',
+    families: ['League Gothic'],
+    styles: [FontStyle.normal],
+    fileNames: {},
+    source: GoogleFonts('League Gothic', {
+      FontStyle.normal: 'static/LeagueGothic-Regular.ttf',
+    }),
+    license: 'SIL Open Font License 1.1',
+  ),
+  const NeededFont(
     name: 'Fira Sans Condensed',
     usedBy: 'the tech-book look (Myriad Condensed)',
     families: ['Fira Sans Condensed'],

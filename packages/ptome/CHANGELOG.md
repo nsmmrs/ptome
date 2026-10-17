@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- The showcase's New-York Tribune is now the paper's first two pages of
+  16 April 1912 page for page and line for line (`tool/tribune_1912`,
+  EPIC-b6n77q): every column read off the Library of Congress's scans,
+  each head line sized from its width on the scan, each paragraph's
+  space and pitch the scan's, the cuts where the paper sets them; 846 of
+  its 864 lines within a point of the scan's. `ptome doctor` installs
+  League Gothic for its extra condensed heads.
 - The showcase's Book of Common Prayer is now the Calendar, Morning
   Prayer, the Litany and the Psalter as John Baskerville printed them at
   Cambridge in 1761, page for page and line for line

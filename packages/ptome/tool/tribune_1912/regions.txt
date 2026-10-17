@@ -1,0 +1,31 @@
+# The pages' regions, in the scan's pixels (x0 y0 x1 y1): each a block
+# of the page the work sets as one thing. `text` a column of lines (its
+# measure the region's), `cut` cut from the scan, `rule`.
+# page id kind x0 y0 x1 y1
+1 masthead cut 0 140 6256 650
+1 folio text 0 650 6256 805
+1 banner text 0 805 6256 1470
+1 crowd text 40 1480 965 9520
+1 art-head text 975 1480 4440 1720
+1 art cut 975 1720 4442 5870
+1 caption-l text 975 5870 2700 6105
+1 caption-r text 2700 5870 4440 6105
+1 names-head text 955 6105 2715 6780
+1 names-a text 955 6780 1850 9520
+1 names-b text 1850 6780 2715 9520
+1 loss text 2715 6090 4450 8000
+1 deep text 2715 8000 3580 9520
+1 pearls text 3580 8000 4450 9520
+1 lead text 4450 1480 6256 9520
+2 folio text 0 60 6256 215
+2 section-head text 0 215 6256 520
+2 section cut 0 520 6256 1640
+2 c12 text 0 1690 1840 8390
+2 hunyadi cut 10 8420 940 9330
+2 hardman text 950 8420 1840 9330
+2 c34 text 1830 1690 3580 9330
+2 c56 text 3580 1690 5330 5170
+2 sos text 5330 1560 6256 5170
+2 names-cont text 3580 5170 4460 9330
+2 travelers text 4460 5170 6256 7520
+2 hudson cut 4476 7540 6246 9330

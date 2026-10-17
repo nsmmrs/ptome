@@ -1,0 +1,2 @@
+@region folio text
+R 160-560 2 * * * * | 2220-4270 NEW-YORK TRIBUNE, TUESDAY, APRIL 16, 1912.
