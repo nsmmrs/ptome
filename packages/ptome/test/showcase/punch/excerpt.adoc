@@ -1,139 +1,20 @@
-= Punch: a page of the issue of 14 August 1841
+= Punch: page 9 of the issue of 17 July 1841
 :epub-strict:
 :doctype: book
 :lang: en
 :look: punch
 :looksdir: {docdir}
+:imagesdir: images
 :notitle:
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
+:folio-start: 9
 
-// A magazine page (doc/showcase.md): the masthead over the issue's date,
-// its pieces in three ruled columns, short rules between them, a song,
-// a squib, and Punch's thermometer, a table.
+// A page of the issue as the first volume prints it (doc/showcase.md):
+// two columns ruled apart under the running head, each line the
+// volume's; the Fine Arts' catalogue, its pictures listed in a block of
+// their own beside the remarks on them, which float at its right, the
+// next head under both; a verse's long lines turned over, hung in.
 
-[#issue-2.issue.columns,column-count=2]
-== August 14, 1841
-
-[discrete]
-==== SONGS FOR THE SENTIMENTAL.
-
-[discrete]
-==== No. IV.
-
-[verse]
-____
-O Dinna paint her charms to me,
- I ken that she is fair;
-I ken her lips might tempt the bee—
- Her een with stars compare,
-Such transient gifts I ne’er did prize,
- My heart they couldna win;
-I dinna scorn my Jeannie’s eyes—
- But has she ony tin?
-
-The fairest cheek, alas! may fade
- Beneath the touch of years;
-The een where light and gladness play’d
- May soon graw dim wi’ tears.
-I would love’s fires should, to the last,
- Still burn as they begin;
-And beauty’s reign too soon is past,
- So—has she ony tin?
-____
-
-'''
-
-[discrete]
-==== LADY MORGAN’S LITTLE ONE.
-
-Her ladyship, at her last __conversazione__, propounded to PUNCH the following classical poser:—“How would you translate the Latin words, __puella__, __defectus__, __puteus__, __dies__, into four English interjections?” Our wooden Roscius hammered his pate for full five minutes, and then exclaimed—“A-lass! a-lack! a-well a-day!” Her ladyship protested that the answer would have done honour to the professor of languages at the London University.
-
-'''
-
-=== PUNCH’S INFORMATION FOR THE PEOPLE.—No. 2.
-
-[discrete]
-==== THE THERMOMETER.
-
-__General Description__.—The thermometer is an instrument for showing the __temperature__; for by it we can either see how fast a man’s blood boils when he is in a passion, or, according as the seasons have occurred this year, how cold it is in summer, and how hot in winter. It is mostly cased in tin, all the brass being used up by certain lecturers, who are faced with the latter metal. It has also a glass tube, with a bulb at the end, exactly like a tobacco-pipe, with the bowl closed up; except that, instead of tobacco, they put mercury into it. As the heat increases, the mercury expands, precisely as the smoke would in a pipe, if it were confined to the tube. A register is placed behind the tube, crossed by a series of horizontal lines, the whole resembling a wooden milk-score when the customer is several weeks in arrear.
-
-__Derivation of Name__.—The thermometer derives its name from two Greek words, signifying “measure of heat;” a designation which has caused much warm discussion, for the instrument is also employed to tell when it freezes, by those persons who are too scientific to find out by the tips of their fingers and the blueness of their noses.
-
-__History and Literature of the Thermometer__.—The origin of the instrument is involved in a depth of obscurity considerably below __zero__; Pliny mentions its use by a celebrated brewer of Bœotia; we have succeeded, after several years’ painful research, in tracing the invention of the instrument to Mercury, who, being the god of thieves, very likely stole it from somebody else. Of ancient writers, there are few except Hannibal (who used it on crossing the Alps) and Julius Cæsar, that notice it. Bacon treats of the instrument in his “Novum Organum;” from which Newton cabbaged his ideas in his “Principia,” in the most unprincipled manner. The thermometer remained stationary till the time of Robinson Crusoe, who clearly suggested, if he did not invent the register, now universally adopted, which so nearly resembles his mode of measuring time by means of notched sticks. Fahrenheit next took it in hand, and because his calculations were founded on a mistake, his scale is always adopted in England. Raumur altered the system, and instead of giving the thermometer mercury, administered to it ‘cold without,’ or spirits of wine diluted with water. Celsius followed, and advised a medium fluid, so that his thermometer is known as the centigrade. De Lisle made such important improvements, that they have never been attended to; and Mr. Sex’s differential thermometer has given rise to considerably more than a half-dozen different opinions. All these persons have written learnedly on the subject, blowing respectively hot or cold, as their tastes vary. The most recent work is that by Professor Thompson—a splendid octavo, hot-pressed, and just warm from the printer’s. Though this writer disagrees with Raumur’s temperance principles, and uses the strongest spirit he can get, instead of mercury, we are assured that he is no relation whatever to Messrs. Thompson and Fearon of Holborn-hill.
-
-__Concluding Remarks and Description of Punch’s Thermometer__.—It must be candidly acknowledged by every unprejudiced mind, that the thermometer question has been most shamefully handled by the scientific world. It is made an exclusive matter; they keep it all to themselves; they talk about Fahren__heit__ with the utmost coolness; of Raumur in un-understandable jargon, and fire whole volleys of words concerning the centigrade scale, till one’s head spins round with their inexplicable dissertations. What is the use of these interminable technicalities to the world at large? Do they enlighten the rheumatic as to how many coats they may put on, for the Midsummer days of this variable climate? Do their barometers tell us when to take an umbrella, or when to leave it at home? No. Who, we further ask, knows __how__ hot it is when the mercury stands at 120°, or how cold it is when opposite 32° of Fahrenheit? Only the initiated, a class of persons that can generally stand fire like salamanders, or make themselves comfortable in an ice-house.
-
-Deeply impressed with the importance of the subject, PUNCH has invented a new thermometer, which __may__ be understood by the “people” whom he addresses—the unlearned in caloric—the ignorant of the principles of expansion and dilatation. Everybody can tell, without a thermometer, if it be a coat colder or a cotton waistcoat warmer than usual when he is __out__. But at home! Ah, there’s the rub! There it has been impossible to ascertain how to face the storm, or to turn one’s back upon the sunshine, till to-day. PUNCH’S thermometer decides the question, and here we give a diagram of it. Owing a stern and solemn duty to the public, PUNCH has indignantly spurned the offers of the British Association to join in their mummeries at Plymouth—to appear at their dinners for the debasement of science. No; here in his own pages, and in them only, doth he propound his invention. But he is not exclusive; having published his wonderful invention, he invites the makers to copy his plan. Mr. Murphy is already busily arranging his Almanac for 1842, by means of a PUNCH thermometer, made by Carey and Co.
-
-[discrete]
-==== PUNCH’S THERMOMETER.
-
-[discrete]
-==== THE SCALE ARRANGED ACCORDING TO FAHRENHEIT.
-
-[%noheader,cols="3*",frame=none,grid=none]
-|===
-|Iced bath
-|110
-|
-
-|Cold bath
-|98
-|Blood heat.
-
-|Coat Off
-|90
-|
-
-|Stock loosened
-|88
-|
-
-|Cuffs turned up
-|85
-|
-
-|One waistcoat
-|80
-|
-
-|Morning coat all day
-|75
-|
-
-|One Coat
-|65
-|Summer heat.
-
-|Spencer
-|55
-|Temperate.
-
-|Ditto, and “Comfortable”
-|52
-|
-
-|**GREAT COAT**
-|50
-|
-
-|Ditto, and Macintosh
-|45
-|
-
-|Ditto, ditto, and worsted stockings
-|43
-|
-
-|Ditto, ditto, ditto, and double boxcoat and Guernseys
-|35
-|
-
-|Ditto, ditto, ditto, ditto, ditto, and bear-skin coat
-|32
-|Freezing.
-
-|Ditto, ditto, ditto, ditto, ditto, ditto and between two feather beds all day
-|0
-|Zero.
-
-|===
+include::text/pages.adoc[tag=page-9]

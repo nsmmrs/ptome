@@ -1225,6 +1225,38 @@ void main() {
     expect(texts, contains('thenote'));
   });
 
+  test('a block that clears the floats beside it starts under the longer '
+      '(clearSides, CSS clear: both)', () {
+    Map<String, double> tops({required bool clear}) {
+      final document = RecordingDocument();
+      FlowLayout(template: _rows(12))
+          .layout([
+            BlockBox([
+              _para('l1\nl2'),
+            ], style: const BoxStyle(side: FloatSide.left, sideWidth: 60)),
+            BlockBox([
+              _para('r1\nr2\nr3\nr4'),
+            ], style: const BoxStyle(side: FloatSide.right, sideWidth: 60)),
+            BlockBox([_para('after')], style: BoxStyle(clearSides: clear)),
+          ])
+          .render(document);
+      return {
+        for (final call in document.pages.single.canvas.calls)
+          if (RegExp(r'^glyphs "([^"]*)" at (\S+) (\S+)').firstMatch(call)
+              case final m?)
+            m[1]!.trim(): double.parse(m[3]!),
+      };
+    }
+
+    // (Beside both floats, at the region's top; cleared, under the four
+    // lines of the longer, the right one.)
+    final beside = tops(clear: false);
+    expect(beside['after'], closeTo(beside['r1']!, 0.01));
+    final cleared = tops(clear: true);
+    // (The recording's y up the page.)
+    expect(cleared['r1']! - cleared['after']!, closeTo(4 * _lineHeight, 0.01));
+  });
+
   test('a block narrowed beside a side float wraps in its width', () {
     final document = RecordingDocument();
     FlowLayout(template: _rows(8))

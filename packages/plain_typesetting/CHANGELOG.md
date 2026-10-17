@@ -2,6 +2,9 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `BoxStyle.clearSides`: a box that starts below every block floating to
+  a side beside where it would start (CSS's `clear: both`).
+
 - `TextRun.emphasisOffset` (and `paintEmphasisMarks`' `offset`): emphasis
   marks centred that far from the baseline, over or under it, in place of
   just past the em box; the line as tall or deep as they reach.

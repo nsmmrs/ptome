@@ -1,11 +1,10 @@
-# Punch, or the London Charivari after its first volume (1841), a weekly
-# of about 8¼ × 11 in: the running head its title, "PUNCH, OR THE LONDON
-# CHARIVARI.", in large capitals over a rule, the page number outside;
-# each issue headed "FOR THE WEEK ENDING JULY 17, 1841." in small italic
-# capitals; its pieces in two columns ruled apart, small and close,
-# their heads in capitals, centred; short rules between the pieces; the
-# cuts in the columns with their captions in capitals under them, a
-# large cut across the page; a piece's first letter a picture.
+# Punch's first volume (1841) as it prints its pages, measured from the
+# Internet Archive's scan of the volume (NOTICE.md, tool/punch_1841):
+# its 530 × 676 pt page; the running head "PUNCH." over a double rule,
+# the folio outside; two columns of small, close type ruled apart; each
+# piece's head in capitals, centred; short rules between the pieces; the
+# cuts where the volume sets them, cut from the scan; each page's lines
+# the volume's.
 #
 # Old Standard TT stands in for the Scotch roman of the time (`ptome
 # doctor --look punch --looksdir test/showcase/punch`).
@@ -15,117 +14,312 @@ tokens:
     text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
     display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
   size:
-    text: { print: 8.5pt, screen: 18px }
-    headings: { print: [24pt, 11pt, 8.5pt, 8pt, 8pt, 8pt] }
-  leading: { print: 1.18, screen: 1.55 }
+    text: { print: 6.9pt, screen: 18px }
+    headings: { print: [16pt, 8pt, 7pt, 7pt, 7pt, 7pt] }
+  leading: { print: 1, screen: 1.55 }
   measure: { screen: 34em }
-  paragraph: { signal: indent, indent: { print: 1em } }
   align: { print: justify }
-  hyphenate: { print: true }
+  hyphenate: { print: false }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [8.25in, 11in], margin: [0.85in, 0.6in, 0.6in, 0.6in] }
+  page: { size: [530.5pt, 676.4pt], margin: [56pt, 43.9pt, 30pt, 58.8pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
+  base:
+    line_pitch: 7.02pt
+    margin_break: keep
+    font_expansion: 0.06
   font:
     fallbacks: [Noto Serif]
+  page:
+    columns: 2
+    column_gap: 4
+    column_rule_width: 0.6
+    column_rule_color: '1A1A1A'
   heading:
-    chapter_break_before: always
-    h2:
-      text_align: center
-      # (The issue's week.)
-      content: "For the Week ending {{title}}."
-      text_transform: uppercase
-      font_style: italic
-      font_size: 8
-      character_spacing: 0.5
-      margin_bottom: 8
-    h3:
-      text_align: center
-      text_transform: uppercase
-      font_size: 8.5
-      character_spacing: 0.5
-      margin_top: 8
-      margin_bottom: 4
-    h4:
-      text_align: center
-      font_size: 8
-      margin_top: 4
-      margin_bottom: 3
-  columns:
-    gap: 12
-    rule_width: 0.5
-    rule_color: '1A1A1A'
+    chapter_break_before: auto
+  section:
+    role:
+      verso: { page_margin: [56, 43.9, 30, 58.8], header_on_openers: true }
+      recto: { page_margin: [56, 51.1, 30, 53.2], header_on_openers: true }
+      # (A plate: one column across the page, no running head, its title,
+      # its engraving and its captions; its back blank.)
+      plate: { page_margin: [10, 30, 10, 30], page_columns: 1, page_running_content: none }
+      blank: { page_margin: [20, 40, 20, 40], page_columns: 1, page_running_content: none }
+      # (The Synopsis of Voting, set sideways across its page: drawn whole,
+      # tool/punch_1841/p3.py's.)
+      p3: { page_background_image: 'image:images/synopsis.svg[]', page_margin: [20, 40, 20, 40], page_columns: 1, page_running_content: none }
   prose:
     margin_bottom: 0
-    text_indent_inner: 1em
+    text_indent: 0
+    # (A paragraph's lines where the volume's are: one alone beside or
+    # under a cut too.)
+    orphans: 1
+    widows: 1
   thematic_break:
-    border_width: 0.5
-    border_color: '1A1A1A'
-    margin_top: 4
-    margin_bottom: 6
+    role:
+      rule: { margin_top: 2, margin_bottom: 2, border_width: 0.5, border_color: '1A1A1A' }
+      # (The long rule over a table.)
+      trule: { margin_top: 2, margin_bottom: 0, border_width: 0.5, border_color: '1A1A1A', width: 181 }
   role:
-    hide: { display: none }
-    emph: { font_style: bold }
+    # (A paragraph's first line set in; one going on from the column
+    # before, not.)
+    pa: { text_align: justify, text_indent: 8 }
+    'on': { text_indent: 0 }
+    # (A piece's head in heavy capitals; a head within a piece in small
+    # capitals.)
+    hd: { text_align: center, text_indent: 0, font_style: bold, character_spacing: 0.4 }
+    # (A head in roman capitals, spaced.)
+    kh: { text_align: center, text_indent: 0, character_spacing: 0.4 }
+    sh: { text_align: center, text_indent: 0, font_variant: small-caps, font_size: 4.8, character_spacing: 0.5, line_pitch: 5pt }
+    cap: { text_align: center, text_indent: 0, font_size: 6 }
+    # (A footnote at a column's foot, in the volume's smallest type.)
+    fn: { text_align: justify, text_indent: 6, font_size: 5.6, line_pitch: 6pt }
+    vs: { text_align: left, text_indent: 0 }
+    # (A verse's long line the column turns: the turnover hung in.)
+    vh: { text_align: justify, margin_left: 8.4, text_indent: -8.4 }
+    tr: { text_align: left, text_indent: 0 }
+    week: { text_align: center, text_indent: 0, font_style: italic }
     sc: { font_variant: small-caps }
-    signature: { text_align: right, font_style: italic }
-  image:
-    align: center
-  image_role_cut_scope: page
-  caption:
-    text_align: center
-    font_size: 7
-    text_transform: uppercase
-    font_style: normal
-  verse:
-    border_left_width: 0
-    padding: [0, 0, 0, 12]
-    font_size: 8
+    right: { flush: right }
+    # (A line set a little closer, as the volume's compositor set it to
+    # get it in.)
+    tight: { character_spacing: -0.15 }
+    # (The alphabet's letters, in a fat face.)
+    ini: { font_style: bold }
+    # (A playbill's name, its capitals spaced wide.)
+    wide: { character_spacing: 5 }
+    # (Dots led to a table's figure.)
+    ldr: { flush: right, leader: "\u00a0\u00a0\u00a0." }
+    # (A cut the lines run beside, to its side.)
+    cutl: { float: left }
+    cutr: { float: right }
+    # (A block under a boxed list and the remarks beside it.)
+    clr: { clear: true }
+    # (Each paragraph's pitch, the scan's.)
+    # (The pitches: gen.py's.)
+    p515: { line_pitch: 5.15pt }
+    p517: { line_pitch: 5.17pt }
+    p518: { line_pitch: 5.18pt }
+    p521: { line_pitch: 5.21pt }
+    p522: { line_pitch: 5.22pt }
+    p523: { line_pitch: 5.23pt }
+    p525: { line_pitch: 5.25pt }
+    p533: { line_pitch: 5.33pt }
+    p605: { line_pitch: 6.05pt }
+    p622: { line_pitch: 6.22pt }
+    p652: { line_pitch: 6.52pt }
+    p653: { line_pitch: 6.53pt }
+    p657: { line_pitch: 6.57pt }
+    p658: { line_pitch: 6.58pt }
+    p659: { line_pitch: 6.59pt }
+    p660: { line_pitch: 6.6pt }
+    p661: { line_pitch: 6.61pt }
+    p662: { line_pitch: 6.62pt }
+    p663: { line_pitch: 6.63pt }
+    p664: { line_pitch: 6.64pt }
+    p665: { line_pitch: 6.65pt }
+    p666: { line_pitch: 6.66pt }
+    p667: { line_pitch: 6.67pt }
+    p668: { line_pitch: 6.68pt }
+    p669: { line_pitch: 6.69pt }
+    p670: { line_pitch: 6.7pt }
+    p671: { line_pitch: 6.71pt }
+    p672: { line_pitch: 6.72pt }
+    p673: { line_pitch: 6.73pt }
+    p674: { line_pitch: 6.74pt }
+    p675: { line_pitch: 6.75pt }
+    p676: { line_pitch: 6.76pt }
+    p677: { line_pitch: 6.77pt }
+    p678: { line_pitch: 6.78pt }
+    p679: { line_pitch: 6.79pt }
+    p680: { line_pitch: 6.8pt }
+    p681: { line_pitch: 6.81pt }
+    p682: { line_pitch: 6.82pt }
+    p684: { line_pitch: 6.84pt }
+    p685: { line_pitch: 6.85pt }
+    p686: { line_pitch: 6.86pt }
+    p689: { line_pitch: 6.89pt }
+    p690: { line_pitch: 6.9pt }
+    p691: { line_pitch: 6.91pt }
+    p692: { line_pitch: 6.92pt }
+    p700: { line_pitch: 7.0pt }
+    p701: { line_pitch: 7.01pt }
+    p702: { line_pitch: 7.02pt }
+    p704: { line_pitch: 7.04pt }
+    p708: { line_pitch: 7.08pt }
+    p710: { line_pitch: 7.1pt }
+    p711: { line_pitch: 7.11pt }
+    p713: { line_pitch: 7.13pt }
+    p714: { line_pitch: 7.14pt }
+    p715: { line_pitch: 7.15pt }
+    p716: { line_pitch: 7.16pt }
+    p718: { line_pitch: 7.18pt }
+    p720: { line_pitch: 7.2pt }
+    p721: { line_pitch: 7.21pt }
+    p722: { line_pitch: 7.22pt }
+    p723: { line_pitch: 7.23pt }
+    p724: { line_pitch: 7.24pt }
+    p725: { line_pitch: 7.25pt }
+    p726: { line_pitch: 7.26pt }
+    p727: { line_pitch: 7.27pt }
+    p729: { line_pitch: 7.29pt }
+    p730: { line_pitch: 7.3pt }
+    p731: { line_pitch: 7.31pt }
+    p734: { line_pitch: 7.34pt }
+    p753: { line_pitch: 7.53pt }
+    p754: { line_pitch: 7.54pt }
+    p756: { line_pitch: 7.56pt }
+    p792: { line_pitch: 7.92pt }
+    p794: { line_pitch: 7.94pt }
+    p798: { line_pitch: 7.98pt }
+    p800: { line_pitch: 8.0pt }
+    p805: { line_pitch: 8.05pt }
+    p809: { line_pitch: 8.09pt }
+    p812: { line_pitch: 8.12pt }
+    p836: { line_pitch: 8.36pt }
+    p1080: { line_pitch: 10.8pt }
+    p1125: { line_pitch: 11.25pt }
+    p1224: { line_pitch: 12.24pt }
+    p1269: { line_pitch: 12.69pt }
+    p1278: { line_pitch: 12.78pt }
+    p1287: { line_pitch: 12.87pt }
+    p1296: { line_pitch: 12.96pt }
+    p1305: { line_pitch: 13.05pt }
+    p1314: { line_pitch: 13.14pt }
+    p1332: { line_pitch: 13.32pt }
+    p1359: { line_pitch: 13.59pt }
+    p1386: { line_pitch: 13.86pt }
+    m0: { margin_left: 0.0 }
+    m2: { margin_left: 1.0 }
+    m21: { margin_left: 10.5 }
+    m22: { margin_left: 11.0 }
+    m23: { margin_left: 11.5 }
+    m25: { margin_left: 12.5 }
+    m35: { margin_left: 17.5 }
+    m36: { margin_left: 18.0 }
+    m37: { margin_left: 18.5 }
+    m41: { margin_left: 20.5 }
+    m42: { margin_left: 21.0 }
+    m44: { margin_left: 22.0 }
+    m53: { margin_left: 26.5 }
+    m54: { margin_left: 27.0 }
+    m55: { margin_left: 27.5 }
+    m56: { margin_left: 28.0 }
+    m57: { margin_left: 28.5 }
+    m62: { margin_left: 31.0 }
+    m66: { margin_left: 33.0 }
+    m67: { margin_left: 33.5 }
+    m68: { margin_left: 34.0 }
+    m69: { margin_left: 34.5 }
+    m70: { margin_left: 35.0 }
+    m76: { margin_left: 38.0 }
+    m77: { margin_left: 38.5 }
+    m78: { margin_left: 39.0 }
+    m81: { margin_left: 40.5 }
+    m82: { margin_left: 41.0 }
+    m83: { margin_left: 41.5 }
+    m84: { margin_left: 42.0 }
+    m85: { margin_left: 42.5 }
+    m89: { margin_left: 44.5 }
+    m90: { margin_left: 45.0 }
+    m91: { margin_left: 45.5 }
+    m92: { margin_left: 46.0 }
+    m93: { margin_left: 46.5 }
+    m94: { margin_left: 47.0 }
+    m95: { margin_left: 47.5 }
+    m96: { margin_left: 48.0 }
+    m97: { margin_left: 48.5 }
+    m98: { margin_left: 49.0 }
+    m103: { margin_left: 51.5 }
+    m105: { margin_left: 52.5 }
+    m106: { margin_left: 53.0 }
+    m107: { margin_left: 53.5 }
+    m108: { margin_left: 54.0 }
+    m109: { margin_left: 54.5 }
+    m110: { margin_left: 55.0 }
+    m115: { margin_left: 57.5 }
+    m118: { margin_left: 59.0 }
+    m119: { margin_left: 59.5 }
+    m120: { margin_left: 60.0 }
+    m121: { margin_left: 60.5 }
+    m122: { margin_left: 61.0 }
+    m123: { margin_left: 61.5 }
+    m133: { margin_left: 66.5 }
+    m134: { margin_left: 67.0 }
+    m135: { margin_left: 67.5 }
+    m136: { margin_left: 68.0 }
+    m137: { margin_left: 68.5 }
+    m148: { margin_left: 74.0 }
+    m149: { margin_left: 74.5 }
+    m150: { margin_left: 75.0 }
+    m162: { margin_left: 81.0 }
+    m182: { margin_left: 91.0 }
+    r14: { margin_right: 7.0 }
+    s44: { font_size: 4.4 }
+    s52: { font_size: 5.2 }
+    s54: { font_size: 5.4 }
+    s56: { font_size: 5.6 }
+    s69: { font_size: 6.9 }
+    s75: { font_size: 7.5 }
+    s84: { font_size: 8.4 }
+    s90: { font_size: 9.0 }
+    s110: { font_size: 11.0 }
+    s130: { font_size: 13.0 }
+    s140: { font_size: 14.0 }
+    # (The pitches end.)
   table:
-    font_size: 7.5
+    role:
+      # (Punch's thermometer: the body's type, its lines the scan's apart,
+      # rules either side of its figures, dots led to them.)
+      # (A letter boxed beside a playbill: a hairline round it.)
+      lbox: { border_width: 0.5, border_color: '1A1A1A', cell_padding: [1.5, 2, 1.5, 2] }
+      # (A prescription's lines, a physician's: the body's type, dots led
+      # to the figures.)
+      rx: { font_size: 6.6, line_height: 0.56 }
+      # (A plate's captions over and under its engraving.)
+      plcap: { font_size: 6, line_height: 0.6 }
+      therm: { font_size: 6.6, line_height: 0.53, grid_width: 0.5, grid_color: '1A1A1A' }
+    # (Two things side by side in a column, a poem's two columns: in the
+    # volume's smaller type, its lines 5.9 points apart.)
+    font_size: 5.6
+    line_height: 0.67
     border_width: 0
     grid_width: 0
-    cell_padding: [1, 3, 1, 3]
-    head_background_color: transparent
-  footnotes:
-    font_size: 7
+    cell_padding: [0, 0, 0, 0]
+    background_color: transparent
+    body:
+      stripe_background_color: transparent
+  image:
+    align: center
   running_content_on_openers: true
   header:
-    height: 0.75in
+    height: 46
     vertical_align: bottom
-    font_size: 15
-    character_spacing: 1.5
-    border_width: 1
+    font_size: 13
+    character_spacing: 2
+    border_width: 0.8
     border_color: '1A1A1A'
+    padding: [0, 0, 3, 0]
     recto:
       left: { content: '' }
-      center: { content: 'PUNCH, OR THE LONDON CHARIVARI.' }
+      center: { content: 'PUNCH.' }
       right: { content: '{page-number}' }
     verso:
       left: { content: '{page-number}' }
-      center: { content: 'PUNCH, OR THE LONDON CHARIVARI.' }
+      center: { content: 'PUNCH.' }
       right: { content: '' }
   footer:
-    height: 0.4in
+    height: 20
     border_width: 0
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
 webfonts:
   - Old Standard TT:400,400italic,700
 css: |
-  .sect1.issue>h2::before{content:"PUNCH, OR THE LONDON CHARIVARI.";display:block;font-size:1.6em;font-style:normal;letter-spacing:.05em;border-bottom:2px solid #1a1a1a;margin-bottom:.4em}
-  .sect1.issue>h2{text-align:center;font-style:italic;text-transform:uppercase;font-size:1em}
-  #content h3,#content h4{text-align:center;text-transform:uppercase}
-  .sect1.issue>.sectionbody{column-count:2;column-rule:1px solid #1a1a1a;column-gap:2em}
-  .hide{display:none}
-  .emph{font-weight:bold}
-  .sc{font-variant:small-caps}
-  .imageblock.initial{float:left;width:40%;margin:0 .5em .3em 0}
+  .sect1>.sectionbody{column-count:2;column-rule:1px solid #1a1a1a;column-gap:2em}
+  .hd p,.cap p,.week p{text-align:center}
 epub-css: |
-  h2{text-align:center}
-  h3,h4{text-align:center;text-transform:uppercase}
-  .hide{display:none}
-  .emph{font-weight:bold}
-  .imageblock.initial{float:left;width:40%;margin:0 .5em .3em 0}
+  .hd p,.cap p,.week p{text-align:center}

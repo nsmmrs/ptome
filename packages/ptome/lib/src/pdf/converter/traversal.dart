@@ -52,12 +52,10 @@ extension _Traversal on PdfConverter {
     if (_reportTags != null && block is! Section) {
       _tagLast(before, block);
     }
-    if (block is! Section && (block.role != null || block.hasAttr('shape'))) {
-      _sideFloat(block, before);
-    }
     // (`base_margin_break: keep`: the block's own space above it carried
     // by a box of its own, kept at the top of a page, as CSS's
-    // `margin-break: keep` keeps it.)
+    // `margin-break: keep` keeps it; inside a block floating to a side,
+    // as a float's margin is, the text beside it starting where it does.)
     if (block is! Section && _out.length > before) {
       if (_keptMarginTop(block) case final top?) {
         final added = _out.sublist(before);
@@ -73,6 +71,24 @@ extension _Traversal on PdfConverter {
             ),
           );
       }
+    }
+    if (block is! Section && (block.role != null || block.hasAttr('shape'))) {
+      _sideFloat(block, before);
+    }
+    // (`role_<role>_clear: true`, modern engine: the block below the
+    // blocks floating to a side beside it, as CSS's `clear: both`.)
+    if (block is! Section &&
+        _out.length > before &&
+        !asciidoctorCompat(_document, CompatFormat.pdf) &&
+        block.roles.any(
+          (role) =>
+              _theme.value('role_${_roleName(role)}_clear') ==
+              const ThemeBool(true),
+        )) {
+      final added = _out.sublist(before);
+      _out
+        ..removeRange(before, _out.length)
+        ..add(BlockBox(added, style: const BoxStyle(clearSides: true)));
     }
   }
 

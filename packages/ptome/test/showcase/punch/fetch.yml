@@ -1,168 +1,171 @@
-# The cuts the work uses, fetched by tool/showcase.dart into the work
-# cache and checked by their SHA-256: the scans in Project Gutenberg's
-# editions of the issues (eBooks #13639, #14923, #14924).
-- name: 001-01.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-01.png
-  sha256: c2ebda757758811118efbc6f44d7af69bd9aa21c8645ec1a9bc1d3401e0fff41
-- name: 001-02.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-02.png
-  sha256: 9e2380b41b241e95ccb7604d09e382b149076e82c633daa19de5bef58c744793
-- name: 001-03.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-03.png
-  sha256: 3b31373b7df129ff0f8a354f116d638521ebc82c59feb70600eff8388e641b3b
-- name: 001-04.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-04.png
-  sha256: 36889f5d2340a8bdffad0fe6d37e1d5b9ff8e74e3009985dfd37ce3bf77091cd
-- name: 001-05.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-05.png
-  sha256: a96af9c160d4485e9f46016f2c66a24e08010dd3fd3257451a32d242f078a627
-- name: 001-06.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-06.png
-  sha256: f83bd0efd3ca81ac728f2d0ff469f70c73bfdca71a63d28359193de59c6198e7
-- name: 001-07.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-07.png
-  sha256: b4e69e7823a5c4411aa83222ddc59203130ee11aef87bba8bb1b7b7751294d07
-- name: 001-09.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-09.png
-  sha256: f778b3a50b2f8768c7635bcdbcc4377271cab604b093cfcd243d6a955523b4da
-- name: 001-10.png
-  url: https://www.gutenberg.org/cache/epub/13639/images/001-10.png
-  sha256: 3bfc0b54cde2415347d7fc64767be092d3086434549a5299ac91440b3f1f248d
-- name: 005-01.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-01.png
-  sha256: b91ae0bb8b1497fa492b9cd9f86426798324ba4ecbafdaf94451afa1a4016d1a
-- name: 005-02.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-02.png
-  sha256: fb08a92de3d5b655ca4d8ed84235f043fa22869940c5f14c2d95164314466df6
-- name: 005-03.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-03.png
-  sha256: 42f23a915551275a86581602b2b3ba8799ea67831829936095005b5e64ae08ff
-- name: 005-04.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-04.png
-  sha256: 6f863fdd9bb7472ad9b6b557e3e0d0478ddc4e4c96fefec3b07382f0f7e1dcc2
-- name: 005-05.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-05.png
-  sha256: 7af7737f381120cd8fb7784f6411dffa841207e9c3dbfa8b1c01e8e20c739482
-- name: 005-06.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-06.png
-  sha256: 9c2452991a26c3dbdfeb1cd6dba9477ad5b5ea0f9614865c844cbab7bd1fe5fc
-- name: 005-07.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-07.png
-  sha256: 3ae56a455618d353107ee8ddcb7804c1b1b610e3ee81f0aab02fd425f8e339e9
-- name: 005-08.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-08.png
-  sha256: 727bf1f518f7b71f57a891a4a76983b5f51af654747120aad99b0ffa6a82c956
-- name: 005-09.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-09.png
-  sha256: eb86dcb99e1906995667698a8fe78b0e1b2cbfcd08a1ed467b7d4d07b06f68c2
-- name: 005-10.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-10.png
-  sha256: abd997d621f15cd8d02f054ec9f6e2b47ea7ad69ff617b961faa8bc5800a18e2
-- name: 005-11.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-11.png
-  sha256: ffa262401c0e514dc0553d6c8db0abef3864600cd3a259a9b845b44bf2a2dbb3
-- name: 005-12.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-12.png
-  sha256: 5f484a3518cd578cba770436b11522bbefde8d559bcbb87fc5c839d681443529
-- name: 005-13.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-13.png
-  sha256: 6ac06f65e7ae88673b5e0b73fdb61a0972d88739031e757d3c522d07ec2e8706
-- name: 005-14.png
-  url: https://www.gutenberg.org/cache/epub/14923/images/005-14.png
-  sha256: 42419063a4197b924c74f7eb0971a7e3e9eda45c058bf4fe05042b1c57c887ff
-- name: 006-01.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-01.png
-  sha256: 62b6d91614cc937bada67190370466f6e12bf385478e30cfd96102c076fc15c9
-- name: 006-02.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-02.png
-  sha256: 0b8b2987cbb98fb55dfcc1606fd0465a6035550032f4c00799be44ef16aa9b52
-- name: 006-03.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-03.png
-  sha256: 55821af426700d3d9d7ba69d470ce4967754d92c421a55a81c669ad3e59e8d4b
-- name: 006-04.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-04.png
-  sha256: 7da21a3b8dfd4a98fa1cdc319c338ffce34f2bcb583afee9b36cac8a498902d0
-- name: 006-05.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-05.png
-  sha256: 6f0bc602a1b696ec372ace8c00ab48bb9e804bfe3357d4aeae2e817cc4dd9847
-- name: 006-06.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-06.png
-  sha256: 2e7c197d5878320c075282ffaeb1e0a30748a01a7d0f643c0ee27322554765f3
-- name: 006-07.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-07.png
-  sha256: 95d2a767031fa17f8c490e73dd74f4cb4c42bac2f25187f8f6b1f78246bb6326
-- name: 006-08.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-08.png
-  sha256: ba64dd7d7457abb69789edea11e7c71a96d26676b91030a771558608c44b054d
-- name: 006-09.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-09.png
-  sha256: 931bfc3d7f9509d69d59f27d25d992603777506c99932b2d9a2c52c7f245d1c0
-- name: 006-10.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-10.png
-  sha256: 9b0228501ef1fb1fdd5325427cdc4a480979de25de1a1989b07eef5e3ff55afc
-- name: 006-11.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-11.png
-  sha256: 3485fde4ecfede7fefb35a599ac4fa09e61dd902a0ef454b9860ee7fa25cbdba
-- name: 006-12.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-12.png
-  sha256: f4e80b436619dc654c8c4fa941cc0496b1d59f4b0dfa44612a524b3408d88e0b
-- name: 006-13.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-13.png
-  sha256: 1361bb981399cb01e254b923fa547a3100141d7fbe887aa9c560d7203587a243
-- name: 006-14.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-14.png
-  sha256: 1fc3733a1d4af8626fa867365fff8382a646ffe756c304e5aadc97fd355d617d
-- name: 006-15.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-15.png
-  sha256: f3b147074f665e719966f1b3a51b1b3925a4b6cd34871c124a77df788fe4b8fe
-- name: 006-16.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-16.png
-  sha256: 977f8e97049df1229e432721b95e149ee0c01ab855f59fb8dc293b5db66c6b8e
-- name: 006-17.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-17.png
-  sha256: 2ba1e2a68026abb87663ed0c0dc509f89130db09d605bfc7ec36596e94df9035
-- name: 006-18.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-18.png
-  sha256: 4c644f3c700204366b552da7eceae3c479ae7292a596aad0ab38b5654067d00e
-- name: 006-19.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-19.png
-  sha256: e1eef3efba10eac947ebf5d4637bb9760a9d8ac1266f8cdf1c1a308b34b050ca
-- name: 006-20.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-20.png
-  sha256: aea532676c9e2e5bbffe789e985b4d45176c0c2ebe70f5ff8ad190cca902b25b
-- name: 006-21.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-21.png
-  sha256: 10f1af12179a0a585949ac1b6b1a30140c0c2064b477fc4be2c9f8f7befeeb37
-- name: 006-22.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-22.png
-  sha256: 05028562d387c9f1cc0e443d508640e92c8f5a05ed5caded721b0010866ff12c
-- name: 006-23.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-23.png
-  sha256: 418b55fe2e371eb158673f730cd8599f57ca79320f6ccfe694ec6cc813155179
-- name: 006-24.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-24.png
-  sha256: 1ea242c22839c6f7f51fe04b7b42360530b8462071b3d5548fcef2ffdc02c117
-- name: 006-25.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-25.png
-  sha256: 8847dc78a90eb79796e5c970f82e85479d3f983b60fbd83a6cdc083b1e8f3394
-- name: 006-26.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-26.png
-  sha256: b9de76fa66d31526871a319e7aabaac1810ff7783bb4559d062fc862b014335d
-- name: 006-27.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-27.png
-  sha256: 813e585d425e02dd0363974fd8673198d1b56474931c313a9e4683e514011f33
-- name: 006-28.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-28.png
-  sha256: 0efc7492aa4129051c3bb301fb4cbec94e14dfcd5e3c7afbcba530893b1f5d4c
-- name: 006-29.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-29.png
-  sha256: b2af1e60942d8ec93aeb65fb9b480829c7fa1c677f25489c90f9738971c0090d
-- name: 006-30.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-30.png
-  sha256: 328059e5661b6e269a47cb475fc63b03711d6271e2804b4396d442bf87264f0c
-- name: 006-31.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-31.png
-  sha256: 4ac82603245b5ab053709eca7bb9b77c5742dc80012fbe499297aab22b301e88
-- name: 006-32.png
-  url: https://www.gutenberg.org/cache/epub/14924/images/006-32.png
-  sha256: d10c96dcdd359b1e54a3a5deb8a90cdb2d57970a693afbff9323e418a647aaae
+# The cuts and the pictorial initials of the three issues, cut from the
+# Internet Archive's page images of its scan of the first volume
+# (sim_punch_1841_1, leaf N the printed page N - 3) where the scan has
+# them (tool/punch_1841/cuts.py), fetched by tool/showcase.dart into the
+# work cache and checked by the image's SHA-256; the paper white, the
+# film's grain gone (`levels`).
+- name: cut-2-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n5.jpg
+  sha256: 2816f0e4f714cd6f6f477aeb6347d685997a4b8430440be552348d0c64049684
+  levels: [60, 190]
+  crop: [2137, 903, 360, 634]
+- name: cut-2-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n5.jpg
+  sha256: 2816f0e4f714cd6f6f477aeb6347d685997a4b8430440be552348d0c64049684
+  levels: [60, 190]
+  crop: [2095, 2133, 448, 413]
+- name: cut-2-3.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n5.jpg
+  sha256: 2816f0e4f714cd6f6f477aeb6347d685997a4b8430440be552348d0c64049684
+  levels: [60, 190]
+  crop: [936, 3128, 364, 503]
+- name: cut-7-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n10.jpg
+  sha256: 137e8f01b8dbfefff6b07340c1750cd8e3f63c04da033ecfeebf5d887981f0ed
+  levels: [60, 190]
+  crop: [195, 712, 2474, 2977]
+- name: cut-10-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n13.jpg
+  sha256: 347210d2347f863b8256aaad137b9bd8853efbd143ade24459c6f702a9236651
+  levels: [60, 190]
+  crop: [940, 660, 345, 535]
+- name: cut-10-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n13.jpg
+  sha256: 347210d2347f863b8256aaad137b9bd8853efbd143ade24459c6f702a9236651
+  levels: [60, 190]
+  crop: [1974, 2938, 763, 466]
+- name: cut-10-3.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n13.jpg
+  sha256: 347210d2347f863b8256aaad137b9bd8853efbd143ade24459c6f702a9236651
+  levels: [60, 190]
+  crop: [574, 3237, 368, 504]
+- name: cut-11-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n14.jpg
+  sha256: 34dd2c9901eadd406df7b6b5f5f17db4162e3a39b35e3c7d6ec95a26def12837
+  levels: [60, 190]
+  crop: [485, 1732, 708, 1021]
+- name: cut-11-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n14.jpg
+  sha256: 34dd2c9901eadd406df7b6b5f5f17db4162e3a39b35e3c7d6ec95a26def12837
+  levels: [60, 190]
+  crop: [1906, 3186, 721, 420]
+- name: cut-12-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n15.jpg
+  sha256: b37eb1a8aa09ee5ed71e3da99bf94ea0b7de0d8746b1f9c73939f50fd2c09684
+  levels: [60, 190]
+  crop: [1048, 2515, 244, 394]
+- name: cut-49-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n52.jpg
+  sha256: 675bbc78c4b782094c1de35e8b67dce90f684f048fbc0cd17400a92a26797e9e
+  levels: [60, 190]
+  crop: [293, 861, 656, 706]
+- name: cut-50-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n53.jpg
+  sha256: 41e2ff1f46812129a107b36db277b45a89eb384fef314034ae71bdc4569e6a03
+  levels: [60, 190]
+  crop: [547, 568, 1149, 935]
+- name: cut-51-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n54.jpg
+  sha256: e62235e441f613962cf9500a0b2f42dc4e9e52ad4f2d9180314ef18ef23b09bb
+  levels: [60, 190]
+  crop: [1885, 1690, 431, 203]
+- name: cut-51-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n54.jpg
+  sha256: e62235e441f613962cf9500a0b2f42dc4e9e52ad4f2d9180314ef18ef23b09bb
+  levels: [60, 190]
+  crop: [1585, 3073, 1037, 542]
+- name: cut-53-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n56.jpg
+  sha256: c0dbbdfbce8edcb93dcf23252c301047a30e4f955828081be7bfcf41edf0d5cc
+  levels: [60, 190]
+  crop: [1829, 2500, 531, 598]
+- name: cut-54-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n57.jpg
+  sha256: 4514f92595150eff6c138a955b82372185ab51653b720d43b107210c822826b9
+  levels: [60, 190]
+  crop: [1718, 1516, 1168, 1261]
+- name: cut-55-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n58.jpg
+  sha256: 5a0e23bafee4cae8fe03eb9eef2ff27ef9696c0599c0c44aeda0a4b4d36eb3c3
+  levels: [60, 190]
+  crop: [330, 935, 2449, 2519]
+- name: cut-58-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n61.jpg
+  sha256: 3c3eae8cd7ce575ec90b0d20bc521a71e929de9f37f02c441df5c3e77bb605bd
+  levels: [60, 190]
+  crop: [575, 520, 1030, 1178]
+- name: cut-58-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n61.jpg
+  sha256: 3c3eae8cd7ce575ec90b0d20bc521a71e929de9f37f02c441df5c3e77bb605bd
+  levels: [60, 190]
+  crop: [2144, 2939, 288, 403]
+- name: cut-59-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n62.jpg
+  sha256: d9359a26960df6ddda257b0c5b9bd555f62cf9aca1a3c9baeadeb5963b5f6dd5
+  levels: [60, 190]
+  crop: [1763, 737, 682, 430]
+- name: cut-59-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n62.jpg
+  sha256: d9359a26960df6ddda257b0c5b9bd555f62cf9aca1a3c9baeadeb5963b5f6dd5
+  levels: [60, 190]
+  crop: [1888, 1434, 404, 631]
+- name: cut-59-3.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n62.jpg
+  sha256: d9359a26960df6ddda257b0c5b9bd555f62cf9aca1a3c9baeadeb5963b5f6dd5
+  levels: [60, 190]
+  crop: [1843, 2293, 470, 476]
+- name: cut-59-4.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n62.jpg
+  sha256: d9359a26960df6ddda257b0c5b9bd555f62cf9aca1a3c9baeadeb5963b5f6dd5
+  levels: [60, 190]
+  crop: [625, 2953, 554, 648]
+- name: cut-60-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n63.jpg
+  sha256: cc06e84de9a091c51313fc49599044617881161892afa39f4c8baad31f5078a1
+  levels: [60, 190]
+  crop: [943, 3384, 290, 225]
+- name: cut-61-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n64.jpg
+  sha256: 76c222162958acf44369b6d722c14849d1f0e3f37914265d252518e022c17c06
+  levels: [60, 190]
+  crop: [275, 788, 540, 580]
+- name: cut-62-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n65.jpg
+  sha256: 0ad4ad65f0cfea829b3cfeafed38abac01e4f31fe78efe5c836c1f3765436ec2
+  levels: [60, 190]
+  crop: [528, 835, 524, 2922]
+- name: cut-62-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n65.jpg
+  sha256: 0ad4ad65f0cfea829b3cfeafed38abac01e4f31fe78efe5c836c1f3765436ec2
+  levels: [60, 190]
+  crop: [1731, 541, 526, 3203]
+- name: cut-63-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n66.jpg
+  sha256: 1a4116fe8c1f855a16a0e6a9c830e4aae434701596226b2f6ffd92c468544f1a
+  levels: [60, 190]
+  crop: [1825, 970, 432, 428]
+- name: cut-66-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n69.jpg
+  sha256: 98f253de7bdc3a2194c878c1816ba1e882c9301a3a69e069fc829818eb325ee1
+  levels: [60, 190]
+  crop: [1812, 759, 950, 1019]
+- name: cut-67-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n70.jpg
+  sha256: 4d142c5c5ea0ed1bedd14113295c78aad16897b0f993570451c44f708b2ccc37
+  levels: [60, 190]
+  crop: [251, 535, 2477, 2993]
+- name: cut-70-1.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n73.jpg
+  sha256: 621780ac386a35893e660122442df7ea6fc4d52b42576b670fa9eb391c11f17d
+  levels: [60, 190]
+  crop: [2025, 644, 437, 268]
+- name: cut-70-2.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n73.jpg
+  sha256: 621780ac386a35893e660122442df7ea6fc4d52b42576b670fa9eb391c11f17d
+  levels: [60, 190]
+  crop: [905, 1600, 314, 399]
+- name: cut-70-3.png
+  url: https://archive.org/download/sim_punch_1841_1/page/n73.jpg
+  sha256: 621780ac386a35893e660122442df7ea6fc4d52b42576b670fa9eb391c11f17d
+  levels: [60, 190]
+  crop: [2046, 3394, 434, 295]

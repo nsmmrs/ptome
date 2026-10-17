@@ -1167,6 +1167,26 @@ final class _Pass {
         i--;
         continue;
       }
+      // A box that clears the blocks floating to a side beside it: below
+      // them all (CSS's `clear: both`), if the region goes on that far.
+      if (child.style.clearSides && _excluding) {
+        var bottom = y;
+        for (final other in _exclusions) {
+          if (other.top <= y + 1e-6 && other.bottom > bottom) {
+            bottom = other.bottom;
+          }
+        }
+        if (bottom > y + 1e-6 && !(bottom.isInfinite && childAtTop)) {
+          if (bottom.isInfinite || cursor + bottom - y >= room - 1e-6) {
+            return split(kids.sublist(i), from: i);
+          }
+          children.add((cursor, _PlacedSpace(bottom - y)));
+          cursor += bottom - y;
+          trailing = 0;
+          i--;
+          continue;
+        }
+      }
       // Beside blocks floating to a side: a block that fits beside them
       // whole is set there, narrowed; one that doesn't, below them (a
       // block without a frame, its children each so).

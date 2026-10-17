@@ -3,28 +3,47 @@ title: "Punch, or the London Charivari"
 source: punch.adoc
 looks: [punch]
 compare:
-  - page: 2
-    scan: https://upload.wikimedia.org/wikipedia/commons/6/64/Page_001_%28Punch%2C_17_July_1841%29.png
-    note: "The first page of the first issue, 17 July 1841"
+  - page: 1
+    scan: https://archive.org/download/sim_punch_1841_1/page/n4.jpg
+    note: "The first page of the issue of 17 July 1841: the week's line over the Moral of Punch, its cut, a piece's turned lines (1841)"
   - page: 3
-    scan: https://upload.wikimedia.org/wikipedia/commons/f/fd/Page_002_%28Punch%2C_17_July_1841%29.png
-    note: "Its second page (17 July 1841)"
+    scan: https://archive.org/download/sim_punch_1841_1/page/n6.jpg
+    note: "Page 3, the Synopsis of Voting, set sideways across the page as a tree of heads and lists (1841)"
+  - page: 9
+    scan: https://archive.org/download/sim_punch_1841_1/page/n12.jpg
+    note: "Page 9: the Fine Arts' catalogue, its pictures beside the remarks on them, and the Beadle's turned verse (1841)"
+  - page: 22
+    scan: https://archive.org/download/sim_punch_1841_1/page/n61.jpg
+    note: "Page 58: Punch's thermometer, a table with dots led to its figures, and Deaf Burke's mark, a cut (1841)"
+  - page: 26
+    scan: https://archive.org/download/sim_punch_1841_1/page/n65.jpg
+    note: "Page 62: the Royal Rhythmical Alphabet, its letters beside their cuts (1841)"
 ---
 
 # Punch, or the London Charivari
 
 Three issues of the first volume of Punch (17 July, 14 and 21 August
-1841), in a look after the volume's pages. What the work shows: magazine
-pages — each issue's pieces in two columns ruled apart under the
-running title, short rules between the pieces, headed and unheaded; the
-cuts in the columns with their captions under them, the large cuts
-across the page (`image_role_cut_scope: page`); the pictorial initials,
-a piece's first letter drawn as a picture floated beside its text, the
-letter itself hidden (`role_hide_display: none`); verse, prescriptions
-and a thermometer as tables, the Royal Alphabet with a cut to each
-letter (FEAT-n5k533). The catalogue of the Fine Arts found BUG-l91thh: a
-cell spanning rows that a column break splits left an empty row in the
-tagged PDF.
+1841), as the volume prints them: its pages 1 to 12 and 49 to 72, page
+for page and line for line (`tool/punch_1841`). What the work shows:
+magazine pages, each a section of its own (`:source-lines:`, each
+source line a printed line) in two columns ruled apart under the
+running head "PUNCH." and its folio; the pieces' heads in heavy
+capitals or small ones, short rules between the pieces; each
+paragraph's space above it and its pitch the scan's; the cuts cut from
+the scan where the volume sets them, some floated to a side with the
+lines beside them as far from them as the volume's
+(`float-width`, `float-gap`); the Fine Arts' catalogue, its pictures in
+a block floated left beside the remarks floated right, the next head
+under both (`role_<role>_clear`); footnotes at a column's foot; verse
+with its long lines turned over and hung; Punch's thermometer, a table
+of dot leaders between rules; the prescriptions; the playbills with
+their letters boxed beside them; the cavatina's score; the Royal
+Rhythmical Alphabet, a strip of cuts beside its letters; the plates on
+pages of their own (`section_role_<role>_page_running_content: none`),
+their backs blank; the Synopsis of Voting set sideways across its page,
+drawn as an SVG (`images/synopsis.svg`). The catalogue of the Fine Arts
+found BUG-l91thh: a cell spanning rows that a column break splits left
+an empty row in the tagged PDF.
 
 ## Sources
 
@@ -33,34 +52,41 @@ tagged PDF.
 | Punch, 17 July 1841, Project Gutenberg eBook #13639 (HTML, its cuts) | https://www.gutenberg.org/cache/epub/13639/pg13639-h.zip | `690d8fb4e3b5d2938dec54a4427ab6247c013d51560138bbd047f11c101ad2f0` |
 | Punch, 14 August 1841, eBook #14923 | https://www.gutenberg.org/cache/epub/14923/pg14923-h.zip | `7717739153ff6013e5aa9f9a73d5b6b5a087a8b627c2d46c9403aa30b19cfbd6` |
 | Punch, 21 August 1841, eBook #14924 | https://www.gutenberg.org/cache/epub/14924/pg14924-h.zip | `d5769010b447fc54016e47c26e2ec18a333a4286ca279be932a82b03ab7e46cd` |
-| The cuts (PNG), the same editions | in `fetch.yml` with their SHA-256 | in `fetch.yml` |
+| The first volume (1841), the Internet Archive's scan (Serials in Microfilm): the pages the text is read against, the cuts and the plates cut from its page images | https://archive.org/details/sim_punch_1841_1 (leaves 4 to 15 and 52 to 75, the printed page the leaf less three) | the leaves in `tool/punch_1841/scans.sha256`, the page images in `pages.sha256` and `fetch.yml` |
 
 The issues are three of the first volume's first six: the others (24
 and 31 July, 7 August) hold racial and religious caricatures, in their
 text and their cuts, that the showcase leaves out.
 
 Imported by `tool/showcase_gutenberg.dart punch`, which writes each
-issue to `text/`:
+issue to `text/` (`issue-1.adoc` to `issue-3.adoc`, kept as imported):
+Project Gutenberg's header, licence and page numbers left out, each
+issue a chapter, its pieces sections.
 
-- Project Gutenberg's header, licence and page numbers are left out,
-  and the masthead it repeats over each issue (the look sets the title
-  over every page, as the volume does).
-- Each issue is a chapter titled by its date; its pieces are sections,
-  their subheads discrete headings; Project Gutenberg's rules between
-  pieces are thematic breaks.
-- The cuts are as wide as Project Gutenberg sets them: a quarter of its
-  page more than half the column, half its page the column, its whole
-  page the page across (the `cut` role); their captions are their titles.
-- The side notes are footnotes; the tables keep their spans (a span
-  that runs past the table's end is cut to it), without header rows.
+The pages (`text/pages.adoc`) are generated by `tool/punch_1841/gen.py`
+from `punch.spec`: the transcription's words laid on the scan's lines
+(the Internet Archive's OCR) and read against the scan line by line,
+corrected where the transcription runs printed lines together or the
+scan reads otherwise (`fixes.txt`, 82 corrections: the footnotes, which
+Project Gutenberg sets as side notes, at their columns' feet; the
+catalogue, the poems and the comparison set as the volume sets them;
+the prescriptions, the dedication and the playbills' boxes, which the
+transcription leaves out; the plates' titles and captions; the words
+the scan prints otherwise). Page 3's Synopsis of Voting is drawn
+(`images/synopsis.svg`, `tool/punch_1841/p3.py`): each of its lines the
+transcription's, placed and sized where the scan sets it, its bracket
+rules the scan's (20 lines read off the scan in `p3-fixes.txt`). The
+cuts, the plates and the cavatina's score are cut from the scan's page
+images (`fetch.yml`, their paper whitened).
 
 ## Licence
 
 Punch's first volume is in the public domain (published 1841). Project
 Gutenberg's editions are public-domain texts in the United States; their
 headers, licences and trademarks are not reproduced, and their name is
-used only in this credit. The pages on Wikimedia Commons that the build
-compares with are in the public domain.
+used only in this credit. The Internet Archive's scan reproduces the
+1841 printing, in the public domain; the cuts cut from it are the
+printing's.
 
 ## Fonts
 
@@ -70,12 +96,17 @@ installs them. Not committed.
 
 ## The printing the look follows
 
-The first volume, London, 1841: the pages of the first issue on
-Wikimedia Commons ("Page 001 (Punch, 17 July 1841).png" and on).
+Punch, or the London Charivari, volume I, London, 1841: the Internet
+Archive's scan, https://archive.org/details/sim_punch_1841_1.
 
 Where the look departs from it:
 
+- Old Standard TT stands in for the volume's Scotch roman; its words'
+  widths differ from the volume's by a few percent, taken up by the
+  justified lines' spaces and letters (`base_font_expansion`). Each
+  line's baseline is within a point of the scan's for nearly all of
+  them, within two for all but three (`tool/punch_1841/README.md`).
 - The running title is set in Old Standard TT's capitals, not the
   volume's outlined display letters.
-- The cuts are where the transcription puts them, not where the volume
-  sets them on the page.
+- The plates' engravings, the cuts and the score are the scan's images,
+  as grey as the microfilm, not redrawn.

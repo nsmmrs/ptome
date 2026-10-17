@@ -6,6 +6,7 @@
 @TestOn('vm')
 library;
 
+import 'package:ptome/src/font_index.dart' show FontIndex;
 import 'package:ptome/src/pdf/fonts.dart';
 import 'package:ptome/src/pdf/theme.dart';
 import 'package:test/test.dart';
@@ -127,5 +128,19 @@ void main() {
       ..font('Absent Mono');
     expect(warnings[warnings.length - 2], contains('using Times-Roman'));
     expect(warnings.last, contains('using Courier'));
+  });
+
+  test("SVG text in a family installed, not the theme's: that family", () {
+    // (A look's face drawn in an SVG of the book's own: Punch's page set
+    // sideways, its text in the look's Old Standard TT.)
+    final fonts = FontCatalog(
+      ThemeLoader().load(),
+      installed: FontIndex(['test/pdf/fixtures/fonts']),
+    );
+    final yrsa = fonts.svgFont('Yrsa', bold: false, italic: false);
+    expect(yrsa, isNotNull);
+    expect(yrsa!.name, contains('Yrsa'));
+    // (Neither the theme's nor installed: none, the SVG's fallback.)
+    expect(fonts.svgFont('Absent Face', bold: false, italic: false), isNull);
   });
 }

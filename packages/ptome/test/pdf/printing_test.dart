@@ -234,6 +234,40 @@ void main() {
     expect(left - 48.24, closeTo(120, 1));
   });
 
+  test('role_<role>_clear: the block under the floats beside it, not '
+      'beside the longer', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n\n'
+            'image::box.svg[role=side,pdfwidth=60pt,pdfheight=60pt,'
+            'float-width=60pt]\n\n'
+            'Beside.\n\n'
+            '[.clr]\nUnder.\n',
+        'role:\n  side:\n    float: left\n  clr:\n    clear: true\n',
+      ),
+    ).first;
+    expect(_line(page, 'Beside')[0], greaterThan(48.24 + 60));
+    expect(_line(page, 'Under')[0], closeTo(48.24, 1));
+    expect(_line(page, 'Under')[1], greaterThan(36 + 60));
+  });
+
+  test("a floating block's own margin-top, kept: the float that much "
+      'lower, the text beside it from the top', () {
+    final page = _lines(
+      _pdf(
+        ':nofooter:\n\n'
+            '[margin-top=30pt]\n'
+            'image::box.svg[role=side,pdfwidth=60pt,pdfheight=60pt,'
+            'float-width=60pt]\n\n'
+            'Beside the float.\n',
+        'base:\n  margin_break: keep\nrole:\n  side:\n    float: left\n',
+      ),
+    ).first;
+    final beside = _line(page, 'Beside');
+    expect(beside[0], greaterThan(48.24 + 60));
+    expect(beside[1], lessThan(36 + 30));
+  });
+
   test('a float as wide as the region leaves no room beside it: the block '
       'after it below it', () {
     final page = _lines(

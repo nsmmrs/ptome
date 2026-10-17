@@ -570,7 +570,8 @@ final class FontCatalog {
 
   /// The font SVG text of [family] (a name, any case, or a generic
   /// family) gets, in the style nearest to [bold] and [italic]; null when
-  /// the catalog has no such family (prawn-svg's font registry).
+  /// the catalog has no such family and none is installed (prawn-svg's
+  /// font registry).
   PdfFont? svgFont(String family, {required bool bold, required bool italic}) {
     String? named(String name) {
       final lower = name.toLowerCase();
@@ -581,6 +582,22 @@ final class FontCatalog {
     }
 
     final name = family.replaceAll(RegExp(r'\s{2,}'), ' ');
+    final wanted = bold && italic
+        ? 'bold_italic'
+        : bold
+        ? 'bold'
+        : italic
+        ? 'italic'
+        : 'normal';
+    // (A family installed, as the text's are found: a look's face drawn
+    // in an SVG of the book's own, a page set sideways.)
+    if (named(name) == null && _installed.hasFamily(name)) {
+      try {
+        return font(name, wanted).pdf;
+      } on FontException {
+        return null;
+      }
+    }
     final found =
         named(name) ??
         switch (name.toLowerCase()) {
@@ -591,13 +608,6 @@ final class FontCatalog {
         };
     if (found == null) return null;
     final styles = (_catalog[found] ?? _builtInFamilies[found])!;
-    final wanted = bold && italic
-        ? 'bold_italic'
-        : bold
-        ? 'bold'
-        : italic
-        ? 'italic'
-        : 'normal';
     final style = styles.containsKey(wanted)
         ? wanted
         : styles.containsKey('normal')

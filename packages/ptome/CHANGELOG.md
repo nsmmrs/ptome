@@ -10,6 +10,21 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `role_<role>_clear: true`, a block with the role below every
+  block floating to a side beside it (CSS's `clear: both`); a floating
+  block's own `margin-top` kept (`base_margin_break: keep`) inside the
+  float, the text beside it from where the float starts; SVG text in a
+  family the theme doesn't name found among the installed fonts, as the
+  text's are. The showcase's Punch is now its three issues (17 July, 14
+  and 21 August 1841) as the first volume prints them, page for page and
+  line for line (`tool/punch_1841`, EPIC-5f9lz0): the text the Project
+  Gutenberg transcriptions' read against the Internet Archive's scan of
+  the volume line by line, its cuts cut from the scan, each page's lines
+  the scan's within a point; the Fine Arts' catalogue beside its
+  remarks, the footnotes at a column's foot, Punch's thermometer, the
+  Royal Rhythmical Alphabet beside its cuts, the playbills with their
+  framed letters, the cavatina's score, the plates on pages of their
+  own, and the Synopsis of Voting set sideways as the volume sets it.
 - PDF: `role_<role>_text_emphasis_offset`, emphasis marks that far from
   the baseline, over or under it, in place of just past the em box (a
   dot just under a figure).

@@ -6,10 +6,11 @@
 :looksdir: {docdir}
 :imagesdir: images
 :figure-caption!:
-:description: Three issues of Punch’s first volume (17 July, 14 and 21 August 1841): its pieces in three ruled columns under the masthead, its cuts and their captions, its pictorial initials, its verse.
+:notitle:
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
+:folio-start: 1
+:description: Three issues of Punch’s first volume (17 July, 14 and 21 August 1841) as the volume prints them, page for page and line for line.
 
-include::text/issue-1.adoc[]
-
-include::text/issue-2.adoc[]
-
-include::text/issue-3.adoc[]
+include::text/pages.adoc[]

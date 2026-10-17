@@ -117,6 +117,7 @@ final class BoxStyle {
     this.sideGap = 0,
     this.sideShape,
     this.runsAround = false,
+    this.clearSides = false,
     this.numberLines = false,
     this.unnumbered = false,
     this.gridLine,
@@ -256,6 +257,12 @@ final class BoxStyle {
   /// width below them. Otherwise it goes below them whole.
   final bool runsAround;
 
+  /// Whether the box starts below every block floating to a [side] that
+  /// is beside where it would start (CSS's `clear: both`): a catalogue's
+  /// next heading under its list and the remarks beside the list, not
+  /// beside the longer of them.
+  final bool clearSides;
+
   /// The outline of a block floating to a [side], where a paragraph that
   /// [runsAround] it (with [ShapedContent]) is set line by line: an
   /// image's shape, say. Null: its box.
@@ -333,6 +340,7 @@ final class BoxStyle {
     sideGap: sideGap ?? this.sideGap,
     sideShape: sideShape == null ? this.sideShape : sideShape.$1,
     runsAround: runsAround,
+    clearSides: clearSides,
     numberLines: numberLines,
     unnumbered: unnumbered,
     gridLine: gridLine,
