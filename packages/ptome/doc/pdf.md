@@ -841,7 +841,10 @@ again (modern engine): `section_role_<role>_page_margin` (as
 `page_margin`), `_page_background_color`, `_page_background_image` (as
 `page_background_image`), `_page_running_content: none` (no header
 or footer on its pages) and `_page_columns` (its content in that many
-balanced columns under its heading). Its pages keep the layout's size.
+balanced columns under its heading; `1`, in a book set in `page_columns`,
+sets it across the page, its own `[.columns]` blocks still in columns, as
+a play's first page sets its title over its columns). Its pages keep the
+layout's size.
 
 A part on a page of its own is asciidoctor-pdf's
 `heading_part_break_after: always`; a title lower on its page,

@@ -12,7 +12,12 @@ William Shakespeare
 ifeval::["{look}" == "tempest"]
 :line-numbers: logical
 endif::[]
+// (The Folio has no title page of its own: the play's first page.)
+ifeval::["{look}" == "folio"]
+:notitle:
+endif::[]
 
+ifeval::["{look}" != "folio"]
 include::text/dramatis-personae.adoc[]
 
 include::text/act-1.adoc[]
@@ -26,3 +31,16 @@ include::text/act-4.adoc[]
 include::text/act-5.adoc[]
 
 include::text/epilogue.adoc[]
+endif::[]
+ifeval::["{look}" == "folio"]
+// (The Folio's look sets the Folio's text: its pages line for line,
+// tool/tempest_1623.)
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
+
+[#folio%notitle]
+== The Tempest
+
+include::text/folio.adoc[]
+endif::[]

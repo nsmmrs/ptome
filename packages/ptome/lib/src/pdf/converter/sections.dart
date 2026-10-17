@@ -35,6 +35,19 @@ extension _Sections on PdfConverter {
     return null;
   }
 
+  /// Whether [section]'s role sets it across the page in a book set in
+  /// columns (`section_role_<role>_page_columns: 1`, modern engine): its
+  /// content in one column, its own `[.columns]` blocks in columns, as a
+  /// play's first page sets its title across the page over its columns.
+  bool _acrossPage(Section section) =>
+      !asciidoctorCompat(_document, CompatFormat.pdf) &&
+      section.roles.any(
+        (role) =>
+            _keys('section_role_${role.replaceAll('-', '_')}')
+                .number('page_columns') ==
+            1,
+      );
+
   /// The page template of the section role [role]: the layout's page,
   /// with the role's margins (`section_role_<role>_page_margin`), its
   /// background (`_page_background_color`, `_page_background_image`) and
@@ -287,7 +300,7 @@ extension _Sections on PdfConverter {
         _out.add(
           BlockBox(slot, style: BoxStyle(margin: _outdented(EdgeInsets.zero))),
         );
-      } else if (chapterlike && _bookColumns >= 2) {
+      } else if (chapterlike && _bookColumns >= 2 && !_acrossPage(section)) {
         // The chapter's content in the book's columns, balanced where it
         // ends (what follows starts under its shorter column).
         final gap = (_n('page_column_gap') ?? _rootFontSize).toDouble();

@@ -1,0 +1,16 @@
+# The First Folio's headpiece and decorated initial over the Tempest's
+# first page, fetched by tool/showcase.dart into the work cache and
+# checked by its SHA-256: the Internet Archive's page image of the Boston
+# Public Library's copy (its n24, the play's first page), cut at the
+# ornament's edges, its paper white and the print showing through from
+# the other side of the leaf gone (`levels`).
+- name: tempest-headpiece.png
+  url: https://archive.org/download/mrvvilliamshakes00shak/page/n24.jpg
+  sha256: 8c4ccceab0d746c33c7ce4995014f3ecc6f7dd51189888803e9f276589ae20fd
+  levels: [70, 165]
+  crop: [300, 215, 1745, 470]
+- name: tempest-initial-b.png
+  url: https://archive.org/download/mrvvilliamshakes00shak/page/n24.jpg
+  sha256: 8c4ccceab0d746c33c7ce4995014f3ecc6f7dd51189888803e9f276589ae20fd
+  levels: [70, 165]
+  crop: [108, 1520, 182, 175]

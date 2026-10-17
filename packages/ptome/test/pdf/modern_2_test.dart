@@ -753,6 +753,43 @@ void main() {
       );
     });
 
+    test("a book in columns: a section role's one column across the page", () {
+      final text = 'Words of the piece run on across the page. ' * 8;
+      final source =
+          '= Book\n:doctype: book\n\n== In Columns\n\n${text}Plain.\n\n'
+          '[.across]\n== Across\n\n${text}Wide.\n';
+      const theme =
+          'page_columns: 2\nsection:\n  role:\n    across:\n'
+          '      page_columns: 1\n';
+      // (The right end of the first line under a heading: its words in
+      // reading order from the first, at its height, none further from
+      // the one before than a space, not the next column's.)
+      double firstLine(String pdf, String heading) {
+        final all = words(pdf);
+        var k = all.indexWhere((w) => w.$1 == heading) + 1;
+        var right = all[k].$5;
+        while (k + 1 < all.length &&
+            (all[k + 1].$4 - all[k].$4).abs() < 1 &&
+            all[k + 1].$3 - all[k].$5 < 8) {
+          k++;
+          right = all[k].$5;
+        }
+        return right;
+      }
+
+      // (The page 612 points wide: a column's line ends short of its
+      // middle, a line across the page past it.)
+      final pdf = modernPdf(source, theme: theme);
+      expect(firstLine(pdf, 'Columns'), lessThan(306));
+      expect(firstLine(pdf, 'Across'), greaterThan(400));
+      // asciidoctor-pdf's: one column, the book's and the role's keys
+      // no layout keys.
+      expect(
+        firstLine(modernPdf(source, theme: theme, compat: true), 'Columns'),
+        greaterThan(400),
+      );
+    });
+
     test('a block floating to a side in columns: a share of its column', () {
       final words = 'Words of the piece run on across the page. ' * 30;
       const theme = 'role:\n  aside:\n    float: right\n    float_width: 50%\n';

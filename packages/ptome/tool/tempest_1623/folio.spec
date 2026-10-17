@@ -1,0 +1,2450 @@
+@page 1 first
+@head
+@band
+@column
+D _A tempeſtuous noiſe of Thunder and Lightning heard: En-_
+D _ter a Ship-maſter, and a Boteſwaine._
+L _Maſter._
+@initial B
+L Ote-ſwaine.
+S _Boteſ._|Heere Maſter: What cheere?
+S _Maſt._|Good: Speake to th' Mariners: fall
+  too't, yarely, or we run our ſelues a ground,
+  beſtirre, beſtirre. @_Exit._
+D _Enter Mariners._
+S _Boteſ._|Heigh my hearts, cheerely, cheerely my harts:
+  yare, yare: Take in the toppe-ſale: Tend to th' Maſters
+  whiſtle: Blow till thou burſt thy winde, if roome e-
+  nough.
+D _Enter Alonſo, Sebaſtian, Anthonio, Ferdinando,_
+D _Gonzalo, and others._
+S _Alon._|Good Boteſwaine haue care: where's the Ma-
+  ſter? Play the men.
+S _Boteſ._|I pray now keepe below.
+S _Auth._|Where is the Maſter, Boſon?
+V _Boteſ._|Do you not heare him? you marre our labour,
+  Keepe your Cabines: you do aſsiſt the ſtorme.
+S _Gonz._|Nay, good be patient.
+S _Boteſ._|When the Sea is: hence, what cares theſe roa-
+  rers for the name of King? to Cabine; ſilence: trouble
+  vs not.
+S _Gon._|Good, yet remember whom thou haſt aboord.
+S _Boteſ._|None that I more loue then my ſelfe. You are
+  a Counſellor, if you can command theſe Elements to ſi-
+  lence, and worke the peace of the preſent, wee will not
+  hand a rope more, vſe your authoritie: If you cannot,
+  giue thankes you haue liu'd ſo long, and make your
+  ſelfe readie in your Cabine for the miſchance of the
+  houre, if it ſo hap. Cheerely good hearts: out of our
+  way I ſay. @_Exit._
+S _Gon._|I haue great comfort from this fellow: methinks
+  he hath no drowning marke vpon him, his complexion
+  is perfect Gallowes: ſtand faſt good Fate to his han-
+  ging, make the rope of his deſtiny our cable, for our
+  owne doth little aduantage: If he be not borne to bee
+  hang'd, our caſe is miſerable. @_Exit._
+D _Enter Boteſwaine._
+S _Boteſ._|Downe with the top-Maſt: yare, lower, lower,
+  bring her to Try with Maine-courſe. A plague———
+L _A cry within._ @_Enter Sebaſtian, Anthonio & Gonzalo._
+@column
+~p vpon this howling: they are lowder then the weather,
+  or our office: yet againe? What do you heere? Shal we
+  giue ore and drowne, haue you a minde to ſinke?
+S _Sebaſ._|A poxe o' your throat, you bawling, blaſphe-
+  mous incharitable Dog.
+S _Boteſ._|Worke you then.
+S _Anth._|Hang cur, hang, you whoreſon inſolent Noyſe-
+  maker, we are leſſe afraid to be drownde, then thou art.
+S _Gonz._|I'le warrant him for drowning, though the
+  Ship were no ſtronger then a Nutt-ſhell, and as leaky as
+  an vnſtanched wench.
+S _Boteſ._|Lay her a hold, a hold, ſet her two courſes off
+  to Sea againe, lay her off.
+D _Enter Mariners wet._
+S _Mari._|All loſt, to prayers, to prayers, all loſt.
+S _Boteſ._|What muſt our mouths be cold?
+S _Gonz._|The King, and Prince, at prayers, let's aſſiſt them,
+  for our caſe is as theirs.
+S _Sebaſ._|I' am out of patience.
+V _An._|We are meerly cheated of our liues by drunkards,
+  This wide-chopt-raſcall, would thou mightſt lye drow-
+  ning the waſhing of ten Tides.
+V _Gonz._|Hee'l be hang'd yet,
+  Though euery drop of water ſweare againſt it.
+  And gape at widſt to glut him. @_A confuſed noyſe within._
+  Mercy on vs.
+  We ſplit, we ſplit, Farewell my wife, and children.
+  Farewell brother: we ſplit, we ſplit, we ſplit.
+S _Anth._|Let's all ſinke with' King
+S _Seb._|Let's take leaue of him. @_Exit._
+S _Gonz._|Now would I giue a thouſand furlongs of Sea,
+  for an Acre of barren ground: Long heath, Browne
+  firrs, any thing; the wills aboue be done, but I would
+  faine dye a dry death. @_Exit._
+H Scena Secunda.
+D _Enter Proſpero and Miranda._
+V _Mira._|If by your Art (my deereſt father) you haue
+  Put the wild waters in this Rore; alay them:
+  The skye it ſeemes would powre down ſtinking pitch,
+  But that the Sea, mounting to th' welkins cheeke,
+  Daſhes the fire out. Oh! I haue ſuffered
+  With thoſe that I ſaw ſuffer: A braue veſſell
+@foot A|(Who
+@page 2
+@column
+  (Who had no doubt ſome noble creature in her)
+  Daſh'd all to peeces: O the cry did knocke
+  Againſt my very heart: poore ſoules, they periſh'd.
+  Had I byn any God of power, I would
+  Haue ſuncke the Sea within the Earth, or ere
+  It ſhould the good Ship ſo haue ſwallow'd, and
+  The fraughting Soules within her.
+V _Proſ._|Be collected,
+  No more amazement: Tell your pitteous heart
+  there's no harme done.
+S _Mira._|O woe, the day.
+V _Proſ._|No harme:
+  I haue done nothing, but in care of thee
+  (Of thee my deere one; thee my daughter) who
+  Art ignorant of what thou art▪ naught knowing
+  Of whence I am: nor that I am more better
+  Then _Proſpero,_ Maſter of a full poore cell,
+  And thy no greater Father.
+V _Mira._|More to know
+  Did neuer medle with my thoughts.
+V _Proſ._|'Tis time
+  I ſhould informe thee farther: Lend thy hand
+  And plucke my Magick garment from me: So,
+  Lye there my Art: wipe thou thine eyes, haue comfort,
+  The direfull ſpectacle of the wracke which touch'd
+  The very vertue of compaſſion in thee:
+  I haue with ſuch prouiſion in mine Art
+  So ſafely ordered, that there is no ſoule
+  No not ſo much perdition as an hayre
+  Betid to any creature in the veſſell
+  Which thou heardſt cry, which thou ſaw'ſt ſinke: Sit {v downe,}
+  For thou muſt now know farther.
+V _Mira._|You haue often
+  Begun to tell me what I am, but ſtopt
+  And left me to a booteleſſe Inquiſition,
+  Concluding, ſtay: not yet.
+V _Proſ._|The howr's now come
+  The very minute byds thee ope thine care,
+  Obey, and be attentiue. Canſt thou remember
+  A time before we came vnto this Cell?
+  I doe not thinke thou canſt, for then thou was't not
+  Out three yeeres old.
+S _Mira._|Certainely Sir, I can.
+V _Proſ._|By what? by any other houſe, or perſon?
+  Of any thing the Image, tell me, that
+  Hath kept with thy remembrance.
+V _Mira._|'Tis farre off:
+  And rather like a dreame, then an aſſurance
+  That my remembrance warrants: Had I not
+  Fowre, or fiue women once, that tended me?
+V _Proſ._|Thou hadſt; and more _Miranda:_ But how is it
+  That this liues in thy minde? What ſeeſt thou els
+  In the dark-backward and Abiſme of Time?
+  Yf thou remembreſt ought ere thou cam'ſt here,
+  How thou cam'ſt here thou maiſt.
+S _Mira._|But that I doe not.
+V _Proſ._|Twelue yere ſince _(Miranda)_ twelue yere ſince,
+  Thy father was the Duke of _Millaine_ and
+  A Prince of power:
+S _Mira._|Sir, are not you my Father?
+V _Proſ._|Thy Mother was a peece of vertue, and
+  She ſaid thou waſt my daughter; and thy father
+  Was Duke of _Millaine,_ and his onely heire,
+  And Princeſſe; no worſe Iſſued.
+V _Mira._|O the heauens,
+  What fowle play had we, that we came from thence?
+@column
+  Or bleſſed was't we did?
+V _Proſ._|Both, both my Girle.
+  By fowle-play (as thou ſaiſt) were we heau'd thence,
+  But bleſſedly holpe hither.
+V _Mira._|O my heart bleedes
+  To thinke oth' teene that I haue turn'd you to,
+  Which is from my remembrance, pleaſe you, farther;
+V _Proſ._|My brother and thy vncle, call'd _Anthonio_ :
+  I pray thee marke me, that a brother ſhould
+  Be ſo perfidious: he, whom next thy ſelfe
+  Of all the world I lou'd, and to him put
+  The mannage of my ſtate, as at that time
+  Through all the ſignories it was the firſt,
+  And _Proſpero,_ the prime Duke, being ſo reputed
+  In dignity; and for the liberall Artes,
+  Without a paralell; thoſe being all my ſtudie,
+  The Gouernment I caſt vpon my brother,
+  And to my State grew ſtranger, being tranſported
+  And rapt in ſecret ſtudies, thy falſe vncle
+  (Do'ſt thou attend me?)
+S _Mira._|Sir, moſt heedefully.
+V _Proſ._|Being once perfected how to graunt ſuites,
+  how to deny them: who t' aduance, and who
+  To traſh for ouer-topping; new created
+  The creatures that were mine, I ſay, or chang'd 'em,
+  Or els new form'd 'em; hauing both the key,
+  Of Officer, and office, ſet all hearts i' th ſtate
+  To what tune pleas'd his eare, that now he was
+  The Iuy which had hid my princely Trunck,
+  And ſuckt my verdure out on't: Thou attend'ſt not?
+S _Mira._|O good Sir, I doe.
+V _Proſ._|I pray thee marke me:
+  I thus neglecting worldly ends, all dedicated
+  To cloſenes, and the bettering of my mind
+  with that, which but by being ſo retir'd
+  Ore-priz'd all popular rate: in my falſe brother
+  Awak'd an euill nature, and my truſt
+  Like a good parent, did beget of him
+  A falſehood in it's contrarie, as great
+  As my truſt was, which had indeede no limit,
+  A confidence ſans bound. He being thus Lorded,
+  Not onely with what my reuenew yeelded,
+  But what my power might els exact. Like one
+  Who hauing into truth, by telling of it,
+  Made ſuch a ſynner of his memorie
+  To credite his owne lie, he did beleeue
+  He was indeed the Duke, out o' th' Subſtitution
+  And executing th' outward face of Roialtie
+  With all prerogatiue: hence his Ambition growing:
+  Do'ſt thou heare?
+S _Mira._|Your tale, Sir, would cure deafeneſſe.
+V _Proſ._|To haue no Schreene between this part he plaid,
+  And him he plaid it for, he needes will be
+  Abſolute _Millaine,_ Me (poore man) my Librarie
+  Was Dukedome large enough: of temporall roalties
+  He thinks me now incapable. Confederates
+  (ſo drie he was for Sway) with King of _Naples_
+  To giue him Annuall tribute, doe him homage
+  Subiect his Coronet, to his Crowne and bend
+  The Dukedom yet vnbow'd (alas poore _Millaine_ )
+  To moſt ignoble ſtooping.
+S _Mira._|Oh the heauens:
+V _Proſ._|Marke his condition, and th' euent, then tell me
+  If this might be a brother.
+V _Mira._|I ſhould ſinne
+  To thinke but Noblie of my Grand-mother,
+@foot |Good
+@page 3
+@column
+  Good wombes haue borne bad ſonnes.
+V _Pro._|Now the Condition.
+  This King of _Naples_ being an Enemy
+  To me inueterate, hearkens my Brothers ſuit,
+  Which was, That he in lieu o' th' premiſes,
+  Of homage, and I know not how much Tribute,
+  Should preſently extirpate me and mine
+  Out of the Dukedome, and confer faire _Millaine_
+  With all the Honors, on my brother: Whereon
+  A treacherous Armie leuied, one mid-night
+  Fated to th' purpoſe, did _Anthonio_ open
+  The gates of _Millaine,_ and ith' dead of darkeneſſe
+  The miniſters for th' purpoſe hurried thence
+  Me, and thy crying ſelfe.
+V _Mir._|Alack, for pitty:
+  I not remembring how I cride out then
+  Will cry it ore againe: it is a hint
+  That wrings mine eyes too't.
+V _Pro._|Heare a little further,
+  And then I'le bring thee to the preſent buſineſſe
+  Which now's vpon's: without the which, this Story
+  Were moſt impertinent.
+V _Mir._|Wherefore did they not
+  That howre deſtroy vs?
+V _Pro._|Well demanded, wench:
+  My Tale prouokes that queſtion: Deare, they durſt not,
+  So deare the loue my people bore me: nor ſet
+  A marke ſo bloudy on the buſineſſe; but
+  With colours fairer, painted their foule ends.
+  In few, they hurried vs a-boord a Barke,
+  Bore vs ſome Leagues to Sea, where they prepared
+  A rotten carkaſſe of a Butt, not rigg'd,
+  Nor tackle, ſayle, nor maſt, the very rats
+  Inſtinctiuely haue quit it: There they hoyſt vs
+  To cry to th' Sea, that roard to vs; to ſigh
+  To th' windes, whoſe pitty ſighing backe againe
+  Did vs but louing wrong.
+V _Mir._|Alack, what trouble
+  Was I then to you?
+V _Pro._|O, a Cherubin
+  Thou was't that did preſerue me; Thou didſt ſmile,
+  Infuſed with a fortitude from heauen,
+  When I haue deck'd the ſea with drops full ſalt,
+  Vnder my burthen groan'd, which raiſ'd in me
+  An vndergoing ſtomacke, to beare vp
+  Againſt what ſhould enſue.
+S _Mir._|How came we a ſhore?
+V _Pro._|By prouidence diuine,
+  Some food, we had, and ſome freſh water, that
+  A noble _Neopolitan Gonzalo_
+  Out of his Charity, (who being then appointed
+  Maſter of this deſigne) did giue vs, with
+  Rich garments, linnens, ſtuffs, and neceſſaries
+  Which ſince haue ſteeded much, ſo of his gentleneſſe
+  Knowing I lou'd my bookes, he furniſhd me
+  From mine owne Library, with volumes, that
+  I prize aboue my Dukedome.
+V _Mir._|Would I might
+  But euer ſee that man.
+V _Pro._|Now I ariſe,
+  Sit ſtill, and heare the laſt of our ſea-ſorrow:
+  Heere in this Iland we arriu'd, and heere
+  Haue I, thy Schoolemaſter, made thee more profit
+  Then other Princeſſe can, that haue more time
+  For vainer howres; and Tutors, not ſo carefull.
+V _Mir._|Heuens thank you for't. And now I pray you Sir,
+@column
+  For ſtill 'tis beating in my minde; your reaſon
+  For rayſing this Sea-ſtorme?
+V _Pro._|Know thus far forth,
+  By accident moſt ſtrange, bountifull _Fortune_
+  (Now my deere Lady) hath mine enemies
+  Brought to this ſhore: And by my preſcience
+  I finde my _Zenith_ doth depend vpon
+  A moſt auſpitious ſtarre, whoſe influence
+  If now I court not, but omit; my fortunes
+  Will euer after droope: Heare ceaſe more queſtions,
+  Thou art inclinde to ſleepe: 'tis a good dulneſſe,
+  And giue it way: I know thou canſt not chuſe:
+  Come away, Seruant, come; I am ready now,
+  Approach my _Ariel._ Come. @_Enter Ariel._
+V _Ari._|All haile, great Maſter, graue Sir, haile: I come
+  To anſwer thy beſt pleaſure; be't to fly,
+  To ſwim, to diue into the fire: to-ride
+  On the curld clowds: to thy ſtrong bidding, taske
+  _Ariel,_ and all his Qualitie.
+V _Pro._|Haſt thou, Spirit,
+  Performd to point, the Tempeſt that I bad thee.
+V _Ar._|To euery Article.
+  I boorded the Kings ſhip: now on the Beake,
+  Now in the Waſte, the Decke, in euery Cabyn,
+  I flam'd amazement, ſometime I'ld diuide
+  And burne in many places; on the Top-maſt,
+  The Yards and Bore-ſpritt, would I flame diſtinctly,
+  Then meete, and ioyne. _Ioues_ Lightning, the precurſers
+  O' th dreadfull Thunder-claps more momentarie
+  And fight out-running were not; the fire, and cracks
+  Of ſulphurous roaring, the moſt mighty _Neptune_
+  Seeme to beſiege, and make his bold waues tremble,
+  Yea, his dread Trident ſhake.
+V _Pro._|My braue Spirit,
+  Who was ſo firme, ſo conſtant, that this coyle
+  Would not infect his reaſon?
+V _Ar._|Not a ſoule
+  But felt a Feauer of the madde, and plaid
+  Some tricks of deſperation; all but Mariners
+  Plung'd in the foaming bryne, and quit the veſſell;
+  Then all a fire with me the Kings ſonne _Ferdinand_
+  With haire vp-ſtaring (then like reeds, not haire)
+  Was the firſt man that leapt; cride hell is empty,
+  And all the Diuels are heere.
+V _Pro._|Why that's my ſpirit:
+  But was not this nye ſhore?
+S _Ar._|Cloſe by, my Maſter.
+S _Pro._|But are they _(Ariell)_ ſafe?
+V _Ar._|Not a haire periſhd:
+  On their ſuſtaining garments not a blemiſh,
+  But freſher then before: and as thou badſt me,
+  In troops I haue diſperſd them 'bout the Iſle:
+  The Kings ſonne haue I landed by himſelfe,
+  Whom I left cooling of the Ayre with ſighes,
+  In an odde Angle of the Iſle, and ſitting
+  His armes in this ſad knot.
+V _Pro._|Of the Kings ſhip,
+  The Marriners, ſay how thou haſt diſpoſd,
+  And all the reſt o' th' Fleete?
+V _Ar._|Safely in harbour
+  Is the Kings ſhippe, in the deepe Nooke, where once
+  Thou calldſt me vp at midnight to fetch dewe
+  From the ſtill-vext _Bermoothes,_ there ſhe's hid;
+  The Marriners all vnder hatches ſtowed,
+  Who, with a Charme ioynd to their ſuffred labour
+  I haue left aſleep: and for the reſt o' th' Fleet
+@foot A 2|Which
+@page 4
+@column
+  (Which I diſpers'd) they all haue met againe,
+  And are vpon the _Mediterranian_ Flote
+  Bound ſadly home for _Naples,_
+  Suppoſing that they ſaw the Kings ſhip wrackt,
+  And his great perſon periſh.
+V _Pro._|_Ariel,_ thy charge
+  Exactly is perform'd; but there's more worke:
+  What is the time o' th' day?
+S _Ar._|Paſt the mid ſeaſon.
+V _Pro._|At leaſt two Glaſſes: the time 'twixt ſix & now
+  Muſt by vs both be ſpent moſt preciouſly.
+V _Ar._|Is there more toyle? Since y^u^ doſt giue me pains,
+  Let me remember thee what thou haſt promis'd,
+  Which is not yet perform'd me.
+V _Pro._|How now? moodie?
+  What is't thou canſt demand?
+S _Ar._|My Libertie.
+S _Pro._|Before the time be out? no more:
+V _Ar._|I prethee,
+  Remember I haue done thee worthy ſeruice,
+  Told thee no lyes, made thee no miſtakings, ſerv'd
+  Without or grudge, or grumblings; thou did promiſe
+  To bate me a full yeere.
+V _Pro._|Do'ſt thou forget
+  From what a torment I did free thee? _Ar._ No.
+V _Pro._|Thou do'ſt: & thinkſt it much to tread y^e^ Ooze
+  Of the ſalt deepe;
+  To run vpon the ſharpe winde of the North,
+  To doe me buſineſſe in the veines o' th' earth
+  When it is bak'd with froſt.
+S _Ar._|I doe not Sir.
+V _Pro._|Thou lieſt, malignant Thing: haſt thou forgot
+  The fowle Witch _Sycorax,_ who with Age and Enuy
+  Was growne into a hoope? haſt thou forgot her?
+S _Ar._|No Sir.
+S _Pro._|Thou haſt: where was ſhe born? ſpeak: tell me:
+S _Ar._|Sir, in _Argier._
+V _Pro._|Oh, was ſhe ſo: I muſt
+  Once in a moneth recount what thou haſt bin,
+  Which thou forgetſt. This damn'd Witch _Sycorax_
+  For miſchiefes manifold, and forceries terrible
+  To enter humane hearing, from _Argier_
+  Thou know'ſt was baniſh'd: for one thing ſhe did
+  They wold not take her life: Is not this true? _Ar._ I, Sir.
+V _Pro._|This blew ey'd hag, was hither brought with {v child,}
+  And here was left by th' Saylors; thou my ſlaue,
+  As thou reportſt thy ſelfe, was then her ſeruant,
+  And for thou waſt a Spirit too-delicate
+  To act her earthy, and abhord commands,
+  Refuſing her grand hefts, ſhe did confine thee
+  By helpe of her more potent Miniſters,
+  And in her moſt vnmittigable rage,
+  Into a clouen Pyne, within which rift
+  Impriſon'd, thou didſt painefully remaine
+  A dozen yeeres: within which ſpace ſhe di'd,
+  And left thee there: where thou didſt vent thy groanes
+  As faſt as Mill-wheeles ſtrike: Then was this Iſland
+  (Saue for the Son, that he did littour heere,
+  A frekelld whelpe, hag-borne) not honour'd with
+  A humane ſhape.
+S _Ar._|Yes: _Caliban_ her ſonne.
+V _Pro._|Dull thing, I ſay ſo: he, that _Caliban_
+  Whom now I keepe in ſeruice, thou beſt know'ſt
+  What torment I did finde thee in; thy grones
+  Did make wolues howle, and penetrate the breaſts
+  Of euer-angry Beares; it was a torment
+@column
+  To lay vpon the damn'd, which _Sycorax_
+  Could not againe vndoe: it was mine Art,
+  When I arriu'd, and heard thee, that made gape
+  The Pyne, and let thee out.
+S _Ar._|I thanke thee Maſter.
+V _Pro._|If thou more murmur'ſt, I will rend an Oake
+  And peg-thee in his knotty entrailes, till
+  Thou haſt howl'd away twelue winters.
+V _Ar._|Pardon, Maſter,
+  I will be correſpondent to command
+  And doe my ſpryting, gently.
+V _Pro._|Doe ſo: and after two daies
+  I will diſcharge thee.
+V _Ar._|That's my noble Maſter:
+  What ſhall I doe? ſay what? what ſhall I doe?
+V _Pro._|Goe make thy ſelfe like a Nymph o' th' Sea,
+  Be ſubiect to no ſight but thine, and mine: inuiſible
+  To euery eye-ball elſe: goe take this ſhape
+  And hither come in't: goe: hence
+  With diligence. @_Exit._
+V _Pro._|Awake, deere hart awake, thou haſt ſlept well,
+  Awake.
+V _Mir._|The ſtrangenes of your ſtory, put
+  Heauineſſe in me.
+V _Pro._|Shake it off: Come on,
+  Wee'll viſit _Caliban,_ my ſlaue, who neuer
+  Yeelds vs kinde anſwere.
+S _Mir._|'Tis a villaine Sir, I doe not loue to looke on.
+V _Pro._|But as 'tis
+  We cannot miſſe him: he do's make our fire,
+  Fetch in our wood, and ſerues in Offices
+  That profit vs: What hoa: ſlaue: _Caliban_ :
+  Thou Earth, thou: ſpeake.
+S _Cal._|_within._ There's wood enough within.
+V _Pro._|Come forth I ſay, there's other buſines for thee:
+  Come thou Tortoys, when? @_Enter Ariel like a water-Nymph._
+  Fine appariſion: my queint _Ariel,_
+  Hearke in thine eare.
+S _Ar._|My Lord, it ſhall be done. @_Exit._
+V _Pro._|Thou poyſonous ſlaue, got by y^e^ diuell himſelfe
+  Vpon thy wicked Dam; come forth. @_Enter Caliban._
+V _Cal._|As wicked dewe, as ere my mother bruſh'd
+  With Rauens feather from vnwholeſome Fen
+  Drop on you both: A Southweſt blow on yee,
+  And bliſter you all ore.
+V _Pro._|For this be ſure, to night thou ſhalt haue cramps,
+  Side-ſtitches, that ſhall pen thy breath vp, Vrchins
+  Shall for that vaſt of night, that they may worke
+  All exerciſe on thee: thou ſhalt be pinch'd
+  As thicke as hony-combe, each pinch more ſtinging
+  Then Bees that made 'em.
+V _Cal._|I muſt eat my dinner:
+  This Iſland's mine by _Sycorax_ my mother,
+  Which thou tak'ſt from me: when thou cam'ſt firſt
+  Thou ſtroakſt me, & made much of me: wouldſt giue me
+  Water with berries in't: and teach me how
+  To name the bigger Light, and how the leſſe
+  That burne by day, and night: and then I lou'd thee
+  And ſhew'd thee all the qualities o' th' Iſle,
+  The freſh Springs, Brine-pits; barren place and fertill,
+  Curs'd be I that did ſo: All the Charmes
+  Of _Sycorax_ : Toades, Beetles, Batts light on you:
+  For I am all the Subiects that you haue,
+  Which firſt was min owne King: and here you ſty-me
+  In this hard Rocke, whiles you doe keepe from me
+  The reſt o' th' Iſland.
+@foot |_Pro._ Thou
+@page 5
+@column
+V _Pro._|Thou moſt lying ſlaue,
+  Whom ſtripes may moue, not kindnes: I haue vs'd thee
+  (Filth as thou art) with humane care, and lodg'd thee
+  In mine owne Cell, till thou didſt ſeeke to violate
+  The honor of my childe.
+V _Cal._|Oh ho, oh ho, would't had bene done:
+  Thou didſt preuent me, I had peopel'd elſe
+  This Iſle with _Calibans._
+V _Mira._|Abhorred Slaue,
+  Which any print of goodneſſe wilt not take,
+  Being capable of all ill: I pittied thee,
+  Took pains to make thee ſpeak, taught thee each houre
+  One thing or other: when thou didſt not (Sauage)
+  Know thine owne meaning; but wouldſt gabble, like
+  A thing moſt brutiſh. I endow'd thy purpoſes
+  With words that made them knowne: But thy vild race
+  (Tho thou didſt learn) had that in't, which good natures
+  Could not abide to be with; therefore waſt thou
+  Deſeruedly confin'd into this Rocke, who hadſt
+  Deſeru'd more then a priſon.
+V _Cal._|You taught me Language, and my profit on't
+  Is, I know how to curſe: the red-plague rid you
+  For learning me your language.
+V _Proſ._|Hag-ſeed, hence:
+  Fetch vs in Fewell, and be quicke thou'rt beſt
+  To anſwer other buſineſſe: ſhrug'ſt thou (Malice)
+  If thou neglectſt, or doſt vnwillingly
+  What I command, Ile racke thee with old Crampes,
+  Fill all thy bones with Aches, make thee rore,
+  That beaſts ſhall tremble at thy dyn.
+V _Cal._|No, 'pray thee.
+  I muſt obey, his Art is of ſuch pow'r,
+  It would controll my Dams god _Setebos,_
+  And make a vaſſaile of him.
+S _Pro._|So ſlaue, hence. @_Exit Cal._
+D _Enter Ferdinand & Ariel, inuiſible playing & ſinging._
+L _Ariel_ Song. _Come vnto theſe yellow ſands,_
+L _and then take hands:_
+L _Curt ſied when you haue, and kiſt_
+L _the wilde waues whiſt:_
+L _Foote it featly heere, and there, and ſweete Sprights beare_
+L _the burthen._ @Burthen diſperſedly.
+L _Harke, harke, bowgh wawgh: the watch-Dogges barke,_
+L _bowgh-wawgh._
+L Ar. _Hark, hark, I heare, the ſtraine of ſtrutting Chanticlere_
+L _cry cockadidle-dowe._
+V _Fer._|Where ſhold this Muſick be? I' th aire, or th' earth?
+  It ſounds no more: and ſure it waytes vpon
+  Some God' oth' Iland, ſitting on a banke,
+  Weeping againe the King my Fathers wracke.
+  This Muſicke crept by me vpon the waters,
+  Allaying both their fury, and my paſſion
+  With it's ſweet ayre; thence I haue follow'd it
+  (Or it hath drawne me rather) but 'tis gone.
+  No, it begins againe.
+L _Ariell_ Song. _Full fadom fiue thy Father lies,_
+L _Of his bones are Corrall made:_
+L _Thoſe are pearles that were his eies,_
+L _Nothing of him that doth fade,_
+L _But doth ſuffer a Sea-change_
+L _Into ſomething rich, & ſtrange:_
+L _Sea-Nimphs hourly ring his knell._
+L @Burthen: ding dong.
+L _Harke now I heare them, ding-dong bell._
+V _Fer._|The Ditty do's remember my drown'd father,
+  This is no mortall buſines, nor no found
+@column
+  That the earth owes: I heare it now aboue me.
+V _Pro._|The fringed Curtaines of thine eye aduance,
+  And ſay what thou ſee'ſt yond.
+V _Mira._|What is't a Spirit?
+  Lord, how it lookes about: Beleeue me ſir,
+  It carries a braue forme. But 'tis a ſpirit.
+V _Pro._|No wench, it eats, and ſleeps, & hath ſuch ſenſes
+  As we haue: ſuch. This Gallant which thou ſeeſt
+  Was in the wracke: and but hee's ſomething ſtain'd
+  With greefe (that's beauties canker) y^u^ might'ſt call him
+  A goodly perſon: he hath loſt his fellowes,
+  And ſtrayes about to finde 'em.
+V _Mir._|I might call him
+  A thing diuine, for nothing naturall
+  I euer ſaw ſo Noble.
+V _Pro._|It goes on I ſee
+  As my ſoule prompts it: Spirit, fine ſpirit, Ile free thee
+  Within two dayes for this.
+V _Fer._|Moſt ſure the Goddeſſe
+  On whom theſe ayres attend: Vouchſafe my pray'r
+  May know if you remaine vpon this Iſland,
+  And that you will ſome good inſtruction giue
+  How I may beare me heere: my prime requeſt
+  (Which I do laſt pronounce) is (O you wonder)
+  If you be Mayd, or no?
+V _Mir._|No wonder Sir,
+  But certainly a Mayd.
+V _Fer._|My Language? Heauens:
+  I am the beſt of them that ſpeake this ſpeech,
+  Were I but where 'tis ſpoken.
+V _Pro._|How? the beſt?
+  What wer't thou if the King of _Naples_ heard thee?
+V _Fer._|A ſingle thing, as I am now, that wonders
+  To heare thee ſpeake of _Naples:_ he do's heare me,
+  And that he do's, I weepe: my ſelfe am _Naples,_
+  Who, with mine eyes (neuer ſince at ebbe) beheld
+  The King my Father wrack't.
+S _Mir._|Alacke, for mercy.
+V _Fer._|Yes faith, & all his Lords, the Duke of _Millaine_
+  And his braue ſonne, being twaine.
+V _Pro._|The Duke of _Millaine_
+  And his more brauer daughter, could controll thee
+  If now 'twere ſit to do't: At the firſt ſight
+  They haue chang'd eyes: Delicate _Ariel,_
+  Ile ſet thee free for this. A word good Sir,
+  I feare you haue done your ſelfe ſome wrong: A word.
+V _Mir._|Why ſpeakes my father ſo vngently? This
+  Is the third man that ere I ſaw: the firſt
+  That ere I ſigh'd for: pitty moue my father
+  To be enclin'd my way.
+V _Fer._|O, if a Virgin,
+  And your affection not gone forth, Ile make you
+  The Queene of _Naples._
+V _Pro._|Soft ſir, one word more.
+  They are both in eythers pow'rs: But this ſwift buſines
+  I muſt vneaſie make, leaſt too light winning
+  Make the prize light. One word more: I charge thee
+  That thou attend me: Thou do'ſt heere vſurpe
+  The name thou ow'ſt not, and haſt put thy ſelfe
+  Vpon this Iſland, as a ſpy, to win it
+  From me, the Lord on't.
+S _Fer._|No, as I am a man.
+V _Mir._|Ther's nothing ill, can dwell in ſuch a Temple,
+  If the ill-ſpirit haue ſo fayre a houſe.
+  Good things will ſtriue to dwell with't.
+S _Pro._|Follow me.
+@foot A 3|_Pro._
+@page 6
+@column
+V _Proſ._|Speake not you for him: hee's a Traitor: come,
+  Ile manacle thy necke and feete together:
+  Sea water ſhalt thou drinke: thy food ſhall be
+  The freſh-brooke Muſſels, wither'd roots, and huskes
+  Wherein the Acorne cradled. Follow.
+V _Fer._|No,
+  I will reſiſt ſuch entertainment, till
+  Mine enemy ha's more pow'r.
+D _He drawes, and is charmed from mouing._
+V _Mira._|O deere Father,
+  Make not too raſh a triall of him, for
+  Hee's gentle, and not fearfull.
+V _Proſ._|What I ſay,
+  My foote my Tutor? Put thy ſword vp Traitor,
+  Who mak'ſt a ſhew, but dar'ſt not ſtrike: thy conſcience
+  Is ſo poſſeſt with guilt: Come, from thy ward,
+  For I can heere diſarme thee with this ſticke,
+  And make thy weapon drop.
+S _Mira._|Beſeech you Father.
+S _Proſ._|Hence: hang not on my garments.
+V _Mira._|Sir haue pity,
+  Ile be his ſurety.
+V _Proſ._|Silence: One word more
+  Shall make me chide thee, if not hate thee: What,
+  An aduocate for an Impoſtor? Huſh:
+  Thou think'ſt there is no more ſuch ſhapes as he,
+  (Hauing ſeene but him and _Caliban:_ ) Fooliſh wench,
+  To th' moſt of men, this is a _Caliban,_
+  And they to him are Angels.
+V _Mira._|My affections
+  Are then moſt humble: I haue no ambition
+  To ſee a goodlier man.
+V _Proſ._|Come on, obey:
+  Thy Nerues are in their infancy againe.
+  And haue no vigour in them.
+V _Fer._|So they are:
+  My ſpirits, as in a dreame, are all bound vp:
+  My Fathers loſſe, the weakneſſe which I feele,
+  The wracke of all my friends, nor this mans threats,
+  To whom I am ſubdude, are but light to me,
+  Might I but through my priſon once a day
+  Behold this Mayd: all corners elſe o' th' Earth
+  Let liberty make vſe of: ſpace enough
+  Haue I in ſuch a priſon.
+V _Proſ._|It workes: Come on.
+  Thou haſt done well, fine _Ariell:_ follow me,
+  Harke what thou elſe ſhalt do mee.
+V _Mira._|Be of comfort,
+  My Fathers of a better nature (Sir)
+  Then he appeares by ſpeech: this is vnwonted
+  Which now came from him.
+V _Proſ._|Thou ſhalt be as free
+  As mountaine windes; but then exactly do
+  All points of my command.
+S _Ariell._|To th' ſyllable.
+S _Proſ._|Come follow: ſpeake not for him. @_Exeunt._
+H Actus Secundus. Scoena Prima.
+D _Enter Alonſo, Sebaſtian, Anthonio, Gonzalo, Adrian,_
+D _Franciſco, and others._
+V _Gonz._|Beſeech you Sir, be merry; you haue cauſe,
+  (So haue we all) of ioy; for our eſcape
+@column
+  Is much beyond our loſſe; our hint of woe
+  Is common, euery day, ſome Saylors wife,
+  The Maſters of ſome Merchant, and the Merchant
+  Haue iuſt our Theame of woe: But for the miracle,
+  (I meane our preſeruation) few in millions
+  Can ſpeake like vs: then wiſely (good Sir) weigh
+  Our ſorrow, with our comfort.
+S _Alonſ._|Prethee peace.
+S _Seb._|He receiues comfort like cold porredge.
+S _Ant._|The Viſitor will not giue him ore ſo.
+S _Seb._|Looke, hee's winding vp the watch of his wit,
+  By and by it will ſtrike.
+S _Gon._|Sir.
+S _Seb._|One: Tell.
+V _Gon._|When euery greefe is entertaind,
+  That's offer'd comes to th' entertainer.
+S _Seb._|A dollor.
+S _Gon._|Dolour comes to him indeed, you haue ſpoken
+  truer then you purpos'd.
+S _Seb._|You haue taken it wiſelier then I meant you ſhould.
+S _Gon._|Therefore my Lord.
+S _Ant._|Fie, what a ſpend-thrift is he of his tongue.
+S _Alon._|I pre-thee ſpare.
+S _Gon._|Well, I haue done: But yet
+S _Seb._|He will be talking.
+V _Ant._|Which, of he, or Adrian, for a good wager,
+  Firſt begins to crow?
+S _Seb._|The old Cocke.
+S _Ant._|The Cockrell.
+S _Seb._|Done: The wager?
+S _Ant._|A Laughter.
+S _Seb._|A match.
+S _Adr._|Though this Iſland ſeeme to be deſert.
+S _Seb._|Ha, ha, ha.
+S _Ant._|So: you'r paid.
+S _Adr._|Vninhabitable, and almoſt inacceſſible.
+S _Seb._|Yet
+S _Adr._|Yet
+S _Ant._|He could not miſſe't.
+S _Adr._|It muſt needs be of ſubtle, tender, and delicate
+  temperance.
+S _Ant._|_Temperance_ was a delicate wench.
+S _Seb._|I, and a ſubtle, as he moſt learnedly deliuer'd.
+S _Adr._|The ayre breathes vpon vs here moſt ſweetly.
+S _Seb._|As if it had Lungs, and rotten ones.
+S _Ant._|Or, as 'twere perfum'd by a Fen.
+S _Gon._|Heere is euery thing aduantageous to life.
+S _Ant._|True, ſaue meanes to liue.
+S _Seb._|Of that there's none, or little.
+V _Gon._|How luſh and luſty the graſſe lookes?
+  How greene?
+S _Ant._|The ground indeed is tawny.
+S _Seb._|With an eye of greene in't.
+S _Ant._|He miſſes not much.
+S _Seb._|No: he doth but miſtake the truth totally.
+S _Gon._|But the rariety of it is, which is indeed almoſt
+  beyond credit.
+S _Seb._|As many voucht rarieties are.
+S _Gon._|That our Garments being (as they were) drencht
+  in the Sea, hold notwithſtanding their freſhneſſe and
+  gloſſes, being rather new dy'de then ſtain'd with ſalte
+  water.
+S _Ant._|If but one of his pockets could ſpeake, would
+  it not ſay he lyes?
+S _Seb._|I, or very falſely pocket vp his report.
+@foot |_Gon._
+@page 7
+@column
+S _Gon._|Me thinkes our garments are now as freſh as
+  when we put them on firſt in Affricke, at the marriage
+  of the kings faire daughter _Claribel_ to the king of _Tunis._
+S _Seb._|'Twas a ſweet marriage, and we proſper well in our
+  returne.
+S _Adri._|_Tunis_ was neuer grac'd before with ſuch a Pa-
+  ragon to their Queene.
+S _Gon._|Not ſince widdow _Dido's_ time.
+S _Ant._|Widow? A pox o' that: how came that Wid-
+  dow in? Widdow _Dido!_
+V _Seb._|What if he had ſaid Widdower _Aeneas_ too?
+  Good Lord, how you take it?
+S _Adri._|Widdow _Dido_ ſaid you? You make me ſtudy
+  of that: She was of _Carthage,_ not of _Tunis._
+S _Gon._|This _Tunis_ Sir was _Carthage._
+S _Adri._|_Carthage? Gon._ I aſſure you _Carthage._
+S _Ant._|His word is more then the miraculous Harpe.
+S _Seb._|He hath rais'd the wall, and houſes too.
+S _Ant._|What impoſsible matter wil he make eaſy next?
+S _Seb._|I thinke hee will carry this Iſland home in his
+  pocket, and giue it his ſonne for an Apple.
+S _Ant._|And ſowing the kernels of it in the Sea, bring
+  forth more Iſlands.
+S _Gon._|I. _Ant._ Why in good time.
+S _Gon._|Sir, we were talking, that our garments ſeeme
+  now as freſh as when we were at _Tunis_ at the marriage
+  of your daughter, who is now Queene.
+S _Ant._|And the rareſt that ere came there.
+S _Seb._|Bate (I beſeech you) widdow _Dido._
+S _Ant._|O Widdow _Dido_ ? I, Widdow _Dido._
+S _Gon._|Is not Sir my doublet as freſh as the firſt day I
+  wore it? I meane in a ſort.
+S _Ant._|That ſort was well fiſh'd for.
+S _Gon._|When I wore it at your daughters marriage.
+V _Alon._|You cram theſe words into mine eares, againſt
+  the ſtomacke of my ſenſe: would I had neuer
+  Married my daughter there: For comming thence
+  My ſonne is loſt, and (in my rate) ſhe too,
+  Who is ſo farre from _Italy_ remoued,
+  I ne're againe ſhall ſee her: O thou mine heire
+  Of _Naples_ and of _Millaine,_ what ſtrange fiſh
+  Hath made his meale on thee?
+V _Fran._|Sir he may liue,
+  I ſaw him beate the ſurges vnder him,
+  And ride vpon their backes; he trod the water
+  Whoſe enmity he flung aſide: and breſted
+  The ſurge moſt ſwolne that met him: his bold head
+  'Boue the contentious waues he kept▪ and oared
+  Himſelfe with his good armes in luſty ſtroke
+  To th' ſhore; that ore his waue-worne baſis bowed
+  As ſtooping to releeue him: I not doubt
+  He came aliue to Land.
+S _Alon._|No, no, hee's gone.
+V _Seb._|Sir you may thank your ſelfe for this great loſſe,
+  That would not bleſſe our Europe with your daughter,
+  But rather looſe her to an Affrican,
+  Where ſhe at leaſt, is baniſh'd from your eye,
+  Who hath cauſe to wet the greefe on't.
+S _Alon._|Pre-thee peace.
+V _Seb._|You were kneel'd too, & importun'd otherwiſe
+  By all of vs: and the faire ſoule her ſelfe
+  Waigh'd betweene loathneſſe, and obedience, at
+  Which end o' th' beame ſhould bow: we haue loſt your {v ſon,}
+  I feare for euer: _Millaine_ and _Naples_ haue
+  Mo widdowes in them of this buſineſſe making,
+  Then we bring men to comfort them:
+@column
+  The faults your owne.
+S _Alon._|So is the doer'ſt oth' loſſe.
+V _Gon._|My Lord _Sebaſtian,_
+  The truth you ſpeake doth lacke ſome gentleneſſe,
+  And time to ſpeake it in: you rub the ſore,
+  When you ſhould bring the plaiſter.
+S _Seb._|Very well. _Ant._ And moſt Chirurgeonly.
+V _Gon._|It is foule weather in vs all, good Sir,
+  When you are cloudy.
+S _Seb._|Fowle weather? _Ant._ Very foule.
+S _Gon._|Had I plantation of this Iſle my Lord.
+S _Ant._|Hee'd ſow't vvith Nettle-ſeed.
+S _Seb._|Or dockes, or Mallowes.
+S _Gon._|And were the King on't, what vvould I do?
+S _Seb._|Scape being drunke, for want of Wine.
+V _Gon._|I' th' Commonwealth I vvould (by contraries)
+  Execute all things: For no kinde of Trafficke
+  Would I admit: No name of Magiſtrate:
+  Letters ſhould not be knowne: Riches, pouerty,
+  And vſe of ſeruice, none: Contract, Succeſsion,
+  Borne, bound of Land, Tilth, Vineyard none:
+  No vſe of Mettall, Corne, or Wine, or Oyle:
+  No occupation, all men idle, all:
+  And Women too, but innocent and pure:
+  No Soueraignty.
+S _Seb._|Yet he vvould be King on't.
+S _Ant._|The latter end of his Common-wealth forgets
+  the beginning.
+V _Gon._|All things in common Nature ſhould produce
+  Without ſweat or endeuour: Treaſon, fellony,
+  Sword, Pike, Knife, Gun, or neede of any Engine
+  Would I not haue: but Nature ſhould bring forth
+  Of it owne kinde, all foyzon, all abundance
+  To feed my innocent people.
+S _Seb._|No marrying 'mong his ſubiects?
+S _Ant._|None (man) all idle; Whores and knaues,
+V _Gon._|I vvould vvith ſuch perfection gouerne Sir:
+  T' Excell the Golden Age.
+S _Seb._|'Saue his Maieſty. _Ant._ Long liue _Gonzalo._
+S _Gon._|And do you marke me, Sir?
+S _Alon._|Pre-thee no more: thou doſt talke nothing to {^ me.}
+S _Gon._|I do vvell beleeue your Highneſſe, and did it
+  to miniſter occaſion to theſe Gentlemen, who are of
+  ſuch ſenſible and nimble Lungs, that they alwayes vſe
+  to laugh at nothing.
+S _Ant._|'Twas you vve laugh'd at.
+S _Gon._|Who, in this kind of merry fooling am nothing
+  to you: ſo you may continue, and laugh at nothing ſtill.
+S _Ant._|What a blow vvas there giuen?
+S _Seb._|And it had not falne flat-long.
+S _Gon._|You are Gentlemen of braue mettal: you would
+  lift the Moone out of her ſpheare, if ſhe would continue
+  in it fiue weekes vvithout changing.
+D _Enter Ariell playing ſolemne Muſicke._
+S _Seb._|We vvould ſo, and then go a Bat-fowling.
+S _Ant._|Nay good my Lord, be not angry.
+S _Gon._|No I warrant you, I vvill not aduenture my
+  diſcretion ſo weakly: Will you laugh me aſleepe, for I
+  am very heauy.
+S _Ant._|Go ſleepe, and heare vs.
+V _Alon._|What, all ſo ſoone aſleepe? I wiſh mine eyes
+  Would (with themſelues) ſhut vp my thoughts,
+  I finde they are inclin'd to do ſo.
+V _Seb._|Pleaſe you Sir,
+  Do not omit the heauy offer of it:
+  It ſildome viſits ſorrow, when it doth, it is a Comforter.
+@foot |_Ant._
+@page 8
+@column
+V _Ant._|We two my Lord, will guard your perſon,
+  While you take your reſt, and watch your ſafety.
+S _Alon._|Thanke you: Wondrous heauy.
+S _Seb._|What a ſtrange drowſines poſſeſſes them?
+S _Ant._|It is the quality o' th' Clymate.
+V _Seb._|Why
+  Doth it not then our eye-lids ſinke? I finde
+  Not my ſelfe diſpos'd to ſleep.
+V _Ant._|Nor I, my ſpirits are nimble:
+  They fell together all, as by conſent
+  They dropt, as by a Thunder-ſtroke: what might
+  Worthy _Sebastian?_ O, what might? no more:
+  And yet, me thinkes I ſee it in thy face,
+  What thou ſhould'ſt be: th' occaſion ſpeaks thee, and
+  My ſtrong imagination ſee's a Crowne
+  Dropping vpon thy head.
+S _Seb._|What? art thou waking?
+S _Ant._|Do you not heare me ſpeake?
+V _Seb._|I do, and ſurely
+  It is a ſleepy Language; and thou ſpeak'ſt
+  Out of thy ſleepe: What is it thou didſt ſay?
+  This is a ſtrange repoſe, to be aſleepe
+  With eyes wide open: ſtanding, ſpeaking, mouing:
+  And yet ſo faſt aſleepe.
+V _Ant._|Noble _Sebaſtian,_
+  Thou let'ſt thy fortune ſleepe: die rather: wink'ſt
+  Whiles thou art waking.
+V _Seb._|Thou do'ſt ſnore diſtinctly,
+  There's meaning in thy ſnores.
+V _Ant._|I am more ſerious then my cuſtome: you
+  Muſt be ſo too, if heed me: which to do,
+  Trebbles thee o're.
+S _Seb._|Well: I am ſtanding water.
+S _Ant._|Ile teach you how to flow.
+V _Seb._|Do ſo: to ebbe
+  Hereditary Sloth inſtructs me.
+V _Ant._|O!
+  If you but knew how you the purpoſe cheriſh
+  Whiles thus you mocke it: how in ſtripping it
+  You more inueſt it: ebbing men, indeed
+  (Moſt often) do ſo neere the bottome run
+  By their owne feare, or ſloth.
+V _Seb._|'Pre-thee ſay on,
+  The ſetting of thine eye, and cheeke proclaime
+  A matter from thee; and a birth, indeed,
+  Which throwes thee much to yeeld.
+V _Ant._|Thus Sir:
+  Although this Lord of weake remembrance; this
+  Who ſhall be of as little memory
+  When he is earth'd, hath here almoſt perſwaded
+  (For hee's a Spirit of perſwaſion, onely
+  Profeſſes to perſwade) the King his ſonne's aliue,
+  'Tis as impoſsible that hee's vndrown'd,
+  As he that ſleepes heere, ſwims.
+V _Seb._|I haue no hope
+  That hee's vndrown'd.
+V _Ant._|O, out of that no hope,
+  What great hope haue you? No hope that way, Is
+  Another way ſo high a hope, that euen
+  Ambition cannot pierce a winke beyond
+  But doubt diſcouery there. Will you grant with me
+  That _Ferdinand_ is drown'd.
+S _Seb._|He's gone.
+V _Ant._|Then tell me, who's the next heire of _Naples?_
+S _Seb._|_Claribell._
+V _Ant._|She that is Queene of _Tunis_ ſhe that dwels
+@column
+  Ten leagues beyond mans life: ſhe that from _Naples_
+  Can haue no note, vnleſſe the Sun were poſt:
+  The Man i' th Moone's too ſlow, till new-borne chinnes
+  Be rough, and Razor-able: She that from whom
+  We all were ſea-ſwallow'd, though ſome caſt againe,
+  (And by that deſtiny) to performe an act
+  Whereof, what's paſt is Prologue; what to come
+  In yours, and my diſcharge.
+V _Seb._|What ſtuffe is this? How ſay you?
+  'Tis true my brothers daughter's Queene of _Tunis,_
+  So is ſhe heyre of _Naples,_ 'twixt which Regions
+  There is ſome ſpace.
+V _Ant._|A ſpace, whoſe eu'ry cubit
+  Seemes to cry out, how ſhall that _Claribell_
+  Meaſure vs backe to _Naples_ ? keepe in _Tunis,_
+  And let _Sebaſtian_ wake. Say, this were death
+  That now hath ſeiz'd them, why they were no worſe
+  Then now they are: There be that can rule _Naples_
+  As well as he that ſleepes: Lords, that can prate
+  As amply, and vnneceſſarily
+  As this _Gonzallo_ : I my ſelfe could make
+  A Chough of as deepe chat: O, that you bore
+  The minde that I do; what a ſleepe were this
+  For your aduancement? Do you vnderſtand me?
+S _Seb._|Me thinkes I do.
+V _Ant._|And how do's your content
+  Tender your owne good fortune?
+V _Seb._|I remember
+  You did ſupplant your Brothet _Proſpero._
+V _Ant._|True:
+  And looke how well my Garments ſit vpon me,
+  Much feater then before: My Brothers ſeruants
+  Were then my fellowes, now they are my men.
+S _Seb._|But for your conſcience.
+V _Ant._|I Sir: where lies that? If 'twere a kybe
+  'Twould put me to my ſlipper: But I feele not
+  This Deity in my boſome: 'Twentie conſciences
+  That ſtand 'twixt me, and _Millaine,_ candied be they,
+  And melt ere they molleſt: Heere lies your Brother,
+  No better then the earth he lies vpon,
+  If he were that which now hee's like (that's dead)
+  Whom I with this obedient ſteele (three inches of it)
+  Can lay to bed for euer: whiles you doing thus,
+  To the perpetuall winke for aye might put
+  This ancient morſell: this Sir Prudence, who
+  Should not vpbraid our courſe: for all the reſt
+  They'l take ſuggeſtion, as a Cat laps milke,
+  They'l tell the clocke, to any buſineſſe that
+  We ſay befits the houre.
+V _Seb._|Thy caſe, deere Friend
+  Shall be my preſident: As thou got'ſt _Millaine,_
+  I'le come by _Naples:_ Draw thy ſword, one ſtroke
+  Shall free thee from the tribute which thou paieſt,
+  And I the King ſhall loue thee.
+V _Ant._|Draw together:
+  And when I reare my hand, do you the like
+  To fall it on _Gonzalo._
+V _Seb._|O, but one word.
+D _Enter Ariell with Muſicke and Song._
+V _Ariel._|My Maſter through his Art foreſees the danger
+  That you (his friend) are in, and ſends me forth
+  (For elſe his proiect dies) to keepe them liuing.
+L @_Sings in Gonzaloes eare._
+L _While you here do ſnoaring lie,_
+L _Open-ey'd Conſpiracie_
+L _His time doth take:_
+@foot |If
+@page 9
+@column
+  If of Life you keepe a care,
+  Shake off ſlumber and beware.
+  Awake, awake.
+S _Ant._|Then let vs both be ſodaine.
+S _Gon._|Now, good Angels preſerue the King.
+V _Alo._|Why how now hoa; awake? why are you drawn?
+  Wherefore this ghaſtly looking?
+S _Gon._|What's the matter?
+V _Seb._|Whiles we ſtood here ſecuring your repoſe,
+  (Euen now) we heard a hollow burſt of bellowing
+  Like Buls, or rather Lyons, did't not wake you?
+  It ſtrooke mine eare moſt terribly.
+S _Alo._|I heard nothing.
+V _Ant._|O, 'twas a din to fright a Monſters eare;
+  To make an earthquake: ſure it was the roare
+  Of a whole heard of Lyons.
+S _Alo._|Heard you this _Gonzalo_ ?
+V _Gon._|Vpon mine honour, Sir, I heard a humming,
+  (And that a ſtrange one too) which did awake me:
+  I ſhak'd you Sir, and cride: as mine eyes opend,
+  I ſaw their weapons drawne: there was a noyſe,
+  That's verily: 'tis beſt we ſtand vpon our guard;
+  Or that we quit this place: let's draw our weapons.
+V _Alo._|Lead off this ground & let's make further ſearch
+  For my poore ſonne.
+V _Gon._|Heauens keepe him from theſe Beaſts:
+  For he is ſure i' th Iſland.
+S _Alo._|Lead away.
+V _Ariell._|_Proſpero_ my Lord, ſhall know what I haue {^ done.}
+  So (King) goe ſafely on to ſeeke thy Son. @_Exeunt._
+H Scoena Secunda.
+D _Enter_ Caliban, _with a burthen of Wood (a noyſe of_
+D _Thunder heard.)_
+V _Cal._|All the infections that the Sunne ſuckes vp
+  From Bogs, Fens, Flats, on _Proſper_ fall, and make him
+  By ynch-meale a diſeaſe: his Spirits heare me,
+  And yet I needes muſt curſe. But they'll nor pinch,
+  Fright me with Vrchyn-ſhewes, pitch me i' th mire,
+  Nor lead me like a fire-brand, in the darke
+  Out of my way, vnleſſe he bid 'em; but
+  For euery trifle, are they ſet vpon me,
+  Sometime like Apes, that moe and chatter at me,
+  And after bite me: then like Hedg-hogs, which
+  Lye tumbling in my bare-foote way, and mount
+  Their pricks at my foot-fall: ſometime am I
+  All wound with Adders, who with clouen tongues
+  Doe hiſſe me into madneſſe: Lo, now Lo, @_Enter Trinculo._
+  Here comes a Spirit of his, and to torment me
+  For bringing wood in ſlowly: I'le fall flat,
+  Perchance he will not minde me.
+S _Tri._|Here's neither buſh, nor ſhrub to beare off any
+  weather at all: and another Storme brewing, I heare it
+  ſing i th' winde: yond ſame blacke cloud, yond huge
+  one, lookes like a foule bumbard that would ſhed his
+  licquor: if it ſhould thunder, as it did before, I know
+  not where to hide my head: yond ſame cloud cannot
+  chooſe but fall by paile-fuls. What haue we here, a man,
+  or a fiſh? dead or aliue? a fiſh, hee ſmels like a fiſh: a
+  very ancient and fiſh-like ſmell: a kinde of, not of the
+@column
+  neweſt poore-Iohn: a ſtrange fiſh: were I in _England_
+  now (as once I was) and had but this fiſh painted; not
+  a holiday-foole there but would giue a peece of ſiluer:
+  there, would this Monſter, make a man: any ſtrange
+  beaſt there, makes a man: when they will not giue a
+  do it to relieue a lame Begger, they will lay out ten to ſee
+  a dead _Indian_ : Leg'd like a man; and his Finnes like
+  Armes: warme o' my troth: I doe now let looſe my o-
+  pinion; hold it no longer; this is no fiſh, but an Iſlan-
+  der, that hath lately ſuffered by a Thunderbolt: Alas,
+  the ſtorme is come againe: my beſt way is to creepe vn-
+  der his Gaberdine: there is no other ſhelter herea-
+  bout: Miſery acquaints a man with ſtrange bedfel-
+  lowes: I will here ſhrowd till the dregges of the ſtorme
+  be paſt.
+D _Enter Stephano ſinging._
+V _Ste._|_I ſhall no more to ſea, to ſea, here ſhall I dye aſhore._
+  This is a very ſcuruy tune to ſing at a mans
+  Funerall: well, here's my comfort. @_Drinkes._
+  _Sings._ The Maſter, the Swabber, the Boate-ſwaine & I;
+  The Gunner, and his Mate
+  Lou'd Mall, Meg, and Marrian, and Margerie,
+  But none of vs car'd for Kate.
+  For ſhe had a tongue with a tang,
+  Would cry to a Sailor goe hang:
+  She lou'd not the ſauour of Tar nor of Pitch,
+  Yet a Tailor might ſcratch her where ere ſhe did itch.
+  Then to Sea Boyes, and let her goe hang.
+  This is a ſcuruy tune too:
+  But here's my comfort. @_drinks._
+S _Cal._|Doe not torment me: oh.
+S _Ste._|What's the matter?
+  Haue we diuels here?
+  Doe you put trickes vpon's with Saluages, and Men of
+  Inde? ha? I haue not ſcap'd drowning, to be afeard
+  now of your foure legges: for it hath bin ſaid; as pro-
+  per a man as euer went on foure legs, cannot make him
+  giue ground: and it ſhall be ſaid ſo againe, while _Ste-_
+  _phano_ breathes at' noſtrils.
+S _Cal._|The Spirit torments me: oh.
+S _Ste._|This is ſome Monſter of the Iſle, with foure legs;
+  who hath got (as I take it) an Ague: where the diuell
+  ſhould he learne our language? I will giue him ſome re-
+  liefe if it be but for that: if I can recouer him, and keepe
+  him tame, and get to _Naples_ with him, he's a Pre-
+  ſent for any Emperour that euer trod on Neates-lea-
+  ther.
+S _Cal._|Doe not torment me 'prethee: I'le bring my
+  wood home faſter.
+S _Ste._|He's in his fit now; and doe's not talke after the
+  wiſeſt; hee ſhall taſte of my Bottle: if hee haue neuer
+  drunke wine afore, it will goe neere to remoue his Fit:
+  if I can recouer him, and keepe him tame, I will not take
+  too much for him; hee ſhall pay for him that hath him,
+  and that ſoundly.
+S _Cal._|Thou do'ſt me yet but little hurt; thou wilt a-
+  non, I know it by thy trembling: Now _Proſper_ workes
+  vpon thee.
+S _Ste._|Come on your wayes: open your mouth: here
+  is that which will giue language to you Cat; open your
+  mouth; this will ſhake your ſhaking, I can tell you, and
+  that ſoundly: you cannot tell who's your friend; open
+  your chaps againe.
+V _Tri._|I ſhould know that voyce:
+  It ſhould be,
+@foot |But
+@page 10
+@column
+  But hee is dround; and theſe are diuels; O de-
+  fend me.
+S _Ste._|Foure legges and two voyces; a moſt delicate
+  Monſter his forward voyce now is to ſpeake well of
+  his friend; his backward voice, is to vtter ſoule ſpeeches,
+  and to detract: if all the wine in my bottle will recouer
+  him, I will helpe his Ague: Come: Amen, I will
+  poure ſome in thy other mouth.
+S _Tri._|_Stephano._
+S _Ste._|Doth thy other mouth call me? Mercy, mercy:
+  This is a diuell, and no Monſter: I will leaue him, I
+  haue no long Spoone.
+S _Tri._|_Stephano_ : if thou beeſt _Stephano,_ touch me, and
+  ſpeake to me: for I am _Trinculo_ ; be not afeard, thy
+  good friend _Trinculo._
+S _Ste._|If thou bee'ſt _Trinculo_ : come foorth: I'le pull
+  thee by the leſſer legges: if any be _Trinculo's_ legges,
+  theſe are they: Thou art very _Trinculo_ indeede: how
+  cam'ſt thou to be the ſiege of this Moone-calfe? Can
+  he vent _Trinculo's_ ?
+S _Tri._|I tooke him to be kil'd with a thunder-ſtrok; but
+  art thou not dround _Stephano_ : I hope now thou art
+  not dround: Is the Storme ouer-blowne? I hid mee
+  vnder the dead Moone-Calfes Gaberdine, for feare of
+  the Storme: And art thou liuing _Stephano_ ? O _Stephano,_
+  two _Neapolitanes_ ſcap'd?
+S _Ste._|'Prethee doe not turne me about, my ſtomacke
+  is not conſtant.
+S _Cal._|Theſe be fine things, and if they be not ſpright's:
+  that's a braue God, and beares Celeſtiall liquor: I will
+  kneele to him.
+S _Ste._|How did'ſt thou ſcape?
+  How cam'ſt thou hither?
+  Sweare by this Bottle how thou cam'ſt hither: I eſcap'd
+  vpon a But of Sacke, which the Saylors heaued o' re-
+  boord, by this Bottle which I made of the barke of
+  a Tree, with mine owne hands, ſince I was caſt a'-
+  ſhore.
+S _Cal._|I'le ſweare vpon that Bottle, to be thy true ſub-
+  iect, for the liquor is not earthly.
+S _St._|Heere: ſweare then how thou eſcap'dſt.
+S _Tri._|Swom aſhore (man) like a Ducke: I can ſwim
+  like a Ducke i'le be ſworne.
+V _Ste._|Here, kiſſe the Booke.
+  Though thou canſt ſwim like a Ducke, thou art made
+  like a Gooſe.
+S _Tri._|O _Stephano,_ ha'ſt any more of this?
+V _Ste._|The whole But (man) my Cellar is in a rocke
+  by th' ſea-ſide, where my Wine is hid:
+  How now Moone-Calfe, how do's thine Ague?
+S _Cal._|Ha'ſt thou not dropt from heauen?
+S _Ste._|Out o' th Moone I doe aſſure thee. I was the
+  Man ith' Moone, when time was.
+V _Cal._|I haue ſeene thee in her: and I doe adore thee:
+  My Miſtris ſhew'd me thee, and thy Dog, and thy Buſh.
+S _Ste._|Come, ſweare to that: kiſſe the Booke: I will
+  furniſh it anon with new Contents: Sweare.
+V _Tri._|By this good light, this is a very ſhallow Mon-
+  ſter: I afeard of him? a very weake Monſter:
+  The Man ith' Moone?
+  A moſt poore creadulous Monſter:
+  Well drawne Monſter, in good ſooth.
+S _Cal._|Ile ſhew thee euery fertill ynch 'oth Iſland: and
+  I will kiſſe thy foote: I prethee be my god.
+S _Tri._|By this light, a moſt perfidious, and drunken
+  Monſter, when's god's a ſleepe he'll rob his Bottle.
+@column
+S _Cal._|Ile kiſſe thy foot. Ile ſweare my ſelfe thy Subiect.
+S _Ste._|Come on then: downe and ſweare.
+S _Tri._|I ſhall laugh my ſelfe to death at this puppi-hea-
+  ded Monſter: a moſt ſcuruie Monſter: I could finde in
+  my heart to beate him.
+S _Ste._|Come, kiſſe.
+V _Tri._|But that the poore Monſter's in drinke:
+  An abhominable Monſter.
+V _Cal._|I'le ſhew thee the beſt Springs: I'le plucke thee
+  Berries: I'le fiſh for thee; and get thee wood enough.
+  A plague vpon the Tyrant that I ſerue;
+  I'le beare him no more Stickes, but follow thee, thou
+  wondrous man.
+S _Tri._|A moſt rediculous Monſter, to make a wonder of
+  a poore drunkard.
+S _Cal._|I' prethee let me bring thee where Crabs grow;
+  and I with my long nayles will digge thee pig-nuts;
+  ſhow thee a Iayes neſt, and inſtruct thee how to ſnare
+  the nimble Marmazet: I'le bring thee to cluſtring
+  Philbirts, and ſometimes I'le get thee young Scamels
+  from the Rocke: Wilt thou goe with me?
+S _Ste._|I pre'thee now lead the way without any more
+  talking. _Trinculo,_ the King, and all our company elſe
+  being dround, wee will inherit here: Here; beare my
+  Bottle: Fellow _Trinculo_ ; we'll fill him by and by a-
+  gaine.
+D _Caliban Sings drunkenly._
+~p Farewell Maſter; farewell, farewell.
+S _Tri._|A howling Monſter: a drunken Monſter.
+V _Cal._|No more dams I'le make for fiſh,
+  Nor fetch in firing, at requiring,
+  Nor ſcrape trenchering, nor waſh diſh,
+  Ban' ban' Cacalyban
+  Has a new Maſter, get a new Man.
+  Freedome, high-day, high-day freedome, freedome high-
+  day, freedome.
+V _Ste._|O braue Monſter; lead the way. @_Exeunt._
+H Actus Tertius. Scoena Prima.
+D _Enter Ferdinand (bearing a Log.)_
+V _Fer._|There be ſome Sports are painfull; & their labor
+  Delight in them ſet off: Some kindes of baſeneſſe
+  Are nobly vndergon; and moſt poore matters
+  Point to rich ends: this my meane Taske
+  Would be as heauy to me, as odious, but
+  The Miſtris which I ſerue, quickens what's dead,
+  And makes my labours, pleaſures: O She is
+  Ten times more gentle, then her Father's crabbed;
+  And he's compos'd of harſhneſſe. I muſt remoue
+  Some thouſands of theſe Logs, and pile them vp,
+  Vpon a ſore iniunction; my ſweet Miſtris
+  Weepes when ſhe ſees me worke, & ſaies, ſuch baſenes
+  Had neuer like Executor: I forget:
+  But theſe ſweet thoughts, doe euen refreſh my labours,
+  Moſt buſie leſt, when I doe it. @_Enter Miranda and Proſpero._
+V _Mir._|Alas, now pray you
+  Worke not ſo hard: I would the lightning had
+  Burnt vp thoſe Logs that you are enioynd to pile:
+  Pray ſet it downe, and reſt you: when this burnes
+  'Twill weepe for hauing wearied you: my Father
+  Is hard at ſtudy; pray now reſt your ſelfe,
+@foot |He's
+@page 11
+@column
+  Hee's ſafe for theſe three houres.
+V _Fer._|O moſt deere Miſtris.
+  The Sun will ſet before I ſhall diſcharge
+  What I muſt ſtriue to do.
+V _Mir._|If you'l ſit downe
+  Ile beare your Logges the while: pray giue me that,
+  Ile carry it to the pile.
+V _Fer._|No precious Creature,
+  I had rather cracke my ſinewes, breake my backe,
+  Then you ſhould ſuch diſhonor vndergoe,
+  While I ſit lazy by.
+V _Mir._|It would become me
+  As well as it do's you; and I ſhould do it
+  With much more eaſe: for my good will is to it,
+  And yours it is againſt.
+V _Pro._|Poore worme thou art infected,
+  This viſitation ſhewes it.
+S _Mir._|You looke wearily.
+V _Fer._|No, noble Miſtris, 'tis freſh morning with me
+  When you are by at night: I do beſeech you
+  Cheefely, that I might ſet it in my prayers,
+  What is your name?
+V _Mir._|_Miranda,_ O my Father,
+  I haue broke your heſt to ſay ſo.
+V _Fer._|Admit'd _Miranda,_
+  Indeede the top of Admiration, worth
+  What's deereſt to the world: full many a Lady
+  I haue ey'd with beſt regard, and many a time
+  Th' harmony of their tongues, hath into bondage
+  Brought my too diligent eare: for ſeuerall vertues
+  Haue I lik'd ſeuerall women, neuer any
+  VVith ſo full ſoule, but ſome defect in her
+  Did quarrell with the nobleſt grace ſhe ow'd,
+  And put it to the foile. But you, O you,
+  So perfect, and ſo peetleſſe, are created
+  Of euerie Creatures beſt.
+V _Mir._|I do not know
+  One of my ſexe; no womans face remember,
+  Saue from my glaſſe, mine owne: Nor haue I ſeene
+  More that I may call men, then you good friend,
+  And my deere Father: how features are abroad
+  I am skilleſſe of; but by my modeſtie
+  (The iewell in my dower) I would not wiſh
+  Any Companion in the world but you:
+  Nor can imagination forme a ſhape
+  Beſides your ſelfe, to like of: but I prattle
+  Something too wildely, and my Fathers precepts
+  I therein do forget.
+V _Fer._|I am, in my condition
+  A Prince _(Miranda)_ I do thinke a King
+  (I would not ſo) and would no more endure
+  This wodden ſlauerie, then to ſuffer
+  The fleſh-flie blow my mouth: heare my ſoule ſpeake.
+  The verie inſtant that I ſaw you, did
+  My heart flie to your ſeruice, there reſides
+  To make me ſlaue to it, and for your ſake
+  Am I this patient Logge-man.
+S _Mir._|Do you loue me?
+V _Fer._|O heauen; O earth, beare witnes to this ſound,
+  And crowne what I profeſſe with kinde euent
+  If I ſpeake true: if hollowly, inuert
+  VVhat beſt is boaded me, to miſchiefe: I,
+  Beyond all limit of what elſe i' th world
+  Do loue, prize, honor you.
+V _Mir._|I am a foole
+  To weepe at what I am glad of.
+@column
+V _Pro._|Faire encounter
+  Of two moſt rare affections: heauens raine grace
+  On that which breeds betweene 'em.
+S _Fer._|VVherefore weepe you?
+V _Mir._|At mine vnworthineſſe, that dare not offer
+  VVhat I deſire to giue; and much leſſe take
+  VVhat I ſhall die to want: But this is trifling,
+  And all the more it ſeekes to hide it ſelfe,
+  The bigger bulke it ſhewes. Hence baſhfull cunning,
+  And prompt me plaine and holy innocence.
+  I am your wife, if you will marrie me;
+  If not, Ile die your maid: to be your fellow
+  You may denie me, but Ile be your ſeruant
+  VVhether you will or no.
+V _Fer._|My Miſtris (deereſt)
+  And I thus humble euer.
+S _Mir._|My husband then?
+V _Fer._|I, with a heart as willing
+  As bondage ere of freedome: heere's my hand.
+V _Mir._|And mine, with my heart in't; and now farewel
+  Till halfe an houre hence.
+S _Fer._|A thouſand, thouſand. @_Exeunt._
+V _Pro._|So glad of this as they I cannot be,
+  VVho are ſurpriz'd with all; but my reioycing
+  At nothing can be more: Ile to my booke,
+  For yet ere ſupper time, muſt I performe
+  Much buſineſſe appertaining. @_Exit._
+H Scoena Secunda.
+D _Enter Caliban, Stephano, and Trinculo._
+S _Ste._|Tell not me, when the But is out we will drinke
+  water, not a drop before; therefore beare vp, & boord
+  em' Seruant Monſter, drinke to me.
+S _Trin._|Seruant Monſter? the folly of this Iland, they
+  ſay there's but fiue vpon this Iſle; we are three of them,
+  if th' other two be brain'd like vs, the State totters.
+S _Ste._|Drinke ſeruant Monſter when I bid thee, thy
+  eies are almoſt ſet in thy head.
+S _Trin._|VVhere ſhould they bee ſet elſe? hee were a
+  braue Monſter indeede if they were ſet in his taile.
+S _Ste._|My man-Monſter hath drown'd his tongue in
+  ſacke: for my part the Sea cannot drowne mee, I ſwam
+  ere I could recouer the ſhore, fiue and thirtie Leagues
+  off and on, by this light thou ſhalt bee my Lieutenant
+  Monſter, or my Standard.
+S _Trin._|Your Lieutenant if you lift, hee's no ſtandard.
+S _Ste._|VVeel not run Monſieur Monſter.
+S _Trin._|Nor go neither: but you'l lie like dogs, and yet
+  ſay nothing neither.
+S _Ste._|Moone-calfe, ſpeak once in thy life, if thou beeſt
+  a good Moone-calfe.
+V _Cal._|How does thy honour? Let me licke thy ſhooe:
+  Ile not ſerue him, he is not valiant.
+S _Trin._|Thou lieſt moſt ignorant Monſter, I am in caſe
+  to iuſtle a Conſtable: why, thou deboſh'd Fiſh thou,
+  was there euer man a Coward, that hath drunk ſo much
+  Sacke as I to day? wilt thou tell a monſtrous lie, being
+  but halfe a Fiſh, and halfe a Monſter?
+S _Cal._|Loe, how he mockes me, wilt thou let him my
+  Lord?
+@foot |_Cal._
+@page 12
+@column
+S _Trin._|Lord, quoth he? that a Monſter ſhould be ſuch
+  a Naturall?
+S _Cal._|Loe, loe againe: bite him to death I prethee.
+S _Ste._|_Trinculo,_ keepe a good tongue in your head: If
+  you proue a mutineere, the next Tree: the poore Mon-
+  ſter's my ſubiect, and he ſhall not ſuffer indignity.
+S _Cal._|I thanke my noble Lord. Wilt thou be pleas'd
+  to hearken once againe to the ſuite I made to thee?
+V _Ste._|Marry will I: kneele, and repeate it,
+  I will ſtand, and ſo ſhall _Trinculo._
+D _Enter Ariell inuiſible._
+V _Cal._|As I told thee before, I am ſubiect to a Tirant,
+  A Sorcerer, that by his cunning hath cheated me
+  Of the Iſland.
+S _Ariell._|Thou lyeſt.
+V _Cal._|Thou lyeſt, thou ieſting Monkey thou:
+  I would my valiant Maſter would deſtroy thee.
+  I do not lye.
+V _Ste._|_Trinculo,_ if you trouble him any more in's tale,
+  By this hand, I will ſupplant ſome of your teeth.
+S _Trin._|Why, I ſaid nothing.
+S _Ste._|Mum then, and no more: proceed.
+V _Cal._|I ſay by Sorcery he got this Iſle
+  From me, he got it. If thy Greatneſſe will
+  Reuenge it on him, (for I know thou dar'ſt)
+  But this Thing dare not.
+S _Ste._|That's moſt certaine.
+S _Cal._|Thou ſhalt be Lord of it, and Ile ſerue thee.
+V _Ste._|How now ſhall this be compaſt?
+  Canſt thou bring me to the party?
+V _Cal._|Yea, yea my Lord, Ile yeeld him thee aſleepe,
+  Where thou maiſt knocke a naile into his head.
+S _Ariell._|Thou lieſt, thou canſt not.
+V _Cal._|What a py'de Ninnie's this? Thou ſcuruy patch:
+  I do beſeech thy Greatneſſe giue him blowes,
+  And take his bottle from him: When that's gone,
+  He ſhall drinke nought but brine, for Ile not ſhew him
+  Where the quicke Freſhes are.
+V _Ste._|_Trinculo,_ run into no further danger:
+  Interrupt the Monſter one word further, and by this
+  hand, Ile turne my mercie out o' doores, and make a
+  Stockfiſh of thee.
+V _Trin._|Why, what did I? I did nothing:
+  Ile go farther off,
+S _Ste._|Didſt thou not ſay he lyed?
+S _Ariell._|Thou lieſt.
+V _Ste._|Do I ſo? Take thou that,
+  As you like this, giue me the lye another time.
+S _Trin._|I did not giue the lie: Out o' your wittes, and
+  hearing too?
+  A pox o' your bottle, this can Sacke and drinking doo:
+  A murren on your Monſter, and the diuell take your fingers.
+S _Cal._|Ha, ha, ha.
+S _Ste._|Now forward with your Tale: prethee ſtand further off.
+V _Cal._|Beate him enough: after a little time
+  Ile beate him too.
+S _Ste._|Stand farther: Come proceede.
+V _Cal._|Why, as I told thee, 'tis a cuſtome with him
+  I' th afternoone to ſleepe: there thou maiſt braine him,
+  Hauing firſt ſeiz'd his bookes: Or with a logge
+  Batter his skull, or paunch him with a ſtake,
+  Or cut his wezand with thy knife. Remember
+  Firſt to poſſeſſe his Bookes; for without them
+@column
+  Hee's but a Sot, as I am; nor hath not
+  One Spirit to command: they all do hate him
+  As rootedly as I. Burne but his Bookes,
+  He ha's braue Vtenſils (for ſo he calles them)
+  Which when he ha's a houſe, hee'l decke withall.
+  And that moſt deeply to conſider, is
+  The beautie of his daughter: he himſelfe
+  Cals her a non-pareill: I neuer ſaw a woman
+  But onely _Sycorax_ my Dam, and ſhe;
+  But ſhe as farre ſurpaſſeth _Sycorax,_
+  As great'ſt do's leaſt.
+S _Ste._|Is it ſo braue a Laſſe?
+V _Cal._|I Lord, ſhe will become thy bed, I warrant,
+  And bring thee forth braue brood.
+S _Ste._|Monſter, I will kill this man: his daughter and
+  I will be King and Queene, ſaue our Graces: and _Trin-_
+  _culo,_ and thy ſelfe ſhall be Vice-royes:
+  Doſt thou like the plot _Trinculo?_
+S _Trin._|Excellent.
+V _Ste._|Giue me thy hand, I am ſorry I beate thee:
+  But while thou liu'ſt keepe a good tongue in thy head
+V _Cal._|Within this halfe houre will he be aſleepe,
+  Wilt thou deſtroy him then?
+S _Ste._|I on mine honour.
+S _Ariell._|This will I tell my Maſter.
+V _Cal._|Thou mak'ſt me merry: I am full of pleaſure,
+  Let vs be iocond. Will you troule the Catch
+  You taught me but whileare?
+V _Ste._|At thy requeſt Monſter, I will do reaſon,
+  Any reaſon: Come on _Trinculo,_ let vs ſing.
+D _Sings._
+~v Flout 'em, and cout 'em: and skowt 'em, and flout 'em,
+  Thought is free.
+S _Cal._|That's not the tune.
+D _Ariell plaies the tune on a Tabor and Pipe._
+S _Ste._|What is this ſame?
+S _Trin._|This is the tune of our Catch, plaid by the pic-
+  ture of No-body.
+V _Ste._|If thou beeſt a man, ſhew thy ſelfe in thy likenes:
+  If thou beeſt a diuell, take't as thou liſt.
+S _Trin._|O forgiue me my ſinnes.
+V _Ste._|He that dies payes all debts: I defie thee;
+  Mercy vpon vs.
+S _Cal._|Art thou affeard?
+S _Ste._|No Monſter, not I.
+V _Cal._|Be not affeard, the Iſle is full of noyſes,
+  Sounds, and ſweet aires, that giue delight and hurt not:
+  Sometimes a thouſand twangling Inſtruments
+  Will hum about mine eares; and ſometime voices,
+  That if I then had wak'd after long ſleepe,
+  Will make me ſleepe againe, and then in dreaming,
+  The clouds me thought would open, and ſhew riches
+  Ready to drop vpon me, that when I wak'd
+  I cri'de to dreame againe.
+V _Ste._|This will proue a braue kingdome to me,
+  Where I ſhall haue my Muſicke for nothing.
+S _Cal._|When _Proſpero_ is deſtroy'd.
+V _Ste._|That ſhall be by and by:
+  I remember the ſtorie.
+V _Trin._|The ſound is going away.
+  Lets follow it, and after do our worke.
+V _Ste._|Leade Monſter,
+  Wee'l follow: I would I could ſee this Taborer,
+  He layes it on.
+V _Trin._|Wilt come?
+  Ile follow _Stephano._ @_Exeunt._
+@foot |Scena
+@page 13
+@column
+H Scena Tertia.
+D _Enter Alonſo, Sebaſtian, Anthonio, Gonzallo,_
+D _Adrian, Franciſco, &c._
+V _Gon._|By'r lakin, I can goe no further, Sir,
+  My old bones akes: here's a maze trod indeede
+  Through fourth rights, & Meanders: by your patience,
+  I needes muſt reſt me.
+V _Al._|Old Lord, I cannot blame thee,
+  Who, am my ſelfe attach'd with wearineſſe
+  To th' dulling of my ſpirits: Sit downe, and reſt:
+  Euen here I will put off my hope, and keepe it
+  No longer for my Flatterer: he is droun'd
+  Whom thus we ſtray to finde, and the Sea mocks
+  Our fruſtrate ſearch on land: well, let him goe.
+V _Ant._|I am right glad, that he's ſo out of hope:
+  Doe not for one repulſe forgoe the purpoſe
+  That you reſolu'd t' effect.
+S _Seb._|The next aduantage will we take throughly.
+V _Ant._|Let it be to night,
+  For now they are oppreſs'd with trauaile, they
+  Will not, nor cannot vſe ſuch vigilance
+  As when they are freſh.
+D _Solemne and ſtrange Muſicke: and Proſper on the top (inui-_
+D _ſible) Enter ſeuerall ſtrange ſhapes, bringing in a Banket;_
+D _and dance about it with gentle actions of ſalutations, and_
+D _inuiting the King, &c. to eate, they depart._
+S _Seb._|I ſay to night: no more.
+S _Al._|What harmony is this? my good friends, harke.
+S _Gen._|Maruellous ſweet Muſicke.
+S _Alo._|Giue vs kind keepers, heauēs: what were theſe?
+V _Seb._|A liuing _Drolerie:_ now I will beleeue
+  That there are Vnicornes: that in _Arabia_
+  There is one Tree, the Phoenix throne, one Phoenix
+  At this houre reigning there.
+V _Ant._|Ile beleeue both:
+  And what do's elſe want credit, come to me
+  And Ile beſworne 'tis true: Trauellers nere did lye,
+  Though fooles at home condemne 'em.
+V _Gon._|If in _Naples_
+  I ſhould report this now, would they beleeue me?
+  If I ſhould ſay I ſaw ſuch Iſlands;
+  (For certes, theſe are people of the Iſland)
+  Who though they are of monſtrous ſhape, yet note
+  Their manners are more gentle, kinde, then of
+  Our humaine generation you ſhall finde
+  Many, nay almoſt any.
+V _Pro._|Honeſt Lord,
+  Thou haſt ſaid well: for ſome of you there preſent;
+  Are worſe then diuels.
+V _Al._|I cannot too much muſe
+  Such ſhapes, ſuch geſture, and ſuch ſound expreſſing
+  (Although they want the vſe of tongue) a kinde
+  Of excellent dumbe diſcourſe.
+S _Pro._|Praiſe in departing.
+V _Fr._|They vaniſh'd ſtrangely.
+V _Seb._|No matter, ſince
+  They haue left their Viands behinde; for wee haue ſto{^ macks.}
+  Wilt pleaſe you taſte of what is here▪
+S _Ale._|Not I.
+V _Gon._|Faith Sir, you neede not feare when wee were {^ Boyes}
+  Who would beleeue that there were Mountayneeres,
+  Dew-lapt, like Buls whoſe throats had hanging at 'em
+  Wallets of fleſh? or that there were ſuch men
+@column
+  Whoſe heads ſtood in their breſts? which now we finde
+  Each putter out of fiue for one, will bring vs
+  Good warrant of.
+V _Al._|I will ſtand to, and feede,
+  Although my laſt, no matter, ſince I feele
+  The beſt is paſt: brother: my Lord, the Duke,
+  Stand too, and doe as we.
+D _Thunder and Lightning. Enter Ariell (like a Harpey) claps_
+D _his wings vpon the Table, and with a quient deuice the_
+D _Banquet vaniſhes._
+V _Ar._|You are three men of ſinne, whom deſtiny
+  That hath to inſtrument this lower world,
+  And what is in't: the neuer ſurfeited Sea,
+  Hath caus'd to belch vp you; and on this Iſland,
+  Where man doth not inhabit, you 'mongſt men,
+  Being moſt vnfit to liue: I haue made you mad;
+  And euen with ſuch like valour, men hang, and drowne
+  Their proper ſelues: you fooles, I and my fellowes
+  Are miniſters of Fate, the Elements
+  Of whom your ſwords are temper'd, may as well
+  Wound the loud windes, or with bemockt-at-Stabs
+  Kill the ſtill cloſing waters, as diminiſh
+  One dowle that's in my plumbe: My fellow miniſters
+  Are like-invulnerable: if you could hurt,
+  Your ſwords are now too maſſie for your ſtrengths,
+  And will not be vplifted: But remember
+  (For that's my buſineſſe to you) that you three
+  From _Millaine_ did ſupplant good _Proſpero,_
+  Expos'd vnto the Sea (which hath requit it)
+  Him, and his innocent childe: for which foule deed,
+  The Powres, delaying (not forgetting) haue
+  Incens'd the Seas, and Shores; yea, all the Creatures
+  Againſt your peace: Thee of thy Sonne, _Alonſo_
+  They haue bereft; and doe pronounce by me
+  Lingring perdition (worſe then any death
+  Can be at once) ſhall ſtep, by ſtep attend
+  You, and your wayes, whoſe wraths to guard you from,
+  Which here, in this moſt deſolate Iſle, elſe fals
+  Vpon your heads, is nothing but hearts-ſorrow,
+  And a cleere life enſuing.
+D _He vaniſhes in Thunder: then (to ſoft Muſicke.) Enter the_
+D _ſhapes againe, and daunce (with mockes and mowes) and_
+D _carrying out the Table._
+V _Pro._|Brauely the figure of this _Harpie,_ haſt thou
+  Perform'd (my _Ariell_ ) a grace it had deuouring:
+  Of my Inſtruction, haſt thou nothing bated
+  In what thou had'ſt to ſay: ſo with good life,
+  And obſeruation ſtrange, my meaner miniſters
+  Their ſeuerall kindes haue done: my high charmes work,
+  And theſe (mine enemies) are all knit vp
+  In their diſtractions: they now are in my powre;
+  And in theſe fits, I leaue them, while I viſit
+  Yong _Ferdinand_ (whom they ſuppoſe is droun'd)
+  And his, and mine lou'd darling.
+V _Gon._|I' th name of ſomething holy, Sir, why ſtand you
+  In this ſtrange ſtare?
+V _Al._|O, it is monſtrous: monſtrous:
+  Me thought the billowes ſpoke, and told me of it,
+  The windes did ſing it to me: and the Thunder
+  (That deepe and dreadfull Organ-Pipe) pronounc'd
+  The name of _Proſper:_ it did baſe my Treſpaſſe,
+  Therefore my Sonne i' th' Ooze is bedded; and
+  I'le ſeeke him deeper then ere plummet ſounded,
+  And with him there lye mudded. @_Exit._
+V _Seb._|But one feend at a time,
+  Ile fight their Legions ore.
+@foot B|_Ant._
+@page 14
+@column
+S _Ant._|Ile be thy Second. @_Exeunt._
+V _Gon._|All three of them are deſperate: their great guilt
+  (Like poyſon giuen to worke a great time after)
+  Now gins to bite the ſpirits: I doe beſeech you
+  (That are of ſuppler ioynts) follow them ſwiftly,
+  And hinder them from what this extaſie
+  May now prouoke them to.
+S _Ad._|Follow, I pray you. @_Exeunt omnes._
+H Actus Quartus. Scena Prima.
+D _Enter Proſpero, Ferdinand, and Miranda._
+V _Pro._|If I haue too auſterely puniſh'd you,
+  Your compenſation makes amends, for I
+  Haue giuen you here, a third of mine owne life,
+  Or that for which I liue: who, once againe
+  I tender to thy hand: All thy vexations
+  Were but my trials of thy loue, and thou
+  Haſt ſtrangely ſtood the teſt: here, afore heauen
+  I ratifie this my rich guift: O _Ferdinand,_
+  Doe not ſmile at me, that I boaſt her of,
+  For thou ſhalt finde ſhe will out-ſtrip all praiſe
+  And make it halt, behinde her.
+V _Fer._|I doe beleeue it
+  Againſt an Oracle.
+V _Pro._|Then, as my gueſt, and thine owne acquiſition
+  Worthily purchas'd, take my daughter: But
+  If thou do'ſt breake her Virgin-knot, before
+  All ſanctimonious ceremonies may
+  With full and holy right, be miniſtred,
+  No ſweet aſperſion ſhall the heauens let fall
+  To make this contract grow; but barraine hate,
+  Sower-ey'd diſdaine, and diſcord ſhall beſtrew
+  The vnion of your bed, with weedes ſo loathly
+  That you ſhall hate it both: Therefore take heede,
+  As Hymens Lamps ſhall light you.
+V _Fer._|As I hope
+  For quiet dayes, faire Iſſue, and long life,
+  With ſuch loue, as 'tis now the murkieſt den,
+  The moſt opportune place, the ſtrongſt ſuggeſtion,
+  Our worſer _Genius_ can, ſhall neuer melt
+  Mine honor into luſt, to take away
+  The edge of that dayes celebration,
+  When I ſhall thinke, or _Phoebus_ Steeds are founderd,
+  Or Night kept chain'd below.
+V _Pro._|Fairely ſpoke;
+  Sit then, and talke with her, ſhe is thine owne;
+  What _Ariell_ ; my induſtrious ſeruāt _Ariell._ @_Enter Ariell._
+S _Ar._|What would my potent maſter? here I am.
+V _Pro._|Thou, and thy meaner fellowes, your laſt ſeruice
+  Did worthily performe: and I muſt vſe you
+  In ſuch another tricke: goe bring the rabble
+  (Ore whom I giue thee powre) here, to this place:
+  Incite them to quicke motion, for I muſt
+  Beſtow vpon the eyes of this yong couple
+  Some vanity of mine Art: it is my promiſe,
+  And they expect it from me.
+S _Ar._|Preſently?
+S _Pro._|I: with a twincke.
+V _Ar._|Before you can ſay come, and goe,
+  And breathe twice; and cry, ſo, ſo:
+  Each one tripping on his Toe,
+  Will be here with mop, and mowe.
+  Doe you loue me Maſter? no?
+@column
+V _Pro._|Dearely, my delicate _Ariell_ : doe not approach
+  Till thou do'ſt heare me call.
+S _Ar._|Well: I conceiue. @_Exit._
+V _Pro._|Looke thou be true: doe not giue dalliance
+  Too much the raigne: the ſtrongeſt oathes, are ſtraw
+  To th' fire ith' blood: be more abſtenious,
+  Or elſe good night your vow.
+V _Fer._|I warrant you, Sir,
+  The white cold virgin Snow, vpon my heart
+  Abates the ardour of my Liuer.
+V _Pro._|Well.
+  Now come my _Ariell,_ bring a Corolary,
+  Rather then want a Spirit; appear, & pertly. @_Soft muſick._
+  No tongue: all eyes: be ſilent. @_Enter Iris._
+V _Ir._|_Ceres,_ moſt bounteous Lady, thy rich Leas
+  Of Wheate, Rye, Barley, Fetches, Oates and Peaſe;
+  Thy Turphie-Mountaines, where liue nibling Sheepe,
+  And flat Medes thetchd with Stouer, them to keepe:
+  Thy bankes with pioned, and twilled brims
+  Which ſpungie _Aprill,_ at thy heſt betrims;
+  To make cold Nymphes chaſt crownes; & thy broome-{v groues;}
+  Whoſe ſhadow the diſmiſſed Batchelor loues,
+  Being laſſe-lorne: thy pole-clipt vineyard,
+  And thy Sea-marge ſtirrile, and rockey-hard,
+  Where thou thy ſelfe do'ſt ayre, the Queene o' th Skie,
+  Whoſe watry Arch, and meſſenger, am I.
+  Bids thee leaue theſe, & with her ſoueraigne grace, @_Iuno_
+  Here on this graſſe-plot, in this very place @_deſcends._
+  To come, and ſport: here Peacocks flye amaine:
+  Approach, rich _Ceres,_ her to entertaine. @_Enter Ceres._
+V _Cer._|Haile, many-coloured Meſſenger, that nere
+  Do'ſt diſobey the wife of _Iupiter:_
+  Who, with thy ſaffron wings, vpon my flowres
+  Diffuſeſt hony drops, refreſhing ſhowres,
+  And with each end of thy blew bowe do'ſt crowne
+  My boskie acres, and my vnſhrubd downe,
+  Rich ſcarph to my proud earth: why hath thy Queene
+  Summond me hither, to this ſhort gras'd Greene?
+V _Ir._|A contract of true Loue, to celebrate,
+  And ſome donation freely to eſtate
+  On the bles'd Louers.
+V _Cer._|Tell me heauenly Bowe,
+  If _Venus_ or her Sonne, as thou do'ſt know,
+  Doe now attend the Queene? ſince they did plot
+  The meanes, that duskie _Dis,_ my daughter got,
+  Her, and her blind-Boyes ſcandald company,
+  I haue forſworne.
+V _Ir._|Of her ſocietie
+  Be not afraid: I met her deitie
+  Cutting the clouds towards _Paphos_ : and her Son
+  Doue-drawn with her: here thought they to haue done
+  Some wanton charme, vpon this Man and Maide,
+  Whoſe vowes are, that no bed-right ſhall be paid
+  Till _Hymens_ Torch be lighted: but in vaine,
+  _Marſes_ hot Minion is returnd againe,
+  Her waſpiſh headed ſonne, has broke his arrowes,
+  Swears he will ſhoote no more, but play with Sparrows,
+  And be a Boy right out.
+V _Cer._|Higheſt Queene of State,
+  Great _Iuno_ comes, I know her by her gate.
+V _Iu._|How do's my bounteous ſiſter? goe with me
+  To bleſſe this twaine, that they may proſperous be,
+  And honourd in their Iſſue. @_They Sing._
+V _Iu._|Honor, riches, marriage, bleſſing,
+  Long continuance, and encreaſing,
+  Hourely ioyes, be ſtill vpon you,
+@foot |_Iuno_
+@page 15
+@column
+  Iuno ſings her bleſſings on you.
+  Earths increaſe, foyzon plentie,
+  Barnes, and Garners, neuer empty.
+  Vines, with cluſtring bunches growing,
+  Plants, wtth goodly burthen bowing:
+  Spring come to you at the fartheſt,
+  In the very end of Harueſt.
+  Scarcity and want ſhall ſhun you,
+  _Ceres_ bleſſing ſo is on you.
+V _Fer._|This is a moſt maieſticke viſion, and
+  Harmonious charmingly: may I be bold
+  To thinke theſe ſpirits?
+V _Pro._|Spirits, which by mine Art
+  I haue from their confines call'd to enact
+  My preſent fancies.
+V _Fer._|Let me liue here euer,
+  So rare a wondred Father, and a wiſe
+  Makes this place Paradiſe.
+V _Pro._|Sweet now, ſilence:
+  _Iuno_ and _Ceres_ whiſper ſeriouſly,
+  There's ſomething elſe to doe: huſh, and be mute
+  Or elſe our ſpell is mar'd.
+D Iuno _and_ Ceres _whiſper, and ſend_ Iris _on employment._
+V _Iris._|You Nimphs cald _Nayades_ of y^e^ windring brooks,
+  With your ſedg'd crownes, and euer-harmeleſſe lookes,
+  Leaue your criſpe channels, and on this greene-Land
+  Anſwere your ſummons▪ _Iuno_ do's command.
+  Come temperate _Nimphes,_ and helpe to celebrate
+  A Contract of true Loue: be not too late.
+D _Enter Certaine Nimphes._
+~v You Sun-burn'd Sicklemen of Auguſt weary,
+  Come hether from the furrow, and be merry,
+  Make holly day: your Rye-ſtraw hats put on,
+  And theſe freſh Nimphes encounter euery one
+  In Country footing.
+D _Enter certaine Reapers (properly habited:) they ioyne with_
+D _the Nimphes, in a gracefull dance, towards the end where-_
+D _of,_ Proſpero _ſtarts ſodainly and ſpeakes, after which to a_
+D _ſtrange hollow and confuſed noyſe, they heauily vaniſh._
+V _Pro._|I had forgot that foule conſpiracy
+  Of the beaſt _Calliban,_ and his confederates
+  Againſt my life: the minute of their plot
+  Is almoſt come: Well done, auoid: no more.
+V _Fer._|This is ſtrange: your fathers in ſome paſſion
+  That workes him ſtrongly.
+V _Mir._|Neuer till this day
+  Saw I him touch'd with anger, ſo diſtemper'd.
+V _Pro._|You doe looke (my ſon) in a mou'd ſort,
+  As if you were diſmaid: be cheerefull Sir,
+  Our Reuels now are ended: Theſe our actors,
+  (As I foretold you) were all Spirits, and
+  Are melted into Ayre, into thin Ayre,
+  And like the baſeleſſe fabricke of this viſion
+  The Clowd-capt Towres, the gorgeous Pallaces,
+  The ſolemne Temples, the great Globe it ſelfe,
+  Yea, all which it inherit, ſhall diſſolue,
+  And like this inſubſtantiall Pageant faded
+  Leaue not a racke behinde: we are ſuch ſtuffe
+  As dreames are made on; and our little life
+  Is rounded with a ſleepe: Sir, I am vext,
+  Beare with my weakeneſſe, my old braine is troubled:
+  Be not diſturb'd with my infirmitie,
+  If you be pleas'd, retire into my Cell,
+  And there repoſe, a turne or two, Ile walke
+  To ſtill my beating minde.
+V _Fer. Mir._|We wiſh your peace. @_Exit._
+@column
+S _Pro._|Come with a thought; I thank thee _Ariell_ : come.
+D _Enter Ariell._
+S _Ar._|Thy thoughts I cleaue to, what's thy pleaſure?
+S _Pro._|Spirit: We muſt prepare to meet with _Caliban._
+V _Ar._|I my Commander, when I preſented _Ceres_
+  I thought to haue told thee of it, but I fear'd
+  Leaſt I might anger thee.
+S _Pro._|Say again, where didſt thou leaue theſe varlots?
+V _Ar._|I told you Sir, they were red-hot with drinking,
+  So full of valour, that they ſmote the ayre
+  For breathing in their faces: beate the ground
+  For kiſſing of their feete; yet alwaies bending
+  Towards their proiect: then I beate my Tabor,
+  At which like vnback't colts they prickt their eares,
+  Aduanc'd their eye-lids, lifted vp their noſes
+  As they ſmelt muſicke, ſo I charm'd their eares
+  That Calfe-like, they my lowing follow'd, through
+  Tooth'd briars, ſharpe firzes, pricking goſſe, & thorns,
+  Which entred their fraile ſhins: at laſt I left them
+  I' th' filthy mantled poole beyond your Cell,
+  There dancing vp to th' chins, that the fowle Lake
+  Ore-ſtunck their feet.
+V _Pro._|This was well done (my bird)
+  Thy ſhape inuiſible retaine thou ſtill:
+  The trumpery in my houſe, goe bring it hither
+  For ſtale to catch theſe theeues. _Ar._ I go, I goe. @_Exit._
+V _Pro._|A Deuill, a borne-Deuill, on whoſe nature
+  Nurture can neuer ſticke: on whom my paines
+  Humanely taken, all, all loſt, quite loſt,
+  And, as with age, his body ouglier growes,
+  So his minde cankers: I will plague them all,
+  Euen to roaring: Come, hang on them this line.
+D _Enter_ Ariell, _loaden with gliſtering apparell, &c. Enter_
+D Caliban, Stephano, _and_ Trinculo, _all wet._
+S _Cal._|Pray you tread ſoftly, that the blinde Mole may
+  not heare a foot fall: we now are neere his Cell.
+V _St._|Monſter, your Fairy, w^c^ you ſay is a harmles Fairy,
+  Has done little better then plaid the lacke with vs.
+V _Trin._|Monſter, I do ſmell all horſe-piſſe, at which
+  My noſe is in great indignation.
+V _Ste._|So is mine. Do you heare Monſter: If I ſhould
+  Take a diſpleaſure againſt you: Looke you.
+S _Trin._|Thou wert but a loſt Monſter.
+V _Cal._|Good my Lord, giue me thy fauour ſtil,
+  Be patient, for the prize Ile bring thee too
+  Shall hud winke this miſchance: therefore ſpeake ſoftly,
+  All's huſht as midnight yet.
+S _Trin._|I, but to looſe our bottles in the Poole.
+S _Ste._|There is not onely diſgrace and diſhonor in that
+  Monſter, but an infinite loſſe.
+V _Tr._|That's more to me then my wetting:
+  Yet this is your harmleſſe Fairy, Monſter.
+V _Ste._|I will fetch off my bottle,
+  Though I be o're eares for my labour.
+V _Cal._|Pre-thee (my King) be quiet. Seeſt thou heere
+  This is the mouth o' th Cell: no noiſe, and enter:
+  Do that good miſcheefe, which may make this Iſland
+  Thine owne for euer, and I thy _Caliban_
+  For aye thy foot-licker.
+V _Ste._|Giue me thy hand,
+  I do begin to haue bloody thoughts.
+V _Trin._|O King _Stephano,_ O Peere: O worthy _Stephano,_
+  Looke what a wardrobe heere is for thee.
+S _Cal._|Let it alone thou foole, it is but traſh.
+S _Tri._|Oh, ho, Monſter: wee know what belongs to a
+  frippery, O King _Stephano._
+@foot B 2|_Ste._ Put
+@page 16
+@column
+S _Ste._|Put off that gowne _(Trinculo)_ by this hand Ile
+  haue that gowne.
+S _Tri._|Thy grace ſhall haue it.
+V _Cal._|The dropſie drowne this foole, what doe you {^ meane}
+  To doate thus on ſuch luggage? let's alone
+  And doe the murther firſt: if he awake,
+  From toe to crowne hee'l fill our skins with pinches,
+  Make vs ſtrange ſtuffe.
+S _Ste._|Be you quiet (Monſter) Miſtris line, is not this
+  my Ierkin? now is the Ierkin vnder the line: now Ier-
+  kin you are like to loſe your haire, & proue a bald Ierkin.
+S _Trin._|Doe, doe; we ſteale by lyne and leuell, and't
+  like your grace.
+S _Ste._|I thank thee for that ieſt; heer's a garment for't:
+  Wit ſhall not goe vn-rewarded while I am King of this
+  Country: Steale by line and leuell, is an excellent paſſe
+  of pate: there's another garment for't.
+S _Tri._|Monſter, come put ſome Lime vpon your fin-
+  gers, and away with the reſt.
+V _Cal._|I will haue none on't: we ſhall looſe our time,
+  And all be turn'd to Barnacles, or to Apes
+  With foreheads villanous low.
+S _Ste._|Monſter, lay to your fingers: helpe to beare this
+  away, where my hogſhead of wine is, or Ile turne you
+  out of my kingdome: goe to, carry this.
+S _Tri._|And this.
+S _Ste._|I, and this.
+D _A noyſe of Hunters heard. Enter diuers Spirits in ſhape_
+D _of Dogs and Hounds, hunting them about: Proſpero_
+D _and Ariel ſetting them on._
+S _Pro._|Hey _Mountaine,_ hey.
+S _Ari._|_Siluer_ : there it goes, _Siluer._
+V _Pro._|Fury, Fury: there Tyrant, there: harke, harke.
+  Goe, charge my Goblins that they grinde their ioynts
+  With dry Convultions, ſhorten vp their ſinewes
+  With aged Cramps, & more pinch-ſpotted make them,
+  Then Pard, or Cat o' Mountaine.
+S _Ari._|Harke, they rore.
+V _Pro._|Let them be hunted ſoundly: At this houre
+  Lies at my mercy all mine enemies:
+  Shortly ſhall all my labours end, and thou
+  Shalt haue the ayre at freedome: for a little
+  Follow, and doe me ſeruice. @_Exeunt._
+H Actus quintus: Scoena Prima.
+D _Enter_ Proſpero _(in his Magicke robes) and_ Ariel.
+V _Pro._|Now do's my Proiect gather to a head:
+  My charmes cracke not: my Spirits obey, and Time
+  Goes vpright with his carriage: how's the day?
+V _Ar._|On the ſixt hower, at which time, my Lord
+  You ſaid our worke ſhould ceaſe.
+V _Pro._|I did ſay ſo,
+  When firſt I rais'd the Tempeſt: ſay my Spirit,
+  How fares the King, and's followers?
+V _Ar._|Confin'd together
+  In the ſame faſhion, as you gaue in charge,
+  Iuſt as you left them; all priſoners Sir
+  In the _Line-groue_ which weather-fends your Cell,
+  They cannot boudge till your releaſe: The King,
+  His Brother, and yours, abide all three diſtracted,
+  And the remainder mourning ouer them,
+  Brim full of ſorrow, and diſmay: but chiefly
+@column
+  Him that you term'd Sir, the good old Lord _Gonzallo,_
+  His teares runs downe his beard like winters drops
+  From eaues of reeds: your charm ſo ſtrongly works 'em
+  That if you now beheld them, your affections
+  Would become tender.
+S _Pro._|Doſt thou thinke ſo, Spirit?
+S _Ar._|Mine would, Sir, were I humane.
+V _Pro._|And mine ſhall.
+  Haſt thou (which art but aire) a touch, a feeling
+  Of their afflictions, and ſhall not my ſelfe,
+  One of their kinde, that relliſh all as ſharpely,
+  Paſſion as they, be kindlier mou'd then thou art?
+  Thogh with their high wrongs I am ſtrook to th' quick,
+  Yet, with my nobler reaſon, gainſt my furie
+  Doe I take part: the rarer Action is
+  In vertue, then in vengeance: they, being penitent,
+  The ſole drift of my purpoſe doth extend
+  Not a frowne further: Goe, releaſe them _Ariell,_
+  My Charmes Ile breake, their ſences Ile reſtore,
+  And they ſhall be themſelues.
+S _Ar._|Ile fetch them, Sir. @_Exit._
+V _Pro._|Ye Elues of hils, brooks, ſtāding lakes & groues,
+  And ye, that on the ſands with printleſſe foote
+  Doe chaſe the ebbing-_Neptune,_ and doe flie him
+  When he comes backe: you demy-Puppets, that
+  By Moone-ſhine doe the greene ſowre Ringlets make,
+  Whereof the Ewe not bites: and you, whoſe paſtime
+  Is to make midnight-Muſhrumps, that reioyce
+  To heare the ſolemne Curfewe, by whoſe ayde
+  (Weake Maſters though ye be) I haue bedymn'd
+  The Noone-tide Sun, call'd forth the mutenous windes,
+  And twixt the greene Sea, and the azur'd vault
+  Set roaring warre: To the dread ratling Thunder
+  Haue I giuen fire, and rifted _Ioues_ ſtowt Oke
+  With his owne Bolt: The ſtrong baſs'd promontorie
+  Haue I made ſhake, and by the ſpurs pluckt vp
+  The Pyne, and Cedar. Graues at my command
+  Haue wak'd their ſleepers, op'd, and let 'em forth
+  By my ſo potent Art. But this rough Magicke
+  I heere abiure: and when I haue requir'd
+  Some heauenly Muſicke (which euen now I do)
+  To worke mine end vpon their Sences, that
+  This Ayrie-charme is for, I'le breake my ſtaffe,
+  Bury it certaine fadomes in the earth,
+  And deeper then did euer Plummet ſound
+  Ile drowne my booke. @_Solemne muſicke._
+D _Heere enters_ Ariel _before: Then_ Alonſo _with a franticke ge-_
+D _ſture, attended by_ Gonzalo. Sebaſtian _and_ Anthonio _in_
+D _like manner attended by_ Adrian _and_ Franciſco: _They all_
+D _enter the circle which_ Proſpero _had made, and there ſtand_
+D _charm'd: which_ Proſpero _obſeruing, ſpeakes._
+~v A ſolemne Ayre, and the beſt comforter,
+  To an vnſetled fancie, Cure thy braines
+  (Now vſeleſſe) boile within thy skull: there ſtand
+  For you are Spell-ſtopt.
+  Holy _Gonzallo,_ Honourable man,
+  Mine eyes ev'n ſociable to the ſhew of thine
+  Fall fellowly drops: The charme diſſolues apace,
+  And as the morning ſteales vpon the night
+  (Melting the darkeneſſe) ſo their riſing ſences
+  Begin to chace the ignorant fumes that mantle
+  Their cleerer reaſon. O good _Gonzallo_
+  My true preſeruer, and a loyall Sir,
+  To him thou follow'ſt; I will pay thy graces
+  Home both in word, and deede: Moſt cruelly
+@foot |Didſt
+@page 17
+@column
+  Did thou _Alonſo,_ vſe me, and my daughter:
+  Thy brother was a furtherer in the Act,
+  Thou art pinch'd for't now _Sebaſtian._ Fleſh, and bloud,
+  You, brother mine, that entertaine ambition,
+  Expelld remorſe, and nature, whom, with _Sebaſtian_
+  (Whoſe inward pinches therefore are moſt ſtrong)
+  Would heere haue kill'd your King: I do forgiue thee,
+  Vnnaturall though thou art: Their vnderſtanding
+  Begins to ſwell, and the approching tide
+  Will ſhortly fill the reaſonable ſhore
+  That now ly foule, and muddy: not one of them
+  That yet lookes on me, or would know me: _Ariell,_
+  Fetch me the Hat, and Rapier in my Cell,
+  I will diſcaſe me, and my ſelfe preſent
+  As I was ſometime _Millaine:_ quickly Spirit,
+  Thou ſhalt ere long be free.
+D _Ariell ſings, and helps to attire him._
+~v Where the Bee ſucks, there ſuck I,
+  In a Cowſlips bell, I lie,
+  There I cowch when Owles doe crie,
+  On the Batts backe I doe flie
+  after Sommer merrily.
+  Merrily, merrily, ſhall I liue now,
+  Vnder the bloſſom that hangs on the Bow.
+V _Pro._|Why that's my dainty _Ariell:_ I ſhall miſſe
+  Thee, but yet thou ſhalt haue freedome: ſo, ſo, ſo.
+  To the Kings ſhip, inuiſible as thou art,
+  There ſhalt thou finde the Marriners aſleepe
+  Vnder the Hatches: the Maſter and the Boat-ſwaine
+  Being awake, enforce them to this place;
+  And preſently, I pre'thee.
+V _Ar._|I drinke the aire before me, and returne
+  Or ere your pulſe twice beate. @_Exit._
+V _Gon._|All torment, trouble, wonder, and amazement
+  Inhabits heere: ſome heauenly power guide vs
+  Out of this fearefull Country.
+V _Pro._|Behold Sir King
+  The wronged Duke of _Millaine, Proſpero_ :
+  For more aſſurance that a liuing Prince
+  Do's now ſpeake to thee, I embrace thy body,
+  And to thee, and thy Company, I bid
+  A hearty welcome.
+V _Alo._|Where thou bee'ſt he or no,
+  Or ſome inchanted triflle to abuſe me,
+  (As late I haue beene) I not know: thy Pulſe
+  Beats as of fleſh, and blood: and ſince I ſaw thee,
+  Th' affliction of my minde amends, with which
+  I feare a madneſſe held me▪ this muſt craue
+  (And if this be at all) a moſt ſtrange ſtory.
+  Thy Dukedome I reſigne, and doe entreat
+  Thou pardon me my wrongs: But how ſhold _Proſpero_
+  Be liuing and be heere?
+V _Pro._|Firſt, noble Frend,
+  Let me embrace thine age, whoſe honor cannot
+  Be meaſur'd, or confin'd.
+V _Gonz._|Whether this be,
+  Or be not, I'le not ſweare.
+V _Pro._|You doe yet taſte
+  Some ſubtleties o' th' Iſle, that will not let you
+  Beleeue things certaine: Wellcome, my friends all,
+  But you, my brace of Lords, were I ſo minded
+  I heere could plucke his Highneſſe frowne vpon you
+  And iuſtifie you Traitors: at this time
+  I will tell no tales.
+S _Seb._|The Diuell ſpeakes in him:
+V _Pro._|No:
+@column
+  For you (moſt wicked Sir) whom to call brother
+  Would euen infect my mouth, I do forgiue
+  Thy rankeſt fault; all of them: and require
+  My Dukedome of thee, which, perforce I know
+  Thou muſt reſtore.
+V _Alo._|If thou beeſt _Proſpero_
+  Giue vs particulars of thy preferuation,
+  How thou haſt met vs heere, whom three howres ſince
+  Were wrackt vpon this ſhore? where I haue loſt
+  (How ſharp the point of this remembrance is)
+  My deere ſonne _Ferdinand._
+S _Pro._|I am woe for't, Sir.
+V _Alo._|Irreparable is the loſſe, and patience
+  Saies, it is paſt her cure.
+V _Pro._|I rather thinke
+  You haue not ſought her helpe, of whoſe ſoft grace
+  For the like loſſe, I haue her ſoueraigne aid,
+  And reſt my ſelfe content.
+S _Alo._|You the like loſſe?
+V _Pro._|As great to me, as late, and ſupportable
+  To make the deere loſſe, haue I meanes much weaker
+  Then you may call to comfort you; for I
+  Haue loſt my daughter.
+V _Alo._|A daughter?
+  Oh heauens, that they were liuing both in _Nalpes_
+  The King and Queene there, that they were, I wiſh
+  My ſelfe were mudded in that oo-zie bed
+  Where my ſonne lies: when did you loſe your daughter?
+V _Pro._|In this laſt Tempeſt. I perceiue theſe Lords
+  At this encounter doe ſo much admire,
+  That they deuoure their reaſon, and ſcarce thinke
+  Their eies doe offices of Truth: Their words
+  Are naturall breath: but howſoeu'r you haue
+  Beene iuſtled from your ſences, know for certain
+  That I am _Proſpero,_ and that very Duke
+  Which was thruſt forth of _Millaine,_ who moſt ſtrangely
+  Vpon this ſhore (where you were wrackt) was landed
+  To be the Lord on't: No more yet of this,
+  For 'tis a Chronicle of day by day,
+  Not a relation for a break-faſt, nor
+  Befitting this firſt meeting: Welcome, Sir;
+  This Cell's my Court: heere haue I few attendants,
+  And Subiects none abroad: pray you looke in:
+  My Dukedome ſince you haue giuen me againe,
+  I will requite you with as good a thing,
+  At leaſt bring forth a wonder, to content ye
+  As much, as me my Dukedome.
+D _Here Proſpero diſcouers Ferdinand and Miranda, play-_
+D _ing at Cheſſei._
+S _Mir._|Sweet Lord, you play me falſe.
+V _Fer._|No my deareſt loue,
+  I would not for the world.
+V _Mir._|Yes, for a ſcore of Kingdomes, you ſhould wrangle,
+  And I would call it faire play.
+V _Alo._|If this proue
+  A viſion of the Iſland, one deere Sonne
+  Shall I twice looſe.
+S _Seb._|A moſt high miracle.
+V _Fer._|Though the Seas threaten they are mercifull,
+  I haue curs'd them without cauſe.
+V _Alo._|Now all the bleſſings
+  Of a glad father, compaſſe thee about:
+  Ariſe, and ſay how thou cam'ſt heere.
+V _Mir._|O wonder!
+  How many goodly creatures are there heere?
+  How beauteous mankinde is? O braue new world
+@foot B 3|That
+@page 18
+@column
+  That has ſuch people in't.
+S _Pro._|'Tis new to thee.
+V _Alo._|What is this Maid, with whom thou was't at play?
+  Your eld'ſt acquaintance cannot be three houres:
+  Is ſhe the goddeſſe that hath ſeuer'd vs,
+  And brought vs thus together?
+V _Fer._|Sir, ſhe is mortall;
+  But by immortall prouidence, ſhe's mine;
+  I choſe her when I could not aske my Father
+  For his aduiſe: nor thought I had one: She
+  Is daughter to this famous Duke of _Millaine,_
+  Of whom, ſo often I haue heard renowne,
+  But neuer ſaw before: of whom I haue
+  Receiu'd a ſecond life; and ſecond Father
+  This Lady makes him to me.
+V _Alo._|I am hers.
+  But O, how odly will it ſound, that I
+  Muſt aske my childe forgiueneſſe?
+V _Pro._|There Sir ſtop,
+  Let vs not burthen our remembrances, with
+  A heauineſſe that's gon.
+V _Gon._|I haue inly wept,
+  Or ſhould haue ſpoke ere this: looke downe you gods
+  And on this couple drop a bleſſed crowne;
+  For it is you, that haue chalk'd forth the way
+  Which brought vs hither.
+S _Alo._|I ſay Amen, _Gonzallo._
+V _Gon._|Was _Millaine_ thruſt from _Millaine,_ that his Iſſue
+  Should become Kings of _Naples_ ? O reioyce
+  Beyond a common ioy, and ſet it downe
+  With gold on laſting Pillers: In one voyage
+  Did _Claribell_ her husband finde at _Tunis,_
+  And _Ferdinand_ her brother, found a wife,
+  Where he himſelfe was loſt: _Proſpero,_ his Dukedome
+  In a poore Iſle: and all of vs, our ſelues,
+  When no man was his owne.
+V _Alo._|Giue me your hands:
+  Let griefe and ſorrow ſtill embrace his heart,
+  That doth not wiſh you ioy.
+V _Gon._|Be it ſo, Amen.
+D _Enter Ariell, with the Maſter and Boatſwaine_
+D _amazedly following._
+~v O looke Sir, looke Sir, here is more of vs:
+  I propheſi'd, if a Gallowes were on Land
+  This fellow could not drowne: Now blaſphemy,
+  That ſwear'ſt Grace ore-boord, not an oath on ſhore,
+  Haſt thou no mouth by land?
+  What is the newes?
+V _Bot._|The beſt newes is, that we haue ſafely found
+  Our King, and company: The next: our Ship,
+  Which but three glaſſes ſince, we gaue out ſplit,
+  Is tyte, and yare, and brauely rig'd, as when
+  We firſt put out to Sea.
+V _Ar._|Sir, all this ſeruice
+  Haue I done ſince I went.
+S _Pro._|My trickſey Spirit.
+V _Alo._|Theſe are not naturall euens, they ſtrengthen
+  From ſtrange, to ſtranger: ſay, how came you hither?
+V _Bot._|If I did thinke, Sir, I were well awake,
+  I'ld ſtriue to tell you: we were dead of ſleepe,
+  And (how we know not) all clapt vnder hatches,
+  Where, but euen now, with ſtrange, and ſeuerall noyſes
+  Of roring, ſhreeking, howling, gingling chaines,
+  And mo diuerſitie of ſounds, all horrible.
+  We were awak'd: ſtraight way, at liberty;
+  Where we, in all our trim, freſhly beheld
+@column
+  Our royall, good, and gallant Ship: our Maſter
+  Capring to eye her: on a trice, ſo pleaſe you,
+  Euen in a dreame, were we diuided from them,
+  And were brought moaping hither.
+S _Ar._|Was't well done?
+S _Pro._|Brauely (my diligence) thou ſhalt be free.
+V _Alo._|This is as ſtrange a Maze, as ere men trod,
+  And there is in this buſineſſe, more then nature
+  Was euer conduct of: ſome Oracle
+  Muſt rectifie our knowledge.
+V _Pro._|Sir, my Leige,
+  Doe not infeſt your minde, with beating on
+  The ſtrangeneſſe of this buſineſſe, at pickt leiſure
+  (Which ſhall be ſhortly ſingle) I'le reſolue you,
+  (Which to you ſhall ſeeme probable) of euery
+  Theſe happend accidents: till when, be cheerefull
+  And thinke of each thing well: Come hither Spirit,
+  Set _Caliban,_ and his companions free:
+  Vntye the Spell: How fares my gracious Sir?
+  There are yet miſſing of your Companie
+  Some few odde Lads, that you remember not.
+D _Enter Ariell, driuing in Caliban, Stephano, and_
+D _Trinculo in their ſtolne Apparell._
+V _Ste._|Euery man ſhift for all the reſt, and let
+  No man take care for himſelfe; for all is
+  But fortune: _Coragio_ Bully-Monſter _Coraſio._
+S _Tri._|If theſe be true ſpies which I weare in my head,
+  here's a goodly ſight.
+V _Cal._|O _Setebos,_ theſe be braue Spirits indeede:
+  How fine my Maſter is? I am afraid
+  He will chaſtiſe me.
+V _Seb._|Ha, ha:
+  What things are theſe, my Lord _Anthonio_ ?
+  Will money buy em?
+V _Ant._|Very like: one of them
+  Is a plaine Fiſh, and no doubt marketable.
+V _Pro._|Marke but the badges of theſe men, my Lords,
+  Then ſay if they be true: This miſhapen knaue;
+  His Mother was a Witch, and one ſo ſtrong
+  That could controle the Moone; make flowes, and ebs,
+  And deale in her command, without her power:
+  Theſe three haue robd me, and this demy-diuell;
+  (For he's a baſtard one) had plotted with them
+  To take my life: two of theſe Fellowes, you
+  Muſt know, and owne, this Thing of darkeneſſe, I
+  Acknowledge mine.
+S _Cal._|I ſhall be pincht to death.
+S _Alo._|Is not this _Stephano,_ my drunken Butler?
+V _Seb._|He is drunke now;
+  Where had he wine?
+V _Alo._|And _Trinculo_ is reeling ripe: where ſhould they
+  Finde this grand Liquor that hath gilded 'em?
+  How cam'ſt thou in this pickle?
+V _Tri._|I haue bin in ſuch a pickle ſince I ſaw you laſt,
+  That I feare me will neuer out of my bones:
+  I ſhall not feare fly-blowing.
+S _Seb._|Who how now _Stephano?_
+S _Ste._|O touch me not, I am not _Stephano,_ but a Cramp.
+S _Pro._|You'ld be King o' the Iſle, Sirha?
+S _Ste._|I ſhould haue bin a ſore one then.
+S _Alo._|This is a ſtrange thing as ere I look'd on.
+V _Pro._|He is as diſproportion'd in his Manners
+  As in his ſhape: Goe Sirha, to my Cell,
+  Take with you your Companions: as you looke
+  To haue my pardon, trim it handſomely.
+V _Cal._|I that I will: and Ile be wiſe hereafter,
+@foot |And
+@page 19 last
+@band
+@column
+  And ſeeke for grace: what a thrice double Aſſe
+  Was I to take this drunkard for a god?
+  And worſhip this dull foole?
+S _Pro._|Goe to, away.
+V _Alo._|Hence, and beſtow your luggage where you {^ found it.}
+S _Seb._|Or ſtole it rather.
+V _Pro._|Sir, I inuite your Highneſſe, and your traine
+  To my poore Cell: where you ſhall take your reſt
+  For this one night, which part of it, Ile waſte
+  With ſuch diſcourſe, as I not doubt, ſhall make it
+  Goe quicke away: The ſtory of my life,
+  And the particular accidents, gon by
+  Since I came to this Iſle: And in the morne
+  I'le bring you to your ſhip, and ſo to _Naples,_
+@column
+  Where I haue hope to ſee the nuptiall
+  Of theſe our deere-belou'd, ſolemnized,
+  And thence retire me to my _Millaine,_ where
+  Euery third thought ſhall be my graue.
+V _Alo._|I long
+  To heare the ſtory of your life; which muſt
+  Take the eare ſtarngely.
+V _Pro._|I'le deliuer all,
+  And promiſe you calme Seas, auſpicious gales,
+  And ſaile, ſo expeditious, that ſhall catch
+  Your Royall fleete farre off: My _Ariel_; chicke
+  That is thy charge: Then to the Elements
+  Be free, and fare thou well: pleaſe you draw neere.
+L @_Exeunt omnes._
+@endband
+@rule
+@band
+@column
+T EPILOGVE,
+U ſpoken by _Proſpero._
+@drop
+L N__Ow my Charmes are all ore-throwne,__
+L _And what ſtrength I haue's mine owne._
+L _Which is moſt faint: now 'tis true_
+L _I muſt be heere confinde by you,_
+L _Or ſent to_ Naples, _Let me not_
+L _Since I haue my Dukedome got,_
+L _And pardon'd the deceiuer, dwell_
+L _In this bare Iſland, by your Spell,_
+L _But releaſe me from my bands_
+L _With the helpe of your good hands:_
+L _Gentle breath of yours, my Sailes_
+L _Muſt fill, or elſe my proiect failes,_
+L _Which was to pleaſe: Now I want_
+L _Spirits to enforce: Art to inchant,_
+L _And my ending is deſpaire,_
+L _Vnleſſe I be relieu'd by praier_
+L _Which pierces ſo, that it aſſaults_
+L _Mercy it ſelfe, and frees all faults._
+L _As you from crimes would pardon'd be,_
+L _Let your Indulgence ſet me free._ @Exit.
+@column
+G The Scene, an vn-inhabited Iſland
+U _Names of the Actors._
+L _Alonſo, K. of Naples:_
+L _Sebaſtian his Brother._
+L _Proſpero, the right Duke of Millaine._
+L _Anthonio his brother, the vſurping Duke of Millaine._
+L _Ferdinand, Son to the King of Naples._
+L _Gonzalo, an honeſt old Councellor._
+L _Adrian, & Franciſco, Lords._
+L _Caliban, a ſaluage and deformed ſlaue._
+L _Trinculo, a Ieſter._
+L _Stephano, a drunken Butler._
+L _Maſter of a Ship._
+L _Boate-Swaine._
+L _Marriners._
+L _Miranda, daughter to Proſpero._
+L _Ariell, an ayrie ſpirit._
+L _Iris_
+L _Ceres_
+L _Iuno_ @brace _Spirits._
+L _Nymphes_
+L _Reapers_
+@endband
+@rule
+@rule
+F FINIS.
+@rule
+@foot |THE

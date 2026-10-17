@@ -1,8 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="215mm" height="330mm" viewBox="0 0 215 330">
-  <!-- The First Folio's page: the text and its running head in a frame
-       of rules, the head ruled off below. -->
-  <g fill="none" stroke="#1a1a1a" stroke-width="0.35">
-    <rect x="16" y="13" width="183" height="303"/>
-    <line x1="16" y1="23" x2="199" y2="23"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="587.8pt" height="973pt" viewBox="0 0 587.8 973">
+  <!-- The First Folio's page as the Boston Public Library's copy has it
+       (measured from the scan, tool/tempest_1623): the text and its
+       running head in a frame of rules, the head ruled off below, the
+       columns ruled apart. -->
+  <g fill="none" stroke="#1A1A1A">
+    <line x1="40.2" y1="27.6" x2="566" y2="27.6" stroke-width="1.4"/>
+    <line x1="40.2" y1="61.2" x2="566" y2="61.2" stroke-width="0.6"/>
+    <line x1="40.2" y1="906.2" x2="566" y2="906.2" stroke-width="1.5"/>
+    <line x1="40.2" y1="26.9" x2="40.2" y2="906.9" stroke-width="1.4"/>
+    <line x1="566" y1="26.9" x2="566" y2="906.9" stroke-width="1.6"/>
   </g>
 </svg>

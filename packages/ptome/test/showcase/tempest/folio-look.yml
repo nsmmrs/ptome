@@ -1,11 +1,14 @@
 # The Tempest as the First Folio prints it (1623, the first play in the
-# book, set by Jaggard's compositors): a folio page of about 8½ × 13 in,
-# two columns ruled apart inside a frame of rules, the running head
-# "The Tempest." in italic over a rule, the page number outside it; each
-# speech its speaker's name run in, in italic, set in a little from the
-# lines after it, which go out to the column's edge; stage directions in
-# italic, centred; the acts and scenes headed in the column. The Folio
-# doesn't step a shared verse line, nor number the lines.
+# book, pages 1-19 of the Comedies, set by Jaggard's compositors),
+# measured from the scan (NOTICE.md, tool/tempest_1623): the page as the
+# scan has it, two columns ruled apart inside a frame of rules, the
+# running head "The Tempest." in italic over a rule, the page number
+# outside it; each line the Folio's (`:source-lines:`); each speech its
+# speaker's name run in, in italic, its first line set in, the lines
+# after it out to the column's edge; stage directions in the middle, a
+# short one (Exit.) flush right on the line it ends; a line too long
+# for its column turned after a bracket; the signature and the
+# catchword at the foot.
 #
 # IM Fell DW Pica stands in for the Folio's roman and italic: Fell's
 # types, cut in the Low Countries later in the century, are the nearest
@@ -17,25 +20,40 @@ tokens:
     text: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] } }
     display: { family: { print: IM Fell DW Pica, screen: [IM Fell DW Pica, serif] }, weight: normal }
   size:
-    text: { print: 10.5pt, screen: 19px }
+    text: { print: 11.33pt, screen: 19px }
     headings: { print: [30pt, 13pt, 13pt, 10.5pt, 10.5pt, 10.5pt] }
   leading: { print: 1.12, screen: 1.5 }
   measure: { screen: 34em }
   align: { print: start }
   hyphenate: { print: false }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [215mm, 330mm], margin: [25mm, 19mm, 17mm, 19mm] }
+  page: { size: [587.8pt, 973pt], margin: [64pt, 30.4pt, 22pt, 47.7pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
+  base:
+    line_pitch: 12.48pt
+    word_spacing: 118%
+    margin_break: keep
   page:
     columns: 2
-    column_gap: 18
-    column_rule_width: 0.4
+    column_gap: 16.8
+    column_rule_width: 0.6
     column_rule_color: '1A1A1A'
-    background_image: image:images/folio-frame.svg[fit=fill]
+    background_image: image:images/folio-frame.svg[]
+  section:
+    role:
+      # (The first page and the last set across the page, their columns
+      # in bands; the play's pages headed as the Folio heads them, the
+      # first page with its folio alone.)
+      first: { page_columns: 1, page_running_content: none }
+      last: { page_columns: 1, header_on_openers: true }
+      play: { header_on_openers: true }
+  thematic_break:
+    role:
+      rule: { margin_top: 0, margin_bottom: 0, border_width: 0.6, border_color: '1A1A1A' }
   heading:
     chapter_break_before: auto
     h2:
@@ -64,6 +82,150 @@ pdf:
     sd: { font_style: italic }
     sc: { font_style: normal }
     scene: { }
+    # (The Folio's text, tool/tempest_1623's: its heads, its directions in
+    # the middle, its speeches with their speakers run in, set in.)
+    fhead: { text_align: center, text_indent: 0, font_size: 14.8, line_height: 1 }
+    fact: { text_align: center, text_indent: 0, font_size: 17.7, font_style: italic, line_height: 1 }
+    dir: { text_align: center, text_indent: 0, font_size: 10.8 }
+    dirh: { text_align: justify, text_indent: -15 }
+    sp: { text_align: justify, text_indent: 12.3 }
+    sp-goes-on: { text_align: justify, text_indent: 0 }
+    # (The Folio's turnovers, written in the text: the words turned up
+    # onto the line above or down onto the line below, flush right after
+    # a bracket.)
+    spv: { text_align: left, text_indent: 12.3 }
+    spv-goes-on: { text_align: left, text_indent: 0 }
+    ln: { text_align: left, text_indent: 0 }
+    drop: { drop_lines: 2, drop_font_style: normal }
+    spk: { font_style: italic }
+    right: { flush: right }
+    turn-down: { turnover: down, turnover_mark: '(' }
+    turn-up: { turnover: up, turnover_mark: '(' }
+    cut: { margin_top: 0, margin_bottom: 0 }
+    # (The decorated initial set on its own, the lines beside it drawn
+    # up over it and set in past it: margins.py's and indents.py's.)
+    initial: { margin_top: 0, margin_bottom: 0 }
+    # (The first page's head and the last page's titles.)
+    folio-line: { text_align: left, text_indent: 0, font_size: 14, line_height: 1 }
+    ftitle-the: { text_align: center, text_indent: 0, font_size: 36.3, letter_spacing: 2.9, line_height: 1 }
+    ftitle-tempest: { text_align: center, text_indent: 0, font_size: 48.1, letter_spacing: 16.5, line_height: 1 }
+    act: { text_align: center, text_indent: 0, font_size: 17.6, line_height: 1 }
+    ftitle: { text_align: center, text_indent: 0, font_size: 30, letter_spacing: 6, line_height: 1 }
+    ep: { font_size: 12.6 }
+    fsub: { text_align: center, text_indent: 0, font_size: 17, line_height: 1 }
+    fscene: { text_align: center, text_indent: 0, font_size: 17.2, line_height: 1 }
+    # (The folio in the running head: in roman.)
+    fol: { font_style: normal, font_size: 26 }
+    finis: { text_align: center, text_indent: 0, font_size: 24, letter_spacing: 2.4, line_height: 1 }
+    # (The foot: the signature under the second column, the catchword at
+    # its right.)
+    foot-line: { text_align: left, text_indent: 0 }
+    # (The last page's catchword, the next play's title's first word, in
+    # its capitals.)
+    foot-last: { font_size: 20, letter_spacing: 3 }
+    sig: { width: 110, width_align: right }
+    cw: { flush: right }
+    # (A line set closer where the face is wider than the printing's:
+    # tight.py's.)
+    tight1: { letter_spacing: -0.1 }
+    tight2: { letter_spacing: -0.2 }
+    tight3: { letter_spacing: -0.3 }
+    tight4: { letter_spacing: -0.4 }
+    tight5: { letter_spacing: -0.5 }
+    tight6: { letter_spacing: -0.6 }
+    tight7: { letter_spacing: -0.7 }
+    tight8: { letter_spacing: -0.8 }
+    tight9: { letter_spacing: -0.9 }
+    tight10: { letter_spacing: -1.0 }
+    tight11: { letter_spacing: -1.1 }
+    tight12: { letter_spacing: -1.2 }
+    # (The spans: gen.py's.)
+    i5: { width: 0.5pt }
+    i10: { width: 1.0pt }
+    i15: { width: 1.5pt }
+    i20: { width: 2.0pt }
+    i25: { width: 2.5pt }
+    i30: { width: 3.0pt }
+    i35: { width: 3.5pt }
+    i40: { width: 4.0pt }
+    i45: { width: 4.5pt }
+    i50: { width: 5.0pt }
+    i55: { width: 5.5pt }
+    i60: { width: 6.0pt }
+    i65: { width: 6.5pt }
+    i70: { width: 7.0pt }
+    i75: { width: 7.5pt }
+    i85: { width: 8.5pt }
+    i90: { width: 9.0pt }
+    i95: { width: 9.5pt }
+    i105: { width: 10.5pt }
+    i110: { width: 11.0pt }
+    i115: { width: 11.5pt }
+    i120: { width: 12.0pt }
+    i123: { width: 12.3pt }
+    i125: { width: 12.5pt }
+    i135: { width: 13.5pt }
+    i145: { width: 14.5pt }
+    i155: { width: 15.5pt }
+    i160: { width: 16.0pt }
+    i170: { width: 17.0pt }
+    i175: { width: 17.5pt }
+    i180: { width: 18.0pt }
+    i185: { width: 18.5pt }
+    i285: { width: 28.5pt }
+    i305: { width: 30.5pt }
+    i310: { width: 31.0pt }
+    i320: { width: 32.0pt }
+    i335: { width: 33.5pt }
+    i385: { width: 38.5pt }
+    i390: { width: 39.0pt }
+    i395: { width: 39.5pt }
+    i400: { width: 40.0pt }
+    i405: { width: 40.5pt }
+    i410: { width: 41.0pt }
+    i415: { width: 41.5pt }
+    i425: { width: 42.5pt }
+    i430: { width: 43.0pt }
+    i495: { width: 49.5pt }
+    i505: { width: 50.5pt }
+    i510: { width: 51.0pt }
+    i515: { width: 51.5pt }
+    i530: { width: 53.0pt }
+    i535: { width: 53.5pt }
+    i555: { width: 55.5pt }
+    i620: { width: 62.0pt }
+    i650: { width: 65.0pt }
+    i655: { width: 65.5pt }
+    i670: { width: 67.0pt }
+    i685: { width: 68.5pt }
+    i690: { width: 69.0pt }
+    i695: { width: 69.5pt }
+    i700: { width: 70.0pt }
+    i760: { width: 76.0pt }
+    i805: { width: 80.5pt }
+    i810: { width: 81.0pt }
+    i815: { width: 81.5pt }
+    i820: { width: 82.0pt }
+    i1380: { width: 138.0pt }
+    i1850: { width: 185.0pt }
+    p1226: { line_pitch: 12.26pt }
+    p1239: { line_pitch: 12.39pt }
+    p1245: { line_pitch: 12.45pt }
+    p1249: { line_pitch: 12.49pt }
+    p1250: { line_pitch: 12.5pt }
+    p1252: { line_pitch: 12.52pt }
+    p1253: { line_pitch: 12.53pt }
+    p1254: { line_pitch: 12.54pt }
+    p1255: { line_pitch: 12.55pt }
+    p1256: { line_pitch: 12.56pt }
+    p1257: { line_pitch: 12.57pt }
+    p1258: { line_pitch: 12.58pt }
+    p1261: { line_pitch: 12.61pt }
+    p1264: { line_pitch: 12.64pt }
+    p1269: { line_pitch: 12.69pt }
+    p1277: { line_pitch: 12.77pt }
+    p1424: { line_pitch: 14.24pt }
+    # (The spans end.)
   title_page:
     text_align: center
     title:
@@ -77,16 +239,18 @@ pdf:
   list:
     item_spacing: 0
   header:
-    height: 11mm
-    vertical_align: middle
-    font_size: 15
+    # (The running head in its band of the frame, the folio outside.)
+    height: 61.2
+    vertical_align: bottom
+    padding: [0, 13, 1.6, 22]
+    font_size: 19.2
     font_style: italic
     recto:
       left: { content: '' }
       center: { content: 'The Tempest.' }
-      right: { content: '{page-number}' }
+      right: { content: '[.fol]#{page-number}#' }
     verso:
-      left: { content: '{page-number}' }
+      left: { content: '[.fol]#{page-number}#' }
       center: { content: 'The Tempest.' }
       right: { content: '' }
   footer:

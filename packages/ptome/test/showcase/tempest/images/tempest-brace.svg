@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="68" viewBox="0 0 8 68">
+  <!-- The tall brace that gathers the Spirits in the Folio's list of the
+       actors, drawn for the work. -->
+  <path d="M1 1 C5 1 4 4 4 10 L4 28 C4 32 5 34 7.5 34 C5 34 4 36 4 40 L4 58 C4 64 5 67 1 67"
+        fill="none" stroke="#1A1A1A" stroke-width="1"/>
+</svg>

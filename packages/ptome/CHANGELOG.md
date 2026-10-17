@@ -10,6 +10,20 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `section_role_<role>_page_columns: 1` in a book set in columns
+  sets that role's sections across the page, their own `[.columns]`
+  blocks still in columns. The showcase's Tempest is now set as the
+  First Folio (1623) sets it, its nineteen pages page for page and line
+  for line in the Folio's look (`-a look=folio`, `tool/tempest_1623`,
+  EPIC-gwbd0t): the text the Text Creation Partnership's transcription
+  (EEBO-TCP A11954, CC0) laid on the scan's lines, each page in its
+  frame of rules under its running head, the first page's headpiece,
+  title and initial across the page over its columns, the speeches with
+  their speakers run in, the long directions hung, the songs set in, the
+  words too long for a line turned up or down after a bracket as the
+  Folio turns them, the acts' and scenes' heads between rules, the last
+  page's epilogue and list of the actors in bands under the play's end,
+  FINIS and the next play's catchword.
 - The showcase's Poor Richard's Almanack is now set as its facsimile
   sets the 1733 almanac, page for page and line for line
   (`tool/poor_richard_1733`, EPIC-53ktcp): each page in its frame of
