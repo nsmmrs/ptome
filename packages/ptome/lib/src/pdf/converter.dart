@@ -772,6 +772,11 @@ final class PdfConverter extends BuiltInConverter
   /// in the modern engine, unless `running_content_on_openers` is true).
   Set<int> _openerPages = const {};
 
+  /// The roles of the section opening each opener page (by its number):
+  /// `section_role_<role>_<periphery>_on_openers` shows that header or
+  /// footer on them.
+  Map<int, List<String>> _openerRoles = const {};
+
   /// The blocks set before their sections' headings, which the sections'
   /// traversal passes over (`role_<role>_before_heading`).
   final Set<AbstractBlock> _beforeHeading = Set.identity();
@@ -1992,6 +1997,11 @@ final class PdfConverter extends BuiltInConverter
   /// The pages before the running content starts, and before the page
   /// numbers start (the gem's `num_front_matter_pages`).
   (int, int) _skip = (0, 0);
+
+  /// The sections that number their pages again (their own
+  /// `folio-start`), in page order: the page each starts on, the number
+  /// it gives it, and its roles (`section_role_<role>_running_content_*`).
+  List<({int page, int start, List<String> roles})> _folioRestarts = const [];
 
   /// The page the body starts on (1-based).
   int _bodyStart = 1;

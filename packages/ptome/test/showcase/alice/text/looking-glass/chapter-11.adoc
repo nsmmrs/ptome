@@ -1,6 +1,6 @@
-[#looking-glass-chapter-11,number=XI]
+[#looking-glass-chapter-11,number=XI,running-title="Waking.",role=lg-opening11]
 == Waking.
 
+// page 216
+[.indent]
 —and it really __was__ a kitten, after all.
-
-image::looking-glass-illustration-51.svg["A black kitten is being shaken in Alice’s hands.",id=looking-glass-illustration-51,role=half-page]

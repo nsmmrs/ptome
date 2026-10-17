@@ -4,18 +4,18 @@ printing sets the page's last line (its lines counted from the
 transcription). Prints the look's `opening<n>` roles."""
 import json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT
+from common import BOOKS, ROOT, BOOK, DPI, PITCH_PX, ocr_path, scan_path
 
 book = sys.argv[1]
 cfg = BOOKS[book]
-P = json.load(open(f'{ROOT}/{cfg["id"]}.ocr.json'))
+P = json.load(open(ocr_path(cfg)))
 cuts = json.load(open(f'{ROOT}/placed-{book}.json'))
 present = {}
 for row in open(f'{ROOT}/out/{book}/lines.tsv', encoding='utf-8'):
     lid = row.split('\t')[0]
     leaf, i = lid.split(':')[0], lid.split(':')[1].split('+')[0]
     present.setdefault(int(leaf), set()).add(int(i))
-PT = 72 / 650
+PT = 72 / DPI
 GRID = 16.82
 page_top = 48.8
 last_base = 60.7 + 21 * GRID
@@ -34,7 +34,7 @@ for n, leaf in enumerate(openers, 1):
     S = (ch['b'][1] + 75) * PT
     T = (ti['b'][1] + 55) * PT
     Bl = min(last_base, (body[-1]['b'][1] + 77) * PT)
-    N = len(body) + (1 if leaf == 98 else 0)
+    N = len(body) + (1 if leaf in cfg.get('opening_extra_line', ()) else 0)
     Bf = Bl - (N - 1) * GRID
     G1, G2 = T - S, Bf - T
     half = (G1 - 14.03) / 2
@@ -44,5 +44,5 @@ for n, leaf in enumerate(openers, 1):
         k = f'heading_h2_margin_top: {S - (page_top + cut["height"]) - 11.47 - half:.1f}'
     else:
         k = f'heading_h2_margin_page_top: {S - (page_top + 11.47) - half:.1f}'
-    print(f'      opening{n}: {{ {k}, heading_h2_line_pitch: {G1:.1f}, '
+    print(f'      {cfg.get("opening_role", "opening")}{n}: {{ {k}, heading_h2_line_pitch: {G1:.1f}, '
           f'heading_h2_margin_bottom: {mb:.1f} }}  # {N} lines')

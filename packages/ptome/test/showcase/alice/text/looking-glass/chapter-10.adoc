@@ -1,8 +1,24 @@
-[#looking-glass-chapter-10,number=X]
+// The full-page cut facing the chapter's opening, on a page of its own,
+// unheaded, as the printing sets it.
+:sectnums!:
+[#plate-red-queen.plate-page%notitle%noheader%nofooter]
+== The Red Queen, shaken
+
+image::looking-glass-illustration-50.svg["The Red Queen is held up and shaken in Alice’s hands.",id=looking-glass-illustration-50,role=cut,pdfwidth=130.4pt,pdfheight=370.0pt,align=center,fit-top=76.9pt]
+
+:sectnums:
+[#looking-glass-chapter-10,number=X,running-title="Shaking.",role=lg-opening10]
 == Shaking.
 
-She took her off the table as she spoke, and shook her backwards and forwards with all her might.
+[.indent]
+// page 215
+[.sc]##She## took her off the table as she spoke, and
+shook her backwards and forwards with all her
+might.
 
-image::looking-glass-illustration-50.svg["The Red Queen is held up and shaken in Alice’s hands.",id=looking-glass-illustration-50,role=half-page]
-
-The Red Queen made no resistance whatever; only her face grew very small, and her eyes got large and green: and still, as Alice went on shaking her, she kept on growing shorter⁠—and fatter⁠—and softer⁠—and rounder⁠—and⁠—
+The Red Queen made no resistance whatever;
+only her face grew very small, and her eyes
+got large and green: and still, as Alice went
+on shaking her, she kept on growing shorter⁠—
+and fatter⁠—and softer⁠—and rounder⁠—
+and⁠—

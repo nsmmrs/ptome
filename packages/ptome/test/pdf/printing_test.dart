@@ -597,4 +597,48 @@ void main() {
       closeTo(words, 0.01),
     );
   });
+
+  test("a section's own folio-start: its pages numbered from it again, "
+      "its signatures by its role's section_role_<role>_running_content_"
+      'signature_* keys, a second book bound after the first', () {
+    final more = List.filled(3, '<<<\n\nA page.').join('\n\n');
+    final pages = _lines(
+      _pdf(
+        '= Book\n:doctype: book\n:notitle:\n\n== One\n\nA page.\n\n$more\n\n'
+            '[.second,folio-start=1]\n== Two\n\nA page.\n\n$more\n',
+        'running_content:\n  signature:\n    interval: 8\n    start: B\n'
+            'section:\n  role:\n'
+            '    second: { running_content_signature_interval: 2 }\n'
+            'footer:\n  height: 0.5in\n  on_openers: true\n'
+            '  recto: { left: { content: "f{page-number}" }, '
+            'right: { content: "{page-signature}" } }\n'
+            '  verso: { left: { content: "f{page-number}" }, '
+            'right: { content: "{page-signature}" } }\n',
+      ),
+    );
+    final feet = [
+      for (final p in pages) p.lastWhere((l) => l.$1.startsWith('f')).$1,
+    ];
+    // (The second section from 1 again, a gathering every two pages.)
+    expect(feet, ['f1 B', 'f2', 'f3', 'f4', 'f1 B', 'f2', 'f3 C', 'f4']);
+  });
+
+  test('section_role_<role>_<periphery>_on_openers: that header on the '
+      "role's openers alone, by the openers' columns", () {
+    final pages = _lines(
+      _pdf(
+        '= Book\n:doctype: book\n:notitle:\n\n== One\n\nA page.\n\n'
+            '[.envoi%notitle]\n== Envoi\n\nThe end.\n',
+        'section:\n  role:\n'
+            '    envoi: { opener: true, header_on_openers: true }\n'
+            'header:\n  height: 0.5in\n'
+            '  recto: { left: { content: "head" } }\n'
+            '  verso: { left: { content: "head" } }\n'
+            '  opener: { center: { content: "folio {page-number}" } }\n',
+      ),
+    );
+    expect(pages[0].any((l) => l.$1.contains('folio')), isFalse);
+    expect(pages[0].any((l) => l.$1.contains('head')), isFalse);
+    expect(pages[1].first.$1, 'folio 2');
+  });
 }

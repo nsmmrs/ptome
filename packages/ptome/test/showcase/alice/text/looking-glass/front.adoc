@@ -1,0 +1,591 @@
+// Looking-Glass's front matter as the 1872 printing sets it (Macmillan,
+// the first edition; tool/alice_1867/front_lg.py, from the scan): each
+// page the printing's, each line where it sets it. Not edited by hand.
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=162.73pt]
+
+[.lgf-1338-n-c-t77-lm164-rm164,margin-top=0.00pt,margin-bottom=0]
+THROUGH THE LOOKING-GLASS,
+
+[.lgf-871-i-c-t83-l164-r200,margin-top=16.21pt,margin-bottom=0]
+__AND WHAT ALICE FOUND THERE.__
+
+
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=69.92pt]
+
+[.lgf-1030-n-c-t0-l502-r433,margin-top=0.00pt,margin-bottom=0]
+DRAMATIS PERSONÆ.
+
+[.lgf-800-i-c-t0-l302-r244,margin-top=13.93pt,margin-bottom=0]
+__(As arranged before commencement of game.)__
+
+[.lgf-pic,margin-top=22.64pt]
+image::dramatis-rules.svg["",role=cut,pdfwidth=250.1pt,align=center]
+
+[.lgf-900-n-c-t0-l268-r1566,margin-top=-144.94pt,margin-bottom=0]
+[.sc]#White.#
+
+[.lgf-900-n-c-t0-l1658-r264,margin-top=-10.92pt,margin-bottom=0]
+[.sc]#Red.#
+
+[.lgf-460-n-lmt0-l18-rm200,margin-top=15.61pt,margin-bottom=0]
+PIECES.
+
+[.lgf-460-n-lmt0-l913-rm200,margin-top=-5.69pt,margin-bottom=0]
+PAWNS.
+
+[.lgf-460-n-lmt0-l1363-rm200,margin-top=-5.49pt,margin-bottom=0]
+PAWNS.
+
+[.lgf-460-n-lmt0-l2165-rm200,margin-top=-5.69pt,margin-bottom=0]
+PIECES.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=1.55pt,margin-bottom=0]
+Tweedledee . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Daisy.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Daisy . . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+Humpty Dumpty.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=2.97pt,margin-bottom=0]
+Unicorn . . . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Haigha.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Messenger .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+Carpenter.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.47pt,margin-bottom=0]
+Sheep . . . . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Oyster.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Oyster . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+Walrus.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.37pt,margin-bottom=0]
+{empty}W. Queen . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+“Lily.”
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Tiger-lily . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}R. Queen.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.27pt,margin-bottom=0]
+{empty}W. King . . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}Fawn.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Rose . . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}R. King.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.17pt,margin-bottom=0]
+Aged man . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Oyster.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Oyster . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}Crow.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.27pt,margin-bottom=0]
+{empty}W. Knight . . . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Hatta.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Frog . . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}R. Knight.
+
+[.lgf-860-n-j-t0-lm63-r1619,margin-top=3.07pt,margin-bottom=0]
+Tweedledum . . . . . . . .
+
+[.lgf-860-n-lmt0-l908-rm200,margin-top=-10.63pt,margin-bottom=0]
+Daisy.
+
+[.lgf-860-n-j-t0-l1365-r619,margin-top=-10.63pt,margin-bottom=0]
+Daisy . . . . .
+
+[.lgf-860-n-lmt0-l1912-rm200,margin-top=-10.63pt,margin-bottom=0]
+{empty}Lion.
+
+
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=26.70pt]
+
+[.lgf-pic,margin-top=0.00pt]
+image::looking-glass-illustration-1.svg["A chess problem. Red has pieces as follows: Ng8, Ke4, Qe2. White has pieces as follows: Kc6, Nf5, Pd2, Qc1, Rf1.",role=cut,pdfwidth=117.9pt,align=center]
+
+[.lgf-800-i-c-t0-l131-r123,margin-top=23.27pt,margin-bottom=0]
+__White Pawn__ (__Alice__) __to play, and win in eleven moves.__
+
+[.lgf-400-n-rmt0-lm200-r1311,margin-top=25.38pt,margin-bottom=0]
+PAGE
+
+[.lgf-400-n-rmt0-lm200-rm11,margin-top=-4.64pt,margin-bottom=0]
+PAGE
+
+[.lgf-740-n-j-t0-l38-r1474,margin-top=-1.56pt,margin-bottom=0]
+{empty}1. Alice meets R. Q. . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+35
+
+[.lgf-740-n-j-t0-l1345-r164,margin-top=-9.15pt,margin-bottom=0]
+{empty}1. R.Q. to K.R.’s 4th . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+45
+
+[.lgf-740-n-lmt0-l38-rm200,margin-top=-0.72pt,margin-bottom=0]
+{empty}2. Alice through Q.’s 3d (__by__
+
+[.lgf-740-n-j-t0-l282-r1474,margin-top=-0.72pt,margin-bottom=0]
+__railway__) . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+48
+
+[.lgf-740-n-lmt0-l1345-rm200,margin-top=-9.15pt,margin-bottom=0]
+{empty}2. W. Q. to Q. B.’s 4th (__after__
+
+[.lgf-740-n-lmt0-l199-rm200,margin-top=-0.72pt,margin-bottom=0]
+to Q.’s 4th (__Tweedledum__
+
+[.lgf-740-n-j-t0-l1506-r164,margin-top=-9.15pt,margin-bottom=0]
+__shawl__) . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+91
+
+[.lgf-740-n-j-t0-l282-r1474,margin-top=-0.72pt,margin-bottom=0]
+__and Tweedledee__) . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+54
+
+[.lgf-740-n-lmt0-l38-rm200,margin-top=-0.72pt,margin-bottom=0]
+{empty}3. Alice meets W. Q. (__with__
+
+[.lgf-740-n-lmt0-l1345-rm200,margin-top=-9.15pt,margin-bottom=0]
+{empty}3. W. Q. to Q. B.’s 5th (__be-__
+
+[.lgf-740-n-j-t0-l199-r1474,margin-top=-0.72pt,margin-bottom=0]
+__shawl__) . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+91
+
+[.lgf-740-n-j-t0-l1506-r164,margin-top=-9.15pt,margin-bottom=0]
+__comes sheep__) . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+100
+
+[.lgf-740-n-lmt0-l38-rm200,margin-top=-0.72pt,margin-bottom=0]
+{empty}4. Alice to Q.’s 5th (__shop,__
+
+[.lgf-740-n-lmt0-l1345-rm200,margin-top=-9.15pt,margin-bottom=0]
+{empty}4. W. Q. to K. B.’s 8th
+
+[.lgf-740-n-j-t0-l199-r1474,margin-top=-0.72pt,margin-bottom=0]
+__river, shop__) . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+101
+
+[.lgf-740-n-j-t0-l1506-r164,margin-top=-9.15pt,margin-bottom=0]
+(__leaves egg on shelf__) . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+111
+
+[.lgf-740-n-lmt0-l38-rm200,margin-top=-0.72pt,margin-bottom=0]
+{empty}5. Alice to Q.’s 6th (__Humpty__
+
+[.lgf-740-n-lmt0-l1345-rm200,margin-top=-9.15pt,margin-bottom=0]
+{empty}5. W. Q. to Q. B.’s 8th (__fly-__
+
+[.lgf-740-n-j-t0-l199-r1474,margin-top=-0.72pt,margin-bottom=0]
+__Dumpty__) . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+112
+
+[.lgf-740-n-j-t0-l1506-r164,margin-top=-9.15pt,margin-bottom=0]
+__ing from R. Kt.__) . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+149
+
+[.lgf-740-n-j-t0-l38-r1474,margin-top=-0.72pt,margin-bottom=0]
+{empty}6. Alice to Q.’s 7th (__forest__) .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+155
+
+[.lgf-740-n-j-t0-l1345-r164,margin-top=-9.15pt,margin-bottom=0]
+{empty}6. R. Kt. to K.’s 2nd (__ch.__) . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+158
+
+[.lgf-740-n-j-t0-l38-r1474,margin-top=-0.72pt,margin-bottom=0]
+{empty}7. W. Kt. takes R. Kt. . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+161
+
+[.lgf-740-n-j-t0-l1345-r164,margin-top=-9.15pt,margin-bottom=0]
+{empty}7. W. Kt. to K. B.’s 5th . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+182
+
+[.lgf-740-n-lmt0-l38-rm200,margin-top=-0.72pt,margin-bottom=0]
+{empty}8. Alice to Q.’s 8th (__coro-__
+
+[.lgf-740-n-lmt0-l1345-rm200,margin-top=-9.15pt,margin-bottom=0]
+{empty}8. R. Q. to K.’s sq. (__exami-__
+
+[.lgf-740-n-j-t0-l199-r1474,margin-top=-0.72pt,margin-bottom=0]
+__nation__) . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+183
+
+[.lgf-740-n-j-t0-l1506-r164,margin-top=-9.15pt,margin-bottom=0]
+__nation__) . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+186
+
+[.lgf-740-n-j-t0-l38-r1474,margin-top=-0.72pt,margin-bottom=0]
+{empty}9. Alice becomes Queen . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+196
+
+[.lgf-740-n-j-t0-l1345-r164,margin-top=-9.15pt,margin-bottom=0]
+{empty}9. Queens castle . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+199
+
+[.lgf-740-n-j-t0-lm4-r1474,margin-top=-0.72pt,margin-bottom=0]
+{empty}10. Alice castles (__feast__) . . . . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+204
+
+[.lgf-740-n-j-t0-l1303-r164,margin-top=-9.15pt,margin-bottom=0]
+{empty}10. W.Q. to Q.R.’s 6th (__soup__) .
+
+[.lgf-740-n-rmt0-lm200-rm2,margin-top=-9.15pt,margin-bottom=0]
+211
+
+[.lgf-740-n-j-t0-lm4-r1474,margin-top=-0.72pt,margin-bottom=0]
+{empty}11. Alice takes R.Q. & wins . .
+
+[.lgf-740-n-rmt0-lm200-r1312,margin-top=-9.15pt,margin-bottom=0]
+215
+
+
+<<<
+
+include::frontispiece.adoc[]
+
+ifdef::backend-pdf[]
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=6.96pt]
+
+[.lgf-1501-n-c-t0-lm200-rm200,margin-top=0.00pt,margin-bottom=0]
+THROUGH THE LOOKING-GLASS,
+
+[.lgf-1166-n-c-t0-lm200-rm200,margin-top=26.42pt,margin-bottom=0]
+AND WHAT ALICE FOUND THERE.
+
+[.lgf-545-n-c-t37-lm200-rm200,margin-top=50.59pt,margin-bottom=0]
+BY
+
+[.lgf-1120-n-c-t12-lm200-rm200,margin-top=3.57pt,margin-bottom=0]
+LEWIS CARROLL,
+
+[.lgf-716-n-c-t0-lm200-rm200,margin-top=3.82pt,margin-bottom=0]
+[.sc]#Author of “Alice’s Adventures in Wonderland.”#
+
+[.lgf-887-i-c-t108-lm200-rm200,margin-top=50.76pt,margin-bottom=0]
+__WITH FIFTY ILLUSTRATIONS__
+
+[.lgf-856-i-c-t122-lm200-rm200,margin-top=5.82pt,margin-bottom=0]
+__BY JOHN TENNIEL.__
+
+[.lgf-950-n-c-t0-lm200-rm200,margin-top=78.79pt,margin-bottom=0]
+[.blackletter]#London:#
+
+[.lgf-1105-n-c-t60-lm200-rm200,margin-top=-0.36pt,margin-bottom=0]
+MACMILLAN AND CO.
+
+[.lgf-960-n-c-t0-lm200-rm200,margin-top=0.32pt,margin-bottom=0]
+{empty}1872.
+
+[.lgf-809-i-c-t0-lm200-rm200,margin-top=15.94pt,margin-bottom=0]
+__[The Right of Translation and Reproduction is reserved.]__
+
+endif::[]
+
+ifdef::backend-pdf[]
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=1pt]
+endif::[]
+
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=86.70pt]
+
+[.lgf-pic,margin-top=0.00pt]
+image::double-rule.svg["",role=cut,pdfwidth=64.8pt,align=center]
+
+[verse.poem.v10.lh157,margin-top=15.37pt,margin-bottom=0]
+____
+          [.sc]#Child# of the pure unclouded brow
+             And dreaming eyes of wonder!
+          Though time be fleet, and I and thou
+             Are half a life asunder,
+          Thy loving smile will surely hail
+          The love-gift of a fairy-tale.
+____
+
+[verse.poem.v10.lh157,margin-top=29.00pt,margin-bottom=0]
+____
+          I have not seen thy sunny face,
+             Nor heard thy silver laughter;
+          No thought of me shall find a place
+             In thy young life’s hereafter⁠—
+          Enough that now thou wilt not fail
+          To listen to my fairy-tale.
+____
+
+
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=0.10pt]
+
+[verse.poem.v10.lh157,margin-top=0.00pt,margin-bottom=0]
+____
+        A tale begun in other days,
+           When summer suns were glowing⁠—
+        A simple chime, that served to time
+           The rhythm of our rowing⁠—
+        Whose echoes live in memory yet,
+        Though envious years would say ‘forget.’
+____
+
+[verse.poem.v10.lh157,margin-top=32.00pt,margin-bottom=0]
+____
+        Come, hearken then, ere voice of dread,
+           With bitter tidings laden,
+        Shall summon to unwelcome bed
+           A melancholy maiden!
+        We are but older children, dear,
+        Who fret to find our bedtime near.
+____
+
+[verse.poem.v10.lh157,margin-top=41.30pt,margin-bottom=0]
+____
+       Without, the frost, the blinding snow,
+          The storm-wind’s moody madness⁠—
+       Within, the firelight’s ruddy glow,
+          And childhood’s nest of gladness.
+       The magic words shall hold thee fast:
+       Thou shalt not heed the raving blast.
+____
+
+
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=0.10pt]
+
+[verse.poem.v10.lh157,margin-top=0.00pt,margin-bottom=0]
+____
+          And though the shadow of a sigh
+             May tremble through the story,
+          For ‘happy summer days’ gone by,
+             And vanish’d summer glory⁠—
+          It shall not touch with breath of bale
+          The pleasance of our fairy-tale.
+____
+
+
+ifdef::backend-pdf[]
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=151.90pt]
+
+[.lgf-pic,margin-top=0.00pt]
+image::looking-glass-device.png["The printer’s device",role=cut,pdfwidth=59.0pt,align=center]
+
+endif::[]
+
+ifdef::backend-pdf[]
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=40.28pt]
+
+[.lgf-1230-n-c-t50-l672-r659,margin-top=0.00pt,margin-bottom=0]
+CONTENTS.
+
+[.lgf-460-n-lmt30-lm7-rm200,margin-top=20.00pt,margin-bottom=0]
+CHAPTER
+
+[.lgf-460-n-rmt30-lm200-rm21,margin-top=-5.69pt,margin-bottom=0]
+PAGE
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=4.55pt,margin-bottom=0]
+{empty}I.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Looking-Glass House# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+1
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=10.95pt,margin-bottom=0]
+{empty}II.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#The Garden of Live Flowers# . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+26
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.35pt,margin-bottom=0]
+{empty}III.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Looking-Glass Insects# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+46
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.15pt,margin-bottom=0]
+{empty}IV.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Tweedledum and Tweedledee# . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+66
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.45pt,margin-bottom=0]
+{empty}V.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Wool and Water# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+91
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.35pt,margin-bottom=0]
+{empty}VI.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Humpty Dumpty# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+113
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.05pt,margin-bottom=0]
+{empty}VII.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#The Lion and the Unicorn# . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+137
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=10.65pt,margin-bottom=0]
+{empty}VIII.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#“It’s my own Invention”# . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+157
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.85pt,margin-bottom=0]
+{empty}IX.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Queen Alice# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+185
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.05pt,margin-bottom=0]
+{empty}X.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Shaking# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+215
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=11.15pt,margin-bottom=0]
+{empty}XI.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Waking# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+216
+
+[.lgf-740-n-rmt0-lm200-r2336,margin-top=10.85pt,margin-bottom=0]
+{empty}XII.
+
+[.lgf-740-n-j-t0-l235-r129,margin-top=-9.15pt,margin-bottom=0]
+[.sc]#Which Dreamed it?# . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+[.lgf-740-n-rmt0-lm200-rm26,margin-top=-9.15pt,margin-bottom=0]
+218
+
+endif::[]
+
+ifdef::backend-pdf[]
+<<<
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=1pt]
+endif::[]
+

@@ -8,7 +8,7 @@ Writes review/BOOK-NN.png and review/BOOK-index.json (number -> id).
 import json, os, sys
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT
+from common import BOOKS, ROOT, ocr_path, scan_path
 
 FONT = ImageFont.truetype('/usr/share/fonts/noto/NotoSans-Regular.ttf', 20)
 WIDTH = 1300
@@ -17,7 +17,7 @@ WIDTH = 1300
 def main(book, per=14):
     cfg = BOOKS[book]
     choices = json.load(open(f'{ROOT}/choices-{book}.json'))
-    pages = json.load(open(f'{ROOT}/{cfg["id"]}.ocr.json'))
+    pages = json.load(open(ocr_path(cfg)))
     overridden = set()
     dpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'decisions', f'{book}.tsv')
     if os.path.exists(dpath):
@@ -40,7 +40,7 @@ def main(book, per=14):
             if leaf not in images:
                 images.clear()
                 images[leaf] = Image.open(
-                    f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2').convert('RGB')
+                    scan_path(cfg, leaf)).convert('RGB')
             img = images[leaf]
             box = pages[leaf]['lines'][i]['b']
             x0, y0, x1, y1 = 0, box[1] - 25, img.width, box[3] + 25

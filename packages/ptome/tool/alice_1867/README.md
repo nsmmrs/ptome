@@ -1,4 +1,4 @@
-# Wonderland, transcribed from its 1867 printing
+# Wonderland and Looking-Glass, transcribed from their printings
 
 The showcase's Alice (test/showcase/alice) keeps Wonderland's text as
 Macmillan printed it in 1867, the sixth thousand, the University of
@@ -63,3 +63,29 @@ committed:
    scan's; `missing.py wonderland`: lines the OCR missed.
 
 The drafts are copied into `test/showcase/alice/text/wonderland/`.
+
+## Looking-Glass
+
+The same steps make Through the Looking-Glass from its 1872 printing
+(`BOOK` `looking-glass`, Duke University's copy,
+https://archive.org/details/throughlookinggl01carr), its settings in
+`common.py`:
+
+0. `rescale.py looking-glass`: its 400 ppi scan and OCR resampled to
+   Wonderland's 650 ppi (`ALICE_WORK/throughlookinggl01carr_650/`), so the
+   measures tuned on Wonderland's hold; `pitch.py looking-glass` each
+   leaf's line pitch, `cuts.py looking-glass` its cuts.
+1. `transcribe.py looking-glass --tesseract`, `sheets.py`, `decide.py`
+   as above (`decisions/looking-glass.tsv`); `linediff.py looking-glass
+   --sheets` the lines whose words still differ from Standard Ebooks',
+   beside their scans; `decisions/looking-glass.patches` the blocks a
+   line's words can't make (the sum, the mirrored stanza, the plates'
+   pages); `decisions/looking-glass-breaks.txt` the lines after which the
+   printing ends a page early (compare.py reports them, `EARLY`).
+2. `iterate.sh`: the draft copied into the work, the look's leaded
+   stanzas' roles written (`leads.py`), the work built (`build.sh`) and
+   compared page by page; `side.sh LEAF PDF-PAGE OUT` one page beside its
+   scan.
+3. `front_lg.py`: the front matter, each printed line a paragraph of its
+   own size and measure where the scan has it (text/looking-glass/front.adoc
+   and the look's `lgf-*` roles).

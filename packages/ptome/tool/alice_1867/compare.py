@@ -11,9 +11,9 @@ line's baseline, the line pitch).
 """
 import html, json, os, re, subprocess, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT
+from common import BOOKS, ROOT, BOOK, DPI, PITCH_PX, ocr_path, scan_path
 
-SCALE = 72 / 650
+SCALE = 72 / DPI
 
 
 def norm(text):
@@ -48,7 +48,13 @@ def printed_lines(book):
             out.append((leaf - cfg['offset'], f'{leaf}:{int(prev[1]) + 1}', carry))
             carry = ''
         prev = (leaf, index)
-        t = re.sub(r'__|\[\.[a-z-]+\]##|##|\[\.[a-z-]+\]#|#', '', text)
+        if lid in BOOKS[book].get('not_compared', ()):
+            continue
+        text = re.sub(r" '''$", '', text)
+        # (A table's delimiters the draft read into the sum's lines, which a
+        # patch sets as the printing sets the sum.)
+        text = re.sub(r' ?\[cols="1"\] \|===| \|===$', '', text)
+        t = re.sub(r'__|\[\.[a-z-]+\]##|##|\[\.[a-z-]+\]#|#|\[\.[a-z-]+\]', '', text)
         t = (carry + ' ' + t).strip() if carry else t
         carry = ''
         words = t.split(' ')
@@ -87,17 +93,27 @@ def pdf_pages(pdf):
             words = re.findall(r'>([^<]*)</word>', body)
             lines.append(dict(x0=float(x0), y0=float(y0), x1=float(x1), y1=float(y1),
                               text=' '.join(words)))
-        lines.sort(key=lambda l: (round(l['y1'], 0), l['x0']))
-        # (Words on one baseline that Poppler split into lines: one line.)
-        merged = []
+        # (A line's baseline: its box's foot less its descent, a quarter of
+        # its type's size, so that words of two sizes on one line, the
+        # Gnat's tiny voice after Alice's, are one line.)
         for l in lines:
-            if merged and abs(merged[-1]['y1'] - l['y1']) < 1.5:
-                m = merged[-1]
-                m['text'] += ' ' + l['text']
-                m['x1'] = max(m['x1'], l['x1'])
-                m['x0'] = min(m['x0'], l['x0'])
+            l['base'] = l['y1'] - 0.24 * (l['y1'] - l['y0'])
+        lines.sort(key=lambda l: (l['base'], l['x0']))
+        groups = []
+        for l in lines:
+            if groups and abs(groups[-1][0]['base'] - l['base']) < 1.5:
+                groups[-1].append(l)
             else:
-                merged.append(l)
+                groups.append([l])
+        merged = []
+        for g in groups:
+            g.sort(key=lambda l: l['x0'])
+            m = dict(g[0])
+            m['text'] = ' '.join(l['text'] for l in g)
+            m['x1'] = max(l['x1'] for l in g)
+            m['y0'] = min(l['y0'] for l in g)
+            m['y1'] = max(l['y1'] for l in g)
+            merged.append(m)
         pages.append(merged)
     return pages
 
@@ -111,7 +127,7 @@ def main():
     for page, lid, text in printed:
         by_page.setdefault(page, []).append((lid, text))
     pages = pdf_pages(pdf)
-    ocr = json.load(open(f'{ROOT}/{BOOKS[book]["id"]}.ocr.json'))
+    ocr = json.load(open(ocr_path(BOOKS[book])))
     good = 0
     total = 0
     bad_lines = 0
@@ -126,7 +142,12 @@ def main():
         have = [l for l in pages[idx] if l['y0'] > 45
                 and not re.fullmatch(r'[*\s]+', l['text'])
                 # (The printer's signature at the foot.)
-                and not (l['y0'] > 424 and re.fullmatch(r'[A-Z]{1,2}', l['text'].strip()))]
+                and not (l['y0'] > 424 and re.fullmatch(r'[A-Z]{1,2}( ?[0-9])?', l['text'].strip()))]
+        # (Lines in mirror type, read back reversed: not the printing's
+        # lines the transcription keeps.)
+        mirrored = BOOKS[book].get('mirrored')
+        if mirrored:
+            have = [l for l in have if not re.search(mirrored, norm(l['text'])[::-1])]
         hv = [norm(l['text']) for l in have]
         wv = [norm(t) for _, t in want]
         # (The page's heading lines, a chapter's, aren't in the printing's
@@ -150,6 +171,13 @@ def main():
         y_scan = ocr[leaf]['lines'][i]['b'][1] * SCALE
         y_pdf = have[start]['y0'] if len(have) > start else 0
         flag = 'ok ' if same_ends and diff == 0 else 'BAD'
+        if flag == 'BAD' and len(hv_body) > len(wv) and hv_body[:len(wv)] == wv and wv:
+            # (The printing ends this page early, inside a paragraph.)
+            print(f'EARLY {want[-1][0]}')
+        if f'--show={number}' in sys.argv:
+            for a, b in zip(hv_body + [''] * 30, wv + [''] * 30):
+                if a or b:
+                    print(('   ' if a == b else ' ≠ ') + a[:50].ljust(52) + b[:50])
         if detail or flag == 'BAD':
             print(f'{flag} p.{number:3d} (pdf {idx + 1:3d}) lines {len(hv_body):2d}/{len(wv):2d} '
                   f'differ {diff:2d} top {y_pdf - y_scan:+5.1f}pt | '

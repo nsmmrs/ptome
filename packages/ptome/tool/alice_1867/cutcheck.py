@@ -9,13 +9,12 @@ import json, os, subprocess, sys, tempfile
 import numpy as np
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT
+from common import BOOKS, ROOT, BOOK, DPI, PITCH_PX, ocr_path, scan_path
 
 book, pdf = sys.argv[1], sys.argv[2]
 cfg = BOOKS[book]
 cuts = json.load(open(f'{ROOT}/placed-{book}.json'))
-P = json.load(open(f'{ROOT}/{cfg["id"]}.ocr.json'))
-DPI = 650
+P = json.load(open(ocr_path(cfg)))
 PT = 72 / DPI
 
 

@@ -565,9 +565,22 @@ extension _DocumentParts on PdfConverter {
         _ => null,
       };
       _skip = _frontMatter(titlePage: titlePage);
+      _folioRestarts = [
+        if (!asciidoctorCompat(_document, CompatFormat.pdf))
+          for (final (section, anchor) in _sections)
+            if (int.tryParse(section.attr('folio-start')?.trim() ?? '')
+                case final start?)
+              if (_anchorPages[anchor] case final page?)
+                (page: page, start: start, roles: section.roles),
+      ]..sort((a, b) => a.page.compareTo(b.page));
       _openerPages = {
         for (final (section, anchor) in _sections)
           if (_opensPages(section)) ?_anchorPages[anchor],
+      };
+      _openerRoles = {
+        for (final (section, anchor) in _sections)
+          if (section.roles.isNotEmpty && _opensPages(section))
+            ?_anchorPages[anchor]: section.roles,
       };
       _pageMarks = _marksByPage(result, pageCount: result.pageCount);
       _columnMarks = _marksByColumn(result);

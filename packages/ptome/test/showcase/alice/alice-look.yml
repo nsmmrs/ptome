@@ -31,7 +31,7 @@ tokens:
   align: { print: justify }
   hyphenate: { print: true }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [287.3pt, 449.7pt], margin: [48.8pt, 18.6pt, 27.4pt, 18.6pt] }
+  page: { size: [287.3pt, 449.7pt], margin: [48.8pt, 18.6pt, 22pt, 18.6pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
@@ -73,6 +73,14 @@ pdf:
   # last line.)
   section:
     role:
+      # (Looking-Glass numbered from 1 again at its chapter I, as its own
+      # volume was; in sixteens, a gathering's first two leaves signed,
+      # B and B 2.)
+      lg: { running_content_signature_interval: 16, running_content_signature_signed: 2 }
+      envoi: { opener: true, header_on_openers: true }
+      # (The front matter's pages a little deeper: the chess problem's
+      # moves reach below the text's foot.)
+      lg-front: { page_margin: [48.8pt, 18.6pt, 12pt, 18.6pt] }
       opening1: { heading_h2_margin_top: 3.4, heading_h2_line_pitch: 30.0, heading_h2_margin_bottom: 5.2 }
       opening2: { heading_h2_margin_page_top: 24.6, heading_h2_line_pitch: 29.6, heading_h2_margin_bottom: 1.1 }
       opening3: { heading_h2_margin_top: 13.0, heading_h2_line_pitch: 24.7, heading_h2_margin_bottom: 4.7 }
@@ -85,6 +93,19 @@ pdf:
       opening10: { heading_h2_margin_page_top: 98.5, heading_h2_line_pitch: 30.1, heading_h2_margin_bottom: 10.2 }
       opening11: { heading_h2_margin_page_top: 99.7, heading_h2_line_pitch: 36.4, heading_h2_margin_bottom: 11.9 }
       opening12: { heading_h2_margin_page_top: 86.5, heading_h2_line_pitch: 32.9, heading_h2_margin_bottom: 16.7 }
+      # (Looking-Glass's, after its 1872 printing.)
+      lg-opening1: { heading_h2_margin_top: 52.6, heading_h2_line_pitch: 26.5, heading_h2_margin_bottom: 10.6 }
+      lg-opening2: { heading_h2_margin_page_top: 94.5, heading_h2_line_pitch: 33.5, heading_h2_margin_bottom: 7.5 }
+      lg-opening3: { heading_h2_margin_page_top: 58.7, heading_h2_line_pitch: 33.2, heading_h2_margin_bottom: 14.0 }
+      lg-opening4: { heading_h2_margin_page_top: 98.4, heading_h2_line_pitch: 33.3, heading_h2_margin_bottom: 3.8 }
+      lg-opening5: { heading_h2_margin_page_top: 97.9, heading_h2_line_pitch: 33.5, heading_h2_margin_bottom: 4.1 }
+      lg-opening6: { heading_h2_margin_page_top: 59.6, heading_h2_line_pitch: 33.3, heading_h2_margin_bottom: 10.0 }
+      lg-opening7: { heading_h2_margin_page_top: 70.4, heading_h2_line_pitch: 33.0, heading_h2_margin_bottom: 11.3 }
+      lg-opening8: { heading_h2_margin_page_top: 60.2, heading_h2_line_pitch: 30.9, heading_h2_margin_bottom: 17.2 }
+      lg-opening9: { heading_h2_margin_page_top: 64.5, heading_h2_line_pitch: 35.2, heading_h2_margin_bottom: 6.8 }
+      lg-opening10: { heading_h2_margin_page_top: 69.4, heading_h2_line_pitch: 34.4, heading_h2_margin_bottom: 13.6 }
+      lg-opening11: { heading_h2_margin_page_top: 127.5, heading_h2_line_pitch: 34.9, heading_h2_margin_bottom: 10.5 }
+      lg-opening12: { heading_h2_margin_page_top: 94.8, heading_h2_line_pitch: 32.7, heading_h2_margin_bottom: 8.8 }
   role:
     sc: { font_variant: small-caps }
     # (Chapter I's first word: a larger capital, the rest in capitals.)
@@ -94,6 +115,63 @@ pdf:
     # printing's face fits it.)
     tight: { letter_spacing: -0.06pt }
     running-head: { text_transform: uppercase, font_size: 8.5 }
+    # (Humpty Dumpty's sum, its figures under each other flush right at
+    # the printing's place, a line apart as the printing sets them.)
+    sum: { text_align: right, margin_right: 112.2, line_pitch: 12.1, text_indent: 0 }
+    blackletter: { font_family: UnifrakturMaguntia }
+    lgf-pic: { margin_top: 0, margin_bottom: 0 }
+    # (Looking-Glass's front matter, each printed line a paragraph of its
+    # own size, style and measure: tool/alice_1867/front_lg.py.)
+    # lgf-begin
+    lgf-1030-n-c-t0-l502-r433: { font_size: 10.3, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: 50.2, margin_right: 43.3, hyphens: false }
+    lgf-1105-n-c-t60-lm200-rm200: { font_size: 11.05, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false, letter_spacing: 0.6pt }
+    lgf-1120-n-c-t12-lm200-rm200: { font_size: 11.2, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false, letter_spacing: 0.12pt }
+    lgf-1166-n-c-t0-lm200-rm200: { font_size: 11.66, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    lgf-1230-n-c-t50-l672-r659: { font_size: 12.3, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: 67.2, margin_right: 65.9, hyphens: false, letter_spacing: 0.5pt }
+    lgf-1338-n-c-t77-lm164-rm164: { font_size: 13.38, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -16.4, margin_right: -16.4, hyphens: false, letter_spacing: 0.77pt }
+    lgf-1501-n-c-t0-lm200-rm200: { font_size: 15.01, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    lgf-400-n-rmt0-lm200-r1311: { font_size: 4.0, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: 131.1, hyphens: false }
+    lgf-400-n-rmt0-lm200-rm11: { font_size: 4.0, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -1.1, hyphens: false }
+    lgf-460-n-lmt0-l1363-rm200: { font_size: 4.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 136.3, margin_right: -20.0, hyphens: false }
+    lgf-460-n-lmt0-l18-rm200: { font_size: 4.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 1.8, margin_right: -20.0, hyphens: false }
+    lgf-460-n-lmt0-l2165-rm200: { font_size: 4.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 216.5, margin_right: -20.0, hyphens: false }
+    lgf-460-n-lmt0-l913-rm200: { font_size: 4.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 91.3, margin_right: -20.0, hyphens: false }
+    lgf-460-n-lmt30-lm7-rm200: { font_size: 4.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: -0.7, margin_right: -20.0, hyphens: false, letter_spacing: 0.3pt }
+    lgf-460-n-rmt30-lm200-rm21: { font_size: 4.6, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -2.1, hyphens: false, letter_spacing: 0.3pt }
+    lgf-545-n-c-t37-lm200-rm200: { font_size: 5.45, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false, letter_spacing: 0.37pt }
+    lgf-716-n-c-t0-lm200-rm200: { font_size: 7.16, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    lgf-740-n-j-t0-l1303-r164: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 130.3, margin_right: 16.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l1345-r164: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 134.5, margin_right: 16.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l1506-r164: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 150.6, margin_right: 16.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l199-r1474: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 19.9, margin_right: 147.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l235-r129: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 23.5, margin_right: 12.9, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l282-r1474: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 28.2, margin_right: 147.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-l38-r1474: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 3.8, margin_right: 147.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-j-t0-lm4-r1474: { font_size: 7.4, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: -0.4, margin_right: 147.4, hyphens: false, text_align_last: justify }
+    lgf-740-n-lmt0-l1345-rm200: { font_size: 7.4, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 134.5, margin_right: -20.0, hyphens: false }
+    lgf-740-n-lmt0-l199-rm200: { font_size: 7.4, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 19.9, margin_right: -20.0, hyphens: false }
+    lgf-740-n-lmt0-l38-rm200: { font_size: 7.4, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 3.8, margin_right: -20.0, hyphens: false }
+    lgf-740-n-rmt0-lm200-r1312: { font_size: 7.4, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: 131.2, hyphens: false }
+    lgf-740-n-rmt0-lm200-r2336: { font_size: 7.4, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: 233.6, hyphens: false }
+    lgf-740-n-rmt0-lm200-rm2: { font_size: 7.4, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -0.2, hyphens: false }
+    lgf-740-n-rmt0-lm200-rm26: { font_size: 7.4, font_style: normal, text_align: right, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -2.6, hyphens: false }
+    lgf-800-i-c-t0-l131-r123: { font_size: 8.0, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: 13.1, margin_right: 12.3, hyphens: false }
+    lgf-800-i-c-t0-l302-r244: { font_size: 8.0, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: 30.2, margin_right: 24.4, hyphens: false }
+    lgf-809-i-c-t0-lm200-rm200: { font_size: 8.09, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    lgf-856-i-c-t122-lm200-rm200: { font_size: 8.56, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false, letter_spacing: 1.22pt }
+    lgf-860-n-j-t0-l1365-r619: { font_size: 8.6, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: 136.5, margin_right: 61.9, hyphens: false, text_align_last: justify }
+    lgf-860-n-j-t0-lm63-r1619: { font_size: 8.6, font_style: normal, text_align: justify, text_indent: 0, line_height: 1, margin_left: -6.3, margin_right: 161.9, hyphens: false, text_align_last: justify }
+    lgf-860-n-lmt0-l1912-rm200: { font_size: 8.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 191.2, margin_right: -20.0, hyphens: false }
+    lgf-860-n-lmt0-l908-rm200: { font_size: 8.6, font_style: normal, text_align: left, text_indent: 0, line_height: 1, margin_left: 90.8, margin_right: -20.0, hyphens: false }
+    lgf-871-i-c-t83-l164-r200: { font_size: 8.71, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: 16.4, margin_right: 20.0, hyphens: false, letter_spacing: 0.83pt }
+    lgf-887-i-c-t108-lm200-rm200: { font_size: 8.87, font_style: italic, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false, letter_spacing: 1.08pt }
+    lgf-900-n-c-t0-l1658-r264: { font_size: 9.0, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: 165.8, margin_right: 26.4, hyphens: false }
+    lgf-900-n-c-t0-l268-r1566: { font_size: 9.0, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: 26.8, margin_right: 156.6, hyphens: false }
+    lgf-950-n-c-t0-lm200-rm200: { font_size: 9.5, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    lgf-960-n-c-t0-lm200-rm200: { font_size: 9.6, font_style: normal, text_align: center, text_indent: 0, line_height: 1, margin_left: -20.0, margin_right: -20.0, hyphens: false }
+    # lgf-end
+    # (The Gnat's voice, close to Alice's ear: the printing's tiniest type.)
+    gnat: { font_size: 4.6 }
     # (The Mouse's Tale: each step of its type a size down to the tip of
     # the tail, as the printing sets it.)
     tale-a: { font_size: 11.2 }
@@ -166,6 +244,26 @@ pdf:
       v85: { font_size: 8.5, padding: 0 }
       # (The prefatory poem's lines a little further apart: 15.6 pt.)
       loose: { line_height: 1.3153 }
+      # (Looking-Glass's stanzas, 10 pt leaded as the 1872 printing
+      # leads each, `lh<pitch in tenths of a point>`: tool/alice_1867.)
+      # lh-begin
+      lh130: { line_height: 1.0980 }
+      lh153: { line_height: 1.2922 }
+      lh157: { line_height: 1.3260 }
+      lh160: { line_height: 1.3514 }
+      lh161: { line_height: 1.3598 }
+      lh162: { line_height: 1.3682 }
+      lh163: { line_height: 1.3767 }
+      lh164: { line_height: 1.3851 }
+      lh165: { line_height: 1.3936 }
+      lh166: { line_height: 1.4020 }
+      lh167: { line_height: 1.4105 }
+      lh169: { line_height: 1.4274 }
+      lh189: { line_height: 1.5963 }
+      lh193: { line_height: 1.6301 }
+      lh196: { line_height: 1.6554 }
+      lh198: { line_height: 1.6723 }
+      # lh-end
     # (Wonderland's stanzas, `v<size>`, each line set in from the text's
     # edge by its own spaces, as far as the printing sets it in;
     # Looking-Glass's set in 18 pt.)
@@ -202,6 +300,10 @@ pdf:
       left: { content: '{page-number}' }
       center: { content: '[.running-head]#{chapter-title-spread}#' }
       right: { content: '' }
+    # (Looking-Glass's closing poem, its pages headed by their folios
+    # alone, centred: its sections open their pages, their head the
+    # openers'.)
+    opener: { center: { content: '{page-number}' } }
   # (The printer's signatures at the foot of each gathering's first page,
   # every eight pages from B: crown octavo in eights.)
   running_content:
@@ -237,8 +339,10 @@ css: |
   .initial{font-size:143%}.caps{text-transform:uppercase}
   .verseblock.stars,.paragraph.the-end,.paragraph.imprint{text-align:center}
   .paragraph.the-end{letter-spacing:0.1em}.paragraph.imprint{font-variant:small-caps;font-size:60%}
+  .gnat{font-size:55%}
 epub-css: |
   .sc{font-variant:small-caps}
+  .gnat{font-size:55%}
   .verseblock.mirror{transform:scaleX(-1)}
   .verseblock.jabberwocky pre{font-style:italic}
   .verseblock.tale pre{font-size:31.25%;line-height:0.8}

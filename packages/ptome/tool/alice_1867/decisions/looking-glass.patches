@@ -1,0 +1,116 @@
+@@ chapter-6
+for him: [cols="1"] |===
+
+365
+
+1
+
+364 |===
+
+Humpty Dumpty took the book, and looked at
+=>
+for him:
+
+[.sum%hardbreaks,margin-top=5.6pt,margin-bottom=0]
+3 6 5
+1
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=5.2pt]
+
+image::sum-rule.svg["",role=cut,pdfwidth=28.3pt,align=center]
+
+[.sum,margin-top=5.9pt,margin-bottom=0]
+3 6 4
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=5.5pt]
+
+image::sum-rule.svg["",role=cut,pdfwidth=28.3pt,align=center]
+
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=10.1pt]
+
+[.indent]
+Humpty Dumpty took the book, and looked at
+@@
+@@ chapter-6
+I sing this song for your delight⁠— [.continued]
+=>
+I sing this song for your delight⁠—
+@@
+@@ chapter-1
+It was like this.
+
+[verse.mirror.jabberwocky.v10,margin-top=58.0pt,margin-bottom=59.3pt]
+____
+                [.tight]#[.title]#JABBERWOCKY.# ’Twas brillig, and the slithy toves Did gyre and gimble in the wabe; All mimsy were the borogoves, And the mome raths outgrabe.#
+____
+
+She puzzled over this for some time, but
+at last a bright thought struck her. “Why,
+it’s a Looking-glass book, of course! And if
+I hold it up to a glass, the words will all go
+the right way again.”
+=>
+// tag::mirror[]
+It was like this.
+
+[verse.mirror.jabberwocky.v10,margin-top=18.4pt,margin-bottom=0]
+____
+                             [.title]#JABBERWOCKY.#
+____
+
+[verse.mirror.jabberwocky.v10.lh130,margin-top=10.0pt,margin-bottom=33.4pt]
+____
+                 ’Twas brillig, and the slithy toves
+                   Did gyre and gimble in the wabe;
+                All mimsy were the borogoves,
+                     And the mome raths outgrabe.
+____
+
+She puzzled over this for some time, but
+at last a bright thought struck her. “Why,
+it’s a Looking-glass book, of course! And if
+I hold it up to a glass, the words will all go
+the right way again.”
+// end::mirror[]
+@@
+@@ chapter-1
+[#looking-glass-chapter-1,number=I,running-title="Looking-Glass House.",role=lg-opening1]
+=>
+[#looking-glass-chapter-1,number=I,running-title="Looking-Glass House.",role="lg-opening1 lg",folio-start=1]
+@@
+@@ chapter-10
+[#looking-glass-chapter-10,number=X,running-title="Shaking.",role=lg-opening10]
+== Shaking.
+
+image::looking-glass-illustration-50.svg["The Red Queen is held up and shaken in Alice’s hands.",id=looking-glass-illustration-50,role=cut,pdfwidth=130.4pt,pdfheight=370.0pt,align=center,fit-top=73.3pt]
+=>
+// The full-page cut facing the chapter's opening, on a page of its own,
+// unheaded, as the printing sets it.
+:sectnums!:
+[#plate-red-queen.plate-page%notitle%noheader%nofooter]
+== The Red Queen, shaken
+
+image::looking-glass-illustration-50.svg["The Red Queen is held up and shaken in Alice’s hands.",id=looking-glass-illustration-50,role=cut,pdfwidth=130.4pt,pdfheight=370.0pt,align=center,fit-top=76.9pt]
+
+:sectnums:
+[#looking-glass-chapter-10,number=X,running-title="Shaking.",role=lg-opening10]
+== Shaking.
+@@
+@@ chapter-12
+[#looking-glass-chapter-12,number=XII,running-title="Which Dreamed it?",role=lg-opening12]
+== Which Dreamed It?
+
+image::looking-glass-illustration-51.svg["A black kitten is being shaken in Alice’s hands.",id=looking-glass-illustration-51,role=cut,pdfwidth=133.6pt,pdfheight=370.0pt,align=center,fit-top=81.3pt]
+=>
+// The full-page cut facing the chapter's opening, on a page of its own,
+// unheaded, as the printing sets it.
+:sectnums!:
+[#plate-kitten.plate-page%notitle%noheader%nofooter]
+== The kitten
+
+image::looking-glass-illustration-51.svg["A black kitten is being shaken in Alice’s hands.",id=looking-glass-illustration-51,role=cut,pdfwidth=133.6pt,pdfheight=370.0pt,align=center,fit-top=85.0pt]
+
+:sectnums:
+[#looking-glass-chapter-12,number=XII,running-title="Which Dreamed it?",role=lg-opening12]
+== Which Dreamed It?
+@@

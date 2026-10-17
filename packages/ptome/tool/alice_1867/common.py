@@ -24,6 +24,9 @@ WORK = os.path.join(os.path.dirname(os.path.dirname(HERE)), 'test', 'showcase', 
 BOOKS = {
     'wonderland': dict(id='alicesadventu00carr', first=17, last=208, offset=16,
                        chapters=12,
+                       # (The scan's resolution, its prose's line pitch in
+                       # its pixels.)
+                       dpi=650, pitch=151.9,
                        # (The prefatory poem, its three pages before the
                        # contents.)
                        front_files=['epigraph'], front_leaves=[11, 12, 13],
@@ -47,6 +50,8 @@ BOOKS = {
                        # (Chapters whose opening sets more than its first
                        # word in small capitals: VIII's "A LARGE".)
                        opening_words={8: 2},
+                       # (An opening whose last line the OCR missed.)
+                       opening_extra_line=[98],
                        # (Each chapter's running title, divided across the
                        # spread where the printing divides it.)
                        running=['Down the|Rabbit-Hole.', 'The Pool|of Tears.',
@@ -56,9 +61,67 @@ BOOKS = {
                                 'A Mad Tea-Party.', 'The Queen’s|Croquet-Ground.',
                                 'The Mock|Turtle’s Story.', 'The Lobster|Quadrille.',
                                 'Who Stole|the Tarts?', 'Alice’s Evidence.']),
-    'looking-glass': dict(id='throughlookinggl01carr', first=19, last=241,
-                          offset=18, chapters=12),
+    'looking-glass': dict(id='throughlookinggl01carr', first=19, last=240,
+                          offset=18, chapters=12,
+                          # (Its 400 ppi scan and OCR resampled to
+                          # Wonderland's 650 ppi, rescale.py, so the
+                          # measures tuned on Wonderland's hold.)
+                          dpi=650, pitch=153.7, scale=650 / 400,
+                          # (A cut ABBYY found no region for, its region by
+                          # eye in the resampled scan's pixels; Standard
+                          # Ebooks' numbers, which skip 10.)
+                          extra_cuts={208: [380, 1200, 2400, 2640]},
+                          skip_numbers=[10], first_cut=3,
+                          # (Its contractions set apart where it sets them,
+                          # `that 's`; and the dashes the OCR lost.)
+                          # (Where it ends a page early: decisions/BOOK-breaks.txt.)
+                          page_breaks=[l.strip() for l in open(os.path.join(HERE, 'decisions', 'looking-glass-breaks.txt'))
+                                       if l.strip()] if os.path.exists(os.path.join(HERE, 'decisions', 'looking-glass-breaks.txt')) else [],
+                          stars={'66:7': [[580, 996, 1416, 1834, 2252], [760, 1176, 1592, 2008],
+                                          [580, 996, 1410, 1822, 2242]],
+                                 '72:7': [[504, 875, 1245, 1616, 1986, 2355], [671, 1064, 1436, 1815, 2184],
+                                          [508, 878, 1247, 1619, 1989, 2357]],
+                                 '119:5': [[435, 802, 1171, 1538, 1915, 2282], [623, 990, 1358, 1727, 2092],
+                                           [436, 803, 1170, 1535, 1901, 2295]],
+                                 '130:7': [[470, 840, 1220, 1591, 1966], [663, 1035, 1405, 1778, 2149],
+                                           [472, 842, 1214, 1586, 1957]],
+                                 '201:14': [[446, 814, 1182, 1550, 1918, 2284], [630, 999, 1366, 1735, 2103],
+                                            [448, 814, 1182, 1549, 1917, 2286]]},
+                          # (Each row's middle down the scan.)
+                          stars_y={'66:7': [1710, 1848, 1988], '72:7': [1686, 1846, 2036],
+                                   '119:5': [1362, 1545, 1720], '130:7': [1683, 1843, 2040],
+                                   '201:14': [2780, 2960, 3120]},
+                          apart=True, opening_role='lg-opening', verse_leaded=True, beside_within_cut=True, layout_pitch=153.7, measure=2265, cut_within_measure=True, left_from_least=True, full_px=1900,
+                          mirrored=r'brillig|gimble|borogoves|outgrabe|jabberwocky',
+                          # (The mirrored stanza, set by a patch: not compared.)
+                          not_compared=['39:2'],
+                          running=['Looking-Glass House.', 'The Garden of|Live Flowers.',
+                                   'Looking-Glass Insects.', 'Tweedledum|and Tweedledee.',
+                                   'Wool and Water.', 'Humpty Dumpty.',
+                                   'The Lion and|the Unicorn.',
+                                   '“It’s my own Invention.”', 'Queen Alice.',
+                                   'Shaking.', 'Waking.', 'Which Dreamed it?']),
 }
+
+def scan_path(cfg, leaf):
+    """The scan of [leaf] of the book [cfg]: the Internet Archive's
+    JPEG 2000, or its resampling (rescale.py)."""
+    if cfg.get('scale'):
+        return f'{ROOT}/{cfg["id"]}_650/{leaf:04d}.jpg'
+    return f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2'
+
+
+def ocr_path(cfg):
+    """The book's OCR as pages of lines (hocr.py), resampled with its
+    scan."""
+    return f'{ROOT}/{cfg["id"]}{"_650" if cfg.get("scale") else ""}.ocr.json'
+
+
+# The book a script was asked for (its first argument), and its scan's
+# scale: its pixels in points, its prose's line pitch in pixels.
+BOOK = next((a for a in sys.argv[1:2] if a in BOOKS), 'wonderland')
+DPI = BOOKS[BOOK]['dpi']
+PITCH_PX = BOOKS[BOOK]['pitch']
 
 VOCAB = json.load(open(os.path.join(ROOT, 'vocab.json')))  # vocab.py
 
@@ -209,7 +272,7 @@ def se_blocks(book):
 
 def ocr_lines(book):
     cfg = BOOKS[book]
-    pages = json.load(open(os.path.join(ROOT, cfg['id'] + '.ocr.json')))
+    pages = json.load(open(ocr_path(cfg)))
     out = []
     for leaf in list(cfg.get('front_leaves', [])) + list(range(cfg['first'], cfg['last'] + 1)):
         p = pages[leaf]

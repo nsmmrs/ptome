@@ -215,7 +215,7 @@ def build(book):
         leaf = t.line['leaf']
         if leaf not in gray:
             gray.clear()
-            path = f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2'
+            path = scan_path(cfg, leaf)
             gray[leaf] = np.asarray(Image.open(path).convert('L'))
         a = slant(gray[leaf], t.boxes[0])
         if a is None:
@@ -269,6 +269,32 @@ def tesseract(img, box, pad=12):
     return r.stdout.strip()
 
 
+# (A contraction the printing sets apart from its word, `that 's`: a
+# punctuation space, the measured gap, the word joiners keeping it on the
+# line. Looking-Glass's printing does, for these endings alone.)
+SPACED = re.compile(r"(?<=[A-Za-z])’(?=(s|m|re|d|ve)\b)")
+APART = '\u2060\u2008\u2060'
+
+
+def spaced_or_dashed(c):
+    """SE's words where the OCR read them but for the printing's ways:
+    a dash it lost (`purr no` for `purr⁠—no`), a contraction set apart
+    (`I ‘m`); with the contraction apart where the printing sets it so.
+    None where the words differ otherwise."""
+    def flat(t):
+        t = t.replace('\u2060', '').replace('\u2008', ' ').replace('■', ' ')
+        t = t.translate(PUNCT_MAP)
+        t = re.sub(r'\s*[—–-]{2,}\s*|\s*—\s*', ' ', t)
+        return re.sub(r'\s+', ' ', t).strip()
+    o, s = flat(c.ocr), flat(c.se)
+    if '—' in c.se and o == s:
+        return c.se
+    apart = SPACED.sub(APART + '’', c.se)
+    if apart != c.se and o == re.sub(r"(?<=[A-Za-z])'(?=(s|m|re|d|ve)\b)", " '", s):
+        return apart
+    return None
+
+
 def settle(book, choices, use_tesseract):
     cache_path = os.path.join(HERE, 'decisions', f'tesseract-{book}.json')
     cache = json.load(open(cache_path)) if os.path.exists(cache_path) else {}
@@ -289,6 +315,10 @@ def settle(book, choices, use_tesseract):
             continue
         if c.kind not in ('word', 'words', 'extra'):
             continue
+        if c.kind in ('word', 'words') and c.se and cfg.get('apart') \
+                and (v := spaced_or_dashed(c)) is not None:
+            c.value, c.how = v, 'rule'
+            continue
         # (An engraving's hatching read as letters: no word of the
         # vocabulary, its second reading none either.)
         if c.kind == 'extra' and not in_vocab(c.ocr.strip('“”‘’"\'()—-,.;:!?*')) \
@@ -302,7 +332,7 @@ def settle(book, choices, use_tesseract):
                     if len(images) > 2:
                         images.clear()
                     images[leaf] = Image.open(
-                        f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2').convert('L')
+                        scan_path(cfg, leaf)).convert('L')
                 cache[key] = tesseract(images[leaf], box)
             return cache.get(key)
         reading = read(c.line['leaf'], union(c.boxes))
@@ -450,7 +480,8 @@ def line_words(items, line_id):
 # The width of a space in the PDF's verse (0.28 em of Old Standard TT) in
 # the scan's pixels, at the size whose x-height is the printing's.
 VERSE_PT = 10     # the verse's size (and the asterisks')
-SPACE_PX = 0.28 * VERSE_PT * 650 / 72
+LEADS = set()     # the leaded stanzas' pitch roles used
+SPACE_PX = 0.28 * VERSE_PT * DPI / 72
 
 
 def text_lefts(lines):
@@ -465,6 +496,10 @@ def text_lefts(lines):
     for leaf, rows in by_leaf.items():
         widest = max(w for _, w in rows)
         full = sorted(x for x, w in rows if w >= 0.9 * widest and widest > 1900)
+        if full and BOOKS[BOOK].get('left_from_least'):
+            # (The lines that start at the edge, not a paragraph's first,
+            # set in: those near the least start.)
+            full = [x for x in full if x < full[0] + 60]
         if full:
             out[leaf] = full[len(full) // 2]
     for leaf in by_leaf:
@@ -480,15 +515,15 @@ def verse_italic(bl):
     return bool(flags) and sum(flags) >= 0.6 * len(flags)
 
 
-LEAF_PITCH = json.load(open(os.path.join(ROOT, 'pitch-wonderland.json')))
+LEAF_PITCH = json.load(open(os.path.join(ROOT, f'pitch-{BOOK}.json')))
 PROSE_PT = 11.2   # the text's size
 
 
 def leaf_pt(leaf, px):
     """[px] of the scan of [leaf] in points, the leaf's own scale made the
-    printing's (its line pitch 151.9 px)."""
-    pitch = LEAF_PITCH.get(str(leaf), 151.9)
-    return px * 151.9 / pitch * PT
+    printing's (its line pitch PITCH_PX)."""
+    pitch = LEAF_PITCH.get(str(leaf), PITCH_PX)
+    return px * PITCH_PX / pitch * PT
 
 
 from fontTools.ttLib import TTFont
@@ -555,6 +590,14 @@ def verse_text(b, bl, marked, lines_by_id, lefts, italic=None, around=None):
             size = 10.0
         loose = size == 10.0 and ls[0]['leaf'] in BOOKS_FRONT
         pitch = 15.57 if loose else size * 1.52
+        lead = None
+        if BOOKS[BOOK].get('verse_leaded') and len(ls) > 1:
+            # (Its type the poems' 10 pt, its lines as far apart as the
+            # printing leads them: a role of their pitch, `lh<tenths>`.)
+            pitch = round(leaf_pt(ls[0]['leaf'], pitch_px), 1)
+            size = 10.0
+            lead = f'lh{int(round(pitch * 10))}'
+            LEADS.add(lead)
         asc, desc = verse_metrics(size, pitch)
         attrs = []
         # (Its space above: from the line before, on its page, unless a
@@ -593,7 +636,7 @@ def verse_text(b, bl, marked, lines_by_id, lefts, italic=None, around=None):
             if m:
                 style = m.group(1) or style
                 roles += [r for r in m.group(2).split('.') if r]
-        roles += [role] + (['loose'] if loose else []) + (['italic'] if italic else [])
+        roles += [role] + ([lead] if lead else []) + (['loose'] if loose else []) + (['italic'] if italic else [])
         # (The prefatory poem's stanzas whole, as the printing keeps them:
         # one it turns the page in is two blocks already; a chapter's verse
         # broken where its lines fall, its last line in the foot's margin
@@ -623,15 +666,15 @@ def verse_text(b, bl, marked, lines_by_id, lefts, italic=None, around=None):
 
 OVERRIDDEN = set()
 CUT_TARGETS = set()   # the lines a cut is set before
-BOOKS_FRONT = set(BOOKS['wonderland'].get('front_leaves', []))
+BOOKS_FRONT = set(BOOKS[BOOK].get('front_leaves', []))
 
 # The tale's first line on the paragraph's last: back up one line.
 TALE_MARGIN = -14.4
 
-PT = 72 / 650     # the scan's pixels in points
-PITCH = 151       # the printing's line pitch in pixels
+PT = 72 / DPI     # the scan's pixels in points
+PITCH = BOOKS[BOOK].get('layout_pitch', 151)       # the printing's line pitch in pixels
 GRID = 16.82     # the PDF's line pitch (the look's leading), the printing's 151.9 px, in points
-MEASURE = 2256    # its measure
+MEASURE = BOOKS[BOOK].get('measure', 2256)    # its measure
 
 
 def indented(line, lefts, cut):
@@ -676,11 +719,20 @@ def place_cuts(book, lines, block_lines, lefts, verse_ids=frozenset()):
     for c in cuts:
         x0, y0, x1, y1 = c['box']
         leaf = c['leaf']
+        if leaf not in lefts:
+            # (A page of a cut alone: its text edge its side's.)
+            same = sorted(v for k, v in lefts.items() if k % 2 == leaf % 2)
+            lefts[leaf] = same[len(same) // 2]
         left = lefts[leaf]
         right = left + MEASURE
         ls = sorted(by_leaf.get(leaf, []), key=lambda l: l['box'][1])
         beside = [l for l in ls if l['box'][1] < y1 - 30 and l['box'][3] > y0 + 30]
         c['width'] = (x1 - x0) * PT
+        if BOOKS[book].get('cut_within_measure'):
+            # (A drawing a little wider than the measure, its hatching
+            # reaching past the text: the measure's width, as the layout
+            # would push it off its page otherwise.)
+            c['width'] = min(c['width'], MEASURE * PT)
         if leaf in chapter_lines and y0 < chapter_lines[leaf][1]['box'][1]:
             c['chapter'] = chapter_lines[leaf][0]
         if beside:
@@ -704,7 +756,10 @@ def place_cuts(book, lines, block_lines, lefts, verse_ids=frozenset()):
             while i > 0 and aside(ls[i - 1]):
                 i -= 1
             j = ls.index(beside[-1])
-            while j + 1 < len(ls) and aside(ls[j + 1]):
+            # (Not past the drawing's foot: a short line below it, a
+            # paragraph's last, is across the page.)
+            while j + 1 < len(ls) and aside(ls[j + 1]) and (
+                    not BOOKS[book].get('beside_within_cut') or ls[j + 1]['box'][1] < y1 + 0.3 * PITCH):
                 j += 1
             beside = ls[i:j + 1]
             xs = [x_left(l) for l in beside]
@@ -827,11 +882,27 @@ def place_cuts(book, lines, block_lines, lefts, verse_ids=frozenset()):
     return cuts
 
 
-def stars_block(rows, left):
+def stars_block(rows, left, ys=None, lid=None, lines_by_id=None):
     """The printing's rows of asterisks as a verse block, each star set
-    in by spaces to where the printing has it."""
+    in by spaces to where the printing has it; with [ys], each row's
+    centre down the scan, its rows as far apart and as far from the
+    lines either side as the printing sets them (a leaded role, `lh<n>`)."""
     star = 0.502 / 0.28   # an asterisk's width in spaces
     out = ['[verse.stars]', '____']
+    if ys:
+        line = lines_by_id[lid]
+        leaf = line['leaf']
+        nxt = [l for l in lines_by_id.values() if l['leaf'] == leaf and l['kind'] == 'body'
+               and l['box'][1] > ys[-1]]
+        pitch = round(leaf_pt(leaf, (ys[-1] - ys[0]) / (len(ys) - 1)), 1)
+        lead = f'lh{int(round(pitch * 10))}'
+        LEADS.add(lead)
+        # (A star's middle half a line's height less 1.9 pt below its line's
+        # top; a prose line's foot 14 pt below its letters' top.)
+        top = leaf_pt(leaf, ys[0] - line['box'][1]) - 14.0 - (pitch / 2 - 1.9)
+        bottom = (leaf_pt(leaf, min(l['box'][1] for l in nxt) - ys[-1]) - (pitch / 2 + 1.9) - 2.8
+                  if nxt else 0)
+        out[0] = f'[verse.stars.{lead},margin-top={top:.1f}pt,margin-bottom={max(0, bottom):.1f}pt]'
     for row in rows:
         line = ''
         at = 0.0
@@ -977,6 +1048,30 @@ def line_overrides(book):
     return out
 
 
+def apply_patches(book, name, text):
+    """[text] with decisions/BOOK.patches applied: a block that the
+    transcription can't make from its lines (a sum set as a table, a
+    verse block's continuation), as the printing sets it. Each patch:
+    `@@ NAME`, the text as drafted, `=>`, the text as it should be, `@@`.
+    A patch that doesn't apply stops the draft."""
+    # (Standard Ebooks' scene break, read into the line before it: the
+    # printing's rows of asterisks stand for it.)
+    text = re.sub(r" '''$", '', text, flags=re.M)
+    path = os.path.join(HERE, 'decisions', f'{book}.patches')
+    if not os.path.exists(path):
+        return text
+    for m in re.finditer(r'^@@ (\S+)\n(.*?)\n=>\n(.*?)\n@@$', open(path, encoding='utf-8').read(), re.S | re.M):
+        if m[1] != name:
+            continue
+        # (The draft's measures, `margin-top=58.0pt`, as they come: a
+        # patch matches whatever they are.)
+        parts = re.split(r'(?<=-top=|ttom=)[\d.]+(?=pt)', m[2])
+        pattern = r'[\d.]+'.join(re.escape(p) for p in parts)
+        assert re.search(pattern, text), (name, m[2])
+        text = re.sub(pattern, lambda _: m[3], text)
+    return text
+
+
 def write(book, chapters, lines, otoks, items, choices):
     overrides = line_overrides(book)
     OVERRIDDEN.update(overrides)
@@ -985,16 +1080,19 @@ def write(book, chapters, lines, otoks, items, choices):
         by_line.setdefault(it['tok'].line['id'], []).append(it)
     # Each block's printed lines: [(page, line id, words)]
     block_lines = {}
+    done_overrides = set()
     end_lines = BOOKS[book].get('end_lines', {})
     for line in lines:
         if line['kind'] != 'body' or line['id'] in end_lines:
             continue
         if line['id'] in overrides:
             # (A line reviewed whole: its text as given, in the block of its
-            # first word.)
+            # first word; once, where the OCR read it as two lines of one
+            # id; none, given empty, where its words are another line's.)
             first = next((it for it in by_line.get(line['id'], []) if it['tok'].core), None)
-            if first is None:
+            if first is None or line['id'] in done_overrides or not overrides[line['id']]:
                 continue
+            done_overrides.add(line['id'])
             bl = block_lines.setdefault(id(first['block']), [])
             # (`\n` in it: a line the OCR missed, after this one.)
             for n, text in enumerate(overrides[line['id']].split('\\n')):
@@ -1139,7 +1237,7 @@ def write(book, chapters, lines, otoks, items, choices):
                     # (Its running title, and its heading sunk as far as the
                     # printing sinks it: the role `sink-<points>`.)
                     attrs = [f'running-title="{BOOKS[book]["running"][n - 1]}"',
-                             f'role=opening{n}']
+                             f'role={BOOKS[book].get("opening_role", "opening")}{n}']
                     raw[0] = raw[0][:-1] + ',' + ','.join(attrs) + ']'
                 out.append('\n'.join(raw))
                 if b['raw'][-1].startswith('==') and n in openers:
@@ -1182,7 +1280,9 @@ def write(book, chapters, lines, otoks, items, choices):
             first_piece = True
             for piece in pieces:
                 if isinstance(piece, tuple) and piece[0] == 'stars':
-                    out.append(stars_block(piece[1], lefts[int(piece[2].split(':')[0])]))
+                    out.append(stars_block(piece[1], lefts[int(piece[2].split(':')[0])],
+                                           BOOKS[book].get('stars_y', {}).get(piece[2]), piece[2],
+                                           lines_by_id))
                     continue
                 if isinstance(piece, tuple):
                     out.append(cut_macro(piece[1], se_images))
@@ -1254,8 +1354,8 @@ def write(book, chapters, lines, otoks, items, choices):
             out = opening_word(out, n, lines_by_id, True, BOOKS[book].get('opening_words', {}).get(n, 1))
         if n == last_number and end_lines:
             out.extend(end_blocks(end_lines, lines_by_id, block_lines))
-        open(f'{ROOT}/out/{book}/{ch["name"]}.adoc', 'w', encoding='utf-8').write(
-            '\n\n'.join(out) + '\n')
+        text = apply_patches(book, ch['name'], '\n\n'.join(out) + '\n')
+        open(f'{ROOT}/out/{book}/{ch["name"]}.adoc', 'w', encoding='utf-8').write(text)
     debug.sort(key=lambda l: tuple(float(x.replace('+', '.')) for x in l.split('\t')[0].split(':')))
     open(f'{ROOT}/out/{book}/lines.tsv', 'w', encoding='utf-8').write('\n'.join(debug) + '\n')
     return report
@@ -1274,6 +1374,10 @@ def main(book, use_tesseract):
     print('open', Counter(c.kind for c in open_), 'on lines', len({c.line['id'] for c in open_}))
     for r in report:
         print(r)
+    if LEADS:
+        # (The look's roles for them: 10 pt Old Standard's line, 1.284 its
+        # 15.2 pt, so a line height of pitch / 11.84.)
+        print('leads:', ' '.join(f'{l}: {{ line_height: {int(l[2:]) / 118.4:.4f} }}' for l in sorted(LEADS)))
 
 
 if __name__ == '__main__':

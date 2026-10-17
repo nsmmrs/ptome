@@ -282,3 +282,11 @@
 - name: wonderland-illustration-9.svg
   url: https://raw.githubusercontent.com/standardebooks/lewis-carroll_alices-adventures-in-wonderland_john-tenniel/9ecdf2ffa23098e7cb3c72157d7c3031b6f59903/src/epub/images/illustration-9.svg
   sha256: 7ddba7e0cb790a7080eb4622a5078ac24b65c183dfe41047d36bd53714537e0e
+# The printer's device on Looking-Glass's front leaf (1872): cut from the
+# Internet Archive's scan of Duke University's copy of the first edition,
+# its page image at its own size, its film's paper white (`levels`).
+- name: looking-glass-device.png
+  url: https://archive.org/download/throughlookinggl01carr/page/n16.jpg
+  sha256: 5c88528e761eddaa570478ee84999da09a8ee46a12bff64635a6b3b51bb96cc3
+  levels: [60, 190]
+  crop: [664, 1105, 348, 344]

@@ -4,11 +4,11 @@ import json, os, sys
 import numpy as np
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT
+from common import BOOKS, ROOT, ocr_path, scan_path
 
 book = sys.argv[1]
 cfg = BOOKS[book]
-pages = json.load(open(f'{ROOT}/{cfg["id"]}.ocr.json'))
+pages = json.load(open(ocr_path(cfg)))
 for leaf in range(cfg['first'], cfg['last'] + 1):
     p = pages[leaf]
     H = p['b'][3]
@@ -16,7 +16,7 @@ for leaf in range(cfg['first'], cfg['last'] + 1):
     if not lines:
         continue
     img = np.asarray(Image.open(
-        f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2').convert('L')).astype(float)
+        scan_path(cfg, leaf)).convert('L')).astype(float)
     x0 = min(l['b'][0] for l in lines)
     x1 = max(l['b'][2] for l in lines)
     col = img[:, x0:x1]

@@ -10,7 +10,7 @@ import json, os, re, subprocess, sys
 from fontTools.ttLib import TTFont
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from common import ROOT
+from common import ROOT, BOOK, DPI, PITCH_PX
 
 REPO = os.path.dirname(os.path.dirname(HERE))  # packages/ptome
 WORK = os.path.join(REPO, 'test', 'showcase', 'alice')
@@ -78,7 +78,7 @@ def title_page(fit, wants=None):
 
 
 # The contents (leaf 15, the text pages' scale).
-PT = 72 / 650
+PT = 72 / DPI
 CONTENTS_TOP = (782, 80)
 LABELS = (1133, 39)
 ENTRIES = [('I.', 'down the rabbit-hole', 1), ('II.', 'the pool of tears', 15),

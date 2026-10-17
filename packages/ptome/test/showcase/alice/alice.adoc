@@ -18,6 +18,7 @@ include::wonderland.adoc[]
 
 :source-lines!:
 
+[%notitle]
 = Through the Looking-Glass, and What Alice Found There
 // (Its chapters numbered from I again: a chapter is numbered when it
 // ends, so the counter is reset after the last of Wonderland's; whether

@@ -1,8 +1,20 @@
-include::text/looking-glass/preamble.adoc[]
+// The front matter as the 1872 printing sets it, page for page: the
+// Dramatis Personae, the chess problem, the frontispiece, the title page,
+// the prefatory poem, the printer's device and the contents (the title
+// page, the device and the contents in the PDF alone), unheaded.
+:sectnums!:
+[#looking-glass-preamble.lg-front%notitle%noheader%nofooter]
+== Dramatis Personæ
 
-include::text/looking-glass/epigraph.adoc[]
+include::text/looking-glass/front.adoc[]
 
-include::text/looking-glass/frontispiece.adoc[]
+:sectnums:
+
+// Looking-Glass's chapters as the 1872 printing sets them (Macmillan, the
+// first edition, Duke University's copy; NOTICE.md): each paragraph's
+// lines its lines (`:source-lines:`), each page its page.
+:source-lines:
+:shy: &#173;
 
 include::text/looking-glass/chapter-1.adoc[]
 
@@ -27,5 +39,7 @@ include::text/looking-glass/chapter-10.adoc[]
 include::text/looking-glass/chapter-11.adoc[]
 
 include::text/looking-glass/chapter-12.adoc[]
+
+:source-lines!:
 
 include::text/looking-glass/conclusion.adoc[]

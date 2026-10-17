@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a section's own `folio-start` (its pages numbered from it again,
+  its signatures by its role's `section_role_<role>_running_content_signature_*`
+  keys) and `section_role_<role>_<periphery>_on_openers` (a header or
+  footer on that role's openers alone). The showcase's Through the
+  Looking-Glass is now set as Macmillan's 1872 first edition sets it,
+  page for page and line for line, front matter included (EPIC-5r18b8):
+  its contractions set apart where the printing sets them, its stanzas
+  leaded as each is, Jabberwocky's mirrored stanza, the Gnat's tiny
+  voice, Humpty Dumpty's sum, the rows of asterisks, the plates on pages
+  of their own, the closing poem headed by its folios.
 - PDF: an inline image's own `vertical-align` (a length): its bottom
   that far above the baseline, its line no taller for it, a line of
   images alone as tall as a line of words (FEAT-v2vw73). The showcase's

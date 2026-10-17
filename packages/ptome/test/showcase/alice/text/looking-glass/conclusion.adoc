@@ -1,31 +1,72 @@
-[verse]
-[.poem]
+// The closing poem as the 1872 printing sets it: on a page of its own
+// under a double rule, its last three stanzas on the next, then THE END;
+// each stanza where the scan has it (tool/alice_1867), each page headed
+// by its folio alone, centred (sections of the role `envoi`).
+:sectnums!:
+[#looking-glass-envoi.envoi%notitle]
+== A Boat, Beneath a Sunny Sky
+
+ifdef::backend-pdf[]
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=85.9pt]
+
+image::double-rule.svg["",role=cut,pdfwidth=61pt,align=center]
+endif::[]
+
+[verse.poem.conclusion.v10.lh157,margin-top=18.6pt,margin-bottom=0]
 ____
-A boat beneath a sunny sky,
-Lingering onward dreamily
-In an evening of July⁠—
-
-Children three that nestle near,
-Eager eye and willing ear,
-Pleased a simple tale to hear⁠—
-
-Long has paled that sunny sky:
-Echoes fade and memories die.
-Autumn frosts have slain July.
-
-Still she haunts me, phantomwise,
-Alice moving under skies
-Never seen by waking eyes.
-
-Children yet, the tale to hear,
-Eager eye and willing ear,
-Lovingly shall nestle near.
-
-In a Wonderland they lie,
-Dreaming as the days go by,
-Dreaming as the summers die.
-
-Ever drifting down the stream⁠—
-Lingering in the golden gleam⁠—
-Life, what is it but a dream?
+                A boat, beneath a sunny sky,
+                Lingering onward dreamily
+                In an evening of July⁠—
 ____
+
+[verse.poem.conclusion.v10.lh157,margin-top=30.0pt,margin-bottom=0]
+____
+                Children three that nestle near,
+                Eager eye and willing ear,
+                Pleased a simple tale to hear⁠—
+____
+
+[verse.poem.conclusion.v10.lh157,margin-top=28.6pt,margin-bottom=0]
+____
+                Long has paled that sunny sky:
+                Echoes fade and memories die:
+                Autumn frosts have slain July.
+____
+
+[verse.poem.conclusion.v10.lh157,margin-top=25.0pt,margin-bottom=0]
+____
+                Still she haunts me, phantomwise,
+                Alice moving under skies
+                Never seen by waking eyes.
+____
+
+[#looking-glass-envoi-2.envoi%notitle]
+== Children Yet, the Tale to Hear
+
+ifdef::backend-pdf[]
+image::blank.svg["",role=cut,pdfwidth=1pt,pdfheight=4.3pt]
+endif::[]
+
+[verse.poem.conclusion.v10.lh157,margin-bottom=0]
+____
+                Children yet, the tale to hear,
+                Eager eye and willing ear,
+                Lovingly shall nestle near.
+____
+
+[verse.poem.conclusion.v10.lh157,margin-top=29.1pt,margin-bottom=0]
+____
+                In a Wonderland they lie,
+                Dreaming as the days go by,
+                Dreaming as the summers die:
+____
+
+[verse.poem.conclusion.v10.lh157,margin-top=26.8pt,margin-bottom=0]
+____
+                Ever drifting down the stream⁠—
+                Lingering in the golden gleam⁠—
+                Life, what is it but a dream?
+____
+
+[.the-end,margin-top=72.0pt,margin-bottom=0]
+THE END.

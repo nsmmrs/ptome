@@ -126,6 +126,12 @@ extension _RunningContent on PdfConverter {
   /// the first page after the front matter `folio-start` (a journal's or
   /// the Federal Register's pages, numbered through a volume).
   String _pageLabel(int number) {
+    // (A section's own `folio-start`: its first page that number, the
+    // pages after it numbered on from it; a second book bound after the
+    // first, numbered from 1 again.)
+    if (_folioRestart(number) case final restart?) {
+      return '${restart.start + number - restart.page}';
+    }
     final virtual = number - _skip.$2;
     if (virtual < 1) return PdfConverter._roman(number).toLowerCase();
     return '${virtual + _folioStart - 1}';
@@ -147,6 +153,17 @@ extension _RunningContent on PdfConverter {
       }
     }
     return localDigits(_document, label);
+  }
+
+  /// The last section numbering its pages again that starts on or before
+  /// page [number].
+  ({int page, int start, List<String> roles})? _folioRestart(int number) {
+    ({int page, int start, List<String> roles})? found;
+    for (final restart in _folioRestarts) {
+      if (restart.page > number) break;
+      found = restart;
+    }
+    return found;
   }
 
   /// The number of the first page after the front matter (`folio-start`;
@@ -228,7 +245,16 @@ extension _RunningContent on PdfConverter {
         _theme.value('running_content_on_openers') != const ThemeBool(true) &&
         // (`<periphery>_on_openers: true`: this one only, a printing's
         // signatures at the foot of a chapter's first page, no head.)
-        _keys(periphery).value('on_openers') != const ThemeBool(true)) {
+        _keys(periphery).value('on_openers') != const ThemeBool(true) &&
+        // (`section_role_<role>_<periphery>_on_openers: true`: on the
+        // openers of a section with the role alone, a closing poem's
+        // pages headed by their folios.)
+        !(_openerRoles[number] ?? const []).any(
+          (role) =>
+              _keys('section_role_${role.replaceAll('-', '_')}')
+                  .value('${periphery}_on_openers') ==
+              const ThemeBool(true),
+        )) {
       return const [];
     }
     if (_pageSection(page)?.hasOption('no$periphery') ?? false) {
@@ -724,7 +750,14 @@ extension _RunningContent on PdfConverter {
     }
     // The printer's signature (`{page-signature}`), on the first page of
     // each gathering.
-    if (_signatureOf(page.number - _skip.$2) case final signature?) {
+    final restart = _folioRestart(page.number);
+    if (_signatureOf(
+          restart == null
+              ? page.number - _skip.$2
+              : restart.start + page.number - restart.page,
+          roles: restart?.roles ?? const [],
+        )
+        case final signature?) {
       attributes['page-signature'] = signature;
     }
     // The catchword (`{page-catchword}`), the next page's first word.
@@ -852,8 +885,16 @@ extension _RunningContent on PdfConverter {
   /// (1), as a nineteenth-century American schoolbook numbers its
   /// gatherings (the footer's `2, {page-signature}.`, the Second Reader's
   /// second); null on the other pages.
-  String? _signatureOf(int number) {
-    final keys = _keys('running_content_signature');
+  ///
+  /// In a section numbering its pages again ([roles], its roles), its
+  /// role's keys first (`section_role_<role>_running_content_signature_*`):
+  /// a second book bound after the first, folded otherwise.
+  String? _signatureOf(int number, {List<String> roles = const []}) {
+    final keys = _Keys(this, [
+      for (final role in roles)
+        'section_role_${role}_running_content_signature',
+      'running_content_signature',
+    ]);
     final interval = (keys.number('interval') ?? 16).toInt();
     final first = (keys.number('first') ?? 1).toInt();
     if (interval < 1 || number < first) return null;

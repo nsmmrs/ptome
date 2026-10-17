@@ -4,7 +4,7 @@ import json, os, re, sys
 import numpy as np
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import BOOKS, ROOT, in_vocab, core
+from common import BOOKS, ROOT, in_vocab, core, ocr_path, scan_path
 
 
 def component(mask, box, cell=24):
@@ -40,19 +40,24 @@ def component(mask, box, cell=24):
     return [int(x0 + c[0]), int(y0 + r[0]), int(x0 + c[-1]), int(y0 + r[-1])]
 
 
-def measure(book, first_number=2):
+def measure(book):
     cfg = BOOKS[book]
     t = open(f'{ROOT}/dl/{cfg["id"]}_hocr.html', encoding='utf-8').read()
     pages = re.split(r"(?=<div class=['\"]ocr_page)", t)[1:]
-    P = json.load(open(f'{ROOT}/{cfg["id"]}.ocr.json'))
+    P = json.load(open(ocr_path(cfg)))
     out = []
-    n = first_number
+    # (The cuts numbered from the first after the frontispiece.)
+    n = cfg.get('first_cut', 2)
     for leaf in range(cfg['first'], cfg['last'] + 1):
-        boxes = [list(map(int, re.search(r'bbox (\d+) (\d+) (\d+) (\d+)', m).groups()))
+        # (ABBYY's boxes in the scan's own pixels; scaled with the scan.)
+        f = cfg.get('scale', 1)
+        boxes = [[round(int(v) * f) for v in re.search(r'bbox (\d+) (\d+) (\d+) (\d+)', m).groups()]
                  for m in re.findall(r'class="ocr_photo" title="([^"]*)"', pages[leaf])]
+        if leaf in cfg.get('extra_cuts', {}):
+            boxes.append(cfg['extra_cuts'][leaf])
         for box in boxes:
             img = np.asarray(Image.open(
-                f'{ROOT}/{cfg["id"]}/{cfg["id"]}_jp2/{cfg["id"]}_{leaf:04d}.jp2').convert('L')).astype(float)
+                scan_path(cfg, leaf)).convert('L')).astype(float)
             mask = img < np.median(img) - 50
             # (The text lines left out, from their first word of the
             # vocabulary to their last: not the specks the OCR read in
@@ -88,6 +93,8 @@ def measure(book, first_number=2):
             cols = np.nonzero(sub.sum(0) > 3)[0]
             inner = [int(box[0] + cols[0]), int(box[1] + rows[0]),
                      int(box[0] + cols[-1]), int(box[1] + rows[-1])]
+            while n in cfg.get('skip_numbers', ()):
+                n += 1
             out.append(dict(n=n, leaf=leaf, box=tb, inner=inner))
             n += 1
     return out
