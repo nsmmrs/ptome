@@ -15,3 +15,4 @@ dist/
 node_modules/
 # The corpus test's scratch output inside a case (packages/ptome/test/corpus)
 .ptome/
+__pycache__/

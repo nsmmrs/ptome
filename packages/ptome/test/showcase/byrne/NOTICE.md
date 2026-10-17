@@ -3,66 +3,66 @@ title: "Byrne's Euclid"
 source: byrne.adoc
 looks: [byrne]
 compare:
-  - page: 2
+  - page: 1
     scan: https://archive.org/download/firstsixbooksofe00byrn/page/n34.jpg
-    note: "Book I, Proposition I: the equilateral triangle (1847)"
-  - page: 3
+    note: "Book I's opening: its headpiece, \"Euclid.\" in blackletter, Proposition I (1847)"
+  - page: 2
     scan: https://archive.org/download/firstsixbooksofe00byrn/page/n35.jpg
     note: "Proposition II: a line equal to a given line, from a given point (1847)"
-  - page: 6
-    scan: https://archive.org/download/firstsixbooksofe00byrn/page/n38.jpg
-    note: "Proposition V: the angles at the base of an isosceles triangle (1847)"
+  - page: 13
+    scan: https://archive.org/download/firstsixbooksofe00byrn/page/n46.jpg
+    note: "Proposition XIII: its sums of angles set as lines of symbols (1847)"
+  - page: 48
+    scan: https://archive.org/download/firstsixbooksofe00byrn/page/n81.jpg
+    note: "Proposition XLVII, Pythagoras's theorem, its first page (1847)"
 ---
 
 # Byrne's Euclid
 
-The first five propositions of Book I of Oliver Byrne's The First Six
-Books of the Elements of Euclid, in a look after its first edition
-(1847). What the work shows: colour as meaning — each proposition's
-diagram in red, yellow, blue and black, redrawn as SVG from its
-construction, and the text naming the lines, circles, triangles and
-angles not by letters but by small coloured figures of them set inline,
-as Byrne set them (inline SVG images, their alt text naming them); the
-diagram floated beside the enunciation, which opens with a large
-initial (BUG-qqz54w: an initial beside a floated image was lost); the
-steps of each demonstration each on a line, and their references to
-the definitions, postulates and propositions (FEAT-6fmfl5).
+Book I of Oliver Byrne's The First Six Books of the Elements of Euclid,
+in Which Coloured Diagrams and Symbols Are Used Instead of Letters for
+the Greater Ease of Learners, as William Pickering printed it in 1847,
+page for page and line for line: its forty-eight propositions on the
+book's pages 1 to 50. What the work shows: colour as meaning — each
+proposition's diagram in red, yellow, blue and black, and the text naming
+its lines, angles, triangles and figures not by letters but by small
+coloured figures of them, set on its lines at the printing's own heights
+(an inline image's `vertical-align`, FEAT-v2vw73); the signs Byrne sets
+the same way (⊏, ⊐, ∥, ⊥, ∴); the woodcut initials; the demonstrations'
+lines of symbols, some braced together.
+
+In the PDF each page is the printing's page: each printed line is a
+paragraph of its own (its margins the printing's, in tenths of a point,
+its words justified to them, its letters closed up or spread where Libre
+Caslon sets them wider or narrower than the printing's Caslon), and each
+line, diagram and initial sits where the scan shows it (its own
+`margin-top`, from the scan: `tool/byrne_1847`). The running heads are
+the printing's ("BOOK I. PROP. II. PROB.") with their folios outside, in
+old-style figures, the opening page unheaded; a gathering's first page
+has its signature (B … H) at its foot.
 
 ## Sources
 
 | What | Where | SHA-256 |
 | --- | --- | --- |
-| `text/book-1.adoc` | transcribed for the work from the facsimile of the first edition, https://archive.org/details/firstsixbooksofe00byrn (pages 1–5 of Book I, scans n34–n38) | |
-| `images/` | drawn for the work by `tool/showcase_byrne.dart`, each diagram from its construction (an equilateral triangle on a line, a circle about a point through another) after the edition's, each symbol from its diagram; the edition's colours sampled from the scans | |
+| The text | transcribed for the work from the scan below, line by line (`tool/byrne_1847/text.tsv`: each line's words and the symbols it sets, read against the Internet Archive's OCR) | |
+| The scan and its OCR | https://archive.org/details/firstsixbooksofe00byrn: `…_jp2.zip` (the leaves, 300 ppi, in colour), `…_hocr.html`; Book I is leaves 35–84 | `c8be613f0916ed020fefcf19c8ccab341629cd162756dd654710460036c4c9fd`, `480ef3a368ac5a624bf99bdd56d396629eb7a7b13c7a1ed317f9a43c78a345ed` |
+| `images/` | traced from the same scan by `tool/byrne_1847` (`trace.py`): each diagram, initial and symbol its own ink, separated by colour, outlined (potrace) and filled with one of the printing's four inks, sampled from the scan | |
 
-The transcription keeps the edition's words, spelling, abbreviations
-("post.", "const.", "pr.", "def.", "ax.") and punctuation; it writes the
-round s for the edition's long s. Where the edition prints a coloured
-figure, the text has the figure: `text/symbols.adoc` names the lines
-(`{red}`, `{red-blue}`...), the equals sign and the sign for
-therefore, the rest are named where they are used.
-
-## The scans transcribed
-
-The pages of https://archive.org/details/firstsixbooksofe00byrn the transcription was
-made from, each the Internet Archive's JPEG
-(`https://archive.org/download/firstsixbooksofe00byrn/page/<page>.jpg`) with its
-SHA-256:
-
-```
-9371ffbef8705a990c2cb4f552b38d15baa615f776ec70bf943f54f8ccce45a5  n34.jpg
-c01d87d92d6bdb4eeb98a56729a09c6f4c243ba824e52112b8c520faac33ac11  n35.jpg
-a66b8f25fcf2e18f6b25bc31d0e2f6cf5103c8e854545174efda288b9274f577  n36.jpg
-5d74288f8a95815dad95d19b6558cf8deec47b3ff8814e9dd72a9b8c6e4aa247  n37.jpg
-210b1ffc38c865dd39b27a2a6acc555e8ccf78aa37b020044ea633499011e69c  n38.jpg
-```
+The transcription keeps the edition's words, its abbreviations ("post.",
+"const.", "pr.", "def.", "ax.") and its punctuation, and writes the round
+s for its long s. Where the edition prints a figure, the text has the
+figure, its alternative text naming it ("a red line", "is greater than");
+a group of figures braced together is one picture.
 
 ## Licence
 
 The book is in the public domain (published 1847; Oliver Byrne died in
-1880). The transcription and the drawings are the work's own (MIT, as
-the repository). The scans are not committed: `tool/showcase.dart`
-fetches the pages it compares into its cache.
+1880). The transcription, its markup and the tracings are the work's own
+(MIT, as the repository). The scans are not committed:
+`tool/showcase.dart` fetches the pages it compares into its cache, and
+`tool/byrne_1847` works from the Internet Archive's files in its work
+folder.
 
 ## Fonts
 
@@ -72,25 +72,22 @@ installs it. Not committed.
 
 ## The printing the look follows
 
-The first edition, London, William Pickering, 1847: the Getty Research
-Institute's copy, scanned by the Internet Archive,
-https://archive.org/details/firstsixbooksofe00byrn.
+The first edition, London, William Pickering, 1847, a small quarto: the
+Getty Research Institute's copy, scanned by the Internet Archive,
+https://archive.org/details/firstsixbooksofe00byrn. The page is
+7.4 × 9.3 in, the scan's scale 72/300 pt to its pixel.
 
 Where the look departs from it:
 
-- Libre Caslon Text stands in for the edition's Caslon; the sign of
-  equality and the sign for therefore are drawn, as its face hasn't the
-  one and the edition's other is long.
-- The initials are the text's capitals, not the edition's woodcut
-  initials, white on a black ground of ornament; the headpiece over
-  Book I and the blackletter "Euclid." are left out.
-- Each proposition is headed with its number and kind, as the edition
-  heads only the first; the running head names it in full ("BOOK I.
-  PROPOSITION II. PROBLEM.", where the edition abbreviates "BOOK I.
-  PROP. II. PROB.").
-- The diagrams are drawn exactly from their constructions; the symbols
-  in the text are lines of one length, where the edition's vary, and a
-  few, the triangles of Proposition II, are upright as the edition sets
-  them rather than as their diagram has them.
-- In HTML, the symbols are scaled with the text by CSS `zoom`; in EPUB
-  they are at their own size, which a reader's larger text outgrows.
+- Libre Caslon Text stands in for the edition's Caslon: its letters are a
+  little wider or narrower here and there, so a line's letters are spaced
+  to the printing's width; it has no long s.
+- The diagrams, initials, symbols, the headpiece and the blackletter
+  "Euclid." are tracings of the scan in four flat inks: the printing's
+  shapes, a little smoothed, without the paper, the press's unevenness or
+  the colours' showing through.
+- In HTML and EPUB each printed line is a paragraph, without the
+  printing's measures and heights; the diagrams are as wide as the
+  printed page, where the PDF sets them.
+- In the excerpt test, Noto Serif stands in for Libre Caslon, so its
+  lines don't fit the printing's as the work's do.

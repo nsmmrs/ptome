@@ -1,10 +1,14 @@
-# Byrne's Euclid after its first edition (William Pickering, 1847), a
-# small quarto: Caslon, generously leaded for the symbols the lines
-# carry; each proposition on a page of its own, its diagram beside its
-# enunciation, the enunciation in italic after a large initial, the
-# steps of the demonstration each on a line, "Q. E. D." at the right;
-# the running head in italic capitals, the page number outside; red,
-# yellow, blue and black.
+# Byrne's Euclid as William Pickering printed it in 1847, page for page
+# and line for line: a small quarto, 7.4 by 9.3 inches; Caslon at about
+# 10.6 pt, each printed line a paragraph of its own (L/R roles: its
+# margins, in tenths of a point, as the scan has them), justified to its
+# width; the running head in italic capitals, the folio outside it in
+# old-style figures, the opening page unheaded; each page's diagrams and
+# woodcut initial pictures where the scan has them. The roles after
+# `# The lines` are tool/byrne_1847's (gen.py writes this file from its
+# look-base.yml); T<n> tracks a line by n hundredths of a point, Tm<n>
+# closes it, where Libre Caslon sets it wider or narrower than the
+# printing's Caslon.
 #
 # Libre Caslon Text (`ptome doctor --look byrne --looksdir
 # test/showcase/byrne`).
@@ -14,90 +18,735 @@ tokens:
     text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
     display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
   size:
-    text: { print: 12pt, screen: 20px }
-    headings: { print: [22pt, 15pt, 13pt, 12pt, 12pt, 12pt] }
-  leading: { print: 1.75, screen: 2 }
-  measure: { screen: 34em }
+    text: { print: 10.6pt, screen: 20px }
+  leading: { print: 1, screen: 2 }
   align: { print: start }
   hyphenate: { print: false }
   color: { ink: '#1C1C1C', link: '#1C1C1C' }
-  page: { size: [7.4in, 9.3in], margin: [0.8in, 0.7in, 0.7in, 0.75in] }
-styles:
-  heading: { font: display, weight: normal, color: ink }
-  title: { font: display, weight: normal, color: ink }
-  link: { color: ink }
+  page: { size: [7.4in, 9.3in], margin: [50pt, 0pt, 0pt, 0pt] }
 pdf:
+  base_margin_break: keep
+  running_content_start_at: 2
+  base_font_variant_numeric: oldstyle-nums
+  base_small_caps_synthesis: lowercase
   heading:
     chapter_break_before: always
-    h2:
-      text_align: center
-      text_transform: uppercase
-      font_size: 15
-      margin_bottom: 6
-    h3:
-      text_align: center
-      text_transform: uppercase
-      font_size: 13
-      margin_top: 0
-      margin_bottom: 14
+    margin_top: 0
+    margin_page_top: 0
+    margin_bottom: 0
   prose:
-    margin_bottom: 6
-  role:
-    enunciation: { font_style: italic }
-    dropcap:
-      drop_lines: 3
-      drop_font_style: normal
-    steps: { margin_top: 6 }
-    qed: { text_align: right, margin_top: 4 }
+    margin_bottom: 0
+    text_indent: 0
+    orphans: 1
+    widows: 1
   image:
-    float_gap: [14, 8]
-  title_page:
-    text_align: center
-    title:
-      top: 22%
-      font_size: 20
-      text_transform: uppercase
-      line_height: 1.3
-    subtitle:
-      font_style: italic
-      font_size: 12
-      line_height: 1.5
-    authors:
-      font_size: 12
-      text_transform: uppercase
-      margin_top: 24
+    margin_top: 0
+    margin_bottom: 0
+    align: left
+  role:
+    l: { text_align: left }
+    j: { text_align: justify, text_align_last: justify }
+    folio: { font_style: normal }
+    sc: { font_variant: small-caps }
+    sig: { font_size: 8 }
+    # The lines
+    L1030: { margin_left: 103.0 }
+    L1040: { margin_left: 104.0 }
+    L1050: { margin_left: 105.0 }
+    L1055: { margin_left: 105.5 }
+    L1065: { margin_left: 106.5 }
+    L1070: { margin_left: 107.0 }
+    L1075: { margin_left: 107.5 }
+    L1080: { margin_left: 108.0 }
+    L1085: { margin_left: 108.5 }
+    L1090: { margin_left: 109.0 }
+    L1095: { margin_left: 109.5 }
+    L1100: { margin_left: 110.0 }
+    L1105: { margin_left: 110.5 }
+    L1110: { margin_left: 111.0 }
+    L1115: { margin_left: 111.5 }
+    L1120: { margin_left: 112.0 }
+    L1125: { margin_left: 112.5 }
+    L1130: { margin_left: 113.0 }
+    L1135: { margin_left: 113.5 }
+    L1140: { margin_left: 114.0 }
+    L1145: { margin_left: 114.5 }
+    L1150: { margin_left: 115.0 }
+    L1155: { margin_left: 115.5 }
+    L1160: { margin_left: 116.0 }
+    L1165: { margin_left: 116.5 }
+    L1170: { margin_left: 117.0 }
+    L1175: { margin_left: 117.5 }
+    L1180: { margin_left: 118.0 }
+    L1185: { margin_left: 118.5 }
+    L1190: { margin_left: 119.0 }
+    L1195: { margin_left: 119.5 }
+    L1200: { margin_left: 120.0 }
+    L1210: { margin_left: 121.0 }
+    L1215: { margin_left: 121.5 }
+    L1225: { margin_left: 122.5 }
+    L1230: { margin_left: 123.0 }
+    L1235: { margin_left: 123.5 }
+    L1240: { margin_left: 124.0 }
+    L1245: { margin_left: 124.5 }
+    L1250: { margin_left: 125.0 }
+    L1255: { margin_left: 125.5 }
+    L1260: { margin_left: 126.0 }
+    L1265: { margin_left: 126.5 }
+    L1270: { margin_left: 127.0 }
+    L1275: { margin_left: 127.5 }
+    L1280: { margin_left: 128.0 }
+    L1285: { margin_left: 128.5 }
+    L1290: { margin_left: 129.0 }
+    L1295: { margin_left: 129.5 }
+    L1300: { margin_left: 130.0 }
+    L1305: { margin_left: 130.5 }
+    L1310: { margin_left: 131.0 }
+    L1320: { margin_left: 132.0 }
+    L1325: { margin_left: 132.5 }
+    L1335: { margin_left: 133.5 }
+    L1345: { margin_left: 134.5 }
+    L1350: { margin_left: 135.0 }
+    L1355: { margin_left: 135.5 }
+    L1365: { margin_left: 136.5 }
+    L1380: { margin_left: 138.0 }
+    L1385: { margin_left: 138.5 }
+    L1390: { margin_left: 139.0 }
+    L1400: { margin_left: 140.0 }
+    L1405: { margin_left: 140.5 }
+    L1410: { margin_left: 141.0 }
+    L1415: { margin_left: 141.5 }
+    L1420: { margin_left: 142.0 }
+    L1425: { margin_left: 142.5 }
+    L1430: { margin_left: 143.0 }
+    L1435: { margin_left: 143.5 }
+    L1440: { margin_left: 144.0 }
+    L1450: { margin_left: 145.0 }
+    L1455: { margin_left: 145.5 }
+    L1460: { margin_left: 146.0 }
+    L1470: { margin_left: 147.0 }
+    L1475: { margin_left: 147.5 }
+    L1480: { margin_left: 148.0 }
+    L1490: { margin_left: 149.0 }
+    L1495: { margin_left: 149.5 }
+    L1500: { margin_left: 150.0 }
+    L1520: { margin_left: 152.0 }
+    L1525: { margin_left: 152.5 }
+    L1530: { margin_left: 153.0 }
+    L1535: { margin_left: 153.5 }
+    L1540: { margin_left: 154.0 }
+    L1545: { margin_left: 154.5 }
+    L1550: { margin_left: 155.0 }
+    L1555: { margin_left: 155.5 }
+    L1560: { margin_left: 156.0 }
+    L1565: { margin_left: 156.5 }
+    L1570: { margin_left: 157.0 }
+    L1575: { margin_left: 157.5 }
+    L1580: { margin_left: 158.0 }
+    L1585: { margin_left: 158.5 }
+    L1590: { margin_left: 159.0 }
+    L1595: { margin_left: 159.5 }
+    L1600: { margin_left: 160.0 }
+    L1605: { margin_left: 160.5 }
+    L1610: { margin_left: 161.0 }
+    L1615: { margin_left: 161.5 }
+    L1620: { margin_left: 162.0 }
+    L1630: { margin_left: 163.0 }
+    L1635: { margin_left: 163.5 }
+    L1640: { margin_left: 164.0 }
+    L1645: { margin_left: 164.5 }
+    L1650: { margin_left: 165.0 }
+    L1655: { margin_left: 165.5 }
+    L1660: { margin_left: 166.0 }
+    L1665: { margin_left: 166.5 }
+    L1670: { margin_left: 167.0 }
+    L1675: { margin_left: 167.5 }
+    L1680: { margin_left: 168.0 }
+    L1685: { margin_left: 168.5 }
+    L1690: { margin_left: 169.0 }
+    L1695: { margin_left: 169.5 }
+    L1700: { margin_left: 170.0 }
+    L1705: { margin_left: 170.5 }
+    L1710: { margin_left: 171.0 }
+    L1715: { margin_left: 171.5 }
+    L1720: { margin_left: 172.0 }
+    L1725: { margin_left: 172.5 }
+    L1730: { margin_left: 173.0 }
+    L1735: { margin_left: 173.5 }
+    L1740: { margin_left: 174.0 }
+    L1745: { margin_left: 174.5 }
+    L1750: { margin_left: 175.0 }
+    L1755: { margin_left: 175.5 }
+    L1760: { margin_left: 176.0 }
+    L1765: { margin_left: 176.5 }
+    L1770: { margin_left: 177.0 }
+    L1775: { margin_left: 177.5 }
+    L1780: { margin_left: 178.0 }
+    L1785: { margin_left: 178.5 }
+    L1790: { margin_left: 179.0 }
+    L1795: { margin_left: 179.5 }
+    L1805: { margin_left: 180.5 }
+    L1810: { margin_left: 181.0 }
+    L1820: { margin_left: 182.0 }
+    L1825: { margin_left: 182.5 }
+    L1830: { margin_left: 183.0 }
+    L1835: { margin_left: 183.5 }
+    L1840: { margin_left: 184.0 }
+    L1845: { margin_left: 184.5 }
+    L1850: { margin_left: 185.0 }
+    L1855: { margin_left: 185.5 }
+    L1860: { margin_left: 186.0 }
+    L1865: { margin_left: 186.5 }
+    L1870: { margin_left: 187.0 }
+    L1875: { margin_left: 187.5 }
+    L1880: { margin_left: 188.0 }
+    L1885: { margin_left: 188.5 }
+    L1890: { margin_left: 189.0 }
+    L1905: { margin_left: 190.5 }
+    L1910: { margin_left: 191.0 }
+    L1920: { margin_left: 192.0 }
+    L1925: { margin_left: 192.5 }
+    L1930: { margin_left: 193.0 }
+    L1935: { margin_left: 193.5 }
+    L1940: { margin_left: 194.0 }
+    L1945: { margin_left: 194.5 }
+    L1950: { margin_left: 195.0 }
+    L1955: { margin_left: 195.5 }
+    L1965: { margin_left: 196.5 }
+    L1970: { margin_left: 197.0 }
+    L1975: { margin_left: 197.5 }
+    L1980: { margin_left: 198.0 }
+    L1985: { margin_left: 198.5 }
+    L1990: { margin_left: 199.0 }
+    L1995: { margin_left: 199.5 }
+    L2000: { margin_left: 200.0 }
+    L2005: { margin_left: 200.5 }
+    L2010: { margin_left: 201.0 }
+    L2015: { margin_left: 201.5 }
+    L2020: { margin_left: 202.0 }
+    L2045: { margin_left: 204.5 }
+    L2060: { margin_left: 206.0 }
+    L2070: { margin_left: 207.0 }
+    L2075: { margin_left: 207.5 }
+    L2095: { margin_left: 209.5 }
+    L2115: { margin_left: 211.5 }
+    L2130: { margin_left: 213.0 }
+    L2140: { margin_left: 214.0 }
+    L2145: { margin_left: 214.5 }
+    L2150: { margin_left: 215.0 }
+    L2155: { margin_left: 215.5 }
+    L2170: { margin_left: 217.0 }
+    L2180: { margin_left: 218.0 }
+    L2185: { margin_left: 218.5 }
+    L2190: { margin_left: 219.0 }
+    L2195: { margin_left: 219.5 }
+    L2200: { margin_left: 220.0 }
+    L2205: { margin_left: 220.5 }
+    L2210: { margin_left: 221.0 }
+    L2215: { margin_left: 221.5 }
+    L2240: { margin_left: 224.0 }
+    L2290: { margin_left: 229.0 }
+    L2295: { margin_left: 229.5 }
+    L2305: { margin_left: 230.5 }
+    L2320: { margin_left: 232.0 }
+    L2335: { margin_left: 233.5 }
+    L2355: { margin_left: 235.5 }
+    L2370: { margin_left: 237.0 }
+    L2375: { margin_left: 237.5 }
+    L2395: { margin_left: 239.5 }
+    L2400: { margin_left: 240.0 }
+    L2415: { margin_left: 241.5 }
+    L2420: { margin_left: 242.0 }
+    L2425: { margin_left: 242.5 }
+    L2435: { margin_left: 243.5 }
+    L2450: { margin_left: 245.0 }
+    L2460: { margin_left: 246.0 }
+    L2470: { margin_left: 247.0 }
+    L2475: { margin_left: 247.5 }
+    L2480: { margin_left: 248.0 }
+    L2485: { margin_left: 248.5 }
+    L2505: { margin_left: 250.5 }
+    L2510: { margin_left: 251.0 }
+    L2515: { margin_left: 251.5 }
+    L2520: { margin_left: 252.0 }
+    L2530: { margin_left: 253.0 }
+    L2560: { margin_left: 256.0 }
+    L2570: { margin_left: 257.0 }
+    L2585: { margin_left: 258.5 }
+    L2605: { margin_left: 260.5 }
+    L2640: { margin_left: 264.0 }
+    L2655: { margin_left: 265.5 }
+    L2665: { margin_left: 266.5 }
+    L2680: { margin_left: 268.0 }
+    L2690: { margin_left: 269.0 }
+    L2700: { margin_left: 270.0 }
+    L2705: { margin_left: 270.5 }
+    L2720: { margin_left: 272.0 }
+    L2730: { margin_left: 273.0 }
+    L2735: { margin_left: 273.5 }
+    L2740: { margin_left: 274.0 }
+    L2755: { margin_left: 275.5 }
+    L2760: { margin_left: 276.0 }
+    L2765: { margin_left: 276.5 }
+    L2770: { margin_left: 277.0 }
+    L2775: { margin_left: 277.5 }
+    L2790: { margin_left: 279.0 }
+    L2795: { margin_left: 279.5 }
+    L2800: { margin_left: 280.0 }
+    L2805: { margin_left: 280.5 }
+    L2810: { margin_left: 281.0 }
+    L2815: { margin_left: 281.5 }
+    L2830: { margin_left: 283.0 }
+    L2835: { margin_left: 283.5 }
+    L2840: { margin_left: 284.0 }
+    L2845: { margin_left: 284.5 }
+    L2855: { margin_left: 285.5 }
+    L2865: { margin_left: 286.5 }
+    L2870: { margin_left: 287.0 }
+    L2875: { margin_left: 287.5 }
+    L2880: { margin_left: 288.0 }
+    L2885: { margin_left: 288.5 }
+    L2925: { margin_left: 292.5 }
+    L2930: { margin_left: 293.0 }
+    L2935: { margin_left: 293.5 }
+    L2945: { margin_left: 294.5 }
+    L2950: { margin_left: 295.0 }
+    L2955: { margin_left: 295.5 }
+    L2960: { margin_left: 296.0 }
+    L2965: { margin_left: 296.5 }
+    L2975: { margin_left: 297.5 }
+    L2980: { margin_left: 298.0 }
+    L2990: { margin_left: 299.0 }
+    L2995: { margin_left: 299.5 }
+    L3000: { margin_left: 300.0 }
+    L3005: { margin_left: 300.5 }
+    L3010: { margin_left: 301.0 }
+    L3035: { margin_left: 303.5 }
+    L3040: { margin_left: 304.0 }
+    L3045: { margin_left: 304.5 }
+    L3090: { margin_left: 309.0 }
+    L3095: { margin_left: 309.5 }
+    L3100: { margin_left: 310.0 }
+    L3110: { margin_left: 311.0 }
+    L3130: { margin_left: 313.0 }
+    L3135: { margin_left: 313.5 }
+    L3145: { margin_left: 314.5 }
+    L3150: { margin_left: 315.0 }
+    L3160: { margin_left: 316.0 }
+    L3190: { margin_left: 319.0 }
+    L3315: { margin_left: 331.5 }
+    L3325: { margin_left: 332.5 }
+    L3335: { margin_left: 333.5 }
+    L3350: { margin_left: 335.0 }
+    L3355: { margin_left: 335.5 }
+    L3380: { margin_left: 338.0 }
+    L3385: { margin_left: 338.5 }
+    L3390: { margin_left: 339.0 }
+    L3400: { margin_left: 340.0 }
+    L3405: { margin_left: 340.5 }
+    L3410: { margin_left: 341.0 }
+    L3425: { margin_left: 342.5 }
+    L3430: { margin_left: 343.0 }
+    L3440: { margin_left: 344.0 }
+    L3445: { margin_left: 344.5 }
+    L3455: { margin_left: 345.5 }
+    L3460: { margin_left: 346.0 }
+    L3465: { margin_left: 346.5 }
+    L3470: { margin_left: 347.0 }
+    L3480: { margin_left: 348.0 }
+    L3490: { margin_left: 349.0 }
+    L3495: { margin_left: 349.5 }
+    L3505: { margin_left: 350.5 }
+    L3510: { margin_left: 351.0 }
+    L3520: { margin_left: 352.0 }
+    L3525: { margin_left: 352.5 }
+    L3540: { margin_left: 354.0 }
+    L3545: { margin_left: 354.5 }
+    L3575: { margin_left: 357.5 }
+    L3580: { margin_left: 358.0 }
+    L3585: { margin_left: 358.5 }
+    L3590: { margin_left: 359.0 }
+    L3595: { margin_left: 359.5 }
+    L3600: { margin_left: 360.0 }
+    L3605: { margin_left: 360.5 }
+    L3610: { margin_left: 361.0 }
+    L3615: { margin_left: 361.5 }
+    L3620: { margin_left: 362.0 }
+    L3625: { margin_left: 362.5 }
+    L3630: { margin_left: 363.0 }
+    L3635: { margin_left: 363.5 }
+    L3645: { margin_left: 364.5 }
+    L3650: { margin_left: 365.0 }
+    L3655: { margin_left: 365.5 }
+    L3660: { margin_left: 366.0 }
+    L3665: { margin_left: 366.5 }
+    L3670: { margin_left: 367.0 }
+    L3675: { margin_left: 367.5 }
+    L3680: { margin_left: 368.0 }
+    L3685: { margin_left: 368.5 }
+    L3745: { margin_left: 374.5 }
+    R0: { margin_right: 0.0 }
+    R1040: { margin_right: 104.0 }
+    R1045: { margin_right: 104.5 }
+    R1055: { margin_right: 105.5 }
+    R1060: { margin_right: 106.0 }
+    R1065: { margin_right: 106.5 }
+    R1080: { margin_right: 108.0 }
+    R1085: { margin_right: 108.5 }
+    R1090: { margin_right: 109.0 }
+    R1095: { margin_right: 109.5 }
+    R1100: { margin_right: 110.0 }
+    R1105: { margin_right: 110.5 }
+    R1110: { margin_right: 111.0 }
+    R1115: { margin_right: 111.5 }
+    R1120: { margin_right: 112.0 }
+    R1125: { margin_right: 112.5 }
+    R1130: { margin_right: 113.0 }
+    R1135: { margin_right: 113.5 }
+    R1140: { margin_right: 114.0 }
+    R1145: { margin_right: 114.5 }
+    R1150: { margin_right: 115.0 }
+    R1155: { margin_right: 115.5 }
+    R1160: { margin_right: 116.0 }
+    R1165: { margin_right: 116.5 }
+    R1170: { margin_right: 117.0 }
+    R1175: { margin_right: 117.5 }
+    R1180: { margin_right: 118.0 }
+    R1185: { margin_right: 118.5 }
+    R1190: { margin_right: 119.0 }
+    R1195: { margin_right: 119.5 }
+    R1200: { margin_right: 120.0 }
+    R1205: { margin_right: 120.5 }
+    R1210: { margin_right: 121.0 }
+    R1215: { margin_right: 121.5 }
+    R1220: { margin_right: 122.0 }
+    R1225: { margin_right: 122.5 }
+    R1230: { margin_right: 123.0 }
+    R1235: { margin_right: 123.5 }
+    R1240: { margin_right: 124.0 }
+    R1245: { margin_right: 124.5 }
+    R1250: { margin_right: 125.0 }
+    R1255: { margin_right: 125.5 }
+    R1260: { margin_right: 126.0 }
+    R1265: { margin_right: 126.5 }
+    R1270: { margin_right: 127.0 }
+    R1275: { margin_right: 127.5 }
+    R1280: { margin_right: 128.0 }
+    R1285: { margin_right: 128.5 }
+    R1290: { margin_right: 129.0 }
+    R1295: { margin_right: 129.5 }
+    R1300: { margin_right: 130.0 }
+    R1305: { margin_right: 130.5 }
+    R1315: { margin_right: 131.5 }
+    R1320: { margin_right: 132.0 }
+    R1325: { margin_right: 132.5 }
+    R1330: { margin_right: 133.0 }
+    R1335: { margin_right: 133.5 }
+    R1340: { margin_right: 134.0 }
+    R1345: { margin_right: 134.5 }
+    R1350: { margin_right: 135.0 }
+    R1355: { margin_right: 135.5 }
+    R1360: { margin_right: 136.0 }
+    R1365: { margin_right: 136.5 }
+    R1370: { margin_right: 137.0 }
+    R1375: { margin_right: 137.5 }
+    R1380: { margin_right: 138.0 }
+    R1390: { margin_right: 139.0 }
+    R1395: { margin_right: 139.5 }
+    R1400: { margin_right: 140.0 }
+    R1405: { margin_right: 140.5 }
+    R1410: { margin_right: 141.0 }
+    R1415: { margin_right: 141.5 }
+    R1425: { margin_right: 142.5 }
+    R1435: { margin_right: 143.5 }
+    R1440: { margin_right: 144.0 }
+    R1445: { margin_right: 144.5 }
+    R1450: { margin_right: 145.0 }
+    R1455: { margin_right: 145.5 }
+    R1460: { margin_right: 146.0 }
+    R1465: { margin_right: 146.5 }
+    R1470: { margin_right: 147.0 }
+    R1480: { margin_right: 148.0 }
+    R1485: { margin_right: 148.5 }
+    R1490: { margin_right: 149.0 }
+    R1495: { margin_right: 149.5 }
+    R1500: { margin_right: 150.0 }
+    R1505: { margin_right: 150.5 }
+    R1520: { margin_right: 152.0 }
+    R1525: { margin_right: 152.5 }
+    R1530: { margin_right: 153.0 }
+    R1535: { margin_right: 153.5 }
+    R1545: { margin_right: 154.5 }
+    R1550: { margin_right: 155.0 }
+    R1555: { margin_right: 155.5 }
+    R1560: { margin_right: 156.0 }
+    R1565: { margin_right: 156.5 }
+    R1570: { margin_right: 157.0 }
+    R1575: { margin_right: 157.5 }
+    R1580: { margin_right: 158.0 }
+    R1585: { margin_right: 158.5 }
+    R1590: { margin_right: 159.0 }
+    R1600: { margin_right: 160.0 }
+    R1605: { margin_right: 160.5 }
+    R1610: { margin_right: 161.0 }
+    R1615: { margin_right: 161.5 }
+    R1620: { margin_right: 162.0 }
+    R1625: { margin_right: 162.5 }
+    R1630: { margin_right: 163.0 }
+    R1635: { margin_right: 163.5 }
+    R1640: { margin_right: 164.0 }
+    R1645: { margin_right: 164.5 }
+    R1650: { margin_right: 165.0 }
+    R1655: { margin_right: 165.5 }
+    R1660: { margin_right: 166.0 }
+    R1665: { margin_right: 166.5 }
+    R1670: { margin_right: 167.0 }
+    R1675: { margin_right: 167.5 }
+    R1680: { margin_right: 168.0 }
+    R1685: { margin_right: 168.5 }
+    R1690: { margin_right: 169.0 }
+    R1695: { margin_right: 169.5 }
+    R1700: { margin_right: 170.0 }
+    R1705: { margin_right: 170.5 }
+    R1710: { margin_right: 171.0 }
+    R1715: { margin_right: 171.5 }
+    R1720: { margin_right: 172.0 }
+    R1725: { margin_right: 172.5 }
+    R1730: { margin_right: 173.0 }
+    R1735: { margin_right: 173.5 }
+    R1740: { margin_right: 174.0 }
+    R1745: { margin_right: 174.5 }
+    R1750: { margin_right: 175.0 }
+    R1755: { margin_right: 175.5 }
+    R1760: { margin_right: 176.0 }
+    R1765: { margin_right: 176.5 }
+    R1770: { margin_right: 177.0 }
+    R1775: { margin_right: 177.5 }
+    R1785: { margin_right: 178.5 }
+    R1790: { margin_right: 179.0 }
+    R1795: { margin_right: 179.5 }
+    R1800: { margin_right: 180.0 }
+    R1805: { margin_right: 180.5 }
+    R1815: { margin_right: 181.5 }
+    R1820: { margin_right: 182.0 }
+    R1825: { margin_right: 182.5 }
+    R1830: { margin_right: 183.0 }
+    R1835: { margin_right: 183.5 }
+    R1840: { margin_right: 184.0 }
+    R1845: { margin_right: 184.5 }
+    R1850: { margin_right: 185.0 }
+    R1855: { margin_right: 185.5 }
+    R1860: { margin_right: 186.0 }
+    R1865: { margin_right: 186.5 }
+    R1870: { margin_right: 187.0 }
+    R1875: { margin_right: 187.5 }
+    R1880: { margin_right: 188.0 }
+    R1885: { margin_right: 188.5 }
+    R1890: { margin_right: 189.0 }
+    R1895: { margin_right: 189.5 }
+    R1900: { margin_right: 190.0 }
+    R1905: { margin_right: 190.5 }
+    R1915: { margin_right: 191.5 }
+    R1920: { margin_right: 192.0 }
+    R1925: { margin_right: 192.5 }
+    R1930: { margin_right: 193.0 }
+    R1940: { margin_right: 194.0 }
+    R1945: { margin_right: 194.5 }
+    R1950: { margin_right: 195.0 }
+    R1955: { margin_right: 195.5 }
+    R1970: { margin_right: 197.0 }
+    R1975: { margin_right: 197.5 }
+    R1980: { margin_right: 198.0 }
+    R1985: { margin_right: 198.5 }
+    R1995: { margin_right: 199.5 }
+    R2005: { margin_right: 200.5 }
+    R2015: { margin_right: 201.5 }
+    R2025: { margin_right: 202.5 }
+    R2030: { margin_right: 203.0 }
+    R2035: { margin_right: 203.5 }
+    R2040: { margin_right: 204.0 }
+    R2060: { margin_right: 206.0 }
+    R2070: { margin_right: 207.0 }
+    R2075: { margin_right: 207.5 }
+    R2080: { margin_right: 208.0 }
+    R2085: { margin_right: 208.5 }
+    R2090: { margin_right: 209.0 }
+    R2095: { margin_right: 209.5 }
+    R2105: { margin_right: 210.5 }
+    R2115: { margin_right: 211.5 }
+    R2120: { margin_right: 212.0 }
+    R2125: { margin_right: 212.5 }
+    R2140: { margin_right: 214.0 }
+    R2145: { margin_right: 214.5 }
+    R2150: { margin_right: 215.0 }
+    R2155: { margin_right: 215.5 }
+    R2160: { margin_right: 216.0 }
+    R2180: { margin_right: 218.0 }
+    R2185: { margin_right: 218.5 }
+    R2190: { margin_right: 219.0 }
+    R2205: { margin_right: 220.5 }
+    R2210: { margin_right: 221.0 }
+    R2215: { margin_right: 221.5 }
+    R2220: { margin_right: 222.0 }
+    R2225: { margin_right: 222.5 }
+    R2235: { margin_right: 223.5 }
+    R2240: { margin_right: 224.0 }
+    R2265: { margin_right: 226.5 }
+    R2275: { margin_right: 227.5 }
+    R2280: { margin_right: 228.0 }
+    R2290: { margin_right: 229.0 }
+    R2295: { margin_right: 229.5 }
+    R2300: { margin_right: 230.0 }
+    R2310: { margin_right: 231.0 }
+    R2320: { margin_right: 232.0 }
+    R2325: { margin_right: 232.5 }
+    R2335: { margin_right: 233.5 }
+    R2340: { margin_right: 234.0 }
+    R2350: { margin_right: 235.0 }
+    R2355: { margin_right: 235.5 }
+    R2360: { margin_right: 236.0 }
+    R2370: { margin_right: 237.0 }
+    R2375: { margin_right: 237.5 }
+    R2390: { margin_right: 239.0 }
+    R2395: { margin_right: 239.5 }
+    R2430: { margin_right: 243.0 }
+    R2435: { margin_right: 243.5 }
+    R2455: { margin_right: 245.5 }
+    R2475: { margin_right: 247.5 }
+    R2485: { margin_right: 248.5 }
+    R2490: { margin_right: 249.0 }
+    R2495: { margin_right: 249.5 }
+    R2515: { margin_right: 251.5 }
+    R2520: { margin_right: 252.0 }
+    R2525: { margin_right: 252.5 }
+    R2530: { margin_right: 253.0 }
+    R2545: { margin_right: 254.5 }
+    R2550: { margin_right: 255.0 }
+    R2555: { margin_right: 255.5 }
+    R2560: { margin_right: 256.0 }
+    R2565: { margin_right: 256.5 }
+    R2570: { margin_right: 257.0 }
+    R2585: { margin_right: 258.5 }
+    R2595: { margin_right: 259.5 }
+    R2605: { margin_right: 260.5 }
+    R2620: { margin_right: 262.0 }
+    R2630: { margin_right: 263.0 }
+    R2635: { margin_right: 263.5 }
+    R2650: { margin_right: 265.0 }
+    R2655: { margin_right: 265.5 }
+    R2665: { margin_right: 266.5 }
+    R2700: { margin_right: 270.0 }
+    R2705: { margin_right: 270.5 }
+    R2715: { margin_right: 271.5 }
+    R2720: { margin_right: 272.0 }
+    R2725: { margin_right: 272.5 }
+    R2730: { margin_right: 273.0 }
+    R2745: { margin_right: 274.5 }
+    R2760: { margin_right: 276.0 }
+    R2770: { margin_right: 277.0 }
+    R2775: { margin_right: 277.5 }
+    R2790: { margin_right: 279.0 }
+    R2795: { margin_right: 279.5 }
+    R2800: { margin_right: 280.0 }
+    R2805: { margin_right: 280.5 }
+    R2820: { margin_right: 282.0 }
+    R2830: { margin_right: 283.0 }
+    R2835: { margin_right: 283.5 }
+    R2840: { margin_right: 284.0 }
+    R2845: { margin_right: 284.5 }
+    R2850: { margin_right: 285.0 }
+    R2855: { margin_right: 285.5 }
+    R2860: { margin_right: 286.0 }
+    R2865: { margin_right: 286.5 }
+    R2870: { margin_right: 287.0 }
+    R2880: { margin_right: 288.0 }
+    R2885: { margin_right: 288.5 }
+    R2890: { margin_right: 289.0 }
+    R2900: { margin_right: 290.0 }
+    R2905: { margin_right: 290.5 }
+    R2910: { margin_right: 291.0 }
+    R2915: { margin_right: 291.5 }
+    R2925: { margin_right: 292.5 }
+    R2930: { margin_right: 293.0 }
+    R2935: { margin_right: 293.5 }
+    R2940: { margin_right: 294.0 }
+    R2950: { margin_right: 295.0 }
+    R2980: { margin_right: 298.0 }
+    R2985: { margin_right: 298.5 }
+    R2990: { margin_right: 299.0 }
+    R3120: { margin_right: 312.0 }
+    R3250: { margin_right: 325.0 }
+    R3360: { margin_right: 336.0 }
+    R3365: { margin_right: 336.5 }
+    R3420: { margin_right: 342.0 }
+    R3450: { margin_right: 345.0 }
+    R3495: { margin_right: 349.5 }
+    R3535: { margin_right: 353.5 }
+    R3560: { margin_right: 356.0 }
+    R3600: { margin_right: 360.0 }
+    R3635: { margin_right: 363.5 }
+    R3730: { margin_right: 373.0 }
+    T108: { letter_spacing: 1.08 }
+    T114: { letter_spacing: 1.14 }
+    T127: { letter_spacing: 1.27 }
+    T137: { letter_spacing: 1.37 }
+    T145: { letter_spacing: 1.45 }
+    T168: { letter_spacing: 1.68 }
+    T208: { letter_spacing: 2.08 }
+    T210: { letter_spacing: 2.1 }
+    T333: { letter_spacing: 3.33 }
+    Tm1: { letter_spacing: -0.01 }
+    Tm10: { letter_spacing: -0.1 }
+    Tm11: { letter_spacing: -0.11 }
+    Tm12: { letter_spacing: -0.12 }
+    Tm13: { letter_spacing: -0.13 }
+    Tm14: { letter_spacing: -0.14 }
+    Tm15: { letter_spacing: -0.15 }
+    Tm16: { letter_spacing: -0.16 }
+    Tm17: { letter_spacing: -0.17 }
+    Tm19: { letter_spacing: -0.19 }
+    Tm20: { letter_spacing: -0.2 }
+    Tm21: { letter_spacing: -0.21 }
+    Tm23: { letter_spacing: -0.23 }
+    Tm24: { letter_spacing: -0.24 }
+    Tm25: { letter_spacing: -0.25 }
+    Tm26: { letter_spacing: -0.26 }
+    Tm27: { letter_spacing: -0.27 }
+    Tm28: { letter_spacing: -0.28 }
+    Tm29: { letter_spacing: -0.29 }
+    Tm3: { letter_spacing: -0.03 }
+    Tm30: { letter_spacing: -0.3 }
+    Tm31: { letter_spacing: -0.31 }
+    Tm32: { letter_spacing: -0.32 }
+    Tm33: { letter_spacing: -0.33 }
+    Tm34: { letter_spacing: -0.34 }
+    Tm35: { letter_spacing: -0.35 }
+    Tm36: { letter_spacing: -0.36 }
+    Tm37: { letter_spacing: -0.37 }
+    Tm38: { letter_spacing: -0.38 }
+    Tm4: { letter_spacing: -0.04 }
+    Tm40: { letter_spacing: -0.4 }
+    Tm43: { letter_spacing: -0.43 }
+    Tm46: { letter_spacing: -0.46 }
+    Tm5: { letter_spacing: -0.05 }
+    Tm50: { letter_spacing: -0.5 }
+    Tm54: { letter_spacing: -0.54 }
+    Tm6: { letter_spacing: -0.06 }
+    Tm67: { letter_spacing: -0.67 }
+    Tm68: { letter_spacing: -0.68 }
+    Tm7: { letter_spacing: -0.07 }
+    Tm8: { letter_spacing: -0.08 }
+    Tm9: { letter_spacing: -0.09 }
   header:
-    height: 0.65in
-    vertical_align: bottom
-    font_size: 10
+    height: 50pt
+    vertical_align: top
+    padding: [19pt, 112.3pt, 0, 112.3pt]
+    font_size: 11.5
     font_style: italic
-    text_transform: uppercase
-    recto:
-      left: { content: '' }
-      center: { content: 'Book I. {section-title}' }
-      right: { content: '{page-number}' }
-    verso:
-      left: { content: '{page-number}' }
-      center: { content: 'Book I. {section-title}' }
-      right: { content: '' }
+    character_spacing: 0.8
+    recto: { left: { content: '' }, center: { content: '{chapter-title-spread}' }, right: { content: '[.folio]#{page-number}#' } }
+    verso: { left: { content: '[.folio]#{page-number}#' }, center: { content: '{chapter-title-spread}' }, right: { content: '' } }
   footer:
-    height: 0.4in
-    border_width: 0
+    height: 0
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
     verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-webfonts:
-  - Libre Caslon Text:400,400italic
-css: |
-  #content h2,#content h3{text-align:center;text-transform:uppercase}
-  .paragraph.enunciation p{font-style:italic}
-  .paragraph.dropcap p::first-letter{float:left;font-style:normal;font-size:3.6em;line-height:.8;padding:.05em .1em 0 0}
-  .paragraph.qed p{text-align:right}
-  span.image img{zoom:1.7;vertical-align:baseline}
-  .imageblock.left{float:left;margin:0 1.5em 1em 0}
-  .imageblock.right{float:right;margin:0 0 1em 1.5em}
-  .imageblock.left img,.imageblock.right img{zoom:1.7}
-epub-css: |
-  h2,h3{text-align:center;text-transform:uppercase}
-  .paragraph.enunciation p{font-style:italic}
-  .paragraph.qed p{text-align:right}
-  span.image img{vertical-align:baseline}

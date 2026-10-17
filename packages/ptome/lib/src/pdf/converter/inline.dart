@@ -320,9 +320,21 @@ extension _InlineElements on PdfConverter {
             widthValue = '${width.value}';
         }
         final escapedAlt = alt.replaceAll('"', '&quot;');
+        // (Its own `vertical-align`, modern engine: its bottom that far
+        // above the baseline, its line no taller for it.)
+        final valign = asciidoctorCompat(_document, CompatFormat.pdf)
+            ? null
+            : node.attr('vertical-align');
+        // (strToPoints reads a length's size, not its sign.)
+        final valignAttr = switch (valign?.trim()) {
+          null => '',
+          final v when v.startsWith('-') =>
+            ' valign="${-strToPoints(v.substring(1))}"',
+          final v => ' valign="${strToPoints(v)}"',
+        };
         image =
             '<img src="$src" format="$format" alt="$escapedAlt" '
-            'width="$widthValue"$classAttr$fitAttr>';
+            'width="$widthValue"$classAttr$fitAttr$valignAttr>';
       }
     }
     if (node.attr('link') case final link? when link.isNotEmpty) {

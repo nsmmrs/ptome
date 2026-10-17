@@ -1,0 +1,66 @@
+# Byrne's Euclid as William Pickering printed it in 1847, page for page
+# and line for line: a small quarto, 7.4 by 9.3 inches; Caslon at about
+# 10.6 pt, each printed line a paragraph of its own (L/R roles: its
+# margins, in tenths of a point, as the scan has them), justified to its
+# width; the running head in italic capitals, the folio outside it in
+# old-style figures, the opening page unheaded; each page's diagrams and
+# woodcut initial pictures where the scan has them. The roles after
+# `# The lines` are tool/byrne_1847's (gen.py writes this file from its
+# look-base.yml); T<n> tracks a line by n hundredths of a point, Tm<n>
+# closes it, where Libre Caslon sets it wider or narrower than the
+# printing's Caslon.
+#
+# Libre Caslon Text (`ptome doctor --look byrne --looksdir
+# test/showcase/byrne`).
+extends: ptome
+tokens:
+  font:
+    text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
+    display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
+  size:
+    text: { print: 10.6pt, screen: 20px }
+  leading: { print: 1, screen: 2 }
+  align: { print: start }
+  hyphenate: { print: false }
+  color: { ink: '#1C1C1C', link: '#1C1C1C' }
+  page: { size: [7.4in, 9.3in], margin: [50pt, 0pt, 0pt, 0pt] }
+pdf:
+  base_margin_break: keep
+  running_content_start_at: 2
+  base_font_variant_numeric: oldstyle-nums
+  base_small_caps_synthesis: lowercase
+  heading:
+    chapter_break_before: always
+    margin_top: 0
+    margin_page_top: 0
+    margin_bottom: 0
+  prose:
+    margin_bottom: 0
+    text_indent: 0
+    orphans: 1
+    widows: 1
+  image:
+    margin_top: 0
+    margin_bottom: 0
+    align: left
+  role:
+    l: { text_align: left }
+    j: { text_align: justify, text_align_last: justify }
+    folio: { font_style: normal }
+    sc: { font_variant: small-caps }
+    sig: { font_size: 8 }
+    # The lines
+    # ROLES
+  header:
+    height: 50pt
+    vertical_align: top
+    padding: [19pt, 112.3pt, 0, 112.3pt]
+    font_size: 11.5
+    font_style: italic
+    character_spacing: 0.8
+    recto: { left: { content: '' }, center: { content: '{chapter-title-spread}' }, right: { content: '[.folio]#{page-number}#' } }
+    verso: { left: { content: '[.folio]#{page-number}#' }, center: { content: '{chapter-title-spread}' }, right: { content: '' } }
+  footer:
+    height: 0
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }

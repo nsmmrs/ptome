@@ -364,6 +364,11 @@ final class Fragment {
   /// The image's fit.
   String? imageFit;
 
+  /// An inline image's own `vertical-align` (a length): its bottom that
+  /// far above the baseline (below it when negative), its line no taller
+  /// for it (modern engine).
+  String? imageVerticalAlign;
+
   /// Identifies an image fragment across splits.
   int? objectId;
 
@@ -409,6 +414,7 @@ final class Fragment {
     ..imageFormat = imageFormat
     ..imageWidth = imageWidth
     ..imageFit = imageFit
+    ..imageVerticalAlign = imageVerticalAlign
     ..objectId = objectId;
 }
 
@@ -946,7 +952,8 @@ final class MarkupTransform {
           }
           image
             ..imageWidth = attributes['width']
-            ..imageFit = attributes['fit'];
+            ..imageFit = attributes['fit']
+            ..imageVerticalAlign = attributes['valign'];
           fragments.add(image);
           previousIsText = false;
         case MarkupElement():

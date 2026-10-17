@@ -1,106 +1,3116 @@
-[#book-1]
-== Book I.
+// Book I as the 1847 printing sets it, page for page and line for line:
+// made by tool/byrne_1847 (gen.py) from text.tsv; not edited by hand.
 
-[#prop-1]
-=== Proposition I. Problem.
+// tag::page-1[]
+[%notitle#prop-1.opening]
+== Proposition I.
 
-image::prop-1.svg["Two equal circles, blue and red, each through the other’s centre; the black line joins the centres, and the yellow and red lines join its ends to a point where the circles cross",float=right]
+// page 1 (leaf 35)
+[.d,margin-top=-12.92pt]
+image::l35-c0.svg["A headpiece of ornament",pdfwidth=532.8pt]
 
-[.enunciation.dropcap]
-On a given finite straight line ({black}) to describe an equilateral triangle.
+[.d,margin-top=41.52pt]
+image::l35-line572.svg["Euclid.",pdfwidth=532.8pt]
 
-Describe image:prop-1-circle-blue.svg[the blue circle] and image:prop-1-circle-red.svg[the red circle] (postulate 3.); draw {yellow} and {red} (post. 1.).
+[.j.T145.L2395.R2395,margin-top=33.18pt]
+BOOK I.
 
-then will image:prop-1-triangle.svg[the triangle] be equilateral.
+[.j.T168.L1715.R1730,margin-top=13.64pt]
+PROPOSITION I. PROBLEM.
 
-[.steps%hardbreaks]
-For {black} {eq} {yellow} (def. 15.);
-and {black} {eq} {red} (def. 15.),
-{therefore} {yellow} {eq} {red} (axiom. 1.);
-and therefore image:prop-1-triangle.svg[the triangle] is the equilateral triangle required.
+[.d,margin-top=15.26pt]
+image::l35-c75.svg["The diagram of Proposition I",pdfwidth=532.8pt]
 
-[.qed]
-Q.{nbsp}E.{nbsp}D.
+[.d,margin-top=-149.52pt]
+image::l35-initial.svg["O",pdfwidth=532.8pt]
 
+[.j.L1665.R2555,margin-top=-50.58pt]
+N __a given finite__
+
+[.j.L1690.R2565,margin-top=8.12pt]
+__straight line__ (image:l35-c79.svg["a black line",pdfwidth=27.60pt,vertical-align=0.24pt])
+
+[.j.Tm30.L1725.R2565,margin-top=8.60pt]
+__to describe an equila-__
+
+[.j.L1100.R3535,margin-top=8.36pt]
+__teral triangle.__
+
+[.j.L1345.R2655,margin-top=43.16pt]
+Describe image:l35-c90.svg["a blue and black figure",pdfwidth=53.52pt,vertical-align=-22.32pt] and
+
+[.j.L1115.R1140,margin-top=34.52pt]
+image:l35-c91.svg["a red and black figure",pdfwidth=53.04pt,vertical-align=-21.84pt] (postulate 3.); draw image:l35-c93.svg["a yellow line",pdfwidth=28.32pt,vertical-align=0.48pt] and image:l35-c92.svg["a red line",pdfwidth=25.44pt,vertical-align=2.16pt] (post. 1.).
+
+[.j.L1920.R1825,margin-top=21.80pt]
+then will image:l35-c94.svg["a black and yellow and red figure",pdfwidth=29.52pt,vertical-align=-9.84pt] be equilateral.
+
+[.j.L1790.R1800,margin-top=33.32pt]
+For image:l35-c99.svg["a black line",pdfwidth=29.28pt,vertical-align=1.44pt] image:l35-c98.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l35-c100.svg["a yellow line",pdfwidth=28.08pt,vertical-align=1.20pt] (def. 15.);
+
+[.j.L1795.R1835,margin-top=11.48pt]
+and image:l35-c107.svg["a black line",pdfwidth=29.04pt,vertical-align=1.44pt] image:l35-c105.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l35-c106.svg["a red line",pdfwidth=29.04pt,vertical-align=2.16pt] (def. 15.),
+
+[.j.L1825.R1740,margin-top=11.24pt]
+image:l35-c110.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l35-c112.svg["a yellow line",pdfwidth=27.60pt,vertical-align=1.92pt] image:l35-c111.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l35-c113.svg["a red line",pdfwidth=29.04pt,vertical-align=1.92pt] (axiom. 1.);
+
+[.j.L1100.R1330,margin-top=17.96pt]
+and therefore image:l35-c118.svg["a black and red and yellow figure",pdfwidth=30.48pt,vertical-align=-8.88pt] is the equilateral triangle required.
+
+[.j.L3595.R1265,margin-top=20.60pt]
+{empty}Q. E. D.
+
+[.l.sig.L2765.R0,margin-top=12.68pt]
+B
+
+// end::page-1[]
+
+// tag::page-2[]
+[%notitle#prop-2.prop,running-title="BOOK I.  PROP. II.  PROB."]
+== Proposition II.
+
+// page 2 (leaf 36)
+[.d,margin-top=23.08pt]
+image::l36-c0.svg["The diagram of Proposition II",pdfwidth=532.8pt]
+
+[.d,margin-top=-181.92pt]
+image::l36-initial.svg["F",pdfwidth=532.8pt]
+
+[.j.L2755.R1120,margin-top=-57.78pt]
+ROM __a given point__ (image:l36-c7.svg["a red and black and blue line",pdfwidth=26.88pt,vertical-align=0.24pt]),
+
+[.j.Tm12.L2815.R1105,margin-top=5.96pt]
+__to draw a straight line equal__
+
+[.j.L2815.R1115,margin-top=5.72pt]
+__to a given finite straight__
+
+[.j.L2810.R1660,margin-top=4.52pt]
+__line__ (image:l36-c28.svg["a black line",pdfwidth=48.72pt,vertical-align=-0.96pt]).
+
+[.j.L2335.R1120,margin-top=33.80pt]
+Draw image:l36-c33.svg["a black line",pdfwidth=46.56pt,vertical-align=0.96pt] (post. 1.), describe
+
+[.j.L2205.R1130,margin-top=14.36pt]
+image:l36-c47.svg["a red and black figure",pdfwidth=28.08pt,vertical-align=-11.04pt] (pr. 1.), produce image:l36-c52.svg["a red line",pdfwidth=33.36pt,vertical-align=1.68pt] (post.
+
+[.j.L2200.R1125,margin-top=27.80pt]
+2.), describe image:l36-c61.svg["a blue and black figure",pdfwidth=43.44pt,vertical-align=-18.48pt] (post. 3.), and
+
+[.d,margin-top=31.10pt]
+image::l36-c63.svg["The diagram of Proposition II",pdfwidth=532.8pt]
+
+[.j.L1865.R1135,margin-top=-51.54pt]
+(post. 3.); produce image:l36-c64.svg["a red line",pdfwidth=48.00pt,vertical-align=2.16pt] (post. 2.), then
+
+[.j.L2190.R1560,margin-top=14.36pt]
+image:l36-c72.svg["a blue and black line",pdfwidth=46.56pt,vertical-align=1.20pt] is the line required.
+
+[.j.L1275.R1145,margin-top=42.20pt]
+For image:l36-c81.svg["a yellow and red line",pdfwidth=73.44pt,vertical-align=1.20pt] image:l36-c79.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l36-c80.svg["a blue and red and black line",pdfwidth=76.80pt,vertical-align=1.68pt] (def. 15.),
+
+[.j.L1090.R1165,margin-top=14.12pt]
+and image:l36-c87.svg["a red line",pdfwidth=37.68pt,vertical-align=1.92pt] image:l36-c86.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l36-c90.svg["a red line",pdfwidth=37.20pt,vertical-align=1.68pt] (const.), image:l36-c85.svg["therefore",pdfwidth=10.56pt,vertical-align=-2.16pt] image:l36-c91.svg["a yellow line",pdfwidth=48.96pt,vertical-align=0.48pt] image:l36-c88.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.44pt] image:l36-c89.svg["a blue and black line",pdfwidth=49.20pt,vertical-align=1.92pt]
+
+[.j.L1090.R1160,margin-top=14.60pt]
+(ax. 3.), but (def. 15.) image:l36-c100.svg["a black line",pdfwidth=44.40pt,vertical-align=0.72pt] image:l36-c97.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l36-c101.svg["a yellow line",pdfwidth=43.92pt,vertical-align=0.24pt] image:l36-c98.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.44pt] image:l36-c99.svg["a blue and black line",pdfwidth=47.28pt,vertical-align=1.68pt];
+
+[.j.L1085.R1170,margin-top=14.84pt]
+image:l36-c107.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.92pt] image:l36-c113.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=1.20pt] drawn from the given point (image:l36-c109.svg["a red and blue and black line",pdfwidth=53.76pt,vertical-align=1.68pt]),
+
+[.j.L1075.R2490,margin-top=14.60pt]
+is equal the given line image:l36-c118.svg["a black line",pdfwidth=54.96pt,vertical-align=-2.40pt]
+
+[.j.L3580.R1295,margin-top=14.60pt]
+{empty}Q. E. D.
+
+// end::page-2[]
+
+// tag::page-3[]
+[%notitle#prop-3.prop,running-title="BOOK I.  PROP. III.  PROB."]
+== Proposition III.
+
+// page 3 (leaf 37)
+[.d,margin-top=-6.20pt]
+image::l37-c0.svg["The diagram of Proposition III",pdfwidth=532.8pt]
+
+[.d,margin-top=-144.72pt]
+image::l37-initial.svg["F",pdfwidth=532.8pt]
+
+[.j.L1660.R2620,margin-top=-59.22pt]
+ROM __the greater__
+
+[.j.L1725.R2595,margin-top=12.44pt]
+(image:l37-c5.svg["a black line",pdfwidth=69.84pt,vertical-align=-0.72pt]) __of__
+
+[.d,margin-top=7.34pt]
+image::l37-c11.svg["therefore",pdfwidth=532.8pt]
+
+[.j.L1715.R2620,margin-top=-0.42pt]
+__two given straight__
+
+[.j.L1095.R2630,margin-top=10.52pt]
+__lines, to cut off a part equal to__
+
+[.j.L1090.R3250,margin-top=10.52pt]
+__the less__ (image:l37-c19.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=0.96pt]).
+
+[.j.L1295.R1120,margin-top=66.44pt]
+Draw image:l37-c21.svg["a red line",pdfwidth=48.00pt,vertical-align=4.08pt] image:l37-c22.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.72pt] image:l37-c23.svg["a blue and black line",pdfwidth=47.52pt,vertical-align=1.68pt] (pr. 2.); describe
+
+[.j.L1130.R1335,margin-top=31.16pt]
+image:l37-c26.svg["a blue and black and red figure",pdfwidth=64.56pt,vertical-align=-26.16pt] (post. 3.), then image:l37-c29.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.24pt] image:l37-c28.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.16pt] image:l37-c30.svg["a black line",pdfwidth=53.52pt,vertical-align=-3.36pt]
+
+[.j.L1650.R1605,margin-top=55.40pt]
+For image:l37-c35.svg["a red line",pdfwidth=48.00pt,vertical-align=3.84pt] image:l37-c36.svg["is equal to",pdfwidth=14.40pt,vertical-align=0.24pt] image:l37-c37.svg["a black line",pdfwidth=47.52pt,vertical-align=1.20pt] (def. 15.),
+
+[.j.L1660.R1710,margin-top=19.16pt]
+and image:l37-c39.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=3.12pt] image:l37-c40.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.24pt] image:l37-c41.svg["a red line",pdfwidth=48.24pt,vertical-align=2.16pt] (const.);
+
+[.j.L1710.R1730,margin-top=19.64pt]
+image:l37-c43.svg["therefore",pdfwidth=12.00pt,vertical-align=-1.44pt] image:l37-c44.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=2.88pt] image:l37-c45.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l37-c46.svg["a black line",pdfwidth=46.56pt,vertical-align=0.72pt] (ax. 1.).
+
+[.j.L3595.R1260,margin-top=28.04pt]
+{empty}Q. E. D.
+
+// end::page-3[]
+
+// tag::page-4[]
+[%notitle#prop-4.prop,running-title="BOOK I.  PROP. IV.  THEOR."]
+== Proposition IV.
+
+// page 4 (leaf 38)
+[.d,margin-top=7.00pt]
+image::l38-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.Tm7.L3480.R1095,margin-top=-57.30pt]
+F __two triangles__
+
+[.d,margin-top=-8.98pt]
+image::l38-c1.svg["The diagram of Proposition IV",pdfwidth=532.8pt]
+
+[.j.Tm43.L3540.R1095,margin-top=-155.46pt]
+__have two sides__
+
+[.j.L3545.R1095,margin-top=7.88pt]
+__of the one__
+
+[.l.L3615.R0,margin-top=7.64pt]
+__respectively__
+
+[.j.L2925.R1090,margin-top=7.88pt]
+__equal to two sides of the__
+
+[.j.L2925.R1095,margin-top=7.64pt]
+__other,__ (image:l38-c14.svg["a red line",pdfwidth=28.08pt,vertical-align=0.24pt] __to__ image:l38-c13.svg["a red line",pdfwidth=28.56pt,vertical-align=0.24pt]
+
+[.j.L2925.R1085,margin-top=7.64pt]
+__and__ image:l38-c16.svg["a blue and black line",pdfwidth=27.36pt,vertical-align=-1.20pt] __to__ image:l38-c15.svg["a blue and black line",pdfwidth=27.36pt,vertical-align=-0.96pt]) __and__
+
+[.j.L2925.R1105,margin-top=16.52pt]
+__the angles__ (image:l38-c18.svg["a yellow figure",pdfwidth=20.64pt,vertical-align=-11.28pt] __and__ image:l38-c17.svg["a yellow figure",pdfwidth=21.84pt,vertical-align=-10.56pt])
+
+[.j.L2930.R1085,margin-top=15.80pt]
+__contained by those equal__
+
+[.j.L1080.R1090,margin-top=8.12pt]
+__sides also equal; then their bases or their sides__ (image:l38-c20.svg["a black line",pdfwidth=40.32pt,vertical-align=-3.84pt] __and__
+
+[.j.L1115.R1105,margin-top=8.12pt]
+image:l38-c28.svg["a black line",pdfwidth=36.48pt,vertical-align=0.72pt]) __are also equal: and the remaining and their remain-__
+
+[.j.L1115.R1090,margin-top=7.64pt]
+__ing angles opposite to equal sides are respectively equal__
+
+[.j.L1115.R1100,margin-top=18.92pt]
+(image:l38-c37.svg["a blue figure",pdfwidth=22.08pt,vertical-align=-3.36pt] image:l38-c41.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l38-c38.svg["a blue figure",pdfwidth=22.08pt,vertical-align=-4.32pt] __and__ image:l38-c35.svg["a red figure",pdfwidth=22.32pt,vertical-align=-7.20pt] image:l38-c40.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l38-c36.svg["a red figure",pdfwidth=21.36pt,vertical-align=-6.96pt]): __and the triangles are__
+
+[.j.Tm13.L1110.R3120,margin-top=8.60pt]
+__equal in every respect.__
+
+[.j.L1250.R1105,margin-top=23.24pt]
+Let the two triangles be conceived, to be so placed, that
+
+[.j.L1120.R1110,margin-top=14.12pt]
+the vertex of the one of the equal angles, image:l38-c45.svg["a yellow figure",pdfwidth=22.08pt,vertical-align=-11.04pt] or image:l38-c46.svg["a yellow figure",pdfwidth=21.60pt,vertical-align=-13.92pt];
+
+[.j.L1120.R1110,margin-top=15.80pt]
+shall fall upon that of the other, and image:l38-c49.svg["a red line",pdfwidth=50.40pt,vertical-align=0.00pt] to coincide
+
+[.j.L1120.R1110,margin-top=7.16pt]
+with image:l38-c51.svg["a red line",pdfwidth=49.92pt,vertical-align=0.24pt], then will image:l38-c54.svg["a blue and black line",pdfwidth=32.64pt,vertical-align=-0.96pt] coincide with image:l38-c53.svg["a blue and black line",pdfwidth=31.92pt,vertical-align=-0.24pt] if ap-
+
+[.j.L1125.R1110,margin-top=7.64pt]
+plied: consequently image:l38-c64.svg["a black line",pdfwidth=49.68pt,vertical-align=0.24pt] will coincide with image:l38-c63.svg["a black line",pdfwidth=45.36pt,vertical-align=1.20pt],
+
+[.j.L1125.R1110,margin-top=7.88pt]
+or two straight lines will enclose a space, which is impossible
+
+[.j.L1130.R1120,margin-top=13.64pt]
+(ax. 10), therefore image:l38-c71.svg["a black line",pdfwidth=48.48pt,vertical-align=0.72pt] image:l38-c70.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l38-c72.svg["a black line",pdfwidth=48.72pt,vertical-align=0.72pt], image:l38-c68.svg["a blue figure",pdfwidth=21.12pt,vertical-align=-8.88pt] image:l38-c69.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l38-c67.svg["a blue and black figure",pdfwidth=21.84pt,vertical-align=-8.16pt]
+
+[.j.L1125.R1115,margin-top=34.52pt]
+and image:l38-c78.svg["a red figure",pdfwidth=22.08pt,vertical-align=-12.48pt] image:l38-c83.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l38-c79.svg["a red figure",pdfwidth=21.12pt,vertical-align=-12.24pt], and as the triangles image:l38-c77.svg["a black and red and blue figure",pdfwidth=38.16pt,vertical-align=-16.32pt] and image:l38-c76.svg["a black and red and blue figure",pdfwidth=37.68pt,vertical-align=-14.64pt]
+
+[.j.L1130.R1260,margin-top=18.44pt]
+coincide, when applied, they are equal in every respect.
+
+[.j.L3650.R1230,margin-top=9.56pt]
+{empty}Q. E. D.
+
+// end::page-4[]
+
+// tag::page-5[]
+[%notitle#prop-5.prop,running-title="BOOK I.  PROP. V.  THEOR."]
+== Proposition V.
+
+// page 5 (leaf 39)
+[.d,margin-top=-8.12pt]
+image::l39-c0.svg["The diagram of Proposition V",pdfwidth=532.8pt]
+
+[.d,margin-top=-203.28pt]
+image::l39-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1710.R2375,margin-top=-55.38pt]
+N __any isosceles triangle__
+
+[.j.L1750.R2375,margin-top=16.04pt]
+image:l39-c2.svg["a red and black figure",pdfwidth=26.64pt,vertical-align=-3.60pt] __if the equal sides__
+
+[.j.Tm28.L1765.R2360,margin-top=5.72pt]
+__be produced, the external__
+
+[.j.Tm8.L1155.R2375,margin-top=5.96pt]
+__angles at the base are equal, and the__
+
+[.j.L1155.R2375,margin-top=5.72pt]
+__internal angles at the base are also__
+
+[.l.L1155.R0,margin-top=5.96pt]
+__equal.__
+
+[.j.L1355.R2375,margin-top=32.12pt]
+Produce image:l39-c3.svg["a red line",pdfwidth=48.96pt,vertical-align=0.48pt], and
+
+[.j.L1160.R2375,margin-top=5.48pt]
+image:l39-c5.svg["a red line",pdfwidth=48.48pt,vertical-align=0.24pt], (post. 2.), take
+
+[.j.L1165.R2375,margin-top=8.84pt]
+image:l39-c7.svg["a yellow line",pdfwidth=49.20pt,vertical-align=3.36pt] image:l39-c6.svg["is equal to",pdfwidth=14.16pt,vertical-align=1.92pt] image:l39-c8.svg["a yellow line",pdfwidth=48.24pt,vertical-align=3.36pt], (pr. 3.);
+
+[.j.L1160.R2570,margin-top=3.08pt]
+draw image:l39-c10.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=0.72pt] and image:l39-c11.svg["a blue and black line",pdfwidth=47.04pt,vertical-align=0.72pt].
+
+[.j.L1425.R1065,margin-top=38.84pt]
+Then in image:l39-c12.svg["a red and black and blue and yellow figure",pdfwidth=53.04pt,vertical-align=-33.60pt] and image:l39-c13.svg["a red and black and yellow and blue figure",pdfwidth=56.88pt,vertical-align=-35.52pt] we have,
+
+[.j.L1165.R1060,margin-top=44.12pt]
+image:l39-c23.svg["a red and yellow line",pdfwidth=64.32pt,vertical-align=1.20pt] image:l39-c20.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l39-c21.svg["a red and yellow line",pdfwidth=65.76pt,vertical-align=0.96pt] (const.), image:l39-c16.svg["a black figure",pdfwidth=23.28pt,vertical-align=-11.28pt] common to
+
+[.j.L1165.R1060,margin-top=26.36pt]
+both, and image:l39-c37.svg["a red line",pdfwidth=37.20pt,vertical-align=3.60pt] image:l39-c33.svg["is equal to",pdfwidth=14.16pt,vertical-align=1.44pt] image:l39-c36.svg["a red line",pdfwidth=37.20pt,vertical-align=3.84pt] (hyp.) image:l39-c34.svg["therefore",pdfwidth=11.76pt,vertical-align=-0.48pt] image:l39-c31.svg["a blue and yellow figure",pdfwidth=21.60pt,vertical-align=-12.00pt] image:l39-c35.svg["is equal to",pdfwidth=13.20pt,vertical-align=0.96pt] image:l39-c32.svg["a blue and yellow figure",pdfwidth=24.00pt,vertical-align=-12.48pt];
+
+[.j.L1380.R1215,margin-top=19.88pt]
+image:l39-c49.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=0.24pt] image:l39-c46.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l39-c48.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=0.72pt] and image:l39-c45.svg["a red figure",pdfwidth=22.08pt,vertical-align=-7.92pt] image:l39-c47.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l39-c44.svg["a red figure",pdfwidth=24.24pt,vertical-align=-8.40pt] (pr. 4.).
+
+[.j.Tm33.L1175.R1060,margin-top=23.48pt]
+image:l39-c54.svg["Again in",pdfwidth=31.68pt,vertical-align=-10.08pt] image:l39-c53.svg["a black and yellow and blue figure",pdfwidth=40.56pt,vertical-align=-18.00pt] and image:l39-c52.svg["a black and blue and yellow figure",pdfwidth=43.92pt,vertical-align=-16.56pt] we have image:l39-c71.svg["a yellow line",pdfwidth=49.20pt,vertical-align=-1.44pt] image:l39-c62.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.92pt] image:l39-c70.svg["a yellow line",pdfwidth=48.72pt,vertical-align=-0.96pt];
+
+[.j.L1430.R1315,margin-top=24.44pt]
+image:l39-c78.svg["a red figure",pdfwidth=22.08pt,vertical-align=-7.68pt] image:l39-c81.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l39-c79.svg["a red figure",pdfwidth=22.56pt,vertical-align=-9.12pt] and image:l39-c84.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=0.24pt] image:l39-c82.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l39-c83.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=0.48pt], image:l39-c80.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.20pt]
+
+[.j.L1195.R1055,margin-top=20.84pt]
+image:l39-c91.svg["a yellow and black figure",pdfwidth=39.84pt,vertical-align=-12.24pt] image:l39-c95.svg["is equal to",pdfwidth=13.20pt,vertical-align=-1.92pt] image:l39-c90.svg["a yellow and black figure",pdfwidth=42.96pt,vertical-align=-12.72pt] and image:l39-c92.svg["a yellow figure",pdfwidth=31.20pt,vertical-align=-5.52pt] image:l39-c94.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l39-c93.svg["a yellow figure",pdfwidth=30.24pt,vertical-align=-4.80pt] (pr. 4.) but
+
+[.j.L1495.R1320,margin-top=29.00pt]
+image:l39-c100.svg["a blue and yellow figure",pdfwidth=27.60pt,vertical-align=-18.96pt] image:l39-c110.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.88pt] image:l39-c99.svg["a blue and yellow figure",pdfwidth=27.36pt,vertical-align=-17.28pt], image:l39-c108.svg["therefore",pdfwidth=12.24pt,vertical-align=-3.12pt] image:l39-c102.svg["a blue figure",pdfwidth=29.04pt,vertical-align=-11.28pt] image:l39-c109.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l39-c101.svg["a blue figure",pdfwidth=29.04pt,vertical-align=-11.28pt] (ax. 3.)
+
+[.j.L3680.R1170,margin-top=17.96pt]
+{empty}Q. E. D.
+
+// end::page-5[]
+
+// tag::page-6[]
+[%notitle#prop-6.prop,running-title="BOOK I.  PROP. VI.  THEOR."]
+== Proposition VI.
+
+// page 6 (leaf 40)
+[.d,margin-top=20.68pt]
+image::l40-c0.svg["The diagram of Proposition VI",pdfwidth=532.8pt]
+
+[.d,margin-top=-177.84pt]
+image::l40-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L2740.R1110,margin-top=-57.30pt]
+N __any triangle__ (image:l40-c1.svg["a black and blue and red figure",pdfwidth=36.00pt,vertical-align=-4.08pt]) __if__
+
+[.j.L2770.R1145,margin-top=15.32pt]
+__two angles__ (image:l40-c18.svg["a yellow figure",pdfwidth=24.00pt,vertical-align=-8.64pt] __and__ image:l40-c19.svg["a black figure",pdfwidth=26.64pt,vertical-align=-9.60pt])
+
+[.j.Tm43.L2775.R1165,margin-top=12.92pt]
+__are equal, the sides__ (image:l40-c21.svg["a black line",pdfwidth=44.40pt,vertical-align=-0.96pt]
+
+[.j.Tm11.L2185.R1150,margin-top=8.60pt]
+__and__ image:l40-c26.svg["a blue and black line",pdfwidth=49.44pt,vertical-align=2.40pt]) __opposite to them are also__
+
+[.l.L2185.R0,margin-top=5.72pt]
+__equal.__
+
+[.j.L2320.R1160,margin-top=33.08pt]
+For if the sides be not equal, let one
+
+[.j.L2170.R1160,margin-top=8.60pt]
+of them image:l40-c27.svg["a black line",pdfwidth=47.76pt,vertical-align=0.72pt] be greater than the
+
+[.j.L2170.R1145,margin-top=8.60pt]
+other image:l40-c33.svg["a blue and black line",pdfwidth=47.28pt,vertical-align=1.44pt], and from it cut off
+
+[.j.L2170.R1165,margin-top=8.84pt]
+image:l40-c36.svg["a black line",pdfwidth=48.72pt,vertical-align=1.20pt] image:l40-c35.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l40-c37.svg["a blue and black line",pdfwidth=49.44pt,vertical-align=1.20pt] (pr. 3.), draw
+
+[.j.L2180.R2635,margin-top=10.28pt]
+image:l40-c39.svg["a yellow line",pdfwidth=52.32pt,vertical-align=0.00pt]
+
+[.j.L1190.R1190,margin-top=41.24pt]
+Then in image:l40-c43.svg["a black and red and yellow figure",pdfwidth=35.28pt,vertical-align=-3.12pt] and image:l40-c42.svg["a black and red and blue figure",pdfwidth=36.00pt,vertical-align=-5.04pt], image:l40-c52.svg["a black line",pdfwidth=48.72pt,vertical-align=-1.68pt] image:l40-c50.svg["is equal to",pdfwidth=14.40pt,vertical-align=-3.36pt] image:l40-c51.svg["a blue and black line",pdfwidth=50.40pt,vertical-align=-1.20pt],
+
+[.j.L1055.R1195,margin-top=19.64pt]
+(const.) image:l40-c57.svg["a yellow figure",pdfwidth=24.48pt,vertical-align=-7.92pt] image:l40-c59.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.44pt] image:l40-c56.svg["a black figure",pdfwidth=27.12pt,vertical-align=-6.96pt] (hyp.) and image:l40-c60.svg["a red line",pdfwidth=48.96pt,vertical-align=0.72pt] common,
+
+[.j.L1055.R1200,margin-top=12.20pt]
+image:l40-c62.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.92pt] the triangles are equal (pr. 4.) a part equal to the whole,
+
+[.j.L1050.R1200,margin-top=10.76pt]
+which is absurd; image:l40-c62.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.92pt] neither of the sides image:l40-c72.svg["a black line",pdfwidth=28.08pt,vertical-align=0.96pt]image:l40-c68.svg["a black line",pdfwidth=18.96pt,vertical-align=1.20pt] or
+
+[.j.L1030.R1205,margin-top=10.76pt]
+image:l40-c77.svg["a blue and black line",pdfwidth=51.12pt,vertical-align=0.24pt] is greater than the other, image:l40-c62.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.92pt] hence they are
+
+[.l.L1040.R0,margin-top=11.48pt]
+equal
+
+[.j.L3520.R1330,margin-top=6.20pt]
+{empty}Q. E. D.
+
+// end::page-6[]
+
+// tag::page-7[]
+[%notitle#prop-7.prop,running-title="BOOK I.  PROP. VII.  THEOR."]
+== Proposition VII.
+
+// page 7 (leaf 41)
+[.d,margin-top=21.16pt]
+image::l41-c0.svg["The diagram of Proposition VII",pdfwidth=532.8pt]
+
+[.d,margin-top=-319.20pt]
+image::l41-initial.svg["O",pdfwidth=532.8pt]
+
+[.j.L1700.R1760,margin-top=-58.02pt]
+N __the same base__ (image:l41-c1.svg["a black line",pdfwidth=51.84pt,vertical-align=-3.84pt]), __and on__
+
+[.j.Tm31.L1745.R1765,margin-top=5.48pt]
+__the same side of it there cannot be two__
+
+[.j.L1740.R1760,margin-top=5.72pt]
+__triangles having their conterminous__
+
+[.j.L1710.R1765,margin-top=5.48pt]
+__sides__ (image:l41-c14.svg["a red line",pdfwidth=48.24pt,vertical-align=1.20pt] __and__ image:l41-c15.svg["a red line",pdfwidth=48.48pt,vertical-align=0.96pt],
+
+[.j.L1145.R1735,margin-top=5.72pt]
+image:l41-c17.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.96pt] __and__ image:l41-c18.svg["a blue and black line",pdfwidth=49.20pt,vertical-align=0.96pt]) __at both extremities of__
+
+[.j.Tm14.L1145.R2770,margin-top=5.48pt]
+__the base, equal to each other.__
+
+[.j.L1275.R1770,margin-top=32.12pt]
+When two triangles stand on the same base,
+
+[.j.L1145.R1770,margin-top=8.84pt]
+and on the same side of it, the vertex of the one
+
+[.j.L1145.R1765,margin-top=8.60pt]
+shall either fall outside of the other triangle, or
+
+[.j.L1140.R2105,margin-top=8.60pt]
+within it; or, lastly, on one of its sides.
+
+[.j.L1275.R1770,margin-top=23.24pt]
+If it be possible let the two triangles be con-
+
+[.j.L1140.R1770,margin-top=20.60pt]
+structed so that image:l41-r395x1325.svg["the red line equal to the red line and the blue line to the blue line, braced",pdfwidth=132.48pt,vertical-align=-15.12pt], then
+
+[.j.L1930.R2355,margin-top=17.24pt]
+draw image:l41-c54.svg["a black line",pdfwidth=46.80pt,vertical-align=0.72pt] and,
+
+[.j.L2010.R2105,margin-top=18.92pt]
+image:l41-c62.svg["a black and red figure",pdfwidth=24.72pt,vertical-align=-11.28pt] image:l41-c67.svg["is equal to",pdfwidth=14.16pt,vertical-align=3.12pt] image:l41-c64.svg["a blue figure",pdfwidth=25.68pt,vertical-align=-3.84pt] (pr. 5.)
+
+[.j.L2015.R2080,margin-top=22.04pt]
+image:l41-c74.svg["therefore",pdfwidth=12.48pt,vertical-align=-0.96pt] image:l41-c73.svg["a red figure",pdfwidth=25.20pt,vertical-align=-4.56pt] image:l41-c75.svg["is less than",pdfwidth=13.92pt,vertical-align=-3.84pt] image:l41-c72.svg["a blue figure",pdfwidth=27.12pt,vertical-align=-4.32pt] and
+
+[.j.L2005.R2325,margin-top=25.64pt]
+image:l41-c81.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.88pt] image:l41-c79.svg["a red figure",pdfwidth=27.36pt,vertical-align=-7.68pt] image:l41-c82.svg["is less than",pdfwidth=14.16pt,vertical-align=-6.24pt] image:l41-c78.svg["a blue and yellow figure",pdfwidth=24.96pt,vertical-align=-13.44pt]
+
+[.j.L3090.R1275,margin-top=9.32pt]
+image:l41-c80.svg["a black figure",pdfwidth=7.68pt,vertical-align=-21.60pt] which is absurd,
+
+[.j.L1535.R2310,margin-top=6.68pt]
+but (pr. 5.) image:l41-c86.svg["a red figure",pdfwidth=26.64pt,vertical-align=-6.00pt] image:l41-c87.svg["is equal to",pdfwidth=12.96pt,vertical-align=-1.68pt] image:l41-c85.svg["a yellow and blue figure",pdfwidth=34.08pt,vertical-align=-9.60pt]
+
+[.j.L1155.R1110,margin-top=17.48pt]
+therefore the two triangles cannot have their conterminous
+
+[.j.L1155.R1975,margin-top=8.36pt]
+sides equal at both extremities of the base.
+
+[.j.L3630.R1230,margin-top=7.88pt]
+{empty}Q. E. D.
+
+// end::page-7[]
+
+// tag::page-8[]
+[%notitle#prop-8.prop,running-title="BOOK I.  PROP. VIII.  THEOR."]
+== Proposition VIII.
+
+// page 8 (leaf 42)
+[.d,margin-top=28.36pt]
+image::l42-c0.svg["The diagram of Proposition VIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-206.40pt]
+image::l42-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L3350.R1140,margin-top=-56.58pt]
+F __two triangles__
+
+[.j.L3400.R1140,margin-top=5.48pt]
+__have two sides__
+
+[.j.Tm67.L3405.R1145,margin-top=5.72pt]
+__of the one respec-__
+
+[.j.L3400.R1140,margin-top=5.48pt]
+__tively equal to__
+
+[.j.L2795.R1140,margin-top=5.48pt]
+__two sides of the other__
+
+[.j.L2875.R1230,margin-top=6.20pt]
+(image:l42-c8.svg["a blue and black line",pdfwidth=44.16pt,vertical-align=-2.88pt] image:l42-c6.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l42-c9.svg["a blue and black line",pdfwidth=44.16pt,vertical-align=-2.88pt]
+
+[.j.L2795.R1145,margin-top=5.48pt]
+__and__ image:l42-c11.svg["a red line",pdfwidth=37.92pt,vertical-align=-0.48pt] image:l42-c10.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l42-c12.svg["a red line",pdfwidth=37.44pt,vertical-align=-0.96pt]),
+
+[.j.Tm4.L2795.R1140,margin-top=5.48pt]
+__and also their bases__ (image:l42-c14.svg["a black line",pdfwidth=34.08pt,vertical-align=0.96pt]
+
+[.j.L2790.R1135,margin-top=5.48pt]
+image:l42-c15.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l42-c16.svg["a black line",pdfwidth=29.52pt,vertical-align=0.00pt]), __equal; then the__
+
+[.j.L2790.R1145,margin-top=13.88pt]
+__angles__ (image:l42-c18.svg["a black figure",pdfwidth=31.20pt,vertical-align=-7.92pt] __and__ image:l42-c19.svg["a black figure",pdfwidth=30.48pt,vertical-align=-7.44pt])
+
+[.j.Tm38.L2790.R1140,margin-top=13.16pt]
+__contained by their equal sides__
+
+[.j.Tm27.L2790.R1835,margin-top=6.20pt]
+__are also equal.__
+
+[.j.L1230.R1150,margin-top=30.92pt]
+If the equal bases image:l42-c22.svg["a black line",pdfwidth=48.72pt,vertical-align=-0.48pt] and image:l42-c21.svg["a black line",pdfwidth=48.96pt,vertical-align=-0.24pt] be conceived
+
+[.j.L1100.R1150,margin-top=9.08pt]
+to be placed one upon the other, so that the triangles shall
+
+[.j.L1095.R1155,margin-top=8.84pt]
+lie at the same side of them, and that the equal sides
+
+[.j.L1100.R1155,margin-top=8.36pt]
+image:l42-c25.svg["a red line",pdfwidth=48.96pt,vertical-align=-2.16pt] and image:l42-c24.svg["a red line",pdfwidth=49.44pt,vertical-align=-0.96pt], image:l42-c26.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=-2.88pt] and image:l42-c27.svg["a blue and black line",pdfwidth=49.68pt,vertical-align=-3.12pt] be con-
+
+[.j.L1100.R1160,margin-top=8.84pt]
+terminous, the vertex of the one must fall on the vertex
+
+[.j.L1090.R1160,margin-top=8.60pt]
+of the other; for to suppose them not coincident would
+
+[.j.L1090.R2665,margin-top=8.60pt]
+contradict the last proposition.
+
+[.j.L1225.R1165,margin-top=29.96pt]
+Therefore the sides image:l42-c40.svg["a red line",pdfwidth=49.92pt,vertical-align=-1.20pt] and image:l42-c42.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=-2.64pt], being coin-
+
+[.j.L1595.R1665,margin-top=8.60pt]
+cident with image:l42-c43.svg["a red line",pdfwidth=50.16pt,vertical-align=-1.20pt] and image:l42-c45.svg["a blue and black line",pdfwidth=49.68pt,vertical-align=-2.64pt],
+
+[.j.L2070.R2150,margin-top=18.44pt]
+image:l42-c48.svg["therefore",pdfwidth=12.24pt,vertical-align=-2.64pt] image:l42-c47.svg["a black figure",pdfwidth=24.72pt,vertical-align=-12.24pt] image:l42-c49.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l42-c46.svg["a black figure",pdfwidth=24.96pt,vertical-align=-12.48pt].
+
+[.j.L3590.R1285,margin-top=21.80pt]
+{empty}Q. E. D.
+
+// end::page-8[]
+
+// tag::page-9[]
+[%notitle#prop-9.prop,running-title="BOOK I.  PROP. IX.  PROB."]
+== Proposition IX.
+
+// page 9 (leaf 43)
+[.d,margin-top=29.80pt]
+image::l43-c1.svg["The diagram of Proposition IX",pdfwidth=532.8pt]
+
+[.d,margin-top=-182.88pt]
+image::l43-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L1655.R2220,margin-top=-47.94pt]
+O __bisect a given rectilinear__
+
+[.j.L1705.R2845,margin-top=19.16pt]
+__angle__ (image:l43-c5.svg["a blue and yellow and black figure",pdfwidth=37.68pt,vertical-align=-7.20pt]).
+
+[.j.L1090.R2300,margin-top=50.36pt]
+Take image:l43-c25.svg["a red line",pdfwidth=48.00pt,vertical-align=-0.24pt] image:l43-c23.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l43-c26.svg["a red line",pdfwidth=48.00pt,vertical-align=-0.48pt] (pr. 3.)
+
+[.j.L1285.R2485,margin-top=8.84pt]
+draw image:l43-c35.svg["a yellow line",pdfwidth=47.52pt,vertical-align=0.96pt], upon which
+
+[.j.L1500.R2605,margin-top=22.28pt]
+describe image:l43-c37.svg["a blue and yellow and black figure",pdfwidth=29.76pt,vertical-align=-4.32pt] (pr. 1.),
+
+[.j.L1665.R2830,margin-top=11.48pt]
+draw image:l43-c38.svg["a black line",pdfwidth=53.52pt,vertical-align=-2.16pt]
+
+[.j.L1560.R1630,margin-top=34.04pt]
+Because image:l43-c41.svg["a red line",pdfwidth=48.24pt,vertical-align=0.48pt] image:l43-c40.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.24pt] image:l43-c42.svg["a red line",pdfwidth=47.76pt,vertical-align=-0.72pt] (const.)
+
+[.j.L1475.R1530,margin-top=11.48pt]
+and image:l43-c44.svg["a black line",pdfwidth=47.04pt,vertical-align=2.16pt] common to the two triangles
+
+[.j.L1660.R1720,margin-top=11.96pt]
+and image:l43-c46.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=2.64pt] image:l43-c45.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.72pt] image:l43-c47.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=1.68pt] (const.),
+
+[.j.L1920.R2140,margin-top=20.60pt]
+image:l43-c49.svg["therefore the blue angle",pdfwidth=34.08pt,vertical-align=-12.72pt] image:l43-c52.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l43-c50.svg["a yellow figure",pdfwidth=17.76pt,vertical-align=-12.72pt] (pr. 8.)
+
+[.j.L3575.R1275,margin-top=12.44pt]
+{empty}Q. E. D.
+
+[.l.sig.L2560.R0,margin-top=131.00pt]
+C
+
+// end::page-9[]
+
+// tag::page-10[]
+[%notitle#prop-10.prop,running-title="BOOK I.  PROP. X.  PROB."]
+== Proposition X.
+
+// page 10 (leaf 44)
+[.d,margin-top=37.24pt]
+image::l44-c0.svg["The diagram of Proposition X",pdfwidth=532.8pt]
+
+[.d,margin-top=-138.24pt]
+image::l44-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.Tm6.L2720.R1110,margin-top=-50.10pt]
+O __bisect a given finite straight__
+
+[.j.L3005.R1380,margin-top=7.64pt]
+__line__ (image:l44-r1447x718.svg["a black line, half of it dotted",pdfwidth=54.96pt,vertical-align=-0.48pt]).
+
+[.j.L2335.R1325,margin-top=88.52pt]
+Construct image:l44-c12.svg["a black and yellow and blue figure",pdfwidth=56.64pt,vertical-align=-2.64pt] (pr. 1.),
+
+[.j.L1260.R1260,margin-top=25.40pt]
+draw image:l44-c62.svg["a red line",pdfwidth=50.40pt,vertical-align=0.96pt], making image:l44-c55.svg["a blue figure",pdfwidth=26.64pt,vertical-align=-14.64pt] image:l44-c63.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.92pt] image:l44-c56.svg["a yellow figure",pdfwidth=26.88pt,vertical-align=-17.76pt] (pr. 9.).
+
+[.j.L1655.R1650,margin-top=26.84pt]
+Then image:l44-c92.svg["a black line",pdfwidth=38.64pt,vertical-align=-0.48pt] image:l44-c85.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.92pt] image:l44-c93.svg["a black line",pdfwidth=31.68pt,vertical-align=-0.24pt] by (pr. 4.),
+
+[.j.L1240.R1275,margin-top=27.08pt]
+for image:l44-c118.svg["a yellow line",pdfwidth=48.72pt,vertical-align=-1.44pt] image:l44-c111.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.68pt] image:l44-c117.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=0.48pt] (const.) image:l44-c104.svg["a blue figure",pdfwidth=26.40pt,vertical-align=-15.12pt] image:l44-c110.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l44-c105.svg["a yellow figure",pdfwidth=26.64pt,vertical-align=-17.04pt]
+
+[.j.L1470.R1470,margin-top=27.08pt]
+and image:l44-c122.svg["a red line",pdfwidth=48.48pt,vertical-align=2.64pt] common to the two triangles.
+
+[.j.L1695.R1740,margin-top=29.00pt]
+Therefore the given line is bisected.
+
+[.j.L3600.R1250,margin-top=26.84pt]
+{empty}Q. E. D.
+
+// end::page-10[]
+
+// tag::page-11[]
+[%notitle#prop-11.prop,running-title="BOOK I.  PROP. XI.  PROB."]
+== Proposition XI.
+
+// page 11 (leaf 45)
+[.d,margin-top=18.28pt]
+image::l45-c0.svg["The diagram of Proposition XI",pdfwidth=532.8pt]
+
+[.d,margin-top=-147.60pt]
+image::l45-initial.svg["F",pdfwidth=532.8pt]
+
+[.j.L1660.R2845,margin-top=-59.94pt]
+ROM __a given__
+
+[.j.L1700.R2850,margin-top=6.68pt]
+__point__ (image:l45-c3.svg["a red and black line",pdfwidth=31.68pt,vertical-align=0.48pt]),
+
+[.j.L1710.R2865,margin-top=5.48pt]
+__in a given__
+
+[.j.L1680.R2860,margin-top=5.96pt]
+__straight line__
+
+[.j.L1110.R2855,margin-top=5.96pt]
+(image:l45-c6.svg["a black and red line",pdfwidth=64.08pt,vertical-align=-0.96pt]), __to draw__
+
+[.j.Tm19.L1105.R3420,margin-top=6.68pt]
+__a perpendicular.__
+
+[.j.L1450.R1465,margin-top=76.04pt]
+Take any point (image:l45-c26.svg["a red line",pdfwidth=51.60pt,vertical-align=-3.60pt]) in the given line,
+
+[.j.L1615.R1615,margin-top=11.72pt]
+cut off image:l45-c33.svg["a black line",pdfwidth=47.76pt,vertical-align=0.48pt] image:l45-c32.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l45-c34.svg["a red line",pdfwidth=47.76pt,vertical-align=0.48pt] (pr. 3.),
+
+[.j.L1910.R1875,margin-top=42.20pt]
+construct image:l45-c36.svg["a blue and black and red figure",pdfwidth=55.44pt,vertical-align=-5.04pt] (pr. 1.),
+
+[.j.L1405.R1400,margin-top=11.48pt]
+draw image:l45-c38.svg["a yellow line",pdfwidth=48.72pt,vertical-align=0.24pt] and it shall be perpendicular to
+
+[.j.L2305.R2265,margin-top=11.96pt]
+the given line.
+
+[.j.L1730.R1725,margin-top=35.24pt]
+For image:l45-c41.svg["a blue and black line",pdfwidth=46.80pt,vertical-align=0.24pt] image:l45-c39.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l45-c40.svg["a blue and black line",pdfwidth=46.08pt,vertical-align=0.72pt] (const.)
+
+[.j.L1860.R1835,margin-top=11.72pt]
+image:l45-c44.svg["a black line",pdfwidth=48.72pt,vertical-align=0.96pt] image:l45-c43.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l45-c45.svg["a red line",pdfwidth=48.24pt,vertical-align=0.48pt] (const.)
+
+[.j.L1480.R1480,margin-top=11.48pt]
+and image:l45-c47.svg["a yellow line",pdfwidth=48.24pt,vertical-align=0.48pt] common to the two triangles.
+
+[.j.L1760.R1740,margin-top=40.76pt]
+Therefore image:l45-c48.svg["a red figure",pdfwidth=27.60pt,vertical-align=-3.36pt] image:l45-c50.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.44pt] image:l45-c49.svg["a blue figure",pdfwidth=27.12pt,vertical-align=-3.36pt] (pr. 8.)
+
+[.j.L1685.R1665,margin-top=12.44pt]
+image:l45-c52.svg["therefore",pdfwidth=12.24pt,vertical-align=-0.72pt] image:l45-r384x2393.svg["the yellow line perpendicular to the black and red line",pdfwidth=120.96pt,vertical-align=0.24pt] (def. 10.).
+
+[.j.L3630.R1230,margin-top=15.32pt]
+{empty}Q. E. D.
+
+// end::page-11[]
+
+// tag::page-12[]
+[%notitle#prop-12.prop,running-title="BOOK I.  PROP. XII.  PROB."]
+== Proposition XII.
+
+// page 12 (leaf 46)
+[.d,margin-top=19.48pt]
+image::l46-c0.svg["The diagram of Proposition XII",pdfwidth=532.8pt]
+
+[.d,margin-top=-138.24pt]
+image::l46-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L3495.R1125,margin-top=-59.22pt]
+O __draw a__
+
+[.j.L3510.R1125,margin-top=5.72pt]
+__straight line__
+
+[.l.L3525.R0,margin-top=5.48pt]
+__perpendicular__
+
+[.j.L3540.R1130,margin-top=5.72pt]
+__to a given__
+
+[.j.L2930.R1130,margin-top=5.72pt]
+__indefinite straight line__
+
+[.j.Tm35.L2935.R1130,margin-top=5.00pt]
+(image:l46-c32.svg["a black and yellow line",pdfwidth=57.12pt,vertical-align=-1.20pt]) __from a given__
+
+[.j.L2930.R1185,margin-top=18.44pt]
+(__point__ image:l46-c49.svg["a blue and red and black figure",pdfwidth=33.12pt,vertical-align=-7.20pt]) __without.__
+
+[.j.L1115.R1140,margin-top=51.56pt]
+With the given point image:l46-c51.svg["a blue and red and black figure",pdfwidth=34.08pt,vertical-align=-5.28pt] as centre, at one side of the
+
+[.j.L1110.R1140,margin-top=10.76pt]
+line, and any distance image:l46-c52.svg["a black line",pdfwidth=49.20pt,vertical-align=0.72pt] capable of extending to
+
+[.j.L1535.R1560,margin-top=10.76pt]
+the other side, describe image:l46-c53.svg["a red line",pdfwidth=80.64pt,vertical-align=-16.32pt],
+
+[.j.L1560.R1610,margin-top=24.68pt]
+Make image:l46-c56.svg["a black line",pdfwidth=50.40pt,vertical-align=0.48pt] image:l46-c55.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.20pt] image:l46-c57.svg["a yellow line",pdfwidth=49.20pt,vertical-align=-0.72pt] (pr. 10.)
+
+[.j.L1470.R1520,margin-top=11.48pt]
+draw image:l46-c59.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=0.00pt], image:l46-c61.svg["a blue and black line",pdfwidth=49.92pt,vertical-align=-0.96pt] and image:l46-c60.svg["a red line",pdfwidth=50.40pt,vertical-align=0.48pt],
+
+[.j.L1790.R1850,margin-top=10.28pt]
+then image:l46-c65.svg["a red line",pdfwidth=50.40pt,vertical-align=0.96pt] image:l46-c64.svg["a black figure",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l46-c66.svg["a black and yellow line",pdfwidth=53.52pt,vertical-align=-0.48pt].
+
+[.j.L1280.R1345,margin-top=26.36pt]
+For (pr. 8.) since image:l46-c69.svg["a black line",pdfwidth=51.12pt,vertical-align=0.72pt] image:l46-c68.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l46-c70.svg["a yellow line",pdfwidth=49.20pt,vertical-align=-0.48pt] (const.)
+
+[.j.L1885.R1955,margin-top=10.28pt]
+image:l46-c72.svg["a red line",pdfwidth=50.40pt,vertical-align=0.96pt] common to both,
+
+[.j.L1580.R1645,margin-top=11.00pt]
+and image:l46-c74.svg["a blue and black line",pdfwidth=50.64pt,vertical-align=0.24pt] image:l46-c73.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l46-c75.svg["a blue and black line",pdfwidth=50.64pt,vertical-align=-0.72pt] (def. 15.)
+
+[.j.L1980.R2025,margin-top=26.12pt]
+image:l46-c79.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.40pt] image:l46-c78.svg["a yellow figure",pdfwidth=28.80pt,vertical-align=-5.28pt] image:l46-c80.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.44pt] image:l46-c77.svg["a blue figure",pdfwidth=28.56pt,vertical-align=-5.52pt], and
+
+[.j.L1540.R1625,margin-top=10.76pt]
+image:l46-c86.svg["therefore",pdfwidth=13.20pt,vertical-align=-3.12pt] image:l46-c87.svg["a red line",pdfwidth=49.20pt,vertical-align=1.44pt] image:l46-c85.svg["a black figure",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l46-c88.svg["a black and yellow line",pdfwidth=54.00pt,vertical-align=-0.24pt] (def. 10.).
+
+[.j.L3595.R1290,margin-top=16.04pt]
+{empty}Q. E. D.
+
+// end::page-12[]
+
+// tag::page-13[]
+[%notitle#prop-13.prop,running-title="BOOK I.  PROP. XIII.  THEOR."]
+== Proposition XIII.
+
+// page 13 (leaf 47)
+[.d,margin-top=2.68pt]
+image::l47-c0.svg["The diagram of Proposition XIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-138.72pt]
+image::l47-initial.svg["W",pdfwidth=532.8pt]
+
+[.j.L1675.R2545,margin-top=-57.06pt]
+HEN __a straight line__
+
+[.j.L1750.R2545,margin-top=7.88pt]
+(image:l47-c3.svg["a yellow line",pdfwidth=48.00pt,vertical-align=1.44pt]) __standing__
+
+[.j.Tm31.L1750.R2545,margin-top=3.08pt]
+__upon another straight__
+
+[.j.L1745.R2550,margin-top=5.96pt]
+__line__ (image:l47-c4.svg["a red line",pdfwidth=72.24pt,vertical-align=0.72pt])
+
+[.j.L1120.R2550,margin-top=5.96pt]
+__makes angles with it; they are__
+
+[.j.Tm14.L1120.R2550,margin-top=5.48pt]
+__either two right angles or together__
+
+[.j.L1120.R2925,margin-top=5.96pt]
+__equal to two right angles.__
+
+[.j.L1665.R1665,margin-top=50.36pt]
+If image:l47-c6.svg["a yellow line",pdfwidth=45.36pt,vertical-align=-0.72pt] be image:l47-r683x1182.svg["perpendicular",pdfwidth=13.44pt,vertical-align=-1.20pt] to image:l47-c5.svg["a red line",pdfwidth=47.52pt,vertical-align=0.00pt] then,
+
+[.j.L1430.R1440,margin-top=28.52pt]
+image:l47-c8.svg["a yellow and red figure",pdfwidth=49.20pt,vertical-align=-5.52pt] and image:l47-c9.svg["a blue figure",pdfwidth=30.48pt,vertical-align=-5.04pt] image:l47-c11.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l47-c7.svg["a black figure",pdfwidth=63.60pt,vertical-align=-5.04pt] (def. 7.),
+
+[.j.L1555.R1545,margin-top=28.52pt]
+But if image:l47-c16.svg["a yellow line",pdfwidth=47.76pt,vertical-align=-0.72pt] be not image:l47-r841x1507.svg["perpendicular",pdfwidth=13.20pt,vertical-align=-0.96pt] to image:l47-c15.svg["a red line",pdfwidth=47.76pt,vertical-align=1.20pt],
+
+[.j.L1645.R1640,margin-top=11.96pt]
+draw image:l47-c18.svg["a black line",pdfwidth=47.04pt,vertical-align=1.20pt] image:l47-r674x1600.svg["perpendicular",pdfwidth=12.72pt,vertical-align=-0.48pt] image:l47-c19.svg["a red line",pdfwidth=47.04pt,vertical-align=1.20pt]; (pr. 11.)
+
+[.j.L1455.R1530,margin-top=27.56pt]
+image:l47-c22.svg["a yellow figure",pdfwidth=39.12pt,vertical-align=-13.20pt] image:l47-c23.svg["a black figure",pdfwidth=14.16pt,vertical-align=-5.28pt] image:l47-c21.svg["a blue and red figure",pdfwidth=32.16pt,vertical-align=-11.04pt] image:l47-c24.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.92pt] image:l47-c20.svg["a black figure",pdfwidth=61.92pt,vertical-align=-4.80pt] (const.),
+
+[.j.L1690.R1685,margin-top=21.32pt]
+image:l47-r345x1860.svg["the yellow angle is equal to the red and blue angle, is equal to the red angle and the blue angle",pdfwidth=193.68pt,vertical-align=-15.36pt]
+
+[.j.L1110.R1285,margin-top=33.32pt]
+image:l47-r105x2035.svg["therefore the yellow angle and the red and blue angle are equal to the yellow angle, the red angle and the blue angle",pdfwidth=252.48pt,vertical-align=-15.36pt] (ax. 2.)
+
+[.j.L1545.R1590,margin-top=31.16pt]
+image:l47-r285x2210.svg["is equal to the yellow and red angle and the blue angle, equal to two right angles.",pdfwidth=218.16pt,vertical-align=-15.36pt]
+
+[.j.L3610.R1245,margin-top=25.16pt]
+{empty}Q. E. D.
+
+// end::page-13[]
+
+// tag::page-14[]
+[%notitle#prop-14.prop,running-title="BOOK I.  PROP. XIV.  THEOR."]
+== Proposition XIV.
+
+// page 14 (leaf 48)
+[.d,margin-top=30.04pt]
+image::l48-c0.svg["The diagram of Proposition XIV",pdfwidth=532.8pt]
+
+[.d,margin-top=-151.68pt]
+image::l48-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L3045.R1105,margin-top=-56.82pt]
+F __two straight lines__
+
+[.j.L3110.R1110,margin-top=5.96pt]
+(image:l48-c8.svg["a blue and black line",pdfwidth=37.20pt,vertical-align=1.92pt] __and__ image:l48-c9.svg["a black line",pdfwidth=38.16pt,vertical-align=1.44pt]),
+
+[.j.Tm32.L3100.R1110,margin-top=5.24pt]
+__meeting a third straight__
+
+[.j.L3100.R1110,margin-top=5.72pt]
+__line__ (image:l48-c17.svg["a red line",pdfwidth=47.04pt,vertical-align=0.48pt]), __at the__
+
+[.j.L2450.R1090,margin-top=5.72pt]
+__same point, and at opposite sides of__
+
+[.j.L2480.R1110,margin-top=5.72pt]
+__it, make with it adjacent angles__
+
+[.j.L2485.R1115,margin-top=24.68pt]
+(image:l48-c18.svg["a yellow figure",pdfwidth=46.80pt,vertical-align=-3.84pt] __and__ image:l48-c19.svg["a blue figure",pdfwidth=31.20pt,vertical-align=-4.08pt]) __equal to__
+
+[.j.L2480.R1115,margin-top=6.20pt]
+__two right angles; these straight__
+
+[.j.Tm1.L2480.R1120,margin-top=5.72pt]
+__lines lie in one continuous straight__
+
+[.l.L2475.R0,margin-top=5.72pt]
+__line.__
+
+[.j.L1320.R1355,margin-top=26.12pt]
+For, if possible let image:l48-c22.svg["a yellow line",pdfwidth=47.76pt,vertical-align=0.24pt], and not image:l48-c21.svg["a black line",pdfwidth=48.48pt,vertical-align=1.92pt],
+
+[.j.L1760.R1790,margin-top=10.52pt]
+be the continuation of image:l48-c25.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=1.44pt],
+
+[.j.L1440.R1455,margin-top=31.16pt]
+then image:l48-c28.svg["a yellow figure",pdfwidth=46.32pt,vertical-align=-2.88pt] image:l48-c30.svg["a black figure",pdfwidth=14.16pt,vertical-align=-4.56pt] image:l48-c29.svg["a blue and red figure",pdfwidth=32.64pt,vertical-align=-13.20pt] image:l48-c31.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.72pt] image:l48-c27.svg["a black figure",pdfwidth=62.88pt,vertical-align=-3.36pt]
+
+[.j.L1085.R1160,margin-top=42.44pt]
+but by the hypothesis image:l48-c34.svg["a yellow figure",pdfwidth=61.92pt,vertical-align=-4.80pt] image:l48-c35.svg["a blue figure",pdfwidth=31.68pt,vertical-align=-2.40pt] image:l48-c37.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l48-c33.svg["a black figure",pdfwidth=65.04pt,vertical-align=-4.08pt]
+
+[.j.L1095.R1150,margin-top=24.44pt]
+image:l48-c42.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.16pt] image:l48-c40.svg["a blue and red figure",pdfwidth=32.64pt,vertical-align=-16.32pt] image:l48-c43.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l48-c41.svg["a blue figure",pdfwidth=31.68pt,vertical-align=-4.08pt], (ax. 3.); which is absurd (ax. 9.).
+
+[.j.L1100.R1150,margin-top=24.44pt]
+image:l48-c49.svg["therefore",pdfwidth=12.96pt,vertical-align=-2.40pt] image:l48-c51.svg["a yellow line",pdfwidth=48.96pt,vertical-align=0.00pt], is not the continuation of image:l48-c50.svg["a blue and black line",pdfwidth=50.16pt,vertical-align=1.44pt], and
+
+[.j.L1100.R1150,margin-top=10.52pt]
+the like may be demonstrated of any other straight line
+
+[.j.L1100.R1280,margin-top=10.76pt]
+except image:l48-c58.svg["a black line",pdfwidth=50.40pt,vertical-align=0.72pt], image:l48-c49.svg["therefore",pdfwidth=12.96pt,vertical-align=-2.40pt] image:l48-c59.svg["a black line",pdfwidth=49.92pt,vertical-align=0.48pt] is the continuation
+
+[.j.L2290.R2325,margin-top=10.76pt]
+of image:l48-c62.svg["a blue and black line",pdfwidth=53.76pt,vertical-align=-2.16pt]
+
+[.j.L3600.R1270,margin-top=9.80pt]
+{empty}Q. E. D.
+
+// end::page-14[]
+
+// tag::page-15[]
+[%notitle#prop-15.prop,running-title="BOOK I.  PROP. XV.  THEOR."]
+== Proposition XV.
+
+// page 15 (leaf 49)
+[.d,margin-top=29.08pt]
+image::l49-c0.svg["The diagram of Proposition XV",pdfwidth=532.8pt]
+
+[.d,margin-top=-133.44pt]
+image::l49-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1690.R2300,margin-top=-51.30pt]
+F __two right lines__ (image:l49-c3.svg["a black line",pdfwidth=33.60pt,vertical-align=0.48pt]
+
+[.j.L1730.R2295,margin-top=8.60pt]
+__and__ image:l49-c4.svg["a red line",pdfwidth=33.84pt,vertical-align=1.20pt]) __intersect one__
+
+[.j.L1735.R2350,margin-top=8.60pt]
+__another, the vertical an-__
+
+[.j.L1115.R2310,margin-top=20.60pt]
+__gles__ image:l49-c10.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=-14.40pt] __and__ image:l49-c9.svg["a black figure",pdfwidth=33.12pt,vertical-align=-13.44pt], image:l49-c11.svg["a red figure",pdfwidth=56.16pt,vertical-align=-12.00pt]
+
+[.j.L1125.R2880,margin-top=26.84pt]
+__and__ image:l49-c13.svg["a blue figure",pdfwidth=56.40pt,vertical-align=-12.96pt] __are equal.__
+
+[.j.L1630.R1600,margin-top=58.52pt]
+image:l49-c17.svg["a yellow figure",pdfwidth=31.44pt,vertical-align=-17.04pt] image:l49-c18.svg["a black figure",pdfwidth=11.52pt,vertical-align=-5.28pt] image:l49-c15.svg["a red figure",pdfwidth=56.16pt,vertical-align=-12.24pt] image:l49-c19.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.92pt] image:l49-c16.svg["a black figure",pdfwidth=63.12pt,vertical-align=-15.36pt]
+
+[.j.L1600.R1630,margin-top=34.04pt]
+image:l49-c23.svg["a black figure",pdfwidth=32.40pt,vertical-align=-17.04pt] image:l49-c24.svg["a black figure",pdfwidth=14.16pt,vertical-align=-8.16pt] image:l49-c22.svg["a red figure",pdfwidth=55.92pt,vertical-align=-12.24pt] image:l49-c25.svg["is equal to",pdfwidth=14.16pt,vertical-align=-4.32pt] image:l49-c21.svg["a black figure",pdfwidth=62.88pt,vertical-align=-15.60pt]
+
+[.j.L2070.R2150,margin-top=38.60pt]
+image:l49-c29.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.16pt] image:l49-c28.svg["a yellow figure",pdfwidth=30.96pt,vertical-align=-12.96pt] image:l49-c30.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l49-c27.svg["a black figure",pdfwidth=31.92pt,vertical-align=-12.48pt].
+
+[.j.L1545.R1575,margin-top=40.04pt]
+In the same manner it may be shown that
+
+[.j.L1955.R1970,margin-top=20.12pt]
+image:l49-c35.svg["a red figure",pdfwidth=54.72pt,vertical-align=-11.52pt] image:l49-c37.svg["is equal to",pdfwidth=13.92pt,vertical-align=-4.08pt] image:l49-c36.svg["a blue figure",pdfwidth=54.48pt,vertical-align=-17.28pt]
+
+[.j.L3590.R1265,margin-top=27.56pt]
+{empty}Q. E. D.
+
+// end::page-15[]
+
+// tag::page-16[]
+[%notitle#prop-16.prop,running-title="BOOK I.  PROP. XVI.  THEOR."]
+== Proposition XVI.
+
+// page 16 (leaf 50)
+[.j.L3445.R1140,margin-top=-6.38pt]
+F __a side of a__
+
+[.d,margin-top=-10.42pt]
+image::l50-initial.svg["I",pdfwidth=532.8pt]
+
+[.d,margin-top=-57.36pt]
+image::l50-c1.svg["The diagram of Proposition XVI",pdfwidth=532.8pt]
+
+[.l.L3480.R0,margin-top=-174.18pt]
+__trian-__
+
+[.j.L3480.R1145,margin-top=5.72pt]
+__gle__ image:l50-c11.svg["a black and yellow and blue figure",pdfwidth=49.44pt,vertical-align=-5.28pt])
+
+[.j.Tm4.L2975.R1125,margin-top=5.96pt]
+__is produced, the external__
+
+[.j.L2975.R1140,margin-top=24.44pt]
+__angle__ (image:l50-c62.svg["a black figure",pdfwidth=47.52pt,vertical-align=-5.04pt]) __is__
+
+[.j.Tm8.L2965.R1140,margin-top=6.44pt]
+__greater than either of the__
+
+[.j.L2975.R1140,margin-top=5.48pt]
+__internal remote angles__
+
+[.j.L2945.R1365,margin-top=28.52pt]
+(image:l50-c113.svg["a black figure",pdfwidth=30.00pt,vertical-align=-0.24pt] __or__ image:l50-c114.svg["a blue and black figure",pdfwidth=33.60pt,vertical-align=-0.48pt]).
+
+[.j.L1520.R1565,margin-top=31.88pt]
+Make image:l50-c126.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=0.96pt] image:l50-c119.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l50-c120.svg["a blue and black line",pdfwidth=25.20pt,vertical-align=1.68pt]image:l50-c123.svg["a blue and black line",pdfwidth=21.60pt,vertical-align=1.44pt] (pr. 10.).
+
+[.j.L1645.R1675,margin-top=9.80pt]
+Draw image:l50-c131.svg["a red line",pdfwidth=48.24pt,vertical-align=0.72pt] and produce it until
+
+[.j.L1500.R1545,margin-top=9.80pt]
+image:l50-c134.svg["a red figure",pdfwidth=8.16pt,vertical-align=1.44pt]image:l50-c135.svg["a red line",pdfwidth=38.64pt,vertical-align=0.96pt] image:l50-c132.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l50-c140.svg["a red line",pdfwidth=47.04pt,vertical-align=1.44pt]; draw image:l50-c133.svg["a yellow line",pdfwidth=47.52pt,vertical-align=1.92pt].
+
+[.j.L1245.R1320,margin-top=20.12pt]
+In image:l50-c142.svg["a red and yellow and blue figure",pdfwidth=42.00pt,vertical-align=-19.68pt] and image:l50-c143.svg["a yellow and red figure",pdfwidth=39.12pt,vertical-align=-21.60pt]; image:l50-c164.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=0.72pt] image:l50-c161.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l50-c153.svg["a black and blue line",pdfwidth=47.04pt,vertical-align=2.64pt]
+
+[.d,margin-top=-8.74pt]
+image::l50-c152.svg["The diagram of Proposition XVI",pdfwidth=532.8pt]
+
+[.j.L1245.R1500,margin-top=32.70pt]
+image:l50-c175.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=-20.64pt] image:l50-c177.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l50-c174.svg["a yellow figure",pdfwidth=31.44pt,vertical-align=-20.88pt] and image:l50-c178.svg["a red line",pdfwidth=48.48pt,vertical-align=1.20pt] image:l50-c176.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l50-c179.svg["a red line",pdfwidth=42.48pt,vertical-align=1.92pt]
+
+[.j.L1310.R1390,margin-top=33.80pt]
+(const. pr. 15.), image:l50-c191.svg["therefore",pdfwidth=11.76pt,vertical-align=-0.48pt] image:l50-c190.svg["a black figure",pdfwidth=30.48pt,vertical-align=-13.44pt] image:l50-c192.svg["is equal to",pdfwidth=13.20pt,vertical-align=-1.20pt] image:l50-c189.svg["a black figure",pdfwidth=30.72pt,vertical-align=-12.72pt] (pr. 4.),
+
+[.j.L1975.R1985,margin-top=34.28pt]
+image:l50-c199.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l50-c196.svg["a black figure",pdfwidth=47.28pt,vertical-align=-3.36pt] image:l50-c198.svg["is greater than",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l50-c197.svg["a black figure",pdfwidth=30.96pt,vertical-align=-3.84pt].
+
+[.j.L1245.R1285,margin-top=13.16pt]
+In like manner it can be shown, that if image:l50-c208.svg["a blue and black line",pdfwidth=47.52pt,vertical-align=1.44pt]
+
+[.j.L1280.R1330,margin-top=15.32pt]
+be produced, image:l50-c213.svg["a red figure",pdfwidth=44.88pt,vertical-align=-12.24pt] image:l50-r1141x2206.svg["is greater than",pdfwidth=13.68pt,vertical-align=-1.44pt] image:l50-c214.svg["a blue figure",pdfwidth=33.36pt,vertical-align=-10.32pt], and therefore
+
+[.j.L1295.R1355,margin-top=31.16pt]
+image:l50-c215.svg["a black figure",pdfwidth=48.48pt,vertical-align=-6.72pt] which is image:l50-c219.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l50-c217.svg["a red figure",pdfwidth=43.92pt,vertical-align=-12.24pt] is image:l50-r1448x2379.svg["is greater than",pdfwidth=13.68pt,vertical-align=-0.96pt] image:l50-c216.svg["a blue and black figure",pdfwidth=41.28pt,vertical-align=-3.60pt]
+
+[.j.L3610.R1270,margin-top=14.60pt]
+{empty}Q. E. D.
+
+// end::page-16[]
+
+// tag::page-17[]
+[%notitle#prop-17.prop,running-title="BOOK I.  PROP. XVII.  THEOR."]
+== Proposition XVII.
+
+// page 17 (leaf 51)
+[.d,margin-top=22.60pt]
+image::l51-c0.svg["The diagram of Proposition XVII",pdfwidth=532.8pt]
+
+[.j.L1670.R2430,margin-top=-94.74pt]
+NY __two angles of a tri-__
+
+[.d,margin-top=-9.94pt]
+image::l51-initial.svg["A",pdfwidth=532.8pt]
+
+[.j.Tm20.L1720.R2435,margin-top=-7.86pt]
+__angle__ image:l51-c3.svg["a black and red and blue figure",pdfwidth=52.08pt,vertical-align=-1.92pt] __are to-__
+
+[.j.L1110.R2565,margin-top=8.84pt]
+__gether less than two right angles.__
+
+[.j.L1870.R1900,margin-top=41.72pt]
+Produce image:l51-c18.svg["a black line",pdfwidth=49.92pt,vertical-align=0.00pt], then will
+
+[.j.L1720.R1690,margin-top=19.64pt]
+image:l51-r354x1191.svg["the red angle and the yellow angle are equal to two right angles",pdfwidth=190.32pt,vertical-align=-15.84pt]
+
+[.j.L1770.R1785,margin-top=58.28pt]
+But, image:l51-r476x1449.svg["the yellow angle",pdfwidth=40.08pt,vertical-align=-4.32pt] image:l51-c28.svg["is greater than",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l51-c27.svg["a blue figure",pdfwidth=32.40pt,vertical-align=-4.32pt] (pr. 16.)
+
+[.j.L1640.R1650,margin-top=19.16pt]
+image:l51-r322x1602.svg["therefore the red angle and the blue angle are less than two right angles.",pdfwidth=202.32pt,vertical-align=-13.68pt]
+
+[.j.L1125.R1130,margin-top=28.76pt]
+and in the same manner it may be shown that any other
+
+[.j.L1125.R1120,margin-top=8.84pt]
+two angles of the triangle taken together are less than two
+
+[.j.L1125.R3560,margin-top=8.60pt]
+right angles.
+
+[.j.L3615.R1245,margin-top=4.76pt]
+{empty}Q. E. D.
+
+[.l.sig.L2470.R0,margin-top=86.84pt]
+D
+
+// end::page-17[]
+
+// tag::page-18[]
+[%notitle#prop-18.prop,running-title="BOOK I.  PROP. XVIII.  THEOR."]
+== Proposition XVIII.
+
+// page 18 (leaf 52)
+[.d,margin-top=23.56pt]
+image::l52-c0.svg["The diagram of Proposition XVIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-204.48pt]
+image::l52-c1.svg["The diagram of Proposition XVIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-15.36pt]
+image::l52-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L2935.R1655,margin-top=-56.34pt]
+N __any triangle__
+
+[.j.L2995.R1100,margin-top=5.48pt]
+__if one side__ image:l52-c8.svg["a red line",pdfwidth=49.68pt,vertical-align=-0.48pt] __be__
+
+[.j.L2990.R1095,margin-top=5.24pt]
+__greater than another__
+
+[.j.L3000.R1100,margin-top=5.48pt]
+image:l52-c13.svg["a blue and black line",pdfwidth=47.52pt,vertical-align=0.48pt], __the angle op-__
+
+[.j.L2375.R1105,margin-top=5.72pt]
+__posite to the greater side is greater__
+
+[.j.Tm21.L2395.R1295,margin-top=5.72pt]
+__than the angle opposite to the less.__
+
+[.j.L2655.R1435,margin-top=24.92pt]
+{empty}i. e. image:l52-c24.svg["a black and red figure",pdfwidth=32.88pt,vertical-align=-16.80pt] image:l52-c30.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l52-c25.svg["a yellow figure",pdfwidth=30.00pt,vertical-align=-2.16pt]
+
+[.j.L1190.R1125,margin-top=63.56pt]
+Make image:l52-c36.svg["a red line",pdfwidth=48.00pt,vertical-align=0.24pt] image:l52-c34.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l52-c35.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.48pt] (pr. 3.), draw image:l52-c37.svg["a yellow line",pdfwidth=54.72pt,vertical-align=-1.68pt]
+
+[.j.L1615.R1435,margin-top=41.96pt]
+Then will image:l52-c42.svg["a blue figure",pdfwidth=32.64pt,vertical-align=-4.08pt] image:l52-c44.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l52-c41.svg["a black figure",pdfwidth=35.76pt,vertical-align=-4.56pt] (pr. 5.);
+
+[.j.L1785.R1745,margin-top=29.48pt]
+but image:l52-c47.svg["a blue figure",pdfwidth=33.36pt,vertical-align=-4.08pt] image:l52-c49.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l52-c48.svg["a yellow figure",pdfwidth=30.48pt,vertical-align=-3.60pt] (pr. 16.)
+
+[.j.L1620.R1555,margin-top=28.76pt]
+image:l52-c53.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.40pt] image:l52-c50.svg["a black figure",pdfwidth=33.12pt,vertical-align=-4.08pt] image:l52-c52.svg["is greater than",pdfwidth=14.16pt,vertical-align=0.24pt] image:l52-c51.svg["a yellow figure",pdfwidth=30.48pt,vertical-align=-3.84pt] and much more
+
+[.j.L2095.R2025,margin-top=27.08pt]
+is image:l52-c56.svg["a black and red figure",pdfwidth=32.64pt,vertical-align=-19.68pt] image:l52-c58.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l52-c57.svg["a yellow figure",pdfwidth=38.64pt,vertical-align=-6.48pt]
+
+[.j.L3665.R1215,margin-top=29.72pt]
+{empty}Q. E. D.
+
+// end::page-18[]
+
+// tag::page-19[]
+[%notitle#prop-19.prop,running-title="BOOK I.  PROP. XIX.  THEOR."]
+== Proposition XIX.
+
+// page 19 (leaf 53)
+[.d,margin-top=20.20pt]
+image::l53-c0.svg["The diagram of Proposition XIX",pdfwidth=532.8pt]
+
+[.j.L1665.R2760,margin-top=-121.86pt]
+F __in any triangle__
+
+[.d,margin-top=-10.42pt]
+image::l53-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1715.R2125,margin-top=-24.66pt]
+__one angle__ image:l53-c4.svg["a blue figure",pdfwidth=30.24pt,vertical-align=-0.48pt] __be greater__
+
+[.j.L1700.R2125,margin-top=18.20pt]
+__than another__ image:l53-c5.svg["a red figure",pdfwidth=32.16pt,vertical-align=-9.84pt] __the side__
+
+[.j.L1115.R2125,margin-top=8.84pt]
+image:l53-c8.svg["a blue and black line",pdfwidth=49.44pt,vertical-align=-0.96pt] __which is opposite to the greater__
+
+[.j.L1110.R2140,margin-top=9.08pt]
+__angle, is greater than the side__ image:l53-c9.svg["a red line",pdfwidth=48.48pt,vertical-align=0.96pt]
+
+[.j.Tm40.L1110.R3450,margin-top=8.84pt]
+__opposite the less.__
+
+[.j.L1245.R1225,margin-top=37.88pt]
+If image:l53-c11.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=-0.24pt] be not greater than image:l53-c10.svg["a red line",pdfwidth=48.48pt,vertical-align=1.68pt] then must
+
+[.j.L1860.R1855,margin-top=11.48pt]
+image:l53-c15.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.00pt] image:l53-c13.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] or image:l53-c12.svg["is less than",pdfwidth=14.40pt,vertical-align=-4.32pt] image:l53-c14.svg["a red line",pdfwidth=56.16pt,vertical-align=-1.44pt]
+
+[.j.L1830.R1820,margin-top=32.36pt]
+If image:l53-c20.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=0.00pt] image:l53-c18.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l53-c19.svg["a red line",pdfwidth=48.96pt,vertical-align=0.48pt] then
+
+[.j.L1950.R1940,margin-top=17.24pt]
+image:l53-c22.svg["a blue figure",pdfwidth=31.92pt,vertical-align=-11.52pt] image:l53-c26.svg["is equal to",pdfwidth=14.16pt,vertical-align=-8.16pt] image:l53-c23.svg["a red figure",pdfwidth=34.32pt,vertical-align=-10.08pt] (pr. 5.);
+
+[.j.L1720.R1725,margin-top=19.88pt]
+which is contrary to the hypothesis.
+
+[.j.L1380.R1305,margin-top=16.76pt]
+image:l53-c36.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.24pt] is not less than image:l53-c35.svg["a red line",pdfwidth=44.40pt,vertical-align=0.72pt]; for if it were,
+
+[.j.L1965.R1940,margin-top=19.16pt]
+image:l53-c37.svg["a blue figure",pdfwidth=32.88pt,vertical-align=-11.76pt] image:l53-c42.svg["is less than",pdfwidth=14.64pt,vertical-align=-9.36pt] image:l53-c38.svg["a red figure",pdfwidth=34.08pt,vertical-align=-9.84pt] (pr. 18.)
+
+[.j.L1720.R1700,margin-top=20.60pt]
+which is contrary to the hypothesis:
+
+[.j.L1930.R1915,margin-top=14.12pt]
+image:l53-c50.svg["therefore",pdfwidth=12.48pt,vertical-align=-2.40pt] image:l53-c51.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.72pt] image:l53-c49.svg["is greater than",pdfwidth=14.40pt,vertical-align=-2.40pt] image:l53-c52.svg["a red line",pdfwidth=55.68pt,vertical-align=-2.40pt]
+
+[.j.L3650.R1210,margin-top=10.76pt]
+{empty}Q. E. D.
+
+// end::page-19[]
+
+// tag::page-20[]
+[%notitle#prop-20.prop,running-title="BOOK I.  PROP. XX.  THEOR."]
+== Proposition XX.
+
+// page 20 (leaf 54)
+[.d,margin-top=21.40pt]
+image::l54-c0.svg["The diagram of Proposition XX",pdfwidth=532.8pt]
+
+[.d,margin-top=-139.20pt]
+image::l54-initial.svg["A",pdfwidth=532.8pt]
+
+[.j.L2955.R1115,margin-top=-57.06pt]
+NY __two sides__ image:l54-c16.svg["a black and blue line",pdfwidth=48.00pt,vertical-align=-1.44pt]
+
+[.j.L3010.R1135,margin-top=8.60pt]
+__and__ image:l54-c22.svg["a red line",pdfwidth=48.96pt,vertical-align=-0.24pt] __of a__
+
+[.j.L3000.R1285,margin-top=18.92pt]
+__triangle__ image:l54-c28.svg["a black and red and blue figure",pdfwidth=49.92pt,vertical-align=-5.76pt]
+
+[.j.L2400.R1140,margin-top=10.28pt]
+__taken together are greater than the__
+
+[.j.L2400.R1840,margin-top=11.24pt]
+__third side__ (image:l54-c29.svg["a black line",pdfwidth=47.52pt,vertical-align=0.48pt]).
+
+[.j.L1990.R2070,margin-top=66.20pt]
+Produce image:l54-c30.svg["a blue and black line",pdfwidth=47.04pt,vertical-align=-0.72pt], and
+
+[.j.L1550.R1640,margin-top=11.72pt]
+make image:l54-c34.svg["a blue and black figure",pdfwidth=6.72pt,vertical-align=0.48pt]image:l54-c35.svg["a blue and black line",pdfwidth=39.36pt,vertical-align=0.00pt] image:l54-c32.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l54-c33.svg["a red line",pdfwidth=49.44pt,vertical-align=0.48pt] (pr. 3.);
+
+[.j.L2195.R2275,margin-top=11.24pt]
+draw image:l54-c40.svg["a yellow line",pdfwidth=50.64pt,vertical-align=-2.40pt]
+
+[.j.L1335.R1435,margin-top=26.36pt]
+Then because image:l54-c46.svg["a blue and black line",pdfwidth=32.16pt,vertical-align=0.48pt]image:l54-c50.svg["a black and blue figure",pdfwidth=6.00pt,vertical-align=0.48pt]image:l54-c51.svg["a black and blue figure",pdfwidth=6.72pt,vertical-align=0.48pt] image:l54-c44.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l54-c45.svg["a red line",pdfwidth=48.00pt,vertical-align=0.24pt] (const.),
+
+[.j.L1975.R1985,margin-top=22.52pt]
+image:l54-c54.svg["a blue figure",pdfwidth=26.88pt,vertical-align=-13.92pt] image:l54-c61.svg["is equal to",pdfwidth=14.16pt,vertical-align=-7.92pt] image:l54-c53.svg["a red figure",pdfwidth=25.20pt,vertical-align=-13.68pt] (pr. 5.)
+
+[.j.L1750.R1915,margin-top=43.40pt]
+image:l54-c67.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.44pt] image:l54-c65.svg["a blue and yellow and black figure",pdfwidth=32.88pt,vertical-align=-3.60pt] image:l54-c66.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l54-c64.svg["a red figure",pdfwidth=25.92pt,vertical-align=-4.08pt] (ax. 9.)
+
+[.j.L1200.R1315,margin-top=12.20pt]
+image:l54-c72.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l54-c77.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.72pt] image:l54-c71.svg["a black figure",pdfwidth=13.92pt,vertical-align=-4.08pt] image:l54-c74.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.48pt] image:l54-c70.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l54-c73.svg["a black line",pdfwidth=48.00pt,vertical-align=0.96pt] (pr. 19.)
+
+[.j.L1200.R1450,margin-top=11.48pt]
+and image:l54-c72.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l54-c88.svg["a blue and black line",pdfwidth=47.52pt,vertical-align=0.00pt] image:l54-c83.svg["a black figure",pdfwidth=13.68pt,vertical-align=-4.08pt] image:l54-c86.svg["a red line",pdfwidth=48.48pt,vertical-align=0.48pt] image:l54-c84.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l54-c87.svg["a black line",pdfwidth=44.88pt,vertical-align=0.48pt].
+
+[.j.L3580.R1335,margin-top=14.36pt]
+{empty}Q. E. D
+
+// end::page-20[]
+
+// tag::page-21[]
+[%notitle#prop-21.prop,running-title="BOOK I.  PROP. XXI.  THEOR."]
+== Proposition XXI.
+
+// page 21 (leaf 55)
+[.d,margin-top=4.36pt]
+image::l55-c0.svg["The diagram of Proposition XXI",pdfwidth=532.8pt]
+
+[.d,margin-top=-145.44pt]
+image::l55-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1650.R2320,margin-top=-49.14pt]
+F __from any point__ (image:l55-c3.svg["a yellow and black figure",pdfwidth=26.16pt,vertical-align=-1.44pt])
+
+[.j.Tm15.L1705.R2790,margin-top=15.32pt]
+__within a triangle__
+
+[.j.L1670.R2800,margin-top=8.84pt]
+__straight lines be__
+
+[.j.L1105.R2320,margin-top=5.48pt]
+__drawn to the extremities of one side__
+
+[.j.L1110.R2370,margin-top=5.96pt]
+(image:l55-c38.svg["a black line",pdfwidth=47.52pt,vertical-align=-1.20pt]), __these lines must be toge-__
+
+[.j.L1105.R2320,margin-top=5.48pt]
+__ther less than the other two sides, but__
+
+[.j.Tm17.L1105.R2795,margin-top=5.72pt]
+__must contain a greater angle.__
+
+[.j.L2140.R2185,margin-top=37.16pt]
+Produce image:l55-c111.svg["a black line",pdfwidth=49.20pt,vertical-align=0.24pt],
+
+[.j.L1525.R1530,margin-top=8.84pt]
+image:l55-c120.svg["a blue and black line",pdfwidth=46.56pt,vertical-align=-0.72pt] image:l55-c113.svg["a black figure",pdfwidth=13.92pt,vertical-align=-4.08pt] image:l55-c121.svg["a red line",pdfwidth=29.04pt,vertical-align=-0.96pt] image:l55-c114.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l55-c115.svg["a black line",pdfwidth=48.24pt,vertical-align=0.24pt] (pr. 20.),
+
+[.j.L2145.R2180,margin-top=8.36pt]
+add image:l55-c122.svg["a red line",pdfwidth=29.04pt,vertical-align=-1.20pt] to each,
+
+[.j.L1130.R1140,margin-top=8.60pt]
+image:l55-c138.svg["a blue and black line",pdfwidth=47.04pt,vertical-align=-1.92pt] image:l55-c124.svg["a black figure",pdfwidth=13.92pt,vertical-align=-4.32pt] image:l55-c132.svg["a red line",pdfwidth=48.00pt,vertical-align=-1.44pt] image:l55-c123.svg["is greater than",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l55-c126.svg["a black line",pdfwidth=48.24pt,vertical-align=0.48pt] image:l55-c125.svg["a black figure",pdfwidth=14.16pt,vertical-align=-4.56pt] image:l55-c130.svg["a red line",pdfwidth=34.80pt,vertical-align=-0.96pt] (ax. 4.)
+
+[.j.L1545.R1575,margin-top=8.60pt]
+In the same manner it may be shown that
+
+[.j.L1160.R1170,margin-top=9.32pt]
+image:l55-r122x1593.svg["the black and dotted line and the red dotted line are less than the black line and the yellow line, therefore",pdfwidth=298.32pt,vertical-align=-3.60pt]
+
+[.j.L1235.R1220,margin-top=6.44pt]
+image:l55-c168.svg["a blue and black line",pdfwidth=47.28pt,vertical-align=-3.36pt] image:l55-c161.svg["a black figure",pdfwidth=14.16pt,vertical-align=-6.00pt] image:l55-c164.svg["a red line",pdfwidth=49.20pt,vertical-align=-2.88pt] image:l55-c159.svg["is greater than",pdfwidth=14.40pt,vertical-align=-2.88pt] image:l55-c163.svg["a black line",pdfwidth=48.48pt,vertical-align=-0.48pt] image:l55-c160.svg["a black figure",pdfwidth=14.16pt,vertical-align=-5.52pt] image:l55-c162.svg["a yellow line",pdfwidth=48.00pt,vertical-align=1.20pt].
+
+[.j.L2005.R2035,margin-top=9.56pt]
+which was to be proved.
+
+[.j.L1675.R1685,margin-top=47.48pt]
+Again image:l55-c172.svg["a blue figure",pdfwidth=36.72pt,vertical-align=-3.36pt] image:l55-c173.svg["is greater than",pdfwidth=14.40pt,vertical-align=-1.44pt] image:l55-c171.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=0.24pt] (pr. 16.),
+
+[.j.L1565.R1585,margin-top=31.88pt]
+and also image:l55-c181.svg["a red figure",pdfwidth=51.84pt,vertical-align=-6.96pt] image:l55-c184.svg["is greater than",pdfwidth=14.40pt,vertical-align=-1.92pt] image:l55-c180.svg["a blue figure",pdfwidth=31.92pt,vertical-align=-2.16pt] (pr. 16.),
+
+[.j.L1920.R1925,margin-top=21.32pt]
+image:l55-c195.svg["therefore",pdfwidth=11.52pt,vertical-align=-14.16pt] image:l55-c193.svg["a red figure",pdfwidth=51.12pt,vertical-align=-18.96pt] image:l55-c194.svg["is greater than",pdfwidth=14.40pt,vertical-align=-13.92pt] image:l55-c192.svg["a yellow figure",pdfwidth=45.12pt,vertical-align=-13.20pt]
+
+[.j.L3610.R1255,margin-top=24.68pt]
+{empty}Q. E. D.
+
+// end::page-21[]
+
+// tag::page-22[]
+[%notitle#prop-22.prop,running-title="BOOK I.  PROP. XXII.  THEOR."]
+== Proposition XXII.
+
+// page 22 (leaf 56)
+[.d,margin-top=11.08pt]
+image::l56-c0.svg["The diagram of Proposition XXII",pdfwidth=532.8pt]
+
+[.d,margin-top=-160.56pt]
+image::l56-initial.svg["G",pdfwidth=532.8pt]
+
+[.j.L3315.R1105,margin-top=-58.02pt]
+IVEN __three right__
+
+[.j.Tm24.L3410.R1105,margin-top=9.80pt]
+__lines__ image:l56-r1578x490.svg["three lines, black, red and blue, braced",pdfwidth=55.68pt,vertical-align=-11.76pt]
+
+[.j.L3410.R1105,margin-top=8.84pt]
+__the sum of any__
+
+[.j.Tm17.L3405.R1105,margin-top=5.48pt]
+__two greater than__
+
+[.j.L2795.R1110,margin-top=5.48pt]
+__the third, to construct a tri-__
+
+[.j.Tm30.L2800.R1110,margin-top=5.72pt]
+__angle whose sides shall be re-__
+
+[.j.L2765.R1105,margin-top=5.72pt]
+__spectively equal to the given__
+
+[.l.L2795.R0,margin-top=5.24pt]
+__lines.__
+
+[.j.L1605.R1570,margin-top=53.48pt]
+Assume image:l56-c97.svg["a black line",pdfwidth=48.48pt,vertical-align=-0.24pt] image:l56-c93.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l56-c98.svg["a black line",pdfwidth=48.00pt,vertical-align=-0.72pt] (pr. 3.).
+
+[.j.L1845.R2215,margin-top=8.84pt]
+Draw image:l56-c111.svg["a blue and black line",pdfwidth=32.88pt,vertical-align=1.44pt] image:l56-c110.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l56-c112.svg["a blue and black line",pdfwidth=32.40pt,vertical-align=1.20pt]
+
+[.j.L3160.R1610,margin-top=-0.28pt]
+image:l56-r1368x1274.svg["brace",pdfwidth=6.24pt,vertical-align=-15.60pt] (pr. 2.).
+
+[.j.L2015.R2280,margin-top=-1.48pt]
+and image:l56-c122.svg["a red line",pdfwidth=28.80pt,vertical-align=0.96pt] image:l56-c121.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l56-c123.svg["a red line",pdfwidth=24.72pt,vertical-align=0.48pt]
+
+[.j.L1755.R1725,margin-top=28.52pt]
+With image:l56-c128.svg["a blue and black line",pdfwidth=37.20pt,vertical-align=3.36pt] and image:l56-c129.svg["a red line",pdfwidth=33.84pt,vertical-align=1.44pt] as radii,
+
+[.j.L1365.R1340,margin-top=35.72pt]
+describe image:l56-c130.svg["a blue and black figure",pdfwidth=63.36pt,vertical-align=-24.96pt] and image:l56-c131.svg["a red figure",pdfwidth=54.96pt,vertical-align=-22.80pt] (post. 3.);
+
+[.j.L1845.R1825,margin-top=34.04pt]
+draw image:l56-c132.svg["a yellow line",pdfwidth=47.28pt,vertical-align=1.44pt] and image:l56-c141.svg["a yellow line",pdfwidth=48.00pt,vertical-align=0.48pt],
+
+[.j.L1400.R1365,margin-top=25.64pt]
+then will image:l56-c143.svg["a yellow and black figure",pdfwidth=67.20pt,vertical-align=-3.12pt] be the triangle required.
+
+[.j.L1255.R2530,margin-top=21.32pt]
+For image:l56-c155.svg["a black line",pdfwidth=48.72pt,vertical-align=0.00pt] image:l56-c154.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l56-c156.svg["a black line",pdfwidth=48.96pt,vertical-align=-0.24pt],
+
+[.j.L1545.R1205,margin-top=8.84pt]
+image:l56-c176.svg["a yellow line",pdfwidth=47.76pt,vertical-align=0.72pt] image:l56-c167.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l56-c169.svg["a red line",pdfwidth=48.96pt,vertical-align=0.96pt] image:l56-c168.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l56-c170.svg["a red line",pdfwidth=48.48pt,vertical-align=0.72pt], image:l56-c153.svg["brace",pdfwidth=7.92pt,vertical-align=-24.00pt] (const.)
+
+[.j.L1285.R1950,margin-top=8.60pt]
+and image:l56-c190.svg["a yellow line",pdfwidth=46.80pt,vertical-align=1.68pt] image:l56-c182.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.44pt] image:l56-c181.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=2.64pt] image:l56-c183.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l56-c184.svg["a black and blue line",pdfwidth=37.92pt,vertical-align=1.44pt].
+
+[.j.L3660.R1220,margin-top=12.92pt]
+{empty}Q. E. D.
+
+// end::page-22[]
+
+// tag::page-23[]
+[%notitle#prop-23.prop,running-title="BOOK I.  PROP. XXIII.  PROB."]
+== Proposition XXIII.
+
+// page 23 (leaf 57)
+[.d,margin-top=31.96pt]
+image::l57-c0.svg["The diagram of Proposition XXIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-75.12pt]
+image::l57-initial.svg["A",pdfwidth=532.8pt]
+
+[.j.L1630.R2030,margin-top=-53.94pt]
+T __a given point__ (image:l57-c9.svg["a black and yellow figure",pdfwidth=39.36pt,vertical-align=-4.08pt]) __in a__
+
+[.j.L1690.R2040,margin-top=8.60pt]
+__given straight line__ (image:l57-c14.svg["a black line",pdfwidth=51.60pt,vertical-align=-4.08pt]),
+
+[.j.L1710.R2030,margin-top=8.60pt]
+__to make an angle equal to a__
+
+[.j.L1155.R2585,margin-top=15.32pt]
+__given rectilineal angle__ (image:l57-c22.svg["a red figure",pdfwidth=31.92pt,vertical-align=-3.84pt]).
+
+[.d,margin-top=14.78pt]
+image::l57-c32.svg["The diagram of Proposition XXIII",pdfwidth=532.8pt]
+
+[.j.L1110.R2035,margin-top=-62.58pt]
+Draw image:l57-c33.svg["a red line",pdfwidth=48.24pt,vertical-align=0.48pt] between any two points
+
+[.j.L1105.R2650,margin-top=11.24pt]
+in the legs of the given angle.
+
+[.j.L1650.R1715,margin-top=45.08pt]
+Construct image:l57-c35.svg["a black and yellow and red figure",pdfwidth=85.68pt,vertical-align=-3.84pt] (pr. 22.).
+
+[.j.L1175.R1205,margin-top=11.00pt]
+so that image:l57-c47.svg["a black line",pdfwidth=46.56pt,vertical-align=0.24pt] image:l57-c45.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l57-c48.svg["a black line",pdfwidth=54.24pt,vertical-align=-4.56pt] image:l57-c49.svg["a yellow line",pdfwidth=47.76pt,vertical-align=-0.96pt] image:l57-c46.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.68pt] image:l57-c50.svg["a blue and black line",pdfwidth=48.48pt,vertical-align=-1.44pt]
+
+[.j.L1970.R2005,margin-top=11.48pt]
+and image:l57-c54.svg["a red line",pdfwidth=48.96pt,vertical-align=-0.48pt] image:l57-c55.svg["a red and black line",pdfwidth=54.48pt,vertical-align=-1.92pt]
+
+[.j.L1745.R1785,margin-top=43.64pt]
+Then image:l57-c57.svg["a blue figure",pdfwidth=30.48pt,vertical-align=-0.48pt] image:l57-c59.svg["is equal to",pdfwidth=12.96pt,vertical-align=3.36pt] image:l57-c58.svg["a red figure",pdfwidth=33.12pt,vertical-align=-0.96pt] (pr. 8.).
+
+[.j.L3615.R1260,margin-top=5.24pt]
+{empty}Q. E. D.
+
+// end::page-23[]
+
+// tag::page-24[]
+[%notitle#prop-24.prop,running-title="BOOK I.  PROP. XXIV.  THEOR."]
+== Proposition XXIV.
+
+// page 24 (leaf 58)
+[.d,margin-top=1.48pt]
+image::l58-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L3325.R1110,margin-top=-58.50pt]
+F __two triangles__
+
+[.d,margin-top=-9.46pt]
+image::l58-c2.svg["The diagram of Proposition XXIV",pdfwidth=532.8pt]
+
+[.d,margin-top=-158.64pt]
+image::l58-c3.svg["The diagram of Proposition XXIV",pdfwidth=532.8pt]
+
+[.j.Tm7.L3385.R1085,margin-top=-142.02pt]
+__have two sides of__
+
+[.j.L3380.R1115,margin-top=5.48pt]
+__the one respec-__
+
+[.j.L3380.R1110,margin-top=5.72pt]
+__tively equal to__
+
+[.j.Tm3.L2770.R1105,margin-top=5.00pt]
+__two sides of the other__ (image:l58-c31.svg["a black and blue line",pdfwidth=33.36pt,vertical-align=0.24pt]
+
+[.j.L2770.R1110,margin-top=5.72pt]
+__to__ image:l58-c43.svg["a black and blue line",pdfwidth=47.04pt,vertical-align=0.72pt] __and__ image:l58-c36.svg["a red line",pdfwidth=48.24pt,vertical-align=1.20pt]
+
+[.j.L2770.R1085,margin-top=5.48pt]
+__to__ image:l58-c48.svg["a red line",pdfwidth=48.48pt,vertical-align=1.44pt]), __and if one of__
+
+[.j.L2770.R1120,margin-top=29.96pt]
+__the angles__ (image:l58-c54.svg["a black and red figure",pdfwidth=33.12pt,vertical-align=-3.12pt]) __contain-__
+
+[.j.L2980.R1115,margin-top=5.72pt]
+__ed by the equal sides be__
+
+[.j.L1100.R1115,margin-top=21.80pt]
+__greater than the other__ (image:l58-c98.svg["a black and red figure",pdfwidth=23.28pt,vertical-align=-2.16pt]), __the side__ (image:l58-c102.svg["a black line",pdfwidth=47.76pt,vertical-align=0.72pt]) __which is__
+
+[.j.Tm14.L1115.R1125,margin-top=5.24pt]
+__opposite to the greater angle is greater than the side__ (image:l58-c105.svg["a yellow line",pdfwidth=48.48pt,vertical-align=-0.24pt])
+
+[.j.Tm20.L1115.R2560,margin-top=5.72pt]
+__which is opposite to the less angle.__
+
+[.j.L1685.R1750,margin-top=41.72pt]
+Make image:l58-r938x1305.svg["a red, black and blue dotted angle",pdfwidth=24.48pt,vertical-align=-1.68pt] image:l58-c109.svg["is equal to",pdfwidth=12.96pt,vertical-align=-0.96pt] image:l58-r1200x1305.svg["a red, black and black dotted angle",pdfwidth=24.48pt,vertical-align=-1.68pt] (pr. 23.),
+
+[.j.L1595.R1600,margin-top=5.72pt]
+and image:l58-c115.svg["a red line",pdfwidth=48.72pt,vertical-align=0.96pt] image:l58-c114.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l58-c116.svg["a red line",pdfwidth=48.00pt,vertical-align=1.68pt] (pr. 3.),
+
+[.j.L1795.R1765,margin-top=5.48pt]
+draw image:l58-c126.svg["a black and blue line",pdfwidth=47.52pt,vertical-align=0.48pt] and image:l58-c118.svg["a black line",pdfwidth=50.64pt,vertical-align=-0.24pt]
+
+[.j.L1180.R1195,margin-top=8.84pt]
+Because image:l58-c142.svg["a red line",pdfwidth=48.72pt,vertical-align=0.24pt] image:l58-c136.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l58-c137.svg["a red line",pdfwidth=48.48pt,vertical-align=1.68pt] (ax. 1. hyp. const.)
+
+[.j.L1780.R1820,margin-top=26.12pt]
+image:l58-c148.svg["therefore",pdfwidth=12.48pt,vertical-align=0.00pt] image:l58-c144.svg["a blue and red figure",pdfwidth=33.12pt,vertical-align=-17.52pt] image:l58-c149.svg["is equal to",pdfwidth=13.92pt,vertical-align=1.44pt] image:l58-c145.svg["a yellow figure",pdfwidth=37.68pt,vertical-align=-10.80pt] (pr. 5.)
+
+[.j.L1940.R2035,margin-top=32.84pt]
+but image:l58-c155.svg["a red figure",pdfwidth=33.36pt,vertical-align=-7.92pt] image:l58-c156.svg["is less than",pdfwidth=14.40pt,vertical-align=-3.60pt] image:l58-c154.svg["a yellow figure",pdfwidth=37.20pt,vertical-align=-11.76pt]
+
+[.j.L1725.R1795,margin-top=31.40pt]
+and image:l58-c148.svg["therefore",pdfwidth=12.48pt,vertical-align=0.00pt] image:l58-c158.svg["a red figure",pdfwidth=32.64pt,vertical-align=-7.20pt] image:l58-c159.svg["is less than",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l58-c157.svg["a yellow and black figure",pdfwidth=56.64pt,vertical-align=-12.00pt].
+
+[.j.L1615.R1650,margin-top=19.40pt]
+image:l58-c165.svg["therefore",pdfwidth=12.48pt,vertical-align=-3.60pt] image:l58-c171.svg["a black line",pdfwidth=47.52pt,vertical-align=-0.48pt] image:l58-c164.svg["is greater than",pdfwidth=14.16pt,vertical-align=-1.92pt] image:l58-c166.svg["a black line",pdfwidth=48.00pt,vertical-align=0.48pt] (pr. 19.)
+
+[.j.L1635.R1680,margin-top=6.92pt]
+but image:l58-c179.svg["a black line",pdfwidth=48.96pt,vertical-align=0.72pt] image:l58-c178.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.24pt] image:l58-c188.svg["a yellow line",pdfwidth=47.76pt,vertical-align=1.44pt] (pr. 4.)
+
+[.j.L1840.R1860,margin-top=3.56pt]
+image:l58-c192.svg["therefore",pdfwidth=12.48pt,vertical-align=-3.84pt] image:l58-c193.svg["a black line",pdfwidth=48.96pt,vertical-align=-0.96pt] image:l58-c191.svg["is greater than",pdfwidth=14.40pt,vertical-align=-2.40pt] image:l58-c194.svg["a yellow and black line",pdfwidth=51.84pt,vertical-align=-2.88pt]
+
+[.j.L3620.R1270,margin-top=5.72pt]
+{empty}Q. E. D.
+
+// end::page-24[]
+
+// tag::page-25[]
+[%notitle#prop-25.prop,running-title="BOOK I.  PROP. XXV.  THEOR."]
+== Proposition XXV.
+
+// page 25 (leaf 59)
+[.d,margin-top=21.64pt]
+image::l59-c0.svg["The diagram of Proposition XXV",pdfwidth=532.8pt]
+
+[.d,margin-top=-174.72pt]
+image::l59-c1.svg["The diagram of Proposition XXV",pdfwidth=532.8pt]
+
+[.j.L1680.R2715,margin-top=-166.98pt]
+F __two triangles__
+
+[.d,margin-top=-8.74pt]
+image::l59-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1725.R2715,margin-top=-44.58pt]
+__have two sides__
+
+[.j.L1730.R2705,margin-top=5.24pt]
+(image:l59-c5.svg["a red line",pdfwidth=49.44pt,vertical-align=0.96pt] __and__
+
+[.j.L1730.R2715,margin-top=5.72pt]
+image:l59-c6.svg["a black and blue line",pdfwidth=48.00pt,vertical-align=-0.48pt]) __of the__
+
+[.j.L1120.R2720,margin-top=6.68pt]
+__one respectively equal to two__
+
+[.j.L1085.R2720,margin-top=5.96pt]
+__sides__ (image:l59-c7.svg["a red line",pdfwidth=37.20pt,vertical-align=2.16pt] __and__ image:l59-c8.svg["a black line",pdfwidth=34.32pt,vertical-align=1.68pt])
+
+[.j.L1125.R2715,margin-top=5.24pt]
+__of the other, but their bases__
+
+[.j.L1130.R2705,margin-top=5.72pt]
+__unequal, the angle subtended__
+
+[.j.Tm24.L1125.R2730,margin-top=5.72pt]
+__by the greater base__ image:l59-c9.svg["a black line",pdfwidth=50.88pt,vertical-align=-4.08pt])
+
+[.j.L1125.R2725,margin-top=5.48pt]
+__of the one, must be greater__
+
+[.j.L1125.R2725,margin-top=5.72pt]
+__than the angle subtended by__
+
+[.j.L1135.R2360,margin-top=5.72pt]
+__the less base__ image:l59-c13.svg["a yellow figure",pdfwidth=50.64pt,vertical-align=-3.84pt]) __of the other.__
+
+[.j.L1215.R1185,margin-top=50.60pt]
+image:l59-c19.svg["a yellow figure",pdfwidth=28.08pt,vertical-align=-1.44pt] image:l59-c22.svg["is equal to",pdfwidth=12.96pt,vertical-align=-0.24pt], image:l59-r403x1393.svg["is greater than",pdfwidth=13.68pt,vertical-align=-0.48pt] or image:l59-r540x1396.svg["is less than",pdfwidth=13.44pt,vertical-align=-0.96pt] image:l59-c18.svg["a black figure",pdfwidth=19.68pt,vertical-align=-2.88pt] image:l59-c20.svg["a yellow figure",pdfwidth=27.84pt,vertical-align=-1.92pt] is not equal to image:l59-c21.svg["a black figure",pdfwidth=20.64pt,vertical-align=-4.32pt]
+
+[.j.L1135.R1105,margin-top=29.48pt]
+for if image:l59-c24.svg["a yellow figure",pdfwidth=28.56pt,vertical-align=-1.92pt] image:l59-c27.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l59-c25.svg["a black figure",pdfwidth=20.40pt,vertical-align=-4.08pt] then image:l59-c29.svg["a black line",pdfwidth=47.52pt,vertical-align=0.72pt] image:l59-c26.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l59-c28.svg["a yellow line",pdfwidth=48.24pt,vertical-align=0.96pt] (pr. 4.)
+
+[.j.L1740.R1680,margin-top=11.24pt]
+which is contrary to the hypothesis;
+
+[.j.L1935.R1930,margin-top=27.08pt]
+image:l59-c32.svg["a yellow figure",pdfwidth=28.56pt,vertical-align=-5.04pt] is not less than image:l59-c33.svg["a black figure",pdfwidth=20.40pt,vertical-align=-6.72pt]
+
+[.j.L2115.R2085,margin-top=32.84pt]
+for if image:l59-c35.svg["a yellow figure",pdfwidth=27.84pt,vertical-align=-3.12pt] image:l59-c38.svg["is less than",pdfwidth=14.16pt,vertical-align=-4.32pt] image:l59-c34.svg["a black figure",pdfwidth=20.16pt,vertical-align=-4.56pt]
+
+[.j.L1675.R1625,margin-top=13.40pt]
+then image:l59-c41.svg["a black line",pdfwidth=45.36pt,vertical-align=2.64pt] image:l59-r662x2134.svg["is less than",pdfwidth=13.44pt,vertical-align=-2.40pt] image:l59-c40.svg["a yellow line",pdfwidth=48.00pt,vertical-align=3.36pt] (pr. 24.),
+
+[.j.L1630.R1565,margin-top=9.80pt]
+which is also contrary to the hypothesis:
+
+[.j.L2190.R2115,margin-top=20.36pt]
+image:l59-c47.svg["therefore",pdfwidth=12.24pt,vertical-align=-11.28pt] image:l59-c45.svg["a yellow figure",pdfwidth=28.56pt,vertical-align=-12.48pt] image:l59-c46.svg["is greater than",pdfwidth=13.92pt,vertical-align=-11.28pt] image:l59-c44.svg["a black figure",pdfwidth=28.08pt,vertical-align=-13.44pt]
+
+[.j.L3645.R1210,margin-top=17.24pt]
+{empty}Q. E. D.
+
+[.l.sig.L2805.R0,margin-top=7.40pt]
+E
+
+// end::page-25[]
+
+// tag::page-26[]
+[%notitle#prop-26.prop,running-title="BOOK I.  PROP. XXVI.  THEOR."]
+== Proposition XXVI.
+
+// page 26 (leaf 60)
+[.l.L1270.R0,margin-top=-6.14pt]
+[.sc]#Case I.#
+
+[.d,margin-top=2.78pt]
+image::l60-c0.svg["The diagram of Proposition XXVI",pdfwidth=532.8pt]
+
+[.d,margin-top=-130.56pt]
+image::l60-c1.svg["The diagram of Proposition XXVI",pdfwidth=532.8pt]
+
+[.d,margin-top=-114.00pt]
+image::l60-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L3390.R1155,margin-top=-57.30pt]
+F __two triangles__
+
+[.j.Tm54.L3430.R1150,margin-top=5.48pt]
+__have two angles__
+
+[.j.L3430.R1160,margin-top=5.48pt]
+__of the one re-__
+
+[.j.Tm12.L3405.R1140,margin-top=5.72pt]
+__spectively equal__
+
+[.j.L2840.R1160,margin-top=5.72pt]
+__to two angles of the other,__
+
+[.j.L2840.R1140,margin-top=19.64pt]
+(image:l60-c20.svg["a yellow figure",pdfwidth=30.72pt,vertical-align=-2.16pt] image:l60-c21.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l60-c19.svg["a yellow figure",pdfwidth=32.40pt,vertical-align=-2.16pt] __and__
+
+[.l.L1170.R0,margin-top=12.92pt]
+[.sc]#Case II.#
+
+[.j.L2870.R1155,margin-top=-4.60pt]
+image:l60-c23.svg["a red figure",pdfwidth=23.76pt,vertical-align=-1.68pt] image:l60-c26.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l60-c24.svg["a black and blue figure",pdfwidth=24.96pt,vertical-align=-2.64pt]), __and a side__
+
+[.d,margin-top=-3.94pt]
+image::l60-c28.svg["The diagram of Proposition XXVI",pdfwidth=532.8pt]
+
+[.d,margin-top=-125.28pt]
+image::l60-c29.svg["The diagram of Proposition XXVI",pdfwidth=532.8pt]
+
+[.j.L2835.R1125,margin-top=-117.54pt]
+__of the one equal to a side of__
+
+[.j.L2835.R1145,margin-top=5.48pt]
+__the other similarly placed__
+
+[.j.L2830.R1145,margin-top=5.72pt]
+__with respect to the equal__
+
+[.j.Tm9.L2830.R1160,margin-top=5.48pt]
+__angles, the remaining sides__
+
+[.j.Tm13.L2830.R1165,margin-top=5.72pt]
+__and angles are respectively__
+
+[.j.Tm32.L2830.R1495,margin-top=5.48pt]
+__equal to one another.__
+
+[.j.T114.L2370.R2475,margin-top=37.40pt]
+CASE I.
+
+[.j.L1345.R1460,margin-top=6.68pt]
+Let image:l60-c33.svg["a blue and black line",pdfwidth=28.56pt,vertical-align=0.00pt]image:l60-c34.svg["a blue and black line",pdfwidth=13.44pt,vertical-align=0.24pt] and image:l60-c32.svg["a blue and black line",pdfwidth=44.40pt,vertical-align=0.24pt] which lie between
+
+[.j.L1925.R2040,margin-top=7.64pt]
+the equal angles be equal,
+
+[.j.L1750.R1880,margin-top=7.40pt]
+then image:l60-c42.svg["a red line",pdfwidth=48.00pt,vertical-align=0.48pt] image:l60-c35.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l60-c36.svg["a red line",pdfwidth=55.68pt,vertical-align=-0.96pt]
+
+[.j.L1255.R1375,margin-top=10.52pt]
+For if it be possible, let one of them image:l60-c45.svg["a red line",pdfwidth=48.96pt,vertical-align=0.96pt] be
+
+[.j.L1995.R2125,margin-top=7.40pt]
+greater than the other;
+
+[.j.L1230.R1360,margin-top=5.72pt]
+make image:l60-c60.svg["a red line",pdfwidth=47.28pt,vertical-align=-2.16pt] image:l60-c55.svg["is equal to",pdfwidth=13.92pt,vertical-align=-3.36pt] image:l60-c59.svg["a red line",pdfwidth=47.28pt,vertical-align=-1.92pt], draw image:l60-c61.svg["a yellow line",pdfwidth=54.48pt,vertical-align=-2.64pt]
+
+[.j.L1750.R1710,margin-top=38.60pt]
+In image:l60-c65.svg["a black and red and blue figure",pdfwidth=43.20pt,vertical-align=-3.84pt] and image:l60-c66.svg["a yellow and red and blue and black figure",pdfwidth=42.00pt,vertical-align=-3.60pt] we have
+
+[.j.L1065.R1200,margin-top=15.08pt]
+image:l60-c78.svg["a red line",pdfwidth=37.68pt,vertical-align=-4.56pt] image:l60-c72.svg["is equal to",pdfwidth=14.40pt,vertical-align=-5.04pt] image:l60-c75.svg["a red line",pdfwidth=38.16pt,vertical-align=-3.84pt], image:l60-c68.svg["a yellow figure",pdfwidth=29.28pt,vertical-align=-9.36pt] image:l60-c71.svg["is equal to",pdfwidth=13.92pt,vertical-align=-3.60pt] image:l60-c67.svg["a yellow figure",pdfwidth=28.80pt,vertical-align=-7.68pt], image:l60-c73.svg["a blue and black line",pdfwidth=37.44pt,vertical-align=-2.64pt] image:l60-c70.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.88pt] image:l60-c69.svg["a blue and black line",pdfwidth=43.44pt,vertical-align=-2.40pt];
+
+[.j.L1770.R1920,margin-top=30.20pt]
+image:l60-c85.svg["therefore",pdfwidth=12.48pt,vertical-align=-3.60pt] image:l60-c84.svg["a red figure",pdfwidth=28.08pt,vertical-align=-5.76pt] image:l60-c86.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.92pt] image:l60-c83.svg["a black figure",pdfwidth=29.04pt,vertical-align=-4.32pt] (pr. 4.)
+
+// end::page-26[]
+
+// tag::page-27[]
 <<<
 
-[#prop-2]
-=== Proposition II. Problem.
+// page 27 (leaf 61)
+[.j.L1920.R1945,margin-top=9.70pt]
+but image:l61-c1.svg["a red figure",pdfwidth=28.56pt,vertical-align=-3.36pt] image:l61-c2.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l61-c0.svg["a black and blue figure",pdfwidth=29.52pt,vertical-align=-4.08pt] (hyp.)
 
-image::prop-2.svg["The red triangle on the dotted line between the given point and the black line’s end; the blue circle about that end through the black line’s other end, the yellow line produced to it; the red circle about the triangle’s apex, and the blue line from the given point to it",float=left]
+[.j.L1385.R1340,margin-top=22.76pt]
+and therefore image:l61-c6.svg["a black figure",pdfwidth=30.00pt,vertical-align=-4.80pt] image:l61-r688x460.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l61-c4.svg["a black and blue figure",pdfwidth=29.28pt,vertical-align=-4.56pt], which is absurd;
 
-[.enunciation.dropcap]
-From a given point ({red-blue}), to draw a straight line equal to a given finite straight line ({black}).
+[.j.L1300.R1280,margin-top=6.68pt]
+hence neither of the sides image:l61-c9.svg["a red line",pdfwidth=49.68pt,vertical-align=0.96pt] and image:l61-c10.svg["a red line",pdfwidth=49.68pt,vertical-align=0.96pt] is
 
-Draw {dotted} (post. 1.), describe image:prop-2-triangle.svg[the triangle] (pr. 1.), produce {red} (post. 2.), describe image:prop-2-circle-blue.svg[the blue circle] (post. 3.), and image:prop-2-circle-red.svg[the red circle] (post. 3.); produce {red} (post. 2.), then {blue} is the line required.
+[.j.L1420.R1405,margin-top=6.68pt]
+greater than the other; and image:l61-r872x598.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.92pt] they are equal;
 
-[.steps%hardbreaks]
-For {yellow-red} {eq} {red-blue} (def. 15.),
-and {red} {eq} {red} (const.), {therefore} {yellow} {eq} {blue}
-(ax. 3.), but (def. 15.) {black} {eq} {yellow} {eq} {blue};
-{therefore} {blue} drawn from the given point ({red-blue}),
-is equal the given line {black}.
+[.j.L1215.R1195,margin-top=24.68pt]
+image:l61-c21.svg["therefore",pdfwidth=12.24pt,vertical-align=3.12pt] image:l61-c25.svg["a black line",pdfwidth=49.68pt,vertical-align=5.04pt] image:l61-c22.svg["is equal to",pdfwidth=14.16pt,vertical-align=3.84pt] image:l61-c26.svg["a black line",pdfwidth=47.28pt,vertical-align=5.28pt] and image:l61-c19.svg["a black figure",pdfwidth=24.24pt,vertical-align=-4.08pt] image:l61-c31.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.20pt] image:l61-c18.svg["a black figure",pdfwidth=24.72pt,vertical-align=-5.04pt], (pr. 4.).
 
-[.qed]
-Q.{nbsp}E.{nbsp}D.
+[.j.T127.L2395.R2390,margin-top=27.32pt]
+CASE II.
 
+[.j.L1260.R1110,margin-top=9.08pt]
+Again, let image:l61-c37.svg["a red line",pdfwidth=50.16pt,vertical-align=1.20pt] image:l61-c36.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l61-c38.svg["a red line",pdfwidth=49.44pt,vertical-align=1.20pt], which lie opposite
+
+[.j.L1130.R1110,margin-top=19.88pt]
+the equal angles image:l61-c41.svg["a red figure",pdfwidth=29.04pt,vertical-align=-1.68pt] and image:l61-c42.svg["a red figure",pdfwidth=29.04pt,vertical-align=-2.88pt]. If it be possible, let
+
+[.j.L1125.R1115,margin-top=7.88pt]
+image:l61-c51.svg["a blue and black line",pdfwidth=49.68pt,vertical-align=-0.24pt] image:l61-c43.svg["is greater than",pdfwidth=14.40pt,vertical-align=-2.40pt] image:l61-c56.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=-0.24pt], then take image:l61-c54.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=0.00pt] image:l61-c48.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.92pt] image:l61-c55.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=0.00pt],
+
+[.j.L1130.R3365,margin-top=8.60pt]
+draw image:l61-c64.svg["a yellow line",pdfwidth=51.84pt,vertical-align=-2.88pt]
+
+[.j.L1125.R1115,margin-top=52.52pt]
+Then in image:l61-c66.svg["a black and red and blue figure",pdfwidth=43.68pt,vertical-align=-5.04pt] and image:l61-c67.svg["a yellow and red and blue and black figure",pdfwidth=30.96pt,vertical-align=-3.36pt] we have image:l61-c71.svg["a red line",pdfwidth=37.68pt,vertical-align=1.20pt] image:l61-c70.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.72pt] image:l61-c72.svg["a red line",pdfwidth=37.44pt,vertical-align=1.20pt],
+
+[.j.L1420.R1410,margin-top=19.64pt]
+image:l61-c81.svg["a blue and black line",pdfwidth=47.28pt,vertical-align=0.24pt] image:l61-c79.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l61-c80.svg["a blue and black line",pdfwidth=48.48pt,vertical-align=-2.40pt] and image:l61-c76.svg["a yellow figure",pdfwidth=27.12pt,vertical-align=-5.28pt] image:l61-c78.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.20pt] image:l61-c77.svg["a yellow figure",pdfwidth=28.08pt,vertical-align=-6.48pt],
+
+[.j.L1910.R1895,margin-top=15.56pt]
+image:l61-c90.svg["therefore",pdfwidth=12.48pt,vertical-align=-8.40pt] image:l61-c87.svg["a red figure",pdfwidth=29.76pt,vertical-align=-10.32pt] image:l61-c91.svg["is equal to",pdfwidth=14.40pt,vertical-align=-7.44pt] image:l61-c86.svg["a black figure",pdfwidth=29.52pt,vertical-align=-10.56pt] (pr. 4.)
+
+[.j.L1870.R1870,margin-top=27.08pt]
+but image:l61-c101.svg["a red figure",pdfwidth=30.24pt,vertical-align=-4.08pt] image:l61-r702x1929.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l61-c100.svg["a red figure",pdfwidth=29.76pt,vertical-align=-3.84pt] (hyp.)
+
+[.j.L1400.R1395,margin-top=20.84pt]
+image:l61-c107.svg["therefore",pdfwidth=12.24pt,vertical-align=-2.16pt] image:l61-c104.svg["a black figure",pdfwidth=29.76pt,vertical-align=-4.56pt] image:l61-r463x2061.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l61-c105.svg["a red figure",pdfwidth=30.00pt,vertical-align=-4.80pt] which is absurd (pr. 16.).
+
+[.j.L1140.R1125,margin-top=18.44pt]
+Consequently, neither of the sides image:l61-c113.svg["a blue and black line",pdfwidth=47.04pt,vertical-align=1.20pt] or image:l61-c114.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=1.68pt] is
+
+[.j.L1135.R1125,margin-top=6.68pt]
+greater than the other, hence they must be equal. It
+
+[.j.L1295.R1290,margin-top=6.44pt]
+follows (by pr. 4.) that the triangles are equal in all
+
+[.l.L2460.R0,margin-top=6.68pt]
+respects.
+
+[.j.L3605.R1245,margin-top=7.40pt]
+{empty}Q. E. D.
+
+// end::page-27[]
+
+// tag::page-28[]
+[%notitle#prop-27.prop,running-title="BOOK I.  PROP. XXVII.  THEOR."]
+== Proposition XXVII.
+
+// page 28 (leaf 62)
+[.d,margin-top=23.32pt]
+image::l62-c1.svg["The diagram of Proposition XXVII",pdfwidth=532.8pt]
+
+[.j.L3400.R1095,margin-top=-120.90pt]
+F __a straight line__
+
+[.d,margin-top=-10.18pt]
+image::l62-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L3465.R1100,margin-top=-42.90pt]
+(image:l62-c4.svg["a black line",pdfwidth=34.08pt,vertical-align=-0.48pt]) __meet-__
+
+[.j.L3460.R1095,margin-top=6.20pt]
+__ing two other__
+
+[.j.L3425.R1100,margin-top=5.72pt]
+__straight lines,__
+
+[.j.L2865.R1095,margin-top=5.24pt]
+(image:l62-c9.svg["a red line",pdfwidth=33.60pt,vertical-align=0.24pt] __and__ image:l62-c8.svg["a black and blue line",pdfwidth=33.12pt,vertical-align=0.72pt]) __makes__
+
+[.j.L2855.R1095,margin-top=5.96pt]
+__with them the alternate__
+
+[.j.Tm29.L2855.R1105,margin-top=19.88pt]
+__angles__ (image:l62-c13.svg["a blue and black figure",pdfwidth=33.84pt,vertical-align=-2.88pt] __and__ image:l62-c14.svg["a red figure",pdfwidth=39.36pt,vertical-align=-2.64pt];
+
+[.j.L1140.R1095,margin-top=26.12pt]
+image:l62-c17.svg["a yellow figure",pdfwidth=51.84pt,vertical-align=-4.56pt] __and__ image:l62-c18.svg["a yellow figure",pdfwidth=52.56pt,vertical-align=-5.28pt]) __equal, these two straight lines__
+
+[.j.Tm16.L1130.R3600,margin-top=8.12pt]
+__are parallel.__
+
+[.j.L1265.R1095,margin-top=33.32pt]
+If image:l62-c23.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=1.20pt] be not parallel to image:l62-c24.svg["a red line",pdfwidth=48.24pt,vertical-align=0.24pt] they shall meet
+
+[.j.L1130.R3360,margin-top=13.16pt]
+when produced.
+
+[.j.L1260.R1100,margin-top=29.96pt]
+If it be possible, let those lines be not parallel, but meet
+
+[.j.L1125.R1100,margin-top=23.24pt]
+when produced; then the external angle image:l62-c26.svg["a red figure",pdfwidth=33.36pt,vertical-align=-3.12pt] is greater
+
+[.j.L1125.R1105,margin-top=24.68pt]
+than image:l62-c27.svg["a blue and black figure",pdfwidth=33.60pt,vertical-align=-0.48pt] (pr. 16), but they are also equal (hyp.), which
+
+[.j.L1130.R1105,margin-top=11.48pt]
+is absurd: in the same manner it may be shown that they
+
+[.j.L1125.R1460,margin-top=11.72pt]
+cannot meet on the other side; image:l62-r1212x2078.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.92pt] they are parallel.
+
+[.j.L3645.R1230,margin-top=14.36pt]
+{empty}Q. E. D.
+
+// end::page-28[]
+
+// tag::page-29[]
+[%notitle#prop-28.prop,running-title="BOOK I.  PROP. XXVIII.  THEOR."]
+== Proposition XXVIII.
+
+// page 29 (leaf 63)
+[.d,margin-top=-0.20pt]
+image::l63-c1.svg["The diagram of Proposition XXVIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-185.76pt]
+image::l63-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.Tm34.L1660.R2915,margin-top=-57.78pt]
+F __a straight line__
+
+[.j.L1720.R2910,margin-top=5.72pt]
+(image:l63-c7.svg["a black line",pdfwidth=33.60pt,vertical-align=0.72pt]), __cut-__
+
+[.j.Tm1.L1710.R2910,margin-top=5.72pt]
+__ting two other__
+
+[.j.L1675.R2910,margin-top=5.72pt]
+__straight lines__
+
+[.j.L1100.R2870,margin-top=5.48pt]
+(image:l63-c17.svg["a red line",pdfwidth=44.40pt,vertical-align=-0.96pt] __and__ image:l63-c16.svg["a yellow line",pdfwidth=44.88pt,vertical-align=-0.96pt]),
+
+[.j.Tm29.L1095.R2925,margin-top=5.72pt]
+__makes the external equal to__
+
+[.j.L1100.R2925,margin-top=5.48pt]
+__the internal and opposite__
+
+[.j.L1095.R2900,margin-top=5.72pt]
+__angle, at the same side of__
+
+[.j.L1095.R2935,margin-top=5.72pt]
+__the cutting line (namely,__
+
+[.j.L1085.R2925,margin-top=26.12pt]
+image:l63-c20.svg["a black figure",pdfwidth=33.84pt,vertical-align=-3.36pt] image:l63-c22.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l63-c21.svg["a blue figure",pdfwidth=32.88pt,vertical-align=-5.28pt] __or__
+
+[.j.L1105.R1135,margin-top=29.96pt]
+image:l63-c26.svg["a yellow figure",pdfwidth=40.08pt,vertical-align=-0.96pt] image:l63-c29.svg["is equal to",pdfwidth=14.40pt,vertical-align=2.16pt] image:l63-c27.svg["a red figure",pdfwidth=43.92pt,vertical-align=-3.84pt]), __or if it makes the two internal angles__
+
+[.j.Tm33.L1090.R1135,margin-top=25.16pt]
+__at the same side__ (image:l63-c32.svg["a red figure",pdfwidth=42.00pt,vertical-align=-5.04pt] __and__ image:l63-c31.svg["a blue figure",pdfwidth=34.08pt,vertical-align=-1.92pt], __or__ image:l63-c33.svg["a blue figure",pdfwidth=42.48pt,vertical-align=-6.00pt] __and__ image:l63-c34.svg["a red figure",pdfwidth=40.56pt,vertical-align=-5.76pt])
+
+[.j.L1090.R1140,margin-top=6.20pt]
+__together equal to two right angles, those two straight lines__
+
+[.j.Tm12.L1090.R3635,margin-top=2.12pt]
+__are parallel.__
+
+[.j.L1095.R1140,margin-top=29.48pt]
+First, if image:l63-c38.svg["a black figure",pdfwidth=32.40pt,vertical-align=-1.92pt] image:l63-c42.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.48pt] image:l63-c39.svg["a blue and black figure",pdfwidth=34.08pt,vertical-align=-2.88pt], then image:l63-c40.svg["a black figure",pdfwidth=34.08pt,vertical-align=-3.84pt] image:l63-c44.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.92pt] image:l63-c41.svg["a blue figure",pdfwidth=32.40pt,vertical-align=-3.84pt] (pr. 15.),
+
+[.j.L1095.R1145,margin-top=26.12pt]
+image:l63-c52.svg["therefore",pdfwidth=12.24pt,vertical-align=1.92pt] image:l63-c51.svg["a blue figure",pdfwidth=31.20pt,vertical-align=-0.48pt] image:l63-c53.svg["is equal to",pdfwidth=14.16pt,vertical-align=2.40pt] image:l63-c50.svg["a blue figure",pdfwidth=33.12pt,vertical-align=-0.24pt] image:l63-r579x1728.svg["therefore",pdfwidth=11.76pt,vertical-align=0.72pt] image:l63-c59.svg["a red line",pdfwidth=48.96pt,vertical-align=0.48pt] image:l63-r899x1721.svg["is parallel to",pdfwidth=6.00pt,vertical-align=-2.88pt] image:l63-c58.svg["a yellow line",pdfwidth=48.24pt,vertical-align=0.72pt] (pr. 27.).
+
+[.j.L1305.R1370,margin-top=21.80pt]
+Secondly, if image:l63-c62.svg["a blue and black figure",pdfwidth=34.08pt,vertical-align=-4.80pt] image:l63-c65.svg["a black figure",pdfwidth=13.92pt,vertical-align=-6.00pt] image:l63-c64.svg["a red figure",pdfwidth=39.84pt,vertical-align=-7.92pt] image:l63-c66.svg["is equal to",pdfwidth=13.92pt,vertical-align=-3.12pt] image:l63-c63.svg["a black figure",pdfwidth=63.12pt,vertical-align=-6.72pt],
+
+[.j.L1260.R1305,margin-top=29.72pt]
+then image:l63-c69.svg["a red figure",pdfwidth=41.52pt,vertical-align=-3.84pt] image:l63-c72.svg["a black figure",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l63-c71.svg["a blue and black figure",pdfwidth=33.60pt,vertical-align=-3.12pt] image:l63-c73.svg["is equal to",pdfwidth=13.92pt,vertical-align=0.00pt] image:l63-c70.svg["a black figure",pdfwidth=64.08pt,vertical-align=-4.08pt] (pr. 13.),
+
+[.j.L1135.R1180,margin-top=29.48pt]
+image:l63-c75.svg["a blue and black figure",pdfwidth=48.72pt,vertical-align=1.68pt] image:l63-c79.svg["a black figure",pdfwidth=13.92pt,vertical-align=1.20pt] image:l63-c76.svg["a red figure",pdfwidth=40.08pt,vertical-align=-1.44pt] image:l63-c82.svg["is equal to",pdfwidth=14.16pt,vertical-align=2.88pt] image:l63-c77.svg["a red figure",pdfwidth=40.32pt,vertical-align=-2.16pt] image:l63-c81.svg["a black figure",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l63-c78.svg["a blue and black figure",pdfwidth=35.28pt,vertical-align=-1.44pt] (ax. 3.)
+
+[.j.L2045.R2105,margin-top=13.88pt]
+image:l63-c88.svg["therefore",pdfwidth=12.24pt,vertical-align=-10.56pt] image:l63-c86.svg["a blue and black figure",pdfwidth=32.88pt,vertical-align=-13.20pt] image:l63-c87.svg["a blue and black figure",pdfwidth=56.64pt,vertical-align=-16.56pt]
+
+[.j.L1665.R1695,margin-top=15.32pt]
+image:l63-c97.svg["therefore",pdfwidth=12.48pt,vertical-align=0.00pt] image:l63-c101.svg["a red line",pdfwidth=48.48pt,vertical-align=-1.20pt] image:l63-c95.svg["is parallel to",pdfwidth=7.44pt,vertical-align=-3.36pt] image:l63-c98.svg["a yellow line",pdfwidth=48.96pt,vertical-align=0.24pt] (pr. 27.)
+
+[.j.L3595.R1270,margin-top=8.36pt]
+{empty}Q. E. D.
+
+// end::page-29[]
+
+// tag::page-30[]
+[%notitle#prop-29.prop,running-title="BOOK I.  PROP. XXIX.  THEOR."]
+== Proposition XXIX.
+
+// page 30 (leaf 64)
+[.d,margin-top=-15.08pt]
+image::l64-c0.svg["The diagram of Proposition XXIX",pdfwidth=532.8pt]
+
+[.d,margin-top=-214.80pt]
+image::l64-initial.svg["A",pdfwidth=532.8pt]
+
+[.j.L3190.R1115,margin-top=-59.46pt]
+STRAIGHT __line__
+
+[.j.L3145.R1120,margin-top=8.84pt]
+(image:l64-c2.svg["a blue and black line",pdfwidth=37.68pt,vertical-align=1.44pt]) __falling on__
+
+[.j.L3135.R1115,margin-top=2.84pt]
+__two parallel straight__
+
+[.j.L3130.R1100,margin-top=5.96pt]
+__lines__ (image:l64-c8.svg["a yellow line",pdfwidth=48.72pt,vertical-align=-0.72pt] __and__
+
+[.j.L2530.R1115,margin-top=5.48pt]
+image:l64-c10.svg["a red line",pdfwidth=47.04pt,vertical-align=0.00pt]), __makes the alternate__
+
+[.j.L2520.R1105,margin-top=5.72pt]
+__angles equal to one another; and__
+
+[.j.L2515.R1120,margin-top=5.72pt]
+__also the external equal to the in-__
+
+[.j.L2515.R1115,margin-top=5.72pt]
+__ternal and opposite angle on the__
+
+[.j.L2480.R1105,margin-top=5.48pt]
+__same side; and the two internal__
+
+[.j.L2510.R1115,margin-top=5.48pt]
+__angles on the same side together__
+
+[.j.Tm1.L2505.R1550,margin-top=5.72pt]
+__equal to two right angles.__
+
+[.j.L1240.R1125,margin-top=30.92pt]
+For if the alternate angles image:l64-c26.svg["a yellow and blue and black figure",pdfwidth=30.00pt,vertical-align=-3.12pt] and image:l64-c25.svg["a black figure",pdfwidth=32.40pt,vertical-align=-3.60pt] be not equal,
+
+[.j.L1100.R1565,margin-top=21.56pt]
+draw image:l64-c34.svg["a black line",pdfwidth=48.72pt,vertical-align=0.48pt], making image:l64-c28.svg["a yellow figure",pdfwidth=30.48pt,vertical-align=-3.60pt] image:l64-c30.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l64-c27.svg["a black figure",pdfwidth=31.44pt,vertical-align=-5.04pt] (pr. 23).
+
+[.j.L1230.R1125,margin-top=6.68pt]
+Therefore image:l64-c41.svg["a black line",pdfwidth=55.92pt,vertical-align=0.24pt] image:l64-r1092x1315.svg["is parallel to",pdfwidth=9.36pt,vertical-align=-10.32pt] image:l64-c40.svg["a red line",pdfwidth=48.48pt,vertical-align=-0.24pt] (pr. 27.) and there-
+
+[.j.L1100.R1125,margin-top=5.96pt]
+fore two straight lines which intersect are parallel to the
+
+[.j.L1100.R1715,margin-top=5.72pt]
+same straight line, which is impossible (ax. 12).
+
+[.j.L1230.R1125,margin-top=22.04pt]
+Hence the alternate angles image:l64-c54.svg["a yellow and blue and black figure",pdfwidth=30.00pt,vertical-align=-4.32pt] and image:l64-c53.svg["a black figure",pdfwidth=31.92pt,vertical-align=-4.56pt] are not
+
+[.j.L1100.R1140,margin-top=21.56pt]
+unequal, that is, they are equal image:l64-c56.svg["a yellow and blue and black figure",pdfwidth=36.24pt,vertical-align=-7.68pt] image:l64-c57.svg["is equal to",pdfwidth=13.68pt,vertical-align=-1.44pt] image:l64-c55.svg["a red figure",pdfwidth=30.48pt,vertical-align=-7.20pt] (pr. 15);
+
+[.j.L1095.R1140,margin-top=22.04pt]
+image:l64-c64.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.68pt] image:l64-c62.svg["a red figure",pdfwidth=30.72pt,vertical-align=-4.08pt] image:l64-c65.svg["is equal to",pdfwidth=13.20pt,vertical-align=-0.48pt] image:l64-c63.svg["a black figure",pdfwidth=31.68pt,vertical-align=-4.32pt], the external angle equal to the inter-
+
+[.j.L1090.R1140,margin-top=19.88pt]
+nal and opposite on the same side: if image:l64-c70.svg["a black figure",pdfwidth=42.72pt,vertical-align=-6.72pt] be added to
+
+[.j.Tm26.L1080.R1350,margin-top=24.68pt]
+both, then image:l64-c77.svg["a black figure",pdfwidth=32.88pt,vertical-align=-5.28pt] image:l64-c80.svg["a black figure",pdfwidth=14.40pt,vertical-align=-4.56pt] image:l64-c81.svg["a black figure",pdfwidth=42.96pt,vertical-align=-22.32pt] image:l64-c82.svg["is equal to",pdfwidth=14.40pt,vertical-align=-1.68pt] image:l64-c79.svg["a black and red figure",pdfwidth=41.28pt,vertical-align=-32.88pt] image:l64-c83.svg["is equal to",pdfwidth=14.64pt,vertical-align=-2.16pt] image:l64-c78.svg["a black figure",pdfwidth=59.28pt,vertical-align=-8.40pt]
+
+[.j.L3745.R1155,margin-top=13.40pt]
+(pr. 13).
+
+[.j.L1090.R1135,margin-top=10.28pt]
+That is to say, the two internal angles at the same side of
+
+[.j.L1090.R1835,margin-top=5.24pt]
+the cutting line are equal to two right angles.
+
+[.j.L3575.R1280,margin-top=4.52pt]
+{empty}Q. E. D.
+
+// end::page-30[]
+
+// tag::page-31[]
+[%notitle#prop-30.prop,running-title="BOOK I.  PROP. XXX.  THEOR."]
+== Proposition XXX.
+
+// page 31 (leaf 65)
+[.d,margin-top=31.48pt]
+image::l65-c0.svg["The diagram of Proposition XXX",pdfwidth=532.8pt]
+
+[.d,margin-top=-166.32pt]
+image::l65-initial.svg["S",pdfwidth=532.8pt]
+
+[.j.L1645.R2340,margin-top=-59.46pt]
+TRAIGHT __lines__ (image:l65-r736x644.svg["the red line and the blue line",pdfwidth=33.36pt,vertical-align=-3.84pt])
+
+[.j.L1700.R2335,margin-top=11.72pt]
+__which are parallel to the__
+
+[.j.L1670.R2340,margin-top=11.72pt]
+__same straight line__ (image:l65-c5.svg["a yellow line",pdfwidth=27.60pt,vertical-align=0.72pt]),
+
+[.j.Tm15.L1090.R2905,margin-top=11.96pt]
+__are parallel to one another.__
+
+[.j.L1620.R1670,margin-top=115.88pt]
+Let image:l65-c12.svg["a black line",pdfwidth=48.96pt,vertical-align=0.96pt] intersect image:l65-r851x1410.svg["the red, yellow and blue lines, braced",pdfwidth=76.56pt,vertical-align=-14.88pt]
+
+[.j.L1345.R1405,margin-top=45.56pt]
+Then, image:l65-c16.svg["a yellow figure",pdfwidth=32.88pt,vertical-align=0.00pt] image:l65-c19.svg["is equal to",pdfwidth=14.40pt,vertical-align=0.48pt] image:l65-c17.svg["a blue figure",pdfwidth=32.16pt,vertical-align=-0.96pt] image:l65-c20.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l65-c18.svg["a red figure",pdfwidth=32.88pt,vertical-align=-2.16pt] (pr. 29.),
+
+[.j.L1950.R2225,margin-top=29.48pt]
+image:l65-c25.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l65-c24.svg["a yellow figure",pdfwidth=33.12pt,vertical-align=-2.40pt] image:l65-c26.svg["a black figure",pdfwidth=15.36pt,vertical-align=-1.68pt] image:l65-c23.svg["a red figure",pdfwidth=33.36pt,vertical-align=-3.84pt]
+
+[.j.L1645.R1745,margin-top=13.40pt]
+image:l65-c33.svg["therefore",pdfwidth=12.72pt,vertical-align=0.72pt] image:l65-c34.svg["a red line",pdfwidth=48.24pt,vertical-align=4.56pt] image:l65-r657x1955.svg["is parallel to",pdfwidth=7.20pt,vertical-align=-2.88pt] image:l65-c35.svg["a blue and black line",pdfwidth=47.52pt,vertical-align=3.36pt] (pr. 27.)
+
+[.j.L3605.R1270,margin-top=17.00pt]
+{empty}Q. E. D.
+
+// end::page-31[]
+
+// tag::page-32[]
+[%notitle#prop-31.prop,running-title="BOOK I.  PROP. XXXI.  PROB."]
+== Proposition XXXI.
+
+// page 32 (leaf 66)
+[.d,margin-top=72.28pt]
+image::l66-c0.svg["The diagram of Proposition XXXI",pdfwidth=532.8pt]
+
+[.d,margin-top=-111.36pt]
+image::l66-initial.svg["F",pdfwidth=532.8pt]
+
+[.j.L3430.R1115,margin-top=-55.86pt]
+ROM __a given__
+
+[.j.L3455.R1120,margin-top=14.60pt]
+__point__ image:l66-c19.svg["a black and red figure",pdfwidth=22.32pt,vertical-align=-1.92pt] __to__
+
+[.j.Tm34.L3470.R1115,margin-top=8.60pt]
+__draw a straight__
+
+[.j.L2865.R1120,margin-top=8.84pt]
+__line parallel to a given__
+
+[.j.Tm23.L2840.R1225,margin-top=8.84pt]
+__straight line__ image:l66-c22.svg["a black and blue line",pdfwidth=59.76pt,vertical-align=-4.08pt]).
+
+[.j.L1230.R1270,margin-top=47.72pt]
+Draw image:l66-c32.svg["a black line",pdfwidth=48.24pt,vertical-align=0.48pt] from the point image:l66-c30.svg["a red and black figure",pdfwidth=20.88pt,vertical-align=-2.40pt] to any point image:l66-c31.svg["a black and blue figure",pdfwidth=23.28pt,vertical-align=-4.80pt]
+
+[.j.L2295.R2340,margin-top=14.60pt]
+in image:l66-c34.svg["a black and blue line",pdfwidth=47.76pt,vertical-align=1.44pt],
+
+[.j.L1730.R1790,margin-top=28.28pt]
+make image:l66-c37.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=-6.72pt] image:l66-c38.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l66-c36.svg["a red figure",pdfwidth=32.40pt,vertical-align=-5.28pt] (pr. 23.),
+
+[.j.L1550.R1630,margin-top=18.68pt]
+then image:l66-c44.svg["a red line",pdfwidth=55.92pt,vertical-align=1.68pt] image:l66-r1117x1598.svg["is parallel to",pdfwidth=6.96pt,vertical-align=-4.08pt] image:l66-c43.svg["a black and blue line",pdfwidth=47.76pt,vertical-align=1.68pt] (pr. 27.).
+
+[.j.L3600.R1270,margin-top=20.60pt]
+{empty}Q. E. D.
+
+// end::page-32[]
+
+// tag::page-33[]
+[%notitle#prop-32.prop,running-title="BOOK I.  PROP. XXXII.  THEOR."]
+== Proposition XXXII.
+
+// page 33 (leaf 67)
+[.d,margin-top=5.32pt]
+image::l67-c0.svg["The diagram of Proposition XXXII",pdfwidth=532.8pt]
+
+[.d,margin-top=-196.56pt]
+image::l67-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L1660.R2550,margin-top=-58.98pt]
+F __any side__ image:l67-c8.svg["a black line",pdfwidth=52.80pt,vertical-align=-3.84pt])
+
+[.j.L1720.R2545,margin-top=5.48pt]
+__of a triangle be pro-__
+
+[.j.L1720.R2525,margin-top=5.48pt]
+__duced, the external__
+
+[.j.Tm8.L1725.R2520,margin-top=19.16pt]
+__angle__ (image:l67-c23.svg["a black and red figure",pdfwidth=30.72pt,vertical-align=-28.32pt]) __is equal__
+
+[.j.Tm8.L1135.R2515,margin-top=30.20pt]
+__to the sum of the two internal and__
+
+[.j.Tm46.L1135.R2520,margin-top=19.88pt]
+__opposite angles__ (image:l67-c29.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=-3.84pt] __and__ image:l67-c28.svg["a black figure",pdfwidth=30.96pt,vertical-align=-4.08pt]),
+
+[.j.L1135.R2495,margin-top=7.40pt]
+__and the three internal angles of__
+
+[.j.L1135.R2520,margin-top=5.48pt]
+__every triangle taken together are__
+
+[.j.Tm7.L1140.R2930,margin-top=5.96pt]
+__equal to two right angles.__
+
+[.j.L1875.R1830,margin-top=27.80pt]
+Through the point image:l67-c30.svg["a black and yellow figure",pdfwidth=23.04pt,vertical-align=-4.32pt] draw
+
+[.j.L1810.R1755,margin-top=14.12pt]
+image:l67-c33.svg["a black and blue line",pdfwidth=48.48pt,vertical-align=3.36pt] image:l67-r605x1439.svg["is parallel to",pdfwidth=6.48pt,vertical-align=-0.72pt] image:l67-c32.svg["a red line",pdfwidth=48.72pt,vertical-align=4.80pt] (pr. 31.).
+
+[.j.L1740.R1470,margin-top=31.64pt]
+Then image:l67-r480x1540.svg["the red angle equal to the yellow, and the black angle to the black, braced",pdfwidth=120.48pt,vertical-align=-28.08pt] (pr. 29.),
+
+[.j.L1685.R1455,margin-top=49.40pt]
+image:l67-c48.svg["therefore",pdfwidth=12.24pt,vertical-align=0.96pt] image:l67-c46.svg["a yellow figure",pdfwidth=31.44pt,vertical-align=-5.04pt] image:l67-c47.svg["a black figure",pdfwidth=13.92pt,vertical-align=-1.44pt] image:l67-c45.svg["a black figure",pdfwidth=31.20pt,vertical-align=-2.88pt] image:l67-c52.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l67-c44.svg["a black and red figure",pdfwidth=31.92pt,vertical-align=-25.44pt] (ax. 2.),
+
+[.j.L2355.R2280,margin-top=26.84pt]
+and therefore
+
+[.d,margin-top=7.34pt]
+image::l67-c61.svg["The diagram of Proposition XXXII",pdfwidth=532.8pt]
+
+[.j.L1930.R2930,margin-top=-9.30pt]
+(pr. 13.).
+
+[.j.L3685.R1200,margin-top=23.96pt]
+{empty}Q. E. D.
+
+[.l.sig.L2810.R0,margin-top=5.72pt]
+F
+
+// end::page-33[]
+
+// tag::page-34[]
+[%notitle#prop-33.prop,running-title="BOOK I.  PROP. XXXIII.  THEOR."]
+== Proposition XXXIII.
+
+// page 34 (leaf 68)
+[.d,margin-top=19.00pt]
+image::l68-c1.svg["The diagram of Proposition XXXIII",pdfwidth=532.8pt]
+
+[.j.L2705.R1115,margin-top=-115.62pt]
+TRAIGHT __lines__ image:l68-c2.svg["a black and blue line",pdfwidth=50.64pt,vertical-align=-4.08pt]
+
+[.d,margin-top=-9.94pt]
+image::l68-initial.svg["S",pdfwidth=532.8pt]
+
+[.j.L2760.R1105,margin-top=-42.90pt]
+__and__ image:l68-c6.svg["a yellow line",pdfwidth=48.96pt,vertical-align=1.68pt]) __which join__
+
+[.j.L2760.R1100,margin-top=5.48pt]
+__the adjacent extremities of__
+
+[.j.Tm38.L2760.R1110,margin-top=5.48pt]
+__two equal and parallel straight__
+
+[.j.L2155.R1110,margin-top=5.72pt]
+__lines__ (image:l68-c16.svg["a red line",pdfwidth=48.48pt,vertical-align=1.20pt] __and__ image:l68-c17.svg["a red and black line",pdfwidth=48.00pt,vertical-align=1.44pt]), __are__
+
+[.j.Tm28.L2150.R1730,margin-top=5.72pt]
+__themselves equal and parallel.__
+
+[.j.L1890.R1900,margin-top=57.32pt]
+Draw image:l68-c45.svg["a black line",pdfwidth=49.44pt,vertical-align=0.48pt] the diagonal.
+
+[.j.L1865.R1865,margin-top=20.36pt]
+image:l68-c56.svg["a red line",pdfwidth=47.52pt,vertical-align=3.36pt] image:l68-c46.svg["is equal to",pdfwidth=14.16pt,vertical-align=1.92pt] image:l68-c47.svg["a red line",pdfwidth=47.04pt,vertical-align=4.32pt] (hyp.)
+
+[.j.L1950.R1955,margin-top=24.92pt]
+image:l68-c59.svg["a yellow and red figure",pdfwidth=32.88pt,vertical-align=-6.48pt] image:l68-c60.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] image:l68-c58.svg["a black figure",pdfwidth=34.32pt,vertical-align=-7.68pt] (pr. 29.)
+
+[.j.L1490.R1505,margin-top=21.32pt]
+and image:l68-c62.svg["a black line",pdfwidth=48.72pt,vertical-align=0.24pt] common to the two triangles;
+
+[.j.L1110.R1140,margin-top=27.08pt]
+image:l68-c66.svg["therefore",pdfwidth=12.00pt,vertical-align=-1.92pt] image:l68-c70.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.24pt] image:l68-c68.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l68-c69.svg["a yellow and red line",pdfwidth=47.76pt,vertical-align=0.96pt], and image:l68-c65.svg["a blue and black figure",pdfwidth=28.32pt,vertical-align=-12.72pt] image:l68-c67.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.48pt] image:l68-c64.svg["a red figure",pdfwidth=27.36pt,vertical-align=-12.00pt] (pr. 4.);
+
+[.j.L1540.R1585,margin-top=23.72pt]
+and image:l68-c78.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.16pt] image:l68-c80.svg["a black and blue line",pdfwidth=48.96pt,vertical-align=0.24pt] image:l68-c76.svg["is parallel to",pdfwidth=7.20pt,vertical-align=-4.56pt] image:l68-c79.svg["a yellow and red line",pdfwidth=48.72pt,vertical-align=0.48pt] (pr. 27.).
+
+[.j.L3620.R1260,margin-top=20.36pt]
+{empty}Q. E. D.
+
+// end::page-34[]
+
+// tag::page-35[]
+[%notitle#prop-34.prop,running-title="BOOK I.  PROP. XXXIV.  THEOR."]
+== Proposition XXXIV.
+
+// page 35 (leaf 69)
+[.d,margin-top=28.36pt]
+image::l69-c0.svg["The diagram of Proposition XXXIV",pdfwidth=532.8pt]
+
+[.d,margin-top=-161.04pt]
+image::l69-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L1670.R2060,margin-top=-58.26pt]
+HE __opposite sides and angles of__
+
+[.j.L1725.R2095,margin-top=10.52pt]
+__any parallelogram are equal,__
+
+[.j.L1730.R2090,margin-top=11.00pt]
+__and the diagonal__ (image:l69-c5.svg["a black line",pdfwidth=49.44pt,vertical-align=0.96pt])
+
+[.j.Tm12.L1120.R2700,margin-top=11.00pt]
+__divides it into two equal parts.__
+
+[.j.L1225.R2185,margin-top=55.40pt]
+Since image:l69-r270x828.svg["the blue angle equal to the yellow, and the red to the red, braced",pdfwidth=110.40pt,vertical-align=-28.56pt] (pr. 29.)
+
+[.j.L1495.R1485,margin-top=35.24pt]
+and image:l69-c31.svg["a black line",pdfwidth=49.20pt,vertical-align=0.24pt] common to the two triangles.
+
+[.j.L1725.R1405,margin-top=43.88pt]
+image:l69-c54.svg["therefore",pdfwidth=12.24pt,vertical-align=-2.40pt] image:l69-r430x1233.svg["the red line equal to the red dotted line, the yellow line to the blue, and the black angle to the black, braced",pdfwidth=147.12pt,vertical-align=-35.28pt] (pr. 26.)
+
+[.j.L1805.R1775,margin-top=53.72pt]
+and image:l69-c63.svg["a red and blue and black figure",pdfwidth=38.88pt,vertical-align=-7.92pt] image:l69-c67.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.48pt] image:l69-c64.svg["a red and yellow figure",pdfwidth=38.16pt,vertical-align=-7.68pt] (ax.):
+
+[.j.L1140.R1090,margin-top=23.72pt]
+Therefore the opposite sides and angles of the parallelo-
+
+[.j.L1150.R1100,margin-top=27.08pt]
+gram are equal: and as the triangles image:l69-c77.svg["a black and yellow and red figure",pdfwidth=44.88pt,vertical-align=-18.96pt] and image:l69-c76.svg["a black and red and blue figure",pdfwidth=44.40pt,vertical-align=-16.08pt]
+
+[.j.L1155.R1080,margin-top=29.00pt]
+are equal in every respect (pr. 4,), the diagonal divides
+
+[.j.L1160.R2120,margin-top=17.96pt]
+the parallelogram into two equal parts.
+
+[.j.L3675.R1200,margin-top=13.40pt]
+{empty}Q. E. D.
+
+// end::page-35[]
+
+// tag::page-36[]
+[%notitle#prop-35.prop,running-title="BOOK I.  PROP. XXXV.  THEOR."]
+== Proposition XXXV.
+
+// page 36 (leaf 70)
+[.d,margin-top=15.88pt]
+image::l70-c0.svg["The diagram of Proposition XXXV",pdfwidth=532.8pt]
+
+[.d,margin-top=-74.88pt]
+image::l70-initial.svg["P",pdfwidth=532.8pt]
+
+[.l.T137.L2980.R1130,margin-top=-58.02pt]
+ARALLELOGRAMS
+
+[.j.L3035.R1110,margin-top=5.48pt]
+__on the same base, and__
+
+[.j.Tm37.L3035.R1130,margin-top=5.48pt]
+__between the same paral-__
+
+[.j.Tm17.L3040.R1135,margin-top=5.72pt]
+__lels, are (in area) equal.__
+
+[.j.L1920.R1945,margin-top=45.08pt]
+On account of the parallels,
+
+[.j.L2060.R1625,margin-top=15.32pt]
+image:l70-c12.svg["a red figure",pdfwidth=31.92pt,vertical-align=-18.48pt] image:l70-c20.svg["is equal to",pdfwidth=14.16pt,vertical-align=-4.08pt] image:l70-c11.svg["a blue figure",pdfwidth=35.52pt,vertical-align=-16.56pt]; image:l70-r1362x1120.svg["brace!",pdfwidth=7.44pt,vertical-align=-59.76pt] (pr. 29.)
+
+[.j.L2045.R1630,margin-top=17.96pt]
+image:l70-c27.svg["a black figure",pdfwidth=32.16pt,vertical-align=-17.04pt] image:l70-c29.svg["is equal to",pdfwidth=14.16pt,vertical-align=-9.84pt] image:l70-c28.svg["a black figure",pdfwidth=39.36pt,vertical-align=-19.44pt] (pr. 29.)
+
+[.j.L1645.R1630,margin-top=19.88pt]
+and image:l70-c35.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=0.00pt] image:l70-c34.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l70-c36.svg["a red line",pdfwidth=48.48pt,vertical-align=-1.44pt] (pr. 34.)
+
+[.j.L1700.R1585,margin-top=28.04pt]
+But, image:l70-c39.svg["a yellow and blue figure",pdfwidth=52.32pt,vertical-align=-20.16pt] image:l70-c41.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l70-c38.svg["a yellow and red figure",pdfwidth=54.00pt,vertical-align=-20.40pt] (pr. 8.)
+
+[.j.L1175.R1375,margin-top=44.12pt]
+image:l70-c49.svg["therefore",pdfwidth=12.72pt,vertical-align=-2.40pt] image:l70-c45.svg["a yellow and blue figure",pdfwidth=80.16pt,vertical-align=-18.96pt] minus image:l70-c44.svg["a yellow and red figure",pdfwidth=54.24pt,vertical-align=-18.24pt] image:l70-c48.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.24pt] image:l70-c43.svg["a yellow and blue figure",pdfwidth=46.56pt,vertical-align=-16.08pt],
+
+[.j.L1185.R1145,margin-top=44.60pt]
+and image:l70-c56.svg["a yellow and blue figure",pdfwidth=81.12pt,vertical-align=-15.36pt] minus image:l70-c54.svg["a yellow and blue figure",pdfwidth=51.36pt,vertical-align=-15.36pt] image:l70-c62.svg["is equal to",pdfwidth=13.92pt,vertical-align=-2.16pt] image:l70-c55.svg["a yellow and blue figure",pdfwidth=71.52pt,vertical-align=-17.28pt];
+
+[.j.L1825.R1845,margin-top=40.52pt]
+image:l70-c67.svg["therefore",pdfwidth=12.96pt,vertical-align=-13.20pt] image:l70-c65.svg["a yellow and blue figure",pdfwidth=48.24pt,vertical-align=-17.28pt] image:l70-c68.svg["is equal to",pdfwidth=14.40pt,vertical-align=-12.48pt] image:l70-c66.svg["a yellow and blue figure",pdfwidth=66.96pt,vertical-align=-19.92pt]
+
+[.j.L3575.R1275,margin-top=28.76pt]
+{empty}Q. E. D.
+
+// end::page-36[]
+
+// tag::page-37[]
+[%notitle#prop-36.prop,running-title="BOOK I.  PROP. XXXVI.  THEOR."]
+== Proposition XXXVI.
+
+// page 37 (leaf 71)
+[.d,margin-top=27.40pt]
+image::l71-c0.svg["The diagram of Proposition XXXVI",pdfwidth=532.8pt]
+
+[.d,margin-top=-154.32pt]
+image::l71-initial.svg["P",pdfwidth=532.8pt]
+
+[.l.T208.L1690.R2775,margin-top=-49.38pt]
+ARALLELO-
+
+[.l.T210.L1855.R2935,margin-top=19.16pt]
+GRAMS
+
+[.j.L1115.R2775,margin-top=55.16pt]
+(image:l71-c6.svg["a red figure",pdfwidth=33.60pt,vertical-align=-3.60pt] __and__ image:l71-c5.svg["a yellow figure",pdfwidth=29.28pt,vertical-align=-2.16pt]) __on__
+
+[.j.Tm7.L1110.R2775,margin-top=8.84pt]
+__equal bases, and between the__
+
+[.j.Tm15.L1085.R2990,margin-top=8.60pt]
+__same parallels, are equal.__
+
+[.j.L1770.R1805,margin-top=32.36pt]
+Draw image:l71-c7.svg["a yellow line",pdfwidth=47.04pt,vertical-align=0.72pt] and image:l71-c8.svg["a black figure",pdfwidth=6.24pt,vertical-align=0.72pt]image:l71-c9.svg["a black line",pdfwidth=20.16pt,vertical-align=0.72pt]image:l71-c12.svg["a black line",pdfwidth=17.28pt,vertical-align=0.72pt],
+
+[.j.L1160.R1180,margin-top=15.08pt]
+image:l71-c19.svg["a black line",pdfwidth=35.76pt,vertical-align=0.72pt] image:l71-c15.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l71-c17.svg["a blue and black line",pdfwidth=37.44pt,vertical-align=1.92pt] image:l71-c16.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l71-c18.svg["a red line",pdfwidth=37.20pt,vertical-align=1.20pt], by (pr. 34, and hyp.);
+
+[.j.L1870.R1885,margin-top=13.40pt]
+image:l71-c26.svg["therefore",pdfwidth=12.00pt,vertical-align=-2.88pt] image:l71-c31.svg["a black line",pdfwidth=33.12pt,vertical-align=-0.24pt] image:l71-c27.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.68pt] and image:l71-c23.svg["is parallel to",pdfwidth=7.44pt,vertical-align=-5.28pt] image:l71-c30.svg["a red line",pdfwidth=37.20pt,vertical-align=-0.24pt];
+
+[.j.L1460.R1505,margin-top=18.68pt]
+image:l71-c37.svg["a black figure",pdfwidth=13.92pt,vertical-align=1.68pt] image:l71-c39.svg["a yellow line",pdfwidth=45.12pt,vertical-align=4.56pt] image:l71-c38.svg["is equal to",pdfwidth=14.16pt,vertical-align=2.40pt] and image:l71-r760x1532.svg["is parallel to",pdfwidth=6.72pt,vertical-align=-0.72pt] image:l71-c40.svg["a black line",pdfwidth=48.24pt,vertical-align=3.84pt] (pr. 33.)
+
+[.j.L1400.R1425,margin-top=44.36pt]
+And therefore image:l71-c52.svg["a blue and yellow and red figure",pdfwidth=66.00pt,vertical-align=-2.64pt] is a parallelogram:
+
+[.j.L1290.R1380,margin-top=50.36pt]
+but image:l71-c56.svg["a red figure",pdfwidth=30.96pt,vertical-align=-0.96pt] image:l71-c58.svg["is equal to",pdfwidth=13.92pt,vertical-align=2.40pt] image:l71-c55.svg["a blue and yellow and red figure",pdfwidth=66.00pt,vertical-align=0.72pt] image:l71-c59.svg["is equal to",pdfwidth=14.16pt,vertical-align=2.16pt] image:l71-c54.svg["a yellow figure",pdfwidth=30.48pt,vertical-align=0.24pt] (pr. 35.)
+
+[.j.L1865.R1920,margin-top=47.96pt]
+image:l71-c64.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l71-c63.svg["a red figure",pdfwidth=32.88pt,vertical-align=-3.60pt] image:l71-c65.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l71-c62.svg["a yellow figure",pdfwidth=31.20pt,vertical-align=-3.12pt] (ax. 1.).
+
+[.j.L3625.R1260,margin-top=9.80pt]
+{empty}Q. E. D.
+
+// end::page-37[]
+
+// tag::page-38[]
+[%notitle#prop-37.prop,running-title="BOOK I.  PROP. XXXVII.  THEOR."]
+== Proposition XXXVII.
+
+// page 38 (leaf 72)
+[.d,margin-top=27.64pt]
+image::l72-c0.svg["The diagram of Proposition XXXVII",pdfwidth=532.8pt]
+
+[.d,margin-top=-110.88pt]
+image::l72-initial.svg["T",pdfwidth=532.8pt]
+
+[.l.T333.L3335.R1130,margin-top=-56.82pt]
+RIANGLES
+
+[.j.L3355.R1120,margin-top=37.40pt]
+image:l72-c50.svg["a yellow figure",pdfwidth=28.32pt,vertical-align=-0.48pt] __and__ image:l72-c49.svg["a yellow and black figure",pdfwidth=30.48pt,vertical-align=-2.40pt]
+
+[.j.Tm11.L2735.R1170,margin-top=4.28pt]
+__on the same base__ image:l72-c70.svg["a black line",pdfwidth=52.56pt,vertical-align=-4.32pt])
+
+[.j.Tm15.L2735.R1165,margin-top=5.72pt]
+__and between the same paral-__
+
+[.j.Tm28.L2735.R1930,margin-top=5.72pt]
+__lels are equal.__
+
+[.j.L1500.R2290,margin-top=24.44pt]
+Draw image:l72-c99.svg["a red line",pdfwidth=47.04pt,vertical-align=-0.48pt] image:l72-c97.svg["is parallel to",pdfwidth=7.68pt,vertical-align=-5.28pt] image:l72-c101.svg["a red line",pdfwidth=48.72pt,vertical-align=-0.72pt]
+
+[.j.L3090.R1645,margin-top=-0.52pt]
+image:l72-r1344x1029.svg["brace",pdfwidth=6.96pt,vertical-align=-15.84pt] (pr. 31.)
+
+[.j.L1875.R2265,margin-top=-1.24pt]
+image:l72-c111.svg["a black and blue line",pdfwidth=48.00pt,vertical-align=1.20pt] image:l72-c109.svg["is parallel to",pdfwidth=7.44pt,vertical-align=-5.28pt] image:l72-c119.svg["a black and blue line",pdfwidth=49.20pt,vertical-align=0.72pt]
+
+[.j.L1910.R1970,margin-top=10.76pt]
+Produce image:l72-c120.svg["a black line",pdfwidth=95.76pt,vertical-align=-1.68pt]
+
+[.j.L1480.R1520,margin-top=34.76pt]
+image:l72-c137.svg["a yellow and blue figure",pdfwidth=45.60pt,vertical-align=-3.84pt] and image:l72-c138.svg["a red and yellow and black figure",pdfwidth=51.84pt,vertical-align=-4.32pt] are parallelograms
+
+[.j.L1320.R1380,margin-top=11.00pt]
+on the same base, and between the same parallels,
+
+[.j.L1875.R1905,margin-top=10.52pt]
+and therefore equal. (pr. 35.)
+
+[.j.L1590.R1350,margin-top=51.32pt]
+image:l72-c149.svg["therefore",pdfwidth=12.48pt,vertical-align=0.72pt] image:l72-r790x1648.svg["the blue and yellow triangle twice the yellow and red, and the black, red and yellow triangle twice the black and yellow, braced",pdfwidth=169.68pt,vertical-align=-39.60pt] (pr. 34.)
+
+[.j.L2070.R2145,margin-top=76.04pt]
+image:l72-c165.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.44pt] image:l72-c163.svg["a yellow figure",pdfwidth=28.80pt,vertical-align=-3.36pt] image:l72-c166.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.72pt] image:l72-c164.svg["a yellow and black figure",pdfwidth=35.28pt,vertical-align=-4.32pt]
+
+[.j.L3605.R1270,margin-top=12.44pt]
+{empty}Q. E D.
+
+// end::page-38[]
+
+// tag::page-39[]
+[%notitle#prop-38.prop,running-title="BOOK I.  PROP. XXXVIII.  THEOR."]
+== Proposition XXXVIII.
+
+// page 39 (leaf 73)
+[.d,margin-top=26.68pt]
+image::l73-c0.svg["The diagram of Proposition XXXVIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-129.60pt]
+image::l73-initial.svg["T",pdfwidth=532.8pt]
+
+[.l.T108.L1660.R2985,margin-top=-36.18pt]
+RIANGLES
+
+[.j.L1115.R2980,margin-top=70.04pt]
+(image:l73-c44.svg["a red figure",pdfwidth=28.56pt,vertical-align=0.72pt] __and__ image:l73-c46.svg["a blue figure",pdfwidth=28.08pt,vertical-align=-0.24pt]) __on__
+
+[.j.L1110.R2940,margin-top=5.24pt]
+__equal bases and between__
+
+[.j.Tm17.L1105.R2830,margin-top=9.08pt]
+__the same parallels are equal.__
+
+[.j.L1565.R2310,margin-top=33.56pt]
+Draw image:l73-c85.svg["a black and blue line",pdfwidth=34.56pt,vertical-align=-0.24pt] image:l73-c82.svg["is parallel to",pdfwidth=7.44pt,vertical-align=-4.80pt] image:l73-c84.svg["a blue and black line",pdfwidth=37.68pt,vertical-align=0.00pt]
+
+[.j.L3150.R1570,margin-top=3.56pt]
+image:l73-c81.svg["brace",pdfwidth=6.96pt,vertical-align=-11.28pt] (pr. 31.),
+
+[.j.L1675.R2235,margin-top=-5.56pt]
+and image:l73-c92.svg["a red line",pdfwidth=48.48pt,vertical-align=0.48pt] image:l73-r675x1237.svg["is parallel to",pdfwidth=6.24pt,vertical-align=-4.80pt] image:l73-c99.svg["a red line",pdfwidth=47.52pt,vertical-align=0.48pt]
+
+[.j.L1835.R1905,margin-top=39.80pt]
+image:l73-c104.svg["a red and yellow figure",pdfwidth=31.44pt,vertical-align=-7.20pt] image:l73-c105.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l73-c103.svg["a black and blue figure",pdfwidth=44.16pt,vertical-align=-6.72pt] (pr. 36.);
+
+[.j.L1630.R1685,margin-top=42.44pt]
+but image:l73-c108.svg["a red and yellow figure",pdfwidth=31.68pt,vertical-align=-11.76pt] image:l73-c114.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] twice image:l73-c107.svg["a red figure",pdfwidth=29.04pt,vertical-align=-11.28pt] (pr. 34.),
+
+[.j.L1585.R1640,margin-top=47.24pt]
+and image:l73-c125.svg["a black and blue figure",pdfwidth=41.76pt,vertical-align=-14.16pt] image:l73-c126.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.72pt] twice image:l73-c124.svg["a blue and black figure",pdfwidth=28.80pt,vertical-align=-10.32pt] (pr. 34.),
+
+[.j.L1775.R1995,margin-top=49.40pt]
+image:l73-c130.svg["therefore",pdfwidth=11.76pt,vertical-align=-0.72pt] image:l73-c128.svg["a red figure",pdfwidth=29.04pt,vertical-align=-9.36pt] image:l73-c131.svg["is equal to",pdfwidth=13.68pt,vertical-align=-0.72pt] image:l73-c129.svg["a blue and black figure",pdfwidth=30.24pt,vertical-align=-11.28pt] (ax. 7.).
+
+[.j.L3585.R1270,margin-top=17.24pt]
+{empty}Q. E. D.
+
+// end::page-39[]
+
+// tag::page-40[]
+[%notitle#prop-39.prop,running-title="BOOK I.  PROP. XXXIX.  THEOR."]
+== Proposition XXXIX.
+
+// page 40 (leaf 74)
+[.d,margin-top=2.68pt]
+image::l74-c0.svg["The diagram of Proposition XXXIX",pdfwidth=532.8pt]
+
+[.d,margin-top=-225.36pt]
+image::l74-initial.svg["E",pdfwidth=532.8pt]
+
+[.j.L2680.R1175,margin-top=-45.78pt]
+QUAL triangles image:l74-c6.svg["a yellow figure",pdfwidth=43.20pt,vertical-align=-4.56pt]
+
+[.j.Tm20.L2730.R1145,margin-top=29.96pt]
+__and__ image:l74-c12.svg["a yellow and black figure",pdfwidth=38.16pt,vertical-align=-4.32pt] __on the same base__
+
+[.j.Tm15.L2145.R1150,margin-top=5.72pt]
+(image:l74-c14.svg["a black line",pdfwidth=47.76pt,vertical-align=0.48pt]) __and on the same side of it, are__
+
+[.j.Tm29.L2140.R1875,margin-top=5.48pt]
+__between the same parallels.__
+
+[.j.L2205.R1150,margin-top=26.36pt]
+If image:l74-c16.svg["a blue and black line",pdfwidth=47.28pt,vertical-align=-0.24pt], which joins the vertices
+
+[.j.L2200.R1155,margin-top=8.12pt]
+of the triangles, be not image:l74-r1533x1018.svg["parallel to",pdfwidth=6.72pt,vertical-align=-3.84pt] image:l74-c20.svg["a black line",pdfwidth=48.48pt,vertical-align=0.72pt],
+
+[.j.L2205.R1155,margin-top=10.28pt]
+draw image:l74-c21.svg["a red line",pdfwidth=48.96pt,vertical-align=3.60pt] image:l74-r1333x1094.svg["is parallel to",pdfwidth=6.96pt,vertical-align=-1.68pt] image:l74-c22.svg["a black line",pdfwidth=47.52pt,vertical-align=3.12pt] (pr. 31.),
+
+[.j.L2640.R1655,margin-top=5.24pt]
+meeting image:l74-c24.svg["a black line",pdfwidth=55.68pt,vertical-align=-1.44pt]
+
+[.j.L2700.R1710,margin-top=24.68pt]
+Draw image:l74-c33.svg["a yellow line",pdfwidth=56.40pt,vertical-align=-1.20pt]
+
+[.j.L1545.R1625,margin-top=22.52pt]
+Because image:l74-c37.svg["a red line",pdfwidth=48.48pt,vertical-align=2.64pt] image:l74-c35.svg["is parallel to",pdfwidth=7.20pt,vertical-align=-3.12pt] image:l74-c38.svg["a black line",pdfwidth=49.92pt,vertical-align=1.68pt] (const.)
+
+[.j.L1905.R1680,margin-top=46.52pt]
+image:l74-c40.svg["a yellow figure",pdfwidth=45.60pt,vertical-align=1.20pt] image:l74-c42.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.48pt] image:l74-c39.svg["a yellow and black and blue figure",pdfwidth=37.68pt,vertical-align=-0.96pt] (pr. 37.):
+
+[.j.L1700.R1760,margin-top=32.84pt]
+but image:l74-c45.svg["a yellow figure",pdfwidth=44.40pt,vertical-align=-3.84pt] image:l74-c47.svg["is equal to",pdfwidth=13.92pt,vertical-align=-0.72pt] image:l74-c46.svg["a yellow and black figure",pdfwidth=37.92pt,vertical-align=-2.40pt] (hyp.);
+
+[.j.L1270.R1360,margin-top=44.36pt]
+image:l74-c51.svg["therefore",pdfwidth=12.24pt,vertical-align=-2.64pt] image:l74-c50.svg["a yellow and black figure",pdfwidth=36.72pt,vertical-align=-3.60pt] image:l74-c52.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l74-c49.svg["a yellow and black and blue figure",pdfwidth=37.44pt,vertical-align=-4.08pt], a part equal to the whole,
+
+[.j.L2180.R2310,margin-top=9.56pt]
+which is absurd.
+
+[.j.L1410.R1530,margin-top=6.44pt]
+image:l74-c56.svg["therefore",pdfwidth=12.00pt,vertical-align=-3.84pt] image:l74-c57.svg["a red line",pdfwidth=47.76pt,vertical-align=0.72pt] image:l74-r947x2265.svg["is not parallel to",pdfwidth=13.92pt,vertical-align=-5.76pt] image:l74-c58.svg["a black line",pdfwidth=47.52pt,vertical-align=-0.96pt]; and in the same
+
+[.j.L1070.R1180,margin-top=9.08pt]
+manner it can be demonstrated, that no other line except
+
+[.j.L1175.R1260,margin-top=9.80pt]
+image:l74-c66.svg["a blue and black line",pdfwidth=44.64pt,vertical-align=2.64pt] is image:l74-r827x2416.svg["parallel to",pdfwidth=6.96pt,vertical-align=-1.92pt] image:l74-c67.svg["a black line",pdfwidth=45.84pt,vertical-align=3.12pt]; image:l74-r1150x2424.svg["therefore",pdfwidth=11.76pt,vertical-align=1.20pt] image:l74-c64.svg["a blue and black line",pdfwidth=49.68pt,vertical-align=4.32pt] image:l74-r827x2416.svg["is parallel to",pdfwidth=6.96pt,vertical-align=-1.92pt] image:l74-c65.svg["a black line",pdfwidth=54.00pt,vertical-align=2.16pt]
+
+[.j.L3575.R1305,margin-top=7.16pt]
+{empty}Q. E. D.
+
+// end::page-40[]
+
+// tag::page-41[]
+[%notitle#prop-40.prop,running-title="BOOK I.  PROP. XL.  THEOR."]
+== Proposition XL.
+
+// page 41 (leaf 75)
+[.d,margin-top=-9.56pt]
+image::l75-c0.svg["The diagram of Proposition XL",pdfwidth=532.8pt]
+
+[.d,margin-top=-162.96pt]
+image::l75-initial.svg["E",pdfwidth=532.8pt]
+
+[.j.L1680.R2840,margin-top=-46.26pt]
+QUAL __trian-__
+
+[.l.L1985.R0,margin-top=11.72pt]
+__gles__
+
+[.j.L1135.R2840,margin-top=52.52pt]
+(image:l75-c12.svg["a yellow and black figure",pdfwidth=38.64pt,vertical-align=-4.32pt] __and__ image:l75-c10.svg["a red and black figure",pdfwidth=39.12pt,vertical-align=-3.84pt])
+
+[.j.L1125.R2830,margin-top=5.72pt]
+__on equal bases, and on the__
+
+[.j.L1095.R2835,margin-top=5.72pt]
+__same side, are between the__
+
+[.j.Tm10.L1090.R3495,margin-top=5.72pt]
+__same parallels.__
+
+[.j.L1385.R1370,margin-top=23.48pt]
+If image:l75-c27.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=0.72pt] which joins the vertices of triangles
+
+[.j.L1945.R1970,margin-top=7.16pt]
+be not image:l75-r617x1154.svg["parallel to",pdfwidth=6.96pt,vertical-align=-4.08pt] image:l75-c29.svg["a black and blue line",pdfwidth=82.56pt,vertical-align=0.24pt],
+
+[.j.L1475.R1490,margin-top=8.84pt]
+draw image:l75-c32.svg["a red line",pdfwidth=48.00pt,vertical-align=0.96pt] image:l75-r614x1234.svg["parallel to",pdfwidth=6.72pt,vertical-align=-3.84pt] image:l75-c33.svg["a black and blue line",pdfwidth=84.00pt,vertical-align=0.48pt] (pr. 31.),
+
+[.j.L2145.R2155,margin-top=8.36pt]
+meeting image:l75-c39.svg["a black line",pdfwidth=55.44pt,vertical-align=-2.16pt]
+
+[.j.L2200.R2215,margin-top=20.84pt]
+Draw image:l75-c49.svg["a yellow line",pdfwidth=55.20pt,vertical-align=-2.16pt]
+
+[.j.L1400.R1415,margin-top=9.32pt]
+Because image:l75-c53.svg["a red line",pdfwidth=49.68pt,vertical-align=0.48pt] image:l75-c51.svg["is parallel to",pdfwidth=7.20pt,vertical-align=-4.56pt] image:l75-c54.svg["a black and blue line",pdfwidth=92.64pt,vertical-align=0.00pt] (const.)
+
+[.j.L1415.R1450,margin-top=46.04pt]
+image:l75-c61.svg["a yellow and black figure",pdfwidth=38.64pt,vertical-align=-3.12pt] image:l75-c65.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.16pt] image:l75-c58.svg["a red and black and blue figure",pdfwidth=32.16pt,vertical-align=-4.56pt] but image:l75-c59.svg["a yellow and black figure",pdfwidth=37.92pt,vertical-align=-2.16pt] image:l75-c67.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l75-c62.svg["a red and black figure",pdfwidth=39.60pt,vertical-align=-4.32pt]
+
+[.j.L1335.R1320,margin-top=50.60pt]
+image:l75-c73.svg["therefore",pdfwidth=12.00pt,vertical-align=0.00pt] image:l75-c71.svg["a red and black figure",pdfwidth=39.84pt,vertical-align=-1.20pt] image:l75-c72.svg["is equal to",pdfwidth=14.16pt,vertical-align=2.16pt] image:l75-c70.svg["a red and blue and black figure",pdfwidth=28.56pt,vertical-align=1.44pt], a part equal to the whole,
+
+[.j.L2240.R2240,margin-top=6.92pt]
+which is absurd.
+
+[.j.L1200.R1175,margin-top=9.32pt]
+image:l75-c78.svg["therefore",pdfwidth=12.48pt,vertical-align=-0.48pt] image:l75-c80.svg["a red line",pdfwidth=48.48pt,vertical-align=1.68pt] image:l75-r452x2169.svg["is not parallel to",pdfwidth=13.68pt,vertical-align=-2.64pt] image:l75-c79.svg["a black line",pdfwidth=53.04pt,vertical-align=0.00pt] and in the same manner it
+
+[.j.L1450.R1445,margin-top=8.12pt]
+can be demonstrated, that no other line except
+
+[.j.L1225.R1220,margin-top=10.52pt]
+image:l75-c89.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=1.68pt] is image:l75-r432x2328.svg["parallel to",pdfwidth=6.96pt,vertical-align=-0.96pt] image:l75-c88.svg["a black line",pdfwidth=48.00pt,vertical-align=3.12pt]: image:l75-c87.svg["therefore",pdfwidth=11.76pt,vertical-align=0.00pt] image:l75-c91.svg["a blue and black line",pdfwidth=37.68pt,vertical-align=0.48pt] image:l75-c85.svg["is parallel to",pdfwidth=7.68pt,vertical-align=-2.40pt] image:l75-c90.svg["a black line",pdfwidth=53.76pt,vertical-align=-0.96pt]
+
+[.j.L3605.R1255,margin-top=12.44pt]
+{empty}Q. E. D.
+
+[.l.sig.L2760.R0,margin-top=0.68pt]
+G
+
+// end::page-41[]
+
+// tag::page-42[]
+[%notitle#prop-41.prop,running-title="BOOK I.  PROP. XLI.  THEOR."]
+== Proposition XLI.
+
+// page 42 (leaf 76)
+[.d,margin-top=46.36pt]
+image::l76-c0.svg["The diagram of Proposition XLI",pdfwidth=532.8pt]
+
+[.j.L2960.R1770,margin-top=-153.06pt]
+F __a paral-__
+
+[.d,margin-top=-10.18pt]
+image::l76-initial.svg["I",pdfwidth=532.8pt]
+
+[.d,margin-top=-57.36pt]
+image::l76-c31.svg["a yellow and blue figure",pdfwidth=532.8pt]
+
+[.l.L3095.R0,margin-top=-31.14pt]
+__lelogram__
+
+[.j.L2420.R1110,margin-top=45.80pt]
+__and a triangle__ image:l76-c37.svg["a red and blue and yellow figure",pdfwidth=35.52pt,vertical-align=-5.52pt] __are upon__
+
+[.j.Tm36.L2420.R1110,margin-top=5.48pt]
+__the same base__ image:l76-c42.svg["a black line",pdfwidth=48.24pt,vertical-align=0.72pt] __and between__
+
+[.j.L2420.R1100,margin-top=5.72pt]
+__the same parallels__ image:l76-c43.svg["a black line",pdfwidth=46.80pt,vertical-align=1.20pt] __and__
+
+[.j.Tm50.L2425.R1110,margin-top=5.72pt]
+image:l76-c49.svg["a black line",pdfwidth=48.72pt,vertical-align=-0.24pt], __the parallelogram is double__
+
+[.j.Tm8.L2420.R2310,margin-top=6.44pt]
+__the triangle.__
+
+[.j.L1850.R1855,margin-top=29.24pt]
+Draw image:l76-c51.svg["a red line",pdfwidth=48.72pt,vertical-align=0.00pt] the diagonal;
+
+[.j.L1650.R1655,margin-top=51.32pt]
+Then image:l76-c52.svg["a blue figure",pdfwidth=54.48pt,vertical-align=-2.64pt] image:l76-c54.svg["is equal to",pdfwidth=13.92pt,vertical-align=0.96pt] image:l76-c53.svg["a red and blue and yellow figure",pdfwidth=38.16pt,vertical-align=-4.08pt] (pr. 37.)
+
+[.j.L1530.R1535,margin-top=49.40pt]
+image:l76-c56.svg["a yellow and blue and black figure",pdfwidth=56.88pt,vertical-align=-3.60pt] image:l76-c59.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] twice image:l76-c57.svg["a blue and black figure",pdfwidth=54.72pt,vertical-align=-5.04pt] (pr. 34.)
+
+[.j.L1765.R1725,margin-top=50.60pt]
+image:l76-c65.svg["therefore",pdfwidth=12.48pt,vertical-align=-2.40pt] image:l76-c62.svg["a yellow and blue and black figure",pdfwidth=57.12pt,vertical-align=-7.20pt] image:l76-c66.svg["is equal to",pdfwidth=12.96pt,vertical-align=-0.24pt] twice image:l76-c61.svg["a red and blue and yellow figure",pdfwidth=37.20pt,vertical-align=-4.80pt].
+
+[.j.L3655.R1225,margin-top=22.76pt]
+{empty}Q. E. D.
+
+// end::page-42[]
+
+// tag::page-43[]
+[%notitle#prop-42.prop,running-title="BOOK I.  PROP. XLII.  THEOR."]
+== Proposition XLII.
+
+// page 43 (leaf 77)
+[.d,margin-top=20.92pt]
+image::l77-c0.svg["The diagram of Proposition XLII",pdfwidth=532.8pt]
+
+[.d,margin-top=-149.52pt]
+image::l77-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L1675.R2805,margin-top=-48.90pt]
+O __construct a__
+
+[.l.L1745.R0,margin-top=5.72pt]
+__parallelogram__
+
+[.j.Tm13.L1735.R2805,margin-top=5.72pt]
+__equal to a given__
+
+[.j.Tm68.L1125.R2850,margin-top=39.56pt]
+__triangle__ image:l77-c5.svg["a black and blue and yellow figure",pdfwidth=53.28pt,vertical-align=-3.60pt] __and hav-__
+
+[.j.Tm25.L1130.R2800,margin-top=5.72pt]
+__ing an angle equal to a given__
+
+[.j.L1135.R2950,margin-top=20.36pt]
+__rectilinear angle__ image:l77-c11.svg["a yellow figure",pdfwidth=32.16pt,vertical-align=-5.28pt].
+
+[.j.L1630.R1625,margin-top=25.16pt]
+Make image:l77-c15.svg["a black line",pdfwidth=47.28pt,vertical-align=0.72pt] image:l77-c14.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.96pt] image:l77-c16.svg["a black line",pdfwidth=49.20pt,vertical-align=0.48pt] (pr. 10.)
+
+[.j.L2215.R2190,margin-top=17.24pt]
+Draw image:l77-c23.svg["a yellow line",pdfwidth=48.96pt,vertical-align=-0.48pt].
+
+[.j.L1775.R1745,margin-top=31.88pt]
+Make image:l77-c25.svg["a blue figure",pdfwidth=31.20pt,vertical-align=-11.28pt] image:l77-c32.svg["is equal to",pdfwidth=14.16pt,vertical-align=-7.44pt] image:l77-c24.svg["a yellow figure",pdfwidth=32.16pt,vertical-align=-10.80pt] (pr. 23.)
+
+[.j.L1600.R1580,margin-top=36.44pt]
+Draw image:l77-r470x1563.svg["the red dotted line parallel to the red line, and the blue line to the black, braced",pdfwidth=131.52pt,vertical-align=-15.84pt] (pr. 31.)
+
+[.j.L1680.R1630,margin-top=56.60pt]
+image:l77-c57.svg["a yellow figure",pdfwidth=49.92pt,vertical-align=-4.32pt] image:l77-c59.svg["is equal to",pdfwidth=13.20pt,vertical-align=0.24pt] twice image:l77-c58.svg["a blue and yellow and black figure",pdfwidth=37.20pt,vertical-align=-5.28pt] (pr. 41.)
+
+[.j.L1850.R1805,margin-top=43.88pt]
+but image:l77-c62.svg["a blue and yellow figure",pdfwidth=37.44pt,vertical-align=-4.08pt] image:l77-c63.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l77-c61.svg["a black figure",pdfwidth=27.36pt,vertical-align=-3.60pt] (pr. 38.)
+
+[.j.L1870.R1815,margin-top=39.56pt]
+image:l77-c67.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.44pt] image:l77-c65.svg["a yellow figure",pdfwidth=52.08pt,vertical-align=-7.20pt] image:l77-c68.svg["is equal to",pdfwidth=14.16pt,vertical-align=-4.32pt] image:l77-c66.svg["a black and yellow and blue figure",pdfwidth=52.80pt,vertical-align=-7.44pt].
+
+[.j.L3670.R1210,margin-top=14.12pt]
+{empty}Q. E. D.
+
+// end::page-43[]
+
+// tag::page-44[]
+[%notitle#prop-43.prop,running-title="BOOK I.  PROP. XLIII.  THEOR."]
+== Proposition XLIII.
+
+// page 44 (leaf 78)
+[.d,margin-top=29.08pt]
+image::l78-c0.svg["The diagram of Proposition XLIII",pdfwidth=532.8pt]
+
+[.d,margin-top=-149.28pt]
+image::l78-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L2950.R1525,margin-top=-47.46pt]
+HE __complements__
+
+[.j.L2505.R1115,margin-top=64.76pt]
+image:l78-c4.svg["a blue figure",pdfwidth=66.24pt,vertical-align=-4.32pt] __and__ image:l78-c3.svg["a black figure",pdfwidth=48.24pt,vertical-align=-4.08pt] __of__
+
+[.j.L2400.R1135,margin-top=8.84pt]
+__the parallelograms which are about__
+
+[.j.L2400.R1140,margin-top=5.72pt]
+__the diagonal of a parallelogram are__
+
+[.l.L2400.R0,margin-top=5.24pt]
+__equal.__
+
+[.j.L1495.R1590,margin-top=81.80pt]
+image:l78-c6.svg["a black and red and yellow figure",pdfwidth=76.08pt,vertical-align=-0.24pt] image:l78-c7.svg["is equal to",pdfwidth=14.16pt,vertical-align=1.68pt] image:l78-c5.svg["a red and blue and yellow figure",pdfwidth=73.68pt,vertical-align=2.16pt] (pr. 34.)
+
+[.j.L1435.R1535,margin-top=65.24pt]
+and image:l78-c10.svg["a red and yellow figure",pdfwidth=63.12pt,vertical-align=-4.08pt] image:l78-c12.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.68pt] image:l78-c9.svg["a red and yellow figure",pdfwidth=70.32pt,vertical-align=-1.92pt] (pr. 34.)
+
+[.j.L1575.R1665,margin-top=57.08pt]
+image:l78-c16.svg["therefore",pdfwidth=12.96pt,vertical-align=1.68pt] image:l78-c14.svg["a black figure",pdfwidth=48.24pt,vertical-align=-1.20pt] image:l78-c17.svg["is equal to",pdfwidth=13.92pt,vertical-align=1.68pt] image:l78-c15.svg["a blue figure",pdfwidth=66.00pt,vertical-align=-0.96pt] (ax. 3.)
+
+[.j.L3585.R1295,margin-top=14.84pt]
+{empty}Q. E. D.
+
+// end::page-44[]
+
+// tag::page-45[]
+[%notitle#prop-44.prop,running-title="BOOK I.  PROP. XLIV.  PROB."]
+== Proposition XLIV.
+
+// page 45 (leaf 79)
+[.j.L1665.R2880,margin-top=-1.10pt]
+O __a given__
+
+[.d,margin-top=-10.42pt]
+image::l79-initial.svg["T",pdfwidth=532.8pt]
+
+[.d,margin-top=-43.68pt]
+image::l79-c2.svg["The diagram of Proposition XLIV",pdfwidth=532.8pt]
+
+[.j.L1685.R2885,margin-top=-151.62pt]
+__straight line__
+
+[.j.Tm31.L1725.R2890,margin-top=5.72pt]
+(image:l79-c15.svg["a black line",pdfwidth=33.60pt,vertical-align=0.48pt]) __to ap-__
+
+[.j.Tm26.L1700.R2885,margin-top=5.24pt]
+__ply a parallelo-__
+
+[.j.L1100.R2930,margin-top=5.96pt]
+__gram equal to a given tri-__
+
+[.j.L1110.R2870,margin-top=19.64pt]
+__angle__ (image:l79-c31.svg["a red figure",pdfwidth=59.76pt,vertical-align=-18.48pt]), __and__
+
+[.j.L1110.R2885,margin-top=19.40pt]
+__having an angle equal to__
+
+[.j.L1110.R2880,margin-top=5.48pt]
+__a given rectilinear angle__
+
+[.j.L1115.R3730,margin-top=22.52pt]
+(image:l79-c40.svg["a yellow figure",pdfwidth=30.72pt,vertical-align=-0.72pt]).
+
+[.j.L1240.R1140,margin-top=25.88pt]
+Make image:l79-c59.svg["a yellow figure",pdfwidth=48.24pt,vertical-align=-4.32pt] image:l79-c64.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l79-c60.svg["a red figure",pdfwidth=61.20pt,vertical-align=-5.28pt] with image:l79-c61.svg["a blue figure",pdfwidth=32.64pt,vertical-align=-4.32pt] image:l79-c65.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l79-c62.svg["a yellow figure",pdfwidth=32.64pt,vertical-align=-4.80pt]
+
+[.j.L2435.R2455,margin-top=5.72pt]
+(pr. 42.)
+
+[.j.L1320.R1345,margin-top=7.64pt]
+and having one of its sides image:l79-c68.svg["a black line",pdfwidth=48.24pt,vertical-align=0.48pt] conterminous
+
+[.j.L1655.R1635,margin-top=7.64pt]
+with and in continuation of image:l79-c74.svg["a black line",pdfwidth=31.68pt,vertical-align=0.24pt].
+
+[.j.L1210.R1225,margin-top=8.84pt]
+Produce image:l79-c79.svg["a blue and black line",pdfwidth=48.48pt,vertical-align=-0.72pt] till it meets image:l79-c78.svg["a yellow line",pdfwidth=48.72pt,vertical-align=1.68pt] image:l79-c76.svg["is parallel to",pdfwidth=7.20pt,vertical-align=-4.56pt] image:l79-c80.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=-0.96pt]
+
+[.j.L1115.R1125,margin-top=7.88pt]
+draw image:l79-c90.svg["a red line",pdfwidth=49.44pt,vertical-align=-2.64pt] produce it till it meets image:l79-c84.svg["a red figure",pdfwidth=8.16pt,vertical-align=-0.48pt]image:l79-c85.svg["a red line",pdfwidth=38.88pt,vertical-align=-0.48pt] continued;
+
+[.j.L1325.R1360,margin-top=7.40pt]
+draw image:l79-c97.svg["a yellow line",pdfwidth=48.72pt,vertical-align=-0.24pt] image:l79-r575x1598.svg["parallel to",pdfwidth=7.20pt,vertical-align=-4.32pt] image:l79-c91.svg["a black line",pdfwidth=54.96pt,vertical-align=0.48pt] meeting image:l79-c104.svg["a yellow line",pdfwidth=48.00pt,vertical-align=-0.72pt]
+
+[.j.L1735.R1775,margin-top=7.88pt]
+produced, and produce image:l79-c105.svg["a blue and black line",pdfwidth=55.68pt,vertical-align=-1.92pt]
+
+[.j.L1870.R1590,margin-top=37.16pt]
+image:l79-c112.svg["a yellow figure",pdfwidth=48.96pt,vertical-align=-2.40pt] image:l79-c114.svg["is equal to",pdfwidth=14.16pt,vertical-align=1.92pt] image:l79-c113.svg["a blue figure",pdfwidth=55.20pt,vertical-align=-3.12pt] (pr. 43.)
+
+[.j.L1615.R1625,margin-top=32.36pt]
+but image:l79-c116.svg["a yellow figure",pdfwidth=49.20pt,vertical-align=-5.52pt] image:l79-c118.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.44pt] image:l79-c117.svg["a red figure",pdfwidth=58.32pt,vertical-align=-6.00pt] (const.)
+
+[.j.L1685.R1820,margin-top=34.28pt]
+image:l79-c123.svg["therefore",pdfwidth=12.24pt,vertical-align=-1.44pt] image:l79-c121.svg["a blue figure",pdfwidth=52.56pt,vertical-align=-5.04pt] image:l79-c125.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.48pt] image:l79-c120.svg["a red figure",pdfwidth=60.72pt,vertical-align=-6.00pt]; and
+
+[.j.L1125.R1120,margin-top=18.92pt]
+image:l79-c135.svg["a blue figure",pdfwidth=31.92pt,vertical-align=-8.16pt] image:l79-c137.svg["is equal to",pdfwidth=13.92pt,vertical-align=-1.20pt] image:l79-c136.svg["a red and black figure",pdfwidth=45.12pt,vertical-align=-9.60pt] image:l79-c133.svg["a black figure",pdfwidth=32.88pt,vertical-align=-7.44pt] image:l79-c139.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.44pt] image:l79-c134.svg["a yellow figure",pdfwidth=32.88pt,vertical-align=-7.20pt] (pr. 19. and const.)
+
+[.j.L3635.R1240,margin-top=7.88pt]
+{empty}Q. E. D.
+
+// end::page-45[]
+
+// tag::page-46[]
+[%notitle#prop-45.prop,running-title="BOOK I.  PROP. XLV.  PROB."]
+== Proposition XLV.
+
+// page 46 (leaf 80)
+[.d,margin-top=-14.84pt]
+image::l80-c0.svg["The diagram of Proposition XLV",pdfwidth=532.8pt]
+
+[.j.Tm17.L2605.R1045,margin-top=-159.06pt]
+O __construct a parallelogram equal__
+
+[.d,margin-top=-9.70pt]
+image::l80-initial.svg["T",pdfwidth=532.8pt]
+
+[.j.L2665.R1055,margin-top=-45.78pt]
+__to a given rectilinear figure__
+
+[.j.L2690.R1055,margin-top=31.88pt]
+(image:l80-c4.svg["a yellow and blue and red figure",pdfwidth=55.44pt,vertical-align=-27.60pt]) __and having an__
+
+[.j.L2010.R1040,margin-top=29.72pt]
+__angle equal to a given rectilinear angle__
+
+[.j.L2020.R2820,margin-top=13.64pt]
+(image:l80-c5.svg["a red figure",pdfwidth=32.16pt,vertical-align=-9.36pt]).
+
+[.j.L2015.R1060,margin-top=31.16pt]
+Draw image:l80-c9.svg["a red line",pdfwidth=48.48pt,vertical-align=0.24pt] and image:l80-c10.svg["a blue and black line",pdfwidth=47.76pt,vertical-align=-0.72pt] dividing
+
+[.j.L2210.R1285,margin-top=8.84pt]
+the rectilinear figure into triangles.
+
+[.d,margin-top=-2.50pt]
+image::l80-c12.svg["The diagram of Proposition XLV",pdfwidth=532.8pt]
+
+[.j.L2240.R1345,margin-top=-46.50pt]
+Construct image:l80-c13.svg["a blue figure",pdfwidth=33.84pt,vertical-align=-4.56pt] image:l80-c15.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l80-c14.svg["a blue and black figure",pdfwidth=54.72pt,vertical-align=-4.80pt]
+
+[.j.L2190.R1270,margin-top=22.76pt]
+having image:l80-c17.svg["a yellow figure",pdfwidth=35.76pt,vertical-align=-2.88pt] image:l80-c21.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l80-c18.svg["a red figure",pdfwidth=32.64pt,vertical-align=-3.60pt] (pr. 42.)
+
+[.j.L1720.R1615,margin-top=19.40pt]
+to image:l80-c26.svg["a red line",pdfwidth=48.48pt,vertical-align=0.24pt] apply image:l80-c23.svg["a yellow figure",pdfwidth=30.72pt,vertical-align=-5.28pt] image:l80-c25.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.24pt] image:l80-c24.svg["a yellow figure",pdfwidth=32.40pt,vertical-align=-18.96pt]
+
+[.j.L1740.R1750,margin-top=31.16pt]
+having image:l80-c28.svg["a black figure",pdfwidth=31.68pt,vertical-align=-2.40pt] image:l80-c30.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l80-c29.svg["a red figure",pdfwidth=33.12pt,vertical-align=-2.16pt] (pr. 44.)
+
+[.j.L1770.R1665,margin-top=22.28pt]
+to image:l80-c35.svg["a blue and black line",pdfwidth=49.68pt,vertical-align=-0.96pt] apply image:l80-c33.svg["a red figure",pdfwidth=26.64pt,vertical-align=-6.48pt] image:l80-r1364x1764.svg["is equal to",pdfwidth=13.68pt,vertical-align=-0.48pt] image:l80-c32.svg["a red figure",pdfwidth=22.56pt,vertical-align=-10.80pt]
+
+[.j.L1735.R1705,margin-top=24.68pt]
+having image:l80-c38.svg["a blue figure",pdfwidth=32.88pt,vertical-align=-4.32pt] image:l80-c39.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l80-c37.svg["a red figure",pdfwidth=32.64pt,vertical-align=-3.36pt] (pr. 44.)
+
+[.j.L1810.R1815,margin-top=28.52pt]
+image:l80-c44.svg["therefore",pdfwidth=12.48pt,vertical-align=-6.00pt] image:l80-c43.svg["a yellow and red and blue figure",pdfwidth=66.48pt,vertical-align=-11.76pt] image:l80-c45.svg["is equal to",pdfwidth=14.16pt,vertical-align=-4.80pt] image:l80-c42.svg["a yellow and blue and red figure",pdfwidth=56.64pt,vertical-align=-32.40pt]
+
+[.j.L1255.R1240,margin-top=34.76pt]
+and image:l80-c49.svg["a yellow and red and blue figure",pdfwidth=66.48pt,vertical-align=-5.76pt] is a parallelogram. (prs. 29, 14, 30.)
+
+[.j.L1975.R1980,margin-top=20.84pt]
+having image:l80-c51.svg["a blue figure",pdfwidth=31.68pt,vertical-align=-4.32pt] image:l80-c52.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.48pt] image:l80-c50.svg["a red figure",pdfwidth=37.44pt,vertical-align=-3.84pt]
+
+[.j.L3660.R1220,margin-top=4.52pt]
+{empty}Q. E. D.
+
+// end::page-46[]
+
+// tag::page-47[]
+[%notitle#prop-46.prop,running-title="BOOK I.  PROP. XLVI.  PROB."]
+== Proposition XLVI.
+
+// page 47 (leaf 81)
+[.d,margin-top=26.68pt]
+image::l81-c0.svg["The diagram of Proposition XLVI",pdfwidth=532.8pt]
+
+[.d,margin-top=-178.08pt]
+image::l81-initial.svg["U",pdfwidth=532.8pt]
+
+[.j.L1680.R2075,margin-top=-49.62pt]
+PON __a given straight line__
+
+[.j.L1750.R2075,margin-top=5.96pt]
+(image:l81-c4.svg["a black line",pdfwidth=48.72pt,vertical-align=0.72pt]) __to construct a__
+
+[.l.L1705.R0,margin-top=5.48pt]
+__square.__
+
+[.j.L1170.R2125,margin-top=38.60pt]
+Draw image:l81-c8.svg["a blue and black line",pdfwidth=48.00pt,vertical-align=0.24pt] image:l81-c6.svg["perpendicular",pdfwidth=14.40pt,vertical-align=-1.92pt] and image:l81-c7.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l81-c9.svg["a black line",pdfwidth=48.72pt,vertical-align=0.00pt]
+
+[.j.L1760.R2760,margin-top=8.84pt]
+(pr. 11. and 3.)
+
+[.j.L1125.R2080,margin-top=20.84pt]
+Draw image:l81-c11.svg["a red line",pdfwidth=49.44pt,vertical-align=0.24pt] image:l81-r487x1063.svg["parallel to",pdfwidth=6.72pt,vertical-align=-4.08pt] image:l81-c12.svg["a black line",pdfwidth=48.00pt,vertical-align=0.72pt], and meet-
+
+[.j.L1210.R2210,margin-top=8.60pt]
+ing image:l81-c18.svg["a yellow line",pdfwidth=47.52pt,vertical-align=-0.48pt] drawn image:l81-r652x1143.svg["parallel to",pdfwidth=7.20pt,vertical-align=-3.84pt] image:l81-c17.svg["a blue and black line",pdfwidth=53.76pt,vertical-align=-2.16pt]
+
+[.j.L1350.R1285,margin-top=76.28pt]
+In image:l81-c21.svg["a black and yellow and red and blue figure",pdfwidth=62.40pt,vertical-align=-3.60pt] image:l81-c23.svg["a blue and black line",pdfwidth=48.96pt,vertical-align=1.92pt] image:l81-c22.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.24pt] image:l81-c24.svg["a black line",pdfwidth=48.96pt,vertical-align=0.72pt] (const.)
+
+[.j.L1835.R1790,margin-top=21.56pt]
+image:l81-c26.svg["a yellow figure",pdfwidth=30.72pt,vertical-align=-6.96pt] image:l81-c27.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] a right angle (const.)
+
+[.j.L1390.R1380,margin-top=31.64pt]
+image:l81-c31.svg["therefore",pdfwidth=12.24pt,vertical-align=1.68pt] image:l81-c30.svg["a red figure",pdfwidth=29.76pt,vertical-align=-4.56pt] image:l81-c32.svg["is equal to",pdfwidth=14.16pt,vertical-align=0.00pt] image:l81-c29.svg["a yellow figure",pdfwidth=32.16pt,vertical-align=-4.80pt] image:l81-c33.svg["is equal to",pdfwidth=13.92pt,vertical-align=0.00pt] a right angle (pr. 29.),
+
+[.j.L1610.R1600,margin-top=10.04pt]
+and the remaining sides and angles must
+
+[.j.L2180.R2205,margin-top=10.28pt]
+be equal, (pr. 34.)
+
+[.j.L1480.R1550,margin-top=60.44pt]
+and image:l81-r366x2290.svg["therefore",pdfwidth=11.52pt,vertical-align=-0.96pt] image:l81-c39.svg["a black and yellow and red and blue figure",pdfwidth=63.84pt,vertical-align=-2.40pt] is a square. (def. 27.)
+
+[.j.L3645.R1235,margin-top=14.12pt]
+{empty}Q. E. D.
+
+// end::page-47[]
+
+// tag::page-48[]
+[%notitle#prop-47.prop,running-title="BOOK I.  PROP. XLVII.  THEOR."]
+== Proposition XLVII.
+
+// page 48 (leaf 82)
+[.d,margin-top=35.32pt]
+image::l82-c0.svg["The diagram of Proposition XLVII",pdfwidth=532.8pt]
+
+[.d,margin-top=-187.68pt]
+image::l82-initial.svg["I",pdfwidth=532.8pt]
+
+[.j.L2520.R1120,margin-top=-58.26pt]
+N __a right angled triangle__
+
+[.j.L2585.R1120,margin-top=28.04pt]
+image:l82-c3.svg["a red and blue and yellow and black figure",pdfwidth=70.56pt,vertical-align=-2.16pt] __the square on the__
+
+[.j.L2570.R1125,margin-top=8.36pt]
+__hypotenuse__ image:l82-c7.svg["a red line",pdfwidth=49.44pt,vertical-align=1.68pt] __is equal to__
+
+[.j.Tm5.L1955.R1130,margin-top=8.60pt]
+__the sum of the squares of the sides,__ image:l82-c10.svg["a blue and black line",pdfwidth=50.88pt,vertical-align=-4.08pt]
+
+[.j.L1950.R2745,margin-top=8.12pt]
+__and__ image:l82-c13.svg["a yellow line",pdfwidth=33.84pt,vertical-align=0.96pt]).
+
+[.j.L2010.R1145,margin-top=34.04pt]
+On image:l82-c16.svg["a red line",pdfwidth=48.48pt,vertical-align=0.48pt], image:l82-c15.svg["a blue and black line",pdfwidth=48.48pt,vertical-align=0.96pt] and image:l82-c14.svg["a yellow line",pdfwidth=48.48pt,vertical-align=1.44pt]
+
+[.j.L2415.R1565,margin-top=10.76pt]
+describe squares, (pr. 46.)
+
+[.j.L1570.R1620,margin-top=33.08pt]
+Draw image:l82-r862x1438.svg["a black dotted line",pdfwidth=48.00pt,vertical-align=0.72pt] image:l82-c18.svg["parallel to",pdfwidth=7.44pt,vertical-align=-4.32pt] image:l82-c31.svg["a red line",pdfwidth=18.00pt,vertical-align=0.24pt]image:l82-c20.svg["a red line",pdfwidth=28.80pt,vertical-align=0.48pt] (pr. 31.)
+
+[.j.L1685.R1710,margin-top=10.76pt]
+also draw image:l82-c33.svg["a black line",pdfwidth=48.48pt,vertical-align=0.96pt] and image:l82-c34.svg["a black line",pdfwidth=54.72pt,vertical-align=-2.40pt]
+
+[.j.L2130.R2160,margin-top=29.72pt]
+image:l82-c37.svg["a yellow figure",pdfwidth=29.04pt,vertical-align=-12.72pt] image:l82-c38.svg["is equal to",pdfwidth=14.16pt,vertical-align=-6.72pt] image:l82-c36.svg["a yellow figure",pdfwidth=38.16pt,vertical-align=-11.28pt]
+
+[.j.L1460.R1425,margin-top=48.20pt]
+To each add image:l82-c43.svg["a black figure",pdfwidth=29.04pt,vertical-align=-4.56pt] image:l82-c44.svg["therefore",pdfwidth=12.24pt,vertical-align=-2.16pt] image:l82-c41.svg["a yellow and black figure",pdfwidth=29.52pt,vertical-align=-2.16pt] image:l82-c45.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.92pt] image:l82-c42.svg["a yellow and black figure",pdfwidth=41.52pt,vertical-align=-1.44pt],
+
+[.j.L1170.R1190,margin-top=8.60pt]
+image:l82-c61.svg["a red line",pdfwidth=48.48pt,vertical-align=-0.72pt] image:l82-c51.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.96pt] image:l82-c55.svg["a red line",pdfwidth=48.96pt,vertical-align=0.72pt] and image:l82-c54.svg["a blue and black line",pdfwidth=48.72pt,vertical-align=0.24pt] image:l82-c52.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l82-c62.svg["a blue and black line",pdfwidth=48.48pt,vertical-align=-0.48pt];
+
+[.j.L1880.R1890,margin-top=56.84pt]
+image:l82-c76.svg["therefore",pdfwidth=11.76pt,vertical-align=-1.68pt] image:l82-c73.svg["a blue and black figure",pdfwidth=38.16pt,vertical-align=-1.44pt] image:l82-c77.svg["is equal to",pdfwidth=14.40pt,vertical-align=-0.48pt] image:l82-c75.svg["a red and black figure",pdfwidth=71.52pt,vertical-align=-3.36pt]
+
+[.j.L1615.R1655,margin-top=27.80pt]
+Again, because image:l82-c85.svg["a yellow line",pdfwidth=48.48pt,vertical-align=0.48pt] image:l82-c82.svg["is parallel to",pdfwidth=7.44pt,vertical-align=-4.56pt] image:l82-c84.svg["a blue and black line",pdfwidth=49.20pt,vertical-align=0.00pt]
+
+// end::page-48[]
+
+// tag::page-49[]
 <<<
 
-[#prop-3]
-=== Proposition III. Problem.
+// page 49 (leaf 83)
+[.j.L1795.R1645,margin-top=37.06pt]
+image:l83-c0.svg["a red figure",pdfwidth=54.72pt,vertical-align=-1.20pt] image:l83-c3.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] twice image:l83-c1.svg["a red and black figure",pdfwidth=66.72pt,vertical-align=-4.32pt],
 
-image::prop-3.svg["The blue circle about the black line’s end, its red radius; the black line reaching the circle, its dotted part beyond; the blue line, the less, beside it",float=right]
+[.j.L1735.R1830,margin-top=39.32pt]
+and image:l83-c6.svg["a blue figure",pdfwidth=38.64pt,vertical-align=-11.76pt] image:l83-c9.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] twice image:l83-c7.svg["a blue and black figure",pdfwidth=45.84pt,vertical-align=-27.36pt]
 
-[.enunciation.dropcap]
-From the greater ({greater}) of two given straight lines, to cut off a part equal to the less ({blue}).
+[.j.L1860.R1885,margin-top=59.00pt]
+image:l83-c15.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.20pt] image:l83-c13.svg["a red figure",pdfwidth=54.48pt,vertical-align=-14.88pt] image:l83-c16.svg["is equal to",pdfwidth=14.16pt,vertical-align=-2.40pt] image:l83-c14.svg["a blue figure",pdfwidth=47.28pt,vertical-align=-17.76pt]
 
-Draw {red} {eq} {blue} (pr. 2.); describe image:prop-3-circle.svg[the blue circle] (post. 3.), then {blue} {eq} {black}.
+[.j.L1645.R1720,margin-top=36.20pt]
+In the same manner it may be shown
 
-[.steps%hardbreaks]
-For {red} {eq} {black} (def. 15.),
-and {blue} {eq} {red} (const.);
-{therefore} {blue} {eq} {black} (ax. 1.).
+[.j.L2075.R2070,margin-top=26.60pt]
+that image:l83-c22.svg["a black figure",pdfwidth=27.84pt,vertical-align=-12.96pt] image:l83-c23.svg["is equal to",pdfwidth=14.40pt,vertical-align=-3.60pt] image:l83-c21.svg["a yellow figure",pdfwidth=12.48pt,vertical-align=-27.84pt];
 
-[.qed]
-Q.{nbsp}E.{nbsp}D.
+[.j.L1620.R1645,margin-top=53.96pt]
+hence image:l83-c27.svg["a red and black figure",pdfwidth=82.32pt,vertical-align=-25.44pt] image:l83-c29.svg["is equal to",pdfwidth=14.40pt,vertical-align=-5.04pt] image:l83-c28.svg["a blue and yellow figure",pdfwidth=57.84pt,vertical-align=-28.80pt]
 
-<<<
+[.j.L3580.R1300,margin-top=41.48pt]
+{empty}Q. E. D.
 
-[#prop-4]
-=== Proposition IV. Theorem.
+[.l.sig.L2515.R0,margin-top=144.20pt]
+H
 
-image::prop-4.svg["Two equal triangles side by side, each its sides red, blue and black and its angles yellow, blue and red",float=left]
+// end::page-49[]
 
-[.enunciation.dropcap]
-If two triangles have two sides of the one respectively equal to two sides of the other, ({red} to {red} and {blue} to {blue}) and the angles (image:prop-4-angle-yellow.svg[the yellow angle] and image:prop-4-angle-yellow.svg[the yellow angle]) contained by those equal sides also equal; then their bases or their sides ({black} and {black}) are also equal: and the remaining and their remaining angles opposite to equal sides are respectively equal (image:prop-4-angle-blue.svg[the blue angle] {eq} image:prop-4-angle-blue.svg[the blue angle] and image:prop-4-angle-red.svg[the red angle] {eq} image:prop-4-angle-red.svg[the red angle]): and the triangles are equal in every respect.
+// tag::page-50[]
+[%notitle#prop-48.prop,running-title="BOOK I.  PROP. XLVIII.  THEOR."]
+== Proposition XLVIII.
 
-Let the two triangles be conceived, to be so placed, that the vertex of the one of the equal angles, image:prop-4-angle-yellow.svg[the yellow angle] or image:prop-4-angle-yellow.svg[the yellow angle]; shall fall upon that of the other, and {red} to coincide with {red}, then will {blue} coincide with {blue} if applied: consequently {black} will coincide with {black}, or two straight lines will enclose a space, which is impossible (ax. 10), therefore {black} {eq} {black}, image:prop-4-angle-blue.svg[the blue angle] {eq} image:prop-4-angle-blue.svg[the blue angle] and image:prop-4-angle-red.svg[the red angle] {eq} image:prop-4-angle-red.svg[the red angle], and as the triangles image:prop-4-triangle.svg[the triangle] and image:prop-4-triangle.svg[the triangle] coincide, when applied, they are equal in every respect.
+// page 50 (leaf 84)
+[.d,margin-top=17.80pt]
+image::l84-c0.svg["The diagram of Proposition XLVIII",pdfwidth=532.8pt]
 
-[.qed]
-Q.{nbsp}E.{nbsp}D.
+[.d,margin-top=-169.44pt]
+image::l84-initial.svg["I",pdfwidth=532.8pt]
 
-<<<
+[.j.L3440.R1115,margin-top=-56.34pt]
+F __the square__
 
-[#prop-5]
-=== Proposition V. Theorem.
+[.j.L3495.R1115,margin-top=5.72pt]
+__of one side__
 
-image::prop-5.svg["The isosceles triangle, its equal sides red and its base black, the sides produced in yellow and blue lines crossed from each end of the base to the other side’s end; the angle at the apex black, the angles at the base blue above and yellow below, red at the ends",float=right]
+[.j.L3505.R1095,margin-top=8.84pt]
+(image:l84-c14.svg["a red line",pdfwidth=48.24pt,vertical-align=3.60pt]) __of__
 
-[.enunciation.dropcap]
-In any isosceles triangle image:prop-5-triangle.svg[the triangle] if the equal sides be produced, the external angles at the base are equal, and the internal angles at the base are also equal.
+[.j.L3490.R1120,margin-top=3.08pt]
+__a triangle is__
 
-Produce {red}, and {red}, (post. 2.), take {yellow} {eq} {yellow}, (pr. 3.); draw {blue} and {blue}.
+[.j.L2885.R1120,margin-top=6.44pt]
+__equal to the squares of the__
 
-Then in image:prop-5-triangle-adc.svg[the triangle with the black angle, its sides red and yellow, red, and blue] and image:prop-5-triangle-aeb.svg[the triangle with the black angle, its sides red, red and yellow, and blue] we have,
+[.j.Tm5.L2885.R1140,margin-top=5.72pt]
+__other two sides__ (image:l84-c30.svg["a black and blue line",pdfwidth=48.96pt,vertical-align=-0.48pt]
 
-[.steps%hardbreaks]
-{red-yellow} {eq} {red-yellow} (const.), image:prop-5-angle-a.svg[the black angle] common to
-both, and {red} {eq} {red} (hyp.) {therefore} image:prop-5-angle-b.svg[the blue and yellow angle] {eq} image:prop-5-angle-c.svg[the blue and yellow angle],
-{blue} {eq} {blue} and image:prop-5-angle-d.svg[the red angle] {eq} image:prop-5-angle-e.svg[the red angle] (pr. 4.).
-Again in image:prop-5-triangle-bdc.svg[the triangle of the yellow, blue and black lines] and image:prop-5-triangle-ceb.svg[the triangle of the yellow, blue and black lines] we have {yellow} {eq} {yellow},
-image:prop-5-angle-d.svg[the red angle] {eq} image:prop-5-angle-e.svg[the red angle] and {blue} {eq} {blue}, {therefore}
-image:prop-5-angle-b-external.svg[the yellow angle and the angle beside it] {eq} image:prop-5-angle-c-external.svg[the yellow angle and the angle beside it] and image:prop-5-angle-b-yellow.svg[the yellow angle] {eq} image:prop-5-angle-c-yellow.svg[the yellow angle] (pr. 4.) but
-image:prop-5-angle-b.svg[the blue and yellow angle] {eq} image:prop-5-angle-c.svg[the blue and yellow angle], {therefore} image:prop-5-angle-b-blue.svg[the blue angle] {eq} image:prop-5-angle-c-blue.svg[the blue angle] (ax. 3.)
+[.j.L2880.R1125,margin-top=5.48pt]
+__and__ image:l84-c37.svg["a black line",pdfwidth=49.44pt,vertical-align=0.72pt]), __the angle__
 
-[.qed]
-Q.{nbsp}E.{nbsp}D.
+[.j.L2885.R1130,margin-top=24.92pt]
+(image:l84-c41.svg["a yellow figure",pdfwidth=31.92pt,vertical-align=-3.36pt]) __subtended by that__
+
+[.j.L2845.R1450,margin-top=8.36pt]
+__side is a right angle.__
+
+[.j.L1110.R1140,margin-top=28.76pt]
+Draw image:l84-c76.svg["a black line",pdfwidth=47.76pt,vertical-align=0.48pt] image:l84-c73.svg["perpendicular",pdfwidth=14.64pt,vertical-align=-1.68pt] image:l84-c83.svg["a blue and black line",pdfwidth=48.24pt,vertical-align=-0.96pt] and image:l84-r1255x1193.svg["equal to",pdfwidth=13.92pt,vertical-align=-0.96pt] image:l84-c75.svg["a black line",pdfwidth=48.72pt,vertical-align=0.96pt] (prs. 11. 3.)
+
+[.j.L2000.R2015,margin-top=7.64pt]
+and draw image:l84-c85.svg["a red line",pdfwidth=48.72pt,vertical-align=0.48pt] also.
+
+[.j.L1630.R1700,margin-top=26.36pt]
+Since image:l84-c91.svg["a black line",pdfwidth=48.00pt,vertical-align=0.24pt] image:l84-c89.svg["is equal to",pdfwidth=14.16pt,vertical-align=-1.20pt] image:l84-c90.svg["a black line",pdfwidth=49.20pt,vertical-align=0.72pt] (const.)
+
+[.j.L1935.R1995,margin-top=9.56pt]
+image:l84-r836x1502.svg["the square of the black dotted line is equal to the square of the black line;",pdfwidth=139.68pt,vertical-align=-5.76pt]
+
+[.j.L1095.R1140,margin-top=11.72pt]
+image:l84-r487x1593.svg["therefore the square of the black dotted line and the square of the blue line are equal to the square of the black line and the square of the blue line;",pdfwidth=308.88pt,vertical-align=-6.48pt]
+
+[.j.L1160.R1225,margin-top=13.64pt]
+but image:l84-r612x1687.svg["the square of the black dotted line and the square of the blue line are equal to the square of the red dotted line",pdfwidth=216.96pt,vertical-align=-4.08pt] (pr. 47.),
+
+[.j.L1285.R1320,margin-top=11.48pt]
+and image:l84-r645x1775.svg["the square of the black line and the square of the blue line are equal to the square of the red line",pdfwidth=213.84pt,vertical-align=-4.32pt] (hyp.)
+
+[.j.L1820.R1875,margin-top=9.80pt]
+image:l84-r789x1873.svg["therefore the square of the red dotted line is equal to the square of the red line,",pdfwidth=162.96pt,vertical-align=-6.00pt]
+
+[.j.L1870.R1925,margin-top=13.64pt]
+image:l84-r810x1975.svg["therefore the red dotted line is equal to the red line;",pdfwidth=152.64pt,vertical-align=-3.60pt]
+
+[.j.L1675.R1715,margin-top=30.68pt]
+and image:l84-c200.svg["therefore",pdfwidth=12.48pt,vertical-align=-1.92pt] image:l84-c199.svg["a yellow figure",pdfwidth=32.40pt,vertical-align=-5.28pt] image:l84-c201.svg["is equal to",pdfwidth=14.16pt,vertical-align=-0.72pt] image:l84-c198.svg["a red figure",pdfwidth=33.60pt,vertical-align=-4.56pt] (pr. 8.),
+
+[.j.L1650.R1705,margin-top=36.20pt]
+consequently image:l84-c206.svg["a red figure",pdfwidth=33.36pt,vertical-align=-2.16pt] is a right angle.
+
+[.j.L3610.R1265,margin-top=11.72pt]
+{empty}Q. E. D.
+
+// end::page-50[]

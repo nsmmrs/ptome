@@ -6,7 +6,11 @@ Oliver Byrne
 :look: byrne
 :looksdir: {docdir}
 :imagesdir: images
-:description: The first five propositions of Book I of Oliver Byrne’s Euclid (1847), transcribed from the first edition, their diagrams redrawn in red, yellow, blue and black and their letters replaced, as Byrne replaced them, by coloured symbols in the text.
-include::text/symbols.adoc[]
+:description: Book I of Oliver Byrne’s Euclid as William Pickering printed it in 1847, page for page and line for line: its forty-eight propositions, each printed line where the scan has it, the diagrams, the woodcut initials and the coloured symbols in the text traced from the scan of the first edition.
+// The text keeps the printing's lines and pages (NOTICE.md): each
+// printed line a paragraph, each page the printing's.
+ifdef::backend-pdf[]
+:notitle:
+endif::[]
 
 include::text/book-1.adoc[]

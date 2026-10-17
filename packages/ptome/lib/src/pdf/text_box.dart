@@ -574,7 +574,12 @@ final class _Image {
     this.descender,
     this.lineHeightIncreased = false,
     this.mathDepth,
+    this.bottom,
   });
+
+  /// Where its bottom is above the baseline (its own `vertical-align`),
+  /// its line no taller for it; null to place it as the gem does.
+  final double? bottom;
 
   final Graphic graphic;
   final double width;
@@ -1782,6 +1787,19 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         link: link,
       );
     }
+    if (image.bottom case final bottom?) {
+      // As tall as the text's line, alone in it too: a line of symbols
+      // set as high as a line of words.
+      return InlineImage(
+        image.graphic,
+        image.drawWidth,
+        image.drawHeight,
+        bottom: bottom,
+        lineAscent: format.font.ascenderAt(format.size),
+        lineDescent: format.font.descenderAt(format.size),
+        link: link,
+      );
+    }
     if (image.lineHeightIncreased) {
       return InlineImage(
         image.graphic,
@@ -2007,7 +2025,11 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
     double? descender;
     var size = item.format.size;
     var increased = false;
-    if (height > lineHeight * 1.5) {
+    final bottom = switch (fragment.imageVerticalAlign) {
+      final value? => double.tryParse(value),
+      null => null,
+    };
+    if (bottom == null && height > lineHeight * 1.5) {
       descender = lineFont.descenderAt(_state.size);
       ascender = height - descender;
       if (height == boundsHeight) {
@@ -2031,6 +2053,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
           ascender: ascender,
           descender: descender,
           lineHeightIncreased: increased,
+          bottom: bottom,
         ),
       ),
     );
@@ -2534,7 +2557,9 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         if (f.format.image case final image?) {
           // The gem's `InlineImageRenderer`: centered in the fragment, or
           // standing on the descender of a raised line.
-          final top = image.mathDepth != null
+          final top = image.bottom != null
+              ? baseline + image.bottom! + image.height
+              : image.mathDepth != null
               ? baseline - image.mathDepth! + image.height
               : image.lineHeightIncreased
               ? baseline - f.descender + image.height

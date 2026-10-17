@@ -10,9 +10,11 @@
 // inside`) and its poems' own indents and type, a contents' columns and
 // dot leaders, a folio at the foot of the opening pages alone; a
 // duodecimo's signed leaves, its catchwords, its shaped and sideways
-// poems, an index's columns (The Temple, after its 1633 printing). The pages
-// read back by Poppler, recorded in test/oracles/pdf_printing.json.gz
-// (test/support/oracles.dart; ORACLES=record asks them again).
+// poems, an index's columns (The Temple, after its 1633 printing); its
+// symbols set on their lines at their own heights (Byrne's Euclid, after
+// its 1847 printing). The pages read back by Poppler, recorded in
+// test/oracles/pdf_printing.json.gz (test/support/oracles.dart;
+// ORACLES=record asks them again).
 @TestOn('vm')
 library;
 
@@ -567,5 +569,32 @@ void main() {
     expect(_line(page, 'Short')[2], closeTo(224, 1));
     expect(text('Against'), 'Against thee: for his light. (thers');
     expect(text('God gave'), endsWith('fea-'));
+  });
+
+  test("an inline image's own vertical-align: its bottom that far above "
+      'the baseline, its line no taller for it, a line of images alone as '
+      'tall as a line of words', () {
+    double span(String two) {
+      final page = _lines(
+        _pdf(
+          ':nofooter:\n\n[%hardbreaks]\nOne\n$two\nThree\n',
+          'prose:\n  margin_bottom: 0\n',
+        ),
+      ).first;
+      return _line(page, 'Three')[3] - _line(page, 'One')[3];
+    }
+
+    final words = span('Two');
+    // (A drawing as tall as two lines, set on its line as the gem sets it:
+    // the line taller; at its own vertical-align, not.)
+    expect(span('Two image:box.svg[pdfwidth=30pt]'), greaterThan(words + 5));
+    expect(
+      span('Two image:box.svg[pdfwidth=30pt,vertical-align=-5pt]'),
+      closeTo(words, 0.01),
+    );
+    expect(
+      span('image:box.svg[pdfwidth=30pt,vertical-align=2pt]'),
+      closeTo(words, 0.01),
+    );
   });
 }

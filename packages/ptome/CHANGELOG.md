@@ -10,6 +10,14 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: an inline image's own `vertical-align` (a length): its bottom
+  that far above the baseline, its line no taller for it, a line of
+  images alone as tall as a line of words (FEAT-v2vw73). The showcase's
+  Byrne's Euclid is now Book I set as its 1847 first edition sets it,
+  page for page and line for line, its diagrams, initials and coloured
+  symbols traced from the scan (`tool/byrne_1847`, EPIC-hdrjm1);
+  `tool/showcase_byrne.dart`, which drew the first five propositions'
+  diagrams from their constructions, is gone with them.
 - PDF: turn-ups and turn-downs (`role_<role>_turnover`: `auto`, `up`,
   `down`, `_turnover_mark`, `_turnover_gap`): a verse line too long for
   the measure, kept to its source's lines, finishes flush right on the
