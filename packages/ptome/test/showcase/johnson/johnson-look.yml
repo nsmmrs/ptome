@@ -1,29 +1,34 @@
-# Johnson's Dictionary after its first edition (W. Strahan for J. and
-# P. Knapton and others, 1755), a folio in two columns: Caslon, the
-# entries hung, each headword in capitals and small capitals with its
-# stress marked, its part of speech in italic and its etymology in
-# brackets; the senses numbered at the edge; the quotations set in, the
-# word in italic, their authors in italic flush right at the end of the
-# line (or on a line of their own); each column headed by the first
-# three letters of its last word, spaced; the next page's first word,
-# the catchword, at the foot.
+# Johnson's Dictionary as its first edition (W. Strahan for J. and P.
+# Knapton and others, 1755) sets it, measured from the scan of volume II
+# (NOTICE.md, tool/johnson_1755): a folio's 785 × 1428 pt page in two
+# columns of 324.3 pt, 15.1 pt apart, the lines 13.2 pt apart, the type
+# as wide as the printing's word for word and its spaces as wide as its
+# unjustified lines'; each entry hung, its headword in capitals and small
+# capitals with its stress marked, its part of speech in italic and its
+# etymology in brackets; the senses numbered at the edge; the quotations
+# set in, the word in italic, their authors in italic flush right at the
+# end of the line (or on a line of their own), the verse set in further;
+# each column headed by the first three letters of its last word, spaced,
+# where the printing's heads sit on the three pages taken together; the
+# folio, the signature and the catchword at the foot, set with the text.
 #
-# Libre Caslon Text, Noto Serif for the Greek and the Saxon letters
-# (`ptome doctor --look johnson --looksdir test/showcase/johnson`).
+# Libre Caslon Text, Noto Serif for the Greek and the Saxon letters,
+# Noto Serif Hebrew for the Hebrew (`ptome doctor --look johnson
+# --looksdir test/showcase/johnson`).
 extends: ptome
 tokens:
   font:
     text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
     display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
   size:
-    text: { print: 8.6pt, screen: 18px }
+    text: { print: 10.25pt, screen: 18px }
     headings: { print: [22pt, 14pt, 11pt, 9pt, 9pt, 9pt] }
-  leading: { print: 1.22, screen: 1.5 }
+  leading: { print: 1.2, screen: 1.5 }
   measure: { screen: 34em }
   align: { print: justify }
-  hyphenate: { print: true }
+  hyphenate: { print: false }
   color: { ink: '#1C1C1C', link: '#1C1C1C' }
-  page: { size: [8in, 12.4in], margin: [0.9in, 0.6in, 0.7in, 0.65in] }
+  page: { size: [785pt, 1428pt], margin: [122pt, 67.3pt, 60pt, 54pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
@@ -31,43 +36,68 @@ styles:
 pdf:
   base:
     small_caps_synthesis: lowercase
+    word_spacing: 230%
+    line_pitch: 13.2pt
+    # (Each block's own space above it, fitted to the scan, kept at the
+    # top of a column too.)
+    margin_break: keep
   font:
-    fallbacks: [Noto Serif]
+    fallbacks: [Noto Serif, Noto Serif Hebrew]
   page:
     columns: 2
-    column_gap: 18
+    column_gap: 15.1
   running_content:
     marks: w-
+  heading:
+    margin_top: 0
+    margin_bottom: 0
   prose:
     margin_bottom: 0
     text_indent: 0
   role:
-    entry: { text_indent: -0.9em }
-    sense: { text_indent: -0.9em }
-    cite: { margin_left: 0.9em, text_indent: 0.8em }
-    verse: { text_indent: 1.6em }
-    author: { flush: right, font_style: italic }
-    hw: { font_variant: small-caps }
-  title_page:
-    text_align: center
-    title:
-      top: 22%
-      font_size: 20
-      text_transform: uppercase
-      line_height: 1.3
-    subtitle:
-      font_style: italic
-      font_size: 12
-      line_height: 1.5
-    authors:
-      font_size: 12
-      text_transform: uppercase
-      margin_top: 24
+    # (Each paragraph's lines where the printing sets them, from the
+    # headwords' edge: an entry's and a sense's first line at the edge,
+    # the rest about 12.5 pt in; a quotation's first line 25 pt in, the
+    # rest 12; a verse quotation's lines 25 pt in, its first 39.)
+    entry: { text_indent: -12.2 }
+    sense: { text_indent: -12.9 }
+    cite: { margin_left: 12.2, text_indent: 13.6 }
+    verse: { margin_left: 25.2, text_indent: 13.7 }
+    goes-on: { text_indent: 0 }
+    flat: { text_indent: 0 }
+    author: { flush: right }
+    hw: { font_variant: small-caps, letter_spacing: 1 }
+    # (The foot, each line where the printing sets it (its own
+    # `margin-top`): the folio under the first column, the signature and
+    # the catchword under the second.)
+    foot-folio: { text_align: center, text_indent: 0, margin_right: 22 }
+    foot-line: { text_align: left, text_indent: 0 }
+    sig: { width: 169, width_align: right }
+    cw: { flush: right }
+    # (The lines the printing sets in further than their paragraph's
+    # others, each its own span that wide, `[.i<tenths>]`: gen.py's.)
+    i30: { width: 3.0pt }
+    i35: { width: 3.5pt }
+    i40: { width: 4.0pt }
+    i45: { width: 4.5pt }
+    i50: { width: 5.0pt }
+    i130: { width: 13.0pt }
+    i375: { width: 37.5pt }
+    i395: { width: 39.5pt }
+    i545: { width: 54.5pt }
+    i645: { width: 64.5pt }
+    i655: { width: 65.5pt }
+    i670: { width: 67.0pt }
+    i775: { width: 77.5pt }
+    i805: { width: 80.5pt }
+    i900: { width: 90.0pt }
+    # (The spans end.)
   header:
-    height: 0.75in
+    height: 122
     vertical_align: bottom
-    font_size: 16
-    character_spacing: 6
+    padding: [0, -14, 15.6, -14]
+    font_size: 27
+    letter_spacing: 9.5
     columns: '=50% =0% =50%'
     recto:
       left: { content: '{column-1-last-mark}' }
@@ -78,23 +108,26 @@ pdf:
       center: { content: '' }
       right: { content: '{column-2-last-mark}' }
   footer:
-    height: 0.5in
+    height: 0
     border_width: 0
-    font_size: 8.6
-    columns: '<50% =0% >50%'
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '{page-catchword}' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '{page-catchword}' } }
+    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
 webfonts:
   - Libre Caslon Text:400,400italic
 css: |
   .paragraph.entry p,.paragraph.sense p{padding-left:.9em;text-indent:-.9em;margin:0}
   .paragraph.cite p{padding-left:.9em;text-indent:.8em;margin:0}
-  .paragraph.cite.verse p{text-indent:1.6em}
-  .author{display:block;text-align:right;font-style:italic}
+  .paragraph.verse p{padding-left:1.8em;text-indent:.8em;margin:0}
+  .paragraph.goes-on p,.paragraph.flat p{text-indent:0}
+  .author{display:block;text-align:right}
   .hw{font-variant:small-caps}
   .paragraph{margin:0}
+  .foot-folio,.foot-line{display:none}
 epub-css: |
   .paragraph.entry p,.paragraph.sense p{padding-left:.9em;text-indent:-.9em;margin:0}
   .paragraph.cite p{padding-left:.9em;text-indent:.8em;margin:0}
-  .author{display:block;text-align:right;font-style:italic}
+  .paragraph.verse p{padding-left:1.8em;text-indent:.8em;margin:0}
+  .paragraph.goes-on p,.paragraph.flat p{text-indent:0}
+  .author{display:block;text-align:right}
   .hw{font-variant:small-caps}
+  .foot-folio,.foot-line{display:none}

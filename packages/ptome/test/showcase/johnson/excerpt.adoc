@@ -1,104 +1,22 @@
-= Johnson: two columns, their guide words and the catchword
+= Johnson: a page of the Dictionary as the folio sets it
 :epub-strict:
 :doctype: book
 :lang: en
 :look: johnson
 :looksdir: {docdir}
 :notitle:
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
 
-// A dictionary's page (doc/showcase.md): the entries from LEWD to
-// LEXICOGRAPHER in two columns, hung, their authors flush right; each
-// column headed by the first three letters of its last word, and at the
-// foot of the first page the next page's first word, the catchword.
+// A dictionary's page (doc/showcase.md), its lines the first edition's
+// (`:source-lines:`), the second of its three (LEWD to LIBERTINE): two
+// columns of entries, each hung, its senses numbered at the edge, its
+// quotations set in, their authors flush right; a half line of verse set
+// in where the printing sets it; each column headed by the first three
+// letters of its last word; the folio and the catchword at the foot.
 
 [#l%notitle]
 == L
 
-[[w-lewd,LEW]]
-[.entry]
-[.hw]#LEWD.# _adj._ [læƿede, Saxon.]
-
-[.sense]
-{empty}1. Lay; not clerical. Obsolete.
-
-[.cite.verse%hardbreaks]
-For _lewyd_ men this book I writ. [.author]#Bishop Grosthead.#
-
-[.cite.verse%hardbreaks]
-So these great clerks their little wisdom shew
-To mock the _lewd,_ as learn’d in this as they. [.author]#Davies.#
-
-[.sense]
-{empty}2. Wicked; bad; naughty.
-
-[.cite]
-If some be admitted into the ministry, either void of learning, or _lewd_ in life, are all the rest to be condemned? [.author]#Whitgift.#
-
-[.cite]
-Before they did oppress the people, only by colour of a _lewd_ custom, they did afterwards use the same oppressions by warrant. [.author]#Davies on Ireland.#
-
-[.sense]
-{empty}3. Lustful; libidinous.
-
-[.cite.verse%hardbreaks]
-He is not lolling on a _lewd_ love bed,
-But on his knees at meditation. [.author]#Shakespeare’s Rich. III.#
-
-[.cite.verse%hardbreaks]
-Then _lewd_ Anchemolus he laid in dust,
-Who stain’d his stepdam’s bed with impious lust. [.author]#Dryden.#
-
-[[w-lewdly,LEW]]
-[.entry]
-[.hw]#Le´wdly.# _adj._ [from _lewd._]
-
-[.sense]
-{empty}1. Wickedly; naughtily.
-
-[.cite.verse%hardbreaks]
-A sort of naughty persons, _lewdly_ bent,
-Have practis’d dangerously against your state. [.author]#Shakesp.#
-
-[.sense]
-{empty}2. Libidinously; lustfully.
-
-[.cite.verse%hardbreaks]
-He lov’d fair lady Eltred, _lewdly_ lov’d,
-Whose wanton pleasures him too much did please,
-That quite his heart from Guendeline remov’d. [.author]#Spenser.#
-
-[.cite.verse%hardbreaks]
-So _lewdly_ dull his idle works appear,
-The wretched texts deserve no comments here. [.author]#Dryden.#
-
-[[w-lewdness,LEW]]
-[.entry]
-[.hw]#Le´wdness.# _n. s._ [from _lewd._] Lustful licentiousness.
-
-[.cite.verse%hardbreaks]
-Suffer no _lewdness,_ nor indecent speech,
-Th’ apartment of the tender youth to reach. [.author]#Dryd. Juv.#
-
-[.cite]
-Damianus’s letter to Nicholas is an authentick record of the _lewdnesses_ committed under the reign of celibacy. [.author]#Atterbury.#
-
-[[w-lewdster,LEW]]
-[.entry]
-[.hw]#Le´wdster.# _n. s._ [from _lewd._] A lecher; one given to criminal pleasures.
-
-[.cite.verse%hardbreaks]
-Against such _lewdsters,_ and their lechery,
-Those that betray them do no treachery. [.author]#Shakespeare.#
-
-<<<
-
-[[w-lewis-dor,LEW]]
-[.entry]
-[.hw]#_LE´WIS D’OR._# _n. s._ [French.] A golden French coin, in value twelve livres, now settled at seventeen shillings. [.author]#Dict.#
-
-[[w-lexicographer,LEX]]
-[.entry]
-[.hw]#Lexico´grapher.# _n. s._ [λεξικὸν and γράφω; _lexicographe,_ French.] A writer of dictionaries; a harmless drudge, that busies himself in tracing the original, and detailing the signification of words.
-
-[.cite]
-Commentators and _lexicographers_ acquainted with the Syriac language, have given these hints in their writings on scripture. [.author]#Watts’s Improvement of the Mind.#
+include::text/pages.adoc[tag=page-47]

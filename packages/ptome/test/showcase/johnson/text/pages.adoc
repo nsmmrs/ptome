@@ -1,0 +1,1159 @@
+// The three pages of the first edition from LEVEL to LICENTIOUSLY
+// (volume II, the Wellcome Collection's copy, its scans n44–n46),
+// line for line: generated from tool/johnson_1755/johnson.spec by
+// gen.py. Each entry anchored by its word, its reference text the
+// first three letters the running heads take; each page tagged
+// (`page-46`…).
+
+// page 46
+// tag::page-46[]
+
+[.cite,margin-top=-2.09pt]
+Providence, for the most part, set us upon a _level_, and
+observes a kind of proportion in its dispensations towards us.
+[.author]#__Addison’s Spectator,__ Nº. 255.#
+
+[.cite,margin-top=0.94pt]
+I suppose, by the stile of old friend, and the like, it must
+be somebody there of his own _level_; among whom his party
+have, indeed, more friends than I could wish. [.author]#__Swift.__#
+
+[.sense,margin-top=0.28pt]
+{empty}4. An instrument whereby masons adjust their work.
+
+[.cite,margin-top=0.54pt]
+The _level_ is from two to ten feet long, that it may reach
+over a considerable length of the work: if the plumb-line
+hang just upon the perpendicular, when the _level_ is set flat
+down upon the work, the work is level; but if it hangs on
+either side the perpendicular, the floor or work must be raised
+on that side, till the plumb-line hang exactly on the perpen{shy}
+dicular. [.author]#__Moxon’s Mechanical Exercises.__#
+
+[.sense,margin-top=0.49pt]
+{empty}5. Rule: borrowed from the mechanick level.
+
+[.verse%hardbreaks]
+Be the fair _level_ of thy actions laid,
+As temp’rance wills, and prudence may persuade,
+And try if life be worth the liver’s care. [.author]#__Prior.__#
+
+[.sense,margin-top=0.37pt]
+{empty}6. The line of direction in which any missive weapon is aimed.
+
+[.verse%hardbreaks,margin-top=-0.34pt]
+[.i375]##{nbsp}##I stood i’ th’ _level_
+Of a full charg’d confederacy, and gave thanks
+To you that choked it. [.author]#__Shakespeare’s Henry__ VIII.#
+
+[.verse%hardbreaks,margin-top=0.15pt]
+[.i775]##{nbsp}##As if that name,
+Shot from the deadly _level_ of a gun,
+Did murther her. [.author]#__Shakes. Romeo and Juliet.__#
+
+[.verse%hardbreaks]
+[.i30]##{nbsp}##Thrice happy is that humble pair,
+Beneath the _level_ of all care,
+Over whose heads those arrows fly,
+Of sad distrust and jealousy. [.author]#__Waller.__#
+
+[.sense,margin-top=0.33pt]
+{empty}7. The line in which the sight passes.
+
+[.verse%hardbreaks,margin-top=-0.49pt]
+Fir’d at first sight with what the muse imparts,
+In fearless youth we tempt the heights of arts;
+[.i35]##{nbsp}##While from the bounded _level_ of our mind
+Short views we take, nor see the lengths behind. [.author]#__Pope.__#
+
+[[w-le-veller,LEV]]
+[.entry,margin-top=-0.26pt]
+[.hw]#Le´veller.# _n. s._ [from _level._]
+
+[.sense,margin-top=-0.51pt]
+[.i35]##{nbsp}##1. One who makes any thing even.
+
+[.sense,margin-top=-0.42pt]
+{empty}2. One who destroys superiority; one who endeavours to bring
+all to the same state of equality.
+
+[.cite,margin-top=-0.17pt]
+You are an everlasting _leveller_; you won’t allow encourage{shy}
+ment to extraordinary merit. [.author]#__Collier on Pride.__#
+
+[[w-le-velness,LEV]]
+[.entry]
+[.hw]#Le´velness.# _n. s._ [from _level._]
+
+[.sense]
+{empty}1. Evenness; equality of surface.
+
+[.sense]
+{empty}2. Equality with something else.
+
+[.cite]
+The river Tiber is expressed lying along, for so you must
+remember to draw rivers, to express their _levelness_ with the
+earth. [.author]#__Peacham.__#
+
+[[w-le-ven,LEV]]
+[.entry]
+[.hw]#Le´ven.# _n. s._ [_levain_, French.]
+
+[.sense]
+{empty}1. Ferment; that which being mixed in bread makes it rise
+and ferment.
+
+[.sense]
+{empty}2. Any thing capable of changing the nature of a greater mass;
+any thing that tinctures the whole.
+
+[.cite,margin-top=-0.16pt]
+The matter fermenteth upon the old _leven_, and becometh
+more acrid. [.author]#__Wiseman’s Surgery.__#
+
+[.cite,margin-top=-0.16pt]
+As to the pestilential _levains_ conveyed in goods, it is a safe
+opinion. [.author]#__Arbuthnot on Air.__#
+
+[[w-le-ver,LEV]]
+[.entry,margin-top=-0.4pt]
+[.hw]#Le´ver.# _n. s._ [_levier_, French.]
+
+[.cite]
+The second mechanical power, is a balance supported by
+a hypomochlion; only the centre is not in the middle, as
+in the common balance, but near one end; for which rea{shy}
+son it is used to elevate or raise a great weight; whence
+comes the name _lever_. [.author]#__Harris.__#
+
+[.cite,margin-top=-0.97pt]
+[.i130]##{nbsp}##Have you any _leavers_ to lift me up again, being down.
+[.author]#__Shakespeare’s Henry__ IV.#
+
+[.verse%hardbreaks,margin-top=1.03pt]
+Some draw with cords, and some the monster drive
+With rolls and _levers_. [.author]#__Denham.__#
+
+[.cite,margin-top=-0.22pt]
+In a _leaver_, the motion can be continued only for so short
+a space, as may be answerable to that little distance betwixt
+the fulciment and the weight; which is always by so much
+lesser, as the disproportion betwixt the weight and the power
+is greater, and the motion itself more easy. [.author]#__Wilkins’s Magick.__#
+
+[.verse%hardbreaks]
+Some hoisting _leavers_, some the wheels prepare. [.author]#__Dryd.__#
+
+[.cite,margin-top=-0.19pt]
+You may have a wooden _lever_, forked at the ends. [.author]#__Mort.__#
+
+[[w-le-veret,LEV]]
+[.entry,margin-top=0.2pt]
+[.hw]#Le´veret.# [_leivre_, French.] A young hare.
+
+[.verse%hardbreaks,margin-top=-0.38pt]
+Their travels o’er that silver field does show,
+Like track of _leverets_ in morning snow. [.author]#__Waller.__#
+
+[[w-leve-t,LEV]]
+[.entry,margin-top=0.48pt]
+[.hw]#Leve´t.# _n. s._ [from _lever_, French.] A blast on the trumpet;
+probably that by which the soldiers are called in the morning.
+
+[.verse%hardbreaks,margin-top=-0.54pt]
+He that led the cavalcade,
+Wore a sowgelder’s flagellet,
+On which he blew as strong a _levet_;
+As well-fee’d lawyer on his breviate. [.author]#__Hudibras.__#
+
+[[w-leverook,LEV]]
+[.entry,margin-top=0.19pt]
+[.hw]#Leverook.# _n. s._ [laƿere, Saxon.] This word is retained in
+Scotland, and denotes the lark.
+
+[.cite,margin-top=-0.17pt]
+The smaller birds have their particular seasons; as, the
+_leverook_. [.author]#__Walton’s Angler.__#
+
+[.cite]
+If the lufft faa ’twill smoore aw the _leverooks_. [.author]#__Scotch Prov.__#
+
+[[w-le-viable,LEV]]
+[.entry,margin-top=0.37pt]
+[.hw]#Le´viable.# _adj._ [from _levy_.] That may be levied.
+
+[.cite]
+The sums which any agreed to pay, and were not brought
+in, were to be _leviable_ by course of law. [.author]#__Bacon’s Henry__ VII.#
+
+[[w-levi-athan,LEV]]
+[.entry,margin-top=2.48pt]
+[.hw]#_LEVI´ATHAN._# _n. s._ [לויתן.] A water animal mentioned in
+the book of _Job_. By some imagined the crocodile, but in
+poetry generally taken for the whale.
+
+[.column]
+<<<
+
+[.verse%hardbreaks,margin-top=-6.4pt]
+We may, as bootless, spend our vain command
+Upon th’ enraged soldiers in their spoil,
+As send our precepts to th’ _leviathan_,
+To come ashore. [.author]#__Shakespeare’s Henry__ V.#
+
+[.cite]
+Canst thou draw out _leviathan_ with an hook? [.author]#__Job.__#
+
+[.verse%hardbreaks,margin-top=0.42pt]
+More to embroil the deep; _leviathan_,
+And his unwieldy train, in dreadful sport
+Tempest the loosen’d brine. [.author]#__Thomson’s Winter.__#
+
+[[w-le-vigate,LEV]]
+[.entry,margin-top=0.59pt]
+To [.hw]#LE´VIGATE.# _v. a._ [_lævigo_, Latin.]
+
+[.sense]
+{empty}1. To rub or grind to an impalpable powder.
+
+[.sense]
+{empty}2. To mix till the liquor becomes smooth and uniform.
+
+[.cite,margin-top=0.29pt]
+[.i35]##{nbsp}##The chyle is white, as consisting of salt, oil, and water,
+much _levigated_ or smooth. [.author]#__Arbuthnot on Aliment.__#
+
+[[w-leviga-tion,LEV]]
+[.entry,margin-top=0.61pt]
+[.hw]#Leviga´tion.# _n. s._ [from _levigate_.]
+
+[.cite,margin-top=0.21pt]
+_Levigation_ is the reducing of hard bodies, as coral, tutty,
+and precious stones, into a subtile powder, by grinding upon
+marble with a muller; but unless the instruments are ex{shy}
+tremely hard, they will so wear as to double the weight of
+the medicine. [.author]#__Quincy.__#
+
+[[w-le-vite,LEV]]
+[.entry,margin-top=0.62pt]
+[.hw]#Le´vite.# _n. s._ [_levita_, Latin, from _Levi_.]
+
+[.sense]
+{empty}1. One of the tribe of Levi; one born to the office of priest{shy}
+hood among the Jews.
+
+[.cite,margin-top=0.19pt]
+In the Christian church, the office of deacons succeeded in
+the place of the _levites_ among the Jews, who were as mi{shy}
+nisters and servants to the priests. [.author]#__Ayliffe’s Parergon.__#
+
+[.sense,margin-top=0.17pt]
+{empty}2. A priest: used in contempt.
+
+[[w-levi-tical,LEV]]
+[.entry]
+[.hw]#Levi´tical.# _adj._ [from _levite_.] Belonging to the levites;
+making part of the religion of the Jews.
+
+[.cite]
+By the _levitical_ law, both the man and the woman were
+stoned to death; so heinous a crime was the sin of adultery.
+[.author]#__Ayliffe’s Parergon.__#
+
+[[w-le-vity,LEV]]
+[.entry,margin-top=-0.41pt]
+[.hw]#Le´vity.# _n. s._ [_levitas_, Latin.]
+
+[.sense,margin-top=0.23pt]
+{empty}1. Lightness; not heaviness: the quality by which any body
+has less weight than another.
+
+[.cite,margin-top=-0.59pt]
+He gave the form of _levity_ to that which ascended; to that
+which descended, the form of gravity. [.author]#__Raleigh.__#
+
+[.cite,margin-top=-0.15pt]
+This bubble, by reason of its comparative _levity_ to the
+fluidity that encloses it, would necessarily ascend to the top.
+[.author]#__Bentley’s Sermons.__#
+
+[.sense,margin-top=-0.17pt]
+{empty}2. Inconstancy; changeableness.
+
+[.cite]
+They every day broached some new thing; which restless
+_levity_ they did interpret to be their growing in spiritual per{shy}
+fection. [.author]#__Hooker.__#
+
+[.verse%hardbreaks,margin-top=0.19pt]
+Where wigs with wigs, with sword-knots sword-knots
+[.i395]##{nbsp}##strive,
+Beaus banish beaus, and coaches coaches drive,
+[.i45]##{nbsp}##This erring mortals _levity_ may call. [.author]#__Pope.__#
+
+[.sense,margin-top=-0.19pt]
+{empty}3. Unsteadiness; laxity of mind.
+
+[.verse%hardbreaks]
+I unbosom’d all my secrets to thee;
+Not out of _levity_, but over-pow’r’d
+By thy request. [.author]#__Milton’s Agonistes.__#
+
+[.sense,margin-top=0.17pt]
+{empty}4. Idle pleasure; vanity.
+
+[.cite]
+He never employed his omnipotence out of _levity_ or osten{shy}
+tation, but as the necessities of men required. [.author]#__Calamy.__#
+
+[.sense,margin-top=-0.35pt]
+{empty}5. Trifling gaiety; want of seriousness.
+
+[.verse%hardbreaks,margin-top=0.22pt]
+Our graver business frowns at this _levity_. [.author]#__Shakespeare.__#
+
+[.cite]
+Hopton abhorred the licence, and the _levities_, with which
+he saw too many corrupted. [.author]#__Clarendon, b.__ viii.#
+
+[.cite,margin-top=-0.32pt]
+That spirit of religion and seriousness vanished, and a
+spirit of _levity_ and libertinism, infidelity and prophaneness,
+started up in the room of it. [.author]#__Atterbury’s Sermons.__#
+
+[[w-le-vy,LEV]]
+[.entry,margin-top=0.18pt]
+To [.hw]#LE´VY.# _v. a._ [_lever_, French.]
+
+[.sense]
+{empty}1. To raise; to bring together men.
+
+[.cite,margin-top=-0.17pt]
+He resolved to finish the conquest of Ireland, and to that
+end _levied_ a mighty army. [.author]#__Davies on Ireland.__#
+
+[.sense]
+{empty}2. To raise money.
+
+[.cite,margin-top=-0.22pt]
+_Levy_ a tribute unto the Lord of the men of war. [.author]#__Numb.__#
+
+[.cite,margin-top=0.29pt]
+Instead of a ship, he should _levy_ upon his county such a
+sum of money. [.author]#__Clarendon.__#
+
+[.sense]
+{empty}3. To make war. This sense, though _Milton_’s, seems im{shy}
+proper.
+
+[.verse%hardbreaks,margin-top=0.16pt]
+They live in hatred, enmity, and strife,
+Among themselves, and _levy_ cruel wars. [.author]#__Milton.__#
+
+[[w-le-vy-2,LEV]]
+[.entry,margin-top=-0.01pt]
+[.hw]#Le´vy.# _n. s._ [from the verb.]
+
+[.sense,margin-top=0.22pt]
+{empty}1. The act of raising money or men.
+
+[.cite,margin-top=0.46pt]
+They have already contributed all their superfluous hands,
+and every new _levy_ they make must be at the expence of
+their farms and commerce. [.author]#__Addison’s State of the War.__#
+
+[.sense]
+{empty}2. War raised.
+
+[.verse%hardbreaks,margin-top=0.22pt]
+Treason has done his worst: nor steel, nor poison,
+Malice domestick, foreign _levy_, nothing
+Can touch him further! [.author]#__Shakespeare’s Macbeth.__#
+
+[[w-lewd,LEW]]
+[.entry,margin-top=-1.08pt]
+[.hw]#LEWD.# _adj._ [læƿede, Saxon.]
+
+[.sense,margin-top=-0.59pt]
+{empty}1. Lay; not clerical. Obsolete.
+
+[.cite,margin-top=0.32pt]
+For _lewyd_ men this book I writ. [.author]#__Bishop Grosthead.__#
+
+[.verse%hardbreaks,margin-top=1.08pt]
+So these great clerks their little wisdom shew
+To mock the _lewd_, as learn’d in this as they. [.author]#__Davies.__#
+
+[.sense,margin-top=-0.61pt]
+{empty}2. Wicked; bad; naughty.
+
+[.cite,margin-top=1.21pt]
+If some be admitted into the ministry, either void of
+learning, or _lewd_ in life, are all the rest to be con{shy}
+demned? [.author]#__Whitgift.__#
+
+[.foot-line,margin-top=15.59pt]
+[.cw]#Before#
+
+// end::page-46[]
+
+<<<
+
+// page 47
+// tag::page-47[]
+
+[.cite,margin-top=1.68pt]
+Before they did oppress the people, only by colour of a
+_lewd_ custom, they did afterwards use the same oppressions by
+warrant. [.author]#__Davies on Ireland.__#
+
+[.sense,margin-top=-1.15pt]
+{empty}3. Lustful; libidinous.
+
+[.verse%hardbreaks,margin-top=1.77pt]
+He is not lolling on a _lewd_ love bed,
+But on his knees at meditation. [.author]#__Shakespeare’s Rich.__ III.#
+
+[.verse%hardbreaks,margin-top=0.55pt]
+Then _lewd_ Anchemolus he laid in dust,
+Who stain’d his stepdam’s bed with impious lust. [.author]#__Dryden.__#
+
+[[w-le-wdly,LEW]]
+[.entry,margin-top=-0.64pt]
+[.hw]#Le´wdly.# _adj._ [from _lewd_.]
+
+[.sense,margin-top=-0.16pt]
+{empty}1. Wickedly; naughtily.
+
+[.verse%hardbreaks,margin-top=1.3pt]
+A sort of naughty persons, _lewdly_ bent,
+Have practis’d dangerously against your state. [.author]#__Shakesp.__#
+
+[.sense,margin-top=-0.75pt]
+{empty}2. Libidinously; lustfully.
+
+[.verse%hardbreaks,margin-top=1.14pt]
+He lov’d fair lady Eltred, _lewdly_ lov’d,
+Whose wanton pleasures him too much did please,
+[.i40]##{nbsp}##That quite his heart from Guendeline remov’d. [.author]#__Spenser.__#
+
+[.verse%hardbreaks,margin-top=0.18pt]
+So _lewdly_ dull his idle works appear,
+The wretched texts deserve no comments here. [.author]#__Dryden.__#
+
+[[w-le-wdness,LEW]]
+[.entry,margin-top=1.16pt]
+[.hw]#Le´wdness.# _n. s._ [from _lewd_.] Lustful licentiousness.
+
+[.verse%hardbreaks,margin-top=-0.52pt]
+Suffer no _lewdness_, nor indecent speech,
+Th’ apartment of the tender youth to reach. [.author]#__Dryd. Juv.__#
+
+[.cite,margin-top=0.43pt]
+Damianus’s letter to Nicholas is an authentick record of
+the _lewdnesses_ committed under the reign of celibacy. [.author]#__Atterbury.__#
+
+[[w-le-wdster,LEW]]
+[.entry,margin-top=-0.29pt]
+[.hw]#Le´wdster.# _n. s._ [from _lewd_.] A lecher; one given to cri{shy}
+minal pleasures.
+
+[.verse%hardbreaks,margin-top=0.06pt]
+Against such _lewdsters_, and their lechery,
+Those that betray them do no treachery. [.author]#__Shakespeare.__#
+
+[[w-le-wis-dor,LEW]]
+[.entry,margin-top=0.25pt]
+[.hw]#_LE´WIS D’OR._# _n. s._ [French.] A golden French coin, in
+value twelve livres, now settled at seventeen shillings. [.author]#__Dict.__#
+
+[[w-lexico-grapher,LEX]]
+[.entry,margin-top=-1.37pt]
+[.hw]#Lexico´grapher.# _n. s._ [λεξικὸν and γράφω; _lexicographe_,
+French.] A writer of dictionaries; a harmless drudge, that
+busies himself in tracing the original, and detailing the signi{shy}
+fication of words.
+
+[.cite]
+Commentators and _lexicographers_ acquainted with the Sy{shy}
+riac language, have given these hints in their writings on
+scripture. [.author]#__Watts’s Improvement of the Mind.__#
+
+[[w-lexico-graphy,LEX]]
+[.entry,margin-top=-1.1pt]
+[.hw]#Lexico´graphy.# _n. s._ [λεξικὸν and γράφω.] The art or prac{shy}
+tice of writing dictionaries.
+
+[[w-le-xicon,LEX]]
+[.entry,margin-top=-1.16pt]
+[.hw]#LE´XICON.# _n. s._ [λεξικὸν.] A dictionary; a book teaching
+the signification of words.
+
+[.cite]
+Though a linguist should pride himself to have all the
+tongues that Babel cleft the world into, yet if he had not
+studied the solid things in them as well as the words and _lexi{shy}
+cons_, yet he were nothing so much to be esteemed a learned
+man as any yeoman competently wise in his mother dialect
+only. [.author]#__Milton.__#
+
+[[w-ley,LEY]]
+[.entry,margin-top=0.45pt]
+[.hw]#Ley.# _n. s._
+
+[.cite,margin-top=-1.74pt]
+_Ley_, _lee_, _lay_, are all from the Saxon leaȝ, a field or pas{shy}
+ture, by the usual melting of the letter ȝ or g. [.author]#__Gibson’s Cam.__#
+
+[[w-li-able,LIA]]
+[.entry,margin-top=-0.83pt]
+[.hw]#Li´able.# _n. s._ [_liable_, from _lier_, old French.] Obnoxious;
+not exempt; subject.
+
+[.verse%hardbreaks,margin-top=-0.24pt]
+But what is strength without a double share
+Of wisdom? vast, unwieldy, burthensome,
+Proudly secure, yet _liable_ to fall
+By weakest subtleties. [.author]#__Milton’s Agonistes.__#
+
+[.cite,margin-top=0.23pt]
+The English boast of Spenser and Milton, who neither of
+them wanted genius or learning; and yet both of them are
+_liable_ to many censures. [.author]#__Dryden’s Juvenal.__#
+
+[.cite]
+This, or any other scheme, coming from a private hand,
+might be _liable_ to many defects. [.author]#__Swift.__#
+
+[[w-li-ar,LIA]]
+[.entry]
+[.hw]#Li´ar.# _n. s._ [from _lie_. This word would analogically be _lier_;
+but this orthography has prevailed, and the convenience of
+distinction from _lier_, he who lies down, is sufficient to con{shy}
+firm it.] One who tells falshood; one who wants veracity.
+
+[.verse%hardbreaks]
+She’s like a _liar_, gone to burning hell!
+’Twas I that kill’d her. [.author]#__Shakespeare’s Othello.__#
+
+[.verse%hardbreaks]
+He approves the common _liar_, fame,
+Who speaks him thus at Rome. [.author]#__Shakesp. Ant. and Cleop.__#
+
+[.cite,margin-top=0.31pt]
+I do not reject his observation as untrue, much less con{shy}
+demn the person himself as a _liar_, whensoever it seems to
+be contradicted. [.author]#__Boyle.__#
+
+[.verse%hardbreaks,margin-top=-0.2pt]
+Thy better soul abhors a _liar_’s part,
+Wise is thy voice, and noble is thy heart. [.author]#__Pope’s Odyssey.__#
+
+[[w-li-ard,LIA]]
+[.entry,margin-top=1.65pt]
+[.hw]#Li´ard.# _adj._
+
+[.sense]
+{empty}1. Mingled roan. [.author]#__Markham.__#
+
+[.sense,margin-top=-0.51pt]
+{empty}2. _Liard_ in Scotland denotes gray-haired: as, he’s a _liard_ old
+man.
+
+[[w-liba-tion,LIB]]
+[.entry]
+[.hw]#Liba´tion.# _n. s._ [_libatio_, Latin.]
+
+[.sense,margin-top=-0.16pt]
+{empty}1. The act of pouring wine on the ground in honour of some
+deity.
+
+[.cite]
+In digging new earth pour in some wine, that the vapour
+of the earth and wine may comfort the spirits, provided it
+be not taken for a heathen sacrifice, or _libation_ to the earth.
+[.author]#__Bacon’s Natural History.__#
+
+[.sense,margin-top=0.76pt]
+{empty}2. The wine so poured.
+
+[.cite]
+[.i35]##{nbsp}##They had no other crime to object against the Christians,
+but that they did not offer up _libations_, and the smoke of
+sacrifices, to dead men. [.author]#__Stillingfleet on Rom. Idolatry.__#
+
+[.verse%hardbreaks,margin-top=0.4pt]
+The goblet then she took, with nectar crown’d,
+Sprinkling the first _libations_ on the ground. [.author]#__Dryden’s Æn.__#
+
+[.foot-folio,margin-top=16.19pt]
+4
+
+[.column]
+<<<
+
+[[w-li-bbard,LIB]]
+[.entry,margin-top=-2.1pt]
+[.hw]#Li´bbard.# _n. s._ [_liebard_, German; _leopardus_, Lat.] A leopard.
+
+[.verse%hardbreaks,margin-top=-0.34pt]
+[.i545]##{nbsp}##Make the _libbard_ stern,
+Leave roaring, when in rage he for revenge did yearn.
+[.author]#__Spenser’s Fairy Queen, b.__ i.#
+
+[.verse.flat%hardbreaks,margin-top=1.68pt]
+The _libbard_, and the tiger, as the mole
+Rising, the crumbled earth above them threw. [.author]#__Milton.__#
+
+[.cite,margin-top=0.85pt]
+The torrid parts of Africk are by Piso resembled to a
+_libbard_’s skin, the distance of whose spots represent the dis{shy}
+persness of habitations, or towns of Africk. [.author]#__Brerewood.__#
+
+[[w-li-bel,LIB]]
+[.entry]
+[.hw]#LI´BEL.# _n. s._ [_libellus_, Latin; _libelle_, French.]
+
+[.sense,margin-top=0.58pt]
+{empty}1. A satire; defamatory writing; a lampoon.
+
+[.cite,margin-top=0.16pt]
+Are we reproached for the name of Christ? that ignominy
+serves but to advance our future glory; every such _libel_ here
+becomes panegyrick there. [.author]#__Decay of Piety.__#
+
+[.verse%hardbreaks,margin-top=0.88pt]
+Good heav’n! that sots and knaves should be so vain,
+To wish their vile resemblance may remain!
+And stand recorded, at their own request,
+To future days, a _libel_ or a jest. [.author]#__Dryden.__#
+
+[.sense,margin-top=0.48pt]
+{empty}2. [In the civil law.] A declaration or charge in writing against
+a person in court.
+
+[[w-li-bel-2,LIB]]
+[.entry,margin-top=0.32pt]
+To [.hw]#Li´bel.# _v. n._ [from the noun.] To spread defamation;
+generally written or printed.
+
+[.verse%hardbreaks]
+Sweet scrauls to fly about the streets of Rome:
+What’s this but _libelling_ against the senate? [.author]#__Shakespeare.__#
+
+[.verse%hardbreaks,margin-top=0.19pt]
+He, like a privileg’d spy, whom nothing can
+Discredit, _libels_ now ’gainst each great man. [.author]#__Donne.__#
+
+[[w-li-bel-3,LIB]]
+[.entry]
+To [.hw]#Li´bel.# _v. a._ To satirise; to lampoon;
+
+[.cite,margin-top=-0.27pt]
+Is then the peerage of England any thing dishonoured
+when a peer suffers for his treason? if he be _libelled_, or any
+way defamed, he has his scandalum magnatum to punish the
+offender. [.author]#__Dryden.__#
+
+[.verse%hardbreaks,margin-top=-0.37pt]
+But what so pure which envious tongues will spare?
+Some wicked wits have _libelled_ all the fair. [.author]#__Pope.__#
+
+[[w-li-beller,LIB]]
+[.entry,margin-top=0.26pt]
+[.hw]#Li´beller.# _n. s._ [from _libel_.] A defamer by writing; a lam{shy}
+pooner.
+
+[.cite,margin-top=-0.2pt]
+Our common _libellers_ are as free from the imputation of
+wit, as of morality. [.author]#__Dryden’s Juvenal.__#
+
+[.cite]
+The squibs are those who, in the common phrase, are
+called _libellers_ and lampooners. [.author]#__Tatler.__#
+
+[.cite]
+The common _libellers_, in their invectives, tax the church
+with an insatiable desire of power and wealth, equally com{shy}
+mon to all bodies of men. [.author]#__Swift.__#
+
+[[w-li-bellous,LIB]]
+[.entry,margin-top=0.22pt]
+[.hw]#Li´bellous.# _n. s._ [from _libel_.] Defamatory.
+
+[.cite,margin-top=-0.26pt]
+It was the most malicious surmise that had ever been brew{shy}
+ed, howsoever countenanced by a _libellous_ pamphlet. [.author]#__Wotton.__#
+
+[[w-li-beral,LIB]]
+[.entry]
+[.hw]#Li´beral.# _adj._ [_liberalis_, Latin; _liberal_. French.]
+
+[.sense]
+{empty}1. Not mean; not low in birth; not low in mind.
+
+[.sense,margin-top=0.34pt]
+{empty}2. Becoming a gentleman.
+
+[.sense,margin-top=-0.15pt]
+{empty}3. Munificent; generous; bountiful; not parcimonious.
+
+[.verse%hardbreaks,margin-top=-0.17pt]
+Her name was Mercy, well known over all
+To be both gracious and eke _liberal_. [.author]#__Spens. Fa. Queen.__#
+
+[.verse.flat%hardbreaks]
+Sparing would shew a worse sin than ill doctrine.
+Men of his way should be most _liberal_,
+They’re set here for examples. [.author]#__Shakesp. Henry__ VIII.#
+
+[.verse%hardbreaks]
+[.i645]##{nbsp}##Needs must the pow’r
+[.i35]##{nbsp}##That made us, and for us this ample world,
+Be infinitely good, and of his good
+As _liberal_ and free, as infinite. [.author]#__Milton.__#
+
+[.cite]
+There is no art better than to be _liberal_ of praise and
+commendation to others, in that wherein a man’s self hath
+any perfection. [.author]#__Bacon’s Essays.__#
+
+[.verse%hardbreaks,margin-top=-0.3pt]
+The _liberal_ are secure alone;
+For what we frankly give, for ever is our own. [.author]#__Granville.__#
+
+[.cite,margin-top=0.46pt]
+Several clergymen, otherwise little fond of obscure terms,
+are, in their sermons, very _liberal_ of all those which they
+find in ecclesiastical writers, as if it were our duty to under{shy}
+stand them. [.author]#__Swift.__#
+
+[[w-libera-lity,LIB]]
+[.entry]
+[.hw]#Libera´lity.# _n. s._ [_liberalitas_, Latin; _liberalité_, Fr.] Mu{shy}
+nificence; bounty; generosity; generous profusion.
+
+[.verse%hardbreaks]
+Why should he despair, that knows to court
+With words, fair looks, and _liberality?_ [.author]#__Shakespeare.__#
+
+[.verse%hardbreaks,margin-top=0.29pt]
+Such moderation with thy bounty join,
+That thou may’st nothing give that is not thine;
+[.i50]##{nbsp}##That _liberality_ is but cast away,
+Which makes us borrow what we cannot pay. [.author]#__Denham.__#
+
+[[w-libera-lly,LIB]]
+[.entry,margin-top=0.57pt]
+[.hw]#Libera´lly.# _adv._ [from _liberal_.] Bounteously; bountifully;
+largely.
+
+[.cite,margin-top=0.65pt]
+If any of you lack wisdom, let him ask of God, that
+giveth to all men _liberally_, and upbraideth not. [.author]#__James__ i. 5.#
+
+[[w-li-bertine,LIB]]
+[.entry]
+[.hw]#Li´bertine.# _n. s._ [_libertin_, French.]
+
+[.sense]
+{empty}1. One unconfined; one at liberty.
+
+[.verse%hardbreaks,margin-top=0.52pt]
+[.i670]##{nbsp}##When he speaks,
+The air, a charter’d _libertine_, is still;
+And the mute wonder lurketh in men’s ears,
+To steal his sweet and honied sentences. [.author]#__Shakesp. Hen.__ V.#
+
+[.sense,margin-top=0.21pt]
+{empty}2. One who lives without restraint or law.
+
+[.verse%hardbreaks,margin-top=0.43pt]
+Man, the lawless _libertine_, may rove
+Free and unquestion’d. [.author]#__Rowe’s Jane Shore.__#
+
+[.cite,margin-top=0.34pt]
+Want of power is the only bound that a _libertine_ puts to
+his views upon any of the sex. [.author]#__Clarissa.__#
+
+[.foot-line,margin-top=16.61pt]
+[.cw]#2. One#
+
+// end::page-47[]
+
+<<<
+
+// page 48
+// tag::page-48[]
+
+[.sense,margin-top=-2.54pt]
+{empty}2. One who pays no regard to the precepts of religion.
+
+[.verse%hardbreaks,margin-top=0.44pt]
+They say this town is full of couzenage,
+As nimble jugglers, that deceive the eye;
+Disguised cheaters, prating mountebanks,
+And many such like _libertines_ of sin. [.author]#__Shakespeare.__#
+
+[.cite]
+That word may be applied to some few _libertines_ in the
+audience. [.author]#__Collier’s View of the Stage.__#
+
+[.sense,margin-top=1.44pt]
+{empty}3. [In law; _libertinus_, Lat.] A freedman; or rather, the son
+of a freedman.
+
+[.cite]
+Some persons are forbidden to be accusers on the score of
+their sex, as women; others on the score of their age, as
+pupils and infants; others on the score of their conditions, as
+_libertines_ against their patrons. [.author]#__Ayliffe’s Parergon.__#
+
+[[w-li-bertine-2,LIB]]
+[.entry,margin-top=0.6pt]
+[.hw]#Li´bertine.# _adj._ [_libertin_, French.] Licentious; irreligious.
+
+[.cite]
+There are men that marry not, but chuse rather a _libertine_
+and impure single life, than to be yoked in marriage. [.author]#__Bacon.__#
+
+[.cite]
+Might not the queen make diligent enquiry, if any person
+about her should happen to be of _libertine_ principles or mo{shy}
+rals. [.author]#__Swift’s Project for Advancement of Religion.__#
+
+[[w-li-bertinism,LIB]]
+[.entry,margin-top=0.49pt]
+[.hw]#Li´bertinism.# _n. s._ [from _libertine_.] Irreligion; licentiousness
+of opinions and practice.
+
+[.cite,margin-top=-0.16pt]
+That spirit of religion and seriousness vanished all at once,
+and a spirit of liberty and _libertinism_, of infidelity and pro{shy}
+faneness, started up in the room of it. [.author]#__Atterbury’s Sermons.__#
+
+[[w-li-berty,LIB]]
+[.entry,margin-top=0.19pt]
+[.hw]#Li´berty.# _n. s._ [_liberté_, French; _libertas_, Latin.]
+
+[.sense,margin-top=0.22pt]
+{empty}1. Freedom, as opposed to slavery.
+
+[.cite,margin-top=-0.15pt]
+My master knows of your being here, and hath threatened
+to put me into everlasting _liberty_, if I tell you of it; for he
+swears, he’ll turn me away. [.author]#__Shakespeare.__#
+
+[.verse%hardbreaks,margin-top=-0.16pt]
+O _liberty!_ thou goddess, heav’nly bright!
+Profuse of bliss, and pregnant with delight,
+Eternal pleasures in thy presence reign. [.author]#__Addison.__#
+
+[.sense,margin-top=0.22pt]
+{empty}2. Freedom, as opposed to necessity.
+
+[.cite,margin-top=-0.79pt]
+_Liberty_ is the power in any agent to do, or forbear, any
+[.i30]##{nbsp}##particular action, according to the determination, or thought
+[.i35]##{nbsp}##of the mind, whereby either of them is preferred to the
+[.i30]##{nbsp}##other. [.author]#__Locke.__#
+
+[.cite,margin-top=-0.53pt]
+As it is in the motions of the body, so it is in the thoughts
+of our minds: where any one is such, that we have power
+to take it up, or lay it by, according to the preference of the
+mind, there we are at _liberty_. [.author]#__Locke.__#
+
+[.sense]
+{empty}2. Privilege; exemption; immunity.
+
+[.cite,margin-top=-0.2pt]
+His majesty gave not an intire country to any, much less
+did he grant jura regalia, or any extraordinary _liberties_. [.author]#__Davies.__#
+
+[.sense,margin-top=0.17pt]
+{empty}4. Relaxation of restraint.
+
+[.sense]
+{empty}5. Leave; permission.
+
+[.cite]
+I shall take the _liberty_ to consider a third ground, which,
+with some men, has the same authority. [.author]#__Locke.__#
+
+[[w-libi-dinous,LIB]]
+[.entry,margin-top=-0.05pt]
+[.hw]#Libi´dinous.# _n. s._ [_libidinosus_, Latin.] Lewd; lustful.
+
+[.cite,margin-top=-0.17pt]
+None revolt from the faith; because they must not look upon
+a woman to lust after her, but because they are much more
+restrained from the perpetration of their lusts. If wanton
+glances and _libidinous_ thoughts had been permitted by the gos{shy}
+[.i35]##{nbsp}##pel, they would have apostatized nevertheless. [.author]#__Bentley.__#
+
+[[w-libi-dinously,LIB]]
+[.entry,margin-top=-0.49pt]
+[.i40]##{nbsp}##[.hw]#Libi´dinously.# _adv._ [from _libidinous_.] Lewdly; lustfully.
+
+[[w-li-bral,LIB]]
+[.entry]
+[.i35]##{nbsp}##[.hw]#Li´bral.# _adj._ [_libralis_, Latin.] Of a pound weight. [.author]#__Dict.__#
+
+[[w-libra-rian,LIB]]
+[.entry,margin-top=-0.49pt]
+[.hw]#Libra´rian.# _n. s._ [_librarius_, Latin.]
+
+[.sense]
+[.i35]##{nbsp}##1. One who has the care of a library.
+
+[.sense]
+{empty}2. One who transcribes or copies books.
+
+[.cite,margin-top=0.18pt]
+Charybdis thrice swallows, and thrice refunds, the waves:
+this must be understood of regular tides. There are indeed
+but two tides in a day, but this is the error of the _libra{shy}
+rians_. [.author]#__Broome’s Notes on the Odyssey.__#
+
+[[w-li-brary,LIB]]
+[.entry]
+[.hw]#Li´brary.# _n. s._ [_librarie_, Fr.] A large collection of books,
+publick or private.
+
+[.verse%hardbreaks,margin-top=0.05pt]
+[.i45]##{nbsp}##Then as they ’gan his _library_ to view,
+And antique registers for to avise,
+[.i45]##{nbsp}##There chanced to the prince’s hand to rise
+An ancient book, hight Briton’s monuments. [.author]#__Fa. Qu.__#
+
+[.verse%hardbreaks,margin-top=-0.27pt]
+Make choice of all my _library_,
+And so beguile thy sorrow. [.author]#__Shakesp. Titus Andronicus.__#
+
+[.cite,margin-top=0.24pt]
+I have given you the _library_ of a painter, and a catalogue
+of such books as he ought to read. [.author]#__Dryden’s Dufresnoy.__#
+
+[[w-li-brate,LIB]]
+[.entry,margin-top=-0.47pt]
+To [.hw]#Li´brate.# _v. a._ [_libro_, Latin.] To poise; to balance;
+to hold in equipoise.
+
+[[w-libra-tion,LIB]]
+[.entry,margin-top=0.72pt]
+[.hw]#Libra´tion.# _n. s._ [_libratio_, Latin; _libration_, French.]
+
+[.sense,margin-top=-0.97pt]
+{empty}1. The state of being balanced.
+
+[.cite,margin-top=1.09pt]
+This is what may be said of the balance, and the _libra{shy}
+tion_, of the body. [.author]#__Dryden’s Dufresnoy.__#
+
+[.verse%hardbreaks,margin-top=-0.88pt]
+[.i655]##{nbsp}##Their pinions still
+In loose _librations_ stretch’d, to trust the void
+Trembling refuse. [.author]#__Thomson’s Spring.__#
+
+[.sense,margin-top=1.19pt]
+{empty}2. [In astronomy.]
+
+[.cite,margin-top=0.17pt]
+_Libration_ is the balancing motion or trepidation in the fir{shy}
+mament, whereby the declination of the sun, and the lati{shy}
+tude of the stars, change from time to time. Astronomers
+likewise ascribe to the moon a _libratory_ motion, or motion of
+trepidation, which they pretend is from east to west, and
+from north to south, because that, at full moon, they some{shy}
+times discover parts of her disk which are not discovered at{ls}
+
+[.foot-folio,margin-top=30.49pt]
+5
+
+[.column]
+<<<
+
+[.cite.goes-on,margin-top=-7.68pt]
+other times. These kinds are called, the one a _libration_
+in longitude, and the other a _libration_ in latitude. Besides
+this, there is a third kind, which they call an apparent _libra{shy}
+tion_, and which consists in this, that when the moon is at
+her greatest elongation from the south, her axis being then
+almost perpendicular to the plane of the ecliptick, the sun
+must enlighten towards the north pole of the moon some
+parts which he did not before, and that, on the contrary,
+some parts of those which he enlightened towards the oppo{shy}
+site pole are obscured; and this produces the same effect which
+the _libration_ in latitude does. [.author]#__Dict. Trev.__#
+
+[.cite,margin-top=1.3pt]
+Those planets which move upon their axis, do not all
+make intire revolutions; for the moon maketh only a kind
+of _libration_, or a reciprocated motion on her own axis. [.author]#__Grew.__#
+
+[[w-li-bratory,LIB]]
+[.entry,margin-top=0.88pt]
+[.hw]#Li´bratory.# _adj._ [from _libro_, Lat.] Balancing; playing like
+a balance.
+
+[[w-lice,LIC]]
+[.entry,margin-top=0.41pt]
+[.hw]#Lice#, the plural of _louse_.
+
+[.verse.flat%hardbreaks,margin-top=-0.01pt]
+Red blisters rising on their paps appear,
+And flaming carbuncles, and noisome sweat,
+And clammy dews, that loathsome _lice_ beget;
+Till the slow creeping evil eats his way. [.author]#__Dryden’s Virg.__#
+
+[[w-li-cebane,LIC]]
+[.entry,margin-top=-0.05pt]
+[.hw]#Li´cebane.# _n. s._ [_lice_ and _bane_.] A plant.
+
+[[w-li-cense,LIC]]
+[.entry]
+[.hw]#LI´CENSE.# _n. s._ [_licentia_, Latin; _licence_, French.]
+
+[.sense]
+{empty}1. Exorbitant liberty; contempt of legal and necessary restraint.
+
+[.cite]
+Some of the wiser seeing that a popular _licence_ is indeed the
+many-headed tyranny, prevailed with the rest to make Mu{shy}
+sidorus their chief. [.author]#__Sidney.__#
+
+[.verse%hardbreaks,margin-top=0.43pt]
+[.i900]##{nbsp}##Taunt my faults
+With such full _licence_, as both truth and malice
+Have power to utter. [.author]#__Shakesp. Ant. and Cleopatra.__#
+
+[.verse%hardbreaks]
+They baul for freedom in their senseless moods,
+And still revolt when truth would set them free;
+_Licence_ they mean, when they cry liberty. [.author]#__Milton.__#
+
+[.verse%hardbreaks,margin-top=-0.33pt]
+[.i30]##{nbsp}##The privilege that ancient poets claim,
+Now turn’d to _license_ by too just a name. [.author]#__Roscommon.__#
+
+[.cite,margin-top=-0.4pt]
+Though this be a state of liberty, yet it is not a state of
+_licence_; though man, in that state, have an uncontroulable
+liberty to dispose of his person or possessions, yet he has not
+liberty to destroy himself. [.author]#__Locke.__#
+
+[.sense,margin-top=-0.6pt]
+{empty}2. A grant of permission.
+
+[.cite,margin-top=0.46pt]
+They sent some to bring them a _licence_ from the senate.
+[.author]#__Judith__ xi. 14.#
+
+[.cite,margin-top=0.01pt]
+Those few abstract names that the schools forged, and put
+into the mouths of their scholars, could never yet get admit{shy}
+tance into common use, or obtain the _licence_ of publick ap{shy}
+probation. [.author]#__Locke.__#
+
+[.cite]
+We procured a _licence_ of the duke of Parma to enter the
+theatre and gallery. [.author]#__Addison on Italy.__#
+
+[.sense,margin-top=0.17pt]
+{empty}3. Liberty; permission.
+
+[.cite]
+It is not the manner of the Romans to deliver any man
+to die, before that he which is accused have the accusers
+face to face, and have _licence_ to answer for himself. [.author]#__Acts.__#
+
+[[w-li-cense-2,LIC]]
+[.entry,margin-top=-0.35pt]
+To [.hw]#Li´cense.# _v. a._ [_licencier_, French.]
+
+[.sense]
+{empty}1. To set at liberty.
+
+[.cite]
+He would play well, and willingly, at some games of
+greatest attention, which shewed, that when he listed he
+could _license_ his thoughts. [.author]#__Wotton.__#
+
+[.sense]
+{empty}2. To permit by a legal grant.
+
+[.verse%hardbreaks,margin-top=-0.21pt]
+[.i805]##{nbsp}##Wit’s titans brav’d the skies,
+And the press groan’d with _licens’d_ blasphemies. [.author]#__Pope.__#
+
+[[w-li-censer,LIC]]
+[.entry,margin-top=0.18pt]
+[.hw]#Li´censer.# _n. s._ [from _license_.] A granter of permission; com{shy}
+monly a tool of power.
+
+[[w-lice-ntiate,LIC]]
+[.entry,margin-top=-0.77pt]
+[.hw]#Lice´ntiate.# _n. s._ [_licentiatus_, low Latin.]
+
+[.sense,margin-top=0.71pt]
+{empty}1. A man who uses license.
+
+[.cite,margin-top=-0.67pt]
+The _licentiates_ somewhat licentiously, least they should
+prejudice poetical liberty, will pardon themselves for doubling
+or rejecting a letter, if the sense fall aptly. [.author]#__Camden.__#
+
+[.sense,margin-top=0.19pt]
+{empty}2. A degree in Spanish universities.
+
+[.cite]
+A man might, after that time, sue for the degree of a _li{shy}
+centiate_ or master in this faculty. [.author]#__Ayliffe’s Parergon.__#
+
+[[w-lice-ntiate-2,LIC]]
+[.entry,margin-top=0.24pt]
+To [.hw]#Lice´ntiate.# _v. a._ [_licentier_, French.] To permit; to
+encourage by license.
+
+[.cite,margin-top=0.19pt]
+We may not hazard either the stifling of generous inclina{shy}
+tions, or the _licentiating_ of any thing that is coarse. [.author]#__L’Estrange.__#
+
+[[w-lice-ntious,LIC]]
+[.entry]
+[.hw]#Lice´ntious.# _n. s._ [_licencieux_, French; _licentiosus_, Latin.]
+
+[.sense,margin-top=0.22pt]
+{empty}1. Unrestrained by law or morality.
+
+[.verse%hardbreaks,margin-top=0.22pt]
+Later ages pride, like corn-fed steed,
+Abus’d her plenty, and fat swoln encrease,
+To all _licentious_ lust, and gan exceed
+[.i45]##{nbsp}##The measure of her mean, and natural first need. [.author]#__Fa. Qu.__#
+
+[.verse%hardbreaks,margin-top=0.18pt]
+How would it touch thee to the quick,
+Should’st thou but hear I were _licentious?_
+And that this body, consecrate to thee,
+With ruffian lust should be contaminate. [.author]#__Shakespeare.__#
+
+[.sense,margin-top=-0.28pt]
+{empty}2. Presumptuous; unconfined.
+
+[.verse%hardbreaks,margin-top=0.93pt]
+The Tyber, whose _licentious_ waves,
+So often overflow’d the neighbouring fields,
+Now runs a smooth and inoffensive course. [.author]#__Roscommon.__#
+
+[[w-lice-ntiously,LIC]]
+[.entry,margin-top=0.16pt]
+[.hw]#Lice´ntiously.# _adv._ [from _licentious_.] With too much liber{shy}
+ty; without just restraint.
+
+[.foot-line,margin-top=14.13pt]
+[.sig]#15 K# [.cw]#The#
+
+// end::page-48[]

@@ -77,6 +77,23 @@ void main() {
           expect(_text(lines.single), startsWith('Not long.'));
         });
 
+        test('${breaker.runtimeType}, $align: on a line of its own after a '
+            'line separator, the break kept', () {
+          final lines = _lines(
+            [TextRun('Not long.\u2028', _body), author],
+            width: 200,
+            breaker: breaker,
+            align: align,
+          );
+          expect(lines, hasLength(2));
+          expect(_text(lines.first).trim(), 'Not long.');
+          expect(
+            _text(lines.last).replaceAll('\u00ad', '').trim(),
+            'Bacon’s Natural History.',
+          );
+          expect(end(lines.last), closeTo(200, 0.01));
+        });
+
         test('${breaker.runtimeType}, $align: on a line of its own when it '
             "doesn't fit, kept whole", () {
           final lines = _lines(

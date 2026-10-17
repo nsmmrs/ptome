@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- A `TextRun` set flush right (`flushRight`) after a hard break (a line
+  separator, a newline) keeps the break: it starts the line after it
+  rather than running onto the line before.
+
 - `Paragraph.turnovers` (`Turnovers`: `Turnover.up`, `down` or `auto`,
   its mark and gap) and `TextRun.turn`: in a paragraph broken at its own
   lines, a line too long for its room (or a run that turns) has its last

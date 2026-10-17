@@ -10,6 +10,16 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: a run set flush right (`role_<role>_flush: right`) that starts a
+  line of its own in the source, after a line separator or a hard break,
+  keeps that break: an author on a line of its own under a quotation
+  kept to its source's lines no longer runs onto the line above. The
+  showcase's Johnson's Dictionary is now three pages of the first
+  edition (1755), LEVEL to LICENTIOUSLY, set page for page and line for
+  line (`tool/johnson_1755`, EPIC-zm9zbc): its lines transcribed from
+  the scan, each column ending where the printing's ends, its half lines
+  of verse set in where the printing sets them, the heads, the folio,
+  the signature and the catchword where the printing has them.
 - PDF: a section's own `folio-start` (its pages numbered from it again,
   its signatures by its role's `section_role_<role>_running_content_signature_*`
   keys) and `section_role_<role>_<periphery>_on_openers` (a header or

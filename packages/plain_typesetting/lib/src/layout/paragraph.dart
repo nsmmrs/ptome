@@ -1978,6 +1978,20 @@ List<LineItem> paragraphItems(Paragraph paragraph, {double? maxWidth}) {
         // else on a line of its own, flush right either way.)
         final flushing = content.flushRight && !identical(lastRun, content);
         if (flushing) {
+          // (After a line's hard break, a line separator or a newline:
+          // the break kept, the run on the line after it.)
+          if (offset > 0 &&
+              const {
+                0x0a,
+                0x0b,
+                0x0c,
+                0x0d,
+                0x85,
+                0x2028,
+                0x2029,
+              }.contains(whole.codeUnitAt(offset - 1))) {
+            breakBefore(offset);
+          }
           flush();
           while (items.isNotEmpty && items.last is GlueItem) {
             items.removeLast();
