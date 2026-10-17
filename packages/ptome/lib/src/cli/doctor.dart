@@ -395,7 +395,7 @@ final List<NeededFont> lookFonts = [
     name: 'Noto Sans Symbols',
     usedBy:
         "the showcase's Burton and Poor Richard looks (the planets and "
-        'the zodiac)',
+        "the zodiac) and its Tristram Shandy look (Dr. Slop's cross)",
     families: ['Noto Sans Symbols'],
     styles: [FontStyle.normal],
     fileNames: {},
@@ -417,7 +417,9 @@ final List<NeededFont> lookFonts = [
   ),
   const NeededFont(
     name: 'UnifrakturMaguntia',
-    usedBy: "the showcase's Moby-Dick look (the dedication's blackletter)",
+    usedBy:
+        "the showcase's Moby-Dick look (the dedication's blackletter) and "
+        "its Tristram Shandy look (the marriage settlement's black letter)",
     families: ['UnifrakturMaguntia'],
     styles: [FontStyle.normal],
     fileNames: {},

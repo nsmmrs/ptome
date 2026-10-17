@@ -1,17 +1,10 @@
-# The images the work uses that are too large to commit, fetched by
-# tool/showcase.dart into the work cache and checked by their SHA-256.
-- name: illustration-2.jpg
-  url: https://raw.githubusercontent.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman/89676643cb7dee3b46aba13868f3d92f9897998c/src/epub/images/illustration-2.jpg
-  sha256: c0b908cbbca4f7621551b7e22f125fbee5f4595d7e54f4076aa5a0347e3a37e1
-- name: illustration-3.svg
-  url: https://raw.githubusercontent.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman/89676643cb7dee3b46aba13868f3d92f9897998c/src/epub/images/illustration-3.svg
-  sha256: 1fee96ed7aa38ac66e794f7587b9ea517490e9f683e257d5fea71ebec774fa81
-- name: illustration-4.svg
-  url: https://raw.githubusercontent.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman/89676643cb7dee3b46aba13868f3d92f9897998c/src/epub/images/illustration-4.svg
-  sha256: a6b4bbc80f62a4d579c1e6a7ca079c16dd7b8403aada15f75412d38c624c3289
-- name: illustration-5.svg
-  url: https://raw.githubusercontent.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman/89676643cb7dee3b46aba13868f3d92f9897998c/src/epub/images/illustration-5.svg
-  sha256: 1018d0110b34fe9f66c9fcbdd1f3d6075dda78e032b4e2e93f77bac3eb20f5e7
-- name: illustration-6.svg
-  url: https://raw.githubusercontent.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman/89676643cb7dee3b46aba13868f3d92f9897998c/src/epub/images/illustration-6.svg
-  sha256: aa58a73afd5a8996c188a05a8c2598d54f61a9b65b9fd3516bcf28b7581c6b38
+# The frontispiece, too large to commit, fetched by tool/showcase.dart into
+# the work cache and checked by its SHA-256: Hogarth's plate as the
+# Internet Archive's scan of the Bayerische Staatsbibliothek's copy shows
+# it (leaf 7), cut to the leaf, its paper whitened: the frontispiece's
+# page as it lies.
+- name: frontispiece.png
+  url: https://archive.org/download/10931855bsb/page/n7.jpg
+  sha256: 843d9833530ef225541480fcbfeec42cc3e8db61f015dfaca1139254dd50c5a7
+  levels: [30, 175]
+  crop: [20, 8, 1120, 1815]

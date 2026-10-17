@@ -1,0 +1,25 @@
+# The running quotes read from the scan by eye where quotes.py misreads:
+# +PAGE:LINE a line it missed, -PAGE:LINE one it took wrongly (lines as
+# draft.json numbers them).
++26:1
++43:11
++64:7
++80:1
++98:1
++98:6
++98:21
++99:1
++147:18
++147:19
++208:3
++223:2
+-21:4
+-29:6
+-33:14
+-75:1
+-145:18
+-147:15
+-147:16
+-157:18
+-202:5
+-205:10

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tristram Shandy: the black page, the blank chapters, the dashes</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CNoto+Sans+Mono:400,700%7CLibre+Caslon+Text:400,400italic,700">
+<title>Tristram Shandy: three pages of the 1770 printing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CNoto+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
 /* Uncomment the following line when using as a custom stylesheet */
@@ -404,8 +404,6 @@ div.page-break{display:block;-moz-column-break-after:page;break-after:page}
 :root{--ptome-font-text:"Libre Caslon Text",serif;--ptome-font-display:"Libre Caslon Text",serif;--ptome-color-ink:#1A1A1A;--ptome-color-ink-strong:#191919;--ptome-color-ink-soft:#444444;--ptome-color-muted:#555555;--ptome-color-link:#1A1A1A;--ptome-color-tint:#F7F7F8;--ptome-color-rule:#DDDDDD;--ptome-color-rule-soft:#CCCCCC;--ptome-rule-hairline:1px;--ptome-rule-heavy:1px}
 @media screen{#header,#content,#footnotes,#footer,.multipage-nav{max-width:32em}}
 body{font-family:var(--ptome-font-text);font-size:18px;line-height:1.6;color:var(--ptome-color-ink)}
-.paragraph>p{margin-bottom:0}
-.paragraph+.paragraph>p{text-indent:1.5em}
 a{color:var(--ptome-color-ink)}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink)}
 #header>h1:first-child{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink)}
@@ -415,15 +413,15 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0}
 table.tableblock>thead>tr>th{border-bottom:var(--ptome-rule-heavy) solid var(--ptome-color-ink-strong)}
 .small-caps{font-variant:small-caps;font-feature-settings:"smcp"}
 @media print{:root{--ptome-font-display:"Libre Caslon Text",sans-serif;--ptome-font-code:"M+ 1mn",monospace;--ptome-rule-hairline:0.5pt;--ptome-rule-heavy:1pt}
-body{font-family:var(--ptome-font-text);font-size:9.5pt;line-height:1.3;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;adobe-hyphenate:auto;hyphens:auto;color:var(--ptome-color-ink)}
-h1{font-size:18pt}
-h2{font-size:10pt}
-h3{font-size:10pt}
-h4{font-size:9.5pt}
-h5{font-size:9.5pt}
-h6{font-size:9.5pt}
+body{font-family:var(--ptome-font-text);font-size:10.4pt;line-height:1.0;text-align:justify;-webkit-hyphens:manual;-epub-hyphens:manual;adobe-hyphenate:none;hyphens:manual;color:var(--ptome-color-ink)}
+h1{font-size:10.4pt}
+h2{font-size:10.4pt}
+h3{font-size:10.4pt}
+h4{font-size:10.4pt}
+h5{font-size:10.4pt}
+h6{font-size:10.4pt}
 code,kbd,pre,samp{font-family:var(--ptome-font-code)}
-.paragraph+.paragraph>p{text-indent:1.2em}
+.paragraph>p{margin-bottom:6pt}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink);line-height:1.2;margin-top:16pt;margin-bottom:6pt;break-after:avoid;page-break-after:avoid}
 .admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{font-family:var(--ptome-font-display);font-weight:400;font-size:9.5pt;color:var(--ptome-color-muted)}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{font-size:9.5pt;color:var(--ptome-color-ink);background-color:var(--ptome-color-tint);line-height:1.35;padding:9pt;border-radius:2pt;border:0}
@@ -437,7 +435,7 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0;border-color:var
 table.stripes-all>tbody>tr,table.stripes-odd>tbody>tr:nth-of-type(odd),table.stripes-even>tbody>tr:nth-of-type(even){background-color:transparent}
 table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:400;background-color:transparent}
 }
-@page{size:4.2in 6.8in;margin:0.75in 0.55in 0.65in 0.6in}
+@page{size:306pt 496pt;margin:30pt 53.6pt 40pt 42pt}
 @page :right{margin-left:1.75in;margin-right:1.25in}
 @page :left{margin-left:1.25in;margin-right:1.75in}
 /*! ptome's device rules for HTML (ADR-0023): what the look's values don't say, after Asciidoctor's stylesheet and the look's */
@@ -458,73 +456,137 @@ table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:4
 #content .paragraph>p,#content li>p,#content dd>p,#content .quoteblock blockquote p,#content .admonitionblock td.content>.paragraph>p{-webkit-hyphens:auto;hyphens:auto;text-wrap:pretty;font-variant-numeric:oldstyle-nums proportional-nums;hanging-punctuation:first allow-end last}
 h1,h2,h3,h4,h5,h6,#toctitle,.sidebarblock>.content>.title{text-wrap:balance}
 .nohyphens #content p,.nohyphens #content li,.nohyphens #content dd{-webkit-hyphens:manual;hyphens:manual}
-#content h2{text-align:center;text-transform:uppercase;letter-spacing:.05em}
 .sc{font-variant:small-caps}
-.quoteblock.yorick blockquote{border:1px solid #1a1a1a;text-align:center;padding:.3em 1em}
-.imageblock.black-page img,.imageblock.marbled-page img{width:100%;max-height:90vh}
+.caps{letter-spacing:.2em}
+.bl{font-family:UnifrakturMaguntia,serif}
 </style>
 </head>
 <body class="book">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_chap_i">Chap. I.</h2>
+<div class="sect1 first">
+<h2 id="_page_1">Page 1</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><em>Pray, my Dear</em>, quoth my mother, <em>have you not forgot to wind up the clock?</em>⁠⸻<em>Good G⁠⸺!</em> cried my father, making an exclamation, but taking care to moderate his voice at the same time,⁠⸺⁠<em>Did ever woman, since the creation of the world, interrupt a man with such a silly question?</em> Pray, what was your father saying?⁠⸻Nothing.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_chap_xii">Chap. XII.</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>He lies buried in the corner of his churchyard, in the parish of ⸻, under a plain marble slab, which his friend <em>Eugenius</em>, by leave of his executors, laid upon his grave, with no more than these three words of inscription, serving both for his epitaph and elegy.</p>
-</div>
-<div class="quoteblock yorick">
-<blockquote>
-<div class="paragraph text-center">
-<p>Alas, poor <span class="sc">Yorick</span>!</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Ten times a day has <em>Yorick’s</em> ghost the consolation to hear his monumental inscription read over with such a variety of plaintive tones, as denote a general pity and esteem for him;⁠⸺⁠a foot-way crossing the churchyard close by the side of his grave,⁠—not a passenger goes by without stopping to cast a look upon it,⁠—and sighing as he walks on,</p>
-</div>
-<div class="quoteblock yorick">
-<blockquote>
-<div class="paragraph text-center">
-<p>Alas, poor <span class="sc">Yorick</span>!</p>
-</div>
-</blockquote>
-</div>
-<div class="page-break"></div>
-<div class="imageblock black-page">
+<div class="imageblock spacer">
 <div class="content">
-<img src="images/black-page.svg" alt="A page printed black.">
+<img src="images/blank.svg" alt="blank">
 </div>
 </div>
-<div class="page-break"></div>
-<div class="imageblock black-page">
+<div class="paragraph h-the">
+<p>THE</p>
+</div>
+<div class="paragraph h-life">
+<p>LIFE and OPINIONS</p>
+</div>
+<div class="paragraph h-of">
+<p>OF</p>
+</div>
+<div class="paragraph h-name">
+<p>TRISTRAM SHANDY, Gent.</p>
+</div>
+<div class="paragraph ct">
+<p><span class="caps">CHAP</span>. I.</p>
+</div>
+<div class="paragraph ini jl p1582">
+<p>I Wish either my father or my mother, or
+indeed both of them, as they were in</p>
+</div>
+<div class="paragraph pa on jl p1615">
+<p>duty both equally bound to it, had minded</p>
+</div>
+<div class="paragraph pa on jl">
+<p>what they were about when they begot me;</p>
+</div>
+<div class="paragraph pa on jl p1623 sq7">
+<p>had they duly consider’d how much depend-</p>
+</div>
+<div class="paragraph pa on jl">
+<p>ed upon what they were then doing;—that
+not only the production of a rational Being</p>
+</div>
+<div class="paragraph pa on jl p1637 sq19">
+<p>was concerned in it, but that possibly the hap-</p>
+</div>
+<div class="paragraph pa on jl">
+<p>py formation and temperature of his body,</p>
+</div>
+<div class="paragraph pa on jl p1665">
+<p>perhaps his genius and the very cast of his</p>
+</div>
+<div class="paragraph pa on p1637">
+<p>mind;—and, for aught they knew to the
+contrary, even the fortunes of his whole</p>
+</div>
+<div class="paragraph ft">
+<p><span class="w179">&#160;</span>A 4 <span class="right">house</span></p>
+</div>
+</div>
+</div>
+<div class="sect1 recto">
+<h2 id="_page_65">Page 65</h2>
+<div class="sectionbody">
+<div class="imageblock spacer">
 <div class="content">
-<img src="images/black-page.svg" alt="A page printed black.">
+<img src="images/blank.svg" alt="blank">
 </div>
 </div>
-<div class="page-break"></div>
-<div class="page-break"></div>
+<div class="paragraph hd">
+<p>( 65 )</p>
+</div>
+<div class="paragraph pa on p1610">
+<p>ed his hand,——and then walked softly out
+of the room, weeping as he walked. <em>Yo&#173;</em>
+<em>rick</em> followed <em>Eugenius</em> with his eyes to the
+door,—he then closed them,—and never
+opened them more,</p>
+</div>
+<div class="paragraph pa jl p1684">
+<p>He lies buried in a corner of his church-</p>
+</div>
+<div class="paragraph pa on jl p1691">
+<p>yard, in the parish of———, under a plain
+marble slab, which his friend <em>Eugenius</em>, by</p>
+</div>
+<div class="paragraph pa on p1713">
+<p>leave of his executors, laid upon his grave,
+with no more than these three words of in&#173;
+scription, serving both for his epitaph, and
+elegy.</p>
+</div>
+<table class="tableblock frame-all grid-none yk" width="68%">
+<colgroup>
+<col width="100%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alas, poor <span class="caps">YORICK</span>!</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph pa jl p1732">
+<p>Ten times a day has <em>Yorick’s</em> ghost the</p>
+</div>
+<div class="paragraph pa on p1691">
+<p>consolation to hear his monumental inscrip&#173;
+tion read over with such a variety of plain-</p>
+</div>
+<div class="paragraph ft">
+<p> <span class="right">tive</span></p>
 </div>
 </div>
-<div class="sect1">
-<h2 id="chapter-9-18a">Chap. XVIII.</h2>
+</div>
+<div class="sect1 black67">
+<h2 id="_page_67">Page 67</h2>
 <div class="sectionbody">
-<div class="page-break"></div>
+<div class="imageblock spacer">
+<div class="content">
+<img src="images/blank.svg" alt="blank">
 </div>
 </div>
-<div class="sect1">
-<h2 id="chapter-9-19a">Chap. XIX.</h2>
-<div class="sectionbody">
-<div class="page-break"></div>
+<div class="paragraph hd">
+<p>( 67 )</p>
+</div>
 </div>
 </div>
 </div>

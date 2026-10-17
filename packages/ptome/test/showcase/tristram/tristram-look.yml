@@ -1,108 +1,405 @@
-# Tristram Shandy after its first edition (York and London, 1759–67, in
-# nine small volumes): a small octavo of about 4 × 6½ in in Caslon's
-# types, 10 on 12½, justified; no running heads, the page number in
-# brackets at the head, "( 9 )"; each volume a part, its chapters running
-# on under "CHAP. I.", the first opening with an initial two lines deep;
-# Yorick's epitaph in a frame of rules; the black page and the marbled
-# page each both sides of a leaf, filling the type area; the blank
-# chapters each a page of their own; Sterne's dashes of many lengths.
+# The Life and Opinions of Tristram Shandy, Gentleman, Vol. I, as J.
+# Dodsley printed it in London in 1770 (the eighth edition), measured from
+# the Bayerische Staatsbibliothek's copy as the Internet Archive scanned
+# it (NOTICE.md, tool/tristram_1770): its leaf 108 × 175 mm; the page's
+# number in brackets at its head, "( 6 )", centred; English on its own
+# body, 16.7 points line to line, 21 lines to the page, justified; the
+# chapters running on under "C H A P. I.", each opening with an initial
+# two lines deep; a quotation's lines each opening with its marks; the
+# footnotes in a smaller size; the signature, the volume's direction line
+# and the catchword at the foot; Yorick's epitaph in its frame of rules;
+# the black page both sides of its leaf.
 #
-# Libre Caslon Text, Caslon revived (`ptome doctor --look tristram
-# --looksdir test/showcase/tristram`).
+# Libre Caslon Text, Caslon revived; UnifrakturMaguntia for the
+# settlement's black letter; Noto Serif for the Greek and Noto Sans
+# Symbols for the cross (`ptome doctor
+# --look tristram --looksdir test/showcase/tristram`).
 extends: ptome
 tokens:
   font:
     text: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] } }
     display: { family: { print: Libre Caslon Text, screen: [Libre Caslon Text, serif] }, weight: normal }
   size:
-    text: { print: 9.5pt, screen: 18px }
-    headings: { print: [18pt, 10pt, 10pt, 9.5pt, 9.5pt, 9.5pt] }
-  leading: { print: 1.3, screen: 1.6 }
+    text: { print: 10.4pt, screen: 18px }
+    headings: { print: [10.4pt, 10.4pt, 10.4pt, 10.4pt, 10.4pt, 10.4pt] }
+  leading: { print: 1, screen: 1.6 }
   measure: { screen: 32em }
-  paragraph: { signal: indent, indent: { print: 1.2em } }
   align: { print: justify }
-  hyphenate: { print: true }
+  hyphenate: { print: false }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [4.2in, 6.8in], margin: [0.75in, 0.55in, 0.65in, 0.6in] }
+  page: { size: [306pt, 496pt], margin: [30pt, 53.6pt, 40pt, 42pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
   font:
-    # (The Greek of the epigraphs and Slawkenbergius, which Caslon's
-    # revival lacks.)
-    fallbacks: [Noto Serif]
+    # (The title page's Greek and the cross Dr. Slop makes, which
+    # Caslon's revival lacks.)
+    fallbacks: [Noto Serif, Noto Sans Symbols]
+  base:
+    line_pitch: 16.73pt
+    margin_break: keep
+    font_expansion: 0.04
   heading:
-    chapter_break_before: auto
-    part_break_after: always
-    h1:
-      text_align: center
-      text_transform: uppercase
-      character_spacing: 2
-      vertical_align: middle
-    h2:
-      text_align: center
-      text_transform: uppercase
-      character_spacing: 1
-      margin_top: 18
-      margin_page_top: 6
-      margin_bottom: 8
-      initial_lines: 2
-      initial_lead_in: 1
-    h3:
-      text_align: center
-      font_style: italic
+    chapter_break_before: always
+  section:
+    role:
+      # (A recto's margins and a verso's: the inner the narrower.)
+      recto: { page_running_content: none, page_margin: [30, 53.6, 40, 42] }
+      verso: { page_running_content: none, page_margin: [30, 42, 40, 53.6] }
+      # (The frontispiece: the leaf as the scan shows it, its paper
+      # whitened.)
+      front: { page_background_image: 'image:images/frontispiece.png[]', page_running_content: none }
+      # (The black pages: their ink where the scan's is; the first page:
+      # the rule under its title.)
+      # (gen.py's sections.)
+      first: { page_background_image: 'image:images/rule-1.svg[]', page_running_content: none, page_margin: [30, 53.6, 40, 42] }
+      black67: { page_background_image: 'image:images/black-67.svg[]', page_running_content: none, page_margin: [30, 53.6, 40, 42] }
+      black68: { page_background_image: 'image:images/black-68.svg[]', page_running_content: none, page_margin: [30, 42, 40, 53.6] }
+      # (gen.py's sections end.)
+  image:
+    caption: { display: none }
+  table:
+    margin_top: 0
+    margin_bottom: 0
+    background_color: transparent
+    head: { background_color: transparent }
+    body: { stripe_background_color: transparent }
+    role:
+      # (Yorick's epitaph: its frame of rules.)
+      yk: { border_width: 0.8, border_color: '1A1A1A', grid_width: 0, cell_padding: [3, 6, 2, 6], line_pitch: 16.73pt }
   prose:
     margin_bottom: 0
-    text_indent_inner: 1.2em
-  quote:
-    border_left_width: 0
-    padding: [0, 10, 0, 10]
-    font_size: 9
-    cite_font_color: '1A1A1A'
-    cite_text_align: right
-    cite_font_style: italic
-    role:
-      # (Yorick's epitaph, a tablet of rules.)
-      yorick:
-        border_width: 0.6
-        border_color: '1A1A1A'
-        padding: [4, 8, 4, 8]
-        text_align: center
-        font_size: 10
-  verse:
-    border_left_width: 0
-    padding: [0, 0, 0, 18]
+    text_indent: 0
+    orphans: 1
+    widows: 1
   role:
+    # (A paragraph's first line set in; one going on, not.)
+    pa: { text_align: justify, text_indent: 12.3 }
+    'on': { text_indent: 0 }
+    # (A paragraph parted where the scan's lines lie unevenly: its part
+    # above justified to its last line.)
+    jl: { text_align_last: justify }
+    # (A chapter's first line: an initial two lines deep.)
+    ini: { text_align: justify, text_indent: 0, drop_lines: 2, drop_gap: 1.5 }
+    # (A chapter's head, a centred line; a line flush right.)
+    ct: { text_align: center, text_indent: 0 }
+    rt: { text_align: right, text_indent: 0 }
+    # (The head: the page's number, centred.)
+    hd: { text_align: center, text_indent: 0 }
+    # (The foot: the signature where the scan's is, the catchword flush
+    # right.)
+    ft: { text_align: left, text_indent: 0 }
+    right: { flush: right }
+    # (The footnotes: the smaller size, set in.)
+    fn: { font_size: 8.8, line_pitch: 14pt, text_align: justify, text_indent: 12.3 }
+    # (The dedication: in a larger size, Great Primer.)
+    dd: { font_size: 12 }
+    # (A word in capitals, spaced as the printing spaces them.)
+    caps: { letter_spacing: 0.22em }
     sc: { font_variant: small-caps }
-    lead-in: { font_variant: small-caps }
-  footnotes:
-    font_size: 7.5
-  header:
-    height: 0.6in
-    vertical_align: bottom
-    font_size: 8.5
-    recto:
-      left: { content: '' }
-      center: { content: '( {page-number} )' }
-      right: { content: '' }
-    verso:
-      left: { content: '' }
-      center: { content: '( {page-number} )' }
-      right: { content: '' }
-  footer:
-    height: 0.5in
-    border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-webfonts:
-  - Libre Caslon Text:400,400italic,700
+    # (The settlement's black letter, Great Primer.)
+    bl: { font_family: UnifrakturMaguntia, font_size: 18 }
+    # (The page's first block's margin holds after it.)
+    spacer: { margin_top: 0, margin_bottom: 0 }
+    # (The title page's lines, the first page's and the dedication's, each
+    # in its own size, its letters spaced, as the scan measures them.)
+    t-the: { font_size: 10.6, text_align: center, text_indent: 0, letter_spacing: 1.16em }
+    t-life: { font_size: 25.2, text_align: center, text_indent: 0, letter_spacing: 1.154em }
+    t-and: { font_size: 11, text_align: center, text_indent: 0, letter_spacing: 1.173em }
+    t-opinions: { font_size: 24.7, text_align: center, text_indent: 0, letter_spacing: 0.342em }
+    t-of: { font_size: 9.9, text_align: center, text_indent: 0, letter_spacing: 1.847em }
+    t-tristram: { font_size: 16, text_align: center, text_indent: 0, letter_spacing: 0.143em }
+    t-gentleman: { font_size: 11, text_align: center, text_indent: 0, letter_spacing: 0.616em }
+    t-greek: { font_size: 10, text_align: center, text_indent: 0 }
+    t-vol: { font_size: 13, text_align: center, text_indent: 0, letter_spacing: 0.449em }
+    t-edition: { font_size: 11, text_align: center, text_indent: 0, letter_spacing: 0.14em }
+    t-london: { font_size: 11, text_align: center, text_indent: 0, letter_spacing: 0.762em }
+    t-printed: { font_size: 10, text_align: center, text_indent: 0, letter_spacing: 0.041em }
+    t-year: { font_size: 10.3, text_align: center, text_indent: 0, letter_spacing: 0.147em }
+    h-the: { font_size: 9.9, text_align: center, text_indent: 0, letter_spacing: 0.889em }
+    h-life: { font_size: 14.2, text_align: center, text_indent: 0, letter_spacing: 0.116em }
+    h-of: { font_size: 9.6, text_align: center, text_indent: 0, letter_spacing: 0.785em }
+    h-name: { font_size: 13.8, text_align: center, text_indent: 0, letter_spacing: 0.061em }
+    t-to: { font_size: 10.5, text_align: center, text_indent: 0 }
+    t-pitt: { font_size: 14.2, text_align: center, text_indent: 0, letter_spacing: 0.971em }
+    t-sir: { font_size: 11, text_align: left, text_indent: 21.5, letter_spacing: 0.483em }
+    t-ded: { font_size: 13, text_align: center, text_indent: 0, letter_spacing: 0.439em }
+    # (gen.py's roles.)
+    p1334: { line_pitch: 13.34pt }
+    p1391: { line_pitch: 13.91pt }
+    p1419: { line_pitch: 14.19pt }
+    p1446: { line_pitch: 14.46pt }
+    p1462: { line_pitch: 14.62pt }
+    p1473: { line_pitch: 14.73pt }
+    p1479: { line_pitch: 14.79pt }
+    p1487: { line_pitch: 14.87pt }
+    p1500: { line_pitch: 15.0pt }
+    p1501: { line_pitch: 15.01pt }
+    p1517: { line_pitch: 15.17pt }
+    p1527: { line_pitch: 15.27pt }
+    p1528: { line_pitch: 15.28pt }
+    p1542: { line_pitch: 15.42pt }
+    p1555: { line_pitch: 15.55pt }
+    p1556: { line_pitch: 15.56pt }
+    p1582: { line_pitch: 15.82pt }
+    p1583: { line_pitch: 15.83pt }
+    p1596: { line_pitch: 15.96pt }
+    p1600: { line_pitch: 16.0pt }
+    p1603: { line_pitch: 16.03pt }
+    p1604: { line_pitch: 16.04pt }
+    p1609: { line_pitch: 16.09pt }
+    p1610: { line_pitch: 16.1pt }
+    p1611: { line_pitch: 16.11pt }
+    p1612: { line_pitch: 16.12pt }
+    p1615: { line_pitch: 16.15pt }
+    p1616: { line_pitch: 16.16pt }
+    p1617: { line_pitch: 16.17pt }
+    p1618: { line_pitch: 16.18pt }
+    p1620: { line_pitch: 16.2pt }
+    p1621: { line_pitch: 16.21pt }
+    p1622: { line_pitch: 16.22pt }
+    p1623: { line_pitch: 16.23pt }
+    p1624: { line_pitch: 16.24pt }
+    p1625: { line_pitch: 16.25pt }
+    p1626: { line_pitch: 16.26pt }
+    p1628: { line_pitch: 16.28pt }
+    p1629: { line_pitch: 16.29pt }
+    p1631: { line_pitch: 16.31pt }
+    p1632: { line_pitch: 16.32pt }
+    p1633: { line_pitch: 16.33pt }
+    p1634: { line_pitch: 16.34pt }
+    p1635: { line_pitch: 16.35pt }
+    p1636: { line_pitch: 16.36pt }
+    p1637: { line_pitch: 16.37pt }
+    p1638: { line_pitch: 16.38pt }
+    p1639: { line_pitch: 16.39pt }
+    p1640: { line_pitch: 16.4pt }
+    p1641: { line_pitch: 16.41pt }
+    p1642: { line_pitch: 16.42pt }
+    p1643: { line_pitch: 16.43pt }
+    p1644: { line_pitch: 16.44pt }
+    p1645: { line_pitch: 16.45pt }
+    p1646: { line_pitch: 16.46pt }
+    p1647: { line_pitch: 16.47pt }
+    p1648: { line_pitch: 16.48pt }
+    p1649: { line_pitch: 16.49pt }
+    p1650: { line_pitch: 16.5pt }
+    p1651: { line_pitch: 16.51pt }
+    p1652: { line_pitch: 16.52pt }
+    p1653: { line_pitch: 16.53pt }
+    p1654: { line_pitch: 16.54pt }
+    p1655: { line_pitch: 16.55pt }
+    p1656: { line_pitch: 16.56pt }
+    p1657: { line_pitch: 16.57pt }
+    p1658: { line_pitch: 16.58pt }
+    p1659: { line_pitch: 16.59pt }
+    p1660: { line_pitch: 16.6pt }
+    p1661: { line_pitch: 16.61pt }
+    p1662: { line_pitch: 16.62pt }
+    p1663: { line_pitch: 16.63pt }
+    p1664: { line_pitch: 16.64pt }
+    p1665: { line_pitch: 16.65pt }
+    p1666: { line_pitch: 16.66pt }
+    p1667: { line_pitch: 16.67pt }
+    p1668: { line_pitch: 16.68pt }
+    p1669: { line_pitch: 16.69pt }
+    p1670: { line_pitch: 16.7pt }
+    p1671: { line_pitch: 16.71pt }
+    p1672: { line_pitch: 16.72pt }
+    p1673: { line_pitch: 16.73pt }
+    p1674: { line_pitch: 16.74pt }
+    p1675: { line_pitch: 16.75pt }
+    p1676: { line_pitch: 16.76pt }
+    p1677: { line_pitch: 16.77pt }
+    p1678: { line_pitch: 16.78pt }
+    p1679: { line_pitch: 16.79pt }
+    p1680: { line_pitch: 16.8pt }
+    p1681: { line_pitch: 16.81pt }
+    p1682: { line_pitch: 16.82pt }
+    p1683: { line_pitch: 16.83pt }
+    p1684: { line_pitch: 16.84pt }
+    p1685: { line_pitch: 16.85pt }
+    p1686: { line_pitch: 16.86pt }
+    p1687: { line_pitch: 16.87pt }
+    p1689: { line_pitch: 16.89pt }
+    p1690: { line_pitch: 16.9pt }
+    p1691: { line_pitch: 16.91pt }
+    p1692: { line_pitch: 16.92pt }
+    p1693: { line_pitch: 16.93pt }
+    p1694: { line_pitch: 16.94pt }
+    p1696: { line_pitch: 16.96pt }
+    p1697: { line_pitch: 16.97pt }
+    p1698: { line_pitch: 16.98pt }
+    p1699: { line_pitch: 16.99pt }
+    p1700: { line_pitch: 17.0pt }
+    p1702: { line_pitch: 17.02pt }
+    p1703: { line_pitch: 17.03pt }
+    p1704: { line_pitch: 17.04pt }
+    p1705: { line_pitch: 17.05pt }
+    p1706: { line_pitch: 17.06pt }
+    p1707: { line_pitch: 17.07pt }
+    p1708: { line_pitch: 17.08pt }
+    p1709: { line_pitch: 17.09pt }
+    p1710: { line_pitch: 17.1pt }
+    p1711: { line_pitch: 17.11pt }
+    p1712: { line_pitch: 17.12pt }
+    p1713: { line_pitch: 17.13pt }
+    p1714: { line_pitch: 17.14pt }
+    p1715: { line_pitch: 17.15pt }
+    p1716: { line_pitch: 17.16pt }
+    p1718: { line_pitch: 17.18pt }
+    p1719: { line_pitch: 17.19pt }
+    p1721: { line_pitch: 17.21pt }
+    p1722: { line_pitch: 17.22pt }
+    p1723: { line_pitch: 17.23pt }
+    p1724: { line_pitch: 17.24pt }
+    p1727: { line_pitch: 17.27pt }
+    p1728: { line_pitch: 17.28pt }
+    p1730: { line_pitch: 17.3pt }
+    p1732: { line_pitch: 17.32pt }
+    p1733: { line_pitch: 17.33pt }
+    p1734: { line_pitch: 17.34pt }
+    p1735: { line_pitch: 17.35pt }
+    p1738: { line_pitch: 17.38pt }
+    p1740: { line_pitch: 17.4pt }
+    p1741: { line_pitch: 17.41pt }
+    p1744: { line_pitch: 17.44pt }
+    p1746: { line_pitch: 17.46pt }
+    p1747: { line_pitch: 17.47pt }
+    p1749: { line_pitch: 17.49pt }
+    p1756: { line_pitch: 17.56pt }
+    p1757: { line_pitch: 17.57pt }
+    p1760: { line_pitch: 17.6pt }
+    p1763: { line_pitch: 17.63pt }
+    p1773: { line_pitch: 17.73pt }
+    p1774: { line_pitch: 17.74pt }
+    p1776: { line_pitch: 17.76pt }
+    p1787: { line_pitch: 17.87pt }
+    p1800: { line_pitch: 18.0pt }
+    p1801: { line_pitch: 18.01pt }
+    p1811: { line_pitch: 18.11pt }
+    p1828: { line_pitch: 18.28pt }
+    p1841: { line_pitch: 18.41pt }
+    p1855: { line_pitch: 18.55pt }
+    p1859: { line_pitch: 18.59pt }
+    p1882: { line_pitch: 18.82pt }
+    p1910: { line_pitch: 19.1pt }
+    p1926: { line_pitch: 19.26pt }
+    w2: { width: 1.0 }
+    w3: { width: 1.5 }
+    w4: { width: 2.0 }
+    w8: { width: 4.0 }
+    w9: { width: 4.5 }
+    w11: { width: 5.5 }
+    w13: { width: 6.5 }
+    w17: { width: 8.5 }
+    w18: { width: 9.0 }
+    w21: { width: 10.5 }
+    w22: { width: 11.0 }
+    w23: { width: 11.5 }
+    w24: { width: 12.0 }
+    w25: { width: 12.5 }
+    w32: { width: 16.0 }
+    w34: { width: 17.0 }
+    w40: { width: 20.0 }
+    w50: { width: 25.0 }
+    w62: { width: 31.0 }
+    w77: { width: 38.5 }
+    w81: { width: 40.5 }
+    w100: { width: 50.0 }
+    w107: { width: 53.5 }
+    w111: { width: 55.5 }
+    w113: { width: 56.5 }
+    w116: { width: 58.0 }
+    w119: { width: 59.5 }
+    w121: { width: 60.5 }
+    w128: { width: 64.0 }
+    w131: { width: 65.5 }
+    w140: { width: 70.0 }
+    w145: { width: 72.5 }
+    w150: { width: 75.0 }
+    w166: { width: 83.0 }
+    w169: { width: 84.5 }
+    w175: { width: 87.5 }
+    w176: { width: 88.0 }
+    w178: { width: 89.0 }
+    w179: { width: 89.5 }
+    w181: { width: 90.5 }
+    w182: { width: 91.0 }
+    w185: { width: 92.5 }
+    w186: { width: 93.0 }
+    w187: { width: 93.5 }
+    w189: { width: 94.5 }
+    w193: { width: 96.5 }
+    w200: { width: 100.0 }
+    w210: { width: 105.0 }
+    w217: { width: 108.5 }
+    in12: { text_align: left, text_indent: 12 }
+    in29: { text_align: left, text_indent: 29 }
+    in31: { text_align: left, text_indent: 31 }
+    in33: { text_align: left, text_indent: 33 }
+    in39: { text_align: left, text_indent: 39 }
+    in49: { text_align: left, text_indent: 49 }
+    in52: { text_align: left, text_indent: 52 }
+    in62: { text_align: left, text_indent: 62 }
+    in81: { text_align: left, text_indent: 81 }
+    in95: { text_align: left, text_indent: 95 }
+    sq1: { letter_spacing: -0.001em }
+    sq2: { letter_spacing: -0.002em }
+    sq3: { letter_spacing: -0.003em }
+    sq4: { letter_spacing: -0.004em }
+    sq5: { letter_spacing: -0.005em }
+    sq6: { letter_spacing: -0.006em }
+    sq7: { letter_spacing: -0.007em }
+    sq8: { letter_spacing: -0.008em }
+    sq9: { letter_spacing: -0.009em }
+    sq10: { letter_spacing: -0.01em }
+    sq11: { letter_spacing: -0.011em }
+    sq12: { letter_spacing: -0.012em }
+    sq13: { letter_spacing: -0.013em }
+    sq14: { letter_spacing: -0.014em }
+    sq15: { letter_spacing: -0.015em }
+    sq16: { letter_spacing: -0.016em }
+    sq17: { letter_spacing: -0.017em }
+    sq18: { letter_spacing: -0.018em }
+    sq19: { letter_spacing: -0.019em }
+    sq20: { letter_spacing: -0.02em }
+    sq21: { letter_spacing: -0.021em }
+    sq22: { letter_spacing: -0.022em }
+    sq23: { letter_spacing: -0.023em }
+    sq24: { letter_spacing: -0.024em }
+    sq25: { letter_spacing: -0.025em }
+    sq26: { letter_spacing: -0.026em }
+    sq27: { letter_spacing: -0.027em }
+    sq28: { letter_spacing: -0.028em }
+    sq29: { letter_spacing: -0.029em }
+    sq30: { letter_spacing: -0.03em }
+    sq31: { letter_spacing: -0.031em }
+    sq32: { letter_spacing: -0.032em }
+    sq33: { letter_spacing: -0.033em }
+    sq34: { letter_spacing: -0.034em }
+    sq35: { letter_spacing: -0.035em }
+    sq36: { letter_spacing: -0.036em }
+    sq37: { letter_spacing: -0.037em }
+    sq39: { letter_spacing: -0.039em }
+    sq40: { letter_spacing: -0.04em }
+    sq41: { letter_spacing: -0.041em }
+    sq42: { letter_spacing: -0.042em }
+    sq43: { letter_spacing: -0.043em }
+    sq44: { letter_spacing: -0.044em }
+    sq45: { letter_spacing: -0.045em }
+    sq46: { letter_spacing: -0.046em }
+    sq47: { letter_spacing: -0.047em }
+    sq49: { letter_spacing: -0.049em }
+    sq52: { letter_spacing: -0.052em }
+    sq53: { letter_spacing: -0.053em }
+    sq75: { letter_spacing: -0.075em }
+    # (gen.py's roles end.)
 css: |
-  #content h2{text-align:center;text-transform:uppercase;letter-spacing:.05em}
   .sc{font-variant:small-caps}
-  .quoteblock.yorick blockquote{border:1px solid #1a1a1a;text-align:center;padding:.3em 1em}
-  .imageblock.black-page img,.imageblock.marbled-page img{width:100%;max-height:90vh}
+  .caps{letter-spacing:.2em}
+  .bl{font-family:UnifrakturMaguntia,serif}
 epub-css: |
   .sc{font-variant:small-caps}
-  .quoteblock.yorick blockquote{border:1px solid #1a1a1a;text-align:center}

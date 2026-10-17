@@ -1,0 +1,14 @@
+X t-the|THE
+X t-life|LIFE
+X t-and|AND
+X t-opinions|OPINIONS
+X t-of|OF
+X t-tristram|TRISTRAM SHANDY,
+X t-gentleman|[.sc]#Gentleman.#
+X t-greek|Ταράσσει τοὺς Ἀνθρώπους οὐ τὰ Πράγματα,
+X t-greek|ἀλλὰ τὰ περὶ τῶν Πραγμάτων, Δόγματα.
+X t-vol|VOL. I.
+X t-edition|The [.sc]#Eighth Edition.#
+X t-london|__LONDON:__
+X t-printed|Printed for J. [.sc]#Dodsley#, in __Pall-Mall.__
+X t-year|MDCCLXX.

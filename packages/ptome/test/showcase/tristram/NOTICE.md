@@ -3,81 +3,99 @@ title: "The Life and Opinions of Tristram Shandy, Gentleman"
 source: tristram.adoc
 looks: [tristram]
 compare:
-  - page: 37
+  - page: 2
+    scan: https://archive.org/download/10931855bsb/page/n8.jpg
+    note: "The title page, its lines each in its size, the Greek of Epictetus (London, 1770)"
+  - page: 5
     scan: https://archive.org/download/10931855bsb/page/n12.jpg
-    note: "Vol. I, Chap. I: its head and initial (London, 1770)"
-  - page: 74
+    note: "The first page: the title over its rule, CHAP. I., its initial two lines deep (1770)"
+  - page: 69
     scan: https://archive.org/download/10931855bsb/page/n82.jpg
-    note: "Yorick's epitaph, in its frame (1770)"
-  - page: 75
+    note: "Yorick's epitaph in its frame of rules (1770)"
+  - page: 71
     scan: https://archive.org/download/10931855bsb/page/n84.jpg
     note: "The black page (1770)"
+  - page: 80
+    scan: https://archive.org/download/10931855bsb/page/n93.jpg
+    note: "The marriage settlement: its running quotes and its black letter (1770)"
 ---
 
 # The Life and Opinions of Tristram Shandy, Gentleman
 
-Laurence Sterne's novel, whole, in a look after its first edition. What
-the work shows: typographic play — the black page (both sides of a leaf
-printed black after Yorick's epitaph), the marbled page (both sides of a
-leaf), the two chapters of Volume IX that are only their heads (each a
-page of its own), the rows of asterisks, the plot-line diagrams of
-Volume VI, the Latin and the Greek — and Sterne's dashes of many lengths:
-the two- and three-em dashes (U+2E3A, U+2E3B), which Caslon's revival
-lacks, set as two and three em dashes run together (FEAT-4lj836).
+The first volume of Laurence Sterne's novel as J. Dodsley printed it in
+London in 1770 (the eighth edition), page for page and line for line
+(`tool/tristram_1770`). What the work shows: a novel's pages, each a
+section of its own (`:source-lines:`, each source line a printed line),
+recto and verso each with its margins (`section_role_<role>_page_margin`):
+Hogarth's frontispiece, the page its background as the scan shows it;
+the title page, each line its own size and spacing and the Greek of
+Epictetus; the dedication to Mr. Pitt in its larger type, its
+subscription's lines set in where the printing sets them; each page's
+number in brackets at its head; the chapters running on under "C H A P.
+I.", each opening with an initial two lines deep, the rest of its first
+word in capitals; a quotation's every line opening with its marks; the
+marriage settlement's black letter; the footnotes in the smaller size,
+one running on to the page after under the text's own catchword; the
+French of the Sorbonne's doctors in italic; Yorick's epitaph in its
+frame of rules (a table of one cell); the black page both sides of its
+leaf, drawn behind its number where the scan's ink is; Sterne's dashes
+of two and three ems; the signature, the volume's direction line, the
+press figure and the catchword at the foot. Each block's space above it
+and its pitch are the scan's; a paragraph whose lines lie unevenly on the
+scan, the leaf curling, is parted where they do, its part above
+justified to its last line (`role_<role>_text_align_last`).
 
 ## Sources
 
 | What | Where | SHA-256 |
 | --- | --- | --- |
-| Tristram Shandy, Standard Ebooks | https://github.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman at `89676643cb7dee3b46aba13868f3d92f9897998c` (the `codeload.github.com` tarball) | `8167210a2d173d0fe5903d53cc3a5584800fa696bd0926ccda50937906015d68` |
-| The marbled page (JPEG) and the plot lines and flourish (SVG), Standard Ebooks | the same repository, in `fetch.yml` with their SHA-256 | in `fetch.yml` |
-| `images/black-page.svg` | drawn for the work | |
+| The Life and Opinions of Tristram Shandy, Gentleman, Vol. I, London: J. Dodsley, 1770 (the eighth edition), the Bayerische Staatsbibliothek's copy, the Internet Archive's scan: the pages the text is read off | https://archive.org/details/10931855bsb (leaves 7 to 290, the pages the copy binds in twice left out) | the leaves in `tool/tristram_1770/scans.sha256` |
+| The frontispiece (JPEG), the same scan's leaf 7, cut to the leaf and its paper whitened | the same item, in `fetch.yml` with its SHA-256 | in `fetch.yml` |
+| Tristram Shandy, Standard Ebooks: the words the scan's are read against | https://github.com/standardebooks/laurence-sterne_the-life-and-opinions-of-tristram-shandy-gentleman at `89676643cb7dee3b46aba13868f3d92f9897998c` (its dedication and the chapters of Books I and II this volume holds, in `tool/tristram_1770/transcription/`) | `8167210a2d173d0fe5903d53cc3a5584800fa696bd0926ccda50937906015d68` (the `codeload.github.com` tarball) |
 
-Imported by `tool/showcase_import.dart`, then edited by hand:
-
-- The chapters headed as the first edition heads them, "Chap. I.".
-- The black page: Standard Ebooks' tombstone drawing replaced by two
-  pages printed black (`images/black-page.svg`, filling the type area),
-  after the second "Alas, poor YORICK!", where the first edition prints
-  them; the epitaph framed (`[quote.yorick]`).
-- The marbled page set on both sides of its leaf.
-- Volume IX's chapters XVIII and XIX, which are only their heads, each
-  on a page of its own.
+The pages (`text/pages.adoc`) are generated by `tool/tristram_1770/gen.py`
+from `tristram.spec`: each line of the scan read by the Archive's OCR
+(ABBYY's) or Tesseract's, its words decided against Standard Ebooks'
+(their letters where they are the scan's, the printing's own spelling
+where it differs, the long s read as the round), the lines no rule
+decides read off the scan (`tool/tristram_1770/fixes.tsv`), the
+dedication, the first page, the title page and three pages the OCR could
+not read written whole by hand from the scan (`tool/tristram_1770/pages/`).
+Each foot's signature is the one the volume's gatherings give, each
+catchword the next page's first word where the printing's is.
 
 ## Licence
 
 The novel is in the public domain (published 1759–67). Standard Ebooks
-dedicates its production, the images included, to the public domain (CC0
-1.0); its own pages and logo are left out, and its name is used only in
-this credit. The black page is the work's own (MIT, as the repository).
+dedicates its production to the public domain (CC0 1.0); its name is used
+only in this credit. The Bayerische Staatsbibliothek's scan reproduces a
+public-domain work. The transcription of the 1770 printing and its
+arrangement are the work's own (MIT, as the repository).
 
 ## Fonts
 
-Libre Caslon Text, and Noto Serif for the Greek (both SIL Open Font
-License 1.1), from Google Fonts: `ptome doctor --look tristram
+Libre Caslon Text, UnifrakturMaguntia for the black letter, Noto Serif
+for the Greek and Noto Sans Symbols for the cross Dr. Slop makes (SIL
+Open Font License 1.1), from Google Fonts: `ptome doctor --look tristram
 --looksdir test/showcase/tristram` installs them. Not committed.
 
-## The printing the look follows
+## Where it departs from the printing
 
-The Life and Opinions of Tristram Shandy, Gentleman, Vol. I, London: J.
-Dodsley, 1770 (a later printing of the first edition's setting), the
-Bayerische Staatsbibliothek's copy: https://archive.org/details/10931855bsb
-
-## Where it departs from it
-
-- The text is Standard Ebooks' (the first edition's, its spelling
-  modernized where Standard Ebooks does); the first edition's long s and
-  its catchwords at the foot of each page are not set.
-- Each volume is a part of one book; the first edition's nine volumes
-  each have their own title page.
-- Yorick's epitaph's frame is the width of the text; the book's is
-  narrower.
+- The long s is set as the round s, and the ct and st ligatures as their
+  letters.
+- Libre Caslon Text stands in for Caslon's own types: its letters are
+  wider, set smaller to the printing's measure, so a justified line's
+  spaces differ from the printing's (its letters may widen or narrow by
+  up to four percent, `base_font_expansion`, and a paragraph with a
+  line that would still not fit is drawn together a little).
+- UnifrakturMaguntia, a fraktur, stands in for the printing's English
+  black letter.
+- The black page is a black of one tone where the printing's is ink laid
+  thick, uneven.
+- The novel's later volumes (Books III to IX, the marbled page among
+  them) are not this one's; the frontispiece's page is the scan's image.
 
 ## In HTML and EPUB
 
-- In HTML and EPUB the black and marbled pages are their images across
-  the page, the chapters of headings alone each a section of its own,
-  and Sterne's two- and three-em dashes the characters themselves
-  (U+2E3A, U+2E3B), which the reader's fonts draw where they have them;
-  the PDF alone sets them as em dashes run together in Caslon, which
-  lacks them.
+- HTML and EPUB have the text line for line, without the pages' places,
+  the black page or the frontispiece's.

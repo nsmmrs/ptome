@@ -10,6 +10,15 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- The showcase's Tristram Shandy is now the first volume as J. Dodsley
+  printed it in London in 1770, page for page and line for line
+  (`tool/tristram_1770`, EPIC-svbzyd): its frontispiece, title page and
+  dedication and its 227 pages read off the Bayerische Staatsbibliothek's
+  copy against Standard Ebooks' text, each page's head, chapters with
+  their initials, running quotes, footnotes, black letter, Yorick's
+  framed epitaph, the black page and the foot's signature and catchword
+  where the printing sets them; all 4,934 of its lines within a point
+  of the scan's.
 - The showcase's New-York Tribune is now the paper's first two pages of
   16 April 1912 page for page and line for line (`tool/tribune_1912`,
   EPIC-b6n77q): every column read off the Library of Congress's scans,
