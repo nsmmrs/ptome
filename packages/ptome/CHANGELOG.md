@@ -10,6 +10,17 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- The showcase's Book of Common Prayer is now the Calendar, Morning
+  Prayer, the Litany and the Psalter as John Baskerville printed them at
+  Cambridge in 1761, page for page and line for line
+  (`tool/bcp_1761`, EPIC-xvws6s): the text read off the Internet
+  Archive's scan of the Bayerische Staatsbibliothek's copy against the
+  units corpus's Prayer Book, each page in its frame of printers'
+  flowers, the psalms' titles and verse numbers, the rubrics and
+  versicles as the octavo sets them, the Calendar's twelve months as
+  ruled tables; 8,346 of its 8,376 lines within a point of the scan's.
+  Its look is in Baskervville, the ANRT's revival of Baskerville's types
+  (`ptome doctor --look bcp` installs it in place of Libre Baskerville).
 - PDF: `role_<role>_clear: true`, a block with the role below every
   block floating to a side beside it (CSS's `clear: both`); a floating
   block's own `margin-top` kept (`base_margin_break: keep`) inside the

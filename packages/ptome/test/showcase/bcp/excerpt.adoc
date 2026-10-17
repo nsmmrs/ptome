@@ -1,14 +1,20 @@
-= The Litany
+= The Book of Common Prayer: two pages of the 1761 printing
 :epub-strict:
 :doctype: book
 :lang: en
 :look: bcp
 :looksdir: {docdir}
-:units: liturgy
+:imagesdir: images
 :notitle:
+:source-lines:
+:shy: &#173;
 
-// Red and black (doc/showcase.md): the Litany's rubric in red, the
-// initial passed on to its first prayer, its petitions each followed by
-// the response its units scheme prints.
+// Two pages as Baskerville's octavo prints them (doc/showcase.md): the
+// Calendar's July, a ruled table on a page of its own, its rules
+// drawn behind it, a cell's rule a leader of rules; and a page of the
+// Psalter in its frame of flowers, psalm cxix.'s parts under their
+// Latin, an initial two lines deep, the catchword on the last line.
 
-include::../../units/corpus/liturgy/bcp-1662/litany.adoc[lines=6..24]
+include::text/pages.adoc[tag=page-29]
+
+include::text/pages.adoc[tag=page-600]
