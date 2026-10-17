@@ -413,7 +413,7 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0}
 table.tableblock>thead>tr>th{border-bottom:var(--ptome-rule-heavy) solid var(--ptome-color-ink-strong)}
 .small-caps{font-variant:small-caps;font-feature-settings:"smcp"}
 @media print{:root{--ptome-font-text:"Libre Caslon Text",serif;--ptome-font-display:"Libre Caslon Text",sans-serif;--ptome-font-code:"M+ 1mn",monospace;--ptome-rule-hairline:0.5pt;--ptome-rule-heavy:1pt}
-body{font-family:var(--ptome-font-text);font-size:8.4pt;line-height:1.18;text-align:justify;-webkit-hyphens:auto;-epub-hyphens:auto;adobe-hyphenate:auto;hyphens:auto;color:var(--ptome-color-ink)}
+body{font-family:var(--ptome-font-text);font-size:8.4pt;line-height:1.18;text-align:justify;-webkit-hyphens:manual;-epub-hyphens:manual;adobe-hyphenate:none;hyphens:manual;color:var(--ptome-color-ink)}
 h1{font-size:16pt}
 h2{font-size:10pt}
 h3{font-size:9.5pt}
@@ -435,7 +435,7 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0;border-color:var
 table.stripes-all>tbody>tr,table.stripes-odd>tbody>tr:nth-of-type(odd),table.stripes-even>tbody>tr:nth-of-type(even){background-color:transparent}
 table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:400;background-color:transparent}
 }
-@page{size:4.3in 7.25in;margin:0.35in 0.3in 0.45in 0.35in}
+@page{size:366pt 640pt;margin:60.45pt 44.8pt 56pt 44.9pt}
 @page :right{margin-left:1.75in;margin-right:1.25in}
 @page :left{margin-left:1.25in;margin-right:1.75in}
 /*! ptome's device rules for HTML (ADR-0023): what the look's values don't say, after Asciidoctor's stylesheet and the look's */
@@ -460,9 +460,12 @@ body{font-variant-emoji:text}
 .mon{font-style:italic}
 table.calendar{font-size:75%}
 table.calendar td,table.calendar th{padding:.05em .25em}
-.title-page .paragraph p,.paragraph.text-center p{text-align:center}
-.almanack p{font-size:300%}
-.year p{font-size:280%;letter-spacing:.3em}
+.title-page .paragraph p,.paragraph[class*="tp-"] p,.paragraph.an-head p,.paragraph.an-sub p,.paragraph.an-centre p,.paragraph.ex-head p,.paragraph.ex-sub p{text-align:center}
+.tp-almanack p{font-size:300%}
+.tp-year p{font-size:280%;letter-spacing:.3em}
+.verse-title p{font-style:italic}
+.right{float:right}
+.spacer,.foot-line,.catchword{display:none}
 </style>
 </head>
 <body class="book">
@@ -477,314 +480,310 @@ table.calendar td,table.calendar th{padding:.05em .25em}
 <div class="sect1 month">
 <h2 id="january"><span class="mon">XI Mon.</span> January hath xxxi days.</h2>
 <div class="sectionbody">
-<div class="verseblock epigram">
-<div class="title">More nice than wise.</div>
-<pre class="content">    Old Batchelor would have a Wife that’s wise,
-    Fair, rich, and young, a Maiden for his Bed;
-    Not proud, nor churlish, but of faultless size;
-    A Country Houswife in the City bred.
-He’s a nice Fool, and long in vain hath staid;
-He should bespeak her, there’s none ready made.</pre>
+<div class="imageblock spacer">
+<div class="content">
+<img src="images/blank.svg" alt="blank">
 </div>
-<table class="tableblock frame-ends grid-cols stretch calendar">
+</div>
+<div class="paragraph verse-title">
+<p><span class="i900">&#160;</span>More nice than wise.</p>
+</div>
+<div class="paragraph verse-line">
+<p><span class="i263">&#160;</span>Old Batchelor would have a Wife that’s wise,
+<span class="i261">&#160;</span>Fair, rich, and young, a Maiden for his Bed;
+<span class="i259">&#160;</span>Not proud, nor churlish, but of faultless size;
+<span class="i266">&#160;</span>A Country Houswife in the City bred.
+<span class="i144">&#160;</span>He’s a nice Fool, and long in vain hath staid;
+<span class="i144">&#160;</span>He should bespeak her, there’s none ready made.</p>
+</div>
+<table class="tableblock frame-ends grid-cols stretch calendar p1175">
 <colgroup>
-<col width="6.0606%">
-<col width="6.0606%">
-<col width="33.3333%">
-<col width="6.0606%">
-<col width="6.0606%">
-<col width="15.1515%">
-<col width="27.2728%">
+<col width="5.861%">
+<col width="5.1736%">
+<col width="33.8639%">
+<col width="5.2821%">
+<col width="5.2098%">
+<col width="13.7843%">
+<col width="30.8253%">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">M. D.</th>
-<th class="tableblock halign-left valign-top">W. D.</th>
-<th class="tableblock halign-left valign-top"><em>Remarkable Days, Aspects, Weather.</em></th>
-<th class="tableblock halign-left valign-top">H. w.</th>
-<th class="tableblock halign-left valign-top">Moon Pl.</th>
-<th class="tableblock halign-left valign-top">Sun <em>rises and sets</em></th>
-<th class="tableblock halign-left valign-top"><em>Lunations, Moon rises &amp; sets.</em></th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Circumcision</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sag.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">R. Sun S.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sag.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">R.</span><span class="sm">Sun</span><span class="ss">S.</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sun rise 7 15</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7 * sou. 7 51 Ev.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 14 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">14</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moon rise 4 5 <em>morn</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Conj. Sun Mer. <em>Windy &amp;</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1h</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cap.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 14 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cap.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">14</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">New Moon 4 day</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Day 9 h. 34 m.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2h</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 13 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">13</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">at 8 Aftern.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sext. Mars Mer. <em>falling wea.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Aqu.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 12 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Aqu.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">12</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Never spare the</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Epiphany □ Mars Ven.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 12 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">12</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Parson’s wine,</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>snow if not too warm</em></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight6"><em>snow if not too warm</em></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Pis.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 11 5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Moon sets 8 13 aft.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Pis.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">11</span><span class="ss">5</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight6">Moon sets 8 13 aft.</span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>about this time.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 10 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">10</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>nor the Baker’s</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sun ent Aqu.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6h</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ari.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 9 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Ari.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">9</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>pudding.</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Days incr. 30 m.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 8 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">8</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">First Quarter.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Windy and</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Tau.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 8 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Tau.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">8</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Visits should be</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7 * south 7 13</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 7 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">7</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>short, like a win-</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>cloudy.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 6 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">6</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moon sets at 2 morn</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2 Sund. aft. Ep.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Gem.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 5 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Gem.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">5</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>ters day, Lest</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 * so. 6 56</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight3">7 * so. 6 56</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 4 5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>you’re too trouble-</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">4</span><span class="ss">5</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight3"><em>you’re too trouble-</em></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Falling wea. windy</em></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight2"><em>Falling wea. windy</em></span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Can.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 3 5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>som hasten away.</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Can.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">3</span><span class="ss">5</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight2"><em>som hasten away.</em></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">17</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">17</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">□ Sun Jup. <em>moderate</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 2 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">2</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moon sets 5 54 mo.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">18</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">18</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>snow or rain.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Leo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 1 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Leo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">1</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Full ● 18 day</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Days 10 hours.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2h</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">19</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7 0 5</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">19</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">7</span><span class="sm">0</span><span class="ss">5</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9 at night.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sext. Sun Sat.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Vir.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 59 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Vir.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">59</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">21</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">21</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Septuagesima</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 58 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">58</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>A house without</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">22</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">22</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7 * south 6 32</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 57 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">57</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>woman &amp; Fire-</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">23</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">23</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>There will be more</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lib.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 56 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Lib.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">56</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moon rises 10 aft.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">24</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">24</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">□ Sat. Ven. <em>cold rain,</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">6h</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 55 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">55</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>light, is like a</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">25</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Days 10 h. 12 m.</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">25</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight2">Days 10 h. 12 m.</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sco.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 54 6</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>body without soul</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sco.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">54</span><span class="ss">6</span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="tight2"><em>body without soul</em></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>or snow.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">14</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 53 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">53</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>or sprite.</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">27</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">27</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">26</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 52 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">26</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">52</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Last Q. 26 day.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">28</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">G</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">28</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">G</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sexages. <em>Clear but</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sag.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 51 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Sag.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">51</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Moon ris. 1 50 mor.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">29</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">29</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>sharp and cold,</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">20</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 50 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">50</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Kings &amp; Bears</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">K. Cha. I. decol.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cap.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 48 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cap.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">48</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>often worry their</em></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">31</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">31</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Frosts.</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">6 47 6</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sh">6</span><span class="sm">47</span><span class="ss">6</span></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>keepers.</em></p></td>
 </tr>
 </tbody>

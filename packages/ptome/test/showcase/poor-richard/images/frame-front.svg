@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="366pt" height="640pt" viewBox="0 0 366 640">
+  <!-- The address's, the anatomy's and the explanation's frame as the
+       facsimile prints them, a little narrower than a month's (measured
+       from the scan: tool/poor_richard_1733). -->
+  <g fill="none" stroke="#1C1C1C">
+    <line x1="43.1" y1="59.2" x2="318.1" y2="59.2" stroke-width="2.5"/>
+    <line x1="43.1" y1="565.95" x2="318.1" y2="565.95" stroke-width="1.6"/>
+    <line x1="44" y1="58" x2="44" y2="566.75" stroke-width="1.8"/>
+    <line x1="317.2" y1="58" x2="317.2" y2="566.75" stroke-width="1.8"/>
+  </g>
+</svg>

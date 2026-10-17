@@ -7,6 +7,9 @@ Richard Saunders
 :looksdir: {docdir}
 :imagesdir: images
 :notitle:
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
 :description: The first Poor Richard’s Almanack, for 1733, transcribed from its facsimile: the title page, Richard Saunders’s address to the reader, the anatomy and the characters of the planets and aspects, and the twelve months, each its verse and its calendar of the days, the Church’s days, the aspects and the weather in their signs, high water, the Moon’s place, the Sun’s rising and setting and the lunations, the proverbs running down the last column.
 include::text/signs.adoc[]
 

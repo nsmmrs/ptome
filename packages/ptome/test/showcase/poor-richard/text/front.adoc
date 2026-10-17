@@ -1,136 +1,291 @@
+// The facsimile's first pages, each line a printed line (:source-lines:)
+// and each block where the facsimile sets it (its own margin-top, fitted
+// to the scan: tool/poor_richard_1733/front.py): the title page, the
+// address to the reader over two pages, the anatomy, and the explanation
+// (the page of the planets' motions between them, the facsimile's 4th,
+// left out, NOTICE.md).
+
 [#title-page.title-page%notitle]
 == Poor Richard, 1733
 
-[.running-title]
+[.tp-running,margin-top=5.91pt]
 _Poor Richard,_ 1733.
 
-[.an]
-AN
+[.rule.tp-rule,margin-top=-4.96pt]
+'''
 
-[.almanack]
+[.tp-an,margin-top=-2.89pt]
+A N
+
+[.tp-almanack,margin-top=-12.92pt]
 Almanack
 
-[.for]
+[.tp-for,margin-top=0.26pt]
 For the Year of Christ
 
-[.year]
+[.tp-year,margin-top=-6.43pt]
 1733,
 
-[.leap]
+[.tp-leap,margin-top=10.52pt]
 Being the First after LEAP YEAR:
 
-[.creation,cols="5,1",frame=none,grid=none]
-|===
-|_And makes since the Creation_ >|Years
-|By the Account of the Eastern _Greeks_ >|7241
-|By the Latin Church, when {sun} ent. {aries} >|6932
-|By the Computation of _W. W._ >|5742
-|By the _Roman_ Chronology >|5682
-|By the _Jewish_ Rabbies >|5494
-|===
+[.tp-creation,margin-top=7.35pt]
+_And makes since the Creation_ [.yr]#Years#
+By the Account of the Eastern _Greeks_ [.yr]#7241#
+By the Latin Church, when {sun} ent. {aries} [.yr]#6932#
+By the Computation of _W. W._ [.yr]#5742#
+By the _Roman_ Chronology [.yr]#5682#
+By the _Jewish_ Rabbies [.yr]#5494#
 
-[.wherein]
+[.tp-wherein,margin-top=6.75pt]
 _Wherein is contained_
 
-[.contents]
-The Lunations, Eclipses, Judgment of the Weather, Spring Tides, Planets Motions & mutual Aspects, Sun and Moon’s Rising and Setting, Length of Days, Time of High Water, Fairs, Courts, and observable Days.
+[.tp-lead,margin-top=-1.57pt]
+The Lunations, Eclipses, Judgment of
 
-[.contents]
-Fitted to the Latitude of Forty Degrees, and a Meridian of Five Hours West from _London,_ but may without sensible Error, serve all the adjacent Places, even from _Newfoundland_ to _South-Carolina._
+[.tp-contents,margin-top=-1.08pt]
+the Weather, Spring Tides, Planets Motions &
+mutual Aspects, Sun and Moon’s Rising and Set{shy}
+ting, Length of Days, Time of High Water,
+Fairs, Courts, and observable Days.
 
-[.by]
+[.tp-lead,margin-top=1.76pt]
+Fitted to the Latitude of Forty Degrees,
+
+[.tp-contents,margin-top=-1.09pt]
+and a Meridian of Five Hours West from _London,_
+but may without sensible Error, serve all the ad{shy}
+jacent Places, even from _Newfoundland_ to _South-{zwsp}_
+_Carolina._
+
+[.rule,margin-top=-2.52pt]
+'''
+
+[.tp-by,margin-top=-7.14pt]
 By _RICHARD SAUNDERS,_ Philom.
 
-[.imprint]
-PHILADELPHIA: +
-Printed and sold by _B. FRANKLIN,_ at the New Printing-Office near the Market.
+[.rule,margin-top=-4.74pt]
+'''
+
+[.tp-city,margin-top=-2.05pt]
+PHILADELPHIA:
+
+[.tp-imprint,margin-top=-0.91pt]
+Printed and sold by _B. FRANKLIN,_ at the New
+Printing-Office near the Market.
 
 <<<
 
-[#courteous-reader%notitle]
+[#courteous-reader.front-page%notitle]
 == Courteous Reader
 
-[.salutation]
+[.salutation,margin-top=2.76pt]
 _Courteous Reader,_
 
-[.dropcap]
-I Might in this place attempt to gain thy Favour, by declaring that I write Almanacks with no other View than that of the publick Good; but in this I should not be sincere; and Men are now a-days too wise to be deceiv’d by Pretences how specious soever. The plain Truth of the Matter is, I am excessive poor, and my Wife, good Woman, is, I tell her, excessive proud; she cannot bear, she says, to sit spinning in her Shift of Tow, while I do nothing but gaze at the Stars; and has threatned more than once to burn all my Books and Rattling-Traps (as she calls my Instruments) if I do not make some profitable Use of them for the good of my Family. The Printer has offer’d me some considerable share of the Profits, and I have thus begun to comply with my Dame’s desire.
+[.dropcap,margin-top=-1.34pt]
+I Might in this place attempt to gain thy Favour,
+by declaring that I write Almanacks with no
+other View than that of the publick Good; but in
+this I should not be sincere; and Men are now a-{zwsp}
+days too wise to be deceiv’d by Pretences how spe{shy}
+cious soever. The plain Truth of the Matter is, I
+am excessive poor, and my Wife, good Woman,
+is, I tell her, excessive proud; she cannot bear, she
+says, to sit spinning in her Shift of Tow, while I
+do nothing but gaze at the Stars; and has threatned
+more than once to burn all my Books and Rattling-{zwsp}
+Traps (as she calls my Instruments) if I do not
+make some profitable Use of them for the good of
+my Family. The Printer has offer’d me some con{shy}
+siderable share of the Profits, and I have thus be{shy}
+gun to comply with my Dame’s desire.
 
-Indeed this Motive would have had Force enough to have made me publish an Almanack many Years since, had it not been overpower’d by my Regard for my good Friend and Fellow-Student, Mr. _Titan Leeds,_ whose Interest I was extreamly unwilling to hurt: But this Obstacle (I am far from speaking it with Pleasure) is soon to be removed, since inexorable Death, who was never known to respect Merit, has already prepared the mortal Dart, the fatal Sister has already extended her destroying Shears, and that ingenious Man must soon be taken from us. He dies, by my Calculation made at his Request, on _Oct._ 17. 1733. 3 ho. 29 m. _P. M._ at the very instant of the {conjunction} of {sun} and {mercury}: By his own Calculation he will survive till the 26th of the same Month. This small difference between us we have disputed whenever we have met these 9 Years past: but at length he is inclinable to agree with my Judgment; Which of us is most exact, a little Time will now determine. As therefore these Provinces may not longer expect to see any of his Performances after this Year, I think my self free to take up the Task, and request a share of the publick Encouragement; which I am the more apt to hope for on this Account, that the Buyer of my Almanack may consider himself, not only as purchasing an useful Utensil, but as performing an Act of Charity, to his
+[.prose,margin-top=0.22pt]
+Indeed this Motive would have had Force enough
+to have made me publish an Almanack many Years
+since, had it not been overpower’d by my Regard
+for my good Friend and Fellow-Student, Mr. _Titan_
+_Leeds,_ whose Interest I was extreamly unwilling to
+hurt: But this Obstacle (I am far from speaking it
+with Pleasure) is soon to be removed, since inexo{shy}
+rable Death, who was never known to respect Me{shy}
+rit, has already prepared the mortal Dart, the fa{shy}
+tal Sister has already extended her destroying Shears,
+and that ingenious Man must soon be taken from us.
+He dies, by my Calculation made at his Request,
+on _Oct._ 17. 1733. 3 ho. 29 m. _P. M._ at the very in{shy}
+stant of the {conjunction} of {sun} and {mercury}: By his own Calcula{shy}
+tion he will survive till the 26th of the same Month.
+This small difference between us we have disputed
+whenever we have met these 9 Years past: but at
+length he is inclinable to agree with my Judgment;
+Which of us is most exact, a little Time will now
+determine. As therefore these Provinces may not
+longer expect to see any of his Performances after
+this Year, I think my self free to take up the Task,
+and request a share of the publick Encouragement;
+which I am the more apt to hope for on this Ac{shy}{ls}
 
-[.signature]
-poor _Friend and Servant_ __R. SAUNDERS.__
+[.catchword,margin-top=-12.83pt]
+count
 
 <<<
 
-[#anatomy.ruled]
-== The Anatomy of Man’s Body as govern’d by the Twelve Constellations.
+[.prose.goes-on,margin-top=4.40pt]
+count, that the Buyer of my Almanack may consi{shy}
+der himself, not only as purchasing an useful Uten{shy}
+sil, but as performing an Act of Charity, to his
+poor _Friend{nbsp}and{nbsp}Servant_ __R.{nbsp}SAUNDERS.__{ls}
 
-[.text-center]
-{aries} _The Head and Face._
+[#anatomy.anatomy%notitle]
+=== The Anatomy of Man’s Body as govern’d by the Twelve Constellations.
 
-image::anatomy.png["A woodcut of a seated man, the twelve signs of the zodiac set about him, each with a line to the part of the body it governs",pdfwidth=55%,align=center]
+[.rule,margin-top=-0.18pt]
+'''
 
-[.anatomy,cols="1,4,1,4",frame=none,grid=none]
-|===
-|{taurus} |_Neck_ |{gemini} |_Arms_
-|{cancer} |_Breast_ |{leo} |_Heart_
-|{virgo} |_Bowels_ |{libra} |_Reins_
-|{scorpio} |_Secrets_ |{sagittarius} |_Thighs_
-|{capricorn} |_Knees_ |{aquarius} |_Legs_
-|===
+[.an-head,margin-top=-7.02pt]
+The Anatomy of Man’s Body as govern’d
 
-[.text-center]
-{pisces} _The Feet._
+[.an-sub,margin-top=-1.50pt]
+by the Twelve Constellations.
 
-[.text-center]
+[.rule,margin-top=-3.63pt]
+'''
+
+[.an-centre,margin-top=-6.36pt]
+{aries}{nbsp}{nbsp} _The Head and Face._
+
+image::anatomy.png["A woodcut of a seated man, the signs of the zodiac about him, each with a line to the part of the body it governs",role=woodcut,pdfwidth=167.8pt,align=center,margin-top=2.5pt]
+
+[.an-label,margin-top=-197.66pt]
+_Neck_ [.right]#_Arms_#
+
+[.an-label,margin-top=22.89pt]
+_Breast_ [.right]#_Heart_#
+
+[.an-label,margin-top=21.99pt]
+_Bowels_ [.right]#_Reins_#
+
+[.an-label,margin-top=21.99pt]
+_Secrets_ [.right]#_Thighs_#
+
+[.an-label,margin-top=21.79pt]
+_Knees_ [.right]#_Legs_#
+
+[.an-centre,margin-top=34.83pt]
+{pisces}{nbsp}{nbsp}{nbsp} _The Feet._
+
+[.an-centre,margin-top=-1.26pt]
 _To know where the Sign is._
 
-First find the Day of the Month, and against the Day you have the Sign or Place of the Moon in the 5th Column. Then finding the Sign here, it shews the part of the Body it governs.
+[.prose,margin-top=-0.82pt]
+First find the Day of the Month, and against the
+Day you have the Sign or Place of the Moon in
+the 5th Column. Then finding the Sign here, it
+shews the part of the Body it governs.
 
-[.text-center.rule-above]
+[.rule,margin-top=-2.40pt]
+'''
+
+[.an-centre,margin-top=-6.32pt]
 _The Names and Characters of the Seven Planets._
 
-[.text-center]
-{saturn} Saturn, {jupiter} Jupiter, {mars} Mars, {sun} Sol, {venus} Venus, {mercury} Mercury, {moon} Luna, {head} Dragons Head and {tail} Tail.
+[.an-list,margin-top=-0.39pt]
+{saturn} Saturn, {jupiter} Jupiter, {mars} Mars, {sun} Sol, {venus} Venus,
+{mercury} Mercury, {moon} Luna, {head} Dragons Head and {tail} Tail.
 
-[.text-center.rule-above]
+[.rule,margin-top=-3.19pt]
+'''
+
+[.an-centre,margin-top=-4.78pt]
 _The Five Aspects._
 
-[.text-center]
-{conjunction} Conjunction, {sextile} Sextile, {opposition} Opposition, {trine} Trine, {quartile} Quartile.
+[.an-list,margin-top=-0.87pt]
+{conjunction} Conjunction, {sextile} Sextile, {opposition} Opposition, {trine} Trine,{ls}
 
-[.text-center.rule-above]
+[.an-centre,margin-top=-1.34pt]
+{quartile} Quartile.
+
+[.rule,margin-top=-2.86pt]
+'''
+
+[.an-centre,margin-top=-3.93pt]
 _Common Notes for the Year_ 1733.
 
-[.notes,cols="4,1,4,1",frame=none,grid=none]
-|===
-|Golden Number >|5 |Cycle of the Sun >|6
-|Epact >|25 |Dominical Letter >|G
-|===
+[.an-notes,margin-top=-2.36pt]
+Golden Number [.nn]#5# [.br]#⎫⎧# Cycle of the Sun [.nr]#6#
+Epact [.nn]#25# [.br]#⎭⎩# Dominical Letter [.nr]#G#
 
 <<<
 
-[#explanation.ruled]
+[#explanation.front-plain%notitle,folio-start=5]
 == Explanation of this ALMANACK.
 
-[.dropcap]
-THE first Column shews the Days of the Month. The second shews the Week day, _Sunday_ Letter being this Year G.
+[.ex-head,margin-top=2.51pt]
+Explanation of this ALMANACK.
 
-The third contains the Days observ’d by the Church, the Aspects of the Planets and Judgment of the Weather; the Length, Increase, and Decrease of Days, the rising and setting of the seven Stars, &c.
+[.dropcap,margin-top=4.74pt]
+THE first Column shews the Days of the Month.
+The second shews the Week day, _Sunday_
+Letter being this Year G.
 
-The fourth is the Time of High Water at _Philadelphia,_ (h) signifies _half an hour after._
+[.prose,margin-top=-0.88pt]
+The third contains the Days observ’d by the Church,
+the Aspects of the Planets and Judgment of the
+Weather; the Length, Increase, and Decrease of
+Days, the rising and setting of the seven Stars, &c.
 
+[.prose,margin-top=-0.51pt]
+The fourth is the Time of High Water at _Phi{shy}_
+_ladelphia,_ (h) signifies _half an hour after._
+
+[.prose]
 The fifth is the Moon’s Place.
 
-The sixth is the Sun’s rising and setting, thus understood; Against the second day of _January_ you see in the 6th Column these Figures 7 14 5, which show that the Sun rises that Day 14 minutes after 7, and sets 14 minutes before 5. I have chose to put the Sun’s rising and setting for every day, rather than the Moon’s, because of its constant Use in setting of Clocks and Watches.
+[.prose,margin-top=-0.45pt]
+The sixth is the Sun’s rising and setting, thus un{shy}
+derstood; Against the second day of _January_ you
+see in the 6th Column these Figures 7 14 5, which
+show that the Sun rises that Day 14 minutes after 7,
+and sets 14 minutes before 5. I have chose to put
+the Sun’s rising and setting for every day, rather than
+the Moon’s, because of its constant Use in setting
+of Clocks and Watches.
 
-In the last Column, with the Changes of the Moon, I have put her rising and setting every five or six Days: If you want to know her rising or setting on a Day or two after That against which I have set it, the common Rule of an hour and half later each day, will be exact enough to direct People in their Travelling, which is the common Use that is made of it.
+[.prose,margin-top=-0.99pt]
+In the last Column, with the Changes of the
+Moon, I have put her rising and setting every five
+or six Days: If you want to know her rising or set{shy}
+ting on a Day or two after That against which I
+have set it, the common Rule of an hour and half
+later each day, will be exact enough to direct Peo{shy}
+ple in their Travelling, which is the common Use
+that is made of it.
 
-[#profitable.ruled]
+[#profitable.ex-sub%notitle]
 === Profitable Observations and Notes.
 
-[.dropcap]
-ALL Measures of Longitude are deduced from Barley corns: Three Barley-corns make an Inch, 12 Inches a Foot, 3 Feet a Yard, 5 Yards & an half one Pole or Perch, 40 Pearches make a Furlong, 8 Furlongs make a Mile, in a Mile are 320 Perches or Poles, 1066 Paces, 1408 Ells, 1760 Yards, 5280 Feet; 63360 Inches; 190080 Barley corns.
+[.rule,margin-top=-1.60pt]
+'''
 
-The circumference of the Earth and Sea jointly is 25036 Miles, and the Diameter 7966 Miles, and its Semidiameter 3983 Miles, according to English Mensuration.
+[.ex-sub,margin-top=-2.08pt]
+Profitable Observations and Notes.
+
+[.dropcap,margin-top=1.81pt]
+ALL Measures of Longitude are deduced from
+Barley corns: Three Barley-corns make an
+Inch, 12 Inches a Foot, 3 Feet a Yard, 5 Yards &
+an half one Pole or Perch, 40 Pearches make a Fur{shy}
+long, 8 Furlongs make a Mile, in a Mile are 320
+Perches or Poles, 1066 Paces, 1408 Ells, 1760
+Yards, 5280 Feet; 63360 Inches; 190080 Barley
+corns.
+
+[.prose,margin-top=-1.44pt]
+The circumference of the Earth and Sea jointly
+is 25036 Miles, and the Diameter 7966 Miles, and
+its Semidiameter 3983 Miles, according to English
+Mensuration.
+
+[.foot-line]
+[.sig]#A 2# [.right]#5#

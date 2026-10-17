@@ -16,8 +16,8 @@ compare:
 
 # Poor Richard's Almanack
 
-The first Poor Richard's Almanack, for 1733, in a look after its
-facsimile: the title page, Richard Saunders's address to the Courteous
+The first Poor Richard's Almanack, for 1733, as its facsimile sets it,
+page for page and line for line (tool/poor_richard_1733): the title page, Richard Saunders's address to the Courteous
 Reader (Franklin's prediction of Titan Leeds's death), the Anatomy of
 Man's Body with its woodcut and the characters of the planets and the
 aspects, the Explanation of the almanac and its Profitable
@@ -34,13 +34,19 @@ among the figures from symbol fonts, counted as the text's own font so
 that a line with a sign is no taller than the others
 (`font_fallback_metrics: base`, FEAT-ml7z96); a tagged PDF whose
 first heading is H1 although the book has no title page of ptome's
-(BUG-ljj0fk) (FEAT-7h00dm).
+(BUG-ljj0fk) (FEAT-7h00dm). Each line is the facsimile's, transcribed
+from its scan (`:source-lines:`); each page in its frame of rules, each
+block where the facsimile sets it, each line of verse set in as far as
+it sets it, each month's rows as far apart as its, the folios where it
+sets them and numbered as it numbers them (1, 2, 3, 5, 7…18), the
+signature A 2 on the explanation's page.
 
 ## Sources
 
 | What | Where | SHA-256 |
 | --- | --- | --- |
-| `text/` | transcribed for the work from the facsimile, Philadelphia, George S. Appleton, [1849?], https://archive.org/details/poorrichardalman00fran (the University of North Carolina's copy; scans n0–n19) | |
+| `text/` | transcribed for the work from the facsimile, Philadelphia, George S. Appleton, [1849?], https://archive.org/details/poorrichardalman00fran (the University of North Carolina's copy; scans n0–n19), line by line; the months made from `tool/poor_richard_1733/months.spec` by `gen.py` | |
+| `images/frame-*.svg`, `images/blank.svg` | the pages' frames, measured from the scan; a spacer | |
 | The anatomy's woodcut, the facsimile's scan | in `fetch.yml` with its SHA-256 | in `fetch.yml` |
 
 The facsimile reproduces the almanac Benjamin Franklin printed for 1733
@@ -98,13 +104,24 @@ test/showcase/poor-richard` installs them. Not committed.
 The facsimile, Philadelphia, George S. Appleton, [1849?], scanned by
 the Internet Archive, https://archive.org/details/poorrichardalman00fran.
 
+The page is the facsimile's as the scan has it, 366 × 640 pt; each
+page's frame, its rules and its blocks where the facsimile sets them
+(tool/poor_richard_1733/README.md).
+
 Where the look departs from it:
 
-- Libre Caslon Text stands in for the facsimile's old-style roman; the
-  signs are Noto's, sans serif, where the facsimile's are its own.
-- The frames of rules around each page are left out, and the headings
-  of the front matter are set at the left, where the facsimile centres
-  them; the woodcut's labels are a table beside its signs.
+- Libre Caslon Text stands in for the facsimile's old-style roman, at
+  the sizes that give its lines' widths; the signs are Noto's, sans
+  serif, where the facsimile's are its own; a few of a calendar's cells
+  are set closer than the face would set them, as the printing's
+  compositor squeezed its own.
+- The scan's paper is warped: a line or a row is set where the scan has
+  it at the frame's left; across the page the scan's bends by up to a
+  few points. The months share one frame, the front pages another,
+  where each printed page's is a point or two taller or shorter.
+- The front matter's headings are hidden headings in the PDF, their
+  lines set as the facsimile sets them.
 - In the excerpt test, the signs are written as their names: none of
   the fonts the tests commit has them.
-- In HTML and EPUB, the signs come from the reader's fonts.
+- In HTML and EPUB, the signs come from the reader's fonts, and the
+  frames, the spacers and the foot's line are left out.

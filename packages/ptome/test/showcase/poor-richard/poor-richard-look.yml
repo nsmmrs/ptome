@@ -1,16 +1,19 @@
-# Poor Richard's Almanack for 1733 after its facsimile (George S.
-# Appleton, Philadelphia, 1849, which follows Franklin's first printing):
-# a small almanac page in an old-style roman, each month a page of its
-# own headed by its number in the almanac's year (March is the first)
-# and its days, in italic and roman between rules, its verse, then the
-# calendar in seven columns ruled apart, the signs of the zodiac, the
-# planets and the aspects among its figures, the proverbs running down
-# the last column in italic; the title page and the front matter in
-# their frames; the page number outside at the foot.
+# Poor Richard's Almanack for 1733 as its facsimile (George S. Appleton,
+# Philadelphia, [1849?], after Franklin's first printing) sets it,
+# measured from the scan (NOTICE.md, tool/poor_richard_1733): a small
+# almanac's 366 × 640 pt page in its frame of rules (the page's
+# background); each month headed by its number in the almanac's year
+# (March is the first) and its days, its verse line for line, each line
+# set in as far as the printing sets it, then the calendar in seven
+# columns as wide as the printing's, ruled apart, a day a row at the
+# month's own pitch, the signs of the zodiac, the planets and the
+# aspects among its figures, the proverbs running down the last column
+# in italic; the title page and the front matter line for line in their
+# frames; the folio under the frame, outside.
 #
 # Libre Caslon Text, Noto Sans Symbols and Noto Sans Symbols 2 for the
-# signs, Noto Serif (`ptome doctor --look poor-richard --looksdir
-# test/showcase/poor-richard`).
+# signs, Noto Serif, Noto Sans Math for the braces (`ptome doctor --look
+# poor-richard --looksdir test/showcase/poor-richard`).
 extends: ptome
 tokens:
   font:
@@ -22,9 +25,9 @@ tokens:
   leading: { print: 1.18, screen: 1.5 }
   measure: { screen: 32em }
   align: { print: justify }
-  hyphenate: { print: true }
+  hyphenate: { print: false }
   color: { ink: '#1C1C1C', link: '#1C1C1C' }
-  page: { size: [4.3in, 7.25in], margin: [0.35in, 0.3in, 0.45in, 0.35in] }
+  page: { size: [366pt, 640pt], margin: [60.45pt, 44.8pt, 56pt, 44.9pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
@@ -32,6 +35,9 @@ styles:
 pdf:
   base:
     color_emoji: false
+    # (Each block's own space above it, fitted to the scan, kept at the
+    # top of a page too.)
+    margin_break: keep
   font:
     fallbacks: [Noto Sans Symbols, Noto Sans Symbols 2, Noto Serif]
     fallback_metrics: base
@@ -40,12 +46,13 @@ pdf:
     chapter_break_before: auto
     h2:
       text_align: left
-      font_size: 10
+      font_size: 12.3
+      line_height: 1
       margin_top: 0
-      margin_bottom: 4
-      border_width: [2, 0, 0.5, 0]
+      margin_bottom: 0
+      border_width: [0, 0, 0.6, 0]
       border_color: '1C1C1C'
-      padding: [3, 0, 3, 0]
+      padding: [4.4, 4, 5, 4]
     h3:
       text_align: center
       font_size: 9.5
@@ -55,27 +62,134 @@ pdf:
     role:
       ruled:
         text_align: center
+      # (Each page in its frame, as the facsimile's.)
+      month:
+        page_background_image: image:images/frame-month.svg[]
+        page_margin: [60.45, 44.8, 56, 44.9]
+        footer_on_openers: true
+      front-page:
+        page_background_image: image:images/frame-front.svg[]
+        page_margin: [60.45, 49.7, 56, 44.9]
+        footer_on_openers: true
+      # (The explanation's page: its folio with its signature at its foot,
+      # set with the text, the 5th page's on the left of the spread.)
+      front-plain:
+        page_background_image: image:images/frame-front.svg[]
+        page_margin: [60.45, 49.7, 56, 44.9]
+        page_running_content: none
+      title-page:
+        page_background_image: image:images/frame-title.svg[]
+        page_margin: [55.8, 45.2, 56, 45.2]
+        footer_on_openers: true
   prose:
     margin_bottom: 0
     text_indent: 1em
   role:
-    mon: { font_style: italic }
+    mon: { font_style: italic, width: 63 }
+    # (The Sun's rising and setting: the hour, the minutes and the hour
+    # of its setting where the printing sets them in the column.)
+    sh: { width: 9, width_align: left }
+    sm: { width: 17.2, width_align: center }
+    ss: { width: 9, width_align: right }
+    # (A month's verse, its title and its lines, each line set in as far
+    # as the printing sets it, its own `i<tenths>` span: gen.py's.)
+    spacer: { margin_top: 0, margin_bottom: 0 }
+    # (A calendar's line set closer where the face is wider than the
+    # printing's and would take two lines: wraps.py's.)
+    tight1: { letter_spacing: -0.1 }
+    tight2: { letter_spacing: -0.2 }
+    tight3: { letter_spacing: -0.3 }
+    tight4: { letter_spacing: -0.4 }
+    tight5: { letter_spacing: -0.5 }
+    tight6: { letter_spacing: -0.6 }
+    verse-title: { text_align: left, text_indent: 0, font_size: 10.25, font_style: italic, line_pitch: 11.77pt }
+    # (The spans: gen.py's.)
+    i67: { width: 6.7pt }
+    i72: { width: 7.2pt }
+    i79: { width: 7.9pt }
+    i81: { width: 8.1pt }
+    i83: { width: 8.3pt }
+    i85: { width: 8.5pt }
+    i86: { width: 8.6pt }
+    i88: { width: 8.8pt }
+    i90: { width: 9.0pt }
+    i92: { width: 9.2pt }
+    i94: { width: 9.4pt }
+    i130: { width: 13.0pt }
+    i139: { width: 13.9pt }
+    i140: { width: 14.0pt }
+    i142: { width: 14.2pt }
+    i144: { width: 14.4pt }
+    i146: { width: 14.6pt }
+    i148: { width: 14.8pt }
+    i149: { width: 14.9pt }
+    i153: { width: 15.3pt }
+    i155: { width: 15.5pt }
+    i157: { width: 15.7pt }
+    i158: { width: 15.8pt }
+    i166: { width: 16.6pt }
+    i182: { width: 18.2pt }
+    i245: { width: 24.5pt }
+    i248: { width: 24.8pt }
+    i256: { width: 25.6pt }
+    i259: { width: 25.9pt }
+    i261: { width: 26.1pt }
+    i263: { width: 26.3pt }
+    i265: { width: 26.5pt }
+    i266: { width: 26.6pt }
+    i268: { width: 26.8pt }
+    i270: { width: 27.0pt }
+    i275: { width: 27.5pt }
+    i283: { width: 28.3pt }
+    i391: { width: 39.1pt }
+    i396: { width: 39.6pt }
+    i900: { width: 90.0pt }
+    i1080: { width: 108.0pt }
+    # (The spans end.)
+    verse-line: { text_align: left, text_indent: 0, font_size: 10.25, line_pitch: 11.77pt }
     month: { text_align: left }
-    running-title: { text_align: center, font_size: 12, text_indent: 0, margin_bottom: 4 }
-    an: { text_align: center, character_spacing: 3, font_size: 9, text_indent: 0 }
-    almanack: { text_align: center, font_size: 30, text_indent: 0, margin_bottom: 6 }
-    for: { text_align: center, text_indent: 0 }
-    year: { text_align: center, font_size: 28, character_spacing: 8, text_indent: 0, margin_bottom: 6 }
-    leap: { text_align: center, text_indent: 0, margin_bottom: 4 }
-    wherein: { text_align: center, text_indent: 0 }
-    contents: { text_indent: 0, margin_bottom: 3 }
-    by: { text_align: center, text_indent: 0, margin_bottom: 6 }
-    imprint: { text_align: center, text_indent: 0 }
-    salutation: { text_indent: 1em }
-    signature: { text_indent: 0 }
-    dropcap: { drop_lines: 2, text_indent: 0 }
-    text-center: { text_indent: 0 }
-    rule-above: { margin_top: 4 }
+    # (The front pages, each line where the printing sets it: the title
+    # page's lines in their sizes; the address, the anatomy and the
+    # explanation in the body's type, justified; tool/poor_richard_1733's
+    # front.py fits each block's place.)
+    tp-running: { text_align: center, font_size: 22, text_indent: 0, line_height: 1 }
+    tp-an: { text_align: center, font_size: 16, letter_spacing: 3, text_indent: 0, line_height: 1 }
+    tp-almanack: { text_align: center, font_size: 58, text_indent: 0, line_height: 1 }
+    tp-for: { text_align: center, font_size: 13.8, text_indent: 0, line_height: 1 }
+    tp-year: { text_align: center, font_size: 50, letter_spacing: 11.6, text_indent: 0, line_height: 1, margin_left: 19.4 }
+    tp-leap: { text_align: center, font_size: 13.5, letter_spacing: 1.15, text_indent: 0, line_height: 1 }
+    tp-creation: { text_align: left, font_size: 11, text_indent: 0, line_pitch: 11.7pt, margin_left: 6, margin_right: 3 }
+    yr: { flush: right }
+    tp-wherein: { text_align: center, font_size: 11.4, text_indent: 0, line_height: 1 }
+    tp-lead: { text_align: justify, text_align_last: justify, font_size: 13.5, text_indent: 0, line_height: 1 }
+    tp-contents: { text_align: justify, font_size: 11, text_indent: 0, line_pitch: 11.7pt, margin_left: 10 }
+    tp-by: { text_align: center, font_size: 14.6, text_indent: 0, line_height: 1 }
+    tp-city: { text_align: center, font_size: 11, letter_spacing: 3.1, text_indent: 0, line_height: 1 }
+    tp-imprint: { text_align: center, font_size: 11, text_indent: 0, line_pitch: 11.7pt }
+    salutation: { font_size: 12, text_indent: 2, line_height: 1 }
+    dropcap: { drop_lines: 2, text_indent: 0, font_size: 10.25, line_pitch: 11.9pt }
+    prose: { font_size: 10.25, text_indent: 17, line_pitch: 11.9pt }
+    goes-on: { text_indent: 0 }
+    catchword: { text_align: right, font_size: 10.25, text_indent: 0, line_height: 1 }
+    an-head: { text_align: center, font_size: 13.5, text_indent: 0, line_height: 1 }
+    an-sub: { text_align: center, font_size: 10.2, text_indent: 0, line_height: 1 }
+    an-centre: { text_align: center, font_size: 10.5, text_indent: 0, line_height: 1 }
+    an-label: { text_align: left, font_size: 10.25, text_indent: 0, line_height: 1, margin_left: 15.5, margin_right: 19 }
+    right: { flush: right }
+    an-list: { text_align: justify, font_size: 10.25, text_indent: 0, line_pitch: 11.9pt }
+    an-notes: { text_align: left, font_size: 10.25, text_indent: 0, line_pitch: 11.9pt }
+    nn: { width: 80, width_align: right }
+    br: { width: 22, width_align: center, font_family: Noto Sans Math }
+    nr: { width: 25, width_align: right }
+    ex-head: { text_align: center, font_size: 14.2, text_indent: 0, line_height: 1 }
+    ex-sub: { text_align: center, font_size: 13.1, text_indent: 0, line_height: 1 }
+    foot-line: { text_align: left, font_size: 8.5, text_indent: 0, line_height: 1 }
+    sig: { width: 150, width_align: right }
+  thematic_break:
+    # (The rules across a page, the printing's.)
+    role:
+      rule: { margin_top: 0, margin_bottom: 0, border_width: 0.6, border_color: '1C1C1C' }
+      tp-rule: { width: 226, border_width: 1.2 }
   verse:
     border_left_width: 0
     padding: [0, 0, 0, 12]
@@ -86,25 +200,45 @@ pdf:
     font_style: italic
     font_size: 8.4
   table:
-    font_size: 7
-    cell_padding: [0.5, 1.5, 0.5, 1.5]
+    # (The calendar as the facsimile sets it: its columns as wide as the
+    # printing's, a rule above it and between its columns, a day a line,
+    # the lines as far apart as the printing's.)
+    font_size: 10.3
+    line_height: 0.933
+    cell_padding: [0, 0.8, 0, 0.8]
     border_color: '1C1C1C'
     grid_color: '1C1C1C'
-    border_width: 0.75
-    grid_width: 0.5
+    border_width: [0.6, 0, 0, 0]
+    grid_width: 0.6
     head:
       font_style: normal
-      font_size: 6.2
+      font_size: 10.3
       background_color: transparent
-      border_bottom_width: 0.5
+      border_bottom_width: 0.6
     body:
       stripe_background_color: transparent
+    role:
+      # (Each month's rows as far apart as the printing's.)
+      # (The pitches: gen.py's.)
+      p1175: { line_height: 0.9120 }
+      p1177: { line_height: 0.9135 }
+      p1179: { line_height: 0.9151 }
+      p1181: { line_height: 0.9166 }
+      p1183: { line_height: 0.9182 }
+      p1184: { line_height: 0.9190 }
+      p1188: { line_height: 0.9221 }
+      p1190: { line_height: 0.9236 }
+      # (The pitches end.)
   title_page:
     text_align: center
   footer:
-    height: 0.4in
+    # (The folio under the frame, a little in from its outer corner, as
+    # the facsimile sets it.)
+    height: 56
+    vertical_align: top
+    padding: [-16.2, 34, 0, 30]
     border_width: 0
-    font_size: 7
+    font_size: 8.5
     recto: { left: { content: '' }, center: { content: '' }, right: { content: '{page-number}' } }
     verso: { left: { content: '{page-number}' }, center: { content: '' }, right: { content: '' } }
 webfonts:
@@ -115,12 +249,17 @@ css: |
   .mon{font-style:italic}
   table.calendar{font-size:75%}
   table.calendar td,table.calendar th{padding:.05em .25em}
-  .title-page .paragraph p,.paragraph.text-center p{text-align:center}
-  .almanack p{font-size:300%}
-  .year p{font-size:280%;letter-spacing:.3em}
+  .title-page .paragraph p,.paragraph[class*="tp-"] p,.paragraph.an-head p,.paragraph.an-sub p,.paragraph.an-centre p,.paragraph.ex-head p,.paragraph.ex-sub p{text-align:center}
+  .tp-almanack p{font-size:300%}
+  .tp-year p{font-size:280%;letter-spacing:.3em}
+  .verse-title p{font-style:italic}
+  .right{float:right}
+  .spacer,.foot-line,.catchword{display:none}
 epub-css: |
   body{font-variant-emoji:text}
   .mon{font-style:italic}
   table.calendar{font-size:75%}
-  .almanack p{font-size:250%;text-align:center}
-  .year p{font-size:230%;text-align:center}
+  .tp-almanack p{font-size:250%;text-align:center}
+  .tp-year p{font-size:230%;text-align:center}
+  .verse-title p{font-style:italic}
+  .spacer,.foot-line,.catchword{display:none}

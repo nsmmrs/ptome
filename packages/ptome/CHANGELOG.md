@@ -10,6 +10,13 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- The showcase's Poor Richard's Almanack is now set as its facsimile
+  sets the 1733 almanac, page for page and line for line
+  (`tool/poor_richard_1733`, EPIC-53ktcp): each page in its frame of
+  rules, the months' verses with their lines set in and their calendars
+  in the printing's columns at each month's own pitch, the title page,
+  the address and the anatomy line for line, the folios numbered as the
+  printing numbers them (1, 2, 3, 5, 7…18).
 - PDF: a run set flush right (`role_<role>_flush: right`) that starts a
   line of its own in the source, after a line separator or a hard break,
   keeps that break: an author on a line of its own under a quotation

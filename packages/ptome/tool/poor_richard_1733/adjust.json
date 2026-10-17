@@ -1,0 +1,299 @@
+{
+"april/margin/table": 22.28,
+"april/margin/verse": 0.45,
+"april/pitch": 11.808,
+"april/verse/1": {
+"in": 14.94
+},
+"april/verse/2": {
+"in": 14.94
+},
+"april/verse/3": {
+"in": 14.76
+},
+"april/verse/4": {
+"in": 15.48
+},
+"april/verse/5": {
+"in": 26.28
+},
+"april/verse/6": {
+"in": 26.1
+},
+"august/margin/table": 8.06,
+"august/margin/verse": -10.23,
+"august/pitch": 11.898,
+"august/verse/1": {
+"in": 14.04
+},
+"august/verse/2": {
+"in": 14.22
+},
+"august/verse/3": {
+"in": 14.4
+},
+"august/verse/4": {
+"in": 14.4
+},
+"august/verse/5": {
+"in": 13.86
+},
+"august/verse/6": {
+"in": 14.22
+},
+"august/verse/7": {
+"in": 14.22
+},
+"august/verse/8": {
+"in": 14.22
+},
+"december/margin/table": 19.66,
+"december/margin/verse": 0.73,
+"december/pitch": 11.88,
+"december/verse/1": {
+"in": 26.28
+},
+"december/verse/2": {
+"in": 26.82
+},
+"december/verse/3": {
+"in": 26.82
+},
+"december/verse/4": {
+"in": 26.82
+},
+"december/verse/5": {
+"in": 26.46
+},
+"december/verse/6": {
+"in": 25.92
+},
+"february/margin/table": 8.71,
+"february/margin/verse": -10.75,
+"february/pitch": 11.844,
+"february/verse/1": {
+"in": 15.84
+},
+"february/verse/2": {
+"in": 108.0
+},
+"february/verse/3": {
+"in": 15.66
+},
+"february/verse/4": {
+"in": 27.54
+},
+"february/verse/5": {
+"in": 16.56
+},
+"february/verse/6": {
+"in": 28.26
+},
+"february/verse/7": {
+"in": 39.6
+},
+"february/verse/8": {
+"in": 39.06
+},
+"january/margin/table": 7.38,
+"january/margin/verse": 0.36,
+"january/pitch": 11.754,
+"january/verse/1": {
+"in": 90.0
+},
+"january/verse/2": {
+"in": 26.28
+},
+"january/verse/3": {
+"in": 26.1
+},
+"january/verse/4": {
+"in": 25.92
+},
+"january/verse/5": {
+"in": 26.64
+},
+"january/verse/6": {
+"in": 14.4
+},
+"january/verse/7": {
+"in": 14.4
+},
+"july/margin/table": 6.81,
+"july/margin/verse": -11.16,
+"july/pitch": 11.79,
+"july/verse/1": {
+"in": 14.94
+},
+"july/verse/2": {
+"in": 14.94
+},
+"july/verse/3": {
+"in": 14.58
+},
+"july/verse/4": {
+"in": 14.58
+},
+"july/verse/5": {
+"in": 14.4
+},
+"july/verse/6": {
+"in": 14.58
+},
+"july/verse/7": {
+"in": 14.94
+},
+"july/verse/8": {
+"in": 14.4
+},
+"june/margin/table": 10.5,
+"june/margin/verse": -11.47,
+"june/pitch": 11.88,
+"june/verse/1": {
+"in": 15.3
+},
+"june/verse/2": {
+"in": 14.58
+},
+"june/verse/3": {
+"in": 14.94
+},
+"june/verse/4": {
+"in": 14.94
+},
+"june/verse/5": {
+"in": 14.4
+},
+"june/verse/6": {
+"in": 14.76
+},
+"june/verse/7": {
+"in": 14.58
+},
+"june/verse/8": {
+"in": 14.58
+},
+"march/margin/table": 19.27,
+"march/margin/verse": -0.24,
+"march/pitch": 11.754,
+"march/verse/1": {
+"in": 26.1
+},
+"march/verse/2": {
+"in": 26.1
+},
+"march/verse/3": {
+"in": 25.92
+},
+"march/verse/4": {
+"in": 24.48
+},
+"march/verse/5": {
+"in": 14.4
+},
+"march/verse/6": {
+"in": 14.22
+},
+"may/margin/table": 18.93,
+"may/margin/verse": 0.52,
+"may/pitch": 11.772,
+"may/verse/1": {
+"in": 8.28
+},
+"may/verse/2": {
+"in": 8.1
+},
+"may/verse/3": {
+"in": 7.92
+},
+"may/verse/4": {
+"in": 8.64
+},
+"may/verse/5": {
+"in": 18.18
+},
+"may/verse/6": {
+"in": 18.18
+},
+"november/margin/table": 9.76,
+"november/margin/verse": -10.79,
+"november/pitch": 11.808,
+"november/verse/1": {
+"in": 8.82
+},
+"november/verse/2": {
+"in": 9.0
+},
+"november/verse/3": {
+"in": 7.2
+},
+"november/verse/4": {
+"in": 8.46
+},
+"november/verse/5": {
+"in": 9.36
+},
+"november/verse/6": {
+"in": 9.18
+},
+"november/verse/7": {
+"in": 8.46
+},
+"november/verse/8": {
+"in": 6.66
+},
+"october/margin/table": 8.09,
+"october/margin/verse": -11.07,
+"october/pitch": 11.826,
+"october/verse/1": {
+"in": 25.56
+},
+"october/verse/2": {
+"in": 14.76
+},
+"october/verse/3": {
+"in": 12.96
+},
+"october/verse/4": {
+"in": 15.48
+},
+"october/verse/5": {
+"in": 14.76
+},
+"october/verse/6": {
+"in": 14.22
+},
+"october/verse/7": {
+"in": 12.96
+},
+"october/verse/8": {
+"in": 14.76
+},
+"september/margin/table": 9.97,
+"september/margin/verse": -11.87,
+"september/pitch": 11.808,
+"september/verse/1": {
+"in": 26.64
+},
+"september/verse/2": {
+"in": 26.46
+},
+"september/verse/3": {
+"in": 26.46
+},
+"september/verse/4": {
+"in": 26.1
+},
+"september/verse/5": {
+"in": 26.46
+},
+"september/verse/6": {
+"in": 24.84
+},
+"september/verse/7": {
+"in": 26.28
+},
+"september/verse/8": {
+"in": 27.0
+}
+}

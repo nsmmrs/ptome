@@ -4,7 +4,11 @@
 :lang: en
 :look: poor-richard
 :looksdir: {docdir}
+:imagesdir: images
 :notitle:
+:source-lines:
+:shy: &#173;
+:ls: &#8232;
 // The signs written as their names: the fonts the tests commit have
 // none of them (the whole work, built in its faces, sets their
 // characters from text/signs.adoc).
@@ -36,8 +40,10 @@
 :trine: Trine
 :full: ●
 
-// An almanac's month (doc/showcase.md): January, its verse and its
-// calendar in seven columns ruled apart, a line to each day, the
-// proverbs running down the last column.
+// An almanac's month (doc/showcase.md), January as the facsimile sets
+// it: its page in its frame, its heading, its verse line for line, each
+// line set in as far as the printing sets it, and its calendar in seven
+// columns ruled apart, a line to each day, its rows as far apart as the
+// printing's, the proverbs running down the last column.
 
 include::text/01-january.adoc[]

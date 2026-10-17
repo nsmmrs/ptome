@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="366pt" height="640pt" viewBox="0 0 366 640">
+  <!-- The title page's frame as the facsimile prints it: a heavy rule
+       about the page (measured from the scan: tool/poor_richard_1733). -->
+  <g fill="none" stroke="#1C1C1C">
+    <line x1="42.2" y1="54.3" x2="323.9" y2="54.3" stroke-width="3"/>
+    <line x1="42.2" y1="560.4" x2="323.9" y2="560.4" stroke-width="3"/>
+    <line x1="43.6" y1="52.8" x2="43.6" y2="561.9" stroke-width="2.8"/>
+    <line x1="322.5" y1="52.8" x2="322.5" y2="561.9" stroke-width="2.8"/>
+  </g>
+</svg>
