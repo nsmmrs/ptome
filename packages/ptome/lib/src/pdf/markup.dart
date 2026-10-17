@@ -298,6 +298,10 @@ final class Fragment {
   /// Whether [textEmphasis] goes under the characters.
   bool textEmphasisUnder = false;
 
+  /// How far [textEmphasis]'s middle stands from the baseline, in points
+  /// (`text_emphasis_offset`), or null for just past the em box.
+  num? textEmphasisOffset;
+
   /// Whether the text goes flush right at the end of its line, or on a
   /// line of its own (`role_<role>_flush: right`, modern engine).
   bool flushRight = false;
@@ -396,6 +400,7 @@ final class Fragment {
     ..textDecorationWidth = textDecorationWidth
     ..textEmphasis = textEmphasis
     ..textEmphasisUnder = textEmphasisUnder
+    ..textEmphasisOffset = textEmphasisOffset
     ..flushRight = flushRight
     ..leader = leader
     ..turnover = turnover
@@ -456,6 +461,7 @@ final class FragmentSettings {
     this.textDecorationWidth,
     this.textEmphasis,
     this.textEmphasisUnder,
+    this.textEmphasisOffset,
     this.textTransform,
     this.align,
     this.callbacks,
@@ -506,6 +512,9 @@ final class FragmentSettings {
 
   /// Whether the emphasis mark goes under the characters.
   bool? textEmphasisUnder;
+
+  /// How far the emphasis mark stands from the baseline.
+  num? textEmphasisOffset;
 
   /// Whether the text goes flush right at the end of its line.
   bool? flushRight;
@@ -569,6 +578,9 @@ final class FragmentSettings {
     if (textEmphasis != null) fragment.textEmphasis = textEmphasis;
     if (textEmphasisUnder != null) {
       fragment.textEmphasisUnder = textEmphasisUnder!;
+    }
+    if (textEmphasisOffset != null) {
+      fragment.textEmphasisOffset = textEmphasisOffset;
     }
     if (flushRight != null) fragment.flushRight = flushRight!;
     if (leader != null) fragment.leader = leader;
@@ -756,6 +768,8 @@ final class MarkupTransform {
           target.textEmphasis = emphasisMark(theme.string(key));
         case 'text_emphasis_position':
           target.textEmphasisUnder = theme.string(key) == 'under';
+        case 'text_emphasis_offset':
+          target.textEmphasisOffset = theme.number(key);
         case 'flush':
           target.flushRight = theme.string(key) == 'right';
         case 'leader':

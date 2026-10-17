@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logarithms: three groups of five rows</title>
+<title>Table of the Logarithms of the Natural Numbers: page 6</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CNoto+Sans+Mono:400,700%7COld+Standard+TT:400,400italic,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -403,7 +403,7 @@ div.page-break{display:block;-moz-column-break-after:page;break-after:page}
 /*! look babbage (ADR-0023, doc/looks.md) */
 :root{--ptome-font-text:"Old Standard TT",serif;--ptome-font-display:"Old Standard TT",serif;--ptome-color-ink:#1A1A1A;--ptome-color-ink-strong:#191919;--ptome-color-ink-soft:#444444;--ptome-color-muted:#555555;--ptome-color-link:#1A1A1A;--ptome-color-tint:#F7F7F8;--ptome-color-rule:#DDDDDD;--ptome-color-rule-soft:#CCCCCC;--ptome-rule-hairline:1px;--ptome-rule-heavy:1px}
 @media screen{#header,#content,#footnotes,#footer,.multipage-nav{max-width:40em}}
-body{font-family:var(--ptome-font-text);font-size:18px;line-height:1.6;color:var(--ptome-color-ink)}
+body{font-family:var(--ptome-font-text);font-size:18px;line-height:1.5;color:var(--ptome-color-ink)}
 a{color:var(--ptome-color-ink)}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink)}
 #header>h1:first-child{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink)}
@@ -413,13 +413,13 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0}
 table.tableblock>thead>tr>th{border-bottom:var(--ptome-rule-heavy) solid var(--ptome-color-ink-strong)}
 .small-caps{font-variant:small-caps;font-feature-settings:"smcp"}
 @media print{:root{--ptome-font-display:"Old Standard TT",sans-serif;--ptome-font-code:"M+ 1mn",monospace;--ptome-rule-hairline:0.5pt;--ptome-rule-heavy:1pt}
-body{font-family:var(--ptome-font-text);font-size:10.5pt;line-height:1.35;text-align:justify;color:var(--ptome-color-ink)}
-h1{font-size:20pt}
-h2{font-size:13pt}
-h3{font-size:11pt}
-h4{font-size:10.5pt}
-h5{font-size:10.5pt}
-h6{font-size:10.5pt}
+body{font-family:var(--ptome-font-text);font-size:8pt;line-height:1.2;text-align:start;-webkit-hyphens:manual;-epub-hyphens:manual;adobe-hyphenate:none;hyphens:manual;color:var(--ptome-color-ink)}
+h1{font-size:12pt}
+h2{font-size:10pt}
+h3{font-size:9pt}
+h4{font-size:8pt}
+h5{font-size:8pt}
+h6{font-size:8pt}
 code,kbd,pre,samp{font-family:var(--ptome-font-code)}
 .paragraph>p{margin-bottom:6pt}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:var(--ptome-font-display);font-weight:400;color:var(--ptome-color-ink);line-height:1.2;margin-top:16pt;margin-bottom:6pt;break-after:avoid;page-break-after:avoid}
@@ -435,7 +435,7 @@ table.grid-all>*>tr>*{border-width:var(--ptome-rule-hairline) 0;border-color:var
 table.stripes-all>tbody>tr,table.stripes-odd>tbody>tr:nth-of-type(odd),table.stripes-even>tbody>tr:nth-of-type(even){background-color:transparent}
 table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:400;background-color:transparent}
 }
-@page{size:6.25in 10in;margin:0.85in 0.6in 0.7in 0.6in}
+@page{size:416.3pt 708.7pt;margin:40pt 5.8pt 20pt 36.4pt}
 @page :right{margin-left:1.75in;margin-right:1.25in}
 @page :left{margin-left:1.25in;margin-right:1.75in}
 /*! ptome's device rules for HTML (ADR-0023): what the look's values don't say, after Asciidoctor's stylesheet and the look's */
@@ -456,261 +456,1336 @@ table.tableblock>thead>tr>th{font-family:var(--ptome-font-display);font-weight:4
 #content .paragraph>p,#content li>p,#content dd>p,#content .quoteblock blockquote p,#content .admonitionblock td.content>.paragraph>p{-webkit-hyphens:auto;hyphens:auto;text-wrap:pretty;font-variant-numeric:oldstyle-nums proportional-nums;hanging-punctuation:first allow-end last}
 h1,h2,h3,h4,h5,h6,#toctitle,.sidebarblock>.content>.title{text-wrap:balance}
 .nohyphens #content p,.nohyphens #content li,.nohyphens #content dd{-webkit-hyphens:manual;hyphens:manual}
-body{background:#f2e8cf}
-table.logarithms{font-variant-numeric:tabular-nums lining-nums;font-size:85%}
-table.logarithms td,table.logarithms th{text-align:center;padding:.1em .3em}
-table.logarithms tbody tr:nth-child(5n) td{padding-bottom:.6em}
-.turn{font-style:italic}
+table.logs{font-variant-numeric:tabular-nums lining-nums;font-weight:bold}
+table.logs td,table.logs th{text-align:right;padding:.05em .3em}
+table.logs tbody tr:nth-child(5n) td{padding-bottom:.5em}
+.num{font-size:115%}
+.arc{font-size:65%}
+.sf{font-size:70%}
 </style>
 </head>
 <body class="book">
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_logarithms">Logarithms</h2>
+<div class="sect1 p6 verso">
+<h2 id="_page_6">Page 6</h2>
 <div class="sectionbody">
-<table class="tableblock frame-ends grid-cols stretch logarithms">
+<div class="paragraph loghead verso">
+<p>Log. 000.&#160;&#160; <span class="logn">N. 100.</span></p>
+</div>
+<table class="tableblock frame-none grid-none stretch logs">
 <colgroup>
-<col width="8%">
-<col width="13.3333%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="8%">
-<col width="6.6667%">
+<col width="5.2659%">
+<col width="5.3194%">
+<col width="6.8965%">
+<col width="10.0267%">
+<col width="6.7361%">
+<col width="6.7174%">
+<col width="6.7281%">
+<col width="6.7361%">
+<col width="6.5089%">
+<col width="6.7495%">
+<col width="6.7522%">
+<col width="6.7121%">
+<col width="6.8083%">
+<col width="6.1748%">
+<col width="5.868%">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-center valign-top">N.</th>
-<th class="tableblock halign-center valign-top">0</th>
-<th class="tableblock halign-center valign-top">1</th>
-<th class="tableblock halign-center valign-top">2</th>
-<th class="tableblock halign-center valign-top">3</th>
-<th class="tableblock halign-center valign-top">4</th>
-<th class="tableblock halign-center valign-top">5</th>
-<th class="tableblock halign-center valign-top">6</th>
-<th class="tableblock halign-center valign-top">7</th>
-<th class="tableblock halign-center valign-top">8</th>
-<th class="tableblock halign-center valign-top">9</th>
-<th class="tableblock halign-center valign-top">D.</th>
+<th class="tableblock halign-center valign-bottom"><span class="archd">0°</span><br>
+<span class="archd">16′</span></th>
+<th class="tableblock halign-center valign-bottom"><span class="archd">2°</span><br>
+<span class="archd">46′</span></th>
+<th class="tableblock halign-center valign-bottom">Num.</th>
+<th class="tableblock halign-right valign-bottom">0<span class="hs138">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">1<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">2<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">3<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">4<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">5<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">6<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">7<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">8<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-right valign-bottom">9<span class="hs62">&#160;</span></th>
+<th class="tableblock halign-center valign-bottom" colspan="2">Diff.</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1000"></a>1000</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">000 0000</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0434</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0869</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1303</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1737</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2171</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2605</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3039</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3473</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3907</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">434</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40″</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">1000</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0000000</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0434</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">086<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">130<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">173<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">217<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">260<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">303<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">347<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">390<span class="up">7</span></p></td>
+<td class="tableblock halign-left valign-top" rowspan="53"><div class="content"><div class="paragraph dl">
+<p>433</p>
+</div>
+<table class="tableblock frame-none grid-cols stretch partsl ends">
+<colgroup>
+<col width="34%">
+<col width="66%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">43</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1001"></a>1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">000 4341</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4775</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5208</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5642</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6076</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6510</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6943</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7377</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7810</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8244</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">434</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">87</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1002"></a>2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">000 8677</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9111</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9544</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9977</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0411</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0844</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1277</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1710</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">2143</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">2576</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">434</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">130</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1003"></a>3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">001 3009</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3442</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3875</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4308</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4741</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5174</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5607</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6039</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6472</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6905</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">433</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">173</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1004"></a>4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">001 7337</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7770</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8202</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8635</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9067</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9499</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9932</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0364</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0796</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1228</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">433</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">217</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1005"></a>5</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">002 1661</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2093</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2525</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2957</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3389</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3821</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4253</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4685</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5116</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5548</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">432</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">260</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1006"></a>6</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">002 5980</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6411</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6843</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7275</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7706</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8138</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8569</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9001</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9432</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9863</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">431</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">303</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1007"></a>7</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">003 0295</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0726</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1157</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1588</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2019</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2451</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2882</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3313</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3744</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4174</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">431</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">346</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1008"></a>8</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">003 4605</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5036</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5467</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5898</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6328</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6759</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7190</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7620</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8051</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8481</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">431</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">390</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dla">
+<p>430</p>
+</div>
+<div class="paragraph dl">
+<p>429</p>
+</div>
+<table class="tableblock frame-none grid-cols stretch partsl ends">
+<colgroup>
+<col width="34%">
+<col width="66%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">43</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1009"></a>9</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">003 8912</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9342</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9772</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0203</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0633</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1063</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1493</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1924</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">2354</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">2784</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">430</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">86</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1010"></a>1010</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">004 3214</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3644</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4074</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4504</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4933</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5363</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5793</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6223</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6652</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7082</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">430</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">129</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1011"></a>1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">004 7512</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7941</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8371</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8800</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9229</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9659</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0088</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0517</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">0947</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="turn">1376</span></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">429</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">172</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1012"></a>2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">005 1805</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2234</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2663</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3092</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3521</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3950</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4379</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4808</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5237</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">5666</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">429</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">215</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1013"></a>3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">005 6094</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6523</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6952</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7380</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">7809</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8238</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">8666</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9094</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9523</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">9951</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">429</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">257</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><a id="n1014"></a>4</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">006 0380</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">0808</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1236</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">1664</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2092</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2521</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2949</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3377</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">3805</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4233</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">428</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">300</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">343</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">386</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dla">
+<p>426</p>
+</div>
+<div class="paragraph dl">
+<p>425</p>
+</div>
+<table class="tableblock frame-none grid-cols stretch partsl ends">
+<colgroup>
+<col width="34%">
+<col width="66%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">43</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">85</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">128</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">170</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">213</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">255</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">298</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">340</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">383</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dla">
+<p>422</p>
+</div>
+<div class="paragraph dl">
+<p>421</p>
+</div>
+<table class="tableblock frame-none grid-cols stretch partsl ends">
+<colgroup>
+<col width="34%">
+<col width="66%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">84</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">126</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">168</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">211</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">253</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">295</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">337</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">379</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dla">
+<p>418</p>
+</div>
+<div class="paragraph dl">
+<p>417</p>
+</div>
+<table class="tableblock frame-none grid-cols stretch partsl ends">
+<colgroup>
+<col width="34%">
+<col width="66%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">83</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">125</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">167</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">209</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">250</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">292</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">334</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">375</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dla">
+<p>414</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top" rowspan="53"><div class="content"><div class="paragraph dra">
+<p>434</p>
+</div>
+<div class="paragraph dra">
+<p>432</p>
+</div>
+<div class="paragraph dr">
+<p>431</p>
+</div>
+<table class="tableblock frame-none grid-cols partsr ends" width="94%">
+<colgroup>
+<col width="37%">
+<col width="63%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">43</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">86</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">129</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">172</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">216</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">259</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">302</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">345</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">388</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dra">
+<p>428</p>
+</div>
+<div class="paragraph dr">
+<p>427</p>
+</div>
+<table class="tableblock frame-none grid-cols partsr ends" width="94%">
+<colgroup>
+<col width="37%">
+<col width="63%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">43</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">85</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">128</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">171</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">214</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">256</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">299</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">342</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">384</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dra">
+<p>424</p>
+</div>
+<div class="paragraph dr">
+<p>423</p>
+</div>
+<table class="tableblock frame-none grid-cols partsr ends" width="94%">
+<colgroup>
+<col width="37%">
+<col width="63%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">85</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">127</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">169</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">212</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">254</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">296</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">338</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">381</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dra">
+<p>420</p>
+</div>
+<div class="paragraph dr">
+<p>419</p>
+</div>
+<table class="tableblock frame-none grid-cols partsr ends" width="94%">
+<colgroup>
+<col width="37%">
+<col width="63%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">84</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">126</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">168</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">210</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">251</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">293</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">335</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">377</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph dra">
+<p>416</p>
+</div>
+<div class="paragraph dr">
+<p>415</p>
+</div>
+<table class="tableblock frame-none grid-cols partsr ends" width="94%">
+<colgroup>
+<col width="37%">
+<col width="63%">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">42</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">83</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">125</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">166</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">208</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">249</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">291</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">332</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">374</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">434<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">477<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5208</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5642</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">607<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">651<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6943</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">737<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7810</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">824<span class="up">4</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">47′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8677</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">911<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">954<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9977</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>41<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>84<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>277</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>710</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>143</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>576</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0013009</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3442</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3875</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4308</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">474<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">517<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">560<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6039</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">647<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">690<span class="up">5</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7337</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">777<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8202</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">863<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9067</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9499</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">993<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>364</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>796</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>228</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">45″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">002166<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">209<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">252<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">295<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">338<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">382<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">425<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">468<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5116</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5548</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">598<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6411</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6843</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">727<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7706</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">813<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8569</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">900<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9432</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9863</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">003029<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">072<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1157</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1588</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2019</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">245<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">288<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">331<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">374<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4174</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">48′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4605</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5036</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">546<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">589<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6328</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6759</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">719<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7620</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">805<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8481</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">891<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9342</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9772</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>20<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>633</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>063</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>493</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>92<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>35<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>78<span class="up">4</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">1010</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">004321<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">364<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">407<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">450<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4933</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5363</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">579<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">622<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6652</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">708<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">751<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7941</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">837<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8800</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9229</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">965<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>088</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>517</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>94<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>37<span class="up">6</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0051805</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2234</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2663</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3092</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3521</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3950</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4379</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4808</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">523<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">566<span class="up">6</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6094</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6523</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">695<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7380</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">780<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">823<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8666</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9094</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">952<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9951</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">49′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">006038<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">080<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1236</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1664</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2092</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">252<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">294<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">337<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">380<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">423<span class="up">3</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">55″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4660</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5088</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5516</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">594<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">637<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6799</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">722<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">765<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8082</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">851<span class="up">0</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8937</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">936<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">979<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>219</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>64<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>07<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>501</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>928</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>355</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>782</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">007321<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">363<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">406<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4490</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4917</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5344</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">577<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">619<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6624</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7051</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">747<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7904</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">833<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8757</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">918<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9610</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>03<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>463</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>889</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>31<span class="up">6</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">008174<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2168</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2594</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3020</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3446</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3872</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4298</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4724</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5150</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">557<span class="up">6</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">17′</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">50′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">1020</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">600<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6427</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6853</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">727<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7704</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8130</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">855<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8981</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">940<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9832</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0090257</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">068<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1108</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1533</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">195<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">238<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">280<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">323<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">365<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">408<span class="up">4</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">450<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">493<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">535<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">578<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6208</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6633</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">705<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">748<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7907</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">833<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8756</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">918<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9605</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>03<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>454</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>878</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>30<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>727</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>151</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>575</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">010300<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">342<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">384<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">427<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">469<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">512<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">554<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5967</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6391</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">681<span class="up">5</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">5″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">723<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7662</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">808<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">851<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8933</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">935<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9780</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>20<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>62<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>050</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">51′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">011147<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">189<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2320</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2743</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3166</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">359<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">401<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">443<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">485<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">528<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5704</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6127</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6550</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">697<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">739<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7818</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">824<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">866<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9086</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">950<span class="up">9</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9931</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>35<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>77<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>198</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>62<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>04<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>465</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>887</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">3</span>31<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">3</span>73<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">012415<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">457<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">499<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">542<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">584<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">626<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6685</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7107</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">752<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">795<span class="up">1</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">1030</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8372</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">879<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9215</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">963<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>05<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>48<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>901</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>32<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>744</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>165</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">013258<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">300<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3429</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3850</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4271</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4692</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5113</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5534</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5955</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6376</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">52′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">679<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">721<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">763<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8059</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">848<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">890<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9321</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">974<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>162</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>58<span class="up">3</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0141003</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">142<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">184<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2264</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">268<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">310<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3525</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3945</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4365</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4785</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5205</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5625</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6045</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6465</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6885</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">730<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">772<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8144</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8564</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">898<span class="up">4</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">15″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9403</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9823</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>24<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>662</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>08<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>501</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>920</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>34<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>759</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">3</span>178</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">015359<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">401<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">443<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">485<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5274</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5693</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6112</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">653<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">695<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">736<span class="up">9</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">778<span class="up">8</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8206</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8625</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">904<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9462</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9881</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>30<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>718</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>13<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>555</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">53′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">016197<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">239<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2810</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">322<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">364<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4065</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4483</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4901</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5319</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5737</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6155</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6573</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6991</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7409</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7827</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">824<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">866<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9080</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9498</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">991<span class="up">6</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">1040</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0170333</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">075<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1168</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">158<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2003</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">242<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">2838</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">325<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">367<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4090</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4507</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4924</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">534<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">575<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">617<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">659<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">701<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">742<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">784<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8260</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>2</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8677</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">909<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">951<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9927</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>344</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>76<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>177</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>59<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>010</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>42<span class="up">7</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>3</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">0182843</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3259</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">367<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4092</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4508</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">492<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">534<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">575<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">617<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">658<span class="up">9</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="min">54′</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>4</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">700<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">742<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">783<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">825<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">866<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9084</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9500</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">991<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>33<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>747</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">25″</span></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">10</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>5</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">019116<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1578</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">1994</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">241<span class="up">0</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">282<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">3240</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">365<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4071</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4486</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">490<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">20</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>6</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">531<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5732</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6147</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6562</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">6977</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7392</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">7807</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8222</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">8637</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">905<span class="up">2</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">30</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>7</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">946<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">988<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>296</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>711</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>12<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>540</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>95<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>369</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">2</span>78<span class="up">4</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">3</span>198</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">40</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>8</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">020361<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">4027</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">444<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">485<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5270</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">5684</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">609<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">651<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">692<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">734<span class="up">1</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="arc">50</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="num">&#160;</span>9</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">775<span class="up">5</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">816<span class="up">9</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">858<span class="up">3</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">899<span class="up">7</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">941<span class="up">1</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">9824</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>238</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">0</span>65<span class="up">2</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>06<span class="up">6</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="sf">1</span>479</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="3"></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">0</span><span class="hs134">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">1</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">2</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">3</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">4</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">5</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">6</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">7</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">8</span><span class="hs58">&#160;</span></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><span class="foot">9</span><span class="hs58">&#160;</span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="folio">6</span></p></td>
+<td class="tableblock halign-right valign-top" colspan="11"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top" colspan="13"></td>
 </tr>
 </tbody>
 </table>

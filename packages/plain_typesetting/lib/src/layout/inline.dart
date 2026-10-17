@@ -36,6 +36,7 @@ final class TextRun extends InlineContent {
     this.slotAlign = TextAlign.left,
     this.emphasisMark,
     this.emphasisUnder = false,
+    this.emphasisOffset,
     this.flushRight = false,
     this.leader,
     this.metricsFont,
@@ -77,6 +78,12 @@ final class TextRun extends InlineContent {
 
   /// Whether [emphasisMark] goes under the characters.
   final bool emphasisUnder;
+
+  /// Where given, how far the middle of [emphasisMark] stands from the
+  /// baseline, over or under it (a dot just under a figure, as a table
+  /// marks a figure put up by rounding), in points; by default just past
+  /// the em box.
+  final double? emphasisOffset;
 
   /// Where given, the width the text takes on its line, whatever its own
   /// (a heading's number hung in a column, a key's label with room on
@@ -142,6 +149,7 @@ final class TextRun extends InlineContent {
     slotAlign: slotAlign,
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
+    emphasisOffset: emphasisOffset,
     flushRight: flushRight,
     leader: leader,
     metricsFont: metricsFont,
@@ -164,6 +172,7 @@ final class TextRun extends InlineContent {
     slotAlign: slotAlign,
     emphasisMark: emphasisMark,
     emphasisUnder: emphasisUnder,
+    emphasisOffset: emphasisOffset,
     flushRight: flushRight,
     leader: leader,
     metricsFont: metricsFont,

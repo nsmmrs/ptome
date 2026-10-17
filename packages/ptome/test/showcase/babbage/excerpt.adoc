@@ -1,15 +1,16 @@
-= Logarithms: three groups of five rows
+= Table of the Logarithms of the Natural Numbers: page 6
 :epub-strict:
 :doctype: book
 :lang: en
 :look: babbage
 :looksdir: {docdir}
+:imagesdir: images
 :notitle:
+:folio-start: 6
 
-// A large numeric table (doc/showcase.md): the rows in fives with a
-// space between, the figures of one width in their columns, the heads
-// of the columns and the page's range of numbers on the tinted page.
+// The table's first page of five-figure numbers, as the 1831 printing
+// sets it (doc/showcase.md): its fifty rows in fives, the logarithms
+// computed, a figure put up by rounding dotted under, the arcs at the
+// left, the differences and their proportional parts at the right.
 
-== Logarithms
-
-include::text/excerpt-table.adoc[]
+include::text/pages.adoc[tag=page-6]

@@ -2,6 +2,10 @@
 
 ## 0.1.0-dev (unreleased)
 
+- `TextRun.emphasisOffset` (and `paintEmphasisMarks`' `offset`): emphasis
+  marks centred that far from the baseline, over or under it, in place of
+  just past the em box; the line as tall or deep as they reach.
+
 - A `TextRun` set flush right (`flushRight`) after a hard break (a line
   separator, a newline) keeps the break: it starts the line after it
   rather than running onto the line before.

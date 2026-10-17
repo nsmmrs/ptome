@@ -280,6 +280,40 @@ void main() {
         closeTo(emphasisExtent(_style), 1e-6),
       );
     });
+
+    test('at an offset: centred that far under the baseline, the line '
+        'as deep as the mark reaches', () {
+      Line dotted(double? offset) => const FirstFitLineBreaker()
+          .breakLines(
+            Paragraph([
+              TextRun(
+                '12',
+                _style,
+                emphasisMark: '•',
+                emphasisUnder: true,
+                emphasisOffset: offset,
+              ),
+            ]),
+            (_) => 200,
+          )
+          .single;
+      final canvas = RecordingCanvas();
+      final line = dotted(1.5)..paint(canvas, 0, 100);
+      // (A dot under each figure, its middle 1.5 points under the
+      // baseline, the line's ascent under its top, 100.)
+      final dots = canvas.calls.where((c) => c.startsWith('ellipse'));
+      expect(dots, hasLength(2));
+      for (final dot in dots) {
+        expect(
+          double.parse(dot.split(' ')[2]),
+          closeTo(100 - line.ascent - 1.5, 1e-6),
+        );
+      }
+      // (The line as deep as the dot: 1.5 points and a quarter of the
+      // size, 2.5, under its baseline.)
+      expect(-dotted(1.5).descent, closeTo(4, 1e-6));
+      expect(-dotted(null).descent, greaterThan(4));
+    });
   });
 
   group('punctuation by region (CLREQ)', () {

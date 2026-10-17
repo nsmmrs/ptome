@@ -1052,6 +1052,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
         strikethrough: styles.contains(FragmentStyle.strikethrough),
         emphasisMark: fragment.textEmphasis,
         emphasisUnder: fragment.textEmphasisUnder,
+        emphasisOffset: fragment.textEmphasisOffset?.toDouble(),
         flushRight: fragment.flushRight,
         leader: fragment.leader,
         turn: switch (fragment.turnover) {
@@ -2727,6 +2728,7 @@ final class TextBox implements ShapedContent, BaselineContent, JoinableContent {
               style,
               mark,
               under: fragment.textEmphasisUnder,
+              offset: fragment.textEmphasisOffset?.toDouble(),
               color: _pdfColor(fragment.color),
             );
           }

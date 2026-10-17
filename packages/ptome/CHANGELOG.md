@@ -10,6 +10,18 @@ reports **2.1.0.alpha.0**), fixing bugs Asciidoctor still has. The tag
 release byte for byte (ADR-0017). Not affiliated with or endorsed by the
 Asciidoctor project.
 
+- PDF: `role_<role>_text_emphasis_offset`, emphasis marks that far from
+  the baseline, over or under it, in place of just past the em box (a
+  dot just under a figure).
+- The showcase's Babbage is now twenty pages of the Table of the
+  Logarithms of the Natural Numbers as its 1831 printing sets them, page
+  for page and row for row (`tool/babbage_1831`, EPIC-np5cr3): the
+  printing's pages 6 to 25, the numbers 10,000 to 19,999, the logarithms
+  computed and marked as the printing marks them (a figure put up by
+  rounding dotted under, an entry past a change of its first three
+  figures with its first figure small), the arcs at the left, the
+  differences and their proportional parts where the printing has them,
+  each page ruled as the printing's.
 - PDF: `section_role_<role>_page_columns: 1` in a book set in columns
   sets that role's sections across the page, their own `[.columns]`
   blocks still in columns. The showcase's Tempest is now set as the

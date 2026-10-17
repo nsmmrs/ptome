@@ -2510,6 +2510,7 @@ final class Line {
               mark,
               under: run.emphasisUnder,
               color: run.color,
+              offset: run.emphasisOffset,
             );
           }
           final thickness = font.underlineThickness * size / 1000;
@@ -2590,12 +2591,14 @@ void paintEmphasisMarks(
   String mark, {
   bool under = false,
   Color? color,
+  double? offset,
 }) {
   final size = style.size;
   final font = style.font;
+  // (Just past the em box, or [offset] from the baseline.)
   final centreY = under
-      ? y + font.descender * size / 1000 - size * 0.2
-      : y + font.ascender * size / 1000 + size * 0.2;
+      ? y - (offset ?? -(font.descender * size / 1000 - size * 0.2))
+      : y + (offset ?? font.ascender * size / 1000 + size * 0.2);
   final markStyle = TextStyle(font, size / 2);
   final markGlyphs = markStyle.shape(mark);
   final markWidth = markStyle.widthOf(markGlyphs);
@@ -3440,15 +3443,23 @@ Line _line(
       if (content.emphasisMark != null) {
         final style = content.style;
         final mark = emphasisExtent(style);
+        // (Marks at their own distance from the baseline: as far as they
+        // reach, a quarter of the size about it.)
+        final reach = switch (content.emphasisOffset) {
+          final offset? => offset + style.size * 0.25,
+          null => null,
+        };
         if (content.emphasisUnder) {
           descent = math.min(
             descent,
-            style.font.descender * style.size / 1000 - mark,
+            reach != null
+                ? -reach
+                : style.font.descender * style.size / 1000 - mark,
           );
         } else {
           ascent = math.max(
             ascent,
-            style.font.ascender * style.size / 1000 + mark,
+            reach ?? style.font.ascender * style.size / 1000 + mark,
           );
         }
       }

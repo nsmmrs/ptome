@@ -1,91 +1,159 @@
-# A table of logarithms after Babbage's of 1827: an octavo of about
-# 6¼ × 10 in on tinted paper (Babbage printed trial copies of his table
-# on paper of 151 colours, to find the one that tired the eye least), the
-# table in a face with figures of one width and height, 9 on 12, its
-# rows in fives with a space between them, its columns ruled apart, the
-# first figures of the logarithm apart from its last four; the heads of
-# the columns at the top of every page; the head of the page giving the
-# first and last numbers it holds, the folio outside.
+# Babbage's Table of the Logarithms of the Natural Numbers as the 1831
+# stereotype sets it (B. Fellowes, London; Oxford's copy, scanned by
+# Google: NOTICE.md, tool/babbage_1831), measured from the scan: its
+# 416 × 709 pt page; each page's table of fifty rows in fives at the
+# printing's pitch, its columns as wide as the printing's, ruled apart
+# (the page's background, a frame for each page, gen.py's: the rule
+# left of the numbers heavy, a heavier one after the fifth column and
+# after the tenth, the rules across under the heads and over the
+# figures at the foot); the logarithm's first three figures where they
+# change, a figure put up by rounding dotted under, the first figure of
+# an entry past a change set small; the arcs at the left, the
+# differences and their proportional parts in the column at the right
+# where the printing has them; the head giving the logarithm's and the
+# number's first figures, flush with the table's outer edge; the folio
+# under the second column of arcs.
 #
-# Old Standard TT, its figures lining (`ptome doctor --look babbage
-# --looksdir test/showcase/babbage`).
+# Old Standard TT Bold, its figures of one width (`ptome doctor --look
+# babbage --looksdir test/showcase/babbage`).
 extends: ptome
 tokens:
   font:
     text: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] } }
     display: { family: { print: Old Standard TT, screen: [Old Standard TT, serif] }, weight: normal }
   size:
-    text: { print: 10.5pt, screen: 18px }
-    headings: { print: [20pt, 13pt, 11pt, 10.5pt, 10.5pt, 10.5pt] }
-  leading: { print: 1.35, screen: 1.6 }
+    text: { print: 8pt, screen: 18px }
+    headings: { print: [12pt, 10pt, 9pt, 8pt, 8pt, 8pt] }
+  leading: { print: 1.2, screen: 1.5 }
   measure: { screen: 40em }
-  align: { print: justify }
+  align: { print: start }
+  hyphenate: { print: false }
   color: { ink: '#1A1A1A', link: '#1A1A1A' }
-  page: { size: [6.25in, 10in], margin: [0.85in, 0.6in, 0.7in, 0.6in] }
+  page: { size: [416.3pt, 708.7pt], margin: [40pt, 5.8pt, 20pt, 36.4pt] }
 styles:
   heading: { font: display, weight: normal, color: ink }
   title: { font: display, weight: normal, color: ink }
   link: { color: ink }
 pdf:
-  page:
-    # (Buff: a tinted paper.)
-    background_color: 'F2E8CF'
   base:
+    font_style: bold
     font_variant_numeric: tabular-nums
+    margin_break: keep
   heading:
-    chapter_break_before: always
-    h2:
-      text_align: center
-      text_transform: uppercase
-      character_spacing: 2
-  # (Each page's first and last numbers, from the rows' anchors.)
-  running_content:
-    marks: n
-  table:
-    font_size: 9
-    background_color: transparent
-    body_background_color: transparent
-    body_stripe_background_color: transparent
-    head_font_style: italic
-    head_background_color: transparent
-    cell_padding: [1.2, 2, 1.2, 2]
-    grid_color: '5A5145'
-    grid_width: [0, 0.4]
-    border_color: '1A1A1A'
-    border_width: [1, 0, 1, 0]
-    head_border_bottom_width: 0.6
-    text_align: center
+    chapter_break_before: auto
+  section:
     role:
-      logarithms:
-        row_group_size: 5
-        row_group_gap: 5
-  table_cell_role_turn_font_style: italic
-  header:
-    height: 0.65in
-    vertical_align: bottom
-    font_size: 9
-    recto:
-      left: { content: '{page-first-mark}–{page-last-mark}' }
-      center: { content: 'LOGARITHMS.' }
-      right: { content: '{page-number}' }
-    verso:
-      left: { content: '{page-number}' }
-      center: { content: 'LOGARITHMS.' }
-      right: { content: '{page-first-mark}–{page-last-mark}' }
-  footer:
-    height: 0.4in
+      # (Each page its frame and its margins, a verso's table nearer the
+      # outer edge at the left, a recto's at the right, as the scans have
+      # them; no running head, the head and the folio set with the table:
+      # gen.py's.)
+      # (The pages' frames: gen.py's.)
+      p6: { page_background_image: 'image:images/frame-6.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p7: { page_background_image: 'image:images/frame-7.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p8: { page_background_image: 'image:images/frame-8.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p9: { page_background_image: 'image:images/frame-9.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p10: { page_background_image: 'image:images/frame-10.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p11: { page_background_image: 'image:images/frame-11.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p12: { page_background_image: 'image:images/frame-12.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p13: { page_background_image: 'image:images/frame-13.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p14: { page_background_image: 'image:images/frame-14.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p15: { page_background_image: 'image:images/frame-15.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p16: { page_background_image: 'image:images/frame-16.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p17: { page_background_image: 'image:images/frame-17.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p18: { page_background_image: 'image:images/frame-18.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p19: { page_background_image: 'image:images/frame-19.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p20: { page_background_image: 'image:images/frame-20.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p21: { page_background_image: 'image:images/frame-21.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p22: { page_background_image: 'image:images/frame-22.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p23: { page_background_image: 'image:images/frame-23.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      p24: { page_background_image: 'image:images/frame-24.svg[]', page_margin: [39.23, 5.8, 5, 36.4], page_running_content: none }
+      p25: { page_background_image: 'image:images/frame-25.svg[]', page_margin: [39.23, 21.9, 5, 19.1], page_running_content: none }
+      # (The frames end.)
+  role:
+    # (The head: the logarithm's first figures in a larger type, the
+    # number's in a smaller; at the table's outer edge.)
+    loghead: { font_size: 13, line_height: 1, margin_bottom: 2.6 }
+    verso: { text_align: left }
+    recto: { text_align: right, margin_right: 4.8 }
+    logn: { font_size: 9 }
+    # (The number every tenth row in a larger type; the arcs in a small
+    # one, their minutes and degrees larger; a first figure past a
+    # change small; the figures at the foot as the heads.)
+    num: { font_size: 9.5 }
+    arc: { font_size: 5.5 }
+    archd: { font_size: 8 }
+    min: { font_size: 7 }
+    sf: { font_size: 5.6 }
+    # (A figure put up by rounding: a dot under it.)
+    up: { text_emphasis: dot, text_emphasis_position: under, text_emphasis_offset: 1.6 }
+    foot: { font_size: 11.5 }
+    hs134: { width: 13.4pt }
+    hs138: { width: 13.8pt }
+    hs58: { width: 5.8pt }
+    hs62: { width: 6.2pt }
+    folio: { font_size: 8 }
+    # (A difference in the figures' type; one without its parts set in
+    # a little.)
+    dl: { font_size: 8, line_height: 1, margin_top: 0, margin_bottom: 0, margin_left: 4.3 }
+    dla: { font_size: 8, line_height: 1, margin_top: 0, margin_bottom: 0, margin_left: 5.2 }
+    dr: { font_size: 8, line_height: 1, margin_top: 0, margin_bottom: 0, margin_left: 1.5 }
+    dra: { font_size: 8, line_height: 1, margin_top: 0, margin_bottom: 0, margin_left: 1.7 }
+  table:
+    # (A row 9.9 points high, the printing's pitch: each row's line as
+    # high as its number's in Num., 9.5 points.)
+    font_size: 8
+    line_height: 0.624
+    cell_padding: [0, 1, 0, 1]
     border_width: 0
-    recto: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
-    verso: { left: { content: '' }, center: { content: '' }, right: { content: '' } }
+    grid_width: 0
+    background_color: transparent
+    head:
+      # (The heads on the second line of the arcs' two, the rule under
+      # them; the first row under it.)
+      font_size: 10
+      line_height: 0.755
+      cell_padding: [0, 1, 9.6, 1]
+      background_color: transparent
+      border_bottom_width: 0
+    body:
+      stripe_background_color: transparent
+    role:
+      logs:
+        row_group_size: 5
+        row_group_gap: 4.9
+      # (A difference's proportional parts: the tenth and the part, a
+      # rule between them, a small type at the printing's pitch; a rule
+      # under the ninth.)
+      partsl:
+        font_size: 7
+        line_height: 0.578
+        cell_padding: [0, 0.5, 0, 0]
+        grid_width: 0.6
+        border_width: 0
+        row_group_size: 0
+        margin_top: 1.73
+        margin_bottom: 0
+      partsr:
+        font_size: 7
+        line_height: 0.578
+        cell_padding: [0, 0.5, 0, 0]
+        grid_width: 0.6
+        border_width: 0
+        row_group_size: 0
+        margin_top: 1.73
+        margin_bottom: 0
+      ends:
+        border_width: [0, 0, 0.8, 0]
 webfonts:
   - Old Standard TT:400,400italic,700
 css: |
-  body{background:#f2e8cf}
-  table.logarithms{font-variant-numeric:tabular-nums lining-nums;font-size:85%}
-  table.logarithms td,table.logarithms th{text-align:center;padding:.1em .3em}
-  table.logarithms tbody tr:nth-child(5n) td{padding-bottom:.6em}
-  .turn{font-style:italic}
+  table.logs{font-variant-numeric:tabular-nums lining-nums;font-weight:bold}
+  table.logs td,table.logs th{text-align:right;padding:.05em .3em}
+  table.logs tbody tr:nth-child(5n) td{padding-bottom:.5em}
+  .num{font-size:115%}
+  .arc{font-size:65%}
+  .sf{font-size:70%}
 epub-css: |
-  table.logarithms{font-variant-numeric:tabular-nums lining-nums}
-  table.logarithms tbody tr:nth-child(5n) td{padding-bottom:.6em}
-  .turn{font-style:italic}
+  table.logs{font-variant-numeric:tabular-nums lining-nums;font-weight:bold}
+  table.logs tbody tr:nth-child(5n) td{padding-bottom:.5em}
+  .sf{font-size:70%}
